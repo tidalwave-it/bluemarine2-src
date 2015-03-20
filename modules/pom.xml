@@ -10,7 +10,7 @@
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-master</artifactId>
         <version>1.0-ALPHA-1-SNAPSHOT</version>
-        <relativePath>..</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
@@ -130,7 +130,9 @@
     </dependencies>
 
     <modules>
-        <module>Module1</module>
+        <module>Model</module>
+        <module>UI</module>
+        <module>JavaFX</module>
     </modules>
 
 </project>

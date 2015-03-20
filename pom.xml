@@ -67,11 +67,19 @@
         <dependencies>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
-                <artifactId>it.tidalwave.bluemarine2.module1</artifactId>
+                <artifactId>it-tidalwave-bluemarine2-model</artifactId>
                 <version>1.0-ALPHA-1-SNAPSHOT</version>
             </dependency>
-
-            <!-- TODO: ADD YOUR DEPENDENCIES HERE -->
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
+                <version>1.0-ALPHA-1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
+                <version>1.0-ALPHA-1-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

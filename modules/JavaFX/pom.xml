@@ -10,14 +10,24 @@
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
         <version>1.0-ALPHA-1-SNAPSHOT</version>
-        <relativePath>..</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>it.tidalwave.bluemarine2.module1</artifactId>
+    <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-1-SNAPSHOT</version>
-    <name>blueMarine2 - Module 1</name>
-    <description>blueMarine2 - Module 1</description>
-
+    <name>blueMarine2 - UI (JavaFX)</name>
+    <description>blueMarine2 - UI (JavaFX)</description>
+    
+    <dependencies>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
+        </dependency>
+    </dependencies>
 </project>
