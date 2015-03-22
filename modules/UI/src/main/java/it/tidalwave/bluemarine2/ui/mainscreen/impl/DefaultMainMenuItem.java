@@ -37,7 +37,7 @@ import lombok.Delegate;
 
 /***********************************************************************************************************************
  *
- * Represents an item in the main menu bar.
+ * A default implementation of {@link MainMenuItem}.
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
