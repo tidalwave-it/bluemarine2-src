@@ -28,7 +28,7 @@
         </dependency>
         
         <dependency>
-            <groupId>it.tidalwave.northernwind.rca</groupId>
+            <groupId>it.tidalwave.steelblue</groupId>
             <artifactId>it-tidalwave-role-ui-javafx</artifactId>
         </dependency>
 

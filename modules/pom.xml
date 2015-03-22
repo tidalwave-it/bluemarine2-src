@@ -31,7 +31,8 @@
         <logback.version>1.0.13</logback.version>
         <slf4j.version>1.7.5</slf4j.version>
         <spring.version>4.0.2.RELEASE</spring.version>
-        <thesefoolishthings.version>1.35</thesefoolishthings.version>
+        <steelblue.version>1.0-ALPHA-1-SNAPSHOT</steelblue.version>
+        <thesefoolishthings.version>1.37-SNAPSHOT</thesefoolishthings.version>
         <uuid.version>2.1.5-201007271250</uuid.version>
         
 <!--
@@ -53,6 +54,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>it.tidalwave.steelblue</groupId>
+                <artifactId>it-tidalwave-steelblue</artifactId>
+                <version>${steelblue.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency> 
                 <groupId>org.springframework</groupId> 
                 <artifactId>spring-framework-bom</artifactId> 
@@ -69,16 +77,6 @@
                 <groupId>com.aquafx-project</groupId>
                 <artifactId>aquafx</artifactId>
                 <version>0.1</version>
-            </dependency>
-            <dependency>
-                <groupId>it.tidalwave.northernwind.rca</groupId>
-                <artifactId>it-tidalwave-util-supplement</artifactId>
-                <version>1.1-ALPHA-11</version>
-            </dependency>
-            <dependency>
-                <groupId>it.tidalwave.northernwind.rca</groupId>
-                <artifactId>it-tidalwave-role-ui-javafx</artifactId>
-                <version>1.1-ALPHA-11</version>
             </dependency>
 
             <dependency>
