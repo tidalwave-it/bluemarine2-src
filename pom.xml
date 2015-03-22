@@ -7,6 +7,7 @@
         <groupId>it.tidalwave.thesefoolishthings</groupId>
         <artifactId>superpom</artifactId>
         <version>2.16</version>
+        <relativePath></relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
@@ -21,6 +22,24 @@
         <scm.repo.readonly.url>http://bitbucket.org/tidalwave/blueMarine2~src</scm.repo.readonly.url>
         <scm.repo.browse.url>http://bitbucket.org/tidalwave/blueMarine2~src</scm.repo.browse.url>
 
+        <tidalwave.ci.view>blueMarine2</tidalwave.ci.view>
+        <tidalwave.issues>BMT</tidalwave.issues>
+
+        <tft.maven.requiredJdk>[1.8.0-0,1.8.0-99)</tft.maven.requiredJdk>
+        <tft.javac.source>1.8</tft.javac.source>
+        <tft.javac.target>1.8</tft.javac.target>
+
+        <tft.embedded-jdk-artifactId>it-tidalwave-oraclejdk8</tft.embedded-jdk-artifactId>
+        <tft.embedded-jdk-classifier>macosx-intel</tft.embedded-jdk-classifier>
+        <tft.embedded-jdk-name>jdk1.8.0</tft.embedded-jdk-name>
+        <tft.embedded-jdk-version>1.8.0-1</tft.embedded-jdk-version>
+
+        <netbeans.hint.jdkPlatform>JDK_1.8.0</netbeans.hint.jdkPlatform>
+        <netbeans.hint.license>Tidalwave-ASF</netbeans.hint.license>
+        <netbeans.compile.on.save>none</netbeans.compile.on.save>
+
+        <tft.appbundle.name>blueMarine2</tft.appbundle.name>
+        <tft.appbundle.signature>TDLW</tft.appbundle.signature>
     </properties>
 
     <url>http://blueMarine2.tidalwave.it</url>
@@ -78,6 +97,11 @@
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
+                <version>1.0-ALPHA-1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>    
                 <version>1.0-ALPHA-1-SNAPSHOT</version>
             </dependency>
         </dependencies>
