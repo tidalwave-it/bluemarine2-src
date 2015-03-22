@@ -60,6 +60,6 @@
 
     <aop:aspectj-autoproxy/>
 
-    <bean class="it.tidalwave.bluemarine2.ui.impl.DefaultMainScreenPresentationControl" />
+    <bean class="it.tidalwave.bluemarine2.ui.mainscreen.impl.DefaultMainScreenPresentationControl" />
 
 </beans>
