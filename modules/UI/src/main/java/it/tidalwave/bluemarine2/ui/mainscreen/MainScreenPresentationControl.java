@@ -36,7 +36,5 @@ package it.tidalwave.bluemarine2.ui.mainscreen;
  **********************************************************************************************************************/
 public interface MainScreenPresentationControl 
   {
-    public static final Class<MainScreenPresentationControl> MainScreenControl = MainScreenPresentationControl.class;
-    
     public void initialize();
   }
