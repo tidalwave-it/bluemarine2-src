@@ -60,4 +60,30 @@
 
     <aop:aspectj-autoproxy/>
     
+    <!-- FIXME: move below stuff to CommonAutoBeans -->
+    
+    <!-- DCI role injector -->
+    <bean id="roleManager"
+          class="it.tidalwave.role.spring.spi.AnnotationSpringRoleManager" />
+
+    <bean id="contextManager"
+         class="it.tidalwave.role.spi.DefaultContextManager" />
+
+    <!-- MessageBus stuff -->
+    <bean id="applicationMessageBusTaskExecutor"
+          class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor"
+          autowire-candidate="false">
+        <!-- FIXME use properties -->
+        <property name="waitForTasksToCompleteOnShutdown" value="false"/>
+        <property name="threadNamePrefix" value="messageBus-" />
+        <property name="corePoolSize" value="10" />
+        <property name="maxPoolSize" value="10" />
+        <property name="queueCapacity" value="10" />
+    </bean>
+
+    <bean id="applicationMessageBus"
+          class="it.tidalwave.messagebus.impl.spring.SpringMessageBus">
+        <property name="taskExecutor" ref="applicationMessageBusTaskExecutor"/>
+    </bean>
+    
 </beans>

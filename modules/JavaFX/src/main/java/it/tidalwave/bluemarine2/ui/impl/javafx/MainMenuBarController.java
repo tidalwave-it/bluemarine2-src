@@ -29,6 +29,9 @@
 package it.tidalwave.bluemarine2.ui.impl.javafx;
 
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.concurrent.atomic.AtomicInteger;
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
@@ -39,6 +42,9 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
+import it.tidalwave.bluemarine2.ui.mainscreen.impl.DefaultMainMenuItem;
+import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
@@ -65,15 +71,21 @@ public class MainMenuBarController
         columnConstraints.clear();
         children.clear();
         // TODO: read from DCI
-        final String[] labels = { "Immagini", "Musica", "Filmati" };
         
-        for (int i = 0; i < labels.length; i++) 
+        final Collection<MainMenuItem> mainMenuItems = new ArrayList<>();
+        mainMenuItems.add(new DefaultMainMenuItem("Immagini"));
+        mainMenuItems.add(new DefaultMainMenuItem("Musica"));
+        mainMenuItems.add(new DefaultMainMenuItem("Filmati"));
+        
+        final AtomicInteger columnIndex = new AtomicInteger(0);
+        
+        mainMenuItems.forEach(menuItem ->
           {
             final ColumnConstraints column = new ColumnConstraints();
-            column.setPercentWidth(100.0 / labels.length);
+            column.setPercentWidth(100.0 / mainMenuItems.size());
             columnConstraints.add(column);
-            final Button button = createButton(labels[i]);
-            GridPane.setConstraints(button, i, 0); 
+            final Button button = createButton(menuItem.as(Displayable).getDisplayName());
+            GridPane.setConstraints(button, columnIndex.getAndIncrement(), 0); 
 
             button.setOnAction(event -> 
               {
@@ -82,7 +94,7 @@ public class MainMenuBarController
               });
             
             children.add(button);
-          }
+          });
       }
     
     /*******************************************************************************************************************
