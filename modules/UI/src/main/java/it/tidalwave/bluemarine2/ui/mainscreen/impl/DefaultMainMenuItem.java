@@ -65,6 +65,7 @@ public class DefaultMainMenuItem implements MainMenuItem
         @Override
         public void actionPerformed() 
           {
+            // FIXME: send message
             log.info("Running " + displayable.getDisplayName());
           }
       };
