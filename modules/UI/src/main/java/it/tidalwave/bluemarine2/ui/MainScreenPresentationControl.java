@@ -26,9 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx;
-
-import it.tidalwave.bluemarine2.ui.MainScreenPresentation;
+package it.tidalwave.bluemarine2.ui;
 
 /***********************************************************************************************************************
  *
@@ -36,6 +34,9 @@ import it.tidalwave.bluemarine2.ui.MainScreenPresentation;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class JavaFxMainScreenPresentation implements MainScreenPresentation 
+public interface MainScreenPresentationControl 
   {
+    public static final Class<MainScreenPresentationControl> MainScreenControl = MainScreenPresentationControl.class;
+    
+    public void initialize();
   }

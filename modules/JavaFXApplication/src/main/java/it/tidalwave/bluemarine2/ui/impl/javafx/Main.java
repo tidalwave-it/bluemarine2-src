@@ -28,7 +28,12 @@
  */
 package it.tidalwave.bluemarine2.ui.impl.javafx;
 
-import it.tidalwave.bluemarine2.ui.MainScreenPresentation;
+import javax.annotation.Nonnull;
+import java.nio.file.Path;
+import javafx.application.Platform;
+//import it.tidalwave.accounting.util.DefaultPreferencesHandler;
+//import it.tidalwave.accounting.util.PreferencesHandler;
+import it.tidalwave.ui.javafx.JavaFXSpringApplication;
 
 /***********************************************************************************************************************
  *
@@ -36,6 +41,23 @@ import it.tidalwave.bluemarine2.ui.MainScreenPresentation;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class JavaFxMainScreenPresentation implements MainScreenPresentation 
+public class Main extends JavaFXSpringApplication
   {
+    public static void main (final @Nonnull String ... args)
+      {
+        try
+          {
+//            final PreferencesHandler preferenceHandler = new DefaultPreferencesHandler();
+//            final Path logfolder = preferenceHandler.getLogFolder();
+//            System.setProperty("it.tidalwave.bluemarine2.logFolder", logfolder.toFile().getAbsolutePath());
+            Platform.setImplicitExit(true);
+            launch(args);
+          }
+        catch (Throwable t)
+          {
+            // Don't use logging facilities here, they could be not initialized
+            t.printStackTrace();
+            System.exit(-1);
+          }
+      }
   }

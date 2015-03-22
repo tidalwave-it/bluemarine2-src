@@ -31,9 +31,10 @@
         <logback.version>1.0.13</logback.version>
         <slf4j.version>1.7.5</slf4j.version>
         <spring.version>4.0.2.RELEASE</spring.version>
-        <thesefoolishthings.version>1.35</thesefoolishthings.version>
+        <steelblue.version>1.0-ALPHA-1-SNAPSHOT</steelblue.version>
+        <thesefoolishthings.version>1.37-SNAPSHOT</thesefoolishthings.version>
         <uuid.version>2.1.5-201007271250</uuid.version>
-
+        
 <!--
         <tft.mockito.version>1.8.5</tft.mockito.version>
         <tft.test.maxMemory>1024M</tft.test.maxMemory>
@@ -53,6 +54,30 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>it.tidalwave.steelblue</groupId>
+                <artifactId>it-tidalwave-steelblue</artifactId>
+                <version>${steelblue.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency> 
+                <groupId>org.springframework</groupId> 
+                <artifactId>spring-framework-bom</artifactId> 
+                <version>${spring.version}</version> 
+                <type>pom</type> 
+                <scope>import</scope> 
+            </dependency> 
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${tft.aspectjrt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aquafx-project</groupId>
+                <artifactId>aquafx</artifactId>
+                <version>0.1</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.google.code.findbugs</groupId>
@@ -71,8 +96,18 @@
                 <version>${slf4j.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
                 <version>${logback.version}</version>
             </dependency>
 
@@ -80,7 +115,7 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${tft.lombok.version}</version>
-            </dependency>
+            </dependency>            
         </dependencies>
     </dependencyManagement>
 
@@ -133,6 +168,7 @@
         <module>Model</module>
         <module>UI</module>
         <module>JavaFX</module>
+        <module>JavaFXApplication</module>
     </modules>
 
 </project>

@@ -1,0 +1,17 @@
+
+.mainFxmlClass 
+  {
+    -fx-background-color: black;
+  }
+
+.mainMenuButton
+  {
+    -fx-font-size:          30;
+    -fx-background-color:   rgb(20,20,20);
+    -fx-text-fill:          white;
+    -fx-border-color:       rgb(50, 50, 50);
+    -fx-border-radius:      20px;
+    -fx-background-radius:  20px;
+    -fx-padding:            5px;
+  }
+
