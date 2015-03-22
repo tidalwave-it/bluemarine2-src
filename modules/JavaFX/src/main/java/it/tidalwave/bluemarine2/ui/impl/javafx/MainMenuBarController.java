@@ -53,7 +53,7 @@ import org.springframework.beans.factory.annotation.Configurable;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable(preConstruction = true) @RequiredArgsConstructor @Slf4j
+@Configurable @RequiredArgsConstructor @Slf4j
 public class MainMenuBarController 
   {
     @Nonnull
