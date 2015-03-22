@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui;
+package it.tidalwave.bluemarine2.ui.mainscreen;
 
 /***********************************************************************************************************************
  *
@@ -34,7 +34,9 @@ package it.tidalwave.bluemarine2.ui;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MainScreenPresentation 
+public interface MainScreenPresentationControl 
   {
-    public static final Class<MainScreenPresentation> MainScreen = MainScreenPresentation.class;
+    public static final Class<MainScreenPresentationControl> MainScreenControl = MainScreenPresentationControl.class;
+    
+    public void initialize();
   }

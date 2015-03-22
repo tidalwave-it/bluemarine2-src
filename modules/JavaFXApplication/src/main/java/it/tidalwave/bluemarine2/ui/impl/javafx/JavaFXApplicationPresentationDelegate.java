@@ -33,7 +33,7 @@ import javax.inject.Inject;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.bluemarine2.ui.MainScreenPresentationControl;
+import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
 import javafx.scene.layout.GridPane;
 import lombok.extern.slf4j.Slf4j;
 
