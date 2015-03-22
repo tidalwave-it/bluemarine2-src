@@ -24,6 +24,16 @@
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.kenai.nbpwr</groupId>
+                    <artifactId>org-slf4j-jdk14</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
         </dependency>
         
@@ -47,8 +57,8 @@
             <artifactId>it-tidalwave-messagebus</artifactId>
             <exclusions>
                 <exclusion>
-                    <artifactId>org-slf4j-jdk14</artifactId>
                     <groupId>com.kenai.nbpwr</groupId>
+                    <artifactId>org-slf4j-jdk14</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -59,8 +69,8 @@
             <artifactId>it-tidalwave-role-spring</artifactId>
             <exclusions>
                 <exclusion>
-                    <artifactId>org-slf4j-jdk14</artifactId>
                     <groupId>com.kenai.nbpwr</groupId>
+                    <artifactId>org-slf4j-jdk14</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -81,15 +91,16 @@
             <artifactId>it-tidalwave-util</artifactId>
             <exclusions>
                 <exclusion>
-                    <artifactId>org-slf4j-jdk14</artifactId>
                     <groupId>com.kenai.nbpwr</groupId>
+                    <artifactId>org-slf4j-jdk14</artifactId>
                 </exclusion>
                 <exclusion>
-                    <artifactId>org-openide-util</artifactId>
                     <groupId>org.netbeans.api</groupId>
+                    <artifactId>org-openide-util</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
+        
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -128,13 +139,16 @@
         </dependency>
 
         <dependency>
-            <groupId>com.aquafx-project</groupId>
-            <artifactId>aquafx</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-messagebus-spring</artifactId>
+        </dependency>
+        
+        <!-- FIXME: workaround against a compilation error -->
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-util</artifactId>
+            <version>RELEASE712</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     

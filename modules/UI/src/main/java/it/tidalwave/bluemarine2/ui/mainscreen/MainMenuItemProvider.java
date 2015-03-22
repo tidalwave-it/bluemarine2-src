@@ -26,47 +26,23 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx;
+package it.tidalwave.bluemarine2.ui.mainscreen;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import java.io.IOException;
-import javafx.fxml.FXML;
-import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
-import javafx.scene.layout.GridPane;
-import lombok.extern.slf4j.Slf4j;
+import java.util.Collection;
 
 /***********************************************************************************************************************
  *
- * @author Fabrizio Giudici
+ * Provides registered instances of {@link MainMenuItem}.
+ * 
+ * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable @Slf4j
-public class JavaFXApplicationPresentationDelegate
+public interface MainMenuItemProvider 
   {
-    @Inject @Nonnull
-    private MainScreenPresentationControl mainScreenPresentationControl;
-
-    @FXML
-    private GridPane gpMainMenuBar;
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @FXML
-    public void initialize()
-      throws IOException
-      {
-        log.info("initialize()");
-        
-        final MainMenuBarController mainMenuBarController = new MainMenuBarController(gpMainMenuBar);
-        mainMenuBarController.populate();
-        // FIXME: controllers can't initialize in postconstruct
-        // Too bad because with PAC+EventBus we'd get rid of the control interfaces
-        mainScreenPresentationControl.initialize();
-//        javaFxCustomerExplorerPresentation.bind(lvCustomerExplorer);
-      }    
+    public static final Class<MainMenuItemProvider> MainMenuItemProvider = MainMenuItemProvider.class;
+    
+    @Nonnull
+    public Collection<MainMenuItem> findMainMenuItems();
   }

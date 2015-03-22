@@ -28,7 +28,7 @@
  */
 package it.tidalwave.bluemarine2.ui.impl.javafx;
 
-import it.tidalwave.bluemarine2.ui.MainScreenPresentation;
+import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 
 /***********************************************************************************************************************
  *

@@ -26,47 +26,63 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx;
+package it.tidalwave.bluemarine2.ui.mainscreen.impl;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import java.io.IOException;
-import javafx.fxml.FXML;
-import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
-import javafx.scene.layout.GridPane;
+import it.tidalwave.role.Displayable;
+import it.tidalwave.role.ui.UserAction;
+import it.tidalwave.role.ui.UserActionProvider;
+import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
+import it.tidalwave.role.ui.spi.UserActionSupport;
+import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.role.spi.DefaultDisplayable;
+import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
+import lombok.Delegate;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
- * @author Fabrizio Giudici
+ * A default implementation of {@link MainMenuItem}.
+ * 
+ * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable @Slf4j
-public class JavaFXApplicationPresentationDelegate
+@Slf4j
+public class DefaultMainMenuItem implements MainMenuItem
   {
-    @Inject @Nonnull
-    private MainScreenPresentationControl mainScreenPresentationControl;
-
-    @FXML
-    private GridPane gpMainMenuBar;
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @FXML
-    public void initialize()
-      throws IOException
+    @Getter @Nonnull
+    private final int priority;
+    
+    @Delegate
+    private final AsSupport asSupport;
+    
+    private final Displayable displayable;
+    
+    private final UserAction userAction = new UserActionSupport() 
       {
-        log.info("initialize()");
-        
-        final MainMenuBarController mainMenuBarController = new MainMenuBarController(gpMainMenuBar);
-        mainMenuBarController.populate();
-        // FIXME: controllers can't initialize in postconstruct
-        // Too bad because with PAC+EventBus we'd get rid of the control interfaces
-        mainScreenPresentationControl.initialize();
-//        javaFxCustomerExplorerPresentation.bind(lvCustomerExplorer);
-      }    
+        @Override
+        public void actionPerformed() 
+          {
+            // FIXME: send message
+            log.info("Running " + displayable.getDisplayName());
+          }
+      };
+    
+    private final UserActionProvider userActionProvider = new DefaultUserActionProvider()
+      {
+        @Override
+        public UserAction getDefaultAction()
+          {
+            return userAction;
+          }
+      }; 
+    
+    public DefaultMainMenuItem (final @Nonnull String displayName, final @Nonnull int priority)
+      {
+        this.priority = priority;
+        displayable = new DefaultDisplayable(displayName);
+        asSupport = new AsSupport(this, new Object[] { displayable, userActionProvider });
+      }
   }

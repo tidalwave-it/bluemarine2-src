@@ -26,15 +26,21 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui;
+package it.tidalwave.bluemarine2.ui.mainscreen;
+
+import it.tidalwave.util.As;
 
 /***********************************************************************************************************************
  *
+ * Represents an item in the main menu bar.
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MainScreenPresentation 
+public interface MainMenuItem extends As
   {
-    public static final Class<MainScreenPresentation> MainScreen = MainScreenPresentation.class;
+    public static final Class<MainMenuItem> MainMenuItem = MainMenuItem.class;
+    
+    public int getPriority();
   }
