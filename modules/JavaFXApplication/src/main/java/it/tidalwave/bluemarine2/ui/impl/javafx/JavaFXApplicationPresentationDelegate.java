@@ -34,6 +34,7 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.bluemarine2.ui.MainScreenPresentationControl;
+import javafx.scene.layout.GridPane;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -48,16 +49,24 @@ public class JavaFXApplicationPresentationDelegate
     @Inject @Nonnull
     private MainScreenPresentationControl mainScreenPresentationControl;
 
-//    @FXML
-//    private TreeTableView<PresentationModel> ttvJobEventExplorer;
+    @FXML
+    private GridPane gpMainMenuBar;
 
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @FXML
     public void initialize()
       throws IOException
       {
+        log.info("initialize()");
+        
+        final MainMenuBarController mainMenuBarController = new MainMenuBarController(gpMainMenuBar);
+        mainMenuBarController.populate();
         // FIXME: controllers can't initialize in postconstruct
         // Too bad because with PAC+EventBus we'd get rid of the control interfaces
         mainScreenPresentationControl.initialize();
 //        javaFxCustomerExplorerPresentation.bind(lvCustomerExplorer);
-        
       }    
   }
