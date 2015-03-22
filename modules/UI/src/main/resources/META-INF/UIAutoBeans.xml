@@ -61,5 +61,17 @@
     <aop:aspectj-autoproxy/>
 
     <bean class="it.tidalwave.bluemarine2.ui.mainscreen.impl.DefaultMainScreenPresentationControl" />
+    
+    <bean class="it.tidalwave.bluemarine2.ui.mainscreen.impl.DefaultMainMenuItemProvider" />
+    
+    <bean class="it.tidalwave.bluemarine2.ui.mainscreen.impl.DefaultMainMenuItem">
+        <constructor-arg value="Immagini"/>
+    </bean>
+    <bean class="it.tidalwave.bluemarine2.ui.mainscreen.impl.DefaultMainMenuItem">
+        <constructor-arg value="Musica"/>
+    </bean>
+    <bean class="it.tidalwave.bluemarine2.ui.mainscreen.impl.DefaultMainMenuItem">
+        <constructor-arg value="Filmati"/>
+    </bean>
 
 </beans>

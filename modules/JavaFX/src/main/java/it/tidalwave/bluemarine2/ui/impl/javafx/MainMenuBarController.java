@@ -29,7 +29,7 @@
 package it.tidalwave.bluemarine2.ui.impl.javafx;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
+import javax.inject.Inject;
 import java.util.Collection;
 import java.util.concurrent.atomic.AtomicInteger;
 import javafx.collections.ObservableList;
@@ -43,8 +43,9 @@ import javafx.scene.layout.Priority;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
-import it.tidalwave.bluemarine2.ui.mainscreen.impl.DefaultMainMenuItem;
+import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItemProvider;
 import static it.tidalwave.role.Displayable.Displayable;
+import org.springframework.beans.factory.annotation.Configurable;
 
 /***********************************************************************************************************************
  *
@@ -52,11 +53,14 @@ import static it.tidalwave.role.Displayable.Displayable;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j
+@Configurable(preConstruction = true) @RequiredArgsConstructor @Slf4j
 public class MainMenuBarController 
   {
     @Nonnull
     private final GridPane gpMainMenuBar;
+
+    @Inject //@Nonnull
+    private MainMenuItemProvider mainMenuItemProvider;
     
     /*******************************************************************************************************************
      *
@@ -70,14 +74,8 @@ public class MainMenuBarController
         
         columnConstraints.clear();
         children.clear();
-        // TODO: read from DCI
-        
-        final Collection<MainMenuItem> mainMenuItems = new ArrayList<>();
-        mainMenuItems.add(new DefaultMainMenuItem("Immagini"));
-        mainMenuItems.add(new DefaultMainMenuItem("Musica"));
-        mainMenuItems.add(new DefaultMainMenuItem("Filmati"));
-        
         final AtomicInteger columnIndex = new AtomicInteger(0);
+        final Collection<MainMenuItem> mainMenuItems = mainMenuItemProvider.findMainMenuItems();
         
         mainMenuItems.forEach(menuItem ->
           {
