@@ -47,8 +47,8 @@
             <artifactId>it-tidalwave-messagebus</artifactId>
             <exclusions>
                 <exclusion>
-                    <artifactId>org-slf4j-jdk14</artifactId>
                     <groupId>com.kenai.nbpwr</groupId>
+                    <artifactId>org-slf4j-jdk14</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -59,8 +59,8 @@
             <artifactId>it-tidalwave-role-spring</artifactId>
             <exclusions>
                 <exclusion>
-                    <artifactId>org-slf4j-jdk14</artifactId>
                     <groupId>com.kenai.nbpwr</groupId>
+                    <artifactId>org-slf4j-jdk14</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -81,12 +81,12 @@
             <artifactId>it-tidalwave-util</artifactId>
             <exclusions>
                 <exclusion>
-                    <artifactId>org-slf4j-jdk14</artifactId>
                     <groupId>com.kenai.nbpwr</groupId>
+                    <artifactId>org-slf4j-jdk14</artifactId>
                 </exclusion>
                 <exclusion>
-                    <artifactId>org-openide-util</artifactId>
                     <groupId>org.netbeans.api</groupId>
+                    <artifactId>org-openide-util</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
