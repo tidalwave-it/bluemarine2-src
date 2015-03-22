@@ -44,8 +44,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItemProvider;
-import static it.tidalwave.role.Displayable.Displayable;
+import it.tidalwave.role.ui.javafx.JavaFXBinder;
+import it.tidalwave.util.NotFoundException;
 import org.springframework.beans.factory.annotation.Configurable;
+import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.ui.UserActionProvider.UserActionProvider;
 
 /***********************************************************************************************************************
  *
@@ -61,6 +64,9 @@ public class MainMenuBarController
 
     @Inject //@Nonnull
     private MainMenuItemProvider mainMenuItemProvider;
+    
+    @Inject
+    private JavaFXBinder binder;
     
     /*******************************************************************************************************************
      *
@@ -84,12 +90,16 @@ public class MainMenuBarController
             columnConstraints.add(column);
             final Button button = createButton(menuItem.as(Displayable).getDisplayName());
             GridPane.setConstraints(button, columnIndex.getAndIncrement(), 0); 
-
-            button.setOnAction(event -> 
+            
+            try 
               {
-                log.info("pressed {}", button.getText());
-                // TODO: invoked controller
-              });
+                binder.bind(button, menuItem.as(UserActionProvider).getDefaultAction());
+              } 
+            catch (NotFoundException e)   
+              {
+                log.warn("Can't bind UserAction: {}", e.toString());
+                // no action
+              }
             
             children.add(button);
           });
