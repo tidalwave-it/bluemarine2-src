@@ -38,6 +38,7 @@ import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
 import lombok.Delegate;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -51,6 +52,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DefaultMainMenuItem implements MainMenuItem
   {
+    @Getter @Nonnull
+    private final int priority;
+    
     @Delegate
     private final AsSupport asSupport;
     
@@ -74,8 +78,9 @@ public class DefaultMainMenuItem implements MainMenuItem
           }
       }; 
     
-    public DefaultMainMenuItem (final @Nonnull String displayName)
+    public DefaultMainMenuItem (final @Nonnull String displayName, final @Nonnull int priority)
       {
+        this.priority = priority;
         displayable = new DefaultDisplayable(displayName);
         asSupport = new AsSupport(this, new Object[] { displayable, userActionProvider });
       }

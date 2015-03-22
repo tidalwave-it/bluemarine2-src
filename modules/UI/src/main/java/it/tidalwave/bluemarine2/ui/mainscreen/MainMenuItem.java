@@ -41,4 +41,6 @@ import it.tidalwave.util.As;
 public interface MainMenuItem extends As
   {
     public static final Class<MainMenuItem> MainMenuItem = MainMenuItem.class;
+    
+    public int getPriority();
   }

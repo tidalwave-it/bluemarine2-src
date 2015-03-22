@@ -34,6 +34,8 @@ import java.util.Collection;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItemProvider;
 import org.springframework.beans.factory.ListableBeanFactory;
+import static java.util.Comparator.*;
+import static java.util.stream.Collectors.*;
 
 /***********************************************************************************************************************
  *
@@ -50,6 +52,7 @@ public class DefaultMainMenuItemProvider implements MainMenuItemProvider
     public Collection<MainMenuItem> findMainMenuItems() 
       {
         // FIXME: sort by @Order
-        return beanFactory.getBeansOfType(MainMenuItem.class).values();
+        return beanFactory.getBeansOfType(MainMenuItem.class).values().stream()
+                .sorted(comparing(MainMenuItem::getPriority)).collect(toList());
       }
   }
