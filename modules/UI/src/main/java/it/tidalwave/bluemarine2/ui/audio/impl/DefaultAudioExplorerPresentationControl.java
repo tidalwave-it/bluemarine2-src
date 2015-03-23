@@ -26,8 +26,12 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl;
+package it.tidalwave.bluemarine2.ui.audio.impl;
 
+import javax.annotation.Nonnull;
+import it.tidalwave.messagebus.annotation.ListensTo;
+import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -36,7 +40,11 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class DefaultFlowController 
+@SimpleMessageSubscriber @Slf4j
+public class DefaultAudioExplorerPresentationControl 
   {
+    /* @VisibleForTesting */ void onOpenAudioExplorerRequest (final @ListensTo @Nonnull OpenAudioExplorerRequest request)
+      {
+        log.info("Received: {}", request);
+      }
   }

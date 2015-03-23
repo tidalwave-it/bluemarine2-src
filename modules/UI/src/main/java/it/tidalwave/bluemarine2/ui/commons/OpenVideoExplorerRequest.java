@@ -28,20 +28,17 @@
  */
 package it.tidalwave.bluemarine2.ui.commons;
 
-import javax.annotation.Nonnull;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
 /***********************************************************************************************************************
  *
+ * The request to open the Video Explorer.
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Getter @ToString
-public class Intent 
+@ToString
+public class OpenVideoExplorerRequest 
   {
-    @Nonnull
-    private final String activityName;
   }

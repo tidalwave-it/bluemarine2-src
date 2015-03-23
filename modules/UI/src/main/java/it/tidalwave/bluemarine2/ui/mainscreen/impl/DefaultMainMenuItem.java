@@ -30,15 +30,14 @@ package it.tidalwave.bluemarine2.ui.mainscreen.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.role.Displayable;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.UserActionProvider;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.role.ui.spi.UserActionSupport;
-import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.ui.commons.Intent;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
 import lombok.Delegate;
 import lombok.Getter;
@@ -59,7 +58,7 @@ public class DefaultMainMenuItem implements MainMenuItem
     private final int priority;
     
     @Nonnull
-    private final String activityName;
+    private final Class<?> requestClass;
     
     @Delegate
     private final AsSupport asSupport;
@@ -75,7 +74,14 @@ public class DefaultMainMenuItem implements MainMenuItem
         @Override
         public void actionPerformed() 
           {
-            messageBus.publish(new Intent(activityName));
+            try
+              {
+                messageBus.publish(requestClass.newInstance());
+              } 
+            catch (InstantiationException | IllegalAccessException e) 
+              {
+                log.error("", e);
+              }
           }
       };
     
@@ -89,11 +95,11 @@ public class DefaultMainMenuItem implements MainMenuItem
       }; 
     
     public DefaultMainMenuItem (final @Nonnull String displayName, 
-                                final @Nonnull String activityName,
-                                final @Nonnull int priority)
+                                final @Nonnull String requestClassName,
+                                final @Nonnull int priority) throws ClassNotFoundException
       {
         this.priority = priority;
-        this.activityName = activityName;
+        this.requestClass = Thread.currentThread().getContextClassLoader().loadClass(requestClassName);
         displayable = new DefaultDisplayable(displayName);
         asSupport = new AsSupport(this, new Object[] { displayable, userActionProvider });
       }

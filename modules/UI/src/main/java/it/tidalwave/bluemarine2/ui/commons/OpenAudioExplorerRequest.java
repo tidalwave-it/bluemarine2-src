@@ -26,17 +26,19 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl;
+package it.tidalwave.bluemarine2.ui.commons;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *
+ * The request to open the Audio Explorer.
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class DefaultFlowController 
+@ToString
+public class OpenAudioExplorerRequest 
   {
   }
