@@ -26,34 +26,19 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.mainscreen.impl;
+package it.tidalwave.bluemarine2.ui.commons;
 
-import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import java.util.Collection;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItemProvider;
-import org.springframework.beans.factory.ListableBeanFactory;
-import static java.util.Comparator.*;
-import static java.util.stream.Collectors.*;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *
+ * The request to open the Video Explorer.
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class DefaultMainMenuItemProvider implements MainMenuItemProvider
+@ToString
+public class OpenVideoExplorerRequest 
   {
-    @Inject
-    private ListableBeanFactory beanFactory;
-    
-    @Override @Nonnull
-    public Collection<MainMenuItem> findMainMenuItems() 
-      {
-        return beanFactory.getBeansOfType(MainMenuItem.class).values()
-                                                             .stream()
-                                                             .sorted(comparing(MainMenuItem::getPriority))
-                                                             .collect(toList());
-      }
   }

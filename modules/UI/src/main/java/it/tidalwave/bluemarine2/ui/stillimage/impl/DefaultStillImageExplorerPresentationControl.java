@@ -26,16 +26,15 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.mainscreen.impl;
+package it.tidalwave.bluemarine2.ui.stillimage.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.util.Collection;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItemProvider;
-import org.springframework.beans.factory.ListableBeanFactory;
-import static java.util.Comparator.*;
-import static java.util.stream.Collectors.*;
+import it.tidalwave.messagebus.annotation.ListensTo;
+import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.ui.commons.OpenStillImageExplorerRequest;
+import it.tidalwave.bluemarine2.ui.stillimage.StillImageExplorerPresentation;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -43,17 +42,15 @@ import static java.util.stream.Collectors.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class DefaultMainMenuItemProvider implements MainMenuItemProvider
+@SimpleMessageSubscriber @Slf4j
+public class DefaultStillImageExplorerPresentationControl 
   {
     @Inject
-    private ListableBeanFactory beanFactory;
+    private StillImageExplorerPresentation presentation;
     
-    @Override @Nonnull
-    public Collection<MainMenuItem> findMainMenuItems() 
+    /* @VisibleForTesting */ void onOpenStillImageExplorerRequest (final @ListensTo @Nonnull OpenStillImageExplorerRequest request)
       {
-        return beanFactory.getBeansOfType(MainMenuItem.class).values()
-                                                             .stream()
-                                                             .sorted(comparing(MainMenuItem::getPriority))
-                                                             .collect(toList());
+        log.info("onOpenStillImageExplorerRequest({})", request);
+        presentation.showUp();
       }
   }

@@ -26,16 +26,15 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.mainscreen.impl;
+package it.tidalwave.bluemarine2.ui.video.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.util.Collection;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItemProvider;
-import org.springframework.beans.factory.ListableBeanFactory;
-import static java.util.Comparator.*;
-import static java.util.stream.Collectors.*;
+import it.tidalwave.messagebus.annotation.ListensTo;
+import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.ui.commons.OpenVideoExplorerRequest;
+import it.tidalwave.bluemarine2.ui.video.VideoExplorerPresentation;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -43,17 +42,15 @@ import static java.util.stream.Collectors.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class DefaultMainMenuItemProvider implements MainMenuItemProvider
+@SimpleMessageSubscriber @Slf4j
+public class DefaultVideoExplorerPresentationControl 
   {
     @Inject
-    private ListableBeanFactory beanFactory;
+    private VideoExplorerPresentation presentation;
     
-    @Override @Nonnull
-    public Collection<MainMenuItem> findMainMenuItems() 
+    /* @VisibleForTesting */ void onOpenVideoExplorerRequest (final @ListensTo @Nonnull OpenVideoExplorerRequest request)
       {
-        return beanFactory.getBeansOfType(MainMenuItem.class).values()
-                                                             .stream()
-                                                             .sorted(comparing(MainMenuItem::getPriority))
-                                                             .collect(toList());
+        log.info("onOpenVideoExplorerRequest({})", request);
+        presentation.showUp();
       }
   }

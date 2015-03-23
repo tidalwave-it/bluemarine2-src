@@ -26,16 +26,11 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.mainscreen.impl;
+package it.tidalwave.bluemarine2.ui.stillimage.impl.javafx;
 
-import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.util.Collection;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItemProvider;
-import org.springframework.beans.factory.ListableBeanFactory;
-import static java.util.Comparator.*;
-import static java.util.stream.Collectors.*;
+import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
+import it.tidalwave.bluemarine2.ui.stillimage.StillImageExplorerPresentation;
 
 /***********************************************************************************************************************
  *
@@ -43,17 +38,19 @@ import static java.util.stream.Collectors.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class DefaultMainMenuItemProvider implements MainMenuItemProvider
+public class JavaFxStillImageExplorerPresentation implements StillImageExplorerPresentation
   {
     @Inject
-    private ListableBeanFactory beanFactory;
+    private FlowController flowController;
     
-    @Override @Nonnull
-    public Collection<MainMenuItem> findMainMenuItems() 
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void showUp()  
       {
-        return beanFactory.getBeansOfType(MainMenuItem.class).values()
-                                                             .stream()
-                                                             .sorted(comparing(MainMenuItem::getPriority))
-                                                             .collect(toList());
+        flowController.showPresentation(this);
       }
   }

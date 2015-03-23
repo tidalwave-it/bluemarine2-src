@@ -26,16 +26,9 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.mainscreen.impl;
+package it.tidalwave.bluemarine2.ui.commons.flowcontroller;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import java.util.Collection;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItemProvider;
-import org.springframework.beans.factory.ListableBeanFactory;
-import static java.util.Comparator.*;
-import static java.util.stream.Collectors.*;
 
 /***********************************************************************************************************************
  *
@@ -43,17 +36,7 @@ import static java.util.stream.Collectors.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class DefaultMainMenuItemProvider implements MainMenuItemProvider
+public interface FlowController 
   {
-    @Inject
-    private ListableBeanFactory beanFactory;
-    
-    @Override @Nonnull
-    public Collection<MainMenuItem> findMainMenuItems() 
-      {
-        return beanFactory.getBeansOfType(MainMenuItem.class).values()
-                                                             .stream()
-                                                             .sorted(comparing(MainMenuItem::getPriority))
-                                                             .collect(toList());
-      }
+    public void showPresentation (@Nonnull Object presentation);
   }

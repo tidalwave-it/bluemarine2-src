@@ -26,16 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.mainscreen.impl;
-
-import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import java.util.Collection;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItemProvider;
-import org.springframework.beans.factory.ListableBeanFactory;
-import static java.util.Comparator.*;
-import static java.util.stream.Collectors.*;
+package it.tidalwave.bluemarine2.ui.video;
 
 /***********************************************************************************************************************
  *
@@ -43,17 +34,12 @@ import static java.util.stream.Collectors.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class DefaultMainMenuItemProvider implements MainMenuItemProvider
+public interface VideoExplorerPresentation 
   {
-    @Inject
-    private ListableBeanFactory beanFactory;
-    
-    @Override @Nonnull
-    public Collection<MainMenuItem> findMainMenuItems() 
-      {
-        return beanFactory.getBeansOfType(MainMenuItem.class).values()
-                                                             .stream()
-                                                             .sorted(comparing(MainMenuItem::getPriority))
-                                                             .collect(toList());
-      }
+    /*******************************************************************************************************************
+     *
+     * Shows this presentation on the screen.
+     *
+     ******************************************************************************************************************/
+    public void showUp();
   }
