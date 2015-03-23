@@ -29,9 +29,11 @@
 package it.tidalwave.bluemarine2.ui.stillimage.impl;
 
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.ui.commons.OpenStillImageExplorerRequest;
+import it.tidalwave.bluemarine2.ui.stillimage.StillImageExplorerPresentation;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -43,8 +45,12 @@ import lombok.extern.slf4j.Slf4j;
 @SimpleMessageSubscriber @Slf4j
 public class DefaultStillImageExplorerPresentationControl 
   {
+    @Inject
+    private StillImageExplorerPresentation presentation;
+    
     /* @VisibleForTesting */ void onOpenStillImageExplorerRequest (final @ListensTo @Nonnull OpenStillImageExplorerRequest request)
       {
-        log.info("Received: {}", request);
+        log.info("onOpenStillImageExplorerRequest({})", request);
+        presentation.showUp();
       }
   }

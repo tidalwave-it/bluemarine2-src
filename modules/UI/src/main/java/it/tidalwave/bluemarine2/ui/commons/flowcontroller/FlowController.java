@@ -26,11 +26,9 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl;
+package it.tidalwave.bluemarine2.ui.commons.flowcontroller;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
-import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -38,12 +36,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class DefaultFlowController implements FlowController
+public interface FlowController 
   {
-    @Override
-    public void showPresentation (final @Nonnull Object presentation)
-      {
-        log.info("showPresentation({})", presentation);
-      }
+    public void showPresentation (@Nonnull Object presentation);
   }

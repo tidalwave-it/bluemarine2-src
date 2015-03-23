@@ -29,9 +29,11 @@
 package it.tidalwave.bluemarine2.ui.audio.impl;
 
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
+import it.tidalwave.bluemarine2.ui.audio.AudioExplorerPresentation;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -43,8 +45,12 @@ import lombok.extern.slf4j.Slf4j;
 @SimpleMessageSubscriber @Slf4j
 public class DefaultAudioExplorerPresentationControl 
   {
+    @Inject
+    private AudioExplorerPresentation presentation;
+    
     /* @VisibleForTesting */ void onOpenAudioExplorerRequest (final @ListensTo @Nonnull OpenAudioExplorerRequest request)
       {
-        log.info("Received: {}", request);
+        log.info("onOpenAudioExplorerRequest({})", request);
+        presentation.showUp();
       }
   }

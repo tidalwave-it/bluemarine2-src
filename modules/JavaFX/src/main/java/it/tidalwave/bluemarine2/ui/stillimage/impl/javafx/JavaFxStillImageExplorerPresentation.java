@@ -26,11 +26,11 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl;
+package it.tidalwave.bluemarine2.ui.stillimage.impl.javafx;
 
-import javax.annotation.Nonnull;
+import javax.inject.Inject;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
-import lombok.extern.slf4j.Slf4j;
+import it.tidalwave.bluemarine2.ui.stillimage.StillImageExplorerPresentation;
 
 /***********************************************************************************************************************
  *
@@ -38,12 +38,19 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class DefaultFlowController implements FlowController
+public class JavaFxStillImageExplorerPresentation implements StillImageExplorerPresentation
   {
+    @Inject
+    private FlowController flowController;
+    
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override
-    public void showPresentation (final @Nonnull Object presentation)
+    public void showUp()  
       {
-        log.info("showPresentation({})", presentation);
+        flowController.showPresentation(this);
       }
   }

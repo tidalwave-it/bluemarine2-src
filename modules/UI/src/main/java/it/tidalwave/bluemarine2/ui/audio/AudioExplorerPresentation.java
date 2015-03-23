@@ -26,11 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl;
-
-import javax.annotation.Nonnull;
-import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
-import lombok.extern.slf4j.Slf4j;
+package it.tidalwave.bluemarine2.ui.audio;
 
 /***********************************************************************************************************************
  *
@@ -38,12 +34,12 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class DefaultFlowController implements FlowController
+public interface AudioExplorerPresentation 
   {
-    @Override
-    public void showPresentation (final @Nonnull Object presentation)
-      {
-        log.info("showPresentation({})", presentation);
-      }
+    /*******************************************************************************************************************
+     *
+     * Shows this presentation on the screen.
+     *
+     ******************************************************************************************************************/
+    public void showUp();
   }
