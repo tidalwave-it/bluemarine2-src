@@ -52,7 +52,9 @@ public class DefaultMainMenuItemProvider implements MainMenuItemProvider
     public Collection<MainMenuItem> findMainMenuItems() 
       {
         // FIXME: sort by @Order
-        return beanFactory.getBeansOfType(MainMenuItem.class).values().stream()
-                .sorted(comparing(MainMenuItem::getPriority)).collect(toList());
+        return beanFactory.getBeansOfType(MainMenuItem.class).values()
+                                                             .stream()
+                                                             .sorted(comparing(MainMenuItem::getPriority))
+                                                             .collect(toList());
       }
   }
