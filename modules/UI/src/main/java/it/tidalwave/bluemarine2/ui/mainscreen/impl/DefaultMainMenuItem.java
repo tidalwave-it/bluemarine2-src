@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.ui.mainscreen.impl;
 
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
 import it.tidalwave.role.Displayable;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.UserActionProvider;
@@ -36,6 +37,8 @@ import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.role.ui.spi.UserActionSupport;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.role.spi.DefaultDisplayable;
+import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.ui.commons.Intent;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
 import lombok.Delegate;
 import lombok.Getter;
@@ -55,18 +58,24 @@ public class DefaultMainMenuItem implements MainMenuItem
     @Getter @Nonnull
     private final int priority;
     
+    @Nonnull
+    private final String activityName;
+    
     @Delegate
     private final AsSupport asSupport;
     
     private final Displayable displayable;
     
+    @Inject
+    private MessageBus messageBus;
+    
+    // FIXME: use MessageSendingUserAction
     private final UserAction userAction = new UserActionSupport() 
       {
         @Override
         public void actionPerformed() 
           {
-            // FIXME: send message
-            log.info("Running " + displayable.getDisplayName());
+            messageBus.publish(new Intent(activityName));
           }
       };
     
@@ -79,9 +88,12 @@ public class DefaultMainMenuItem implements MainMenuItem
           }
       }; 
     
-    public DefaultMainMenuItem (final @Nonnull String displayName, final @Nonnull int priority)
+    public DefaultMainMenuItem (final @Nonnull String displayName, 
+                                final @Nonnull String activityName,
+                                final @Nonnull int priority)
       {
         this.priority = priority;
+        this.activityName = activityName;
         displayable = new DefaultDisplayable(displayName);
         asSupport = new AsSupport(this, new Object[] { displayable, userActionProvider });
       }
