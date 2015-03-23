@@ -51,7 +51,6 @@ public class DefaultMainMenuItemProvider implements MainMenuItemProvider
     @Override @Nonnull
     public Collection<MainMenuItem> findMainMenuItems() 
       {
-        // FIXME: sort by @Order
         return beanFactory.getBeansOfType(MainMenuItem.class).values()
                                                              .stream()
                                                              .sorted(comparing(MainMenuItem::getPriority))
