@@ -28,12 +28,14 @@
  */
 package it.tidalwave.bluemarine2.ui.mainscreen.impl.javafx;
 
+import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.io.IOException;
-import javafx.fxml.FXMLLoader;
+import it.tidalwave.role.ui.UserAction;
+import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
 
 /***********************************************************************************************************************
  *
@@ -44,8 +46,25 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class JavaFxMainScreenPresentation implements MainScreenPresentation
   {
+    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/MainScreen.fxml";
+    
     @Inject
     private FlowController flowController;
+    
+    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
+    
+    private final MainScreenPresentation delegate = nad.getDelegate();
+            
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void bind (final @Nonnull UserAction powerOffAction)
+      {
+        delegate.bind(powerOffAction); 
+      }
     
     /*******************************************************************************************************************
      *
@@ -55,14 +74,7 @@ public class JavaFxMainScreenPresentation implements MainScreenPresentation
     @Override
     public void showUp()  
       {
-        try
-          {
-            final String url = "/it/tidalwave/bluemarine2/ui/impl/javafx/MainScreen.fxml";
-            flowController.showPresentation(FXMLLoader.load(getClass().getResource(url)));
-          } 
-        catch (IOException e) 
-          {
-            log.error("", e);   
-          }
+        delegate.showUp();
+        flowController.showPresentation(nad.getNode());
       }
   }

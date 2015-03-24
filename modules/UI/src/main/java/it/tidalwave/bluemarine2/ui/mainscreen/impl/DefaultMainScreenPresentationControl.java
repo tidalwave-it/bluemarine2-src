@@ -29,6 +29,9 @@
 package it.tidalwave.bluemarine2.ui.mainscreen.impl;
 
 import javax.inject.Inject;
+import javafx.application.Platform;
+import it.tidalwave.role.ui.UserAction;
+import it.tidalwave.role.ui.spi.UserActionSupport;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
 
@@ -42,10 +45,21 @@ public class DefaultMainScreenPresentationControl implements MainScreenPresentat
   {
     @Inject
     private MainScreenPresentation presentation;
+    
+    private final UserAction powerOffAction = new UserActionSupport() 
+      {
+        @Override
+        public void actionPerformed() 
+          {
+            // TODO: fire a PowerOff event and wait for collaboration completion
+            Platform.exit();
+          }
+      };
             
     @Override
     public void initialize() 
       {
+        presentation.bind(powerOffAction);
         presentation.showUp();
       }
   }
