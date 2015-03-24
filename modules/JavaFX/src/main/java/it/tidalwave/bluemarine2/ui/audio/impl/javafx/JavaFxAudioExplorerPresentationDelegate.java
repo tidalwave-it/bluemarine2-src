@@ -33,6 +33,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
+import it.tidalwave.bluemarine2.ui.audio.AudioExplorerPresentation;
 
 /***********************************************************************************************************************
  *
@@ -41,7 +42,7 @@ import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
  *
  **********************************************************************************************************************/
 @Configurable
-public class JavaFxAudioExplorerPresentationDelegate 
+public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPresentation
   {
     @FXML
     private Button btBack;
@@ -54,5 +55,10 @@ public class JavaFxAudioExplorerPresentationDelegate
       {
         // FIXME: temporary - should go call back the controller instead
         btBack.setOnAction(event -> { flowController.dismissCurrentPresentation(); });
+      }
+
+    @Override
+    public void showUp() 
+      {
       }
   }
