@@ -105,8 +105,8 @@ public class JavaFxFlowController implements FlowController
         final KeyFrame end = new KeyFrame(Duration.millis(200),
                 new KeyValue(newNode.translateYProperty(), 0),
                 new KeyValue(oldNode.translateYProperty(), -height * direction));
-        final Timeline slide = new Timeline(start, end);
-        slide.setOnFinished(event -> contentPane.getChildren().remove(oldNode));
-        slide.play();
+        final Timeline slideAnimation = new Timeline(start, end);
+        slideAnimation.setOnFinished(event -> contentPane.getChildren().remove(oldNode));
+        slideAnimation.play();
       }
   }
