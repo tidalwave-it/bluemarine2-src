@@ -29,8 +29,14 @@
 package it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx;
 
 import javax.annotation.Nonnull;
+import java.util.Stack;
+import javafx.util.Duration;
+import javafx.collections.ObservableList;
 import javafx.scene.Node;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import lombok.Setter;
@@ -46,7 +52,13 @@ import lombok.extern.slf4j.Slf4j;
 public class JavaFxFlowController implements FlowController
   {
     @Setter
-    private Pane contentPane;
+    private StackPane contentPane;
+    
+    // TODO: this implementation keeps all the history in the stack, thus wasting some memory.
+    // A more efficient implementation would be similar to Android Activity life-cycle, which can
+    // jettison past activities and resume them on demand. But it would require life-cycle methods
+    // on the presentation interfaces. If we don't run into memory problems, it would be over-engineering.
+    private final Stack<Node> presentationStack = new Stack<>();
     
     @Override
     public void showPresentation (final @Nonnull Object presentation)
@@ -57,12 +69,44 @@ public class JavaFxFlowController implements FlowController
         // FIXME: should not be needed, presentations should already run in JavaFX thread
         Platform.runLater(() ->
           {
-            contentPane.getChildren().clear();
-
-            if (presentation instanceof Node) // FIXME
+            final Node newNode = (Node)presentation;
+            
+            if (presentationStack.isEmpty())
               {
-                contentPane.getChildren().add((Node)presentation);
+                contentPane.getChildren().add(newNode);
               }
+            else
+              {
+                final Node oldNode = presentationStack.peek();
+                slide(newNode, oldNode, +1); 
+              }
+              
+            presentationStack.push(newNode);
           });
+      }
+
+    @Override
+    public void dismissCurrentPresentation()
+      {
+        log.info("dismissCurrentPresentation()");
+        
+        final Node oldNode = presentationStack.pop();
+        final Node newNode = presentationStack.peek();
+        slide(newNode, oldNode, -1);              
+      }
+
+    private void slide (final @Nonnull Node newNode, final @Nonnull Node oldNode, final int direction)
+      {
+        contentPane.getChildren().add(newNode);
+        final double height = contentPane.getHeight();
+        final KeyFrame start = new KeyFrame(Duration.ZERO,
+                new KeyValue(newNode.translateYProperty(), height * direction),
+                new KeyValue(oldNode.translateYProperty(), 0));
+        final KeyFrame end = new KeyFrame(Duration.millis(200),
+                new KeyValue(newNode.translateYProperty(), 0),
+                new KeyValue(oldNode.translateYProperty(), -height * direction));
+        final Timeline slide = new Timeline(start, end);
+        slide.setOnFinished(event -> contentPane.getChildren().remove(oldNode));
+        slide.play();
       }
   }

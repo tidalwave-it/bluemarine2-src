@@ -32,7 +32,7 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.io.IOException;
 import javafx.fxml.FXML;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
@@ -54,7 +54,7 @@ public class JavaFXApplicationPresentationDelegate
     private MainScreenPresentationControl mainScreenPresentationControl;
     
     @FXML
-    private Pane pnContent;
+    private StackPane spContent;
 
     /*******************************************************************************************************************
      *
@@ -66,7 +66,7 @@ public class JavaFXApplicationPresentationDelegate
       {
         log.info("initialize()");
         
-        flowController.setContentPane(pnContent);
+        flowController.setContentPane(spContent);
         
         // FIXME: controllers can't initialize in postconstruct
         // Too bad because with PAC+EventBus we'd get rid of the control interfaces

@@ -39,4 +39,6 @@ import javax.annotation.Nonnull;
 public interface FlowController 
   {
     public void showPresentation (@Nonnull Object presentation);
+    
+    public void dismissCurrentPresentation();
   }
