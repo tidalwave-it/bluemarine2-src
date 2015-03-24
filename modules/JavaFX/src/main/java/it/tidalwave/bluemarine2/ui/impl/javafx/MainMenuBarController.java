@@ -49,6 +49,7 @@ import it.tidalwave.util.NotFoundException;
 import org.springframework.beans.factory.annotation.Configurable;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.ui.UserActionProvider.UserActionProvider;
+import javafx.application.Platform;
 
 /***********************************************************************************************************************
  *
@@ -75,14 +76,16 @@ public class MainMenuBarController
      ******************************************************************************************************************/
     public void populate()
       {
+        assert Platform.isFxApplicationThread();
+        
         final ObservableList<ColumnConstraints> columnConstraints = gpMainMenuBar.getColumnConstraints();
         final ObservableList<Node> children = gpMainMenuBar.getChildren();
-        
+
         columnConstraints.clear();
         children.clear();
         final AtomicInteger columnIndex = new AtomicInteger(0);
         final Collection<MainMenuItem> mainMenuItems = mainMenuItemProvider.findMainMenuItems();
-        
+
         mainMenuItems.forEach(menuItem ->
           {
             final ColumnConstraints column = new ColumnConstraints();
@@ -90,7 +93,7 @@ public class MainMenuBarController
             columnConstraints.add(column);
             final Button button = createButton(menuItem.as(Displayable).getDisplayName());
             GridPane.setConstraints(button, columnIndex.getAndIncrement(), 0); 
-            
+
             try 
               {
                 binder.bind(button, menuItem.as(UserActionProvider).getDefaultAction());
@@ -100,7 +103,7 @@ public class MainMenuBarController
                 log.warn("Can't bind UserAction: {}", e.toString());
                 // no action
               }
-            
+
             children.add(button);
           });
       }
