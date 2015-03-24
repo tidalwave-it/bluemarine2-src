@@ -30,7 +30,7 @@ package it.tidalwave.bluemarine2.ui.commons;
 
 /***********************************************************************************************************************
  *
- * A message tat notifies that the system has been just powered on.
+ * A message that notifies that the system has been just powered on.
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
