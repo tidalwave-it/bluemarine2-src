@@ -44,6 +44,7 @@ import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
+import static it.tidalwave.bluemarine2.ui.util.BundleUtilities.*;
 
 /***********************************************************************************************************************
  *
@@ -56,22 +57,22 @@ public class DefaultMainScreenPresentationControl implements MainScreenPresentat
   {
     @Inject
     private MainScreenPresentation presentation;
-    
+
     @Inject
     private ListableBeanFactory beanFactory;
-    
-    private final UserAction powerOffAction = new UserActionSupport() 
+
+    private final UserAction powerOffAction = new UserActionSupport(displayableFromBundle(getClass(), "powerOff"))
       {
         @Override
-        public void actionPerformed() 
+        public void actionPerformed()
           {
             // TODO: fire a PowerOff event and wait for collaboration completion
             Platform.exit();
           }
       };
-            
+
     @PostConstruct
-    /* @VisibleForTesting */ void initialize() 
+    /* @VisibleForTesting */ void initialize()
       {
         final Collection<UserAction> mainMenuActions =  beanFactory.getBeansOfType(MainMenuItem.class)
                                                                    .values()
@@ -81,7 +82,7 @@ public class DefaultMainScreenPresentationControl implements MainScreenPresentat
                                                                    .collect(toList());
         presentation.bind(mainMenuActions, powerOffAction);
       }
-    
+
     /* @VisibleForTesting */ void onPowerOnNotification (final @Nonnull @ListensTo PowerOnNotification notification)
       {
         presentation.showUp();

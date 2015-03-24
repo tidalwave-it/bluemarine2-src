@@ -68,19 +68,18 @@
         
     <bean class="it.tidalwave.bluemarine2.ui.video.impl.DefaultVideoExplorerPresentationControl" />
         
-    <!-- FIXME: take labels from a Bundle -->
     <bean class="it.tidalwave.bluemarine2.ui.mainscreen.impl.MainMenuItem">
-        <constructor-arg value="Immagini"/>
+        <constructor-arg value="mainMenu.stillImages"/>
         <constructor-arg value="it.tidalwave.bluemarine2.ui.commons.OpenStillImageExplorerRequest"/>
         <constructor-arg value="10"/> <!-- priority -->
     </bean>
     <bean class="it.tidalwave.bluemarine2.ui.mainscreen.impl.MainMenuItem">
-        <constructor-arg value="Musica"/>
+        <constructor-arg value="mainMenu.music"/>
         <constructor-arg value="it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest"/>
         <constructor-arg value="20"/> <!-- priority -->
     </bean>
     <bean class="it.tidalwave.bluemarine2.ui.mainscreen.impl.MainMenuItem">
-        <constructor-arg value="Filmati"/>
+        <constructor-arg value="mainMenu.videos"/>
         <constructor-arg value="it.tidalwave.bluemarine2.ui.commons.OpenVideoExplorerRequest"/>
         <constructor-arg value="30"/> <!-- priority -->
     </bean>

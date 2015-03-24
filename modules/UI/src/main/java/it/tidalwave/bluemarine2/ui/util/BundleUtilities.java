@@ -26,64 +26,29 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.mainscreen.impl;
+package it.tidalwave.bluemarine2.ui.util;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.spi.UserActionSupport;
+import java.util.ResourceBundle;
+import it.tidalwave.role.Displayable;
 import it.tidalwave.role.spi.DefaultDisplayable;
-import it.tidalwave.messagebus.MessageBus;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.ui.util.BundleUtilities.*;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /***********************************************************************************************************************
  *
- * A proritised container of {@link UserAction}s to be placed on a menu.
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class MainMenuItem 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class BundleUtilities 
   {
-    @Getter @Nonnull
-    private final int priority;
-    
-    @Nonnull
-    private final Class<?> requestClass;
-    
-    @Inject
-    private MessageBus messageBus;
-    
-    @Getter @Nonnull
-    private final UserAction action;
-    
-    
-    public MainMenuItem (final @Nonnull String displayNameKey, 
-                         final @Nonnull String requestClassName,
-                         final @Nonnull int priority)
-      throws ClassNotFoundException
+    public static Displayable displayableFromBundle (final @Nonnull Class<?> ownerClass, final @Nonnull String key)
       {
-        this.priority = priority;
-        this.requestClass = Thread.currentThread().getContextClassLoader().loadClass(requestClassName);
-        // FIXME: use MessageSendingUserAction
-        this.action  = new UserActionSupport(displayableFromBundle(getClass(), displayNameKey)) 
-          {
-            @Override
-            public void actionPerformed() 
-              {
-                try
-                  {
-                    messageBus.publish(requestClass.newInstance());
-                  } 
-                catch (InstantiationException | IllegalAccessException e) 
-                  {
-                    log.error("", e);
-                  }
-              }
-          };
+        final String packageName = ownerClass.getPackage().getName();
+        final ResourceBundle bundle = ResourceBundle.getBundle(packageName + ".Bundle");
+    
+        return new DefaultDisplayable(bundle.getString(key));
       }
   }
