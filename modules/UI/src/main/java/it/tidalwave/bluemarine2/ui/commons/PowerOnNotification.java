@@ -26,16 +26,16 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx;
-
-import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
+package it.tidalwave.bluemarine2.ui.commons;
 
 /***********************************************************************************************************************
  *
+ * A message tat notifies that the system has been just powered on.
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class JavaFxMainScreenPresentation implements MainScreenPresentation 
+public class PowerOnNotification 
   {
   }

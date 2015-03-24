@@ -26,9 +26,18 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.commons.flowcontroller;
+package it.tidalwave.bluemarine2.ui.mainscreen.impl.javafx;
 
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
+import org.springframework.beans.factory.annotation.Configurable;
+import it.tidalwave.role.ui.UserAction;
+import it.tidalwave.role.ui.javafx.JavaFXBinder;
+import it.tidalwave.bluemarine2.ui.impl.javafx.MainMenuBarController;
+import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 
 /***********************************************************************************************************************
  *
@@ -36,9 +45,28 @@ import javax.annotation.Nonnull;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface FlowController 
+@Configurable
+public class JavaFxMainScreenPresentationDelegate implements MainScreenPresentation
   {
-    public void showPresentation (@Nonnull Object presentation);
+    @FXML
+    private GridPane gpMainMenuBar;
     
-    public void dismissCurrentPresentation();
+    @FXML
+    private Button btPowerOff;
+
+    @Inject
+    private JavaFXBinder binder;
+    
+    @Override
+    public void bind (final @Nonnull UserAction powerOffAction) 
+      {
+        binder.bind(btPowerOff, powerOffAction);
+      }
+
+    @Override
+    public void showUp()
+      {
+        final MainMenuBarController mainMenuBarController = new MainMenuBarController(gpMainMenuBar);
+        mainMenuBarController.populate();
+      }
   }

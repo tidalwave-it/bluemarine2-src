@@ -26,11 +26,14 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl;
+package it.tidalwave.bluemarine2.ui.audio.impl.javafx;
 
-import javax.annotation.Nonnull;
+import javax.inject.Inject;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
-import lombok.extern.slf4j.Slf4j;
+import it.tidalwave.bluemarine2.ui.audio.AudioExplorerPresentation;
 
 /***********************************************************************************************************************
  *
@@ -38,12 +41,24 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class DefaultFlowController implements FlowController
+@Configurable
+public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPresentation
   {
-    @Override
-    public void showPresentation (final @Nonnull Object presentation)
+    @FXML
+    private Button btBack;
+    
+    @Inject
+    private FlowController flowController;
+    
+    @FXML
+    private void initialize()
       {
-        log.info("showPresentation({})", presentation);
+        // FIXME: temporary - should go call back the controller instead
+        btBack.setOnAction(event -> { flowController.dismissCurrentPresentation(); });
+      }
+
+    @Override
+    public void showUp() 
+      {
       }
   }

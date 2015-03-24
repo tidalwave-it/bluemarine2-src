@@ -26,9 +26,14 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.commons.flowcontroller;
+package it.tidalwave.bluemarine2.ui.video.impl.javafx;
 
-import javax.annotation.Nonnull;
+import javax.inject.Inject;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import org.springframework.beans.factory.annotation.Configurable;
+import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
+import it.tidalwave.bluemarine2.ui.video.VideoExplorerPresentation;
 
 /***********************************************************************************************************************
  *
@@ -36,9 +41,24 @@ import javax.annotation.Nonnull;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface FlowController 
+@Configurable
+public class JavaFxVideoExplorerPresentationDelegate implements VideoExplorerPresentation
   {
-    public void showPresentation (@Nonnull Object presentation);
+    @FXML
+    private Button btBack;
     
-    public void dismissCurrentPresentation();
+    @Inject
+    private FlowController flowController;
+    
+    @FXML
+    private void initialize()
+      {
+        // FIXME: temporary - should go call back the controller instead
+        btBack.setOnAction(event -> { flowController.dismissCurrentPresentation(); });
+      }
+
+    @Override
+    public void showUp() 
+      {
+      }
   }

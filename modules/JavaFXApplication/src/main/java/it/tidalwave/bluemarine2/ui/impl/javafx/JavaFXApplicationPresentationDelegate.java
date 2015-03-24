@@ -30,11 +30,12 @@ package it.tidalwave.bluemarine2.ui.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.scene.layout.StackPane;
 import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
-import javafx.scene.layout.GridPane;
+import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
+import it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -47,10 +48,13 @@ import lombok.extern.slf4j.Slf4j;
 public class JavaFXApplicationPresentationDelegate
   {
     @Inject @Nonnull
-    private MainScreenPresentationControl mainScreenPresentationControl;
-
+    private JavaFxFlowController flowController;
+    
+    @Inject @Nonnull
+    private MessageBus messageBus;
+    
     @FXML
-    private GridPane gpMainMenuBar;
+    private StackPane spContent;
 
     /*******************************************************************************************************************
      *
@@ -58,15 +62,9 @@ public class JavaFXApplicationPresentationDelegate
      ******************************************************************************************************************/
     @FXML
     public void initialize()
-      throws IOException
       {
         log.info("initialize()");
-        
-        final MainMenuBarController mainMenuBarController = new MainMenuBarController(gpMainMenuBar);
-        mainMenuBarController.populate();
-        // FIXME: controllers can't initialize in postconstruct
-        // Too bad because with PAC+EventBus we'd get rid of the control interfaces
-        mainScreenPresentationControl.initialize();
-//        javaFxCustomerExplorerPresentation.bind(lvCustomerExplorer);
+        flowController.setContentPane(spContent);
+        messageBus.publish(new PowerOnNotification());
       }    
   }

@@ -31,6 +31,9 @@ package it.tidalwave.bluemarine2.ui.stillimage.impl.javafx;
 import javax.inject.Inject;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.stillimage.StillImageExplorerPresentation;
+import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
+import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
 
 /***********************************************************************************************************************
  *
@@ -38,11 +41,18 @@ import it.tidalwave.bluemarine2.ui.stillimage.StillImageExplorerPresentation;
  * @version $Id$
  *
  **********************************************************************************************************************/
+@Slf4j
 public class JavaFxStillImageExplorerPresentation implements StillImageExplorerPresentation
   {
+    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/StillImageExplorer.fxml";
+    
     @Inject
     private FlowController flowController;
     
+    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
+    
+    private final StillImageExplorerPresentation delegate = nad.getDelegate();
+            
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
@@ -51,6 +61,7 @@ public class JavaFxStillImageExplorerPresentation implements StillImageExplorerP
     @Override
     public void showUp()  
       {
-        flowController.showPresentation(this);
+        delegate.showUp();
+        flowController.showPresentation(nad.getNode());
       }
   }

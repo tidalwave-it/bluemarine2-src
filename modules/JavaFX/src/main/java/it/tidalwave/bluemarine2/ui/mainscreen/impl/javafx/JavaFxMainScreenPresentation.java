@@ -26,20 +26,16 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.mainscreen.impl;
+package it.tidalwave.bluemarine2.ui.mainscreen.impl.javafx;
 
-import javax.inject.Inject;
 import javax.annotation.Nonnull;
-import javax.annotation.PostConstruct;
-import javafx.application.Platform;
+import javax.inject.Inject;
 import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.spi.UserActionSupport;
-import it.tidalwave.messagebus.annotation.ListensTo;
-import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
+import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
-import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
 
 /***********************************************************************************************************************
  *
@@ -47,30 +43,38 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@SimpleMessageSubscriber @Slf4j
-public class DefaultMainScreenPresentationControl implements MainScreenPresentationControl
+@Slf4j
+public class JavaFxMainScreenPresentation implements MainScreenPresentation
   {
-    @Inject
-    private MainScreenPresentation presentation;
+    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/MainScreen.fxml";
     
-    private final UserAction powerOffAction = new UserActionSupport() 
-      {
-        @Override
-        public void actionPerformed() 
-          {
-            // TODO: fire a PowerOff event and wait for collaboration completion
-            Platform.exit();
-          }
-      };
+    @Inject
+    private FlowController flowController;
+    
+    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
+    
+    private final MainScreenPresentation delegate = nad.getDelegate();
             
-    @PostConstruct
-    /* @VisibleForTesting */ void initialize() 
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void bind (final @Nonnull UserAction powerOffAction)
       {
-        presentation.bind(powerOffAction);
+        delegate.bind(powerOffAction); 
       }
     
-    /* @VisibleForTesting */ void onPowerOnNotification (final @Nonnull @ListensTo PowerOnNotification notification)
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void showUp()  
       {
-        presentation.showUp();
+        delegate.showUp();
+        flowController.showPresentation(nad.getNode());
       }
   }

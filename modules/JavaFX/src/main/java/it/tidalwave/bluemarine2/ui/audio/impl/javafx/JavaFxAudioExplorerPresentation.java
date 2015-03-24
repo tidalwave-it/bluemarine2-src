@@ -29,8 +29,11 @@
 package it.tidalwave.bluemarine2.ui.audio.impl.javafx;
 
 import javax.inject.Inject;
+import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
 import it.tidalwave.bluemarine2.ui.audio.AudioExplorerPresentation;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
+import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
 
 /***********************************************************************************************************************
  *
@@ -38,11 +41,18 @@ import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
  * @version $Id$
  *
  **********************************************************************************************************************/
+@Slf4j
 public class JavaFxAudioExplorerPresentation implements AudioExplorerPresentation
   {
+    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/AudioExplorer.fxml";
+    
     @Inject
     private FlowController flowController;
     
+    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
+    
+    private final AudioExplorerPresentation delegate = nad.getDelegate();
+            
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
@@ -51,6 +61,7 @@ public class JavaFxAudioExplorerPresentation implements AudioExplorerPresentatio
     @Override
     public void showUp()  
       {
-        flowController.showPresentation(this);
+        delegate.showUp();
+        flowController.showPresentation(nad.getNode());
       }
   }
