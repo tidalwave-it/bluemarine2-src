@@ -28,7 +28,8 @@
  */
 package it.tidalwave.bluemarine2.ui.mainscreen;
 
-import it.tidalwave.util.As;
+import javax.annotation.Nonnull;
+import it.tidalwave.role.ui.UserAction;
 
 /***********************************************************************************************************************
  *
@@ -38,9 +39,12 @@ import it.tidalwave.util.As;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MainMenuItem extends As
+public interface MainMenuItem
   {
     public static final Class<MainMenuItem> MainMenuItem = MainMenuItem.class;
+    
+    @Nonnull
+    public UserAction getAction();
     
     public int getPriority();
   }

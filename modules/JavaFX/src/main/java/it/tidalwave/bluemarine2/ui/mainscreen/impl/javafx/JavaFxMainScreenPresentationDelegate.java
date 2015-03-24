@@ -38,7 +38,6 @@ import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
 import it.tidalwave.bluemarine2.ui.impl.javafx.MainMenuBarBinder;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 
 /***********************************************************************************************************************
@@ -60,9 +59,9 @@ public class JavaFxMainScreenPresentationDelegate implements MainScreenPresentat
     private JavaFXBinder binder;
     
     @Override
-    public void bind (final @Nonnull Collection<MainMenuItem> mainMenuItems, final @Nonnull UserAction powerOffAction)
+    public void bind (final @Nonnull Collection<UserAction> mainMenuActions, final @Nonnull UserAction powerOffAction)
       {
-        new MainMenuBarBinder(gpMainMenuBar).bind(mainMenuItems);
+        new MainMenuBarBinder(gpMainMenuBar).bind(mainMenuActions);
         binder.bind(btPowerOff, powerOffAction);
       }
 

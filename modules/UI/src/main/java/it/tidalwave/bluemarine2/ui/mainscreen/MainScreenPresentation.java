@@ -44,11 +44,11 @@ public interface MainScreenPresentation
      *
      * Binds the presentation with callbacks.
      * 
-     * @param  mainMenuItems    the main menu items
+     * @param  mainMenuActions  the main menu actions
      * @param  powerOffAction   the action that powers off the system
      *
      ******************************************************************************************************************/
-    public void bind (@Nonnull Collection<MainMenuItem> mainMenuItems, @Nonnull UserAction powerOffAction);
+    public void bind (@Nonnull Collection<UserAction> mainMenuActions, @Nonnull UserAction powerOffAction);
     
     /*******************************************************************************************************************
      *

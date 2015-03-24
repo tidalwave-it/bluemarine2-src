@@ -30,16 +30,11 @@ package it.tidalwave.bluemarine2.ui.mainscreen.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import it.tidalwave.util.spi.AsSupport;
-import it.tidalwave.role.Displayable;
 import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.UserActionProvider;
-import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.role.ui.spi.UserActionSupport;
 import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
-import lombok.Delegate;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -60,32 +55,22 @@ public class DefaultMainMenuItem implements MainMenuItem
     @Nonnull
     private final Class<?> requestClass;
     
-    @Delegate
-    private final AsSupport asSupport;
-    
     @Inject
     private MessageBus messageBus;
     
-    // FIXME: use MessageSendingUserAction
-    private final UserAction userAction;
+    @Getter @Nonnull
+    private final UserAction action;
     
-    private final UserActionProvider userActionProvider = new DefaultUserActionProvider()
-      {
-        @Override
-        public UserAction getDefaultAction()
-          {
-            return userAction;
-          }
-      }; 
     
     public DefaultMainMenuItem (final @Nonnull String displayName, 
                                 final @Nonnull String requestClassName,
-                                final @Nonnull int priority) throws ClassNotFoundException
+                                final @Nonnull int priority)
+      throws ClassNotFoundException
       {
         this.priority = priority;
         this.requestClass = Thread.currentThread().getContextClassLoader().loadClass(requestClassName);
-        asSupport = new AsSupport(this, new Object[] { userActionProvider });
-        this.userAction  = new UserActionSupport(new DefaultDisplayable(displayName)) 
+        // FIXME: use MessageSendingUserAction
+        this.action  = new UserActionSupport(new DefaultDisplayable(displayName)) 
           {
             @Override
             public void actionPerformed() 
