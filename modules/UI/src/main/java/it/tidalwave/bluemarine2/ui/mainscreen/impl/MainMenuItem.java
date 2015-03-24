@@ -30,29 +30,24 @@ package it.tidalwave.bluemarine2.ui.mainscreen.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import it.tidalwave.util.spi.AsSupport;
-import it.tidalwave.role.Displayable;
 import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.UserActionProvider;
-import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.role.ui.spi.UserActionSupport;
 import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
-import lombok.Delegate;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.ui.util.BundleUtilities.*;
 
 /***********************************************************************************************************************
  *
- * A default implementation of {@link MainMenuItem}.
+ * A proritised container of {@link UserAction}s to be placed on a menu.
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @Slf4j
-public class DefaultMainMenuItem implements MainMenuItem
+public class MainMenuItem 
   {
     @Getter @Nonnull
     private final int priority;
@@ -60,47 +55,35 @@ public class DefaultMainMenuItem implements MainMenuItem
     @Nonnull
     private final Class<?> requestClass;
     
-    @Delegate
-    private final AsSupport asSupport;
-    
-    private final Displayable displayable;
-    
     @Inject
     private MessageBus messageBus;
     
-    // FIXME: use MessageSendingUserAction
-    private final UserAction userAction = new UserActionSupport() 
-      {
-        @Override
-        public void actionPerformed() 
-          {
-            try
-              {
-                messageBus.publish(requestClass.newInstance());
-              } 
-            catch (InstantiationException | IllegalAccessException e) 
-              {
-                log.error("", e);
-              }
-          }
-      };
+    @Getter @Nonnull
+    private final UserAction action;
     
-    private final UserActionProvider userActionProvider = new DefaultUserActionProvider()
-      {
-        @Override
-        public UserAction getDefaultAction()
-          {
-            return userAction;
-          }
-      }; 
     
-    public DefaultMainMenuItem (final @Nonnull String displayName, 
-                                final @Nonnull String requestClassName,
-                                final @Nonnull int priority) throws ClassNotFoundException
+    public MainMenuItem (final @Nonnull String displayNameKey, 
+                         final @Nonnull String requestClassName,
+                         final @Nonnull int priority)
+      throws ClassNotFoundException
       {
         this.priority = priority;
         this.requestClass = Thread.currentThread().getContextClassLoader().loadClass(requestClassName);
-        displayable = new DefaultDisplayable(displayName);
-        asSupport = new AsSupport(this, new Object[] { displayable, userActionProvider });
+        // FIXME: use MessageSendingUserAction
+        this.action  = new UserActionSupport(displayableFromBundle(getClass(), displayNameKey)) 
+          {
+            @Override
+            public void actionPerformed() 
+              {
+                try
+                  {
+                    messageBus.publish(requestClass.newInstance());
+                  } 
+                catch (InstantiationException | IllegalAccessException e) 
+                  {
+                    log.error("", e);
+                  }
+              }
+          };
       }
   }

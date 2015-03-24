@@ -26,23 +26,29 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.mainscreen;
+package it.tidalwave.bluemarine2.ui.util;
 
 import javax.annotation.Nonnull;
-import java.util.Collection;
+import java.util.ResourceBundle;
+import it.tidalwave.role.Displayable;
+import it.tidalwave.role.spi.DefaultDisplayable;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /***********************************************************************************************************************
  *
- * Provides registered instances of {@link MainMenuItem}.
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MainMenuItemProvider 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class BundleUtilities 
   {
-    public static final Class<MainMenuItemProvider> MainMenuItemProvider = MainMenuItemProvider.class;
+    public static Displayable displayableFromBundle (final @Nonnull Class<?> ownerClass, final @Nonnull String key)
+      {
+        final String packageName = ownerClass.getPackage().getName();
+        final ResourceBundle bundle = ResourceBundle.getBundle(packageName + ".Bundle");
     
-    @Nonnull
-    public Collection<MainMenuItem> findMainMenuItems();
+        return new DefaultDisplayable(bundle.getString(key));
+      }
   }

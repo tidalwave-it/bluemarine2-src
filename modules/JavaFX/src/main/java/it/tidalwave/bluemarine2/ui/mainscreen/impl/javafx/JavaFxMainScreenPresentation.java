@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.ui.mainscreen.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import java.util.Collection;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
@@ -61,9 +62,9 @@ public class JavaFxMainScreenPresentation implements MainScreenPresentation
      *
      ******************************************************************************************************************/
     @Override
-    public void bind (final @Nonnull UserAction powerOffAction)
+    public void bind (final @Nonnull Collection<UserAction> mainMenuActions, final @Nonnull UserAction powerOffAction)
       {
-        delegate.bind(powerOffAction); 
+        delegate.bind(mainMenuActions, powerOffAction); 
       }
     
     /*******************************************************************************************************************

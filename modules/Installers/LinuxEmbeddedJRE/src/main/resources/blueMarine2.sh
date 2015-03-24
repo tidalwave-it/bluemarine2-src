@@ -8,4 +8,4 @@ for i in lib/*.jar; do
         SEPARATOR=":"
 	done
 
-java -cp "$CLASSPATH" it.tidalwave.bluemarine2.ui.impl.javafx.Main
+java -cp "$CLASSPATH" $* it.tidalwave.bluemarine2.ui.impl.javafx.Main

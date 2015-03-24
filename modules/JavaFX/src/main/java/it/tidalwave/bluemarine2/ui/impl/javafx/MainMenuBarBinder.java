@@ -40,41 +40,38 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
+import javafx.application.Platform;
+import org.springframework.beans.factory.annotation.Configurable;
+import it.tidalwave.role.ui.UserAction;
+import it.tidalwave.role.ui.javafx.JavaFXBinder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItemProvider;
-import it.tidalwave.role.ui.javafx.JavaFXBinder;
-import it.tidalwave.util.NotFoundException;
-import org.springframework.beans.factory.annotation.Configurable;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.role.ui.UserActionProvider.UserActionProvider;
-import javafx.application.Platform;
 
 /***********************************************************************************************************************
  *
+ * FIXME: would it make sense to turn this into a JavaFX custom component (also for sliding, animations)?
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @Configurable @RequiredArgsConstructor @Slf4j
-public class MainMenuBarController 
+public class MainMenuBarBinder 
   {
     @Nonnull
     private final GridPane gpMainMenuBar;
 
-    @Inject //@Nonnull
-    private MainMenuItemProvider mainMenuItemProvider;
-    
     @Inject
     private JavaFXBinder binder;
     
     /*******************************************************************************************************************
      *
-     * Discover the main menu items and properly populate the menu bar.
+     * Populates the menu bar.
+     * 
+     * @param   mainMenuActions   the menu items
      *
      ******************************************************************************************************************/
-    public void populate()
+    public void bind (final @Nonnull Collection<UserAction> mainMenuActions)
       {
         assert Platform.isFxApplicationThread();
         
@@ -84,26 +81,15 @@ public class MainMenuBarController
         columnConstraints.clear();
         children.clear();
         final AtomicInteger columnIndex = new AtomicInteger(0);
-        final Collection<MainMenuItem> mainMenuItems = mainMenuItemProvider.findMainMenuItems();
 
-        mainMenuItems.forEach(menuItem ->
+        mainMenuActions.forEach(menuAction ->
           {
             final ColumnConstraints column = new ColumnConstraints();
-            column.setPercentWidth(100.0 / mainMenuItems.size());
+            column.setPercentWidth(100.0 / mainMenuActions.size());
             columnConstraints.add(column);
-            final Button button = createButton(menuItem.as(Displayable).getDisplayName());
+            final Button button = createButton();
             GridPane.setConstraints(button, columnIndex.getAndIncrement(), 0); 
-
-            try 
-              {
-                binder.bind(button, menuItem.as(UserActionProvider).getDefaultAction());
-              } 
-            catch (NotFoundException e)   
-              {
-                log.warn("Can't bind UserAction: {}", e.toString());
-                // no action
-              }
-
+            binder.bind(button, menuAction);
             children.add(button);
           });
       }
@@ -117,9 +103,9 @@ public class MainMenuBarController
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Button createButton (final @Nonnull String text)
+    private Button createButton()
       {
-        final Button button = new Button(text);
+        final Button button = new Button();
         GridPane.setHgrow(button, Priority.ALWAYS);
         GridPane.setVgrow(button, Priority.ALWAYS);
         GridPane.setHalignment(button, HPos.CENTER);

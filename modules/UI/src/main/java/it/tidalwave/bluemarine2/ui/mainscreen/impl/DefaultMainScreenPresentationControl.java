@@ -31,15 +31,20 @@ package it.tidalwave.bluemarine2.ui.mainscreen.impl;
 import javax.inject.Inject;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
+import java.util.Collection;
 import javafx.application.Platform;
+import org.springframework.beans.factory.ListableBeanFactory;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.UserActionSupport;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
-import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.Comparator.comparing;
+import static java.util.stream.Collectors.*;
+import static it.tidalwave.bluemarine2.ui.util.BundleUtilities.*;
 
 /***********************************************************************************************************************
  *
@@ -52,23 +57,32 @@ public class DefaultMainScreenPresentationControl implements MainScreenPresentat
   {
     @Inject
     private MainScreenPresentation presentation;
-    
-    private final UserAction powerOffAction = new UserActionSupport() 
+
+    @Inject
+    private ListableBeanFactory beanFactory;
+
+    private final UserAction powerOffAction = new UserActionSupport(displayableFromBundle(getClass(), "powerOff"))
       {
         @Override
-        public void actionPerformed() 
+        public void actionPerformed()
           {
             // TODO: fire a PowerOff event and wait for collaboration completion
             Platform.exit();
           }
       };
-            
+
     @PostConstruct
-    /* @VisibleForTesting */ void initialize() 
+    /* @VisibleForTesting */ void initialize()
       {
-        presentation.bind(powerOffAction);
+        final Collection<UserAction> mainMenuActions =  beanFactory.getBeansOfType(MainMenuItem.class)
+                                                                   .values()
+                                                                   .stream()
+                                                                   .sorted(comparing(MainMenuItem::getPriority))
+                                                                   .map(menuItem -> menuItem.getAction())
+                                                                   .collect(toList());
+        presentation.bind(mainMenuActions, powerOffAction);
       }
-    
+
     /* @VisibleForTesting */ void onPowerOnNotification (final @Nonnull @ListensTo PowerOnNotification notification)
       {
         presentation.showUp();

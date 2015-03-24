@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.ui.mainscreen;
 
 import javax.annotation.Nonnull;
+import java.util.Collection;
 import it.tidalwave.role.ui.UserAction;
 
 /***********************************************************************************************************************
@@ -41,10 +42,13 @@ public interface MainScreenPresentation
   {
     /*******************************************************************************************************************
      *
+     * Binds the presentation with callbacks.
      * 
+     * @param  mainMenuActions  the main menu actions
+     * @param  powerOffAction   the action that powers off the system
      *
      ******************************************************************************************************************/
-    public void bind (@Nonnull UserAction powerOffAction);
+    public void bind (@Nonnull Collection<UserAction> mainMenuActions, @Nonnull UserAction powerOffAction);
     
     /*******************************************************************************************************************
      *
