@@ -26,51 +26,16 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.mainscreen.impl;
-
-import javax.inject.Inject;
-import javax.annotation.Nonnull;
-import javax.annotation.PostConstruct;
-import javafx.application.Platform;
-import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.spi.UserActionSupport;
-import it.tidalwave.messagebus.annotation.ListensTo;
-import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
-import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
-import lombok.extern.slf4j.Slf4j;
+package it.tidalwave.bluemarine2.ui.commons;
 
 /***********************************************************************************************************************
  *
+ * A message tat notifies that the system has been just powered on.
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@SimpleMessageSubscriber @Slf4j
-public class DefaultMainScreenPresentationControl implements MainScreenPresentationControl
+public class PowerOnNotification 
   {
-    @Inject
-    private MainScreenPresentation presentation;
-    
-    private final UserAction powerOffAction = new UserActionSupport() 
-      {
-        @Override
-        public void actionPerformed() 
-          {
-            // TODO: fire a PowerOff event and wait for collaboration completion
-            Platform.exit();
-          }
-      };
-            
-    @PostConstruct
-    /* @VisibleForTesting */ void initialize() 
-      {
-        presentation.bind(powerOffAction);
-      }
-    
-    /* @VisibleForTesting */ void onPowerOnNotification (final @Nonnull @ListensTo PowerOnNotification notification)
-      {
-        presentation.showUp();
-      }
   }

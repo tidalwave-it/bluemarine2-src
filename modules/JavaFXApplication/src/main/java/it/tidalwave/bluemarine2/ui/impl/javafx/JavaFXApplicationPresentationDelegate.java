@@ -30,12 +30,12 @@ package it.tidalwave.bluemarine2.ui.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.layout.StackPane;
 import org.springframework.beans.factory.annotation.Configurable;
+import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -51,7 +51,7 @@ public class JavaFXApplicationPresentationDelegate
     private JavaFxFlowController flowController;
     
     @Inject @Nonnull
-    private MainScreenPresentationControl mainScreenPresentationControl;
+    private MessageBus messageBus;
     
     @FXML
     private StackPane spContent;
@@ -62,16 +62,9 @@ public class JavaFXApplicationPresentationDelegate
      ******************************************************************************************************************/
     @FXML
     public void initialize()
-      throws IOException
       {
         log.info("initialize()");
-        
         flowController.setContentPane(spContent);
-        
-        // FIXME: controllers can't initialize in postconstruct
-        // Too bad because with PAC+EventBus we'd get rid of the control interfaces
-        // FIXME: should really send a message instead
-        mainScreenPresentationControl.initialize();
-//        javaFxCustomerExplorerPresentation.bind(lvCustomerExplorer);
+        messageBus.publish(new PowerOnNotification());
       }    
   }
