@@ -43,6 +43,12 @@ import it.tidalwave.ui.javafx.JavaFXSpringApplication;
  **********************************************************************************************************************/
 public class Main extends JavaFXSpringApplication
   {
+    public Main() 
+      {
+        setFullScreen(true);
+        setFullScreenLocked(true);
+      }
+    
     public static void main (final @Nonnull String ... args)
       {
         try
