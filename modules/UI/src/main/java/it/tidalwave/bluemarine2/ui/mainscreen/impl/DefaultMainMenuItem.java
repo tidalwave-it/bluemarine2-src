@@ -63,27 +63,11 @@ public class DefaultMainMenuItem implements MainMenuItem
     @Delegate
     private final AsSupport asSupport;
     
-    private final Displayable displayable;
-    
     @Inject
     private MessageBus messageBus;
     
     // FIXME: use MessageSendingUserAction
-    private final UserAction userAction = new UserActionSupport() 
-      {
-        @Override
-        public void actionPerformed() 
-          {
-            try
-              {
-                messageBus.publish(requestClass.newInstance());
-              } 
-            catch (InstantiationException | IllegalAccessException e) 
-              {
-                log.error("", e);
-              }
-          }
-      };
+    private final UserAction userAction;
     
     private final UserActionProvider userActionProvider = new DefaultUserActionProvider()
       {
@@ -100,7 +84,21 @@ public class DefaultMainMenuItem implements MainMenuItem
       {
         this.priority = priority;
         this.requestClass = Thread.currentThread().getContextClassLoader().loadClass(requestClassName);
-        displayable = new DefaultDisplayable(displayName);
-        asSupport = new AsSupport(this, new Object[] { displayable, userActionProvider });
+        asSupport = new AsSupport(this, new Object[] { userActionProvider });
+        this.userAction  = new UserActionSupport(new DefaultDisplayable(displayName)) 
+          {
+            @Override
+            public void actionPerformed() 
+              {
+                try
+                  {
+                    messageBus.publish(requestClass.newInstance());
+                  } 
+                catch (InstantiationException | IllegalAccessException e) 
+                  {
+                    log.error("", e);
+                  }
+              }
+          };
       }
   }

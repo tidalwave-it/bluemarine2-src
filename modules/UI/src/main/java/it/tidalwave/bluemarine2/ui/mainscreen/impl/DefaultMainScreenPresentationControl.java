@@ -39,6 +39,7 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
 import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
+import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItemProvider;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -53,6 +54,9 @@ public class DefaultMainScreenPresentationControl implements MainScreenPresentat
     @Inject
     private MainScreenPresentation presentation;
     
+    @Inject //@Nonnull
+    private MainMenuItemProvider mainMenuItemProvider;
+    
     private final UserAction powerOffAction = new UserActionSupport() 
       {
         @Override
@@ -66,7 +70,7 @@ public class DefaultMainScreenPresentationControl implements MainScreenPresentat
     @PostConstruct
     /* @VisibleForTesting */ void initialize() 
       {
-        presentation.bind(powerOffAction);
+        presentation.bind(mainMenuItemProvider.findMainMenuItems(), powerOffAction);
       }
     
     /* @VisibleForTesting */ void onPowerOnNotification (final @Nonnull @ListensTo PowerOnNotification notification)

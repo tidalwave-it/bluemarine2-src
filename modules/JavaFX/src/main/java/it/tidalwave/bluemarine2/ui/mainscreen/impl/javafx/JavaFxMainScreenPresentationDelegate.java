@@ -30,13 +30,15 @@ package it.tidalwave.bluemarine2.ui.mainscreen.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import java.util.Collection;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
-import it.tidalwave.bluemarine2.ui.impl.javafx.MainMenuBarController;
+import it.tidalwave.bluemarine2.ui.impl.javafx.MainMenuBarBinder;
+import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItem;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 
 /***********************************************************************************************************************
@@ -58,15 +60,14 @@ public class JavaFxMainScreenPresentationDelegate implements MainScreenPresentat
     private JavaFXBinder binder;
     
     @Override
-    public void bind (final @Nonnull UserAction powerOffAction) 
+    public void bind (final @Nonnull Collection<MainMenuItem> mainMenuItems, final @Nonnull UserAction powerOffAction)
       {
+        new MainMenuBarBinder(gpMainMenuBar).bind(mainMenuItems);
         binder.bind(btPowerOff, powerOffAction);
       }
 
     @Override
     public void showUp()
       {
-        final MainMenuBarController mainMenuBarController = new MainMenuBarController(gpMainMenuBar);
-        mainMenuBarController.populate();
       }
   }
