@@ -22,7 +22,7 @@
             <children>
                 <HBox alignment="CENTER" GridPane.rowIndex="1">
                     <children>
-                        <Button fx:id="btBack" alignment="CENTER" mnemonicParsing="false" text="Back" GridPane.rowIndex="1" />
+                        <Button fx:id="btBack" alignment="CENTER" mnemonicParsing="false" styleClass="smallButton" text="Back" GridPane.rowIndex="1" />
                     </children>
                 </HBox>
                 <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="802.0" text="Still Image Explorer" textAlignment="CENTER" textFill="WHITE">

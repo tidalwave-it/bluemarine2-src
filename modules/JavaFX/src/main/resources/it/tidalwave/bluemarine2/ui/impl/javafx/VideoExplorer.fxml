@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="apVideoExplorer" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="it.tidalwave.bluemarine2.ui.video.impl.javafx.JavaFxVideoExplorerPresentationDelegate">
+<AnchorPane id="apVideoExplorer" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.tidalwave.bluemarine2.ui.video.impl.javafx.JavaFxVideoExplorerPresentationDelegate">
     <stylesheets>
         <URL value="@Application.css" />
     </stylesheets>
@@ -22,7 +22,7 @@
             <children>
                 <HBox alignment="CENTER" GridPane.rowIndex="1">
                     <children>
-                        <Button fx:id="btBack" alignment="CENTER" mnemonicParsing="false" text="Back" GridPane.rowIndex="1" />
+                        <Button fx:id="btBack" alignment="CENTER" mnemonicParsing="false" styleClass="smallButton" text="Back" GridPane.rowIndex="1" />
                     </children>
                 </HBox>
                 <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="802.0" text="Video Explorer" textAlignment="CENTER" textFill="WHITE">
