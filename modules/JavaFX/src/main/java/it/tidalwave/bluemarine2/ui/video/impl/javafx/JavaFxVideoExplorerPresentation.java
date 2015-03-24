@@ -29,8 +29,11 @@
 package it.tidalwave.bluemarine2.ui.video.impl.javafx;
 
 import javax.inject.Inject;
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.video.VideoExplorerPresentation;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -38,6 +41,7 @@ import it.tidalwave.bluemarine2.ui.video.VideoExplorerPresentation;
  * @version $Id$
  *
  **********************************************************************************************************************/
+@Slf4j
 public class JavaFxVideoExplorerPresentation implements VideoExplorerPresentation
   {
     @Inject
@@ -51,6 +55,14 @@ public class JavaFxVideoExplorerPresentation implements VideoExplorerPresentatio
     @Override
     public void showUp()  
       {
-        flowController.showPresentation(this);
+        try
+          {
+            final String url = "/it/tidalwave/bluemarine2/ui/impl/javafx/VideoExplorer.fxml";
+            flowController.showPresentation(FXMLLoader.load(getClass().getResource(url)));
+          } 
+        catch (IOException e) 
+          {
+            log.error("", e);   
+          }
       }
   }

@@ -26,7 +26,14 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.mainscreen;
+package it.tidalwave.bluemarine2.ui.mainscreen.impl.javafx;
+
+import javax.inject.Inject;
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
+import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
+import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -34,12 +41,28 @@ package it.tidalwave.bluemarine2.ui.mainscreen;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MainScreenPresentation 
+@Slf4j
+public class JavaFxMainScreenPresentation implements MainScreenPresentation
   {
+    @Inject
+    private FlowController flowController;
+    
     /*******************************************************************************************************************
      *
-     * Shows this presentation on the screen.
+     * {@inheritDoc}
      *
      ******************************************************************************************************************/
-    public void showUp();
+    @Override
+    public void showUp()  
+      {
+        try
+          {
+            final String url = "/it/tidalwave/bluemarine2/ui/impl/javafx/MainScreen.fxml";
+            flowController.showPresentation(FXMLLoader.load(getClass().getResource(url)));
+          } 
+        catch (IOException e) 
+          {
+            log.error("", e);   
+          }
+      }
   }

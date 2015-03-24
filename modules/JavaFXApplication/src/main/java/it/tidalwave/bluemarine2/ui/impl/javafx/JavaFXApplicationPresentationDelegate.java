@@ -32,9 +32,10 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.scene.layout.Pane;
 import org.springframework.beans.factory.annotation.Configurable;
+import it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
-import javafx.scene.layout.GridPane;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -47,10 +48,13 @@ import lombok.extern.slf4j.Slf4j;
 public class JavaFXApplicationPresentationDelegate
   {
     @Inject @Nonnull
+    private JavaFxFlowController flowController;
+    
+    @Inject @Nonnull
     private MainScreenPresentationControl mainScreenPresentationControl;
-
+    
     @FXML
-    private GridPane gpMainMenuBar;
+    private Pane pnContent;
 
     /*******************************************************************************************************************
      *
@@ -62,10 +66,11 @@ public class JavaFXApplicationPresentationDelegate
       {
         log.info("initialize()");
         
-        final MainMenuBarController mainMenuBarController = new MainMenuBarController(gpMainMenuBar);
-        mainMenuBarController.populate();
+        flowController.setContentPane(pnContent);
+        
         // FIXME: controllers can't initialize in postconstruct
         // Too bad because with PAC+EventBus we'd get rid of the control interfaces
+        // FIXME: should really send a message instead
         mainScreenPresentationControl.initialize();
 //        javaFxCustomerExplorerPresentation.bind(lvCustomerExplorer);
       }    

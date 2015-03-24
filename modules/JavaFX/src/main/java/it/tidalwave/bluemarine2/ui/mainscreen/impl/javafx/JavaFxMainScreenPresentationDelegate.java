@@ -26,7 +26,11 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.mainscreen;
+package it.tidalwave.bluemarine2.ui.mainscreen.impl.javafx;
+
+import javafx.fxml.FXML;
+import javafx.scene.layout.GridPane;
+import it.tidalwave.bluemarine2.ui.impl.javafx.MainMenuBarController;
 
 /***********************************************************************************************************************
  *
@@ -34,12 +38,15 @@ package it.tidalwave.bluemarine2.ui.mainscreen;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MainScreenPresentation 
+public class JavaFxMainScreenPresentationDelegate 
   {
-    /*******************************************************************************************************************
-     *
-     * Shows this presentation on the screen.
-     *
-     ******************************************************************************************************************/
-    public void showUp();
+    @FXML
+    private GridPane gpMainMenuBar;
+
+    @FXML
+    private void initialize()
+      {
+        final MainMenuBarController mainMenuBarController = new MainMenuBarController(gpMainMenuBar);
+        mainMenuBarController.populate();
+      }
   }

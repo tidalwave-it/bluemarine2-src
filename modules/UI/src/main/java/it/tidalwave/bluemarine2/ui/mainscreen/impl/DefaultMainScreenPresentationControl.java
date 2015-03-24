@@ -28,6 +28,8 @@
  */
 package it.tidalwave.bluemarine2.ui.mainscreen.impl;
 
+import javax.inject.Inject;
+import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
 
 /***********************************************************************************************************************
@@ -38,8 +40,12 @@ import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
  **********************************************************************************************************************/
 public class DefaultMainScreenPresentationControl implements MainScreenPresentationControl
   {
+    @Inject
+    private MainScreenPresentation presentation;
+            
     @Override
     public void initialize() 
       {
+        presentation.showUp();
       }
   }

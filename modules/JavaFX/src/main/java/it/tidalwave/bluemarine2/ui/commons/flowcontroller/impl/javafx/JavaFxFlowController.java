@@ -26,7 +26,15 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.mainscreen;
+package it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx;
+
+import javax.annotation.Nonnull;
+import javafx.scene.Node;
+import javafx.scene.layout.Pane;
+import javafx.application.Platform;
+import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -34,12 +42,27 @@ package it.tidalwave.bluemarine2.ui.mainscreen;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MainScreenPresentation 
+@Slf4j
+public class JavaFxFlowController implements FlowController
   {
-    /*******************************************************************************************************************
-     *
-     * Shows this presentation on the screen.
-     *
-     ******************************************************************************************************************/
-    public void showUp();
+    @Setter
+    private Pane contentPane;
+    
+    @Override
+    public void showPresentation (final @Nonnull Object presentation)
+      {
+        log.info("showPresentation({})", presentation);
+
+        // TODO: use an aspect - should be already done in some other project
+        // FIXME: should not be needed, presentations should already run in JavaFX thread
+        Platform.runLater(() ->
+          {
+            contentPane.getChildren().clear();
+
+            if (presentation instanceof Node) // FIXME
+              {
+                contentPane.getChildren().add((Node)presentation);
+              }
+          });
+      }
   }

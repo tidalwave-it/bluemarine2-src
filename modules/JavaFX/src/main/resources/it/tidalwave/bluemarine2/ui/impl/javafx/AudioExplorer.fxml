@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="apAudioExplorer" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="it.tidalwave.bluemarine2.ui.audio.impl.javafx.JavaFxAudioExplorerPresentationDelegate">
+    <stylesheets>
+        <URL value="@Application.css" />
+    </stylesheets>
+    <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="182.353271484375" layoutY="234.0" text="Audio Explorer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <font>
+                <Font size="57.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
