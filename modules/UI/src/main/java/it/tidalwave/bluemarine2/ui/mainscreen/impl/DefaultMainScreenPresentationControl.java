@@ -33,6 +33,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import java.util.Collection;
 import javafx.application.Platform;
+import org.springframework.beans.factory.ListableBeanFactory;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.UserActionSupport;
 import it.tidalwave.messagebus.annotation.ListensTo;
@@ -40,8 +41,8 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainMenuItemProvider;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
 
 /***********************************************************************************************************************
@@ -56,8 +57,8 @@ public class DefaultMainScreenPresentationControl implements MainScreenPresentat
     @Inject
     private MainScreenPresentation presentation;
     
-    @Inject //@Nonnull
-    private MainMenuItemProvider mainMenuItemProvider;
+    @Inject
+    private ListableBeanFactory beanFactory;
     
     private final UserAction powerOffAction = new UserActionSupport() 
       {
@@ -72,10 +73,12 @@ public class DefaultMainScreenPresentationControl implements MainScreenPresentat
     @PostConstruct
     /* @VisibleForTesting */ void initialize() 
       {
-        final Collection<UserAction> mainMenuActions = mainMenuItemProvider.findMainMenuItems()
-                                                                           .stream()
-                                                                           .map(menuItem -> menuItem.getAction())
-                                                                           .collect(toList());
+        final Collection<UserAction> mainMenuActions =  beanFactory.getBeansOfType(MainMenuItem.class)
+                                                                   .values()
+                                                                   .stream()
+                                                                   .sorted(comparing(MainMenuItem::getPriority))
+                                                                   .map(menuItem -> menuItem.getAction())
+                                                                   .collect(toList());
         presentation.bind(mainMenuActions, powerOffAction);
       }
     

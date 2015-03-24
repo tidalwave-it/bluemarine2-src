@@ -26,25 +26,63 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.mainscreen;
+package it.tidalwave.bluemarine2.ui.mainscreen.impl;
 
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
 import it.tidalwave.role.ui.UserAction;
+import it.tidalwave.role.ui.spi.UserActionSupport;
+import it.tidalwave.role.spi.DefaultDisplayable;
+import it.tidalwave.messagebus.MessageBus;
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
- * Represents an item in the main menu bar.
+ * A proritised container of {@link UserAction}s to be placed on a menu.
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MainMenuItem
+@Slf4j
+public class MainMenuItem 
   {
-    public static final Class<MainMenuItem> MainMenuItem = MainMenuItem.class;
+    @Getter @Nonnull
+    private final int priority;
     
     @Nonnull
-    public UserAction getAction();
+    private final Class<?> requestClass;
     
-    public int getPriority();
+    @Inject
+    private MessageBus messageBus;
+    
+    @Getter @Nonnull
+    private final UserAction action;
+    
+    
+    public MainMenuItem (final @Nonnull String displayName, 
+                                final @Nonnull String requestClassName,
+                                final @Nonnull int priority)
+      throws ClassNotFoundException
+      {
+        this.priority = priority;
+        this.requestClass = Thread.currentThread().getContextClassLoader().loadClass(requestClassName);
+        // FIXME: use MessageSendingUserAction
+        this.action  = new UserActionSupport(new DefaultDisplayable(displayName)) 
+          {
+            @Override
+            public void actionPerformed() 
+              {
+                try
+                  {
+                    messageBus.publish(requestClass.newInstance());
+                  } 
+                catch (InstantiationException | IllegalAccessException e) 
+                  {
+                    log.error("", e);
+                  }
+              }
+          };
+      }
   }
