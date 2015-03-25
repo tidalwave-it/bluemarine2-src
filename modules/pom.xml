@@ -31,8 +31,8 @@
         <logback.version>1.0.13</logback.version>
         <slf4j.version>1.7.5</slf4j.version>
         <spring.version>4.0.2.RELEASE</spring.version>
-        <steelblue.version>1.0-ALPHA-1-SNAPSHOT</steelblue.version>
-        <thesefoolishthings.version>1.37-SNAPSHOT</thesefoolishthings.version>
+        <steelblue.version>1.0-ALPHA-1</steelblue.version>
+        <thesefoolishthings.version>1.37</thesefoolishthings.version>
         <uuid.version>2.1.5-201007271250</uuid.version>
         
         <tft.javafx.vmargs>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.javafx.vmargs> <!-- FIXME: DRY -->
@@ -44,6 +44,8 @@
                 <tft.UmlGraphDoc.version>5.4</tft.UmlGraphDoc.version>
                 <tft.UmlGraphDoc.additionalParam>-views -attributes -operations -types -postfixpackage -nodefontpackagesize 6 -nodefontclasssize 8 -nodefontsize 7 -edgefontsize 7 -nodesep 0.05 -ranksep 0.1 -visibility -inferdep -inferrel -inferdepinpackage -hide java.*|javax.*|android.*</tft.UmlGraphDoc.additionalParam>
         -->
+
+       <tft.javadoc.doclint>-Xdoclint:none</tft.javadoc.doclint>
     </properties>
 
     <dependencyManagement>
