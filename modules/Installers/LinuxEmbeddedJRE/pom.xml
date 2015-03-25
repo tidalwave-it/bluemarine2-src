@@ -48,7 +48,7 @@
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-linux-embedded-jre</artifactId>
     <version>1.0-ALPHA-1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
     <name>blueMarine2 - Installer, Linux with embedded JRE</name>
     <description>This module creates a Linux application bundle with an embedded JRE.</description>
     
@@ -76,7 +76,7 @@
                             <goal>copy-dependencies</goal>
                         </goals>
                         <configuration>
-                            <scope>runtime</scope>
+                            <scope>runtime</scope> <!-- FIXME: it also includes testng and junit -->
                             <overWrite>true</overWrite>
                             <outputDirectory>${basedir}/target/classes/lib</outputDirectory>
                         </configuration>
@@ -90,6 +90,7 @@
                     <descriptors>
                         <descriptor>${basedir}/src/main/assembly/zip.xml</descriptor>
                     </descriptors>
+                    <runOnlyAtExecutionRoot>false</runOnlyAtExecutionRoot>
                 </configuration>
                 <executions>
                     <execution>
