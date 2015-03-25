@@ -28,6 +28,8 @@
  */
 package it.tidalwave.bluemarine2.ui.commons;
 
+import lombok.ToString;
+
 /***********************************************************************************************************************
  *
  * A message that notifies that the system has been just powered on.
@@ -36,6 +38,7 @@ package it.tidalwave.bluemarine2.ui.commons;
  * @version $Id$
  *
  **********************************************************************************************************************/
+@ToString
 public class PowerOnNotification 
   {
   }
