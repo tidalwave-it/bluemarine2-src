@@ -56,7 +56,6 @@
         <tft.embedded-jdk-name>jdk1.8.0_33</tft.embedded-jdk-name>
         <tft.embedded-jdk-version>1.8.0_33-1</tft.embedded-jdk-version>
         <tft.embedded-jdk-classifier>linux-armv6</tft.embedded-jdk-classifier>
-        <tft.javafx.vmargs>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.javafx.vmargs> <!-- FIXME: DRY -->
     </properties>
 
     <dependencies>
