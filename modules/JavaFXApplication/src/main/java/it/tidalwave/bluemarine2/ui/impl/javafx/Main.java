@@ -45,6 +45,10 @@ public class Main extends JavaFXSpringApplication
   {
     public Main() 
       {
+//        setMaximized(true);
+        // FIXME: fullscreen with the JDK 1.8 installed in Raspbian breaks keyboard navigation
+        // See http://stackoverflow.com/questions/26296805/
+        // So we go maximized instead
         setFullScreen(true);
         setFullScreenLocked(true);
       }
