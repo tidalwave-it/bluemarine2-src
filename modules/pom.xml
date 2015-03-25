@@ -35,6 +35,7 @@
         <thesefoolishthings.version>1.37-SNAPSHOT</thesefoolishthings.version>
         <uuid.version>2.1.5-201007271250</uuid.version>
         
+        <tft.javafx.vmargs>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.javafx.vmargs> <!-- FIXME: DRY -->
 <!--
         <tft.mockito.version>1.8.5</tft.mockito.version>
         <tft.test.maxMemory>1024M</tft.test.maxMemory>
@@ -169,7 +170,8 @@
         <module>UI</module>
         <module>JavaFX</module>
         <module>JavaFXApplication</module>
-        <module>Installers/LinuxEmbeddedJRE</module>
+        <module>Installers/Linux</module>
+        <module>Installers/LinuxArmV6EmbeddedJRE</module>
         <module>Installers/MacOSXEmbeddedJRE</module>
     </modules>
 

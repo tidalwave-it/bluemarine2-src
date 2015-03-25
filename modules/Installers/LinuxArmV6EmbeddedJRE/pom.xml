@@ -46,14 +46,16 @@
     ================================================================================================================ -->
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>bluemarine2-linux-embedded-jre</artifactId>
+    <artifactId>bluemarine2-linux-armv6-embedded-jre</artifactId>
     <version>1.0-ALPHA-1-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>blueMarine2 - Installer, Linux with embedded JRE</name>
-    <description>This module creates a Linux application bundle with an embedded JRE.</description>
+    <packaging>jar</packaging>
+    <name>blueMarine2 - Installer, Linux ARM v6 with embedded JRE</name>
+    <description>This module creates a Linux ARM v6 application bundle with an embedded JRE.</description>
     
     <properties>
-        <tft.javafx.vmargs>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.javafx.vmargs> <!-- FIXME: DRY -->
+        <tft.embedded-jdk-name>jdk1.8.0_33</tft.embedded-jdk-name>
+        <tft.embedded-jdk-version>1.8.0_33-1</tft.embedded-jdk-version>
+        <tft.embedded-jdk-classifier>linux-armv6</tft.embedded-jdk-classifier>
     </properties>
 
     <dependencies>
@@ -62,13 +64,33 @@
             <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>    
         </dependency>
     </dependencies>
-    
+   
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
+                    <execution>
+                        <id>unpack-embedded-jdk</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>${tft.embedded-jdk-groupId}</groupId>
+                                    <artifactId>${tft.embedded-jdk-artifactId}</artifactId>
+                                    <version>${tft.embedded-jdk-version}</version>
+                                    <type>tgz</type>
+                                    <classifier>${tft.embedded-jdk-classifier}</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.basedir}/target/jre/${tft.embedded-jdk-name}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
                     <execution>
                         <id>copy-dependencies</id>
                         <phase>package</phase>
