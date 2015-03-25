@@ -170,6 +170,7 @@
         <module>JavaFX</module>
         <module>JavaFXApplication</module>
         <module>Installers/LinuxEmbeddedJRE</module>
+        <module>Installers/LinuxArmV6EmbeddedJRE</module>
         <module>Installers/MacOSXEmbeddedJRE</module>
     </modules>
 
