@@ -25,7 +25,7 @@
         <tidalwave.ci.view>blueMarine2</tidalwave.ci.view>
         <tidalwave.issues>BMT</tidalwave.issues>
 
-        <tft.maven.requiredJdk>[1.8.0-0,1.8.0-99)</tft.maven.requiredJdk>
+        <tft.maven.requiredJdk>[1.8.0-40,1.8.0-99)</tft.maven.requiredJdk>
         <tft.javac.source>1.8</tft.javac.source>
         <tft.javac.target>1.8</tft.javac.target>
 
@@ -34,7 +34,7 @@
         <tft.embedded-jdk-name>jdk1.8.0</tft.embedded-jdk-name>
         <tft.embedded-jdk-version>1.8.0-1</tft.embedded-jdk-version>
 
-        <netbeans.hint.jdkPlatform>JDK_1.8.0</netbeans.hint.jdkPlatform>
+        <netbeans.hint.jdkPlatform>JDK_1.8.0_40</netbeans.hint.jdkPlatform>
         <netbeans.hint.license>Tidalwave-ASF</netbeans.hint.license>
         <netbeans.compile.on.save>none</netbeans.compile.on.save>
 

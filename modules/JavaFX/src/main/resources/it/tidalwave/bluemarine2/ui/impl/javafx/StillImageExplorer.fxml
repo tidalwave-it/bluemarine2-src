@@ -25,11 +25,15 @@
                         <Button fx:id="btBack" alignment="CENTER" mnemonicParsing="false" styleClass="smallButton" text="Back" GridPane.rowIndex="1" />
                     </children>
                 </HBox>
+<HBox alignment="CENTER">
+<children>
                 <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="802.0" text="Still Image Explorer" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font size="50.0" />
                     </font>
                 </Label>
+</children>
+</HBox>
             </children>
         </GridPane>
     </children>
