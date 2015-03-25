@@ -15,6 +15,11 @@
     -fx-background-radius:  10px;
   }
   
+.button:focused
+  {
+    -fx-border-color:       rgb(130,130,130);
+  }
+
 .smallButton
   {
     -fx-font-size:          14;
