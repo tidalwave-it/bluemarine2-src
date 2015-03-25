@@ -44,6 +44,8 @@
                 <tft.UmlGraphDoc.version>5.4</tft.UmlGraphDoc.version>
                 <tft.UmlGraphDoc.additionalParam>-views -attributes -operations -types -postfixpackage -nodefontpackagesize 6 -nodefontclasssize 8 -nodefontsize 7 -edgefontsize 7 -nodesep 0.05 -ranksep 0.1 -visibility -inferdep -inferrel -inferdepinpackage -hide java.*|javax.*|android.*</tft.UmlGraphDoc.additionalParam>
         -->
+
+       <tft.javadoc.doclint>-Xdoclint:none</tft.javadoc.doclint>
     </properties>
 
     <dependencyManagement>
