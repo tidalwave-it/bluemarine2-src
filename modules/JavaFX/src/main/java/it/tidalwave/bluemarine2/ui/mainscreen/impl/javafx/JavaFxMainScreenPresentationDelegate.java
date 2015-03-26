@@ -42,6 +42,10 @@ import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 
 /***********************************************************************************************************************
  *
+ * The JavaFX Delegate for {@link MainScreenPresentation}.
+ * 
+ * @stereotype  JavaFXDelegate
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *

@@ -37,6 +37,8 @@ import it.tidalwave.ui.javafx.JavaFXSpringApplication;
 
 /***********************************************************************************************************************
  *
+ * The main class initializes the logging facility and starts the JavaFX application.
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *

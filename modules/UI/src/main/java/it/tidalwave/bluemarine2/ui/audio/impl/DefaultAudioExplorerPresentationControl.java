@@ -38,6 +38,10 @@ import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
+ * The Control of the {@link AudioExplorerPresentation}.
+ * 
+ * @stereotype  Control
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -48,7 +52,7 @@ public class DefaultAudioExplorerPresentationControl
     @Inject
     private AudioExplorerPresentation presentation;
     
-    /* @VisibleForTesting */ void onOpenAudioExplorerRequest (final @ListensTo @Nonnull OpenAudioExplorerRequest request)
+    /* VisibleForTesting */ void onOpenAudioExplorerRequest (final @ListensTo @Nonnull OpenAudioExplorerRequest request)
       {
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp();

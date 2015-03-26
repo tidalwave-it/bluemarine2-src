@@ -34,6 +34,10 @@ import it.tidalwave.role.ui.UserAction;
 
 /***********************************************************************************************************************
  *
+ * The Presentation for the main screen, which contains the main menu.
+ * 
+ * @stereotype  Presentation
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -42,7 +46,7 @@ public interface MainScreenPresentation
   {
     /*******************************************************************************************************************
      *
-     * Binds the presentation with callbacks.
+     * Binds the presentation to callbacks.
      * 
      * @param  mainMenuActions  the main menu actions
      * @param  powerOffAction   the action that powers off the system

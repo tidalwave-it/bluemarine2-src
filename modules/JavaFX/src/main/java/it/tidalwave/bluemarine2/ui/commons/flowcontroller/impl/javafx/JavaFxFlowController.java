@@ -31,7 +31,6 @@ package it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx;
 import javax.annotation.Nonnull;
 import java.util.Stack;
 import javafx.util.Duration;
-import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.layout.StackPane;
 import javafx.animation.KeyFrame;
@@ -44,6 +43,15 @@ import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
+ * A JavaFX implementation of {@link FlowController}.
+ * 
+ * This implementation is very basic and suitable to simple applications without memory criticalities. It keeps a
+ * stack of previous Presentations, without disposing their resources. A more efficient implementation should be similar
+ * to the Android Activity life-cycle, which can jettison resources of past activities and recreate them on demand. But 
+ * it would require life-cycle methods on the presentation interfaces. 
+ * 
+ * @stereotype  Controller
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -55,11 +63,13 @@ public class JavaFxFlowController implements FlowController
     private StackPane contentPane;
     
     // TODO: this implementation keeps all the history in the stack, thus wasting some memory.
-    // A more efficient implementation would be similar to Android Activity life-cycle, which can
-    // jettison past activities and resume them on demand. But it would require life-cycle methods
-    // on the presentation interfaces. If we don't run into memory problems, it would be over-engineering.
     private final Stack<Node> presentationStack = new Stack<>();
     
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override
     public void showPresentation (final @Nonnull Object presentation)
       {
@@ -85,6 +95,11 @@ public class JavaFxFlowController implements FlowController
           });
       }
 
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override
     public void dismissCurrentPresentation()
       {
@@ -95,6 +110,16 @@ public class JavaFxFlowController implements FlowController
         slide(newNode, oldNode, -1);              
       }
 
+    /*******************************************************************************************************************
+     *
+     * Starts a "slide in/out" animation moving an old {@link Node} out and a new {@link Node} in, with a given 
+     * direction.
+     * 
+     * @param   newNode     the {@code Node} to move in
+     * @param   oldNode     the {@code Node} to move out
+     * @param   direction   +1 for "forward" direction, -1 for "backward" direction
+     *
+     ******************************************************************************************************************/
     private void slide (final @Nonnull Node newNode, final @Nonnull Node oldNode, final int direction)
       {
         contentPane.getChildren().add(newNode);

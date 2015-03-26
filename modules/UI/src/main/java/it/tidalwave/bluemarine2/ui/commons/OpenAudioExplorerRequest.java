@@ -34,11 +34,13 @@ import lombok.ToString;
  *
  * The request to open the Audio Explorer.
  * 
+ * @stereotype  Message
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @ToString
-public class OpenAudioExplorerRequest 
+public final class OpenAudioExplorerRequest 
   {
   }

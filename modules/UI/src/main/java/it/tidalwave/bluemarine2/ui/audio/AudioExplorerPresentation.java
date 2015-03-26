@@ -30,6 +30,10 @@ package it.tidalwave.bluemarine2.ui.audio;
 
 /***********************************************************************************************************************
  *
+ * The Presentation of the explorer of audio media files.
+ * 
+ * @stereotype  Presentation
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *

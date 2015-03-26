@@ -37,6 +37,10 @@ import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegat
 
 /***********************************************************************************************************************
  *
+ * The JavaFX implementation of {@link StillImageExplorerPresentation}.
+ * 
+ * @stereotype  Presentation
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *

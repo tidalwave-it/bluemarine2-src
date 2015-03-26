@@ -34,11 +34,13 @@ import lombok.ToString;
  *
  * The request to open the StillImage Explorer.
  * 
+ * @stereotype  Message
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @ToString
-public class OpenStillImageExplorerRequest 
+public final class OpenStillImageExplorerRequest 
   {
   }

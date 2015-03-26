@@ -38,6 +38,10 @@ import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
+ * The Control of the {@link VideoExplorerPresentation}.
+ * 
+ * @stereotype  Control
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -48,7 +52,7 @@ public class DefaultVideoExplorerPresentationControl
     @Inject
     private VideoExplorerPresentation presentation;
     
-    /* @VisibleForTesting */ void onOpenVideoExplorerRequest (final @ListensTo @Nonnull OpenVideoExplorerRequest request)
+    /* VisibleForTesting */ void onOpenVideoExplorerRequest (final @ListensTo @Nonnull OpenVideoExplorerRequest request)
       {
         log.info("onOpenVideoExplorerRequest({})", request);
         presentation.showUp();

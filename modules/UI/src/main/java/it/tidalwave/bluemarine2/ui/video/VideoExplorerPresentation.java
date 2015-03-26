@@ -30,6 +30,10 @@ package it.tidalwave.bluemarine2.ui.video;
 
 /***********************************************************************************************************************
  *
+ * The Presentation of the explorer of video media files.
+ * 
+ * @stereotype  Presentation
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *

@@ -37,6 +37,8 @@ import lombok.NoArgsConstructor;
 
 /***********************************************************************************************************************
  *
+ * A collection of static utility methods for managing internationalized labels.
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -44,6 +46,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class BundleUtilities 
   {
+    /*******************************************************************************************************************
+     *
+     * Creates a {@link Displayable} from a resource bundle. The bundle resource file is named {@code Bundle.properties}
+     * and it should be placed in the same package as the owner class.
+     * 
+     * @param   ownerClass  the class that owns the bundle
+     * @param   key         the resource key
+     * @return              the {@code Displayable}
+     *
+     ******************************************************************************************************************/
+    @Nonnull
     public static Displayable displayableFromBundle (final @Nonnull Class<?> ownerClass, final @Nonnull String key)
       {
         final String packageName = ownerClass.getPackage().getName();

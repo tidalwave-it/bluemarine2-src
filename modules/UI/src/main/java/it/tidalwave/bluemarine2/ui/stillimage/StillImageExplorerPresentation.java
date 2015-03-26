@@ -30,6 +30,10 @@ package it.tidalwave.bluemarine2.ui.stillimage;
 
 /***********************************************************************************************************************
  *
+ * The Presentation of the explorer of still image media files.
+ * 
+ * @stereotype  Presentation
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *

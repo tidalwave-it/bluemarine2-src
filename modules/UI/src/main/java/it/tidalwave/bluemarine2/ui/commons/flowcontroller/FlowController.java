@@ -32,13 +32,29 @@ import javax.annotation.Nonnull;
 
 /***********************************************************************************************************************
  *
+ * The controller of the flow of presentations that appear on the screen.
+ *  
+ * @stereotype  Controller
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 public interface FlowController 
   {
+    /*******************************************************************************************************************
+     *
+     * Shows the given Presentation on the screen.
+     * 
+     * @param   presentation    the Presentation to show
+     *
+     ******************************************************************************************************************/
     public void showPresentation (@Nonnull Object presentation);
     
+    /*******************************************************************************************************************
+     *
+     * Dismisses the Presentation currently rendered on the screen.
+     *
+     ******************************************************************************************************************/
     public void dismissCurrentPresentation();
   }
