@@ -21,10 +21,6 @@
     <description>blueMarine2 (modules)</description>
 
     <properties>
-        <tft.clirr.skip>true</tft.clirr.skip> <!-- breaks Hudson, see BH-5 -->
-
-        <commons-codec.version>1.9</commons-codec.version>
-        <commons-configuration.version>1.10</commons-configuration.version>
         <!-- WARNING: don't use 1.3.8, it has got a broken pom which brings is tons of useless stuff! -->
         <javax-annotation.version>1.3.7</javax-annotation.version>
         <javax-inject.version>1</javax-inject.version>
@@ -36,7 +32,8 @@
         <uuid.version>2.1.5-201007271250</uuid.version>
         
         <tft.javafx.vmargs>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.javafx.vmargs> <!-- FIXME: DRY -->
-<!--
+
+        <!--
         <tft.mockito.version>1.8.5</tft.mockito.version>
         <tft.test.maxMemory>1024M</tft.test.maxMemory>
         <tft.test.listeners>it.tidalwave.util.test.TestLogger</tft.test.listeners>
@@ -45,7 +42,8 @@
                 <tft.UmlGraphDoc.additionalParam>-views -attributes -operations -types -postfixpackage -nodefontpackagesize 6 -nodefontclasssize 8 -nodefontsize 7 -edgefontsize 7 -nodesep 0.05 -ranksep 0.1 -visibility -inferdep -inferrel -inferdepinpackage -hide java.*|javax.*|android.*</tft.UmlGraphDoc.additionalParam>
         -->
 
-       <tft.javadoc.doclint>-Xdoclint:none</tft.javadoc.doclint>
+        <tft.javadoc.doclint>-Xdoclint:none</tft.javadoc.doclint>
+        <tft.clirr.skip>true</tft.clirr.skip> <!-- breaks Hudson, see BH-5 -->
     </properties>
 
     <dependencyManagement>
