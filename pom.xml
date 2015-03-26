@@ -7,12 +7,12 @@
         <groupId>it.tidalwave.superpom</groupId>
         <artifactId>superpom</artifactId>
         <version>2.16</version>
-        <relativePath></relativePath>
+        <relativePath />
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>blueMarine2-master</artifactId>
-    <version>1.0-ALPHA-1-SNAPSHOT</version>
+    <version>1.0-ALPHA-1</version>
     <packaging>pom</packaging>
     <name>blueMarine2 (master)</name>
     <description>blueMarine2 (master)</description>
@@ -87,17 +87,17 @@
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
-                <version>1.0-ALPHA-1-SNAPSHOT</version>
+                <version>1.0-ALPHA-1</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
-                <version>1.0-ALPHA-1-SNAPSHOT</version>
+                <version>1.0-ALPHA-1</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>    
-                <version>1.0-ALPHA-1-SNAPSHOT</version>
+                <version>1.0-ALPHA-1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -107,7 +107,8 @@
         <connection>scm:hg:${scm.repo.readonly.url}</connection>
         <developerConnection>scm:hg:${scm.repo.effective.url}</developerConnection>
         <url>${scm.repo.browse.url}</url>
-    </scm>
+      <tag>1.0-ALPHA-1</tag>
+  </scm>
 
     <build>
         <plugins>
