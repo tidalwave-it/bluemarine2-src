@@ -9,7 +9,7 @@
   {
     -fx-background-color:   rgb(20,20,20);
     -fx-text-fill:          white;
-    -fx-font-size:          20;
+    -fx-font-size:          40;
     -fx-border-color:       rgb(50, 50, 50);
     -fx-border-radius:      10px;
     -fx-background-radius:  10px;
@@ -22,14 +22,14 @@
 
 .smallButton
   {
-    -fx-font-size:          14;
+    -fx-font-size:          28;
     -fx-border-radius:      12px;
     -fx-background-radius:  12px;
   }
   
 .mainMenuButton
   {
-    -fx-font-size:          30;
+    -fx-font-size:          60;
     -fx-border-radius:      20px;
     -fx-background-radius:  20px;
     -fx-padding:            5px;
