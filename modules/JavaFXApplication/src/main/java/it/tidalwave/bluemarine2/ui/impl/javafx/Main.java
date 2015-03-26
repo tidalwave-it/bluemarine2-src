@@ -29,7 +29,8 @@
 package it.tidalwave.bluemarine2.ui.impl.javafx;
 
 import javax.annotation.Nonnull;
-import java.nio.file.Path;
+import java.io.File;
+//import java.nio.file.Path;
 import javafx.application.Platform;
 //import it.tidalwave.accounting.util.DefaultPreferencesHandler;
 //import it.tidalwave.accounting.util.PreferencesHandler;
@@ -56,9 +57,13 @@ public class Main extends JavaFXSpringApplication
       {
         try
           {
+            // FIXME
 //            final PreferencesHandler preferenceHandler = new DefaultPreferencesHandler();
 //            final Path logfolder = preferenceHandler.getLogFolder();
 //            System.setProperty("it.tidalwave.bluemarine2.logFolder", logfolder.toFile().getAbsolutePath());
+            System.setProperty("it.tidalwave.bluemarine2.logFolder", 
+                    new File(System.getProperty("user.home"), ".blueMarine2/logs").getAbsolutePath());
+            
             Platform.setImplicitExit(true);
             launch(args);
           }
