@@ -74,8 +74,10 @@ public class DefaultMainScreenPresentationControl
         @Override
         public void actionPerformed()
           {
+            log.info("Shutting down...");
             // TODO: fire a PowerOff event and wait for collaboration completion
-            Platform.exit();
+//            Platform.exit();
+            System.exit(0); // needed, otherwise Spring won't necessarily shut down 
           }
       };
 
