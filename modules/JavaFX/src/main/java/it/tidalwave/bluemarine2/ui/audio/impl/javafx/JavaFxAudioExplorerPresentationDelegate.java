@@ -37,6 +37,10 @@ import it.tidalwave.bluemarine2.ui.audio.AudioExplorerPresentation;
 
 /***********************************************************************************************************************
  *
+ * The JavaFX Delegate for {@link AudioExplorerPresentation}.
+ * 
+ * @stereotype  JavaFXDelegate
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *

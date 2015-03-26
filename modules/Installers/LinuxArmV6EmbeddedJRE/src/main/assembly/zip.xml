@@ -13,7 +13,7 @@
             <outputDirectory>/</outputDirectory>
         </fileSet>
         <fileSet>
-            <directory>${project.build.directory}/jre/jdk1.8.0_33/jre/</directory>
+            <directory>${project.build.directory}/jre/jre1.8.0_33/jre/</directory>
             <outputDirectory>jre</outputDirectory>
         </fileSet>
     </fileSets>

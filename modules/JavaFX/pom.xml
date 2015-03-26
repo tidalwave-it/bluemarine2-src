@@ -23,10 +23,6 @@
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-model</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
         </dependency>
         <dependency>

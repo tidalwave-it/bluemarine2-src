@@ -40,7 +40,6 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
-import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentationControl;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
@@ -48,12 +47,16 @@ import static it.tidalwave.bluemarine2.ui.util.BundleUtilities.*;
 
 /***********************************************************************************************************************
  *
+ * The control of the {@link MainScreenPresentation}.
+ * 
+ * @stereotype  Control
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @SimpleMessageSubscriber @Slf4j
-public class DefaultMainScreenPresentationControl implements MainScreenPresentationControl
+public class DefaultMainScreenPresentationControl 
   {
     @Inject
     private MainScreenPresentation presentation;
@@ -61,6 +64,11 @@ public class DefaultMainScreenPresentationControl implements MainScreenPresentat
     @Inject
     private ListableBeanFactory beanFactory;
 
+    /*******************************************************************************************************************
+     *
+     * The action that powers off the application.
+     *
+     ******************************************************************************************************************/
     private final UserAction powerOffAction = new UserActionSupport(displayableFromBundle(getClass(), "powerOff"))
       {
         @Override
@@ -71,8 +79,13 @@ public class DefaultMainScreenPresentationControl implements MainScreenPresentat
           }
       };
 
+    /*******************************************************************************************************************
+     *
+     * Populates the Presentation with the main menu.
+     *
+     ******************************************************************************************************************/
     @PostConstruct
-    /* @VisibleForTesting */ void initialize()
+    /* VisibleForTesting */ void initialize()
       {
         final Collection<UserAction> mainMenuActions =  beanFactory.getBeansOfType(MainMenuItem.class)
                                                                    .values()
@@ -83,7 +96,11 @@ public class DefaultMainScreenPresentationControl implements MainScreenPresentat
         presentation.bind(mainMenuActions, powerOffAction);
       }
 
-    /* @VisibleForTesting */ void onPowerOnNotification (final @Nonnull @ListensTo PowerOnNotification notification)
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    /* VisibleForTesting */ void onPowerOnNotification (final @Nonnull @ListensTo PowerOnNotification notification)
       {
         presentation.showUp();
       }

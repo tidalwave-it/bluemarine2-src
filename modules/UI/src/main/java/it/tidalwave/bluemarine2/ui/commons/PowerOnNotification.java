@@ -34,11 +34,13 @@ import lombok.ToString;
  *
  * A message that notifies that the system has been just powered on.
  * 
+ * @stereotype  Message
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @ToString
-public class PowerOnNotification 
+public final class PowerOnNotification 
   {
   }

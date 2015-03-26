@@ -37,6 +37,10 @@ import it.tidalwave.bluemarine2.ui.video.VideoExplorerPresentation;
 
 /***********************************************************************************************************************
  *
+ * The JavaFX Delegate for {@link VideoExplorerPresentation}.
+ * 
+ * @stereotype  JavaFXDelegate
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *

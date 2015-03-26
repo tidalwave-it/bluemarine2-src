@@ -32,7 +32,6 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.UserActionSupport;
-import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.messagebus.MessageBus;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -40,7 +39,7 @@ import static it.tidalwave.bluemarine2.ui.util.BundleUtilities.*;
 
 /***********************************************************************************************************************
  *
- * A proritised container of {@link UserAction}s to be placed on a menu.
+ * A proritized container of {@link UserAction}s to be placed on a menu.
  * 
  * @author  Fabrizio Giudici
  * @version $Id$

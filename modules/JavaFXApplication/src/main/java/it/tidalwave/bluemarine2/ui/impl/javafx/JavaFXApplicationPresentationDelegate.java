@@ -40,6 +40,10 @@ import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
+ * The JavaFX Delegate for the main application screen.
+ * 
+ * @stereotype  JavaFXDelegate
+ * 
  * @author Fabrizio Giudici
  * @version $Id$
  *
@@ -58,6 +62,8 @@ public class JavaFXApplicationPresentationDelegate
 
     /*******************************************************************************************************************
      *
+     * When initialization is completed, binds the screen estate to the {@link FlowController} and fires a 
+     * {@link PowerOnNotification}, so other actors can start working.
      *
      ******************************************************************************************************************/
     @FXML

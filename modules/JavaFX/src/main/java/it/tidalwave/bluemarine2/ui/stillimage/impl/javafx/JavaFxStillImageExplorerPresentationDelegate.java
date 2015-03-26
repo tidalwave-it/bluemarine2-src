@@ -37,6 +37,10 @@ import it.tidalwave.bluemarine2.ui.stillimage.StillImageExplorerPresentation;
 
 /***********************************************************************************************************************
  *
+ * The JavaFX Delegate for {@link StillImageExplorerPresentation}.
+ * 
+ * @stereotype  JavaFXDelegate
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *

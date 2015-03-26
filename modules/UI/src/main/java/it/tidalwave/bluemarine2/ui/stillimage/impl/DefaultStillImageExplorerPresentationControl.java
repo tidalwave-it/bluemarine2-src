@@ -38,6 +38,10 @@ import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
+ * The Control of the {@link StillImageExplorerPresentation}.
+ * 
+ * @stereotype  Control
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -48,7 +52,7 @@ public class DefaultStillImageExplorerPresentationControl
     @Inject
     private StillImageExplorerPresentation presentation;
     
-    /* @VisibleForTesting */ void onOpenStillImageExplorerRequest (final @ListensTo @Nonnull OpenStillImageExplorerRequest request)
+    /* VisibleForTesting */ void onOpenStillImageExplorerRequest (final @ListensTo @Nonnull OpenStillImageExplorerRequest request)
       {
         log.info("onOpenStillImageExplorerRequest({})", request);
         presentation.showUp();
