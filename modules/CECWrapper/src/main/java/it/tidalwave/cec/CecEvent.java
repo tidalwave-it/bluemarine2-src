@@ -51,22 +51,22 @@ public class CecEvent
   {
     /*******************************************************************************************************************
      *
-     * Defines whether a key event is pressed or released. 
+     * Defines event types. 
      *
      ******************************************************************************************************************/
    @RequiredArgsConstructor @Getter
-    public enum KeyEventType
+    public enum EventType
       {
-        KEY_PRESSED(0x44),
-        KEY_RELEASED(0x8b);
+        USER_CONTROL_PRESSED(0x44),
+        USER_CONTROL_RELEASED(0x8b);
         
         private final int code;  
         
         @Nonnull
-        public static KeyEventType forCode (final int code) 
+        public static EventType forCode (final int code) 
           throws NotFoundException
           {
-            for (final KeyEventType eventType : values())
+            for (final EventType eventType : values())
               {
                 if (eventType.getCode() == code)
                   {
@@ -74,7 +74,7 @@ public class CecEvent
                   }
               }
             
-            throw new NotFoundException("CEC key event type: " + Integer.toHexString(code));
+            throw new NotFoundException("CEC event type: " + Integer.toHexString(code));
           } 
       }
 
@@ -115,5 +115,5 @@ public class CecEvent
     private final KeyCode keyCode;
     
     @Nonnull
-    private final KeyEventType keyDirection;
+    private final EventType keyDirection;
   }

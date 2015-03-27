@@ -41,8 +41,8 @@ import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.cec.CecEvent;
+import it.tidalwave.cec.CecEvent.EventType;
 import it.tidalwave.cec.CecEvent.KeyCode;
-import it.tidalwave.cec.CecEvent.KeyEventType;
 import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import lombok.extern.slf4j.Slf4j;
 
@@ -80,14 +80,14 @@ public class CecClientAdapter
         if (matcher.matches())
           {
             final int g1 = Integer.parseInt(matcher.group(2), 16);
-            final int keyEventType = Integer.parseInt(matcher.group(3), 16);
+            final int eventType = Integer.parseInt(matcher.group(3), 16);
             final int keyCode = Integer.parseInt(matcher.group(4), 16);
             
             if (g1 == 0x01)
               {
                 try
                   {
-                    final CecEvent event = new CecEvent(KeyCode.forCode(keyCode), KeyEventType.forCode(keyEventType));
+                    final CecEvent event = new CecEvent(KeyCode.forCode(keyCode), EventType.forCode(eventType));
                     log.debug("Sending {}...", event);
                     messageBus.publish(event);
                   }
