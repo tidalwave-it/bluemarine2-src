@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+  
+    <parent>
+        <groupId>it.tidalwave.bluemarine2</groupId>
+        <artifactId>blueMarine2-modules</artifactId>
+        <version>1.0-ALPHA-2-SNAPSHOT</version>   
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    
+    <groupId>it.tidalwave.bluemarine2</groupId>
+    <artifactId>it-tidalwave-bluemarine2-cecnavigationadapter</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-ALPHA-2-SNAPSHOT</version>
+    <name>blueMarine2 - CEC Navigation Adapter</name>
+    
+    <dependencies>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-cec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-messagebus</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.kenai.nbpwr</groupId>
+                    <artifactId>org-slf4j-jdk14</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        
+        <!-- FIXME: workaround against a compilation error -->
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-util</artifactId>
+            <version>RELEASE712</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>aspectj-maven-plugin</artifactId>
+                <configuration>
+                    <aspectLibraries>
+                        <dependency>
+                            <groupId>it.tidalwave.thesefoolishthings</groupId>
+                            <artifactId>it-tidalwave-messagebus-spring</artifactId>
+                        </dependency>
+                    </aspectLibraries>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
+</project>
