@@ -56,7 +56,7 @@ public abstract class CecEvent
      * Defines event types. 
      *
      ******************************************************************************************************************/
-   @RequiredArgsConstructor @Getter
+    @RequiredArgsConstructor @Getter
     public enum EventType
       {
         USER_CONTROL_PRESSED(0x44,  (code) -> new CecUserControlEvent(forCode(0x44), UserControlCode.forCode(code))),
