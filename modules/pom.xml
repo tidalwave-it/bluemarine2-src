@@ -29,7 +29,8 @@
         <thesefoolishthings.version>1.37</thesefoolishthings.version>
         <uuid.version>2.1.5-201007271250</uuid.version>
         
-        <tft.javafx.vmargs>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.javafx.vmargs> <!-- FIXME: DRY -->
+        <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass> 
+        <tft.javafx.vmargs>${tft.mainClass}</tft.javafx.vmargs> 
 
         <!--
         <tft.mockito.version>1.8.5</tft.mockito.version>
@@ -167,6 +168,7 @@
         <module>UI</module>
         <module>JavaFX</module>
         <module>JavaFXApplication</module>
+        <module>Model</module>
         <module>Installers/Linux</module>
         <module>Installers/LinuxArmV6EmbeddedJRE</module>
         <module>Installers/MacOSXEmbeddedJRE</module>
