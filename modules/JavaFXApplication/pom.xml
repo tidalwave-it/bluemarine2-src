@@ -25,6 +25,10 @@
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-cec</artifactId>
         </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-cecnavigationadapter</artifactId>
+        </dependency>
         
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>

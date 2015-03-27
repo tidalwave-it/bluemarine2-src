@@ -38,6 +38,7 @@ import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
+import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -59,7 +60,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class JavaFxFlowController implements FlowController
   {
-    @Setter
+    @Getter @Setter
     private StackPane contentPane;
     
     // TODO: this implementation keeps all the history in the stack, thus wasting some memory.

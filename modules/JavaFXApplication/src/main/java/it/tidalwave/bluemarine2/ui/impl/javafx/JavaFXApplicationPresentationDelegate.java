@@ -113,6 +113,6 @@ public class JavaFXApplicationPresentationDelegate
         // END FIXME
         
         flowController.setContentPane(spContent);
-        messageBus.publish(new PowerOnNotification());
+        messageBus.publish(new PowerOnNotification());        
       }    
   }

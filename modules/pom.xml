@@ -171,6 +171,7 @@
         <module>Installers/LinuxArmV6EmbeddedJRE</module>
         <module>Installers/MacOSXEmbeddedJRE</module>
         <module>CECWrapper</module>
+        <module>CECNavigationAdapter</module>
     </modules>
 
 </project>

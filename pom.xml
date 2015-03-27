@@ -104,6 +104,11 @@
                 <artifactId>it-tidalwave-cec</artifactId>
                 <version>1.0-ALPHA-2-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-cecnavigationadapter</artifactId>
+                <version>1.0-ALPHA-2-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
