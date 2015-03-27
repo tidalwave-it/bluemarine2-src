@@ -57,8 +57,8 @@ public class JavaFxCecNavigationAdapter
     
     public JavaFxCecNavigationAdapter()
       {
-        actionMap.put(new CecEvent(CENTER, USER_CONTROL_PRESSED),  () -> { emulateKey(KeyCode.SPACE,  USER_CONTROL_PRESSED);  });
-        actionMap.put(new CecEvent(CENTER, USER_CONTROL_RELEASED), () -> { emulateKey(KeyCode.SPACE,  USER_CONTROL_RELEASED); });
+        actionMap.put(new CecEvent(SELECT, USER_CONTROL_PRESSED),  () -> { emulateKey(KeyCode.SPACE,  USER_CONTROL_PRESSED);  });
+        actionMap.put(new CecEvent(SELECT, USER_CONTROL_RELEASED), () -> { emulateKey(KeyCode.SPACE,  USER_CONTROL_RELEASED); });
         actionMap.put(new CecEvent(LEFT,   USER_CONTROL_PRESSED),  () -> { emulateKey(KeyCode.LEFT,   USER_CONTROL_PRESSED);  });
         actionMap.put(new CecEvent(LEFT,   USER_CONTROL_RELEASED), () -> { emulateKey(KeyCode.LEFT,   USER_CONTROL_RELEASED); });
         actionMap.put(new CecEvent(RIGHT,  USER_CONTROL_PRESSED),  () -> { emulateKey(KeyCode.RIGHT,  USER_CONTROL_PRESSED);  });

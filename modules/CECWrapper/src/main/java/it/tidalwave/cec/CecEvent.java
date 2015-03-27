@@ -86,7 +86,7 @@ public class CecEvent
     @RequiredArgsConstructor @Getter
     public enum KeyCode
       {
-        CENTER(0x00),
+        SELECT(0x00),
         UP(0x01),
         DOWN(0x02),
         LEFT(0x03),
