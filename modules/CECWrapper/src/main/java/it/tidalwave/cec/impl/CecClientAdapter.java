@@ -79,22 +79,18 @@ public class CecClientAdapter
         
         if (matcher.matches())
           {
-            final int g1 = Integer.parseInt(matcher.group(2), 16);
             final int eventType = Integer.parseInt(matcher.group(3), 16);
             final int keyCode = Integer.parseInt(matcher.group(4), 16);
             
-            if (g1 == 0x01)
+            try
               {
-                try
-                  {
-                    final CecEvent event = new CecEvent(KeyCode.forCode(keyCode), EventType.forCode(eventType));
-                    log.debug("Sending {}...", event);
-                    messageBus.publish(event);
-                  }
-                catch (NotFoundException e)
-                  {
-                    log.warn("Not found: {}", e.getMessage());
-                  }
+                final CecEvent event = new CecEvent(KeyCode.forCode(keyCode), EventType.forCode(eventType));
+                log.debug("Sending {}...", event);
+                messageBus.publish(event);
+              }
+            catch (NotFoundException e)
+              {
+                log.warn("Not found: {}", e.getMessage());
               }
           }
       };
@@ -111,7 +107,7 @@ public class CecClientAdapter
             log.info("onPowerOnReceived({})");
             
             executor = DefaultProcessExecutor.forExecutable("/usr/local/bin/cec-client") // FIXME: path
-                                             .withArguments("-d", "8", "-t", "prta", "-o", "blueMarine")
+                                             .withArguments("-d", "8", "-t", "p", "-o", "blueMarine")
                                              .start();
             executor.getStdout().setListener(listener);
           }
