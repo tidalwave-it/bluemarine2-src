@@ -93,6 +93,8 @@ public class CecEvent
             throw new NotFoundException("CEC event type: " + Integer.toHexString(code));
           } 
         
+        
+        @Nonnull
         public abstract CecEvent createEvent (final int code)
           throws NotFoundException;
         
@@ -100,7 +102,7 @@ public class CecEvent
         private static CecEvent createUserControlEvent (final @Nonnull EventType eventType, final int keyCode) 
           throws NotFoundException
           {
-            return new CecEvent(eventType, KeyCode.forCode(keyCode));
+            return new CecEvent(eventType, UserControlCode.forCode(keyCode));
           }
       }
 
@@ -110,7 +112,7 @@ public class CecEvent
      *
      ******************************************************************************************************************/
     @RequiredArgsConstructor @Getter
-    public enum KeyCode
+    public enum UserControlCode
       {
         SELECT(0x00),
         UP(0x01),
@@ -122,18 +124,18 @@ public class CecEvent
         private final int code;  
         
         @Nonnull
-        public static KeyCode forCode (final int code) 
+        public static UserControlCode forCode (final int code) 
           throws NotFoundException
           {
-            for (final KeyCode keycode : values())
+            for (final UserControlCode userControlCode : values())
               {
-                if (keycode.getCode() == code)
+                if (userControlCode.getCode() == code)
                   {
-                    return keycode;  
+                    return userControlCode;  
                   }
               }
             
-            throw new NotFoundException("CEC key code: " + Integer.toHexString(code));
+            throw new NotFoundException("CEC user control code: " + Integer.toHexString(code));
           } 
       }
     
@@ -141,5 +143,5 @@ public class CecEvent
     private final EventType eventType;
     
     @Nonnull
-    private final KeyCode keyCode;
+    private final UserControlCode userControlCode;
   }

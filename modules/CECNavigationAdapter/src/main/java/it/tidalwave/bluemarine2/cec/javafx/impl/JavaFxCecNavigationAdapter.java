@@ -41,7 +41,7 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.cec.CecEvent.KeyCode.*;
+import static it.tidalwave.cec.CecEvent.UserControlCode.*;
 import static it.tidalwave.cec.CecEvent.EventType.*;
 
 /***********************************************************************************************************************
