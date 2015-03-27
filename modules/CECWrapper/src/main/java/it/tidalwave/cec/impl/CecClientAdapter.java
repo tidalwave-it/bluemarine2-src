@@ -41,8 +41,7 @@ import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.cec.CecEvent;
-import it.tidalwave.cec.CecEvent.KeyCode;
-import it.tidalwave.cec.CecEvent.KeyEventType;
+import it.tidalwave.cec.CecEvent.EventType;
 import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import lombok.extern.slf4j.Slf4j;
 
@@ -79,22 +78,18 @@ public class CecClientAdapter
         
         if (matcher.matches())
           {
-            final int g1 = Integer.parseInt(matcher.group(2), 16);
-            final int keyEventType = Integer.parseInt(matcher.group(3), 16);
+            final int eventType = Integer.parseInt(matcher.group(3), 16);
             final int keyCode = Integer.parseInt(matcher.group(4), 16);
             
-            if (g1 == 0x01)
+            try
               {
-                try
-                  {
-                    final CecEvent event = new CecEvent(KeyCode.forCode(keyCode), KeyEventType.forCode(keyEventType));
-                    log.debug("Sending {}...", event);
-                    messageBus.publish(event);
-                  }
-                catch (NotFoundException e)
-                  {
-                    log.warn("Not found: {}", e.getMessage());
-                  }
+                final CecEvent event = EventType.forCode(eventType).createEvent(keyCode);
+                log.debug("Sending {}...", event);
+                messageBus.publish(event);
+              }
+            catch (NotFoundException e)
+              {
+                log.warn("Not found: {}", e.getMessage());
               }
           }
       };
@@ -108,10 +103,9 @@ public class CecClientAdapter
       {
         try 
           {
-            log.info("onPowerOnReceived({})");
-            
+            log.info("onPowerOnReceived({})", notification);
             executor = DefaultProcessExecutor.forExecutable("/usr/local/bin/cec-client") // FIXME: path
-                                             .withArguments("-d", "8", "-t", "prta", "-o", "blueMarine")
+                                             .withArguments("-d", "8", "-t", "p", "-o", "blueMarine")
                                              .start();
             executor.getStdout().setListener(listener);
           }
