@@ -105,9 +105,13 @@ public class JavaFxFlowController implements FlowController
       {
         log.info("dismissCurrentPresentation()");
         
-        final Node oldNode = presentationStack.pop();
-        final Node newNode = presentationStack.peek();
-        slide(newNode, oldNode, -1);              
+        Platform.runLater(() ->
+          {
+            log.debug(">>>> presentationStack: {}", presentationStack);
+            final Node oldNode = presentationStack.pop();
+            final Node newNode = presentationStack.peek();
+            slide(newNode, oldNode, -1);              
+          });
       }
 
     /*******************************************************************************************************************
