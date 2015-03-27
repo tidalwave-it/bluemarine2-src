@@ -85,9 +85,7 @@ public class CecClientAdapter
               {
                 try
                   {
-                    final KeyCode keyCode = KeyCode.forCode(g3);
-                    final KeyEventType keyEventType = KeyEventType.forCode(g2);
-                    final CecEvent event = new CecEvent(keyCode, keyEventType);
+                    final CecEvent event = new CecEvent(KeyCode.forCode(g3), KeyEventType.forCode(g2));
                     log.debug("Sending {}...", event);
                     messageBus.publish(event);
                   }
