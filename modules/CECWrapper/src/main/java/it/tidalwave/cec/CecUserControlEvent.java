@@ -31,8 +31,6 @@ package it.tidalwave.cec;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import it.tidalwave.util.NotFoundException;
-import it.tidalwave.cec.CecUserControlEvent.UserControlCode;
-import lombok.Delegate;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -40,56 +38,54 @@ import lombok.ToString;
 
 /***********************************************************************************************************************
  *
- * Abstract base class for all CEC events.
- * 
- * @see http://www.cec-o-matic.com/
+ * Represents a CEC event about a user control.
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @Getter @RequiredArgsConstructor @EqualsAndHashCode @ToString
-public abstract class CecEvent 
+@Immutable @Getter @EqualsAndHashCode(callSuper=true) @ToString
+public class CecUserControlEvent extends CecEvent
   {
     /*******************************************************************************************************************
      *
-     * Defines event types. 
+     * Defines the key codes. 
      *
      ******************************************************************************************************************/
-   @RequiredArgsConstructor @Getter
-    public enum EventType
+    @RequiredArgsConstructor @Getter
+    public enum UserControlCode
       {
-        USER_CONTROL_PRESSED(0x44,  (code) -> new CecUserControlEvent(forCode(0x44), UserControlCode.forCode(code))),
-        USER_CONTROL_RELEASED(0x8b, (code) -> new CecUserControlEvent(forCode(0x8b), UserControlCode.forCode(code)));
-
-        interface CecEventFactory
-          {
-            @Nonnull
-            public CecEvent createEvent (int code)
-              throws NotFoundException;
-          }
-
+        SELECT(0x00),
+        UP(0x01),
+        DOWN(0x02),
+        LEFT(0x03),
+        RIGHT(0x04),
+        EXIT(0x0d);
+        
         private final int code;  
         
-        @Delegate @Nonnull
-        private final CecEventFactory eventFactory;
-        
         @Nonnull
-        public static EventType forCode (final int code) 
+        public static UserControlCode forCode (final int code) 
           throws NotFoundException
           {
-            for (final EventType eventType : values())
+            for (final UserControlCode userControlCode : values())
               {
-                if (eventType.getCode() == code)
+                if (userControlCode.getCode() == code)
                   {
-                    return eventType;  
+                    return userControlCode;  
                   }
               }
             
-            throw new NotFoundException("CEC event type: " + Integer.toHexString(code));
+            throw new NotFoundException("CEC user control code: " + Integer.toHexString(code));
           } 
       }
-
+    
     @Nonnull
-    private final EventType eventType;
+    private final UserControlCode userControlCode;
+    
+    public CecUserControlEvent (final @Nonnull EventType eventType, final @Nonnull UserControlCode userControlCode) 
+      {
+        super(eventType);
+        this.userControlCode = userControlCode;
+      }
   }

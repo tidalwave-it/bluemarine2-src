@@ -36,13 +36,14 @@ import javafx.application.Platform;
 import javafx.scene.input.KeyCode;
 import com.sun.javafx.robot.FXRobot;
 import com.sun.javafx.robot.FXRobotFactory;
-import it.tidalwave.cec.CecEvent;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.cec.CecEvent;
+import it.tidalwave.cec.CecUserControlEvent;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.cec.CecEvent.UserControlCode.*;
 import static it.tidalwave.cec.CecEvent.EventType.*;
+import static it.tidalwave.cec.CecUserControlEvent.UserControlCode.*;
 
 /***********************************************************************************************************************
  *
@@ -57,26 +58,25 @@ public class JavaFxCecNavigationAdapter
     
     public JavaFxCecNavigationAdapter()
       {
-        actionMap.put(new CecEvent(USER_CONTROL_PRESSED,  SELECT), () -> keyPress(KeyCode.SPACE)   );
-        actionMap.put(new CecEvent(USER_CONTROL_RELEASED, SELECT), () -> keyRelease(KeyCode.SPACE) );
-        actionMap.put(new CecEvent(USER_CONTROL_PRESSED,  LEFT),   () -> keyPress(KeyCode.LEFT)    );
-        actionMap.put(new CecEvent(USER_CONTROL_RELEASED, LEFT),   () -> keyRelease(KeyCode.LEFT)  );
-        actionMap.put(new CecEvent(USER_CONTROL_PRESSED,  RIGHT),  () -> keyPress(KeyCode.RIGHT)   );
-        actionMap.put(new CecEvent(USER_CONTROL_RELEASED, RIGHT),  () -> keyRelease(KeyCode.RIGHT) );
-        actionMap.put(new CecEvent(USER_CONTROL_PRESSED,  UP),     () -> keyPress(KeyCode.UP)      );
-        actionMap.put(new CecEvent(USER_CONTROL_RELEASED, UP),     () -> keyRelease(KeyCode.UP)    );
-        actionMap.put(new CecEvent(USER_CONTROL_PRESSED,  DOWN),   () -> keyPress(KeyCode.DOWN )   );
-        actionMap.put(new CecEvent(USER_CONTROL_RELEASED, DOWN),   () -> keyRelease(KeyCode.DOWN)  );
-        actionMap.put(new CecEvent(USER_CONTROL_PRESSED,  EXIT),   () -> flowController.dismissCurrentPresentation());
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  SELECT), () -> keyPress(KeyCode.SPACE)   );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, SELECT), () -> keyRelease(KeyCode.SPACE) );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  LEFT),   () -> keyPress(KeyCode.LEFT)    );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, LEFT),   () -> keyRelease(KeyCode.LEFT)  );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  RIGHT),  () -> keyPress(KeyCode.RIGHT)   );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, RIGHT),  () -> keyRelease(KeyCode.RIGHT) );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  UP),     () -> keyPress(KeyCode.UP)      );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, UP),     () -> keyRelease(KeyCode.UP)    );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  DOWN),   () -> keyPress(KeyCode.DOWN )   );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, DOWN),   () -> keyRelease(KeyCode.DOWN)  );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  EXIT),   () -> flowController.dismissCurrentPresentation());
       }
     
     @Inject
     private JavaFxFlowController flowController;
     
-    /* VisibleForTesting */ void onCecEventReceived (final @Nonnull @ListensTo CecEvent event)
+    /* VisibleForTesting */ void onCecUserControlEventReceived (final @Nonnull @ListensTo CecUserControlEvent event)
       {
-        log.debug("onCecEventReceived({})", event);
-
+        log.debug("onCecUserControlEventReceived({})", event);
         Platform.runLater(() -> 
           {
             actionMap.getOrDefault(event, () -> log.warn("unmapped event: {}", event)).run();
