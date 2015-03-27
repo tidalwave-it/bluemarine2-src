@@ -103,8 +103,7 @@ public class CecClientAdapter
       {
         try 
           {
-            log.info("onPowerOnReceived({})");
-            
+            log.info("onPowerOnReceived({})", notification);
             executor = DefaultProcessExecutor.forExecutable("/usr/local/bin/cec-client") // FIXME: path
                                              .withArguments("-d", "8", "-t", "p", "-o", "blueMarine")
                                              .start();
