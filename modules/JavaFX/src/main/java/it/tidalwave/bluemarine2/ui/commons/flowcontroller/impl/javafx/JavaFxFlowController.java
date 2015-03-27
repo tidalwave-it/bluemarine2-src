@@ -105,15 +105,38 @@ public class JavaFxFlowController implements FlowController
       {
         log.info("dismissCurrentPresentation()");
         
-        Platform.runLater(() ->
+        if (presentationStack.size() < 2)
           {
-            log.debug(">>>> presentationStack: {}", presentationStack);
-            final Node oldNode = presentationStack.pop();
-            final Node newNode = presentationStack.peek();
-            slide(newNode, oldNode, -1);              
-          });
+            // TODO: should ask for user confirmation
+            powerOff();
+          }
+        else
+          {
+            Platform.runLater(() ->
+              {
+                log.debug(">>>> presentationStack: {}", presentationStack);
+                final Node oldNode = presentationStack.pop();
+                final Node newNode = presentationStack.peek();
+                slide(newNode, oldNode, -1);              
+              });
+          }
       }
 
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void powerOff() 
+      {
+        log.info("Shutting down...");
+        // TODO: fire a PowerOff event and wait for collaboration completion
+        // TODO: in this case, the responsibility to fire PowerOn should be moved here
+//            Platform.exit();
+        System.exit(0); // needed, otherwise Spring won't necessarily shut down 
+      }
+    
     /*******************************************************************************************************************
      *
      * Starts a "slide in/out" animation moving an old {@link Node} out and a new {@link Node} in, with a given 
