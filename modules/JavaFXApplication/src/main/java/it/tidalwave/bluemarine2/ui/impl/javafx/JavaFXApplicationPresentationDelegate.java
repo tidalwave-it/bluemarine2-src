@@ -34,6 +34,8 @@ import javafx.fxml.FXML;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.collections.ObservableList;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
@@ -43,8 +45,6 @@ import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
