@@ -57,26 +57,27 @@ public class CecEvent
    @RequiredArgsConstructor @Getter
     public enum EventType
       {
-        USER_CONTROL_PRESSED(0x44)
+        USER_CONTROL_PRESSED(0x44,  (code) -> new CecEvent(EventType.forCode(0x44), UserControlCode.forCode(code))),
+        USER_CONTROL_RELEASED(0x8b, (code) -> new CecEvent(EventType.forCode(0x8b), UserControlCode.forCode(code)));
+
+        interface CecEventFactory
           {
-            @Override
-            public CecEvent createEvent (final int code)
-              throws NotFoundException
-              {
-                return createUserControlEvent(this, code);
-              }
-          },
-        USER_CONTROL_RELEASED(0x8b)
-          {
-            @Override
-            public CecEvent createEvent (final int code)
-              throws NotFoundException
-              {
-                return createUserControlEvent(this, code);
-              }
-          };
-        
+            @Nonnull
+            public CecEvent createEvent (int code)
+              throws NotFoundException;
+          }
+
         private final int code;  
+        
+        @Nonnull
+        private final CecEventFactory eventFactory;
+        
+        @Nonnull
+        public CecEvent createEvent (final int code) 
+          throws NotFoundException 
+          {
+            return eventFactory.createEvent(code);
+          }
         
         @Nonnull
         public static EventType forCode (final int code) 
@@ -92,18 +93,6 @@ public class CecEvent
             
             throw new NotFoundException("CEC event type: " + Integer.toHexString(code));
           } 
-        
-        
-        @Nonnull
-        public abstract CecEvent createEvent (final int code)
-          throws NotFoundException;
-        
-        @Nonnull
-        private static CecEvent createUserControlEvent (final @Nonnull EventType eventType, final int keyCode) 
-          throws NotFoundException
-          {
-            return new CecEvent(eventType, UserControlCode.forCode(keyCode));
-          }
       }
 
     /*******************************************************************************************************************
