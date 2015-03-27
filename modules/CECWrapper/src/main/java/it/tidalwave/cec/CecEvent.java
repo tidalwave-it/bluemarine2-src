@@ -31,6 +31,7 @@ package it.tidalwave.cec;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import it.tidalwave.util.NotFoundException;
+import lombok.Delegate;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -69,15 +70,8 @@ public class CecEvent
 
         private final int code;  
         
-        @Nonnull
+        @Delegate @Nonnull
         private final CecEventFactory eventFactory;
-        
-        @Nonnull
-        public CecEvent createEvent (final int code) 
-          throws NotFoundException 
-          {
-            return eventFactory.createEvent(code);
-          }
         
         @Nonnull
         public static EventType forCode (final int code) 
