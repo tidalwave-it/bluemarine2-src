@@ -117,7 +117,7 @@ public class CecClientAdapter
           }
         catch (IOException e) 
           {
-            log.error("Cannot run cecclient", e);
+            log.error("Cannot run cec-client: {}", e.toString());
             // TODO: UI notification of the error
           }
       }
