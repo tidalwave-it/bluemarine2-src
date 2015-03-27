@@ -26,14 +26,14 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.cec.impl;
+package it.tidalwave.util;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.ThreadSafe;
 import java.util.List;
 import java.util.Scanner;
 import java.io.IOException;
-import javax.annotation.CheckForNull;
 
 /***********************************************************************************************************************
  *

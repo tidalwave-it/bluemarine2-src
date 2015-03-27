@@ -33,15 +33,17 @@ import javax.inject.Inject;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.IOException;
+import it.tidalwave.util.ProcessExecutor;
+import it.tidalwave.util.ProcessExecutor.ConsoleOutput;
+import it.tidalwave.util.NotFoundException;
+import it.tidalwave.util.spi.DefaultProcessExecutor;
+import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.cec.impl.ProcessExecutor.ConsoleOutput;
-import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import it.tidalwave.cec.CecEvent;
 import it.tidalwave.cec.CecEvent.KeyCode;
 import it.tidalwave.cec.CecEvent.KeyEventType;
-import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.util.NotFoundException;
+import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
