@@ -33,25 +33,31 @@ import javax.inject.Inject;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.IOException;
+import it.tidalwave.util.ProcessExecutor;
+import it.tidalwave.util.ProcessExecutor.ConsoleOutput;
+import it.tidalwave.util.NotFoundException;
+import it.tidalwave.util.spi.DefaultProcessExecutor;
+import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.cec.impl.ProcessExecutor.ConsoleOutput;
-import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import it.tidalwave.cec.CecEvent;
 import it.tidalwave.cec.CecEvent.KeyCode;
-import it.tidalwave.cec.CecEvent.KeyDirection;
-import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.util.NotFoundException;
+import it.tidalwave.cec.CecEvent.KeyEventType;
+import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
+ * An adapter that receives notifications from {@code cec-client} and forwards events to the message bus.
+ * 
+ * @stereotype  Adapter
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @SimpleMessageSubscriber @Slf4j
-public class CecClientWrapper 
+public class CecClientAdapter 
   {
     private static final String CEC_REGEX = "^TRAFFIC: *\\[ *([0-9]+)\\][ \\t>]*([0-9A-Fa-f]+):([0-9A-Fa-f]+):([0-9A-Fa-f]+)$";
     
@@ -62,6 +68,11 @@ public class CecClientWrapper
     @Inject
     private MessageBus messageBus;
     
+    /*******************************************************************************************************************
+     *
+     * Parses the output from {@code cec-client} and fires events.
+     *
+     ******************************************************************************************************************/
     private final ConsoleOutput.Listener listener = string ->
       {
         final Matcher matcher = CEC_PATTERN.matcher(string);
@@ -69,16 +80,14 @@ public class CecClientWrapper
         if (matcher.matches())
           {
             final int g1 = Integer.parseInt(matcher.group(2), 16);
-            final int g2 = Integer.parseInt(matcher.group(3), 16);
-            final int g3 = Integer.parseInt(matcher.group(4), 16);
+            final int keyEventType = Integer.parseInt(matcher.group(3), 16);
+            final int keyCode = Integer.parseInt(matcher.group(4), 16);
             
             if (g1 == 0x01)
               {
                 try
                   {
-                    final KeyCode keyCode = KeyCode.findByCode(g3);
-                    final KeyDirection keyDirection = KeyDirection.findByCode(g2);
-                    final CecEvent event = new CecEvent(keyCode, keyDirection);
+                    final CecEvent event = new CecEvent(KeyCode.forCode(keyCode), KeyEventType.forCode(keyEventType));
                     log.debug("Sending {}...", event);
                     messageBus.publish(event);
                   }
@@ -90,6 +99,11 @@ public class CecClientWrapper
           }
       };
     
+    /*******************************************************************************************************************
+     *
+     * At power on runs {@code cec-client}.
+     *
+     ******************************************************************************************************************/
     /* VisibleForTesting */ void onPowerOnReceived (final @Nonnull @ListensTo PowerOnNotification notification)
       {
         try 
@@ -103,7 +117,7 @@ public class CecClientWrapper
           }
         catch (IOException e) 
           {
-            log.error("Cannot run cecclient", e);
+            log.error("Cannot run cec-client: {}", e.toString());
             // TODO: UI notification of the error
           }
       }

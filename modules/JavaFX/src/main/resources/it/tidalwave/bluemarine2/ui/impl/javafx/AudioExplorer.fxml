@@ -17,23 +17,17 @@
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <HBox alignment="CENTER" GridPane.rowIndex="1">
+                <HBox alignment="CENTER">
                     <children>
-                        <Button fx:id="btBack" alignment="CENTER" mnemonicParsing="false" styleClass="smallButton" text="Back" GridPane.rowIndex="1" />
+                        <Button alignment="CENTER" mnemonicParsing="false" text="Audio Explorer">
+                            <font>
+                                <Font size="50.0" />
+                            </font>
+                        </Button>
                     </children>
                 </HBox>
-<HBox alignment="CENTER">
-<children>
-                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="802.0" text="Audio Explorer" textAlignment="CENTER" textFill="WHITE">
-                    <font>
-                        <Font size="50.0" />
-                    </font>
-                </Label>
-</children>
-</HBox>
             </children>
         </GridPane>
     </children>

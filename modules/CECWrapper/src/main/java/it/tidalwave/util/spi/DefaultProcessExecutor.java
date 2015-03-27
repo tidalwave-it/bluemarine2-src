@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.cec.impl;
+package it.tidalwave.util.spi;
 
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
@@ -46,6 +46,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import it.tidalwave.util.ProcessExecutor;
 import lombok.AccessLevel;
 import lombok.Cleanup;
 import lombok.Getter;

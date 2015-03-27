@@ -42,7 +42,7 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.cec.CecEvent.KeyCode.*;
-import static it.tidalwave.cec.CecEvent.KeyDirection.*;
+import static it.tidalwave.cec.CecEvent.KeyEventType.*;
 
 /***********************************************************************************************************************
  *
@@ -79,14 +79,14 @@ public class JavaFxCecNavigationAdapter
         actionMap.getOrDefault(event, () -> { log.warn("unmapped event: {}", event); }).run();
       }
     
-    private void emulateKeyPress (final @Nonnull KeyCode code, final @Nonnull CecEvent.KeyDirection direction)
+    private void emulateKeyPress (final @Nonnull KeyCode code, final @Nonnull CecEvent.KeyEventType keyEventType)
       {
         Platform.runLater(() -> 
           {
-            log.debug("emulateKeyPress({}, {})", code, direction);
+            log.debug("emulateKeyPress({}, {})", code, keyEventType);
             final FXRobot robot = FXRobotFactory.createRobot(flowController.getContentPane().getScene());
             
-            switch (direction)
+            switch (keyEventType)
               {
                 case KEY_PRESSED:
                     robot.keyPress(code);                        

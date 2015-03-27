@@ -38,6 +38,8 @@ import lombok.ToString;
 
 /***********************************************************************************************************************
  *
+ * Represents a CEC event.
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -45,8 +47,13 @@ import lombok.ToString;
 @Immutable @Getter @RequiredArgsConstructor @EqualsAndHashCode @ToString
 public class CecEvent 
   {
-    @RequiredArgsConstructor @Getter
-    public enum KeyDirection
+    /*******************************************************************************************************************
+     *
+     * Defines whether a key event is pressed or released. 
+     *
+     ******************************************************************************************************************/
+   @RequiredArgsConstructor @Getter
+    public enum KeyEventType
       {
         KEY_PRESSED(0x44),
         KEY_RELEASED(0x8b);
@@ -54,21 +61,26 @@ public class CecEvent
         private final int code;  
         
         @Nonnull
-        public static KeyDirection findByCode (final int code) 
+        public static KeyEventType forCode (final int code) 
           throws NotFoundException
           {
-            for (final KeyDirection keyDirection : values())
+            for (final KeyEventType eventType : values())
               {
-                if (keyDirection.getCode() == code)
+                if (eventType.getCode() == code)
                   {
-                    return keyDirection;  
+                    return eventType;  
                   }
               }
             
-            throw new NotFoundException("CEC key direction: " + Integer.toHexString(code));
+            throw new NotFoundException("CEC key event type: " + Integer.toHexString(code));
           } 
       }
 
+    /*******************************************************************************************************************
+     *
+     * Defines the key codes. 
+     *
+     ******************************************************************************************************************/
     @RequiredArgsConstructor @Getter
     public enum KeyCode
       {
@@ -82,7 +94,7 @@ public class CecEvent
         private final int code;  
         
         @Nonnull
-        public static KeyCode findByCode (final int code) 
+        public static KeyCode forCode (final int code) 
           throws NotFoundException
           {
             for (final KeyCode keycode : values())
@@ -101,5 +113,5 @@ public class CecEvent
     private final KeyCode keyCode;
     
     @Nonnull
-    private final KeyDirection keyDirection;
+    private final KeyEventType keyDirection;
   }
