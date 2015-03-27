@@ -16,12 +16,16 @@
     <name>blueMarine2 - Application (JavaFX)</name>
 
     <properties>
-        <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass>
         <!-- Otherwise can't be released because of missing javadocs -->
         <tft.javadoc.excludePackageNames />
     </properties>
     
     <dependencies>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-cec</artifactId>
+        </dependency>
+        
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>

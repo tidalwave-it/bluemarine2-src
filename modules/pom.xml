@@ -170,6 +170,7 @@
         <module>Installers/Linux</module>
         <module>Installers/LinuxArmV6EmbeddedJRE</module>
         <module>Installers/MacOSXEmbeddedJRE</module>
+        <module>CECWrapper</module>
     </modules>
 
 </project>
