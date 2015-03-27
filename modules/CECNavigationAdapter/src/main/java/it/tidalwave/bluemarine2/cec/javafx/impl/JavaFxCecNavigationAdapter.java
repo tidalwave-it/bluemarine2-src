@@ -53,21 +53,21 @@ import static it.tidalwave.cec.CecEvent.EventType.*;
 @SimpleMessageSubscriber @Slf4j
 public class JavaFxCecNavigationAdapter 
   {
-    private final Map<CecEvent, Runnable> actionMap = new HashMap<>();
+    private final Map<CecEvent, Runnable> map = new HashMap<>();
     
     public JavaFxCecNavigationAdapter()
       {
-        actionMap.put(new CecEvent(SELECT, USER_CONTROL_PRESSED),  () -> { emulateKey(KeyCode.SPACE,  USER_CONTROL_PRESSED);  });
-        actionMap.put(new CecEvent(SELECT, USER_CONTROL_RELEASED), () -> { emulateKey(KeyCode.SPACE,  USER_CONTROL_RELEASED); });
-        actionMap.put(new CecEvent(LEFT,   USER_CONTROL_PRESSED),  () -> { emulateKey(KeyCode.LEFT,   USER_CONTROL_PRESSED);  });
-        actionMap.put(new CecEvent(LEFT,   USER_CONTROL_RELEASED), () -> { emulateKey(KeyCode.LEFT,   USER_CONTROL_RELEASED); });
-        actionMap.put(new CecEvent(RIGHT,  USER_CONTROL_PRESSED),  () -> { emulateKey(KeyCode.RIGHT,  USER_CONTROL_PRESSED);  });
-        actionMap.put(new CecEvent(RIGHT,  USER_CONTROL_RELEASED), () -> { emulateKey(KeyCode.RIGHT,  USER_CONTROL_RELEASED); });
-        actionMap.put(new CecEvent(UP,     USER_CONTROL_PRESSED),  () -> { emulateKey(KeyCode.UP,     USER_CONTROL_PRESSED);  });
-        actionMap.put(new CecEvent(UP,     USER_CONTROL_RELEASED), () -> { emulateKey(KeyCode.UP,     USER_CONTROL_RELEASED); });
-        actionMap.put(new CecEvent(DOWN,   USER_CONTROL_PRESSED),  () -> { emulateKey(KeyCode.DOWN,   USER_CONTROL_PRESSED);  });
-        actionMap.put(new CecEvent(DOWN,   USER_CONTROL_RELEASED), () -> { emulateKey(KeyCode.DOWN,   USER_CONTROL_RELEASED); });
-        actionMap.put(new CecEvent(EXIT,   USER_CONTROL_PRESSED),  () -> { flowController.dismissCurrentPresentation();   });
+        map.put(new CecEvent(SELECT, USER_CONTROL_PRESSED),  () -> emulateKey(KeyCode.SPACE,  USER_CONTROL_PRESSED)  );
+        map.put(new CecEvent(SELECT, USER_CONTROL_RELEASED), () -> emulateKey(KeyCode.SPACE,  USER_CONTROL_RELEASED) );
+        map.put(new CecEvent(LEFT,   USER_CONTROL_PRESSED),  () -> emulateKey(KeyCode.LEFT,   USER_CONTROL_PRESSED)  );
+        map.put(new CecEvent(LEFT,   USER_CONTROL_RELEASED), () -> emulateKey(KeyCode.LEFT,   USER_CONTROL_RELEASED) );
+        map.put(new CecEvent(RIGHT,  USER_CONTROL_PRESSED),  () -> emulateKey(KeyCode.RIGHT,  USER_CONTROL_PRESSED)  );
+        map.put(new CecEvent(RIGHT,  USER_CONTROL_RELEASED), () -> emulateKey(KeyCode.RIGHT,  USER_CONTROL_RELEASED) );
+        map.put(new CecEvent(UP,     USER_CONTROL_PRESSED),  () -> emulateKey(KeyCode.UP,     USER_CONTROL_PRESSED)  );
+        map.put(new CecEvent(UP,     USER_CONTROL_RELEASED), () -> emulateKey(KeyCode.UP,     USER_CONTROL_RELEASED) );
+        map.put(new CecEvent(DOWN,   USER_CONTROL_PRESSED),  () -> emulateKey(KeyCode.DOWN,   USER_CONTROL_PRESSED)  );
+        map.put(new CecEvent(DOWN,   USER_CONTROL_RELEASED), () -> emulateKey(KeyCode.DOWN,   USER_CONTROL_RELEASED) );
+        map.put(new CecEvent(EXIT,   USER_CONTROL_PRESSED),  () -> flowController.dismissCurrentPresentation()       );
       }
     
     @Inject
@@ -76,7 +76,7 @@ public class JavaFxCecNavigationAdapter
     /* VisibleForTesting */ void onCecEventReceived (final @Nonnull @ListensTo CecEvent event)
       {
         log.debug("onCecEventReceived({})", event);
-        actionMap.getOrDefault(event, () -> { log.warn("unmapped event: {}", event); }).run();
+        map.getOrDefault(event, () -> log.warn("unmapped event: {}", event)).run();
       }
     
     private void emulateKey (final @Nonnull KeyCode code, final @Nonnull CecEvent.EventType eventType)
