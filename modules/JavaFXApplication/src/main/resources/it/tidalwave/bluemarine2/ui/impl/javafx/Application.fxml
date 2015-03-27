@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="623.0" prefWidth="821.0" style="-fx-background-color: blue;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.tidalwave.bluemarine2.ui.impl.javafx.JavaFXApplicationPresentationDelegate">
@@ -18,11 +17,7 @@
                 <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <StackPane fx:id="spContent" onKeyReleased="#onKeyReleased" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                    <cursor>
-                        <Cursor fx:constant="NONE" />
-                    </cursor>
-                </StackPane>
+                <StackPane fx:id="spContent" onKeyReleased="#onKeyReleased" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             </children>
         </GridPane>
     </children>
