@@ -39,7 +39,7 @@ import it.tidalwave.cec.impl.ProcessExecutor.ConsoleOutput;
 import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import it.tidalwave.cec.CecEvent;
 import it.tidalwave.cec.CecEvent.KeyCode;
-import it.tidalwave.cec.CecEvent.KeyDirection;
+import it.tidalwave.cec.CecEvent.KeyEventType;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.util.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
@@ -77,8 +77,8 @@ public class CecClientWrapper
                 try
                   {
                     final KeyCode keyCode = KeyCode.forCode(g3);
-                    final KeyDirection keyDirection = KeyDirection.forCode(g2);
-                    final CecEvent event = new CecEvent(keyCode, keyDirection);
+                    final KeyEventType keyEventType = KeyEventType.forCode(g2);
+                    final CecEvent event = new CecEvent(keyCode, keyEventType);
                     log.debug("Sending {}...", event);
                     messageBus.publish(event);
                   }
