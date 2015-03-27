@@ -76,26 +76,24 @@ public class JavaFxCecNavigationAdapter
     /* VisibleForTesting */ void onCecEventReceived (final @Nonnull @ListensTo CecEvent event)
       {
         log.debug("onCecEventReceived({})", event);
-        actionMap.getOrDefault(event, () -> log.warn("unmapped event: {}", event)).run();
+
+        Platform.runLater(() -> 
+          {
+            actionMap.getOrDefault(event, () -> log.warn("unmapped event: {}", event)).run();
+          });
       }
     
     private void keyPress (final @Nonnull KeyCode code)
       {
-        Platform.runLater(() -> 
-          {
-            log.debug("keyPress({})", code);
-            final FXRobot robot = FXRobotFactory.createRobot(flowController.getContentPane().getScene());
-            robot.keyPress(code);              
-          });
+        log.debug("keyPress({})", code);
+        final FXRobot robot = FXRobotFactory.createRobot(flowController.getContentPane().getScene());
+        robot.keyPress(code);              
       }
     
     private void keyRelease (final @Nonnull KeyCode code)
       {
-        Platform.runLater(() -> 
-          {
-            log.debug("keyRelease({})", code);
-            final FXRobot robot = FXRobotFactory.createRobot(flowController.getContentPane().getScene());
-            robot.keyRelease(code);              
-          });
+        log.debug("keyRelease({})", code);
+        final FXRobot robot = FXRobotFactory.createRobot(flowController.getContentPane().getScene());
+        robot.keyRelease(code);              
       }
   }
