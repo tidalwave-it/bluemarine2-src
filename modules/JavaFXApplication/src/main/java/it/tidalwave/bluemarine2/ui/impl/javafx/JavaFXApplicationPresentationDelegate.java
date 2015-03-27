@@ -43,6 +43,8 @@ import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -115,4 +117,21 @@ public class JavaFXApplicationPresentationDelegate
         flowController.setContentPane(spContent);
         messageBus.publish(new PowerOnNotification());        
       }    
+    
+    /*******************************************************************************************************************
+     *
+     * Binds the BACK_SPACE key to backward navigation.
+     * 
+     * @param   event   the key event
+     *
+     ******************************************************************************************************************/
+    @FXML
+    public void onKeyReleased (final @Nonnull KeyEvent event)
+      {
+        if (event.getCode().equals(KeyCode.BACK_SPACE))
+          {
+            log.debug("onKeyReleased({})", event);
+            flowController.dismissCurrentPresentation();
+          }
+      }
   }
