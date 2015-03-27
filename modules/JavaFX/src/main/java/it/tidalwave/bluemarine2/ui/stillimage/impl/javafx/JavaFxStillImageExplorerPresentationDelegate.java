@@ -28,11 +28,7 @@
  */
 package it.tidalwave.bluemarine2.ui.stillimage.impl.javafx;
 
-import javax.inject.Inject;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.stillimage.StillImageExplorerPresentation;
 
 /***********************************************************************************************************************
@@ -48,19 +44,6 @@ import it.tidalwave.bluemarine2.ui.stillimage.StillImageExplorerPresentation;
 @Configurable
 public class JavaFxStillImageExplorerPresentationDelegate implements StillImageExplorerPresentation
   {
-    @FXML
-    private Button btBack;
-    
-    @Inject
-    private FlowController flowController;
-    
-    @FXML
-    private void initialize()
-      {
-        // FIXME: temporary - should go call back the controller instead
-        btBack.setOnAction(event -> { flowController.dismissCurrentPresentation(); });
-      }
-
     @Override
     public void showUp() 
       {  
