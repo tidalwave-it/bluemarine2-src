@@ -53,21 +53,21 @@ import static it.tidalwave.cec.CecEvent.EventType.*;
 @SimpleMessageSubscriber @Slf4j
 public class JavaFxCecNavigationAdapter 
   {
-    private final Map<CecEvent, Runnable> map = new HashMap<>();
+    private final Map<CecEvent, Runnable> actionMap = new HashMap<>();
     
     public JavaFxCecNavigationAdapter()
       {
-        map.put(new CecEvent(SELECT, USER_CONTROL_PRESSED),  () -> emulateKey(KeyCode.SPACE,  USER_CONTROL_PRESSED)  );
-        map.put(new CecEvent(SELECT, USER_CONTROL_RELEASED), () -> emulateKey(KeyCode.SPACE,  USER_CONTROL_RELEASED) );
-        map.put(new CecEvent(LEFT,   USER_CONTROL_PRESSED),  () -> emulateKey(KeyCode.LEFT,   USER_CONTROL_PRESSED)  );
-        map.put(new CecEvent(LEFT,   USER_CONTROL_RELEASED), () -> emulateKey(KeyCode.LEFT,   USER_CONTROL_RELEASED) );
-        map.put(new CecEvent(RIGHT,  USER_CONTROL_PRESSED),  () -> emulateKey(KeyCode.RIGHT,  USER_CONTROL_PRESSED)  );
-        map.put(new CecEvent(RIGHT,  USER_CONTROL_RELEASED), () -> emulateKey(KeyCode.RIGHT,  USER_CONTROL_RELEASED) );
-        map.put(new CecEvent(UP,     USER_CONTROL_PRESSED),  () -> emulateKey(KeyCode.UP,     USER_CONTROL_PRESSED)  );
-        map.put(new CecEvent(UP,     USER_CONTROL_RELEASED), () -> emulateKey(KeyCode.UP,     USER_CONTROL_RELEASED) );
-        map.put(new CecEvent(DOWN,   USER_CONTROL_PRESSED),  () -> emulateKey(KeyCode.DOWN,   USER_CONTROL_PRESSED)  );
-        map.put(new CecEvent(DOWN,   USER_CONTROL_RELEASED), () -> emulateKey(KeyCode.DOWN,   USER_CONTROL_RELEASED) );
-        map.put(new CecEvent(EXIT,   USER_CONTROL_PRESSED),  () -> flowController.dismissCurrentPresentation()       );
+        actionMap.put(new CecEvent(SELECT, USER_CONTROL_PRESSED),  () -> keyPress(KeyCode.SPACE)   );
+        actionMap.put(new CecEvent(SELECT, USER_CONTROL_RELEASED), () -> keyRelease(KeyCode.SPACE) );
+        actionMap.put(new CecEvent(LEFT,   USER_CONTROL_PRESSED),  () -> keyPress(KeyCode.LEFT)    );
+        actionMap.put(new CecEvent(LEFT,   USER_CONTROL_RELEASED), () -> keyRelease(KeyCode.LEFT)  );
+        actionMap.put(new CecEvent(RIGHT,  USER_CONTROL_PRESSED),  () -> keyPress(KeyCode.RIGHT)   );
+        actionMap.put(new CecEvent(RIGHT,  USER_CONTROL_RELEASED), () -> keyRelease(KeyCode.RIGHT) );
+        actionMap.put(new CecEvent(UP,     USER_CONTROL_PRESSED),  () -> keyPress(KeyCode.UP)      );
+        actionMap.put(new CecEvent(UP,     USER_CONTROL_RELEASED), () -> keyRelease(KeyCode.UP)    );
+        actionMap.put(new CecEvent(DOWN,   USER_CONTROL_PRESSED),  () -> keyPress(KeyCode.DOWN )   );
+        actionMap.put(new CecEvent(DOWN,   USER_CONTROL_RELEASED), () -> keyRelease(KeyCode.DOWN)  );
+        actionMap.put(new CecEvent(EXIT,   USER_CONTROL_PRESSED),  () -> flowController.dismissCurrentPresentation());
       }
     
     @Inject
@@ -76,26 +76,26 @@ public class JavaFxCecNavigationAdapter
     /* VisibleForTesting */ void onCecEventReceived (final @Nonnull @ListensTo CecEvent event)
       {
         log.debug("onCecEventReceived({})", event);
-        map.getOrDefault(event, () -> log.warn("unmapped event: {}", event)).run();
+        actionMap.getOrDefault(event, () -> log.warn("unmapped event: {}", event)).run();
       }
     
-    private void emulateKey (final @Nonnull KeyCode code, final @Nonnull CecEvent.EventType eventType)
+    private void keyPress (final @Nonnull KeyCode code)
       {
         Platform.runLater(() -> 
           {
-            log.debug("emulateKeyPress({}, {})", code, eventType);
+            log.debug("keyPress({})", code);
             final FXRobot robot = FXRobotFactory.createRobot(flowController.getContentPane().getScene());
-            
-            switch (eventType)
-              {
-                case USER_CONTROL_PRESSED:
-                    robot.keyPress(code);                        
-                    break;
-                    
-                case USER_CONTROL_RELEASED:
-                    robot.keyRelease(code);                        
-                    break;
-              }
+            robot.keyPress(code);              
+          });
+      }
+    
+    private void keyRelease (final @Nonnull KeyCode code)
+      {
+        Platform.runLater(() -> 
+          {
+            log.debug("keyRelease({})", code);
+            final FXRobot robot = FXRobotFactory.createRobot(flowController.getContentPane().getScene());
+            robot.keyRelease(code);              
           });
       }
   }
