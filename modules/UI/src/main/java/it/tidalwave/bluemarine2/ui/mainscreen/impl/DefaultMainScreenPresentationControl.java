@@ -32,13 +32,13 @@ import javax.inject.Inject;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import java.util.Collection;
-import javafx.application.Platform;
 import org.springframework.beans.factory.ListableBeanFactory;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.UserActionSupport;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
+import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Comparator.comparing;
@@ -62,6 +62,9 @@ public class DefaultMainScreenPresentationControl
     private MainScreenPresentation presentation;
 
     @Inject
+    private FlowController flowController;
+    
+    @Inject
     private ListableBeanFactory beanFactory;
 
     /*******************************************************************************************************************
@@ -74,10 +77,7 @@ public class DefaultMainScreenPresentationControl
         @Override
         public void actionPerformed()
           {
-            log.info("Shutting down...");
-            // TODO: fire a PowerOff event and wait for collaboration completion
-//            Platform.exit();
-            System.exit(0); // needed, otherwise Spring won't necessarily shut down 
+            flowController.powerOff();
           }
       };
 
