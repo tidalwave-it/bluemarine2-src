@@ -40,6 +40,8 @@ import lombok.ToString;
  *
  * Represents a CEC event.
  * 
+ * @see http://www.cec-o-matic.com/
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
