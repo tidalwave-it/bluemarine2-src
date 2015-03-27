@@ -76,8 +76,8 @@ public class CecClientWrapper
               {
                 try
                   {
-                    final KeyCode keyCode = KeyCode.findByCode(g3);
-                    final KeyDirection keyDirection = KeyDirection.findByCode(g2);
+                    final KeyCode keyCode = KeyCode.forCode(g3);
+                    final KeyDirection keyDirection = KeyDirection.forCode(g2);
                     final CecEvent event = new CecEvent(keyCode, keyDirection);
                     log.debug("Sending {}...", event);
                     messageBus.publish(event);

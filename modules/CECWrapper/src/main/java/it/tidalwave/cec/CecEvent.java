@@ -54,7 +54,7 @@ public class CecEvent
         private final int code;  
         
         @Nonnull
-        public static KeyDirection findByCode (final int code) 
+        public static KeyDirection forCode (final int code) 
           throws NotFoundException
           {
             for (final KeyDirection keyDirection : values())
@@ -82,7 +82,7 @@ public class CecEvent
         private final int code;  
         
         @Nonnull
-        public static KeyCode findByCode (final int code) 
+        public static KeyCode forCode (final int code) 
           throws NotFoundException
           {
             for (final KeyCode keycode : values())
