@@ -46,6 +46,10 @@ import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
+ * An adapter that receives notifications from {@code cec-client} and forwards events to the message bus.
+ * 
+ * @stereotype  Adapter
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -62,6 +66,11 @@ public class CecClientWrapper
     @Inject
     private MessageBus messageBus;
     
+    /*******************************************************************************************************************
+     *
+     * Parses the output from {@code cec-client} and fires events.
+     *
+     ******************************************************************************************************************/
     private final ConsoleOutput.Listener listener = string ->
       {
         final Matcher matcher = CEC_PATTERN.matcher(string);
@@ -90,6 +99,11 @@ public class CecClientWrapper
           }
       };
     
+    /*******************************************************************************************************************
+     *
+     * At power on runs {@code cec-client}.
+     *
+     ******************************************************************************************************************/
     /* VisibleForTesting */ void onPowerOnReceived (final @Nonnull @ListensTo PowerOnNotification notification)
       {
         try 
