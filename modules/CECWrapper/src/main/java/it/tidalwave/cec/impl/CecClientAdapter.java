@@ -42,7 +42,6 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.cec.CecEvent;
 import it.tidalwave.cec.CecEvent.EventType;
-import it.tidalwave.cec.CecEvent.KeyCode;
 import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import lombok.extern.slf4j.Slf4j;
 
@@ -84,7 +83,7 @@ public class CecClientAdapter
             
             try
               {
-                final CecEvent event = new CecEvent(KeyCode.forCode(keyCode), EventType.forCode(eventType));
+                final CecEvent event = EventType.forCode(eventType).createEvent(keyCode);
                 log.debug("Sending {}...", event);
                 messageBus.publish(event);
               }

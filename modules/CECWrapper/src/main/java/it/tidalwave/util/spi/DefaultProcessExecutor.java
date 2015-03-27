@@ -35,6 +35,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
@@ -403,12 +404,11 @@ public class DefaultProcessExecutor implements ProcessExecutor
 
         final List<String> environment = new ArrayList<String>();
 
-//        for (final Entry<String, String> e : System.getenv().entrySet())
-//          {
-//            environment.add(String.format("%s=%s", e.getKey(), e.getValue()));
-//          }
+        for (final Entry<String, String> e : System.getenv().entrySet())
+          {
+            environment.add(String.format("%s=%s", e.getKey(), e.getValue()));
+          }
 
-        environment.add("ARGYLL_NOT_INTERACTIVE=true");
         log.info(">>>> environment: {}", environment);
         process = Runtime.getRuntime().exec(arguments.toArray(new String[0]),
                                             environment.toArray(new String[0]));

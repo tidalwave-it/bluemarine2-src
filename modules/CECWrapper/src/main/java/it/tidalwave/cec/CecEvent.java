@@ -57,8 +57,24 @@ public class CecEvent
    @RequiredArgsConstructor @Getter
     public enum EventType
       {
-        USER_CONTROL_PRESSED(0x44),
-        USER_CONTROL_RELEASED(0x8b);
+        USER_CONTROL_PRESSED(0x44)
+          {
+            @Override
+            public CecEvent createEvent (final int code)
+              throws NotFoundException
+              {
+                return createUserControlEvent(this, code);
+              }
+          },
+        USER_CONTROL_RELEASED(0x8b)
+          {
+            @Override
+            public CecEvent createEvent (final int code)
+              throws NotFoundException
+              {
+                return createUserControlEvent(this, code);
+              }
+          };
         
         private final int code;  
         
@@ -76,6 +92,16 @@ public class CecEvent
             
             throw new NotFoundException("CEC event type: " + Integer.toHexString(code));
           } 
+        
+        public abstract CecEvent createEvent (final int code)
+          throws NotFoundException;
+        
+        @Nonnull
+        private static CecEvent createUserControlEvent (final @Nonnull EventType eventType, final int keyCode) 
+          throws NotFoundException
+          {
+            return new CecEvent(eventType, KeyCode.forCode(keyCode));
+          }
       }
 
     /*******************************************************************************************************************
@@ -112,8 +138,8 @@ public class CecEvent
       }
     
     @Nonnull
-    private final KeyCode keyCode;
+    private final EventType eventType;
     
     @Nonnull
-    private final EventType keyDirection;
+    private final KeyCode keyCode;
   }
