@@ -60,6 +60,6 @@
 
     <aop:aspectj-autoproxy/>
 
-    <bean class="it.tidalwave.cec.impl.CecClientWrapper" />
+    <bean class="it.tidalwave.cec.impl.CecClientAdapter" />
 
 </beans>

@@ -55,7 +55,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @SimpleMessageSubscriber @Slf4j
-public class CecClientWrapper 
+public class CecClientAdapter 
   {
     private static final String CEC_REGEX = "^TRAFFIC: *\\[ *([0-9]+)\\][ \\t>]*([0-9A-Fa-f]+):([0-9A-Fa-f]+):([0-9A-Fa-f]+)$";
     
