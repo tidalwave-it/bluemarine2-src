@@ -31,6 +31,7 @@ package it.tidalwave.cec;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import it.tidalwave.util.NotFoundException;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -41,7 +42,7 @@ import lombok.ToString;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @Getter @RequiredArgsConstructor @ToString
+@Immutable @Getter @RequiredArgsConstructor @EqualsAndHashCode @ToString
 public class CecEvent 
   {
     @RequiredArgsConstructor @Getter
