@@ -78,14 +78,14 @@ public class CecClientAdapter
         if (matcher.matches())
           {
             final int g1 = Integer.parseInt(matcher.group(2), 16);
-            final int g2 = Integer.parseInt(matcher.group(3), 16);
-            final int g3 = Integer.parseInt(matcher.group(4), 16);
+            final int keyEventType = Integer.parseInt(matcher.group(3), 16);
+            final int keyCode = Integer.parseInt(matcher.group(4), 16);
             
             if (g1 == 0x01)
               {
                 try
                   {
-                    final CecEvent event = new CecEvent(KeyCode.forCode(g3), KeyEventType.forCode(g2));
+                    final CecEvent event = new CecEvent(KeyCode.forCode(keyCode), KeyEventType.forCode(keyEventType));
                     log.debug("Sending {}...", event);
                     messageBus.publish(event);
                   }
