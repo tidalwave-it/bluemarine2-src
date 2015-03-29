@@ -26,46 +26,61 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.audio;
+package it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx;
 
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
+import it.tidalwave.role.ui.javafx.JavaFXBinder;
+import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 
 /***********************************************************************************************************************
  *
- * The Presentation of the explorer of audio media files.
+ * The JavaFX Delegate for {@link AudioExplorerPresentation}.
  * 
- * @stereotype  Presentation
+ * @stereotype  JavaFXDelegate
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface AudioExplorerPresentation 
+@Configurable
+public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPresentation
   {
-    /*******************************************************************************************************************
-     *
-     * Binds the UI with the callbacks.
-     * 
-     * @param   upAction    the action to go to the upper folder
-     *
-     ******************************************************************************************************************/
-    public void bind (@Nonnull UserAction upAction);
+    @FXML
+    private ListView<PresentationModel> lvFiles;
     
-    /*******************************************************************************************************************
-     *
-     * Shows this presentation on the screen.
-     *
-     ******************************************************************************************************************/
-    public void showUp();
+    @FXML
+    private Button btUp;
     
-    /*******************************************************************************************************************
-     *
-     * Populates the presentation with a set of media files.
-     * 
-     * @param   pm      the {@link PresentationModel}
-     *
-     ******************************************************************************************************************/
-    public void populate (@Nonnull PresentationModel pm);
+    @Inject
+    private JavaFXBinder binder;
+    
+    @Override
+    public void bind (final @Nonnull UserAction upAction)
+      {
+        binder.bind(btUp, upAction);
+      }
+    
+    @Override
+    public void showUp() 
+      {
+      }
+    
+    @Override
+    public void populate (final @Nonnull PresentationModel pm)
+      {
+        binder.bind(lvFiles, pm, () -> 
+          {
+            if (!lvFiles.getItems().isEmpty())
+              {
+                lvFiles.getSelectionModel().select(0);
+              }
+          });
+      }
   }

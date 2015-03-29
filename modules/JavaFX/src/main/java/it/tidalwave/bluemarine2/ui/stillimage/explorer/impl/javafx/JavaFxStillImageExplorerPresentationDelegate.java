@@ -26,14 +26,14 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.video.impl.javafx;
+package it.tidalwave.bluemarine2.ui.stillimage.explorer.impl.javafx;
 
 import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.bluemarine2.ui.video.VideoExplorerPresentation;
+import it.tidalwave.bluemarine2.ui.stillimage.explorer.StillImageExplorerPresentation;
 
 /***********************************************************************************************************************
  *
- * The JavaFX Delegate for {@link VideoExplorerPresentation}.
+ * The JavaFX Delegate for {@link StillImageExplorerPresentation}.
  * 
  * @stereotype  JavaFXDelegate
  * 
@@ -42,10 +42,10 @@ import it.tidalwave.bluemarine2.ui.video.VideoExplorerPresentation;
  *
  **********************************************************************************************************************/
 @Configurable
-public class JavaFxVideoExplorerPresentationDelegate implements VideoExplorerPresentation
+public class JavaFxStillImageExplorerPresentationDelegate implements StillImageExplorerPresentation
   {
     @Override
     public void showUp() 
-      {
+      {  
       }
   }

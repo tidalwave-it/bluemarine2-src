@@ -26,24 +26,35 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.video;
+package it.tidalwave.bluemarine2.ui.stillimage.explorer.impl;
+
+import javax.annotation.Nonnull;
+import javax.inject.Inject;
+import it.tidalwave.messagebus.annotation.ListensTo;
+import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.ui.commons.OpenStillImageExplorerRequest;
+import it.tidalwave.bluemarine2.ui.stillimage.explorer.StillImageExplorerPresentation;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
- * The Presentation of the explorer of video media files.
+ * The Control of the {@link StillImageExplorerPresentation}.
  * 
- * @stereotype  Presentation
+ * @stereotype  Control
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface VideoExplorerPresentation 
+@SimpleMessageSubscriber @Slf4j
+public class DefaultStillImageExplorerPresentationControl 
   {
-    /*******************************************************************************************************************
-     *
-     * Shows this presentation on the screen.
-     *
-     ******************************************************************************************************************/
-    public void showUp();
+    @Inject
+    private StillImageExplorerPresentation presentation;
+    
+    /* VisibleForTesting */ void onOpenStillImageExplorerRequest (final @ListensTo @Nonnull OpenStillImageExplorerRequest request)
+      {
+        log.info("onOpenStillImageExplorerRequest({})", request);
+        presentation.showUp();
+      }
   }

@@ -26,58 +26,26 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.audio.impl.javafx;
+package it.tidalwave.bluemarine2.ui.video.explorer.impl.javafx;
 
-import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import it.tidalwave.role.ui.PresentationModel;
-import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
-import it.tidalwave.bluemarine2.ui.audio.AudioExplorerPresentation;
-import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
-import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
+import org.springframework.beans.factory.annotation.Configurable;
+import it.tidalwave.bluemarine2.ui.video.explorer.VideoExplorerPresentation;
 
 /***********************************************************************************************************************
  *
- * The JavaFX implementation of {@link AudioExplorerPresentation}.
+ * The JavaFX Delegate for {@link VideoExplorerPresentation}.
  * 
- * @stereotype  Presentation
+ * @stereotype  JavaFXDelegate
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class JavaFxAudioExplorerPresentation implements AudioExplorerPresentation
+@Configurable
+public class JavaFxVideoExplorerPresentationDelegate implements VideoExplorerPresentation
   {
-    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/AudioExplorer.fxml";
-    
-    @Inject
-    private FlowController flowController;
-    
-    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
-    
-    private final AudioExplorerPresentation delegate = nad.getDelegate();
-            
-    // FIXME: use @Delegate
-    
     @Override
-    public void bind (final @Nonnull UserAction upAction)
+    public void showUp() 
       {
-        delegate.bind(upAction);
-      }
-    
-    @Override
-    public void showUp()  
-      {
-        delegate.showUp();
-        flowController.showPresentation(nad.getNode());
-      }
-
-    @Override
-    public void populate (final @Nonnull PresentationModel pm) 
-      {
-        delegate.populate(pm);
       }
   }

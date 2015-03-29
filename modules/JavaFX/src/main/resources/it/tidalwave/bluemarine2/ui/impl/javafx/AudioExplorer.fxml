@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="apAudioExplorer" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.tidalwave.bluemarine2.ui.audio.impl.javafx.JavaFxAudioExplorerPresentationDelegate">
+<AnchorPane id="apAudioExplorer" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx.JavaFxAudioExplorerPresentationDelegate">
     <stylesheets>
         <URL value="@Application.css" />
     </stylesheets>
