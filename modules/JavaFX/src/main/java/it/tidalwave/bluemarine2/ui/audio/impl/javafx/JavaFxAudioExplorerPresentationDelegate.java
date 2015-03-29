@@ -75,6 +75,12 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     @Override
     public void populate (final @Nonnull PresentationModel pm)
       {
-        binder.bind(lvFiles, pm);
+        binder.bind(lvFiles, pm, () -> 
+          {
+            if (!lvFiles.getItems().isEmpty())
+              {
+                lvFiles.getSelectionModel().select(0);
+              }
+          });
       }
   }
