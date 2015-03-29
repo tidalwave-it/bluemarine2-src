@@ -41,6 +41,7 @@ import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.UserActionProvider;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
+import it.tidalwave.role.ui.spi.UserActionRunnable;
 import it.tidalwave.role.ui.spi.UserActionSupport;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
@@ -163,22 +164,8 @@ public class DefaultAudioExplorerPresentationControl
     private UserActionProvider actionProviderFor (final @Nonnull As object)
       {
         final UserAction action = (object instanceof MediaFolder) 
-            ? new UserActionSupport() 
-              {
-                @Override
-                public void actionPerformed() 
-                  {
-                    navigateTo(((MediaFolder)object));
-                  }
-              }
-            : new UserActionSupport() 
-              {
-                @Override
-                public void actionPerformed() 
-                  {
-                    messageBus.publish(new RenderMediaFileRequest((MediaItem)object));
-                  }
-              };
+            ? new UserActionRunnable(() -> navigateTo(((MediaFolder)object))) 
+            : new UserActionRunnable(() -> messageBus.publish(new RenderMediaFileRequest((MediaItem)object)));
         
         return new DefaultUserActionProvider()
           {
