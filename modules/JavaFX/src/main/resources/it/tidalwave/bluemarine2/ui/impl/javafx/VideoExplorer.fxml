@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="apVideoExplorer" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.tidalwave.bluemarine2.ui.video.impl.javafx.JavaFxVideoExplorerPresentationDelegate">
+<AnchorPane id="apVideoExplorer" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.tidalwave.bluemarine2.ui.video.explorer.impl.javafx.JavaFxVideoExplorerPresentationDelegate">
     <stylesheets>
         <URL value="@Application.css" />
     </stylesheets>

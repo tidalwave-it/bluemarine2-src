@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.audio.impl;
+package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
@@ -41,6 +41,7 @@ import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.UserActionProvider;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
+import it.tidalwave.role.ui.spi.UserActionRunnable;
 import it.tidalwave.role.ui.spi.UserActionSupport;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
@@ -50,7 +51,7 @@ import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.impl.DefaultMediaFolder;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
-import it.tidalwave.bluemarine2.ui.audio.AudioExplorerPresentation;
+import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.Presentable.Presentable;
@@ -92,7 +93,7 @@ public class DefaultAudioExplorerPresentationControl
             if (stack.size() > 1)
               {
                 stack.pop();
-                populate(stack.peek());
+                populateWith(stack.peek());
               }
           }
       };
@@ -123,28 +124,28 @@ public class DefaultAudioExplorerPresentationControl
           }
         
         final Path path = new File(s).toPath();
-        populate(path);
-      }
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private void populate (final @Nonnull Path path)
-      {
-        log.info("populate({})", path);
         final MediaFolder mediaFolder = new DefaultMediaFolder(path);
-        stack.push(mediaFolder);
-        populate(mediaFolder);
+        navigateTo(mediaFolder);
       }
     
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
-    private void populate (final @Nonnull MediaFolder mediaFolder)
+    private void navigateTo (final @Nonnull MediaFolder mediaFolder)
       {
-        log.info("populate({})", mediaFolder);
+        log.debug("navigateTo({})", mediaFolder);
+        stack.push(mediaFolder);
+        populateWith(mediaFolder);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void populateWith (final @Nonnull MediaFolder mediaFolder)
+      {
+        log.debug("populateWith({})", mediaFolder);
         // FIXME: waiting signal while loading
         final SimpleComposite8<As> composite = mediaFolder.as(SimpleComposite8);
         final PresentationModel pm = composite.findChildren()
@@ -163,22 +164,8 @@ public class DefaultAudioExplorerPresentationControl
     private UserActionProvider actionProviderFor (final @Nonnull As object)
       {
         final UserAction action = (object instanceof MediaFolder) 
-            ? new UserActionSupport() 
-              {
-                @Override
-                public void actionPerformed() 
-                  {
-                    populate(((MediaFolder)object).getPath());
-                  }
-              }
-            : new UserActionSupport() 
-              {
-                @Override
-                public void actionPerformed() 
-                  {
-                    messageBus.publish(new RenderMediaFileRequest((MediaItem)object));
-                  }
-              };
+            ? new UserActionRunnable(() -> navigateTo(((MediaFolder)object))) 
+            : new UserActionRunnable(() -> messageBus.publish(new RenderMediaFileRequest((MediaItem)object)));
         
         return new DefaultUserActionProvider()
           {

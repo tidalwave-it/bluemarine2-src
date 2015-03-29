@@ -26,46 +26,35 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.stillimage.impl.javafx;
+package it.tidalwave.bluemarine2.ui.stillimage.explorer.impl;
 
+import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
-import it.tidalwave.bluemarine2.ui.stillimage.StillImageExplorerPresentation;
-import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
+import it.tidalwave.messagebus.annotation.ListensTo;
+import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.ui.commons.OpenStillImageExplorerRequest;
+import it.tidalwave.bluemarine2.ui.stillimage.explorer.StillImageExplorerPresentation;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
 
 /***********************************************************************************************************************
  *
- * The JavaFX implementation of {@link StillImageExplorerPresentation}.
+ * The Control of the {@link StillImageExplorerPresentation}.
  * 
- * @stereotype  Presentation
+ * @stereotype  Control
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class JavaFxStillImageExplorerPresentation implements StillImageExplorerPresentation
+@SimpleMessageSubscriber @Slf4j
+public class DefaultStillImageExplorerPresentationControl 
   {
-    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/StillImageExplorer.fxml";
-    
     @Inject
-    private FlowController flowController;
+    private StillImageExplorerPresentation presentation;
     
-    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
-    
-    private final StillImageExplorerPresentation delegate = nad.getDelegate();
-            
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override
-    public void showUp()  
+    /* VisibleForTesting */ void onOpenStillImageExplorerRequest (final @ListensTo @Nonnull OpenStillImageExplorerRequest request)
       {
-        delegate.showUp();
-        flowController.showPresentation(nad.getNode());
+        log.info("onOpenStillImageExplorerRequest({})", request);
+        presentation.showUp();
       }
   }

@@ -26,35 +26,46 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.video.impl;
+package it.tidalwave.bluemarine2.ui.stillimage.explorer.impl.javafx;
 
-import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import it.tidalwave.messagebus.annotation.ListensTo;
-import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.ui.commons.OpenVideoExplorerRequest;
-import it.tidalwave.bluemarine2.ui.video.VideoExplorerPresentation;
+import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
+import it.tidalwave.bluemarine2.ui.stillimage.explorer.StillImageExplorerPresentation;
+import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
 
 /***********************************************************************************************************************
  *
- * The Control of the {@link VideoExplorerPresentation}.
+ * The JavaFX implementation of {@link StillImageExplorerPresentation}.
  * 
- * @stereotype  Control
+ * @stereotype  Presentation
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@SimpleMessageSubscriber @Slf4j
-public class DefaultVideoExplorerPresentationControl 
+@Slf4j
+public class JavaFxStillImageExplorerPresentation implements StillImageExplorerPresentation
   {
-    @Inject
-    private VideoExplorerPresentation presentation;
+    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/StillImageExplorer.fxml";
     
-    /* VisibleForTesting */ void onOpenVideoExplorerRequest (final @ListensTo @Nonnull OpenVideoExplorerRequest request)
+    @Inject
+    private FlowController flowController;
+    
+    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
+    
+    private final StillImageExplorerPresentation delegate = nad.getDelegate();
+            
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void showUp()  
       {
-        log.info("onOpenVideoExplorerRequest({})", request);
-        presentation.showUp();
+        delegate.showUp();
+        flowController.showPresentation(nad.getNode());
       }
   }

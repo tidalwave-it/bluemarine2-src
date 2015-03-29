@@ -64,10 +64,10 @@
 
     <bean class="it.tidalwave.bluemarine2.ui.mainscreen.impl.javafx.JavaFxMainScreenPresentation" />
     
-    <bean class="it.tidalwave.bluemarine2.ui.stillimage.impl.javafx.JavaFxStillImageExplorerPresentation" />
+    <bean class="it.tidalwave.bluemarine2.ui.stillimage.explorer.impl.javafx.JavaFxStillImageExplorerPresentation" />
     
-    <bean class="it.tidalwave.bluemarine2.ui.audio.impl.javafx.JavaFxAudioExplorerPresentation" />
+    <bean class="it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx.JavaFxAudioExplorerPresentation" />
     
-    <bean class="it.tidalwave.bluemarine2.ui.video.impl.javafx.JavaFxVideoExplorerPresentation" />
+    <bean class="it.tidalwave.bluemarine2.ui.video.explorer.impl.javafx.JavaFxVideoExplorerPresentation" />
 
 </beans>

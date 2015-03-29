@@ -26,61 +26,38 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.audio.impl.javafx;
+package it.tidalwave.role.ui.spi;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.javafx.JavaFXBinder;
-import it.tidalwave.bluemarine2.ui.audio.AudioExplorerPresentation;
+import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
- * The JavaFX Delegate for {@link AudioExplorerPresentation}.
+ * Wraps a {@link Runnable} into a {@link UserAction}. It's useful with Java 8 for shorter code (using composition with
+ * a lambda expression in place of subclassing an inner class.
  * 
- * @stereotype  JavaFXDelegate
+ * FIXME: Merge to UserActionSupport.
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable
-public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPresentation
+@RequiredArgsConstructor
+public final class UserActionRunnable extends UserActionSupport
   {
-    @FXML
-    private ListView<PresentationModel> lvFiles;
+    @Nonnull
+    private final Runnable runnable;
     
-    @FXML
-    private Button btUp;
-    
-    @Inject
-    private JavaFXBinder binder;
+    public UserActionRunnable (final @Nonnull Object roleOrFactory, final @Nonnull Runnable runnable)
+      {
+        super(new Object[] { roleOrFactory });
+        this.runnable = runnable;
+     }
     
     @Override
-    public void bind (final @Nonnull UserAction upAction)
+    public void actionPerformed() 
       {
-        binder.bind(btUp, upAction);
-      }
-    
-    @Override
-    public void showUp() 
-      {
-      }
-    
-    @Override
-    public void populate (final @Nonnull PresentationModel pm)
-      {
-        binder.bind(lvFiles, pm, () -> 
-          {
-            if (!lvFiles.getItems().isEmpty())
-              {
-                lvFiles.getSelectionModel().select(0);
-              }
-          });
+        runnable.run();
       }
   }

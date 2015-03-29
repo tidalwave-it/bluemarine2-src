@@ -26,18 +26,11 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.video.impl.javafx;
-
-import javax.inject.Inject;
-import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
-import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
-import it.tidalwave.bluemarine2.ui.video.VideoExplorerPresentation;
-import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
+package it.tidalwave.bluemarine2.ui.stillimage.explorer;
 
 /***********************************************************************************************************************
  *
- * The JavaFX implementation of {@link VideoExplorerPresentation}.
+ * The Presentation of the explorer of still image media files.
  * 
  * @stereotype  Presentation
  * 
@@ -45,27 +38,12 @@ import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegat
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class JavaFxVideoExplorerPresentation implements VideoExplorerPresentation
+public interface StillImageExplorerPresentation 
   {
-    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/VideoExplorer.fxml";
-    
-    @Inject
-    private FlowController flowController;
-    
-    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
-    
-    private final VideoExplorerPresentation delegate = nad.getDelegate();
-                
     /*******************************************************************************************************************
      *
-     * {@inheritDoc}
+     * Shows this presentation on the screen.
      *
      ******************************************************************************************************************/
-    @Override
-    public void showUp()  
-      {
-        delegate.showUp();
-        flowController.showPresentation(nad.getNode());
-      }
+    public void showUp();
   }

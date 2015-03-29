@@ -26,70 +26,58 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.mainscreen.impl;
+package it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.util.function.Supplier;
+import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.spi.UserActionRunnable;
-import it.tidalwave.messagebus.MessageBus;
-import lombok.Getter;
+import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
+import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
+import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import lombok.extern.slf4j.Slf4j;
-import lombok.RequiredArgsConstructor;
-import static it.tidalwave.bluemarine2.ui.util.BundleUtilities.*;
-
-// TODO: if approved, move to TheseFoolishThings
-@RequiredArgsConstructor
-class SupplierFromClass<T> implements Supplier<T>
-  {
-    @Nonnull
-    private final Class<T> factoryClass;
-
-    @Override
-    public T get() 
-      {
-        try
-          {
-            return factoryClass.newInstance();
-          } 
-        catch (InstantiationException | IllegalAccessException e) 
-          {
-            throw new RuntimeException(e);
-          }
-      } 
-  }
+import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
 
 /***********************************************************************************************************************
  *
- * A proritized container of {@link UserAction}s to be placed on a menu.
+ * The JavaFX implementation of {@link AudioExplorerPresentation}.
+ * 
+ * @stereotype  Presentation
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @Slf4j
-public class MainMenuItem 
+public class JavaFxAudioExplorerPresentation implements AudioExplorerPresentation
   {
-    @Getter @Nonnull
-    private final int priority;
+    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/AudioExplorer.fxml";
     
     @Inject
-    private MessageBus messageBus;
+    private FlowController flowController;
     
-    @Getter @Nonnull
-    private final UserAction action;
+    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
     
-    public MainMenuItem (final @Nonnull String displayNameKey, 
-                         final @Nonnull String requestClassName,
-                         final @Nonnull int priority)
-      throws ClassNotFoundException
+    private final AudioExplorerPresentation delegate = nad.getDelegate();
+            
+    // FIXME: use @Delegate
+    
+    @Override
+    public void bind (final @Nonnull UserAction upAction)
       {
-        this.priority = priority;
-        final Class<?> requestClass = Thread.currentThread().getContextClassLoader().loadClass(requestClassName);
-        final SupplierFromClass<?> supplier = new SupplierFromClass<>(requestClass);
-        // FIXME: use MessageSendingUserAction?
-        this.action  = new UserActionRunnable(displayableFromBundle(getClass(), displayNameKey), 
-                                              () -> messageBus.publish(supplier.get()));
+        delegate.bind(upAction);
+      }
+    
+    @Override
+    public void showUp()  
+      {
+        delegate.showUp();
+        flowController.showPresentation(nad.getNode());
+      }
+
+    @Override
+    public void populate (final @Nonnull PresentationModel pm) 
+      {
+        delegate.populate(pm);
       }
   }
