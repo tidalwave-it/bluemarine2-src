@@ -25,7 +25,7 @@
         <logback.version>1.0.13</logback.version>
         <slf4j.version>1.7.5</slf4j.version>
         <spring.version>4.0.2.RELEASE</spring.version>
-        <steelblue.version>1.0-ALPHA-1</steelblue.version>
+        <steelblue.version>1.0-ALPHA-2</steelblue.version>
         <thesefoolishthings.version>1.38</thesefoolishthings.version>
         <uuid.version>2.1.5-201007271250</uuid.version>
         
