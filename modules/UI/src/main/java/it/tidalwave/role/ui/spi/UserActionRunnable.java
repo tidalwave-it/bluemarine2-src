@@ -49,6 +49,12 @@ public final class UserActionRunnable extends UserActionSupport
     @Nonnull
     private final Runnable runnable;
     
+    public UserActionRunnable (final @Nonnull Object roleOrFactory, final @Nonnull Runnable runnable)
+      {
+        super(new Object[] { roleOrFactory });
+        this.runnable = runnable;
+     }
+    
     @Override
     public void actionPerformed() 
       {

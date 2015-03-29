@@ -30,12 +30,35 @@ package it.tidalwave.bluemarine2.ui.mainscreen.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import java.util.function.Supplier;
 import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.spi.UserActionSupport;
+import it.tidalwave.role.ui.spi.UserActionRunnable;
 import it.tidalwave.messagebus.MessageBus;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import lombok.RequiredArgsConstructor;
 import static it.tidalwave.bluemarine2.ui.util.BundleUtilities.*;
+
+// TODO: if approved, move to TheseFoolishThings
+@RequiredArgsConstructor
+class SupplierFromClass<T> implements Supplier<T>
+  {
+    @Nonnull
+    private final Class<T> factoryClass;
+
+    @Override
+    public T get() 
+      {
+        try
+          {
+            return factoryClass.newInstance();
+          } 
+        catch (InstantiationException | IllegalAccessException e) 
+          {
+            throw new RuntimeException(e);
+          }
+      } 
+  }
 
 /***********************************************************************************************************************
  *
@@ -51,15 +74,11 @@ public class MainMenuItem
     @Getter @Nonnull
     private final int priority;
     
-    @Nonnull
-    private final Class<?> requestClass;
-    
     @Inject
     private MessageBus messageBus;
     
     @Getter @Nonnull
     private final UserAction action;
-    
     
     public MainMenuItem (final @Nonnull String displayNameKey, 
                          final @Nonnull String requestClassName,
@@ -67,22 +86,10 @@ public class MainMenuItem
       throws ClassNotFoundException
       {
         this.priority = priority;
-        this.requestClass = Thread.currentThread().getContextClassLoader().loadClass(requestClassName);
-        // FIXME: use MessageSendingUserAction
-        this.action  = new UserActionSupport(displayableFromBundle(getClass(), displayNameKey)) 
-          {
-            @Override
-            public void actionPerformed() 
-              {
-                try
-                  {
-                    messageBus.publish(requestClass.newInstance());
-                  } 
-                catch (InstantiationException | IllegalAccessException e) 
-                  {
-                    log.error("", e);
-                  }
-              }
-          };
+        final Class<?> requestClass = Thread.currentThread().getContextClassLoader().loadClass(requestClassName);
+        final SupplierFromClass<?> supplier = new SupplierFromClass<>(requestClass);
+        // FIXME: use MessageSendingUserAction?
+        this.action  = new UserActionRunnable(displayableFromBundle(getClass(), displayNameKey), 
+                () -> messageBus.publish(supplier.get()));
       }
   }
