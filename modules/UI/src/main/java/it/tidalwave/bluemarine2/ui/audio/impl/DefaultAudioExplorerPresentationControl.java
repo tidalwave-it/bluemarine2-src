@@ -92,7 +92,7 @@ public class DefaultAudioExplorerPresentationControl
             if (stack.size() > 1)
               {
                 stack.pop();
-                populate(stack.peek());
+                populateWith(stack.peek());
               }
           }
       };
@@ -123,28 +123,28 @@ public class DefaultAudioExplorerPresentationControl
           }
         
         final Path path = new File(s).toPath();
-        populate(path);
-      }
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private void populate (final @Nonnull Path path)
-      {
-        log.info("populate({})", path);
         final MediaFolder mediaFolder = new DefaultMediaFolder(path);
-        stack.push(mediaFolder);
-        populate(mediaFolder);
+        navigateTo(mediaFolder);
       }
     
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
-    private void populate (final @Nonnull MediaFolder mediaFolder)
+    private void navigateTo (final @Nonnull MediaFolder mediaFolder)
       {
-        log.info("populate({})", mediaFolder);
+        log.info("navigateTo({})", mediaFolder);
+        stack.push(mediaFolder);
+        populateWith(mediaFolder);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void populateWith (final @Nonnull MediaFolder mediaFolder)
+      {
+        log.info("populateWith({})", mediaFolder);
         // FIXME: waiting signal while loading
         final SimpleComposite8<As> composite = mediaFolder.as(SimpleComposite8);
         final PresentationModel pm = composite.findChildren()
@@ -168,7 +168,7 @@ public class DefaultAudioExplorerPresentationControl
                 @Override
                 public void actionPerformed() 
                   {
-                    populate(((MediaFolder)object).getPath());
+                    navigateTo(((MediaFolder)object));
                   }
               }
             : new UserActionSupport() 
