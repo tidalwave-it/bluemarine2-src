@@ -90,6 +90,6 @@ public class MainMenuItem
         final SupplierFromClass<?> supplier = new SupplierFromClass<>(requestClass);
         // FIXME: use MessageSendingUserAction?
         this.action  = new UserActionRunnable(displayableFromBundle(getClass(), displayNameKey), 
-                () -> messageBus.publish(supplier.get()));
+                                              () -> messageBus.publish(supplier.get()));
       }
   }
