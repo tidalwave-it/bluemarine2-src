@@ -29,12 +29,32 @@
 package it.tidalwave.bluemarine2.ui.audio.impl;
 
 import javax.annotation.Nonnull;
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import java.util.Stack;
+import java.io.File;
+import java.nio.file.Path;
+import it.tidalwave.util.As;
+import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.role.spi.DefaultDisplayable;
+import it.tidalwave.role.ui.PresentationModel;
+import it.tidalwave.role.ui.UserAction;
+import it.tidalwave.role.ui.UserActionProvider;
+import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
+import it.tidalwave.role.ui.spi.UserActionSupport;
+import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.model.impl.DefaultMediaFolder;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
+import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
 import it.tidalwave.bluemarine2.ui.audio.AudioExplorerPresentation;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
+import static it.tidalwave.role.ui.Presentable.Presentable;
+import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
 
 /***********************************************************************************************************************
  *
@@ -52,9 +72,121 @@ public class DefaultAudioExplorerPresentationControl
     @Inject
     private AudioExplorerPresentation presentation;
     
+    @Inject
+    private MessageBus messageBus;
+    
+    private final Stack<MediaFolder> stack = new Stack<>();
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private final UserAction upAction = new UserActionSupport(new DefaultDisplayable("Up")) // FIXME: bundle
+      {
+        @Override
+        public void actionPerformed() 
+          {
+            // TODO: assert not UI thread
+            log.info("upAction.actionPerformed()");
+            
+            if (stack.size() > 1)
+              {
+                stack.pop();
+                populate(stack.peek());
+              }
+          }
+      };
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @PostConstruct 
+    /* VisibleForTesting */ void initialize()
+      {
+        presentation.bind(upAction);  
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
     /* VisibleForTesting */ void onOpenAudioExplorerRequest (final @ListensTo @Nonnull OpenAudioExplorerRequest request)
       {
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp();
+        String s = "/Users/fritz/Personal/Music/iTunes/iTunes Music/Music"; // FIXME;
+        
+        if ("arm".equals(System.getProperty("os.arch")))
+          {
+            s = "/";
+          }
+        
+        final Path path = new File(s).toPath();
+        populate(path);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void populate (final @Nonnull Path path)
+      {
+        log.info("populate({})", path);
+        final MediaFolder mediaFolder = new DefaultMediaFolder(path);
+        stack.push(mediaFolder);
+        populate(mediaFolder);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void populate (final @Nonnull MediaFolder mediaFolder)
+      {
+        log.info("populate({})", mediaFolder);
+        // FIXME: waiting signal while loading
+        final SimpleComposite8<As> composite = mediaFolder.as(SimpleComposite8);
+        final PresentationModel pm = composite.findChildren()
+                                              .stream()
+                                              .map(object -> object.as(Presentable).createPresentationModel(actionProviderFor(object)))
+                                              .collect(toCompositePresentationModel());
+        presentation.populate(pm);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    // FIXME: inject with @DciRole and @DciContext
+    @Nonnull
+    private UserActionProvider actionProviderFor (final @Nonnull As object)
+      {
+        final UserAction action = (object instanceof MediaFolder) 
+            ? new UserActionSupport() 
+              {
+                @Override
+                public void actionPerformed() 
+                  {
+                    populate(((MediaFolder)object).getPath());
+                  }
+              }
+            : new UserActionSupport() 
+              {
+                @Override
+                public void actionPerformed() 
+                  {
+                    messageBus.publish(new RenderMediaFileRequest((MediaItem)object));
+                  }
+              };
+        
+        return new DefaultUserActionProvider()
+          {
+            @Override @Nonnull
+            public UserAction getDefaultAction()
+              {
+                return action;
+              }
+          };
       }
   }
