@@ -28,7 +28,15 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.impl.javafx;
 
+import javax.annotation.Nonnull;
+import javax.inject.Inject;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import org.springframework.beans.factory.annotation.Configurable;
+import it.tidalwave.role.ui.PresentationModel;
+import it.tidalwave.role.ui.UserAction;
+import it.tidalwave.role.ui.javafx.JavaFXBinder;
 import it.tidalwave.bluemarine2.ui.audio.AudioExplorerPresentation;
 
 /***********************************************************************************************************************
@@ -44,8 +52,29 @@ import it.tidalwave.bluemarine2.ui.audio.AudioExplorerPresentation;
 @Configurable
 public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPresentation
   {
+    @FXML
+    private ListView<PresentationModel> lvFiles;
+    
+    @FXML
+    private Button btUp;
+    
+    @Inject
+    private JavaFXBinder binder;
+    
+    @Override
+    public void bind (final @Nonnull UserAction upAction)
+      {
+        binder.bind(btUp, upAction);
+      }
+    
     @Override
     public void showUp() 
       {
+      }
+    
+    @Override
+    public void populate (final @Nonnull PresentationModel pm)
+      {
+        binder.bind(lvFiles, pm);
       }
   }

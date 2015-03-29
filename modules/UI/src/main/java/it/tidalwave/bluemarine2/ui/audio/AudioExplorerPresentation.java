@@ -28,6 +28,10 @@
  */
 package it.tidalwave.bluemarine2.ui.audio;
 
+import javax.annotation.Nonnull;
+import it.tidalwave.role.ui.PresentationModel;
+import it.tidalwave.role.ui.UserAction;
+
 /***********************************************************************************************************************
  *
  * The Presentation of the explorer of audio media files.
@@ -42,8 +46,26 @@ public interface AudioExplorerPresentation
   {
     /*******************************************************************************************************************
      *
+     * Binds the UI with the callbacks.
+     * 
+     * @param   upAction    the action to go to the upper folder
+     *
+     ******************************************************************************************************************/
+    public void bind (@Nonnull UserAction upAction);
+    
+    /*******************************************************************************************************************
+     *
      * Shows this presentation on the screen.
      *
      ******************************************************************************************************************/
     public void showUp();
+    
+    /*******************************************************************************************************************
+     *
+     * Populates the presentation with a set of media files.
+     * 
+     * @param   pm      the {@link PresentationModel}
+     *
+     ******************************************************************************************************************/
+    public void populate (@Nonnull PresentationModel pm);
   }

@@ -28,7 +28,10 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.impl.javafx;
 
+import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import it.tidalwave.role.ui.PresentationModel;
+import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
 import it.tidalwave.bluemarine2.ui.audio.AudioExplorerPresentation;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
@@ -57,15 +60,24 @@ public class JavaFxAudioExplorerPresentation implements AudioExplorerPresentatio
     
     private final AudioExplorerPresentation delegate = nad.getDelegate();
             
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
+    // FIXME: use @Delegate
+    
+    @Override
+    public void bind (final @Nonnull UserAction upAction)
+      {
+        delegate.bind(upAction);
+      }
+    
     @Override
     public void showUp()  
       {
         delegate.showUp();
         flowController.showPresentation(nad.getNode());
+      }
+
+    @Override
+    public void populate (final @Nonnull PresentationModel pm) 
+      {
+        delegate.populate(pm);
       }
   }
