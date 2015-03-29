@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>it.tidalwave.bluemarine2</groupId>
+        <artifactId>blueMarine2-master</artifactId>
+        <version>1.0-ALPHA-3-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <groupId>it.tidalwave.bluemarine2</groupId>
+    <artifactId>blueMarine2-modules</artifactId>
+    <version>1.0-ALPHA-3-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>blueMarine2 (modules)</name>
+    <description>blueMarine2 (modules)</description>
+
+    <properties>
+        <!-- WARNING: don't use 1.3.8, it has got a broken pom which brings is tons of useless stuff! -->
+        <javax-annotation.version>1.3.7</javax-annotation.version>
+        <javax-inject.version>1</javax-inject.version>
+        <logback.version>1.0.13</logback.version>
+        <slf4j.version>1.7.5</slf4j.version>
+        <spring.version>4.0.2.RELEASE</spring.version>
+        <steelblue.version>1.0-ALPHA-2</steelblue.version>
+        <thesefoolishthings.version>1.38</thesefoolishthings.version>
+        <uuid.version>2.1.5-201007271250</uuid.version>
+        
+        <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass> 
+        <tft.javafx.vmargs>${tft.mainClass}</tft.javafx.vmargs> 
+
+        <!--
+        <tft.mockito.version>1.8.5</tft.mockito.version>
+        <tft.test.maxMemory>1024M</tft.test.maxMemory>
+        <tft.test.listeners>it.tidalwave.util.test.TestLogger</tft.test.listeners>
+
+                <tft.UmlGraphDoc.version>5.4</tft.UmlGraphDoc.version>
+                <tft.UmlGraphDoc.additionalParam>-views -attributes -operations -types -postfixpackage -nodefontpackagesize 6 -nodefontclasssize 8 -nodefontsize 7 -edgefontsize 7 -nodesep 0.05 -ranksep 0.1 -visibility -inferdep -inferrel -inferdepinpackage -hide java.*|javax.*|android.*</tft.UmlGraphDoc.additionalParam>
+        -->
+
+        <tft.javadoc.doclint>-Xdoclint:none</tft.javadoc.doclint>
+        <tft.clirr.skip>true</tft.clirr.skip> <!-- breaks Hudson, see BH-5 -->
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>it.tidalwave.thesefoolishthings</groupId>
+                <artifactId>thesefoolishthings</artifactId>
+                <version>${thesefoolishthings.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>it.tidalwave.steelblue</groupId>
+                <artifactId>it-tidalwave-steelblue</artifactId>
+                <version>${steelblue.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency> 
+                <groupId>org.springframework</groupId> 
+                <artifactId>spring-framework-bom</artifactId> 
+                <version>${spring.version}</version> 
+                <type>pom</type> 
+                <scope>import</scope> 
+            </dependency> 
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${tft.aspectjrt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aquafx-project</groupId>
+                <artifactId>aquafx</artifactId>
+                <version>0.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>1.3.7</version>
+                <!-- WARNING: don't use 1.3.8, it has got a broken pom which brings is tons of useless stuff! -->
+            </dependency>
+            <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${tft.lombok.version}</version>
+            </dependency>            
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!--
+                <dependency>
+                    <groupId>com.kenai.nbpwr</groupId>
+                    <artifactId>javax-annotation</artifactId>
+                </dependency>
+        -->
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+        </dependency>
+
+        <!-- TEST DEPENDENCIES -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-util-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <modules>
+        <module>UI</module>
+        <module>JavaFX</module>
+        <module>JavaFXApplication</module>
+        <module>Model</module>
+        <module>Installers/Linux</module>
+        <module>Installers/LinuxArmV6EmbeddedJRE</module>
+        <module>Installers/MacOSXEmbeddedJRE</module>
+        <module>CECWrapper</module>
+        <module>CECNavigationAdapter</module>
+    </modules>
+
+</project>
