@@ -1,8 +1,27 @@
-/*.root { -fx-font-size: 26px; }*/
+/*.root
+  {
+    -fx-font-size:          40px; 
+  }*/
 
 .mainFxmlClass 
   {
-    -fx-background-color: black;
+    -fx-background-color:   black;
+  }
+  
+.label
+  {
+    -fx-font-size:          40; 
+    -fx-text-fill:          white;
+  }
+  
+.content-panel
+  {
+    -fx-padding:            20px;
+  }
+
+.header-label
+  {
+    -fx-font-size:          60; 
   }
 
 .button
@@ -34,4 +53,30 @@
     -fx-background-radius:  20px;
     -fx-padding:            5px;
   }
+  
+.list-view
+  {
+    -fx-background-color:   rgb(20,20,20);
+  }
 
+.list-cell 
+  {
+    -fx-font-size:          40; 
+    -fx-background-color:   transparent;
+    /*-fx-padding:            2em 2.5em 2em 2.5em;*/
+    -fx-text-fill:          white;
+  }
+  
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:focused:selected,
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected 
+  {
+    -fx-background-color:   linear-gradient(rgb(95.0, 165.0, 221.0),
+                                            rgb(54.0, 124.0, 192.0)),
+                            linear-gradient(rgb(116.0, 186.0, 232.0), 
+                                            rgb(116.0, 186.0, 232.0) 1.0%, 
+                                            rgb(109.0, 178.0, 227.0) 1.0%, 
+                                            rgb(59.0, 136.0, 208.0) 100.0%);
+    -fx-background-insets:  0.0, 1.0 0.0 1.0 0.0;
+    -fx-text-fill:          black;
+  }
+  
