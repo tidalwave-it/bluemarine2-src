@@ -133,7 +133,7 @@ public class DefaultAudioExplorerPresentationControl
      ******************************************************************************************************************/
     private void navigateTo (final @Nonnull MediaFolder mediaFolder)
       {
-        log.info("navigateTo({})", mediaFolder);
+        log.debug("navigateTo({})", mediaFolder);
         stack.push(mediaFolder);
         populateWith(mediaFolder);
       }
@@ -144,7 +144,7 @@ public class DefaultAudioExplorerPresentationControl
      ******************************************************************************************************************/
     private void populateWith (final @Nonnull MediaFolder mediaFolder)
       {
-        log.info("populateWith({})", mediaFolder);
+        log.debug("populateWith({})", mediaFolder);
         // FIXME: waiting signal while loading
         final SimpleComposite8<As> composite = mediaFolder.as(SimpleComposite8);
         final PresentationModel pm = composite.findChildren()
