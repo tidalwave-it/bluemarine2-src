@@ -73,7 +73,7 @@ public class DefaultAudioRendererPresentationControl
     
     private Duration duration = Duration.ZERO;
     
-    private final UserAction8 rewindAction = new UserActionLambda(() -> { });
+    private final UserAction8 rewindAction = new UserActionLambda(() -> mediaPlayer.rewind());
     
     private final UserAction8 stopAction = new UserActionLambda(() -> mediaPlayer.stop());
     
@@ -81,7 +81,7 @@ public class DefaultAudioRendererPresentationControl
     
     private final UserAction8 playAction = new UserActionLambda(() -> mediaPlayer.play());
     
-    private final UserAction8 fastForwardAction = new UserActionLambda(() -> { });
+    private final UserAction8 fastForwardAction = new UserActionLambda(() -> mediaPlayer.fastForward());
     
     /*******************************************************************************************************************
      *

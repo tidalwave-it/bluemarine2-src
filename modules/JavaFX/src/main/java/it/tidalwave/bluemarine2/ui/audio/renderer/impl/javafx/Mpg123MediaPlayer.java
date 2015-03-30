@@ -169,7 +169,6 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
      ******************************************************************************************************************/
     @Override
     public synchronized void stop() 
-      throws MediaPlayer.Exception 
       {
         if (executor != null)
           {
@@ -187,7 +186,7 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
      ******************************************************************************************************************/
     @Override
     public synchronized void pause() 
-      throws MediaPlayer.Exception 
+      throws Exception 
       {
         if (statusProperty.getValue().equals(Status.PLAYING))
           {
@@ -206,6 +205,52 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
           }
       }
 
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void rewind() 
+      throws Exception 
+      {
+        if (statusProperty.getValue().equals(Status.PLAYING))
+          {
+            try 
+              {
+                // FIXME: doesn't work
+                executor.send(".");
+              }
+            catch (IOException e) 
+              {
+                throw new Exception(e.toString()); // FIXME
+              }
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void fastForward() 
+      throws Exception
+      {
+        if (statusProperty.getValue().equals(Status.PLAYING))
+          {
+            try 
+              {
+                // FIXME: doesn't work
+                executor.send(",");
+              }
+            catch (IOException e) 
+              {
+                throw new Exception(e.toString()); // FIXME
+              }
+          }
+      }
+    
     /*******************************************************************************************************************
      *
      * 
