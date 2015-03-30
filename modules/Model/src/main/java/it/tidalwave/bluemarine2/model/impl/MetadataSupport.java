@@ -109,7 +109,7 @@ public class MetadataSupport implements MediaItem.Metadata
       {
         if (value != null)
           {
-            put(key, value);
+            rawProperties.put(key, value);
           }
       }
   }
