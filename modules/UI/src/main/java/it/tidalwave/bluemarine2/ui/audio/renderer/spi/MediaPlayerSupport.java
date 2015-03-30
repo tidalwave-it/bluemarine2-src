@@ -30,7 +30,7 @@ package it.tidalwave.bluemarine2.ui.audio.renderer.spi;
 
 import javax.annotation.CheckForNull;
 import java.time.Duration;
-import javafx.beans.property.Property;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
@@ -48,8 +48,8 @@ public abstract class MediaPlayerSupport implements MediaPlayer
     protected MediaItem mediaItem;
     
     @Getter
-    protected final Property<Duration> playTimeProperty = new SimpleObjectProperty<>(Duration.ZERO);
+    protected final ObjectProperty<Duration> playTimeProperty = new SimpleObjectProperty<>(Duration.ZERO);
     
     @Getter
-    protected final Property<Status> statusProperty = new SimpleObjectProperty<>(Status.STOPPED);
+    protected final ObjectProperty<Status> statusProperty = new SimpleObjectProperty<>(Status.STOPPED);
   }

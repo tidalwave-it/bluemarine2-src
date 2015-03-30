@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import java.time.Duration;
 import javafx.beans.property.Property;
 import it.tidalwave.bluemarine2.model.MediaItem;
+import javafx.beans.property.ObjectProperty;
 
 /***********************************************************************************************************************
  *
@@ -93,12 +94,12 @@ public interface MediaPlayer
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Property<Duration> getPlayTimeProperty();
+    public ObjectProperty<Duration> getPlayTimeProperty();
     
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Property<Status> getStatusProperty();
+    public ObjectProperty<Status> getStatusProperty();
   }
