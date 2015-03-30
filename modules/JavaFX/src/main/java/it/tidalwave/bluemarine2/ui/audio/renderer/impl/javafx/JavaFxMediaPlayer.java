@@ -28,18 +28,15 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
-import javax.annotation.Nonnull;
-import java.nio.file.Path;
-import javafx.scene.media.Media;
-import it.tidalwave.bluemarine2.model.MediaItem;
-import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
-import java.time.Duration;
-import javafx.beans.property.Property;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.value.ObservableValue;
-import javafx.scene.media.MediaPlayer.Status;
 import javax.annotation.CheckForNull;
-import lombok.Getter;
+import javax.annotation.Nonnull;
+import java.time.Duration;
+import java.nio.file.Path;
+import javafx.beans.value.ObservableValue;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer.Status;
+import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.ui.audio.renderer.spi.MediaPlayerSupport;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -49,19 +46,13 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class JavaFxMediaPlayer implements MediaPlayer
+public class JavaFxMediaPlayer extends MediaPlayerSupport
   {
-    @CheckForNull
-    private MediaItem mediaItem;
-    
     @CheckForNull
     private Media media;
     
     @CheckForNull
     private javafx.scene.media.MediaPlayer mediaPlayer;
-    
-    @Getter
-    private final Property<Duration> playTimeProperty = new SimpleObjectProperty<>(Duration.ZERO);
     
     private final Runnable cleanup = () ->
       {

@@ -34,14 +34,12 @@ import java.time.Duration;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.IOException;
-import javafx.beans.property.Property;
-import javafx.beans.property.SimpleObjectProperty;
 import it.tidalwave.util.ProcessExecutor;
 import it.tidalwave.util.ProcessExecutor.ConsoleOutput.Listener;
 import it.tidalwave.util.spi.DefaultProcessExecutor;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
-import lombok.Getter;
+import it.tidalwave.bluemarine2.ui.audio.renderer.spi.MediaPlayerSupport;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -51,7 +49,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class Mpg123MediaPlayer implements MediaPlayer
+public class Mpg123MediaPlayer extends MediaPlayerSupport
   {
     // Frame#  3255 [ 8906], Time: 01:25.02 [03:52.66]
     private static final String FRAME_REGEX = "^Frame# *([0-9]+) *\\[ *([0-9]+)\\], *Time: *([.:0-9]+) *\\[([.:0-9]+)\\].*$";
@@ -68,11 +66,6 @@ public class Mpg123MediaPlayer implements MediaPlayer
     
     private static final Pattern FINISHED_PATTERN = Pattern.compile(FINISHED_REGEX);
 
-    @Getter
-    private final Property<Duration> playTimeProperty = new SimpleObjectProperty<>(Duration.ZERO);
-    
-    private MediaItem mediaItem;
-    
     private ProcessExecutor executor;
     
     private long latestPlayTimeUpdateTime = 0;
