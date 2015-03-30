@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import java.time.Duration;
 import java.util.regex.Matcher;
@@ -40,7 +41,6 @@ import it.tidalwave.util.ProcessExecutor.ConsoleOutput.Listener;
 import it.tidalwave.util.spi.DefaultProcessExecutor;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
-import javax.annotation.CheckForNull;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
