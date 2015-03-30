@@ -24,6 +24,10 @@
             <artifactId>it-tidalwave-bluemarine2-model</artifactId>
         </dependency>
         <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
+        </dependency>
+        <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-util-java8supplement</artifactId>
         </dependency>
