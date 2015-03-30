@@ -37,6 +37,7 @@ import java.time.Duration;
 import javafx.beans.property.Property;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
+import javafx.scene.media.MediaPlayer.Status;
 import javax.annotation.CheckForNull;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -61,6 +62,13 @@ public class JavaFxMediaPlayer implements MediaPlayer
     
     @Getter
     private final Property<Duration> playTimeProperty = new SimpleObjectProperty<>(Duration.ZERO);
+    
+    private final Runnable cleanup = () ->
+      {
+        log.debug(">>>> media reproduction finished");
+        // FIXME: remove listener from currentTimeProperty
+        mediaPlayer = null;
+      };
     
     /*******************************************************************************************************************
      *
@@ -100,6 +108,9 @@ public class JavaFxMediaPlayer implements MediaPlayer
           });
         
         mediaPlayer.play();
+        mediaPlayer.setOnEndOfMedia(cleanup);
+        mediaPlayer.setOnError(cleanup);
+        mediaPlayer.setOnHalted(cleanup);
       }
 
     /*******************************************************************************************************************
@@ -125,7 +136,7 @@ public class JavaFxMediaPlayer implements MediaPlayer
     private void checkNotPlaying()
       throws Exception
       {
-        if (mediaPlayer != null)
+        if ((mediaPlayer != null) && mediaPlayer.getStatus().equals(Status.PLAYING))
           {
             throw new Exception("Already playing");  
           }
