@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.renderer.impl;
 
+import it.tidalwave.bluemarine2.model.MediaItem;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -35,11 +36,14 @@ import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.UserActionRunnable;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import java.time.Duration;
+import javafx.application.Platform;
 
 /***********************************************************************************************************************
  *
@@ -59,6 +63,8 @@ public class DefaultAudioRendererPresentationControl
     
     @Inject
     private MediaPlayer mediaPlayer;
+    
+    private final AudioRendererPresentation.Properties properties = new AudioRendererPresentation.Properties();
     
     /*******************************************************************************************************************
      *
@@ -111,7 +117,7 @@ public class DefaultAudioRendererPresentationControl
     @PostConstruct
     /* VisibleForTesting */ void initialize()
       {
-        presentation.bind(rewindAction, stopAction, playAction, fastForwardAction);
+        presentation.bind(rewindAction, stopAction, playAction, fastForwardAction, properties);
       }
     
     /*******************************************************************************************************************
@@ -125,6 +131,17 @@ public class DefaultAudioRendererPresentationControl
         presentation.showUp();
         
         final MediaItem mediaItem = request.getMediaItem();
+        final Metadata metadata = mediaItem.getMedatada();
+
+        // FIXME: the control shouldn't mess with JavaFX stuff
+        Platform.runLater(() ->
+          {
+            properties.getTitleProperty().setValue(metadata.get(TITLE).orElse(""));
+            properties.getDurationProperty().setValue(metadata.get(DURATION).orElse(Duration.ZERO).toString());
+            properties.getPlayTimeProperty().setValue("00:00");
+            properties.getProgressProperty().setValue(0);
+          });
+        
         presentation.setMediaItem(mediaItem);
         mediaPlayer.setMediaItem(mediaItem);
       }

@@ -32,6 +32,8 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.util.ProcessExecutor;
 import it.tidalwave.role.ui.UserAction;
@@ -66,6 +68,18 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     @FXML
     private Button btFastForward;
     
+    @FXML
+    private ProgressBar pbPlayProgress;
+    
+    @FXML
+    private Label lbTitle;
+    
+    @FXML
+    private Label lbDuration;
+    
+    @FXML
+    private Label lbPlayTime;
+    
     @Inject
     private JavaFXBinder binder;
     
@@ -77,12 +91,18 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     public void bind (final @Nonnull UserAction rewindAction,
                       final @Nonnull UserAction stopAction,
                       final @Nonnull UserAction playAction,
-                      final @Nonnull UserAction fastForwardAction)
+                      final @Nonnull UserAction fastForwardAction,
+                      final @Nonnull Properties properties)
       {
         binder.bind(btRewind,      rewindAction);  
         binder.bind(btStop,        stopAction);  
         binder.bind(btPlay,        playAction);  
         binder.bind(btFastForward, fastForwardAction); 
+        
+        lbTitle.textProperty().bind(properties.getTitleProperty());
+        lbDuration.textProperty().bind(properties.getDurationProperty());
+        lbPlayTime.textProperty().bind(properties.getPlayTimeProperty());
+        pbPlayProgress.progressProperty().bind(properties.getProgressProperty());
       }
     
     @Override

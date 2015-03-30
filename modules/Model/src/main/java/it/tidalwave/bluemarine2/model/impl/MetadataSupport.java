@@ -43,6 +43,7 @@ import it.tidalwave.bluemarine2.model.MediaItem;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -50,15 +51,13 @@ import lombok.ToString;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @ToString(of = "rawProperties")
+@RequiredArgsConstructor @ToString(of = "rawProperties") @Slf4j
 public class MetadataSupport implements MediaItem.Metadata
   {
     @Getter @Nonnull
     protected final Path path;
     
-    protected final Map<Key<?>, Object> rawProperties = new HashMap<>();
-    
-    protected final TypeSafeHashMap properties = new TypeSafeHashMap(rawProperties);
+    protected final Map<Key<?>, Object> properties = new HashMap<>();
     
     /*******************************************************************************************************************
      *
@@ -68,14 +67,7 @@ public class MetadataSupport implements MediaItem.Metadata
     @Override @Nonnull
     public <T> Optional<T> get (final @Nonnull Key<T> key)
       {
-        try 
-          {
-            return Optional.of(((T)properties.get(key)));
-          }
-        catch (NotFoundException e) 
-          {
-            return Optional.empty();
-          }
+        return Optional.ofNullable(((T)properties.get(key)));
       }
 
     /*******************************************************************************************************************
@@ -97,7 +89,7 @@ public class MetadataSupport implements MediaItem.Metadata
     @Override @Nonnull
     public Set<Key<?>> getKeys()
       {
-        return Collections.unmodifiableSet(properties.getKeys());
+        return Collections.unmodifiableSet(properties.keySet());
       }
     
     /*******************************************************************************************************************
@@ -109,7 +101,7 @@ public class MetadataSupport implements MediaItem.Metadata
       {
         if (value != null)
           {
-            rawProperties.put(key, value);
+            properties.put(key, value);
           }
       }
   }

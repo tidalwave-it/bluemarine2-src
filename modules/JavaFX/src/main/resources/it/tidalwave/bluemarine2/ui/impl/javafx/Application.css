@@ -23,6 +23,11 @@
   {
     -fx-font-size:          60; 
   }
+  
+.small-label
+  {
+    -fx-font-size:          20; 
+  }
 
 .button
   {

@@ -66,9 +66,10 @@ public class JavaFxAudioRendererPresentation implements AudioRendererPresentatio
     public void bind (final @Nonnull UserAction rewindAction,
                       final @Nonnull UserAction stopAction,
                       final @Nonnull UserAction playAction,
-                      final @Nonnull UserAction fastForwardAction)
+                      final @Nonnull UserAction fastForwardAction,
+                      final @Nonnull Properties properties)
       {
-        delegate.bind(rewindAction, stopAction, playAction, fastForwardAction);
+        delegate.bind(rewindAction, stopAction, playAction, fastForwardAction, properties);
       }
     
     @Override
