@@ -34,11 +34,11 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Button fx:id="btRewind" mnemonicParsing="false" prefWidth="999.0" text="&lt;&lt;" textOverrun="CLIP" />
-                                <Button fx:id="btStop" mnemonicParsing="false" prefWidth="999.0" text="[]" GridPane.columnIndex="1" />
-                                <Button fx:id="btPlay" mnemonicParsing="false" prefWidth="999.0" text="&gt;" GridPane.columnIndex="3" />
-                                <Button fx:id="btFastForward" mnemonicParsing="false" prefWidth="999.0" text="&gt;&gt;" textOverrun="CLIP" GridPane.columnIndex="4" />
-                                <Button fx:id="btPause" mnemonicParsing="false" prefWidth="999.0" text="||" GridPane.columnIndex="2" />
+                                <Button fx:id="btRewind" mnemonicParsing="false" prefWidth="999.0" textOverrun="CLIP" />
+                                <Button fx:id="btStop" mnemonicParsing="false" prefWidth="999.0" GridPane.columnIndex="1" />
+                                <Button fx:id="btPlay" mnemonicParsing="false" prefWidth="999.0" GridPane.columnIndex="3" />
+                                <Button fx:id="btFastForward" mnemonicParsing="false" prefWidth="999.0" textOverrun="CLIP" GridPane.columnIndex="4" />
+                                <Button fx:id="btPause" mnemonicParsing="false" prefWidth="999.0" GridPane.columnIndex="2" />
                             </children>
                         </GridPane>
                     </children>
