@@ -94,12 +94,12 @@ public interface MediaPlayer
      *
      ******************************************************************************************************************/
     @Nonnull
-    public ObjectProperty<Duration> getPlayTimeProperty();
+    public ObjectProperty<Duration> playTimeProperty();
     
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
     @Nonnull
-    public ObjectProperty<Status> getStatusProperty();
+    public ObjectProperty<Status> statusProperty();
   }

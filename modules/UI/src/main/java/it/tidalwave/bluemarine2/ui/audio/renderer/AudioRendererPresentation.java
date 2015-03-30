@@ -37,6 +37,7 @@ import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import lombok.Getter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 
 /***********************************************************************************************************************
  *
@@ -54,7 +55,7 @@ public interface AudioRendererPresentation
      *
      *
      ******************************************************************************************************************/
-    @Getter @ToString
+    @Getter @Accessors(fluent = true) @ToString
     class Properties
       {
         private final Property<String> titleProperty = new SimpleStringProperty("");

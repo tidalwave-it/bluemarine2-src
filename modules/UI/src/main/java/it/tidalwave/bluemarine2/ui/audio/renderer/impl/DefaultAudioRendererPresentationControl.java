@@ -139,7 +139,7 @@ public class DefaultAudioRendererPresentationControl
       {
         presentation.bind(rewindAction, stopAction, pauseAction, playAction, fastForwardAction, properties);
         // FIXME: weak, remove previous listeners
-        mediaPlayer.getPlayTimeProperty().addListener(
+        mediaPlayer.playTimeProperty().addListener(
                 (ObservableValue<? extends Duration> observable, 
                  Duration oldValue,
                  Duration newValue) -> 
@@ -147,8 +147,8 @@ public class DefaultAudioRendererPresentationControl
             // FIXME: the control shouldn't mess with JavaFX stuff
             Platform.runLater(() ->
               {
-                properties.getPlayTimeProperty().setValue(format(newValue));
-                properties.getProgressProperty().setValue((double)newValue.toMillis() / duration.toMillis());
+                properties.playTimeProperty().setValue(format(newValue));
+                properties.progressProperty().setValue((double)newValue.toMillis() / duration.toMillis());
               });
           });
       }
@@ -169,9 +169,9 @@ public class DefaultAudioRendererPresentationControl
         // FIXME: the control shouldn't mess with JavaFX stuff
         Platform.runLater(() ->
           {
-            properties.getTitleProperty().setValue(metadata.get(TITLE).orElse(""));
+            properties.titleProperty().setValue(metadata.get(TITLE).orElse(""));
             duration = metadata.get(DURATION).orElse(Duration.ZERO);
-            properties.getDurationProperty().setValue(format(duration)); 
+            properties.durationProperty().setValue(format(duration)); 
           });
         
         presentation.setMediaItem(mediaItem);

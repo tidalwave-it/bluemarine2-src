@@ -35,6 +35,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
 import lombok.Getter;
+import lombok.experimental.Accessors;
 
 /***********************************************************************************************************************
  *
@@ -47,9 +48,9 @@ public abstract class MediaPlayerSupport implements MediaPlayer
     @CheckForNull
     protected MediaItem mediaItem;
     
-    @Getter
+    @Getter @Accessors(fluent = true)
     protected final ObjectProperty<Duration> playTimeProperty = new SimpleObjectProperty<>(Duration.ZERO);
     
-    @Getter
+    @Getter @Accessors(fluent = true)
     protected final ObjectProperty<Status> statusProperty = new SimpleObjectProperty<>(Status.STOPPED);
   }

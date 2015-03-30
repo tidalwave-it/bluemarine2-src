@@ -101,10 +101,10 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
         binder.bind(btPlay,        playAction);  
         binder.bind(btFastForward, fastForwardAction); 
         
-        lbTitle.textProperty().bind(properties.getTitleProperty());
-        lbDuration.textProperty().bind(properties.getDurationProperty());
-        lbPlayTime.textProperty().bind(properties.getPlayTimeProperty());
-        pbPlayProgress.progressProperty().bind(properties.getProgressProperty());
+        lbTitle.textProperty().bind(properties.titleProperty());
+        lbDuration.textProperty().bind(properties.durationProperty());
+        lbPlayTime.textProperty().bind(properties.playTimeProperty());
+        pbPlayProgress.progressProperty().bind(properties.progressProperty());
       }
     
     @Override
