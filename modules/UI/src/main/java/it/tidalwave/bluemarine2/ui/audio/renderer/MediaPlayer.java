@@ -58,6 +58,11 @@ public interface MediaPlayer
           {
             super(message);
           }
+
+        public Exception (final @Nonnull Throwable cause)
+          {
+            super(cause);
+          }
       }
     
     /*******************************************************************************************************************

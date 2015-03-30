@@ -38,7 +38,6 @@ import it.tidalwave.util.ProcessExecutor;
 import it.tidalwave.util.ProcessExecutor.ConsoleOutput.Listener;
 import it.tidalwave.util.spi.DefaultProcessExecutor;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
 import it.tidalwave.bluemarine2.ui.audio.renderer.spi.MediaPlayerSupport;
 import lombok.extern.slf4j.Slf4j;
 
@@ -127,39 +126,27 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
       {
         checkNotPlaying();
 
-        if (statusProperty.getValue().equals(Status.PAUSED))
+        try 
           {
-            try 
+            if (statusProperty.getValue().equals(Status.PAUSED))
               {
                 executor.send(" ");
-//            executor.stop();
-//            executor = null;
               }
-            catch (IOException e) 
-              {
-                throw new Exception(e.toString()); // FIXME
-              }
-          }
-        else
-          {
-            try 
+            else
               {
                 final String path = mediaItem.getPath().toAbsolutePath().toString();
                 executor = DefaultProcessExecutor.forExecutable("/usr/bin/mpg123") // FIXME
                                                  .withArguments("-C", "-v", path)
                                                  .start();
                 executor.getStderr().setListener(mpg123ConsoleListener);
-              } 
-            catch (IOException e)
-              {
-                throw new Exception(e.toString()); // FIXME:
               }
           }
-
+        catch (IOException e) 
+          {
+            throw new Exception(e);
+          }
+                  
         statusProperty.setValue(Status.PLAYING);
-//Enable terminal control keys. By default use 's' or the space bar to stop/restart (pause, unpause) playback, 
-//'f' to jump forward to the next song, 'b' to jump back to the beginning of the song, ',' 
-//to rewind, '.' to fast forward, and 'q' to quit.         
       }
 
     /*******************************************************************************************************************
@@ -195,12 +182,10 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
                 // FIXME: doesn't work
                 executor.send(" ");
                 statusProperty.setValue(Status.PAUSED);
-//            executor.stop();
-//            executor = null;
               }
             catch (IOException e) 
               {
-                throw new Exception(e.toString()); // FIXME
+                throw new Exception(e);
               }
           }
       }
@@ -219,11 +204,11 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
             try 
               {
                 // FIXME: doesn't work
-                executor.send(".");
+                executor.send(",");
               }
             catch (IOException e) 
               {
-                throw new Exception(e.toString()); // FIXME
+                throw new Exception(e);
               }
           }
       }
@@ -242,15 +227,15 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
             try 
               {
                 // FIXME: doesn't work
-                executor.send(",");
+                executor.send(".");
               }
             catch (IOException e) 
               {
-                throw new Exception(e.toString()); // FIXME
+                throw new Exception(e);
               }
           }
       }
-    
+
     /*******************************************************************************************************************
      *
      * 
