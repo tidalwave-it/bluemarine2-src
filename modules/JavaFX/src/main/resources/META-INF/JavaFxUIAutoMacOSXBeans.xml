@@ -60,16 +60,6 @@
 
     <aop:aspectj-autoproxy/>
     
-    <bean class="it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController" />
-
-    <bean class="it.tidalwave.bluemarine2.ui.mainscreen.impl.javafx.JavaFxMainScreenPresentation" />
-    
-    <bean class="it.tidalwave.bluemarine2.ui.stillimage.explorer.impl.javafx.JavaFxStillImageExplorerPresentation" />
-    
-    <bean class="it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx.JavaFxAudioExplorerPresentation" />
-    
-    <bean class="it.tidalwave.bluemarine2.ui.video.explorer.impl.javafx.JavaFxVideoExplorerPresentation" />
-
-    <bean class="it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx.JavaFxAudioRendererPresentation" />
+    <bean class="it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx.JavaFxMediaPlayer" />
     
 </beans>
