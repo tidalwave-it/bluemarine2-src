@@ -37,6 +37,7 @@ import java.time.Duration;
 import javafx.beans.property.Property;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
+import javax.annotation.CheckForNull;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -49,10 +50,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class JavaFxMediaPlayer implements MediaPlayer
   {
+    @CheckForNull
     private MediaItem mediaItem;
     
+    @CheckForNull
     private Media media;
     
+    @CheckForNull
     private javafx.scene.media.MediaPlayer mediaPlayer;
     
     @Getter
@@ -67,10 +71,11 @@ public class JavaFxMediaPlayer implements MediaPlayer
     public void setMediaItem (final @Nonnull MediaItem mediaItem) 
       throws Exception 
       {
+        checkNotPlaying();
         this.mediaItem = mediaItem;
         final Path path = mediaItem.getPath().toAbsolutePath();
-        log.info("path:     {}", path);
-        log.info("metadata: {}", mediaItem.getMedatada());
+        log.debug("path:     {}", path);
+        log.debug("metadata: {}", mediaItem.getMedatada());
         media = new Media(path.toUri().toString());
       }
     
@@ -80,16 +85,12 @@ public class JavaFxMediaPlayer implements MediaPlayer
      *
      ******************************************************************************************************************/
     @Override
-    public void play() 
+    public synchronized void play() 
       throws Exception 
       {
-        if (mediaPlayer != null)
-          {
-            // FIXME: remove all listeners
-          }
+        checkNotPlaying();
         
         mediaPlayer = new javafx.scene.media.MediaPlayer(media);
-        
         mediaPlayer.currentTimeProperty().addListener(
                 (ObservableValue<? extends javafx.util.Duration> observable, 
                  javafx.util.Duration oldValue, 
@@ -111,5 +112,19 @@ public class JavaFxMediaPlayer implements MediaPlayer
       throws Exception 
       {
         mediaPlayer.stop();
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    private void checkNotPlaying()
+      throws Exception
+      {
+        if (mediaPlayer != null)
+          {
+            throw new Exception("Already playing");  
+          }
       }
   }
