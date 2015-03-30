@@ -36,7 +36,6 @@ import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
 import java.time.Duration;
 import javafx.beans.property.Property;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
