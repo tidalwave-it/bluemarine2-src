@@ -43,7 +43,6 @@ import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import org.openide.util.Exceptions;
 
 /***********************************************************************************************************************
  *
