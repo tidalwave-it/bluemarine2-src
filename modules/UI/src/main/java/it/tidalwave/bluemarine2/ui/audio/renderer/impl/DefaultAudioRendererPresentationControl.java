@@ -33,10 +33,11 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.application.Platform;
-import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.spi.UserActionRunnable;
+import it.tidalwave.role.ui.UserAction8;
+import it.tidalwave.role.ui.spi.UserActionRunnable8;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.MediaItem;
@@ -44,8 +45,10 @@ import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
+import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status.*;
 
 /***********************************************************************************************************************
  *
@@ -74,13 +77,13 @@ public class DefaultAudioRendererPresentationControl
      *
      *
      ******************************************************************************************************************/
-    private final UserAction rewindAction = new UserActionRunnable(() -> { });
+    private final UserAction8 rewindAction = new UserActionRunnable8(() -> { });
     
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
-    private final UserAction stopAction = new UserActionRunnable(() -> 
+    private final UserAction8 stopAction = new UserActionRunnable8(() -> 
       {
         try
           {
@@ -96,7 +99,7 @@ public class DefaultAudioRendererPresentationControl
      *
      *
      ******************************************************************************************************************/
-    private final UserAction pauseAction = new UserActionRunnable(() -> 
+    private final UserAction8 pauseAction = new UserActionRunnable8(() -> 
       {
         try
           {
@@ -112,7 +115,7 @@ public class DefaultAudioRendererPresentationControl
      *
      *
      ******************************************************************************************************************/
-    private final UserAction playAction = new UserActionRunnable(() -> 
+    private final UserAction8 playAction = new UserActionRunnable8(() -> 
       { 
         try
           {
@@ -128,7 +131,7 @@ public class DefaultAudioRendererPresentationControl
      *
      *
      ******************************************************************************************************************/
-    private final UserAction fastForwardAction = new UserActionRunnable(() -> { });
+    private final UserAction8 fastForwardAction = new UserActionRunnable8(() -> { });
     
     /*******************************************************************************************************************
      *
@@ -138,6 +141,12 @@ public class DefaultAudioRendererPresentationControl
     /* VisibleForTesting */ void initialize()
       {
         presentation.bind(rewindAction, stopAction, pauseAction, playAction, fastForwardAction, properties);
+        
+        final ObjectProperty<Status> status = mediaPlayer.statusProperty();
+        stopAction.enabledProperty().bind(status.isEqualTo(PLAYING));
+        pauseAction.enabledProperty().bind(status.isEqualTo(PLAYING));
+        playAction.enabledProperty().bind(status.isNotEqualTo(PLAYING));
+        
         // FIXME: weak, remove previous listeners
         mediaPlayer.playTimeProperty().addListener(
                 (ObservableValue<? extends Duration> observable, 
