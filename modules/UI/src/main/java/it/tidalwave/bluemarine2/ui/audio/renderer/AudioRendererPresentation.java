@@ -69,6 +69,7 @@ public interface AudioRendererPresentation
      ******************************************************************************************************************/
     public void bind (@Nonnull UserAction rewindAction,
                       @Nonnull UserAction stopAction,
+                      @Nonnull UserAction pauseAction,
                       @Nonnull UserAction playAction,
                       @Nonnull UserAction fastForwardAction,
                       @Nonnull Properties properties);

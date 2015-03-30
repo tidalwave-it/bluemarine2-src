@@ -24,19 +24,20 @@
                     <children>
                         <GridPane hgap="20.0" prefHeight="241.0" prefWidth="498.0">
                             <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
                             </columnConstraints>
                             <rowConstraints>
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Button fx:id="btRewind" mnemonicParsing="false" prefWidth="999.0" text="|&lt;" />
+                                <Button fx:id="btRewind" mnemonicParsing="false" prefWidth="999.0" text="&lt;&lt;" textOverrun="CLIP" />
                                 <Button fx:id="btStop" mnemonicParsing="false" prefWidth="999.0" text="[]" GridPane.columnIndex="1" />
-                                <Button fx:id="btPlay" mnemonicParsing="false" prefWidth="999.0" text="&gt;" GridPane.columnIndex="2" />
-                                <Button fx:id="btFastForward" mnemonicParsing="false" prefWidth="999.0" text="&gt;|" GridPane.columnIndex="3" />
+                                <Button fx:id="btPlay" mnemonicParsing="false" prefWidth="999.0" text="&gt;" GridPane.columnIndex="3" />
+                                <Button fx:id="btFastForward" mnemonicParsing="false" prefWidth="999.0" text="&gt;&gt;" textOverrun="CLIP" GridPane.columnIndex="4" /><Button fx:id="btPause" mnemonicParsing="false" prefWidth="999.0" text="||" GridPane.columnIndex="2" />
                             </children>
                         </GridPane>
                     </children>

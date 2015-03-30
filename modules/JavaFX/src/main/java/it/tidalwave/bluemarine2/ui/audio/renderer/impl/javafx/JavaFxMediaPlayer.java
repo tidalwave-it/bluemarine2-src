@@ -98,19 +98,26 @@ public class JavaFxMediaPlayer implements MediaPlayer
       {
         checkNotPlaying();
         
-        mediaPlayer = new javafx.scene.media.MediaPlayer(media);
-        mediaPlayer.currentTimeProperty().addListener(
-                (ObservableValue<? extends javafx.util.Duration> observable, 
-                 javafx.util.Duration oldValue, 
-                 javafx.util.Duration newValue) -> 
+        if ((mediaPlayer != null) && mediaPlayer.getStatus().equals(Status.PAUSED))
           {
-            playTimeProperty.setValue(Duration.ofMillis((long)newValue.toMillis()));
-          });
-        
-        mediaPlayer.play();
-        mediaPlayer.setOnEndOfMedia(cleanup);
-        mediaPlayer.setOnError(cleanup);
-        mediaPlayer.setOnHalted(cleanup);
+            mediaPlayer.play();
+          }
+        else
+          {
+            mediaPlayer = new javafx.scene.media.MediaPlayer(media);
+            mediaPlayer.currentTimeProperty().addListener(
+                    (ObservableValue<? extends javafx.util.Duration> observable, 
+                     javafx.util.Duration oldValue, 
+                     javafx.util.Duration newValue) -> 
+              {
+                playTimeProperty.setValue(Duration.ofMillis((long)newValue.toMillis()));
+              });
+
+            mediaPlayer.play();
+            mediaPlayer.setOnEndOfMedia(cleanup);
+            mediaPlayer.setOnError(cleanup);
+            mediaPlayer.setOnHalted(cleanup);
+          }
       }
 
     /*******************************************************************************************************************
@@ -125,6 +132,21 @@ public class JavaFxMediaPlayer implements MediaPlayer
         if (mediaPlayer != null)
           {
             mediaPlayer.stop();
+          }
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void pause() 
+      throws Exception 
+      {
+        if (mediaPlayer != null)
+          {
+            mediaPlayer.pause();
           }
       }
     

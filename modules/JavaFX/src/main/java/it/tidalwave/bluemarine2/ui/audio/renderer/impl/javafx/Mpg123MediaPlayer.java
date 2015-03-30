@@ -43,6 +43,7 @@ import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import org.openide.util.Exceptions;
 
 /***********************************************************************************************************************
  *
@@ -78,6 +79,8 @@ public class Mpg123MediaPlayer implements MediaPlayer
     private long latestPlayTimeUpdateTime = 0;
     
     private Duration playTime = Duration.ZERO;
+    
+    private boolean paused = false;
     
     /*******************************************************************************************************************
      *
@@ -119,6 +122,8 @@ public class Mpg123MediaPlayer implements MediaPlayer
       {
         checkNotPlaying();
         this.mediaItem = mediaItem;  
+        playTime = Duration.ZERO;
+        paused = false;
       }
     
     /*******************************************************************************************************************
@@ -131,19 +136,41 @@ public class Mpg123MediaPlayer implements MediaPlayer
       throws Exception 
       {
         checkNotPlaying();
-        
-        try 
+
+        if (paused)
           {
-            final String path = mediaItem.getPath().toAbsolutePath().toString();
-            executor = DefaultProcessExecutor.forExecutable("/usr/bin/mpg123") // FIXME
-                                             .withArguments("-v", path)
-                                             .start();
-            executor.getStderr().setListener(mpg123ConsoleListener);
-          } 
-        catch (IOException e)
-          {
-            throw new Exception(e.toString()); // FIXME:
+            try 
+              {
+                executor.send(" ");
+                paused = false;
+//            executor.stop();
+//            executor = null;
+              }
+            catch (IOException e) 
+              {
+                throw new Exception(e.toString()); // FIXME
+              }
           }
+        else
+          {
+            try 
+              {
+                final String path = mediaItem.getPath().toAbsolutePath().toString();
+                // FIXME: use playTime to specify cue point
+                executor = DefaultProcessExecutor.forExecutable("/usr/bin/mpg123") // FIXME
+                                                 .withArguments("-C", "-v", path)
+                                                 .start();
+                executor.getStderr().setListener(mpg123ConsoleListener);
+                paused = false;
+              } 
+            catch (IOException e)
+              {
+                throw new Exception(e.toString()); // FIXME:
+              }
+          }
+//Enable terminal control keys. By default use 's' or the space bar to stop/restart (pause, unpause) playback, 
+//'f' to jump forward to the next song, 'b' to jump back to the beginning of the song, ',' 
+//to rewind, '.' to fast forward, and 'q' to quit.         
       }
 
     /*******************************************************************************************************************
@@ -159,6 +186,33 @@ public class Mpg123MediaPlayer implements MediaPlayer
           {
             executor.stop();
             executor = null;
+            playTime = Duration.ZERO;
+            paused = false;
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public synchronized void pause() 
+      throws MediaPlayer.Exception 
+      {
+        if (executor != null)
+          {
+            try 
+              {
+                executor.send(" ");
+                paused = true;
+//            executor.stop();
+//            executor = null;
+              }
+            catch (IOException e) 
+              {
+                throw new Exception(e.toString()); // FIXME
+              }
           }
       }
 

@@ -96,6 +96,22 @@ public class DefaultAudioRendererPresentationControl
      *
      *
      ******************************************************************************************************************/
+    private final UserAction pauseAction = new UserActionRunnable(() -> 
+      {
+        try
+          {
+            mediaPlayer.pause();
+          }
+        catch (MediaPlayer.Exception e) 
+          {
+            log.error("", e);
+          }
+      });
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
     private final UserAction playAction = new UserActionRunnable(() -> 
       { 
         try
@@ -121,7 +137,7 @@ public class DefaultAudioRendererPresentationControl
     @PostConstruct
     /* VisibleForTesting */ void initialize()
       {
-        presentation.bind(rewindAction, stopAction, playAction, fastForwardAction, properties);
+        presentation.bind(rewindAction, stopAction, pauseAction, playAction, fastForwardAction, properties);
         // FIXME: weak, remove previous listeners
         mediaPlayer.getPlayTimeProperty().addListener(
                 (ObservableValue<? extends Duration> observable, 

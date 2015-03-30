@@ -63,6 +63,9 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     private Button btStop;
     
     @FXML
+    private Button btPause;
+    
+    @FXML
     private Button btPlay;
     
     @FXML
@@ -90,12 +93,14 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     @Override
     public void bind (final @Nonnull UserAction rewindAction,
                       final @Nonnull UserAction stopAction,
+                      final @Nonnull UserAction pauseAction,
                       final @Nonnull UserAction playAction,
                       final @Nonnull UserAction fastForwardAction,
                       final @Nonnull Properties properties)
       {
         binder.bind(btRewind,      rewindAction);  
         binder.bind(btStop,        stopAction);  
+        binder.bind(btPause,       pauseAction);  
         binder.bind(btPlay,        playAction);  
         binder.bind(btFastForward, fastForwardAction); 
         
