@@ -31,8 +31,6 @@ package it.tidalwave.role.ui.spi;
 import javax.annotation.Nonnull;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import it.tidalwave.role.ui.UserAction8;
@@ -52,15 +50,14 @@ public abstract class UserActionSupport8 extends UserActionSupport implements Us
     @Getter @Accessors(fluent = true)
     private final BooleanProperty enabledProperty = new SimpleBooleanProperty(true);
     
-    private final InvalidationListener invalidationListener = (Observable observable) -> 
-      {
-        log.info("invalidated {}", observable);
-      };
+//    private final InvalidationListener invalidationListener = (Observable observable) -> 
+//      {
+//        log.info("invalidated {}", observable);
+//      };
     
     private final ChangeListener<Boolean> changeListener =
             (ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> 
       {
-        log.info("changed: {} {} ->{}", observable, oldValue, newValue);
         this.enabled().set(newValue);
       };
     
@@ -69,6 +66,6 @@ public abstract class UserActionSupport8 extends UserActionSupport implements Us
         super(rolesOrFactories);
         
         enabledProperty.addListener(changeListener);
-        enabledProperty.addListener(invalidationListener);
+//        enabledProperty.addListener(invalidationListener);
     }
   }
