@@ -30,6 +30,7 @@ package it.tidalwave.role.ui.spi;
 
 import javax.annotation.Nonnull;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -37,21 +38,34 @@ import lombok.RequiredArgsConstructor;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor
-public class UserActionRunnable8 extends UserActionSupport8
+@RequiredArgsConstructor @Slf4j
+public class UserActionLambda extends UserActionSupport8
   {
-    @Nonnull
-    private final Runnable runnable;
+    public interface Task
+      {
+        public void run()
+          throws Exception;
+      }  
     
-    public UserActionRunnable8 (final @Nonnull Object roleOrFactory, final @Nonnull Runnable runnable)
+    @Nonnull
+    private final Task task;
+    
+    public UserActionLambda (final @Nonnull Object roleOrFactory, final @Nonnull Task task)
       {
         super(new Object[] { roleOrFactory });
-        this.runnable = runnable;
+        this.task = task;
      }
     
     @Override
     public void actionPerformed() 
       {
-        runnable.run();
+        try 
+          {
+            task.run();
+          }
+        catch (Exception e)
+          { 
+            log.error("", e); // FIXME: delegate to a handler
+          }
       }
   }

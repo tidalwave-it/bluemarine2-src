@@ -37,7 +37,7 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.application.Platform;
 import it.tidalwave.role.ui.UserAction8;
-import it.tidalwave.role.ui.spi.UserActionRunnable8;
+import it.tidalwave.role.ui.spi.UserActionLambda;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.MediaItem;
@@ -73,65 +73,15 @@ public class DefaultAudioRendererPresentationControl
     
     private Duration duration = Duration.ZERO;
     
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private final UserAction8 rewindAction = new UserActionRunnable8(() -> { });
+    private final UserAction8 rewindAction = new UserActionLambda(() -> { });
     
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private final UserAction8 stopAction = new UserActionRunnable8(() -> 
-      {
-        try
-          {
-            mediaPlayer.stop();
-          }
-        catch (MediaPlayer.Exception e) 
-          {
-            log.error("", e);
-          }
-      });
+    private final UserAction8 stopAction = new UserActionLambda(() -> mediaPlayer.stop());
     
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private final UserAction8 pauseAction = new UserActionRunnable8(() -> 
-      {
-        try
-          {
-            mediaPlayer.pause();
-          }
-        catch (MediaPlayer.Exception e) 
-          {
-            log.error("", e);
-          }
-      });
+    private final UserAction8 pauseAction = new UserActionLambda(() ->  mediaPlayer.pause());
     
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private final UserAction8 playAction = new UserActionRunnable8(() -> 
-      { 
-        try
-          {
-            mediaPlayer.play();
-          }
-        catch (MediaPlayer.Exception e) 
-          {
-            log.error("", e);
-          }
-      });
+    private final UserAction8 playAction = new UserActionLambda(() -> mediaPlayer.play());
     
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private final UserAction8 fastForwardAction = new UserActionRunnable8(() -> { });
+    private final UserAction8 fastForwardAction = new UserActionLambda(() -> { });
     
     /*******************************************************************************************************************
      *
