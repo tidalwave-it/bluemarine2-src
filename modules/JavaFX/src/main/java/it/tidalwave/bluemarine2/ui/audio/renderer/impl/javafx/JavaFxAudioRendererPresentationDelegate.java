@@ -30,10 +30,16 @@ package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import java.util.HashMap;
+import java.util.Map;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
+import javafx.scene.input.KeyEvent;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
@@ -41,6 +47,7 @@ import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 import lombok.extern.slf4j.Slf4j;
+import static javafx.scene.input.KeyCode.*;
 
 /***********************************************************************************************************************
  *
@@ -86,6 +93,25 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     private JavaFXBinder binder;
     
     private MediaItem mediaItem;
+
+    private final Map<KeyCombination, Runnable> accelerators = new HashMap<>();
+    
+    @FXML
+    private void initialize()
+      {
+//        final ObservableMap<KeyCombination, Runnable> accelerators = btPlay.getScene().getAccelerators();
+        accelerators.put(new KeyCodeCombination(PLAY),     () -> btPlay.fire());
+        accelerators.put(new KeyCodeCombination(STOP),     () -> btStop.fire());
+        accelerators.put(new KeyCodeCombination(PAUSE),    () -> btPause.fire());
+        accelerators.put(new KeyCodeCombination(REWIND),   () -> btRewind.fire());
+        accelerators.put(new KeyCodeCombination(FAST_FWD), () -> btFastForward.fire());
+      }
+    
+    @FXML // TODO: should be useless, but getScene().getAccelerators() doesn't work
+    public void onKeyReleased (final @Nonnull KeyEvent event)
+      {
+        accelerators.getOrDefault(new KeyCodeCombination(event.getCode()), () -> {}).run();
+      }
     
     @Override
     public void bind (final @Nonnull UserAction rewindAction,
