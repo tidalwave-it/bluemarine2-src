@@ -69,6 +69,9 @@ public class Mpg123MediaPlayer implements MediaPlayer
     
     private static final Pattern FINISHED_PATTERN = Pattern.compile(FINISHED_REGEX);
 
+    @Getter
+    private final Property<Duration> playTimeProperty = new SimpleObjectProperty<>(Duration.ZERO);
+    
     private MediaItem mediaItem;
     
     private ProcessExecutor executor;
@@ -76,9 +79,6 @@ public class Mpg123MediaPlayer implements MediaPlayer
     private long latestPlayTimeUpdateTime = 0;
     
     private Duration playTime = Duration.ZERO;
-    
-    @Getter
-    private final Property<Duration> playTimeProperty = new SimpleObjectProperty<>(Duration.ZERO);
     
     /*******************************************************************************************************************
      *
@@ -118,11 +118,7 @@ public class Mpg123MediaPlayer implements MediaPlayer
     public void setMediaItem (final @Nonnull MediaItem mediaItem)
       throws Exception 
       {
-        if (executor != null)
-          {
-            throw new Exception("Already playing");  
-          }
-        
+        checkNotPlaying();
         this.mediaItem = mediaItem;  
       }
     
@@ -135,10 +131,7 @@ public class Mpg123MediaPlayer implements MediaPlayer
     public synchronized void play() 
       throws Exception 
       {
-        if (executor != null)
-          {
-            throw new Exception("Already playing");  
-          }
+        checkNotPlaying();
         
         try 
           {
@@ -194,5 +187,19 @@ public class Mpg123MediaPlayer implements MediaPlayer
           }
         
         return null;
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    private void checkNotPlaying()
+      throws Exception
+      {
+        if (executor != null)
+          {
+            throw new Exception("Already playing");  
+          }
       }
   }
