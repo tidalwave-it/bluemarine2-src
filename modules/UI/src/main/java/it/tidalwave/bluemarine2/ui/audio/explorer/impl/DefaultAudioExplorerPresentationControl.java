@@ -116,11 +116,17 @@ public class DefaultAudioExplorerPresentationControl
       {
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp();
-        String s = "/Users/fritz/Personal/Music/iTunes/iTunes Music/Music"; // FIXME;
+        
+        // FIXME
+        String s = System.getProperty("user.home", "/");
         
         if ("arm".equals(System.getProperty("os.arch")))
           {
-            s = "/";
+            s += "/Media/Music";
+          }
+        else
+          {
+            s += "/Personal/Music/iTunes/iTunes Music/Music"; 
           }
         
         final Path path = new File(s).toPath();
