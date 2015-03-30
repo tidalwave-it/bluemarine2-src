@@ -58,6 +58,11 @@ public class JavaFxMediaPlayer implements MediaPlayer
     @Getter
     private final Property<Duration> playTimeProperty = new SimpleObjectProperty<>(Duration.ZERO);
     
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override
     public void setMediaItem (final @Nonnull MediaItem mediaItem) 
       throws Exception 
@@ -69,6 +74,11 @@ public class JavaFxMediaPlayer implements MediaPlayer
         media = new Media(path.toUri().toString());
       }
     
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override
     public void play() 
       throws Exception 
@@ -91,6 +101,11 @@ public class JavaFxMediaPlayer implements MediaPlayer
         mediaPlayer.play();
       }
 
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override
     public void stop() 
       throws Exception 
