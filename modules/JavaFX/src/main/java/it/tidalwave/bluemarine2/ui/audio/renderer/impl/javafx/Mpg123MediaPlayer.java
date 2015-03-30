@@ -40,6 +40,8 @@ import it.tidalwave.util.ProcessExecutor;
 import it.tidalwave.util.spi.DefaultProcessExecutor;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
+import it.tidalwave.util.ProcessExecutor.ConsoleOutput.Listener;
+import javax.annotation.CheckForNull;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -71,8 +73,42 @@ public class Mpg123MediaPlayer implements MediaPlayer
     
     private ProcessExecutor executor;
     
+    private long latestPlayTimeUpdateTime = 0;
+    
+    private Duration playTime = Duration.ZERO;
+    
     @Getter
     private final Property<Duration> playTimeProperty = new SimpleObjectProperty<>(Duration.ZERO);
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    private final Listener mpg123ConsoleListener = (string) ->
+      {
+        final long now = System.currentTimeMillis();
+  
+        if (FINISHED_PATTERN.matcher(string).matches()) 
+          {
+            log.debug("finished playing");
+//                    executor.waitForCompletion();
+            executor = null;
+            playTimeProperty.setValue(playTime);
+          }
+        
+        else 
+          {
+            playTime = parsePlayTime(string);
+
+            if ((playTime != null) && (now - latestPlayTimeUpdateTime > 1000))
+              {
+                log.trace(">>>> play time: {}", playTime);
+                latestPlayTimeUpdateTime = now;
+                playTimeProperty.setValue(playTime);
+              }
+          }
+      };
     
     /*******************************************************************************************************************
      *
@@ -111,44 +147,7 @@ public class Mpg123MediaPlayer implements MediaPlayer
             executor = DefaultProcessExecutor.forExecutable("/usr/bin/mpg123") // FIXME
                                              .withArguments("-v", path)
                                              .start();
-            final ProcessExecutor.ConsoleOutput stderr = executor.getStderr();
-            final AtomicLong latest = new AtomicLong(0);
-            
-            // TODO: use bound properties for duration, play time, etc...
-            stderr.setListener((string) ->
-              {
-                final long now = System.currentTimeMillis();
-                
-                if (FINISHED_PATTERN.matcher(string).matches()) 
-                  {
-                    log.debug("finished playing");
-                    // TODO update final properties
-//                    executor.waitForCompletion();
-                    executor = null;
-                  }
-                
-                else if (now - latest.get() > 1000)
-                  {
-                    latest.set(now);
-                    final Matcher frameMatcher = FRAME_PATTERN.matcher(string);
-                    
-                    if (frameMatcher.matches())
-                      {
-                        final String playTimeAsString = frameMatcher.group(3);
-                        final Matcher playTimeMatcher = PLAY_TIME_PATTERN.matcher(playTimeAsString);
-                        
-                        if (playTimeMatcher.matches())
-                          {
-                            final int minutes = Integer.parseInt(playTimeMatcher.group(1));
-                            final int seconds = Integer.parseInt(playTimeMatcher.group(2));
-                            final int hundreds = Integer.parseInt(playTimeMatcher.group(3));
-                            final Duration playTime = Duration.ofMillis(hundreds * 10 + seconds * 1000 + minutes * 60 * 1000);
-                            log.trace(">>>> play time: {}", playTime);
-                            playTimeProperty.setValue(playTime);
-                          }
-                      }
-                  }
-              });
+            executor.getStderr().setListener(mpg123ConsoleListener);
           } 
         catch (IOException e)
           {
@@ -170,5 +169,31 @@ public class Mpg123MediaPlayer implements MediaPlayer
             executor.stop();
             executor = null;
           }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    @CheckForNull
+    private static Duration parsePlayTime (final @Nonnull String string)
+      {
+        final Matcher frameMatcher = FRAME_PATTERN.matcher(string);
+
+        if (frameMatcher.matches())
+          {
+            final Matcher playTimeMatcher = PLAY_TIME_PATTERN.matcher(frameMatcher.group(3));
+
+            if (playTimeMatcher.matches())
+              {
+                final int minutes = Integer.parseInt(playTimeMatcher.group(1));
+                final int seconds = Integer.parseInt(playTimeMatcher.group(2));
+                final int hundreds = Integer.parseInt(playTimeMatcher.group(3));
+                return Duration.ofMillis(hundreds * 10 + seconds * 1000 + minutes * 60 * 1000);
+              }
+          }
+        
+        return null;
       }
   }
