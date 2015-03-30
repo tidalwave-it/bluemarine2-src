@@ -30,16 +30,24 @@ package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import java.util.HashMap;
+import java.util.Map;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
+import javafx.scene.input.KeyEvent;
 import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.util.ProcessExecutor;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 import lombok.extern.slf4j.Slf4j;
+import static javafx.scene.input.KeyCode.*;
 
 /***********************************************************************************************************************
  *
@@ -61,28 +69,68 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     private Button btStop;
     
     @FXML
+    private Button btPause;
+    
+    @FXML
     private Button btPlay;
     
     @FXML
     private Button btFastForward;
     
+    @FXML
+    private ProgressBar pbPlayProgress;
+    
+    @FXML
+    private Label lbTitle;
+    
+    @FXML
+    private Label lbDuration;
+    
+    @FXML
+    private Label lbPlayTime;
+    
     @Inject
     private JavaFXBinder binder;
     
     private MediaItem mediaItem;
+
+    private final Map<KeyCombination, Runnable> accelerators = new HashMap<>();
     
-    private ProcessExecutor executor;
+    @FXML
+    private void initialize()
+      {
+//        final ObservableMap<KeyCombination, Runnable> accelerators = btPlay.getScene().getAccelerators();
+        accelerators.put(new KeyCodeCombination(PLAY),     () -> btPlay.fire());
+        accelerators.put(new KeyCodeCombination(STOP),     () -> btStop.fire());
+        accelerators.put(new KeyCodeCombination(PAUSE),    () -> btPause.fire());
+        accelerators.put(new KeyCodeCombination(REWIND),   () -> btRewind.fire());
+        accelerators.put(new KeyCodeCombination(FAST_FWD), () -> btFastForward.fire());
+      }
+    
+    @FXML // TODO: should be useless, but getScene().getAccelerators() doesn't work
+    public void onKeyReleased (final @Nonnull KeyEvent event)
+      {
+        accelerators.getOrDefault(new KeyCodeCombination(event.getCode()), () -> {}).run();
+      }
     
     @Override
     public void bind (final @Nonnull UserAction rewindAction,
                       final @Nonnull UserAction stopAction,
+                      final @Nonnull UserAction pauseAction,
                       final @Nonnull UserAction playAction,
-                      final @Nonnull UserAction fastForwardAction)
+                      final @Nonnull UserAction fastForwardAction,
+                      final @Nonnull Properties properties)
       {
         binder.bind(btRewind,      rewindAction);  
         binder.bind(btStop,        stopAction);  
+        binder.bind(btPause,       pauseAction);  
         binder.bind(btPlay,        playAction);  
         binder.bind(btFastForward, fastForwardAction); 
+        
+        lbTitle.textProperty().bind(properties.titleProperty());
+        lbDuration.textProperty().bind(properties.durationProperty());
+        lbPlayTime.textProperty().bind(properties.playTimeProperty());
+        pbPlayProgress.progressProperty().bind(properties.progressProperty());
       }
     
     @Override

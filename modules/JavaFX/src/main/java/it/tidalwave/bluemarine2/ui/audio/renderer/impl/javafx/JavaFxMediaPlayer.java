@@ -28,11 +28,14 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
+import java.time.Duration;
 import java.nio.file.Path;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.media.Media;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
+import it.tidalwave.bluemarine2.ui.audio.renderer.spi.MediaPlayerSupport;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -42,35 +45,165 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class JavaFxMediaPlayer implements MediaPlayer
+public class JavaFxMediaPlayer extends MediaPlayerSupport
   {
-    private MediaItem mediaItem;
+    private static final javafx.util.Duration SKIP_DURATION = javafx.util.Duration.seconds(1);
     
+    @CheckForNull
     private Media media;
-    
+
+    @CheckForNull
     private javafx.scene.media.MediaPlayer mediaPlayer;
-    
-    @Override
-    public void setMediaItem (final @Nonnull MediaItem mediaItem) 
-      throws Exception 
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private final Runnable cleanup = () ->
       {
+        log.debug(">>>> media reproduction finished");
+        // FIXME: remove listener from currentTimeProperty
+        mediaPlayer = null;
+        statusProperty.setValue(Status.STOPPED);
+      };
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void setMediaItem (final @Nonnull MediaItem mediaItem)
+      throws Exception
+      {
+        log.info("setMediaItem({})", mediaItem);
+        checkNotPlaying();
+        this.mediaItem = mediaItem;
         final Path path = mediaItem.getPath().toAbsolutePath();
-        log.info("path: {}", path);
+        log.debug("path:     {}", path);
+        log.debug("metadata: {}", mediaItem.getMetadata());
         media = new Media(path.toUri().toString());
       }
-    
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override
-    public void play() 
-      throws Exception 
+    public synchronized void play()
+      throws Exception
       {
-        mediaPlayer = new javafx.scene.media.MediaPlayer(media);
-        mediaPlayer.play();
+        log.info("play()");
+        checkNotPlaying();
+
+        if ((mediaPlayer != null) && mediaPlayer.getStatus().equals(javafx.scene.media.MediaPlayer.Status.PAUSED))
+          {
+            mediaPlayer.play();
+          }
+        else
+          {
+            if (mediaPlayer != null)
+              {
+                mediaPlayer.dispose();
+              }
+
+            mediaPlayer = new javafx.scene.media.MediaPlayer(media);
+            mediaPlayer.currentTimeProperty().addListener(
+                    (ObservableValue<? extends javafx.util.Duration> observable,
+                     javafx.util.Duration oldValue,
+                     javafx.util.Duration newValue) ->
+              {
+                playTimeProperty.setValue(Duration.ofMillis((long)newValue.toMillis()));
+              });
+
+            mediaPlayer.play();
+            mediaPlayer.setOnEndOfMedia(cleanup);
+            mediaPlayer.setOnError(cleanup);
+            mediaPlayer.setOnHalted(cleanup);
+          }
+
+        statusProperty.setValue(Status.PLAYING);
       }
 
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override
-    public void stop() 
-      throws Exception 
+    public void stop()
       {
-        mediaPlayer.stop();
+        log.info("stop()");
+        
+        if (mediaPlayer != null)
+          {
+            mediaPlayer.stop();
+            statusProperty.setValue(Status.STOPPED);
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void pause()
+      {
+        log.info("pause()");
+        
+        if (mediaPlayer != null)
+          {
+            mediaPlayer.pause();
+            statusProperty.setValue(Status.PAUSED);
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void rewind()
+      {
+        log.info("rewind()");
+        
+        if (mediaPlayer != null)
+          {
+            mediaPlayer.seek(mediaPlayer.getCurrentTime().subtract(SKIP_DURATION));
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void fastForward()
+      {
+        log.info("fastForward()");
+        
+        if (mediaPlayer != null)
+          {
+            mediaPlayer.seek(mediaPlayer.getCurrentTime().add(SKIP_DURATION));
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private void checkNotPlaying()
+      throws Exception
+      {
+        if ((mediaPlayer != null) && mediaPlayer.getStatus().equals(javafx.scene.media.MediaPlayer.Status.PLAYING))
+          {
+            throw new Exception("Already playing");
+          }
       }
   }

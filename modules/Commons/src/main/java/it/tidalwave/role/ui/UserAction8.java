@@ -26,53 +26,19 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.video.explorer.impl.javafx;
+package it.tidalwave.role.ui;
 
-import javax.inject.Inject;
-import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
-import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
-import it.tidalwave.bluemarine2.ui.video.explorer.VideoExplorerPresentation;
-import lombok.Delegate;
-import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
+import javax.annotation.Nonnull;
+import javafx.beans.property.BooleanProperty;
 
 /***********************************************************************************************************************
  *
- * The JavaFX implementation of {@link VideoExplorerPresentation}.
- * 
- * @stereotype  Presentation
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class JavaFxVideoExplorerPresentation implements VideoExplorerPresentation
+public interface UserAction8 extends UserAction
   {
-    interface DelegateExclusions
-      {
-        public void showUp();
-      }
-    
-    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/VideoExplorer.fxml";
-    
-    @Inject
-    private FlowController flowController;
-    
-    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
-    
-    @Delegate(excludes = DelegateExclusions.class)
-    private final VideoExplorerPresentation delegate = nad.getDelegate();
-                
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override
-    public void showUp()  
-      {
-        delegate.showUp();
-        flowController.showPresentation(nad.getNode());
-      }
+    @Nonnull
+    public BooleanProperty enabledProperty();
   }

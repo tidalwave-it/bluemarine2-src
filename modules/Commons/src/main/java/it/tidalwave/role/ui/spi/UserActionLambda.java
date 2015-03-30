@@ -29,35 +29,43 @@
 package it.tidalwave.role.ui.spi;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.role.ui.UserAction;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
- * Wraps a {@link Runnable} into a {@link UserAction}. It's useful with Java 8 for shorter code (using composition with
- * a lambda expression in place of subclassing an inner class.
- * 
- * FIXME: Merge to UserActionSupport.
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor
-public final class UserActionRunnable extends UserActionSupport
+@RequiredArgsConstructor @Slf4j
+public class UserActionLambda extends UserActionSupport8
   {
-    @Nonnull
-    private final Runnable runnable;
+    public interface Task
+      {
+        public void run()
+          throws Exception;
+      }  
     
-    public UserActionRunnable (final @Nonnull Object roleOrFactory, final @Nonnull Runnable runnable)
+    @Nonnull
+    private final Task task;
+    
+    public UserActionLambda (final @Nonnull Object roleOrFactory, final @Nonnull Task task)
       {
         super(new Object[] { roleOrFactory });
-        this.runnable = runnable;
+        this.task = task;
      }
     
     @Override
     public void actionPerformed() 
       {
-        runnable.run();
+        try 
+          {
+            task.run();
+          }
+        catch (Exception e)
+          { 
+            log.error("", e); // FIXME: delegate to a handler
+          }
       }
   }

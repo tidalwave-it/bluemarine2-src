@@ -26,53 +26,31 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.video.explorer.impl.javafx;
+package it.tidalwave.bluemarine2.ui.audio.renderer.spi;
 
-import javax.inject.Inject;
-import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
-import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
-import it.tidalwave.bluemarine2.ui.video.explorer.VideoExplorerPresentation;
-import lombok.Delegate;
-import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
+import javax.annotation.CheckForNull;
+import java.time.Duration;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
+import lombok.Getter;
+import lombok.experimental.Accessors;
 
 /***********************************************************************************************************************
  *
- * The JavaFX implementation of {@link VideoExplorerPresentation}.
- * 
- * @stereotype  Presentation
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class JavaFxVideoExplorerPresentation implements VideoExplorerPresentation
+public abstract class MediaPlayerSupport implements MediaPlayer
   {
-    interface DelegateExclusions
-      {
-        public void showUp();
-      }
+    @CheckForNull
+    protected MediaItem mediaItem;
     
-    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/VideoExplorer.fxml";
+    @Getter @Accessors(fluent = true)
+    protected final ObjectProperty<Duration> playTimeProperty = new SimpleObjectProperty<>(Duration.ZERO);
     
-    @Inject
-    private FlowController flowController;
-    
-    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
-    
-    @Delegate(excludes = DelegateExclusions.class)
-    private final VideoExplorerPresentation delegate = nad.getDelegate();
-                
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override
-    public void showUp()  
-      {
-        delegate.showUp();
-        flowController.showPresentation(nad.getNode());
-      }
+    @Getter @Accessors(fluent = true)
+    protected final ObjectProperty<Status> statusProperty = new SimpleObjectProperty<>(Status.STOPPED);
   }

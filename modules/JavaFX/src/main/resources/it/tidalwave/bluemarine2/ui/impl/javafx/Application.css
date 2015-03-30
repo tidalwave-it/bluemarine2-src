@@ -23,6 +23,11 @@
   {
     -fx-font-size:          60; 
   }
+  
+.small-label
+  {
+    -fx-font-size:          20; 
+  }
 
 .button
   {
@@ -79,4 +84,55 @@
     -fx-background-insets:  0.0, 1.0 0.0 1.0 0.0;
     -fx-text-fill:          black;
   }
+  
+#btPlay
+  {    
+    -fx-padding:             8;
+    -fx-background-color:    rgb(100, 100, 100);
+    -fx-background-image:    url("1427770128_play-128.png");
+    -fx-background-size:     64 64;
+    -fx-background-repeat:   no-repeat;
+    -fx-background-position: center;   
+  }
+
+#btStop
+  {          
+    -fx-padding:             8;
+    -fx-background-color:    rgb(100, 100, 100);
+    -fx-background-image:    url("1427770160_591231-stop-128.png");
+    -fx-background-size:     64 64;
+    -fx-background-repeat:   no-repeat;
+    -fx-background-position: center;   
+  }
+
+#btPause
+  {          
+    -fx-padding:             8;
+    -fx-background-color:    rgb(100, 100, 100);
+    -fx-background-image:    url("1427770188_591244-pause-128.png");
+    -fx-background-size:     64 64;
+    -fx-background-repeat:   no-repeat;
+    -fx-background-position: center;   
+  }
+
+#btRewind
+  {          
+    -fx-padding:             8;
+    -fx-background-color:    rgb(100, 100, 100);
+    -fx-background-image:    url("1427770098_media-rewind-outline-128.png");
+    -fx-background-size:     64 64;
+    -fx-background-repeat:   no-repeat;
+    -fx-background-position: center;   
+  }
+
+#btFastForward
+  {          
+    -fx-padding:             8;
+    -fx-background-color:    rgb(100, 100, 100);
+    -fx-background-image:    url("1427770073_media-fast-forward-outline-128.png");
+    -fx-background-size:     64 64;
+    -fx-background-repeat:   no-repeat;
+    -fx-background-position: center;   
+  }
+
   

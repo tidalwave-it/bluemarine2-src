@@ -60,7 +60,12 @@ public class CecUserControlEvent extends CecEvent
         DOWN(0x02),
         LEFT(0x03),
         RIGHT(0x04),
-        EXIT(0x0d);
+        EXIT(0x0d),
+        PLAY(0x44),
+        STOP(0x45),
+        PAUSE(0x46),
+        FAST_FORWARD(0x4b),
+        REWIND(0x4c);
         
         private final int code;  
         

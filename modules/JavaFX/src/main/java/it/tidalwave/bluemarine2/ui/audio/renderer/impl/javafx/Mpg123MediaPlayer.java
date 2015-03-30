@@ -28,13 +28,17 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
-import java.util.concurrent.atomic.AtomicLong;
+import java.time.Duration;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.io.IOException;
 import it.tidalwave.util.ProcessExecutor;
+import it.tidalwave.util.ProcessExecutor.ConsoleOutput.Listener;
 import it.tidalwave.util.spi.DefaultProcessExecutor;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
+import it.tidalwave.bluemarine2.ui.audio.renderer.spi.MediaPlayerSupport;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -44,11 +48,58 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class Mpg123MediaPlayer implements MediaPlayer
+public class Mpg123MediaPlayer extends MediaPlayerSupport
   {
-    private MediaItem mediaItem;
+    // Frame#  1368 [12934], Time: 00:35.73 [05:37.86], RVA:   off, Vol: 100(100)
+    private static final String FRAME_REGEX = "^Frame# *([0-9]+) *\\[ *([0-9]+)\\], *Time: *([.:0-9]+) *\\[([.:0-9]+)\\].*$";
     
+    // 01:25.02
+    private static final String PLAY_TIME_REGEX = "([0-9]{2}):([0-9]{2})\\.([0-9]{2})";
+
+    // [4:05] Decoding of 06 The Moon Is A Harsh Mistress.mp3 finished.
+    private static final String FINISHED_REGEX = "^.*Decoding.*finished\\.$";
+    
+    private static final Pattern FRAME_PATTERN = Pattern.compile(FRAME_REGEX);
+
+    private static final Pattern PLAY_TIME_PATTERN = Pattern.compile(PLAY_TIME_REGEX);
+    
+    private static final Pattern FINISHED_PATTERN = Pattern.compile(FINISHED_REGEX);
+
     private ProcessExecutor executor;
+    
+    private long latestPlayTimeUpdateTime = 0;
+    
+    private Duration playTime = Duration.ZERO;
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    private final Listener mpg123ConsoleListener = (string) ->
+      {
+        if (FINISHED_PATTERN.matcher(string).matches()) 
+          {
+            log.debug("finished playing");
+//                    executor.waitForCompletion();
+            executor = null;
+            playTimeProperty.setValue(playTime);
+            statusProperty.setValue(Status.STOPPED);
+          }
+        
+        else 
+          {
+            final long now = System.currentTimeMillis();
+            playTime = parsePlayTime(string);
+
+            if ((playTime != null) && (now - latestPlayTimeUpdateTime > 1000))
+              {
+                log.trace(">>>> play time: {}", playTime);
+                latestPlayTimeUpdateTime = now;
+                playTimeProperty.setValue(playTime);
+              }
+          }
+      };
     
     /*******************************************************************************************************************
      *
@@ -59,7 +110,10 @@ public class Mpg123MediaPlayer implements MediaPlayer
     public void setMediaItem (final @Nonnull MediaItem mediaItem)
       throws Exception 
       {
+        checkNotPlaying();
         this.mediaItem = mediaItem;  
+        playTime = Duration.ZERO;
+        statusProperty.setValue(Status.STOPPED);
       }
     
     /*******************************************************************************************************************
@@ -71,38 +125,29 @@ public class Mpg123MediaPlayer implements MediaPlayer
     public synchronized void play() 
       throws Exception 
       {
-        if (executor != null)
-          {
-            throw new Exception("Already playing");  
-          }
-        
+        checkNotPlaying();
+
         try 
           {
-            final String path = mediaItem.getPath().toAbsolutePath().toString();
-            executor = DefaultProcessExecutor.forExecutable("/usr/bin/mpg123") // FIXME
-                                             .withArguments("-v", path)
-                                             .start();
-            final ProcessExecutor.ConsoleOutput stderr = executor.getStderr();
-            final AtomicLong latest = new AtomicLong(0);
-            
-            // TODO: use bound properties for duration, play time, etc...
-            stderr.setListener((string) ->
+            if (statusProperty.getValue().equals(Status.PAUSED))
               {
-                final long now = System.currentTimeMillis();
-                
-                if (now - latest.get() > 1000)
-                  {
-                    log.debug("{}", string);
-                // Frame#  3255 [ 8906], Time: 01:25.02 [03:52.66]
-                // "^Frame# *([0-9]+) *\\[ *([0-9]+)\\], *Time: *([.:0-9]+) *\\[([.:0-9]+)\\].*$"
-                    latest.set(now);
-                  }
-            });
-          } 
-        catch (IOException e)
-          {
-            throw new Exception(e.toString()); // FIXME:
+                executor.send(" ");
+              }
+            else
+              {
+                final String path = mediaItem.getPath().toAbsolutePath().toString();
+                executor = DefaultProcessExecutor.forExecutable("/usr/bin/mpg123") // FIXME
+                                                 .withArguments("-C", "-v", path)
+                                                 .start();
+                executor.getStderr().setListener(mpg123ConsoleListener);
+              }
           }
+        catch (IOException e) 
+          {
+            throw new Exception(e);
+          }
+                  
+        statusProperty.setValue(Status.PLAYING);
       }
 
     /*******************************************************************************************************************
@@ -112,11 +157,123 @@ public class Mpg123MediaPlayer implements MediaPlayer
      ******************************************************************************************************************/
     @Override
     public synchronized void stop() 
-      throws MediaPlayer.Exception 
       {
         if (executor != null)
           {
             executor.stop();
+            executor = null;
+            playTime = Duration.ZERO;
+            statusProperty.setValue(Status.STOPPED);
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public synchronized void pause() 
+      throws Exception 
+      {
+        if (statusProperty.getValue().equals(Status.PLAYING))
+          {
+            try 
+              {
+                // FIXME: doesn't work
+                executor.send(" ");
+                statusProperty.setValue(Status.PAUSED);
+              }
+            catch (IOException e) 
+              {
+                throw new Exception(e);
+              }
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void rewind() 
+      throws Exception 
+      {
+        if (statusProperty.getValue().equals(Status.PLAYING))
+          {
+            try 
+              {
+                // FIXME: doesn't work
+                executor.send(",");
+              }
+            catch (IOException e) 
+              {
+                throw new Exception(e);
+              }
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void fastForward() 
+      throws Exception
+      {
+        if (statusProperty.getValue().equals(Status.PLAYING))
+          {
+            try 
+              {
+                // FIXME: doesn't work
+                executor.send(".");
+              }
+            catch (IOException e) 
+              {
+                throw new Exception(e);
+              }
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    @CheckForNull
+    private static Duration parsePlayTime (final @Nonnull String string)
+      {
+        final Matcher frameMatcher = FRAME_PATTERN.matcher(string);
+
+        if (frameMatcher.matches())
+          {
+            final Matcher playTimeMatcher = PLAY_TIME_PATTERN.matcher(frameMatcher.group(3));
+
+            if (playTimeMatcher.matches())
+              {
+                final int minutes = Integer.parseInt(playTimeMatcher.group(1));
+                final int seconds = Integer.parseInt(playTimeMatcher.group(2));
+                final int hundreds = Integer.parseInt(playTimeMatcher.group(3));
+                return Duration.ofMillis(hundreds * 10 + seconds * 1000 + minutes * 60 * 1000);
+              }
+          }
+        
+        return null;
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    private void checkNotPlaying()
+      throws Exception
+      {
+        if (statusProperty.getValue().equals(Status.PLAYING))
+          {
+            throw new Exception("Already playing");  
           }
       }
   }

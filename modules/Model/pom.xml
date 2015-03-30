@@ -63,6 +63,11 @@
             </exclusions>
         </dependency>
     
+        <dependency>
+            <groupId>com.mpatric</groupId>
+            <artifactId>mp3agic</artifactId>
+        </dependency>
+        
         <!-- FIXME: workaround against a compilation error -->
         <dependency>
             <groupId>org.netbeans.api</groupId>

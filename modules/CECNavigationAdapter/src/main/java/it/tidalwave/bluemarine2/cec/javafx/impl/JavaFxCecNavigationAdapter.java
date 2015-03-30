@@ -58,17 +58,29 @@ public class JavaFxCecNavigationAdapter
     
     public JavaFxCecNavigationAdapter()
       {
-        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  SELECT), () -> keyPress(KeyCode.SPACE)   );
-        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, SELECT), () -> keyRelease(KeyCode.SPACE) );
-        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  LEFT),   () -> keyPress(KeyCode.LEFT)    );
-        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, LEFT),   () -> keyRelease(KeyCode.LEFT)  );
-        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  RIGHT),  () -> keyPress(KeyCode.RIGHT)   );
-        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, RIGHT),  () -> keyRelease(KeyCode.RIGHT) );
-        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  UP),     () -> keyPress(KeyCode.UP)      );
-        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, UP),     () -> keyRelease(KeyCode.UP)    );
-        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  DOWN),   () -> keyPress(KeyCode.DOWN )   );
-        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, DOWN),   () -> keyRelease(KeyCode.DOWN)  );
-        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  EXIT),   () -> flowController.dismissCurrentPresentation());
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  SELECT),       () -> keyPress(KeyCode.SPACE)     );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, SELECT),       () -> keyRelease(KeyCode.SPACE)   );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  LEFT),         () -> keyPress(KeyCode.LEFT)      );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, LEFT),         () -> keyRelease(KeyCode.LEFT)    );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  RIGHT),        () -> keyPress(KeyCode.RIGHT)     );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, RIGHT),        () -> keyRelease(KeyCode.RIGHT)   );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  UP),           () -> keyPress(KeyCode.UP)        );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, UP),           () -> keyRelease(KeyCode.UP)      );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  DOWN),         () -> keyPress(KeyCode.DOWN)      );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, DOWN),         () -> keyRelease(KeyCode.DOWN)    );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  PLAY),         () -> keyPress(KeyCode.PLAY)      );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, PLAY),         () -> keyRelease(KeyCode.PLAY)    );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  STOP),         () -> keyPress(KeyCode.STOP)      );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, STOP),         () -> keyRelease(KeyCode.STOP)    );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  PAUSE),        () -> keyPress(KeyCode.PAUSE)     );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, PAUSE),        () -> keyRelease(KeyCode.PAUSE)   );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  REWIND),       () -> keyPress(KeyCode.REWIND)    );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, REWIND),       () -> keyRelease(KeyCode.REWIND)  );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  FAST_FORWARD), () -> keyPress(KeyCode.FAST_FWD)  );
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, FAST_FORWARD), () -> keyRelease(KeyCode.FAST_FWD));
+        
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  EXIT),         () -> 
+                                                                        flowController.dismissCurrentPresentation());
       }
     
     @Inject

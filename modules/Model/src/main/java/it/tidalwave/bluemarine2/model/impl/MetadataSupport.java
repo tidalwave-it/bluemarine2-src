@@ -26,12 +26,24 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.audio.renderer;
+package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
-import java.time.Duration;
-import javafx.beans.property.ObjectProperty;
+import javax.annotation.Nullable;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+import java.nio.file.Path;
+import it.tidalwave.util.Key;
+import it.tidalwave.util.NotFoundException;
+import it.tidalwave.util.TypeSafeHashMap;
 import it.tidalwave.bluemarine2.model.MediaItem;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -39,85 +51,57 @@ import it.tidalwave.bluemarine2.model.MediaItem;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaPlayer 
+@RequiredArgsConstructor @ToString(of = "rawProperties") @Slf4j
+public class MetadataSupport implements MediaItem.Metadata
   {
-    enum Status
-      {
-        STOPPED,
-        PLAYING,
-        PAUSED
-      };
+    @Getter @Nonnull
+    protected final Path path;
+    
+    protected final Map<Key<?>, Object> properties = new HashMap<>();
     
     /*******************************************************************************************************************
      *
+     * {@inheritDocs}
      *
      ******************************************************************************************************************/
-    public static class Exception extends java.lang.Exception
+    @Override @Nonnull
+    public <T> Optional<T> get (final @Nonnull Key<T> key)
       {
-        public Exception (final @Nonnull String message)
-          {
-            super(message);
-          }
+        return Optional.ofNullable(((T)properties.get(key)));
+      }
 
-        public Exception (final @Nonnull Throwable cause)
-          {
-            super(cause);
-          }
+    /*******************************************************************************************************************
+     *
+     * {@inheritDocs}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public boolean containsKey (final @Nonnull Key<?> key)
+      {
+        return properties.containsKey(key);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDocs}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public Set<Key<?>> getKeys()
+      {
+        return Collections.unmodifiableSet(properties.keySet());
       }
     
     /*******************************************************************************************************************
      *
-     *
+     * 
+     * 
      ******************************************************************************************************************/
-    public void setMediaItem (@Nonnull MediaItem mediaItem)
-      throws Exception;
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    public void play()
-      throws Exception;
-            
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    public void stop()
-      throws Exception;
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    public void pause()
-      throws Exception;
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    public void rewind()
-      throws Exception;
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    public void fastForward()
-      throws Exception;
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public ObjectProperty<Duration> playTimeProperty();
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public ObjectProperty<Status> statusProperty();
+    protected <V> void put (final @Nonnull Key<V> key, final @Nullable V value)
+      {
+        if (value != null)
+          {
+            properties.put(key, value);
+          }
+      }
   }

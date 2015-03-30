@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.model.impl;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.nio.file.Path;
@@ -53,6 +54,9 @@ public class DefaultMediaItem implements MediaItem
     @Getter @Nonnull
     private final Path path;
     
+    @CheckForNull
+    private Metadata metadata;
+    
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
 
@@ -60,5 +64,16 @@ public class DefaultMediaItem implements MediaItem
     public String toString() 
       {
         return String.format("DefaultMediaItem(%s)", path.toFile().getName());
+      }
+
+    @Override @Nonnull
+    public synchronized Metadata getMetadata() 
+      {
+        if (metadata == null)
+          {
+            metadata = new DefaultMp3Metadata(path);
+          }
+        
+        return metadata;
       }
   }

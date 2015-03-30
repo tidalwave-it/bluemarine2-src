@@ -26,53 +26,46 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.video.explorer.impl.javafx;
+package it.tidalwave.role.ui.spi;
 
-import javax.inject.Inject;
-import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
-import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
-import it.tidalwave.bluemarine2.ui.video.explorer.VideoExplorerPresentation;
-import lombok.Delegate;
+import javax.annotation.Nonnull;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import it.tidalwave.role.ui.UserAction8;
+import lombok.Getter;
+import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
 
 /***********************************************************************************************************************
  *
- * The JavaFX implementation of {@link VideoExplorerPresentation}.
- * 
- * @stereotype  Presentation
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @Slf4j
-public class JavaFxVideoExplorerPresentation implements VideoExplorerPresentation
+public abstract class UserActionSupport8 extends UserActionSupport implements UserAction8 
   {
-    interface DelegateExclusions
+    @Getter @Accessors(fluent = true)
+    private final BooleanProperty enabledProperty = new SimpleBooleanProperty(true);
+    
+//    private final InvalidationListener invalidationListener = (Observable observable) -> 
+//      {
+//        log.info("invalidated {}", observable);
+//      };
+    
+    private final ChangeListener<Boolean> changeListener =
+            (ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> 
       {
-        public void showUp();
-      }
+        this.enabled().set(newValue);
+      };
     
-    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/VideoExplorer.fxml";
-    
-    @Inject
-    private FlowController flowController;
-    
-    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
-    
-    @Delegate(excludes = DelegateExclusions.class)
-    private final VideoExplorerPresentation delegate = nad.getDelegate();
-                
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override
-    public void showUp()  
+    public UserActionSupport8 (final @Nonnull Object... rolesOrFactories) 
       {
-        delegate.showUp();
-        flowController.showPresentation(nad.getNode());
-      }
+        super(rolesOrFactories);
+        
+        enabledProperty.addListener(changeListener);
+//        enabledProperty.addListener(invalidationListener);
+    }
   }

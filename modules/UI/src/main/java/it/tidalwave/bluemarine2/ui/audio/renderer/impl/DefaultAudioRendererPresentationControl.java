@@ -31,15 +31,24 @@ package it.tidalwave.bluemarine2.ui.audio.renderer.impl;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.spi.UserActionRunnable;
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.application.Platform;
+import it.tidalwave.role.ui.UserAction8;
+import it.tidalwave.role.ui.spi.UserActionLambda;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
-import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
+import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
+import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status.*;
 
 /***********************************************************************************************************************
  *
@@ -60,49 +69,19 @@ public class DefaultAudioRendererPresentationControl
     @Inject
     private MediaPlayer mediaPlayer;
     
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private final UserAction rewindAction = new UserActionRunnable(() -> { });
+    private final AudioRendererPresentation.Properties properties = new AudioRendererPresentation.Properties();
     
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private final UserAction stopAction = new UserActionRunnable(() -> 
-      {
-        try
-          {
-            mediaPlayer.stop();
-          }
-        catch (MediaPlayer.Exception e) 
-          {
-            log.error("", e);
-          }
-      });
+    private Duration duration = Duration.ZERO;
     
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private final UserAction playAction = new UserActionRunnable(() -> 
-      { 
-        try
-          {
-            mediaPlayer.play();
-          }
-        catch (MediaPlayer.Exception e) 
-          {
-            log.error("", e);
-          }
-      });
+    private final UserAction8 rewindAction = new UserActionLambda(() -> mediaPlayer.rewind());
     
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private final UserAction fastForwardAction = new UserActionRunnable(() -> { });
+    private final UserAction8 stopAction = new UserActionLambda(() -> mediaPlayer.stop());
+    
+    private final UserAction8 pauseAction = new UserActionLambda(() ->  mediaPlayer.pause());
+    
+    private final UserAction8 playAction = new UserActionLambda(() -> mediaPlayer.play());
+    
+    private final UserAction8 fastForwardAction = new UserActionLambda(() -> mediaPlayer.fastForward());
     
     /*******************************************************************************************************************
      *
@@ -111,7 +90,26 @@ public class DefaultAudioRendererPresentationControl
     @PostConstruct
     /* VisibleForTesting */ void initialize()
       {
-        presentation.bind(rewindAction, stopAction, playAction, fastForwardAction);
+        presentation.bind(rewindAction, stopAction, pauseAction, playAction, fastForwardAction, properties);
+        
+        final ObjectProperty<Status> status = mediaPlayer.statusProperty();
+        stopAction.enabledProperty().bind(status.isEqualTo(PLAYING));
+        pauseAction.enabledProperty().bind(status.isEqualTo(PLAYING));
+        playAction.enabledProperty().bind(status.isNotEqualTo(PLAYING));
+        
+        // FIXME: weak, remove previous listeners
+        mediaPlayer.playTimeProperty().addListener(
+                (ObservableValue<? extends Duration> observable, 
+                 Duration oldValue,
+                 Duration newValue) -> 
+          {
+            // FIXME: the control shouldn't mess with JavaFX stuff
+            Platform.runLater(() ->
+              {
+                properties.playTimeProperty().setValue(format(newValue));
+                properties.progressProperty().setValue((double)newValue.toMillis() / duration.toMillis());
+              });
+          });
       }
     
     /*******************************************************************************************************************
@@ -125,7 +123,33 @@ public class DefaultAudioRendererPresentationControl
         presentation.showUp();
         
         final MediaItem mediaItem = request.getMediaItem();
+        final Metadata metadata = mediaItem.getMetadata();
+
+        // FIXME: the control shouldn't mess with JavaFX stuff
+        Platform.runLater(() ->
+          {
+            properties.titleProperty().setValue(metadata.get(TITLE).orElse(""));
+            duration = metadata.get(DURATION).orElse(Duration.ZERO);
+            properties.durationProperty().setValue(format(duration)); 
+          });
+        
         presentation.setMediaItem(mediaItem);
         mediaPlayer.setMediaItem(mediaItem);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private String format (final @Nonnull Duration duration)
+      {
+        final long s = duration.get(ChronoUnit.SECONDS);
+        final long hours = s / 3600;
+        final long minutes = (s / 60) % 60;
+        final long seconds = s % 60;
+        
+        return (hours == 0) ? String.format("%02d:%02d", minutes, seconds)
+                            : String.format("%02d:%02d:%02d", hours, minutes, seconds);
       }
   }

@@ -32,7 +32,7 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.function.Supplier;
 import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.spi.UserActionRunnable;
+import it.tidalwave.role.ui.spi.UserActionLambda;
 import it.tidalwave.messagebus.MessageBus;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -89,7 +89,7 @@ public class MainMenuItem
         final Class<?> requestClass = Thread.currentThread().getContextClassLoader().loadClass(requestClassName);
         final SupplierFromClass<?> supplier = new SupplierFromClass<>(requestClass);
         // FIXME: use MessageSendingUserAction?
-        this.action  = new UserActionRunnable(displayableFromBundle(getClass(), displayNameKey), 
-                                              () -> messageBus.publish(supplier.get()));
+        this.action  = new UserActionLambda(displayableFromBundle(getClass(), displayNameKey), 
+                                            () -> messageBus.publish(supplier.get()));
       }
   }
