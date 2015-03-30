@@ -111,7 +111,10 @@ public class JavaFxMediaPlayer implements MediaPlayer
     public void stop() 
       throws Exception 
       {
-        mediaPlayer.stop();
+        if (mediaPlayer != null)
+          {
+            mediaPlayer.stop();
+          }
       }
     
     /*******************************************************************************************************************
