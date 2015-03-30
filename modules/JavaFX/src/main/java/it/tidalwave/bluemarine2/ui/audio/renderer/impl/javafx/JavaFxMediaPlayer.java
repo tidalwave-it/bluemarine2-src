@@ -134,7 +134,6 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
      ******************************************************************************************************************/
     @Override
     public void stop()
-      throws Exception
       {
         log.info("stop()");
         
@@ -152,7 +151,6 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
      ******************************************************************************************************************/
     @Override
     public void pause()
-      throws Exception
       {
         log.info("pause()");
         
