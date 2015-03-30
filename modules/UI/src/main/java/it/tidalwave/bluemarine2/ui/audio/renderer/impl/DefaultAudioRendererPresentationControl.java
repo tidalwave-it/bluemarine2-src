@@ -28,22 +28,24 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.renderer.impl;
 
-import it.tidalwave.bluemarine2.model.MediaItem;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
+import javafx.beans.value.ObservableValue;
+import javafx.application.Platform;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.UserActionRunnable;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import java.time.Duration;
-import javafx.application.Platform;
 
 /***********************************************************************************************************************
  *
@@ -65,6 +67,8 @@ public class DefaultAudioRendererPresentationControl
     private MediaPlayer mediaPlayer;
     
     private final AudioRendererPresentation.Properties properties = new AudioRendererPresentation.Properties();
+    
+    private Duration duration = Duration.ZERO;
     
     /*******************************************************************************************************************
      *
@@ -118,6 +122,19 @@ public class DefaultAudioRendererPresentationControl
     /* VisibleForTesting */ void initialize()
       {
         presentation.bind(rewindAction, stopAction, playAction, fastForwardAction, properties);
+        // FIXME: weak, remove previous listeners
+        mediaPlayer.getPlayTimeProperty().addListener(
+                (ObservableValue<? extends Duration> observable, 
+                 Duration oldValue,
+                 Duration newValue) -> 
+          {
+            // FIXME: the control shouldn't mess with JavaFX stuff
+            Platform.runLater(() ->
+              {
+                properties.getPlayTimeProperty().setValue(format(newValue));
+                properties.getProgressProperty().setValue((double)newValue.toMillis() / duration.toMillis());
+              });
+          });
       }
     
     /*******************************************************************************************************************
@@ -137,12 +154,27 @@ public class DefaultAudioRendererPresentationControl
         Platform.runLater(() ->
           {
             properties.getTitleProperty().setValue(metadata.get(TITLE).orElse(""));
-            properties.getDurationProperty().setValue(metadata.get(DURATION).orElse(Duration.ZERO).toString());
-            properties.getPlayTimeProperty().setValue("00:00");
-            properties.getProgressProperty().setValue(0);
+            duration = metadata.get(DURATION).orElse(Duration.ZERO);
+            properties.getDurationProperty().setValue(format(duration)); 
           });
         
         presentation.setMediaItem(mediaItem);
         mediaPlayer.setMediaItem(mediaItem);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private String format (final @Nonnull Duration duration)
+      {
+        final long s = duration.get(ChronoUnit.SECONDS);
+        final long hours = s / 3600;
+        final long minutes = (s / 60) % 60;
+        final long seconds = s % 60;
+        
+        return (hours == 0) ? String.format("%02d:%02d", minutes, seconds)
+                            : String.format("%02d:%02d:%02d", hours, minutes, seconds);
       }
   }

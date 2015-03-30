@@ -29,6 +29,8 @@
 package it.tidalwave.bluemarine2.ui.audio.renderer;
 
 import javax.annotation.Nonnull;
+import java.time.Duration;
+import javafx.beans.property.Property;
 import it.tidalwave.bluemarine2.model.MediaItem;
 
 /***********************************************************************************************************************
@@ -71,4 +73,11 @@ public interface MediaPlayer
      ******************************************************************************************************************/
     public void stop()
       throws Exception;
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Property<Duration> getPlayTimeProperty();
   }

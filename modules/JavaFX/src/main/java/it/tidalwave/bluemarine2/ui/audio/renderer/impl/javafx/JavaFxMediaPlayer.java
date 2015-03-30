@@ -33,6 +33,12 @@ import java.nio.file.Path;
 import javafx.scene.media.Media;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
+import java.time.Duration;
+import javafx.beans.property.Property;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -50,6 +56,9 @@ public class JavaFxMediaPlayer implements MediaPlayer
     
     private javafx.scene.media.MediaPlayer mediaPlayer;
     
+    @Getter
+    private final Property<Duration> playTimeProperty = new SimpleObjectProperty<>(Duration.ZERO);
+    
     @Override
     public void setMediaItem (final @Nonnull MediaItem mediaItem) 
       throws Exception 
@@ -65,7 +74,21 @@ public class JavaFxMediaPlayer implements MediaPlayer
     public void play() 
       throws Exception 
       {
+        if (mediaPlayer != null)
+          {
+            // FIXME: remove all listeners
+          }
+        
         mediaPlayer = new javafx.scene.media.MediaPlayer(media);
+        
+        mediaPlayer.currentTimeProperty().addListener(
+                (ObservableValue<? extends javafx.util.Duration> observable, 
+                 javafx.util.Duration oldValue, 
+                 javafx.util.Duration newValue) -> 
+          {
+            playTimeProperty.setValue(Duration.ofMillis((long)newValue.toMillis()));
+          });
+        
         mediaPlayer.play();
       }
 

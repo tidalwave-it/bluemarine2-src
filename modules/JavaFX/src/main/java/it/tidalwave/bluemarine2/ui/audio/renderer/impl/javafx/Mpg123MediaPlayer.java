@@ -29,12 +29,18 @@
 package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
 import javax.annotation.Nonnull;
+import java.time.Duration;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.io.IOException;
+import javafx.beans.property.Property;
+import javafx.beans.property.SimpleObjectProperty;
 import it.tidalwave.util.ProcessExecutor;
 import it.tidalwave.util.spi.DefaultProcessExecutor;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -46,9 +52,27 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class Mpg123MediaPlayer implements MediaPlayer
   {
+    // Frame#  3255 [ 8906], Time: 01:25.02 [03:52.66]
+    private static final String FRAME_REGEX = "^Frame# *([0-9]+) *\\[ *([0-9]+)\\], *Time: *([.:0-9]+) *\\[([.:0-9]+)\\].*$";
+    
+    // 01:25.02
+    private static final String PLAY_TIME_REGEX = "([0-9]{2}):([0-9]{2})\\.([0-9]{2})";
+
+    // [4:05] Decoding of 06 The Moon Is A Harsh Mistress.mp3 finished.
+    private static final String FINISHED_REGEX = "^.*Decoding.*finished\\.$";
+    
+    private static final Pattern FRAME_PATTERN = Pattern.compile(FRAME_REGEX);
+
+    private static final Pattern PLAY_TIME_PATTERN = Pattern.compile(PLAY_TIME_REGEX);
+    
+    private static final Pattern FINISHED_PATTERN = Pattern.compile(FINISHED_REGEX);
+
     private MediaItem mediaItem;
     
     private ProcessExecutor executor;
+    
+    @Getter
+    private final Property<Duration> playTimeProperty = new SimpleObjectProperty<>(Duration.ZERO);
     
     /*******************************************************************************************************************
      *
@@ -59,6 +83,11 @@ public class Mpg123MediaPlayer implements MediaPlayer
     public void setMediaItem (final @Nonnull MediaItem mediaItem)
       throws Exception 
       {
+        if (executor != null)
+          {
+            throw new Exception("Already playing");  
+          }
+        
         this.mediaItem = mediaItem;  
       }
     
@@ -90,14 +119,36 @@ public class Mpg123MediaPlayer implements MediaPlayer
               {
                 final long now = System.currentTimeMillis();
                 
-                if (now - latest.get() > 1000)
+                if (FINISHED_PATTERN.matcher(string).matches()) 
                   {
-                    log.debug("{}", string);
-                // Frame#  3255 [ 8906], Time: 01:25.02 [03:52.66]
-                // "^Frame# *([0-9]+) *\\[ *([0-9]+)\\], *Time: *([.:0-9]+) *\\[([.:0-9]+)\\].*$"
-                    latest.set(now);
+                    log.debug("finished playing");
+                    // TODO update final properties
+//                    executor.waitForCompletion();
+                    executor = null;
                   }
-            });
+                
+                else if (now - latest.get() > 1000)
+                  {
+                    latest.set(now);
+                    final Matcher frameMatcher = FRAME_PATTERN.matcher(string);
+                    
+                    if (frameMatcher.matches())
+                      {
+                        final String playTimeAsString = frameMatcher.group(3);
+                        final Matcher playTimeMatcher = PLAY_TIME_PATTERN.matcher(playTimeAsString);
+                        
+                        if (playTimeMatcher.matches())
+                          {
+                            final int minutes = Integer.parseInt(playTimeMatcher.group(1));
+                            final int seconds = Integer.parseInt(playTimeMatcher.group(2));
+                            final int hundreds = Integer.parseInt(playTimeMatcher.group(3));
+                            final Duration playTime = Duration.ofMillis(hundreds * 10 + seconds * 1000 + minutes * 60 * 1000);
+                            log.trace(">>>> play time: {}", playTime);
+                            playTimeProperty.setValue(playTime);
+                          }
+                      }
+                  }
+              });
           } 
         catch (IOException e)
           {
@@ -117,6 +168,7 @@ public class Mpg123MediaPlayer implements MediaPlayer
         if (executor != null)
           {
             executor.stop();
+            executor = null;
           }
       }
   }
