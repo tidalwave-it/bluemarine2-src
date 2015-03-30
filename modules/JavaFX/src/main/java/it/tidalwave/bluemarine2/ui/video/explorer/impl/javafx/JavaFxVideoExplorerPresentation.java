@@ -32,6 +32,7 @@ import javax.inject.Inject;
 import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.video.explorer.VideoExplorerPresentation;
+import lombok.Delegate;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
 
@@ -48,6 +49,11 @@ import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegat
 @Slf4j
 public class JavaFxVideoExplorerPresentation implements VideoExplorerPresentation
   {
+    interface DelegateExclusions
+      {
+        public void showUp();
+      }
+    
     private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/VideoExplorer.fxml";
     
     @Inject
@@ -55,6 +61,7 @@ public class JavaFxVideoExplorerPresentation implements VideoExplorerPresentatio
     
     private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
     
+    @Delegate(excludes = DelegateExclusions.class)
     private final VideoExplorerPresentation delegate = nad.getDelegate();
                 
     /*******************************************************************************************************************

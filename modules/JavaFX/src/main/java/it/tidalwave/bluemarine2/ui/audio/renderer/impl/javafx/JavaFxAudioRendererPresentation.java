@@ -28,13 +28,11 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
-import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
-import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
+import lombok.Delegate;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
 
@@ -51,6 +49,11 @@ import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegat
 @Slf4j
 public class JavaFxAudioRendererPresentation implements AudioRendererPresentation
   {
+    interface DelegateExclusions
+      {
+        public void showUp();
+      }
+    
     private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/AudioRenderer.fxml";
     
     @Inject
@@ -58,31 +61,13 @@ public class JavaFxAudioRendererPresentation implements AudioRendererPresentatio
     
     private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
     
+    @Delegate(excludes = DelegateExclusions.class)
     private final AudioRendererPresentation delegate = nad.getDelegate();
             
-    // FIXME: use @Delegate
-    
-    @Override
-    public void bind (final @Nonnull UserAction rewindAction,
-                      final @Nonnull UserAction stopAction,
-                      final @Nonnull UserAction pauseAction,
-                      final @Nonnull UserAction playAction,
-                      final @Nonnull UserAction fastForwardAction,
-                      final @Nonnull Properties properties)
-      {
-        delegate.bind(rewindAction, stopAction, pauseAction, playAction, fastForwardAction, properties);
-      }
-    
     @Override
     public void showUp()  
       {
         delegate.showUp();
         flowController.showPresentation(nad.getNode());
-      }
-
-    @Override
-    public void setMediaItem (final @Nonnull MediaItem mediaItem) 
-      {
-        delegate.setMediaItem(mediaItem);
       }
   }
