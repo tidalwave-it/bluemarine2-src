@@ -26,61 +26,61 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx;
+package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.javafx.JavaFXBinder;
-import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
+import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
+import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
+import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
+import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
 
 /***********************************************************************************************************************
  *
- * The JavaFX Delegate for {@link AudioRendererPresentation}.
+ * The JavaFX implementation of {@link AudioRendererPresentation}.
  * 
- * @stereotype  JavaFXDelegate
+ * @stereotype  Presentation
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable
-public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPresentation
+@Slf4j
+public class JavaFxAudioRendererPresentation implements AudioRendererPresentation
   {
-    @FXML
-    private ListView<PresentationModel> lvFiles;
-    
-    @FXML
-    private Button btUp;
+    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/AudioRenderer.fxml";
     
     @Inject
-    private JavaFXBinder binder;
+    private FlowController flowController;
+    
+    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
+    
+    private final AudioRendererPresentation delegate = nad.getDelegate();
+            
+    // FIXME: use @Delegate
     
     @Override
-    public void bind (final @Nonnull UserAction upAction)
+    public void bind (final @Nonnull UserAction rewindAction,
+                      final @Nonnull UserAction stopAction,
+                      final @Nonnull UserAction playAction,
+                      final @Nonnull UserAction fastForwardAction)
       {
-        binder.bind(btUp, upAction);
+        delegate.bind(rewindAction, stopAction, playAction, fastForwardAction);
       }
     
     @Override
-    public void showUp() 
+    public void showUp()  
       {
+        delegate.showUp();
+        flowController.showPresentation(nad.getNode());
       }
-    
+
     @Override
-    public void populate (final @Nonnull PresentationModel pm)
+    public void setMediaItem (final @Nonnull MediaItem mediaItem) 
       {
-        binder.bind(lvFiles, pm, () -> 
-          {
-            if (!lvFiles.getItems().isEmpty())
-              {
-                lvFiles.getSelectionModel().select(0);
-              }
-          });
+        delegate.setMediaItem(mediaItem);
       }
   }

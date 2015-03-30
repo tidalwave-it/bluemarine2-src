@@ -26,61 +26,46 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx;
+package it.tidalwave.bluemarine2.ui.audio.renderer;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.javafx.JavaFXBinder;
-import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
+import it.tidalwave.bluemarine2.model.MediaItem;
 
 /***********************************************************************************************************************
  *
- * The JavaFX Delegate for {@link AudioRendererPresentation}.
+ * The Presentation of the renderer of audio media files.
  * 
- * @stereotype  JavaFXDelegate
+ * @stereotype  Presentation
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable
-public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPresentation
+public interface AudioRendererPresentation 
   {
-    @FXML
-    private ListView<PresentationModel> lvFiles;
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    public void bind (@Nonnull UserAction rewindAction,
+                      @Nonnull UserAction stopAction,
+                      @Nonnull UserAction playAction,
+                      @Nonnull UserAction fastForwardAction);
     
-    @FXML
-    private Button btUp;
-    
-    @Inject
-    private JavaFXBinder binder;
-    
-    @Override
-    public void bind (final @Nonnull UserAction upAction)
-      {
-        binder.bind(btUp, upAction);
-      }
-    
-    @Override
-    public void showUp() 
-      {
-      }
-    
-    @Override
-    public void populate (final @Nonnull PresentationModel pm)
-      {
-        binder.bind(lvFiles, pm, () -> 
-          {
-            if (!lvFiles.getItems().isEmpty())
-              {
-                lvFiles.getSelectionModel().select(0);
-              }
-          });
-      }
+    /*******************************************************************************************************************
+     *
+     * Shows this presentation on the screen.
+     *
+     ******************************************************************************************************************/
+    public void showUp();
+
+    /*******************************************************************************************************************
+     *
+     * Sets the {@link MediaItem} to render.
+     * 
+     * @param   mediaItem   the {@code MediaItem}
+     *
+     ******************************************************************************************************************/
+    public void setMediaItem (@Nonnull MediaItem mediaItem);
   }

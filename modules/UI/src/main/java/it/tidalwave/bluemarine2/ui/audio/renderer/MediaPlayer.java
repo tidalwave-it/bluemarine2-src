@@ -26,61 +26,49 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx;
+package it.tidalwave.bluemarine2.ui.audio.renderer;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.role.ui.PresentationModel;
-import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.javafx.JavaFXBinder;
-import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
+import it.tidalwave.bluemarine2.model.MediaItem;
 
 /***********************************************************************************************************************
  *
- * The JavaFX Delegate for {@link AudioRendererPresentation}.
- * 
- * @stereotype  JavaFXDelegate
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable
-public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPresentation
+public interface MediaPlayer 
   {
-    @FXML
-    private ListView<PresentationModel> lvFiles;
-    
-    @FXML
-    private Button btUp;
-    
-    @Inject
-    private JavaFXBinder binder;
-    
-    @Override
-    public void bind (final @Nonnull UserAction upAction)
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    public static class Exception extends java.lang.Exception
       {
-        binder.bind(btUp, upAction);
-      }
-    
-    @Override
-    public void showUp() 
-      {
-      }
-    
-    @Override
-    public void populate (final @Nonnull PresentationModel pm)
-      {
-        binder.bind(lvFiles, pm, () -> 
+        public Exception (final @Nonnull String message)
           {
-            if (!lvFiles.getItems().isEmpty())
-              {
-                lvFiles.getSelectionModel().select(0);
-              }
-          });
+            super(message);
+          }
       }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    public void setMediaItem (@Nonnull MediaItem mediaItem)
+      throws Exception;
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    public void play()
+      throws Exception;
+            
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    public void stop()
+      throws Exception;
   }

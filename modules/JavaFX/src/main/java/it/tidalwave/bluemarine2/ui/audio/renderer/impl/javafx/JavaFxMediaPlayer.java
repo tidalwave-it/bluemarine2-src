@@ -26,61 +26,51 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx;
+package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.role.ui.PresentationModel;
-import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.javafx.JavaFXBinder;
-import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
+import java.nio.file.Path;
+import javafx.scene.media.Media;
+import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
- * The JavaFX Delegate for {@link AudioRendererPresentation}.
- * 
- * @stereotype  JavaFXDelegate
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable
-public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPresentation
+@Slf4j
+public class JavaFxMediaPlayer implements MediaPlayer
   {
-    @FXML
-    private ListView<PresentationModel> lvFiles;
+    private MediaItem mediaItem;
     
-    @FXML
-    private Button btUp;
+    private Media media;
     
-    @Inject
-    private JavaFXBinder binder;
+    private javafx.scene.media.MediaPlayer mediaPlayer;
     
     @Override
-    public void bind (final @Nonnull UserAction upAction)
+    public void setMediaItem (final @Nonnull MediaItem mediaItem) 
+      throws Exception 
       {
-        binder.bind(btUp, upAction);
+        final Path path = mediaItem.getPath().toAbsolutePath();
+        log.info("path: {}", path);
+        media = new Media(path.toUri().toString());
       }
     
     @Override
-    public void showUp() 
+    public void play() 
+      throws Exception 
       {
+        mediaPlayer = new javafx.scene.media.MediaPlayer(media);
+        mediaPlayer.play();
       }
-    
+
     @Override
-    public void populate (final @Nonnull PresentationModel pm)
+    public void stop() 
+      throws Exception 
       {
-        binder.bind(lvFiles, pm, () -> 
-          {
-            if (!lvFiles.getItems().isEmpty())
-              {
-                lvFiles.getSelectionModel().select(0);
-              }
-          });
+        mediaPlayer.stop();
       }
   }

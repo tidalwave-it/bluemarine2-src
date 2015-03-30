@@ -59,6 +59,10 @@
     <context:spring-configured />
 
     <aop:aspectj-autoproxy/>
+    
+    <!-- FIXME: use different Beans.xml in function of the o.s. -->
+    <!--<bean class="it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx.Mpg123MediaPlayer" />-->
+    <bean class="it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx.JavaFxMediaPlayer" />
 
     <bean class="it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController" />
 
@@ -70,4 +74,6 @@
     
     <bean class="it.tidalwave.bluemarine2.ui.video.explorer.impl.javafx.JavaFxVideoExplorerPresentation" />
 
+    <bean class="it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx.JavaFxAudioRendererPresentation" />
+    
 </beans>
