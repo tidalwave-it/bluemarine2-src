@@ -39,10 +39,11 @@ import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
+import it.tidalwave.role.ui.UserAction8;
 import it.tidalwave.role.ui.UserActionProvider;
+import it.tidalwave.role.ui.spi.UserActionLambda;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.role.ui.spi.UserActionRunnable;
-import it.tidalwave.role.ui.spi.UserActionSupport;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
@@ -78,25 +79,8 @@ public class DefaultAudioExplorerPresentationControl
     
     private final Stack<MediaFolder> stack = new Stack<>();
     
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private final UserAction upAction = new UserActionSupport(new DefaultDisplayable("Up")) // FIXME: bundle
-      {
-        @Override
-        public void actionPerformed() 
-          {
-            // TODO: assert not UI thread
-            log.info("upAction.actionPerformed()");
-            
-            if (stack.size() > 1)
-              {
-                stack.pop();
-                populateWith(stack.peek());
-              }
-          }
-      };
+    // FIXME: bundle
+    private final UserAction8 upAction = new UserActionLambda(new DefaultDisplayable("Up"), () -> moveUp()); 
     
     /*******************************************************************************************************************
      *
@@ -159,6 +143,22 @@ public class DefaultAudioExplorerPresentationControl
                                               .map(object -> object.as(Presentable).createPresentationModel(actionProviderFor(object)))
                                               .collect(toCompositePresentationModel());
         presentation.populate(pm);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void moveUp() 
+      {
+        // TODO: assert not UI thread
+        log.info("moveUp()");
+
+        if (stack.size() > 1)
+          {
+            stack.pop();
+            populateWith(stack.peek());
+          }
       }
     
     /*******************************************************************************************************************
