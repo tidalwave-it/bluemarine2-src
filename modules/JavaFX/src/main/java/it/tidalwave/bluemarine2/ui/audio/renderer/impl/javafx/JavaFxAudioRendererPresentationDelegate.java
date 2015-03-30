@@ -35,7 +35,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.util.ProcessExecutor;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
 import it.tidalwave.bluemarine2.model.MediaItem;
@@ -87,8 +86,6 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     private JavaFXBinder binder;
     
     private MediaItem mediaItem;
-    
-    private ProcessExecutor executor;
     
     @Override
     public void bind (final @Nonnull UserAction rewindAction,
