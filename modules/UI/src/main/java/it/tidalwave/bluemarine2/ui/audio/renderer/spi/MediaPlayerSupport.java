@@ -49,4 +49,7 @@ public abstract class MediaPlayerSupport implements MediaPlayer
     
     @Getter
     protected final Property<Duration> playTimeProperty = new SimpleObjectProperty<>(Duration.ZERO);
+    
+    @Getter
+    protected final Property<Status> statusProperty = new SimpleObjectProperty<>(Status.STOPPED);
   }

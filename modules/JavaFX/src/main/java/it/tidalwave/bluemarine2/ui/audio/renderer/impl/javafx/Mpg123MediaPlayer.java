@@ -72,8 +72,6 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
     
     private Duration playTime = Duration.ZERO;
     
-    private boolean paused = false;
-    
     /*******************************************************************************************************************
      *
      * 
@@ -115,7 +113,7 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
         checkNotPlaying();
         this.mediaItem = mediaItem;  
         playTime = Duration.ZERO;
-        paused = false;
+        statusProperty.setValue(Status.STOPPED);
       }
     
     /*******************************************************************************************************************
@@ -129,12 +127,11 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
       {
         checkNotPlaying();
 
-        if (paused)
+        if (statusProperty.getValue().equals(Status.PAUSED))
           {
             try 
               {
                 executor.send(" ");
-                paused = false;
 //            executor.stop();
 //            executor = null;
               }
@@ -148,18 +145,18 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
             try 
               {
                 final String path = mediaItem.getPath().toAbsolutePath().toString();
-                // FIXME: use playTime to specify cue point
                 executor = DefaultProcessExecutor.forExecutable("/usr/bin/mpg123") // FIXME
                                                  .withArguments("-C", "-v", path)
                                                  .start();
                 executor.getStderr().setListener(mpg123ConsoleListener);
-                paused = false;
               } 
             catch (IOException e)
               {
                 throw new Exception(e.toString()); // FIXME:
               }
           }
+
+        statusProperty.setValue(Status.PLAYING);
 //Enable terminal control keys. By default use 's' or the space bar to stop/restart (pause, unpause) playback, 
 //'f' to jump forward to the next song, 'b' to jump back to the beginning of the song, ',' 
 //to rewind, '.' to fast forward, and 'q' to quit.         
@@ -179,7 +176,7 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
             executor.stop();
             executor = null;
             playTime = Duration.ZERO;
-            paused = false;
+            statusProperty.setValue(Status.STOPPED);
           }
       }
 
@@ -192,12 +189,12 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
     public synchronized void pause() 
       throws MediaPlayer.Exception 
       {
-        if (executor != null)
+        if (statusProperty.getValue().equals(Status.PLAYING))
           {
             try 
               {
                 executor.send(" ");
-                paused = true;
+                statusProperty.setValue(Status.PAUSED);
 //            executor.stop();
 //            executor = null;
               }
@@ -242,7 +239,7 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
     private void checkNotPlaying()
       throws Exception
       {
-        if (executor != null)
+        if (statusProperty.getValue().equals(Status.PLAYING))
           {
             throw new Exception("Already playing");  
           }

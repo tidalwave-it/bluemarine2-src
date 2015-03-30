@@ -34,7 +34,6 @@ import java.time.Duration;
 import java.nio.file.Path;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer.Status;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.renderer.spi.MediaPlayerSupport;
 import lombok.extern.slf4j.Slf4j;
@@ -54,11 +53,17 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
     @CheckForNull
     private javafx.scene.media.MediaPlayer mediaPlayer;
     
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
     private final Runnable cleanup = () ->
       {
         log.debug(">>>> media reproduction finished");
         // FIXME: remove listener from currentTimeProperty
         mediaPlayer = null;
+        statusProperty.setValue(Status.STOPPED);
       };
     
     /*******************************************************************************************************************
@@ -89,7 +94,7 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
       {
         checkNotPlaying();
         
-        if ((mediaPlayer != null) && mediaPlayer.getStatus().equals(Status.PAUSED))
+        if ((mediaPlayer != null) && mediaPlayer.getStatus().equals(javafx.scene.media.MediaPlayer.Status.PAUSED))
           {
             mediaPlayer.play();
           }
@@ -109,6 +114,8 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
             mediaPlayer.setOnError(cleanup);
             mediaPlayer.setOnHalted(cleanup);
           }
+        
+        statusProperty.setValue(Status.PLAYING);
       }
 
     /*******************************************************************************************************************
@@ -123,6 +130,7 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
         if (mediaPlayer != null)
           {
             mediaPlayer.stop();
+            statusProperty.setValue(Status.STOPPED);
           }
       }
     
@@ -138,6 +146,7 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
         if (mediaPlayer != null)
           {
             mediaPlayer.pause();
+            statusProperty.setValue(Status.PAUSED);
           }
       }
     
@@ -149,7 +158,7 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
     private void checkNotPlaying()
       throws Exception
       {
-        if ((mediaPlayer != null) && mediaPlayer.getStatus().equals(Status.PLAYING))
+        if ((mediaPlayer != null) && mediaPlayer.getStatus().equals(javafx.scene.media.MediaPlayer.Status.PLAYING))
           {
             throw new Exception("Already playing");  
           }
