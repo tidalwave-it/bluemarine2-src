@@ -84,6 +84,7 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
 //                    executor.waitForCompletion();
             executor = null;
             playTimeProperty.setValue(playTime);
+            statusProperty.setValue(Status.STOPPED);
           }
         
         else 
