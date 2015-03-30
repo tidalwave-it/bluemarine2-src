@@ -193,6 +193,7 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
           {
             try 
               {
+                // FIXME: doesn't work
                 executor.send(" ");
                 statusProperty.setValue(Status.PAUSED);
 //            executor.stop();
