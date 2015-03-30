@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.ui.commons;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import it.tidalwave.bluemarine2.model.MediaItem;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
@@ -47,6 +48,6 @@ import lombok.ToString;
 @Immutable @RequiredArgsConstructor @ToString
 public class RenderMediaFileRequest 
   {
-    @Nonnull
+    @Getter @Nonnull
     private final MediaItem mediaItem;
   }
