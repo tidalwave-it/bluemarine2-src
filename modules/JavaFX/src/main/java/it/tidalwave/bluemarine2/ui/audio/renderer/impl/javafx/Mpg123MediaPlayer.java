@@ -87,8 +87,6 @@ public class Mpg123MediaPlayer implements MediaPlayer
      ******************************************************************************************************************/
     private final Listener mpg123ConsoleListener = (string) ->
       {
-        final long now = System.currentTimeMillis();
-  
         if (FINISHED_PATTERN.matcher(string).matches()) 
           {
             log.debug("finished playing");
@@ -99,6 +97,7 @@ public class Mpg123MediaPlayer implements MediaPlayer
         
         else 
           {
+            final long now = System.currentTimeMillis();
             playTime = parsePlayTime(string);
 
             if ((playTime != null) && (now - latestPlayTimeUpdateTime > 1000))
