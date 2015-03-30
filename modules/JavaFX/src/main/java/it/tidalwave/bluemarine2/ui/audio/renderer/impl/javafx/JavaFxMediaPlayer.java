@@ -54,6 +54,7 @@ public class JavaFxMediaPlayer implements MediaPlayer
     public void setMediaItem (final @Nonnull MediaItem mediaItem) 
       throws Exception 
       {
+        this.mediaItem = mediaItem;
         final Path path = mediaItem.getPath().toAbsolutePath();
         log.info("path: {}", path);
         media = new Media(path.toUri().toString());
