@@ -77,6 +77,7 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
     public void setMediaItem (final @Nonnull MediaItem mediaItem)
       throws Exception
       {
+        log.info("setMediaItem({})", mediaItem);
         checkNotPlaying();
         this.mediaItem = mediaItem;
         final Path path = mediaItem.getPath().toAbsolutePath();
@@ -94,6 +95,7 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
     public synchronized void play()
       throws Exception
       {
+        log.info("play()");
         checkNotPlaying();
 
         if ((mediaPlayer != null) && mediaPlayer.getStatus().equals(javafx.scene.media.MediaPlayer.Status.PAUSED))
@@ -134,6 +136,8 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
     public void stop()
       throws Exception
       {
+        log.info("stop()");
+        
         if (mediaPlayer != null)
           {
             mediaPlayer.stop();
@@ -150,6 +154,8 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
     public void pause()
       throws Exception
       {
+        log.info("pause()");
+        
         if (mediaPlayer != null)
           {
             mediaPlayer.pause();
@@ -165,6 +171,8 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
     @Override
     public void rewind()
       {
+        log.info("rewind()");
+        
         if (mediaPlayer != null)
           {
             mediaPlayer.seek(mediaPlayer.getCurrentTime().subtract(SKIP_DURATION));
@@ -179,6 +187,8 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
     @Override
     public void fastForward()
       {
+        log.info("fastForward()");
+        
         if (mediaPlayer != null)
           {
             mediaPlayer.seek(mediaPlayer.getCurrentTime().add(SKIP_DURATION));
