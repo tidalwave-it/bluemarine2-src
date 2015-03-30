@@ -51,7 +51,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class Mpg123MediaPlayer extends MediaPlayerSupport
   {
-    // Frame#  3255 [ 8906], Time: 01:25.02 [03:52.66]
+    // Frame#  1368 [12934], Time: 00:35.73 [05:37.86], RVA:   off, Vol: 100(100)
     private static final String FRAME_REGEX = "^Frame# *([0-9]+) *\\[ *([0-9]+)\\], *Time: *([.:0-9]+) *\\[([.:0-9]+)\\].*$";
     
     // 01:25.02
