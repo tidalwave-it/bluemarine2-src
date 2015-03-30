@@ -148,7 +148,7 @@ public class DefaultAudioRendererPresentationControl
         presentation.showUp();
         
         final MediaItem mediaItem = request.getMediaItem();
-        final Metadata metadata = mediaItem.getMedatada();
+        final Metadata metadata = mediaItem.getMetadata();
 
         // FIXME: the control shouldn't mess with JavaFX stuff
         Platform.runLater(() ->

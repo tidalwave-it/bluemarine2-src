@@ -67,7 +67,7 @@ public class DefaultMediaItem implements MediaItem
       }
 
     @Override @Nonnull
-    public synchronized Metadata getMedatada() 
+    public synchronized Metadata getMetadata() 
       {
         if (metadata == null)
           {

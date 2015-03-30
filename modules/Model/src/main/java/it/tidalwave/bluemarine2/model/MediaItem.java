@@ -109,5 +109,5 @@ public interface MediaItem extends As
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Metadata getMedatada();
+    public Metadata getMetadata();
   }
