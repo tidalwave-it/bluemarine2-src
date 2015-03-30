@@ -26,28 +26,49 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.commons;
+package it.tidalwave.bluemarine2.ui.audio.renderer;
 
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
 
 /***********************************************************************************************************************
  *
- * A message that requests to render a {@link MediaItem}.
- * 
- * @stereotype  Message
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @RequiredArgsConstructor @ToString
-public class RenderMediaFileRequest 
+public interface MediaPlayer 
   {
-    @Getter @Nonnull
-    private final MediaItem mediaItem;
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    public static class Exception extends java.lang.Exception
+      {
+        public Exception (final @Nonnull String message)
+          {
+            super(message);
+          }
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    public void setMediaItem (@Nonnull MediaItem mediaItem)
+      throws Exception;
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    public void play()
+      throws Exception;
+            
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    public void stop()
+      throws Exception;
   }

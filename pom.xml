@@ -86,6 +86,11 @@
         <dependencies>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
+                <version>1.0-ALPHA-3-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
                 <version>1.0-ALPHA-3-SNAPSHOT</version>
             </dependency>

@@ -68,6 +68,8 @@
         
     <bean class="it.tidalwave.bluemarine2.ui.video.explorer.impl.DefaultVideoExplorerPresentationControl" />
         
+    <bean class="it.tidalwave.bluemarine2.ui.audio.renderer.impl.DefaultAudioRendererPresentationControl" />
+        
     <bean class="it.tidalwave.bluemarine2.ui.mainscreen.impl.MainMenuItem">
         <constructor-arg value="mainMenu.stillImages"/>
         <constructor-arg value="it.tidalwave.bluemarine2.ui.commons.OpenStillImageExplorerRequest"/>

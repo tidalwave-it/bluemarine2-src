@@ -26,28 +26,51 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.commons;
+package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
+import java.nio.file.Path;
+import javafx.scene.media.Media;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
- * A message that requests to render a {@link MediaItem}.
- * 
- * @stereotype  Message
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @RequiredArgsConstructor @ToString
-public class RenderMediaFileRequest 
+@Slf4j
+public class JavaFxMediaPlayer implements MediaPlayer
   {
-    @Getter @Nonnull
-    private final MediaItem mediaItem;
+    private MediaItem mediaItem;
+    
+    private Media media;
+    
+    private javafx.scene.media.MediaPlayer mediaPlayer;
+    
+    @Override
+    public void setMediaItem (final @Nonnull MediaItem mediaItem) 
+      throws Exception 
+      {
+        final Path path = mediaItem.getPath().toAbsolutePath();
+        log.info("path: {}", path);
+        media = new Media(path.toUri().toString());
+      }
+    
+    @Override
+    public void play() 
+      throws Exception 
+      {
+        mediaPlayer = new javafx.scene.media.MediaPlayer(media);
+        mediaPlayer.play();
+      }
+
+    @Override
+    public void stop() 
+      throws Exception 
+      {
+        mediaPlayer.stop();
+      }
   }

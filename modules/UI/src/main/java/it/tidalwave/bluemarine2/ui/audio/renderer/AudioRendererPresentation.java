@@ -26,28 +26,46 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.commons;
+package it.tidalwave.bluemarine2.ui.audio.renderer;
 
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
+import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
 
 /***********************************************************************************************************************
  *
- * A message that requests to render a {@link MediaItem}.
+ * The Presentation of the renderer of audio media files.
  * 
- * @stereotype  Message
+ * @stereotype  Presentation
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @RequiredArgsConstructor @ToString
-public class RenderMediaFileRequest 
+public interface AudioRendererPresentation 
   {
-    @Getter @Nonnull
-    private final MediaItem mediaItem;
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    public void bind (@Nonnull UserAction rewindAction,
+                      @Nonnull UserAction stopAction,
+                      @Nonnull UserAction playAction,
+                      @Nonnull UserAction fastForwardAction);
+    
+    /*******************************************************************************************************************
+     *
+     * Shows this presentation on the screen.
+     *
+     ******************************************************************************************************************/
+    public void showUp();
+
+    /*******************************************************************************************************************
+     *
+     * Sets the {@link MediaItem} to render.
+     * 
+     * @param   mediaItem   the {@code MediaItem}
+     *
+     ******************************************************************************************************************/
+    public void setMediaItem (@Nonnull MediaItem mediaItem);
   }

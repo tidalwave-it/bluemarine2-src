@@ -26,28 +26,61 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.commons;
+package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
+import javax.inject.Inject;
+import it.tidalwave.role.ui.UserAction;
+import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
+import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
+import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
 
 /***********************************************************************************************************************
  *
- * A message that requests to render a {@link MediaItem}.
+ * The JavaFX implementation of {@link AudioRendererPresentation}.
  * 
- * @stereotype  Message
+ * @stereotype  Presentation
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @RequiredArgsConstructor @ToString
-public class RenderMediaFileRequest 
+@Slf4j
+public class JavaFxAudioRendererPresentation implements AudioRendererPresentation
   {
-    @Getter @Nonnull
-    private final MediaItem mediaItem;
+    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/AudioRenderer.fxml";
+    
+    @Inject
+    private FlowController flowController;
+    
+    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
+    
+    private final AudioRendererPresentation delegate = nad.getDelegate();
+            
+    // FIXME: use @Delegate
+    
+    @Override
+    public void bind (final @Nonnull UserAction rewindAction,
+                      final @Nonnull UserAction stopAction,
+                      final @Nonnull UserAction playAction,
+                      final @Nonnull UserAction fastForwardAction)
+      {
+        delegate.bind(rewindAction, stopAction, playAction, fastForwardAction);
+      }
+    
+    @Override
+    public void showUp()  
+      {
+        delegate.showUp();
+        flowController.showPresentation(nad.getNode());
+      }
+
+    @Override
+    public void setMediaItem (final @Nonnull MediaItem mediaItem) 
+      {
+        delegate.setMediaItem(mediaItem);
+      }
   }
