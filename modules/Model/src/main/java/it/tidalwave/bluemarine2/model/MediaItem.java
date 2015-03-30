@@ -29,8 +29,12 @@
 package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
+import java.time.Duration;
+import java.util.Optional;
+import java.util.Set;
 import java.nio.file.Path;
 import it.tidalwave.util.As;
+import it.tidalwave.util.Key;
 
 /***********************************************************************************************************************
  *
@@ -46,6 +50,49 @@ public interface MediaItem extends As
   {
     /*******************************************************************************************************************
      *
+     * A container of metadata objects for a {@link MediaItem}.
+     *
+     ******************************************************************************************************************/
+    public interface Metadata
+      {
+        public static final Key<Duration> DURATION = new Key<>("mp3.duration");
+        public static final Key<Integer> BIT_RATE = new Key<>("mp3.bitRate");
+        public static final Key<Integer> SAMPLE_RATE = new Key<>("mp3.sampleRate");
+        public static final Key<String> ARTIST = new Key<>("mp3.artist");
+        public static final Key<String> COMPOSER = new Key<>("mp3.composer");
+        public static final Key<String> PUBLISHER = new Key<>("mp3.publisher");
+        public static final Key<String> TITLE = new Key<>("mp3.title");
+        public static final Key<Integer> YEAR = new Key<>("mp3.year");
+        public static final Key<String> ALBUM = new Key<>("mp3.album");
+        public static final Key<String> TRACK = new Key<>("mp3.track"); // FIXME: should be a Track class
+        public static final Key<String> COMMENT = new Key<>("mp3.comment");
+        
+        /***************************************************************************************************************
+         *
+         * 
+         *
+         **************************************************************************************************************/
+        @Nonnull
+        public <T> Optional<T> get (@Nonnull Key<T> key);
+
+        /***************************************************************************************************************
+         *
+         * 
+         *
+         **************************************************************************************************************/
+        public boolean containsKey (@Nonnull Key<?> key);
+
+        /***************************************************************************************************************
+         *
+         * 
+         *
+         **************************************************************************************************************/
+        @Nonnull
+        public Set<Key<?>> getKeys();
+    }
+    
+    /*******************************************************************************************************************
+     *
      * Returns the {@link Path} associated with this object.
      * 
      * @return  the path
@@ -53,4 +100,14 @@ public interface MediaItem extends As
      ******************************************************************************************************************/
     @Nonnull
     public Path getPath();
+    
+    /*******************************************************************************************************************
+     *
+     * Returns the {@link Metadata} associated with this object.
+     * 
+     * @return  the metadata
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Metadata getMedatada();
   }

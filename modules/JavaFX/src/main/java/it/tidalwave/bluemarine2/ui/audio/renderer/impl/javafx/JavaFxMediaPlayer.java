@@ -56,7 +56,8 @@ public class JavaFxMediaPlayer implements MediaPlayer
       {
         this.mediaItem = mediaItem;
         final Path path = mediaItem.getPath().toAbsolutePath();
-        log.info("path: {}", path);
+        log.info("path:     {}", path);
+        log.info("metadata: {}", mediaItem.getMedatada());
         media = new Media(path.toUri().toString());
       }
     
