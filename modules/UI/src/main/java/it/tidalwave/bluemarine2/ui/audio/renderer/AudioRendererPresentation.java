@@ -34,7 +34,6 @@ import javafx.beans.property.Property;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.bluemarine2.model.MediaItem;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
@@ -56,9 +55,11 @@ public interface AudioRendererPresentation
      *
      ******************************************************************************************************************/
     @Getter @Accessors(fluent = true) @ToString
-    class Properties
+    public static class Properties
       {
         private final Property<String> titleProperty = new SimpleStringProperty("");
+        private final Property<String> artistProperty = new SimpleStringProperty("");
+        private final Property<String> composerProperty = new SimpleStringProperty("");
         private final Property<String> durationProperty = new SimpleStringProperty("");
         private final Property<String> playTimeProperty = new SimpleStringProperty("");
         private final DoubleProperty progressProperty = new SimpleDoubleProperty(0);
@@ -68,26 +69,17 @@ public interface AudioRendererPresentation
      *
      *
      ******************************************************************************************************************/
-    public void bind (@Nonnull UserAction rewindAction,
+    public void bind (@Nonnull Properties properties,
+                      @Nonnull UserAction rewindAction,
                       @Nonnull UserAction stopAction,
                       @Nonnull UserAction pauseAction,
                       @Nonnull UserAction playAction,
-                      @Nonnull UserAction fastForwardAction,
-                      @Nonnull Properties properties);
+                      @Nonnull UserAction fastForwardAction);
     
     /*******************************************************************************************************************
      *
      * Shows this presentation on the screen.
      *
      ******************************************************************************************************************/
-    public void showUp();
-
-    /*******************************************************************************************************************
-     *
-     * Sets the {@link MediaItem} to render.
-     * 
-     * @param   mediaItem   the {@code MediaItem}
-     *
-     ******************************************************************************************************************/
-    public void setMediaItem (@Nonnull MediaItem mediaItem);
+    public void showUp (@Nonnull Object control);
   }

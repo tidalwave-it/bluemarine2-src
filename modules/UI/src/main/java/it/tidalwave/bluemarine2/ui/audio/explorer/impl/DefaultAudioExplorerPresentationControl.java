@@ -34,6 +34,7 @@ import javax.inject.Inject;
 import java.util.Stack;
 import java.io.File;
 import java.nio.file.Path;
+import javafx.application.Platform;
 import it.tidalwave.util.As;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.role.spi.DefaultDisplayable;
@@ -50,9 +51,12 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.impl.DefaultMediaFolder;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
+import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.*;
+import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
@@ -78,6 +82,8 @@ public class DefaultAudioExplorerPresentationControl
     
     private final Stack<MediaFolder> stack = new Stack<>();
     
+    private final AudioExplorerPresentation.Properties properties = new AudioExplorerPresentation.Properties();
+    
     // FIXME: bundle
     private final UserAction8 upAction = new UserActionLambda(new DefaultDisplayable("Up"), () -> moveUp()); 
     
@@ -88,7 +94,7 @@ public class DefaultAudioExplorerPresentationControl
     @PostConstruct 
     /* VisibleForTesting */ void initialize()
       {
-        presentation.bind(upAction);  
+        presentation.bind(properties, upAction);  
       }
     
     /*******************************************************************************************************************
@@ -98,7 +104,7 @@ public class DefaultAudioExplorerPresentationControl
     /* VisibleForTesting */ void onOpenAudioExplorerRequest (final @ListensTo @Nonnull OpenAudioExplorerRequest request)
       {
         log.info("onOpenAudioExplorerRequest({})", request);
-        presentation.showUp();
+        presentation.showUp(this);
         
         // FIXME
         String s = System.getProperty("user.home", "/");
@@ -119,6 +125,25 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
+     * The default action to go back should be disabled if the stack is not empty.
+     *
+     ******************************************************************************************************************/
+    @OnDeactivate
+    /* VisibleForTesting */ OnDeactivate.Result onDeactivate()
+      {
+        if (stack.size() == 1)
+          {  
+            return OnDeactivate.Result.PROCEED;  
+          }  
+        else
+          {
+            moveUp();
+            return OnDeactivate.Result.IGNORE;
+          }
+      }
+    
+    /*******************************************************************************************************************
+     *
      *
      ******************************************************************************************************************/
     private void navigateTo (final @Nonnull MediaFolder mediaFolder)
@@ -135,6 +160,9 @@ public class DefaultAudioExplorerPresentationControl
     private void populateWith (final @Nonnull MediaFolder mediaFolder)
       {
         log.debug("populateWith({})", mediaFolder);
+        // FIXME: shouldn't deal with JavaFX threads here
+        Platform.runLater(() -> upAction.enabledProperty().setValue(stack.size() > 1));
+        Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentLabel()));
         // FIXME: waiting signal while loading
         final SimpleComposite8<As> composite = mediaFolder.as(SimpleComposite8);
         final PresentationModel pm = composite.findChildren()
@@ -180,5 +208,17 @@ public class DefaultAudioExplorerPresentationControl
                 return action;
               }
           };
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private String getCurrentLabel()
+      {
+//        return stack.peek().as(Displayable).getDisplayName();
+        return stack.subList(1, stack.size()).stream().map(
+                folder -> folder.as(Displayable).getDisplayName()).collect(joining(" / "));
       }
   }

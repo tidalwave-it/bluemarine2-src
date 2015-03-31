@@ -26,49 +26,28 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx;
+package it.tidalwave.bluemarine2.ui.commons;
 
-import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
-import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
-import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
-import lombok.Delegate;
-import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /***********************************************************************************************************************
  *
- * The JavaFX implementation of {@link AudioExplorerPresentation}.
- * 
- * @stereotype  Presentation
+ * Annotates a method of a PresentationControl which should be called when the related Presentation is going to be
+ * dismissed. The method must return a {@code boolean}: by returning {@code false} it cancels the dismissal procedure.
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class JavaFxAudioExplorerPresentation implements AudioExplorerPresentation
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface OnDeactivate 
   {
-    interface DelegateExclusions
+    public enum Result
       {
-        public void showUp(Object control);
-      }
-    
-    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/AudioExplorer.fxml";
-    
-    @Inject
-    private FlowController flowController;
-    
-    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
-    
-    @Delegate(excludes = DelegateExclusions.class)
-    private final AudioExplorerPresentation delegate = nad.getDelegate();
-            
-    @Override
-    public void showUp (final @Nonnull Object control)  
-      {
-        delegate.showUp(control);
-        flowController.showPresentation(nad.getNode(), control);
+        PROCEED, IGNORE
       }
   }

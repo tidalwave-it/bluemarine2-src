@@ -64,8 +64,8 @@
         </dependency>
     
         <dependency>
-            <groupId>com.mpatric</groupId>
-            <artifactId>mp3agic</artifactId>
+            <groupId>net.jthink</groupId>
+            <artifactId>jaudiotagger</artifactId>
         </dependency>
         
         <!-- FIXME: workaround against a compilation error -->

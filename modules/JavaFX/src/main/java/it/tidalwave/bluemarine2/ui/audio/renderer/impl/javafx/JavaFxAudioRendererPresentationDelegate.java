@@ -36,14 +36,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
-import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 import lombok.extern.slf4j.Slf4j;
@@ -84,6 +82,12 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     private Label lbTitle;
     
     @FXML
+    private Label lbArtist;
+    
+    @FXML
+    private Label lbComposer;
+    
+    @FXML
     private Label lbDuration;
     
     @FXML
@@ -91,8 +95,6 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     
     @Inject
     private JavaFXBinder binder;
-    
-    private MediaItem mediaItem;
 
     private final Map<KeyCombination, Runnable> accelerators = new HashMap<>();
     
@@ -114,12 +116,12 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
       }
     
     @Override
-    public void bind (final @Nonnull UserAction rewindAction,
+    public void bind (final @Nonnull Properties properties,
+                      final @Nonnull UserAction rewindAction,
                       final @Nonnull UserAction stopAction,
                       final @Nonnull UserAction pauseAction,
                       final @Nonnull UserAction playAction,
-                      final @Nonnull UserAction fastForwardAction,
-                      final @Nonnull Properties properties)
+                      final @Nonnull UserAction fastForwardAction)
       {
         binder.bind(btRewind,      rewindAction);  
         binder.bind(btStop,        stopAction);  
@@ -128,19 +130,15 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
         binder.bind(btFastForward, fastForwardAction); 
         
         lbTitle.textProperty().bind(properties.titleProperty());
+        lbArtist.textProperty().bind(properties.artistProperty());
+        lbComposer.textProperty().bind(properties.composerProperty());
         lbDuration.textProperty().bind(properties.durationProperty());
         lbPlayTime.textProperty().bind(properties.playTimeProperty());
         pbPlayProgress.progressProperty().bind(properties.progressProperty());
       }
     
     @Override
-    public void showUp() 
+    public void showUp (final @Nonnull Object control) 
       {
-      }
-
-    @Override
-    public void setMediaItem (final @Nonnull MediaItem mediaItem) 
-      {
-        this.mediaItem = mediaItem;
       }
   }

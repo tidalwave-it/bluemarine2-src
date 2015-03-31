@@ -28,7 +28,11 @@
  */
 package it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Stack;
 import javafx.util.Duration;
 import javafx.scene.Node;
@@ -37,9 +41,12 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
+import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -47,9 +54,9 @@ import lombok.extern.slf4j.Slf4j;
  * A JavaFX implementation of {@link FlowController}.
  * 
  * This implementation is very basic and suitable to simple applications without memory criticalities. It keeps a
- * stack of previous Presentations, without disposing their resources. A more efficient implementation should be similar
- * to the Android Activity life-cycle, which can jettison resources of past activities and recreate them on demand. But 
- * it would require life-cycle methods on the presentation interfaces. 
+ stack of previous Presentations, without disposing their resources. A more efficient implementation should be similar
+ to the Android Activity life-cycle, which can jettison resources of past activities and recreate them on demand. But 
+ it would require life-cycle methods on the node interfaces. 
  * 
  * @stereotype  Controller
  * 
@@ -60,11 +67,21 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class JavaFxFlowController implements FlowController
   {
+    @RequiredArgsConstructor @Getter @ToString
+    static class NodeAndControl
+      {
+        @Nonnull
+        private final Node node;
+        
+        @CheckForNull
+        private final Object control;
+      }
+    
     @Getter @Setter
     private StackPane contentPane;
     
     // TODO: this implementation keeps all the history in the stack, thus wasting some memory.
-    private final Stack<Node> presentationStack = new Stack<>();
+    private final Stack<NodeAndControl> presentationStack = new Stack<>();
     
     /*******************************************************************************************************************
      *
@@ -74,8 +91,29 @@ public class JavaFxFlowController implements FlowController
     @Override
     public void showPresentation (final @Nonnull Object presentation)
       {
-        log.info("showPresentation({})", presentation);
-
+        showPresentationImpl(presentation, null);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void showPresentation (final @Nonnull Object presentation, final @Nonnull Object control)
+      {
+        showPresentationImpl(presentation, control);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    private void showPresentationImpl (final @Nonnull Object presentation, final @Nullable Object control)
+      {
+        log.info("showPresentationImpl({}, {})", presentation, control);
+        
         // TODO: use an aspect - should be already done in some other project
         // FIXME: should not be needed, presentations should already run in JavaFX thread
         Platform.runLater(() ->
@@ -88,11 +126,11 @@ public class JavaFxFlowController implements FlowController
               }
             else
               {
-                final Node oldNode = presentationStack.peek();
+                final Node oldNode = presentationStack.peek().getNode();
                 slide(newNode, oldNode, +1); 
               }
               
-            presentationStack.push(newNode);
+            presentationStack.push(new NodeAndControl(newNode, control));
           });
       }
 
@@ -116,13 +154,32 @@ public class JavaFxFlowController implements FlowController
             Platform.runLater(() ->
               {
                 log.debug(">>>> presentationStack: {}", presentationStack);
-                final Node oldNode = presentationStack.pop();
-                final Node newNode = presentationStack.peek();
+                final Node oldNode = presentationStack.pop().getNode();
+                final Node newNode = presentationStack.peek().getNode();
                 slide(newNode, oldNode, -1);              
               });
           }
       }
 
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    public void tryToDismissCurrentPresentation() 
+      {
+        log.info("tryToDismissCurrentPresentation()");
+        
+        try 
+          {
+             canDeactivate(presentationStack.peek().getControl(), () -> dismissCurrentPresentation());
+          } 
+        catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
+          {
+            log.error("", e);
+          }
+      }
+    
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
@@ -136,6 +193,44 @@ public class JavaFxFlowController implements FlowController
         // TODO: in this case, the responsibility to fire PowerOn should be moved here
 //            Platform.exit();
         System.exit(0); // needed, otherwise Spring won't necessarily shut down 
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * If a Presentation Control is passed, it is inspected for a method annotated with {@link OnDeactivate}. If found, 
+     * it is called. If it returns {@code false}, this method returns {@code false}.
+     * 
+     * @param   control     the Presentation Control
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private void canDeactivate (final @CheckForNull Object control, final @Nonnull Runnable runnable)
+      throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
+      {
+        log.debug("canDeactivate({})", control);
+        
+        if (control != null)
+          {
+            for (final Method method : control.getClass().getDeclaredMethods())
+              {
+                if (method.getAnnotation(OnDeactivate.class) != null)
+                  {
+                    log.debug(">>>> found @OnDeactivate annotated method on {}", control);
+
+                    method.setAccessible(true);
+                    
+                    // FIXME: should run in a background process
+                    if (((OnDeactivate.Result)method.invoke(control)).equals(OnDeactivate.Result.PROCEED))
+                      {
+                        runnable.run();
+                      }
+
+                    return;
+                  }
+              }
+          }
+          
+        runnable.run();
       }
     
     /*******************************************************************************************************************

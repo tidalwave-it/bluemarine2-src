@@ -24,9 +24,19 @@
     -fx-font-size:          60; 
   }
   
-.small-label
+.very-small-label
   {
     -fx-font-size:          20; 
+  }
+
+.small-label
+  {
+    -fx-font-size:          28; 
+  }
+
+.medium-label
+  {
+    -fx-font-size:          30; 
   }
 
 .button
@@ -88,7 +98,7 @@
 #btPlay
   {    
     -fx-padding:             8;
-    -fx-background-color:    rgb(100, 100, 100);
+    -fx-background-color:    rgb(70, 70, 70);
     -fx-background-image:    url("1427770128_play-128.png");
     -fx-background-size:     64 64;
     -fx-background-repeat:   no-repeat;
@@ -98,7 +108,7 @@
 #btStop
   {          
     -fx-padding:             8;
-    -fx-background-color:    rgb(100, 100, 100);
+    -fx-background-color:    rgb(70, 70, 70);
     -fx-background-image:    url("1427770160_591231-stop-128.png");
     -fx-background-size:     64 64;
     -fx-background-repeat:   no-repeat;
@@ -108,7 +118,7 @@
 #btPause
   {          
     -fx-padding:             8;
-    -fx-background-color:    rgb(100, 100, 100);
+    -fx-background-color:    rgb(70, 70, 70);
     -fx-background-image:    url("1427770188_591244-pause-128.png");
     -fx-background-size:     64 64;
     -fx-background-repeat:   no-repeat;
@@ -118,7 +128,7 @@
 #btRewind
   {          
     -fx-padding:             8;
-    -fx-background-color:    rgb(100, 100, 100);
+    -fx-background-color:    rgb(70, 70, 70);
     -fx-background-image:    url("1427770098_media-rewind-outline-128.png");
     -fx-background-size:     64 64;
     -fx-background-repeat:   no-repeat;
@@ -128,7 +138,7 @@
 #btFastForward
   {          
     -fx-padding:             8;
-    -fx-background-color:    rgb(100, 100, 100);
+    -fx-background-color:    rgb(70, 70, 70);
     -fx-background-image:    url("1427770073_media-fast-forward-outline-128.png");
     -fx-background-size:     64 64;
     -fx-background-repeat:   no-repeat;
