@@ -172,12 +172,9 @@ public class JavaFxFlowController implements FlowController
         
         try 
           {
-            if (canDeactivate(presentationStack.peek().getControl()))
-              {
-                dismissCurrentPresentation();
-              }
-        } 
-        catch (Exception e)
+             canDeactivate(presentationStack.peek().getControl(), () -> dismissCurrentPresentation());
+          } 
+        catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
           {
             log.error("", e);
           }
@@ -207,7 +204,7 @@ public class JavaFxFlowController implements FlowController
      *
      ******************************************************************************************************************/
     @Nonnull
-    private boolean canDeactivate (final @CheckForNull Object control)
+    private void canDeactivate (final @CheckForNull Object control, final @Nonnull Runnable runnable)
       throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
       {
         log.debug("canDeactivate({})", control);
@@ -221,12 +218,17 @@ public class JavaFxFlowController implements FlowController
                     log.debug(">>>> found @OnDeactivate annotated method on {}", control);
 
                     method.setAccessible(true);
-                    return ((OnDeactivate.Result)method.invoke(control)).equals(OnDeactivate.Result.PROCEED);
+                    
+                    // FIXME: should run in a background process
+                    if (((OnDeactivate.Result)method.invoke(control)).equals(OnDeactivate.Result.PROCEED))
+                      {
+                        runnable.run();
+                      }
                   }
               }
           }
           
-        return true;
+        runnable.run();
       }
     
     /*******************************************************************************************************************
