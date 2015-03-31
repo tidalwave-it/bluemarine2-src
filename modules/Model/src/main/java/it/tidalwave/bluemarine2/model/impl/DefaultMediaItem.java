@@ -71,7 +71,7 @@ public class DefaultMediaItem implements MediaItem
       {
         if (metadata == null)
           {
-            metadata = new DefaultMp3Metadata(path);
+            metadata = new AudioMetadata(path);
           }
         
         return metadata;

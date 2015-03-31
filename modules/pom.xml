@@ -20,6 +20,7 @@
 
     <properties>
         <!-- WARNING: don't use 1.3.8, it has got a broken pom which brings is tons of useless stuff! -->
+        <jaudiotagger.version>2.2.3</jaudiotagger.version>
         <javax-annotation.version>1.3.7</javax-annotation.version>
         <javax-inject.version>1</javax-inject.version>
         <logback.version>1.0.13</logback.version>
@@ -75,9 +76,9 @@
                 <version>${tft.aspectjrt.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mpatric</groupId>
-                <artifactId>mp3agic</artifactId>
-                <version>${mp3agic.version}</version>
+                <groupId>net.jthink</groupId>
+                <artifactId>jaudiotagger</artifactId>
+                <version>${jaudiotagger.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.aquafx-project</groupId>

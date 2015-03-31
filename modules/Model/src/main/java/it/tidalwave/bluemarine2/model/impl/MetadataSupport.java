@@ -37,8 +37,6 @@ import java.util.Optional;
 import java.util.Set;
 import java.nio.file.Path;
 import it.tidalwave.util.Key;
-import it.tidalwave.util.NotFoundException;
-import it.tidalwave.util.TypeSafeHashMap;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -51,7 +49,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @ToString(of = "rawProperties") @Slf4j
+@RequiredArgsConstructor @ToString(of = "properties") @Slf4j
 public class MetadataSupport implements MediaItem.Metadata
   {
     @Getter @Nonnull
