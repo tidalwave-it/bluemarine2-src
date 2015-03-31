@@ -221,7 +221,7 @@ public class JavaFxFlowController implements FlowController
                     log.debug(">>>> found @OnDeactivate annotated method on {}", control);
 
                     method.setAccessible(true);
-                    return (Boolean)method.invoke(control);
+                    return ((OnDeactivate.Result)method.invoke(control)).equals(OnDeactivate.Result.PROCEED);
                   }
               }
           }

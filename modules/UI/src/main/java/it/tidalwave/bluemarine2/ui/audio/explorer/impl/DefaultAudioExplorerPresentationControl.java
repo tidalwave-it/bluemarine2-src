@@ -124,16 +124,16 @@ public class DefaultAudioExplorerPresentationControl
      *
      ******************************************************************************************************************/
     @OnDeactivate
-    /* VisibleForTesting */ boolean onDeactivate()
+    /* VisibleForTesting */ OnDeactivate.Result onDeactivate()
       {
         if (stack.size() == 1)
           {  
-            return true;  
+            return OnDeactivate.Result.PROCEED;  
           }  
         else
           {
             moveUp();
-            return false;
+            return OnDeactivate.Result.IGNORE;
           }
       }
     

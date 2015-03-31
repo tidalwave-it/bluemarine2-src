@@ -145,12 +145,12 @@ public class DefaultAudioRendererPresentationControl
      *
      ******************************************************************************************************************/
     @OnDeactivate
-    /* VisibleForTesting */ boolean onDeactivate()
+    /* VisibleForTesting */ OnDeactivate.Result onDeactivate()
       throws MediaPlayer.Exception 
       {
         mediaPlayer.stop();
         unbindMediaPlayer();
-        return true;
+        return OnDeactivate.Result.PROCEED;
       }
     
     /*******************************************************************************************************************

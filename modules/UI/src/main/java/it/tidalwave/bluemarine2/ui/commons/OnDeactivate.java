@@ -46,4 +46,8 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface OnDeactivate 
   {
+    public enum Result
+      {
+        PROCEED, IGNORE
+      }
   }
