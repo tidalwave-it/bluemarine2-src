@@ -59,6 +59,8 @@ public interface AudioRendererPresentation
     class Properties
       {
         private final Property<String> titleProperty = new SimpleStringProperty("");
+        private final Property<String> artistProperty = new SimpleStringProperty("");
+        private final Property<String> composerProperty = new SimpleStringProperty("");
         private final Property<String> durationProperty = new SimpleStringProperty("");
         private final Property<String> playTimeProperty = new SimpleStringProperty("");
         private final DoubleProperty progressProperty = new SimpleDoubleProperty(0);

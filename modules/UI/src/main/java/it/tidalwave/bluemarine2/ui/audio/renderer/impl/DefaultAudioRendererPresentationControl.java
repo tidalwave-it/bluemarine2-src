@@ -129,6 +129,8 @@ public class DefaultAudioRendererPresentationControl
         Platform.runLater(() ->
           {
             properties.titleProperty().setValue(metadata.get(TITLE).orElse(""));
+            properties.artistProperty().setValue(metadata.get(ARTIST).orElse(""));
+            properties.composerProperty().setValue(metadata.get(COMPOSER).orElse(""));
             duration = metadata.get(DURATION).orElse(Duration.ZERO);
             properties.durationProperty().setValue(format(duration)); 
           });
