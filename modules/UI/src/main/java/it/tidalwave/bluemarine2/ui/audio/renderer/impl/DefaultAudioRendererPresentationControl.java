@@ -144,7 +144,7 @@ public class DefaultAudioRendererPresentationControl
      *
      ******************************************************************************************************************/
     @Nonnull
-    private String format (final @Nonnull Duration duration)
+    private static String format (final @Nonnull Duration duration)
       {
         final long s = duration.get(ChronoUnit.SECONDS);
         final long hours = s / 3600;
