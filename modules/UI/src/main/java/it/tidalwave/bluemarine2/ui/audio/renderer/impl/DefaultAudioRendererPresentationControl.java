@@ -34,6 +34,7 @@ import javax.inject.Inject;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.application.Platform;
 import it.tidalwave.role.ui.UserAction8;
@@ -43,6 +44,7 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
+import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status;
@@ -83,6 +85,22 @@ public class DefaultAudioRendererPresentationControl
     
     private final UserAction8 fastForwardAction = new UserActionLambda(() -> mediaPlayer.fastForward());
     
+    // FIXME: use expression binding
+    // e.g.  properties.progressProperty().bind(mediaPlayer.playTimeProperty().asDuration().dividedBy/duration));
+    // FIXME: weak, remove previous listeners
+    private final ChangeListener<Duration> l = 
+                (ObservableValue<? extends Duration> observable, 
+                 Duration oldValue,
+                 Duration newValue) -> 
+        {
+          // FIXME: the control shouldn't mess with JavaFX stuff
+          Platform.runLater(() ->
+            {
+              properties.playTimeProperty().setValue(format(newValue));
+              properties.progressProperty().setValue((double)newValue.toMillis() / duration.toMillis());
+            });
+        };
+    
     /*******************************************************************************************************************
      *
      *
@@ -90,28 +108,7 @@ public class DefaultAudioRendererPresentationControl
     @PostConstruct
     /* VisibleForTesting */ void initialize()
       {
-        presentation.bind(rewindAction, stopAction, pauseAction, playAction, fastForwardAction, properties);
-        
-        final ObjectProperty<Status> status = mediaPlayer.statusProperty();
-        stopAction.enabledProperty().bind(status.isEqualTo(PLAYING));
-        pauseAction.enabledProperty().bind(status.isEqualTo(PLAYING));
-        playAction.enabledProperty().bind(status.isNotEqualTo(PLAYING));
-        
-        // FIXME: use expression binding
-        // e.g.  properties.progressProperty().bind(mediaPlayer.playTimeProperty().asDuration().dividedBy/duration));
-        // FIXME: weak, remove previous listeners
-        mediaPlayer.playTimeProperty().addListener(
-                (ObservableValue<? extends Duration> observable, 
-                 Duration oldValue,
-                 Duration newValue) -> 
-          {
-            // FIXME: the control shouldn't mess with JavaFX stuff
-            Platform.runLater(() ->
-              {
-                properties.playTimeProperty().setValue(format(newValue));
-                properties.progressProperty().setValue((double)newValue.toMillis() / duration.toMillis());
-              });
-          });
+        presentation.bind(properties, rewindAction, stopAction, pauseAction, playAction, fastForwardAction);
       }
     
     /*******************************************************************************************************************
@@ -122,7 +119,6 @@ public class DefaultAudioRendererPresentationControl
       throws MediaPlayer.Exception
       {
         log.info("onOpenAudioRendererRequest({})", request);
-        presentation.showUp();
         
         final MediaItem mediaItem = request.getMediaItem();
         final Metadata metadata = mediaItem.getMetadata();
@@ -139,6 +135,51 @@ public class DefaultAudioRendererPresentationControl
         
         presentation.setMediaItem(mediaItem);
         mediaPlayer.setMediaItem(mediaItem);
+        bindMediaPlayer();
+
+        presentation.showUp(this);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @OnDeactivate
+    /* VisibleForTesting */ boolean onDeactivate()
+      throws MediaPlayer.Exception 
+      {
+        mediaPlayer.stop();
+        unbindMediaPlayer();
+        return true;
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * Binds to the {@link MediaPlayer}.
+     *
+     ******************************************************************************************************************/
+    /* VisibleForTesting */ void bindMediaPlayer()
+      {
+        log.debug("bindMediaPlayer()");
+        final ObjectProperty<Status> status = mediaPlayer.statusProperty();
+        stopAction.enabledProperty().bind(status.isEqualTo(PLAYING));
+        pauseAction.enabledProperty().bind(status.isEqualTo(PLAYING));
+        playAction.enabledProperty().bind(status.isNotEqualTo(PLAYING));
+        mediaPlayer.playTimeProperty().addListener(l);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * Unbinds from the {@link MediaPlayer}.
+     *
+     ******************************************************************************************************************/
+    /* VisibleForTesting */ void unbindMediaPlayer()
+      {
+        log.debug("unbindMediaPlayer()");
+        stopAction.enabledProperty().unbind();
+        pauseAction.enabledProperty().unbind();
+        playAction.enabledProperty().unbind();
+        mediaPlayer.playTimeProperty().removeListener(l);
       }
     
     /*******************************************************************************************************************

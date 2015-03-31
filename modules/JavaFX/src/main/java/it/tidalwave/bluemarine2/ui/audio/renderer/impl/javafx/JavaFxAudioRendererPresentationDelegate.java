@@ -36,7 +36,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
@@ -120,12 +119,12 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
       }
     
     @Override
-    public void bind (final @Nonnull UserAction rewindAction,
+    public void bind (final @Nonnull Properties properties,
+                      final @Nonnull UserAction rewindAction,
                       final @Nonnull UserAction stopAction,
                       final @Nonnull UserAction pauseAction,
                       final @Nonnull UserAction playAction,
-                      final @Nonnull UserAction fastForwardAction,
-                      final @Nonnull Properties properties)
+                      final @Nonnull UserAction fastForwardAction)
       {
         binder.bind(btRewind,      rewindAction);  
         binder.bind(btStop,        stopAction);  
@@ -142,7 +141,7 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
       }
     
     @Override
-    public void showUp() 
+    public void showUp (final @Nonnull Object control) 
       {
       }
 

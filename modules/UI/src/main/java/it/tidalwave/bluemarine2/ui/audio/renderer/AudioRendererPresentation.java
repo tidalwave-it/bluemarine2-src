@@ -70,19 +70,19 @@ public interface AudioRendererPresentation
      *
      *
      ******************************************************************************************************************/
-    public void bind (@Nonnull UserAction rewindAction,
+    public void bind (@Nonnull Properties properties,
+                      @Nonnull UserAction rewindAction,
                       @Nonnull UserAction stopAction,
                       @Nonnull UserAction pauseAction,
                       @Nonnull UserAction playAction,
-                      @Nonnull UserAction fastForwardAction,
-                      @Nonnull Properties properties);
+                      @Nonnull UserAction fastForwardAction);
     
     /*******************************************************************************************************************
      *
      * Shows this presentation on the screen.
      *
      ******************************************************************************************************************/
-    public void showUp();
+    public void showUp (@Nonnull Object control);
 
     /*******************************************************************************************************************
      *
