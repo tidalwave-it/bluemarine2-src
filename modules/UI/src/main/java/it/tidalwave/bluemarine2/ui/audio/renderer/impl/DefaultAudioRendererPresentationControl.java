@@ -98,6 +98,7 @@ public class DefaultAudioRendererPresentationControl
         playAction.enabledProperty().bind(status.isNotEqualTo(PLAYING));
         
         // FIXME: use expression binding
+        // e.g.  properties.progressProperty().bind(mediaPlayer.playTimeProperty().asDuration().dividedBy/duration));
         // FIXME: weak, remove previous listeners
         mediaPlayer.playTimeProperty().addListener(
                 (ObservableValue<? extends Duration> observable, 
