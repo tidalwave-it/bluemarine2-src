@@ -97,6 +97,7 @@ public class DefaultAudioRendererPresentationControl
         pauseAction.enabledProperty().bind(status.isEqualTo(PLAYING));
         playAction.enabledProperty().bind(status.isNotEqualTo(PLAYING));
         
+        // FIXME: use expression binding
         // FIXME: weak, remove previous listeners
         mediaPlayer.playTimeProperty().addListener(
                 (ObservableValue<? extends Duration> observable, 
