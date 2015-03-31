@@ -42,7 +42,6 @@ import javafx.scene.input.KeyEvent;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
-import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 import lombok.extern.slf4j.Slf4j;
@@ -96,8 +95,6 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     
     @Inject
     private JavaFXBinder binder;
-    
-    private MediaItem mediaItem;
 
     private final Map<KeyCombination, Runnable> accelerators = new HashMap<>();
     
@@ -143,11 +140,5 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     @Override
     public void showUp (final @Nonnull Object control) 
       {
-      }
-
-    @Override
-    public void setMediaItem (final @Nonnull MediaItem mediaItem) 
-      {
-        this.mediaItem = mediaItem;
       }
   }

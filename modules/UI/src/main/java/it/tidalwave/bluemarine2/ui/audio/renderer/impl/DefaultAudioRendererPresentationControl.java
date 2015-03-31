@@ -133,7 +133,6 @@ public class DefaultAudioRendererPresentationControl
             properties.durationProperty().setValue(format(duration)); 
           });
         
-        presentation.setMediaItem(mediaItem);
         mediaPlayer.setMediaItem(mediaItem);
         bindMediaPlayer();
 

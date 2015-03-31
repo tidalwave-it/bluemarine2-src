@@ -34,7 +34,6 @@ import javafx.beans.property.Property;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.bluemarine2.model.MediaItem;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
@@ -83,13 +82,4 @@ public interface AudioRendererPresentation
      *
      ******************************************************************************************************************/
     public void showUp (@Nonnull Object control);
-
-    /*******************************************************************************************************************
-     *
-     * Sets the {@link MediaItem} to render.
-     * 
-     * @param   mediaItem   the {@code MediaItem}
-     *
-     ******************************************************************************************************************/
-    public void setMediaItem (@Nonnull MediaItem mediaItem);
   }
