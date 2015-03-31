@@ -24,9 +24,14 @@
     -fx-font-size:          60; 
   }
   
-.small-label
+.very-small-label
   {
     -fx-font-size:          20; 
+  }
+
+.small-label
+  {
+    -fx-font-size:          28; 
   }
 
 .medium-label

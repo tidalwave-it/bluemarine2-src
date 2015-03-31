@@ -32,12 +32,14 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
+import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 
 /***********************************************************************************************************************
  *
@@ -58,13 +60,18 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     @FXML
     private Button btUp;
     
+    @FXML
+    private Label lbFolderName;
+    
     @Inject
     private JavaFXBinder binder;
     
     @Override
-    public void bind (final @Nonnull UserAction upAction)
+    public void bind (final @Nonnull Properties properties,
+                      final @Nonnull UserAction upAction)
       {
         binder.bind(btUp, upAction);
+        lbFolderName.textProperty().bind(properties.folderNameProperty());
       }
     
     @Override

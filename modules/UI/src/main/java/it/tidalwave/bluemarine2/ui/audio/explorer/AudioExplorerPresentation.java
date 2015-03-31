@@ -29,8 +29,12 @@
 package it.tidalwave.bluemarine2.ui.audio.explorer;
 
 import javax.annotation.Nonnull;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
+import lombok.Getter;
+import lombok.experimental.Accessors;
 
 /***********************************************************************************************************************
  *
@@ -44,6 +48,12 @@ import it.tidalwave.role.ui.UserAction;
  **********************************************************************************************************************/
 public interface AudioExplorerPresentation 
   {
+    @Getter @Accessors(fluent = true)
+    public static class Properties
+      {
+        private final StringProperty folderNameProperty = new SimpleStringProperty("");
+      }
+    
     /*******************************************************************************************************************
      *
      * Binds the UI with the callbacks.
@@ -51,7 +61,8 @@ public interface AudioExplorerPresentation
      * @param   upAction    the action to go to the upper folder
      *
      ******************************************************************************************************************/
-    public void bind (@Nonnull UserAction upAction);
+    public void bind (@Nonnull Properties properties,
+                      @Nonnull UserAction upAction);
     
     /*******************************************************************************************************************
      *
