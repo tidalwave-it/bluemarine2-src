@@ -53,6 +53,16 @@ public interface FlowController
     
     /*******************************************************************************************************************
      *
+     * Shows the given Presentation on the screen.
+     * 
+     * @param   presentation    the Presentation to show
+     * @param   control         its Presentation Control
+     *
+     ******************************************************************************************************************/
+    public void showPresentation (@Nonnull Object presentation, @Nonnull Object control);
+    
+    /*******************************************************************************************************************
+     *
      * Dismisses the Presentation currently rendered on the screen.
      *
      ******************************************************************************************************************/

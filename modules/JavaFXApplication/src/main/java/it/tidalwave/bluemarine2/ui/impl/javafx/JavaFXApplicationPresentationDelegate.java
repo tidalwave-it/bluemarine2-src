@@ -131,7 +131,7 @@ public class JavaFXApplicationPresentationDelegate
         if (event.getCode().equals(KeyCode.BACK_SPACE))
           {
             log.debug("onKeyReleased({})", event);
-            flowController.dismissCurrentPresentation();
+            flowController.tryToDismissCurrentPresentation();
           }
       }
   }
