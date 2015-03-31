@@ -224,6 +224,8 @@ public class JavaFxFlowController implements FlowController
                       {
                         runnable.run();
                       }
+
+                    return;
                   }
               }
           }
