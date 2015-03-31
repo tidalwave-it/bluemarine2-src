@@ -161,6 +161,7 @@ public class DefaultAudioExplorerPresentationControl
       {
         log.debug("populateWith({})", mediaFolder);
         // FIXME: shouldn't deal with JavaFX threads here
+        Platform.runLater(() -> upAction.enabledProperty().setValue(stack.size() > 1));
         Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentLabel()));
         // FIXME: waiting signal while loading
         final SimpleComposite8<As> composite = mediaFolder.as(SimpleComposite8);
