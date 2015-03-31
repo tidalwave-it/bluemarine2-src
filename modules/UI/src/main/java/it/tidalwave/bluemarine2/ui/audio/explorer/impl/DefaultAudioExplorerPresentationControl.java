@@ -50,6 +50,7 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.impl.DefaultMediaFolder;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
+import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import lombok.extern.slf4j.Slf4j;
@@ -98,7 +99,7 @@ public class DefaultAudioExplorerPresentationControl
     /* VisibleForTesting */ void onOpenAudioExplorerRequest (final @ListensTo @Nonnull OpenAudioExplorerRequest request)
       {
         log.info("onOpenAudioExplorerRequest({})", request);
-        presentation.showUp();
+        presentation.showUp(this);
         
         // FIXME
         String s = System.getProperty("user.home", "/");
@@ -115,6 +116,25 @@ public class DefaultAudioExplorerPresentationControl
         final Path path = new File(s).toPath();
         final MediaFolder mediaFolder = new DefaultMediaFolder(path);
         navigateTo(mediaFolder);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * The default action to go back should be disabled if the stack is not empty.
+     *
+     ******************************************************************************************************************/
+    @OnDeactivate
+    /* VisibleForTesting */ boolean onDeactivate()
+      {
+        if (stack.size() == 1)
+          {  
+            return true;  
+          }  
+        else
+          {
+            moveUp();
+            return false;
+          }
       }
     
     /*******************************************************************************************************************

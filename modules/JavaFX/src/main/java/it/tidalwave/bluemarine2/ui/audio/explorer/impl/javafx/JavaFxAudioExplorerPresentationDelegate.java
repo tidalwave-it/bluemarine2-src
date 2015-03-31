@@ -68,7 +68,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
       }
     
     @Override
-    public void showUp() 
+    public void showUp (final @Nonnull Object control) 
       {
       }
     

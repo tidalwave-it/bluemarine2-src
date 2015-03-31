@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx;
 
+import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
@@ -51,7 +52,7 @@ public class JavaFxAudioExplorerPresentation implements AudioExplorerPresentatio
   {
     interface DelegateExclusions
       {
-        public void showUp();
+        public void showUp(Object control);
       }
     
     private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/AudioExplorer.fxml";
@@ -65,9 +66,9 @@ public class JavaFxAudioExplorerPresentation implements AudioExplorerPresentatio
     private final AudioExplorerPresentation delegate = nad.getDelegate();
             
     @Override
-    public void showUp()  
+    public void showUp (final @Nonnull Object control)  
       {
-        delegate.showUp();
-        flowController.showPresentation(nad.getNode());
+        delegate.showUp(control);
+        flowController.showPresentation(nad.getNode(), control);
       }
   }

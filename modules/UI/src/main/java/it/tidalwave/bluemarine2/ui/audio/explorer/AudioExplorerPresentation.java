@@ -58,7 +58,7 @@ public interface AudioExplorerPresentation
      * Shows this presentation on the screen.
      *
      ******************************************************************************************************************/
-    public void showUp();
+    public void showUp (@Nonnull Object control);
     
     /*******************************************************************************************************************
      *
