@@ -55,7 +55,7 @@ public interface AudioRendererPresentation
      *
      ******************************************************************************************************************/
     @Getter @Accessors(fluent = true) @ToString
-    class Properties
+    public static class Properties
       {
         private final Property<String> titleProperty = new SimpleStringProperty("");
         private final Property<String> artistProperty = new SimpleStringProperty("");
