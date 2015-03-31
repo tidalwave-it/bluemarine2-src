@@ -110,10 +110,11 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
               }
 
             mediaPlayer = new javafx.scene.media.MediaPlayer(media);
+            // FIXME: bidirectional bind to an expression?
             mediaPlayer.currentTimeProperty().addListener(
                     (ObservableValue<? extends javafx.util.Duration> observable,
-                     javafx.util.Duration oldValue,
-                     javafx.util.Duration newValue) ->
+                    javafx.util.Duration oldValue,
+                    javafx.util.Duration newValue) ->
               {
                 playTimeProperty.setValue(Duration.ofMillis((long)newValue.toMillis()));
               });
