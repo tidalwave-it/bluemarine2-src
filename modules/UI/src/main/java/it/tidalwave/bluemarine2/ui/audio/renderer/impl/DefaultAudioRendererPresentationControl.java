@@ -49,6 +49,7 @@ import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status.*;
 
@@ -131,6 +132,8 @@ public class DefaultAudioRendererPresentationControl
             properties.composerProperty().setValue(metadata.get(COMPOSER).orElse(""));
             duration = metadata.get(DURATION).orElse(Duration.ZERO);
             properties.durationProperty().setValue(format(duration)); 
+            // FIXME: check - parent should be always present - correct?
+            properties.folderNameProperty().setValue(mediaItem.getParent().as(Displayable).getDisplayName());
           });
         
         mediaPlayer.setMediaItem(mediaItem);

@@ -82,6 +82,9 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     private Label lbTitle;
     
     @FXML
+    private Label lbFolderName;
+    
+    @FXML
     private Label lbArtist;
     
     @FXML
@@ -130,6 +133,7 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
         binder.bind(btFastForward, fastForwardAction); 
         
         lbTitle.textProperty().bind(properties.titleProperty());
+        lbFolderName.textProperty().bind(properties.folderNameProperty());
         lbArtist.textProperty().bind(properties.artistProperty());
         lbComposer.textProperty().bind(properties.composerProperty());
         lbDuration.textProperty().bind(properties.durationProperty());
