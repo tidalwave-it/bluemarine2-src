@@ -43,6 +43,7 @@ import javafx.animation.Timeline;
 import javafx.application.Platform;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
+import java.lang.annotation.Annotation;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -208,29 +209,48 @@ public class JavaFxFlowController implements FlowController
       throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
       {
         log.debug("canDeactivate({})", control);
+        final Method method = findAnnotatedMethod(control, OnDeactivate.class);
         
-        if (control != null)
+        if (method == null)
           {
-            for (final Method method : control.getClass().getDeclaredMethods())
+            runnable.run();
+          }
+        else
+          {
+            // FIXME: should run in a background process
+            if (((OnDeactivate.Result)method.invoke(control)).equals(OnDeactivate.Result.PROCEED))
               {
-                if (method.getAnnotation(OnDeactivate.class) != null)
+                runnable.run();
+              }
+          }
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
+    @CheckForNull
+    private static Method findAnnotatedMethod (final @CheckForNull Object object, 
+                                               final @Nonnull Class<? extends Annotation> annotationClass)
+      throws IllegalAccessException, IllegalArgumentException, InvocationTargetException 
+      {
+        log.debug("findAnnotatedMethod({})", object, annotationClass);
+        
+        if (object != null)
+          {
+            for (final Method method : object.getClass().getDeclaredMethods())
+              {
+                if (method.getAnnotation(annotationClass) != null)
                   {
-                    log.debug(">>>> found @OnDeactivate annotated method on {}", control);
-
+                    log.debug(">>>> found {} annotated method on {}", annotationClass, object);
                     method.setAccessible(true);
-                    
-                    // FIXME: should run in a background process
-                    if (((OnDeactivate.Result)method.invoke(control)).equals(OnDeactivate.Result.PROCEED))
-                      {
-                        runnable.run();
-                      }
-
-                    return;
+                    return method; 
                   }
               }
           }
           
-        runnable.run();
+        return null;
       }
     
     /*******************************************************************************************************************
