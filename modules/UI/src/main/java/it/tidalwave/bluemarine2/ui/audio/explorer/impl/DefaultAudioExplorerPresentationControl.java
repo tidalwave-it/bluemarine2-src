@@ -168,7 +168,7 @@ public class DefaultAudioExplorerPresentationControl
     private void navigateUp() 
       {
         // TODO: assert not UI thread
-        log.info("navigateUp()");
+        log.debug("navigateUp()");
         final FolderAndSelection folderAndSelection = stack.pop();
         populateAndSelect(folderAndSelection.getFolder(), folderAndSelection.getSelectedIndex());
       }
