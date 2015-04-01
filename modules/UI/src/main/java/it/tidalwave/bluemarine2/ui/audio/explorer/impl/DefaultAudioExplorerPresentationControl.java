@@ -106,7 +106,6 @@ public class DefaultAudioExplorerPresentationControl
       {
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp(this);
-        
         navigateTo(mediaFileSystem.getRoot());
       }
     
