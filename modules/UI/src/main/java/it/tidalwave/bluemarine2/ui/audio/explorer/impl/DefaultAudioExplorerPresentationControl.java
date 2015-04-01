@@ -218,7 +218,7 @@ public class DefaultAudioExplorerPresentationControl
     private String getCurrentLabel()
       {
 //        return stack.peek().as(Displayable).getDisplayName();
-        return stack.subList(1, stack.size()).stream().map(
-                folder -> folder.as(Displayable).getDisplayName()).collect(joining(" / "));
+        return stack.subList(1, stack.size()).stream().map(folder -> folder.as(Displayable).getDisplayName())
+                                                      .collect(joining(" / "));
       }
   }
