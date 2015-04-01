@@ -68,6 +68,6 @@ public class DefaultMediaFileSystem implements MediaFileSystem
             s += "/Personal/Music/iTunes/iTunes Music/Music"; 
           }
         
-        return Paths.get(s); //, more) new File(s).toPath();
+        return Paths.get(s);
       }
   }
