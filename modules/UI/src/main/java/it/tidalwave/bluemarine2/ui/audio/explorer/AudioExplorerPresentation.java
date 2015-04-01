@@ -83,4 +83,11 @@ public interface AudioExplorerPresentation
      *
      ******************************************************************************************************************/
     public void populateAndSelect (@Nonnull PresentationModel pm, int selectedIndex);
+    
+    /*******************************************************************************************************************
+     *
+     * Puts the focus on the list to select media items.
+     *
+     ******************************************************************************************************************/
+    public void focusOnMediaItems();
   }

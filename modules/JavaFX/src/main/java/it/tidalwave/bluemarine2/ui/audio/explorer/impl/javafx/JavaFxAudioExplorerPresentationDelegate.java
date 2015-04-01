@@ -93,4 +93,10 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
               }
           });
       }
+
+    @Override
+    public void focusOnMediaItems() 
+      {
+        lvFiles.requestFocus();
+      }
   }

@@ -53,6 +53,7 @@ import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
+import it.tidalwave.bluemarine2.ui.commons.OnActivate;
 import static java.util.stream.Collectors.*;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
@@ -123,6 +124,17 @@ public class DefaultAudioExplorerPresentationControl
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp(this);
         populateAndSelect(mediaFileSystem.getRoot(), 0);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    @OnActivate
+    /* VisibleForTesting */ void onActivate()
+      {
+        presentation.focusOnMediaItems();
       }
     
     /*******************************************************************************************************************
