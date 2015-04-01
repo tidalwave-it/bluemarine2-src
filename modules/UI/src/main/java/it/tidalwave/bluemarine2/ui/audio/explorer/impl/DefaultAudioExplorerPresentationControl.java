@@ -167,7 +167,7 @@ public class DefaultAudioExplorerPresentationControl
         final SimpleComposite8<As> composite = mediaFolder.as(SimpleComposite8);
         final PresentationModel pm = composite.findChildren()
                                               .stream()
-                                              .map(object -> object.as(Presentable).createPresentationModel(actionProviderFor(object)))
+                                              .map(object -> object.as(Presentable).createPresentationModel(rolesFor(object)))
                                               .collect(toCompositePresentationModel());
         presentation.populate(pm);
       }
@@ -194,7 +194,7 @@ public class DefaultAudioExplorerPresentationControl
      ******************************************************************************************************************/
     // FIXME: inject with @DciRole and @DciContext
     @Nonnull
-    private UserActionProvider actionProviderFor (final @Nonnull As object)
+    private UserActionProvider rolesFor (final @Nonnull As object)
       {
         final UserAction action = (object instanceof MediaFolder) 
             ? new UserActionLambda(() -> navigateTo(((MediaFolder)object))) 
