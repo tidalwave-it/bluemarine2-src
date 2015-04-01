@@ -44,7 +44,7 @@ import it.tidalwave.util.As;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaFolder extends As
+public interface MediaFolder extends As, Parentable<MediaFolder>
   {
     /*******************************************************************************************************************
      *
@@ -55,4 +55,6 @@ public interface MediaFolder extends As
      ******************************************************************************************************************/
     @Nonnull
     public Path getPath();
+    
+    public boolean isRoot();
   }

@@ -26,48 +26,22 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.impl;
+package it.tidalwave.bluemarine2.model;
 
-import javax.annotation.Nonnull;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import it.tidalwave.util.spi.AsSupport;
-import it.tidalwave.bluemarine2.model.MediaFileSystem;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import lombok.Delegate;
+import javax.annotation.CheckForNull;
 
 /***********************************************************************************************************************
  *
+ * The role of an object that has, or can have, a parent.
+ * 
+ * @stereotype  Role
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class DefaultMediaFileSystem implements MediaFileSystem
+public interface Parentable<T>
   {
-    @Delegate
-    private final AsSupport asSupport = new AsSupport(this);
-
-    @Override @Nonnull
-    public MediaFolder getRoot() 
-      {
-        return new DefaultMediaFolder(getRootPath(), null);
-      }
-    
-    @Nonnull
-    protected Path getRootPath()
-      {
-        // FIXME
-        String s = System.getProperty("user.home", "/");
-        
-        if ("arm".equals(System.getProperty("os.arch")))
-          {
-            s += "/Media/Music";
-          }
-        else
-          {
-            s += "/Personal/Music/iTunes/iTunes Music/Music"; 
-          }
-        
-        return Paths.get(s);
-      }
+    @CheckForNull // FIXME: use NotFoundException or Optional<>
+    public T getParent();
   }

@@ -28,14 +28,15 @@
  */
 package it.tidalwave.bluemarine2.model.impl;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.nio.file.Path;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import lombok.AllArgsConstructor;
 import lombok.Delegate;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
@@ -47,14 +48,23 @@ import lombok.RequiredArgsConstructor;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @RequiredArgsConstructor
+@Immutable @AllArgsConstructor
 public class DefaultMediaFolder implements MediaFolder
   {
     @Getter @Nonnull
     private final Path path;
     
+    @Getter @CheckForNull
+    private MediaFolder parent;
+    
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
+
+    @Override
+    public boolean isRoot() 
+      {
+        return parent == null;
+      }
 
     @Override @Nonnull
     public String toString() 

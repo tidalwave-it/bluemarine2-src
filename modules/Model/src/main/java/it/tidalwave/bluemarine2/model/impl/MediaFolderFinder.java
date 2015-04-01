@@ -67,8 +67,8 @@ public class MediaFolderFinder extends SimpleFinder8Support<As>
           {
             for (final Path child : stream)
               {
-                result.add(child.toFile().isDirectory() ? new DefaultMediaFolder(child)
-                                                        : new DefaultMediaItem(child));
+                result.add(child.toFile().isDirectory() ? new DefaultMediaFolder(child, mediaFolder)
+                                                        : new DefaultMediaItem(child, mediaFolder, null));
               }
           } 
         catch (IOException e)
