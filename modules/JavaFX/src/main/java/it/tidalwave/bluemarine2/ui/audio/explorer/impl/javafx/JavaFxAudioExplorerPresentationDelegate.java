@@ -40,6 +40,7 @@ import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -51,7 +52,7 @@ import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable
+@Configurable @Slf4j
 public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPresentation
   {
     @FXML
@@ -72,6 +73,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
       {
         binder.bind(btUp, upAction);
         lbFolderName.textProperty().bind(properties.folderNameProperty());
+        properties.selectedIndexProperty().bind(lvFiles.getSelectionModel().selectedIndexProperty());
       }
     
     @Override
@@ -80,14 +82,21 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
       }
     
     @Override
-    public void populate (final @Nonnull PresentationModel pm)
+    public void populateAndSelect (final @Nonnull PresentationModel pm, int selectedIndex)
       {
         binder.bind(lvFiles, pm, () -> 
           {
             if (!lvFiles.getItems().isEmpty())
               {
-                lvFiles.getSelectionModel().select(0);
+                lvFiles.getSelectionModel().select(selectedIndex);
+                lvFiles.scrollTo(selectedIndex);
               }
           });
+      }
+
+    @Override
+    public void focusOnMediaItems() 
+      {
+        lvFiles.requestFocus();
       }
   }

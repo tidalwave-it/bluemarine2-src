@@ -26,56 +26,22 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.impl;
+package it.tidalwave.bluemarine2.model;
 
-import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.List;
-import java.io.IOException;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import it.tidalwave.util.As;
-import it.tidalwave.util.Finder;
-import it.tidalwave.util.spi.SimpleFinder8Support;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.CheckForNull;
 
 /***********************************************************************************************************************
  *
- * A {@link Finder} for retrieving children of a {@link MediaFolder}.
+ * The role of an object that has, or can have, a parent.
  * 
- * @stereotype  Finder
+ * @stereotype  Role
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j 
-public class MediaFolderFinder extends SimpleFinder8Support<As>
+public interface Parentable<T>
   {
-    @Nonnull
-    private final MediaFolder mediaFolder;
-    
-    @Override @Nonnull
-    protected List<? extends As> computeResults() 
-      {
-        final List<As> result = new ArrayList<>();
-
-        try (final DirectoryStream<Path> stream = Files.newDirectoryStream(mediaFolder.getPath()))
-          {
-            for (final Path child : stream)
-              {
-                result.add(child.toFile().isDirectory() ? new DefaultMediaFolder(child, mediaFolder)
-                                                        : new DefaultMediaItem(child, mediaFolder, null));
-              }
-          } 
-        catch (IOException e)
-          {
-            log.error("", e);
-          }
-        
-        return result;
-      }
+    @CheckForNull // FIXME: use NotFoundException or Optional<>
+    public T getParent();
   }

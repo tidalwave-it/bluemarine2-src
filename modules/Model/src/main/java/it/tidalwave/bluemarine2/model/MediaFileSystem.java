@@ -26,56 +26,30 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.impl;
+package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.List;
-import java.io.IOException;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import it.tidalwave.util.As;
-import it.tidalwave.util.Finder;
-import it.tidalwave.util.spi.SimpleFinder8Support;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
- * A {@link Finder} for retrieving children of a {@link MediaFolder}.
+ * Represents a filesystem (even a virtual one) that contains {@link MediaFolder}s and {@link MediaItem}s.
  * 
- * @stereotype  Finder
+ * @stereotype  Datum
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j 
-public class MediaFolderFinder extends SimpleFinder8Support<As>
+public interface MediaFileSystem extends As
   {
+    /*******************************************************************************************************************
+     *
+     * Returns the root {@link MediaFolder}.
+     * 
+     * @return  the path
+     *
+     ******************************************************************************************************************/
     @Nonnull
-    private final MediaFolder mediaFolder;
-    
-    @Override @Nonnull
-    protected List<? extends As> computeResults() 
-      {
-        final List<As> result = new ArrayList<>();
-
-        try (final DirectoryStream<Path> stream = Files.newDirectoryStream(mediaFolder.getPath()))
-          {
-            for (final Path child : stream)
-              {
-                result.add(child.toFile().isDirectory() ? new DefaultMediaFolder(child, mediaFolder)
-                                                        : new DefaultMediaItem(child, mediaFolder, null));
-              }
-          } 
-        catch (IOException e)
-          {
-            log.error("", e);
-          }
-        
-        return result;
-      }
+    public MediaFolder getRoot();
   }

@@ -46,7 +46,7 @@ import it.tidalwave.util.Key;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaItem extends As
+public interface MediaItem extends As, Parentable<MediaFolder>
   {
     /*******************************************************************************************************************
      *

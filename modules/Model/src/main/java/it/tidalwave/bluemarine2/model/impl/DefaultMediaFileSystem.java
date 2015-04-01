@@ -29,53 +29,45 @@
 package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.List;
-import java.io.IOException;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import it.tidalwave.util.As;
-import it.tidalwave.util.Finder;
-import it.tidalwave.util.spi.SimpleFinder8Support;
+import java.nio.file.Paths;
+import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import lombok.Delegate;
 
 /***********************************************************************************************************************
  *
- * A {@link Finder} for retrieving children of a {@link MediaFolder}.
- * 
- * @stereotype  Finder
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j 
-public class MediaFolderFinder extends SimpleFinder8Support<As>
+public class DefaultMediaFileSystem implements MediaFileSystem
   {
-    @Nonnull
-    private final MediaFolder mediaFolder;
-    
-    @Override @Nonnull
-    protected List<? extends As> computeResults() 
-      {
-        final List<As> result = new ArrayList<>();
+    @Delegate
+    private final AsSupport asSupport = new AsSupport(this);
 
-        try (final DirectoryStream<Path> stream = Files.newDirectoryStream(mediaFolder.getPath()))
+    @Override @Nonnull
+    public MediaFolder getRoot() 
+      {
+        return new DefaultMediaFolder(getRootPath(), null);
+      }
+    
+    @Nonnull
+    protected Path getRootPath()
+      {
+        // FIXME
+        String s = System.getProperty("user.home", "/");
+        
+        if ("arm".equals(System.getProperty("os.arch")))
           {
-            for (final Path child : stream)
-              {
-                result.add(child.toFile().isDirectory() ? new DefaultMediaFolder(child, mediaFolder)
-                                                        : new DefaultMediaItem(child, mediaFolder, null));
-              }
-          } 
-        catch (IOException e)
+            s += "/Media/Music";
+          }
+        else
           {
-            log.error("", e);
+            s += "/Personal/Music/iTunes/iTunes Music/Music"; 
           }
         
-        return result;
+        return Paths.get(s);
       }
   }

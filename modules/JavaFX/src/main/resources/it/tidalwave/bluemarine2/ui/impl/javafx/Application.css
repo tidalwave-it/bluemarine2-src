@@ -39,6 +39,11 @@
     -fx-font-size:          30; 
   }
 
+.large-label
+  {
+    -fx-font-size:          50; 
+  }
+
 .button
   {
     -fx-background-color:   rgb(20,20,20);
@@ -95,12 +100,20 @@
     -fx-text-fill:          black;
   }
   
+#btUp
+  {    
+    -fx-padding:             8;
+    -fx-background-image:    url("arrow-135-128.png");
+    -fx-background-size:     32 32;
+    -fx-background-repeat:   no-repeat;
+    -fx-background-position: center;   
+  }
+
 #btPlay
   {    
     -fx-padding:             8;
-    -fx-background-color:    rgb(70, 70, 70);
-    -fx-background-image:    url("1427770128_play-128.png");
-    -fx-background-size:     64 64;
+    -fx-background-image:    url("play-5-128.png");
+    -fx-background-size:     32 32;
     -fx-background-repeat:   no-repeat;
     -fx-background-position: center;   
   }
@@ -108,9 +121,8 @@
 #btStop
   {          
     -fx-padding:             8;
-    -fx-background-color:    rgb(70, 70, 70);
-    -fx-background-image:    url("1427770160_591231-stop-128.png");
-    -fx-background-size:     64 64;
+    -fx-background-image:    url("stop-128.png");
+    -fx-background-size:     32 32;
     -fx-background-repeat:   no-repeat;
     -fx-background-position: center;   
   }
@@ -118,9 +130,8 @@
 #btPause
   {          
     -fx-padding:             8;
-    -fx-background-color:    rgb(70, 70, 70);
-    -fx-background-image:    url("1427770188_591244-pause-128.png");
-    -fx-background-size:     64 64;
+    -fx-background-image:    url("pause-128.png");
+    -fx-background-size:     32 32;
     -fx-background-repeat:   no-repeat;
     -fx-background-position: center;   
   }
@@ -128,9 +139,8 @@
 #btRewind
   {          
     -fx-padding:             8;
-    -fx-background-color:    rgb(70, 70, 70);
-    -fx-background-image:    url("1427770098_media-rewind-outline-128.png");
-    -fx-background-size:     64 64;
+    -fx-background-image:    url("arrow-69-128.png");
+    -fx-background-size:     48 48;
     -fx-background-repeat:   no-repeat;
     -fx-background-position: center;   
   }
@@ -138,9 +148,8 @@
 #btFastForward
   {          
     -fx-padding:             8;
-    -fx-background-color:    rgb(70, 70, 70);
-    -fx-background-image:    url("1427770073_media-fast-forward-outline-128.png");
-    -fx-background-size:     64 64;
+    -fx-background-image:    url("arrow-44-128.png");
+    -fx-background-size:     48 48;
     -fx-background-repeat:   no-repeat;
     -fx-background-position: center;   
   }

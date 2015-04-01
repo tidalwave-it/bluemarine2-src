@@ -26,56 +26,24 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.impl;
+package it.tidalwave.bluemarine2.ui.commons;
 
-import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.List;
-import java.io.IOException;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import it.tidalwave.util.As;
-import it.tidalwave.util.Finder;
-import it.tidalwave.util.spi.SimpleFinder8Support;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /***********************************************************************************************************************
  *
- * A {@link Finder} for retrieving children of a {@link MediaFolder}.
- * 
- * @stereotype  Finder
+ * Annotates a method of a PresentationControl which should be called when the related Presentation is going to be
+ * shown on the screen.
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j 
-public class MediaFolderFinder extends SimpleFinder8Support<As>
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface OnActivate 
   {
-    @Nonnull
-    private final MediaFolder mediaFolder;
-    
-    @Override @Nonnull
-    protected List<? extends As> computeResults() 
-      {
-        final List<As> result = new ArrayList<>();
-
-        try (final DirectoryStream<Path> stream = Files.newDirectoryStream(mediaFolder.getPath()))
-          {
-            for (final Path child : stream)
-              {
-                result.add(child.toFile().isDirectory() ? new DefaultMediaFolder(child, mediaFolder)
-                                                        : new DefaultMediaItem(child, mediaFolder, null));
-              }
-          } 
-        catch (IOException e)
-          {
-            log.error("", e);
-          }
-        
-        return result;
-      }
   }

@@ -29,8 +29,10 @@
 package it.tidalwave.bluemarine2.ui.audio.explorer;
 
 import javax.annotation.Nonnull;
-import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
 import lombok.Getter;
@@ -52,6 +54,8 @@ public interface AudioExplorerPresentation
     public static class Properties
       {
         private final StringProperty folderNameProperty = new SimpleStringProperty("");
+        
+        private final IntegerProperty selectedIndexProperty = new SimpleIntegerProperty(0);
       }
     
     /*******************************************************************************************************************
@@ -61,8 +65,7 @@ public interface AudioExplorerPresentation
      * @param   upAction    the action to go to the upper folder
      *
      ******************************************************************************************************************/
-    public void bind (@Nonnull Properties properties,
-                      @Nonnull UserAction upAction);
+    public void bind (@Nonnull Properties properties, @Nonnull UserAction upAction);
     
     /*******************************************************************************************************************
      *
@@ -73,10 +76,18 @@ public interface AudioExplorerPresentation
     
     /*******************************************************************************************************************
      *
-     * Populates the presentation with a set of media files.
+     * Populates the presentation with a set of media files and select one.
      * 
-     * @param   pm      the {@link PresentationModel}
+     * @param   pm              the {@link PresentationModel}
+     * @param   selectedIndex   the index of the item to select
      *
      ******************************************************************************************************************/
-    public void populate (@Nonnull PresentationModel pm);
+    public void populateAndSelect (@Nonnull PresentationModel pm, int selectedIndex);
+    
+    /*******************************************************************************************************************
+     *
+     * Puts the focus on the list to select media items.
+     *
+     ******************************************************************************************************************/
+    public void focusOnMediaItems();
   }
