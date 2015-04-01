@@ -59,6 +59,7 @@ import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
+import static java.util.stream.Stream.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -239,8 +240,9 @@ public class DefaultAudioExplorerPresentationControl
     private String getCurrentLabel()
       {
 //        return stack.peek().as(Displayable).getDisplayName();
-        return stack.stream().map(i -> i.getFolder().as(Displayable).getDisplayName())
-                             .collect(joining(" / "))
-                    + " / " + mediaFolder.as(Displayable).getDisplayName();
+        return concat(stack.stream().map(i -> i.getFolder()), of(mediaFolder))
+                           .filter(i -> !i.isRoot())
+                           .map(folder -> folder.as(Displayable).getDisplayName())
+                           .collect(joining(" / "));
       }
   }
