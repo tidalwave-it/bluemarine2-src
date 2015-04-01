@@ -162,6 +162,19 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
+     * Navigates up to the parent {@link MediaFolder}.
+     *
+     ******************************************************************************************************************/
+    private void navigateUp() 
+      {
+        // TODO: assert not UI thread
+        log.info("navigateUp()");
+        final FolderAndSelection folderAndSelection = stack.pop();
+        populateAndSelect(folderAndSelection.getFolder(), folderAndSelection.getSelectedIndex());
+      }
+    
+    /*******************************************************************************************************************
+     *
      * Populates the presentation with the contents of a {@link MediaFolder} and selects an item.
      * 
      * @param   mediaFolder     the {@code MediaFolder}
@@ -182,19 +195,6 @@ public class DefaultAudioExplorerPresentationControl
                                               .map(object -> object.as(Presentable).createPresentationModel(rolesFor(object)))
                                               .collect(toCompositePresentationModel());
         presentation.populateAndSelect(pm, selectedIndex);
-      }
-    
-    /*******************************************************************************************************************
-     *
-     * Navigates up to the parent {@link MediaFolder}.
-     *
-     ******************************************************************************************************************/
-    private void navigateUp() 
-      {
-        // TODO: assert not UI thread
-        log.info("navigateUp()");
-        final FolderAndSelection folderAndSelection = stack.pop();
-        populateAndSelect(folderAndSelection.getFolder(), folderAndSelection.getSelectedIndex());
       }
     
     /*******************************************************************************************************************
