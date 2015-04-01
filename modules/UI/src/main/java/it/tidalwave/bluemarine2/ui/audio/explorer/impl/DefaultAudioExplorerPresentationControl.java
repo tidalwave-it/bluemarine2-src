@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.util.Stack;
@@ -52,12 +53,15 @@ import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
-import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -72,6 +76,16 @@ import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePr
 @SimpleMessageSubscriber @Slf4j
 public class DefaultAudioExplorerPresentationControl 
   {
+    @AllArgsConstructor @Getter @ToString
+    private static class FolderAndSelection
+      {
+        @Nonnull
+        private final MediaFolder folder;
+
+        @Nullable
+        private final Integer selectedIndex;
+      }
+    
     @Inject
     private AudioExplorerPresentation presentation;
     
@@ -81,7 +95,9 @@ public class DefaultAudioExplorerPresentationControl
     @Inject
     private MediaFileSystem mediaFileSystem;
     
-    private final Stack<MediaFolder> stack = new Stack<>();
+    private MediaFolder mediaFolder;
+    
+    private final Stack<FolderAndSelection> stack = new Stack<>();
     
     private final AudioExplorerPresentation.Properties properties = new AudioExplorerPresentation.Properties();
     
@@ -106,7 +122,7 @@ public class DefaultAudioExplorerPresentationControl
       {
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp(this);
-        navigateTo(mediaFileSystem.getRoot());
+        populateAndSelect(mediaFileSystem.getRoot(), 0);
       }
     
     /*******************************************************************************************************************
@@ -117,7 +133,9 @@ public class DefaultAudioExplorerPresentationControl
     @OnDeactivate
     /* VisibleForTesting */ OnDeactivate.Result onDeactivate()
       {
-        if (stack.size() == 1)
+        log.debug("onDeactivate()");
+        
+        if (stack.isEmpty())
           {  
             return OnDeactivate.Result.PROCEED;  
           }  
@@ -130,24 +148,32 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
+     * Navigates to a new {@link MediaFolder}, saving the current folder to the stack.
+     * 
+     * @param   newMediaFolder  the new {@code MediaFolder}
      *
      ******************************************************************************************************************/
-    private void navigateTo (final @Nonnull MediaFolder mediaFolder)
+    private void navigateTo (final @Nonnull MediaFolder newMediaFolder)
       {
-        log.debug("navigateTo({})", mediaFolder);
-        stack.push(mediaFolder);
-        populateWith(mediaFolder);
+        log.debug("navigateTo({})", newMediaFolder);
+        stack.push(new FolderAndSelection(mediaFolder, properties.selectedIndexProperty().get()));
+        populateAndSelect(newMediaFolder, 0);
       }
     
     /*******************************************************************************************************************
      *
+     * Populates the presentation with the contents of a {@link MediaFolder} and selects an item.
+     * 
+     * @param   mediaFolder     the {@code MediaFolder}
+     * @param   selectedIndex   the index of the item to select
      *
      ******************************************************************************************************************/
-    private void populateWith (final @Nonnull MediaFolder mediaFolder)
+    private void populateAndSelect (final @Nonnull MediaFolder mediaFolder, final int selectedIndex)
       {
-        log.debug("populateWith({})", mediaFolder);
+        log.debug("populateAndSelect({}, {})", mediaFolder, selectedIndex);
+        this.mediaFolder = mediaFolder;
         // FIXME: shouldn't deal with JavaFX threads here
-        Platform.runLater(() -> upAction.enabledProperty().setValue(stack.size() > 1));
+        Platform.runLater(() -> upAction.enabledProperty().setValue(!stack.isEmpty()));
         Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentLabel()));
         // FIXME: waiting signal while loading
         final SimpleComposite8<As> composite = mediaFolder.as(SimpleComposite8);
@@ -155,7 +181,7 @@ public class DefaultAudioExplorerPresentationControl
                                               .stream()
                                               .map(object -> object.as(Presentable).createPresentationModel(rolesFor(object)))
                                               .collect(toCompositePresentationModel());
-        presentation.populate(pm);
+        presentation.populateAndSelect(pm, selectedIndex);
       }
     
     /*******************************************************************************************************************
@@ -167,10 +193,10 @@ public class DefaultAudioExplorerPresentationControl
         // TODO: assert not UI thread
         log.info("moveUp()");
 
-        if (stack.size() > 1)
+        if (!stack.isEmpty())
           {
-            stack.pop();
-            populateWith(stack.peek());
+            final FolderAndSelection folderAndSelection = stack.pop();
+            populateAndSelect(folderAndSelection.getFolder(), folderAndSelection.getSelectedIndex());
           }
       }
     
@@ -204,7 +230,8 @@ public class DefaultAudioExplorerPresentationControl
     private String getCurrentLabel()
       {
 //        return stack.peek().as(Displayable).getDisplayName();
-        return stack.subList(1, stack.size()).stream().map(folder -> folder.as(Displayable).getDisplayName())
-                                                      .collect(joining(" / "));
+        return stack.stream().map(i -> i.getFolder().as(Displayable).getDisplayName())
+                             .collect(joining(" / "))
+                    + " / " + mediaFolder.as(Displayable).getDisplayName();
       }
   }
