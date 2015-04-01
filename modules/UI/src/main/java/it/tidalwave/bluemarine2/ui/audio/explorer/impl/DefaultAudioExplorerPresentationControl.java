@@ -32,8 +32,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.util.Stack;
-import java.io.File;
-import java.nio.file.Path;
 import javafx.application.Platform;
 import it.tidalwave.util.As;
 import it.tidalwave.role.SimpleComposite8;
@@ -47,9 +45,9 @@ import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import it.tidalwave.bluemarine2.model.impl.DefaultMediaFolder;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
@@ -80,6 +78,9 @@ public class DefaultAudioExplorerPresentationControl
     @Inject
     private MessageBus messageBus;
     
+    @Inject
+    private MediaFileSystem mediaFileSystem;
+    
     private final Stack<MediaFolder> stack = new Stack<>();
     
     private final AudioExplorerPresentation.Properties properties = new AudioExplorerPresentation.Properties();
@@ -106,21 +107,7 @@ public class DefaultAudioExplorerPresentationControl
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp(this);
         
-        // FIXME
-        String s = System.getProperty("user.home", "/");
-        
-        if ("arm".equals(System.getProperty("os.arch")))
-          {
-            s += "/Media/Music";
-          }
-        else
-          {
-            s += "/Personal/Music/iTunes/iTunes Music/Music"; 
-          }
-        
-        final Path path = new File(s).toPath();
-        final MediaFolder mediaFolder = new DefaultMediaFolder(path);
-        navigateTo(mediaFolder);
+        navigateTo(mediaFileSystem.getRoot());
       }
     
     /*******************************************************************************************************************
