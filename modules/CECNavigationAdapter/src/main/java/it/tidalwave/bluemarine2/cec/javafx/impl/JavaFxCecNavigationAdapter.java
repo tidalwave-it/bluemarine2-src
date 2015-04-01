@@ -79,8 +79,8 @@ public class JavaFxCecNavigationAdapter
         actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  FAST_FORWARD), () -> keyPress(KeyCode.FAST_FWD)  );
         actionMap.put(new CecUserControlEvent(USER_CONTROL_RELEASED, FAST_FORWARD), () -> keyRelease(KeyCode.FAST_FWD));
         
-        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  EXIT),         () -> 
-                                                                        flowController.dismissCurrentPresentation());
+        actionMap.put(new CecUserControlEvent(USER_CONTROL_PRESSED,  EXIT),         
+                                                                () -> flowController.tryToDismissCurrentPresentation());
       }
     
     @Inject
