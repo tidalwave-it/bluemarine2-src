@@ -26,34 +26,57 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.roles;
+package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.role.Displayable;
-import it.tidalwave.dci.annotation.DciRole;
+import java.util.Comparator;
+import it.tidalwave.util.As;
+import it.tidalwave.util.AsException;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import lombok.RequiredArgsConstructor;
+import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
- * The {@link Displayable} role for {@link MediaItem}. It just uses the file name.
- * 
- * @stereotype  Role
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = MediaItem.class) @RequiredArgsConstructor
-public class MediaItemDisplayable implements Displayable
+public class AudioComparator implements Comparator<As>
   {
-    @Nonnull
-    private final MediaItem mediaItem;
-
-    @Override @Nonnull
-    public String getDisplayName() 
+    @Override
+    public int compare (final @Nonnull As o1, final @Nonnull As o2) 
       {
-        return mediaItem.getMetadata().get(MediaItem.Metadata.TITLE)
-                                      .orElse(mediaItem.getPath().toFile().getName());
+        try
+          {
+            final MediaItem mi1 = o1.as(MediaItem.class);
+            final MediaItem mi2 = o2.as(MediaItem.class);
+            final MediaItem.Metadata m1 = mi1.getMetadata();
+            final MediaItem.Metadata m2 = mi2.getMetadata();
+            final int t1 = m1.get(MediaItem.Metadata.TRACK).orElse(0);
+            final int t2 = m2.get(MediaItem.Metadata.TRACK).orElse(0);
+
+            if (t1 != t2)
+              {
+                return t1 - t2;  
+              }
+          }
+        catch (AsException e)
+          {
+          }
+
+        return displayName(o1).compareTo(displayName(o2));
+      }
+    
+    @Nonnull
+    private static String displayName (final @Nonnull As object)
+      {
+        try
+          {
+            return object.as(Displayable).getDisplayName();  
+          }
+        catch (AsException e)
+          {
+            return "???";
+          }
       }
   }

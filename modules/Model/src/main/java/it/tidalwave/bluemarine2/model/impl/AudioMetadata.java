@@ -76,7 +76,16 @@ public class AudioMetadata extends MetadataSupport
             put(TITLE, tag.getFirst(FieldKey.TITLE));
             put(COMMENT, tag.getFirst(FieldKey.COMMENT));
 //            put(YEAR, Integer.valueOf(tag.getFirst(FieldKey.YEAR)));
-            put(TRACK, tag.getFirst(FieldKey.TRACK));
+            
+            try
+              {
+                put(TRACK, Integer.parseInt(tag.getFirst(FieldKey.TRACK)));
+              }
+            catch (NumberFormatException e)
+              {
+                log.warn("", e);  
+              }
+            
 //            put(TRACK, tag.getFirst(FieldKey.DISC_NO));
             put(COMPOSER, tag.getFirst(FieldKey.COMPOSER));
 //            tag.getFirst(FieldKey.ARTIST_SORT);

@@ -64,7 +64,7 @@ public interface MediaItem extends As, Parentable<MediaFolder>
         public static final Key<String> TITLE = new Key<>("mp3.title");
         public static final Key<Integer> YEAR = new Key<>("mp3.year");
         public static final Key<String> ALBUM = new Key<>("mp3.album");
-        public static final Key<String> TRACK = new Key<>("mp3.track"); // FIXME: should be a Track class
+        public static final Key<Integer> TRACK = new Key<>("mp3.track");
         public static final Key<String> COMMENT = new Key<>("mp3.comment");
         
         /***************************************************************************************************************

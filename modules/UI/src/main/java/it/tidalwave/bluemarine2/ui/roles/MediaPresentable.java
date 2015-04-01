@@ -53,12 +53,12 @@ import lombok.RequiredArgsConstructor;
 public class MediaPresentable implements Presentable // FIXME: use DefaultPresentable
   {
     @Nonnull
-    private final As mediaFolder;
+    private final As object;
     
     @Override @Nonnull
     public PresentationModel createPresentationModel (final @Nonnull Object... instanceRoles) 
       {
-        return new DefaultPresentationModel(mediaFolder, instanceRoles);
+        return new DefaultPresentationModel(object, instanceRoles);
       }
   }
 //public class MediaPresentable extends DefaultPresentable

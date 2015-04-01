@@ -26,34 +26,38 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.roles;
+package it.tidalwave.role.ui;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.role.Displayable;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.MediaItem;
-import lombok.RequiredArgsConstructor;
+import java.util.Comparator;
+import it.tidalwave.util.As;
+import it.tidalwave.util.AsException;
+import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
- * The {@link Displayable} role for {@link MediaItem}. It just uses the file name.
- * 
- * @stereotype  Role
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = MediaItem.class) @RequiredArgsConstructor
-public class MediaItemDisplayable implements Displayable
+public class DisplayableObjectComparator implements Comparator<As>
   {
-    @Nonnull
-    private final MediaItem mediaItem;
-
-    @Override @Nonnull
-    public String getDisplayName() 
+    @Override
+    public int compare (final @Nonnull As o1, final @Nonnull As o2) 
       {
-        return mediaItem.getMetadata().get(MediaItem.Metadata.TITLE)
-                                      .orElse(mediaItem.getPath().toFile().getName());
+        return displayName(o1).compareTo(displayName(o2));
+      }
+    
+    @Nonnull
+    private static String displayName (final @Nonnull As object)
+      {
+        try
+          {
+            return object.as(Displayable).getDisplayName();  
+          }
+        catch (AsException e)
+          {
+            return "???";
+          }
       }
   }
