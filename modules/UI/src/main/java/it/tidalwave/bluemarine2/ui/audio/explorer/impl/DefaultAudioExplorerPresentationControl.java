@@ -102,7 +102,7 @@ public class DefaultAudioExplorerPresentationControl
     private final AudioExplorerPresentation.Properties properties = new AudioExplorerPresentation.Properties();
     
     // FIXME: bundle
-    private final UserAction8 upAction = new UserActionLambda(new DefaultDisplayable("Up"), () -> moveUp()); 
+    private final UserAction8 upAction = new UserActionLambda(new DefaultDisplayable("Up"), () -> navigateUp()); 
     
     /*******************************************************************************************************************
      *
@@ -141,7 +141,7 @@ public class DefaultAudioExplorerPresentationControl
           }  
         else
           {
-            moveUp();
+            navigateUp();
             return OnDeactivate.Result.IGNORE;
           }
       }
@@ -186,18 +186,15 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
+     * Navigates up to the parent {@link MediaFolder}.
      *
      ******************************************************************************************************************/
-    private void moveUp() 
+    private void navigateUp() 
       {
         // TODO: assert not UI thread
-        log.info("moveUp()");
-
-        if (!stack.isEmpty())
-          {
-            final FolderAndSelection folderAndSelection = stack.pop();
-            populateAndSelect(folderAndSelection.getFolder(), folderAndSelection.getSelectedIndex());
-          }
+        log.info("navigateUp()");
+        final FolderAndSelection folderAndSelection = stack.pop();
+        populateAndSelect(folderAndSelection.getFolder(), folderAndSelection.getSelectedIndex());
       }
     
     /*******************************************************************************************************************
