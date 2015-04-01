@@ -47,7 +47,6 @@ public class DefaultMediaFileSystem implements MediaFileSystem
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
 
-    // FIXME
     @Override @Nonnull
     public MediaFolder getRoot() 
       {
@@ -57,6 +56,7 @@ public class DefaultMediaFileSystem implements MediaFileSystem
     @Nonnull
     protected Path getRootPath()
       {
+        // FIXME
         String s = System.getProperty("user.home", "/");
         
         if ("arm".equals(System.getProperty("os.arch")))
