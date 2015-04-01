@@ -95,6 +95,15 @@
     -fx-text-fill:          black;
   }
   
+#btUp
+  {    
+    -fx-padding:             8;
+    -fx-background-image:    url("arrow-135-128.png");
+    -fx-background-size:     32 32;
+    -fx-background-repeat:   no-repeat;
+    -fx-background-position: center;   
+  }
+
 #btPlay
   {    
     -fx-padding:             8;

@@ -103,8 +103,7 @@ public class DefaultAudioExplorerPresentationControl
     
     private final AudioExplorerPresentation.Properties properties = new AudioExplorerPresentation.Properties();
     
-    // FIXME: bundle
-    private final UserAction8 upAction = new UserActionLambda(new DefaultDisplayable("Up"), () -> navigateUp()); 
+    private final UserAction8 upAction = new UserActionLambda(() -> navigateUp()); 
     
     /*******************************************************************************************************************
      *
