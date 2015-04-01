@@ -36,7 +36,6 @@ import java.util.Stack;
 import javafx.application.Platform;
 import it.tidalwave.util.As;
 import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.UserAction8;
@@ -205,6 +204,7 @@ public class DefaultAudioExplorerPresentationControl
         final PresentationModel pm = composite.findChildren()
                                               .stream()
                                               .map(object -> object.as(Presentable).createPresentationModel(rolesFor(object)))
+                                              .sorted(new AudioComparator())
                                               .collect(toCompositePresentationModel());
         presentation.populateAndSelect(pm, selectedIndex);
       }
