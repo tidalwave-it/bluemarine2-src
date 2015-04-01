@@ -35,6 +35,8 @@ import it.tidalwave.util.As;
 /***********************************************************************************************************************
  *
  * Represents a folder on a filesystem that contains media items. It is associated with the {@link Composite<As>} role.
+ * The filesystem can be a physycal one (on the disk), or a virtual one (e.g. on a database); the folder concept is
+ * flexible and represents any collection of items.
  * 
  * @stereotype  Datum
  * 
