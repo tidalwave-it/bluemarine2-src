@@ -41,6 +41,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
+import it.tidalwave.bluemarine2.ui.commons.OnActivate;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import java.lang.annotation.Annotation;
@@ -132,6 +133,7 @@ public class JavaFxFlowController implements FlowController
               }
               
             presentationStack.push(new NodeAndControl(newNode, control));
+            notifyActivated(control);
           });
       }
 
@@ -158,6 +160,7 @@ public class JavaFxFlowController implements FlowController
                 final Node oldNode = presentationStack.pop().getNode();
                 final Node newNode = presentationStack.peek().getNode();
                 slide(newNode, oldNode, -1);              
+                notifyActivated(presentationStack.peek().getControl());
               });
           }
       }
@@ -198,6 +201,31 @@ public class JavaFxFlowController implements FlowController
     
     /*******************************************************************************************************************
      *
+     * 
+     * 
+     ******************************************************************************************************************/
+    private void notifyActivated (final @CheckForNull Object control)
+      {
+        try 
+          {
+            log.debug("notifyActivated({})", control);
+            final Method method = findAnnotatedMethod(control, OnActivate.class);
+            
+            if (method != null)
+              {
+                // FIXME: should run in a background process
+                method.invoke(control);
+              }
+          } 
+        catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
+          {
+            log.error("", e);
+            throw new RuntimeException(e);
+          }
+      }
+    
+    /*******************************************************************************************************************
+     *
      * If a Presentation Control is passed, it is inspected for a method annotated with {@link OnDeactivate}. If found, 
      * it is called. If it returns {@code false}, this method returns {@code false}.
      * 
@@ -224,7 +252,7 @@ public class JavaFxFlowController implements FlowController
               }
           }
       }
-    
+
     /*******************************************************************************************************************
      *
      * 
