@@ -46,6 +46,7 @@
         </encoder>
     </appender>
 
+    <logger name="it" level="DEBUG"/>
     <logger name="org.springframework" level="INFO"/>
     <logger name="it.tidalwave.util.spi.FinderSupport" level="INFO"/>
 
