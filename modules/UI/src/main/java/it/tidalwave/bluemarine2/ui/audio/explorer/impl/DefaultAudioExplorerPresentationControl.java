@@ -200,7 +200,7 @@ public class DefaultAudioExplorerPresentationControl
         this.mediaFolder = mediaFolder;
         // FIXME: shouldn't deal with JavaFX threads here
         Platform.runLater(() -> upAction.enabledProperty().setValue(!stack.isEmpty()));
-        Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentLabel()));
+        Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentPathLabel()));
         // FIXME: waiting signal while loading
         final SimpleComposite8<As> composite = mediaFolder.as(SimpleComposite8);
         final PresentationModel pm = composite.findChildren()
@@ -237,7 +237,7 @@ public class DefaultAudioExplorerPresentationControl
      *
      ******************************************************************************************************************/
     @Nonnull
-    private String getCurrentLabel()
+    private String getCurrentPathLabel()
       {
 //        return stack.peek().as(Displayable).getDisplayName();
         return concat(stack.stream().map(i -> i.getFolder()), of(mediaFolder))
