@@ -53,6 +53,7 @@ public class MediaItemDisplayable implements Displayable
     @Override @Nonnull
     public String getDisplayName() 
       {
-        return mediaItem.getPath().toFile().getName();
+        return mediaItem.getMetadata().get(MediaItem.Metadata.TITLE)
+                                      .orElse(mediaItem.getPath().toFile().getName());
       }
   }
