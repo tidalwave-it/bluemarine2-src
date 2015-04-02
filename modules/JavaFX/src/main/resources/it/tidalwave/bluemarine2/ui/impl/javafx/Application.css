@@ -81,7 +81,7 @@
 
 .list-cell 
   {
-    -fx-font-size:          40; 
+    -fx-font-size:          30; 
     -fx-background-color:   transparent;
     /*-fx-padding:            2em 2.5em 2em 2.5em;*/
     -fx-text-fill:          white;
