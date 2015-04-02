@@ -34,6 +34,8 @@ import javax.annotation.concurrent.Immutable;
 import java.nio.file.Path;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.util.As;
+import it.tidalwave.util.Finder8;
 import lombok.AllArgsConstructor;
 import lombok.Delegate;
 import lombok.Getter;
@@ -66,6 +68,12 @@ public class DefaultMediaFolder implements MediaFolder
         return parent == null;
       }
 
+    @Override @Nonnull
+    public Finder8<As> findChildren() 
+      {
+        return new MediaFolderFinder(this);
+      }
+    
     @Override @Nonnull
     public String toString() 
       {

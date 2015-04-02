@@ -35,7 +35,6 @@ import javax.inject.Inject;
 import java.util.Stack;
 import javafx.application.Platform;
 import it.tidalwave.util.As;
-import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.UserAction8;
@@ -55,7 +54,6 @@ import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import it.tidalwave.bluemarine2.ui.commons.OnActivate;
 import static java.util.stream.Collectors.*;
 import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
 import static java.util.stream.Stream.*;
@@ -200,12 +198,12 @@ public class DefaultAudioExplorerPresentationControl
         Platform.runLater(() -> upAction.enabledProperty().setValue(!stack.isEmpty()));
         Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentPathLabel()));
         // FIXME: waiting signal while loading
-        final SimpleComposite8<As> composite = mediaFolder.as(SimpleComposite8);
-        final PresentationModel pm = composite.findChildren()
-                                              .stream()
-                                              .map(object -> object.as(Presentable).createPresentationModel(rolesFor(object)))
-                                              .sorted(new AudioComparator())
-                                              .collect(toCompositePresentationModel());
+        final PresentationModel pm = mediaFolder.findChildren()
+                                                .stream()
+                                                .map(object -> object.as(Presentable)
+                                                                     .createPresentationModel(rolesFor(object)))
+                                                .sorted(new AudioComparator())
+                                                .collect(toCompositePresentationModel());
         presentation.populateAndSelect(pm, selectedIndex);
       }
     

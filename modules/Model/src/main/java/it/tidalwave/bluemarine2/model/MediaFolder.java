@@ -31,6 +31,8 @@ package it.tidalwave.bluemarine2.model;
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
 import it.tidalwave.util.As;
+import it.tidalwave.role.Composite;
+import it.tidalwave.role.SimpleComposite8;
 
 /***********************************************************************************************************************
  *
@@ -44,7 +46,7 @@ import it.tidalwave.util.As;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaFolder extends As, Parentable<MediaFolder>
+public interface MediaFolder extends As, Parentable<MediaFolder>, SimpleComposite8<As>
   {
     /*******************************************************************************************************************
      *
