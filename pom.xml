@@ -36,7 +36,7 @@
 
         <netbeans.hint.jdkPlatform>JDK_1.8.0_40</netbeans.hint.jdkPlatform>
         <netbeans.hint.license>Tidalwave-ASF</netbeans.hint.license>
-        <netbeans.compile.on.save>none</netbeans.compile.on.save>
+        <netbeans.compile.on.save>all</netbeans.compile.on.save>
 
         <tft.appbundle.name>blueMarine2</tft.appbundle.name>
         <tft.appbundle.signature>TDLW</tft.appbundle.signature>
@@ -117,6 +117,11 @@
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-model</artifactId>
+                <version>1.0-ALPHA-4-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-mediascanner</artifactId>
                 <version>1.0-ALPHA-4-SNAPSHOT</version>
             </dependency>
         </dependencies>

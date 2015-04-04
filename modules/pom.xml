@@ -139,6 +139,16 @@
         </dependency>
 
         <!-- TEST DEPENDENCIES -->
+<!--        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>-->
+        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-util-test</artifactId>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -182,6 +192,7 @@
         <module>CECWrapper</module>
         <module>CECNavigationAdapter</module>
         <module>Commons</module>
+        <module>MediaScanner</module>
     </modules>
 
 </project>
