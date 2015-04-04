@@ -81,6 +81,7 @@ public class DefaultMusicBrainzApi implements MusicBrainzApi
 
     /*******************************************************************************************************************
      *
+     * See https://wiki.musicbrainz.org/XML_Web_Service/Rate_Limiting
      *
      ******************************************************************************************************************/
     private void throttle() 
