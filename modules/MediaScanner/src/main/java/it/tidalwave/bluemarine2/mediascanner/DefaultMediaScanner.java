@@ -30,7 +30,9 @@ package it.tidalwave.bluemarine2.mediascanner;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.time.Duration;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -40,15 +42,20 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.io.IOException;
+import java.io.File;
+import java.io.RandomAccessFile;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel.MapMode;
+import java.nio.file.Path;
 import java.net.MalformedURLException;
-import java.time.Duration;
 import javax.xml.bind.JAXBException;
 import org.musicbrainz.ns.mmd_2.Artist;
 import org.musicbrainz.ns.mmd_2.ArtistCredit;
 import org.musicbrainz.ns.mmd_2.NameCredit;
 import org.musicbrainz.ns.mmd_2.Recording;
-import org.openrdf.model.Model;
 import org.openrdf.model.Resource;
 import org.openrdf.model.URI;
 import org.openrdf.model.Value;
@@ -56,25 +63,17 @@ import org.openrdf.model.ValueFactory;
 import org.openrdf.model.vocabulary.DC;
 import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
-import org.openrdf.model.impl.ValueFactoryImpl;
+import org.openrdf.repository.RepositoryConnection;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.vocabulary.BM;
 import it.tidalwave.bluemarine2.vocabulary.MO;
-import java.io.File;
-import java.io.RandomAccessFile;
-import java.nio.MappedByteBuffer;
-import java.nio.channels.FileChannel.MapMode;
-import java.nio.file.Path;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.Date;
 import lombok.extern.slf4j.Slf4j;
-import lombok.RequiredArgsConstructor;
-import static java.util.stream.Collectors.joining;
 import lombok.Cleanup;
+import static java.util.stream.Collectors.joining;
+import org.openrdf.repository.RepositoryException;
 
 /***********************************************************************************************************************
  *
@@ -82,11 +81,11 @@ import lombok.Cleanup;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j
+@Slf4j
 public class DefaultMediaScanner 
   {
     @Nonnull
-    private final Model model;
+    private final RepositoryConnection connection;
     
     private final Queue<MediaItem> pendingMediaItems = new ConcurrentLinkedQueue<>();
     
@@ -97,8 +96,18 @@ public class DefaultMediaScanner
     // FIXME: inject
     private final DefaultMusicBrainzApi mbApi = new DefaultMusicBrainzApi();
     
-    // FIXME: inject
-    private final ValueFactory factory = ValueFactoryImpl.getInstance();
+    private final ValueFactory factory;
+
+    /*******************************************************************************************************************
+     *
+     *
+     * 
+     ******************************************************************************************************************/
+    public DefaultMediaScanner (final @Nonnull RepositoryConnection connection)
+      {
+        this.connection = connection;
+        factory = connection.getValueFactory();
+      }
     
     /*******************************************************************************************************************
      *
@@ -454,7 +463,14 @@ public class DefaultMediaScanner
                                final @Nonnull URI predicate, 
                                final @Nonnull Value object) 
       {
-        model.add(factory.createStatement(subject, predicate, object));
+        try 
+          {
+            connection.add(factory.createStatement(subject, predicate, object));
+          } 
+        catch (RepositoryException e) 
+          {
+            throw new RuntimeException(e);
+          }
       }
 
     /*******************************************************************************************************************
