@@ -25,8 +25,9 @@
         <javax-inject.version>1</javax-inject.version>
         <logback.version>1.0.13</logback.version>
         <mp3agic.version>0.8.3</mp3agic.version>
-        <slf4j.version>1.7.5</slf4j.version>
-        <spring.version>4.0.2.RELEASE</spring.version>
+        <sesame.version>2.8.0</sesame.version>
+        <slf4j.version>1.7.10</slf4j.version>
+        <spring.version>4.1.4.RELEASE</spring.version>
         <steelblue.version>1.0-ALPHA-3</steelblue.version>
         <thesefoolishthings.version>1.38</thesefoolishthings.version>
         <uuid.version>2.1.5-201007271250</uuid.version>
@@ -60,6 +61,13 @@
                 <groupId>it.tidalwave.steelblue</groupId>
                 <artifactId>it-tidalwave-steelblue</artifactId>
                 <version>${steelblue.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-bom</artifactId>
+                <version>${sesame.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -117,7 +125,6 @@
                 <artifactId>logback-core</artifactId>
                 <version>${logback.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
@@ -137,9 +144,14 @@
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
 
         <!-- TEST DEPENDENCIES -->
-<!--        <dependency>
+        <!--        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
@@ -168,16 +180,6 @@
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>it.tidalwave.thesefoolishthings</groupId>
-            <artifactId>it-tidalwave-util-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 
