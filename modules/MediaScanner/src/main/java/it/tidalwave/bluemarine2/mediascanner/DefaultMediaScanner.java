@@ -200,15 +200,15 @@ public class DefaultMediaScanner
       { 
         log.info("importMediaItem({})", mediaItem);
         
-        final URI trackUri = uriFor(createMd5Id(mediaItem.getPath()));
+        final URI mediaItemUri = uriFor(createMd5Id(mediaItem.getPath()));
         
         try 
           {
-            addStatement(trackUri, RDF.TYPE, MO.TRACK);
-            addStatement(trackUri, MO.AUDIOFILE, literalFor(mediaItem.getRelativePath()));
-            addStatement(trackUri, BM.LATEST_INDEXING_TIME, literalFor(mediaItem.getPath().toFile().lastModified()));
+            addStatement(mediaItemUri, RDF.TYPE, MO.TRACK);
+            addStatement(mediaItemUri, MO.AUDIOFILE, literalFor(mediaItem.getRelativePath()));
+            addStatement(mediaItemUri, BM.LATEST_INDEXING_TIME, literalFor(mediaItem.getPath().toFile().lastModified()));
 
-            importMediaItemMetadata(mediaItem, trackUri);
+            importMediaItemMetadata(mediaItem, mediaItemUri);
             
             final Metadata metadata = mediaItem.getMetadata();
             final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
@@ -218,12 +218,12 @@ public class DefaultMediaScanner
             
             if (musicBrainzTrackId.isPresent())
               {
-                importMediaItemMusicBrainzMetadata(mediaItem);
+                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
               }
             else
               {
-                addStatement(trackUri, DC.TITLE, literalFor(metadata.get(Metadata.TITLE).get()));
-                addStatement(trackUri, BM.MISSED_MB_METADATA, literalFor(System.currentTimeMillis()));
+                addStatement(mediaItemUri, DC.TITLE, literalFor(metadata.get(Metadata.TITLE).get()));
+                addStatement(mediaItemUri, BM.MISSED_MB_METADATA, literalFor(System.currentTimeMillis()));
               } 
           }
         catch (JAXBException | MalformedURLException e) 
@@ -235,7 +235,7 @@ public class DefaultMediaScanner
             if (e.getMessage().contains("503")) // throttling error
               {
                 log.warn("Cannot retrieve MusicBrainz metadata {} ... - {}", mediaItem, e.toString());
-                addStatement(trackUri, BM.FAILED_MB_METADATA, factory.createLiteral(new Date()));
+                addStatement(mediaItemUri, BM.FAILED_MB_METADATA, factory.createLiteral(new Date()));
 //                log.warn("Resubmitting {} ... - {}", mediaItem, e.toString());
 //                pendingMediaItems.add(mediaItem);
               }
@@ -257,63 +257,16 @@ public class DefaultMediaScanner
     
     /*******************************************************************************************************************
      *
-     * Downloads the metadata for a recording.
+     * Imports the embedded metadata for the given {@link MediaItem}.
      * 
-     * @param   recordingId             the id of the recording
-     * @throws  IOException             when an I/O problem occurred
-     * @throws  JAXBException           when an XML error occurs
-     * @throws  InterruptedException    if the operation is interrupted
-     *
-     ******************************************************************************************************************/
-    private void importMediaItemMusicBrainzMetadata (final @Nonnull MediaItem mediaItem)
-      throws IOException, JAXBException, InterruptedException 
-      { 
-        log.info("downloadRecordingMetadata({})", mediaItem);
-        
-        final Metadata metadata = mediaItem.getMetadata();
-        final String entityId = metadata.get(Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
-        final URI trackUri = uriFor("http://musicmusicbrainz.org/ws/2/recording/" + entityId);
-        addStatement(trackUri, MO.MUSICBRAINZ_GUID, trackUri);
-        
-        if (true)
-          {
-            throw new IOException("fake"); // FIXME  
-          }
-        
-        final org.musicbrainz.ns.mmd_2.Metadata m = mbApi.getMusicBrainzEntity("recording", entityId, "?inc=artists");
-        final Recording recording = m.getRecording();
-        final String title = recording.getTitle();
-        final ArtistCredit artistCredit = recording.getArtistCredit();
-        final List<NameCredit> nameCredits = artistCredit.getNameCredit();
-        final String fullCredits = nameCredits.stream()
-                                              .map(c -> c.getArtist().getName() + emptyWhenNull(c.getJoinphrase()))
-                                              .collect(joining());
-        nameCredits.forEach(nameCredit -> addArtist(nameCredit.getArtist()));
-
-        addStatement(trackUri, BM.LATEST_MB_METADATA, literalFor(System.currentTimeMillis()));
-        addStatement(trackUri, DC.TITLE, factory.createLiteral(title));
-        addStatement(trackUri, BM.FULL_CREDITS, factory.createLiteral(fullCredits));
-        
-        // TODO: MO.CHANNELS
-        // TODO: MO.COMPOSER
-        // TODO: MO.CONDUCTOR
-        // TODO: MO.ENCODING "MP3 CBR @ 128kbps", "OGG @ 160kbps", "FLAC",
-        // TODO: MO.GENRE
-        // TODO: MO.INTERPRETER
-        // TODO: MO.LABEL
-        // TODO: MO.MEDIA_TYPE (MIME)
-        // TODO: MO.OPUS
-        // TOOD: MO.RECORD_NUMBER
-        // TODO: MO.SINGER
-        
-        nameCredits.forEach(credit -> addStatement(trackUri, FOAF.MAKER, uriFor(credit.getArtist().getId())));
-      }
-
-    /*******************************************************************************************************************
-     *
+     * @param   mediaItem               the {@code MediaItem}.
+     * @param   mediaItemUri            the URI of the item
+     * 
      ******************************************************************************************************************/
     private void importMediaItemMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI mediaItemUri)
       {
+        log.info("importMediaItemMetadata({}, {})", mediaItem, mediaItemUri);
+        
         final Metadata metadata = mediaItem.getMetadata();
         final Optional<Integer> trackNumber = metadata.get(Metadata.TRACK);
         final Optional<Integer> sampleRate = metadata.get(Metadata.SAMPLE_RATE);
@@ -341,6 +294,62 @@ public class DefaultMediaScanner
           }
       }
     
+    /*******************************************************************************************************************
+     *
+     * Imports the MusicBrainz metadata for the given {@link MediaItem}.
+     * 
+     * @param   mediaItem               the {@code MediaItem}.
+     * @param   mediaItemUri            the URI of the item
+     * @throws  IOException             when an I/O problem occurred
+     * @throws  JAXBException           when an XML error occurs
+     * @throws  InterruptedException    if the operation is interrupted
+     *
+     ******************************************************************************************************************/
+    private void importMediaItemMusicBrainzMetadata (final @Nonnull MediaItem mediaItem, 
+                                                     final @Nonnull URI mediaItemUri)
+      throws IOException, JAXBException, InterruptedException 
+      { 
+        log.info("importMediaItemMusicBrainzMetadata({}, {})", mediaItem, mediaItemUri);
+        
+        final Metadata metadata = mediaItem.getMetadata();
+        final String entityId = metadata.get(Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
+        final URI trackUri = uriFor("http://musicmusicbrainz.org/ws/2/recording/" + entityId);
+        addStatement(mediaItemUri, MO.MUSICBRAINZ_GUID, trackUri);
+        
+        if (true)
+          {
+            throw new IOException("fake"); // FIXME  
+          }
+        
+        final org.musicbrainz.ns.mmd_2.Metadata m = mbApi.getMusicBrainzEntity("recording", entityId, "?inc=artists");
+        final Recording recording = m.getRecording();
+        final String title = recording.getTitle();
+        final ArtistCredit artistCredit = recording.getArtistCredit();
+        final List<NameCredit> nameCredits = artistCredit.getNameCredit();
+        final String fullCredits = nameCredits.stream()
+                                              .map(c -> c.getArtist().getName() + emptyWhenNull(c.getJoinphrase()))
+                                              .collect(joining());
+        nameCredits.forEach(nameCredit -> addArtist(nameCredit.getArtist()));
+
+        addStatement(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(System.currentTimeMillis()));
+        addStatement(mediaItemUri, DC.TITLE, factory.createLiteral(title));
+        addStatement(mediaItemUri, BM.FULL_CREDITS, factory.createLiteral(fullCredits));
+        
+        // TODO: MO.CHANNELS
+        // TODO: MO.COMPOSER
+        // TODO: MO.CONDUCTOR
+        // TODO: MO.ENCODING "MP3 CBR @ 128kbps", "OGG @ 160kbps", "FLAC",
+        // TODO: MO.GENRE
+        // TODO: MO.INTERPRETER
+        // TODO: MO.LABEL
+        // TODO: MO.MEDIA_TYPE (MIME)
+        // TODO: MO.OPUS
+        // TOOD: MO.RECORD_NUMBER
+        // TODO: MO.SINGER
+        
+        nameCredits.forEach(credit -> addStatement(mediaItemUri, FOAF.MAKER, uriFor(credit.getArtist().getId())));
+      }
+
     /*******************************************************************************************************************
      *
      * 
