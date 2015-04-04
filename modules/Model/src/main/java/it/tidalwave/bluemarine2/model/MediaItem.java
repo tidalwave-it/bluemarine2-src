@@ -30,10 +30,12 @@ package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
 import java.time.Duration;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.nio.file.Path;
 import it.tidalwave.util.As;
+import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
 
 /***********************************************************************************************************************
@@ -67,6 +69,11 @@ public interface MediaItem extends As, Parentable<MediaFolder>
         public static final Key<Integer> TRACK = new Key<>("mp3.track");
         public static final Key<String> COMMENT = new Key<>("mp3.comment");
         
+        public static final Key<Id> MBZ_TRACK_ID = new Key<>("mbz.trackId");
+        public static final Key<Id> MBZ_WORK_ID = new Key<>("mbz.workId");
+        public static final Key<Id> MBZ_DISC_ID = new Key<>("mbz.discId");
+        public static final Key<List<Id>> MBZ_ARTIST_ID = new Key<>("mbz.artistId");
+        
         /***************************************************************************************************************
          *
          * 
@@ -74,6 +81,14 @@ public interface MediaItem extends As, Parentable<MediaFolder>
          **************************************************************************************************************/
         @Nonnull
         public <T> Optional<T> get (@Nonnull Key<T> key);
+
+        /***************************************************************************************************************
+         *
+         * 
+         *
+         **************************************************************************************************************/
+        @Nonnull
+        public <T> T getAll (@Nonnull Key<T> key);
 
         /***************************************************************************************************************
          *

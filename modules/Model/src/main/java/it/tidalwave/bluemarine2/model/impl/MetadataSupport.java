@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
@@ -66,6 +67,18 @@ public class MetadataSupport implements MediaItem.Metadata
     public <T> Optional<T> get (final @Nonnull Key<T> key)
       {
         return Optional.ofNullable(((T)properties.get(key)));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDocs}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public <T> T getAll (final @Nonnull Key<T> key)
+      {
+        final T list = (T)properties.get(key);
+        return (list != null) ? list : (T)Collections.emptyList();
       }
 
     /*******************************************************************************************************************

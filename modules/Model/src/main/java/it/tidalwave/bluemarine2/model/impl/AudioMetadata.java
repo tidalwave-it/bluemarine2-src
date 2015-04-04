@@ -28,10 +28,13 @@
  */
 package it.tidalwave.bluemarine2.model.impl;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
-import java.io.IOException;
-import java.nio.file.Path;
+import javax.annotation.Nullable;
 import java.time.Duration;
+import java.util.stream.Collectors;
+import java.io.IOException;
+import java.nio.file.Path; 
 import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.audio.AudioHeader;
@@ -41,6 +44,7 @@ import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
 import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
+import it.tidalwave.util.Id;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -53,7 +57,7 @@ import lombok.extern.slf4j.Slf4j;
 public class AudioMetadata extends MetadataSupport
   {
     @Nonnull
-    private AudioFile audioFile;
+    /* VisibleForTesting */ AudioFile audioFile;
     
     public AudioMetadata (final @Nonnull Path path) 
       {
@@ -88,6 +92,15 @@ public class AudioMetadata extends MetadataSupport
             
 //            put(TRACK, tag.getFirst(FieldKey.DISC_NO));
             put(COMPOSER, tag.getFirst(FieldKey.COMPOSER));
+            
+            put(MBZ_TRACK_ID,  id(tag.getFirst(FieldKey.MUSICBRAINZ_TRACK_ID)));
+            put(MBZ_WORK_ID,   id(tag.getFirst(FieldKey.MUSICBRAINZ_WORK_ID)));
+            put(MBZ_DISC_ID,   id(tag.getFirst(FieldKey.MUSICBRAINZ_DISC_ID)));
+            put(MBZ_ARTIST_ID, tag.getAll(FieldKey.MUSICBRAINZ_ARTISTID).stream()
+                                  .map(s -> id(s))
+                                  .filter(id -> id != null)
+                                  .collect(Collectors.toList()));
+            
 //            tag.getFirst(FieldKey.ARTIST_SORT);
 
 ////            log.debug("Bitrate: " + mp3File.getBitrate()+ " kbps " + (mp3File.isVbr() ? "(VBR)" : "(CBR)"));
@@ -120,5 +133,16 @@ public class AudioMetadata extends MetadataSupport
           {
             log.error("", e);  
           } 
+      }
+    
+    @CheckForNull
+    private static Id id (final @Nullable String string)
+      {
+        if ((string == null) || "".equals(string))
+          {
+            return null;  
+          }
+        
+        return new Id("mbz:" + string);
       }
   }
