@@ -58,6 +58,9 @@ public class MediaFolderFinder extends SimpleFinder8Support<As>
     @Nonnull
     private final MediaFolder mediaFolder;
     
+    @Nonnull
+    private final Path basePath;
+    
     @Override @Nonnull
     protected List<? extends As> computeResults() 
       {
@@ -67,8 +70,8 @@ public class MediaFolderFinder extends SimpleFinder8Support<As>
           {
             for (final Path child : stream)
               {
-                result.add(child.toFile().isDirectory() ? new DefaultMediaFolder(child, mediaFolder)
-                                                        : new DefaultMediaItem(child, mediaFolder, null));
+                result.add(child.toFile().isDirectory() ? new DefaultMediaFolder(child, mediaFolder, basePath)
+                                                        : new DefaultMediaItem(child, mediaFolder, basePath));
               }
           } 
         catch (IOException e)

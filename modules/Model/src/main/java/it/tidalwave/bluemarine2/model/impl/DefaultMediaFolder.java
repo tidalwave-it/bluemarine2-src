@@ -59,6 +59,9 @@ public class DefaultMediaFolder implements MediaFolder
     @Getter @CheckForNull
     private MediaFolder parent;
     
+    @Getter @Nonnull
+    private final Path basePath;
+    
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
 
@@ -71,12 +74,12 @@ public class DefaultMediaFolder implements MediaFolder
     @Override @Nonnull
     public Finder8<As> findChildren() 
       {
-        return new MediaFolderFinder(this);
+        return new MediaFolderFinder(this, basePath);
       }
     
     @Override @Nonnull
     public String toString() 
       {
-        return String.format("DefaultMediaFolder(%s)", path.toFile().getName());
+        return String.format("DefaultMediaFolder(%s)", basePath.relativize(path));
       }
   }

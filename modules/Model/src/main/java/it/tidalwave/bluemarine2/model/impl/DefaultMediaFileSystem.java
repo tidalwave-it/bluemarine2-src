@@ -50,7 +50,7 @@ public class DefaultMediaFileSystem implements MediaFileSystem
     @Override @Nonnull
     public MediaFolder getRoot() 
       {
-        return new DefaultMediaFolder(getRootPath(), null);
+        return new DefaultMediaFolder(getRootPath(), null, getRootPath());
       }
     
     @Nonnull

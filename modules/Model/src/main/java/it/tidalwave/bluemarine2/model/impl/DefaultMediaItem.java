@@ -35,7 +35,6 @@ import java.nio.file.Path;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import lombok.AllArgsConstructor;
 import lombok.Delegate;
 import lombok.Getter;
 
@@ -49,11 +48,14 @@ import lombok.Getter;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @AllArgsConstructor
+@Immutable
 public class DefaultMediaItem implements MediaItem
   {
     @Getter @Nonnull
     private final Path path;
+    
+    @Getter @Nonnull
+    private final Path relativePath;
     
     @Getter @CheckForNull
     private MediaFolder parent;
@@ -64,10 +66,19 @@ public class DefaultMediaItem implements MediaItem
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
 
+    public DefaultMediaItem (final @Nonnull Path path,
+                             final @Nonnull MediaFolder parent,
+                             final @Nonnull Path basePath)
+      {
+        this.path = path;
+        this.parent = parent;
+        this.relativePath = basePath.relativize(path);
+      }
+    
     @Override @Nonnull
     public String toString() 
       {
-        return String.format("DefaultMediaItem(%s)", path.toFile().getName());
+        return String.format("DefaultMediaItem(%s)", relativePath);
       }
 
     @Override @Nonnull
