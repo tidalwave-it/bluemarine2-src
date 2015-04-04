@@ -40,11 +40,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 import org.musicbrainz.ns.mmd_2.Artist;
 import org.musicbrainz.ns.mmd_2.ArtistCredit;
 import org.musicbrainz.ns.mmd_2.NameCredit;
@@ -53,10 +49,8 @@ import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import java.io.InputStream;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.joining;
-import lombok.Cleanup;
 
 /***********************************************************************************************************************
  *
@@ -73,8 +67,9 @@ public class DefaultMediaScanner
     
     private final Queue<Id> pendingArtistsId = new ConcurrentLinkedQueue<>();
     
-    private long latestMusicBrainzAccessTime = 0;
-            
+    // FIXME: inject
+    private DefaultMusicBrainzApi mbApi = new DefaultMusicBrainzApi();
+    
     /*******************************************************************************************************************
      *
      * Processes a folder of {@link MediaItem}s.
@@ -212,6 +207,33 @@ public class DefaultMediaScanner
     
     /*******************************************************************************************************************
      *
+     * Downloads the metadata for a recording.
+     * 
+     * @param   recordingId             the id of the recording
+     * @throws  IOException             when an I/O problem occurred
+     * @throws  JAXBException           when an XML error occurs
+     * @throws  InterruptedException    if the operation is interrupted
+     *
+     ******************************************************************************************************************/
+    private void downloadRecordingMetadata (final @Nonnull Id recordingId)
+      throws IOException, JAXBException, InterruptedException 
+      { 
+        log.info("downloadRecordingMetadata({})", recordingId);
+        final String entityId = recordingId.stringValue().replaceAll("^mbz:", "");
+        final org.musicbrainz.ns.mmd_2.Metadata m = mbApi.getMusicBrainzEntity("recording", entityId, "?inc=artists");
+        final Recording recording = m.getRecording();
+        final String title = recording.getTitle();
+        final ArtistCredit artistCredit = recording.getArtistCredit();
+        final List<NameCredit> nameCredits = artistCredit.getNameCredit();
+        final String fullCredits = nameCredits.stream()
+                                              .map(c -> c.getArtist().getName() + emptyWhenNull(c.getJoinphrase()))
+                                              .collect(joining());
+        log.info("TITLE: {} - {}", title, fullCredits);
+        nameCredits.forEach(nameCredit -> addArtist(nameCredit.getArtist()));
+      }
+    
+    /*******************************************************************************************************************
+     *
      * 
      *
      ******************************************************************************************************************/
@@ -230,83 +252,6 @@ public class DefaultMediaScanner
           }
       }
 
-    /*******************************************************************************************************************
-     *
-     * Downloads the metadata for a recording.
-     * 
-     * @param   recordingId             the id of the recording
-     * @throws  IOException             when an I/O problem occurred
-     * @throws  JAXBException           when an XML error occurs
-     * @throws  InterruptedException    if the operation is interrupted
-     *
-     ******************************************************************************************************************/
-    private void downloadRecordingMetadata (final @Nonnull Id recordingId)
-      throws IOException, JAXBException, InterruptedException 
-      { 
-        log.info("downloadRecordingMetadata({})", recordingId);
-        final org.musicbrainz.ns.mmd_2.Metadata m = getMusicBrainzEntity("recording", recordingId, "?inc=artists");
-        final Recording recording = m.getRecording();
-        final String title = recording.getTitle();
-        final ArtistCredit artistCredit = recording.getArtistCredit();
-        final List<NameCredit> nameCredits = artistCredit.getNameCredit();
-        final String fullCredits = nameCredits.stream()
-                                              .map(c -> c.getArtist().getName() + emptyWhenNull(c.getJoinphrase()))
-                                              .collect(joining());
-        log.info("TITLE: {} - {}", title, fullCredits);
-        nameCredits.forEach(nameCredit -> addArtist(nameCredit.getArtist()));
-      }
-    
-    /*******************************************************************************************************************
-     *
-     * Downloads metadata for a MusicBrainz entity.
-     * 
-     * @param   entityType  the entity type
-     * @param   id          the entity id
-     * @param   includes    the metadata to include
-     * @return              the metadata
-     * @throws  IOException             when an I/O problem occurred
-     * @throws  JAXBException           when an XML error occurs
-     * @throws  InterruptedException    if the operation is interrupted
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private org.musicbrainz.ns.mmd_2.Metadata getMusicBrainzEntity (final @Nonnull String entityType,
-                                                                    final @Nonnull Id id,
-                                                                    final @Nonnull String includes) 
-      throws IOException, JAXBException, InterruptedException
-      {
-        final JAXBContext context = JAXBContext.newInstance("org.musicbrainz.ns.mmd_2");
-        final Unmarshaller u = context.createUnmarshaller();
-        final String urlAsString = String.format("http://musicbrainz.org/ws/2/%s/%s%s", 
-                                                 entityType,
-                                                 id.stringValue().replaceAll("^mbz:", ""),
-                                                 includes);
-        throttle();
-        final URL url = new URL(urlAsString);
-        final URLConnection connection = url.openConnection();
-        connection.setRequestProperty("User-agent", "blueMarine2-1");
-        @Cleanup final InputStream is = connection.getInputStream();
-        return (org.musicbrainz.ns.mmd_2.Metadata)u.unmarshal(is);
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private void throttle() 
-      throws InterruptedException 
-      {
-        final long now = System.currentTimeMillis();
-        final long delta = 1200 - (now - latestMusicBrainzAccessTime);
-        latestMusicBrainzAccessTime = now;
-        
-        if (delta > 0)
-        {
-            log.info("Throttling: waiting for {} msec...", delta);
-            Thread.sleep(delta);
-        }
-    }
-    
     /*******************************************************************************************************************
      *
      *
