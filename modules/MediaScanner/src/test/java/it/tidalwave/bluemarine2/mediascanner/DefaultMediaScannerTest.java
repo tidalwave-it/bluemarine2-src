@@ -26,6 +26,6 @@ public class DefaultMediaScannerTest
       {
         final DefaultMediaScanner underTest = new DefaultMediaScanner();
         final DefaultMediaFileSystem mediaFileSystem = new DefaultMediaFileSystem();
-        underTest.scan(mediaFileSystem.getRoot());
+        underTest.process(mediaFileSystem.getRoot());
       }
 }
