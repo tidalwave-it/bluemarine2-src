@@ -54,9 +54,6 @@ public final class BM
     /** The file timestamp the latest time it was indexed. */
     public static final URI LATEST_INDEXING_TIME = factory.createURI(PREFIX + "latestIndexingTime");
     
-    /** Means that the file couldn't be associated to metadata. The object is the timestamp of the latest attempt. */
-    public static final URI MISSED_MB_METADATA      = factory.createURI(PREFIX + "missedMusicBrainzMetadata");
-
     /** Means that the file couldn't download metadata. The object is the timestamp of the latest attempt. */
     public static final URI LATEST_MB_METADATA      = factory.createURI(PREFIX + "latestMusicBrainzMetadata");
     

@@ -371,7 +371,6 @@ public class DefaultMediaScanner
         final Metadata metadata = mediaItem.getMetadata();
         
         addStatement(mediaItemUri, DC.TITLE, literalFor(metadata.get(Metadata.TITLE).get()));
-        addStatement(mediaItemUri, BM.MISSED_MB_METADATA, literalFor(System.currentTimeMillis()));
         
         final Optional<String> artist = metadata.get(Metadata.ARTIST);
         
