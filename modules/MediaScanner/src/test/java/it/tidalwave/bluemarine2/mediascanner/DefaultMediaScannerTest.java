@@ -16,10 +16,12 @@ import it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import lombok.extern.slf4j.Slf4j;
+import org.openrdf.model.Namespace;
 import org.openrdf.repository.Repository;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.RepositoryException;
 import org.openrdf.repository.sail.SailRepository;
+import org.openrdf.rio.RioSetting;
 import org.openrdf.sail.memory.MemoryStore;
 
 /**
@@ -70,8 +72,19 @@ public class DefaultMediaScannerTest
       {
         file.getParentFile().mkdirs();
         final PrintWriter pw = new PrintWriter(file);
-        final N3Writer tw = new N3Writer(pw);
-        connection.export(tw);
+        final N3Writer writer = new N3Writer(pw);
+        
+        for (final Namespace namespace : connection.getNamespaces().asList())
+          {
+            writer.handleNamespace(namespace.getPrefix(), namespace.getName());
+          }
+
+        writer.handleNamespace("dc",   "http://purl.org/dc/elements/1.1/");
+        writer.handleNamespace("mo",   "http://purl.org/ontology/mo/");
+        writer.handleNamespace("bmmo", "http://bluemarine.tidalwave.it/2015/04/mo/");
+        writer.handleNamespace("foaf", "http://xmlns.com/foaf/0.1/");
+
+        connection.export(writer);
         connection.close();
       }
   }
