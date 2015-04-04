@@ -222,8 +222,7 @@ public class DefaultMediaScanner
               }
             else
               {
-                addStatement(mediaItemUri, DC.TITLE, literalFor(metadata.get(Metadata.TITLE).get()));
-                addStatement(mediaItemUri, BM.MISSED_MB_METADATA, literalFor(System.currentTimeMillis()));
+                importFallbackMetadata(mediaItem, mediaItemUri);
               } 
           }
         catch (JAXBException | MalformedURLException e) 
@@ -312,16 +311,15 @@ public class DefaultMediaScanner
         log.info("importMediaItemMusicBrainzMetadata({}, {})", mediaItem, mediaItemUri);
         
         final Metadata metadata = mediaItem.getMetadata();
-        final String entityId = metadata.get(Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
-        final URI trackUri = uriFor("http://musicmusicbrainz.org/ws/2/recording/" + entityId);
-        addStatement(mediaItemUri, MO.MUSICBRAINZ_GUID, trackUri);
+        final String mbGuid = metadata.get(Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
+        addStatement(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid));
         
         if (true)
           {
             throw new IOException("fake"); // FIXME  
           }
         
-        final org.musicbrainz.ns.mmd_2.Metadata m = mbApi.getMusicBrainzEntity("recording", entityId, "?inc=artists");
+        final org.musicbrainz.ns.mmd_2.Metadata m = mbApi.getMusicBrainzEntity("recording", mbGuid, "?inc=artists");
         final Recording recording = m.getRecording();
         final String title = recording.getTitle();
         final ArtistCredit artistCredit = recording.getArtistCredit();
@@ -350,6 +348,20 @@ public class DefaultMediaScanner
         nameCredits.forEach(credit -> addStatement(mediaItemUri, FOAF.MAKER, uriFor(credit.getArtist().getId())));
       }
 
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    private void importFallbackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI mediaItemUri) 
+      {
+        log.info("importFallbackMetadata({}, {})", mediaItem, mediaItemUri);
+        
+        final Metadata metadata = mediaItem.getMetadata();
+        addStatement(mediaItemUri, DC.TITLE, literalFor(metadata.get(Metadata.TITLE).get()));
+        addStatement(mediaItemUri, BM.MISSED_MB_METADATA, literalFor(System.currentTimeMillis()));
+      }
+    
     /*******************************************************************************************************************
      *
      * 
