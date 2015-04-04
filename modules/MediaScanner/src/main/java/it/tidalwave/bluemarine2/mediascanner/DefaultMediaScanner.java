@@ -231,10 +231,12 @@ public class DefaultMediaScanner
           }
         catch (IOException e)
           {
+            log.warn("Cannot retrieve MusicBrainz metadata {} ... - {}", mediaItem, e.toString());
+            importFallbackMetadata(mediaItem, mediaItemUri);
+            addStatement(mediaItemUri, BM.FAILED_MB_METADATA, factory.createLiteral(new Date()));
+
             if (e.getMessage().contains("503")) // throttling error
               {
-                log.warn("Cannot retrieve MusicBrainz metadata {} ... - {}", mediaItem, e.toString());
-                addStatement(mediaItemUri, BM.FAILED_MB_METADATA, factory.createLiteral(new Date()));
 //                log.warn("Resubmitting {} ... - {}", mediaItem, e.toString());
 //                pendingMediaItems.add(mediaItem);
               }
@@ -358,8 +360,27 @@ public class DefaultMediaScanner
         log.info("importFallbackMetadata({}, {})", mediaItem, mediaItemUri);
         
         final Metadata metadata = mediaItem.getMetadata();
+        
         addStatement(mediaItemUri, DC.TITLE, literalFor(metadata.get(Metadata.TITLE).get()));
         addStatement(mediaItemUri, BM.MISSED_MB_METADATA, literalFor(System.currentTimeMillis()));
+        
+        final Optional<String> artist = metadata.get(Metadata.ARTIST);
+        
+        if (artist.isPresent())
+          {
+            final Id artistId = createMd5Id("ARTIST:" + artist.get());
+            final URI artistUri = uriFor(artistId);
+            
+            // FIXME: concurrent access
+            if (!seenArtistIds.contains(artistId))
+              {
+                seenArtistIds.add(artistId);
+                addStatement(artistUri, RDF.TYPE, MO.MUSIC_ARTIST);
+                addStatement(artistUri, FOAF.NAME, literalFor(artist.get()));
+              }
+            
+            addStatement(artistUri, FOAF.MAKER, mediaItemUri);
+          }
       }
     
     /*******************************************************************************************************************
@@ -400,6 +421,26 @@ public class DefaultMediaScanner
             return new Id("md5id:" + toString(digestComputer.digest()));
           } 
         catch (NoSuchAlgorithmException | IOException e) 
+          {
+            throw new RuntimeException(e);
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private Id createMd5Id (final @Nonnull String string)
+      {
+        try 
+          {
+            final String algorithm = "MD5";
+            final MessageDigest digestComputer = MessageDigest.getInstance(algorithm);
+            digestComputer.update(string.getBytes());
+            return new Id("md5id:" + toString(digestComputer.digest()));
+          } 
+        catch (NoSuchAlgorithmException e) 
           {
             throw new RuntimeException(e);
           }
