@@ -64,6 +64,7 @@ import org.openrdf.model.vocabulary.DC;
 import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.repository.RepositoryConnection;
+import org.openrdf.repository.RepositoryException;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
@@ -73,7 +74,6 @@ import it.tidalwave.bluemarine2.vocabulary.MO;
 import lombok.extern.slf4j.Slf4j;
 import lombok.Cleanup;
 import static java.util.stream.Collectors.joining;
-import org.openrdf.repository.RepositoryException;
 
 /***********************************************************************************************************************
  *
@@ -300,7 +300,7 @@ public class DefaultMediaScanner
 
         if (duration.isPresent())
           {
-            addStatement(mediaItemUri, MO.DURATION, factory.createLiteral(duration.get().toMillis()));
+            addStatement(mediaItemUri, MO.DURATION, factory.createLiteral((float)duration.get().toMillis()));
           }
       }
     
