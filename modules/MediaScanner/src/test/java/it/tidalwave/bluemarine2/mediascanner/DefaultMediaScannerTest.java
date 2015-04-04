@@ -1,31 +1,75 @@
 
 package it.tidalwave.bluemarine2.mediascanner;
 
-import it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem;
+import javax.annotation.Nonnull;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.openrdf.model.Model;
+import org.openrdf.model.Statement;
+import org.openrdf.model.impl.LinkedHashModel;
+import org.openrdf.rio.RDFHandlerException;
+import org.openrdf.rio.n3.N3Writer;
+import it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  *
  * @author fritz
  */
+@Slf4j
 public class DefaultMediaScannerTest
   {
     private ClassPathXmlApplicationContext context;
+    
+    private Model model;
     
     @BeforeMethod
     private void prepareTest()
       {
         final String s = "classpath:/META-INF/DefaultMediaScannerTestBeans.xml";
         context = new ClassPathXmlApplicationContext(s);
+        model = new LinkedHashModel()
+          {
+            @Override
+            public boolean add (final @Nonnull Statement st) 
+              {
+                log.trace("STATEMENT: {}", st);
+                return super.add(st); 
+              }
+          };
+      }
+
+    @AfterMethod
+    private void dumpModel()
+      throws RDFHandlerException, FileNotFoundException 
+      {
+        final PrintWriter pw = new PrintWriter("target/model.n3");
+        final N3Writer tw = new N3Writer(pw);
+        tw.startRDF();
+        model.stream().forEach(statement ->
+          {
+            try 
+              {
+                tw.handleStatement(statement);
+              } 
+            catch (RDFHandlerException e) 
+              {
+                e.printStackTrace(); // FIXME
+              }
+          });
+        
+        tw.endRDF();
       }
     
     @Test
-    public void testScan() 
+    public void testScan()
       {
-        final DefaultMediaScanner underTest = new DefaultMediaScanner();
+        final DefaultMediaScanner underTest = new DefaultMediaScanner(model);
         final DefaultMediaFileSystem mediaFileSystem = new DefaultMediaFileSystem();
         underTest.process(mediaFileSystem.getRoot());
       }
-}
+  }

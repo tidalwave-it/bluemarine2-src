@@ -33,24 +33,50 @@ import javax.annotation.Nullable;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.Queue;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.time.Duration;
 import javax.xml.bind.JAXBException;
 import org.musicbrainz.ns.mmd_2.Artist;
 import org.musicbrainz.ns.mmd_2.ArtistCredit;
 import org.musicbrainz.ns.mmd_2.NameCredit;
 import org.musicbrainz.ns.mmd_2.Recording;
+import org.openrdf.model.Model;
+import org.openrdf.model.Resource;
+import org.openrdf.model.URI;
+import org.openrdf.model.Value;
+import org.openrdf.model.ValueFactory;
+import org.openrdf.model.vocabulary.DC;
+import org.openrdf.model.vocabulary.FOAF;
+import org.openrdf.model.vocabulary.RDF;
+import org.openrdf.model.impl.ValueFactoryImpl;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import it.tidalwave.bluemarine2.vocabulary.BM;
+import it.tidalwave.bluemarine2.vocabulary.MO;
+import java.io.File;
+import java.io.RandomAccessFile;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel.MapMode;
+import java.nio.file.Path;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Date;
 import lombok.extern.slf4j.Slf4j;
+import lombok.RequiredArgsConstructor;
 import static java.util.stream.Collectors.joining;
+import lombok.Cleanup;
+import org.openide.util.Exceptions;
+import static org.openrdf.sail.federation.config.FederationConfig.READ_ONLY;
 
 /***********************************************************************************************************************
  *
@@ -58,17 +84,23 @@ import static java.util.stream.Collectors.joining;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
+@RequiredArgsConstructor @Slf4j
 public class DefaultMediaScanner 
   {
+    @Nonnull
+    private final Model model;
+    
     private final Queue<MediaItem> pendingMediaItems = new ConcurrentLinkedQueue<>();
     
     private final Set<Id> seenArtistIds = Collections.synchronizedSet(new HashSet<Id>());
     
-    private final Queue<Id> pendingArtistsId = new ConcurrentLinkedQueue<>();
+    private final Map<Id, Artist> pendingArtists = new ConcurrentHashMap<>();
     
     // FIXME: inject
-    private DefaultMusicBrainzApi mbApi = new DefaultMusicBrainzApi();
+    private final DefaultMusicBrainzApi mbApi = new DefaultMusicBrainzApi();
+    
+    // FIXME: inject
+    private final ValueFactory factory = ValueFactoryImpl.getInstance();
     
     /*******************************************************************************************************************
      *
@@ -143,19 +175,16 @@ public class DefaultMediaScanner
      ******************************************************************************************************************/
     private void consumePendingArtistsId() 
       {
-        while (!pendingArtistsId.isEmpty())
+        while (!pendingArtists.isEmpty())
           {
             try
               {
-                downloadRecordingMetadata(pendingArtistsId.remove());
+                final Id artistId = pendingArtists.keySet().iterator().next();
+                processArtist(artistId, pendingArtists.remove(artistId));
               }
             catch (NoSuchElementException e)
               {
                 // ok  
-              }
-            catch (IOException | JAXBException | InterruptedException e) 
-              {
-                e.printStackTrace(); // FIXME
               }
           }
       }
@@ -171,25 +200,29 @@ public class DefaultMediaScanner
     private void processMediaItem (final @Nonnull MediaItem mediaItem)
       throws InterruptedException
       { 
+        log.info("processMediaItem({})", mediaItem);
+        
+        final URI trackUri = createUri(createMd5Id(mediaItem.getPath()));
+        
         try 
           {
-            log.info("processMediaItem({})", mediaItem);
-
             final Metadata metadata = mediaItem.getMetadata();
-            final Optional<Id> trackId = metadata.get(Metadata.MBZ_TRACK_ID);
-//            final Optional<Id> workId = metadata.get(Metadata.MBZ_WORK_ID);
-//            final Optional<Id> discId = metadata.get(Metadata.MBZ_DISC_ID);
-            final List<Id> artistIds = metadata.getAll(Metadata.MBZ_ARTIST_ID);
+            storeMetadataItems(mediaItem, trackUri);
+            
+            final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
 
-            log.debug(">>>> trackId:  {}",         trackId);
-    //        log.info(">>>> workId:   {}", workId);
-    //        log.info(">>>> discId:   {}", discId);
-            log.debug(">>>> artistId: {}",         artistIds);
-
-            if (trackId.isPresent())
+            log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
+//            log.debug(">>>> artistId: {}",         artistIds);
+            
+            if (musicBrainzTrackId.isPresent())
               {
-                downloadRecordingMetadata(trackId.get());
+                storeMusicBrainzMetadata(mediaItem);
               }
+            else
+              {
+                addStatement(trackUri, DC.TITLE, factory.createLiteral(metadata.get(Metadata.TITLE).get()));
+                addStatement(trackUri, BM.MISSED_METADATA, factory.createLiteral(new Date()));
+              } 
           }
         catch (JAXBException | MalformedURLException e) 
           {
@@ -199,10 +232,25 @@ public class DefaultMediaScanner
           {
             if (e.getMessage().contains("503")) // throttling error
               {
-                log.warn("Resubmitting {} ... - {}", mediaItem, e.toString());
-                pendingMediaItems.add(mediaItem);
+                log.warn("Cannot retrieve MusicBrainz metadata {} ... - {}", mediaItem, e.toString());
+                addStatement(trackUri, BM.FAILED_METADATA, factory.createLiteral(new Date()));
+//                log.warn("Resubmitting {} ... - {}", mediaItem, e.toString());
+//                pendingMediaItems.add(mediaItem);
               }
           } 
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void processArtist (final @Nonnull Id artistId, final @Nonnull Artist artist)
+      {
+        log.info("processArtist({}, {})", artistId, artist);
+        final Resource artistUri = createUri("http://musicmusicbrainz.org/ws/2/artist/" + artistId);
+        addStatement(artistUri, RDF.TYPE, MO.MUSIC_ARTIST);
+        addStatement(artistUri, FOAF.NAME, factory.createLiteral(artist.getName()));
+        addStatement(artistUri, MO.MUSICBRAINZ_GUID, artistUri);
       }
     
     /*******************************************************************************************************************
@@ -215,11 +263,22 @@ public class DefaultMediaScanner
      * @throws  InterruptedException    if the operation is interrupted
      *
      ******************************************************************************************************************/
-    private void downloadRecordingMetadata (final @Nonnull Id recordingId)
+    private void storeMusicBrainzMetadata (final @Nonnull MediaItem mediaItem)
       throws IOException, JAXBException, InterruptedException 
       { 
-        log.info("downloadRecordingMetadata({})", recordingId);
-        final String entityId = recordingId.stringValue().replaceAll("^mbz:", "");
+        log.info("downloadRecordingMetadata({})", mediaItem);
+        
+        final Metadata metadata = mediaItem.getMetadata();
+        final Optional<Id> trackId = metadata.get(Metadata.MBZ_TRACK_ID);
+        final String entityId = trackId.get().stringValue().replaceAll("^mbz:", "");
+        final URI trackUri = createUri("http://musicmusicbrainz.org/ws/2/recording/" + entityId);
+        addStatement(trackUri, MO.MUSICBRAINZ_GUID, trackUri);
+        
+        if (true)
+          {
+            throw new IOException("fake"); // FIXME  
+          }
+        
         final org.musicbrainz.ns.mmd_2.Metadata m = mbApi.getMusicBrainzEntity("recording", entityId, "?inc=artists");
         final Recording recording = m.getRecording();
         final String title = recording.getTitle();
@@ -228,8 +287,59 @@ public class DefaultMediaScanner
         final String fullCredits = nameCredits.stream()
                                               .map(c -> c.getArtist().getName() + emptyWhenNull(c.getJoinphrase()))
                                               .collect(joining());
-        log.info("TITLE: {} - {}", title, fullCredits);
         nameCredits.forEach(nameCredit -> addArtist(nameCredit.getArtist()));
+
+        addStatement(trackUri, DC.TITLE, factory.createLiteral(title));
+        addStatement(trackUri, BM.FULL_CREDITS, factory.createLiteral(fullCredits));
+        
+        // TODO: MO.CHANNELS
+        // TODO: MO.COMPOSER
+        // TODO: MO.CONDUCTOR
+        // TODO: MO.ENCODING "MP3 CBR @ 128kbps", "OGG @ 160kbps", "FLAC",
+        // TODO: MO.GENRE
+        // TODO: MO.INTERPRETER
+        // TODO: MO.LABEL
+        // TODO: MO.MEDIA_TYPE (MIME)
+        // TODO: MO.OPUS
+        // TOOD: MO.RECORD_NUMBER
+        // TODO: MO.SINGER
+        
+        nameCredits.forEach(credit -> addStatement(trackUri, FOAF.MAKER, createUri(credit.getArtist().getId())));
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    private void storeMetadataItems (final @Nonnull MediaItem mediaItem, final @Nonnull URI mediaItemUri)
+      {
+        addStatement(mediaItemUri, RDF.TYPE, MO.TRACK);
+        addStatement(mediaItemUri, MO.AUDIOFILE, factory.createLiteral(mediaItem.getRelativePath().toString()));
+
+        final Metadata metadata = mediaItem.getMetadata();
+        final Optional<Integer> trackNumber = metadata.get(Metadata.TRACK);
+        final Optional<Integer> sampleRate = metadata.get(Metadata.SAMPLE_RATE);
+        final Optional<Integer> bitRate = metadata.get(Metadata.BIT_RATE);
+        final Optional<Duration> duration = metadata.get(Metadata.DURATION);
+
+        if (sampleRate.isPresent())
+          {
+            addStatement(mediaItemUri, MO.SAMPLE_RATE, factory.createLiteral(sampleRate.get()));
+          }
+
+        if (sampleRate.isPresent() && bitRate.isPresent())
+          {
+            addStatement(mediaItemUri, MO.BITS_PER_SAMPLE, factory.createLiteral(sampleRate.get() * bitRate.get()));
+          }
+
+        if (trackNumber.isPresent())
+          {
+            addStatement(mediaItemUri, MO.TRACK_NUMBER, factory.createLiteral(trackNumber.get()));
+          }
+
+        if (duration.isPresent())
+          {
+            addStatement(mediaItemUri, MO.DURATION, factory.createLiteral(duration.get().toMillis()));
+          }
       }
     
     /*******************************************************************************************************************
@@ -241,17 +351,90 @@ public class DefaultMediaScanner
       {
         synchronized (seenArtistIds)
           {
-            final Id artistId = new Id(artist.getId());
+            final Id artistId = new Id("http://musicbrainz.org/artist/" + artist.getId());
             
             if (!seenArtistIds.contains(artistId))
               {
-                // FIXME: put Artist in a map, so you have all the info
                 seenArtistIds.add(artistId);
-                pendingArtistsId.add(artistId);
+                pendingArtists.putIfAbsent(artistId, artist);
               }
           }
       }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private Id createMd5Id (final @Nonnull Path path)
+      {
+        try 
+          {
+            final File file = path.toFile();
+            final String algorithm = "MD5";
+            final @Cleanup RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
+            final MappedByteBuffer byteBuffer = randomAccessFile.getChannel().map(MapMode.READ_ONLY, 0, file.length());
+            final MessageDigest digestComputer = MessageDigest.getInstance(algorithm);
+            digestComputer.update(byteBuffer);
+            randomAccessFile.close();
+            return new Id("md5id:" + toString(digestComputer.digest()));
+          } 
+        catch (NoSuchAlgorithmException | IOException e) 
+          {
+            throw new RuntimeException(e);
+          }
+      }
 
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void addStatement (final @Nonnull Resource subject, 
+                               final @Nonnull URI predicate, 
+                               final @Nonnull Value object) 
+      {
+        model.add(factory.createStatement(subject, predicate, object));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static String toString (final @Nonnull byte[] bytes)
+      {
+        final StringBuilder builder = new StringBuilder();
+
+        for (final byte b : bytes)
+          {
+            final int value = b & 0xff;
+            builder.append(Integer.toHexString(value >>> 4)).append(Integer.toHexString(value & 0x0f));
+          }
+
+        return builder.toString();
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private URI createUri (final @Nonnull Id id)
+      {
+        return createUri(id.stringValue());
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private URI createUri (final @Nonnull String id)
+      {
+        return factory.createURI(id);
+      }
+    
     /*******************************************************************************************************************
      *
      *
