@@ -215,7 +215,8 @@ public class DefaultMediaScanner
           {
             addStatement(mediaItemUri, RDF.TYPE, MO.TRACK);
             addStatement(mediaItemUri, MO.AUDIOFILE, literalFor(mediaItem.getRelativePath()));
-            addStatement(mediaItemUri, BM.LATEST_INDEXING_TIME, literalFor(mediaItem.getPath().toFile().lastModified()));
+            addStatement(mediaItemUri, BM.LATEST_INDEXING_TIME, 
+                    literalFor(new Date(mediaItem.getPath().toFile().lastModified())));
 
             importMediaItemMetadata(mediaItem, mediaItemUri);
             
@@ -340,7 +341,7 @@ public class DefaultMediaScanner
                                               .collect(joining());
         nameCredits.forEach(nameCredit -> addArtist(nameCredit.getArtist()));
 
-        addStatement(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(System.currentTimeMillis()));
+        addStatement(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(new Date()));
         addStatement(mediaItemUri, DC.TITLE, factory.createLiteral(title));
         addStatement(mediaItemUri, BM.FULL_CREDITS, factory.createLiteral(fullCredits));
         
@@ -389,7 +390,25 @@ public class DefaultMediaScanner
             
             addStatement(artistUri, FOAF.MAKER, mediaItemUri);
           }
+        
+        final MediaFolder parent = mediaItem.getParent();
+        final String cdTitle = parent.getPath().toFile().getName();
+        final URI cdUri = uriFor(createMd5Id("CD:" + cdTitle));
+                
+        // FIXME: concurrent
+        if (!seenCdNames.contains(cdTitle))
+          {
+            seenCdNames.add(cdTitle);
+            addStatement(cdUri, RDF.TYPE, MO.RECORD);
+            addStatement(cdUri, MO.MEDIA_TYPE, MO.CD);
+            addStatement(cdUri, DC.TITLE, literalFor(cdTitle));
+            addStatement(cdUri, MO.TRACK_COUNT, literalFor(parent.findChildren().count()));
+          }
+        
+        addStatement(cdUri, MO._TRACK, mediaItemUri);
       }
+    
+    private Set<String> seenCdNames = new HashSet<>();
     
     /*******************************************************************************************************************
      *
@@ -516,9 +535,19 @@ public class DefaultMediaScanner
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Value literalFor (final long date) 
+    private Value literalFor (final int value) 
       {
-        return factory.createLiteral(new Date(date));
+        return factory.createLiteral(value);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private Value literalFor (final Date date) 
+      {
+        return factory.createLiteral(date);
       }
     
     /*******************************************************************************************************************

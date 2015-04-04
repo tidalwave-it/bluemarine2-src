@@ -50,12 +50,17 @@ public final class MO
     private static final String PREFIX = "http://purl.org/ontology/mo/";
     
     public static final URI AUDIOFILE           = factory.createURI(PREFIX + "AudioFile");
+    public static final URI CD                  = factory.createURI(PREFIX + "CD");
     public static final URI MUSIC_ARTIST        = factory.createURI(PREFIX + "MusicArtist");
+    public static final URI RECORD              = factory.createURI(PREFIX + "Record");
+    public static final URI TRACK               = factory.createURI(PREFIX + "Track");
 
     public static final URI BITS_PER_SAMPLE     = factory.createURI(PREFIX + "bitsPerSample");
     public static final URI DURATION            = factory.createURI(PREFIX + "duration");
+    public static final URI _TRACK              = factory.createURI(PREFIX + "track");
+    public static final URI MEDIA_TYPE          = factory.createURI(PREFIX + "media_type");
     public static final URI MUSICBRAINZ_GUID    = factory.createURI(PREFIX + "musicbrainz_guid");
     public static final URI SAMPLE_RATE         = factory.createURI(PREFIX + "sampleRate");
-    public static final URI TRACK               = factory.createURI(PREFIX + "track");
+    public static final URI TRACK_COUNT         = factory.createURI(PREFIX + "track_count");
     public static final URI TRACK_NUMBER        = factory.createURI(PREFIX + "track_number");
   }
