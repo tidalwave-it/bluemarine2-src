@@ -79,6 +79,7 @@ import it.tidalwave.bluemarine2.vocabulary.MO;
 import lombok.extern.slf4j.Slf4j;
 import lombok.Cleanup;
 import static java.util.stream.Collectors.joining;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *
@@ -106,6 +107,61 @@ public class DefaultMediaScanner
     
     private volatile long latestMessageTime = 0;
     
+    @ToString
+    static class Progress
+      {
+        private volatile int totalFolders;
+        private volatile int scannedFolders;
+        private volatile int totalMediaItems;
+        private volatile int importedMediaItems;
+        private volatile int totalArtists;
+        private volatile int importedArtists;
+        
+        public synchronized void reset()
+          {
+            totalFolders = scannedFolders = totalMediaItems = importedMediaItems = 0;  
+          }
+        
+        // FIXME: move logging out of sync
+        public synchronized void incrementTotalFolders()
+          {
+            totalFolders++;  
+            log.debug("STATS: {}", this);
+          }
+        
+        public synchronized void incrementScannedFolders()
+          {
+            scannedFolders++;  
+            log.debug("STATS: {}", this);
+          }
+        
+        public synchronized void incrementTotalMediaItems()
+          {
+            totalMediaItems++;  
+            log.debug("STATS: {}", this);
+          }
+        
+        public synchronized void incrementImportedMediaItems()
+          {
+            importedMediaItems++;  
+            log.debug("STATS: {}", this);
+          }
+
+        private void incrementTotalArtists() 
+          {
+            totalArtists++;  
+            log.debug("STATS: {}", this);
+          }
+
+        private void incrementImportedArtists()
+          {
+            importedArtists++;  
+            log.debug("STATS: {}", this);
+          }
+      }
+    
+    private final Progress progress = new Progress();
+    
     /*******************************************************************************************************************
      *
      * Processes a folder of {@link MediaItem}s.
@@ -117,6 +173,8 @@ public class DefaultMediaScanner
       {
         log.info("process({})", folder);
         latestMessageTime = System.currentTimeMillis();
+        progress.reset();
+        progress.incrementTotalFolders();
         messageBus.publish(new InternalMediaFolderScanRequest(folder));
       }
     
@@ -127,14 +185,30 @@ public class DefaultMediaScanner
      ******************************************************************************************************************/
     /* VisibleForTesting */ void onInternalMediaFolderScanRequest (final @ListensTo @Nonnull InternalMediaFolderScanRequest request)
       {
-        log.info("onInternalMediaFolderScanRequest({})", request);
-        latestMessageTime = System.currentTimeMillis();
-        
-        request.getFolder().findChildren().stream().forEach(item -> 
+        try
           {
-            messageBus.publish((item instanceof MediaFolder) ? new InternalMediaFolderScanRequest((MediaFolder)item)  
-                                                             : new MediaItemImportRequest((MediaItem)item));
-          });
+            log.info("onInternalMediaFolderScanRequest({})", request);
+            latestMessageTime = System.currentTimeMillis();
+
+            request.getFolder().findChildren().stream().forEach(item -> 
+              {
+                if (item instanceof MediaItem)
+                  {
+                    progress.incrementTotalMediaItems();
+                    messageBus.publish(new MediaItemImportRequest((MediaItem)item));
+                  }
+
+                else if (item instanceof MediaFolder)
+                  {
+                    progress.incrementTotalFolders();
+                    messageBus.publish(new InternalMediaFolderScanRequest((MediaFolder)item));
+                  }
+              });
+          }
+        finally
+          {
+            progress.incrementScannedFolders();
+          }
       }
     
     /*******************************************************************************************************************
@@ -164,17 +238,17 @@ public class DefaultMediaScanner
     /* VisibleForTesting */ void onMediaItemImportRequest (final @ListensTo @Nonnull MediaItemImportRequest request) 
       throws InterruptedException
       {
-        log.info("onMediaItemImportRequest({})", request);
-        latestMessageTime = System.currentTimeMillis();
-        
         try
           {
+            log.info("onMediaItemImportRequest({})", request);
+            latestMessageTime = System.currentTimeMillis();
             semaphore.acquire();
             importMediaItem(request.getMediaItem());
           }
         finally 
           {
             semaphore.release();
+            progress.incrementImportedMediaItems();
           }
       }
     
@@ -185,18 +259,25 @@ public class DefaultMediaScanner
     /* VisibleForTesting */ void onArtistImportRequest (final @ListensTo @Nonnull ArtistImportRequest request) 
       throws InterruptedException
       {
-        log.info("onArtistImportRequest({})", request);
-        latestMessageTime = System.currentTimeMillis();
-        final Id artistId = request.getArtistId();
-        final Resource artistUri = uriFor("http://musicmusicbrainz.org/ws/2/artist/" + artistId);
-        final Artist artist = request.getArtist();
-        final Value nameLiteral = literalFor(artist.getName());
-        messageBus.publish(AddStatementsRequest.build()
-                                           .with(artistUri, RDF.TYPE, MO.MUSIC_ARTIST)
-                                           .with(artistUri, RDFS.LABEL, nameLiteral)
-                                           .with(artistUri, FOAF.NAME, nameLiteral)
-                                           .with(artistUri, MO.MUSICBRAINZ_GUID, literalFor(artistId.stringValue()))
-                                           .create());
+        try
+          {
+            log.info("onArtistImportRequest({})", request);
+            latestMessageTime = System.currentTimeMillis();
+            final Id artistId = request.getArtistId();
+            final Resource artistUri = uriFor("http://musicmusicbrainz.org/ws/2/artist/" + artistId);
+            final Artist artist = request.getArtist();
+            final Value nameLiteral = literalFor(artist.getName());
+            messageBus.publish(AddStatementsRequest.build()
+                                               .with(artistUri, RDF.TYPE, MO.MUSIC_ARTIST)
+                                               .with(artistUri, RDFS.LABEL, nameLiteral)
+                                               .with(artistUri, FOAF.NAME, nameLiteral)
+                                               .with(artistUri, MO.MUSICBRAINZ_GUID, literalFor(artistId.stringValue()))
+                                               .create());
+          }
+        finally 
+          {
+            progress.incrementImportedArtists();
+          }
       }
     
     /*******************************************************************************************************************
@@ -211,7 +292,6 @@ public class DefaultMediaScanner
       throws InterruptedException
       { 
         log.debug("importMediaItem({})", mediaItem);
-        
         final Id md5 = createMd5Id(mediaItem.getPath());
         URI mediaItemUri = uriFor(md5);
         
@@ -432,6 +512,7 @@ public class DefaultMediaScanner
             if (!seenArtistIds.contains(artistId))
               {
                 seenArtistIds.add(artistId);
+                progress.incrementTotalArtists();
                 messageBus.publish(new ArtistImportRequest(artistId, artist));
               }
           }
