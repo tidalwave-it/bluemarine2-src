@@ -39,7 +39,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.concurrent.Semaphore;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.io.IOException;
@@ -105,8 +104,6 @@ public class DefaultMediaScanner
     @Inject
     private InstantProvider timestampProvider;
 
-    private final Semaphore semaphore = new Semaphore(1);
-    
     @ToString
     class Progress
       {
@@ -233,12 +230,10 @@ public class DefaultMediaScanner
         try
           {
             log.info("onMediaItemImportRequest({})", request);
-            semaphore.acquire();
             importMediaItem(request.getMediaItem());
           }
         finally 
           {
-            semaphore.release();
             progress.incrementImportedMediaItems();
           }
       }
