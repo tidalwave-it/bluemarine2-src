@@ -39,13 +39,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.io.IOException;
-import java.io.File;
-import java.io.RandomAccessFile;
-import java.nio.MappedByteBuffer;
-import java.nio.channels.FileChannel.MapMode;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.net.MalformedURLException;
@@ -78,7 +72,6 @@ import it.tidalwave.bluemarine2.vocabulary.MO;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
 import it.tidalwave.bluemarine2.musicbrainz.impl.DefaultMusicBrainzApi;
 import lombok.extern.slf4j.Slf4j;
-import lombok.Cleanup;
 import lombok.ToString;
 import static java.util.stream.Collectors.joining;
 
@@ -103,6 +96,9 @@ public class DefaultMediaScanner
     
     @Inject
     private InstantProvider timestampProvider;
+    
+    // FIXME: inject
+    private Md5IdCreator md5IdCreator;
 
     @ToString
     class Progress
@@ -277,7 +273,7 @@ public class DefaultMediaScanner
       throws InterruptedException
       { 
         log.debug("importMediaItem({})", mediaItem);
-        final Id md5 = createMd5Id(mediaItem.getPath());
+        final Id md5 = md5IdCreator.createMd5Id(mediaItem.getPath());
         URI mediaItemUri = uriFor(md5);
         
         try 
@@ -454,7 +450,7 @@ public class DefaultMediaScanner
         
         if (artist.isPresent())
           {
-            final Id artistId = createMd5Id("ARTIST:" + artist.get());
+            final Id artistId = md5IdCreator.createMd5Id("ARTIST:" + artist.get());
             final URI artistUri = uriFor(artistId);
             
             // FIXME: concurrent access
@@ -470,7 +466,7 @@ public class DefaultMediaScanner
         
         final MediaFolder parent = mediaItem.getParent();
         final String cdTitle = parent.getPath().toFile().getName();
-        final URI cdUri = uriFor(createMd5Id("CD:" + cdTitle));
+        final URI cdUri = uriFor(md5IdCreator.createMd5Id("CD:" + cdTitle));
                 
         // FIXME: concurrent
         if (!seenCdNames.contains(cdTitle))
@@ -505,69 +501,6 @@ public class DefaultMediaScanner
                 messageBus.publish(new ArtistImportRequest(artistId, artist));
               }
           }
-      }
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private Id createMd5Id (final @Nonnull Path path)
-      {
-        try 
-          {
-            final File file = path.toFile();
-            final String algorithm = "MD5";
-            final @Cleanup RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
-            final MappedByteBuffer byteBuffer = randomAccessFile.getChannel().map(MapMode.READ_ONLY, 0, file.length());
-            final MessageDigest digestComputer = MessageDigest.getInstance(algorithm);
-            digestComputer.update(byteBuffer);
-            randomAccessFile.close();
-            return new Id("md5id:" + toString(digestComputer.digest()));
-          } 
-        catch (NoSuchAlgorithmException | IOException e) 
-          {
-            throw new RuntimeException(e);
-          }
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private Id createMd5Id (final @Nonnull String string)
-      {
-        try 
-          {
-            final String algorithm = "MD5";
-            final MessageDigest digestComputer = MessageDigest.getInstance(algorithm);
-            digestComputer.update(string.getBytes());
-            return new Id("md5id:" + toString(digestComputer.digest()));
-          } 
-        catch (NoSuchAlgorithmException e) 
-          {
-            throw new RuntimeException(e);
-          }
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private static String toString (final @Nonnull byte[] bytes)
-      {
-        final StringBuilder builder = new StringBuilder();
-
-        for (final byte b : bytes)
-          {
-            final int value = b & 0xff;
-            builder.append(Integer.toHexString(value >>> 4)).append(Integer.toHexString(value & 0x0f));
-          }
-
-        return builder.toString();
       }
     
     /*******************************************************************************************************************
