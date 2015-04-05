@@ -40,7 +40,7 @@ import java.time.Instant;
 public class DefaultInstantProvider implements InstantProvider
   {
     @Override @Nonnull
-    public Instant getTimestamp() 
+    public Instant getInstant() 
       {
         return Instant.now();
       }

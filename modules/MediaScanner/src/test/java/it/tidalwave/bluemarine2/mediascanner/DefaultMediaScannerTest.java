@@ -70,7 +70,7 @@ public class DefaultMediaScannerTest
         final String s = "classpath:/META-INF/DefaultMediaScannerTestBeans.xml";
         context = new ClassPathXmlApplicationContext(s);
         
-        context.getBean(MockInstantProvider.class).setTimestamp(Instant.ofEpochSecond(1428232317L));
+        context.getBean(MockInstantProvider.class).setInstant(Instant.ofEpochSecond(1428232317L));
         messageBus = context.getBean(MessageBus.class);
         underTest = context.getBean(DefaultMediaScanner.class);
         

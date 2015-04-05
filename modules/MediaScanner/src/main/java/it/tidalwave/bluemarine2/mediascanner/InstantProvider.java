@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.mediascanner;
 
 import javax.annotation.Nonnull;
 import java.time.Instant;
+import java.util.function.Supplier;
 
 /***********************************************************************************************************************
  *
@@ -37,8 +38,14 @@ import java.time.Instant;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface InstantProvider 
+public interface InstantProvider extends Supplier<Instant>
   {
     @Nonnull
-    public Instant getTimestamp();
+    public Instant getInstant();
+    
+    @Override @Nonnull
+    default public Instant get()
+      {
+        return getInstant();
+      }
   }

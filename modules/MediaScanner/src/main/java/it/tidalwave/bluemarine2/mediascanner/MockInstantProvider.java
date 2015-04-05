@@ -41,5 +41,5 @@ import lombok.Setter;
 public class MockInstantProvider implements InstantProvider
   {
     @Getter @Setter
-    private Instant timestamp = Instant.ofEpochMilli(0);
+    private Instant instant = Instant.ofEpochMilli(0);
   }

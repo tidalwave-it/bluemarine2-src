@@ -225,10 +225,10 @@ public class DefaultMediaScanner
                 addStatement(mediaItemUri, BM.MD5, literalFor(md5.stringValue().replaceAll("^md5id:", "")));
               }
             
-            final Instant mt = Files.getLastModifiedTime(mediaItem.getPath()).toInstant();
+            final Instant lastModifiedTime = Files.getLastModifiedTime(mediaItem.getPath()).toInstant();
             addStatement(mediaItemUri, RDF.TYPE, MO.TRACK);
             addStatement(mediaItemUri, MO.AUDIOFILE, literalFor(mediaItem.getRelativePath()));
-            addStatement(mediaItemUri, BM.LATEST_INDEXING_TIME, literalFor(mt));
+            addStatement(mediaItemUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime));
 
             importMediaItemMetadata(mediaItem, mediaItemUri);
             
@@ -251,7 +251,7 @@ public class DefaultMediaScanner
           {
             log.warn("Cannot retrieve MusicBrainz metadata {} ... - {}", mediaItem, e.toString());
             importFallbackMetadata(mediaItem, mediaItemUri);
-            addStatement(mediaItemUri, BM.FAILED_MB_METADATA, literalFor(timestampProvider.getTimestamp()));
+            addStatement(mediaItemUri, BM.FAILED_MB_METADATA, literalFor(timestampProvider.getInstant()));
 
             if (e.getMessage().contains("503")) // throttling error
               {
@@ -352,7 +352,7 @@ public class DefaultMediaScanner
         nameCredits.forEach(nameCredit -> addArtist(nameCredit.getArtist()));
 
         final Literal createLiteral = factory.createLiteral(title);
-        addStatement(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(timestampProvider.getTimestamp()));
+        addStatement(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(timestampProvider.getInstant()));
         addStatement(mediaItemUri, DC.TITLE, createLiteral);
         addStatement(mediaItemUri, RDFS.LABEL, createLiteral);
         addStatement(mediaItemUri, BM.FULL_CREDITS, factory.createLiteral(fullCredits));
