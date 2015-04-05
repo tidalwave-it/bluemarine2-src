@@ -46,10 +46,11 @@ import org.openrdf.rio.n3.N3Writer;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.persistence.AddTripleRequest;
+import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
 import it.tidalwave.bluemarine2.persistence.DumpCompleted;
 import it.tidalwave.bluemarine2.persistence.DumpRequest;
 import lombok.extern.slf4j.Slf4j;
+import org.openide.util.Exceptions;
 
 /***********************************************************************************************************************
  *
@@ -81,15 +82,23 @@ public class DefaultPersistence
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onAddTripleRequest (final @ListensTo @Nonnull AddTripleRequest request) 
+    /* VisibleForTesting */ void onAddStatementsRequest (final @ListensTo @Nonnull AddStatementsRequest request) 
       throws RepositoryException
       {
-        log.info("onAddTripleRequest({})", request);
+        log.info("onAddStatementsRequest({})", request);
         final long baseTime = System.nanoTime();
         final RepositoryConnection connection = repository.getConnection();
-        connection.add(connection.getValueFactory().createStatement(request.getSubject(), 
-                                                                    request.getPredicate(), 
-                                                                    request.getObject()));
+        request.getStatements().stream().forEach(s -> 
+          {
+            try 
+              {
+                connection.add(s);
+              } 
+            catch (RepositoryException e) 
+              {
+                throw new RuntimeException(e); // FIXME
+              }
+          });
         connection.commit();
         connection.close();
         log.debug(">>>> done in {} ns", System.nanoTime() - baseTime);

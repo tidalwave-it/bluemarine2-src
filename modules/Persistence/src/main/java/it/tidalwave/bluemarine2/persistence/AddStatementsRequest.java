@@ -30,9 +30,17 @@ package it.tidalwave.bluemarine2.persistence;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import org.openrdf.model.Resource;
+import org.openrdf.model.Statement;
 import org.openrdf.model.URI;
 import org.openrdf.model.Value;
+import org.openrdf.model.ValueFactory;
+import org.openrdf.model.impl.ValueFactoryImpl;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -45,15 +53,44 @@ import lombok.ToString;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @RequiredArgsConstructor @Getter @ToString
-public class AddTripleRequest 
+@Immutable @RequiredArgsConstructor(access = AccessLevel.PRIVATE) @Getter @ToString
+public class AddStatementsRequest 
   {
-    @Nonnull 
-    private final Resource subject; 
-            
-    @Nonnull 
-    private final URI predicate;
+    @Nonnull
+    private final List<Statement> statements;
     
-    @Nonnull 
-    private final Value object; 
+    public static class Builder
+      {
+        private final List<Statement> statements = new ArrayList<>();
+        
+        private final ValueFactory factory = ValueFactoryImpl.getInstance();
+
+        @Nonnull
+        public Builder with (final @Nonnull Resource subject, 
+                             final @Nonnull URI predicate,
+                             final @Nonnull Value object) 
+          {
+            statements.add(factory.createStatement(subject, predicate, object));
+            return this;
+          }
+        
+        @Nonnull
+        public AddStatementsRequest create()
+          {
+            return new AddStatementsRequest(Collections.unmodifiableList(statements));
+          }
+      }
+    
+    public AddStatementsRequest (final @Nonnull Resource subject, 
+                             final @Nonnull URI predicate,
+                             final @Nonnull Value object) 
+      {
+        this(Arrays.asList(ValueFactoryImpl.getInstance().createStatement(subject, predicate, object)));
+      }
+     
+    @Nonnull
+    public static Builder build() 
+      {
+        return new Builder();
+      }
   }

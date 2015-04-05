@@ -73,7 +73,7 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.persistence.AddTripleRequest;
+import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
 import it.tidalwave.bluemarine2.vocabulary.BM;
 import it.tidalwave.bluemarine2.vocabulary.MO;
 import lombok.extern.slf4j.Slf4j;
@@ -198,10 +198,12 @@ public class DefaultMediaScanner
         final Resource artistUri = uriFor("http://musicmusicbrainz.org/ws/2/artist/" + artistId);
         final Artist artist = request.getArtist();
         final Value nameLiteral = literalFor(artist.getName());
-        addStatement(artistUri, RDF.TYPE, MO.MUSIC_ARTIST);
-        addStatement(artistUri, RDFS.LABEL, nameLiteral);
-        addStatement(artistUri, FOAF.NAME, nameLiteral);
-        addStatement(artistUri, MO.MUSICBRAINZ_GUID, literalFor(artistId.stringValue()));        
+        messageBus.publish(AddStatementsRequest.build()
+                                           .with(artistUri, RDF.TYPE, MO.MUSIC_ARTIST)
+                                           .with(artistUri, RDFS.LABEL, nameLiteral)
+                                           .with(artistUri, FOAF.NAME, nameLiteral)
+                                           .with(artistUri, MO.MUSICBRAINZ_GUID, literalFor(artistId.stringValue()))
+                                           .create());
       }
     
     /*******************************************************************************************************************
@@ -230,14 +232,15 @@ public class DefaultMediaScanner
               {
                 mediaItemUri = uriFor("http://dbtune.org/musicbrainz/resource/track/" + 
                         musicBrainzTrackId.get().stringValue().replaceAll("^mbz:", ""));
-                addStatement(mediaItemUri, BM.MD5, literalFor(md5.stringValue().replaceAll("^md5id:", "")));
+                messageBus.publish(new AddStatementsRequest(mediaItemUri, BM.MD5, literalFor(md5.stringValue().replaceAll("^md5id:", ""))));
               }
             
             final Instant lastModifiedTime = Files.getLastModifiedTime(mediaItem.getPath()).toInstant();
-            addStatement(mediaItemUri, RDF.TYPE, MO.TRACK);
-            addStatement(mediaItemUri, MO.AUDIOFILE, literalFor(mediaItem.getRelativePath()));
-            addStatement(mediaItemUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime));
-
+            messageBus.publish(AddStatementsRequest.build()
+                                               .with(mediaItemUri, RDF.TYPE, MO.TRACK)
+                                               .with(mediaItemUri, MO.AUDIOFILE, literalFor(mediaItem.getRelativePath()))
+                                               .with(mediaItemUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
+                                               .create());
             importMediaItemMetadata(mediaItem, mediaItemUri);
             
 //            log.debug(">>>> artistId: {}",         artistIds);
@@ -259,7 +262,7 @@ public class DefaultMediaScanner
           {
             log.warn("Cannot retrieve MusicBrainz metadata {} ... - {}", mediaItem, e.toString());
             importFallbackMetadata(mediaItem, mediaItemUri);
-            addStatement(mediaItemUri, BM.FAILED_MB_METADATA, literalFor(timestampProvider.getInstant()));
+            messageBus.publish(new AddStatementsRequest(mediaItemUri, BM.FAILED_MB_METADATA, literalFor(timestampProvider.getInstant())));
 
             if (e.getMessage().contains("503")) // throttling error
               {
@@ -287,25 +290,29 @@ public class DefaultMediaScanner
         final Optional<Integer> bitRate = metadata.get(Metadata.BIT_RATE);
         final Optional<Duration> duration = metadata.get(Metadata.DURATION);
 
+        AddStatementsRequest.Builder builder = AddStatementsRequest.build();
+        
         if (sampleRate.isPresent())
           {
-            addStatement(mediaItemUri, MO.SAMPLE_RATE, factory.createLiteral(sampleRate.get()));
+            builder = builder.with(mediaItemUri, MO.SAMPLE_RATE, factory.createLiteral(sampleRate.get()));
           }
 
         if (bitRate.isPresent())
           {
-            addStatement(mediaItemUri, MO.BITS_PER_SAMPLE, factory.createLiteral(bitRate.get()));
+            builder = builder.with(mediaItemUri, MO.BITS_PER_SAMPLE, factory.createLiteral(bitRate.get()));
           }
 
         if (trackNumber.isPresent())
           {
-            addStatement(mediaItemUri, MO.TRACK_NUMBER, factory.createLiteral(trackNumber.get()));
+            builder = builder.with(mediaItemUri, MO.TRACK_NUMBER, factory.createLiteral(trackNumber.get()));
           }
 
         if (duration.isPresent())
           {
-            addStatement(mediaItemUri, MO.DURATION, factory.createLiteral((float)duration.get().toMillis()));
+            builder = builder.with(mediaItemUri, MO.DURATION, factory.createLiteral((float)duration.get().toMillis()));
           }
+        
+        messageBus.publish(builder.create());
       }
     
     /*******************************************************************************************************************
@@ -327,7 +334,7 @@ public class DefaultMediaScanner
         
         final Metadata metadata = mediaItem.getMetadata();
         final String mbGuid = metadata.get(Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
-        addStatement(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid));
+        messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid)));
         
         if (true)
           {
@@ -345,11 +352,12 @@ public class DefaultMediaScanner
         nameCredits.forEach(nameCredit -> addArtist(nameCredit.getArtist()));
 
         final Literal createLiteral = factory.createLiteral(title);
-        addStatement(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(timestampProvider.getInstant()));
-        addStatement(mediaItemUri, DC.TITLE, createLiteral);
-        addStatement(mediaItemUri, RDFS.LABEL, createLiteral);
-        addStatement(mediaItemUri, BM.FULL_CREDITS, factory.createLiteral(fullCredits));
-        
+        messageBus.publish(AddStatementsRequest.build()
+                                           .with(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(timestampProvider.getInstant()))
+                                           .with(mediaItemUri, DC.TITLE, createLiteral)
+                                           .with(mediaItemUri, RDFS.LABEL, createLiteral)
+                                           .with(mediaItemUri, BM.FULL_CREDITS, factory.createLiteral(fullCredits))
+                                           .create());
         // TODO: MO.CHANNELS
         // TODO: MO.COMPOSER
         // TODO: MO.CONDUCTOR
@@ -362,7 +370,7 @@ public class DefaultMediaScanner
         // TOOD: MO.RECORD_NUMBER
         // TODO: MO.SINGER
         
-        nameCredits.forEach(credit -> addStatement(mediaItemUri, FOAF.MAKER, uriFor(credit.getArtist().getId())));
+// FIXME       nameCredits.forEach(credit -> addStatement(mediaItemUri, FOAF.MAKER, uriFor(credit.getArtist().getId())));
       }
 
     /*******************************************************************************************************************
@@ -374,11 +382,11 @@ public class DefaultMediaScanner
       {
         log.info("importFallbackMetadata({}, {})", mediaItem, mediaItemUri);
         
-        final Metadata metadata = mediaItem.getMetadata();
-        
+        AddStatementsRequest.Builder builder = AddStatementsRequest.build();
+        final Metadata metadata = mediaItem.getMetadata();        
         final Value titleLiteral = literalFor(metadata.get(Metadata.TITLE).get());
-        addStatement(mediaItemUri, DC.TITLE, titleLiteral);
-        addStatement(mediaItemUri, RDFS.LABEL, titleLiteral);
+        builder = builder.with(mediaItemUri, DC.TITLE, titleLiteral)
+                         .with(mediaItemUri, RDFS.LABEL, titleLiteral);
         
         final Optional<String> artist = metadata.get(Metadata.ARTIST);
         
@@ -391,11 +399,11 @@ public class DefaultMediaScanner
             if (!seenArtistIds.contains(artistId))
               {
                 seenArtistIds.add(artistId);
-                addStatement(artistUri, RDF.TYPE, MO.MUSIC_ARTIST);
-                addStatement(artistUri, FOAF.NAME, literalFor(artist.get()));
+                builder = builder.with(artistUri, RDF.TYPE, MO.MUSIC_ARTIST)
+                                 .with(artistUri, FOAF.NAME, literalFor(artist.get()));
               }
             
-            addStatement(artistUri, FOAF.MAKER, mediaItemUri);
+            builder = builder.with(artistUri, FOAF.MAKER, mediaItemUri);
           }
         
         final MediaFolder parent = mediaItem.getParent();
@@ -406,13 +414,13 @@ public class DefaultMediaScanner
         if (!seenCdNames.contains(cdTitle))
           {
             seenCdNames.add(cdTitle);
-            addStatement(cdUri, RDF.TYPE, MO.RECORD);
-            addStatement(cdUri, MO.MEDIA_TYPE, MO.CD);
-            addStatement(cdUri, DC.TITLE, literalFor(cdTitle));
-            addStatement(cdUri, MO.TRACK_COUNT, literalFor(parent.findChildren().count()));
+            builder = builder.with(cdUri, RDF.TYPE, MO.RECORD)
+                             .with(cdUri, MO.MEDIA_TYPE, MO.CD)
+                             .with(cdUri, DC.TITLE, literalFor(cdTitle))
+                             .with(cdUri, MO.TRACK_COUNT, literalFor(parent.findChildren().count()));
           }
         
-        addStatement(cdUri, MO._TRACK, mediaItemUri);
+        messageBus.publish(builder.with(cdUri, MO._TRACK, mediaItemUri).create());
       }
     
     private Set<String> seenCdNames = new HashSet<>();
@@ -478,17 +486,6 @@ public class DefaultMediaScanner
           {
             throw new RuntimeException(e);
           }
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private void addStatement (final @Nonnull Resource subject, 
-                               final @Nonnull URI predicate, 
-                               final @Nonnull Value object) 
-      {
-        messageBus.publish(new AddTripleRequest(subject, predicate, object));
       }
 
     /*******************************************************************************************************************
