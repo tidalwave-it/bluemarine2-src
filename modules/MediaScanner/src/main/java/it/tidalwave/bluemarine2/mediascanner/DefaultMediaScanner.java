@@ -74,6 +74,8 @@ import it.tidalwave.bluemarine2.vocabulary.MO;
 import lombok.extern.slf4j.Slf4j;
 import lombok.Cleanup;
 import static java.util.stream.Collectors.joining;
+import org.openrdf.model.Literal;
+import org.openrdf.model.vocabulary.RDFS;
 
 /***********************************************************************************************************************
  *
@@ -261,8 +263,10 @@ public class DefaultMediaScanner
       {
         log.info("processArtist({}, {})", artistId, artist);
         final Resource artistUri = uriFor("http://musicmusicbrainz.org/ws/2/artist/" + artistId);
+        final Value nameLiteral = literalFor(artist.getName());
         addStatement(artistUri, RDF.TYPE, MO.MUSIC_ARTIST);
-        addStatement(artistUri, FOAF.NAME, literalFor(artist.getName()));
+        addStatement(artistUri, RDFS.LABEL, nameLiteral);
+        addStatement(artistUri, FOAF.NAME, nameLiteral);
         addStatement(artistUri, MO.MUSICBRAINZ, artistUri);
         addStatement(artistUri, MO.MUSICBRAINZ_GUID, literalFor(artistId.stringValue()));
       }
@@ -290,9 +294,9 @@ public class DefaultMediaScanner
             addStatement(mediaItemUri, MO.SAMPLE_RATE, factory.createLiteral(sampleRate.get()));
           }
 
-        if (sampleRate.isPresent() && bitRate.isPresent())
+        if (bitRate.isPresent())
           {
-            addStatement(mediaItemUri, MO.BITS_PER_SAMPLE, factory.createLiteral(sampleRate.get() * bitRate.get()));
+            addStatement(mediaItemUri, MO.BITS_PER_SAMPLE, factory.createLiteral(bitRate.get()));
           }
 
         if (trackNumber.isPresent())
@@ -344,8 +348,10 @@ public class DefaultMediaScanner
                                               .collect(joining());
         nameCredits.forEach(nameCredit -> addArtist(nameCredit.getArtist()));
 
+        final Literal createLiteral = factory.createLiteral(title);
         addStatement(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(new Date()));
-        addStatement(mediaItemUri, DC.TITLE, factory.createLiteral(title));
+        addStatement(mediaItemUri, DC.TITLE, createLiteral);
+        addStatement(mediaItemUri, RDFS.LABEL, createLiteral);
         addStatement(mediaItemUri, BM.FULL_CREDITS, factory.createLiteral(fullCredits));
         
         // TODO: MO.CHANNELS
@@ -374,7 +380,9 @@ public class DefaultMediaScanner
         
         final Metadata metadata = mediaItem.getMetadata();
         
-        addStatement(mediaItemUri, DC.TITLE, literalFor(metadata.get(Metadata.TITLE).get()));
+        final Value titleLiteral = literalFor(metadata.get(Metadata.TITLE).get());
+        addStatement(mediaItemUri, DC.TITLE, titleLiteral);
+        addStatement(mediaItemUri, RDFS.LABEL, titleLiteral);
         
         final Optional<String> artist = metadata.get(Metadata.ARTIST);
         
