@@ -24,5 +24,5 @@ import lombok.ToString;
 public class InternalMediaFolderScanRequest 
   {
     @Nonnull
-    private final MediaFolder mediaFolder;
+    private final MediaFolder folder;
   }

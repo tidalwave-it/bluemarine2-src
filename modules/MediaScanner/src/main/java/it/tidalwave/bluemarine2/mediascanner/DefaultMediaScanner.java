@@ -117,30 +117,23 @@ public class DefaultMediaScanner
       {
         log.info("process({})", folder);
         latestMessageTime = System.currentTimeMillis();
-        scan(folder);
+        messageBus.publish(new InternalMediaFolderScanRequest(folder));
       }
     
     /*******************************************************************************************************************
      *
      * Scans a folder of {@link MediaItem}s.
      * 
-     * @param   folder      the folder
-     *
      ******************************************************************************************************************/
-    public void scan (final @Nonnull MediaFolder folder)
+    /* VisibleForTesting */ void onInternalMediaFolderScanRequest (final @ListensTo @Nonnull InternalMediaFolderScanRequest request)
       {
-        log.info("scan({})", folder);
+        log.info("onInternalMediaFolderScanRequest({})", request);
+        latestMessageTime = System.currentTimeMillis();
         
-        folder.findChildren().stream().forEach(item -> 
+        request.getFolder().findChildren().stream().forEach(item -> 
           {
-            if (item instanceof MediaFolder)
-              {
-                process((MediaFolder)item);  
-              }
-            else
-              {
-                messageBus.publish(new MediaItemImportRequest((MediaItem)item));
-              }
+            messageBus.publish((item instanceof MediaFolder) ? new InternalMediaFolderScanRequest((MediaFolder)item)  
+                                                             : new MediaItemImportRequest((MediaItem)item));
           });
       }
     
