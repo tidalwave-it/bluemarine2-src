@@ -106,7 +106,7 @@ public class DefaultMediaScanner
     private final Semaphore semaphore = new Semaphore(1);
     
     @ToString
-    static class Progress
+    class Progress
       {
         private volatile int totalFolders;
         private volatile int scannedFolders;
@@ -123,31 +123,45 @@ public class DefaultMediaScanner
         public synchronized void incrementTotalFolders()
           {
             totalFolders++;  
+            check();
           }
         
         public synchronized void incrementScannedFolders()
           {
             scannedFolders++;  
+            check();
           }
         
         public synchronized void incrementTotalMediaItems()
           {
             totalMediaItems++;  
+            check();
           }
         
         public synchronized void incrementImportedMediaItems()
           {
             importedMediaItems++;  
+            check();
           }
 
         public synchronized void incrementTotalArtists() 
           {
             totalArtists++;  
+            check();
           }
 
         public synchronized void incrementImportedArtists()
           {
             importedArtists++;  
+            check();
+          }
+
+        private void check()
+          {
+            if (isCompleted())
+              {
+                messageBus.publish(new ScanCompleted());
+              }
           }
         
         public synchronized boolean isCompleted()
@@ -207,26 +221,6 @@ public class DefaultMediaScanner
           }
       }
     
-    /*******************************************************************************************************************
-     *
-     * FIXME: poor approach
-     *
-     ******************************************************************************************************************/
-    public void awaitTermination() 
-      throws InterruptedException
-      {
-        synchronized (progress)
-          {
-            while (!progress.isCompleted())
-              {
-                log.debug("Completed: {}", progress);
-                progress.wait(500);  
-              }
-          }
-        
-        log.info("Completed: {}", progress);
-      }
-        
     /*******************************************************************************************************************
      *
      *

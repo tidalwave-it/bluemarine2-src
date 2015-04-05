@@ -58,9 +58,16 @@ public class DefaultMediaScannerTest
     
     private MessageBus messageBus;
     
+    private CountDownLatch scanCompleted;
+    
     private CountDownLatch dumpCompleted;
     
     // Listeners must be fields or they will garbage-collected
+    // FIXME: this means that the MediaScanner has completed, but it's likely there are still flying messages
+    // due to the Persistence service. Since the next DumpRequest is due to the Persistence service, it's likely
+    // it will be processed after all the flying messages have been consumed. But you can't be sured of it.
+    private final MessageBus.Listener<ScanCompleted> onScanCompleted = (message) -> scanCompleted.countDown();
+    
     private final MessageBus.Listener<DumpCompleted> onDumpCompleted = (message) -> dumpCompleted.countDown();
     
     @BeforeMethod
@@ -73,7 +80,9 @@ public class DefaultMediaScannerTest
         messageBus = context.getBean(MessageBus.class);
         underTest = context.getBean(DefaultMediaScanner.class);
         
+        scanCompleted = new CountDownLatch(1);
         dumpCompleted = new CountDownLatch(1);
+        messageBus.subscribe(ScanCompleted.class, onScanCompleted);
         messageBus.subscribe(DumpCompleted.class, onDumpCompleted);
       }
 
@@ -84,11 +93,10 @@ public class DefaultMediaScannerTest
         final DefaultMediaFileSystem mediaFileSystem = new DefaultMediaFileSystem();
 
         underTest.process(mediaFileSystem.getRoot());
-        underTest.awaitTermination();
+        scanCompleted.await();
         
         final File actualFile = new File("target/test-results/model.n3");
         final File expectedFile = new File("src/test/resources/expected-results/model.n3");
-        
         messageBus.publish(new DumpRequest(actualFile.toPath()));
         dumpCompleted.await();
 
