@@ -26,11 +26,12 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.mediascanner;
+package it.tidalwave.util.test;
 
 import java.time.Instant;
 import lombok.Getter;
 import lombok.Setter;
+import it.tidalwave.util.InstantProvider;
 
 /***********************************************************************************************************************
  *

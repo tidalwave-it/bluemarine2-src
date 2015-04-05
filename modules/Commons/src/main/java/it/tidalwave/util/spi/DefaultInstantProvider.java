@@ -26,10 +26,11 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.mediascanner;
+package it.tidalwave.util.spi;
 
 import javax.annotation.Nonnull;
 import java.time.Instant;
+import it.tidalwave.util.InstantProvider;
 
 /***********************************************************************************************************************
  *

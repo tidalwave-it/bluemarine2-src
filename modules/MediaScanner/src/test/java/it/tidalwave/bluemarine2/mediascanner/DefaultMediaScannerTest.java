@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.mediascanner;
 
 import java.util.concurrent.CountDownLatch;
+import java.time.Instant;
 import java.io.IOException;
 import java.io.File;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -39,9 +40,7 @@ import it.tidalwave.bluemarine2.persistence.DumpRequest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import it.tidalwave.util.test.FileComparisonUtils;
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import it.tidalwave.util.test.MockInstantProvider;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
