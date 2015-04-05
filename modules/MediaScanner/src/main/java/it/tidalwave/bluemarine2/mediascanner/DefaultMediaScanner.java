@@ -105,8 +105,6 @@ public class DefaultMediaScanner
 
     private final Semaphore semaphore = new Semaphore(1);
     
-    private volatile long latestMessageTime = 0;
-    
     @ToString
     static class Progress
       {
@@ -122,41 +120,41 @@ public class DefaultMediaScanner
             totalFolders = scannedFolders = totalMediaItems = importedMediaItems = 0;  
           }
         
-        // FIXME: move logging out of sync
         public synchronized void incrementTotalFolders()
           {
             totalFolders++;  
-            log.debug("STATS: {}", this);
           }
         
         public synchronized void incrementScannedFolders()
           {
             scannedFolders++;  
-            log.debug("STATS: {}", this);
           }
         
         public synchronized void incrementTotalMediaItems()
           {
             totalMediaItems++;  
-            log.debug("STATS: {}", this);
           }
         
         public synchronized void incrementImportedMediaItems()
           {
             importedMediaItems++;  
-            log.debug("STATS: {}", this);
           }
 
-        private void incrementTotalArtists() 
+        public synchronized void incrementTotalArtists() 
           {
             totalArtists++;  
-            log.debug("STATS: {}", this);
           }
 
-        private void incrementImportedArtists()
+        public synchronized void incrementImportedArtists()
           {
             importedArtists++;  
-            log.debug("STATS: {}", this);
+          }
+        
+        public synchronized boolean isCompleted()
+          {
+            return (scannedFolders == totalFolders) 
+                && (importedMediaItems == totalMediaItems)
+                && (importedArtists == totalArtists);
           }
       }
     
@@ -172,7 +170,6 @@ public class DefaultMediaScanner
     public void process (final @Nonnull MediaFolder folder)
       {
         log.info("process({})", folder);
-        latestMessageTime = System.currentTimeMillis();
         progress.reset();
         progress.incrementTotalFolders();
         messageBus.publish(new InternalMediaFolderScanRequest(folder));
@@ -188,7 +185,6 @@ public class DefaultMediaScanner
         try
           {
             log.info("onInternalMediaFolderScanRequest({})", request);
-            latestMessageTime = System.currentTimeMillis();
 
             request.getFolder().findChildren().stream().forEach(item -> 
               {
@@ -216,19 +212,19 @@ public class DefaultMediaScanner
      * FIXME: poor approach
      *
      ******************************************************************************************************************/
-    public synchronized void awaitTermination() 
+    public void awaitTermination() 
       throws InterruptedException
       {
-        long now = System.currentTimeMillis();
-        
-        while (semaphore.hasQueuedThreads() || (now - latestMessageTime < 4000))
+        synchronized (progress)
           {
-            log.debug("Completed: {} {} {}", semaphore.hasQueuedThreads(), new Date(now), new Date(latestMessageTime));
-            wait(500);  
-            now = System.currentTimeMillis();
+            while (!progress.isCompleted())
+              {
+                log.debug("Completed: {}", progress);
+                progress.wait(500);  
+              }
           }
         
-        log.info("Completed: {} {}", new Date(now), new Date(latestMessageTime));
+        log.info("Completed: {}", progress);
       }
         
     /*******************************************************************************************************************
@@ -241,7 +237,6 @@ public class DefaultMediaScanner
         try
           {
             log.info("onMediaItemImportRequest({})", request);
-            latestMessageTime = System.currentTimeMillis();
             semaphore.acquire();
             importMediaItem(request.getMediaItem());
           }
@@ -262,7 +257,6 @@ public class DefaultMediaScanner
         try
           {
             log.info("onArtistImportRequest({})", request);
-            latestMessageTime = System.currentTimeMillis();
             final Id artistId = request.getArtistId();
             final Resource artistUri = uriFor("http://musicmusicbrainz.org/ws/2/artist/" + artistId);
             final Artist artist = request.getArtist();
