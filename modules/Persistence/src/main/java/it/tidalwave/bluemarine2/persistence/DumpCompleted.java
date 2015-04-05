@@ -33,7 +33,6 @@ import javax.annotation.concurrent.Immutable;
 import java.util.UUID;
 import java.nio.file.Path;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
 /***********************************************************************************************************************
@@ -42,12 +41,18 @@ import lombok.ToString;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @RequiredArgsConstructor @Getter @ToString
-public class DumpRequest 
+@Immutable @Getter @ToString
+public class DumpCompleted 
   {
     @Nonnull
     private final Path path;
     
     @Nonnull
-    private final UUID id = UUID.randomUUID(); // FIXME: use euid
+    private final UUID requestId;
+
+    public DumpCompleted (final @Nonnull DumpRequest request)
+      {
+        this.path = request.getPath();
+        this.requestId = request.getId();
+      }
   }

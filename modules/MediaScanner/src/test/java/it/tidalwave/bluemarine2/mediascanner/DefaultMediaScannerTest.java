@@ -28,15 +28,17 @@
  */
 package it.tidalwave.bluemarine2.mediascanner;
 
+import java.util.concurrent.CountDownLatch;
 import java.io.IOException;
 import java.io.File;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem;
-import it.tidalwave.bluemarine2.persistence.DumpRequest;
 import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.util.test.FileComparisonUtils;
+import it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem;
+import it.tidalwave.bluemarine2.persistence.DumpCompleted;
+import it.tidalwave.bluemarine2.persistence.DumpRequest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import it.tidalwave.util.test.FileComparisonUtils;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -54,6 +56,11 @@ public class DefaultMediaScannerTest
     
     private MessageBus messageBus;
     
+    private CountDownLatch dumpCompleted;
+    
+    // Listeners must be fields or they will garbage-collected
+    private final MessageBus.Listener<DumpCompleted> onDumpCompleted = (message) -> dumpCompleted.countDown();
+    
     @BeforeMethod
     private void prepareTest() 
       {
@@ -61,6 +68,9 @@ public class DefaultMediaScannerTest
         context = new ClassPathXmlApplicationContext(s);
         messageBus = context.getBean(MessageBus.class);
         underTest = context.getBean(DefaultMediaScanner.class);
+        
+        dumpCompleted = new CountDownLatch(1);
+        messageBus.subscribe(DumpCompleted.class, onDumpCompleted);
       }
 
     @Test
@@ -75,8 +85,8 @@ public class DefaultMediaScannerTest
         final File expectedFile = new File("src/test/resources/expected-results/model.n3");
         
         messageBus.publish(new DumpRequest(actualFile.toPath()));
-        Thread.sleep(4000); // FIXME
-//        dumpModel(actualFile);
+        dumpCompleted.await();
+
         // FIXME: OOM
         FileComparisonUtils.assertSameContents(expectedFile, actualFile);
       }

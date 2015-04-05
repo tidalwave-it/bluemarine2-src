@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.persistence.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -42,9 +43,11 @@ import org.openrdf.sail.memory.MemoryStore;
 import org.openrdf.rio.RDFHandler;
 import org.openrdf.rio.RDFHandlerException;
 import org.openrdf.rio.n3.N3Writer;
+import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.persistence.AddTripleRequest;
+import it.tidalwave.bluemarine2.persistence.DumpCompleted;
 import it.tidalwave.bluemarine2.persistence.DumpRequest;
 import lombok.extern.slf4j.Slf4j;
 
@@ -58,6 +61,9 @@ import lombok.extern.slf4j.Slf4j;
 public class DefaultPersistence 
   {
     private Repository repository;
+    
+    @Inject
+    private MessageBus messageBus;
     
     /*******************************************************************************************************************
      *
@@ -117,5 +123,7 @@ public class DefaultPersistence
 
         connection.export(writer);
         connection.close();
+        
+        messageBus.publish(new DumpCompleted(request));
       }
   }
