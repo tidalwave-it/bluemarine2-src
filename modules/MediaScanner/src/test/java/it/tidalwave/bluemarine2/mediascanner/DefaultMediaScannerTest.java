@@ -108,6 +108,7 @@ public class DefaultMediaScannerTest
         writer.handleNamespace("dc",   "http://purl.org/dc/elements/1.1/");
         writer.handleNamespace("foaf", "http://xmlns.com/foaf/0.1/");
         writer.handleNamespace("mo",   "http://purl.org/ontology/mo/");
+        writer.handleNamespace("rdfs", "http://www.w3.org/2000/01/rdf-schema#");
         writer.handleNamespace("xs",   "http://www.w3.org/2001/XMLSchema#");
 
         connection.export(writer);

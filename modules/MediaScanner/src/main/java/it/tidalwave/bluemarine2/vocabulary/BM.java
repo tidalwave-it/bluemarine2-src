@@ -51,6 +51,8 @@ public final class BM
     
     public static final URI FULL_CREDITS         = factory.createURI(PREFIX + "fullCredits");
     
+    public static final URI MD5                  = factory.createURI(PREFIX + "md5");
+    
     /** The file timestamp the latest time it was indexed. */
     public static final URI LATEST_INDEXING_TIME = factory.createURI(PREFIX + "latestIndexingTime");
     

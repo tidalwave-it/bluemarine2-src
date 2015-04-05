@@ -211,10 +211,22 @@ public class DefaultMediaScanner
       { 
         log.info("importMediaItem({})", mediaItem);
         
-        final URI mediaItemUri = uriFor(createMd5Id(mediaItem.getPath()));
+        final Id md5 = createMd5Id(mediaItem.getPath());
+        URI mediaItemUri = uriFor(md5);
         
         try 
           {
+            final Metadata metadata = mediaItem.getMetadata();
+            final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
+            log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
+            
+            if (musicBrainzTrackId.isPresent())
+              {
+                mediaItemUri = uriFor("http://dbtune.org/musicbrainz/resource/track/" + 
+                        musicBrainzTrackId.get().stringValue().replaceAll("^mbz:", ""));
+                addStatement(mediaItemUri, BM.MD5, literalFor(md5.stringValue().replaceAll("^md5id:", "")));
+              }
+            
             addStatement(mediaItemUri, RDF.TYPE, MO.TRACK);
             addStatement(mediaItemUri, MO.AUDIOFILE, literalFor(mediaItem.getRelativePath()));
             addStatement(mediaItemUri, BM.LATEST_INDEXING_TIME, 
@@ -222,10 +234,6 @@ public class DefaultMediaScanner
 
             importMediaItemMetadata(mediaItem, mediaItemUri);
             
-            final Metadata metadata = mediaItem.getMetadata();
-            final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
-
-            log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
 //            log.debug(">>>> artistId: {}",         artistIds);
             
             if (musicBrainzTrackId.isPresent())
@@ -267,7 +275,6 @@ public class DefaultMediaScanner
         addStatement(artistUri, RDF.TYPE, MO.MUSIC_ARTIST);
         addStatement(artistUri, RDFS.LABEL, nameLiteral);
         addStatement(artistUri, FOAF.NAME, nameLiteral);
-        addStatement(artistUri, MO.MUSICBRAINZ, artistUri);
         addStatement(artistUri, MO.MUSICBRAINZ_GUID, literalFor(artistId.stringValue()));
       }
     
@@ -329,8 +336,6 @@ public class DefaultMediaScanner
         
         final Metadata metadata = mediaItem.getMetadata();
         final String mbGuid = metadata.get(Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
-        final Resource mbUri = uriFor("http://musicmusicbrainz.org/ws/2/track/" + mbGuid);
-        addStatement(mediaItemUri, MO.MUSICBRAINZ, mbUri);
         addStatement(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid));
         
         if (true)
