@@ -444,12 +444,16 @@ public class DefaultMediaScanner
         log.info("importFallbackMetadata({}, {})", mediaItem, mediaItemUri);
         
         AddStatementsRequest.Builder builder = AddStatementsRequest.build();
-        final Metadata metadata = mediaItem.getMetadata();        
-        final Value titleLiteral = literalFor(metadata.get(Metadata.TITLE).get());
-        builder = builder.with(mediaItemUri, DC.TITLE, titleLiteral)
-                         .with(mediaItemUri, RDFS.LABEL, titleLiteral);
-        
+        final Metadata metadata = mediaItem.getMetadata();  
+        final Optional<String> title = metadata.get(Metadata.TITLE);
         final Optional<String> artist = metadata.get(Metadata.ARTIST);
+        
+        if (title.isPresent())
+          {
+            final Value titleLiteral = literalFor(title.get());
+            builder = builder.with(mediaItemUri, DC.TITLE, titleLiteral)
+                             .with(mediaItemUri, RDFS.LABEL, titleLiteral);
+          }
         
         if (artist.isPresent())
           {
