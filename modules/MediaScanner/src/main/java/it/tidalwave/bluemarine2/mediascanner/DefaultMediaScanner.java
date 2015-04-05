@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.mediascanner;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.inject.Inject;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Date;
@@ -56,26 +57,27 @@ import org.musicbrainz.ns.mmd_2.Artist;
 import org.musicbrainz.ns.mmd_2.ArtistCredit;
 import org.musicbrainz.ns.mmd_2.NameCredit;
 import org.musicbrainz.ns.mmd_2.Recording;
+import org.openrdf.model.Literal;
 import org.openrdf.model.Resource;
 import org.openrdf.model.URI;
 import org.openrdf.model.Value;
 import org.openrdf.model.ValueFactory;
+import org.openrdf.model.impl.ValueFactoryImpl;
 import org.openrdf.model.vocabulary.DC;
 import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
-import org.openrdf.repository.RepositoryConnection;
-import org.openrdf.repository.RepositoryException;
+import org.openrdf.model.vocabulary.RDFS;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import it.tidalwave.bluemarine2.persistence.AddTripleRequest;
 import it.tidalwave.bluemarine2.vocabulary.BM;
 import it.tidalwave.bluemarine2.vocabulary.MO;
+import it.tidalwave.messagebus.MessageBus;
 import lombok.extern.slf4j.Slf4j;
 import lombok.Cleanup;
 import static java.util.stream.Collectors.joining;
-import org.openrdf.model.Literal;
-import org.openrdf.model.vocabulary.RDFS;
 
 /***********************************************************************************************************************
  *
@@ -86,9 +88,6 @@ import org.openrdf.model.vocabulary.RDFS;
 @Slf4j
 public class DefaultMediaScanner 
   {
-    @Nonnull
-    private final RepositoryConnection connection;
-    
     private final Queue<MediaItem> pendingMediaItems = new ConcurrentLinkedQueue<>();
     
     private final Set<Id> seenArtistIds = Collections.synchronizedSet(new HashSet<Id>());
@@ -98,19 +97,11 @@ public class DefaultMediaScanner
     // FIXME: inject
     private final DefaultMusicBrainzApi mbApi = new DefaultMusicBrainzApi();
     
-    private final ValueFactory factory;
-
-    /*******************************************************************************************************************
-     *
-     *
-     * 
-     ******************************************************************************************************************/
-    public DefaultMediaScanner (final @Nonnull RepositoryConnection connection)
-      {
-        this.connection = connection;
-        factory = connection.getValueFactory();
-      }
+    private final ValueFactory factory = ValueFactoryImpl.getInstance(); // FIXME
     
+    @Inject
+    private MessageBus messageBus;
+
     /*******************************************************************************************************************
      *
      * Processes a folder of {@link MediaItem}s.
@@ -497,14 +488,7 @@ public class DefaultMediaScanner
                                final @Nonnull URI predicate, 
                                final @Nonnull Value object) 
       {
-        try 
-          {
-            connection.add(factory.createStatement(subject, predicate, object));
-          } 
-        catch (RepositoryException e) 
-          {
-            throw new RuntimeException(e);
-          }
+        messageBus.publish(new AddTripleRequest(subject, predicate, object));
       }
 
     /*******************************************************************************************************************

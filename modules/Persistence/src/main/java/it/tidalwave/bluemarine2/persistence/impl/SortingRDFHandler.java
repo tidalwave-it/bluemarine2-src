@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.mediascanner;
+package it.tidalwave.bluemarine2.persistence.impl;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;

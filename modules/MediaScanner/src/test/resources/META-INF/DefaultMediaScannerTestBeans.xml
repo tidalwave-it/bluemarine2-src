@@ -77,7 +77,7 @@
         <property name="waitForTasksToCompleteOnShutdown" value="false"/>
         <property name="threadNamePrefix" value="messageBus-" />
         <property name="corePoolSize" value="10" />
-        <property name="maxPoolSize" value="10" />
+        <property name="maxPoolSize" value="100" /> <!-- FIXME -->
         <property name="queueCapacity" value="10" />
     </bean>
 
@@ -86,4 +86,11 @@
         <property name="taskExecutor" ref="applicationMessageBusTaskExecutor"/>
     </bean>
     
+    <!-- FIXME: move below stuff to Persistence own Beans.xml -->
+    <bean class="it.tidalwave.bluemarine2.persistence.impl.DefaultPersistence" />
+
+    
+    
+    <bean class="it.tidalwave.bluemarine2.mediascanner.DefaultMediaScanner" />
+        
 </beans>

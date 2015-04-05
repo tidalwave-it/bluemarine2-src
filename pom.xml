@@ -124,6 +124,11 @@
                 <artifactId>it-tidalwave-bluemarine2-mediascanner</artifactId>
                 <version>1.0-ALPHA-4-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
+                <version>1.0-ALPHA-4-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

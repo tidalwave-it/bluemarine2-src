@@ -195,6 +195,7 @@
         <module>CECNavigationAdapter</module>
         <module>Commons</module>
         <module>MediaScanner</module>
+        <module>Persistence</module>
     </modules>
 
 </project>
