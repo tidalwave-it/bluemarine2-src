@@ -263,7 +263,8 @@ public class DefaultMediaScanner
         final Resource artistUri = uriFor("http://musicmusicbrainz.org/ws/2/artist/" + artistId);
         addStatement(artistUri, RDF.TYPE, MO.MUSIC_ARTIST);
         addStatement(artistUri, FOAF.NAME, literalFor(artist.getName()));
-        addStatement(artistUri, MO.MUSICBRAINZ_GUID, artistUri);
+        addStatement(artistUri, MO.MUSICBRAINZ, artistUri);
+        addStatement(artistUri, MO.MUSICBRAINZ_GUID, literalFor(artistId.stringValue()));
       }
     
     /*******************************************************************************************************************
@@ -324,6 +325,8 @@ public class DefaultMediaScanner
         
         final Metadata metadata = mediaItem.getMetadata();
         final String mbGuid = metadata.get(Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
+        final Resource mbUri = uriFor("http://musicmusicbrainz.org/ws/2/track/" + mbGuid);
+        addStatement(mediaItemUri, MO.MUSICBRAINZ, mbUri);
         addStatement(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid));
         
         if (true)
