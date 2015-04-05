@@ -84,6 +84,7 @@ public class DefaultMediaScannerTest
         final DefaultMediaFileSystem mediaFileSystem = new DefaultMediaFileSystem();
 
         underTest.process(mediaFileSystem.getRoot());
+        underTest.awaitTermination();
         
         final File actualFile = new File("target/test-results/model.n3");
         final File expectedFile = new File("src/test/resources/expected-results/model.n3");

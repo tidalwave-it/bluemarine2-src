@@ -31,18 +31,15 @@ package it.tidalwave.bluemarine2.mediascanner;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
+import java.time.Instant;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.NoSuchElementException;
 import java.util.Optional;
-import java.util.Queue;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.Semaphore;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.io.IOException;
@@ -70,14 +67,15 @@ import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.InstantProvider;
+import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.messagebus.annotation.ListensTo;
+import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.persistence.AddTripleRequest;
 import it.tidalwave.bluemarine2.vocabulary.BM;
 import it.tidalwave.bluemarine2.vocabulary.MO;
-import it.tidalwave.messagebus.MessageBus;
-import java.time.Instant;
 import lombok.extern.slf4j.Slf4j;
 import lombok.Cleanup;
 import static java.util.stream.Collectors.joining;
@@ -88,14 +86,10 @@ import static java.util.stream.Collectors.joining;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
+@SimpleMessageSubscriber @Slf4j
 public class DefaultMediaScanner 
   {
-    private final Queue<MediaItem> pendingMediaItems = new ConcurrentLinkedQueue<>();
-    
     private final Set<Id> seenArtistIds = Collections.synchronizedSet(new HashSet<Id>());
-    
-    private final Map<Id, Artist> pendingArtists = new ConcurrentHashMap<>();
     
     // FIXME: inject
     private final DefaultMusicBrainzApi mbApi = new DefaultMusicBrainzApi();
@@ -108,6 +102,10 @@ public class DefaultMediaScanner
     @Inject
     private InstantProvider timestampProvider;
 
+    private final Semaphore semaphore = new Semaphore(1);
+    
+    private volatile long latestMessageTime = 0;
+    
     /*******************************************************************************************************************
      *
      * Processes a folder of {@link MediaItem}s.
@@ -118,11 +116,8 @@ public class DefaultMediaScanner
     public void process (final @Nonnull MediaFolder folder)
       {
         log.info("process({})", folder);
+        latestMessageTime = System.currentTimeMillis();
         scan(folder);
-        
-        // TODO: use a pool of parallel consumers
-        consumePendingMediaItems();
-        consumePendingArtistsId();
       }
     
     /*******************************************************************************************************************
@@ -144,55 +139,69 @@ public class DefaultMediaScanner
               }
             else
               {
-                pendingMediaItems.add((MediaItem)item);
+                messageBus.publish(new MediaItemImportRequest((MediaItem)item));
               }
           });
       }
     
     /*******************************************************************************************************************
      *
-     * Consume and process all the pending {@link MediaItem}s.
+     * FIXME: poor approach
      *
      ******************************************************************************************************************/
-    private void consumePendingMediaItems()
+    public synchronized void awaitTermination() 
+      throws InterruptedException
       {
-        while (!pendingMediaItems.isEmpty())
+        long now = System.currentTimeMillis();
+        
+        while (semaphore.hasQueuedThreads() || (now - latestMessageTime < 4000))
           {
-            try
-              {
-                importMediaItem(pendingMediaItems.remove());
-              }
-            catch (NoSuchElementException e)
-              {
-                // ok  
-              } 
-            catch (InterruptedException e)
-              {
-                log.info("Interrupted");
-                return;
-              }
+            log.debug("Completed: {} {} {}", semaphore.hasQueuedThreads(), new Date(now), new Date(latestMessageTime));
+            wait(500);  
+            now = System.currentTimeMillis();
+          }
+        
+        log.info("Completed: {} {}", new Date(now), new Date(latestMessageTime));
+      }
+        
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    /* VisibleForTesting */ void onMediaItemImportRequest (final @ListensTo @Nonnull MediaItemImportRequest request) 
+      throws InterruptedException
+      {
+        log.info("onMediaItemImportRequest({})", request);
+        latestMessageTime = System.currentTimeMillis();
+        
+        try
+          {
+            semaphore.acquire();
+            importMediaItem(request.getMediaItem());
+          }
+        finally 
+          {
+            semaphore.release();
           }
       }
     
     /*******************************************************************************************************************
      *
-     * Consume and process all the pending artistIds.
      *
      ******************************************************************************************************************/
-    private void consumePendingArtistsId() 
+    /* VisibleForTesting */ void onArtistImportRequest (final @ListensTo @Nonnull ArtistImportRequest request) 
+      throws InterruptedException
       {
-        while (!pendingArtists.isEmpty())
-          {
-            try
-              {
-                final Id artistId = pendingArtists.keySet().iterator().next();
-                processArtist(artistId, pendingArtists.remove(artistId));
-              }
-            catch (NoSuchElementException e)
-              {
-                // ok  
-              }
-          }
+        log.info("onArtistImportRequest({})", request);
+        latestMessageTime = System.currentTimeMillis();
+        final Id artistId = request.getArtistId();
+        final Resource artistUri = uriFor("http://musicmusicbrainz.org/ws/2/artist/" + artistId);
+        final Artist artist = request.getArtist();
+        final Value nameLiteral = literalFor(artist.getName());
+        addStatement(artistUri, RDF.TYPE, MO.MUSIC_ARTIST);
+        addStatement(artistUri, RDFS.LABEL, nameLiteral);
+        addStatement(artistUri, FOAF.NAME, nameLiteral);
+        addStatement(artistUri, MO.MUSICBRAINZ_GUID, literalFor(artistId.stringValue()));        
       }
     
     /*******************************************************************************************************************
@@ -206,7 +215,7 @@ public class DefaultMediaScanner
     private void importMediaItem (final @Nonnull MediaItem mediaItem)
       throws InterruptedException
       { 
-        log.info("importMediaItem({})", mediaItem);
+        log.debug("importMediaItem({})", mediaItem);
         
         final Id md5 = createMd5Id(mediaItem.getPath());
         URI mediaItemUri = uriFor(md5);
@@ -258,21 +267,6 @@ public class DefaultMediaScanner
 //                pendingMediaItems.add(mediaItem);
               }
           } 
-      }
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private void processArtist (final @Nonnull Id artistId, final @Nonnull Artist artist)
-      {
-        log.info("processArtist({}, {})", artistId, artist);
-        final Resource artistUri = uriFor("http://musicmusicbrainz.org/ws/2/artist/" + artistId);
-        final Value nameLiteral = literalFor(artist.getName());
-        addStatement(artistUri, RDF.TYPE, MO.MUSIC_ARTIST);
-        addStatement(artistUri, RDFS.LABEL, nameLiteral);
-        addStatement(artistUri, FOAF.NAME, nameLiteral);
-        addStatement(artistUri, MO.MUSICBRAINZ_GUID, literalFor(artistId.stringValue()));
       }
     
     /*******************************************************************************************************************
@@ -437,7 +431,7 @@ public class DefaultMediaScanner
             if (!seenArtistIds.contains(artistId))
               {
                 seenArtistIds.add(artistId);
-                pendingArtists.putIfAbsent(artistId, artist);
+                messageBus.publish(new ArtistImportRequest(artistId, artist));
               }
           }
       }

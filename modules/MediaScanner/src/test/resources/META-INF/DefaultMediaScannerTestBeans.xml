@@ -77,8 +77,8 @@
         <property name="waitForTasksToCompleteOnShutdown" value="false"/>
         <property name="threadNamePrefix" value="messageBus-" />
         <property name="corePoolSize" value="10" />
-        <property name="maxPoolSize" value="100" /> <!-- FIXME -->
-        <property name="queueCapacity" value="10" />
+        <property name="maxPoolSize" value="10" /> 
+        <property name="queueCapacity" value="100000" /> <!-- FIXME -->
     </bean>
 
     <bean id="applicationMessageBus"
