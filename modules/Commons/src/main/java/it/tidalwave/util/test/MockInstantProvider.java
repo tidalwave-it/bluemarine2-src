@@ -35,6 +35,10 @@ import it.tidalwave.util.InstantProvider;
 
 /***********************************************************************************************************************
  *
+ * A mock implementation of {@link InstantProvider} which returns a fixed value that can be set (the zero epoch instant
+ * by default).
+ * 
+ * @see     InstantProvider
  * @author  Fabrizio Giudici
  * @version $Id$
  *

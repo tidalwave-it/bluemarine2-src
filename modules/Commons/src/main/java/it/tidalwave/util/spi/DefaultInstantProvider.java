@@ -34,6 +34,10 @@ import it.tidalwave.util.InstantProvider;
 
 /***********************************************************************************************************************
  *
+ * A default implementation of {@link InstantProvider} which returns {@code Instant.now()}.
+ * 
+ * @see     InstantProvider
+ * @see     MockInstantProvider
  * @author  Fabrizio Giudici
  * @version $Id$
  *

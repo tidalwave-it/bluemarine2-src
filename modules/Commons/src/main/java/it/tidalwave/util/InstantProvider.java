@@ -31,9 +31,17 @@ package it.tidalwave.util;
 import javax.annotation.Nonnull;
 import java.time.Instant;
 import java.util.function.Supplier;
+import it.tidalwave.util.spi.DefaultInstantProvider;
+import it.tidalwave.util.test.MockInstantProvider;
 
 /***********************************************************************************************************************
  *
+ * A provider of {@link Instant}s. It should be used by code requiring a timestamp, so it can be mocked during tests.
+ * {@link DefaultInstantProvider} provides a default implementation, while {@link MockInstantProvider} is the one for
+ * tests.
+ * 
+ * @see     DefaultInstantProvider
+ * @see     MockInstantProvider
  * @author  Fabrizio Giudici
  * @version $Id$
  *
