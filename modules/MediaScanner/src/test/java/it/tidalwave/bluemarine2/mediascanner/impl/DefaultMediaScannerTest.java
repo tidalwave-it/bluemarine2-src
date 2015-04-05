@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.mediascanner;
+package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import java.util.concurrent.CountDownLatch;
 import java.time.Instant;
@@ -37,6 +37,7 @@ import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem;
 import it.tidalwave.bluemarine2.persistence.DumpCompleted;
 import it.tidalwave.bluemarine2.persistence.DumpRequest;
+import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import it.tidalwave.util.test.FileComparisonUtils;

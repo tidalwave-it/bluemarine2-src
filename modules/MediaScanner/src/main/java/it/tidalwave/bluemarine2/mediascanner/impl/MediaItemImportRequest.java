@@ -26,13 +26,14 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.mediascanner;
+package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
-import java.io.IOException;
-import javax.xml.bind.JAXBException;
-import org.musicbrainz.ns.mmd_2.Metadata;
-import it.tidalwave.util.Id;
+import javax.annotation.concurrent.Immutable;
+import it.tidalwave.bluemarine2.model.MediaItem;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *
@@ -40,24 +41,9 @@ import it.tidalwave.util.Id;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MusicBrainzApi 
+@Immutable @RequiredArgsConstructor @Getter @ToString
+public class MediaItemImportRequest 
   {
-    /*******************************************************************************************************************
-     *
-     * Downloads metadata for a MusicBrainz entity.
-     * 
-     * @param   entityType  the entity type
-     * @param   entityId    the entity id
-     * @param   includes    the metadata to include
-     * @return              the metadata
-     * @throws  IOException             when an I/O problem occurred
-     * @throws  JAXBException           when an XML error occurs
-     * @throws  InterruptedException    if the operation is interrupted
-     *
-     ******************************************************************************************************************/
     @Nonnull
-    public Metadata getMusicBrainzEntity (final @Nonnull String entityType,
-                                          final @Nonnull String entityId,
-                                          final @Nonnull String includes) 
-      throws IOException, JAXBException, InterruptedException;
+    private final MediaItem mediaItem;
   }

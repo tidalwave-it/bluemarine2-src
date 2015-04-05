@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.mediascanner;
+package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
 import java.io.IOException;
@@ -37,7 +37,6 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import org.musicbrainz.ns.mmd_2.Metadata;
-import it.tidalwave.util.Id;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 

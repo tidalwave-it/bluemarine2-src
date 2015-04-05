@@ -26,15 +26,15 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.mediascanner;
+package it.tidalwave.bluemarine2.mediascanner.impl;
 
-import it.tidalwave.util.Id;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import org.musicbrainz.ns.mmd_2.Artist;
+import it.tidalwave.util.Id;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
-import org.musicbrainz.ns.mmd_2.Artist;
 
 /***********************************************************************************************************************
  *
