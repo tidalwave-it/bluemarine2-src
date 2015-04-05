@@ -26,8 +26,9 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.mediascanner.impl;
+package it.tidalwave.bluemarine2.musicbrainz.impl;
 
+import it.tidalwave.bluemarine2.musicbrainz.MusicBrainzApi;
 import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.io.InputStream;

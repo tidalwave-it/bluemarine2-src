@@ -77,10 +77,11 @@ import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
 import it.tidalwave.bluemarine2.vocabulary.BM;
 import it.tidalwave.bluemarine2.vocabulary.MO;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
+import it.tidalwave.bluemarine2.musicbrainz.impl.DefaultMusicBrainzApi;
 import lombok.extern.slf4j.Slf4j;
 import lombok.Cleanup;
-import static java.util.stream.Collectors.joining;
 import lombok.ToString;
+import static java.util.stream.Collectors.joining;
 
 /***********************************************************************************************************************
  *

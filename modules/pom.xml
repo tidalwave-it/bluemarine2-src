@@ -196,6 +196,7 @@
         <module>Commons</module>
         <module>MediaScanner</module>
         <module>Persistence</module>
+        <module>MusicBrainzREST</module>
     </modules>
 
 </project>
