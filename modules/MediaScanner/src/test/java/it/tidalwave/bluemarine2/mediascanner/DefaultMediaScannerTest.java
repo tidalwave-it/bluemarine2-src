@@ -39,6 +39,9 @@ import it.tidalwave.bluemarine2.persistence.DumpRequest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import it.tidalwave.util.test.FileComparisonUtils;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -66,6 +69,9 @@ public class DefaultMediaScannerTest
       {
         final String s = "classpath:/META-INF/DefaultMediaScannerTestBeans.xml";
         context = new ClassPathXmlApplicationContext(s);
+        
+        context.getBean(MockTimestampProvider.class)
+               .setTimestamp(ZonedDateTime.ofInstant(Instant.EPOCH, ZoneId.of("GMT")));
         messageBus = context.getBean(MessageBus.class);
         underTest = context.getBean(DefaultMediaScanner.class);
         

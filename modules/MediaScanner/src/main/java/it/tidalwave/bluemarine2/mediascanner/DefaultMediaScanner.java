@@ -32,6 +32,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
 import java.time.Duration;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
@@ -50,6 +52,7 @@ import java.io.File;
 import java.io.RandomAccessFile;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel.MapMode;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.net.MalformedURLException;
 import javax.xml.bind.JAXBException;
@@ -101,6 +104,9 @@ public class DefaultMediaScanner
     
     @Inject
     private MessageBus messageBus;
+    
+    @Inject
+    private TimestampProvider timestampProvider;
 
     /*******************************************************************************************************************
      *
@@ -218,10 +224,10 @@ public class DefaultMediaScanner
                 addStatement(mediaItemUri, BM.MD5, literalFor(md5.stringValue().replaceAll("^md5id:", "")));
               }
             
+            final ZonedDateTime mt = Files.getLastModifiedTime(mediaItem.getPath()).toInstant().atZone(ZoneId.systemDefault());
             addStatement(mediaItemUri, RDF.TYPE, MO.TRACK);
             addStatement(mediaItemUri, MO.AUDIOFILE, literalFor(mediaItem.getRelativePath()));
-            addStatement(mediaItemUri, BM.LATEST_INDEXING_TIME, 
-                    literalFor(new Date(mediaItem.getPath().toFile().lastModified())));
+            addStatement(mediaItemUri, BM.LATEST_INDEXING_TIME, literalFor(mt));
 
             importMediaItemMetadata(mediaItem, mediaItemUri);
             
@@ -244,7 +250,7 @@ public class DefaultMediaScanner
           {
             log.warn("Cannot retrieve MusicBrainz metadata {} ... - {}", mediaItem, e.toString());
             importFallbackMetadata(mediaItem, mediaItemUri);
-            addStatement(mediaItemUri, BM.FAILED_MB_METADATA, factory.createLiteral(new Date()));
+            addStatement(mediaItemUri, BM.FAILED_MB_METADATA, literalFor(timestampProvider.getTimestamp()));
 
             if (e.getMessage().contains("503")) // throttling error
               {
@@ -345,7 +351,7 @@ public class DefaultMediaScanner
         nameCredits.forEach(nameCredit -> addArtist(nameCredit.getArtist()));
 
         final Literal createLiteral = factory.createLiteral(title);
-        addStatement(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(new Date()));
+        addStatement(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(timestampProvider.getTimestamp()));
         addStatement(mediaItemUri, DC.TITLE, createLiteral);
         addStatement(mediaItemUri, RDFS.LABEL, createLiteral);
         addStatement(mediaItemUri, BM.FULL_CREDITS, factory.createLiteral(fullCredits));
@@ -545,9 +551,9 @@ public class DefaultMediaScanner
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Value literalFor (final Date date) 
+    private Value literalFor (final ZonedDateTime date) 
       {
-        return factory.createLiteral(date);
+        return factory.createLiteral(new Date(date.toEpochSecond()));
       }
     
     /*******************************************************************************************************************
