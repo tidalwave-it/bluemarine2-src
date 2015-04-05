@@ -93,6 +93,6 @@
     
     <bean class="it.tidalwave.bluemarine2.mediascanner.DefaultMediaScanner" />
         
-    <bean class="it.tidalwave.bluemarine2.mediascanner.MockTimestampProvider" />
+    <bean class="it.tidalwave.bluemarine2.mediascanner.MockInstantProvider" />
     
 </beans>

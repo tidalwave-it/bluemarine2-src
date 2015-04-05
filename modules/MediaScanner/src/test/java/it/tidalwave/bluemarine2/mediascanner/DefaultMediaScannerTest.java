@@ -70,8 +70,7 @@ public class DefaultMediaScannerTest
         final String s = "classpath:/META-INF/DefaultMediaScannerTestBeans.xml";
         context = new ClassPathXmlApplicationContext(s);
         
-        context.getBean(MockTimestampProvider.class)
-               .setTimestamp(ZonedDateTime.ofInstant(Instant.EPOCH, ZoneId.of("GMT")));
+        context.getBean(MockInstantProvider.class).setTimestamp(Instant.ofEpochSecond(1428232317L));
         messageBus = context.getBean(MessageBus.class);
         underTest = context.getBean(DefaultMediaScanner.class);
         

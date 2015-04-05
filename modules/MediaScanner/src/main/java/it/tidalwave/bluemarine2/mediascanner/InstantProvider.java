@@ -28,8 +28,8 @@
  */
 package it.tidalwave.bluemarine2.mediascanner;
 
-import java.time.ZonedDateTime;
 import javax.annotation.Nonnull;
+import java.time.Instant;
 
 /***********************************************************************************************************************
  *
@@ -37,11 +37,8 @@ import javax.annotation.Nonnull;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class DefaultTimestampProvider implements TimestampProvider
+public interface InstantProvider 
   {
-    @Override @Nonnull
-    public ZonedDateTime getTimestamp() 
-      {
-        return ZonedDateTime.now();
-      }
+    @Nonnull
+    public Instant getTimestamp();
   }

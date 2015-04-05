@@ -78,6 +78,7 @@ import it.tidalwave.bluemarine2.persistence.AddTripleRequest;
 import it.tidalwave.bluemarine2.vocabulary.BM;
 import it.tidalwave.bluemarine2.vocabulary.MO;
 import it.tidalwave.messagebus.MessageBus;
+import java.time.Instant;
 import lombok.extern.slf4j.Slf4j;
 import lombok.Cleanup;
 import static java.util.stream.Collectors.joining;
@@ -106,7 +107,7 @@ public class DefaultMediaScanner
     private MessageBus messageBus;
     
     @Inject
-    private TimestampProvider timestampProvider;
+    private InstantProvider timestampProvider;
 
     /*******************************************************************************************************************
      *
@@ -224,7 +225,7 @@ public class DefaultMediaScanner
                 addStatement(mediaItemUri, BM.MD5, literalFor(md5.stringValue().replaceAll("^md5id:", "")));
               }
             
-            final ZonedDateTime mt = Files.getLastModifiedTime(mediaItem.getPath()).toInstant().atZone(ZoneId.systemDefault());
+            final Instant mt = Files.getLastModifiedTime(mediaItem.getPath()).toInstant();
             addStatement(mediaItemUri, RDF.TYPE, MO.TRACK);
             addStatement(mediaItemUri, MO.AUDIOFILE, literalFor(mediaItem.getRelativePath()));
             addStatement(mediaItemUri, BM.LATEST_INDEXING_TIME, literalFor(mt));
@@ -551,9 +552,9 @@ public class DefaultMediaScanner
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Value literalFor (final ZonedDateTime date) 
+    private Value literalFor (final @Nonnull Instant instant) 
       {
-        return factory.createLiteral(new Date(date.toEpochSecond()));
+        return factory.createLiteral(new Date(instant.toEpochMilli()));
       }
     
     /*******************************************************************************************************************

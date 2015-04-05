@@ -28,8 +28,7 @@
  */
 package it.tidalwave.bluemarine2.mediascanner;
 
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.time.Instant;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -39,8 +38,8 @@ import lombok.Setter;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class MockTimestampProvider implements TimestampProvider
+public class MockInstantProvider implements InstantProvider
   {
     @Getter @Setter
-    private ZonedDateTime timestamp = ZonedDateTime.of(1970, 1, 1, 0, 0, 0, 0, ZoneId.of("GMT"));
+    private Instant timestamp = Instant.ofEpochMilli(0);
   }
