@@ -62,6 +62,7 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;
+import java.net.UnknownHostException;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 
@@ -147,64 +148,69 @@ public class DefaultDownloader
      * 
      ******************************************************************************************************************/
     /* VisibleForTesting */ void onDownloadRequest (final @ListensTo @Nonnull DownloadRequest request)
-      throws IOException, URISyntaxException
+      throws URISyntaxException
       {
-        log.info("onDownloadRequest({})", request);    
-                
-        URL url = request.getUrl();
-        
-//        @Cleanup FIXME
-        final CloseableHttpClient httpClient = CachingHttpClients.custom()
-                .setHttpCacheStorage(cacheStorage)
-                .setCacheConfig(cacheConfig)
-                .setRedirectStrategy(dontFollowRedirect)
-                .setUserAgent("blueMarine (fabrizio.giudici@tidalwave.it)")
-                .setDefaultHeaders(Arrays.asList(new BasicHeader("Accept", "application/n3")))
-                .setConnectionManager(connectionManager)
-                .addInterceptorFirst(killCacheHeaders) // FIXME: only if explicitly configured
-                .build();
-
-        boolean done = false;
-        
-        while (!done)
+        try
           {
-            final HttpCacheContext context = HttpCacheContext.create();
-            @Cleanup final CloseableHttpResponse response = httpClient.execute(new HttpGet(url.toURI()), context);
-            
-            final ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            
-            if (response.getEntity() != null)
-              {
-                response.getEntity().writeTo(baos);
-              }
-                
-            final byte[] bytes = baos.toByteArray();
-            final CacheResponseStatus cacheResponseStatus = context.getCacheResponseStatus();
-            log.debug(">>>> cacheResponseStatus: {}", cacheResponseStatus);
-            
-            // FIXME: shouldn't do this by myself
-            if (!cacheResponseStatus.equals(CacheResponseStatus.CACHE_HIT))
-              {
-                final Date date = new Date();
-                final Resource resource = new HeapResource(bytes);
-                cacheStorage.putEntry(url.toExternalForm(), 
-                        new HttpCacheEntry(date, date, response.getStatusLine(), response.getAllHeaders(), resource));
-              }
+            log.info("onDownloadRequest({})", request);    
 
-            // FIXME: if the redirect were enabled, we could drop this check
-            if (request.isOptionPresent(DownloadRequest.Option.FOLLOW_REDIRECT) 
-                && response.getStatusLine().getStatusCode() == 303) // SEE_OTHER FIXME
+            URL url = request.getUrl();
+
+    //        @Cleanup FIXME
+            final CloseableHttpClient httpClient = CachingHttpClients.custom()
+                    .setHttpCacheStorage(cacheStorage)
+                    .setCacheConfig(cacheConfig)
+                    .setRedirectStrategy(dontFollowRedirect)
+                    .setUserAgent("blueMarine (fabrizio.giudici@tidalwave.it)")
+                    .setDefaultHeaders(Arrays.asList(new BasicHeader("Accept", "application/n3")))
+                    .setConnectionManager(connectionManager)
+                    .addInterceptorFirst(killCacheHeaders) // FIXME: only if explicitly configured
+                    .build();
+
+            boolean done = false;
+
+            while (!done)
               {
-                url = new URL(response.getFirstHeader("Location").getValue());
-                log.info(">>>> following 'see also' to {} ...", url);
-              }
-            else
-              {
-                done = true;  
-                messageBus.publish(new DownloadComplete(url, response.getStatusLine().getStatusCode(), bytes));
+                final HttpCacheContext context = HttpCacheContext.create();
+                @Cleanup final CloseableHttpResponse response = httpClient.execute(new HttpGet(url.toURI()), context);
+
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+                if (response.getEntity() != null)
+                  {
+                    response.getEntity().writeTo(baos);
+                  }
+
+                final byte[] bytes = baos.toByteArray();
+                final CacheResponseStatus cacheResponseStatus = context.getCacheResponseStatus();
+                log.debug(">>>> cacheResponseStatus: {}", cacheResponseStatus);
+
+                // FIXME: shouldn't do this by myself
+                if (!cacheResponseStatus.equals(CacheResponseStatus.CACHE_HIT))
+                  {
+                    final Date date = new Date();
+                    final Resource resource = new HeapResource(bytes);
+                    cacheStorage.putEntry(url.toExternalForm(), 
+                            new HttpCacheEntry(date, date, response.getStatusLine(), response.getAllHeaders(), resource));
+                  }
+
+                // FIXME: if the redirect were enabled, we could drop this check
+                if (request.isOptionPresent(DownloadRequest.Option.FOLLOW_REDIRECT) 
+                    && response.getStatusLine().getStatusCode() == 303) // SEE_OTHER FIXME
+                  {
+                    url = new URL(response.getFirstHeader("Location").getValue());
+                    log.info(">>>> following 'see also' to {} ...", url);
+                  }
+                else
+                  {
+                    done = true;  
+                    messageBus.publish(new DownloadComplete(request.getUrl(), response.getStatusLine().getStatusCode(), bytes));
+                  }
               }
           }
-                
-        // FIXME: be sure to fire a message even in case of Exception
+        catch (IOException e)
+          {
+            messageBus.publish(new DownloadComplete(request.getUrl(), -1, new byte[0]));
+          }
       }
   }

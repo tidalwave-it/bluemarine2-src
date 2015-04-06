@@ -96,13 +96,18 @@ public class DefaultDownloaderTest
         underTest.onDownloadRequest(new DownloadRequest(url, new Option[]{option} ));
         downloadCompleted.await();
         assertThat(response.getStatusCode(), is(statusCode));
-        final Path testResults = Paths.get("target/test-results");
-        final Path expectedResults = Paths.get("src/test/resources/expected-results");
-        final Path actualResult = testResults.resolve(fileName);
-        final Path expectedResult = expectedResults.resolve(fileName);
-        Files.createDirectories(testResults);
-        Files.write(actualResult, response.getBytes());
-        FileComparisonUtils.assertSameContents(expectedResult.toFile(), actualResult.toFile());
+        
+        if (statusCode > 0)
+          {
+            final Path testResults = Paths.get("target/test-results");
+            final Path expectedResults = Paths.get("src/test/resources/expected-results");
+            final Path actualResult = testResults.resolve(fileName);
+            final Path expectedResult = expectedResults.resolve(fileName);
+            Files.createDirectories(testResults);
+            Files.write(actualResult, response.getBytes());
+            FileComparisonUtils.assertSameContents(expectedResult.toFile(), actualResult.toFile());
+          }
+        
         // FIXME: verify it didn't go to the nextwork
         // FIXME: verify that the cache has not been updated
       }
@@ -129,6 +134,13 @@ public class DefaultDownloaderTest
                 200,
                 "a51c646d-d676-4690-8131-62373e8b77db-200",
                 Option.FOLLOW_REDIRECT
+              },
+              // unknown host
+              {
+                "http://does.not.exist/a-resource",
+                -1,
+                "",
+                Option.NO_OPTION
               }
           };
       }
