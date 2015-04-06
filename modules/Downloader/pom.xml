@@ -12,41 +12,49 @@
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>it-tidalwave-bluemarine2-mediascanner</artifactId>
+    <artifactId>it-tidalwave-bluemarine2-downloader</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-4-SNAPSHOT</version>
-    <name>blueMarine2 - Media Scanner</name>
+    <name>blueMarine2 - Downloader</name>
     
     <dependencies>
         <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
         </dependency>
         <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-downloader</artifactId>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient-cache</artifactId>
         </dependency>
         <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-model</artifactId>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-messagebus-spring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-messagebus</artifactId>
             <exclusions>
                 <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-jdk14</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.kenai.nbpwr</groupId>
+                    <artifactId>org-slf4j-jdk14</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-musicbrainz</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
         </dependency>
         <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>it.tidalwave.thesefoolishthings</groupId>
-            <artifactId>it-tidalwave-role-spring</artifactId>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
         </dependency>
         
         <!-- FIXME: workaround against a compilation error -->
@@ -58,8 +66,18 @@
         </dependency>
         
         <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-role-spring</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -80,4 +98,5 @@
             </plugin>
         </plugins>
     </build>
+    
 </project>

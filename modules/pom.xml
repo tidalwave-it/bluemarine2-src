@@ -194,7 +194,7 @@
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
+            <artifactId>hamcrest-core</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -213,6 +213,7 @@
         <module>MediaScanner</module>
         <module>Persistence</module>
         <module>MusicBrainzREST</module>
+        <module>Downloader</module>
     </modules>
 
 </project>
