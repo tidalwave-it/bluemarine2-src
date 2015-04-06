@@ -44,6 +44,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import it.tidalwave.util.test.FileComparisonUtils;
+import org.apache.http.HttpStatus;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.CoreMatchers.*;
 
@@ -119,28 +120,32 @@ public class DefaultDownloaderTest
           {
               {
                 "http://dbtune.org/musicbrainz/data/track/a51c646d-d676-4690-8131-62373e8b77db",
-                200,
+                HttpStatus.SC_OK,
                 "a51c646d-d676-4690-8131-62373e8b77db-200",
                 Option.NO_OPTION
               },
+            
               {
                 "http://dbtune.org/musicbrainz/resource/track/a51c646d-d676-4690-8131-62373e8b77db",
-                303,
+                HttpStatus.SC_SEE_OTHER,
                 "a51c646d-d676-4690-8131-62373e8b77db-303",
                 Option.NO_OPTION
               },
+              
               {
                 "http://dbtune.org/musicbrainz/resource/track/a51c646d-d676-4690-8131-62373e8b77db",
-                200,
+                HttpStatus.SC_OK,
                 "a51c646d-d676-4690-8131-62373e8b77db-200",
                 Option.FOLLOW_REDIRECT
               },
+              
               {
                 "http://dbtune.org/does-not-exist",
-                404,
+                HttpStatus.SC_NOT_FOUND,
                 "",
                 Option.NO_OPTION
               },
+              
               // TODO: 404 could be cached?
               // unknown host
               {
