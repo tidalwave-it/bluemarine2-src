@@ -97,11 +97,8 @@ public class DefaultDownloaderTest
       {
         final Path cacheResourcesPath = Paths.get("target/test-classes/download-cache");
         final Path cachePath = Paths.get("target/download-cache");
-//        Files.deleteIfExists(cachePath);
-//        Files.createDirectories(cachePath);
         FileUtils.deleteDirectory(cachePath.toFile());
         FileUtils.copyDirectory(cacheResourcesPath.toFile(), cachePath.toFile());
-//        Files.copy(cacheResourcesPath, cachePath, StandardCopyOption.REPLACE_EXISTING);
 
         final String s = "classpath:/META-INF/DefaultDownloaderTestBeans.xml";
         context = new ClassPathXmlApplicationContext(s);
