@@ -127,6 +127,7 @@ public class DefaultPersistence
         writer.handleNamespace("bmmo",  "http://bluemarine.tidalwave.it/2015/04/mo/");
         writer.handleNamespace("dc",    "http://purl.org/dc/elements/1.1/");
         writer.handleNamespace("foaf",  "http://xmlns.com/foaf/0.1/");
+        writer.handleNamespace("owl",   "http://www.w3.org/2002/07/owl#");
         writer.handleNamespace("mo",    "http://purl.org/ontology/mo/");
         writer.handleNamespace("rdfs",  "http://www.w3.org/2000/01/rdf-schema#");
         writer.handleNamespace("vocab", "http://dbtune.org/musicbrainz/resource/vocab/");
