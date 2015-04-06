@@ -140,6 +140,7 @@ public class DefaultDownloaderTest
         final URL url = new URL(urlAsString);
         underTest.onDownloadRequest(new DownloadRequest(url, new Option[]{option} ));
         downloadCompleted.await();
+        assertThat(response.getUrl(), is(url));
         assertThat(response.getStatusCode(), is(expectedStatusCode));
         
         if (!"".equals(expectedContentFileName))
