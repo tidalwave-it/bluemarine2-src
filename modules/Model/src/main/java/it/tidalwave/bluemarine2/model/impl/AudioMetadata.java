@@ -87,7 +87,7 @@ public class AudioMetadata extends MetadataSupport
               }
             catch (NumberFormatException e)
               {
-                log.warn("", e);  
+                log.warn("Cannot parse track number", e.toString());  
               }
             
 //            put(TRACK, tag.getFirst(FieldKey.DISC_NO));
@@ -131,7 +131,7 @@ public class AudioMetadata extends MetadataSupport
           }
         catch (IOException | CannotReadException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
           {
-            log.error("", e);  
+            log.error("While reading " + audioFile, path);  
           } 
       }
     
