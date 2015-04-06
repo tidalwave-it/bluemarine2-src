@@ -88,6 +88,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
             final BasicHttpResponse response = new BasicHttpResponse(entry.getStatusLine());
             response.setHeaders(entry.getAllHeaders());
             writer.write(response);
+            sob.flush();
 
             if (entry.getResource().length() > 0)
               {
