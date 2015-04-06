@@ -72,6 +72,8 @@ public class DbTuneMetadataManager
   {
     private final Set<Id> seenArtistIds = Collections.synchronizedSet(new HashSet<Id>());
     
+    private final Set<Id> seenRecordIds = Collections.synchronizedSet(new HashSet<Id>());
+    
     @Inject
     private Progress progress;
     
@@ -112,11 +114,11 @@ public class DbTuneMetadataManager
         try 
           {
             log.info("onTrackDownloadComplete({})", message);
-
+            final URI trackUri = uriFor(message.getUrl().toString());
             final Model model = parseModel(message);
             AddStatementsRequest.Builder builder = AddStatementsRequest.build();
 
-            model.filter(null, FOAF.MAKER, null).forEach((statement) ->
+            model.filter(trackUri, FOAF.MAKER, null).forEach((statement) ->
               {
                 try
                   {
@@ -124,6 +126,18 @@ public class DbTuneMetadataManager
                     //                      // FIXME: should be builder = builder.with()
                     builder.with(statement.getSubject(), statement.getPredicate(), artistUri);
                     requestDbTuneArtistMetadata(artistUri);
+                  }
+                catch (MalformedURLException e)
+                  {
+                    throw new RuntimeException(e);
+                  }
+              });
+            
+            model.filter(null, MO._TRACK, trackUri).forEach((statement) ->
+              {
+                try
+                  {
+                    requestDbTuneRecordMetadata((URI)statement.getSubject());   
                   }
                 catch (MalformedURLException e)
                   {
@@ -220,6 +234,38 @@ public class DbTuneMetadataManager
           }
       }
     
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    public void onDbTuneRecordMetadataDownloadComplete (final @Nonnull DownloadComplete message)
+      throws IOException
+      {
+        try 
+          {
+            log.info("onTrackDownloadComplete({})", message);
+            final URI recordUri = uriFor(message.getUrl().toString());
+            final Model model = parseModel(message);
+            AddStatementsRequest.Builder builder = AddStatementsRequest.build();
+
+            model.filter(recordUri, null, null).forEach((statement) ->
+              {
+                builder.with(statement.getSubject(), statement.getPredicate(), statement.getObject());
+              });
+
+            messageBus.publish(builder.create());
+          }   
+        catch (RDFHandlerException | RDFParseException ex)
+          {
+            log.error("Cannot parse record: {}", ex.toString());
+            log.error("Cannot parse record: {}", new String(message.getBytes()));
+          }
+        finally
+          {
+            progress.incrementImportedRecords();
+          }
+      }
+    
    /*******************************************************************************************************************
      *
      * Posts a requesto to download metadata for the given {@code artistUri}, if not available yet.
@@ -240,6 +286,30 @@ public class DbTuneMetadataManager
                 progress.incrementTotalArtists();
                 progress.incrementTotalDownloads();
                 messageBus.publish(new DownloadRequest(new URL(artistUri.toString()), FOLLOW_REDIRECT));
+              }
+          }
+      }
+    
+   /*******************************************************************************************************************
+     *
+     * Posts a requesto to download metadata for the given {@code artistUri}, if not available yet.
+     * 
+     * @param   recordUri   the URI of the artist
+     *
+     ******************************************************************************************************************/
+    private void requestDbTuneRecordMetadata (final @Nonnull URI recordUri)
+      throws MalformedURLException
+      {
+        synchronized (seenRecordIds)
+          {
+            final Id recordId = new Id(recordUri.stringValue());
+            
+            if (!seenRecordIds.contains(recordId))
+              {
+                seenRecordIds.add(recordId);
+                progress.incrementTotalRecords();
+                progress.incrementTotalDownloads();
+                messageBus.publish(new DownloadRequest(new URL(recordUri.toString()), FOLLOW_REDIRECT));
               }
           }
       }

@@ -206,7 +206,7 @@ public class DefaultMediaScanner
             if (message.getStatusCode() == 200) // FIXME
               {
                 final String url = message.getUrl().toString();
-                
+
                 if (url.matches("http://dbtune.org/.*/resource/track/.*"))
                   {
                     dbTuneMetadataManager.onDbTuneTrackMetadataDownloadComplete(message);
@@ -214,6 +214,10 @@ public class DefaultMediaScanner
                 else if (url.matches("http://dbtune.org/.*/resource/artist/.*"))
                   {
                     dbTuneMetadataManager.onDbTuneArtistMetadataDownloadComplete(message);
+                  }
+                else if (url.matches("http://dbtune.org/.*/resource/record/.*"))
+                  {
+                    dbTuneMetadataManager.onDbTuneRecordMetadataDownloadComplete(message);
                   }
               }
           }

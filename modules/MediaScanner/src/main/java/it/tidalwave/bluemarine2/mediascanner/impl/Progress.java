@@ -52,6 +52,8 @@ public class Progress
     private volatile int importedMediaItems;
     private volatile int totalArtists;
     private volatile int importedArtists;
+    private volatile int totalRecords;
+    private volatile int importedRecords;
     private volatile int totalDownloads;
     private volatile int completedDownloads;
 
@@ -110,6 +112,18 @@ public class Progress
         check();
       }
 
+    public synchronized void incrementTotalRecords()
+      {
+        totalRecords++;  
+        check();
+      }
+
+    public synchronized void incrementImportedRecords() 
+      {
+        importedRecords++;  
+        check();
+      }
+    
     private void check()
       {
         log.debug("{}", this); // FIXME: is called from sync block
@@ -125,6 +139,7 @@ public class Progress
         return (scannedFolders == totalFolders) 
             && (importedMediaItems == totalMediaItems)
             && (importedArtists == totalArtists)
+            && (importedRecords == totalRecords)
             && (completedDownloads == totalDownloads);
       }
   }
