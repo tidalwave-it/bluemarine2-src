@@ -312,14 +312,15 @@ public class DefaultMediaScanner
             
             if (message.getStatusCode() == 200) // FIXME
               {
-                // TODO: better way to route? Perhaps passing a token in DownloadRequest/DownloadComplete?
-                if (message.getUrl().toString().contains("/track/"))
+                final String url = message.getUrl().toString();
+                
+                if (url.matches("http://dbtune.org/.*/resource/track/.*"))
                   {
-                    onTrackDownloadComplete(message);
+                    onDbTuneTrackMetadataDownloadComplete(message);
                   }
-                else if (message.getUrl().toString().contains("/artist/"))
+                else if (url.matches("http://dbtune.org/.*/resource/artist/.*"))
                   {
-                    onArtistDownloadComplete(message);
+                    onDbTuneArtistMetadataDownloadComplete(message);
                   }
               }
           }
@@ -333,7 +334,7 @@ public class DefaultMediaScanner
      *
      *
      ******************************************************************************************************************/
-    private void onTrackDownloadComplete (final @Nonnull DownloadComplete message) 
+    private void onDbTuneTrackMetadataDownloadComplete (final @Nonnull DownloadComplete message) 
       throws InterruptedException, IOException
       {
         try 
@@ -371,7 +372,7 @@ public class DefaultMediaScanner
      *
      *
      ******************************************************************************************************************/
-    private void onArtistDownloadComplete (final @Nonnull DownloadComplete message) 
+    private void onDbTuneArtistMetadataDownloadComplete (final @Nonnull DownloadComplete message) 
       throws InterruptedException, IOException
       {
         List<URI> validPredicates = Arrays.asList(
