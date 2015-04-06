@@ -1,0 +1,126 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/track/60abac9c-77e3-4c73-b873-41836da9104b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/f7eb333a-d2c9-4f14-a5bb-52f2b67834b3>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/5b1d9536-5482-47ef-8434-bd8c853cd938>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/a982c20a-7729-4b2e-a411-4d35102bac2a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/2e4afc1d-80f8-4ac1-a856-73d91cbb1ee8>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/9a86d062-3928-4f2c-af9b-b74461082fb0>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/5de4e9a8-d67f-47c8-8868-f49db997ac60>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/67cc3829-1797-4eb4-a2e8-d343e7007f56>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/9d34f5bf-e964-434b-8ee8-7a3df88b8d5d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/7e5766ea-c4a7-4091-a915-74208710d409>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/8d7858dd-54cc-4378-b3ce-ea54bde83dc9>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://www.bbc.co.uk/music/artists/6a8bd368-c0a9-4e15-9a97-154d00e6a751#artist>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.bbc.co.uk%2Fmusic%2Fartists%2F6a8bd368-c0a9-4e15-9a97-154d00e6a751%23artist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/b15359ef-fd3f-470a-b9a7-01ac2906b0c5>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751>
+      a       mo:MusicArtist ;
+      rdfs:label "Pat Metheny Trio" ;
+      vocab:artist_quality
+              "-1"^^xsd:short ;
+      vocab:artist_type "2"^^xsd:short ;
+      vocab:sortname "Metheny, Pat Trio" ;
+      mo:musicbrainz <http://musicbrainz.org/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> ;
+      =       <http://www.bbc.co.uk/music/artists/6a8bd368-c0a9-4e15-9a97-154d00e6a751#artist> ;
+      foaf:member <http://dbtune.org/musicbrainz/resource/artist/47ca3bd6-1f40-4995-b25a-c02158af5643> , <http://dbtune.org/musicbrainz/resource/artist/7daac7f9-8fcc-485f-a14f-f8091d98cf25> , <http://dbtune.org/musicbrainz/resource/artist/0d0cb98f-dcc3-4499-9a1e-79870db75104> ;
+      foaf:name "Pat Metheny Trio" .
+
+<http://dbtune.org/musicbrainz/resource/track/7fc8abf1-7471-4375-a12c-c06aa2976e8d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/5a8881d5-af3e-4d55-9664-3cd0eb0be695>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/c19c616b-c691-4b64-a6ab-0aa6a200a982>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/record/630c8cd9-7e0e-4b49-abf7-caa272da045a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/d5549351-315d-4cbc-a3b8-403329711472>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/65f1c073-7796-4dce-84cc-c162e9bb0cf1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/5fd224f1-14fc-42cc-a3e2-3ca80ee397cf>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/3d7f3032-932c-4cce-8853-caee95b3e8c5>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+mo:MusicArtist
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FMusicArtist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/700f601f-589a-4d56-b46f-bd2961866909>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/69539d38-3ca9-4718-96a9-fb9ea3526472>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/data/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751>
+      rdfs:label "RDF Description of Pat Metheny Trio" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/dc4f3f1c-bb27-470a-977d-ce60bff9bfae>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/7907032e-c03c-4d8b-8e72-749222758545>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://musicbrainz.org/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Fartist%2F6a8bd368-c0a9-4e15-9a97-154d00e6a751%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/5fdfc31c-b532-41cc-a49f-9bad2b014d52>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/2f8ae3eb-326b-4221-8773-053bec9f5f2f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/3549e0bf-f5c7-4e58-99ce-08a872d52ea2>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
+
+<http://dbtune.org/musicbrainz/resource/track/3d07bed7-4086-494b-8f91-28f941c755d2>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751> .
