@@ -298,9 +298,6 @@ public class DefaultMediaScanner
           }
       }
     
-    private final Set<URL> pendingTrackDownloadUrls = Collections.synchronizedSet(new HashSet<>());
-    private final Set<URL> pendingArtistDownloadUrls = Collections.synchronizedSet(new HashSet<>());
-    
     /*******************************************************************************************************************
      *
      *
@@ -315,14 +312,13 @@ public class DefaultMediaScanner
             
             if (message.getStatusCode() == 200) // FIXME
               {
-                if (pendingTrackDownloadUrls.contains(message.getUrl()))
+                // TODO: better way to route? Perhaps passing a token in DownloadRequest/DownloadComplete?
+                if (message.getUrl().toString().contains("/track/"))
                   {
-                    pendingTrackDownloadUrls.remove(message.getUrl());
                     onTrackDownloadComplete(message);
                   }
-                else if (pendingArtistDownloadUrls.contains(message.getUrl()))
+                else if (message.getUrl().toString().contains("/artist/"))
                   {
-                    pendingArtistDownloadUrls.remove(message.getUrl());
                     onArtistDownloadComplete(message);
                   }
               }
@@ -613,7 +609,6 @@ public class DefaultMediaScanner
         final Metadata metadata = mediaItem.getMetadata();
         final String mbGuid = metadata.get(Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
         messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid)));
-        pendingTrackDownloadUrls.add(new URL(mediaItemUri.toString()));
         messageBus.publish(new DownloadRequest(new URL(mediaItemUri.toString()), FOLLOW_REDIRECT));
         progress.incrementTotalDownloads();
       }
@@ -771,7 +766,6 @@ public class DefaultMediaScanner
                 seenArtistIds.add(artistId);
                 progress.incrementTotalArtists();
                 progress.incrementTotalDownloads();
-                pendingArtistDownloadUrls.add(new URL(artistUri.toString()));
                 messageBus.publish(new DownloadRequest(new URL(artistUri.toString()), FOLLOW_REDIRECT));
               }
           }
