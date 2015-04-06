@@ -172,6 +172,21 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
      * 
      *
      ******************************************************************************************************************/
+    /* VisibleForTesting */ boolean isCachedResourcePresent (final @Nonnull String key)
+      throws MalformedURLException
+      {
+        final Path cachePath = getCacheItemPath(new URL(key));
+        final Path cacheHeadersPath = cachePath.resolve(PATH_HEADERS);
+        final Path cacheContentPath = cachePath.resolve(PATH_CONTENT);
+        
+        return exists(cacheHeadersPath) && exists(cacheContentPath);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
     @Nonnull
     private Path getCacheItemPath (final @Nonnull URL url)
       throws MalformedURLException 

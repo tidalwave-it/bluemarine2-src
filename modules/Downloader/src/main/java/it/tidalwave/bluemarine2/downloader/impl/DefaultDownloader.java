@@ -67,6 +67,8 @@ import it.tidalwave.util.NotFoundException;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH;
+import lombok.AccessLevel;
+import lombok.Getter;
 
 /***********************************************************************************************************************
  *
@@ -81,6 +83,7 @@ public class DefaultDownloader
     private MessageBus messageBus;
        
     // FIXME: @Inject
+    @Getter(AccessLevel.PACKAGE) // FIXME: for testing - when injected, drop
     private final SimpleHttpCacheStorage cacheStorage = new SimpleHttpCacheStorage();
             
     private PoolingHttpClientConnectionManager connectionManager;
@@ -203,7 +206,7 @@ public class DefaultDownloader
                                                                                                 : Origin.NETWORK;
                 
                 // FIXME: shouldn't do this by myself
-                if (origin.equals(Origin.CACHE))
+                if (!origin.equals(Origin.CACHE))
                   {
                     final Date date = new Date();
                     final Resource resource = new HeapResource(bytes);

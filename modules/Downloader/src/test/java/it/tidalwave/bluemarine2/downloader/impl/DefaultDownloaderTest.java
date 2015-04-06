@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.downloader.impl;
 
 import javax.annotation.Nonnull;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
@@ -130,6 +131,11 @@ public class DefaultDownloaderTest
             Files.createDirectories(testResults);
             Files.write(actualResult, response.getBytes());
             FileComparisonUtils.assertSameContents(expectedResult.toFile(), actualResult.toFile());
+          }
+        
+        if (!Arrays.asList(-1, HttpStatus.SC_SEE_OTHER, HttpStatus.SC_NOT_FOUND).contains(response.getStatusCode()))
+          {
+            assertThat(underTest.getCacheStorage().isCachedResourcePresent(urlAsString), is(true));
           }
         
         // FIXME: verify it didn't go to the nextwork
