@@ -128,12 +128,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
             @Cleanup final InputStream is = newInputStream(cacheHeadersPath);
             final SessionInputBufferImpl sib = sessionInputBufferFrom(is);
             final DefaultHttpResponseParser parser = new DefaultHttpResponseParser(sib);
-            final HttpResponse response = parser.parse();
-            final Date date = new Date(); // FIXME: force hit?
-//                        new Date(Files.getLastModifiedTime(cacheHeadersPath).toMillis());
-            final Resource resource = 
-                    exists(cacheContentPath) ? new FileResource(cacheContentPath.toFile()) : null;
-            return new HttpCacheEntry(date, date, response.getStatusLine(), response.getAllHeaders(), resource);
+            return entryFrom(cacheContentPath, parser.parse());
           }
         catch (HttpException e)
           {
@@ -221,6 +216,21 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
         final BasicHttpResponse response = new BasicHttpResponse(entry.getStatusLine());
         response.setHeaders(entry.getAllHeaders());
         return response;
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static HttpCacheEntry entryFrom (final @Nonnull Path cacheContentPath, 
+                                             final @Nonnull HttpResponse response) 
+      {
+        final Date date = new Date(); // FIXME: force hit?
+//                        new Date(Files.getLastModifiedTime(cacheHeadersPath).toMillis());
+        final Resource resource =  exists(cacheContentPath) ? new FileResource(cacheContentPath.toFile()) : null;
+        return new HttpCacheEntry(date, date, response.getStatusLine(), response.getAllHeaders(), resource);
       }
   }
 
