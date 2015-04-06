@@ -69,6 +69,11 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
     private static final String PATH_CONTENT = "content";
     private static final String PATH_HEADERS = "headers";
     
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override
     public void putEntry (final @Nonnull String key, final @Nonnull HttpCacheEntry entry)
       throws IOException 
@@ -98,6 +103,11 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
           }
       }
 
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override
     public HttpCacheEntry getEntry (final @Nonnull String key) 
       throws IOException 
@@ -131,6 +141,11 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
           }
       }
 
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override
     public void removeEntry (final @Nonnull String key) 
       throws IOException
@@ -139,6 +154,11 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
         // FIXME
       }
 
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override
     public void updateEntry (final @Nonnull String key, final @Nonnull HttpCacheUpdateCallback callback)
       throws IOException, HttpCacheUpdateException 
@@ -147,6 +167,11 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
         // FIXME
       }
 
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
     @Nonnull
     private Path getCacheItemPath (final @Nonnull URL url)
       throws MalformedURLException 
@@ -157,6 +182,11 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
         return Paths.get("target/test-classes/download-cache").resolve(cachePath); // FIXME
       } 
 
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
     @Nonnull
     private static SessionInputBufferImpl sessionInputBufferFrom (final @Nonnull InputStream is) 
       {
@@ -166,6 +196,11 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
         return sib;
       }
 
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
     @Nonnull
     private static SessionOutputBufferImpl sessionOutputBufferFrom (final @Nonnull OutputStream os) 
       {
@@ -175,6 +210,11 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
         return sob;
       }
 
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
     @Nonnull
     private static BasicHttpResponse responseFrom (final @Nonnull HttpCacheEntry entry) 
       {
