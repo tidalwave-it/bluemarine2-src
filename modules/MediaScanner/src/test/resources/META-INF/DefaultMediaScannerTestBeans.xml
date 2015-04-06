@@ -92,7 +92,9 @@
     
     
     <bean class="it.tidalwave.bluemarine2.mediascanner.impl.DefaultMediaScanner" />
-        
+    
+    <bean class="it.tidalwave.bluemarine2.downloader.impl.DefaultDownloader" />
+
     <bean class="it.tidalwave.util.test.MockInstantProvider" />
     
 </beans>
