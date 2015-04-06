@@ -88,6 +88,10 @@ import lombok.extern.slf4j.Slf4j;
 import lombok.ToString;
 import static java.util.stream.Collectors.joining;
 import static it.tidalwave.bluemarine2.downloader.DownloadRequest.Option.*;
+import it.tidalwave.bluemarine2.vocabulary.DbTune;
+import it.tidalwave.bluemarine2.vocabulary.Purl;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 /***********************************************************************************************************************
  *
@@ -294,12 +298,15 @@ public class DefaultMediaScanner
           }
       }
     
+    private final Set<URL> pendingTrackDownloadUrls = Collections.synchronizedSet(new HashSet<>());
+    private final Set<URL> pendingArtistDownloadUrls = Collections.synchronizedSet(new HashSet<>());
+    
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
     /* VisibleForTesting */ void onDownloadComplete (final @ListensTo @Nonnull DownloadComplete message) 
-      throws InterruptedException, IOException, RDFParseException, RDFHandlerException
+      throws InterruptedException, IOException
       {
         // FIXME: check if it's a expected download
         try
@@ -308,23 +315,16 @@ public class DefaultMediaScanner
             
             if (message.getStatusCode() == 200) // FIXME
               {
-                final byte[] bytes = message.getBytes();
-                final Model model = parseModel(bytes, message.getUrl().toString());
-                AddStatementsRequest.Builder builder = AddStatementsRequest.build();
-                
-                model.filter(null, FOAF.MAKER, null).forEach(new Consumer<Statement>()
+                if (pendingTrackDownloadUrls.contains(message.getUrl()))
                   {
-                    @Override
-                    public void accept (final @Nonnull Statement statement) 
-                      {
-                        final URI artistUri = (URI)statement.getObject();
-//                      // FIXME: should be builder = builder.with()
-                        builder.with(statement.getSubject(), statement.getPredicate(), artistUri);
-                        // TODO: download data of artistUri
-                      }
-                  });
-
-                messageBus.publish(builder.create());
+                    pendingTrackDownloadUrls.remove(message.getUrl());
+                    onTrackDownloadComplete(message);
+                  }
+                else if (pendingArtistDownloadUrls.contains(message.getUrl()))
+                  {
+                    pendingArtistDownloadUrls.remove(message.getUrl());
+                    onArtistDownloadComplete(message);
+                  }
               }
           }
         finally 
@@ -333,6 +333,138 @@ public class DefaultMediaScanner
           }
       }
 
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void onTrackDownloadComplete (final @Nonnull DownloadComplete message) 
+      throws InterruptedException, IOException
+      {
+        try 
+          {
+            log.info("onTrackDownloadComplete({})", message);
+
+            final Model model = parseModel(message.getBytes(), message.getUrl().toString());
+            AddStatementsRequest.Builder builder = AddStatementsRequest.build();
+
+            model.filter(null, FOAF.MAKER, null).forEach(new Consumer<Statement>()
+              {
+                @Override
+                public void accept (final @Nonnull Statement statement) 
+                  {
+                    try
+                      {
+                        final URI artistUri = (URI)statement.getObject();
+        //                      // FIXME: should be builder = builder.with()
+                        builder.with(statement.getSubject(), statement.getPredicate(), artistUri);
+                        requestDbTuneArtistMetadata(artistUri);
+                      } 
+                    catch (MalformedURLException e) 
+                      {
+                        throw new RuntimeException(e);
+                      }
+                  }
+              });
+
+            messageBus.publish(builder.create());
+          }   
+        catch (RDFHandlerException | RDFParseException ex)
+          {
+            log.error("Cannot parse track: {}", ex.toString());
+            log.error("Cannot parse track: {}", new String(message.getBytes()));
+          }
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void onArtistDownloadComplete (final @Nonnull DownloadComplete message) 
+      throws InterruptedException, IOException
+      {
+        try 
+          {
+            log.info("onArtistDownloadComplete({})", message);
+            final URI artistUri = uriFor(message.getUrl().toString());
+            final Model model = parseModel(message.getBytes(), message.getUrl().toString());
+            AddStatementsRequest.Builder builder = AddStatementsRequest.build();
+
+//            model.filter(null, FOAF.MAKER, null).
+            model.forEach(new Consumer<Statement>()
+              {
+                @Override
+                public void accept (final @Nonnull Statement statement)
+                  {
+                    final Resource subject = statement.getSubject();
+                    final URI predicate = statement.getPredicate();
+                    final Value object = statement.getObject();
+                    
+                    // foaf:maker would include all the items in the database, not only in our collection
+                    // anyway, the required statements have been already added when importing tracks
+                    if (predicate.equals(FOAF.MAKER))
+                      {
+                        return;  
+                      }
+                    
+                    else if (subject.equals(artistUri))
+                      {
+                        List<String> validPredicates = Arrays.asList(DbTune.ARTIST_TYPE, DbTune.SORT_NAME,
+                                Purl.EVENT, RDFS.LABEL, FOAF.NAME).stream().map(uri -> uri.stringValue()).collect(Collectors.toList());
+                        if (validPredicates.contains(predicate.stringValue()))
+                          {
+                            // FIXME: should be builder = builder.with()
+                            builder.with(subject, predicate, object);
+                          }
+//  TODO: extract only GUID?       mo:musicbrainz <http://musicbrainz.org/artist/1f9df192-a621-4f54-8850-2c5373b7eac9> ;
+// TODO: download bio event details
+                      }
+                    
+                    else
+                      {
+                        return;  
+                      }
+                    
+// TODO: rel:collaboratesWith
+// TODO:<http://dbpedia.org/resource/Frank_Sinatra>
+//      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FFrank_Sinatra%3E> .
+/*
+                    <http://dbtune.org/musicbrainz/resource/performance/98398> <http://purl.org/NET/c4dm/event.owl#agent> <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> ;
+        mo:performer <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> .
+        mo:orchestra <http://dbtune.org/musicbrainz/resource/artist/98e4313e-dfb0-4084-805c-3e42ef9301d0> ;
+        mo:symphony_orchestra <http://dbtune.org/musicbrainz/resource/artist/98e4313e-dfb0-4084-805c-3e42ef9301d0> .
+        mo:soprano <http://dbtune.org/musicbrainz/resource/artist/361fcd46-41c5-4503-aa43-a87937583909> .
+        mo:orchestra <http://dbtune.org/musicbrainz/resource/artist/5c8fd1e4-574d-495f-9a24-2dfaadf2e8c0> .
+        mo:conductor <http://dbtune.org/musicbrainz/resource/artist/fa39bc82-9b27-4bbb-9425-d719a72e09ac> .
+        mo:lead_singer <http://dbtune.org/musicbrainz/resource/artist/7cce3b8e-623c-4078-b079-837cbcf638c4> ;
+        mo:singer <http://dbtune.org/musicbrainz/resource/artist/7cce3b8e-623c-4078-b079-837cbcf638c4> .
+        mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+        mo:chamber_orchestra <http://dbtune.org/musicbrainz/resource/artist/3a9f0e21-5796-4f04-bd4c-3deafd59ad80> ;
+        mo:background_singer <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> ;
+
+escludi sparql
+        
+        <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Ludwig_van_Beethoven> , <http://de.wikipedia.org/wiki/Ludwig_van_Beethoven> , <http://www.bbc.co.uk/music/artists/1f9df192-a621-4f54-8850-2c5373b7eac9#artist> ;
+*/
+                  }
+              });
+
+            messageBus.publish(builder.create());
+          }   
+        catch (RDFHandlerException | RDFParseException ex)
+          {
+            log.error("Cannot parse artist: {}", ex.toString());
+            log.error("Cannot parse artist: {}", new String(message.getBytes()));
+          }
+        finally
+          {
+            progress.incrementImportedArtists();
+          }
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
     @Nonnull
     private Model parseModel (final @Nonnull byte[] bytes, final @Nonnull String uri)
         throws RDFHandlerException, RDFParseException, IOException
@@ -350,8 +482,12 @@ public class DefaultMediaScanner
                 model.add(statement);
               }
           });
-        
-        parser.parse(new ByteArrayInputStream(bytes), uri);
+
+
+        byte[] b2 = new String(bytes).replaceAll(" = ", "owl:sameAs").getBytes(); // FIXME
+        parser.parse(new ByteArrayInputStream(b2), uri);
+//        parser.parse(new ByteArrayInputStream(bytes), uri);
+
         return model;
       }
     
@@ -486,6 +622,7 @@ public class DefaultMediaScanner
         final Metadata metadata = mediaItem.getMetadata();
         final String mbGuid = metadata.get(Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
         messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid)));
+        pendingTrackDownloadUrls.add(new URL(mediaItemUri.toString()));
         messageBus.publish(new DownloadRequest(new URL(mediaItemUri.toString()), FOLLOW_REDIRECT));
         progress.incrementTotalDownloads();
       }
@@ -620,6 +757,31 @@ public class DefaultMediaScanner
                 seenArtistIds.add(artistId);
                 progress.incrementTotalArtists();
                 messageBus.publish(new ArtistImportRequest(artistId, artist));
+              }
+          }
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * Posts a requesto to download metadata for the given {@code artistUri}, if not available yet.
+     * 
+     * @param   artistUri   the URI of the artist
+     *
+     ******************************************************************************************************************/
+    private void requestDbTuneArtistMetadata (final @Nonnull URI artistUri)
+      throws MalformedURLException
+      {
+        synchronized (seenArtistIds)
+          {
+            final Id artistId = new Id(artistUri.stringValue());
+            
+            if (!seenArtistIds.contains(artistId))
+              {
+                seenArtistIds.add(artistId);
+                progress.incrementTotalArtists();
+                progress.incrementTotalDownloads();
+                pendingArtistDownloadUrls.add(new URL(artistUri.toString()));
+                messageBus.publish(new DownloadRequest(new URL(artistUri.toString()), FOLLOW_REDIRECT));
               }
           }
       }
