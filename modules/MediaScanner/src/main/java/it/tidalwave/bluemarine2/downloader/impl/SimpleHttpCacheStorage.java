@@ -36,8 +36,6 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.nio.file.StandardOpenOption;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.apache.http.HttpException;
@@ -56,6 +54,8 @@ import org.apache.http.impl.io.SessionOutputBufferImpl;
 import org.apache.http.message.BasicHttpResponse;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
+import static java.nio.file.StandardCopyOption.*;
+import static java.nio.file.StandardOpenOption.*;
 
 /***********************************************************************************************************************
  *
@@ -86,7 +86,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
             final Path cacheHeadersPath = cachePath.resolve(PATH_HEADERS);
             final Path cacheContentPath = cachePath.resolve(PATH_CONTENT);
 
-            @Cleanup final OutputStream os = Files.newOutputStream(cacheHeadersPath, StandardOpenOption.CREATE);
+            @Cleanup final OutputStream os = Files.newOutputStream(cacheHeadersPath, CREATE);
             final SessionOutputBufferImpl sob = sessionOutputBufferFrom(os);
             final DefaultHttpResponseWriter writer = new DefaultHttpResponseWriter(sob);
             writer.write(responseFrom(entry));
@@ -94,7 +94,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
 
             if (entry.getResource().length() > 0)
               {
-                Files.copy(entry.getResource().getInputStream(), cacheContentPath, StandardCopyOption.REPLACE_EXISTING);
+                Files.copy(entry.getResource().getInputStream(), cacheContentPath, REPLACE_EXISTING);
               }
           }
         catch (HttpException e)
