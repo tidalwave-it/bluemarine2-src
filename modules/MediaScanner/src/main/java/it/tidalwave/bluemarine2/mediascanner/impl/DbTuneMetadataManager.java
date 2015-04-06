@@ -186,8 +186,7 @@ public class DbTuneMetadataManager
                   }
                 
 // TODO: rel:collaboratesWith
-// TODO:<http://dbpedia.org/resource/Frank_Sinatra>
-//      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FFrank_Sinatra%3E> .
+// TODO      =       <http://www.bbc.co.uk/music/artists/83e71a21-caf7-4e48-8ff7-6512d51e88a3#artist> , <http://dbpedia.org/resource/Henry_Mancini> ;
                 /*
                 <http://dbtune.org/musicbrainz/resource/performance/98398> <http://purl.org/NET/c4dm/event.owl#agent> <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> ;
                 mo:performer <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> .
