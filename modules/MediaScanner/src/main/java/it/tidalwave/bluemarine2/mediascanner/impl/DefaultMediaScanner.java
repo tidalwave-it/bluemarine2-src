@@ -39,10 +39,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.net.MalformedURLException;
+import java.net.URL;
 import javax.xml.bind.JAXBException;
 import org.musicbrainz.ns.mmd_2.Artist;
 import org.musicbrainz.ns.mmd_2.ArtistCredit;
@@ -50,6 +52,7 @@ import org.musicbrainz.ns.mmd_2.NameCredit;
 import org.musicbrainz.ns.mmd_2.Recording;
 import org.openrdf.model.Literal;
 import org.openrdf.model.Resource;
+import org.openrdf.model.Statement;
 import org.openrdf.model.URI;
 import org.openrdf.model.Value;
 import org.openrdf.model.ValueFactory;
@@ -58,6 +61,11 @@ import org.openrdf.model.vocabulary.DC;
 import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
+import org.openrdf.rio.RDFHandlerException;
+import org.openrdf.rio.RDFParseException;
+import org.openrdf.rio.RDFParser;
+import org.openrdf.rio.helpers.RDFHandlerBase;
+import org.openrdf.rio.n3.N3ParserFactory;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.InstantProvider;
 import it.tidalwave.messagebus.MessageBus;
@@ -71,6 +79,8 @@ import it.tidalwave.bluemarine2.vocabulary.BM;
 import it.tidalwave.bluemarine2.vocabulary.MO;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
 import it.tidalwave.bluemarine2.musicbrainz.impl.DefaultMusicBrainzApi;
+import it.tidalwave.bluemarine2.downloader.DownloadComplete;
+import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import lombok.extern.slf4j.Slf4j;
 import lombok.ToString;
 import static java.util.stream.Collectors.joining;
@@ -98,7 +108,7 @@ public class DefaultMediaScanner
     private InstantProvider timestampProvider;
     
     // FIXME: inject
-    private Md5IdCreator md5IdCreator;
+    private Md5IdCreator md5IdCreator = new Md5IdCreator();
 
     @ToString
     class Progress
@@ -109,10 +119,14 @@ public class DefaultMediaScanner
         private volatile int importedMediaItems;
         private volatile int totalArtists;
         private volatile int importedArtists;
+        private volatile int totalDownloads;
+        private volatile int completedDownloads;
         
         public synchronized void reset()
           {
-            totalFolders = scannedFolders = totalMediaItems = importedMediaItems = 0;  
+            totalFolders = scannedFolders =
+            totalMediaItems = importedMediaItems =
+            totalDownloads = completedDownloads = 0;  
           }
         
         public synchronized void incrementTotalFolders()
@@ -151,8 +165,22 @@ public class DefaultMediaScanner
             check();
           }
 
+        public synchronized void incrementTotalDownloads() 
+          {
+            totalDownloads++;  
+            check();
+          }
+
+        public synchronized void incrementCompletedDownloads() 
+          {
+            completedDownloads++;  
+            check();
+          }
+        
         private void check()
           {
+            log.debug("{}", this); // FIXME: is called from sync block
+            
             if (isCompleted())
               {
                 messageBus.publish(new ScanCompleted());
@@ -163,7 +191,8 @@ public class DefaultMediaScanner
           {
             return (scannedFolders == totalFolders) 
                 && (importedMediaItems == totalMediaItems)
-                && (importedArtists == totalArtists);
+                && (importedArtists == totalArtists)
+                && (completedDownloads == totalDownloads);
           }
       }
     
@@ -263,6 +292,53 @@ public class DefaultMediaScanner
     
     /*******************************************************************************************************************
      *
+     *
+     ******************************************************************************************************************/
+    /* VisibleForTesting */ void onDownloadComplete (final @ListensTo @Nonnull DownloadComplete message) 
+      throws InterruptedException, IOException, RDFParseException, RDFHandlerException
+      {
+        // FIXME: check if it's a expected download
+        try
+          {
+            log.info("onDownloadComplete({})", message);
+            
+            if (message.getStatusCode() == 200) // FIXME
+              {
+                log.debug(">>>> received {}", new String(message.getBytes()));
+                final N3ParserFactory n3ParserFactory = new N3ParserFactory();
+                final RDFParser parser = n3ParserFactory.getParser();
+                AddStatementsRequest.Builder builder = AddStatementsRequest.build();
+
+                parser.setRDFHandler(new RDFHandlerBase()
+                  {
+                    @Override
+                    public void handleStatement (final @Nonnull Statement statement)
+                      throws RDFHandlerException 
+                      {
+                        if (!statement.getPredicate().equals(RDFS.SEEALSO)
+                         && !statement.getPredicate().equals(FOAF.PRIMARY_TOPIC)
+                         && !statement.getPredicate().equals(MO.PUBLISHED_AS))
+                          {
+                            log.debug("ADDING {}", statement);
+                            // FIXME: filter only the statements you need
+                            // FIXME: should be builder = builder.with()
+                            builder.with(statement.getSubject(), statement.getPredicate(), statement.getObject());
+                          }
+                      }
+                  });
+
+                parser.parse(new ByteArrayInputStream(message.getBytes()), message.getUrl().toString());
+                messageBus.publish(builder.create());
+              }
+          }
+        finally 
+          {
+            progress.incrementCompletedDownloads();
+          }
+      }
+    
+    /*******************************************************************************************************************
+     *
      * Processes a {@link MediaItem}.
      * 
      * @param                           mediaItem   the item
@@ -303,7 +379,8 @@ public class DefaultMediaScanner
             
             if (musicBrainzTrackId.isPresent())
               {
-                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
+                importMediaItemDbTuneMetadata(mediaItem, mediaItemUri);
+//                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
               }
             else
               {
@@ -369,6 +446,30 @@ public class DefaultMediaScanner
           }
         
         messageBus.publish(builder.create());
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * Imports the DbTune.org metadata for the given {@link MediaItem}.
+     * 
+     * @param   mediaItem               the {@code MediaItem}.
+     * @param   mediaItemUri            the URI of the item
+     * @throws  IOException             when an I/O problem occurred
+     * @throws  JAXBException           when an XML error occurs
+     * @throws  InterruptedException    if the operation is interrupted
+     *
+     ******************************************************************************************************************/
+    private void importMediaItemDbTuneMetadata (final @Nonnull MediaItem mediaItem, 
+                                                final @Nonnull URI mediaItemUri)
+      throws IOException, JAXBException, InterruptedException 
+      { 
+        log.info("importMediaItemDbTuneMetadata({}, {})", mediaItem, mediaItemUri);
+        
+        final Metadata metadata = mediaItem.getMetadata();
+        final String mbGuid = metadata.get(Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
+        messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid)));
+        messageBus.publish(new DownloadRequest(new URL(mediaItemUri.toString())));
+        progress.incrementTotalDownloads();
       }
     
     /*******************************************************************************************************************
