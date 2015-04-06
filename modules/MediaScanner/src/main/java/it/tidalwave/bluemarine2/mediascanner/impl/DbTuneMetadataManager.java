@@ -59,6 +59,7 @@ import it.tidalwave.bluemarine2.vocabulary.Purl;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.downloader.DownloadRequest.Option.FOLLOW_REDIRECT;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
+import org.openrdf.model.vocabulary.RDF;
 
 /***********************************************************************************************************************
  *
@@ -147,7 +148,7 @@ public class DbTuneMetadataManager
       throws InterruptedException, IOException
       {
         List<URI> validPredicates = Arrays.asList(
-                DbTune.ARTIST_TYPE, DbTune.SORT_NAME, Purl.EVENT, RDFS.LABEL, FOAF.NAME);
+                DbTune.ARTIST_TYPE, DbTune.SORT_NAME, Purl.EVENT, RDF.TYPE, RDFS.LABEL, FOAF.NAME);
         try 
           {
             log.info("onArtistDownloadComplete({})", message);
