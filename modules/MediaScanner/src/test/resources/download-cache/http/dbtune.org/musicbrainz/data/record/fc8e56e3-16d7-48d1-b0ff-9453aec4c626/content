@@ -1,0 +1,71 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/fc8e56e3-16d7-48d1-b0ff-9453aec4c626>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Ffc8e56e3-16d7-48d1-b0ff-9453aec4c626%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/fc8e56e3-16d7-48d1-b0ff-9453aec4c626>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/fc8e56e3-16d7-48d1-b0ff-9453aec4c626> .
+
+<http://images.amazon.com/images/P/B00006466W>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00006466W%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00006466W>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00006466W%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbpedia.org/resource/Ella_at_Juan-Les-Pins>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FElla_at_Juan-Les-Pins%3E> .
+
+<http://images.amazon.com/images/P/B00006466W.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00006466W.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/fc8e56e3-16d7-48d1-b0ff-9453aec4c626>
+      rdfs:label "RDF Description of Ella at Juan-Les-Pins (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/fc8e56e3-16d7-48d1-b0ff-9453aec4c626> .
+
+<http://dbtune.org/musicbrainz/resource/record/fc8e56e3-16d7-48d1-b0ff-9453aec4c626>
+      a       mo:Record ;
+      rdfs:label "Ella at Juan-Les-Pins (disc 1)" ;
+      vocab:album_attributes
+              "{0,9,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00006466W" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B00006466W.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "38"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/148036> ;
+      vocab:tracks "24"^^xsd:int ;
+      dc:date "2002-06-04" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Ella at Juan-Les-Pins (disc 1)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00006466W> ;
+      mo:image <http://images.amazon.com/images/P/B00006466W> , <http://images.amazon.com/images/P/B00006466W.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/fc8e56e3-16d7-48d1-b0ff-9453aec4c626> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/103291> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/c7488461-1de4-4884-aca5-f6bf1d62fd05> , <http://dbtune.org/musicbrainz/resource/track/7e5e68d2-a9ec-4859-88d0-e7dd0bdc1007> , <http://dbtune.org/musicbrainz/resource/track/998f7735-ef5e-43eb-b109-953bb420cece> , <http://dbtune.org/musicbrainz/resource/track/63ed3ee6-6d68-43e6-9765-a64242f6ebd4> , <http://dbtune.org/musicbrainz/resource/track/87a9ce7f-ec8f-4ad4-9b0b-50376a9858e9> , <http://dbtune.org/musicbrainz/resource/track/aac847ed-9ea5-4a68-a233-6ffb3c508300> , <http://dbtune.org/musicbrainz/resource/track/f2989f46-96b3-4775-ac25-be8f86419ede> , <http://dbtune.org/musicbrainz/resource/track/acf17291-3659-4b69-aa75-44227e915647> , <http://dbtune.org/musicbrainz/resource/track/1c574aa9-3726-4e8d-a5bf-c6f1b795b130> , <http://dbtune.org/musicbrainz/resource/track/19f621af-8bdd-4f3b-b70b-c8790b9e7318> , <http://dbtune.org/musicbrainz/resource/track/d6e87a5a-90b9-4029-918d-82e333bc5fd5> , <http://dbtune.org/musicbrainz/resource/track/9d7f8fe7-49bb-4196-9903-f5f4d7c11e20> , <http://dbtune.org/musicbrainz/resource/track/f2b8ddaf-502e-495a-a414-6e7ac74a8fb7> , <http://dbtune.org/musicbrainz/resource/track/84a271b3-d971-47fc-840d-30cb26b10c8a> , <http://dbtune.org/musicbrainz/resource/track/1377a27e-14b7-4f1e-8367-ab1ab65af745> , <http://dbtune.org/musicbrainz/resource/track/c09789d7-530f-4882-90cc-e3dd23d73c14> , <http://dbtune.org/musicbrainz/resource/track/b30fadc0-efe4-4b07-bc29-f4c8d8ab3148> , <http://dbtune.org/musicbrainz/resource/track/8a7de5fb-ac2e-496e-ba17-8126148d560f> , <http://dbtune.org/musicbrainz/resource/track/6b6c008f-f5e4-4a2d-8c1d-3906229a6df2> , <http://dbtune.org/musicbrainz/resource/track/ea0a01fe-73b0-42e5-8560-8282d76d2151> , <http://dbtune.org/musicbrainz/resource/track/9651730c-9ced-4af5-a878-a01268ed26aa> , <http://dbtune.org/musicbrainz/resource/track/f38c1b11-4bbe-4dbb-b3d0-9abf0c6b6851> , <http://dbtune.org/musicbrainz/resource/track/7b288cdd-1c26-4e65-984b-db6783c1b7f4> , <http://dbtune.org/musicbrainz/resource/track/f03177d2-1088-4f39-b7b8-3aa0b222638a> ;
+      =       <http://dbpedia.org/resource/Ella_at_Juan-Les-Pins> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
+      foaf:page "215386146" .

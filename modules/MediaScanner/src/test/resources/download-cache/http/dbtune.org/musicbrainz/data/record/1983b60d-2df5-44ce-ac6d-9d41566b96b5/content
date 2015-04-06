@@ -1,0 +1,72 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://ec1.images-amazon.com/images/P/B00000I41J.08.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00000I41J.08.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/1983b60d-2df5-44ce-ac6d-9d41566b96b5>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/1983b60d-2df5-44ce-ac6d-9d41566b96b5> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/1983b60d-2df5-44ce-ac6d-9d41566b96b5>
+      a       mo:Record ;
+      rdfs:label "Somethin' Else" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00000I41J" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00000I41J.08.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "5"^^xsd:int ;
+      vocab:albummeta_puids
+              "32"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/71120> , <http://dbtune.org/musicbrainz/resource/toc/297549> , <http://dbtune.org/musicbrainz/resource/toc/15371> , <http://dbtune.org/musicbrainz/resource/toc/208826> , <http://dbtune.org/musicbrainz/resource/toc/219784> ;
+      vocab:tracks "6"^^xsd:int ;
+      dc:date "1988-04-24" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Somethin' Else" ;
+      mbz:first_release <http://dbtune.org/musicbrainz/resource/record/977f543a-19b7-4fb3-b7f3-ae4d5f5fd498> ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00000I41J> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B00000I41J.08.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B00000I41J> ;
+      mo:musicbrainz <http://musicbrainz.org/album/1983b60d-2df5-44ce-ac6d-9d41566b96b5> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/341837> , <http://dbtune.org/musicbrainz/resource/release/381169> , <http://dbtune.org/musicbrainz/resource/release/149466> , <http://dbtune.org/musicbrainz/resource/release/309950> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/3082d124-1345-4023-b3c9-21bc4949ef5a> , <http://dbtune.org/musicbrainz/resource/track/d5e82ffa-d988-4022-bdee-31059f768b33> , <http://dbtune.org/musicbrainz/resource/track/69c7f51f-10bf-44b1-a319-3c1fb60f538d> , <http://dbtune.org/musicbrainz/resource/track/a5a51f1d-6dca-4758-bb31-802df327c6ff> , <http://dbtune.org/musicbrainz/resource/track/8590b891-5981-4584-8c1d-aadad1f45004> , <http://dbtune.org/musicbrainz/resource/track/0acb8682-2fbd-4dba-ba70-d0b2700540a0> ;
+      =       <http://dbpedia.org/resource/Somethin%27_Else_%28Cannonball_Adderley_album%29> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/a4c73ebe-b2c7-4f13-b99d-2fe1f9f27da8> ;
+      foaf:page "688331433" .
+
+<http://images.amazon.com/images/P/B00000I41J>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000I41J%3E> .
+
+<http://musicbrainz.org/album/1983b60d-2df5-44ce-ac6d-9d41566b96b5>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F1983b60d-2df5-44ce-ac6d-9d41566b96b5%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00000I41J>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00000I41J%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/1983b60d-2df5-44ce-ac6d-9d41566b96b5>
+      rdfs:label "RDF Description of Somethin' Else" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/1983b60d-2df5-44ce-ac6d-9d41566b96b5> .
+
+<http://dbpedia.org/resource/Somethin%27_Else_%28Cannonball_Adderley_album%29>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FSomethin%2527_Else_%2528Cannonball_Adderley_album%2529%3E> .

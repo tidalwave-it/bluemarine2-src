@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000046R2>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000046R2%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/e45add67-2c0a-4e93-b729-8a3bfc8cfd8b>
+      rdfs:label "RDF Description of The Best of the Song Books" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/e45add67-2c0a-4e93-b729-8a3bfc8cfd8b> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/e45add67-2c0a-4e93-b729-8a3bfc8cfd8b>
+      a       mo:Record ;
+      rdfs:label "The Best of the Song Books" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000046R2" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0000046R2.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "4"^^xsd:int ;
+      vocab:albummeta_puids
+              "26"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/8064> , <http://dbtune.org/musicbrainz/resource/toc/48980> , <http://dbtune.org/musicbrainz/resource/toc/83662> , <http://dbtune.org/musicbrainz/resource/toc/113505> ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:date "1993-09-21" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Best of the Song Books" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000046R2> ;
+      mo:image <http://images.amazon.com/images/P/B0000046R2> , <http://ec1.images-amazon.com/images/P/B0000046R2.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/e45add67-2c0a-4e93-b729-8a3bfc8cfd8b> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/324835> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/86ca204b-9764-45e8-b04c-584d3a38a1fe> , <http://dbtune.org/musicbrainz/resource/track/1390c400-bf24-4532-ad7e-fdf2a04cbc1a> , <http://dbtune.org/musicbrainz/resource/track/c298c2b6-ae6e-4c1f-9676-486fef1ab8ad> , <http://dbtune.org/musicbrainz/resource/track/aea79d60-fa6b-454f-987f-cad1ac5fcca5> , <http://dbtune.org/musicbrainz/resource/track/8e695ba4-e430-4db3-8205-e22f8b59e756> , <http://dbtune.org/musicbrainz/resource/track/513372e3-594a-4cbc-a708-b41577102d60> , <http://dbtune.org/musicbrainz/resource/track/5daf9534-ab69-42d6-ad3b-560788c8749a> , <http://dbtune.org/musicbrainz/resource/track/7cd5df78-54d9-42e3-8bfb-e887e8cdafbd> , <http://dbtune.org/musicbrainz/resource/track/3fe7edbd-dee5-43a4-b615-3b388b1306c5> , <http://dbtune.org/musicbrainz/resource/track/645fbe73-0d2a-4130-bea3-4d4cd89fc603> , <http://dbtune.org/musicbrainz/resource/track/9c3e499f-be27-4948-8b7c-8c243f321232> , <http://dbtune.org/musicbrainz/resource/track/c1cf9743-28fa-4587-a324-81d197bd8da6> , <http://dbtune.org/musicbrainz/resource/track/34bc0e4e-c65d-4c09-8628-9628124ffe7d> , <http://dbtune.org/musicbrainz/resource/track/a5121bcb-4e94-4b00-8448-1b4c6c8beab7> , <http://dbtune.org/musicbrainz/resource/track/e67765c6-f6fd-4934-aeed-6c693063c009> , <http://dbtune.org/musicbrainz/resource/track/f1c4b08a-b2da-49de-93e4-798b12ce6163> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
+      foaf:page "714277990" .
+
+<http://musicbrainz.org/album/e45add67-2c0a-4e93-b729-8a3bfc8cfd8b>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fe45add67-2c0a-4e93-b729-8a3bfc8cfd8b%3E> .
+
+<http://images.amazon.com/images/P/B0000046R2>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000046R2%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/e45add67-2c0a-4e93-b729-8a3bfc8cfd8b>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/e45add67-2c0a-4e93-b729-8a3bfc8cfd8b> .
+
+<http://ec1.images-amazon.com/images/P/B0000046R2.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0000046R2.01.MZZZZZZZ.jpg%3E> .

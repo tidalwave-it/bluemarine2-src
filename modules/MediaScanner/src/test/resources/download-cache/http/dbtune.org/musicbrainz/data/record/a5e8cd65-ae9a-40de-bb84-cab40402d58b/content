@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://ec1.images-amazon.com/images/P/B000000OSS.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000000OSS.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/a5e8cd65-ae9a-40de-bb84-cab40402d58b>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/a5e8cd65-ae9a-40de-bb84-cab40402d58b> .
+
+<http://dbtune.org/musicbrainz/resource/record/a5e8cd65-ae9a-40de-bb84-cab40402d58b>
+      a       mo:Record ;
+      rdfs:label "Secret Story" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000000OSS" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000000OSS.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "3"^^xsd:int ;
+      vocab:albummeta_puids
+              "23"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/274068> , <http://dbtune.org/musicbrainz/resource/toc/192758> , <http://dbtune.org/musicbrainz/resource/toc/490> ;
+      vocab:tracks "14"^^xsd:int ;
+      dc:date "1992-07-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Secret Story" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000000OSS> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000000OSS.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000000OSS> ;
+      mo:musicbrainz <http://musicbrainz.org/album/a5e8cd65-ae9a-40de-bb84-cab40402d58b> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/63987> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/8dcccf0c-2dcd-45eb-bcfc-c930352f32a7> , <http://dbtune.org/musicbrainz/resource/track/2d2e7643-ab0b-4a31-bdb8-1d4e87adb7c1> , <http://dbtune.org/musicbrainz/resource/track/3a23ad74-9e2d-4770-8fb4-d9eb6dd7192d> , <http://dbtune.org/musicbrainz/resource/track/9d6c9fa4-0d29-493b-afc1-215eaca7c6fb> , <http://dbtune.org/musicbrainz/resource/track/20d17379-1187-4b4e-b8d9-803be19e4f4d> , <http://dbtune.org/musicbrainz/resource/track/30593865-af30-42e3-8338-bcd19734aabe> , <http://dbtune.org/musicbrainz/resource/track/7a4c5806-dc54-4f68-8c60-9fb68a0f7e2b> , <http://dbtune.org/musicbrainz/resource/track/aad7f309-f5c1-4d04-89ef-85695d9653e3> , <http://dbtune.org/musicbrainz/resource/track/2d582ba2-cffd-45fb-b46b-a15b90c0ed40> , <http://dbtune.org/musicbrainz/resource/track/2bf6a27f-920a-4fdc-858f-300e18ab3b52> , <http://dbtune.org/musicbrainz/resource/track/713aee12-8383-409b-ade7-aaca795ce8d4> , <http://dbtune.org/musicbrainz/resource/track/624a22e0-6984-4647-b1f2-11b20ff4b126> , <http://dbtune.org/musicbrainz/resource/track/3a8370c6-84a2-4cb7-8c87-274aeb5ac72f> , <http://dbtune.org/musicbrainz/resource/track/d1c2f14f-6ce9-4718-9224-4cedf46606a5> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7daac7f9-8fcc-485f-a14f-f8091d98cf25> ;
+      foaf:page "677530837" .
+
+<http://images.amazon.com/images/P/B000000OSS>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000000OSS%3E> .
+
+<http://musicbrainz.org/album/a5e8cd65-ae9a-40de-bb84-cab40402d58b>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fa5e8cd65-ae9a-40de-bb84-cab40402d58b%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000000OSS>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000000OSS%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/a5e8cd65-ae9a-40de-bb84-cab40402d58b>
+      rdfs:label "RDF Description of Secret Story" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/a5e8cd65-ae9a-40de-bb84-cab40402d58b> .

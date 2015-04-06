@@ -1,0 +1,128 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/track/a98fd584-ca2e-42d3-9db8-a6a15f7a00af>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/31d1a331-6ef6-48ed-8361-b97c7d534ef7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/434879fe-cb3a-4d80-b366-647794f264c7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/a8e8e165-db8b-4716-b152-dd3bd1818724>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://musicbrainz.org/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Fartist%2F82221459-bb2e-4fa3-9861-3eceb7e6235e%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/444a7bbb-0a56-4601-bede-b2cb66495753>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/188886d4-71c1-4033-874d-985632ec7763>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/b5994fd9-467b-4e40-a783-49f7a8e8bdbc>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://www.bbc.co.uk/music/artists/82221459-bb2e-4fa3-9861-3eceb7e6235e#artist>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.bbc.co.uk%2Fmusic%2Fartists%2F82221459-bb2e-4fa3-9861-3eceb7e6235e%23artist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/32b6675b-ae20-4cd2-9a41-9c6081efb2eb>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/a1b1f6ea-1316-4b09-b757-b7a76a1e874b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/record/6268174c-f524-4c8c-a95c-44072fe4f1ae>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/c0376974-4240-409e-a83c-ae8b2a3c1dd7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/e335f02f-3ddc-4476-ab1f-edcf1d73bd70>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/6de3cb77-0289-4bf1-847b-5b705b9299bb>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/f602fbe9-e3e9-4d56-ade2-5601abde20cf>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/110fb0c3-dbae-4687-a357-87932eb39acd>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/aee9f65a-ac96-400d-9b74-fcea6a294c1f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/data/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e>
+      rdfs:label "RDF Description of Antônio Carlos Jobim & Miúcha" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/8e2802c8-9b86-4fd3-9f7e-daaa167bd431>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/397ef3a9-2f10-4dd4-9281-8ae29caaf936>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/b26fa5ce-3091-460d-b875-9560cba83ab5>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e>
+      a       mo:MusicArtist ;
+      rdfs:label "Antônio Carlos Jobim & Miúcha" ;
+      vocab:alias "Miucha Chico Buarque & Antonio Carlos Jobim" , "Miúcha e Tom Jobim" , "Miucha e Antonio Carlos Jobim" ;
+      vocab:artist_quality
+              "-1"^^xsd:short ;
+      vocab:artist_type "2"^^xsd:short ;
+      vocab:sortname "Jobim, Antônio Carlos & Miúcha" ;
+      mo:musicbrainz <http://musicbrainz.org/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> ;
+      rel:collaboratesWith
+              <http://dbtune.org/musicbrainz/resource/artist/7a8dbe84-f4c0-4457-bfa3-edced1f8cde0> ;
+      =       <http://www.bbc.co.uk/music/artists/82221459-bb2e-4fa3-9861-3eceb7e6235e#artist> ;
+      foaf:name "Antônio Carlos Jobim & Miúcha" .
+
+<http://dbtune.org/musicbrainz/resource/track/0324f81e-c4b4-4ad8-85e0-c5a7f1c2c6ab>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+mo:MusicArtist
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FMusicArtist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/7164fc63-5a1e-4939-a699-6a2cba1da84d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/51a2c1e0-fabf-494c-8468-da8c61211d09>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/665a226a-fe9b-425e-8723-c0ba8e6abdee>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/cd1b3db5-f80d-4a0e-96b4-f115f8e921ab>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/7270131f-5d85-41fd-b462-cb70e1c8fb8d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/2cd004c5-fb31-4ee9-977d-190db7db2e00>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/caa74912-79df-496f-8268-b3ba97aa23d3>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .
+
+<http://dbtune.org/musicbrainz/resource/track/3c8961e0-763b-42e6-892c-655f4a23ae1c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/82221459-bb2e-4fa3-9861-3eceb7e6235e> .

@@ -1,0 +1,114 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/track/2397e6f7-041d-4e7d-861a-36460976ac1f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/e1577370-c8f5-4aee-8e70-7c5fdff54564>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/ff7c19a6-024b-484c-a1f8-9e84a4df8034>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/1e8bdc89-855a-463a-be8a-f9922633f946>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/844d3f76-492f-4b49-84e4-65d328920d18>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/c93132f7-1e90-4a24-af77-dbd6501a0e22>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/record/2e78b68a-8922-4ac6-adad-0b7894263a58>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/e2af998d-3740-4fc9-ba26-6de04e8ef3f7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/record/2078f267-117b-4959-a166-ab2c901c26a3>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/data/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75>
+      rdfs:label "RDF Description of The Michel Petrucciani Trio" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/32aeb674-0703-4b9c-8624-36f847cd6cab>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/3b9131d8-c98a-4c48-9e95-c0f565897171>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/2b2cf9b3-3625-45b0-85c9-cb0b7023a0ba>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/695f90b8-5bce-44f1-a019-fdfc3cf588b8>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/04bccc2d-bbd1-42cf-ab7b-488853728d16>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://musicbrainz.org/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Fartist%2F740b1ced-cb28-4b97-8c84-7c2c3c29fe75%3E> .
+
+<http://www.bbc.co.uk/music/artists/740b1ced-cb28-4b97-8c84-7c2c3c29fe75#artist>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.bbc.co.uk%2Fmusic%2Fartists%2F740b1ced-cb28-4b97-8c84-7c2c3c29fe75%23artist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/023755ea-6538-4715-bb65-ca002547c7c0>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/a8e75b50-87bd-4498-b0d0-ca7e9ca17ae0>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/a697ced9-2e48-4c28-b393-7eb1275cb68c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/10d874fd-25be-4c59-b55d-0608cc4acb02>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/6c89b382-d6c1-4fde-b3c3-ea0152c47eca>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/9091063a-1d3f-406e-b483-5180c8492261>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75>
+      a       mo:MusicArtist ;
+      rdfs:label "The Michel Petrucciani Trio" ;
+      vocab:artist_quality
+              "-1"^^xsd:short ;
+      vocab:artist_type "2"^^xsd:short ;
+      vocab:sortname "Michel Petrucciani Trio, The" ;
+      mo:musicbrainz <http://musicbrainz.org/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> ;
+      =       <http://www.bbc.co.uk/music/artists/740b1ced-cb28-4b97-8c84-7c2c3c29fe75#artist> ;
+      foaf:member <http://dbtune.org/musicbrainz/resource/artist/2b75141c-05e9-42eb-ae63-6695d86cdc19> , <http://dbtune.org/musicbrainz/resource/artist/ed781d20-4bad-4cb2-b608-8e68660da506> , <http://dbtune.org/musicbrainz/resource/artist/58060aaa-a27b-46d4-9b30-21d45decf674> ;
+      foaf:name "The Michel Petrucciani Trio" .
+
+<http://dbtune.org/musicbrainz/resource/track/a81941fb-5427-46ff-a48c-a67921d65677>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+mo:MusicArtist
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FMusicArtist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/3613fecf-9a4e-4149-8875-d25af270f125>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/d6b3259e-8dbc-4017-bfa2-76f5f8c234a1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .
+
+<http://dbtune.org/musicbrainz/resource/track/641811b1-c6e9-4a49-9a91-a36125a518ae>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75> .

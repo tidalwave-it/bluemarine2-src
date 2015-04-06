@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/0f1bf383-9b8c-4f04-9a69-c659d976a5fa>
+      rdfs:label "RDF Description of The Capitol Years (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/0f1bf383-9b8c-4f04-9a69-c659d976a5fa> .
+
+<http://ec1.images-amazon.com/images/P/B000002UWM.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000002UWM.01.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000002UWM>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000002UWM%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B000002UWM>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002UWM%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/0f1bf383-9b8c-4f04-9a69-c659d976a5fa>
+      a       mo:Record ;
+      rdfs:label "The Capitol Years (disc 1)" ;
+      vocab:album_attributes
+              "{0,100,4}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000002UWM" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000002UWM.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "52"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/25256> ;
+      vocab:tracks "26"^^xsd:int ;
+      dc:date "1990-12-18" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Capitol Years (disc 1)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000002UWM> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000002UWM.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000002UWM> ;
+      mo:musicbrainz <http://musicbrainz.org/album/0f1bf383-9b8c-4f04-9a69-c659d976a5fa> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/49966> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/b9fe9fb8-7f62-46b3-af91-42c7abe4cb39> , <http://dbtune.org/musicbrainz/resource/track/bcffe17b-8e2e-4132-9259-78bd86e94c1f> , <http://dbtune.org/musicbrainz/resource/track/93cf820f-a9a4-42ef-b833-0bc00798cce3> , <http://dbtune.org/musicbrainz/resource/track/440f6271-fe31-41be-a5ce-f7eaf019e075> , <http://dbtune.org/musicbrainz/resource/track/5cb805b9-b40d-4efb-8826-004d7a592e3e> , <http://dbtune.org/musicbrainz/resource/track/a3c8eab4-f020-4502-a480-31c28a09d3fc> , <http://dbtune.org/musicbrainz/resource/track/f1972b7d-d940-4e95-a396-0cb5492d4670> , <http://dbtune.org/musicbrainz/resource/track/8eedec4a-a3d6-4f04-a7f6-66fe56ad2130> , <http://dbtune.org/musicbrainz/resource/track/1d1ee775-7465-4229-8d76-cb41e4572886> , <http://dbtune.org/musicbrainz/resource/track/6a4470e0-d916-4343-a92c-34a9eed14502> , <http://dbtune.org/musicbrainz/resource/track/8a4cb8f1-993a-4039-960b-f66e40977776> , <http://dbtune.org/musicbrainz/resource/track/3e703aec-9617-481e-91d7-0cb2db8c1cd5> , <http://dbtune.org/musicbrainz/resource/track/900219bc-672f-4346-830d-5eb06d51fe3e> , <http://dbtune.org/musicbrainz/resource/track/35048444-4277-462a-96f2-bf43e01799a5> , <http://dbtune.org/musicbrainz/resource/track/1ee50d90-e8c9-4938-9651-860abbd9ecdc> , <http://dbtune.org/musicbrainz/resource/track/064d822b-133b-4171-806f-1d29172a64ea> , <http://dbtune.org/musicbrainz/resource/track/b58d352c-9aed-42db-819e-72fcdf03bba4> , <http://dbtune.org/musicbrainz/resource/track/dc3e2074-7e1e-4385-a44c-78583a0c36c5> , <http://dbtune.org/musicbrainz/resource/track/f215a014-a3cb-438b-84e7-1c356de71ffb> , <http://dbtune.org/musicbrainz/resource/track/c42fc220-d7ca-4fe6-aa76-3097402c31df> , <http://dbtune.org/musicbrainz/resource/track/ef2be457-f807-4121-8369-4592b3857fe1> , <http://dbtune.org/musicbrainz/resource/track/c9effecb-e52d-4516-910f-9a4986ccbb26> , <http://dbtune.org/musicbrainz/resource/track/63357c2f-cc46-465b-a3b8-c18e832465dc> , <http://dbtune.org/musicbrainz/resource/track/85ebc8a4-0dfb-4604-aec7-0057a80ed707> , <http://dbtune.org/musicbrainz/resource/track/0342765c-fb70-4f5a-8d40-dddf6254560d> , <http://dbtune.org/musicbrainz/resource/track/66dadf59-5af4-484b-9da9-45295e0296fa> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d> ;
+      foaf:page "714278018" .
+
+<http://dbtune.org/musicbrainz/resource/master/0f1bf383-9b8c-4f04-9a69-c659d976a5fa>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/0f1bf383-9b8c-4f04-9a69-c659d976a5fa> .
+
+<http://musicbrainz.org/album/0f1bf383-9b8c-4f04-9a69-c659d976a5fa>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F0f1bf383-9b8c-4f04-9a69-c659d976a5fa%3E> .

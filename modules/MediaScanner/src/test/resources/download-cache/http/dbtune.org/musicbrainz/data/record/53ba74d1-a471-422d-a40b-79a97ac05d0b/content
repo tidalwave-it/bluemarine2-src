@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/53ba74d1-a471-422d-a40b-79a97ac05d0b>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/53ba74d1-a471-422d-a40b-79a97ac05d0b> .
+
+<http://dbtune.org/musicbrainz/data/record/53ba74d1-a471-422d-a40b-79a97ac05d0b>
+      rdfs:label "RDF Description of Mendelssohn, Brahms: Violin Concertos (Berliner Philharmoniker feat. conductor: Herbert von Karajan, violin: Anne-Sophie Mutter)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/53ba74d1-a471-422d-a40b-79a97ac05d0b> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000001GNG>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000001GNG%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/53ba74d1-a471-422d-a40b-79a97ac05d0b>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F53ba74d1-a471-422d-a40b-79a97ac05d0b%3E> .
+
+<http://images.amazon.com/images/P/B000001GNG>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000001GNG%3E> .
+
+<http://ec2.images-amazon.com/images/P/B000001GNG.03.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec2.images-amazon.com%2Fimages%2FP%2FB000001GNG.03.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/53ba74d1-a471-422d-a40b-79a97ac05d0b>
+      a       mo:Record ;
+      rdfs:label "Mendelssohn, Brahms: Violin Concertos (Berliner Philharmoniker feat. conductor: Herbert von Karajan, violin: Anne-Sophie Mutter)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000001GNG" ;
+      vocab:albummeta_coverarturl
+              "http://ec2.images-amazon.com/images/P/B000001GNG.03.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/206494> , <http://dbtune.org/musicbrainz/resource/toc/190000> ;
+      vocab:tracks "6"^^xsd:int ;
+      dc:date "1994-09-06" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Mendelssohn, Brahms: Violin Concertos (Berliner Philharmoniker feat. conductor: Herbert von Karajan, violin: Anne-Sophie Mutter)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000001GNG> ;
+      mo:image <http://images.amazon.com/images/P/B000001GNG> , <http://ec2.images-amazon.com/images/P/B000001GNG.03.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/53ba74d1-a471-422d-a40b-79a97ac05d0b> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/247391> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/4474d1ec-e41d-4fa0-9178-3f89f04884dc> , <http://dbtune.org/musicbrainz/resource/track/20f59892-5dfc-42b0-888a-ed355f98028b> , <http://dbtune.org/musicbrainz/resource/track/0b1e8fa5-af52-439a-9d86-44d83c74bef3> , <http://dbtune.org/musicbrainz/resource/track/278fe381-3a4b-4a4b-924f-aa42f264a860> , <http://dbtune.org/musicbrainz/resource/track/88d7e3c5-4801-4605-a374-b910be87afb2> , <http://dbtune.org/musicbrainz/resource/track/8c7c3c56-5a8a-4316-bb49-1904bf947d80> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "476550349" .

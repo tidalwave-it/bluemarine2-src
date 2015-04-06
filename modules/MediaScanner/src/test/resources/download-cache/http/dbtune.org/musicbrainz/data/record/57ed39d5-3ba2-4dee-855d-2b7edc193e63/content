@@ -1,0 +1,65 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/57ed39d5-3ba2-4dee-855d-2b7edc193e63>
+      rdfs:label "RDF Description of Night Lights" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/57ed39d5-3ba2-4dee-855d-2b7edc193e63> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00005IA0F>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00005IA0F%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/57ed39d5-3ba2-4dee-855d-2b7edc193e63>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/57ed39d5-3ba2-4dee-855d-2b7edc193e63> .
+
+<http://dbtune.org/musicbrainz/resource/record/57ed39d5-3ba2-4dee-855d-2b7edc193e63>
+      a       mo:Record ;
+      rdfs:label "Night Lights" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00005IA0F" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B00005IA0F.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "1"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/46482> ;
+      vocab:tracks "20"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Night Lights" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00005IA0F> ;
+      mo:image <http://images.amazon.com/images/P/B00005IA0F.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B00005IA0F> ;
+      mo:musicbrainz <http://musicbrainz.org/album/57ed39d5-3ba2-4dee-855d-2b7edc193e63> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/0f3ffb6e-ec77-498f-8656-8d98a5f8944a> , <http://dbtune.org/musicbrainz/resource/track/da6a826a-ef36-454f-9a8c-ee3b17833264> , <http://dbtune.org/musicbrainz/resource/track/3e889205-9e4e-455d-91ee-b30971b811aa> , <http://dbtune.org/musicbrainz/resource/track/1addd44a-7005-4979-a999-cf035e96cc44> , <http://dbtune.org/musicbrainz/resource/track/6ad60e1b-a24e-4a9e-bf97-59ff83d57c85> , <http://dbtune.org/musicbrainz/resource/track/e44a6793-c6b4-40cc-b17e-73061234b36f> , <http://dbtune.org/musicbrainz/resource/track/7b36c0be-3e23-4d35-b183-f2824132cd7b> , <http://dbtune.org/musicbrainz/resource/track/9917a633-29f4-4d0a-b719-5ebe4824eac9> , <http://dbtune.org/musicbrainz/resource/track/3ba61bd6-4971-44ee-82b1-8b80cc26c91d> , <http://dbtune.org/musicbrainz/resource/track/b220fb3f-c63e-4b87-92b4-c58b2a10635b> , <http://dbtune.org/musicbrainz/resource/track/e6257796-3554-466b-9593-8ce59b23fa01> , <http://dbtune.org/musicbrainz/resource/track/4a9a322a-316a-42d3-b0d6-409570d83ec7> , <http://dbtune.org/musicbrainz/resource/track/193905cc-d8f5-4301-aefc-bc453089d351> , <http://dbtune.org/musicbrainz/resource/track/f5ffc0a2-fefa-43bd-ac20-9de45ba67319> , <http://dbtune.org/musicbrainz/resource/track/ae601390-4a1b-4da5-9f0f-0ac6ab1aec2f> , <http://dbtune.org/musicbrainz/resource/track/02c147f9-d525-4b0b-8735-0be1d879055d> , <http://dbtune.org/musicbrainz/resource/track/f17f72fc-1431-4221-974c-348be3972476> , <http://dbtune.org/musicbrainz/resource/track/ad3f28cf-66bf-47fd-b3e9-5db54e2bae4b> , <http://dbtune.org/musicbrainz/resource/track/127f4690-6765-4007-86f3-29b8a5c03976> , <http://dbtune.org/musicbrainz/resource/track/f63cec7b-4f6d-49dd-ab6e-a299060a3507> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fbe054ec-a143-4101-9e9e-64abc5ff5ac9> ;
+      foaf:page "514074273" .
+
+<http://images.amazon.com/images/P/B00005IA0F.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00005IA0F.01.MZZZZZZZ.jpg%3E> .
+
+<http://images.amazon.com/images/P/B00005IA0F>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00005IA0F%3E> .
+
+<http://musicbrainz.org/album/57ed39d5-3ba2-4dee-855d-2b7edc193e63>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F57ed39d5-3ba2-4dee-855d-2b7edc193e63%3E> .

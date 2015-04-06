@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B0000262K4.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000262K4.01.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000262K4>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000262K4%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/096d9cca-d093-4a33-9651-8ddd5a62e09b>
+      rdfs:label "RDF Description of Rejoicing" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/096d9cca-d093-4a33-9651-8ddd5a62e09b> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B0000262K4>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000262K4%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/096d9cca-d093-4a33-9651-8ddd5a62e09b>
+      a       mo:Record ;
+      rdfs:label "Rejoicing" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000262K4" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B0000262K4.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "9"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/176483> , <http://dbtune.org/musicbrainz/resource/toc/61855> ;
+      vocab:tracks "8"^^xsd:int ;
+      dc:date "1983-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Rejoicing" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000262K4> ;
+      mo:image <http://images.amazon.com/images/P/B0000262K4.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B0000262K4> ;
+      mo:musicbrainz <http://musicbrainz.org/album/096d9cca-d093-4a33-9651-8ddd5a62e09b> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/63989> , <http://dbtune.org/musicbrainz/resource/release/255255> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/34967fe9-c7f5-4928-9ba6-7a21cb705f77> , <http://dbtune.org/musicbrainz/resource/track/465feab8-9ce4-4d35-a298-74b402803e79> , <http://dbtune.org/musicbrainz/resource/track/f78d7b08-a55a-45da-8143-083de85abc11> , <http://dbtune.org/musicbrainz/resource/track/dda31aae-6c66-4da8-966e-d32ea49be74b> , <http://dbtune.org/musicbrainz/resource/track/6954c457-2b3b-480f-8aa5-b6a4bc85132d> , <http://dbtune.org/musicbrainz/resource/track/c5fb1dcc-6888-499d-8667-b65d5a4f95f7> , <http://dbtune.org/musicbrainz/resource/track/b1c0bc19-a5e4-48f1-bac1-c877acbbc68d> , <http://dbtune.org/musicbrainz/resource/track/9af49925-94f0-445d-af9a-9efc8607ea52> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7daac7f9-8fcc-485f-a14f-f8091d98cf25> ;
+      foaf:page "644202820" .
+
+<http://musicbrainz.org/album/096d9cca-d093-4a33-9651-8ddd5a62e09b>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F096d9cca-d093-4a33-9651-8ddd5a62e09b%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/096d9cca-d093-4a33-9651-8ddd5a62e09b>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/096d9cca-d093-4a33-9651-8ddd5a62e09b> .

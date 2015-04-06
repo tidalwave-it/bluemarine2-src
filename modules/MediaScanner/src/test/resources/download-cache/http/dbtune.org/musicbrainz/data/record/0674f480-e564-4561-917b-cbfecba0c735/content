@@ -1,0 +1,51 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/0674f480-e564-4561-917b-cbfecba0c735>
+      rdfs:label "RDF Description of Havoc's Sword (disc 10)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/0674f480-e564-4561-917b-cbfecba0c735> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/0674f480-e564-4561-917b-cbfecba0c735>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/0674f480-e564-4561-917b-cbfecba0c735> .
+
+<http://musicbrainz.org/album/0674f480-e564-4561-917b-cbfecba0c735>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F0674f480-e564-4561-917b-cbfecba0c735%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/0674f480-e564-4561-917b-cbfecba0c735>
+      a       mo:Record ;
+      rdfs:label "Havoc's Sword (disc 10)" ;
+      vocab:album_attributes
+              "{0,8,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "46"^^xsd:int ;
+      vocab:tracks "23"^^xsd:int ;
+      dc:date "2005-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Havoc's Sword (disc 10)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/0674f480-e564-4561-917b-cbfecba0c735> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/281024> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/c534474d-0ab5-4293-b7b1-2eb9e9e7ae95> , <http://dbtune.org/musicbrainz/resource/track/2d52cdd3-da11-4192-b154-b5833543f191> , <http://dbtune.org/musicbrainz/resource/track/e64953de-b738-4457-9da8-719e93b2c98d> , <http://dbtune.org/musicbrainz/resource/track/5072e702-e1d0-41bc-b5f8-be0a96801039> , <http://dbtune.org/musicbrainz/resource/track/08841978-8427-4282-9a9d-1cabae0b6930> , <http://dbtune.org/musicbrainz/resource/track/c36872f9-9873-457f-a002-a8697e3e47e1> , <http://dbtune.org/musicbrainz/resource/track/315cb369-64e3-482c-b7a8-235ce9d8e062> , <http://dbtune.org/musicbrainz/resource/track/86966c41-b3c0-46a6-9427-0944a886de67> , <http://dbtune.org/musicbrainz/resource/track/8a87bbe3-fd35-4ba7-bc0a-89aa871f0098> , <http://dbtune.org/musicbrainz/resource/track/8c213542-d7e8-41c5-8430-6c574f9db315> , <http://dbtune.org/musicbrainz/resource/track/6afef566-ec9e-4748-b770-ca99a6dd69ca> , <http://dbtune.org/musicbrainz/resource/track/8ce6fa5f-6919-48c9-a362-3c07e5372f6d> , <http://dbtune.org/musicbrainz/resource/track/75ef9006-a9db-4ef8-b824-b2fb7b3194e9> , <http://dbtune.org/musicbrainz/resource/track/e250342c-cce6-421e-9bc1-e98e8926f9b2> , <http://dbtune.org/musicbrainz/resource/track/2d31822d-79f5-4310-8f5e-f11a60e682eb> , <http://dbtune.org/musicbrainz/resource/track/73b52ae0-d491-4c7b-96d4-00d7ff5121d9> , <http://dbtune.org/musicbrainz/resource/track/d20a698c-993b-45ca-a1bc-b0daa4572843> , <http://dbtune.org/musicbrainz/resource/track/5c571a61-0bb9-41f1-8828-2ab4eeabc870> , <http://dbtune.org/musicbrainz/resource/track/74d0c22d-65c1-4da7-80d0-ffed9d5a0ebc> , <http://dbtune.org/musicbrainz/resource/track/11f2a8c7-5e2c-4ef0-a3ff-2f45b2e5a1ab> , <http://dbtune.org/musicbrainz/resource/track/7da0d558-a020-4479-ad0d-16024c665b21> , <http://dbtune.org/musicbrainz/resource/track/afec0a8a-71ba-4a38-9772-0b953098cc9a> , <http://dbtune.org/musicbrainz/resource/track/0e5f74d7-f175-4196-825d-c532333cccb3> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/deba186f-6515-4863-ad4c-2d7a76e366ef> ;
+      foaf:page "304857216" .

@@ -1,0 +1,66 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/f22c01f2-4a0c-4b60-8cdb-ff3399b5faf1>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/f22c01f2-4a0c-4b60-8cdb-ff3399b5faf1> .
+
+<http://images.amazon.com/images/P/B00006OAQ4>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00006OAQ4%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/f22c01f2-4a0c-4b60-8cdb-ff3399b5faf1>
+      a       mo:Record ;
+      rdfs:label "Intégrale, Volume 16: \"Festival 48\" (disc 2)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00006OAQ4" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00006OAQ4.08.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "19"^^xsd:int ;
+      vocab:tracks "21"^^xsd:int ;
+      dc:date "1999-03-08" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/mul> ;
+      dc:title "Intégrale, Volume 16: \"Festival 48\" (disc 2)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00006OAQ4> ;
+      mo:image <http://images.amazon.com/images/P/B00006OAQ4> , <http://ec1.images-amazon.com/images/P/B00006OAQ4.08.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/f22c01f2-4a0c-4b60-8cdb-ff3399b5faf1> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/441863> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/3e26094b-9507-41be-9b89-257ea7a0cb41> , <http://dbtune.org/musicbrainz/resource/track/67c3bb94-928a-4491-9ebb-0a1953605625> , <http://dbtune.org/musicbrainz/resource/track/abd959c8-2ac3-4784-b6a0-f372e29a3cc0> , <http://dbtune.org/musicbrainz/resource/track/e40a6cf3-879c-4f9f-bcd0-813f89b99a68> , <http://dbtune.org/musicbrainz/resource/track/76439a3a-d833-4065-a23e-1e86bf8061cd> , <http://dbtune.org/musicbrainz/resource/track/54759476-3284-453d-b0de-28877dc4a0b0> , <http://dbtune.org/musicbrainz/resource/track/7f37d844-810f-4bec-a102-85332f587c7b> , <http://dbtune.org/musicbrainz/resource/track/d6445957-a1c2-4eda-88c8-91ff8a09ba54> , <http://dbtune.org/musicbrainz/resource/track/a03c3f9a-f7a8-4643-8563-ec5597e4c77b> , <http://dbtune.org/musicbrainz/resource/track/6bdba1bb-b169-4eb0-92a6-f13067e451c8> , <http://dbtune.org/musicbrainz/resource/track/856b69ef-d666-4bd6-9a89-90ef54e71bd4> , <http://dbtune.org/musicbrainz/resource/track/f456808f-a089-4272-8619-e142f642560b> , <http://dbtune.org/musicbrainz/resource/track/752b4b16-b399-4fa1-a43e-03a0d05ca6dd> , <http://dbtune.org/musicbrainz/resource/track/ce09294f-c83e-45df-956e-f4572de4e5a7> , <http://dbtune.org/musicbrainz/resource/track/883ac43d-463c-497c-8105-945d9e32e053> , <http://dbtune.org/musicbrainz/resource/track/ecc6fbca-009f-4795-bc76-413c159454c1> , <http://dbtune.org/musicbrainz/resource/track/9406b307-c752-4fb2-9c39-dcae369e5096> , <http://dbtune.org/musicbrainz/resource/track/585c07fb-3164-4136-9e25-fea46b45333c> , <http://dbtune.org/musicbrainz/resource/track/1a0102b7-a2d3-4d7c-ad16-ec8e4efd6cee> , <http://dbtune.org/musicbrainz/resource/track/85031acb-d6f5-4573-9f93-f940bc5ffb33> , <http://dbtune.org/musicbrainz/resource/track/4b3c5ceb-468a-418b-a5c7-7b338e9ad87c> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> ;
+      foaf:page "351967507" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00006OAQ4>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00006OAQ4%3E> .
+
+<http://musicbrainz.org/album/f22c01f2-4a0c-4b60-8cdb-ff3399b5faf1>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Ff22c01f2-4a0c-4b60-8cdb-ff3399b5faf1%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/f22c01f2-4a0c-4b60-8cdb-ff3399b5faf1>
+      rdfs:label "RDF Description of Intégrale, Volume 16: \"Festival 48\" (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/f22c01f2-4a0c-4b60-8cdb-ff3399b5faf1> .
+
+<http://ec1.images-amazon.com/images/P/B00006OAQ4.08.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00006OAQ4.08.MZZZZZZZ.jpg%3E> .

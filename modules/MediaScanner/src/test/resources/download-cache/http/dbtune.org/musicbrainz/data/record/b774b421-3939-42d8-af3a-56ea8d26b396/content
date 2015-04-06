@@ -1,0 +1,66 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B0000254QM>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000254QM%3E> .
+
+<http://musicbrainz.org/album/b774b421-3939-42d8-af3a-56ea8d26b396>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fb774b421-3939-42d8-af3a-56ea8d26b396%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/b774b421-3939-42d8-af3a-56ea8d26b396>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/b774b421-3939-42d8-af3a-56ea8d26b396> .
+
+<http://ec1.images-amazon.com/images/P/B0000254QM.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0000254QM.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/b774b421-3939-42d8-af3a-56ea8d26b396>
+      a       mo:Record ;
+      rdfs:label "Intégrale, Volume 9: \"H.C.Q. Strut\" (disc 2)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000254QM" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0000254QM.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "22"^^xsd:int ;
+      vocab:tracks "21"^^xsd:int ;
+      dc:date "1999-03-08" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Intégrale, Volume 9: \"H.C.Q. Strut\" (disc 2)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000254QM> ;
+      mo:image <http://images.amazon.com/images/P/B0000254QM> , <http://ec1.images-amazon.com/images/P/B0000254QM.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/b774b421-3939-42d8-af3a-56ea8d26b396> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/422613> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/3ad18f6a-6198-4e06-bd0e-8e8d51cacbf4> , <http://dbtune.org/musicbrainz/resource/track/262f3669-3038-4486-875a-fed4660c3216> , <http://dbtune.org/musicbrainz/resource/track/87a0c158-78bc-4fe7-99f5-c756538ed460> , <http://dbtune.org/musicbrainz/resource/track/042c497c-2251-4c1f-9933-ec1e60829427> , <http://dbtune.org/musicbrainz/resource/track/fce15349-4da6-4dad-82b8-22d3210c5713> , <http://dbtune.org/musicbrainz/resource/track/65dc04fc-683d-4915-a6ae-10ef691cce3d> , <http://dbtune.org/musicbrainz/resource/track/c1273bd6-b086-4020-a44e-1a2f823e1911> , <http://dbtune.org/musicbrainz/resource/track/4af8cd19-bec9-44da-914b-68771d5f69f7> , <http://dbtune.org/musicbrainz/resource/track/2d443fe5-4aea-4ac2-ba95-11827664aa50> , <http://dbtune.org/musicbrainz/resource/track/773ac744-a755-4d6f-8bb7-c258807fac8b> , <http://dbtune.org/musicbrainz/resource/track/f8c0777a-e05d-4525-85fa-9093d93d3172> , <http://dbtune.org/musicbrainz/resource/track/0b082ad2-bb47-4996-8df6-371fa86c685d> , <http://dbtune.org/musicbrainz/resource/track/f45461c0-4d5e-4bd8-8fb5-5f2ab20f2eec> , <http://dbtune.org/musicbrainz/resource/track/ddae223b-2fd9-4014-9bd0-fd803daa01ae> , <http://dbtune.org/musicbrainz/resource/track/ecb76e66-368c-4de3-949f-4e5d13d9e30f> , <http://dbtune.org/musicbrainz/resource/track/a0519373-033f-4f83-b3cd-e50bd9d1225e> , <http://dbtune.org/musicbrainz/resource/track/122a8455-6434-4a34-b550-79365c155212> , <http://dbtune.org/musicbrainz/resource/track/095a0fe9-a54d-4ef3-9340-1d9a71a5c450> , <http://dbtune.org/musicbrainz/resource/track/951eb5ed-eaf6-4d40-a160-9503053967f0> , <http://dbtune.org/musicbrainz/resource/track/3fa03866-f79e-460e-90a8-54fcfe5722d2> , <http://dbtune.org/musicbrainz/resource/track/536f0a0d-fff9-4387-840c-bffba658df9c> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> ;
+      foaf:page "351967507" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/b774b421-3939-42d8-af3a-56ea8d26b396>
+      rdfs:label "RDF Description of Intégrale, Volume 9: \"H.C.Q. Strut\" (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/b774b421-3939-42d8-af3a-56ea8d26b396> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000254QM>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000254QM%3E> .

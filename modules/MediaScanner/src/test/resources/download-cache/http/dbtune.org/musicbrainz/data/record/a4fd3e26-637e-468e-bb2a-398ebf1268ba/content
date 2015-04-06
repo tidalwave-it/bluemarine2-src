@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/a4fd3e26-637e-468e-bb2a-398ebf1268ba>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fa4fd3e26-637e-468e-bb2a-398ebf1268ba%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/a4fd3e26-637e-468e-bb2a-398ebf1268ba>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/a4fd3e26-637e-468e-bb2a-398ebf1268ba> .
+
+<http://ec1.images-amazon.com/images/P/B0000042G5.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0000042G5.01.MZZZZZZZ.jpg%3E> .
+
+<http://images.amazon.com/images/P/B0000042G5>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000042G5%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/a4fd3e26-637e-468e-bb2a-398ebf1268ba>
+      a       mo:Record ;
+      rdfs:label "The Planets / Close Encounters / Also Sprach Zarathustra (Los Angeles Philharmonic, Zubin Mehta) (disc 2)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000042G5" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0000042G5.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/306454> ;
+      vocab:tracks "15"^^xsd:int ;
+      dc:date "1997-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Planets / Close Encounters / Also Sprach Zarathustra (Los Angeles Philharmonic, Zubin Mehta) (disc 2)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000042G5> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B0000042G5.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B0000042G5> ;
+      mo:musicbrainz <http://musicbrainz.org/album/a4fd3e26-637e-468e-bb2a-398ebf1268ba> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/384617> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/42b690c3-dd94-42d2-a680-96238601cd5a> , <http://dbtune.org/musicbrainz/resource/track/21a943c3-cd1c-4355-8c5a-54aaab5e1ab0> , <http://dbtune.org/musicbrainz/resource/track/a5f87f76-5117-4f8f-a07e-3c4b92cf9c70> , <http://dbtune.org/musicbrainz/resource/track/99ba8427-484a-4212-8aa7-c88409197056> , <http://dbtune.org/musicbrainz/resource/track/586567c5-8825-4700-9564-bb64afd00ec6> , <http://dbtune.org/musicbrainz/resource/track/12251a28-be4f-4ea6-ae99-d5bbdc7470c0> , <http://dbtune.org/musicbrainz/resource/track/3de65915-1a46-40f4-98d0-7c23f9f97a77> , <http://dbtune.org/musicbrainz/resource/track/31ac7356-42b1-4b28-a45a-7c8db1335742> , <http://dbtune.org/musicbrainz/resource/track/862d907f-6911-4efb-b5ef-17b9dea94ae7> , <http://dbtune.org/musicbrainz/resource/track/73c0a32d-c0d3-4122-a09e-2be1949b3da3> , <http://dbtune.org/musicbrainz/resource/track/f5c502a2-6b74-44a8-b041-bda40afd803e> , <http://dbtune.org/musicbrainz/resource/track/c87fd1d4-5328-4c19-9bbe-c74d145546fe> , <http://dbtune.org/musicbrainz/resource/track/737d40e8-9227-47da-925a-6ecf1e48c24d> , <http://dbtune.org/musicbrainz/resource/track/f299ae8f-fe33-4a1a-b362-23fe75f5b599> , <http://dbtune.org/musicbrainz/resource/track/b7df6973-0238-4efa-b705-4e1e3ee26059> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/98e4313e-dfb0-4084-805c-3e42ef9301d0> ;
+      foaf:page "714278445" .
+
+<http://dbtune.org/musicbrainz/data/record/a4fd3e26-637e-468e-bb2a-398ebf1268ba>
+      rdfs:label "RDF Description of The Planets / Close Encounters / Also Sprach Zarathustra (Los Angeles Philharmonic, Zubin Mehta) (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/a4fd3e26-637e-468e-bb2a-398ebf1268ba> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000042G5>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000042G5%3E> .

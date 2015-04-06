@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/7d70bc65-702a-4930-9064-8a8da5478d70>
+      rdfs:label "RDF Description of Confidence" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/7d70bc65-702a-4930-9064-8a8da5478d70> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00008XRX1>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00008XRX1%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/7d70bc65-702a-4930-9064-8a8da5478d70>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F7d70bc65-702a-4930-9064-8a8da5478d70%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/7d70bc65-702a-4930-9064-8a8da5478d70>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/7d70bc65-702a-4930-9064-8a8da5478d70> .
+
+<http://images.amazon.com/images/P/B00008XRX1>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00008XRX1%3E> .
+
+<http://ec1.images-amazon.com/images/P/B00008XRX1.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00008XRX1.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/7d70bc65-702a-4930-9064-8a8da5478d70>
+      a       mo:Record ;
+      rdfs:label "Confidence" ;
+      vocab:album_attributes
+              "{0,5,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00008XRX1" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00008XRX1.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "1"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/214283> ;
+      vocab:tracks "29"^^xsd:int ;
+      dc:date "2003-04-29" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Confidence" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00008XRX1> ;
+      mo:image <http://images.amazon.com/images/P/B00008XRX1> , <http://ec1.images-amazon.com/images/P/B00008XRX1.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/7d70bc65-702a-4930-9064-8a8da5478d70> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/326735> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/cc4b2234-a34c-4c40-9d56-8d7c54437a56> , <http://dbtune.org/musicbrainz/resource/track/768fb221-d1bc-48f2-9148-ace3cb5ed678> , <http://dbtune.org/musicbrainz/resource/track/00b731d1-7819-4e6d-9c30-21163883063e> , <http://dbtune.org/musicbrainz/resource/track/80bc23c5-1f27-437c-a4bb-70a9af523c9d> , <http://dbtune.org/musicbrainz/resource/track/1e2db0b3-5cd1-47b0-93ba-68ab0421b293> , <http://dbtune.org/musicbrainz/resource/track/5c6e6f9d-c203-46da-b545-1ae185ee6df6> , <http://dbtune.org/musicbrainz/resource/track/222d4701-a944-46bb-845d-e05b604fc117> , <http://dbtune.org/musicbrainz/resource/track/37cb54a8-9ef3-47ad-a46e-1e263f5d0f1e> , <http://dbtune.org/musicbrainz/resource/track/3bcd3991-b42e-459a-bdd3-a64b5f579d05> , <http://dbtune.org/musicbrainz/resource/track/980897a7-29aa-4a20-bf2e-ee93795450a0> , <http://dbtune.org/musicbrainz/resource/track/746807d2-106c-4028-8420-87a487b52ef6> , <http://dbtune.org/musicbrainz/resource/track/0aa2b1c8-6623-41bd-b90e-ec1ee2dcaab7> , <http://dbtune.org/musicbrainz/resource/track/53fbfcf7-646b-43e3-876b-efbcab627ad9> , <http://dbtune.org/musicbrainz/resource/track/9b0dfac7-3a82-43ac-b9f8-291be42df7ba> , <http://dbtune.org/musicbrainz/resource/track/80f598dc-9815-4a60-809e-737342432f2a> , <http://dbtune.org/musicbrainz/resource/track/9bbdb089-2dcf-428a-9b84-03a6ef0352ad> , <http://dbtune.org/musicbrainz/resource/track/48fca4b0-1f11-49b8-9279-06445e9700e6> , <http://dbtune.org/musicbrainz/resource/track/cb2e34f7-1976-4abf-860b-73aacaa47dc9> , <http://dbtune.org/musicbrainz/resource/track/caf732bd-48f8-4f07-9ec2-d9a257f10c98> , <http://dbtune.org/musicbrainz/resource/track/4d4142b6-c24e-4e66-a76e-812399ec4640> , <http://dbtune.org/musicbrainz/resource/track/5ac4051c-9a88-4817-a7bc-b8a7ea7ae2e3> , <http://dbtune.org/musicbrainz/resource/track/61942506-a294-40a7-9199-eb2dd0ee7c96> , <http://dbtune.org/musicbrainz/resource/track/83f22d4b-db8b-4f90-a27f-b4ccda63cb29> , <http://dbtune.org/musicbrainz/resource/track/bea0038d-c555-455f-9360-bb52bb176f92> , <http://dbtune.org/musicbrainz/resource/track/7d0eb4a0-5e9f-4fe7-8f56-d0e7e21a6795> , <http://dbtune.org/musicbrainz/resource/track/37be58d1-f507-4fab-9d74-a6366ecdc578> , <http://dbtune.org/musicbrainz/resource/track/97facf76-e555-4627-91f5-45b98cd6128e> , <http://dbtune.org/musicbrainz/resource/track/310faf02-a95c-4258-b74a-7f75f8fabde0> , <http://dbtune.org/musicbrainz/resource/track/4b43f334-9012-41d9-818f-705ee10c44da> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/0df890e1-f4f2-4b21-a413-cd8af1af32d8> ;
+      foaf:page "151493957" .

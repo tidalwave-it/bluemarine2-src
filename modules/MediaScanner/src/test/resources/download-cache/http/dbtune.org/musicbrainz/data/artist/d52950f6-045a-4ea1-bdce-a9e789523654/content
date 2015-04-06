@@ -1,0 +1,73 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/track/fd54bc8f-9a7a-4149-aff2-50931f5564c6>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654> .
+
+<http://dbtune.org/musicbrainz/resource/track/a8105dd1-cdde-4d55-8523-17f5d5f6a60b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654> .
+
+<http://dbtune.org/musicbrainz/resource/track/56ed7401-b7d0-4c6b-b03f-cd6b45991031>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654> .
+
+<http://dbtune.org/musicbrainz/resource/track/fae1da64-da14-4b67-bada-e2ade9080467>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654> .
+
+<http://dbtune.org/musicbrainz/data/artist/d52950f6-045a-4ea1-bdce-a9e789523654>
+      rdfs:label "RDF Description of Claudia Telles" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654> .
+
+<http://dbtune.org/musicbrainz/resource/track/22503d77-54e5-4ca7-b3d0-ca10d4cc4d0f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654> .
+
+<http://dbtune.org/musicbrainz/resource/track/c342f995-4042-47ef-88d5-729e037af721>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654> .
+
+<http://dbtune.org/musicbrainz/resource/track/6e52a361-6c90-49e6-b026-19e68b5c50fa>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654> .
+
+<http://musicbrainz.org/artist/d52950f6-045a-4ea1-bdce-a9e789523654>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Fartist%2Fd52950f6-045a-4ea1-bdce-a9e789523654%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/eddfa9c6-de7e-44ba-b13a-959a3a0f57b9>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654> .
+
+mo:MusicArtist
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FMusicArtist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/d20287de-cb92-4997-a9bb-6964caf92c57>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654> .
+
+<http://www.bbc.co.uk/music/artists/d52950f6-045a-4ea1-bdce-a9e789523654#artist>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.bbc.co.uk%2Fmusic%2Fartists%2Fd52950f6-045a-4ea1-bdce-a9e789523654%23artist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654>
+      a       mo:MusicArtist ;
+      rdfs:label "Claudia Telles" ;
+      vocab:artist_quality
+              "-1"^^xsd:short ;
+      vocab:sortname "Claudia Telles" ;
+      mo:musicbrainz <http://musicbrainz.org/artist/d52950f6-045a-4ea1-bdce-a9e789523654> ;
+      =       <http://www.bbc.co.uk/music/artists/d52950f6-045a-4ea1-bdce-a9e789523654#artist> ;
+      foaf:name "Claudia Telles" .
+
+<http://dbtune.org/musicbrainz/resource/track/d9231d1e-e8b3-4752-9962-f9f41e94c018>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654> .
+
+<http://dbtune.org/musicbrainz/resource/track/58995664-0bd5-4472-817d-ad78825c40c9>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654> .

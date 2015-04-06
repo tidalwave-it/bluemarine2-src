@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B000059T9M.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000059T9M.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/9fe3038a-88c8-433e-b33b-2f18e925dda0>
+      rdfs:label "RDF Description of The Very Best of Burt Bacharach" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/9fe3038a-88c8-433e-b33b-2f18e925dda0> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/9fe3038a-88c8-433e-b33b-2f18e925dda0>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F9fe3038a-88c8-433e-b33b-2f18e925dda0%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/9fe3038a-88c8-433e-b33b-2f18e925dda0>
+      a       mo:Record ;
+      rdfs:label "The Very Best of Burt Bacharach" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000059T9M" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B000059T9M.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "24"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/148171> ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:date "2001-03-06" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Very Best of Burt Bacharach" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000059T9M> ;
+      mo:image <http://images.amazon.com/images/P/B000059T9M.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000059T9M> ;
+      mo:musicbrainz <http://musicbrainz.org/album/9fe3038a-88c8-433e-b33b-2f18e925dda0> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/107712> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/fbff0d56-d9af-4d2c-bb95-aa8c4c779059> , <http://dbtune.org/musicbrainz/resource/track/d45d4153-ce1f-4e23-a50e-757c8259f09a> , <http://dbtune.org/musicbrainz/resource/track/9fc92d53-735a-4118-9a9d-37df38dc50a9> , <http://dbtune.org/musicbrainz/resource/track/375f64ba-e871-4e0a-9d76-b8dcab2cb58f> , <http://dbtune.org/musicbrainz/resource/track/68b8a8e3-cf7b-46fe-9a30-f4e8d00fa792> , <http://dbtune.org/musicbrainz/resource/track/7cb7ba0f-100c-4d57-ae0b-e154c28e5e58> , <http://dbtune.org/musicbrainz/resource/track/85759fb8-5609-460f-a72c-f45a9d536586> , <http://dbtune.org/musicbrainz/resource/track/cb0308dd-ee67-4d6f-adf4-bd50c9444dab> , <http://dbtune.org/musicbrainz/resource/track/775fc8b2-0e36-4f25-ad76-af70aee6b8ea> , <http://dbtune.org/musicbrainz/resource/track/1ade4aa5-cbb6-49f1-b534-0c7c71581e28> , <http://dbtune.org/musicbrainz/resource/track/10bbefbb-a02c-4e32-a4b2-df37f71ddc3a> , <http://dbtune.org/musicbrainz/resource/track/d02a4f18-14e6-490b-a73d-cf9e20217eae> , <http://dbtune.org/musicbrainz/resource/track/00b8858e-4da0-4e11-8fe7-19e7f19f2818> , <http://dbtune.org/musicbrainz/resource/track/a925c96c-3c7d-4665-bade-dfbd598a3540> , <http://dbtune.org/musicbrainz/resource/track/d983424f-34dd-4ccb-8b43-237bc690a842> , <http://dbtune.org/musicbrainz/resource/track/4df5e175-6731-4a51-8a4d-66c14a0cfaec> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "714278630" .
+
+<http://dbtune.org/musicbrainz/resource/master/9fe3038a-88c8-433e-b33b-2f18e925dda0>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/9fe3038a-88c8-433e-b33b-2f18e925dda0> .
+
+<http://images.amazon.com/images/P/B000059T9M>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000059T9M%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000059T9M>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000059T9M%3E> .

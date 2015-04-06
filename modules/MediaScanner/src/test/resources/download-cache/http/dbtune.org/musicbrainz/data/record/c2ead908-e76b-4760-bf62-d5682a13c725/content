@@ -1,0 +1,49 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/c2ead908-e76b-4760-bf62-d5682a13c725>
+      a       mo:Record ;
+      rdfs:label "Tutto Sanremo: 40 anni di Festival 1974-1983" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "2"^^xsd:int ;
+      vocab:tracks "18"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/ita> ;
+      dc:title "Tutto Sanremo: 40 anni di Festival 1974-1983" ;
+      mo:musicbrainz <http://musicbrainz.org/album/c2ead908-e76b-4760-bf62-d5682a13c725> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/6a4c57b7-f84d-45bd-a401-6017142b8862> , <http://dbtune.org/musicbrainz/resource/track/32af805e-0af0-4cac-9334-e89ae1c864e0> , <http://dbtune.org/musicbrainz/resource/track/3ef71efe-bb50-43e3-accd-3ace0fb6fc43> , <http://dbtune.org/musicbrainz/resource/track/61eec2af-57e0-44b4-b14d-e686b2b413ae> , <http://dbtune.org/musicbrainz/resource/track/bdf1fc10-8c8c-4a1b-91a4-478250f63bc6> , <http://dbtune.org/musicbrainz/resource/track/d0c938d1-3e9a-442b-ad65-ce4d14b93898> , <http://dbtune.org/musicbrainz/resource/track/5488a634-a93c-4ffc-8abc-85e4b46bc990> , <http://dbtune.org/musicbrainz/resource/track/14242b35-974b-49f1-96b9-5bfac698dc42> , <http://dbtune.org/musicbrainz/resource/track/f988f0a3-cd6f-41ca-b8e2-d4dfc8d62d7b> , <http://dbtune.org/musicbrainz/resource/track/c5760046-3a70-4408-bc64-95e3a6791f77> , <http://dbtune.org/musicbrainz/resource/track/4ace320b-cdd4-44cf-8010-e696730606aa> , <http://dbtune.org/musicbrainz/resource/track/9e19b86b-dd49-4792-9fea-edfc44be7a87> , <http://dbtune.org/musicbrainz/resource/track/4eb4334f-a91f-4416-8c1a-e069b4f614a6> , <http://dbtune.org/musicbrainz/resource/track/7223d582-927e-407a-a6a7-bc5020a90802> , <http://dbtune.org/musicbrainz/resource/track/ba524ba5-e28a-433a-a0b9-5723557d915c> , <http://dbtune.org/musicbrainz/resource/track/42e37138-9387-48c6-ac7e-c81c8be577e8> , <http://dbtune.org/musicbrainz/resource/track/70eef10a-41cd-441c-8b9d-691ef9feb975> , <http://dbtune.org/musicbrainz/resource/track/93144f9e-1295-4f25-beee-06e0ff52cebb> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "728421889" .
+
+<http://dbtune.org/musicbrainz/data/record/c2ead908-e76b-4760-bf62-d5682a13c725>
+      rdfs:label "RDF Description of Tutto Sanremo: 40 anni di Festival 1974-1983" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/c2ead908-e76b-4760-bf62-d5682a13c725> .
+
+<http://musicbrainz.org/album/c2ead908-e76b-4760-bf62-d5682a13c725>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fc2ead908-e76b-4760-bf62-d5682a13c725%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/c2ead908-e76b-4760-bf62-d5682a13c725>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/c2ead908-e76b-4760-bf62-d5682a13c725> .

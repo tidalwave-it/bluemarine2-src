@@ -1,0 +1,62 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/artist/fb04c57d-9e95-4348-b572-fc5b839c2ae7>
+      rdfs:label "RDF Description of Philippe Brun \"Jam Band\"" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/artist/fb04c57d-9e95-4348-b572-fc5b839c2ae7> .
+
+<http://dbtune.org/musicbrainz/resource/track/e3a6468c-42d4-4c42-ad25-9310374dd21f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fb04c57d-9e95-4348-b572-fc5b839c2ae7> .
+
+<http://dbtune.org/musicbrainz/resource/track/cc363c77-e969-406f-836a-3d152605ceb8>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fb04c57d-9e95-4348-b572-fc5b839c2ae7> .
+
+mo:MusicArtist
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FMusicArtist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/262f3669-3038-4486-875a-fed4660c3216>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fb04c57d-9e95-4348-b572-fc5b839c2ae7> .
+
+<http://dbtune.org/musicbrainz/resource/artist/fb04c57d-9e95-4348-b572-fc5b839c2ae7>
+      a       mo:MusicArtist ;
+      rdfs:label "Philippe Brun \"Jam Band\"" ;
+      vocab:artist_quality
+              "-1"^^xsd:short ;
+      vocab:artist_type "2"^^xsd:short ;
+      vocab:sortname "Brun, Philippe, \"Jam Band\"" ;
+      mo:musicbrainz <http://musicbrainz.org/artist/fb04c57d-9e95-4348-b572-fc5b839c2ae7> ;
+      =       <http://www.bbc.co.uk/music/artists/fb04c57d-9e95-4348-b572-fc5b839c2ae7#artist> ;
+      foaf:name "Philippe Brun \"Jam Band\"" .
+
+<http://dbtune.org/musicbrainz/resource/track/97a40017-7225-456a-b747-f508ecff2d64>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fb04c57d-9e95-4348-b572-fc5b839c2ae7> .
+
+<http://dbtune.org/musicbrainz/resource/track/ecb76e66-368c-4de3-949f-4e5d13d9e30f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fb04c57d-9e95-4348-b572-fc5b839c2ae7> .
+
+<http://www.bbc.co.uk/music/artists/fb04c57d-9e95-4348-b572-fc5b839c2ae7#artist>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.bbc.co.uk%2Fmusic%2Fartists%2Ffb04c57d-9e95-4348-b572-fc5b839c2ae7%23artist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/dd3a3136-27cd-4a4d-b4a7-5c1453f0a5b7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fb04c57d-9e95-4348-b572-fc5b839c2ae7> .
+
+<http://dbtune.org/musicbrainz/resource/track/4af8cd19-bec9-44da-914b-68771d5f69f7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fb04c57d-9e95-4348-b572-fc5b839c2ae7> .
+
+<http://musicbrainz.org/artist/fb04c57d-9e95-4348-b572-fc5b839c2ae7>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Fartist%2Ffb04c57d-9e95-4348-b572-fc5b839c2ae7%3E> .

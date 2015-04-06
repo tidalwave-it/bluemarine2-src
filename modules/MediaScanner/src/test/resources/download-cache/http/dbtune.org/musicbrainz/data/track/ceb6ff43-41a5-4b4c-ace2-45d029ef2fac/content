@@ -1,0 +1,43 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/track/ceb6ff43-41a5-4b4c-ace2-45d029ef2fac>
+      rdfs:label "RDF Description of These Foolish Things" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/track/ceb6ff43-41a5-4b4c-ace2-45d029ef2fac> .
+
+<http://dbtune.org/musicbrainz/resource/signal/ceb6ff43-41a5-4b4c-ace2-45d029ef2fac>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/track/ceb6ff43-41a5-4b4c-ace2-45d029ef2fac> .
+
+<http://dbtune.org/musicbrainz/resource/track/ceb6ff43-41a5-4b4c-ace2-45d029ef2fac>
+      a       mo:Track ;
+      rdfs:label "These Foolish Things" ;
+      dc:date "0"^^xsd:int ;
+      dc:title "These Foolish Things" ;
+      mo:length "272666"^^xsd:int ;
+      mo:musicbrainz <http://musicbrainz.org/track/ceb6ff43-41a5-4b4c-ace2-45d029ef2fac> ;
+      mo:track_number "1"^^xsd:int ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/40eca300-9416-4cc9-81a6-218a40d55a02> .
+
+mo:Track
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FTrack%3E> .
+
+<http://musicbrainz.org/track/ceb6ff43-41a5-4b4c-ace2-45d029ef2fac>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Ftrack%2Fceb6ff43-41a5-4b4c-ace2-45d029ef2fac%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/f7fac112-6802-44fa-86d7-53e9bca2d230>
+      mo:track <http://dbtune.org/musicbrainz/resource/track/ceb6ff43-41a5-4b4c-ace2-45d029ef2fac> .

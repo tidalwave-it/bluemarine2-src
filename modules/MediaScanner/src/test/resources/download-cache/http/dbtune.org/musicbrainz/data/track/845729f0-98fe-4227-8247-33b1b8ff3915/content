@@ -1,0 +1,43 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/track/845729f0-98fe-4227-8247-33b1b8ff3915>
+      a       mo:Track ;
+      rdfs:label "Moonlight on the Colorado" ;
+      dc:date "0"^^xsd:int ;
+      dc:title "Moonlight on the Colorado" ;
+      mo:length "197000"^^xsd:int ;
+      mo:musicbrainz <http://musicbrainz.org/track/845729f0-98fe-4227-8247-33b1b8ff3915> ;
+      mo:track_number "17"^^xsd:int ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3fb55c03-3ad9-4341-8d0b-7c4c49aefca0> .
+
+<http://musicbrainz.org/track/845729f0-98fe-4227-8247-33b1b8ff3915>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Ftrack%2F845729f0-98fe-4227-8247-33b1b8ff3915%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/57f89cb8-faad-44f6-9ba8-7a9ed0ab5d4e>
+      mo:track <http://dbtune.org/musicbrainz/resource/track/845729f0-98fe-4227-8247-33b1b8ff3915> .
+
+<http://dbtune.org/musicbrainz/data/track/845729f0-98fe-4227-8247-33b1b8ff3915>
+      rdfs:label "RDF Description of Moonlight on the Colorado" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/track/845729f0-98fe-4227-8247-33b1b8ff3915> .
+
+<http://dbtune.org/musicbrainz/resource/signal/845729f0-98fe-4227-8247-33b1b8ff3915>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/track/845729f0-98fe-4227-8247-33b1b8ff3915> .
+
+mo:Track
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FTrack%3E> .

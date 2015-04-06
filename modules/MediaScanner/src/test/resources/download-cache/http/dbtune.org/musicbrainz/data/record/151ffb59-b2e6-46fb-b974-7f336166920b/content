@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/151ffb59-b2e6-46fb-b974-7f336166920b>
+      rdfs:label "RDF Description of I Say a Little Prayer: The Bacharach and David Songbook" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/151ffb59-b2e6-46fb-b974-7f336166920b> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/151ffb59-b2e6-46fb-b974-7f336166920b>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F151ffb59-b2e6-46fb-b974-7f336166920b%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/151ffb59-b2e6-46fb-b974-7f336166920b>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/151ffb59-b2e6-46fb-b974-7f336166920b> .
+
+<http://dbtune.org/musicbrainz/resource/record/151ffb59-b2e6-46fb-b974-7f336166920b>
+      a       mo:Record ;
+      rdfs:label "I Say a Little Prayer: The Bacharach and David Songbook" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "27"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/259633> , <http://dbtune.org/musicbrainz/resource/toc/28373> ;
+      vocab:tracks "22"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "I Say a Little Prayer: The Bacharach and David Songbook" ;
+      mo:musicbrainz <http://musicbrainz.org/album/151ffb59-b2e6-46fb-b974-7f336166920b> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/3e41ec8c-6dce-441b-9614-6520dedb10ab> , <http://dbtune.org/musicbrainz/resource/track/ea6c037f-86d8-4a46-8dca-83b913e3e4f5> , <http://dbtune.org/musicbrainz/resource/track/ba90b98e-e78f-4104-9a94-d0fe5825e891> , <http://dbtune.org/musicbrainz/resource/track/d3fe3ed4-22a0-43f8-8a80-37f99c47d85c> , <http://dbtune.org/musicbrainz/resource/track/e56630d6-af7c-4c33-a793-31920a2af02e> , <http://dbtune.org/musicbrainz/resource/track/114cd176-ef0d-46e5-91e9-35c85257dc8f> , <http://dbtune.org/musicbrainz/resource/track/bf5994e7-24c5-45f6-83f7-50df43fc56f2> , <http://dbtune.org/musicbrainz/resource/track/6bb216f0-f061-4f16-8ad0-c81dfa724efc> , <http://dbtune.org/musicbrainz/resource/track/7607240e-e397-4a40-a942-380644cc9784> , <http://dbtune.org/musicbrainz/resource/track/ae6c3e88-8db4-4f06-b324-c0170b372f60> , <http://dbtune.org/musicbrainz/resource/track/a0fe2678-db28-43fd-9de4-69884bb7f98c> , <http://dbtune.org/musicbrainz/resource/track/491fa69e-aaaf-45c5-96d3-524de5ac7ad7> , <http://dbtune.org/musicbrainz/resource/track/824a3572-bd02-4f59-b552-2e61765580bc> , <http://dbtune.org/musicbrainz/resource/track/818c150a-e7a2-4314-b429-9b7a772a646d> , <http://dbtune.org/musicbrainz/resource/track/55cf807a-e440-4f90-a55f-e64cecb5e08d> , <http://dbtune.org/musicbrainz/resource/track/581e4aee-c81e-407c-a5f7-479819ab8987> , <http://dbtune.org/musicbrainz/resource/track/3e6253eb-f698-4d20-b9a7-ae711ce6a5d3> , <http://dbtune.org/musicbrainz/resource/track/69fe7874-0b4a-4a15-a6cb-d03e2a283678> , <http://dbtune.org/musicbrainz/resource/track/85b47252-8429-47fa-a5b6-026fc71f0d5b> , <http://dbtune.org/musicbrainz/resource/track/807f3e67-4772-4103-b061-6997222cb126> , <http://dbtune.org/musicbrainz/resource/track/7f707d13-7a4c-4b88-84f9-f20bf478112f> , <http://dbtune.org/musicbrainz/resource/track/7a17ca77-c1a0-45c5-8af0-ba0897346579> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6784ee31-6d79-4a37-9e1f-01d6ef31940e> ;
+      foaf:page "337251137" .

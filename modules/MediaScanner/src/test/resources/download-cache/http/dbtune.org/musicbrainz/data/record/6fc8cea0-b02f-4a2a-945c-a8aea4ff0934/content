@@ -1,0 +1,53 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/6fc8cea0-b02f-4a2a-945c-a8aea4ff0934>
+      rdfs:label "RDF Description of All Time Greats" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/6fc8cea0-b02f-4a2a-945c-a8aea4ff0934> .
+
+<http://dbtune.org/musicbrainz/resource/master/6fc8cea0-b02f-4a2a-945c-a8aea4ff0934>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/6fc8cea0-b02f-4a2a-945c-a8aea4ff0934> .
+
+<http://musicbrainz.org/album/6fc8cea0-b02f-4a2a-945c-a8aea4ff0934>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F6fc8cea0-b02f-4a2a-945c-a8aea4ff0934%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/6fc8cea0-b02f-4a2a-945c-a8aea4ff0934>
+      a       mo:Record ;
+      rdfs:label "All Time Greats" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "22"^^xsd:int ;
+      vocab:tracks "18"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "All Time Greats" ;
+      mo:musicbrainz <http://musicbrainz.org/album/6fc8cea0-b02f-4a2a-945c-a8aea4ff0934> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/16095e69-ad0a-4cb1-8020-0954798f6406> , <http://dbtune.org/musicbrainz/resource/track/528960fa-fb61-4ec6-afbd-370b3ac53f55> , <http://dbtune.org/musicbrainz/resource/track/3fc646b5-266b-4d71-98bb-86cf1afb2eee> , <http://dbtune.org/musicbrainz/resource/track/5e93abb7-3a3b-4a71-8ec0-b41723f41eba> , <http://dbtune.org/musicbrainz/resource/track/1142641f-1683-4bea-bfe6-bcb4f20ca210> , <http://dbtune.org/musicbrainz/resource/track/8ad3c4f4-2b19-4dc9-b6af-04c5ba0c9923> , <http://dbtune.org/musicbrainz/resource/track/583464d0-931c-4f2d-a486-987fac2cb747> , <http://dbtune.org/musicbrainz/resource/track/6bd0a4a1-f0d9-4a11-ae97-9e40759cc293> , <http://dbtune.org/musicbrainz/resource/track/2dc8cc34-29a6-4afa-9d85-61fafdb71c0b> , <http://dbtune.org/musicbrainz/resource/track/295871cc-2a6c-4203-8385-84240c76b80b> , <http://dbtune.org/musicbrainz/resource/track/c5584d73-3578-41c9-854d-89ccd8c9137c> , <http://dbtune.org/musicbrainz/resource/track/12ff8da9-477a-48a4-b2de-379be44beb75> , <http://dbtune.org/musicbrainz/resource/track/f55917a3-bdc3-43fd-940a-41daf867adb2> , <http://dbtune.org/musicbrainz/resource/track/b6efb954-bce1-4411-86e0-5f4ceb5337e6> , <http://dbtune.org/musicbrainz/resource/track/734ce12b-eb25-47d9-9d35-cd7038675cfe> , <http://dbtune.org/musicbrainz/resource/track/a3c3fa92-536f-4146-a683-e007e0ff3ace> , <http://dbtune.org/musicbrainz/resource/track/7f410ce9-93dd-411b-994e-08c8bda35909> , <http://dbtune.org/musicbrainz/resource/track/c3e9236a-7140-47ba-bf9d-c33a7328cf6a> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/351d8bdf-33a1-45e2-8c04-c85fad20da55> ;
+      foaf:page "81168042" .
