@@ -128,7 +128,7 @@ public class DefaultDownloaderTest
      * 
      * 
      ******************************************************************************************************************/
-    @Test(dataProvider = "p")
+    @Test(dataProvider = "downloadDataProvider")
     public void testCache (final @Nonnull String urlAsString,
                            final @Nonnull Option option,
                            final int expectedStatusCode,
@@ -164,8 +164,8 @@ public class DefaultDownloaderTest
      * 
      * 
      ******************************************************************************************************************/
-    @DataProvider(name = "p")
-    private static Object[][] p()
+    @DataProvider(name = "downloadDataProvider")
+    private static Object[][] downloadDataProvider()
       {
         return new Object[][]
           {
