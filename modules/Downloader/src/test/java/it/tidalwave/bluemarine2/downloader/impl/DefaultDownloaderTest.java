@@ -104,7 +104,7 @@ public class DefaultDownloaderTest
         context = new ClassPathXmlApplicationContext(s);
         underTest = context.getBean(DefaultDownloader.class);
         cacheStorage = context.getBean(SimpleHttpCacheStorage.class);
-        messageBus = context.getBean(MessageBus.class); // FIXME: use a mock messagebus
+        messageBus = context.getBean(MessageBus.class); 
         downloadCompleted = new CountDownLatch(1);
         response = null;
         messageBus.subscribe(DownloadComplete.class, onDownloadCompleted);
@@ -114,7 +114,7 @@ public class DefaultDownloaderTest
         
         final Map<Key<?>, Object> properties = new HashMap<>();
         properties.put(CACHE_FOLDER_PATH, cachePath);
-        underTest.onPowerOnNotification(new PowerOnNotification(properties));
+        messageBus.publish(new PowerOnNotification(properties));
       }
 
     /*******************************************************************************************************************
