@@ -39,7 +39,6 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
-import org.apache.http.HttpResponseInterceptor;
 import org.apache.http.ProtocolException;
 import org.apache.http.client.RedirectStrategy;
 import org.apache.http.client.cache.CacheResponseStatus;
@@ -65,10 +64,9 @@ import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import it.tidalwave.util.NotFoundException;
 import lombok.Cleanup;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH;
-import lombok.AccessLevel;
-import lombok.Getter;
 
 /***********************************************************************************************************************
  *
