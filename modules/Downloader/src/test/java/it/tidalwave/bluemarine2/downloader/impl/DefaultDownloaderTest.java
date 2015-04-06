@@ -39,11 +39,21 @@ import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest.Option;
+import static it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH;
+import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
+import it.tidalwave.util.Key;
+import it.tidalwave.util.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import it.tidalwave.util.test.FileComparisonUtils;
+import java.io.IOException;
+import java.nio.file.CopyOption;
+import java.nio.file.StandardCopyOption;
+import java.util.HashMap;
+import java.util.Map;
+import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpStatus;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.CoreMatchers.*;
@@ -76,7 +86,16 @@ public class DefaultDownloaderTest
             
     @BeforeMethod
     public void prepare() 
+      throws IOException, NotFoundException 
       {
+        final Path cacheResourcesPath = Paths.get("target/test-classes/download-cache");
+        final Path cachePath = Paths.get("target/download-cache");
+//        Files.deleteIfExists(cachePath);
+//        Files.createDirectories(cachePath);
+        FileUtils.deleteDirectory(cachePath.toFile());
+        FileUtils.copyDirectory(cacheResourcesPath.toFile(), cachePath.toFile());
+//        Files.copy(cacheResourcesPath, cachePath, StandardCopyOption.REPLACE_EXISTING);
+
         final String s = "classpath:/META-INF/DefaultDownloaderTestBeans.xml";
         context = new ClassPathXmlApplicationContext(s);
         underTest = context.getBean(DefaultDownloader.class);
@@ -84,6 +103,10 @@ public class DefaultDownloaderTest
         downloadCompleted = new CountDownLatch(1);
         response = null;
         messageBus.subscribe(DownloadComplete.class, onDownloadCompleted);
+        
+        final Map<Key<?>, Object> properties = new HashMap<>();
+        properties.put(CACHE_FOLDER_PATH, cachePath);
+        underTest.onPowerOnNotification(new PowerOnNotification(properties));
       }
 
     @Test(dataProvider = "p")
@@ -118,6 +141,13 @@ public class DefaultDownloaderTest
       {
         return new Object[][]
           {
+//            ////////////////// Not in cache
+//              {
+//                "http://dbtune.org/musicbrainz/data/track/00270741-e962-4a97-aa28-8ad08885a82a",
+//                HttpStatus.SC_OK,
+//                "00270741-e962-4a97-aa28-8ad08885a82a-200",
+//                Option.NO_OPTION
+//              },
             ////////////////// In cache
               {
                 "http://dbtune.org/musicbrainz/data/track/a51c646d-d676-4690-8131-62373e8b77db",
@@ -139,6 +169,7 @@ public class DefaultDownloaderTest
                 "a51c646d-d676-4690-8131-62373e8b77db-200",
                 Option.FOLLOW_REDIRECT
               },
+              
             ////////////////// Not found
               {
                 "http://dbtune.org/does-not-exist",

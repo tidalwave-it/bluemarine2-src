@@ -52,6 +52,8 @@ import org.apache.http.impl.io.SessionInputBufferImpl;
 import org.apache.http.impl.io.SessionOutputBufferImpl;
 import org.apache.http.message.BasicHttpResponse;
 import lombok.Cleanup;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import static java.nio.file.Files.*;
 import static java.nio.file.StandardCopyOption.*;
@@ -68,6 +70,9 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
   {
     private static final String PATH_CONTENT = "content";
     private static final String PATH_HEADERS = "headers";
+    
+    @Getter @Setter
+    private Path folderPath = Paths.get(System.getProperty("java.io.tmpdir"));
     
     /*******************************************************************************************************************
      *
@@ -174,7 +179,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
         final int port = url.getPort();
         final URL url2 = new URL(url.getProtocol(), url.getHost(), (port == 80) ? -1 : port, url.getFile());
         final Path cachePath = Paths.get(url2.toString().replaceAll(":", ""));
-        return Paths.get("target/test-classes/download-cache").resolve(cachePath); // FIXME
+        return folderPath.resolve(cachePath);
       } 
 
     /*******************************************************************************************************************

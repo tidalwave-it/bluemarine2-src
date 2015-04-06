@@ -45,7 +45,6 @@ import org.apache.http.client.RedirectStrategy;
 import org.apache.http.client.cache.CacheResponseStatus;
 import org.apache.http.client.cache.HttpCacheContext;
 import org.apache.http.client.cache.HttpCacheEntry;
-import org.apache.http.client.cache.HttpCacheStorage;
 import org.apache.http.client.cache.Resource;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -62,9 +61,13 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;
-import java.net.UnknownHostException;
+import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
+import it.tidalwave.util.NotFoundException;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH;
+import it.tidalwave.util.TypeSafeMap;
+import java.nio.file.Path;
 
 /***********************************************************************************************************************
  *
@@ -79,7 +82,7 @@ public class DefaultDownloader
     private MessageBus messageBus;
        
     // FIXME: @Inject
-    private final HttpCacheStorage cacheStorage = new SimpleHttpCacheStorage();
+    private final SimpleHttpCacheStorage cacheStorage = new SimpleHttpCacheStorage();
             
     private PoolingHttpClientConnectionManager connectionManager;
     
@@ -140,6 +143,18 @@ public class DefaultDownloader
                 .setSharedCache(false)
                 .setHeuristicCachingEnabled(true)
                 .build();
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
+    /* VisibleForTesting */ void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
+      throws NotFoundException
+      {
+        log.info("onPowerOnNotification({})", notification);    
+        cacheStorage.setFolderPath(notification.getProperties().get(CACHE_FOLDER_PATH));
       }
     
     /*******************************************************************************************************************
