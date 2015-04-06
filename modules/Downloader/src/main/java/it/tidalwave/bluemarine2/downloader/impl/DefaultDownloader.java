@@ -66,8 +66,6 @@ import it.tidalwave.util.NotFoundException;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH;
-import it.tidalwave.util.TypeSafeMap;
-import java.nio.file.Path;
 
 /***********************************************************************************************************************
  *
