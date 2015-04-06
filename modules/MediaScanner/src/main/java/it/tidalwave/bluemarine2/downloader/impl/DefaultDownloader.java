@@ -264,7 +264,7 @@ public class DefaultDownloader
                 .setHttpCacheStorage(cacheStorage)
                 .setCacheConfig(cacheConfig)
                 .setRedirectStrategy(dontFollowRedirect)
-                .setUserAgent("blueMarine")
+                .setUserAgent("blueMarine (fabrizio.giudici@tidalwave.it)")
                 .setDefaultHeaders(Arrays.asList(new BasicHeader("Accept", "application/n3")))
                 .setConnectionManager(connectionManager)
                 .addInterceptorFirst(killCacheHeaders) // FIXME: only if explicitly configured
