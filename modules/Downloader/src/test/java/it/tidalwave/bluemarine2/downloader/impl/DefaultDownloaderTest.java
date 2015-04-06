@@ -71,6 +71,10 @@ public class DefaultDownloaderTest
         
     private static final Path CACHE_PATH = Paths.get("target/download-cache");
         
+    private static final Path TEST_RESULTS = Paths.get("target/test-results");
+            
+    private static final Path EXPECTED_TEST_RESULTS = Paths.get("src/test/resources/expected-results");
+            
     private DefaultDownloader underTest;
     
     private SimpleHttpCacheStorage cacheStorage;
@@ -128,7 +132,7 @@ public class DefaultDownloaderTest
     public void testCache (final @Nonnull String urlAsString,
                            final @Nonnull Option option,
                            final int expectedStatusCode,
-                           final @Nonnull String exptectedContentFileName,
+                           final @Nonnull String expectedContentFileName,
                            final @Nonnull Origin expectedOrigin)
       throws Exception
       {
@@ -137,13 +141,11 @@ public class DefaultDownloaderTest
         downloadCompleted.await();
         assertThat(response.getStatusCode(), is(expectedStatusCode));
         
-        if (!"".equals(exptectedContentFileName))
+        if (!"".equals(expectedContentFileName))
           {
-            final Path testResults = Paths.get("target/test-results");
-            final Path expectedResults = Paths.get("src/test/resources/expected-results");
-            final Path actualResult = testResults.resolve(exptectedContentFileName);
-            final Path expectedResult = expectedResults.resolve(exptectedContentFileName);
-            createDirectories(testResults);
+            final Path actualResult = TEST_RESULTS.resolve(expectedContentFileName);
+            final Path expectedResult = EXPECTED_TEST_RESULTS.resolve(expectedContentFileName);
+            createDirectories(TEST_RESULTS);
             write(actualResult, response.getBytes());
             assertSameContents(expectedResult.toFile(), actualResult.toFile());
           }
@@ -153,7 +155,7 @@ public class DefaultDownloaderTest
             assertThat("Cache updated?", cacheStorage.isCachedResourcePresent(urlAsString), is(true));
           }
         
-        // FIXME: verify it didn't go to the nextwork
+        // FIXME: verify it didn't go to the network
         // FIXME: verify that the cache has not been updated
       }
     
