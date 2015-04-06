@@ -211,7 +211,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static BasicHttpResponse responseFrom (final @Nonnull HttpCacheEntry entry) 
+    private static HttpResponse responseFrom (final @Nonnull HttpCacheEntry entry) 
       {
         final BasicHttpResponse response = new BasicHttpResponse(entry.getStatusLine());
         response.setHeaders(entry.getAllHeaders());
