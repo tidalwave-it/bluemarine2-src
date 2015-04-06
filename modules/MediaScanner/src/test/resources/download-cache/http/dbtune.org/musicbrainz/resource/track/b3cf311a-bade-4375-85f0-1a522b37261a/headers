@@ -1,0 +1,9 @@
+HTTP/1.1 303 See Other
+Date: Sun, 05 Apr 2015 23:11:37 GMT
+Server: Jetty(6.1.11)
+Location: http://dbtune.org/musicbrainz/data/track/b3cf311a-bade-4375-85f0-1a522b37261a
+Access-Control-Allow-Origin: *
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/plain; charset=UTF-8
+Via: 1.

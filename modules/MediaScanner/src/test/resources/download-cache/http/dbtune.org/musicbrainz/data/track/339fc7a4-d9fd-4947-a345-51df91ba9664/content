@@ -1,0 +1,43 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/track/339fc7a4-d9fd-4947-a345-51df91ba9664>
+      a       mo:Track ;
+      rdfs:label "Canzonetta spirituale sopra la nana: Hor ch'è tempo di dormire (Tarquinio Merula)" ;
+      dc:date "0"^^xsd:int ;
+      dc:title "Canzonetta spirituale sopra la nana: Hor ch'è tempo di dormire (Tarquinio Merula)" ;
+      mo:length "519760"^^xsd:int ;
+      mo:musicbrainz <http://musicbrainz.org/track/339fc7a4-d9fd-4947-a345-51df91ba9664> ;
+      mo:track_number "7"^^xsd:int ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/361fcd46-41c5-4503-aa43-a87937583909> .
+
+<http://dbtune.org/musicbrainz/resource/record/fb48877d-294c-4cb3-878d-1ea4e69ab870>
+      mo:track <http://dbtune.org/musicbrainz/resource/track/339fc7a4-d9fd-4947-a345-51df91ba9664> .
+
+<http://dbtune.org/musicbrainz/data/track/339fc7a4-d9fd-4947-a345-51df91ba9664>
+      rdfs:label "RDF Description of Canzonetta spirituale sopra la nana: Hor ch'è tempo di dormire (Tarquinio Merula)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/track/339fc7a4-d9fd-4947-a345-51df91ba9664> .
+
+<http://dbtune.org/musicbrainz/resource/signal/339fc7a4-d9fd-4947-a345-51df91ba9664>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/track/339fc7a4-d9fd-4947-a345-51df91ba9664> .
+
+mo:Track
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FTrack%3E> .
+
+<http://musicbrainz.org/track/339fc7a4-d9fd-4947-a345-51df91ba9664>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Ftrack%2F339fc7a4-d9fd-4947-a345-51df91ba9664%3E> .
