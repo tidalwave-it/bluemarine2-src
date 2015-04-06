@@ -59,39 +59,10 @@
     <context:spring-configured />
 
     <aop:aspectj-autoproxy/>
-    
-    <!-- FIXME: move below stuff to CommonAutoBeans -->
-    
-    <!-- DCI role injector -->
-    <bean id="roleManager"
-          class="it.tidalwave.role.spring.spi.AnnotationSpringRoleManager" />
-
-    <bean id="contextManager"
-         class="it.tidalwave.role.spi.DefaultContextManager" />
-
-    <!-- MessageBus stuff -->
-    <bean id="applicationMessageBusTaskExecutor"
-          class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor"
-          autowire-candidate="false">
-        <!-- FIXME use properties -->
-        <property name="waitForTasksToCompleteOnShutdown" value="false"/>
-        <property name="threadNamePrefix" value="messageBus-" />
-        <property name="corePoolSize" value="10" />
-        <property name="maxPoolSize" value="100" /> 
-        <property name="queueCapacity" value="100000" /> <!-- FIXME -->
-    </bean>
-
-    <bean id="applicationMessageBus"
-          class="it.tidalwave.messagebus.impl.spring.SpringMessageBus">
-        <property name="taskExecutor" ref="applicationMessageBusTaskExecutor"/>
-    </bean>
-    
-    <!-- FIXME: move below stuff to Persistence own Beans.xml -->
-    <bean class="it.tidalwave.bluemarine2.persistence.impl.DefaultPersistence" />
-
-    
-    
+        
     <bean class="it.tidalwave.bluemarine2.mediascanner.impl.DefaultMediaScanner" />
+    
+    <bean class="it.tidalwave.util.test.MockInstantProvider" />
     
     <bean class="it.tidalwave.bluemarine2.downloader.impl.DefaultDownloader" />
 
@@ -99,6 +70,6 @@
         <property name="neverExpiring" value="true" />
     </bean>
     
-    <bean class="it.tidalwave.util.test.MockInstantProvider" />
-    
+    <bean class="it.tidalwave.bluemarine2.persistence.impl.DefaultPersistence" />
+
 </beans>

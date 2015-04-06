@@ -106,8 +106,9 @@ public class DefaultDownloaderTest
         deleteDirectory(CACHE_PATH.toFile());
         copyDirectory(CACHE_RESOURCES_PATH.toFile(), CACHE_PATH.toFile());
 
-        final String s = "classpath:/META-INF/DefaultDownloaderTestBeans.xml";
-        context = new ClassPathXmlApplicationContext(s);
+        final String s1 = "classpath:/META-INF/CommonsAutoBeans.xml";
+        final String s2 = "classpath:/META-INF/DefaultDownloaderTestBeans.xml";
+        context = new ClassPathXmlApplicationContext(s1, s2);
         underTest = context.getBean(DefaultDownloader.class);
         cacheStorage = context.getBean(SimpleHttpCacheStorage.class);
         messageBus = context.getBean(MessageBus.class); 

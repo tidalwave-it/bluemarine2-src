@@ -81,8 +81,9 @@ public class DefaultMediaScannerTest
     @BeforeMethod
     private void prepareTest() 
       {
-        final String s = "classpath:/META-INF/DefaultMediaScannerTestBeans.xml";
-        context = new ClassPathXmlApplicationContext(s);
+        final String s1 = "classpath:/META-INF/CommonsAutoBeans.xml";
+        final String s2 = "classpath:/META-INF/DefaultMediaScannerTestBeans.xml";
+        context = new ClassPathXmlApplicationContext(s1, s2);
         
         context.getBean(MockInstantProvider.class).setInstant(Instant.ofEpochSecond(1428232317L));
         messageBus = context.getBean(MessageBus.class);

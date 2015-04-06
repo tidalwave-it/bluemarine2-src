@@ -60,8 +60,6 @@
 
     <aop:aspectj-autoproxy/>
     
-    <!-- FIXME: move below stuff to CommonAutoBeans -->
-    
     <!-- DCI role injector -->
     <bean id="roleManager"
           class="it.tidalwave.role.spring.spi.AnnotationSpringRoleManager" />
@@ -77,8 +75,8 @@
         <property name="waitForTasksToCompleteOnShutdown" value="false"/>
         <property name="threadNamePrefix" value="messageBus-" />
         <property name="corePoolSize" value="10" />
-        <property name="maxPoolSize" value="10" />
-        <property name="queueCapacity" value="10" />
+        <property name="maxPoolSize" value="100" /> 
+        <property name="queueCapacity" value="100000" /> <!-- FIXME -->
     </bean>
 
     <bean id="applicationMessageBus"
