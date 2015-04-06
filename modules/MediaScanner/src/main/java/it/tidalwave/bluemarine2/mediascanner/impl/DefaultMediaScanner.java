@@ -340,7 +340,7 @@ public class DefaultMediaScanner
           {
             log.info("onTrackDownloadComplete({})", message);
 
-            final Model model = parseModel(message.getBytes(), message.getUrl().toString());
+            final Model model = parseModel(message);
             AddStatementsRequest.Builder builder = AddStatementsRequest.build();
 
             model.filter(null, FOAF.MAKER, null).forEach((statement) ->
@@ -374,11 +374,13 @@ public class DefaultMediaScanner
     private void onArtistDownloadComplete (final @Nonnull DownloadComplete message) 
       throws InterruptedException, IOException
       {
+        List<URI> validPredicates = Arrays.asList(
+                DbTune.ARTIST_TYPE, DbTune.SORT_NAME, Purl.EVENT, RDFS.LABEL, FOAF.NAME);
         try 
           {
             log.info("onArtistDownloadComplete({})", message);
             final URI artistUri = uriFor(message.getUrl().toString());
-            final Model model = parseModel(message.getBytes(), message.getUrl().toString());
+            final Model model = parseModel(message);
             AddStatementsRequest.Builder builder = AddStatementsRequest.build();
 
             model.forEach((statement) -> 
@@ -396,9 +398,7 @@ public class DefaultMediaScanner
                 
                 else if (subject.equals(artistUri))
                   {
-                    List<String> validPredicates = Arrays.asList(DbTune.ARTIST_TYPE, DbTune.SORT_NAME,
-                            Purl.EVENT, RDFS.LABEL, FOAF.NAME).stream().map(uri -> uri.stringValue()).collect(Collectors.toList());
-                    if (validPredicates.contains(predicate.stringValue()))
+                    if (validPredicates.contains(predicate))
                       {
                         // FIXME: should be builder = builder.with()
                         builder.with(subject, predicate, object);
@@ -453,7 +453,7 @@ public class DefaultMediaScanner
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Model parseModel (final @Nonnull byte[] bytes, final @Nonnull String uri)
+    private Model parseModel (final @Nonnull DownloadComplete message)
         throws RDFHandlerException, RDFParseException, IOException
       {
         final N3ParserFactory n3ParserFactory = new N3ParserFactory();
@@ -471,8 +471,9 @@ public class DefaultMediaScanner
           });
 
 
-        byte[] b2 = new String(bytes).replaceAll(" = ", "owl:sameAs").getBytes(); // FIXME
-        parser.parse(new ByteArrayInputStream(b2), uri);
+        final byte[] bytes = new String(message.getBytes()).replaceAll(" = ", "owl:sameAs").getBytes(); // FIXME
+        final String uri = message.getUrl().toString();          
+        parser.parse(new ByteArrayInputStream(bytes), uri);
 //        parser.parse(new ByteArrayInputStream(bytes), uri);
 
         return model;
