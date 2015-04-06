@@ -60,6 +60,7 @@ public final class MO
     public static final URI _TRACK              = factory.createURI(PREFIX + "track");
     public static final URI MEDIA_TYPE          = factory.createURI(PREFIX + "media_type");
     public static final URI MUSICBRAINZ_GUID    = factory.createURI(PREFIX + "musicbrainz_guid");
+    public static final URI PUBLISHED_AS        = factory.createURI(PREFIX + "published_as");
     public static final URI SAMPLE_RATE         = factory.createURI(PREFIX + "sampleRate");
     public static final URI TRACK_COUNT         = factory.createURI(PREFIX + "track_count");
     public static final URI TRACK_NUMBER        = factory.createURI(PREFIX + "track_number");
