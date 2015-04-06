@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/2bb6da15-3439-46d5-baf8-ed3eb2448892>
+      rdfs:label "RDF Description of Legendary (disc 3)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/2bb6da15-3439-46d5-baf8-ed3eb2448892> .
+
+<http://dbtune.org/musicbrainz/resource/record/2bb6da15-3439-46d5-baf8-ed3eb2448892>
+      a       mo:Record ;
+      rdfs:label "Legendary (disc 3)" ;
+      vocab:album_attributes
+              "{0,4}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "1"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/104976> ;
+      vocab:tracks "15"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Legendary (disc 3)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/2bb6da15-3439-46d5-baf8-ed3eb2448892> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/b00fcecc-5274-4fe5-b406-877804cdee89> , <http://dbtune.org/musicbrainz/resource/track/c4b85738-7f33-4fbf-940e-5c4f08ca6789> , <http://dbtune.org/musicbrainz/resource/track/5bc0c84d-ad72-424a-8da7-3b61ba99653f> , <http://dbtune.org/musicbrainz/resource/track/505ddda0-ffec-424c-b61a-56c7aed4051c> , <http://dbtune.org/musicbrainz/resource/track/b7199c69-5fd2-4378-b605-2d484d91d908> , <http://dbtune.org/musicbrainz/resource/track/0c8753c6-e906-4e9c-8d3e-f26077b6d360> , <http://dbtune.org/musicbrainz/resource/track/c174b395-0da3-41a2-b741-ec8f09c87ba9> , <http://dbtune.org/musicbrainz/resource/track/d58d759f-b4e0-4439-8973-a0d48e7ee9de> , <http://dbtune.org/musicbrainz/resource/track/5d561ffd-8073-4dcc-98b7-25698251281c> , <http://dbtune.org/musicbrainz/resource/track/f181a3b1-eef3-4946-9f0a-3d561b4f78fe> , <http://dbtune.org/musicbrainz/resource/track/ea8987d2-f172-4433-a2b6-d6e48c001db0> , <http://dbtune.org/musicbrainz/resource/track/364f058d-ad6b-4bbc-8381-0f8fd027cc4c> , <http://dbtune.org/musicbrainz/resource/track/5d12264b-da65-49eb-8953-140e3c26408b> , <http://dbtune.org/musicbrainz/resource/track/f0a6239b-0d8f-421a-a222-56234a97fc1c> , <http://dbtune.org/musicbrainz/resource/track/22fa3383-ed95-4932-b578-9a9dfaea2278> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/0182474b-8a1d-46d0-9d0f-e6df353335ea> ;
+      foaf:page "442767845" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/2bb6da15-3439-46d5-baf8-ed3eb2448892>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/2bb6da15-3439-46d5-baf8-ed3eb2448892> .
+
+<http://musicbrainz.org/album/2bb6da15-3439-46d5-baf8-ed3eb2448892>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F2bb6da15-3439-46d5-baf8-ed3eb2448892%3E> .

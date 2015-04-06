@@ -1,0 +1,64 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B00000I3OS>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000I3OS%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/fda533f3-01cb-435d-9b98-42a35f33dd04>
+      a       mo:Record ;
+      rdfs:label "Ses plus belles chansons" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00000I3OS" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00000I3OS.08.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "1"^^xsd:int ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/fra> ;
+      dc:title "Ses plus belles chansons" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00000I3OS> ;
+      mo:image <http://images.amazon.com/images/P/B00000I3OS> , <http://ec1.images-amazon.com/images/P/B00000I3OS.08.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/fda533f3-01cb-435d-9b98-42a35f33dd04> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/e624cfb1-124a-4bed-9cbb-17b8645c17c9> , <http://dbtune.org/musicbrainz/resource/track/63ac15c5-f4d4-447c-b4c3-4b4a6161fbf1> , <http://dbtune.org/musicbrainz/resource/track/bc5583c7-bef8-4d76-a230-2f076a03cce4> , <http://dbtune.org/musicbrainz/resource/track/eeae329e-9032-4534-ad40-9a7c8261b442> , <http://dbtune.org/musicbrainz/resource/track/eb9434bd-466d-4533-a7b3-3124d2d26bbe> , <http://dbtune.org/musicbrainz/resource/track/b83e4e85-5049-4d3e-ab77-1a72391174b6> , <http://dbtune.org/musicbrainz/resource/track/8d8eb545-81ba-420d-a80f-8febab3bf054> , <http://dbtune.org/musicbrainz/resource/track/547982c3-3965-4f57-b7b5-6ff0a82e6c0e> , <http://dbtune.org/musicbrainz/resource/track/ca5b888d-8660-4926-b069-6406f585bbab> , <http://dbtune.org/musicbrainz/resource/track/e14c44e8-8cb8-4adb-9d68-04ea1e7c69f1> , <http://dbtune.org/musicbrainz/resource/track/46b5833d-dc59-4975-8b17-11f657085d8c> , <http://dbtune.org/musicbrainz/resource/track/42991db1-8f5d-4f8d-8343-821b3467698f> , <http://dbtune.org/musicbrainz/resource/track/a7672915-d2be-47a4-8d8d-88257b597b93> , <http://dbtune.org/musicbrainz/resource/track/a8e11698-0686-4e49-a8e0-aff5c2321ef1> , <http://dbtune.org/musicbrainz/resource/track/b3765f2f-64af-47c9-9660-8f6c926d55e0> , <http://dbtune.org/musicbrainz/resource/track/6cf38523-505d-4e01-9fce-182a4ffb9cf6> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/cf97f8c4-f287-4c0c-a07e-6ca2fdd8e8c2> ;
+      foaf:page "678037037" .
+
+<http://dbtune.org/musicbrainz/data/record/fda533f3-01cb-435d-9b98-42a35f33dd04>
+      rdfs:label "RDF Description of Ses plus belles chansons" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/fda533f3-01cb-435d-9b98-42a35f33dd04> .
+
+<http://dbtune.org/musicbrainz/resource/master/fda533f3-01cb-435d-9b98-42a35f33dd04>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/fda533f3-01cb-435d-9b98-42a35f33dd04> .
+
+<http://musicbrainz.org/album/fda533f3-01cb-435d-9b98-42a35f33dd04>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Ffda533f3-01cb-435d-9b98-42a35f33dd04%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00000I3OS>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00000I3OS%3E> .
+
+<http://ec1.images-amazon.com/images/P/B00000I3OS.08.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00000I3OS.08.MZZZZZZZ.jpg%3E> .

@@ -1,0 +1,65 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/b27ad7b8-d58b-49b8-aa95-107900053680>
+      rdfs:label "RDF Description of Echoes of Spain (feat. guitar: John Williams)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/b27ad7b8-d58b-49b8-aa95-107900053680> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/b27ad7b8-d58b-49b8-aa95-107900053680>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/b27ad7b8-d58b-49b8-aa95-107900053680> .
+
+<http://images.amazon.com/images/P/B0000025J5>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000025J5%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/b27ad7b8-d58b-49b8-aa95-107900053680>
+      a       mo:Record ;
+      rdfs:label "Echoes of Spain (feat. guitar: John Williams)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000025J5" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B0000025J5.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "1"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/85931> ;
+      vocab:tracks "9"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Echoes of Spain (feat. guitar: John Williams)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000025J5> ;
+      mo:image <http://images.amazon.com/images/P/B0000025J5> , <http://images.amazon.com/images/P/B0000025J5.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/b27ad7b8-d58b-49b8-aa95-107900053680> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/767eebf0-95aa-4682-91fd-da7f7f1081ea> , <http://dbtune.org/musicbrainz/resource/track/17126c00-d1b4-4793-b323-edc2b60d0645> , <http://dbtune.org/musicbrainz/resource/track/eea1c22c-86aa-45a4-a3a4-58abc54f2100> , <http://dbtune.org/musicbrainz/resource/track/57999b01-1b5a-40af-9849-91f2826aaff0> , <http://dbtune.org/musicbrainz/resource/track/7e062cda-866f-49b8-acf6-836c76f1a546> , <http://dbtune.org/musicbrainz/resource/track/5cbb56f1-cb70-486b-bf8b-55af4d1f7369> , <http://dbtune.org/musicbrainz/resource/track/7a3450de-7316-4573-a44f-a5cdded49d9a> , <http://dbtune.org/musicbrainz/resource/track/cd377327-8c17-464f-a76c-78d120a25d1d> , <http://dbtune.org/musicbrainz/resource/track/a89b11eb-5741-4eba-b9e1-7e0978f8b876> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/0a46cf2a-61bd-447d-b8fd-a2b32eb20282> ;
+      foaf:page "205832404" .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000025J5>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000025J5%3E> .
+
+<http://images.amazon.com/images/P/B0000025J5.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000025J5.01.MZZZZZZZ.jpg%3E> .
+
+<http://musicbrainz.org/album/b27ad7b8-d58b-49b8-aa95-107900053680>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fb27ad7b8-d58b-49b8-aa95-107900053680%3E> .

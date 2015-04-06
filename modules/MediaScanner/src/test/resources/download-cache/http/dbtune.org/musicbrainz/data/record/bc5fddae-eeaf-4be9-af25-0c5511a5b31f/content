@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/bc5fddae-eeaf-4be9-af25-0c5511a5b31f>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/bc5fddae-eeaf-4be9-af25-0c5511a5b31f> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000000GOO>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000000GOO%3E> .
+
+<http://musicbrainz.org/album/bc5fddae-eeaf-4be9-af25-0c5511a5b31f>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fbc5fddae-eeaf-4be9-af25-0c5511a5b31f%3E> .
+
+<http://images.amazon.com/images/P/B000000GOO>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000000GOO%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/bc5fddae-eeaf-4be9-af25-0c5511a5b31f>
+      a       mo:Record ;
+      rdfs:label "Television's Greatest Hits, Volume 3: 70's & 80's" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000000GOO" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B000000GOO.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "137"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/120623> , <http://dbtune.org/musicbrainz/resource/toc/298738> ;
+      vocab:tracks "65"^^xsd:int ;
+      dc:date "1990-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Television's Greatest Hits, Volume 3: 70's & 80's" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000000GOO> ;
+      mo:image <http://images.amazon.com/images/P/B000000GOO> , <http://images.amazon.com/images/P/B000000GOO.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/bc5fddae-eeaf-4be9-af25-0c5511a5b31f> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/66503> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/a90c3553-7785-4ee5-9761-cc50ef59bef1> , <http://dbtune.org/musicbrainz/resource/track/5317897b-c85a-4566-977c-c349b9c7086b> , <http://dbtune.org/musicbrainz/resource/track/4f27f6d1-8e2d-49c5-ad63-df8ec4732870> , <http://dbtune.org/musicbrainz/resource/track/c4790d73-5168-44a4-87de-46a7232b7e91> , <http://dbtune.org/musicbrainz/resource/track/d8c40cee-1dc3-483a-8078-fc19b638822b> , <http://dbtune.org/musicbrainz/resource/track/fdbad398-ecc0-4194-92e9-bd21be2d2df4> , <http://dbtune.org/musicbrainz/resource/track/3eecefdd-86d6-4adb-8a2e-9fd8a6385f84> , <http://dbtune.org/musicbrainz/resource/track/9efc9105-5d60-46f5-b854-f21838e7a733> , <http://dbtune.org/musicbrainz/resource/track/fca68ae1-db3a-4ff4-b02f-c7ae7af48568> , <http://dbtune.org/musicbrainz/resource/track/559bf8a1-fd0a-4bf2-8be0-5ecd6e644f10> , <http://dbtune.org/musicbrainz/resource/track/42db57fb-ea41-4f3f-a68b-8d0bbaf4de10> , <http://dbtune.org/musicbrainz/resource/track/412ce1e6-5116-4359-adbe-0566b1ac8fbd> , <http://dbtune.org/musicbrainz/resource/track/fce62780-9bbd-4a41-b7b1-6a0d29508799> , <http://dbtune.org/musicbrainz/resource/track/b910b19f-54c6-4ad1-ae44-f9a8e41be20c> , <http://dbtune.org/musicbrainz/resource/track/8b5f66c4-bad3-4462-b31c-e3c5dcd089fd> , <http://dbtune.org/musicbrainz/resource/track/72f2c427-7d64-4313-9193-97915c09cf1e> , <http://dbtune.org/musicbrainz/resource/track/077f6166-5731-44f1-b9c2-62a364651021> , <http://dbtune.org/musicbrainz/resource/track/bac0d677-5a39-4830-b28b-a8bd71fd9562> , <http://dbtune.org/musicbrainz/resource/track/df3e340a-a7a0-434d-9df8-90282d201a4e> , <http://dbtune.org/musicbrainz/resource/track/130264a1-fb68-4eb9-bd10-2524147db09e> , <http://dbtune.org/musicbrainz/resource/track/cec4abc8-ef1e-432c-92e8-5d627d7d040d> , <http://dbtune.org/musicbrainz/resource/track/2894619a-3371-4e20-8b22-c64953fa154a> , <http://dbtune.org/musicbrainz/resource/track/168e9cb8-f2a1-4876-a598-c23a985be90b> , <http://dbtune.org/musicbrainz/resource/track/c3f0db2b-04ab-41a8-aa28-308ba48dabd2> , <http://dbtune.org/musicbrainz/resource/track/9d2fe968-0f7a-461f-82e6-e1e760e517a5> , <http://dbtune.org/musicbrainz/resource/track/1c819b19-b6fb-457d-8b9e-76f3543e3af6> , <http://dbtune.org/musicbrainz/resource/track/f77ca5ab-fecb-42ee-99ba-a49b8ae89959> , <http://dbtune.org/musicbrainz/resource/track/efcd9ae6-bdcb-4279-a399-68cadcb922e0> , <http://dbtune.org/musicbrainz/resource/track/766164fc-21d1-463a-ab1e-0a784d250ece> , <http://dbtune.org/musicbrainz/resource/track/b096082a-d870-45f1-8d15-37811d332bba> , <http://dbtune.org/musicbrainz/resource/track/76e11035-ace4-4e05-baa7-683018babc63> , <http://dbtune.org/musicbrainz/resource/track/ce84188f-53b6-4882-a529-865d2dd9f7dd> , <http://dbtune.org/musicbrainz/resource/track/87aa1340-6b51-4f7f-954c-e78ec6cb0308> , <http://dbtune.org/musicbrainz/resource/track/a9e28194-b2e0-4f24-aa26-f514401619b3> , <http://dbtune.org/musicbrainz/resource/track/5bcc690d-44e5-48d6-8aa2-ae10e9ab6ca6> , <http://dbtune.org/musicbrainz/resource/track/dcc5613c-c30c-47f5-826e-0033c5d3902f> , <http://dbtune.org/musicbrainz/resource/track/9d3784e5-13f8-4529-bbb7-ca2d89cc82f8> , <http://dbtune.org/musicbrainz/resource/track/1f630d48-8903-46e5-9811-ccb3dfb2ea59> , <http://dbtune.org/musicbrainz/resource/track/f79e2df3-6a61-45f0-9781-70c64ce3df1e> , <http://dbtune.org/musicbrainz/resource/track/b24e1b36-6990-4fdf-bca0-5f5ea77b2767> , <http://dbtune.org/musicbrainz/resource/track/f93f0efd-7a2a-4996-993f-363ed227bfe0> , <http://dbtune.org/musicbrainz/resource/track/2bfb44c6-2b60-43b7-a2fb-c9b091d9b89a> , <http://dbtune.org/musicbrainz/resource/track/b14b7511-2d9a-4a20-9895-081aca36bfa1> , <http://dbtune.org/musicbrainz/resource/track/9cb6b080-b273-4694-a86f-ecac54c0432f> , <http://dbtune.org/musicbrainz/resource/track/bd8bcc58-a4ee-4332-9521-2405e494184d> , <http://dbtune.org/musicbrainz/resource/track/b81dcbc5-1852-4b6b-92ad-01d2b4bc126e> , <http://dbtune.org/musicbrainz/resource/track/a656e9bc-16a8-45d9-83ac-8843300f13be> , <http://dbtune.org/musicbrainz/resource/track/50230102-2be5-45b5-8f1e-757ec164d7e2> , <http://dbtune.org/musicbrainz/resource/track/63354d08-f403-4b33-a501-66a12e46fcdf> , <http://dbtune.org/musicbrainz/resource/track/8931cc90-9d01-4bd4-bd52-9ac6728d5a43> , <http://dbtune.org/musicbrainz/resource/track/785c02a6-f337-4de4-8a93-2b9be5860009> , <http://dbtune.org/musicbrainz/resource/track/34a8b4f2-3c58-4b97-a63a-21ec728c7cfa> , <http://dbtune.org/musicbrainz/resource/track/88bde18f-eaa0-4333-ad8a-4ae6c4098ee8> , <http://dbtune.org/musicbrainz/resource/track/7a92c17e-993a-46b2-b2dc-2e080a49a03f> , <http://dbtune.org/musicbrainz/resource/track/9963221d-5ba7-42f8-9068-869b18904dfc> , <http://dbtune.org/musicbrainz/resource/track/c0be7970-9c20-43a3-b738-1120de30e754> , <http://dbtune.org/musicbrainz/resource/track/6c04c4ec-653d-4ac1-b67c-59824a54d08e> , <http://dbtune.org/musicbrainz/resource/track/fdd595cc-e495-4961-830f-c168857abf15> , <http://dbtune.org/musicbrainz/resource/track/b793467f-685b-427a-bfeb-1185c38a6a2a> , <http://dbtune.org/musicbrainz/resource/track/1cc65f99-d562-4b53-8684-f75aad523588> , <http://dbtune.org/musicbrainz/resource/track/0f3d98a6-3431-41f1-b9e4-b1c86015e8cf> , <http://dbtune.org/musicbrainz/resource/track/5f199a6a-406d-4426-ada2-a976ab537ea4> , <http://dbtune.org/musicbrainz/resource/track/7bba1c3a-0481-4c80-acd4-2406a3ce8171> , <http://dbtune.org/musicbrainz/resource/track/4d34f588-03fd-494f-8aea-d9abfb521923> , <http://dbtune.org/musicbrainz/resource/track/691f8ace-6e83-49d2-9459-f2faf770560a> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/d19e6a92-6853-4a4f-a8a3-1bec2bda014f> ;
+      foaf:page "711367402" .
+
+<http://images.amazon.com/images/P/B000000GOO.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000000GOO.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/bc5fddae-eeaf-4be9-af25-0c5511a5b31f>
+      rdfs:label "RDF Description of Television's Greatest Hits, Volume 3: 70's & 80's" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/bc5fddae-eeaf-4be9-af25-0c5511a5b31f> .

@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/e6310292-d63c-474e-bee2-9b8366060872>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/e6310292-d63c-474e-bee2-9b8366060872> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/e6310292-d63c-474e-bee2-9b8366060872>
+      rdfs:label "RDF Description of The Copland Collection: Orchestral and Ballet Works, 1936-1948 (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/e6310292-d63c-474e-bee2-9b8366060872> .
+
+<http://dbtune.org/musicbrainz/resource/record/e6310292-d63c-474e-bee2-9b8366060872>
+      a       mo:Record ;
+      rdfs:label "The Copland Collection: Orchestral and Ballet Works, 1936-1948 (disc 2)" ;
+      vocab:album_attributes
+              "{0,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/305724> , <http://dbtune.org/musicbrainz/resource/toc/7780> ;
+      vocab:tracks "19"^^xsd:int ;
+      dc:title "The Copland Collection: Orchestral and Ballet Works, 1936-1948 (disc 2)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/e6310292-d63c-474e-bee2-9b8366060872> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/1bb27db5-0e58-4632-bf68-9f6de9d27340> , <http://dbtune.org/musicbrainz/resource/track/0ffe1831-681a-4c38-8d62-5a3601a4b840> , <http://dbtune.org/musicbrainz/resource/track/a2f95013-fec4-47df-86d8-f7c92ab4fd15> , <http://dbtune.org/musicbrainz/resource/track/904c9df8-cbf9-4520-a04f-406985333df2> , <http://dbtune.org/musicbrainz/resource/track/cdb9f37c-3e82-4853-b115-e50d504a7d56> , <http://dbtune.org/musicbrainz/resource/track/746912c7-2a17-49ff-b8dc-d123e732f876> , <http://dbtune.org/musicbrainz/resource/track/00b1e12a-be7e-4742-a831-904d15f61421> , <http://dbtune.org/musicbrainz/resource/track/7e443ee8-1cd2-48c1-b98a-a51b99f665e9> , <http://dbtune.org/musicbrainz/resource/track/a51c646d-d676-4690-8131-62373e8b77db> , <http://dbtune.org/musicbrainz/resource/track/ac7bf6cc-6c18-4a9e-a935-e0a0b50053f1> , <http://dbtune.org/musicbrainz/resource/track/defe967f-5802-4733-9d3d-96c2ba7729e2> , <http://dbtune.org/musicbrainz/resource/track/3eb538f4-ab58-49ee-b4e4-83498b10a4d0> , <http://dbtune.org/musicbrainz/resource/track/47b41e10-8f07-40cc-b093-d0c0f242180e> , <http://dbtune.org/musicbrainz/resource/track/80292441-deb8-4796-a7c7-c1aab9349ccb> , <http://dbtune.org/musicbrainz/resource/track/aa346169-c86e-4ed0-855b-5cd361550278> , <http://dbtune.org/musicbrainz/resource/track/e3764dea-8be6-4364-9cf7-a07b3d8a2772> , <http://dbtune.org/musicbrainz/resource/track/22de19c6-521e-45c2-8b91-b87f4c569478> , <http://dbtune.org/musicbrainz/resource/track/590445fe-162b-4177-b360-86f863bac22e> , <http://dbtune.org/musicbrainz/resource/track/fef95edb-9093-4fcb-941a-51ff1e586c11> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09> ;
+      foaf:page "714278032" .
+
+<http://musicbrainz.org/album/e6310292-d63c-474e-bee2-9b8366060872>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fe6310292-d63c-474e-bee2-9b8366060872%3E> .

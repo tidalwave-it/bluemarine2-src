@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/6095a630-7b62-4063-8c31-fb2ab4fad57c>
+      rdfs:label "RDF Description of Carioca" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/6095a630-7b62-4063-8c31-fb2ab4fad57c> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/6095a630-7b62-4063-8c31-fb2ab4fad57c>
+      a       mo:Record ;
+      rdfs:label "Carioca" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/301049> ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:date "2009-02-13" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/por> ;
+      dc:title "Carioca" ;
+      mo:musicbrainz <http://musicbrainz.org/album/6095a630-7b62-4063-8c31-fb2ab4fad57c> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/502195> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/c70b7d9a-c7d7-4e1a-b31c-ad4af6516058> , <http://dbtune.org/musicbrainz/resource/track/1a46edbe-789f-4092-98ef-74c19ddbafa6> , <http://dbtune.org/musicbrainz/resource/track/daed6d3f-b58f-4655-be05-5b0b960ff4c0> , <http://dbtune.org/musicbrainz/resource/track/9bbda6f5-4150-4aab-b8be-c23a57f3c1cf> , <http://dbtune.org/musicbrainz/resource/track/f511688c-5e1f-4ff8-beac-badd10f2901d> , <http://dbtune.org/musicbrainz/resource/track/fda2dc39-2a6c-4228-a404-399872575014> , <http://dbtune.org/musicbrainz/resource/track/28c8534a-2cdb-4cb2-aec2-9496ad121995> , <http://dbtune.org/musicbrainz/resource/track/5c18507d-86e9-4462-a0a2-6408b886b618> , <http://dbtune.org/musicbrainz/resource/track/82734ae3-56b4-4f6b-9457-f869d33b21ff> , <http://dbtune.org/musicbrainz/resource/track/031dabf6-fe64-459f-92cd-42fa9256a546> , <http://dbtune.org/musicbrainz/resource/track/e24a7869-44cd-419e-85b6-8bb32718588c> , <http://dbtune.org/musicbrainz/resource/track/0b07f908-e046-4d7a-a804-d915e9c8ecf3> , <http://dbtune.org/musicbrainz/resource/track/49caaa90-46ca-464b-9914-9ea04be2317a> , <http://dbtune.org/musicbrainz/resource/track/23623bd7-7bd0-4164-8b0b-5635af3a474b> , <http://dbtune.org/musicbrainz/resource/track/1302177c-b784-4ff7-a78c-b2fb77da622d> , <http://dbtune.org/musicbrainz/resource/track/fdfd2e6a-487b-4c55-8c10-841bb518dde4> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/a781f9c2-0e60-4862-b1bc-0b9272151014> ;
+      foaf:page "136948228" .
+
+<http://dbtune.org/musicbrainz/resource/master/6095a630-7b62-4063-8c31-fb2ab4fad57c>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/6095a630-7b62-4063-8c31-fb2ab4fad57c> .
+
+<http://musicbrainz.org/album/6095a630-7b62-4063-8c31-fb2ab4fad57c>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F6095a630-7b62-4063-8c31-fb2ab4fad57c%3E> .

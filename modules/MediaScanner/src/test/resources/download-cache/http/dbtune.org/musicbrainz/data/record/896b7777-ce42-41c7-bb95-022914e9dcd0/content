@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/896b7777-ce42-41c7-bb95-022914e9dcd0>
+      rdfs:label "RDF Description of Promenade With Duke" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/896b7777-ce42-41c7-bb95-022914e9dcd0> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/896b7777-ce42-41c7-bb95-022914e9dcd0>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/896b7777-ce42-41c7-bb95-022914e9dcd0> .
+
+<http://ec1.images-amazon.com/images/P/B000005HB2.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000005HB2.01.MZZZZZZZ.jpg%3E> .
+
+<http://images.amazon.com/images/P/B000005HB2>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000005HB2%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000005HB2>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000005HB2%3E> .
+
+<http://musicbrainz.org/album/896b7777-ce42-41c7-bb95-022914e9dcd0>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F896b7777-ce42-41c7-bb95-022914e9dcd0%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/896b7777-ce42-41c7-bb95-022914e9dcd0>
+      a       mo:Record ;
+      rdfs:label "Promenade With Duke" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000005HB2" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000005HB2.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "10"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/65971> ;
+      vocab:tracks "9"^^xsd:int ;
+      dc:date "1993-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Promenade With Duke" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000005HB2> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000005HB2.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000005HB2> ;
+      mo:musicbrainz <http://musicbrainz.org/album/896b7777-ce42-41c7-bb95-022914e9dcd0> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/382113> , <http://dbtune.org/musicbrainz/resource/release/92119> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/396e260b-fa00-4b81-8161-ca67438b8362> , <http://dbtune.org/musicbrainz/resource/track/de0b392c-6ec2-4eff-a6b6-4aef4cd14018> , <http://dbtune.org/musicbrainz/resource/track/24f84f04-dd45-44ed-9420-e9c7728554b3> , <http://dbtune.org/musicbrainz/resource/track/819264ac-2f48-4443-90e4-286af25a7ac0> , <http://dbtune.org/musicbrainz/resource/track/55e4eba1-acd0-4cc0-b917-e7649a76c435> , <http://dbtune.org/musicbrainz/resource/track/7ce03897-1d35-42ad-ad20-49e4e6fa87e4> , <http://dbtune.org/musicbrainz/resource/track/3b99561e-01a3-43df-9a9f-46adeb3b3a92> , <http://dbtune.org/musicbrainz/resource/track/8ff65a61-7460-4deb-bb19-5417465fdfe8> , <http://dbtune.org/musicbrainz/resource/track/5eb6a482-e649-42a2-aa0c-1a24242dd4c0> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/2b75141c-05e9-42eb-ae63-6695d86cdc19> ;
+      foaf:page "590887119" .

@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/fb48877d-294c-4cb3-878d-1ea4e69ab870>
+      rdfs:label "RDF Description of Ninna Nanna" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/fb48877d-294c-4cb3-878d-1ea4e69ab870> .
+
+<http://dbtune.org/musicbrainz/resource/record/fb48877d-294c-4cb3-878d-1ea4e69ab870>
+      a       mo:Record ;
+      rdfs:label "Ninna Nanna" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/182937> ;
+      vocab:tracks "18"^^xsd:int ;
+      dc:title "Ninna Nanna" ;
+      mo:musicbrainz <http://musicbrainz.org/album/fb48877d-294c-4cb3-878d-1ea4e69ab870> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/b51f8506-9a02-40b4-b25f-89c4784c9f65> , <http://dbtune.org/musicbrainz/resource/track/339fc7a4-d9fd-4947-a345-51df91ba9664> , <http://dbtune.org/musicbrainz/resource/track/967d3e56-6a52-4e79-b630-c73f510a36da> , <http://dbtune.org/musicbrainz/resource/track/8f6f8fff-6436-4b85-8bcd-d0eb20de5cf2> , <http://dbtune.org/musicbrainz/resource/track/8bf08003-cf81-42ba-8cbe-9e344b229ecc> , <http://dbtune.org/musicbrainz/resource/track/cd1dd60b-ec79-4a1c-86e0-0a1f05ea13b6> , <http://dbtune.org/musicbrainz/resource/track/f9acfc2c-428d-4499-abd2-4cd8a524392e> , <http://dbtune.org/musicbrainz/resource/track/67369c1c-e5f9-4dc4-8e5b-571e639a6481> , <http://dbtune.org/musicbrainz/resource/track/86324603-7cd4-4cb8-911d-09b3c27b3d5f> , <http://dbtune.org/musicbrainz/resource/track/4edaea1a-c8db-416c-a76a-a007d4090c03> , <http://dbtune.org/musicbrainz/resource/track/5f2451a2-ec21-494f-8147-c1937a8d6ee3> , <http://dbtune.org/musicbrainz/resource/track/c0088f37-c267-4219-bbfc-faca20a5eaad> , <http://dbtune.org/musicbrainz/resource/track/b17c9e26-4537-4f81-92c4-9990342c6626> , <http://dbtune.org/musicbrainz/resource/track/6bdc453c-877b-4a8b-bba1-9b13bc12c2a6> , <http://dbtune.org/musicbrainz/resource/track/ed4a8702-9905-419e-a391-a8d77ff82059> , <http://dbtune.org/musicbrainz/resource/track/dbe83a45-5428-4be9-9474-5ccdbd382c26> , <http://dbtune.org/musicbrainz/resource/track/0d56369b-3c19-4020-9063-66f993e3702c> , <http://dbtune.org/musicbrainz/resource/track/ef473051-d690-4081-a3e3-07c1f942cb8e> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/361fcd46-41c5-4503-aa43-a87937583909> ;
+      foaf:page "514309185" .
+
+<http://dbtune.org/musicbrainz/resource/master/fb48877d-294c-4cb3-878d-1ea4e69ab870>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/fb48877d-294c-4cb3-878d-1ea4e69ab870> .
+
+<http://musicbrainz.org/album/fb48877d-294c-4cb3-878d-1ea4e69ab870>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Ffb48877d-294c-4cb3-878d-1ea4e69ab870%3E> .

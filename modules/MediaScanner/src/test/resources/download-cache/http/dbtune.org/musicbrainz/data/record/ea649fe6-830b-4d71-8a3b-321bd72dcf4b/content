@@ -1,0 +1,66 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B00000AZT5>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000AZT5%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00000AZT5>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00000AZT5%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/ea649fe6-830b-4d71-8a3b-321bd72dcf4b>
+      rdfs:label "RDF Description of The World of Mantovani (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/ea649fe6-830b-4d71-8a3b-321bd72dcf4b> .
+
+<http://ec2.images-amazon.com/images/P/B00000AZT5.03.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec2.images-amazon.com%2Fimages%2FP%2FB00000AZT5.03.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/ea649fe6-830b-4d71-8a3b-321bd72dcf4b>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/ea649fe6-830b-4d71-8a3b-321bd72dcf4b> .
+
+<http://musicbrainz.org/album/ea649fe6-830b-4d71-8a3b-321bd72dcf4b>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fea649fe6-830b-4d71-8a3b-321bd72dcf4b%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/ea649fe6-830b-4d71-8a3b-321bd72dcf4b>
+      a       mo:Record ;
+      rdfs:label "The World of Mantovani (disc 1)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00000AZT5" ;
+      vocab:albummeta_coverarturl
+              "http://ec2.images-amazon.com/images/P/B00000AZT5.03.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:tracks "18"^^xsd:int ;
+      dc:date "1996-01-04" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The World of Mantovani (disc 1)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00000AZT5> ;
+      mo:image <http://images.amazon.com/images/P/B00000AZT5> , <http://ec2.images-amazon.com/images/P/B00000AZT5.03.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/ea649fe6-830b-4d71-8a3b-321bd72dcf4b> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/440721> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/af37d2eb-a513-492f-be06-021ce7067df8> , <http://dbtune.org/musicbrainz/resource/track/84fd6029-cf11-48de-a126-2b5349c5b3b4> , <http://dbtune.org/musicbrainz/resource/track/f1d973cf-ddcb-44c6-a802-5f6f0a6cad17> , <http://dbtune.org/musicbrainz/resource/track/1f7526b1-fbb2-4d0b-81d4-46677b77baa0> , <http://dbtune.org/musicbrainz/resource/track/3d438cb6-a73d-44d1-b8d9-cb77002acbb3> , <http://dbtune.org/musicbrainz/resource/track/8594366e-dabc-462b-883d-f67e17d24b60> , <http://dbtune.org/musicbrainz/resource/track/02680a97-672c-4fa1-be69-8b9b4177ff49> , <http://dbtune.org/musicbrainz/resource/track/3fa2dfea-0e64-4a81-97dc-440e15b10873> , <http://dbtune.org/musicbrainz/resource/track/2083b73b-eac3-447e-b36b-996b1c3ec7cc> , <http://dbtune.org/musicbrainz/resource/track/283a7694-c094-459d-b714-ba0d4621746a> , <http://dbtune.org/musicbrainz/resource/track/0d94cc7a-7abc-4c26-ac9d-740f7bf98e1f> , <http://dbtune.org/musicbrainz/resource/track/ab66d828-e2cb-4100-b56b-16a1d787adee> , <http://dbtune.org/musicbrainz/resource/track/d7043c64-c3e1-4a60-b692-73f79d840eaf> , <http://dbtune.org/musicbrainz/resource/track/29a054d7-40f1-43b5-89b1-c4a757d9125f> , <http://dbtune.org/musicbrainz/resource/track/71247e1b-c92c-4ba0-8b39-3be48b65c190> , <http://dbtune.org/musicbrainz/resource/track/a36a3bd1-0c0a-479a-81a3-63e939b73857> , <http://dbtune.org/musicbrainz/resource/track/3d0521f3-9783-4822-b096-94be2ed52fe0> , <http://dbtune.org/musicbrainz/resource/track/b1ed95b0-ba7b-4b67-ab8c-709f055cb0fe> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/4c566ee7-8dd4-4edc-8cbe-a86ee30feb06> ;
+      foaf:page "714278672" .

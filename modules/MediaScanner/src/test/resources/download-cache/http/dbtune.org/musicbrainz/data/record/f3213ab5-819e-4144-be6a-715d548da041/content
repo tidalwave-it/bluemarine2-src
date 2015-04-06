@@ -1,0 +1,53 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/f3213ab5-819e-4144-be6a-715d548da041>
+      a       mo:Record ;
+      rdfs:label "Dionne Warwick in Valley of the Dolls" ;
+      vocab:album_attributes
+              "{0}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "4"^^xsd:int ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Dionne Warwick in Valley of the Dolls" ;
+      mo:musicbrainz <http://musicbrainz.org/album/f3213ab5-819e-4144-be6a-715d548da041> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/5b90b37d-b102-4b2d-808e-aeddaa41b360> , <http://dbtune.org/musicbrainz/resource/track/32b8714d-54c6-4218-ae2a-5ed55fda7536> , <http://dbtune.org/musicbrainz/resource/track/b820b51d-df3b-4aa0-8f54-3d3c71c8b253> , <http://dbtune.org/musicbrainz/resource/track/75497607-4cde-4e5c-b442-48406b39b21e> , <http://dbtune.org/musicbrainz/resource/track/f15a2551-508e-4244-ac53-7f977c1e4e7c> , <http://dbtune.org/musicbrainz/resource/track/053f63e0-9f2c-4d1e-9052-52574651f2ff> , <http://dbtune.org/musicbrainz/resource/track/c31ffa4f-7ef9-48d9-9c45-a55007c4d8b2> , <http://dbtune.org/musicbrainz/resource/track/0bfe79a4-8f44-4fef-ac14-a8f5b1328f9c> , <http://dbtune.org/musicbrainz/resource/track/e1ff8821-784f-4af8-86b6-a95ddc146e01> , <http://dbtune.org/musicbrainz/resource/track/f69c6e86-e94f-4452-8e30-44a189f591f3> , <http://dbtune.org/musicbrainz/resource/track/01e9e141-ae51-44b2-b64c-d8eae4e002d9> , <http://dbtune.org/musicbrainz/resource/track/1fdec346-6f20-4564-a2eb-f65b2a7d50b2> , <http://dbtune.org/musicbrainz/resource/track/9e6edf16-21db-44c4-bc72-070fe57a3c86> , <http://dbtune.org/musicbrainz/resource/track/899cbf12-ce56-441b-8d76-78c2709ec268> , <http://dbtune.org/musicbrainz/resource/track/2bc8187c-f6b4-4cf4-b08b-9809b430e0dc> , <http://dbtune.org/musicbrainz/resource/track/9333958f-9f0a-4626-84bb-cebdd65cb6c1> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6784ee31-6d79-4a37-9e1f-01d6ef31940e> ;
+      foaf:page "178798054" .
+
+<http://dbtune.org/musicbrainz/data/record/f3213ab5-819e-4144-be6a-715d548da041>
+      rdfs:label "RDF Description of Dionne Warwick in Valley of the Dolls" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/f3213ab5-819e-4144-be6a-715d548da041> .
+
+<http://musicbrainz.org/album/f3213ab5-819e-4144-be6a-715d548da041>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Ff3213ab5-819e-4144-be6a-715d548da041%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/f3213ab5-819e-4144-be6a-715d548da041>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/f3213ab5-819e-4144-be6a-715d548da041> .

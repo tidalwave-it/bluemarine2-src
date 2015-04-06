@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/d68e16b1-31ec-40ec-990b-ed49a7483f17>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/d68e16b1-31ec-40ec-990b-ed49a7483f17> .
+
+<http://dbtune.org/musicbrainz/resource/record/d68e16b1-31ec-40ec-990b-ed49a7483f17>
+      a       mo:Record ;
+      rdfs:label "Paganini: 24 Capricci (Shlomo Mintz)" ;
+      vocab:album_attributes
+              "{0,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "1"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/27649> ;
+      vocab:tracks "24"^^xsd:int ;
+      dc:title "Paganini: 24 Capricci (Shlomo Mintz)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/d68e16b1-31ec-40ec-990b-ed49a7483f17> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/95f67205-585f-4a48-be52-203e551b0767> , <http://dbtune.org/musicbrainz/resource/track/90f3a6dc-798c-41e7-a62f-b958b25092f4> , <http://dbtune.org/musicbrainz/resource/track/912f6970-363d-456d-886f-3324a499e2db> , <http://dbtune.org/musicbrainz/resource/track/10fef432-caa4-4fe8-a483-4fce42cbb982> , <http://dbtune.org/musicbrainz/resource/track/81d16631-718c-402c-8eee-9a4e1b0f04db> , <http://dbtune.org/musicbrainz/resource/track/2d11fa54-8c79-4466-8b8f-6b6234cd4a86> , <http://dbtune.org/musicbrainz/resource/track/0350f8cb-4ccb-48bc-8ba8-88cb80d1ae83> , <http://dbtune.org/musicbrainz/resource/track/374fc376-3bb2-41eb-b5a0-7f7959602d63> , <http://dbtune.org/musicbrainz/resource/track/6dbff1c6-fc9d-4de4-825a-308159cece76> , <http://dbtune.org/musicbrainz/resource/track/0cf51d50-3899-4436-8366-43a044ae9368> , <http://dbtune.org/musicbrainz/resource/track/2d3e35fb-9cca-4051-add2-5479e2cd85ba> , <http://dbtune.org/musicbrainz/resource/track/9493ad44-e1c3-40e6-8134-aa3f30844eed> , <http://dbtune.org/musicbrainz/resource/track/e76b7bc9-2613-41fa-a625-357c7fa2025e> , <http://dbtune.org/musicbrainz/resource/track/4564d38d-5258-4d91-9279-0eb0bb6e1a8a> , <http://dbtune.org/musicbrainz/resource/track/760635cd-f464-49a3-8447-32d70b117ed5> , <http://dbtune.org/musicbrainz/resource/track/c72167c6-2511-45b0-ae13-c6d7451cc997> , <http://dbtune.org/musicbrainz/resource/track/3b27017c-1546-4d73-a67f-11301d07f95a> , <http://dbtune.org/musicbrainz/resource/track/00ab82a8-14c3-43bb-a1c3-6bd5df98f517> , <http://dbtune.org/musicbrainz/resource/track/d160af55-b382-433d-ba0e-70e17ca87510> , <http://dbtune.org/musicbrainz/resource/track/ab665351-59fa-44d9-a3d8-6a53e713c686> , <http://dbtune.org/musicbrainz/resource/track/765588ca-892d-4d88-b403-1971f50a6d39> , <http://dbtune.org/musicbrainz/resource/track/96285fdc-b122-46aa-b94a-8a14f5252ba9> , <http://dbtune.org/musicbrainz/resource/track/f4fe8815-0f7f-4314-93e9-f152dd1effea> , <http://dbtune.org/musicbrainz/resource/track/c1d14efc-2f1b-4593-ae62-f43384e57d1f> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/d581b2f2-f945-4566-a249-2d0171466993> ;
+      foaf:page "572787178" .
+
+<http://dbtune.org/musicbrainz/data/record/d68e16b1-31ec-40ec-990b-ed49a7483f17>
+      rdfs:label "RDF Description of Paganini: 24 Capricci (Shlomo Mintz)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/d68e16b1-31ec-40ec-990b-ed49a7483f17> .
+
+<http://musicbrainz.org/album/d68e16b1-31ec-40ec-990b-ed49a7483f17>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fd68e16b1-31ec-40ec-990b-ed49a7483f17%3E> .

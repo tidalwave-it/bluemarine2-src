@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/255bff88-6f1d-4ebf-89e4-9ec8ea55016c>
+      a       mo:Record ;
+      rdfs:label "The Diva Series" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/292265> ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:date "2003-05-20" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Diva Series" ;
+      mo:musicbrainz <http://musicbrainz.org/album/255bff88-6f1d-4ebf-89e4-9ec8ea55016c> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/253920> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/f2c44c9a-e1cd-415e-9742-7b4aa58958c5> , <http://dbtune.org/musicbrainz/resource/track/e2db45ce-dab8-420d-882f-a86d208f3767> , <http://dbtune.org/musicbrainz/resource/track/20d688bd-6d49-4eb8-bb14-30a9e14aaa57> , <http://dbtune.org/musicbrainz/resource/track/e6c6429b-b113-4e01-a7d0-d8450b86611d> , <http://dbtune.org/musicbrainz/resource/track/6ba6bbce-eda5-4c4f-8ec2-04cf9ba327eb> , <http://dbtune.org/musicbrainz/resource/track/c89fbf4f-380a-4bff-a246-a1bc5e2d5a18> , <http://dbtune.org/musicbrainz/resource/track/063cbe39-32bb-4534-ab5d-4a92ce700a25> , <http://dbtune.org/musicbrainz/resource/track/06e6648e-9074-453f-b8d6-129afccee062> , <http://dbtune.org/musicbrainz/resource/track/46708c1e-7cb4-48ed-acd8-d4e319b7969f> , <http://dbtune.org/musicbrainz/resource/track/33ab1b6d-1e0a-4091-8305-c5535b6dc587> , <http://dbtune.org/musicbrainz/resource/track/5be67301-6ca8-4523-a91b-157af1015639> , <http://dbtune.org/musicbrainz/resource/track/8d485bf6-0750-4325-8db8-f9ded0704a83> , <http://dbtune.org/musicbrainz/resource/track/876f86a9-9102-4aca-87b5-bd2bf1614ff0> , <http://dbtune.org/musicbrainz/resource/track/e7a7ad1d-7e86-48cc-8421-7a8d39513d81> , <http://dbtune.org/musicbrainz/resource/track/90aeae36-27d5-4feb-ac92-7235eb1125c3> , <http://dbtune.org/musicbrainz/resource/track/32a43e51-e313-4599-868c-03905b2b9c3e> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/d59c4cda-11d9-48db-8bfe-b557ee602aed> ;
+      foaf:page "714278058" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/255bff88-6f1d-4ebf-89e4-9ec8ea55016c>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/255bff88-6f1d-4ebf-89e4-9ec8ea55016c> .
+
+<http://dbtune.org/musicbrainz/data/record/255bff88-6f1d-4ebf-89e4-9ec8ea55016c>
+      rdfs:label "RDF Description of The Diva Series" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/255bff88-6f1d-4ebf-89e4-9ec8ea55016c> .
+
+<http://musicbrainz.org/album/255bff88-6f1d-4ebf-89e4-9ec8ea55016c>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F255bff88-6f1d-4ebf-89e4-9ec8ea55016c%3E> .

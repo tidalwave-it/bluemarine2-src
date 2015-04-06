@@ -1,0 +1,56 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbpedia.org/resource/The_Ballad_of_John_and_Yoko>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FThe_Ballad_of_John_and_Yoko%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/42e9c934-20d8-4621-914a-1dd08f39d738>
+      a       mo:Record ;
+      rdfs:label "The Ballad of John and Yoko" ;
+      vocab:album_attributes
+              "{0,2,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "4"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/261451> ;
+      vocab:tracks "2"^^xsd:int ;
+      dc:date "1969-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Ballad of John and Yoko" ;
+      mo:musicbrainz <http://musicbrainz.org/album/42e9c934-20d8-4621-914a-1dd08f39d738> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/498550> , <http://dbtune.org/musicbrainz/resource/release/212075> , <http://dbtune.org/musicbrainz/resource/release/211385> , <http://dbtune.org/musicbrainz/resource/release/211386> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/5199acad-fac9-4fd8-8bd2-948ff8ca7b41> , <http://dbtune.org/musicbrainz/resource/track/02690387-dbd9-4d24-bbf5-1d2d7ca103ac> ;
+      =       <http://dbpedia.org/resource/The_Ballad_of_John_and_Yoko> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d> ;
+      foaf:page "714277986" .
+
+<http://dbtune.org/musicbrainz/data/record/42e9c934-20d8-4621-914a-1dd08f39d738>
+      rdfs:label "RDF Description of The Ballad of John and Yoko" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/42e9c934-20d8-4621-914a-1dd08f39d738> .
+
+<http://dbtune.org/musicbrainz/resource/master/42e9c934-20d8-4621-914a-1dd08f39d738>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/42e9c934-20d8-4621-914a-1dd08f39d738> .
+
+<http://musicbrainz.org/album/42e9c934-20d8-4621-914a-1dd08f39d738>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F42e9c934-20d8-4621-914a-1dd08f39d738%3E> .

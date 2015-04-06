@@ -1,0 +1,71 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B0000046QD>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000046QD%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000046QD>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000046QD%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/e65bbd8b-4fd9-4a53-83c5-cfc05e737f70>
+      rdfs:label "RDF Description of Ella Swings Brightly With Nelson" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/e65bbd8b-4fd9-4a53-83c5-cfc05e737f70> .
+
+<http://dbpedia.org/resource/Ella_Swings_Brightly_with_Nelson>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FElla_Swings_Brightly_with_Nelson%3E> .
+
+<http://ec1.images-amazon.com/images/P/B0000046QD.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0000046QD.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/e65bbd8b-4fd9-4a53-83c5-cfc05e737f70>
+      a       mo:Record ;
+      rdfs:label "Ella Swings Brightly With Nelson" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000046QD" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0000046QD.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "16"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/153810> , <http://dbtune.org/musicbrainz/resource/toc/305270> ;
+      vocab:tracks "15"^^xsd:int ;
+      dc:date "1993-07-20" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Ella Swings Brightly With Nelson" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000046QD> ;
+      mo:image <http://images.amazon.com/images/P/B0000046QD> , <http://ec1.images-amazon.com/images/P/B0000046QD.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/e65bbd8b-4fd9-4a53-83c5-cfc05e737f70> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/323206> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/d936ef67-dc17-4907-bc99-91d9b57e95d7> , <http://dbtune.org/musicbrainz/resource/track/99f1d143-5ae7-4ea4-bf87-db49a2c4f158> , <http://dbtune.org/musicbrainz/resource/track/c9261d96-ffb3-47b1-bd44-c6efe8f51bd4> , <http://dbtune.org/musicbrainz/resource/track/bdba8ef2-1583-42a3-8339-9f10e8e05add> , <http://dbtune.org/musicbrainz/resource/track/1a193db9-f9f4-4ea6-b32b-129f7d6d49fb> , <http://dbtune.org/musicbrainz/resource/track/c9c4fc7e-bfd7-4437-add2-4547ebf58404> , <http://dbtune.org/musicbrainz/resource/track/10ec26ad-6e22-46d4-ab39-dbb1daf7eae5> , <http://dbtune.org/musicbrainz/resource/track/dfa8f77b-2231-4218-863b-fc468d30125b> , <http://dbtune.org/musicbrainz/resource/track/62f11e3d-fc14-4607-9ddd-4129bc0d669a> , <http://dbtune.org/musicbrainz/resource/track/fdffc9ea-1338-4edc-b83b-9c0503db2657> , <http://dbtune.org/musicbrainz/resource/track/ff7ab199-a204-49e3-98d0-16f74d7d5498> , <http://dbtune.org/musicbrainz/resource/track/9bce2078-b5bf-4c6c-959a-ad89dc8f6d4d> , <http://dbtune.org/musicbrainz/resource/track/3f2b36b8-8ff4-443a-aa7d-74f57e9fc094> , <http://dbtune.org/musicbrainz/resource/track/9030566b-6f85-49e5-a698-b741287b9ae8> , <http://dbtune.org/musicbrainz/resource/track/8ebbca4b-e96a-4c6d-8272-d6ff5eff11d7> ;
+      =       <http://dbpedia.org/resource/Ella_Swings_Brightly_with_Nelson> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
+      foaf:page "215386164" .
+
+<http://musicbrainz.org/album/e65bbd8b-4fd9-4a53-83c5-cfc05e737f70>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fe65bbd8b-4fd9-4a53-83c5-cfc05e737f70%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/e65bbd8b-4fd9-4a53-83c5-cfc05e737f70>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/e65bbd8b-4fd9-4a53-83c5-cfc05e737f70> .

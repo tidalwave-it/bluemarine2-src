@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/2a2099b6-dac6-4d01-8a65-c27a8a7ee47d>
+      rdfs:label "RDF Description of Django Reinhardt in Brussels" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/2a2099b6-dac6-4d01-8a65-c27a8a7ee47d> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/2a2099b6-dac6-4d01-8a65-c27a8a7ee47d>
+      a       mo:Record ;
+      rdfs:label "Django Reinhardt in Brussels" ;
+      vocab:album_attributes
+              "{0,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "7"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/13657> ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:title "Django Reinhardt in Brussels" ;
+      mo:musicbrainz <http://musicbrainz.org/album/2a2099b6-dac6-4d01-8a65-c27a8a7ee47d> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/1f9d5bc1-04bc-4b22-b458-8ca56f936fb5> , <http://dbtune.org/musicbrainz/resource/track/540e5794-876e-4d7f-9b24-9b9bab21c70a> , <http://dbtune.org/musicbrainz/resource/track/f6a9b592-0f83-40bf-a16b-7b0a7046f2ee> , <http://dbtune.org/musicbrainz/resource/track/48a0dd2f-a7e9-452f-8bc1-d1ee1ca0683a> , <http://dbtune.org/musicbrainz/resource/track/505e4ffe-7cc3-45a3-ab70-2a5716fe69f6> , <http://dbtune.org/musicbrainz/resource/track/fbb0ff64-ed15-426e-94d5-213c7c304809> , <http://dbtune.org/musicbrainz/resource/track/cc5ae955-1c98-40c3-8b16-d0442501ca82> , <http://dbtune.org/musicbrainz/resource/track/3bf19f54-d542-473b-b3ce-8c94a789cb2e> , <http://dbtune.org/musicbrainz/resource/track/97286db5-e92b-4a88-9733-4d114218a7f3> , <http://dbtune.org/musicbrainz/resource/track/82e8b6c7-36a7-4b73-96e0-eb3274af4708> , <http://dbtune.org/musicbrainz/resource/track/a704c028-1e61-49dd-bf7d-c75c50fd2c7e> , <http://dbtune.org/musicbrainz/resource/track/829e1b2c-4d8e-4581-b7cc-e969be69b949> , <http://dbtune.org/musicbrainz/resource/track/8ea8e9cd-aa05-46bc-9ab8-f63212abb721> , <http://dbtune.org/musicbrainz/resource/track/09ae5d1a-3ac8-4d14-bf2a-2f5a38b17698> , <http://dbtune.org/musicbrainz/resource/track/10f0e299-0387-4f54-99fe-3c1bd084a0f0> , <http://dbtune.org/musicbrainz/resource/track/66fbdc52-e9e9-426d-9315-4ab1ee965078> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> ;
+      foaf:page "179387664" .
+
+<http://dbtune.org/musicbrainz/resource/master/2a2099b6-dac6-4d01-8a65-c27a8a7ee47d>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/2a2099b6-dac6-4d01-8a65-c27a8a7ee47d> .
+
+<http://musicbrainz.org/album/2a2099b6-dac6-4d01-8a65-c27a8a7ee47d>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F2a2099b6-dac6-4d01-8a65-c27a8a7ee47d%3E> .

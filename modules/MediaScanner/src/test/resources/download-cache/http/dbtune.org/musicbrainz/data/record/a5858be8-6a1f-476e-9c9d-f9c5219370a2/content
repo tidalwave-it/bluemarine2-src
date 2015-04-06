@@ -1,0 +1,51 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/a5858be8-6a1f-476e-9c9d-f9c5219370a2>
+      rdfs:label "RDF Description of Gin House Blues" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/a5858be8-6a1f-476e-9c9d-f9c5219370a2> .
+
+<http://dbtune.org/musicbrainz/resource/master/a5858be8-6a1f-476e-9c9d-f9c5219370a2>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/a5858be8-6a1f-476e-9c9d-f9c5219370a2> .
+
+<http://dbtune.org/musicbrainz/resource/record/a5858be8-6a1f-476e-9c9d-f9c5219370a2>
+      a       mo:Record ;
+      rdfs:label "Gin House Blues" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:date "2000-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Gin House Blues" ;
+      mo:musicbrainz <http://musicbrainz.org/album/a5858be8-6a1f-476e-9c9d-f9c5219370a2> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/539464> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/85056346-2018-400d-b2dc-81e263301470> , <http://dbtune.org/musicbrainz/resource/track/82799208-eb3a-49bc-a391-5c958728e898> , <http://dbtune.org/musicbrainz/resource/track/ee0f0ebb-f8f5-42a0-8c94-1602bb88e6b1> , <http://dbtune.org/musicbrainz/resource/track/c89119a2-82df-42d7-8b61-387d5232dddd> , <http://dbtune.org/musicbrainz/resource/track/3cb77764-4832-4d58-b9c2-3adfcba52174> , <http://dbtune.org/musicbrainz/resource/track/51c07706-0d78-4c60-bcfe-13dc17fea82e> , <http://dbtune.org/musicbrainz/resource/track/234146b3-26c3-4a1d-b061-a0cf315ca525> , <http://dbtune.org/musicbrainz/resource/track/cb79e26e-e976-438b-887d-5f3f8ea6d34c> , <http://dbtune.org/musicbrainz/resource/track/b8678ca8-503d-4eb9-96d0-d745c7c20041> , <http://dbtune.org/musicbrainz/resource/track/b6d2df10-0a75-418b-8619-cee30640279f> , <http://dbtune.org/musicbrainz/resource/track/b36c0ad8-3c06-4120-bfa1-a53ddf9ce6db> , <http://dbtune.org/musicbrainz/resource/track/db37e74c-54f0-40cc-a5da-b385452f3c1c> , <http://dbtune.org/musicbrainz/resource/track/69264197-7467-4530-8b24-291b8b2e63f1> , <http://dbtune.org/musicbrainz/resource/track/20373a7c-6f63-41d2-881d-0e6856ae0cde> , <http://dbtune.org/musicbrainz/resource/track/f45552d2-711c-4188-8d89-517d113e40be> , <http://dbtune.org/musicbrainz/resource/track/cb82af37-3d3f-4c86-9d76-6b87fc1b52a8> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/2944824d-4c26-476f-a981-be849081942f> ;
+      foaf:page "279414064" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/a5858be8-6a1f-476e-9c9d-f9c5219370a2>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fa5858be8-6a1f-476e-9c9d-f9c5219370a2%3E> .

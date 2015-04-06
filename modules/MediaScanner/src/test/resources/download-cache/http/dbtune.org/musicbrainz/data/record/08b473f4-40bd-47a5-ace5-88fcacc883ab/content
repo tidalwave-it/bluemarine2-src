@@ -1,0 +1,49 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/08b473f4-40bd-47a5-ace5-88fcacc883ab>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F08b473f4-40bd-47a5-ace5-88fcacc883ab%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/08b473f4-40bd-47a5-ace5-88fcacc883ab>
+      rdfs:label "RDF Description of Pennies From Heaven" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/08b473f4-40bd-47a5-ace5-88fcacc883ab> .
+
+<http://dbtune.org/musicbrainz/resource/record/08b473f4-40bd-47a5-ace5-88fcacc883ab>
+      a       mo:Record ;
+      rdfs:label "Pennies From Heaven" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "22"^^xsd:int ;
+      vocab:tracks "20"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Pennies From Heaven" ;
+      mo:musicbrainz <http://musicbrainz.org/album/08b473f4-40bd-47a5-ace5-88fcacc883ab> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/ed72edcc-55f2-4660-bce1-9e5795cd1c39> , <http://dbtune.org/musicbrainz/resource/track/5859206c-7ebb-47fa-bbc0-aef809047fff> , <http://dbtune.org/musicbrainz/resource/track/8a92d536-046b-4a33-9297-8e0248fbb050> , <http://dbtune.org/musicbrainz/resource/track/5d9c8368-5b9d-49aa-9e7b-aa06fb69b019> , <http://dbtune.org/musicbrainz/resource/track/7dd947fd-788c-4761-96f0-744ea6fbfe28> , <http://dbtune.org/musicbrainz/resource/track/2c8347e9-3ac5-4f7d-9e66-52a51938e568> , <http://dbtune.org/musicbrainz/resource/track/eea8f9d1-2188-48df-a40a-a24768fa21ad> , <http://dbtune.org/musicbrainz/resource/track/b00bcac1-28b6-4a6a-9150-403392a216ae> , <http://dbtune.org/musicbrainz/resource/track/a9c0d58a-c08d-49ab-b951-155ec9de1ab4> , <http://dbtune.org/musicbrainz/resource/track/896be70d-ee91-4d85-8732-e669b277d941> , <http://dbtune.org/musicbrainz/resource/track/01c4b983-1db0-4ec0-807f-351c01d40d84> , <http://dbtune.org/musicbrainz/resource/track/42ffbb2c-8026-4d75-9683-6b2d16ebf367> , <http://dbtune.org/musicbrainz/resource/track/20a99aeb-a1e9-47a0-8eaf-a86b1c88de87> , <http://dbtune.org/musicbrainz/resource/track/07fb03ea-81fc-4ee7-ad02-a73c1e48de9a> , <http://dbtune.org/musicbrainz/resource/track/ca47b271-9c6b-4f2e-9ff6-e15b1bbcda5f> , <http://dbtune.org/musicbrainz/resource/track/f935390f-418c-4c3c-8f43-fd4a4b110aaf> , <http://dbtune.org/musicbrainz/resource/track/9beeb3fa-6c7f-4f06-be52-ec3bb76b6dd4> , <http://dbtune.org/musicbrainz/resource/track/a16c4e94-fac1-404a-a29c-8bb50f19b120> , <http://dbtune.org/musicbrainz/resource/track/a40b35cc-8313-48a5-84ef-f000df06fab3> , <http://dbtune.org/musicbrainz/resource/track/7095de9e-6bad-45fd-900b-076a3800626e> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> ;
+      foaf:page "577224006" .
+
+<http://dbtune.org/musicbrainz/resource/master/08b473f4-40bd-47a5-ace5-88fcacc883ab>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/08b473f4-40bd-47a5-ace5-88fcacc883ab> .

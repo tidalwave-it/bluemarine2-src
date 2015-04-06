@@ -1,0 +1,71 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000002LAB>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000002LAB%3E> .
+
+<http://images.amazon.com/images/P/B000002LAB.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002LAB.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/fa17202b-eebc-4f30-bc1f-63e3800ec9de>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/fa17202b-eebc-4f30-bc1f-63e3800ec9de> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B000002LAB>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002LAB%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/fa17202b-eebc-4f30-bc1f-63e3800ec9de>
+      a       mo:Record ;
+      rdfs:label "Tutu" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000002LAB" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B000002LAB.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "6"^^xsd:int ;
+      vocab:albummeta_puids
+              "22"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/164329> , <http://dbtune.org/musicbrainz/resource/toc/67910> , <http://dbtune.org/musicbrainz/resource/toc/265832> , <http://dbtune.org/musicbrainz/resource/toc/260770> , <http://dbtune.org/musicbrainz/resource/toc/7376> , <http://dbtune.org/musicbrainz/resource/toc/236262> ;
+      vocab:tracks "8"^^xsd:int ;
+      dc:date "1986-09-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Tutu" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000002LAB> ;
+      mo:image <http://images.amazon.com/images/P/B000002LAB.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000002LAB> ;
+      mo:musicbrainz <http://musicbrainz.org/album/fa17202b-eebc-4f30-bc1f-63e3800ec9de> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/68009> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/75d0d82d-4940-41db-bbcd-529212ba74cf> , <http://dbtune.org/musicbrainz/resource/track/df7d7beb-989b-4005-9936-2c88e3d9c925> , <http://dbtune.org/musicbrainz/resource/track/f075464b-621b-47ca-bc3e-5fa19331219a> , <http://dbtune.org/musicbrainz/resource/track/aaf4cc61-3dcc-4900-a62c-532f0c82360c> , <http://dbtune.org/musicbrainz/resource/track/2d941de1-8cc4-4678-8f2d-5fce5a9a37a2> , <http://dbtune.org/musicbrainz/resource/track/77058974-93cd-4444-94c5-c827aefd9039> , <http://dbtune.org/musicbrainz/resource/track/c01272f0-a8d7-4ccf-ac58-3fd4b640b663> , <http://dbtune.org/musicbrainz/resource/track/2df82be3-9fa5-49e3-9633-8c0b7497cb51> ;
+      =       <http://dbpedia.org/resource/Tutu_%28album%29> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/561d854a-6a28-4aa7-8c99-323e6ce46c2a> ;
+      foaf:page "728422400" .
+
+<http://musicbrainz.org/album/fa17202b-eebc-4f30-bc1f-63e3800ec9de>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Ffa17202b-eebc-4f30-bc1f-63e3800ec9de%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/fa17202b-eebc-4f30-bc1f-63e3800ec9de>
+      rdfs:label "RDF Description of Tutu" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/fa17202b-eebc-4f30-bc1f-63e3800ec9de> .
+
+<http://dbpedia.org/resource/Tutu_%28album%29>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FTutu_%2528album%2529%3E> .

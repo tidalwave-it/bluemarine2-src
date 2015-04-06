@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/0c71aef8-713e-49b6-a73b-1ab8fcbe53bd>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/0c71aef8-713e-49b6-a73b-1ab8fcbe53bd> .
+
+<http://ec1.images-amazon.com/images/P/B0000047ED.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0000047ED.01.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000047ED>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000047ED%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/0c71aef8-713e-49b6-a73b-1ab8fcbe53bd>
+      rdfs:label "RDF Description of Midnight Without You" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/0c71aef8-713e-49b6-a73b-1ab8fcbe53bd> .
+
+<http://musicbrainz.org/album/0c71aef8-713e-49b6-a73b-1ab8fcbe53bd>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F0c71aef8-713e-49b6-a73b-1ab8fcbe53bd%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/0c71aef8-713e-49b6-a73b-1ab8fcbe53bd>
+      a       mo:Record ;
+      rdfs:label "Midnight Without You" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000047ED" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0000047ED.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "11"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/97350> ;
+      vocab:tracks "10"^^xsd:int ;
+      dc:date "1997-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Midnight Without You" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000047ED> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B0000047ED.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B0000047ED> ;
+      mo:musicbrainz <http://musicbrainz.org/album/0c71aef8-713e-49b6-a73b-1ab8fcbe53bd> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/84883> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/ed000fb5-ef3a-4e44-b969-1885cb4fdf55> , <http://dbtune.org/musicbrainz/resource/track/8e5ada1e-0b88-4533-9f8f-34763be0ecbb> , <http://dbtune.org/musicbrainz/resource/track/080953ad-6e23-4cd8-9827-ae4341939e4e> , <http://dbtune.org/musicbrainz/resource/track/2d1ed933-fd0e-4b1d-a8c9-02cf93966fc7> , <http://dbtune.org/musicbrainz/resource/track/d8cc4e9b-1576-4cd0-b82b-afca7cd63cef> , <http://dbtune.org/musicbrainz/resource/track/731ef9a7-fc74-43b3-bb38-25fbd3d934ba> , <http://dbtune.org/musicbrainz/resource/track/aff37bc2-48dc-4e1c-8c78-4be5f6da75d3> , <http://dbtune.org/musicbrainz/resource/track/9222b15c-7142-4dd7-a7c1-c91af00835ff> , <http://dbtune.org/musicbrainz/resource/track/f3678311-3657-41f7-accf-63879d62fb8f> , <http://dbtune.org/musicbrainz/resource/track/c0f434e3-5a1f-4016-aa9d-d8a3de43917b> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/0939452b-0c6f-422a-997f-e7c496ce1113> ;
+      foaf:page "480427336" .
+
+<http://images.amazon.com/images/P/B0000047ED>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000047ED%3E> .

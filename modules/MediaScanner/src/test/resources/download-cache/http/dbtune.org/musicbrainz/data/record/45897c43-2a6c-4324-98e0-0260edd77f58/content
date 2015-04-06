@@ -1,0 +1,65 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B00004VTTP>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00004VTTP%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/45897c43-2a6c-4324-98e0-0260edd77f58>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/45897c43-2a6c-4324-98e0-0260edd77f58> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://ec1.images-amazon.com/images/P/B00004VTTP.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00004VTTP.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/45897c43-2a6c-4324-98e0-0260edd77f58>
+      rdfs:label "RDF Description of Afro Sambas" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/45897c43-2a6c-4324-98e0-0260edd77f58> .
+
+<http://dbtune.org/musicbrainz/resource/record/45897c43-2a6c-4324-98e0-0260edd77f58>
+      a       mo:Record ;
+      rdfs:label "Afro Sambas" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00004VTTP" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00004VTTP.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "15"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/219870> ;
+      vocab:tracks "11"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/por> ;
+      dc:title "Afro Sambas" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00004VTTP> ;
+      mo:image <http://images.amazon.com/images/P/B00004VTTP> , <http://ec1.images-amazon.com/images/P/B00004VTTP.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/45897c43-2a6c-4324-98e0-0260edd77f58> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/772bd293-badb-4b4c-97c2-5d547baf178c> , <http://dbtune.org/musicbrainz/resource/track/7a849566-4416-4c21-a5f9-6881fd097754> , <http://dbtune.org/musicbrainz/resource/track/8845ed61-644f-4ad6-9fbe-121e39369b5f> , <http://dbtune.org/musicbrainz/resource/track/3a298a2c-5348-477c-96f8-56263736ed41> , <http://dbtune.org/musicbrainz/resource/track/b11b1165-3b6d-4fa9-8329-a3c66792684a> , <http://dbtune.org/musicbrainz/resource/track/bd874874-e91a-4e73-ae53-16608586d95a> , <http://dbtune.org/musicbrainz/resource/track/d1d5db62-3376-404d-8c59-e06dae70550d> , <http://dbtune.org/musicbrainz/resource/track/2588627d-3cd7-4047-85c9-61d6e8fac330> , <http://dbtune.org/musicbrainz/resource/track/648b714f-252e-4eeb-8e9c-3627edb01025> , <http://dbtune.org/musicbrainz/resource/track/37416f9c-a897-4f29-8b3f-61dec88b9a53> , <http://dbtune.org/musicbrainz/resource/track/b779a386-4bfa-4266-a64c-4e9ba0bdc87f> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/ba617653-44e4-404f-91cd-f74adce5687d> ;
+      foaf:page "75087924" .
+
+<http://musicbrainz.org/album/45897c43-2a6c-4324-98e0-0260edd77f58>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F45897c43-2a6c-4324-98e0-0260edd77f58%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00004VTTP>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00004VTTP%3E> .
