@@ -66,6 +66,7 @@ import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH;
+import org.apache.http.client.config.RequestConfig;
 
 /***********************************************************************************************************************
  *
@@ -85,6 +86,8 @@ public class DefaultDownloader
     private PoolingHttpClientConnectionManager connectionManager;
     
     private CacheConfig cacheConfig;
+    
+    private CloseableHttpClient httpClient;
     
     /*******************************************************************************************************************
      *
@@ -128,6 +131,14 @@ public class DefaultDownloader
                 .setSharedCache(false)
                 .setHeuristicCachingEnabled(true)
                 .build();
+        httpClient = CachingHttpClients.custom()
+                .setHttpCacheStorage(cacheStorage)
+                .setCacheConfig(cacheConfig)
+                .setRedirectStrategy(dontFollowRedirect)
+                .setUserAgent("blueMarine (fabrizio.giudici@tidalwave.it)")
+                .setDefaultHeaders(Arrays.asList(new BasicHeader("Accept", "application/n3")))
+                .setConnectionManager(connectionManager)
+                .build();
       }
     
     /*******************************************************************************************************************
@@ -156,19 +167,7 @@ public class DefaultDownloader
 
             URL url = request.getUrl();
 
-    //        @Cleanup FIXME
-            final CloseableHttpClient httpClient = CachingHttpClients.custom()
-                    .setHttpCacheStorage(cacheStorage)
-                    .setCacheConfig(cacheConfig)
-                    .setRedirectStrategy(dontFollowRedirect)
-                    .setUserAgent("blueMarine (fabrizio.giudici@tidalwave.it)")
-                    .setDefaultHeaders(Arrays.asList(new BasicHeader("Accept", "application/n3")))
-                    .setConnectionManager(connectionManager)
-                    .build();
-
-            boolean done = false;
-
-            while (!done)
+            for (;;)
               {
                 final HttpCacheContext context = HttpCacheContext.create();
                 @Cleanup final CloseableHttpResponse response = httpClient.execute(new HttpGet(url.toURI()), context);
@@ -197,11 +196,11 @@ public class DefaultDownloader
                   }
                 else
                   {
-                    done = true;  
                     messageBus.publish(new DownloadComplete(request.getUrl(), 
                                                             response.getStatusLine().getStatusCode(),
                                                             bytes,
                                                             origin));
+                    return;
                   }
               }
           }
