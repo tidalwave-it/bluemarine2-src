@@ -88,4 +88,6 @@
     
     <bean class="it.tidalwave.bluemarine2.downloader.impl.DefaultDownloader" />
     
+    <bean class="it.tidalwave.bluemarine2.downloader.impl.SimpleHttpCacheStorage" />
+    
 </beans>

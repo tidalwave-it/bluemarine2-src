@@ -69,6 +69,8 @@ public class DefaultDownloaderTest
   {
     private DefaultDownloader underTest;
     
+    private SimpleHttpCacheStorage cacheStorage;
+    
     private ClassPathXmlApplicationContext context;
     
     private MessageBus messageBus;
@@ -99,13 +101,14 @@ public class DefaultDownloaderTest
         final String s = "classpath:/META-INF/DefaultDownloaderTestBeans.xml";
         context = new ClassPathXmlApplicationContext(s);
         underTest = context.getBean(DefaultDownloader.class);
+        cacheStorage = context.getBean(SimpleHttpCacheStorage.class);
         messageBus = context.getBean(MessageBus.class); // FIXME: use a mock messagebus
         downloadCompleted = new CountDownLatch(1);
         response = null;
         messageBus.subscribe(DownloadComplete.class, onDownloadCompleted);
         
         // FIXME: should also test with false
-        underTest.getCacheStorage().setNeverExpiring(true);
+        cacheStorage.setNeverExpiring(true);
         
         final Map<Key<?>, Object> properties = new HashMap<>();
         properties.put(CACHE_FOLDER_PATH, cachePath);
@@ -138,7 +141,7 @@ public class DefaultDownloaderTest
         
         if (!Arrays.asList(-1, HttpStatus.SC_SEE_OTHER, HttpStatus.SC_NOT_FOUND).contains(response.getStatusCode()))
           {
-            assertThat("Cache updated?", underTest.getCacheStorage().isCachedResourcePresent(urlAsString), is(true));
+            assertThat("Cache updated?", cacheStorage.isCachedResourcePresent(urlAsString), is(true));
           }
         
         // FIXME: verify it didn't go to the nextwork

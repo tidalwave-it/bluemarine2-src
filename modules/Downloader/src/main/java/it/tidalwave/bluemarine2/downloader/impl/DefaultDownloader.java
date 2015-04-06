@@ -64,7 +64,6 @@ import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import it.tidalwave.util.NotFoundException;
 import lombok.Cleanup;
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH;
 
@@ -80,9 +79,8 @@ public class DefaultDownloader
     @Inject
     private MessageBus messageBus;
        
-    // FIXME: @Inject
-    @Getter // FIXME: for testing - when injected, drop
-    private final SimpleHttpCacheStorage cacheStorage = new SimpleHttpCacheStorage();
+    @Inject
+    private SimpleHttpCacheStorage cacheStorage;
             
     private PoolingHttpClientConnectionManager connectionManager;
     
