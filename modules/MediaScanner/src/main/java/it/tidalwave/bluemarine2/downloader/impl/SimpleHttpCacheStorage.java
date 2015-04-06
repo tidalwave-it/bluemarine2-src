@@ -66,6 +66,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SimpleHttpCacheStorage implements HttpCacheStorage
   {
+    private static final String PATH_CONTENT = "content";
+    private static final String PATH_HEADERS = "headers";
+    
     @Override
     public void putEntry (final @Nonnull String key, final @Nonnull HttpCacheEntry entry)
       throws IOException 
@@ -75,19 +78,13 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
             log.debug("putEntry({}, {})", key, entry);
             final Path cachePath = getCacheItemPath(new URL(key));
             Files.createDirectories(cachePath);
-
-            final Path cacheHeadersPath = cachePath.resolve("headers");
-              final Path cacheContentPath = cachePath.resolve("content");
+            final Path cacheHeadersPath = cachePath.resolve(PATH_HEADERS);
+            final Path cacheContentPath = cachePath.resolve(PATH_CONTENT);
 
             @Cleanup final OutputStream os = Files.newOutputStream(cacheHeadersPath, StandardOpenOption.CREATE);
-            final HttpTransportMetricsImpl metrics = new HttpTransportMetricsImpl();
-            final SessionOutputBufferImpl sob = new SessionOutputBufferImpl(metrics, 100);
-            sob.bind(os);
+            final SessionOutputBufferImpl sob = sessionOutputBufferFrom(os);
             final DefaultHttpResponseWriter writer = new DefaultHttpResponseWriter(sob);
-
-            final BasicHttpResponse response = new BasicHttpResponse(entry.getStatusLine());
-            response.setHeaders(entry.getAllHeaders());
-            writer.write(response);
+            writer.write(responseFrom(entry));
             sob.flush();
 
             if (entry.getResource().length() > 0)
@@ -107,8 +104,8 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
       {
         log.debug("getEntry({})", key);
         final Path cachePath = getCacheItemPath(new URL(key));
-        final Path cacheHeadersPath = cachePath.resolve("headers");
-        final Path cacheContentPath = cachePath.resolve("content");
+        final Path cacheHeadersPath = cachePath.resolve(PATH_HEADERS);
+        final Path cacheContentPath = cachePath.resolve(PATH_CONTENT);
 
         if (!Files.exists(cacheHeadersPath))
           {
@@ -119,9 +116,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
         try
           {
             @Cleanup final InputStream is = Files.newInputStream(cacheHeadersPath);
-            final HttpTransportMetricsImpl metrics = new HttpTransportMetricsImpl();
-            final SessionInputBufferImpl sib = new SessionInputBufferImpl(metrics, 100);
-            sib.bind(is);
+            final SessionInputBufferImpl sib = sessionInputBufferFrom(is);
             final DefaultHttpResponseParser parser = new DefaultHttpResponseParser(sib);
             final HttpResponse response = parser.parse();
             final Date date = new Date(); // FIXME: force hit?
@@ -161,5 +156,31 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
         final Path cachePath = Paths.get(url2.toString().replaceAll(":", ""));
         return Paths.get("target/test-classes/download-cache").resolve(cachePath); // FIXME
       } 
+
+    @Nonnull
+    private static SessionInputBufferImpl sessionInputBufferFrom (final @Nonnull InputStream is) 
+      {
+        final HttpTransportMetricsImpl metrics = new HttpTransportMetricsImpl();
+        final SessionInputBufferImpl sib = new SessionInputBufferImpl(metrics, 100);
+        sib.bind(is);
+        return sib;
+      }
+
+    @Nonnull
+    private static SessionOutputBufferImpl sessionOutputBufferFrom (final @Nonnull OutputStream os) 
+      {
+        final HttpTransportMetricsImpl metrics = new HttpTransportMetricsImpl();
+        final SessionOutputBufferImpl sob = new SessionOutputBufferImpl(metrics, 100);
+        sob.bind(os);
+        return sob;
+      }
+
+    @Nonnull
+    private static BasicHttpResponse responseFrom (final @Nonnull HttpCacheEntry entry) 
+      {
+        final BasicHttpResponse response = new BasicHttpResponse(entry.getStatusLine());
+        response.setHeaders(entry.getAllHeaders());
+        return response;
+      }
   }
 
