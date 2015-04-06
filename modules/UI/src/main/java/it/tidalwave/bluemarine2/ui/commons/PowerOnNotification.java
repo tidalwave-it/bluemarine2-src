@@ -28,6 +28,13 @@
  */
 package it.tidalwave.bluemarine2.ui.commons;
 
+import javax.annotation.Nonnull;
+import javax.annotation.concurrent.Immutable;
+import java.util.Map;
+import it.tidalwave.util.Key;
+import it.tidalwave.util.TypeSafeHashMap;
+import it.tidalwave.util.TypeSafeMap;
+import lombok.Getter;
 import lombok.ToString;
 
 /***********************************************************************************************************************
@@ -40,7 +47,14 @@ import lombok.ToString;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@ToString
+@Immutable @ToString
 public final class PowerOnNotification 
   {
+    @Getter @Nonnull
+    private final TypeSafeMap properties;
+
+    public PowerOnNotification (final @Nonnull Map<Key<?>, Object> properties)
+      {
+        this.properties = new TypeSafeHashMap(properties);
+      }
   }

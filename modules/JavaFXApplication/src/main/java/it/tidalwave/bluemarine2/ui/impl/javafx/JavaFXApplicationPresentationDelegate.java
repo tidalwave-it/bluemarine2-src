@@ -30,6 +30,8 @@ package it.tidalwave.bluemarine2.ui.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import java.util.HashMap;
+import java.util.Map;
 import javafx.fxml.FXML;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -41,6 +43,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
 import org.springframework.beans.factory.annotation.Configurable;
+import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
@@ -115,7 +118,8 @@ public class JavaFXApplicationPresentationDelegate
         // END FIXME
         
         flowController.setContentPane(spContent);
-        messageBus.publish(new PowerOnNotification());        
+        final Map<Key<?>, Object> properties = new HashMap<>();
+        messageBus.publish(new PowerOnNotification(properties));        
       }    
     
     /*******************************************************************************************************************
