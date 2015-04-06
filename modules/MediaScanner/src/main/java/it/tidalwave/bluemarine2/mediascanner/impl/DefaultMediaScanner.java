@@ -347,22 +347,18 @@ public class DefaultMediaScanner
             final Model model = parseModel(message.getBytes(), message.getUrl().toString());
             AddStatementsRequest.Builder builder = AddStatementsRequest.build();
 
-            model.filter(null, FOAF.MAKER, null).forEach(new Consumer<Statement>()
+            model.filter(null, FOAF.MAKER, null).forEach((statement) ->
               {
-                @Override
-                public void accept (final @Nonnull Statement statement) 
+                try
                   {
-                    try
-                      {
-                        final URI artistUri = (URI)statement.getObject();
-        //                      // FIXME: should be builder = builder.with()
-                        builder.with(statement.getSubject(), statement.getPredicate(), artistUri);
-                        requestDbTuneArtistMetadata(artistUri);
-                      } 
-                    catch (MalformedURLException e) 
-                      {
-                        throw new RuntimeException(e);
-                      }
+                    final URI artistUri = (URI)statement.getObject();
+                    //                      // FIXME: should be builder = builder.with()
+                    builder.with(statement.getSubject(), statement.getPredicate(), artistUri);
+                    requestDbTuneArtistMetadata(artistUri);
+                  }
+                catch (MalformedURLException e)
+                  {
+                    throw new RuntimeException(e);
                   }
               });
 
@@ -389,63 +385,58 @@ public class DefaultMediaScanner
             final Model model = parseModel(message.getBytes(), message.getUrl().toString());
             AddStatementsRequest.Builder builder = AddStatementsRequest.build();
 
-//            model.filter(null, FOAF.MAKER, null).
-            model.forEach(new Consumer<Statement>()
+            model.forEach((statement) -> 
               {
-                @Override
-                public void accept (final @Nonnull Statement statement)
+                final Resource subject = statement.getSubject();
+                final URI predicate = statement.getPredicate();
+                final Value object = statement.getObject();
+                
+                // foaf:maker would include all the items in the database, not only in our collection
+                // anyway, the required statements have been already added when importing tracks
+                if (predicate.equals(FOAF.MAKER))
                   {
-                    final Resource subject = statement.getSubject();
-                    final URI predicate = statement.getPredicate();
-                    final Value object = statement.getObject();
-                    
-                    // foaf:maker would include all the items in the database, not only in our collection
-                    // anyway, the required statements have been already added when importing tracks
-                    if (predicate.equals(FOAF.MAKER))
+                    return;
+                  }
+                
+                else if (subject.equals(artistUri))
+                  {
+                    List<String> validPredicates = Arrays.asList(DbTune.ARTIST_TYPE, DbTune.SORT_NAME,
+                            Purl.EVENT, RDFS.LABEL, FOAF.NAME).stream().map(uri -> uri.stringValue()).collect(Collectors.toList());
+                    if (validPredicates.contains(predicate.stringValue()))
                       {
-                        return;  
+                        // FIXME: should be builder = builder.with()
+                        builder.with(subject, predicate, object);
                       }
-                    
-                    else if (subject.equals(artistUri))
-                      {
-                        List<String> validPredicates = Arrays.asList(DbTune.ARTIST_TYPE, DbTune.SORT_NAME,
-                                Purl.EVENT, RDFS.LABEL, FOAF.NAME).stream().map(uri -> uri.stringValue()).collect(Collectors.toList());
-                        if (validPredicates.contains(predicate.stringValue()))
-                          {
-                            // FIXME: should be builder = builder.with()
-                            builder.with(subject, predicate, object);
-                          }
 //  TODO: extract only GUID?       mo:musicbrainz <http://musicbrainz.org/artist/1f9df192-a621-4f54-8850-2c5373b7eac9> ;
 // TODO: download bio event details
-                      }
-                    
-                    else
-                      {
-                        return;  
-                      }
-                    
+                  }
+                
+                else
+                  {
+                    return;
+                  }
+                
 // TODO: rel:collaboratesWith
 // TODO:<http://dbpedia.org/resource/Frank_Sinatra>
 //      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FFrank_Sinatra%3E> .
-/*
-                    <http://dbtune.org/musicbrainz/resource/performance/98398> <http://purl.org/NET/c4dm/event.owl#agent> <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> ;
-        mo:performer <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> .
-        mo:orchestra <http://dbtune.org/musicbrainz/resource/artist/98e4313e-dfb0-4084-805c-3e42ef9301d0> ;
-        mo:symphony_orchestra <http://dbtune.org/musicbrainz/resource/artist/98e4313e-dfb0-4084-805c-3e42ef9301d0> .
-        mo:soprano <http://dbtune.org/musicbrainz/resource/artist/361fcd46-41c5-4503-aa43-a87937583909> .
-        mo:orchestra <http://dbtune.org/musicbrainz/resource/artist/5c8fd1e4-574d-495f-9a24-2dfaadf2e8c0> .
-        mo:conductor <http://dbtune.org/musicbrainz/resource/artist/fa39bc82-9b27-4bbb-9425-d719a72e09ac> .
-        mo:lead_singer <http://dbtune.org/musicbrainz/resource/artist/7cce3b8e-623c-4078-b079-837cbcf638c4> ;
-        mo:singer <http://dbtune.org/musicbrainz/resource/artist/7cce3b8e-623c-4078-b079-837cbcf638c4> .
-        mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
-        mo:chamber_orchestra <http://dbtune.org/musicbrainz/resource/artist/3a9f0e21-5796-4f04-bd4c-3deafd59ad80> ;
-        mo:background_singer <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> ;
-
-escludi sparql
-        
-        <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Ludwig_van_Beethoven> , <http://de.wikipedia.org/wiki/Ludwig_van_Beethoven> , <http://www.bbc.co.uk/music/artists/1f9df192-a621-4f54-8850-2c5373b7eac9#artist> ;
-*/
-                  }
+                /*
+                <http://dbtune.org/musicbrainz/resource/performance/98398> <http://purl.org/NET/c4dm/event.owl#agent> <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> ;
+                mo:performer <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> .
+                mo:orchestra <http://dbtune.org/musicbrainz/resource/artist/98e4313e-dfb0-4084-805c-3e42ef9301d0> ;
+                mo:symphony_orchestra <http://dbtune.org/musicbrainz/resource/artist/98e4313e-dfb0-4084-805c-3e42ef9301d0> .
+                mo:soprano <http://dbtune.org/musicbrainz/resource/artist/361fcd46-41c5-4503-aa43-a87937583909> .
+                mo:orchestra <http://dbtune.org/musicbrainz/resource/artist/5c8fd1e4-574d-495f-9a24-2dfaadf2e8c0> .
+                mo:conductor <http://dbtune.org/musicbrainz/resource/artist/fa39bc82-9b27-4bbb-9425-d719a72e09ac> .
+                mo:lead_singer <http://dbtune.org/musicbrainz/resource/artist/7cce3b8e-623c-4078-b079-837cbcf638c4> ;
+                mo:singer <http://dbtune.org/musicbrainz/resource/artist/7cce3b8e-623c-4078-b079-837cbcf638c4> .
+                mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+                mo:chamber_orchestra <http://dbtune.org/musicbrainz/resource/artist/3a9f0e21-5796-4f04-bd4c-3deafd59ad80> ;
+                mo:background_singer <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> ;
+                
+                escludi sparql
+                
+                <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Ludwig_van_Beethoven> , <http://de.wikipedia.org/wiki/Ludwig_van_Beethoven> , <http://www.bbc.co.uk/music/artists/1f9df192-a621-4f54-8850-2c5373b7eac9#artist> ;
+            */         
               });
 
             messageBus.publish(builder.create());
