@@ -121,7 +121,6 @@ public class DefaultDownloader
         connectionManager.setMaxTotal(200);
         connectionManager.setDefaultMaxPerRoute(20);
 
-        // FIXME: still downloads lots of things because it finds cache is too old
         cacheConfig = CacheConfig.custom()
                 .setAllow303Caching(true)
                 .setMaxCacheEntries(Integer.MAX_VALUE)
