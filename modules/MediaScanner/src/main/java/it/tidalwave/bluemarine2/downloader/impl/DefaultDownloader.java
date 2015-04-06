@@ -40,6 +40,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
@@ -47,8 +48,10 @@ import java.net.URL;
 import org.apache.http.HttpException;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
+import org.apache.http.HttpResponseInterceptor;
 import org.apache.http.ProtocolException;
 import org.apache.http.client.RedirectStrategy;
+import org.apache.http.client.cache.CacheResponseStatus;
 import org.apache.http.client.cache.HttpCacheContext;
 import org.apache.http.client.cache.HttpCacheEntry;
 import org.apache.http.client.cache.HttpCacheStorage;
@@ -58,6 +61,9 @@ import org.apache.http.client.cache.Resource;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.message.BasicHeader;
+import org.apache.http.message.BasicHttpResponse;
+import org.apache.http.protocol.HttpContext;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.cache.CacheConfig;
 import org.apache.http.impl.client.cache.CachingHttpClients;
@@ -69,18 +75,13 @@ import org.apache.http.impl.io.DefaultHttpResponseWriter;
 import org.apache.http.impl.io.HttpTransportMetricsImpl;
 import org.apache.http.impl.io.SessionInputBufferImpl;
 import org.apache.http.impl.io.SessionOutputBufferImpl;
-import org.apache.http.message.BasicHeader;
-import org.apache.http.message.BasicHttpResponse;
-import org.apache.http.protocol.HttpContext;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;
-import java.nio.file.StandardCopyOption;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.http.client.cache.CacheResponseStatus;
 
 /***********************************************************************************************************************
  *
@@ -217,6 +218,18 @@ public class DefaultDownloader
      * 
      * 
      ******************************************************************************************************************/
+    private final HttpResponseInterceptor killCacheHeaders = (HttpResponse response, HttpContext context) ->
+      {
+        response.removeHeaders("Expires");
+        response.removeHeaders("Pragma");
+        response.removeHeaders("Cache-Control");
+      };
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
     @PostConstruct
     /* VisibleForTesting */ void initialize()
       {
@@ -254,6 +267,7 @@ public class DefaultDownloader
                 .setUserAgent("blueMarine")
                 .setDefaultHeaders(Arrays.asList(new BasicHeader("Accept", "application/n3")))
                 .setConnectionManager(connectionManager)
+                .addInterceptorFirst(killCacheHeaders) // FIXME: only if explicitly configured
                 .build();
 
         boolean done = false;
@@ -274,9 +288,8 @@ public class DefaultDownloader
               {
                 final Date date = new Date();
                 final Resource resource = new HeapResource(bytes);
-
-                cacheStorage.putEntry(url.toExternalForm(), new HttpCacheEntry(
-                        date, date, response.getStatusLine(), response.getAllHeaders(), resource));
+                cacheStorage.putEntry(url.toExternalForm(), 
+                        new HttpCacheEntry(date, date, response.getStatusLine(), response.getAllHeaders(), resource));
               }
 
             // FIXME: if the redirect were enabled, we could drop this check
