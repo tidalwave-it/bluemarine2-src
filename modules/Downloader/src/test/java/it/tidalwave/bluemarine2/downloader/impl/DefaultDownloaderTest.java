@@ -104,6 +104,9 @@ public class DefaultDownloaderTest
         response = null;
         messageBus.subscribe(DownloadComplete.class, onDownloadCompleted);
         
+        // FIXME: should also test with false
+        underTest.getCacheStorage().setNeverExpiring(true);
+        
         final Map<Key<?>, Object> properties = new HashMap<>();
         properties.put(CACHE_FOLDER_PATH, cachePath);
         underTest.onPowerOnNotification(new PowerOnNotification(properties));
@@ -135,7 +138,7 @@ public class DefaultDownloaderTest
         
         if (!Arrays.asList(-1, HttpStatus.SC_SEE_OTHER, HttpStatus.SC_NOT_FOUND).contains(response.getStatusCode()))
           {
-            assertThat(underTest.getCacheStorage().isCachedResourcePresent(urlAsString), is(true));
+            assertThat("Cache updated?", underTest.getCacheStorage().isCachedResourcePresent(urlAsString), is(true));
           }
         
         // FIXME: verify it didn't go to the nextwork

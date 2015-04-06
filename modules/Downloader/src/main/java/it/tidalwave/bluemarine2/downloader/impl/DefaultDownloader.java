@@ -83,7 +83,7 @@ public class DefaultDownloader
     private MessageBus messageBus;
        
     // FIXME: @Inject
-    @Getter(AccessLevel.PACKAGE) // FIXME: for testing - when injected, drop
+    @Getter // FIXME: for testing - when injected, drop
     private final SimpleHttpCacheStorage cacheStorage = new SimpleHttpCacheStorage();
             
     private PoolingHttpClientConnectionManager connectionManager;
@@ -113,18 +113,6 @@ public class DefaultDownloader
           }
       };
 
-    /*******************************************************************************************************************
-     *
-     * 
-     * 
-     ******************************************************************************************************************/
-    private final HttpResponseInterceptor killCacheHeaders = (HttpResponse response, HttpContext context) ->
-      {
-        response.removeHeaders("Expires");
-        response.removeHeaders("Pragma");
-        response.removeHeaders("Cache-Control");
-      };
-    
     /*******************************************************************************************************************
      *
      * 
@@ -181,7 +169,6 @@ public class DefaultDownloader
                     .setUserAgent("blueMarine (fabrizio.giudici@tidalwave.it)")
                     .setDefaultHeaders(Arrays.asList(new BasicHeader("Accept", "application/n3")))
                     .setConnectionManager(connectionManager)
-                    .addInterceptorFirst(killCacheHeaders) // FIXME: only if explicitly configured
                     .build();
 
             boolean done = false;

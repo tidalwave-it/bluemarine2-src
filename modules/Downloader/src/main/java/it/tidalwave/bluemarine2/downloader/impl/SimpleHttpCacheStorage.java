@@ -29,7 +29,12 @@
 package it.tidalwave.bluemarine2.downloader.impl;
 
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -37,6 +42,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.net.MalformedURLException;
 import java.net.URL;
+import org.apache.http.Header;
 import org.apache.http.HttpException;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.cache.HttpCacheEntry;
@@ -44,13 +50,14 @@ import org.apache.http.client.cache.HttpCacheStorage;
 import org.apache.http.client.cache.HttpCacheUpdateCallback;
 import org.apache.http.client.cache.HttpCacheUpdateException;
 import org.apache.http.client.cache.Resource;
+import org.apache.http.message.BasicHeader;
+import org.apache.http.message.BasicHttpResponse;
 import org.apache.http.impl.client.cache.FileResource;
 import org.apache.http.impl.io.DefaultHttpResponseParser;
 import org.apache.http.impl.io.DefaultHttpResponseWriter;
 import org.apache.http.impl.io.HttpTransportMetricsImpl;
 import org.apache.http.impl.io.SessionInputBufferImpl;
 import org.apache.http.impl.io.SessionOutputBufferImpl;
-import org.apache.http.message.BasicHttpResponse;
 import lombok.Cleanup;
 import lombok.Getter;
 import lombok.Setter;
@@ -70,9 +77,15 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
   {
     private static final String PATH_CONTENT = "content";
     private static final String PATH_HEADERS = "headers";
+
+    private static final Collection<String> NEVER_EXPIRING_HEADERS = 
+            Arrays.asList("Cache-Control", "Expires", "Pragma");
     
     @Getter @Setter
     private Path folderPath = Paths.get(System.getProperty("java.io.tmpdir"));
+    
+    @Getter @Setter
+    private boolean neverExpiring;
     
     /*******************************************************************************************************************
      *
@@ -178,6 +191,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
         final Path cachePath = getCacheItemPath(new URL(key));
         final Path cacheHeadersPath = cachePath.resolve(PATH_HEADERS);
         final Path cacheContentPath = cachePath.resolve(PATH_CONTENT);
+        log.trace(">>>> probing cached entry at {}", cachePath);
         
         return exists(cacheHeadersPath) && exists(cacheContentPath);
       }
@@ -244,13 +258,23 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static HttpCacheEntry entryFrom (final @Nonnull Path cacheContentPath, 
+    private HttpCacheEntry entryFrom (final @Nonnull Path cacheContentPath, 
                                              final @Nonnull HttpResponse response) 
       {
         final Date date = new Date(); // FIXME: force hit?
 //                        new Date(Files.getLastModifiedTime(cacheHeadersPath).toMillis());
         final Resource resource =  exists(cacheContentPath) ? new FileResource(cacheContentPath.toFile()) : null;
-        return new HttpCacheEntry(date, date, response.getStatusLine(), response.getAllHeaders(), resource);
+        
+        List<Header> headers = new ArrayList<>(Arrays.asList(response.getAllHeaders()));
+        
+        if (neverExpiring)
+          {
+            headers = headers.stream().filter(header -> !NEVER_EXPIRING_HEADERS.contains(header.getName()))
+                                      .collect(Collectors.toList());
+            headers.add(new BasicHeader("Expires", "Mon, 31 Dec 2099 00:00:00 GMT"));
+          }
+        
+        return new HttpCacheEntry(date, date, response.getStatusLine(), headers.toArray(new Header[0]), resource);
       }
   }
 
