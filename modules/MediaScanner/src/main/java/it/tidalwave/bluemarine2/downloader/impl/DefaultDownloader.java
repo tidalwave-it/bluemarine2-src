@@ -34,18 +34,9 @@ import javax.inject.Inject;
 import java.util.Arrays;
 import java.util.Date;
 import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.nio.file.StandardOpenOption;
-import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import org.apache.http.HttpException;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpResponseInterceptor;
@@ -55,26 +46,17 @@ import org.apache.http.client.cache.CacheResponseStatus;
 import org.apache.http.client.cache.HttpCacheContext;
 import org.apache.http.client.cache.HttpCacheEntry;
 import org.apache.http.client.cache.HttpCacheStorage;
-import org.apache.http.client.cache.HttpCacheUpdateCallback;
-import org.apache.http.client.cache.HttpCacheUpdateException;
 import org.apache.http.client.cache.Resource;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.message.BasicHeader;
-import org.apache.http.message.BasicHttpResponse;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.cache.CacheConfig;
 import org.apache.http.impl.client.cache.CachingHttpClients;
-import org.apache.http.impl.client.cache.FileResource;
 import org.apache.http.impl.client.cache.HeapResource;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
-import org.apache.http.impl.io.DefaultHttpResponseParser;
-import org.apache.http.impl.io.DefaultHttpResponseWriter;
-import org.apache.http.impl.io.HttpTransportMetricsImpl;
-import org.apache.http.impl.io.SessionInputBufferImpl;
-import org.apache.http.impl.io.SessionOutputBufferImpl;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
@@ -95,102 +77,18 @@ public class DefaultDownloader
     @Inject
     private MessageBus messageBus;
        
-    private final HttpCacheStorage cacheStorage = new HttpCacheStorage() 
-      {
-        @Override
-        public void putEntry (final @Nonnull String key, final @Nonnull HttpCacheEntry entry)
-          throws IOException 
-          {
-            try 
-              {
-                log.debug("putEntry({}, {})", key, entry);
-                final Path cachePath = getCacheItemPath(new URL(key));
-                Files.createDirectories(cachePath);
-                
-                final Path cacheHeadersPath = cachePath.resolve("headers");
-                final Path cacheContentPath = cachePath.resolve("content");
-                
-                @Cleanup final OutputStream os = Files.newOutputStream(cacheHeadersPath, StandardOpenOption.CREATE);
-                final HttpTransportMetricsImpl metrics = new HttpTransportMetricsImpl();
-                final SessionOutputBufferImpl sob = new SessionOutputBufferImpl(metrics, 100);
-                sob.bind(os);
-                final DefaultHttpResponseWriter writer = new DefaultHttpResponseWriter(sob);
-
-                final BasicHttpResponse response = new BasicHttpResponse(entry.getStatusLine());
-                response.setHeaders(entry.getAllHeaders());
-                writer.write(response);
-                
-                if (entry.getResource().length() > 0)
-                  {
-                    Files.copy(entry.getResource().getInputStream(), cacheContentPath, StandardCopyOption.REPLACE_EXISTING);
-                  }
-              }
-            catch (HttpException e)
-              {
-                throw new IOException(e);
-              }
-          }
-
-        @Override
-        public HttpCacheEntry getEntry (final @Nonnull String key) 
-          throws IOException 
-          {
-            log.debug("getEntry({})", key);
-            final Path cachePath = getCacheItemPath(new URL(key));
-            final Path cacheHeadersPath = cachePath.resolve("headers");
-            final Path cacheContentPath = cachePath.resolve("content");
+    // FIXME: @Inject
+    private final HttpCacheStorage cacheStorage = new SimpleHttpCacheStorage();
             
-            if (!Files.exists(cacheHeadersPath))
-              {
-                log.trace(">>>> cache miss: {}", cacheHeadersPath);
-                return null;  
-              }
-            
-            try
-              {
-                @Cleanup final InputStream is = Files.newInputStream(cacheHeadersPath);
-                final HttpTransportMetricsImpl metrics = new HttpTransportMetricsImpl();
-                final SessionInputBufferImpl sib = new SessionInputBufferImpl(metrics, 100);
-                sib.bind(is);
-                final DefaultHttpResponseParser parser = new DefaultHttpResponseParser(sib);
-                final HttpResponse response = parser.parse();
-                final Date date = new Date(); // FIXME: force hit?
-//                        new Date(Files.getLastModifiedTime(cacheHeadersPath).toMillis());
-                final Resource resource = 
-                        Files.exists(cacheContentPath) ? new FileResource(cacheContentPath.toFile()) : null;
-                return new HttpCacheEntry(date, date, response.getStatusLine(), response.getAllHeaders(), resource);
-              }
-            catch (HttpException e)
-              {
-                throw new IOException(e);
-              }
-          }
-
-        @Override
-        public void removeEntry (final @Nonnull String key) 
-          throws IOException
-          {
-            log.debug("removeEntry({})");
-          }
-
-        @Override
-        public void updateEntry (final @Nonnull String key, final @Nonnull HttpCacheUpdateCallback callback)
-          throws IOException, HttpCacheUpdateException 
-          {
-            log.debug("updateEntry({}, {})", key, callback);
-          }
-        
-        @Nonnull
-        private Path getCacheItemPath (final @Nonnull URL url)
-          throws MalformedURLException 
-          {
-            final int port = url.getPort();
-            final URL url2 = new URL(url.getProtocol(), url.getHost(), (port == 80) ? -1 : port, url.getFile());
-            final Path cachePath = Paths.get(url2.toString().replaceAll(":", ""));
-            return Paths.get("target/test-classes/download-cache").resolve(cachePath); // FIXME
-          } 
-      };
+    private PoolingHttpClientConnectionManager connectionManager;
     
+    private CacheConfig cacheConfig;
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
     // FIXME: this is because there's a fix, and we explicitly save stuff in the cache - see below
     private final RedirectStrategy dontFollowRedirect = new RedirectStrategy() 
       {
@@ -209,10 +107,6 @@ public class DefaultDownloader
           }
       };
 
-    private PoolingHttpClientConnectionManager connectionManager;
-    
-    private CacheConfig cacheConfig;
-    
     /*******************************************************************************************************************
      *
      * 

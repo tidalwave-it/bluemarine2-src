@@ -1,0 +1,162 @@
+/*
+ * #%L
+ * *********************************************************************************************************************
+ *
+ * blueMarine2 - lightweight MediaCenter
+ * http://bluemarine.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * %%
+ * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
+ * %%
+ *
+ * *********************************************************************************************************************
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations under the License.
+ *
+ * *********************************************************************************************************************
+ *
+ * $Id$
+ *
+ * *********************************************************************************************************************
+ * #L%
+ */
+package it.tidalwave.bluemarine2.downloader.impl;
+
+import javax.annotation.Nonnull;
+import java.util.Date;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.nio.file.StandardOpenOption;
+import java.net.MalformedURLException;
+import java.net.URL;
+import org.apache.http.HttpException;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.cache.HttpCacheEntry;
+import org.apache.http.client.cache.HttpCacheStorage;
+import org.apache.http.client.cache.HttpCacheUpdateCallback;
+import org.apache.http.client.cache.HttpCacheUpdateException;
+import org.apache.http.client.cache.Resource;
+import org.apache.http.impl.client.cache.FileResource;
+import org.apache.http.impl.io.DefaultHttpResponseParser;
+import org.apache.http.impl.io.DefaultHttpResponseWriter;
+import org.apache.http.impl.io.HttpTransportMetricsImpl;
+import org.apache.http.impl.io.SessionInputBufferImpl;
+import org.apache.http.impl.io.SessionOutputBufferImpl;
+import org.apache.http.message.BasicHttpResponse;
+import lombok.Cleanup;
+import lombok.extern.slf4j.Slf4j;
+
+/***********************************************************************************************************************
+ *
+ * @author  Fabrizio Giudici
+ * @version $Id$
+ *
+ **********************************************************************************************************************/
+@Slf4j
+public class SimpleHttpCacheStorage implements HttpCacheStorage
+  {
+    @Override
+    public void putEntry (final @Nonnull String key, final @Nonnull HttpCacheEntry entry)
+      throws IOException 
+      {
+        try 
+          {
+            log.debug("putEntry({}, {})", key, entry);
+            final Path cachePath = getCacheItemPath(new URL(key));
+            Files.createDirectories(cachePath);
+
+            final Path cacheHeadersPath = cachePath.resolve("headers");
+              final Path cacheContentPath = cachePath.resolve("content");
+
+            @Cleanup final OutputStream os = Files.newOutputStream(cacheHeadersPath, StandardOpenOption.CREATE);
+            final HttpTransportMetricsImpl metrics = new HttpTransportMetricsImpl();
+            final SessionOutputBufferImpl sob = new SessionOutputBufferImpl(metrics, 100);
+            sob.bind(os);
+            final DefaultHttpResponseWriter writer = new DefaultHttpResponseWriter(sob);
+
+            final BasicHttpResponse response = new BasicHttpResponse(entry.getStatusLine());
+            response.setHeaders(entry.getAllHeaders());
+            writer.write(response);
+
+            if (entry.getResource().length() > 0)
+              {
+                Files.copy(entry.getResource().getInputStream(), cacheContentPath, StandardCopyOption.REPLACE_EXISTING);
+              }
+          }
+        catch (HttpException e)
+          {
+            throw new IOException(e);
+          }
+      }
+
+    @Override
+    public HttpCacheEntry getEntry (final @Nonnull String key) 
+      throws IOException 
+      {
+        log.debug("getEntry({})", key);
+        final Path cachePath = getCacheItemPath(new URL(key));
+        final Path cacheHeadersPath = cachePath.resolve("headers");
+        final Path cacheContentPath = cachePath.resolve("content");
+
+        if (!Files.exists(cacheHeadersPath))
+          {
+            log.trace(">>>> cache miss: {}", cacheHeadersPath);
+            return null;  
+          }
+
+        try
+          {
+            @Cleanup final InputStream is = Files.newInputStream(cacheHeadersPath);
+            final HttpTransportMetricsImpl metrics = new HttpTransportMetricsImpl();
+            final SessionInputBufferImpl sib = new SessionInputBufferImpl(metrics, 100);
+            sib.bind(is);
+            final DefaultHttpResponseParser parser = new DefaultHttpResponseParser(sib);
+            final HttpResponse response = parser.parse();
+            final Date date = new Date(); // FIXME: force hit?
+//                        new Date(Files.getLastModifiedTime(cacheHeadersPath).toMillis());
+            final Resource resource = 
+                    Files.exists(cacheContentPath) ? new FileResource(cacheContentPath.toFile()) : null;
+            return new HttpCacheEntry(date, date, response.getStatusLine(), response.getAllHeaders(), resource);
+          }
+        catch (HttpException e)
+          {
+            throw new IOException(e);
+          }
+      }
+
+    @Override
+    public void removeEntry (final @Nonnull String key) 
+      throws IOException
+      {
+        log.debug("removeEntry({})");
+      }
+
+    @Override
+    public void updateEntry (final @Nonnull String key, final @Nonnull HttpCacheUpdateCallback callback)
+      throws IOException, HttpCacheUpdateException 
+      {
+        log.debug("updateEntry({}, {})", key, callback);
+      }
+
+    @Nonnull
+    private Path getCacheItemPath (final @Nonnull URL url)
+      throws MalformedURLException 
+      {
+        final int port = url.getPort();
+        final URL url2 = new URL(url.getProtocol(), url.getHost(), (port == 80) ? -1 : port, url.getFile());
+        final Path cachePath = Paths.get(url2.toString().replaceAll(":", ""));
+        return Paths.get("target/test-classes/download-cache").resolve(cachePath); // FIXME
+      } 
+  }
+
