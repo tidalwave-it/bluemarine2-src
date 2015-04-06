@@ -84,6 +84,8 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
     @Getter @Setter
     private Path folderPath = Paths.get(System.getProperty("java.io.tmpdir"));
     
+    /** When this field is {@code true} the headers of items extracted from the cache are manipulated so it appears
+     *  they never expire. */
     @Getter @Setter
     private boolean neverExpiring;
     
