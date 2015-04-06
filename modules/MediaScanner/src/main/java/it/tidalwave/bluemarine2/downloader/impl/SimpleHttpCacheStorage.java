@@ -140,6 +140,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
       throws IOException
       {
         log.debug("removeEntry({})");
+        // FIXME
       }
 
     @Override
@@ -147,6 +148,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
       throws IOException, HttpCacheUpdateException 
       {
         log.debug("updateEntry({}, {})", key, callback);
+        // FIXME
       }
 
     @Nonnull
