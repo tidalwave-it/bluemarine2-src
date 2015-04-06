@@ -33,7 +33,6 @@ import java.util.Date;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.net.MalformedURLException;
@@ -54,6 +53,7 @@ import org.apache.http.impl.io.SessionOutputBufferImpl;
 import org.apache.http.message.BasicHttpResponse;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
+import static java.nio.file.Files.*;
 import static java.nio.file.StandardCopyOption.*;
 import static java.nio.file.StandardOpenOption.*;
 
@@ -82,11 +82,11 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
           {
             log.debug("putEntry({}, {})", key, entry);
             final Path cachePath = getCacheItemPath(new URL(key));
-            Files.createDirectories(cachePath);
+            createDirectories(cachePath);
             final Path cacheHeadersPath = cachePath.resolve(PATH_HEADERS);
             final Path cacheContentPath = cachePath.resolve(PATH_CONTENT);
 
-            @Cleanup final OutputStream os = Files.newOutputStream(cacheHeadersPath, CREATE);
+            @Cleanup final OutputStream os = newOutputStream(cacheHeadersPath, CREATE);
             final SessionOutputBufferImpl sob = sessionOutputBufferFrom(os);
             final DefaultHttpResponseWriter writer = new DefaultHttpResponseWriter(sob);
             writer.write(responseFrom(entry));
@@ -94,7 +94,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
 
             if (entry.getResource().length() > 0)
               {
-                Files.copy(entry.getResource().getInputStream(), cacheContentPath, REPLACE_EXISTING);
+                copy(entry.getResource().getInputStream(), cacheContentPath, REPLACE_EXISTING);
               }
           }
         catch (HttpException e)
@@ -117,7 +117,7 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
         final Path cacheHeadersPath = cachePath.resolve(PATH_HEADERS);
         final Path cacheContentPath = cachePath.resolve(PATH_CONTENT);
 
-        if (!Files.exists(cacheHeadersPath))
+        if (!exists(cacheHeadersPath))
           {
             log.trace(">>>> cache miss: {}", cacheHeadersPath);
             return null;  
@@ -125,14 +125,14 @@ public class SimpleHttpCacheStorage implements HttpCacheStorage
 
         try
           {
-            @Cleanup final InputStream is = Files.newInputStream(cacheHeadersPath);
+            @Cleanup final InputStream is = newInputStream(cacheHeadersPath);
             final SessionInputBufferImpl sib = sessionInputBufferFrom(is);
             final DefaultHttpResponseParser parser = new DefaultHttpResponseParser(sib);
             final HttpResponse response = parser.parse();
             final Date date = new Date(); // FIXME: force hit?
 //                        new Date(Files.getLastModifiedTime(cacheHeadersPath).toMillis());
             final Resource resource = 
-                    Files.exists(cacheContentPath) ? new FileResource(cacheContentPath.toFile()) : null;
+                    exists(cacheContentPath) ? new FileResource(cacheContentPath.toFile()) : null;
             return new HttpCacheEntry(date, date, response.getStatusLine(), response.getAllHeaders(), resource);
           }
         catch (HttpException e)
