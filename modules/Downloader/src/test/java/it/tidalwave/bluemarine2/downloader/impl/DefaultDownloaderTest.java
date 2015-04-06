@@ -97,7 +97,7 @@ public class DefaultDownloaderTest
         downloadCompleted.await();
         assertThat(response.getStatusCode(), is(statusCode));
         
-        if (statusCode > 0)
+        if (!"".equals(fileName))
           {
             final Path testResults = Paths.get("target/test-results");
             final Path expectedResults = Paths.get("src/test/resources/expected-results");
@@ -135,6 +135,13 @@ public class DefaultDownloaderTest
                 "a51c646d-d676-4690-8131-62373e8b77db-200",
                 Option.FOLLOW_REDIRECT
               },
+              {
+                "http://dbtune.org/does-not-exist",
+                404,
+                "",
+                Option.NO_OPTION
+              },
+              // TODO: 404 could be cached?
               // unknown host
               {
                 "http://does.not.exist/a-resource",

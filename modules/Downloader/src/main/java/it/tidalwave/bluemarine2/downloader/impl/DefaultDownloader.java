@@ -210,6 +210,7 @@ public class DefaultDownloader
           }
         catch (IOException e)
           {
+            log.warn("{}", e.toString());
             messageBus.publish(new DownloadComplete(request.getUrl(), -1, new byte[0]));
           }
       }
