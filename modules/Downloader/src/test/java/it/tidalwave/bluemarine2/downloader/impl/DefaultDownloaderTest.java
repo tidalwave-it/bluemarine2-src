@@ -86,6 +86,11 @@ public class DefaultDownloaderTest
         this.response = response;
       };
             
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
     @BeforeMethod
     public void prepare() 
       throws IOException, NotFoundException 
@@ -115,6 +120,11 @@ public class DefaultDownloaderTest
         underTest.onPowerOnNotification(new PowerOnNotification(properties));
       }
 
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
     @Test(dataProvider = "p")
     public void testCache (final @Nonnull String urlAsString,
                            final @Nonnull Option option,
@@ -148,6 +158,11 @@ public class DefaultDownloaderTest
         // FIXME: verify that the cache has not been updated
       }
     
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
     @DataProvider(name = "p")
     private static Object[][] p()
       {
