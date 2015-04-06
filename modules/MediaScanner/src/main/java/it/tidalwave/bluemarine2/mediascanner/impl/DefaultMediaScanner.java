@@ -209,15 +209,15 @@ public class DefaultMediaScanner
 
                 if (url.matches("http://dbtune.org/.*/resource/track/.*"))
                   {
-                    dbTuneMetadataManager.onDbTuneTrackMetadataDownloadComplete(message);
+                    dbTuneMetadataManager.onTrackMetadataDownloadComplete(message);
                   }
                 else if (url.matches("http://dbtune.org/.*/resource/artist/.*"))
                   {
-                    dbTuneMetadataManager.onDbTuneArtistMetadataDownloadComplete(message);
+                    dbTuneMetadataManager.onArtistMetadataDownloadComplete(message);
                   }
                 else if (url.matches("http://dbtune.org/.*/resource/record/.*"))
                   {
-                    dbTuneMetadataManager.onDbTuneRecordMetadataDownloadComplete(message);
+                    dbTuneMetadataManager.onRecordMetadataDownloadComplete(message);
                   }
               }
           }
@@ -269,7 +269,7 @@ public class DefaultMediaScanner
             
             if (musicBrainzTrackId.isPresent())
               {
-                dbTuneMetadataManager.importMediaItemDbTuneMetadata(mediaItem, mediaItemUri);
+                dbTuneMetadataManager.importTrackMetadata(mediaItem, mediaItemUri);
 //                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
               }
             else

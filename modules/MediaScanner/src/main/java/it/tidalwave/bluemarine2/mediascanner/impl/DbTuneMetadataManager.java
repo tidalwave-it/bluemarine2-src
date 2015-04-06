@@ -44,6 +44,7 @@ import org.openrdf.model.Resource;
 import org.openrdf.model.URI;
 import org.openrdf.model.Value;
 import org.openrdf.model.vocabulary.FOAF;
+import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
 import org.openrdf.rio.RDFHandlerException;
 import org.openrdf.rio.RDFParseException;
@@ -59,7 +60,6 @@ import it.tidalwave.bluemarine2.vocabulary.Purl;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.downloader.DownloadRequest.Option.FOLLOW_REDIRECT;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
-import org.openrdf.model.vocabulary.RDF;
 
 /***********************************************************************************************************************
  *
@@ -82,22 +82,22 @@ public class DbTuneMetadataManager
     
     /*******************************************************************************************************************
      *
-     * Imports the DbTune.org metadata for the given {@link MediaItem}.
+     * Imports the DbTune.org metadata for the given track.
      * 
-     * @param   mediaItem               the {@code MediaItem}.
+     * @param   track                   the track
      * @param   mediaItemUri            the URI of the item
      * @throws  IOException             when an I/O problem occurred
      * @throws  JAXBException           when an XML error occurs
      * @throws  InterruptedException    if the operation is interrupted
      *
      ******************************************************************************************************************/
-    public void importMediaItemDbTuneMetadata (final @Nonnull MediaItem mediaItem, 
-                                                final @Nonnull URI mediaItemUri)
+    public void importTrackMetadata (final @Nonnull MediaItem track, 
+                                     final @Nonnull URI mediaItemUri)
       throws IOException, JAXBException, InterruptedException 
       { 
-        log.info("importMediaItemDbTuneMetadata({}, {})", mediaItem, mediaItemUri);
+        log.info("importTrackMetadata({}, {})", track, mediaItemUri);
         
-        final MediaItem.Metadata metadata = mediaItem.getMetadata();
+        final MediaItem.Metadata metadata = track.getMetadata();
         final String mbGuid = metadata.get(MediaItem.Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
         messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid)));
         messageBus.publish(new DownloadRequest(new URL(mediaItemUri.toString()), FOLLOW_REDIRECT));
@@ -108,12 +108,12 @@ public class DbTuneMetadataManager
      *
      *
      ******************************************************************************************************************/
-    public void onDbTuneTrackMetadataDownloadComplete (final @Nonnull DownloadComplete message) 
+    public void onTrackMetadataDownloadComplete (final @Nonnull DownloadComplete message) 
       throws InterruptedException, IOException
       {
         try 
           {
-            log.info("onTrackDownloadComplete({})", message);
+            log.info("onTrackMetadataDownloadComplete({})", message);
             final URI trackUri = uriFor(message.getUrl().toString());
             final Model model = parseModel(message);
             AddStatementsRequest.Builder builder = AddStatementsRequest.build();
@@ -125,7 +125,7 @@ public class DbTuneMetadataManager
                     final URI artistUri = (URI)statement.getObject();
                     //                      // FIXME: should be builder = builder.with()
                     builder.with(statement.getSubject(), statement.getPredicate(), artistUri);
-                    requestDbTuneArtistMetadata(artistUri);
+                    requestArtistMetadata(artistUri);
                   }
                 catch (MalformedURLException e)
                   {
@@ -137,7 +137,7 @@ public class DbTuneMetadataManager
               {
                 try
                   {
-                    requestDbTuneRecordMetadata((URI)statement.getSubject());   
+                    requestRecordMetadata((URI)statement.getSubject());   
                   }
                 catch (MalformedURLException e)
                   {
@@ -158,14 +158,14 @@ public class DbTuneMetadataManager
      *
      *
      ******************************************************************************************************************/
-    public void onDbTuneArtistMetadataDownloadComplete (final @Nonnull DownloadComplete message) 
+    public void onArtistMetadataDownloadComplete (final @Nonnull DownloadComplete message) 
       throws InterruptedException, IOException
       {
         List<URI> validPredicates = Arrays.asList(
                 DbTune.ARTIST_TYPE, DbTune.SORT_NAME, Purl.EVENT, RDF.TYPE, RDFS.LABEL, FOAF.NAME);
         try 
           {
-            log.info("onArtistDownloadComplete({})", message);
+            log.info("onArtistMetadataDownloadComplete({})", message);
             final URI artistUri = uriFor(message.getUrl().toString());
             final Model model = parseModel(message);
             AddStatementsRequest.Builder builder = AddStatementsRequest.build();
@@ -238,16 +238,17 @@ public class DbTuneMetadataManager
      *
      *
      ******************************************************************************************************************/
-    public void onDbTuneRecordMetadataDownloadComplete (final @Nonnull DownloadComplete message)
+    public void onRecordMetadataDownloadComplete (final @Nonnull DownloadComplete message)
       throws IOException
       {
         try 
           {
-            log.info("onTrackDownloadComplete({})", message);
+            log.info("onRecordMetadataDownloadComplete({})", message);
             final URI recordUri = uriFor(message.getUrl().toString());
             final Model model = parseModel(message);
             AddStatementsRequest.Builder builder = AddStatementsRequest.build();
 
+            // FIXME: filter away some stuff
             model.filter(recordUri, null, null).forEach((statement) ->
               {
                 builder.with(statement.getSubject(), statement.getPredicate(), statement.getObject());
@@ -273,7 +274,7 @@ public class DbTuneMetadataManager
      * @param   artistUri   the URI of the artist
      *
      ******************************************************************************************************************/
-    private void requestDbTuneArtistMetadata (final @Nonnull URI artistUri)
+    private void requestArtistMetadata (final @Nonnull URI artistUri)
       throws MalformedURLException
       {
         synchronized (seenArtistIds)
@@ -297,7 +298,7 @@ public class DbTuneMetadataManager
      * @param   recordUri   the URI of the artist
      *
      ******************************************************************************************************************/
-    private void requestDbTuneRecordMetadata (final @Nonnull URI recordUri)
+    private void requestRecordMetadata (final @Nonnull URI recordUri)
       throws MalformedURLException
       {
         synchronized (seenRecordIds)
