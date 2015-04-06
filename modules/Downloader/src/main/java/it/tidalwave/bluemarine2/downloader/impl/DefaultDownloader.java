@@ -66,7 +66,6 @@ import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH;
-import org.apache.http.client.config.RequestConfig;
 
 /***********************************************************************************************************************
  *
