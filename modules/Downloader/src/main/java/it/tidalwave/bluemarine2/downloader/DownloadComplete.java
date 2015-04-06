@@ -45,6 +45,12 @@ import lombok.ToString;
 @Immutable @RequiredArgsConstructor @Getter @ToString(exclude = "bytes")
 public class DownloadComplete 
   {
+    public enum Origin
+      {
+        NETWORK,
+        CACHE
+      };
+    
     @Nonnull
     private final URL url;
 
@@ -53,4 +59,7 @@ public class DownloadComplete
     
     @Nonnull
     private final byte[] bytes;
+    
+    @Nonnull
+    private final Origin origin;
   }

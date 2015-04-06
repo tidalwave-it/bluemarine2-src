@@ -43,10 +43,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.NotFoundException;
 import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
+import it.tidalwave.bluemarine2.downloader.DownloadComplete.Origin;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest.Option;
-import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -108,23 +109,24 @@ public class DefaultDownloaderTest
       }
 
     @Test(dataProvider = "p")
-    public void testCache (final @Nonnull String u,
-                           final int statusCode,
-                           final @Nonnull String fileName,
-                           final @Nonnull Option option)
+    public void testCache (final @Nonnull String urlAsString,
+                           final @Nonnull Option option,
+                           final int expectedStatusCode,
+                           final @Nonnull String exptectedContentFileName,
+                           final @Nonnull Origin expectedOrigin)
       throws Exception
       {
-        final URL url = new URL(u);
+        final URL url = new URL(urlAsString);
         underTest.onDownloadRequest(new DownloadRequest(url, new Option[]{option} ));
         downloadCompleted.await();
-        assertThat(response.getStatusCode(), is(statusCode));
+        assertThat(response.getStatusCode(), is(expectedStatusCode));
         
-        if (!"".equals(fileName))
+        if (!"".equals(exptectedContentFileName))
           {
             final Path testResults = Paths.get("target/test-results");
             final Path expectedResults = Paths.get("src/test/resources/expected-results");
-            final Path actualResult = testResults.resolve(fileName);
-            final Path expectedResult = expectedResults.resolve(fileName);
+            final Path actualResult = testResults.resolve(exptectedContentFileName);
+            final Path expectedResult = expectedResults.resolve(exptectedContentFileName);
             Files.createDirectories(testResults);
             Files.write(actualResult, response.getBytes());
             FileComparisonUtils.assertSameContents(expectedResult.toFile(), actualResult.toFile());
@@ -140,49 +142,55 @@ public class DefaultDownloaderTest
         return new Object[][]
           {
 //            ////////////////// Not in cache
-//              {
-//                "http://dbtune.org/musicbrainz/data/track/00270741-e962-4a97-aa28-8ad08885a82a",
-//                HttpStatus.SC_OK,
-//                "00270741-e962-4a97-aa28-8ad08885a82a-200",
-//                Option.NO_OPTION
-//              },
+              {
+                "http://dbtune.org/musicbrainz/data/track/00270741-e962-4a97-aa28-8ad08885a82a",
+                Option.NO_OPTION,
+                HttpStatus.SC_OK,
+                "00270741-e962-4a97-aa28-8ad08885a82a-200",
+                Origin.NETWORK
+              },
             ////////////////// In cache
               {
                 "http://dbtune.org/musicbrainz/data/track/a51c646d-d676-4690-8131-62373e8b77db",
+                Option.NO_OPTION,
                 HttpStatus.SC_OK,
                 "a51c646d-d676-4690-8131-62373e8b77db-200",
-                Option.NO_OPTION
+                Origin.CACHE
               },
             ////////////////// In cache with "See Other", don't follow redirect
               {
                 "http://dbtune.org/musicbrainz/resource/track/a51c646d-d676-4690-8131-62373e8b77db",
+                Option.NO_OPTION,
                 HttpStatus.SC_SEE_OTHER,
                 "a51c646d-d676-4690-8131-62373e8b77db-303",
-                Option.NO_OPTION
+                Origin.CACHE
               },
             ////////////////// In cache with "See Other", do follow redirect
               {
                 "http://dbtune.org/musicbrainz/resource/track/a51c646d-d676-4690-8131-62373e8b77db",
+                Option.FOLLOW_REDIRECT,
                 HttpStatus.SC_OK,
                 "a51c646d-d676-4690-8131-62373e8b77db-200",
-                Option.FOLLOW_REDIRECT
+                Origin.CACHE
               },
               
             ////////////////// Not found
               {
                 "http://dbtune.org/does-not-exist",
+                Option.NO_OPTION,
                 HttpStatus.SC_NOT_FOUND,
                 "",
-                Option.NO_OPTION
+                Origin.NETWORK
               },
               
               // TODO: 404 could be cached?
             ////////////////// Unknown host
               {
                 "http://does.not.exist/a-resource",
+                Option.NO_OPTION,
                 -1,
                 "",
-                Option.NO_OPTION
+                Origin.NETWORK
               }
           };
       }

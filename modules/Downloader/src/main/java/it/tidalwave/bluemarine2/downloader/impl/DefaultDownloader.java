@@ -60,6 +60,7 @@ import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
+import it.tidalwave.bluemarine2.downloader.DownloadComplete.Origin;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import it.tidalwave.util.NotFoundException;
@@ -198,8 +199,11 @@ public class DefaultDownloader
                 final CacheResponseStatus cacheResponseStatus = context.getCacheResponseStatus();
                 log.debug(">>>> cacheResponseStatus: {}", cacheResponseStatus);
 
+                final Origin origin = cacheResponseStatus.equals(CacheResponseStatus.CACHE_HIT) ? Origin.CACHE
+                                                                                                : Origin.NETWORK;
+                
                 // FIXME: shouldn't do this by myself
-                if (!cacheResponseStatus.equals(CacheResponseStatus.CACHE_HIT))
+                if (origin.equals(Origin.CACHE))
                   {
                     final Date date = new Date();
                     final Resource resource = new HeapResource(bytes);
@@ -217,14 +221,17 @@ public class DefaultDownloader
                 else
                   {
                     done = true;  
-                    messageBus.publish(new DownloadComplete(request.getUrl(), response.getStatusLine().getStatusCode(), bytes));
+                    messageBus.publish(new DownloadComplete(request.getUrl(), 
+                                                            response.getStatusLine().getStatusCode(),
+                                                            bytes,
+                                                            origin));
                   }
               }
           }
         catch (IOException e)
           {
             log.warn("{}", e.toString());
-            messageBus.publish(new DownloadComplete(request.getUrl(), -1, new byte[0]));
+            messageBus.publish(new DownloadComplete(request.getUrl(), -1, new byte[0], Origin.NETWORK));
           }
       }
   }
