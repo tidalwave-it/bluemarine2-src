@@ -172,15 +172,7 @@ public class DefaultDownloader
               {
                 final HttpCacheContext context = HttpCacheContext.create();
                 @Cleanup final CloseableHttpResponse response = httpClient.execute(new HttpGet(url.toURI()), context);
-
-                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
-
-                if (response.getEntity() != null)
-                  {
-                    response.getEntity().writeTo(baos);
-                  }
-
-                final byte[] bytes = baos.toByteArray();
+                final byte[] bytes = bytesFrom(response);
                 final CacheResponseStatus cacheResponseStatus = context.getCacheResponseStatus();
                 log.debug(">>>> cacheResponseStatus: {}", cacheResponseStatus);
 
@@ -218,5 +210,24 @@ public class DefaultDownloader
             log.warn("{}", e.toString());
             messageBus.publish(new DownloadComplete(request.getUrl(), -1, new byte[0], Origin.NETWORK));
           }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
+    @Nonnull
+    private byte[] bytesFrom (final @Nonnull HttpResponse response) 
+      throws IOException
+      {
+        final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+      
+        if (response.getEntity() != null)
+          {
+            response.getEntity().writeTo(baos);
+          }
+        
+        return baos.toByteArray(); 
       }
   }
