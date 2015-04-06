@@ -26,14 +26,11 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.commons;
+package it.tidalwave.util;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.util.Map;
-import it.tidalwave.util.Key;
-import it.tidalwave.util.TypeSafeHashMap;
-import it.tidalwave.util.TypeSafeMap;
 import lombok.Getter;
 import lombok.ToString;
 

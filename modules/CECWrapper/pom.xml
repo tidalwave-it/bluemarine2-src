@@ -18,10 +18,6 @@
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
         </dependency>
         <dependency>
@@ -33,6 +29,14 @@
                     <artifactId>org-slf4j-jdk14</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-messagebus-spring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
         </dependency>
         
         <!-- FIXME: workaround against a compilation error -->

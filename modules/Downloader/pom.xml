@@ -19,11 +19,6 @@
     
     <dependencies>
         <dependency>
-            <!-- FIXME: for PowerOnNotification - should be in a Commons module -->
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
-        </dependency>
-        <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
         </dependency>
