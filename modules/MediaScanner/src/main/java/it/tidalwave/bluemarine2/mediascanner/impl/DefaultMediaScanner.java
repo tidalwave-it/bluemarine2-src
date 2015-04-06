@@ -39,6 +39,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.Consumer;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -51,11 +52,13 @@ import org.musicbrainz.ns.mmd_2.ArtistCredit;
 import org.musicbrainz.ns.mmd_2.NameCredit;
 import org.musicbrainz.ns.mmd_2.Recording;
 import org.openrdf.model.Literal;
+import org.openrdf.model.Model;
 import org.openrdf.model.Resource;
 import org.openrdf.model.Statement;
 import org.openrdf.model.URI;
 import org.openrdf.model.Value;
 import org.openrdf.model.ValueFactory;
+import org.openrdf.model.impl.LinkedHashModel;
 import org.openrdf.model.impl.ValueFactoryImpl;
 import org.openrdf.model.vocabulary.DC;
 import org.openrdf.model.vocabulary.FOAF;
@@ -84,6 +87,7 @@ import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import lombok.extern.slf4j.Slf4j;
 import lombok.ToString;
 import static java.util.stream.Collectors.joining;
+import static it.tidalwave.bluemarine2.downloader.DownloadRequest.Option.*;
 
 /***********************************************************************************************************************
  *
@@ -304,30 +308,22 @@ public class DefaultMediaScanner
             
             if (message.getStatusCode() == 200) // FIXME
               {
-                log.debug(">>>> received {}", new String(message.getBytes()));
-                final N3ParserFactory n3ParserFactory = new N3ParserFactory();
-                final RDFParser parser = n3ParserFactory.getParser();
+                final byte[] bytes = message.getBytes();
+                final Model model = parseModel(bytes, message.getUrl().toString());
                 AddStatementsRequest.Builder builder = AddStatementsRequest.build();
-
-                parser.setRDFHandler(new RDFHandlerBase()
+                
+                model.filter(null, FOAF.MAKER, null).forEach(new Consumer<Statement>()
                   {
                     @Override
-                    public void handleStatement (final @Nonnull Statement statement)
-                      throws RDFHandlerException 
+                    public void accept (final @Nonnull Statement statement) 
                       {
-                        if (!statement.getPredicate().equals(RDFS.SEEALSO)
-                         && !statement.getPredicate().equals(FOAF.PRIMARY_TOPIC)
-                         && !statement.getPredicate().equals(MO.PUBLISHED_AS))
-                          {
-                            log.debug("ADDING {}", statement);
-                            // FIXME: filter only the statements you need
-                            // FIXME: should be builder = builder.with()
-                            builder.with(statement.getSubject(), statement.getPredicate(), statement.getObject());
-                          }
+                        final URI artistUri = (URI)statement.getObject();
+//                      // FIXME: should be builder = builder.with()
+                        builder.with(statement.getSubject(), statement.getPredicate(), artistUri);
+                        // TODO: download data of artistUri
                       }
                   });
 
-                parser.parse(new ByteArrayInputStream(message.getBytes()), message.getUrl().toString());
                 messageBus.publish(builder.create());
               }
           }
@@ -335,6 +331,28 @@ public class DefaultMediaScanner
           {
             progress.incrementCompletedDownloads();
           }
+      }
+
+    @Nonnull
+    private Model parseModel (final @Nonnull byte[] bytes, final @Nonnull String uri)
+        throws RDFHandlerException, RDFParseException, IOException
+      {
+        final N3ParserFactory n3ParserFactory = new N3ParserFactory();
+        final RDFParser parser = n3ParserFactory.getParser();
+        final Model model = new LinkedHashModel();
+        
+        parser.setRDFHandler(new RDFHandlerBase()
+          {
+            @Override
+            public void handleStatement (final @Nonnull Statement statement)
+              throws RDFHandlerException
+              {
+                model.add(statement);
+              }
+          });
+        
+        parser.parse(new ByteArrayInputStream(bytes), uri);
+        return model;
       }
     
     /*******************************************************************************************************************
@@ -468,7 +486,7 @@ public class DefaultMediaScanner
         final Metadata metadata = mediaItem.getMetadata();
         final String mbGuid = metadata.get(Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
         messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid)));
-        messageBus.publish(new DownloadRequest(new URL(mediaItemUri.toString())));
+        messageBus.publish(new DownloadRequest(new URL(mediaItemUri.toString()), FOLLOW_REDIRECT));
         progress.incrementTotalDownloads();
       }
     

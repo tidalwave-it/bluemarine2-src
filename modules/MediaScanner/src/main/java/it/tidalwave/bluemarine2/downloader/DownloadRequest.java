@@ -28,11 +28,13 @@
  */
 package it.tidalwave.bluemarine2.downloader;
 
-import java.net.URL;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import java.net.URL;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
 /***********************************************************************************************************************
@@ -41,9 +43,29 @@ import lombok.ToString;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @RequiredArgsConstructor @Getter @ToString
+@Immutable @Getter @ToString
 public class DownloadRequest 
   {
+    public enum Option
+      {
+        NO_OPTION,
+        FOLLOW_REDIRECT
+      }
+    
     @Nonnull
     private final URL url;
+    
+    @Nonnull
+    private final Set<Option> options;
+
+    public DownloadRequest (final @Nonnull URL url, final @Nonnull Option ... options) 
+      {
+        this.url = url;
+        this.options = new HashSet<>(Arrays.asList(options));
+      }
+    
+    public boolean isOptionPresent (final @Nonnull Option option)
+      {
+        return options.contains(option);
+      }
   }

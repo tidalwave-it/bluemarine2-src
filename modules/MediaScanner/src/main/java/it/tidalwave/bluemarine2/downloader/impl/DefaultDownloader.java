@@ -172,7 +172,12 @@ public class DefaultDownloader
             @Cleanup final CloseableHttpResponse response = httpClient.execute(new HttpGet(url.toURI()), context);
             
             final ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            response.getEntity().writeTo(baos);
+            
+            if (response.getEntity() != null)
+              {
+                response.getEntity().writeTo(baos);
+              }
+                
             final byte[] bytes = baos.toByteArray();
             final CacheResponseStatus cacheResponseStatus = context.getCacheResponseStatus();
             log.debug(">>>> cacheResponseStatus: {}", cacheResponseStatus);
@@ -187,7 +192,8 @@ public class DefaultDownloader
               }
 
             // FIXME: if the redirect were enabled, we could drop this check
-            if (response.getStatusLine().getStatusCode() == 303) // SEE_OTHER FIXME
+            if (request.isOptionPresent(DownloadRequest.Option.FOLLOW_REDIRECT) 
+                && response.getStatusLine().getStatusCode() == 303) // SEE_OTHER FIXME
               {
                 url = new URL(response.getFirstHeader("Location").getValue());
                 log.info(">>>> following 'see also' to {} ...", url);
