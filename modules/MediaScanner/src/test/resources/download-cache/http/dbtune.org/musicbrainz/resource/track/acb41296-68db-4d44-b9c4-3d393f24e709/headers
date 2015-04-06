@@ -1,9 +1,10 @@
 HTTP/1.1 303 See Other
-Date: Sun, 05 Apr 2015 23:12:51 GMT
+Date: Mon, 06 Apr 2015 09:49:27 GMT
 Server: Jetty(6.1.11)
 Location: http://dbtune.org/musicbrainz/data/track/acb41296-68db-4d44-b9c4-3d393f24e709
 Access-Control-Allow-Origin: *
 Connection: close
 Transfer-Encoding: chunked
 Content-Type: text/plain; charset=UTF-8
-Via: 1.
+Via: 1.1 localhost (Apache-HttpClient/4.4 (cache))
+

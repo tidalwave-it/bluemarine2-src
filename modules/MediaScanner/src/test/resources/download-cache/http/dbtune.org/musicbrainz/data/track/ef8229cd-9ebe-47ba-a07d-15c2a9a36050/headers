@@ -1,11 +1,10 @@
 HTTP/1.1 200 OK
-Date: Sun, 05 Apr 2015 23:11:58 GMT
+Date: Mon, 06 Apr 2015 09:48:12 GMT
 Server: Jetty(6.1.11)
-Cache-Control: no-cache
-Pragma: no-cache
 X-Joseki-Server: Joseki-3.2
 Content-Type: application/n3; charset=utf-8
 Access-Control-Allow-Origin: *
 Connection: close
 Transfer-Encoding: chunked
-Via: 1.1 localhost (Apache-
+Via: 1.1 localhost (Apache-HttpClient/4.4 (cache))
+
