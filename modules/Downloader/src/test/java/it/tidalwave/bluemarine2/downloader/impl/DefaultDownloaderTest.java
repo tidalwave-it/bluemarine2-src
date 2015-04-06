@@ -203,7 +203,6 @@ public class DefaultDownloaderTest
                 "a51c646d-d676-4690-8131-62373e8b77db-200",
                 Origin.CACHE
               },
-              
             ////////////////// Not found
               {
                 "http://dbtune.org/does-not-exist",
@@ -212,7 +211,6 @@ public class DefaultDownloaderTest
                 "",
                 Origin.NETWORK
               },
-              
               // TODO: 404 could be cached?
             ////////////////// Unknown host
               {
