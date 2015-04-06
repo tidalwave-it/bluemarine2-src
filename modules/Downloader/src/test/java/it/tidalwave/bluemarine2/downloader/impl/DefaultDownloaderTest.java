@@ -34,11 +34,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.net.URL;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.io.IOException;
-import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpStatus;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.util.Key;
@@ -53,8 +51,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import it.tidalwave.util.test.FileComparisonUtils;
+import static java.nio.file.Files.*;
+import static org.apache.commons.io.FileUtils.*;
 import static it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH;
+import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.CoreMatchers.*;
 
@@ -67,6 +67,10 @@ import static org.hamcrest.CoreMatchers.*;
 @Slf4j
 public class DefaultDownloaderTest 
   {
+    private static final Path CACHE_RESOURCES_PATH = Paths.get("target/test-classes/download-cache");
+        
+    private static final Path CACHE_PATH = Paths.get("target/download-cache");
+        
     private DefaultDownloader underTest;
     
     private SimpleHttpCacheStorage cacheStorage;
@@ -95,10 +99,8 @@ public class DefaultDownloaderTest
     public void prepare() 
       throws IOException, NotFoundException 
       {
-        final Path cacheResourcesPath = Paths.get("target/test-classes/download-cache");
-        final Path cachePath = Paths.get("target/download-cache");
-        FileUtils.deleteDirectory(cachePath.toFile());
-        FileUtils.copyDirectory(cacheResourcesPath.toFile(), cachePath.toFile());
+        deleteDirectory(CACHE_PATH.toFile());
+        copyDirectory(CACHE_RESOURCES_PATH.toFile(), CACHE_PATH.toFile());
 
         final String s = "classpath:/META-INF/DefaultDownloaderTestBeans.xml";
         context = new ClassPathXmlApplicationContext(s);
@@ -113,7 +115,7 @@ public class DefaultDownloaderTest
         cacheStorage.setNeverExpiring(true);
         
         final Map<Key<?>, Object> properties = new HashMap<>();
-        properties.put(CACHE_FOLDER_PATH, cachePath);
+        properties.put(CACHE_FOLDER_PATH, CACHE_PATH);
         messageBus.publish(new PowerOnNotification(properties));
       }
 
@@ -141,9 +143,9 @@ public class DefaultDownloaderTest
             final Path expectedResults = Paths.get("src/test/resources/expected-results");
             final Path actualResult = testResults.resolve(exptectedContentFileName);
             final Path expectedResult = expectedResults.resolve(exptectedContentFileName);
-            Files.createDirectories(testResults);
-            Files.write(actualResult, response.getBytes());
-            FileComparisonUtils.assertSameContents(expectedResult.toFile(), actualResult.toFile());
+            createDirectories(testResults);
+            write(actualResult, response.getBytes());
+            assertSameContents(expectedResult.toFile(), actualResult.toFile());
           }
         
         if (!Arrays.asList(-1, HttpStatus.SC_SEE_OTHER, HttpStatus.SC_NOT_FOUND).contains(response.getStatusCode()))
