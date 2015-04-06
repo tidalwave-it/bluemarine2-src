@@ -118,27 +118,28 @@ public class DefaultDownloaderTest
       {
         return new Object[][]
           {
+            ////////////////// In cache
               {
                 "http://dbtune.org/musicbrainz/data/track/a51c646d-d676-4690-8131-62373e8b77db",
                 HttpStatus.SC_OK,
                 "a51c646d-d676-4690-8131-62373e8b77db-200",
                 Option.NO_OPTION
               },
-            
+            ////////////////// In cache with "See Other", don't follow redirect
               {
                 "http://dbtune.org/musicbrainz/resource/track/a51c646d-d676-4690-8131-62373e8b77db",
                 HttpStatus.SC_SEE_OTHER,
                 "a51c646d-d676-4690-8131-62373e8b77db-303",
                 Option.NO_OPTION
               },
-              
+            ////////////////// In cache with "See Other", do follow redirect
               {
                 "http://dbtune.org/musicbrainz/resource/track/a51c646d-d676-4690-8131-62373e8b77db",
                 HttpStatus.SC_OK,
                 "a51c646d-d676-4690-8131-62373e8b77db-200",
                 Option.FOLLOW_REDIRECT
               },
-              
+            ////////////////// Not found
               {
                 "http://dbtune.org/does-not-exist",
                 HttpStatus.SC_NOT_FOUND,
@@ -147,7 +148,7 @@ public class DefaultDownloaderTest
               },
               
               // TODO: 404 could be cached?
-              // unknown host
+            ////////////////// Unknown host
               {
                 "http://does.not.exist/a-resource",
                 -1,
