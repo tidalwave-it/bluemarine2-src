@@ -28,21 +28,28 @@
  */
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.time.Instant;
 import java.io.IOException;
 import java.io.File;
+import java.nio.file.Paths;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.ui.commons.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem;
 import it.tidalwave.bluemarine2.persistence.DumpCompleted;
 import it.tidalwave.bluemarine2.persistence.DumpRequest;
+import it.tidalwave.bluemarine2.downloader.impl.DefaultDownloader;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import it.tidalwave.util.test.FileComparisonUtils;
 import it.tidalwave.util.test.MockInstantProvider;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH;
 
 /***********************************************************************************************************************
  *
@@ -85,8 +92,12 @@ public class DefaultMediaScannerTest
         dumpCompleted = new CountDownLatch(1);
         messageBus.subscribe(ScanCompleted.class, onScanCompleted);
         messageBus.subscribe(DumpCompleted.class, onDumpCompleted);
+        
+        final Map<Key<?>, Object> properties = new HashMap<>();
+        properties.put(CACHE_FOLDER_PATH, Paths.get("target/test-classes/download-cache"));
+        messageBus.publish(new PowerOnNotification(properties));
       }
-
+    
     @Test
     public void testScan() 
       throws IOException, InterruptedException

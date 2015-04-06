@@ -95,6 +95,10 @@
     
     <bean class="it.tidalwave.bluemarine2.downloader.impl.DefaultDownloader" />
 
+    <bean class="it.tidalwave.bluemarine2.downloader.impl.SimpleHttpCacheStorage">
+        <property name="neverExpiring" value="true" />
+    </bean>
+    
     <bean class="it.tidalwave.util.test.MockInstantProvider" />
     
 </beans>
