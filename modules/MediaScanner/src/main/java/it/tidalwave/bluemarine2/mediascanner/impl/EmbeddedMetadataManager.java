@@ -38,7 +38,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.function.Function;
 import org.openrdf.model.URI;
-import org.openrdf.model.Resource;
 import org.openrdf.model.Statement;
 import org.openrdf.model.Value;
 import org.openrdf.model.impl.ValueFactoryImpl;
@@ -56,6 +55,8 @@ import it.tidalwave.bluemarine2.vocabulary.MO;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 import static it.tidalwave.bluemarine2.persistence.AddStatementsRequest.*;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *
@@ -82,6 +83,41 @@ public class EmbeddedMetadataManager
      * 
      * 
      ******************************************************************************************************************/
+    @RequiredArgsConstructor @ToString
+    static class Pair
+      {
+        @Nonnull
+        private final URI predicate;
+        
+        @Nonnull
+        private final Value object;
+        
+        public Statement createStatementWithSubject (final @Nonnull URI subject)
+          {
+            return ValueFactoryImpl.getInstance().createStatement(subject, predicate, object);
+          }
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
+    private static final Map<Key<?>, Function<Object, Pair>> MAPPER = new HashMap<>();
+
+    static
+      {
+        MAPPER.put(Metadata.TRACK,       v -> new Pair(MO.TRACK_NUMBER,    literalFor((int)v)));
+        MAPPER.put(Metadata.SAMPLE_RATE, v -> new Pair(MO.SAMPLE_RATE,     literalFor((int)v)));
+        MAPPER.put(Metadata.BIT_RATE,    v -> new Pair(MO.BITS_PER_SAMPLE, literalFor((int)v)));
+        MAPPER.put(Metadata.DURATION,    v -> new Pair(MO.DURATION,        literalFor((float)((Duration)v).toMillis())));
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
     public void reset()
       {
         // FIXME: should load existing URIs from the Persistence
@@ -103,24 +139,12 @@ public class EmbeddedMetadataManager
         log.debug("importTrackMetadata({}, {})", mediaItem, mediaItemUri);
         
         final Metadata metadata = mediaItem.getMetadata();
-        
-        final Map<Key<?>, Function<Object, Statement>> mapper = new HashMap<>();
-        
-        mapper.put(Metadata.TRACK,       o -> c(mediaItemUri, MO.TRACK_NUMBER, literalFor((int)o)));
-        mapper.put(Metadata.SAMPLE_RATE, o -> c(mediaItemUri, MO.SAMPLE_RATE, literalFor((int)o)));
-        mapper.put(Metadata.BIT_RATE,    o -> c(mediaItemUri, MO.BITS_PER_SAMPLE, literalFor((int)o)));
-        mapper.put(Metadata.DURATION,    o -> c(mediaItemUri, MO.DURATION, literalFor((float)((Duration)o).toMillis())));
-                
         messageBus.publish(metadata.getKeys().stream()
-                .map(key -> mapper.getOrDefault(key, (i) -> null).apply(metadata.get(key).get()))
-                .filter(o -> o != null)
-                .collect(toAddStatementsRequest()));
+                                .map(key -> MAPPER.getOrDefault(key, (i) -> null).apply(metadata.get(key).get()))
+                                .filter(o -> o != null)
+                                .map(pair -> pair.createStatementWithSubject(mediaItemUri))
+                                .collect(toAddStatementsRequest()));
       }
-    
-    private static Statement c (Resource subject, URI predicate, Value object)
-    {
-      return ValueFactoryImpl.getInstance().createStatement(subject, predicate, object);
-    }
     
     /*******************************************************************************************************************
      *
