@@ -41,7 +41,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @ToString @Slf4j
-public class Progress
+public class ProgressHandler
   {
     @Inject
     private MessageBus messageBus;
@@ -56,6 +56,8 @@ public class Progress
     private volatile int importedRecords;
     private volatile int totalDownloads;
     private volatile int completedDownloads;
+    
+    // TODO: should also collect errors
 
     public synchronized void reset()
       {

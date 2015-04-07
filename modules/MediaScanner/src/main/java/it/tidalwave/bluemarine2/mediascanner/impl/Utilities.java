@@ -35,6 +35,8 @@ import java.util.Date;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.net.MalformedURLException;
+import java.net.URL;
 import org.openrdf.model.Model;
 import org.openrdf.model.Statement;
 import org.openrdf.model.URI;
@@ -47,8 +49,8 @@ import org.openrdf.rio.RDFParseException;
 import org.openrdf.rio.RDFParser;
 import org.openrdf.rio.helpers.RDFHandlerBase;
 import org.openrdf.rio.n3.N3ParserFactory;
-import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import it.tidalwave.util.Id;
+import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
@@ -79,17 +81,14 @@ final class Utilities
           {
             @Override
             public void handleStatement (final @Nonnull Statement statement)
-              throws RDFHandlerException
               {
                 model.add(statement);
               }
           });
 
-
         final byte[] bytes = new String(message.getBytes()).replaceAll(" = ", "owl:sameAs").getBytes(); // FIXME
         final String uri = message.getUrl().toString();          
         parser.parse(new ByteArrayInputStream(bytes), uri);
-//        parser.parse(new ByteArrayInputStream(bytes), uri);
 
         return model;
       }
@@ -162,6 +161,27 @@ final class Utilities
     public static URI uriFor (final @Nonnull String id)
       {
         return FACTORY.createURI(id);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static URI uriFor (final @Nonnull URL url)
+      {
+        return FACTORY.createURI(url.toString());
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static URL urlFor (final @Nonnull URI uri)
+      throws MalformedURLException
+      {
+        return new URL(uri.toString());
       }
     
     /*******************************************************************************************************************
