@@ -90,8 +90,7 @@ public class DbTuneMetadataManager
      * @throws  InterruptedException    if the operation is interrupted
      *
      ******************************************************************************************************************/
-    public void importTrackMetadata (final @Nonnull MediaItem track, 
-                                     final @Nonnull URI mediaItemUri)
+    public void importTrackMetadata (final @Nonnull MediaItem track, final @Nonnull URI mediaItemUri)
       throws IOException, JAXBException, InterruptedException 
       { 
         log.info("importTrackMetadata({}, {})", track, mediaItemUri);
@@ -99,7 +98,7 @@ public class DbTuneMetadataManager
         final MediaItem.Metadata metadata = track.getMetadata();
         final String mbGuid = metadata.get(MediaItem.Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
         messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid)));
-        messageBus.publish(new DownloadRequest(new URL(mediaItemUri.toString()), FOLLOW_REDIRECT));
+        messageBus.publish(new DownloadRequest(urlFor(mediaItemUri), FOLLOW_REDIRECT));
         progress.incrementTotalDownloads();
       }
     
@@ -112,7 +111,7 @@ public class DbTuneMetadataManager
         try 
           {
             log.info("onTrackMetadataDownloadComplete({})", message);
-            final URI trackUri = uriFor(message.getUrl().toString());
+            final URI trackUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
             AddStatementsRequest.Builder builder = AddStatementsRequest.build();
 
@@ -127,7 +126,7 @@ public class DbTuneMetadataManager
                   }
                 catch (MalformedURLException e)
                   {
-                    throw new RuntimeException(e);
+                    log.error("Malformed URL: {}", e);
                   }
               });
             
@@ -139,7 +138,7 @@ public class DbTuneMetadataManager
                   }
                 catch (MalformedURLException e)
                   {
-                    throw new RuntimeException(e);
+                    log.error("Malformed URL: {}", e);
                   }
               });
 
@@ -152,18 +151,21 @@ public class DbTuneMetadataManager
           }
       }
     
+    // Skip foaf:maker: it would include all the items in the database, not only in our collection
+    // anyway, the required statements have been already added when importing tracks
+    private static final List<URI> VALID_ARTIST_PREDICATES = Arrays.asList(
+                DbTune.ARTIST_TYPE, DbTune.SORT_NAME, Purl.EVENT, RDF.TYPE, RDFS.LABEL, FOAF.NAME);
+        
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
     public void onArtistMetadataDownloadComplete (final @Nonnull DownloadComplete message) 
       {
-        List<URI> validPredicates = Arrays.asList(
-                DbTune.ARTIST_TYPE, DbTune.SORT_NAME, Purl.EVENT, RDF.TYPE, RDFS.LABEL, FOAF.NAME);
         try 
           {
             log.info("onArtistMetadataDownloadComplete({})", message);
-            final URI artistUri = uriFor(message.getUrl().toString());
+            final URI artistUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
             AddStatementsRequest.Builder builder = AddStatementsRequest.build();
 
@@ -173,28 +175,15 @@ public class DbTuneMetadataManager
                 final URI predicate = statement.getPredicate();
                 final Value object = statement.getObject();
                 
-                // foaf:maker would include all the items in the database, not only in our collection
-                // anyway, the required statements have been already added when importing tracks
-                if (predicate.equals(FOAF.MAKER))
+                if (subject.equals(artistUri) && VALID_ARTIST_PREDICATES.contains(predicate))
                   {
-                    return;
+                    // FIXME: should be builder = builder.with()
+                    builder.with(subject, predicate, object);
                   }
-                
-                else if (subject.equals(artistUri))
-                  {
-                    if (validPredicates.contains(predicate))
-                      {
-                        // FIXME: should be builder = builder.with()
-                        builder.with(subject, predicate, object);
-                      }
+              });
+            
 //  TODO: extract only GUID?       mo:musicbrainz <http://musicbrainz.org/artist/1f9df192-a621-4f54-8850-2c5373b7eac9> ;
 // TODO: download bio event details
-                  }
-                
-                else
-                  {
-                    return;
-                  }
                 
 // TODO: rel:collaboratesWith
 // TODO      =       <http://www.bbc.co.uk/music/artists/83e71a21-caf7-4e48-8ff7-6512d51e88a3#artist> , <http://dbpedia.org/resource/Henry_Mancini> ;
@@ -216,7 +205,6 @@ public class DbTuneMetadataManager
                 
                 <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Ludwig_van_Beethoven> , <http://de.wikipedia.org/wiki/Ludwig_van_Beethoven> , <http://www.bbc.co.uk/music/artists/1f9df192-a621-4f54-8850-2c5373b7eac9#artist> ;
             */         
-              });
 
             messageBus.publish(builder.create());
           }   
@@ -240,7 +228,7 @@ public class DbTuneMetadataManager
         try 
           {
             log.info("onRecordMetadataDownloadComplete({})", message);
-            final URI recordUri = uriFor(message.getUrl().toString());
+            final URI recordUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
             AddStatementsRequest.Builder builder = AddStatementsRequest.build();
 
@@ -280,7 +268,7 @@ public class DbTuneMetadataManager
                 seenArtistUris.add(artistUri);
                 progress.incrementTotalArtists();
                 progress.incrementTotalDownloads();
-                messageBus.publish(new DownloadRequest(new URL(artistUri.toString()), FOLLOW_REDIRECT));
+                messageBus.publish(new DownloadRequest(urlFor(artistUri), FOLLOW_REDIRECT));
               }
           }
       }
@@ -302,7 +290,7 @@ public class DbTuneMetadataManager
                 seenRecordUris.add(recordUri);
                 progress.incrementTotalRecords();
                 progress.incrementTotalDownloads();
-                messageBus.publish(new DownloadRequest(new URL(recordUri.toString()), FOLLOW_REDIRECT));
+                messageBus.publish(new DownloadRequest(urlFor(recordUri), FOLLOW_REDIRECT));
               }
           }
       }
