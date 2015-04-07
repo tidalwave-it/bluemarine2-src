@@ -78,6 +78,20 @@
                     </aspectLibraries>
                 </configuration>
             </plugin>
+            <!-- Disable creation of test jar. Usually it's harmless even when unneeded, but in this case it's a very large file. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>package-jar</id>
+                        <phase>none</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
