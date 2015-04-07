@@ -152,8 +152,7 @@ public class DbTuneMetadataManager
       { 
         try 
           {
-            log.info("importTrackMetadata({}, {})", track, mediaItemUri);
-            
+            log.debug("importTrackMetadata({}, {})", track, mediaItemUri);
             final MediaItem.Metadata metadata = track.getMetadata();
             final String mbGuid = metadata.get(MediaItem.Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
             messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid)));
@@ -174,7 +173,7 @@ public class DbTuneMetadataManager
       {
         try 
           {
-            log.info("onTrackMetadataDownloadComplete({})", message);
+            log.debug("onTrackMetadataDownloadComplete({})", message);
             final URI trackUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
             messageBus.publish(model.filter(trackUri, FOAF.MAKER, null).stream()
@@ -198,7 +197,7 @@ public class DbTuneMetadataManager
       {
         try 
           {
-            log.info("onArtistMetadataDownloadComplete({})", message);
+            log.debug("onArtistMetadataDownloadComplete({})", message);
             final URI artistUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
             messageBus.publish(model.stream().filter(new ArtistStatementFilter(artistUri))
@@ -223,7 +222,7 @@ public class DbTuneMetadataManager
       {
         try 
           {
-            log.info("onRecordMetadataDownloadComplete({})", message);
+            log.debug("onRecordMetadataDownloadComplete({})", message);
             final URI recordUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
              // FIXME: filter away some more stuff
