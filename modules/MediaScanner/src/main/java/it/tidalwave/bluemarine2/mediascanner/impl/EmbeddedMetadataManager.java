@@ -41,7 +41,6 @@ import org.openrdf.model.vocabulary.DC;
 import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
-import it.tidalwave.util.Id;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
