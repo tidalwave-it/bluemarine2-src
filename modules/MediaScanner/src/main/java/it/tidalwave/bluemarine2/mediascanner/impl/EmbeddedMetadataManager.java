@@ -31,16 +31,23 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.function.Function;
 import org.openrdf.model.URI;
+import org.openrdf.model.Resource;
+import org.openrdf.model.Statement;
 import org.openrdf.model.Value;
+import org.openrdf.model.impl.ValueFactoryImpl;
 import org.openrdf.model.vocabulary.DC;
 import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
 import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.util.Key;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
@@ -48,13 +55,7 @@ import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
 import it.tidalwave.bluemarine2.vocabulary.MO;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
-import it.tidalwave.util.Key;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Function;
-import org.openrdf.model.Resource;
-import org.openrdf.model.Statement;
-import org.openrdf.model.impl.ValueFactoryImpl;
+import static it.tidalwave.bluemarine2.persistence.AddStatementsRequest.*;
 
 /***********************************************************************************************************************
  *
@@ -104,24 +105,18 @@ public class EmbeddedMetadataManager
         final Metadata metadata = mediaItem.getMetadata();
         
         final Map<Key<?>, Function<Object, Statement>> mapper = new HashMap<>();
+        
         mapper.put(Metadata.TRACK,       o -> c(mediaItemUri, MO.TRACK_NUMBER, literalFor((int)o)));
         mapper.put(Metadata.SAMPLE_RATE, o -> c(mediaItemUri, MO.SAMPLE_RATE, literalFor((int)o)));
         mapper.put(Metadata.BIT_RATE,    o -> c(mediaItemUri, MO.BITS_PER_SAMPLE, literalFor((int)o)));
         mapper.put(Metadata.DURATION,    o -> c(mediaItemUri, MO.DURATION, literalFor((float)((Duration)o).toMillis())));
                 
-        messageBus.publish(metadata.getKeys().stream().map(
-        key -> 
-          {
-            final Optional<?> item = metadata.get(key);
-            
-            if (item.isPresent())
-              {
-                return mapper.getOrDefault(key, (i) -> null).apply(item.get());
-              }
-            
-            return null;
-          })
-                .filter(o -> o != null).collect(AddStatementsRequest.toAddStatementsRequest()));
+        messageBus.publish(metadata.getKeys().stream()
+                .map(key -> metadata.containsKey(key) 
+                                ? mapper.getOrDefault(key, (i) -> null).apply(metadata.get(key).get()) 
+                                : null)
+                .filter(o -> o != null)
+                .collect(toAddStatementsRequest()));
       }
     
     private static Statement c (Resource subject, URI predicate, Value object)
