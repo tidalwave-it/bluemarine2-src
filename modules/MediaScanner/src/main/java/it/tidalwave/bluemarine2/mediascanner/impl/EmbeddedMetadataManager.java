@@ -62,8 +62,8 @@ public class EmbeddedMetadataManager
     @Inject
     private MessageBus messageBus;
     
-    // FIXME: inject
-    private Md5IdCreator md5IdCreator = new Md5IdCreator();
+    @Inject
+    private Md5IdCreator md5IdCreator;
 
     private final Set<Id> seenArtistIds = Collections.synchronizedSet(new HashSet<Id>());
     

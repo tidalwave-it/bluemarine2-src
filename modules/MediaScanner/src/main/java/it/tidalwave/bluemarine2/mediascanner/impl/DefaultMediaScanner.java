@@ -54,7 +54,6 @@ import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
 import it.tidalwave.bluemarine2.vocabulary.BM;
 import it.tidalwave.bluemarine2.vocabulary.MO;
-import it.tidalwave.bluemarine2.musicbrainz.impl.DefaultMusicBrainzApi;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
@@ -68,27 +67,27 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 @SimpleMessageSubscriber @Slf4j
 public class DefaultMediaScanner 
   {
-    // FIXME: inject
-    private final DefaultMusicBrainzApi mbApi = new DefaultMusicBrainzApi();
+//    // FIXME: inject
+//    private final DefaultMusicBrainzApi mbApi = new DefaultMusicBrainzApi();
     
-    @Inject
-    private MessageBus messageBus;
-    
-    @Inject
-    private InstantProvider timestampProvider;
-    
-    // FIXME: inject
-    private Md5IdCreator md5IdCreator = new Md5IdCreator();
-
-    @Inject
-    private Progress progress;
-
     @Inject
     private DbTuneMetadataManager dbTuneMetadataManager;
     
     @Inject
     private EmbeddedMetadataManager embeddedMetadataManager;
     
+    @Inject
+    private Progress progress;
+
+    @Inject
+    private MessageBus messageBus;
+    
+    @Inject
+    private InstantProvider timestampProvider;
+    
+    @Inject
+    private Md5IdCreator md5IdCreator;
+
     /*******************************************************************************************************************
      *
      * Processes a folder of {@link MediaItem}s.
