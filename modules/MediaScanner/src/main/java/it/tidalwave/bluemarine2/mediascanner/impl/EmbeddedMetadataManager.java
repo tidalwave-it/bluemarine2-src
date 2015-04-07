@@ -52,6 +52,9 @@ import it.tidalwave.util.Key;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
+import org.openrdf.model.Resource;
+import org.openrdf.model.Statement;
+import org.openrdf.model.impl.ValueFactoryImpl;
 
 /***********************************************************************************************************************
  *
@@ -99,31 +102,32 @@ public class EmbeddedMetadataManager
         log.debug("importTrackMetadata({}, {})", mediaItem, mediaItemUri);
         
         final Metadata metadata = mediaItem.getMetadata();
-        final Optional<Integer> trackNumber = metadata.get(Metadata.TRACK);
-        final Optional<Integer> sampleRate = metadata.get(Metadata.SAMPLE_RATE);
-        final Optional<Integer> bitRate = metadata.get(Metadata.BIT_RATE);
-        final Optional<Duration> duration = metadata.get(Metadata.DURATION);
         
-        final Map<Key<?>, Function<AddStatementsRequest.Builder, AddStatementsRequest.Builder>> mapper = new HashMap<>();
-        mapper.put(Metadata.TRACK,       b -> b.with(mediaItemUri, MO.TRACK_NUMBER, literalFor(trackNumber.get())));
-        mapper.put(Metadata.SAMPLE_RATE, b -> b.with(mediaItemUri, MO.SAMPLE_RATE, literalFor(sampleRate.get())));
-        mapper.put(Metadata.BIT_RATE,    b -> b.with(mediaItemUri, MO.BITS_PER_SAMPLE, literalFor(bitRate.get())));
-        mapper.put(Metadata.DURATION,    b -> b.with(mediaItemUri, MO.DURATION, literalFor((float)duration.get().toMillis())));
+        final Map<Key<?>, Function<Object, Statement>> mapper = new HashMap<>();
+        mapper.put(Metadata.TRACK,       o -> c(mediaItemUri, MO.TRACK_NUMBER, literalFor((int)o)));
+        mapper.put(Metadata.SAMPLE_RATE, o -> c(mediaItemUri, MO.SAMPLE_RATE, literalFor((int)o)));
+        mapper.put(Metadata.BIT_RATE,    o -> c(mediaItemUri, MO.BITS_PER_SAMPLE, literalFor((int)o)));
+        mapper.put(Metadata.DURATION,    o -> c(mediaItemUri, MO.DURATION, literalFor((float)((Duration)o).toMillis())));
                 
-        AddStatementsRequest.Builder builder = AddStatementsRequest.build();
-        
-        for (final Key<?> key : metadata.getKeys())
+        messageBus.publish(metadata.getKeys().stream().map(
+        key -> 
           {
             final Optional<?> item = metadata.get(key);
             
             if (item.isPresent())
               {
-                builder = mapper.getOrDefault(key, (i) -> i).apply(builder);
-              } 
-          }
-
-        messageBus.publish(builder.create());
+                return mapper.getOrDefault(key, (i) -> null).apply(item.get());
+              }
+            
+            return null;
+          })
+                .filter(o -> o != null).collect(AddStatementsRequest.toAddStatementsRequest()));
       }
+    
+    private static Statement c (Resource subject, URI predicate, Value object)
+    {
+      return ValueFactoryImpl.getInstance().createStatement(subject, predicate, object);
+    }
     
     /*******************************************************************************************************************
      *
