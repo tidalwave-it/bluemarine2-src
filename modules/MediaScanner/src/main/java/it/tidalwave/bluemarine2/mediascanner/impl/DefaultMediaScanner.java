@@ -34,8 +34,7 @@ import java.time.Instant;
 import java.util.Optional;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.net.MalformedURLException;
-import javax.xml.bind.JAXBException;
+import java.nio.file.Path;
 import org.musicbrainz.ns.mmd_2.Artist;
 import org.openrdf.model.Resource;
 import org.openrdf.model.URI;
@@ -222,63 +221,57 @@ public class DefaultMediaScanner
      * Processes a {@link MediaItem}.
      * 
      * @param                           mediaItem   the item
-     * @throws  InterruptedException    if the operation is interrupted
      *
      ******************************************************************************************************************/
     private void importMediaItem (final @Nonnull MediaItem mediaItem)
-      throws InterruptedException
       { 
         log.debug("importMediaItem({})", mediaItem);
         final Id md5 = md5IdCreator.createMd5Id(mediaItem.getPath());
-        URI mediaItemUri = uriFor(md5);
-        
-        try 
-          {
-            final Metadata metadata = mediaItem.getMetadata();
-            final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
-            log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
-            
-            if (musicBrainzTrackId.isPresent())
-              {
-                mediaItemUri = uriFor("http://dbtune.org/musicbrainz/resource/track/" + 
-                        musicBrainzTrackId.get().stringValue().replaceAll("^mbz:", ""));
-              }
-            
-            final Instant lastModifiedTime = Files.getLastModifiedTime(mediaItem.getPath()).toInstant();
-            messageBus.publish(AddStatementsRequest.build()
-                            .with(mediaItemUri, RDF.TYPE, MO.TRACK)
-                            .with(mediaItemUri, MO.AUDIOFILE, literalFor(mediaItem.getRelativePath()))
-                            .with(mediaItemUri, BM.MD5, literalFor(md5.stringValue().replaceAll("^md5id:", "")))
-                            .with(mediaItemUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
-                            .create());
-            embeddedMetadataManager.importMediaItemEmbeddedMetadata(mediaItem, mediaItemUri);
-            
-            if (musicBrainzTrackId.isPresent())
-              {
-                dbTuneMetadataManager.importTrackMetadata(mediaItem, mediaItemUri);
-//                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
-              }
-            else
-              {
-                embeddedMetadataManager.importFallbackEmbeddedMetadata(mediaItem, mediaItemUri);
-              } 
-          }
-        catch (JAXBException | MalformedURLException e) 
-          {
-            log.error("Failed processing {}", mediaItem);
-          }
-        catch (IOException e)
-          {
-            log.warn("Cannot retrieve MusicBrainz metadata {} ... - {}", mediaItem, e.toString());
-            embeddedMetadataManager.importFallbackEmbeddedMetadata(mediaItem, mediaItemUri);
-            messageBus.publish(new AddStatementsRequest(mediaItemUri, BM.FAILED_MB_METADATA, literalFor(timestampProvider.getInstant())));
+        final Metadata metadata = mediaItem.getMetadata();
+        final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
+        log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
 
-            if (e.getMessage().contains("503")) // throttling error
-              {
-//                log.warn("Resubmitting {} ... - {}", mediaItem, e.toString());
-//                pendingMediaItems.add(mediaItem);
-              }
+        final URI mediaItemUri = !musicBrainzTrackId.isPresent() 
+                ? uriFor(md5)
+                : uriFor("http://dbtune.org/musicbrainz/resource/track/" + 
+                    musicBrainzTrackId.get().stringValue().replaceAll("^mbz:", ""));
+
+        final Instant lastModifiedTime = getLastModifiedTime(mediaItem.getPath());
+        messageBus.publish(AddStatementsRequest.build()
+                        .with(mediaItemUri, RDF.TYPE, MO.TRACK)
+                        .with(mediaItemUri, MO.AUDIOFILE, literalFor(mediaItem.getRelativePath()))
+                        .with(mediaItemUri, BM.MD5, literalFor(md5.stringValue().replaceAll("^md5id:", "")))
+                        .with(mediaItemUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
+                        .create());
+        embeddedMetadataManager.importMediaItemEmbeddedMetadata(mediaItem, mediaItemUri);
+
+        if (musicBrainzTrackId.isPresent())
+          {
+            dbTuneMetadataManager.importTrackMetadata(mediaItem, mediaItemUri);
+//                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
+          }
+        else
+          {
+            embeddedMetadataManager.importFallbackEmbeddedMetadata(mediaItem, mediaItemUri);
           } 
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private Instant getLastModifiedTime (final @Nonnull Path path)
+      {
+        try
+          {
+            return Files.getLastModifiedTime(path).toInstant();
+          }
+        catch (IOException e) // should never happen
+          {
+            log.warn("Cannot get last modified time for {}: assuming now", path);
+            return Instant.now();
+          }
       }
     
     /*******************************************************************************************************************
@@ -339,6 +332,18 @@ public class DefaultMediaScanner
 //// FIXME       nameCredits.forEach(credit -> addStatement(mediaItemUri, FOAF.MAKER, uriFor(credit.getArtist().getId())));
 //      }
 
+//        catch (IOException e)
+//          {
+//            log.warn("Cannot retrieve MusicBrainz metadata {} ... - {}", mediaItem, e.toString());
+//            embeddedMetadataManager.importFallbackEmbeddedMetadata(mediaItem, mediaItemUri);
+//            messageBus.publish(new AddStatementsRequest(mediaItemUri, BM.FAILED_MB_METADATA, literalFor(timestampProvider.getInstant())));
+//
+//            if (e.getMessage().contains("503")) // throttling error
+//              {
+////                log.warn("Resubmitting {} ... - {}", mediaItem, e.toString());
+////                pendingMediaItems.add(mediaItem);
+//              }
+//          } 
     
     /*******************************************************************************************************************
      *

@@ -38,7 +38,6 @@ import java.util.Set;
 import java.util.function.Predicate;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import javax.xml.bind.JAXBException;
 import org.openrdf.model.Model;
 import org.openrdf.model.Resource;
 import org.openrdf.model.Statement;
@@ -71,6 +70,7 @@ import lombok.RequiredArgsConstructor;
 @Slf4j
 public class DbTuneMetadataManager 
   {
+    // TODO reset
     private final Set<URI> seenArtistUris = Collections.synchronizedSet(new HashSet<URI>());
     
     private final Set<URI> seenRecordUris = Collections.synchronizedSet(new HashSet<URI>());
@@ -135,21 +135,24 @@ public class DbTuneMetadataManager
      * 
      * @param   track                   the track
      * @param   mediaItemUri            the URI of the item
-     * @throws  IOException             when an I/O problem occurred
-     * @throws  JAXBException           when an XML error occurs
-     * @throws  InterruptedException    if the operation is interrupted
-     *
+     * 
      ******************************************************************************************************************/
     public void importTrackMetadata (final @Nonnull MediaItem track, final @Nonnull URI mediaItemUri)
-      throws IOException, JAXBException, InterruptedException 
       { 
-        log.info("importTrackMetadata({}, {})", track, mediaItemUri);
-        
-        final MediaItem.Metadata metadata = track.getMetadata();
-        final String mbGuid = metadata.get(MediaItem.Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
-        messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid)));
-        messageBus.publish(new DownloadRequest(urlFor(mediaItemUri), FOLLOW_REDIRECT));
-        progress.incrementTotalDownloads();
+        try 
+          {
+            log.info("importTrackMetadata({}, {})", track, mediaItemUri);
+            
+            final MediaItem.Metadata metadata = track.getMetadata();
+            final String mbGuid = metadata.get(MediaItem.Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
+            messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid)));
+            messageBus.publish(new DownloadRequest(urlFor(mediaItemUri), FOLLOW_REDIRECT));
+            progress.incrementTotalDownloads();
+          }
+        catch (MalformedURLException e) // shoudn't never happen
+          {
+            log.error("Cannot parse track URL: {}", e.toString());
+          }
       }
     
     /*******************************************************************************************************************
