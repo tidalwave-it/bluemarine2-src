@@ -139,10 +139,9 @@ public class EmbeddedMetadataManager
       {
         log.debug("importTrackMetadata({}, {})", mediaItem, mediaItemUri);
         messageBus.publish(mediaItem.getMetadata().getEntries().stream()
-                                .map(e -> MAPPER.getOrDefault(e.getKey(), (i) -> null).apply(e.getValue()))
-                                .filter(o -> o != null)
-                                .map(pair -> pair.createStatementWithSubject(mediaItemUri))
-                                .collect(toAddStatementsRequest()));
+                        .filter(e -> MAPPER.containsKey(e.getKey()))
+                        .map(e -> MAPPER.get(e.getKey()).apply(e.getValue()).createStatementWithSubject(mediaItemUri))
+                        .collect(toAddStatementsRequest()));
       }
     
     /*******************************************************************************************************************
