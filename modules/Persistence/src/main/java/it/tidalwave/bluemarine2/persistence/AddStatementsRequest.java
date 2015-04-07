@@ -70,7 +70,13 @@ public class AddStatementsRequest
                              final @Nonnull URI predicate,
                              final @Nonnull Value object) 
           {
-            statements.add(factory.createStatement(subject, predicate, object));
+            return with(factory.createStatement(subject, predicate, object));
+          }
+        
+        @Nonnull
+        public Builder with (final @Nonnull Statement statement) 
+          {
+            statements.add(statement);
             return this;
           }
         

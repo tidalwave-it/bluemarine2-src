@@ -59,6 +59,9 @@ import it.tidalwave.bluemarine2.vocabulary.Purl;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.downloader.DownloadRequest.Option.FOLLOW_REDIRECT;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
+import java.util.function.Predicate;
+import lombok.RequiredArgsConstructor;
+import org.openrdf.model.Statement;
 
 /***********************************************************************************************************************
  *
@@ -79,6 +82,30 @@ public class DbTuneMetadataManager
     @Inject
     private MessageBus messageBus;
     
+    // Skip foaf:maker: it would include all the items in the database, not only in our collection
+    // anyway, the required statements have been already added when importing tracks
+    private static final List<URI> VALID_ARTIST_PREDICATES = Arrays.asList(
+                DbTune.ARTIST_TYPE, DbTune.SORT_NAME, Purl.EVENT, RDF.TYPE, RDFS.LABEL, FOAF.NAME);
+        
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @RequiredArgsConstructor
+    static class ArtistStatementFilter implements Predicate<Statement>  
+      {
+        @Nonnull
+        private final URI artistUri;
+        
+        @Override
+        public boolean test (final @Nonnull Statement statement) 
+          {
+            final Resource subject = statement.getSubject();
+            final URI predicate = statement.getPredicate();
+            return (subject.equals(artistUri) && VALID_ARTIST_PREDICATES.contains(predicate));
+          }
+      }
+            
     /*******************************************************************************************************************
      *
      * Imports the DbTune.org metadata for the given track.
@@ -151,11 +178,6 @@ public class DbTuneMetadataManager
           }
       }
     
-    // Skip foaf:maker: it would include all the items in the database, not only in our collection
-    // anyway, the required statements have been already added when importing tracks
-    private static final List<URI> VALID_ARTIST_PREDICATES = Arrays.asList(
-                DbTune.ARTIST_TYPE, DbTune.SORT_NAME, Purl.EVENT, RDF.TYPE, RDFS.LABEL, FOAF.NAME);
-        
     /*******************************************************************************************************************
      *
      *
@@ -169,18 +191,7 @@ public class DbTuneMetadataManager
             final Model model = parseModel(message);
             AddStatementsRequest.Builder builder = AddStatementsRequest.build();
 
-            model.forEach((statement) -> 
-              {
-                final Resource subject = statement.getSubject();
-                final URI predicate = statement.getPredicate();
-                final Value object = statement.getObject();
-                
-                if (subject.equals(artistUri) && VALID_ARTIST_PREDICATES.contains(predicate))
-                  {
-                    // FIXME: should be builder = builder.with()
-                    builder.with(subject, predicate, object);
-                  }
-              });
+            model.stream().filter(new ArtistStatementFilter(artistUri)).forEach(statement -> builder.with(statement));
             
 //  TODO: extract only GUID?       mo:musicbrainz <http://musicbrainz.org/artist/1f9df192-a621-4f54-8850-2c5373b7eac9> ;
 // TODO: download bio event details
@@ -232,12 +243,8 @@ public class DbTuneMetadataManager
             final Model model = parseModel(message);
             AddStatementsRequest.Builder builder = AddStatementsRequest.build();
 
-            // FIXME: filter away some stuff
-            model.filter(recordUri, null, null).forEach((statement) ->
-              {
-                builder.with(statement.getSubject(), statement.getPredicate(), statement.getObject());
-              });
-
+            // FIXME: filter away some more stuff
+            model.filter(recordUri, null, null).forEach(statement -> builder.with(statement));
             messageBus.publish(builder.create());
           }   
         catch (IOException | RDFHandlerException | RDFParseException e)
