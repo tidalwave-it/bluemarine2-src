@@ -31,10 +31,9 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.time.Duration;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.Optional;
-import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import org.openrdf.model.URI;
 import org.openrdf.model.Value;
 import org.openrdf.model.vocabulary.DC;
@@ -64,9 +63,10 @@ public class EmbeddedMetadataManager
     @Inject
     private Md5IdCreator md5IdCreator;
 
-    private final Set<URI> seenArtistUris = Collections.synchronizedSet(new HashSet<URI>());
+    // Set would suffice, but there's no ConcurrentSet
+    private final ConcurrentMap<URI, Boolean> seenArtistUris = new ConcurrentHashMap<>();
     
-    private final Set<URI> seenRecordUris = new HashSet<>();
+    private final ConcurrentMap<URI, Boolean> seenRecordUris = new ConcurrentHashMap<>();
     
     /*******************************************************************************************************************
      *
@@ -153,10 +153,8 @@ public class EmbeddedMetadataManager
           {
             final URI artistUri = uriFor(md5IdCreator.createMd5Id("ARTIST:" + artist.get()));
             
-            // FIXME: concurrent access
-            if (!seenArtistUris.contains(artistUri))
+            if (seenArtistUris.putIfAbsent(artistUri, true) == null)
               {
-                seenArtistUris.add(artistUri);
                 final Value nameLiteral = literalFor(artist.get());
                 builder = builder.with(artistUri, RDF.TYPE, MO.MUSIC_ARTIST)
                                  .with(artistUri, FOAF.NAME, nameLiteral)
@@ -170,10 +168,8 @@ public class EmbeddedMetadataManager
         final String recordTitle = parent.getPath().toFile().getName();
         final URI recordUri = uriFor(md5IdCreator.createMd5Id("CD:" + recordTitle));
                 
-        // FIXME: concurrent
-        if (!seenRecordUris.contains(recordUri))
+        if (seenRecordUris.putIfAbsent(recordUri, true) == null)
           {
-            seenRecordUris.add(recordUri);
             final Value titleLiteral = literalFor(recordTitle);
             builder = builder.with(recordUri, RDF.TYPE, MO.RECORD)
                              .with(recordUri, MO.MEDIA_TYPE, MO.CD)

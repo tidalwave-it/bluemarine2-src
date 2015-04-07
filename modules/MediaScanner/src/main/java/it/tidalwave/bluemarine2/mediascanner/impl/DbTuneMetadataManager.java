@@ -31,10 +31,9 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.function.Predicate;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -55,11 +54,11 @@ import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
 import it.tidalwave.bluemarine2.vocabulary.DbTune;
 import it.tidalwave.bluemarine2.vocabulary.MO;
 import it.tidalwave.bluemarine2.vocabulary.Purl;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.persistence.AddStatementsRequest.*;
 import static it.tidalwave.bluemarine2.downloader.DownloadRequest.Option.FOLLOW_REDIRECT;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
-import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
@@ -70,9 +69,10 @@ import lombok.RequiredArgsConstructor;
 @Slf4j
 public class DbTuneMetadataManager 
   {
-    private final Set<URI> seenArtistUris = Collections.synchronizedSet(new HashSet<URI>());
+    // Set would suffice, but there's no ConcurrentSet
+    private final ConcurrentMap<URI, Boolean> seenArtistUris = new ConcurrentHashMap<>();
     
-    private final Set<URI> seenRecordUris = Collections.synchronizedSet(new HashSet<URI>());
+    private final ConcurrentMap<URI, Boolean> seenRecordUris = new ConcurrentHashMap<>();
     
     @Inject
     private Progress progress;
@@ -253,15 +253,11 @@ public class DbTuneMetadataManager
           {
             log.debug("requestArtistMetadata({})", artistUri);
             
-            synchronized (seenArtistUris)
+            if (seenArtistUris.putIfAbsent(artistUri, true) == null)
               {
-                if (!seenArtistUris.contains(artistUri))
-                  {
-                    seenArtistUris.add(artistUri);
-                    progress.incrementTotalArtists();
-                    progress.incrementTotalDownloads();
-                    messageBus.publish(new DownloadRequest(urlFor(artistUri), FOLLOW_REDIRECT));
-                  }
+                progress.incrementTotalArtists();
+                progress.incrementTotalDownloads();
+                messageBus.publish(new DownloadRequest(urlFor(artistUri), FOLLOW_REDIRECT));
               }
           }
         catch (MalformedURLException e)
@@ -283,15 +279,11 @@ public class DbTuneMetadataManager
           {
             log.debug("requestRecordMetadata({})", recordUri);
             
-            synchronized (seenRecordUris)
+            if (seenRecordUris.putIfAbsent(recordUri, true) == null)
               {
-                if (!seenRecordUris.contains(recordUri))
-                  {
-                    seenRecordUris.add(recordUri);
-                    progress.incrementTotalRecords();
-                    progress.incrementTotalDownloads();
-                    messageBus.publish(new DownloadRequest(urlFor(recordUri), FOLLOW_REDIRECT));
-                  }
+                progress.incrementTotalRecords();
+                progress.incrementTotalDownloads();
+                messageBus.publish(new DownloadRequest(urlFor(recordUri), FOLLOW_REDIRECT));
               }
           }
         catch (MalformedURLException e)
