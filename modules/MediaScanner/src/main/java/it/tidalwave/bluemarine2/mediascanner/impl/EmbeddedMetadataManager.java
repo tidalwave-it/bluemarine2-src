@@ -43,10 +43,15 @@ import org.openrdf.model.vocabulary.RDFS;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
 import it.tidalwave.bluemarine2.vocabulary.MO;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
+import it.tidalwave.util.Key;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
 
 /***********************************************************************************************************************
  *
@@ -93,34 +98,30 @@ public class EmbeddedMetadataManager
       {
         log.debug("importTrackMetadata({}, {})", mediaItem, mediaItemUri);
         
-        final MediaItem.Metadata metadata = mediaItem.getMetadata();
-        final Optional<Integer> trackNumber = metadata.get(MediaItem.Metadata.TRACK);
-        final Optional<Integer> sampleRate = metadata.get(MediaItem.Metadata.SAMPLE_RATE);
-        final Optional<Integer> bitRate = metadata.get(MediaItem.Metadata.BIT_RATE);
-        final Optional<Duration> duration = metadata.get(MediaItem.Metadata.DURATION);
-
+        final Metadata metadata = mediaItem.getMetadata();
+        final Optional<Integer> trackNumber = metadata.get(Metadata.TRACK);
+        final Optional<Integer> sampleRate = metadata.get(Metadata.SAMPLE_RATE);
+        final Optional<Integer> bitRate = metadata.get(Metadata.BIT_RATE);
+        final Optional<Duration> duration = metadata.get(Metadata.DURATION);
+        
+        final Map<Key<?>, Function<AddStatementsRequest.Builder, AddStatementsRequest.Builder>> mapper = new HashMap<>();
+        mapper.put(Metadata.TRACK,       b -> b.with(mediaItemUri, MO.TRACK_NUMBER, literalFor(trackNumber.get())));
+        mapper.put(Metadata.SAMPLE_RATE, b -> b.with(mediaItemUri, MO.SAMPLE_RATE, literalFor(sampleRate.get())));
+        mapper.put(Metadata.BIT_RATE,    b -> b.with(mediaItemUri, MO.BITS_PER_SAMPLE, literalFor(bitRate.get())));
+        mapper.put(Metadata.DURATION,    b -> b.with(mediaItemUri, MO.DURATION, literalFor((float)duration.get().toMillis())));
+                
         AddStatementsRequest.Builder builder = AddStatementsRequest.build();
         
-        if (sampleRate.isPresent())
+        for (final Key<?> key : metadata.getKeys())
           {
-            builder = builder.with(mediaItemUri, MO.SAMPLE_RATE, literalFor(sampleRate.get()));
+            final Optional<?> item = metadata.get(key);
+            
+            if (item.isPresent())
+              {
+                builder = mapper.getOrDefault(key, (i) -> i).apply(builder);
+              } 
           }
 
-        if (bitRate.isPresent())
-          {
-            builder = builder.with(mediaItemUri, MO.BITS_PER_SAMPLE, literalFor(bitRate.get()));
-          }
-
-        if (trackNumber.isPresent())
-          {
-            builder = builder.with(mediaItemUri, MO.TRACK_NUMBER, literalFor(trackNumber.get()));
-          }
-
-        if (duration.isPresent())
-          {
-            builder = builder.with(mediaItemUri, MO.DURATION, literalFor((float)duration.get().toMillis()));
-          }
-        
         messageBus.publish(builder.create());
       }
     
