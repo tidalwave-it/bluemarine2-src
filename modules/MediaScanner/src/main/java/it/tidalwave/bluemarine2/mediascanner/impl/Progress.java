@@ -56,6 +56,8 @@ public class Progress
     private volatile int importedRecords;
     private volatile int totalDownloads;
     private volatile int completedDownloads;
+    
+    // TODO: should also collect errors
 
     public synchronized void reset()
       {
