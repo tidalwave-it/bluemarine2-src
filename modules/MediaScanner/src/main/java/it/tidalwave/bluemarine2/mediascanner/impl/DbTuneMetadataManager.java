@@ -70,7 +70,6 @@ import lombok.RequiredArgsConstructor;
 @Slf4j
 public class DbTuneMetadataManager 
   {
-    // TODO reset
     private final Set<URI> seenArtistUris = Collections.synchronizedSet(new HashSet<URI>());
     
     private final Set<URI> seenRecordUris = Collections.synchronizedSet(new HashSet<URI>());
@@ -129,6 +128,18 @@ public class DbTuneMetadataManager
           }
       }
             
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
+    public void reset()
+      {
+        // FIXME: should load existing URIs from the Persistence
+        seenArtistUris.clear();
+        seenRecordUris.clear();
+      }
+    
     /*******************************************************************************************************************
      *
      * Imports the DbTune.org metadata for the given track.

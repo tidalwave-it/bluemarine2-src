@@ -70,6 +70,18 @@ public class EmbeddedMetadataManager
     
     /*******************************************************************************************************************
      *
+     * 
+     * 
+     ******************************************************************************************************************/
+    public void reset()
+      {
+        // FIXME: should load existing URIs from the Persistence
+        seenArtistUris.clear();
+        seenRecordUris.clear();
+      }
+    
+    /*******************************************************************************************************************
+     *
      * Imports the metadata embedded in a track for the given {@link MediaItem}. It only processes the portion of 
      * metadata which are never superseded by external catalogs (such as sample rate, duration, etc...).
      * 
