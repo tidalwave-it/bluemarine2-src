@@ -66,6 +66,8 @@
     
     <bean class="it.tidalwave.bluemarine2.mediascanner.impl.DbTuneMetadataManager" />
     
+    <bean class="it.tidalwave.bluemarine2.mediascanner.impl.EmbeddedMetadataManager" />
+    
     <bean class="it.tidalwave.util.test.MockInstantProvider" />
     
     <bean class="it.tidalwave.bluemarine2.downloader.impl.DefaultDownloader" />

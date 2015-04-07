@@ -31,24 +31,15 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.time.Instant;
-import java.time.Duration;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.net.MalformedURLException;
 import javax.xml.bind.JAXBException;
 import org.musicbrainz.ns.mmd_2.Artist;
-import org.musicbrainz.ns.mmd_2.ArtistCredit;
-import org.musicbrainz.ns.mmd_2.NameCredit;
-import org.musicbrainz.ns.mmd_2.Recording;
 import org.openrdf.model.Resource;
 import org.openrdf.model.URI;
 import org.openrdf.model.Value;
-import org.openrdf.model.vocabulary.DC;
 import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
@@ -66,7 +57,6 @@ import it.tidalwave.bluemarine2.vocabulary.MO;
 import it.tidalwave.bluemarine2.musicbrainz.impl.DefaultMusicBrainzApi;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import lombok.extern.slf4j.Slf4j;
-import static java.util.stream.Collectors.joining;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 
 /***********************************************************************************************************************
@@ -78,8 +68,6 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 @SimpleMessageSubscriber @Slf4j
 public class DefaultMediaScanner 
   {
-    private final Set<Id> seenArtistIds = Collections.synchronizedSet(new HashSet<Id>());
-    
     // FIXME: inject
     private final DefaultMusicBrainzApi mbApi = new DefaultMusicBrainzApi();
     
@@ -97,6 +85,9 @@ public class DefaultMediaScanner
 
     @Inject
     private DbTuneMetadataManager dbTuneMetadataManager;
+    
+    @Inject
+    private EmbeddedMetadataManager embeddedMetadataManager;
     
     /*******************************************************************************************************************
      *
@@ -263,7 +254,7 @@ public class DefaultMediaScanner
                             .with(mediaItemUri, MO.AUDIOFILE, literalFor(mediaItem.getRelativePath()))
                             .with(mediaItemUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
                             .create());
-            importMediaItemEmbeddedMetadata(mediaItem, mediaItemUri);
+            embeddedMetadataManager.importMediaItemEmbeddedMetadata(mediaItem, mediaItemUri);
             
 //            log.debug(">>>> artistId: {}",         artistIds);
             
@@ -274,7 +265,7 @@ public class DefaultMediaScanner
               }
             else
               {
-                importFallbackEmbeddedMetadata(mediaItem, mediaItemUri);
+                embeddedMetadataManager.importFallbackEmbeddedMetadata(mediaItem, mediaItemUri);
               } 
           }
         catch (JAXBException | MalformedURLException e) 
@@ -284,7 +275,7 @@ public class DefaultMediaScanner
         catch (IOException e)
           {
             log.warn("Cannot retrieve MusicBrainz metadata {} ... - {}", mediaItem, e.toString());
-            importFallbackEmbeddedMetadata(mediaItem, mediaItemUri);
+            embeddedMetadataManager.importFallbackEmbeddedMetadata(mediaItem, mediaItemUri);
             messageBus.publish(new AddStatementsRequest(mediaItemUri, BM.FAILED_MB_METADATA, literalFor(timestampProvider.getInstant())));
 
             if (e.getMessage().contains("503")) // throttling error
@@ -293,49 +284,6 @@ public class DefaultMediaScanner
 //                pendingMediaItems.add(mediaItem);
               }
           } 
-      }
-    
-    /*******************************************************************************************************************
-     *
-     * Imports the embedded metadata for the given {@link MediaItem}.
-     * 
-     * @param   mediaItem               the {@code MediaItem}.
-     * @param   mediaItemUri            the URI of the item
-     * 
-     ******************************************************************************************************************/
-    private void importMediaItemEmbeddedMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI mediaItemUri)
-      {
-        log.info("importMediaItemEmbeddedMetadata({}, {})", mediaItem, mediaItemUri);
-        
-        final Metadata metadata = mediaItem.getMetadata();
-        final Optional<Integer> trackNumber = metadata.get(Metadata.TRACK);
-        final Optional<Integer> sampleRate = metadata.get(Metadata.SAMPLE_RATE);
-        final Optional<Integer> bitRate = metadata.get(Metadata.BIT_RATE);
-        final Optional<Duration> duration = metadata.get(Metadata.DURATION);
-
-        AddStatementsRequest.Builder builder = AddStatementsRequest.build();
-        
-        if (sampleRate.isPresent())
-          {
-            builder = builder.with(mediaItemUri, MO.SAMPLE_RATE, literalFor(sampleRate.get()));
-          }
-
-        if (bitRate.isPresent())
-          {
-            builder = builder.with(mediaItemUri, MO.BITS_PER_SAMPLE, literalFor(bitRate.get()));
-          }
-
-        if (trackNumber.isPresent())
-          {
-            builder = builder.with(mediaItemUri, MO.TRACK_NUMBER, literalFor(trackNumber.get()));
-          }
-
-        if (duration.isPresent())
-          {
-            builder = builder.with(mediaItemUri, MO.DURATION, literalFor((float)duration.get().toMillis()));
-          }
-        
-        messageBus.publish(builder.create());
       }
     
     /*******************************************************************************************************************
@@ -396,61 +344,6 @@ public class DefaultMediaScanner
 //// FIXME       nameCredits.forEach(credit -> addStatement(mediaItemUri, FOAF.MAKER, uriFor(credit.getArtist().getId())));
 //      }
 
-    /*******************************************************************************************************************
-     *
-     * 
-     *
-     ******************************************************************************************************************/
-    private void importFallbackEmbeddedMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI mediaItemUri) 
-      {
-        log.info("importFallbackEmbeddedMetadata({}, {})", mediaItem, mediaItemUri);
-        
-        AddStatementsRequest.Builder builder = AddStatementsRequest.build();
-        final Metadata metadata = mediaItem.getMetadata();  
-        final Optional<String> title = metadata.get(Metadata.TITLE);
-        final Optional<String> artist = metadata.get(Metadata.ARTIST);
-        
-        if (title.isPresent())
-          {
-            final Value titleLiteral = literalFor(title.get());
-            builder = builder.with(mediaItemUri, DC.TITLE, titleLiteral)
-                             .with(mediaItemUri, RDFS.LABEL, titleLiteral);
-          }
-        
-        if (artist.isPresent())
-          {
-            final Id artistId = md5IdCreator.createMd5Id("ARTIST:" + artist.get());
-            final URI artistUri = uriFor(artistId);
-            
-            // FIXME: concurrent access
-            if (!seenArtistIds.contains(artistId))
-              {
-                seenArtistIds.add(artistId);
-                builder = builder.with(artistUri, RDF.TYPE, MO.MUSIC_ARTIST)
-                                 .with(artistUri, FOAF.NAME, literalFor(artist.get()));
-              }
-            
-            builder = builder.with(artistUri, FOAF.MAKER, mediaItemUri);
-          }
-        
-        final MediaFolder parent = mediaItem.getParent();
-        final String cdTitle = parent.getPath().toFile().getName();
-        final URI cdUri = uriFor(md5IdCreator.createMd5Id("CD:" + cdTitle));
-                
-        // FIXME: concurrent
-        if (!seenCdNames.contains(cdTitle))
-          {
-            seenCdNames.add(cdTitle);
-            builder = builder.with(cdUri, RDF.TYPE, MO.RECORD)
-                             .with(cdUri, MO.MEDIA_TYPE, MO.CD)
-                             .with(cdUri, DC.TITLE, literalFor(cdTitle))
-                             .with(cdUri, MO.TRACK_COUNT, literalFor(parent.findChildren().count()));
-          }
-        
-        messageBus.publish(builder.with(cdUri, MO._TRACK, mediaItemUri).create());
-      }
-    
-    private Set<String> seenCdNames = new HashSet<>();
     
     /*******************************************************************************************************************
      *
