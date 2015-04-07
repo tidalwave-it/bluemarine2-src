@@ -146,9 +146,10 @@ public class EmbeddedMetadataManager
             if (!seenArtistUris.contains(artistUri))
               {
                 seenArtistUris.add(artistUri);
+                final Value nameLiteral = literalFor(artist.get());
                 builder = builder.with(artistUri, RDF.TYPE, MO.MUSIC_ARTIST)
-                        // FIXME: also RDFS.LABEL
-                                 .with(artistUri, FOAF.NAME, literalFor(artist.get()));
+                                 .with(artistUri, FOAF.NAME, nameLiteral)
+                                 .with(artistUri, RDFS.LABEL, nameLiteral);
               }
             
             builder = builder.with(artistUri, FOAF.MAKER, mediaItemUri);
@@ -162,10 +163,11 @@ public class EmbeddedMetadataManager
         if (!seenRecordUris.contains(recordUri))
           {
             seenRecordUris.add(recordUri);
+            final Value titleLiteral = literalFor(recordTitle);
             builder = builder.with(recordUri, RDF.TYPE, MO.RECORD)
                              .with(recordUri, MO.MEDIA_TYPE, MO.CD)
-                             .with(recordUri, DC.TITLE, literalFor(recordTitle))
-                        // FIXME: also RDFS.LABEL
+                             .with(recordUri, DC.TITLE, titleLiteral)
+                             .with(recordUri, RDFS.LABEL, titleLiteral)
                              .with(recordUri, MO.TRACK_COUNT, literalFor(parent.findChildren().count()));
           }
         
