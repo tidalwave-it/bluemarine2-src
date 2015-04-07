@@ -38,7 +38,6 @@ import java.util.function.Predicate;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import org.openrdf.model.Model;
-import org.openrdf.model.Resource;
 import org.openrdf.model.Statement;
 import org.openrdf.model.URI;
 import org.openrdf.model.vocabulary.FOAF;
@@ -82,13 +81,12 @@ public class DbTuneMetadataManager
     
     // Skip foaf:maker: it would include all the items in the database, not only in our collection
     // anyway, the required statements have been already added when importing tracks
-    private static final List<URI> VALID_ARTIST_PREDICATES = Arrays.asList(
-                DbTune.ARTIST_TYPE, DbTune.SORT_NAME, Purl.EVENT, RDF.TYPE, RDFS.LABEL, FOAF.NAME);
-            
+    private static final List<URI> VALID_ARTIST_PREDICATES_FOR_SUBJECT = Arrays.asList(
+            DbTune.ARTIST_TYPE, DbTune.SORT_NAME, Purl.EVENT, Purl.COLLABORATES_WITH, RDF.TYPE, RDFS.LABEL, FOAF.NAME);
+    
 //  TODO: extract only GUID?       mo:musicbrainz <http://musicbrainz.org/artist/1f9df192-a621-4f54-8850-2c5373b7eac9> ;
 // TODO: download bio event details
                 
-// TODO: rel:collaboratesWith
 // TODO      =       <http://www.bbc.co.uk/music/artists/83e71a21-caf7-4e48-8ff7-6512d51e88a3#artist> , <http://dbpedia.org/resource/Henry_Mancini> ;
                 /*
                 <http://dbtune.org/musicbrainz/resource/performance/98398> <http://purl.org/NET/c4dm/event.owl#agent> <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> ;
@@ -122,9 +120,8 @@ public class DbTuneMetadataManager
         @Override
         public boolean test (final @Nonnull Statement statement) 
           {
-            final Resource subject = statement.getSubject();
             final URI predicate = statement.getPredicate();
-            return (subject.equals(artistUri) && VALID_ARTIST_PREDICATES.contains(predicate));
+            return (statement.getSubject().equals(artistUri) && VALID_ARTIST_PREDICATES_FOR_SUBJECT.contains(predicate));
           }
       }
             
@@ -202,6 +199,8 @@ public class DbTuneMetadataManager
             final Model model = parseModel(message);
             messageBus.publish(model.stream().filter(new ArtistStatementFilter(artistUri))
                                              .collect(toAddStatementsRequest()));
+            model.filter(artistUri, Purl.COLLABORATES_WITH, null)
+                                    .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
           }   
         catch (IOException | RDFHandlerException | RDFParseException e)
           {

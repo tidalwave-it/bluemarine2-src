@@ -130,6 +130,7 @@ public class DefaultPersistence
         writer.handleNamespace("owl",   "http://www.w3.org/2002/07/owl#");
         writer.handleNamespace("mo",    "http://purl.org/ontology/mo/");
         writer.handleNamespace("rdfs",  "http://www.w3.org/2000/01/rdf-schema#");
+        writer.handleNamespace("rel",   "http://purl.org/vocab/relationship/");
         writer.handleNamespace("vocab", "http://dbtune.org/musicbrainz/resource/vocab/");
         writer.handleNamespace("xs",    "http://www.w3.org/2001/XMLSchema#");
 
