@@ -48,7 +48,6 @@ import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
 import org.openrdf.rio.RDFHandlerException;
 import org.openrdf.rio.RDFParseException;
-import it.tidalwave.util.Id;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;
@@ -70,9 +69,9 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 @Slf4j
 public class DbTuneMetadataManager 
   {
-    private final Set<Id> seenArtistIds = Collections.synchronizedSet(new HashSet<Id>());
+    private final Set<URI> seenArtistUris = Collections.synchronizedSet(new HashSet<URI>());
     
-    private final Set<Id> seenRecordIds = Collections.synchronizedSet(new HashSet<Id>());
+    private final Set<URI> seenRecordUris = Collections.synchronizedSet(new HashSet<URI>());
     
     @Inject
     private Progress progress;
@@ -109,7 +108,6 @@ public class DbTuneMetadataManager
      *
      ******************************************************************************************************************/
     public void onTrackMetadataDownloadComplete (final @Nonnull DownloadComplete message) 
-      throws InterruptedException, IOException
       {
         try 
           {
@@ -147,9 +145,9 @@ public class DbTuneMetadataManager
 
             messageBus.publish(builder.create());
           }   
-        catch (RDFHandlerException | RDFParseException ex)
+        catch (IOException | RDFHandlerException | RDFParseException e)
           {
-            log.error("Cannot parse track: {}", ex.toString());
+            log.error("Cannot parse track: {}", e.toString());
             log.error("Cannot parse track: {}", new String(message.getBytes()));
           }
       }
@@ -159,7 +157,6 @@ public class DbTuneMetadataManager
      *
      ******************************************************************************************************************/
     public void onArtistMetadataDownloadComplete (final @Nonnull DownloadComplete message) 
-      throws InterruptedException, IOException
       {
         List<URI> validPredicates = Arrays.asList(
                 DbTune.ARTIST_TYPE, DbTune.SORT_NAME, Purl.EVENT, RDF.TYPE, RDFS.LABEL, FOAF.NAME);
@@ -223,9 +220,9 @@ public class DbTuneMetadataManager
 
             messageBus.publish(builder.create());
           }   
-        catch (RDFHandlerException | RDFParseException ex)
+        catch (IOException | RDFHandlerException | RDFParseException e)
           {
-            log.error("Cannot parse artist: {}", ex.toString());
+            log.error("Cannot parse artist: {}", e.toString());
             log.error("Cannot parse artist: {}", new String(message.getBytes()));
           }
         finally
@@ -239,7 +236,6 @@ public class DbTuneMetadataManager
      *
      ******************************************************************************************************************/
     public void onRecordMetadataDownloadComplete (final @Nonnull DownloadComplete message)
-      throws IOException
       {
         try 
           {
@@ -256,9 +252,9 @@ public class DbTuneMetadataManager
 
             messageBus.publish(builder.create());
           }   
-        catch (RDFHandlerException | RDFParseException ex)
+        catch (IOException | RDFHandlerException | RDFParseException e)
           {
-            log.error("Cannot parse record: {}", ex.toString());
+            log.error("Cannot parse record: {}", e.toString());
             log.error("Cannot parse record: {}", new String(message.getBytes()));
           }
         finally
@@ -277,13 +273,11 @@ public class DbTuneMetadataManager
     private void requestArtistMetadata (final @Nonnull URI artistUri)
       throws MalformedURLException
       {
-        synchronized (seenArtistIds)
+        synchronized (seenArtistUris)
           {
-            final Id artistId = new Id(artistUri.stringValue());
-            
-            if (!seenArtistIds.contains(artistId))
+            if (!seenArtistUris.contains(artistUri))
               {
-                seenArtistIds.add(artistId);
+                seenArtistUris.add(artistUri);
                 progress.incrementTotalArtists();
                 progress.incrementTotalDownloads();
                 messageBus.publish(new DownloadRequest(new URL(artistUri.toString()), FOLLOW_REDIRECT));
@@ -301,13 +295,11 @@ public class DbTuneMetadataManager
     private void requestRecordMetadata (final @Nonnull URI recordUri)
       throws MalformedURLException
       {
-        synchronized (seenRecordIds)
+        synchronized (seenRecordUris)
           {
-            final Id recordId = new Id(recordUri.stringValue());
-            
-            if (!seenRecordIds.contains(recordId))
+            if (!seenRecordUris.contains(recordUri))
               {
-                seenRecordIds.add(recordId);
+                seenRecordUris.add(recordUri);
                 progress.incrementTotalRecords();
                 progress.incrementTotalDownloads();
                 messageBus.publish(new DownloadRequest(new URL(recordUri.toString()), FOLLOW_REDIRECT));
