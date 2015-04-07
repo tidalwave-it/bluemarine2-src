@@ -272,7 +272,7 @@ public class DefaultMediaScanner
         catch (IOException e) // should never happen
           {
             log.warn("Cannot get last modified time for {}: assuming now", path);
-            return Instant.now();
+            return timestampProvider.getInstant();
           }
       }
     
