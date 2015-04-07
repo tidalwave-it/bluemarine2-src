@@ -76,7 +76,7 @@ public class DefaultMediaScanner
     private EmbeddedMetadataManager embeddedMetadataManager;
     
     @Inject
-    private Progress progress;
+    private ProgressHandler progress;
 
     @Inject
     private MessageBus messageBus;

@@ -41,7 +41,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @ToString @Slf4j
-public class Progress
+public class ProgressHandler
   {
     @Inject
     private MessageBus messageBus;

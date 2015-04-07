@@ -75,7 +75,7 @@ public class DbTuneMetadataManager
     private final ConcurrentMap<URI, Boolean> seenRecordUris = new ConcurrentHashMap<>();
     
     @Inject
-    private Progress progress;
+    private ProgressHandler progress;
     
     @Inject
     private MessageBus messageBus;

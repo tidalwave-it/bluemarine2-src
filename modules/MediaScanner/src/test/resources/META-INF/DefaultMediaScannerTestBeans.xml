@@ -62,7 +62,7 @@
         
     <bean class="it.tidalwave.bluemarine2.mediascanner.impl.DefaultMediaScanner" />
     
-    <bean class="it.tidalwave.bluemarine2.mediascanner.impl.Progress" />
+    <bean class="it.tidalwave.bluemarine2.mediascanner.impl.ProgressHandler" />
     
     <bean class="it.tidalwave.bluemarine2.mediascanner.impl.DbTuneMetadataManager" />
     
