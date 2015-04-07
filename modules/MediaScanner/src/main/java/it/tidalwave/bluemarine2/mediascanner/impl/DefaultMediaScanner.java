@@ -242,20 +242,16 @@ public class DefaultMediaScanner
               {
                 mediaItemUri = uriFor("http://dbtune.org/musicbrainz/resource/track/" + 
                         musicBrainzTrackId.get().stringValue().replaceAll("^mbz:", ""));
-                messageBus.publish(new AddStatementsRequest(mediaItemUri, 
-                                                            BM.MD5, 
-                                                            literalFor(md5.stringValue().replaceAll("^md5id:", ""))));
               }
             
             final Instant lastModifiedTime = Files.getLastModifiedTime(mediaItem.getPath()).toInstant();
             messageBus.publish(AddStatementsRequest.build()
                             .with(mediaItemUri, RDF.TYPE, MO.TRACK)
                             .with(mediaItemUri, MO.AUDIOFILE, literalFor(mediaItem.getRelativePath()))
+                            .with(mediaItemUri, BM.MD5, literalFor(md5.stringValue().replaceAll("^md5id:", "")))
                             .with(mediaItemUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
                             .create());
             embeddedMetadataManager.importMediaItemEmbeddedMetadata(mediaItem, mediaItemUri);
-            
-//            log.debug(">>>> artistId: {}",         artistIds);
             
             if (musicBrainzTrackId.isPresent())
               {
