@@ -57,17 +57,17 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 @Slf4j
 public class EmbeddedMetadataManager 
   {
+    // Set would suffice, but there's no ConcurrentSet
+    private final ConcurrentMap<URI, Boolean> seenArtistUris = new ConcurrentHashMap<>();
+    
+    private final ConcurrentMap<URI, Boolean> seenRecordUris = new ConcurrentHashMap<>();
+    
     @Inject
     private MessageBus messageBus;
     
     @Inject
     private Md5IdCreator md5IdCreator;
 
-    // Set would suffice, but there's no ConcurrentSet
-    private final ConcurrentMap<URI, Boolean> seenArtistUris = new ConcurrentHashMap<>();
-    
-    private final ConcurrentMap<URI, Boolean> seenRecordUris = new ConcurrentHashMap<>();
-    
     /*******************************************************************************************************************
      *
      * 
