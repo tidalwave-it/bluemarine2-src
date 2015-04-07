@@ -28,12 +28,15 @@
  */
 package it.tidalwave.bluemarine2.persistence;
 
+import it.tidalwave.util.spi.ArrayListCollectorSupport;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collector;
 import org.openrdf.model.Resource;
 import org.openrdf.model.Statement;
 import org.openrdf.model.URI;
@@ -98,5 +101,18 @@ public class AddStatementsRequest
     public static Builder build() 
       {
         return new Builder();
+      }
+    
+    @Nonnull
+    public static Collector<Statement, List<Statement>, AddStatementsRequest> toAddStatementsRequest()
+      {
+        return new ArrayListCollectorSupport<Statement, AddStatementsRequest>()
+          {
+            @Override @Nonnull
+            public Function<List<Statement>, AddStatementsRequest> finisher() 
+              {
+                return statements -> new AddStatementsRequest(statements);
+              }
+          };  
       }
   }

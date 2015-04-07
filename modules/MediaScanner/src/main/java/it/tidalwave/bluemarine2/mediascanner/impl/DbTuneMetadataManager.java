@@ -35,14 +35,14 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
 import javax.xml.bind.JAXBException;
 import org.openrdf.model.Model;
 import org.openrdf.model.Resource;
+import org.openrdf.model.Statement;
 import org.openrdf.model.URI;
-import org.openrdf.model.Value;
 import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
@@ -57,11 +57,10 @@ import it.tidalwave.bluemarine2.vocabulary.DbTune;
 import it.tidalwave.bluemarine2.vocabulary.MO;
 import it.tidalwave.bluemarine2.vocabulary.Purl;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.persistence.AddStatementsRequest.*;
 import static it.tidalwave.bluemarine2.downloader.DownloadRequest.Option.FOLLOW_REDIRECT;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
-import java.util.function.Predicate;
 import lombok.RequiredArgsConstructor;
-import org.openrdf.model.Statement;
 
 /***********************************************************************************************************************
  *
@@ -86,6 +85,30 @@ public class DbTuneMetadataManager
     // anyway, the required statements have been already added when importing tracks
     private static final List<URI> VALID_ARTIST_PREDICATES = Arrays.asList(
                 DbTune.ARTIST_TYPE, DbTune.SORT_NAME, Purl.EVENT, RDF.TYPE, RDFS.LABEL, FOAF.NAME);
+            
+//  TODO: extract only GUID?       mo:musicbrainz <http://musicbrainz.org/artist/1f9df192-a621-4f54-8850-2c5373b7eac9> ;
+// TODO: download bio event details
+                
+// TODO: rel:collaboratesWith
+// TODO      =       <http://www.bbc.co.uk/music/artists/83e71a21-caf7-4e48-8ff7-6512d51e88a3#artist> , <http://dbpedia.org/resource/Henry_Mancini> ;
+                /*
+                <http://dbtune.org/musicbrainz/resource/performance/98398> <http://purl.org/NET/c4dm/event.owl#agent> <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> ;
+                mo:performer <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> .
+                mo:orchestra <http://dbtune.org/musicbrainz/resource/artist/98e4313e-dfb0-4084-805c-3e42ef9301d0> ;
+                mo:symphony_orchestra <http://dbtune.org/musicbrainz/resource/artist/98e4313e-dfb0-4084-805c-3e42ef9301d0> .
+                mo:soprano <http://dbtune.org/musicbrainz/resource/artist/361fcd46-41c5-4503-aa43-a87937583909> .
+                mo:orchestra <http://dbtune.org/musicbrainz/resource/artist/5c8fd1e4-574d-495f-9a24-2dfaadf2e8c0> .
+                mo:conductor <http://dbtune.org/musicbrainz/resource/artist/fa39bc82-9b27-4bbb-9425-d719a72e09ac> .
+                mo:lead_singer <http://dbtune.org/musicbrainz/resource/artist/7cce3b8e-623c-4078-b079-837cbcf638c4> ;
+                mo:singer <http://dbtune.org/musicbrainz/resource/artist/7cce3b8e-623c-4078-b079-837cbcf638c4> .
+                mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+                mo:chamber_orchestra <http://dbtune.org/musicbrainz/resource/artist/3a9f0e21-5796-4f04-bd4c-3deafd59ad80> ;
+                mo:background_singer <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> ;
+                
+                escludi sparql
+                
+                <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Ludwig_van_Beethoven> , <http://de.wikipedia.org/wiki/Ludwig_van_Beethoven> , <http://www.bbc.co.uk/music/artists/1f9df192-a621-4f54-8850-2c5373b7eac9#artist> ;
+            */         
         
     /*******************************************************************************************************************
      *
@@ -140,36 +163,11 @@ public class DbTuneMetadataManager
             log.info("onTrackMetadataDownloadComplete({})", message);
             final URI trackUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
-            AddStatementsRequest.Builder builder = AddStatementsRequest.build();
-
-            model.filter(trackUri, FOAF.MAKER, null).forEach((statement) ->
-              {
-                try
-                  {
-                    final URI artistUri = (URI)statement.getObject();
-                    //                      // FIXME: should be builder = builder.with()
-                    builder.with(statement.getSubject(), statement.getPredicate(), artistUri);
-                    requestArtistMetadata(artistUri);
-                  }
-                catch (MalformedURLException e)
-                  {
-                    log.error("Malformed URL: {}", e);
-                  }
-              });
-            
-            model.filter(null, MO._TRACK, trackUri).forEach((statement) ->
-              {
-                try
-                  {
-                    requestRecordMetadata((URI)statement.getSubject());   
-                  }
-                catch (MalformedURLException e)
-                  {
-                    log.error("Malformed URL: {}", e);
-                  }
-              });
-
-            messageBus.publish(builder.create());
+            messageBus.publish(model.filter(trackUri, FOAF.MAKER, null).stream()
+                                    .peek(statement -> requestArtistMetadata((URI)statement.getObject()))
+                                    .collect(toAddStatementsRequest()));
+            model.filter(null, MO._TRACK, trackUri)
+                                    .forEach(statement -> requestRecordMetadata((URI)statement.getSubject()));
           }   
         catch (IOException | RDFHandlerException | RDFParseException e)
           {
@@ -189,35 +187,8 @@ public class DbTuneMetadataManager
             log.info("onArtistMetadataDownloadComplete({})", message);
             final URI artistUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
-            AddStatementsRequest.Builder builder = AddStatementsRequest.build();
-
-            model.stream().filter(new ArtistStatementFilter(artistUri)).forEach(statement -> builder.with(statement));
-            
-//  TODO: extract only GUID?       mo:musicbrainz <http://musicbrainz.org/artist/1f9df192-a621-4f54-8850-2c5373b7eac9> ;
-// TODO: download bio event details
-                
-// TODO: rel:collaboratesWith
-// TODO      =       <http://www.bbc.co.uk/music/artists/83e71a21-caf7-4e48-8ff7-6512d51e88a3#artist> , <http://dbpedia.org/resource/Henry_Mancini> ;
-                /*
-                <http://dbtune.org/musicbrainz/resource/performance/98398> <http://purl.org/NET/c4dm/event.owl#agent> <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> ;
-                mo:performer <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> .
-                mo:orchestra <http://dbtune.org/musicbrainz/resource/artist/98e4313e-dfb0-4084-805c-3e42ef9301d0> ;
-                mo:symphony_orchestra <http://dbtune.org/musicbrainz/resource/artist/98e4313e-dfb0-4084-805c-3e42ef9301d0> .
-                mo:soprano <http://dbtune.org/musicbrainz/resource/artist/361fcd46-41c5-4503-aa43-a87937583909> .
-                mo:orchestra <http://dbtune.org/musicbrainz/resource/artist/5c8fd1e4-574d-495f-9a24-2dfaadf2e8c0> .
-                mo:conductor <http://dbtune.org/musicbrainz/resource/artist/fa39bc82-9b27-4bbb-9425-d719a72e09ac> .
-                mo:lead_singer <http://dbtune.org/musicbrainz/resource/artist/7cce3b8e-623c-4078-b079-837cbcf638c4> ;
-                mo:singer <http://dbtune.org/musicbrainz/resource/artist/7cce3b8e-623c-4078-b079-837cbcf638c4> .
-                mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
-                mo:chamber_orchestra <http://dbtune.org/musicbrainz/resource/artist/3a9f0e21-5796-4f04-bd4c-3deafd59ad80> ;
-                mo:background_singer <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> ;
-                
-                escludi sparql
-                
-                <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Ludwig_van_Beethoven> , <http://de.wikipedia.org/wiki/Ludwig_van_Beethoven> , <http://www.bbc.co.uk/music/artists/1f9df192-a621-4f54-8850-2c5373b7eac9#artist> ;
-            */         
-
-            messageBus.publish(builder.create());
+            messageBus.publish(model.stream().filter(new ArtistStatementFilter(artistUri))
+                                             .collect(toAddStatementsRequest()));
           }   
         catch (IOException | RDFHandlerException | RDFParseException e)
           {
@@ -241,11 +212,8 @@ public class DbTuneMetadataManager
             log.info("onRecordMetadataDownloadComplete({})", message);
             final URI recordUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
-            AddStatementsRequest.Builder builder = AddStatementsRequest.build();
-
-            // FIXME: filter away some more stuff
-            model.filter(recordUri, null, null).forEach(statement -> builder.with(statement));
-            messageBus.publish(builder.create());
+             // FIXME: filter away some more stuff
+            messageBus.publish(model.filter(recordUri, null, null).stream().collect(toAddStatementsRequest()));
           }   
         catch (IOException | RDFHandlerException | RDFParseException e)
           {
@@ -266,17 +234,25 @@ public class DbTuneMetadataManager
      *
      ******************************************************************************************************************/
     private void requestArtistMetadata (final @Nonnull URI artistUri)
-      throws MalformedURLException
       {
-        synchronized (seenArtistUris)
+        try
           {
-            if (!seenArtistUris.contains(artistUri))
+            log.debug("requestArtistMetadata({})", artistUri);
+            
+            synchronized (seenArtistUris)
               {
-                seenArtistUris.add(artistUri);
-                progress.incrementTotalArtists();
-                progress.incrementTotalDownloads();
-                messageBus.publish(new DownloadRequest(urlFor(artistUri), FOLLOW_REDIRECT));
+                if (!seenArtistUris.contains(artistUri))
+                  {
+                    seenArtistUris.add(artistUri);
+                    progress.incrementTotalArtists();
+                    progress.incrementTotalDownloads();
+                    messageBus.publish(new DownloadRequest(urlFor(artistUri), FOLLOW_REDIRECT));
+                  }
               }
+          }
+        catch (MalformedURLException e)
+          {
+            log.error("Malformed URL: {}", e);
           }
       }
     
@@ -288,17 +264,25 @@ public class DbTuneMetadataManager
      *
      ******************************************************************************************************************/
     private void requestRecordMetadata (final @Nonnull URI recordUri)
-      throws MalformedURLException
       {
-        synchronized (seenRecordUris)
+        try
           {
-            if (!seenRecordUris.contains(recordUri))
+            log.debug("requestRecordMetadata({})", recordUri);
+            
+            synchronized (seenRecordUris)
               {
-                seenRecordUris.add(recordUri);
-                progress.incrementTotalRecords();
-                progress.incrementTotalDownloads();
-                messageBus.publish(new DownloadRequest(urlFor(recordUri), FOLLOW_REDIRECT));
+                if (!seenRecordUris.contains(recordUri))
+                  {
+                    seenRecordUris.add(recordUri);
+                    progress.incrementTotalRecords();
+                    progress.incrementTotalDownloads();
+                    messageBus.publish(new DownloadRequest(urlFor(recordUri), FOLLOW_REDIRECT));
+                  }
               }
+          }
+        catch (MalformedURLException e)
+          {
+            log.error("Malformed URL: {}", e);
           }
       }
   }
