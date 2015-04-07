@@ -45,18 +45,18 @@ import org.openrdf.model.vocabulary.DC;
 import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
-import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.util.Key;
+import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
 import it.tidalwave.bluemarine2.vocabulary.MO;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 import static it.tidalwave.bluemarine2.persistence.AddStatementsRequest.*;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
 
 /***********************************************************************************************************************
  *
@@ -92,6 +92,7 @@ public class EmbeddedMetadataManager
         @Nonnull
         private final Value object;
         
+        @Nonnull
         public Statement createStatementWithSubject (final @Nonnull URI subject)
           {
             return ValueFactoryImpl.getInstance().createStatement(subject, predicate, object);
@@ -137,10 +138,8 @@ public class EmbeddedMetadataManager
     public void importTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI mediaItemUri)
       {
         log.debug("importTrackMetadata({}, {})", mediaItem, mediaItemUri);
-        
-        final Metadata metadata = mediaItem.getMetadata();
-        messageBus.publish(metadata.getKeys().stream()
-                                .map(key -> MAPPER.getOrDefault(key, (i) -> null).apply(metadata.get(key).get()))
+        messageBus.publish(mediaItem.getMetadata().getEntries().stream()
+                                .map(e -> MAPPER.getOrDefault(e.getKey(), (i) -> null).apply(e.getValue()))
                                 .filter(o -> o != null)
                                 .map(pair -> pair.createStatementWithSubject(mediaItemUri))
                                 .collect(toAddStatementsRequest()));
