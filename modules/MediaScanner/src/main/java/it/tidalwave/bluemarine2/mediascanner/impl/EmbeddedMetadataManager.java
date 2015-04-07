@@ -112,9 +112,7 @@ public class EmbeddedMetadataManager
         mapper.put(Metadata.DURATION,    o -> c(mediaItemUri, MO.DURATION, literalFor((float)((Duration)o).toMillis())));
                 
         messageBus.publish(metadata.getKeys().stream()
-                .map(key -> metadata.containsKey(key) 
-                                ? mapper.getOrDefault(key, (i) -> null).apply(metadata.get(key).get()) 
-                                : null)
+                .map(key -> mapper.getOrDefault(key, (i) -> null).apply(metadata.get(key).get()))
                 .filter(o -> o != null)
                 .collect(toAddStatementsRequest()));
       }
