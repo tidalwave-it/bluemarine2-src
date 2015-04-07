@@ -65,21 +65,22 @@ public class EmbeddedMetadataManager
     @Inject
     private Md5IdCreator md5IdCreator;
 
-    private final Set<Id> seenArtistIds = Collections.synchronizedSet(new HashSet<Id>());
+    private final Set<URI> seenArtistUris = Collections.synchronizedSet(new HashSet<URI>());
     
-    private final Set<String> seenCdNames = new HashSet<>();
+    private final Set<URI> seenRecordUris = new HashSet<>();
     
     /*******************************************************************************************************************
      *
-     * Imports the embedded metadata for the given {@link MediaItem}.
+     * Imports the metadata embedded in a track for the given {@link MediaItem}. It only processes the portion of 
+     * metadata which are never superseded by external catalogs (such as sample rate, duration, etc...).
      * 
      * @param   mediaItem               the {@code MediaItem}.
      * @param   mediaItemUri            the URI of the item
      * 
      ******************************************************************************************************************/
-    public void importMediaItemEmbeddedMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI mediaItemUri)
+    public void importTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI mediaItemUri)
       {
-        log.info("importMediaItemEmbeddedMetadata({}, {})", mediaItem, mediaItemUri);
+        log.info("importTrackMetadata({}, {})", mediaItem, mediaItemUri);
         
         final MediaItem.Metadata metadata = mediaItem.getMetadata();
         final Optional<Integer> trackNumber = metadata.get(MediaItem.Metadata.TRACK);
@@ -114,12 +115,16 @@ public class EmbeddedMetadataManager
     
     /*******************************************************************************************************************
      *
+     * Imports all the remaining metadata embedded in a track for the given {@link MediaItem}. This method is called
+     * when we failed to match a track to an external catalog.
      * 
+     * @param   mediaItem               the {@code MediaItem}.
+     * @param   mediaItemUri            the URI of the item
      *
      ******************************************************************************************************************/
-    public void importFallbackEmbeddedMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI mediaItemUri) 
+    public void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI mediaItemUri) 
       {
-        log.info("importFallbackEmbeddedMetadata({}, {})", mediaItem, mediaItemUri);
+        log.info("importFallbackTrackMetadata({}, {})", mediaItem, mediaItemUri);
         
         AddStatementsRequest.Builder builder = AddStatementsRequest.build();
         final MediaItem.Metadata metadata = mediaItem.getMetadata();  
@@ -135,14 +140,14 @@ public class EmbeddedMetadataManager
         
         if (artist.isPresent())
           {
-            final Id artistId = md5IdCreator.createMd5Id("ARTIST:" + artist.get());
-            final URI artistUri = uriFor(artistId);
+            final URI artistUri = uriFor(md5IdCreator.createMd5Id("ARTIST:" + artist.get()));
             
             // FIXME: concurrent access
-            if (!seenArtistIds.contains(artistId))
+            if (!seenArtistUris.contains(artistUri))
               {
-                seenArtistIds.add(artistId);
+                seenArtistUris.add(artistUri);
                 builder = builder.with(artistUri, RDF.TYPE, MO.MUSIC_ARTIST)
+                        // FIXME: also RDFS.LABEL
                                  .with(artistUri, FOAF.NAME, literalFor(artist.get()));
               }
             
@@ -150,19 +155,20 @@ public class EmbeddedMetadataManager
           }
         
         final MediaFolder parent = mediaItem.getParent();
-        final String cdTitle = parent.getPath().toFile().getName();
-        final URI cdUri = uriFor(md5IdCreator.createMd5Id("CD:" + cdTitle));
+        final String recordTitle = parent.getPath().toFile().getName();
+        final URI recordUri = uriFor(md5IdCreator.createMd5Id("CD:" + recordTitle));
                 
         // FIXME: concurrent
-        if (!seenCdNames.contains(cdTitle))
+        if (!seenRecordUris.contains(recordUri))
           {
-            seenCdNames.add(cdTitle);
-            builder = builder.with(cdUri, RDF.TYPE, MO.RECORD)
-                             .with(cdUri, MO.MEDIA_TYPE, MO.CD)
-                             .with(cdUri, DC.TITLE, literalFor(cdTitle))
-                             .with(cdUri, MO.TRACK_COUNT, literalFor(parent.findChildren().count()));
+            seenRecordUris.add(recordUri);
+            builder = builder.with(recordUri, RDF.TYPE, MO.RECORD)
+                             .with(recordUri, MO.MEDIA_TYPE, MO.CD)
+                             .with(recordUri, DC.TITLE, literalFor(recordTitle))
+                        // FIXME: also RDFS.LABEL
+                             .with(recordUri, MO.TRACK_COUNT, literalFor(parent.findChildren().count()));
           }
         
-        messageBus.publish(builder.with(cdUri, MO._TRACK, mediaItemUri).create());
+        messageBus.publish(builder.with(recordUri, MO._TRACK, mediaItemUri).create());
       }
   }

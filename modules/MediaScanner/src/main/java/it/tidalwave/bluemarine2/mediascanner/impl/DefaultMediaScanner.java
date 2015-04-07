@@ -243,7 +243,7 @@ public class DefaultMediaScanner
                         .with(mediaItemUri, BM.MD5, literalFor(md5.stringValue().replaceAll("^md5id:", "")))
                         .with(mediaItemUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
                         .create());
-        embeddedMetadataManager.importMediaItemEmbeddedMetadata(mediaItem, mediaItemUri);
+        embeddedMetadataManager.importTrackMetadata(mediaItem, mediaItemUri);
 
         if (musicBrainzTrackId.isPresent())
           {
@@ -252,7 +252,7 @@ public class DefaultMediaScanner
           }
         else
           {
-            embeddedMetadataManager.importFallbackEmbeddedMetadata(mediaItem, mediaItemUri);
+            embeddedMetadataManager.importFallbackTrackMetadata(mediaItem, mediaItemUri);
           } 
       }
     
@@ -335,7 +335,7 @@ public class DefaultMediaScanner
 //        catch (IOException e)
 //          {
 //            log.warn("Cannot retrieve MusicBrainz metadata {} ... - {}", mediaItem, e.toString());
-//            embeddedMetadataManager.importFallbackEmbeddedMetadata(mediaItem, mediaItemUri);
+//            embeddedMetadataManager.importFallbackTrackMetadata(mediaItem, mediaItemUri);
 //            messageBus.publish(new AddStatementsRequest(mediaItemUri, BM.FAILED_MB_METADATA, literalFor(timestampProvider.getInstant())));
 //
 //            if (e.getMessage().contains("503")) // throttling error
