@@ -91,7 +91,7 @@ public class EmbeddedMetadataManager
      ******************************************************************************************************************/
     public void importTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI mediaItemUri)
       {
-        log.info("importTrackMetadata({}, {})", mediaItem, mediaItemUri);
+        log.debug("importTrackMetadata({}, {})", mediaItem, mediaItemUri);
         
         final MediaItem.Metadata metadata = mediaItem.getMetadata();
         final Optional<Integer> trackNumber = metadata.get(MediaItem.Metadata.TRACK);
@@ -135,7 +135,7 @@ public class EmbeddedMetadataManager
      ******************************************************************************************************************/
     public void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI mediaItemUri) 
       {
-        log.info("importFallbackTrackMetadata({}, {})", mediaItem, mediaItemUri);
+        log.debug("importFallbackTrackMetadata({}, {})", mediaItem, mediaItemUri);
         
         AddStatementsRequest.Builder builder = AddStatementsRequest.build();
         final MediaItem.Metadata metadata = mediaItem.getMetadata();  
