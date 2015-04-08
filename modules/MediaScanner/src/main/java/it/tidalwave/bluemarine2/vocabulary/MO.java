@@ -49,19 +49,27 @@ public final class MO
     
     private static final String PREFIX = "http://purl.org/ontology/mo/";
     
-    public static final URI AUDIOFILE           = factory.createURI(PREFIX + "AudioFile");
-    public static final URI CD                  = factory.createURI(PREFIX + "CD");
-    public static final URI MUSIC_ARTIST        = factory.createURI(PREFIX + "MusicArtist");
-    public static final URI RECORD              = factory.createURI(PREFIX + "Record");
-    public static final URI TRACK               = factory.createURI(PREFIX + "Track");
+    // Classes
+    public static final String S_C_AUDIO_FILE     = PREFIX + "AudioFile";
+    public static final String S_C_CD             = PREFIX + "CD";
+    public static final String S_C_MUSIC_ARTIST   = PREFIX + "MusicArtist";
+    public static final String S_C_RECORD         = PREFIX + "Record";
+    public static final String S_C_TRACK          = PREFIX + "Track";
+    
+    public static final URI C_AUDIO_FILE          = factory.createURI(S_C_AUDIO_FILE);
+    public static final URI C_CD                  = factory.createURI(S_C_CD);
+    public static final URI C_MUSIC_ARTIST        = factory.createURI(S_C_MUSIC_ARTIST);
+    public static final URI C_RECORD              = factory.createURI(S_C_RECORD);
+    public static final URI C_TRACK               = factory.createURI(S_C_TRACK);
 
-    public static final URI BITS_PER_SAMPLE     = factory.createURI(PREFIX + "bitsPerSample");
-    public static final URI DURATION            = factory.createURI(PREFIX + "duration");
-    public static final URI _TRACK              = factory.createURI(PREFIX + "track");
-    public static final URI MEDIA_TYPE          = factory.createURI(PREFIX + "media_type");
-    public static final URI MUSICBRAINZ_GUID    = factory.createURI(PREFIX + "musicbrainz_guid");
-    public static final URI PUBLISHED_AS        = factory.createURI(PREFIX + "published_as");
-    public static final URI SAMPLE_RATE         = factory.createURI(PREFIX + "sampleRate");
-    public static final URI TRACK_COUNT         = factory.createURI(PREFIX + "track_count");
-    public static final URI TRACK_NUMBER        = factory.createURI(PREFIX + "track_number");
+    // Properties
+    public static final URI P_BITS_PER_SAMPLE     = factory.createURI(PREFIX + "bitsPerSample");
+    public static final URI P_DURATION            = factory.createURI(PREFIX + "duration");
+    public static final URI P_TRACK               = factory.createURI(PREFIX + "track");
+    public static final URI P_MEDIA_TYPE          = factory.createURI(PREFIX + "media_type");
+    public static final URI P_MUSICBRAINZ_GUID    = factory.createURI(PREFIX + "musicbrainz_guid");
+    public static final URI P_PUBLISHED_AS        = factory.createURI(PREFIX + "published_as");
+    public static final URI P_SAMPLE_RATE         = factory.createURI(PREFIX + "sampleRate");
+    public static final URI P_TRACK_COUNT         = factory.createURI(PREFIX + "track_count");
+    public static final URI P_TRACK_NUMBER        = factory.createURI(PREFIX + "track_number");
   }

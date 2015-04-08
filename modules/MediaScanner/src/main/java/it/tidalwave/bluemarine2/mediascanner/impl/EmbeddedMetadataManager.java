@@ -108,10 +108,10 @@ public class EmbeddedMetadataManager
 
     static
       {
-        MAPPER.put(Metadata.TRACK,       v -> new Pair(MO.TRACK_NUMBER,    literalFor((int)v)));
-        MAPPER.put(Metadata.SAMPLE_RATE, v -> new Pair(MO.SAMPLE_RATE,     literalFor((int)v)));
-        MAPPER.put(Metadata.BIT_RATE,    v -> new Pair(MO.BITS_PER_SAMPLE, literalFor((int)v)));
-        MAPPER.put(Metadata.DURATION,    v -> new Pair(MO.DURATION,        literalFor((float)((Duration)v).toMillis())));
+        MAPPER.put(Metadata.TRACK,       v -> new Pair(MO.P_TRACK_NUMBER,    literalFor((int)v)));
+        MAPPER.put(Metadata.SAMPLE_RATE, v -> new Pair(MO.P_SAMPLE_RATE,     literalFor((int)v)));
+        MAPPER.put(Metadata.BIT_RATE,    v -> new Pair(MO.P_BITS_PER_SAMPLE, literalFor((int)v)));
+        MAPPER.put(Metadata.DURATION,    v -> new Pair(MO.P_DURATION,        literalFor((float)((Duration)v).toMillis())));
       }
     
     /*******************************************************************************************************************
@@ -176,7 +176,7 @@ public class EmbeddedMetadataManager
             if (seenArtistUris.putIfAbsent(artistUri, true) == null)
               {
                 final Value nameLiteral = literalFor(artist.get());
-                builder = builder.with(artistUri, RDF.TYPE, MO.MUSIC_ARTIST)
+                builder = builder.with(artistUri, RDF.TYPE, MO.C_MUSIC_ARTIST)
                                  .with(artistUri, FOAF.NAME, nameLiteral)
                                  .with(artistUri, RDFS.LABEL, nameLiteral);
               }
@@ -191,13 +191,13 @@ public class EmbeddedMetadataManager
         if (seenRecordUris.putIfAbsent(recordUri, true) == null)
           {
             final Value titleLiteral = literalFor(recordTitle);
-            builder = builder.with(recordUri, RDF.TYPE, MO.RECORD)
-                             .with(recordUri, MO.MEDIA_TYPE, MO.CD)
+            builder = builder.with(recordUri, RDF.TYPE, MO.C_RECORD)
+                             .with(recordUri, MO.P_MEDIA_TYPE, MO.C_CD)
                              .with(recordUri, DC.TITLE, titleLiteral)
                              .with(recordUri, RDFS.LABEL, titleLiteral)
-                             .with(recordUri, MO.TRACK_COUNT, literalFor(parent.findChildren().count()));
+                             .with(recordUri, MO.P_TRACK_COUNT, literalFor(parent.findChildren().count()));
           }
         
-        messageBus.publish(builder.with(recordUri, MO._TRACK, mediaItemUri).create());
+        messageBus.publish(builder.with(recordUri, MO.P_TRACK, mediaItemUri).create());
       }
   }

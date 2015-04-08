@@ -170,10 +170,10 @@ public class DefaultMediaScanner
             final Artist artist = request.getArtist();
             final Value nameLiteral = literalFor(artist.getName());
             messageBus.publish(AddStatementsRequest.build()
-                                               .with(artistUri, RDF.TYPE, MO.MUSIC_ARTIST)
+                                               .with(artistUri, RDF.TYPE, MO.C_MUSIC_ARTIST)
                                                .with(artistUri, RDFS.LABEL, nameLiteral)
                                                .with(artistUri, FOAF.NAME, nameLiteral)
-                                               .with(artistUri, MO.MUSICBRAINZ_GUID, literalFor(artistId.stringValue()))
+                                               .with(artistUri, MO.P_MUSICBRAINZ_GUID, literalFor(artistId.stringValue()))
                                                .create());
           }
         finally 
@@ -240,8 +240,8 @@ public class DefaultMediaScanner
 
         final Instant lastModifiedTime = getLastModifiedTime(mediaItem.getPath());
         messageBus.publish(AddStatementsRequest.build()
-                        .with(mediaItemUri, RDF.TYPE, MO.TRACK)
-                        .with(mediaItemUri, MO.AUDIOFILE, literalFor(mediaItem.getRelativePath()))
+                        .with(mediaItemUri, RDF.TYPE, MO.C_TRACK)
+                        .with(mediaItemUri, MO.C_AUDIO_FILE, literalFor(mediaItem.getRelativePath()))
                         .with(mediaItemUri, BM.MD5, literalFor(md5.stringValue().replaceAll("^md5id:", "")))
                         .with(mediaItemUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
                         .create());
@@ -295,7 +295,7 @@ public class DefaultMediaScanner
 //        
 //        final Metadata metadata = mediaItem.getMetadata();
 //        final String mbGuid = metadata.get(Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
-//        messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid)));
+//        messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid)));
 //        
 //        if (true)
 //          {
@@ -326,7 +326,7 @@ public class DefaultMediaScanner
 //        // TODO: MO.GENRE
 //        // TODO: MO.INTERPRETER
 //        // TODO: MO.LABEL
-//        // TODO: MO.MEDIA_TYPE (MIME)
+//        // TODO: MO.P_MEDIA_TYPE (MIME)
 //        // TODO: MO.OPUS
 //        // TOOD: MO.RECORD_NUMBER
 //        // TODO: MO.SINGER

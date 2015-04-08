@@ -152,7 +152,7 @@ public class DbTuneMetadataManager
             log.debug("importTrackMetadata({}, {})", track, mediaItemUri);
             final MediaItem.Metadata metadata = track.getMetadata();
             final String mbGuid = metadata.get(MediaItem.Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
-            messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid)));
+            messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid)));
             messageBus.publish(new DownloadRequest(urlFor(mediaItemUri), FOLLOW_REDIRECT));
             progress.incrementTotalDownloads();
           }
@@ -176,7 +176,7 @@ public class DbTuneMetadataManager
             messageBus.publish(model.filter(trackUri, FOAF.MAKER, null).stream()
                                     .peek(statement -> requestArtistMetadata((URI)statement.getObject()))
                                     .collect(toAddStatementsRequest()));
-            model.filter(null, MO._TRACK, trackUri)
+            model.filter(null, MO.P_TRACK, trackUri)
                                     .forEach(statement -> requestRecordMetadata((URI)statement.getSubject()));
           }   
         catch (IOException | RDFHandlerException | RDFParseException e)
