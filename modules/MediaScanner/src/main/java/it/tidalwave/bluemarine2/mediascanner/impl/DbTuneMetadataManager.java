@@ -58,6 +58,7 @@ import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.persistence.AddStatementsRequest.*;
 import static it.tidalwave.bluemarine2.downloader.DownloadRequest.Option.FOLLOW_REDIRECT;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
+import org.openrdf.model.vocabulary.DC;
 
 /***********************************************************************************************************************
  *
@@ -78,6 +79,9 @@ public class DbTuneMetadataManager
     
     @Inject
     private MessageBus messageBus;
+    
+    private static final List<URI> VALID_TRACK_PREDICATES_FOR_SUBJECT = Arrays.asList(
+            RDF.TYPE, RDFS.LABEL, DC.TITLE, FOAF.MAKER);
     
     // Skip foaf:maker: it would include all the items in the database, not only in our collection
     // anyway, the required statements have been already added when importing tracks
@@ -107,6 +111,24 @@ public class DbTuneMetadataManager
                 <http://www.w3.org/2002/07/owl#sameAs> <http://dbpedia.org/resource/Ludwig_van_Beethoven> , <http://de.wikipedia.org/wiki/Ludwig_van_Beethoven> , <http://www.bbc.co.uk/music/artists/1f9df192-a621-4f54-8850-2c5373b7eac9#artist> ;
             */         
         
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @RequiredArgsConstructor
+    static class TrackStatementFilter implements Predicate<Statement>  
+      {
+        @Nonnull
+        private final URI trackUri;
+        
+        @Override
+        public boolean test (final @Nonnull Statement statement) 
+          {
+            final URI predicate = statement.getPredicate();
+            return (statement.getSubject().equals(trackUri) && VALID_TRACK_PREDICATES_FOR_SUBJECT.contains(predicate));
+          }
+      }
+            
     /*******************************************************************************************************************
      *
      *
@@ -173,11 +195,12 @@ public class DbTuneMetadataManager
             log.debug("onTrackMetadataDownloadComplete({})", message);
             final URI trackUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
-            messageBus.publish(model.filter(trackUri, FOAF.MAKER, null).stream()
-                                    .peek(statement -> requestArtistMetadata((URI)statement.getObject()))
-                                    .collect(toAddStatementsRequest()));
+            messageBus.publish(model.stream().filter(new TrackStatementFilter(trackUri))
+                                             .collect(toAddStatementsRequest()));
+            model.filter(trackUri, FOAF.MAKER, null)
+                 .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
             model.filter(null, MO.P_TRACK, trackUri)
-                                    .forEach(statement -> requestRecordMetadata((URI)statement.getSubject()));
+                 .forEach(statement -> requestRecordMetadata((URI)statement.getSubject()));
           }   
         catch (IOException | RDFHandlerException | RDFParseException e)
           {
