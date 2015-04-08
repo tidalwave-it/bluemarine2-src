@@ -271,6 +271,7 @@ public class DefaultMediaScanner
     private void importMediaItem (final @Nonnull MediaItem audioFile)
       { 
         log.debug("importMediaItem({})", audioFile);
+        // FIXME: the same contents in different places will give the same id. Disambiguates by hashing the path too?
         final Id sha1 = idCreator.createSha1Id(audioFile.getPath());
         final Metadata metadata = audioFile.getMetadata();
         final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
