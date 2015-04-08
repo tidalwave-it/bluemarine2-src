@@ -158,12 +158,12 @@ public class EmbeddedMetadataManager
      * when we failed to match a track to an external catalog.
      * 
      * @param   mediaItem               the {@code MediaItem}.
-     * @param   mediaItemUri            the URI of the item
+     * @param   trackUri            the URI of the item
      *
      ******************************************************************************************************************/
-    public void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI mediaItemUri) 
+    public void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI trackUri) 
       {
-        log.debug("importFallbackTrackMetadata({}, {})", mediaItem, mediaItemUri);
+        log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackUri);
         
         AddStatementsRequest.Builder builder = AddStatementsRequest.build();
         final MediaItem.Metadata metadata = mediaItem.getMetadata();  
@@ -173,8 +173,8 @@ public class EmbeddedMetadataManager
         if (title.isPresent())
           {
             final Value titleLiteral = literalFor(title.get());
-            builder = builder.with(mediaItemUri, DC.TITLE, titleLiteral)
-                             .with(mediaItemUri, RDFS.LABEL, titleLiteral);
+            builder = builder.with(trackUri, DC.TITLE, titleLiteral)
+                             .with(trackUri, RDFS.LABEL, titleLiteral);
           }
         
         if (artist.isPresent())
@@ -189,7 +189,7 @@ public class EmbeddedMetadataManager
                                  .with(artistUri, RDFS.LABEL, nameLiteral);
               }
             
-            builder = builder.with(artistUri, FOAF.MAKER, mediaItemUri);
+            builder = builder.with(trackUri, FOAF.MAKER, artistUri);
           }
         
         final MediaFolder parent = mediaItem.getParent();
@@ -206,6 +206,6 @@ public class EmbeddedMetadataManager
                              .with(recordUri, MO.P_TRACK_COUNT, literalFor(parent.findChildren().count()));
           }
         
-        messageBus.publish(builder.with(recordUri, MO.P_TRACK, mediaItemUri).create());
+        messageBus.publish(builder.with(recordUri, MO.P_TRACK, trackUri).create());
       }
   }

@@ -307,7 +307,7 @@ public class DefaultMediaScanner
           }
         else
           {
-            embeddedMetadataManager.importFallbackTrackMetadata(audioFile, audioFileUri);
+            embeddedMetadataManager.importFallbackTrackMetadata(audioFile, trackUri);
           } 
       }
     
