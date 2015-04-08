@@ -278,6 +278,8 @@ public class DefaultMediaScanner
         log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
 
         final URI audioFileUri = BM.audioFileUriFor(sha1);
+        // FIXME: DbTune has got Signals. E.g. http://dbtune.org/musicbrainz/page/signal/0900f0cb-230f-4632-bd87-650801e5fdba
+        // FIXME: Try to use them. It seems there are no extra information, but use their Uri.
         final URI signalUri = BM.signalUriFor(sha1);
         final URI trackUri = !musicBrainzTrackId.isPresent() 
                 ? BM.localTrackUriFor(sha1)
