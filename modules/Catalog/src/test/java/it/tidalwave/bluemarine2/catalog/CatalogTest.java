@@ -45,15 +45,9 @@ import org.openrdf.rio.RDFParseException;
 import org.openrdf.sail.memory.MemoryStore;
 import org.testng.annotations.Test;
 import lombok.extern.slf4j.Slf4j;
-import static java.nio.file.Files.createDirectories;
-import static java.nio.file.Files.write;
-import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 
 import static java.nio.file.Files.*;
-import static org.apache.commons.io.FileUtils.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
-import static org.hamcrest.MatcherAssert.*;
-import static org.hamcrest.CoreMatchers.*;
 
 /***********************************************************************************************************************
  *
@@ -79,6 +73,7 @@ public class CatalogTest
         final File file = new File("../MediaScanner/src/test/resources/expected-results/model.n3");
         final RepositoryConnection connection = repository.getConnection();
         
+    // https://bitbucket.org/openrdf/alibaba/src/master/object-repository/
 //        ObjectRepositoryFactory factory = new ObjectRepositoryFactory();
 //        ObjectRepository oRepository = factory.createRepository(repository);        
                
@@ -86,17 +81,8 @@ public class CatalogTest
         connection.commit();
         connection.close();
         
-        
-        final List<MusicArtistEntity> artists = QueryUtilities.query(repository, MusicArtistEntity.class, QueryUtilities.PREFIXES  
-            + "\n" 
-            + "SELECT *"
-            + "WHERE  {\n" 
-            + "       ?artist a                 mo:MusicArtist.\n" 
-            + "       ?artist rdfs:label        ?label.\n" 
-            + "       ?artist vocab:artist_type \"1\"^^xs:short"
-//            + "       OPTIONAL { ?artist vocab:artist_type \"1\"^^xs:short }"
-            + "       }\n" 
-            + "ORDER BY ?label");
+        final RepositoryCatalog catalog = new RepositoryCatalog(repository);
+        final List<? extends MusicArtistEntity> artists = catalog.findArtists().results();
         
         final Path actualResult = TEST_RESULTS.resolve("dump.txt");
         final Path expectedResult = EXPECTED_TEST_RESULTS.resolve("dump.txt");

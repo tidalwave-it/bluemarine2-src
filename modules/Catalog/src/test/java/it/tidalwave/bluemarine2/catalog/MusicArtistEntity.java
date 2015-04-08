@@ -31,15 +31,9 @@ package it.tidalwave.bluemarine2.catalog;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import it.tidalwave.util.Id;
-import java.util.List;
 import lombok.Getter;
 import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
-import org.openrdf.model.impl.ValueFactoryImpl;
-import org.openrdf.query.MalformedQueryException;
-import org.openrdf.query.QueryEvaluationException;
 import org.openrdf.repository.Repository;
-import org.openrdf.repository.RepositoryException;
 
 /***********************************************************************************************************************
  *
@@ -48,13 +42,11 @@ import org.openrdf.repository.RepositoryException;
  *
  **********************************************************************************************************************/
 @Immutable @Getter @ToString
-@Slf4j
 public class MusicArtistEntity extends EntitySupport
   {
     private final String rdfsLabel;
     
     private final String foafName;
-    // https://bitbucket.org/openrdf/alibaba/src/master/object-repository/
 
     public MusicArtistEntity (final @Nonnull Repository repository,
                               final @Nonnull Id id, 
@@ -69,6 +61,6 @@ public class MusicArtistEntity extends EntitySupport
     @Nonnull
     public TrackEntityFinder findTracks() 
       {
-        return new RepositoryTrackEntityFinder(repository);
+        return new RepositoryTrackEntityFinder(repository).withArtistId(id);
       }
   }
