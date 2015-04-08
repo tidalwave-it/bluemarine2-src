@@ -61,12 +61,18 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
     @Override @Nonnull
     protected List<? extends MusicArtist> computeNeededResults() 
       {
+          // TODO includere anche quelli con type == 2 e nessuna collaborazione (e.g. Rondo Veneziano: gruppi senza elenco partecipanti 
         return query(RepositoryMusicArtistEntity.class,  
               "SELECT *"
             + "WHERE  {\n" 
             + "       ?artist a                 mo:MusicArtist.\n" 
             + "       ?artist rdfs:label        ?label.\n" 
-            + "       ?artist vocab:artist_type \"1\"^^xs:short"
+                      // FIXME: può non esserci. Metti <2 oppure non esiste
+            + "      { ?artist vocab:artist_type \"1\"^^xs:short. }\n"
+            + "       UNION\n"
+            + "      { ?artist vocab:artist_type \"2\"^^xs:short. \n"
+            + "         FILTER NOT EXISTS { ?artist rel:collaboratesWith ?any } }\n"
+//            + "      { FILTER NOT EXISTS { ?artist vocab:artist_type ?type } }\n"
 //            + "       OPTIONAL { ?artist vocab:artist_type \"1\"^^xs:short }"
             + "       }\n" 
             + "ORDER BY ?label");
