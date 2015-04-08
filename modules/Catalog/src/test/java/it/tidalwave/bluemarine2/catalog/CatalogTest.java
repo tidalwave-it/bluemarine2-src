@@ -28,13 +28,13 @@
  */
 package it.tidalwave.bluemarine2.catalog;
 
-import it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalog;
 import java.util.List;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalog;
 import org.openrdf.query.MalformedQueryException;
 import org.openrdf.query.QueryEvaluationException;
 import org.openrdf.repository.Repository;
@@ -46,7 +46,6 @@ import org.openrdf.rio.RDFParseException;
 import org.openrdf.sail.memory.MemoryStore;
 import org.testng.annotations.Test;
 import lombok.extern.slf4j.Slf4j;
-
 import static java.nio.file.Files.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 

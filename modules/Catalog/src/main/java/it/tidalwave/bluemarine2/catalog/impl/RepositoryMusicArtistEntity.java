@@ -28,14 +28,14 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl;
 
-import it.tidalwave.bluemarine2.catalog.MusicArtist;
-import it.tidalwave.bluemarine2.catalog.TrackFinder;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import it.tidalwave.util.Id;
+import org.openrdf.repository.Repository;
+import it.tidalwave.bluemarine2.catalog.MusicArtist;
+import it.tidalwave.bluemarine2.catalog.TrackFinder;
 import lombok.Getter;
 import lombok.ToString;
-import org.openrdf.repository.Repository;
 
 /***********************************************************************************************************************
  *
