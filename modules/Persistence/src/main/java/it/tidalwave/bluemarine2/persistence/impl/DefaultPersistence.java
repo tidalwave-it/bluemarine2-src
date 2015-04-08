@@ -50,7 +50,6 @@ import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
 import it.tidalwave.bluemarine2.persistence.DumpCompleted;
 import it.tidalwave.bluemarine2.persistence.DumpRequest;
 import lombok.extern.slf4j.Slf4j;
-import org.openide.util.Exceptions;
 
 /***********************************************************************************************************************
  *
