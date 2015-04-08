@@ -223,7 +223,7 @@ public class DbTuneMetadataManager
             messageBus.publish(model.stream().filter(new ArtistStatementFilter(artistUri))
                                              .collect(toAddStatementsRequest()));
             model.filter(artistUri, Purl.COLLABORATES_WITH, null)
-                                    .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
+                 .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
           }   
         catch (IOException | RDFHandlerException | RDFParseException e)
           {
