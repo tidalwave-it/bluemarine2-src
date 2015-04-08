@@ -66,28 +66,9 @@ public class MusicArtistEntity extends EntitySupport
         this.foafName = foafName;
       }
     
-    public List<TrackEntity> findTracks() 
+    @Nonnull
+    public TrackEntityFinder findTracks() 
       {
-        try 
-          {
-            return QueryUtilities.query(repository, TrackEntity.class, QueryUtilities.PREFIXES  
-                + "SELECT *"
-                + "WHERE  {\n" 
-                + "       ?track  a                 mo:Track.\n" 
-                + "       ?track  foaf:maker        ?artist.\n" 
-                + "       ?track  rdfs:label        ?label.\n" 
-                + "       ?track  mo:track_number   ?track_number.\n" 
-                + "       ?track  mo:duration       ?duration.\n" 
-                + "       ?track  mo:AudioFile      ?audioFile.\n" // FIXME: wrong! This is a type, not a property!
-                + "       ?record mo:track          ?track.\n" 
-                + "       ?record rdfs:label        ?record_label.\n" 
-                + "       }\n"
-                + "ORDER BY ?record_label ?track_number ?label",
-                "artist", ValueFactoryImpl.getInstance().createURI(id.stringValue()));
-          }
-        catch (RepositoryException | MalformedQueryException | QueryEvaluationException e)
-          {
-            throw new RuntimeException(e);
-          }
+        return new RepositoryTrackEntityFinder(repository);
       }
   }

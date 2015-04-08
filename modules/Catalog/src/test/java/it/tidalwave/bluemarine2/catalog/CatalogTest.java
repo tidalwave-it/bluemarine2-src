@@ -112,7 +112,7 @@ public class CatalogTest
         artists.forEach(artist -> 
           {
             pw.printf("\nTRACKS OF %s:\n", artist);
-            artist.findTracks().forEach(track -> pw.printf("  %s\n", track));
+            artist.findTracks().stream().forEach(track -> pw.printf("  %s\n", track));
           });
         
         pw.close();
