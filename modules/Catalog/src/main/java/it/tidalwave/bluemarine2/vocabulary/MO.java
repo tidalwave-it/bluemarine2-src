@@ -52,12 +52,14 @@ public final class MO
     // Classes
     public static final String S_C_AUDIO_FILE       = PREFIX + "AudioFile";
     public static final String S_C_CD               = PREFIX + "CD";
+    public static final String S_C_DIGITAL_SIGNAL   = PREFIX + "DigitalSignal";
     public static final String S_C_MUSIC_ARTIST     = PREFIX + "MusicArtist";
     public static final String S_C_RECORD           = PREFIX + "Record";
     public static final String S_C_TRACK            = PREFIX + "Track";
     
     public static final URI C_AUDIO_FILE            = factory.createURI(S_C_AUDIO_FILE);
     public static final URI C_CD                    = factory.createURI(S_C_CD);
+    public static final URI C_DIGITAL_SIGNAL        = factory.createURI(S_C_DIGITAL_SIGNAL);
     public static final URI C_MUSIC_ARTIST          = factory.createURI(S_C_MUSIC_ARTIST);
     public static final URI C_RECORD                = factory.createURI(S_C_RECORD);
     public static final URI C_TRACK                 = factory.createURI(S_C_TRACK);
@@ -65,6 +67,7 @@ public final class MO
     // Properties
     public static final String S_P_BITS_PER_SAMPLE  = PREFIX + "bitsPerSample";
     public static final String S_P_DURATION         = PREFIX + "duration";
+    public static final String S_P_ENCODES          = PREFIX + "encodes";
     public static final String S_P_TRACK            = PREFIX + "track";
     public static final String S_P_MEDIA_TYPE       = PREFIX + "media_type";
     public static final String S_P_MUSICBRAINZ_GUID = PREFIX + "musicbrainz_guid";
@@ -75,6 +78,7 @@ public final class MO
     
     public static final URI P_BITS_PER_SAMPLE       = factory.createURI(S_P_BITS_PER_SAMPLE);
     public static final URI P_DURATION              = factory.createURI(S_P_DURATION);
+    public static final URI P_ENCODES               = factory.createURI(S_P_ENCODES);
     public static final URI P_TRACK                 = factory.createURI(S_P_TRACK);
     public static final URI P_MEDIA_TYPE            = factory.createURI(S_P_MEDIA_TYPE);
     public static final URI P_MUSICBRAINZ_GUID      = factory.createURI(S_P_MUSICBRAINZ_GUID);
