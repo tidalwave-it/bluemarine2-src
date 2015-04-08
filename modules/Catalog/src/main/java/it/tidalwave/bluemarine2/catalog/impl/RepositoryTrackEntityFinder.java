@@ -109,12 +109,12 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
             + "       ?audioFile    a                 mo:AudioFile.\n" 
             + "       ?audioFile    mo:encodes        ?signal.\n" 
             + "       ?audioFile    bm:path           ?path.\n" 
-        // OK BELOW
-//            + "       ?record       a                 mo:Record.\n" 
-//            + "       ?record       mo:track          ?track.\n" 
-//            + "       ?record       rdfs:label        ?record_label.\n" 
-            + "       }\n",
-//            + "ORDER BY ?record_label ?track_number ?label",
+
+            + "       ?record       a                 mo:Record.\n" 
+            + "       ?record       mo:track          ?track.\n" 
+            + "       ?record       rdfs:label        ?record_label.\n" 
+            + "       }\n"
+            + "ORDER BY ?record_label ?track_number ?label",
             "artist", ValueFactoryImpl.getInstance().createURI(artistId.stringValue()));
       }
   }

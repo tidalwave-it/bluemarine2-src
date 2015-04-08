@@ -3,4 +3,3 @@ ARTISTS:
 RepositoryMusicArtistEntity(rdfsLabel=Aaron Copland, foafName=null)
 
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Aaron Copland, foafName=null):
-  RepositoryTrackEntity(trackNumber=10, rdfsLabel=Quiet City, duration=PT9M48S, audioFile=Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/1-10 Quiet City.m4a)

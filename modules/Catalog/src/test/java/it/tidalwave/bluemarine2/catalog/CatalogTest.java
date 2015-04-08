@@ -100,12 +100,11 @@ public class CatalogTest
         // FIXME: missing those in collaborations 
         // FIXME: not correctly sorted in many cases
         
-//        artists.forEach(artist -> 
-        final MusicArtist artist = artists.get(0);
-//          {
+        artists.forEach(artist -> 
+          {
             pw.printf("\nTRACKS OF %s:\n", artist);
             artist.findTracks().stream().forEach(track -> pw.printf("  %s\n", track));
-//          });
+          });
         
         pw.close();
         
