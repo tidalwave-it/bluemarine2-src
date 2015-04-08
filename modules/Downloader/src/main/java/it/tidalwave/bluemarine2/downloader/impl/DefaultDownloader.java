@@ -137,7 +137,7 @@ public class DefaultDownloader
                 .setUserAgent("blueMarine (fabrizio.giudici@tidalwave.it)")
                 .setDefaultHeaders(Arrays.asList(new BasicHeader("Accept", "application/n3")))
                 .setConnectionManager(connectionManager)
-                .build();
+         .build();
       }
     
     /*******************************************************************************************************************
@@ -178,7 +178,7 @@ public class DefaultDownloader
                                                                                                 : Origin.NETWORK;
                 
                 // FIXME: shouldn't do this by myself
-                if (!origin.equals(Origin.CACHE))
+                if (!origin.equals(Origin.CACHE) && Arrays.asList(200, 303).contains(response.getStatusLine().getStatusCode()))
                   {
                     final Date date = new Date();
                     final Resource resource = new HeapResource(bytes);
@@ -205,7 +205,7 @@ public class DefaultDownloader
           }
         catch (IOException e)
           {
-            log.warn("{}", e.toString());
+            log.error("{}: {}", request.getUrl(), e.toString());
             messageBus.publish(new DownloadComplete(request.getUrl(), -1, new byte[0], Origin.NETWORK));
           }
       }

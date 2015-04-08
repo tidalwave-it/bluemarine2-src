@@ -60,6 +60,6 @@
 
     <aop:aspectj-autoproxy/>
     
-    <bean class="it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx.Mpg123MediaPlayer" />
+    <bean class="it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx.SoXMediaPlayer" />
     
 </beans>

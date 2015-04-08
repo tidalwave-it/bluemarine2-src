@@ -1,0 +1,48 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:MusicArtist
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FMusicArtist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/artist/89faebe7-b9f6-455a-b3e6-a629e1c8d5f9>
+      rel:collaboratesWith
+              <http://dbtune.org/musicbrainz/resource/artist/93185f2d-6181-4b12-95a5-fe41a812303e> .
+
+<http://www.bbc.co.uk/music/artists/93185f2d-6181-4b12-95a5-fe41a812303e#artist>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.bbc.co.uk%2Fmusic%2Fartists%2F93185f2d-6181-4b12-95a5-fe41a812303e%23artist%3E> .
+
+<http://dbtune.org/musicbrainz/data/artist/93185f2d-6181-4b12-95a5-fe41a812303e>
+      rdfs:label "RDF Description of Francisco Buarque de Hollanda" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/artist/93185f2d-6181-4b12-95a5-fe41a812303e> .
+
+<http://musicbrainz.org/artist/93185f2d-6181-4b12-95a5-fe41a812303e>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Fartist%2F93185f2d-6181-4b12-95a5-fe41a812303e%3E> .
+
+<http://dbtune.org/musicbrainz/resource/artist/93185f2d-6181-4b12-95a5-fe41a812303e>
+      a       mo:MusicArtist ;
+      rdfs:label "Francisco Buarque de Hollanda" ;
+      vocab:artist_quality
+              "-1"^^xsd:short ;
+      vocab:artist_type "1"^^xsd:short ;
+      vocab:sortname "Hollanda, Francisco Buarque de" ;
+      mo:alter_ego <http://dbtune.org/musicbrainz/resource/artist/3a5d1cc7-627e-48ea-aba3-fdd20d782c33> ;
+      mo:musicbrainz <http://musicbrainz.org/artist/93185f2d-6181-4b12-95a5-fe41a812303e> ;
+      bio:event <http://dbtune.org/musicbrainz/resource/artist/93185f2d-6181-4b12-95a5-fe41a812303e/birth> ;
+      rel:siblingOf <http://dbtune.org/musicbrainz/resource/artist/b72a2a9b-e783-473d-9d80-403876c685cd> , <http://dbtune.org/musicbrainz/resource/artist/299ba6f3-d8a7-4840-851a-7914dcf4a2aa> ;
+      =       <http://www.bbc.co.uk/music/artists/93185f2d-6181-4b12-95a5-fe41a812303e#artist> ;
+      foaf:name "Francisco Buarque de Hollanda" .

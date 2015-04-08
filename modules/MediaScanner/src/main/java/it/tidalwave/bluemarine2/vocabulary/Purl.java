@@ -45,7 +45,10 @@ public final class Purl
   {
     private final static ValueFactory factory = ValueFactoryImpl.getInstance();
     
-    private static final String PREFIX = "http://purl.org/vocab/bio/0.1/";
+    private static final String PREFIX_BIO          = "http://purl.org/vocab/bio/0.1/";
+    private static final String PREFIX_RELATIONSHIP = "http://purl.org/vocab/relationship/";
     
-    public static final URI EVENT         = factory.createURI(PREFIX + "event");
-  }
+    public static final URI EVENT              = factory.createURI(PREFIX_BIO + "event");
+    
+    public static final URI COLLABORATES_WITH  = factory.createURI(PREFIX_RELATIONSHIP + "collaboratesWith");
+}
