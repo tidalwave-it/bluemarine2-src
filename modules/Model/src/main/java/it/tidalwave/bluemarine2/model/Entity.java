@@ -28,27 +28,16 @@
  */
 package it.tidalwave.bluemarine2.model;
 
-import javax.annotation.Nonnull;
+import it.tidalwave.util.As;
 
 /***********************************************************************************************************************
  *
- * Represents a filesystem (even a virtual one) that contains {@link MediaFolder}s and {@link MediaItem}s.
- * 
  * @stereotype  Datum
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaFileSystem extends Entity
+public interface Entity extends As
   {
-    /*******************************************************************************************************************
-     *
-     * Returns the root {@link MediaFolder}.
-     * 
-     * @return  the path
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public MediaFolder getRoot();
   }

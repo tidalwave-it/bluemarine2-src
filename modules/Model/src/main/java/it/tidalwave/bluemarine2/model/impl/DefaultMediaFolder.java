@@ -32,10 +32,10 @@ import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.nio.file.Path;
-import it.tidalwave.util.spi.AsSupport;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.util.As;
 import it.tidalwave.util.Finder8;
+import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.MediaFolder;
 import lombok.AllArgsConstructor;
 import lombok.Delegate;
 import lombok.Getter;
@@ -72,7 +72,7 @@ public class DefaultMediaFolder implements MediaFolder
       }
 
     @Override @Nonnull
-    public Finder8<As> findChildren() 
+    public Finder8<Entity> findChildren() 
       {
         return new MediaFolderFinder(this, basePath);
       }

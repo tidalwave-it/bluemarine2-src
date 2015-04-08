@@ -46,7 +46,7 @@ import it.tidalwave.role.SimpleComposite8;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaFolder extends As, Parentable<MediaFolder>, SimpleComposite8<As>
+public interface MediaFolder extends Entity, Parentable<MediaFolder>, SimpleComposite8<Entity>
   {
     /*******************************************************************************************************************
      *

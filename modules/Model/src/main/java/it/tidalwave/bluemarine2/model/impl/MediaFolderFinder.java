@@ -35,9 +35,9 @@ import java.io.IOException;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import it.tidalwave.util.As;
 import it.tidalwave.util.Finder;
 import it.tidalwave.util.spi.SimpleFinder8Support;
+import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -53,7 +53,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor @Slf4j 
-public class MediaFolderFinder extends SimpleFinder8Support<As>
+public class MediaFolderFinder extends SimpleFinder8Support<Entity>
   {
     @Nonnull
     private final MediaFolder mediaFolder;
@@ -62,9 +62,9 @@ public class MediaFolderFinder extends SimpleFinder8Support<As>
     private final Path basePath;
     
     @Override @Nonnull
-    protected List<? extends As> computeResults() 
+    protected List<? extends Entity> computeResults() 
       {
-        final List<As> result = new ArrayList<>();
+        final List<Entity> result = new ArrayList<>();
 
         try (final DirectoryStream<Path> stream = Files.newDirectoryStream(mediaFolder.getPath()))
           {

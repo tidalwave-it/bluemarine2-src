@@ -32,12 +32,11 @@ import javax.annotation.Nonnull;
 import java.time.Duration;
 import java.util.List;
 import java.util.Optional;
+import java.util.Map;
 import java.util.Set;
 import java.nio.file.Path;
-import it.tidalwave.util.As;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
-import java.util.Map;
 
 /***********************************************************************************************************************
  *
@@ -49,7 +48,7 @@ import java.util.Map;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaItem extends As, Parentable<MediaFolder>
+public interface MediaItem extends Entity, Parentable<MediaFolder>
   {
     /*******************************************************************************************************************
      *
