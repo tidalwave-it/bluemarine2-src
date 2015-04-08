@@ -26,7 +26,8 @@ import lombok.RequiredArgsConstructor;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor
-public class RepositoryTrackEntityFinder extends Finder8Support<TrackEntity, TrackEntityFinder> implements TrackEntityFinder 
+public class RepositoryTrackEntityFinder extends Finder8Support<TrackEntity, TrackEntityFinder> 
+                                         implements TrackEntityFinder 
   {
     @Nonnull
     private Repository repository;
