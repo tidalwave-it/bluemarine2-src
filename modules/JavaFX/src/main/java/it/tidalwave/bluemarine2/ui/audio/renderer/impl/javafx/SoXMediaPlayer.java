@@ -48,16 +48,16 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class Mpg123MediaPlayer extends MediaPlayerSupport
+public class SoXMediaPlayer extends MediaPlayerSupport
   {
-    // Frame#  1368 [12934], Time: 00:35.73 [05:37.86], RVA:   off, Vol: 100(100)
-    private static final String FRAME_REGEX = "^Frame# *([0-9]+) *\\[ *([0-9]+)\\], *Time: *([.:0-9]+) *\\[([.:0-9]+)\\].*$";
+    // In:9.18% 00:00:24.71 [00:04:04.48] Out:1.09M [  ====|====  ]        Clip:0    
+    private static final String FRAME_REGEX = "^In.* ([:.0-9]+) \\[([:.0-9]+)\\].*$";
     
-    // 01:25.02
-    private static final String PLAY_TIME_REGEX = "([0-9]{2}):([0-9]{2})\\.([0-9]{2})";
+    // 00:00:24.71
+    private static final String PLAY_TIME_REGEX = "([0-9]{2}):([0-9]{2}):([0-9]{2})\\.([0-9]{2})";
 
-    // [4:05] Decoding of 06 The Moon Is A Harsh Mistress.mp3 finished.
-    private static final String FINISHED_REGEX = "^.*Decoding.*finished\\.$";
+    // Done.
+    private static final String FINISHED_REGEX = "^Done\\..*$";
     
     private static final Pattern FRAME_PATTERN = Pattern.compile(FRAME_REGEX);
 
@@ -136,8 +136,8 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
             else
               {
                 final String path = mediaItem.getPath().toAbsolutePath().toString();
-                executor = DefaultProcessExecutor.forExecutable("/usr/bin/mpg123") // FIXME
-                                                 .withArguments("-C", "-v", path)
+                executor = DefaultProcessExecutor.forExecutable("/usr/bin/play") // FIXME
+                                                 .withArguments(path)
                                                  .start();
                 executor.getStderr().setListener(mpg123ConsoleListener);
               }
@@ -249,14 +249,15 @@ public class Mpg123MediaPlayer extends MediaPlayerSupport
 
         if (frameMatcher.matches())
           {
-            final Matcher playTimeMatcher = PLAY_TIME_PATTERN.matcher(frameMatcher.group(3));
+            final Matcher playTimeMatcher = PLAY_TIME_PATTERN.matcher(frameMatcher.group(1));
 
             if (playTimeMatcher.matches())
               {
-                final int minutes = Integer.parseInt(playTimeMatcher.group(1));
-                final int seconds = Integer.parseInt(playTimeMatcher.group(2));
-                final int hundreds = Integer.parseInt(playTimeMatcher.group(3));
-                return Duration.ofMillis(hundreds * 10 + seconds * 1000 + minutes * 60 * 1000);
+                final int hours    = Integer.parseInt(playTimeMatcher.group(1));
+                final int minutes  = Integer.parseInt(playTimeMatcher.group(2));
+                final int seconds  = Integer.parseInt(playTimeMatcher.group(3));
+                final int hundreds = Integer.parseInt(playTimeMatcher.group(4));
+                return Duration.ofMillis(hundreds * 10 + seconds * 1000 + minutes * 60 * 1000 + hours * 60 * 60 * 1000);
               }
           }
         
