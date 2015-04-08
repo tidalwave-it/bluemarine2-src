@@ -62,28 +62,27 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
     protected List<? extends MusicArtist> computeNeededResults() 
       {
         return query(RepositoryMusicArtistEntity.class,  
-              "SELECT *"
+              "SELECT DISTINCT *"
             + "WHERE  {\n" 
-            + "       ?artist a                 mo:MusicArtist.\n" 
-            + "       ?artist rdfs:label        ?label.\n" 
+            + "       ?artist       a                 mo:MusicArtist.\n" 
+            + "       ?artist       rdfs:label        ?label.\n" 
                 // Single artists
             + "         {\n"
-            + "            ?artist vocab:artist_type \"1\"^^xs:short.\n"
+            + "            ?artist      vocab:artist_type       \"1\"^^xs:short.\n"
             + "         }\n"
             + "       UNION\n"
                 // Groups for which there is no defined collaboration with single persons
             + "         {\n"
-            + "             ?artist vocab:artist_type \"2\"^^xs:short.\n"
-            + "             FILTER NOT EXISTS { ?artist rel:collaboratesWith ?any }\n"
+            + "             ?artist     vocab:artist_type       \"2\"^^xs:short.\n"
+            + "             FILTER NOT EXISTS { ?artist     rel:collaboratesWith    ?any1 }\n"
+            + "         }\n"
+            + "       UNION\n"
+                // Some artists don't have this attribute
+            + "         {\n"
+            + "             MINUS { ?artist     vocab:artist_type       ?any2 }\n"
+//            + "             FILTER NOT EXISTS { ?artist     vocab:artist_type       ?any2 }\n"
             + "         }\n"
             + "       }\n" 
             + "ORDER BY ?label");
       }
-    
-                      // FIXME: può non esserci. Metti <2 oppure non esiste
-/*
-               + "       UNION\n"
-            + "      { FILTER NOT EXISTS { ?artist vocab:artist_type ?type } }\n"
-
-    */    
   }
