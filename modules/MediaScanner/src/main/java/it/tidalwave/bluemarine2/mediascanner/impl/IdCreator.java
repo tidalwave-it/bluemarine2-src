@@ -46,25 +46,25 @@ import lombok.Cleanup;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class Md5IdCreator 
+public class IdCreator 
   {
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Id createMd5Id (final @Nonnull Path path)
+    public Id createSha1Id (final @Nonnull Path path)
       {
         try 
           {
             final File file = path.toFile();
-            final String algorithm = "MD5";
+            final String algorithm = "SHA1";
             final @Cleanup RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
             final MappedByteBuffer byteBuffer = randomAccessFile.getChannel().map(FileChannel.MapMode.READ_ONLY, 0, file.length());
             final MessageDigest digestComputer = MessageDigest.getInstance(algorithm);
             digestComputer.update(byteBuffer);
             randomAccessFile.close();
-            return new Id("md5id:" + toString(digestComputer.digest()));
+            return new Id("sha1:" + toString(digestComputer.digest()));
           } 
         catch (NoSuchAlgorithmException | IOException e) 
           {
@@ -77,14 +77,14 @@ public class Md5IdCreator
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Id createMd5Id (final @Nonnull String string)
+    public Id createSha1 (final @Nonnull String string)
       {
         try 
           {
-            final String algorithm = "MD5";
+            final String algorithm = "SHA1";
             final MessageDigest digestComputer = MessageDigest.getInstance(algorithm);
             digestComputer.update(string.getBytes());
-            return new Id("md5id:" + toString(digestComputer.digest()));
+            return new Id("sha1:" + toString(digestComputer.digest()));
           } 
         catch (NoSuchAlgorithmException e) 
           {

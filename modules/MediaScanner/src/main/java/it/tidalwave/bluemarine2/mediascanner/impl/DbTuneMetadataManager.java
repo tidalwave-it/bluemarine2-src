@@ -163,19 +163,18 @@ public class DbTuneMetadataManager
      *
      * Imports the DbTune.org metadata for the given track.
      * 
-     * @param   track                   the track
-     * @param   mediaItemUri            the URI of the item
+     * @param   trackUri            the URI of the item
+     * @param   mbGuid              the MusicBrainz id
      * 
      ******************************************************************************************************************/
-    public void importTrackMetadata (final @Nonnull MediaItem track, final @Nonnull URI mediaItemUri)
+    public void importTrackMetadata (final @Nonnull URI trackUri, final @Nonnull String mbGuid)
       { 
         try 
           {
-            log.debug("importTrackMetadata({}, {})", track, mediaItemUri);
-            final MediaItem.Metadata metadata = track.getMetadata();
-            final String mbGuid = metadata.get(MediaItem.Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
-            messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid)));
-            messageBus.publish(new DownloadRequest(urlFor(mediaItemUri), FOLLOW_REDIRECT));
+            log.debug("importTrackMetadata({})", trackUri);
+//            final MediaItem.Metadata metadata = track.getMetadata();
+            messageBus.publish(new AddStatementsRequest(trackUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid)));
+            messageBus.publish(new DownloadRequest(urlFor(trackUri), FOLLOW_REDIRECT));
             progress.incrementTotalDownloads();
           }
         catch (MalformedURLException e) // shoudn't never happen

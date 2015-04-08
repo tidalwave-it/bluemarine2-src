@@ -76,7 +76,7 @@ public class EmbeddedMetadataManager
     private MessageBus messageBus;
     
     @Inject
-    private Md5IdCreator md5IdCreator;
+    private IdCreator md5IdCreator;
 
     /*******************************************************************************************************************
      *
@@ -104,16 +104,17 @@ public class EmbeddedMetadataManager
      * 
      * 
      ******************************************************************************************************************/
-    private static final Map<Key<?>, Function<Object, Pair>> MAPPER = new HashMap<>();
+    private static final Map<Key<?>, Function<Object, Pair>> SIGNAL_MAPPER = new HashMap<>();
+    private static final Map<Key<?>, Function<Object, Pair>> TRACK_MAPPER = new HashMap<>();
 
     static
       {
-        MAPPER.put(Metadata.TRACK,       v -> new Pair(MO.P_TRACK_NUMBER,    literalFor((int)v)));
-        MAPPER.put(Metadata.SAMPLE_RATE, v -> new Pair(MO.P_SAMPLE_RATE,     literalFor((int)v)));
-        MAPPER.put(Metadata.BIT_RATE,    v -> new Pair(MO.P_BITS_PER_SAMPLE, literalFor((int)v)));
-        MAPPER.put(Metadata.DURATION,    v -> new Pair(MO.P_DURATION,        literalFor((float)((Duration)v).toMillis())));
-      }
+        TRACK_MAPPER. put(Metadata.TRACK,       v -> new Pair(MO.P_TRACK_NUMBER,    literalFor((int)v)));
     
+        SIGNAL_MAPPER.put(Metadata.SAMPLE_RATE, v -> new Pair(MO.P_SAMPLE_RATE,     literalFor((int)v)));
+        SIGNAL_MAPPER.put(Metadata.BIT_RATE,    v -> new Pair(MO.P_BITS_PER_SAMPLE, literalFor((int)v)));
+        SIGNAL_MAPPER.put(Metadata.DURATION,    v -> new Pair(MO.P_DURATION,        literalFor((float)((Duration)v).toMillis())));
+      }
     /*******************************************************************************************************************
      *
      * 
@@ -128,19 +129,25 @@ public class EmbeddedMetadataManager
     
     /*******************************************************************************************************************
      *
-     * Imports the metadata embedded in a track for the given {@link MediaItem}. It only processes the portion of 
+     * Imports the metadata embedded in a file for the given {@link MediaItem}. It only processes the portion of 
      * metadata which are never superseded by external catalogs (such as sample rate, duration, etc...).
      * 
      * @param   mediaItem               the {@code MediaItem}.
-     * @param   mediaItemUri            the URI of the item
+     * @param   signalUri            the URI of the item
      * 
      ******************************************************************************************************************/
-    public void importTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI mediaItemUri)
+    public void importAudioFileMetadata (final @Nonnull MediaItem mediaItem, 
+                                         final @Nonnull URI signalUri,
+                                         final @Nonnull URI trackUri)
       {
-        log.debug("importTrackMetadata({}, {})", mediaItem, mediaItemUri);
+        log.debug("importAudioFileMetadata({}, {})", mediaItem, signalUri);
         messageBus.publish(mediaItem.getMetadata().getEntries().stream()
-                        .filter(e -> MAPPER.containsKey(e.getKey()))
-                        .map(e -> MAPPER.get(e.getKey()).apply(e.getValue()).createStatementWithSubject(mediaItemUri))
+                        .filter(e -> SIGNAL_MAPPER.containsKey(e.getKey()))
+                        .map(e -> SIGNAL_MAPPER.get(e.getKey()).apply(e.getValue()).createStatementWithSubject(signalUri))
+                        .collect(toAddStatementsRequest()));
+        messageBus.publish(mediaItem.getMetadata().getEntries().stream()
+                        .filter(e -> TRACK_MAPPER.containsKey(e.getKey()))
+                        .map(e -> TRACK_MAPPER.get(e.getKey()).apply(e.getValue()).createStatementWithSubject(trackUri))
                         .collect(toAddStatementsRequest()));
       }
     
@@ -171,7 +178,7 @@ public class EmbeddedMetadataManager
         
         if (artist.isPresent())
           {
-            final URI artistUri = uriFor(md5IdCreator.createMd5Id("ARTIST:" + artist.get()));
+            final URI artistUri = uriFor(md5IdCreator.createSha1("ARTIST:" + artist.get()));
             
             if (seenArtistUris.putIfAbsent(artistUri, true) == null)
               {
@@ -186,7 +193,7 @@ public class EmbeddedMetadataManager
         
         final MediaFolder parent = mediaItem.getParent();
         final String recordTitle = parent.getPath().toFile().getName();
-        final URI recordUri = uriFor(md5IdCreator.createMd5Id("CD:" + recordTitle));
+        final URI recordUri = uriFor(md5IdCreator.createSha1("CD:" + recordTitle));
                 
         if (seenRecordUris.putIfAbsent(recordUri, true) == null)
           {

@@ -59,6 +59,49 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 
 /***********************************************************************************************************************
  *
+ * 
+ * mo:AudioFile             
+ *      URI                                                     computed from the fingerprint
+ *      foaf:sha1           the fingerprint of the file         locally computed
+ *      bm:latestInd.Time   the latest import time              locally computed
+ *      bm:path             the path of the file                locally computed
+ *      dc:title            the title                           locally computed    WRONG: USELESS?
+ *      rdfs:label          the display name                    locally computed    WRONG: should be the file name without path?
+ *      mo:encodes          points to the signal                locally computed
+ * 
+ * mo:DigitalSignal
+ *      URI                                                     computed from the fingerprint
+ *      mo:bitsPerSample    the bits per sample                 locally extracted from the file
+ *      mo:duration         the duration                        locally extracted from the file
+ *      mo:sample_rate      the sample rate                     locally extracted from the file
+ *      mo:published_as     points to the Track                 locally computed
+ *      MISSING mo:channels
+ *      MISSING? mo:time
+ *      MISSING? mo:trmid
+ * 
+ * mo:Track
+ *      URI                                                     the DbTune one if available, else computed from MD5
+ *      mo:musicbrainz      the MusicBrainz URI                 locally extracted from the file
+ *      dc:title            the title                           taken from DbTune
+ *      rdfs:label          the display name                    taken from DbTune
+ *      foaf:maker          points to the MusicArtist           taken from DbTune
+ *      mo:track_number     the track number in the record      taken from DbTune
+ * 
+ * mo:Record
+ *      URI                                                     taken from DbTune
+ *      dc:date
+ *      dc:language
+ *      dc:title            the title                           taken from DbTune
+ *      rdfs:label          the display name                    taken from DbTune
+ *      mo:release          TODO points to the Label (EMI, etc...)
+ *      mo:musicbrainz      the MusicBrainz URI                 locally extracted from the file
+ *      mo:track            points to the Tracks                taken from DbTune
+ *      foaf:maker          points to the MusicArtist           taken from DbTune
+ *      owl:sameAs          point to external resources         taken from DbTune
+ * 
+ * mo:Artist
+ *      
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -85,7 +128,7 @@ public class DefaultMediaScanner
     private InstantProvider timestampProvider;
     
     @Inject
-    private Md5IdCreator md5IdCreator;
+    private IdCreator idCreator;
 
     /*******************************************************************************************************************
      *
@@ -222,39 +265,48 @@ public class DefaultMediaScanner
      *
      * Processes a {@link MediaItem}.
      * 
-     * @param                           mediaItem   the item
+     * @param                           audioFile   the item
      *
      ******************************************************************************************************************/
-    private void importMediaItem (final @Nonnull MediaItem mediaItem)
+    private void importMediaItem (final @Nonnull MediaItem audioFile)
       { 
-        log.debug("importMediaItem({})", mediaItem);
-        final Id md5 = md5IdCreator.createMd5Id(mediaItem.getPath());
-        final Metadata metadata = mediaItem.getMetadata();
+        log.debug("importMediaItem({})", audioFile);
+        final Id sha1 = idCreator.createSha1Id(audioFile.getPath());
+        final Metadata metadata = audioFile.getMetadata();
         final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
         log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
 
-        final URI mediaItemUri = !musicBrainzTrackId.isPresent() 
-                ? uriFor(md5)
+        final URI audioFileUri = BM.audioFileUri(sha1);
+        final URI signalUri = BM.signalUri(sha1);
+        final URI trackUri = !musicBrainzTrackId.isPresent() 
+                ? BM.trackUri(sha1)
                 : uriFor("http://dbtune.org/musicbrainz/resource/track/" + 
                     musicBrainzTrackId.get().stringValue().replaceAll("^mbz:", ""));
 
-        final Instant lastModifiedTime = getLastModifiedTime(mediaItem.getPath());
+        final Instant lastModifiedTime = getLastModifiedTime(audioFile.getPath());
         messageBus.publish(AddStatementsRequest.build()
-                        .with(mediaItemUri, RDF.TYPE, MO.C_TRACK)
-                        .with(mediaItemUri, MO.C_AUDIO_FILE, literalFor(mediaItem.getRelativePath()))
-                        .with(mediaItemUri, BM.MD5, literalFor(md5.stringValue().replaceAll("^md5id:", "")))
-                        .with(mediaItemUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
+                        .with(audioFileUri, RDF.TYPE,   MO.C_AUDIO_FILE)
+                        .with(audioFileUri, MO.P_ENCODES, signalUri)
+                        .with(audioFileUri, FOAF.SHA1,  literalFor(sha1.stringValue().replaceAll("^md5id:", "")))
+                        .with(audioFileUri, BM.PATH,    literalFor(audioFile.getRelativePath())) 
+                        .with(audioFileUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
+                
+                        .with(trackUri, RDF.TYPE, MO.C_TRACK)
+                
+                        .with(signalUri, RDF.TYPE, MO.C_DIGITAL_SIGNAL)
+                        .with(signalUri, MO.P_PUBLISHED_AS, trackUri)
                         .create());
-        embeddedMetadataManager.importTrackMetadata(mediaItem, mediaItemUri);
+        embeddedMetadataManager.importAudioFileMetadata(audioFile, signalUri, trackUri);
 
         if (musicBrainzTrackId.isPresent())
           {
-            dbTuneMetadataManager.importTrackMetadata(mediaItem, mediaItemUri);
+            final String mbGuid = metadata.get(MediaItem.Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
+            dbTuneMetadataManager.importTrackMetadata(trackUri, mbGuid);
 //                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
           }
         else
           {
-            embeddedMetadataManager.importFallbackTrackMetadata(mediaItem, mediaItemUri);
+            embeddedMetadataManager.importFallbackTrackMetadata(audioFile, audioFileUri);
           } 
       }
     
