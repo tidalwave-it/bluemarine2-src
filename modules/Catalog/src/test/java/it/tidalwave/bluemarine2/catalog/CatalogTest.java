@@ -48,6 +48,8 @@ import org.testng.annotations.Test;
 import lombok.extern.slf4j.Slf4j;
 import static java.nio.file.Files.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
+import javax.annotation.Nonnull;
+import org.testng.annotations.DataProvider;
 
 /***********************************************************************************************************************
  *
@@ -58,19 +60,22 @@ import static it.tidalwave.util.test.FileComparisonUtils.*;
 @Slf4j
 public class CatalogTest 
   {
+    private static final Path MODELS = Paths.get("src/test/resources");
+            
     private static final Path TEST_RESULTS = Paths.get("target/test-results");
             
     private static final Path EXPECTED_TEST_RESULTS = Paths.get("src/test/resources/expected-results");
             
     private Repository repository;
     
-    @Test
-    public void dumpCatalog() 
+    @Test(dataProvider = "p")
+    public void dumpCatalog (final @Nonnull String catalogName, final @Nonnull String dumpName) 
       throws RepositoryException, IOException, RDFParseException, MalformedQueryException, QueryEvaluationException
       {
         repository = new SailRepository(new MemoryStore());
         repository.initialize();
-        final File file = new File("../MediaScanner/src/test/resources/expected-results/model.n3");
+        final File file = MODELS.resolve(catalogName).toFile();
+//        final File file = new File("../MediaScanner/src/test/resources/expected-results/model.n3");
         final RepositoryConnection connection = repository.getConnection();
         
     // https://bitbucket.org/openrdf/alibaba/src/master/object-repository/
@@ -84,8 +89,8 @@ public class CatalogTest
         final Catalog catalog = new RepositoryCatalog(repository);
         final List<? extends MusicArtist> artists = catalog.findArtists().results();
         
-        final Path actualResult = TEST_RESULTS.resolve("dump.txt");
-        final Path expectedResult = EXPECTED_TEST_RESULTS.resolve("dump.txt");
+        final Path actualResult = TEST_RESULTS.resolve(dumpName);
+        final Path expectedResult = EXPECTED_TEST_RESULTS.resolve(dumpName);
         createDirectories(TEST_RESULTS);
 
         final PrintWriter pw = new PrintWriter(actualResult.toFile());
@@ -95,14 +100,24 @@ public class CatalogTest
         // FIXME: missing those in collaborations 
         // FIXME: not correctly sorted in many cases
         
-        artists.forEach(artist -> 
-          {
+//        artists.forEach(artist -> 
+        final MusicArtist artist = artists.get(0);
+//          {
             pw.printf("\nTRACKS OF %s:\n", artist);
             artist.findTracks().stream().forEach(track -> pw.printf("  %s\n", track));
-          });
+//          });
         
         pw.close();
         
         assertSameContents(expectedResult.toFile(), actualResult.toFile());
+      }
+    
+    @DataProvider(name = "p")
+    private static Object[][] p()
+      {
+        return new Object[][]
+          {
+            { "tiny-model.n3", "tiny-dump.txt" }
+          };
       }
   }
