@@ -86,25 +86,35 @@ public class CatalogTest
 //        ObjectRepository oRepository = factory.createRepository(repository);        
                
         final Catalog catalog = new RepositoryCatalog(repository);
-        final List<? extends MusicArtist> artists = catalog.findArtists().results();
         
         final Path actualResult = TEST_RESULTS.resolve(dumpName);
         final Path expectedResult = EXPECTED_TEST_RESULTS.resolve(dumpName);
         createDirectories(TEST_RESULTS);
-
         final PrintWriter pw = new PrintWriter(actualResult.toFile());
+        
+        pw.println("\n\nALL TRACKS:\n");
+        final List<? extends Track> allTracks =  catalog.findTracks().results();
+        allTracks.stream().forEach(track -> pw.printf("  %s\n", track));
+        
         pw.println("ARTISTS:\n");
+        final List<? extends MusicArtist> artists = catalog.findArtists().results();
         artists.forEach(artist -> pw.printf("%s\n", artist));
         
-        // FIXME: missing those in collaborations 
         // FIXME: not correctly sorted in many cases
         
         artists.forEach(artist -> 
           {
             pw.printf("\nTRACKS OF %s:\n", artist);
-            artist.findTracks().stream().forEach(track -> pw.printf("  %s\n", track));
+            artist.findTracks().stream().forEach(track -> 
+              {
+                pw.printf("  %s\n", track);
+                allTracks.remove(track);
+              });
           });
         
+        pw.println("\n\nORPHANED TRACKS:\n");
+        allTracks.stream().forEach(track -> pw.printf("  %s\n", track));
+
         pw.close();
         
         assertSameContents(expectedResult.toFile(), actualResult.toFile());

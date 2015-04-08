@@ -94,20 +94,23 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
     @Override @Nonnull
     protected List<? extends Track> computeNeededResults() 
       {
-        return query(RepositoryTrackEntity.class,  
+        final String q =
               "SELECT *" 
             + "WHERE  {\n" 
             + "       ?track        a                       mo:Track.\n" 
             + "       ?track        rdfs:label              ?label.\n" 
             + "       ?track        mo:track_number         ?track_number.\n" 
-            + "       {\n"
-            + "         ?track        foaf:maker              ?artist.\n"
-            + "       }\n"
-            + "         UNION\n" 
-            + "       {\n"
-            + "         ?track        foaf:maker              ?artistGroup.\n"
-            + "         ?artistGroup  rel:collaboratesWith    ?artist.\n"
-            + "       }\n"
+                      
+            + ((artistId == null)
+                    ? ""
+                    : "       {\n"
+                    + "         ?track        foaf:maker              ?artist.\n"
+                    + "       }\n"
+                    + "         UNION\n" 
+                    + "       {\n"
+                    + "         ?track        foaf:maker              ?artistGroup.\n"
+                    + "         ?artistGroup  rel:collaboratesWith    ?artist.\n"
+                    + "       }\n")
                       
             + "       ?signal       a                       mo:DigitalSignal.\n" 
             + "       ?signal       mo:published_as         ?track.\n"
@@ -121,7 +124,10 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
             + "       ?record       mo:track                ?track.\n" 
             + "       ?record       rdfs:label              ?record_label.\n" 
             + "       }\n"
-            + "ORDER BY ?record_label ?track_number ?label",
-            "artist", ValueFactoryImpl.getInstance().createURI(artistId.stringValue()));
+            + "ORDER BY ?record_label ?track_number ?label";
+        
+        return (artistId == null) ? query(RepositoryTrackEntity.class, q)
+                                  : query(RepositoryTrackEntity.class, q, 
+                                         "artist", ValueFactoryImpl.getInstance().createURI(artistId.stringValue()));
       }
   }

@@ -35,6 +35,7 @@ import java.nio.file.Path;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.catalog.Track;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
@@ -45,7 +46,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @Getter @ToString
+@Immutable @Getter @ToString @EqualsAndHashCode(callSuper = false)
 @Slf4j
 public class RepositoryTrackEntity extends RepositoryEntitySupport implements Track
   {

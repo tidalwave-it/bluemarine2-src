@@ -29,9 +29,10 @@
 package it.tidalwave.bluemarine2.catalog.impl;
 
 import javax.annotation.Nonnull;
+import org.openrdf.repository.Repository;
 import it.tidalwave.bluemarine2.catalog.Catalog;
 import it.tidalwave.bluemarine2.catalog.MusicArtistFinder;
-import org.openrdf.repository.Repository;
+import it.tidalwave.bluemarine2.catalog.TrackFinder;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
@@ -50,5 +51,11 @@ public class RepositoryCatalog implements Catalog
     public MusicArtistFinder findArtists()
       { 
         return new RepositoryMusicArtistFinder(repository);
+      }
+
+    @Override @Nonnull
+    public TrackFinder findTracks() 
+      {
+        return new RepositoryTrackEntityFinder(repository);
       }
   }

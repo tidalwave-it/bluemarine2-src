@@ -42,4 +42,7 @@ public interface Catalog
     
     @Nonnull
     public MusicArtistFinder findArtists();
+
+    @Nonnull
+    public TrackFinder findTracks();
   }
