@@ -210,6 +210,7 @@
         <module>Persistence</module>
         <module>MusicBrainzREST</module>
         <module>Downloader</module>
+        <module>Catalog</module>
     </modules>
 
 </project>
