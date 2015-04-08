@@ -16,6 +16,10 @@
     <name>blueMarine2 - Catalog</name>
     
     <dependencies>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-model</artifactId>
+        </dependency>
 <!--        <dependency>
             <groupId>org.openrdf.alibaba</groupId>
             <artifactId>alibaba-repository-object</artifactId>
