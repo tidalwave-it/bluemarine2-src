@@ -117,7 +117,9 @@ public class CatalogTest
       {
         return new Object[][]
           {
-            { "tiny-model.n3", "tiny-dump.txt" }
+              { "tiny-model.n3",  "tiny-dump.txt"  },
+              { "small-model.n3", "small-dump.txt" },
+              { "large-model.n3", "large-dump.txt" }
           };
       }
   }
