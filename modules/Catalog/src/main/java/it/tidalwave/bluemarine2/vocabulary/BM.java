@@ -28,6 +28,8 @@
  */
 package it.tidalwave.bluemarine2.vocabulary;
 
+import it.tidalwave.util.Id;
+import javax.annotation.Nonnull;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.openrdf.model.URI;
@@ -48,20 +50,36 @@ public final class BM
     public static final String PREFIX                   = "http://bluemarine.tidalwave.it/2015/04/mo/";
     
     public static final String S_LATEST_INDEXING_TIME   = PREFIX + "latestIndexingTime";
-    public static final String S_MD5                    = PREFIX + "md5";
+    public static final String S_PATH                   = PREFIX + "path";
 //    public static final String S_FULL_CREDITS           = PREFIX + "fullCredits";
     
 //    public static final URI FULL_CREDITS                = factory.createURI(S_FULL_CREDITS);
     
-    /** The MD5 fingerprint of the file. */
-    public static final URI MD5                         = factory.createURI(S_MD5);
-    
     /** The file timestamp the latest time it was indexed. */
     public static final URI LATEST_INDEXING_TIME        = factory.createURI(S_LATEST_INDEXING_TIME);
     
+    public static final URI PATH                        = factory.createURI(S_PATH);
 //    /** Means that the file couldn't download metadata. The object is the timestamp of the latest attempt. */
 //    public static final URI LATEST_MB_METADATA          = factory.createURI(PREFIX + "latestMusicBrainzMetadata");
 //    
 //    /** Means that the file couldn't download metadata. The object is the timestamp of the latest attempt. */
 //    public static final URI FAILED_MB_METADATA          = factory.createURI(PREFIX + "failedMusicBrainzMetadata");
+
+    @Nonnull
+    public static URI audioFileUri (final @Nonnull Id id) 
+      {
+        return factory.createURI("af:" + id.stringValue());
+      }
+    
+    @Nonnull
+    public static URI signalUri (final @Nonnull Id id) 
+      {
+        return factory.createURI("sg:" + id.stringValue());
+      }
+    
+    @Nonnull
+    public static URI trackUri (final @Nonnull Id id) 
+      {
+        return factory.createURI("tk:" + id.stringValue());
+      }
   }

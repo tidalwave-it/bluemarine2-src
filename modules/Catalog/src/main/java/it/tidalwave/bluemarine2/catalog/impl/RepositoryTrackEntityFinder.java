@@ -97,16 +97,24 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
         return query(RepositoryTrackEntity.class,  
               "SELECT *"
             + "WHERE  {\n" 
-            + "       ?track  a                 mo:Track.\n" 
-            + "       ?track  foaf:maker        ?artist.\n" 
-            + "       ?track  rdfs:label        ?label.\n" 
-            + "       ?track  mo:track_number   ?track_number.\n" 
-            + "       ?track  mo:duration       ?duration.\n" 
-            + "       ?track  mo:AudioFile      ?audioFile.\n" // FIXME: wrong! This is a type, not a property!
-            + "       ?record mo:track          ?track.\n" 
-            + "       ?record rdfs:label        ?record_label.\n" 
-            + "       }\n"
-            + "ORDER BY ?record_label ?track_number ?label",
+            + "       ?track        a                 mo:Track.\n" 
+            + "       ?track        rdfs:label        ?label.\n" 
+            + "       ?track        foaf:maker        ?artist.\n" 
+            + "       ?track        mo:track_number   ?track_number.\n" 
+                      
+            + "       ?signal       a                 mo:DigitalSignal.\n" 
+            + "       ?signal       mo:published_as   ?track.\n"
+            + "       ?signal       mo:duration       ?duration.\n" 
+                      
+            + "       ?audioFile    a                 mo:AudioFile.\n" 
+            + "       ?audioFile    mo:encodes        ?signal.\n" 
+            + "       ?audioFile    bm:path           ?path.\n" 
+        // OK BELOW
+//            + "       ?record       a                 mo:Record.\n" 
+//            + "       ?record       mo:track          ?track.\n" 
+//            + "       ?record       rdfs:label        ?record_label.\n" 
+            + "       }\n",
+//            + "ORDER BY ?record_label ?track_number ?label",
             "artist", ValueFactoryImpl.getInstance().createURI(artistId.stringValue()));
       }
   }
