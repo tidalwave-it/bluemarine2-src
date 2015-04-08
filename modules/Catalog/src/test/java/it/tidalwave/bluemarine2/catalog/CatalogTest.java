@@ -29,7 +29,6 @@
 package it.tidalwave.bluemarine2.catalog;
 
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalog;
-import it.tidalwave.bluemarine2.catalog.impl.MusicArtistEntity;
 import java.util.List;
 import java.io.File;
 import java.io.IOException;
@@ -83,8 +82,8 @@ public class CatalogTest
         connection.commit();
         connection.close();
         
-        final RepositoryCatalog catalog = new RepositoryCatalog(repository);
-        final List<? extends MusicArtistEntity> artists = catalog.findArtists().results();
+        final Catalog catalog = new RepositoryCatalog(repository);
+        final List<? extends MusicArtist> artists = catalog.findArtists().results();
         
         final Path actualResult = TEST_RESULTS.resolve("dump.txt");
         final Path expectedResult = EXPECTED_TEST_RESULTS.resolve("dump.txt");

@@ -24,7 +24,7 @@ import org.openrdf.repository.Repository;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor
-public class EntitySupport implements Entity, Identifiable
+public class RepositoryEntitySupport implements Entity, Identifiable
   {
     @Delegate
     private AsSupport asSupport; // FIXME = new AsSupport(this);

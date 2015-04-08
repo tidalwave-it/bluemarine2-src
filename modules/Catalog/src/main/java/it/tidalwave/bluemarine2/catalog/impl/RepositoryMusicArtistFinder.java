@@ -7,6 +7,7 @@
 
 package it.tidalwave.bluemarine2.catalog.impl;
 
+import it.tidalwave.bluemarine2.catalog.MusicArtist;
 import it.tidalwave.bluemarine2.catalog.MusicArtistFinder;
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -18,7 +19,7 @@ import org.openrdf.repository.Repository;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicArtistEntity, MusicArtistFinder> 
+public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicArtist, MusicArtistFinder> 
                                          implements MusicArtistFinder 
   {
     /*******************************************************************************************************************
@@ -37,9 +38,9 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    protected List<? extends MusicArtistEntity> computeNeededResults() 
+    protected List<? extends MusicArtist> computeNeededResults() 
       {
-        return query(MusicArtistEntity.class,  
+        return query(RepositoryMusicArtistEntity.class,  
               "SELECT *"
             + "WHERE  {\n" 
             + "       ?artist a                 mo:MusicArtist.\n" 

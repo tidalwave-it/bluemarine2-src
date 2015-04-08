@@ -7,9 +7,8 @@
 
 package it.tidalwave.bluemarine2.catalog;
 
+import it.tidalwave.bluemarine2.model.Entity;
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.util.Id;
 
 /***********************************************************************************************************************
  *
@@ -17,8 +16,10 @@ import it.tidalwave.util.Id;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface TrackFinder extends Finder8<Track>
+public interface MusicArtist extends Entity
   {
+    public static final Class<MusicArtist> MusicArtist = MusicArtist.class;
+    
     @Nonnull
-    public TrackFinder withArtistId (@Nonnull Id artistId);
+    public TrackFinder findTracks();
   }

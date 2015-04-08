@@ -7,18 +7,17 @@
 
 package it.tidalwave.bluemarine2.catalog;
 
-import javax.annotation.Nonnull;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.util.Id;
+import it.tidalwave.bluemarine2.model.Entity;
 
 /***********************************************************************************************************************
  *
+ * NOTE: a Track is an abstract concept - it is associated to MediaItems (as AudioFiles), but it's not a MediaItem.
+ * 
  * @author  fritz
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface TrackFinder extends Finder8<Track>
+public interface Track extends Entity
   {
-    @Nonnull
-    public TrackFinder withArtistId (@Nonnull Id artistId);
+    public static final Class<Track> Track = Track.class;
   }

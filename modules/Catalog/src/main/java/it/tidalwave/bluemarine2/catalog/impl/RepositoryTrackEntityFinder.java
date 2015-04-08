@@ -7,6 +7,7 @@
 
 package it.tidalwave.bluemarine2.catalog.impl;
 
+import it.tidalwave.bluemarine2.catalog.Track;
 import it.tidalwave.bluemarine2.catalog.TrackFinder;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
@@ -21,7 +22,7 @@ import it.tidalwave.util.Id;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<TrackEntity, TrackFinder>
+public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, TrackFinder>
                                          implements TrackFinder
   {
     @CheckForNull
@@ -70,9 +71,9 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<TrackEn
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    protected List<? extends TrackEntity> computeNeededResults() 
+    protected List<? extends Track> computeNeededResults() 
       {
-        return query(TrackEntity.class,  
+        return query(RepositoryTrackEntity.class,  
               "SELECT *"
             + "WHERE  {\n" 
             + "       ?track  a                 mo:Track.\n" 

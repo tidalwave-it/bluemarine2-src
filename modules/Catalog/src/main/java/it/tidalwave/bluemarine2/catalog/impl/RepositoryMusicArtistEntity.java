@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl;
 
+import it.tidalwave.bluemarine2.catalog.MusicArtist;
 import it.tidalwave.bluemarine2.catalog.TrackFinder;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
@@ -43,13 +44,13 @@ import org.openrdf.repository.Repository;
  *
  **********************************************************************************************************************/
 @Immutable @Getter @ToString
-public class MusicArtistEntity extends EntitySupport
+public class RepositoryMusicArtistEntity extends RepositoryEntitySupport implements MusicArtist
   {
     private final String rdfsLabel;
     
     private final String foafName;
 
-    public MusicArtistEntity (final @Nonnull Repository repository,
+    public RepositoryMusicArtistEntity (final @Nonnull Repository repository,
                               final @Nonnull Id id, 
                               final @Nonnull String rdfsLabel, 
                               final @Nonnull String foafName)

@@ -7,7 +7,7 @@
 
 package it.tidalwave.bluemarine2.catalog.impl;
 
-import it.tidalwave.bluemarine2.catalog.impl.EntitySupport;
+import it.tidalwave.bluemarine2.catalog.Track;
 import it.tidalwave.util.Id;
 import java.nio.file.Path;
 import java.time.Duration;
@@ -26,7 +26,7 @@ import org.openrdf.repository.Repository;
  **********************************************************************************************************************/
 @Immutable @Getter @ToString
 @Slf4j
-public class TrackEntity extends EntitySupport
+public class RepositoryTrackEntity extends RepositoryEntitySupport implements Track
   {
     private final Integer trackNumber;
     
@@ -43,7 +43,7 @@ public class TrackEntity extends EntitySupport
     @Nonnull
     private final Path audioFile;
 
-    public TrackEntity (final @Nonnull Repository repository, 
+    public RepositoryTrackEntity (final @Nonnull Repository repository, 
                         final @Nonnull Id id, 
                         final @Nonnull Path audioFile,
                         final @Nonnull String rdfsLabel,
