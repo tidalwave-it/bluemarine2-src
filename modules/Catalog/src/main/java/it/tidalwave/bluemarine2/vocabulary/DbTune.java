@@ -45,9 +45,15 @@ public final class DbTune
   {
     private final static ValueFactory factory = ValueFactoryImpl.getInstance();
     
-    private static final String PREFIX = "http://dbtune.org/musicbrainz/resource/vocab/";
+    public static final String PREFIX = "http://dbtune.org/musicbrainz/resource/vocab/";
     
-    public static final URI ARTIST_TYPE         = factory.createURI(PREFIX + "artist_type");
+    public static final String S_ALBUMMETA_COVERART_URL     = PREFIX + "albummeta_coverarturl";
+    public static final String S_ARTIST_TYPE                = PREFIX + "artist_type";
+    public static final String S_SORT_NAME                  = PREFIX + "sortname";
+    
+    public static final URI ARTIST_TYPE                     = factory.createURI(S_ARTIST_TYPE);
 
-    public static final URI SORT_NAME         = factory.createURI(PREFIX + "sortname");
+    public static final URI SORT_NAME                       = factory.createURI(S_SORT_NAME);
+    
+    public static final URI ALBUMMETA_COVERART_URL          = factory.createURI(S_ALBUMMETA_COVERART_URL);
   }
