@@ -33,7 +33,11 @@ import javax.annotation.Nullable;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Paths;
+import java.nio.charset.Charset;
+import org.springframework.util.StreamUtils;
 import org.openrdf.model.Value;
 import org.openrdf.query.Binding;
 import org.openrdf.query.BindingSet;
@@ -49,6 +53,7 @@ import it.tidalwave.util.Id;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Finder8Support;
 import it.tidalwave.bluemarine2.model.Entity;
+import lombok.Cleanup;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
@@ -61,6 +66,20 @@ import lombok.RequiredArgsConstructor;
 public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
               extends Finder8Support<ENTITY, FINDER> 
   {
+    @Nonnull
+    protected static String readSparql (final @Nonnull Class<?> clazz, final @Nonnull String name)
+      {
+        try 
+          {
+            @Cleanup InputStream is = clazz.getResourceAsStream(name);
+            return StreamUtils.copyToString(is, Charset.forName("UTF-8"));
+          } 
+        catch (IOException e) 
+          {
+            throw new RuntimeException(e);
+          }
+      }
+    
     protected static final String PREFIXES =
                   "PREFIX foaf:  <http://xmlns.com/foaf/0.1/>\n" 
                 + "PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" 

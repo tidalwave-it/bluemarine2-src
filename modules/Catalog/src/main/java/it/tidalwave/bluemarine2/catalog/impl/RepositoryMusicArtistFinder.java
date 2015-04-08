@@ -43,6 +43,8 @@ import it.tidalwave.bluemarine2.catalog.MusicArtistFinder;
 public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicArtist, MusicArtistFinder> 
                                          implements MusicArtistFinder 
   {
+    private final static String QUERY_ARTISTS = readSparql(RepositoryMusicArtistFinder.class, "AllMusicArtists.sparql");
+    
     /*******************************************************************************************************************
      *
      * 
@@ -61,28 +63,6 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
     @Override @Nonnull
     protected List<? extends MusicArtist> computeNeededResults() 
       {
-        return query(RepositoryMusicArtistEntity.class,  
-              "SELECT DISTINCT *"
-            + "WHERE  {\n" 
-            + "       ?artist       a                 mo:MusicArtist.\n" 
-            + "       ?artist       rdfs:label        ?label.\n" 
-                // Single artists
-            + "         {\n"
-            + "            ?artist      vocab:artist_type       \"1\"^^xs:short.\n"
-            + "         }\n"
-            + "       UNION\n"
-                // Groups for which there is no defined collaboration with single persons
-            + "         {\n"
-            + "             ?artist     vocab:artist_type       \"2\"^^xs:short.\n"
-            + "             FILTER NOT EXISTS { ?artist     rel:collaboratesWith    ?any1 }\n"
-            + "         }\n"
-            + "       UNION\n"
-                // Some artists don't have this attribute
-            + "         {\n"
-            + "             MINUS { ?artist     vocab:artist_type       ?any2 }\n"
-//            + "             FILTER NOT EXISTS { ?artist     vocab:artist_type       ?any2 }\n"
-            + "         }\n"
-            + "       }\n" 
-            + "ORDER BY ?label");
+        return query(RepositoryMusicArtistEntity.class, QUERY_ARTISTS);
       }
   }
