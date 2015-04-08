@@ -57,6 +57,7 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 import static it.tidalwave.bluemarine2.persistence.AddStatementsRequest.*;
+import it.tidalwave.bluemarine2.vocabulary.BM;
 
 /***********************************************************************************************************************
  *
@@ -76,7 +77,7 @@ public class EmbeddedMetadataManager
     private MessageBus messageBus;
     
     @Inject
-    private IdCreator md5IdCreator;
+    private IdCreator idCreator;
 
     /*******************************************************************************************************************
      *
@@ -178,7 +179,7 @@ public class EmbeddedMetadataManager
         
         if (artist.isPresent())
           {
-            final URI artistUri = uriFor(md5IdCreator.createSha1("ARTIST:" + artist.get()));
+            final URI artistUri = BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + artist.get()));
             
             if (seenArtistUris.putIfAbsent(artistUri, true) == null)
               {
@@ -193,7 +194,7 @@ public class EmbeddedMetadataManager
         
         final MediaFolder parent = mediaItem.getParent();
         final String recordTitle = parent.getPath().toFile().getName();
-        final URI recordUri = uriFor(md5IdCreator.createSha1("CD:" + recordTitle));
+        final URI recordUri = BM.localRecordUriFor(idCreator.createSha1("RECORD:" + recordTitle));
                 
         if (seenRecordUris.putIfAbsent(recordUri, true) == null)
           {

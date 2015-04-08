@@ -28,8 +28,8 @@
  */
 package it.tidalwave.bluemarine2.vocabulary;
 
-import it.tidalwave.util.Id;
 import javax.annotation.Nonnull;
+import it.tidalwave.util.Id;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.openrdf.model.URI;
@@ -66,20 +66,32 @@ public final class BM
 //    public static final URI FAILED_MB_METADATA          = factory.createURI(PREFIX + "failedMusicBrainzMetadata");
 
     @Nonnull
-    public static URI audioFileUri (final @Nonnull Id id) 
+    public static URI audioFileUriFor (final @Nonnull Id id) 
       {
-        return factory.createURI("af:" + id.stringValue());
+        return factory.createURI("urn:bluemarine:audiofile:" + id.stringValue());
       }
     
     @Nonnull
-    public static URI signalUri (final @Nonnull Id id) 
+    public static URI signalUriFor (final @Nonnull Id id) 
       {
-        return factory.createURI("sg:" + id.stringValue());
+        return factory.createURI("urn:bluemarine:signal:" + id.stringValue());
       }
     
     @Nonnull
-    public static URI trackUri (final @Nonnull Id id) 
+    public static URI localTrackUriFor (final @Nonnull Id id) 
       {
-        return factory.createURI("tk:" + id.stringValue());
+        return factory.createURI("urn:bluemarine:track:" + id.stringValue());
+      }
+
+    @Nonnull
+    public static URI localRecordUriFor (final @Nonnull Id id) 
+      {
+        return factory.createURI("urn:bluemarine:record:" + id.stringValue());
+      }
+
+    @Nonnull
+    public static URI localArtistUriFor (final @Nonnull Id id) 
+      {
+        return factory.createURI("urn:bluemarine:artist:" + id.stringValue());
       }
   }

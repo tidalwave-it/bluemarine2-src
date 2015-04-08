@@ -64,7 +64,7 @@ public class IdCreator
             final MessageDigest digestComputer = MessageDigest.getInstance(algorithm);
             digestComputer.update(byteBuffer);
             randomAccessFile.close();
-            return new Id("sha1:" + toString(digestComputer.digest()));
+            return new Id(toString(digestComputer.digest()));
           } 
         catch (NoSuchAlgorithmException | IOException e) 
           {
@@ -84,7 +84,7 @@ public class IdCreator
             final String algorithm = "SHA1";
             final MessageDigest digestComputer = MessageDigest.getInstance(algorithm);
             digestComputer.update(string.getBytes());
-            return new Id("sha1:" + toString(digestComputer.digest()));
+            return new Id(toString(digestComputer.digest()));
           } 
         catch (NoSuchAlgorithmException e) 
           {

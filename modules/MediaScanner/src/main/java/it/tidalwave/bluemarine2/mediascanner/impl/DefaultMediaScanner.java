@@ -80,7 +80,7 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
  *      MISSING? mo:trmid
  * 
  * mo:Track
- *      URI                                                     the DbTune one if available, else computed from MD5
+ *      URI                                                     the DbTune one if available, else computed from SHA1
  *      mo:musicbrainz      the MusicBrainz URI                 locally extracted from the file
  *      dc:title            the title                           taken from DbTune
  *      rdfs:label          the display name                    taken from DbTune
@@ -276,10 +276,10 @@ public class DefaultMediaScanner
         final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
         log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
 
-        final URI audioFileUri = BM.audioFileUri(sha1);
-        final URI signalUri = BM.signalUri(sha1);
+        final URI audioFileUri = BM.audioFileUriFor(sha1);
+        final URI signalUri = BM.signalUriFor(sha1);
         final URI trackUri = !musicBrainzTrackId.isPresent() 
-                ? BM.trackUri(sha1)
+                ? BM.localTrackUriFor(sha1)
                 : uriFor("http://dbtune.org/musicbrainz/resource/track/" + 
                     musicBrainzTrackId.get().stringValue().replaceAll("^mbz:", ""));
 
@@ -287,7 +287,7 @@ public class DefaultMediaScanner
         messageBus.publish(AddStatementsRequest.build()
                         .with(audioFileUri, RDF.TYPE,   MO.C_AUDIO_FILE)
                         .with(audioFileUri, MO.P_ENCODES, signalUri)
-                        .with(audioFileUri, FOAF.SHA1,  literalFor(sha1.stringValue().replaceAll("^md5id:", "")))
+                        .with(audioFileUri, FOAF.SHA1,  literalFor(sha1.stringValue()))
                         .with(audioFileUri, BM.PATH,    literalFor(audioFile.getRelativePath())) 
                         .with(audioFileUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
                 
