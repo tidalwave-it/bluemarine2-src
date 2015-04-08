@@ -75,17 +75,16 @@ public class CatalogTest
         repository = new SailRepository(new MemoryStore());
         repository.initialize();
         final File file = MODELS.resolve(catalogName).toFile();
-//        final File file = new File("../MediaScanner/src/test/resources/expected-results/model.n3");
         final RepositoryConnection connection = repository.getConnection();
+        
+        connection.add(file, null, RDFFormat.N3);
+        connection.commit();
+        connection.close();
         
     // https://bitbucket.org/openrdf/alibaba/src/master/object-repository/
 //        ObjectRepositoryFactory factory = new ObjectRepositoryFactory();
 //        ObjectRepository oRepository = factory.createRepository(repository);        
                
-        connection.add(file, null, RDFFormat.N3);
-        connection.commit();
-        connection.close();
-        
         final Catalog catalog = new RepositoryCatalog(repository);
         final List<? extends MusicArtist> artists = catalog.findArtists().results();
         
