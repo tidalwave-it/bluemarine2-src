@@ -36,8 +36,6 @@ import org.openrdf.model.impl.ValueFactoryImpl;
 
 /***********************************************************************************************************************
  *
- * See http://musicontology.com/specification/
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -47,18 +45,23 @@ public final class BM
   {
     private final static ValueFactory factory = ValueFactoryImpl.getInstance();
     
-    private static final String PREFIX = "http://bluemarine.tidalwave.it/2015/04/mo/";
+    public static final String PREFIX                   = "http://bluemarine.tidalwave.it/2015/04/mo/";
     
-    public static final URI FULL_CREDITS         = factory.createURI(PREFIX + "fullCredits");
+    public static final String S_LATEST_INDEXING_TIME   = PREFIX + "latestIndexingTime";
+    public static final String S_MD5                    = PREFIX + "md5";
+//    public static final String S_FULL_CREDITS           = PREFIX + "fullCredits";
     
-    public static final URI MD5                  = factory.createURI(PREFIX + "md5");
+//    public static final URI FULL_CREDITS                = factory.createURI(S_FULL_CREDITS);
+    
+    /** The MD5 fingerprint of the file. */
+    public static final URI MD5                         = factory.createURI(S_MD5);
     
     /** The file timestamp the latest time it was indexed. */
-    public static final URI LATEST_INDEXING_TIME = factory.createURI(PREFIX + "latestIndexingTime");
+    public static final URI LATEST_INDEXING_TIME        = factory.createURI(S_LATEST_INDEXING_TIME);
     
-    /** Means that the file couldn't download metadata. The object is the timestamp of the latest attempt. */
-    public static final URI LATEST_MB_METADATA      = factory.createURI(PREFIX + "latestMusicBrainzMetadata");
-    
-    /** Means that the file couldn't download metadata. The object is the timestamp of the latest attempt. */
-    public static final URI FAILED_MB_METADATA      = factory.createURI(PREFIX + "failedMusicBrainzMetadata");
+//    /** Means that the file couldn't download metadata. The object is the timestamp of the latest attempt. */
+//    public static final URI LATEST_MB_METADATA          = factory.createURI(PREFIX + "latestMusicBrainzMetadata");
+//    
+//    /** Means that the file couldn't download metadata. The object is the timestamp of the latest attempt. */
+//    public static final URI FAILED_MB_METADATA          = factory.createURI(PREFIX + "failedMusicBrainzMetadata");
   }
