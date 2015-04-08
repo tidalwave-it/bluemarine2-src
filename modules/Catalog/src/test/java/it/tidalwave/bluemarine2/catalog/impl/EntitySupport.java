@@ -5,7 +5,7 @@
  * #L%
  */
 
-package it.tidalwave.bluemarine2.catalog;
+package it.tidalwave.bluemarine2.catalog.impl;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.util.Id;

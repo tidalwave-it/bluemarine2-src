@@ -5,8 +5,9 @@
  * #L%
  */
 
-package it.tidalwave.bluemarine2.catalog;
+package it.tidalwave.bluemarine2.catalog.impl;
 
+import it.tidalwave.bluemarine2.catalog.impl.EntitySupport;
 import it.tidalwave.util.Id;
 import java.nio.file.Path;
 import java.time.Duration;

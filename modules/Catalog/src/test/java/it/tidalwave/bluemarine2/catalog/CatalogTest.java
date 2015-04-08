@@ -28,6 +28,8 @@
  */
 package it.tidalwave.bluemarine2.catalog;
 
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalog;
+import it.tidalwave.bluemarine2.catalog.impl.MusicArtistEntity;
 import java.util.List;
 import java.io.File;
 import java.io.IOException;

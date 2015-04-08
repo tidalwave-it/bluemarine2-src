@@ -26,8 +26,9 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog;
+package it.tidalwave.bluemarine2.catalog.impl;
 
+import it.tidalwave.bluemarine2.catalog.TrackFinder;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import it.tidalwave.util.Id;
@@ -59,7 +60,7 @@ public class MusicArtistEntity extends EntitySupport
       }
     
     @Nonnull
-    public TrackEntityFinder findTracks() 
+    public TrackFinder findTracks() 
       {
         return new RepositoryTrackEntityFinder(repository).withArtistId(id);
       }

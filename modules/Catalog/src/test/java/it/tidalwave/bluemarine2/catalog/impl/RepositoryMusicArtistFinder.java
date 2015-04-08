@@ -5,8 +5,9 @@
  * #L%
  */
 
-package it.tidalwave.bluemarine2.catalog;
+package it.tidalwave.bluemarine2.catalog.impl;
 
+import it.tidalwave.bluemarine2.catalog.MusicArtistFinder;
 import javax.annotation.Nonnull;
 import java.util.List;
 import org.openrdf.repository.Repository;

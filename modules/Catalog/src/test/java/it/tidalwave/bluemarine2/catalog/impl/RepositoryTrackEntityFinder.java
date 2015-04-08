@@ -5,8 +5,9 @@
  * #L%
  */
 
-package it.tidalwave.bluemarine2.catalog;
+package it.tidalwave.bluemarine2.catalog.impl;
 
+import it.tidalwave.bluemarine2.catalog.TrackFinder;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -20,8 +21,8 @@ import it.tidalwave.util.Id;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<TrackEntity, TrackEntityFinder>
-                                         implements TrackEntityFinder
+public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<TrackEntity, TrackFinder>
+                                         implements TrackFinder
   {
     @CheckForNull
     private Id artistId;
@@ -42,7 +43,7 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<TrackEn
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public TrackEntityFinder withArtistId (final @Nonnull Id artistId)  
+    public TrackFinder withArtistId (final @Nonnull Id artistId)  
       {
         final RepositoryTrackEntityFinder clone = clone();
         clone.artistId = artistId;
