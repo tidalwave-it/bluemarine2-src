@@ -76,7 +76,7 @@ public class CatalogTest
       {
         repository = new SailRepository(new MemoryStore());
         repository.initialize();
-        final File file = new File("../MediaScanner/src/test/resources/expected-results/model.n3").getCanonicalFile().getAbsoluteFile();
+        final File file = new File("../MediaScanner/src/test/resources/expected-results/model.n3");
         final RepositoryConnection connection = repository.getConnection();
         
 //        ObjectRepositoryFactory factory = new ObjectRepositoryFactory();
@@ -113,7 +113,6 @@ public class CatalogTest
           {
             pw.printf("\nTRACKS OF %s:\n", artist);
             artist.findTracks().forEach(track -> pw.printf("  %s\n", track));
-            
           });
         
         pw.close();
