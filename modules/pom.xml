@@ -196,21 +196,21 @@
     </dependencies>
 
     <modules>
-        <module>UI</module>
-        <module>JavaFX</module>
-        <module>JavaFXApplication</module>
-        <module>Model</module>
+        <module>Catalog</module>
+        <module>CECNavigationAdapter</module>
+        <module>CECWrapper</module>
+        <module>Commons</module>
+        <module>Downloader</module>
         <module>Installers/Linux</module>
         <module>Installers/LinuxArmV6EmbeddedJRE</module>
         <module>Installers/MacOSXEmbeddedJRE</module>
-        <module>CECWrapper</module>
-        <module>CECNavigationAdapter</module>
-        <module>Commons</module>
+        <module>JavaFX</module>
+        <module>JavaFXApplication</module>
         <module>MediaScanner</module>
-        <module>Persistence</module>
+        <module>Model</module>
         <module>MusicBrainzREST</module>
-        <module>Downloader</module>
-        <module>Catalog</module>
+        <module>Persistence</module>
+        <module>UI</module>
     </modules>
 
 </project>
