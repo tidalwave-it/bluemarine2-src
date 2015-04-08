@@ -1,0 +1,53 @@
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix bmmo: <http://bluemarine.tidalwave.it/2015/04/mo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rel: <http://purl.org/vocab/relationship/> .
+@prefix vocab: <http://dbtune.org/musicbrainz/resource/vocab/> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
+
+<af:sha1:401312e43ba18e55fc16480d68366ed0200cb155> a mo:AudioFile ;
+	bmmo:latestIndexingTime "2015-04-02T16:56:08.000+02:00"^^xs:dateTime ;
+	bmmo:path "Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/1-10 Quiet City.m4a" ;
+	mo:encodes <sg:sha1:401312e43ba18e55fc16480d68366ed0200cb155> ;
+	foaf:sha1 "sha1:401312e43ba18e55fc16480d68366ed0200cb155" .
+
+<sg:sha1:401312e43ba18e55fc16480d68366ed0200cb155> a mo:DigitalSignal ;
+	mo:bitsPerSample "256"^^xs:int ;
+	mo:duration "588000.0"^^xs:float ;
+	mo:published_as <http://dbtune.org/musicbrainz/resource/track/2661ba28-6b89-4d52-926e-cc5946206909> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<http://dbtune.org/musicbrainz/resource/track/2661ba28-6b89-4d52-926e-cc5946206909> a mo:Track ;
+	dc:title "Quiet City" ;
+	mo:musicbrainz_guid "2661ba28-6b89-4d52-926e-cc5946206909" ;
+	mo:track_number "10"^^xs:int ;
+	rdfs:label "Quiet City" ;
+	foaf:maker <http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09> .
+
+<http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09> a mo:MusicArtist ;
+	vocab:artist_type "1"^^xs:short ;
+	vocab:sortname "Copland, Aaron" ;
+	bio:event <http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09/birth> , <http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09/death> ;
+	rdfs:label "Aaron Copland" ;
+	foaf:name "Aaron Copland" .
+
+<http://dbtune.org/musicbrainz/resource/record/86af8470-fe29-45c2-8831-4322a7e2f4fe> a mo:Record ;
+	vocab:album_attributes "{0,100}" ;
+	vocab:album_quality "-1"^^xs:short ;
+	vocab:albummeta_asin "          " ;
+	vocab:albummeta_coverarturl "" ;
+	vocab:albummeta_discids "2"^^xs:int ;
+	vocab:albummeta_puids "3"^^xs:int ;
+	vocab:toc <http://dbtune.org/musicbrainz/resource/toc/305718> , <http://dbtune.org/musicbrainz/resource/toc/7777> ;
+	vocab:tracks "14"^^xs:int ;
+	dc:title "The Copland Collection: Orchestral and Ballet Works, 1936-1948 (disc 1)" ;
+	mo:musicbrainz <http://musicbrainz.org/album/86af8470-fe29-45c2-8831-4322a7e2f4fe> ;
+	mo:track <http://dbtune.org/musicbrainz/resource/track/0c6d640e-25c1-44fc-b1e4-c8ca6e408470> , <http://dbtune.org/musicbrainz/resource/track/1a116596-394a-4278-ba91-94d63feb86ba> , <http://dbtune.org/musicbrainz/resource/track/1adef542-1983-4e55-842b-9c514549a198> , <http://dbtune.org/musicbrainz/resource/track/2661ba28-6b89-4d52-926e-cc5946206909> , <http://dbtune.org/musicbrainz/resource/track/2f5fd10f-b0e0-4612-a7ac-6e3bec197bbb> , <http://dbtune.org/musicbrainz/resource/track/4cc8ef5e-5f36-4fc2-af41-13d4a5c03ddc> , <http://dbtune.org/musicbrainz/resource/track/624c7995-15e6-41ee-96b1-c5e9200864d2> , <http://dbtune.org/musicbrainz/resource/track/68b90d23-63c8-4eb5-a79d-f192d32123de> , <http://dbtune.org/musicbrainz/resource/track/7a26f903-2811-495e-8ef4-3f29193b17ec> , <http://dbtune.org/musicbrainz/resource/track/9270421d-530e-46b8-9459-ab2d5db46b33> , <http://dbtune.org/musicbrainz/resource/track/b0c918e2-4129-45a6-a953-bb2048aae3d7> , <http://dbtune.org/musicbrainz/resource/track/b5a00810-e14e-45a4-b7f1-fb2e2f150949> , <http://dbtune.org/musicbrainz/resource/track/f0eb42a2-00a7-4aa2-8603-d8606428bbde> , <http://dbtune.org/musicbrainz/resource/track/f256563c-b3ab-4a48-8c0b-80bf63675aba> ;
+	rdfs:label "The Copland Collection: Orchestral and Ballet Works, 1936-1948 (disc 1)" ;
+	foaf:maker <http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09> ;
+	foaf:page "714278032" .
+
