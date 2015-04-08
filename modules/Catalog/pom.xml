@@ -19,6 +19,12 @@
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-model</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 <!--        <dependency>
             <groupId>org.openrdf.alibaba</groupId>
@@ -53,6 +59,11 @@
             <artifactId>org-openide-util</artifactId>
             <version>RELEASE712</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     
