@@ -28,11 +28,12 @@
  */
 package it.tidalwave.bluemarine2.catalog;
 
+import java.util.List;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
-import lombok.extern.slf4j.Slf4j;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import org.openrdf.query.MalformedQueryException;
 import org.openrdf.query.QueryEvaluationException;
 import org.openrdf.repository.Repository;
@@ -43,6 +44,16 @@ import org.openrdf.rio.RDFFormat;
 import org.openrdf.rio.RDFParseException;
 import org.openrdf.sail.memory.MemoryStore;
 import org.testng.annotations.Test;
+import lombok.extern.slf4j.Slf4j;
+import static java.nio.file.Files.createDirectories;
+import static java.nio.file.Files.write;
+import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
+
+import static java.nio.file.Files.*;
+import static org.apache.commons.io.FileUtils.*;
+import static it.tidalwave.util.test.FileComparisonUtils.*;
+import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 /***********************************************************************************************************************
  *
@@ -53,6 +64,10 @@ import org.testng.annotations.Test;
 @Slf4j
 public class CatalogTest 
   {
+    private static final Path TEST_RESULTS = Paths.get("target/test-results");
+            
+    private static final Path EXPECTED_TEST_RESULTS = Paths.get("src/test/resources/expected-results");
+            
     private Repository repository;
     
     @Test
@@ -71,9 +86,6 @@ public class CatalogTest
         connection.commit();
         connection.close();
         
-        final File actualFile = new File("target/test-results/dump.txt");
-        actualFile.getParentFile().mkdirs();
-        final PrintWriter pw = new PrintWriter(actualFile);
         
         final List<MusicArtistEntity> artists = QueryUtilities.query(repository, MusicArtistEntity.class, QueryUtilities.PREFIXES  
             + "\n" 
@@ -86,10 +98,16 @@ public class CatalogTest
             + "       }\n" 
             + "ORDER BY ?label");
         
+        final Path actualResult = TEST_RESULTS.resolve("dump.txt");
+        final Path expectedResult = EXPECTED_TEST_RESULTS.resolve("dump.txt");
+        createDirectories(TEST_RESULTS);
+
+        final PrintWriter pw = new PrintWriter(actualResult.toFile());
         pw.println("ARTISTS:\n");
         artists.forEach(artist -> pw.printf("%s\n", artist));
         
         // FIXME: missing those in collaborations 
+        // FIXME: not correctly sorted in many cases
         
         artists.forEach(artist -> 
           {
@@ -99,5 +117,7 @@ public class CatalogTest
           });
         
         pw.close();
+        
+        assertSameContents(expectedResult.toFile(), actualResult.toFile());
       }
   }
