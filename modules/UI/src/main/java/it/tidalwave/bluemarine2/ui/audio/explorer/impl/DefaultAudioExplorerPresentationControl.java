@@ -125,6 +125,7 @@ public class DefaultAudioExplorerPresentationControl
       {
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp(this);
+        // FIXME: hardwired to the catalog. It should be selectable by means of a combobox
         populateAndSelect(rootEntitySupplier.get(1).get(), 0);
       }
     
