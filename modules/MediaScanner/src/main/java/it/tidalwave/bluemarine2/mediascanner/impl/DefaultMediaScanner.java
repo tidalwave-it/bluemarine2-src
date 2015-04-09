@@ -56,6 +56,9 @@ import it.tidalwave.bluemarine2.vocabulary.MO;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
+import java.net.URL;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /***********************************************************************************************************************
  *
@@ -236,23 +239,19 @@ public class DefaultMediaScanner
         try
           {
             log.info("onDownloadComplete({})", message);
+            final String url = message.getUrl().toString();
             
-            if (message.getStatusCode() == 200) // FIXME
+            if (url.matches("http://dbtune.org/.*/resource/track/.*"))
               {
-                final String url = message.getUrl().toString();
-
-                if (url.matches("http://dbtune.org/.*/resource/track/.*"))
-                  {
-                    dbTuneMetadataManager.onTrackMetadataDownloadComplete(message);
-                  }
-                else if (url.matches("http://dbtune.org/.*/resource/artist/.*"))
-                  {
-                    dbTuneMetadataManager.onArtistMetadataDownloadComplete(message);
-                  }
-                else if (url.matches("http://dbtune.org/.*/resource/record/.*"))
-                  {
-                    dbTuneMetadataManager.onRecordMetadataDownloadComplete(message);
-                  }
+                dbTuneMetadataManager.onTrackMetadataDownloadComplete(message);
+              }
+            else if (url.matches("http://dbtune.org/.*/resource/artist/.*"))
+              {
+                dbTuneMetadataManager.onArtistMetadataDownloadComplete(message);
+              }
+            else if (url.matches("http://dbtune.org/.*/resource/record/.*"))
+              {
+                dbTuneMetadataManager.onRecordMetadataDownloadComplete(message);
               }
           }
         finally 
@@ -304,7 +303,7 @@ public class DefaultMediaScanner
         if (musicBrainzTrackId.isPresent())
           {
             final String mbGuid = metadata.get(MediaItem.Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
-            dbTuneMetadataManager.importTrackMetadata(trackUri, mbGuid);
+            dbTuneMetadataManager.importTrackMetadata(audioFile, trackUri, mbGuid);
 //                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
           }
         else

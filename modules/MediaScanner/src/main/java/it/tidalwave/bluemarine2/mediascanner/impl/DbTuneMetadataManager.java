@@ -58,6 +58,7 @@ import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.persistence.AddStatementsRequest.*;
 import static it.tidalwave.bluemarine2.downloader.DownloadRequest.Option.FOLLOW_REDIRECT;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
+import java.net.URL;
 import org.openrdf.model.vocabulary.DC;
 
 /***********************************************************************************************************************
@@ -159,6 +160,8 @@ public class DbTuneMetadataManager
         seenRecordUris.clear();
       }
     
+    private final ConcurrentMap<URI, MediaItem> m = new ConcurrentHashMap<>();
+    
     /*******************************************************************************************************************
      *
      * Imports the DbTune.org metadata for the given track.
@@ -167,12 +170,14 @@ public class DbTuneMetadataManager
      * @param   mbGuid              the MusicBrainz id
      * 
      ******************************************************************************************************************/
-    public void importTrackMetadata (final @Nonnull URI trackUri, final @Nonnull String mbGuid)
+    public void importTrackMetadata (final @Nonnull MediaItem mediaItem,
+                                     final @Nonnull URI trackUri, 
+                                     final @Nonnull String mbGuid)
       { 
         try 
           {
             log.debug("importTrackMetadata({})", trackUri);
-//            final MediaItem.Metadata metadata = track.getMetadata();
+            m.put(trackUri, mediaItem);
             messageBus.publish(new AddStatementsRequest(trackUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid)));
             messageBus.publish(new DownloadRequest(urlFor(trackUri), FOLLOW_REDIRECT));
             progress.incrementTotalDownloads();
@@ -189,24 +194,36 @@ public class DbTuneMetadataManager
      ******************************************************************************************************************/
     public void onTrackMetadataDownloadComplete (final @Nonnull DownloadComplete message) 
       {
-        try 
+        final URI trackUri = uriFor(message.getUrl());
+        final MediaItem mediaItem = m.remove(trackUri);
+        
+        if (message.getStatusCode() == 200) // FIXME
           {
-            log.debug("onTrackMetadataDownloadComplete({})", message);
-            final URI trackUri = uriFor(message.getUrl());
-            final Model model = parseModel(message);
-            messageBus.publish(model.stream().filter(new TrackStatementFilter(trackUri))
-                                             .collect(toAddStatementsRequest()));
-            model.filter(trackUri, FOAF.MAKER, null)
-                 .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
-            model.filter(null, MO.P_TRACK, trackUri)
-                 .forEach(statement -> requestRecordMetadata((URI)statement.getSubject()));
-          }   
-        catch (IOException | RDFHandlerException | RDFParseException e)
+            try 
+              {
+                log.debug("onTrackMetadataDownloadComplete({})", message);
+                final Model model = parseModel(message);
+                messageBus.publish(model.stream().filter(new TrackStatementFilter(trackUri))
+                                                 .collect(toAddStatementsRequest()));
+                model.filter(trackUri, FOAF.MAKER, null)
+                     .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
+                model.filter(null, MO.P_TRACK, trackUri)
+                     .forEach(statement -> requestRecordMetadata((URI)statement.getSubject()));
+              }   
+            catch (IOException | RDFHandlerException | RDFParseException e)
+              {
+                log.error("Cannot parse track: {}", e.toString());
+                log.error("Cannot parse track: {}", new String(message.getBytes()));
+              }
+          }
+        else
           {
-            log.error("Cannot parse track: {}", e.toString());
-            log.error("Cannot parse track: {}", new String(message.getBytes()));
+            embeddedMetadataManager.importFallbackTrackMetadata(mediaItem, uriFor(message.getUrl())); // CORRECT URI?
           }
       }
+    
+    @Inject
+    private EmbeddedMetadataManager embeddedMetadataManager;
     
     /*******************************************************************************************************************
      *
