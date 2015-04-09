@@ -78,4 +78,7 @@
         <property name="neverExpiring" value="true" />
     </bean>
     
+    <!-- FIXME: this should be mocked -->
+    <bean class="it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem" />
+
 </beans>

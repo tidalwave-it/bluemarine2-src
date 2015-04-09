@@ -64,7 +64,7 @@ public class DefaultMediaFileSystem implements MediaFileSystem
     @Override @Nonnull
     public MediaFolder getRoot() 
       {
-        return new DefaultMediaFolder(getRootPath(), null, rootPath);
+        return new DefaultMediaFolder(rootPath, null, rootPath);
       }
     
     /*******************************************************************************************************************
@@ -76,5 +76,6 @@ public class DefaultMediaFileSystem implements MediaFileSystem
       {
         log.info("onPowerOnNotification({})", notification);
         rootPath = notification.getProperties().get(PropertyNames.ROOT_PATH).resolve("Music");
+        log.info("rootPath: {}", rootPath);
       }
   }

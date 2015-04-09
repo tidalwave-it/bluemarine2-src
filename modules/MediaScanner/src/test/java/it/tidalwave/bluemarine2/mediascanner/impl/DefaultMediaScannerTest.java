@@ -39,16 +39,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.PowerOnNotification;
 import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem;
 import it.tidalwave.bluemarine2.persistence.DumpCompleted;
 import it.tidalwave.bluemarine2.persistence.DumpRequest;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
+import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import it.tidalwave.util.test.FileComparisonUtils;
 import it.tidalwave.util.test.MockInstantProvider;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH;
 
 /***********************************************************************************************************************
  *
@@ -77,13 +76,17 @@ public class DefaultMediaScannerTest
     
     private final MessageBus.Listener<DumpCompleted> onDumpCompleted = (message) -> dumpCompleted.countDown();
     
+    private MediaFileSystem fileSystem;
+    
     @BeforeMethod
     private void prepareTest() 
+      throws InterruptedException 
       {
         final String s1 = "classpath:/META-INF/CommonsAutoBeans.xml";
         final String s2 = "classpath:/META-INF/PersistenceAutoBeans.xml";
         final String s3 = "classpath:/META-INF/DefaultMediaScannerTestBeans.xml";
         context = new ClassPathXmlApplicationContext(s1, s2, s3);
+        fileSystem = context.getBean(MediaFileSystem.class);
         
         context.getBean(MockInstantProvider.class).setInstant(Instant.ofEpochSecond(1428232317L));
         messageBus = context.getBean(MessageBus.class);
@@ -93,19 +96,20 @@ public class DefaultMediaScannerTest
         dumpCompleted = new CountDownLatch(1);
         messageBus.subscribe(ScanCompleted.class, onScanCompleted);
         messageBus.subscribe(DumpCompleted.class, onDumpCompleted);
-        
+
         final Map<Key<?>, Object> properties = new HashMap<>();
-        properties.put(CACHE_FOLDER_PATH, Paths.get("target/test-classes/download-cache"));
+        properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, Paths.get("/Users/fritz/Personal/Music/iTunes/iTunes Music"));
+        properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, Paths.get("target/test-classes/download-cache"));
         messageBus.publish(new PowerOnNotification(properties));
+        
+        Thread.sleep(1000);
       }
     
     @Test
     public void testScan() 
       throws IOException, InterruptedException
       {
-        final DefaultMediaFileSystem mediaFileSystem = new DefaultMediaFileSystem();
-
-        underTest.process(mediaFileSystem.getRoot());
+        underTest.process(fileSystem.getRoot());
         scanCompleted.await();
         
         final File actualFile = new File("target/test-results/model.n3");

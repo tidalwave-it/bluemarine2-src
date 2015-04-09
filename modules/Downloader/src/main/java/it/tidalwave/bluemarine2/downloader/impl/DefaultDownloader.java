@@ -66,6 +66,7 @@ import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH;
+import org.apache.http.HttpResponseInterceptor;
 
 /***********************************************************************************************************************
  *
@@ -88,6 +89,15 @@ public class DefaultDownloader
     
     private CloseableHttpClient httpClient;
     
+private final HttpResponseInterceptor killCacheHeaders = (HttpResponse 
+ response, HttpContext context) ->
+ {
+ response.removeHeaders("Expires");
+ response.removeHeaders("Pragma");
+ response.removeHeaders("Cache-Control");
+ response.addHeader("Expires", "Mon, 31 Dec 2099 00:00:00 GMT");
+ };
+
     /*******************************************************************************************************************
      *
      * 
@@ -137,6 +147,7 @@ public class DefaultDownloader
                 .setUserAgent("blueMarine (fabrizio.giudici@tidalwave.it)")
                 .setDefaultHeaders(Arrays.asList(new BasicHeader("Accept", "application/n3")))
                 .setConnectionManager(connectionManager)
+                .addInterceptorFirst(killCacheHeaders) // FIXME: only if  explicitly configured
          .build();
       }
     
