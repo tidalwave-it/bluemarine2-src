@@ -31,8 +31,10 @@ package it.tidalwave.bluemarine2.catalog.impl;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import javax.inject.Inject;
 import java.time.Duration;
 import java.nio.file.Path;
+import org.springframework.beans.factory.annotation.Configurable;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.catalog.Track;
@@ -41,12 +43,10 @@ import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.MediaItemSupplier;
 import it.tidalwave.bluemarine2.model.impl.DefaultMediaItem;
-import javax.inject.Inject;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Configurable;
 
 /***********************************************************************************************************************
  *
@@ -98,6 +98,8 @@ public class RepositoryTrackEntity extends RepositoryEntitySupport implements Tr
         if (mediaItem == null)
           {
         // FIXME: should read metadata from here, not from the file.
+        // Alternatively MediaItem could expose getArtist(), getDuration(), etc... 
+        // This would handle the case of artist being an Entity.
             mediaItem = new DefaultMediaItem(fileSystem.getRootPath().resolve(audioFilePath), this, (Metadata)null);
           }
         
