@@ -33,6 +33,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.nio.file.Path;
 import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import lombok.Delegate;
@@ -58,7 +59,7 @@ public class DefaultMediaItem implements MediaItem
     private final Path relativePath;
     
     @Getter @CheckForNull
-    private MediaFolder parent;
+    private final Entity parent;
     
     @CheckForNull
     private Metadata metadata;
@@ -67,7 +68,7 @@ public class DefaultMediaItem implements MediaItem
     private final AsSupport asSupport = new AsSupport(this);
 
     public DefaultMediaItem (final @Nonnull Path path,
-                             final @Nonnull MediaFolder parent,
+                             final @Nonnull Entity parent,
                              final @Nonnull Path basePath)
       {
         this.path = path;
