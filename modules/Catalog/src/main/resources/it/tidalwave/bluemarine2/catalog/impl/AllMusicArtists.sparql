@@ -6,11 +6,8 @@ WHERE
 
     MINUS 
       {
-        ?artist     vocab:artist_type   "2"^^xs:short.
-        FILTER EXISTS 
-          {
-            ?artist     rel:collaboratesWith    ?any1 
-          }
+        ?artist     vocab:artist_type       "2"^^xs:short.
+        ?artist     rel:collaboratesWith    ?any1 .
       }
   } 
 ORDER BY ?label
