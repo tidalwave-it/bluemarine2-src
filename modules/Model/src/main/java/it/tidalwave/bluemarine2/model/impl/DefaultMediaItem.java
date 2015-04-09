@@ -76,6 +76,16 @@ public class DefaultMediaItem implements MediaItem
         this.relativePath = basePath.relativize(path);
       }
     
+    public DefaultMediaItem (final @Nonnull Path path,
+                             final @Nonnull Entity parent,
+                             final @Nonnull Metadata metadata)
+      {
+        this.path = path;
+        this.parent = parent;
+        this.relativePath = path;
+        this.metadata = metadata;
+      }
+    
     @Override @Nonnull
     public String toString() 
       {
@@ -91,5 +101,11 @@ public class DefaultMediaItem implements MediaItem
           }
         
         return metadata;
+      }
+
+    @Override @Nonnull
+    public MediaItem getMediaItem()
+      {
+        return this;
       }
   }
