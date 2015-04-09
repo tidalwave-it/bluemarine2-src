@@ -66,6 +66,7 @@ import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
 import static it.tidalwave.bluemarine2.model.MediaItemSupplier.MediaItemSupplier;
+import java.util.Optional;
 
 /***********************************************************************************************************************
  *
@@ -126,7 +127,10 @@ public class DefaultAudioExplorerPresentationControl
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp(this);
         // FIXME: hardwired to the catalog. It should be selectable by means of a combobox
-        populateAndSelect(rootEntitySupplier.get(1).get(), 0);
+        final EntitySupplier supplier = rootEntitySupplier.stream()
+                                                          .filter(s -> s.getClass().getName().contains("Catalog"))
+                                                          .findFirst().get();
+        populateAndSelect(supplier.get(), 0);
       }
     
     /*******************************************************************************************************************
