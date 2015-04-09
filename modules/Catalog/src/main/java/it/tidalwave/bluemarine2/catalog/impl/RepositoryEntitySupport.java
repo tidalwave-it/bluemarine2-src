@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.catalog.impl;
 
 import javax.annotation.Nonnull;
+import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.role.Identifiable;
@@ -36,7 +37,7 @@ import it.tidalwave.bluemarine2.model.Entity;
 import lombok.Delegate;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.openrdf.repository.Repository;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *
@@ -44,18 +45,18 @@ import org.openrdf.repository.Repository;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor
+@RequiredArgsConstructor @ToString(of = { "rdfsLabel", "id"})
 public class RepositoryEntitySupport implements Entity, Identifiable
   {
-    @Getter
-    protected String rdfsLabel = "";
-    
-    @Delegate
-    private final AsSupport asSupport = new AsSupport(this);
-    
     @Nonnull
     protected final Repository repository;
     
     @Getter @Nonnull
     protected final Id id;
+    
+    @Getter
+    protected String rdfsLabel = "";
+    
+    @Delegate
+    private final AsSupport asSupport = new AsSupport(this);
   }
