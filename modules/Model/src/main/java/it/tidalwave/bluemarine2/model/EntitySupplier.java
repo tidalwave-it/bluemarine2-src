@@ -28,38 +28,19 @@
  */
 package it.tidalwave.bluemarine2.model;
 
-import javax.annotation.Nonnull;
+import it.tidalwave.util.As;
+import java.util.function.Supplier;
 
 /***********************************************************************************************************************
  *
- * Represents a filesystem (even a virtual one) that contains {@link MediaFolder}s and {@link MediaItem}s.
+ * A generic role which can supply an {@link Entity}. For instance, it can be the supplier of the root of a hierarchy.
  * 
- * @stereotype  Datum
+ * @stereotype  Role
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaFileSystem extends Entity, EntitySupplier
+public interface EntitySupplier extends Supplier<Entity>, As
   {
-    /*******************************************************************************************************************
-     *
-     * Returns the root {@link MediaFolder}.
-     * 
-     * @return  the path
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public MediaFolder getRoot();
-    
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    default public Entity get()
-      {
-        return getRoot();
-      }
   }
