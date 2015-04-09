@@ -46,8 +46,6 @@ import lombok.ToString;
 @Immutable @Getter @ToString
 public class RepositoryMusicArtistEntity extends RepositoryEntitySupport implements MusicArtist
   {
-    private final String rdfsLabel;
-    
     private final String foafName;
 
     public RepositoryMusicArtistEntity (final @Nonnull Repository repository,

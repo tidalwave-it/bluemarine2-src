@@ -47,8 +47,11 @@ import org.openrdf.repository.Repository;
 @RequiredArgsConstructor
 public class RepositoryEntitySupport implements Entity, Identifiable
   {
+    @Getter
+    protected String rdfsLabel = "";
+    
     @Delegate
-    private AsSupport asSupport; // FIXME = new AsSupport(this);
+    private final AsSupport asSupport = new AsSupport(this);
     
     @Nonnull
     protected final Repository repository;

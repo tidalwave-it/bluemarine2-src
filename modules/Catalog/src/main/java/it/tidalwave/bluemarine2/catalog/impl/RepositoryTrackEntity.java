@@ -53,9 +53,6 @@ public class RepositoryTrackEntity extends RepositoryEntitySupport implements Tr
     private final Integer trackNumber;
     
     @Nonnull
-    private final String rdfsLabel;
-    
-    @Nonnull
     private final Duration duration;
     
 //    private final String recordRdfsLabel;
