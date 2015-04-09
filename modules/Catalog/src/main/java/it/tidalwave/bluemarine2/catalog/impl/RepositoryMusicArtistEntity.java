@@ -49,9 +49,9 @@ public class RepositoryMusicArtistEntity extends RepositoryEntitySupport impleme
     private final String foafName;
 
     public RepositoryMusicArtistEntity (final @Nonnull Repository repository,
-                              final @Nonnull Id id, 
-                              final @Nonnull String rdfsLabel, 
-                              final @Nonnull String foafName)
+                                        final @Nonnull Id id, 
+                                        final @Nonnull String rdfsLabel, 
+                                        final @Nonnull String foafName)
       {
         super(repository, id);
         this.rdfsLabel = rdfsLabel;
