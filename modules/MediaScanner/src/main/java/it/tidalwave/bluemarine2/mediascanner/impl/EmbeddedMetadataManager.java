@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
+import javax.annotation.concurrent.Immutable;
 import javax.inject.Inject;
 import java.time.Duration;
 import java.util.HashMap;
@@ -51,15 +52,13 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
+import it.tidalwave.bluemarine2.vocabulary.BM;
 import it.tidalwave.bluemarine2.vocabulary.MO;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 import static it.tidalwave.bluemarine2.persistence.AddStatementsRequest.*;
-import it.tidalwave.bluemarine2.vocabulary.BM;
-import java.util.Set;
-import javax.annotation.concurrent.Immutable;
 
 /***********************************************************************************************************************
  *
@@ -104,13 +103,23 @@ public class EmbeddedMetadataManager
     
     /*******************************************************************************************************************
      *
-     * 
+     * Facility that creates a request to add statements for the giving {@link Metadata} and {@code subjectURi}. It
+     * maps metadata items to the proper statement predicate and literal.
      * 
      ******************************************************************************************************************/
     static class Mapper extends HashMap<Key<?>, Function<Object, Pair>>
       {
         @Nonnull
-        public Pair forItem (final @Nonnull Map.Entry<Key<?>, ?> entry)
+        public AddStatementsRequest requestToAddStatementsFor (final @Nonnull Metadata metadata, final @Nonnull URI subjectUri)
+          {
+            return metadata.getEntries().stream()
+                                        .filter(e -> containsKey(e.getKey()))
+                                        .map(e -> forEntry(e).createStatementWithSubject(subjectUri))
+                                        .collect(toAddStatementsRequest());
+          }
+                
+        @Nonnull
+        private Pair forEntry (final @Nonnull Map.Entry<Key<?>, ?> entry)
           {
             return get(entry.getKey()).apply(entry.getValue());
           }
@@ -125,7 +134,8 @@ public class EmbeddedMetadataManager
     
         SIGNAL_MAPPER.put(Metadata.SAMPLE_RATE, v -> new Pair(MO.P_SAMPLE_RATE,     literalFor((int)v)));
         SIGNAL_MAPPER.put(Metadata.BIT_RATE,    v -> new Pair(MO.P_BITS_PER_SAMPLE, literalFor((int)v)));
-        SIGNAL_MAPPER.put(Metadata.DURATION,    v -> new Pair(MO.P_DURATION,        literalFor((float)((Duration)v).toMillis())));
+        SIGNAL_MAPPER.put(Metadata.DURATION,    v -> new Pair(MO.P_DURATION,        
+                                                           literalFor((float)((Duration)v).toMillis())));
       }
     
     /*******************************************************************************************************************
@@ -146,23 +156,18 @@ public class EmbeddedMetadataManager
      * metadata which are never superseded by external catalogs (such as sample rate, duration, etc...).
      * 
      * @param   mediaItem               the {@code MediaItem}.
-     * @param   signalUri            the URI of the item
+     * @param   signalUri               the URI of the signal
+     * @param   trackUri                the URI of the track
      * 
      ******************************************************************************************************************/
     public void importAudioFileMetadata (final @Nonnull MediaItem mediaItem, 
                                          final @Nonnull URI signalUri,
                                          final @Nonnull URI trackUri)
       {
-        log.debug("importAudioFileMetadata({}, {})", mediaItem, signalUri);
-        final Set<Map.Entry<Key<?>, ?>> entries = mediaItem.getMetadata().getEntries();
-        messageBus.publish(entries.stream()
-                                  .filter(e -> SIGNAL_MAPPER.containsKey(e.getKey()))
-                                  .map(e -> SIGNAL_MAPPER.forItem(e).createStatementWithSubject(signalUri))
-                                  .collect(toAddStatementsRequest()));
-        messageBus.publish(entries.stream()
-                                  .filter(e -> TRACK_MAPPER.containsKey(e.getKey()))
-                                  .map(e -> TRACK_MAPPER.forItem(e).createStatementWithSubject(trackUri))
-                                  .collect(toAddStatementsRequest()));
+        log.debug("importAudioFileMetadata({}, {}, {})", mediaItem, signalUri, trackUri);
+        final Metadata metadata = mediaItem.getMetadata();
+        messageBus.publish(SIGNAL_MAPPER.requestToAddStatementsFor(metadata, signalUri));
+        messageBus.publish(TRACK_MAPPER.requestToAddStatementsFor(metadata, trackUri));
       }
     
     /*******************************************************************************************************************
@@ -171,7 +176,7 @@ public class EmbeddedMetadataManager
      * when we failed to match a track to an external catalog.
      * 
      * @param   mediaItem               the {@code MediaItem}.
-     * @param   trackUri            the URI of the item
+     * @param   trackUri                the URI of the track
      *
      ******************************************************************************************************************/
     public void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI trackUri) 
