@@ -30,8 +30,8 @@ package it.tidalwave.bluemarine2.catalog.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import it.tidalwave.util.Id;
 import org.openrdf.repository.Repository;
+import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.catalog.MusicArtist;
 import it.tidalwave.bluemarine2.catalog.TrackFinder;
 import lombok.Getter;
@@ -58,7 +58,7 @@ public class RepositoryMusicArtistEntity extends RepositoryEntitySupport impleme
         this.foafName = foafName;
       }
     
-    @Nonnull
+    @Override @Nonnull
     public TrackFinder findTracks() 
       {
         return new RepositoryTrackEntityFinder(repository).withArtistId(id);
