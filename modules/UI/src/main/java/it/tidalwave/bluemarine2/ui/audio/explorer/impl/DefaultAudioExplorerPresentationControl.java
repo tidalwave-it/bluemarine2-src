@@ -246,9 +246,9 @@ public class DefaultAudioExplorerPresentationControl
       {
 //        return stack.peek().as(Displayable).getDisplayName();
         return concat(stack.stream().map(i -> i.getFolder()), of(folder))
-                           .filter(i -> (i instanceof Parentable) ? ((Parentable)i).getParent() != null : false)
-                           .map(folder -> folder.as(Displayable).getDisplayName())
-                           .collect(joining(" / "));
+                .filter(i -> (i instanceof Parentable) ? ((Parentable)i).getParent() != null : false)
+                .map(folder -> folder.as(Displayable).getDisplayName())
+                .collect(joining(" / "));
       }
     
     /*******************************************************************************************************************
