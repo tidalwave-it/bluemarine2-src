@@ -161,7 +161,7 @@ public class JavaFXApplicationPresentationDelegate
         switch (osName)
           {
             case "linux":
-                s += ".blueMarine2";
+                s += "/.blueMarine2";
                 break;
                 
             case "mac os x":
@@ -169,7 +169,7 @@ public class JavaFXApplicationPresentationDelegate
                 break;
                 
             case "windows":
-                s += ".blueMarine2";
+                s += "/.blueMarine2";
                 break;
           }
         
