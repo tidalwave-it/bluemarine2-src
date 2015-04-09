@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.time.Duration;
@@ -35,10 +36,17 @@ import java.nio.file.Path;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.catalog.Track;
+import it.tidalwave.bluemarine2.model.MediaFileSystem;
+import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import it.tidalwave.bluemarine2.model.MediaItemSupplier;
+import it.tidalwave.bluemarine2.model.impl.DefaultMediaItem;
+import javax.inject.Inject;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Configurable;
 
 /***********************************************************************************************************************
  *
@@ -46,37 +54,53 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @Getter @ToString @EqualsAndHashCode(callSuper = false)
-@Slf4j
-public class RepositoryTrackEntity extends RepositoryEntitySupport implements Track
+@Immutable @Configurable @Getter @ToString @EqualsAndHashCode(callSuper = false) @Slf4j
+public class RepositoryTrackEntity extends RepositoryEntitySupport implements Track, MediaItemSupplier
   {
     private final Integer trackNumber;
     
     @Nonnull
     private final Duration duration;
     
+    @Nonnull
+    private final Path audioFilePath;
 //    private final String recordRdfsLabel;
 //    
 //    private final Integer trackCount;
     
-    @Nonnull
-    private final Path audioFile;
-
+    @CheckForNull
+    private MediaItem mediaItem;
+    
+    @Inject
+    private MediaFileSystem fileSystem;
+    
     public RepositoryTrackEntity (final @Nonnull Repository repository, 
-                        final @Nonnull Id id, 
-                        final @Nonnull Path audioFile,
-                        final @Nonnull String rdfsLabel,
-                        final @Nonnull Duration duration,
-                        final @Nonnull Integer trackNumber,
-                        final @Nonnull String recordRdfsLabel,
-                        final @Nonnull Integer trackCount)
+                                  final @Nonnull Id id, 
+                                  final @Nonnull Path audioFilePath,
+                                  final @Nonnull String rdfsLabel,
+                                  final @Nonnull Duration duration,
+                                  final @Nonnull Integer trackNumber,
+                                  final @Nonnull String recordRdfsLabel,
+                                  final @Nonnull Integer trackCount)
       {
         super(repository, id);
-        this.audioFile = audioFile;
+        this.audioFilePath = audioFilePath;
         this.rdfsLabel = rdfsLabel;
         this.duration = duration;
         this.trackNumber = trackNumber;
 //        this.recordRdfsLabel = recordRdfsLabel;
 //        this.trackCount = trackCount;
+      }
+    
+    @Override @Nonnull
+    public synchronized MediaItem getMediaItem()
+      {
+        if (mediaItem == null)
+          {
+        // FIXME: should read metadata from here, not from the file.
+            mediaItem = new DefaultMediaItem(fileSystem.getRootPath().resolve(audioFilePath), this, (Metadata)null);
+          }
+        
+        return mediaItem;
       }
   }
