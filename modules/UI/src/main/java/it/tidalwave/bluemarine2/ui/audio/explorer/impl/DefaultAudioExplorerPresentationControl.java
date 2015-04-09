@@ -34,7 +34,6 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.util.Stack;
 import javafx.application.Platform;
-import it.tidalwave.util.As;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
@@ -55,12 +54,16 @@ import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import it.tidalwave.bluemarine2.ui.commons.OnActivate;
+import static it.tidalwave.role.Composite.Composite;
 import static java.util.stream.Collectors.*;
 import static java.util.stream.Stream.*;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.Presentable.Presentable;
+import it.tidalwave.role.ui.spi.DefaultPresentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
+import it.tidalwave.util.AsException;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -96,7 +99,7 @@ public class DefaultAudioExplorerPresentationControl
     private MessageBus messageBus;
     
     @Inject
-    private EntitySupplier rootEntitySupplier;
+    private List<EntitySupplier> rootEntitySupplier;
     
     private Entity folder;
     
@@ -124,7 +127,7 @@ public class DefaultAudioExplorerPresentationControl
       {
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp(this);
-        populateAndSelect(rootEntitySupplier.get(), 0);
+        populateAndSelect(rootEntitySupplier.get(1).get(), 0);
       }
     
     /*******************************************************************************************************************
@@ -166,7 +169,7 @@ public class DefaultAudioExplorerPresentationControl
      * @param   newMediaFolder  the new {@code MediaFolder}
      *
      ******************************************************************************************************************/
-    private void navigateTo (final @Nonnull MediaFolder newMediaFolder)
+    private void navigateTo (final @Nonnull Entity newMediaFolder)
       {
         log.debug("navigateTo({})", newMediaFolder);
         stack.push(new FolderAndSelection(folder, properties.selectedIndexProperty().get()));
@@ -205,7 +208,8 @@ public class DefaultAudioExplorerPresentationControl
         final SimpleComposite8<Entity> composite = folder.as(SimpleComposite8);
         final PresentationModel pm = composite.findChildren()
                                               .stream()
-                                              .map(object -> object.as(Presentable)
+                                              .map(object -> object.as(Presentable, 
+                                                                       throwable -> new DefaultPresentable(object))
                                                                    .createPresentationModel(rolesFor(object)))
                                               .sorted(new AudioComparator())
                                               .collect(toCompositePresentationModel());
@@ -218,11 +222,11 @@ public class DefaultAudioExplorerPresentationControl
      ******************************************************************************************************************/
     // FIXME: inject with @DciRole and @DciContext
     @Nonnull
-    private UserActionProvider rolesFor (final @Nonnull As object)
+    private UserActionProvider rolesFor (final @Nonnull Entity entity)
       {
-        final UserAction action = (object instanceof MediaFolder) 
-            ? new UserActionLambda(() -> navigateTo(((MediaFolder)object))) 
-            : new UserActionLambda(() -> messageBus.publish(new RenderMediaFileRequest((MediaItem)object)));
+        final UserAction action = isComposite(entity) 
+            ? new UserActionLambda(() -> navigateTo(entity)) 
+            : new UserActionLambda(() -> messageBus.publish(new RenderMediaFileRequest((MediaItem)entity)));
         
         return new DefaultUserActionProvider()
           {
@@ -233,7 +237,7 @@ public class DefaultAudioExplorerPresentationControl
               }
           };
       }
-    
+
     /*******************************************************************************************************************
      *
      *
@@ -246,5 +250,22 @@ public class DefaultAudioExplorerPresentationControl
                            .filter(i -> (i instanceof Parentable) ? ((Parentable)i).getParent() != null : false)
                            .map(folder -> folder.as(Displayable).getDisplayName())
                            .collect(joining(" / "));
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private static boolean isComposite (final @Nonnull Entity entity)
+      {
+        try
+          {
+            entity.as(Composite);
+            return true;
+          }
+        catch (AsException e)
+          {
+            return false;
+          }
       }
   }
