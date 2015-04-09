@@ -102,6 +102,7 @@ public class DefaultMediaScannerTest
         properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, Paths.get("target/test-classes/download-cache"));
         messageBus.publish(new PowerOnNotification(properties));
         
+        // Wait for the MediaFileSystem to initialize. Indeed, MediaFileSystem should be probably mocked
         Thread.sleep(1000);
       }
     
