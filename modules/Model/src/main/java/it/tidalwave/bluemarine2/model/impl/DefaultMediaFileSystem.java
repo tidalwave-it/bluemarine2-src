@@ -53,8 +53,8 @@ public class DefaultMediaFileSystem implements MediaFileSystem
         return new DefaultMediaFolder(getRootPath(), null, getRootPath());
       }
     
-    @Nonnull
-    protected Path getRootPath()
+    @Override @Nonnull
+    public Path getRootPath()
       {
         // FIXME
         String s = System.getProperty("user.home", "/");

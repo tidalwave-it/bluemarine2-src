@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.model;
 
+import java.nio.file.Path;
 import javax.annotation.Nonnull;
 
 /***********************************************************************************************************************
@@ -51,6 +52,9 @@ public interface MediaFileSystem extends Entity, EntitySupplier
      ******************************************************************************************************************/
     @Nonnull
     public MediaFolder getRoot();
+    
+    @Nonnull
+    public Path getRootPath();
     
     /*******************************************************************************************************************
      *
