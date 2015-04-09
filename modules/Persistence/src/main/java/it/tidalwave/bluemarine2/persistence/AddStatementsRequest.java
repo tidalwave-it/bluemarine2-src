@@ -28,13 +28,13 @@
  */
 package it.tidalwave.bluemarine2.persistence;
 
-import it.tidalwave.util.spi.ArrayListCollectorSupport;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collector;
 import org.openrdf.model.Resource;
@@ -43,6 +43,7 @@ import org.openrdf.model.URI;
 import org.openrdf.model.Value;
 import org.openrdf.model.ValueFactory;
 import org.openrdf.model.impl.ValueFactoryImpl;
+import it.tidalwave.util.spi.ArrayListCollectorSupport;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -84,6 +85,13 @@ public class AddStatementsRequest
           }
         
         @Nonnull
+        public Builder with (final @Nonnull Optional<Builder> optionalBuilder) 
+          {
+            optionalBuilder.ifPresent(builder -> statements.addAll(builder.statements));
+            return this;
+          }
+        
+        @Nonnull
         public AddStatementsRequest create()
           {
             return new AddStatementsRequest(Collections.unmodifiableList(statements));
@@ -91,14 +99,14 @@ public class AddStatementsRequest
       }
     
     public AddStatementsRequest (final @Nonnull Resource subject, 
-                             final @Nonnull URI predicate,
-                             final @Nonnull Value object) 
+                                 final @Nonnull URI predicate,
+                                 final @Nonnull Value object) 
       {
         this(Arrays.asList(ValueFactoryImpl.getInstance().createStatement(subject, predicate, object)));
       }
      
     @Nonnull
-    public static Builder build() 
+    public static Builder newAddStatementsRequest() 
       {
         return new Builder();
       }

@@ -212,7 +212,7 @@ public class DefaultMediaScanner
             final Resource artistUri = uriFor("http://musicmusicbrainz.org/ws/2/artist/" + artistId);
             final Artist artist = request.getArtist();
             final Value nameLiteral = literalFor(artist.getName());
-            messageBus.publish(AddStatementsRequest.build()
+            messageBus.publish(AddStatementsRequest.newAddStatementsRequest()
                                                .with(artistUri, RDF.TYPE, MO.C_MUSIC_ARTIST)
                                                .with(artistUri, RDFS.LABEL, nameLiteral)
                                                .with(artistUri, FOAF.NAME, nameLiteral)
@@ -287,7 +287,7 @@ public class DefaultMediaScanner
                     musicBrainzTrackId.get().stringValue().replaceAll("^mbz:", ""));
 
         final Instant lastModifiedTime = getLastModifiedTime(audioFile.getPath());
-        messageBus.publish(AddStatementsRequest.build()
+        messageBus.publish(AddStatementsRequest.newAddStatementsRequest()
                         .with(audioFileUri, RDF.TYPE,   MO.C_AUDIO_FILE)
                         .with(audioFileUri, MO.P_ENCODES, signalUri)
                         .with(audioFileUri, FOAF.SHA1,  literalFor(sha1.stringValue()))
@@ -368,7 +368,7 @@ public class DefaultMediaScanner
 //        nameCredits.forEach(nameCredit -> addArtist(nameCredit.getArtist()));
 //
 //        final Value createLiteral = literalFor(title);
-//        messageBus.publish(AddStatementsRequest.build()
+//        messageBus.publish(AddStatementsRequest.newAddStatementsRequest()
 //                                           .with(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(timestampProvider.getInstant()))
 //                                           .with(mediaItemUri, DC.TITLE, createLiteral)
 //                                           .with(mediaItemUri, RDFS.LABEL, createLiteral)

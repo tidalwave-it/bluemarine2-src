@@ -34,7 +34,6 @@ import javax.inject.Inject;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.function.Function;
@@ -183,32 +182,30 @@ public class EmbeddedMetadataManager
       {
         log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackUri);
         
-        AddStatementsRequest.Builder builder = AddStatementsRequest.build();
         final MediaItem.Metadata metadata = mediaItem.getMetadata();  
-        final Optional<String> title = metadata.get(MediaItem.Metadata.TITLE);
-        final Optional<String> artist = metadata.get(MediaItem.Metadata.ARTIST);
         
-        if (title.isPresent())
-          {
-            final Value titleLiteral = literalFor(title.get());
-            builder = builder.with(trackUri, DC.TITLE, titleLiteral)
-                             .with(trackUri, RDFS.LABEL, titleLiteral);
-          }
-        
-        if (artist.isPresent())
-          {
-            final URI artistUri = BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + artist.get()));
-            
-            if (seenArtistUris.putIfAbsent(artistUri, true) == null)
+        Builder builder = newAddStatementsRequest()
+           .with(metadata.get(MediaItem.Metadata.TITLE).map(title -> 
               {
-                final Value nameLiteral = literalFor(artist.get());
-                builder = builder.with(artistUri, RDF.TYPE, MO.C_MUSIC_ARTIST)
-                                 .with(artistUri, FOAF.NAME, nameLiteral)
-                                 .with(artistUri, RDFS.LABEL, nameLiteral);
-              }
-            
-            builder = builder.with(trackUri, FOAF.MAKER, artistUri);
-          }
+                final Value titleLiteral = literalFor(title);
+                return newAddStatementsRequest().with(trackUri, DC.TITLE,   titleLiteral)
+                                                .with(trackUri, RDFS.LABEL, titleLiteral);
+              }))
+           .with(metadata.get(MediaItem.Metadata.ARTIST).map(artistName ->
+              {
+                final URI artistUri = BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + artistName));
+                Builder builder2 = newAddStatementsRequest().with(trackUri, FOAF.MAKER, artistUri);
+                        
+                if (seenArtistUris.putIfAbsent(artistUri, true) == null)
+                  {
+                    final Value nameLiteral = literalFor(artistName);
+                    builder2 = builder2.with(artistUri, RDF.TYPE,   MO.C_MUSIC_ARTIST)
+                                       .with(artistUri, FOAF.NAME,  nameLiteral)
+                                       .with(artistUri, RDFS.LABEL, nameLiteral);
+                  }
+
+                return builder2;
+              }));
         
         final MediaFolder parent = mediaItem.getParent();
         final String recordTitle = parent.getPath().toFile().getName();
@@ -217,10 +214,10 @@ public class EmbeddedMetadataManager
         if (seenRecordUris.putIfAbsent(recordUri, true) == null)
           {
             final Value titleLiteral = literalFor(recordTitle);
-            builder = builder.with(recordUri, RDF.TYPE, MO.C_RECORD)
-                             .with(recordUri, MO.P_MEDIA_TYPE, MO.C_CD)
-                             .with(recordUri, DC.TITLE, titleLiteral)
-                             .with(recordUri, RDFS.LABEL, titleLiteral)
+            builder = builder.with(recordUri, RDF.TYPE,         MO.C_RECORD)
+                             .with(recordUri, MO.P_MEDIA_TYPE,  MO.C_CD)
+                             .with(recordUri, DC.TITLE,         titleLiteral)
+                             .with(recordUri, RDFS.LABEL,       titleLiteral)
                              .with(recordUri, MO.P_TRACK_COUNT, literalFor(parent.findChildren().count()));
           }
         
