@@ -3960,9 +3960,6 @@ RepositoryMusicArtistEntity(rdfsLabel=Adiastemi, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Ahmad Jamal Trio, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Alasdair Fraser, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Alasdair Fraser & Natalie Haas, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Alasdair Fraser & Tony McManus, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Alasdair Fraser and Paul Machlis, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=AlbumWrap - _, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Andalus, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Andrea Bacchetti, foafName=null)
@@ -3974,7 +3971,6 @@ RepositoryMusicArtistEntity(rdfsLabel=Anthony Rooley & Consort of Musicke, foafN
 RepositoryMusicArtistEntity(rdfsLabel=Antonio Vivaldi, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Antonín Dvořák, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Antônio Carlos Jobim, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Antônio Carlos Jobim & Miúcha, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Aretha Franklin, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Arianna Savall, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Armando Sciascia Orchestra, foafName=null)
@@ -3999,7 +3995,6 @@ RepositoryMusicArtistEntity(rdfsLabel=Billy Joel, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Billy Paul, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Bing Crosby, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Bing Crosby, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Bing Crosby & Louis Armstrong, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Bloom, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Bobby Vinton, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Boney M, foafName=null)
@@ -4027,12 +4022,10 @@ RepositoryMusicArtistEntity(rdfsLabel=Charles Trenet, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Charles Trénet, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Charlie Haden, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Charlie Haden & Hank Jones, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Charlie Haden & Pat Metheny, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Charlie Parker, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Charlotte Forsberg, Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker, Maria Andersson, Monica Einarson, Neeme Järvi & Toralv Maurstad, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Chet Baker, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Chet Baker, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Chico Buarque & Quarteto em Cy, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Chris Botti, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Chris Botti, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Chris Botti & Sting, foafName=null)
@@ -4060,13 +4053,10 @@ RepositoryMusicArtistEntity(rdfsLabel=Dionne Warwick, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Dionne Warwick, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Dizzy Gillespie, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Django Reinhardt, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Django Reinhardt & Stéphane Grappelli, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Django Reinhardt and His American Swing Band, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Doris Day, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Doris Day & Howard Keel, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Duke Ellington, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Duke Ellington, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Duke Ellington & Ella Fitzgerald, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Dusty Springfield, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Dusty Springfield, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Eddie Pasternak and Joel Evans, foafName=null)
@@ -4078,8 +4068,6 @@ RepositoryMusicArtistEntity(rdfsLabel=Ella Fitzgerald, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Ella Fitzgerald, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Ella Fitzgerald & Count Basie, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Ella Fitzgerald & Joe Pass, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Ella Fitzgerald & Joe Pass, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Ella Fitzgerald & Louis Armstrong, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Ella Fitzgerald & Oscar Peterson, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Ella Fitzgerald & The Tommy Flanagan Trio, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Elton John, foafName=null)
@@ -4099,8 +4087,6 @@ RepositoryMusicArtistEntity(rdfsLabel=Francisco Buarque de Hollanda, foafName=nu
 RepositoryMusicArtistEntity(rdfsLabel=Francisco Guerrero, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Frank Sinatra, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Frank Sinatra, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Frank Sinatra & Antônio Carlos Jobim, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Frank Sinatra & Count Basie, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Frantisek Macinka, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Franz Liszt, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Fred Hersch, foafName=null)
@@ -4141,7 +4127,6 @@ RepositoryMusicArtistEntity(rdfsLabel=Göteborgs Symfoniker, Neeme Järvi, Toral
 RepositoryMusicArtistEntity(rdfsLabel=Heinrich Schiff; Neville Marriner: Staatskapelle Dresden, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Henry Mancini, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Henry Mancini, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Henry Mancini and James Galway, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Henry Purcell, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Herbie Hancock, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Herbie Hancock, foafName=null)
@@ -4159,7 +4144,6 @@ RepositoryMusicArtistEntity(rdfsLabel=Jean Sibelius, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Jean-Jacques Justafre, Jean-Paul Gantiez, Jean-Claude Barro,, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Jean-Louis Rassinfosse, Chet Baker & Philip Catherine, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Jim Hall, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Jim Hall & Pat Metheny, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Jim Henson, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Joaquín Rodrigo, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Joe Pass, foafName=null)
@@ -4181,7 +4165,6 @@ RepositoryMusicArtistEntity(rdfsLabel=Joyce, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Julie Andrews, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Juliette Gréco, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=June Anderson, Rockwell Blake, Etc.; Riccardo Muti: Orchestra & Chorus Of La Scala Milan, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Katia & Marielle Labèque, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Katia Labèque, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Kaylene Peoples, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Kings of Convenience, foafName=null)
@@ -4227,7 +4210,6 @@ RepositoryMusicArtistEntity(rdfsLabel=Michel Warlop et son orchestre, foafName=n
 RepositoryMusicArtistEntity(rdfsLabel=Mike Oldfield, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Miles Davis, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Miles Davis, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Miles Davis & John Coltrane, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Mina, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Mina, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Miriam Makeba, foafName=null)
@@ -4289,7 +4271,6 @@ RepositoryMusicArtistEntity(rdfsLabel=SILHOUETTE, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Sade, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Salvatore Accardo; Claudio Abbado: London Symphony Orchestra, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Sam Pottle, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Sam Pottle and Jim Henson, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Samuel Barber, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Sandie Shaw, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Santa Esmeralda, foafName=null)
@@ -4342,7 +4323,6 @@ RepositoryMusicArtistEntity(rdfsLabel=The Righteous Brothers, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=The Shirelles, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Thelonious Monk, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Thelonious Monk, foafName=null)
-RepositoryMusicArtistEntity(rdfsLabel=Thelonious Monk & John Coltrane, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Thomas Beecham: Royal Philharmonic Orchestra, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Tom Jones, foafName=null)
 RepositoryMusicArtistEntity(rdfsLabel=Tony McManus, foafName=null)
@@ -4517,46 +4497,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Alasdair Fraser, foafName=null):
   RepositoryTrackEntity(trackNumber=8, rdfsLabel=Seathan / Na Goisidich (The Gossips), duration=PT2M54S, audioFile=Alasdair Fraser & Tony McManus/Return to Kintail/08 Seathan _ Na Goisidich.m4a)
   RepositoryTrackEntity(trackNumber=10, rdfsLabel=A Mhaighdean Mhara (The Mermaid), duration=PT3M29S, audioFile=Alasdair Fraser & Tony McManus/Return to Kintail/10 A Mhaighdean Mhara.m4a)
   RepositoryTrackEntity(trackNumber=11, rdfsLabel=Lieutenant Maguire's Jig / The Curlew / Sleepy Maggie / Tail Toddle, duration=PT5M14S, audioFile=Alasdair Fraser & Tony McManus/Return to Kintail/11 Lieutenant Maguire's Jig _ The Curlew _ Sleepy Maggie _ Tail Toddle.m4a)
-  RepositoryTrackEntity(trackNumber=3, rdfsLabel=Skye Dance, duration=PT6M6S, audioFile=Alasdair Fraser & Paul Machlis/Skyedance/03 Skye Dance.m4a)
-  RepositoryTrackEntity(trackNumber=4, rdfsLabel=Nighean Donn a' Chuailein Riomhaich (Lassie With the Golden Hair), duration=PT2M57S, audioFile=Alasdair Fraser & Paul Machlis/Skyedance/04 Nighean Donn A' Chuailein Riomhaich.m4a)
-  RepositoryTrackEntity(trackNumber=5, rdfsLabel=Ruileadh Cailleach, Sheatadh Cailleach (An Old Woman Would Reel, an Old Woman Would Set) / The Bird's Nest / Harris Dance, duration=PT3M16S, audioFile=Alasdair Fraser & Paul Machlis/Skyedance/05 Ruileadh Cailleach, Sheatadh Cailleach.m4a)
-  RepositoryTrackEntity(trackNumber=5, rdfsLabel=Slow Train, duration=PT5M44S, audioFile=Alasdair Fraser With Paul Machlis/The Road North/05 Slow Train.m4a)
-  RepositoryTrackEntity(trackNumber=10, rdfsLabel=The Road North, duration=PT4M14S, audioFile=Alasdair Fraser With Paul Machlis/The Road North/10 The Road North.m4a)
-
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Alasdair Fraser & Natalie Haas, foafName=null):
-  RepositoryTrackEntity(trackNumber=1, rdfsLabel=Calliope Meets Frank, duration=PT5M55S, audioFile=Alasdair Fraser & Natalie Haas/Fire & Grace/01 Calliope Meets Frank.m4a)
-  RepositoryTrackEntity(trackNumber=2, rdfsLabel=Between, duration=PT5M56S, audioFile=Alasdair Fraser & Natalie Hass/In the Moment/02 Between.m4a)
-
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Alasdair Fraser & Tony McManus, foafName=null):
-  RepositoryTrackEntity(trackNumber=1, rdfsLabel=Bidh Clann Ulaidh (Men of Ulster), duration=PT3M56S, audioFile=Alasdair Fraser & Tony McManus/Return to Kintail/01 Bidh Clann Ulaidh.m4a)
-  RepositoryTrackEntity(trackNumber=6, rdfsLabel=Donald Willie and His Dog / Alex MacDonald / Chloe's Passion, duration=PT3M40S, audioFile=Alasdair Fraser & Tony McManus/Return to Kintail/06 Donald Willie and His Dog _ Alex MacDonald _ Chloe's Passion.m4a)
-  RepositoryTrackEntity(trackNumber=7, rdfsLabel=Lady Louisa Gordon's Strathspey / The Highlands of Banffshire / The Merrymaking, duration=PT4M34S, audioFile=Alasdair Fraser & Tony McManus/Return to Kintail/07 Lady Louisa Gordon's Strathspey _ The Highlands of Banffshire _ The Merrymaking.m4a)
-  RepositoryTrackEntity(trackNumber=8, rdfsLabel=Seathan / Na Goisidich (The Gossips), duration=PT2M54S, audioFile=Alasdair Fraser & Tony McManus/Return to Kintail/08 Seathan _ Na Goisidich.m4a)
-  RepositoryTrackEntity(trackNumber=10, rdfsLabel=A Mhaighdean Mhara (The Mermaid), duration=PT3M29S, audioFile=Alasdair Fraser & Tony McManus/Return to Kintail/10 A Mhaighdean Mhara.m4a)
-  RepositoryTrackEntity(trackNumber=11, rdfsLabel=Lieutenant Maguire's Jig / The Curlew / Sleepy Maggie / Tail Toddle, duration=PT5M14S, audioFile=Alasdair Fraser & Tony McManus/Return to Kintail/11 Lieutenant Maguire's Jig _ The Curlew _ Sleepy Maggie _ Tail Toddle.m4a)
-
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Alasdair Fraser and Paul Machlis, foafName=null):
-  RepositoryTrackEntity(trackNumber=1, rdfsLabel=Miss Dumbreck / Miss Cameron of Balvenie / Clydeside Lassies, duration=PT3M19S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/01 Miss Dumbreck_Miss Cameron of Balvenie_Clydeside Lassies.m4a)
-  RepositoryTrackEntity(trackNumber=2, rdfsLabel=The Auld Brig o' Don, duration=PT2M49S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/02 The Auld Brig O' Don.m4a)
-  RepositoryTrackEntity(trackNumber=3, rdfsLabel=The Beauty of the North, duration=PT1M43S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/03 The Beauty of the North.m4a)
-  RepositoryTrackEntity(trackNumber=4, rdfsLabel=Madame Neruda, duration=PT1M13S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/04 Madame Neruda.m4a)
-  RepositoryTrackEntity(trackNumber=5, rdfsLabel=Chapel Keithack / Belmont (By Cool Siloam's Shady Rill), duration=PT4M48S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/05 Chapel Keithak_Belmont.m4a)
-  RepositoryTrackEntity(trackNumber=6, rdfsLabel=Earl Haig, duration=PT2M4S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/06 Earl Haig.m4a)
-  RepositoryTrackEntity(trackNumber=7, rdfsLabel=Earl Grey / The Left Handed Fiddler, duration=PT2M3S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/07 Earl Grey_The Left Handed Fiddler.m4a)
-  RepositoryTrackEntity(trackNumber=8, rdfsLabel=Rose-Acre, duration=PT1M51S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/08 Rose-Acre.m4a)
-  RepositoryTrackEntity(trackNumber=9, rdfsLabel=Craigellachie Brig / Largo's Fairy Dance, duration=PT2M47S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/09 Craigellachie Brig_Largo's Fairy Dance.m4a)
-  RepositoryTrackEntity(trackNumber=10, rdfsLabel=The Ancient Barons of Kilravock, duration=PT2M21S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/10 The Ancient Barons of Kilravock.m4a)
-  RepositoryTrackEntity(trackNumber=11, rdfsLabel=Mrs. McPherson of Gibton / The Novelty, duration=PT3M53S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/11 Mrs. McPherson of Gibton_The Novelty.m4a)
-  RepositoryTrackEntity(trackNumber=12, rdfsLabel=Lady Charlotte Campbell's New Strathsprey / Lady Charlotte Campbell's Reel, duration=PT2M50S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/12 Lady Charlotte Campbell's New Strathspey_Lady Charlotte Campbell's Reel.m4a)
-  RepositoryTrackEntity(trackNumber=13, rdfsLabel=Miss Hannah of Elgin / Sir George Clark of Penicuik / Major L. Stewart of the Island of Java Reel, duration=PT3M44S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/13 Miss Hannah of Elgin_Sir George Clark of Penicuik_Major L. Stewart of the Islan.m4a)
-  RepositoryTrackEntity(trackNumber=14, rdfsLabel=Mrs. Jamieson's Favourite, duration=PT2M13S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/14 Mrs. Jamieson's Favourite.m4a)
-  RepositoryTrackEntity(trackNumber=15, rdfsLabel=The Rose-Bud of Allenvale, duration=PT3M5S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/15 The Rose-Bud of Allenvale.m4a)
-  RepositoryTrackEntity(trackNumber=16, rdfsLabel=Seann Triubhais Uileachain, duration=PT2M50S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/16 Seann Triubhais Uilleachain.m4a)
-  RepositoryTrackEntity(trackNumber=17, rdfsLabel=Da Forfeit o' da Ship / Da Grocer / Jack Is Yet Alive, duration=PT2M46S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/17 Da Forfeit O' Da Ship_Da Grocer_Jack Is Yet Alive.m4a)
-  RepositoryTrackEntity(trackNumber=18, rdfsLabel=Mr. A.G. Wilken's Favourite / Jenny Hardie's Reel, duration=PT3M55S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/18 Mr. A. G. Wilken's Favourite_Jennie Hardie's Reel.m4a)
-  RepositoryTrackEntity(trackNumber=19, rdfsLabel=Mrs. Major L. Stewart of the Island of Java, duration=PT1M32S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/19 Mrs. Major L. Stewart of the Island of Java.m4a)
-  RepositoryTrackEntity(trackNumber=20, rdfsLabel=The Iron Man / The Smith's a Gallant Fireman / The Forth Bridge Reel / Gillan's Reel / The Auld Wheel, duration=PT3M35S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/20 The Iron Man_The Smith's a Gallant Fireman_The Forth Bridge Reel_Gillan's Reel_.m4a)
-  RepositoryTrackEntity(trackNumber=21, rdfsLabel=Niel Gow's Lament of the Death of His Second Wife, duration=PT4M21S, audioFile=Alasdair Fraser & Paul Machlis/Legacy of the Scottish Fiddle, Vol. 1/21 Niel Gow's Lament for the Death of His Second Wife.m4a)
   RepositoryTrackEntity(trackNumber=3, rdfsLabel=Skye Dance, duration=PT6M6S, audioFile=Alasdair Fraser & Paul Machlis/Skyedance/03 Skye Dance.m4a)
   RepositoryTrackEntity(trackNumber=4, rdfsLabel=Nighean Donn a' Chuailein Riomhaich (Lassie With the Golden Hair), duration=PT2M57S, audioFile=Alasdair Fraser & Paul Machlis/Skyedance/04 Nighean Donn A' Chuailein Riomhaich.m4a)
   RepositoryTrackEntity(trackNumber=5, rdfsLabel=Ruileadh Cailleach, Sheatadh Cailleach (An Old Woman Would Reel, an Old Woman Would Set) / The Bird's Nest / Harris Dance, duration=PT3M16S, audioFile=Alasdair Fraser & Paul Machlis/Skyedance/05 Ruileadh Cailleach, Sheatadh Cailleach.m4a)
@@ -4753,10 +4693,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Antônio Carlos Jobim, foafName=
   RepositoryTrackEntity(trackNumber=9, rdfsLabel=Baubles, Bangles and Beads, duration=PT2M35S, audioFile=Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/09 Baubles, Bangles And Beads.mp3)
   RepositoryTrackEntity(trackNumber=10, rdfsLabel=Once I Loved, duration=PT2M36S, audioFile=Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/10 Once I Loved.mp3)
   RepositoryTrackEntity(trackNumber=8, rdfsLabel=Insensatez (How Insensitive), duration=PT4M3S, audioFile=Pat Metheny & Jobim/Unknown Album/Insensatez (How Insensitive).mp3)
-
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Antônio Carlos Jobim & Miúcha, foafName=null):
-  RepositoryTrackEntity(trackNumber=8, rdfsLabel=Samba Do Avião, duration=PT2M52S, audioFile=Compilations/Bossa Nona,Chega De Saudade [Disc 2]/08 Samba Do Avião.m4a)
-  RepositoryTrackEntity(trackNumber=10, rdfsLabel=Pela Luz Dos Olhos Teus, duration=PT2M46S, audioFile=Compilations/Bossa Nona,Chega De Saudade [Disc 2]/10 Pela Luz Dos Olhos Teus.m4a)
 
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Aretha Franklin, foafName=null):
   RepositoryTrackEntity(trackNumber=4, rdfsLabel=Dr. Feelgood, duration=PT3M20S, audioFile=Aretha Franklin/30 Greatest Hits [Disc 1]/1-04 Dr. Feelgood (Love Is a Serious Business).m4a)
@@ -4968,9 +4904,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Bing Crosby, foafName=null):
   RepositoryTrackEntity(trackNumber=5, rdfsLabel=Dream a Little Dream of Me, duration=PT2M40S, audioFile=Bing Crosby/Bing With a Beat (Remastered)/05 Dream a Little Dream of Me.m4p)
   RepositoryTrackEntity(trackNumber=23, rdfsLabel=I'll Be Home for Christmas, duration=PT2M55S, audioFile=Compilations/The Christmas Selection/23 I'll Be Home for Christmas.m4p)
 
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Bing Crosby & Louis Armstrong, foafName=null):
-  RepositoryTrackEntity(trackNumber=5, rdfsLabel=Let's Sing Like a Dixieland Band, duration=PT2M21S, audioFile=Louis Armstrong/Satchmo/13 Let's Sing Like A Dixieland Band.m4a)
-
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Bloom, foafName=null):
   RepositoryTrackEntity(trackNumber=1, rdfsLabel=Cygnus, duration=PT7M46S, audioFile=Compilations/Tre sogni/01 Cygnus.m4a)
   RepositoryTrackEntity(trackNumber=2, rdfsLabel=Prendila così, duration=PT8M36S, audioFile=Compilations/Tre sogni/02 Prendila così.m4a)
@@ -5171,21 +5104,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Charlie Haden, foafName=null):
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Charlie Haden & Hank Jones, foafName=null):
   RepositoryTrackEntity(trackNumber=6, rdfsLabel=Sometimes I Feel Like a Motherless Child, duration=PT4M31S, audioFile=Charlie Haden & Hank Jones/Steal Away/06 Sometimes I Feel Like a Motherless Child.m4p)
 
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Charlie Haden & Pat Metheny, foafName=null):
-  RepositoryTrackEntity(trackNumber=1, rdfsLabel=Waltz for Ruth, duration=PT4M29S, audioFile=Charlie Haden & Pat Metheny/Beyond The Missouri Sky (Short Stories)/01 Waltz For Ruth.mp3)
-  RepositoryTrackEntity(trackNumber=2, rdfsLabel=Our Spanish Love Song, duration=PT5M41S, audioFile=Charlie Haden & Pat Metheny/Beyond The Missouri Sky (Short Stories)/02 Our Spanish Love Song.mp3)
-  RepositoryTrackEntity(trackNumber=3, rdfsLabel=Message to a Friend, duration=PT6M13S, audioFile=Charlie Haden & Pat Metheny/Beyond The Missouri Sky (Short Stories)/03 Message To A Friend.mp3)
-  RepositoryTrackEntity(trackNumber=4, rdfsLabel=Two for the Road, duration=PT5M17S, audioFile=Charlie Haden & Pat Metheny/Beyond The Missouri Sky (Short Stories)/04 Two For The Road.mp3)
-  RepositoryTrackEntity(trackNumber=5, rdfsLabel=First Song (For Ruth), duration=PT6M40S, audioFile=Charlie Haden & Pat Metheny/Beyond The Missouri Sky (Short Stories)/05 First Song.mp3)
-  RepositoryTrackEntity(trackNumber=6, rdfsLabel=The Moon Is a Harsh Mistress, duration=PT4M5S, audioFile=Charlie Haden & Pat Metheny/Beyond The Missouri Sky (Short Stories)/06 The Moon Is A Harsh Mistress.mp3)
-  RepositoryTrackEntity(trackNumber=7, rdfsLabel=The Precious Jewel, duration=PT3M47S, audioFile=Charlie Haden & Pat Metheny/Beyond The Missouri Sky (Short Stories)/07 The Precious Jewel.mp3)
-  RepositoryTrackEntity(trackNumber=8, rdfsLabel=He's Gone Away, duration=PT4M18S, audioFile=Charlie Haden & Pat Metheny/Beyond The Missouri Sky (Short Stories)/08 He's Gone Away.mp3)
-  RepositoryTrackEntity(trackNumber=9, rdfsLabel=The Moon Song, duration=PT6M58S, audioFile=Charlie Haden & Pat Metheny/Beyond The Missouri Sky (Short Stories)/09 The Moon Song.mp3)
-  RepositoryTrackEntity(trackNumber=10, rdfsLabel=Tears of Rain, duration=PT5M32S, audioFile=Charlie Haden & Pat Metheny/Beyond The Missouri Sky (Short Stories)/10 Tears Of Rain.mp3)
-  RepositoryTrackEntity(trackNumber=11, rdfsLabel=Cinema Paradiso (Love Theme), duration=PT3M36S, audioFile=Charlie Haden & Pat Metheny/Beyond The Missouri Sky (Short Stories)/11 Cinema Paradiso (Love Theme).mp3)
-  RepositoryTrackEntity(trackNumber=12, rdfsLabel=Cinema Paradiso (Main Theme), duration=PT4M26S, audioFile=Charlie Haden & Pat Metheny/Beyond The Missouri Sky (Short Stories)/12 Cinema Paradiso (Main Theme).mp3)
-  RepositoryTrackEntity(trackNumber=13, rdfsLabel=Spiritual, duration=PT8M22S, audioFile=Charlie Haden & Pat Metheny/Beyond The Missouri Sky (Short Stories)/13 Spiritual.mp3)
-
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Charlie Parker, foafName=null):
   RepositoryTrackEntity(trackNumber=1, rdfsLabel=Easy to Love, duration=PT3M30S, audioFile=Charlie Parker/The Cole Porter Songbook/Easy To Love.mp3)
   RepositoryTrackEntity(trackNumber=2, rdfsLabel=Begin the Beguine, duration=PT3M11S, audioFile=Charlie Parker/The Cole Porter Songbook/02 Begin The Beguine.mp3)
@@ -5204,9 +5122,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Chet Baker, foafName=null):
 
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Chet Baker, foafName=null):
   RepositoryTrackEntity(trackNumber=18, rdfsLabel=Petite Fleur (Little Flower), duration=PT2M41S, audioFile=Chet Baker/Deep In a Dream - The Ultimate Chet Baker Collection/18 Petite Fleur (Little Flower) 1.m4p)
-
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Chico Buarque & Quarteto em Cy, foafName=null):
-  RepositoryTrackEntity(trackNumber=3, rdfsLabel=Carta ao Tom 74, duration=PT2M24S, audioFile=Compilations/Bossa Nona,Chega De Saudade [Disc 2]/03 Carta Ao Tom 74.m4a)
 
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Chris Botti, foafName=null):
   RepositoryTrackEntity(trackNumber=10, rdfsLabel=Ave Maria, duration=PT5M46S, audioFile=Chris Botti/Italia (Bonus Track Version)/10 Ave Maria.m4a)
@@ -5508,11 +5423,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Django Reinhardt, foafName=null)
   RepositoryTrackEntity(trackNumber=5, rdfsLabel=I Surrender Dear, duration=PT3M43S, audioFile=Django Reinhardt/Djangology/10 I Surrender Dear.m4a)
   RepositoryTrackEntity(trackNumber=2, rdfsLabel=After You've Gone, duration=PT3M2S, audioFile=Django Reinhardt/Djangology/07 After You've Gone.m4a)
 
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Django Reinhardt & Stéphane Grappelli, foafName=null):
-  RepositoryTrackEntity(trackNumber=9, rdfsLabel=All the Things You Are, duration=PT2M54S, audioFile=Django Reinhardt/Djangology/19 Blue Drag.m4a)
-  RepositoryTrackEntity(trackNumber=13, rdfsLabel=Are You in the Mood?, duration=PT3M1S, audioFile=Django Reinhardt/Django Reinhardt & Friends/15 Are You In the Mood_.m4a)
-  RepositoryTrackEntity(trackNumber=2, rdfsLabel=After You've Gone, duration=PT3M2S, audioFile=Django Reinhardt/Djangology/07 After You've Gone.m4a)
-
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Django Reinhardt and His American Swing Band, foafName=null):
   RepositoryTrackEntity(trackNumber=10, rdfsLabel=Djangology, duration=PT2M39S, audioFile=Django Reinhardt/Django Reinhardt & Friends/08 Djangology.m4a)
 
@@ -5520,9 +5430,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Doris Day, foafName=null):
   RepositoryTrackEntity(trackNumber=2, rdfsLabel=Secret Love, duration=PT3M44S, audioFile=Doris Day/50sOldies/Secret Love.mp3)
   RepositoryTrackEntity(trackNumber=8, rdfsLabel=Dream a Little Dream of Me, duration=PT3M45S, audioFile=Day, Doris/Daydreaming/Dream a little dream of me.mp3)
   RepositoryTrackEntity(trackNumber=3, rdfsLabel=Que Sera Sera, duration=PT2M59S, audioFile=Doris Day/Unknown Album/Doris Day - Que Sera Sera.mp3)
-
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Doris Day & Howard Keel, foafName=null):
-  RepositoryTrackEntity(trackNumber=2, rdfsLabel=Secret Love, duration=PT3M44S, audioFile=Doris Day/50sOldies/Secret Love.mp3)
 
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Duke Ellington, foafName=null):
   RepositoryTrackEntity(trackNumber=1, rdfsLabel=Mack the Knife, duration=PT4M56S, audioFile=Compilations/Ella And Duke At The Cote d'Azur/1-01 Mack The Knife.m4a)
@@ -5546,26 +5453,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Duke Ellington, foafName=null):
 
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Duke Ellington, foafName=null):
   RepositoryTrackEntity(trackNumber=4, rdfsLabel=Stormy Weather, duration=PT3M12S, audioFile=Duke Ellington/Jazz Profile/04 Stormy Weather.m4p)
-
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Duke Ellington & Ella Fitzgerald, foafName=null):
-  RepositoryTrackEntity(trackNumber=1, rdfsLabel=Mack the Knife, duration=PT4M56S, audioFile=Compilations/Ella And Duke At The Cote d'Azur/1-01 Mack The Knife.m4a)
-  RepositoryTrackEntity(trackNumber=2, rdfsLabel=The Old Circus Train Turn-Around Blues, duration=PT11M, audioFile=Compilations/Ella And Duke At The Cote d'Azur/1-02 The Old Circus Train Turn-Around Blues.m4a)
-  RepositoryTrackEntity(trackNumber=3, rdfsLabel=Lullaby of Birdland, duration=PT2M55S, audioFile=Compilations/Ella And Duke At The Cote d'Azur/1-03 Lullaby Of Birdland.m4a)
-  RepositoryTrackEntity(trackNumber=4, rdfsLabel=Trombonio-Bustoso-Issimo, duration=PT4M7S, audioFile=Compilations/Ella And Duke At The Cote d'Azur/1-04 Trombonio-Bustoso-Issimo.m4a)
-  RepositoryTrackEntity(trackNumber=5, rdfsLabel=Goin' Out of My Head, duration=PT3M3S, audioFile=Compilations/Ella And Duke At The Cote d'Azur/1-05 Goin' Out Of My Head.m4a)
-  RepositoryTrackEntity(trackNumber=6, rdfsLabel=How Long Has This Been Going On?, duration=PT2M53S, audioFile=Compilations/Ella And Duke At The Cote d'Azur/1-06 How Long Has This Been Going On_.m4a)
-  RepositoryTrackEntity(trackNumber=7, rdfsLabel=Diminuendo in Blue and Blow by Blow, duration=PT7M51S, audioFile=Compilations/Ella And Duke At The Cote d'Azur/1-07 Diminuendo In Blue And Blow By Blow.m4a)
-  RepositoryTrackEntity(trackNumber=8, rdfsLabel=Jive Jam, duration=PT8M50S, audioFile=Compilations/Ella And Duke At The Cote d'Azur/1-08 Jive Jam.m4a)
-  RepositoryTrackEntity(trackNumber=1, rdfsLabel=It Don't Mean a Thing (if It Ain't Got That Swing), duration=PT7M16S, audioFile=Ella Fitzgerald&Duke Ellington & His Orchestra/Ella And Duke At The Cote d'Azur/2-01 It Don't Mean A Thing (If It Ain't Got That Swing).m4a)
-  RepositoryTrackEntity(trackNumber=2, rdfsLabel=All Too Soon, duration=PT7M40S, audioFile=Duke Ellington & His Orchestra/Ella And Duke At The Cote d'Azur/2-02 All Too Soon.m4a)
-  RepositoryTrackEntity(trackNumber=3, rdfsLabel=Misty, duration=PT3M7S, audioFile=Ella Fitzgerald/Ella And Duke At The Cote d'Azur/2-03 Misty.m4a)
-  RepositoryTrackEntity(trackNumber=4, rdfsLabel=Só Danço Samba (Jazz Samba), duration=PT5M51S, audioFile=Ella Fitzgerald/Ella And Duke At The Cote d'Azur/2-04 So Danco Samba (Jazz Samba).m4a)
-  RepositoryTrackEntity(trackNumber=5, rdfsLabel=Rose of the Rio Grande, duration=PT3M13S, audioFile=Duke Ellington & His Orchestra/Ella And Duke At The Cote d'Azur/2-05 Rose Of The Rio Grande.m4a)
-  RepositoryTrackEntity(trackNumber=6, rdfsLabel=The More I See You, duration=PT3M59S, audioFile=Ella Fitzgerald/Ella And Duke At The Cote d'Azur/2-06 The More I See You.m4a)
-  RepositoryTrackEntity(trackNumber=7, rdfsLabel=The Matador (El Viti), duration=PT4M12S, audioFile=Duke Ellington & His Orchestra/Ella And Duke At The Cote d'Azur/2-07 The Matador (El Viti).m4a)
-  RepositoryTrackEntity(trackNumber=8, rdfsLabel=Just Squeeze Me (but Don't Tease Me), duration=PT4M7S, audioFile=Ella Fitzgerald & Duke Ellington/Ella And Duke At The Cote d'Azur/2-08 Just Squeeze Me (But Don't Tease Me).m4a)
-  RepositoryTrackEntity(trackNumber=9, rdfsLabel=The Trip, duration=PT4M44S, audioFile=Duke Ellington & His Orchestra/Ella And Duke At The Cote d'Azur/2-09 The Trip (aka _High Passage_).m4a)
-  RepositoryTrackEntity(trackNumber=10, rdfsLabel=Things Ain't What They Used to Be, duration=PT2M11S, audioFile=Duke Ellington & His Orchestra/Ella And Duke At The Cote d'Azur/2-10 Things Ain't What They Used To Be.m4a)
 
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Dusty Springfield, foafName=null):
   RepositoryTrackEntity(trackNumber=10, rdfsLabel=The Look of Love, duration=PT3M31S, audioFile=Compilations/The Very Best Of Burt Bacharach/10 The Look Of Love.m4a)
@@ -5834,18 +5721,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Ella Fitzgerald & Count Basie, f
   RepositoryTrackEntity(trackNumber=11, rdfsLabel=Dream A Little Dream Of Me, duration=PT4M6S, audioFile=Ella Fitzgerald/Quiet Now - Ella's Mood/11 Dream A Little Dream Of Me.m4p)
 
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Ella Fitzgerald & Joe Pass, foafName=null):
-  RepositoryTrackEntity(trackNumber=1, rdfsLabel=Speak Low, duration=PT4M10S, audioFile=Ella Fitzgerald & Joe Pass/Speak Love/01 Speak Low.m4a)
-  RepositoryTrackEntity(trackNumber=2, rdfsLabel=Comes Love, duration=PT2M55S, audioFile=Ella Fitzgerald & Joe Pass/Speak Love/02 Comes Love.m4a)
-  RepositoryTrackEntity(trackNumber=3, rdfsLabel=There's No You, duration=PT4M42S, audioFile=Ella Fitzgerald & Joe Pass/Speak Love/03 There's No You.m4a)
-  RepositoryTrackEntity(trackNumber=4, rdfsLabel=I May Be Wrong (But I Think You're Wonderful), duration=PT5M5S, audioFile=Ella Fitzgerald & Joe Pass/Speak Love/04 I May Be Wrong (But I Think You're Wonderful).m4a)
-  RepositoryTrackEntity(trackNumber=5, rdfsLabel=At Last, duration=PT4M18S, audioFile=Ella Fitzgerald & Joe Pass/Speak Love/05 At Last.m4a)
-  RepositoryTrackEntity(trackNumber=6, rdfsLabel=The Thrill Is Gone, duration=PT4M11S, audioFile=Ella Fitzgerald & Joe Pass/Speak Love/06 The Thrill Is Gone (Medley).m4a)
-  RepositoryTrackEntity(trackNumber=7, rdfsLabel=Gone With the Wind, duration=PT3M51S, audioFile=Ella Fitzgerald & Joe Pass/Speak Love/07 Gone With The Wind.m4a)
-  RepositoryTrackEntity(trackNumber=8, rdfsLabel=Blue and Sentimental, duration=PT3M3S, audioFile=Ella Fitzgerald & Joe Pass/Speak Love/08 Blue and Sentimental.m4a)
-  RepositoryTrackEntity(trackNumber=9, rdfsLabel=Girl Talk, duration=PT4M7S, audioFile=Ella Fitzgerald & Joe Pass/Speak Love/09 Girl Talk.m4a)
-  RepositoryTrackEntity(trackNumber=10, rdfsLabel=Georgia on My Mind, duration=PT6M9S, audioFile=Ella Fitzgerald & Joe Pass/Speak Love/10 Georgia on My Mind.m4a)
-
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Ella Fitzgerald & Joe Pass, foafName=null):
   RepositoryTrackEntity(trackNumber=1, rdfsLabel=My Ship, duration=PT4M24S, audioFile=Ella Fitzgerald & Joe Pass/Easy Living/01 My Ship.m4p)
   RepositoryTrackEntity(trackNumber=2, rdfsLabel=Don't Be That Way, duration=PT3M1S, audioFile=Ella Fitzgerald & Joe Pass/Easy Living/02 Don't Be That Way.m4p)
   RepositoryTrackEntity(trackNumber=3, rdfsLabel=My Man, duration=PT3M28S, audioFile=Ella Fitzgerald & Joe Pass/Easy Living/03 My Man.m4p)
@@ -5882,10 +5757,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Ella Fitzgerald & Joe Pass, foaf
   RepositoryTrackEntity(trackNumber=6, rdfsLabel=A Foggy Day, duration=PT6M4S, audioFile=Ella Fitzgerald & Joe Pass/Take Love Easy/06 A Foggy Day.m4p)
   RepositoryTrackEntity(trackNumber=7, rdfsLabel=Gee Baby, Ain't I Good to You, duration=PT3M59S, audioFile=Ella Fitzgerald & Joe Pass/Take Love Easy/07 Gee Baby, Ain't I Good to You.m4p)
   RepositoryTrackEntity(trackNumber=9, rdfsLabel=I Want to Talk About You, duration=PT3M24S, audioFile=Ella Fitzgerald & Joe Pass/Take Love Easy/09 I Want to Talk About You.m4p)
-
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Ella Fitzgerald & Louis Armstrong, foafName=null):
-  RepositoryTrackEntity(trackNumber=9, rdfsLabel=Summertime, duration=PT4M59S, audioFile=Ella Fitzgerald & Louis Armstrong/Satchmo/05 Summertime.m4a)
-  RepositoryTrackEntity(trackNumber=10, rdfsLabel=Summertime, duration=PT4M59S, audioFile=Compilations/Top Of The Spot/10 Summertime.m4a)
 
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Ella Fitzgerald & Oscar Peterson, foafName=null):
   RepositoryTrackEntity(trackNumber=3, rdfsLabel=Love You Madly, duration=PT4M41S, audioFile=Ella Fitzgerald/Love Songs - Best of the Verve Songbooks/03 Love You Madly.m4p)
@@ -6101,19 +5972,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Frank Sinatra, foafName=null):
   RepositoryTrackEntity(trackNumber=3, rdfsLabel=Stormy Weather, duration=PT3M21S, audioFile=Frank Sinatra/No One Cares/03 Stormy Weather.m4p)
   RepositoryTrackEntity(trackNumber=4, rdfsLabel=Ol' Man River, duration=PT4M26S, audioFile=Frank Sinatra/The Concert Sinatra/04 Ol' Man River.m4a)
   RepositoryTrackEntity(trackNumber=7, rdfsLabel=This Nearly Was Mine, duration=PT2M45S, audioFile=Frank Sinatra/The Concert Sinatra/07 This Nearly Was Mine.m4a)
-
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Frank Sinatra & Antônio Carlos Jobim, foafName=null):
-  RepositoryTrackEntity(trackNumber=1, rdfsLabel=The Girl From Ipanema, duration=PT3M16S, audioFile=Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/01 The Girl From Ipanema.mp3)
-  RepositoryTrackEntity(trackNumber=2, rdfsLabel=Dindi, duration=PT3M30S, audioFile=Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/02 Dindi.mp3)
-  RepositoryTrackEntity(trackNumber=3, rdfsLabel=Change Partners, duration=PT2M43S, audioFile=Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/03 Change Partners.mp3)
-  RepositoryTrackEntity(trackNumber=4, rdfsLabel=Quiet Nights of Quiet Stars, duration=PT2M46S, audioFile=Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/04 Quiet Nights Of Quiet Stars.mp3)
-  RepositoryTrackEntity(trackNumber=6, rdfsLabel=If You Never Come to Me, duration=PT2M12S, audioFile=Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/06 If You Never Come To Me.mp3)
-  RepositoryTrackEntity(trackNumber=7, rdfsLabel=How Insensitive, duration=PT3M18S, audioFile=Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/07 How Insensitive.mp3)
-  RepositoryTrackEntity(trackNumber=9, rdfsLabel=Baubles, Bangles and Beads, duration=PT2M35S, audioFile=Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/09 Baubles, Bangles And Beads.mp3)
-  RepositoryTrackEntity(trackNumber=10, rdfsLabel=Once I Loved, duration=PT2M36S, audioFile=Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/10 Once I Loved.mp3)
-
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Frank Sinatra & Count Basie, foafName=null):
-  RepositoryTrackEntity(trackNumber=4, rdfsLabel=Fly Me to the Moon (In Other Words), duration=PT2M29S, audioFile=Frank Sinatra/Unknown Album/Fly Me To The Moon (With Count Basie).mp3)
 
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Frantisek Macinka, foafName=null):
   RepositoryTrackEntity(trackNumber=1, rdfsLabel=Maehrische Volkslieder, duration=PT1M34S, audioFile=Frantisek Macinka/Musica Moravica/01 Maehrische Volkslieder.m4a)
@@ -6535,9 +6393,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Henry Mancini, foafName=null):
   RepositoryTrackEntity(trackNumber=3, rdfsLabel=Sally's Tomato, duration=PT3M7S, audioFile=Henry Mancini/Breakfast At Tiffany's (Soundtrack from the Motion Picture)/03 Sally's Tomato.m4p)
   RepositoryTrackEntity(trackNumber=9, rdfsLabel=Holly, duration=PT3M19S, audioFile=Henry Mancini/Breakfast At Tiffany's (Soundtrack from the Motion Picture)/09 Holly.m4p)
 
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Henry Mancini and James Galway, foafName=null):
-  RepositoryTrackEntity(trackNumber=8, rdfsLabel="The Thorn Birds" Theme, duration=PT3M3S, audioFile=Compilations/Legends/1-08 Thorn Birds Theme.m4a)
-
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Henry Purcell, foafName=null):
   RepositoryTrackEntity(trackNumber=1, rdfsLabel=The Prophetess: First Musick, duration=PT2M9S, audioFile=Jordi Savall/Purcell_ The Fairy Queen & The Prophetess/01 First Musick - The Prophetess, 1690.m4a)
   RepositoryTrackEntity(trackNumber=2, rdfsLabel=The Prophetess: Second Musick, duration=PT1M59S, audioFile=Jordi Savall/Purcell_ The Fairy Queen & The Prophetess/02 Second Musick - The Prophetess, 1690.m4a)
@@ -6705,25 +6560,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Jean-Louis Rassinfosse, Chet Bak
   RepositoryTrackEntity(trackNumber=6, rdfsLabel=Estate, duration=PT5M31S, audioFile=Chet Baker Trio/Estate/06 Estate.m4a)
 
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Jim Hall, foafName=null):
-  RepositoryTrackEntity(trackNumber=1, rdfsLabel=Lookin' Up, duration=PT4M34S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/01 Lookin Up.m4a)
-  RepositoryTrackEntity(trackNumber=2, rdfsLabel=All the Things You Are, duration=PT6M59S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/02 All The Things You Are.m4a)
-  RepositoryTrackEntity(trackNumber=3, rdfsLabel=The Birds and the Bees, duration=PT5M8S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/03 The Birds And The Bees.m4a)
-  RepositoryTrackEntity(trackNumber=4, rdfsLabel=Improvisation No. 1, duration=PT1M5S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/04 Improvisation No. 1.m4a)
-  RepositoryTrackEntity(trackNumber=5, rdfsLabel=Falling Grace, duration=PT4M40S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/05 Falling Grace.m4a)
-  RepositoryTrackEntity(trackNumber=6, rdfsLabel=Ballad Z, duration=PT4M35S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/06 Ballad Z.m4a)
-  RepositoryTrackEntity(trackNumber=7, rdfsLabel=Summertime, duration=PT5M35S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/07 Summertime.m4a)
-  RepositoryTrackEntity(trackNumber=8, rdfsLabel=Farmer's Trust, duration=PT5M33S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/08 Farmer's Trust.m4a)
-  RepositoryTrackEntity(trackNumber=9, rdfsLabel=Cold Spring, duration=PT6M29S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/09 Cold Spring.m4a)
-  RepositoryTrackEntity(trackNumber=10, rdfsLabel=Improvisation No. 2, duration=PT1M11S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/10 Improvisation No. 2.m4a)
-  RepositoryTrackEntity(trackNumber=11, rdfsLabel=Into the Dream, duration=PT3M6S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/11 Into The Dream.m4a)
-  RepositoryTrackEntity(trackNumber=12, rdfsLabel=Don't Forget, duration=PT4M46S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/12 Don't Forget.m4a)
-  RepositoryTrackEntity(trackNumber=13, rdfsLabel=Improvisation No. 3, duration=PT3M24S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/13 Improvisation No. 3.m4a)
-  RepositoryTrackEntity(trackNumber=14, rdfsLabel=Waiting to Dance, duration=PT4M38S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/14 Waiting To Dance.m4a)
-  RepositoryTrackEntity(trackNumber=15, rdfsLabel=Improvisation No. 4, duration=PT2M37S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/15 Improvisation No. 4.m4a)
-  RepositoryTrackEntity(trackNumber=16, rdfsLabel=Improvisation No. 5, duration=PT2M8S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/16 Improvisation No. 5.m4a)
-  RepositoryTrackEntity(trackNumber=17, rdfsLabel=All Across the City, duration=PT7M34S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/17 All Across The City.m4a)
-
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Jim Hall & Pat Metheny, foafName=null):
   RepositoryTrackEntity(trackNumber=1, rdfsLabel=Lookin' Up, duration=PT4M34S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/01 Lookin Up.m4a)
   RepositoryTrackEntity(trackNumber=2, rdfsLabel=All the Things You Are, duration=PT6M59S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/02 All The Things You Are.m4a)
   RepositoryTrackEntity(trackNumber=3, rdfsLabel=The Birds and the Bees, duration=PT5M8S, audioFile=Jim Hall & Pat Metheny/Jim Hall And Pat Metheny/03 The Birds And The Bees.m4a)
@@ -7103,9 +6939,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=June Anderson, Rockwell Blake, E
   RepositoryTrackEntity(trackNumber=21, rdfsLabel=Rossini: La Donna Del Lago - Act 2: Ah! Che Vedo!, duration=PT3M21S, audioFile=June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-21 Rossini_ La Donna Del Lago - Act 2_ Ah! Che Vedo!.m4a)
   RepositoryTrackEntity(trackNumber=22, rdfsLabel=Rossini: La Donna Del Lago - Act 2: Tanti Affetti In Tal Momento, duration=PT3M52S, audioFile=June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-22 Rossini_ La Donna Del Lago - Act 2_ Tanti Affetti In Tal Momento.m4a)
   RepositoryTrackEntity(trackNumber=23, rdfsLabel=Rossini: La Donna Del Lago - Act 2: Fra Il Padre, E Fra L'Amante, duration=PT4M58S, audioFile=June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-23 Rossini_ La Donna Del Lago - Act 2_ Fra Il Padre, E Fra L'Amante.m4a)
-
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Katia & Marielle Labèque, foafName=null):
-  RepositoryTrackEntity(trackNumber=3, rdfsLabel=Rialto Ripples, duration=PT1M51S, audioFile=Katia Labeque & Marielle Labeque/Gershwin_ Piano Music/15 Rialto Ripples.m4a)
 
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Katia Labèque, foafName=null):
   RepositoryTrackEntity(trackNumber=3, rdfsLabel=Rialto Ripples, duration=PT1M51S, audioFile=Katia Labeque & Marielle Labeque/Gershwin_ Piano Music/15 Rialto Ripples.m4a)
@@ -7669,11 +7502,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Miles Davis, foafName=null):
   RepositoryTrackEntity(trackNumber=4, rdfsLabel=All Blues, duration=PT11M32S, audioFile=Miles Davis/Kind Of Blue - The Miles Davis Story/04 All Blues 1.m4p)
   RepositoryTrackEntity(trackNumber=5, rdfsLabel=Flamenco Sketches, duration=PT9M26S, audioFile=Miles Davis/Kind Of Blue - The Miles Davis Story/05 Flamenco Sketches 1.m4p)
   RepositoryTrackEntity(trackNumber=6, rdfsLabel=Flamenco Sketches (Alternate Take), duration=PT9M31S, audioFile=Miles Davis/Kind Of Blue - The Miles Davis Story/06 Flamenco Sketches (Alternate Take) 1.m4p)
-
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Miles Davis & John Coltrane, foafName=null):
-  RepositoryTrackEntity(trackNumber=6, rdfsLabel=So What, duration=PT8M50S, audioFile=Miles Davis_John Coltrane/Live in New York/07 So What.mp3)
-  RepositoryTrackEntity(trackNumber=8, rdfsLabel=Little Melonae, duration=PT7M19S, audioFile=Miles Davis/'Round About Midnight (Legacy Edition)/1-08 Little Melonae.m4a)
-  RepositoryTrackEntity(trackNumber=9, rdfsLabel=Budo, duration=PT4M14S, audioFile=Miles Davis/'Round About Midnight (Legacy Edition)/1-09 Budo.m4a)
 
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Mina, foafName=null):
   RepositoryTrackEntity(trackNumber=1, rdfsLabel=Something, duration=PT3M48S, audioFile=Mina/Mina Canta I Beatles/01 Something (1993 Version) (2001 Digital Remaster).mp3)
@@ -8443,9 +8271,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Salvatore Accardo; Claudio Abbad
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Sam Pottle, foafName=null):
   RepositoryTrackEntity(trackNumber=2, rdfsLabel=The Muppet Show, duration=PT1M11S, audioFile=Unknown Artist/Unknown Album/Muppet Show Theme.mp3)
 
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Sam Pottle and Jim Henson, foafName=null):
-  RepositoryTrackEntity(trackNumber=2, rdfsLabel=The Muppet Show, duration=PT1M11S, audioFile=Unknown Artist/Unknown Album/Muppet Show Theme.mp3)
-
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Samuel Barber, foafName=null):
   RepositoryTrackEntity(trackNumber=14, rdfsLabel=Adagio For Strings, duration=PT7M38S, audioFile=Compilations/Celebrate The American Spirit/4-14 Adagio For Strings.m4p)
 
@@ -8973,14 +8798,6 @@ TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Thelonious Monk, foafName=null):
   RepositoryTrackEntity(trackNumber=13, rdfsLabel=Solitude (P.Solo), duration=PT3M45S, audioFile=Thelonious Monk/Blue Monk/13 Solitude (P.Solo).m4p)
   RepositoryTrackEntity(trackNumber=14, rdfsLabel=Caravan, duration=PT5M58S, audioFile=Thelonious Monk/Blue Monk/14 Caravan.m4p)
   RepositoryTrackEntity(trackNumber=19, rdfsLabel=All the Things You Are, duration=PT6M40S, audioFile=Thelonious Monk/Thelonious Monk - Live at The It Club (Complete)/2-19 All the Things You Are 1.m4p)
-
-TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Thelonious Monk & John Coltrane, foafName=null):
-  RepositoryTrackEntity(trackNumber=1, rdfsLabel=Ruby, My Dear, duration=PT6M22S, audioFile=Thelonious Monk, John Coltrane, Wilbur Ware & Shadow Wilson/Thelonious Monk With John Coltrane/01 Ruby, My Dear.m4a)
-  RepositoryTrackEntity(trackNumber=2, rdfsLabel=Trinkle, Tinkle, duration=PT6M41S, audioFile=Thelonious Monk, John Coltrane, Wilbur Ware & Shadow Wilson/Thelonious Monk With John Coltrane/02 Trinkle, Tinkle.m4a)
-  RepositoryTrackEntity(trackNumber=3, rdfsLabel=Off Minor (take 4), duration=PT5M16S, audioFile=Thelonious Monk, Ray Copeland, Gig Gryce, John Coltrane, Coleman Hawkins, Wilbur Ware & Art Blakey/Thelonious Monk With John Coltrane/03 Off Minor.m4a)
-  RepositoryTrackEntity(trackNumber=4, rdfsLabel=Nutty, duration=PT6M39S, audioFile=Thelonious Monk, John Coltrane, Wilbur Ware & Shadow Wilson/Thelonious Monk With John Coltrane/04 Nutty.m4a)
-  RepositoryTrackEntity(trackNumber=5, rdfsLabel=Epistrophy (alternate take), duration=PT3M10S, audioFile=Thelonious Monk, Ray Copeland, Gig Gryce, John Coltrane, Coleman Hawkins, Wilbur Ware & Art Blakey/Thelonious Monk With John Coltrane/05 Epistrophy.m4a)
-  RepositoryTrackEntity(trackNumber=6, rdfsLabel=Functional (alternate take), duration=PT9M41S, audioFile=Thelonious Monk/Thelonious Monk With John Coltrane/06 Functional.m4a)
 
 TRACKS OF RepositoryMusicArtistEntity(rdfsLabel=Thomas Beecham: Royal Philharmonic Orchestra, foafName=null):
   RepositoryTrackEntity(trackNumber=5, rdfsLabel=Grieg: Peer Gynt, Op. 23 - Åse's Death, duration=PT5M56S, audioFile=Thomas Beecham_ Royal Philharmonic Orchestra/Grieg_ Peer Gynt, Etc_/05 Grieg_ Peer Gynt, Op. 23 - Åse's Death.m4a)
