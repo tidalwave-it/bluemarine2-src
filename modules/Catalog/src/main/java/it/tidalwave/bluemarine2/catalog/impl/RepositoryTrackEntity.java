@@ -54,7 +54,7 @@ import org.springframework.beans.factory.annotation.Configurable;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @Configurable @Getter @ToString @EqualsAndHashCode(callSuper = false) @Slf4j
+@Immutable @Configurable @Getter @ToString(exclude = "mediaItem") @EqualsAndHashCode(callSuper = false) @Slf4j
 public class RepositoryTrackEntity extends RepositoryEntitySupport implements Track, MediaItemSupplier
   {
     private final Integer trackNumber;
