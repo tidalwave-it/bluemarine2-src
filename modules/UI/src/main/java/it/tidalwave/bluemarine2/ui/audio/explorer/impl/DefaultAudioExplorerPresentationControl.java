@@ -62,7 +62,6 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
 import static java.util.stream.Stream.*;
-import static it.tidalwave.role.Composite.Composite;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.Presentable.Presentable;
@@ -259,7 +258,7 @@ public class DefaultAudioExplorerPresentationControl
       {
         try
           {
-            entity.as(Composite);
+            entity.as(SimpleComposite8.class); // FIXME: Composite doesn't work. Introduce Composite8?
             return true;
           }
         catch (AsException e)
