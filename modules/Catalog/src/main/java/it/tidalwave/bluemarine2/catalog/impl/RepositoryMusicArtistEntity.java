@@ -43,7 +43,7 @@ import lombok.ToString;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @Getter @ToString
+@Immutable @Getter @ToString(callSuper = true)
 public class RepositoryMusicArtistEntity extends RepositoryEntitySupport implements MusicArtist
   {
     private final String foafName;
