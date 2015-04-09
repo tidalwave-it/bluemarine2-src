@@ -208,8 +208,8 @@ public class DefaultAudioExplorerPresentationControl
         // Uses native ordering provided by the Composite.
         final PresentationModel pm = composite.findChildren()
                                               .stream()
-                                              .map(object -> object.as(Presentable, 
-                                                                       throwable -> new DefaultPresentable(object))
+                                              .map(object -> object.asOptional(Presentable)
+                                                                   .orElse(new DefaultPresentable(object))
                                                                    .createPresentationModel(rolesFor(object)))
 //                                              .sorted(new AudioComparator())
                                               .collect(toCompositePresentationModel());

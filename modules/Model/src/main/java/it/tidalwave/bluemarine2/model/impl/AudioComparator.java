@@ -26,12 +26,13 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
+package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Comparator;
 import it.tidalwave.util.As;
 import it.tidalwave.util.AsException;
+import it.tidalwave.util.DefaultFilterSortCriterion;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import static it.tidalwave.role.Displayable.Displayable;
 
@@ -41,10 +42,9 @@ import static it.tidalwave.role.Displayable.Displayable;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class AudioComparator implements Comparator<As>
+public class AudioComparator extends DefaultFilterSortCriterion<As>
   {
-    @Override
-    public int compare (final @Nonnull As o1, final @Nonnull As o2) 
+    private final static Comparator<As> COMPARATOR = (o1, o2) ->
       {
         try
           {
@@ -57,14 +57,19 @@ public class AudioComparator implements Comparator<As>
 
             if (t1 != t2)
               {
-                return t1 - t2;  
+                return t1 - t2;
               }
           }
         catch (AsException e)
           {
           }
-
+        
         return displayName(o1).compareTo(displayName(o2));
+      };
+    
+    public AudioComparator() 
+      {
+        super(COMPARATOR, "AudioComparator");
       }
     
     @Nonnull

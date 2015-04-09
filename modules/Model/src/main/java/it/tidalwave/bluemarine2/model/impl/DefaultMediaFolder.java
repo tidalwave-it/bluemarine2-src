@@ -74,7 +74,8 @@ public class DefaultMediaFolder implements MediaFolder
     @Override @Nonnull
     public Finder8<Entity> findChildren() 
       {
-        return new MediaFolderFinder(this, basePath);
+        // FIXME: the cast is due to a bug in SimpleFinder8Support
+        return (Finder8<Entity>)new MediaFolderFinder(this, basePath).sort(new AudioComparator());
       }
     
     @Override @Nonnull
