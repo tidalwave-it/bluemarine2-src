@@ -28,6 +28,8 @@
  */
 package it.tidalwave.bluemarine2.model;
 
+import javax.annotation.Nonnull;
+import java.util.Optional;
 import it.tidalwave.util.As;
 
 /***********************************************************************************************************************
@@ -40,4 +42,10 @@ import it.tidalwave.util.As;
  **********************************************************************************************************************/
 public interface Entity extends As
   {
+    // FIXME: introduce As8 and push up there
+    @Nonnull
+    default <T> Optional<T> asOptional (final @Nonnull Class<T> type)
+      {
+        return Optional.ofNullable(as(type, throwable -> null)); 
+      }
   }
