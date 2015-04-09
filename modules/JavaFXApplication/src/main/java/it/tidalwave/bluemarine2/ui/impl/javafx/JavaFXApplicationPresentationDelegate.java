@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.ui.impl.javafx;
 
+import it.tidalwave.bluemarine2.persistence.PropertyNames;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.HashMap;
@@ -48,6 +49,8 @@ import it.tidalwave.util.PowerOnNotification;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -119,6 +122,8 @@ public class JavaFXApplicationPresentationDelegate
         
         flowController.setContentPane(spContent);
         final Map<Key<?>, Object> properties = new HashMap<>();
+        final Path path = Paths.get("/Users/fritz/Business/Tidalwave/Projects/WorkAreas/blueMarine2/bluemarine2-src/modules/MediaScanner/src/test/resources/expected-results").resolve("model.n3");
+        properties.put(PropertyNames.REPOSITORY_PATH, path);
         messageBus.publish(new PowerOnNotification(properties));        
       }    
     
