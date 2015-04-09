@@ -29,20 +29,25 @@
 package it.tidalwave.bluemarine2.persistence.impl;
 
 import javax.annotation.Nonnull;
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Path;
 import org.openrdf.model.Namespace;
 import org.openrdf.repository.Repository;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.RepositoryException;
 import org.openrdf.repository.sail.SailRepository;
 import org.openrdf.sail.memory.MemoryStore;
+import org.openrdf.rio.RDFFormat;
 import org.openrdf.rio.RDFHandler;
 import org.openrdf.rio.RDFHandlerException;
+import org.openrdf.rio.RDFParseException;
 import org.openrdf.rio.n3.N3Writer;
+import it.tidalwave.util.NotFoundException;
+import it.tidalwave.util.PowerOnNotification;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
@@ -50,6 +55,7 @@ import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
 import it.tidalwave.bluemarine2.persistence.DumpCompleted;
 import it.tidalwave.bluemarine2.persistence.DumpRequest;
 import it.tidalwave.bluemarine2.persistence.Persistence;
+import it.tidalwave.bluemarine2.persistence.PropertyNames;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -72,12 +78,26 @@ public class DefaultPersistence implements Persistence
      *
      *
      ******************************************************************************************************************/
-    @PostConstruct // FIXME: use onPowerOn
-    /* VisibleForTesting */ void initialize() 
-      throws RepositoryException
+    /* VisibleForTesting */ void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification) 
+      throws RepositoryException, IOException, RDFParseException
       {
+        log.info("onPowerOnNotification({})", notification);
         repository = new SailRepository(new MemoryStore());
         repository.initialize();
+        
+        try
+          {
+            final Path repositoryPath = notification.getProperties().get(PropertyNames.REPOSITORY_PATH);
+            final RepositoryConnection connection = repository.getConnection();
+            log.info("Importing repository from {} ...", repositoryPath);
+            connection.add(repositoryPath.toFile(), null, RDFFormat.N3);
+            connection.commit();
+            connection.close();
+          }
+        catch (NotFoundException e) 
+          {
+            log.warn("No repository path: operating in memory");
+          }
       }
     
     /*******************************************************************************************************************
