@@ -43,7 +43,6 @@ import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.MediaItemSupplier;
 import it.tidalwave.bluemarine2.model.impl.DefaultMediaItem;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
@@ -54,7 +53,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @Configurable @Getter @ToString(exclude = "mediaItem") @EqualsAndHashCode(callSuper = false) @Slf4j
+@Immutable @Configurable @Getter @Slf4j
 public class RepositoryTrackEntity extends RepositoryEntitySupport implements Track, MediaItemSupplier
   {
     private final Integer trackNumber;
@@ -104,5 +103,12 @@ public class RepositoryTrackEntity extends RepositoryEntitySupport implements Tr
           }
         
         return mediaItem;
+      }
+
+    @Override @Nonnull
+    public String toString() 
+      {
+        return String.format("RepositoryTrackEntity(%02d, %s, rdfs:label=%s, %s, %s)",
+                             trackNumber, duration, rdfsLabel, audioFilePath, id);
       }
   }

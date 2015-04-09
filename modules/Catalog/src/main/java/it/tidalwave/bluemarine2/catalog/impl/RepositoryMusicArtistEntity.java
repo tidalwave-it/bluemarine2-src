@@ -35,7 +35,6 @@ import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.catalog.MusicArtist;
 import it.tidalwave.bluemarine2.catalog.TrackFinder;
 import lombok.Getter;
-import lombok.ToString;
 
 /***********************************************************************************************************************
  *
@@ -43,7 +42,7 @@ import lombok.ToString;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @Getter @ToString(callSuper = true)
+@Immutable @Getter
 public class RepositoryMusicArtistEntity extends RepositoryEntitySupport implements MusicArtist
   {
     private final String foafName;
@@ -62,5 +61,12 @@ public class RepositoryMusicArtistEntity extends RepositoryEntitySupport impleme
     public TrackFinder findTracks() 
       {
         return new RepositoryTrackEntityFinder(repository).withArtistId(id);
+      }
+
+    @Override @Nonnull
+    public String toString() 
+      {
+        return String.format("RepositoryMusicArtistEntity(rdfs:label=%s, foaf:name=%s, uri=%s)",
+                             rdfsLabel, foafName, id);
       }
   }

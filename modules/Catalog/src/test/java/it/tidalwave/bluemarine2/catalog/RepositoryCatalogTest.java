@@ -35,6 +35,11 @@ import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalog;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrackEntity;
+import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.util.Id;
+import it.tidalwave.util.Key;
+import it.tidalwave.util.PowerOnNotification;
 import org.openrdf.query.MalformedQueryException;
 import org.openrdf.query.QueryEvaluationException;
 import org.openrdf.repository.Repository;
@@ -48,7 +53,14 @@ import org.testng.annotations.Test;
 import lombok.extern.slf4j.Slf4j;
 import static java.nio.file.Files.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import javax.annotation.Nonnull;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.annotations.DataProvider;
 
 /***********************************************************************************************************************
@@ -68,10 +80,24 @@ public class RepositoryCatalogTest
             
     private Repository repository;
     
+    private ApplicationContext context;
+    
+    private MessageBus messageBus;
+    
     @Test(dataProvider = "p")
     public void dumpCatalog (final @Nonnull String catalogName, final @Nonnull String dumpName) 
       throws RepositoryException, IOException, RDFParseException, MalformedQueryException, QueryEvaluationException
       {
+        final String s1 = "classpath:/META-INF/CommonsAutoBeans.xml";
+        final String s2 = "classpath:/META-INF/RepositoryCatalogTestBeans.xml";
+        context = new ClassPathXmlApplicationContext(s1, s2);
+        messageBus = context.getBean(MessageBus.class);
+        
+        final Map<Key<?>, Object> properties = new HashMap<>();
+        properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, Paths.get("/base/path"));
+        final PowerOnNotification notification = new PowerOnNotification(properties);
+        messageBus.publish(notification);
+        
         repository = new SailRepository(new MemoryStore());
         repository.initialize();
         final File file = MODELS.resolve(catalogName).toFile();
@@ -93,8 +119,11 @@ public class RepositoryCatalogTest
         final PrintWriter pw = new PrintWriter(actualResult.toFile());
         
         pw.println("\n\nALL TRACKS:\n");
-        final List<? extends Track> allTracks =  catalog.findTracks().results();
-        allTracks.stream().forEach(track -> pw.printf("  %s\n", track));
+        final Map<String, RepositoryTrackEntity> allTracks = catalog.findTracks().results().stream()
+                        .map(t -> (RepositoryTrackEntity)t)
+                        .collect(Collectors.toMap(RepositoryTrackEntity::toString, Function.identity()));
+        final Comparator<RepositoryTrackEntity> c = (o1, o2) -> o1.getRdfsLabel().compareTo(o2.getRdfsLabel());
+        allTracks.values().stream().sorted(c).forEach(track -> pw.printf("  %s\n", track));
         
         pw.println("ARTISTS:\n");
         final List<? extends MusicArtist> artists = catalog.findArtists().results();
@@ -108,12 +137,12 @@ public class RepositoryCatalogTest
             artist.findTracks().stream().forEach(track -> 
               {
                 pw.printf("  %s\n", track);
-                allTracks.remove(track);
+                allTracks.remove(track.toString());
               });
           });
         
         pw.println("\n\nORPHANED TRACKS:\n");
-        allTracks.stream().forEach(track -> pw.printf("  %s\n", track));
+        allTracks.values().stream().sorted(c).forEach(track -> pw.printf("  %s\n", track));
 
         pw.close();
         

@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.catalog;
 
+import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.Entity;
 
 /***********************************************************************************************************************
@@ -38,7 +39,7 @@ import it.tidalwave.bluemarine2.model.Entity;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Track extends Entity
+public interface Track extends Entity, Identifiable
   {
     public static final Class<Track> Track = Track.class;
   }
