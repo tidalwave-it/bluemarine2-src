@@ -205,12 +205,13 @@ public class DefaultAudioExplorerPresentationControl
         Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentPathLabel()));
         // FIXME: waiting signal while loading
         final SimpleComposite8<Entity> composite = folder.as(SimpleComposite8);
+        // Uses native ordering provided by the Composite.
         final PresentationModel pm = composite.findChildren()
                                               .stream()
                                               .map(object -> object.as(Presentable, 
                                                                        throwable -> new DefaultPresentable(object))
                                                                    .createPresentationModel(rolesFor(object)))
-                                              .sorted(new AudioComparator())
+//                                              .sorted(new AudioComparator())
                                               .collect(toCompositePresentationModel());
         presentation.populateAndSelect(pm, selectedIndex);
       }
