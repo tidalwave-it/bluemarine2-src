@@ -32,13 +32,16 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import java.util.List;
 import java.util.Stack;
 import javafx.application.Platform;
+import it.tidalwave.util.AsException;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.UserAction8;
 import it.tidalwave.role.ui.UserActionProvider;
+import it.tidalwave.role.ui.spi.DefaultPresentable;
 import it.tidalwave.role.ui.spi.UserActionLambda;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.messagebus.MessageBus;
@@ -46,7 +49,6 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.EntitySupplier;
-import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.Parentable;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
@@ -54,20 +56,17 @@ import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import it.tidalwave.bluemarine2.ui.commons.OnActivate;
-import static it.tidalwave.role.Composite.Composite;
-import static java.util.stream.Collectors.*;
-import static java.util.stream.Stream.*;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
-import static it.tidalwave.role.ui.Presentable.Presentable;
-import it.tidalwave.role.ui.spi.DefaultPresentable;
-import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
-import it.tidalwave.util.AsException;
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.*;
+import static java.util.stream.Stream.*;
+import static it.tidalwave.role.Composite.Composite;
+import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
+import static it.tidalwave.role.ui.Presentable.Presentable;
+import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
 
 /***********************************************************************************************************************
  *
@@ -164,9 +163,9 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
-     * Navigates to a new {@link MediaFolder}, saving the current folder to the stack.
+     * Navigates to a new folder, saving the current folder to the stack.
      * 
-     * @param   newMediaFolder  the new {@code MediaFolder}
+     * @param   newMediaFolder  the new folder
      *
      ******************************************************************************************************************/
     private void navigateTo (final @Nonnull Entity newMediaFolder)
@@ -178,7 +177,7 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
-     * Navigates up to the parent {@link MediaFolder}.
+     * Navigates up to the parent folder.
      *
      ******************************************************************************************************************/
     private void navigateUp() 
@@ -191,9 +190,9 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
-     * Populates the presentation with the contents of a {@link MediaFolder} and selects an item.
+     * Populates the presentation with the contents of a folder and selects an item.
      * 
-     * @param   folder     the {@code MediaFolder}
+     * @param   folder          the folder
      * @param   selectedIndex   the index of the item to select
      *
      ******************************************************************************************************************/
