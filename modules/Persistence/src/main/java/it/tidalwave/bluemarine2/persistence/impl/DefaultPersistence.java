@@ -49,6 +49,8 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
 import it.tidalwave.bluemarine2.persistence.DumpCompleted;
 import it.tidalwave.bluemarine2.persistence.DumpRequest;
+import it.tidalwave.bluemarine2.persistence.Persistence;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -58,8 +60,9 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @SimpleMessageSubscriber @Slf4j
-public class DefaultPersistence 
+public class DefaultPersistence implements Persistence
   {
+    @Getter
     private Repository repository;
     
     @Inject
