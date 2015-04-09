@@ -58,7 +58,7 @@ import org.testng.annotations.DataProvider;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class CatalogTest 
+public class RepositoryCatalogTest 
   {
     private static final Path MODELS = Paths.get("src/test/resources");
             
