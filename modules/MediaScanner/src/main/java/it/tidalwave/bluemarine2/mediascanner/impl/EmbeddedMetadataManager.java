@@ -58,6 +58,8 @@ import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 import static it.tidalwave.bluemarine2.persistence.AddStatementsRequest.*;
 import it.tidalwave.bluemarine2.vocabulary.BM;
+import java.util.Set;
+import javax.annotation.concurrent.Immutable;
 
 /***********************************************************************************************************************
  *
@@ -84,7 +86,7 @@ public class EmbeddedMetadataManager
      * 
      * 
      ******************************************************************************************************************/
-    @RequiredArgsConstructor @ToString
+    @Immutable @RequiredArgsConstructor @ToString
     static class Pair
       {
         @Nonnull
@@ -105,8 +107,17 @@ public class EmbeddedMetadataManager
      * 
      * 
      ******************************************************************************************************************/
-    private static final Map<Key<?>, Function<Object, Pair>> SIGNAL_MAPPER = new HashMap<>();
-    private static final Map<Key<?>, Function<Object, Pair>> TRACK_MAPPER = new HashMap<>();
+    static class Mapper extends HashMap<Key<?>, Function<Object, Pair>>
+      {
+        @Nonnull
+        public Pair forItem (final @Nonnull Map.Entry<Key<?>, ?> entry)
+          {
+            return get(entry.getKey()).apply(entry.getValue());
+          }
+      }
+
+    private static final Mapper SIGNAL_MAPPER = new Mapper();
+    private static final Mapper TRACK_MAPPER = new Mapper();
 
     static
       {
@@ -116,6 +127,7 @@ public class EmbeddedMetadataManager
         SIGNAL_MAPPER.put(Metadata.BIT_RATE,    v -> new Pair(MO.P_BITS_PER_SAMPLE, literalFor((int)v)));
         SIGNAL_MAPPER.put(Metadata.DURATION,    v -> new Pair(MO.P_DURATION,        literalFor((float)((Duration)v).toMillis())));
       }
+    
     /*******************************************************************************************************************
      *
      * 
@@ -142,14 +154,15 @@ public class EmbeddedMetadataManager
                                          final @Nonnull URI trackUri)
       {
         log.debug("importAudioFileMetadata({}, {})", mediaItem, signalUri);
-        messageBus.publish(mediaItem.getMetadata().getEntries().stream()
-                        .filter(e -> SIGNAL_MAPPER.containsKey(e.getKey()))
-                        .map(e -> SIGNAL_MAPPER.get(e.getKey()).apply(e.getValue()).createStatementWithSubject(signalUri))
-                        .collect(toAddStatementsRequest()));
-        messageBus.publish(mediaItem.getMetadata().getEntries().stream()
-                        .filter(e -> TRACK_MAPPER.containsKey(e.getKey()))
-                        .map(e -> TRACK_MAPPER.get(e.getKey()).apply(e.getValue()).createStatementWithSubject(trackUri))
-                        .collect(toAddStatementsRequest()));
+        final Set<Map.Entry<Key<?>, ?>> entries = mediaItem.getMetadata().getEntries();
+        messageBus.publish(entries.stream()
+                                  .filter(e -> SIGNAL_MAPPER.containsKey(e.getKey()))
+                                  .map(e -> SIGNAL_MAPPER.forItem(e).createStatementWithSubject(signalUri))
+                                  .collect(toAddStatementsRequest()));
+        messageBus.publish(entries.stream()
+                                  .filter(e -> TRACK_MAPPER.containsKey(e.getKey()))
+                                  .map(e -> TRACK_MAPPER.forItem(e).createStatementWithSubject(trackUri))
+                                  .collect(toAddStatementsRequest()));
       }
     
     /*******************************************************************************************************************
