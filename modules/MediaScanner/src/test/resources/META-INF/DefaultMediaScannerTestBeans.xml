@@ -78,6 +78,4 @@
         <property name="neverExpiring" value="true" />
     </bean>
     
-    <bean class="it.tidalwave.bluemarine2.persistence.impl.DefaultPersistence" />
-
 </beans>
