@@ -189,6 +189,7 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
                                                                                                 : Origin.NETWORK;
                 
                 // FIXME: shouldn't do this by myself
+                // FIXME: upon configuration, everything should be cached (needed for supporting integration tests)
                 if (!origin.equals(Origin.CACHE) && Arrays.asList(200, 303).contains(response.getStatusLine().getStatusCode()))
                   {
                     final Date date = new Date();
