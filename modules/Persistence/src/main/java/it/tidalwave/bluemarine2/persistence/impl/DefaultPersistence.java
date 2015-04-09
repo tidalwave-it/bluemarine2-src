@@ -34,6 +34,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import org.openrdf.model.Namespace;
 import org.openrdf.repository.Repository;
@@ -89,10 +90,14 @@ public class DefaultPersistence implements Persistence
           {
             final Path repositoryPath = notification.getProperties().get(PropertyNames.REPOSITORY_PATH);
             final RepositoryConnection connection = repository.getConnection();
-            log.info("Importing repository from {} ...", repositoryPath);
-            connection.add(repositoryPath.toFile(), null, RDFFormat.N3);
-            connection.commit();
-            connection.close();
+            
+            if (Files.exists(repositoryPath))
+              {
+                log.info("Importing repository from {} ...", repositoryPath);
+                connection.add(repositoryPath.toFile(), null, RDFFormat.N3);
+                connection.commit();
+                connection.close();
+              }
           }
         catch (NotFoundException e) 
           {
