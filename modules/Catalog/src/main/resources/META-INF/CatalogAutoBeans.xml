@@ -61,5 +61,6 @@
     <aop:aspectj-autoproxy/>
 
     <bean class="it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalogByArtist" />
+    <bean class="it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalogByRecord" />
 
 </beans>

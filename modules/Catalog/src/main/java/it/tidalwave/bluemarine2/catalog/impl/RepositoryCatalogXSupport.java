@@ -28,10 +28,17 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Finder8;
+import javax.inject.Inject;
+import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.catalog.MusicArtist;
+import it.tidalwave.bluemarine2.catalog.Catalog;
+import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.EntitySupplier;
+import it.tidalwave.bluemarine2.persistence.Persistence;
+import lombok.Delegate;
+import lombok.Setter;
 
 /***********************************************************************************************************************
  *
@@ -39,18 +46,38 @@ import it.tidalwave.bluemarine2.catalog.MusicArtist;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryCatalogByArtist extends RepositoryCatalogXSupport
+public class RepositoryCatalogXSupport implements EntitySupplier
   {
-    public RepositoryCatalogByArtist()
+    @Inject 
+    private Persistence persistence;
+    
+    @CheckForNull
+    private Catalog catalog;
+    
+    @Delegate
+    private final AsSupport asSupport = new AsSupport(this);
+    
+    @Setter @Nonnull
+    private SimpleComposite8<? extends Entity> composite;
+        
+    @Override @Nonnull
+    public Entity get() 
       {
-//        super(() -> getCatalog().findArtists());
-        setComposite(new SimpleComposite8<MusicArtist>() 
+        return new Entity() 
           {
-            @Override @Nonnull
-            public Finder8<MusicArtist> findChildren() 
-              {
-                return getCatalog().findArtists();
-              }
-          });
+            @Delegate
+            private final AsSupport asSupport = new AsSupport(this, composite);
+          };
+      }
+    
+    @Nonnull
+    protected final synchronized Catalog getCatalog()
+      {
+        if (catalog == null)
+          {
+            catalog = new RepositoryCatalog(persistence.getRepository());
+          }
+        
+        return catalog;
       }
   }
