@@ -26,9 +26,15 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog;
+package it.tidalwave.bluemarine2.catalog.impl;
 
 import javax.annotation.Nonnull;
+import javax.annotation.concurrent.Immutable;
+import org.openrdf.repository.Repository;
+import it.tidalwave.util.Id;
+import it.tidalwave.bluemarine2.catalog.Record;
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -36,16 +42,21 @@ import javax.annotation.Nonnull;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Catalog 
+@Immutable @Getter @Slf4j
+public class RepositoryRecordEntity extends RepositoryEntitySupport implements Record
   {
-    public static final Class<Catalog> Catalog = Catalog.class;
-    
-    @Nonnull
-    public MusicArtistFinder findArtists();
-
-    @Nonnull
-    public RecordFinder findRecords();
-
-    @Nonnull
-    public TrackFinder findTracks();
+    public RepositoryRecordEntity (final @Nonnull Repository repository, 
+                                  final @Nonnull Id id, 
+                                  final @Nonnull String rdfsLabel)
+      {
+        super(repository, id);
+        this.rdfsLabel = rdfsLabel;
+      }
+   
+    @Override @Nonnull
+    public String toString() 
+      {
+        return String.format("RepositoryRecordEntity(rdfs:label=%s, %s)",
+                             rdfsLabel, id);
+      }
   }

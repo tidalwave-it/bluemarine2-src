@@ -28,7 +28,8 @@
  */
 package it.tidalwave.bluemarine2.catalog;
 
-import javax.annotation.Nonnull;
+import it.tidalwave.role.Identifiable;
+import it.tidalwave.bluemarine2.model.Entity;
 
 /***********************************************************************************************************************
  *
@@ -36,16 +37,7 @@ import javax.annotation.Nonnull;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Catalog 
+public interface Record extends Entity, Identifiable
   {
-    public static final Class<Catalog> Catalog = Catalog.class;
-    
-    @Nonnull
-    public MusicArtistFinder findArtists();
-
-    @Nonnull
-    public RecordFinder findRecords();
-
-    @Nonnull
-    public TrackFinder findTracks();
+    public static final Class<Record> Record = Record.class;
   }

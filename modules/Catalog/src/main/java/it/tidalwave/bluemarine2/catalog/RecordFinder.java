@@ -29,6 +29,8 @@
 package it.tidalwave.bluemarine2.catalog;
 
 import javax.annotation.Nonnull;
+import it.tidalwave.util.Finder8;
+import it.tidalwave.util.Id;
 
 /***********************************************************************************************************************
  *
@@ -36,16 +38,8 @@ import javax.annotation.Nonnull;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Catalog 
+public interface RecordFinder extends Finder8<Record>
   {
-    public static final Class<Catalog> Catalog = Catalog.class;
-    
     @Nonnull
-    public MusicArtistFinder findArtists();
-
-    @Nonnull
-    public RecordFinder findRecords();
-
-    @Nonnull
-    public TrackFinder findTracks();
+    public RecordFinder withArtistId (@Nonnull Id artistId);
   }

@@ -125,7 +125,10 @@ public class RepositoryCatalogTest
         final Comparator<RepositoryTrackEntity> c = (o1, o2) -> o1.getRdfsLabel().compareTo(o2.getRdfsLabel());
         allTracks.values().stream().sorted(c).forEach(track -> pw.printf("  %s\n", track));
         
-        pw.println("ARTISTS:\n");
+        pw.println("\n\n\nRECORDS:\n");
+        catalog.findRecords().stream().forEach(artist -> pw.printf("%s\n", artist));
+        
+        pw.println("\n\n\nARTISTS:\n");
         final List<? extends MusicArtist> artists = catalog.findArtists().results();
         artists.forEach(artist -> pw.printf("%s\n", artist));
         

@@ -173,11 +173,19 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
                                                   final @Nonnull Class<E> entityClass,
                                                   final @Nonnull BindingSet bindingSet)
       {
+        // FIXME
         if (entityClass.equals(RepositoryMusicArtistEntity.class))
           {
             return (E)new RepositoryMusicArtistEntity(repository,
                     new Id(toString(bindingSet.getBinding("artist"))), 
                            toString(bindingSet.getBinding("label")), null);
+          }
+        
+        if (entityClass.equals(RepositoryRecordEntity.class))
+          {
+            return (E)new RepositoryRecordEntity(repository,
+                    new Id(toString(bindingSet.getBinding("record"))), 
+                           toString(bindingSet.getBinding("label")));
           }
         
         if (entityClass.equals(RepositoryTrackEntity.class))
