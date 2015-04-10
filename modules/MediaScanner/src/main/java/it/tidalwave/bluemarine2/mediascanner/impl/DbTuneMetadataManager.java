@@ -55,7 +55,6 @@ import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import it.tidalwave.bluemarine2.vocabulary.DbTune;
 import it.tidalwave.bluemarine2.vocabulary.MO;
 import it.tidalwave.bluemarine2.vocabulary.Purl;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
 import static it.tidalwave.bluemarine2.downloader.DownloadRequest.Option.FOLLOW_REDIRECT;
