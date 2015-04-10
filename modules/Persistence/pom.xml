@@ -29,6 +29,10 @@
             </exclusions>
         </dependency>
         <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
+        </dependency>
+        <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-role-spring</artifactId>
         </dependency>
@@ -66,12 +70,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
-            <version>1.0-ALPHA-4-SNAPSHOT</version>
-            <type>jar</type>
         </dependency>
     </dependencies>
 
