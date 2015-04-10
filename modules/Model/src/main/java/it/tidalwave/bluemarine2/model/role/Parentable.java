@@ -42,6 +42,8 @@ import javax.annotation.CheckForNull;
  **********************************************************************************************************************/
 public interface Parentable<T>
   {
+    public final static Class<Parentable> Parentable = Parentable.class;
+    
     @CheckForNull // FIXME: use NotFoundException or Optional<>
     public T getParent();
   }
