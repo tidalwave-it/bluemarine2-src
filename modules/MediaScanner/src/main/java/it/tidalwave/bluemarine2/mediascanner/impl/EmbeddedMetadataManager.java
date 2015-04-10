@@ -206,29 +206,6 @@ public class EmbeddedMetadataManager
               }
           }
         
-//        Builder builder = newAddStatementsRequest()
-//           .with(metadata.get(MediaItem.Metadata.TITLE).map(title -> 
-//              {
-//                final Value titleLiteral = literalFor(title);
-//                return newAddStatementsRequest().
-//                                                .with(trackUri, RDFS.LABEL, titleLiteral);
-//              }))
-//           .with(metadata.get(MediaItem.Metadata.ARTIST).map(artistName ->
-//              {
-//                final URI artistUri = BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + artistName));
-//                Builder builder2 = newAddStatementsRequest().with(trackUri, FOAF.MAKER, artistUri);
-//                        
-//                if (seenArtistUris.putIfAbsent(artistUri, true) == null)
-//                  {
-//                    final Value nameLiteral = literalFor(artistName);
-//                    builder2 = builder2.with(artistUri, RDF.TYPE,   MO.C_MUSIC_ARTIST)
-//                                       .with(artistUri, FOAF.NAME,  nameLiteral)
-//                                       .with(artistUri, RDFS.LABEL, nameLiteral);
-//                  }
-//
-//                return builder2;
-//              }));
-//        
         // When scanning we can safely assume we're running on a file system
         // TODO: what about using Displayable? It would not require a dependency on MediaFolder
         final MediaFolder parent = (MediaFolder)mediaItem.getParent();
