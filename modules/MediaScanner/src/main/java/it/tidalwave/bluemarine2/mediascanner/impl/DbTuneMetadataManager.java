@@ -119,36 +119,28 @@ public class DbTuneMetadataManager
      *
      *
      ******************************************************************************************************************/
-    @RequiredArgsConstructor
-    static class TrackStatementFilter implements Predicate<Statement>  
+    @Nonnull
+    private static Predicate<Statement> trackStatementFilterFor (final @Nonnull URI trackUri)
       {
-        @Nonnull
-        private final URI trackUri;
-        
-        @Override
-        public boolean test (final @Nonnull Statement statement) 
+        return statement -> 
           {
             final URI predicate = statement.getPredicate();
             return (statement.getSubject().equals(trackUri) && VALID_TRACK_PREDICATES_FOR_SUBJECT.contains(predicate));
-          }
+          };
       }
             
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
-    @RequiredArgsConstructor
-    static class ArtistStatementFilter implements Predicate<Statement>  
+    @Nonnull
+    private static Predicate<Statement> artistStatementFilterFor (final @Nonnull URI artistUri)
       {
-        @Nonnull
-        private final URI artistUri;
-        
-        @Override
-        public boolean test (final @Nonnull Statement statement) 
+        return statement -> 
           {
             final URI predicate = statement.getPredicate();
             return (statement.getSubject().equals(artistUri) && VALID_ARTIST_PREDICATES_FOR_SUBJECT.contains(predicate));
-          }
+          };
       }
             
     /*******************************************************************************************************************
@@ -207,8 +199,7 @@ public class DbTuneMetadataManager
               {
                 log.debug("onTrackMetadataDownloadComplete({})", message);
                 final Model model = parseModel(message);
-                statementManager.requestAdd(model.stream().filter(new TrackStatementFilter(trackUri))
-                                                          .collect(toList()));
+                statementManager.requestAdd(model.stream().filter(trackStatementFilterFor(trackUri)).collect(toList()));
                 model.filter(trackUri, FOAF.MAKER, null)
                      .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
                 model.filter(null, MO.P_TRACK, trackUri)
@@ -240,8 +231,7 @@ public class DbTuneMetadataManager
             log.debug("onArtistMetadataDownloadComplete({})", message);
             final URI artistUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
-            statementManager.requestAdd(model.stream().filter(new ArtistStatementFilter(artistUri))
-                                                      .collect(toList()));
+            statementManager.requestAdd(model.stream().filter(artistStatementFilterFor(artistUri)).collect(toList()));
             model.filter(artistUri, Purl.COLLABORATES_WITH, null)
                  .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
           }   
