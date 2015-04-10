@@ -41,5 +41,5 @@ import it.tidalwave.util.Id;
 public interface TrackFinder extends Finder8<Track>
   {
     @Nonnull
-    public TrackFinder withArtistId (@Nonnull Id artistId);
+    public TrackFinder withMaker (@Nonnull Id makerId);
   }

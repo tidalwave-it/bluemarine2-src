@@ -41,5 +41,5 @@ import it.tidalwave.util.Id;
 public interface RecordFinder extends Finder8<Record>
   {
     @Nonnull
-    public RecordFinder withArtistId (@Nonnull Id artistId);
+    public RecordFinder withMaker (@Nonnull Id makerId);
   }

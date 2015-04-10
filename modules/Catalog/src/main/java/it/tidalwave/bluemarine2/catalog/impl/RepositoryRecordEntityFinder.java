@@ -47,7 +47,7 @@ public class RepositoryRecordEntityFinder extends RepositoryFinderSupport<Record
                                           implements RecordFinder
   {
     @CheckForNull
-    private Id artistId;
+    private Id makerId;
 
     /*******************************************************************************************************************
      *
@@ -65,10 +65,10 @@ public class RepositoryRecordEntityFinder extends RepositoryFinderSupport<Record
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public RecordFinder withArtistId (final @Nonnull Id artistId)  
+    public RecordFinder withMaker (final @Nonnull Id artistId)  
       {
         final RepositoryRecordEntityFinder clone = clone();
-        clone.artistId = artistId;
+        clone.makerId = artistId;
         return clone;
       }
     
@@ -81,7 +81,7 @@ public class RepositoryRecordEntityFinder extends RepositoryFinderSupport<Record
     public RepositoryRecordEntityFinder clone()
       {
         final RepositoryRecordEntityFinder clone = (RepositoryRecordEntityFinder)super.clone();
-        clone.artistId = this.artistId;
+        clone.makerId = this.makerId;
 
         return clone;
       }
@@ -101,7 +101,7 @@ public class RepositoryRecordEntityFinder extends RepositoryFinderSupport<Record
             + "       ?record       rdfs:label              ?label.\n" 
 ////            + "       ?track        mo:track_count         ?track_number.\n" 
 //                      
-            + ((artistId == null)
+            + ((makerId == null)
                     ? ""
                     : "       {\n"
                     + "         ?record       foaf:maker              ?artist.\n"
@@ -115,8 +115,8 @@ public class RepositoryRecordEntityFinder extends RepositoryFinderSupport<Record
             + "       }\n"
             + "ORDER BY ?label";
         
-        return (artistId == null) ? query(RepositoryRecordEntity.class, q)
+        return (makerId == null) ? query(RepositoryRecordEntity.class, q)
                                   : query(RepositoryRecordEntity.class, q, 
-                                         "artist", ValueFactoryImpl.getInstance().createURI(artistId.stringValue()));
+                                         "artist", ValueFactoryImpl.getInstance().createURI(makerId.stringValue()));
       }
   }

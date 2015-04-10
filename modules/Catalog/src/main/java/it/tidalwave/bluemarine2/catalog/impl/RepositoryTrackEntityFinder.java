@@ -47,7 +47,7 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
                                          implements TrackFinder
   {
     @CheckForNull
-    private Id artistId;
+    private Id makerId;
 
     /*******************************************************************************************************************
      *
@@ -65,10 +65,10 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public TrackFinder withArtistId (final @Nonnull Id artistId)  
+    public TrackFinder withMaker (final @Nonnull Id artistId)  
       {
         final RepositoryTrackEntityFinder clone = clone();
-        clone.artistId = artistId;
+        clone.makerId = artistId;
         return clone;
       }
     
@@ -81,7 +81,7 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
     public RepositoryTrackEntityFinder clone()
       {
         final RepositoryTrackEntityFinder clone = (RepositoryTrackEntityFinder)super.clone();
-        clone.artistId = this.artistId;
+        clone.makerId = this.makerId;
 
         return clone;
       }
@@ -101,7 +101,7 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
             + "       ?track        rdfs:label              ?label.\n" 
             + "       ?track        mo:track_number         ?track_number.\n" 
                       
-            + ((artistId == null)
+            + ((makerId == null)
                     ? ""
                     : "       {\n"
                     + "         ?track        foaf:maker              ?artist.\n"
@@ -126,8 +126,8 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
             + "       }\n"
             + "ORDER BY ?record_label ?track_number ?label";
         
-        return (artistId == null) ? query(RepositoryTrackEntity.class, q)
+        return (makerId == null) ? query(RepositoryTrackEntity.class, q)
                                   : query(RepositoryTrackEntity.class, q, 
-                                         "artist", ValueFactoryImpl.getInstance().createURI(artistId.stringValue()));
+                                         "artist", ValueFactoryImpl.getInstance().createURI(makerId.stringValue()));
       }
   }

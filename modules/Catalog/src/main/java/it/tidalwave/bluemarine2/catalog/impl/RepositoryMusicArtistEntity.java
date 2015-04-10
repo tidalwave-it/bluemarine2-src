@@ -60,7 +60,7 @@ public class RepositoryMusicArtistEntity extends RepositoryEntitySupport impleme
     @Override @Nonnull
     public TrackFinder findTracks() 
       {
-        return new RepositoryTrackEntityFinder(repository).withArtistId(id);
+        return new RepositoryTrackEntityFinder(repository).withMaker(id);
       }
 
     @Override @Nonnull
