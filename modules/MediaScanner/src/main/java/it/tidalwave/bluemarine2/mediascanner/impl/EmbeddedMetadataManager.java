@@ -182,14 +182,14 @@ public class EmbeddedMetadataManager
       {
         log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackUri);
         
-        final MediaItem.Metadata metadata = mediaItem.getMetadata();  
+        final Metadata metadata = mediaItem.getMetadata();  
         StatementManager.Builder builder = statementManager.requestAddStatements();
         
-        final Optional<String> title = metadata.get(MediaItem.Metadata.TITLE);
+        final Optional<String> title = metadata.get(Metadata.TITLE);
         builder = builder.with(trackUri, DC.TITLE,   literalFor(title))
                          .with(trackUri, RDFS.LABEL, literalFor(title));
 
-        final Optional<String> artist = metadata.get(MediaItem.Metadata.ARTIST);
+        final Optional<String> artist = metadata.get(Metadata.ARTIST);
 
         if (artist.isPresent()) // FIXME
           {
