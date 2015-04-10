@@ -287,16 +287,16 @@ public class DefaultMediaScanner
 
         final Instant lastModifiedTime = getLastModifiedTime(audioFile.getPath());
         statementManager.requestAddStatements(AddStatementsRequest.newAddStatementsRequest()
-                        .with(audioFileUri, RDF.TYPE,   MO.C_AUDIO_FILE)
-                        .with(audioFileUri, MO.P_ENCODES, signalUri)
-                        .with(audioFileUri, FOAF.SHA1,  literalFor(sha1.stringValue()))
-                        .with(audioFileUri, BM.PATH,    literalFor(audioFile.getRelativePath())) 
+                        .with(audioFileUri, RDF.TYPE,                MO.C_AUDIO_FILE)
+                        .with(audioFileUri, MO.P_ENCODES,            signalUri)
+                        .with(audioFileUri, FOAF.SHA1,               literalFor(sha1.stringValue()))
+                        .with(audioFileUri, BM.PATH,                 literalFor(audioFile.getRelativePath())) 
                         .with(audioFileUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
                 
-                        .with(trackUri, RDF.TYPE, MO.C_TRACK)
+                        .with(trackUri,     RDF.TYPE,                MO.C_TRACK)
                 
-                        .with(signalUri, RDF.TYPE, MO.C_DIGITAL_SIGNAL)
-                        .with(signalUri, MO.P_PUBLISHED_AS, trackUri)
+                        .with(signalUri,    RDF.TYPE,                MO.C_DIGITAL_SIGNAL)
+                        .with(signalUri,    MO.P_PUBLISHED_AS,       trackUri)
                         .create());
         embeddedMetadataManager.importAudioFileMetadata(audioFile, signalUri, trackUri);
 
