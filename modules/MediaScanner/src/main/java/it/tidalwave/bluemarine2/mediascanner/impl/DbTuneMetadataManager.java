@@ -195,6 +195,8 @@ public class DbTuneMetadataManager
         final URI trackUri = uriFor(message.getUrl());
         final MediaItem mediaItem = m.remove(trackUri);
         
+        assert mediaItem != null : "Null mediaItem for " + trackUri;
+        
         if (message.getStatusCode() == 200) // FIXME
           {
             try 
