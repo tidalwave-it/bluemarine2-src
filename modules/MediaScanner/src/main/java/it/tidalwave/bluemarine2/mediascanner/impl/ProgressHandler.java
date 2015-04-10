@@ -40,7 +40,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@ToString @Slf4j
+@ToString(exclude = "messageBus") @Slf4j
 public class ProgressHandler
   {
     @Inject
