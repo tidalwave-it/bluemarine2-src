@@ -44,7 +44,6 @@ import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.MediaItemSupplier;
 import it.tidalwave.bluemarine2.model.impl.DefaultMediaItem;
 import lombok.Getter;
-import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
