@@ -280,8 +280,7 @@ public class DefaultMediaScanner
         final URI signalUri = BM.signalUriFor(sha1);
         final URI trackUri = !musicBrainzTrackId.isPresent() 
                 ? BM.localTrackUriFor(sha1)
-                : uriFor("http://dbtune.org/musicbrainz/resource/track/" + 
-                    musicBrainzTrackId.get().stringValue().replaceAll("^mbz:", ""));
+                : uriFor("http://dbtune.org/musicbrainz/resource/track/" + musicBrainzTrackId.get().stringValue());
 
         final Instant lastModifiedTime = getLastModifiedTime(audioFile.getPath());
         requestAddStatements(AddStatementsRequest.newAddStatementsRequest()
@@ -300,7 +299,7 @@ public class DefaultMediaScanner
 
         if (musicBrainzTrackId.isPresent())
           {
-            final String mbGuid = metadata.get(MediaItem.Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
+            final String mbGuid = metadata.get(MediaItem.Metadata.MBZ_TRACK_ID).get().stringValue();
             dbTuneMetadataManager.importTrackMetadata(audioFile, trackUri, mbGuid);
 //                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
           }
