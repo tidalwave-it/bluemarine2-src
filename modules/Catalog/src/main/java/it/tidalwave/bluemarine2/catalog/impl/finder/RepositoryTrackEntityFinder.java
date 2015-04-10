@@ -35,8 +35,8 @@ import java.util.List;
 import org.openrdf.model.impl.ValueFactoryImpl;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.catalog.Track;
-import it.tidalwave.bluemarine2.catalog.finder.TrackFinder;
+import it.tidalwave.bluemarine2.model.Track;
+import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrackEntity;
 
 /***********************************************************************************************************************

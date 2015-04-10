@@ -33,6 +33,7 @@ import java.nio.file.Path;
 import it.tidalwave.util.As;
 import it.tidalwave.role.Composite;
 import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.bluemarine2.model.role.Parentable;
 
 /***********************************************************************************************************************
  *

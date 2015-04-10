@@ -48,8 +48,8 @@ import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.EntitySupplier;
-import it.tidalwave.bluemarine2.model.Parentable;
+import it.tidalwave.bluemarine2.model.role.EntitySupplier;
+import it.tidalwave.bluemarine2.model.role.Parentable;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
@@ -65,8 +65,7 @@ import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
-import static it.tidalwave.bluemarine2.model.MediaItemSupplier.MediaItemSupplier;
-import java.util.Optional;
+import static it.tidalwave.bluemarine2.model.role.MediaItemSupplier.MediaItemSupplier;
 
 /***********************************************************************************************************************
  *

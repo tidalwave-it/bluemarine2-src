@@ -26,24 +26,22 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.finder;
+package it.tidalwave.bluemarine2.model.role;
 
-import javax.annotation.Nonnull;
-import it.tidalwave.util.Id;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.bluemarine2.catalog.Track;
+import javax.annotation.CheckForNull;
 
 /***********************************************************************************************************************
  *
+ * The role of an object that has, or can have, a parent.
+ * 
+ * @stereotype  Role
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface TrackFinder extends Finder8<Track>
+public interface Parentable<T>
   {
-    @Nonnull
-    public TrackFinder withMaker (@Nonnull Id makerId);
-    
-    @Nonnull
-    public TrackFinder inRecord (@Nonnull Id recordId);
+    @CheckForNull // FIXME: use NotFoundException or Optional<>
+    public T getParent();
   }

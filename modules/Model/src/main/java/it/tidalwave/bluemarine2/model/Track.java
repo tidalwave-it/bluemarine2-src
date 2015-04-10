@@ -28,20 +28,17 @@
  */
 package it.tidalwave.bluemarine2.model;
 
-import javax.annotation.CheckForNull;
+import it.tidalwave.role.Identifiable;
 
 /***********************************************************************************************************************
  *
- * The role of an object that has, or can have, a parent.
- * 
- * @stereotype  Role
+ * NOTE: a Track is an abstract concept - it is associated to MediaItems (as AudioFiles), but it's not a MediaItem.
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Parentable<T>
+public interface Track extends Entity, Identifiable
   {
-    @CheckForNull // FIXME: use NotFoundException or Optional<>
-    public T getParent();
+    public static final Class<Track> Track = Track.class;
   }

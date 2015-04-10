@@ -34,8 +34,8 @@ import java.util.List;
 import org.openrdf.model.impl.ValueFactoryImpl;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.catalog.Record;
-import it.tidalwave.bluemarine2.catalog.finder.RecordFinder;
+import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecordEntity;
 
 /***********************************************************************************************************************

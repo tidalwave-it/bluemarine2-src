@@ -26,10 +26,11 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.finder;
+package it.tidalwave.bluemarine2.model;
 
-import it.tidalwave.util.Finder8;
-import it.tidalwave.bluemarine2.catalog.MusicArtist;
+import javax.annotation.Nonnull;
+import it.tidalwave.role.Identifiable;
+import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 
 /***********************************************************************************************************************
  *
@@ -37,6 +38,10 @@ import it.tidalwave.bluemarine2.catalog.MusicArtist;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MusicArtistFinder extends Finder8<MusicArtist>
+public interface Record extends Entity, Identifiable
   {
+    public static final Class<Record> Record = Record.class;
+    
+    @Nonnull
+    public TrackFinder findTracks();
   }

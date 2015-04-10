@@ -26,20 +26,17 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog;
+package it.tidalwave.bluemarine2.model.finder;
 
-import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.util.Finder8;
+import it.tidalwave.bluemarine2.model.MusicArtist;
 
 /***********************************************************************************************************************
  *
- * NOTE: a Track is an abstract concept - it is associated to MediaItems (as AudioFiles), but it's not a MediaItem.
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Track extends Entity, Identifiable
+public interface MusicArtistFinder extends Finder8<MusicArtist>
   {
-    public static final Class<Track> Track = Track.class;
   }

@@ -26,12 +26,12 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.finder;
+package it.tidalwave.bluemarine2.model.finder;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Finder8;
-import it.tidalwave.bluemarine2.catalog.Record;
+import it.tidalwave.bluemarine2.model.Record;
 
 /***********************************************************************************************************************
  *

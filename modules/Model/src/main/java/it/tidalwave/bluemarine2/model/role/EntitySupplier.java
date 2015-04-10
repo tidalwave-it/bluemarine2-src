@@ -26,10 +26,11 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.role;
 
-import it.tidalwave.util.As;
 import java.util.function.Supplier;
+import it.tidalwave.util.As;
+import it.tidalwave.bluemarine2.model.Entity;
 
 /***********************************************************************************************************************
  *

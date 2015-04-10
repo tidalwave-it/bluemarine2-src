@@ -37,6 +37,8 @@ import java.util.Set;
 import java.nio.file.Path;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
+import it.tidalwave.bluemarine2.model.role.Parentable;
+import it.tidalwave.bluemarine2.model.role.MediaItemSupplier;
 
 /***********************************************************************************************************************
  *

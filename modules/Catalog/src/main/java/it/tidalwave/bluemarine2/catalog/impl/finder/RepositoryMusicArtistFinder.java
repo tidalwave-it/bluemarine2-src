@@ -31,8 +31,8 @@ package it.tidalwave.bluemarine2.catalog.impl.finder;
 import javax.annotation.Nonnull;
 import java.util.List;
 import org.openrdf.repository.Repository;
-import it.tidalwave.bluemarine2.catalog.MusicArtist;
-import it.tidalwave.bluemarine2.catalog.finder.MusicArtistFinder;
+import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryMusicArtistEntity;
 
 /***********************************************************************************************************************

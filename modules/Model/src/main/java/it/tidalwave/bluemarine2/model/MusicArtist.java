@@ -29,19 +29,22 @@
 package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
+import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 
 /***********************************************************************************************************************
  *
- * @stereotype  Role
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaItemSupplier
+public interface MusicArtist extends Entity
   {
-    public static final Class<MediaItemSupplier> MediaItemSupplier = MediaItemSupplier.class;
+    public static final Class<MusicArtist> MusicArtist = MusicArtist.class;
     
     @Nonnull
-    public MediaItem getMediaItem();
+    public TrackFinder findTracks();
+    
+    @Nonnull
+    public RecordFinder findRecords();
   }

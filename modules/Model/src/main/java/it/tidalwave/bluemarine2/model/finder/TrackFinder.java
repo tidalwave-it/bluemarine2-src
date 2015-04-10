@@ -26,12 +26,12 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog;
+package it.tidalwave.bluemarine2.model.finder;
 
-import it.tidalwave.bluemarine2.catalog.finder.TrackFinder;
 import javax.annotation.Nonnull;
-import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.util.Id;
+import it.tidalwave.util.Finder8;
+import it.tidalwave.bluemarine2.model.Track;
 
 /***********************************************************************************************************************
  *
@@ -39,10 +39,11 @@ import it.tidalwave.bluemarine2.model.Entity;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Record extends Entity, Identifiable
+public interface TrackFinder extends Finder8<Track>
   {
-    public static final Class<Record> Record = Record.class;
+    @Nonnull
+    public TrackFinder withMaker (@Nonnull Id makerId);
     
     @Nonnull
-    public TrackFinder findTracks();
+    public TrackFinder inRecord (@Nonnull Id recordId);
   }

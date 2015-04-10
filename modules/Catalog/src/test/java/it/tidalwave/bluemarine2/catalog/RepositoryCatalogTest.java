@@ -28,18 +28,18 @@
  */
 package it.tidalwave.bluemarine2.catalog;
 
+import javax.annotation.Nonnull;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalog;
-import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrackEntity;
-import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.util.Id;
-import it.tidalwave.util.Key;
-import it.tidalwave.util.PowerOnNotification;
 import org.openrdf.query.MalformedQueryException;
 import org.openrdf.query.QueryEvaluationException;
 import org.openrdf.repository.Repository;
@@ -49,19 +49,20 @@ import org.openrdf.repository.sail.SailRepository;
 import org.openrdf.rio.RDFFormat;
 import org.openrdf.rio.RDFParseException;
 import org.openrdf.sail.memory.MemoryStore;
-import org.testng.annotations.Test;
-import lombok.extern.slf4j.Slf4j;
-import static java.nio.file.Files.*;
-import static it.tidalwave.util.test.FileComparisonUtils.*;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import javax.annotation.Nonnull;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.annotations.DataProvider;
+import it.tidalwave.util.Key;
+import it.tidalwave.util.PowerOnNotification;
+import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalog;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrackEntity;
+import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.Record;
+import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.Test;
+import static java.nio.file.Files.*;
+import static it.tidalwave.util.test.FileComparisonUtils.*;
 
 /***********************************************************************************************************************
  *

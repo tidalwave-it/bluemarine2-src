@@ -28,8 +28,9 @@
  */
 package it.tidalwave.bluemarine2.model;
 
-import java.nio.file.Path;
 import javax.annotation.Nonnull;
+import java.nio.file.Path;
+import it.tidalwave.bluemarine2.model.role.EntitySupplier;
 
 /***********************************************************************************************************************
  *

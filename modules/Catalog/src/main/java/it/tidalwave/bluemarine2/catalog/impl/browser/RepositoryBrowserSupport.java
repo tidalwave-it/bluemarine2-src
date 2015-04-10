@@ -36,7 +36,7 @@ import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.catalog.Catalog;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalog;
 import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.EntitySupplier;
+import it.tidalwave.bluemarine2.model.role.EntitySupplier;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import lombok.Delegate;
 import lombok.Setter;

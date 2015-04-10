@@ -31,7 +31,7 @@ package it.tidalwave.bluemarine2.catalog.impl.browser;
 import javax.annotation.Nonnull;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.catalog.Record;
+import it.tidalwave.bluemarine2.model.Record;
 
 /***********************************************************************************************************************
  *
