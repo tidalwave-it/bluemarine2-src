@@ -37,6 +37,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.function.Predicate;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URL;
 import org.openrdf.model.Model;
 import org.openrdf.model.Statement;
 import org.openrdf.model.URI;
@@ -177,8 +178,7 @@ public class DbTuneMetadataManager
             log.debug("importTrackMetadata({})", trackUri);
             m.put(trackUri, mediaItem);
             messageBus.publish(new AddStatementsRequest(trackUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid)));
-            messageBus.publish(new DownloadRequest(urlFor(trackUri), FOLLOW_REDIRECT));
-            progress.incrementTotalDownloads();
+            requestDownload(urlFor(trackUri));
           }
         catch (MalformedURLException e) // shoudn't never happen
           {
@@ -293,8 +293,7 @@ public class DbTuneMetadataManager
             if (seenArtistUris.putIfAbsent(artistUri, true) == null)
               {
                 progress.incrementTotalArtists();
-                progress.incrementTotalDownloads();
-                messageBus.publish(new DownloadRequest(urlFor(artistUri), FOLLOW_REDIRECT));
+                requestDownload(urlFor(artistUri));
               }
           }
         catch (MalformedURLException e)
@@ -319,13 +318,22 @@ public class DbTuneMetadataManager
             if (seenRecordUris.putIfAbsent(recordUri, true) == null)
               {
                 progress.incrementTotalRecords();
-                progress.incrementTotalDownloads();
-                messageBus.publish(new DownloadRequest(urlFor(recordUri), FOLLOW_REDIRECT));
+                requestDownload(urlFor(recordUri));
               }
           }
         catch (MalformedURLException e)
           {
             log.error("Malformed URL: {}", e);
           }
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void requestDownload (final @Nonnull URL url)
+      {
+        progress.incrementTotalDownloads();
+        messageBus.publish(new DownloadRequest(url, FOLLOW_REDIRECT));
       }
   }
