@@ -87,6 +87,64 @@
     -fx-text-fill:          white;
   }
   
+.list-cell:even
+  {
+    -fx-background-color:   rgb(30,30,30);
+  }
+
+.artist-icon
+  {
+    -fx-background-image:       url("contacts-128.png");
+    -fx-background-repeat:      no-repeat;
+    -fx-background-position:    left center;
+    -fx-background-size:        24 24;
+    -fx-alignment:              center;    
+  }
+  
+.artist-group-icon
+  {
+    -fx-background-image:       url("group-128.png");
+  }
+  
+.record-icon
+  {
+    -fx-background-image:       url("cd-128.png");
+    -fx-background-repeat:      no-repeat;
+    -fx-background-position:    left center;
+    -fx-background-size:        24 24;
+    -fx-alignment:              center;    
+  }
+  
+.track-icon
+  {
+    -fx-background-image:       url("note-128.png");
+    -fx-background-repeat:      no-repeat;
+    -fx-background-position:    left center;
+    -fx-background-size:        24 24;
+    -fx-alignment:              center;    
+  }
+  
+.track-index
+  {
+    -fx-font-size:              20; 
+    -fx-alignment:              baseline-right;    
+  }
+  
+.artist-label,
+.record-label,
+.track-label
+  {
+    -fx-wrap-text:              true;    
+  }
+  
+.record-duration,
+.track-duration
+  {
+    -fx-font-size:              20; 
+    -fx-alignment:              baseline-right;    
+    -fx-text-fill:              rgb(200, 200, 200);
+  }
+  
 .list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:focused:selected,
 .list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected 
   {
