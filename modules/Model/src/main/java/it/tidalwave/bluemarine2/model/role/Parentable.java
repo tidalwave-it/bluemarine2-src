@@ -46,4 +46,9 @@ public interface Parentable<T>
     
     @CheckForNull // FIXME: use NotFoundException or Optional<>
     public T getParent();
+    
+    public default boolean hasParent()
+      {
+        return getParent() != null;
+      }
   }

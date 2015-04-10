@@ -252,7 +252,7 @@ public class DefaultAudioExplorerPresentationControl
 //        return stack.peek().as(Displayable).getDisplayName();
           log.info("PATH LABEL STACK = {}", stack);
         return concat(stack.stream().map(i -> i.getFolder()), of(currentFolder))
-                .filter(i -> (i.asOptional(Parentable).map(p -> p.getParent() != null).orElse(true)))
+                .filter(i -> (i.asOptional(Parentable).map(p -> p.hasParent()).orElse(true)))
                 .filter(i -> (i.asOptional(Displayable).map(d -> true).orElse(false)))
                 .map(i -> i.asOptional(Displayable).map(o -> o.getDisplayName()).orElse("???"))
                 .collect(joining(" / "));
