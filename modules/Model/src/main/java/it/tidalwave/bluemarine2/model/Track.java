@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.model;
 
+import java.time.Duration;
 import it.tidalwave.role.Identifiable;
 
 /***********************************************************************************************************************
@@ -41,4 +42,8 @@ import it.tidalwave.role.Identifiable;
 public interface Track extends Entity, Identifiable
   {
     public static final Class<Track> Track = Track.class;
+    
+    public Integer getTrackNumber(); // FIXME: use Optional<Integer>
+    
+    public Duration getDuration(); // FIXME: use Optional<Integer>
   }
