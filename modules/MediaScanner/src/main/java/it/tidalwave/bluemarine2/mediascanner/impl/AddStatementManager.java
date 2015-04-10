@@ -57,22 +57,19 @@ public class AddStatementManager
       throws RepositoryException
       {
         log.info("onAddStatementsRequest({})", request);
-        final long baseTime = System.nanoTime();
-        // FIXME: move to Persistence
-        final RepositoryConnection connection = persistence.getRepository().getConnection();
-        request.getStatements().stream().forEach(s -> 
+        persistence.runInTransaction((RepositoryConnection connection) -> 
           {
-            try 
+            request.getStatements().stream().forEach(s ->
               {
-                connection.add(s);
-              } 
-            catch (RepositoryException e) 
-              {
-                throw new RuntimeException(e); // FIXME
-              }
+                try
+                  {
+                    connection.add(s);
+                  }
+                catch (RepositoryException e)
+                  {
+                    throw new RuntimeException(e); // FIXME
+                  }
+              });
           });
-        connection.commit(); // FIXME: finally
-        connection.close(); // FIXME: finally
-        log.debug(">>>> done in {} ns", System.nanoTime() - baseTime);
       }
   }

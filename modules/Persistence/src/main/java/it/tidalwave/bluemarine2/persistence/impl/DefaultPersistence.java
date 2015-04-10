@@ -131,4 +131,29 @@ public class DefaultPersistence implements Persistence
         connection.export(writer);
         connection.close();
       }
+
+    @Override
+    public <E extends Exception> void runInTransaction (final @Nonnull TransactionalTask<E> task)
+      throws E, RepositoryException
+      {
+        log.info("runInTransaction({})", task);
+        final long baseTime = System.nanoTime();
+        // FIXME: move to Persistence
+        final RepositoryConnection connection = repository.getConnection(); // TODO: pool?
+
+        try
+          {
+            task.run(connection);
+            connection.commit();
+            connection.close(); 
+          }
+        catch (Exception e)
+          {
+            log.error("Transaction failed: {}", e.toString());
+            connection.rollback();
+            connection.close();
+          }
+        
+        log.debug(">>>> done in {} ns", System.nanoTime() - baseTime);
+      }
   }

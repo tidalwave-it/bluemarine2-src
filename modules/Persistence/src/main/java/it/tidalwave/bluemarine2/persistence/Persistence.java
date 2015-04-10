@@ -33,6 +33,7 @@ import java.nio.file.Path;
 import javax.annotation.Nonnull;
 import lombok.NonNull;
 import org.openrdf.repository.Repository;
+import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.RepositoryException;
 import org.openrdf.rio.RDFHandlerException;
 
@@ -50,8 +51,17 @@ public interface Persistence
   {
     public static final Class<Persistence> Persistence = Persistence.class;
     
+    public static interface TransactionalTask<E extends Exception>
+      {
+        public void run (@Nonnull RepositoryConnection connection)
+          throws E, RepositoryException;
+      }
+    
     @NonNull
     public Repository getRepository();
+    
+    public <E extends Exception> void runInTransaction (@Nonnull TransactionalTask<E> task)
+      throws E, RepositoryException;
     
     public void dump (final @Nonnull Path path)
       throws RDFHandlerException, FileNotFoundException, RepositoryException;
