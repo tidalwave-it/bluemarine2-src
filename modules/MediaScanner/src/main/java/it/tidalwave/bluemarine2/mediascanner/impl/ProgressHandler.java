@@ -28,9 +28,15 @@
  */
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
+import javax.annotation.Nonnegative;
 import javax.inject.Inject;
+import java.util.Arrays;
+import java.util.List;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
@@ -40,95 +46,129 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@ToString(exclude = "messageBus") @Slf4j
+@ToString(exclude = { "messageBus", "all" }) @Slf4j
 public class ProgressHandler
   {
+    @RequiredArgsConstructor @Getter
+    static class Progress
+      {
+        @NonNull
+        private final String name;
+        
+        @Nonnegative
+        private volatile int total;
+        
+        @Nonnegative
+        private volatile int done;
+        
+        public void reset()
+          {
+            total = done = 0;  
+          }
+        
+        public synchronized void incrementTotal()
+          {
+            total++;  
+          }
+        
+        public synchronized void incrementDone()
+          {
+            done++;  
+          }
+        
+        public boolean completed()
+          {
+            return done == total;  
+          }
+
+        @Override
+        public String toString() 
+          {
+            return String.format("%s: %d/%d (%d%%)", name, done, total, (total == 0) ? 0 : (100 * done) / total);
+          }
+      }
+    
     @Inject
     private MessageBus messageBus;
     
-    private volatile int totalFolders;
-    private volatile int scannedFolders;
-    private volatile int totalMediaItems;
-    private volatile int importedMediaItems;
-    private volatile int totalArtists;
-    private volatile int importedArtists;
-    private volatile int totalRecords;
-    private volatile int importedRecords;
-    private volatile int totalDownloads;
-    private volatile int completedDownloads;
+    private final Progress folders = new Progress("folders");
+    private final Progress mediaItems = new Progress("mediaItems");
+    private final Progress artists = new Progress("artists");
+    private final Progress records = new Progress("records");
+    private final Progress downloads = new Progress("downloads");
+    
+    private final List<Progress> all = Arrays.asList(folders, mediaItems, artists, records, downloads);
     
     // TODO: should also collect errors
 
     public synchronized void reset()
       {
-        totalFolders = scannedFolders =
-        totalMediaItems = importedMediaItems =
-        totalDownloads = completedDownloads = 0;  
+        all.stream().forEach(progress -> progress.reset());
       }
 
-    public synchronized void incrementTotalFolders()
+    public void incrementTotalFolders()
       {
-        totalFolders++;  
+        folders.incrementTotal();
         check();
       }
 
-    public synchronized void incrementScannedFolders()
+    public void incrementScannedFolders()
       {
-        scannedFolders++;  
+        folders.incrementDone();
         check();
       }
 
-    public synchronized void incrementTotalMediaItems()
+    public void incrementTotalMediaItems()
       {
-        totalMediaItems++;  
+        mediaItems.incrementTotal();
         check();
       }
 
-    public synchronized void incrementImportedMediaItems()
+    public void incrementImportedMediaItems()
       {
-        importedMediaItems++;  
+        mediaItems.incrementDone();
         check();
       }
 
-    public synchronized void incrementTotalArtists() 
+    public void incrementTotalArtists() 
       {
-        totalArtists++;  
+        artists.incrementTotal();
         check();
       }
 
-    public synchronized void incrementImportedArtists()
+    public void incrementImportedArtists()
       {
-        importedArtists++;  
+        artists.incrementDone();
         check();
       }
 
-    public synchronized void incrementTotalDownloads() 
+    public void incrementTotalDownloads() 
       {
-        totalDownloads++;  
+        downloads.incrementTotal();
         check();
       }
 
-    public synchronized void incrementCompletedDownloads() 
+    public void incrementCompletedDownloads() 
       {
-        completedDownloads++;  
+        downloads.incrementDone();
         check();
       }
 
-    public synchronized void incrementTotalRecords()
+    public void incrementTotalRecords()
       {
-        totalRecords++;  
+        records.incrementTotal();
         check();
       }
 
-    public synchronized void incrementImportedRecords() 
+    public void incrementImportedRecords() 
       {
-        importedRecords++;  
+        records.incrementDone();
         check();
       }
     
     private void check()
       {
-        log.debug("{}", this); // FIXME: is called from sync block
+        log.debug("{}", this); 
 
         if (isCompleted())
           {
@@ -138,10 +178,6 @@ public class ProgressHandler
 
     public synchronized boolean isCompleted()
       {
-        return (scannedFolders == totalFolders) 
-            && (importedMediaItems == totalMediaItems)
-            && (importedArtists == totalArtists)
-            && (importedRecords == totalRecords)
-            && (completedDownloads == totalDownloads);
+        return all.stream().allMatch(progress -> progress.completed());
       }
   }
