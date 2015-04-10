@@ -99,7 +99,7 @@ public class DefaultAudioExplorerPresentationControl
     @Inject
     private List<EntitySupplier> browsers;
     
-    private Entity folder;
+    private Entity currentFolder;
     
     private final Stack<FolderAndSelection> stack = new Stack<>();
     
@@ -174,7 +174,7 @@ public class DefaultAudioExplorerPresentationControl
     private void navigateTo (final @Nonnull Entity newMediaFolder)
       {
         log.debug("navigateTo({})", newMediaFolder);
-        stack.push(new FolderAndSelection(folder, properties.selectedIndexProperty().get()));
+        stack.push(new FolderAndSelection(currentFolder, properties.selectedIndexProperty().get()));
         populateAndSelect(newMediaFolder, 0);
       }
     
@@ -202,7 +202,7 @@ public class DefaultAudioExplorerPresentationControl
     private void populateAndSelect (final @Nonnull Entity folder, final int selectedIndex)
       {
         log.debug("populateAndSelect({}, {})", folder, selectedIndex);
-        this.folder = folder;
+        this.currentFolder = folder;
         // FIXME: shouldn't deal with JavaFX threads here
         Platform.runLater(() -> upAction.enabledProperty().setValue(!stack.isEmpty()));
         Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentPathLabel()));
@@ -250,9 +250,9 @@ public class DefaultAudioExplorerPresentationControl
     private String getCurrentPathLabel()
       {
 //        return stack.peek().as(Displayable).getDisplayName();
-        return concat(stack.stream().map(i -> i.getFolder()), of(folder))
-                .filter(i -> (i instanceof Parentable) ? ((Parentable)i).getParent() != null : false)
-                .map(folder -> folder.as(Displayable).getDisplayName())
+        return concat(stack.stream().map(i -> i.getFolder()), of(currentFolder))
+                .filter(i -> (i instanceof Parentable) ? ((Parentable)i).getParent() != null : true)
+                .map(i -> i.as(Displayable).getDisplayName())
                 .collect(joining(" / "));
       }
     
