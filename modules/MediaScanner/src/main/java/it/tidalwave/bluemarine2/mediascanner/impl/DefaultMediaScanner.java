@@ -126,6 +126,9 @@ public class DefaultMediaScanner
     private MessageBus messageBus;
     
     @Inject
+    private StatementManager statementManager;
+    
+    @Inject
     private InstantProvider timestampProvider;
     
     @Inject
@@ -213,7 +216,7 @@ public class DefaultMediaScanner
             final Resource artistUri = uriFor("http://musicmusicbrainz.org/ws/2/artist/" + artistId);
             final Artist artist = request.getArtist();
             final Value nameLiteral = literalFor(artist.getName());
-            requestAddStatements(AddStatementsRequest.newAddStatementsRequest()
+            statementManager.requestAddStatements(AddStatementsRequest.newAddStatementsRequest()
                                                .with(artistUri, RDF.TYPE, MO.C_MUSIC_ARTIST)
                                                .with(artistUri, RDFS.LABEL, nameLiteral)
                                                .with(artistUri, FOAF.NAME, nameLiteral)
@@ -283,7 +286,7 @@ public class DefaultMediaScanner
                 : uriFor("http://dbtune.org/musicbrainz/resource/track/" + musicBrainzTrackId.get().stringValue());
 
         final Instant lastModifiedTime = getLastModifiedTime(audioFile.getPath());
-        requestAddStatements(AddStatementsRequest.newAddStatementsRequest()
+        statementManager.requestAddStatements(AddStatementsRequest.newAddStatementsRequest()
                         .with(audioFileUri, RDF.TYPE,   MO.C_AUDIO_FILE)
                         .with(audioFileUri, MO.P_ENCODES, signalUri)
                         .with(audioFileUri, FOAF.SHA1,  literalFor(sha1.stringValue()))
@@ -307,16 +310,6 @@ public class DefaultMediaScanner
           {
             embeddedMetadataManager.importFallbackTrackMetadata(audioFile, trackUri);
           } 
-      }
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private void requestAddStatements (final @Nonnull AddStatementsRequest request) 
-      {
-        progress.incrementTotalInsertions();
-        messageBus.publish(request);
       }
     
     /*******************************************************************************************************************
