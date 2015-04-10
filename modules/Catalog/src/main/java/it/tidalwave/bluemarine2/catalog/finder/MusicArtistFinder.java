@@ -26,36 +26,17 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl;
+package it.tidalwave.bluemarine2.catalog.finder;
 
-import javax.annotation.Nonnull;
 import it.tidalwave.util.Finder8;
-import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.catalog.MusicArtist;
-import it.tidalwave.bluemarine2.catalog.Track;
-import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
- * FIXME: is this ok? I mean, is a MusicArtist always be a Composite of Tracks? If not, this Role should be only 
- * injected in the context of the explorer.
- * 
- * @stereotype  Role
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = MusicArtist.class) @RequiredArgsConstructor
-public class MusicArtistEntityComposite implements SimpleComposite8<Track>
+public interface MusicArtistFinder extends Finder8<MusicArtist>
   {
-    @Nonnull
-    private final MusicArtist artist;
-    
-    @Override @Nonnull
-    public Finder8<Track> findChildren() 
-      {
-        return artist.findTracks();
-      }
   }

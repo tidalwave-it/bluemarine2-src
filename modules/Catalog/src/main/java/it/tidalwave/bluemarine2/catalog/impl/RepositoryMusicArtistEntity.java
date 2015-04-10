@@ -33,8 +33,10 @@ import javax.annotation.concurrent.Immutable;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.catalog.MusicArtist;
-import it.tidalwave.bluemarine2.catalog.RecordFinder;
-import it.tidalwave.bluemarine2.catalog.TrackFinder;
+import it.tidalwave.bluemarine2.catalog.finder.RecordFinder;
+import it.tidalwave.bluemarine2.catalog.finder.TrackFinder;
+import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordEntityFinder;
+import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryTrackEntityFinder;
 import lombok.Getter;
 
 /***********************************************************************************************************************

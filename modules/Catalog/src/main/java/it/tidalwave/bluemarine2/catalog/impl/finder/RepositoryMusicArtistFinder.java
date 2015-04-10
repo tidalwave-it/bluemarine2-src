@@ -26,19 +26,14 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl;
+package it.tidalwave.bluemarine2.catalog.impl.finder;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import it.tidalwave.util.spi.AsSupport;
-import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.catalog.Catalog;
-import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.EntitySupplier;
-import it.tidalwave.bluemarine2.persistence.Persistence;
-import lombok.Delegate;
-import lombok.Setter;
+import java.util.List;
+import org.openrdf.repository.Repository;
+import it.tidalwave.bluemarine2.catalog.MusicArtist;
+import it.tidalwave.bluemarine2.catalog.finder.MusicArtistFinder;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryMusicArtistEntity;
 
 /***********************************************************************************************************************
  *
@@ -46,38 +41,29 @@ import lombok.Setter;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryCatalogXSupport implements EntitySupplier
+public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicArtist, MusicArtistFinder> 
+                                         implements MusicArtistFinder 
   {
-    @Inject 
-    private Persistence persistence;
+    private final static String QUERY_ARTISTS = readSparql(RepositoryMusicArtistFinder.class, "AllMusicArtists.sparql");
     
-    @CheckForNull
-    private Catalog catalog;
-    
-    @Delegate
-    private final AsSupport asSupport = new AsSupport(this);
-    
-    @Setter @Nonnull
-    private SimpleComposite8<? extends Entity> composite;
-        
-    @Override @Nonnull
-    public Entity get() 
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    public RepositoryMusicArtistFinder (final @Nonnull Repository repository)
       {
-        return new Entity() 
-          {
-            @Delegate
-            private final AsSupport asSupport = new AsSupport(this, composite);
-          };
+        super(repository);
       }
     
-    @Nonnull
-    protected final synchronized Catalog getCatalog()
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    protected List<? extends MusicArtist> computeNeededResults() 
       {
-        if (catalog == null)
-          {
-            catalog = new RepositoryCatalog(persistence.getRepository());
-          }
-        
-        return catalog;
+        return query(RepositoryMusicArtistEntity.class, QUERY_ARTISTS);
       }
   }

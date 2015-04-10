@@ -33,7 +33,8 @@ import javax.annotation.concurrent.Immutable;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.catalog.Record;
-import it.tidalwave.bluemarine2.catalog.TrackFinder;
+import it.tidalwave.bluemarine2.catalog.finder.TrackFinder;
+import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryTrackEntityFinder;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 

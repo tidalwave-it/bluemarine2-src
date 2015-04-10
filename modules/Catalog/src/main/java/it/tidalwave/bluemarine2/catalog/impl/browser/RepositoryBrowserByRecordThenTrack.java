@@ -26,13 +26,12 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl;
+package it.tidalwave.bluemarine2.catalog.impl.browser;
 
 import javax.annotation.Nonnull;
-import java.util.List;
-import org.openrdf.repository.Repository;
-import it.tidalwave.bluemarine2.catalog.MusicArtist;
-import it.tidalwave.bluemarine2.catalog.MusicArtistFinder;
+import it.tidalwave.util.Finder8;
+import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.bluemarine2.catalog.Record;
 
 /***********************************************************************************************************************
  *
@@ -40,29 +39,18 @@ import it.tidalwave.bluemarine2.catalog.MusicArtistFinder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicArtist, MusicArtistFinder> 
-                                         implements MusicArtistFinder 
+public class RepositoryBrowserByRecordThenTrack extends RepositoryBrowserSupport
   {
-    private final static String QUERY_ARTISTS = readSparql(RepositoryMusicArtistFinder.class, "AllMusicArtists.sparql");
-    
-    /*******************************************************************************************************************
-     *
-     * 
-     *
-     ******************************************************************************************************************/
-    public RepositoryMusicArtistFinder (final @Nonnull Repository repository)
+    public RepositoryBrowserByRecordThenTrack()
       {
-        super(repository);
-      }
-    
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    protected List<? extends MusicArtist> computeNeededResults() 
-      {
-        return query(RepositoryMusicArtistEntity.class, QUERY_ARTISTS);
+//        super(() -> getCatalog().findRecords());
+        setComposite(new SimpleComposite8<Record>() 
+          {
+            @Override @Nonnull
+            public Finder8<Record> findChildren() 
+              {
+                return getCatalog().findRecords();
+              }
+          });
       }
   }

@@ -26,16 +26,33 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog;
+package it.tidalwave.bluemarine2.catalog.impl.role;
 
+import javax.annotation.Nonnull;
 import it.tidalwave.util.Finder8;
+import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.catalog.Record;
+import it.tidalwave.bluemarine2.catalog.Track;
+import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
+ * @stereotype  Role
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MusicArtistFinder extends Finder8<MusicArtist>
+@DciRole(datumType = Record.class) @RequiredArgsConstructor
+public class RecordComposite implements SimpleComposite8<Track>
   {
+    @Nonnull
+    private final Record record;
+    
+    @Override @Nonnull
+    public Finder8<Track> findChildren() 
+      {
+        return record.findTracks();
+      }
   }

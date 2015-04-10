@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.catalog;
 
+import it.tidalwave.bluemarine2.catalog.finder.TrackFinder;
 import javax.annotation.Nonnull;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.Entity;

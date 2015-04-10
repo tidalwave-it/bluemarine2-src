@@ -26,17 +26,17 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl;
+package it.tidalwave.bluemarine2.catalog.impl.finder;
 
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
 import java.util.List;
 import org.openrdf.model.impl.ValueFactoryImpl;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.catalog.Track;
-import it.tidalwave.bluemarine2.catalog.TrackFinder;
+import it.tidalwave.bluemarine2.catalog.Record;
+import it.tidalwave.bluemarine2.catalog.finder.RecordFinder;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecordEntity;
 
 /***********************************************************************************************************************
  *
@@ -44,21 +44,18 @@ import it.tidalwave.bluemarine2.catalog.TrackFinder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, TrackFinder>
-                                         implements TrackFinder
+public class RepositoryRecordEntityFinder extends RepositoryFinderSupport<Record, RecordFinder>
+                                          implements RecordFinder
   {
     @CheckForNull
     private Id makerId;
-
-    @CheckForNull
-    private Id recordId;
 
     /*******************************************************************************************************************
      *
      * 
      *
      ******************************************************************************************************************/
-    public RepositoryTrackEntityFinder (final @Nonnull Repository repository)  
+    public RepositoryRecordEntityFinder (final @Nonnull Repository repository)  
       {
         super(repository);
       }
@@ -69,10 +66,10 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public TrackFinder withMaker (final @Nonnull Id makerId)  
+    public RecordFinder withMaker (final @Nonnull Id artistId)  
       {
-        final RepositoryTrackEntityFinder clone = clone();
-        clone.makerId = makerId;
+        final RepositoryRecordEntityFinder clone = clone();
+        clone.makerId = artistId;
         return clone;
       }
     
@@ -82,24 +79,10 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public TrackFinder inRecord (final @Nonnull Id recordId)  
+    public RepositoryRecordEntityFinder clone()
       {
-        final RepositoryTrackEntityFinder clone = clone();
-        clone.recordId = recordId;
-        return clone;
-      }
-    
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public RepositoryTrackEntityFinder clone()
-      {
-        final RepositoryTrackEntityFinder clone = (RepositoryTrackEntityFinder)super.clone();
+        final RepositoryRecordEntityFinder clone = (RepositoryRecordEntityFinder)super.clone();
         clone.makerId = this.makerId;
-        clone.recordId = this.recordId;
 
         return clone;
       }
@@ -110,61 +93,31 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    protected List<? extends Track> computeNeededResults() 
+    protected List<? extends Record> computeNeededResults() 
       {
         final String q =
               "SELECT *" 
             + "WHERE  {\n" 
-            + "       ?track        a                       mo:Track.\n" 
-            + "       ?track        rdfs:label              ?label.\n" 
-            + "       ?track        mo:track_number         ?track_number.\n" 
-                      
+            + "       ?record       a                       mo:Record.\n" 
+            + "       ?record       rdfs:label              ?label.\n" 
+////            + "       ?track        mo:track_count         ?track_number.\n" 
+//                      
             + ((makerId == null)
                     ? ""
                     : "       {\n"
-                    + "         ?track        foaf:maker              ?artist.\n"
+                    + "         ?record       foaf:maker              ?artist.\n"
                     + "       }\n"
                     + "         UNION\n" 
                     + "       {\n"
-                    + "         ?track        foaf:maker              ?artistGroup.\n"
+                    + "         ?record       foaf:maker              ?artistGroup.\n"
                     + "         ?artistGroup  rel:collaboratesWith    ?artist.\n"
                     + "       }\n")
-                      
-            + ((recordId == null)
-                    ? ""
-                    : "       {\n"
-                    + "         ?record       mo:track                ?track.\n"
-                    + "       }\n")
-                      
-            + "       ?signal       a                       mo:DigitalSignal.\n" 
-            + "       ?signal       mo:published_as         ?track.\n"
-            + "       ?signal       mo:duration             ?duration.\n" 
-                      
-            + "       ?audioFile    a                       mo:AudioFile.\n" 
-            + "       ?audioFile    mo:encodes              ?signal.\n" 
-            + "       ?audioFile    bm:path                 ?path.\n" 
-
-            + "       ?record       a                       mo:Record.\n" 
-            + "       ?record       mo:track                ?track.\n" 
-            + "       ?record       rdfs:label              ?record_label.\n" 
+                
             + "       }\n"
-            + "ORDER BY ?record_label ?track_number ?label";
+            + "ORDER BY ?label";
         
-        final List<Object> parameters = new ArrayList<>();
-        
-        // FIXME: use Optional?
-        if (makerId != null)
-          {
-            parameters.add("artist");
-            parameters.add(ValueFactoryImpl.getInstance().createURI(makerId.stringValue()));
-          }
-        
-        if (recordId != null)
-          {
-            parameters.add("record");
-            parameters.add(ValueFactoryImpl.getInstance().createURI(recordId.stringValue()));
-          }
-        
-        return query(RepositoryTrackEntity.class, q, parameters.toArray());
+        return (makerId == null) ? query(RepositoryRecordEntity.class, q)
+                                  : query(RepositoryRecordEntity.class, q, 
+                                         "artist", ValueFactoryImpl.getInstance().createURI(makerId.stringValue()));
       }
   }

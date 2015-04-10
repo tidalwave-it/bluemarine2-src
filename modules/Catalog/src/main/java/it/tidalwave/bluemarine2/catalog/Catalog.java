@@ -28,6 +28,9 @@
  */
 package it.tidalwave.bluemarine2.catalog;
 
+import it.tidalwave.bluemarine2.catalog.finder.TrackFinder;
+import it.tidalwave.bluemarine2.catalog.finder.RecordFinder;
+import it.tidalwave.bluemarine2.catalog.finder.MusicArtistFinder;
 import javax.annotation.Nonnull;
 
 /***********************************************************************************************************************

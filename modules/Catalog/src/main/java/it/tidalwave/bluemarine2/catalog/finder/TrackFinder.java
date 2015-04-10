@@ -26,12 +26,12 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl;
+package it.tidalwave.bluemarine2.catalog.finder;
 
 import javax.annotation.Nonnull;
+import it.tidalwave.util.Id;
 import it.tidalwave.util.Finder8;
-import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.catalog.MusicArtist;
+import it.tidalwave.bluemarine2.catalog.Track;
 
 /***********************************************************************************************************************
  *
@@ -39,18 +39,11 @@ import it.tidalwave.bluemarine2.catalog.MusicArtist;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryCatalogByArtist extends RepositoryCatalogXSupport
+public interface TrackFinder extends Finder8<Track>
   {
-    public RepositoryCatalogByArtist()
-      {
-//        super(() -> getCatalog().findArtists());
-        setComposite(new SimpleComposite8<MusicArtist>() 
-          {
-            @Override @Nonnull
-            public Finder8<MusicArtist> findChildren() 
-              {
-                return getCatalog().findArtists();
-              }
-          });
-      }
+    @Nonnull
+    public TrackFinder withMaker (@Nonnull Id makerId);
+    
+    @Nonnull
+    public TrackFinder inRecord (@Nonnull Id recordId);
   }

@@ -26,30 +26,59 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl;
+package it.tidalwave.bluemarine2.catalog.impl.browser;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
-import it.tidalwave.role.Displayable;
-import it.tidalwave.dci.annotation.DciRole;
-import lombok.RequiredArgsConstructor;
+import javax.inject.Inject;
+import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.bluemarine2.catalog.Catalog;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalog;
+import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.EntitySupplier;
+import it.tidalwave.bluemarine2.persistence.Persistence;
+import lombok.Delegate;
+import lombok.Setter;
 
 /***********************************************************************************************************************
  *
- * @stereotype  Role
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = RepositoryEntitySupport.class) @RequiredArgsConstructor
-public class RepositoryEntitySupportDisplayable implements Displayable
+public class RepositoryBrowserSupport implements EntitySupplier
   {
-    @Nonnull
-    private final RepositoryEntitySupport owner;
+    @Inject 
+    private Persistence persistence;
     
+    @CheckForNull
+    private Catalog catalog;
+    
+    @Delegate
+    private final AsSupport asSupport = new AsSupport(this);
+    
+    @Setter @Nonnull
+    private SimpleComposite8<? extends Entity> composite;
+        
     @Override @Nonnull
-    public String getDisplayName() 
+    public Entity get() 
       {
-        return owner.getRdfsLabel();
+        return new Entity() 
+          {
+            @Delegate
+            private final AsSupport asSupport = new AsSupport(this, composite);
+          };
+      }
+    
+    @Nonnull
+    protected final synchronized Catalog getCatalog()
+      {
+        if (catalog == null)
+          {
+            catalog = new RepositoryCatalog(persistence.getRepository());
+          }
+        
+        return catalog;
       }
   }

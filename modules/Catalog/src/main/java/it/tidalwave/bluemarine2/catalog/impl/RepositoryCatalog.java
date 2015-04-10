@@ -31,9 +31,12 @@ package it.tidalwave.bluemarine2.catalog.impl;
 import javax.annotation.Nonnull;
 import org.openrdf.repository.Repository;
 import it.tidalwave.bluemarine2.catalog.Catalog;
-import it.tidalwave.bluemarine2.catalog.MusicArtistFinder;
-import it.tidalwave.bluemarine2.catalog.RecordFinder;
-import it.tidalwave.bluemarine2.catalog.TrackFinder;
+import it.tidalwave.bluemarine2.catalog.finder.MusicArtistFinder;
+import it.tidalwave.bluemarine2.catalog.finder.RecordFinder;
+import it.tidalwave.bluemarine2.catalog.finder.TrackFinder;
+import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordEntityFinder;
+import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryMusicArtistFinder;
+import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryTrackEntityFinder;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************

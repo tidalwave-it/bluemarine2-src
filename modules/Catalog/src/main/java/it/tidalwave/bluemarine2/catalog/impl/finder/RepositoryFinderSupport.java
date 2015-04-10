@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl;
+package it.tidalwave.bluemarine2.catalog.impl.finder;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -53,6 +53,9 @@ import it.tidalwave.util.Id;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Finder8Support;
 import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryMusicArtistEntity;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecordEntity;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrackEntity;
 import lombok.Cleanup;
 import lombok.RequiredArgsConstructor;
 

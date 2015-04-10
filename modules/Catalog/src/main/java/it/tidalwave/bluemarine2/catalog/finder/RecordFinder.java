@@ -26,11 +26,12 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog;
+package it.tidalwave.bluemarine2.catalog.finder;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Id;
+import it.tidalwave.util.Finder8;
+import it.tidalwave.bluemarine2.catalog.Record;
 
 /***********************************************************************************************************************
  *
@@ -38,11 +39,8 @@ import it.tidalwave.util.Id;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface TrackFinder extends Finder8<Track>
+public interface RecordFinder extends Finder8<Record>
   {
     @Nonnull
-    public TrackFinder withMaker (@Nonnull Id makerId);
-    
-    @Nonnull
-    public TrackFinder inRecord (@Nonnull Id recordId);
+    public RecordFinder withMaker (@Nonnull Id makerId);
   }

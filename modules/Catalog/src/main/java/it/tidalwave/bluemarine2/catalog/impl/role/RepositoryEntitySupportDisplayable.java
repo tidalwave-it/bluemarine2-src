@@ -26,20 +26,31 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog;
+package it.tidalwave.bluemarine2.catalog.impl.role;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.util.Id;
+import it.tidalwave.role.Displayable;
+import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryEntitySupport;
+import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
+ * @stereotype  Role
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface RecordFinder extends Finder8<Record>
+@DciRole(datumType = RepositoryEntitySupport.class) @RequiredArgsConstructor
+public class RepositoryEntitySupportDisplayable implements Displayable
   {
     @Nonnull
-    public RecordFinder withMaker (@Nonnull Id makerId);
+    private final RepositoryEntitySupport owner;
+    
+    @Override @Nonnull
+    public String getDisplayName() 
+      {
+        return owner.getRdfsLabel();
+      }
   }

@@ -98,7 +98,7 @@ public class DefaultAudioExplorerPresentationControl
     private MessageBus messageBus;
     
     @Inject
-    private List<EntitySupplier> rootEntitySupplier;
+    private List<EntitySupplier> browsers;
     
     private Entity folder;
     
@@ -126,11 +126,11 @@ public class DefaultAudioExplorerPresentationControl
       {
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp(this);
-        // FIXME: hardwired to the catalog. It should be selectable by means of a combobox
-        final EntitySupplier supplier = rootEntitySupplier.stream()
-                                                          .filter(s -> s.getClass().getName().contains("Catalog"))
-                                                          .findFirst().get();
-        populateAndSelect(supplier.get(), 0);
+        // FIXME: hardwired to the BrowserByRecord. It should be selectable by means of a combobox
+        final EntitySupplier browser = browsers.stream()
+                                               .filter(s -> s.getClass().getName().contains("BrowserByRecord"))
+                                               .findFirst().get();
+        populateAndSelect(browser.get(), 0);
       }
     
     /*******************************************************************************************************************
