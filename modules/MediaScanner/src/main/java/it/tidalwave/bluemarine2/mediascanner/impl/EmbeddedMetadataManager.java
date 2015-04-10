@@ -233,6 +233,7 @@ public class EmbeddedMetadataManager
         // TODO: what about using Displayable? It would not require a dependency on MediaFolder
         final MediaFolder parent = (MediaFolder)mediaItem.getParent();
         final String recordTitle = parent.getPath().toFile().getName();
+        // FIXME: try to use metadata.get(Metadata.MBZ_DISC_ID) ?
         final URI recordUri = BM.localRecordUriFor(idCreator.createSha1("RECORD:" + recordTitle));
                 
         if (seenRecordUris.putIfAbsent(recordUri, true) == null)
