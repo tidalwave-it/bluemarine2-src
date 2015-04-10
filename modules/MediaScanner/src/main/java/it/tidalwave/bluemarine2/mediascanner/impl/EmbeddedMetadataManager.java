@@ -33,6 +33,7 @@ import javax.annotation.concurrent.Immutable;
 import javax.inject.Inject;
 import java.time.Duration;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -52,11 +53,13 @@ import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.vocabulary.BM;
 import it.tidalwave.bluemarine2.vocabulary.MO;
+import it.tidalwave.bluemarine2.mediascanner.impl.AddStatementsRequest.Builder;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.*;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
-import static it.tidalwave.bluemarine2.mediascanner.impl.AddStatementsRequest.*;
+import static it.tidalwave.bluemarine2.mediascanner.impl.AddStatementsRequest.newAddStatementsRequest;
 
 /***********************************************************************************************************************
  *
@@ -108,12 +111,12 @@ public class EmbeddedMetadataManager
     static class Mapper extends HashMap<Key<?>, Function<Object, Pair>>
       {
         @Nonnull
-        public AddStatementsRequest requestToAddStatementsFor (final @Nonnull Metadata metadata, final @Nonnull URI subjectUri)
+        public List<Statement> statementsFor (final @Nonnull Metadata metadata, final @Nonnull URI subjectUri)
           {
             return metadata.getEntries().stream()
                                         .filter(e -> containsKey(e.getKey()))
                                         .map(e -> forEntry(e).createStatementWithSubject(subjectUri))
-                                        .collect(toAddStatementsRequest());
+                                        .collect(toList());
           }
                 
         @Nonnull
@@ -164,8 +167,8 @@ public class EmbeddedMetadataManager
       {
         log.debug("importAudioFileMetadata({}, {}, {})", mediaItem, signalUri, trackUri);
         final Metadata metadata = mediaItem.getMetadata();
-        messageBus.publish(SIGNAL_MAPPER.requestToAddStatementsFor(metadata, signalUri));
-        messageBus.publish(TRACK_MAPPER.requestToAddStatementsFor(metadata, trackUri));
+        requestAddStatements(SIGNAL_MAPPER.statementsFor(metadata, signalUri));
+        requestAddStatements(TRACK_MAPPER.statementsFor(metadata, trackUri));
       }
     
     /*******************************************************************************************************************
@@ -222,6 +225,24 @@ public class EmbeddedMetadataManager
                              .with(recordUri, MO.P_TRACK_COUNT, literalFor(parent.findChildren().count()));
           }
         
-        messageBus.publish(builder.with(recordUri, MO.P_TRACK, trackUri).create());
+        requestAddStatements(builder.with(recordUri, MO.P_TRACK, trackUri).create());
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void requestAddStatements (final @Nonnull List<Statement> statements) 
+      {
+        requestAddStatements(new AddStatementsRequest(statements));
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void requestAddStatements (final @Nonnull AddStatementsRequest request) 
+      {
+        messageBus.publish(request);
       }
   }

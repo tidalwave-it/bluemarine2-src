@@ -39,7 +39,9 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.openrdf.model.Model;
+import org.openrdf.model.Resource;
 import org.openrdf.model.Statement;
+import org.openrdf.model.Value;
 import org.openrdf.model.URI;
 import org.openrdf.model.vocabulary.DC;
 import org.openrdf.model.vocabulary.FOAF;
@@ -56,8 +58,8 @@ import it.tidalwave.bluemarine2.vocabulary.MO;
 import it.tidalwave.bluemarine2.vocabulary.Purl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.*;
 import static it.tidalwave.bluemarine2.downloader.DownloadRequest.Option.FOLLOW_REDIRECT;
-import static it.tidalwave.bluemarine2.mediascanner.impl.AddStatementsRequest.*;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 
 /***********************************************************************************************************************
@@ -87,7 +89,7 @@ public class DbTuneMetadataManager
     // anyway, the required statements have been already added when importing tracks
     private static final List<URI> VALID_ARTIST_PREDICATES_FOR_SUBJECT = Arrays.asList(
             DbTune.ARTIST_TYPE, DbTune.SORT_NAME, Purl.EVENT, Purl.COLLABORATES_WITH, RDF.TYPE, RDFS.LABEL, FOAF.NAME);
-    
+
 //  TODO: extract only GUID?       mo:musicbrainz <http://musicbrainz.org/artist/1f9df192-a621-4f54-8850-2c5373b7eac9> ;
 // TODO: download bio event details
                 
@@ -177,7 +179,7 @@ public class DbTuneMetadataManager
           {
             log.debug("importTrackMetadata({})", trackUri);
             m.put(trackUri, mediaItem);
-            messageBus.publish(new AddStatementsRequest(trackUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid)));
+            requestAddStatement(trackUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid));
             requestDownload(urlFor(trackUri));
           }
         catch (MalformedURLException e) // shoudn't never happen
@@ -203,8 +205,8 @@ public class DbTuneMetadataManager
               {
                 log.debug("onTrackMetadataDownloadComplete({})", message);
                 final Model model = parseModel(message);
-                messageBus.publish(model.stream().filter(new TrackStatementFilter(trackUri))
-                                                 .collect(toAddStatementsRequest()));
+                requestAddStatements(model.stream().filter(new TrackStatementFilter(trackUri))
+                                                   .collect(toList()));
                 model.filter(trackUri, FOAF.MAKER, null)
                      .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
                 model.filter(null, MO.P_TRACK, trackUri)
@@ -236,8 +238,7 @@ public class DbTuneMetadataManager
             log.debug("onArtistMetadataDownloadComplete({})", message);
             final URI artistUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
-            messageBus.publish(model.stream().filter(new ArtistStatementFilter(artistUri))
-                                             .collect(toAddStatementsRequest()));
+            requestAddStatements(model.stream().filter(new ArtistStatementFilter(artistUri)).collect(toList()));
             model.filter(artistUri, Purl.COLLABORATES_WITH, null)
                  .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
           }   
@@ -264,7 +265,7 @@ public class DbTuneMetadataManager
             final URI recordUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
              // FIXME: filter away some more stuff
-            messageBus.publish(model.filter(recordUri, null, null).stream().collect(toAddStatementsRequest()));
+            requestAddStatements(model.filter(recordUri, null, null).stream().collect(toList()));
           }   
         catch (IOException | RDFHandlerException | RDFParseException e)
           {
@@ -335,5 +336,25 @@ public class DbTuneMetadataManager
       {
         progress.incrementTotalDownloads();
         messageBus.publish(new DownloadRequest(url, FOLLOW_REDIRECT));
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void requestAddStatement (final @Nonnull Resource subject, 
+                                      final @Nonnull URI predicate,
+                                      final @Nonnull Value literal) 
+      {
+        messageBus.publish(new AddStatementsRequest(subject, predicate, literal));
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void requestAddStatements (final @Nonnull List<Statement> statements) 
+      {
+        messageBus.publish(new AddStatementsRequest(statements));
       }
   }

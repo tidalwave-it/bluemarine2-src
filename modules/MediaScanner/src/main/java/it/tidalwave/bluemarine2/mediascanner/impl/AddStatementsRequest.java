@@ -35,16 +35,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Function;
-import java.util.stream.Collector;
 import org.openrdf.model.Resource;
 import org.openrdf.model.Statement;
 import org.openrdf.model.URI;
 import org.openrdf.model.Value;
 import org.openrdf.model.ValueFactory;
 import org.openrdf.model.impl.ValueFactoryImpl;
-import it.tidalwave.util.spi.ArrayListCollectorSupport;
-import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -57,7 +53,7 @@ import lombok.ToString;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @RequiredArgsConstructor(access = AccessLevel.PRIVATE) @Getter @ToString
+@Immutable @RequiredArgsConstructor @Getter @ToString
 public class AddStatementsRequest 
   {
     @Nonnull
@@ -109,18 +105,5 @@ public class AddStatementsRequest
     public static Builder newAddStatementsRequest() 
       {
         return new Builder();
-      }
-    
-    @Nonnull
-    public static Collector<Statement, List<Statement>, AddStatementsRequest> toAddStatementsRequest()
-      {
-        return new ArrayListCollectorSupport<Statement, AddStatementsRequest>()
-          {
-            @Override @Nonnull
-            public Function<List<Statement>, AddStatementsRequest> finisher() 
-              {
-                return statements -> new AddStatementsRequest(statements);
-              }
-          };  
       }
   }
