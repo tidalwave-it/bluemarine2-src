@@ -1,5 +1,3 @@
-
-
 ALL TRACKS:
 
   RepositoryTrackEntity(09, PT1M52S, rdfs:label="C" Jam Blues, Michel Petrucciani/The Complete Blue Note Recordings/7-09 C-Jam Blues.m4a, http://dbtune.org/musicbrainz/resource/track/55e4eba1-acd0-4cc0-b917-e7649a76c435)
@@ -11362,6 +11360,1486 @@ TRACKS OF RepositoryMusicArtistEntity(rdfs:label=Сергей Сергеевич
   RepositoryTrackEntity(15, PT6M4S, rdfs:label=Romeo and Juliet, op. 64: Act I. no. 21. Love dance, Compilations/Rimsky-Korsakov_ Scheherazade/07 Prokofiev_ Romeo & Juliet, Op. 64 - Love Scene.m4a, http://dbtune.org/musicbrainz/resource/track/949b2d4b-f6a9-4d4d-941e-18c8ce5a7b53)
   RepositoryTrackEntity(19, PT5M28S, rdfs:label=Romeo and Juliet, op. 64: Act IV. no. 51. Juliet's funeral, Compilations/Rimsky-Korsakov_ Scheherazade/11 Prokofiev_ Romeo & Juliet, Op. 64 - Juliet's Funeral.m4a, http://dbtune.org/musicbrainz/resource/track/ae05016c-42a4-4683-8fd9-f61c17f1d4b7)
   RepositoryTrackEntity(27, PT4M27S, rdfs:label=Romeo & Juliet, Op. 64: Act IV, Scene IX. Death of Juliet. Adagio (meno mosso del tempo precedente), Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, Op. 64 - Death Of Juliet.m4a, http://dbtune.org/musicbrainz/resource/track/1e259b7c-a6d7-490d-92b1-bf0858743413)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=, foaf:name=null, uri=urn:bluemarine:artist:1213d7939c2833521d9391cc820c0f932122f000):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=6 in Jazz, foaf:name=null, uri=urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=A. Sherrer, Cojazz, P. Schmidlin, S. Kurmann & W. Kotoun, foaf:name=null, uri=urn:bluemarine:artist:3d786de2e0802e1af3a3e29529839793660f2646):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=A.C. Milan Collection, foaf:name=null, uri=urn:bluemarine:artist:f4c87e0334712fc8bb4be0c852927c47211f06a6):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=AVID All Stars, foaf:name=null, uri=urn:bluemarine:artist:97a6021e75b18b7bc2594bde11d4744e12d1a784):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Aaron Copland, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09):
+  RepositoryRecordEntity(rdfs:label=Copland Conducts Copland, http://dbtune.org/musicbrainz/resource/record/eab38d99-7440-4d7a-a863-4eebbf0f4e78)
+  RepositoryRecordEntity(rdfs:label=Copland Conducts Copland - Expanded Edition, http://dbtune.org/musicbrainz/resource/record/4055e921-4f6a-4628-b083-4c0e9b19faed)
+  RepositoryRecordEntity(rdfs:label=The Copland Collection: Orchestral and Ballet Works, 1936-1948 (disc 1), http://dbtune.org/musicbrainz/resource/record/86af8470-fe29-45c2-8831-4322a7e2f4fe)
+  RepositoryRecordEntity(rdfs:label=The Copland Collection: Orchestral and Ballet Works, 1936-1948 (disc 2), http://dbtune.org/musicbrainz/resource/record/e6310292-d63c-474e-bee2-9b8366060872)
+  RepositoryRecordEntity(rdfs:label=The Copland Collection: Orchestral and Ballet Works, 1936-1948 (disc 3), http://dbtune.org/musicbrainz/resource/record/8c488fd4-834b-4054-bece-c74848bb3879)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Aaron Copland, foaf:name=null, uri=urn:bluemarine:artist:5e40cf9b0165fb72ac686677a073a1372a3ac8fa):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Academy of Ancient Music, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/5c8fd1e4-574d-495f-9a24-2dfaadf2e8c0):
+  RepositoryRecordEntity(rdfs:label=Chrismas Concertos, http://dbtune.org/musicbrainz/resource/record/723052c1-ce18-420b-8a68-7b67463b2a63)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Acoustic Eidolon, foaf:name=null, uri=urn:bluemarine:artist:1fbae88783147730837f88e1cd2ad2f25b0f62a3):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Adam Aleksander, foaf:name=null, uri=urn:bluemarine:artist:552e633204c29c1978a6911316ba05975538ad53):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Adiastemi, foaf:name=null, uri=urn:bluemarine:artist:b32c35b08bb27ae49006aea9023b29c7bd6089d8):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ahmad Jamal Trio, foaf:name=null, uri=urn:bluemarine:artist:4fbe8d0f7b53628552e501a2fdd3d5b11fc02b1e):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba, foaf:name=null, uri=urn:bluemarine:artist:ed8f1c5f2ef7caf9f37a761bde87c330c62a0824):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Alasdair Fraser, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/694949f8-b0d8-4e13-a54d-a921a780443d):
+  RepositoryRecordEntity(rdfs:label=Legacy of the Scottish Fiddle, http://dbtune.org/musicbrainz/resource/record/67627ee1-4993-4c16-a7d9-2f6d95c541dc)
+  RepositoryRecordEntity(rdfs:label=Return to Kintail, http://dbtune.org/musicbrainz/resource/record/693dd397-6c7c-4a4c-b8e8-fe76e7562735)
+  RepositoryRecordEntity(rdfs:label=Skyedance, http://dbtune.org/musicbrainz/resource/record/8e7a486d-e31f-429f-b45d-cab0fadcc005)
+  RepositoryRecordEntity(rdfs:label=The Road North, http://dbtune.org/musicbrainz/resource/record/75af3cb5-26af-4adf-a623-4c16f8116311)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=AlbumWrap - _, foaf:name=null, uri=urn:bluemarine:artist:65436e4da0881b4db19578b4ead374896e48f387):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Alexander Scriabin, foaf:name=null, uri=urn:bluemarine:artist:74ef163494ae6e1d97058a8f713abc14506d0783):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Andalus, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/8c395da0-5717-4b46-93cc-8f53e49a4dd0):
+  RepositoryRecordEntity(rdfs:label=Andalus, http://dbtune.org/musicbrainz/resource/record/3e4dba64-5fdc-4ff7-85e2-90113211282d)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Andrea Bacchetti, foaf:name=null, uri=urn:bluemarine:artist:d35745456c06770731c83193c38f12cc9cb3c202):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Andrei Gavrilov, foaf:name=null, uri=urn:bluemarine:artist:1c397ef0fda5f39421da1964108f1fdcda5070df):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt: Concentus Musicus Wien, Arnold Schoenberg Choir, foaf:name=null, uri=urn:bluemarine:artist:fae519e2793c29166ae823c3f4cfdeeb9a1e599e):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Anita Baker, foaf:name=null, uri=urn:bluemarine:artist:89f770090b040058a958fc4331d3bc7f9075f87d):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Anonyme, foaf:name=null, uri=urn:bluemarine:artist:21dffa8a8756a22bbcae75a44a796f79f6b7b723):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Anonyme Grèce, foaf:name=null, uri=urn:bluemarine:artist:ac7f11e3573b6cae423e71d1d164aff63717b66a):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Anonymous 4, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/bdbd99ab-3f4b-4028-9306-cd71d8695fbc):
+  RepositoryRecordEntity(rdfs:label=The Origin of Fire: Music and Visions of Hildegard Von Bingen, http://dbtune.org/musicbrainz/resource/record/3c57bf4e-83c2-4324-b700-1a846558ef6b)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Anonymus (País Vasco), foaf:name=null, uri=urn:bluemarine:artist:ee1f876a1fc7a4703eeb286e67fcbe795edb8cdd):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Anthony Rooley & Consort of Musicke, foaf:name=null, uri=urn:bluemarine:artist:df9d14f08d7c7169889de333c2db2c331169ee30):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Antonio Carlos Jobim, foaf:name=null, uri=urn:bluemarine:artist:ffa219f923391fe33d5427343ab936759da69bc6):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Antonio Vivaldi, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/ad79836d-9849-44df-8789-180bbc823f3c):
+  RepositoryRecordEntity(rdfs:label=Classical Bytes, http://dbtune.org/musicbrainz/resource/record/9982dd92-60a4-4087-be23-6653782c8678)
+  RepositoryRecordEntity(rdfs:label=Musica de Camera e da chiesa/London Baroque, Charles Mediam, http://dbtune.org/musicbrainz/resource/record/21ab9c5c-e2e5-4abb-ac83-d6e98b3f2e83)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Antonio Vivaldi, foaf:name=null, uri=urn:bluemarine:artist:c7845dced60d2033c6c0791da8ed1698b998ee4f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Antonín Dvořák, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/819eaeb2-8dd8-48a5-ad07-0bcd137985ef):
+  RepositoryRecordEntity(rdfs:label=Four-Hand Piano Music, Volume 2: Slavonic Dances 1-16 (Silke-Thora Matthies, Christian Köhn), http://dbtune.org/musicbrainz/resource/record/0bdeec35-2869-4d10-a961-b38ec345774e)
+  RepositoryRecordEntity(rdfs:label=Symphony No. 9 in E minor, Op. 95 "From the New World" / Scherzo capriccioso, Op. 66, http://dbtune.org/musicbrainz/resource/record/497aab5c-c9db-4afb-a13b-719348030670)
+  RepositoryRecordEntity(rdfs:label=Symphony No.9 In E Minor, Op. 95, http://dbtune.org/musicbrainz/resource/record/5fb87275-86d1-4090-a10f-727ee69986af)
+  RepositoryRecordEntity(rdfs:label=The Best of Dvořák, http://dbtune.org/musicbrainz/resource/record/3f7bd910-7931-4bdd-8f51-b9ed13bf3deb)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Antonín Dvořák, foaf:name=null, uri=urn:bluemarine:artist:21c214c017725b470d29a3b2c4b70709092836df):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Antonín Dvořák; Berliner Philharmoniker & Rafael Kubelík, foaf:name=null, uri=urn:bluemarine:artist:80d96414fbc659ab02c67a974fa51d612ecca8e0):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Antônio Carlos Jobim, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/7a8dbe84-f4c0-4457-bfa3-edced1f8cde0):
+  RepositoryRecordEntity(rdfs:label=Francis Albert Sinatra & Antonio Carlos Jobim, http://dbtune.org/musicbrainz/resource/record/82015a54-7663-4a63-9da2-363af64adde0)
+  RepositoryRecordEntity(rdfs:label=Wave: the Antonio Carlos Jobim Songbook, http://dbtune.org/musicbrainz/resource/record/76ef3401-c03c-47a0-9ad3-37601576619c)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Aretha Franklin, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/2f9ecbed-27be-40e6-abca-6de49d50299e):
+  RepositoryRecordEntity(rdfs:label=30 Greatest Hits (disc 1), http://dbtune.org/musicbrainz/resource/record/dd3bf152-8392-4e6b-95d0-28a5e297da2f)
+  RepositoryRecordEntity(rdfs:label=30 Greatest Hits (disc 2), http://dbtune.org/musicbrainz/resource/record/41179dec-8e6b-4f3a-a649-92a8918e17b4)
+  RepositoryRecordEntity(rdfs:label=A Natural Woman / Baby, Baby, Baby, http://dbtune.org/musicbrainz/resource/record/0015e113-f9c7-44f1-af3f-015e21abae41)
+  RepositoryRecordEntity(rdfs:label=Aretha & Otis (disc 1), http://dbtune.org/musicbrainz/resource/record/2736de43-f39c-43bb-9ffa-4e2382b4dc5f)
+  RepositoryRecordEntity(rdfs:label=Aretha Queen of Soul (The Very Best Of), http://dbtune.org/musicbrainz/resource/record/6fed83ac-dc7c-4603-8b43-02a87d1591de)
+  RepositoryRecordEntity(rdfs:label=Aretha's Gold, http://dbtune.org/musicbrainz/resource/record/6f06ad48-e381-449f-9174-938872d24c92)
+  RepositoryRecordEntity(rdfs:label=I Never Loved a Man the Way I Love You, http://dbtune.org/musicbrainz/resource/record/4b43b2a7-2cab-4f87-9a7e-dfc0913c39ab)
+  RepositoryRecordEntity(rdfs:label=Lady Soul, http://dbtune.org/musicbrainz/resource/record/498b2828-9f7f-4f6a-ab56-eae1d6caf21f)
+  RepositoryRecordEntity(rdfs:label=Queen of Soul, http://dbtune.org/musicbrainz/resource/record/da41f3eb-8f86-4a23-b4c9-179c6a86c6d7)
+  RepositoryRecordEntity(rdfs:label=Queen of Soul (disc 2), http://dbtune.org/musicbrainz/resource/record/1a345d66-257e-4ef7-abc2-c6e66927f683)
+  RepositoryRecordEntity(rdfs:label=Respect: The Very Best of Aretha Franklin (disc 1), http://dbtune.org/musicbrainz/resource/record/a73bba1c-1707-4007-8cb8-03bf31d8d993)
+  RepositoryRecordEntity(rdfs:label=This Girl's in Love With You, http://dbtune.org/musicbrainz/resource/record/b72eea89-2286-4cdb-8963-0ae7ff49cb37)
+  RepositoryRecordEntity(rdfs:label=Young, Gifted and Black, http://dbtune.org/musicbrainz/resource/record/b95151ff-e3e8-4eff-8708-079e782d3498)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Aretha Franklin, foaf:name=null, uri=urn:bluemarine:artist:60493bdf6d962f2ebdcbfc1132c9ced55256640d):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Arianna Savall, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/9846b065-0d97-4232-aecc-31a281108b72):
+  RepositoryRecordEntity(rdfs:label=Bella Terra, http://dbtune.org/musicbrainz/resource/record/d0c647a7-77d8-4287-85e7-2bc124537fc4)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Armando Sciascia Orchestra, foaf:name=null, uri=urn:bluemarine:artist:f237a6bd033fb576234f43738288fa00ea390a2b):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Art of Noise, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/be899560-1570-402e-9f95-3182898a8b70):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Artie Shaw, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/85545102-7c29-4707-aea2-30ff55018df9):
+  RepositoryRecordEntity(rdfs:label=Greatest Hits, http://dbtune.org/musicbrainz/resource/record/a2e677b1-e103-492c-ac75-e3d4af4b951b)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Astor Piazzolla, foaf:name=null, uri=urn:bluemarine:artist:8a541bf5ce6bd6f5a74bcee03049b1891ff39f24):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=B.J. Thomas, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/42a19448-ff60-4fd2-9d10-959bf2000729):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Baden Powell, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/ba617653-44e4-404f-91cd-f74adce5687d):
+  RepositoryRecordEntity(rdfs:label=Afro Sambas, http://dbtune.org/musicbrainz/resource/record/45897c43-2a6c-4324-98e0-0260edd77f58)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Baden Powell, foaf:name=null, uri=urn:bluemarine:artist:26176b402a7c0989c0d596341286fc01c06b8216):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Barbara Bonney, Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker, Neeme Järvi & Tor Stokke, foaf:name=null, uri=urn:bluemarine:artist:b5e65a7d818308b469fa9eabb7aa7cbc08e833ca):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Barbara Bonney, Göteborgs Symfoniker & Neeme Järvi, foaf:name=null, uri=urn:bluemarine:artist:88656c930c64e68db68a2b944ccdb56d26e3765f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Barbara Hendricks, foaf:name=null, uri=urn:bluemarine:artist:6a1fd18006f107fb6672f499dc3202f42fe23048):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Barbra Streisand, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/56cd15a1-0d74-438b-8244-c96ffe1cae03):
+  RepositoryRecordEntity(rdfs:label=Lazy Afternoon, http://dbtune.org/musicbrainz/resource/record/0582f52d-350c-4b14-8cd5-268bb7580330)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Barbra Streisand, foaf:name=null, uri=urn:bluemarine:artist:bb608bb39444a65b49a8788f88499e404142c99c):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Bedřich Smetana, foaf:name=null, uri=urn:bluemarine:artist:fd6683af0e33c0c78d19e8d5ae5fcb6af81cfe53):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Benny Goodman, foaf:name=null, uri=urn:bluemarine:artist:97385e7bdd543c1ce66ac5fe403dbdbfe2107835):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Benny Goodman & Charlie Christian, foaf:name=null, uri=urn:bluemarine:artist:9c10c82c7509d72aced997d1d6bb060b0d68c3af):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Betty Carter, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/ce407e9f-de68-4c8e-b966-43a1b3356191):
+  RepositoryRecordEntity(rdfs:label=Inside Betty Carter, http://dbtune.org/musicbrainz/resource/record/20708faa-6027-48bb-b330-ea049c72e2fa)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Betty Carter, foaf:name=null, uri=urn:bluemarine:artist:2eb334e174ad4573d9d6d07686619b4573d56a78):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Beverly Sills, James Levine, John Alldis Choir & London Symphony Orchestra, foaf:name=null, uri=urn:bluemarine:artist:e5ef6d28caed9e88b8fa71b4f6f5b1727df4151f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Billie Holiday, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/d59c4cda-11d9-48db-8bfe-b557ee602aed):
+  RepositoryRecordEntity(rdfs:label=All or Nothing at All, Volume 1, http://dbtune.org/musicbrainz/resource/record/856cfe04-abf4-4528-af11-19609a8dd77a)
+  RepositoryRecordEntity(rdfs:label=All or Nothing at All, Volume 2, http://dbtune.org/musicbrainz/resource/record/9a79e0fd-d3d9-4f89-8cba-8e722833295c)
+  RepositoryRecordEntity(rdfs:label=Billie's Best, http://dbtune.org/musicbrainz/resource/record/2dd56925-4780-404d-b3d5-62987f4678c1)
+  RepositoryRecordEntity(rdfs:label=Songs for Distingué Lovers, http://dbtune.org/musicbrainz/resource/record/48d3c9c2-4920-4d81-a0eb-d52ccad1969d)
+  RepositoryRecordEntity(rdfs:label=Songs for Distingué Lovers, http://dbtune.org/musicbrainz/resource/record/c9c00fe9-9215-4906-aabc-ccb45484f93b)
+  RepositoryRecordEntity(rdfs:label=The Complete Billie Holiday on Verve 1945-1959 (disc 9), http://dbtune.org/musicbrainz/resource/record/4ced03d1-39d0-48c9-8280-81b51570422c)
+  RepositoryRecordEntity(rdfs:label=The Diva Series, http://dbtune.org/musicbrainz/resource/record/255bff88-6f1d-4ebf-89e4-9ec8ea55016c)
+  RepositoryRecordEntity(rdfs:label=Verve Jazz Masters 47: Billie Holiday Sings Standards, http://dbtune.org/musicbrainz/resource/record/324bbe0d-19eb-4d2d-a61a-acc1a07a4cbb)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Billie Holiday, foaf:name=null, uri=urn:bluemarine:artist:734724bbfd8e41a9cc8e244ef1b6e4ec081c4a57):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Billy Joel, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/64b94289-9474-4d43-8c93-918ccc1920d1):
+  RepositoryRecordEntity(rdfs:label=Greatest Hits, Volume I: 1973-1978, http://dbtune.org/musicbrainz/resource/record/3e9e6b6d-af56-4612-8ba9-cfe7ce8ad214)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Billy Paul, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/7e8a2d88-ebed-433c-9971-643a66834835):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Bing Crosby, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/2437980f-513a-44fc-80f1-b90d9d7fcf8f):
+  RepositoryRecordEntity(rdfs:label=Bing & Satchmo, http://dbtune.org/musicbrainz/resource/record/65c9db3a-da39-4890-8542-fb344507b29e)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Bing Crosby, foaf:name=null, uri=urn:bluemarine:artist:269be35ddb650886eea9f7f5e64db6811eaaa7b5):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Bloom, foaf:name=null, uri=urn:bluemarine:artist:f1af3d164e94481b7b4469006560cffb43c91e4a):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Bobby Vinton, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/f37f26ea-6a9a-49b8-9614-bdad762f1ba6):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Boney M, foaf:name=null, uri=urn:bluemarine:artist:dd5af8ff69b0d55cc0f918d26bee6ddd7d24ff5e):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Boney M., foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/5403bf6e-bc1d-4e62-b31f-926a2bf66a14):
+  RepositoryRecordEntity(rdfs:label=The Best of Boney M, http://dbtune.org/musicbrainz/resource/record/34ec2a82-a6a5-4d0c-8955-cd521ef55a91)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Boney M., foaf:name=null, uri=urn:bluemarine:artist:9860205b1f057eda3f928a0110fcde5319b07040):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Bonnie Tyler, foaf:name=null, uri=urn:bluemarine:artist:5e64019c88ee3df0ea567da0826167bca403b8aa):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Brad Mehldau, foaf:name=null, uri=urn:bluemarine:artist:5f34c15eacca1d1a266954540c92b04228afdef0):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Brad Mehldau & Pat Metheny, foaf:name=null, uri=urn:bluemarine:artist:8a281cb3f9d09e4b14365a7b2451e9cb4c0387c4):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Brad Mehldau Trio, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/2c43503a-fb94-433a-98a9-8898367ea71f):
+  RepositoryRecordEntity(rdfs:label=Brad Mehldau Trio Live (disc 1), http://dbtune.org/musicbrainz/resource/record/2549e8cf-d8ef-4ea2-a41d-329fedd42f18)
+  RepositoryRecordEntity(rdfs:label=Brad Mehldau Trio Live (disc 2), http://dbtune.org/musicbrainz/resource/record/a02d0580-3e01-4217-a42e-6569ec7e6e4b)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Brodsky Quartet, foaf:name=null, uri=urn:bluemarine:artist:c3628b2649fcf8de9e41b1c5d3153ab97a0f4af7):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Bruno Martino, foaf:name=null, uri=urn:bluemarine:artist:ec8e8676ead7524d4932dc1cf471951e47c410a4):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Bïa, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/a473a358-154d-464b-9391-b4bac69126e3):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Bïa, foaf:name=null, uri=urn:bluemarine:artist:efd50098c7f5d4f543394c38359ae19841357d71):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Cannonball Adderley, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/a4c73ebe-b2c7-4f13-b99d-2fe1f9f27da8):
+  RepositoryRecordEntity(rdfs:label=Somethin' Else, http://dbtune.org/musicbrainz/resource/record/1983b60d-2df5-44ce-ac6d-9d41566b96b5)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Carl Gustaf Holmgren, Göteborgs Symfoniker, Neeme Järvi & Urban Malmberg, foaf:name=null, uri=urn:bluemarine:artist:218ecc45c64e8e09dbe1f27353462a233fd93981):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Carlos Lyra & Quarteto Em Cy, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/46fb4453-910b-4349-bd92-a9457c4f31e5):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Carol Wincenc, Stephen Gosling, foaf:name=null, uri=urn:bluemarine:artist:e7e88a273838e165f9508c5734d0c429d65df309):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Cassandra Wilson, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/eb6595d3-e559-4bcc-a516-843bfdba82e9):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Catherine Asaro, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/8cc1b4fd-545d-4b16-b348-821812210b4d):
+  RepositoryRecordEntity(rdfs:label=Ascendant Sun (disc 6), http://dbtune.org/musicbrainz/resource/record/4f47d2ad-1c8a-4259-8bf2-ce9c2ca97dc1)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Catherine Braslavsky, Joseph Rowe, foaf:name=null, uri=urn:bluemarine:artist:337a1acffc10a42a6c5f09b12a15c6eb28d11a85):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Charles Aznavour, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/5f264b87-d5f6-487d-aa3e-ae4c5f0c6fc9):
+  RepositoryRecordEntity(rdfs:label=20 chansons d'or, http://dbtune.org/musicbrainz/resource/record/a3d56320-6624-43bb-a27c-2652cf243ccf)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Charles Mingus, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/f3b8e107-abe8-4743-b6a3-4a4ee995e71f):
+  RepositoryRecordEntity(rdfs:label=New Tijuana Moods, http://dbtune.org/musicbrainz/resource/record/33006cac-644c-44e1-b1da-283730b85e19)
+  RepositoryRecordEntity(rdfs:label=Tijuana Moods, http://dbtune.org/musicbrainz/resource/record/8e9c1326-7fb9-4557-81fb-671c3759d77d)
+  RepositoryRecordEntity(rdfs:label=Tijuana Moods (disc 1), http://dbtune.org/musicbrainz/resource/record/754a4e21-255e-474e-beb9-6356caf7811d)
+  RepositoryRecordEntity(rdfs:label=Tijuana Moods (disc 2), http://dbtune.org/musicbrainz/resource/record/715d9041-b7da-4350-9de8-0db93b19b002)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Charles Neidich, Lev Polyakin, Frances Renzi, foaf:name=null, uri=urn:bluemarine:artist:a105abe8631efbad26d7d1f951620df37144cf95):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Charles Trenet, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/cf97f8c4-f287-4c0c-a07e-6ca2fdd8e8c2):
+  RepositoryRecordEntity(rdfs:label=Anthologie, http://dbtune.org/musicbrainz/resource/record/0264515e-b1a4-4a0b-bd14-93b0deb6bbf6)
+  RepositoryRecordEntity(rdfs:label=Ses plus belles chansons, http://dbtune.org/musicbrainz/resource/record/fda533f3-01cb-435d-9b98-42a35f33dd04)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Charles Trenet, foaf:name=null, uri=urn:bluemarine:artist:1459385ac4d34c2b2fe039b4caf9faced8286f2c):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Charles Trénet, foaf:name=null, uri=urn:bluemarine:artist:2f8d73b6697079669efe5fb70889d709e55172fe):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Charlie Haden, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/1f0cdc02-c8d5-4228-8227-37ec0c289b48):
+  RepositoryRecordEntity(rdfs:label=Beyond the Missouri Sky (Short Stories), http://dbtune.org/musicbrainz/resource/record/2517bcb6-89fd-4780-b497-f46bfd49030d)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Charlie Haden & Hank Jones, foaf:name=null, uri=urn:bluemarine:artist:77b754bfa9aa39000b2ebc75ea9ecf4572b2ea65):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Charlie Parker, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/c7356af9-9ea6-4a78-a55b-c73775716312):
+  RepositoryRecordEntity(rdfs:label=The Cole Porter Songbook, http://dbtune.org/musicbrainz/resource/record/380fdd66-7c9e-4020-b8b2-0d03308ffa0e)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Charlotte Forsberg, Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker, Maria Andersson, Monica Einarson, Neeme Järvi & Toralv Maurstad, foaf:name=null, uri=urn:bluemarine:artist:69087e5fd9c1a157699dddb5072b90be976c4334):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Chet Baker, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/1ba1d493-7114-45e2-b163-a36d49a0c065):
+  RepositoryRecordEntity(rdfs:label=In Bologna, http://dbtune.org/musicbrainz/resource/record/664e9464-2f16-4468-8fc9-2aded974a320)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Chet Baker, foaf:name=null, uri=urn:bluemarine:artist:ddf304021ecc38f098ab78e51922b3ad22141799):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Chris Botti, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/0939452b-0c6f-422a-997f-e7c496ce1113):
+  RepositoryRecordEntity(rdfs:label=December, http://dbtune.org/musicbrainz/resource/record/709c4855-1176-4309-b7f1-531e45f1acd6)
+  RepositoryRecordEntity(rdfs:label=First Wish, http://dbtune.org/musicbrainz/resource/record/2cec6fa1-5f83-445f-8528-2fd17d5621d3)
+  RepositoryRecordEntity(rdfs:label=Italia, http://dbtune.org/musicbrainz/resource/record/3d62ee74-edaa-42c3-a068-d4b777117379)
+  RepositoryRecordEntity(rdfs:label=Midnight Without You, http://dbtune.org/musicbrainz/resource/record/0c71aef8-713e-49b6-a73b-1ab8fcbe53bd)
+  RepositoryRecordEntity(rdfs:label=Night Sessions, http://dbtune.org/musicbrainz/resource/record/a03b9dcb-1827-45ac-ad5f-bfa109164acb)
+  RepositoryRecordEntity(rdfs:label=When I Fall in Love, http://dbtune.org/musicbrainz/resource/record/607572f6-208c-4436-a162-fcc30beed735)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Chris Botti, foaf:name=null, uri=urn:bluemarine:artist:2ea06ea180efa5dfeff6349246c849b3f825a137):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Chris Botti & Sting, foaf:name=null, uri=urn:bluemarine:artist:7ae8f49a7fa04fa7015e92bf5ab637e94e41a876):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Chris Botti (feat. Dean Martin), foaf:name=null, uri=urn:bluemarine:artist:c997be78f55c909a4a66b44649f4eac96f3d7025):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Chris Botti (feat. Paula Cole), foaf:name=null, uri=urn:bluemarine:artist:d24de3bc4b975bf51ba0fda336293e979d045725):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Christophe Beck, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/0df890e1-f4f2-4b21-a413-cd8af1af32d8):
+  RepositoryRecordEntity(rdfs:label=Confidence, http://dbtune.org/musicbrainz/resource/record/7d70bc65-702a-4930-9064-8a8da5478d70)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Christopher Cross, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/883e4ba4-8ccc-47ed-81df-df51e41792a9):
+  RepositoryRecordEntity(rdfs:label=Christopher Cross, http://dbtune.org/musicbrainz/resource/record/72c78298-14a0-4b9f-be05-225d5089bb20)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Clannad, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/d45641da-371c-430e-8907-6086590ab282):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Claude Debussy, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/be50643c-0377-4968-b48c-47e06b2e2a3b):
+  RepositoryRecordEntity(rdfs:label=La Mer / Prélude à l'après-midi d'un faune / Nocturnes (Chicago Symphony Orchestra feat. conductor: Sir Georg Solti), http://dbtune.org/musicbrainz/resource/record/ed665e88-5761-4a33-b258-1a2eacf1d23f)
+  RepositoryRecordEntity(rdfs:label=Préludes Book I / Images Book I / Estampes (feat. piano: Claudio Arrau), http://dbtune.org/musicbrainz/resource/record/aabd08b1-12df-473d-a4f4-e558cc863f05)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Claude Debussy, foaf:name=null, uri=urn:bluemarine:artist:fc32eee5dfdcdd3c87f71d232997790ca1cb90b5):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Claudia Caffagni, foaf:name=null, uri=urn:bluemarine:artist:655383687751d14446973bdda9b025a6b25ce3a9):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Claudia Telles, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Claudio Abbado: London Symphony Orchestra, foaf:name=null, uri=urn:bluemarine:artist:3e5121e7be43e7cd473501002e076c598f83f910):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Claudio Monteverdi, foaf:name=null, uri=urn:bluemarine:artist:115717043f2e50898e3f1103997f95b747814243):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Concerto Italiano & Rinaldo Alessandrini, foaf:name=null, uri=urn:bluemarine:artist:bc6d9b561bc65937bb22e2a3872c1d4ab365e7f8):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Count Basie, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/0dbd6300-efdc-420b-857e-895e18fad317):
+  RepositoryRecordEntity(rdfs:label=It Might as Well Be Swing, http://dbtune.org/musicbrainz/resource/record/622de113-29cf-421d-8cf3-055f21509ff4)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Crawford, Randy, foaf:name=null, uri=urn:bluemarine:artist:af580be1a9a1b1fa0834ef59ab74a9c6fc7b842d):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Cristóbal de Morales, foaf:name=null, uri=urn:bluemarine:artist:8cea7ee3f4f80196e13a0e3377a34422f396d2d7):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Cyrus Chestnut, foaf:name=null, uri=urn:bluemarine:artist:3d6fd8992205fc1496d77a69b05a2af6c6f30624):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Cyrus Chestnut, Anita Baker, foaf:name=null, uri=urn:bluemarine:artist:edd06fdfa143362f40d203b8eccc3161ca11060c):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Dakota Staton, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/c5563de3-f9df-4cb9-889e-7b237093ffd0):
+  RepositoryRecordEntity(rdfs:label=The Late, Late Show, http://dbtune.org/musicbrainz/resource/record/7e00c6ca-0bbf-43fb-a6e1-9e54b44c51e1)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Dan Brown read by Paul Michael, foaf:name=null, uri=urn:bluemarine:artist:c8660df160ca8218bb663d073773c01857440bbd):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Dave Brubeck, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/de0222a6-e1c4-403d-8b01-3f66d505061b):
+  RepositoryRecordEntity(rdfs:label=Time In, http://dbtune.org/musicbrainz/resource/record/eff784dc-b0b3-478a-b5db-0a614626f476)
+  RepositoryRecordEntity(rdfs:label=Time Signatures: A Career Retrospective (disc 3), http://dbtune.org/musicbrainz/resource/record/b7dac6ee-a8aa-4c5c-94b2-4595f8770418)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Dave Brubeck, foaf:name=null, uri=urn:bluemarine:artist:7d64fdd140a57228ee797284e62fd3eafcfd4475):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Dean Martin, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/5e6c760b-42e0-4df4-a221-0269355da00a):
+  RepositoryRecordEntity(rdfs:label=That's Amore: The Best of Dean Martin, http://dbtune.org/musicbrainz/resource/record/b40e35a8-c80a-460f-963c-acc8e71ddf7d)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Dean Martin, foaf:name=null, uri=urn:bluemarine:artist:dcffd94f7bdb514c45e593e2f27e4ad6ee991360):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Dee Dee Bridgewater, foaf:name=null, uri=urn:bluemarine:artist:1a6001bd3a4bbdbc8a47c6e83d9b93bb3fcfe252):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Dewey Lambdin, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/deba186f-6515-4863-ad4c-2d7a76e366ef):
+  RepositoryRecordEntity(rdfs:label=Havoc's Sword (disc 10), http://dbtune.org/musicbrainz/resource/record/0674f480-e564-4561-917b-cbfecba0c735)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Diana Krall, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/67d2cb7a-9ddb-4a7f-82bf-5a2d1a038e98):
+  RepositoryRecordEntity(rdfs:label=Live in Paris, http://dbtune.org/musicbrainz/resource/record/4abb7376-f2b2-4fb4-a003-1f80d877ae63)
+  RepositoryRecordEntity(rdfs:label=Love Scenes, http://dbtune.org/musicbrainz/resource/record/91378e3a-f7ae-4856-a4fc-92899c23882f)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Dionne Warwick, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/6784ee31-6d79-4a37-9e1f-01d6ef31940e):
+  RepositoryRecordEntity(rdfs:label=Dionne Warwick in Valley of the Dolls, http://dbtune.org/musicbrainz/resource/record/f3213ab5-819e-4144-be6a-715d548da041)
+  RepositoryRecordEntity(rdfs:label=Here Where There Is Love, http://dbtune.org/musicbrainz/resource/record/f3fd0ef6-c916-4630-a78e-28b4188e3b04)
+  RepositoryRecordEntity(rdfs:label=I Say a Little Prayer: The Bacharach and David Songbook, http://dbtune.org/musicbrainz/resource/record/151ffb59-b2e6-46fb-b974-7f336166920b)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Dionne Warwick, foaf:name=null, uri=urn:bluemarine:artist:f1e6e31347c276c2d3afb03c906ab436a7822eed):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Dizzy Gillespie, foaf:name=null, uri=urn:bluemarine:artist:d4d149c97969556a38b1436437689a01afd2cbb4):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Django Reinhardt, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4):
+  RepositoryRecordEntity(rdfs:label=1935, http://dbtune.org/musicbrainz/resource/record/98807398-19c8-4c81-bba4-ffba0f1c27c9)
+  RepositoryRecordEntity(rdfs:label=1935-1936, http://dbtune.org/musicbrainz/resource/record/50e81e43-ac2d-4011-b1d1-1b9fe9c0adad)
+  RepositoryRecordEntity(rdfs:label=A Portrait of Django Reinhardt (disc 1), http://dbtune.org/musicbrainz/resource/record/12805a2d-810f-4c92-8c13-3dcd7dd2e92f)
+  RepositoryRecordEntity(rdfs:label=Body and Soul, http://dbtune.org/musicbrainz/resource/record/2807e647-1450-4823-b3b6-ed5133732f24)
+  RepositoryRecordEntity(rdfs:label=Chronological Classics (1934-1935), http://dbtune.org/musicbrainz/resource/record/396174ab-7e15-4b8b-b720-dc849f9e3ce2)
+  RepositoryRecordEntity(rdfs:label=Crazy Rhythm, http://dbtune.org/musicbrainz/resource/record/99a7646d-831b-46dd-918e-3f5dd404e9ba)
+  RepositoryRecordEntity(rdfs:label=Django Reinhardt and His American Friends, Complete Sessions (disc 4), http://dbtune.org/musicbrainz/resource/record/b0d6a3df-4417-4fea-9dba-4a03622c2e4b)
+  RepositoryRecordEntity(rdfs:label=Django Reinhardt in Brussels, http://dbtune.org/musicbrainz/resource/record/2a2099b6-dac6-4d01-8a65-c27a8a7ee47d)
+  RepositoryRecordEntity(rdfs:label=Djangology, http://dbtune.org/musicbrainz/resource/record/b5a8f3d3-e112-4ec9-b425-37ecd33be22a)
+  RepositoryRecordEntity(rdfs:label=Djangology (disc 2), http://dbtune.org/musicbrainz/resource/record/2fd71541-83e9-49a6-bd44-b2d5d3168c15)
+  RepositoryRecordEntity(rdfs:label=Intégrale, Volume 11: "Swing 42" (disc 1), http://dbtune.org/musicbrainz/resource/record/5a21a2a5-3e05-4927-906f-497a53b83ff4)
+  RepositoryRecordEntity(rdfs:label=Intégrale, Volume 11: "Swing 42" (disc 2), http://dbtune.org/musicbrainz/resource/record/b3523284-a80e-4b79-8641-7b0110e314b4)
+  RepositoryRecordEntity(rdfs:label=Intégrale, Volume 12: "Manoir des mes rêves" (disc 2), http://dbtune.org/musicbrainz/resource/record/8476449d-f175-4a08-b32a-ae99ca8f149e)
+  RepositoryRecordEntity(rdfs:label=Intégrale, Volume 14: "Django's Dream" (disc 2), http://dbtune.org/musicbrainz/resource/record/c294af1a-7260-496b-92e7-57193c587b58)
+  RepositoryRecordEntity(rdfs:label=Intégrale, Volume 16: "Festival 48" (disc 2), http://dbtune.org/musicbrainz/resource/record/f22c01f2-4a0c-4b60-8cdb-ff3399b5faf1)
+  RepositoryRecordEntity(rdfs:label=Intégrale, Volume 2: "I Saw Stars" (disc 1), http://dbtune.org/musicbrainz/resource/record/0de2c94c-7e31-4df6-9911-0ae4e4c6cb73)
+  RepositoryRecordEntity(rdfs:label=Intégrale, Volume 2: "I Saw Stars" (disc 2), http://dbtune.org/musicbrainz/resource/record/ec1072ff-02e1-424e-8d7d-451c76c9728d)
+  RepositoryRecordEntity(rdfs:label=Intégrale, Volume 7: "Christmas Swing" (disc 2), http://dbtune.org/musicbrainz/resource/record/7b511686-91be-4ed3-9bcd-1a653d209056)
+  RepositoryRecordEntity(rdfs:label=Intégrale, Volume 9: "H.C.Q. Strut" (disc 2), http://dbtune.org/musicbrainz/resource/record/b774b421-3939-42d8-af3a-56ea8d26b396)
+  RepositoryRecordEntity(rdfs:label=Jazz Ballads 7 (disc 2), http://dbtune.org/musicbrainz/resource/record/64dd2615-5366-4c85-90c4-65055215c899)
+  RepositoryRecordEntity(rdfs:label=Le Hot Club De France, Volume 4, http://dbtune.org/musicbrainz/resource/record/dc92cb23-7df8-4f2d-882b-9267889dacf2)
+  RepositoryRecordEntity(rdfs:label=Pennies From Heaven, http://dbtune.org/musicbrainz/resource/record/08b473f4-40bd-47a5-ace5-88fcacc883ab)
+  RepositoryRecordEntity(rdfs:label=Place de Brouckère, http://dbtune.org/musicbrainz/resource/record/827f0ebc-3156-4076-8f1e-e0675995a8f3)
+  RepositoryRecordEntity(rdfs:label=Plays Django Reinhardt (disc 3: 1942-1947), http://dbtune.org/musicbrainz/resource/record/45f9e3f9-4f39-4f45-9d53-fb60145883ba)
+  RepositoryRecordEntity(rdfs:label=Plays Django Reinhardt (disc 4: 1947), http://dbtune.org/musicbrainz/resource/record/3274705e-873e-40c0-bf6f-cf379f36249e)
+  RepositoryRecordEntity(rdfs:label=Plays Django Reinhardt (disc 5: 1948-1953), http://dbtune.org/musicbrainz/resource/record/e990fb29-19f6-42f2-81ac-5088209602b5)
+  RepositoryRecordEntity(rdfs:label=Tea for Two, http://dbtune.org/musicbrainz/resource/record/c728fe04-78d7-4748-8d97-3fb7e39cf7e7)
+  RepositoryRecordEntity(rdfs:label=The Indispensable Django Reinhardt (disc 1), http://dbtune.org/musicbrainz/resource/record/0e90d571-c4fb-401a-80df-2c0379b78950)
+  RepositoryRecordEntity(rdfs:label=The Indispensable Django Reinhardt (disc 2), http://dbtune.org/musicbrainz/resource/record/e69f608e-49dc-4323-9b0e-b0a9a7794103)
+  RepositoryRecordEntity(rdfs:label=The Quintessential Django Reinhardt & Stéphane Grappelli, http://dbtune.org/musicbrainz/resource/record/3daded3c-4de2-4083-a360-481610f1b437)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Django Reinhardt, foaf:name=null, uri=urn:bluemarine:artist:0dbaeed129cc43bc7ee40a3ae03fbb4039092cf5):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Django Reinhardt and His American Swing Band, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/d40428fa-bd80-4482-8be3-fb830a7eeabb):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Doris Day, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/3db5dfb1-1b91-4038-8268-ae04d15b6a3e):
+  RepositoryRecordEntity(rdfs:label=Calamity Jane, http://dbtune.org/musicbrainz/resource/record/3f148f6b-caf1-484f-aa7a-073200100106)
+  RepositoryRecordEntity(rdfs:label=Daydreaming, http://dbtune.org/musicbrainz/resource/record/9dcbb1db-367a-4f8c-acf7-255466b2f08e)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Duke Ellington, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/3af06bc4-68ad-4cae-bb7a-7eeeb45e411f):
+  RepositoryRecordEntity(rdfs:label=Ella & Duke at the Côte d'Azur (disc 1), http://dbtune.org/musicbrainz/resource/record/3b3dbe37-7684-4b87-8910-96d04d87a656)
+  RepositoryRecordEntity(rdfs:label=Ella & Duke at the Côte d'Azur (disc 2), http://dbtune.org/musicbrainz/resource/record/111efda2-57b1-41ae-8700-027beeb96bfb)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Duke Ellington, foaf:name=null, uri=urn:bluemarine:artist:3df5f589fb3d05f19f8615c864062dd83ab90f01):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Dusty Springfield, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/b896aa8c-2761-40ce-b485-0e1fffd26167):
+  RepositoryRecordEntity(rdfs:label=Goin' Back: The Very Best of Dusty Springfield, http://dbtune.org/musicbrainz/resource/record/6e48c2ca-79ea-4976-be75-ebb96f760047)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Dusty Springfield, foaf:name=null, uri=urn:bluemarine:artist:b0d5ed7b357a15641c9dfdfcf4b643b1d07f4f84):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Eddie Pasternak and Joel Evans, foaf:name=null, uri=urn:bluemarine:artist:c67f5381fd46bc7beb29947ce40dc0fac57611d3):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Edith Piaf, foaf:name=null, uri=urn:bluemarine:artist:3c4eb0a2cc3a5cbada77d8723e6c05a7e4510405):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Eduardo Paniagua, foaf:name=null, uri=urn:bluemarine:artist:a15f44b03ead2636a4334c931c8cc9c070eb0c88):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Edvard Grieg, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/013c8e5b-d72a-4cd3-8dee-6c64d6125823):
+  RepositoryRecordEntity(rdfs:label=Peer Gynt / Symphonic Dance No.2 / In Autumn / Norwegian Folksong (Royal Philharmonic Orchestra feat. conductor: Sir Thomas Beecham), http://dbtune.org/musicbrainz/resource/record/6f7abd29-8f91-4443-9856-02ec7cacb9b5)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Edvard Grieg, foaf:name=null, uri=urn:bluemarine:artist:59e5542ce937cce2cecdb5ef6c6aa179efd52a7f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Edwin Hawkins Singers, foaf:name=null, uri=urn:bluemarine:artist:565c6c8de1186e0472f29a13bbd6a258784155d6):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Elisabetta de Mircovich, foaf:name=null, uri=urn:bluemarine:artist:5773328cf285eb6e12a71d5bcf30bd7f6524a9c8):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ella Fitzgerald, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499):
+  RepositoryRecordEntity(rdfs:label=Best of the Song Books: Love Songs, http://dbtune.org/musicbrainz/resource/record/f90a33ae-2e0b-4d8d-a086-cce4d0949b47)
+  RepositoryRecordEntity(rdfs:label=Compact Jazz: Ella Fitzgerald, http://dbtune.org/musicbrainz/resource/record/c88a7d19-a0c9-4680-8f89-8de6fa1e2e1c)
+  RepositoryRecordEntity(rdfs:label=Ella & Duke at the Côte d'Azur (disc 1), http://dbtune.org/musicbrainz/resource/record/3b3dbe37-7684-4b87-8910-96d04d87a656)
+  RepositoryRecordEntity(rdfs:label=Ella & Duke at the Côte d'Azur (disc 2), http://dbtune.org/musicbrainz/resource/record/111efda2-57b1-41ae-8700-027beeb96bfb)
+  RepositoryRecordEntity(rdfs:label=Ella Fitzgerald Sings the Cole Porter Song Book (disc 2), http://dbtune.org/musicbrainz/resource/record/50d90289-0cb4-427e-8ea5-f6a5dfb1c047)
+  RepositoryRecordEntity(rdfs:label=Ella Fitzgerald Sings the Duke Ellington Song Book (disc 1), http://dbtune.org/musicbrainz/resource/record/16d22f3d-80b3-4dfc-8a19-ac332f06402b)
+  RepositoryRecordEntity(rdfs:label=Ella Fitzgerald Sings the Duke Ellington Song Book (disc 2), http://dbtune.org/musicbrainz/resource/record/00a9222c-03c1-4874-a934-9a5740415d62)
+  RepositoryRecordEntity(rdfs:label=Ella Fitzgerald Sings the Duke Ellington Song Book (disc 2), http://dbtune.org/musicbrainz/resource/record/6660976d-1a83-4918-aa27-d7396d574cbe)
+  RepositoryRecordEntity(rdfs:label=Ella Fitzgerald Sings the Duke Ellington Song Book (disc 3), http://dbtune.org/musicbrainz/resource/record/8114127d-2c85-4fab-b226-7a29fad730ce)
+  RepositoryRecordEntity(rdfs:label=Ella Fitzgerald Sings the Duke Ellington Song Book (disc 3), http://dbtune.org/musicbrainz/resource/record/98500d1f-734e-4531-b92c-fb602c1f812e)
+  RepositoryRecordEntity(rdfs:label=Ella Fitzgerald Sings the George and Ira Gershwin Songbook (disc 3), http://dbtune.org/musicbrainz/resource/record/f14ad7eb-cd1a-41e0-9f3d-2e7953a020b2)
+  RepositoryRecordEntity(rdfs:label=Ella Fitzgerald Sings the Johnny Mercer Song Book, http://dbtune.org/musicbrainz/resource/record/6604b6ac-10dc-48d4-a76d-2388833ca728)
+  RepositoryRecordEntity(rdfs:label=Ella Fitzgerald Sings the Rodgers and Hart Song Book (disc 1), http://dbtune.org/musicbrainz/resource/record/36e1bc5d-f5e3-47c1-9499-2a7c90176a7e)
+  RepositoryRecordEntity(rdfs:label=Ella Fitzgerald Sings the Rodgers and Hart Song Book (disc 2), http://dbtune.org/musicbrainz/resource/record/1b43c33c-eac5-41a6-8988-8dbf7dd81942)
+  RepositoryRecordEntity(rdfs:label=Ella Fitzgerald Sings the Rodgers and Hart Song Book, Volume 1, http://dbtune.org/musicbrainz/resource/record/ad716a05-2b74-494e-9ac9-e108ba764b4d)
+  RepositoryRecordEntity(rdfs:label=Ella In Budapest, http://dbtune.org/musicbrainz/resource/record/576a2119-4c45-4c85-9903-3e89de6ab024)
+  RepositoryRecordEntity(rdfs:label=Ella Swings Brightly With Nelson, http://dbtune.org/musicbrainz/resource/record/e65bbd8b-4fd9-4a53-83c5-cfc05e737f70)
+  RepositoryRecordEntity(rdfs:label=Ella at Juan-Les-Pins (disc 1), http://dbtune.org/musicbrainz/resource/record/fc8e56e3-16d7-48d1-b0ff-9453aec4c626)
+  RepositoryRecordEntity(rdfs:label=Essential Ella, http://dbtune.org/musicbrainz/resource/record/69acd834-36e7-4b79-bc92-e40f2373580a)
+  RepositoryRecordEntity(rdfs:label=First Lady of Song (disc 2), http://dbtune.org/musicbrainz/resource/record/068d74e6-4d3a-4de4-9e75-2737b4300c85)
+  RepositoryRecordEntity(rdfs:label=Gold (disc 2), http://dbtune.org/musicbrainz/resource/record/74fdd56a-04e6-4ebe-b590-d9f31fbfc34a)
+  RepositoryRecordEntity(rdfs:label=Ken Burns Jazz: Definitive Ella Fitzgerald, http://dbtune.org/musicbrainz/resource/record/dbf4601c-5964-4fc3-8dd8-8cf24b77deda)
+  RepositoryRecordEntity(rdfs:label=Live From the Cave Supper Club Vancouver DC, Canada, 19 May 1968, http://dbtune.org/musicbrainz/resource/record/e622a247-918e-4700-9795-0a1fb16812f6)
+  RepositoryRecordEntity(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, http://dbtune.org/musicbrainz/resource/record/b8ccca79-9419-4e07-a30d-d869475043a5)
+  RepositoryRecordEntity(rdfs:label=Sings Sweet Songs for Swingers, http://dbtune.org/musicbrainz/resource/record/b2f2d55a-1830-49c3-aa79-84c13cf7bef8)
+  RepositoryRecordEntity(rdfs:label=Something to Live For (disc 1), http://dbtune.org/musicbrainz/resource/record/f9807036-04bf-41b6-9fd2-b7faf2c3c9c4)
+  RepositoryRecordEntity(rdfs:label=Something to Live For (disc 2), http://dbtune.org/musicbrainz/resource/record/ed9cc49f-d559-4483-b7d1-3b8f89dbb62e)
+  RepositoryRecordEntity(rdfs:label=Speak Love, http://dbtune.org/musicbrainz/resource/record/ed52ca4f-c5dd-4974-8621-5ecdc46ee305)
+  RepositoryRecordEntity(rdfs:label=The Best of Ella Fitzgerald & Louis Armstrong on Verve, http://dbtune.org/musicbrainz/resource/record/9fba2bb8-2ee9-4c24-976c-8fa9ea43625f)
+  RepositoryRecordEntity(rdfs:label=The Best of the Song Books, http://dbtune.org/musicbrainz/resource/record/e45add67-2c0a-4e93-b729-8a3bfc8cfd8b)
+  RepositoryRecordEntity(rdfs:label=The Best of the Song Books: The Ballads, http://dbtune.org/musicbrainz/resource/record/0e5ab11f-161b-44c1-8ce0-fbc3d69a19f1)
+  RepositoryRecordEntity(rdfs:label=The Essential Ella Fitzgerald: The Great Songs, http://dbtune.org/musicbrainz/resource/record/6b7994b5-0463-4552-bcab-ff9b40c50c53)
+  RepositoryRecordEntity(rdfs:label=The Irving Berlin Songbook (disc 2), http://dbtune.org/musicbrainz/resource/record/34c9331c-d3bf-4ffc-b0bb-b8cf7ecfb56b)
+  RepositoryRecordEntity(rdfs:label=The Very Best of Ella Fitzgerald, http://dbtune.org/musicbrainz/resource/record/fdc11c80-fbd5-466d-9e96-d209d6437236)
+  RepositoryRecordEntity(rdfs:label=Verve Jazz Masters 46: The Jazz Sides, http://dbtune.org/musicbrainz/resource/record/61a24db0-966d-40b1-b563-f456b1711203)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ella Fitzgerald, foaf:name=null, uri=urn:bluemarine:artist:711570135ffc27f41845031de8a7d1de66b6036f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ella Fitzgerald & Count Basie, foaf:name=null, uri=urn:bluemarine:artist:c47dd18ae1ad65c4a1ec354f485f21b560eed283):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ella Fitzgerald & Joe Pass, foaf:name=null, uri=urn:bluemarine:artist:d42ba070db6e4aea9d04c26fe9c025bc979fdeb0):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ella Fitzgerald & Louis Armstrong, foaf:name=null, uri=urn:bluemarine:artist:526a0556494ffaea89d97acb4bcf3e360dc4f58b):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ella Fitzgerald & Oscar Peterson, foaf:name=null, uri=urn:bluemarine:artist:20096997340e3098a6340aa1eca4cadde35fe250):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ella Fitzgerald & The Tommy Flanagan Trio, foaf:name=null, uri=urn:bluemarine:artist:723f8350887d328d983e558849bbb2654dee6ce2):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Elton John, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/b83bc61f-8451-4a5d-8b8e-7e9ed295e822):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Elton John, foaf:name=null, uri=urn:bluemarine:artist:7099b88b783bbe2a017564fb4d78d81f7c1c5bb5):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Emer Buckley, foaf:name=null, uri=urn:bluemarine:artist:7ebd426a4784d0942df26a25ed7d4bb631154f08):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ennio Morricone, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/a16e47f5-aa54-47fe-87e4-bb8af91a9fdd):
+  RepositoryRecordEntity(rdfs:label=Once Upon a Time in the West, http://dbtune.org/musicbrainz/resource/record/77c4dd65-5fec-4c91-92f9-64b875e7af92)
+  RepositoryRecordEntity(rdfs:label=The Ennio Morricone Anthology: A Fistful of Film Music (disc 2), http://dbtune.org/musicbrainz/resource/record/df487408-bb2a-4bba-bf72-e6fb31a742ac)
+  RepositoryRecordEntity(rdfs:label=The Mission, http://dbtune.org/musicbrainz/resource/record/c224e5fb-ef25-49ca-bf5e-138f4c75f736)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ensemble Discantus, foaf:name=null, uri=urn:bluemarine:artist:38117d3c4cffb4335c38e0bc872f4f1e668be563):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ensemble In Cortezia, foaf:name=null, uri=urn:bluemarine:artist:03e558e740b2d157d8bbf46369c3deb2dcfbd987):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Eric Clapton, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/618b6900-0618-4f1e-b835-bccb17f84294):
+  RepositoryRecordEntity(rdfs:label=Blues&Ballads '98, http://dbtune.org/musicbrainz/resource/record/38b8a019-cb8b-48db-8655-0d7bfe063c2e)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Erroll Garner, foaf:name=null, uri=urn:bluemarine:artist:0e61a6c4ba80fd2a8ebd52fc7501def2fb631199):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Etta Baker & Taj Mahal, foaf:name=null, uri=urn:bluemarine:artist:496399e41225327e73983f4142c917fc102976c7):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Etta James, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/e22d2f66-881e-41ca-9356-544697ee5f90):
+  RepositoryRecordEntity(rdfs:label=The Best of Etta James, http://dbtune.org/musicbrainz/resource/record/473b3581-124e-4a03-b834-176113f03d3c)
+  RepositoryRecordEntity(rdfs:label=The Very Best of Etta James: The Chess Singles (disc 1), http://dbtune.org/musicbrainz/resource/record/845b25d8-980a-426a-8034-0331949e0fc1)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Etta James, foaf:name=null, uri=urn:bluemarine:artist:cf62f6df37004f349d1d379013a633a71ad0f8e9):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Eugene Ormandy: Philadelphia Orchestra, foaf:name=null, uri=urn:bluemarine:artist:3d195d57ccbcafc68aff3109d289d9605313f9dc):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Evgueni Bushkov, foaf:name=null, uri=urn:bluemarine:artist:3074dd6045f8e65a7b9bc3dcaf0ad2df9b1f770a):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Felix Mendelssohn, foaf:name=null, uri=urn:bluemarine:artist:6a240aaa0bb42efc6ee95baedd97a68d4c8fe2d7):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Francisco Aguabella, foaf:name=null, uri=urn:bluemarine:artist:32f39af54e56e0d579a38bb2103e67a45ffd03b2):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Francisco Buarque de Hollanda, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/93185f2d-6181-4b12-95a5-fe41a812303e):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Francisco Guerrero, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/9d0671e3-2254-480b-a543-c37de339842f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Frank Sinatra, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d):
+  RepositoryRecordEntity(rdfs:label=A Swingin' Affair!, http://dbtune.org/musicbrainz/resource/record/f8b8f391-5de9-407b-9492-700b3c4cfb99)
+  RepositoryRecordEntity(rdfs:label=Capitol Collectors Series, http://dbtune.org/musicbrainz/resource/record/dfde9907-504b-4f68-83c2-1adc275189d1)
+  RepositoryRecordEntity(rdfs:label=Close to You and More, http://dbtune.org/musicbrainz/resource/record/6a47b153-791e-475b-ba7f-8ad06d4d97a9)
+  RepositoryRecordEntity(rdfs:label=Come Fly With Me, http://dbtune.org/musicbrainz/resource/record/2f55d78c-afb2-4a11-92ab-2fad44de9636)
+  RepositoryRecordEntity(rdfs:label=Come Swing With Me!, http://dbtune.org/musicbrainz/resource/record/6f6df562-ec61-4774-b840-2ec1cd834302)
+  RepositoryRecordEntity(rdfs:label=Come Swing With Me!, http://dbtune.org/musicbrainz/resource/record/cb2dd7ac-d8f8-44c3-bb72-aad349501d64)
+  RepositoryRecordEntity(rdfs:label=Francis Albert Sinatra & Antonio Carlos Jobim, http://dbtune.org/musicbrainz/resource/record/82015a54-7663-4a63-9da2-363af64adde0)
+  RepositoryRecordEntity(rdfs:label=Greatest Love Songs, http://dbtune.org/musicbrainz/resource/record/1bac32ea-7671-43fe-9661-02a2d3c6cc89)
+  RepositoryRecordEntity(rdfs:label=In the Wee Small Hours, http://dbtune.org/musicbrainz/resource/record/881f621c-618c-48da-80a8-50380996fe15)
+  RepositoryRecordEntity(rdfs:label=It Might as Well Be Swing, http://dbtune.org/musicbrainz/resource/record/622de113-29cf-421d-8cf3-055f21509ff4)
+  RepositoryRecordEntity(rdfs:label=Look to Your Heart, http://dbtune.org/musicbrainz/resource/record/cfac7224-8b6e-4a5e-a353-9ed740a25538)
+  RepositoryRecordEntity(rdfs:label=My Way: The Best of Frank Sinatra (bonus disc), http://dbtune.org/musicbrainz/resource/record/858bde8e-2978-4502-ba61-8380ce146f10)
+  RepositoryRecordEntity(rdfs:label=No One Cares, http://dbtune.org/musicbrainz/resource/record/c4392206-1f58-48a5-b665-c1515b2ec147)
+  RepositoryRecordEntity(rdfs:label=Sinatra 80th: All the Best (disc 1), http://dbtune.org/musicbrainz/resource/record/017c90b3-11ff-4c43-80cb-ca1b4a4173c5)
+  RepositoryRecordEntity(rdfs:label=Sinatra 80th: All the Best (disc 2), http://dbtune.org/musicbrainz/resource/record/a77e7218-140a-44c8-afdd-dc62b420be09)
+  RepositoryRecordEntity(rdfs:label=Sinatra Sings the Select Cole Porter, http://dbtune.org/musicbrainz/resource/record/4fef2bf1-fe0f-4a94-950c-aa4e9bf85dd2)
+  RepositoryRecordEntity(rdfs:label=Sinatra's Swingin' Session!!!, http://dbtune.org/musicbrainz/resource/record/e30fd9c3-f902-4454-9288-5161e5f87e41)
+  RepositoryRecordEntity(rdfs:label=Songs for Swingin' Lovers!, http://dbtune.org/musicbrainz/resource/record/2edad6a9-0648-43bd-bb7d-bc518388daf1)
+  RepositoryRecordEntity(rdfs:label=Songs for Young Lovers / Swing Easy!, http://dbtune.org/musicbrainz/resource/record/e68c8527-6788-4875-9c70-a4358971dd09)
+  RepositoryRecordEntity(rdfs:label=Swing Easy!, http://dbtune.org/musicbrainz/resource/record/008d0322-9112-42bc-9bd3-7579b1adfb56)
+  RepositoryRecordEntity(rdfs:label=Thank You, Frank, http://dbtune.org/musicbrainz/resource/record/2973710d-7978-441b-9e15-5a81a09cc7bb)
+  RepositoryRecordEntity(rdfs:label=The Capitol Years (disc 1), http://dbtune.org/musicbrainz/resource/record/0f1bf383-9b8c-4f04-9a69-c659d976a5fa)
+  RepositoryRecordEntity(rdfs:label=The Capitol Years (disc 2), http://dbtune.org/musicbrainz/resource/record/81584856-4fdb-4f96-b01d-805d8686d1f7)
+  RepositoryRecordEntity(rdfs:label=The Capitol Years (disc 3), http://dbtune.org/musicbrainz/resource/record/ef0305de-9d25-4b8d-8c8b-123894190eae)
+  RepositoryRecordEntity(rdfs:label=The Complete Capitol Singles Collection (disc 2), http://dbtune.org/musicbrainz/resource/record/1e9574a4-dbc5-418e-9c63-4a2aafe6a8d6)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Frank Sinatra, foaf:name=null, uri=urn:bluemarine:artist:f14e76940ffb697c99e83297257f5299c445ca2d):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Frank Sinatra & Antonio Carlos Jobim, foaf:name=null, uri=urn:bluemarine:artist:2cbb8b1275179745ec4fa93205bb83978e6b10d2):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Frantisek Macinka, foaf:name=null, uri=urn:bluemarine:artist:acc272d2290d4519ef8b3751e54815ef43f50bdc):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Franz Liszt, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/2cd475bb-1abd-40c4-9904-6d4b691c752c):
+  RepositoryRecordEntity(rdfs:label=The 19 Hungarian Rhapsodies (feat. piano: Roberto Szidon) (disc 1), http://dbtune.org/musicbrainz/resource/record/6c008270-28da-4959-819d-3a5111e1c956)
+  RepositoryRecordEntity(rdfs:label=The 19 Hungarian Rhapsodies (feat. piano: Roberto Szidon) (disc 2), http://dbtune.org/musicbrainz/resource/record/d32a5cb7-c948-4f33-9a51-1a40821a81fa)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Franz Liszt, foaf:name=null, uri=urn:bluemarine:artist:9f27e845cabe8337d3841a5cddd200613f888056):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Franz Schubert, foaf:name=null, uri=urn:bluemarine:artist:309b873e7f3b770fbf9a8ffcf95c3f23d5e42d6b):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Fred Hersch, foaf:name=null, uri=urn:bluemarine:artist:eed9520b64a430c40b28f9ec90412289cd28396f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Front End, foaf:name=null, uri=urn:bluemarine:artist:6c31d06df1ef139f9eb2e5085fcb67b3876ee331):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Fryderyk Chopin, foaf:name=null, uri=urn:bluemarine:artist:0dd43c7a8957463503b49d6f35a70516cd421464):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Fud Candrix und sein Orchester, foaf:name=null, uri=urn:bluemarine:artist:0e277d6ed84322275510aa6b75c2c9acee5f1855):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Gary Burton, Pat Metheny, Steve Swallow, Antonio Sanchez, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/bc11c824-6c69-4314-9808-4f719a50245c):
+  RepositoryRecordEntity(rdfs:label=Quartet Live!, http://dbtune.org/musicbrainz/resource/record/38f63535-719e-48ca-8118-68d1f2607159)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Gene Pitney, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/828b1208-2ce4-40c1-b659-11d7f540748c):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Geoges Barboteu, Gilbert Coursier, Daniel Dubar, Michel Berg, foaf:name=null, uri=urn:bluemarine:artist:11a06443463d31e61f4b75adfcf118afc85da7c6):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Geoges Barboteu, Jean-François Paillard Chamber Orchestra, foaf:name=null, uri=urn:bluemarine:artist:df1a1274f66decc4b2f8e5b0f65fbe36c7031a17):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Geoges Barboteu/Horn, Jean-Francois Paillard Chamber Orchest, foaf:name=null, uri=urn:bluemarine:artist:7d210718b959b9c5d9fbc02749502e991b14e9d9):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Geoges Barboteu/Horn, Lily Laskine/Harp, foaf:name=null, uri=urn:bluemarine:artist:281bf72be51d2b46491e82ef4a3faa1b489f19b3):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Georg Friedrich Händel, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/27870d47-bb98-42d1-bf2b-c7e972e6befc):
+  RepositoryRecordEntity(rdfs:label=Händel Messiah Highlights, http://dbtune.org/musicbrainz/resource/record/7020411e-fe5e-4a7e-b2be-c16742b1ba51)
+  RepositoryRecordEntity(rdfs:label=Music for the Royal Fireworks, http://dbtune.org/musicbrainz/resource/record/c794e06e-fc09-4e96-b379-d5ffbb002ab7)
+  RepositoryRecordEntity(rdfs:label=Water Music / Fireworks Music (English Baroque Soloists feat. conductor: John Eliot Gardiner), http://dbtune.org/musicbrainz/resource/record/f91b48e0-0ce1-45e5-8b63-6c87aa120c07)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Georg Friedrich Händel, foaf:name=null, uri=urn:bluemarine:artist:d91aad9128eec52365ea4c2e9d79e9611305073d):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Georg Philipp Telemann, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/8f831f50-e409-47c3-8598-71a61bc8cfb3):
+  RepositoryRecordEntity(rdfs:label=Wassermusik & 3 Konzerte (Musica Antiqua Köln feat. conductor: Reinhard Goebel), http://dbtune.org/musicbrainz/resource/record/dc8d99c4-22b6-44e9-ad96-2d1c80dbb5fb)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=George Gershwin, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/65744963-191a-44ef-a3c7-b693a808a158):
+  RepositoryRecordEntity(rdfs:label=Porgy and Bess (The Glyndebourne Chorus & London Philharmonic feat. conductor: Simon Rattle) (disc 1), http://dbtune.org/musicbrainz/resource/record/e7eef1f7-e507-4ae4-a1d7-771459f09129)
+  RepositoryRecordEntity(rdfs:label=Porgy and Bess (The Glyndebourne Chorus & London Philharmonic feat. conductor: Simon Rattle) (disc 2), http://dbtune.org/musicbrainz/resource/record/81ca5ea4-2daa-4c22-9a00-b6c36a89d340)
+  RepositoryRecordEntity(rdfs:label=Porgy and Bess (The Glyndebourne Chorus & London Philharmonic feat. conductor: Simon Rattle) (disc 3), http://dbtune.org/musicbrainz/resource/record/08eacc4b-267e-4d13-a685-99e5f108cd6e)
+  RepositoryRecordEntity(rdfs:label=Rhapsody in Blue / An American in Paris / Piano Concerto in F (Pittsburg Symphony Orchestra feat. conductor: André Previn), http://dbtune.org/musicbrainz/resource/record/ad12f68b-9b06-484c-aa0e-3410f5481aed)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=George Gershwin, foaf:name=null, uri=urn:bluemarine:artist:3b445c7a668ca54ba153f4a0ca87770f1f347560):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Georges Barboteu/Horn, Lily Laskine/Harp, Jean-Francois Pail, foaf:name=null, uri=urn:bluemarine:artist:256f6d11705066dde3aa5f3aa7f0e8fdbd947881):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Georges Bizet, foaf:name=null, uri=urn:bluemarine:artist:0163cae827327b495d15f24088bc3596c812dd97):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Gipsy Kings, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/44a7f7d5-79df-4f44-8f5e-02dfc0626904):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Giuseppe Verdi, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/f1bedf1f-4445-4651-9c35-f4a3f3860a13):
+  RepositoryRecordEntity(rdfs:label=Attila (Orchestra e Coro del Teatro alla Scala, Milano feat. conductor: Riccardo Muti) (disc 1), http://dbtune.org/musicbrainz/resource/record/7b2e4035-60e5-414d-af06-f0d31a0b96d4)
+  RepositoryRecordEntity(rdfs:label=La forza del destino (Riccardo Muti) (disc 1), http://dbtune.org/musicbrainz/resource/record/ae1a047c-a6b9-4f88-b832-f0df2f4f1067)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Giuseppe Verdi, foaf:name=null, uri=urn:bluemarine:artist:e8d9dd0715ac21e0dd74c0ebf545887365578dce):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Goldfrapp, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/7b885d42-3c41-4f43-9944-a5855ec5155e):
+  RepositoryRecordEntity(rdfs:label=Felt Mountain, http://dbtune.org/musicbrainz/resource/record/d5b80206-c691-400d-95d7-830311451af9)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Grant Green, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/1a88b270-d763-48d5-a62c-2bb9cabb140c):
+  RepositoryRecordEntity(rdfs:label=The Complete Quartets With Sonny Clark (disc 1), http://dbtune.org/musicbrainz/resource/record/76627fa0-7957-4ec6-a66f-414f99b63b07)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Grant Green, foaf:name=null, uri=urn:bluemarine:artist:31b86d7e378855139723c29575740e47bcf420ee):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Griffes/Faure/Debussy/Gaos/Saint-Saens/Ravel, foaf:name=null, uri=urn:bluemarine:artist:28230291553a10f9328d6a723cb4f965477456ae):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Guillaume de Machaut, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/465ece07-367f-42f6-92b4-165a88180199):
+  RepositoryRecordEntity(rdfs:label=Messe de Nostre Dame (Taverner Consort & Choir feat. conductor Andrew Parrott), http://dbtune.org/musicbrainz/resource/record/cc57d80b-e77e-423a-ad42-d7c8f8aae24f)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Gus Viseur, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/d5c4d5fe-f8c0-41f5-aed5-48a3760cddbb):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Gustav Mahler, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/8d610e51-64b4-4654-b8df-064b0fb7a9d9):
+  RepositoryRecordEntity(rdfs:label=Symphony No. 5 in C sharp minor (Vienna Philharmonic feat. conductor: Lorin Maazel), http://dbtune.org/musicbrainz/resource/record/e53bd8f4-4a04-4910-ab5a-336471674d10)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Göran Söllscher, foaf:name=null, uri=urn:bluemarine:artist:736f0b12cf7368508a8c2b71712d21a31a8bb8af):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker & Neeme Järvi, foaf:name=null, uri=urn:bluemarine:artist:21727ed6388d9a159404192a71bed04714f0bc06):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker, Kjell Magnus Sandve & Neeme Järvi, foaf:name=null, uri=urn:bluemarine:artist:b8e202dc87a12c6fc1d5c686234a0aea42bf88d8):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker, Marianne Eklöf & Neeme Järvi, foaf:name=null, uri=urn:bluemarine:artist:7b93c07bbb5667244dee32d2f2509567bae5dcc8):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker, Neeme Järvi & Tor Stokke, foaf:name=null, uri=urn:bluemarine:artist:f66c537dda239ad4964248a326dc3e6cf1407e02):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker, Neeme Järvi & Toralv Maurstad, foaf:name=null, uri=urn:bluemarine:artist:6c62c602fa9d04f208437d230a39ae3c25b6c3ac):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker, Neeme Järvi, Tor Stokke & Toralv Maurstad, foaf:name=null, uri=urn:bluemarine:artist:16d19827fa8697e3f1c2affaa04b6ffe53b24da0):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Göteborgs Symfoniker & Neeme Järvi, foaf:name=null, uri=urn:bluemarine:artist:9eea80a7a6ef6d468f33542af83f90aebe7b9eec):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Göteborgs Symfoniker, Knut Buen & Neeme Järvi, foaf:name=null, uri=urn:bluemarine:artist:c5e91f3ae67cfe2f205bc109f59615aff06ed3c5):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Göteborgs Symfoniker, Malcolm Page, Neeme Järvi, Per Göran, Sören Hermans & Vivika Alm, foaf:name=null, uri=urn:bluemarine:artist:953f7f7d21f57a185cad8bda5750b56f79554b52):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Göteborgs Symfoniker, Neeme Järvi & Paul Cortese, foaf:name=null, uri=urn:bluemarine:artist:e4ae5af08bc101eafb68b6ab84e51fbe9ff24f25):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Göteborgs Symfoniker, Neeme Järvi & Toralv Maurstad, foaf:name=null, uri=urn:bluemarine:artist:020270fa164edcd26fd69e696cecf6b65c50d768):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Göteborgs Symfoniker, Neeme Järvi & Urban Malmberg, foaf:name=null, uri=urn:bluemarine:artist:173503756c531466ac65a34437b08c5db92b9277):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Göteborgs Symfoniker, Neeme Järvi, Toralv Maurstad & Wenche Foss, foaf:name=null, uri=urn:bluemarine:artist:c96685ae85e197570c831aa6b2fd3e2e403dfc28):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Heinrich Schiff; Neville Marriner: Staatskapelle Dresden, foaf:name=null, uri=urn:bluemarine:artist:542e738df79040558dc4c738e8dc1833619a4640):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Henry Mancini, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/83e71a21-caf7-4e48-8ff7-6512d51e88a3):
+  RepositoryRecordEntity(rdfs:label=All Time Greatest Hits Volume I, http://dbtune.org/musicbrainz/resource/record/30f8271d-8b6a-4c77-9245-e4ab8a046ef3)
+  RepositoryRecordEntity(rdfs:label=As Time Goes By, http://dbtune.org/musicbrainz/resource/record/2cab6283-01c8-4741-800f-4d1ddf8b0ce4)
+  RepositoryRecordEntity(rdfs:label=Dear Heart and Other Songs About Love, http://dbtune.org/musicbrainz/resource/record/0cae5758-ac72-4465-9a53-92f0fd9b645b)
+  RepositoryRecordEntity(rdfs:label=In the Pink, http://dbtune.org/musicbrainz/resource/record/086cf7e2-6dda-4440-90ea-7e1af635d16b)
+  RepositoryRecordEntity(rdfs:label=In the Pink: The Ultimate Collection (disc 1), http://dbtune.org/musicbrainz/resource/record/af359761-2b53-45f3-93dc-43b577c15842)
+  RepositoryRecordEntity(rdfs:label=Legendary Henry Mancini (disc 1), http://dbtune.org/musicbrainz/resource/record/d00a48d0-696b-4cba-9ccf-d86be356f68b)
+  RepositoryRecordEntity(rdfs:label=Legendary Henry Mancini (disc 2), http://dbtune.org/musicbrainz/resource/record/aa8b7708-403d-4fa8-8f21-d67a16e96dd5)
+  RepositoryRecordEntity(rdfs:label=Legendary Henry Mancini (disc 3), http://dbtune.org/musicbrainz/resource/record/35184c75-f013-44b6-bdec-ab568440a4f6)
+  RepositoryRecordEntity(rdfs:label=The Best of Henry Mancini, http://dbtune.org/musicbrainz/resource/record/d3f402de-574c-4f6f-9dd8-dbdea05fb971)
+  RepositoryRecordEntity(rdfs:label=The Best of Mancini, http://dbtune.org/musicbrainz/resource/record/b0153842-3c29-4dc5-8286-9da83e699eb3)
+  RepositoryRecordEntity(rdfs:label=The Days of Wine and Roses (disc 1), http://dbtune.org/musicbrainz/resource/record/5b57c313-42cc-416b-a957-4fe0c9769d69)
+  RepositoryRecordEntity(rdfs:label=The Days of Wine and Roses (disc 3), http://dbtune.org/musicbrainz/resource/record/ee208c54-4ae7-4c9b-a2a7-4bbcb6e2805a)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Henry Mancini, foaf:name=null, uri=urn:bluemarine:artist:77a82dddea4b88213a402817de1eb37a97c60d9c):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Henry Purcell, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/ddea5540-2c7d-4266-8507-b367c2635d35):
+  RepositoryRecordEntity(rdfs:label=The Fairy Queen / The Prophetess (Le concert des nations feat. conductor: Jordi Savall), http://dbtune.org/musicbrainz/resource/record/ce3f7577-1cfb-4dc8-b3f0-0bf760dff2bd)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Herbie Hancock, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/27613b78-1b9d-4ec3-9db5-fa0743465fdd):
+  RepositoryRecordEntity(rdfs:label=Maiden Voyage, http://dbtune.org/musicbrainz/resource/record/8b3ca77d-647d-4e3e-b3a9-e7d5dd17f3e0)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Herbie Hancock, foaf:name=null, uri=urn:bluemarine:artist:4f3572cd0cf89c55c66d87465c5b25e683999baa):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Hermine Deurloo, foaf:name=null, uri=urn:bluemarine:artist:f75897bd0b8f18b89ae949b323bfd6904d632afc):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Hespèrion XX, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/3a9f0e21-5796-4f04-bd4c-3deafd59ad80):
+  RepositoryRecordEntity(rdfs:label=España Antigua - Libre Vermell de Montserrat, una peregrinación del siglo XIV, http://dbtune.org/musicbrainz/resource/record/434b08a9-338f-4dde-a896-93755d8d8a46)
+  RepositoryRecordEntity(rdfs:label=Viva Rei Ferrando, http://dbtune.org/musicbrainz/resource/record/60390689-e2bf-4003-b5a9-1e3fbd3fb04a)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Hille Perl, foaf:name=null, uri=urn:bluemarine:artist:cdb04c5b0251e71414f086272a6c25b920582f00):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Howard Keel, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/d78afc01-f918-440c-89fc-9d546a3ba4ac):
+  RepositoryRecordEntity(rdfs:label=Calamity Jane, http://dbtune.org/musicbrainz/resource/record/3f148f6b-caf1-484f-aa7a-073200100106)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Igor Stravinski, foaf:name=null, uri=urn:bluemarine:artist:4a00a0c6867a095f8cf8c0f69c397797e9eb22f0):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Isaac Albéniz, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/0a46cf2a-61bd-447d-b8fd-a2b32eb20282):
+  RepositoryRecordEntity(rdfs:label=Echoes of Spain (feat. guitar: John Williams), http://dbtune.org/musicbrainz/resource/record/b27ad7b8-d58b-49b8-aa95-107900053680)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Isaac Albéniz, foaf:name=null, uri=urn:bluemarine:artist:2bb262aa1cc82ca8c456ae7d44b00bf29eb633b0):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Jackie DeShannon, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/194e5e92-0f2d-4d81-b5b9-c5f18d9edd59):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=James Abbuhl, foaf:name=null, uri=urn:bluemarine:artist:51a2e6a210bfb247da27424cf524b1375f43f673):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=James Brown, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/20ff3303-4fe2-4a47-a1b6-291e26aa3438):
+  RepositoryRecordEntity(rdfs:label=Sex Machine: The Very Best of James Brown, http://dbtune.org/musicbrainz/resource/record/5d7bd412-f1f1-4cb4-b5a3-5a2170f8f4bc)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=James Galway, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/84045b93-beb0-4bc8-a855-93266ec6bbdc):
+  RepositoryRecordEntity(rdfs:label=In the Pink, http://dbtune.org/musicbrainz/resource/record/086cf7e2-6dda-4440-90ea-7e1af635d16b)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Jean Michel Jarre, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc):
+  RepositoryRecordEntity(rdfs:label=En attendant Cousteau, http://dbtune.org/musicbrainz/resource/record/750292bf-35cd-41a9-9135-e06b1c2a54da)
+  RepositoryRecordEntity(rdfs:label=The Essential, http://dbtune.org/musicbrainz/resource/record/71f578dc-cf57-4743-abb2-c1d3ec8b5d59)
+  RepositoryRecordEntity(rdfs:label=Waiting for Cousteau, http://dbtune.org/musicbrainz/resource/record/2f8b76c6-d705-4395-bac4-0a8abce3316c)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Jean Sibelius, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/691b0e9d-9e57-41cf-932d-a3d21b068e75):
+  RepositoryRecordEntity(rdfs:label=Finlandia / Der Schwan von Tuonela / Valse Triste / Tapiola (Berliner Philharmoniker feat. conductor: Herbert von Karajan), http://dbtune.org/musicbrainz/resource/record/3f7af1bf-be83-4f98-9776-6debee36ee86)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Jean-Jacques Justafre, Jean-Paul Gantiez, Jean-Claude Barro,, foaf:name=null, uri=urn:bluemarine:artist:403e962b3fbb3e65b41e4277bdcc0d17e92686cf):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Jean-Louis Rassinfosse, Chet Baker & Philip Catherine, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/7631ba41-5e47-4f55-a621-40ab0f2a3a02):
+  RepositoryRecordEntity(rdfs:label=Crystal Bells, http://dbtune.org/musicbrainz/resource/record/ed0c2ec9-01d3-406b-a917-a7e4eab8dd0a)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Jim Hall, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/8c12559e-ddcf-472a-8a8c-0f0c3fc91c6a):
+  RepositoryRecordEntity(rdfs:label=Jim Hall & Pat Metheny, http://dbtune.org/musicbrainz/resource/record/0b93acfa-676a-4911-9798-4a16939f1a3f)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Jim Henson, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/53d60b8a-133b-42da-bd67-e1f55ce73863):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Joaquín Rodrigo, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/fde4460b-868a-493e-8c53-221e418c8959):
+  RepositoryRecordEntity(rdfs:label=Concierto de Aranjuez / Fantasía para un gentilhombre (feat. guitar: John Williams), http://dbtune.org/musicbrainz/resource/record/417cf527-274e-4ba8-98c6-7c09d7d1eb92)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Joe Pass, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/2f43e416-f1bf-4f04-8853-a0019aa12441):
+  RepositoryRecordEntity(rdfs:label=Speak Love, http://dbtune.org/musicbrainz/resource/record/ed52ca4f-c5dd-4974-8621-5ecdc46ee305)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Johann Sebastian Bach, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/24f1766e-9635-4d58-a4d4-9413f9f98a4c):
+  RepositoryRecordEntity(rdfs:label=Bach 2000 Sampler, http://dbtune.org/musicbrainz/resource/record/daa11635-9acc-417d-aaa3-11cdfa41271e)
+  RepositoryRecordEntity(rdfs:label=Brandenburg Concertos Nos. 1-6 / Orchestral Suites Nos. 1-4 (Academy of St. Martin-in-the-Fields feat. conductor: Sir Neville Marriner) (disc 1: Brandenburg Concertos Nos. 1-4), http://dbtune.org/musicbrainz/resource/record/5de9f166-3edc-44cc-93cc-c045c2404e52)
+  RepositoryRecordEntity(rdfs:label=Brandenburg Concertos Nos. 1-6 / Orchestral Suits Nos. 1-4 (Academy of St. Martin-in-the-Fields feat. conductor: Sir Neville Marriner) (disc 2), http://dbtune.org/musicbrainz/resource/record/629e3954-2894-474c-b4a6-e32519171068)
+  RepositoryRecordEntity(rdfs:label=Brandenburg Concertos Nos. 1-6 / Orchestral Suits Nos. 1-4 (Academy of St. Martin-in-the-Fields feat. conductor: Sir Neville Marriner) (disc 3: Orchestral Suits Nos. 2-4), http://dbtune.org/musicbrainz/resource/record/4d8a24e9-0b80-475b-8a87-5e2af0b654aa)
+  RepositoryRecordEntity(rdfs:label=Concerti for 3 and 4 Harpsichords (The English Concert feat. harpsichord: Kenneth Gilbert, Trevor Pinnock, Lars Ulrik Mortensen), http://dbtune.org/musicbrainz/resource/record/85a3a631-0688-4894-bf3f-5d8ae79b5122)
+  RepositoryRecordEntity(rdfs:label=Concertos for Harpsichord, Violin, Flute, Oboe d'amore (The English Concert feat. harpsichord: Trevor Pinnock) (disc 3), http://dbtune.org/musicbrainz/resource/record/93e5cd42-7a27-4dc1-8b4f-d43bf30d6152)
+  RepositoryRecordEntity(rdfs:label=Goldberg Variations (feat. Harpsichord: Trevor Pinnock), http://dbtune.org/musicbrainz/resource/record/b912c6ad-2dc3-457c-b43e-068d288cc56f)
+  RepositoryRecordEntity(rdfs:label=Les Quatre Ouvertures, Suites pour Orchestre (disc 1), http://dbtune.org/musicbrainz/resource/record/b3380180-d49f-462f-a8d6-4f049ab94b1a)
+  RepositoryRecordEntity(rdfs:label=Organ Works (feat. organ: Ton Koopman), http://dbtune.org/musicbrainz/resource/record/76ab8c16-d3ed-4d9e-97e7-b0287f0cd021)
+  RepositoryRecordEntity(rdfs:label=Sonatas and Partitas for Solo Violin (Nathan Milstein) (disc 1), http://dbtune.org/musicbrainz/resource/record/bb751c39-7d8b-480a-b1c6-120a53121ced)
+  RepositoryRecordEntity(rdfs:label=Sonatas and Partitas for Solo Violin (Nathan Milstein) (disc 2), http://dbtune.org/musicbrainz/resource/record/6c2c5be3-870d-4bfe-bda8-6b45a5e49b05)
+  RepositoryRecordEntity(rdfs:label=The Gould Variations (Glenn Gould), http://dbtune.org/musicbrainz/resource/record/a4995df2-4020-4a80-9fab-cd95a92764f6)
+  RepositoryRecordEntity(rdfs:label=The Two and Three Part Inventions (feat. piano: Glenn Gould), http://dbtune.org/musicbrainz/resource/record/a68563c6-033a-4ed7-82c1-8a6ca3f93269)
+  RepositoryRecordEntity(rdfs:label=Vier Suiten für Laute (feat. guitar: Göran Söllscher), http://dbtune.org/musicbrainz/resource/record/af175be8-7d23-4be1-91d4-ffedc1b06394)
+  RepositoryRecordEntity(rdfs:label=Works for Lute, Volume 2 (Göran Söllscher), http://dbtune.org/musicbrainz/resource/record/ae9162a8-635b-449e-ad85-cf764a063e32)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Johann Sebastian Bach, foaf:name=null, uri=urn:bluemarine:artist:14ea7302b7f7f29e46c8430c2df350043a550894):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Johannes Brahms, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/c70d12a2-24fe-4f83-a6e6-57d84f8efb51):
+  RepositoryRecordEntity(rdfs:label=Complete Brahms Edition, Volume 2: Concertos (disc 3), http://dbtune.org/musicbrainz/resource/record/636fd43e-c048-4d3d-ae3f-0442cc2d66e1)
+  RepositoryRecordEntity(rdfs:label=Piano Concerto No. 2 (Berliner Philharmoniker feat. conductor: Claudio Abbado, piano: Alfred Brendel), http://dbtune.org/musicbrainz/resource/record/162dc63f-669b-44fa-8758-96cb81b3c9e2)
+  RepositoryRecordEntity(rdfs:label=Symphony No. 4 in E minor, Op. 98 (Wiener Philharmoniker feat. conductor: Carlos Kleiber), http://dbtune.org/musicbrainz/resource/record/a5721574-29df-45b4-b3a1-1eab28f678e4)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Johannes Brahms, foaf:name=null, uri=urn:bluemarine:artist:5c3155600d577b52abe3385b95c7c80e5823d538):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=John Barry, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/661e20c8-3d82-4da2-94a2-97d9e11691c0):
+  RepositoryRecordEntity(rdfs:label=The Best of the EMI Years, http://dbtune.org/musicbrainz/resource/record/4b1dbdce-9bd2-49df-8373-c41bcb32d959)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=John Coltrane, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/b625448e-bf4a-41c3-a421-72ad46cdb831):
+  RepositoryRecordEntity(rdfs:label=Giant Steps, http://dbtune.org/musicbrainz/resource/record/830ba33a-c6f9-4107-a618-ad8102f633bd)
+  RepositoryRecordEntity(rdfs:label=Live in New York, http://dbtune.org/musicbrainz/resource/record/da3479ee-f939-4bbe-8362-53cbb05e7f76)
+  RepositoryRecordEntity(rdfs:label=Miles and Coltrane, http://dbtune.org/musicbrainz/resource/record/7f75ea06-7441-4356-ab35-7faf9e5fe26a)
+  RepositoryRecordEntity(rdfs:label=My Favorite Things, http://dbtune.org/musicbrainz/resource/record/1dbacf08-e08c-4f44-a409-81ea1fb4b8aa)
+  RepositoryRecordEntity(rdfs:label=The Best of John Coltrane, http://dbtune.org/musicbrainz/resource/record/a408efbd-0c90-4ae8-b5b7-fc69e7d6cf98)
+  RepositoryRecordEntity(rdfs:label=Thelonious Monk with John Coltrane, http://dbtune.org/musicbrainz/resource/record/04002e8a-68eb-4cef-a3b1-1a9f41b62f19)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=John Coltrane, foaf:name=null, uri=urn:bluemarine:artist:bac64b2d266a6aa40caa06e9f461a62260aef80a):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=John Scofield, foaf:name=null, uri=urn:bluemarine:artist:b11bd0ec1a3bccda45249f478bf12babf9314163):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=John Scofield & Pat Metheny, foaf:name=null, uri=urn:bluemarine:artist:529929db4197dc5e201f84f4c7272218b2265ee7):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=John Williams, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/53b106e7-0cc6-42cc-ac95-ed8d30a3a98e):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=John Williams, foaf:name=null, uri=urn:bluemarine:artist:f5a1e04478d3e8382748be22b0ab48f5873ca181):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Jordi Savall, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/9a4bb654-35c5-4c88-8460-39d5bb01aa57):
+  RepositoryRecordEntity(rdfs:label=Don Quijote de la Mancha (disc 1), http://dbtune.org/musicbrainz/resource/record/7e3475b7-3d0f-4698-a1fd-9df0ecdc7395)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Jordi Savall, foaf:name=null, uri=urn:bluemarine:artist:14f2784e6424c7b5b52b818725da039a564b8809):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Jordi Savall, Le Concert Des Nations & Le Concert Des Nations & Jordi Savall, foaf:name=null, uri=urn:bluemarine:artist:b2d947310b911fa257abb2b71b2d1b65b87d3d89):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Joseph Haydn, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/c130b0fb-5dce-449d-9f40-1437f889f7fe):
+  RepositoryRecordEntity(rdfs:label=Septem Verba Christi in Cruce (vers. originale pour orchestre), http://dbtune.org/musicbrainz/resource/record/bde47d2d-2539-4645-a44f-1ad75d677b14)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Joseph Haydn, foaf:name=null, uri=urn:bluemarine:artist:91126f3c42822a0def2c7f78332017958a04b5a4):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Joyce, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/f47a0968-f2c1-4ec5-b0e3-0a15ae73b88d):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Joyce, foaf:name=null, uri=urn:bluemarine:artist:36fd5e826e0f40e5ab350cc4e5b5647a10b21c80):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Julie Andrews, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/16bdc7b3-6bfc-4f1c-89ad-d0756af40327):
+  RepositoryRecordEntity(rdfs:label=Best Of..., http://dbtune.org/musicbrainz/resource/record/e031c3cd-79b8-4c58-b838-8089f9d8ea93)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Juliette Gréco, foaf:name=null, uri=urn:bluemarine:artist:ee0dad23cdafd99b68474a6434bb843f6f9fb67f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=June Anderson, Rockwell Blake, Etc.; Riccardo Muti: Orchestra & Chorus Of La Scala Milan, foaf:name=null, uri=urn:bluemarine:artist:255adad0ae14b1243b7d2125ce3723d130c8aa1d):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Katia Labèque, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/3484fb2e-723e-4e12-97a6-6be69aa7bd7d):
+  RepositoryRecordEntity(rdfs:label=Gladrags, http://dbtune.org/musicbrainz/resource/record/46128c40-6cbf-4739-9357-80301401c0f5)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Kaylene Peoples, foaf:name=null, uri=urn:bluemarine:artist:8162159a04c05618d77bc865a9ccc817dfcf01a5):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Kings of Convenience, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/cf0f4547-ffbd-4011-98ad-0bec9ba022db):
+  RepositoryRecordEntity(rdfs:label=Riot on an Empty Street, http://dbtune.org/musicbrainz/resource/record/95f5a9bd-5493-4134-a8f3-5ed3752a7d0f)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Kiri Te Kanawa, foaf:name=null, uri=urn:bluemarine:artist:13b958ed5714ec97662e6354f389f71b7e600d1a):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Kodály Quartet, foaf:name=null, uri=urn:bluemarine:artist:919f0bd7c799a90b32c22f6ae50b7fbde21884f7):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=La Capella Reial de Catalunya, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d):
+  RepositoryRecordEntity(rdfs:label=Requiem k 626 - maurerische trauermusik K477, http://dbtune.org/musicbrainz/resource/record/c67f564f-3fbe-44b8-8faf-f09981634518)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=La Reverdie, foaf:name=null, uri=urn:bluemarine:artist:aa75bfe53a0c188fe5e1d825a4caba4faff34698):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Lachrimae Consort, foaf:name=null, uri=urn:bluemarine:artist:89c2744adc39d4310d2a82d8759d6bbee70c6504):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Lambis Vassiliadis, foaf:name=null, uri=urn:bluemarine:artist:93739a9490d74b6bf335d9bbb6f16add3340efa6):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Laura Fygi, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/f51abb6f-fb5e-47c8-9089-c9e7b7fe7a55):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Leonard Bernstein, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/fa39bc82-9b27-4bbb-9425-d719a72e09ac):
+  RepositoryRecordEntity(rdfs:label=Essential Leonard Bernstein (disc 2), http://dbtune.org/musicbrainz/resource/record/3b30ced3-7121-40d6-90aa-0f221a44f704)
+  RepositoryRecordEntity(rdfs:label=West Side Story, http://dbtune.org/musicbrainz/resource/record/76809c00-0f9b-43fa-aec7-9de7f0634f95)
+  RepositoryRecordEntity(rdfs:label=West Side Story, http://dbtune.org/musicbrainz/resource/record/cc6df079-8023-4dfc-b84f-4f598f6b5759)
+  RepositoryRecordEntity(rdfs:label=West Side Story, http://dbtune.org/musicbrainz/resource/record/ff941397-a86b-411b-957e-bd35629d3ba5)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Leoš Janáček, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/edfced8a-01bc-4c22-96b2-da58edd6b8af):
+  RepositoryRecordEntity(rdfs:label=A Recollection (feat. piano András Schiff), http://dbtune.org/musicbrainz/resource/record/79c2d43b-c9f5-428e-81e8-2f0ca0a8c566)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Les Chantres Du Thoronet, foaf:name=null, uri=urn:bluemarine:artist:a26d25dbfb0dc16d81446a503ab7de46ccc6a24f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Les Deux Love Orchestra, foaf:name=null, uri=urn:bluemarine:artist:7103d0c2938ba3cbc383ca173bb1676376733e86):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Lev Polyakin, Charles Bernard, Frances Renzi, foaf:name=null, uri=urn:bluemarine:artist:a6d122f7943e4f4a4e0f980bf1e2db5dc931b196):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Lev Polyakin, Nathaniel Rosen, Etc., foaf:name=null, uri=urn:bluemarine:artist:b663fd7d21631b3ce9e98f7842557214641e1dbd):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Lionel Richie, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/3cb25fb2-5547-4b05-adec-1a5e37830d46):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Lisa Hilton, foaf:name=null, uri=urn:bluemarine:artist:831c57cab6109117a2bc52e900a79bea3eec9465):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Livia Caffagni, foaf:name=null, uri=urn:bluemarine:artist:8859b7933c5e6dfb6ab9b6d3f2f39973737d155f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Los Angeles Philharmonic, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/98e4313e-dfb0-4084-805c-3e42ef9301d0):
+  RepositoryRecordEntity(rdfs:label=The Planets / Close Encounters / Also Sprach Zarathustra (Los Angeles Philharmonic, Zubin Mehta) (disc 2), http://dbtune.org/musicbrainz/resource/record/a4fd3e26-637e-468e-bb2a-398ebf1268ba)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Louis Armstrong, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/eea8a864-fcda-4602-9569-38ab446decd6):
+  RepositoryRecordEntity(rdfs:label=Bing & Satchmo, http://dbtune.org/musicbrainz/resource/record/65c9db3a-da39-4890-8542-fb344507b29e)
+  RepositoryRecordEntity(rdfs:label=Hello Dolly, http://dbtune.org/musicbrainz/resource/record/acf8114a-ec17-4f30-b5af-f31dee7b312d)
+  RepositoryRecordEntity(rdfs:label=Hello, Dolly, http://dbtune.org/musicbrainz/resource/record/811ff5b1-ecde-4500-8c4a-bfde670ab648)
+  RepositoryRecordEntity(rdfs:label=In Concert: What a Wonderful World, http://dbtune.org/musicbrainz/resource/record/52c63a34-1e47-4a7d-8ed8-64a3a835c235)
+  RepositoryRecordEntity(rdfs:label=Let's Do It: Best of the Verve Years (disc 1), http://dbtune.org/musicbrainz/resource/record/276e0fa9-72df-447a-a6f4-bb821f1438cb)
+  RepositoryRecordEntity(rdfs:label=Let's Do It: Best of the Verve Years (disc 2), http://dbtune.org/musicbrainz/resource/record/fbe5e433-ed91-4996-9bbe-d7344d853703)
+  RepositoryRecordEntity(rdfs:label=Louis Armstrong (disc 3), http://dbtune.org/musicbrainz/resource/record/e7aa71d7-766c-42ab-9591-c380699f0b1f)
+  RepositoryRecordEntity(rdfs:label=Louis Armstrong at His Very Best (disc 1), http://dbtune.org/musicbrainz/resource/record/88aa4f8d-b8dd-48ae-b080-f96dce0da18c)
+  RepositoryRecordEntity(rdfs:label=Louis and the Good Book, http://dbtune.org/musicbrainz/resource/record/8b1bd9e6-fb6c-446f-8578-d6460497cb9c)
+  RepositoryRecordEntity(rdfs:label=Pure Gold of Louis Armstrong (disc 1), http://dbtune.org/musicbrainz/resource/record/9db60b2f-3274-4468-b337-5daf6699c40b)
+  RepositoryRecordEntity(rdfs:label=Pure Louis (disc 2), http://dbtune.org/musicbrainz/resource/record/d6661107-b308-4241-b4a3-e690fddb95eb)
+  RepositoryRecordEntity(rdfs:label=The Best of Ella Fitzgerald & Louis Armstrong on Verve, http://dbtune.org/musicbrainz/resource/record/9fba2bb8-2ee9-4c24-976c-8fa9ea43625f)
+  RepositoryRecordEntity(rdfs:label=The Essential Louis Armstrong, http://dbtune.org/musicbrainz/resource/record/c5dca6b4-76da-402e-a037-0dfa197774e4)
+  RepositoryRecordEntity(rdfs:label=The Very Best Of, http://dbtune.org/musicbrainz/resource/record/fed56cf2-fcaf-42c8-8650-16d62c503c70)
+  RepositoryRecordEntity(rdfs:label=The Very Best of Louis Armstrong, http://dbtune.org/musicbrainz/resource/record/46e2ace9-563e-4b7e-ba59-5663a91f15d7)
+  RepositoryRecordEntity(rdfs:label=The Very Best of Louis Armstrong (disc 1), http://dbtune.org/musicbrainz/resource/record/a916a1c9-1bd1-4298-9288-7b551fed6b99)
+  RepositoryRecordEntity(rdfs:label=The Wonderful World of (disc 1), http://dbtune.org/musicbrainz/resource/record/39486369-535c-4ad8-b389-6ce6d27b9f1c)
+  RepositoryRecordEntity(rdfs:label=The Wonderful World of (disc 2), http://dbtune.org/musicbrainz/resource/record/73fa12df-c501-4cff-9f7b-3248ba4e075d)
+  RepositoryRecordEntity(rdfs:label=We Have All the Time in the World, http://dbtune.org/musicbrainz/resource/record/170671aa-48db-45e9-9196-4dff7b168e48)
+  RepositoryRecordEntity(rdfs:label=What a Wonderful World, http://dbtune.org/musicbrainz/resource/record/7613c3c2-ed6f-44ab-84ba-3240dbabcb7f)
+  RepositoryRecordEntity(rdfs:label=When the Saints Go Marching In, http://dbtune.org/musicbrainz/resource/record/74933ee7-e271-477c-bc1b-a117750e1230)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Louis Armstrong, foaf:name=null, uri=urn:bluemarine:artist:517fa5e0bf55168a84aff87ca735e2bbf09a13fe):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Lucio Battisti, foaf:name=null, uri=urn:bluemarine:artist:e8825d37ab7370926792d0e70b09e2466cac47e1):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Lucio Dalla, foaf:name=null, uri=urn:bluemarine:artist:e485f25a9e673f36465e06df5ae1554c29dc5525):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ludovico Einaudi, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/fa34b363-79df-434f-a5b8-be4e6898543f):
+  RepositoryRecordEntity(rdfs:label=Divenire, http://dbtune.org/musicbrainz/resource/record/4a796be9-612c-4fec-bac6-70fc1bef8175)
+  RepositoryRecordEntity(rdfs:label=Una mattina, http://dbtune.org/musicbrainz/resource/record/5fd13a50-7aee-4338-a1da-de7322a8602b)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ludovico Einaudi, foaf:name=null, uri=urn:bluemarine:artist:41b4af96deb9419491bd66ffc91658076bd1186c):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ludwig van Beethoven, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/1f9df192-a621-4f54-8850-2c5373b7eac9):
+  RepositoryRecordEntity(rdfs:label=Beethoven: Piano Sonatas (feat. piano: Emil Gilels) (disc 8), http://dbtune.org/musicbrainz/resource/record/faab4ab2-68a3-400f-90c8-17a86090635b)
+  RepositoryRecordEntity(rdfs:label=Piano Sonata Waldstein / Les Adieux / Appassionata (Emil Gilels), http://dbtune.org/musicbrainz/resource/record/ba5a6979-28eb-4924-afb4-316ed93a4d4f)
+  RepositoryRecordEntity(rdfs:label=Piano Sonatas (Emil Gilels) (disc 7), http://dbtune.org/musicbrainz/resource/record/d3089f06-e4a5-4f1b-927e-2113c737a984)
+  RepositoryRecordEntity(rdfs:label=Symphonien / Ouvertüren (Berliner Philharmoniker feat. conductor: Herbert von Karajan) (disc 1), http://dbtune.org/musicbrainz/resource/record/ae34cda0-d2f6-48d5-8526-843b1df0e242)
+  RepositoryRecordEntity(rdfs:label=Symphonien / Ouvertüren (Berliner Philharmoniker feat. conductor: Herbert von Karajan) (disc 2), http://dbtune.org/musicbrainz/resource/record/cc9fddb7-d8a0-4281-82b3-979c65510577)
+  RepositoryRecordEntity(rdfs:label=Symphonien / Ouvertüren (Berliner Philharmoniker feat. conductor: Herbert von Karajan) (disc 3), http://dbtune.org/musicbrainz/resource/record/637ef42c-7c83-48e4-9a25-40d61882bbc5)
+  RepositoryRecordEntity(rdfs:label=Symphonien / Ouvertüren (Berliner Philharmoniker feat. conductor: Herbert von Karajan) (disc 4), http://dbtune.org/musicbrainz/resource/record/ebcdfbd2-a0fc-48a5-bec3-e4edf20fc247)
+  RepositoryRecordEntity(rdfs:label=Symphonien / Ouvertüren (Berliner Philharmoniker feat. conductor: Herbert von Karajan) (disc 5), http://dbtune.org/musicbrainz/resource/record/f5b7d0c9-edde-4f14-9ad0-d768f07a1099)
+  RepositoryRecordEntity(rdfs:label=Symphonien / Ouvertüren (Berliner Philharmoniker feat. conductor: Herbert von Karajan) (disc 6), http://dbtune.org/musicbrainz/resource/record/63a3e48a-1831-4381-9689-88bdb16544f5)
+  RepositoryRecordEntity(rdfs:label=Symphonien Nos. 4, 7 (Berliner Philharmoniker feat. conductor: Herbert von Karajan), http://dbtune.org/musicbrainz/resource/record/d8c6da45-057a-475a-ac0a-796d6520cda2)
+  RepositoryRecordEntity(rdfs:label=Symphonien Nos. 5, 6 "Pastorale" (Berliner Philharmoniker feat. conductor: Herbert von Karajan), http://dbtune.org/musicbrainz/resource/record/0b559207-272f-4192-a523-dded76ba7e65)
+  RepositoryRecordEntity(rdfs:label=The Piano Sonatas (Daniel Barenboim) (disc 4), http://dbtune.org/musicbrainz/resource/record/8262df4d-54fd-40aa-ba1b-b14133c3fddd)
+  RepositoryRecordEntity(rdfs:label=The Piano Sonatas (Daniel Barenboim) (disc 5), http://dbtune.org/musicbrainz/resource/record/9e17588b-d042-419f-933a-52182b66b4e5)
+  RepositoryRecordEntity(rdfs:label=The Piano Sonatas (Daniel Barenboim) (disc 7), http://dbtune.org/musicbrainz/resource/record/9058aa25-4472-4a2b-a0ea-f6cbf042e636)
+  RepositoryRecordEntity(rdfs:label=Violin Concerto in D major, Op. 61 (Wiener Philharmoniker feat. conductor: Kirill Kondrashin, violin: Kyung Wha Chung), http://dbtune.org/musicbrainz/resource/record/7d3d1a46-989f-4918-9671-f278bb5a4fc6)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ludwig van Beethoven, foaf:name=null, uri=urn:bluemarine:artist:05da1576d6c22bae71b66cbb86eb72caaa510e6d):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=MPB-4 & Quarteto Em Cy, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/35737db8-28db-4518-a829-e28a2729edc1):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Mantovani, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/4c566ee7-8dd4-4edc-8cbe-a86ee30feb06):
+  RepositoryRecordEntity(rdfs:label=Mr. Music..., http://dbtune.org/musicbrainz/resource/record/3211ac12-0f6a-48db-9547-1fd345149e26)
+  RepositoryRecordEntity(rdfs:label=The World of Mantovani (disc 1), http://dbtune.org/musicbrainz/resource/record/ea649fe6-830b-4d71-8a3b-321bd72dcf4b)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Maria Bethânia, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/b3998c06-04e6-4b1d-bd2a-d5b83572ae7b):
+  RepositoryRecordEntity(rdfs:label=Maria, http://dbtune.org/musicbrainz/resource/record/56e61e9b-ba0b-46da-b63d-3a837397781c)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Maria Callas, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/9dee40b2-25ad-404c-9c9a-139feffd4b57):
+  RepositoryRecordEntity(rdfs:label=Maria Callas - The Platinum Collection (Disk 1), http://dbtune.org/musicbrainz/resource/record/5130e881-874a-44dc-b5e4-f9a5a218a058)
+  RepositoryRecordEntity(rdfs:label=The Incomparable Callas, http://dbtune.org/musicbrainz/resource/record/9d14232c-6bcc-4314-b713-8beec2e25cf9)
+  RepositoryRecordEntity(rdfs:label=The Platinum Collection (disc 3), http://dbtune.org/musicbrainz/resource/record/906a9d34-11f1-4a9e-870a-314af537f818)
+  RepositoryRecordEntity(rdfs:label=The Very Best of Maria Callas, http://dbtune.org/musicbrainz/resource/record/411f0a83-2560-4119-a6d3-4a651644eb15)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Maria Callas, foaf:name=null, uri=urn:bluemarine:artist:d560b95343051120592d39bef02265160fc68a02):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Marielle Labèque, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/63601f6e-a411-4ce5-af09-fd88b7c08fb2):
+  RepositoryRecordEntity(rdfs:label=Gladrags, http://dbtune.org/musicbrainz/resource/record/46128c40-6cbf-4739-9357-80301401c0f5)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Marin Marais, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/c6ea915d-3441-48fe-b1ad-e832e1410ea7):
+  RepositoryRecordEntity(rdfs:label=Suite d'un goût Etranger : Pièces de viole du IV livre. 1717 (disc 2), http://dbtune.org/musicbrainz/resource/record/03b0b7b7-12f7-4365-b0d0-fdeae90758bc)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Massimo Faraò Trio, foaf:name=null, uri=urn:bluemarine:artist:1892c694a478302f0e1155d554f7de4ec76897aa):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Matia Bazar, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/0daeccf9-9a55-4726-a845-80b439d8e4c9):
+  RepositoryRecordEntity(rdfs:label=Aristocratica, http://dbtune.org/musicbrainz/resource/record/3a5a54f4-1504-4db2-a92e-9d41373ef735)
+  RepositoryRecordEntity(rdfs:label=Brivido caldo, http://dbtune.org/musicbrainz/resource/record/11a6973a-81bc-4068-88dc-827bffa43d4e)
+  RepositoryRecordEntity(rdfs:label=Gold, http://dbtune.org/musicbrainz/resource/record/f980f800-af26-4c88-b28b-dab26d254dd9)
+  RepositoryRecordEntity(rdfs:label=Melancholia, http://dbtune.org/musicbrainz/resource/record/23c4fef2-0b72-44f7-989a-7c2310528206)
+  RepositoryRecordEntity(rdfs:label=Souvenir (disc 1), http://dbtune.org/musicbrainz/resource/record/c87ebcb1-f20a-4886-8cd6-d9308c1232d0)
+  RepositoryRecordEntity(rdfs:label=Souvenir (disc 2), http://dbtune.org/musicbrainz/resource/record/2b02736b-d7e3-4b2c-b0e1-b3cfff331179)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Maurice Ravel, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/6fdd3b3e-1ea6-4da9-8d6f-8f8de01c133a):
+  RepositoryRecordEntity(rdfs:label=Le Tombeau de Couperin / Shéhérazade / Tzigane / Bolero (London Symphony Orchestra feat. conductor: Claudio Abbado), http://dbtune.org/musicbrainz/resource/record/ff183c58-590b-476a-90c2-d49b203cc77e)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Max Bruch, foaf:name=null, uri=urn:bluemarine:artist:32daacd24219a607802142818e37cd7a059837bd):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Melle Mel, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/2e5178d0-bf5f-42ea-a845-4423e6b39101):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Metheny, Jarrett, Corea, foaf:name=null, uri=urn:bluemarine:artist:4b8a4386c82d6098019700e000c8c9d2c2c2bebd):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Michel Petrucciani, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/2b75141c-05e9-42eb-ae63-6695d86cdc19):
+  RepositoryRecordEntity(rdfs:label=Live, http://dbtune.org/musicbrainz/resource/record/2031225c-004e-4a94-b174-153f6cd0929d)
+  RepositoryRecordEntity(rdfs:label=Michel Petrucciani, http://dbtune.org/musicbrainz/resource/record/337fb789-6a68-4b65-8ed9-aa32b733f7d6)
+  RepositoryRecordEntity(rdfs:label=Michel Plays Petrucciani, http://dbtune.org/musicbrainz/resource/record/e638c709-23bc-4cf5-b19a-f6fbec2cec6c)
+  RepositoryRecordEntity(rdfs:label=Music, http://dbtune.org/musicbrainz/resource/record/a3c9de78-e563-4a59-bcb9-0a8d98d01400)
+  RepositoryRecordEntity(rdfs:label=Playground, http://dbtune.org/musicbrainz/resource/record/74a899be-f51e-4294-8954-5c5aab3f2e11)
+  RepositoryRecordEntity(rdfs:label=Power of Three, http://dbtune.org/musicbrainz/resource/record/156a59af-886c-4168-bbca-9a68f6fbd5c9)
+  RepositoryRecordEntity(rdfs:label=Promenade With Duke, http://dbtune.org/musicbrainz/resource/record/896b7777-ce42-41c7-bb95-022914e9dcd0)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Michel Petrucciani, foaf:name=null, uri=urn:bluemarine:artist:db884d6bff45154537b437767e61a8632438acf1):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Michel Petrucciani & Lee Konitz, foaf:name=null, uri=urn:bluemarine:artist:ea9870c162db3acbe0140fe515c5bd0c105fb7f3):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Michel Warlop et son orchestre, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/9e0bec6b-086b-4492-9cb2-497e426ebe90):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Mike Oldfield, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/a1684a49-feaa-4150-b758-d9412fc59f12):
+  RepositoryRecordEntity(rdfs:label=QE2, http://dbtune.org/musicbrainz/resource/record/ae56b00e-8dc0-4fdb-91b8-70fdfbab0801)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Miles Davis, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/561d854a-6a28-4aa7-8c99-323e6ce46c2a):
+  RepositoryRecordEntity(rdfs:label="Miles Ahead", http://dbtune.org/musicbrainz/resource/record/5b933d56-b905-43c3-bc55-cc4c1796d569)
+  RepositoryRecordEntity(rdfs:label='Round About Midnight, http://dbtune.org/musicbrainz/resource/record/8e5f4ff4-28ca-4b7d-a1d5-1a6128ca3df6)
+  RepositoryRecordEntity(rdfs:label='Round About Midnight, http://dbtune.org/musicbrainz/resource/record/98bf409f-28bb-406c-a319-0271ed051b28)
+  RepositoryRecordEntity(rdfs:label='Round About Midnight (disc 2), http://dbtune.org/musicbrainz/resource/record/e151f1b6-3bdc-4103-90ee-facdebbd4435)
+  RepositoryRecordEntity(rdfs:label=1958 Miles, http://dbtune.org/musicbrainz/resource/record/642d00ae-14f9-4552-bdd1-f2f6793b416e)
+  RepositoryRecordEntity(rdfs:label=Birth of the Cool, http://dbtune.org/musicbrainz/resource/record/d2d8877d-cd68-48b3-9b06-576dccc90edf)
+  RepositoryRecordEntity(rdfs:label=E.S.P., http://dbtune.org/musicbrainz/resource/record/68736004-70d8-44b5-bfd9-01e802f0eacd)
+  RepositoryRecordEntity(rdfs:label=Filles de Kilimanjaro, http://dbtune.org/musicbrainz/resource/record/09e28be0-2f45-4d3d-a7af-2cd7944a73d3)
+  RepositoryRecordEntity(rdfs:label=Kind of Blue, http://dbtune.org/musicbrainz/resource/record/7d7ebace-0e5a-43c2-bd6d-18b5f35bed0b)
+  RepositoryRecordEntity(rdfs:label=Live in New York, http://dbtune.org/musicbrainz/resource/record/da3479ee-f939-4bbe-8362-53cbb05e7f76)
+  RepositoryRecordEntity(rdfs:label=Miles Ahead, http://dbtune.org/musicbrainz/resource/record/0d970bd4-0b21-4ff7-85f9-b7b26df3e025)
+  RepositoryRecordEntity(rdfs:label=Miles Plays for Lovers, http://dbtune.org/musicbrainz/resource/record/b8b550bc-5ffa-4169-9a0c-ec762244f798)
+  RepositoryRecordEntity(rdfs:label=Miles and Coltrane, http://dbtune.org/musicbrainz/resource/record/7f75ea06-7441-4356-ab35-7faf9e5fe26a)
+  RepositoryRecordEntity(rdfs:label=Nefertiti, http://dbtune.org/musicbrainz/resource/record/ff46563e-f23c-4b8f-89ae-b4a3ac825caa)
+  RepositoryRecordEntity(rdfs:label=Sketches of Spain, http://dbtune.org/musicbrainz/resource/record/8709a882-a7c4-4c77-9edf-744521ec4ee2)
+  RepositoryRecordEntity(rdfs:label=Sorcerer, http://dbtune.org/musicbrainz/resource/record/30562d07-82e7-4cec-a16f-b407550210ff)
+  RepositoryRecordEntity(rdfs:label=The Essential Miles Davis (disc 1), http://dbtune.org/musicbrainz/resource/record/aa293cc3-aa57-4e7e-a998-2d58b003c457)
+  RepositoryRecordEntity(rdfs:label=The Essential Miles Davis (disc 2), http://dbtune.org/musicbrainz/resource/record/65829d65-fa04-45bc-9189-8b3c4a8887c9)
+  RepositoryRecordEntity(rdfs:label=Tutu, http://dbtune.org/musicbrainz/resource/record/fa17202b-eebc-4f30-bc1f-63e3800ec9de)
+  RepositoryRecordEntity(rdfs:label=Walkin', http://dbtune.org/musicbrainz/resource/record/019aaa17-2016-4b36-afe4-aa2bdee2fdbd)
+  RepositoryRecordEntity(rdfs:label=You're Under Arrest, http://dbtune.org/musicbrainz/resource/record/1fcf7b71-4fd7-4fc4-bd16-02edfa22ccd5)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Miles Davis, foaf:name=null, uri=urn:bluemarine:artist:354b95d04dee500eda0e12bc54c5d786acca6ffa):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Miles Davis & Gil Evans, foaf:name=null, uri=urn:bluemarine:artist:3f9ee80b55cbbca9991386f3ec9357be0c43660f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Mina, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/a56f5af0-3e87-4877-b68f-390f62903381):
+  RepositoryRecordEntity(rdfs:label=Mina canta i Beatles, http://dbtune.org/musicbrainz/resource/record/af2b9cf2-35e9-4e06-bb6a-dbe863d29778)
+  RepositoryRecordEntity(rdfs:label=Minantologia (disc 2), http://dbtune.org/musicbrainz/resource/record/501ac8ff-f8eb-46e6-b7ee-c71f13129cc1)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Mina, foaf:name=null, uri=urn:bluemarine:artist:0fdada5f3c368c38fd0b24de3b1d932cff259a18):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Miriam Makeba, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/bc5c2918-4aba-4ef6-a245-100563a4487f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Modest Petrovich Moussorgski, foaf:name=null, uri=urn:bluemarine:artist:61d31ec1b6b855d175617e9d03a3adb214d863af):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Monsieur Lobster, Stereden, foaf:name=null, uri=urn:bluemarine:artist:fbd4fe90d7e3cfcee2a4910e798ad8283c5d4c6b):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Montserrat Figueras, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/361fcd46-41c5-4503-aa43-a87937583909):
+  RepositoryRecordEntity(rdfs:label=Ninna Nanna, http://dbtune.org/musicbrainz/resource/record/fb48877d-294c-4cb3-878d-1ea4e69ab870)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Moyzes Quartet, foaf:name=null, uri=urn:bluemarine:artist:820c1e00b97d63b501b766de91418dab1bc1bcf8):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Nana Caymmi, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/c5597943-f7bc-48de-b00e-4b34c9f8558c):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Nancy Sinatra, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/c2e36518-9c3b-4dcb-82ad-a3fc7fe99c67):
+  RepositoryRecordEntity(rdfs:label=The Very Best Of: 24 Great Songs, http://dbtune.org/musicbrainz/resource/record/3fdb56e3-52be-4d21-9cf9-dd5e6109088f)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Nat King Cole, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/fbe054ec-a143-4101-9e9e-64abc5ff5ac9):
+  RepositoryRecordEntity(rdfs:label=20 Golden Greats, http://dbtune.org/musicbrainz/resource/record/bf501d40-d547-4d8d-9419-9391fce1ba49)
+  RepositoryRecordEntity(rdfs:label=Embraceable You, http://dbtune.org/musicbrainz/resource/record/fa85c3a7-5fa0-4011-8bbc-be21989a9301)
+  RepositoryRecordEntity(rdfs:label=Let's Fall in Love, http://dbtune.org/musicbrainz/resource/record/aabae604-58f7-4b74-80f5-ccde3b7d3f83)
+  RepositoryRecordEntity(rdfs:label=Love Is the Thing, http://dbtune.org/musicbrainz/resource/record/8b71c143-9fb2-45c2-a8f7-619eb86b1024)
+  RepositoryRecordEntity(rdfs:label=Love Is the Thing, http://dbtune.org/musicbrainz/resource/record/91ba913c-3fa0-4c68-89d1-4bd9ec1b9f07)
+  RepositoryRecordEntity(rdfs:label=Love Is the Thing (and More), http://dbtune.org/musicbrainz/resource/record/dc694d57-3a5b-47f8-8023-f7b45eb4b31f)
+  RepositoryRecordEntity(rdfs:label=Nat King Cole (disc 3), http://dbtune.org/musicbrainz/resource/record/20baaac1-bde9-47b5-9240-70a1cb332484)
+  RepositoryRecordEntity(rdfs:label=Night Lights, http://dbtune.org/musicbrainz/resource/record/57ed39d5-3ba2-4dee-855d-2b7edc193e63)
+  RepositoryRecordEntity(rdfs:label=The Best Of, http://dbtune.org/musicbrainz/resource/record/077e2197-3073-4016-b627-e91d007fa253)
+  RepositoryRecordEntity(rdfs:label=The Christmas Song, http://dbtune.org/musicbrainz/resource/record/056d82e5-cdd3-4548-9bbd-d5b7f599340f)
+  RepositoryRecordEntity(rdfs:label=The Complete Nat King Cole, http://dbtune.org/musicbrainz/resource/record/c68a90fe-34a3-4de7-9b94-c46dd9938145)
+  RepositoryRecordEntity(rdfs:label=The Greatest Hits, http://dbtune.org/musicbrainz/resource/record/d32657ae-c765-45a8-85dc-b9efaaf59c24)
+  RepositoryRecordEntity(rdfs:label=The Hit Collection, http://dbtune.org/musicbrainz/resource/record/432e5974-d7ca-4386-9221-7fd9e50df244)
+  RepositoryRecordEntity(rdfs:label=The Legendary Nat King Cole, http://dbtune.org/musicbrainz/resource/record/898f851e-14d2-4e4c-ae66-86b3d131a822)
+  RepositoryRecordEntity(rdfs:label=The Nat King Cole Story (disc 1), http://dbtune.org/musicbrainz/resource/record/bc2f0ac6-2d13-47fe-a92c-76e332386b46)
+  RepositoryRecordEntity(rdfs:label=The Nat King Cole Story (disc 2), http://dbtune.org/musicbrainz/resource/record/52e8c45f-5c64-4fca-bca7-74afbc5289f8)
+  RepositoryRecordEntity(rdfs:label=The Unforgettable Nat King Cole, http://dbtune.org/musicbrainz/resource/record/531ff0ab-7522-42c1-a0b0-725a4688427f)
+  RepositoryRecordEntity(rdfs:label=Unforgettable, http://dbtune.org/musicbrainz/resource/record/396c0f19-ef1f-42d5-92e1-7c8b9df9883a)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Natalie Cole, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/eb45032c-80da-469c-be20-1d09f08ef37f):
+  RepositoryRecordEntity(rdfs:label=Love Songs, http://dbtune.org/musicbrainz/resource/record/39f23c70-0f79-489e-bd6e-cb7707bbce31)
+  RepositoryRecordEntity(rdfs:label=Unforgettable: With Love, http://dbtune.org/musicbrainz/resource/record/fadb3d1d-6a98-4265-951e-0f992fdb1c1e)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Natalie Cole, foaf:name=null, uri=urn:bluemarine:artist:c4715a8f91dd7c8020025259275df8bb89acc5cb):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Natalie Haas, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/d8c26c47-7275-4ceb-8b43-2d17e2bcc24c):
+  RepositoryRecordEntity(rdfs:label=Fire & Grace, http://dbtune.org/musicbrainz/resource/record/0410bfd1-c025-4b33-bfb9-d9cd851bdd3d)
+  RepositoryRecordEntity(rdfs:label=In the Moment, http://dbtune.org/musicbrainz/resource/record/0acfea82-fe92-4af3-8e43-d537c4cfdd57)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Nathan Milstein, foaf:name=null, uri=urn:bluemarine:artist:1d1b2f97fc858b70cf8e9cf40cdc7740ef23297a):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Neville Marriner: Academy Of St. Martin In The Fields, foaf:name=null, uri=urn:bluemarine:artist:9520bf3e565c2b7c4f22565f4605fa3860ee58cc):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=New Budapest Quartet, foaf:name=null, uri=urn:bluemarine:artist:91376f5fa95d16d249056c54fb644364a6c8cebf):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=New York's Ensemble for Early Music - Frederick Renz director, foaf:name=null, uri=urn:bluemarine:artist:d2d6b4a9979f22c79f9ab0f61547f42dcc0c654a):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Niccolò Paganini, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/d581b2f2-f945-4566-a249-2d0171466993):
+  RepositoryRecordEntity(rdfs:label=Paganini: 24 Capricci (Shlomo Mintz), http://dbtune.org/musicbrainz/resource/record/d68e16b1-31ec-40ec-990b-ed49a7483f17)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Niccolò Paganini, foaf:name=null, uri=urn:bluemarine:artist:ad6d536da8284cab0530cda01f636c37a4eb6c11):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Nikolai Rimsky-Korsakow, foaf:name=null, uri=urn:bluemarine:artist:beae0b723c2ba0c30db26c2e3adcdb53aa09a1e4):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Nina Simone, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/2944824d-4c26-476f-a981-be849081942f):
+  RepositoryRecordEntity(rdfs:label=Gin House Blues, http://dbtune.org/musicbrainz/resource/record/a5858be8-6a1f-476e-9c9d-f9c5219370a2)
+  RepositoryRecordEntity(rdfs:label=Little Girl Blue, http://dbtune.org/musicbrainz/resource/record/12d83639-d71b-48b1-bba1-4c34f093a8b6)
+  RepositoryRecordEntity(rdfs:label=Little Girl Blue, http://dbtune.org/musicbrainz/resource/record/ad146c56-5647-4644-a8cf-62ae64d68fd5)
+  RepositoryRecordEntity(rdfs:label=Ne Me Quitte Pas, http://dbtune.org/musicbrainz/resource/record/638f317a-e615-4e9a-b3b6-2450e2423fd5)
+  RepositoryRecordEntity(rdfs:label=Nina's Back, http://dbtune.org/musicbrainz/resource/record/a33540b2-0512-4558-b50b-b48db8538595)
+  RepositoryRecordEntity(rdfs:label=The Blues, http://dbtune.org/musicbrainz/resource/record/e2d67320-a8e6-4331-a6bf-06492a241c6a)
+  RepositoryRecordEntity(rdfs:label=The Essential Collection (disc 2), http://dbtune.org/musicbrainz/resource/record/10271f49-3f21-4936-bc4c-68b00e25c763)
+  RepositoryRecordEntity(rdfs:label=The Essential Nina Simone, http://dbtune.org/musicbrainz/resource/record/9278cad2-0e1b-43ed-a5fd-325985b0073e)
+  RepositoryRecordEntity(rdfs:label=Verve Jazz Masters 58: Nina Simone Sings Nina, http://dbtune.org/musicbrainz/resource/record/a7ca3d7e-4d6f-494e-89a6-d25ddacdddd1)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Nina Simone, foaf:name=null, uri=urn:bluemarine:artist:37875ca610f3bcfef82b14bb757a48b22f1b4076):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Nino Rota, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/d52ac009-4ed5-4d01-97d5-8280bb7dd460):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Oliver Onions, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/26abed3a-65f3-4484-83b0-117d0fe29278):
+  RepositoryRecordEntity(rdfs:label=Greatest Hits, http://dbtune.org/musicbrainz/resource/record/2549484b-65b9-44ea-aec8-f6ff72de0997)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Olivia Newton-John, foaf:name=null, uri=urn:bluemarine:artist:86f0b5ac06c923be5c61a68e7b24b5fc74e8b712):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ottorino Respighi, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/788c380d-247b-42f0-b7a9-64881e1f0fd9):
+  RepositoryRecordEntity(rdfs:label=Pini di Roma / Fontane di Roma / Feste Romane (disc 1), http://dbtune.org/musicbrainz/resource/record/c2f9440d-9ceb-4484-939d-633ea037c8ce)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ottorino Respighi, foaf:name=null, uri=urn:bluemarine:artist:2bb820a3082d107020ac66537e85bdb160d3e413):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Pat Metheny, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/7daac7f9-8fcc-485f-a14f-f8091d98cf25):
+  RepositoryRecordEntity(rdfs:label=80/81 (disc 2), http://dbtune.org/musicbrainz/resource/record/ec5c408a-3a20-40d2-b96e-e5b189dacff9)
+  RepositoryRecordEntity(rdfs:label=Beyond the Missouri Sky (Short Stories), http://dbtune.org/musicbrainz/resource/record/2517bcb6-89fd-4780-b497-f46bfd49030d)
+  RepositoryRecordEntity(rdfs:label=Bright Size Life, http://dbtune.org/musicbrainz/resource/record/0b6a369e-12d2-4e88-924f-747bd295468a)
+  RepositoryRecordEntity(rdfs:label=Bright Size Life, http://dbtune.org/musicbrainz/resource/record/655219aa-f312-445d-9182-5af2d23ab65e)
+  RepositoryRecordEntity(rdfs:label=Jim Hall & Pat Metheny, http://dbtune.org/musicbrainz/resource/record/0b93acfa-676a-4911-9798-4a16939f1a3f)
+  RepositoryRecordEntity(rdfs:label=New Chautauqua, http://dbtune.org/musicbrainz/resource/record/df8a9dc4-4d71-4f9e-9195-2179162c71d6)
+  RepositoryRecordEntity(rdfs:label=Rejoicing, http://dbtune.org/musicbrainz/resource/record/096d9cca-d093-4a33-9651-8ddd5a62e09b)
+  RepositoryRecordEntity(rdfs:label=Secret Story, http://dbtune.org/musicbrainz/resource/record/a5e8cd65-ae9a-40de-bb84-cab40402d58b)
+  RepositoryRecordEntity(rdfs:label=Selected Recordings, http://dbtune.org/musicbrainz/resource/record/bfba514f-4de7-426c-8d29-3825c8e0ad4d)
+  RepositoryRecordEntity(rdfs:label=Tokyo Day Trip Live (feat. Christian McBride & Antonio Sanchez), http://dbtune.org/musicbrainz/resource/record/1faf8528-35a2-4a0d-a4bb-4d72a53deb05)
+  RepositoryRecordEntity(rdfs:label=Watercolors, http://dbtune.org/musicbrainz/resource/record/aa57b4d5-a250-4a77-bece-3a5a8f7f0db1)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Pat Metheny, foaf:name=null, uri=urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Pat Metheny & Anna Maria Jopek, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/1645f335-2367-427d-8e2d-ad206946a8eb):
+  RepositoryRecordEntity(rdfs:label=Upojenie, http://dbtune.org/musicbrainz/resource/record/4e29412f-f202-48ee-8a44-0b70e99ab1a8)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Pat Metheny Group, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/66a7f1f8-0ad6-4e3a-9346-a643e2739a8c):
+  RepositoryRecordEntity(rdfs:label=First Circle, http://dbtune.org/musicbrainz/resource/record/1095fab2-8acf-40c1-9d30-dd955500d6d4)
+  RepositoryRecordEntity(rdfs:label=Imaginary Day, http://dbtune.org/musicbrainz/resource/record/c0efe3b9-9d3d-49d3-b13f-5aaed4e3dc1d)
+  RepositoryRecordEntity(rdfs:label=Letter From Home, http://dbtune.org/musicbrainz/resource/record/19721ca4-81da-4a29-bae6-97dc46334d4b)
+  RepositoryRecordEntity(rdfs:label=Speaking of Now, http://dbtune.org/musicbrainz/resource/record/f5c8304f-cc1f-49bf-80e0-4dc7472f58ac)
+  RepositoryRecordEntity(rdfs:label=Still Life (Talking), http://dbtune.org/musicbrainz/resource/record/85a9a3d8-955c-451c-827a-74b6507fb91d)
+  RepositoryRecordEntity(rdfs:label=The Falcon and the Snowman, http://dbtune.org/musicbrainz/resource/record/0319e53a-4dfa-4416-8bd6-ed96558cd313)
+  RepositoryRecordEntity(rdfs:label=The Way Up, http://dbtune.org/musicbrainz/resource/record/205493d4-93c4-4f39-b792-6714a8a087f6)
+  RepositoryRecordEntity(rdfs:label=Travels (disc 1), http://dbtune.org/musicbrainz/resource/record/7c2b1fd2-d590-4052-b351-b73ad9b0aa52)
+  RepositoryRecordEntity(rdfs:label=Travels (disc 2), http://dbtune.org/musicbrainz/resource/record/abbbf4a0-7660-405a-ab28-780476c69171)
+  RepositoryRecordEntity(rdfs:label=We Live Here, http://dbtune.org/musicbrainz/resource/record/2bb3acf8-1bd5-44c4-b373-d3c7f8962b89)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Pat Metheny Group, foaf:name=null, uri=urn:bluemarine:artist:36f2cf1d8b7481e2b674873ea7e69f17e655b4e1):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Pat Metheny Trio, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/6a8bd368-c0a9-4e15-9a97-154d00e6a751):
+  RepositoryRecordEntity(rdfs:label=Trio 99 -> 00, http://dbtune.org/musicbrainz/resource/record/5fdfc31c-b532-41cc-a49f-9bad2b014d52)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Patrick et son orchestre, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/29bee9b2-4149-47d5-9704-c6aa5fb7dedd):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Patrizia Bovi E Gilberte Casabianca, foaf:name=null, uri=urn:bluemarine:artist:6f63b80770339fb2ff46bfecefa695bfb5c28d7e):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Paul Machlis, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c):
+  RepositoryRecordEntity(rdfs:label=Legacy of the Scottish Fiddle, http://dbtune.org/musicbrainz/resource/record/67627ee1-4993-4c16-a7d9-2f6d95c541dc)
+  RepositoryRecordEntity(rdfs:label=Skyedance, http://dbtune.org/musicbrainz/resource/record/8e7a486d-e31f-429f-b45d-cab0fadcc005)
+  RepositoryRecordEntity(rdfs:label=The Road North, http://dbtune.org/musicbrainz/resource/record/75af3cb5-26af-4adf-a623-4c16f8116311)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Paul Schoenfield, foaf:name=null, uri=urn:bluemarine:artist:e2614374c6ad176461291e08c400693806e18e3b):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Pedro Paulo Castro-Neves & Michel Legrand, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/90df35ed-c221-44ea-95fb-4e65b4085981):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Peggy Lee, foaf:name=null, uri=urn:bluemarine:artist:6a3b67b6ee19fee2c78feeea93d6be7fa0169dc4):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Perosi, Lorenzo, foaf:name=null, uri=urn:bluemarine:artist:0c38ed5b89c985229200e9fd28c7b45076795b1f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Perry Como, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/0182474b-8a1d-46d0-9d0f-e6df353335ea):
+  RepositoryRecordEntity(rdfs:label=Legendary (disc 3), http://dbtune.org/musicbrainz/resource/record/2bb6da15-3439-46d5-baf8-ed3eb2448892)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Peter Nero, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/bc4ca610-333b-424b-8c3c-c724e6327b62):
+  RepositoryRecordEntity(rdfs:label=Great Songs From the Movies, http://dbtune.org/musicbrainz/resource/record/670d6fa3-2c7a-4519-a112-957d58a3af3d)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Peter Nero, foaf:name=null, uri=urn:bluemarine:artist:6811c9defe82bd1663b7994ba06ef6aa4554b0d4):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Philippe Brun "Jam Band", foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/fb04c57d-9e95-4348-b572-fc5b839c2ae7):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Philippe Foulon, foaf:name=null, uri=urn:bluemarine:artist:6e8d5c3fcc6688e575ca9026837ecad1e253f05b):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Pierre Del Vescovo/Horn, Bamberger Symphoniker/Theodor Gusch, foaf:name=null, uri=urn:bluemarine:artist:cf8175e1c8d379728f9ca0c286e2684490300b2a):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Pierre Del Vescovo/Horn, Jean Hubeau/Piano, foaf:name=null, uri=urn:bluemarine:artist:11c8f71822ae609cd238d64deb828fb6cf3be33e):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Pierre Del Vescovo; Jean-François Paillard: Paillard Chamber Orchestra, foaf:name=null, uri=urn:bluemarine:artist:1dc5acd6297e44f22fcb3872c902a4f36c1eaabd):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Pinchas Zukerman, Midori, foaf:name=null, uri=urn:bluemarine:artist:c12a755995122e8d4a27445b87681827dbe04d2b):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Pino Daniele, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/5b1633c8-cb78-4d85-a7d1-a6d145d8d472):
+  RepositoryRecordEntity(rdfs:label=Non calpestare i fiori nel deserto, http://dbtune.org/musicbrainz/resource/record/bfaf1501-9420-476a-800f-f55a35a18b0b)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Pucci Amanda Jhones, foaf:name=null, uri=urn:bluemarine:artist:e95e296e4ba154a520926bdd0f01dce9bdf40254):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Pyotr Il'yich Tchaikovsky, foaf:name=null, uri=urn:bluemarine:artist:a157e5e20f995807e1ae067f20d4eadb46b1b48a):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Quarteto em Cy, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/592a91ea-aa85-452a-8d10-e538c315765a):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Quarteto em Cy, foaf:name=null, uri=urn:bluemarine:artist:411ff104f5195f3e44e565bf4ce57e8d8e600aa0):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Quintette du Hot Club de France, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/ee55e4e8-807d-49b1-8470-d1c0898ed7cb):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=R_Goldstein Schoepflin Ganong, foaf:name=null, uri=urn:bluemarine:artist:6a03551071595ea5ab2909f1a6394eb2e965ab65):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Randy Crawford, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/614e392a-0d63-48a2-bbd5-03265c407bd1):
+  RepositoryRecordEntity(rdfs:label=The Very Best of Randy Crawford, http://dbtune.org/musicbrainz/resource/record/f80dfbe9-a9cf-40be-a259-6cdf0d8c6e63)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Randy Crawford, foaf:name=null, uri=urn:bluemarine:artist:429e5ce83dfc6e7fc64d1d77adf1ea04a18273d1):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Randy Crawford & Joe Sample, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/974f2396-37a9-4e63-b13b-8462a806b3b2):
+  RepositoryRecordEntity(rdfs:label=Feeling Good, http://dbtune.org/musicbrainz/resource/record/4d5ea06e-9575-4d33-b7d0-66ad56cb65c2)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Randy Edelman, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/7cbdfc61-30a9-4f17-b2fc-dcae3757adba):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=René Marie, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/12822d4f-4607-4f1d-ab16-d6bacc27cafe):
+  RepositoryRecordEntity(rdfs:label=How Can I Keep From Singing?, http://dbtune.org/musicbrainz/resource/record/9f1b93de-f960-4ef7-8a60-155c7a7615c1)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Richard Strauss, foaf:name=null, uri=urn:bluemarine:artist:ed0067b95e98664b036494d886b7f5a8ac96ba2f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Ripchord, foaf:name=null, uri=urn:bluemarine:artist:80693a0f5e430d6a81ff3f65da8ea88fcda74104):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Robert Schumann, foaf:name=null, uri=urn:bluemarine:artist:d3964826e3b6ca9c2ae0c8c252cff3dfd785d20d):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Roberto Prosseda, foaf:name=null, uri=urn:bluemarine:artist:19ba0540603684805c2b26eb86c58e9986a0aab7):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Rondò Veneziano, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/940a5867-a2e5-4af5-ae05-91cf63bd0b52):
+  RepositoryRecordEntity(rdfs:label=Arabesque, http://dbtune.org/musicbrainz/resource/record/b6c1c2f3-3572-4800-8fc1-92e84fdf6c60)
+  RepositoryRecordEntity(rdfs:label=Barocco, http://dbtune.org/musicbrainz/resource/record/af245bd6-3f3d-4f7d-bbe5-5b06ffeb8966)
+  RepositoryRecordEntity(rdfs:label=Magica melodia, http://dbtune.org/musicbrainz/resource/record/6e16c7e1-cb57-4aca-b8c1-fa55170ab362)
+  RepositoryRecordEntity(rdfs:label=Masquerade, http://dbtune.org/musicbrainz/resource/record/1507f62c-b4a3-4a91-b055-241ef90655c6)
+  RepositoryRecordEntity(rdfs:label=Musica fantasia, http://dbtune.org/musicbrainz/resource/record/14ef7fdc-0f01-4334-a0a2-453de985269a)
+  RepositoryRecordEntity(rdfs:label=Poesia di Venezia, http://dbtune.org/musicbrainz/resource/record/c2dc5888-f122-4818-9763-c9ae86a74355)
+  RepositoryRecordEntity(rdfs:label=Via dell'amore, http://dbtune.org/musicbrainz/resource/record/9b78dee9-62e5-44d4-b7ce-8001230f8d8c)
+  RepositoryRecordEntity(rdfs:label=Visioni di Venezia, http://dbtune.org/musicbrainz/resource/record/a4b20fc5-3185-4037-8b1e-21ac85c0d2c0)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Rosa Passos, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/a9d531af-d51d-4c18-98b4-2a2d67fc3233):
+  RepositoryRecordEntity(rdfs:label=Rosa Passos Canta Antonio Carlos Jobim, http://dbtune.org/musicbrainz/resource/record/b2ce4f51-7f75-485b-ad7c-6adf15e58f37)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Rosinha de Valença, foaf:name=null, uri=urn:bluemarine:artist:62b66ed38b70f6f7518dd522a71ccd752c3d5579):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=SILHOUETTE, foaf:name=null, uri=urn:bluemarine:artist:efe19474804802e7dd29a6ecc8974138af3a2dfe):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Sacha Distel, foaf:name=null, uri=urn:bluemarine:artist:175221af4a6eb96e6e08754adabbcd21d3e2d815):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Sade, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/67930b3e-e00b-469f-8c74-fd69f20522ec):
+  RepositoryRecordEntity(rdfs:label=Stronger Than Pride, http://dbtune.org/musicbrainz/resource/record/e33db4aa-bbe9-44a9-8398-a04225ddd068)
+  RepositoryRecordEntity(rdfs:label=The Best of Sade, http://dbtune.org/musicbrainz/resource/record/aa916dc0-dee1-4e72-9883-dea2862de436)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Salvatore Accardo; Claudio Abbado: London Symphony Orchestra, foaf:name=null, uri=urn:bluemarine:artist:5dd1c1724a1c2659c28de37d873f9c125ae347c8):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Sam Pottle, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/5743fb4f-5c5b-42b4-973e-5e233a286d4a):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Samuel Barber, foaf:name=null, uri=urn:bluemarine:artist:8f09a0cfb7c6bcca06e1b0bd80dc5442f95718ce):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Sandie Shaw, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/16963107-9288-43a2-946c-81de2f5eddfa):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Santa Esmeralda, foaf:name=null, uri=urn:bluemarine:artist:35eea021925013a5fd8e23b7b4b4ca31032fa0fb):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Santana, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/9a3bf45c-347d-4630-894d-7cf3e8e0b632):
+  RepositoryRecordEntity(rdfs:label=Oye Como Va (disc 1), http://dbtune.org/musicbrainz/resource/record/63ef8394-449c-4006-89f1-ac8df08c3ac9)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Santana, foaf:name=null, uri=urn:bluemarine:artist:06a8b12a6ecc21db2e361d26fd47586a7087d414):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Santo & Johnny, foaf:name=null, uri=urn:bluemarine:artist:edf9f341ac564489f9ce7d6ca314a0923a32a5e9):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Santo & Johnny-Il Meglio, foaf:name=null, uri=urn:bluemarine:artist:5a3532aca97cb0c3f8f7511a418ecd86e4954faf):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Santo E Johnny, foaf:name=null, uri=urn:bluemarine:artist:85e20a8a754192bda2d1a2c2571dd11bc6ff14b1):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Sarah Jane Morris, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/9cf82d0f-85fd-4b67-b96c-d9316542fab4):
+  RepositoryRecordEntity(rdfs:label=Sarah Jane Morris, http://dbtune.org/musicbrainz/resource/record/335d7d49-e76f-44a3-93cc-578d762ded62)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Sarah Vaughan, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/351d8bdf-33a1-45e2-8c04-c85fad20da55):
+  RepositoryRecordEntity(rdfs:label=After Hours, http://dbtune.org/musicbrainz/resource/record/6f9eb063-4e64-45c3-8bcc-8a28207a1386)
+  RepositoryRecordEntity(rdfs:label=All Time Greats, http://dbtune.org/musicbrainz/resource/record/6fc8cea0-b02f-4a2a-945c-a8aea4ff0934)
+  RepositoryRecordEntity(rdfs:label=First Class Jazz 17, http://dbtune.org/musicbrainz/resource/record/40146441-d70f-4247-b05c-50e78d58cb2c)
+  RepositoryRecordEntity(rdfs:label=Music for Lovers, http://dbtune.org/musicbrainz/resource/record/b3b4465a-02fb-4300-bee0-3f447d127fd5)
+  RepositoryRecordEntity(rdfs:label=Sarah Sings Soulfully, http://dbtune.org/musicbrainz/resource/record/7eaefe1f-25f9-4673-be80-d15c503a5edf)
+  RepositoryRecordEntity(rdfs:label=Sweet 'n' Sassy, http://dbtune.org/musicbrainz/resource/record/67696e55-eb8f-4e8a-ba63-c140c56e0727)
+  RepositoryRecordEntity(rdfs:label=The Benny Carter Sessions, http://dbtune.org/musicbrainz/resource/record/5e6a942f-4967-4b98-bf09-5bde6b32e22d)
+  RepositoryRecordEntity(rdfs:label=The Best of Sarah Vaughan, http://dbtune.org/musicbrainz/resource/record/ed7b2eb5-5a04-46a5-95f9-fcedc0171064)
+  RepositoryRecordEntity(rdfs:label=The Complete Roulette Sarah Vaughan Studio Sessions (disc 1), http://dbtune.org/musicbrainz/resource/record/4bce627c-0f4d-4e79-a122-c8dfdb547cf5)
+  RepositoryRecordEntity(rdfs:label=The Complete Roulette Sarah Vaughan Studio Sessions (disc 2), http://dbtune.org/musicbrainz/resource/record/0470f01f-718e-4838-ae4b-1b06841449ca)
+  RepositoryRecordEntity(rdfs:label=The Complete Roulette Sarah Vaughan Studio Sessions (disc 3), http://dbtune.org/musicbrainz/resource/record/6f540421-e6b6-4ddf-9cd3-f3ba42553a4e)
+  RepositoryRecordEntity(rdfs:label=The Complete Roulette Sarah Vaughan Studio Sessions (disc 4), http://dbtune.org/musicbrainz/resource/record/f77de565-ef14-4bd8-b647-d1257cb8776b)
+  RepositoryRecordEntity(rdfs:label=The Complete Roulette Sarah Vaughan Studio Sessions (disc 5), http://dbtune.org/musicbrainz/resource/record/b1def979-bdc5-46f4-b2cf-62a477df4827)
+  RepositoryRecordEntity(rdfs:label=The Complete Roulette Sarah Vaughan Studio Sessions (disc 6), http://dbtune.org/musicbrainz/resource/record/695aa29a-3bb4-4338-bc66-4a9007ac5351)
+  RepositoryRecordEntity(rdfs:label=The Complete Roulette Sarah Vaughan Studio Sessions (disc 7), http://dbtune.org/musicbrainz/resource/record/d75c49a2-293b-4b47-aed1-05c370dc49d9)
+  RepositoryRecordEntity(rdfs:label=The Complete Roulette Sarah Vaughan Studio Sessions (disc 8), http://dbtune.org/musicbrainz/resource/record/5e85bceb-4514-4938-9178-2417dc3676fb)
+  RepositoryRecordEntity(rdfs:label=The Complete Sarah Vaughan on Mercury, Volume 1: Great Jazz Years: 1954-1956 (disc 3), http://dbtune.org/musicbrainz/resource/record/eac8de86-f2fd-40d0-9a1c-2656f652f115)
+  RepositoryRecordEntity(rdfs:label=The Roulette Years, http://dbtune.org/musicbrainz/resource/record/e2f114ef-9d0e-4d39-92ab-6211df6eab95)
+  RepositoryRecordEntity(rdfs:label=You're Mine You, http://dbtune.org/musicbrainz/resource/record/fa25580a-c104-4b6e-b38d-7cab7515136c)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Sarah Vaughan, foaf:name=null, uri=urn:bluemarine:artist:caa923263bb0b63c8b5abf4fac37db235fd06781):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Sarah Vaughan & Sevend Saaby Choir, foaf:name=null, uri=urn:bluemarine:artist:13c41460ef5134e5d41d41f09278cedcd498b514):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Sarah Vaughan and Lester Young, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af):
+  RepositoryRecordEntity(rdfs:label=One Night Stand: The Town Hall Concert 1947, http://dbtune.org/musicbrainz/resource/record/d9fd214c-86e5-400d-b829-45ed43086b8c)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Scottish Chamber Orchestra, foaf:name=null, uri=urn:bluemarine:artist:b106c779addff77b80350dfc376fcdb9cb42f212):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Seiji Ozawa: Boston Symphony Orchestra, foaf:name=null, uri=urn:bluemarine:artist:9273df63768a5a2f382e1885d889c44275fb16cf):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Sergei Levitin, St Petersburg Kirov Orchestra & Valery Gergiev, foaf:name=null, uri=urn:bluemarine:artist:8af7d185d14f08c6b8e15acbca86ed58c17a64cc):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Sheryl Crow, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/80ccfede-c258-4575-a7ad-c982e9932e0f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Shirley Kirsten, foaf:name=null, uri=urn:bluemarine:artist:128ebfff8b051db3df9f0b2821c774b88e02994a):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Shivaree, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/1692e094-48b6-4d0e-8555-43ca0bd42467):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Silvio César & Tom Jobim, foaf:name=null, uri=urn:bluemarine:artist:c8eac71c5a6c190e05d025f7eba48c9ee24574ce):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Smithsonian Chamber Players, foaf:name=null, uri=urn:bluemarine:artist:9f45128f4533a0875727efb8ea632658b0e52e92):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Sonny Simmons, foaf:name=null, uri=urn:bluemarine:artist:b1a3dc05f2c6675f7220bc93158c695449433949):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Souvenirs de Django Reinhardt, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/bc8ebdc1-0224-47f9-91d6-491821039332):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=St Petersburg Kirov Orchestra & Valery Gergiev, foaf:name=null, uri=urn:bluemarine:artist:1dd96f1ceee460ed45e92ff2972a6754423f0b6f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Stan Getz, foaf:name=null, uri=urn:bluemarine:artist:8a3ea5cab2cf7aae54b28e2d270acdf8025f2e40):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Stefano Bollani, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/a781f9c2-0e60-4862-b1bc-0b9272151014):
+  RepositoryRecordEntity(rdfs:label=Carioca, http://dbtune.org/musicbrainz/resource/record/6095a630-7b62-4063-8c31-fb2ab4fad57c)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Stevie Wonder, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/1ee18fb3-18a6-4c7f-8ba0-bc41cdd0462e):
+  RepositoryRecordEntity(rdfs:label=Song Review: A Greatest Hits Collection, http://dbtune.org/musicbrainz/resource/record/007a02a7-c176-4658-bd21-e4552c8f6288)
+  RepositoryRecordEntity(rdfs:label=Songs in the Key of Life (disc 1), http://dbtune.org/musicbrainz/resource/record/e3a0afcc-79fa-44da-ab29-0da9973eac24)
+  RepositoryRecordEntity(rdfs:label=Songs in the Key of Life (disc 2), http://dbtune.org/musicbrainz/resource/record/5d3014fb-6761-4626-ab83-985d74177109)
+  RepositoryRecordEntity(rdfs:label=Songs in the Key of Life (disc 2), http://dbtune.org/musicbrainz/resource/record/edf99004-eaca-4295-b2f9-581891ba044f)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Stevie Wonder, foaf:name=null, uri=urn:bluemarine:artist:3493fe1d48187aca11bb4449efb660a8e0301a80):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Sting, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/7944ed53-2a58-4035-9b93-140a71e41c34):
+  RepositoryRecordEntity(rdfs:label=Complete Chicago Sessions, http://dbtune.org/musicbrainz/resource/record/f6f0ff19-91e3-44fb-afb0-f23cb2124910)
+  RepositoryRecordEntity(rdfs:label=Sting at the Movies, http://dbtune.org/musicbrainz/resource/record/da3c49d5-5ac8-469d-8d8f-866eaec3c788)
+  RepositoryRecordEntity(rdfs:label=The Soul Cages, http://dbtune.org/musicbrainz/resource/record/13f418fd-6251-47b9-927d-79fc2d0f11dd)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Stéphane Grappelli, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/bfc03211-a3a2-4700-8fa3-00968c02c5d0):
+  RepositoryRecordEntity(rdfs:label=Le Hot Club De France, Volume 4, http://dbtune.org/musicbrainz/resource/record/dc92cb23-7df8-4f2d-882b-9267889dacf2)
+  RepositoryRecordEntity(rdfs:label=The Quintessential Django Reinhardt & Stéphane Grappelli, http://dbtune.org/musicbrainz/resource/record/3daded3c-4de2-4083-a360-481610f1b437)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Stéphane Grappelli & Michel Petrucciani, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/40eca300-9416-4cc9-81a6-218a40d55a02):
+  RepositoryRecordEntity(rdfs:label=Flamingo, http://dbtune.org/musicbrainz/resource/record/f7fac112-6802-44fa-86d7-53e9bca2d230)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Sviatoslav Richter, foaf:name=null, uri=urn:bluemarine:artist:74e40a0fd7a1a58006b7f75afce17f87d9bdd710):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Swing Out Sister, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/d12b5853-71eb-41d9-8d18-a4259477848a):
+  RepositoryRecordEntity(rdfs:label=Breakout, http://dbtune.org/musicbrainz/resource/record/1b67b8bd-d941-4950-82fc-e6f96a574c07)
+  RepositoryRecordEntity(rdfs:label=It's Better to Travel, http://dbtune.org/musicbrainz/resource/record/1200f783-0797-4751-9336-4f232b18f1a3)
+  RepositoryRecordEntity(rdfs:label=It's Better to Travel, http://dbtune.org/musicbrainz/resource/record/1a15d583-5dd0-4c27-9862-a55e8b23c8b3)
+  RepositoryRecordEntity(rdfs:label=Kaleidoscope World, http://dbtune.org/musicbrainz/resource/record/4c7b73d6-7228-4255-8626-ad7ef859651f)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Swing Out Sister, foaf:name=null, uri=urn:bluemarine:artist:e91dab896a4fd5531c8692b6210eef714a11d35b):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Szymon Goldberg, Radu Lupu, foaf:name=null, uri=urn:bluemarine:artist:a5e99a4717132486f3af7237bd7d0233e70e998b):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Tangerine Dream, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/23d8426c-18c7-46e6-a51d-7395bd43c641):
+  RepositoryRecordEntity(rdfs:label=Antique Dreams, http://dbtune.org/musicbrainz/resource/record/5d24f4b8-4ebd-4f01-946f-91cbc934fa60)
+  RepositoryRecordEntity(rdfs:label=Canyon Dreams, http://dbtune.org/musicbrainz/resource/record/010d839c-05c8-4016-b801-609d8f1b6ec5)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Tangerine Dream, foaf:name=null, uri=urn:bluemarine:artist:633a93683e265ef2f10c75a64a684ee69e20b617):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Tears for Fears, foaf:name=null, uri=urn:bluemarine:artist:b1eaa0a303a180c7a0e6e0b515756ca134431abe):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The 5th Dimension, foaf:name=null, uri=urn:bluemarine:artist:dbb50e3a4a8b14a890113d9b7c732c951a446208):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Ambrosian Singers, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Beatles, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d):
+  RepositoryRecordEntity(rdfs:label=1, http://dbtune.org/musicbrainz/resource/record/344362ed-39c0-40bb-b55f-2c9627e5d767)
+  RepositoryRecordEntity(rdfs:label=1962-1970, http://dbtune.org/musicbrainz/resource/record/4401c938-928c-4174-9cb1-f1595df587a5)
+  RepositoryRecordEntity(rdfs:label=A Hard Day's Night, http://dbtune.org/musicbrainz/resource/record/ca2b9a8f-3521-4f39-b942-5c4c50eecdce)
+  RepositoryRecordEntity(rdfs:label=Can't Buy Me Love, http://dbtune.org/musicbrainz/resource/record/d29aa696-66da-457b-9dd3-47b8db1cfb95)
+  RepositoryRecordEntity(rdfs:label=Eight Days a Week, http://dbtune.org/musicbrainz/resource/record/e64257e5-bac7-42c2-8bf5-b6d671ee51d3)
+  RepositoryRecordEntity(rdfs:label=Paperback Writer / Rain, http://dbtune.org/musicbrainz/resource/record/6d61a444-5592-4cbe-a2a7-552f0bc05a80)
+  RepositoryRecordEntity(rdfs:label=Perfect Collection, Volume 9: 1967 & Others, http://dbtune.org/musicbrainz/resource/record/010c5b2b-4765-42a8-8451-672f480f3271)
+  RepositoryRecordEntity(rdfs:label=Revolver, http://dbtune.org/musicbrainz/resource/record/63943c8a-24c2-466d-854a-47a23bb3e9d4)
+  RepositoryRecordEntity(rdfs:label=The Ballad of John and Yoko, http://dbtune.org/musicbrainz/resource/record/42e9c934-20d8-4621-914a-1dd08f39d738)
+  RepositoryRecordEntity(rdfs:label=The Beatles 1962-1970, Part 3, http://dbtune.org/musicbrainz/resource/record/17dd943d-c652-4bfa-95dd-2f5c6564fb27)
+  RepositoryRecordEntity(rdfs:label=The World's Best: A Collection of Beatles Rarities (New Master Edition), http://dbtune.org/musicbrainz/resource/record/a7c72456-acd4-4bab-999d-b1ee14e6b130)
+  RepositoryRecordEntity(rdfs:label=We Can Work It Out / Day Tripper, http://dbtune.org/musicbrainz/resource/record/9003958a-b32a-468e-92a6-fe3099cfac00)
+  RepositoryRecordEntity(rdfs:label=Yellow Submarine / Eleanor Rigby, http://dbtune.org/musicbrainz/resource/record/98e94695-89d8-4d89-925c-ebb6265b92e1)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Beatles, foaf:name=null, uri=urn:bluemarine:artist:4a4f5721d36dd048748e70751c964eb7ddfa5ab0):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Benedictine Monks of Santo Domingo de Silos, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d):
+  RepositoryRecordEntity(rdfs:label=Las Mejores Obras del Canto Gregoriano (disc 1), http://dbtune.org/musicbrainz/resource/record/c14233f4-e1db-4cd5-b6a9-eb2ec0ccfcbb)
+  RepositoryRecordEntity(rdfs:label=Las Mejores Obras del Canto Gregoriano (disc 2), http://dbtune.org/musicbrainz/resource/record/ebfd6c26-03c8-49f4-a13f-40b60f8a99dd)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Benedictine Monks of Santo Domingo de Silos, foaf:name=null, uri=urn:bluemarine:artist:13ed854d1c6a331e54c3d4c48a59b3feba754f06):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Buggles, foaf:name=null, uri=urn:bluemarine:artist:fac36b09b994f9b781154cddb54ccf13d169d9d4):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Chieftains, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/fce5eb9a-95a7-4a54-b9e4-fe1b036fbe57):
+  RepositoryRecordEntity(rdfs:label=The Essential Chieftains (disc 1: The Chieftains' Roots), http://dbtune.org/musicbrainz/resource/record/9c007726-4ef5-4808-87c7-3714606198bc)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Crusaders, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/fcb79f1a-d3a9-41fe-9cd7-d16537907337):
+  RepositoryRecordEntity(rdfs:label=The Best of the Crusaders, http://dbtune.org/musicbrainz/resource/record/9ae2af6d-af4a-4ecf-ac0b-efcf8aefde72)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Dave Brubeck Quartet, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/7bf711e9-4e69-4e08-b6e8-c0cb5805f1e7):
+  RepositoryRecordEntity(rdfs:label=Countdown: Time in Outer Space, http://dbtune.org/musicbrainz/resource/record/7f3ec222-a4f2-4d68-9555-a7a987445012)
+  RepositoryRecordEntity(rdfs:label=Time Changes, http://dbtune.org/musicbrainz/resource/record/c921cbda-c513-4ec5-ae37-4f71493cabd4)
+  RepositoryRecordEntity(rdfs:label=Time Further Out, http://dbtune.org/musicbrainz/resource/record/5cb94677-21c0-449f-966c-8b3c8b8a8db5)
+  RepositoryRecordEntity(rdfs:label=Time Further Out, http://dbtune.org/musicbrainz/resource/record/fdcab20f-d193-4c59-9487-e5e272386aab)
+  RepositoryRecordEntity(rdfs:label=Time Out, http://dbtune.org/musicbrainz/resource/record/283e6240-0bad-4af0-8515-44182dea3d24)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Four Aces, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/908e99b8-b2b0-49e8-a85b-0a41a98f3926):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Golden Gospel Singers, foaf:name=null, uri=urn:bluemarine:artist:b6b2fb143a9e189088f716d8fb762ae8ae9dc49c):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Good Fellas, foaf:name=null, uri=urn:bluemarine:artist:9595678368aace2d9c1879f862e86196b516eb3d):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Hues Corporation, foaf:name=null, uri=urn:bluemarine:artist:4f2e65c27c6fce2a8ca0f4db7c0df7953947b5c1):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Korgis, foaf:name=null, uri=urn:bluemarine:artist:34ac6f101485a9c2b19207788e84d837a5a6868b):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Michel Petrucciani Trio, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/740b1ced-cb28-4b97-8c84-7c2c3c29fe75):
+  RepositoryRecordEntity(rdfs:label=Pianism, http://dbtune.org/musicbrainz/resource/record/2e78b68a-8922-4ac6-adad-0b7894263a58)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Platters, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/3fb55c03-3ad9-4341-8d0b-7c4c49aefca0):
+  RepositoryRecordEntity(rdfs:label=Four Platters and One Lovely Dish (disc 4), http://dbtune.org/musicbrainz/resource/record/57f89cb8-faad-44f6-9ba8-7a9ed0ab5d4e)
+  RepositoryRecordEntity(rdfs:label=Golden Hits, http://dbtune.org/musicbrainz/resource/record/23838c32-f955-4ab3-8775-84236bf87dda)
+  RepositoryRecordEntity(rdfs:label=Only You, http://dbtune.org/musicbrainz/resource/record/21e0249a-cc23-4eea-b6fd-81ccc6697083)
+  RepositoryRecordEntity(rdfs:label=The Platters, http://dbtune.org/musicbrainz/resource/record/88df5a57-afc3-4f50-8cf7-83a4a316f483)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Platters, foaf:name=null, uri=urn:bluemarine:artist:016d2387b3754453ace6dde6d8d08eb4aac763e0):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Righteous Brothers, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/1ac3366a-a0e9-4a55-8f6e-796fce32a3b2):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=The Shirelles, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/a8540ea0-1a74-4c22-8b70-1348a77a74a0):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Thelonious Monk, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/8e8c7417-c905-46b1-b42a-5260b4274ed4):
+  RepositoryRecordEntity(rdfs:label=1963 In Japan, http://dbtune.org/musicbrainz/resource/record/d480196a-71b3-4593-ac07-8b1b6f41da9d)
+  RepositoryRecordEntity(rdfs:label=Monk., http://dbtune.org/musicbrainz/resource/record/0ee8434e-9ade-47dd-bc80-ae3dfb9661b7)
+  RepositoryRecordEntity(rdfs:label=Solo Monk, http://dbtune.org/musicbrainz/resource/record/ab47031e-aac4-4212-8872-da0becfaa293)
+  RepositoryRecordEntity(rdfs:label=Solo Monk, http://dbtune.org/musicbrainz/resource/record/dbc70561-9634-47c5-8ce9-d64dd42e0f41)
+  RepositoryRecordEntity(rdfs:label=Thelonious Monk with John Coltrane, http://dbtune.org/musicbrainz/resource/record/04002e8a-68eb-4cef-a3b1-1a9f41b62f19)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Thelonious Monk, foaf:name=null, uri=urn:bluemarine:artist:36ec55be286b5c4a3ef5e27ed4a8aefc72a1d12f):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Thomas Beecham: Royal Philharmonic Orchestra, foaf:name=null, uri=urn:bluemarine:artist:bc8e7367dd329108b1ae4e19d52bafb05c850e1d):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Tom Jones, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/57c6f649-6cde-48a7-8114-2a200247601a):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Tomás de Torrejón y Velasco, foaf:name=null, uri=urn:bluemarine:artist:c19265eb1292cc3dc544050b611290e816c26472):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Tony McManus, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/fd72ac3b-82c2-461f-9971-24940353c377):
+  RepositoryRecordEntity(rdfs:label=Return to Kintail, http://dbtune.org/musicbrainz/resource/record/693dd397-6c7c-4a4c-b8e8-fe76e7562735)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Trevor Jones, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/961f31f2-31bf-4469-bc66-f6a2fda12db5):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Trevor Nasser, foaf:name=null, uri=urn:bluemarine:artist:109dd36f0f0c3d942785dd3635aa55a617b1deed):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Trevor Pinnock, foaf:name=null, uri=urn:bluemarine:artist:72bc5f56214f02347f6291c0d57ecf26d82220b9):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=UniqueTracks, foaf:name=null, uri=urn:bluemarine:artist:dd0f719b85a648cd6a978b26bf57406432323f1d):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Vanessa Williams, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/7cce3b8e-623c-4078-b079-837cbcf638c4):
+  RepositoryRecordEntity(rdfs:label=The Real Thing, http://dbtune.org/musicbrainz/resource/record/ffc14896-37fb-4ce1-a807-e1ccf7db743b)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Vangelis, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/57fca0e2-f9ad-4ae6-af9d-6a6f50cbcd5f):
+  RepositoryRecordEntity(rdfs:label=Albedo 0.39, http://dbtune.org/musicbrainz/resource/record/01b80a6d-1e22-4248-b32b-d3da92bbc2cc)
+  RepositoryRecordEntity(rdfs:label=Blade Runner, http://dbtune.org/musicbrainz/resource/record/c1f02f58-a45a-4e11-9ea1-4dbb61924540)
+  RepositoryRecordEntity(rdfs:label=Blade Runner: OWM 2000 Version (disc 2), http://dbtune.org/musicbrainz/resource/record/cd7e1359-98cc-42e3-9a88-ae8ec4cdf5ba)
+  RepositoryRecordEntity(rdfs:label=Chariots of Fire, http://dbtune.org/musicbrainz/resource/record/89fb6b5b-6ac2-465c-93bf-be430010de66)
+  RepositoryRecordEntity(rdfs:label=China, http://dbtune.org/musicbrainz/resource/record/5c02926c-e65e-4107-b4e7-05751a2367d6)
+  RepositoryRecordEntity(rdfs:label=L'Apocalypse des animaux, http://dbtune.org/musicbrainz/resource/record/5d5ce68c-2e0e-48f7-beb0-36cfcf2cb660)
+  RepositoryRecordEntity(rdfs:label=See You Later, http://dbtune.org/musicbrainz/resource/record/71771d40-0236-4cde-b71d-b0eee0270d6c)
+  RepositoryRecordEntity(rdfs:label=Soil Festivities, http://dbtune.org/musicbrainz/resource/record/f4576006-03fc-490c-820f-2e95535fbaa5)
+  RepositoryRecordEntity(rdfs:label=Themes, http://dbtune.org/musicbrainz/resource/record/ff7c291e-8dae-42d5-85bd-bdba89a3af1a)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Vangelis, foaf:name=null, uri=urn:bluemarine:artist:3aaced5008289e60b00a589e3e258abb08725493):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Various Artists, foaf:name=null, uri=urn:bluemarine:artist:37c2e10b278824398c5f4729119d0b1c534dda39):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Victoria Mullova; Claudio Abbado: Chamber Orchestra Of Europe, foaf:name=null, uri=urn:bluemarine:artist:1182d27756e97d11889d0fa8031562575250a1ac):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Vladimir Ashkenazy, foaf:name=null, uri=urn:bluemarine:artist:d47451a965d505add5b554f5c7b5653e2726f655):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Vladimir Spivakov, foaf:name=null, uri=urn:bluemarine:artist:c5afaefb963dee1caddd0a1c337a54a40caad98e):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Wanda Sá & Célia Vaz, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/8cf2e214-d292-4d6e-9551-4fa380e7cd97):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Wanda Sá & Roberto Menescal, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Wanda Sá & Roberto Menescal, foaf:name=null, uri=urn:bluemarine:artist:fef5c9f4e681b893c5ad6e2a202f089390f28abc):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=William Waters, foaf:name=null, uri=urn:bluemarine:artist:f7df56b7ac74a2a2ba858515b638a788640e97e9):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Wolfgang Amadeus Mozart, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/b972f589-fb0e-474e-b64a-803b0364fa75):
+  RepositoryRecordEntity(rdfs:label=Don Giovanni (The Monteverdi Choir, The English Baroque Soloists feat. conductor: John Eliot Gardiner) (disc 1), http://dbtune.org/musicbrainz/resource/record/12110e8b-6319-4541-912c-77d0fede5c2c)
+  RepositoryRecordEntity(rdfs:label=Don Giovanni (The Monteverdi Choir, The English Baroque Soloists feat. conductor: John Eliot Gardiner) (disc 3), http://dbtune.org/musicbrainz/resource/record/bb06b02c-bbb0-4a67-a179-f745dfbd37e6)
+  RepositoryRecordEntity(rdfs:label=Don Giovanni (The Monteverdi Choir, the English Baroque Soloists feat. conductor: John Eliot Gardiner) (disc 2), http://dbtune.org/musicbrainz/resource/record/ebdafcfc-6c3b-427b-87c9-6496750766db)
+  RepositoryRecordEntity(rdfs:label=Requiem in D minor, K. 626 (Philharmonia Chorus and Orchestra feat. conductor: Carlo Maria Giulini, soprano: Lynne Dawson, contralto: Jard van Nes, tenor: Keith Lewis, bass: Simon Estes), http://dbtune.org/musicbrainz/resource/record/eba1d10a-891f-41a1-a688-e6ee0eb25b9c)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Wynton Marsalis, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/0d74dcc7-5684-4695-830f-a9846aad8ba9):
+  RepositoryRecordEntity(rdfs:label=Hot House Flowers, http://dbtune.org/musicbrainz/resource/record/43a848b4-8a13-4410-a282-a992f5c912f2)
+  RepositoryRecordEntity(rdfs:label=Standard Time, Volume 2: Intimacy Calling, http://dbtune.org/musicbrainz/resource/record/0e688476-9400-4248-9607-2870e4b49ed2)
+  RepositoryRecordEntity(rdfs:label=Standard Time, Volume 3: The Resolution of Romance, http://dbtune.org/musicbrainz/resource/record/2c705df5-14d8-415c-bc5a-01fa6495e128)
+  RepositoryRecordEntity(rdfs:label=Standard Time, Volume 4: Marsalis Plays Monk, http://dbtune.org/musicbrainz/resource/record/8606b2bf-61ff-452d-bf10-ec423c0ad940)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Wynton Marsalis, foaf:name=null, uri=urn:bluemarine:artist:e85eaa80e81ec372c409fbc032af2b93d9c00c45):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Yves Montand, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/edd6a7c3-d174-4e5b-9134-0f0cc6e2b0a5):
+  RepositoryRecordEntity(rdfs:label=Le Paris de Montand, http://dbtune.org/musicbrainz/resource/record/e4a47db5-5ee2-4541-9b33-3aef7861e67a)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Yves Montand, foaf:name=null, uri=urn:bluemarine:artist:f9562b2cd62c10e96cf56efd23806a368cbe5d98):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=[anonymous], foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/f731ccc4-e22a-43af-a747-64213329e088):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=[gregorian chant], foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/ae636985-40e8-4010-ae02-0f35930f8017):
+  RepositoryRecordEntity(rdfs:label=Gregorian Chant (Choralschola der Wiener Hofburgkapelle feat. conductor: P. Hubert Dopf), http://dbtune.org/musicbrainz/resource/record/9f65e748-1167-42e4-a8cd-cad8c85644d3)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=[unknown], foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/125ec42a-7229-4250-afc5-e057484327fe):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Александр Порфирьевич Бородин, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/560b5e65-8d53-41b4-9913-83368f4721a0):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Николай Андреевич Римский-Корсаков, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/4cfe7051-f649-4d07-83b3-7a732abe7249):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Пётр Ильич Чайковский, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/9ddd7abc-9e1b-471d-8031-583bc6bc8be9):
+  RepositoryRecordEntity(rdfs:label=Karajan conducts Tchaikovsky (Berliner Philharmoniker feat. conductor: Herbert von Karajan) (disc 6), http://dbtune.org/musicbrainz/resource/record/1757c816-c219-4ccc-87f6-8bb93d1ef9a1)
+  RepositoryRecordEntity(rdfs:label=The Nutcracker Ballet Suite (Masterworks Expanded Edition) (Philadelphia Orchestra, feat. conductor: Eugene Ormandy), http://dbtune.org/musicbrainz/resource/record/18c22622-e5a3-4c50-af7b-b828a5607701)
+  RepositoryRecordEntity(rdfs:label=The Very Best of Tchaikovsky (disc 2), http://dbtune.org/musicbrainz/resource/record/abfeef65-c2c5-4e4a-803c-20509d3be27e)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Пётр Ильич Чайковский, foaf:name=null, uri=urn:bluemarine:artist:fe0c27e704d31ba88d89784e49a03b9d20a4e9eb):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Сергей Васильевич Рахманинов, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/44b16e44-da77-4580-b851-0d765904573e):
+  RepositoryRecordEntity(rdfs:label=3 Symphonies / The Rock (Berliner Philharmoniker, Lorin Maazel) (disc 1), http://dbtune.org/musicbrainz/resource/record/061de77b-fddd-4af6-a708-cfdb5c0be711)
+  RepositoryRecordEntity(rdfs:label=Corelli Variations, Op. 42 / Etudes Tableaux, Op. 39 (Vladimir Ashkenazy), http://dbtune.org/musicbrainz/resource/record/e075733e-854f-4a80-ae43-037d58c2d890)
+  RepositoryRecordEntity(rdfs:label=Piano Concertos. No.2,3 Entremont, Watts, http://dbtune.org/musicbrainz/resource/record/60b89cd8-3867-4b3f-b949-ebb7336c8e69)
+  RepositoryRecordEntity(rdfs:label=Rubinstein Collection, Volume 35 (Chicago Symphony Orchestra feat. conductor: Fritz Reiner, piano: Arthur Rubinstein), http://dbtune.org/musicbrainz/resource/record/f3d3bf31-a301-4f19-aec1-0088c9312496)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Сергей Васильевич Рахманинов, foaf:name=null, uri=urn:bluemarine:artist:73bde9653172082c9a1828acc850486d35f84b39):
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Сергей Сергеевич Прокофьев, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/0e43fe9d-c472-4b62-be9e-55f971a023e1):
+  RepositoryRecordEntity(rdfs:label=Romeo & Juliet (Boston Symphony Orchestra feat. conductor: Seiji Ozawa) (disc 2), http://dbtune.org/musicbrainz/resource/record/91344303-264d-424a-8ae8-891189528ee9)
+
+RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Сергей Сергеевич Прокофьев, foaf:name=null, uri=urn:bluemarine:artist:63e444c0980f13767a0905d024b107e7465faa49):
 
 
 ORPHANED TRACKS:

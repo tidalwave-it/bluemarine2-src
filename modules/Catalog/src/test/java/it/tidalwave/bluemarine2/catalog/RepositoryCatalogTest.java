@@ -118,7 +118,7 @@ public class RepositoryCatalogTest
         createDirectories(TEST_RESULTS);
         final PrintWriter pw = new PrintWriter(actualResult.toFile());
         
-        pw.println("\n\nALL TRACKS:\n");
+        pw.println("ALL TRACKS:\n");
         final Map<String, RepositoryTrackEntity> allTracks = catalog.findTracks().results().stream()
                         .map(t -> (RepositoryTrackEntity)t)
                         .collect(Collectors.toMap(RepositoryTrackEntity::toString, Function.identity()));
@@ -141,6 +141,15 @@ public class RepositoryCatalogTest
               {
                 pw.printf("  %s\n", track);
                 allTracks.remove(track.toString());
+              });
+          });
+        
+        artists.forEach(artist -> 
+          {
+            pw.printf("\nRECORDS OF %s:\n", artist);
+            artist.findRecords().stream().forEach(record -> 
+              {
+                pw.printf("  %s\n", record);
               });
           });
         

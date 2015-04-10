@@ -43,4 +43,7 @@ public interface MusicArtist extends Entity
     
     @Nonnull
     public TrackFinder findTracks();
+    
+    @Nonnull
+    public RecordFinder findRecords();
   }

@@ -33,6 +33,7 @@ import javax.annotation.concurrent.Immutable;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.catalog.MusicArtist;
+import it.tidalwave.bluemarine2.catalog.RecordFinder;
 import it.tidalwave.bluemarine2.catalog.TrackFinder;
 import lombok.Getter;
 
@@ -63,6 +64,12 @@ public class RepositoryMusicArtistEntity extends RepositoryEntitySupport impleme
         return new RepositoryTrackEntityFinder(repository).withMaker(id);
       }
 
+    @Override @Nonnull
+    public RecordFinder findRecords() 
+      {
+        return new RepositoryRecordEntityFinder(repository).withMaker(id);
+      }
+    
     @Override @Nonnull
     public String toString() 
       {
