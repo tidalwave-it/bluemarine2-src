@@ -94,4 +94,11 @@ public final class BM
       {
         return factory.createURI("urn:bluemarine:artist:" + id.stringValue());
       }
+
+    @Nonnull
+    public static URI musicBrainzUriFor (final @Nonnull String resourceType, final @Nonnull Id id) 
+      {
+        return factory.createURI(String.format("http://dbtune.org/musicbrainz/resource/%s/%s",
+                                               resourceType, id.stringValue()));
+      }
   }
