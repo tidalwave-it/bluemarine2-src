@@ -214,7 +214,7 @@ public class DefaultMediaScanner
             final Resource artistUri = uriFor("http://musicmusicbrainz.org/ws/2/artist/" + artistId);
             final Artist artist = request.getArtist();
             final Value nameLiteral = literalFor(artist.getName());
-            statementManager.requestAddStatements(AddStatementsRequest.newAddStatementsRequest()
+            statementManager.requestAdd(AddStatementsRequest.newAddStatementsRequest()
                                                .with(artistUri, RDF.TYPE, MO.C_MUSIC_ARTIST)
                                                .with(artistUri, RDFS.LABEL, nameLiteral)
                                                .with(artistUri, FOAF.NAME, nameLiteral)
@@ -283,7 +283,7 @@ public class DefaultMediaScanner
                                                              : BM.musicBrainzUriFor("track", musicBrainzTrackId.get());
 
         final Instant lastModifiedTime = getLastModifiedTime(audioFile.getPath());
-        statementManager.requestAddStatements(AddStatementsRequest.newAddStatementsRequest()
+        statementManager.requestAdd(AddStatementsRequest.newAddStatementsRequest()
                         .with(audioFileUri, RDF.TYPE,                MO.C_AUDIO_FILE)
                         .with(audioFileUri, FOAF.SHA1,               literalFor(sha1))
                         .with(audioFileUri, MO.P_ENCODES,            signalUri)
@@ -393,7 +393,7 @@ public class DefaultMediaScanner
 //            if (e.getMessage().contains("503")) // throttling error
 //              {
 ////                log.warn("Resubmitting {} ... - {}", mediaItem, e.toString());
-////                pendingMediaItems.add(mediaItem);
+////                pendingMediaItems.requestAdd(mediaItem);
 //              }
 //          } 
     
@@ -410,7 +410,7 @@ public class DefaultMediaScanner
 //            
 //            if (!seenArtistIds.contains(artistId))
 //              {
-//                seenArtistIds.add(artistId);
+//                seenArtistIds.requestAdd(artistId);
 //                progress.incrementTotalArtists();
 //                messageBus.publish(new ArtistImportRequest(artistId, artist));
 //              }

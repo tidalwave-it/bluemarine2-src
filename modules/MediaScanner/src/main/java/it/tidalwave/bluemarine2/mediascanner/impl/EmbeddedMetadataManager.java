@@ -166,8 +166,8 @@ public class EmbeddedMetadataManager
       {
         log.debug("importAudioFileMetadata({}, {}, {})", mediaItem, signalUri, trackUri);
         final Metadata metadata = mediaItem.getMetadata();
-        statementManager.requestAddStatements(SIGNAL_MAPPER.statementsFor(metadata, signalUri));
-        statementManager.requestAddStatements(TRACK_MAPPER.statementsFor(metadata, trackUri));
+        statementManager.requestAdd(SIGNAL_MAPPER.statementsFor(metadata, signalUri));
+        statementManager.requestAdd(TRACK_MAPPER.statementsFor(metadata, trackUri));
       }
     
     /*******************************************************************************************************************
@@ -224,6 +224,6 @@ public class EmbeddedMetadataManager
                              .with(recordUri, MO.P_TRACK_COUNT, literalFor(parent.findChildren().count()));
           }
         
-        statementManager.requestAddStatements(builder.with(recordUri, MO.P_TRACK, trackUri).create());
+        statementManager.requestAdd(builder.with(recordUri, MO.P_TRACK, trackUri).create());
       }
   }

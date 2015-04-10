@@ -181,7 +181,7 @@ public class DbTuneMetadataManager
           {
             log.debug("importTrackMetadata({})", trackUri);
             m.put(trackUri, mediaItem);
-            statementManager.requestAddStatement(trackUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid));
+            statementManager.requestAdd(trackUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid));
             requestDownload(urlFor(trackUri));
           }
         catch (MalformedURLException e) // shoudn't never happen
@@ -207,8 +207,8 @@ public class DbTuneMetadataManager
               {
                 log.debug("onTrackMetadataDownloadComplete({})", message);
                 final Model model = parseModel(message);
-                statementManager.requestAddStatements(model.stream().filter(new TrackStatementFilter(trackUri))
-                                                           .collect(toList()));
+                statementManager.requestAdd(model.stream().filter(new TrackStatementFilter(trackUri))
+                                                          .collect(toList()));
                 model.filter(trackUri, FOAF.MAKER, null)
                      .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
                 model.filter(null, MO.P_TRACK, trackUri)
@@ -240,8 +240,8 @@ public class DbTuneMetadataManager
             log.debug("onArtistMetadataDownloadComplete({})", message);
             final URI artistUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
-            statementManager.requestAddStatements(model.stream().filter(new ArtistStatementFilter(artistUri))
-                                                       .collect(toList()));
+            statementManager.requestAdd(model.stream().filter(new ArtistStatementFilter(artistUri))
+                                                      .collect(toList()));
             model.filter(artistUri, Purl.COLLABORATES_WITH, null)
                  .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
           }   
@@ -268,7 +268,7 @@ public class DbTuneMetadataManager
             final URI recordUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
              // FIXME: filter away some more stuff
-            statementManager.requestAddStatements(model.filter(recordUri, null, null).stream().collect(toList()));
+            statementManager.requestAdd(model.filter(recordUri, null, null).stream().collect(toList()));
           }   
         catch (IOException | RDFHandlerException | RDFParseException e)
           {

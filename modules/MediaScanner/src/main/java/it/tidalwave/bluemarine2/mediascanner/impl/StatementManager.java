@@ -65,27 +65,25 @@ public class StatementManager
      *
      *
      ******************************************************************************************************************/
-    public void requestAddStatement (final @Nonnull Resource subject, 
-                                     final @Nonnull URI predicate,
-                                     final @Nonnull Value literal) 
+    public void requestAdd (final @Nonnull Resource subject, final @Nonnull URI predicate, final @Nonnull Value literal) 
       {
-        requestAddStatements(new AddStatementsRequest(subject, predicate, literal));
+        requestAdd(new AddStatementsRequest(subject, predicate, literal));
       }
     
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
-    public void requestAddStatements (final @Nonnull List<Statement> statements) 
+    public void requestAdd (final @Nonnull List<Statement> statements) 
       {
-        requestAddStatements(new AddStatementsRequest(statements));
+        requestAdd(new AddStatementsRequest(statements));
       }
     
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
-    public void requestAddStatements (final @Nonnull AddStatementsRequest request) 
+    public void requestAdd (final @Nonnull AddStatementsRequest request) 
       {
         progress.incrementTotalInsertions();
         messageBus.publish(request);
