@@ -214,13 +214,13 @@ public class DefaultMediaScanner
             final Resource artistUri = uriFor("http://musicmusicbrainz.org/ws/2/artist/" + artistId);
             final Artist artist = request.getArtist();
             final Value nameLiteral = literalFor(artist.getName());
-            statementManager.requestAdd(AddStatementsRequest.newAddStatementsRequest()
-                                               .with(artistUri, RDF.TYPE, MO.C_MUSIC_ARTIST)
-                                               .with(artistUri, RDFS.LABEL, nameLiteral)
-                                               .with(artistUri, FOAF.NAME, nameLiteral)
-                                               .with(artistUri, MO.P_MUSICBRAINZ_GUID, literalFor(artistId.stringValue()))
-                                               .create());
-          }
+            statementManager.requestAddStatements()
+                            .with(artistUri, RDF.TYPE, MO.C_MUSIC_ARTIST)
+                            .with(artistUri, RDFS.LABEL, nameLiteral)
+                            .with(artistUri, FOAF.NAME, nameLiteral)
+                            .with(artistUri, MO.P_MUSICBRAINZ_GUID, literalFor(artistId.stringValue()))
+                            .publish();
+}
         finally 
           {
             progress.incrementImportedArtists();
@@ -283,7 +283,7 @@ public class DefaultMediaScanner
                                                              : BM.musicBrainzUriFor("track", musicBrainzTrackId.get());
 
         final Instant lastModifiedTime = getLastModifiedTime(audioFile.getPath());
-        statementManager.requestAdd(AddStatementsRequest.newAddStatementsRequest()
+        statementManager.requestAddStatements()
                         .with(audioFileUri, RDF.TYPE,                MO.C_AUDIO_FILE)
                         .with(audioFileUri, FOAF.SHA1,               literalFor(sha1))
                         .with(audioFileUri, MO.P_ENCODES,            signalUri)
@@ -294,7 +294,7 @@ public class DefaultMediaScanner
                 
                         .with(signalUri,    RDF.TYPE,                MO.C_DIGITAL_SIGNAL)
                         .with(signalUri,    MO.P_PUBLISHED_AS,       trackUri)
-                        .create());
+                        .publish();
         embeddedMetadataManager.importAudioFileMetadata(audioFile, signalUri, trackUri);
 
         if (musicBrainzTrackId.isPresent())
@@ -368,7 +368,7 @@ public class DefaultMediaScanner
 //                                           .with(mediaItemUri, DC.TITLE, createLiteral)
 //                                           .with(mediaItemUri, RDFS.LABEL, createLiteral)
 //                                           .with(mediaItemUri, BM.FULL_CREDITS, literalFor(fullCredits))
-//                                           .create());
+//                                           .publish());
 //        // TODO: MO.CHANNELS
 //        // TODO: MO.COMPOSER
 //        // TODO: MO.CONDUCTOR
@@ -393,7 +393,7 @@ public class DefaultMediaScanner
 //            if (e.getMessage().contains("503")) // throttling error
 //              {
 ////                log.warn("Resubmitting {} ... - {}", mediaItem, e.toString());
-////                pendingMediaItems.requestAdd(mediaItem);
+////                pendingMediaItems.requestAddStatements(mediaItem);
 //              }
 //          } 
     
@@ -410,7 +410,7 @@ public class DefaultMediaScanner
 //            
 //            if (!seenArtistIds.contains(artistId))
 //              {
-//                seenArtistIds.requestAdd(artistId);
+//                seenArtistIds.requestAddStatements(artistId);
 //                progress.incrementTotalArtists();
 //                messageBus.publish(new ArtistImportRequest(artistId, artist));
 //              }

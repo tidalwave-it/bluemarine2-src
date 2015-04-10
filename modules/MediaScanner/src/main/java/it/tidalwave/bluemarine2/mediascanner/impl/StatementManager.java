@@ -38,10 +38,15 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.persistence.Persistence;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
 import org.openrdf.model.Resource;
 import org.openrdf.model.URI;
 import org.openrdf.model.Value;
+import org.openrdf.model.ValueFactory;
+import org.openrdf.model.impl.ValueFactoryImpl;
 
 /***********************************************************************************************************************
  *
@@ -52,6 +57,50 @@ import org.openrdf.model.Value;
 @SimpleMessageSubscriber @Slf4j
 public class StatementManager 
   {
+    public class Builder
+      {
+        private final List<Statement> statements = new ArrayList<>();
+        
+        private final ValueFactory factory = ValueFactoryImpl.getInstance();
+
+        @Nonnull
+        public Builder with (final @Nonnull Resource subject, 
+                             final @Nonnull URI predicate,
+                             final @Nonnull Value object) 
+          {
+            return with(factory.createStatement(subject, predicate, object));
+          }
+        
+        @Nonnull
+        public Builder with (final @Nonnull Resource subject, 
+                             final @Nonnull URI predicate,
+                             final @Nonnull Optional<Value> object)
+          { 
+            return object.isPresent() ? with(subject, predicate, object.get()) : this;
+          }
+        
+        @Nonnull
+        public Builder with (final @Nonnull Statement statement) 
+          {
+            statements.add(statement);
+            return this;
+          }
+        
+        @Nonnull
+        public Builder with (final @Nonnull Optional<Builder> optionalBuilder) 
+          {
+            optionalBuilder.ifPresent(builder -> statements.addAll(builder.statements));
+            return this;
+          }
+        
+        @Nonnull
+        public void publish()
+          {
+            progress.incrementTotalInsertions();
+            messageBus.publish(new AddStatementsRequest(Collections.unmodifiableList(statements)));
+          }
+      }
+    
     @Inject
     private MessageBus messageBus;
     
@@ -77,6 +126,16 @@ public class StatementManager
     public void requestAdd (final @Nonnull List<Statement> statements) 
       {
         requestAdd(new AddStatementsRequest(statements));
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Builder requestAddStatements() 
+      {
+        return new Builder();
       }
     
     /*******************************************************************************************************************

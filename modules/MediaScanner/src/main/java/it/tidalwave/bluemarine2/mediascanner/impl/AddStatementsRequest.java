@@ -30,16 +30,12 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 import org.openrdf.model.Resource;
 import org.openrdf.model.Statement;
 import org.openrdf.model.URI;
 import org.openrdf.model.Value;
-import org.openrdf.model.ValueFactory;
 import org.openrdf.model.impl.ValueFactoryImpl;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -47,8 +43,6 @@ import lombok.ToString;
 
 /***********************************************************************************************************************
  *
- * FIXME: use a buidler and allow passing multiple statements
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -59,51 +53,11 @@ public class AddStatementsRequest
     @Nonnull
     private final List<Statement> statements;
     
-    public static class Builder
-      {
-        private final List<Statement> statements = new ArrayList<>();
-        
-        private final ValueFactory factory = ValueFactoryImpl.getInstance();
-
-        @Nonnull
-        public Builder with (final @Nonnull Resource subject, 
-                             final @Nonnull URI predicate,
-                             final @Nonnull Value object) 
-          {
-            return with(factory.createStatement(subject, predicate, object));
-          }
-        
-        @Nonnull
-        public Builder with (final @Nonnull Statement statement) 
-          {
-            statements.add(statement);
-            return this;
-          }
-        
-        @Nonnull
-        public Builder with (final @Nonnull Optional<Builder> optionalBuilder) 
-          {
-            optionalBuilder.ifPresent(builder -> statements.addAll(builder.statements));
-            return this;
-          }
-        
-        @Nonnull
-        public AddStatementsRequest create()
-          {
-            return new AddStatementsRequest(Collections.unmodifiableList(statements));
-          }
-      }
     
     public AddStatementsRequest (final @Nonnull Resource subject, 
                                  final @Nonnull URI predicate,
                                  final @Nonnull Value object) 
       {
         this(Arrays.asList(ValueFactoryImpl.getInstance().createStatement(subject, predicate, object)));
-      }
-     
-    @Nonnull
-    public static Builder newAddStatementsRequest() 
-      {
-        return new Builder();
       }
   }

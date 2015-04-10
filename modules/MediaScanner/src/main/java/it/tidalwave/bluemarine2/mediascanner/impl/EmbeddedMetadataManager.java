@@ -35,6 +35,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.function.Function;
@@ -52,13 +53,11 @@ import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.vocabulary.BM;
 import it.tidalwave.bluemarine2.vocabulary.MO;
-import it.tidalwave.bluemarine2.mediascanner.impl.AddStatementsRequest.Builder;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
-import static it.tidalwave.bluemarine2.mediascanner.impl.AddStatementsRequest.newAddStatementsRequest;
 
 /***********************************************************************************************************************
  *
@@ -184,30 +183,52 @@ public class EmbeddedMetadataManager
         log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackUri);
         
         final MediaItem.Metadata metadata = mediaItem.getMetadata();  
+        StatementManager.Builder builder = statementManager.requestAddStatements();
         
-        Builder builder = newAddStatementsRequest()
-           .with(metadata.get(MediaItem.Metadata.TITLE).map(title -> 
-              {
-                final Value titleLiteral = literalFor(title);
-                return newAddStatementsRequest().with(trackUri, DC.TITLE,   titleLiteral)
-                                                .with(trackUri, RDFS.LABEL, titleLiteral);
-              }))
-           .with(metadata.get(MediaItem.Metadata.ARTIST).map(artistName ->
-              {
-                final URI artistUri = BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + artistName));
-                Builder builder2 = newAddStatementsRequest().with(trackUri, FOAF.MAKER, artistUri);
-                        
-                if (seenArtistUris.putIfAbsent(artistUri, true) == null)
-                  {
-                    final Value nameLiteral = literalFor(artistName);
-                    builder2 = builder2.with(artistUri, RDF.TYPE,   MO.C_MUSIC_ARTIST)
-                                       .with(artistUri, FOAF.NAME,  nameLiteral)
-                                       .with(artistUri, RDFS.LABEL, nameLiteral);
-                  }
+        final Optional<String> title = metadata.get(MediaItem.Metadata.TITLE);
+        builder = builder.with(trackUri, DC.TITLE,   literalFor(title))
+                         .with(trackUri, RDFS.LABEL, literalFor(title));
 
-                return builder2;
-              }));
+        final Optional<String> artist = metadata.get(MediaItem.Metadata.ARTIST);
+
+        if (artist.isPresent()) // FIXME
+          {
+            final String artistName = artist.get();
+            final URI artistUri = BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + artistName));
+            builder = builder.with(trackUri, FOAF.MAKER, artistUri);
+
+            if (seenArtistUris.putIfAbsent(artistUri, true) == null)
+              {
+                final Value nameLiteral = literalFor(artistName);
+                builder = builder.with(artistUri, RDF.TYPE,   MO.C_MUSIC_ARTIST)
+                                 .with(artistUri, FOAF.NAME,  nameLiteral)
+                                 .with(artistUri, RDFS.LABEL, nameLiteral);
+              }
+          }
         
+//        Builder builder = newAddStatementsRequest()
+//           .with(metadata.get(MediaItem.Metadata.TITLE).map(title -> 
+//              {
+//                final Value titleLiteral = literalFor(title);
+//                return newAddStatementsRequest().
+//                                                .with(trackUri, RDFS.LABEL, titleLiteral);
+//              }))
+//           .with(metadata.get(MediaItem.Metadata.ARTIST).map(artistName ->
+//              {
+//                final URI artistUri = BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + artistName));
+//                Builder builder2 = newAddStatementsRequest().with(trackUri, FOAF.MAKER, artistUri);
+//                        
+//                if (seenArtistUris.putIfAbsent(artistUri, true) == null)
+//                  {
+//                    final Value nameLiteral = literalFor(artistName);
+//                    builder2 = builder2.with(artistUri, RDF.TYPE,   MO.C_MUSIC_ARTIST)
+//                                       .with(artistUri, FOAF.NAME,  nameLiteral)
+//                                       .with(artistUri, RDFS.LABEL, nameLiteral);
+//                  }
+//
+//                return builder2;
+//              }));
+//        
         // When scanning we can safely assume we're running on a file system
         // TODO: what about using Displayable? It would not require a dependency on MediaFolder
         final MediaFolder parent = (MediaFolder)mediaItem.getParent();
@@ -224,6 +245,6 @@ public class EmbeddedMetadataManager
                              .with(recordUri, MO.P_TRACK_COUNT, literalFor(parent.findChildren().count()));
           }
         
-        statementManager.requestAdd(builder.with(recordUri, MO.P_TRACK, trackUri).create());
+        builder.with(recordUri, MO.P_TRACK, trackUri).publish();
       }
   }
