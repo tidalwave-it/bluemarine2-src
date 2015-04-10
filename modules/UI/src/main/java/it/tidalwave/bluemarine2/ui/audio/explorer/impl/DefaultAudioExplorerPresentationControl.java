@@ -49,7 +49,6 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.role.EntitySupplier;
-import it.tidalwave.bluemarine2.model.role.Parentable;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
@@ -66,6 +65,7 @@ import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
 import static it.tidalwave.bluemarine2.model.role.MediaItemSupplier.MediaItemSupplier;
+import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
 
 /***********************************************************************************************************************
  *
@@ -250,9 +250,11 @@ public class DefaultAudioExplorerPresentationControl
     private String getCurrentPathLabel()
       {
 //        return stack.peek().as(Displayable).getDisplayName();
+          log.info("PATH LABEL STACK = {}", stack);
         return concat(stack.stream().map(i -> i.getFolder()), of(currentFolder))
-                .filter(i -> (i instanceof Parentable) ? ((Parentable)i).getParent() != null : true)
-                .map(i -> i.as(Displayable).getDisplayName())
+                .filter(i -> (i.asOptional(Parentable).map(p -> p.getParent() != null).orElse(true)))
+                .filter(i -> (i.asOptional(Displayable).map(d -> true).orElse(false)))
+                .map(i -> i.asOptional(Displayable).map(o -> o.getDisplayName()).orElse("???"))
                 .collect(joining(" / "));
       }
     
