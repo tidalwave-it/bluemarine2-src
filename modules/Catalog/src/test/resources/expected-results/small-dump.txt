@@ -4,17 +4,20 @@ ALL TRACKS:
 
 
 
-RECORDS:
+ALL RECORDS:
 
 RepositoryRecordEntity(rdfs:label=The Copland Collection: Orchestral and Ballet Works, 1936-1948 (disc 1), http://dbtune.org/musicbrainz/resource/record/86af8470-fe29-45c2-8831-4322a7e2f4fe)
 
 
 
-ARTISTS:
+ALL ARTISTS:
 
 RepositoryMusicArtistEntity(rdfs:label=Aaron Copland, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09)
 
 TRACKS OF RepositoryMusicArtistEntity(rdfs:label=Aaron Copland, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09):
+  RepositoryTrackEntity(10, PT9M48S, rdfs:label=Quiet City, Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/1-10 Quiet City.m4a, http://dbtune.org/musicbrainz/resource/track/2661ba28-6b89-4d52-926e-cc5946206909)
+
+TRACKS IN RepositoryRecordEntity(rdfs:label=The Copland Collection: Orchestral and Ballet Works, 1936-1948 (disc 1), http://dbtune.org/musicbrainz/resource/record/86af8470-fe29-45c2-8831-4322a7e2f4fe):
   RepositoryTrackEntity(10, PT9M48S, rdfs:label=Quiet City, Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/1-10 Quiet City.m4a, http://dbtune.org/musicbrainz/resource/track/2661ba28-6b89-4d52-926e-cc5946206909)
 
 RECORDS OF RepositoryMusicArtistEntity(rdfs:label=Aaron Copland, foaf:name=null, uri=http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09):

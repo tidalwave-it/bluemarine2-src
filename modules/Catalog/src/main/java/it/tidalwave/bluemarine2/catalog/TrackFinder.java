@@ -42,4 +42,7 @@ public interface TrackFinder extends Finder8<Track>
   {
     @Nonnull
     public TrackFinder withMaker (@Nonnull Id makerId);
+    
+    @Nonnull
+    public TrackFinder inRecord (@Nonnull Id recordId);
   }

@@ -118,6 +118,9 @@ public class RepositoryCatalogTest
         createDirectories(TEST_RESULTS);
         final PrintWriter pw = new PrintWriter(actualResult.toFile());
         
+        final List<? extends MusicArtist> artists = catalog.findArtists().results();
+        final List<? extends Record> records = catalog.findRecords().results();
+        
         pw.println("ALL TRACKS:\n");
         final Map<String, RepositoryTrackEntity> allTracks = catalog.findTracks().results().stream()
                         .map(t -> (RepositoryTrackEntity)t)
@@ -125,11 +128,10 @@ public class RepositoryCatalogTest
         final Comparator<RepositoryTrackEntity> c = (o1, o2) -> o1.getRdfsLabel().compareTo(o2.getRdfsLabel());
         allTracks.values().stream().sorted(c).forEach(track -> pw.printf("  %s\n", track));
         
-        pw.println("\n\n\nRECORDS:\n");
-        catalog.findRecords().stream().forEach(artist -> pw.printf("%s\n", artist));
+        pw.println("\n\n\nALL RECORDS:\n");
+        records.forEach(artist -> pw.printf("%s\n", artist));
         
-        pw.println("\n\n\nARTISTS:\n");
-        final List<? extends MusicArtist> artists = catalog.findArtists().results();
+        pw.println("\n\n\nALL ARTISTS:\n");
         artists.forEach(artist -> pw.printf("%s\n", artist));
         
         // FIXME: not correctly sorted in many cases
@@ -141,6 +143,16 @@ public class RepositoryCatalogTest
               {
                 pw.printf("  %s\n", track);
                 allTracks.remove(track.toString());
+              });
+          });
+        
+        records.forEach(record -> 
+          {
+            pw.printf("\nTRACKS IN %s:\n", record);
+            record.findTracks().stream().forEach(track -> 
+              {
+                pw.printf("  %s\n", track);
+//                allTracks.remove(track.toString()); FIXME: check orphans of Record too
               });
           });
         

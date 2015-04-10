@@ -33,6 +33,7 @@ import javax.annotation.concurrent.Immutable;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.catalog.Record;
+import it.tidalwave.bluemarine2.catalog.TrackFinder;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -53,6 +54,12 @@ public class RepositoryRecordEntity extends RepositoryEntitySupport implements R
         this.rdfsLabel = rdfsLabel;
       }
    
+    @Override @Nonnull
+    public TrackFinder findTracks() 
+      {
+        return new RepositoryTrackEntityFinder(repository).inRecord(id);
+      }
+
     @Override @Nonnull
     public String toString() 
       {

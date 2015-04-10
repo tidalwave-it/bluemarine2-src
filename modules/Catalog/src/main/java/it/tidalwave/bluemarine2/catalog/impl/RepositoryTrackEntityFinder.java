@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.catalog.impl;
 
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
 import java.util.List;
 import org.openrdf.model.impl.ValueFactoryImpl;
 import org.openrdf.repository.Repository;
@@ -49,6 +50,9 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
     @CheckForNull
     private Id makerId;
 
+    @CheckForNull
+    private Id recordId;
+
     /*******************************************************************************************************************
      *
      * 
@@ -65,10 +69,23 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public TrackFinder withMaker (final @Nonnull Id artistId)  
+    public TrackFinder withMaker (final @Nonnull Id makerId)  
       {
         final RepositoryTrackEntityFinder clone = clone();
-        clone.makerId = artistId;
+        clone.makerId = makerId;
+        return clone;
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public TrackFinder inRecord (final @Nonnull Id recordId)  
+      {
+        final RepositoryTrackEntityFinder clone = clone();
+        clone.recordId = recordId;
         return clone;
       }
     
@@ -82,6 +99,7 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
       {
         final RepositoryTrackEntityFinder clone = (RepositoryTrackEntityFinder)super.clone();
         clone.makerId = this.makerId;
+        clone.recordId = this.recordId;
 
         return clone;
       }
@@ -112,6 +130,12 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
                     + "         ?artistGroup  rel:collaboratesWith    ?artist.\n"
                     + "       }\n")
                       
+            + ((recordId == null)
+                    ? ""
+                    : "       {\n"
+                    + "         ?record       mo:track                ?track.\n"
+                    + "       }\n")
+                      
             + "       ?signal       a                       mo:DigitalSignal.\n" 
             + "       ?signal       mo:published_as         ?track.\n"
             + "       ?signal       mo:duration             ?duration.\n" 
@@ -126,8 +150,21 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
             + "       }\n"
             + "ORDER BY ?record_label ?track_number ?label";
         
-        return (makerId == null) ? query(RepositoryTrackEntity.class, q)
-                                  : query(RepositoryTrackEntity.class, q, 
-                                         "artist", ValueFactoryImpl.getInstance().createURI(makerId.stringValue()));
+        final List<Object> parameters = new ArrayList<>();
+        
+        // FIXME: use Optional?
+        if (makerId != null)
+          {
+            parameters.add("artist");
+            parameters.add(ValueFactoryImpl.getInstance().createURI(makerId.stringValue()));
+          }
+        
+        if (recordId != null)
+          {
+            parameters.add("record");
+            parameters.add(ValueFactoryImpl.getInstance().createURI(recordId.stringValue()));
+          }
+        
+        return query(RepositoryTrackEntity.class, q, parameters.toArray());
       }
   }
