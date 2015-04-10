@@ -32,7 +32,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.time.Duration;
-import java.time.temporal.ChronoUnit;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -50,6 +49,7 @@ import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.bluemarine2.util.Formatters.format;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status.*;
 
@@ -184,21 +184,5 @@ public class DefaultAudioRendererPresentationControl
         pauseAction.enabledProperty().unbind();
         playAction.enabledProperty().unbind();
         mediaPlayer.playTimeProperty().removeListener(l);
-      }
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private static String format (final @Nonnull Duration duration)
-      {
-        final long s = duration.get(ChronoUnit.SECONDS);
-        final long hours = s / 3600;
-        final long minutes = (s / 60) % 60;
-        final long seconds = s % 60;
-        
-        return (hours == 0) ? String.format("%02d:%02d", minutes, seconds)
-                            : String.format("%02d:%02d:%02d", hours, minutes, seconds);
       }
   }
