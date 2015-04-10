@@ -118,6 +118,16 @@ final class Utilities
      *
      ******************************************************************************************************************/
     @Nonnull
+    public static Value literalFor (final Id id) 
+      {
+        return FACTORY.createLiteral(id.stringValue());
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
     public static Value literalFor (final int value) 
       {
         return FACTORY.createLiteral(value);

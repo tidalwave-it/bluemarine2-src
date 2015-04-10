@@ -55,8 +55,6 @@ import it.tidalwave.bluemarine2.vocabulary.MO;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
-import java.util.List;
-import org.openrdf.model.Statement;
 
 /***********************************************************************************************************************
  *
@@ -271,7 +269,6 @@ public class DefaultMediaScanner
     private void importMediaItem (final @Nonnull MediaItem audioFile)
       { 
         log.debug("importMediaItem({})", audioFile);
-        // FIXME: the same contents in different places will give the same id. Disambiguates by hashing the path too?
         final Id sha1 = idCreator.createSha1Id(audioFile.getPath());
         final Metadata metadata = audioFile.getMetadata();
         final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
@@ -279,17 +276,17 @@ public class DefaultMediaScanner
 
         final URI audioFileUri = BM.audioFileUriFor(sha1);
         // FIXME: DbTune has got Signals. E.g. http://dbtune.org/musicbrainz/page/signal/0900f0cb-230f-4632-bd87-650801e5fdba
-        // FIXME: Try to use them. It seems there are no extra information, but use their Uri.
+        // FIXME: Try to use them. It seems there is no extra information, but use their Uri.
         final URI signalUri = BM.signalUriFor(sha1);
-        final URI trackUri = !musicBrainzTrackId.isPresent() 
-                ? BM.localTrackUriFor(sha1)
-                : uriFor("http://dbtune.org/musicbrainz/resource/track/" + musicBrainzTrackId.get().stringValue());
+        // FIXME: the same contents in different places will give the same sha1. Disambiguates by hashing the path too?
+        final URI trackUri = !musicBrainzTrackId.isPresent() ? BM.localTrackUriFor(sha1)
+                                                             : BM.musicBrainzUriFor("track", musicBrainzTrackId.get());
 
         final Instant lastModifiedTime = getLastModifiedTime(audioFile.getPath());
         statementManager.requestAddStatements(AddStatementsRequest.newAddStatementsRequest()
                         .with(audioFileUri, RDF.TYPE,                MO.C_AUDIO_FILE)
+                        .with(audioFileUri, FOAF.SHA1,               literalFor(sha1))
                         .with(audioFileUri, MO.P_ENCODES,            signalUri)
-                        .with(audioFileUri, FOAF.SHA1,               literalFor(sha1.stringValue()))
                         .with(audioFileUri, BM.PATH,                 literalFor(audioFile.getRelativePath())) 
                         .with(audioFileUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
                 
@@ -302,8 +299,7 @@ public class DefaultMediaScanner
 
         if (musicBrainzTrackId.isPresent())
           {
-            final String mbGuid = metadata.get(MediaItem.Metadata.MBZ_TRACK_ID).get().stringValue();
-            dbTuneMetadataManager.importTrackMetadata(audioFile, trackUri, mbGuid);
+            dbTuneMetadataManager.importTrackMetadata(audioFile, trackUri, musicBrainzTrackId.get());
 //                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
           }
         else

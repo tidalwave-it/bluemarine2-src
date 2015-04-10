@@ -47,6 +47,7 @@ import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
 import org.openrdf.rio.RDFHandlerException;
 import org.openrdf.rio.RDFParseException;
+import it.tidalwave.util.Id;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;
@@ -174,7 +175,7 @@ public class DbTuneMetadataManager
      ******************************************************************************************************************/
     public void importTrackMetadata (final @Nonnull MediaItem mediaItem,
                                      final @Nonnull URI trackUri, 
-                                     final @Nonnull String mbGuid)
+                                     final @Nonnull Id mbGuid)
       { 
         try 
           {
