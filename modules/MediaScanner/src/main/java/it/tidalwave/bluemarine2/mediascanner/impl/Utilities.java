@@ -86,7 +86,10 @@ final class Utilities
               }
           });
 
-        final byte[] bytes = new String(message.getBytes()).replaceAll(" = ", "owl:sameAs").getBytes(); // FIXME
+        // FIXME
+        final byte[] bytes = new String(message.getBytes()).replaceAll(" = ", "owl:sameAs")
+                                                           .replaceAll("/ASIN/ *>", "/ASIN>")
+                                                           .getBytes(); 
         final String uri = message.getUrl().toString();          
         parser.parse(new ByteArrayInputStream(bytes), uri);
 
