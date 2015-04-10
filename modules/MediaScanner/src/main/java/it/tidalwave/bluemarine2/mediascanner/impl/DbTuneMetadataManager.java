@@ -122,11 +122,8 @@ public class DbTuneMetadataManager
     @Nonnull
     private static Predicate<Statement> trackStatementFilterFor (final @Nonnull URI trackUri)
       {
-        return statement -> 
-          {
-            final URI predicate = statement.getPredicate();
-            return (statement.getSubject().equals(trackUri) && VALID_TRACK_PREDICATES_FOR_SUBJECT.contains(predicate));
-          };
+        return statement -> statement.getSubject().equals(trackUri)
+                        && VALID_TRACK_PREDICATES_FOR_SUBJECT.contains(statement.getPredicate());
       }
             
     /*******************************************************************************************************************
@@ -136,11 +133,8 @@ public class DbTuneMetadataManager
     @Nonnull
     private static Predicate<Statement> artistStatementFilterFor (final @Nonnull URI artistUri)
       {
-        return statement -> 
-          {
-            final URI predicate = statement.getPredicate();
-            return (statement.getSubject().equals(artistUri) && VALID_ARTIST_PREDICATES_FOR_SUBJECT.contains(predicate));
-          };
+        return statement -> statement.getSubject().equals(artistUri)
+                        && VALID_ARTIST_PREDICATES_FOR_SUBJECT.contains(statement.getPredicate());
       }
             
     /*******************************************************************************************************************
