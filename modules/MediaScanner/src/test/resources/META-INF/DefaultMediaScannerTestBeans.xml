@@ -68,7 +68,7 @@
     
     <bean class="it.tidalwave.bluemarine2.mediascanner.impl.EmbeddedMetadataManager" />
     
-    <bean class="it.tidalwave.bluemarine2.mediascanner.impl.AddStatementManager" />
+    <bean class="it.tidalwave.bluemarine2.mediascanner.impl.StatementManager" />
     
     <bean class="it.tidalwave.bluemarine2.mediascanner.impl.IdCreator" />
     

@@ -75,7 +75,7 @@ public class EmbeddedMetadataManager
     private final ConcurrentMap<URI, Boolean> seenRecordUris = new ConcurrentHashMap<>();
     
     @Inject
-    private AddStatementManager statementManager;
+    private StatementManager statementManager;
     
     @Inject
     private IdCreator idCreator;

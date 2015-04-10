@@ -81,7 +81,7 @@ public class DbTuneMetadataManager
     private MessageBus messageBus;
     
     @Inject
-    private AddStatementManager statementManager;
+    private StatementManager statementManager;
     
     private static final List<URI> VALID_TRACK_PREDICATES_FOR_SUBJECT = Arrays.asList(
             RDF.TYPE, RDFS.LABEL, DC.TITLE, FOAF.MAKER);

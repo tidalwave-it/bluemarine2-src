@@ -50,7 +50,7 @@ import org.openrdf.model.Value;
  *
  **********************************************************************************************************************/
 @SimpleMessageSubscriber @Slf4j
-public class AddStatementManager 
+public class StatementManager 
   {
     @Inject
     private MessageBus messageBus;
