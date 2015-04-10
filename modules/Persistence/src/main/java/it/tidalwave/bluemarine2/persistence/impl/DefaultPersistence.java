@@ -29,7 +29,6 @@
 package it.tidalwave.bluemarine2.persistence.impl;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -49,12 +48,8 @@ import org.openrdf.rio.RDFParseException;
 import org.openrdf.rio.n3.N3Writer;
 import it.tidalwave.util.NotFoundException;
 import it.tidalwave.util.PowerOnNotification;
-import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
-import it.tidalwave.bluemarine2.persistence.DumpCompleted;
-import it.tidalwave.bluemarine2.persistence.DumpRequest;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import it.tidalwave.bluemarine2.persistence.PropertyNames;
 import lombok.Getter;
@@ -71,10 +66,7 @@ public class DefaultPersistence implements Persistence
   {
     @Getter
     private Repository repository;
-    
-    @Inject
-    private MessageBus messageBus;
-    
+        
     /*******************************************************************************************************************
      *
      *
@@ -109,37 +101,12 @@ public class DefaultPersistence implements Persistence
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onAddStatementsRequest (final @ListensTo @Nonnull AddStatementsRequest request) 
-      throws RepositoryException
-      {
-        log.info("onAddStatementsRequest({})", request);
-        final long baseTime = System.nanoTime();
-        final RepositoryConnection connection = repository.getConnection();
-        request.getStatements().stream().forEach(s -> 
-          {
-            try 
-              {
-                connection.add(s);
-              } 
-            catch (RepositoryException e) 
-              {
-                throw new RuntimeException(e); // FIXME
-              }
-          });
-        connection.commit();
-        connection.close();
-        log.debug(">>>> done in {} ns", System.nanoTime() - baseTime);
-      }
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    /* VisibleForTesting */ void onDumpRequest (final @ListensTo @Nonnull DumpRequest request)
+    @Override
+    public void dump (final @Nonnull Path path)
       throws RDFHandlerException, FileNotFoundException, RepositoryException 
       {
-        log.info("onDumpRequest({})", request);
-        final File file = request.getPath().toFile();
+        log.info("dump({})", path);
+        final File file = path.toFile();
         file.getParentFile().mkdirs();
         final PrintWriter pw = new PrintWriter(file);
         final RDFHandler writer = new SortingRDFHandler(new N3Writer(pw));
@@ -163,7 +130,5 @@ public class DefaultPersistence implements Persistence
 
         connection.export(writer);
         connection.close();
-        
-        messageBus.publish(new DumpCompleted(request));
       }
   }

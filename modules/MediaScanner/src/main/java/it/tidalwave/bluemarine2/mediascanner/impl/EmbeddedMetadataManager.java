@@ -50,14 +50,13 @@ import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
 import it.tidalwave.bluemarine2.vocabulary.BM;
 import it.tidalwave.bluemarine2.vocabulary.MO;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
-import static it.tidalwave.bluemarine2.persistence.AddStatementsRequest.*;
+import static it.tidalwave.bluemarine2.mediascanner.impl.AddStatementsRequest.*;
 
 /***********************************************************************************************************************
  *

@@ -32,17 +32,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.time.Instant;
-import java.io.IOException;
 import java.io.File;
 import java.nio.file.Paths;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.PowerOnNotification;
 import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.persistence.DumpCompleted;
-import it.tidalwave.bluemarine2.persistence.DumpRequest;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
+import it.tidalwave.bluemarine2.persistence.Persistence;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import it.tidalwave.util.test.FileComparisonUtils;
@@ -74,9 +72,9 @@ public class DefaultMediaScannerTest
     // it will be processed after all the flying messages have been consumed. But you can't be sured of it.
     private final MessageBus.Listener<ScanCompleted> onScanCompleted = (message) -> scanCompleted.countDown();
     
-    private final MessageBus.Listener<DumpCompleted> onDumpCompleted = (message) -> dumpCompleted.countDown();
-    
     private MediaFileSystem fileSystem;
+    
+    private Persistence persistence;
     
     @BeforeMethod
     private void prepareTest() 
@@ -87,6 +85,7 @@ public class DefaultMediaScannerTest
         final String s3 = "classpath:/META-INF/DefaultMediaScannerTestBeans.xml";
         context = new ClassPathXmlApplicationContext(s1, s2, s3);
         fileSystem = context.getBean(MediaFileSystem.class);
+        persistence = context.getBean(Persistence.class);
         
         context.getBean(MockInstantProvider.class).setInstant(Instant.ofEpochSecond(1428232317L));
         messageBus = context.getBean(MessageBus.class);
@@ -95,7 +94,6 @@ public class DefaultMediaScannerTest
         scanCompleted = new CountDownLatch(1);
         dumpCompleted = new CountDownLatch(1);
         messageBus.subscribe(ScanCompleted.class, onScanCompleted);
-        messageBus.subscribe(DumpCompleted.class, onDumpCompleted);
 
         final Map<Key<?>, Object> properties = new HashMap<>();
         properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, Paths.get("/Users/fritz/Personal/Music/iTunes/iTunes Music"));
@@ -108,15 +106,17 @@ public class DefaultMediaScannerTest
     
     @Test
     public void testScan() 
-      throws IOException, InterruptedException
+      throws Exception
       {
         underTest.process(fileSystem.getRoot());
         scanCompleted.await();
+
+        // Wait for the pending AddStatementsRequest to be consumed. Indeed, it's better to make this handled by ProgressManager
+        Thread.sleep(2000);
         
         final File actualFile = new File("target/test-results/model.n3");
         final File expectedFile = new File("src/test/resources/expected-results/model.n3");
-        messageBus.publish(new DumpRequest(actualFile.toPath()));
-        dumpCompleted.await();
+        persistence.dump(actualFile.toPath());
 
         // FIXME: OOM
         FileComparisonUtils.assertSameContents(expectedFile, actualFile);

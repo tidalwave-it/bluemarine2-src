@@ -28,8 +28,13 @@
  */
 package it.tidalwave.bluemarine2.persistence;
 
+import java.io.FileNotFoundException;
+import java.nio.file.Path;
+import javax.annotation.Nonnull;
 import lombok.NonNull;
 import org.openrdf.repository.Repository;
+import org.openrdf.repository.RepositoryException;
+import org.openrdf.rio.RDFHandlerException;
 
 /***********************************************************************************************************************
  *
@@ -47,4 +52,7 @@ public interface Persistence
     
     @NonNull
     public Repository getRepository();
+    
+    public void dump (final @Nonnull Path path)
+      throws RDFHandlerException, FileNotFoundException, RepositoryException;
   }

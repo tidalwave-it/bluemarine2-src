@@ -40,6 +40,7 @@ import java.net.MalformedURLException;
 import org.openrdf.model.Model;
 import org.openrdf.model.Statement;
 import org.openrdf.model.URI;
+import org.openrdf.model.vocabulary.DC;
 import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
@@ -49,17 +50,14 @@ import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
-import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
 import it.tidalwave.bluemarine2.vocabulary.DbTune;
 import it.tidalwave.bluemarine2.vocabulary.MO;
 import it.tidalwave.bluemarine2.vocabulary.Purl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.persistence.AddStatementsRequest.*;
 import static it.tidalwave.bluemarine2.downloader.DownloadRequest.Option.FOLLOW_REDIRECT;
+import static it.tidalwave.bluemarine2.mediascanner.impl.AddStatementsRequest.*;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
-import java.net.URL;
-import org.openrdf.model.vocabulary.DC;
 
 /***********************************************************************************************************************
  *

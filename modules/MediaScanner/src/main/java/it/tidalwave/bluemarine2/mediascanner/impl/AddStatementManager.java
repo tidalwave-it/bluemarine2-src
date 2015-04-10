@@ -26,15 +26,16 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.persistence;
+package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
-import java.util.UUID;
-import java.nio.file.Path;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+import javax.inject.Inject;
+import it.tidalwave.messagebus.annotation.ListensTo;
+import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.persistence.Persistence;
+import org.openrdf.repository.RepositoryConnection;
+import org.openrdf.repository.RepositoryException;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -42,12 +43,36 @@ import lombok.ToString;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @RequiredArgsConstructor @Getter @ToString
-public class DumpRequest 
+@SimpleMessageSubscriber @Slf4j
+public class AddStatementManager 
   {
-    @Nonnull
-    private final Path path;
+    @Inject
+    private Persistence persistence;
     
-    @Nonnull
-    private final UUID id = UUID.randomUUID(); // FIXME: use euid
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    /* VisibleForTesting */ void onAddStatementsRequest (final @ListensTo @Nonnull AddStatementsRequest request) 
+      throws RepositoryException
+      {
+        log.info("onAddStatementsRequest({})", request);
+        final long baseTime = System.nanoTime();
+        // FIXME: move to Persistence
+        final RepositoryConnection connection = persistence.getRepository().getConnection();
+        request.getStatements().stream().forEach(s -> 
+          {
+            try 
+              {
+                connection.add(s);
+              } 
+            catch (RepositoryException e) 
+              {
+                throw new RuntimeException(e); // FIXME
+              }
+          });
+        connection.commit(); // FIXME: finally
+        connection.close(); // FIXME: finally
+        log.debug(">>>> done in {} ns", System.nanoTime() - baseTime);
+      }
   }

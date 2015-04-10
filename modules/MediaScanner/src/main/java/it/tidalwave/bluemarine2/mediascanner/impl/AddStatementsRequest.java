@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.persistence;
+package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
