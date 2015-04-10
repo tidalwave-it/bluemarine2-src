@@ -55,6 +55,8 @@ import it.tidalwave.bluemarine2.vocabulary.MO;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
+import java.util.List;
+import org.openrdf.model.Statement;
 
 /***********************************************************************************************************************
  *
@@ -211,7 +213,7 @@ public class DefaultMediaScanner
             final Resource artistUri = uriFor("http://musicmusicbrainz.org/ws/2/artist/" + artistId);
             final Artist artist = request.getArtist();
             final Value nameLiteral = literalFor(artist.getName());
-            messageBus.publish(AddStatementsRequest.newAddStatementsRequest()
+            requestAddStatements(AddStatementsRequest.newAddStatementsRequest()
                                                .with(artistUri, RDF.TYPE, MO.C_MUSIC_ARTIST)
                                                .with(artistUri, RDFS.LABEL, nameLiteral)
                                                .with(artistUri, FOAF.NAME, nameLiteral)
@@ -282,7 +284,7 @@ public class DefaultMediaScanner
                     musicBrainzTrackId.get().stringValue().replaceAll("^mbz:", ""));
 
         final Instant lastModifiedTime = getLastModifiedTime(audioFile.getPath());
-        messageBus.publish(AddStatementsRequest.newAddStatementsRequest()
+        requestAddStatements(AddStatementsRequest.newAddStatementsRequest()
                         .with(audioFileUri, RDF.TYPE,   MO.C_AUDIO_FILE)
                         .with(audioFileUri, MO.P_ENCODES, signalUri)
                         .with(audioFileUri, FOAF.SHA1,  literalFor(sha1.stringValue()))
@@ -306,6 +308,16 @@ public class DefaultMediaScanner
           {
             embeddedMetadataManager.importFallbackTrackMetadata(audioFile, trackUri);
           } 
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void requestAddStatements (final @Nonnull AddStatementsRequest request) 
+      {
+        progress.incrementTotalInsertions();
+        messageBus.publish(request);
       }
     
     /*******************************************************************************************************************

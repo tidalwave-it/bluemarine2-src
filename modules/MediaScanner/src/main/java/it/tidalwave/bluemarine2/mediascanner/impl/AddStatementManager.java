@@ -30,12 +30,18 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import it.tidalwave.messagebus.annotation.ListensTo;
-import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.persistence.Persistence;
+import java.util.List;
+import org.openrdf.model.Statement;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.RepositoryException;
+import it.tidalwave.messagebus.annotation.ListensTo;
+import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.persistence.Persistence;
 import lombok.extern.slf4j.Slf4j;
+import org.openrdf.model.Resource;
+import org.openrdf.model.URI;
+import org.openrdf.model.Value;
 
 /***********************************************************************************************************************
  *
@@ -47,7 +53,43 @@ import lombok.extern.slf4j.Slf4j;
 public class AddStatementManager 
   {
     @Inject
+    private MessageBus messageBus;
+    
+    @Inject
     private Persistence persistence;
+    
+    @Inject
+    private ProgressHandler progress;
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    public void requestAddStatement (final @Nonnull Resource subject, 
+                                     final @Nonnull URI predicate,
+                                     final @Nonnull Value literal) 
+      {
+        requestAddStatements(new AddStatementsRequest(subject, predicate, literal));
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    public void requestAddStatements (final @Nonnull List<Statement> statements) 
+      {
+        requestAddStatements(new AddStatementsRequest(statements));
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    public void requestAddStatements (final @Nonnull AddStatementsRequest request) 
+      {
+        progress.incrementTotalInsertions();
+        messageBus.publish(request);
+      }
     
     /*******************************************************************************************************************
      *
@@ -57,6 +99,7 @@ public class AddStatementManager
       throws RepositoryException
       {
         log.info("onAddStatementsRequest({})", request);
+        progress.incrementCompletedInsertions();
         persistence.runInTransaction((RepositoryConnection connection) -> 
           {
             request.getStatements().stream().forEach(s ->

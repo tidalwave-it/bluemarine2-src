@@ -39,9 +39,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.openrdf.model.Model;
-import org.openrdf.model.Resource;
 import org.openrdf.model.Statement;
-import org.openrdf.model.Value;
 import org.openrdf.model.URI;
 import org.openrdf.model.vocabulary.DC;
 import org.openrdf.model.vocabulary.FOAF;
@@ -81,6 +79,9 @@ public class DbTuneMetadataManager
     
     @Inject
     private MessageBus messageBus;
+    
+    @Inject
+    private AddStatementManager statementManager;
     
     private static final List<URI> VALID_TRACK_PREDICATES_FOR_SUBJECT = Arrays.asList(
             RDF.TYPE, RDFS.LABEL, DC.TITLE, FOAF.MAKER);
@@ -179,7 +180,7 @@ public class DbTuneMetadataManager
           {
             log.debug("importTrackMetadata({})", trackUri);
             m.put(trackUri, mediaItem);
-            requestAddStatement(trackUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid));
+            statementManager.requestAddStatement(trackUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid));
             requestDownload(urlFor(trackUri));
           }
         catch (MalformedURLException e) // shoudn't never happen
@@ -205,8 +206,8 @@ public class DbTuneMetadataManager
               {
                 log.debug("onTrackMetadataDownloadComplete({})", message);
                 final Model model = parseModel(message);
-                requestAddStatements(model.stream().filter(new TrackStatementFilter(trackUri))
-                                                   .collect(toList()));
+                statementManager.requestAddStatements(model.stream().filter(new TrackStatementFilter(trackUri))
+                                                           .collect(toList()));
                 model.filter(trackUri, FOAF.MAKER, null)
                      .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
                 model.filter(null, MO.P_TRACK, trackUri)
@@ -238,7 +239,8 @@ public class DbTuneMetadataManager
             log.debug("onArtistMetadataDownloadComplete({})", message);
             final URI artistUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
-            requestAddStatements(model.stream().filter(new ArtistStatementFilter(artistUri)).collect(toList()));
+            statementManager.requestAddStatements(model.stream().filter(new ArtistStatementFilter(artistUri))
+                                                       .collect(toList()));
             model.filter(artistUri, Purl.COLLABORATES_WITH, null)
                  .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
           }   
@@ -265,7 +267,7 @@ public class DbTuneMetadataManager
             final URI recordUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
              // FIXME: filter away some more stuff
-            requestAddStatements(model.filter(recordUri, null, null).stream().collect(toList()));
+            statementManager.requestAddStatements(model.filter(recordUri, null, null).stream().collect(toList()));
           }   
         catch (IOException | RDFHandlerException | RDFParseException e)
           {
@@ -336,25 +338,5 @@ public class DbTuneMetadataManager
       {
         progress.incrementTotalDownloads();
         messageBus.publish(new DownloadRequest(url, FOLLOW_REDIRECT));
-      }
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private void requestAddStatement (final @Nonnull Resource subject, 
-                                      final @Nonnull URI predicate,
-                                      final @Nonnull Value literal) 
-      {
-        messageBus.publish(new AddStatementsRequest(subject, predicate, literal));
-      }
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private void requestAddStatements (final @Nonnull List<Statement> statements) 
-      {
-        messageBus.publish(new AddStatementsRequest(statements));
       }
   }

@@ -111,9 +111,6 @@ public class DefaultMediaScannerTest
         underTest.process(fileSystem.getRoot());
         scanCompleted.await();
 
-        // Wait for the pending AddStatementsRequest to be consumed. Indeed, it's better to make this handled by ProgressManager
-        Thread.sleep(2000);
-        
         final File actualFile = new File("target/test-results/model.n3");
         final File expectedFile = new File("src/test/resources/expected-results/model.n3");
         persistence.dump(actualFile.toPath());

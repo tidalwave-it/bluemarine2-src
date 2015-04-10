@@ -47,7 +47,6 @@ import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
 import it.tidalwave.util.Key;
-import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
@@ -76,11 +75,11 @@ public class EmbeddedMetadataManager
     private final ConcurrentMap<URI, Boolean> seenRecordUris = new ConcurrentHashMap<>();
     
     @Inject
-    private MessageBus messageBus;
+    private AddStatementManager statementManager;
     
     @Inject
     private IdCreator idCreator;
-
+    
     /*******************************************************************************************************************
      *
      * 
@@ -167,8 +166,8 @@ public class EmbeddedMetadataManager
       {
         log.debug("importAudioFileMetadata({}, {}, {})", mediaItem, signalUri, trackUri);
         final Metadata metadata = mediaItem.getMetadata();
-        requestAddStatements(SIGNAL_MAPPER.statementsFor(metadata, signalUri));
-        requestAddStatements(TRACK_MAPPER.statementsFor(metadata, trackUri));
+        statementManager.requestAddStatements(SIGNAL_MAPPER.statementsFor(metadata, signalUri));
+        statementManager.requestAddStatements(TRACK_MAPPER.statementsFor(metadata, trackUri));
       }
     
     /*******************************************************************************************************************
@@ -225,24 +224,6 @@ public class EmbeddedMetadataManager
                              .with(recordUri, MO.P_TRACK_COUNT, literalFor(parent.findChildren().count()));
           }
         
-        requestAddStatements(builder.with(recordUri, MO.P_TRACK, trackUri).create());
-      }
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private void requestAddStatements (final @Nonnull List<Statement> statements) 
-      {
-        requestAddStatements(new AddStatementsRequest(statements));
-      }
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private void requestAddStatements (final @Nonnull AddStatementsRequest request) 
-      {
-        messageBus.publish(request);
+        statementManager.requestAddStatements(builder.with(recordUri, MO.P_TRACK, trackUri).create());
       }
   }

@@ -96,8 +96,9 @@ public class ProgressHandler
     private final Progress artists = new Progress("artists");
     private final Progress records = new Progress("records");
     private final Progress downloads = new Progress("downloads");
+    private final Progress insertions = new Progress("insertions");
     
-    private final List<Progress> all = Arrays.asList(folders, mediaItems, artists, records, downloads);
+    private final List<Progress> all = Arrays.asList(folders, mediaItems, artists, records, downloads, insertions);
     
     // TODO: should also collect errors
 
@@ -163,6 +164,18 @@ public class ProgressHandler
     public void incrementImportedRecords() 
       {
         records.incrementDone();
+        check();
+      }
+    
+    public void incrementTotalInsertions()
+      {
+        insertions.incrementTotal();
+        check();
+      }
+
+    public void incrementCompletedInsertions() 
+      {
+        insertions.incrementDone();
         check();
       }
     
