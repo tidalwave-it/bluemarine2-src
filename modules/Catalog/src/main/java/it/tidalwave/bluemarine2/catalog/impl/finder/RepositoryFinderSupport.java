@@ -105,7 +105,7 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
     public RepositoryFinderSupport clone()
       {
         final RepositoryFinderSupport clone = (RepositoryFinderSupport)super.clone();
-        clone.repository  = this.repository;
+        clone.repository = this.repository;
 
         return clone;
       }
