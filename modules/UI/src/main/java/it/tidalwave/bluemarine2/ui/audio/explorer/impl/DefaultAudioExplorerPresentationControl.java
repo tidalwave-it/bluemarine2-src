@@ -104,7 +104,7 @@ public class DefaultAudioExplorerPresentationControl
     
     private final AudioExplorerPresentation.Properties properties = new AudioExplorerPresentation.Properties();
     
-    private final UserAction8 upAction = new UserActionLambda(() -> navigateUp()); 
+    private final UserAction8 navigateUpAction = new UserActionLambda(() -> navigateUp()); 
     
     /*******************************************************************************************************************
      *
@@ -113,7 +113,7 @@ public class DefaultAudioExplorerPresentationControl
     @PostConstruct 
     /* VisibleForTesting */ void initialize()
       {
-        presentation.bind(properties, upAction);  
+        presentation.bind(properties, navigateUpAction);  
       }
     
     /*******************************************************************************************************************
@@ -144,7 +144,7 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
-     * The default action to go back should be disabled if the stack is not empty.
+     * Deactivation is disabled (and acts as navigateUpAction) when the stack is not empty.
      *
      ******************************************************************************************************************/
     @OnDeactivate
@@ -203,7 +203,7 @@ public class DefaultAudioExplorerPresentationControl
         log.debug("populateAndSelect({}, {})", folder, selectedIndex);
         this.currentFolder = folder;
         // FIXME: shouldn't deal with JavaFX threads here
-        Platform.runLater(() -> upAction.enabledProperty().setValue(!stack.isEmpty()));
+        Platform.runLater(() -> navigateUpAction.enabledProperty().setValue(!stack.isEmpty()));
         Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentPathLabel()));
         // FIXME: waiting signal while loading
         final SimpleComposite8<Entity> composite = folder.as(SimpleComposite8);
@@ -242,7 +242,8 @@ public class DefaultAudioExplorerPresentationControl
 
     /*******************************************************************************************************************
      *
-     *
+     * Computes the label describing the current navigation path.
+     * 
      ******************************************************************************************************************/
     @Nonnull
     private String getCurrentPathLabel()
