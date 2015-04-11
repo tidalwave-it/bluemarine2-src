@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.util.List;
+import java.util.Optional;
 import java.util.Stack;
 import javafx.application.Platform;
 import it.tidalwave.role.SimpleComposite8;
@@ -64,7 +65,6 @@ import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
 import static it.tidalwave.bluemarine2.model.role.MediaItemSupplier.MediaItemSupplier;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
-import java.util.Optional;
 
 /***********************************************************************************************************************
  *
@@ -80,7 +80,7 @@ import java.util.Optional;
 public class DefaultAudioExplorerPresentationControl 
   {
     @AllArgsConstructor @Getter @ToString
-    private static class FolderAndPresentationMemento
+    private static class FolderAndMemento
       {
         @Nonnull
         private final Entity folder;
@@ -100,7 +100,7 @@ public class DefaultAudioExplorerPresentationControl
     
     private Entity currentFolder;
     
-    private final Stack<FolderAndPresentationMemento> stack = new Stack<>();
+    private final Stack<FolderAndMemento> navigationStack = new Stack<>();
     
     private final AudioExplorerPresentation.Properties properties = new AudioExplorerPresentation.Properties();
     
@@ -128,7 +128,7 @@ public class DefaultAudioExplorerPresentationControl
         final EntitySupplier browser = browsers.stream()
                                                .filter(s -> s.getClass().getName().contains("BrowserByRecord"))
                                                .findFirst().get();
-        populateItems(browser.get(), Optional.empty());
+        populateItems(new FolderAndMemento(browser.get(), Optional.empty()));
       }
     
     /*******************************************************************************************************************
@@ -152,7 +152,7 @@ public class DefaultAudioExplorerPresentationControl
       {
         log.debug("onDeactivate()");
         
-        if (stack.isEmpty())
+        if (navigationStack.isEmpty())
           {  
             return OnDeactivate.Result.PROCEED;  
           }  
@@ -173,8 +173,8 @@ public class DefaultAudioExplorerPresentationControl
     private void navigateTo (final @Nonnull Entity newMediaFolder)
       {
         log.debug("navigateTo({})", newMediaFolder);
-        stack.push(new FolderAndPresentationMemento(currentFolder, Optional.of(presentation.getMemento())));
-        populateItems(newMediaFolder, Optional.empty());
+        navigationStack.push(new FolderAndMemento(currentFolder, Optional.of(presentation.getMemento())));
+        populateItems(new FolderAndMemento(newMediaFolder, Optional.empty()));
       }
     
     /*******************************************************************************************************************
@@ -186,8 +186,7 @@ public class DefaultAudioExplorerPresentationControl
       {
         // TODO: assert not UI thread
         log.debug("navigateUp()");
-        final FolderAndPresentationMemento folderAndMemento = stack.pop();
-        populateItems(folderAndMemento.getFolder(), folderAndMemento.getMemento());
+        populateItems(navigationStack.pop());
       }
     
     /*******************************************************************************************************************
@@ -206,19 +205,18 @@ public class DefaultAudioExplorerPresentationControl
      *
      * Populates the presentation with the contents of a folder and selects an item.
      * 
-     * @param   folder          the folder
-     * @param   selectedIndex   the index of the item to select
+     * @param   folderAndMemento    the folder and the presentation memento
      *
      ******************************************************************************************************************/
-    private void populateItems (final @Nonnull Entity folder, final Optional<Object> memento)
+    private void populateItems (final @Nonnull FolderAndMemento folderAndMemento)
       {
-        log.debug("populateItems({}, {})", folder, memento);
-        this.currentFolder = folder;
+        log.debug("populateItems({})", folderAndMemento);
+        this.currentFolder = folderAndMemento.getFolder();
         // FIXME: shouldn't deal with JavaFX threads here
-        Platform.runLater(() -> navigateUpAction.enabledProperty().setValue(!stack.isEmpty()));
+        Platform.runLater(() -> navigateUpAction.enabledProperty().setValue(!navigationStack.isEmpty()));
         Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentPathLabel()));
         // FIXME: waiting signal while loading
-        final SimpleComposite8<Entity> composite = folder.as(SimpleComposite8);
+        final SimpleComposite8<Entity> composite = currentFolder.as(SimpleComposite8);
         // Uses native ordering provided by the Composite.
         final PresentationModel pm = composite.findChildren()
                                               .stream()
@@ -226,7 +224,7 @@ public class DefaultAudioExplorerPresentationControl
                                                                    .orElse(new DefaultPresentable(object))
                                                                    .createPresentationModel(rolesFor(object)))
                                               .collect(toCompositePresentationModel());
-        presentation.populateItems(pm, memento);
+        presentation.populateItems(pm, folderAndMemento.getMemento());
       }
     
     /*******************************************************************************************************************
@@ -259,7 +257,7 @@ public class DefaultAudioExplorerPresentationControl
     @Nonnull
     private String getCurrentPathLabel()
       {
-        return concat(stack.stream().map(i -> i.getFolder()), of(currentFolder))
+        return concat(navigationStack.stream().map(i -> i.getFolder()), of(currentFolder))
                 .filter(i -> i.asOptional(Parentable).map(p -> p.hasParent()).orElse(true))
                 .filter(i -> i.asOptional(Displayable).map(d -> true).orElse(false))
                 .map(i -> i.asOptional(Displayable).map(o -> o.getDisplayName()).orElse("???"))
