@@ -72,6 +72,6 @@ public class RepositoryMusicArtist extends RepositoryEntitySupport implements Mu
     @Override @Nonnull
     public String toString() 
       {
-        return String.format("RepositoryMusicArtistEntity(rdfs:label=%s, uri=%s)", rdfsLabel, id);
+        return String.format("RepositoryMusicArtist(rdfs:label=%s, uri=%s)", rdfsLabel, id);
       }
   }

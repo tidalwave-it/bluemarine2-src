@@ -65,6 +65,6 @@ public class RepositoryRecord extends RepositoryEntitySupport implements Record
     @Override @Nonnull
     public String toString() 
       {
-        return String.format("RepositoryRecordEntity(rdfs:label=%s, %s)", rdfsLabel, id);
+        return String.format("RepositoryRecord(rdfs:label=%s, %s)", rdfsLabel, id);
       }
   }

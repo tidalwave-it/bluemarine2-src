@@ -106,7 +106,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Override @Nonnull
     public String toString() 
       {
-        return String.format("RepositoryTrackEntity(%02d, %s, rdfs:label=%s, %s, %s)",
+        return String.format("RepositoryTrack(%02d, %s, rdfs:label=%s, %s, %s)",
                              trackNumber, duration, rdfsLabel, audioFilePath, id);
       }
   }
