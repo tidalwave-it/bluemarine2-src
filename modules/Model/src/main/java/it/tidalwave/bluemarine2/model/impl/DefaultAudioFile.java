@@ -32,8 +32,6 @@ import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.time.Duration;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.nio.file.Path;
@@ -44,6 +42,8 @@ import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import lombok.Delegate;
 import lombok.Getter;
+import static java.util.Arrays.*;
+import static java.util.Collections.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.role.Displayable.Displayable;
 
@@ -123,8 +123,8 @@ public class DefaultAudioFile implements AudioFile
             protected List<? extends Entity> computeNeededResults() 
               {
                 return getMetadata().get(Metadata.COMPOSER)
-                                    .map(artistName -> Arrays.asList(new NamedEntity(artistName)))
-                                    .orElse(Collections.emptyList());
+                                    .map(artistName -> asList(new NamedEntity(artistName)))
+                                    .orElse(emptyList());
               }
           };
       }
@@ -138,8 +138,8 @@ public class DefaultAudioFile implements AudioFile
             protected List<? extends Entity> computeNeededResults() 
               {
                 return getMetadata().get(Metadata.ARTIST)
-                                    .map(artistName -> Arrays.asList(new NamedEntity(artistName)))
-                                    .orElse(Collections.emptyList());
+                                    .map(artistName -> asList(new NamedEntity(artistName)))
+                                    .orElse(emptyList());
               }
           };
       }
