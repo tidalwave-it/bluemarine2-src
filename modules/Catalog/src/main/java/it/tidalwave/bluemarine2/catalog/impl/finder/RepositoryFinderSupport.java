@@ -29,18 +29,14 @@
 package it.tidalwave.bluemarine2.catalog.impl.finder;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Paths;
 import java.nio.charset.Charset;
 import org.springframework.util.StreamUtils;
 import org.openrdf.model.Value;
 import org.openrdf.model.impl.ValueFactoryImpl;
-import org.openrdf.query.Binding;
 import org.openrdf.query.BindingSet;
 import org.openrdf.query.MalformedQueryException;
 import org.openrdf.query.QueryEvaluationException;
@@ -195,85 +191,19 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
         // FIXME
         if (entityClass.equals(RepositoryMusicArtist.class))
           {
-            return (E)new RepositoryMusicArtist(repository,
-                    new Id(toString(bindingSet.getBinding("artist"))), 
-                           toString(bindingSet.getBinding("label")), null);
+            return (E)new RepositoryMusicArtist(repository, bindingSet);
           }
         
         if (entityClass.equals(RepositoryRecord.class))
           {
-            return (E)new RepositoryRecord(repository,
-                    new Id(toString(bindingSet.getBinding("record"))), 
-                           toString(bindingSet.getBinding("label")));
+            return (E)new RepositoryRecord(repository, bindingSet);
           }
         
         if (entityClass.equals(RepositoryTrack.class))
           {
-            return (E)new RepositoryTrack(repository,
-                    new Id(toString(bindingSet.getBinding("track"))), 
-                           Paths.get(toString(bindingSet.getBinding("path"))),
-                           toString(bindingSet.getBinding("label")),
-                           toDuration(bindingSet.getBinding("duration")),
-                           toInteger(bindingSet.getBinding("track_number")),
-                           toString(bindingSet.getBinding("record_label")),
-                           null);
-//                           toInteger(bindingSet.getBinding("track_number")));
+            return (E)new RepositoryTrack(repository, bindingSet);
           }
         
         throw new RuntimeException("Unknown entity: " + entityClass);
-      }
-    
-    /*******************************************************************************************************************
-     *
-     * 
-     *
-     ******************************************************************************************************************/
-    @Nullable
-    private static String toString (final @Nullable Binding binding)
-      {
-        if (binding == null)
-          {
-            return null;  
-          }
-        
-        final Value value = binding.getValue();
-        
-        return (value != null) ? value.stringValue() : null;
-      }
-    
-    /*******************************************************************************************************************
-     *
-     * 
-     *
-     ******************************************************************************************************************/
-    @Nullable
-    private static Integer toInteger (final @Nullable Binding binding)
-      {
-        if (binding == null)
-          {
-            return null;  
-          }
-        
-        final Value value = binding.getValue();
-        
-        return (value != null) ? Integer.parseInt(value.stringValue()) : null;
-      }
-    
-    /*******************************************************************************************************************
-     *
-     * 
-     *
-     ******************************************************************************************************************/
-    @Nullable
-    private static Duration toDuration (final @Nullable Binding binding)
-      {
-        if (binding == null)
-          {
-            return null;  
-          }
-        
-        final Value value = binding.getValue();
-        
-        return (value != null) ? Duration.ofMillis((int)Float.parseFloat(value.stringValue())) : null;
       }
   }

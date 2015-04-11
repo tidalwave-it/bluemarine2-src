@@ -82,21 +82,20 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     private final Duration duration;
     
     public RepositoryAudioFile (final @Nonnull Repository repository,
-                                      final @Nonnull Id id,
-                                      final @Nonnull Id trackId,
-                                      final @Nonnull Path path,
-                                      final @Nonnull Entity parent,
-                                      final @Nonnull Path basePath,
-                                      final @Nonnull Duration duration,
-                                      final String rdfsLabel)
+                                final @Nonnull Id id,
+                                final @Nonnull Id trackId,
+                                final @Nonnull Path path,
+                                final @Nonnull Entity parent,
+                                final @Nonnull Path basePath,
+                                final @Nonnull Duration duration,
+                                final String rdfsLabel)
       {
-        super(repository, id);
+        super(repository, id, rdfsLabel);
         this.trackId = trackId;
         this.path = path;
         this.parent = parent;
         this.relativePath = path; // basePath.relativize(path);
         this.duration = duration;
-        this.rdfsLabel = rdfsLabel;
       }
     
     @Override @Nonnull

@@ -31,7 +31,7 @@ package it.tidalwave.bluemarine2.catalog.impl;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import org.openrdf.repository.Repository;
-import it.tidalwave.util.Id;
+import org.openrdf.query.BindingSet;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryTrackFinder;
@@ -51,12 +51,9 @@ import lombok.extern.slf4j.Slf4j;
 @Immutable @Getter @Slf4j
 public class RepositoryRecord extends RepositoryEntitySupport implements Record
   {
-    public RepositoryRecord (final @Nonnull Repository repository, 
-                                  final @Nonnull Id id, 
-                                  final @Nonnull String rdfsLabel)
+    public RepositoryRecord (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
-        super(repository, id);
-        this.rdfsLabel = rdfsLabel;
+        super(repository, bindingSet, "record");
       }
    
     @Override @Nonnull
@@ -68,7 +65,6 @@ public class RepositoryRecord extends RepositoryEntitySupport implements Record
     @Override @Nonnull
     public String toString() 
       {
-        return String.format("RepositoryRecordEntity(rdfs:label=%s, %s)",
-                             rdfsLabel, id);
+        return String.format("RepositoryRecordEntity(rdfs:label=%s, %s)", rdfsLabel, id);
       }
   }

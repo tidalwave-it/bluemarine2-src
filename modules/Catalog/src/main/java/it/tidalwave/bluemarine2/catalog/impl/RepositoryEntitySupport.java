@@ -29,7 +29,12 @@
 package it.tidalwave.bluemarine2.catalog.impl;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.time.Duration;
 import org.openrdf.repository.Repository;
+import org.openrdf.model.Value;
+import org.openrdf.query.Binding;
+import org.openrdf.query.BindingSet;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.role.Identifiable;
@@ -55,8 +60,76 @@ public class RepositoryEntitySupport implements Entity, Identifiable
     protected final Id id;
     
     @Getter
-    protected String rdfsLabel = "";
+    protected final String rdfsLabel;
     
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
+
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    public RepositoryEntitySupport (final @Nonnull Repository repository, 
+                                    final @Nonnull BindingSet bindingSet,
+                                    final @Nonnull String idName)
+      {
+        this.repository = repository;
+        this.id = new Id(toString(bindingSet.getBinding(idName)));
+        this.rdfsLabel = toString(bindingSet.getBinding("label"));
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    @Nullable
+    protected static String toString (final @Nullable Binding binding)
+      {
+        if (binding == null)
+          {
+            return null;  
+          }
+        
+        final Value value = binding.getValue();
+        
+        return (value != null) ? value.stringValue() : null;
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    @Nullable
+    protected static Integer toInteger (final @Nullable Binding binding)
+      {
+        if (binding == null)
+          {
+            return null;  
+          }
+        
+        final Value value = binding.getValue();
+        
+        return (value != null) ? Integer.parseInt(value.stringValue()) : null;
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    @Nullable
+    protected static Duration toDuration (final @Nullable Binding binding)
+      {
+        if (binding == null)
+          {
+            return null;  
+          }
+        
+        final Value value = binding.getValue();
+        
+        return (value != null) ? Duration.ofMillis((int)Float.parseFloat(value.stringValue())) : null;
+      }
   }

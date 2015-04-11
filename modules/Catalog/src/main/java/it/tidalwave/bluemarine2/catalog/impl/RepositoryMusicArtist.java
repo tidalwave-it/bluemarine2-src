@@ -31,13 +31,13 @@ package it.tidalwave.bluemarine2.catalog.impl;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import org.openrdf.repository.Repository;
-import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordFinder;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryTrackFinder;
 import lombok.Getter;
+import org.openrdf.query.BindingSet;
 
 /***********************************************************************************************************************
  *
@@ -52,16 +52,9 @@ import lombok.Getter;
 @Immutable @Getter
 public class RepositoryMusicArtist extends RepositoryEntitySupport implements MusicArtist
   {
-    private final String foafName;
-
-    public RepositoryMusicArtist (final @Nonnull Repository repository,
-                                        final @Nonnull Id id, 
-                                        final @Nonnull String rdfsLabel, 
-                                        final @Nonnull String foafName)
+    public RepositoryMusicArtist (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
-        super(repository, id);
-        this.rdfsLabel = rdfsLabel;
-        this.foafName = foafName;
+        super(repository, bindingSet, "artist");
       }
     
     @Override @Nonnull
@@ -79,7 +72,6 @@ public class RepositoryMusicArtist extends RepositoryEntitySupport implements Mu
     @Override @Nonnull
     public String toString() 
       {
-        return String.format("RepositoryMusicArtistEntity(rdfs:label=%s, foaf:name=%s, uri=%s)",
-                             rdfsLabel, foafName, id);
+        return String.format("RepositoryMusicArtistEntity(rdfs:label=%s, uri=%s)", rdfsLabel, id);
       }
   }

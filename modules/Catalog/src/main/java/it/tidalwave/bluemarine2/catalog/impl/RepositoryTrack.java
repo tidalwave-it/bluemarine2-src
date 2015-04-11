@@ -34,9 +34,10 @@ import javax.annotation.concurrent.Immutable;
 import javax.inject.Inject;
 import java.time.Duration;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.openrdf.repository.Repository;
-import it.tidalwave.util.Id;
+import org.openrdf.query.BindingSet;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
@@ -74,22 +75,14 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Inject
     private MediaFileSystem fileSystem;
     
-    public RepositoryTrack (final @Nonnull Repository repository, 
-                                  final @Nonnull Id id, 
-                                  final @Nonnull Path audioFilePath,
-                                  final @Nonnull String rdfsLabel,
-                                  final @Nonnull Duration duration,
-                                  final @Nonnull Integer trackNumber,
-                                  final @Nonnull String recordRdfsLabel,
-                                  final @Nonnull Integer trackCount)
+    public RepositoryTrack (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
-        super(repository, id);
-        this.audioFilePath = audioFilePath;
-        this.rdfsLabel = rdfsLabel;
-        this.duration = duration;
-        this.trackNumber = trackNumber;
-//        this.recordRdfsLabel = recordRdfsLabel;
-//        this.trackCount = trackCount;
+        super(repository, bindingSet, "track");
+        this.audioFilePath = Paths.get(toString(bindingSet.getBinding("path")));
+        this.duration = toDuration(bindingSet.getBinding("duration"));
+        this.trackNumber = toInteger(bindingSet.getBinding("track_number"));
+//        this.recordRdfsLabel = toString(bindingSet.getBinding("record_label"));
+//        this.trackCount = toInteger(bindingSet.getBinding("track_number")));
       }
     
     @Override @Nonnull
