@@ -32,7 +32,6 @@ import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
-import org.openrdf.model.impl.ValueFactoryImpl;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.Track;
@@ -40,6 +39,7 @@ import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrack;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
+import java.util.Optional;
 
 /***********************************************************************************************************************
  *
@@ -50,11 +50,11 @@ import it.tidalwave.bluemarine2.model.Record;
 public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, TrackFinder>
                                          implements TrackFinder
   {
-    @CheckForNull
-    private Id makerId;
+    @Nonnull
+    private Optional<Id> makerId = Optional.empty();
 
     @CheckForNull
-    private Id recordId;
+    private Optional<Id> recordId = Optional.empty();
 
     /*******************************************************************************************************************
      *
@@ -75,7 +75,7 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
     public TrackFinder madeBy (final @Nonnull MusicArtist artist)  
       {
         final RepositoryTrackEntityFinder clone = clone();
-        clone.makerId = artist.getId();
+        clone.makerId = Optional.of(artist.getId());
         return clone;
       }
     
@@ -88,7 +88,7 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
     public TrackFinder inRecord (final @Nonnull Record record)  
       {
         final RepositoryTrackEntityFinder clone = clone();
-        clone.recordId = record.getId();
+        clone.recordId = Optional.of(record.getId());
         return clone;
       }
     
@@ -155,17 +155,16 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
         
         final List<Object> parameters = new ArrayList<>();
         
-        // FIXME: use Optional?
-        if (makerId != null)
+        if (makerId.isPresent())
           {
             parameters.add("artist");
-            parameters.add(uriFor(makerId));
+            parameters.add(uriFor(makerId.get()));
           }
         
-        if (recordId != null)
+        if (recordId.isPresent())
           {
             parameters.add("record");
-            parameters.add(uriFor(recordId));
+            parameters.add(uriFor(recordId.get()));
           }
         
         return query(RepositoryTrack.class, q, parameters.toArray());
