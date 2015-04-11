@@ -35,7 +35,6 @@ import javax.inject.Inject;
 import java.util.List;
 import java.util.Stack;
 import javafx.application.Platform;
-import it.tidalwave.util.AsException;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
