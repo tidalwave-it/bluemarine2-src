@@ -51,7 +51,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @Immutable @Configurable @Getter @Slf4j
-public class RepositoryTrackEntity extends RepositoryEntitySupport implements Track, AudioFileSupplier
+public class RepositoryTrack extends RepositoryEntitySupport implements Track, AudioFileSupplier
   {
     private final Integer trackNumber;
     
@@ -70,7 +70,7 @@ public class RepositoryTrackEntity extends RepositoryEntitySupport implements Tr
     @Inject
     private MediaFileSystem fileSystem;
     
-    public RepositoryTrackEntity (final @Nonnull Repository repository, 
+    public RepositoryTrack (final @Nonnull Repository repository, 
                                   final @Nonnull Id id, 
                                   final @Nonnull Path audioFilePath,
                                   final @Nonnull String rdfsLabel,
@@ -93,7 +93,7 @@ public class RepositoryTrackEntity extends RepositoryEntitySupport implements Tr
       {
         if (audioFile == null)
           {
-            audioFile = new RepositoryAudioFileEntity(repository, 
+            audioFile = new RepositoryAudioFile(repository, 
                                                 id, // FIXME: this should really be the AudioFileId
                                                 id,
                                                 fileSystem.getRootPath().resolve(audioFilePath),

@@ -35,7 +35,7 @@ import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
-import it.tidalwave.bluemarine2.catalog.impl.RepositoryMusicArtistEntity;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryMusicArtist;
 
 /***********************************************************************************************************************
  *
@@ -71,9 +71,9 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
     protected List<? extends MusicArtist> computeNeededResults() 
       {
         return madeEntityId.isPresent()
-                ? query(RepositoryMusicArtistEntity.class, QUERY_ARTISTS_MAKER_OF, 
+                ? query(RepositoryMusicArtist.class, QUERY_ARTISTS_MAKER_OF, 
                                                            "madeEntity", uriFor(madeEntityId.get()))
-                : query(RepositoryMusicArtistEntity.class, QUERY_ARTISTS);
+                : query(RepositoryMusicArtist.class, QUERY_ARTISTS);
       }
 
     /*******************************************************************************************************************

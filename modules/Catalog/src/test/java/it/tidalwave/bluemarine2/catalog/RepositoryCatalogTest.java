@@ -56,7 +56,7 @@ import it.tidalwave.util.Key;
 import it.tidalwave.util.PowerOnNotification;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalog;
-import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrackEntity;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrack;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 import lombok.extern.slf4j.Slf4j;
@@ -123,10 +123,10 @@ public class RepositoryCatalogTest
         final List<? extends Record> records = catalog.findRecords().results();
         
         pw.println("ALL TRACKS:\n");
-        final Map<String, RepositoryTrackEntity> allTracks = catalog.findTracks().results().stream()
-                        .map(t -> (RepositoryTrackEntity)t)
-                        .collect(Collectors.toMap(RepositoryTrackEntity::toString, Function.identity()));
-        final Comparator<RepositoryTrackEntity> c = (o1, o2) -> o1.getRdfsLabel().compareTo(o2.getRdfsLabel());
+        final Map<String, RepositoryTrack> allTracks = catalog.findTracks().results().stream()
+                        .map(t -> (RepositoryTrack)t)
+                        .collect(Collectors.toMap(RepositoryTrack::toString, Function.identity()));
+        final Comparator<RepositoryTrack> c = (o1, o2) -> o1.getRdfsLabel().compareTo(o2.getRdfsLabel());
         allTracks.values().stream().sorted(c).forEach(track -> pw.printf("  %s\n", track));
         
         pw.println("\n\n\nALL RECORDS:\n");

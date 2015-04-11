@@ -45,9 +45,9 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @Immutable @Getter @Slf4j
-public class RepositoryRecordEntity extends RepositoryEntitySupport implements Record
+public class RepositoryRecord extends RepositoryEntitySupport implements Record
   {
-    public RepositoryRecordEntity (final @Nonnull Repository repository, 
+    public RepositoryRecord (final @Nonnull Repository repository, 
                                   final @Nonnull Id id, 
                                   final @Nonnull String rdfsLabel)
       {

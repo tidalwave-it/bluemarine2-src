@@ -35,7 +35,7 @@ import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
-import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordEntityFinder;
+import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordFinder;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryTrackEntityFinder;
 import lombok.Getter;
 
@@ -46,11 +46,11 @@ import lombok.Getter;
  *
  **********************************************************************************************************************/
 @Immutable @Getter
-public class RepositoryMusicArtistEntity extends RepositoryEntitySupport implements MusicArtist
+public class RepositoryMusicArtist extends RepositoryEntitySupport implements MusicArtist
   {
     private final String foafName;
 
-    public RepositoryMusicArtistEntity (final @Nonnull Repository repository,
+    public RepositoryMusicArtist (final @Nonnull Repository repository,
                                         final @Nonnull Id id, 
                                         final @Nonnull String rdfsLabel, 
                                         final @Nonnull String foafName)
@@ -69,7 +69,7 @@ public class RepositoryMusicArtistEntity extends RepositoryEntitySupport impleme
     @Override @Nonnull
     public RecordFinder findRecords() 
       {
-        return new RepositoryRecordEntityFinder(repository).madeBy(this);
+        return new RepositoryRecordFinder(repository).madeBy(this);
       }
     
     @Override @Nonnull

@@ -46,8 +46,7 @@ import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.impl.AudioMetadata;
 import it.tidalwave.bluemarine2.model.impl.NamedEntity;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryMusicArtistFinder;
-import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordEntityFinder;
-import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryTrackEntityFinder;
+import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordFinder;
 import lombok.Getter;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
@@ -62,7 +61,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  *
  **********************************************************************************************************************/
 @Immutable
-public class RepositoryAudioFileEntity extends RepositoryEntitySupport implements AudioFile
+public class RepositoryAudioFile extends RepositoryEntitySupport implements AudioFile
   {
     @Getter @Nonnull
     private final Path path;
@@ -82,7 +81,7 @@ public class RepositoryAudioFileEntity extends RepositoryEntitySupport implement
     @Nonnull
     private final Duration duration;
     
-    public RepositoryAudioFileEntity (final @Nonnull Repository repository,
+    public RepositoryAudioFile (final @Nonnull Repository repository,
                                       final @Nonnull Id id,
                                       final @Nonnull Id trackId,
                                       final @Nonnull Path path,
@@ -145,7 +144,7 @@ public class RepositoryAudioFileEntity extends RepositoryEntitySupport implement
     @Override
     public Optional<? extends Entity> getRecord()
       {
-        return new RepositoryRecordEntityFinder(repository).recordOf(id).optionalFirstResult();
+        return new RepositoryRecordFinder(repository).recordOf(id).optionalFirstResult();
       }
     
     @Override @Nonnull

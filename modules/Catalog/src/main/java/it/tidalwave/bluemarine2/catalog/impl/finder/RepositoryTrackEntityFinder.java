@@ -37,7 +37,7 @@ import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
-import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrackEntity;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrack;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 
@@ -168,6 +168,6 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
             parameters.add(ValueFactoryImpl.getInstance().createURI(recordId.stringValue()));
           }
         
-        return query(RepositoryTrackEntity.class, q, parameters.toArray());
+        return query(RepositoryTrack.class, q, parameters.toArray());
       }
   }

@@ -36,7 +36,7 @@ import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
-import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecordEntity;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecord;
 
 /***********************************************************************************************************************
  *
@@ -44,8 +44,8 @@ import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecordEntity;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryRecordEntityFinder extends RepositoryFinderSupport<Record, RecordFinder>
-                                          implements RecordFinder
+public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, RecordFinder>
+                                    implements RecordFinder
   {
     @CheckForNull
     private Id makerId;
@@ -58,7 +58,7 @@ public class RepositoryRecordEntityFinder extends RepositoryFinderSupport<Record
      * 
      *
      ******************************************************************************************************************/
-    public RepositoryRecordEntityFinder (final @Nonnull Repository repository)  
+    public RepositoryRecordFinder (final @Nonnull Repository repository)  
       {
         super(repository);
       }
@@ -71,7 +71,7 @@ public class RepositoryRecordEntityFinder extends RepositoryFinderSupport<Record
     @Override @Nonnull
     public RecordFinder madeBy (final @Nonnull MusicArtist artist)  
       {
-        final RepositoryRecordEntityFinder clone = clone();
+        final RepositoryRecordFinder clone = clone();
         clone.makerId = artist.getId();
         return clone;
       }
@@ -84,7 +84,7 @@ public class RepositoryRecordEntityFinder extends RepositoryFinderSupport<Record
     @Override @Nonnull
     public RecordFinder recordOf (final @Nonnull Id trackId)  
       {
-        final RepositoryRecordEntityFinder clone = clone();
+        final RepositoryRecordFinder clone = clone();
         clone.trackId = trackId;
         return clone;
       }
@@ -95,9 +95,9 @@ public class RepositoryRecordEntityFinder extends RepositoryFinderSupport<Record
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public RepositoryRecordEntityFinder clone()
+    public RepositoryRecordFinder clone()
       {
-        final RepositoryRecordEntityFinder clone = (RepositoryRecordEntityFinder)super.clone();
+        final RepositoryRecordFinder clone = (RepositoryRecordFinder)super.clone();
         clone.makerId = this.makerId;
         clone.trackId = this.trackId;
 
@@ -137,8 +137,8 @@ public class RepositoryRecordEntityFinder extends RepositoryFinderSupport<Record
             + "       }\n"
             + "ORDER BY ?label";
         
-        return (makerId != null) ? query(RepositoryRecordEntity.class, q, "artist", uriFor(makerId))
-             : (trackId != null) ? query(RepositoryRecordEntity.class, q, "track", uriFor(trackId))
-                                 : query(RepositoryRecordEntity.class, q);
+        return (makerId != null) ? query(RepositoryRecord.class, q, "artist", uriFor(makerId))
+             : (trackId != null) ? query(RepositoryRecord.class, q, "track", uriFor(trackId))
+                                 : query(RepositoryRecord.class, q);
       }
   }

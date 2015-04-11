@@ -54,9 +54,9 @@ import it.tidalwave.util.Id;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Finder8Support;
 import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.catalog.impl.RepositoryMusicArtistEntity;
-import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecordEntity;
-import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrackEntity;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryMusicArtist;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecord;
+import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrack;
 import lombok.Cleanup;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -193,23 +193,23 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
                                                   final @Nonnull BindingSet bindingSet)
       {
         // FIXME
-        if (entityClass.equals(RepositoryMusicArtistEntity.class))
+        if (entityClass.equals(RepositoryMusicArtist.class))
           {
-            return (E)new RepositoryMusicArtistEntity(repository,
+            return (E)new RepositoryMusicArtist(repository,
                     new Id(toString(bindingSet.getBinding("artist"))), 
                            toString(bindingSet.getBinding("label")), null);
           }
         
-        if (entityClass.equals(RepositoryRecordEntity.class))
+        if (entityClass.equals(RepositoryRecord.class))
           {
-            return (E)new RepositoryRecordEntity(repository,
+            return (E)new RepositoryRecord(repository,
                     new Id(toString(bindingSet.getBinding("record"))), 
                            toString(bindingSet.getBinding("label")));
           }
         
-        if (entityClass.equals(RepositoryTrackEntity.class))
+        if (entityClass.equals(RepositoryTrack.class))
           {
-            return (E)new RepositoryTrackEntity(repository,
+            return (E)new RepositoryTrack(repository,
                     new Id(toString(bindingSet.getBinding("track"))), 
                            Paths.get(toString(bindingSet.getBinding("path"))),
                            toString(bindingSet.getBinding("label")),

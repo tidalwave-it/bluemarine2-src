@@ -34,7 +34,7 @@ import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.catalog.Catalog;
-import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordEntityFinder;
+import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordFinder;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryTrackEntityFinder;
 import lombok.RequiredArgsConstructor;
@@ -60,7 +60,7 @@ public class RepositoryCatalog implements Catalog
     @Override @Nonnull
     public RecordFinder findRecords() 
       {
-        return new RepositoryRecordEntityFinder(repository);
+        return new RepositoryRecordFinder(repository);
       }
 
     @Override @Nonnull
