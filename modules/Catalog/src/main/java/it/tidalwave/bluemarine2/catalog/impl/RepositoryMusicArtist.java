@@ -41,6 +41,10 @@ import lombok.Getter;
 
 /***********************************************************************************************************************
  *
+ * An implementation of {@link MusicArtist} that is mapped to a {@link Repository}.
+ * 
+ * @stereotype  Datum
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *

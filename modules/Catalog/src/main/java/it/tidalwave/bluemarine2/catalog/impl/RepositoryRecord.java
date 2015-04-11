@@ -40,6 +40,10 @@ import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
+ * An implementation of {@link Record} that is mapped to a {@link Repository}.
+ * 
+ * @stereotype  Datum
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *

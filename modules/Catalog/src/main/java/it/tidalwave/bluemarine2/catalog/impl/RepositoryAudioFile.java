@@ -52,7 +52,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
- * The default implementation of {@link AudioFile}. It basically does nothing, it just acts as an aggregator of roles.
+ * An implementation of {@link AudioFile} that is mapped to a {@link Repository}.
  * 
  * @stereotype  Datum
  * 

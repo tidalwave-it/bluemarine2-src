@@ -28,7 +28,6 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl;
 
-import it.tidalwave.bluemarine2.model.AudioFile;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
@@ -38,6 +37,7 @@ import java.nio.file.Path;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
+import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
@@ -46,6 +46,10 @@ import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
+ * An implementation of {@link Track} that is mapped to a {@link Repository}.
+ * 
+ * @stereotype  Datum
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
