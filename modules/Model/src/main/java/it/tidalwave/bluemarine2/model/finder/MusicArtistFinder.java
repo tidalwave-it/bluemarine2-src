@@ -28,6 +28,8 @@
  */
 package it.tidalwave.bluemarine2.model.finder;
 
+import javax.annotation.Nonnull;
+import it.tidalwave.util.Id;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 
@@ -39,4 +41,6 @@ import it.tidalwave.bluemarine2.model.MusicArtist;
  **********************************************************************************************************************/
 public interface MusicArtistFinder extends Finder8<MusicArtist>
   {
+    @Nonnull
+    public MusicArtistFinder makerOf (@Nonnull Id entityId);
   }

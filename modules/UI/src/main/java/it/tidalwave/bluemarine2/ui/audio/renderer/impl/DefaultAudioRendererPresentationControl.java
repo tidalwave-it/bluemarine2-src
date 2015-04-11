@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.time.Duration;
+import java.util.stream.Collectors;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -40,9 +41,9 @@ import it.tidalwave.role.ui.UserAction8;
 import it.tidalwave.role.ui.spi.UserActionLambda;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
+import it.tidalwave.bluemarine2.ui.commons.RenderAudioFileRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
@@ -50,7 +51,6 @@ import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.util.Formatters.format;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status.*;
 
 /***********************************************************************************************************************
@@ -116,29 +116,33 @@ public class DefaultAudioRendererPresentationControl
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onOpenAudioRendererRequest (final @ListensTo @Nonnull RenderMediaFileRequest request) 
+    /* VisibleForTesting */ void onRenderAudioFileRequest (final @ListensTo @Nonnull RenderAudioFileRequest request) 
       throws MediaPlayer.Exception
       {
-        log.info("onOpenAudioRendererRequest({})", request);
+        log.info("onRenderAudioFileRequest({})", request);
         
-        final MediaItem mediaItem = request.getMediaItem();
-        final Metadata metadata = mediaItem.getMetadata();
-        log.info(">>>> mediaItem: {}", mediaItem);
+        final AudioFile audioFile = request.getAudioFile();
+        final Metadata metadata = audioFile.getMetadata();
+        log.info(">>>> audiofile: {}", audioFile);
         log.info(">>>> metadata:  {}", metadata);
 
         // FIXME: the control shouldn't mess with JavaFX stuff
         Platform.runLater(() ->
           {
-            properties.titleProperty().setValue(metadata.get(TITLE).orElse(""));
-            properties.artistProperty().setValue(metadata.get(ARTIST).orElse(""));
-            properties.composerProperty().setValue(metadata.get(COMPOSER).orElse(""));
-            duration = metadata.get(DURATION).orElse(Duration.ZERO);
+            properties.titleProperty().setValue(audioFile.getTitle().orElse(""));
+            properties.artistProperty().setValue(audioFile.findMakers().stream()
+                    .map(maker -> maker.as(Displayable).getDisplayName())
+                    .collect(Collectors.joining(", ")));
+            properties.composerProperty().setValue(audioFile.findComposers().stream()
+                    .map(composer -> composer.as(Displayable).getDisplayName())
+                    .collect(Collectors.joining(", ")));
+            duration = audioFile.getDuration().orElse(Duration.ZERO);
             properties.durationProperty().setValue(format(duration)); 
-            // FIXME: check - parent should be always present - correct?
-            properties.folderNameProperty().setValue(mediaItem.getParent().as(Displayable).getDisplayName());
+            properties.folderNameProperty().setValue(
+                    audioFile.getRecord().map(record -> record.as(Displayable).getDisplayName()).orElse(""));
           });
         
-        mediaPlayer.setMediaItem(mediaItem);
+        mediaPlayer.setMediaItem(audioFile);
         bindMediaPlayer();
 
         presentation.showUp(this);

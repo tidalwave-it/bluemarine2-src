@@ -26,23 +26,35 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.role;
+package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.bluemarine2.model.MediaItem;
+import java.util.Optional;
+import java.time.Duration;
+import it.tidalwave.util.Finder8;
 
 /***********************************************************************************************************************
  *
- * @stereotype  Role
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaItemSupplier
+public interface AudioFile extends MediaItem // FIXME: MediaItem should not be statically Parentable
   {
-    public static final Class<MediaItemSupplier> MediaItemSupplier = MediaItemSupplier.class;
+    @Nonnull
+    public Optional<String> getTitle();
     
     @Nonnull
-    public MediaItem getMediaItem();
+    public Optional<Duration> getDuration();
+    
+    @Nonnull
+    public Finder8<? extends Entity> findMakers();
+
+    // FIXME: should't be here: this should become getSignal().findMakers() or something like that
+    @Nonnull
+    public Finder8<? extends Entity> findComposers();
+
+    // FIXME: should't be here: this should become getRecord().getRecord() or something like that
+    // FIXME: and it should be Optional<Record>
+    public Optional<? extends Entity> getRecord();
   }

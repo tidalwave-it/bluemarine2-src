@@ -38,7 +38,7 @@ import java.nio.file.Path;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
 import it.tidalwave.bluemarine2.model.role.Parentable;
-import it.tidalwave.bluemarine2.model.role.MediaItemSupplier;
+import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 
 /***********************************************************************************************************************
  *
@@ -50,7 +50,7 @@ import it.tidalwave.bluemarine2.model.role.MediaItemSupplier;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaItem extends Entity, Parentable<Entity>, MediaItemSupplier
+public interface MediaItem extends Entity, Parentable<Entity>, AudioFileSupplier
   {
     /*******************************************************************************************************************
      *

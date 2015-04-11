@@ -26,12 +26,13 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.finder;
+package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Id;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.role.spi.DefaultDisplayable;
+import it.tidalwave.bluemarine2.model.Entity;
+import lombok.Delegate;
 
 /***********************************************************************************************************************
  *
@@ -39,11 +40,13 @@ import it.tidalwave.bluemarine2.model.Record;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface RecordFinder extends Finder8<Record>
+public class NamedEntity implements Entity
   {
-    @Nonnull
-    public RecordFinder withMaker (@Nonnull Id makerId);
-    
-    @Nonnull
-    public RecordFinder recordOf (@Nonnull Id trackId);
+    @Delegate
+    private final AsSupport asSupport;
+
+    public NamedEntity (final @Nonnull String displayName) 
+      {
+        this.asSupport = new AsSupport(this, new DefaultDisplayable(displayName));
+      }
   }

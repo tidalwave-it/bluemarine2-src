@@ -31,17 +31,26 @@ package it.tidalwave.bluemarine2.model.impl;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import java.time.Duration;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 import java.nio.file.Path;
+import it.tidalwave.util.Finder8;
+import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.model.AudioFile;
 import lombok.Delegate;
 import lombok.Getter;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import it.tidalwave.bluemarine2.model.Record;
+import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
- * The default implementation of {@link MediaFolder}. It basically does nothing, it just acts as an aggregator of roles.
+ * The default implementation of {@link AudioFile}. It basically does nothing, it just acts as an aggregator of roles.
  * 
  * @stereotype  Datum
  * 
@@ -50,7 +59,7 @@ import lombok.Getter;
  *
  **********************************************************************************************************************/
 @Immutable
-public class DefaultMediaItem implements MediaItem
+public class DefaultAudioFile implements AudioFile
   {
     @Getter @Nonnull
     private final Path path;
@@ -67,7 +76,7 @@ public class DefaultMediaItem implements MediaItem
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
 
-    public DefaultMediaItem (final @Nonnull Path path,
+    public DefaultAudioFile (final @Nonnull Path path,
                              final @Nonnull Entity parent,
                              final @Nonnull Path basePath)
       {
@@ -76,20 +85,10 @@ public class DefaultMediaItem implements MediaItem
         this.relativePath = basePath.relativize(path);
       }
     
-    public DefaultMediaItem (final @Nonnull Path path,
-                             final @Nonnull Entity parent,
-                             final @Nonnull Metadata metadata)
-      {
-        this.path = path;
-        this.parent = parent;
-        this.relativePath = path;
-        this.metadata = metadata;
-      }
-    
     @Override @Nonnull
     public String toString() 
       {
-        return String.format("DefaultMediaItem(%s)", relativePath);
+        return String.format("DefaultAudioFile(%s)", relativePath);
       }
 
     @Override @Nonnull
@@ -103,9 +102,59 @@ public class DefaultMediaItem implements MediaItem
         return metadata;
       }
 
+
     @Override @Nonnull
-    public MediaItem getMediaItem()
+    public Optional<String> getTitle() 
+      {
+        return getMetadata().get(TITLE);
+      }
+
+    @Override @Nonnull
+    public Optional<Duration> getDuration()
+      {
+        return getMetadata().get(DURATION);
+      }
+
+    @Override @Nonnull
+    public Finder8<? extends Entity> findComposers() 
+      {
+        return new Finder8Support<Entity, Finder8<Entity>>()
+          {
+            @Override
+            protected List<? extends Entity> computeNeededResults() 
+              {
+                return getMetadata().get(Metadata.COMPOSER)
+                                    .map(artistName -> Arrays.asList(new NamedEntity(artistName)))
+                                    .orElse(Collections.emptyList());
+              }
+          };
+      }
+
+    @Override @Nonnull
+    public Finder8<Entity> findMakers() 
+      {
+        return new Finder8Support<Entity, Finder8<Entity>>()
+          {
+            @Override
+            protected List<? extends Entity> computeNeededResults() 
+              {
+                return getMetadata().get(Metadata.ARTIST)
+                                    .map(artistName -> Arrays.asList(new NamedEntity(artistName)))
+                                    .orElse(Collections.emptyList());
+              }
+          };
+      }
+    
+    @Override @Nonnull
+    public AudioFile getAudioFile()
       {
         return this;
+      }
+
+    @Override @Nonnull
+    public Optional<Entity> getRecord() 
+      {
+            // FIXME: check - parent should be always present - correct?
+        return Optional.of(new NamedEntity(getParent().as(Displayable).getDisplayName()));
       }
   }

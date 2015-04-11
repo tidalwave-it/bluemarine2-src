@@ -59,6 +59,7 @@ import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecordEntity;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrackEntity;
 import lombok.Cleanup;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -66,7 +67,7 @@ import lombok.RequiredArgsConstructor;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor
+@RequiredArgsConstructor @Slf4j
 public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
               extends Finder8Support<ENTITY, FINDER> 
   {
@@ -122,6 +123,7 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
       {
         try 
           {
+            log.info("query({}, {}, {})", entityClass, sparql, bindings);
             final RepositoryConnection connection = repository.getConnection();
             final TupleQuery query = connection.prepareTupleQuery(QueryLanguage.SPARQL, PREFIXES + sparql);
 
@@ -134,6 +136,8 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
             final List<E> entities = toEntities(repository, entityClass, result);
             result.close();
             connection.close();
+            
+            log.debug(">>>> returning {} entities", entities.size());
 
             return entities;
           }

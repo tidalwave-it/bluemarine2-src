@@ -50,9 +50,9 @@ import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.role.EntitySupplier;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
-import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
-import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
+import it.tidalwave.bluemarine2.ui.commons.RenderAudioFileRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnActivate;
+import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -63,7 +63,7 @@ import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
-import static it.tidalwave.bluemarine2.model.role.MediaItemSupplier.MediaItemSupplier;
+import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
 
 /***********************************************************************************************************************
@@ -198,7 +198,7 @@ public class DefaultAudioExplorerPresentationControl
      ******************************************************************************************************************/
     private void requestRenderAudioFileFile (final @Nonnull Entity entity)
       {
-        messageBus.publish(new RenderMediaFileRequest(entity.as(MediaItemSupplier).getMediaItem()));    
+        messageBus.publish(new RenderAudioFileRequest(entity.as(AudioFileSupplier).getAudioFile()));    
       }
 
     /*******************************************************************************************************************

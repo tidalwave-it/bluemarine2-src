@@ -26,24 +26,28 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.finder;
+package it.tidalwave.bluemarine2.ui.commons;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Id;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.bluemarine2.model.Record;
+import javax.annotation.concurrent.Immutable;
+import it.tidalwave.bluemarine2.model.AudioFile;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *
+ * A message that requests to render an {@link AudioFile}.
+ * 
+ * @stereotype  Message
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface RecordFinder extends Finder8<Record>
+@Immutable @RequiredArgsConstructor @ToString
+public class RenderAudioFileRequest 
   {
-    @Nonnull
-    public RecordFinder withMaker (@Nonnull Id makerId);
-    
-    @Nonnull
-    public RecordFinder recordOf (@Nonnull Id trackId);
+    @Getter @Nonnull
+    private final AudioFile audioFile;
   }

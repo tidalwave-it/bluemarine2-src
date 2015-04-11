@@ -50,6 +50,9 @@ public class RepositoryRecordEntityFinder extends RepositoryFinderSupport<Record
     @CheckForNull
     private Id makerId;
 
+    @CheckForNull
+    private Id trackId;
+
     /*******************************************************************************************************************
      *
      * 
@@ -79,10 +82,24 @@ public class RepositoryRecordEntityFinder extends RepositoryFinderSupport<Record
      *
      ******************************************************************************************************************/
     @Override @Nonnull
+    public RecordFinder recordOf (final @Nonnull Id trackId)  
+      {
+        final RepositoryRecordEntityFinder clone = clone();
+        clone.trackId = trackId;
+        return clone;
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
     public RepositoryRecordEntityFinder clone()
       {
         final RepositoryRecordEntityFinder clone = (RepositoryRecordEntityFinder)super.clone();
         clone.makerId = this.makerId;
+        clone.trackId = this.trackId;
 
         return clone;
       }
@@ -113,11 +130,15 @@ public class RepositoryRecordEntityFinder extends RepositoryFinderSupport<Record
                     + "         ?artistGroup  rel:collaboratesWith    ?artist.\n"
                     + "       }\n")
                 
+            + ((trackId == null)
+                    ? ""
+                    : "       ?record       mo:track              ?track.\n")
+                
             + "       }\n"
             + "ORDER BY ?label";
         
-        return (makerId == null) ? query(RepositoryRecordEntity.class, q)
-                                  : query(RepositoryRecordEntity.class, q, 
-                                         "artist", ValueFactoryImpl.getInstance().createURI(makerId.stringValue()));
+        return (makerId != null) ? query(RepositoryRecordEntity.class, q, "artist", uriFor(makerId))
+             : (trackId != null) ? query(RepositoryRecordEntity.class, q, "track", uriFor(trackId))
+                                 : query(RepositoryRecordEntity.class, q);
       }
   }

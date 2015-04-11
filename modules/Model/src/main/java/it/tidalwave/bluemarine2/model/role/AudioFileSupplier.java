@@ -26,28 +26,23 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.commons;
+package it.tidalwave.bluemarine2.model.role;
 
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
-import it.tidalwave.bluemarine2.model.MediaItem;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+import it.tidalwave.bluemarine2.model.AudioFile;
 
 /***********************************************************************************************************************
  *
- * A message that requests to render a {@link MediaItem}.
- * 
- * @stereotype  Message
+ * @stereotype  Role
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @RequiredArgsConstructor @ToString
-public class RenderMediaFileRequest 
+public interface AudioFileSupplier
   {
-    @Getter @Nonnull
-    private final MediaItem mediaItem;
+    public static final Class<AudioFileSupplier> AudioFileSupplier = AudioFileSupplier.class;
+    
+    @Nonnull
+    public AudioFile getAudioFile();
   }

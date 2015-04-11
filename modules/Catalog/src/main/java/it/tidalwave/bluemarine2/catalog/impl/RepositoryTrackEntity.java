@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl;
 
+import it.tidalwave.bluemarine2.model.AudioFile;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
@@ -39,10 +40,7 @@ import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
-import it.tidalwave.bluemarine2.model.MediaItem;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.model.role.MediaItemSupplier;
-import it.tidalwave.bluemarine2.model.impl.DefaultMediaItem;
+import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -53,7 +51,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @Immutable @Configurable @Getter @Slf4j
-public class RepositoryTrackEntity extends RepositoryEntitySupport implements Track, MediaItemSupplier
+public class RepositoryTrackEntity extends RepositoryEntitySupport implements Track, AudioFileSupplier
   {
     private final Integer trackNumber;
     
@@ -67,7 +65,7 @@ public class RepositoryTrackEntity extends RepositoryEntitySupport implements Tr
 //    private final Integer trackCount;
     
     @CheckForNull
-    private MediaItem mediaItem;
+    private AudioFile audioFile;
     
     @Inject
     private MediaFileSystem fileSystem;
@@ -91,17 +89,21 @@ public class RepositoryTrackEntity extends RepositoryEntitySupport implements Tr
       }
     
     @Override @Nonnull
-    public synchronized MediaItem getMediaItem()
+    public synchronized AudioFile getAudioFile()
       {
-        if (mediaItem == null)
+        if (audioFile == null)
           {
-        // FIXME: should read metadata from here, not from the file.
-        // Alternatively MediaItem could expose getArtist(), getDuration(), etc... 
-        // This would handle the case of artist being an Entity.
-            mediaItem = new DefaultMediaItem(fileSystem.getRootPath().resolve(audioFilePath), this, (Metadata)null);
+            audioFile = new RepositoryAudioFileEntity(repository, 
+                                                id, // FIXME: this should really be the AudioFileId
+                                                id,
+                                                fileSystem.getRootPath().resolve(audioFilePath),
+                                                this,
+                                                audioFilePath,
+                                                duration,   
+                                                rdfsLabel);
           }
         
-        return mediaItem;
+        return audioFile;
       }
 
     @Override @Nonnull
