@@ -39,6 +39,7 @@ import java.nio.file.Paths;
 import java.nio.charset.Charset;
 import org.springframework.util.StreamUtils;
 import org.openrdf.model.Value;
+import org.openrdf.model.impl.ValueFactoryImpl;
 import org.openrdf.query.Binding;
 import org.openrdf.query.BindingSet;
 import org.openrdf.query.MalformedQueryException;
@@ -140,6 +141,17 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
           {
             throw new RuntimeException(e);
           }
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    protected Value uriFor (final @Nonnull Id id)
+      {
+        return ValueFactoryImpl.getInstance().createURI(id.stringValue());
       }
     
     /*******************************************************************************************************************
