@@ -34,7 +34,7 @@ import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
-import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryTrackEntityFinder;
+import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryTrackFinder;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -62,7 +62,7 @@ public class RepositoryRecord extends RepositoryEntitySupport implements Record
     @Override @Nonnull
     public TrackFinder findTracks() 
       {
-        return new RepositoryTrackEntityFinder(repository).inRecord(this);
+        return new RepositoryTrackFinder(repository).inRecord(this);
       }
 
     @Override @Nonnull

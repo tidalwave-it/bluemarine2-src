@@ -50,7 +50,7 @@ import lombok.ToString;
  *
  **********************************************************************************************************************/
 @ToString
-public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, TrackFinder>
+public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackFinder>
                                          implements TrackFinder
   {
     @Nonnull
@@ -64,7 +64,7 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
      * 
      *
      ******************************************************************************************************************/
-    public RepositoryTrackEntityFinder (final @Nonnull Repository repository)  
+    public RepositoryTrackFinder (final @Nonnull Repository repository)  
       {
         super(repository);
       }
@@ -77,7 +77,7 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
     @Override @Nonnull
     public TrackFinder madeBy (final @Nonnull MusicArtist artist)  
       {
-        final RepositoryTrackEntityFinder clone = clone();
+        final RepositoryTrackFinder clone = clone();
         clone.makerId = Optional.of(artist.getId());
         return clone;
       }
@@ -90,7 +90,7 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
     @Override @Nonnull
     public TrackFinder inRecord (final @Nonnull Record record)  
       {
-        final RepositoryTrackEntityFinder clone = clone();
+        final RepositoryTrackFinder clone = clone();
         clone.recordId = Optional.of(record.getId());
         return clone;
       }
@@ -101,9 +101,9 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public RepositoryTrackEntityFinder clone()
+    public RepositoryTrackFinder clone()
       {
-        final RepositoryTrackEntityFinder clone = (RepositoryTrackEntityFinder)super.clone();
+        final RepositoryTrackFinder clone = (RepositoryTrackFinder)super.clone();
         clone.makerId = this.makerId;
         clone.recordId = this.recordId;
 
