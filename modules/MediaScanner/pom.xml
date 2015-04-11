@@ -20,6 +20,10 @@
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-catalog</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
         </dependency>
         <dependency>
@@ -87,7 +91,7 @@
                         <id>package-jar</id>
                         <phase>none</phase>
                         <goals>
-                            <goal>jar</goal>
+                            <goal>test-jar</goal>
                         </goals>
                     </execution>
                 </executions>

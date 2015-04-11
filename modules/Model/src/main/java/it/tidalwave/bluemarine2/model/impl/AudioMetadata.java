@@ -143,6 +143,6 @@ public class AudioMetadata extends MetadataSupport
             return null;  
           }
         
-        return new Id("mbz:" + string);
+        return new Id(string);
       }
   }

@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import java.util.Optional;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -40,6 +41,9 @@ import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -55,6 +59,17 @@ import lombok.extern.slf4j.Slf4j;
 @Configurable @Slf4j
 public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPresentation
   {
+    @RequiredArgsConstructor @Getter @ToString
+    static class Memento
+      {
+        public Memento() // default constructor
+          {
+            selectedIndex = 0;  
+          }
+        
+        private final int selectedIndex;  
+      }
+    
     @FXML
     private ListView<PresentationModel> lvFiles;
     
@@ -68,12 +83,10 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     private JavaFXBinder binder;
     
     @Override
-    public void bind (final @Nonnull Properties properties,
-                      final @Nonnull UserAction upAction)
+    public void bind (final @Nonnull Properties properties, final @Nonnull UserAction upAction)
       {
         binder.bind(btUp, upAction);
         lbFolderName.textProperty().bind(properties.folderNameProperty());
-        properties.selectedIndexProperty().bind(lvFiles.getSelectionModel().selectedIndexProperty());
       }
     
     @Override
@@ -82,14 +95,15 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
       }
     
     @Override
-    public void populateAndSelect (final @Nonnull PresentationModel pm, int selectedIndex)
+    public void populateItems (final @Nonnull PresentationModel pm, final @Nonnull Optional<Object> optionalMemento)
       {
         binder.bind(lvFiles, pm, () -> 
           {
             if (!lvFiles.getItems().isEmpty())
               {
-                lvFiles.getSelectionModel().select(selectedIndex);
-                lvFiles.scrollTo(selectedIndex);
+                final Memento memento = (Memento)optionalMemento.orElse(new Memento());
+                lvFiles.getSelectionModel().select(memento.getSelectedIndex());
+                lvFiles.scrollTo(memento.getSelectedIndex());
               }
           });
       }
@@ -98,5 +112,12 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     public void focusOnMediaItems() 
       {
         lvFiles.requestFocus();
+      }
+
+    @Override
+    public Object getMemento()
+      {
+        // TODO: add further properties, such as the precise scroller position
+        return new Memento(lvFiles.getSelectionModel().getSelectedIndex());
       }
   }

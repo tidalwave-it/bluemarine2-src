@@ -29,38 +29,42 @@
 package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import java.util.List;
+import java.util.Optional;
 import java.util.Stack;
 import javafx.application.Platform;
-import it.tidalwave.util.As;
+import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.UserAction8;
 import it.tidalwave.role.ui.UserActionProvider;
+import it.tidalwave.role.ui.spi.DefaultPresentable;
 import it.tidalwave.role.ui.spi.UserActionLambda;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.model.MediaFileSystem;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.role.EntitySupplier;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
-import it.tidalwave.bluemarine2.ui.commons.RenderMediaFileRequest;
-import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
+import it.tidalwave.bluemarine2.ui.commons.RenderAudioFileRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnActivate;
-import static java.util.stream.Collectors.*;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.role.ui.Presentable.Presentable;
-import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
-import static java.util.stream.Stream.*;
+import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.*;
+import static java.util.stream.Stream.*;
+import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
+import static it.tidalwave.role.ui.Presentable.Presentable;
+import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
+import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
+import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
 
 /***********************************************************************************************************************
  *
@@ -76,13 +80,13 @@ import lombok.extern.slf4j.Slf4j;
 public class DefaultAudioExplorerPresentationControl 
   {
     @AllArgsConstructor @Getter @ToString
-    private static class FolderAndSelection
+    private static class FolderAndMemento
       {
         @Nonnull
-        private final MediaFolder folder;
+        private final Entity folder;
 
-        @Nullable
-        private final Integer selectedIndex;
+        @Nonnull
+        private final Optional<Object> memento;
       }
     
     @Inject
@@ -92,15 +96,15 @@ public class DefaultAudioExplorerPresentationControl
     private MessageBus messageBus;
     
     @Inject
-    private MediaFileSystem mediaFileSystem;
+    private List<EntitySupplier> browsers;
     
-    private MediaFolder mediaFolder;
+    private Entity currentFolder;
     
-    private final Stack<FolderAndSelection> stack = new Stack<>();
+    private final Stack<FolderAndMemento> navigationStack = new Stack<>();
     
     private final AudioExplorerPresentation.Properties properties = new AudioExplorerPresentation.Properties();
     
-    private final UserAction8 upAction = new UserActionLambda(() -> navigateUp()); 
+    private final UserAction8 navigateUpAction = new UserActionLambda(() -> navigateUp()); 
     
     /*******************************************************************************************************************
      *
@@ -109,7 +113,7 @@ public class DefaultAudioExplorerPresentationControl
     @PostConstruct 
     /* VisibleForTesting */ void initialize()
       {
-        presentation.bind(properties, upAction);  
+        presentation.bind(properties, navigateUpAction);  
       }
     
     /*******************************************************************************************************************
@@ -120,7 +124,11 @@ public class DefaultAudioExplorerPresentationControl
       {
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp(this);
-        populateAndSelect(mediaFileSystem.getRoot(), 0);
+        // FIXME: hardwired to the BrowserByRecord. It should be selectable by means of a combobox
+        final EntitySupplier browser = browsers.stream()
+                                               .filter(s -> s.getClass().getName().contains("BrowserByRecord"))
+                                               .findFirst().get();
+        populateItems(new FolderAndMemento(browser.get(), Optional.empty()));
       }
     
     /*******************************************************************************************************************
@@ -136,7 +144,7 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
-     * The default action to go back should be disabled if the stack is not empty.
+     * Deactivation is disabled (and acts as navigateUpAction) when the stack is not empty.
      *
      ******************************************************************************************************************/
     @OnDeactivate
@@ -144,7 +152,7 @@ public class DefaultAudioExplorerPresentationControl
       {
         log.debug("onDeactivate()");
         
-        if (stack.isEmpty())
+        if (navigationStack.isEmpty())
           {  
             return OnDeactivate.Result.PROCEED;  
           }  
@@ -157,69 +165,81 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
-     * Navigates to a new {@link MediaFolder}, saving the current folder to the stack.
+     * Navigates to a new folder, saving the current folder to the stack.
      * 
-     * @param   newMediaFolder  the new {@code MediaFolder}
+     * @param   newMediaFolder  the new folder
      *
      ******************************************************************************************************************/
-    private void navigateTo (final @Nonnull MediaFolder newMediaFolder)
+    private void navigateTo (final @Nonnull Entity newMediaFolder)
       {
         log.debug("navigateTo({})", newMediaFolder);
-        stack.push(new FolderAndSelection(mediaFolder, properties.selectedIndexProperty().get()));
-        populateAndSelect(newMediaFolder, 0);
+        navigationStack.push(new FolderAndMemento(currentFolder, Optional.of(presentation.getMemento())));
+        populateItems(new FolderAndMemento(newMediaFolder, Optional.empty()));
       }
     
     /*******************************************************************************************************************
      *
-     * Navigates up to the parent {@link MediaFolder}.
+     * Navigates up to the parent folder.
      *
      ******************************************************************************************************************/
     private void navigateUp() 
       {
         // TODO: assert not UI thread
         log.debug("navigateUp()");
-        final FolderAndSelection folderAndSelection = stack.pop();
-        populateAndSelect(folderAndSelection.getFolder(), folderAndSelection.getSelectedIndex());
+        populateItems(navigationStack.pop());
       }
     
     /*******************************************************************************************************************
      *
-     * Populates the presentation with the contents of a {@link MediaFolder} and selects an item.
+     * Publishes a request to render an audio file.
      * 
-     * @param   mediaFolder     the {@code MediaFolder}
-     * @param   selectedIndex   the index of the item to select
+     * @param   entity      the {@code Entity} referencing the audio file
      *
      ******************************************************************************************************************/
-    private void populateAndSelect (final @Nonnull MediaFolder mediaFolder, final int selectedIndex)
+    private void requestRenderAudioFileFile (final @Nonnull Entity entity)
       {
-        log.debug("populateAndSelect({}, {})", mediaFolder, selectedIndex);
-        this.mediaFolder = mediaFolder;
+        messageBus.publish(new RenderAudioFileRequest(entity.as(AudioFileSupplier).getAudioFile()));    
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Populates the presentation with the contents of a folder and selects an item.
+     * 
+     * @param   folderAndMemento    the folder and the presentation memento
+     *
+     ******************************************************************************************************************/
+    private void populateItems (final @Nonnull FolderAndMemento folderAndMemento)
+      {
+        log.debug("populateItems({})", folderAndMemento);
+        this.currentFolder = folderAndMemento.getFolder();
         // FIXME: shouldn't deal with JavaFX threads here
-        Platform.runLater(() -> upAction.enabledProperty().setValue(!stack.isEmpty()));
+        Platform.runLater(() -> navigateUpAction.enabledProperty().setValue(!navigationStack.isEmpty()));
         Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentPathLabel()));
         // FIXME: waiting signal while loading
-        final PresentationModel pm = mediaFolder.findChildren()
-                                                .stream()
-                                                .map(object -> object.as(Presentable)
-                                                                     .createPresentationModel(rolesFor(object)))
-                                                .sorted(new AudioComparator())
-                                                .collect(toCompositePresentationModel());
-        presentation.populateAndSelect(pm, selectedIndex);
+        final SimpleComposite8<Entity> composite = currentFolder.as(SimpleComposite8);
+        // Uses native ordering provided by the Composite.
+        final PresentationModel pm = composite.findChildren()
+                                              .stream()
+                                              .map(object -> object.asOptional(Presentable)
+                                                                   .orElse(new DefaultPresentable(object))
+                                                                   .createPresentationModel(rolesFor(object)))
+                                              .collect(toCompositePresentationModel());
+        presentation.populateItems(pm, folderAndMemento.getMemento());
       }
     
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
-    // FIXME: inject with @DciRole and @DciContext
+    // FIXME: inject with @DciRole and @DciContext?
     @Nonnull
-    private UserActionProvider rolesFor (final @Nonnull As object)
+    private UserActionProvider rolesFor (final @Nonnull Entity entity)
       {
-        final UserAction action = (object instanceof MediaFolder) 
-            ? new UserActionLambda(() -> navigateTo(((MediaFolder)object))) 
-            : new UserActionLambda(() -> messageBus.publish(new RenderMediaFileRequest((MediaItem)object)));
+        final UserAction action = isComposite(entity) 
+            ? new UserActionLambda(() -> navigateTo(entity)) 
+            : new UserActionLambda(() -> requestRenderAudioFileFile(entity));
         
-        return new DefaultUserActionProvider()
+        return new DefaultUserActionProvider() // FIXME: new DefaultUserActionProvider(action)
           {
             @Override @Nonnull
             public UserAction getDefaultAction()
@@ -231,15 +251,26 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
-     *
+     * Computes the label describing the current navigation path.
+     * 
      ******************************************************************************************************************/
     @Nonnull
     private String getCurrentPathLabel()
       {
-//        return stack.peek().as(Displayable).getDisplayName();
-        return concat(stack.stream().map(i -> i.getFolder()), of(mediaFolder))
-                           .filter(i -> !i.isRoot())
-                           .map(folder -> folder.as(Displayable).getDisplayName())
-                           .collect(joining(" / "));
+        return concat(navigationStack.stream().map(i -> i.getFolder()), of(currentFolder))
+                .filter(i -> i.asOptional(Parentable).map(p -> p.hasParent()).orElse(true))
+                .filter(i -> i.asOptional(Displayable).map(d -> true).orElse(false))
+                .map(i -> i.asOptional(Displayable).map(o -> o.getDisplayName()).orElse("???"))
+                .collect(joining(" / "));
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private static boolean isComposite (final @Nonnull Entity entity)
+      {
+        // FIXME: Composite doesn't work. Introduce Composite8?
+        return entity.asOptional(SimpleComposite8).map(c -> true).orElse(false);
       }
   }

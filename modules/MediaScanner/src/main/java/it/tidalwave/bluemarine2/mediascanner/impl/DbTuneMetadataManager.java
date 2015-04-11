@@ -37,25 +37,26 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.function.Predicate;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URL;
 import org.openrdf.model.Model;
 import org.openrdf.model.Statement;
 import org.openrdf.model.URI;
+import org.openrdf.model.vocabulary.DC;
 import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
 import org.openrdf.rio.RDFHandlerException;
 import org.openrdf.rio.RDFParseException;
+import it.tidalwave.util.Id;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
-import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
 import it.tidalwave.bluemarine2.vocabulary.DbTune;
 import it.tidalwave.bluemarine2.vocabulary.MO;
 import it.tidalwave.bluemarine2.vocabulary.Purl;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.persistence.AddStatementsRequest.*;
+import static java.util.stream.Collectors.*;
 import static it.tidalwave.bluemarine2.downloader.DownloadRequest.Option.FOLLOW_REDIRECT;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 
@@ -79,11 +80,17 @@ public class DbTuneMetadataManager
     @Inject
     private MessageBus messageBus;
     
+    @Inject
+    private StatementManager statementManager;
+    
+    private static final List<URI> VALID_TRACK_PREDICATES_FOR_SUBJECT = Arrays.asList(
+            RDF.TYPE, RDFS.LABEL, DC.TITLE, FOAF.MAKER);
+    
     // Skip foaf:maker: it would include all the items in the database, not only in our collection
     // anyway, the required statements have been already added when importing tracks
     private static final List<URI> VALID_ARTIST_PREDICATES_FOR_SUBJECT = Arrays.asList(
             DbTune.ARTIST_TYPE, DbTune.SORT_NAME, Purl.EVENT, Purl.COLLABORATES_WITH, RDF.TYPE, RDFS.LABEL, FOAF.NAME);
-    
+
 //  TODO: extract only GUID?       mo:musicbrainz <http://musicbrainz.org/artist/1f9df192-a621-4f54-8850-2c5373b7eac9> ;
 // TODO: download bio event details
                 
@@ -111,18 +118,22 @@ public class DbTuneMetadataManager
      *
      *
      ******************************************************************************************************************/
-    @RequiredArgsConstructor
-    static class ArtistStatementFilter implements Predicate<Statement>  
+    @Nonnull
+    private static Predicate<Statement> trackStatementFilterFor (final @Nonnull URI trackUri)
       {
-        @Nonnull
-        private final URI artistUri;
-        
-        @Override
-        public boolean test (final @Nonnull Statement statement) 
-          {
-            final URI predicate = statement.getPredicate();
-            return (statement.getSubject().equals(artistUri) && VALID_ARTIST_PREDICATES_FOR_SUBJECT.contains(predicate));
-          }
+        return statement -> statement.getSubject().equals(trackUri)
+                        && VALID_TRACK_PREDICATES_FOR_SUBJECT.contains(statement.getPredicate());
+      }
+            
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static Predicate<Statement> artistStatementFilterFor (final @Nonnull URI artistUri)
+      {
+        return statement -> statement.getSubject().equals(artistUri)
+                        && VALID_ARTIST_PREDICATES_FOR_SUBJECT.contains(statement.getPredicate());
       }
             
     /*******************************************************************************************************************
@@ -137,24 +148,26 @@ public class DbTuneMetadataManager
         seenRecordUris.clear();
       }
     
+    private final ConcurrentMap<URI, MediaItem> m = new ConcurrentHashMap<>();
+    
     /*******************************************************************************************************************
      *
      * Imports the DbTune.org metadata for the given track.
      * 
-     * @param   track                   the track
-     * @param   mediaItemUri            the URI of the item
+     * @param   trackUri            the URI of the item
+     * @param   mbGuid              the MusicBrainz id
      * 
      ******************************************************************************************************************/
-    public void importTrackMetadata (final @Nonnull MediaItem track, final @Nonnull URI mediaItemUri)
+    public void importTrackMetadata (final @Nonnull MediaItem mediaItem,
+                                     final @Nonnull URI trackUri, 
+                                     final @Nonnull Id mbGuid)
       { 
         try 
           {
-            log.debug("importTrackMetadata({}, {})", track, mediaItemUri);
-            final MediaItem.Metadata metadata = track.getMetadata();
-            final String mbGuid = metadata.get(MediaItem.Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
-            messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid)));
-            messageBus.publish(new DownloadRequest(urlFor(mediaItemUri), FOLLOW_REDIRECT));
-            progress.incrementTotalDownloads();
+            log.debug("importTrackMetadata({})", trackUri);
+            m.put(trackUri, mediaItem);
+            statementManager.requestAdd(trackUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid));
+            requestDownload(urlFor(trackUri));
           }
         catch (MalformedURLException e) // shoudn't never happen
           {
@@ -168,23 +181,37 @@ public class DbTuneMetadataManager
      ******************************************************************************************************************/
     public void onTrackMetadataDownloadComplete (final @Nonnull DownloadComplete message) 
       {
-        try 
+        final URI trackUri = uriFor(message.getUrl());
+        final MediaItem mediaItem = m.remove(trackUri);
+        
+        assert mediaItem != null : "Null mediaItem for " + trackUri;
+        
+        if (message.getStatusCode() == 200) // FIXME
           {
-            log.debug("onTrackMetadataDownloadComplete({})", message);
-            final URI trackUri = uriFor(message.getUrl());
-            final Model model = parseModel(message);
-            messageBus.publish(model.filter(trackUri, FOAF.MAKER, null).stream()
-                                    .peek(statement -> requestArtistMetadata((URI)statement.getObject()))
-                                    .collect(toAddStatementsRequest()));
-            model.filter(null, MO._TRACK, trackUri)
-                                    .forEach(statement -> requestRecordMetadata((URI)statement.getSubject()));
-          }   
-        catch (IOException | RDFHandlerException | RDFParseException e)
+            try 
+              {
+                log.debug("onTrackMetadataDownloadComplete({})", message);
+                final Model model = parseModel(message);
+                statementManager.requestAdd(model.stream().filter(trackStatementFilterFor(trackUri)).collect(toList()));
+                model.filter(trackUri, FOAF.MAKER, null)
+                     .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
+                model.filter(null, MO.P_TRACK, trackUri)
+                     .forEach(statement -> requestRecordMetadata((URI)statement.getSubject()));
+              }   
+            catch (IOException | RDFHandlerException | RDFParseException e)
+              {
+                log.error("Cannot parse track: {}", e.toString());
+                log.error("Cannot parse track: {}", new String(message.getBytes()));
+              }
+          }
+        else
           {
-            log.error("Cannot parse track: {}", e.toString());
-            log.error("Cannot parse track: {}", new String(message.getBytes()));
+            embeddedMetadataManager.importFallbackTrackMetadata(mediaItem, uriFor(message.getUrl())); // CORRECT URI?
           }
       }
+    
+    @Inject
+    private EmbeddedMetadataManager embeddedMetadataManager;
     
     /*******************************************************************************************************************
      *
@@ -197,10 +224,9 @@ public class DbTuneMetadataManager
             log.debug("onArtistMetadataDownloadComplete({})", message);
             final URI artistUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
-            messageBus.publish(model.stream().filter(new ArtistStatementFilter(artistUri))
-                                             .collect(toAddStatementsRequest()));
+            statementManager.requestAdd(model.stream().filter(artistStatementFilterFor(artistUri)).collect(toList()));
             model.filter(artistUri, Purl.COLLABORATES_WITH, null)
-                                    .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
+                 .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
           }   
         catch (IOException | RDFHandlerException | RDFParseException e)
           {
@@ -225,7 +251,7 @@ public class DbTuneMetadataManager
             final URI recordUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
              // FIXME: filter away some more stuff
-            messageBus.publish(model.filter(recordUri, null, null).stream().collect(toAddStatementsRequest()));
+            statementManager.requestAdd(model.filter(recordUri, null, null).stream().collect(toList()));
           }   
         catch (IOException | RDFHandlerException | RDFParseException e)
           {
@@ -254,8 +280,7 @@ public class DbTuneMetadataManager
             if (seenArtistUris.putIfAbsent(artistUri, true) == null)
               {
                 progress.incrementTotalArtists();
-                progress.incrementTotalDownloads();
-                messageBus.publish(new DownloadRequest(urlFor(artistUri), FOLLOW_REDIRECT));
+                requestDownload(urlFor(artistUri));
               }
           }
         catch (MalformedURLException e)
@@ -280,13 +305,22 @@ public class DbTuneMetadataManager
             if (seenRecordUris.putIfAbsent(recordUri, true) == null)
               {
                 progress.incrementTotalRecords();
-                progress.incrementTotalDownloads();
-                messageBus.publish(new DownloadRequest(urlFor(recordUri), FOLLOW_REDIRECT));
+                requestDownload(urlFor(recordUri));
               }
           }
         catch (MalformedURLException e)
           {
             log.error("Malformed URL: {}", e);
           }
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void requestDownload (final @Nonnull URL url)
+      {
+        progress.incrementTotalDownloads();
+        messageBus.publish(new DownloadRequest(url, FOLLOW_REDIRECT));
       }
   }

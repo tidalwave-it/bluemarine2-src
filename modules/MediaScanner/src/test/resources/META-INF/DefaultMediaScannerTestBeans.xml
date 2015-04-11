@@ -68,7 +68,9 @@
     
     <bean class="it.tidalwave.bluemarine2.mediascanner.impl.EmbeddedMetadataManager" />
     
-    <bean class="it.tidalwave.bluemarine2.mediascanner.impl.Md5IdCreator" />
+    <bean class="it.tidalwave.bluemarine2.mediascanner.impl.StatementManager" />
+    
+    <bean class="it.tidalwave.bluemarine2.mediascanner.impl.IdCreator" />
     
     <bean class="it.tidalwave.util.test.MockInstantProvider" />
     
@@ -78,6 +80,7 @@
         <property name="neverExpiring" value="true" />
     </bean>
     
-    <bean class="it.tidalwave.bluemarine2.persistence.impl.DefaultPersistence" />
+    <!-- FIXME: this should be mocked -->
+    <bean class="it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem" />
 
 </beans>

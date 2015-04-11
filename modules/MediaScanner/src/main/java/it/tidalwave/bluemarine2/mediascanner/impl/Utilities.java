@@ -51,6 +51,7 @@ import org.openrdf.rio.helpers.RDFHandlerBase;
 import org.openrdf.rio.n3.N3ParserFactory;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
+import java.util.Optional;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
@@ -86,7 +87,10 @@ final class Utilities
               }
           });
 
-        final byte[] bytes = new String(message.getBytes()).replaceAll(" = ", "owl:sameAs").getBytes(); // FIXME
+        // FIXME
+        final byte[] bytes = new String(message.getBytes()).replaceAll(" = ", "owl:sameAs")
+                                                           .replaceAll("/ASIN/ *>", "/ASIN>")
+                                                           .getBytes(); 
         final String uri = message.getUrl().toString();          
         parser.parse(new ByteArrayInputStream(bytes), uri);
 
@@ -111,6 +115,26 @@ final class Utilities
     public static Value literalFor (final String string) 
       {
         return FACTORY.createLiteral(string);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static Optional<Value> literalFor (final Optional<String> string) 
+      {
+        return string.isPresent() ? Optional.of(FACTORY.createLiteral(string.get())) : Optional.empty();
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static Value literalFor (final Id id) 
+      {
+        return FACTORY.createLiteral(id.stringValue());
       }
     
     /*******************************************************************************************************************

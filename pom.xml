@@ -139,6 +139,11 @@
                 <artifactId>it-tidalwave-bluemarine2-downloader</artifactId>
                 <version>1.0-ALPHA-4-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-catalog</artifactId>
+                <version>1.0-ALPHA-4-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

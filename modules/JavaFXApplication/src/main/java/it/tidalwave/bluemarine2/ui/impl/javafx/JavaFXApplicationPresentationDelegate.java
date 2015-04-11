@@ -48,6 +48,8 @@ import it.tidalwave.util.PowerOnNotification;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -119,6 +121,11 @@ public class JavaFXApplicationPresentationDelegate
         
         flowController.setContentPane(spContent);
         final Map<Key<?>, Object> properties = new HashMap<>();
+        final Path configPath = getConfiguratonPath();
+        log.info("configPath is {}", configPath);
+        final Path repositoryPath = configPath.resolve("repository.n3");
+        properties.put(it.tidalwave.bluemarine2.persistence.PropertyNames.REPOSITORY_PATH, repositoryPath);
+        properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, configPath);
         messageBus.publish(new PowerOnNotification(properties));        
       }    
     
@@ -137,5 +144,35 @@ public class JavaFXApplicationPresentationDelegate
             log.debug("onKeyReleased({})", event);
             flowController.tryToDismissCurrentPresentation();
           }
+      }
+    
+    /*******************************************************************************************************************
+     * 
+     * 
+     * 
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private Path getConfiguratonPath()
+      {
+        String s = System.getProperty("user.home", "/");
+        final String osName = System.getProperty("os.name").toLowerCase();
+        
+        switch (osName)
+          {
+            case "linux":
+                s += "/.blueMarine2";
+                break;
+                
+            case "mac os x":
+                s += "/Library/Application Support/blueMarine2";
+                break;
+                
+            case "windows":
+                s += "/.blueMarine2";
+                break;
+          }
+        
+        return Paths.get(s);
       }
   }

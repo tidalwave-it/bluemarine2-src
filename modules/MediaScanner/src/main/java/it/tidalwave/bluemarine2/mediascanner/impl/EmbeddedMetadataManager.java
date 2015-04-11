@@ -29,9 +29,11 @@
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
+import javax.annotation.concurrent.Immutable;
 import javax.inject.Inject;
 import java.time.Duration;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
@@ -46,17 +48,16 @@ import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
 import it.tidalwave.util.Key;
-import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
+import it.tidalwave.bluemarine2.vocabulary.BM;
 import it.tidalwave.bluemarine2.vocabulary.MO;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.*;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
-import static it.tidalwave.bluemarine2.persistence.AddStatementsRequest.*;
 
 /***********************************************************************************************************************
  *
@@ -73,17 +74,17 @@ public class EmbeddedMetadataManager
     private final ConcurrentMap<URI, Boolean> seenRecordUris = new ConcurrentHashMap<>();
     
     @Inject
-    private MessageBus messageBus;
+    private StatementManager statementManager;
     
     @Inject
-    private Md5IdCreator md5IdCreator;
-
+    private IdCreator idCreator;
+    
     /*******************************************************************************************************************
      *
      * 
      * 
      ******************************************************************************************************************/
-    @RequiredArgsConstructor @ToString
+    @Immutable @RequiredArgsConstructor @ToString
     static class Pair
       {
         @Nonnull
@@ -101,17 +102,39 @@ public class EmbeddedMetadataManager
     
     /*******************************************************************************************************************
      *
-     * 
+     * Facility that creates a request to add statements for the giving {@link Metadata} and {@code subjectURi}. It
+     * maps metadata items to the proper statement predicate and literal.
      * 
      ******************************************************************************************************************/
-    private static final Map<Key<?>, Function<Object, Pair>> MAPPER = new HashMap<>();
+    static class Mapper extends HashMap<Key<?>, Function<Object, Pair>>
+      {
+        @Nonnull
+        public List<Statement> statementsFor (final @Nonnull Metadata metadata, final @Nonnull URI subjectUri)
+          {
+            return metadata.getEntries().stream()
+                                        .filter(e -> containsKey(e.getKey()))
+                                        .map(e -> forEntry(e).createStatementWithSubject(subjectUri))
+                                        .collect(toList());
+          }
+                
+        @Nonnull
+        private Pair forEntry (final @Nonnull Map.Entry<Key<?>, ?> entry)
+          {
+            return get(entry.getKey()).apply(entry.getValue());
+          }
+      }
+
+    private static final Mapper SIGNAL_MAPPER = new Mapper();
+    private static final Mapper TRACK_MAPPER = new Mapper();
 
     static
       {
-        MAPPER.put(Metadata.TRACK,       v -> new Pair(MO.TRACK_NUMBER,    literalFor((int)v)));
-        MAPPER.put(Metadata.SAMPLE_RATE, v -> new Pair(MO.SAMPLE_RATE,     literalFor((int)v)));
-        MAPPER.put(Metadata.BIT_RATE,    v -> new Pair(MO.BITS_PER_SAMPLE, literalFor((int)v)));
-        MAPPER.put(Metadata.DURATION,    v -> new Pair(MO.DURATION,        literalFor((float)((Duration)v).toMillis())));
+        TRACK_MAPPER. put(Metadata.TRACK,       v -> new Pair(MO.P_TRACK_NUMBER,    literalFor((int)v)));
+    
+        SIGNAL_MAPPER.put(Metadata.SAMPLE_RATE, v -> new Pair(MO.P_SAMPLE_RATE,     literalFor((int)v)));
+        SIGNAL_MAPPER.put(Metadata.BIT_RATE,    v -> new Pair(MO.P_BITS_PER_SAMPLE, literalFor((int)v)));
+        SIGNAL_MAPPER.put(Metadata.DURATION,    v -> new Pair(MO.P_DURATION,        
+                                                           literalFor((float)((Duration)v).toMillis())));
       }
     
     /*******************************************************************************************************************
@@ -128,20 +151,22 @@ public class EmbeddedMetadataManager
     
     /*******************************************************************************************************************
      *
-     * Imports the metadata embedded in a track for the given {@link MediaItem}. It only processes the portion of 
+     * Imports the metadata embedded in a file for the given {@link MediaItem}. It only processes the portion of 
      * metadata which are never superseded by external catalogs (such as sample rate, duration, etc...).
      * 
      * @param   mediaItem               the {@code MediaItem}.
-     * @param   mediaItemUri            the URI of the item
+     * @param   signalUri               the URI of the signal
+     * @param   trackUri                the URI of the track
      * 
      ******************************************************************************************************************/
-    public void importTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI mediaItemUri)
+    public void importAudioFileMetadata (final @Nonnull MediaItem mediaItem, 
+                                         final @Nonnull URI signalUri,
+                                         final @Nonnull URI trackUri)
       {
-        log.debug("importTrackMetadata({}, {})", mediaItem, mediaItemUri);
-        messageBus.publish(mediaItem.getMetadata().getEntries().stream()
-                        .filter(e -> MAPPER.containsKey(e.getKey()))
-                        .map(e -> MAPPER.get(e.getKey()).apply(e.getValue()).createStatementWithSubject(mediaItemUri))
-                        .collect(toAddStatementsRequest()));
+        log.debug("importAudioFileMetadata({}, {}, {})", mediaItem, signalUri, trackUri);
+        final Metadata metadata = mediaItem.getMetadata();
+        statementManager.requestAdd(SIGNAL_MAPPER.statementsFor(metadata, signalUri));
+        statementManager.requestAdd(TRACK_MAPPER.statementsFor(metadata, trackUri));
       }
     
     /*******************************************************************************************************************
@@ -150,54 +175,53 @@ public class EmbeddedMetadataManager
      * when we failed to match a track to an external catalog.
      * 
      * @param   mediaItem               the {@code MediaItem}.
-     * @param   mediaItemUri            the URI of the item
+     * @param   trackUri                the URI of the track
      *
      ******************************************************************************************************************/
-    public void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI mediaItemUri) 
+    public void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI trackUri) 
       {
-        log.debug("importFallbackTrackMetadata({}, {})", mediaItem, mediaItemUri);
+        log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackUri);
         
-        AddStatementsRequest.Builder builder = AddStatementsRequest.build();
-        final MediaItem.Metadata metadata = mediaItem.getMetadata();  
-        final Optional<String> title = metadata.get(MediaItem.Metadata.TITLE);
-        final Optional<String> artist = metadata.get(MediaItem.Metadata.ARTIST);
+        final Metadata metadata = mediaItem.getMetadata();  
+        StatementManager.Builder builder = statementManager.requestAddStatements();
         
-        if (title.isPresent())
+        final Optional<String> title = metadata.get(Metadata.TITLE);
+        builder = builder.with(trackUri, DC.TITLE,   literalFor(title))
+                         .with(trackUri, RDFS.LABEL, literalFor(title));
+
+        final Optional<String> artist = metadata.get(Metadata.ARTIST);
+
+        if (artist.isPresent()) // FIXME
           {
-            final Value titleLiteral = literalFor(title.get());
-            builder = builder.with(mediaItemUri, DC.TITLE, titleLiteral)
-                             .with(mediaItemUri, RDFS.LABEL, titleLiteral);
-          }
-        
-        if (artist.isPresent())
-          {
-            final URI artistUri = uriFor(md5IdCreator.createMd5Id("ARTIST:" + artist.get()));
-            
+            final String artistName = artist.get();
+            final URI artistUri = BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + artistName));
+            builder = builder.with(trackUri, FOAF.MAKER, artistUri);
+
             if (seenArtistUris.putIfAbsent(artistUri, true) == null)
               {
-                final Value nameLiteral = literalFor(artist.get());
-                builder = builder.with(artistUri, RDF.TYPE, MO.MUSIC_ARTIST)
-                                 .with(artistUri, FOAF.NAME, nameLiteral)
+                final Value nameLiteral = literalFor(artistName);
+                builder = builder.with(artistUri, RDF.TYPE,   MO.C_MUSIC_ARTIST)
+                                 .with(artistUri, FOAF.NAME,  nameLiteral)
                                  .with(artistUri, RDFS.LABEL, nameLiteral);
               }
-            
-            builder = builder.with(artistUri, FOAF.MAKER, mediaItemUri);
           }
         
-        final MediaFolder parent = mediaItem.getParent();
-        final String recordTitle = parent.getPath().toFile().getName();
-        final URI recordUri = uriFor(md5IdCreator.createMd5Id("CD:" + recordTitle));
+        // When scanning we can safely assume we're running on a file system
+        // TODO: what about using Displayable? It would not require a dependency on MediaFolder
+        final MediaFolder parent = (MediaFolder)mediaItem.getParent();
+        final String recordTitle = metadata.get(Metadata.ALBUM).orElse(parent.getPath().toFile().getName());
+        final URI recordUri = BM.localRecordUriFor(idCreator.createSha1("RECORD:" + recordTitle));
                 
         if (seenRecordUris.putIfAbsent(recordUri, true) == null)
           {
             final Value titleLiteral = literalFor(recordTitle);
-            builder = builder.with(recordUri, RDF.TYPE, MO.RECORD)
-                             .with(recordUri, MO.MEDIA_TYPE, MO.CD)
-                             .with(recordUri, DC.TITLE, titleLiteral)
-                             .with(recordUri, RDFS.LABEL, titleLiteral)
-                             .with(recordUri, MO.TRACK_COUNT, literalFor(parent.findChildren().count()));
+            builder = builder.with(recordUri, RDF.TYPE,         MO.C_RECORD)
+                             .with(recordUri, MO.P_MEDIA_TYPE,  MO.C_CD)
+                             .with(recordUri, DC.TITLE,         titleLiteral)
+                             .with(recordUri, RDFS.LABEL,       titleLiteral)
+                             .with(recordUri, MO.P_TRACK_COUNT, literalFor(parent.findChildren().count()));
           }
         
-        messageBus.publish(builder.with(recordUri, MO._TRACK, mediaItemUri).create());
+        builder.with(recordUri, MO.P_TRACK, trackUri).publish();
       }
   }

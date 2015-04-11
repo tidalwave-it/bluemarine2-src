@@ -33,6 +33,7 @@ import java.nio.file.Path;
 import it.tidalwave.util.As;
 import it.tidalwave.role.Composite;
 import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.bluemarine2.model.role.Parentable;
 
 /***********************************************************************************************************************
  *
@@ -46,7 +47,7 @@ import it.tidalwave.role.SimpleComposite8;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaFolder extends As, Parentable<MediaFolder>, SimpleComposite8<As>
+public interface MediaFolder extends Entity, Parentable<MediaFolder>, SimpleComposite8<Entity>
   {
     /*******************************************************************************************************************
      *

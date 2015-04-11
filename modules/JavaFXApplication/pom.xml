@@ -29,6 +29,10 @@
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-cecnavigationadapter</artifactId>
         </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
+        </dependency>
         
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
@@ -149,6 +153,12 @@
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-messagebus-spring</artifactId>
+        </dependency>
+
+        <!-- These should really be runtime -->        
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-catalog</artifactId>
         </dependency>
         
         <!-- FIXME: workaround against a compilation error -->

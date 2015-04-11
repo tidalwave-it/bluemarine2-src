@@ -50,7 +50,6 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.persistence.AddStatementsRequest;
 import it.tidalwave.bluemarine2.vocabulary.BM;
 import it.tidalwave.bluemarine2.vocabulary.MO;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
@@ -59,6 +58,49 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 
 /***********************************************************************************************************************
  *
+ * 
+ * mo:AudioFile             
+ *      URI                                                     computed from the fingerprint
+ *      foaf:sha1           the fingerprint of the file         locally computed
+ *      bm:latestInd.Time   the latest import time              locally computed
+ *      bm:path             the path of the file                locally computed
+ *      dc:title            the title                           locally computed    WRONG: USELESS?
+ *      rdfs:label          the display name                    locally computed    WRONG: should be the file name without path?
+ *      mo:encodes          points to the signal                locally computed
+ * 
+ * mo:DigitalSignal
+ *      URI                                                     computed from the fingerprint
+ *      mo:bitsPerSample    the bits per sample                 locally extracted from the file
+ *      mo:duration         the duration                        locally extracted from the file
+ *      mo:sample_rate      the sample rate                     locally extracted from the file
+ *      mo:published_as     points to the Track                 locally computed
+ *      MISSING mo:channels
+ *      MISSING? mo:time
+ *      MISSING? mo:trmid
+ * 
+ * mo:Track
+ *      URI                                                     the DbTune one if available, else computed from SHA1
+ *      mo:musicbrainz      the MusicBrainz URI                 locally extracted from the file
+ *      dc:title            the title                           taken from DbTune
+ *      rdfs:label          the display name                    taken from DbTune
+ *      foaf:maker          points to the MusicArtist           taken from DbTune
+ *      mo:track_number     the track number in the record      taken from DbTune
+ * 
+ * mo:Record
+ *      URI                                                     taken from DbTune
+ *      dc:date
+ *      dc:language
+ *      dc:title            the title                           taken from DbTune
+ *      rdfs:label          the display name                    taken from DbTune
+ *      mo:release          TODO points to the Label (EMI, etc...)
+ *      mo:musicbrainz      the MusicBrainz URI                 locally extracted from the file
+ *      mo:track            points to the Tracks                taken from DbTune
+ *      foaf:maker          points to the MusicArtist           taken from DbTune
+ *      owl:sameAs          point to external resources         taken from DbTune
+ * 
+ * mo:Artist
+ *      
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -82,10 +124,13 @@ public class DefaultMediaScanner
     private MessageBus messageBus;
     
     @Inject
+    private StatementManager statementManager;
+    
+    @Inject
     private InstantProvider timestampProvider;
     
     @Inject
-    private Md5IdCreator md5IdCreator;
+    private IdCreator idCreator;
 
     /*******************************************************************************************************************
      *
@@ -169,13 +214,13 @@ public class DefaultMediaScanner
             final Resource artistUri = uriFor("http://musicmusicbrainz.org/ws/2/artist/" + artistId);
             final Artist artist = request.getArtist();
             final Value nameLiteral = literalFor(artist.getName());
-            messageBus.publish(AddStatementsRequest.build()
-                                               .with(artistUri, RDF.TYPE, MO.MUSIC_ARTIST)
-                                               .with(artistUri, RDFS.LABEL, nameLiteral)
-                                               .with(artistUri, FOAF.NAME, nameLiteral)
-                                               .with(artistUri, MO.MUSICBRAINZ_GUID, literalFor(artistId.stringValue()))
-                                               .create());
-          }
+            statementManager.requestAddStatements()
+                            .with(artistUri, RDF.TYPE, MO.C_MUSIC_ARTIST)
+                            .with(artistUri, RDFS.LABEL, nameLiteral)
+                            .with(artistUri, FOAF.NAME, nameLiteral)
+                            .with(artistUri, MO.P_MUSICBRAINZ_GUID, literalFor(artistId.stringValue()))
+                            .publish();
+}
         finally 
           {
             progress.incrementImportedArtists();
@@ -193,23 +238,19 @@ public class DefaultMediaScanner
         try
           {
             log.info("onDownloadComplete({})", message);
+            final String url = message.getUrl().toString();
             
-            if (message.getStatusCode() == 200) // FIXME
+            if (url.matches("http://dbtune.org/.*/resource/track/.*"))
               {
-                final String url = message.getUrl().toString();
-
-                if (url.matches("http://dbtune.org/.*/resource/track/.*"))
-                  {
-                    dbTuneMetadataManager.onTrackMetadataDownloadComplete(message);
-                  }
-                else if (url.matches("http://dbtune.org/.*/resource/artist/.*"))
-                  {
-                    dbTuneMetadataManager.onArtistMetadataDownloadComplete(message);
-                  }
-                else if (url.matches("http://dbtune.org/.*/resource/record/.*"))
-                  {
-                    dbTuneMetadataManager.onRecordMetadataDownloadComplete(message);
-                  }
+                dbTuneMetadataManager.onTrackMetadataDownloadComplete(message);
+              }
+            else if (url.matches("http://dbtune.org/.*/resource/artist/.*"))
+              {
+                dbTuneMetadataManager.onArtistMetadataDownloadComplete(message);
+              }
+            else if (url.matches("http://dbtune.org/.*/resource/record/.*"))
+              {
+                dbTuneMetadataManager.onRecordMetadataDownloadComplete(message);
               }
           }
         finally 
@@ -222,39 +263,48 @@ public class DefaultMediaScanner
      *
      * Processes a {@link MediaItem}.
      * 
-     * @param                           mediaItem   the item
+     * @param                           audioFile   the item
      *
      ******************************************************************************************************************/
-    private void importMediaItem (final @Nonnull MediaItem mediaItem)
+    private void importMediaItem (final @Nonnull MediaItem audioFile)
       { 
-        log.debug("importMediaItem({})", mediaItem);
-        final Id md5 = md5IdCreator.createMd5Id(mediaItem.getPath());
-        final Metadata metadata = mediaItem.getMetadata();
+        log.debug("importMediaItem({})", audioFile);
+        final Id sha1 = idCreator.createSha1Id(audioFile.getPath());
+        final Metadata metadata = audioFile.getMetadata();
         final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
         log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
 
-        final URI mediaItemUri = !musicBrainzTrackId.isPresent() 
-                ? uriFor(md5)
-                : uriFor("http://dbtune.org/musicbrainz/resource/track/" + 
-                    musicBrainzTrackId.get().stringValue().replaceAll("^mbz:", ""));
+        final URI audioFileUri = BM.audioFileUriFor(sha1);
+        // FIXME: DbTune has got Signals. E.g. http://dbtune.org/musicbrainz/page/signal/0900f0cb-230f-4632-bd87-650801e5fdba
+        // FIXME: Try to use them. It seems there is no extra information, but use their Uri.
+        final URI signalUri = BM.signalUriFor(sha1);
+        // FIXME: the same contents in different places will give the same sha1. Disambiguates by hashing the path too?
+        final URI trackUri = !musicBrainzTrackId.isPresent() ? BM.localTrackUriFor(sha1)
+                                                             : BM.musicBrainzUriFor("track", musicBrainzTrackId.get());
 
-        final Instant lastModifiedTime = getLastModifiedTime(mediaItem.getPath());
-        messageBus.publish(AddStatementsRequest.build()
-                        .with(mediaItemUri, RDF.TYPE, MO.TRACK)
-                        .with(mediaItemUri, MO.AUDIOFILE, literalFor(mediaItem.getRelativePath()))
-                        .with(mediaItemUri, BM.MD5, literalFor(md5.stringValue().replaceAll("^md5id:", "")))
-                        .with(mediaItemUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
-                        .create());
-        embeddedMetadataManager.importTrackMetadata(mediaItem, mediaItemUri);
+        final Instant lastModifiedTime = getLastModifiedTime(audioFile.getPath());
+        statementManager.requestAddStatements()
+                        .with(audioFileUri, RDF.TYPE,                MO.C_AUDIO_FILE)
+                        .with(audioFileUri, FOAF.SHA1,               literalFor(sha1))
+                        .with(audioFileUri, MO.P_ENCODES,            signalUri)
+                        .with(audioFileUri, BM.PATH,                 literalFor(audioFile.getRelativePath())) 
+                        .with(audioFileUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
+                
+                        .with(trackUri,     RDF.TYPE,                MO.C_TRACK)
+                
+                        .with(signalUri,    RDF.TYPE,                MO.C_DIGITAL_SIGNAL)
+                        .with(signalUri,    MO.P_PUBLISHED_AS,       trackUri)
+                        .publish();
+        embeddedMetadataManager.importAudioFileMetadata(audioFile, signalUri, trackUri);
 
         if (musicBrainzTrackId.isPresent())
           {
-            dbTuneMetadataManager.importTrackMetadata(mediaItem, mediaItemUri);
+            dbTuneMetadataManager.importTrackMetadata(audioFile, trackUri, musicBrainzTrackId.get());
 //                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
           }
         else
           {
-            embeddedMetadataManager.importFallbackTrackMetadata(mediaItem, mediaItemUri);
+            embeddedMetadataManager.importFallbackTrackMetadata(audioFile, trackUri);
           } 
       }
     
@@ -295,7 +345,7 @@ public class DefaultMediaScanner
 //        
 //        final Metadata metadata = mediaItem.getMetadata();
 //        final String mbGuid = metadata.get(Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
-//        messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.MUSICBRAINZ_GUID, literalFor(mbGuid)));
+//        messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid)));
 //        
 //        if (true)
 //          {
@@ -313,12 +363,12 @@ public class DefaultMediaScanner
 //        nameCredits.forEach(nameCredit -> addArtist(nameCredit.getArtist()));
 //
 //        final Value createLiteral = literalFor(title);
-//        messageBus.publish(AddStatementsRequest.build()
+//        messageBus.publish(AddStatementsRequest.newAddStatementsRequest()
 //                                           .with(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(timestampProvider.getInstant()))
 //                                           .with(mediaItemUri, DC.TITLE, createLiteral)
 //                                           .with(mediaItemUri, RDFS.LABEL, createLiteral)
 //                                           .with(mediaItemUri, BM.FULL_CREDITS, literalFor(fullCredits))
-//                                           .create());
+//                                           .publish());
 //        // TODO: MO.CHANNELS
 //        // TODO: MO.COMPOSER
 //        // TODO: MO.CONDUCTOR
@@ -326,7 +376,7 @@ public class DefaultMediaScanner
 //        // TODO: MO.GENRE
 //        // TODO: MO.INTERPRETER
 //        // TODO: MO.LABEL
-//        // TODO: MO.MEDIA_TYPE (MIME)
+//        // TODO: MO.P_MEDIA_TYPE (MIME)
 //        // TODO: MO.OPUS
 //        // TOOD: MO.RECORD_NUMBER
 //        // TODO: MO.SINGER
@@ -343,7 +393,7 @@ public class DefaultMediaScanner
 //            if (e.getMessage().contains("503")) // throttling error
 //              {
 ////                log.warn("Resubmitting {} ... - {}", mediaItem, e.toString());
-////                pendingMediaItems.add(mediaItem);
+////                pendingMediaItems.requestAddStatements(mediaItem);
 //              }
 //          } 
     
@@ -360,7 +410,7 @@ public class DefaultMediaScanner
 //            
 //            if (!seenArtistIds.contains(artistId))
 //              {
-//                seenArtistIds.add(artistId);
+//                seenArtistIds.requestAddStatements(artistId);
 //                progress.incrementTotalArtists();
 //                messageBus.publish(new ArtistImportRequest(artistId, artist));
 //              }

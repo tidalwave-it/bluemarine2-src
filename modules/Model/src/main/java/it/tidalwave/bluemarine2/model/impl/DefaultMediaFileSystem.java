@@ -30,11 +30,17 @@ package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
-import java.nio.file.Paths;
+import it.tidalwave.util.NotFoundException;
+import it.tidalwave.util.PowerOnNotification;
 import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.messagebus.annotation.ListensTo;
+import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.PropertyNames;
 import lombok.Delegate;
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -42,32 +48,34 @@ import lombok.Delegate;
  * @version $Id$
  *
  **********************************************************************************************************************/
+@SimpleMessageSubscriber @Slf4j
 public class DefaultMediaFileSystem implements MediaFileSystem
   {
+    @Getter
+    private Path rootPath;
+    
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
 
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
     @Override @Nonnull
     public MediaFolder getRoot() 
       {
-        return new DefaultMediaFolder(getRootPath(), null, getRootPath());
+        return new FileSystemMediaFolder(rootPath, null, rootPath);
       }
     
-    @Nonnull
-    protected Path getRootPath()
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    /* VisibleForTesting */ void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
+      throws NotFoundException 
       {
-        // FIXME
-        String s = System.getProperty("user.home", "/");
-        
-        if ("arm".equals(System.getProperty("os.arch")))
-          {
-            s += "/Media/Music";
-          }
-        else
-          {
-            s += "/Personal/Music/iTunes/iTunes Music/Music"; 
-          }
-        
-        return Paths.get(s);
+        log.info("onPowerOnNotification({})", notification);
+        rootPath = notification.getProperties().get(PropertyNames.ROOT_PATH).resolve("Music");
+        log.info("rootPath: {}", rootPath);
       }
   }
