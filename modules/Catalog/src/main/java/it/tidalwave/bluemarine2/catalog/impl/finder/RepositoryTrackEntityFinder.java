@@ -159,13 +159,13 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
         if (makerId != null)
           {
             parameters.add("artist");
-            parameters.add(ValueFactoryImpl.getInstance().createURI(makerId.stringValue()));
+            parameters.add(uriFor(makerId));
           }
         
         if (recordId != null)
           {
             parameters.add("record");
-            parameters.add(ValueFactoryImpl.getInstance().createURI(recordId.stringValue()));
+            parameters.add(uriFor(recordId));
           }
         
         return query(RepositoryTrack.class, q, parameters.toArray());
