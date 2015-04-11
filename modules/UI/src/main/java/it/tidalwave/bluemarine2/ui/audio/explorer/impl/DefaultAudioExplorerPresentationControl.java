@@ -262,14 +262,7 @@ public class DefaultAudioExplorerPresentationControl
      ******************************************************************************************************************/
     private static boolean isComposite (final @Nonnull Entity entity)
       {
-        try
-          {
-            entity.as(SimpleComposite8.class); // FIXME: Composite doesn't work. Introduce Composite8?
-            return true;
-          }
-        catch (AsException e)
-          {
-            return false;
-          }
+        // FIXME: Composite doesn't work. Introduce Composite8?
+        return entity.asOptional(SimpleComposite8).map(c -> true).orElse(false);
       }
   }
