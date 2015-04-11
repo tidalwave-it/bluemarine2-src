@@ -31,15 +31,16 @@ package it.tidalwave.bluemarine2.catalog.impl.finder;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
+import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrack;
-import it.tidalwave.bluemarine2.model.MusicArtist;
-import it.tidalwave.bluemarine2.model.Record;
-import java.util.Optional;
 
 /***********************************************************************************************************************
  *
@@ -154,18 +155,8 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
             + "ORDER BY ?record_label ?track_number ?label";
         
         final List<Object> parameters = new ArrayList<>();
-        
-        if (makerId.isPresent())
-          {
-            parameters.add("artist");
-            parameters.add(uriFor(makerId.get()));
-          }
-        
-        if (recordId.isPresent())
-          {
-            parameters.add("record");
-            parameters.add(uriFor(recordId.get()));
-          }
+        parameters.addAll(makerId.map(id -> Arrays.asList("artist", id)).get());
+        parameters.addAll(recordId.map(id -> Arrays.asList("record", id)).get());
         
         return query(RepositoryTrack.class, q, parameters.toArray());
       }
