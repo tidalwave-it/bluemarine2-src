@@ -45,7 +45,6 @@ import it.tidalwave.bluemarine2.model.AudioFile;
 import lombok.Delegate;
 import lombok.Getter;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import it.tidalwave.bluemarine2.model.Record;
 import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
@@ -104,7 +103,7 @@ public class DefaultAudioFile implements AudioFile
 
 
     @Override @Nonnull
-    public Optional<String> getTitle() 
+    public Optional<String> getLabel() 
       {
         return getMetadata().get(TITLE);
       }

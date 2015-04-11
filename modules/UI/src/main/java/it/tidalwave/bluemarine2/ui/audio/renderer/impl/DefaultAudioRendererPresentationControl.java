@@ -129,7 +129,7 @@ public class DefaultAudioRendererPresentationControl
         // FIXME: the control shouldn't mess with JavaFX stuff
         Platform.runLater(() ->
           {
-            properties.titleProperty().setValue(audioFile.getTitle().orElse(""));
+            properties.titleProperty().setValue(audioFile.getLabel().orElse(""));
             properties.artistProperty().setValue(audioFile.findMakers().stream()
                     .map(maker -> maker.as(Displayable).getDisplayName())
                     .collect(Collectors.joining(", ")));

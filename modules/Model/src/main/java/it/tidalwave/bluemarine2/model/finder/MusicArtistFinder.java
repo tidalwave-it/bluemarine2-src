@@ -41,6 +41,13 @@ import it.tidalwave.bluemarine2.model.MusicArtist;
  **********************************************************************************************************************/
 public interface MusicArtistFinder extends Finder8<MusicArtist>
   {
+    /*******************************************************************************************************************
+     *
+     * Constrains the search to artists who are makers of the given entity.
+     * 
+     * @return      the {@code Finder}
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public MusicArtistFinder makerOf (@Nonnull Id entityId);
   }

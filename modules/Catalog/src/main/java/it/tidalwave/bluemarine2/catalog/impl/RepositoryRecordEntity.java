@@ -58,7 +58,7 @@ public class RepositoryRecordEntity extends RepositoryEntitySupport implements R
     @Override @Nonnull
     public TrackFinder findTracks() 
       {
-        return new RepositoryTrackEntityFinder(repository).inRecord(id);
+        return new RepositoryTrackEntityFinder(repository).inRecord(this);
       }
 
     @Override @Nonnull

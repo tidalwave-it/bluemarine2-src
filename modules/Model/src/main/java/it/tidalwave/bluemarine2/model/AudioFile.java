@@ -35,26 +35,71 @@ import it.tidalwave.util.Finder8;
 
 /***********************************************************************************************************************
  *
+ * Represents an audio file. Maps the homonymous concept from the Music Ontology.
+ * 
+ * @stereotype  Datum
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 public interface AudioFile extends MediaItem // FIXME: MediaItem should not be statically Parentable
   {
+    /*******************************************************************************************************************
+     *
+     * Returns the label of this audio file.
+     * 
+     * @return  the label
+     *
+     ******************************************************************************************************************/
     @Nonnull
-    public Optional<String> getTitle();
+    public Optional<String> getLabel();
     
+    /*******************************************************************************************************************
+     *
+     * Returns the duration of this audio file.
+     * 
+     * @return  the duration
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public Optional<Duration> getDuration();
     
+    /*******************************************************************************************************************
+     *
+     * Returns the makers of this audio file.
+     * 
+     * FIXME: shouldn't be here - should be in getTrack().findMakers().
+     * 
+     * @return  the makers
+     *
+     ******************************************************************************************************************/
+    // FIXME: and it should be Optional<MusicArtist>
     @Nonnull
     public Finder8<? extends Entity> findMakers();
 
-    // FIXME: should't be here: this should become getSignal().findMakers() or something like that
+    /*******************************************************************************************************************
+     *
+     * Returns the composers of the musical expression related to this audio file.
+     * 
+     * FIXME: shouldn't be here - should be in getSignal().findMakers() or such
+     * 
+     * @return  the composer
+     *
+     ******************************************************************************************************************/
+    // FIXME: and it should be Optional<MusicArtist>
     @Nonnull
     public Finder8<? extends Entity> findComposers();
 
-    // FIXME: should't be here: this should become getRecord().getRecord() or something like that
+    /*******************************************************************************************************************
+     *
+     * Returns the record related to this audio file.
+     * 
+     * FIXME: shouldn't be here - should be in getTrack().getRecord() or such
+     * 
+     * @return  the composer
+     *
+     ******************************************************************************************************************/
     // FIXME: and it should be Optional<Record>
     public Optional<? extends Entity> getRecord();
   }

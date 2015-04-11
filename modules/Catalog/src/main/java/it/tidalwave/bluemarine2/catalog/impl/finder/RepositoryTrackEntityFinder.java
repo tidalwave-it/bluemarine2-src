@@ -38,6 +38,8 @@ import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrackEntity;
+import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.Record;
 
 /***********************************************************************************************************************
  *
@@ -70,10 +72,10 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public TrackFinder withMaker (final @Nonnull Id makerId)  
+    public TrackFinder madeBy (final @Nonnull MusicArtist artist)  
       {
         final RepositoryTrackEntityFinder clone = clone();
-        clone.makerId = makerId;
+        clone.makerId = artist.getId();
         return clone;
       }
     
@@ -83,10 +85,10 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public TrackFinder inRecord (final @Nonnull Id recordId)  
+    public TrackFinder inRecord (final @Nonnull Record record)  
       {
         final RepositoryTrackEntityFinder clone = clone();
-        clone.recordId = recordId;
+        clone.recordId = record.getId();
         return clone;
       }
     

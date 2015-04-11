@@ -63,13 +63,13 @@ public class RepositoryMusicArtistEntity extends RepositoryEntitySupport impleme
     @Override @Nonnull
     public TrackFinder findTracks() 
       {
-        return new RepositoryTrackEntityFinder(repository).withMaker(id);
+        return new RepositoryTrackEntityFinder(repository).madeBy(this);
       }
 
     @Override @Nonnull
     public RecordFinder findRecords() 
       {
-        return new RepositoryRecordEntityFinder(repository).withMaker(id);
+        return new RepositoryRecordEntityFinder(repository).madeBy(this);
       }
     
     @Override @Nonnull

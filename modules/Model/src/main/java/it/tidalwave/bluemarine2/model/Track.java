@@ -43,7 +43,21 @@ public interface Track extends Entity, Identifiable
   {
     public static final Class<Track> Track = Track.class;
     
+    /*******************************************************************************************************************
+     *
+     * Returns the track number.
+     * 
+     * @return  the track number
+     *
+     ******************************************************************************************************************/
     public Integer getTrackNumber(); // FIXME: use Optional<Integer>
     
+    /*******************************************************************************************************************
+     *
+     * Returns the duration.
+     * 
+     * @return  the duration
+     *
+     ******************************************************************************************************************/
     public Duration getDuration(); // FIXME: use Optional<Integer>
   }

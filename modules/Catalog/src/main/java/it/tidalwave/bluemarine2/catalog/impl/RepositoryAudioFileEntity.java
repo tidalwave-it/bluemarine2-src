@@ -118,7 +118,7 @@ public class RepositoryAudioFileEntity extends RepositoryEntitySupport implement
       }
 
     @Override @Nonnull
-    public Optional<String> getTitle() 
+    public Optional<String> getLabel() 
       {
         return Optional.of(rdfsLabel);
       }

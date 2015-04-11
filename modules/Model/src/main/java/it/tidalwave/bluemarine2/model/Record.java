@@ -42,6 +42,13 @@ public interface Record extends Entity, Identifiable
   {
     public static final Class<Record> Record = Record.class;
     
+    /*******************************************************************************************************************
+     *
+     * Finds the tracks in this record.
+     * 
+     * @return  the tracks
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public TrackFinder findTracks();
   }

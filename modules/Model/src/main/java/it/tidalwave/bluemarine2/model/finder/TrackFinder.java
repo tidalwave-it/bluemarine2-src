@@ -31,6 +31,8 @@ package it.tidalwave.bluemarine2.model.finder;
 import javax.annotation.Nonnull;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Finder8;
+import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.Track;
 
 /***********************************************************************************************************************
@@ -41,9 +43,25 @@ import it.tidalwave.bluemarine2.model.Track;
  **********************************************************************************************************************/
 public interface TrackFinder extends Finder8<Track>
   {
+    /*******************************************************************************************************************
+     *
+     * Constrains the search to records made by the given artist.
+     * 
+     * @param       artist      the artist
+     * @return      the {@code Finder}
+     *
+     ******************************************************************************************************************/
     @Nonnull
-    public TrackFinder withMaker (@Nonnull Id makerId);
+    public TrackFinder madeBy (@Nonnull MusicArtist artist);
     
+    /*******************************************************************************************************************
+     *
+     * Constrains the search to tracks contained in the given record.
+     * 
+     * @param       record      the record
+     * @return      the {@code Finder}
+     *
+     ******************************************************************************************************************/
     @Nonnull
-    public TrackFinder inRecord (@Nonnull Id recordId);
+    public TrackFinder inRecord (@Nonnull Record record);
   }

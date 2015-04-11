@@ -31,9 +31,9 @@ package it.tidalwave.bluemarine2.catalog.impl.finder;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import java.util.List;
-import org.openrdf.model.impl.ValueFactoryImpl;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
+import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecordEntity;
@@ -69,10 +69,10 @@ public class RepositoryRecordEntityFinder extends RepositoryFinderSupport<Record
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public RecordFinder withMaker (final @Nonnull Id artistId)  
+    public RecordFinder madeBy (final @Nonnull MusicArtist artist)  
       {
         final RepositoryRecordEntityFinder clone = clone();
-        clone.makerId = artistId;
+        clone.makerId = artist.getId();
         return clone;
       }
     
