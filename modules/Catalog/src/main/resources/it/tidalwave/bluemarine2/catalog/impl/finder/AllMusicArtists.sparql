@@ -11,33 +11,3 @@ WHERE
       }
   } 
 ORDER BY ?label
-###
-###SELECT DISTINCT *
-###WHERE  
-###  { 
-###    ?artist       a                 mo:MusicArtist. 
-###    ?artist       rdfs:label        ?label. 
-#### Single artists
-###      {
-###        ?artist     vocab:artist_type       "1"^^xs:short.
-###      }
-###    UNION
-#### Groups for which there is no defined collaboration with single persons
-###      {
-###        ?artist     vocab:artist_type       "2"^^xs:short.
-###        FILTER NOT EXISTS 
-###          {
-###            ?artist     rel:collaboratesWith    ?any1 
-###          }
-###      }
-###    UNION
-#### Some artists don't have this attribute
-###      {
-###        MINUS 
-###          {
-###             ?artist     vocab:artist_type       ?any2
-###          }
-#### TODO: why not this?        FILTER NOT EXISTS { ?artist     vocab:artist_type       ?any }
-###      }
-###  } 
-###ORDER BY ?label
