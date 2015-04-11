@@ -192,6 +192,18 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
+     * Publishes a request to render an audio file.
+     * 
+     * @param   entity      the {@code Entity} referencing the audio file
+     *
+     ******************************************************************************************************************/
+    private void requestRenderAudioFileFile (final @Nonnull Entity entity)
+      {
+        messageBus.publish(new RenderMediaFileRequest(entity.as(MediaItemSupplier).getMediaItem()));    
+      }
+
+    /*******************************************************************************************************************
+     *
      * Populates the presentation with the contents of a folder and selects an item.
      * 
      * @param   folder          the folder
@@ -227,8 +239,7 @@ public class DefaultAudioExplorerPresentationControl
       {
         final UserAction action = isComposite(entity) 
             ? new UserActionLambda(() -> navigateTo(entity)) 
-            : new UserActionLambda(() -> messageBus.publish(
-                    new RenderMediaFileRequest(entity.as(MediaItemSupplier).getMediaItem())));
+            : new UserActionLambda(() -> requestRenderAudioFileFile(entity));
         
         return new DefaultUserActionProvider() // FIXME: new DefaultUserActionProvider(action)
           {
@@ -239,7 +250,7 @@ public class DefaultAudioExplorerPresentationControl
               }
           };
       }
-
+    
     /*******************************************************************************************************************
      *
      * Computes the label describing the current navigation path.
