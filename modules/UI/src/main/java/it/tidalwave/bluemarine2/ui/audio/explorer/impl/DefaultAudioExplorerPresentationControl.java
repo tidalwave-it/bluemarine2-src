@@ -29,7 +29,6 @@
 package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.util.List;
@@ -65,6 +64,7 @@ import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
 import static it.tidalwave.bluemarine2.model.role.MediaItemSupplier.MediaItemSupplier;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
+import java.util.Optional;
 
 /***********************************************************************************************************************
  *
@@ -80,13 +80,13 @@ import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
 public class DefaultAudioExplorerPresentationControl 
   {
     @AllArgsConstructor @Getter @ToString
-    private static class FolderAndSelection
+    private static class FolderAndPresentationMemento
       {
         @Nonnull
         private final Entity folder;
 
-        @Nullable
-        private final Integer selectedIndex;
+        @Nonnull
+        private final Optional<Object> memento;
       }
     
     @Inject
@@ -100,7 +100,7 @@ public class DefaultAudioExplorerPresentationControl
     
     private Entity currentFolder;
     
-    private final Stack<FolderAndSelection> stack = new Stack<>();
+    private final Stack<FolderAndPresentationMemento> stack = new Stack<>();
     
     private final AudioExplorerPresentation.Properties properties = new AudioExplorerPresentation.Properties();
     
@@ -128,7 +128,7 @@ public class DefaultAudioExplorerPresentationControl
         final EntitySupplier browser = browsers.stream()
                                                .filter(s -> s.getClass().getName().contains("BrowserByRecord"))
                                                .findFirst().get();
-        populateAndSelect(browser.get(), 0);
+        populateItems(browser.get(), Optional.empty());
       }
     
     /*******************************************************************************************************************
@@ -173,8 +173,8 @@ public class DefaultAudioExplorerPresentationControl
     private void navigateTo (final @Nonnull Entity newMediaFolder)
       {
         log.debug("navigateTo({})", newMediaFolder);
-        stack.push(new FolderAndSelection(currentFolder, properties.selectedIndexProperty().get()));
-        populateAndSelect(newMediaFolder, 0);
+        stack.push(new FolderAndPresentationMemento(currentFolder, Optional.of(presentation.getMemento())));
+        populateItems(newMediaFolder, Optional.empty());
       }
     
     /*******************************************************************************************************************
@@ -186,8 +186,8 @@ public class DefaultAudioExplorerPresentationControl
       {
         // TODO: assert not UI thread
         log.debug("navigateUp()");
-        final FolderAndSelection folderAndSelection = stack.pop();
-        populateAndSelect(folderAndSelection.getFolder(), folderAndSelection.getSelectedIndex());
+        final FolderAndPresentationMemento folderAndMemento = stack.pop();
+        populateItems(folderAndMemento.getFolder(), folderAndMemento.getMemento());
       }
     
     /*******************************************************************************************************************
@@ -210,9 +210,9 @@ public class DefaultAudioExplorerPresentationControl
      * @param   selectedIndex   the index of the item to select
      *
      ******************************************************************************************************************/
-    private void populateAndSelect (final @Nonnull Entity folder, final int selectedIndex)
+    private void populateItems (final @Nonnull Entity folder, final Optional<Object> memento)
       {
-        log.debug("populateAndSelect({}, {})", folder, selectedIndex);
+        log.debug("populateItems({}, {})", folder, memento);
         this.currentFolder = folder;
         // FIXME: shouldn't deal with JavaFX threads here
         Platform.runLater(() -> navigateUpAction.enabledProperty().setValue(!stack.isEmpty()));
@@ -226,7 +226,7 @@ public class DefaultAudioExplorerPresentationControl
                                                                    .orElse(new DefaultPresentable(object))
                                                                    .createPresentationModel(rolesFor(object)))
                                               .collect(toCompositePresentationModel());
-        presentation.populateAndSelect(pm, selectedIndex);
+        presentation.populateItems(pm, memento);
       }
     
     /*******************************************************************************************************************

@@ -29,10 +29,9 @@
 package it.tidalwave.bluemarine2.ui.audio.explorer;
 
 import javax.annotation.Nonnull;
-import javafx.beans.property.IntegerProperty;
+import java.util.Optional;
 import javafx.beans.property.StringProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
 import lombok.Getter;
@@ -54,8 +53,6 @@ public interface AudioExplorerPresentation
     public static class Properties
       {
         private final StringProperty folderNameProperty = new SimpleStringProperty("");
-        
-        private final IntegerProperty selectedIndexProperty = new SimpleIntegerProperty(0);
       }
     
     /*******************************************************************************************************************
@@ -76,13 +73,13 @@ public interface AudioExplorerPresentation
     
     /*******************************************************************************************************************
      *
-     * Populates the presentation with a set of media files and select one.
+     * Populates the presentation with a set of items and optionally restores some visual properties.
      * 
-     * @param   pm              the {@link PresentationModel}
-     * @param   selectedIndex   the index of the item to select
+     * @param   pm                  the {@link PresentationModel}
+     * @param   optionalMemento     the container of properties
      *
      ******************************************************************************************************************/
-    public void populateAndSelect (@Nonnull PresentationModel pm, int selectedIndex);
+    public void populateItems (@Nonnull PresentationModel pm, @Nonnull Optional<Object> optionalMemento);
     
     /*******************************************************************************************************************
      *
@@ -90,4 +87,14 @@ public interface AudioExplorerPresentation
      *
      ******************************************************************************************************************/
     public void focusOnMediaItems();
+    
+    /*******************************************************************************************************************
+     *
+     * Returns an object containing the snapshot of some relevant visual properties.
+     * 
+     * @return      the memento object
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Object getMemento();
   }
