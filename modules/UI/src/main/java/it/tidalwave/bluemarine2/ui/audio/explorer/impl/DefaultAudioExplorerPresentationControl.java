@@ -230,7 +230,7 @@ public class DefaultAudioExplorerPresentationControl
             : new UserActionLambda(() -> messageBus.publish(
                     new RenderMediaFileRequest(entity.as(MediaItemSupplier).getMediaItem())));
         
-        return new DefaultUserActionProvider()
+        return new DefaultUserActionProvider() // FIXME: new DefaultUserActionProvider(action)
           {
             @Override @Nonnull
             public UserAction getDefaultAction()
