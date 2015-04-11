@@ -28,15 +28,19 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl.finder;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecord;
+import lombok.ToString;
+import static java.util.Arrays.*;
+import static java.util.Collections.*;
 
 /***********************************************************************************************************************
  *
@@ -44,14 +48,15 @@ import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecord;
  * @version $Id$
  *
  **********************************************************************************************************************/
+@ToString
 public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, RecordFinder>
                                     implements RecordFinder
   {
-    @CheckForNull
-    private Id makerId;
+    @Nonnull
+    private Optional<Id> makerId = Optional.empty();
 
-    @CheckForNull
-    private Id trackId;
+    @Nonnull
+    private Optional<Id> trackId = Optional.empty();
 
     /*******************************************************************************************************************
      *
@@ -72,7 +77,7 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
     public RecordFinder madeBy (final @Nonnull MusicArtist artist)  
       {
         final RepositoryRecordFinder clone = clone();
-        clone.makerId = artist.getId();
+        clone.makerId = Optional.of(artist.getId());
         return clone;
       }
     
@@ -85,7 +90,7 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
     public RecordFinder recordOf (final @Nonnull Id trackId)  
       {
         final RepositoryRecordFinder clone = clone();
-        clone.trackId = trackId;
+        clone.trackId = Optional.of(trackId);
         return clone;
       }
     
@@ -113,13 +118,13 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
     protected List<? extends Record> computeNeededResults() 
       {
         final String q =
-              "SELECT *" 
+              "SELECT *\n" 
             + "WHERE  {\n" 
             + "       ?record       a                       mo:Record.\n" 
             + "       ?record       rdfs:label              ?label.\n" 
 ////            + "       ?track        mo:track_count         ?track_number.\n" 
 //                      
-            + ((makerId == null)
+            + (!makerId.isPresent()
                     ? ""
                     : "       {\n"
                     + "         ?record       foaf:maker              ?artist.\n"
@@ -130,15 +135,17 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
                     + "         ?artistGroup  rel:collaboratesWith    ?artist.\n"
                     + "       }\n")
                 
-            + ((trackId == null)
+            + (!trackId.isPresent()
                     ? ""
                     : "       ?record       mo:track              ?track.\n")
                 
             + "       }\n"
             + "ORDER BY ?label";
         
-        return (makerId != null) ? query(RepositoryRecord.class, q, "artist", uriFor(makerId))
-             : (trackId != null) ? query(RepositoryRecord.class, q, "track", uriFor(trackId))
-                                 : query(RepositoryRecord.class, q);
+        final List<Object> parameters = new ArrayList<>();
+        parameters.addAll(makerId.map(id -> asList("artist", uriFor(id))).orElse(emptyList()));
+        parameters.addAll(trackId.map(id -> asList("track", uriFor(id))).orElse(emptyList()));
+        
+        return query(RepositoryRecord.class, q, parameters.toArray());
       }
   }

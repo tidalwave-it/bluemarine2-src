@@ -123,7 +123,7 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
       {
         try 
           {
-            log.info("query({}, {}, {})", entityClass, sparql, bindings);
+            log.info("query({}, {}, {} - {})", entityClass, sparql, bindings, this);
             final RepositoryConnection connection = repository.getConnection();
             final TupleQuery query = connection.prepareTupleQuery(QueryLanguage.SPARQL, PREFIXES + sparql);
 

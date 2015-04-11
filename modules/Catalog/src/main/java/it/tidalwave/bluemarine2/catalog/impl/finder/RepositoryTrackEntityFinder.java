@@ -28,10 +28,8 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl.finder;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import org.openrdf.repository.Repository;
@@ -41,6 +39,9 @@ import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrack;
+import static java.util.Arrays.*;
+import static java.util.Collections.*;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *
@@ -48,13 +49,14 @@ import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrack;
  * @version $Id$
  *
  **********************************************************************************************************************/
+@ToString
 public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, TrackFinder>
                                          implements TrackFinder
   {
     @Nonnull
     private Optional<Id> makerId = Optional.empty();
 
-    @CheckForNull
+    @Nonnull
     private Optional<Id> recordId = Optional.empty();
 
     /*******************************************************************************************************************
@@ -123,7 +125,7 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
             + "       ?track        rdfs:label              ?label.\n" 
             + "       ?track        mo:track_number         ?track_number.\n" 
                       
-            + ((makerId == null)
+            + (!makerId.isPresent()
                     ? ""
                     : "       {\n"
                     + "         ?track        foaf:maker              ?artist.\n"
@@ -134,7 +136,7 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
                     + "         ?artistGroup  rel:collaboratesWith    ?artist.\n"
                     + "       }\n")
                       
-            + ((recordId == null)
+            + (!recordId.isPresent()
                     ? ""
                     : "       {\n"
                     + "         ?record       mo:track                ?track.\n"
@@ -155,8 +157,8 @@ public class RepositoryTrackEntityFinder extends RepositoryFinderSupport<Track, 
             + "ORDER BY ?record_label ?track_number ?label";
         
         final List<Object> parameters = new ArrayList<>();
-        parameters.addAll(makerId.map(id -> Arrays.asList("artist", id)).get());
-        parameters.addAll(recordId.map(id -> Arrays.asList("record", id)).get());
+        parameters.addAll(makerId.map(id -> asList("artist", uriFor(id))).orElse(emptyList()));
+        parameters.addAll(recordId.map(id -> asList("record", uriFor(id))).orElse(emptyList()));
         
         return query(RepositoryTrack.class, q, parameters.toArray());
       }
