@@ -39,9 +39,9 @@ import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrack;
+import lombok.ToString;
 import static java.util.Arrays.*;
 import static java.util.Collections.*;
-import lombok.ToString;
 
 /***********************************************************************************************************************
  *
@@ -53,6 +53,8 @@ import lombok.ToString;
 public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackFinder>
                                          implements TrackFinder
   {
+    private final static String QUERY_TRACKS = readSparql(RepositoryMusicArtistFinder.class, "Tracks.sparql");
+    
     @Nonnull
     private Optional<Id> makerId = Optional.empty();
 
@@ -118,48 +120,10 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
     @Override @Nonnull
     protected List<? extends Track> computeNeededResults() 
       {
-        final String q =
-              "SELECT *" 
-            + "WHERE  {\n" 
-            + "       ?track        a                       mo:Track.\n" 
-            + "       ?track        rdfs:label              ?label.\n" 
-            + "       ?track        mo:track_number         ?track_number.\n" 
-                      
-            + (!makerId.isPresent()
-                    ? ""
-                    : "       {\n"
-                    + "         ?track        foaf:maker              ?artist.\n"
-                    + "       }\n"
-                    + "         UNION\n" 
-                    + "       {\n"
-                    + "         ?track        foaf:maker              ?artistGroup.\n"
-                    + "         ?artistGroup  rel:collaboratesWith    ?artist.\n"
-                    + "       }\n")
-                      
-            + (!recordId.isPresent()
-                    ? ""
-                    : "       {\n"
-                    + "         ?record       mo:track                ?track.\n"
-                    + "       }\n")
-                      
-            + "       ?signal       a                       mo:DigitalSignal.\n" 
-            + "       ?signal       mo:published_as         ?track.\n"
-            + "       ?signal       mo:duration             ?duration.\n" 
-                      
-            + "       ?audioFile    a                       mo:AudioFile.\n" 
-            + "       ?audioFile    mo:encodes              ?signal.\n" 
-            + "       ?audioFile    bm:path                 ?path.\n" 
-
-            + "       ?record       a                       mo:Record.\n" 
-            + "       ?record       mo:track                ?track.\n" 
-            + "       ?record       rdfs:label              ?record_label.\n" 
-            + "       }\n"
-            + "ORDER BY ?record_label ?track_number ?label";
-        
         final List<Object> parameters = new ArrayList<>();
         parameters.addAll(makerId.map(id -> asList("artist", uriFor(id))).orElse(emptyList()));
         parameters.addAll(recordId.map(id -> asList("record", uriFor(id))).orElse(emptyList()));
         
-        return query(RepositoryTrack.class, q, parameters.toArray());
+        return query(RepositoryTrack.class, QUERY_TRACKS, parameters.toArray());
       }
   }

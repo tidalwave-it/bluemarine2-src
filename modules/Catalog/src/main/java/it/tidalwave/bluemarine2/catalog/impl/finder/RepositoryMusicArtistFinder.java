@@ -103,8 +103,10 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
     protected List<? extends MusicArtist> computeNeededResults() 
       {
         final List<Object> parameters = new ArrayList<>();
-        parameters.addAll(madeEntityId.map(id -> asList("madeEntity", id)).orElse(emptyList()));
+        parameters.addAll(madeEntityId.map(id -> asList("madeEntity", uriFor(id))).orElse(emptyList()));
         
+        // Two different queries because for the 'makerOf' we want to include collborations, as it's important their label
+        // In other words, 'Ella Fitzgerald and Duke Ellington' matters, rather than a list of the two individuals
         return madeEntityId.isPresent()
                 ? query(RepositoryMusicArtist.class, QUERY_ARTISTS_MAKER_OF, parameters.toArray())
                 : query(RepositoryMusicArtist.class, QUERY_ARTISTS);

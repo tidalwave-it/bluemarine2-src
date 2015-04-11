@@ -52,6 +52,8 @@ import static java.util.Collections.*;
 public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, RecordFinder>
                                     implements RecordFinder
   {
+    private final static String QUERY_RECORDS = readSparql(RepositoryMusicArtistFinder.class, "Records.sparql");
+    
     @Nonnull
     private Optional<Id> makerId = Optional.empty();
 
@@ -117,35 +119,10 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
     @Override @Nonnull
     protected List<? extends Record> computeNeededResults() 
       {
-        final String q =
-              "SELECT *\n" 
-            + "WHERE  {\n" 
-            + "       ?record       a                       mo:Record.\n" 
-            + "       ?record       rdfs:label              ?label.\n" 
-////            + "       ?track        mo:track_count         ?track_number.\n" 
-//                      
-            + (!makerId.isPresent()
-                    ? ""
-                    : "       {\n"
-                    + "         ?record       foaf:maker              ?artist.\n"
-                    + "       }\n"
-                    + "         UNION\n" 
-                    + "       {\n"
-                    + "         ?record       foaf:maker              ?artistGroup.\n"
-                    + "         ?artistGroup  rel:collaboratesWith    ?artist.\n"
-                    + "       }\n")
-                
-            + (!trackId.isPresent()
-                    ? ""
-                    : "       ?record       mo:track              ?track.\n")
-                
-            + "       }\n"
-            + "ORDER BY ?label";
-        
         final List<Object> parameters = new ArrayList<>();
         parameters.addAll(makerId.map(id -> asList("artist", uriFor(id))).orElse(emptyList()));
         parameters.addAll(trackId.map(id -> asList("track", uriFor(id))).orElse(emptyList()));
         
-        return query(RepositoryRecord.class, q, parameters.toArray());
+        return query(RepositoryRecord.class, QUERY_RECORDS, parameters.toArray());
       }
   }

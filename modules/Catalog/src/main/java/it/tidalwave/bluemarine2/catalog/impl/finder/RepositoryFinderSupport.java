@@ -30,7 +30,11 @@ package it.tidalwave.bluemarine2.catalog.impl.finder;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
@@ -119,21 +123,31 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
       {
         try 
           {
-            log.info("query({}, {}, {} - {})", entityClass, sparql, bindings, this);
+            log.info("query({}, ...)", entityClass);
+            
+            final String q = Arrays.asList(sparql.split("\n")).stream()
+                                    .filter(s -> matches(s, bindings))
+                                    .map(s -> s.replaceAll("^@[A-Za-z0-9]*@", ""))
+                                    .collect(Collectors.joining("\n"));
+            
+            log(">>>> incoming query: {}", sparql);
             final RepositoryConnection connection = repository.getConnection();
-            final TupleQuery query = connection.prepareTupleQuery(QueryLanguage.SPARQL, PREFIXES + sparql);
+            final TupleQuery query = connection.prepareTupleQuery(QueryLanguage.SPARQL, PREFIXES + q);
 
             for (int i = 0; i < bindings.length; i += 2)
               {
                 query.setBinding((String)bindings[i], (Value)bindings[i + 1]);
               }
 
+            log(">>>> query: {}", q);
+            log.info(">>>> query parameters: {}", Arrays.toString(bindings));
+            
             final TupleQueryResult result = query.evaluate();
             final List<E> entities = toEntities(repository, entityClass, result);
             result.close();
             connection.close();
             
-            log.debug(">>>> returning {} entities", entities.size());
+            log.info(">>>> query returning {} entities", entities.size());
 
             return entities;
           }
@@ -141,6 +155,34 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
           {
             throw new RuntimeException(e);
           }
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    private static boolean matches (final @Nonnull String string, final @Nonnull Object[] parameters)
+      {
+        final Pattern p = Pattern.compile("^@([A-Za-z0-9]*)@.*");
+        final Matcher matcher = p.matcher(string);
+        
+        if (!matcher.matches())
+          {
+            return true;  
+          }
+        
+        final String tag = matcher.group(1);
+        
+        for (int i = 0; i < parameters.length; i+= 2)
+          {
+            if (tag.equals(parameters[i]))
+              {
+                return true;  
+              }
+          }
+        
+        return false;
       }
     
     /*******************************************************************************************************************
@@ -205,5 +247,15 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
           }
         
         throw new RuntimeException("Unknown entity: " + entityClass);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    private void log (final @Nonnull String pattern, final @Nonnull String sparql)
+      {
+        Arrays.asList(sparql.split("\n")).stream().forEach(s -> log.info(pattern, s));
       }
   }
