@@ -214,7 +214,6 @@ public class DefaultAudioExplorerPresentationControl
                                               .map(object -> object.asOptional(Presentable)
                                                                    .orElse(new DefaultPresentable(object))
                                                                    .createPresentationModel(rolesFor(object)))
-//                                              .sorted(new AudioComparator())
                                               .collect(toCompositePresentationModel());
         presentation.populateAndSelect(pm, selectedIndex);
       }
