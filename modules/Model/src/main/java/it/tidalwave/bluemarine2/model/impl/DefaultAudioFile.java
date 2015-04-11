@@ -44,8 +44,8 @@ import lombok.Delegate;
 import lombok.Getter;
 import static java.util.Arrays.*;
 import static java.util.Collections.*;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
