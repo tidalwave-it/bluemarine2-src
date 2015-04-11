@@ -64,7 +64,7 @@ public class DefaultMediaFileSystem implements MediaFileSystem
     @Override @Nonnull
     public MediaFolder getRoot() 
       {
-        return new DefaultMediaFolder(rootPath, null, rootPath);
+        return new FileSystemMediaFolder(rootPath, null, rootPath);
       }
     
     /*******************************************************************************************************************

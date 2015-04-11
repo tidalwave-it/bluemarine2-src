@@ -58,7 +58,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  *
  **********************************************************************************************************************/
 @Immutable
-public class DefaultAudioFile implements AudioFile
+public class FileSystemAudioFile implements AudioFile
   {
     @Getter @Nonnull
     private final Path path;
@@ -75,19 +75,11 @@ public class DefaultAudioFile implements AudioFile
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
 
-    public DefaultAudioFile (final @Nonnull Path path,
-                             final @Nonnull Entity parent,
-                             final @Nonnull Path basePath)
+    public FileSystemAudioFile (final @Nonnull Path path, final @Nonnull Entity parent, final @Nonnull Path basePath)
       {
         this.path = path;
         this.parent = parent;
         this.relativePath = basePath.relativize(path);
-      }
-    
-    @Override @Nonnull
-    public String toString() 
-      {
-        return String.format("DefaultAudioFile(%s)", relativePath);
       }
 
     @Override @Nonnull
@@ -155,5 +147,11 @@ public class DefaultAudioFile implements AudioFile
       {
             // FIXME: check - parent should be always present - correct?
         return Optional.of(new NamedEntity(getParent().as(Displayable).getDisplayName()));
+      }
+    
+    @Override @Nonnull
+    public String toString() 
+      {
+        return String.format("FileSystemAudioFile(%s)", relativePath);
       }
   }

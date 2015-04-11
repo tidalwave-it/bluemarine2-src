@@ -51,7 +51,7 @@ import lombok.Getter;
  *
  **********************************************************************************************************************/
 @Immutable @AllArgsConstructor
-public class DefaultMediaFolder implements MediaFolder
+public class FileSystemMediaFolder implements MediaFolder
   {
     @Getter @Nonnull
     private final Path path;
@@ -81,6 +81,6 @@ public class DefaultMediaFolder implements MediaFolder
     @Override @Nonnull
     public String toString() 
       {
-        return String.format("DefaultMediaFolder(%s)", basePath.relativize(path));
+        return String.format("FileSystemMediaFolder(%s)", basePath.relativize(path));
       }
   }
