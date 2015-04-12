@@ -48,7 +48,7 @@ import lombok.RequiredArgsConstructor;
  *
  **********************************************************************************************************************/
 @DciRole(datumType = MusicArtist.class) @RequiredArgsConstructor
-public class MusicArtistEntityComposite implements SimpleComposite8<Track>
+public class MusicArtistComposite implements SimpleComposite8<Track>
   {
     @Nonnull
     private final MusicArtist artist;
