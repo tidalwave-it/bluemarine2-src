@@ -38,13 +38,14 @@ import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecord;
-import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import lombok.ToString;
 import static java.util.Arrays.*;
 import static java.util.Collections.*;
 
 /***********************************************************************************************************************
  *
+ * @stereotype      Finder
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *

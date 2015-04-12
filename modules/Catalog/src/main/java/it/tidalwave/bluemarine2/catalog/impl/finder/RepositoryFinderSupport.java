@@ -29,9 +29,11 @@
 package it.tidalwave.bluemarine2.catalog.impl.finder;
 
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -50,24 +52,23 @@ import org.openrdf.query.TupleQueryResult;
 import org.openrdf.repository.Repository;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.RepositoryException;
+import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Finder8Support;
+import it.tidalwave.role.ContextManager;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryMusicArtist;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecord;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrack;
-import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
-import it.tidalwave.role.ContextManager;
-import java.util.Optional;
-import javax.inject.Inject;
 import lombok.Cleanup;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Configurable;
 
 /***********************************************************************************************************************
  *
+ * @stereotype      Finder
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *

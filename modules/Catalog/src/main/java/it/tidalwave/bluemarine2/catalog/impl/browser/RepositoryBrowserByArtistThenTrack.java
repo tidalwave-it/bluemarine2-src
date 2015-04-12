@@ -32,6 +32,8 @@ import it.tidalwave.dci.annotation.DciContext;
 
 /***********************************************************************************************************************
  *
+ * @stereotype  Context
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *

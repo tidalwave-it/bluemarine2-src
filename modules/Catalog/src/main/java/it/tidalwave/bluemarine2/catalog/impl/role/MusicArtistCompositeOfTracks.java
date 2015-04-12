@@ -39,8 +39,8 @@ import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
- * FIXME: is this ok? I mean, is a MusicArtist always be a Composite of Tracks? If not, this Role should be only 
- * injected in the context of the explorer.
+ * A role that makes a {@link MusicArtist} act as a {@link Composite} of {@link Track}s. It is only injected in the
+ * {@link RepositoryBrowserByArtistThenTrack} context.
  * 
  * @stereotype  Role
  * 

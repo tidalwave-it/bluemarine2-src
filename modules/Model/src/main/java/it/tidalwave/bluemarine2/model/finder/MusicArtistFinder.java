@@ -35,6 +35,8 @@ import it.tidalwave.bluemarine2.model.MusicArtist;
 
 /***********************************************************************************************************************
  *
+ * @stereotype      Finder
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
