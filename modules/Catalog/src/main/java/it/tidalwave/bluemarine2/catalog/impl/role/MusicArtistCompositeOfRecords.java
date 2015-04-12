@@ -33,7 +33,8 @@ import it.tidalwave.util.Finder8;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MusicArtist;
-import it.tidalwave.bluemarine2.model.Track;
+import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.catalog.impl.browser.RepositoryBrowserByArtistThenRecord;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
@@ -47,15 +48,16 @@ import lombok.RequiredArgsConstructor;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = MusicArtist.class) @RequiredArgsConstructor
-public class MusicArtistComposite implements SimpleComposite8<Track>
+@DciRole(datumType = MusicArtist.class, context = RepositoryBrowserByArtistThenRecord.class)
+@RequiredArgsConstructor
+public class MusicArtistCompositeOfRecords implements SimpleComposite8<Record>
   {
     @Nonnull
     private final MusicArtist artist;
     
     @Override @Nonnull
-    public Finder8<Track> findChildren() 
+    public Finder8<Record> findChildren() 
       {
-        return artist.findTracks();
+        return artist.findRecords();
       }
   }

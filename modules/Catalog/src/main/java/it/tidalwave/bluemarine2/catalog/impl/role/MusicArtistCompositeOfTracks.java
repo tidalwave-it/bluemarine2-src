@@ -26,21 +26,38 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl.browser;
+package it.tidalwave.bluemarine2.catalog.impl.role;
 
-import it.tidalwave.dci.annotation.DciContext;
+import javax.annotation.Nonnull;
+import it.tidalwave.util.Finder8;
+import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.Track;
+import it.tidalwave.bluemarine2.catalog.impl.browser.RepositoryBrowserByArtistThenTrack;
+import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
+ * FIXME: is this ok? I mean, is a MusicArtist always be a Composite of Tracks? If not, this Role should be only 
+ * injected in the context of the explorer.
+ * 
+ * @stereotype  Role
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciContext
-public class RepositoryBrowserByArtistThenTrack extends RepositoryBrowserByArtistSupport
+@DciRole(datumType = MusicArtist.class, context = RepositoryBrowserByArtistThenTrack.class) 
+@RequiredArgsConstructor
+public class MusicArtistCompositeOfTracks implements SimpleComposite8<Track>
   {
-    public String getDisplayName() 
+    @Nonnull
+    private final MusicArtist artist;
+    
+    @Override @Nonnull
+    public Finder8<Track> findChildren() 
       {
-        return "by Artist, then track"; // FIXME: use a Bundle
-      }  
+        return artist.findTracks();
+      }
   }

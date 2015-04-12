@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl.browser;
 
+import javax.annotation.Nonnull;
 import it.tidalwave.dci.annotation.DciContext;
 
 /***********************************************************************************************************************
@@ -37,10 +38,11 @@ import it.tidalwave.dci.annotation.DciContext;
  *
  **********************************************************************************************************************/
 @DciContext
-public class RepositoryBrowserByArtistThenTrack extends RepositoryBrowserByArtistSupport
+public class RepositoryBrowserByArtistThenRecord extends RepositoryBrowserByArtistSupport
   {
+    @Override @Nonnull
     public String getDisplayName() 
       {
-        return "by Artist, then track"; // FIXME: use a Bundle
+        return "by Artist, then record"; // FIXME: use a Bundle
       }  
   }
