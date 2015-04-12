@@ -50,4 +50,8 @@ public interface MusicArtistFinder extends Finder8<MusicArtist>
      ******************************************************************************************************************/
     @Nonnull
     public MusicArtistFinder makerOf (@Nonnull Id entityId);
+    
+    // FIXME: push to Finder
+    @Nonnull
+    public MusicArtistFinder withContext (@Nonnull Object context);
   }

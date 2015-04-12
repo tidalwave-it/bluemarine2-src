@@ -57,9 +57,14 @@ import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryMusicArtist;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecord;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrack;
+import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
+import it.tidalwave.role.ContextManager;
+import java.util.Optional;
+import javax.inject.Inject;
 import lombok.Cleanup;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Configurable;
 
 /***********************************************************************************************************************
  *
@@ -67,7 +72,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j
+@RequiredArgsConstructor @Configurable @Slf4j
 public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
               extends Finder8Support<ENTITY, FINDER> 
   {
@@ -83,6 +88,13 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
     @Nonnull
     private Repository repository;
     
+    @Inject
+    private ContextManager contextManager;
+    
+    // TODO: push this to generic FinderSupport
+    @Nonnull
+    private Optional<Object> context = Optional.empty();
+    
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
@@ -93,10 +105,26 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
       {
         final RepositoryFinderSupport clone = (RepositoryFinderSupport)super.clone();
         clone.repository = this.repository;
+        clone.context = this.context;
 
         return clone;
       }
     
+    
+    // FIXME: push to Finder
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    /* @Override */ @Nonnull
+    public FINDER withContext (final @Nonnull Object context)
+      {
+        final RepositoryFinderSupport clone = (RepositoryFinderSupport)clone();
+        clone.context = Optional.of(context);
+        return (FINDER)clone;
+      }
+
     /*******************************************************************************************************************
      *
      * 
@@ -193,17 +221,33 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
                                                   final @Nonnull TupleQueryResult result) 
       throws QueryEvaluationException 
       {
-        final List<E> entities = new ArrayList<>();
-        
-        while (result.hasNext())
+        try
           {
-            final BindingSet bs = result.next();
-//            log.debug(">>>> {} {}", bs, bs.getBindingNames());
-            entities.add(toEntity(repository, entityClass, bs));
-//            log.info("{}", entity);
+            final List<E> entities = new ArrayList<>();
+
+            if (context.isPresent())
+              {
+                contextManager.addLocalContext(context.get());
+              }
+
+            while (result.hasNext())
+              {
+                final BindingSet bs = result.next();
+    //            log.debug(">>>> {} {}", bs, bs.getBindingNames());
+
+                entities.add(toEntity(repository, entityClass, bs));
+    //            log.info("{}", entity);
+              }
+
+            return entities;
           }
-        
-        return entities;
+        finally
+          {
+            if (context.isPresent())
+              {
+                contextManager.removeLocalContext(context.get());
+              }
+          }
       }
     
     /*******************************************************************************************************************

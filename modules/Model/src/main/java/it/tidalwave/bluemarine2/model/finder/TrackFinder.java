@@ -64,4 +64,8 @@ public interface TrackFinder extends Finder8<Track>
      ******************************************************************************************************************/
     @Nonnull
     public TrackFinder inRecord (@Nonnull Record record);
+    
+    // FIXME: push to Finder
+    @Nonnull
+    public TrackFinder withContext (@Nonnull Object context);
   }
