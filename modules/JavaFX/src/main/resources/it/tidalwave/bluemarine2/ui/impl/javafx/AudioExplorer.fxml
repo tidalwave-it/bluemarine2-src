@@ -33,7 +33,7 @@
                         <Label style="-fx-padding: 0 0 20 0;" styleClass="header-label" text="Music" />
                         <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                             <children>
-                                <ComboBox fx:id="cbBrowsers" maxWidth="250.0" minWidth="250.0" />
+                                <ComboBox fx:id="cbBrowsers" maxWidth="400.0" minWidth="400.0" />
                             </children>
                         </HBox>
                     </children>
