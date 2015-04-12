@@ -224,12 +224,12 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
       {
         try
           {
-            final List<E> entities = new ArrayList<>();
-
             if (context.isPresent())
               {
                 contextManager.addLocalContext(context.get());
               }
+
+            final List<E> entities = new ArrayList<>();
 
             while (result.hasNext())
               {
