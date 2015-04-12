@@ -33,6 +33,7 @@ import javax.inject.Inject;
 import java.util.Optional;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -79,6 +80,9 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     @FXML
     private Label lbFolderName;
     
+    @FXML
+    private ComboBox<PresentationModel> cbBrowsers;
+    
     @Inject
     private JavaFXBinder binder;
     
@@ -94,6 +98,12 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
       {
       }
     
+    @Override
+    public void populateBrowsers (final @Nonnull PresentationModel pm)
+      {
+        binder.bind(cbBrowsers, pm);
+      }
+      
     @Override
     public void populateItems (final @Nonnull PresentationModel pm, final @Nonnull Optional<Object> optionalMemento)
       {

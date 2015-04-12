@@ -73,6 +73,15 @@ public interface AudioExplorerPresentation
     
     /*******************************************************************************************************************
      *
+     * Populates the presentation with the available media browsers.
+     * 
+     * @param   pm                  the {@link PresentationModel}
+     *
+     ******************************************************************************************************************/
+    public void populateBrowsers (final @Nonnull PresentationModel pm);
+    
+    /*******************************************************************************************************************
+     *
      * Populates the presentation with a set of items and optionally restores some visual properties.
      * 
      * @param   pm                  the {@link PresentationModel}

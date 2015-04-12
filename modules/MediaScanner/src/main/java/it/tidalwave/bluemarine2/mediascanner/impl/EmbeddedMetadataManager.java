@@ -190,11 +190,12 @@ public class EmbeddedMetadataManager
                          .with(trackUri, RDFS.LABEL, literalFor(title));
 
         final Optional<String> artist = metadata.get(Metadata.ARTIST);
-
+        URI artistUri = null;
+        
         if (artist.isPresent()) // FIXME
           {
             final String artistName = artist.get();
-            final URI artistUri = BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + artistName));
+            artistUri = BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + artistName));
             builder = builder.with(trackUri, FOAF.MAKER, artistUri);
 
             if (seenArtistUris.putIfAbsent(artistUri, true) == null)
@@ -216,12 +217,18 @@ public class EmbeddedMetadataManager
           {
             final Value titleLiteral = literalFor(recordTitle);
             builder = builder.with(recordUri, RDF.TYPE,         MO.C_RECORD)
-                             .with(recordUri, MO.P_MEDIA_TYPE,  MO.C_CD)
                              .with(recordUri, DC.TITLE,         titleLiteral)
                              .with(recordUri, RDFS.LABEL,       titleLiteral)
+                             .with(recordUri, MO.P_MEDIA_TYPE,  MO.C_CD)
                              .with(recordUri, MO.P_TRACK_COUNT, literalFor(parent.findChildren().count()));
+            
+            if (artist.isPresent())
+              {
+                builder = builder.with(recordUri, FOAF.MAKER, artistUri);
+              }
           }
         
+
         builder.with(recordUri, MO.P_TRACK, trackUri).publish();
       }
   }

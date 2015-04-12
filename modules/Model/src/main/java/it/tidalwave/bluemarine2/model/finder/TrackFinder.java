@@ -29,7 +29,6 @@
 package it.tidalwave.bluemarine2.model.finder;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Id;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
@@ -37,6 +36,8 @@ import it.tidalwave.bluemarine2.model.Track;
 
 /***********************************************************************************************************************
  *
+ * @stereotype      Finder
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -64,4 +65,8 @@ public interface TrackFinder extends Finder8<Track>
      ******************************************************************************************************************/
     @Nonnull
     public TrackFinder inRecord (@Nonnull Record record);
+    
+    // FIXME: push to Finder
+    @Nonnull
+    public TrackFinder withContext (@Nonnull Object context);
   }

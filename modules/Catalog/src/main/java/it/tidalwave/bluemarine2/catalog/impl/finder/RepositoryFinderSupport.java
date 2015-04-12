@@ -29,9 +29,11 @@
 package it.tidalwave.bluemarine2.catalog.impl.finder;
 
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -50,9 +52,11 @@ import org.openrdf.query.TupleQueryResult;
 import org.openrdf.repository.Repository;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.RepositoryException;
+import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Finder8Support;
+import it.tidalwave.role.ContextManager;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryMusicArtist;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecord;
@@ -63,28 +67,16 @@ import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
+ * @stereotype      Finder
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j
+@RequiredArgsConstructor @Configurable @Slf4j
 public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
               extends Finder8Support<ENTITY, FINDER> 
   {
-    @Nonnull
-    protected static String readSparql (final @Nonnull Class<?> clazz, final @Nonnull String name)
-      {
-        try 
-          {
-            @Cleanup InputStream is = clazz.getResourceAsStream(name);
-            return StreamUtils.copyToString(is, Charset.forName("UTF-8"));
-          } 
-        catch (IOException e) 
-          {
-            throw new RuntimeException(e);
-          }
-      }
-    
     protected static final String PREFIXES =
                   "PREFIX foaf:  <http://xmlns.com/foaf/0.1/>\n" 
                 + "PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" 
@@ -97,6 +89,13 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
     @Nonnull
     private Repository repository;
     
+    @Inject
+    private ContextManager contextManager;
+    
+    // TODO: push this to generic FinderSupport
+    @Nonnull
+    private Optional<Object> context = Optional.empty();
+    
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
@@ -107,10 +106,26 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
       {
         final RepositoryFinderSupport clone = (RepositoryFinderSupport)super.clone();
         clone.repository = this.repository;
+        clone.context = this.context;
 
         return clone;
       }
     
+    
+    // FIXME: push to Finder
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    /* @Override */ @Nonnull
+    public FINDER withContext (final @Nonnull Object context)
+      {
+        final RepositoryFinderSupport clone = (RepositoryFinderSupport)clone();
+        clone.context = Optional.of(context);
+        return (FINDER)clone;
+      }
+
     /*******************************************************************************************************************
      *
      * 
@@ -118,34 +133,34 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
      ******************************************************************************************************************/
     @Nonnull
     protected <E extends Entity> List<E> query (final @Nonnull Class<E> entityClass,
-                                                final @Nonnull String sparql,
+                                                final @Nonnull String originalSparql,
                                                 final @Nonnull Object ... bindings)
       {
         try 
           {
             log.info("query({}, ...)", entityClass);
             
-            final String q = Arrays.asList(sparql.split("\n")).stream()
+            final String sparql = PREFIXES + 
+                                  Arrays.asList(originalSparql.split("\n")).stream()
                                     .filter(s -> matches(s, bindings))
                                     .map(s -> s.replaceAll("^@[A-Za-z0-9]*@", ""))
                                     .collect(Collectors.joining("\n"));
             
-            log(">>>> incoming query: {}", sparql);
             final RepositoryConnection connection = repository.getConnection();
-            final TupleQuery query = connection.prepareTupleQuery(QueryLanguage.SPARQL, PREFIXES + q);
+            final TupleQuery query = connection.prepareTupleQuery(QueryLanguage.SPARQL, sparql);
 
             for (int i = 0; i < bindings.length; i += 2)
               {
                 query.setBinding((String)bindings[i], (Value)bindings[i + 1]);
               }
 
-            log(">>>> query: {}", q);
+            log(originalSparql, sparql);
             log.info(">>>> query parameters: {}", Arrays.toString(bindings));
             
             final TupleQueryResult result = query.evaluate();
-            final List<E> entities = toEntities(repository, entityClass, result);
-            result.close();
-            connection.close();
+            final List<E> entities = createEntities(repository, entityClass, result);
+            result.close(); // FIXME: finally
+            connection.close(); // FIXME: finally
             
             log.info(">>>> query returning {} entities", entities.size());
 
@@ -202,22 +217,34 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
      *
      ******************************************************************************************************************/
     @Nonnull
-    private <E extends Entity> List<E> toEntities (final @Nonnull Repository repository, 
-                                                  final @Nonnull Class<E> entityClass,
-                                                  final @Nonnull TupleQueryResult result) 
+    private <E extends Entity> List<E> createEntities (final @Nonnull Repository repository, 
+                                                   final @Nonnull Class<E> entityClass,
+                                                   final @Nonnull TupleQueryResult result) 
       throws QueryEvaluationException 
       {
-        final List<E> entities = new ArrayList<>();
-        
-        while (result.hasNext())
+        try
           {
-            final BindingSet bs = result.next();
-//            log.debug(">>>> {} {}", bs, bs.getBindingNames());
-            entities.add(toEntity(repository, entityClass, bs));
-//            log.info("{}", entity);
+            if (context.isPresent())
+              {
+                contextManager.addLocalContext(context.get());
+              }
+
+            final List<E> entities = new ArrayList<>();
+
+            while (result.hasNext())
+              {
+                entities.add(createEntity(repository, entityClass, result.next()));
+              }
+
+            return entities;
           }
-        
-        return entities;
+        finally
+          {
+            if (context.isPresent())
+              {
+                contextManager.removeLocalContext(context.get());
+              }
+          }
       }
     
     /*******************************************************************************************************************
@@ -226,9 +253,9 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static <E extends Entity> E toEntity (final @Nonnull Repository repository, 
-                                                  final @Nonnull Class<E> entityClass,
-                                                  final @Nonnull BindingSet bindingSet)
+    private static <E extends Entity> E createEntity (final @Nonnull Repository repository, 
+                                                      final @Nonnull Class<E> entityClass,
+                                                      final @Nonnull BindingSet bindingSet)
       {
         // FIXME
         if (entityClass.equals(RepositoryMusicArtist.class))
@@ -254,8 +281,35 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
      * 
      *
      ******************************************************************************************************************/
-    private void log (final @Nonnull String pattern, final @Nonnull String sparql)
+    @Nonnull
+    protected static String readSparql (final @Nonnull Class<?> clazz, final @Nonnull String name)
       {
-        Arrays.asList(sparql.split("\n")).stream().forEach(s -> log.info(pattern, s));
+        try 
+          {
+            @Cleanup InputStream is = clazz.getResourceAsStream(name);
+            return StreamUtils.copyToString(is, Charset.forName("UTF-8"));
+          } 
+        catch (IOException e) 
+          {
+            throw new RuntimeException(e);
+          }
       }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    private void log (final @Nonnull String originalSparql, final @Nonnull String sparql)
+      {
+        if (log.isDebugEnabled())
+          {
+            Arrays.asList(originalSparql.split("\n")).stream().forEach(s -> log.debug(">>>> original query: {}", s));
+          }
+        
+        if (log.isInfoEnabled())
+          {
+            Arrays.asList(sparql.split("\n")).stream().forEach(s -> log.info(">>>> query: {}", s));
+          }
+     }
   }

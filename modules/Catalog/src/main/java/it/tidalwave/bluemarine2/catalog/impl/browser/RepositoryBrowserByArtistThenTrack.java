@@ -28,29 +28,21 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl.browser;
 
-import javax.annotation.Nonnull;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.dci.annotation.DciContext;
 
 /***********************************************************************************************************************
  *
+ * @stereotype  Context
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryBrowserByArtistThenTrack extends RepositoryBrowserSupport
+@DciContext
+public class RepositoryBrowserByArtistThenTrack extends RepositoryBrowserByArtistSupport
   {
-    public RepositoryBrowserByArtistThenTrack()
+    public String getDisplayName() 
       {
-//        super(() -> getCatalog().findArtists());
-        setComposite(new SimpleComposite8<MusicArtist>() 
-          {
-            @Override @Nonnull
-            public Finder8<MusicArtist> findChildren() 
-              {
-                return getCatalog().findArtists();
-              }
-          });
-      }
+        return "by Artist, then track"; // FIXME: use a Bundle
+      }  
   }

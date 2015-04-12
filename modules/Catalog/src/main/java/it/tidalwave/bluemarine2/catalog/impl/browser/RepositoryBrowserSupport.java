@@ -36,7 +36,7 @@ import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.catalog.Catalog;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalog;
 import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.role.EntitySupplier;
+import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import lombok.Delegate;
 import lombok.Setter;
@@ -47,7 +47,7 @@ import lombok.Setter;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryBrowserSupport implements EntitySupplier
+public class RepositoryBrowserSupport implements EntityBrowser
   {
     @Inject 
     private Persistence persistence;
@@ -59,15 +59,15 @@ public class RepositoryBrowserSupport implements EntitySupplier
     private final AsSupport asSupport = new AsSupport(this);
     
     @Setter @Nonnull
-    private SimpleComposite8<? extends Entity> composite;
+    private SimpleComposite8<? extends Entity> compositeForRootEntity;
         
     @Override @Nonnull
-    public Entity get() 
+    public Entity getRoot() 
       {
         return new Entity() 
           {
             @Delegate
-            private final AsSupport asSupport = new AsSupport(this, composite);
+            private final AsSupport asSupport = new AsSupport(this, compositeForRootEntity);
           };
       }
     

@@ -30,7 +30,7 @@ package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
-import it.tidalwave.bluemarine2.model.role.EntitySupplier;
+import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 
 /***********************************************************************************************************************
  *
@@ -42,7 +42,7 @@ import it.tidalwave.bluemarine2.model.role.EntitySupplier;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaFileSystem extends Entity, EntitySupplier
+public interface MediaFileSystem extends Entity, EntityBrowser
   {
     /*******************************************************************************************************************
      *
@@ -51,20 +51,9 @@ public interface MediaFileSystem extends Entity, EntitySupplier
      * @return  the path
      *
      ******************************************************************************************************************/
-    @Nonnull
+    @Override @Nonnull // FIXME: this declaration could be dropped if we don't need covariance on return type
     public MediaFolder getRoot();
     
     @Nonnull
     public Path getRootPath();
-    
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    default public Entity get()
-      {
-        return getRoot();
-      }
   }
