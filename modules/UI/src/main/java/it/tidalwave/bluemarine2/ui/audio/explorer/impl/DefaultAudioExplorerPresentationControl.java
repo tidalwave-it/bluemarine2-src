@@ -209,6 +209,7 @@ public class DefaultAudioExplorerPresentationControl
      ******************************************************************************************************************/
     private void requestRenderAudioFileFile (final @Nonnull Entity entity)
       {
+        log.debug("requestRenderAudioFileFile({})", entity);
         messageBus.publish(new RenderAudioFileRequest(entity.as(AudioFileSupplier).getAudioFile()));    
       }
 
