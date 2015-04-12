@@ -71,6 +71,15 @@ import lombok.extern.slf4j.Slf4j;
 public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
               extends Finder8Support<ENTITY, FINDER> 
   {
+    protected static final String PREFIXES =
+                  "PREFIX foaf:  <http://xmlns.com/foaf/0.1/>\n" 
+                + "PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" 
+                + "PREFIX rel:   <http://purl.org/vocab/relationship/>\n" 
+                + "PREFIX bm:    <http://bluemarine.tidalwave.it/2015/04/mo/>\n" 
+                + "PREFIX mo:    <http://purl.org/ontology/mo/>\n" 
+                + "PREFIX vocab: <http://dbtune.org/musicbrainz/resource/vocab/>\n" 
+                + "PREFIX xs:    <http://www.w3.org/2001/XMLSchema#>\n";
+
     @Nonnull
     protected static String readSparql (final @Nonnull Class<?> clazz, final @Nonnull String name)
       {
@@ -85,15 +94,6 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
           }
       }
     
-    protected static final String PREFIXES =
-                  "PREFIX foaf:  <http://xmlns.com/foaf/0.1/>\n" 
-                + "PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" 
-                + "PREFIX rel:   <http://purl.org/vocab/relationship/>\n" 
-                + "PREFIX bm:    <http://bluemarine.tidalwave.it/2015/04/mo/>\n" 
-                + "PREFIX mo:    <http://purl.org/ontology/mo/>\n" 
-                + "PREFIX vocab: <http://dbtune.org/musicbrainz/resource/vocab/>\n" 
-                + "PREFIX xs:    <http://www.w3.org/2001/XMLSchema#>\n";
-
     @Nonnull
     private Repository repository;
     
