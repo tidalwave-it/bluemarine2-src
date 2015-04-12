@@ -158,7 +158,7 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
             log.info(">>>> query parameters: {}", Arrays.toString(bindings));
             
             final TupleQueryResult result = query.evaluate();
-            final List<E> entities = toEntities(repository, entityClass, result);
+            final List<E> entities = createEntities(repository, entityClass, result);
             result.close();
             connection.close();
             
@@ -217,9 +217,9 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
      *
      ******************************************************************************************************************/
     @Nonnull
-    private <E extends Entity> List<E> toEntities (final @Nonnull Repository repository, 
-                                                  final @Nonnull Class<E> entityClass,
-                                                  final @Nonnull TupleQueryResult result) 
+    private <E extends Entity> List<E> createEntities (final @Nonnull Repository repository, 
+                                                   final @Nonnull Class<E> entityClass,
+                                                   final @Nonnull TupleQueryResult result) 
       throws QueryEvaluationException 
       {
         try
