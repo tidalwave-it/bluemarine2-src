@@ -233,7 +233,7 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
 
             while (result.hasNext())
               {
-                entities.add(toEntity(repository, entityClass, result.next()));
+                entities.add(createEntity(repository, entityClass, result.next()));
               }
 
             return entities;
@@ -253,9 +253,9 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static <E extends Entity> E toEntity (final @Nonnull Repository repository, 
-                                                  final @Nonnull Class<E> entityClass,
-                                                  final @Nonnull BindingSet bindingSet)
+    private static <E extends Entity> E createEntity (final @Nonnull Repository repository, 
+                                                      final @Nonnull Class<E> entityClass,
+                                                      final @Nonnull BindingSet bindingSet)
       {
         // FIXME
         if (entityClass.equals(RepositoryMusicArtist.class))
