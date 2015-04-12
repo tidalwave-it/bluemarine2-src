@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/cb2dd7ac-d8f8-44c3-bb72-aad349501d64>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fcb2dd7ac-d8f8-44c3-bb72-aad349501d64%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/cb2dd7ac-d8f8-44c3-bb72-aad349501d64>
+      rdfs:label "RDF Description of Come Swing With Me!" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/cb2dd7ac-d8f8-44c3-bb72-aad349501d64> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/cb2dd7ac-d8f8-44c3-bb72-aad349501d64>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/cb2dd7ac-d8f8-44c3-bb72-aad349501d64> .
+
+<http://dbtune.org/musicbrainz/resource/record/cb2dd7ac-d8f8-44c3-bb72-aad349501d64>
+      a       mo:Record ;
+      rdfs:label "Come Swing With Me!" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "12"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/291976> ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:date "1961-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Come Swing With Me!" ;
+      mo:musicbrainz <http://musicbrainz.org/album/cb2dd7ac-d8f8-44c3-bb72-aad349501d64> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/484609> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/5c16e54f-f8a5-48c3-bb50-47073cd099d6> , <http://dbtune.org/musicbrainz/resource/track/2a94b6f5-a8a1-403d-9911-c969bcb6a9f7> , <http://dbtune.org/musicbrainz/resource/track/e1ad6b3a-7bba-406f-ac10-5994b110bfee> , <http://dbtune.org/musicbrainz/resource/track/b4786f6f-5957-4c09-9f0d-9af62b1814a2> , <http://dbtune.org/musicbrainz/resource/track/b1d9939f-7b2e-4d1c-ba8d-7f688d385bc1> , <http://dbtune.org/musicbrainz/resource/track/1a469506-a802-4559-a067-2357ebc561b3> , <http://dbtune.org/musicbrainz/resource/track/985eacd3-3ff2-497d-a606-67d566a9759f> , <http://dbtune.org/musicbrainz/resource/track/c08cddf4-a5f6-48a7-93e3-6e2b4af5ddbc> , <http://dbtune.org/musicbrainz/resource/track/55f31fb9-df1d-475e-8eb4-b904712ff231> , <http://dbtune.org/musicbrainz/resource/track/d2a4653a-6e7d-4009-9e54-3360c305bfcc> , <http://dbtune.org/musicbrainz/resource/track/d5e3974e-e191-45b5-9fdc-79f02d8a4540> , <http://dbtune.org/musicbrainz/resource/track/61e6d338-8cd6-4997-819b-6a517bcf09cf> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d> ;
+      foaf:page "151459892" .

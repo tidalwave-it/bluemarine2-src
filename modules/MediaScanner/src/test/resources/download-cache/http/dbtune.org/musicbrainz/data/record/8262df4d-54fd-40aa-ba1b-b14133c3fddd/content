@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://ec1.images-amazon.com/images/P/B00002DEH0.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00002DEH0.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/8262df4d-54fd-40aa-ba1b-b14133c3fddd>
+      rdfs:label "RDF Description of The Piano Sonatas (Daniel Barenboim) (disc 4)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/8262df4d-54fd-40aa-ba1b-b14133c3fddd> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/8262df4d-54fd-40aa-ba1b-b14133c3fddd>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/8262df4d-54fd-40aa-ba1b-b14133c3fddd> .
+
+<http://images.amazon.com/images/P/B00002DEH0>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00002DEH0%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/8262df4d-54fd-40aa-ba1b-b14133c3fddd>
+      a       mo:Record ;
+      rdfs:label "The Piano Sonatas (Daniel Barenboim) (disc 4)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00002DEH0" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00002DEH0.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/206333> ;
+      vocab:tracks "13"^^xsd:int ;
+      dc:date "1999-11-09" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Piano Sonatas (Daniel Barenboim) (disc 4)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00002DEH0> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B00002DEH0.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B00002DEH0> ;
+      mo:musicbrainz <http://musicbrainz.org/album/8262df4d-54fd-40aa-ba1b-b14133c3fddd> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/303164> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/46d1613a-d910-4261-a3b1-4f9e01b1bd66> , <http://dbtune.org/musicbrainz/resource/track/620f4c17-88dd-4441-a5b0-7edcb40d3995> , <http://dbtune.org/musicbrainz/resource/track/4f532f4b-5b27-44dd-8bed-935ed6b381ba> , <http://dbtune.org/musicbrainz/resource/track/bbf79732-8149-494d-9f96-8650ffaacd85> , <http://dbtune.org/musicbrainz/resource/track/64660d8e-757e-43d0-b3e8-b013c5712ca6> , <http://dbtune.org/musicbrainz/resource/track/6c2c8b69-1e65-4c3a-a76a-3586281e65c5> , <http://dbtune.org/musicbrainz/resource/track/e59ab48b-fec6-4ac2-9270-5e51fe905ff7> , <http://dbtune.org/musicbrainz/resource/track/e9bc9896-0ac2-408a-a975-770c2d39a0cd> , <http://dbtune.org/musicbrainz/resource/track/07c361fe-45a6-491d-859d-72534903e18b> , <http://dbtune.org/musicbrainz/resource/track/8ce5ba1b-de7c-42d3-9ece-26013fba1716> , <http://dbtune.org/musicbrainz/resource/track/3fac75c7-8f3b-4e48-94da-22a5d12e7dc5> , <http://dbtune.org/musicbrainz/resource/track/0b6efc89-a382-47bc-a79f-538f62457ec7> , <http://dbtune.org/musicbrainz/resource/track/be8486b7-305a-4142-adf1-390ad3cb5f95> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/1f9df192-a621-4f54-8850-2c5373b7eac9> ;
+      foaf:page "714278442" .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00002DEH0>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00002DEH0%3E> .
+
+<http://musicbrainz.org/album/8262df4d-54fd-40aa-ba1b-b14133c3fddd>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F8262df4d-54fd-40aa-ba1b-b14133c3fddd%3E> .

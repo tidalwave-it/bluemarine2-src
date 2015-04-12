@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/0470f01f-718e-4838-ae4b-1b06841449ca>
+      rdfs:label "RDF Description of The Complete Roulette Sarah Vaughan Studio Sessions (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/0470f01f-718e-4838-ae4b-1b06841449ca> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/0470f01f-718e-4838-ae4b-1b06841449ca>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/0470f01f-718e-4838-ae4b-1b06841449ca> .
+
+<http://dbtune.org/musicbrainz/resource/record/0470f01f-718e-4838-ae4b-1b06841449ca>
+      a       mo:Record ;
+      rdfs:label "The Complete Roulette Sarah Vaughan Studio Sessions (disc 2)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000M6CLLI" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000M6CLLI.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "24"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/147335> ;
+      vocab:tracks "24"^^xsd:int ;
+      dc:date "2002-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Complete Roulette Sarah Vaughan Studio Sessions (disc 2)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000M6CLLI> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000M6CLLI.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000M6CLLI> ;
+      mo:musicbrainz <http://musicbrainz.org/album/0470f01f-718e-4838-ae4b-1b06841449ca> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/104026> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/cd11f7f1-0026-4f73-a8d8-d2a46c654529> , <http://dbtune.org/musicbrainz/resource/track/7a88b653-5185-4e17-9884-f34dcfeec6db> , <http://dbtune.org/musicbrainz/resource/track/72ca3b64-c5df-4f23-bccb-4b2a86053ede> , <http://dbtune.org/musicbrainz/resource/track/dc074b06-2358-443a-9ffb-d5e0e63d16c0> , <http://dbtune.org/musicbrainz/resource/track/b6564335-1e92-4ab2-9221-5e309bc44915> , <http://dbtune.org/musicbrainz/resource/track/5ccc217e-a016-4a63-8bf1-8573cfce807d> , <http://dbtune.org/musicbrainz/resource/track/55aa9a1c-7ebe-4ce1-9946-47bae6ae77b0> , <http://dbtune.org/musicbrainz/resource/track/c0c7658f-7fd6-4ccb-81fd-a49679c55164> , <http://dbtune.org/musicbrainz/resource/track/ab91f51c-ea62-472e-9a1a-3b5d08886cac> , <http://dbtune.org/musicbrainz/resource/track/169867b2-761b-45f3-a09e-90f814bb376e> , <http://dbtune.org/musicbrainz/resource/track/499c64a6-65df-4076-9c17-d611c09fa1de> , <http://dbtune.org/musicbrainz/resource/track/edbe5528-7b44-4df4-b7ed-4a2099929f79> , <http://dbtune.org/musicbrainz/resource/track/f8641858-bec9-4cdc-bcaa-1a3bb2f60e02> , <http://dbtune.org/musicbrainz/resource/track/79d2a731-7d71-49f3-94f6-39a70830e84c> , <http://dbtune.org/musicbrainz/resource/track/2b33ad37-ba21-4ba7-989d-654878d13189> , <http://dbtune.org/musicbrainz/resource/track/a5016c29-474e-4ece-ae69-1b9dd5751df7> , <http://dbtune.org/musicbrainz/resource/track/5f89d4dc-bf82-45fe-b9f0-13d67b9d025e> , <http://dbtune.org/musicbrainz/resource/track/b6508fa7-5885-47e8-90ff-705adc1706b1> , <http://dbtune.org/musicbrainz/resource/track/bcb44d5f-6a4e-423c-a821-a9c6432574d5> , <http://dbtune.org/musicbrainz/resource/track/22bb905f-bb87-480f-b8e3-bd089887bfba> , <http://dbtune.org/musicbrainz/resource/track/9ef49e88-6181-4c86-8b83-2e11fdab5d9e> , <http://dbtune.org/musicbrainz/resource/track/582a649a-6ce4-419e-9a6f-ba31fe70fc6e> , <http://dbtune.org/musicbrainz/resource/track/d4c96647-1d6d-4fce-9db5-5180c6adfd64> , <http://dbtune.org/musicbrainz/resource/track/7b2ec9ce-4a57-4f6e-81c0-3e00842d54f8> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/351d8bdf-33a1-45e2-8c04-c85fad20da55> ;
+      foaf:page "714278032" .
+
+<http://ec1.images-amazon.com/images/P/B000M6CLLI.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000M6CLLI.01.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000M6CLLI>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000M6CLLI%3E> .
+
+<http://musicbrainz.org/album/0470f01f-718e-4838-ae4b-1b06841449ca>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F0470f01f-718e-4838-ae4b-1b06841449ca%3E> .
+
+<http://images.amazon.com/images/P/B000M6CLLI>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000M6CLLI%3E> .

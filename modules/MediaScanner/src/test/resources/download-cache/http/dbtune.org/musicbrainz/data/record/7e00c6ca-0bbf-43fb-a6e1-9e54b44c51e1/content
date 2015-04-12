@@ -1,0 +1,65 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/7e00c6ca-0bbf-43fb-a6e1-9e54b44c51e1>
+      a       mo:Record ;
+      rdfs:label "The Late, Late Show" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000008MZ" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0000008MZ.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "13"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/92633> ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Late, Late Show" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000008MZ> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B0000008MZ.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B0000008MZ> ;
+      mo:musicbrainz <http://musicbrainz.org/album/7e00c6ca-0bbf-43fb-a6e1-9e54b44c51e1> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/72e4a20a-c98a-4ca8-b7d7-eab1d448c40e> , <http://dbtune.org/musicbrainz/resource/track/39f4fe6a-3bc5-490a-b0fd-337e6ad39016> , <http://dbtune.org/musicbrainz/resource/track/296faec2-9d64-4d67-93a2-6ce2d3de3703> , <http://dbtune.org/musicbrainz/resource/track/312d8440-615e-4ecb-b8fb-9609329591be> , <http://dbtune.org/musicbrainz/resource/track/441d0dbd-ca6a-483e-b6a0-c73d295c2ef3> , <http://dbtune.org/musicbrainz/resource/track/836d9af7-30a7-4352-91fc-3132719274bc> , <http://dbtune.org/musicbrainz/resource/track/3637166a-a672-4fb7-b4dc-36c48309488c> , <http://dbtune.org/musicbrainz/resource/track/e1aa1e8f-2fd5-4df7-99ec-b1f1c282fd72> , <http://dbtune.org/musicbrainz/resource/track/9d743a35-9f5b-4fa6-b02a-ea79bc6ed062> , <http://dbtune.org/musicbrainz/resource/track/84fc0624-4d4e-4849-bf33-f97a5152dd32> , <http://dbtune.org/musicbrainz/resource/track/cc6af6e5-0582-467b-a404-ab8fd67c1b66> , <http://dbtune.org/musicbrainz/resource/track/3f651670-2ec2-493b-b985-dab2185a349a> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/c5563de3-f9df-4cb9-889e-7b237093ffd0> ;
+      foaf:page "714278306" .
+
+<http://dbtune.org/musicbrainz/resource/master/7e00c6ca-0bbf-43fb-a6e1-9e54b44c51e1>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/7e00c6ca-0bbf-43fb-a6e1-9e54b44c51e1> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://ec1.images-amazon.com/images/P/B0000008MZ.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0000008MZ.01.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000008MZ>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000008MZ%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/7e00c6ca-0bbf-43fb-a6e1-9e54b44c51e1>
+      rdfs:label "RDF Description of The Late, Late Show" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/7e00c6ca-0bbf-43fb-a6e1-9e54b44c51e1> .
+
+<http://musicbrainz.org/album/7e00c6ca-0bbf-43fb-a6e1-9e54b44c51e1>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F7e00c6ca-0bbf-43fb-a6e1-9e54b44c51e1%3E> .
+
+<http://images.amazon.com/images/P/B0000008MZ>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000008MZ%3E> .

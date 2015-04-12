@@ -1,0 +1,51 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/6c5bdb69-e576-456b-9b6b-9177a5f04e43>
+      a       mo:Record ;
+      rdfs:label "Chega De Saudade (disc 1)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "13"^^xsd:int ;
+      vocab:tracks "14"^^xsd:int ;
+      dc:date "2000-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/por> ;
+      dc:title "Chega De Saudade (disc 1)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/6c5bdb69-e576-456b-9b6b-9177a5f04e43> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/325319> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/a8105dd1-cdde-4d55-8523-17f5d5f6a60b> , <http://dbtune.org/musicbrainz/resource/track/bce2a8df-e33b-4db6-b49c-7ce71e5431c0> , <http://dbtune.org/musicbrainz/resource/track/4494e46e-84e6-4f23-b073-2ce1e826ee5a> , <http://dbtune.org/musicbrainz/resource/track/4f6dae0c-26c2-49ae-9268-b2ef11b972e2> , <http://dbtune.org/musicbrainz/resource/track/014d30f8-8da9-4e6a-8be0-77d0da1b65dc> , <http://dbtune.org/musicbrainz/resource/track/4035bdc8-c64e-4767-bb02-03c99b620ac3> , <http://dbtune.org/musicbrainz/resource/track/6c629804-5501-4ffa-82f1-27c72fc09035> , <http://dbtune.org/musicbrainz/resource/track/6162d570-7771-4ae6-98af-aebb4b4ded08> , <http://dbtune.org/musicbrainz/resource/track/3baad18d-7d4b-4636-b1af-d316bc15eb70> , <http://dbtune.org/musicbrainz/resource/track/3e700516-d804-481c-a5c9-cb13a10aac8e> , <http://dbtune.org/musicbrainz/resource/track/456c81fc-9fd9-452c-bf92-4d44188d3345> , <http://dbtune.org/musicbrainz/resource/track/8fb083e4-be0b-4352-b83c-36a3551141da> , <http://dbtune.org/musicbrainz/resource/track/ca26440a-0684-4773-9188-94e4e67f7c11> , <http://dbtune.org/musicbrainz/resource/track/6ba90423-4130-45e7-ac2c-a37ff01f19d4> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "143859777" .
+
+<http://musicbrainz.org/album/6c5bdb69-e576-456b-9b6b-9177a5f04e43>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F6c5bdb69-e576-456b-9b6b-9177a5f04e43%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/6c5bdb69-e576-456b-9b6b-9177a5f04e43>
+      rdfs:label "RDF Description of Chega De Saudade (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/6c5bdb69-e576-456b-9b6b-9177a5f04e43> .
+
+<http://dbtune.org/musicbrainz/resource/master/6c5bdb69-e576-456b-9b6b-9177a5f04e43>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/6c5bdb69-e576-456b-9b6b-9177a5f04e43> .

@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B0000046YI>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000046YI%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/2cec6fa1-5f83-445f-8528-2fd17d5621d3>
+      a       mo:Record ;
+      rdfs:label "First Wish" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000046YI" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0000046YI.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "10"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/15790> ;
+      vocab:tracks "10"^^xsd:int ;
+      dc:date "1995-02-28" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "First Wish" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000046YI> ;
+      mo:image <http://images.amazon.com/images/P/B0000046YI> , <http://ec1.images-amazon.com/images/P/B0000046YI.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/2cec6fa1-5f83-445f-8528-2fd17d5621d3> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/292901> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/c6de40c7-fd22-4ee6-8d31-1e8421ed61e3> , <http://dbtune.org/musicbrainz/resource/track/13d79745-ea43-4c54-b159-f48f1693a1ad> , <http://dbtune.org/musicbrainz/resource/track/7c522b3a-687b-47e9-a801-5b2fa0de643e> , <http://dbtune.org/musicbrainz/resource/track/532e1721-c94f-4ff7-bbf8-83fbae8176fc> , <http://dbtune.org/musicbrainz/resource/track/7edf3314-8a95-4e70-99f4-66da93333a2f> , <http://dbtune.org/musicbrainz/resource/track/e3e56807-9e7d-4cff-94cd-b3f496622320> , <http://dbtune.org/musicbrainz/resource/track/28392e7a-6f3c-4f4a-ab12-03c3a8387a58> , <http://dbtune.org/musicbrainz/resource/track/41e5c863-e328-42dd-b2d5-8270d2bcc89d> , <http://dbtune.org/musicbrainz/resource/track/42116463-f46e-4a05-97c8-27b62eff407e> , <http://dbtune.org/musicbrainz/resource/track/6ac97c91-7792-4a7c-be72-951a1ba83fea> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/0939452b-0c6f-422a-997f-e7c496ce1113> ;
+      foaf:page "246010529" .
+
+<http://musicbrainz.org/album/2cec6fa1-5f83-445f-8528-2fd17d5621d3>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F2cec6fa1-5f83-445f-8528-2fd17d5621d3%3E> .
+
+<http://ec1.images-amazon.com/images/P/B0000046YI.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0000046YI.01.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000046YI>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000046YI%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/2cec6fa1-5f83-445f-8528-2fd17d5621d3>
+      rdfs:label "RDF Description of First Wish" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/2cec6fa1-5f83-445f-8528-2fd17d5621d3> .
+
+<http://dbtune.org/musicbrainz/resource/master/2cec6fa1-5f83-445f-8528-2fd17d5621d3>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/2cec6fa1-5f83-445f-8528-2fd17d5621d3> .

@@ -1,0 +1,49 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/a2fc21fa-037a-4ff9-af9b-165043a0e109>
+      rdfs:label "RDF Description of The Only Jazz Album You'll Ever Need" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/a2fc21fa-037a-4ff9-af9b-165043a0e109> .
+
+<http://dbtune.org/musicbrainz/resource/record/a2fc21fa-037a-4ff9-af9b-165043a0e109>
+      a       mo:Record ;
+      rdfs:label "The Only Jazz Album You'll Ever Need" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "35"^^xsd:int ;
+      vocab:tracks "36"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Only Jazz Album You'll Ever Need" ;
+      mo:musicbrainz <http://musicbrainz.org/album/a2fc21fa-037a-4ff9-af9b-165043a0e109> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/b138e198-7754-42bd-a2ad-ed23eac0dd1e> , <http://dbtune.org/musicbrainz/resource/track/3b8c3bd6-3bb9-4db8-b4a0-8237daffcaa0> , <http://dbtune.org/musicbrainz/resource/track/76ed3a10-8d52-42ed-8799-1068b2795bd5> , <http://dbtune.org/musicbrainz/resource/track/35dd05d6-edf7-40b2-a00d-b19bf9ab88b6> , <http://dbtune.org/musicbrainz/resource/track/92483bb5-97d8-40f3-b6d9-079d205db65e> , <http://dbtune.org/musicbrainz/resource/track/8d1d1a32-af19-448a-b90c-2b333ede090e> , <http://dbtune.org/musicbrainz/resource/track/5370d93b-a0b1-4065-90be-43f584015a46> , <http://dbtune.org/musicbrainz/resource/track/8b47df1a-73ff-43c6-8c12-7d9a2a6cb14f> , <http://dbtune.org/musicbrainz/resource/track/4c3ce51a-4944-493b-8b9a-211f54303f3a> , <http://dbtune.org/musicbrainz/resource/track/00c9c189-2300-48c6-b8e6-b90db34f9580> , <http://dbtune.org/musicbrainz/resource/track/5171579a-2076-47dd-bd20-8764556bb9e1> , <http://dbtune.org/musicbrainz/resource/track/7d3637ac-e322-462a-9708-c5e2b5203fac> , <http://dbtune.org/musicbrainz/resource/track/ad895e6e-84c4-4661-80d5-57cccdaa52f0> , <http://dbtune.org/musicbrainz/resource/track/0ed51c01-883e-4969-9fe5-a2d325262ec9> , <http://dbtune.org/musicbrainz/resource/track/8f30d97e-5747-4cd6-8ea7-5699ff6c3772> , <http://dbtune.org/musicbrainz/resource/track/804c7d43-39ce-4458-9929-94a9ac96a14b> , <http://dbtune.org/musicbrainz/resource/track/f82805d1-98fd-4f88-b3fd-43cb88babd79> , <http://dbtune.org/musicbrainz/resource/track/88faa9c8-503b-4028-a7ad-f2ce4f670555> , <http://dbtune.org/musicbrainz/resource/track/1c46d84f-bfaa-43b1-89b6-ef5b2cf545ab> , <http://dbtune.org/musicbrainz/resource/track/7e7c0f33-637f-4be7-9b04-e09adad497df> , <http://dbtune.org/musicbrainz/resource/track/11886fb0-a97e-46d6-8d1b-41949192a54c> , <http://dbtune.org/musicbrainz/resource/track/96e6eee7-ca32-4d45-bc8f-cb834ca05cdd> , <http://dbtune.org/musicbrainz/resource/track/d0af4c4e-34d9-4e8b-a7fd-6d3fdafc3469> , <http://dbtune.org/musicbrainz/resource/track/ff307d14-eeaa-487b-a143-6bfc6bda494c> , <http://dbtune.org/musicbrainz/resource/track/0607718a-0314-4870-8b57-029d7e375230> , <http://dbtune.org/musicbrainz/resource/track/58e3df6c-40fa-4de4-826b-69f95471e701> , <http://dbtune.org/musicbrainz/resource/track/20cc336e-ff15-4dcd-8718-2384a42e17ae> , <http://dbtune.org/musicbrainz/resource/track/de1bff60-29f0-4020-8ccf-a7387077f8d2> , <http://dbtune.org/musicbrainz/resource/track/cb0d7d92-9d6b-4ccb-8612-8712b72c1917> , <http://dbtune.org/musicbrainz/resource/track/f9d96e12-09d7-4ecd-a226-9a3c6a811b08> , <http://dbtune.org/musicbrainz/resource/track/e95220ff-c2a2-4e1e-9285-5c460133f0ca> , <http://dbtune.org/musicbrainz/resource/track/bb51e393-7923-4770-9aff-b9abb83b9ead> , <http://dbtune.org/musicbrainz/resource/track/0f496d97-8231-4ec8-9839-1d82c99eb6a9> , <http://dbtune.org/musicbrainz/resource/track/7629ea60-7c07-4e72-9271-9576481498d1> , <http://dbtune.org/musicbrainz/resource/track/077c1f91-354c-484d-9f30-20dd7cb18874> , <http://dbtune.org/musicbrainz/resource/track/b9c8a817-fe64-46c1-8818-5a52a6da1213> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "714278415" .
+
+<http://dbtune.org/musicbrainz/resource/master/a2fc21fa-037a-4ff9-af9b-165043a0e109>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/a2fc21fa-037a-4ff9-af9b-165043a0e109> .
+
+<http://musicbrainz.org/album/a2fc21fa-037a-4ff9-af9b-165043a0e109>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fa2fc21fa-037a-4ff9-af9b-165043a0e109%3E> .

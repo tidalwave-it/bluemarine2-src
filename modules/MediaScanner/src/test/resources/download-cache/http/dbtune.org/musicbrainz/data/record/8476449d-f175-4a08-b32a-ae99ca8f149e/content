@@ -1,0 +1,66 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/8476449d-f175-4a08-b32a-ae99ca8f149e>
+      a       mo:Record ;
+      rdfs:label "Intégrale, Volume 12: \"Manoir des mes rêves\" (disc 2)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00003NH72" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00003NH72.08.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "25"^^xsd:int ;
+      vocab:tracks "24"^^xsd:int ;
+      dc:date "1999-03-08" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Intégrale, Volume 12: \"Manoir des mes rêves\" (disc 2)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00003NH72> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B00003NH72.08.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B00003NH72> ;
+      mo:musicbrainz <http://musicbrainz.org/album/8476449d-f175-4a08-b32a-ae99ca8f149e> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/441639> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/6ec66816-c85f-40f6-8434-c8400690603d> , <http://dbtune.org/musicbrainz/resource/track/c7bf22f6-ad02-4e75-8867-53f934dfc5b1> , <http://dbtune.org/musicbrainz/resource/track/02ae79e4-38bb-4d9b-8d6c-6527f23a38c5> , <http://dbtune.org/musicbrainz/resource/track/2bec2b46-e0d1-479c-b456-610cc4a59104> , <http://dbtune.org/musicbrainz/resource/track/ef6c3f0d-ab76-4b1b-9551-0fd0c0776fc8> , <http://dbtune.org/musicbrainz/resource/track/d09a46d6-1a4c-4cf5-8d87-3bd6f0424dae> , <http://dbtune.org/musicbrainz/resource/track/551771cb-c948-4215-8e17-0e3b0591b77d> , <http://dbtune.org/musicbrainz/resource/track/f0cfd949-c4a1-4acf-a9a1-59565e99e871> , <http://dbtune.org/musicbrainz/resource/track/9189ad88-0474-44e9-b150-be47f8648aed> , <http://dbtune.org/musicbrainz/resource/track/f7f6b0d5-6acd-4e32-a107-8c91c1ac0dcb> , <http://dbtune.org/musicbrainz/resource/track/6b84cb97-c969-4ad4-850f-517f264cefb3> , <http://dbtune.org/musicbrainz/resource/track/fdf34745-f8a7-4491-b2d1-2c1db90b86c0> , <http://dbtune.org/musicbrainz/resource/track/69302cff-7133-4b52-8bdd-1cb532c56cb5> , <http://dbtune.org/musicbrainz/resource/track/43698aeb-efa1-4869-913b-8d1f887e3575> , <http://dbtune.org/musicbrainz/resource/track/43a5e4c9-6b34-4892-a2f3-b30218ba6feb> , <http://dbtune.org/musicbrainz/resource/track/ed58b4c1-09ea-4b12-866e-026be9e0e189> , <http://dbtune.org/musicbrainz/resource/track/ff391b29-fcb1-4f25-873b-0fb75648b3fd> , <http://dbtune.org/musicbrainz/resource/track/d57832ce-3009-4493-8e51-3fba14589fd0> , <http://dbtune.org/musicbrainz/resource/track/37acec9e-3cc2-4bf4-8831-f9c965e1357d> , <http://dbtune.org/musicbrainz/resource/track/eabc776d-d7ca-4005-94ce-bddf6c91b3da> , <http://dbtune.org/musicbrainz/resource/track/a98dcc78-3548-4dd2-a44b-04ab120e49f7> , <http://dbtune.org/musicbrainz/resource/track/4644d252-2716-4ee0-b0e6-bc73490f2055> , <http://dbtune.org/musicbrainz/resource/track/3d85e903-28a8-4c1b-a410-1e09ce3070e5> , <http://dbtune.org/musicbrainz/resource/track/9a1a4005-735a-4315-9be4-59b69c70b94a> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> ;
+      foaf:page "351967507" .
+
+<http://musicbrainz.org/album/8476449d-f175-4a08-b32a-ae99ca8f149e>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F8476449d-f175-4a08-b32a-ae99ca8f149e%3E> .
+
+<http://ec1.images-amazon.com/images/P/B00003NH72.08.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00003NH72.08.MZZZZZZZ.jpg%3E> .
+
+<http://images.amazon.com/images/P/B00003NH72>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00003NH72%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/8476449d-f175-4a08-b32a-ae99ca8f149e>
+      rdfs:label "RDF Description of Intégrale, Volume 12: \"Manoir des mes rêves\" (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/8476449d-f175-4a08-b32a-ae99ca8f149e> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00003NH72>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00003NH72%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/8476449d-f175-4a08-b32a-ae99ca8f149e>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/8476449d-f175-4a08-b32a-ae99ca8f149e> .

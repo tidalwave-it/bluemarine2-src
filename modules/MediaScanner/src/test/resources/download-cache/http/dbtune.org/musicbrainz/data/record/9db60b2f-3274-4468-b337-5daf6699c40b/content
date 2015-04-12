@@ -1,0 +1,53 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/9db60b2f-3274-4468-b337-5daf6699c40b>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/9db60b2f-3274-4468-b337-5daf6699c40b> .
+
+<http://musicbrainz.org/album/9db60b2f-3274-4468-b337-5daf6699c40b>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F9db60b2f-3274-4468-b337-5daf6699c40b%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/9db60b2f-3274-4468-b337-5daf6699c40b>
+      a       mo:Record ;
+      rdfs:label "Pure Gold of Louis Armstrong (disc 1)" ;
+      vocab:album_attributes
+              "{0,4}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "6"^^xsd:int ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Pure Gold of Louis Armstrong (disc 1)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/9db60b2f-3274-4468-b337-5daf6699c40b> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/ed686eee-4291-4996-b39e-3a839f0614d0> , <http://dbtune.org/musicbrainz/resource/track/4bb1419e-8c7e-415c-be30-0a6dfae3d4ae> , <http://dbtune.org/musicbrainz/resource/track/18d57f87-85b5-4c27-9be7-fe753a5929c2> , <http://dbtune.org/musicbrainz/resource/track/a0087a69-83d6-4935-a52a-e33f5deb6e2b> , <http://dbtune.org/musicbrainz/resource/track/3c975a53-2565-4507-a56d-b17680ef5900> , <http://dbtune.org/musicbrainz/resource/track/635b2a29-f700-4b41-bda7-90dcf5009764> , <http://dbtune.org/musicbrainz/resource/track/94fd07a2-e8d2-4a0a-ac73-1900b596aab3> , <http://dbtune.org/musicbrainz/resource/track/57911e39-bf80-4917-9834-3a60bd0d08dc> , <http://dbtune.org/musicbrainz/resource/track/11657721-12fc-4e5c-8738-1bee5747a4aa> , <http://dbtune.org/musicbrainz/resource/track/ea252dc4-5011-4c6b-8235-71033bd0f941> , <http://dbtune.org/musicbrainz/resource/track/d75a6eed-1a07-4a5c-bb78-2a061a152f23> , <http://dbtune.org/musicbrainz/resource/track/b871fc3d-e026-4ac5-8dc8-3215f3837cc0> , <http://dbtune.org/musicbrainz/resource/track/1caacc74-8541-4950-90a1-9ab65f5f028d> , <http://dbtune.org/musicbrainz/resource/track/3a4833ed-fa04-4850-8fb2-5ca91df96c58> , <http://dbtune.org/musicbrainz/resource/track/8d607acc-435d-4eb0-8632-4435278bb32d> , <http://dbtune.org/musicbrainz/resource/track/37955f1a-c3fa-419f-bd82-65fe3e95daf2> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/eea8a864-fcda-4602-9569-38ab446decd6> ;
+      foaf:page "594122792" .
+
+<http://dbtune.org/musicbrainz/data/record/9db60b2f-3274-4468-b337-5daf6699c40b>
+      rdfs:label "RDF Description of Pure Gold of Louis Armstrong (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/9db60b2f-3274-4468-b337-5daf6699c40b> .

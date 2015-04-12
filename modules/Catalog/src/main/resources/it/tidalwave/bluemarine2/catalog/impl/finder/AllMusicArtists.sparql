@@ -1,0 +1,13 @@
+SELECT *
+WHERE  
+  { 
+    ?artist     a           mo:MusicArtist. 
+    ?artist     rdfs:label  ?label. 
+
+    MINUS 
+      {
+        ?artist     vocab:artist_type       "2"^^xs:short.
+        ?artist     rel:collaboratesWith    ?any1 .
+      }
+  } 
+ORDER BY ?label

@@ -1,0 +1,57 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/2973710d-7978-441b-9e15-5a81a09cc7bb>
+      a       mo:Record ;
+      rdfs:label "Thank You, Frank" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "24"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/9880> ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:date "1997-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Thank You, Frank" ;
+      mbz:first_release <http://dbtune.org/musicbrainz/resource/record/77d1c3e3-0688-427f-ad21-df138940b027> ;
+      mo:musicbrainz <http://musicbrainz.org/album/2973710d-7978-441b-9e15-5a81a09cc7bb> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/439926> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/8b2e53ab-aef3-451d-bc92-bdd9221365de> , <http://dbtune.org/musicbrainz/resource/track/2d0bdd7d-c727-4174-b3d4-b262ec683b8c> , <http://dbtune.org/musicbrainz/resource/track/dc02b265-b368-489c-8f96-0e096054435c> , <http://dbtune.org/musicbrainz/resource/track/e67f1fdf-67ac-495e-9ad1-fc2bf301c63b> , <http://dbtune.org/musicbrainz/resource/track/0a63f36c-d99b-46c9-ae8d-2f6e3fda3c89> , <http://dbtune.org/musicbrainz/resource/track/d96f7978-f1e4-4e02-b14b-68b6049937fa> , <http://dbtune.org/musicbrainz/resource/track/7b808da1-bbbb-4349-8aee-0521cb50bae9> , <http://dbtune.org/musicbrainz/resource/track/96362134-4780-4541-a174-9539cdeb387c> , <http://dbtune.org/musicbrainz/resource/track/27e02879-d25f-439d-87b1-a7d526a27553> , <http://dbtune.org/musicbrainz/resource/track/08f63084-abcc-4630-9155-52ee373085d8> , <http://dbtune.org/musicbrainz/resource/track/e75e3d06-4067-4810-920d-9d9c5edb21bd> , <http://dbtune.org/musicbrainz/resource/track/babc8b01-8172-42c6-9695-67b2c2170e47> , <http://dbtune.org/musicbrainz/resource/track/1df7add2-6e33-464c-b720-5654aa5cfdfa> , <http://dbtune.org/musicbrainz/resource/track/533d7bae-1aa4-4973-a37d-510e6a5de029> , <http://dbtune.org/musicbrainz/resource/track/b07b5598-e503-41f2-8843-3aa1776c8c5b> , <http://dbtune.org/musicbrainz/resource/track/2ff4c695-12e7-4282-a7a1-a4ae1572e2f6> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d> ;
+      foaf:page "714161537" .
+
+<http://dbtune.org/musicbrainz/data/record/2973710d-7978-441b-9e15-5a81a09cc7bb>
+      rdfs:label "RDF Description of Thank You, Frank" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/2973710d-7978-441b-9e15-5a81a09cc7bb> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/2973710d-7978-441b-9e15-5a81a09cc7bb>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F2973710d-7978-441b-9e15-5a81a09cc7bb%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/2973710d-7978-441b-9e15-5a81a09cc7bb>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/2973710d-7978-441b-9e15-5a81a09cc7bb> .

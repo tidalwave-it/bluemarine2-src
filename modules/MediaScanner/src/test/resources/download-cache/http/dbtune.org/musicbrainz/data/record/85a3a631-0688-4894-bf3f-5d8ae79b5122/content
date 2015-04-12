@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/85a3a631-0688-4894-bf3f-5d8ae79b5122>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F85a3a631-0688-4894-bf3f-5d8ae79b5122%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/85a3a631-0688-4894-bf3f-5d8ae79b5122>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/85a3a631-0688-4894-bf3f-5d8ae79b5122> .
+
+<http://dbtune.org/musicbrainz/resource/record/85a3a631-0688-4894-bf3f-5d8ae79b5122>
+      a       mo:Record ;
+      rdfs:label "Concerti for 3 and 4 Harpsichords (The English Concert feat. harpsichord: Kenneth Gilbert, Trevor Pinnock, Lars Ulrik Mortensen)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "10"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/155334> ;
+      vocab:tracks "9"^^xsd:int ;
+      dc:date "1981-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Concerti for 3 and 4 Harpsichords (The English Concert feat. harpsichord: Kenneth Gilbert, Trevor Pinnock, Lars Ulrik Mortensen)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/85a3a631-0688-4894-bf3f-5d8ae79b5122> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/134688> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/cd9efa26-7f48-46ef-9597-f2cc382a5afa> , <http://dbtune.org/musicbrainz/resource/track/f93b6316-a5a8-4323-be0a-be342ddf7c4c> , <http://dbtune.org/musicbrainz/resource/track/aa60f703-325d-437a-a385-ee075ce56547> , <http://dbtune.org/musicbrainz/resource/track/8829083e-3c3a-41f2-9ff2-13ac46efdd68> , <http://dbtune.org/musicbrainz/resource/track/7e78648f-a9f3-4eca-8fab-1d35adb37d66> , <http://dbtune.org/musicbrainz/resource/track/cbf24de2-c8f9-46c9-8fa6-13fccd065f6e> , <http://dbtune.org/musicbrainz/resource/track/e3ef9f52-fabe-47c0-81df-32782a074157> , <http://dbtune.org/musicbrainz/resource/track/0484c8ab-91d7-4f9f-ad3a-d7409d448c72> , <http://dbtune.org/musicbrainz/resource/track/ba4b7fab-5341-4be2-97aa-b0b16033e4b6> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/24f1766e-9635-4d58-a4d4-9413f9f98a4c> ;
+      foaf:page "151490771" .
+
+<http://dbtune.org/musicbrainz/data/record/85a3a631-0688-4894-bf3f-5d8ae79b5122>
+      rdfs:label "RDF Description of Concerti for 3 and 4 Harpsichords (The English Concert feat. harpsichord: Kenneth Gilbert, Trevor Pinnock, Lars Ulrik Mortensen)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/85a3a631-0688-4894-bf3f-5d8ae79b5122> .

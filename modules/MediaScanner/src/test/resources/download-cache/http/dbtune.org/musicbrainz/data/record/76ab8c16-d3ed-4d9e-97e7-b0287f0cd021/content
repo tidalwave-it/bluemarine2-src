@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/76ab8c16-d3ed-4d9e-97e7-b0287f0cd021>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/76ab8c16-d3ed-4d9e-97e7-b0287f0cd021> .
+
+<http://images.amazon.com/images/P/B00000E4F2>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000E4F2%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/76ab8c16-d3ed-4d9e-97e7-b0287f0cd021>
+      rdfs:label "RDF Description of Organ Works (feat. organ: Ton Koopman)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/76ab8c16-d3ed-4d9e-97e7-b0287f0cd021> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/76ab8c16-d3ed-4d9e-97e7-b0287f0cd021>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F76ab8c16-d3ed-4d9e-97e7-b0287f0cd021%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00000E4F2>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00000E4F2%3E> .
+
+<http://ec2.images-amazon.com/images/P/B00000E4F2.03.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec2.images-amazon.com%2Fimages%2FP%2FB00000E4F2.03.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/76ab8c16-d3ed-4d9e-97e7-b0287f0cd021>
+      a       mo:Record ;
+      rdfs:label "Organ Works (feat. organ: Ton Koopman)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00000E4F2" ;
+      vocab:albummeta_coverarturl
+              "http://ec2.images-amazon.com/images/P/B00000E4F2.03.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/241940> ;
+      vocab:tracks "13"^^xsd:int ;
+      dc:date "1983-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Organ Works (feat. organ: Ton Koopman)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00000E4F2> ;
+      mo:image <http://images.amazon.com/images/P/B00000E4F2> , <http://ec2.images-amazon.com/images/P/B00000E4F2.03.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/76ab8c16-d3ed-4d9e-97e7-b0287f0cd021> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/388751> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/ce732ebf-80b1-4d5b-b653-e3e994e29e49> , <http://dbtune.org/musicbrainz/resource/track/837b408e-ffbd-43d6-a228-06533cd41be4> , <http://dbtune.org/musicbrainz/resource/track/55464792-c94e-4bf2-873a-456d7deafd1c> , <http://dbtune.org/musicbrainz/resource/track/6929f7d1-99b4-4d80-81b0-8c737aa8998e> , <http://dbtune.org/musicbrainz/resource/track/413e5a3d-638f-4341-b2bd-f67986b61313> , <http://dbtune.org/musicbrainz/resource/track/17c70107-5ebc-45d8-9fc4-3612aa689768> , <http://dbtune.org/musicbrainz/resource/track/42657230-590b-486b-884d-3d5b702569dd> , <http://dbtune.org/musicbrainz/resource/track/32bc5c51-7b92-47e5-a4a7-94bc2fefcf44> , <http://dbtune.org/musicbrainz/resource/track/dc1e3013-8ce7-4ac4-a137-17ac322cd965> , <http://dbtune.org/musicbrainz/resource/track/d4461da9-412f-4a6e-b41c-53b4f5177ca8> , <http://dbtune.org/musicbrainz/resource/track/4d434bca-bc69-4c45-864b-7178002dd164> , <http://dbtune.org/musicbrainz/resource/track/a3f2d2f2-cc26-44bb-9351-0b9e1515e16b> , <http://dbtune.org/musicbrainz/resource/track/5f287b5f-c650-4dfa-8ee1-155df22e45cd> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/24f1766e-9635-4d58-a4d4-9413f9f98a4c> ;
+      foaf:page "557058529" .

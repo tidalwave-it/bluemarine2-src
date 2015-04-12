@@ -1,0 +1,65 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/898f851e-14d2-4e4c-ae66-86b3d131a822>
+      a       mo:Record ;
+      rdfs:label "The Legendary Nat King Cole" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000025AZ0" ;
+      vocab:albummeta_coverarturl
+              "http://ec2.images-amazon.com/images/P/B000025AZ0.03.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "31"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/20223> ;
+      vocab:tracks "24"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Legendary Nat King Cole" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000025AZ0> ;
+      mo:image <http://images.amazon.com/images/P/B000025AZ0> , <http://ec2.images-amazon.com/images/P/B000025AZ0.03.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/898f851e-14d2-4e4c-ae66-86b3d131a822> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/50d8fbd3-810a-4da2-bd27-d7071467d28c> , <http://dbtune.org/musicbrainz/resource/track/c6e9be36-3e7f-483e-a522-26366a7b91ce> , <http://dbtune.org/musicbrainz/resource/track/2179a358-247f-4768-8315-7599aed5595e> , <http://dbtune.org/musicbrainz/resource/track/7362ddfd-484b-4c38-bd7e-40955cf44c04> , <http://dbtune.org/musicbrainz/resource/track/d25031bb-68e4-4fdb-97ab-91238ebf2e30> , <http://dbtune.org/musicbrainz/resource/track/55a61b78-0621-466c-b09f-4cd60a659068> , <http://dbtune.org/musicbrainz/resource/track/0d866226-70a3-4ebd-b6cf-410679eccb34> , <http://dbtune.org/musicbrainz/resource/track/5f3974f6-d9d8-4505-9403-7db32e7ceed0> , <http://dbtune.org/musicbrainz/resource/track/a02339f5-8520-487e-96df-ebb51f360104> , <http://dbtune.org/musicbrainz/resource/track/fb39f5f6-4534-42ab-a288-ffff25fccb87> , <http://dbtune.org/musicbrainz/resource/track/7cfa8c20-9056-4e80-9fee-02e00a16d188> , <http://dbtune.org/musicbrainz/resource/track/7dd66399-c600-43f1-8832-2e013b14766a> , <http://dbtune.org/musicbrainz/resource/track/15e73e42-badf-4f76-9411-f62bbb4c7179> , <http://dbtune.org/musicbrainz/resource/track/0fe28ce5-be25-4ace-aca4-5a5db80558ce> , <http://dbtune.org/musicbrainz/resource/track/73f96c10-5dde-4daa-af4e-5512e79bc8a2> , <http://dbtune.org/musicbrainz/resource/track/f9b83ac7-838b-45ab-bab5-8c75c6bba780> , <http://dbtune.org/musicbrainz/resource/track/dd81c44f-99ef-4427-b3f8-d61eaa8bf7da> , <http://dbtune.org/musicbrainz/resource/track/1b92c22d-6043-420f-9fb9-882f5aa98351> , <http://dbtune.org/musicbrainz/resource/track/298da2a1-c0dc-46ad-a593-2977f5a8a883> , <http://dbtune.org/musicbrainz/resource/track/3960234b-54fe-4fa6-bfbd-7095f1840784> , <http://dbtune.org/musicbrainz/resource/track/67663540-b4c4-42f3-9df9-63848d9e5093> , <http://dbtune.org/musicbrainz/resource/track/1e59af89-ffc2-432d-b6fc-6df233dcf910> , <http://dbtune.org/musicbrainz/resource/track/3483d683-7f53-4e84-ab11-f8fa73d6e547> , <http://dbtune.org/musicbrainz/resource/track/13989e39-bb3b-4ae0-9804-34fb9a1bf9b7> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fbe054ec-a143-4101-9e9e-64abc5ff5ac9> ;
+      foaf:page "714278310" .
+
+<http://dbtune.org/musicbrainz/resource/master/898f851e-14d2-4e4c-ae66-86b3d131a822>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/898f851e-14d2-4e4c-ae66-86b3d131a822> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B000025AZ0>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000025AZ0%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000025AZ0>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000025AZ0%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/898f851e-14d2-4e4c-ae66-86b3d131a822>
+      rdfs:label "RDF Description of The Legendary Nat King Cole" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/898f851e-14d2-4e4c-ae66-86b3d131a822> .
+
+<http://musicbrainz.org/album/898f851e-14d2-4e4c-ae66-86b3d131a822>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F898f851e-14d2-4e4c-ae66-86b3d131a822%3E> .
+
+<http://ec2.images-amazon.com/images/P/B000025AZ0.03.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec2.images-amazon.com%2Fimages%2FP%2FB000025AZ0.03.MZZZZZZZ.jpg%3E> .

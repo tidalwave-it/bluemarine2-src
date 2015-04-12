@@ -1,0 +1,49 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/664e9464-2f16-4468-8fc9-2aded974a320>
+      a       mo:Record ;
+      rdfs:label "In Bologna" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "1"^^xsd:int ;
+      vocab:tracks "6"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "In Bologna" ;
+      mo:musicbrainz <http://musicbrainz.org/album/664e9464-2f16-4468-8fc9-2aded974a320> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/67c2ec09-24fb-4f7c-b6a8-9228483284bc> , <http://dbtune.org/musicbrainz/resource/track/d39b3524-bbdb-470b-bb1f-6de6322be1cd> , <http://dbtune.org/musicbrainz/resource/track/ec561bc0-8b05-41b7-8cd1-489c0d76f153> , <http://dbtune.org/musicbrainz/resource/track/1f8febd6-904d-42d2-a533-2280ede7c383> , <http://dbtune.org/musicbrainz/resource/track/d6d63456-9356-4eb0-b5a6-30da9fe299cf> , <http://dbtune.org/musicbrainz/resource/track/4c956bae-a70c-40c8-ae11-7e2d5ddd67ea> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/1ba1d493-7114-45e2-b163-a36d49a0c065> ;
+      foaf:page "351309325" .
+
+<http://dbtune.org/musicbrainz/data/record/664e9464-2f16-4468-8fc9-2aded974a320>
+      rdfs:label "RDF Description of In Bologna" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/664e9464-2f16-4468-8fc9-2aded974a320> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/664e9464-2f16-4468-8fc9-2aded974a320>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F664e9464-2f16-4468-8fc9-2aded974a320%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/664e9464-2f16-4468-8fc9-2aded974a320>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/664e9464-2f16-4468-8fc9-2aded974a320> .

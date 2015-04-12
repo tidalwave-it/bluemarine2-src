@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/35184c75-f013-44b6-bdec-ab568440a4f6>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/35184c75-f013-44b6-bdec-ab568440a4f6> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/35184c75-f013-44b6-bdec-ab568440a4f6>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F35184c75-f013-44b6-bdec-ab568440a4f6%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/35184c75-f013-44b6-bdec-ab568440a4f6>
+      rdfs:label "RDF Description of Legendary Henry Mancini (disc 3)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/35184c75-f013-44b6-bdec-ab568440a4f6> .
+
+<http://dbtune.org/musicbrainz/resource/record/35184c75-f013-44b6-bdec-ab568440a4f6>
+      a       mo:Record ;
+      rdfs:label "Legendary Henry Mancini (disc 3)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "15"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/104739> ;
+      vocab:tracks "18"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Legendary Henry Mancini (disc 3)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/35184c75-f013-44b6-bdec-ab568440a4f6> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/932b1a58-c9b2-4861-8b5f-7594354deaf1> , <http://dbtune.org/musicbrainz/resource/track/4b6fd4c1-e05b-46b1-bf54-bdb6a18ec864> , <http://dbtune.org/musicbrainz/resource/track/4b7fc4bd-e21a-4fd3-980d-f8a0c33d98e2> , <http://dbtune.org/musicbrainz/resource/track/cdd695e9-d878-44e3-b3c1-96aecf62d72f> , <http://dbtune.org/musicbrainz/resource/track/f8698a48-33d5-44da-903c-6b3d64137806> , <http://dbtune.org/musicbrainz/resource/track/6516fd9f-25e3-4406-ae37-302c0ac51724> , <http://dbtune.org/musicbrainz/resource/track/57527920-f782-4dd4-bd7e-bdeaf2ae70a3> , <http://dbtune.org/musicbrainz/resource/track/94a47d59-01af-4d1a-a6c1-d6a06b9e49c4> , <http://dbtune.org/musicbrainz/resource/track/caa338fb-9dd3-4320-b893-f2d5ad4cf13e> , <http://dbtune.org/musicbrainz/resource/track/2d5c3933-fdea-4247-8cb8-25821063a9a2> , <http://dbtune.org/musicbrainz/resource/track/a13a3a49-8236-4b8f-b99a-7a45d0738fce> , <http://dbtune.org/musicbrainz/resource/track/416a7906-46de-4ffe-96ed-b91be7252f9b> , <http://dbtune.org/musicbrainz/resource/track/03d89693-f444-4b7d-98b0-9debbf3f0048> , <http://dbtune.org/musicbrainz/resource/track/26b5f514-cad5-468e-9848-f80210e90aaf> , <http://dbtune.org/musicbrainz/resource/track/af6555ed-61bb-4312-9c23-1dcfbbb63db6> , <http://dbtune.org/musicbrainz/resource/track/95dadae4-3021-4a54-b7ce-6b357bf255a7> , <http://dbtune.org/musicbrainz/resource/track/75be9d48-07eb-4c7d-8d89-cbd37296952d> , <http://dbtune.org/musicbrainz/resource/track/d41be1be-27c0-423f-a1e6-335eb8501f94> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/83e71a21-caf7-4e48-8ff7-6512d51e88a3> ;
+      foaf:page "442767845" .

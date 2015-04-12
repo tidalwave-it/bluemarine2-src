@@ -1,0 +1,71 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://ec1.images-amazon.com/images/P/B000001FMC.02.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000001FMC.02.MZZZZZZZ.jpg%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbpedia.org/resource/It%27s_Better_to_Travel>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FIt%2527s_Better_to_Travel%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/1200f783-0797-4751-9336-4f232b18f1a3>
+      rdfs:label "RDF Description of It's Better to Travel" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/1200f783-0797-4751-9336-4f232b18f1a3> .
+
+<http://musicbrainz.org/album/1200f783-0797-4751-9336-4f232b18f1a3>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F1200f783-0797-4751-9336-4f232b18f1a3%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/1200f783-0797-4751-9336-4f232b18f1a3>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/1200f783-0797-4751-9336-4f232b18f1a3> .
+
+<http://dbtune.org/musicbrainz/resource/record/1200f783-0797-4751-9336-4f232b18f1a3>
+      a       mo:Record ;
+      rdfs:label "It's Better to Travel" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000001FMC" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000001FMC.02.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "27"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/116660> , <http://dbtune.org/musicbrainz/resource/toc/7773> ;
+      vocab:tracks "13"^^xsd:int ;
+      dc:date "1987-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "It's Better to Travel" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000001FMC> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000001FMC.02.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000001FMC> ;
+      mo:musicbrainz <http://musicbrainz.org/album/1200f783-0797-4751-9336-4f232b18f1a3> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/142947> , <http://dbtune.org/musicbrainz/resource/release/455208> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/f2df40b0-cc0a-44c0-8a3a-cabd229388b4> , <http://dbtune.org/musicbrainz/resource/track/34b39e01-224a-46d6-a008-cc5fbb044b8f> , <http://dbtune.org/musicbrainz/resource/track/bd6531eb-594c-41bd-8a85-aba4d3127cfc> , <http://dbtune.org/musicbrainz/resource/track/9b140d28-c34c-41ab-b3b7-6760bfdfc18b> , <http://dbtune.org/musicbrainz/resource/track/ceea3db6-9c86-4f0f-9458-82bfe36b8057> , <http://dbtune.org/musicbrainz/resource/track/6b27df83-cab7-4a5b-99f0-3166dd26ca96> , <http://dbtune.org/musicbrainz/resource/track/757e5c74-e56c-4ecb-bd60-2b1a46e94561> , <http://dbtune.org/musicbrainz/resource/track/135751f7-5a13-4b56-bacf-1ae66d4d6cc3> , <http://dbtune.org/musicbrainz/resource/track/36db7888-07ec-4134-ae1d-2ba10200469d> , <http://dbtune.org/musicbrainz/resource/track/9a3634a4-8098-490b-830c-7ff6999eea11> , <http://dbtune.org/musicbrainz/resource/track/9b41b909-96cb-49a4-91dd-32c5e2b0c547> , <http://dbtune.org/musicbrainz/resource/track/5b456ffe-a56a-42d4-921a-d938b228bd19> , <http://dbtune.org/musicbrainz/resource/track/e0360494-1f43-4804-b273-436be53de6c0> ;
+      =       <http://dbpedia.org/resource/It%27s_Better_to_Travel> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/d12b5853-71eb-41d9-8d18-a4259477848a> ;
+      foaf:page "357584931" .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000001FMC>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000001FMC%3E> .
+
+<http://images.amazon.com/images/P/B000001FMC>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000001FMC%3E> .

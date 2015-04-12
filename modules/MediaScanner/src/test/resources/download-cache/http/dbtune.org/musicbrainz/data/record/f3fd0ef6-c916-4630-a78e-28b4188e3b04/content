@@ -1,0 +1,51 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/f3fd0ef6-c916-4630-a78e-28b4188e3b04>
+      rdfs:label "RDF Description of Here Where There Is Love" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/f3fd0ef6-c916-4630-a78e-28b4188e3b04> .
+
+<http://dbtune.org/musicbrainz/resource/record/f3fd0ef6-c916-4630-a78e-28b4188e3b04>
+      a       mo:Record ;
+      rdfs:label "Here Where There Is Love" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:tracks "10"^^xsd:int ;
+      dc:date "1967-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Here Where There Is Love" ;
+      mo:musicbrainz <http://musicbrainz.org/album/f3fd0ef6-c916-4630-a78e-28b4188e3b04> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/206114> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/9ebbe132-560d-47ab-b425-08ba2680670a> , <http://dbtune.org/musicbrainz/resource/track/87600cba-5d0a-444b-83aa-fe1f19a611e9> , <http://dbtune.org/musicbrainz/resource/track/3383764a-99b0-4113-852d-ac1218f79a83> , <http://dbtune.org/musicbrainz/resource/track/8945c2b7-7b62-4a10-abc2-cdca1b5ff108> , <http://dbtune.org/musicbrainz/resource/track/3aff4797-9385-4a66-bcd8-5bf33021a8b0> , <http://dbtune.org/musicbrainz/resource/track/bd3dcc29-0986-4fd2-821a-027f94a0c919> , <http://dbtune.org/musicbrainz/resource/track/34fb433d-752c-4b57-8c27-667529e182ac> , <http://dbtune.org/musicbrainz/resource/track/14a70d85-575f-4707-bb18-c46301b610ea> , <http://dbtune.org/musicbrainz/resource/track/85766c75-0a06-4831-bbd6-7ad1b3d68bbb> , <http://dbtune.org/musicbrainz/resource/track/9eff2abb-40cd-465f-8530-f9d1b86994a1> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6784ee31-6d79-4a37-9e1f-01d6ef31940e> ;
+      foaf:page "308910136" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/f3fd0ef6-c916-4630-a78e-28b4188e3b04>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Ff3fd0ef6-c916-4630-a78e-28b4188e3b04%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/f3fd0ef6-c916-4630-a78e-28b4188e3b04>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/f3fd0ef6-c916-4630-a78e-28b4188e3b04> .

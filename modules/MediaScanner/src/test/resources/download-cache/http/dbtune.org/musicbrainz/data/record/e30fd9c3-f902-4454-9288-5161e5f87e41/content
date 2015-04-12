@@ -1,0 +1,56 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/e30fd9c3-f902-4454-9288-5161e5f87e41>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fe30fd9c3-f902-4454-9288-5161e5f87e41%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/e30fd9c3-f902-4454-9288-5161e5f87e41>
+      a       mo:Record ;
+      rdfs:label "Sinatra's Swingin' Session!!!" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "4"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/291970> ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:date "1961-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Sinatra's Swingin' Session!!!" ;
+      mo:musicbrainz <http://musicbrainz.org/album/e30fd9c3-f902-4454-9288-5161e5f87e41> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/197298> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/c00a2144-3379-44ce-b5a8-0e715ebe2126> , <http://dbtune.org/musicbrainz/resource/track/87a7eb69-96c1-4fc3-bee5-db5ee573d22a> , <http://dbtune.org/musicbrainz/resource/track/60c111c9-cca1-4a9a-b822-69b23577daeb> , <http://dbtune.org/musicbrainz/resource/track/9459bfa2-f319-4313-a490-231f9fb9a47b> , <http://dbtune.org/musicbrainz/resource/track/9450e952-773a-4f01-8503-33f0dbe0cf08> , <http://dbtune.org/musicbrainz/resource/track/67c3b864-2998-4458-8b3a-b8ae6b1d9c03> , <http://dbtune.org/musicbrainz/resource/track/93d9d2ba-623c-43df-ba5b-66ef74341f33> , <http://dbtune.org/musicbrainz/resource/track/ee546890-1581-4a4a-9ae2-6301c1748adf> , <http://dbtune.org/musicbrainz/resource/track/2b93d094-6bcb-43e0-a92e-8e67b49465bc> , <http://dbtune.org/musicbrainz/resource/track/45ac6349-c5b0-4cb6-a7eb-335937d0a2e0> , <http://dbtune.org/musicbrainz/resource/track/790a8d71-84b0-4cd2-9371-3b09ed1876c5> , <http://dbtune.org/musicbrainz/resource/track/3db5990a-2fdb-44c9-bd46-aba8dbc063a7> ;
+      =       <http://dbpedia.org/resource/Sinatra%E2%80%99s_Swingin%E2%80%99_Session%21%21%21> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d> ;
+      foaf:page "682068659" .
+
+<http://dbtune.org/musicbrainz/resource/master/e30fd9c3-f902-4454-9288-5161e5f87e41>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/e30fd9c3-f902-4454-9288-5161e5f87e41> .
+
+<http://dbpedia.org/resource/Sinatra%E2%80%99s_Swingin%E2%80%99_Session%21%21%21>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FSinatra%25E2%2580%2599s_Swingin%25E2%2580%2599_Session%2521%2521%2521%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/e30fd9c3-f902-4454-9288-5161e5f87e41>
+      rdfs:label "RDF Description of Sinatra's Swingin' Session!!!" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/e30fd9c3-f902-4454-9288-5161e5f87e41> .

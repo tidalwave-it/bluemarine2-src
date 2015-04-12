@@ -1,0 +1,51 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/4f47d2ad-1c8a-4259-8bf2-ce9c2ca97dc1>
+      rdfs:label "RDF Description of Ascendant Sun (disc 6)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/4f47d2ad-1c8a-4259-8bf2-ce9c2ca97dc1> .
+
+<http://dbtune.org/musicbrainz/resource/master/4f47d2ad-1c8a-4259-8bf2-ce9c2ca97dc1>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/4f47d2ad-1c8a-4259-8bf2-ce9c2ca97dc1> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/4f47d2ad-1c8a-4259-8bf2-ce9c2ca97dc1>
+      a       mo:Record ;
+      rdfs:label "Ascendant Sun (disc 6)" ;
+      vocab:album_attributes
+              "{0,8,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "59"^^xsd:int ;
+      vocab:tracks "24"^^xsd:int ;
+      dc:date "2003-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Ascendant Sun (disc 6)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/4f47d2ad-1c8a-4259-8bf2-ce9c2ca97dc1> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/276257> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/a1563d28-29c4-4896-8703-3f67bf73b2f1> , <http://dbtune.org/musicbrainz/resource/track/39d526bd-a988-4118-be33-43be5b5ffba6> , <http://dbtune.org/musicbrainz/resource/track/4349c2c3-a980-4f5d-ba54-313fdcc3d4eb> , <http://dbtune.org/musicbrainz/resource/track/b1eecd55-e54a-48a3-a9a1-59cf86bd169c> , <http://dbtune.org/musicbrainz/resource/track/cb88b9de-6729-4357-aca0-14dc1ee60e48> , <http://dbtune.org/musicbrainz/resource/track/8644363b-165b-48d8-83db-2b7a24103edf> , <http://dbtune.org/musicbrainz/resource/track/6e9e66ba-2d5f-40cc-a589-2fd2bfe83c40> , <http://dbtune.org/musicbrainz/resource/track/12737602-de36-415d-b77f-79006561dbfe> , <http://dbtune.org/musicbrainz/resource/track/fce7304e-7efc-4416-8637-30733b81faee> , <http://dbtune.org/musicbrainz/resource/track/d94e291f-5d0e-4fa1-bb3f-4b3b901ffa23> , <http://dbtune.org/musicbrainz/resource/track/90ff7662-965b-4bdc-b5b1-6d86b0b45ae4> , <http://dbtune.org/musicbrainz/resource/track/efbe2824-90ca-4c57-a38c-0d7d77c54576> , <http://dbtune.org/musicbrainz/resource/track/092e95b8-789a-4606-9efb-b6a61530fee9> , <http://dbtune.org/musicbrainz/resource/track/f7b33dde-eb9e-4f79-b01b-a38f27b377fa> , <http://dbtune.org/musicbrainz/resource/track/b499ae79-8712-4f29-aefa-6de7b2c884ec> , <http://dbtune.org/musicbrainz/resource/track/a1a947bf-b278-48c5-928a-ac1f81bcde47> , <http://dbtune.org/musicbrainz/resource/track/b4402726-04c5-44fb-ac2a-a5143cc57141> , <http://dbtune.org/musicbrainz/resource/track/f7668b66-8d52-4a53-acc4-c7da2ad93c42> , <http://dbtune.org/musicbrainz/resource/track/2c8df155-c252-472f-98a8-80bb3f986183> , <http://dbtune.org/musicbrainz/resource/track/da94ec6f-84c8-470c-a2b0-55febfe4dc38> , <http://dbtune.org/musicbrainz/resource/track/da168e55-a10b-477a-b477-7ada1b9f315f> , <http://dbtune.org/musicbrainz/resource/track/1e039495-71fd-4e19-a1d4-87f3ce8d7a37> , <http://dbtune.org/musicbrainz/resource/track/99e645e2-12b2-4fe6-b625-c8eabf06d9b4> , <http://dbtune.org/musicbrainz/resource/track/f5a30983-39d2-4f1b-8d8e-a27a92b202af> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8cc1b4fd-545d-4b16-b348-821812210b4d> ;
+      foaf:page "88218085" .
+
+<http://musicbrainz.org/album/4f47d2ad-1c8a-4259-8bf2-ce9c2ca97dc1>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F4f47d2ad-1c8a-4259-8bf2-ce9c2ca97dc1%3E> .

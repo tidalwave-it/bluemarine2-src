@@ -1,0 +1,66 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B00000IMZD>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000IMZD%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/693dd397-6c7c-4a4c-b8e8-fe76e7562735>
+      a       mo:Record ;
+      rdfs:label "Return to Kintail" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00000IMZD" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00000IMZD.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:tracks "13"^^xsd:int ;
+      dc:date "1999-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Return to Kintail" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00000IMZD> ;
+      mo:image <http://images.amazon.com/images/P/B00000IMZD> , <http://ec1.images-amazon.com/images/P/B00000IMZD.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/693dd397-6c7c-4a4c-b8e8-fe76e7562735> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/103701> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/3492bdb0-a228-4a64-850c-62cf0fefb4fe> , <http://dbtune.org/musicbrainz/resource/track/4263fd8b-36a7-424b-ba88-c3d340ef7298> , <http://dbtune.org/musicbrainz/resource/track/14836c55-aa87-4d7d-8f93-7388cc76076d> , <http://dbtune.org/musicbrainz/resource/track/c4a0d479-b0aa-4b6b-b534-e6a267b949a4> , <http://dbtune.org/musicbrainz/resource/track/84092afd-3b23-4e8f-a169-f9387c5a4f0b> , <http://dbtune.org/musicbrainz/resource/track/a0e9ac57-1a5f-465e-ba0f-3fa231d0a719> , <http://dbtune.org/musicbrainz/resource/track/36e67390-ff38-4597-a826-b5ef9d9a5c47> , <http://dbtune.org/musicbrainz/resource/track/9fd93a1a-4899-4dc4-8b32-46928e204f30> , <http://dbtune.org/musicbrainz/resource/track/29a3ef3b-d876-4b87-be10-73ed93d61ae4> , <http://dbtune.org/musicbrainz/resource/track/5916e71f-a2ae-48d5-9493-2b5a195e6e38> , <http://dbtune.org/musicbrainz/resource/track/1d7f0aa9-691f-45ee-b624-48edf6c86e04> , <http://dbtune.org/musicbrainz/resource/track/5e7e125f-b638-4585-90ed-dfbd6fd6e5d3> , <http://dbtune.org/musicbrainz/resource/track/c2a0ac08-7b6c-4c3f-9e43-3548eb468940> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/9e727b32-912e-403a-b908-d979c8eea6f2> ;
+      foaf:page "644536943" .
+
+<http://dbtune.org/musicbrainz/data/record/693dd397-6c7c-4a4c-b8e8-fe76e7562735>
+      rdfs:label "RDF Description of Return to Kintail" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/693dd397-6c7c-4a4c-b8e8-fe76e7562735> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/693dd397-6c7c-4a4c-b8e8-fe76e7562735>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/693dd397-6c7c-4a4c-b8e8-fe76e7562735> .
+
+<http://musicbrainz.org/album/693dd397-6c7c-4a4c-b8e8-fe76e7562735>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F693dd397-6c7c-4a4c-b8e8-fe76e7562735%3E> .
+
+<http://ec1.images-amazon.com/images/P/B00000IMZD.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00000IMZD.01.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00000IMZD>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00000IMZD%3E> .

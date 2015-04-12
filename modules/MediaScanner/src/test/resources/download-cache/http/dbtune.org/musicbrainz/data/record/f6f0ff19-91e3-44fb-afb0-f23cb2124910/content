@@ -1,0 +1,53 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/f6f0ff19-91e3-44fb-afb0-f23cb2124910>
+      a       mo:Record ;
+      rdfs:label "Complete Chicago Sessions" ;
+      vocab:album_attributes
+              "{0,9,102}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "21"^^xsd:int ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Complete Chicago Sessions" ;
+      mo:musicbrainz <http://musicbrainz.org/album/f6f0ff19-91e3-44fb-afb0-f23cb2124910> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/90982f34-2407-482b-a4a4-2d965f240a7a> , <http://dbtune.org/musicbrainz/resource/track/4628ea90-037b-4da5-b703-ee984aa4c0e9> , <http://dbtune.org/musicbrainz/resource/track/042ff71a-202b-49ab-96ba-860c84ac3f85> , <http://dbtune.org/musicbrainz/resource/track/4145ec30-173b-4b18-8a8e-fe55214768f9> , <http://dbtune.org/musicbrainz/resource/track/ceb89741-fc3c-4b14-b7ac-72bc95389ec8> , <http://dbtune.org/musicbrainz/resource/track/4f1b98a4-8413-492e-80ca-04922cdd4a46> , <http://dbtune.org/musicbrainz/resource/track/aea5da02-cc89-44aa-a7cb-d96f4c24bb65> , <http://dbtune.org/musicbrainz/resource/track/015a5e8a-a7a7-409e-8534-237cc9a0601e> , <http://dbtune.org/musicbrainz/resource/track/e7b83d41-1b94-45c2-89ea-491006352c5b> , <http://dbtune.org/musicbrainz/resource/track/edd7510f-7559-44f6-8e90-63f5d1bc1b6b> , <http://dbtune.org/musicbrainz/resource/track/2ac03d11-5aa2-4587-a744-0b183b229e53> , <http://dbtune.org/musicbrainz/resource/track/6a7d029e-ae9f-4714-af73-a5e66e855bc1> , <http://dbtune.org/musicbrainz/resource/track/ddb30126-e140-4409-aab6-3692dde6eb71> , <http://dbtune.org/musicbrainz/resource/track/68cdc82d-a126-4c22-bab2-c4e28bc1d68d> , <http://dbtune.org/musicbrainz/resource/track/7c515a78-4116-41ad-b681-7f2c7fd5420e> , <http://dbtune.org/musicbrainz/resource/track/81bb106b-1c2f-41c3-b142-db27aa5dd0a6> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7944ed53-2a58-4035-9b93-140a71e41c34> ;
+      foaf:page "151471526" .
+
+<http://musicbrainz.org/album/f6f0ff19-91e3-44fb-afb0-f23cb2124910>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Ff6f0ff19-91e3-44fb-afb0-f23cb2124910%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/f6f0ff19-91e3-44fb-afb0-f23cb2124910>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/f6f0ff19-91e3-44fb-afb0-f23cb2124910> .
+
+<http://dbtune.org/musicbrainz/data/record/f6f0ff19-91e3-44fb-afb0-f23cb2124910>
+      rdfs:label "RDF Description of Complete Chicago Sessions" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/f6f0ff19-91e3-44fb-afb0-f23cb2124910> .

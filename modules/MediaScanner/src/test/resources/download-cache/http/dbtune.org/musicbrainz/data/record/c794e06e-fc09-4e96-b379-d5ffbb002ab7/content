@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/c794e06e-fc09-4e96-b379-d5ffbb002ab7>
+      rdfs:label "RDF Description of Music for the Royal Fireworks" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/c794e06e-fc09-4e96-b379-d5ffbb002ab7> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/c794e06e-fc09-4e96-b379-d5ffbb002ab7>
+      a       mo:Record ;
+      rdfs:label "Music for the Royal Fireworks" ;
+      vocab:album_attributes
+              "{0,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "2"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/36860> ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:title "Music for the Royal Fireworks" ;
+      mo:musicbrainz <http://musicbrainz.org/album/c794e06e-fc09-4e96-b379-d5ffbb002ab7> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/f6189329-1943-4c46-8926-1de5a82fd419> , <http://dbtune.org/musicbrainz/resource/track/5d827825-0cd0-4a75-9d8a-1604d7054ff0> , <http://dbtune.org/musicbrainz/resource/track/7f544076-fbd5-4334-96b8-8372bf626dc8> , <http://dbtune.org/musicbrainz/resource/track/f2dd6341-13c3-4288-b56e-b480f035c02b> , <http://dbtune.org/musicbrainz/resource/track/8269677c-d65d-4fa5-a592-e406971ca572> , <http://dbtune.org/musicbrainz/resource/track/188c1d55-9eee-49e5-a1e3-bd8c93d5c2c8> , <http://dbtune.org/musicbrainz/resource/track/4a39fa60-de16-4cf0-852b-82a3dc81d303> , <http://dbtune.org/musicbrainz/resource/track/301c1764-6ce9-42fb-8647-901f08f7594a> , <http://dbtune.org/musicbrainz/resource/track/7df5e4a0-93eb-4be2-914b-befbbf7e726d> , <http://dbtune.org/musicbrainz/resource/track/f438336e-4f1d-43b4-bb8d-93ba0ed984ea> , <http://dbtune.org/musicbrainz/resource/track/b34f7346-fd5a-46d5-956e-9573496e2142> , <http://dbtune.org/musicbrainz/resource/track/d93ca966-1a5a-4ba9-a706-6b9926358f66> , <http://dbtune.org/musicbrainz/resource/track/cdf5a3ee-b9c9-42c6-a20e-f3ec460e4901> , <http://dbtune.org/musicbrainz/resource/track/dcd7810c-f7a4-4dc9-aa8a-09de354b5538> , <http://dbtune.org/musicbrainz/resource/track/dfd616d8-40d7-4cc6-a71c-ff3a00f37fc7> , <http://dbtune.org/musicbrainz/resource/track/38475ceb-ee8b-48ba-8292-0ea8e9238c6e> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/27870d47-bb98-42d1-bf2b-c7e972e6befc> ;
+      foaf:page "493496449" .
+
+<http://musicbrainz.org/album/c794e06e-fc09-4e96-b379-d5ffbb002ab7>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fc794e06e-fc09-4e96-b379-d5ffbb002ab7%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/c794e06e-fc09-4e96-b379-d5ffbb002ab7>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/c794e06e-fc09-4e96-b379-d5ffbb002ab7> .

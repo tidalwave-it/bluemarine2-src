@@ -1,0 +1,71 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://ec1.images-amazon.com/images/P/B0000046SR.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0000046SR.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbpedia.org/resource/Ella_Fitzgerald_Sings_the_Rodgers_%26_Hart_Songbook>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FElla_Fitzgerald_Sings_the_Rodgers_%2526_Hart_Songbook%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/ad716a05-2b74-494e-9ac9-e108ba764b4d>
+      a       mo:Record ;
+      rdfs:label "Ella Fitzgerald Sings the Rodgers and Hart Song Book, Volume 1" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000046SR" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0000046SR.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "20"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/78807> ;
+      vocab:tracks "17"^^xsd:int ;
+      dc:date "1956-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Ella Fitzgerald Sings the Rodgers and Hart Song Book, Volume 1" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000046SR> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B0000046SR.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B0000046SR> ;
+      mo:musicbrainz <http://musicbrainz.org/album/ad716a05-2b74-494e-9ac9-e108ba764b4d> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/323188> , <http://dbtune.org/musicbrainz/resource/release/323189> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/2439b474-af43-489a-b544-7f7d0bb1d417> , <http://dbtune.org/musicbrainz/resource/track/57a126b6-1cc3-4127-a3de-9760544f8b0c> , <http://dbtune.org/musicbrainz/resource/track/d0d1aeb1-c0a9-4652-9c4e-3e801d8f0667> , <http://dbtune.org/musicbrainz/resource/track/a4a092b0-8758-442e-abfd-51a4e48a9793> , <http://dbtune.org/musicbrainz/resource/track/d3291a4b-77b8-4a07-97f3-d6d5153d3aa1> , <http://dbtune.org/musicbrainz/resource/track/11a9c2e9-9afe-4cd7-8562-38395cc43460> , <http://dbtune.org/musicbrainz/resource/track/b0b9c619-5d8e-44e4-a977-5858afc396cb> , <http://dbtune.org/musicbrainz/resource/track/b4928ddb-9812-452e-931e-92f5fcdd6d33> , <http://dbtune.org/musicbrainz/resource/track/d7ea5411-991b-426e-8680-2f75cd3fb5bf> , <http://dbtune.org/musicbrainz/resource/track/42edfd25-0c66-4ea3-acf0-e9a284c6cc18> , <http://dbtune.org/musicbrainz/resource/track/cca6c269-45d2-464f-97c5-da0f0d88acbd> , <http://dbtune.org/musicbrainz/resource/track/d04759b8-6cce-4789-b8bb-1d5b4e40ee86> , <http://dbtune.org/musicbrainz/resource/track/9286cb7a-edd0-4266-9987-50bde43382fb> , <http://dbtune.org/musicbrainz/resource/track/2cf8dd8d-deba-4890-8a2f-00740fdc56ac> , <http://dbtune.org/musicbrainz/resource/track/a6851f1c-021f-4be5-b10a-57fd87e7da43> , <http://dbtune.org/musicbrainz/resource/track/fcd4900d-4be7-44ab-9bfe-6078e2185d6f> , <http://dbtune.org/musicbrainz/resource/track/1ffe318d-5156-4af1-ba85-51beb722d029> ;
+      =       <http://dbpedia.org/resource/Ella_Fitzgerald_Sings_the_Rodgers_%26_Hart_Songbook> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
+      foaf:page "215386151" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/ad716a05-2b74-494e-9ac9-e108ba764b4d>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fad716a05-2b74-494e-9ac9-e108ba764b4d%3E> .
+
+<http://images.amazon.com/images/P/B0000046SR>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000046SR%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/ad716a05-2b74-494e-9ac9-e108ba764b4d>
+      rdfs:label "RDF Description of Ella Fitzgerald Sings the Rodgers and Hart Song Book, Volume 1" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/ad716a05-2b74-494e-9ac9-e108ba764b4d> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000046SR>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000046SR%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/ad716a05-2b74-494e-9ac9-e108ba764b4d>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/ad716a05-2b74-494e-9ac9-e108ba764b4d> .

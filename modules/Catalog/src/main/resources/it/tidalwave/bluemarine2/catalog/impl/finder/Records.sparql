@@ -1,0 +1,18 @@
+            SELECT * 
+            WHERE  
+              { 
+                ?record       a             mo:Record. 
+                ?record       rdfs:label    ?label. 
+
+@artist@          {
+@artist@            ?record       foaf:maker              ?artist.
+@artist@          }
+@artist@        UNION 
+@artist@          {
+@artist@            ?record       foaf:maker              ?artistGroup.
+@artist@            ?artistGroup  rel:collaboratesWith    ?artist.
+@artist@          }
+                
+@track@         ?record       mo:track      ?track.
+              }
+            ORDER BY ?label

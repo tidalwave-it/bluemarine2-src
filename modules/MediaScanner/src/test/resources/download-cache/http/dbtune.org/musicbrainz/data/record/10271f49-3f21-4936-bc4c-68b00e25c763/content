@@ -1,0 +1,53 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/10271f49-3f21-4936-bc4c-68b00e25c763>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/10271f49-3f21-4936-bc4c-68b00e25c763> .
+
+<http://dbtune.org/musicbrainz/resource/record/10271f49-3f21-4936-bc4c-68b00e25c763>
+      a       mo:Record ;
+      rdfs:label "The Essential Collection (disc 2)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "19"^^xsd:int ;
+      vocab:tracks "11"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Essential Collection (disc 2)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/10271f49-3f21-4936-bc4c-68b00e25c763> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/d2726a3c-6330-43a4-bdfa-6a8634cdf481> , <http://dbtune.org/musicbrainz/resource/track/6c0ff3fd-7551-46ab-a28e-885d4caa67cb> , <http://dbtune.org/musicbrainz/resource/track/2236e95f-fcd7-47be-baaf-3408ac9607b8> , <http://dbtune.org/musicbrainz/resource/track/8d562334-1d76-4777-9446-e882f6d2c1fa> , <http://dbtune.org/musicbrainz/resource/track/74dc49ad-e68b-44bf-b9a1-e918bc3622c1> , <http://dbtune.org/musicbrainz/resource/track/0553b7c7-ff18-4fcc-97a7-3f9e94830a7d> , <http://dbtune.org/musicbrainz/resource/track/af750555-c602-4a51-be84-8ee9199e85b2> , <http://dbtune.org/musicbrainz/resource/track/84a7f6ec-f136-475a-8016-6062ce26aeb3> , <http://dbtune.org/musicbrainz/resource/track/e79f3937-02b3-4f69-8331-77c15fa1b33e> , <http://dbtune.org/musicbrainz/resource/track/f493e034-9c52-4a05-b8cf-c2138e79c043> , <http://dbtune.org/musicbrainz/resource/track/c61af1d0-a9e9-427f-b9c0-599b7c52f703> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/2944824d-4c26-476f-a981-be849081942f> ;
+      foaf:page "714278100" .
+
+<http://dbtune.org/musicbrainz/data/record/10271f49-3f21-4936-bc4c-68b00e25c763>
+      rdfs:label "RDF Description of The Essential Collection (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/10271f49-3f21-4936-bc4c-68b00e25c763> .
+
+<http://musicbrainz.org/album/10271f49-3f21-4936-bc4c-68b00e25c763>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F10271f49-3f21-4936-bc4c-68b00e25c763%3E> .

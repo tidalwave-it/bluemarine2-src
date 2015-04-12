@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/fa85c3a7-5fa0-4011-8bbc-be21989a9301>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Ffa85c3a7-5fa0-4011-8bbc-be21989a9301%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/fa85c3a7-5fa0-4011-8bbc-be21989a9301>
+      a       mo:Record ;
+      rdfs:label "Embraceable You" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "3"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/27831> ;
+      vocab:tracks "11"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Embraceable You" ;
+      mo:musicbrainz <http://musicbrainz.org/album/fa85c3a7-5fa0-4011-8bbc-be21989a9301> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/81610269-b86d-424c-9832-4c858ab3a2c2> , <http://dbtune.org/musicbrainz/resource/track/e6167bd7-1519-4417-9df1-8a8142c07756> , <http://dbtune.org/musicbrainz/resource/track/e7b4a95e-a9ef-45c5-aa89-e4b2cd71684f> , <http://dbtune.org/musicbrainz/resource/track/6a185626-fe46-44e5-b00d-7a57954a73dd> , <http://dbtune.org/musicbrainz/resource/track/c6dfbd7b-87a3-462e-925a-d0dbefcba960> , <http://dbtune.org/musicbrainz/resource/track/414d05f4-883a-4c78-9837-c0deb1dff46a> , <http://dbtune.org/musicbrainz/resource/track/18d574e6-2e76-4c98-a5a9-c6fd1e2e8193> , <http://dbtune.org/musicbrainz/resource/track/464b4e38-5f7e-4207-9099-534a9ae5ec51> , <http://dbtune.org/musicbrainz/resource/track/98e47e1d-9243-470f-bb31-ed9dc590132b> , <http://dbtune.org/musicbrainz/resource/track/cf30c037-2a8c-49fd-95e4-47cfcb62c141> , <http://dbtune.org/musicbrainz/resource/track/2e002778-9236-4cb5-a2d7-10e3d010d226> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fbe054ec-a143-4101-9e9e-64abc5ff5ac9> ;
+      foaf:page "216124484" .
+
+<http://dbtune.org/musicbrainz/resource/master/fa85c3a7-5fa0-4011-8bbc-be21989a9301>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/fa85c3a7-5fa0-4011-8bbc-be21989a9301> .
+
+<http://dbtune.org/musicbrainz/data/record/fa85c3a7-5fa0-4011-8bbc-be21989a9301>
+      rdfs:label "RDF Description of Embraceable You" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/fa85c3a7-5fa0-4011-8bbc-be21989a9301> .

@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/3e4dba64-5fdc-4ff7-85e2-90113211282d>
+      rdfs:label "RDF Description of Andalus" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/3e4dba64-5fdc-4ff7-85e2-90113211282d> .
+
+<http://dbtune.org/musicbrainz/resource/record/3e4dba64-5fdc-4ff7-85e2-90113211282d>
+      a       mo:Record ;
+      rdfs:label "Andalus" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "1"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/119627> ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:title "Andalus" ;
+      mo:musicbrainz <http://musicbrainz.org/album/3e4dba64-5fdc-4ff7-85e2-90113211282d> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/7bef4d36-1ba9-42fc-883c-d76247072acc> , <http://dbtune.org/musicbrainz/resource/track/cce8cfb4-3e47-45c2-8b0b-8ea10d9a3eb8> , <http://dbtune.org/musicbrainz/resource/track/5079f6b8-0b1e-4f19-a340-00c824760377> , <http://dbtune.org/musicbrainz/resource/track/c4f74692-1a8b-43cb-bd27-7469452118d4> , <http://dbtune.org/musicbrainz/resource/track/81df42c7-ae10-4074-b178-c56dcf1e69ac> , <http://dbtune.org/musicbrainz/resource/track/2777255e-e969-48a4-ba3b-af1e977b995c> , <http://dbtune.org/musicbrainz/resource/track/35bd55ba-fabd-4976-8fff-e21f737d96ef> , <http://dbtune.org/musicbrainz/resource/track/952fd3c2-a068-43cb-a93c-0279e7a67056> , <http://dbtune.org/musicbrainz/resource/track/cdce25ac-e31e-4655-8f83-39c6f954559d> , <http://dbtune.org/musicbrainz/resource/track/272ab21f-38b6-4028-8c58-14497268feff> , <http://dbtune.org/musicbrainz/resource/track/9544ab94-8272-49eb-94e2-c318476d26c2> , <http://dbtune.org/musicbrainz/resource/track/80a1e93e-bfee-483d-9867-e8e9b2f89406> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8c395da0-5717-4b46-93cc-8f53e49a4dd0> ;
+      foaf:page "83003830" .
+
+<http://dbtune.org/musicbrainz/resource/master/3e4dba64-5fdc-4ff7-85e2-90113211282d>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/3e4dba64-5fdc-4ff7-85e2-90113211282d> .
+
+<http://musicbrainz.org/album/3e4dba64-5fdc-4ff7-85e2-90113211282d>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F3e4dba64-5fdc-4ff7-85e2-90113211282d%3E> .

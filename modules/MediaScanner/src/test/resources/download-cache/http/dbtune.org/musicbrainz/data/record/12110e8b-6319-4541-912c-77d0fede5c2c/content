@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/12110e8b-6319-4541-912c-77d0fede5c2c>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/12110e8b-6319-4541-912c-77d0fede5c2c> .
+
+<http://ec1.images-amazon.com/images/P/B0000057EV.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0000057EV.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/12110e8b-6319-4541-912c-77d0fede5c2c>
+      rdfs:label "RDF Description of Don Giovanni (The Monteverdi Choir, The English Baroque Soloists feat. conductor: John Eliot Gardiner) (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/12110e8b-6319-4541-912c-77d0fede5c2c> .
+
+<http://musicbrainz.org/album/12110e8b-6319-4541-912c-77d0fede5c2c>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F12110e8b-6319-4541-912c-77d0fede5c2c%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/12110e8b-6319-4541-912c-77d0fede5c2c>
+      a       mo:Record ;
+      rdfs:label "Don Giovanni (The Monteverdi Choir, The English Baroque Soloists feat. conductor: John Eliot Gardiner) (disc 1)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000057EV" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0000057EV.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/302673> ;
+      vocab:tracks "24"^^xsd:int ;
+      dc:date "1995-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/ita> ;
+      dc:title "Don Giovanni (The Monteverdi Choir, The English Baroque Soloists feat. conductor: John Eliot Gardiner) (disc 1)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000057EV> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B0000057EV.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B0000057EV> ;
+      mo:musicbrainz <http://musicbrainz.org/album/12110e8b-6319-4541-912c-77d0fede5c2c> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/505707> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/6b7dd226-1d62-4662-8395-5c78056256f3> , <http://dbtune.org/musicbrainz/resource/track/1d877a52-5641-4fdc-8982-3a23fa6ddc0d> , <http://dbtune.org/musicbrainz/resource/track/6daa1b24-52ae-4dab-8d8d-2c45e7ef1a0b> , <http://dbtune.org/musicbrainz/resource/track/54310983-f3f8-4228-970a-e98465f2a377> , <http://dbtune.org/musicbrainz/resource/track/93c502f3-be0b-4c3a-b4e1-e0b0cb189203> , <http://dbtune.org/musicbrainz/resource/track/630801b9-c804-45ec-a0bf-ca5acbc64289> , <http://dbtune.org/musicbrainz/resource/track/5896306a-ccd7-48ba-8c6c-2d800c9783eb> , <http://dbtune.org/musicbrainz/resource/track/e33dfd80-601b-4ac0-9ae2-c34ee790bcde> , <http://dbtune.org/musicbrainz/resource/track/b42bb36d-008e-4447-b3f4-7e472f497167> , <http://dbtune.org/musicbrainz/resource/track/2d48fa3e-980c-4987-adb3-66d7abada1b8> , <http://dbtune.org/musicbrainz/resource/track/e8f36a81-2543-4140-9d35-49608de17e9f> , <http://dbtune.org/musicbrainz/resource/track/1bf32f86-a265-402b-941c-8498924ed3c0> , <http://dbtune.org/musicbrainz/resource/track/c9766db6-ef5d-496a-b071-1c3594c855d7> , <http://dbtune.org/musicbrainz/resource/track/0eb2bf71-154d-4518-bb7b-e78e3d63ca1e> , <http://dbtune.org/musicbrainz/resource/track/493fed1b-a6ff-463a-824d-b2f52f17d0d3> , <http://dbtune.org/musicbrainz/resource/track/432717f9-3a0f-4fcf-92c3-596aaff2f3e7> , <http://dbtune.org/musicbrainz/resource/track/49b5e9fe-b4e8-4b4b-804a-6edbbc48146c> , <http://dbtune.org/musicbrainz/resource/track/3ac8ea34-ae29-4242-9997-3b78a100fc58> , <http://dbtune.org/musicbrainz/resource/track/d8f02e05-6102-4c03-b8d5-77bdb61e37cd> , <http://dbtune.org/musicbrainz/resource/track/32e6610d-e17d-4a20-ae30-c802d8758f6b> , <http://dbtune.org/musicbrainz/resource/track/a261d7ae-16a1-4ebc-ab35-ab63b83d7c77> , <http://dbtune.org/musicbrainz/resource/track/3d0839a7-159f-47df-8f5b-b129e4a0a710> , <http://dbtune.org/musicbrainz/resource/track/ff187f59-fb76-4951-921c-18cef469d659> , <http://dbtune.org/musicbrainz/resource/track/b2d0dcd2-3bd1-49d6-bd7f-69e2d4517089> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/b972f589-fb0e-474e-b64a-803b0364fa75> ;
+      foaf:page "185042186" .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000057EV>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000057EV%3E> .
+
+<http://images.amazon.com/images/P/B0000057EV>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000057EV%3E> .

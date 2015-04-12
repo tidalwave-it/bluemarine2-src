@@ -1,0 +1,49 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/7020411e-fe5e-4a7e-b2be-c16742b1ba51>
+      rdfs:label "RDF Description of Händel Messiah Highlights" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/7020411e-fe5e-4a7e-b2be-c16742b1ba51> .
+
+<http://dbtune.org/musicbrainz/resource/master/7020411e-fe5e-4a7e-b2be-c16742b1ba51>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/7020411e-fe5e-4a7e-b2be-c16742b1ba51> .
+
+<http://musicbrainz.org/album/7020411e-fe5e-4a7e-b2be-c16742b1ba51>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F7020411e-fe5e-4a7e-b2be-c16742b1ba51%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/7020411e-fe5e-4a7e-b2be-c16742b1ba51>
+      a       mo:Record ;
+      rdfs:label "Händel Messiah Highlights" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "13"^^xsd:int ;
+      vocab:tracks "14"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Händel Messiah Highlights" ;
+      mo:musicbrainz <http://musicbrainz.org/album/7020411e-fe5e-4a7e-b2be-c16742b1ba51> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/25747b03-18f3-438b-be03-11799803606d> , <http://dbtune.org/musicbrainz/resource/track/05916da6-930c-4301-a829-55a189a813cd> , <http://dbtune.org/musicbrainz/resource/track/064b6e41-2fe3-4ab0-85b2-b3229d3f2640> , <http://dbtune.org/musicbrainz/resource/track/ad9c9613-e620-40bb-9071-20f422875602> , <http://dbtune.org/musicbrainz/resource/track/ca19156b-8d59-4e46-a772-5baf4070e6f3> , <http://dbtune.org/musicbrainz/resource/track/e6c71605-d0a0-4787-aaaf-98f8944cf38f> , <http://dbtune.org/musicbrainz/resource/track/552810c3-974f-456b-b4b0-f67742f621e6> , <http://dbtune.org/musicbrainz/resource/track/354a0645-f158-4178-84c7-b7ab7c73db35> , <http://dbtune.org/musicbrainz/resource/track/a398ee5b-539f-4a10-96ed-97c7511c5e32> , <http://dbtune.org/musicbrainz/resource/track/8e4925d0-4777-49d8-85ea-a663bd1774e2> , <http://dbtune.org/musicbrainz/resource/track/1ce3f729-a749-4837-b3ef-649915893c53> , <http://dbtune.org/musicbrainz/resource/track/130b46aa-b4c4-4744-93b8-443067888290> , <http://dbtune.org/musicbrainz/resource/track/845eadb0-7d6f-4769-92d3-ee820fdd1335> , <http://dbtune.org/musicbrainz/resource/track/5bd9bf07-92fa-4214-bb3f-fa8cd6463c77> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/27870d47-bb98-42d1-bf2b-c7e972e6befc> ;
+      foaf:page "304583885" .

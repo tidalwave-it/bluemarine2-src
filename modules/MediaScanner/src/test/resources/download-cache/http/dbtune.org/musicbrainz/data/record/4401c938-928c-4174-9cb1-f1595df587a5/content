@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/4401c938-928c-4174-9cb1-f1595df587a5>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F4401c938-928c-4174-9cb1-f1595df587a5%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/4401c938-928c-4174-9cb1-f1595df587a5>
+      a       mo:Record ;
+      rdfs:label "1962-1970" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "23"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/83189> ;
+      vocab:tracks "18"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "1962-1970" ;
+      mo:musicbrainz <http://musicbrainz.org/album/4401c938-928c-4174-9cb1-f1595df587a5> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/45fc3daf-b7f4-4111-bf59-a2fdba6170bc> , <http://dbtune.org/musicbrainz/resource/track/0162b1d6-fd21-4dc5-a64d-ffa3b0a9821e> , <http://dbtune.org/musicbrainz/resource/track/c64a5127-c581-4126-bb81-9f67df34be9d> , <http://dbtune.org/musicbrainz/resource/track/a09ed7b4-3443-43f2-b98e-870892dc1c6c> , <http://dbtune.org/musicbrainz/resource/track/51cba5b5-656a-4c51-af6c-a7c63cb52607> , <http://dbtune.org/musicbrainz/resource/track/9a5a1058-0c02-48a1-8d3c-9ee5618ef10d> , <http://dbtune.org/musicbrainz/resource/track/4d217d0d-640b-44ae-a61b-3e90061c22bb> , <http://dbtune.org/musicbrainz/resource/track/8c8cb81f-4de4-45b6-8df8-962fabf8e92c> , <http://dbtune.org/musicbrainz/resource/track/fb74dfa3-509c-4e93-9879-ea356fe2a7d4> , <http://dbtune.org/musicbrainz/resource/track/21818134-5358-4217-8fe4-86d1cca56450> , <http://dbtune.org/musicbrainz/resource/track/122edde1-e20e-40e4-ad4a-de9d80d97d82> , <http://dbtune.org/musicbrainz/resource/track/74f57fb0-3ed1-47d9-a635-87661786204e> , <http://dbtune.org/musicbrainz/resource/track/d821b7b3-a7ba-46c3-861c-a8fa60cd2782> , <http://dbtune.org/musicbrainz/resource/track/4fa54761-3883-4266-870a-757f56741e50> , <http://dbtune.org/musicbrainz/resource/track/7197ff5b-39a8-48f7-8703-619359019c45> , <http://dbtune.org/musicbrainz/resource/track/917f2be3-065e-4d1e-8a76-1b50abd1ad95> , <http://dbtune.org/musicbrainz/resource/track/43de37ab-8227-4eec-96f8-8ae30cf342f5> , <http://dbtune.org/musicbrainz/resource/track/3efcc03a-2ea7-411f-a8e3-27643b7414ce> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d> ;
+      foaf:page "0" .
+
+<http://dbtune.org/musicbrainz/data/record/4401c938-928c-4174-9cb1-f1595df587a5>
+      rdfs:label "RDF Description of 1962-1970" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/4401c938-928c-4174-9cb1-f1595df587a5> .
+
+<http://dbtune.org/musicbrainz/resource/master/4401c938-928c-4174-9cb1-f1595df587a5>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/4401c938-928c-4174-9cb1-f1595df587a5> .
