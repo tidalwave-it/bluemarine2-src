@@ -81,20 +81,6 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
                 + "PREFIX xs:    <http://www.w3.org/2001/XMLSchema#>\n";
 
     @Nonnull
-    protected static String readSparql (final @Nonnull Class<?> clazz, final @Nonnull String name)
-      {
-        try 
-          {
-            @Cleanup InputStream is = clazz.getResourceAsStream(name);
-            return StreamUtils.copyToString(is, Charset.forName("UTF-8"));
-          } 
-        catch (IOException e) 
-          {
-            throw new RuntimeException(e);
-          }
-      }
-    
-    @Nonnull
     private Repository repository;
     
     /*******************************************************************************************************************
@@ -247,6 +233,25 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
           }
         
         throw new RuntimeException("Unknown entity: " + entityClass);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    protected static String readSparql (final @Nonnull Class<?> clazz, final @Nonnull String name)
+      {
+        try 
+          {
+            @Cleanup InputStream is = clazz.getResourceAsStream(name);
+            return StreamUtils.copyToString(is, Charset.forName("UTF-8"));
+          } 
+        catch (IOException e) 
+          {
+            throw new RuntimeException(e);
+          }
       }
     
     /*******************************************************************************************************************
