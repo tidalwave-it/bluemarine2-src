@@ -233,11 +233,7 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
 
             while (result.hasNext())
               {
-                final BindingSet bs = result.next();
-    //            log.debug(">>>> {} {}", bs, bs.getBindingNames());
-
-                entities.add(toEntity(repository, entityClass, bs));
-    //            log.info("{}", entity);
+                entities.add(toEntity(repository, entityClass, result.next()));
               }
 
             return entities;
