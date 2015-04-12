@@ -133,28 +133,28 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
      ******************************************************************************************************************/
     @Nonnull
     protected <E extends Entity> List<E> query (final @Nonnull Class<E> entityClass,
-                                                final @Nonnull String sparql,
+                                                final @Nonnull String originalSparql,
                                                 final @Nonnull Object ... bindings)
       {
         try 
           {
             log.info("query({}, ...)", entityClass);
             
-            final String q = Arrays.asList(sparql.split("\n")).stream()
+            final String sparql = PREFIXES + 
+                                  Arrays.asList(originalSparql.split("\n")).stream()
                                     .filter(s -> matches(s, bindings))
                                     .map(s -> s.replaceAll("^@[A-Za-z0-9]*@", ""))
                                     .collect(Collectors.joining("\n"));
             
-            log(">>>> incoming query: {}", sparql);
             final RepositoryConnection connection = repository.getConnection();
-            final TupleQuery query = connection.prepareTupleQuery(QueryLanguage.SPARQL, PREFIXES + q);
+            final TupleQuery query = connection.prepareTupleQuery(QueryLanguage.SPARQL, sparql);
 
             for (int i = 0; i < bindings.length; i += 2)
               {
                 query.setBinding((String)bindings[i], (Value)bindings[i + 1]);
               }
 
-            log(">>>> query: {}", q);
+            log(originalSparql, sparql);
             log.info(">>>> query parameters: {}", Arrays.toString(bindings));
             
             final TupleQueryResult result = query.evaluate();
@@ -300,8 +300,16 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
      * 
      *
      ******************************************************************************************************************/
-    private void log (final @Nonnull String pattern, final @Nonnull String sparql)
+    private void log (final @Nonnull String originalSparql, final @Nonnull String sparql)
       {
-        Arrays.asList(sparql.split("\n")).stream().forEach(s -> log.info(pattern, s));
-      }
+        if (log.isDebugEnabled())
+          {
+            Arrays.asList(originalSparql.split("\n")).stream().forEach(s -> log.debug(">>>> original query: {}", s));
+          }
+        
+        if (log.isInfoEnabled())
+          {
+            Arrays.asList(sparql.split("\n")).stream().forEach(s -> log.info(">>>> query: {}", s));
+          }
+     }
   }
