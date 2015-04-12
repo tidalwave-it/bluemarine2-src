@@ -45,7 +45,7 @@ public class RepositoryBrowserByRecordThenTrack extends RepositoryBrowserSupport
     public RepositoryBrowserByRecordThenTrack()
       {
 //        super(() -> getCatalog().findRecords());
-        setComposite(new SimpleComposite8<Record>() 
+        setCompositeForRootEntity(new SimpleComposite8<Record>() 
           {
             @Override @Nonnull
             public Finder8<Record> findChildren() 

@@ -45,7 +45,7 @@ public class RepositoryBrowserByArtistThenTrack extends RepositoryBrowserSupport
     public RepositoryBrowserByArtistThenTrack()
       {
 //        super(() -> getCatalog().findArtists());
-        setComposite(new SimpleComposite8<MusicArtist>() 
+        setCompositeForRootEntity(new SimpleComposite8<MusicArtist>() 
           {
             @Override @Nonnull
             public Finder8<MusicArtist> findChildren() 

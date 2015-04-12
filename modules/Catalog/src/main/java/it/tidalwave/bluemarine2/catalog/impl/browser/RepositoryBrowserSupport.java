@@ -59,7 +59,7 @@ public class RepositoryBrowserSupport implements EntityBrowser
     private final AsSupport asSupport = new AsSupport(this);
     
     @Setter @Nonnull
-    private SimpleComposite8<? extends Entity> composite;
+    private SimpleComposite8<? extends Entity> compositeForRootEntity;
         
     @Override @Nonnull
     public Entity getRoot() 
@@ -67,7 +67,7 @@ public class RepositoryBrowserSupport implements EntityBrowser
         return new Entity() 
           {
             @Delegate
-            private final AsSupport asSupport = new AsSupport(this, composite);
+            private final AsSupport asSupport = new AsSupport(this, compositeForRootEntity);
           };
       }
     
