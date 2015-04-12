@@ -47,7 +47,7 @@ import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.role.EntitySupplier;
+import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.RenderAudioFileRequest;
@@ -96,7 +96,7 @@ public class DefaultAudioExplorerPresentationControl
     private MessageBus messageBus;
     
     @Inject
-    private List<EntitySupplier> browsers;
+    private List<EntityBrowser> browsers;
     
     private Entity currentFolder;
     
@@ -167,11 +167,11 @@ public class DefaultAudioExplorerPresentationControl
      * @param   browser     the browser
      *
      ******************************************************************************************************************/
-    private void selectBrowser (final @Nonnull EntitySupplier browser)
+    private void selectBrowser (final @Nonnull EntityBrowser browser)
       {
         log.info("selectBrowser({})", browser);
         navigationStack.clear();
-        populateItems(new FolderAndMemento(browser.get(), Optional.empty()));
+        populateItems(new FolderAndMemento(browser.getRoot(), Optional.empty()));
       }
     
     /*******************************************************************************************************************
@@ -282,7 +282,7 @@ public class DefaultAudioExplorerPresentationControl
      ******************************************************************************************************************/
     // FIXME: inject with @DciRole and @DciContext?
     @Nonnull
-    private UserActionProvider rolesFor (final @Nonnull EntitySupplier entitySupplier)
+    private UserActionProvider rolesFor (final @Nonnull EntityBrowser entitySupplier)
       {
         final UserAction8 selectBrowser = new UserActionLambda(()-> selectBrowser(entitySupplier));
     

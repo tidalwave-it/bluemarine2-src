@@ -28,7 +28,7 @@
  */
 package it.tidalwave.bluemarine2.model.role;
 
-import java.util.function.Supplier;
+import javax.annotation.Nonnull;
 import it.tidalwave.util.As;
 import it.tidalwave.bluemarine2.model.Entity;
 
@@ -42,6 +42,8 @@ import it.tidalwave.bluemarine2.model.Entity;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface EntitySupplier extends Supplier<Entity>, As
+public interface EntityBrowser extends As
   {
+    @Nonnull
+    public Entity getRoot();
   }
