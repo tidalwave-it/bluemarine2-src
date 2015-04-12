@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.catalog.impl.browser;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.util.Finder8;
+import it.tidalwave.role.Displayable;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 
@@ -39,7 +40,7 @@ import it.tidalwave.bluemarine2.model.MusicArtist;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryBrowserByArtistThenTrack extends RepositoryBrowserSupport
+public class RepositoryBrowserByArtistThenTrack extends RepositoryBrowserSupport implements Displayable
   {
     public RepositoryBrowserByArtistThenTrack()
       {
@@ -53,4 +54,10 @@ public class RepositoryBrowserByArtistThenTrack extends RepositoryBrowserSupport
               }
           });
       }
+
+    @Override @Nonnull
+    public String getDisplayName() 
+      {
+        return "by Artist, then track"; // FIXME: use a Bundle
+      }  
   }

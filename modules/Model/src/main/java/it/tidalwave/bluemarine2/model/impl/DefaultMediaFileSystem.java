@@ -33,6 +33,7 @@ import java.nio.file.Path;
 import it.tidalwave.util.NotFoundException;
 import it.tidalwave.util.PowerOnNotification;
 import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.role.Displayable;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
@@ -49,7 +50,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @SimpleMessageSubscriber @Slf4j
-public class DefaultMediaFileSystem implements MediaFileSystem
+public class DefaultMediaFileSystem implements MediaFileSystem, Displayable
   {
     @Getter
     private Path rootPath;
@@ -66,6 +67,17 @@ public class DefaultMediaFileSystem implements MediaFileSystem
       {
         return new FileSystemMediaFolder(rootPath, null, rootPath);
       }
+    
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public String getDisplayName() 
+      {
+        return "by File"; // FIXME: use a Bundle
+      }  
     
     /*******************************************************************************************************************
      *
