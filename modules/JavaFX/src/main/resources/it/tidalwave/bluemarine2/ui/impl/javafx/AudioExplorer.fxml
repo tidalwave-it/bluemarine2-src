@@ -30,7 +30,12 @@
                 </HBox>
                 <HBox GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                     <children>
-                        <Label style="-fx-padding: 0 0 20 0;" styleClass="header-label" text="Audio files" />
+                        <Label style="-fx-padding: 0 0 20 0;" styleClass="header-label" text="Music" />
+                        <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                            <children>
+                                <ComboBox fx:id="cbBrowsers" maxWidth="250.0" minWidth="250.0" />
+                            </children>
+                        </HBox>
                     </children>
                 </HBox>
                 <VBox spacing="10.0" GridPane.rowIndex="2" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">

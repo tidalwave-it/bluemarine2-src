@@ -124,11 +124,8 @@ public class DefaultAudioExplorerPresentationControl
       {
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp(this);
-        // FIXME: hardwired to the BrowserByRecord. It should be selectable by means of a combobox
-        final EntitySupplier browser = browsers.stream()
-                                               .filter(s -> s.getClass().getName().contains("BrowserByRecord"))
-                                               .findFirst().get();
-        populateItems(new FolderAndMemento(browser.get(), Optional.empty()));
+        populateBrowsers();
+        selectBrowser(browsers.get(0));
       }
     
     /*******************************************************************************************************************
@@ -161,6 +158,20 @@ public class DefaultAudioExplorerPresentationControl
             navigateUp();
             return OnDeactivate.Result.IGNORE;
           }
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * Selects a browser.
+     * 
+     * @param   browser     the browser
+     *
+     ******************************************************************************************************************/
+    private void selectBrowser (final @Nonnull EntitySupplier browser)
+      {
+        log.info("selectBrowser({})", browser);
+        navigationStack.clear();
+        populateItems(new FolderAndMemento(browser.get(), Optional.empty()));
       }
     
     /*******************************************************************************************************************
@@ -201,6 +212,22 @@ public class DefaultAudioExplorerPresentationControl
         messageBus.publish(new RenderAudioFileRequest(entity.as(AudioFileSupplier).getAudioFile()));    
       }
 
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
+    private void populateBrowsers()
+      {
+        log.debug("populateBrowsers()");
+        
+        final PresentationModel pm = browsers.stream()
+                                              .map(object -> new DefaultPresentable(object)
+                                                                .createPresentationModel(rolesFor(object)))
+                                              .collect(toCompositePresentationModel());
+        presentation.populateBrowsers(pm);
+      }
+    
     /*******************************************************************************************************************
      *
      * Populates the presentation with the contents of a folder and selects an item.
@@ -245,6 +272,26 @@ public class DefaultAudioExplorerPresentationControl
             public UserAction getDefaultAction()
               {
                 return action;
+              }
+          };
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    // FIXME: inject with @DciRole and @DciContext?
+    @Nonnull
+    private UserActionProvider rolesFor (final @Nonnull EntitySupplier entitySupplier)
+      {
+        final UserAction8 selectBrowser = new UserActionLambda(()-> selectBrowser(entitySupplier));
+    
+        return new DefaultUserActionProvider() // FIXME: new DefaultUserActionProvider(action)
+          {
+            @Override @Nonnull
+            public UserAction getDefaultAction()
+              {
+                return selectBrowser;
               }
           };
       }
