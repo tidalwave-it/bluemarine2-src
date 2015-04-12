@@ -65,6 +65,7 @@ import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
+import it.tidalwave.role.ui.DisplayableObjectComparator;
 
 /***********************************************************************************************************************
  *
@@ -125,7 +126,9 @@ public class DefaultAudioExplorerPresentationControl
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp(this);
         populateBrowsers();
-        selectBrowser(browsers.get(0));
+        selectBrowser(browsers.stream()
+                              .filter(browser -> browser.getClass().getName().contains("BrowserByArtistThenTrack"))
+                              .findAny().get());
       }
     
     /*******************************************************************************************************************
@@ -223,9 +226,10 @@ public class DefaultAudioExplorerPresentationControl
         log.debug("populateBrowsers()");
         
         final PresentationModel pm = browsers.stream()
-                                              .map(object -> new DefaultPresentable(object)
-                                                                .createPresentationModel(rolesFor(object)))
-                                              .collect(toCompositePresentationModel());
+                                             .sorted(new DisplayableObjectComparator())
+                                             .map(object -> new DefaultPresentable(object)
+                                                               .createPresentationModel(rolesFor(object)))
+                                             .collect(toCompositePresentationModel());
         presentation.populateBrowsers(pm);
       }
     
