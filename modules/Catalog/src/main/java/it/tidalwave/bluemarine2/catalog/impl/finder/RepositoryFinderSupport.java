@@ -159,8 +159,8 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
             
             final TupleQueryResult result = query.evaluate();
             final List<E> entities = createEntities(repository, entityClass, result);
-            result.close();
-            connection.close();
+            result.close(); // FIXME: finally
+            connection.close(); // FIXME: finally
             
             log.info(">>>> query returning {} entities", entities.size());
 
