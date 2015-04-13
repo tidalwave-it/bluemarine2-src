@@ -198,8 +198,23 @@ public class EmbeddedMetadataManager
         List<Entry> artists  = metadata.getAll(Metadata.MBZ_ARTIST_ID).stream()
                 .map(id -> new Entry(BM.musicBrainzUriFor("artist", id), makerName.orElse("???")))
                 .collect(toList());
-            
-        if (artists.isEmpty()) // no MusicBrainz artist
+        //
+        // Even though we're in fallback mode, we could have a MusicBrainz artist id. Actually, fallback mode can be
+        // triggered by any error while retrieving the track resource; it not implies a problem with the artist 
+        // resource. That's why it makes sense to try to retrieve an artist resource here.
+        //
+        // FIXME: Still missing:
+        //      Anonyme Grèce
+        //      Anonymus (País Vasco)
+        //      Berliner Philharmoniker & Rafael Kubelík
+        //      etc...
+        //
+        if (!artists.isEmpty())
+          {
+            makerUris = artists.stream().map(Entry::getUri).collect(toList());
+            makerUris.forEach(uri -> dbTuneMetadataManager.requestArtistMetadata(uri, makerName)); // FIXME: all with the same maker name?
+          }
+        else  // no MusicBrainz artist
           {
             makerUris =  makerName.map(name -> createUriForLocalArtist(name))
                                   .map(uri -> asList(uri))
@@ -207,22 +222,6 @@ public class EmbeddedMetadataManager
             artists = makerName.map(name -> Stream.of(name.split("[;]")).map(String::trim)).orElse(Stream.empty())
                                .map(name -> new Entry(createUriForLocalArtist(name), name))
                                .collect(toList());
-          }
-        //
-        // Even though we're in fallback mode, we could have a MusicBrainz artist id. Actually, fallback mode can be
-        // triggered by any error while retrieving the track resource; it not implies a problem with the artist 
-        // resource. That's why it makes sense to try to retrieve an artist resource here.
-        //
-        else
-          {
-            makerUris = artists.stream().map(Entry::getUri).collect(toList());
-            makerUris.forEach(uri -> dbTuneMetadataManager.requestArtistMetadata(uri, makerName)); // FIXME: all with the same maker name?
-            //
-            // FIXME: Still missing:
-            // Anonyme Grèce
-            // Anonymus (País Vasco)
-            // Berliner Philharmoniker & Rafael Kubelík
-            // etc...
           }
         
         final List<Entry> newArtists   = artists.stream().filter(
