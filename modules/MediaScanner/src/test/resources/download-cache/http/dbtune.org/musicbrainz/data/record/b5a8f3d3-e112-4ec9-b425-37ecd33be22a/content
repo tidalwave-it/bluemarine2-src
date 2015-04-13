@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/b5a8f3d3-e112-4ec9-b425-37ecd33be22a>
+      rdfs:label "RDF Description of Djangology" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/b5a8f3d3-e112-4ec9-b425-37ecd33be22a> .
+
+<http://musicbrainz.org/album/b5a8f3d3-e112-4ec9-b425-37ecd33be22a>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fb5a8f3d3-e112-4ec9-b425-37ecd33be22a%3E> .
+
+<http://ec1.images-amazon.com/images/P/B000069CPD.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000069CPD.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/b5a8f3d3-e112-4ec9-b425-37ecd33be22a>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/b5a8f3d3-e112-4ec9-b425-37ecd33be22a> .
+
+<http://images.amazon.com/images/P/B000069CPD>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000069CPD%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000069CPD>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000069CPD%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/b5a8f3d3-e112-4ec9-b425-37ecd33be22a>
+      a       mo:Record ;
+      rdfs:label "Djangology" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000069CPD" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000069CPD.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "42"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/72261> ;
+      vocab:tracks "23"^^xsd:int ;
+      dc:date "2002-07-09" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Djangology" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000069CPD> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000069CPD.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000069CPD> ;
+      mo:musicbrainz <http://musicbrainz.org/album/b5a8f3d3-e112-4ec9-b425-37ecd33be22a> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/436046> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/0181e461-9c05-45a1-b945-fa0f00bde6ad> , <http://dbtune.org/musicbrainz/resource/track/c4f7a388-d407-4e72-9fd9-63a3adaf3d44> , <http://dbtune.org/musicbrainz/resource/track/5b70a52d-d74b-4454-af2d-d1f267ec1c03> , <http://dbtune.org/musicbrainz/resource/track/891cfe1f-ac41-402c-a475-05b0ce8babb9> , <http://dbtune.org/musicbrainz/resource/track/19e5a694-fc2f-46be-9254-c5b8f6b4abe9> , <http://dbtune.org/musicbrainz/resource/track/46c6102d-9850-4e26-8d80-799bbcb52025> , <http://dbtune.org/musicbrainz/resource/track/52b59ffb-ee2f-4c3d-9b6f-3051f1e26340> , <http://dbtune.org/musicbrainz/resource/track/cf262471-07e6-4c1d-beeb-cbc5da129f0e> , <http://dbtune.org/musicbrainz/resource/track/afc6ab92-e358-4149-bd40-95690747ad23> , <http://dbtune.org/musicbrainz/resource/track/4bc9744c-8970-4d78-91bf-903fb30ba821> , <http://dbtune.org/musicbrainz/resource/track/56010365-a3da-436d-bd6f-2637c5232497> , <http://dbtune.org/musicbrainz/resource/track/25737a84-c5c9-4293-9254-b2f76fadab45> , <http://dbtune.org/musicbrainz/resource/track/6d174054-26fa-44c6-be39-79cc3a07a4cc> , <http://dbtune.org/musicbrainz/resource/track/0e02d977-bef8-4530-878a-32c1093afd43> , <http://dbtune.org/musicbrainz/resource/track/8479c237-6bef-4f28-959d-7f123447b464> , <http://dbtune.org/musicbrainz/resource/track/f3fea4aa-1fd8-4dd4-afd1-1d58319b49d9> , <http://dbtune.org/musicbrainz/resource/track/1391ee92-d83b-4ad1-b596-1a351cb2afb6> , <http://dbtune.org/musicbrainz/resource/track/58525607-aaef-4a9e-b0cc-2dd477259463> , <http://dbtune.org/musicbrainz/resource/track/721294d2-d661-4692-b409-4a8eeb909bc6> , <http://dbtune.org/musicbrainz/resource/track/71b5a1cc-59b4-44ad-ba44-a70b7eccdcae> , <http://dbtune.org/musicbrainz/resource/track/c99d8795-411f-44ba-aac8-dd8c0ef29e78> , <http://dbtune.org/musicbrainz/resource/track/6c56c453-523d-4595-b7fc-f5e925866884> , <http://dbtune.org/musicbrainz/resource/track/ea8680b8-a92f-46a4-b210-6b9866d13f02> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> ;
+      foaf:page "179387664" .

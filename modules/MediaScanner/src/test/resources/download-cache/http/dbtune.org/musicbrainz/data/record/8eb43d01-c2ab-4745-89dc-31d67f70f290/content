@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/8eb43d01-c2ab-4745-89dc-31d67f70f290>
+      rdfs:label "RDF Description of Pictures at an Exhibition (orch. Ravel) / Russian Easter Festival Overture (Vancouver Symphony Orchestra feat. conductor: Kazuyoshi Akiyama)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/8eb43d01-c2ab-4745-89dc-31d67f70f290> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/8eb43d01-c2ab-4745-89dc-31d67f70f290>
+      a       mo:Record ;
+      rdfs:label "Pictures at an Exhibition (orch. Ravel) / Russian Easter Festival Overture (Vancouver Symphony Orchestra feat. conductor: Kazuyoshi Akiyama)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "32"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/156767> ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:date "1988-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Pictures at an Exhibition (orch. Ravel) / Russian Easter Festival Overture (Vancouver Symphony Orchestra feat. conductor: Kazuyoshi Akiyama)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/8eb43d01-c2ab-4745-89dc-31d67f70f290> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/138717> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/1f12d719-223c-4c8f-9cb3-221fcc942838> , <http://dbtune.org/musicbrainz/resource/track/e217fe21-f1a0-4238-a5a0-08b913959ac4> , <http://dbtune.org/musicbrainz/resource/track/5bab8e84-8583-4071-ad18-cd4420465c0c> , <http://dbtune.org/musicbrainz/resource/track/2ab33b91-c11d-4f20-886e-e74a64537824> , <http://dbtune.org/musicbrainz/resource/track/5c158775-c42c-42df-9510-8e4fe6deee5f> , <http://dbtune.org/musicbrainz/resource/track/f26bd529-0f60-4f24-90d7-a98827beef7a> , <http://dbtune.org/musicbrainz/resource/track/b81272fe-dd84-4717-b64f-da4f09a73694> , <http://dbtune.org/musicbrainz/resource/track/5ac047c5-82a4-4bb5-acd8-8453bd670e02> , <http://dbtune.org/musicbrainz/resource/track/45d3e7d9-2b47-4fea-a976-2f75fefb1057> , <http://dbtune.org/musicbrainz/resource/track/a7d40c34-5f3e-4c9d-b929-717e449dd71f> , <http://dbtune.org/musicbrainz/resource/track/6daf67ba-4634-4cae-9d90-b6e229b25f90> , <http://dbtune.org/musicbrainz/resource/track/f3afbc04-81f5-45ed-9a13-d0080d6ac9df> , <http://dbtune.org/musicbrainz/resource/track/8b9b296d-79f6-4ee9-9bb9-3c75e38e73e4> , <http://dbtune.org/musicbrainz/resource/track/4104f271-0e94-4e78-9fea-8ca6edd0bd84> , <http://dbtune.org/musicbrainz/resource/track/d6ff9e1a-c71b-4100-94e3-bbce1832d87c> , <http://dbtune.org/musicbrainz/resource/track/f38d7d7c-34a6-40d7-b350-a6774fb6b513> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "581064403" .
+
+<http://musicbrainz.org/album/8eb43d01-c2ab-4745-89dc-31d67f70f290>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F8eb43d01-c2ab-4745-89dc-31d67f70f290%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/8eb43d01-c2ab-4745-89dc-31d67f70f290>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/8eb43d01-c2ab-4745-89dc-31d67f70f290> .

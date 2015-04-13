@@ -1,0 +1,68 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B0000033IS>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000033IS%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/4b43b2a7-2cab-4f87-9a7e-dfc0913c39ab>
+      rdfs:label "RDF Description of I Never Loved a Man the Way I Love You" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/4b43b2a7-2cab-4f87-9a7e-dfc0913c39ab> .
+
+<http://musicbrainz.org/album/4b43b2a7-2cab-4f87-9a7e-dfc0913c39ab>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F4b43b2a7-2cab-4f87-9a7e-dfc0913c39ab%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000033IS>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000033IS%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/4b43b2a7-2cab-4f87-9a7e-dfc0913c39ab>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/4b43b2a7-2cab-4f87-9a7e-dfc0913c39ab> .
+
+<http://dbtune.org/musicbrainz/resource/record/4b43b2a7-2cab-4f87-9a7e-dfc0913c39ab>
+      a       mo:Record ;
+      rdfs:label "I Never Loved a Man the Way I Love You" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000033IS" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0000033IS.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "43"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/206345> , <http://dbtune.org/musicbrainz/resource/toc/35565> ;
+      vocab:tracks "11"^^xsd:int ;
+      dc:date "1967-03-10" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "I Never Loved a Man the Way I Love You" ;
+      mbz:remaster <http://dbtune.org/musicbrainz/resource/record/04f4edab-4f53-4ab0-8c3f-337ce6df2a8c> ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000033IS> ;
+      mo:image <http://images.amazon.com/images/P/B0000033IS> , <http://ec1.images-amazon.com/images/P/B0000033IS.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/4b43b2a7-2cab-4f87-9a7e-dfc0913c39ab> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/455127> , <http://dbtune.org/musicbrainz/resource/release/290645> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/a83711c1-e1c6-466a-a2c7-0f8193fd333c> , <http://dbtune.org/musicbrainz/resource/track/6c174058-03dc-410e-bee5-25d40dcbbccf> , <http://dbtune.org/musicbrainz/resource/track/92292500-77e0-4a81-a254-4f3e31b335ef> , <http://dbtune.org/musicbrainz/resource/track/74ea59bd-88df-45bc-b422-c8ddc585a3e9> , <http://dbtune.org/musicbrainz/resource/track/6573685b-5732-411a-b1fc-59047df9efe4> , <http://dbtune.org/musicbrainz/resource/track/4a8aecbf-2e2c-4297-ae37-5d9e654b70c4> , <http://dbtune.org/musicbrainz/resource/track/463d9ef9-98c3-4b4b-91a9-01d23cdc7110> , <http://dbtune.org/musicbrainz/resource/track/143733d8-7858-4011-9fa0-a9a074d6de04> , <http://dbtune.org/musicbrainz/resource/track/f4c6c7dc-ec23-4461-afa9-19fae6b93ee5> , <http://dbtune.org/musicbrainz/resource/track/e4e5b866-23d7-4e07-92a5-c1db8018c180> , <http://dbtune.org/musicbrainz/resource/track/4adf4797-80f1-4568-938c-d1e39ad19e7a> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/2f9ecbed-27be-40e6-abca-6de49d50299e> ;
+      foaf:page "337091302" .
+
+<http://ec1.images-amazon.com/images/P/B0000033IS.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0000033IS.01.MZZZZZZZ.jpg%3E> .

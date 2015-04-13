@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://ec1.images-amazon.com/images/P/B00002MYVB.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00002MYVB.01.MZZZZZZZ.jpg%3E> .
+
+<http://musicbrainz.org/album/ed9cc49f-d559-4483-b7d1-3b8f89dbb62e>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fed9cc49f-d559-4483-b7d1-3b8f89dbb62e%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/ed9cc49f-d559-4483-b7d1-3b8f89dbb62e>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/ed9cc49f-d559-4483-b7d1-3b8f89dbb62e> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/ed9cc49f-d559-4483-b7d1-3b8f89dbb62e>
+      rdfs:label "RDF Description of Something to Live For (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/ed9cc49f-d559-4483-b7d1-3b8f89dbb62e> .
+
+<http://images.amazon.com/images/P/B00002MYVB>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00002MYVB%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00002MYVB>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00002MYVB%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/ed9cc49f-d559-4483-b7d1-3b8f89dbb62e>
+      a       mo:Record ;
+      rdfs:label "Something to Live For (disc 2)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00002MYVB" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00002MYVB.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "22"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/7751> ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:date "1999-11-02" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Something to Live For (disc 2)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00002MYVB> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B00002MYVB.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B00002MYVB> ;
+      mo:musicbrainz <http://musicbrainz.org/album/ed9cc49f-d559-4483-b7d1-3b8f89dbb62e> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/325513> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/41eac5e4-eaf8-4658-80d1-6f4d691007c7> , <http://dbtune.org/musicbrainz/resource/track/bde4aa32-4e10-487a-9d2a-d63973d206d8> , <http://dbtune.org/musicbrainz/resource/track/2c94af33-215b-434c-90a6-ac80e6c58c96> , <http://dbtune.org/musicbrainz/resource/track/82c73756-e79d-463c-aea2-6ff7a9f2ee3e> , <http://dbtune.org/musicbrainz/resource/track/4dd129e8-ba0d-42a7-84ac-866644d46f43> , <http://dbtune.org/musicbrainz/resource/track/d4b1ff78-acf6-488a-b1a1-9abf8077231a> , <http://dbtune.org/musicbrainz/resource/track/c71c6ad9-0dea-4427-a0bc-42fa2c2408e3> , <http://dbtune.org/musicbrainz/resource/track/08e69729-ca17-40ad-85e8-60f8864eb838> , <http://dbtune.org/musicbrainz/resource/track/42a7bb8c-e1b0-4026-b89a-8d59be4bd463> , <http://dbtune.org/musicbrainz/resource/track/7555b274-53c1-4e08-bb85-025a79c5ca96> , <http://dbtune.org/musicbrainz/resource/track/92292cef-c223-4250-82a5-08d71301b6d7> , <http://dbtune.org/musicbrainz/resource/track/e75310b0-50d4-440e-a86b-300df5255132> , <http://dbtune.org/musicbrainz/resource/track/ebda3eb1-8a33-4ff2-b064-8895bd49119e> , <http://dbtune.org/musicbrainz/resource/track/2986d539-660a-4f02-9777-194c65e95a71> , <http://dbtune.org/musicbrainz/resource/track/c0ace7aa-826c-4dba-aeae-20439f29e5e4> , <http://dbtune.org/musicbrainz/resource/track/3e92bcb4-01ac-407a-888c-15eb4cd4edb3> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
+      foaf:page "688331433" .

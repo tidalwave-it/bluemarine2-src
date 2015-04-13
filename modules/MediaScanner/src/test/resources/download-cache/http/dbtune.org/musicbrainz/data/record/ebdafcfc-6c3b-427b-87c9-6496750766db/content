@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/ebdafcfc-6c3b-427b-87c9-6496750766db>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/ebdafcfc-6c3b-427b-87c9-6496750766db> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/ebdafcfc-6c3b-427b-87c9-6496750766db>
+      a       mo:Record ;
+      rdfs:label "Don Giovanni (The Monteverdi Choir, the English Baroque Soloists feat. conductor: John Eliot Gardiner) (disc 2)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000057EV" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0000057EV.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/302675> ;
+      vocab:tracks "20"^^xsd:int ;
+      dc:date "1995-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/ita> ;
+      dc:title "Don Giovanni (The Monteverdi Choir, the English Baroque Soloists feat. conductor: John Eliot Gardiner) (disc 2)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000057EV> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B0000057EV.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B0000057EV> ;
+      mo:musicbrainz <http://musicbrainz.org/album/ebdafcfc-6c3b-427b-87c9-6496750766db> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/505708> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/b8b00570-981b-4f1e-a23b-c739d4e502d7> , <http://dbtune.org/musicbrainz/resource/track/2d6ebc2f-f42f-4b17-ab16-0a4df78ecc26> , <http://dbtune.org/musicbrainz/resource/track/26377e1e-0e30-4753-8651-a2f3ce1f435b> , <http://dbtune.org/musicbrainz/resource/track/fa2621ca-0902-4dd6-9f1a-04d7f4b9bbca> , <http://dbtune.org/musicbrainz/resource/track/f37f29ab-efd3-4900-b8cd-10bd30c98f27> , <http://dbtune.org/musicbrainz/resource/track/6a5cdc03-3118-4acf-a803-40ed093a03a0> , <http://dbtune.org/musicbrainz/resource/track/9df1bde2-bb65-4e8c-9b9f-ca805a93cf02> , <http://dbtune.org/musicbrainz/resource/track/1d102ee5-fc51-4b2b-8b22-d2701b120ca9> , <http://dbtune.org/musicbrainz/resource/track/b711e4fb-5488-4983-b87c-7e6cbf9cae71> , <http://dbtune.org/musicbrainz/resource/track/9adbab51-08b5-445d-9991-2589b68a92d0> , <http://dbtune.org/musicbrainz/resource/track/89934ffd-3712-4a33-b8a7-08abd3e894af> , <http://dbtune.org/musicbrainz/resource/track/3b8f8aa3-0b3c-4cc3-8b0c-6211685da611> , <http://dbtune.org/musicbrainz/resource/track/b54ab664-319a-42f7-811d-368c702e67d9> , <http://dbtune.org/musicbrainz/resource/track/92b89c65-f2c3-4938-840e-b7a9e85afd5b> , <http://dbtune.org/musicbrainz/resource/track/c8257835-03d3-448e-9951-0a1a03c2db8b> , <http://dbtune.org/musicbrainz/resource/track/676d7c01-9e21-4152-9dd3-df6c004e6f70> , <http://dbtune.org/musicbrainz/resource/track/dbe2d23c-fc60-4c01-9742-5d9062c43ae4> , <http://dbtune.org/musicbrainz/resource/track/1d5e89b8-1e3c-4924-82f0-9452b82e4a88> , <http://dbtune.org/musicbrainz/resource/track/a14afbbe-a4e4-4a63-975e-7235faf635d9> , <http://dbtune.org/musicbrainz/resource/track/e0bb6eed-4b47-4ba5-b763-2eec2912143e> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/b972f589-fb0e-474e-b64a-803b0364fa75> ;
+      foaf:page "185042186" .
+
+<http://ec1.images-amazon.com/images/P/B0000057EV.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0000057EV.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/ebdafcfc-6c3b-427b-87c9-6496750766db>
+      rdfs:label "RDF Description of Don Giovanni (The Monteverdi Choir, the English Baroque Soloists feat. conductor: John Eliot Gardiner) (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/ebdafcfc-6c3b-427b-87c9-6496750766db> .
+
+<http://musicbrainz.org/album/ebdafcfc-6c3b-427b-87c9-6496750766db>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Febdafcfc-6c3b-427b-87c9-6496750766db%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000057EV>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000057EV%3E> .
+
+<http://images.amazon.com/images/P/B0000057EV>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000057EV%3E> .

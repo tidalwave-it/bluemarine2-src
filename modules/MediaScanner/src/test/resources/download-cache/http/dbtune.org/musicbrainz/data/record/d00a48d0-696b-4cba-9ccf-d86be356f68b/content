@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/d00a48d0-696b-4cba-9ccf-d86be356f68b>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fd00a48d0-696b-4cba-9ccf-d86be356f68b%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/d00a48d0-696b-4cba-9ccf-d86be356f68b>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/d00a48d0-696b-4cba-9ccf-d86be356f68b> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/d00a48d0-696b-4cba-9ccf-d86be356f68b>
+      a       mo:Record ;
+      rdfs:label "Legendary Henry Mancini (disc 1)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "14"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/104875> ;
+      vocab:tracks "17"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Legendary Henry Mancini (disc 1)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/d00a48d0-696b-4cba-9ccf-d86be356f68b> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/901b883e-5275-41c8-adc8-fbf3b7c302fa> , <http://dbtune.org/musicbrainz/resource/track/0197cf41-2dae-4860-b5b8-b7a98e1fb175> , <http://dbtune.org/musicbrainz/resource/track/1cbc489c-55ff-4e27-a05b-73feba3fe825> , <http://dbtune.org/musicbrainz/resource/track/bffe076d-bf2f-4d94-b94e-b7ef2cbb3fa1> , <http://dbtune.org/musicbrainz/resource/track/a523bbd5-1e3e-47d4-8af3-7eaf8ee5544e> , <http://dbtune.org/musicbrainz/resource/track/5d08678a-db79-473a-988b-391573702b3f> , <http://dbtune.org/musicbrainz/resource/track/38c68d32-74a9-4028-ad7d-4fa57f0a55d6> , <http://dbtune.org/musicbrainz/resource/track/ef73f4b7-6f44-4fd0-8cd3-5eb25d228fa4> , <http://dbtune.org/musicbrainz/resource/track/86afb55f-a22b-4173-bbe5-149361160273> , <http://dbtune.org/musicbrainz/resource/track/e6492c99-82cf-422a-82d6-1fa13ceacd33> , <http://dbtune.org/musicbrainz/resource/track/7c83d652-b621-4a8b-ba4c-f1e04b86bcdb> , <http://dbtune.org/musicbrainz/resource/track/baee32b6-8f60-43c0-8313-62c274eca643> , <http://dbtune.org/musicbrainz/resource/track/f6108275-f71a-4a8d-8a6b-30fd9f37afba> , <http://dbtune.org/musicbrainz/resource/track/8dbe8351-a400-4724-bf32-f8ec5e22f49d> , <http://dbtune.org/musicbrainz/resource/track/7afe93b4-c5d3-418c-81ad-8d40044392c7> , <http://dbtune.org/musicbrainz/resource/track/52fa38c7-37e0-41e0-8276-9df815eb59af> , <http://dbtune.org/musicbrainz/resource/track/c77aceda-b15d-429c-83a5-9340a1f84b5d> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/83e71a21-caf7-4e48-8ff7-6512d51e88a3> ;
+      foaf:page "442767845" .
+
+<http://dbtune.org/musicbrainz/data/record/d00a48d0-696b-4cba-9ccf-d86be356f68b>
+      rdfs:label "RDF Description of Legendary Henry Mancini (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/d00a48d0-696b-4cba-9ccf-d86be356f68b> .

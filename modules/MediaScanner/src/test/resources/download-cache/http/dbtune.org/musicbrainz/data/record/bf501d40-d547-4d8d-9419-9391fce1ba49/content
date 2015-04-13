@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/bf501d40-d547-4d8d-9419-9391fce1ba49>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/bf501d40-d547-4d8d-9419-9391fce1ba49> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/bf501d40-d547-4d8d-9419-9391fce1ba49>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fbf501d40-d547-4d8d-9419-9391fce1ba49%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/bf501d40-d547-4d8d-9419-9391fce1ba49>
+      rdfs:label "RDF Description of 20 Golden Greats" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/bf501d40-d547-4d8d-9419-9391fce1ba49> .
+
+<http://dbtune.org/musicbrainz/resource/record/bf501d40-d547-4d8d-9419-9391fce1ba49>
+      a       mo:Record ;
+      rdfs:label "20 Golden Greats" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "22"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/34596> ;
+      vocab:tracks "20"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "20 Golden Greats" ;
+      mo:musicbrainz <http://musicbrainz.org/album/bf501d40-d547-4d8d-9419-9391fce1ba49> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/989fe36b-989c-4c61-bced-9280a5f10ad2> , <http://dbtune.org/musicbrainz/resource/track/0dd88f99-6523-4e9d-a536-70c65dc709b7> , <http://dbtune.org/musicbrainz/resource/track/696f5dca-11cb-4e55-9525-133a1da6ec01> , <http://dbtune.org/musicbrainz/resource/track/1d2a4b05-0f58-4337-be96-844766386121> , <http://dbtune.org/musicbrainz/resource/track/0b9d67ea-4137-4c1d-bd7b-8460b53d58eb> , <http://dbtune.org/musicbrainz/resource/track/d20786d4-19aa-40b9-a9fb-7fac156c2e85> , <http://dbtune.org/musicbrainz/resource/track/0a5773c6-0178-4eb1-b197-7649acc31e63> , <http://dbtune.org/musicbrainz/resource/track/800f2c5d-2d39-4cae-ae90-38a8f6aafa3a> , <http://dbtune.org/musicbrainz/resource/track/5c41c7f0-57c5-4c55-925d-b6350774b187> , <http://dbtune.org/musicbrainz/resource/track/2b3293c6-b1bd-40fc-8edc-9f4aef9b7846> , <http://dbtune.org/musicbrainz/resource/track/ef398bd7-616b-493c-a3ef-d94835b608e3> , <http://dbtune.org/musicbrainz/resource/track/ee3f68e5-7485-4ca6-970f-ef2f9354f879> , <http://dbtune.org/musicbrainz/resource/track/c7bcb888-637d-44c6-a985-64692368d03e> , <http://dbtune.org/musicbrainz/resource/track/dd5fad64-b771-4e24-818d-ef52b1fe67a0> , <http://dbtune.org/musicbrainz/resource/track/4b68ec0b-789e-418e-837d-22c5b5302f05> , <http://dbtune.org/musicbrainz/resource/track/5d6a640b-2e42-4090-bc57-fa666bbac67e> , <http://dbtune.org/musicbrainz/resource/track/d8df0ef8-fd75-4ed6-86f4-e22b48fc20aa> , <http://dbtune.org/musicbrainz/resource/track/e770b6c5-475b-45b2-8af1-911d46003db9> , <http://dbtune.org/musicbrainz/resource/track/43c43885-5a3b-4d49-a3c1-00fa0ade5469> , <http://dbtune.org/musicbrainz/resource/track/e8028194-1b55-48a0-83fd-e3ad641b3327> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fbe054ec-a143-4101-9e9e-64abc5ff5ac9> ;
+      foaf:page "41485" .

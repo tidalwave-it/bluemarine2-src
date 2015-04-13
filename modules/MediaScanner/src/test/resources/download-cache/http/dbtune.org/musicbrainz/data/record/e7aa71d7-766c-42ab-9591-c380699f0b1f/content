@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/e7aa71d7-766c-42ab-9591-c380699f0b1f>
+      rdfs:label "RDF Description of Louis Armstrong (disc 3)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/e7aa71d7-766c-42ab-9591-c380699f0b1f> .
+
+<http://dbtune.org/musicbrainz/resource/master/e7aa71d7-766c-42ab-9591-c380699f0b1f>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/e7aa71d7-766c-42ab-9591-c380699f0b1f> .
+
+<http://musicbrainz.org/album/e7aa71d7-766c-42ab-9591-c380699f0b1f>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fe7aa71d7-766c-42ab-9591-c380699f0b1f%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/e7aa71d7-766c-42ab-9591-c380699f0b1f>
+      a       mo:Record ;
+      rdfs:label "Louis Armstrong (disc 3)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/131735> ;
+      vocab:tracks "10"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Louis Armstrong (disc 3)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/e7aa71d7-766c-42ab-9591-c380699f0b1f> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/1616feaf-2a17-4f50-8960-6ce1964ba038> , <http://dbtune.org/musicbrainz/resource/track/53dd3a08-7e35-4469-af63-5c267cc7dbe8> , <http://dbtune.org/musicbrainz/resource/track/d56be461-8a73-4ab5-9e58-231f4b5b62bf> , <http://dbtune.org/musicbrainz/resource/track/fe8adf74-cf18-4d48-985a-4c6451f18dbc> , <http://dbtune.org/musicbrainz/resource/track/99d98d67-ba3c-4da7-ae81-0e57a79ba362> , <http://dbtune.org/musicbrainz/resource/track/38d59c08-a3cf-4b59-bde7-6653472d08b2> , <http://dbtune.org/musicbrainz/resource/track/17e74516-7ad3-4906-b9f1-fdaac6578aa2> , <http://dbtune.org/musicbrainz/resource/track/257da834-42af-4dff-9923-2b4af7a4b2f3> , <http://dbtune.org/musicbrainz/resource/track/d5989a87-ca33-465c-9e9e-25ecb58f6aa2> , <http://dbtune.org/musicbrainz/resource/track/1feb4af1-6659-43f0-b360-723808023c78> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/eea8a864-fcda-4602-9569-38ab446decd6> ;
+      foaf:page "453716609" .

@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/39486369-535c-4ad8-b389-6ce6d27b9f1c>
+      rdfs:label "RDF Description of The Wonderful World of (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/39486369-535c-4ad8-b389-6ce6d27b9f1c> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/39486369-535c-4ad8-b389-6ce6d27b9f1c>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/39486369-535c-4ad8-b389-6ce6d27b9f1c> .
+
+<http://musicbrainz.org/album/39486369-535c-4ad8-b389-6ce6d27b9f1c>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F39486369-535c-4ad8-b389-6ce6d27b9f1c%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/39486369-535c-4ad8-b389-6ce6d27b9f1c>
+      a       mo:Record ;
+      rdfs:label "The Wonderful World of (disc 1)" ;
+      vocab:album_attributes
+              "{0,4}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "17"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/225243> ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:date "2006-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Wonderful World of (disc 1)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/39486369-535c-4ad8-b389-6ce6d27b9f1c> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/300106> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/f9ca588f-3a1b-4ede-a03c-34341e9f9f40> , <http://dbtune.org/musicbrainz/resource/track/7c7771f8-4d0c-448a-867a-34bbbbc3042e> , <http://dbtune.org/musicbrainz/resource/track/19e89907-cb1c-4cdd-bcc5-874bd20bb823> , <http://dbtune.org/musicbrainz/resource/track/ff2b2eb0-e10f-4137-a3af-e39284f6aa00> , <http://dbtune.org/musicbrainz/resource/track/30bb049a-9c24-4442-8ccf-1ae3e66d829f> , <http://dbtune.org/musicbrainz/resource/track/2211cbef-0d37-471a-8ac7-0113be04fd10> , <http://dbtune.org/musicbrainz/resource/track/2a1de49a-78f1-4a74-9154-7c4e77fa289f> , <http://dbtune.org/musicbrainz/resource/track/8d690475-0014-41ac-b411-a7a400641777> , <http://dbtune.org/musicbrainz/resource/track/d74f1d21-6a2d-45fd-9781-a04faf22cf46> , <http://dbtune.org/musicbrainz/resource/track/13ded01e-728e-4076-8dca-ce28acabaee2> , <http://dbtune.org/musicbrainz/resource/track/68757a94-1aea-4fd1-a318-c6a00044c31d> , <http://dbtune.org/musicbrainz/resource/track/6da4f8fd-464b-4099-b2e1-8bd99454a5ae> , <http://dbtune.org/musicbrainz/resource/track/934fa55c-a4c5-4a46-997c-b4ddd1d561d0> , <http://dbtune.org/musicbrainz/resource/track/464eb4c1-45d7-471e-8097-f8eeb7e32ee5> , <http://dbtune.org/musicbrainz/resource/track/9c5b26c4-9032-40d6-8352-0f98e7197965> , <http://dbtune.org/musicbrainz/resource/track/f04f30f0-b3cc-4c2a-80d5-d841426b5658> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/eea8a864-fcda-4602-9569-38ab446decd6> ;
+      foaf:page "714278672" .

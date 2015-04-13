@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00000E370>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00000E370%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/9f65e748-1167-42e4-a8cd-cad8c85644d3>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F9f65e748-1167-42e4-a8cd-cad8c85644d3%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/9f65e748-1167-42e4-a8cd-cad8c85644d3>
+      rdfs:label "RDF Description of Gregorian Chant (Choralschola der Wiener Hofburgkapelle feat. conductor: P. Hubert Dopf)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/9f65e748-1167-42e4-a8cd-cad8c85644d3> .
+
+<http://ec1.images-amazon.com/images/P/B00000E370.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00000E370.01.MZZZZZZZ.jpg%3E> .
+
+<http://images.amazon.com/images/P/B00000E370>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000E370%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/9f65e748-1167-42e4-a8cd-cad8c85644d3>
+      a       mo:Record ;
+      rdfs:label "Gregorian Chant (Choralschola der Wiener Hofburgkapelle feat. conductor: P. Hubert Dopf)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00000E370" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00000E370.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "22"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/271902> ;
+      vocab:tracks "22"^^xsd:int ;
+      dc:date "1986-11-03" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/mul> ;
+      dc:title "Gregorian Chant (Choralschola der Wiener Hofburgkapelle feat. conductor: P. Hubert Dopf)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00000E370> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B00000E370.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B00000E370> ;
+      mo:musicbrainz <http://musicbrainz.org/album/9f65e748-1167-42e4-a8cd-cad8c85644d3> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/449079> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/d27e98e2-7923-453d-b006-5f1853689561> , <http://dbtune.org/musicbrainz/resource/track/4d27cb8f-bc9a-4de7-b6ae-2103b2dc53a9> , <http://dbtune.org/musicbrainz/resource/track/4a387200-6f40-4490-9fdc-e1cc34ee01da> , <http://dbtune.org/musicbrainz/resource/track/26afedad-6714-491e-8a49-bf379ba7ce60> , <http://dbtune.org/musicbrainz/resource/track/2aab8809-9c4a-41d3-8a9c-9d17c178403c> , <http://dbtune.org/musicbrainz/resource/track/455aa43e-ec18-4f79-b5a6-0ccab641aeca> , <http://dbtune.org/musicbrainz/resource/track/893c2ae9-ab95-4619-befa-8dab340b0bb5> , <http://dbtune.org/musicbrainz/resource/track/2604c5c2-05dd-4202-96c3-40357bbe3654> , <http://dbtune.org/musicbrainz/resource/track/9821b959-60e4-448c-9432-75897aea527b> , <http://dbtune.org/musicbrainz/resource/track/1ac49178-df60-4a90-805b-514391a49470> , <http://dbtune.org/musicbrainz/resource/track/a90c773a-b4a3-4ec1-9c6e-30f0b6b542a1> , <http://dbtune.org/musicbrainz/resource/track/3ddb399d-9647-4d5d-8955-9f33fa7fdb8f> , <http://dbtune.org/musicbrainz/resource/track/bb247410-d725-404c-825b-edcde13a89e3> , <http://dbtune.org/musicbrainz/resource/track/b6aeae71-e6d8-4276-83c8-7c687f59f339> , <http://dbtune.org/musicbrainz/resource/track/f0d9ed48-ffe4-4cb8-906f-59d203d50f06> , <http://dbtune.org/musicbrainz/resource/track/fbf6fd9c-b274-4266-88b1-f38c1767f243> , <http://dbtune.org/musicbrainz/resource/track/13d4a3d1-30d1-4415-8e51-4ea0b0a6602a> , <http://dbtune.org/musicbrainz/resource/track/e53e8651-69c4-4911-8faa-db5dadbc397e> , <http://dbtune.org/musicbrainz/resource/track/093b5a9e-08d6-4beb-a29f-1f67b59ef797> , <http://dbtune.org/musicbrainz/resource/track/4b9655c1-ee3a-4bc7-b649-de3a0a24a7c6> , <http://dbtune.org/musicbrainz/resource/track/9fb4a603-412c-49d5-aa75-6c5ac36b4ad3> , <http://dbtune.org/musicbrainz/resource/track/cef3054e-2b5d-4664-8f93-f0a36d554aee> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/ae636985-40e8-4010-ae02-0f35930f8017> ;
+      foaf:page "288563731" .
+
+<http://dbtune.org/musicbrainz/resource/master/9f65e748-1167-42e4-a8cd-cad8c85644d3>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/9f65e748-1167-42e4-a8cd-cad8c85644d3> .

@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/99945fa7-0778-4fb9-805d-6c25f8bcd31a>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F99945fa7-0778-4fb9-805d-6c25f8bcd31a%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/99945fa7-0778-4fb9-805d-6c25f8bcd31a>
+      a       mo:Record ;
+      rdfs:label "Chopin, Beethoven, Schumann, Ravel, Prokofieff feat. piano: Ivo Pogorelich (disc 3)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/219248> ;
+      vocab:tracks "7"^^xsd:int ;
+      dc:date "1998-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/ita> ;
+      dc:title "Chopin, Beethoven, Schumann, Ravel, Prokofieff feat. piano: Ivo Pogorelich (disc 3)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/99945fa7-0778-4fb9-805d-6c25f8bcd31a> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/425768> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/e1410687-7f92-4503-921b-1ea22e028482> , <http://dbtune.org/musicbrainz/resource/track/eb8ab07b-3189-47c4-91ac-5d5e6329240e> , <http://dbtune.org/musicbrainz/resource/track/4d709421-b873-45b5-9577-2e9144a1f3e4> , <http://dbtune.org/musicbrainz/resource/track/12b82e90-bbb8-4aa0-95c6-2bf9217ed5be> , <http://dbtune.org/musicbrainz/resource/track/82bdeef3-6843-4687-b958-3fb6dcf52ded> , <http://dbtune.org/musicbrainz/resource/track/422c240c-9149-43bf-8a2b-33cbb75dbdd2> , <http://dbtune.org/musicbrainz/resource/track/a6408e68-2bda-4c7d-aea2-68b19161d6bd> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "144196943" .
+
+<http://dbtune.org/musicbrainz/resource/master/99945fa7-0778-4fb9-805d-6c25f8bcd31a>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/99945fa7-0778-4fb9-805d-6c25f8bcd31a> .
+
+<http://dbtune.org/musicbrainz/data/record/99945fa7-0778-4fb9-805d-6c25f8bcd31a>
+      rdfs:label "RDF Description of Chopin, Beethoven, Schumann, Ravel, Prokofieff feat. piano: Ivo Pogorelich (disc 3)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/99945fa7-0778-4fb9-805d-6c25f8bcd31a> .

@@ -1,0 +1,56 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/3daded3c-4de2-4083-a360-481610f1b437>
+      rdfs:label "RDF Description of The Quintessential Django Reinhardt & Stéphane Grappelli" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/3daded3c-4de2-4083-a360-481610f1b437> .
+
+<http://dbtune.org/musicbrainz/resource/master/3daded3c-4de2-4083-a360-481610f1b437>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/3daded3c-4de2-4083-a360-481610f1b437> .
+
+<http://dbtune.org/musicbrainz/resource/record/3daded3c-4de2-4083-a360-481610f1b437>
+      a       mo:Record ;
+      rdfs:label "The Quintessential Django Reinhardt & Stéphane Grappelli" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "26"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/242512> ;
+      vocab:tracks "25"^^xsd:int ;
+      dc:date "1998-05-19" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Quintessential Django Reinhardt & Stéphane Grappelli" ;
+      mo:musicbrainz <http://musicbrainz.org/album/3daded3c-4de2-4083-a360-481610f1b437> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/22420> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/ac6b7c45-20cd-468a-b645-e85a8aa09796> , <http://dbtune.org/musicbrainz/resource/track/4a371188-20ec-4e40-8b75-f0bf899576ba> , <http://dbtune.org/musicbrainz/resource/track/fd60dafe-03f6-4cfb-b90f-000cc5343484> , <http://dbtune.org/musicbrainz/resource/track/091622f0-1e5c-4c86-a287-c26dd5c64c26> , <http://dbtune.org/musicbrainz/resource/track/b8c8490e-648e-42ff-9df0-d221972e12a6> , <http://dbtune.org/musicbrainz/resource/track/906c8fa0-0251-483b-acc1-90db612feb9f> , <http://dbtune.org/musicbrainz/resource/track/5b306258-7cbc-48be-8412-1134b3d83683> , <http://dbtune.org/musicbrainz/resource/track/344934e5-cc5f-4371-bc28-9acd2a142b8b> , <http://dbtune.org/musicbrainz/resource/track/24effe1a-a77f-467b-94c4-e2f835e634f3> , <http://dbtune.org/musicbrainz/resource/track/386c1ea4-f9bd-4cb0-8058-5b3763450db8> , <http://dbtune.org/musicbrainz/resource/track/b7df17fc-180f-47c8-a415-f42deca201b3> , <http://dbtune.org/musicbrainz/resource/track/8fb28986-55bc-4cc2-8b65-9d80a7422ace> , <http://dbtune.org/musicbrainz/resource/track/8acf1c49-3035-430a-afd0-3c6ed0a9d971> , <http://dbtune.org/musicbrainz/resource/track/3ed2c444-372f-446e-b46a-9b434de8c9a8> , <http://dbtune.org/musicbrainz/resource/track/d519dd22-cdf9-4195-b68e-769585d4eab3> , <http://dbtune.org/musicbrainz/resource/track/e8404401-83d2-4db5-a2a7-ca75ae183e28> , <http://dbtune.org/musicbrainz/resource/track/7fd6f26e-21ab-4f31-bc9d-f2f2cd7d13fc> , <http://dbtune.org/musicbrainz/resource/track/088574ed-504a-459b-9778-a3936ec8b762> , <http://dbtune.org/musicbrainz/resource/track/6f541c8a-cb82-4864-9d3b-28f57f55ef25> , <http://dbtune.org/musicbrainz/resource/track/68ecee56-60ea-4c94-9f49-abcd2de7b893> , <http://dbtune.org/musicbrainz/resource/track/b7ffe32e-6374-4788-966b-d5da0a2f90d6> , <http://dbtune.org/musicbrainz/resource/track/4786da2a-3047-44d8-91a0-e8df4594e559> , <http://dbtune.org/musicbrainz/resource/track/7e583549-ce5e-4dfb-92d2-1b37b4484699> , <http://dbtune.org/musicbrainz/resource/track/d6cd3c58-848c-48d0-bf82-e36e7a062342> , <http://dbtune.org/musicbrainz/resource/track/bf8fe824-2f2a-48d9-b795-928349fc2c9f> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/9ee87d01-dec9-4e00-8b17-7d02f8122198> ;
+      foaf:page "714278486" .
+
+<http://musicbrainz.org/album/3daded3c-4de2-4083-a360-481610f1b437>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F3daded3c-4de2-4083-a360-481610f1b437%3E> .

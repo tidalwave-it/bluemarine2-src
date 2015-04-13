@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/30f8271d-8b6a-4c77-9245-e4ab8a046ef3>
+      a       mo:Record ;
+      rdfs:label "All Time Greatest Hits Volume I" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000002WBX" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000002WBX.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "4"^^xsd:int ;
+      vocab:albummeta_puids
+              "24"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/18106> , <http://dbtune.org/musicbrainz/resource/toc/252546> , <http://dbtune.org/musicbrainz/resource/toc/285722> , <http://dbtune.org/musicbrainz/resource/toc/275403> ;
+      vocab:tracks "15"^^xsd:int ;
+      dc:date "1988-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "All Time Greatest Hits Volume I" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000002WBX> ;
+      mo:image <http://images.amazon.com/images/P/B000002WBX> , <http://ec1.images-amazon.com/images/P/B000002WBX.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/30f8271d-8b6a-4c77-9245-e4ab8a046ef3> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/456514> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/e3973cd1-0d76-47c5-a2c5-a3fe22a0bfe9> , <http://dbtune.org/musicbrainz/resource/track/24a952b7-9f95-416d-bede-531feb32d218> , <http://dbtune.org/musicbrainz/resource/track/91cd9b07-1cec-471a-a2ea-192d4a1cdc62> , <http://dbtune.org/musicbrainz/resource/track/0e47c82c-5afc-4a9e-98bf-f8cfc82685ef> , <http://dbtune.org/musicbrainz/resource/track/07f64a3d-d7a8-449f-87f6-e5226b86e03f> , <http://dbtune.org/musicbrainz/resource/track/c6b2bb99-52bb-4a78-a096-44dc9da53132> , <http://dbtune.org/musicbrainz/resource/track/fafa6225-ab4b-47e8-a05b-0388609a435a> , <http://dbtune.org/musicbrainz/resource/track/0835ab1b-dcbe-461a-98ec-672555987cd1> , <http://dbtune.org/musicbrainz/resource/track/0456ce9b-e103-4587-ba92-345be28d4d3c> , <http://dbtune.org/musicbrainz/resource/track/b6adc62c-1eac-41ab-83a4-15717e5e2c23> , <http://dbtune.org/musicbrainz/resource/track/f724df27-b447-448b-b602-d74854ecd91c> , <http://dbtune.org/musicbrainz/resource/track/0d85cce2-05b2-4944-b326-c1f21ba72543> , <http://dbtune.org/musicbrainz/resource/track/da13114b-8c9b-4916-9c87-b292f5842dff> , <http://dbtune.org/musicbrainz/resource/track/2bfc99b3-ea64-41c3-8cb0-bd675b0dcfaf> , <http://dbtune.org/musicbrainz/resource/track/e8e89177-b851-44f1-a01b-ec74451c5844> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/83e71a21-caf7-4e48-8ff7-6512d51e88a3> ;
+      foaf:page "81168042" .
+
+<http://dbtune.org/musicbrainz/resource/master/30f8271d-8b6a-4c77-9245-e4ab8a046ef3>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/30f8271d-8b6a-4c77-9245-e4ab8a046ef3> .
+
+<http://images.amazon.com/images/P/B000002WBX>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002WBX%3E> .
+
+<http://musicbrainz.org/album/30f8271d-8b6a-4c77-9245-e4ab8a046ef3>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F30f8271d-8b6a-4c77-9245-e4ab8a046ef3%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000002WBX>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000002WBX%3E> .
+
+<http://ec1.images-amazon.com/images/P/B000002WBX.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000002WBX.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/30f8271d-8b6a-4c77-9245-e4ab8a046ef3>
+      rdfs:label "RDF Description of All Time Greatest Hits Volume I" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/30f8271d-8b6a-4c77-9245-e4ab8a046ef3> .

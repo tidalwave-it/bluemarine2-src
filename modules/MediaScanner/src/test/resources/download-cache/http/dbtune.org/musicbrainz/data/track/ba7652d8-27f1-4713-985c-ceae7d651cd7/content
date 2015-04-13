@@ -1,0 +1,43 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/signal/ba7652d8-27f1-4713-985c-ceae7d651cd7>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/track/ba7652d8-27f1-4713-985c-ceae7d651cd7> .
+
+<http://dbtune.org/musicbrainz/resource/record/e151f1b6-3bdc-4103-90ee-facdebbd4435>
+      mo:track <http://dbtune.org/musicbrainz/resource/track/ba7652d8-27f1-4713-985c-ceae7d651cd7> .
+
+<http://dbtune.org/musicbrainz/resource/track/ba7652d8-27f1-4713-985c-ceae7d651cd7>
+      a       mo:Track ;
+      rdfs:label "It Never Entered My Mind" ;
+      dc:date "0"^^xsd:int ;
+      dc:title "It Never Entered My Mind" ;
+      mo:length "317920"^^xsd:int ;
+      mo:musicbrainz <http://musicbrainz.org/track/ba7652d8-27f1-4713-985c-ceae7d651cd7> ;
+      mo:track_number "6"^^xsd:int ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/561d854a-6a28-4aa7-8c99-323e6ce46c2a> .
+
+mo:Track
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FTrack%3E> .
+
+<http://dbtune.org/musicbrainz/data/track/ba7652d8-27f1-4713-985c-ceae7d651cd7>
+      rdfs:label "RDF Description of It Never Entered My Mind" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/track/ba7652d8-27f1-4713-985c-ceae7d651cd7> .
+
+<http://musicbrainz.org/track/ba7652d8-27f1-4713-985c-ceae7d651cd7>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Ftrack%2Fba7652d8-27f1-4713-985c-ceae7d651cd7%3E> .

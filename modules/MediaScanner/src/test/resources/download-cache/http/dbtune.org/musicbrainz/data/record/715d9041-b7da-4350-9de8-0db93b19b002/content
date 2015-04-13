@@ -1,0 +1,70 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/715d9041-b7da-4350-9de8-0db93b19b002>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F715d9041-b7da-4350-9de8-0db93b19b002%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B00005O6KH>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00005O6KH%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/715d9041-b7da-4350-9de8-0db93b19b002>
+      a       mo:Record ;
+      rdfs:label "Tijuana Moods (disc 2)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00005O6KH" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B00005O6KH.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "14"^^xsd:int ;
+      vocab:tracks "13"^^xsd:int ;
+      dc:date "2001-09-25" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Tijuana Moods (disc 2)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00005O6KH> ;
+      mo:image <http://images.amazon.com/images/P/B00005O6KH> , <http://images.amazon.com/images/P/B00005O6KH.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/715d9041-b7da-4350-9de8-0db93b19b002> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/161444> , <http://dbtune.org/musicbrainz/resource/release/23692> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/427fde16-492c-40de-a2a4-3a0447514d8c> , <http://dbtune.org/musicbrainz/resource/track/b42bcc84-47e1-4226-971d-da6b33fcbe03> , <http://dbtune.org/musicbrainz/resource/track/91d4828c-c8dc-45fd-adb2-aa14e2a0d312> , <http://dbtune.org/musicbrainz/resource/track/fff9cda9-ad54-4cb7-a4c5-fa98b1a57f5e> , <http://dbtune.org/musicbrainz/resource/track/90f92f57-5d37-4a7d-97c6-9d1b5e5e3bc0> , <http://dbtune.org/musicbrainz/resource/track/00511536-e8e2-4863-80f5-2771cbe06f39> , <http://dbtune.org/musicbrainz/resource/track/4bccf826-4ce4-4e91-8010-c7bac2da3e2a> , <http://dbtune.org/musicbrainz/resource/track/393ee3e4-140f-46f3-9f1e-3b3681268c6d> , <http://dbtune.org/musicbrainz/resource/track/5f3ebb5a-9627-4f31-b653-4834972e9d3c> , <http://dbtune.org/musicbrainz/resource/track/1e8dac61-af22-4327-883c-c65c0cd3dd01> , <http://dbtune.org/musicbrainz/resource/track/62503c68-8ba7-4354-933d-c5e72fd50d6e> , <http://dbtune.org/musicbrainz/resource/track/93d6f7f1-4e63-444d-ad6a-30575fc3b0e2> , <http://dbtune.org/musicbrainz/resource/track/f13c77ec-096a-4d3c-a0c3-9801c7b73983> ;
+      =       <http://dbpedia.org/resource/Tijuana_Moods> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/f3b8e107-abe8-4743-b6a3-4a4ee995e71f> ;
+      foaf:page "715511887" .
+
+<http://dbtune.org/musicbrainz/resource/master/715d9041-b7da-4350-9de8-0db93b19b002>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/715d9041-b7da-4350-9de8-0db93b19b002> .
+
+<http://images.amazon.com/images/P/B00005O6KH.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00005O6KH.01.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00005O6KH>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00005O6KH%3E> .
+
+<http://dbpedia.org/resource/Tijuana_Moods>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FTijuana_Moods%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/715d9041-b7da-4350-9de8-0db93b19b002>
+      rdfs:label "RDF Description of Tijuana Moods (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/715d9041-b7da-4350-9de8-0db93b19b002> .

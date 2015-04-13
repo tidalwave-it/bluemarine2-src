@@ -1,0 +1,43 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/signal/b1c0bc19-a5e4-48f1-bac1-c877acbbc68d>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/track/b1c0bc19-a5e4-48f1-bac1-c877acbbc68d> .
+
+<http://dbtune.org/musicbrainz/resource/record/096d9cca-d093-4a33-9651-8ddd5a62e09b>
+      mo:track <http://dbtune.org/musicbrainz/resource/track/b1c0bc19-a5e4-48f1-bac1-c877acbbc68d> .
+
+<http://musicbrainz.org/track/b1c0bc19-a5e4-48f1-bac1-c877acbbc68d>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Ftrack%2Fb1c0bc19-a5e4-48f1-bac1-c877acbbc68d%3E> .
+
+mo:Track
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FTrack%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/b1c0bc19-a5e4-48f1-bac1-c877acbbc68d>
+      a       mo:Track ;
+      rdfs:label "Blues for Pat" ;
+      dc:date "0"^^xsd:int ;
+      dc:title "Blues for Pat" ;
+      mo:length "365733"^^xsd:int ;
+      mo:musicbrainz <http://musicbrainz.org/track/b1c0bc19-a5e4-48f1-bac1-c877acbbc68d> ;
+      mo:track_number "4"^^xsd:int ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7daac7f9-8fcc-485f-a14f-f8091d98cf25> .
+
+<http://dbtune.org/musicbrainz/data/track/b1c0bc19-a5e4-48f1-bac1-c877acbbc68d>
+      rdfs:label "RDF Description of Blues for Pat" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/track/b1c0bc19-a5e4-48f1-bac1-c877acbbc68d> .

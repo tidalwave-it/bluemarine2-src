@@ -1,0 +1,56 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/98e94695-89d8-4d89-925c-ebb6265b92e1>
+      a       mo:Record ;
+      rdfs:label "Yellow Submarine / Eleanor Rigby" ;
+      vocab:album_attributes
+              "{0,2,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "3"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/261448> ;
+      vocab:tracks "2"^^xsd:int ;
+      dc:date "1966-08-05" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Yellow Submarine / Eleanor Rigby" ;
+      mo:musicbrainz <http://musicbrainz.org/album/98e94695-89d8-4d89-925c-ebb6265b92e1> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/210865> , <http://dbtune.org/musicbrainz/resource/release/210864> , <http://dbtune.org/musicbrainz/resource/release/212064> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/ae585b56-8d48-4d8a-9717-1365f1866a11> , <http://dbtune.org/musicbrainz/resource/track/b2181aae-5cba-496c-bb0c-b4cc0109ebf8> ;
+      =       <http://dbpedia.org/resource/Yellow_Submarine_(song)> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d> ;
+      foaf:page "879146520" .
+
+<http://dbtune.org/musicbrainz/data/record/98e94695-89d8-4d89-925c-ebb6265b92e1>
+      rdfs:label "RDF Description of Yellow Submarine / Eleanor Rigby" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/98e94695-89d8-4d89-925c-ebb6265b92e1> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbpedia.org/resource/Yellow_Submarine_(song)>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FYellow_Submarine_%28song%29%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/98e94695-89d8-4d89-925c-ebb6265b92e1>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/98e94695-89d8-4d89-925c-ebb6265b92e1> .
+
+<http://musicbrainz.org/album/98e94695-89d8-4d89-925c-ebb6265b92e1>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F98e94695-89d8-4d89-925c-ebb6265b92e1%3E> .

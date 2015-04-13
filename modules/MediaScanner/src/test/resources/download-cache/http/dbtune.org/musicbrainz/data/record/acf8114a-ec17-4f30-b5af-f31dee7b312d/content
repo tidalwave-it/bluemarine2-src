@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/acf8114a-ec17-4f30-b5af-f31dee7b312d>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/acf8114a-ec17-4f30-b5af-f31dee7b312d> .
+
+<http://dbtune.org/musicbrainz/resource/record/acf8114a-ec17-4f30-b5af-f31dee7b312d>
+      a       mo:Record ;
+      rdfs:label "Hello Dolly" ;
+      vocab:album_attributes
+              "{0}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "17"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/111602> ;
+      vocab:tracks "17"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Hello Dolly" ;
+      mo:musicbrainz <http://musicbrainz.org/album/acf8114a-ec17-4f30-b5af-f31dee7b312d> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/e5c4351e-eb9f-4b3c-a904-d74a46050a7c> , <http://dbtune.org/musicbrainz/resource/track/00a117e4-0354-40f8-8a9e-a5e04f1b1b5a> , <http://dbtune.org/musicbrainz/resource/track/d87c0f2d-680b-4659-a80e-352e15a5aa3e> , <http://dbtune.org/musicbrainz/resource/track/5b871a0d-8d74-4483-b3d2-7e2b7eb7bba3> , <http://dbtune.org/musicbrainz/resource/track/9cc7e965-e9cb-44c9-8473-c8ff624ae157> , <http://dbtune.org/musicbrainz/resource/track/104ea20a-6f92-42b5-b753-7350ceedb30c> , <http://dbtune.org/musicbrainz/resource/track/20cf995b-75ee-4dd4-87ea-46275901e755> , <http://dbtune.org/musicbrainz/resource/track/bb61fac7-ee7c-472b-8e81-ee03497d136f> , <http://dbtune.org/musicbrainz/resource/track/520237c5-523d-4caf-9ca4-409b9dac93f5> , <http://dbtune.org/musicbrainz/resource/track/b6bbae73-8bdc-4444-84ce-90c494835dec> , <http://dbtune.org/musicbrainz/resource/track/05c15187-bb2c-4902-944a-77cfd0142fbe> , <http://dbtune.org/musicbrainz/resource/track/47fbc291-e62b-462a-adfb-aa6221d97757> , <http://dbtune.org/musicbrainz/resource/track/cc825f05-0b0c-4cab-88fc-c25776b11670> , <http://dbtune.org/musicbrainz/resource/track/4b747a01-0801-4f2d-a1f4-4224b52fdd38> , <http://dbtune.org/musicbrainz/resource/track/fa9d0fd6-69fe-4f63-8a37-c0cffa4b5a31> , <http://dbtune.org/musicbrainz/resource/track/18829173-43bf-4ccf-a101-c9289788cb7a> , <http://dbtune.org/musicbrainz/resource/track/3c48d60f-9851-4982-8a17-29419dce25b1> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/eea8a864-fcda-4602-9569-38ab446decd6> ;
+      foaf:page "308721153" .
+
+<http://dbtune.org/musicbrainz/data/record/acf8114a-ec17-4f30-b5af-f31dee7b312d>
+      rdfs:label "RDF Description of Hello Dolly" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/acf8114a-ec17-4f30-b5af-f31dee7b312d> .
+
+<http://musicbrainz.org/album/acf8114a-ec17-4f30-b5af-f31dee7b312d>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Facf8114a-ec17-4f30-b5af-f31dee7b312d%3E> .

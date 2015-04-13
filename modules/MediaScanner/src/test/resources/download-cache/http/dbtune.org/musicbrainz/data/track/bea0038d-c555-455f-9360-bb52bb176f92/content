@@ -1,0 +1,43 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/track/bea0038d-c555-455f-9360-bb52bb176f92>
+      a       mo:Track ;
+      rdfs:label "All About the Money" ;
+      dc:date "0"^^xsd:int ;
+      dc:title "All About the Money" ;
+      mo:length "144626"^^xsd:int ;
+      mo:musicbrainz <http://musicbrainz.org/track/bea0038d-c555-455f-9360-bb52bb176f92> ;
+      mo:track_number "3"^^xsd:int ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/0df890e1-f4f2-4b21-a413-cd8af1af32d8> .
+
+<http://musicbrainz.org/track/bea0038d-c555-455f-9360-bb52bb176f92>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Ftrack%2Fbea0038d-c555-455f-9360-bb52bb176f92%3E> .
+
+<http://dbtune.org/musicbrainz/data/track/bea0038d-c555-455f-9360-bb52bb176f92>
+      rdfs:label "RDF Description of All About the Money" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/track/bea0038d-c555-455f-9360-bb52bb176f92> .
+
+<http://dbtune.org/musicbrainz/resource/signal/bea0038d-c555-455f-9360-bb52bb176f92>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/track/bea0038d-c555-455f-9360-bb52bb176f92> .
+
+mo:Track
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FTrack%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/7d70bc65-702a-4930-9064-8a8da5478d70>
+      mo:track <http://dbtune.org/musicbrainz/resource/track/bea0038d-c555-455f-9360-bb52bb176f92> .

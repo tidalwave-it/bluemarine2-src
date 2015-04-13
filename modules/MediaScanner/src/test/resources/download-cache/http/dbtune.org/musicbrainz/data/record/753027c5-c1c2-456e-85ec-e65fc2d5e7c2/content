@@ -1,0 +1,51 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/753027c5-c1c2-456e-85ec-e65fc2d5e7c2>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/753027c5-c1c2-456e-85ec-e65fc2d5e7c2> .
+
+<http://musicbrainz.org/album/753027c5-c1c2-456e-85ec-e65fc2d5e7c2>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F753027c5-c1c2-456e-85ec-e65fc2d5e7c2%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/753027c5-c1c2-456e-85ec-e65fc2d5e7c2>
+      a       mo:Record ;
+      rdfs:label "Classic FM Collectors CD: Best of Christmas" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/318762> ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Classic FM Collectors CD: Best of Christmas" ;
+      mo:musicbrainz <http://musicbrainz.org/album/753027c5-c1c2-456e-85ec-e65fc2d5e7c2> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/537068> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/ab1722b7-309b-47b6-ad52-f41ddcd69202> , <http://dbtune.org/musicbrainz/resource/track/6b038cbd-0ca9-4277-bc58-458f5426dd07> , <http://dbtune.org/musicbrainz/resource/track/db37a5ee-5eac-4882-9ceb-472261aa845e> , <http://dbtune.org/musicbrainz/resource/track/c296047d-46fc-4e23-8949-114886e728e3> , <http://dbtune.org/musicbrainz/resource/track/811bb5a1-2678-4f5b-97e7-999c39ba37b3> , <http://dbtune.org/musicbrainz/resource/track/d1097af4-ec19-43d3-a625-020ffc08628e> , <http://dbtune.org/musicbrainz/resource/track/054b52a1-eac7-406d-835e-cd4ada314449> , <http://dbtune.org/musicbrainz/resource/track/fff0addc-328b-47b4-bb3f-f34966bdac3e> , <http://dbtune.org/musicbrainz/resource/track/3b02f936-b68f-4456-b286-4dcad7f9b531> , <http://dbtune.org/musicbrainz/resource/track/c9cd1b06-ed67-42b7-812a-ca7bb63319d3> , <http://dbtune.org/musicbrainz/resource/track/bcc7cc2b-b414-476f-bbc4-36f22dbc8044> , <http://dbtune.org/musicbrainz/resource/track/c1410d26-682f-4852-acda-5fe966d69302> , <http://dbtune.org/musicbrainz/resource/track/26cd2f95-860f-4647-b321-53fff47d3afb> , <http://dbtune.org/musicbrainz/resource/track/fd3028c9-d6fa-406c-9c5f-c6b87a8bbbc8> , <http://dbtune.org/musicbrainz/resource/track/cb3e226f-c663-4ee5-8658-601b770ee93c> , <http://dbtune.org/musicbrainz/resource/track/cb2c74d2-e937-491e-8dc3-c2c9f287d372> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "147935882" .
+
+<http://dbtune.org/musicbrainz/data/record/753027c5-c1c2-456e-85ec-e65fc2d5e7c2>
+      rdfs:label "RDF Description of Classic FM Collectors CD: Best of Christmas" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/753027c5-c1c2-456e-85ec-e65fc2d5e7c2> .

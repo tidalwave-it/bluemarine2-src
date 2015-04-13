@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/c0efe3b9-9d3d-49d3-b13f-5aaed4e3dc1d>
+      a       mo:Record ;
+      rdfs:label "Imaginary Day" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000002NIE" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000002NIE.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "11"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/16678> , <http://dbtune.org/musicbrainz/resource/toc/273632> ;
+      vocab:tracks "9"^^xsd:int ;
+      dc:date "1997-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Imaginary Day" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000002NIE> ;
+      mo:image <http://images.amazon.com/images/P/B000002NIE> , <http://ec1.images-amazon.com/images/P/B000002NIE.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/c0efe3b9-9d3d-49d3-b13f-5aaed4e3dc1d> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/114703> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/f7003b2b-d92f-4989-a425-ee9bba16ce45> , <http://dbtune.org/musicbrainz/resource/track/4a22aa1f-27c3-49cb-adcb-f3a66b27707b> , <http://dbtune.org/musicbrainz/resource/track/12395465-3602-4c15-9a92-dd9e1f09009b> , <http://dbtune.org/musicbrainz/resource/track/9d36d057-e393-4f76-805b-2e8cacc10e1b> , <http://dbtune.org/musicbrainz/resource/track/942a98ce-b878-46e4-9ae1-9f76b08992ce> , <http://dbtune.org/musicbrainz/resource/track/ce3c1e89-299a-4c1d-bf32-862a8314b998> , <http://dbtune.org/musicbrainz/resource/track/2910b141-0095-4764-a91a-234c9e30b3e1> , <http://dbtune.org/musicbrainz/resource/track/6fbb3d65-fdb6-4d05-8338-1f3347907bff> , <http://dbtune.org/musicbrainz/resource/track/0da5856d-d3f7-417c-956d-6ba9c26af20c> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/66a7f1f8-0ad6-4e3a-9346-a643e2739a8c> ;
+      foaf:page "350298447" .
+
+<http://dbtune.org/musicbrainz/data/record/c0efe3b9-9d3d-49d3-b13f-5aaed4e3dc1d>
+      rdfs:label "RDF Description of Imaginary Day" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/c0efe3b9-9d3d-49d3-b13f-5aaed4e3dc1d> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000002NIE>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000002NIE%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B000002NIE>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002NIE%3E> .
+
+<http://ec1.images-amazon.com/images/P/B000002NIE.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000002NIE.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/c0efe3b9-9d3d-49d3-b13f-5aaed4e3dc1d>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/c0efe3b9-9d3d-49d3-b13f-5aaed4e3dc1d> .
+
+<http://musicbrainz.org/album/c0efe3b9-9d3d-49d3-b13f-5aaed4e3dc1d>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fc0efe3b9-9d3d-49d3-b13f-5aaed4e3dc1d%3E> .

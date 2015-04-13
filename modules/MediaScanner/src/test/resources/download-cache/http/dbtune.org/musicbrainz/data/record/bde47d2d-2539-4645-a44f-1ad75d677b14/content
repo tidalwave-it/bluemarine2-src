@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/bde47d2d-2539-4645-a44f-1ad75d677b14>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/bde47d2d-2539-4645-a44f-1ad75d677b14> .
+
+<http://dbtune.org/musicbrainz/resource/record/bde47d2d-2539-4645-a44f-1ad75d677b14>
+      a       mo:Record ;
+      rdfs:label "Septem Verba Christi in Cruce (vers. originale pour orchestre)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000S6NT0Y" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000S6NT0Y.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/312365> ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:date "2006-10-02" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/mul> ;
+      dc:title "Septem Verba Christi in Cruce (vers. originale pour orchestre)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000S6NT0Y> ;
+      mo:image <http://images.amazon.com/images/P/B000S6NT0Y> , <http://ec1.images-amazon.com/images/P/B000S6NT0Y.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/bde47d2d-2539-4645-a44f-1ad75d677b14> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/525792> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/8a5a60fc-1012-4e87-8370-ad3bbb160b31> , <http://dbtune.org/musicbrainz/resource/track/4a74b9ef-7e37-4317-b667-b911de00d566> , <http://dbtune.org/musicbrainz/resource/track/5f97c0bb-c767-460e-a0c9-5b05c1133f99> , <http://dbtune.org/musicbrainz/resource/track/9ca8419d-73b9-41f7-96d3-bb3bd1fe9c86> , <http://dbtune.org/musicbrainz/resource/track/f1e10a3d-046a-48a0-a85c-63f42bf567b7> , <http://dbtune.org/musicbrainz/resource/track/17be8e35-fa4e-4ea5-b896-b25c9e30031d> , <http://dbtune.org/musicbrainz/resource/track/35e1d02e-57fb-411b-8503-f9b757449693> , <http://dbtune.org/musicbrainz/resource/track/32b5b44e-0716-48c3-87a5-44d9d1a23997> , <http://dbtune.org/musicbrainz/resource/track/4cb54f83-f05c-4cec-9d62-4e63e66f5a43> , <http://dbtune.org/musicbrainz/resource/track/b617250b-5953-4dc3-b3a9-8d18e35804af> , <http://dbtune.org/musicbrainz/resource/track/05298dad-f155-4b5d-9602-d004b565f319> , <http://dbtune.org/musicbrainz/resource/track/d6f220b2-e9e4-465d-a920-fef2cb37eda9> , <http://dbtune.org/musicbrainz/resource/track/77cb54cd-3014-4fa6-b7cf-1e1a8b1dced5> , <http://dbtune.org/musicbrainz/resource/track/1c0c9478-81d8-4e62-9dc0-77339fd7df4f> , <http://dbtune.org/musicbrainz/resource/track/9ab18619-294c-44e0-9350-ea8718dcca3f> , <http://dbtune.org/musicbrainz/resource/track/4f732d5b-8f38-49cb-b5e4-1a5cfb40ef87> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/c130b0fb-5dce-449d-9f40-1437f889f7fe> ;
+      foaf:page "677958862" .
+
+<http://images.amazon.com/images/P/B000S6NT0Y>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000S6NT0Y%3E> .
+
+<http://musicbrainz.org/album/bde47d2d-2539-4645-a44f-1ad75d677b14>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fbde47d2d-2539-4645-a44f-1ad75d677b14%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000S6NT0Y>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000S6NT0Y%3E> .
+
+<http://ec1.images-amazon.com/images/P/B000S6NT0Y.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000S6NT0Y.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/bde47d2d-2539-4645-a44f-1ad75d677b14>
+      rdfs:label "RDF Description of Septem Verba Christi in Cruce (vers. originale pour orchestre)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/bde47d2d-2539-4645-a44f-1ad75d677b14> .

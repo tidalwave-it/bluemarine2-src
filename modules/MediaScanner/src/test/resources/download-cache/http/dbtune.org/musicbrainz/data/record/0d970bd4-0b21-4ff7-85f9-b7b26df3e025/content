@@ -1,0 +1,71 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/0d970bd4-0b21-4ff7-85f9-b7b26df3e025>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F0d970bd4-0b21-4ff7-85f9-b7b26df3e025%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000002AGM>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000002AGM%3E> .
+
+<http://images.amazon.com/images/P/B000002AGM.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002AGM.01.MZZZZZZZ.jpg%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B000002AGM>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002AGM%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/0d970bd4-0b21-4ff7-85f9-b7b26df3e025>
+      rdfs:label "RDF Description of Miles Ahead" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/0d970bd4-0b21-4ff7-85f9-b7b26df3e025> .
+
+<http://dbtune.org/musicbrainz/resource/master/0d970bd4-0b21-4ff7-85f9-b7b26df3e025>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/0d970bd4-0b21-4ff7-85f9-b7b26df3e025> .
+
+<http://dbpedia.org/resource/Miles_Ahead>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FMiles_Ahead%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/0d970bd4-0b21-4ff7-85f9-b7b26df3e025>
+      a       mo:Record ;
+      rdfs:label "Miles Ahead" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000002AGM" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B000002AGM.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "3"^^xsd:int ;
+      vocab:albummeta_puids
+              "47"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/110265> , <http://dbtune.org/musicbrainz/resource/toc/326490> , <http://dbtune.org/musicbrainz/resource/toc/14246> ;
+      vocab:tracks "14"^^xsd:int ;
+      dc:date "1997-09-23" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Miles Ahead" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000002AGM> ;
+      mo:image <http://images.amazon.com/images/P/B000002AGM.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000002AGM> ;
+      mo:musicbrainz <http://musicbrainz.org/album/0d970bd4-0b21-4ff7-85f9-b7b26df3e025> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/69224> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/478f91b9-2522-4d65-91e9-d21de1d46126> , <http://dbtune.org/musicbrainz/resource/track/c0767727-10e3-4776-863b-ed2f45e505cd> , <http://dbtune.org/musicbrainz/resource/track/ae589c6f-05e3-477a-92ff-a3949f58c046> , <http://dbtune.org/musicbrainz/resource/track/8278d578-9a79-46c6-9b65-7de3c1620dac> , <http://dbtune.org/musicbrainz/resource/track/c409641a-e1ad-4ae4-b321-b49ab968afe6> , <http://dbtune.org/musicbrainz/resource/track/7b339839-b2ab-4a58-ae66-fdc609861250> , <http://dbtune.org/musicbrainz/resource/track/4ab22d80-c9a9-4f7a-a903-10443c49c850> , <http://dbtune.org/musicbrainz/resource/track/61ed181c-2b07-49a9-ade8-6fcd19ba4c46> , <http://dbtune.org/musicbrainz/resource/track/8cc43515-eb23-430e-ac07-c7152766bfaa> , <http://dbtune.org/musicbrainz/resource/track/d93ea961-ded2-435f-8833-2894e2f0ab4a> , <http://dbtune.org/musicbrainz/resource/track/e2a91c6e-627e-45be-865f-d8619cef5bb6> , <http://dbtune.org/musicbrainz/resource/track/122efa85-e5d2-45a7-b9f2-7fe4031578a5> , <http://dbtune.org/musicbrainz/resource/track/3d65e2fd-f636-4844-bd6f-b76cbf54074e> , <http://dbtune.org/musicbrainz/resource/track/d05254e6-a08a-4552-8e32-a017f91d56ab> ;
+      =       <http://dbpedia.org/resource/Miles_Ahead> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/561d854a-6a28-4aa7-8c99-323e6ce46c2a> ;
+      foaf:page "480680577" .

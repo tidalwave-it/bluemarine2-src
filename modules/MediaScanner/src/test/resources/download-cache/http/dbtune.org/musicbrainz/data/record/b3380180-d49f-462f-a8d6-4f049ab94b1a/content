@@ -1,0 +1,51 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/b3380180-d49f-462f-a8d6-4f049ab94b1a>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fb3380180-d49f-462f-a8d6-4f049ab94b1a%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/b3380180-d49f-462f-a8d6-4f049ab94b1a>
+      a       mo:Record ;
+      rdfs:label "Les Quatre Ouvertures, Suites pour Orchestre (disc 1)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:date "2000-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/fra> ;
+      dc:title "Les Quatre Ouvertures, Suites pour Orchestre (disc 1)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/b3380180-d49f-462f-a8d6-4f049ab94b1a> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/544912> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/1b4a77df-e471-4471-b8f7-cf576b754e94> , <http://dbtune.org/musicbrainz/resource/track/bc31746a-baa8-478b-a0b5-e4df6a299d44> , <http://dbtune.org/musicbrainz/resource/track/00c909a4-1805-445e-a2cf-b31ba3ce3acf> , <http://dbtune.org/musicbrainz/resource/track/75033900-3859-4861-80c6-eb2a4c3bf298> , <http://dbtune.org/musicbrainz/resource/track/c9709a22-4559-4672-9101-cc97824fb285> , <http://dbtune.org/musicbrainz/resource/track/05515ed9-13ea-4249-bd81-7f12ed9f7510> , <http://dbtune.org/musicbrainz/resource/track/61903d9b-313f-4ee2-9951-ca8b0f774cc6> , <http://dbtune.org/musicbrainz/resource/track/c43e6b2b-6dda-43b7-bd66-66dd4794aebf> , <http://dbtune.org/musicbrainz/resource/track/e8ad44b3-69c2-40fd-a2c0-21c95392bf6d> , <http://dbtune.org/musicbrainz/resource/track/25ee5009-6ecf-4584-8172-9c8c708ab42d> , <http://dbtune.org/musicbrainz/resource/track/35d26141-3e5d-4aa7-b685-4ad0a1179b3e> , <http://dbtune.org/musicbrainz/resource/track/d11625e3-5ee0-4e85-9622-cc06adc05742> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/24f1766e-9635-4d58-a4d4-9413f9f98a4c> ;
+      foaf:page "443156054" .
+
+<http://dbtune.org/musicbrainz/data/record/b3380180-d49f-462f-a8d6-4f049ab94b1a>
+      rdfs:label "RDF Description of Les Quatre Ouvertures, Suites pour Orchestre (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/b3380180-d49f-462f-a8d6-4f049ab94b1a> .
+
+<http://dbtune.org/musicbrainz/resource/master/b3380180-d49f-462f-a8d6-4f049ab94b1a>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/b3380180-d49f-462f-a8d6-4f049ab94b1a> .

@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/655219aa-f312-445d-9182-5af2d23ab65e>
+      rdfs:label "RDF Description of Bright Size Life" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/655219aa-f312-445d-9182-5af2d23ab65e> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://ec1.images-amazon.com/images/P/B0000261L9.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0000261L9.01.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000261L9>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000261L9%3E> .
+
+<http://images.amazon.com/images/P/B0000261L9>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000261L9%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/655219aa-f312-445d-9182-5af2d23ab65e>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/655219aa-f312-445d-9182-5af2d23ab65e> .
+
+<http://dbtune.org/musicbrainz/resource/record/655219aa-f312-445d-9182-5af2d23ab65e>
+      a       mo:Record ;
+      rdfs:label "Bright Size Life" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000261L9" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0000261L9.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "9"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/251479> , <http://dbtune.org/musicbrainz/resource/toc/55895> ;
+      vocab:tracks "8"^^xsd:int ;
+      dc:date "1975-12-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Bright Size Life" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000261L9> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B0000261L9.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B0000261L9> ;
+      mo:musicbrainz <http://musicbrainz.org/album/655219aa-f312-445d-9182-5af2d23ab65e> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/63973> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/2fa9d41b-5f31-49b6-8dcb-9e5227f39747> , <http://dbtune.org/musicbrainz/resource/track/3ccbb811-16b7-477c-abf1-c2548259a50b> , <http://dbtune.org/musicbrainz/resource/track/5cb02646-1572-4a91-a30c-4cc5fb3ef305> , <http://dbtune.org/musicbrainz/resource/track/16a4b02d-3a1b-4d2b-bb96-f3077966ecf4> , <http://dbtune.org/musicbrainz/resource/track/8a7c7801-c68f-4779-ae49-00b906b80e9a> , <http://dbtune.org/musicbrainz/resource/track/cba70c21-dfd6-4a6f-9559-b255c16c8f1d> , <http://dbtune.org/musicbrainz/resource/track/1021a658-26e4-47c5-ba76-7825ca86ae19> , <http://dbtune.org/musicbrainz/resource/track/14ccfce9-0247-4c68-bfac-37bb4edf2d56> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7daac7f9-8fcc-485f-a14f-f8091d98cf25> ;
+      foaf:page "120922421" .
+
+<http://musicbrainz.org/album/655219aa-f312-445d-9182-5af2d23ab65e>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F655219aa-f312-445d-9182-5af2d23ab65e%3E> .

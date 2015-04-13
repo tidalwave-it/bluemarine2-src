@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/17dd943d-c652-4bfa-95dd-2f5c6564fb27>
+      a       mo:Record ;
+      rdfs:label "The Beatles 1962-1970, Part 3" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "12"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/95474> ;
+      vocab:tracks "18"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Beatles 1962-1970, Part 3" ;
+      mo:musicbrainz <http://musicbrainz.org/album/17dd943d-c652-4bfa-95dd-2f5c6564fb27> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/3ff3aea8-a673-4cd6-9b8d-b42f25c823fc> , <http://dbtune.org/musicbrainz/resource/track/78ab5b33-ec35-4a55-b9a1-3973b8d1096f> , <http://dbtune.org/musicbrainz/resource/track/9f5b0138-afec-4dd7-8ba1-216de4a8d97f> , <http://dbtune.org/musicbrainz/resource/track/62c78fb0-24f5-4f1c-9cc6-c691e4e77c1c> , <http://dbtune.org/musicbrainz/resource/track/b849acd4-0638-49ea-8e40-7391613d4890> , <http://dbtune.org/musicbrainz/resource/track/9fe48403-b2c2-4e2d-9db9-80833b6c3f90> , <http://dbtune.org/musicbrainz/resource/track/1f5496a7-1a41-44da-b90a-a10c98a2b83f> , <http://dbtune.org/musicbrainz/resource/track/cc57e59e-5d6b-4fc3-a16f-fb649075c241> , <http://dbtune.org/musicbrainz/resource/track/91abc58b-8ec7-4295-8c0e-a30bfb8bc01e> , <http://dbtune.org/musicbrainz/resource/track/b0cdbf53-3dcf-495f-957c-f9392f2b5699> , <http://dbtune.org/musicbrainz/resource/track/15127932-c879-466e-b0f8-a1c5022d16e7> , <http://dbtune.org/musicbrainz/resource/track/2546309e-841f-423f-9e2b-b5424b894ac1> , <http://dbtune.org/musicbrainz/resource/track/05a01b6f-ea96-4027-9ea5-9cb034d89348> , <http://dbtune.org/musicbrainz/resource/track/4b8c7923-a291-496b-a812-81eef3a78586> , <http://dbtune.org/musicbrainz/resource/track/17bf92fc-3921-4394-afd1-7c56ad793498> , <http://dbtune.org/musicbrainz/resource/track/0640e2cb-22c0-466f-a8c4-21e41d18f0a4> , <http://dbtune.org/musicbrainz/resource/track/440f60e8-0b25-4ec4-abb1-c6beec624ab0> , <http://dbtune.org/musicbrainz/resource/track/7c72c116-37c1-4fdc-884e-25d617bd31ef> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d> ;
+      foaf:page "714277990" .
+
+<http://dbtune.org/musicbrainz/data/record/17dd943d-c652-4bfa-95dd-2f5c6564fb27>
+      rdfs:label "RDF Description of The Beatles 1962-1970, Part 3" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/17dd943d-c652-4bfa-95dd-2f5c6564fb27> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/17dd943d-c652-4bfa-95dd-2f5c6564fb27>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/17dd943d-c652-4bfa-95dd-2f5c6564fb27> .
+
+<http://musicbrainz.org/album/17dd943d-c652-4bfa-95dd-2f5c6564fb27>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F17dd943d-c652-4bfa-95dd-2f5c6564fb27%3E> .
