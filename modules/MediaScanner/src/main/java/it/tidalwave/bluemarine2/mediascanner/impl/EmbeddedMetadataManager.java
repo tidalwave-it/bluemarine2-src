@@ -37,7 +37,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 import java.util.function.Function;
 import org.openrdf.model.URI;
 import org.openrdf.model.Statement;
@@ -57,11 +56,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
-import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import java.nio.file.Files;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import lombok.Getter;
 
 /***********************************************************************************************************************
  *
@@ -72,12 +72,28 @@ import java.nio.file.Files;
 @Slf4j
 public class EmbeddedMetadataManager 
   {
-    class ConcurrentHashMapWithOptionals<K, V> extends ConcurrentHashMap<K, V>
+    @RequiredArgsConstructor @Getter @ToString
+    static class Entry<K, V> 
+      {
+        @Nonnull
+        private final K key;
+        
+        @Nonnull
+        private final V value;
+      }
+    
+    static class ConcurrentHashMapWithOptionals<K, V> extends ConcurrentHashMap<K, V>
       {
         @Nonnull
         public Optional<K> putIfAbsentAndGetNewKey (final @Nonnull Optional<K> key, final @Nonnull V value)
           {
-            return key.flatMap(k -> (putIfAbsent(k, value) == null) ? Optional.of(k) : Optional.empty());
+            return key.flatMap(k -> putIfAbsentAndGetNewKey(k, value));
+          }
+        
+        @Nonnull
+        public Optional<K> putIfAbsentAndGetNewKey (final @Nonnull K key, final @Nonnull V value)
+          {
+            return (putIfAbsent(key, value) == null) ? Optional.of(key) : Optional.empty();
           }
       }
     
@@ -193,40 +209,58 @@ public class EmbeddedMetadataManager
      ******************************************************************************************************************/
     public void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI trackUri) 
       {
+        // FIXME: scenarios can be complex. For instance, we could have a valid MBZ artistId - we might be here just
+        // because we couldn't retrieve the DbTune resource for the track.
+        // Also, consider the COMPOSER.
         log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackUri);
         
         final Metadata metadata           = mediaItem.getMetadata();  
         final Entity parent               = mediaItem.getParent();
+        log.debug(">>>> metadata of {}: {}", trackUri, metadata);
+        
         final Optional<String> title      = metadata.get(Metadata.TITLE);
-        final Optional<String> artistName = metadata.get(Metadata.ARTIST);
+        // FIXME: try to split multiple names?
+        final Stream<String> artistNames  = metadata.get(Metadata.ARTIST).map(name -> Stream.of(name)).orElse(Stream.empty());
+        
+//        final Stream<String> artistNames  = metadata.get(Metadata.ARTIST)
+//        final List<Id> artistsMBIds       = metadata.getAll(Metadata.MBZ_ARTIST_ID);
         final String recordTitle          = metadata.get(Metadata.ALBUM)
                                                     .orElse(((MediaFolder)parent).getPath().toFile().getName()); // FIXME
 //                                                    .orElse(parent.as(Displayable).getDisplayName());
         
-        final Optional<URI> artistUri     = artistName.map(name -> createUriForLocalArtist(name));
+        final List<Entry<URI, String>> artistEntries  = artistNames.map(name -> 
+                new Entry<>(createUriForLocalArtist(name), name)).collect(Collectors.toList());
         final Optional<URI> recordUri     = Optional.of(createUriForLocalRecord(recordTitle));
 
-        final Optional<URI> newArtistUri  = seenArtistUris.putIfAbsentAndGetNewKey(artistUri, true);
+        final Stream<Entry<URI, String>> newArtistEntries   = artistEntries.stream().filter(e -> 
+                seenArtistUris.putIfAbsentAndGetNewKey(e.getKey(), true).isPresent());
+//        final Stream<URI> newArtistUris   = artistUris.flatMap(uri -> 
+//                seenArtistUris.putIfAbsentAndGetNewKey(uri, true).map(x -> Stream.of(x)));
         final Optional<URI> newRecordUri  = seenRecordUris.putIfAbsentAndGetNewKey(recordUri, true);
         
         statementManager.requestAddStatements()
-            .with(trackUri,     RDFS.LABEL,       literalFor(title))
-            .with(trackUri,     DC.TITLE,         literalFor(title))
-            .with(trackUri,     FOAF.MAKER,       artistUri)
+            .with(trackUri,      RDFS.LABEL,       literalFor(title))
+            .with(trackUri,      DC.TITLE,         literalFor(title))
+            .with(trackUri,      FOAF.MAKER,       artistEntries.stream().map(e -> e.getKey()))
 
-            .with(recordUri,    MO.P_TRACK,       trackUri)
+            .with(recordUri,     MO.P_TRACK,       trackUri)
 
-            .with(newArtistUri, RDF.TYPE,         MO.C_MUSIC_ARTIST)
-            .with(newArtistUri, RDFS.LABEL,       literalFor(artistName))
-            .with(newArtistUri, FOAF.NAME,        literalFor(artistName))
-
-            .with(newRecordUri, RDF.TYPE,         MO.C_RECORD)
-            .with(newRecordUri, RDFS.LABEL,       literalFor(recordTitle))
-            .with(newRecordUri, DC.TITLE,         literalFor(recordTitle))
-            .with(newRecordUri, FOAF.MAKER,       artistUri)
-            .with(newRecordUri, MO.P_MEDIA_TYPE,  MO.C_CD)
-            .with(newRecordUri, MO.P_TRACK_COUNT, literalFor(parent.as(SimpleComposite8).findChildren().count()))
+            .with(newRecordUri,  RDF.TYPE,         MO.C_RECORD)
+            .with(newRecordUri,  RDFS.LABEL,       literalFor(recordTitle))
+            .with(newRecordUri,  DC.TITLE,         literalFor(recordTitle))
+            .with(newRecordUri,  FOAF.MAKER,       artistEntries.stream().map(e -> e.getKey()))
+            .with(newRecordUri,  MO.P_MEDIA_TYPE,  MO.C_CD)
+            .with(newRecordUri,  MO.P_TRACK_COUNT, literalFor(parent.as(SimpleComposite8).findChildren().count()))
             .publish();
+        
+        newArtistEntries.forEach(e -> // FIXME
+          {
+            statementManager.requestAddStatements()
+                .with(e.getKey(), RDF.TYPE,         MO.C_MUSIC_ARTIST)
+                .with(e.getKey(), RDFS.LABEL,       literalFor(e.getValue()))
+                .with(e.getKey(), FOAF.NAME,        literalFor(e.getValue()))
+                .publish();
+          } );
       }
 
     /*******************************************************************************************************************

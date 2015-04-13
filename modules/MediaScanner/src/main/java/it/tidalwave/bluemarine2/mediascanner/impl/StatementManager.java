@@ -41,6 +41,7 @@ import it.tidalwave.bluemarine2.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Optional;
+import java.util.stream.Stream;
 import lombok.extern.slf4j.Slf4j;
 import org.openrdf.model.Resource;
 import org.openrdf.model.URI;
@@ -89,6 +90,28 @@ public class StatementManager
             return subject.isPresent() && object.isPresent() 
                     ? with(factory.createStatement(subject.get(), predicate, object.get())) 
                     : this;
+          }
+        
+        @Nonnull
+        public Builder with (final @Nonnull Resource subject, 
+                             final @Nonnull URI predicate,
+                             final @Nonnull Stream<? extends Value> objects)
+          { 
+            objects.forEach(object -> with(subject, predicate, object)); // FIXME ?? this = with(...)
+            return this;
+          }
+        
+        @Nonnull
+        public Builder with (final @Nonnull Optional<? extends Resource> subject, 
+                             final @Nonnull URI predicate,
+                             final @Nonnull Stream<? extends Value> objects)
+          {
+            if (subject.isPresent())
+              {
+                objects.forEach(object -> with(subject, predicate, object)); // FIXME ?? this = with(...)
+              }
+    
+            return this;
           }
         
         @Nonnull
