@@ -72,10 +72,19 @@ import java.nio.file.Files;
 @Slf4j
 public class EmbeddedMetadataManager 
   {
-    // Set would suffice, but there's no ConcurrentSet
-    private final ConcurrentMap<URI, Boolean> seenArtistUris = new ConcurrentHashMap<>();
+    class ConcurrentHashMapWithOptionals<K, V> extends ConcurrentHashMap<K, V>
+      {
+        // FIXME: rename (semantics is slightly different than the original putIfAbsent())
+        public Optional<K> putIfAbsentAndGetNewKey (final @Nonnull Optional<K> key, final @Nonnull V value)
+          {
+            return (key.isPresent() && (putIfAbsent(key.get(), value) == null)) ? key : Optional.empty();
+          }
+      }
     
-    private final ConcurrentMap<URI, Boolean> seenRecordUris = new ConcurrentHashMap<>();
+    // Set would suffice, but there's no ConcurrentSet
+    private final ConcurrentHashMapWithOptionals<URI, Boolean> seenArtistUris = new ConcurrentHashMapWithOptionals<>();
+    
+    private final ConcurrentHashMapWithOptionals<URI, Boolean> seenRecordUris = new ConcurrentHashMapWithOptionals<>();
     
     @Inject
     private StatementManager statementManager;
@@ -197,8 +206,8 @@ public class EmbeddedMetadataManager
         final Optional<URI> artistUri     = artistName.map(name -> createUriForLocalArtist(name));
         final Optional<URI> recordUri     = Optional.of(createUriForLocalRecord(recordTitle));
 
-        final Optional<URI> newArtistUri  = putIfAbsentAndGetNewKey(seenArtistUris, artistUri, true);
-        final Optional<URI> newRecordUri  = putIfAbsentAndGetNewKey(seenRecordUris, recordUri, true);
+        final Optional<URI> newArtistUri  = seenArtistUris.putIfAbsentAndGetNewKey(artistUri, true);
+        final Optional<URI> newRecordUri  = seenRecordUris.putIfAbsentAndGetNewKey(recordUri, true);
         
         statementManager.requestAddStatements()
             .with(trackUri,     RDFS.LABEL,       literalFor(title))
@@ -238,17 +247,5 @@ public class EmbeddedMetadataManager
     private URI createUriForLocalArtist (final @Nonnull String name) 
       {
         return BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + name));
-      }
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    // FIXME: rename (semantics is slightly different than the original putIfAbsent())
-    private static <K, V> Optional<K> putIfAbsentAndGetNewKey (final @Nonnull ConcurrentMap<K, V> cMap, 
-                                                   final @Nonnull Optional<K> key,
-                                                   final @Nonnull V value)
-      {
-        return (key.isPresent() && (cMap.putIfAbsent(key.get(), value) == null)) ? key : Optional.empty();
       }
   }
