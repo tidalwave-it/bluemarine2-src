@@ -231,8 +231,9 @@ public class EmbeddedMetadataManager
                 .orElse(Stream.empty())
                 .map(name -> new Entry<>(createUriForLocalArtist(name), name))
                 .collect(Collectors.toList());
-        final Stream<Entry<URI, String>> newArtists   = artists.stream().filter(
-                e -> seenArtistUris.putIfAbsentAndGetNewKey(e.getKey(), true).isPresent());
+        final List<Entry<URI, String>> newArtists   = artists.stream().filter(
+                e -> seenArtistUris.putIfAbsentAndGetNewKey(e.getKey(), true).isPresent())
+                .collect(Collectors.toList());
         
         final Optional<URI> newGroupUri = (artists.size() <= 1) ? Optional.empty()
                 : seenArtistUris.putIfAbsentAndGetNewKey(makerUri, true);
@@ -265,16 +266,14 @@ public class EmbeddedMetadataManager
             .with(newGroupUri,   FOAF.NAME,                 literalFor(makerName))
             .with(newGroupUri,   DbTune.ARTIST_TYPE,        literalFor((short)2))
             .with(newGroupUri,   Purl.COLLABORATES_WITH,    artists.stream().map(Entry::getKey))
+                
+            .with(newArtists.stream().map(Entry::getKey).collect(Collectors.toList()),
+                                 RDF.TYPE,                  MO.C_MUSIC_ARTIST)
+            .with(newArtists.stream().map(Entry::getKey).collect(Collectors.toList()),
+                                 RDFS.LABEL, newArtists.stream().map(e -> literalFor(e.getValue())).collect(Collectors.toList()))
+            .with(newArtists.stream().map(Entry::getKey).collect(Collectors.toList()),
+                                 FOAF.NAME, newArtists.stream().map(e -> literalFor(e.getValue())).collect(Collectors.toList()))
             .publish();
-        
-        newArtists.forEach(e -> // FIXME
-          {
-            statementManager.requestAddStatements()
-                .with(e.getKey(), RDF.TYPE,         MO.C_MUSIC_ARTIST)
-                .with(e.getKey(), RDFS.LABEL,       literalFor(e.getValue()))
-                .with(e.getKey(), FOAF.NAME,        literalFor(e.getValue()))
-                .publish();
-          } );
       }
 
     /*******************************************************************************************************************
