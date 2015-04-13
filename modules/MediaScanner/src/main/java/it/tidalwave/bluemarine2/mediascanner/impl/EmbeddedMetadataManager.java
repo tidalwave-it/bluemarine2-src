@@ -201,24 +201,23 @@ public class EmbeddedMetadataManager
         final Optional<URI> newRecordUri  = putIfAbsentAndGetNewKey(seenRecordUris, recordUri, true);
         
         statementManager.requestAddStatements()
-                         .with(trackUri,     RDFS.LABEL,       literalFor(title))
-                         .with(trackUri,     DC.TITLE,         literalFor(title))
-                         .with(trackUri,     FOAF.MAKER,       artistUri)
+            .with(trackUri,     RDFS.LABEL,       literalFor(title))
+            .with(trackUri,     DC.TITLE,         literalFor(title))
+            .with(trackUri,     FOAF.MAKER,       artistUri)
 
-                         .with(recordUri,    MO.P_TRACK,       trackUri)
-        
-                         .with(newArtistUri, RDF.TYPE,         MO.C_MUSIC_ARTIST)
-                         .with(newArtistUri, RDFS.LABEL,       literalFor(artistName))
-                         .with(newArtistUri, FOAF.NAME,        literalFor(artistName))
-        
-                         .with(newRecordUri, RDF.TYPE,         MO.C_RECORD)
-                         .with(newRecordUri, RDFS.LABEL,       literalFor(recordTitle))
-                         .with(newRecordUri, DC.TITLE,         literalFor(recordTitle))
-                         .with(newRecordUri, FOAF.MAKER,       artistUri)
-                         .with(newRecordUri, MO.P_MEDIA_TYPE,  MO.C_CD)
-                         .with(newRecordUri, MO.P_TRACK_COUNT, literalFor(parent.as(SimpleComposite8).findChildren()
-                                                                                                     .count()))
-                         .publish();
+            .with(recordUri,    MO.P_TRACK,       trackUri)
+
+            .with(newArtistUri, RDF.TYPE,         MO.C_MUSIC_ARTIST)
+            .with(newArtistUri, RDFS.LABEL,       literalFor(artistName))
+            .with(newArtistUri, FOAF.NAME,        literalFor(artistName))
+
+            .with(newRecordUri, RDF.TYPE,         MO.C_RECORD)
+            .with(newRecordUri, RDFS.LABEL,       literalFor(recordTitle))
+            .with(newRecordUri, DC.TITLE,         literalFor(recordTitle))
+            .with(newRecordUri, FOAF.MAKER,       artistUri)
+            .with(newRecordUri, MO.P_MEDIA_TYPE,  MO.C_CD)
+            .with(newRecordUri, MO.P_TRACK_COUNT, literalFor(parent.as(SimpleComposite8).findChildren().count()))
+            .publish();
       }
 
     /*******************************************************************************************************************
