@@ -59,6 +59,7 @@ import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
 import static it.tidalwave.bluemarine2.downloader.DownloadRequest.Option.FOLLOW_REDIRECT;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
+import java.util.Optional;
 
 /***********************************************************************************************************************
  *
@@ -77,6 +78,9 @@ public class DbTuneMetadataManager
     
     @Inject
     private StatementManager statementManager;
+    
+    @Inject
+    private EmbeddedMetadataManager embeddedMetadataManager;
     
     @Inject
     private Shared shared;
@@ -180,7 +184,7 @@ public class DbTuneMetadataManager
                 final Model model = parseModel(message);
                 statementManager.requestAdd(model.stream().filter(trackStatementFilterFor(trackUri)).collect(toList()));
                 model.filter(trackUri, FOAF.MAKER, null)
-                     .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
+                     .forEach(statement -> requestArtistMetadata((URI)statement.getObject(), Optional.empty()));
                 model.filter(null, MO.P_TRACK, trackUri)
                      .forEach(statement -> requestRecordMetadata((URI)statement.getSubject()));
               }   
@@ -196,9 +200,6 @@ public class DbTuneMetadataManager
           }
       }
     
-    @Inject
-    private EmbeddedMetadataManager embeddedMetadataManager;
-    
     /*******************************************************************************************************************
      *
      *
@@ -209,10 +210,26 @@ public class DbTuneMetadataManager
           {
             log.debug("onArtistMetadataDownloadComplete({})", message);
             final URI artistUri = uriFor(message.getUrl());
-            final Model model = parseModel(message);
-            statementManager.requestAdd(model.stream().filter(artistStatementFilterFor(artistUri)).collect(toList()));
-            model.filter(artistUri, Purl.COLLABORATES_WITH, null)
-                 .forEach(statement -> requestArtistMetadata((URI)statement.getObject()));
+            
+            if (message.getStatusCode() == 200) // FIXME
+              {
+                final Model model = parseModel(message);
+                statementManager.requestAdd(model.stream().filter(artistStatementFilterFor(artistUri)).collect(toList()));
+                model.filter(artistUri, Purl.COLLABORATES_WITH, null)
+                     .forEach(statement -> requestArtistMetadata((URI)statement.getObject(), Optional.empty()));
+              }
+            else
+              {
+                shared.seenArtistUris.get(artistUri).ifPresent(name ->
+                  {
+                    log.debug(">>>> using fallback data for {}: {}", artistUri, name);
+                    statementManager.requestAddStatements()
+                        .with(artistUri, RDF.TYPE,   MO.C_MUSIC_ARTIST)
+                        .with(artistUri, RDFS.LABEL, literalFor(name))
+                        .with(artistUri, FOAF.NAME,  literalFor(name))
+                        .publish();
+                  });
+              }
           }   
         catch (IOException | RDFHandlerException | RDFParseException e)
           {
@@ -254,16 +271,17 @@ public class DbTuneMetadataManager
      *
      * Posts a requesto to download metadata for the given {@code artistUri}, if not available yet.
      * 
-     * @param   artistUri   the URI of the artist
+     * @param   artistUri       the URI of the artist
+     * @param   fallbackName    an optional name that will be used as a fallback
      *
      ******************************************************************************************************************/
-    private void requestArtistMetadata (final @Nonnull URI artistUri)
+    public void requestArtistMetadata (final @Nonnull URI artistUri, final @Nonnull Optional<String> fallbackName)
       {
         try
           {
             log.debug("requestArtistMetadata({})", artistUri);
             
-            if (shared.seenArtistUris.putIfAbsent(artistUri, true) == null)
+            if (shared.seenArtistUris.putIfAbsent(artistUri, fallbackName) == null)
               {
                 progress.incrementTotalArtists();
                 requestDownload(urlFor(artistUri));

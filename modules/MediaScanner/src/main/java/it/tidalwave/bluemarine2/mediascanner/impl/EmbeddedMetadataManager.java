@@ -80,6 +80,9 @@ public class EmbeddedMetadataManager
         @Nonnull
         private final String name;
       }
+
+    @Inject
+    private DbTuneMetadataManager dbTuneMetadataManager;
     
     @Inject
     private StatementManager statementManager;
@@ -206,6 +209,8 @@ public class EmbeddedMetadataManager
         else
           {
             makerUri = Optional.of(artists.get(0).getUri()); // FIXME Not only the first one
+            dbTuneMetadataManager.requestArtistMetadata(makerUri.get(), makerName);
+            
 //            artists.clear(); // don't try to add new artists - we don't have the name. We hope we have already their data somewhere 
         /*
             FIXME: Unfortunately, we don't have their data when there are no other tracks/records that trigger a download
@@ -243,13 +248,13 @@ public class EmbeddedMetadataManager
           }
         
         final List<Entry> newArtists   = artists.stream().filter(
-                e -> shared.seenArtistUris.putIfAbsentAndGetNewKey(e.getUri(), true).isPresent())
+                e -> shared.seenArtistUris.putIfAbsentAndGetNewKey(e.getUri(), Optional.empty()).isPresent())
                 .collect(toList());
         final List<URI> newArtistUris       = newArtists.stream().map(Entry::getUri).collect(toList());
         final List<Value> newArtistLiterals = newArtists.stream().map(e -> literalFor(e.getName())).collect(toList());
         
         final Optional<URI> newGroupUri = (artists.size() <= 1) ? Optional.empty()
-                : shared.seenArtistUris.putIfAbsentAndGetNewKey(makerUri, true);
+                : shared.seenArtistUris.putIfAbsentAndGetNewKey(makerUri, Optional.empty());
 
 //        final List<Id> artistsMBIds       = metadata.getAll(Metadata.MBZ_ARTIST_ID); TODO
         
