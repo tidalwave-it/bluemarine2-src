@@ -75,14 +75,7 @@ public class RepositoryBrowserSupport implements EntityBrowser
     
     protected final void setFinder (final @Nonnull Supplier<Finder<? extends Entity>> finderSupplier)
       {
-        compositeForRootEntity = new SimpleComposite8<Entity>()
-          {
-            @Override @Nonnull
-            public Finder8<Entity> findChildren() 
-              {
-                return (Finder8<Entity>)finderSupplier.get();
-              } 
-          };
+        compositeForRootEntity = () -> (Finder8<Entity>)finderSupplier.get(); // FIXME: drop cast
       }   
     
     @Nonnull
