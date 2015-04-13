@@ -72,9 +72,29 @@ public class StatementManager
           }
         
         @Nonnull
+        public Builder with (final @Nonnull Optional<? extends Resource> subject, 
+                             final @Nonnull URI predicate,
+                             final @Nonnull Value object) 
+          {
+            return subject.isPresent()
+                    ? with(factory.createStatement(subject.get(), predicate, object)) 
+                    : this;
+          }
+        
+        @Nonnull
+        public Builder with (final @Nonnull Optional<? extends Resource> subject, 
+                             final @Nonnull URI predicate,
+                             final @Nonnull Optional<? extends Value> object) 
+          {
+            return subject.isPresent() && object.isPresent() 
+                    ? with(factory.createStatement(subject.get(), predicate, object.get())) 
+                    : this;
+          }
+        
+        @Nonnull
         public Builder with (final @Nonnull Resource subject, 
                              final @Nonnull URI predicate,
-                             final @Nonnull Optional<Value> object)
+                             final @Nonnull Optional<? extends Value> object)
           { 
             return object.isPresent() ? with(subject, predicate, object.get()) : this;
           }

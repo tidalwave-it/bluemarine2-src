@@ -183,52 +183,48 @@ public class EmbeddedMetadataManager
         log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackUri);
         
         final Metadata metadata = mediaItem.getMetadata();  
-        StatementManager.Builder builder = statementManager.requestAddStatements();
         
-        final Optional<String> title = metadata.get(Metadata.TITLE);
-        builder = builder.with(trackUri, DC.TITLE,   literalFor(title))
-                         .with(trackUri, RDFS.LABEL, literalFor(title));
-
-        final Optional<String> artist = metadata.get(Metadata.ARTIST);
-        URI artistUri = null;
-        
-        if (artist.isPresent()) // FIXME
-          {
-            final String artistName = artist.get();
-            artistUri = BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + artistName));
-            builder = builder.with(trackUri, FOAF.MAKER, artistUri);
-
-            if (seenArtistUris.putIfAbsent(artistUri, true) == null)
-              {
-                final Value nameLiteral = literalFor(artistName);
-                builder = builder.with(artistUri, RDF.TYPE,   MO.C_MUSIC_ARTIST)
-                                 .with(artistUri, FOAF.NAME,  nameLiteral)
-                                 .with(artistUri, RDFS.LABEL, nameLiteral);
-              }
-          }
-        
+        final Optional<String> title      = metadata.get(Metadata.TITLE);
+        final Optional<String> artistName = metadata.get(Metadata.ARTIST);
         // When scanning we can safely assume we're running on a file system
         // TODO: what about using Displayable? It would not require a dependency on MediaFolder
-        final MediaFolder parent = (MediaFolder)mediaItem.getParent();
-        final String recordTitle = metadata.get(Metadata.ALBUM).orElse(parent.getPath().toFile().getName());
-        final URI recordUri = BM.localRecordUriFor(idCreator.createSha1("RECORD:" + recordTitle));
-                
-        if (seenRecordUris.putIfAbsent(recordUri, true) == null)
-          {
-            final Value titleLiteral = literalFor(recordTitle);
-            builder = builder.with(recordUri, RDF.TYPE,         MO.C_RECORD)
-                             .with(recordUri, DC.TITLE,         titleLiteral)
-                             .with(recordUri, RDFS.LABEL,       titleLiteral)
-                             .with(recordUri, MO.P_MEDIA_TYPE,  MO.C_CD)
-                             .with(recordUri, MO.P_TRACK_COUNT, literalFor(parent.findChildren().count()));
-            
-            if (artist.isPresent())
-              {
-                builder = builder.with(recordUri, FOAF.MAKER, artistUri);
-              }
-          }
+        final MediaFolder parent          = (MediaFolder)mediaItem.getParent();
+        final String recordTitle          = metadata.get(Metadata.ALBUM).orElse(parent.getPath().toFile().getName());
         
+        final Optional<URI> artistUri     = artistName.map(name -> 
+                BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + name)));
+        final Optional<URI> recordUri     = Optional.of(
+                BM.localRecordUriFor(idCreator.createSha1("RECORD:" + recordTitle)));
 
-        builder.with(recordUri, MO.P_TRACK, trackUri).publish();
+        final Optional<URI> newArtistUri  = putIfAbsentAndGetNewKey(seenArtistUris, artistUri, true);
+        final Optional<URI> newRecordUri  = putIfAbsentAndGetNewKey(seenRecordUris, recordUri, true);
+        
+        statementManager.requestAddStatements()
+                         .with(trackUri,     DC.TITLE,         literalFor(title))
+                         .with(trackUri,     RDFS.LABEL,       literalFor(title))
+                         .with(trackUri,     FOAF.MAKER,       artistUri)
+
+                         .with(recordUri,    MO.P_TRACK,       trackUri)
+        
+                         .with(newArtistUri, RDF.TYPE,         MO.C_MUSIC_ARTIST)
+                         .with(newArtistUri, RDFS.LABEL,       literalFor(artistName))
+                         .with(newArtistUri, FOAF.NAME,        literalFor(artistName))
+        
+                         .with(newRecordUri, RDF.TYPE,         MO.C_RECORD)
+                         .with(newRecordUri, RDFS.LABEL,       literalFor(recordTitle))
+                         .with(newRecordUri, DC.TITLE,         literalFor(recordTitle))
+                         .with(newRecordUri, MO.P_MEDIA_TYPE,  MO.C_CD)
+                         .with(newRecordUri, MO.P_TRACK_COUNT, literalFor(parent.findChildren().count()))
+                         .with(newRecordUri, FOAF.MAKER,       artistUri)
+                
+                         .publish();
+      }
+    
+    // FIXME: rename (semantics is slightly different than the original putIfAbsent())
+    private static <K, V> Optional<K> putIfAbsentAndGetNewKey (final @Nonnull ConcurrentMap<K, V> cMap, 
+                                                   final @Nonnull Optional<K> key,
+                                                   final @Nonnull V value)
+      {
+        return (key.isPresent() && (cMap.putIfAbsent(key.get(), value) == null)) ? key : Optional.empty();
       }
   }
