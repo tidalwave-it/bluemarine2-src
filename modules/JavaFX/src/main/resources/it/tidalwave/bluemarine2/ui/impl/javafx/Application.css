@@ -92,6 +92,15 @@
     -fx-background-color:   rgb(30,30,30);
   }
 
+.folder-icon
+  {
+    -fx-background-image:       url("music-128.png");
+    -fx-background-repeat:      no-repeat;
+    -fx-background-position:    left center;
+    -fx-background-size:        24 24;
+    -fx-alignment:              center;    
+  }
+  
 .artist-icon
   {
     -fx-background-image:       url("contacts-128.png");
@@ -130,6 +139,7 @@
     -fx-alignment:              baseline-right;    
   }
   
+.folder-label,
 .artist-label,
 .record-label,
 .track-label
