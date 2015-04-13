@@ -59,6 +59,8 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.vocabulary.DbTune;
 import it.tidalwave.bluemarine2.vocabulary.Purl;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.stream.Stream;
 import lombok.Getter;
 
@@ -191,12 +193,10 @@ public class EmbeddedMetadataManager
         
         final Optional<String> title      = metadata.get(Metadata.TITLE);
         final Optional<String> makerName  = metadata.get(Metadata.ARTIST);
-        Optional<URI> makerUri      = makerName.map(name -> createUriForLocalArtist(name));
-        //
-        // Even though we're in fallback mode, we could have a MusicBrainz artist id. Actually, fallback mode can be
-        // triggered by any error while retrieving the track resource; it not implies a problem with the artist 
-        // resource. That's why it makes sense to try to recover an artist resource here.
-        //
+        List<URI> makerUris               = makerName.map(name -> createUriForLocalArtist(name))
+                                                     .map(uri -> Arrays.asList(uri))
+                                                     .orElse(Collections.emptyList());
+        
         List<Entry> artists  = metadata.getAll(Metadata.MBZ_ARTIST_ID).stream()
                 .map(id -> new Entry(BM.musicBrainzUriFor("artist", id), makerName.orElse("???")))
                 .collect(toList());
@@ -208,10 +208,15 @@ public class EmbeddedMetadataManager
                 .map(name -> new Entry(createUriForLocalArtist(name), name))
                 .collect(toList());
           }
+        //
+        // Even though we're in fallback mode, we could have a MusicBrainz artist id. Actually, fallback mode can be
+        // triggered by any error while retrieving the track resource; it not implies a problem with the artist 
+        // resource. That's why it makes sense to try to retrieve an artist resource here.
+        //
         else
           {
-            makerUri = Optional.of(artists.get(0).getUri()); // FIXME Not only the first one
-            dbTuneMetadataManager.requestArtistMetadata(makerUri.get(), makerName);
+            makerUris = artists.stream().map(Entry::getUri).collect(toList());
+            makerUris.forEach(uri -> dbTuneMetadataManager.requestArtistMetadata(uri, makerName)); // FIXME: all with the same maker name?
             //
             // FIXME: Still missing:
             // Anonyme Grèce
@@ -227,7 +232,7 @@ public class EmbeddedMetadataManager
         final List<Value> newArtistLiterals = newArtists.stream().map(e -> literalFor(e.getName())).collect(toList());
         
         final Optional<URI> newGroupUri = (artists.size() <= 1) ? Optional.empty()
-                : shared.seenArtistUris.putIfAbsentAndGetNewKey(makerUri, Optional.empty());
+                : shared.seenArtistUris.putIfAbsentAndGetNewKey(makerUris.get(0), Optional.empty()); // FIXME: onlt first one?
 
         final String recordTitle          = metadata.get(Metadata.ALBUM)
                                                     .orElse(((MediaFolder)parent).getPath().toFile().getName()); // FIXME
@@ -239,14 +244,14 @@ public class EmbeddedMetadataManager
         statementManager.requestAddStatements()
             .with(trackUri,      RDFS.LABEL,                literalFor(title))
             .with(trackUri,      DC.TITLE,                  literalFor(title))
-            .with(trackUri,      FOAF.MAKER,                makerUri)
+            .with(trackUri,      FOAF.MAKER,                makerUris.stream())
 
             .with(recordUri,     MO.P_TRACK,                trackUri)
 
             .with(newRecordUri,  RDF.TYPE,                  MO.C_RECORD)
             .with(newRecordUri,  RDFS.LABEL,                literalFor(recordTitle))
             .with(newRecordUri,  DC.TITLE,                  literalFor(recordTitle))
-            .with(newRecordUri,  FOAF.MAKER,                makerUri)
+            .with(newRecordUri,  FOAF.MAKER,                makerUris.stream())
             .with(newRecordUri,  MO.P_MEDIA_TYPE,           MO.C_CD)
                 
             .with(newArtistUris, RDF.TYPE,                  MO.C_MUSIC_ARTIST)
