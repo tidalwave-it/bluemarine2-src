@@ -229,10 +229,10 @@ public class EmbeddedMetadataManager
         final Stream<String> artistNames  = makerName.map(name -> 
                 Stream.of(name.split("[,;&]")).map(s -> s.trim()))
                .orElse(Stream.empty());
-        final List<Entry<URI, String>> artistUris  = artistNames.map(name -> 
+        final List<Entry<URI, String>> artists  = artistNames.map(name -> 
                 new Entry<>(createUriForLocalArtist(name), name)).collect(Collectors.toList());
         
-        final Optional<URI> newGroupUri = (artistUris.size() <= 1) ? Optional.empty()
+        final Optional<URI> newGroupUri = (artists.size() <= 1) ? Optional.empty()
                 : seenArtistUris.putIfAbsentAndGetNewKey(makerUri, true);
 
 //        final List<Id> artistsMBIds       = metadata.getAll(Metadata.MBZ_ARTIST_ID); TODO
@@ -243,7 +243,7 @@ public class EmbeddedMetadataManager
         
         final Optional<URI> recordUri     = Optional.of(createUriForLocalRecord(recordTitle));
 
-        final Stream<Entry<URI, String>> newArtists   = artistUris.stream().filter(e -> 
+        final Stream<Entry<URI, String>> newArtists   = artists.stream().filter(e -> 
                 seenArtistUris.putIfAbsentAndGetNewKey(e.getKey(), true).isPresent());
         final Optional<URI> newRecordUri  = seenRecordUris.putIfAbsentAndGetNewKey(recordUri, true);
         
@@ -265,7 +265,7 @@ public class EmbeddedMetadataManager
             .with(newGroupUri,   RDFS.LABEL,                literalFor(makerName))
             .with(newGroupUri,   FOAF.NAME,                 literalFor(makerName))
             .with(newGroupUri,   DbTune.ARTIST_TYPE,        literalFor((short)2))
-            .with(newGroupUri,   Purl.COLLABORATES_WITH,    artistUris.stream().map(e -> e.getKey()))
+            .with(newGroupUri,   Purl.COLLABORATES_WITH,    artists.stream().map(e -> e.getKey()))
             .publish();
         
         newArtists.forEach(e -> // FIXME
