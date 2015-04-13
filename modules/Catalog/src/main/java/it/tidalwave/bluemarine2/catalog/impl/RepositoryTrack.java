@@ -38,6 +38,7 @@ import java.nio.file.Paths;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.openrdf.repository.Repository;
 import org.openrdf.query.BindingSet;
+import it.tidalwave.bluemarine2.util.Formatters;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
@@ -107,6 +108,6 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     public String toString() 
       {
         return String.format("RepositoryTrack(%02d, %s, rdfs:label=%s, %s, %s)",
-                             trackNumber, duration, rdfsLabel, audioFilePath, id);
+                             trackNumber, Formatters.format(duration), rdfsLabel, audioFilePath, id);
       }
   }
