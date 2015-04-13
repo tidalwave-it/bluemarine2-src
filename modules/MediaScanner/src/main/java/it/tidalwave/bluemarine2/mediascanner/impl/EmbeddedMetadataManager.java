@@ -265,7 +265,7 @@ public class EmbeddedMetadataManager
             .with(newGroupUri,   RDFS.LABEL,                literalFor(makerName))
             .with(newGroupUri,   FOAF.NAME,                 literalFor(makerName))
             .with(newGroupUri,   DbTune.ARTIST_TYPE,        literalFor((short)2))
-            .with(newGroupUri,   Purl.COLLABORATES_WITH,    artists.stream().map(e -> e.getKey()))
+            .with(newGroupUri,   Purl.COLLABORATES_WITH,    artists.stream().map(Entry::getKey))
             .publish();
         
         newArtists.forEach(e -> // FIXME
