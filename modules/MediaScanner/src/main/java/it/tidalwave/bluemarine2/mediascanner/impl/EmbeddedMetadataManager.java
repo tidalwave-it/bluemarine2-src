@@ -197,9 +197,9 @@ public class EmbeddedMetadataManager
         // triggered by any error while retrieving the track resource; it not implies a problem with the artist 
         // resource. That's why it makes sense to try to recover an artist resource here.
         //
-        // FIXME: some are multiple, split by / - should be done in Metadata
         List<Entry> artists  = metadata.getAll(Metadata.MBZ_ARTIST_ID).stream()
-                .map(i -> new Entry(uriFor("http://dbtune.org/musicbrainz/resource/artist/" + i), makerName.orElse("???"))).collect(toList());
+                .map(id -> new Entry(BM.musicBrainzUriFor("artist", id), makerName.orElse("???")))
+                .collect(toList());
             
         if (artists.isEmpty())
           {
@@ -229,8 +229,6 @@ public class EmbeddedMetadataManager
         final Optional<URI> newGroupUri = (artists.size() <= 1) ? Optional.empty()
                 : shared.seenArtistUris.putIfAbsentAndGetNewKey(makerUri, Optional.empty());
 
-//        final List<Id> artistsMBIds       = metadata.getAll(Metadata.MBZ_ARTIST_ID); TODO
-        
         final String recordTitle          = metadata.get(Metadata.ALBUM)
                                                     .orElse(((MediaFolder)parent).getPath().toFile().getName()); // FIXME
 //                                                    .orElse(parent.as(Displayable).getDisplayName());
