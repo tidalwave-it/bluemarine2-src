@@ -34,7 +34,6 @@ import javax.inject.Inject;
 import java.util.function.Supplier;
 import it.tidalwave.util.Finder;
 import it.tidalwave.util.Finder8;
-import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.catalog.Catalog;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalog;
@@ -42,7 +41,6 @@ import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.impl.EntityWithRoles;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.persistence.Persistence;
-import lombok.Delegate;
 
 /***********************************************************************************************************************
  *
@@ -50,16 +48,13 @@ import lombok.Delegate;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryBrowserSupport implements EntityBrowser
+public class RepositoryBrowserSupport extends EntityWithRoles implements EntityBrowser 
   {
     @Inject 
     private Persistence persistence;
     
     @CheckForNull
     private Catalog catalog;
-    
-    @Delegate
-    private final AsSupport asSupport = new AsSupport(this);
     
     @Nonnull
     protected SimpleComposite8<? extends Entity> compositeForRootEntity;
