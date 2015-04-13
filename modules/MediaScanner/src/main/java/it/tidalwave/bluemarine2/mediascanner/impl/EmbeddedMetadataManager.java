@@ -36,7 +36,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import org.openrdf.model.URI;
 import org.openrdf.model.Statement;
@@ -82,31 +81,14 @@ public class EmbeddedMetadataManager
         private final String name;
       }
     
-    static class ConcurrentHashMapWithOptionals<K, V> extends ConcurrentHashMap<K, V>
-      {
-        @Nonnull
-        public Optional<K> putIfAbsentAndGetNewKey (final @Nonnull Optional<K> key, final @Nonnull V value)
-          {
-            return key.flatMap(k -> putIfAbsentAndGetNewKey(k, value));
-          }
-        
-        @Nonnull
-        public Optional<K> putIfAbsentAndGetNewKey (final @Nonnull K key, final @Nonnull V value)
-          {
-            return (putIfAbsent(key, value) == null) ? Optional.of(key) : Optional.empty();
-          }
-      }
-    
-    // Set would suffice, but there's no ConcurrentSet
-    private final ConcurrentHashMapWithOptionals<URI, Boolean> seenArtistUris = new ConcurrentHashMapWithOptionals<>();
-    
-    private final ConcurrentHashMapWithOptionals<URI, Boolean> seenRecordUris = new ConcurrentHashMapWithOptionals<>();
-    
     @Inject
     private StatementManager statementManager;
     
     @Inject
     private IdCreator idCreator;
+    
+    @Inject
+    private Shared shared;
     
     /*******************************************************************************************************************
      *
@@ -164,18 +146,6 @@ public class EmbeddedMetadataManager
         SIGNAL_MAPPER.put(Metadata.BIT_RATE,    v -> new Pair(MO.P_BITS_PER_SAMPLE, literalFor((int)v)));
         SIGNAL_MAPPER.put(Metadata.DURATION,    v -> new Pair(MO.P_DURATION,        
                                                            literalFor((float)((Duration)v).toMillis())));
-      }
-    
-    /*******************************************************************************************************************
-     *
-     * 
-     * 
-     ******************************************************************************************************************/
-    public void reset()
-      {
-        // FIXME: should load existing URIs from the Persistence
-        seenArtistUris.clear();
-        seenRecordUris.clear();
       }
     
     /*******************************************************************************************************************
@@ -273,13 +243,13 @@ public class EmbeddedMetadataManager
           }
         
         final List<Entry> newArtists   = artists.stream().filter(
-                e -> seenArtistUris.putIfAbsentAndGetNewKey(e.getUri(), true).isPresent())
+                e -> shared.seenArtistUris.putIfAbsentAndGetNewKey(e.getUri(), true).isPresent())
                 .collect(toList());
         final List<URI> newArtistUris       = newArtists.stream().map(Entry::getUri).collect(toList());
         final List<Value> newArtistLiterals = newArtists.stream().map(e -> literalFor(e.getName())).collect(toList());
         
         final Optional<URI> newGroupUri = (artists.size() <= 1) ? Optional.empty()
-                : seenArtistUris.putIfAbsentAndGetNewKey(makerUri, true);
+                : shared.seenArtistUris.putIfAbsentAndGetNewKey(makerUri, true);
 
 //        final List<Id> artistsMBIds       = metadata.getAll(Metadata.MBZ_ARTIST_ID); TODO
         
@@ -288,7 +258,7 @@ public class EmbeddedMetadataManager
 //                                                    .orElse(parent.as(Displayable).getDisplayName());
         
         final Optional<URI> recordUri     = Optional.of(createUriForLocalRecord(recordTitle));
-        final Optional<URI> newRecordUri  = seenRecordUris.putIfAbsentAndGetNewKey(recordUri, true);
+        final Optional<URI> newRecordUri  = shared.seenRecordUris.putIfAbsentAndGetNewKey(recordUri, true);
         
         statementManager.requestAddStatements()
             .with(trackUri,      RDFS.LABEL,                literalFor(title))

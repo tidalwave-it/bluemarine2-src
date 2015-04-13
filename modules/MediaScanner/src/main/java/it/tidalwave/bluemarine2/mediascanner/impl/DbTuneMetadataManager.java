@@ -69,11 +69,6 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 @Slf4j
 public class DbTuneMetadataManager 
   {
-    // Set would suffice, but there's no ConcurrentSet
-    private final ConcurrentMap<URI, Boolean> seenArtistUris = new ConcurrentHashMap<>();
-    
-    private final ConcurrentMap<URI, Boolean> seenRecordUris = new ConcurrentHashMap<>();
-    
     @Inject
     private ProgressHandler progress;
     
@@ -82,6 +77,9 @@ public class DbTuneMetadataManager
     
     @Inject
     private StatementManager statementManager;
+    
+    @Inject
+    private Shared shared;
     
     private static final List<URI> VALID_TRACK_PREDICATES_FOR_SUBJECT = Arrays.asList(
             RDF.TYPE, RDFS.LABEL, DC.TITLE, FOAF.MAKER);
@@ -136,18 +134,6 @@ public class DbTuneMetadataManager
                         && VALID_ARTIST_PREDICATES_FOR_SUBJECT.contains(statement.getPredicate());
       }
             
-    /*******************************************************************************************************************
-     *
-     * 
-     * 
-     ******************************************************************************************************************/
-    public void reset()
-      {
-        // FIXME: should load existing URIs from the Persistence
-        seenArtistUris.clear();
-        seenRecordUris.clear();
-      }
-    
     private final ConcurrentMap<URI, MediaItem> m = new ConcurrentHashMap<>();
     
     /*******************************************************************************************************************
@@ -277,7 +263,7 @@ public class DbTuneMetadataManager
           {
             log.debug("requestArtistMetadata({})", artistUri);
             
-            if (seenArtistUris.putIfAbsent(artistUri, true) == null)
+            if (shared.seenArtistUris.putIfAbsent(artistUri, true) == null)
               {
                 progress.incrementTotalArtists();
                 requestDownload(urlFor(artistUri));
@@ -302,7 +288,7 @@ public class DbTuneMetadataManager
           {
             log.debug("requestRecordMetadata({})", recordUri);
             
-            if (seenRecordUris.putIfAbsent(recordUri, true) == null)
+            if (shared.seenRecordUris.putIfAbsent(recordUri, true) == null)
               {
                 progress.incrementTotalRecords();
                 requestDownload(urlFor(recordUri));
