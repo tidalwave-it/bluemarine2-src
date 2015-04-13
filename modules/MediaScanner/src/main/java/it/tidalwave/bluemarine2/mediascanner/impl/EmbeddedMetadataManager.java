@@ -56,7 +56,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
-import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.vocabulary.DbTune;
@@ -259,7 +258,6 @@ public class EmbeddedMetadataManager
             .with(newRecordUri,  DC.TITLE,                  literalFor(recordTitle))
             .with(newRecordUri,  FOAF.MAKER,                makerUri)
             .with(newRecordUri,  MO.P_MEDIA_TYPE,           MO.C_CD)
-            .with(newRecordUri,  MO.P_TRACK_COUNT,          literalFor(parent.as(SimpleComposite8).findChildren().count()))
                 
             .with(newArtistUris, RDF.TYPE,                  MO.C_MUSIC_ARTIST)
             .with(newArtistUris, RDFS.LABEL,                newArtistLiterals)
