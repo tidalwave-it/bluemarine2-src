@@ -124,7 +124,7 @@ final class Utilities
     @Nonnull
     public static Optional<Value> literalFor (final Optional<String> string) 
       {
-        return string.isPresent() ? Optional.of(FACTORY.createLiteral(string.get())) : Optional.empty();
+        return string.map(s -> FACTORY.createLiteral(s));
       }
     
     /*******************************************************************************************************************
@@ -143,6 +143,16 @@ final class Utilities
      ******************************************************************************************************************/
     @Nonnull
     public static Value literalFor (final int value) 
+      {
+        return FACTORY.createLiteral(value);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static Value literalFor (final short value) 
       {
         return FACTORY.createLiteral(value);
       }

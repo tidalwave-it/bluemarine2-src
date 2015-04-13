@@ -41,6 +41,7 @@ import it.tidalwave.bluemarine2.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Optional;
+import java.util.stream.Stream;
 import lombok.extern.slf4j.Slf4j;
 import org.openrdf.model.Resource;
 import org.openrdf.model.URI;
@@ -72,9 +73,75 @@ public class StatementManager
           }
         
         @Nonnull
+        public Builder with (final @Nonnull Optional<? extends Resource> subject, 
+                             final @Nonnull URI predicate,
+                             final @Nonnull Value object) 
+          {
+            return subject.isPresent()
+                    ? with(factory.createStatement(subject.get(), predicate, object)) 
+                    : this;
+          }
+        
+        @Nonnull
+        public Builder with (final @Nonnull Optional<? extends Resource> subject, 
+                             final @Nonnull URI predicate,
+                             final @Nonnull Optional<? extends Value> object) 
+          {
+            return subject.isPresent() && object.isPresent() 
+                    ? with(factory.createStatement(subject.get(), predicate, object.get())) 
+                    : this;
+          }
+        
+        @Nonnull
+        public Builder with (final @Nonnull List<? extends Resource> subjects, 
+                             final @Nonnull URI predicate,
+                             final @Nonnull Value object)
+          { 
+            subjects.stream().forEach(subject -> with(subject, predicate, object)); // FIXME ?? this = with(...)
+            return this;
+          }
+        
+        @Nonnull
+        public Builder with (final @Nonnull List<? extends Resource> subjects, 
+                             final @Nonnull URI predicate,
+                             final @Nonnull List<? extends Value> objects)
+          { 
+            assert subjects.size() == objects.size();
+            
+            for (int i = 0; i < subjects.size(); i++)
+              {
+                with(subjects.get(i), predicate, objects.get(i)); // FIXME ?? this = with(...)
+              }
+            
+            return this;
+          }
+        
+        @Nonnull
         public Builder with (final @Nonnull Resource subject, 
                              final @Nonnull URI predicate,
-                             final @Nonnull Optional<Value> object)
+                             final @Nonnull Stream<? extends Value> objects)
+          { 
+            objects.forEach(object -> with(subject, predicate, object)); // FIXME ?? this = with(...)
+            return this;
+          }
+        
+        @Nonnull
+        public Builder with (final @Nonnull Optional<? extends Resource> subject, 
+                             final @Nonnull URI predicate,
+                             final @Nonnull Stream<? extends Value> objects)
+          {
+            if (subject.isPresent())
+              {
+                objects.forEach(object -> with(subject, predicate, object)); // FIXME ?? this = with(...)
+              }
+    
+            return this;
+          }
+        
+        @Nonnull
+        public Builder with (final @Nonnull Resource subject, 
+                             final @Nonnull URI predicate,
+                             final @Nonnull Optional<? extends Value> object)
           { 
             return object.isPresent() ? with(subject, predicate, object.get()) : this;
           }

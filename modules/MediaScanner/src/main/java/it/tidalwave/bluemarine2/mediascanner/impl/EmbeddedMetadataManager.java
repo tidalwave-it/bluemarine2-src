@@ -37,7 +37,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 import java.util.function.Function;
 import org.openrdf.model.URI;
 import org.openrdf.model.Statement;
@@ -48,7 +47,7 @@ import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
 import it.tidalwave.util.Key;
-import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.vocabulary.BM;
@@ -57,7 +56,13 @@ import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
+import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
+import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.vocabulary.DbTune;
+import it.tidalwave.bluemarine2.vocabulary.Purl;
+import java.util.stream.Stream;
+import lombok.Getter;
 
 /***********************************************************************************************************************
  *
@@ -68,10 +73,35 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 @Slf4j
 public class EmbeddedMetadataManager 
   {
-    // Set would suffice, but there's no ConcurrentSet
-    private final ConcurrentMap<URI, Boolean> seenArtistUris = new ConcurrentHashMap<>();
+    @RequiredArgsConstructor @Getter @ToString
+    static class Entry
+      {
+        @Nonnull
+        private final URI uri;
+        
+        @Nonnull
+        private final String name;
+      }
     
-    private final ConcurrentMap<URI, Boolean> seenRecordUris = new ConcurrentHashMap<>();
+    static class ConcurrentHashMapWithOptionals<K, V> extends ConcurrentHashMap<K, V>
+      {
+        @Nonnull
+        public Optional<K> putIfAbsentAndGetNewKey (final @Nonnull Optional<K> key, final @Nonnull V value)
+          {
+            return key.flatMap(k -> putIfAbsentAndGetNewKey(k, value));
+          }
+        
+        @Nonnull
+        public Optional<K> putIfAbsentAndGetNewKey (final @Nonnull K key, final @Nonnull V value)
+          {
+            return (putIfAbsent(key, value) == null) ? Optional.of(key) : Optional.empty();
+          }
+      }
+    
+    // Set would suffice, but there's no ConcurrentSet
+    private final ConcurrentHashMapWithOptionals<URI, Boolean> seenArtistUris = new ConcurrentHashMapWithOptionals<>();
+    
+    private final ConcurrentHashMapWithOptionals<URI, Boolean> seenRecordUris = new ConcurrentHashMapWithOptionals<>();
     
     @Inject
     private StatementManager statementManager;
@@ -180,55 +210,86 @@ public class EmbeddedMetadataManager
      ******************************************************************************************************************/
     public void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI trackUri) 
       {
+        // FIXME: scenarios can be complex. For instance, we could have a valid MBZ artistId - we might be here just
+        // because we couldn't retrieve the DbTune resource for the track.
+        // Also, consider the COMPOSER.
         log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackUri);
         
-        final Metadata metadata = mediaItem.getMetadata();  
-        StatementManager.Builder builder = statementManager.requestAddStatements();
+        final Metadata metadata           = mediaItem.getMetadata();  
+        final Entity parent               = mediaItem.getParent();
+        log.debug(">>>> metadata of {}: {}", trackUri, metadata);
         
-        final Optional<String> title = metadata.get(Metadata.TITLE);
-        builder = builder.with(trackUri, DC.TITLE,   literalFor(title))
-                         .with(trackUri, RDFS.LABEL, literalFor(title));
+        final Optional<String> title      = metadata.get(Metadata.TITLE);
+        final Optional<String> makerName  = metadata.get(Metadata.ARTIST);
+        final Optional<URI> makerUri      = makerName.map(name -> createUriForLocalArtist(name));
+        
+        // Can't split on ',' because of e.g. "Victoria Mullova, violin" or "Perosi, Lorenzo"
+        // Also can't split on '&' as it might be part of a group name
+        final List<Entry> artists  = makerName
+                .map(name -> Stream.of(name.split("[;]")).map(String::trim)).orElse(Stream.empty())
+                .map(name -> new Entry(createUriForLocalArtist(name), name))
+                .collect(toList());
+        final List<Entry> newArtists   = artists.stream().filter(
+                e -> seenArtistUris.putIfAbsentAndGetNewKey(e.getUri(), true).isPresent())
+                .collect(toList());
+        final List<URI> newArtistUris       = newArtists.stream().map(Entry::getUri).collect(toList());
+        final List<Value> newArtistLiterals = newArtists.stream().map(e -> literalFor(e.getName())).collect(toList());
+        
+        final Optional<URI> newGroupUri = (artists.size() <= 1) ? Optional.empty()
+                : seenArtistUris.putIfAbsentAndGetNewKey(makerUri, true);
 
-        final Optional<String> artist = metadata.get(Metadata.ARTIST);
-        URI artistUri = null;
+//        final List<Id> artistsMBIds       = metadata.getAll(Metadata.MBZ_ARTIST_ID); TODO
         
-        if (artist.isPresent()) // FIXME
-          {
-            final String artistName = artist.get();
-            artistUri = BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + artistName));
-            builder = builder.with(trackUri, FOAF.MAKER, artistUri);
+        final String recordTitle          = metadata.get(Metadata.ALBUM)
+                                                    .orElse(((MediaFolder)parent).getPath().toFile().getName()); // FIXME
+//                                                    .orElse(parent.as(Displayable).getDisplayName());
+        
+        final Optional<URI> recordUri     = Optional.of(createUriForLocalRecord(recordTitle));
+        final Optional<URI> newRecordUri  = seenRecordUris.putIfAbsentAndGetNewKey(recordUri, true);
+        
+        statementManager.requestAddStatements()
+            .with(trackUri,      RDFS.LABEL,                literalFor(title))
+            .with(trackUri,      DC.TITLE,                  literalFor(title))
+            .with(trackUri,      FOAF.MAKER,                makerUri)
 
-            if (seenArtistUris.putIfAbsent(artistUri, true) == null)
-              {
-                final Value nameLiteral = literalFor(artistName);
-                builder = builder.with(artistUri, RDF.TYPE,   MO.C_MUSIC_ARTIST)
-                                 .with(artistUri, FOAF.NAME,  nameLiteral)
-                                 .with(artistUri, RDFS.LABEL, nameLiteral);
-              }
-          }
-        
-        // When scanning we can safely assume we're running on a file system
-        // TODO: what about using Displayable? It would not require a dependency on MediaFolder
-        final MediaFolder parent = (MediaFolder)mediaItem.getParent();
-        final String recordTitle = metadata.get(Metadata.ALBUM).orElse(parent.getPath().toFile().getName());
-        final URI recordUri = BM.localRecordUriFor(idCreator.createSha1("RECORD:" + recordTitle));
+            .with(recordUri,     MO.P_TRACK,                trackUri)
+
+            .with(newRecordUri,  RDF.TYPE,                  MO.C_RECORD)
+            .with(newRecordUri,  RDFS.LABEL,                literalFor(recordTitle))
+            .with(newRecordUri,  DC.TITLE,                  literalFor(recordTitle))
+            .with(newRecordUri,  FOAF.MAKER,                makerUri)
+            .with(newRecordUri,  MO.P_MEDIA_TYPE,           MO.C_CD)
+            .with(newRecordUri,  MO.P_TRACK_COUNT,          literalFor(parent.as(SimpleComposite8).findChildren().count()))
                 
-        if (seenRecordUris.putIfAbsent(recordUri, true) == null)
-          {
-            final Value titleLiteral = literalFor(recordTitle);
-            builder = builder.with(recordUri, RDF.TYPE,         MO.C_RECORD)
-                             .with(recordUri, DC.TITLE,         titleLiteral)
-                             .with(recordUri, RDFS.LABEL,       titleLiteral)
-                             .with(recordUri, MO.P_MEDIA_TYPE,  MO.C_CD)
-                             .with(recordUri, MO.P_TRACK_COUNT, literalFor(parent.findChildren().count()));
-            
-            if (artist.isPresent())
-              {
-                builder = builder.with(recordUri, FOAF.MAKER, artistUri);
-              }
-          }
-        
+            .with(newArtistUris, RDF.TYPE,                  MO.C_MUSIC_ARTIST)
+            .with(newArtistUris, RDFS.LABEL,                newArtistLiterals)
+            .with(newArtistUris, FOAF.NAME,                 newArtistLiterals)
+                
+            .with(newGroupUri,   RDF.TYPE,                  MO.C_MUSIC_ARTIST)
+            .with(newGroupUri,   RDFS.LABEL,                literalFor(makerName))
+            .with(newGroupUri,   FOAF.NAME,                 literalFor(makerName))
+            .with(newGroupUri,   DbTune.ARTIST_TYPE,        literalFor((short)2))
+            .with(newGroupUri,   Purl.COLLABORATES_WITH,    artists.stream().map(Entry::getUri))
+            .publish();
+      }
 
-        builder.with(recordUri, MO.P_TRACK, trackUri).publish();
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private URI createUriForLocalRecord (final @Nonnull String recordTitle) 
+      {
+        return BM.localRecordUriFor(idCreator.createSha1("RECORD:" + recordTitle));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private URI createUriForLocalArtist (final @Nonnull String name) 
+      {
+        return BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + name));
       }
   }
