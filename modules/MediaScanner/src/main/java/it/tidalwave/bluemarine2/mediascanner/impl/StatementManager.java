@@ -93,6 +93,30 @@ public class StatementManager
           }
         
         @Nonnull
+        public Builder with (final @Nonnull List<? extends Resource> subjects, 
+                             final @Nonnull URI predicate,
+                             final @Nonnull Value object)
+          { 
+            subjects.stream().forEach(subject -> with(subject, predicate, object)); // FIXME ?? this = with(...)
+            return this;
+          }
+        
+        @Nonnull
+        public Builder with (final @Nonnull List<? extends Resource> subjects, 
+                             final @Nonnull URI predicate,
+                             final @Nonnull List<? extends Value> objects)
+          { 
+            assert subjects.size() == objects.size();
+            
+            for (int i = 0; i < subjects.size(); i++)
+              {
+                with(subjects.get(i), predicate, objects.get(i)); // FIXME ?? this = with(...)
+              }
+            
+            return this;
+          }
+        
+        @Nonnull
         public Builder with (final @Nonnull Resource subject, 
                              final @Nonnull URI predicate,
                              final @Nonnull Stream<? extends Value> objects)

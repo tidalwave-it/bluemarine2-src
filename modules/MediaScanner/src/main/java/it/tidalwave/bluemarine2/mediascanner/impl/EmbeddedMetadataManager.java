@@ -61,6 +61,7 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.vocabulary.DbTune;
 import it.tidalwave.bluemarine2.vocabulary.Purl;
+import java.util.Scanner;
 import java.util.stream.Stream;
 import lombok.Getter;
 
@@ -223,10 +224,10 @@ public class EmbeddedMetadataManager
         final Optional<String> makerName  = metadata.get(Metadata.ARTIST);
         final Optional<URI> makerUri      = makerName.map(name -> createUriForLocalArtist(name));
         
-        // FIXME: can't easily split on , : e.g. "Victoria Mullova, violin" or "Perosi, Lorenzo"
-        // Perhaps we can split if the segment has got a space within
+        // Can't split on ',' because of e.g. "Victoria Mullova, violin" or "Perosi, Lorenzo"
+        // Also can't split on '&' as it might be part of a group name
         final List<Entry<URI, String>> artists  = makerName
-                .map(name -> Stream.of(name.split("[,;&]")).map(String::trim)).orElse(Stream.empty())
+                .map(name -> Stream.of(name.split("[;]")).map(String::trim)).orElse(Stream.empty())
                 .map(name -> new Entry<>(createUriForLocalArtist(name), name))
                 .collect(toList());
         final List<Entry<URI, String>> newArtists   = artists.stream().filter(
