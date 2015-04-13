@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000683T3G>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000683T3G%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B000683T3G>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000683T3G%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/64dd2615-5366-4c85-90c4-65055215c899>
+      rdfs:label "RDF Description of Jazz Ballads 7 (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/64dd2615-5366-4c85-90c4-65055215c899> .
+
+<http://musicbrainz.org/album/64dd2615-5366-4c85-90c4-65055215c899>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F64dd2615-5366-4c85-90c4-65055215c899%3E> .
+
+<http://images-eu.amazon.com/images/P/B000683T3G.03.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages-eu.amazon.com%2Fimages%2FP%2FB000683T3G.03.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/64dd2615-5366-4c85-90c4-65055215c899>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/64dd2615-5366-4c85-90c4-65055215c899> .
+
+<http://dbtune.org/musicbrainz/resource/record/64dd2615-5366-4c85-90c4-65055215c899>
+      a       mo:Record ;
+      rdfs:label "Jazz Ballads 7 (disc 2)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000683T3G" ;
+      vocab:albummeta_coverarturl
+              "http://images-eu.amazon.com/images/P/B000683T3G.03.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "31"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/174727> ;
+      vocab:tracks "19"^^xsd:int ;
+      dc:date "2004-10-11" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Jazz Ballads 7 (disc 2)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000683T3G> ;
+      mo:image <http://images.amazon.com/images/P/B000683T3G> , <http://images-eu.amazon.com/images/P/B000683T3G.03.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/64dd2615-5366-4c85-90c4-65055215c899> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/206420> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/6acfba7b-a001-4908-b1e1-95654902f279> , <http://dbtune.org/musicbrainz/resource/track/67d21872-ffc9-4a47-854b-e6135bc30ae6> , <http://dbtune.org/musicbrainz/resource/track/54268286-8f9b-40ee-b6f9-c4ca7ddf32db> , <http://dbtune.org/musicbrainz/resource/track/a6e0da87-8ed6-4d5e-8ae5-6f52c78b4d1a> , <http://dbtune.org/musicbrainz/resource/track/140676d2-fbf4-4087-bad4-3a6ea6686840> , <http://dbtune.org/musicbrainz/resource/track/8aaacf00-2798-4a1f-bf81-f791284b6694> , <http://dbtune.org/musicbrainz/resource/track/07f9692a-9f5f-41f2-abfa-b9e0473b719c> , <http://dbtune.org/musicbrainz/resource/track/ee39b13e-f8c8-4363-a673-b7e1b4c8fef4> , <http://dbtune.org/musicbrainz/resource/track/9a66032f-fd72-4b5b-970b-bbd47ccbc178> , <http://dbtune.org/musicbrainz/resource/track/4ad2feae-2ecf-4975-bbbb-1c22a1b38e6d> , <http://dbtune.org/musicbrainz/resource/track/1d4a9733-db28-4c65-910f-20a4ba9d6e99> , <http://dbtune.org/musicbrainz/resource/track/a22af841-e27c-4cc6-8ab7-16c1f8ae8393> , <http://dbtune.org/musicbrainz/resource/track/6af752b0-6fa7-45a5-9cda-83e16b916bcb> , <http://dbtune.org/musicbrainz/resource/track/eacc9662-4496-4ee3-acc7-7a5cf3a662d7> , <http://dbtune.org/musicbrainz/resource/track/aa4ba767-7f08-40ee-89f8-6f054c9711f7> , <http://dbtune.org/musicbrainz/resource/track/f92ce03b-f60d-4d10-a2ec-91575f558fa4> , <http://dbtune.org/musicbrainz/resource/track/d32abdd0-ee90-4dbe-94cf-6a4ac0f8a965> , <http://dbtune.org/musicbrainz/resource/track/fe590d48-1dad-40cd-8ca4-16a074502801> , <http://dbtune.org/musicbrainz/resource/track/c05f9ccd-bb29-4ef4-a977-250756b74977> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> ;
+      foaf:page "372108323" .

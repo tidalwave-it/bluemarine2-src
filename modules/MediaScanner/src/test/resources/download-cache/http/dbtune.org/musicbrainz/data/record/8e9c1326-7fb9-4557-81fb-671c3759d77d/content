@@ -1,0 +1,69 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/8e9c1326-7fb9-4557-81fb-671c3759d77d>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/8e9c1326-7fb9-4557-81fb-671c3759d77d> .
+
+<http://images.amazon.com/images/P/B000P46Q18>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000P46Q18%3E> .
+
+<http://musicbrainz.org/album/8e9c1326-7fb9-4557-81fb-671c3759d77d>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F8e9c1326-7fb9-4557-81fb-671c3759d77d%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/8e9c1326-7fb9-4557-81fb-671c3759d77d>
+      a       mo:Record ;
+      rdfs:label "Tijuana Moods" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000P46Q18" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000P46Q18.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "6"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/300338> ;
+      vocab:tracks "6"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Tijuana Moods" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000P46Q18> ;
+      mo:image <http://images.amazon.com/images/P/B000P46Q18> , <http://ec1.images-amazon.com/images/P/B000P46Q18.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/8e9c1326-7fb9-4557-81fb-671c3759d77d> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/f30be268-e3bc-425f-8e81-fd7b835a57c9> , <http://dbtune.org/musicbrainz/resource/track/c7d7873f-de39-4de8-acdf-14b84e4cb334> , <http://dbtune.org/musicbrainz/resource/track/8b43db14-4c76-461a-a37c-fd9273cda47f> , <http://dbtune.org/musicbrainz/resource/track/303f9b62-61c9-44ed-ab29-5fec154b0ff5> , <http://dbtune.org/musicbrainz/resource/track/5c125868-5c36-459e-b796-db02a9011c03> , <http://dbtune.org/musicbrainz/resource/track/8bb2677b-de03-4ded-97ba-bf2f17f3f5e0> ;
+      =       <http://dbpedia.org/resource/Tijuana_Moods> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/f3b8e107-abe8-4743-b6a3-4a4ee995e71f> ;
+      foaf:page "715511887" .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000P46Q18>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000P46Q18%3E> .
+
+<http://dbpedia.org/resource/Tijuana_Moods>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FTijuana_Moods%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/8e9c1326-7fb9-4557-81fb-671c3759d77d>
+      rdfs:label "RDF Description of Tijuana Moods" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/8e9c1326-7fb9-4557-81fb-671c3759d77d> .
+
+<http://ec1.images-amazon.com/images/P/B000P46Q18.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000P46Q18.01.MZZZZZZZ.jpg%3E> .

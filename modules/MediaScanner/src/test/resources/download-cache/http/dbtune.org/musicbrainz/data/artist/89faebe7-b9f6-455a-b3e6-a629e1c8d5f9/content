@@ -1,0 +1,58 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/track/2f85f885-07a4-4fab-8794-9ef2c8617e34>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89faebe7-b9f6-455a-b3e6-a629e1c8d5f9> .
+
+mo:MusicArtist
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FMusicArtist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/3dbe5f88-9d7c-4677-8901-2587946633d3>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89faebe7-b9f6-455a-b3e6-a629e1c8d5f9> .
+
+<http://dbtune.org/musicbrainz/resource/artist/89faebe7-b9f6-455a-b3e6-a629e1c8d5f9>
+      a       mo:MusicArtist ;
+      rdfs:label "Chico Buarque & Quarteto em Cy" ;
+      vocab:artist_quality
+              "-1"^^xsd:short ;
+      vocab:artist_type "2"^^xsd:short ;
+      vocab:sortname "Buarque, Chico & Quarteto em Cy" ;
+      mo:musicbrainz <http://musicbrainz.org/artist/89faebe7-b9f6-455a-b3e6-a629e1c8d5f9> ;
+      rel:collaboratesWith
+              <http://dbtune.org/musicbrainz/resource/artist/592a91ea-aa85-452a-8d10-e538c315765a> , <http://dbtune.org/musicbrainz/resource/artist/93185f2d-6181-4b12-95a5-fe41a812303e> ;
+      =       <http://www.bbc.co.uk/music/artists/89faebe7-b9f6-455a-b3e6-a629e1c8d5f9#artist> ;
+      foaf:name "Chico Buarque & Quarteto em Cy" .
+
+<http://dbtune.org/musicbrainz/resource/track/f2e97df8-295e-430a-9997-f39c9145a0b4>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89faebe7-b9f6-455a-b3e6-a629e1c8d5f9> .
+
+<http://dbtune.org/musicbrainz/resource/track/4e6a1aeb-c9f2-4ed7-95d9-1c4a50f23702>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89faebe7-b9f6-455a-b3e6-a629e1c8d5f9> .
+
+<http://www.bbc.co.uk/music/artists/89faebe7-b9f6-455a-b3e6-a629e1c8d5f9#artist>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.bbc.co.uk%2Fmusic%2Fartists%2F89faebe7-b9f6-455a-b3e6-a629e1c8d5f9%23artist%3E> .
+
+<http://musicbrainz.org/artist/89faebe7-b9f6-455a-b3e6-a629e1c8d5f9>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Fartist%2F89faebe7-b9f6-455a-b3e6-a629e1c8d5f9%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/a775884c-7ead-4dce-b7a1-f200aef8d69f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89faebe7-b9f6-455a-b3e6-a629e1c8d5f9> .
+
+<http://dbtune.org/musicbrainz/data/artist/89faebe7-b9f6-455a-b3e6-a629e1c8d5f9>
+      rdfs:label "RDF Description of Chico Buarque & Quarteto em Cy" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/artist/89faebe7-b9f6-455a-b3e6-a629e1c8d5f9> .

@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/75af3cb5-26af-4adf-a623-4c16f8116311>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F75af3cb5-26af-4adf-a623-4c16f8116311%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/75af3cb5-26af-4adf-a623-4c16f8116311>
+      a       mo:Record ;
+      rdfs:label "The Road North" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "3"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/290137> , <http://dbtune.org/musicbrainz/resource/toc/281679> , <http://dbtune.org/musicbrainz/resource/toc/17954> ;
+      vocab:tracks "10"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Road North" ;
+      mo:musicbrainz <http://musicbrainz.org/album/75af3cb5-26af-4adf-a623-4c16f8116311> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/c7193906-1225-46a9-bed9-8c5e8496a51f> , <http://dbtune.org/musicbrainz/resource/track/70fa0fb5-542b-419a-a1fc-23d4c9eda41a> , <http://dbtune.org/musicbrainz/resource/track/873de2e9-899e-4a92-868c-816d9e1a41df> , <http://dbtune.org/musicbrainz/resource/track/2b62e92e-e7df-4f0d-ac7d-5447b136101f> , <http://dbtune.org/musicbrainz/resource/track/4cabf2df-1b31-4dc7-b113-1841bc8766f5> , <http://dbtune.org/musicbrainz/resource/track/f4d76ab8-2195-4f1f-b9af-f61b62ab32b7> , <http://dbtune.org/musicbrainz/resource/track/3ce00dc2-24ba-4086-9622-c1141e5557a8> , <http://dbtune.org/musicbrainz/resource/track/2c79ec7c-0e92-49ae-a678-cf62e78a92be> , <http://dbtune.org/musicbrainz/resource/track/70fc4bb7-01a5-4358-9d86-464bb8c73890> , <http://dbtune.org/musicbrainz/resource/track/df11973f-23df-4193-a92f-e9bc3da02af6> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/c8d0a9fc-f547-4113-87f1-e7e029b58d6f> ;
+      foaf:page "714278512" .
+
+<http://dbtune.org/musicbrainz/data/record/75af3cb5-26af-4adf-a623-4c16f8116311>
+      rdfs:label "RDF Description of The Road North" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/75af3cb5-26af-4adf-a623-4c16f8116311> .
+
+<http://dbtune.org/musicbrainz/resource/master/75af3cb5-26af-4adf-a623-4c16f8116311>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/75af3cb5-26af-4adf-a623-4c16f8116311> .

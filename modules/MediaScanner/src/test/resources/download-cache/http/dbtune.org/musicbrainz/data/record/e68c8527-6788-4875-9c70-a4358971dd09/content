@@ -1,0 +1,68 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B00000AEVG>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000AEVG%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/e68c8527-6788-4875-9c70-a4358971dd09>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/e68c8527-6788-4875-9c70-a4358971dd09> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/e68c8527-6788-4875-9c70-a4358971dd09>
+      a       mo:Record ;
+      rdfs:label "Songs for Young Lovers / Swing Easy!" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00000AEVG" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B00000AEVG.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "49"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/157391> , <http://dbtune.org/musicbrainz/resource/toc/101018> ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:date "1998-09-08" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Songs for Young Lovers / Swing Easy!" ;
+      mbz:first_release <http://dbtune.org/musicbrainz/resource/record/ff76e6f7-b796-43f1-90fa-cb5010bc0949> , <http://dbtune.org/musicbrainz/resource/record/9fa6d4d5-07ea-42b1-99f8-39e7374e55ff> ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00000AEVG> ;
+      mo:image <http://images.amazon.com/images/P/B00000AEVG> , <http://images.amazon.com/images/P/B00000AEVG.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/e68c8527-6788-4875-9c70-a4358971dd09> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/274663> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/5496a1b8-ffa7-4ee8-9b99-3046aff807e3> , <http://dbtune.org/musicbrainz/resource/track/7d26a5b0-d62e-4395-b1c3-8d4063017301> , <http://dbtune.org/musicbrainz/resource/track/eec3ff93-580e-4df5-bdb4-ec1d4e6e8c33> , <http://dbtune.org/musicbrainz/resource/track/008350a0-6751-4dc6-aed8-57cfee0f96b9> , <http://dbtune.org/musicbrainz/resource/track/970c544d-c3e1-4576-bbd6-651fb1f6e843> , <http://dbtune.org/musicbrainz/resource/track/49202678-2eb6-4ad4-af00-95d04c218f51> , <http://dbtune.org/musicbrainz/resource/track/720c32b5-1e1e-4a86-a2c5-0c6b013cad41> , <http://dbtune.org/musicbrainz/resource/track/2ac5e7de-3f94-40be-86b8-a0b951e3a6d7> , <http://dbtune.org/musicbrainz/resource/track/329a60ab-261e-4779-94fc-9e81173ba14f> , <http://dbtune.org/musicbrainz/resource/track/d0290e39-4fa7-4e7a-b8dc-c5eb3abd9b74> , <http://dbtune.org/musicbrainz/resource/track/92e50367-c91f-4574-9f9c-67ef1b9e424e> , <http://dbtune.org/musicbrainz/resource/track/ddb4dc22-a7e3-4f6a-85fd-eaa7d08ff328> , <http://dbtune.org/musicbrainz/resource/track/458068f7-0fd0-44a5-82c5-12db8576b0ce> , <http://dbtune.org/musicbrainz/resource/track/ac8cbc2e-be53-4fdb-baf5-0a3e4b73ef3a> , <http://dbtune.org/musicbrainz/resource/track/97c6715c-b220-42a9-94c3-cf958c9fe639> , <http://dbtune.org/musicbrainz/resource/track/ac5cc663-353d-4930-8da6-4db6f1f67619> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d> ;
+      foaf:page "688366209" .
+
+<http://musicbrainz.org/album/e68c8527-6788-4875-9c70-a4358971dd09>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fe68c8527-6788-4875-9c70-a4358971dd09%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00000AEVG>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00000AEVG%3E> .
+
+<http://images.amazon.com/images/P/B00000AEVG.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000AEVG.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/e68c8527-6788-4875-9c70-a4358971dd09>
+      rdfs:label "RDF Description of Songs for Young Lovers / Swing Easy!" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/e68c8527-6788-4875-9c70-a4358971dd09> .

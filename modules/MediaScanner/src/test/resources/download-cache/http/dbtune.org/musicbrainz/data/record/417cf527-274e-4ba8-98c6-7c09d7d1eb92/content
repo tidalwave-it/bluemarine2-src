@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/417cf527-274e-4ba8-98c6-7c09d7d1eb92>
+      a       mo:Record ;
+      rdfs:label "Concierto de Aranjuez / Fantasía para un gentilhombre (feat. guitar: John Williams)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000248GE" ;
+      vocab:albummeta_coverarturl
+              "http://ec2.images-amazon.com/images/P/B0000248GE.03.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "8"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/218219> ;
+      vocab:tracks "7"^^xsd:int ;
+      dc:date "1995-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/spa> ;
+      dc:title "Concierto de Aranjuez / Fantasía para un gentilhombre (feat. guitar: John Williams)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000248GE> ;
+      mo:image <http://ec2.images-amazon.com/images/P/B0000248GE.03.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B0000248GE> ;
+      mo:musicbrainz <http://musicbrainz.org/album/417cf527-274e-4ba8-98c6-7c09d7d1eb92> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/338829> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/be52587f-3079-4d44-85df-b00c7adaafb2> , <http://dbtune.org/musicbrainz/resource/track/d10075c8-fb48-4bc7-93ae-f666b30c2d46> , <http://dbtune.org/musicbrainz/resource/track/f1b04abc-f5b1-4d12-872a-529d74ec5274> , <http://dbtune.org/musicbrainz/resource/track/5807fca4-ea45-470b-9972-6f6171274c46> , <http://dbtune.org/musicbrainz/resource/track/94a5581a-3899-40ff-a9ef-24b02f9e1adf> , <http://dbtune.org/musicbrainz/resource/track/ac563fcb-e4ee-4e50-9bdf-66e3b6e7f13a> , <http://dbtune.org/musicbrainz/resource/track/7acec95c-5d29-463f-a5a8-d5e8e1bba8f9> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fde4460b-868a-493e-8c53-221e418c8959> ;
+      foaf:page "151490886" .
+
+<http://dbtune.org/musicbrainz/resource/master/417cf527-274e-4ba8-98c6-7c09d7d1eb92>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/417cf527-274e-4ba8-98c6-7c09d7d1eb92> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000248GE>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000248GE%3E> .
+
+<http://ec2.images-amazon.com/images/P/B0000248GE.03.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec2.images-amazon.com%2Fimages%2FP%2FB0000248GE.03.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/417cf527-274e-4ba8-98c6-7c09d7d1eb92>
+      rdfs:label "RDF Description of Concierto de Aranjuez / Fantasía para un gentilhombre (feat. guitar: John Williams)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/417cf527-274e-4ba8-98c6-7c09d7d1eb92> .
+
+<http://musicbrainz.org/album/417cf527-274e-4ba8-98c6-7c09d7d1eb92>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F417cf527-274e-4ba8-98c6-7c09d7d1eb92%3E> .
+
+<http://images.amazon.com/images/P/B0000248GE>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000248GE%3E> .

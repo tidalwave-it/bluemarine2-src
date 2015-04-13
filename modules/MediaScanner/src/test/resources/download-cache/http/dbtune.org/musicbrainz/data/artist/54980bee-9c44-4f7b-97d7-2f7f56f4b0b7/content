@@ -1,0 +1,58 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/artist/54980bee-9c44-4f7b-97d7-2f7f56f4b0b7>
+      rdfs:label "RDF Description of Sam Pottle and Jim Henson" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/artist/54980bee-9c44-4f7b-97d7-2f7f56f4b0b7> .
+
+<http://www.bbc.co.uk/music/artists/54980bee-9c44-4f7b-97d7-2f7f56f4b0b7#artist>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.bbc.co.uk%2Fmusic%2Fartists%2F54980bee-9c44-4f7b-97d7-2f7f56f4b0b7%23artist%3E> .
+
+mo:MusicArtist
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FMusicArtist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/e7f2706b-3d43-499b-b16e-9d735e48272a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/54980bee-9c44-4f7b-97d7-2f7f56f4b0b7> .
+
+<http://dbtune.org/musicbrainz/resource/track/d4ffd71d-5840-450a-b0b8-77c1e484dc2d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/54980bee-9c44-4f7b-97d7-2f7f56f4b0b7> .
+
+<http://musicbrainz.org/artist/54980bee-9c44-4f7b-97d7-2f7f56f4b0b7>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Fartist%2F54980bee-9c44-4f7b-97d7-2f7f56f4b0b7%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/91eb9231-1a3d-4ca8-842a-0a5404e5e997>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/54980bee-9c44-4f7b-97d7-2f7f56f4b0b7> .
+
+<http://dbtune.org/musicbrainz/resource/track/bac0d677-5a39-4830-b28b-a8bd71fd9562>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/54980bee-9c44-4f7b-97d7-2f7f56f4b0b7> .
+
+<http://dbtune.org/musicbrainz/resource/artist/54980bee-9c44-4f7b-97d7-2f7f56f4b0b7>
+      a       mo:MusicArtist ;
+      rdfs:label "Sam Pottle and Jim Henson" ;
+      vocab:artist_quality
+              "-1"^^xsd:short ;
+      vocab:artist_type "2"^^xsd:short ;
+      vocab:sortname "Pottle, Sam and Henson, Jim" ;
+      mo:musicbrainz <http://musicbrainz.org/artist/54980bee-9c44-4f7b-97d7-2f7f56f4b0b7> ;
+      rel:collaboratesWith
+              <http://dbtune.org/musicbrainz/resource/artist/53d60b8a-133b-42da-bd67-e1f55ce73863> , <http://dbtune.org/musicbrainz/resource/artist/5743fb4f-5c5b-42b4-973e-5e233a286d4a> ;
+      =       <http://www.bbc.co.uk/music/artists/54980bee-9c44-4f7b-97d7-2f7f56f4b0b7#artist> ;
+      foaf:name "Sam Pottle and Jim Henson" .
+
+<http://dbtune.org/musicbrainz/resource/track/035be1ea-7495-4ebd-8808-a9dab2503ae8>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/54980bee-9c44-4f7b-97d7-2f7f56f4b0b7> .

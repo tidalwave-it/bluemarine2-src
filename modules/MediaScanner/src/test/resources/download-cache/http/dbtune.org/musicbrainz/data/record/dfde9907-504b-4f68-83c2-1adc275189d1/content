@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/dfde9907-504b-4f68-83c2-1adc275189d1>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fdfde9907-504b-4f68-83c2-1adc275189d1%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/dfde9907-504b-4f68-83c2-1adc275189d1>
+      a       mo:Record ;
+      rdfs:label "Capitol Collectors Series" ;
+      vocab:album_attributes
+              "{0,100,4}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000002UV3" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000002UV3.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "56"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/160653> , <http://dbtune.org/musicbrainz/resource/toc/9123> ;
+      vocab:tracks "20"^^xsd:int ;
+      dc:date "1989-07-26" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Capitol Collectors Series" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000002UV3> ;
+      mo:image <http://images.amazon.com/images/P/B000002UV3> , <http://ec1.images-amazon.com/images/P/B000002UV3.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/dfde9907-504b-4f68-83c2-1adc275189d1> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/291064> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/6b99030d-f06c-496e-9a0f-d6d009154690> , <http://dbtune.org/musicbrainz/resource/track/0e7d8ee0-4943-4987-b02c-2e12cb4941ec> , <http://dbtune.org/musicbrainz/resource/track/3c88f823-9cfd-47f7-a6a0-2b251eb7e922> , <http://dbtune.org/musicbrainz/resource/track/1b1f50bf-981d-406c-a8bd-15dbeede69cc> , <http://dbtune.org/musicbrainz/resource/track/7a9fd8c7-bf3b-4716-b5ea-578dce85ed0b> , <http://dbtune.org/musicbrainz/resource/track/fdd6a9a0-12ec-428d-a95b-5c49c1ad4629> , <http://dbtune.org/musicbrainz/resource/track/ad690dcc-ca57-4255-ad64-9d52110263a2> , <http://dbtune.org/musicbrainz/resource/track/fcd8903a-2a63-495e-b3ef-715951b3f9a9> , <http://dbtune.org/musicbrainz/resource/track/0f5f23e7-22f6-4910-b057-7b431b1bb143> , <http://dbtune.org/musicbrainz/resource/track/86354324-7d04-4b32-94ac-2be028fb46bf> , <http://dbtune.org/musicbrainz/resource/track/385f0b92-393a-4295-b971-72673a2f16c1> , <http://dbtune.org/musicbrainz/resource/track/39975110-1caf-4211-b941-a15cb9f5bbd4> , <http://dbtune.org/musicbrainz/resource/track/540a727a-d483-4938-b93d-f5e94d59b5f6> , <http://dbtune.org/musicbrainz/resource/track/f05da289-d027-41f4-8fb2-7f02e91b3051> , <http://dbtune.org/musicbrainz/resource/track/02bdb8ca-470b-4a6b-93a4-36f9789a03ad> , <http://dbtune.org/musicbrainz/resource/track/b8091cfe-86b0-47b0-8e76-ac45813b547d> , <http://dbtune.org/musicbrainz/resource/track/00e7edad-78ef-45c0-9226-9adbad7550ef> , <http://dbtune.org/musicbrainz/resource/track/4cc6f5c9-063a-4712-838d-3b8f19041108> , <http://dbtune.org/musicbrainz/resource/track/ea6b1a57-ca07-4724-ad8b-2d4dde4b4e5f> , <http://dbtune.org/musicbrainz/resource/track/5d96ef21-a6ee-471a-b41d-6dfccc759cc2> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d> ;
+      foaf:page "136882864" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B000002UV3>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002UV3%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/dfde9907-504b-4f68-83c2-1adc275189d1>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/dfde9907-504b-4f68-83c2-1adc275189d1> .
+
+<http://dbtune.org/musicbrainz/data/record/dfde9907-504b-4f68-83c2-1adc275189d1>
+      rdfs:label "RDF Description of Capitol Collectors Series" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/dfde9907-504b-4f68-83c2-1adc275189d1> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000002UV3>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000002UV3%3E> .
+
+<http://ec1.images-amazon.com/images/P/B000002UV3.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000002UV3.01.MZZZZZZZ.jpg%3E> .

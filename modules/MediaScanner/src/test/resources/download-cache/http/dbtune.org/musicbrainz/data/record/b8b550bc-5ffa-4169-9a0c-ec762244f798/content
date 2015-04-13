@@ -1,0 +1,56 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/b8b550bc-5ffa-4169-9a0c-ec762244f798>
+      a       mo:Record ;
+      rdfs:label "Miles Plays for Lovers" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "15"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/69630> ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:date "2003-07-29" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Miles Plays for Lovers" ;
+      mo:musicbrainz <http://musicbrainz.org/album/b8b550bc-5ffa-4169-9a0c-ec762244f798> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/58570> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/6a62e1bd-f08e-47ab-b1cd-c4131c4dba02> , <http://dbtune.org/musicbrainz/resource/track/aec40483-157f-45e2-8e8c-6d3d48dd2ed9> , <http://dbtune.org/musicbrainz/resource/track/f2b799f0-8937-4906-bb12-29af29db8a9d> , <http://dbtune.org/musicbrainz/resource/track/167bfc1c-fa2d-492b-83d2-b00c4acc4902> , <http://dbtune.org/musicbrainz/resource/track/50b50c2d-41d6-4f95-b3a3-2ae5c72f7c29> , <http://dbtune.org/musicbrainz/resource/track/46575c18-761d-482b-82d3-11a591da4552> , <http://dbtune.org/musicbrainz/resource/track/cfe9265c-5e98-4d41-a17f-901735cc17b8> , <http://dbtune.org/musicbrainz/resource/track/85d82466-c32d-4d19-946a-7c34994ab377> , <http://dbtune.org/musicbrainz/resource/track/7d65c117-5f3a-4d94-94d9-87662f7462ea> , <http://dbtune.org/musicbrainz/resource/track/efaacc67-a94f-41ce-b5bf-57f8524d41ea> , <http://dbtune.org/musicbrainz/resource/track/4f651d35-75c9-4185-b84c-3cc755226a69> , <http://dbtune.org/musicbrainz/resource/track/00f44157-5948-4cd5-ac80-94415397589f> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/561d854a-6a28-4aa7-8c99-323e6ce46c2a> ;
+      foaf:page "480680577" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/b8b550bc-5ffa-4169-9a0c-ec762244f798>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/b8b550bc-5ffa-4169-9a0c-ec762244f798> .
+
+<http://dbtune.org/musicbrainz/data/record/b8b550bc-5ffa-4169-9a0c-ec762244f798>
+      rdfs:label "RDF Description of Miles Plays for Lovers" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/b8b550bc-5ffa-4169-9a0c-ec762244f798> .
+
+<http://musicbrainz.org/album/b8b550bc-5ffa-4169-9a0c-ec762244f798>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fb8b550bc-5ffa-4169-9a0c-ec762244f798%3E> .

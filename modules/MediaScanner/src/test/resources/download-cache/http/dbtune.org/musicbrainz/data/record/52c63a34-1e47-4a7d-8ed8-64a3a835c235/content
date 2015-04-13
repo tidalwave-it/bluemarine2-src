@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/52c63a34-1e47-4a7d-8ed8-64a3a835c235>
+      a       mo:Record ;
+      rdfs:label "In Concert: What a Wonderful World" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "1"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/47913> ;
+      vocab:tracks "10"^^xsd:int ;
+      dc:date "1994-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "In Concert: What a Wonderful World" ;
+      mo:musicbrainz <http://musicbrainz.org/album/52c63a34-1e47-4a7d-8ed8-64a3a835c235> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/183407> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/00171b49-8e8c-45cc-a78b-384c1460cdf3> , <http://dbtune.org/musicbrainz/resource/track/4cc3e12f-e0b5-4438-b4fe-cdebe456a475> , <http://dbtune.org/musicbrainz/resource/track/8efdd5cb-2d3f-4a6f-ac75-c1e0549d3ecf> , <http://dbtune.org/musicbrainz/resource/track/37586051-4767-4826-95c9-31195b90171b> , <http://dbtune.org/musicbrainz/resource/track/891f9834-f7a5-441c-aaa4-6aa18248b1b7> , <http://dbtune.org/musicbrainz/resource/track/81807cc0-9d5a-45b9-95c8-04fd6103b349> , <http://dbtune.org/musicbrainz/resource/track/270eb6cc-8f5d-47b9-a3b8-b5b2d554dce1> , <http://dbtune.org/musicbrainz/resource/track/57b73d26-4b73-4116-8f73-13b0acf140f2> , <http://dbtune.org/musicbrainz/resource/track/1b2012fe-f2db-44ce-8abe-43f2bc9a91a6> , <http://dbtune.org/musicbrainz/resource/track/989ece2d-025d-4497-9452-fa8f4bc9e37c> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/eea8a864-fcda-4602-9569-38ab446decd6> ;
+      foaf:page "351310351" .
+
+<http://dbtune.org/musicbrainz/resource/master/52c63a34-1e47-4a7d-8ed8-64a3a835c235>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/52c63a34-1e47-4a7d-8ed8-64a3a835c235> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/52c63a34-1e47-4a7d-8ed8-64a3a835c235>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F52c63a34-1e47-4a7d-8ed8-64a3a835c235%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/52c63a34-1e47-4a7d-8ed8-64a3a835c235>
+      rdfs:label "RDF Description of In Concert: What a Wonderful World" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/52c63a34-1e47-4a7d-8ed8-64a3a835c235> .

@@ -1,0 +1,49 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/63ef8394-449c-4006-89f1-ac8df08c3ac9>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F63ef8394-449c-4006-89f1-ac8df08c3ac9%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/63ef8394-449c-4006-89f1-ac8df08c3ac9>
+      rdfs:label "RDF Description of Oye Como Va (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/63ef8394-449c-4006-89f1-ac8df08c3ac9> .
+
+<http://dbtune.org/musicbrainz/resource/master/63ef8394-449c-4006-89f1-ac8df08c3ac9>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/63ef8394-449c-4006-89f1-ac8df08c3ac9> .
+
+<http://dbtune.org/musicbrainz/resource/record/63ef8394-449c-4006-89f1-ac8df08c3ac9>
+      a       mo:Record ;
+      rdfs:label "Oye Como Va (disc 1)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "12"^^xsd:int ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Oye Como Va (disc 1)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/63ef8394-449c-4006-89f1-ac8df08c3ac9> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/5cc8aa7b-1b0d-4877-b126-04a31e6d72b4> , <http://dbtune.org/musicbrainz/resource/track/31ab99d3-98b5-43b9-8a3a-bd336d2309b4> , <http://dbtune.org/musicbrainz/resource/track/0898ee33-c3ce-4a97-b601-bdd0e4d1b6fb> , <http://dbtune.org/musicbrainz/resource/track/70f4e670-763d-4f71-8fa4-98c812a6c6d0> , <http://dbtune.org/musicbrainz/resource/track/dfea642c-91e7-4ef4-b45c-45f759f2e4fc> , <http://dbtune.org/musicbrainz/resource/track/202aeb72-ff21-494a-83fb-ab5794face95> , <http://dbtune.org/musicbrainz/resource/track/ada9c437-ae01-4fb1-be15-083d92e48b89> , <http://dbtune.org/musicbrainz/resource/track/991a058c-8239-4cd8-8384-1fe6d537850e> , <http://dbtune.org/musicbrainz/resource/track/45f0d7c5-9e06-4350-822a-f689f33fac47> , <http://dbtune.org/musicbrainz/resource/track/99e562bb-e203-4867-8408-132922e9b4c8> , <http://dbtune.org/musicbrainz/resource/track/473d72c2-f729-467c-aab5-f3edf2d5c40c> , <http://dbtune.org/musicbrainz/resource/track/9d23cf95-675f-41eb-be53-7a4f8c66c957> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/9a3bf45c-347d-4630-894d-7cf3e8e0b632> ;
+      foaf:page "564331664" .

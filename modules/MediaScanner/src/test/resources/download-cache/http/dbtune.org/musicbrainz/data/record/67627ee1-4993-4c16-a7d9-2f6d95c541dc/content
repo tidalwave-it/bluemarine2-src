@@ -1,0 +1,56 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/67627ee1-4993-4c16-a7d9-2f6d95c541dc>
+      rdfs:label "RDF Description of Legacy of the Scottish Fiddle" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/67627ee1-4993-4c16-a7d9-2f6d95c541dc> .
+
+<http://musicbrainz.org/album/67627ee1-4993-4c16-a7d9-2f6d95c541dc>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F67627ee1-4993-4c16-a7d9-2f6d95c541dc%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/67627ee1-4993-4c16-a7d9-2f6d95c541dc>
+      a       mo:Record ;
+      rdfs:label "Legacy of the Scottish Fiddle" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/37085> ;
+      vocab:tracks "21"^^xsd:int ;
+      dc:date "2001-05-21" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Legacy of the Scottish Fiddle" ;
+      mo:musicbrainz <http://musicbrainz.org/album/67627ee1-4993-4c16-a7d9-2f6d95c541dc> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/87175> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/37300713-fc0d-4dad-a40e-947bc2c19f60> , <http://dbtune.org/musicbrainz/resource/track/f934cb7b-863f-4310-801e-214ab0cefe00> , <http://dbtune.org/musicbrainz/resource/track/c242b0df-fcef-4e09-ad48-b2eb57d7afe5> , <http://dbtune.org/musicbrainz/resource/track/40495a81-bcb6-4218-baa2-65234d5a3311> , <http://dbtune.org/musicbrainz/resource/track/38b56c87-bb67-4872-a7e7-68d6057bf79b> , <http://dbtune.org/musicbrainz/resource/track/da293d66-a3d6-459c-81ec-f6f6bc7c68cf> , <http://dbtune.org/musicbrainz/resource/track/467221bd-eefe-4507-927a-34c6080a104b> , <http://dbtune.org/musicbrainz/resource/track/7dd22031-742d-4167-8b12-9d65aa92ddd4> , <http://dbtune.org/musicbrainz/resource/track/47c7df55-c2ce-48f1-a973-c29351400207> , <http://dbtune.org/musicbrainz/resource/track/3e4b7cb4-840d-4512-b5b4-8b5f5720cb9f> , <http://dbtune.org/musicbrainz/resource/track/cf68b6e0-d8ea-4ba1-8498-d170385ca061> , <http://dbtune.org/musicbrainz/resource/track/dbf6e722-9908-4e7f-8dcc-94b7f7ce572b> , <http://dbtune.org/musicbrainz/resource/track/d257f7ad-3b8d-40cc-b228-d28cde261951> , <http://dbtune.org/musicbrainz/resource/track/b4cb27db-8f34-4205-93a0-6f4f1f48cf8a> , <http://dbtune.org/musicbrainz/resource/track/99c99830-8b88-4f65-90f7-a9f6ba92f57e> , <http://dbtune.org/musicbrainz/resource/track/d4809773-fbff-4ee9-a028-c7042dae1227> , <http://dbtune.org/musicbrainz/resource/track/09b09b75-9c2a-4f35-ae16-83f3c27def13> , <http://dbtune.org/musicbrainz/resource/track/37c5d55d-af21-4c18-a38a-eed0f87e6b62> , <http://dbtune.org/musicbrainz/resource/track/60d45ddb-5fa9-4d30-b9bd-65dd91f29689> , <http://dbtune.org/musicbrainz/resource/track/1bf74c72-ecc5-48f1-8b9f-7b4fb99fd51e> , <http://dbtune.org/musicbrainz/resource/track/aa8ac7b7-6e17-45e2-8972-4260f430b6cf> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/c8d0a9fc-f547-4113-87f1-e7e029b58d6f> ;
+      foaf:page "442763418" .
+
+<http://dbtune.org/musicbrainz/resource/master/67627ee1-4993-4c16-a7d9-2f6d95c541dc>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/67627ee1-4993-4c16-a7d9-2f6d95c541dc> .

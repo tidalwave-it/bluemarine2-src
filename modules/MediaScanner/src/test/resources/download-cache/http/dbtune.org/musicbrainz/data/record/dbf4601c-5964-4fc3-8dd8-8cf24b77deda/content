@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/dbf4601c-5964-4fc3-8dd8-8cf24b77deda>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/dbf4601c-5964-4fc3-8dd8-8cf24b77deda> .
+
+<http://dbtune.org/musicbrainz/resource/record/dbf4601c-5964-4fc3-8dd8-8cf24b77deda>
+      a       mo:Record ;
+      rdfs:label "Ken Burns Jazz: Definitive Ella Fitzgerald" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000050I3O" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000050I3O.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "25"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/10916> ;
+      vocab:tracks "18"^^xsd:int ;
+      dc:date "2000-11-07" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Ken Burns Jazz: Definitive Ella Fitzgerald" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000050I3O> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000050I3O.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000050I3O> ;
+      mo:musicbrainz <http://musicbrainz.org/album/dbf4601c-5964-4fc3-8dd8-8cf24b77deda> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/271239> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/af3d9320-1551-4d7c-a9d5-fb81dfd37c74> , <http://dbtune.org/musicbrainz/resource/track/5345bd4a-24eb-408a-a6d9-9a40d2dc9426> , <http://dbtune.org/musicbrainz/resource/track/5a260df8-624d-44a6-89d4-8c18809d8734> , <http://dbtune.org/musicbrainz/resource/track/e0d8ef9e-7c6d-4fae-a242-84dd1b65d597> , <http://dbtune.org/musicbrainz/resource/track/12b4bf4f-18ec-4b6e-b92d-ea0d7f7e30f2> , <http://dbtune.org/musicbrainz/resource/track/3ef281f9-7eb1-4e97-a10d-7e8af0d1ed6c> , <http://dbtune.org/musicbrainz/resource/track/b9cfc4fb-071e-493e-b97f-ba2c0f14903a> , <http://dbtune.org/musicbrainz/resource/track/801cc817-559c-4ce4-ba0e-51c567ee4527> , <http://dbtune.org/musicbrainz/resource/track/d8bc0a44-59d1-4656-ab53-58f43a16aa2e> , <http://dbtune.org/musicbrainz/resource/track/b5d614f5-fa99-4e55-8f37-2026144d07c7> , <http://dbtune.org/musicbrainz/resource/track/29fca5b7-9172-406d-aa61-c28b448a9e8e> , <http://dbtune.org/musicbrainz/resource/track/65b7c10d-e18e-4e1b-83f0-55d2f6cf3793> , <http://dbtune.org/musicbrainz/resource/track/1992fc7f-2232-4662-8e53-8804f216708b> , <http://dbtune.org/musicbrainz/resource/track/343c19df-33b0-43ee-9897-cd434db8832f> , <http://dbtune.org/musicbrainz/resource/track/260d8310-7e45-48e6-ad87-af919ffc29a0> , <http://dbtune.org/musicbrainz/resource/track/511f8713-8d13-4b98-b8d8-90a3897b6619> , <http://dbtune.org/musicbrainz/resource/track/aa144818-ad7f-45dc-a892-276ed4fc2073> , <http://dbtune.org/musicbrainz/resource/track/ba51134a-074d-445a-9eed-a9f47bc2e6e5> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
+      foaf:page "409437302" .
+
+<http://ec1.images-amazon.com/images/P/B000050I3O.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000050I3O.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/dbf4601c-5964-4fc3-8dd8-8cf24b77deda>
+      rdfs:label "RDF Description of Ken Burns Jazz: Definitive Ella Fitzgerald" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/dbf4601c-5964-4fc3-8dd8-8cf24b77deda> .
+
+<http://images.amazon.com/images/P/B000050I3O>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000050I3O%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000050I3O>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000050I3O%3E> .
+
+<http://musicbrainz.org/album/dbf4601c-5964-4fc3-8dd8-8cf24b77deda>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fdbf4601c-5964-4fc3-8dd8-8cf24b77deda%3E> .

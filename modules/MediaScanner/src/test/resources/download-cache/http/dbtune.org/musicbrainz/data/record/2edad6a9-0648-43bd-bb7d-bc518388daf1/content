@@ -1,0 +1,74 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/2edad6a9-0648-43bd-bb7d-bc518388daf1>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F2edad6a9-0648-43bd-bb7d-bc518388daf1%3E> .
+
+<http://images.amazon.com/images/P/B00000AEVA.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000AEVA.01.MZZZZZZZ.jpg%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B00000AEVA>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000AEVA%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/2edad6a9-0648-43bd-bb7d-bc518388daf1>
+      a       mo:Record ;
+      rdfs:label "Songs for Swingin' Lovers!" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00000AEVA" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B00000AEVA.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "9"^^xsd:int ;
+      vocab:albummeta_puids
+              "91"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/79542> , <http://dbtune.org/musicbrainz/resource/toc/37905> , <http://dbtune.org/musicbrainz/resource/toc/266871> , <http://dbtune.org/musicbrainz/resource/toc/223921> , <http://dbtune.org/musicbrainz/resource/toc/118547> , <http://dbtune.org/musicbrainz/resource/toc/285774> , <http://dbtune.org/musicbrainz/resource/toc/291812> , <http://dbtune.org/musicbrainz/resource/toc/86694> , <http://dbtune.org/musicbrainz/resource/toc/141224> ;
+      vocab:tracks "15"^^xsd:int ;
+      dc:date "1956-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Songs for Swingin' Lovers!" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00000AEVA> ;
+      mo:image <http://images.amazon.com/images/P/B00000AEVA.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B00000AEVA> , <http://images.amazon.com/images/P/B0000089EM> ;
+      mo:musicbrainz <http://musicbrainz.org/album/2edad6a9-0648-43bd-bb7d-bc518388daf1> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/18253> , <http://dbtune.org/musicbrainz/resource/release/475282> , <http://dbtune.org/musicbrainz/resource/release/456732> , <http://dbtune.org/musicbrainz/resource/release/475061> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/5af83fa4-1fb8-460b-a4ea-80e4906bd396> , <http://dbtune.org/musicbrainz/resource/track/cd466f9e-533b-4f6e-9048-c1529ff09d9d> , <http://dbtune.org/musicbrainz/resource/track/cfc37d68-0bde-4739-bfc6-1d0afdfcd54d> , <http://dbtune.org/musicbrainz/resource/track/0bca187a-53a6-4cf3-8220-4d6cbd3b6d37> , <http://dbtune.org/musicbrainz/resource/track/93c36862-d969-4d69-98d5-12ff1ca2e991> , <http://dbtune.org/musicbrainz/resource/track/69abbe3e-bd65-4d3f-9082-d6921b0d4077> , <http://dbtune.org/musicbrainz/resource/track/566109a4-fab9-4d81-bcef-ef4ab92446db> , <http://dbtune.org/musicbrainz/resource/track/e8e19053-0972-485c-896d-2c6411e4e80b> , <http://dbtune.org/musicbrainz/resource/track/cef0f42a-3d1d-4bdd-8332-3512970767e5> , <http://dbtune.org/musicbrainz/resource/track/885e6cdc-e21d-4671-b250-984abf18b43d> , <http://dbtune.org/musicbrainz/resource/track/9db19aa1-b756-4910-93c9-7715c7e55a74> , <http://dbtune.org/musicbrainz/resource/track/cf12dfe8-67a7-400f-b726-c3c1795ac6eb> , <http://dbtune.org/musicbrainz/resource/track/be503e94-439f-42ce-be54-cdf8c513ca54> , <http://dbtune.org/musicbrainz/resource/track/d99410d9-fd89-4ea8-8b5e-bfe57f382df9> , <http://dbtune.org/musicbrainz/resource/track/14a51da3-751e-4d5b-85ac-a3a9b1807144> ;
+      =       <http://dbpedia.org/resource/Songs_For_Swingin%27_Lovers> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d> ;
+      foaf:page "688366209" .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00000AEVA>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00000AEVA%3E> .
+
+<http://images.amazon.com/images/P/B0000089EM>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000089EM%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/2edad6a9-0648-43bd-bb7d-bc518388daf1>
+      rdfs:label "RDF Description of Songs for Swingin' Lovers!" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/2edad6a9-0648-43bd-bb7d-bc518388daf1> .
+
+<http://dbtune.org/musicbrainz/resource/master/2edad6a9-0648-43bd-bb7d-bc518388daf1>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/2edad6a9-0648-43bd-bb7d-bc518388daf1> .
+
+<http://dbpedia.org/resource/Songs_For_Swingin%27_Lovers>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FSongs_For_Swingin%2527_Lovers%3E> .

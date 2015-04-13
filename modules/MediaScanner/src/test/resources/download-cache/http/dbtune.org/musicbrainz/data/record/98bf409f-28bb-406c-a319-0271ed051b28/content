@@ -1,0 +1,72 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/98bf409f-28bb-406c-a319-0271ed051b28>
+      rdfs:label "RDF Description of 'Round About Midnight" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/98bf409f-28bb-406c-a319-0271ed051b28> .
+
+<http://dbtune.org/musicbrainz/resource/master/98bf409f-28bb-406c-a319-0271ed051b28>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/98bf409f-28bb-406c-a319-0271ed051b28> .
+
+<http://dbtune.org/musicbrainz/resource/record/98bf409f-28bb-406c-a319-0271ed051b28>
+      a       mo:Record ;
+      rdfs:label "'Round About Midnight" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000002AK4" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000002AK4.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "4"^^xsd:int ;
+      vocab:albummeta_puids
+              "33"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/302848> , <http://dbtune.org/musicbrainz/resource/toc/136141> , <http://dbtune.org/musicbrainz/resource/toc/300706> , <http://dbtune.org/musicbrainz/resource/toc/1363> ;
+      vocab:tracks "6"^^xsd:int ;
+      dc:date "1957-03-04" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "'Round About Midnight" ;
+      mbz:remaster <http://dbtune.org/musicbrainz/resource/record/8e5f4ff4-28ca-4b7d-a1d5-1a6128ca3df6> ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000002AK4> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000002AK4.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000002AK4> ;
+      mo:musicbrainz <http://musicbrainz.org/album/98bf409f-28bb-406c-a319-0271ed051b28> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/69252> , <http://dbtune.org/musicbrainz/resource/release/435676> , <http://dbtune.org/musicbrainz/resource/release/501535> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/d02625e0-3656-437a-9d6b-4315e3af72f5> , <http://dbtune.org/musicbrainz/resource/track/8bb7b63c-9188-4e63-8192-16ae289a3ada> , <http://dbtune.org/musicbrainz/resource/track/def38491-024d-46f3-aec4-42a23b3b64f3> , <http://dbtune.org/musicbrainz/resource/track/14b4271d-9aa5-4e12-92bc-741b8b2cd2e1> , <http://dbtune.org/musicbrainz/resource/track/b2d096c1-8ccb-44cf-baf0-97e7fe0dc38e> , <http://dbtune.org/musicbrainz/resource/track/0ba4f516-252b-45cd-a6b5-1de7bf843769> ;
+      =       <http://dbpedia.org/resource/%27Round_about_Midnight> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/561d854a-6a28-4aa7-8c99-323e6ce46c2a> ;
+      foaf:page "20470245" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://ec1.images-amazon.com/images/P/B000002AK4.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000002AK4.01.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000002AK4>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000002AK4%3E> .
+
+<http://musicbrainz.org/album/98bf409f-28bb-406c-a319-0271ed051b28>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F98bf409f-28bb-406c-a319-0271ed051b28%3E> .
+
+<http://images.amazon.com/images/P/B000002AK4>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002AK4%3E> .
+
+<http://dbpedia.org/resource/%27Round_about_Midnight>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%2527Round_about_Midnight%3E> .

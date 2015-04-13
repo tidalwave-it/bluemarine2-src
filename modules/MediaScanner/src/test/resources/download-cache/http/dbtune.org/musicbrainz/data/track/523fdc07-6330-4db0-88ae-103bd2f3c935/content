@@ -1,0 +1,43 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/signal/523fdc07-6330-4db0-88ae-103bd2f3c935>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/track/523fdc07-6330-4db0-88ae-103bd2f3c935> .
+
+<http://dbtune.org/musicbrainz/resource/record/f5c8304f-cc1f-49bf-80e0-4dc7472f58ac>
+      mo:track <http://dbtune.org/musicbrainz/resource/track/523fdc07-6330-4db0-88ae-103bd2f3c935> .
+
+<http://musicbrainz.org/track/523fdc07-6330-4db0-88ae-103bd2f3c935>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Ftrack%2F523fdc07-6330-4db0-88ae-103bd2f3c935%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/523fdc07-6330-4db0-88ae-103bd2f3c935>
+      a       mo:Track ;
+      rdfs:label "Proof" ;
+      dc:date "0"^^xsd:int ;
+      dc:title "Proof" ;
+      mo:length "618306"^^xsd:int ;
+      mo:musicbrainz <http://musicbrainz.org/track/523fdc07-6330-4db0-88ae-103bd2f3c935> ;
+      mo:track_number "2"^^xsd:int ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/66a7f1f8-0ad6-4e3a-9346-a643e2739a8c> .
+
+mo:Track
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FTrack%3E> .
+
+<http://dbtune.org/musicbrainz/data/track/523fdc07-6330-4db0-88ae-103bd2f3c935>
+      rdfs:label "RDF Description of Proof" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/track/523fdc07-6330-4db0-88ae-103bd2f3c935> .
