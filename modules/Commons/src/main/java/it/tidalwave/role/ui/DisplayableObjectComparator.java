@@ -30,6 +30,7 @@ package it.tidalwave.role.ui;
 
 import javax.annotation.Nonnull;
 import java.util.Comparator;
+import java.text.Collator;
 import it.tidalwave.util.As;
 import it.tidalwave.util.AsException;
 import static it.tidalwave.role.Displayable.Displayable;
@@ -42,10 +43,12 @@ import static it.tidalwave.role.Displayable.Displayable;
  **********************************************************************************************************************/
 public class DisplayableObjectComparator implements Comparator<As>
   {
+    private final Collator collator = Collator.getInstance();
+    
     @Override
     public int compare (final @Nonnull As o1, final @Nonnull As o2) 
       {
-        return displayName(o1).compareTo(displayName(o2));
+        return collator.compare(displayName(o1), displayName(o2));
       }
     
     @Nonnull

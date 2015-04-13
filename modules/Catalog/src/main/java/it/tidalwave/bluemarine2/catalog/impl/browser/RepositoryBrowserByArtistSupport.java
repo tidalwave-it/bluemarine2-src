@@ -28,11 +28,7 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl.browser;
 
-import javax.annotation.Nonnull;
-import it.tidalwave.util.Finder8;
 import it.tidalwave.role.Displayable;
-import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.model.MusicArtist;
 
 /***********************************************************************************************************************
  *
@@ -42,16 +38,8 @@ import it.tidalwave.bluemarine2.model.MusicArtist;
  **********************************************************************************************************************/
 public abstract class RepositoryBrowserByArtistSupport extends RepositoryBrowserSupport implements Displayable
   {
-    public RepositoryBrowserByArtistSupport ()
+    public RepositoryBrowserByArtistSupport()
       {
-//        super(() -> getCatalog().findArtists());
-        setCompositeForRootEntity(new SimpleComposite8<MusicArtist>() 
-          {
-            @Override @Nonnull
-            public Finder8<MusicArtist> findChildren() 
-              {
-                return getCatalog().findArtists().withContext(RepositoryBrowserByArtistSupport.this);
-              } 
-          });
+        setFinder(() -> getCatalog().findArtists().withContext(RepositoryBrowserByArtistSupport.this));
       }
   }

@@ -31,6 +31,9 @@ package it.tidalwave.bluemarine2.catalog.impl.browser;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import java.util.function.Supplier;
+import it.tidalwave.util.Finder;
+import it.tidalwave.util.Finder8;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.catalog.Catalog;
@@ -39,7 +42,6 @@ import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import lombok.Delegate;
-import lombok.Setter;
 
 /***********************************************************************************************************************
  *
@@ -58,8 +60,8 @@ public class RepositoryBrowserSupport implements EntityBrowser
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
     
-    @Setter @Nonnull
-    private SimpleComposite8<? extends Entity> compositeForRootEntity;
+    @Nonnull
+    protected SimpleComposite8<? extends Entity> compositeForRootEntity;
         
     @Override @Nonnull
     public Entity getRoot() 
@@ -70,6 +72,18 @@ public class RepositoryBrowserSupport implements EntityBrowser
             private final AsSupport asSupport = new AsSupport(this, compositeForRootEntity);
           };
       }
+    
+    protected final void setFinder (final @Nonnull Supplier<Finder<? extends Entity>> finderSupplier)
+      {
+        compositeForRootEntity = new SimpleComposite8<Entity>()
+          {
+            @Override @Nonnull
+            public Finder8<Entity> findChildren() 
+              {
+                return (Finder8<Entity>)finderSupplier.get();
+              } 
+          };
+      }   
     
     @Nonnull
     protected final synchronized Catalog getCatalog()
