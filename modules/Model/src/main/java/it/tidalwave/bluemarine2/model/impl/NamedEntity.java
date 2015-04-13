@@ -42,7 +42,7 @@ import lombok.Delegate;
  **********************************************************************************************************************/
 public class NamedEntity implements Entity
   {
-    @Delegate
+    @Delegate @Nonnull
     private final AsSupport asSupport;
 
     public NamedEntity (final @Nonnull String displayName) 
