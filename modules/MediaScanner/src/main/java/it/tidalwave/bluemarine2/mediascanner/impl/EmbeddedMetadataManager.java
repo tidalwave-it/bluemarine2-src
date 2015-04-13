@@ -74,11 +74,10 @@ public class EmbeddedMetadataManager
   {
     class ConcurrentHashMapWithOptionals<K, V> extends ConcurrentHashMap<K, V>
       {
-        // FIXME: rename (semantics is slightly different than the original putIfAbsent())
         @Nonnull
         public Optional<K> putIfAbsentAndGetNewKey (final @Nonnull Optional<K> key, final @Nonnull V value)
           {
-            return (key.isPresent() && (putIfAbsent(key.get(), value) == null)) ? key : Optional.empty();
+            return key.flatMap(k -> (putIfAbsent(k, value) == null) ? Optional.of(k) : Optional.empty());
           }
       }
     
