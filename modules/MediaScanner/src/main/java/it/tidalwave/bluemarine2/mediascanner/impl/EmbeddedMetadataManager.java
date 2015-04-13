@@ -61,7 +61,6 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.vocabulary.DbTune;
 import it.tidalwave.bluemarine2.vocabulary.Purl;
-import java.util.Scanner;
 import java.util.stream.Stream;
 import lombok.Getter;
 
@@ -75,13 +74,13 @@ import lombok.Getter;
 public class EmbeddedMetadataManager 
   {
     @RequiredArgsConstructor @Getter @ToString
-    static class Entry<K, V> 
+    static class Entry
       {
         @Nonnull
-        private final K key;
+        private final URI uri;
         
         @Nonnull
-        private final V value;
+        private final String name;
       }
     
     static class ConcurrentHashMapWithOptionals<K, V> extends ConcurrentHashMap<K, V>
@@ -226,15 +225,15 @@ public class EmbeddedMetadataManager
         
         // Can't split on ',' because of e.g. "Victoria Mullova, violin" or "Perosi, Lorenzo"
         // Also can't split on '&' as it might be part of a group name
-        final List<Entry<URI, String>> artists  = makerName
+        final List<Entry> artists  = makerName
                 .map(name -> Stream.of(name.split("[;]")).map(String::trim)).orElse(Stream.empty())
-                .map(name -> new Entry<>(createUriForLocalArtist(name), name))
+                .map(name -> new Entry(createUriForLocalArtist(name), name))
                 .collect(toList());
-        final List<Entry<URI, String>> newArtists   = artists.stream().filter(
-                e -> seenArtistUris.putIfAbsentAndGetNewKey(e.getKey(), true).isPresent())
+        final List<Entry> newArtists   = artists.stream().filter(
+                e -> seenArtistUris.putIfAbsentAndGetNewKey(e.getUri(), true).isPresent())
                 .collect(toList());
-        final List<URI> newArtistUris       = newArtists.stream().map(Entry::getKey).collect(toList());
-        final List<Value> newArtistLiterals = newArtists.stream().map(e -> literalFor(e.getValue())).collect(toList());
+        final List<URI> newArtistUris       = newArtists.stream().map(Entry::getUri).collect(toList());
+        final List<Value> newArtistLiterals = newArtists.stream().map(e -> literalFor(e.getName())).collect(toList());
         
         final Optional<URI> newGroupUri = (artists.size() <= 1) ? Optional.empty()
                 : seenArtistUris.putIfAbsentAndGetNewKey(makerUri, true);
@@ -270,7 +269,7 @@ public class EmbeddedMetadataManager
             .with(newGroupUri,   RDFS.LABEL,                literalFor(makerName))
             .with(newGroupUri,   FOAF.NAME,                 literalFor(makerName))
             .with(newGroupUri,   DbTune.ARTIST_TYPE,        literalFor((short)2))
-            .with(newGroupUri,   Purl.COLLABORATES_WITH,    artists.stream().map(Entry::getKey))
+            .with(newGroupUri,   Purl.COLLABORATES_WITH,    artists.stream().map(Entry::getUri))
             .publish();
       }
 
