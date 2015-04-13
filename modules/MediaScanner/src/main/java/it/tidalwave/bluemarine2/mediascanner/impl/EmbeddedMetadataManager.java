@@ -182,9 +182,7 @@ public class EmbeddedMetadataManager
      ******************************************************************************************************************/
     public void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI trackUri) 
       {
-        // FIXME: scenarios can be complex. For instance, we could have a valid MBZ artistId - we might be here just
-        // because we couldn't retrieve the DbTune resource for the track.
-        // Also, consider the COMPOSER.
+        // TODO: consider the MBZ COMPOSER.
         log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackUri);
         
         final Metadata metadata           = mediaItem.getMetadata();  
@@ -194,7 +192,11 @@ public class EmbeddedMetadataManager
         final Optional<String> title      = metadata.get(Metadata.TITLE);
         final Optional<String> makerName  = metadata.get(Metadata.ARTIST);
         Optional<URI> makerUri      = makerName.map(name -> createUriForLocalArtist(name));
-
+        //
+        // Even though we're in fallback mode, we could have a MusicBrainz artist id. Actually, fallback mode can be
+        // triggered by any error while retrieving the track resource; it not implies a problem with the artist 
+        // resource. That's why it makes sense to try to recover an artist resource here.
+        //
         // FIXME: some are multiple, split by / - should be done in Metadata
         List<Entry> artists  = metadata.getAll(Metadata.MBZ_ARTIST_ID).stream()
                 .map(i -> new Entry(uriFor("http://dbtune.org/musicbrainz/resource/artist/" + i), makerName.orElse("???"))).collect(toList());
@@ -210,41 +212,12 @@ public class EmbeddedMetadataManager
           {
             makerUri = Optional.of(artists.get(0).getUri()); // FIXME Not only the first one
             dbTuneMetadataManager.requestArtistMetadata(makerUri.get(), makerName);
-            
-//            artists.clear(); // don't try to add new artists - we don't have the name. We hope we have already their data somewhere 
-        /*
-            FIXME: Unfortunately, we don't have their data when there are no other tracks/records that trigger a download
-            from DbTune. E.g. we're missing:
-            
-        Alexander Scriabin
-        Anonyme Grèce
-        Anonymus (País Vasco)
-        Antonio Carlos Jobim
-        Astor Piazzolla
-        Bedřich Smetana
-        Berliner Philharmoniker & Rafael Kubelík,
-        Claudio Monteverdi
-        Cristóbal de Morales
-        etc..
-            
-            By not clearing the list, many are retrieved, but still missing:
-            
-            Anonyme Grèce
-            Anonymus (País Vasco)
-            Berliner Philharmoniker & Rafael Kubelík
-            
-            There should be a fallback strategy that creates the data here from the embedded artist name.
-            We should accumulate them and insert only at the very end?
-            If we don't clear the list, we're creating them with the embedded name, that could be worse than the one
-            in DbTune. 
-            
-            IDEA: put them in a fallbackArtistMap (uri -> name) and post a request for donload DbTunes data. 
-            On receiving the results, in case of errors, if the artist is registered in the fallback map, the local
-            name will be inserted.
-        
-        */
-        
-            
+            //
+            // FIXME: Still missing:
+            // Anonyme Grèce
+            // Anonymus (País Vasco)
+            // Berliner Philharmoniker & Rafael Kubelík
+            // etc...
           }
         
         final List<Entry> newArtists   = artists.stream().filter(
