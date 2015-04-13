@@ -196,9 +196,9 @@ public class EmbeddedMetadataManager
         log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackUri);
         
         final Metadata metadata           = mediaItem.getMetadata();  
+        final Entity parent               = mediaItem.getParent();
         final Optional<String> title      = metadata.get(Metadata.TITLE);
         final Optional<String> artistName = metadata.get(Metadata.ARTIST);
-        final Entity parent               = mediaItem.getParent();
         final String recordTitle          = metadata.get(Metadata.ALBUM)
                                                     .orElse(((MediaFolder)parent).getPath().toFile().getName()); // FIXME
 //                                                    .orElse(parent.as(Displayable).getDisplayName());
