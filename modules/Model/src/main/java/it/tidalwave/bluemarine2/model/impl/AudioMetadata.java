@@ -99,7 +99,7 @@ public class AudioMetadata extends MetadataSupport
             put(MBZ_DISC_ID,   id(tag.getFirst(FieldKey.MUSICBRAINZ_DISC_ID)));
             put(MBZ_ARTIST_ID, tag.getAll(FieldKey.MUSICBRAINZ_ARTISTID).stream()
                                   .filter(s -> ((s != null) && !"".equals(s)))
-                                  .flatMap(s -> Stream.of(s.split("/")))
+                                  .flatMap(s -> Stream.of(s.split("/"))) // FIXME: correct?
                                   .map(s -> id(s))
                                   .collect(Collectors.toList()));
             
