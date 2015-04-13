@@ -39,6 +39,7 @@ import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.catalog.Catalog;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalog;
 import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.impl.EntityWithRoles;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import lombok.Delegate;
@@ -66,11 +67,7 @@ public class RepositoryBrowserSupport implements EntityBrowser
     @Override @Nonnull
     public Entity getRoot() 
       {
-        return new Entity() 
-          {
-            @Delegate
-            private final AsSupport asSupport = new AsSupport(this, compositeForRootEntity);
-          };
+        return new EntityWithRoles(compositeForRootEntity);
       }
     
     protected final void setFinder (final @Nonnull Supplier<Finder<? extends Entity>> finderSupplier)

@@ -29,7 +29,9 @@
 package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.role.spi.DefaultDisplayable;
+import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.bluemarine2.model.Entity;
+import lombok.Delegate;
 
 /***********************************************************************************************************************
  *
@@ -37,10 +39,13 @@ import it.tidalwave.role.spi.DefaultDisplayable;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class NamedEntity extends EntityWithRoles
+public class EntityWithRoles implements Entity
   {
-    public NamedEntity (final @Nonnull String displayName) 
+    @Delegate @Nonnull
+    private final AsSupport asSupport;
+
+    public EntityWithRoles (final @Nonnull Object ... roles) 
       {
-        super(new DefaultDisplayable(displayName));
+        this.asSupport = new AsSupport(this, roles);
       }
   }
