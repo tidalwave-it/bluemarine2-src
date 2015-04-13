@@ -220,40 +220,41 @@ public class EmbeddedMetadataManager
         
         final Optional<String> title      = metadata.get(Metadata.TITLE);
         // FIXME: try to split multiple names?
-        final Stream<String> artistNames  = metadata.get(Metadata.ARTIST).map(name -> Stream.of(name)).orElse(Stream.empty());
+        final Stream<String> artistNames  = metadata.get(Metadata.ARTIST).map(name -> 
+                Stream.of(name.split(";")).map(s -> s.trim()))
+               .orElse(Stream.empty());
         
+        // TODO: insert "full_name" -> collaboratesWith singles
 //        final Stream<String> artistNames  = metadata.get(Metadata.ARTIST)
 //        final List<Id> artistsMBIds       = metadata.getAll(Metadata.MBZ_ARTIST_ID);
         final String recordTitle          = metadata.get(Metadata.ALBUM)
                                                     .orElse(((MediaFolder)parent).getPath().toFile().getName()); // FIXME
 //                                                    .orElse(parent.as(Displayable).getDisplayName());
         
-        final List<Entry<URI, String>> artistEntries  = artistNames.map(name -> 
+        final List<Entry<URI, String>> artists  = artistNames.map(name -> 
                 new Entry<>(createUriForLocalArtist(name), name)).collect(Collectors.toList());
         final Optional<URI> recordUri     = Optional.of(createUriForLocalRecord(recordTitle));
 
-        final Stream<Entry<URI, String>> newArtistEntries   = artistEntries.stream().filter(e -> 
+        final Stream<Entry<URI, String>> newArtists   = artists.stream().filter(e -> 
                 seenArtistUris.putIfAbsentAndGetNewKey(e.getKey(), true).isPresent());
-//        final Stream<URI> newArtistUris   = artistUris.flatMap(uri -> 
-//                seenArtistUris.putIfAbsentAndGetNewKey(uri, true).map(x -> Stream.of(x)));
         final Optional<URI> newRecordUri  = seenRecordUris.putIfAbsentAndGetNewKey(recordUri, true);
         
         statementManager.requestAddStatements()
             .with(trackUri,      RDFS.LABEL,       literalFor(title))
             .with(trackUri,      DC.TITLE,         literalFor(title))
-            .with(trackUri,      FOAF.MAKER,       artistEntries.stream().map(e -> e.getKey()))
+            .with(trackUri,      FOAF.MAKER,       artists.stream().map(e -> e.getKey()))
 
             .with(recordUri,     MO.P_TRACK,       trackUri)
 
             .with(newRecordUri,  RDF.TYPE,         MO.C_RECORD)
             .with(newRecordUri,  RDFS.LABEL,       literalFor(recordTitle))
             .with(newRecordUri,  DC.TITLE,         literalFor(recordTitle))
-            .with(newRecordUri,  FOAF.MAKER,       artistEntries.stream().map(e -> e.getKey()))
+            .with(newRecordUri,  FOAF.MAKER,       artists.stream().map(e -> e.getKey()))
             .with(newRecordUri,  MO.P_MEDIA_TYPE,  MO.C_CD)
             .with(newRecordUri,  MO.P_TRACK_COUNT, literalFor(parent.as(SimpleComposite8).findChildren().count()))
             .publish();
         
-        newArtistEntries.forEach(e -> // FIXME
+        newArtists.forEach(e -> // FIXME
           {
             statementManager.requestAddStatements()
                 .with(e.getKey(), RDF.TYPE,         MO.C_MUSIC_ARTIST)

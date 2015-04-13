@@ -5266,6 +5266,7 @@ RepositoryRecord(rdfs:label=The Road to You - Recorded Live In Europe, urn:bluem
 RepositoryRecord(rdfs:label=The Roulette Years, http://dbtune.org/musicbrainz/resource/record/e2f114ef-9d0e-4d39-92ab-6211df6eab95)
 RepositoryRecord(rdfs:label=The Soul Cages, http://dbtune.org/musicbrainz/resource/record/13f418fd-6251-47b9-927d-79fc2d0f11dd)
 RepositoryRecord(rdfs:label=The Two and Three Part Inventions (feat. piano: Glenn Gould), http://dbtune.org/musicbrainz/resource/record/a68563c6-033a-4ed7-82c1-8a6ca3f93269)
+RepositoryRecord(rdfs:label=The Ultimate Collection, urn:bluemarine:record:66cfd4cebd04cfd6e4935718ea585115f9447b94)
 RepositoryRecord(rdfs:label=The Ultimate Romance Album, urn:bluemarine:record:348a73b2edab6f9062402c2767fa70a4d57c06f2)
 RepositoryRecord(rdfs:label=The Unforgettable Nat King Cole, http://dbtune.org/musicbrainz/resource/record/531ff0ab-7522-42c1-a0b0-725a4688427f)
 RepositoryRecord(rdfs:label=The Very Best Of, http://dbtune.org/musicbrainz/resource/record/fed56cf2-fcaf-42c8-8650-16d62c503c70)
@@ -5388,14 +5389,15 @@ RepositoryMusicArtist(rdfs:label=Acoustic Eidolon, uri=urn:bluemarine:artist:1fb
 RepositoryMusicArtist(rdfs:label=Adam Aleksander, uri=urn:bluemarine:artist:552e633204c29c1978a6911316ba05975538ad53)
 RepositoryMusicArtist(rdfs:label=Adiastemi, uri=urn:bluemarine:artist:b32c35b08bb27ae49006aea9023b29c7bd6089d8)
 RepositoryMusicArtist(rdfs:label=Ahmad Jamal Trio, uri=urn:bluemarine:artist:4fbe8d0f7b53628552e501a2fdd3d5b11fc02b1e)
-RepositoryMusicArtist(rdfs:label=Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba, uri=urn:bluemarine:artist:ed8f1c5f2ef7caf9f37a761bde87c330c62a0824)
+RepositoryMusicArtist(rdfs:label=Alan Cuckston, harpsichord, uri=urn:bluemarine:artist:8c5973765bf031bbdf4002c9a4c576445e02ddea)
 RepositoryMusicArtist(rdfs:label=Alasdair Fraser, uri=http://dbtune.org/musicbrainz/resource/artist/694949f8-b0d8-4e13-a54d-a921a780443d)
 RepositoryMusicArtist(rdfs:label=AlbumWrap - _, uri=urn:bluemarine:artist:65436e4da0881b4db19578b4ead374896e48f387)
 RepositoryMusicArtist(rdfs:label=Alexander Scriabin, uri=urn:bluemarine:artist:74ef163494ae6e1d97058a8f713abc14506d0783)
+RepositoryMusicArtist(rdfs:label=Alison Crum, viola da gamba, uri=urn:bluemarine:artist:79288e4ed52dc530ae0e8f6710702d4b4c953c7f)
 RepositoryMusicArtist(rdfs:label=Andalus, uri=http://dbtune.org/musicbrainz/resource/artist/8c395da0-5717-4b46-93cc-8f53e49a4dd0)
 RepositoryMusicArtist(rdfs:label=Andrea Bacchetti, uri=urn:bluemarine:artist:d35745456c06770731c83193c38f12cc9cb3c202)
 RepositoryMusicArtist(rdfs:label=Andrei Gavrilov, uri=urn:bluemarine:artist:1c397ef0fda5f39421da1964108f1fdcda5070df)
-RepositoryMusicArtist(rdfs:label=Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt: Concentus Musicus Wien, Arnold Schoenberg Choir, uri=urn:bluemarine:artist:fae519e2793c29166ae823c3f4cfdeeb9a1e599e)
+RepositoryMusicArtist(rdfs:label=Angela Maria Blasi, Robert Holl, Etc., uri=urn:bluemarine:artist:95baddbd8fc9ce08767ec1848733f73827d0159e)
 RepositoryMusicArtist(rdfs:label=Anita Baker, uri=urn:bluemarine:artist:89f770090b040058a958fc4331d3bc7f9075f87d)
 RepositoryMusicArtist(rdfs:label=Anonyme, uri=urn:bluemarine:artist:21dffa8a8756a22bbcae75a44a796f79f6b7b723)
 RepositoryMusicArtist(rdfs:label=Anonyme Grèce, uri=urn:bluemarine:artist:ac7f11e3573b6cae423e71d1d164aff63717b66a)
@@ -5407,7 +5409,6 @@ RepositoryMusicArtist(rdfs:label=Antonio Vivaldi, uri=http://dbtune.org/musicbra
 RepositoryMusicArtist(rdfs:label=Antonio Vivaldi, uri=urn:bluemarine:artist:c7845dced60d2033c6c0791da8ed1698b998ee4f)
 RepositoryMusicArtist(rdfs:label=Antonín Dvořák, uri=http://dbtune.org/musicbrainz/resource/artist/819eaeb2-8dd8-48a5-ad07-0bcd137985ef)
 RepositoryMusicArtist(rdfs:label=Antonín Dvořák, uri=urn:bluemarine:artist:21c214c017725b470d29a3b2c4b70709092836df)
-RepositoryMusicArtist(rdfs:label=Antonín Dvořák; Berliner Philharmoniker & Rafael Kubelík, uri=urn:bluemarine:artist:80d96414fbc659ab02c67a974fa51d612ecca8e0)
 RepositoryMusicArtist(rdfs:label=Antônio Carlos Jobim, uri=http://dbtune.org/musicbrainz/resource/artist/7a8dbe84-f4c0-4457-bfa3-edced1f8cde0)
 RepositoryMusicArtist(rdfs:label=Aretha Franklin, uri=http://dbtune.org/musicbrainz/resource/artist/2f9ecbed-27be-40e6-abca-6de49d50299e)
 RepositoryMusicArtist(rdfs:label=Aretha Franklin, uri=urn:bluemarine:artist:60493bdf6d962f2ebdcbfc1132c9ced55256640d)
@@ -5427,6 +5428,7 @@ RepositoryMusicArtist(rdfs:label=Barbra Streisand, uri=urn:bluemarine:artist:bb6
 RepositoryMusicArtist(rdfs:label=Bedřich Smetana, uri=urn:bluemarine:artist:fd6683af0e33c0c78d19e8d5ae5fcb6af81cfe53)
 RepositoryMusicArtist(rdfs:label=Benny Goodman, uri=urn:bluemarine:artist:97385e7bdd543c1ce66ac5fe403dbdbfe2107835)
 RepositoryMusicArtist(rdfs:label=Benny Goodman & Charlie Christian, uri=urn:bluemarine:artist:9c10c82c7509d72aced997d1d6bb060b0d68c3af)
+RepositoryMusicArtist(rdfs:label=Berliner Philharmoniker & Rafael Kubelík, uri=urn:bluemarine:artist:e3caf19570695900fde0b0fb710e11fa427059be)
 RepositoryMusicArtist(rdfs:label=Betty Carter, uri=http://dbtune.org/musicbrainz/resource/artist/ce407e9f-de68-4c8e-b966-43a1b3356191)
 RepositoryMusicArtist(rdfs:label=Betty Carter, uri=urn:bluemarine:artist:2eb334e174ad4573d9d6d07686619b4573d56a78)
 RepositoryMusicArtist(rdfs:label=Beverly Sills, James Levine, John Alldis Choir & London Symphony Orchestra, uri=urn:bluemarine:artist:e5ef6d28caed9e88b8fa71b4f6f5b1727df4151f)
@@ -5480,6 +5482,7 @@ RepositoryMusicArtist(rdfs:label=Claude Debussy, uri=http://dbtune.org/musicbrai
 RepositoryMusicArtist(rdfs:label=Claude Debussy, uri=urn:bluemarine:artist:fc32eee5dfdcdd3c87f71d232997790ca1cb90b5)
 RepositoryMusicArtist(rdfs:label=Claudia Caffagni, uri=urn:bluemarine:artist:655383687751d14446973bdda9b025a6b25ce3a9)
 RepositoryMusicArtist(rdfs:label=Claudia Telles, uri=http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654)
+RepositoryMusicArtist(rdfs:label=Claudio Abbado: Chamber Orchestra Of Europe, uri=urn:bluemarine:artist:ebcd2d64bf85216a9abbd4dcccded2b1fb75e3d1)
 RepositoryMusicArtist(rdfs:label=Claudio Abbado: London Symphony Orchestra, uri=urn:bluemarine:artist:3e5121e7be43e7cd473501002e076c598f83f910)
 RepositoryMusicArtist(rdfs:label=Claudio Monteverdi, uri=urn:bluemarine:artist:115717043f2e50898e3f1103997f95b747814243)
 RepositoryMusicArtist(rdfs:label=Concerto Italiano & Rinaldo Alessandrini, uri=urn:bluemarine:artist:bc6d9b561bc65937bb22e2a3872c1d4ab365e7f8)
@@ -5515,6 +5518,7 @@ RepositoryMusicArtist(rdfs:label=Edvard Grieg, uri=http://dbtune.org/musicbrainz
 RepositoryMusicArtist(rdfs:label=Edvard Grieg, uri=urn:bluemarine:artist:59e5542ce937cce2cecdb5ef6c6aa179efd52a7f)
 RepositoryMusicArtist(rdfs:label=Edwin Hawkins Singers, uri=urn:bluemarine:artist:565c6c8de1186e0472f29a13bbd6a258784155d6)
 RepositoryMusicArtist(rdfs:label=Elisabetta de Mircovich, uri=urn:bluemarine:artist:5773328cf285eb6e12a71d5bcf30bd7f6524a9c8)
+RepositoryMusicArtist(rdfs:label=Elizabeth Parry, flute, uri=urn:bluemarine:artist:c30e4113862b546d4cb333adffb0902ba8d4d2f1)
 RepositoryMusicArtist(rdfs:label=Ella Fitzgerald, uri=http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499)
 RepositoryMusicArtist(rdfs:label=Ella Fitzgerald, uri=urn:bluemarine:artist:711570135ffc27f41845031de8a7d1de66b6036f)
 RepositoryMusicArtist(rdfs:label=Ella Fitzgerald & Count Basie, uri=urn:bluemarine:artist:c47dd18ae1ad65c4a1ec354f485f21b560eed283)
@@ -5587,7 +5591,7 @@ RepositoryMusicArtist(rdfs:label=Göteborgs Symfoniker, Neeme Järvi & Paul Cort
 RepositoryMusicArtist(rdfs:label=Göteborgs Symfoniker, Neeme Järvi & Toralv Maurstad, uri=urn:bluemarine:artist:020270fa164edcd26fd69e696cecf6b65c50d768)
 RepositoryMusicArtist(rdfs:label=Göteborgs Symfoniker, Neeme Järvi & Urban Malmberg, uri=urn:bluemarine:artist:173503756c531466ac65a34437b08c5db92b9277)
 RepositoryMusicArtist(rdfs:label=Göteborgs Symfoniker, Neeme Järvi, Toralv Maurstad & Wenche Foss, uri=urn:bluemarine:artist:c96685ae85e197570c831aa6b2fd3e2e403dfc28)
-RepositoryMusicArtist(rdfs:label=Heinrich Schiff; Neville Marriner: Staatskapelle Dresden, uri=urn:bluemarine:artist:542e738df79040558dc4c738e8dc1833619a4640)
+RepositoryMusicArtist(rdfs:label=Heinrich Schiff, uri=urn:bluemarine:artist:ec465a86d560127bfc5a1b0fd581c66167a03d27)
 RepositoryMusicArtist(rdfs:label=Henry Mancini, uri=http://dbtune.org/musicbrainz/resource/artist/83e71a21-caf7-4e48-8ff7-6512d51e88a3)
 RepositoryMusicArtist(rdfs:label=Henry Mancini, uri=urn:bluemarine:artist:77a82dddea4b88213a402817de1eb37a97c60d9c)
 RepositoryMusicArtist(rdfs:label=Henry Purcell, uri=http://dbtune.org/musicbrainz/resource/artist/ddea5540-2c7d-4266-8507-b367c2635d35)
@@ -5606,6 +5610,7 @@ RepositoryMusicArtist(rdfs:label=James Brown, uri=http://dbtune.org/musicbrainz/
 RepositoryMusicArtist(rdfs:label=James Galway, uri=http://dbtune.org/musicbrainz/resource/artist/84045b93-beb0-4bc8-a855-93266ec6bbdc)
 RepositoryMusicArtist(rdfs:label=Jean Michel Jarre, uri=http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc)
 RepositoryMusicArtist(rdfs:label=Jean Sibelius, uri=http://dbtune.org/musicbrainz/resource/artist/691b0e9d-9e57-41cf-932d-a3d21b068e75)
+RepositoryMusicArtist(rdfs:label=Jean-François Paillard: Paillard Chamber Orchestra, uri=urn:bluemarine:artist:6c036a77a0e550f554933450081c57bbb52a9b64)
 RepositoryMusicArtist(rdfs:label=Jean-Jacques Justafre, Jean-Paul Gantiez, Jean-Claude Barro,, uri=urn:bluemarine:artist:403e962b3fbb3e65b41e4277bdcc0d17e92686cf)
 RepositoryMusicArtist(rdfs:label=Jean-Louis Rassinfosse, Chet Baker & Philip Catherine, uri=http://dbtune.org/musicbrainz/resource/artist/7631ba41-5e47-4f55-a621-40ab0f2a3a02)
 RepositoryMusicArtist(rdfs:label=Jim Hall, uri=http://dbtune.org/musicbrainz/resource/artist/8c12559e-ddcf-472a-8a8c-0f0c3fc91c6a)
@@ -5632,9 +5637,10 @@ RepositoryMusicArtist(rdfs:label=Joyce, uri=http://dbtune.org/musicbrainz/resour
 RepositoryMusicArtist(rdfs:label=Joyce, uri=urn:bluemarine:artist:36fd5e826e0f40e5ab350cc4e5b5647a10b21c80)
 RepositoryMusicArtist(rdfs:label=Julie Andrews, uri=http://dbtune.org/musicbrainz/resource/artist/16bdc7b3-6bfc-4f1c-89ad-d0756af40327)
 RepositoryMusicArtist(rdfs:label=Juliette Gréco, uri=urn:bluemarine:artist:ee0dad23cdafd99b68474a6434bb843f6f9fb67f)
-RepositoryMusicArtist(rdfs:label=June Anderson, Rockwell Blake, Etc.; Riccardo Muti: Orchestra & Chorus Of La Scala Milan, uri=urn:bluemarine:artist:255adad0ae14b1243b7d2125ce3723d130c8aa1d)
+RepositoryMusicArtist(rdfs:label=June Anderson, Rockwell Blake, Etc., uri=urn:bluemarine:artist:447f3b6a31492c5440ffb7ce107ff79b3d5d3706)
 RepositoryMusicArtist(rdfs:label=Katia Labèque, uri=http://dbtune.org/musicbrainz/resource/artist/3484fb2e-723e-4e12-97a6-6be69aa7bd7d)
 RepositoryMusicArtist(rdfs:label=Kaylene Peoples, uri=urn:bluemarine:artist:8162159a04c05618d77bc865a9ccc817dfcf01a5)
+RepositoryMusicArtist(rdfs:label=Kenneth Mitchell, violin, uri=urn:bluemarine:artist:b85b8a1b8f791bae2e3789312550f9bc1c97b9ff)
 RepositoryMusicArtist(rdfs:label=Kings of Convenience, uri=http://dbtune.org/musicbrainz/resource/artist/cf0f4547-ffbd-4011-98ad-0bec9ba022db)
 RepositoryMusicArtist(rdfs:label=Kiri Te Kanawa, uri=urn:bluemarine:artist:13b958ed5714ec97662e6354f389f71b7e600d1a)
 RepositoryMusicArtist(rdfs:label=Kodály Quartet, uri=urn:bluemarine:artist:919f0bd7c799a90b32c22f6ae50b7fbde21884f7)
@@ -5697,11 +5703,13 @@ RepositoryMusicArtist(rdfs:label=Natalie Cole, uri=urn:bluemarine:artist:c4715a8
 RepositoryMusicArtist(rdfs:label=Natalie Haas, uri=http://dbtune.org/musicbrainz/resource/artist/d8c26c47-7275-4ceb-8b43-2d17e2bcc24c)
 RepositoryMusicArtist(rdfs:label=Nathan Milstein, uri=urn:bluemarine:artist:1d1b2f97fc858b70cf8e9cf40cdc7740ef23297a)
 RepositoryMusicArtist(rdfs:label=Neville Marriner: Academy Of St. Martin In The Fields, uri=urn:bluemarine:artist:9520bf3e565c2b7c4f22565f4605fa3860ee58cc)
+RepositoryMusicArtist(rdfs:label=Neville Marriner: Staatskapelle Dresden, uri=urn:bluemarine:artist:4d35d7dcadfde3a258dd6409e94032a82b932a68)
 RepositoryMusicArtist(rdfs:label=New Budapest Quartet, uri=urn:bluemarine:artist:91376f5fa95d16d249056c54fb644364a6c8cebf)
 RepositoryMusicArtist(rdfs:label=New York's Ensemble for Early Music - Frederick Renz director, uri=urn:bluemarine:artist:d2d6b4a9979f22c79f9ab0f61547f42dcc0c654a)
 RepositoryMusicArtist(rdfs:label=Niccolò Paganini, uri=http://dbtune.org/musicbrainz/resource/artist/d581b2f2-f945-4566-a249-2d0171466993)
 RepositoryMusicArtist(rdfs:label=Niccolò Paganini, uri=urn:bluemarine:artist:ad6d536da8284cab0530cda01f636c37a4eb6c11)
 RepositoryMusicArtist(rdfs:label=Nikolai Rimsky-Korsakow, uri=urn:bluemarine:artist:beae0b723c2ba0c30db26c2e3adcdb53aa09a1e4)
+RepositoryMusicArtist(rdfs:label=Nikolaus Harnoncourt: Concentus Musicus Wien, Arnold Schoenberg Choir, uri=urn:bluemarine:artist:c4b7f779c69c63cbda346ddb2f6c6343d2549856)
 RepositoryMusicArtist(rdfs:label=Nina Simone, uri=http://dbtune.org/musicbrainz/resource/artist/2944824d-4c26-476f-a981-be849081942f)
 RepositoryMusicArtist(rdfs:label=Nina Simone, uri=urn:bluemarine:artist:37875ca610f3bcfef82b14bb757a48b22f1b4076)
 RepositoryMusicArtist(rdfs:label=Nino Rota, uri=http://dbtune.org/musicbrainz/resource/artist/d52ac009-4ed5-4d01-97d5-8280bb7dd460)
@@ -5727,9 +5735,9 @@ RepositoryMusicArtist(rdfs:label=Peter Nero, uri=http://dbtune.org/musicbrainz/r
 RepositoryMusicArtist(rdfs:label=Peter Nero, uri=urn:bluemarine:artist:6811c9defe82bd1663b7994ba06ef6aa4554b0d4)
 RepositoryMusicArtist(rdfs:label=Philippe Brun "Jam Band", uri=http://dbtune.org/musicbrainz/resource/artist/fb04c57d-9e95-4348-b572-fc5b839c2ae7)
 RepositoryMusicArtist(rdfs:label=Philippe Foulon, uri=urn:bluemarine:artist:6e8d5c3fcc6688e575ca9026837ecad1e253f05b)
+RepositoryMusicArtist(rdfs:label=Pierre Del Vescovo, uri=urn:bluemarine:artist:1831e8c65bf212f6ae402abacd0668fd67ecf2b9)
 RepositoryMusicArtist(rdfs:label=Pierre Del Vescovo/Horn, Bamberger Symphoniker/Theodor Gusch, uri=urn:bluemarine:artist:cf8175e1c8d379728f9ca0c286e2684490300b2a)
 RepositoryMusicArtist(rdfs:label=Pierre Del Vescovo/Horn, Jean Hubeau/Piano, uri=urn:bluemarine:artist:11c8f71822ae609cd238d64deb828fb6cf3be33e)
-RepositoryMusicArtist(rdfs:label=Pierre Del Vescovo; Jean-François Paillard: Paillard Chamber Orchestra, uri=urn:bluemarine:artist:1dc5acd6297e44f22fcb3872c902a4f36c1eaabd)
 RepositoryMusicArtist(rdfs:label=Pinchas Zukerman, Midori, uri=urn:bluemarine:artist:c12a755995122e8d4a27445b87681827dbe04d2b)
 RepositoryMusicArtist(rdfs:label=Pino Daniele, uri=http://dbtune.org/musicbrainz/resource/artist/5b1633c8-cb78-4d85-a7d1-a6d145d8d472)
 RepositoryMusicArtist(rdfs:label=Pucci Amanda Jhones, uri=urn:bluemarine:artist:e95e296e4ba154a520926bdd0f01dce9bdf40254)
@@ -5743,6 +5751,7 @@ RepositoryMusicArtist(rdfs:label=Randy Crawford, uri=urn:bluemarine:artist:429e5
 RepositoryMusicArtist(rdfs:label=Randy Crawford & Joe Sample, uri=http://dbtune.org/musicbrainz/resource/artist/974f2396-37a9-4e63-b13b-8462a806b3b2)
 RepositoryMusicArtist(rdfs:label=Randy Edelman, uri=http://dbtune.org/musicbrainz/resource/artist/7cbdfc61-30a9-4f17-b2fc-dcae3757adba)
 RepositoryMusicArtist(rdfs:label=René Marie, uri=http://dbtune.org/musicbrainz/resource/artist/12822d4f-4607-4f1d-ab16-d6bacc27cafe)
+RepositoryMusicArtist(rdfs:label=Riccardo Muti: Orchestra & Chorus Of La Scala Milan, uri=urn:bluemarine:artist:48e68ebe5b49afa7011c18207113a942e1082992)
 RepositoryMusicArtist(rdfs:label=Richard Strauss, uri=urn:bluemarine:artist:ed0067b95e98664b036494d886b7f5a8ac96ba2f)
 RepositoryMusicArtist(rdfs:label=Ripchord, uri=urn:bluemarine:artist:80693a0f5e430d6a81ff3f65da8ea88fcda74104)
 RepositoryMusicArtist(rdfs:label=Robert Schumann, uri=urn:bluemarine:artist:d3964826e3b6ca9c2ae0c8c252cff3dfd785d20d)
@@ -5753,7 +5762,7 @@ RepositoryMusicArtist(rdfs:label=Rosinha de Valença, uri=urn:bluemarine:artist:
 RepositoryMusicArtist(rdfs:label=SILHOUETTE, uri=urn:bluemarine:artist:efe19474804802e7dd29a6ecc8974138af3a2dfe)
 RepositoryMusicArtist(rdfs:label=Sacha Distel, uri=urn:bluemarine:artist:175221af4a6eb96e6e08754adabbcd21d3e2d815)
 RepositoryMusicArtist(rdfs:label=Sade, uri=http://dbtune.org/musicbrainz/resource/artist/67930b3e-e00b-469f-8c74-fd69f20522ec)
-RepositoryMusicArtist(rdfs:label=Salvatore Accardo; Claudio Abbado: London Symphony Orchestra, uri=urn:bluemarine:artist:5dd1c1724a1c2659c28de37d873f9c125ae347c8)
+RepositoryMusicArtist(rdfs:label=Salvatore Accardo, uri=urn:bluemarine:artist:2dfc6672e0dc40cc46910dcc89c579974ec82372)
 RepositoryMusicArtist(rdfs:label=Sam Pottle, uri=http://dbtune.org/musicbrainz/resource/artist/5743fb4f-5c5b-42b4-973e-5e233a286d4a)
 RepositoryMusicArtist(rdfs:label=Samuel Barber, uri=urn:bluemarine:artist:8f09a0cfb7c6bcca06e1b0bd80dc5442f95718ce)
 RepositoryMusicArtist(rdfs:label=Sandie Shaw, uri=http://dbtune.org/musicbrainz/resource/artist/16963107-9288-43a2-946c-81de2f5eddfa)
@@ -5827,7 +5836,7 @@ RepositoryMusicArtist(rdfs:label=Vanessa Williams, uri=http://dbtune.org/musicbr
 RepositoryMusicArtist(rdfs:label=Vangelis, uri=http://dbtune.org/musicbrainz/resource/artist/57fca0e2-f9ad-4ae6-af9d-6a6f50cbcd5f)
 RepositoryMusicArtist(rdfs:label=Vangelis, uri=urn:bluemarine:artist:3aaced5008289e60b00a589e3e258abb08725493)
 RepositoryMusicArtist(rdfs:label=Various Artists, uri=urn:bluemarine:artist:37c2e10b278824398c5f4729119d0b1c534dda39)
-RepositoryMusicArtist(rdfs:label=Victoria Mullova; Claudio Abbado: Chamber Orchestra Of Europe, uri=urn:bluemarine:artist:1182d27756e97d11889d0fa8031562575250a1ac)
+RepositoryMusicArtist(rdfs:label=Victoria Mullova, uri=urn:bluemarine:artist:92280368d760d6dada802ae631ef2147b603329c)
 RepositoryMusicArtist(rdfs:label=Vladimir Ashkenazy, uri=urn:bluemarine:artist:d47451a965d505add5b554f5c7b5653e2726f655)
 RepositoryMusicArtist(rdfs:label=Vladimir Spivakov, uri=urn:bluemarine:artist:c5afaefb963dee1caddd0a1c337a54a40caad98e)
 RepositoryMusicArtist(rdfs:label=Wanda Sá & Célia Vaz, uri=http://dbtune.org/musicbrainz/resource/artist/8cf2e214-d292-4d6e-9551-4fa380e7cd97)
@@ -5954,7 +5963,7 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Adiastemi, uri=urn:bluemarine:artist:
 TRACKS OF RepositoryMusicArtist(rdfs:label=Ahmad Jamal Trio, uri=urn:bluemarine:artist:4fbe8d0f7b53628552e501a2fdd3d5b11fc02b1e):
   RepositoryTrack(08, PT3M13S, rdfs:label=All the Things You Are, Ahmad Jamal Trio/Cross Country Tour (1958-1961)/08 All the Things You Are 1.m4p, urn:bluemarine:track:eaa36dc092420ad02bcfde15f9ceb05ef1c000d1)
 
-TRACKS OF RepositoryMusicArtist(rdfs:label=Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba, uri=urn:bluemarine:artist:ed8f1c5f2ef7caf9f37a761bde87c330c62a0824):
+TRACKS OF RepositoryMusicArtist(rdfs:label=Alan Cuckston, harpsichord, uri=urn:bluemarine:artist:8c5973765bf031bbdf4002c9a4c576445e02ddea):
   RepositoryTrack(01, PT4M8S, rdfs:label=Fourth Concert, La Pantomime, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/01 Fourth Concert, La Pantomime.m4a, urn:bluemarine:track:405c15eb0ef0b24403845d954fb43ff30c08c095)
   RepositoryTrack(02, PT1M44S, rdfs:label=Fourth Concert, L'Indiscrète, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/02 Fourth Concert, L'Indiscrète.m4a, urn:bluemarine:track:b3bea5cf861119fab0aad897f6b275634cec5d20)
   RepositoryTrack(03, PT4M30S, rdfs:label=Fourth Concert, Le Rameau, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/03 Fourth Concert, Le Rameau.m4a, urn:bluemarine:track:baf6c156493cbc7c3be88a69f19932da4208de62)
@@ -6055,6 +6064,24 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Alexander Scriabin, uri=urn:bluemarin
   RepositoryTrack(25, PT1M58S, rdfs:label=Three Études, op. 65: No. 2, Piers Lane/Scriabin Etudes/25 Eight Etudes, Op. 42_ II.m4a, http://dbtune.org/musicbrainz/resource/track/004b7484-0aa8-4498-ad37-b600e9f2d433)
   RepositoryTrack(26, PT1M36S, rdfs:label=Three Études, op. 65: No. 3, Piers Lane/Scriabin Etudes/26 Eight Etudes, Op. 42_ III.m4a, http://dbtune.org/musicbrainz/resource/track/fadf66fe-7d02-4f2a-950d-fb3e89f508ca)
 
+TRACKS OF RepositoryMusicArtist(rdfs:label=Alison Crum, viola da gamba, uri=urn:bluemarine:artist:79288e4ed52dc530ae0e8f6710702d4b4c953c7f):
+  RepositoryTrack(01, PT4M8S, rdfs:label=Fourth Concert, La Pantomime, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/01 Fourth Concert, La Pantomime.m4a, urn:bluemarine:track:405c15eb0ef0b24403845d954fb43ff30c08c095)
+  RepositoryTrack(02, PT1M44S, rdfs:label=Fourth Concert, L'Indiscrète, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/02 Fourth Concert, L'Indiscrète.m4a, urn:bluemarine:track:b3bea5cf861119fab0aad897f6b275634cec5d20)
+  RepositoryTrack(03, PT4M30S, rdfs:label=Fourth Concert, Le Rameau, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/03 Fourth Concert, Le Rameau.m4a, urn:bluemarine:track:baf6c156493cbc7c3be88a69f19932da4208de62)
+  RepositoryTrack(04, PT5M36S, rdfs:label=Second Concert, La Laborde, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/04 Second Concert, La Laborde.m4a, urn:bluemarine:track:ff2241448eb392fafce750f716bf727a260130bf)
+  RepositoryTrack(05, PT4M38S, rdfs:label=Second Concert, Le Boucon, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/05 Second Concert, Le Boucon.m4a, urn:bluemarine:track:c73c4c7ae1aea6eeb8db45974ef00b2626aaa3b6)
+  RepositoryTrack(06, PT2M32S, rdfs:label=Second Concert, L'Agaçante, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/06 Second Concert, L'Agaçante.m4a, urn:bluemarine:track:bc22ae453dbcc74074b6beb4bbdf90ef9fae0f6a)
+  RepositoryTrack(07, PT4M49S, rdfs:label=Second Concert, Menuets 1& 2, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/07 Second Concert, Menuets 1& 2.m4a, urn:bluemarine:track:7ddcc5f335a77b5408838d0e546b5fda7ec01251)
+  RepositoryTrack(08, PT3M31S, rdfs:label=First Concert, Le Coulicam, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/08 First Concert, Le Coulicam.m4a, urn:bluemarine:track:a9048ca761dcf759b2d7751915d81b20bb67cb98)
+  RepositoryTrack(09, PT2M46S, rdfs:label=First Concert, La Livri, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/09 First Concert, La Livri.m4a, urn:bluemarine:track:4a3180d2e710f3c2565d68cd38d7b9e2419cd79c)
+  RepositoryTrack(10, PT3M39S, rdfs:label=First Concert, Le Vézinet, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/10 First Concert, Le Vézinet.m4a, urn:bluemarine:track:022b5b8fcb62e029729688145ff414ac7070a729)
+  RepositoryTrack(11, PT4M47S, rdfs:label=Fifth Concert, Le Forqueray, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/11 Fifth Concert, Le Forqueray.m4a, urn:bluemarine:track:52fc153b0ae520cb3eda1496955fc8f859483c2d)
+  RepositoryTrack(12, PT5M41S, rdfs:label=Fifth Concert, Le Cupis, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/12 Fifth Concert, Le Cupis.m4a, urn:bluemarine:track:d4c97f073c5033178c31f33cfd268fb7b0d68c05)
+  RepositoryTrack(13, PT2M37S, rdfs:label=Fifth Concert, Le Marais, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/13 Fifth Concert, Le Marais.m4a, urn:bluemarine:track:951c9a7d69644987ea88d84f05af375de23d75cd)
+  RepositoryTrack(14, PT2M57S, rdfs:label=Third Concert, La Poplinière, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/14 Third Concert, La Poplinière.m4a, urn:bluemarine:track:d58c7a1f4355441ce38c9bbc62deced83727ee41)
+  RepositoryTrack(15, PT5M17S, rdfs:label=Third Concert, La Timide, Rondeaux 1 & 2, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/15 Third Concert, La Timide, Rondeaux 1 & 2.m4a, urn:bluemarine:track:00003480b245d0ca5f5320593b1728724aad1afb)
+  RepositoryTrack(16, PT2M42S, rdfs:label=Third Concert, Tambourins 1 & 2 en Rondeau, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/16 Third Concert, Tambourins 1 & 2 en Rondeau.m4a, urn:bluemarine:track:8fcdc4bb2b2dc66c6a980b8dfd089448610aa689)
+
 TRACKS OF RepositoryMusicArtist(rdfs:label=Andalus, uri=http://dbtune.org/musicbrainz/resource/artist/8c395da0-5717-4b46-93cc-8f53e49a4dd0):
   RepositoryTrack(11, PT3M41S, rdfs:label=Girl From Ipanema, Diana Krall/Unknown Album/Diana Krall - Boy From Ipanema.mp3, http://dbtune.org/musicbrainz/resource/track/cdce25ac-e31e-4655-8f83-39c6f954559d)
 
@@ -6099,7 +6126,7 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Andrei Gavrilov, uri=urn:bluemarine:a
   RepositoryTrack(24, PT7M30S, rdfs:label=Sonata No. 4 Opus 30, Compilations/Gavrilov Scriabin/24 Sonata No. 4 Opus 30.m4a, urn:bluemarine:track:a8ff1f3cdfeaf86b4bbd03bef433682d83729f6e)
   RepositoryTrack(25, PT2M40S, rdfs:label=Etude Opus 42 No. 5, Compilations/Gavrilov Scriabin/25 Etude Opus 42 No. 5.m4a, urn:bluemarine:track:8a3ca5656ffa7b13a4e1e4d27598aaed4bf121ea)
 
-TRACKS OF RepositoryMusicArtist(rdfs:label=Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt: Concentus Musicus Wien, Arnold Schoenberg Choir, uri=urn:bluemarine:artist:fae519e2793c29166ae823c3f4cfdeeb9a1e599e):
+TRACKS OF RepositoryMusicArtist(rdfs:label=Angela Maria Blasi, Robert Holl, Etc., uri=urn:bluemarine:artist:95baddbd8fc9ce08767ec1848733f73827d0159e):
   RepositoryTrack(01, PT10M31S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Kyrie: Kyrie Eleison 1, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-01 Bach_ Mass In B Minor, BWV 232 - Kyrie_ Kyrie Eleison 1.m4a, urn:bluemarine:track:2820210fd1a9c0bec2580fdd0e9347581dbea62a)
   RepositoryTrack(02, PT5M16S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Kyrie: Christe Eleison, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-02 Bach_ Mass In B Minor, BWV 232 - Kyrie_ Christe Eleison.m4a, urn:bluemarine:track:a7ff0d6cab798b0ad334e43d5749559e0fde6ce2)
   RepositoryTrack(03, PT2M59S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Kyrie: Kyrie Eleison 2, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-03 Bach_ Mass In B Minor, BWV 232 - Kyrie_ Kyrie Eleison 2.m4a, urn:bluemarine:track:abff1f8061d58d1389ca7dd8fc24a0e3851e0548)
@@ -6270,12 +6297,10 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Antonín Dvořák, uri=http://dbtune.
   RepositoryTrack(08, PT7M39S, rdfs:label=String Quartet No. 12 in F, Op. 96, "American" - Lento, Moyzes Quartet/Dvořák_ String Quartets Op. 96, _American_ & Op. 105/02 Dvořák_ String Quartet #12 In F, Op. 96, B 179, _American_ - Lento.m4a, http://dbtune.org/musicbrainz/resource/track/0596047a-00d9-4a4d-b18a-46eb57627eb9)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Antonín Dvořák, uri=urn:bluemarine:artist:21c214c017725b470d29a3b2c4b70709092836df):
-  RepositoryTrack(04, PT8M56S, rdfs:label=Symphony No. 8 in G major, Op. 88: IV. Allegro ma non troppo, Compilations/Dvořák_ Symphonies #8 & 9/04 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 4. Allegro Ma Non Troppo.m4a, http://dbtune.org/musicbrainz/resource/track/ef147665-3c0a-4d84-8745-1addedbe22ad)
-
-TRACKS OF RepositoryMusicArtist(rdfs:label=Antonín Dvořák; Berliner Philharmoniker & Rafael Kubelík, uri=urn:bluemarine:artist:80d96414fbc659ab02c67a974fa51d612ecca8e0):
   RepositoryTrack(01, PT9M58S, rdfs:label=Symphony no. 8 in G major, op. 88: I. Allegro con brio, Compilations/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.m4a, http://dbtune.org/musicbrainz/resource/track/1ee221a1-d642-4db1-be9b-7b0620419dd7)
   RepositoryTrack(02, PT10M19S, rdfs:label=Symphony no. 8 in G major, op. 88: II. Adagio, Compilations/Dvořák_ Symphonies #8 & 9/02 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 2. Adagio.m4a, http://dbtune.org/musicbrainz/resource/track/61675df3-359d-4559-b16b-db25665f9cc5)
   RepositoryTrack(03, PT6M39S, rdfs:label=Symphony no. 8 in G major, op. 88: III. Allegretto grazioso - Molto vivace, Compilations/Dvořák_ Symphonies #8 & 9/03 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 3. Allegretto Grazioso, Molto Vivace.m4a, http://dbtune.org/musicbrainz/resource/track/89d43731-7242-4a6c-a63c-b4fd68152d57)
+  RepositoryTrack(04, PT8M56S, rdfs:label=Symphony No. 8 in G major, Op. 88: IV. Allegro ma non troppo, Compilations/Dvořák_ Symphonies #8 & 9/04 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 4. Allegro Ma Non Troppo.m4a, http://dbtune.org/musicbrainz/resource/track/ef147665-3c0a-4d84-8745-1addedbe22ad)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Antônio Carlos Jobim, uri=http://dbtune.org/musicbrainz/resource/artist/7a8dbe84-f4c0-4457-bfa3-edced1f8cde0):
   RepositoryTrack(08, PT2M52S, rdfs:label=Samba Do Avião, Compilations/Bossa Nona,Chega De Saudade [Disc 2]/08 Samba Do Avião.m4a, http://dbtune.org/musicbrainz/resource/track/e335f02f-3ddc-4476-ab1f-edcf1d73bd70)
@@ -6424,6 +6449,11 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Benny Goodman & Charlie Christian, ur
   RepositoryTrack(16, PT2M36S, rdfs:label=Gone With That Draft, Benny Goodman & Charlie Christian/Charlie Christian & Benny Goodman Sextet (1939-1941)/16 Gone With That Draft.m4p, urn:bluemarine:track:52f975573caf94817b5a9078b13a8f3989dcbe68)
   RepositoryTrack(17, PT3M20S, rdfs:label=A Smo-O-O-Oth One, Benny Goodman & Charlie Christian/Charlie Christian & Benny Goodman Sextet (1939-1941)/17 A Smo-O-O-Oth One.m4p, urn:bluemarine:track:5f40f35482031e735d8a0759d23dd6eaa3ffd4ea)
   RepositoryTrack(18, PT3M22S, rdfs:label=Air Mail Special, Benny Goodman & Charlie Christian/Charlie Christian & Benny Goodman Sextet (1939-1941)/18 Air Mail Special.m4p, urn:bluemarine:track:55e0174556fc20b5b8581d85e2c9bda5d70bcfe8)
+
+TRACKS OF RepositoryMusicArtist(rdfs:label=Berliner Philharmoniker & Rafael Kubelík, uri=urn:bluemarine:artist:e3caf19570695900fde0b0fb710e11fa427059be):
+  RepositoryTrack(01, PT9M58S, rdfs:label=Symphony no. 8 in G major, op. 88: I. Allegro con brio, Compilations/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.m4a, http://dbtune.org/musicbrainz/resource/track/1ee221a1-d642-4db1-be9b-7b0620419dd7)
+  RepositoryTrack(02, PT10M19S, rdfs:label=Symphony no. 8 in G major, op. 88: II. Adagio, Compilations/Dvořák_ Symphonies #8 & 9/02 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 2. Adagio.m4a, http://dbtune.org/musicbrainz/resource/track/61675df3-359d-4559-b16b-db25665f9cc5)
+  RepositoryTrack(03, PT6M39S, rdfs:label=Symphony no. 8 in G major, op. 88: III. Allegretto grazioso - Molto vivace, Compilations/Dvořák_ Symphonies #8 & 9/03 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 3. Allegretto Grazioso, Molto Vivace.m4a, http://dbtune.org/musicbrainz/resource/track/89d43731-7242-4a6c-a63c-b4fd68152d57)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Betty Carter, uri=http://dbtune.org/musicbrainz/resource/artist/ce407e9f-de68-4c8e-b966-43a1b3356191):
   RepositoryTrack(04, PT1M38S, rdfs:label=My Favorite Things, Betty Carter/Inside Betty Carter/04 My Favorite Things.m4a, http://dbtune.org/musicbrainz/resource/track/45b33fae-e4fe-437c-a1f8-b5a4e87a0c3f)
@@ -6910,8 +6940,22 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Claudia Telles, uri=http://dbtune.org
   RepositoryTrack(07, PT2M34S, rdfs:label=Discussão, Compilations/Bossa Nova,Chega De Saudade [Disc 1]/07 Discussão.m4a, http://dbtune.org/musicbrainz/resource/track/a8105dd1-cdde-4d55-8523-17f5d5f6a60b)
   RepositoryTrack(04, PT3M37S, rdfs:label=Lobo Bobo, Compilations/Bossa Nona,Chega De Saudade [Disc 2]/04 Lobo Bobo.m4a, http://dbtune.org/musicbrainz/resource/track/d9231d1e-e8b3-4752-9962-f9f41e94c018)
 
+TRACKS OF RepositoryMusicArtist(rdfs:label=Claudio Abbado: Chamber Orchestra Of Europe, uri=urn:bluemarine:artist:ebcd2d64bf85216a9abbd4dcccded2b1fb75e3d1):
+  RepositoryTrack(01, PT3M23S, rdfs:label=Vivaldi: Violin Concerto In E, Op. 8/1, RV 269, "The Four Seasons (Spring)" - 1. Allegro, Compilations/Vivaldi_ The Four Seasons/01 Vivaldi_ Violin Concerto In E, Op. 8_1, RV 269, _The Four Seasons (Spring)_ - 1. Allegro.m4a, urn:bluemarine:track:6937f23a225f349656d77a0edbbbc4fee6e8c78a)
+  RepositoryTrack(02, PT3M, rdfs:label=Vivaldi: Violin Concerto In E, Op. 8/1, RV 269, "The Four Seasons (Spring)" - 2. Largo, Compilations/Vivaldi_ The Four Seasons/02 Vivaldi_ Violin Concerto In E, Op. 8_1, RV 269, _The Four Seasons (Spring)_ - 2. Largo.m4a, urn:bluemarine:track:81023f1b8041c78640afe327714798b86ae72f83)
+  RepositoryTrack(03, PT4M7S, rdfs:label=Vivaldi: Violin Concerto In E, Op. 8/1, RV 269, "The Four Seasons (Spring)" - 3. Danza Pastorale, Compilations/Vivaldi_ The Four Seasons/03 Vivaldi_ Violin Concerto In E, Op. 8_1, RV 269, _The Four Seasons (Spring)_ - 3. Danza Pastorale.m4a, urn:bluemarine:track:800269ddd22d1ea2ca80b29b949c15b29d21da4c)
+  RepositoryTrack(04, PT4M47S, rdfs:label=Vivaldi: Violin Concerto In G Minor, Op. 8/2, RV 315, "The Four Seasons (Summer)" - 1. Allegro Non Molto, Compilations/Vivaldi_ The Four Seasons/04 Vivaldi_ Violin Concerto In G Minor, Op. 8_2, RV 315, _The Four Seasons (Summer)_ - 1. Allegro Non Molto.m4a, urn:bluemarine:track:02c6eaa14fc2043cd4917059c58df53bbfc18a05)
+  RepositoryTrack(05, PT1M47S, rdfs:label=Vivaldi: Violin Concerto In G Minor, Op. 8/2, RV 315, "The Four Seasons (Summer)" - 2. Adagio, Compilations/Vivaldi_ The Four Seasons/05 Vivaldi_ Violin Concerto In G Minor, Op. 8_2, RV 315, _The Four Seasons (Summer)_ - 2. Adagio.m4a, urn:bluemarine:track:d981dd7949077579b0f9cf4ed85afca8e2b2a240)
+  RepositoryTrack(06, PT2M51S, rdfs:label=Vivaldi: Violin Concerto In G Minor, Op. 8/2, RV 315, "The Four Seasons (Summer)" - 3. Presto, Compilations/Vivaldi_ The Four Seasons/06 Vivaldi_ Violin Concerto In G Minor, Op. 8_2, RV 315, _The Four Seasons (Summer)_ - 3. Presto.m4a, urn:bluemarine:track:e5d478af90f9b1c501368be8a9e1917fbec234fd)
+  RepositoryTrack(07, PT4M40S, rdfs:label=Vivaldi: Violin Concerto In F, Op. 8/3, RV 293, "The Four Seasons (Autumn)" - 1. Allegro, Compilations/Vivaldi_ The Four Seasons/07 Vivaldi_ Violin Concerto In F, Op. 8_3, RV 293, _The Four Seasons (Autumn)_ - 1. Allegro.m4a, urn:bluemarine:track:4e526b512e54eaef424e9e1afa640e1a9a3921fe)
+  RepositoryTrack(08, PT2M18S, rdfs:label=Vivaldi: Violin Concerto In F, Op. 8/3, RV 293, "The Four Seasons (Autumn)" - 2. Adagio Molto, Compilations/Vivaldi_ The Four Seasons/08 Vivaldi_ Violin Concerto In F, Op. 8_3, RV 293, _The Four Seasons (Autumn)_ - 2. Adagio Molto.m4a, urn:bluemarine:track:0dcef68802193a29c41be39981f3c027b3eb48e5)
+  RepositoryTrack(11, PT2M5S, rdfs:label=Vivaldi: Violin Concerto In F Minor, Op. 8/4, RV 297, "The Four Seasons (Winter)" - 2. Largo, Compilations/Vivaldi_ The Four Seasons/11 Vivaldi_ Violin Concerto In F Minor, Op. 8_4, RV 297, _The Four Seasons (Winter)_ - 2. Largo.m4a, urn:bluemarine:track:d01fb96aca003c8cc6505d12b94040ded680521f)
+  RepositoryTrack(13, PT3M52S, rdfs:label=Vivaldi: Concerto In G Minor, RV 577 - 1. Allegro, Compilations/Vivaldi_ The Four Seasons/13 Vivaldi_ Concerto In G Minor, RV 577 - 1. Allegro.m4a, urn:bluemarine:track:6fd32ab42394dede09506e9413a030ebcc766090)
+  RepositoryTrack(14, PT2M26S, rdfs:label=Vivaldi: Concerto In G Minor, RV 577 - 2. Largo Non Molto, Compilations/Vivaldi_ The Four Seasons/14 Vivaldi_ Concerto In G Minor, RV 577 - 2. Largo Non Molto.m4a, urn:bluemarine:track:656f9ae4a54394313ab742c3c75a7f56d1ed359b)
+
 TRACKS OF RepositoryMusicArtist(rdfs:label=Claudio Abbado: London Symphony Orchestra, uri=urn:bluemarine:artist:3e5121e7be43e7cd473501002e076c598f83f910):
   RepositoryTrack(01, PT7M18S, rdfs:label=Ravel: Alborada Del Gracioso, Claudio Abbado_ London Symphony Orchestra/Maurice Ravel_ Tzigane - Sheherazade - La Valse/01 Ravel_ Alborada Del Gracioso.m4a, urn:bluemarine:track:e3ac95993aea7dda326c2101af966ab8519808f6)
+  RepositoryTrack(02, PT9M58S, rdfs:label=Ravel: Tzigane Rhapsodie de concert pour violon et orchestre, Salvatore Accardo; Claudio Abbado_ London Symphony Orchestra/Maurice Ravel_ Tzigane - Sheherazade - La Valse/02 Ravel_ Tzigane Rhapsodie de concert pour violon et orchestre.m4a, urn:bluemarine:track:b8b1101bfb38eb88c3bb8f3e57e1fa8ea3243393)
   RepositoryTrack(03, PT7M20S, rdfs:label=Ravel: Miroirs - Une Barque Sur L'Ocean, Claudio Abbado_ London Symphony Orchestra/Maurice Ravel_ Tzigane - Sheherazade - La Valse/03 Ravel_ Miroirs - Une Barque Sur L'Ocean.m4a, urn:bluemarine:track:b0bd62c317f5af9ca431b113e129a59c5eea5452)
   RepositoryTrack(07, PT13M36S, rdfs:label=Ravel: Le Tombeau De Couperin - 6. Toccata, Claudio Abbado_ London Symphony Orchestra/Maurice Ravel_ Tzigane - Sheherazade - La Valse/07 Ravel_ Le Tombeau De Couperin - 6. Toccata.m4a, urn:bluemarine:track:0751d606b65bd8efbbc91794c94f63240c721403)
 
@@ -7216,6 +7260,24 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Edwin Hawkins Singers, uri=urn:bluema
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Elisabetta de Mircovich, uri=urn:bluemarine:artist:5773328cf285eb6e12a71d5bcf30bd7f6524a9c8):
   RepositoryTrack(07, PT3M9S, rdfs:label=Giardino: III. Benedicamus Domino, Compilations/I Dodici Giardini_ Cantico di Santa Caterina da Bologna/07 Giardino_ III. Benedicamus Domino.m4a, urn:bluemarine:track:021d88088cbdbaa55fc1021f76cd5b9da9ecc0b6)
+
+TRACKS OF RepositoryMusicArtist(rdfs:label=Elizabeth Parry, flute, uri=urn:bluemarine:artist:c30e4113862b546d4cb333adffb0902ba8d4d2f1):
+  RepositoryTrack(01, PT4M8S, rdfs:label=Fourth Concert, La Pantomime, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/01 Fourth Concert, La Pantomime.m4a, urn:bluemarine:track:405c15eb0ef0b24403845d954fb43ff30c08c095)
+  RepositoryTrack(02, PT1M44S, rdfs:label=Fourth Concert, L'Indiscrète, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/02 Fourth Concert, L'Indiscrète.m4a, urn:bluemarine:track:b3bea5cf861119fab0aad897f6b275634cec5d20)
+  RepositoryTrack(03, PT4M30S, rdfs:label=Fourth Concert, Le Rameau, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/03 Fourth Concert, Le Rameau.m4a, urn:bluemarine:track:baf6c156493cbc7c3be88a69f19932da4208de62)
+  RepositoryTrack(04, PT5M36S, rdfs:label=Second Concert, La Laborde, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/04 Second Concert, La Laborde.m4a, urn:bluemarine:track:ff2241448eb392fafce750f716bf727a260130bf)
+  RepositoryTrack(05, PT4M38S, rdfs:label=Second Concert, Le Boucon, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/05 Second Concert, Le Boucon.m4a, urn:bluemarine:track:c73c4c7ae1aea6eeb8db45974ef00b2626aaa3b6)
+  RepositoryTrack(06, PT2M32S, rdfs:label=Second Concert, L'Agaçante, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/06 Second Concert, L'Agaçante.m4a, urn:bluemarine:track:bc22ae453dbcc74074b6beb4bbdf90ef9fae0f6a)
+  RepositoryTrack(07, PT4M49S, rdfs:label=Second Concert, Menuets 1& 2, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/07 Second Concert, Menuets 1& 2.m4a, urn:bluemarine:track:7ddcc5f335a77b5408838d0e546b5fda7ec01251)
+  RepositoryTrack(08, PT3M31S, rdfs:label=First Concert, Le Coulicam, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/08 First Concert, Le Coulicam.m4a, urn:bluemarine:track:a9048ca761dcf759b2d7751915d81b20bb67cb98)
+  RepositoryTrack(09, PT2M46S, rdfs:label=First Concert, La Livri, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/09 First Concert, La Livri.m4a, urn:bluemarine:track:4a3180d2e710f3c2565d68cd38d7b9e2419cd79c)
+  RepositoryTrack(10, PT3M39S, rdfs:label=First Concert, Le Vézinet, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/10 First Concert, Le Vézinet.m4a, urn:bluemarine:track:022b5b8fcb62e029729688145ff414ac7070a729)
+  RepositoryTrack(11, PT4M47S, rdfs:label=Fifth Concert, Le Forqueray, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/11 Fifth Concert, Le Forqueray.m4a, urn:bluemarine:track:52fc153b0ae520cb3eda1496955fc8f859483c2d)
+  RepositoryTrack(12, PT5M41S, rdfs:label=Fifth Concert, Le Cupis, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/12 Fifth Concert, Le Cupis.m4a, urn:bluemarine:track:d4c97f073c5033178c31f33cfd268fb7b0d68c05)
+  RepositoryTrack(13, PT2M37S, rdfs:label=Fifth Concert, Le Marais, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/13 Fifth Concert, Le Marais.m4a, urn:bluemarine:track:951c9a7d69644987ea88d84f05af375de23d75cd)
+  RepositoryTrack(14, PT2M57S, rdfs:label=Third Concert, La Poplinière, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/14 Third Concert, La Poplinière.m4a, urn:bluemarine:track:d58c7a1f4355441ce38c9bbc62deced83727ee41)
+  RepositoryTrack(15, PT5M17S, rdfs:label=Third Concert, La Timide, Rondeaux 1 & 2, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/15 Third Concert, La Timide, Rondeaux 1 & 2.m4a, urn:bluemarine:track:00003480b245d0ca5f5320593b1728724aad1afb)
+  RepositoryTrack(16, PT2M42S, rdfs:label=Third Concert, Tambourins 1 & 2 en Rondeau, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/16 Third Concert, Tambourins 1 & 2 en Rondeau.m4a, urn:bluemarine:track:8fcdc4bb2b2dc66c6a980b8dfd089448610aa689)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Ella Fitzgerald, uri=http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499):
   RepositoryTrack(14, PT4M24S, rdfs:label=All Too Soon, Ella Fitzgerald/Sings the Duke Ellington Songbook/2-14 All Too Soon.m4a, http://dbtune.org/musicbrainz/resource/track/f9c4b1d5-ce0e-4ab0-9d79-db10d880d81b)
@@ -8193,7 +8255,7 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Göteborgs Symfoniker, Neeme Järvi, 
   RepositoryTrack(13, PT3M19S, rdfs:label=Peer Gynt, Op. 23: XII(b). The Death of Ase (Act III Scene 4), Göteborgs Symfoniker & Neeme Järvi/Grieg_ Peer Gynt; Sigurd Jorsalfar/1-13 Peer Gynt, Op. 23_ XII(b). The Death of Ase (Act III Scene 4).m4p, urn:bluemarine:track:27abb028a4dcfd9a14ae6ee7b42b74e59b62f86f)
   RepositoryTrack(19, PT4M29S, rdfs:label=Peer Gynt, Op. 23: XVIII. Peer Gynt and Anitra, Göteborgs Symfoniker & Neeme Järvi/Grieg_ Peer Gynt; Sigurd Jorsalfar/1-19 Peer Gynt, Op. 23_ XVIII. Peer Gynt and Anitra.m4p, urn:bluemarine:track:e32880f80e0610db0b954c79fd51ad95ef253edd)
 
-TRACKS OF RepositoryMusicArtist(rdfs:label=Heinrich Schiff; Neville Marriner: Staatskapelle Dresden, uri=urn:bluemarine:artist:542e738df79040558dc4c738e8dc1833619a4640):
+TRACKS OF RepositoryMusicArtist(rdfs:label=Heinrich Schiff, uri=urn:bluemarine:artist:ec465a86d560127bfc5a1b0fd581c66167a03d27):
   RepositoryTrack(01, PT14M45S, rdfs:label=Dvořák: Cello Concerto In B Minor, Op. 104, B 191 - 1. Allegro, Compilations/Dvořák; Elgar_ Cello Concertos/01 Dvořák_ Cello Concerto In B Minor, Op. 104, B 191 - 1. Allegro.m4a, urn:bluemarine:track:1f6630ab1619d7931921f10bdc7c555a8faa644b)
   RepositoryTrack(02, PT11M38S, rdfs:label=Dvořák: Cello Concerto In B Minor, Op. 104, B 191 - 2. Adagio, Ma Non Troppo, Compilations/Dvořák; Elgar_ Cello Concertos/02 Dvořák_ Cello Concerto In B Minor, Op. 104, B 191 - 2. Adagio, Ma Non Troppo.m4a, urn:bluemarine:track:7dd8d1f950f66ffa95cb1bee9193536359e78281)
   RepositoryTrack(03, PT12M14S, rdfs:label=Dvořák: Cello Concerto In B Minor, Op. 104, B 191 - 3. Finale: Allegro Moderato, Compilations/Dvořák; Elgar_ Cello Concertos/03 Dvořák_ Cello Concerto In B Minor, Op. 104, B 191 - 3. Finale_ Allegro Moderato.m4a, urn:bluemarine:track:f11cd8a8078eb0bc266ce766475ef839bb01590d)
@@ -8436,6 +8498,9 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Jean Sibelius, uri=http://dbtune.org/
   RepositoryTrack(03, PT6M8S, rdfs:label=Valse Triste, Op. 44 No. 1, Compilations/Sibelius_ Finlandia, The Swan Of Tuonela, Valse Triste, Tapiola/03 Sibelius_ Valse Triste, Op. 44_1 - Lento.m4a, http://dbtune.org/musicbrainz/resource/track/bbf22543-b063-453c-87a3-81b5f9ff7bab)
   RepositoryTrack(04, PT20M13S, rdfs:label=Tapiola, Op. 112, Compilations/Sibelius_ Finlandia, The Swan Of Tuonela, Valse Triste, Tapiola/04 Sibelius_ Tapiola, Op. 112.m4a, http://dbtune.org/musicbrainz/resource/track/a2caa538-e79b-4234-b358-7ab4d88ab20c)
   RepositoryTrack(01, PT9M33S, rdfs:label=Finlandia, Op. 26 (Andante sostenuto. Allegro moderato), Compilations/Sibelius_ Finlandia, The Swan Of Tuonela, Valse Triste, Tapiola/01 Sibelius_ Finlandia, Op. 26.m4a, http://dbtune.org/musicbrainz/resource/track/a76be5c2-7932-4a78-9df4-7c78e9bf08d3)
+
+TRACKS OF RepositoryMusicArtist(rdfs:label=Jean-François Paillard: Paillard Chamber Orchestra, uri=urn:bluemarine:artist:6c036a77a0e550f554933450081c57bbb52a9b64):
+  RepositoryTrack(07, PT4M21S, rdfs:label=Mozart: Horn Concerto #4 In E Flat, K 495 - 2. Andante, Compilations/The Magic of The French Horn - Greatest Concertos/07 Mozart_ Horn Concerto #4 In E Flat, K 495 - 2. Andante.m4a, urn:bluemarine:track:105ded3f27e442e8e73cecd40ffa80dc1ca617bf)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Jean-Jacques Justafre, Jean-Paul Gantiez, Jean-Claude Barro,, uri=urn:bluemarine:artist:403e962b3fbb3e65b41e4277bdcc0d17e92686cf):
   RepositoryTrack(11, PT7M13S, rdfs:label=Robert SCHUMANN Conzertstuck for 4 horn and orchestra - Lebh, Compilations/The Magic of The French Horn - Greatest Concertos/11 Robert SCHUMANN Conzertstuck for 4 horn and orchestra - Lebh.m4a, urn:bluemarine:track:efefc5286c45ba3ec66cd09cf9490aac3309c31d)
@@ -8837,7 +8902,7 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Julie Andrews, uri=http://dbtune.org/
 TRACKS OF RepositoryMusicArtist(rdfs:label=Juliette Gréco, uri=urn:bluemarine:artist:ee0dad23cdafd99b68474a6434bb843f6f9fb67f):
   RepositoryTrack(02, PT3M18S, rdfs:label=Sous le ciel de Paris, Juliette Gréco/Je suis comme je suis - Les plus belles chansons/1-02 Sous le ciel de Paris.m4p, urn:bluemarine:track:6af1e090236b690892273b174c1b8fb923cc4818)
 
-TRACKS OF RepositoryMusicArtist(rdfs:label=June Anderson, Rockwell Blake, Etc.; Riccardo Muti: Orchestra & Chorus Of La Scala Milan, uri=urn:bluemarine:artist:255adad0ae14b1243b7d2125ce3723d130c8aa1d):
+TRACKS OF RepositoryMusicArtist(rdfs:label=June Anderson, Rockwell Blake, Etc., uri=urn:bluemarine:artist:447f3b6a31492c5440ffb7ce107ff79b3d5d3706):
   RepositoryTrack(01, PT4M50S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Sinfonia; Del Dí La Messaggiera, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-01 Rossini_ La Donna Del Lago - Act 1_ Sinfonia; Del Dí La Messaggiera.m4a, urn:bluemarine:track:5278465c8e09612a2683efe4fbd3c48255ab1ab8)
   RepositoryTrack(02, PT4M19S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Oh Mattutini Albori!, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-02 Rossini_ La Donna Del Lago - Act 1_ Oh Mattutini Albori!.m4a, urn:bluemarine:track:38ad3748da770413bb40335ab4b4a9d2a5fbc815)
   RepositoryTrack(03, PT3M36S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Sull'Alta Rocca, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-03 Rossini_ La Donna Del Lago - Act 1_ Sull'Alta Rocca.m4a, urn:bluemarine:track:558a98f1cfd8167829767bf700d05420ab982af2)
@@ -8889,6 +8954,24 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Katia Labèque, uri=http://dbtune.org
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Kaylene Peoples, uri=urn:bluemarine:artist:8162159a04c05618d77bc865a9ccc817dfcf01a5):
   RepositoryTrack(03, PT5M13S, rdfs:label=My Favorite Things, Kaylene Peoples/All Jazzed Up!/03 My Favorite Things.m4a, urn:bluemarine:track:f43568a7b339113c58bcb570a3d2ccf4e13cd4b0)
+
+TRACKS OF RepositoryMusicArtist(rdfs:label=Kenneth Mitchell, violin, uri=urn:bluemarine:artist:b85b8a1b8f791bae2e3789312550f9bc1c97b9ff):
+  RepositoryTrack(01, PT4M8S, rdfs:label=Fourth Concert, La Pantomime, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/01 Fourth Concert, La Pantomime.m4a, urn:bluemarine:track:405c15eb0ef0b24403845d954fb43ff30c08c095)
+  RepositoryTrack(02, PT1M44S, rdfs:label=Fourth Concert, L'Indiscrète, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/02 Fourth Concert, L'Indiscrète.m4a, urn:bluemarine:track:b3bea5cf861119fab0aad897f6b275634cec5d20)
+  RepositoryTrack(03, PT4M30S, rdfs:label=Fourth Concert, Le Rameau, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/03 Fourth Concert, Le Rameau.m4a, urn:bluemarine:track:baf6c156493cbc7c3be88a69f19932da4208de62)
+  RepositoryTrack(04, PT5M36S, rdfs:label=Second Concert, La Laborde, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/04 Second Concert, La Laborde.m4a, urn:bluemarine:track:ff2241448eb392fafce750f716bf727a260130bf)
+  RepositoryTrack(05, PT4M38S, rdfs:label=Second Concert, Le Boucon, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/05 Second Concert, Le Boucon.m4a, urn:bluemarine:track:c73c4c7ae1aea6eeb8db45974ef00b2626aaa3b6)
+  RepositoryTrack(06, PT2M32S, rdfs:label=Second Concert, L'Agaçante, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/06 Second Concert, L'Agaçante.m4a, urn:bluemarine:track:bc22ae453dbcc74074b6beb4bbdf90ef9fae0f6a)
+  RepositoryTrack(07, PT4M49S, rdfs:label=Second Concert, Menuets 1& 2, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/07 Second Concert, Menuets 1& 2.m4a, urn:bluemarine:track:7ddcc5f335a77b5408838d0e546b5fda7ec01251)
+  RepositoryTrack(08, PT3M31S, rdfs:label=First Concert, Le Coulicam, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/08 First Concert, Le Coulicam.m4a, urn:bluemarine:track:a9048ca761dcf759b2d7751915d81b20bb67cb98)
+  RepositoryTrack(09, PT2M46S, rdfs:label=First Concert, La Livri, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/09 First Concert, La Livri.m4a, urn:bluemarine:track:4a3180d2e710f3c2565d68cd38d7b9e2419cd79c)
+  RepositoryTrack(10, PT3M39S, rdfs:label=First Concert, Le Vézinet, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/10 First Concert, Le Vézinet.m4a, urn:bluemarine:track:022b5b8fcb62e029729688145ff414ac7070a729)
+  RepositoryTrack(11, PT4M47S, rdfs:label=Fifth Concert, Le Forqueray, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/11 Fifth Concert, Le Forqueray.m4a, urn:bluemarine:track:52fc153b0ae520cb3eda1496955fc8f859483c2d)
+  RepositoryTrack(12, PT5M41S, rdfs:label=Fifth Concert, Le Cupis, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/12 Fifth Concert, Le Cupis.m4a, urn:bluemarine:track:d4c97f073c5033178c31f33cfd268fb7b0d68c05)
+  RepositoryTrack(13, PT2M37S, rdfs:label=Fifth Concert, Le Marais, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/13 Fifth Concert, Le Marais.m4a, urn:bluemarine:track:951c9a7d69644987ea88d84f05af375de23d75cd)
+  RepositoryTrack(14, PT2M57S, rdfs:label=Third Concert, La Poplinière, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/14 Third Concert, La Poplinière.m4a, urn:bluemarine:track:d58c7a1f4355441ce38c9bbc62deced83727ee41)
+  RepositoryTrack(15, PT5M17S, rdfs:label=Third Concert, La Timide, Rondeaux 1 & 2, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/15 Third Concert, La Timide, Rondeaux 1 & 2.m4a, urn:bluemarine:track:00003480b245d0ca5f5320593b1728724aad1afb)
+  RepositoryTrack(16, PT2M42S, rdfs:label=Third Concert, Tambourins 1 & 2 en Rondeau, Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba/Pieces de Clavecin/16 Third Concert, Tambourins 1 & 2 en Rondeau.m4a, urn:bluemarine:track:8fcdc4bb2b2dc66c6a980b8dfd089448610aa689)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Kings of Convenience, uri=http://dbtune.org/musicbrainz/resource/artist/cf0f4547-ffbd-4011-98ad-0bec9ba022db):
   RepositoryTrack(02, PT3M8S, rdfs:label=Misread, Kings of Convenience/Misread - Single/01 Misread.m4a, http://dbtune.org/musicbrainz/resource/track/a508c2ed-66c4-433e-97ff-8b3d97b2f124)
@@ -9086,17 +9169,17 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Louis Armstrong, uri=http://dbtune.or
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Louis Armstrong, uri=urn:bluemarine:artist:517fa5e0bf55168a84aff87ca735e2bbf09a13fe):
   RepositoryTrack(01, PT3M7S, rdfs:label=Mi Va Di Cantare, Louis Armstrong/Satchmo/01 Mi Va Di Cantare.m4a, urn:bluemarine:track:954cf49ebaeb7ba7f5ba467763e5d1ee4331e358)
-  RepositoryTrack(01, PT2M20S, rdfs:label=What a Wonderful World, Louis Armstrong/Satchmo/10 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
-  RepositoryTrack(01, PT2M19S, rdfs:label=What a Wonderful World, Louis Armstrong/The Ultimate Collection/04 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
   RepositoryTrack(03, PT2M26S, rdfs:label=Hello Dolly, Louis Armstrong/Satchmo/03 Hello Dolly.m4a, http://dbtune.org/musicbrainz/resource/track/6e62dd8a-f3fd-4c9d-9fa1-e58f617da5b5)
   RepositoryTrack(06, PT3M5S, rdfs:label=Bye 'n' Bye, Louis Armstrong/Satchmo/06 Bye 'n' Bye.m4a, urn:bluemarine:track:35ea15d60e2749d12a23cf1211eea1e135e79f38)
   RepositoryTrack(07, PT3M12S, rdfs:label=When the Saints Go Marchin' In, Louis Armstrong/Satchmo/07 When The Saints Go Marchin' In.m4a, http://dbtune.org/musicbrainz/resource/track/7df5d2fd-9422-4346-b87f-fcb6cc017464)
-  RepositoryTrack(10, PT2M20S, rdfs:label=What a Wonderful World, Louis Armstrong/Satchmo/10 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
-  RepositoryTrack(10, PT2M19S, rdfs:label=What a Wonderful World, Louis Armstrong/The Ultimate Collection/04 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
   RepositoryTrack(14, PT5M13S, rdfs:label=Sweet Lorraine, Louis Armstrong/Satchmo/14 Sweet Lorraine.m4a, http://dbtune.org/musicbrainz/resource/track/0dab0db4-4369-4e99-bd8d-00387302f344)
   RepositoryTrack(15, PT5M13S, rdfs:label=Blues In The Night, Louis Armstrong/Satchmo/15 Blues In The Night.m4a, urn:bluemarine:track:0930340caa95c84cb6003781f8884624477832c0)
   RepositoryTrack(16, PT3M27S, rdfs:label=Grassa E Bella, Louis Armstrong/Satchmo/16 Grassa E Bella.m4a, urn:bluemarine:track:67d1ab718c45bfd65f7702511e16ac9851f2a9d3)
   RepositoryTrack(17, PT4M43S, rdfs:label=Body and Soul, Louis Armstrong/Satchmo/17 Body And Soul.m4a, http://dbtune.org/musicbrainz/resource/track/f391e293-00ab-4ab3-9614-a23c46087a3d)
+  RepositoryTrack(01, PT2M20S, rdfs:label=What a Wonderful World, Louis Armstrong/Satchmo/10 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
+  RepositoryTrack(01, PT2M19S, rdfs:label=What a Wonderful World, Louis Armstrong/The Ultimate Collection/04 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
+  RepositoryTrack(10, PT2M20S, rdfs:label=What a Wonderful World, Louis Armstrong/Satchmo/10 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
+  RepositoryTrack(10, PT2M19S, rdfs:label=What a Wonderful World, Louis Armstrong/The Ultimate Collection/04 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
   RepositoryTrack(10, PT3M10S, rdfs:label=Only You, Louis Armstrong/The Ultimate Collection/10 Only You.m4a, http://dbtune.org/musicbrainz/resource/track/5a0f80cb-15c5-4cd9-af01-89357ffe1c67)
   RepositoryTrack(12, PT2M11S, rdfs:label=I Still Get Jealous, Louis Armstrong/The Ultimate Collection/12 I Still Get Jealous.m4a, http://dbtune.org/musicbrainz/resource/track/6085b9d6-82a7-4836-96ba-e109c41692d5)
   RepositoryTrack(13, PT3M2S, rdfs:label=Dream a Little Dream of Me, Louis Armstrong/The Ultimate Collection/13 Dream A Little Dream Of Me.m4a, http://dbtune.org/musicbrainz/resource/track/ef0f4c47-5bc1-4a7c-9156-8f376aa4df2c)
@@ -9656,6 +9739,15 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Neville Marriner: Academy Of St. Mart
   RepositoryTrack(12, PT3M2S, rdfs:label=Bach: Orchestral Suite #3 In D, BWV 1068 - 5. Gigue, Neville Marriner_ Academy Of St. Martin In The Fields/Bach_ Orchestral Suites #2-4/12 Bach_ Orchestral Suite #3 In D, BWV 1068 - 5. Gigue.m4a, urn:bluemarine:track:55aa7aa3aeb3449c576f4f6e00e49d86ea6108a8)
   RepositoryTrack(17, PT2M58S, rdfs:label=Bach: Orchestral Suite #4 In D, BWV 1069 - 5. Rejouissance, Neville Marriner_ Academy Of St. Martin In The Fields/Bach_ Orchestral Suites #2-4/17 Bach_ Orchestral Suite #4 In D, BWV 1069 - 5. Rejouissance.m4a, urn:bluemarine:track:53d70ecb3f8535e1dc9bf29286a9f7aa30b07711)
 
+TRACKS OF RepositoryMusicArtist(rdfs:label=Neville Marriner: Staatskapelle Dresden, uri=urn:bluemarine:artist:4d35d7dcadfde3a258dd6409e94032a82b932a68):
+  RepositoryTrack(01, PT14M45S, rdfs:label=Dvořák: Cello Concerto In B Minor, Op. 104, B 191 - 1. Allegro, Compilations/Dvořák; Elgar_ Cello Concertos/01 Dvořák_ Cello Concerto In B Minor, Op. 104, B 191 - 1. Allegro.m4a, urn:bluemarine:track:1f6630ab1619d7931921f10bdc7c555a8faa644b)
+  RepositoryTrack(02, PT11M38S, rdfs:label=Dvořák: Cello Concerto In B Minor, Op. 104, B 191 - 2. Adagio, Ma Non Troppo, Compilations/Dvořák; Elgar_ Cello Concertos/02 Dvořák_ Cello Concerto In B Minor, Op. 104, B 191 - 2. Adagio, Ma Non Troppo.m4a, urn:bluemarine:track:7dd8d1f950f66ffa95cb1bee9193536359e78281)
+  RepositoryTrack(03, PT12M14S, rdfs:label=Dvořák: Cello Concerto In B Minor, Op. 104, B 191 - 3. Finale: Allegro Moderato, Compilations/Dvořák; Elgar_ Cello Concertos/03 Dvořák_ Cello Concerto In B Minor, Op. 104, B 191 - 3. Finale_ Allegro Moderato.m4a, urn:bluemarine:track:f11cd8a8078eb0bc266ce766475ef839bb01590d)
+  RepositoryTrack(04, PT7M42S, rdfs:label=Elgar: Cello Concerto In E Minor, Op. 85 - 1. Adagio Moderato, Compilations/Dvořák; Elgar_ Cello Concertos/04 Elgar_ Cello Concerto In E Minor, Op. 85 - 1. Adagio Moderato.m4a, urn:bluemarine:track:32096b6477f4e8f597f08524b591fa965cf2ba88)
+  RepositoryTrack(05, PT4M30S, rdfs:label=Elgar: Cello Concerto In E Minor, Op. 85 - 2. Lento, Allegro Molto, Compilations/Dvořák; Elgar_ Cello Concertos/05 Elgar_ Cello Concerto In E Minor, Op. 85 - 2. Lento, Allegro Molto.m4a, urn:bluemarine:track:92685673086dbf0d668376f385bee8aa1a2faa55)
+  RepositoryTrack(06, PT5M41S, rdfs:label=Elgar: Cello Concerto In E Minor, Op. 85 - 3. Adagio, Compilations/Dvořák; Elgar_ Cello Concertos/06 Elgar_ Cello Concerto In E Minor, Op. 85 - 3. Adagio.m4a, urn:bluemarine:track:0f0d6f63e0246c5343061d229d33be93d331f65e)
+  RepositoryTrack(07, PT11M11S, rdfs:label=Elgar: Cello Concerto In E Minor, Op. 85 - 4. Allegro Moderato, Compilations/Dvořák; Elgar_ Cello Concertos/07 Elgar_ Cello Concerto In E Minor, Op. 85 - 4. Allegro Moderato.m4a, urn:bluemarine:track:b25ceda1e37e81dfac5e5a5f4273751bbb5d1396)
+
 TRACKS OF RepositoryMusicArtist(rdfs:label=New Budapest Quartet, uri=urn:bluemarine:artist:91376f5fa95d16d249056c54fb644364a6c8cebf):
   RepositoryTrack(01, PT11M8S, rdfs:label=Brahms: String Quartet In C Minor, Op. 51/1 - 1. Allegro, Compilations/Brahms_ String Quartets & Piano Quintet [Disc 1]/01 Brahms_ String Quartet In C Minor, Op. 51_1 - 1. Allegro.m4a, urn:bluemarine:track:eead2cf49a00a11d45aed2139105444caaf7e234)
   RepositoryTrack(02, PT7M17S, rdfs:label=Brahms: String Quartet In C Minor, Op. 51/1 - 2. Romanze. Poco Adagio, Compilations/Brahms_ String Quartets & Piano Quintet [Disc 1]/02 Brahms_ String Quartet In C Minor, Op. 51_1 - 2. Romanze. Poco Adagio.m4a, urn:bluemarine:track:45da1ce9296a725bf4929c5a32e1560941c8b4a2)
@@ -9719,6 +9811,27 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Nikolai Rimsky-Korsakow, uri=urn:blue
   RepositoryTrack(02, PT11M43S, rdfs:label=Scheherazade, op. 35: Lento - Andantino, Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.m4a, http://dbtune.org/musicbrainz/resource/track/39164144-01f1-4be7-af98-0d674e1b0a0a)
   RepositoryTrack(03, PT10M20S, rdfs:label=Scheherazade, op. 35: Andantino quasi allegretto, Compilations/Rimsky-Korsakov_ Scheherazade/03 Rimsky-Korsakov_ Scheherazade, Op. 35 - 3. The Young Prince & The Young Princess.m4a, http://dbtune.org/musicbrainz/resource/track/0468e4e8-2f60-492d-89f8-95d6c0594773)
   RepositoryTrack(04, PT12M59S, rdfs:label=Scheherazade, op. 35: Allegro molto, Compilations/Rimsky-Korsakov_ Scheherazade/04 Rimsky-Korsakov_ Scheherazade, Op. 35 - 4. Festival At Baghdad, The Sea, Shipwreck.m4a, http://dbtune.org/musicbrainz/resource/track/b75b2e94-6f2e-482c-a6b9-076adb1f5841)
+
+TRACKS OF RepositoryMusicArtist(rdfs:label=Nikolaus Harnoncourt: Concentus Musicus Wien, Arnold Schoenberg Choir, uri=urn:bluemarine:artist:c4b7f779c69c63cbda346ddb2f6c6343d2549856):
+  RepositoryTrack(01, PT10M31S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Kyrie: Kyrie Eleison 1, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-01 Bach_ Mass In B Minor, BWV 232 - Kyrie_ Kyrie Eleison 1.m4a, urn:bluemarine:track:2820210fd1a9c0bec2580fdd0e9347581dbea62a)
+  RepositoryTrack(02, PT5M16S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Kyrie: Christe Eleison, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-02 Bach_ Mass In B Minor, BWV 232 - Kyrie_ Christe Eleison.m4a, urn:bluemarine:track:a7ff0d6cab798b0ad334e43d5749559e0fde6ce2)
+  RepositoryTrack(03, PT2M59S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Kyrie: Kyrie Eleison 2, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-03 Bach_ Mass In B Minor, BWV 232 - Kyrie_ Kyrie Eleison 2.m4a, urn:bluemarine:track:abff1f8061d58d1389ca7dd8fc24a0e3851e0548)
+  RepositoryTrack(04, PT6M38S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Gloria: Gloria In Excelsis Deo, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-04 Bach_ Mass In B Minor, BWV 232 - Gloria_ Gloria In Excelsis Deo.m4a, urn:bluemarine:track:85a98294549afc6de96c01f3a7914cc5da82ea17)
+  RepositoryTrack(05, PT4M7S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Gloria: Laudamus Te, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-05 Bach_ Mass In B Minor, BWV 232 - Gloria_ Laudamus Te.m4a, urn:bluemarine:track:4983326a6d1b01ad5553d906e1bf3eabc8e9a097)
+  RepositoryTrack(06, PT2M37S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Gloria: Gratias Agimus, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-06 Bach_ Mass In B Minor, BWV 232 - Gloria_ Gratias Agimus.m4a, urn:bluemarine:track:77c5e92fdf32218eea159a0d2a4e3b1244804979)
+  RepositoryTrack(07, PT5M56S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Gloria: Domine Deus, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-07 Bach_ Mass In B Minor, BWV 232 - Gloria_ Domine Deus.m4a, urn:bluemarine:track:95b7e173cc5301870e97280567a33838da0942ee)
+  RepositoryTrack(08, PT3M1S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Gloria: Qui Tollis, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-08 Bach_ Mass In B Minor, BWV 232 - Gloria_ Qui Tollis.m4a, urn:bluemarine:track:cf8db8223cb43cce9a390e26b8ee84de397dab3e)
+  RepositoryTrack(11, PT4M18S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Gloria: Cum Sancto Spiritu, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.m4a, urn:bluemarine:track:9ae741df7a054cdb4c1bc3e62da781004665abc8)
+  RepositoryTrack(01, PT1M52S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Credo: Credo In Unum Deum, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 2]/2-01 Bach_ Mass In B Minor, BWV 232 - Credo_ Credo In Unum Deum.m4a, urn:bluemarine:track:d80a3a9d72ac8a4c5c25c1a49812d027d1a7e349)
+  RepositoryTrack(02, PT2M6S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Credo: Patrem Omnipotentem, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 2]/2-02 Bach_ Mass In B Minor, BWV 232 - Credo_ Patrem Omnipotentem.m4a, urn:bluemarine:track:41910648d274e2e63c3e3da4607e9bd14c12e4f5)
+  RepositoryTrack(03, PT5M6S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Credo: Et In Unum Dominum, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 2]/2-03 Bach_ Mass In B Minor, BWV 232 - Credo_ Et In Unum Dominum.m4a, urn:bluemarine:track:c8dfb135c65441708c71d60c618588754e012508)
+  RepositoryTrack(06, PT4M26S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Credo: Et Resurrexit, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 2]/2-06 Bach_ Mass In B Minor, BWV 232 - Credo_ Et Resurrexit.m4a, urn:bluemarine:track:f777840d1850dd6d162e3217f7e846a58cde153a)
+  RepositoryTrack(07, PT5M12S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Credo: Et In Spiritum Sanctum, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 2]/2-07 Bach_ Mass In B Minor, BWV 232 - Credo_ Et In Spiritum Sanctum.m4a, urn:bluemarine:track:5dc4829cdc1679c1430a751b3332d8cb2d45f11f)
+  RepositoryTrack(08, PT3M54S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Credo: Confiteor Unum Baptisma, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 2]/2-08 Bach_ Mass In B Minor, BWV 232 - Credo_ Confiteor Unum Baptisma.m4a, urn:bluemarine:track:5c3103c2b325dc17acc94e4ff1e76d2210775406)
+  RepositoryTrack(09, PT2M26S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Credo: Et Expecto, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 2]/2-09 Bach_ Mass In B Minor, BWV 232 - Credo_ Et Expecto.m4a, urn:bluemarine:track:4f505ef452d8466b759fbfb9970c4543a8e103f5)
+  RepositoryTrack(11, PT2M37S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Osanna, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 2]/2-11 Bach_ Mass In B Minor, BWV 232 - Osanna.m4a, urn:bluemarine:track:295ea4b643212da6a82cd3541a520b080511c457)
+  RepositoryTrack(12, PT6M46S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Benedictus; Osanna #2, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 2]/2-12 Bach_ Mass In B Minor, BWV 232 - Benedictus; Osanna #2.m4a, urn:bluemarine:track:450e69e010a18346f8235a5dd51bf613e814def7)
+  RepositoryTrack(14, PT2M50S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Agnus Dei: Dona Nobis Pacem, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 2]/2-14 Bach_ Mass In B Minor, BWV 232 - Agnus Dei_ Dona Nobis Pacem.m4a, urn:bluemarine:track:ad60196bbe0c8f861fccf07d8bfb50df598b75bb)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Nina Simone, uri=http://dbtune.org/musicbrainz/resource/artist/2944824d-4c26-476f-a981-be849081942f):
   RepositoryTrack(12, PT2M44S, rdfs:label=Ain't no use, Nina Simone/The Essential Nina Simone/12 Ain't No Use (Live).m4a, http://dbtune.org/musicbrainz/resource/track/234146b3-26c3-4a1d-b061-a0cf315ca525)
@@ -10129,14 +10242,14 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Philippe Foulon, uri=urn:bluemarine:a
   RepositoryTrack(08, PT5M12S, rdfs:label=Les voix humaines, Philippe Foulon & Lachrimae Consort/Marais_ Pièces pour viole & autres instruments/08 Les voix humaines.m4a, urn:bluemarine:track:6260ed386f76dc75d06dc601c0df6efedb56a072)
   RepositoryTrack(10, PT6M17S, rdfs:label=Tombeau de M. de Sainte Colombe, Philippe Foulon & Lachrimae Consort/Marais_ Pièces pour viole & autres instruments/10 Tombeau de M. de Sainte Colombe.m4a, urn:bluemarine:track:3b2abed6e89862a7fabf94b4504e29b306412b9f)
 
+TRACKS OF RepositoryMusicArtist(rdfs:label=Pierre Del Vescovo, uri=urn:bluemarine:artist:1831e8c65bf212f6ae402abacd0668fd67ecf2b9):
+  RepositoryTrack(07, PT4M21S, rdfs:label=Mozart: Horn Concerto #4 In E Flat, K 495 - 2. Andante, Compilations/The Magic of The French Horn - Greatest Concertos/07 Mozart_ Horn Concerto #4 In E Flat, K 495 - 2. Andante.m4a, urn:bluemarine:track:105ded3f27e442e8e73cecd40ffa80dc1ca617bf)
+
 TRACKS OF RepositoryMusicArtist(rdfs:label=Pierre Del Vescovo/Horn, Bamberger Symphoniker/Theodor Gusch, uri=urn:bluemarine:artist:cf8175e1c8d379728f9ca0c286e2684490300b2a):
   RepositoryTrack(08, PT3M34S, rdfs:label=Wolfgang Amadeus MOZART Concerto #4 for horn and orchestra,, Compilations/The Magic of The French Horn - Greatest Concertos/08 Wolfgang Amadeus MOZART Concerto #4 for horn and orchestra,.m4a, urn:bluemarine:track:ac11cd5655efed068fa9a1c4409aae28fe3c8aef)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Pierre Del Vescovo/Horn, Jean Hubeau/Piano, uri=urn:bluemarine:artist:11c8f71822ae609cd238d64deb828fb6cf3be33e):
   RepositoryTrack(10, PT6M55S, rdfs:label=Paul DUKAS Villanelle for piano and horn, Compilations/The Magic of The French Horn - Greatest Concertos/10 Paul DUKAS Villanelle for piano and horn.m4a, urn:bluemarine:track:6dba2e835d86a96096b822c716c234c6d735a56c)
-
-TRACKS OF RepositoryMusicArtist(rdfs:label=Pierre Del Vescovo; Jean-François Paillard: Paillard Chamber Orchestra, uri=urn:bluemarine:artist:1dc5acd6297e44f22fcb3872c902a4f36c1eaabd):
-  RepositoryTrack(07, PT4M21S, rdfs:label=Mozart: Horn Concerto #4 In E Flat, K 495 - 2. Andante, Compilations/The Magic of The French Horn - Greatest Concertos/07 Mozart_ Horn Concerto #4 In E Flat, K 495 - 2. Andante.m4a, urn:bluemarine:track:105ded3f27e442e8e73cecd40ffa80dc1ca617bf)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Pinchas Zukerman, Midori, uri=urn:bluemarine:artist:c12a755995122e8d4a27445b87681827dbe04d2b):
   RepositoryTrack(01, PT4M2S, rdfs:label=Bach: Concerto In D Minor For 2 Violins, BWV 1043, "Double" - 1. Vivace, Pinchas Zukerman, Midori/Bach; Vivaldi_ Concertos For 2 Violins/01 Bach_ Concerto In D Minor For 2 Violins, BWV 1043, _Double_ - 1. Vivace.m4a, urn:bluemarine:track:7bb9c730cd7139a12c74ecb76716635f3fff4bf8)
@@ -10205,6 +10318,53 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Randy Edelman, uri=http://dbtune.org/
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=René Marie, uri=http://dbtune.org/musicbrainz/resource/artist/12822d4f-4607-4f1d-ab16-d6bacc27cafe):
   RepositoryTrack(04, PT6M11S, rdfs:label=Four Women, Rene Marie/How Can I Keep from Singing_/04 Four Women.m4a, http://dbtune.org/musicbrainz/resource/track/7ffc3ed2-56a7-4f5b-967a-222f312982ec)
+
+TRACKS OF RepositoryMusicArtist(rdfs:label=Riccardo Muti: Orchestra & Chorus Of La Scala Milan, uri=urn:bluemarine:artist:48e68ebe5b49afa7011c18207113a942e1082992):
+  RepositoryTrack(01, PT4M50S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Sinfonia; Del Dí La Messaggiera, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-01 Rossini_ La Donna Del Lago - Act 1_ Sinfonia; Del Dí La Messaggiera.m4a, urn:bluemarine:track:5278465c8e09612a2683efe4fbd3c48255ab1ab8)
+  RepositoryTrack(02, PT4M19S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Oh Mattutini Albori!, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-02 Rossini_ La Donna Del Lago - Act 1_ Oh Mattutini Albori!.m4a, urn:bluemarine:track:38ad3748da770413bb40335ab4b4a9d2a5fbc815)
+  RepositoryTrack(03, PT3M36S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Sull'Alta Rocca, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-03 Rossini_ La Donna Del Lago - Act 1_ Sull'Alta Rocca.m4a, urn:bluemarine:track:558a98f1cfd8167829767bf700d05420ab982af2)
+  RepositoryTrack(04, PT3M29S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Scendi Nel Piccol Legno, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-04 Rossini_ La Donna Del Lago - Act 1_ Scendi Nel Piccol Legno.m4a, urn:bluemarine:track:d0ba17dd42d39c596edf44aa88c751133b2a2525)
+  RepositoryTrack(05, PT4M2S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Uberto! Ah! Dove T'Ascondi?, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-05 Rossini_ La Donna Del Lago - Act 1_ Uberto! Ah! Dove T'Ascondi_.m4a, urn:bluemarine:track:74dbf6834ce9038fe730b581b8863cdd33234e56)
+  RepositoryTrack(06, PT4M27S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Sei Già Nel Tetto Mio, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-06 Rossini_ La Donna Del Lago - Act 1_ Sei Già Nel Tetto Mio.m4a, urn:bluemarine:track:0e496d9cd2b69e8744c0417fc1156580e0e3405f)
+  RepositoryTrack(07, PT3M15S, rdfs:label=Rossini: La Donna Del Lago - Act 1: D'Inibaca, Donzella, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-07 Rossini_ La Donna Del Lago - Act 1_ D'Inibaca, Donzella.m4a, urn:bluemarine:track:b93b9a9d792973e22087145eab05c668832774fc)
+  RepositoryTrack(08, PT2M26S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Sei Già Sposa?, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-08 Rossini_ La Donna Del Lago - Act 1_ Sei Già Sposa_.m4a, urn:bluemarine:track:e49356231fecc7e0f4e7de66506edfed74d8470d)
+  RepositoryTrack(09, PT2M36S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Quali Accenti!...Quai Tormenti!, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-09 Rossini_ La Donna Del Lago - Act 1_ Quali Accenti!...Quai Tormenti!.m4a, urn:bluemarine:track:58e34a890b0f7e52631b5d5030a1a1c3c61437cd)
+  RepositoryTrack(10, PT5M11S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Ma Son Sorpreso, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-10 Rossini_ La Donna Del Lago - Act 1_ Ma Son Sorpreso.m4a, urn:bluemarine:track:09ba79ee860818d194d91f24d2247e70197dfca1)
+  RepositoryTrack(11, PT2M51S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Mura Felici, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-11 Rossini_ La Donna Del Lago - Act 1_ Mura Felici.m4a, urn:bluemarine:track:a7baa38a4f39c9f9342b89b3c80d9754452b5a1e)
+  RepositoryTrack(12, PT3M39S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Elena! Oh Tu, Che Chiamo!, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-12 Rossini_ La Donna Del Lago - Act 1_ Elena! Oh Tu, Che Chiamo!.m4a, urn:bluemarine:track:5994a4480eb0af1490c47c5c7916fa06e581fa9c)
+  RepositoryTrack(13, PT3M16S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Oh Quante Lagrime, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-13 Rossini_ La Donna Del Lago - Act 1_ Oh Quante Lagrime.m4a, urn:bluemarine:track:c2e8f8ee294827bdb2506027cdc7c0736689ad92)
+  RepositoryTrack(14, PT3M53S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Signor, Giungi Opportuno!, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-14 Rossini_ La Donna Del Lago - Act 1_ Signor, Giungi Opportuno!.m4a, urn:bluemarine:track:351a4610be3bc1acaa5ece122d6dfde193cd96e5)
+  RepositoryTrack(15, PT4M13S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Taci, Lo Voglio, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-15 Rossini_ La Donna Del Lago - Act 1_ Taci, Lo Voglio.m4a, urn:bluemarine:track:51d685dce18291864fc03ef9e3cf1c4223c25c74)
+  RepositoryTrack(16, PT1M49S, rdfs:label=Rossini: La Donna Del Lago - Act 1: E Nel Fatal Conflitto, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-16 Rossini_ La Donna Del Lago - Act 1_ E Nel Fatal Conflitto.m4a, urn:bluemarine:track:bd5582631a13ea94db64348c2b31902a22f00b7d)
+  RepositoryTrack(17, PT3M36S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Vivere Io Non Potrò, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-17 Rossini_ La Donna Del Lago - Act 1_ Vivere Io Non Potrò.m4a, urn:bluemarine:track:2a5753b2b2c8b9e5b43fca2ddf5ecc9ddf63f52f)
+  RepositoryTrack(18, PT6M18S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Qual Rapido Torrente, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-18 Rossini_ La Donna Del Lago - Act 1_ Qual Rapido Torrente.m4a, urn:bluemarine:track:82394082c3d9426a0b75ed5a0a57ba1943227700)
+  RepositoryTrack(19, PT3M29S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Ma Dov'È Colei, Che Accende, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-19 Rossini_ La Donna Del Lago - Act 1_ Ma Dov'È Colei, Che Accende.m4a, urn:bluemarine:track:3028f22501ed523478e25263af379fae4ba66ab1)
+  RepositoryTrack(20, PT2M25S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Se A' Miei Voti Amor Sorride, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-20 Rossini_ La Donna Del Lago - Act 1_ Se A' Miei Voti Amor Sorride.m4a, urn:bluemarine:track:93298cd757ae37b3e82bcf1d33098694c1139629)
+  RepositoryTrack(21, PT1M48S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Alfin Mi È Dato, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-21 Rossini_ La Donna Del Lago - Act 1_ Alfin Mi È Dato.m4a, urn:bluemarine:track:19a34758cb07d2d2daf245085e9d9f233d7097f1)
+  RepositoryTrack(22, PT1M52S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Vieni, O Stella, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 1]/1-22 Rossini_ La Donna Del Lago - Act 1_ Vieni, O Stella.m4a, urn:bluemarine:track:b543b626b0301a479c771242335ec811302bf77c)
+  RepositoryTrack(01, PT4M48S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Quanto A Quest'Alma Amante, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-01 Rossini_ La Donna Del Lago - Act 1_ Quanto A Quest'Alma Amante.m4a, urn:bluemarine:track:2b70891d48ce217552a924d479f8dfb508cd4c11)
+  RepositoryTrack(02, PT1M29S, rdfs:label=Rossini: La Donna Del Lago - Act 1: La Mia Spada, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-02 Rossini_ La Donna Del Lago - Act 1_ La Mia Spada.m4a, urn:bluemarine:track:c7273733d72291f49139faaf13df503c1ce4ebd1)
+  RepositoryTrack(03, PT2M9S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Questo Amplesso, A Te Sia Pegno, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-03 Rossini_ La Donna Del Lago - Act 1_ Questo Amplesso, A Te Sia Pegno.m4a, urn:bluemarine:track:a8917f61606d7fc2a5899b4924ac16a814271c8c)
+  RepositoryTrack(04, PT1M55S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Crudele Sospetto, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-04 Rossini_ La Donna Del Lago - Act 1_ Crudele Sospetto.m4a, urn:bluemarine:track:0c3879e973b07e69c41322c58a167dd1134819c9)
+  RepositoryTrack(05, PT2M36S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Sul Colle A Morve Opposto, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-05 Rossini_ La Donna Del Lago - Act 1_ Sul Colle A Morve Opposto.m4a, urn:bluemarine:track:4bbfeb72f105dcbba9aa720b8771858427f193fd)
+  RepositoryTrack(06, PT3M, rdfs:label=Rossini: La Donna Del Lago - Act 1: Già Un Raggio Forier, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-06 Rossini_ La Donna Del Lago - Act 1_ Già Un Raggio Forier.m4a, urn:bluemarine:track:514da34ff8dcb12d1bcbe99fc125c779ed9f8491)
+  RepositoryTrack(07, PT1M54S, rdfs:label=Rossini: La Donna Del Lago - Act 1: Su...Amici! Guerrieri!, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-07 Rossini_ La Donna Del Lago - Act 1_ Su...Amici! Guerrieri!.m4a, urn:bluemarine:track:210487064a31ffd9ba2e5a60c0a2a1e1c31f0430)
+  RepositoryTrack(08, PT9M4S, rdfs:label=Rossini: La Donna Del Lago - Act 2: Oh Fiamma Soave, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-08 Rossini_ La Donna Del Lago - Act 2_ Oh Fiamma Soave.m4a, urn:bluemarine:track:48006d671d64fef3aca853c32fb36a9a9e5f92de)
+  RepositoryTrack(09, PT2M, rdfs:label=Rossini: La Donna Del Lago - Act 2: Va, Non Temer, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-09 Rossini_ La Donna Del Lago - Act 2_ Va, Non Temer.m4a, urn:bluemarine:track:5253fc2a0a27e74eae1e64e3d82dcebf2d533e6d)
+  RepositoryTrack(10, PT4M48S, rdfs:label=Rossini: La Donna Del Lago - Act 2: Alla Ragion, Deh! Rieda, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-10 Rossini_ La Donna Del Lago - Act 2_ Alla Ragion, Deh! Rieda.m4a, urn:bluemarine:track:9c831115b91952bd324253a00d68796505e4091b)
+  RepositoryTrack(11, PT4M1S, rdfs:label=Rossini: La Donna Del Lago - Act 2: Nume! Se A'miei Sospiri, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-11 Rossini_ La Donna Del Lago - Act 2_ Nume! Se A'miei Sospiri.m4a, urn:bluemarine:track:fb4557c69e388b6f126ee31436198d4053fa2c04)
+  RepositoryTrack(12, PT1M41S, rdfs:label=Rossini: La Donna Del Lago - Act 2: Qual Pena In Me Già Desta, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-12 Rossini_ La Donna Del Lago - Act 2_ Qual Pena In Me Già Desta.m4a, urn:bluemarine:track:758951ebf813c338f1485f44319f6f8aa71f13d2)
+  RepositoryTrack(13, PT7M11S, rdfs:label=Rossini: La Donna Del Lago - Act 2: Parla...Chi Sei?, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-13 Rossini_ La Donna Del Lago - Act 2_ Parla...Chi Sei_.m4a, urn:bluemarine:track:b871d60eec660345f119ad4a4c93be2396e10294)
+  RepositoryTrack(14, PT4M21S, rdfs:label=Rossini: La Donna Del Lago - Act 2: Quante Sciagure In Un Sol Giorno, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-14 Rossini_ La Donna Del Lago - Act 2_ Quante Sciagure In Un Sol Giorno.m4a, urn:bluemarine:track:b1e16dbd4a0b3dd8c46ac2e143346edaa408534a)
+  RepositoryTrack(15, PT4M25S, rdfs:label=Rossini: La Donna Del Lago - Act 2: Ah! Si Pera: Ormai La Morte, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-15 Rossini_ La Donna Del Lago - Act 2_ Ah! Si Pera_ Ormai La Morte.m4a, urn:bluemarine:track:86b8204e93cc94f0fc3ceea77571f58e22d5b47b)
+  RepositoryTrack(16, PT3M14S, rdfs:label=Rossini: La Donna Del Lago - Act 2: Douglas! Ti Salva!, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-16 Rossini_ La Donna Del Lago - Act 2_ Douglas! Ti Salva!.m4a, urn:bluemarine:track:4e4518fd68c9852e1b1923190d49ec255afa7340)
+  RepositoryTrack(17, PT2M37S, rdfs:label=Rossini: La Donna Del Lago - Act 2: E Tanto Osasti?, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-17 Rossini_ La Donna Del Lago - Act 2_ E Tanto Osasti_.m4a, urn:bluemarine:track:1af25347914fad864af8a26f2bf9b195763efe9c)
+  RepositoryTrack(18, PT1M52S, rdfs:label=Rossini: La Donna Del Lago - Act 2: Che Sento?, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-18 Rossini_ La Donna Del Lago - Act 2_ Che Sento_.m4a, urn:bluemarine:track:8cd2504d589eec2f5a3dd23fa56793e7a43d7a1f)
+  RepositoryTrack(19, PT1M42S, rdfs:label=Rossini: La Donna Del Lago - Act 2: Stelle! Sembra Egli Stesso!, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-19 Rossini_ La Donna Del Lago - Act 2_ Stelle! Sembra Egli Stesso!.m4a, urn:bluemarine:track:733aee44e0a22263bac02e357fdbbbf76044273c)
+  RepositoryTrack(20, PT1M46S, rdfs:label=Rossini: La Donna Del Lago - Act 2: Imponga Il Re, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-20 Rossini_ La Donna Del Lago - Act 2_ Imponga Il Re.m4a, urn:bluemarine:track:e50f9fc558a9dd95a7906e3164282698bf667db5)
+  RepositoryTrack(21, PT3M21S, rdfs:label=Rossini: La Donna Del Lago - Act 2: Ah! Che Vedo!, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-21 Rossini_ La Donna Del Lago - Act 2_ Ah! Che Vedo!.m4a, urn:bluemarine:track:7ce975fb999e681befba43dd8be6f3bce8c3a520)
+  RepositoryTrack(22, PT3M52S, rdfs:label=Rossini: La Donna Del Lago - Act 2: Tanti Affetti In Tal Momento, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-22 Rossini_ La Donna Del Lago - Act 2_ Tanti Affetti In Tal Momento.m4a, urn:bluemarine:track:c0b0f052584a8dfe974443d40e8c5bfc2a64bb47)
+  RepositoryTrack(23, PT4M58S, rdfs:label=Rossini: La Donna Del Lago - Act 2: Fra Il Padre, E Fra L'Amante, June Anderson, Rockwell Blake, Etc.; Riccardo Muti_ Orchestra & Chorus Of La Scala Milan/Rossini_ La Donna Del Lago [Disc 2]/2-23 Rossini_ La Donna Del Lago - Act 2_ Fra Il Padre, E Fra L'Amante.m4a, urn:bluemarine:track:bf4decb3bf88ad69616b97744cce374379c4c87e)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Richard Strauss, uri=urn:bluemarine:artist:ed0067b95e98664b036494d886b7f5a8ac96ba2f):
   RepositoryTrack(01, PT4M47S, rdfs:label=Nacht, Sonnenaufgang, Richard Strauss/Eine Alpensinfonie Op. 64 _EC Youth Orchestra, James Judd/01 Nacht, Sonnenaufgang.m4a, urn:bluemarine:track:51e2069119e140c6bca064c78507dcc3e7ea5a4f)
@@ -10350,7 +10510,7 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Sade, uri=http://dbtune.org/musicbrai
   RepositoryTrack(03, PT4M24S, rdfs:label=Nothing Can Come Between Us, Sade/Stronger Than Pride/Nothing Can Come Between Us.mp3, http://dbtune.org/musicbrainz/resource/track/dbda6d8e-0606-4d13-b3a6-96d24e0b21ed)
   RepositoryTrack(03, PT8M52S, rdfs:label=Smooth Operator (extended Smooth Jazz version), Sade/Unknown Album/Sade - Smooth Operator (Extended Smooth Jazz Version).mp3, http://dbtune.org/musicbrainz/resource/track/d115d168-28c5-405f-93d0-c3287110d3bf)
 
-TRACKS OF RepositoryMusicArtist(rdfs:label=Salvatore Accardo; Claudio Abbado: London Symphony Orchestra, uri=urn:bluemarine:artist:5dd1c1724a1c2659c28de37d873f9c125ae347c8):
+TRACKS OF RepositoryMusicArtist(rdfs:label=Salvatore Accardo, uri=urn:bluemarine:artist:2dfc6672e0dc40cc46910dcc89c579974ec82372):
   RepositoryTrack(02, PT9M58S, rdfs:label=Ravel: Tzigane Rhapsodie de concert pour violon et orchestre, Salvatore Accardo; Claudio Abbado_ London Symphony Orchestra/Maurice Ravel_ Tzigane - Sheherazade - La Valse/02 Ravel_ Tzigane Rhapsodie de concert pour violon et orchestre.m4a, urn:bluemarine:track:b8b1101bfb38eb88c3bb8f3e57e1fa8ea3243393)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Sam Pottle, uri=http://dbtune.org/musicbrainz/resource/artist/5743fb4f-5c5b-42b4-973e-5e233a286d4a):
@@ -11060,7 +11220,7 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=urn:bluemarine:artist:3
 TRACKS OF RepositoryMusicArtist(rdfs:label=Various Artists, uri=urn:bluemarine:artist:37c2e10b278824398c5f4729119d0b1c534dda39):
   RepositoryTrack(14, PT7M38S, rdfs:label=Adagio For Strings, Compilations/Celebrate The American Spirit/4-14 Adagio For Strings 1.m4p, urn:bluemarine:track:e670b9f7214371919d76939c9dad7b518bdc3c09)
 
-TRACKS OF RepositoryMusicArtist(rdfs:label=Victoria Mullova; Claudio Abbado: Chamber Orchestra Of Europe, uri=urn:bluemarine:artist:1182d27756e97d11889d0fa8031562575250a1ac):
+TRACKS OF RepositoryMusicArtist(rdfs:label=Victoria Mullova, uri=urn:bluemarine:artist:92280368d760d6dada802ae631ef2147b603329c):
   RepositoryTrack(01, PT3M23S, rdfs:label=Vivaldi: Violin Concerto In E, Op. 8/1, RV 269, "The Four Seasons (Spring)" - 1. Allegro, Compilations/Vivaldi_ The Four Seasons/01 Vivaldi_ Violin Concerto In E, Op. 8_1, RV 269, _The Four Seasons (Spring)_ - 1. Allegro.m4a, urn:bluemarine:track:6937f23a225f349656d77a0edbbbc4fee6e8c78a)
   RepositoryTrack(02, PT3M, rdfs:label=Vivaldi: Violin Concerto In E, Op. 8/1, RV 269, "The Four Seasons (Spring)" - 2. Largo, Compilations/Vivaldi_ The Four Seasons/02 Vivaldi_ Violin Concerto In E, Op. 8_1, RV 269, _The Four Seasons (Spring)_ - 2. Largo.m4a, urn:bluemarine:track:81023f1b8041c78640afe327714798b86ae72f83)
   RepositoryTrack(03, PT4M7S, rdfs:label=Vivaldi: Violin Concerto In E, Op. 8/1, RV 269, "The Four Seasons (Spring)" - 3. Danza Pastorale, Compilations/Vivaldi_ The Four Seasons/03 Vivaldi_ Violin Concerto In E, Op. 8_1, RV 269, _The Four Seasons (Spring)_ - 3. Danza Pastorale.m4a, urn:bluemarine:track:800269ddd22d1ea2ca80b29b949c15b29d21da4c)
@@ -15567,13 +15727,9 @@ TRACKS IN RepositoryRecord(rdfs:label=Sarah Vaughan the Collection, urn:bluemari
 
 TRACKS IN RepositoryRecord(rdfs:label=Satchmo, urn:bluemarine:record:6db0e857f0e8875aee991d10b6ba48758495784a):
   RepositoryTrack(01, PT3M7S, rdfs:label=Mi Va Di Cantare, Louis Armstrong/Satchmo/01 Mi Va Di Cantare.m4a, urn:bluemarine:track:954cf49ebaeb7ba7f5ba467763e5d1ee4331e358)
-  RepositoryTrack(01, PT2M20S, rdfs:label=What a Wonderful World, Louis Armstrong/Satchmo/10 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
-  RepositoryTrack(01, PT2M19S, rdfs:label=What a Wonderful World, Louis Armstrong/The Ultimate Collection/04 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
   RepositoryTrack(03, PT2M26S, rdfs:label=Hello Dolly, Louis Armstrong/Satchmo/03 Hello Dolly.m4a, http://dbtune.org/musicbrainz/resource/track/6e62dd8a-f3fd-4c9d-9fa1-e58f617da5b5)
   RepositoryTrack(06, PT3M5S, rdfs:label=Bye 'n' Bye, Louis Armstrong/Satchmo/06 Bye 'n' Bye.m4a, urn:bluemarine:track:35ea15d60e2749d12a23cf1211eea1e135e79f38)
   RepositoryTrack(07, PT3M12S, rdfs:label=When the Saints Go Marchin' In, Louis Armstrong/Satchmo/07 When The Saints Go Marchin' In.m4a, http://dbtune.org/musicbrainz/resource/track/7df5d2fd-9422-4346-b87f-fcb6cc017464)
-  RepositoryTrack(10, PT2M20S, rdfs:label=What a Wonderful World, Louis Armstrong/Satchmo/10 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
-  RepositoryTrack(10, PT2M19S, rdfs:label=What a Wonderful World, Louis Armstrong/The Ultimate Collection/04 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
   RepositoryTrack(14, PT5M13S, rdfs:label=Sweet Lorraine, Louis Armstrong/Satchmo/14 Sweet Lorraine.m4a, http://dbtune.org/musicbrainz/resource/track/0dab0db4-4369-4e99-bd8d-00387302f344)
   RepositoryTrack(15, PT5M13S, rdfs:label=Blues In The Night, Louis Armstrong/Satchmo/15 Blues In The Night.m4a, urn:bluemarine:track:0930340caa95c84cb6003781f8884624477832c0)
   RepositoryTrack(16, PT3M27S, rdfs:label=Grassa E Bella, Louis Armstrong/Satchmo/16 Grassa E Bella.m4a, urn:bluemarine:track:67d1ab718c45bfd65f7702511e16ac9851f2a9d3)
@@ -16957,6 +17113,12 @@ TRACKS IN RepositoryRecord(rdfs:label=The Two and Three Part Inventions (feat. p
   RepositoryTrack(02, PT45S, rdfs:label=Sinfonia No. 1 in C major, BWV 787, Glenn Gould/Bach_ Two and Three Part Inventions, BWV 772-801 (Inventions & Sinfonias)/02 Sinfonia No. 1 in C Major, BWV 787.m4a, http://dbtune.org/musicbrainz/resource/track/4e758cec-e2e8-401d-a340-d240d2791724)
   RepositoryTrack(30, PT4M17S, rdfs:label=Sinfonia No. 9 in F minor, BWV 795, Glenn Gould/Bach_ Two and Three Part Inventions, BWV 772-801 (Inventions & Sinfonias)/30 Sinfonia No. 9 in F Minor, BWV 795.m4a, http://dbtune.org/musicbrainz/resource/track/9b457e5c-cb4b-4b4c-9847-40528c7de49b)
 
+TRACKS IN RepositoryRecord(rdfs:label=The Ultimate Collection, urn:bluemarine:record:66cfd4cebd04cfd6e4935718ea585115f9447b94):
+  RepositoryTrack(01, PT2M20S, rdfs:label=What a Wonderful World, Louis Armstrong/Satchmo/10 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
+  RepositoryTrack(01, PT2M19S, rdfs:label=What a Wonderful World, Louis Armstrong/The Ultimate Collection/04 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
+  RepositoryTrack(10, PT2M20S, rdfs:label=What a Wonderful World, Louis Armstrong/Satchmo/10 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
+  RepositoryTrack(10, PT2M19S, rdfs:label=What a Wonderful World, Louis Armstrong/The Ultimate Collection/04 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
+
 TRACKS IN RepositoryRecord(rdfs:label=The Ultimate Romance Album, urn:bluemarine:record:348a73b2edab6f9062402c2767fa70a4d57c06f2):
   RepositoryTrack(04, PT4M18S, rdfs:label=Everybody's Got to Learn Sometime, The Korgis/Don't Look Back - The Very Best of the Korgis/1-11 Everybody's Got to Learn Sometime.m4a, http://dbtune.org/musicbrainz/resource/track/2d1e8da1-56fb-4b81-b7ba-b4333f9a0b4d)
 
@@ -17688,7 +17850,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Adiastemi, uri=urn:bluemarine:artist
 RECORDS OF RepositoryMusicArtist(rdfs:label=Ahmad Jamal Trio, uri=urn:bluemarine:artist:4fbe8d0f7b53628552e501a2fdd3d5b11fc02b1e):
   RepositoryRecord(rdfs:label=Cross Country Tour (1958-1961), urn:bluemarine:record:6fcc261391d7e2f55cc41a4b41007875be840349)
 
-RECORDS OF RepositoryMusicArtist(rdfs:label=Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba, uri=urn:bluemarine:artist:ed8f1c5f2ef7caf9f37a761bde87c330c62a0824):
+RECORDS OF RepositoryMusicArtist(rdfs:label=Alan Cuckston, harpsichord, uri=urn:bluemarine:artist:8c5973765bf031bbdf4002c9a4c576445e02ddea):
   RepositoryRecord(rdfs:label=Pieces de Clavecin, urn:bluemarine:record:52de1d60aa8794c986ab2649926c2171710d6b3a)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Alasdair Fraser, uri=http://dbtune.org/musicbrainz/resource/artist/694949f8-b0d8-4e13-a54d-a921a780443d):
@@ -17704,6 +17866,9 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Alexander Scriabin, uri=urn:bluemari
   RepositoryRecord(rdfs:label=Piano Sonatas, urn:bluemarine:record:7103ec16a1f2b3c569297f9656b2d51ee753239b)
   RepositoryRecord(rdfs:label=The Complete Etudes, urn:bluemarine:record:d17637bba093b21acd5ef5b8c891bcecd45d33f8)
 
+RECORDS OF RepositoryMusicArtist(rdfs:label=Alison Crum, viola da gamba, uri=urn:bluemarine:artist:79288e4ed52dc530ae0e8f6710702d4b4c953c7f):
+  RepositoryRecord(rdfs:label=Pieces de Clavecin, urn:bluemarine:record:52de1d60aa8794c986ab2649926c2171710d6b3a)
+
 RECORDS OF RepositoryMusicArtist(rdfs:label=Andalus, uri=http://dbtune.org/musicbrainz/resource/artist/8c395da0-5717-4b46-93cc-8f53e49a4dd0):
   RepositoryRecord(rdfs:label=Andalus, http://dbtune.org/musicbrainz/resource/record/3e4dba64-5fdc-4ff7-85e2-90113211282d)
 
@@ -17713,7 +17878,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Andrea Bacchetti, uri=urn:bluemarine
 RECORDS OF RepositoryMusicArtist(rdfs:label=Andrei Gavrilov, uri=urn:bluemarine:artist:1c397ef0fda5f39421da1964108f1fdcda5070df):
   RepositoryRecord(rdfs:label=Gavrilov Scriabin, urn:bluemarine:record:d802047b9373706b04cbf35d94ab76ed66f02706)
 
-RECORDS OF RepositoryMusicArtist(rdfs:label=Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt: Concentus Musicus Wien, Arnold Schoenberg Choir, uri=urn:bluemarine:artist:fae519e2793c29166ae823c3f4cfdeeb9a1e599e):
+RECORDS OF RepositoryMusicArtist(rdfs:label=Angela Maria Blasi, Robert Holl, Etc., uri=urn:bluemarine:artist:95baddbd8fc9ce08767ec1848733f73827d0159e):
   RepositoryRecord(rdfs:label=Bach: Mass In B Minor, BWV 232 [Disc 1], urn:bluemarine:record:001a4f6b04984b2cab35ed7b6cc9ac525d783778)
   RepositoryRecord(rdfs:label=Bach: Mass In B Minor, BWV 232 [Disc 2], urn:bluemarine:record:969366b80bdb4527af86e1d7d34911c90e8697d2)
 
@@ -17743,7 +17908,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Antonio Vivaldi, uri=http://dbtune.o
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Antonio Vivaldi, uri=urn:bluemarine:artist:c7845dced60d2033c6c0791da8ed1698b998ee4f):
   RepositoryRecord(rdfs:label=Five Cello Concerti, urn:bluemarine:record:00f1bbfeee262949f7950170220a884dcaa65dd9)
-  RepositoryRecord(rdfs:label=Violin Concerti, urn:bluemarine:record:20a4a1489465b36dc5620e1bf2c547ea98a4a3ae)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Antonín Dvořák, uri=http://dbtune.org/musicbrainz/resource/artist/819eaeb2-8dd8-48a5-ad07-0bcd137985ef):
   RepositoryRecord(rdfs:label=Four-Hand Piano Music, Volume 2: Slavonic Dances 1-16 (Silke-Thora Matthies, Christian Köhn), http://dbtune.org/musicbrainz/resource/record/0bdeec35-2869-4d10-a961-b38ec345774e)
@@ -17752,10 +17916,8 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Antonín Dvořák, uri=http://dbtune
   RepositoryRecord(rdfs:label=The Best of Dvořák, http://dbtune.org/musicbrainz/resource/record/3f7bd910-7931-4bdd-8f51-b9ed13bf3deb)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Antonín Dvořák, uri=urn:bluemarine:artist:21c214c017725b470d29a3b2c4b70709092836df):
-  RepositoryRecord(rdfs:label=Symphony No. 8 / Symphony No. 9 "From the New World", urn:bluemarine:record:4f0aabe8d69858e67696a2f43f67b67f7386c91a)
-
-RECORDS OF RepositoryMusicArtist(rdfs:label=Antonín Dvořák; Berliner Philharmoniker & Rafael Kubelík, uri=urn:bluemarine:artist:80d96414fbc659ab02c67a974fa51d612ecca8e0):
   RepositoryRecord(rdfs:label=Symphonien Nr. 8 & 9 "Aus der Neuen Welt", urn:bluemarine:record:ef950e10297ad3fc7494e170015c763324d33b36)
+  RepositoryRecord(rdfs:label=Symphony No. 8 / Symphony No. 9 "From the New World", urn:bluemarine:record:4f0aabe8d69858e67696a2f43f67b67f7386c91a)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Antônio Carlos Jobim, uri=http://dbtune.org/musicbrainz/resource/artist/7a8dbe84-f4c0-4457-bfa3-edced1f8cde0):
   RepositoryRecord(rdfs:label=Francis Albert Sinatra & Antonio Carlos Jobim, http://dbtune.org/musicbrainz/resource/record/82015a54-7663-4a63-9da2-363af64adde0)
@@ -17798,7 +17960,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Baden Powell, uri=http://dbtune.org/
   RepositoryRecord(rdfs:label=Afro Sambas, http://dbtune.org/musicbrainz/resource/record/45897c43-2a6c-4324-98e0-0260edd77f58)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Baden Powell, uri=urn:bluemarine:artist:26176b402a7c0989c0d596341286fc01c06b8216):
-  RepositoryRecord(rdfs:label=Chega De Saudade, urn:bluemarine:record:41cad79a00a8e4b0fff8c7daa81506b19651854c)
   RepositoryRecord(rdfs:label=Three Originals: Tristeza On Guitar / Poema On Guitar / Apaixonado, urn:bluemarine:record:830a6d223dda1446900efe548f7c8e028a196234)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Barbara Bonney, Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker, Neeme Järvi & Tor Stokke, uri=urn:bluemarine:artist:b5e65a7d818308b469fa9eabb7aa7cbc08e833ca):
@@ -17824,6 +17985,9 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Benny Goodman, uri=urn:bluemarine:ar
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Benny Goodman & Charlie Christian, uri=urn:bluemarine:artist:9c10c82c7509d72aced997d1d6bb060b0d68c3af):
   RepositoryRecord(rdfs:label=Charlie Christian & Benny Goodman Sextet (1939-1941), urn:bluemarine:record:4db95392c4a37d7451269e407905e9dff47fce21)
+
+RECORDS OF RepositoryMusicArtist(rdfs:label=Berliner Philharmoniker & Rafael Kubelík, uri=urn:bluemarine:artist:e3caf19570695900fde0b0fb710e11fa427059be):
+  RepositoryRecord(rdfs:label=Symphonien Nr. 8 & 9 "Aus der Neuen Welt", urn:bluemarine:record:ef950e10297ad3fc7494e170015c763324d33b36)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Betty Carter, uri=http://dbtune.org/musicbrainz/resource/artist/ce407e9f-de68-4c8e-b966-43a1b3356191):
   RepositoryRecord(rdfs:label=Inside Betty Carter, http://dbtune.org/musicbrainz/resource/record/20708faa-6027-48bb-b330-ea049c72e2fa)
@@ -17971,11 +18135,11 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Chris Botti, uri=urn:bluemarine:arti
   RepositoryRecord(rdfs:label=December, urn:bluemarine:record:f89c9fc8351917978087405f79117d23ab690618)
   RepositoryRecord(rdfs:label=Italia (Bonus Track Version), urn:bluemarine:record:f8709ed07e6f5c7e9e93f874a92c9f324ce70310)
   RepositoryRecord(rdfs:label=Slowing Down the World, urn:bluemarine:record:200304a101b144d93b16a6181c8063801fd157a6)
-  RepositoryRecord(rdfs:label=This is Chris Botti, urn:bluemarine:record:147fbac4715e551cfe719d950555cdfae2cb36fe)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Chris Botti & Sting, uri=urn:bluemarine:artist:7ae8f49a7fa04fa7015e92bf5ab637e94e41a876):
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Chris Botti (feat. Dean Martin), uri=urn:bluemarine:artist:c997be78f55c909a4a66b44649f4eac96f3d7025):
+  RepositoryRecord(rdfs:label=This is Chris Botti, urn:bluemarine:record:147fbac4715e551cfe719d950555cdfae2cb36fe)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Chris Botti (feat. Paula Cole), uri=urn:bluemarine:artist:d24de3bc4b975bf51ba0fda336293e979d045725):
 
@@ -17998,6 +18162,9 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Claudia Caffagni, uri=urn:bluemarine
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Claudia Telles, uri=http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654):
 
+RECORDS OF RepositoryMusicArtist(rdfs:label=Claudio Abbado: Chamber Orchestra Of Europe, uri=urn:bluemarine:artist:ebcd2d64bf85216a9abbd4dcccded2b1fb75e3d1):
+  RepositoryRecord(rdfs:label=Vivaldi: The Four Seasons, urn:bluemarine:record:b96f8a8b8dfc9be308f9cf2ed91f2eea13d039be)
+
 RECORDS OF RepositoryMusicArtist(rdfs:label=Claudio Abbado: London Symphony Orchestra, uri=urn:bluemarine:artist:3e5121e7be43e7cd473501002e076c598f83f910):
   RepositoryRecord(rdfs:label=Maurice Ravel: Tzigane - Sheherazade - La Valse, urn:bluemarine:record:7261a21a9b912ea9345a53307854e61d352a113b)
 
@@ -18017,9 +18184,9 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Cristóbal de Morales, uri=urn:bluem
   RepositoryRecord(rdfs:label=Officium Defunctorum, Misa pro Defunctis, urn:bluemarine:record:d26eb81886db8737b3b5fad1e343371d6bd5861c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Cyrus Chestnut, uri=urn:bluemarine:artist:3d6fd8992205fc1496d77a69b05a2af6c6f30624):
-  RepositoryRecord(rdfs:label=Cyrus Chestnut, urn:bluemarine:record:e04028aeb6a39858946347d1b104547f18901cfa)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Cyrus Chestnut, Anita Baker, uri=urn:bluemarine:artist:edd06fdfa143362f40d203b8eccc3161ca11060c):
+  RepositoryRecord(rdfs:label=Cyrus Chestnut, urn:bluemarine:record:e04028aeb6a39858946347d1b104547f18901cfa)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Dakota Staton, uri=http://dbtune.org/musicbrainz/resource/artist/c5563de3-f9df-4cb9-889e-7b237093ffd0):
   RepositoryRecord(rdfs:label=The Late, Late Show, http://dbtune.org/musicbrainz/resource/record/7e00c6ca-0bbf-43fb-a6e1-9e54b44c51e1)
@@ -18136,11 +18303,15 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Edvard Grieg, uri=http://dbtune.org/
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Edvard Grieg, uri=urn:bluemarine:artist:59e5542ce937cce2cecdb5ef6c6aa179efd52a7f):
   RepositoryRecord(rdfs:label=Music for Peer Gynt, urn:bluemarine:record:9fb1aa995ec7e46de4915956bd897ea3a3e906f6)
+  RepositoryRecord(rdfs:label=Piano Concertos, urn:bluemarine:record:c094e25df7457f707d218fd7241b06b67eba324c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Edwin Hawkins Singers, uri=urn:bluemarine:artist:565c6c8de1186e0472f29a13bbd6a258784155d6):
   RepositoryRecord(rdfs:label=Oh Happy Day, urn:bluemarine:record:16f1a81299cff2286dc696186184c2be3d6eda2e)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Elisabetta de Mircovich, uri=urn:bluemarine:artist:5773328cf285eb6e12a71d5bcf30bd7f6524a9c8):
+
+RECORDS OF RepositoryMusicArtist(rdfs:label=Elizabeth Parry, flute, uri=urn:bluemarine:artist:c30e4113862b546d4cb333adffb0902ba8d4d2f1):
+  RepositoryRecord(rdfs:label=Pieces de Clavecin, urn:bluemarine:record:52de1d60aa8794c986ab2649926c2171710d6b3a)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Ella Fitzgerald, uri=http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499):
   RepositoryRecord(rdfs:label=Best of the Song Books: Love Songs, http://dbtune.org/musicbrainz/resource/record/f90a33ae-2e0b-4d8d-a086-cce4d0949b47)
@@ -18421,7 +18592,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Göteborgs Symfoniker, Neeme Järvi 
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Göteborgs Symfoniker, Neeme Järvi, Toralv Maurstad & Wenche Foss, uri=urn:bluemarine:artist:c96685ae85e197570c831aa6b2fd3e2e403dfc28):
 
-RECORDS OF RepositoryMusicArtist(rdfs:label=Heinrich Schiff; Neville Marriner: Staatskapelle Dresden, uri=urn:bluemarine:artist:542e738df79040558dc4c738e8dc1833619a4640):
+RECORDS OF RepositoryMusicArtist(rdfs:label=Heinrich Schiff, uri=urn:bluemarine:artist:ec465a86d560127bfc5a1b0fd581c66167a03d27):
   RepositoryRecord(rdfs:label=Dvořák; Elgar: Cello Concertos, urn:bluemarine:record:1160a7cb012648df40d395a995fc1b686f90a25d)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Henry Mancini, uri=http://dbtune.org/musicbrainz/resource/artist/83e71a21-caf7-4e48-8ff7-6512d51e88a3):
@@ -18492,6 +18663,8 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Jean Michel Jarre, uri=http://dbtune
 RECORDS OF RepositoryMusicArtist(rdfs:label=Jean Sibelius, uri=http://dbtune.org/musicbrainz/resource/artist/691b0e9d-9e57-41cf-932d-a3d21b068e75):
   RepositoryRecord(rdfs:label=Finlandia / Der Schwan von Tuonela / Valse Triste / Tapiola (Berliner Philharmoniker feat. conductor: Herbert von Karajan), http://dbtune.org/musicbrainz/resource/record/3f7af1bf-be83-4f98-9776-6debee36ee86)
 
+RECORDS OF RepositoryMusicArtist(rdfs:label=Jean-François Paillard: Paillard Chamber Orchestra, uri=urn:bluemarine:artist:6c036a77a0e550f554933450081c57bbb52a9b64):
+
 RECORDS OF RepositoryMusicArtist(rdfs:label=Jean-Jacques Justafre, Jean-Paul Gantiez, Jean-Claude Barro,, uri=urn:bluemarine:artist:403e962b3fbb3e65b41e4277bdcc0d17e92686cf):
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Jean-Louis Rassinfosse, Chet Baker & Philip Catherine, uri=http://dbtune.org/musicbrainz/resource/artist/7631ba41-5e47-4f55-a621-40ab0f2a3a02):
@@ -18530,6 +18703,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Johann Sebastian Bach, uri=urn:bluem
   RepositoryRecord(rdfs:label=Bach: Famous Choruses, urn:bluemarine:record:977f39609910424e2bffcc83e0a39bb345adccf4)
   RepositoryRecord(rdfs:label=Cantatas BWV 61 - 63, urn:bluemarine:record:8497d90316dcb9b59e8480acc5413cad8943799e)
   RepositoryRecord(rdfs:label=Das wohltemperierte Klavier II, urn:bluemarine:record:d56894b04ef6079af797cdb6e4aece22d5888eb3)
+  RepositoryRecord(rdfs:label=Violin Concerti, urn:bluemarine:record:20a4a1489465b36dc5620e1bf2c547ea98a4a3ae)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Johannes Brahms, uri=http://dbtune.org/musicbrainz/resource/artist/c70d12a2-24fe-4f83-a6e6-57d84f8efb51):
   RepositoryRecord(rdfs:label=Complete Brahms Edition, Volume 2: Concertos (disc 3), http://dbtune.org/musicbrainz/resource/record/636fd43e-c048-4d3d-ae3f-0442cc2d66e1)
@@ -18590,7 +18764,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Julie Andrews, uri=http://dbtune.org
 RECORDS OF RepositoryMusicArtist(rdfs:label=Juliette Gréco, uri=urn:bluemarine:artist:ee0dad23cdafd99b68474a6434bb843f6f9fb67f):
   RepositoryRecord(rdfs:label=Je suis comme je suis - Les plus belles chansons, urn:bluemarine:record:5dfa36ab462b33f8c9f03c11a8387b87fd69f563)
 
-RECORDS OF RepositoryMusicArtist(rdfs:label=June Anderson, Rockwell Blake, Etc.; Riccardo Muti: Orchestra & Chorus Of La Scala Milan, uri=urn:bluemarine:artist:255adad0ae14b1243b7d2125ce3723d130c8aa1d):
+RECORDS OF RepositoryMusicArtist(rdfs:label=June Anderson, Rockwell Blake, Etc., uri=urn:bluemarine:artist:447f3b6a31492c5440ffb7ce107ff79b3d5d3706):
   RepositoryRecord(rdfs:label=Rossini: La Donna Del Lago [Disc 1], urn:bluemarine:record:3c8653fa6fa06cbb6f2ebfc6e21df51b5045ef62)
   RepositoryRecord(rdfs:label=Rossini: La Donna Del Lago [Disc 2], urn:bluemarine:record:4aab62945aa3988fb1513ec9ebc04d25ae2d96e6)
 
@@ -18599,6 +18773,9 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Katia Labèque, uri=http://dbtune.or
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Kaylene Peoples, uri=urn:bluemarine:artist:8162159a04c05618d77bc865a9ccc817dfcf01a5):
   RepositoryRecord(rdfs:label=All Jazzed Up!, urn:bluemarine:record:a3648fe61a0b38e05c1d6dd3ec1b518a6af2fc3b)
+
+RECORDS OF RepositoryMusicArtist(rdfs:label=Kenneth Mitchell, violin, uri=urn:bluemarine:artist:b85b8a1b8f791bae2e3789312550f9bc1c97b9ff):
+  RepositoryRecord(rdfs:label=Pieces de Clavecin, urn:bluemarine:record:52de1d60aa8794c986ab2649926c2171710d6b3a)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Kings of Convenience, uri=http://dbtune.org/musicbrainz/resource/artist/cf0f4547-ffbd-4011-98ad-0bec9ba022db):
   RepositoryRecord(rdfs:label=Riot on an Empty Street, http://dbtune.org/musicbrainz/resource/record/95f5a9bd-5493-4134-a8f3-5ed3752a7d0f)
@@ -18676,6 +18853,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Louis Armstrong, uri=http://dbtune.o
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Louis Armstrong, uri=urn:bluemarine:artist:517fa5e0bf55168a84aff87ca735e2bbf09a13fe):
   RepositoryRecord(rdfs:label=Satchmo, urn:bluemarine:record:6db0e857f0e8875aee991d10b6ba48758495784a)
+  RepositoryRecord(rdfs:label=The Ultimate Collection, urn:bluemarine:record:66cfd4cebd04cfd6e4935718ea585115f9447b94)
   RepositoryRecord(rdfs:label=What a Wonderful World, urn:bluemarine:record:68a3ce3c800dd7189772801ebe88138770e951a9)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Lucio Battisti, uri=urn:bluemarine:artist:e8825d37ab7370926792d0e70b09e2466cac47e1):
@@ -18878,6 +19056,9 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Nathan Milstein, uri=urn:bluemarine:
 RECORDS OF RepositoryMusicArtist(rdfs:label=Neville Marriner: Academy Of St. Martin In The Fields, uri=urn:bluemarine:artist:9520bf3e565c2b7c4f22565f4605fa3860ee58cc):
   RepositoryRecord(rdfs:label=Bach: Orchestral Suites #2-4, urn:bluemarine:record:8b966b17dae77dfaf7f6d67ad640ea4a39b5488f)
 
+RECORDS OF RepositoryMusicArtist(rdfs:label=Neville Marriner: Staatskapelle Dresden, uri=urn:bluemarine:artist:4d35d7dcadfde3a258dd6409e94032a82b932a68):
+  RepositoryRecord(rdfs:label=Dvořák; Elgar: Cello Concertos, urn:bluemarine:record:1160a7cb012648df40d395a995fc1b686f90a25d)
+
 RECORDS OF RepositoryMusicArtist(rdfs:label=New Budapest Quartet, uri=urn:bluemarine:artist:91376f5fa95d16d249056c54fb644364a6c8cebf):
   RepositoryRecord(rdfs:label=Brahms: String Quartets & Piano Quintet [Disc 1], urn:bluemarine:record:27513ce0be95d087ea665e09bc147854a149735f)
 
@@ -18892,6 +19073,10 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Niccolò Paganini, uri=urn:bluemarin
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Nikolai Rimsky-Korsakow, uri=urn:bluemarine:artist:beae0b723c2ba0c30db26c2e3adcdb53aa09a1e4):
   RepositoryRecord(rdfs:label=Scheherazade, urn:bluemarine:record:6ebad467a37f367ff371c02ef0a39de4f47667ab)
+
+RECORDS OF RepositoryMusicArtist(rdfs:label=Nikolaus Harnoncourt: Concentus Musicus Wien, Arnold Schoenberg Choir, uri=urn:bluemarine:artist:c4b7f779c69c63cbda346ddb2f6c6343d2549856):
+  RepositoryRecord(rdfs:label=Bach: Mass In B Minor, BWV 232 [Disc 1], urn:bluemarine:record:001a4f6b04984b2cab35ed7b6cc9ac525d783778)
+  RepositoryRecord(rdfs:label=Bach: Mass In B Minor, BWV 232 [Disc 2], urn:bluemarine:record:969366b80bdb4527af86e1d7d34911c90e8697d2)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Nina Simone, uri=http://dbtune.org/musicbrainz/resource/artist/2944824d-4c26-476f-a981-be849081942f):
   RepositoryRecord(rdfs:label=Gin House Blues, http://dbtune.org/musicbrainz/resource/record/a5858be8-6a1f-476e-9c9d-f9c5219370a2)
@@ -18995,11 +19180,11 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Philippe Brun "Jam Band", uri=http:/
 RECORDS OF RepositoryMusicArtist(rdfs:label=Philippe Foulon, uri=urn:bluemarine:artist:6e8d5c3fcc6688e575ca9026837ecad1e253f05b):
   RepositoryRecord(rdfs:label=Marais: Pièces pour viole & autres instruments, urn:bluemarine:record:7c31cba698daf6642a6dac31f24d01d3493cbeeb)
 
+RECORDS OF RepositoryMusicArtist(rdfs:label=Pierre Del Vescovo, uri=urn:bluemarine:artist:1831e8c65bf212f6ae402abacd0668fd67ecf2b9):
+
 RECORDS OF RepositoryMusicArtist(rdfs:label=Pierre Del Vescovo/Horn, Bamberger Symphoniker/Theodor Gusch, uri=urn:bluemarine:artist:cf8175e1c8d379728f9ca0c286e2684490300b2a):
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Pierre Del Vescovo/Horn, Jean Hubeau/Piano, uri=urn:bluemarine:artist:11c8f71822ae609cd238d64deb828fb6cf3be33e):
-
-RECORDS OF RepositoryMusicArtist(rdfs:label=Pierre Del Vescovo; Jean-François Paillard: Paillard Chamber Orchestra, uri=urn:bluemarine:artist:1dc5acd6297e44f22fcb3872c902a4f36c1eaabd):
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Pinchas Zukerman, Midori, uri=urn:bluemarine:artist:c12a755995122e8d4a27445b87681827dbe04d2b):
   RepositoryRecord(rdfs:label=Bach; Vivaldi: Concertos For 2 Violins, urn:bluemarine:record:f659329767f275045dd29478db6fdf487366b896)
@@ -19035,6 +19220,10 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Randy Edelman, uri=http://dbtune.org
 RECORDS OF RepositoryMusicArtist(rdfs:label=René Marie, uri=http://dbtune.org/musicbrainz/resource/artist/12822d4f-4607-4f1d-ab16-d6bacc27cafe):
   RepositoryRecord(rdfs:label=How Can I Keep From Singing?, http://dbtune.org/musicbrainz/resource/record/9f1b93de-f960-4ef7-8a60-155c7a7615c1)
 
+RECORDS OF RepositoryMusicArtist(rdfs:label=Riccardo Muti: Orchestra & Chorus Of La Scala Milan, uri=urn:bluemarine:artist:48e68ebe5b49afa7011c18207113a942e1082992):
+  RepositoryRecord(rdfs:label=Rossini: La Donna Del Lago [Disc 1], urn:bluemarine:record:3c8653fa6fa06cbb6f2ebfc6e21df51b5045ef62)
+  RepositoryRecord(rdfs:label=Rossini: La Donna Del Lago [Disc 2], urn:bluemarine:record:4aab62945aa3988fb1513ec9ebc04d25ae2d96e6)
+
 RECORDS OF RepositoryMusicArtist(rdfs:label=Richard Strauss, uri=urn:bluemarine:artist:ed0067b95e98664b036494d886b7f5a8ac96ba2f):
   RepositoryRecord(rdfs:label=Eine Alpensinfonie Op. 64 /EC Youth Orchestra, James Judd, urn:bluemarine:record:3fef2be23f546e881ffdb7a23dbe2eceffd2d926)
 
@@ -19043,7 +19232,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Ripchord, uri=urn:bluemarine:artist:
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Robert Schumann, uri=urn:bluemarine:artist:d3964826e3b6ca9c2ae0c8c252cff3dfd785d20d):
   RepositoryRecord(rdfs:label=Davidsbündlertänze Op. 6/Kreisleriana Op. 16, urn:bluemarine:record:ea78deb62c85141e1e2236a1a022a265e8566598)
-  RepositoryRecord(rdfs:label=Piano Concertos, urn:bluemarine:record:c094e25df7457f707d218fd7241b06b67eba324c)
   RepositoryRecord(rdfs:label=Schubert: Symphonie no. 8 "Unvollendete" / Schumann: Symphonie no. 3 "Rheinische", urn:bluemarine:record:6bd53cf0cc2d3ef446fa40e9d32e8ed66af702a7)
   RepositoryRecord(rdfs:label=Schumann: The Masterworks, urn:bluemarine:record:8c1bf558c107f53a5396ad9829ffae3dd7d8fdf0)
 
@@ -19075,7 +19263,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Sade, uri=http://dbtune.org/musicbra
   RepositoryRecord(rdfs:label=Stronger Than Pride, http://dbtune.org/musicbrainz/resource/record/e33db4aa-bbe9-44a9-8398-a04225ddd068)
   RepositoryRecord(rdfs:label=The Best of Sade, http://dbtune.org/musicbrainz/resource/record/aa916dc0-dee1-4e72-9883-dea2862de436)
 
-RECORDS OF RepositoryMusicArtist(rdfs:label=Salvatore Accardo; Claudio Abbado: London Symphony Orchestra, uri=urn:bluemarine:artist:5dd1c1724a1c2659c28de37d873f9c125ae347c8):
+RECORDS OF RepositoryMusicArtist(rdfs:label=Salvatore Accardo, uri=urn:bluemarine:artist:2dfc6672e0dc40cc46910dcc89c579974ec82372):
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Sam Pottle, uri=http://dbtune.org/musicbrainz/resource/artist/5743fb4f-5c5b-42b4-973e-5e233a286d4a):
 
@@ -19355,7 +19543,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=urn:bluemarine:artist:
 RECORDS OF RepositoryMusicArtist(rdfs:label=Various Artists, uri=urn:bluemarine:artist:37c2e10b278824398c5f4729119d0b1c534dda39):
   RepositoryRecord(rdfs:label=Celebrate The American Spirit, urn:bluemarine:record:d91c025cb34e4a862e6e4585b5a9f03a0519c8c5)
 
-RECORDS OF RepositoryMusicArtist(rdfs:label=Victoria Mullova; Claudio Abbado: Chamber Orchestra Of Europe, uri=urn:bluemarine:artist:1182d27756e97d11889d0fa8031562575250a1ac):
+RECORDS OF RepositoryMusicArtist(rdfs:label=Victoria Mullova, uri=urn:bluemarine:artist:92280368d760d6dada802ae631ef2147b603329c):
   RepositoryRecord(rdfs:label=Vivaldi: The Four Seasons, urn:bluemarine:record:b96f8a8b8dfc9be308f9cf2ed91f2eea13d039be)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Vladimir Ashkenazy, uri=urn:bluemarine:artist:d47451a965d505add5b554f5c7b5653e2726f655):
@@ -19369,6 +19557,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Wanda Sá & Célia Vaz, uri=http://d
 RECORDS OF RepositoryMusicArtist(rdfs:label=Wanda Sá & Roberto Menescal, uri=http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea):
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Wanda Sá & Roberto Menescal, uri=urn:bluemarine:artist:fef5c9f4e681b893c5ad6e2a202f089390f28abc):
+  RepositoryRecord(rdfs:label=Chega De Saudade, urn:bluemarine:record:41cad79a00a8e4b0fff8c7daa81506b19651854c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=William Waters, uri=urn:bluemarine:artist:f7df56b7ac74a2a2ba858515b638a788640e97e9):
 
