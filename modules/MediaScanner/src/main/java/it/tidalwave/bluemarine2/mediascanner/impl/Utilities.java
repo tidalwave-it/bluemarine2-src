@@ -124,7 +124,7 @@ final class Utilities
     @Nonnull
     public static Optional<Value> literalFor (final Optional<String> string) 
       {
-        return string.isPresent() ? Optional.of(FACTORY.createLiteral(string.get())) : Optional.empty();
+        return string.map(s -> FACTORY.createLiteral(s));
       }
     
     /*******************************************************************************************************************
