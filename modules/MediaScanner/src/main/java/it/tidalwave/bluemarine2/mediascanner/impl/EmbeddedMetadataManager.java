@@ -61,7 +61,6 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.vocabulary.DbTune;
 import it.tidalwave.bluemarine2.vocabulary.Purl;
-import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import lombok.Getter;
@@ -224,16 +223,17 @@ public class EmbeddedMetadataManager
         final Optional<String> title      = metadata.get(Metadata.TITLE);
         final Optional<String> makerName  = metadata.get(Metadata.ARTIST);
         final Optional<URI> makerUri      = makerName.map(name -> createUriForLocalArtist(name));
+        
         // FIXME: can't easily split on , : e.g. "Victoria Mullova, violin" or "Perosi, Lorenzo"
         // Perhaps we can split if the segment has got a space within
-        final Stream<String> artistNames  = makerName.map(name -> 
-                Stream.of(name.split("[,;&]")).map(s -> s.trim()))
-               .orElse(Stream.empty());
-        final List<Entry<URI, String>> artists  = artistNames.map(name -> 
-                new Entry<>(createUriForLocalArtist(name), name)).collect(Collectors.toList());
-        final Stream<Entry<URI, String>> newArtists   = artists.stream().filter(e -> 
-                seenArtistUris.putIfAbsentAndGetNewKey(e.getKey(), true).isPresent());
-      
+        final List<Entry<URI, String>> artists  = makerName
+                .map(name -> Stream.of(name.split("[,;&]")).map(String::trim))
+                .orElse(Stream.empty())
+                .map(name -> new Entry<>(createUriForLocalArtist(name), name))
+                .collect(Collectors.toList());
+        final Stream<Entry<URI, String>> newArtists   = artists.stream().filter(
+                e -> seenArtistUris.putIfAbsentAndGetNewKey(e.getKey(), true).isPresent());
+        
         final Optional<URI> newGroupUri = (artists.size() <= 1) ? Optional.empty()
                 : seenArtistUris.putIfAbsentAndGetNewKey(makerUri, true);
 
