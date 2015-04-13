@@ -231,7 +231,9 @@ public class EmbeddedMetadataManager
                .orElse(Stream.empty());
         final List<Entry<URI, String>> artists  = artistNames.map(name -> 
                 new Entry<>(createUriForLocalArtist(name), name)).collect(Collectors.toList());
-        
+        final Stream<Entry<URI, String>> newArtists   = artists.stream().filter(e -> 
+                seenArtistUris.putIfAbsentAndGetNewKey(e.getKey(), true).isPresent());
+      
         final Optional<URI> newGroupUri = (artists.size() <= 1) ? Optional.empty()
                 : seenArtistUris.putIfAbsentAndGetNewKey(makerUri, true);
 
@@ -242,9 +244,6 @@ public class EmbeddedMetadataManager
 //                                                    .orElse(parent.as(Displayable).getDisplayName());
         
         final Optional<URI> recordUri     = Optional.of(createUriForLocalRecord(recordTitle));
-
-        final Stream<Entry<URI, String>> newArtists   = artists.stream().filter(e -> 
-                seenArtistUris.putIfAbsentAndGetNewKey(e.getKey(), true).isPresent());
         final Optional<URI> newRecordUri  = seenRecordUris.putIfAbsentAndGetNewKey(recordUri, true);
         
         statementManager.requestAddStatements()
