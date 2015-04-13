@@ -131,6 +131,9 @@ public class DefaultMediaScanner
     
     @Inject
     private IdCreator idCreator;
+    
+    @Inject
+    private Shared shared;
 
     /*******************************************************************************************************************
      *
@@ -142,8 +145,7 @@ public class DefaultMediaScanner
     public void process (final @Nonnull MediaFolder folder)
       {
         log.info("process({})", folder);
-        embeddedMetadataManager.reset();
-        dbTuneMetadataManager.reset();
+        shared.reset();
         progress.reset();
         progress.incrementTotalFolders();
         messageBus.publish(new InternalMediaFolderScanRequest(folder));
