@@ -61,7 +61,6 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.vocabulary.DbTune;
 import it.tidalwave.bluemarine2.vocabulary.Purl;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import lombok.Getter;
 
@@ -230,10 +229,12 @@ public class EmbeddedMetadataManager
                 .map(name -> Stream.of(name.split("[,;&]")).map(String::trim))
                 .orElse(Stream.empty())
                 .map(name -> new Entry<>(createUriForLocalArtist(name), name))
-                .collect(Collectors.toList());
+                .collect(toList());
         final List<Entry<URI, String>> newArtists   = artists.stream().filter(
                 e -> seenArtistUris.putIfAbsentAndGetNewKey(e.getKey(), true).isPresent())
-                .collect(Collectors.toList());
+                .collect(toList());
+        final List<URI> newArtistUris       = newArtists.stream().map(Entry::getKey).collect(toList());
+        final List<Value> newArtistLiterals = newArtists.stream().map(e -> literalFor(e.getValue())).collect(toList());
         
         final Optional<URI> newGroupUri = (artists.size() <= 1) ? Optional.empty()
                 : seenArtistUris.putIfAbsentAndGetNewKey(makerUri, true);
@@ -261,18 +262,15 @@ public class EmbeddedMetadataManager
             .with(newRecordUri,  MO.P_MEDIA_TYPE,           MO.C_CD)
             .with(newRecordUri,  MO.P_TRACK_COUNT,          literalFor(parent.as(SimpleComposite8).findChildren().count()))
                 
+            .with(newArtistUris, RDF.TYPE,                  MO.C_MUSIC_ARTIST)
+            .with(newArtistUris, RDFS.LABEL,                newArtistLiterals)
+            .with(newArtistUris, FOAF.NAME,                 newArtistLiterals)
+                
             .with(newGroupUri,   RDF.TYPE,                  MO.C_MUSIC_ARTIST)
             .with(newGroupUri,   RDFS.LABEL,                literalFor(makerName))
             .with(newGroupUri,   FOAF.NAME,                 literalFor(makerName))
             .with(newGroupUri,   DbTune.ARTIST_TYPE,        literalFor((short)2))
             .with(newGroupUri,   Purl.COLLABORATES_WITH,    artists.stream().map(Entry::getKey))
-                
-            .with(newArtists.stream().map(Entry::getKey).collect(Collectors.toList()),
-                                 RDF.TYPE,                  MO.C_MUSIC_ARTIST)
-            .with(newArtists.stream().map(Entry::getKey).collect(Collectors.toList()),
-                                 RDFS.LABEL, newArtists.stream().map(e -> literalFor(e.getValue())).collect(Collectors.toList()))
-            .with(newArtists.stream().map(Entry::getKey).collect(Collectors.toList()),
-                                 FOAF.NAME, newArtists.stream().map(e -> literalFor(e.getValue())).collect(Collectors.toList()))
             .publish();
       }
 
