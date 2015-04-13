@@ -226,8 +226,7 @@ public class EmbeddedMetadataManager
         // FIXME: can't easily split on , : e.g. "Victoria Mullova, violin" or "Perosi, Lorenzo"
         // Perhaps we can split if the segment has got a space within
         final List<Entry<URI, String>> artists  = makerName
-                .map(name -> Stream.of(name.split("[,;&]")).map(String::trim))
-                .orElse(Stream.empty())
+                .map(name -> Stream.of(name.split("[,;&]")).map(String::trim)).orElse(Stream.empty())
                 .map(name -> new Entry<>(createUriForLocalArtist(name), name))
                 .collect(toList());
         final List<Entry<URI, String>> newArtists   = artists.stream().filter(
