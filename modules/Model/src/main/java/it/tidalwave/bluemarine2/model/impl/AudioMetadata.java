@@ -45,6 +45,7 @@ import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
 import it.tidalwave.util.Id;
+import java.util.stream.Stream;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -97,8 +98,9 @@ public class AudioMetadata extends MetadataSupport
             put(MBZ_WORK_ID,   id(tag.getFirst(FieldKey.MUSICBRAINZ_WORK_ID)));
             put(MBZ_DISC_ID,   id(tag.getFirst(FieldKey.MUSICBRAINZ_DISC_ID)));
             put(MBZ_ARTIST_ID, tag.getAll(FieldKey.MUSICBRAINZ_ARTISTID).stream()
+                                  .filter(s -> ((s != null) && !"".equals(s)))
+                                  .flatMap(s -> Stream.of(s.split("/")))
                                   .map(s -> id(s))
-                                  .filter(id -> id != null)
                                   .collect(Collectors.toList()));
             
 //            tag.getFirst(FieldKey.ARTIST_SORT);

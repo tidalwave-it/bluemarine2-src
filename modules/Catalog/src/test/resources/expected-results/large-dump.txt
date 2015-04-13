@@ -4836,7 +4836,6 @@ RepositoryRecord(rdfs:label=King Kong, urn:bluemarine:record:4aae3c106785ab758f4
 RepositoryRecord(rdfs:label=Kiri Sings Porter, urn:bluemarine:record:1703f4be742de38e3581fb11143d7a03bec67aa0)
 RepositoryRecord(rdfs:label=L'Allieva, urn:bluemarine:record:de566ac26dab3ad9cf79d54ebe553e422a666bdb)
 RepositoryRecord(rdfs:label=L'Apocalypse des animaux, http://dbtune.org/musicbrainz/resource/record/5d5ce68c-2e0e-48f7-beb0-36cfcf2cb660)
-RepositoryRecord(rdfs:label=L'Apocalypse des animaux, urn:bluemarine:record:66f8bc42899f252432023254dc0ab19d77adcdf3)
 RepositoryRecord(rdfs:label=La Domna Savorousa : Chants d’amour des troubadours et des trouvères, urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51)
 RepositoryRecord(rdfs:label=La Mer / Prélude à l'après-midi d'un faune / Nocturnes (Chicago Symphony Orchestra feat. conductor: Sir Georg Solti), http://dbtune.org/musicbrainz/resource/record/ed665e88-5761-4a33-b258-1a2eacf1d23f)
 RepositoryRecord(rdfs:label=La Vida de María - Cantigas de las Fiestas de Santa María, urn:bluemarine:record:3f6f3e6dcddc8323755b7eb8a003c46de8dd8de5)
@@ -5267,7 +5266,6 @@ RepositoryRecord(rdfs:label=The Road to You - Recorded Live In Europe, urn:bluem
 RepositoryRecord(rdfs:label=The Roulette Years, http://dbtune.org/musicbrainz/resource/record/e2f114ef-9d0e-4d39-92ab-6211df6eab95)
 RepositoryRecord(rdfs:label=The Soul Cages, http://dbtune.org/musicbrainz/resource/record/13f418fd-6251-47b9-927d-79fc2d0f11dd)
 RepositoryRecord(rdfs:label=The Two and Three Part Inventions (feat. piano: Glenn Gould), http://dbtune.org/musicbrainz/resource/record/a68563c6-033a-4ed7-82c1-8a6ca3f93269)
-RepositoryRecord(rdfs:label=The Ultimate Collection, urn:bluemarine:record:66cfd4cebd04cfd6e4935718ea585115f9447b94)
 RepositoryRecord(rdfs:label=The Ultimate Romance Album, urn:bluemarine:record:348a73b2edab6f9062402c2767fa70a4d57c06f2)
 RepositoryRecord(rdfs:label=The Unforgettable Nat King Cole, http://dbtune.org/musicbrainz/resource/record/531ff0ab-7522-42c1-a0b0-725a4688427f)
 RepositoryRecord(rdfs:label=The Very Best Of, http://dbtune.org/musicbrainz/resource/record/fed56cf2-fcaf-42c8-8650-16d62c503c70)
@@ -5291,6 +5289,7 @@ RepositoryRecord(rdfs:label=Their Greatest Hits, urn:bluemarine:record:5a83a55ad
 RepositoryRecord(rdfs:label=Thelonious Monk - Live at The It Club (Complete), urn:bluemarine:record:ec3c9e1d961ab5d9225fa13651243e2b690af426)
 RepositoryRecord(rdfs:label=Thelonious Monk with John Coltrane, http://dbtune.org/musicbrainz/resource/record/04002e8a-68eb-4cef-a3b1-1a9f41b62f19)
 RepositoryRecord(rdfs:label=Themes, http://dbtune.org/musicbrainz/resource/record/ff7c291e-8dae-42d5-85bd-bdba89a3af1a)
+RepositoryRecord(rdfs:label=Themes, urn:bluemarine:record:b74b7f26c197fded8fd959d06ac303369e792636)
 RepositoryRecord(rdfs:label=This Girl's in Love With You, http://dbtune.org/musicbrainz/resource/record/b72eea89-2286-4cdb-8963-0ae7ff49cb37)
 RepositoryRecord(rdfs:label=This Is New, urn:bluemarine:record:eab233671cbc41faca4bf38218f08a4e89fb9cdd)
 RepositoryRecord(rdfs:label=This is Chris Botti, urn:bluemarine:record:147fbac4715e551cfe719d950555cdfae2cb36fe)
@@ -5398,13 +5397,10 @@ RepositoryMusicArtist(rdfs:label=Andrea Bacchetti, uri=urn:bluemarine:artist:d35
 RepositoryMusicArtist(rdfs:label=Andrei Gavrilov, uri=urn:bluemarine:artist:1c397ef0fda5f39421da1964108f1fdcda5070df)
 RepositoryMusicArtist(rdfs:label=Angela Maria Blasi, Robert Holl, Etc., uri=urn:bluemarine:artist:95baddbd8fc9ce08767ec1848733f73827d0159e)
 RepositoryMusicArtist(rdfs:label=Anita Baker, uri=urn:bluemarine:artist:89f770090b040058a958fc4331d3bc7f9075f87d)
-RepositoryMusicArtist(rdfs:label=Anonyme, uri=http://dbtune.org/musicbrainz/resource/artist/f731ccc4-e22a-43af-a747-64213329e088)
 RepositoryMusicArtist(rdfs:label=Anonymous 4, uri=http://dbtune.org/musicbrainz/resource/artist/bdbd99ab-3f4b-4028-9306-cd71d8695fbc)
 RepositoryMusicArtist(rdfs:label=Anthony Rooley & Consort of Musicke, uri=urn:bluemarine:artist:df9d14f08d7c7169889de333c2db2c331169ee30)
-RepositoryMusicArtist(rdfs:label=Antonio Carlos Jobim, uri=http://dbtune.org/musicbrainz/resource/artist/7a8dbe84-f4c0-4457-bfa3-edced1f8cde0)
 RepositoryMusicArtist(rdfs:label=Antonio Vivaldi, uri=http://dbtune.org/musicbrainz/resource/artist/ad79836d-9849-44df-8789-180bbc823f3c)
 RepositoryMusicArtist(rdfs:label=Antonín Dvořák, uri=http://dbtune.org/musicbrainz/resource/artist/819eaeb2-8dd8-48a5-ad07-0bcd137985ef)
-RepositoryMusicArtist(rdfs:label=Antonín Dvořák; Berliner Philharmoniker & Rafael Kubelík, uri=http://dbtune.org/musicbrainz/resource/artist/819eaeb2-8dd8-48a5-ad07-0bcd137985ef)
 RepositoryMusicArtist(rdfs:label=Antônio Carlos Jobim, uri=http://dbtune.org/musicbrainz/resource/artist/7a8dbe84-f4c0-4457-bfa3-edced1f8cde0)
 RepositoryMusicArtist(rdfs:label=Aretha Franklin, uri=http://dbtune.org/musicbrainz/resource/artist/2f9ecbed-27be-40e6-abca-6de49d50299e)
 RepositoryMusicArtist(rdfs:label=Arianna Savall, uri=http://dbtune.org/musicbrainz/resource/artist/9846b065-0d97-4232-aecc-31a281108b72)
@@ -5467,7 +5463,6 @@ RepositoryMusicArtist(rdfs:label=Chet Baker, uri=urn:bluemarine:artist:ddf304021
 RepositoryMusicArtist(rdfs:label=Chris Botti, uri=http://dbtune.org/musicbrainz/resource/artist/0939452b-0c6f-422a-997f-e7c496ce1113)
 RepositoryMusicArtist(rdfs:label=Chris Botti, uri=urn:bluemarine:artist:2ea06ea180efa5dfeff6349246c849b3f825a137)
 RepositoryMusicArtist(rdfs:label=Chris Botti & Sting, uri=urn:bluemarine:artist:7ae8f49a7fa04fa7015e92bf5ab637e94e41a876)
-RepositoryMusicArtist(rdfs:label=Chris Botti (feat. Paula Cole), uri=http://dbtune.org/musicbrainz/resource/artist/0939452b-0c6f-422a-997f-e7c496ce1113)
 RepositoryMusicArtist(rdfs:label=Christophe Beck, uri=http://dbtune.org/musicbrainz/resource/artist/0df890e1-f4f2-4b21-a413-cd8af1af32d8)
 RepositoryMusicArtist(rdfs:label=Christopher Cross, uri=http://dbtune.org/musicbrainz/resource/artist/883e4ba4-8ccc-47ed-81df-df51e41792a9)
 RepositoryMusicArtist(rdfs:label=Clannad, uri=http://dbtune.org/musicbrainz/resource/artist/d45641da-371c-430e-8907-6086590ab282)
@@ -5513,7 +5508,6 @@ RepositoryMusicArtist(rdfs:label=Ella Fitzgerald, uri=http://dbtune.org/musicbra
 RepositoryMusicArtist(rdfs:label=Ella Fitzgerald, uri=urn:bluemarine:artist:711570135ffc27f41845031de8a7d1de66b6036f)
 RepositoryMusicArtist(rdfs:label=Ella Fitzgerald & Count Basie, uri=urn:bluemarine:artist:c47dd18ae1ad65c4a1ec354f485f21b560eed283)
 RepositoryMusicArtist(rdfs:label=Ella Fitzgerald & Joe Pass, uri=urn:bluemarine:artist:d42ba070db6e4aea9d04c26fe9c025bc979fdeb0)
-RepositoryMusicArtist(rdfs:label=Ella Fitzgerald & Louis Armstrong, uri=http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499/eea8a864-fcda-4602-9569-38ab446decd6)
 RepositoryMusicArtist(rdfs:label=Ella Fitzgerald & Oscar Peterson, uri=urn:bluemarine:artist:20096997340e3098a6340aa1eca4cadde35fe250)
 RepositoryMusicArtist(rdfs:label=Ella Fitzgerald & The Tommy Flanagan Trio, uri=urn:bluemarine:artist:723f8350887d328d983e558849bbb2654dee6ce2)
 RepositoryMusicArtist(rdfs:label=Elton John, uri=http://dbtune.org/musicbrainz/resource/artist/b83bc61f-8451-4a5d-8b8e-7e9ed295e822)
@@ -5534,7 +5528,6 @@ RepositoryMusicArtist(rdfs:label=Francisco Buarque de Hollanda, uri=http://dbtun
 RepositoryMusicArtist(rdfs:label=Francisco Guerrero, uri=http://dbtune.org/musicbrainz/resource/artist/9d0671e3-2254-480b-a543-c37de339842f)
 RepositoryMusicArtist(rdfs:label=Frank Sinatra, uri=http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d)
 RepositoryMusicArtist(rdfs:label=Frank Sinatra, uri=urn:bluemarine:artist:f14e76940ffb697c99e83297257f5299c445ca2d)
-RepositoryMusicArtist(rdfs:label=Frank Sinatra & Antonio Carlos Jobim, uri=http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d/7a8dbe84-f4c0-4457-bfa3-edced1f8cde0)
 RepositoryMusicArtist(rdfs:label=Frantisek Macinka, uri=urn:bluemarine:artist:acc272d2290d4519ef8b3751e54815ef43f50bdc)
 RepositoryMusicArtist(rdfs:label=Franz Liszt, uri=http://dbtune.org/musicbrainz/resource/artist/2cd475bb-1abd-40c4-9904-6d4b691c752c)
 RepositoryMusicArtist(rdfs:label=Franz Schubert, uri=http://dbtune.org/musicbrainz/resource/artist/f91e3a88-24ee-4563-8963-fab73d2765ed)
@@ -5666,7 +5659,6 @@ RepositoryMusicArtist(rdfs:label=Michel Warlop et son orchestre, uri=http://dbtu
 RepositoryMusicArtist(rdfs:label=Mike Oldfield, uri=http://dbtune.org/musicbrainz/resource/artist/a1684a49-feaa-4150-b758-d9412fc59f12)
 RepositoryMusicArtist(rdfs:label=Miles Davis, uri=http://dbtune.org/musicbrainz/resource/artist/561d854a-6a28-4aa7-8c99-323e6ce46c2a)
 RepositoryMusicArtist(rdfs:label=Miles Davis, uri=urn:bluemarine:artist:354b95d04dee500eda0e12bc54c5d786acca6ffa)
-RepositoryMusicArtist(rdfs:label=Miles Davis & Gil Evans, uri=http://dbtune.org/musicbrainz/resource/artist/561d854a-6a28-4aa7-8c99-323e6ce46c2a)
 RepositoryMusicArtist(rdfs:label=Mina, uri=http://dbtune.org/musicbrainz/resource/artist/a56f5af0-3e87-4877-b68f-390f62903381)
 RepositoryMusicArtist(rdfs:label=Mina, uri=urn:bluemarine:artist:0fdada5f3c368c38fd0b24de3b1d932cff259a18)
 RepositoryMusicArtist(rdfs:label=Miriam Makeba, uri=http://dbtune.org/musicbrainz/resource/artist/bc5c2918-4aba-4ef6-a245-100563a4487f)
@@ -5686,7 +5678,6 @@ RepositoryMusicArtist(rdfs:label=Neville Marriner: Staatskapelle Dresden, uri=ur
 RepositoryMusicArtist(rdfs:label=New Budapest Quartet, uri=urn:bluemarine:artist:91376f5fa95d16d249056c54fb644364a6c8cebf)
 RepositoryMusicArtist(rdfs:label=New York's Ensemble for Early Music - Frederick Renz director, uri=urn:bluemarine:artist:d2d6b4a9979f22c79f9ab0f61547f42dcc0c654a)
 RepositoryMusicArtist(rdfs:label=Niccolò Paganini, uri=http://dbtune.org/musicbrainz/resource/artist/d581b2f2-f945-4566-a249-2d0171466993)
-RepositoryMusicArtist(rdfs:label=Nikolai Rimsky-Korsakow, uri=http://dbtune.org/musicbrainz/resource/artist/4cfe7051-f649-4d07-83b3-7a732abe7249)
 RepositoryMusicArtist(rdfs:label=Nikolaus Harnoncourt: Concentus Musicus Wien, Arnold Schoenberg Choir, uri=urn:bluemarine:artist:c4b7f779c69c63cbda346ddb2f6c6343d2549856)
 RepositoryMusicArtist(rdfs:label=Nina Simone, uri=http://dbtune.org/musicbrainz/resource/artist/2944824d-4c26-476f-a981-be849081942f)
 RepositoryMusicArtist(rdfs:label=Nino Rota, uri=http://dbtune.org/musicbrainz/resource/artist/d52ac009-4ed5-4d01-97d5-8280bb7dd460)
@@ -6117,27 +6108,6 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Angela Maria Blasi, Robert Holl, Etc.
 TRACKS OF RepositoryMusicArtist(rdfs:label=Anita Baker, uri=urn:bluemarine:artist:89f770090b040058a958fc4331d3bc7f9075f87d):
   RepositoryTrack(03, PT5M24S, rdfs:label=I'll Be Home for Christmas, Anita Baker/Christmas Fantasy/03 I'll Be Home for Christmas.m4p, urn:bluemarine:track:9e9c560219c45f675df5b3752b1f5eeac8e04096)
 
-TRACKS OF RepositoryMusicArtist(rdfs:label=Anonyme, uri=http://dbtune.org/musicbrainz/resource/artist/f731ccc4-e22a-43af-a747-64213329e088):
-  RepositoryTrack(02, PT5M15S, rdfs:label=Ay luna que reluzes, Jordi Savall/Invocation to the Night/1-02 Ay Luna Que Reluzes.m4a, http://dbtune.org/musicbrainz/resource/track/f045c186-d6a4-40df-bf56-c6022b7d16e1)
-  RepositoryTrack(14, PT4M36S, rdfs:label=Estas noches à tan largas, Jordi Savall/Invocation to the Night/2-02 Estas Noches À Tan Largas.m4a, http://dbtune.org/musicbrainz/resource/track/0ab08ebb-2413-437c-9af5-80d6a9eea947)
-  RepositoryTrack(01, PT2M18S, rdfs:label=Abinu Malkenu, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/01 Abinu Malkenu.m4a, http://dbtune.org/musicbrainz/resource/track/2b9156dc-b907-47a9-b252-49af6bdfc542)
-  RepositoryTrack(02, PT9M6S, rdfs:label=Yede Rašim, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/02 Yede Rashim.m4a, http://dbtune.org/musicbrainz/resource/track/fec1ba4a-65b8-44d3-b864-82fe5d4088b8)
-  RepositoryTrack(03, PT5M57S, rdfs:label=Nostalgia y alabanza De Jerusalén, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/03 Nostalgia Y Alabanza De Jerusalén.m4a, http://dbtune.org/musicbrainz/resource/track/d50bf18c-53ba-4aa7-984b-83b2d381f733)
-  RepositoryTrack(04, PT5M10S, rdfs:label='Et ša 'aré raŝón, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/04 Et Sha'Aré Rashon.m4a, http://dbtune.org/musicbrainz/resource/track/40bf4265-d718-450e-b7d4-b42f699c7a54)
-  RepositoryTrack(05, PT4M, rdfs:label=Yirú 'Enenu, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/05 Yiru 'Enenu.m4a, http://dbtune.org/musicbrainz/resource/track/bd954a59-daec-45bd-a096-bff5f1b5d54b)
-  RepositoryTrack(06, PT3M7S, rdfs:label=Los siete hijos de Hana, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/06 Los Siete Hijos De Hana.m4a, http://dbtune.org/musicbrainz/resource/track/b6916fdb-7c7a-4374-b765-32e6a331d396)
-  RepositoryTrack(07, PT5M28S, rdfs:label=Hodú l'Adonay, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/07 Hodu L'Adonay.m4a, http://dbtune.org/musicbrainz/resource/track/718953a0-3342-4a6a-82a7-b67776654ff4)
-  RepositoryTrack(08, PT1M43S, rdfs:label=Yašen al teradam, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/08 Yashen Al Teradam.m4a, http://dbtune.org/musicbrainz/resource/track/e6705be1-f875-4139-b87a-5eccb1b54bc6)
-  RepositoryTrack(09, PT3M31S, rdfs:label=El Mélej, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/09 El Mélej.m4a, http://dbtune.org/musicbrainz/resource/track/3f4e1fc8-a13e-467c-a902-5c70be58d5b5)
-  RepositoryTrack(10, PT6M11S, rdfs:label=Noche de aljad, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/10 Noche De Aljad.m4a, http://dbtune.org/musicbrainz/resource/track/2622dc1f-b2b3-455c-9d44-77ea6b5a8946)
-  RepositoryTrack(11, PT6M35S, rdfs:label=Ki ešmera šabat, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/11 Ki Eshmera Shabat.m4a, http://dbtune.org/musicbrainz/resource/track/74500613-155b-43b3-99c3-763521157429)
-  RepositoryTrack(12, PT2M14S, rdfs:label=La fragua del estudio, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/12 La Fragua Del Estudio.m4a, http://dbtune.org/musicbrainz/resource/track/ab48d8b8-7ac3-4731-a2cd-69d1c4dec954)
-  RepositoryTrack(13, PT4M35S, rdfs:label=Dodí yarad leganó, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/13 Dodi Yarad Legano.m4a, http://dbtune.org/musicbrainz/resource/track/60e6ec4e-d89d-4841-b64c-20dd1bd225b5)
-  RepositoryTrack(14, PT2M27S, rdfs:label=La ketubá de la ley, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/14 La Ketuba De La Ley.m4a, http://dbtune.org/musicbrainz/resource/track/a854cc92-3e89-4d96-b320-bd5bd76edb91)
-  RepositoryTrack(12, PT2M30S, rdfs:label=Nana: au rtxo txikia negarrez, Jordi Savall/Invocation to the Night/1-10 Nana _ Aurtxo Txikia Negarrez.m4a, http://dbtune.org/musicbrainz/resource/track/bb9668ef-9da0-46cb-89e1-b9c16beb9619)
-  RepositoryTrack(03, PT3M23S, rdfs:label=Berceuse: Dors mon bébé, Compilations/NINNA NANNA - Montserrat Figueras/03 Berceuse_ Κοιμησου Χαϊδεμενο Μου (Anon. Grèce).m4a, http://dbtune.org/musicbrainz/resource/track/a93f45c4-aca7-4178-b595-802e7a8b7c0a)
-  RepositoryTrack(09, PT5M16S, rdfs:label=No la devemos dormir (villancico), Jordi Savall/Invocation to the Night/1-04 No la Devemos Dormir (Villancicos).m4a, http://dbtune.org/musicbrainz/resource/track/8948ea1a-e392-48c1-b7b5-2274801f83c3)
-
 TRACKS OF RepositoryMusicArtist(rdfs:label=Anonymous 4, uri=http://dbtune.org/musicbrainz/resource/artist/bdbd99ab-3f4b-4028-9306-cd71d8695fbc):
   RepositoryTrack(01, PT4M31S, rdfs:label=Veni Creator Spiritus (Hymn), Anonymous 4/The Origin Of Fire - Music & Visions Of Hildegard Von Bingen/01 Hildegard_ Hymn - Veni Creator Spiritus.m4a, http://dbtune.org/musicbrainz/resource/track/c9f532d7-24c8-4814-862c-4ae73bdf48f5)
   RepositoryTrack(02, PT2M42S, rdfs:label=Veni Spritus Eternorum (Sequence), Anonymous 4/The Origin Of Fire - Music & Visions Of Hildegard Von Bingen/02 Hildegard_ Sequence - Veni Spiritus Eternorum Alme.m4a, http://dbtune.org/musicbrainz/resource/track/d3c53ac5-10d3-458a-80cc-f911cfa083df)
@@ -6172,30 +6142,6 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Anthony Rooley & Consort of Musicke, 
   RepositoryTrack(12, PT4M26S, rdfs:label=Madrigali Amorosi: Non Partir Ritrosetta, Anthony Rooley & Consort of Musicke/Monteverdi_ Madrigali guerrieri et amorosi/2-12 Madrigali Amorosi_ Non Partir Ritrosetta.m4p, urn:bluemarine:track:d99c4a8e3ba8aa0f5f2f15bf526b27bab23ca4ec)
   RepositoryTrack(13, PT2M40S, rdfs:label=Madrigali Amorosi: Su, Su, Su, Pastorelli Vezzosi, Anthony Rooley & Consort of Musicke/Monteverdi_ Madrigali guerrieri et amorosi/2-13 Madrigali Amorosi_ Su, Su, Su, Pastorelli Vezzosi.m4p, urn:bluemarine:track:452d6157fc2cfef9d22752b1c4b528c0bc47e2cd)
   RepositoryTrack(14, PT5M32S, rdfs:label=Madrigali Amorosi: Vago Augelletto, Anthony Rooley & Consort of Musicke/Monteverdi_ Madrigali guerrieri et amorosi/2-14 Madrigali Amorosi_ Vago Augelletto.m4p, urn:bluemarine:track:6ec05853ac2fbe44a5b0416d59202cb9300f6815)
-
-TRACKS OF RepositoryMusicArtist(rdfs:label=Antonio Carlos Jobim, uri=http://dbtune.org/musicbrainz/resource/artist/7a8dbe84-f4c0-4457-bfa3-edced1f8cde0):
-  RepositoryTrack(08, PT2M52S, rdfs:label=Samba Do Avião, Compilations/Bossa Nona,Chega De Saudade [Disc 2]/08 Samba Do Avião.m4a, http://dbtune.org/musicbrainz/resource/track/e335f02f-3ddc-4476-ab1f-edcf1d73bd70)
-  RepositoryTrack(10, PT2M46S, rdfs:label=Pela Luz Dos Olhos Teus, Compilations/Bossa Nona,Chega De Saudade [Disc 2]/10 Pela Luz Dos Olhos Teus.m4a, http://dbtune.org/musicbrainz/resource/track/b5994fd9-467b-4e40-a783-49f7a8e8bdbc)
-  RepositoryTrack(01, PT3M16S, rdfs:label=The Girl From Ipanema, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/01 The Girl From Ipanema.mp3, http://dbtune.org/musicbrainz/resource/track/48e9666b-ae1f-4c64-9977-d61d3e9fb57d)
-  RepositoryTrack(02, PT3M30S, rdfs:label=Dindi, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/02 Dindi.mp3, http://dbtune.org/musicbrainz/resource/track/f0856762-dc73-45ae-9a64-a399ea013de9)
-  RepositoryTrack(03, PT2M43S, rdfs:label=Change Partners, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/03 Change Partners.mp3, http://dbtune.org/musicbrainz/resource/track/77002763-99e0-4d65-b426-3454a00bf602)
-  RepositoryTrack(04, PT2M46S, rdfs:label=Quiet Nights of Quiet Stars, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/04 Quiet Nights Of Quiet Stars.mp3, http://dbtune.org/musicbrainz/resource/track/8b125ae8-a090-4242-8c18-00286afd7108)
-  RepositoryTrack(06, PT2M12S, rdfs:label=If You Never Come to Me, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/06 If You Never Come To Me.mp3, http://dbtune.org/musicbrainz/resource/track/c4156e27-a65c-4a9f-bac6-95339f94b5d7)
-  RepositoryTrack(07, PT3M18S, rdfs:label=How Insensitive, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/07 How Insensitive.mp3, http://dbtune.org/musicbrainz/resource/track/b675de69-d459-45cd-87e4-454e22cfaa30)
-  RepositoryTrack(09, PT2M35S, rdfs:label=Baubles, Bangles and Beads, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/09 Baubles, Bangles And Beads.mp3, http://dbtune.org/musicbrainz/resource/track/87042ca5-2164-45c3-a76e-6196f013c302)
-  RepositoryTrack(10, PT2M36S, rdfs:label=Once I Loved, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/10 Once I Loved.mp3, http://dbtune.org/musicbrainz/resource/track/d79d835a-6016-4751-84dc-9d2b9715f6b0)
-  RepositoryTrack(01, PT5M24S, rdfs:label=The Girl from Ipanema, Antonio Carlos Jobim & Stan Getz/Their Greatest Hits/01 The Girl From Ipanema.m4a, http://dbtune.org/musicbrainz/resource/track/1cbd1503-3f0b-4c88-9edd-1204a914bb5c)
-  RepositoryTrack(02, PT5M50S, rdfs:label=Desafinado (Off Key), Antonio Carlos Jobim & Stan Getz/Their Greatest Hits/02 Desafinado (Off Key).m4a, http://dbtune.org/musicbrainz/resource/track/1ab0d3e7-f712-429e-8461-e4a8e0e022a6)
-  RepositoryTrack(03, PT2M53S, rdfs:label=Wave, Antonio Carlos Jobim & Stan Getz/Their Greatest Hits/03 Wave.m4a, http://dbtune.org/musicbrainz/resource/track/0370433f-a319-49d5-84e9-be98f30d4e20)
-  RepositoryTrack(04, PT3M21S, rdfs:label=Insensatez (How Insensitive), Antonio Carlos Jobim & Stan Getz/Their Greatest Hits/04 Insensatez.m4a, http://dbtune.org/musicbrainz/resource/track/1b0dee71-b627-436f-ad59-0a31fc28d9d9)
-  RepositoryTrack(05, PT3M31S, rdfs:label=Aguas de Março (Waters of March), Antonio Carlos Jobim & Stan Getz/Their Greatest Hits/05 Águas de Março (Waters of March).m4a, http://dbtune.org/musicbrainz/resource/track/2f9957cf-fc4d-400d-a3ac-b973b7aab5f0)
-  RepositoryTrack(07, PT4M15S, rdfs:label=Corcovado (Quiet Nights of Quiet Stars), Antonio Carlos Jobim & Stan Getz/Their Greatest Hits/07 Corcovado (Quiet Nights of Quiet Stars).m4a, http://dbtune.org/musicbrainz/resource/track/7363e957-5a9c-49c3-b27e-fc21de0995dd)
-  RepositoryTrack(08, PT3M36S, rdfs:label=Amor Em Paz (Once I Loved), Antonio Carlos Jobim & Stan Getz/Their Greatest Hits/08 Once I Loved.m4a, http://dbtune.org/musicbrainz/resource/track/64f814af-0cb2-4bab-88af-25a0a8f69061)
-  RepositoryTrack(09, PT6M10S, rdfs:label=Samba de uma Nota Só (One Note Samba), Antonio Carlos Jobim & Stan Getz/Their Greatest Hits/09 Samba de Uma Nota So.m4a, http://dbtune.org/musicbrainz/resource/track/bb826b0f-2f47-4c28-8bfa-66ea5ecdffb8)
-  RepositoryTrack(10, PT2M18S, rdfs:label=Agua de Beber (Water to Drink), Antonio Carlos Jobim & Stan Getz/Their Greatest Hits/10 Agua de Beber.m4a, http://dbtune.org/musicbrainz/resource/track/2f711f4e-0302-4f49-b0db-08379c7a533e)
-  RepositoryTrack(11, PT3M15S, rdfs:label=Meditation, Antonio Carlos Jobim & Stan Getz/Their Greatest Hits/11 Meditation.m4a, http://dbtune.org/musicbrainz/resource/track/3f41545d-4848-4fc7-b815-59bc6d564027)
-  RepositoryTrack(12, PT4M12S, rdfs:label=Desafinado (Off Key), Antonio Carlos Jobim & Stan Getz/Their Greatest Hits/12 Desafinado.m4a, http://dbtune.org/musicbrainz/resource/track/5d89a059-e26c-46e4-87e1-4f84ee1e72f7)
-  RepositoryTrack(08, PT4M3S, rdfs:label=Insensatez (How Insensitive), Pat Metheny & Jobim/Unknown Album/Insensatez (How Insensitive).mp3, http://dbtune.org/musicbrainz/resource/track/495a338f-0975-4451-863d-25b114ab76bb)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Antonio Vivaldi, uri=http://dbtune.org/musicbrainz/resource/artist/ad79836d-9849-44df-8789-180bbc823f3c):
   RepositoryTrack(01, PT3M13S, rdfs:label=The Four Seasons - Spring - Allegro, Compilations/Vivaldi_ The Four Seasons/09 Vivaldi_ Violin Concerto In F, Op. 8_3, RV 293, _The Four Seasons (Autumn)_ - 3. Allegro.m4a, http://dbtune.org/musicbrainz/resource/track/c5f1d8dd-64ae-4ec6-b9e3-1f025e5b05b2)
@@ -6257,38 +6203,6 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Antonio Vivaldi, uri=http://dbtune.or
   RepositoryTrack(11, PT4M31S, rdfs:label=Concerto in A minor Two Violins, Op. 3 No. 8: II. Larghetto E Spiritoso, Pinchas Zukerman, Midori/Bach; Vivaldi_ Concertos For 2 Violins/11 Vivaldi_ Concerto In A Minor For 2 Violins, Op. 3_8, RV 522 _L_Estro Armonico #8_ - 1. Larghetto E Spiritoso.m4a, http://dbtune.org/musicbrainz/resource/track/7e0e7357-4f37-4286-9382-ef400ba191bd)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Antonín Dvořák, uri=http://dbtune.org/musicbrainz/resource/artist/819eaeb2-8dd8-48a5-ad07-0bcd137985ef):
-  RepositoryTrack(01, PT4M4S, rdfs:label=Slavonic Dances, Op.46, B78: 1) No.1 in C major, Silke-Thora Matthies, Christian Kohn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/01 Dvořák_ Slavonic Dances #1-8, Op. 46 - #1 In C.m4a, http://dbtune.org/musicbrainz/resource/track/17988d10-53c8-4366-b57b-059edefddf40)
-  RepositoryTrack(02, PT4M55S, rdfs:label=No.2 in E minor, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/02 e-moll.m4a, http://dbtune.org/musicbrainz/resource/track/3e9f3e33-0e8a-4cf7-9fbc-883cd07b7e07)
-  RepositoryTrack(03, PT4M32S, rdfs:label=No.3 in D major, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/03 D-dur.m4a, http://dbtune.org/musicbrainz/resource/track/7a2213ee-5022-4f77-80b8-2379446fac2e)
-  RepositoryTrack(04, PT6M41S, rdfs:label=No.4 in F major, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/04 F-dur.m4a, http://dbtune.org/musicbrainz/resource/track/764bfa7d-862c-42b8-9642-ab770f7161fb)
-  RepositoryTrack(05, PT3M1S, rdfs:label=No.5 in A major, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/05 A-dur.m4a, http://dbtune.org/musicbrainz/resource/track/ca40caba-3f8c-4e45-ac6a-c6daeae0d8a6)
-  RepositoryTrack(06, PT5M1S, rdfs:label=No.6 in A flat major, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/06 As-dur.m4a, http://dbtune.org/musicbrainz/resource/track/1e941f5e-7d30-4208-b3d7-8aea08be43ea)
-  RepositoryTrack(07, PT3M1S, rdfs:label=No.7 in C minor, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/07 c-moll.m4a, http://dbtune.org/musicbrainz/resource/track/ecd5c4e0-eb1b-4380-9858-ab8dd53ed4d8)
-  RepositoryTrack(08, PT4M18S, rdfs:label=No.8 in G minor, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/08 g-moll.m4a, http://dbtune.org/musicbrainz/resource/track/a0d8cbca-d44d-485c-8fc4-fd86d3eea92d)
-  RepositoryTrack(09, PT4M28S, rdfs:label=Slavonic Dances, Op.72, B 145: 9) No.9 in B major, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/09 Slavonic Dances Op 72_ 1. H-dur.m4a, http://dbtune.org/musicbrainz/resource/track/566cd300-ef50-49b9-ad87-192b85d544b0)
-  RepositoryTrack(10, PT5M27S, rdfs:label=No.10 in E minor, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/10 e-moll.m4a, http://dbtune.org/musicbrainz/resource/track/a317ea1f-61ed-48ac-981b-5ede45641f17)
-  RepositoryTrack(11, PT3M18S, rdfs:label=No.11 in F major, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/11 F-dur.m4a, http://dbtune.org/musicbrainz/resource/track/ab9953f5-32eb-4bca-8390-e7c8168a8f81)
-  RepositoryTrack(12, PT6M5S, rdfs:label=No.12 in D flat Major, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/12 Des-dur.m4a, http://dbtune.org/musicbrainz/resource/track/ef80cdc6-5748-4425-ba73-660b7debcf1c)
-  RepositoryTrack(13, PT3M3S, rdfs:label=No.13 in B flat minor, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/13 b-moll.m4a, http://dbtune.org/musicbrainz/resource/track/a1689264-9e16-4e6b-9e95-f9e37e69a8d2)
-  RepositoryTrack(14, PT3M33S, rdfs:label=No.14 in B flat major, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/14 B-dur.m4a, http://dbtune.org/musicbrainz/resource/track/d29b17a0-5de1-41b8-a38a-7f1d3de11c28)
-  RepositoryTrack(15, PT3M17S, rdfs:label=No.15 in A major, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/15 A-dur.m4a, http://dbtune.org/musicbrainz/resource/track/5246543b-5b66-4380-9cc8-1acd8c65c590)
-  RepositoryTrack(16, PT7M23S, rdfs:label=No.16 in A flat major, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/16 As-dur.m4a, http://dbtune.org/musicbrainz/resource/track/d6867a93-013b-42dc-babd-5ac78ecdbe98)
-  RepositoryTrack(01, PT9M58S, rdfs:label=Symphony no. 8 in G major, op. 88: I. Allegro con brio, Compilations/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.m4a, http://dbtune.org/musicbrainz/resource/track/1ee221a1-d642-4db1-be9b-7b0620419dd7)
-  RepositoryTrack(02, PT10M19S, rdfs:label=Symphony no. 8 in G major, op. 88: II. Adagio, Compilations/Dvořák_ Symphonies #8 & 9/02 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 2. Adagio.m4a, http://dbtune.org/musicbrainz/resource/track/61675df3-359d-4559-b16b-db25665f9cc5)
-  RepositoryTrack(03, PT6M39S, rdfs:label=Symphony no. 8 in G major, op. 88: III. Allegretto grazioso - Molto vivace, Compilations/Dvořák_ Symphonies #8 & 9/03 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 3. Allegretto Grazioso, Molto Vivace.m4a, http://dbtune.org/musicbrainz/resource/track/89d43731-7242-4a6c-a63c-b4fd68152d57)
-  RepositoryTrack(04, PT8M56S, rdfs:label=Symphony No. 8 in G major, Op. 88: IV. Allegro ma non troppo, Compilations/Dvořák_ Symphonies #8 & 9/04 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 4. Allegro Ma Non Troppo.m4a, http://dbtune.org/musicbrainz/resource/track/ef147665-3c0a-4d84-8745-1addedbe22ad)
-  RepositoryTrack(05, PT9M32S, rdfs:label=Symphony No. 9 in E minor, Op. 95 "From the New World": I. Adagio - Allegro molto, Compilations/Dvořák_ Symphonies #8 & 9/05 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 1. Adagio, Allegro Molto.m4a, http://dbtune.org/musicbrainz/resource/track/5f4c76f4-06d4-49c7-9ff2-a2eb89499948)
-  RepositoryTrack(06, PT13M4S, rdfs:label=Symphony No. 9 in E minor, Op. 95 "From the New World": II. Largo, Compilations/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.m4a, http://dbtune.org/musicbrainz/resource/track/44d76c02-a86f-4a92-bd9f-c41bea7f3e8c)
-  RepositoryTrack(07, PT8M8S, rdfs:label=Symphony No. 9 in E minor, Op. 95 "From the New World": III. Molto vivace, Compilations/Dvořák_ Symphonies #8 & 9/07 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 3. Molto Vivace.m4a, http://dbtune.org/musicbrainz/resource/track/dc3a86c6-b108-49af-8e0a-15f9e741c655)
-  RepositoryTrack(08, PT11M51S, rdfs:label=Symphony No. 9 in E minor, Op. 95 "From the New World": IV. Allegro con fuoco, Compilations/Dvořák_ Symphonies #8 & 9/08 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 4. Allegro Con Fuoco.m4a, http://dbtune.org/musicbrainz/resource/track/2673ce37-4430-44c3-8a5d-72b714ce8218)
-  RepositoryTrack(01, PT12M5S, rdfs:label=Symphony #9 in E minor, Opus 95, "From the New World", Barry Tuckwell_ London Symphony Orchestra/Dvořák_ Symphony #9, _From The New World_/01 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 1. Adagio, Allegro Molto.m4a, http://dbtune.org/musicbrainz/resource/track/dae6c657-dea6-4ee6-bfb7-8d815a881b9c)
-  RepositoryTrack(02, PT12M14S, rdfs:label=Largo, Barry Tuckwell_ London Symphony Orchestra/Dvořák_ Symphony #9, _From The New World_/02 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.m4a, http://dbtune.org/musicbrainz/resource/track/637bf38a-d94c-49b3-bd73-1e46311bfb51)
-  RepositoryTrack(03, PT7M45S, rdfs:label=Scherzo: Molto vivace, Barry Tuckwell_ London Symphony Orchestra/Dvořák_ Symphony #9, _From The New World_/03 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 3. Scherzo_ Molto Vivace.m4a, http://dbtune.org/musicbrainz/resource/track/d5ed8db9-67db-4039-92c9-51e3d8a048c2)
-  RepositoryTrack(04, PT11M20S, rdfs:label=Allegro con fuoco, Barry Tuckwell_ London Symphony Orchestra/Dvořák_ Symphony #9, _From The New World_/04 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 4. Allegro Con Fuoco.m4a, http://dbtune.org/musicbrainz/resource/track/47c792e0-cffb-4e0c-979e-3d6c6a2ffb9e)
-  RepositoryTrack(05, PT9M50S, rdfs:label=Overture for Orchestra Op. 92 Carnival, Barry Tuckwell_ London Symphony Orchestra/Dvořák_ Symphony #9, _From The New World_/05 Dvořák_ Carnival Overture.m4a, http://dbtune.org/musicbrainz/resource/track/27e2b027-6192-460c-a08c-a10ae509ddfc)
-  RepositoryTrack(08, PT7M39S, rdfs:label=String Quartet No. 12 in F, Op. 96, "American" - Lento, Moyzes Quartet/Dvořák_ String Quartets Op. 96, _American_ & Op. 105/02 Dvořák_ String Quartet #12 In F, Op. 96, B 179, _American_ - Lento.m4a, http://dbtune.org/musicbrainz/resource/track/0596047a-00d9-4a4d-b18a-46eb57627eb9)
-
-TRACKS OF RepositoryMusicArtist(rdfs:label=Antonín Dvořák; Berliner Philharmoniker & Rafael Kubelík, uri=http://dbtune.org/musicbrainz/resource/artist/819eaeb2-8dd8-48a5-ad07-0bcd137985ef):
   RepositoryTrack(01, PT4M4S, rdfs:label=Slavonic Dances, Op.46, B78: 1) No.1 in C major, Silke-Thora Matthies, Christian Kohn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/01 Dvořák_ Slavonic Dances #1-8, Op. 46 - #1 In C.m4a, http://dbtune.org/musicbrainz/resource/track/17988d10-53c8-4366-b57b-059edefddf40)
   RepositoryTrack(02, PT4M55S, rdfs:label=No.2 in E minor, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/02 e-moll.m4a, http://dbtune.org/musicbrainz/resource/track/3e9f3e33-0e8a-4cf7-9fbc-883cd07b7e07)
   RepositoryTrack(03, PT4M32S, rdfs:label=No.3 in D major, Silke-Thora Matthies, Christian Köhn/Dvorak- Slavonic Dances op.46 B78 & op.72 B145/03 D-dur.m4a, http://dbtune.org/musicbrainz/resource/track/7a2213ee-5022-4f77-80b8-2379446fac2e)
@@ -6896,55 +6810,6 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Chris Botti, uri=urn:bluemarine:artis
 TRACKS OF RepositoryMusicArtist(rdfs:label=Chris Botti & Sting, uri=urn:bluemarine:artist:7ae8f49a7fa04fa7015e92bf5ab637e94e41a876):
   RepositoryTrack(04, PT4M28S, rdfs:label=In The Wee Small Hours Of The Morning, Chris Botti/Slowing Down the World/04 In The Wee Small Hours Of The Morning.m4a, urn:bluemarine:track:25e38a440ada69285c64d166a59c2e1ec7fbcf7e)
 
-TRACKS OF RepositoryMusicArtist(rdfs:label=Chris Botti (feat. Paula Cole), uri=http://dbtune.org/musicbrainz/resource/artist/0939452b-0c6f-422a-997f-e7c496ce1113):
-  RepositoryTrack(10, PT5M46S, rdfs:label=Ave Maria, Chris Botti/Italia (Bonus Track Version)/10 Ave Maria.m4a, http://dbtune.org/musicbrainz/resource/track/ea08defe-4961-4a69-87b5-9491dd079887)
-  RepositoryTrack(01, PT4M38S, rdfs:label=Worlds Outside, Chris Botti/First Wish/01 Worlds Outside.mp3, http://dbtune.org/musicbrainz/resource/track/42116463-f46e-4a05-97c8-27b62eff407e)
-  RepositoryTrack(02, PT4M30S, rdfs:label=On The Night Ride, Chris Botti/First Wish/02 On The Night Ride.mp3, http://dbtune.org/musicbrainz/resource/track/6ac97c91-7792-4a7c-be72-951a1ba83fea)
-  RepositoryTrack(03, PT4M59S, rdfs:label=First Wish, Chris Botti/First Wish/03 First Wish.mp3, http://dbtune.org/musicbrainz/resource/track/e3e56807-9e7d-4cff-94cd-b3f496622320)
-  RepositoryTrack(04, PT4M56S, rdfs:label=Like I Do Now (feat. Edie Brickell), Chris Botti/First Wish/04 Like I Do Now.mp3, http://dbtune.org/musicbrainz/resource/track/7c522b3a-687b-47e9-a801-5b2fa0de643e)
-  RepositoryTrack(05, PT5M33S, rdfs:label=Cubism, Chris Botti/First Wish/05 Cubism.mp3, http://dbtune.org/musicbrainz/resource/track/13d79745-ea43-4c54-b159-f48f1693a1ad)
-  RepositoryTrack(06, PT4M26S, rdfs:label=Through Tin Hearts, Chris Botti/First Wish/06 Through Tin Hearts.mp3, http://dbtune.org/musicbrainz/resource/track/41e5c863-e328-42dd-b2d5-8270d2bcc89d)
-  RepositoryTrack(07, PT5M9S, rdfs:label=Longing, Chris Botti/First Wish/07 Longing.mp3, http://dbtune.org/musicbrainz/resource/track/28392e7a-6f3c-4f4a-ab12-03c3a8387a58)
-  RepositoryTrack(08, PT4M51S, rdfs:label=Nerve Central, Chris Botti/First Wish/08 Nerve Central.mp3, http://dbtune.org/musicbrainz/resource/track/7edf3314-8a95-4e70-99f4-66da93333a2f)
-  RepositoryTrack(09, PT5M19S, rdfs:label=Fade To Day, Chris Botti/First Wish/09 Fade To Day.mp3, http://dbtune.org/musicbrainz/resource/track/532e1721-c94f-4ff7-bbf8-83fbae8176fc)
-  RepositoryTrack(10, PT1M30S, rdfs:label=A Few More Days, A Few More Weeks, Chris Botti/First Wish/10 A Few More Days, A Few More Weeks.mp3, http://dbtune.org/musicbrainz/resource/track/c6de40c7-fd22-4ee6-8d31-1e8421ed61e3)
-  RepositoryTrack(01, PT2M51S, rdfs:label=Deborah's Theme, Chris Botti/Italia (Bonus Track Version)/03 Deborah's Theme (_Once Upon a Time In America_).m4a, http://dbtune.org/musicbrainz/resource/track/5aa28223-e3ed-4746-9509-26f5468f487f)
-  RepositoryTrack(03, PT4M30S, rdfs:label=Venice, Chris Botti/Italia (Bonus Track Version)/11 Venice.m4a, http://dbtune.org/musicbrainz/resource/track/c130bedc-1dbc-4baa-940b-d95ef186c780)
-  RepositoryTrack(05, PT4M15S, rdfs:label=Gabriel's Oboe, Chris Botti/Italia (Bonus Track Version)/05 Gabriel's Oboe (_The Mission_).m4a, http://dbtune.org/musicbrainz/resource/track/e8fe82d7-b2dc-420c-8eec-fbf4175433e0)
-  RepositoryTrack(07, PT3M58S, rdfs:label=Caruso, Chris Botti/Italia (Bonus Track Version)/07 Caruso.m4a, http://dbtune.org/musicbrainz/resource/track/23d4af0a-a3bf-48b5-a14a-c6558fcad7ca)
-  RepositoryTrack(08, PT4M16S, rdfs:label=The Way You Look Tonight, Chris Botti/Italia (Bonus Track Version)/08 The Way You Look Tonight.m4a, http://dbtune.org/musicbrainz/resource/track/3a333d86-32da-488f-9759-d2ae71829fab)
-  RepositoryTrack(09, PT4M52S, rdfs:label=It Never Entered My Mind, Chris Botti/Italia (Bonus Track Version)/09 It Never Entered My Mind.m4a, http://dbtune.org/musicbrainz/resource/track/208d164e-0b42-405a-8a8e-00aa9a6beb5a)
-  RepositoryTrack(01, PT3M40S, rdfs:label=The Steps of Positano, Chris Botti/Midnight Without You/The Steps of Positano.mp3, http://dbtune.org/musicbrainz/resource/track/731ef9a7-fc74-43b3-bb38-25fbd3d934ba)
-  RepositoryTrack(01, PT5M10S, rdfs:label=Lisa, Chris Botti/Night Sessions/01 Lisa.mp3, http://dbtune.org/musicbrainz/resource/track/f0452cda-e3a3-4186-ae00-90e84a511fea)
-  RepositoryTrack(02, PT4M32S, rdfs:label=Miami Overnight, Chris Botti/Night Sessions/02 Miami Overnight.mp3, http://dbtune.org/musicbrainz/resource/track/621ded2b-e1c8-4771-900f-e7e61daa5bc9)
-  RepositoryTrack(03, PT3M45S, rdfs:label=Streets Ahead, Chris Botti/Night Sessions/03 Stress Ahead.mp3, http://dbtune.org/musicbrainz/resource/track/493b55e2-b987-4695-97ec-254322363536)
-  RepositoryTrack(04, PT30S, rdfs:label=Interlude, Chris Botti/Night Sessions/04 Interlude.mp3, http://dbtune.org/musicbrainz/resource/track/0117ee70-f1ae-47f4-a540-66cffaeac131)
-  RepositoryTrack(05, PT5M3S, rdfs:label=All Would Envy (feat. Shawn Colvin), Chris Botti/Night Sessions/05 All The World Envy.mp3, http://dbtune.org/musicbrainz/resource/track/d44e9005-e6ff-4ec6-b77a-b5d5f85a1dba)
-  RepositoryTrack(06, PT5M1S, rdfs:label=Best Time, Chris Botti/Night Sessions/06 Best Time.mp3, http://dbtune.org/musicbrainz/resource/track/cfc43ace-d61c-4f66-9606-50b6c0c94848)
-  RepositoryTrack(07, PT4M16S, rdfs:label=When I See You, Chris Botti/Night Sessions/07 When I See You.mp3, http://dbtune.org/musicbrainz/resource/track/09543024-57bb-4789-97a2-970f81bd2b5f)
-  RepositoryTrack(08, PT5M10S, rdfs:label=You Move Me, Chris Botti/Night Sessions/08 You Move Me.mp3, http://dbtune.org/musicbrainz/resource/track/6b0fadc3-064e-4db4-984f-dea1f6b02153)
-  RepositoryTrack(09, PT4M12S, rdfs:label=Blue Horizon, Chris Botti/Night Sessions/09 Blue Horizon.mp3, http://dbtune.org/musicbrainz/resource/track/8e5105d1-159d-4b82-bbea-58b2ec4e44d3)
-  RepositoryTrack(10, PT4M40S, rdfs:label=Light the Stars, Chris Botti/Night Sessions/10 Light The Sky.mp3, http://dbtune.org/musicbrainz/resource/track/f347ccf5-bb6b-44bc-9691-73c924c0d4be)
-  RepositoryTrack(11, PT4M19S, rdfs:label=Through an Open Window, Chris Botti/Night Sessions/11 Through An Open Windoow.mp3, http://dbtune.org/musicbrainz/resource/track/3ff9b3a7-bcc4-45db-a5da-3f1a1530f4dd)
-  RepositoryTrack(12, PT5M38S, rdfs:label=Easter Parade, Chris Botti/Night Sessions/12 Easter Parade.mp3, http://dbtune.org/musicbrainz/resource/track/72d1d833-aa65-4b98-b463-3f7e34468f28)
-  RepositoryTrack(05, PT4M5S, rdfs:label=Estate, Chris Botti/Italia (Bonus Track Version)/02 Estaté.m4a, http://dbtune.org/musicbrainz/resource/track/bca6ce2a-d7e7-462e-ab9e-e0ff92698a90)
-  RepositoryTrack(06, PT4M52S, rdfs:label=The Very Thought of You, Chris Botti/Italia (Bonus Track Version)/04 The Very Thought Of You.m4a, http://dbtune.org/musicbrainz/resource/track/45045609-84d0-4d12-9cae-c21608d69e74)
-  RepositoryTrack(10, PT3M8S, rdfs:label=I've Grown Accustomed to Her Face, Chris Botti/Italia (Bonus Track Version)/06 I've Grown Accustomed To Her Face (_My Fair Lady_).m4a, http://dbtune.org/musicbrainz/resource/track/b19f48e5-8f87-4039-8fb3-55bd7e746a4c)
-  RepositoryTrack(11, PT3M50S, rdfs:label=Nessun Dorma, Chris Botti/Italia (Bonus Track Version)/12 Nessun Dorma (_Turandot_).m4a, http://dbtune.org/musicbrainz/resource/track/f0826070-77d3-46e1-8fde-5f0eade6313e)
-  RepositoryTrack(01, PT4M22S, rdfs:label=When I Fall in Love, Chris Botti/When I Fall In Love/01 When I Fall In Love.m4a, http://dbtune.org/musicbrainz/resource/track/1c219a3f-f6e2-4973-909f-1956d7907f8e)
-  RepositoryTrack(02, PT5M9S, rdfs:label=What'll I Do? (feat. Paula Cole), Chris Botti/When I Fall In Love/02 What'll I Do_.m4a, http://dbtune.org/musicbrainz/resource/track/b67e53c1-4cec-468a-a4f3-d4a5d6428a3a)
-  RepositoryTrack(03, PT6M4S, rdfs:label=No Ordinary Love, Chris Botti/When I Fall In Love/03 No Ordinary Love.m4a, http://dbtune.org/musicbrainz/resource/track/b225cf4f-b8e0-4862-b31b-3d6604be7192)
-  RepositoryTrack(04, PT3M21S, rdfs:label=My Romance, Chris Botti/When I Fall In Love/04 My Romance.m4a, http://dbtune.org/musicbrainz/resource/track/f8651428-ecd6-45f1-beb3-9aa47ddbe013)
-  RepositoryTrack(05, PT3M40S, rdfs:label=Let's Fall in Love, Chris Botti/When I Fall In Love/05 Let's Fall In Love.m4a, http://dbtune.org/musicbrainz/resource/track/07caab02-4d3b-4408-b55d-77ebb0efb8b5)
-  RepositoryTrack(06, PT4M57S, rdfs:label=Cinema Paradiso (feat. Billy Childs), Chris Botti/When I Fall In Love/06 Cinema Paradiso.m4a, http://dbtune.org/musicbrainz/resource/track/de4c344c-50f2-478b-8df5-5a6122b6b275)
-  RepositoryTrack(07, PT4M35S, rdfs:label=Someone to Watch Over Me, Chris Botti/When I Fall In Love/07 Someone to Watch Over Me.m4a, http://dbtune.org/musicbrainz/resource/track/2f9a212a-24e4-49db-858e-ab14dc391b50)
-  RepositoryTrack(08, PT5M31S, rdfs:label=La Belle Dame Sans Regrets (feat. Dominic Miller and Sting), Chris Botti/When I Fall In Love/08 La Belle Dame Sans Regrets.m4a, http://dbtune.org/musicbrainz/resource/track/9cb8d26d-4f70-4db3-8367-831772ec0ab9)
-  RepositoryTrack(09, PT3M11S, rdfs:label=Nearness of You, Chris Botti/When I Fall In Love/09 Nearness of You.m4a, http://dbtune.org/musicbrainz/resource/track/63d452c2-767f-444c-b5d3-58b9e3a0ef47)
-  RepositoryTrack(10, PT4M3S, rdfs:label=How Love Should Be, Chris Botti/When I Fall In Love/10 How Love Should Be.m4a, http://dbtune.org/musicbrainz/resource/track/c662174a-1d29-45ad-a02b-2ed503e432f7)
-  RepositoryTrack(11, PT4M8S, rdfs:label=Make Someone Happy, Chris Botti/When I Fall In Love/11 Make Someone Happy.m4a, http://dbtune.org/musicbrainz/resource/track/c09b916d-f2c7-4344-89e5-74d4dab2121d)
-  RepositoryTrack(12, PT4M53S, rdfs:label=One for My Baby, Chris Botti/When I Fall In Love/12 One for My Baby.m4a, http://dbtune.org/musicbrainz/resource/track/42504d61-151d-4dcd-bd9e-a1cd12661eaf)
-  RepositoryTrack(13, PT4M44S, rdfs:label=Time to Say Goodbye (Con te Partiro), Chris Botti/When I Fall In Love/13 Time to Say Goodbye (Con Te Partiro).m4a, http://dbtune.org/musicbrainz/resource/track/5f774862-6ede-42f5-9227-47b273ff57d2)
-
 TRACKS OF RepositoryMusicArtist(rdfs:label=Christophe Beck, uri=http://dbtune.org/musicbrainz/resource/artist/0df890e1-f4f2-4b21-a413-cd8af1af32d8):
   RepositoryTrack(03, PT2M24S, rdfs:label=All About the Money, Unknown Artist/Unknown Album/Christophe Beck -  All about the money.mp3, http://dbtune.org/musicbrainz/resource/track/bea0038d-c555-455f-9360-bb52bb176f92)
 
@@ -7363,6 +7228,7 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Ella Fitzgerald, uri=http://dbtune.or
   RepositoryTrack(09, PT4M44S, rdfs:label=The Trip, Duke Ellington & His Orchestra/Ella And Duke At The Cote d'Azur/2-09 The Trip (aka _High Passage_).m4a, http://dbtune.org/musicbrainz/resource/track/a8d3dbfd-2680-4b11-84ab-bbcf35526758)
   RepositoryTrack(10, PT2M11S, rdfs:label=Things Ain't What They Used to Be, Duke Ellington & His Orchestra/Ella And Duke At The Cote d'Azur/2-10 Things Ain't What They Used To Be.m4a, http://dbtune.org/musicbrainz/resource/track/493270f8-44d6-4f71-9451-078411077e52)
   RepositoryTrack(06, PT5M9S, rdfs:label=Tenderly, Louis Armstrong/Satchmo (2)/05 Tenderly.m4a, http://dbtune.org/musicbrainz/resource/track/04de7946-4588-40fb-bd02-3a6cbc415ec2)
+  RepositoryTrack(11, PT6M33S, rdfs:label=April in Paris, Ella Fitzgerald, Louis Armstrong/Unknown Album/April In Paris.mp3, http://dbtune.org/musicbrainz/resource/track/662e377a-dd22-4cb4-9b90-20e6a7f6d5d2)
   RepositoryTrack(04, PT3M28S, rdfs:label=Easy to Love, Ella Fitzgerald/The Cole Porter Songbook, Vol_/04 Easy To Love.mp3, http://dbtune.org/musicbrainz/resource/track/107713f7-1176-4f47-b42b-acc21bc5a4f2)
   RepositoryTrack(09, PT3M6S, rdfs:label=Night and Day, Ella Fitzgerald/Pure Ella/09 Night And Day.m4a, http://dbtune.org/musicbrainz/resource/track/8ad0a52f-1114-4483-b0f4-4bbc8aceaa83)
   RepositoryTrack(01, PT5M21S, rdfs:label=Rockin' in Rhythm, Ella Fitzgerald/Sings the Duke Ellington Songbook/1-01 Rockin' In Rhythm (1957 Version).m4a, http://dbtune.org/musicbrainz/resource/track/14eb3374-9418-4809-a5d4-5331890ac047)
@@ -7593,9 +7459,6 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Ella Fitzgerald & Joe Pass, uri=urn:b
   RepositoryTrack(07, PT3M59S, rdfs:label=Gee Baby, Ain't I Good to You, Ella Fitzgerald & Joe Pass/Take Love Easy/07 Gee Baby, Ain't I Good to You.m4p, urn:bluemarine:track:f49f70e052fe67626825cafd9c4f14101f6c3450)
   RepositoryTrack(09, PT3M24S, rdfs:label=I Want to Talk About You, Ella Fitzgerald & Joe Pass/Take Love Easy/09 I Want to Talk About You.m4p, urn:bluemarine:track:5735cc5ec85029f92350d19eb9d00e2602ad2d88)
 
-TRACKS OF RepositoryMusicArtist(rdfs:label=Ella Fitzgerald & Louis Armstrong, uri=http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499/eea8a864-fcda-4602-9569-38ab446decd6):
-  RepositoryTrack(11, PT6M33S, rdfs:label=April in Paris, Ella Fitzgerald, Louis Armstrong/Unknown Album/April In Paris.mp3, http://dbtune.org/musicbrainz/resource/track/662e377a-dd22-4cb4-9b90-20e6a7f6d5d2)
-
 TRACKS OF RepositoryMusicArtist(rdfs:label=Ella Fitzgerald & Oscar Peterson, uri=urn:bluemarine:artist:20096997340e3098a6340aa1eca4cadde35fe250):
   RepositoryTrack(03, PT4M41S, rdfs:label=Love You Madly, Ella Fitzgerald/Love Songs - Best of the Verve Songbooks/03 Love You Madly.m4p, urn:bluemarine:track:04edc5113471f5ab6392eb40588bce269be74430)
 
@@ -7797,8 +7660,10 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Frank Sinatra, uri=http://dbtune.org/
   RepositoryTrack(02, PT3M30S, rdfs:label=Dindi, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/02 Dindi.mp3, http://dbtune.org/musicbrainz/resource/track/f0856762-dc73-45ae-9a64-a399ea013de9)
   RepositoryTrack(03, PT2M43S, rdfs:label=Change Partners, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/03 Change Partners.mp3, http://dbtune.org/musicbrainz/resource/track/77002763-99e0-4d65-b426-3454a00bf602)
   RepositoryTrack(04, PT2M46S, rdfs:label=Quiet Nights of Quiet Stars, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/04 Quiet Nights Of Quiet Stars.mp3, http://dbtune.org/musicbrainz/resource/track/8b125ae8-a090-4242-8c18-00286afd7108)
+  RepositoryTrack(05, PT2M56S, rdfs:label=Meditation (Meditacào), Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/05 Meditation.mp3, http://dbtune.org/musicbrainz/resource/track/9432d427-3c92-44ec-b72e-51f2423f0d46)
   RepositoryTrack(06, PT2M12S, rdfs:label=If You Never Come to Me, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/06 If You Never Come To Me.mp3, http://dbtune.org/musicbrainz/resource/track/c4156e27-a65c-4a9f-bac6-95339f94b5d7)
   RepositoryTrack(07, PT3M18S, rdfs:label=How Insensitive, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/07 How Insensitive.mp3, http://dbtune.org/musicbrainz/resource/track/b675de69-d459-45cd-87e4-454e22cfaa30)
+  RepositoryTrack(08, PT2M40S, rdfs:label=I Concentrate On You, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/08 I Concentrate On You.mp3, http://dbtune.org/musicbrainz/resource/track/7e0894ff-9d90-49f5-8977-c7627279e3c6)
   RepositoryTrack(09, PT2M35S, rdfs:label=Baubles, Bangles and Beads, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/09 Baubles, Bangles And Beads.mp3, http://dbtune.org/musicbrainz/resource/track/87042ca5-2164-45c3-a76e-6196f013c302)
   RepositoryTrack(10, PT2M36S, rdfs:label=Once I Loved, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/10 Once I Loved.mp3, http://dbtune.org/musicbrainz/resource/track/d79d835a-6016-4751-84dc-9d2b9715f6b0)
   RepositoryTrack(17, PT2M17S, rdfs:label=I've Got a Crush on You, Compilations/The Capitol Years [Disc 3]/3-17 I've Got A Crush On You.mp3, http://dbtune.org/musicbrainz/resource/track/551bf496-f3ef-48aa-9510-3d7b010ab8cc)
@@ -7868,10 +7733,6 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Frank Sinatra, uri=urn:bluemarine:art
   RepositoryTrack(03, PT3M21S, rdfs:label=Stormy Weather, Frank Sinatra/No One Cares/03 Stormy Weather.m4p, urn:bluemarine:track:6d39fa64f4b3f5da0734af10c98ad40a8412d91f)
   RepositoryTrack(04, PT4M26S, rdfs:label=Ol' Man River, Frank Sinatra/The Concert Sinatra/04 Ol' Man River.m4a, urn:bluemarine:track:53a1a3432af38c8d61a64de6e94a3327517e2d0f)
   RepositoryTrack(07, PT2M45S, rdfs:label=This Nearly Was Mine, Frank Sinatra/The Concert Sinatra/07 This Nearly Was Mine.m4a, urn:bluemarine:track:d1475fffedb1c95a2ad5304f2d97e72e0b6f027b)
-
-TRACKS OF RepositoryMusicArtist(rdfs:label=Frank Sinatra & Antonio Carlos Jobim, uri=http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d/7a8dbe84-f4c0-4457-bfa3-edced1f8cde0):
-  RepositoryTrack(05, PT2M56S, rdfs:label=Meditation (Meditacào), Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/05 Meditation.mp3, http://dbtune.org/musicbrainz/resource/track/9432d427-3c92-44ec-b72e-51f2423f0d46)
-  RepositoryTrack(08, PT2M40S, rdfs:label=I Concentrate On You, Compilations/Francis Albert Sinatra & Antonio Carlos Jobim/08 I Concentrate On You.mp3, http://dbtune.org/musicbrainz/resource/track/7e0894ff-9d90-49f5-8977-c7627279e3c6)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Frantisek Macinka, uri=urn:bluemarine:artist:acc272d2290d4519ef8b3751e54815ef43f50bdc):
   RepositoryTrack(01, PT1M34S, rdfs:label=Maehrische Volkslieder, Frantisek Macinka/Musica Moravica/01 Maehrische Volkslieder.m4a, urn:bluemarine:track:3698b965c0c9bdfe9670ca1a2d1d499a1801e42b)
@@ -9194,16 +9055,16 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Louis Armstrong, uri=http://dbtune.or
   RepositoryTrack(12, PT2M18S, rdfs:label=Skokiann, Louis Armstrong/The Ultimate Collection/01 Skokiann.m4a, http://dbtune.org/musicbrainz/resource/track/3c975a53-2565-4507-a56d-b17680ef5900)
   RepositoryTrack(02, PT4M14S, rdfs:label=Gee, Baby, Ain't I Good to You?, Louis Armstrong/Satchmo (2)/01 Gee, Baby, Aint't I Good For You _.m4a, http://dbtune.org/musicbrainz/resource/track/7307bacb-7b15-4dff-819a-40324b654c8f)
   RepositoryTrack(15, PT3M35S, rdfs:label=Stars Fell on Alabama, Louis Armstrong/Satchmo (2)/10 Stars Feel On Alabama.m4a, http://dbtune.org/musicbrainz/resource/track/b6037ba2-bca8-44cc-adb1-b18999f8c581)
+  RepositoryTrack(01, PT2M20S, rdfs:label=What a Wonderful World, Louis Armstrong/Satchmo/10 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
+  RepositoryTrack(01, PT2M19S, rdfs:label=What a Wonderful World, Louis Armstrong/The Ultimate Collection/04 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
   RepositoryTrack(03, PT2M26S, rdfs:label=Hello Dolly, Louis Armstrong/Satchmo/03 Hello Dolly.m4a, http://dbtune.org/musicbrainz/resource/track/6e62dd8a-f3fd-4c9d-9fa1-e58f617da5b5)
   RepositoryTrack(07, PT3M12S, rdfs:label=When the Saints Go Marchin' In, Louis Armstrong/Satchmo/07 When The Saints Go Marchin' In.m4a, http://dbtune.org/musicbrainz/resource/track/7df5d2fd-9422-4346-b87f-fcb6cc017464)
+  RepositoryTrack(10, PT2M20S, rdfs:label=What a Wonderful World, Louis Armstrong/Satchmo/10 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
+  RepositoryTrack(10, PT2M19S, rdfs:label=What a Wonderful World, Louis Armstrong/The Ultimate Collection/04 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
   RepositoryTrack(14, PT5M13S, rdfs:label=Sweet Lorraine, Louis Armstrong/Satchmo/14 Sweet Lorraine.m4a, http://dbtune.org/musicbrainz/resource/track/0dab0db4-4369-4e99-bd8d-00387302f344)
   RepositoryTrack(17, PT4M43S, rdfs:label=Body and Soul, Louis Armstrong/Satchmo/17 Body And Soul.m4a, http://dbtune.org/musicbrainz/resource/track/f391e293-00ab-4ab3-9614-a23c46087a3d)
   RepositoryTrack(09, PT4M59S, rdfs:label=Summertime, Ella Fitzgerald & Louis Armstrong/Satchmo/05 Summertime.m4a, http://dbtune.org/musicbrainz/resource/track/5bb647b0-aac9-4581-8be8-ad7079fbb8f0)
   RepositoryTrack(09, PT4M5S, rdfs:label=We'll Be Togther Again, Louis Armstrong/Satchmo (2)/07 We'll Be Together Again.m4a, http://dbtune.org/musicbrainz/resource/track/4f35b589-0a26-4fab-824b-ab6418f1cee2)
-  RepositoryTrack(01, PT2M20S, rdfs:label=What a Wonderful World, Louis Armstrong/Satchmo/10 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
-  RepositoryTrack(01, PT2M19S, rdfs:label=What a Wonderful World, Louis Armstrong/The Ultimate Collection/04 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
-  RepositoryTrack(10, PT2M20S, rdfs:label=What a Wonderful World, Louis Armstrong/Satchmo/10 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
-  RepositoryTrack(10, PT2M19S, rdfs:label=What a Wonderful World, Louis Armstrong/The Ultimate Collection/04 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
   RepositoryTrack(16, PT3M6S, rdfs:label=Georgia on My Mind, Louis Armstrong/The Ultimate Collection/03 Georgia On My Mind.m4a, http://dbtune.org/musicbrainz/resource/track/50e5b6a5-20cb-432a-ae7d-427ceaecaa83)
   RepositoryTrack(01, PT4M54S, rdfs:label=Nobody Knows the Trouble I've Seen, Louis Armstrong/Satchmo (2)/09 Nobody Knows The Trouble I've Seen.m4a, http://dbtune.org/musicbrainz/resource/track/7175aecb-830f-4c7e-8622-476d03712873)
   RepositoryTrack(08, PT4M17S, rdfs:label=Stormy Weather, Louis Armstrong/Satchmo (2)/12 Stormy Weather.m4a, http://dbtune.org/musicbrainz/resource/track/e305924c-1f52-4c6c-9c0c-02b1a3bd5455)
@@ -9606,78 +9467,6 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Miles Davis, uri=urn:bluemarine:artis
   RepositoryTrack(05, PT9M26S, rdfs:label=Flamenco Sketches, Miles Davis/Kind Of Blue - The Miles Davis Story/05 Flamenco Sketches 1.m4p, urn:bluemarine:track:9869b166ca079b35c9eed801a5c1f27b0abd0710)
   RepositoryTrack(06, PT9M31S, rdfs:label=Flamenco Sketches (Alternate Take), Miles Davis/Kind Of Blue - The Miles Davis Story/06 Flamenco Sketches (Alternate Take) 1.m4p, urn:bluemarine:track:ab564c33b4f040b1e787829fcbbd6137a374ecda)
 
-TRACKS OF RepositoryMusicArtist(rdfs:label=Miles Davis & Gil Evans, uri=http://dbtune.org/musicbrainz/resource/artist/561d854a-6a28-4aa7-8c99-323e6ce46c2a):
-  RepositoryTrack(01, PT3M27S, rdfs:label=Springsville, Miles Davis/Miles Ahead/01 Springsville.m4a, http://dbtune.org/musicbrainz/resource/track/a98a13d5-c7e0-4cf7-be16-5c9265f73279)
-  RepositoryTrack(01, PT5M55S, rdfs:label='Round Midnight, Miles Davis/'Round About Midnight (Legacy Edition)/1-01 'Round Midnight.m4a, http://dbtune.org/musicbrainz/resource/track/0ba4f516-252b-45cd-a6b5-1de7bf843769)
-  RepositoryTrack(01, PT5M57S, rdfs:label='Round Midnight, Compilations/The Essential Miles Davis [Disc 1]/1-06 'Round Midnight.m4a, http://dbtune.org/musicbrainz/resource/track/0ba4f516-252b-45cd-a6b5-1de7bf843769)
-  RepositoryTrack(02, PT5M50S, rdfs:label=Ah-Leu-Cha, Miles Davis/'Round About Midnight (Legacy Edition)/1-02 Ah-Leu-Cha.m4a, http://dbtune.org/musicbrainz/resource/track/def38491-024d-46f3-aec4-42a23b3b64f3)
-  RepositoryTrack(03, PT7M, rdfs:label=All of You, Miles Davis/'Round About Midnight (Legacy Edition)/1-03 All Of You.m4a, http://dbtune.org/musicbrainz/resource/track/b2d096c1-8ccb-44cf-baf0-97e7fe0dc38e)
-  RepositoryTrack(04, PT7M54S, rdfs:label=Bye Bye Blackbird, Miles Davis/'Round About Midnight (Legacy Edition)/1-04 Bye Bye Blackbird.m4a, http://dbtune.org/musicbrainz/resource/track/f850b86a-55d2-41c5-8c4a-e9594cba6ba0)
-  RepositoryTrack(05, PT4M26S, rdfs:label=Tadd's Delight, Miles Davis/'Round About Midnight (Legacy Edition)/1-05 Tadd's Delight (Alternate Take).m4a, http://dbtune.org/musicbrainz/resource/track/d02625e0-3656-437a-9d6b-4315e3af72f5)
-  RepositoryTrack(06, PT5M55S, rdfs:label='Round Midnight, Miles Davis/'Round About Midnight (Legacy Edition)/1-01 'Round Midnight.m4a, http://dbtune.org/musicbrainz/resource/track/0ba4f516-252b-45cd-a6b5-1de7bf843769)
-  RepositoryTrack(06, PT5M57S, rdfs:label='Round Midnight, Compilations/The Essential Miles Davis [Disc 1]/1-06 'Round Midnight.m4a, http://dbtune.org/musicbrainz/resource/track/0ba4f516-252b-45cd-a6b5-1de7bf843769)
-  RepositoryTrack(06, PT7M48S, rdfs:label=Dear Old Stockholm, Miles Davis/'Round About Midnight (Legacy Edition)/1-06 Dear Old Stockholm.m4a, http://dbtune.org/musicbrainz/resource/track/8bb7b63c-9188-4e63-8192-16ae289a3ada)
-  RepositoryTrack(07, PT7M55S, rdfs:label=Bye Bye Blackbird, Compilations/The Essential Miles Davis [Disc 1]/1-07 Bye Bye Blackbird.m4a, http://dbtune.org/musicbrainz/resource/track/14b4271d-9aa5-4e12-92bc-741b8b2cd2e1)
-  RepositoryTrack(07, PT3M42S, rdfs:label=Two Bass Hit, Miles Davis/'Round About Midnight (Legacy Edition)/1-07 Two Bass Hit.m4a, http://dbtune.org/musicbrainz/resource/track/a3a99921-dead-485d-9599-c860e822ceee)
-  RepositoryTrack(10, PT3M40S, rdfs:label=Sweet Sue, Just You, Miles Davis/'Round About Midnight (Legacy Edition)/1-10 Sweet Sue, Just You.m4a, http://dbtune.org/musicbrainz/resource/track/3a76abae-d343-4781-ab47-710dde108bf1)
-  RepositoryTrack(01, PT5M59S, rdfs:label='Round Midnight, Miles Davis/'Round About Midnight (Legacy Edition)/2-01 'Round Midnight (Live).m4a, http://dbtune.org/musicbrainz/resource/track/823f4210-3ebb-4737-ac1c-3bc0f692b84a)
-  RepositoryTrack(02, PT1M35S, rdfs:label=[introduction by Gene Norman], Miles Davis/'Round About Midnight (Legacy Edition)/2-02 Introduction by Gene Norman (Live).m4a, http://dbtune.org/musicbrainz/resource/track/0678f77a-1c77-476e-8d0d-2a8ba0fe7227)
-  RepositoryTrack(03, PT4M33S, rdfs:label=Chance It (a.k.a. Max Is Making Wax), Miles Davis/'Round About Midnight (Legacy Edition)/2-03 Chance It (aka Max Is Making Wax) [Live].m4a, http://dbtune.org/musicbrainz/resource/track/a84b472f-3bc2-458f-b1e2-a1ec9357203f)
-  RepositoryTrack(04, PT10M2S, rdfs:label=Walkin', Miles Davis/'Round About Midnight (Legacy Edition)/2-04 Walkin' (Live).m4a, http://dbtune.org/musicbrainz/resource/track/67fd338c-4ca5-48d0-b20c-1e1fda929e0c)
-  RepositoryTrack(05, PT27S, rdfs:label=Gene Norman & Miles Davis, Miles Davis/'Round About Midnight (Legacy Edition)/2-05 Gene Norman & Miles Davis (Live).m4a, http://dbtune.org/musicbrainz/resource/track/a4db3902-d5d9-4554-9bd4-bdc8e03b030f)
-  RepositoryTrack(06, PT5M17S, rdfs:label=It Never Entered My Mind, Miles Davis/'Round About Midnight (Legacy Edition)/2-06 It Never Entered My Mind (Live).m4a, http://dbtune.org/musicbrainz/resource/track/ba7652d8-27f1-4713-985c-ceae7d651cd7)
-  RepositoryTrack(07, PT5M46S, rdfs:label=Woody 'n You, Miles Davis/'Round About Midnight (Legacy Edition)/2-07 Woody 'N You (Live).m4a, http://dbtune.org/musicbrainz/resource/track/7ab1dc7a-ad7e-4264-9f9a-35c1c2ce6c56)
-  RepositoryTrack(08, PT4M33S, rdfs:label=Salt Peanuts, Miles Davis/'Round About Midnight (Legacy Edition)/2-08 Salt Peanuts (Live).m4a, http://dbtune.org/musicbrainz/resource/track/4b4169d4-76b0-47c9-bf05-790084d4868f)
-  RepositoryTrack(09, PT27S, rdfs:label=The Theme, Miles Davis/'Round About Midnight (Legacy Edition)/2-09 The Theme (Live).m4a, http://dbtune.org/musicbrainz/resource/track/cc1f72f5-fc68-4e7a-89f7-d6a2c534792e)
-  RepositoryTrack(01, PT9M51S, rdfs:label=On Green Dolphin Street, Miles Davis/'58 Sessions/01 On Green Dolphin Street.m4a, http://dbtune.org/musicbrainz/resource/track/c6b724c8-fe32-47eb-965e-3dbc02be53cf)
-  RepositoryTrack(02, PT5M51S, rdfs:label=Fran Dance, Miles Davis/'58 Sessions/02 Fran Dance.m4a, http://dbtune.org/musicbrainz/resource/track/8a1e3906-d68d-4085-88b1-6c3768a00ec4)
-  RepositoryTrack(03, PT4M44S, rdfs:label=Stella by Starlight, Miles Davis/'58 Sessions/03 Stella By Starlight.m4a, http://dbtune.org/musicbrainz/resource/track/c7adfbed-16e0-4c91-a41d-8fcf2afeb664)
-  RepositoryTrack(04, PT11M46S, rdfs:label=Love for Sale, Miles Davis/'58 Sessions/04 Love For Sale.m4a, http://dbtune.org/musicbrainz/resource/track/6f21a232-ed6c-4fe2-93e5-f9e4cc881e14)
-  RepositoryTrack(05, PT11M5S, rdfs:label=Straight, No Chaser, Miles Davis/'58 Sessions/05 Straight, No Chaser.m4a, http://dbtune.org/musicbrainz/resource/track/05647383-38dc-4cb7-b7c2-0ad723159b53)
-  RepositoryTrack(06, PT10M12S, rdfs:label=My Funny Valentine, Miles Davis/'58 Sessions/06 My Funny Valentine.m4a, http://dbtune.org/musicbrainz/resource/track/2bc42d93-f3ad-4681-bb47-5b349caea448)
-  RepositoryTrack(07, PT10M49S, rdfs:label=Oleo, Miles Davis/'58 Sessions/07 Oleo.m4a, http://dbtune.org/musicbrainz/resource/track/cb8abb88-957a-4675-b22c-407e30bdde64)
-  RepositoryTrack(02, PT3M13S, rdfs:label=Jeru, Compilations/The Essential Miles Davis [Disc 1]/1-02 Jeru.m4a, http://dbtune.org/musicbrainz/resource/track/8b349e4f-dc7a-4eb0-84b9-924554dea663)
-  RepositoryTrack(02, PT5M30S, rdfs:label=E.S.P., Compilations/The Essential Miles Davis [Disc 2]/2-02 E.S.P..m4a, http://dbtune.org/musicbrainz/resource/track/60044ad0-cc9e-4753-9903-bfeaf6e3a12c)
-  RepositoryTrack(04, PT8M7S, rdfs:label=Petits Machins (Little Stuff), Compilations/The Essential Miles Davis [Disc 2]/2-04 Petits Machins (Little Stuff).m4a, http://dbtune.org/musicbrainz/resource/track/004f4875-ef73-4587-ac06-2317ca868a69)
-  RepositoryTrack(11, PT9M23S, rdfs:label=So What, Compilations/The Essential Miles Davis [Disc 1]/1-11 So What.m4a, http://dbtune.org/musicbrainz/resource/track/272dbf93-1501-4650-bbde-627ff0588a73)
-  RepositoryTrack(06, PT8M50S, rdfs:label=So What, Miles Davis_John Coltrane/Live in New York/07 So What.mp3, http://dbtune.org/musicbrainz/resource/track/066a6f20-71b9-454e-bb0a-05def21ea66b)
-  RepositoryTrack(02, PT3M53S, rdfs:label=The Maids of Cadiz, Miles Davis/Miles Ahead/02 The Maids Of Cadiz.m4a, http://dbtune.org/musicbrainz/resource/track/e2e4fbe4-8763-4664-b2de-82ad88286d07)
-  RepositoryTrack(03, PT3M34S, rdfs:label=The Duke, Miles Davis/Miles Ahead/03 The Duke.m4a, http://dbtune.org/musicbrainz/resource/track/d93ea961-ded2-435f-8833-2894e2f0ab4a)
-  RepositoryTrack(04, PT4M27S, rdfs:label=My Ship, Miles Davis/Miles Ahead/04 My Ship.m4a, http://dbtune.org/musicbrainz/resource/track/478f91b9-2522-4d65-91e9-d21de1d46126)
-  RepositoryTrack(05, PT3M29S, rdfs:label=Miles Ahead, Miles Davis/Miles Ahead/05 Miles Ahead.m4a, http://dbtune.org/musicbrainz/resource/track/d05254e6-a08a-4552-8e32-a017f91d56ab)
-  RepositoryTrack(06, PT5M18S, rdfs:label=Blues for Pablo, Miles Davis/Miles Ahead/06 Blues For Pablo.m4a, http://dbtune.org/musicbrainz/resource/track/c409641a-e1ad-4ae4-b321-b49ab968afe6)
-  RepositoryTrack(07, PT4M37S, rdfs:label=New Rhumba, Compilations/The Essential Miles Davis [Disc 1]/1-08 New Rhumba.m4a, http://dbtune.org/musicbrainz/resource/track/c0767727-10e3-4776-863b-ed2f45e505cd)
-  RepositoryTrack(07, PT4M36S, rdfs:label=New Rhumba, Miles Davis/Miles Ahead/07 New Rhumba.m4a, http://dbtune.org/musicbrainz/resource/track/c0767727-10e3-4776-863b-ed2f45e505cd)
-  RepositoryTrack(08, PT4M37S, rdfs:label=New Rhumba, Compilations/The Essential Miles Davis [Disc 1]/1-08 New Rhumba.m4a, http://dbtune.org/musicbrainz/resource/track/c0767727-10e3-4776-863b-ed2f45e505cd)
-  RepositoryTrack(08, PT4M36S, rdfs:label=New Rhumba, Miles Davis/Miles Ahead/07 New Rhumba.m4a, http://dbtune.org/musicbrainz/resource/track/c0767727-10e3-4776-863b-ed2f45e505cd)
-  RepositoryTrack(08, PT2M48S, rdfs:label=The Meaning of the Blues, Miles Davis/Miles Ahead/08 The Meaning Of The Blues.m4a, http://dbtune.org/musicbrainz/resource/track/7b339839-b2ab-4a58-ae66-fdc609861250)
-  RepositoryTrack(09, PT2M14S, rdfs:label=Lament, Miles Davis/Miles Ahead/09 Lament.m4a, http://dbtune.org/musicbrainz/resource/track/8278d578-9a79-46c6-9b65-7de3c1620dac)
-  RepositoryTrack(10, PT3M11S, rdfs:label=I Don't Wanna be Kissed (By Anyone But You), Miles Davis/Miles Ahead/10 I Don't Wanna Be Kissed (By Anyone But You).m4a, http://dbtune.org/musicbrainz/resource/track/61ed181c-2b07-49a9-ade8-6fcd19ba4c46)
-  RepositoryTrack(11, PT3M16S, rdfs:label=Springsville (take 7), Miles Davis/Miles Ahead/11 Springsville (Alternate Take).m4a, http://dbtune.org/musicbrainz/resource/track/3d65e2fd-f636-4844-bd6f-b76cbf54074e)
-  RepositoryTrack(12, PT3M32S, rdfs:label=Blues for Pablo (take 1), Miles Davis/Miles Ahead/12 Blues For Pablo (Alternate Take).m4a, http://dbtune.org/musicbrainz/resource/track/4ab22d80-c9a9-4f7a-a903-10443c49c850)
-  RepositoryTrack(13, PT5M9S, rdfs:label=The Meaning of the Blues/Lament (rehearsal), Miles Davis/Miles Ahead/13 The Meaning Of The Blues_Lament (Alternate Take).m4a, http://dbtune.org/musicbrainz/resource/track/e2a91c6e-627e-45be-865f-d8619cef5bb6)
-  RepositoryTrack(14, PT3M12S, rdfs:label=I Don't Wanna be Kissed (By Anyone But You) (alternate), Miles Davis/Miles Ahead/14 I Don't Wanna Be Kissed (By Anyone But You) (Alternate Take).m4a, http://dbtune.org/musicbrainz/resource/track/122efa85-e5d2-45a7-b9f2-7fe4031578a5)
-  RepositoryTrack(01, PT5M58S, rdfs:label=My Funny Valentine, Miles Davis/Unknown Album/My Funny Valentine.mp3, http://dbtune.org/musicbrainz/resource/track/f2b799f0-8937-4906-bb12-29af29db8a9d)
-  RepositoryTrack(08, PT7M19S, rdfs:label=Little Melonae, Miles Davis/'Round About Midnight (Legacy Edition)/1-08 Little Melonae.m4a, http://dbtune.org/musicbrainz/resource/track/827cf499-2ced-4d6c-b3f3-0f62578aa9b6)
-  RepositoryTrack(09, PT4M14S, rdfs:label=Budo, Miles Davis/'Round About Midnight (Legacy Edition)/1-09 Budo.m4a, http://dbtune.org/musicbrainz/resource/track/cf9216b6-38b7-4be6-a4bd-853dfedc625c)
-  RepositoryTrack(03, PT7M53S, rdfs:label=Nefertiti, Compilations/The Essential Miles Davis [Disc 2]/2-03 Nefertiti.m4a, http://dbtune.org/musicbrainz/resource/track/42fb0fa9-e168-4437-972d-321ca6607709)
-  RepositoryTrack(12, PT3M53S, rdfs:label=The Pan Piper, Compilations/The Essential Miles Davis [Disc 1]/1-12 The Pan Piper.m4a, http://dbtune.org/musicbrainz/resource/track/3032f703-3a8a-405a-8130-1288cf563583)
-  RepositoryTrack(07, PT8M54S, rdfs:label=Masqualero, Miles Davis, Wayne Shorter, Herbie Hancock, Ron Carter, Tony Williams/Unknown Album/Masqualero.mp3, http://dbtune.org/musicbrainz/resource/track/b958bf7a-514c-409b-9b81-6e726ab9cbd0)
-  RepositoryTrack(01, PT3M17S, rdfs:label=Now's the Time, Compilations/The Essential Miles Davis [Disc 1]/1-01 Now's The Time.m4a, http://dbtune.org/musicbrainz/resource/track/37e84bc8-c21f-4612-be90-82fa92722a08)
-  RepositoryTrack(03, PT5M45S, rdfs:label=Compulsion, Compilations/The Essential Miles Davis [Disc 1]/1-03 Compulsion.m4a, http://dbtune.org/musicbrainz/resource/track/14abae14-1842-4faa-a6ca-c6a210d08ed3)
-  RepositoryTrack(04, PT3M51S, rdfs:label=Tempus Fugit, Compilations/The Essential Miles Davis [Disc 1]/1-04 Tempus Fugit.m4a, http://dbtune.org/musicbrainz/resource/track/c33e9e9d-e52a-44ba-9b94-ea25b8a08776)
-  RepositoryTrack(09, PT2M48S, rdfs:label=Generique, Compilations/The Essential Miles Davis [Disc 1]/1-09 Generique.m4a, http://dbtune.org/musicbrainz/resource/track/4f935330-6b98-4d87-8d3a-b14101563eff)
-  RepositoryTrack(10, PT3M20S, rdfs:label=Summertime, Compilations/The Essential Miles Davis [Disc 1]/1-10 Summertime.m4a, http://dbtune.org/musicbrainz/resource/track/4591782f-7978-4b57-91ce-4344f56ad425)
-  RepositoryTrack(13, PT9M4S, rdfs:label=Someday My Prince Will Come, Compilations/The Essential Miles Davis [Disc 1]/1-13 Someday My Prince Will Come.m4a, http://dbtune.org/musicbrainz/resource/track/66711188-fbd9-4068-8291-7b611a0557f1)
-  RepositoryTrack(01, PT15M7S, rdfs:label=My Funny Valentine, Compilations/The Essential Miles Davis [Disc 2]/2-01 My Funny Valentine [Live].m4a, http://dbtune.org/musicbrainz/resource/track/514f36af-90e2-49c5-b71a-aabba35b1189)
-  RepositoryTrack(05, PT14M3S, rdfs:label=Miles Runs the Voodoo Down, Compilations/The Essential Miles Davis [Disc 2]/2-05 Miles Runs The Voodoo Down.m4a, http://dbtune.org/musicbrainz/resource/track/701c40b1-a327-41e2-9486-e08ac8c8f914)
-  RepositoryTrack(06, PT3M16S, rdfs:label=Little Church, Compilations/The Essential Miles Davis [Disc 2]/2-06 Little Church.m4a, http://dbtune.org/musicbrainz/resource/track/0b1a4aeb-28ac-4761-b109-21af7fa2fef5)
-  RepositoryTrack(07, PT5M16S, rdfs:label=Black Satin, Compilations/The Essential Miles Davis [Disc 2]/2-07 Black Satin.m4a, http://dbtune.org/musicbrainz/resource/track/0ee7bdf1-ab1d-4ce6-9873-bccae04f13f6)
-  RepositoryTrack(08, PT4M3S, rdfs:label=Jean Pierre, Compilations/The Essential Miles Davis [Disc 2]/2-08 Jean Pierre.m4a, http://dbtune.org/musicbrainz/resource/track/cec0dc07-2498-473f-a0dc-637ae2831016)
-  RepositoryTrack(10, PT6M18S, rdfs:label=Portia, Compilations/The Essential Miles Davis [Disc 2]/2-10 Portia.m4a, http://dbtune.org/musicbrainz/resource/track/df7d7beb-989b-4005-9936-2c88e3d9c925)
-  RepositoryTrack(05, PT13M27S, rdfs:label=Walkin', Compilations/The Essential Miles Davis [Disc 1]/1-05 Walkin'.m4a, http://dbtune.org/musicbrainz/resource/track/90594a26-0d5b-4053-8e2a-7c05b9c5a447)
-  RepositoryTrack(09, PT3M40S, rdfs:label=Time After Time, Compilations/The Essential Miles Davis [Disc 2]/2-09 Time After Time.m4a, http://dbtune.org/musicbrainz/resource/track/75c22a92-caa2-4e2b-aee9-f5a285b70d8f)
-
 TRACKS OF RepositoryMusicArtist(rdfs:label=Mina, uri=http://dbtune.org/musicbrainz/resource/artist/a56f5af0-3e87-4877-b68f-390f62903381):
   RepositoryTrack(10, PT2M55S, rdfs:label=Il cielo in una stanza, Mina/I miti in musica/Il cielo in una stanza.mp3, http://dbtune.org/musicbrainz/resource/track/80cfad2c-fb82-470d-af8d-6a17cb3804fe)
   RepositoryTrack(01, PT3M48S, rdfs:label=Something, Mina/Mina Canta I Beatles/01 Something (1993 Version) (2001 Digital Remaster).mp3, http://dbtune.org/musicbrainz/resource/track/fcc3d139-398d-4e3d-b599-75df18c8218c)
@@ -9912,16 +9701,6 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Niccolò Paganini, uri=http://dbtune.
   RepositoryTrack(22, PT2M18S, rdfs:label=Marcato in F major - Paganini, Shlomo Mintz/Paganini_ 24 Caprices, Op. 1/22 Paganini_ 24 Caprices, Op. 1 - Capriccio #22 In F.m4a, http://dbtune.org/musicbrainz/resource/track/765588ca-892d-4d88-b403-1971f50a6d39)
   RepositoryTrack(23, PT3M35S, rdfs:label=Posato in E flat major - Paganini, Shlomo Mintz/Paganini_ 24 Caprices, Op. 1/23 Paganini_ 24 Caprices, Op. 1 - Capriccio #23 In E Flat.m4a, http://dbtune.org/musicbrainz/resource/track/c72167c6-2511-45b0-ae13-c6d7451cc997)
   RepositoryTrack(24, PT6M19S, rdfs:label=Tema, Quasi Presto - Variazioni - Finale in A minor - Paganini, Shlomo Mintz/Paganini_ 24 Caprices, Op. 1/24 Paganini_ 24 Caprices, Op. 1 - Capriccio #24 In A Minor.m4a, http://dbtune.org/musicbrainz/resource/track/e76b7bc9-2613-41fa-a625-357c7fa2025e)
-
-TRACKS OF RepositoryMusicArtist(rdfs:label=Nikolai Rimsky-Korsakow, uri=http://dbtune.org/musicbrainz/resource/artist/4cfe7051-f649-4d07-83b3-7a732abe7249):
-  RepositoryTrack(16, PT12M26S, rdfs:label=Russian Easter Festival Overture, Op. 36, Claudio Abbado_ London Symphony Orchestra/Maurice Ravel_ Tzigane - Sheherazade - La Valse/08 Ravel_ La Valse.m4a, http://dbtune.org/musicbrainz/resource/track/a7d40c34-5f3e-4c9d-b929-717e449dd71f)
-  RepositoryTrack(01, PT10M32S, rdfs:label=Scheherazade, op. 35: Largo e maestoso, Compilations/Rimsky-Korsakov_ Scheherazade/01 Rimsky-Korsakov_ Scheherazade, Op. 35 - 1. The Sea & Sinbad's Ship.m4a, http://dbtune.org/musicbrainz/resource/track/7b0d9d97-e452-403d-ba08-92a09c8232c0)
-  RepositoryTrack(02, PT11M43S, rdfs:label=Scheherazade, op. 35: Lento - Andantino, Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.m4a, http://dbtune.org/musicbrainz/resource/track/39164144-01f1-4be7-af98-0d674e1b0a0a)
-  RepositoryTrack(03, PT10M20S, rdfs:label=Scheherazade, op. 35: Andantino quasi allegretto, Compilations/Rimsky-Korsakov_ Scheherazade/03 Rimsky-Korsakov_ Scheherazade, Op. 35 - 3. The Young Prince & The Young Princess.m4a, http://dbtune.org/musicbrainz/resource/track/0468e4e8-2f60-492d-89f8-95d6c0594773)
-  RepositoryTrack(04, PT12M59S, rdfs:label=Scheherazade, op. 35: Allegro molto, Compilations/Rimsky-Korsakov_ Scheherazade/04 Rimsky-Korsakov_ Scheherazade, Op. 35 - 4. Festival At Baghdad, The Sea, Shipwreck.m4a, http://dbtune.org/musicbrainz/resource/track/b75b2e94-6f2e-482c-a6b9-076adb1f5841)
-  RepositoryTrack(01, PT10M29S, rdfs:label=Sheherazade, Op. 35: I. The Sea and Sinbad's Ship, St Petersburg Kirov Orchestra & Valery Gergiev/Rimsky-Korsakov_ Scheherazade/01 Scheherazade, Op. 35_ The Sea and Sinbad's Ship.m4a, http://dbtune.org/musicbrainz/resource/track/1f0399dc-082e-4ee0-b15d-84d412f53641)
-  RepositoryTrack(02, PT12M25S, rdfs:label=Sheherazade, Op. 35: II. The Story Of The Kalendar Prince, St Petersburg Kirov Orchestra & Valery Gergiev/Rimsky-Korsakov_ Scheherazade/02 Scheherazade, Op. 35_ The Story of the Calender Prince.m4a, http://dbtune.org/musicbrainz/resource/track/e752b6c3-6f19-413e-a07a-5e43dbcc79ad)
-  RepositoryTrack(03, PT11M, rdfs:label=Sheherazade, Op. 35: III. The Young Prince And Princess, St Petersburg Kirov Orchestra & Valery Gergiev/Rimsky-Korsakov_ Scheherazade/03 Scheherazade, Op. 35_ The Young Prince and the Young Princess.m4a, http://dbtune.org/musicbrainz/resource/track/0b98d30f-6e6a-4479-93d7-2d8b07940aee)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Nikolaus Harnoncourt: Concentus Musicus Wien, Arnold Schoenberg Choir, uri=urn:bluemarine:artist:c4b7f779c69c63cbda346ddb2f6c6343d2549856):
   RepositoryTrack(01, PT10M31S, rdfs:label=Bach: Mass In B Minor, BWV 232 - Kyrie: Kyrie Eleison 1, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-01 Bach_ Mass In B Minor, BWV 232 - Kyrie_ Kyrie Eleison 1.m4a, urn:bluemarine:track:2820210fd1a9c0bec2580fdd0e9347581dbea62a)
@@ -11259,15 +11038,11 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=http://dbtune.org/music
   RepositoryTrack(06, PT2M46S, rdfs:label=The Tao of Love, Vangelis/Themes/06 The Tao Of Love.m4a, http://dbtune.org/musicbrainz/resource/track/f2428773-e2d5-4160-b910-467f7f1dcbff)
   RepositoryTrack(05, PT3M33S, rdfs:label=Chariots of Fire, Vangelis/Themes/14 Chariots Of Fire.m4a, http://dbtune.org/musicbrainz/resource/track/1844dd2e-4939-4086-b845-2bcb87070252)
   RepositoryTrack(01, PT1M28S, rdfs:label=Apocalypse des animaux - Générique, Vangelis/L'Apocalypse Des Animaux/01 Apocalypse Des Animaux - Generique.mp3, http://dbtune.org/musicbrainz/resource/track/8e327efc-429e-42a1-b96f-97a0ccba5521)
-  RepositoryTrack(02, PT6M, rdfs:label=La Petite Fille de la mer, Vangelis/L'Apocalypse Des Animaux/02 La Petite Fille De La Mer.mp3, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
-  RepositoryTrack(02, PT5M54S, rdfs:label=La Petite Fille de la mer, Vangelis/Themes/12 La Petite Fille De La Mer.m4a, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
   RepositoryTrack(03, PT7M41S, rdfs:label=Le Singe bleu, Vangelis/L'Apocalypse Des Animaux/03 Le Single Bleu.mp3, http://dbtune.org/musicbrainz/resource/track/bfecae7b-00cc-4d16-9028-480c6ae303c7)
   RepositoryTrack(04, PT3M7S, rdfs:label=La Mort du loup, Vangelis/L'Apocalypse Des Animaux/04 La Mort Du Loup.mp3, http://dbtune.org/musicbrainz/resource/track/406de607-761c-4d68-ac50-3c4cfdd94d8f)
   RepositoryTrack(05, PT1M5S, rdfs:label=L'Ours musicien, Vangelis/L'Apocalypse Des Animaux/05 L'ours Musicien.mp3, http://dbtune.org/musicbrainz/resource/track/258473ff-003a-4601-a25c-11953bbbc20b)
   RepositoryTrack(06, PT10M7S, rdfs:label=Création du monde, Vangelis/L'Apocalypse Des Animaux/06 Creation Du Monde.mp3, http://dbtune.org/musicbrainz/resource/track/6396d090-9676-4888-982f-adc01c0e99f5)
   RepositoryTrack(07, PT5M56S, rdfs:label=La Mer recommencée, Vangelis/L'Apocalypse Des Animaux/07 La Mer Recommencée.mp3, http://dbtune.org/musicbrainz/resource/track/b99bd3c5-b639-4e73-a56f-599dba13e06b)
-  RepositoryTrack(12, PT6M, rdfs:label=La Petite Fille de la mer, Vangelis/L'Apocalypse Des Animaux/02 La Petite Fille De La Mer.mp3, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
-  RepositoryTrack(12, PT5M54S, rdfs:label=La Petite Fille de la mer, Vangelis/Themes/12 La Petite Fille De La Mer.m4a, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
   RepositoryTrack(11, PT5M44S, rdfs:label=Memories of Green, Vangelis/Themes/11 Memories Of Green.m4a, http://dbtune.org/musicbrainz/resource/track/349101b9-0570-4859-9ad7-f939ea4e68ab)
   RepositoryTrack(01, PT18M32S, rdfs:label=Movement 1, Vangelis/Soil Festivities/01 Soil Festivities_ Movement 1.m4p, http://dbtune.org/musicbrainz/resource/track/e37e8e6c-9e3a-4f13-a3fa-48b216ae7050)
   RepositoryTrack(02, PT6M20S, rdfs:label=Movement 2, Vangelis/Soil Festivities/02 Soil Festivities_ Movement 2.m4a, http://dbtune.org/musicbrainz/resource/track/b3ee8722-7a20-4d56-b071-317689648ae0)
@@ -11276,6 +11051,8 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=http://dbtune.org/music
   RepositoryTrack(05, PT7M20S, rdfs:label=Movement 5, Vangelis/Soil Festivities/05 Soil Festivities_ Movement 5.m4a, http://dbtune.org/musicbrainz/resource/track/09e6f33f-3c17-4662-84f9-465edf3d180c)
   RepositoryTrack(11, PT4M49S, rdfs:label=China, Vangelis/Virtual Reality/China.mp3, http://dbtune.org/musicbrainz/resource/track/f239dbd7-d8ee-4b5c-9fd8-e83b1f59b309)
   RepositoryTrack(01, PT5M1S, rdfs:label=End Titles From "Blade Runner", Vangelis/Themes/01 End Titles From Blade Runner.m4a, http://dbtune.org/musicbrainz/resource/track/24f9f6b5-aa9f-486c-ae6a-161932aaa519)
+  RepositoryTrack(02, PT6M, rdfs:label=La Petite Fille de la mer, Vangelis/L'Apocalypse Des Animaux/02 La Petite Fille De La Mer.mp3, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
+  RepositoryTrack(02, PT5M54S, rdfs:label=La Petite Fille de la mer, Vangelis/Themes/12 La Petite Fille De La Mer.m4a, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
   RepositoryTrack(02, PT4M1S, rdfs:label=Main Theme From "Missing", Vangelis/Themes/02 Main Theme From Missing.m4a, http://dbtune.org/musicbrainz/resource/track/f7a37ed9-6511-4d3e-a216-c794c4a16391)
   RepositoryTrack(03, PT5M2S, rdfs:label=L'enfant, Vangelis/Themes/03 L'Enfant.m4a, http://dbtune.org/musicbrainz/resource/track/562f5479-35e9-4f84-9fca-b9ab005142e8)
   RepositoryTrack(04, PT2M47S, rdfs:label=Hymn, Vangelis/Themes/04 Hymn.m4a, http://dbtune.org/musicbrainz/resource/track/94b07470-a938-400d-bdaa-762ba4ef0a13)
@@ -11284,6 +11061,8 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=http://dbtune.org/music
   RepositoryTrack(08, PT5M, rdfs:label=Love Theme From "Blade Runner", Vangelis/Themes/08 Love Theme From Blade Runner.m4a, http://dbtune.org/musicbrainz/resource/track/431c038c-b7d0-4b00-8eb9-a36a11e1e721)
   RepositoryTrack(09, PT4M18S, rdfs:label=Opening Titles From "The Bounty", Vangelis/Themes/09 Opening Titles From The Bounty.m4a, http://dbtune.org/musicbrainz/resource/track/9af095cb-eddd-40f8-98cf-6e883ee57c28)
   RepositoryTrack(10, PT5M, rdfs:label=Closing Titles From "The Bounty", Vangelis/Themes/10 Closing Titles From The Bounty.m4a, http://dbtune.org/musicbrainz/resource/track/989c22f7-745d-46e1-a56f-b1ef7777c548)
+  RepositoryTrack(12, PT6M, rdfs:label=La Petite Fille de la mer, Vangelis/L'Apocalypse Des Animaux/02 La Petite Fille De La Mer.mp3, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
+  RepositoryTrack(12, PT5M54S, rdfs:label=La Petite Fille de la mer, Vangelis/Themes/12 La Petite Fille De La Mer.m4a, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
   RepositoryTrack(13, PT5M20S, rdfs:label=Five Circles, Vangelis/Themes/13 Five Circles.m4a, http://dbtune.org/musicbrainz/resource/track/0d3995f0-fbcc-4cc9-9f32-35402a325bac)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=urn:bluemarine:artist:3aaced5008289e60b00a589e3e258abb08725493):
@@ -14063,12 +13842,6 @@ TRACKS IN RepositoryRecord(rdfs:label=L'Apocalypse des animaux, http://dbtune.or
   RepositoryTrack(06, PT10M7S, rdfs:label=Création du monde, Vangelis/L'Apocalypse Des Animaux/06 Creation Du Monde.mp3, http://dbtune.org/musicbrainz/resource/track/6396d090-9676-4888-982f-adc01c0e99f5)
   RepositoryTrack(07, PT5M56S, rdfs:label=La Mer recommencée, Vangelis/L'Apocalypse Des Animaux/07 La Mer Recommencée.mp3, http://dbtune.org/musicbrainz/resource/track/b99bd3c5-b639-4e73-a56f-599dba13e06b)
 
-TRACKS IN RepositoryRecord(rdfs:label=L'Apocalypse des animaux, urn:bluemarine:record:66f8bc42899f252432023254dc0ab19d77adcdf3):
-  RepositoryTrack(02, PT6M, rdfs:label=La Petite Fille de la mer, Vangelis/L'Apocalypse Des Animaux/02 La Petite Fille De La Mer.mp3, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
-  RepositoryTrack(02, PT5M54S, rdfs:label=La Petite Fille de la mer, Vangelis/Themes/12 La Petite Fille De La Mer.m4a, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
-  RepositoryTrack(12, PT6M, rdfs:label=La Petite Fille de la mer, Vangelis/L'Apocalypse Des Animaux/02 La Petite Fille De La Mer.mp3, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
-  RepositoryTrack(12, PT5M54S, rdfs:label=La Petite Fille de la mer, Vangelis/Themes/12 La Petite Fille De La Mer.m4a, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
-
 TRACKS IN RepositoryRecord(rdfs:label=La Domna Savorousa : Chants d’amour des troubadours et des trouvères, urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51):
   RepositoryTrack(01, PT6M13S, rdfs:label=S'anc fui bèla ni presada, Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/01 S'anc fui bèla ni presada.m4a, urn:bluemarine:track:3d659594bd719cfd69e222217cb37c0eaa6541e1)
   RepositoryTrack(02, PT2M5S, rdfs:label=Por coi me bait mes maris, Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/02 Por coi me bait mes maris.m4a, urn:bluemarine:track:d41c82f3da4aeed2372eace6c468cdda1bf69874)
@@ -15833,9 +15606,13 @@ TRACKS IN RepositoryRecord(rdfs:label=Sarah Vaughan the Collection, urn:bluemari
 
 TRACKS IN RepositoryRecord(rdfs:label=Satchmo, urn:bluemarine:record:6db0e857f0e8875aee991d10b6ba48758495784a):
   RepositoryTrack(01, PT3M7S, rdfs:label=Mi Va Di Cantare, Louis Armstrong/Satchmo/01 Mi Va Di Cantare.m4a, urn:bluemarine:track:954cf49ebaeb7ba7f5ba467763e5d1ee4331e358)
+  RepositoryTrack(01, PT2M20S, rdfs:label=What a Wonderful World, Louis Armstrong/Satchmo/10 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
+  RepositoryTrack(01, PT2M19S, rdfs:label=What a Wonderful World, Louis Armstrong/The Ultimate Collection/04 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
   RepositoryTrack(03, PT2M26S, rdfs:label=Hello Dolly, Louis Armstrong/Satchmo/03 Hello Dolly.m4a, http://dbtune.org/musicbrainz/resource/track/6e62dd8a-f3fd-4c9d-9fa1-e58f617da5b5)
   RepositoryTrack(06, PT3M5S, rdfs:label=Bye 'n' Bye, Louis Armstrong/Satchmo/06 Bye 'n' Bye.m4a, urn:bluemarine:track:35ea15d60e2749d12a23cf1211eea1e135e79f38)
   RepositoryTrack(07, PT3M12S, rdfs:label=When the Saints Go Marchin' In, Louis Armstrong/Satchmo/07 When The Saints Go Marchin' In.m4a, http://dbtune.org/musicbrainz/resource/track/7df5d2fd-9422-4346-b87f-fcb6cc017464)
+  RepositoryTrack(10, PT2M20S, rdfs:label=What a Wonderful World, Louis Armstrong/Satchmo/10 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
+  RepositoryTrack(10, PT2M19S, rdfs:label=What a Wonderful World, Louis Armstrong/The Ultimate Collection/04 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
   RepositoryTrack(14, PT5M13S, rdfs:label=Sweet Lorraine, Louis Armstrong/Satchmo/14 Sweet Lorraine.m4a, http://dbtune.org/musicbrainz/resource/track/0dab0db4-4369-4e99-bd8d-00387302f344)
   RepositoryTrack(15, PT5M13S, rdfs:label=Blues In The Night, Louis Armstrong/Satchmo/15 Blues In The Night.m4a, urn:bluemarine:track:0930340caa95c84cb6003781f8884624477832c0)
   RepositoryTrack(16, PT3M27S, rdfs:label=Grassa E Bella, Louis Armstrong/Satchmo/16 Grassa E Bella.m4a, urn:bluemarine:track:67d1ab718c45bfd65f7702511e16ac9851f2a9d3)
@@ -17219,12 +16996,6 @@ TRACKS IN RepositoryRecord(rdfs:label=The Two and Three Part Inventions (feat. p
   RepositoryTrack(02, PT45S, rdfs:label=Sinfonia No. 1 in C major, BWV 787, Glenn Gould/Bach_ Two and Three Part Inventions, BWV 772-801 (Inventions & Sinfonias)/02 Sinfonia No. 1 in C Major, BWV 787.m4a, http://dbtune.org/musicbrainz/resource/track/4e758cec-e2e8-401d-a340-d240d2791724)
   RepositoryTrack(30, PT4M17S, rdfs:label=Sinfonia No. 9 in F minor, BWV 795, Glenn Gould/Bach_ Two and Three Part Inventions, BWV 772-801 (Inventions & Sinfonias)/30 Sinfonia No. 9 in F Minor, BWV 795.m4a, http://dbtune.org/musicbrainz/resource/track/9b457e5c-cb4b-4b4c-9847-40528c7de49b)
 
-TRACKS IN RepositoryRecord(rdfs:label=The Ultimate Collection, urn:bluemarine:record:66cfd4cebd04cfd6e4935718ea585115f9447b94):
-  RepositoryTrack(01, PT2M20S, rdfs:label=What a Wonderful World, Louis Armstrong/Satchmo/10 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
-  RepositoryTrack(01, PT2M19S, rdfs:label=What a Wonderful World, Louis Armstrong/The Ultimate Collection/04 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
-  RepositoryTrack(10, PT2M20S, rdfs:label=What a Wonderful World, Louis Armstrong/Satchmo/10 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
-  RepositoryTrack(10, PT2M19S, rdfs:label=What a Wonderful World, Louis Armstrong/The Ultimate Collection/04 What A Wonderful World.m4a, http://dbtune.org/musicbrainz/resource/track/b13a3914-fe25-4c9e-bdf2-d2ec0b7b7b97)
-
 TRACKS IN RepositoryRecord(rdfs:label=The Ultimate Romance Album, urn:bluemarine:record:348a73b2edab6f9062402c2767fa70a4d57c06f2):
   RepositoryTrack(04, PT4M18S, rdfs:label=Everybody's Got to Learn Sometime, The Korgis/Don't Look Back - The Very Best of the Korgis/1-11 Everybody's Got to Learn Sometime.m4a, http://dbtune.org/musicbrainz/resource/track/2d1e8da1-56fb-4b81-b7ba-b4333f9a0b4d)
 
@@ -17334,6 +17105,12 @@ TRACKS IN RepositoryRecord(rdfs:label=Themes, http://dbtune.org/musicbrainz/reso
   RepositoryTrack(09, PT4M18S, rdfs:label=Opening Titles From "The Bounty", Vangelis/Themes/09 Opening Titles From The Bounty.m4a, http://dbtune.org/musicbrainz/resource/track/9af095cb-eddd-40f8-98cf-6e883ee57c28)
   RepositoryTrack(10, PT5M, rdfs:label=Closing Titles From "The Bounty", Vangelis/Themes/10 Closing Titles From The Bounty.m4a, http://dbtune.org/musicbrainz/resource/track/989c22f7-745d-46e1-a56f-b1ef7777c548)
   RepositoryTrack(13, PT5M20S, rdfs:label=Five Circles, Vangelis/Themes/13 Five Circles.m4a, http://dbtune.org/musicbrainz/resource/track/0d3995f0-fbcc-4cc9-9f32-35402a325bac)
+
+TRACKS IN RepositoryRecord(rdfs:label=Themes, urn:bluemarine:record:b74b7f26c197fded8fd959d06ac303369e792636):
+  RepositoryTrack(02, PT6M, rdfs:label=La Petite Fille de la mer, Vangelis/L'Apocalypse Des Animaux/02 La Petite Fille De La Mer.mp3, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
+  RepositoryTrack(02, PT5M54S, rdfs:label=La Petite Fille de la mer, Vangelis/Themes/12 La Petite Fille De La Mer.m4a, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
+  RepositoryTrack(12, PT6M, rdfs:label=La Petite Fille de la mer, Vangelis/L'Apocalypse Des Animaux/02 La Petite Fille De La Mer.mp3, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
+  RepositoryTrack(12, PT5M54S, rdfs:label=La Petite Fille de la mer, Vangelis/Themes/12 La Petite Fille De La Mer.m4a, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
 
 TRACKS IN RepositoryRecord(rdfs:label=This Girl's in Love With You, http://dbtune.org/musicbrainz/resource/record/b72eea89-2286-4cdb-8963-0ae7ff49cb37):
   RepositoryTrack(15, PT2M58S, rdfs:label=The Weight, Aretha Franklin/30 Greatest Hits [Disc 1]/1-15 The Weight.m4a, http://dbtune.org/musicbrainz/resource/track/514513e0-fb7a-4688-9e0b-51b61f247598)
@@ -17983,20 +17760,11 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Angela Maria Blasi, Robert Holl, Etc
 RECORDS OF RepositoryMusicArtist(rdfs:label=Anita Baker, uri=urn:bluemarine:artist:89f770090b040058a958fc4331d3bc7f9075f87d):
   RepositoryRecord(rdfs:label=Christmas Fantasy, urn:bluemarine:record:7f307c4820468a2e0f4e1344978e6847da8896d2)
 
-RECORDS OF RepositoryMusicArtist(rdfs:label=Anonyme, uri=http://dbtune.org/musicbrainz/resource/artist/f731ccc4-e22a-43af-a747-64213329e088):
-  RepositoryRecord(rdfs:label=Lux Feminæ (900-1600), urn:bluemarine:record:d291d4e292e3f2179d136210c647a174cf8e2a4b)
-  RepositoryRecord(rdfs:label=Villancicos & Ensaladas, urn:bluemarine:record:b085d75643dd24542c09715129a4e0de3249e939)
-
 RECORDS OF RepositoryMusicArtist(rdfs:label=Anonymous 4, uri=http://dbtune.org/musicbrainz/resource/artist/bdbd99ab-3f4b-4028-9306-cd71d8695fbc):
   RepositoryRecord(rdfs:label=The Origin of Fire: Music and Visions of Hildegard Von Bingen, http://dbtune.org/musicbrainz/resource/record/3c57bf4e-83c2-4324-b700-1a846558ef6b)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Anthony Rooley & Consort of Musicke, uri=urn:bluemarine:artist:df9d14f08d7c7169889de333c2db2c331169ee30):
   RepositoryRecord(rdfs:label=Monteverdi: Madrigali guerrieri et amorosi, urn:bluemarine:record:9eb6a9376fd4cb745337525df6e2bcf1ed24e419)
-
-RECORDS OF RepositoryMusicArtist(rdfs:label=Antonio Carlos Jobim, uri=http://dbtune.org/musicbrainz/resource/artist/7a8dbe84-f4c0-4457-bfa3-edced1f8cde0):
-  RepositoryRecord(rdfs:label=Francis Albert Sinatra & Antonio Carlos Jobim, http://dbtune.org/musicbrainz/resource/record/82015a54-7663-4a63-9da2-363af64adde0)
-  RepositoryRecord(rdfs:label=Their Greatest Hits, urn:bluemarine:record:5a83a55adc71938c360d9e642ed1f80d75c6e4ab)
-  RepositoryRecord(rdfs:label=Wave: the Antonio Carlos Jobim Songbook, http://dbtune.org/musicbrainz/resource/record/76ef3401-c03c-47a0-9ad3-37601576619c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Antonio Vivaldi, uri=http://dbtune.org/musicbrainz/resource/artist/ad79836d-9849-44df-8789-180bbc823f3c):
   RepositoryRecord(rdfs:label=Classical Bytes, http://dbtune.org/musicbrainz/resource/record/9982dd92-60a4-4087-be23-6653782c8678)
@@ -18005,14 +17773,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Antonio Vivaldi, uri=http://dbtune.o
   RepositoryRecord(rdfs:label=Violin Concerti, urn:bluemarine:record:20a4a1489465b36dc5620e1bf2c547ea98a4a3ae)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Antonín Dvořák, uri=http://dbtune.org/musicbrainz/resource/artist/819eaeb2-8dd8-48a5-ad07-0bcd137985ef):
-  RepositoryRecord(rdfs:label=Four-Hand Piano Music, Volume 2: Slavonic Dances 1-16 (Silke-Thora Matthies, Christian Köhn), http://dbtune.org/musicbrainz/resource/record/0bdeec35-2869-4d10-a961-b38ec345774e)
-  RepositoryRecord(rdfs:label=Symphonien Nr. 8 & 9 "Aus der Neuen Welt", urn:bluemarine:record:ef950e10297ad3fc7494e170015c763324d33b36)
-  RepositoryRecord(rdfs:label=Symphony No. 8 / Symphony No. 9 "From the New World", urn:bluemarine:record:4f0aabe8d69858e67696a2f43f67b67f7386c91a)
-  RepositoryRecord(rdfs:label=Symphony No. 9 in E minor, Op. 95 "From the New World" / Scherzo capriccioso, Op. 66, http://dbtune.org/musicbrainz/resource/record/497aab5c-c9db-4afb-a13b-719348030670)
-  RepositoryRecord(rdfs:label=Symphony No.9 In E Minor, Op. 95, http://dbtune.org/musicbrainz/resource/record/5fb87275-86d1-4090-a10f-727ee69986af)
-  RepositoryRecord(rdfs:label=The Best of Dvořák, http://dbtune.org/musicbrainz/resource/record/3f7bd910-7931-4bdd-8f51-b9ed13bf3deb)
-
-RECORDS OF RepositoryMusicArtist(rdfs:label=Antonín Dvořák; Berliner Philharmoniker & Rafael Kubelík, uri=http://dbtune.org/musicbrainz/resource/artist/819eaeb2-8dd8-48a5-ad07-0bcd137985ef):
   RepositoryRecord(rdfs:label=Four-Hand Piano Music, Volume 2: Slavonic Dances 1-16 (Silke-Thora Matthies, Christian Köhn), http://dbtune.org/musicbrainz/resource/record/0bdeec35-2869-4d10-a961-b38ec345774e)
   RepositoryRecord(rdfs:label=Symphonien Nr. 8 & 9 "Aus der Neuen Welt", urn:bluemarine:record:ef950e10297ad3fc7494e170015c763324d33b36)
   RepositoryRecord(rdfs:label=Symphony No. 8 / Symphony No. 9 "From the New World", urn:bluemarine:record:4f0aabe8d69858e67696a2f43f67b67f7386c91a)
@@ -18058,7 +17818,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=B.J. Thomas, uri=http://dbtune.org/m
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Baden Powell, uri=http://dbtune.org/musicbrainz/resource/artist/ba617653-44e4-404f-91cd-f74adce5687d):
   RepositoryRecord(rdfs:label=Afro Sambas, http://dbtune.org/musicbrainz/resource/record/45897c43-2a6c-4324-98e0-0260edd77f58)
-  RepositoryRecord(rdfs:label=Chega De Saudade, urn:bluemarine:record:41cad79a00a8e4b0fff8c7daa81506b19651854c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Baden Powell, uri=urn:bluemarine:artist:26176b402a7c0989c0d596341286fc01c06b8216):
   RepositoryRecord(rdfs:label=Three Originals: Tristeza On Guitar / Poema On Guitar / Apaixonado, urn:bluemarine:record:830a6d223dda1446900efe548f7c8e028a196234)
@@ -18237,15 +17996,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Chris Botti, uri=urn:bluemarine:arti
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Chris Botti & Sting, uri=urn:bluemarine:artist:7ae8f49a7fa04fa7015e92bf5ab637e94e41a876):
 
-RECORDS OF RepositoryMusicArtist(rdfs:label=Chris Botti (feat. Paula Cole), uri=http://dbtune.org/musicbrainz/resource/artist/0939452b-0c6f-422a-997f-e7c496ce1113):
-  RepositoryRecord(rdfs:label=December, http://dbtune.org/musicbrainz/resource/record/709c4855-1176-4309-b7f1-531e45f1acd6)
-  RepositoryRecord(rdfs:label=First Wish, http://dbtune.org/musicbrainz/resource/record/2cec6fa1-5f83-445f-8528-2fd17d5621d3)
-  RepositoryRecord(rdfs:label=Italia, http://dbtune.org/musicbrainz/resource/record/3d62ee74-edaa-42c3-a068-d4b777117379)
-  RepositoryRecord(rdfs:label=Midnight Without You, http://dbtune.org/musicbrainz/resource/record/0c71aef8-713e-49b6-a73b-1ab8fcbe53bd)
-  RepositoryRecord(rdfs:label=Night Sessions, http://dbtune.org/musicbrainz/resource/record/a03b9dcb-1827-45ac-ad5f-bfa109164acb)
-  RepositoryRecord(rdfs:label=This is Chris Botti, urn:bluemarine:record:147fbac4715e551cfe719d950555cdfae2cb36fe)
-  RepositoryRecord(rdfs:label=When I Fall in Love, http://dbtune.org/musicbrainz/resource/record/607572f6-208c-4436-a162-fcc30beed735)
-
 RECORDS OF RepositoryMusicArtist(rdfs:label=Christophe Beck, uri=http://dbtune.org/musicbrainz/resource/artist/0df890e1-f4f2-4b21-a413-cd8af1af32d8):
   RepositoryRecord(rdfs:label=Confidence, http://dbtune.org/musicbrainz/resource/record/7d70bc65-702a-4930-9064-8a8da5478d70)
 
@@ -18259,7 +18009,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Claude Debussy, uri=http://dbtune.or
   RepositoryRecord(rdfs:label=Préludes Book I / Images Book I / Estampes (feat. piano: Claudio Arrau), http://dbtune.org/musicbrainz/resource/record/aabd08b1-12df-473d-a4f4-e558cc863f05)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Claudia Caffagni, uri=urn:bluemarine:artist:655383687751d14446973bdda9b025a6b25ce3a9):
-  RepositoryRecord(rdfs:label=I Dodici Giardini: Cantico di Santa Caterina da Bologna, urn:bluemarine:record:b0a86156a49cbc4fce7a186168d441840c5d6ae1)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Claudia Telles, uri=http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654):
 
@@ -18414,6 +18163,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Ella Fitzgerald, uri=http://dbtune.o
   RepositoryRecord(rdfs:label=Compact Jazz: Ella Fitzgerald, http://dbtune.org/musicbrainz/resource/record/c88a7d19-a0c9-4680-8f89-8de6fa1e2e1c)
   RepositoryRecord(rdfs:label=Ella & Duke at the Côte d'Azur (disc 1), http://dbtune.org/musicbrainz/resource/record/3b3dbe37-7684-4b87-8910-96d04d87a656)
   RepositoryRecord(rdfs:label=Ella & Duke at the Côte d'Azur (disc 2), http://dbtune.org/musicbrainz/resource/record/111efda2-57b1-41ae-8700-027beeb96bfb)
+  RepositoryRecord(rdfs:label=Ella & Louis, urn:bluemarine:record:a4fd919950c54b2080231b5ec3fb6a551a9a5e6c)
   RepositoryRecord(rdfs:label=Ella Fitzgerald Sings the Cole Porter Song Book (disc 2), http://dbtune.org/musicbrainz/resource/record/50d90289-0cb4-427e-8ea5-f6a5dfb1c047)
   RepositoryRecord(rdfs:label=Ella Fitzgerald Sings the Duke Ellington Song Book (disc 1), http://dbtune.org/musicbrainz/resource/record/16d22f3d-80b3-4dfc-8a19-ac332f06402b)
   RepositoryRecord(rdfs:label=Ella Fitzgerald Sings the Duke Ellington Song Book (disc 2), http://dbtune.org/musicbrainz/resource/record/00a9222c-03c1-4874-a934-9a5740415d62)
@@ -18462,9 +18212,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Ella Fitzgerald & Joe Pass, uri=urn:
   RepositoryRecord(rdfs:label=Easy Living, urn:bluemarine:record:882261094758b3a6a38ffcd06bd65f5d3031c6a7)
   RepositoryRecord(rdfs:label=Fitzgerald & Pass...Again, urn:bluemarine:record:1f6908f9c1f3ee923eb83ab93ef57b7e01bf475e)
   RepositoryRecord(rdfs:label=Take Love Easy, urn:bluemarine:record:1a63fd03457c0940352ab2781190d63cdb94ff46)
-
-RECORDS OF RepositoryMusicArtist(rdfs:label=Ella Fitzgerald & Louis Armstrong, uri=http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499/eea8a864-fcda-4602-9569-38ab446decd6):
-  RepositoryRecord(rdfs:label=Ella & Louis, urn:bluemarine:record:a4fd919950c54b2080231b5ec3fb6a551a9a5e6c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Ella Fitzgerald & Oscar Peterson, uri=urn:bluemarine:artist:20096997340e3098a6340aa1eca4cadde35fe250):
 
@@ -18527,6 +18274,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Frank Sinatra, uri=http://dbtune.org
   RepositoryRecord(rdfs:label=Come Fly With Me, http://dbtune.org/musicbrainz/resource/record/2f55d78c-afb2-4a11-92ab-2fad44de9636)
   RepositoryRecord(rdfs:label=Come Swing With Me!, http://dbtune.org/musicbrainz/resource/record/6f6df562-ec61-4774-b840-2ec1cd834302)
   RepositoryRecord(rdfs:label=Come Swing With Me!, http://dbtune.org/musicbrainz/resource/record/cb2dd7ac-d8f8-44c3-bb72-aad349501d64)
+  RepositoryRecord(rdfs:label=Francis Albert Sinatra & Antonio Carlos Jobim, urn:bluemarine:record:b3e08b2d6a99507c6cc29328abb297b7c3ae8a88)
   RepositoryRecord(rdfs:label=Francis Albert Sinatra & Antonio Carlos Jobim, http://dbtune.org/musicbrainz/resource/record/82015a54-7663-4a63-9da2-363af64adde0)
   RepositoryRecord(rdfs:label=Greatest Love Songs, http://dbtune.org/musicbrainz/resource/record/1bac32ea-7671-43fe-9661-02a2d3c6cc89)
   RepositoryRecord(rdfs:label=In the Wee Small Hours, http://dbtune.org/musicbrainz/resource/record/881f621c-618c-48da-80a8-50380996fe15)
@@ -18553,9 +18301,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Frank Sinatra, uri=urn:bluemarine:ar
   RepositoryRecord(rdfs:label=No One Cares, urn:bluemarine:record:b971ee955e9cbd5dd03143cad2057f49dd980ffe)
   RepositoryRecord(rdfs:label=The Concert Sinatra, urn:bluemarine:record:56d7808e49d831062814af0f97c21ada07350e4b)
 
-RECORDS OF RepositoryMusicArtist(rdfs:label=Frank Sinatra & Antonio Carlos Jobim, uri=http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d/7a8dbe84-f4c0-4457-bfa3-edced1f8cde0):
-  RepositoryRecord(rdfs:label=Francis Albert Sinatra & Antonio Carlos Jobim, urn:bluemarine:record:b3e08b2d6a99507c6cc29328abb297b7c3ae8a88)
-
 RECORDS OF RepositoryMusicArtist(rdfs:label=Frantisek Macinka, uri=urn:bluemarine:artist:acc272d2290d4519ef8b3751e54815ef43f50bdc):
   RepositoryRecord(rdfs:label=Musica Moravica, urn:bluemarine:record:a36d2e8ab3d39f10f71872f79b4b1cd2765193a2)
 
@@ -18565,7 +18310,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Franz Liszt, uri=http://dbtune.org/m
   RepositoryRecord(rdfs:label=The 19 Hungarian Rhapsodies (feat. piano: Roberto Szidon) (disc 2), http://dbtune.org/musicbrainz/resource/record/d32a5cb7-c948-4f33-9a51-1a40821a81fa)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Franz Schubert, uri=http://dbtune.org/musicbrainz/resource/artist/f91e3a88-24ee-4563-8963-fab73d2765ed):
-  RepositoryRecord(rdfs:label=Cello Sonatas, urn:bluemarine:record:e495bc8b8c5e8574a1c65ad616d9ae6d96f591a1)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Fred Hersch, uri=urn:bluemarine:artist:eed9520b64a430c40b28f9ec90412289cd28396f):
   RepositoryRecord(rdfs:label=Songs Without Words, urn:bluemarine:record:4c4fac9e7c6da7f1b71455cac593b943cbc33767)
@@ -18901,6 +18645,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Lisa Hilton, uri=urn:bluemarine:arti
   RepositoryRecord(rdfs:label=My Favorite Things, urn:bluemarine:record:193d749bdbb68763bba3ed0c188d4a0e4e2fc8ca)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Livia Caffagni, uri=urn:bluemarine:artist:8859b7933c5e6dfb6ab9b6d3f2f39973737d155f):
+  RepositoryRecord(rdfs:label=I Dodici Giardini: Cantico di Santa Caterina da Bologna, urn:bluemarine:record:b0a86156a49cbc4fce7a186168d441840c5d6ae1)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Los Angeles Philharmonic, uri=http://dbtune.org/musicbrainz/resource/artist/98e4313e-dfb0-4084-805c-3e42ef9301d0):
   RepositoryRecord(rdfs:label=The Planets / Close Encounters / Also Sprach Zarathustra (Los Angeles Philharmonic, Zubin Mehta) (disc 2), http://dbtune.org/musicbrainz/resource/record/a4fd3e26-637e-468e-bb2a-398ebf1268ba)
@@ -18919,7 +18664,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Louis Armstrong, uri=http://dbtune.o
   RepositoryRecord(rdfs:label=Pure Louis (disc 2), http://dbtune.org/musicbrainz/resource/record/d6661107-b308-4241-b4a3-e690fddb95eb)
   RepositoryRecord(rdfs:label=The Best of Ella Fitzgerald & Louis Armstrong on Verve, http://dbtune.org/musicbrainz/resource/record/9fba2bb8-2ee9-4c24-976c-8fa9ea43625f)
   RepositoryRecord(rdfs:label=The Essential Louis Armstrong, http://dbtune.org/musicbrainz/resource/record/c5dca6b4-76da-402e-a037-0dfa197774e4)
-  RepositoryRecord(rdfs:label=The Ultimate Collection, urn:bluemarine:record:66cfd4cebd04cfd6e4935718ea585115f9447b94)
   RepositoryRecord(rdfs:label=The Very Best Of, http://dbtune.org/musicbrainz/resource/record/fed56cf2-fcaf-42c8-8650-16d62c503c70)
   RepositoryRecord(rdfs:label=The Very Best of Louis Armstrong, http://dbtune.org/musicbrainz/resource/record/46e2ace9-563e-4b7e-ba59-5663a91f15d7)
   RepositoryRecord(rdfs:label=The Very Best of Louis Armstrong (disc 1), http://dbtune.org/musicbrainz/resource/record/a916a1c9-1bd1-4298-9288-7b551fed6b99)
@@ -19060,30 +18804,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Miles Davis, uri=http://dbtune.org/m
 RECORDS OF RepositoryMusicArtist(rdfs:label=Miles Davis, uri=urn:bluemarine:artist:354b95d04dee500eda0e12bc54c5d786acca6ffa):
   RepositoryRecord(rdfs:label=Kind Of Blue - The Miles Davis Story, urn:bluemarine:record:3eca37637625641e8ab57dd647bb32849f02c160)
 
-RECORDS OF RepositoryMusicArtist(rdfs:label=Miles Davis & Gil Evans, uri=http://dbtune.org/musicbrainz/resource/artist/561d854a-6a28-4aa7-8c99-323e6ce46c2a):
-  RepositoryRecord(rdfs:label="Miles Ahead", http://dbtune.org/musicbrainz/resource/record/5b933d56-b905-43c3-bc55-cc4c1796d569)
-  RepositoryRecord(rdfs:label='Round About Midnight, http://dbtune.org/musicbrainz/resource/record/8e5f4ff4-28ca-4b7d-a1d5-1a6128ca3df6)
-  RepositoryRecord(rdfs:label='Round About Midnight, http://dbtune.org/musicbrainz/resource/record/98bf409f-28bb-406c-a319-0271ed051b28)
-  RepositoryRecord(rdfs:label='Round About Midnight (disc 2), http://dbtune.org/musicbrainz/resource/record/e151f1b6-3bdc-4103-90ee-facdebbd4435)
-  RepositoryRecord(rdfs:label=1958 Miles, http://dbtune.org/musicbrainz/resource/record/642d00ae-14f9-4552-bdd1-f2f6793b416e)
-  RepositoryRecord(rdfs:label=Birth of the Cool, http://dbtune.org/musicbrainz/resource/record/d2d8877d-cd68-48b3-9b06-576dccc90edf)
-  RepositoryRecord(rdfs:label=E.S.P., http://dbtune.org/musicbrainz/resource/record/68736004-70d8-44b5-bfd9-01e802f0eacd)
-  RepositoryRecord(rdfs:label=Filles de Kilimanjaro, http://dbtune.org/musicbrainz/resource/record/09e28be0-2f45-4d3d-a7af-2cd7944a73d3)
-  RepositoryRecord(rdfs:label=Kind of Blue, http://dbtune.org/musicbrainz/resource/record/7d7ebace-0e5a-43c2-bd6d-18b5f35bed0b)
-  RepositoryRecord(rdfs:label=Live in New York, http://dbtune.org/musicbrainz/resource/record/da3479ee-f939-4bbe-8362-53cbb05e7f76)
-  RepositoryRecord(rdfs:label=Miles Ahead, http://dbtune.org/musicbrainz/resource/record/0d970bd4-0b21-4ff7-85f9-b7b26df3e025)
-  RepositoryRecord(rdfs:label=Miles Ahead, urn:bluemarine:record:2d2ad997be4b6660b57fabec6dd7afdbd9f3b6da)
-  RepositoryRecord(rdfs:label=Miles Plays for Lovers, http://dbtune.org/musicbrainz/resource/record/b8b550bc-5ffa-4169-9a0c-ec762244f798)
-  RepositoryRecord(rdfs:label=Miles and Coltrane, http://dbtune.org/musicbrainz/resource/record/7f75ea06-7441-4356-ab35-7faf9e5fe26a)
-  RepositoryRecord(rdfs:label=Nefertiti, http://dbtune.org/musicbrainz/resource/record/ff46563e-f23c-4b8f-89ae-b4a3ac825caa)
-  RepositoryRecord(rdfs:label=Sketches of Spain, http://dbtune.org/musicbrainz/resource/record/8709a882-a7c4-4c77-9edf-744521ec4ee2)
-  RepositoryRecord(rdfs:label=Sorcerer, http://dbtune.org/musicbrainz/resource/record/30562d07-82e7-4cec-a16f-b407550210ff)
-  RepositoryRecord(rdfs:label=The Essential Miles Davis (disc 1), http://dbtune.org/musicbrainz/resource/record/aa293cc3-aa57-4e7e-a998-2d58b003c457)
-  RepositoryRecord(rdfs:label=The Essential Miles Davis (disc 2), http://dbtune.org/musicbrainz/resource/record/65829d65-fa04-45bc-9189-8b3c4a8887c9)
-  RepositoryRecord(rdfs:label=Tutu, http://dbtune.org/musicbrainz/resource/record/fa17202b-eebc-4f30-bc1f-63e3800ec9de)
-  RepositoryRecord(rdfs:label=Walkin', http://dbtune.org/musicbrainz/resource/record/019aaa17-2016-4b36-afe4-aa2bdee2fdbd)
-  RepositoryRecord(rdfs:label=You're Under Arrest, http://dbtune.org/musicbrainz/resource/record/1fcf7b71-4fd7-4fc4-bd16-02edfa22ccd5)
-
 RECORDS OF RepositoryMusicArtist(rdfs:label=Mina, uri=http://dbtune.org/musicbrainz/resource/artist/a56f5af0-3e87-4877-b68f-390f62903381):
   RepositoryRecord(rdfs:label=I miti musica: Mina, urn:bluemarine:record:591817a275d45df6ea9ebaa3ed0f8d2b96a31cd2)
   RepositoryRecord(rdfs:label=Mina canta i Beatles, http://dbtune.org/musicbrainz/resource/record/af2b9cf2-35e9-4e06-bb6a-dbe863d29778)
@@ -19163,9 +18883,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=New York's Ensemble for Early Music 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Niccolò Paganini, uri=http://dbtune.org/musicbrainz/resource/artist/d581b2f2-f945-4566-a249-2d0171466993):
   RepositoryRecord(rdfs:label=Accardo plays Paganini, urn:bluemarine:record:4fb3afd5e5d270484b2c3882956d76cedbbdfc8b)
   RepositoryRecord(rdfs:label=Paganini: 24 Capricci (Shlomo Mintz), http://dbtune.org/musicbrainz/resource/record/d68e16b1-31ec-40ec-990b-ed49a7483f17)
-
-RECORDS OF RepositoryMusicArtist(rdfs:label=Nikolai Rimsky-Korsakow, uri=http://dbtune.org/musicbrainz/resource/artist/4cfe7051-f649-4d07-83b3-7a732abe7249):
-  RepositoryRecord(rdfs:label=Scheherazade, urn:bluemarine:record:6ebad467a37f367ff371c02ef0a39de4f47667ab)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Nikolaus Harnoncourt: Concentus Musicus Wien, Arnold Schoenberg Choir, uri=urn:bluemarine:artist:c4b7f779c69c63cbda346ddb2f6c6343d2549856):
   RepositoryRecord(rdfs:label=Bach: Mass In B Minor, BWV 232 [Disc 1], urn:bluemarine:record:001a4f6b04984b2cab35ed7b6cc9ac525d783778)
@@ -19313,6 +19030,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Ripchord, uri=http://dbtune.org/musi
   RepositoryRecord(rdfs:label=Beginners Luck, urn:bluemarine:record:f6b1edc0375a955fa6187408cbb2dbc85f3d7e77)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Robert Schumann, uri=http://dbtune.org/musicbrainz/resource/artist/3cd3882c-00f8-4362-a0c2-ad89ed248533):
+  RepositoryRecord(rdfs:label=Cello Sonatas, urn:bluemarine:record:e495bc8b8c5e8574a1c65ad616d9ae6d96f591a1)
   RepositoryRecord(rdfs:label=Piano Concertos, urn:bluemarine:record:c094e25df7457f707d218fd7241b06b67eba324c)
   RepositoryRecord(rdfs:label=Schubert: Symphonie no. 8 "Unvollendete" / Schumann: Symphonie no. 3 "Rheinische", urn:bluemarine:record:6bd53cf0cc2d3ef446fa40e9d32e8ed66af702a7)
   RepositoryRecord(rdfs:label=Schumann: The Masterworks, urn:bluemarine:record:8c1bf558c107f53a5396ad9829ffae3dd7d8fdf0)
@@ -19611,11 +19329,11 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=http://dbtune.org/musi
   RepositoryRecord(rdfs:label=Chariots of Fire, http://dbtune.org/musicbrainz/resource/record/89fb6b5b-6ac2-465c-93bf-be430010de66)
   RepositoryRecord(rdfs:label=China, http://dbtune.org/musicbrainz/resource/record/5c02926c-e65e-4107-b4e7-05751a2367d6)
   RepositoryRecord(rdfs:label=L'Apocalypse des animaux, http://dbtune.org/musicbrainz/resource/record/5d5ce68c-2e0e-48f7-beb0-36cfcf2cb660)
-  RepositoryRecord(rdfs:label=L'Apocalypse des animaux, urn:bluemarine:record:66f8bc42899f252432023254dc0ab19d77adcdf3)
   RepositoryRecord(rdfs:label=See You Later, http://dbtune.org/musicbrainz/resource/record/71771d40-0236-4cde-b71d-b0eee0270d6c)
   RepositoryRecord(rdfs:label=Soil Festivities, http://dbtune.org/musicbrainz/resource/record/f4576006-03fc-490c-820f-2e95535fbaa5)
   RepositoryRecord(rdfs:label=Synthesizer Greatest, urn:bluemarine:record:503c584783019506fa7f52800eb4e2f4e4f83b32)
   RepositoryRecord(rdfs:label=Themes, http://dbtune.org/musicbrainz/resource/record/ff7c291e-8dae-42d5-85bd-bdba89a3af1a)
+  RepositoryRecord(rdfs:label=Themes, urn:bluemarine:record:b74b7f26c197fded8fd959d06ac303369e792636)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=urn:bluemarine:artist:3aaced5008289e60b00a589e3e258abb08725493):
   RepositoryRecord(rdfs:label=1492 - Conquest of Paradise (Soundtrack from the Motion Picture), urn:bluemarine:record:0c5279832dcee2d414174a934ef470f71a415ce0)
@@ -19636,6 +19354,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Vladimir Spivakov, uri=urn:bluemarin
 RECORDS OF RepositoryMusicArtist(rdfs:label=Wanda Sá & Célia Vaz, uri=http://dbtune.org/musicbrainz/resource/artist/8cf2e214-d292-4d6e-9551-4fa380e7cd97):
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Wanda Sá & Roberto Menescal, uri=http://dbtune.org/musicbrainz/resource/artist/08bfcdaf-ef3f-4b40-bab6-8848278cf468):
+  RepositoryRecord(rdfs:label=Chega De Saudade, urn:bluemarine:record:41cad79a00a8e4b0fff8c7daa81506b19651854c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Wanda Sá & Roberto Menescal, uri=http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea):
 
