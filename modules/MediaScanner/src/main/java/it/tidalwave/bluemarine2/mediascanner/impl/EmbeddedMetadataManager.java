@@ -216,9 +216,7 @@ public class EmbeddedMetadataManager
           }
         else  // no MusicBrainz artist
           {
-            makerUris =  makerName.map(name -> createUriForLocalArtist(name))
-                                  .map(uri -> asList(uri))
-                                  .orElse(emptyList());
+            makerUris =  makerName.map(name -> asList(createUriForLocalArtist(name))).orElse(emptyList());
             artists = makerName.map(name -> Stream.of(name.split("[;]")).map(String::trim)).orElse(Stream.empty())
                                .map(name -> new Entry(createUriForLocalArtist(name), name))
                                .collect(toList());
