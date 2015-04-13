@@ -48,7 +48,7 @@ import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
 import it.tidalwave.util.Key;
-import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.vocabulary.BM;
@@ -57,7 +57,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
+import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
+import it.tidalwave.bluemarine2.model.MediaFolder;
+import java.nio.file.Files;
 
 /***********************************************************************************************************************
  *
@@ -182,26 +186,23 @@ public class EmbeddedMetadataManager
       {
         log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackUri);
         
-        final Metadata metadata = mediaItem.getMetadata();  
-        
+        final Metadata metadata           = mediaItem.getMetadata();  
         final Optional<String> title      = metadata.get(Metadata.TITLE);
         final Optional<String> artistName = metadata.get(Metadata.ARTIST);
-        // When scanning we can safely assume we're running on a file system
-        // TODO: what about using Displayable? It would not require a dependency on MediaFolder
-        final MediaFolder parent          = (MediaFolder)mediaItem.getParent();
-        final String recordTitle          = metadata.get(Metadata.ALBUM).orElse(parent.getPath().toFile().getName());
+        final Entity parent               = mediaItem.getParent();
+        final String recordTitle          = metadata.get(Metadata.ALBUM)
+                                                    .orElse(((MediaFolder)parent).getPath().toFile().getName()); // FIXME
+//                                                    .orElse(parent.as(Displayable).getDisplayName());
         
-        final Optional<URI> artistUri     = artistName.map(name -> 
-                BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + name)));
-        final Optional<URI> recordUri     = Optional.of(
-                BM.localRecordUriFor(idCreator.createSha1("RECORD:" + recordTitle)));
+        final Optional<URI> artistUri     = artistName.map(name -> createUriForLocalArtist(name));
+        final Optional<URI> recordUri     = Optional.of(createUriForLocalRecord(recordTitle));
 
         final Optional<URI> newArtistUri  = putIfAbsentAndGetNewKey(seenArtistUris, artistUri, true);
         final Optional<URI> newRecordUri  = putIfAbsentAndGetNewKey(seenRecordUris, recordUri, true);
         
         statementManager.requestAddStatements()
-                         .with(trackUri,     DC.TITLE,         literalFor(title))
                          .with(trackUri,     RDFS.LABEL,       literalFor(title))
+                         .with(trackUri,     DC.TITLE,         literalFor(title))
                          .with(trackUri,     FOAF.MAKER,       artistUri)
 
                          .with(recordUri,    MO.P_TRACK,       trackUri)
@@ -213,13 +214,37 @@ public class EmbeddedMetadataManager
                          .with(newRecordUri, RDF.TYPE,         MO.C_RECORD)
                          .with(newRecordUri, RDFS.LABEL,       literalFor(recordTitle))
                          .with(newRecordUri, DC.TITLE,         literalFor(recordTitle))
-                         .with(newRecordUri, MO.P_MEDIA_TYPE,  MO.C_CD)
-                         .with(newRecordUri, MO.P_TRACK_COUNT, literalFor(parent.findChildren().count()))
                          .with(newRecordUri, FOAF.MAKER,       artistUri)
-                
+                         .with(newRecordUri, MO.P_MEDIA_TYPE,  MO.C_CD)
+                         .with(newRecordUri, MO.P_TRACK_COUNT, literalFor(parent.as(SimpleComposite8).findChildren()
+                                                                                                     .count()))
                          .publish();
       }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private URI createUriForLocalRecord (final @Nonnull String recordTitle) 
+      {
+        return BM.localRecordUriFor(idCreator.createSha1("RECORD:" + recordTitle));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private URI createUriForLocalArtist (final @Nonnull String name) 
+      {
+        return BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + name));
+      }
     
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
     // FIXME: rename (semantics is slightly different than the original putIfAbsent())
     private static <K, V> Optional<K> putIfAbsentAndGetNewKey (final @Nonnull ConcurrentMap<K, V> cMap, 
                                                    final @Nonnull Optional<K> key,
