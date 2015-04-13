@@ -59,8 +59,8 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.vocabulary.DbTune;
 import it.tidalwave.bluemarine2.vocabulary.Purl;
-import java.util.Arrays;
-import java.util.Collections;
+import static java.util.Arrays.*;
+import static java.util.Collections.*;
 import java.util.stream.Stream;
 import lombok.Getter;
 
@@ -193,20 +193,20 @@ public class EmbeddedMetadataManager
         
         final Optional<String> title      = metadata.get(Metadata.TITLE);
         final Optional<String> makerName  = metadata.get(Metadata.ARTIST);
-        List<URI> makerUris               = makerName.map(name -> createUriForLocalArtist(name))
-                                                     .map(uri -> Arrays.asList(uri))
-                                                     .orElse(Collections.emptyList());
         
+        List<URI> makerUris               = null;
         List<Entry> artists  = metadata.getAll(Metadata.MBZ_ARTIST_ID).stream()
                 .map(id -> new Entry(BM.musicBrainzUriFor("artist", id), makerName.orElse("???")))
                 .collect(toList());
             
-        if (artists.isEmpty())
+        if (artists.isEmpty()) // no MusicBrainz artist
           {
-            artists = makerName
-                .map(name -> Stream.of(name.split("[;]")).map(String::trim)).orElse(Stream.empty())
-                .map(name -> new Entry(createUriForLocalArtist(name), name))
-                .collect(toList());
+            makerUris =  makerName.map(name -> createUriForLocalArtist(name))
+                                  .map(uri -> asList(uri))
+                                  .orElse(emptyList());
+            artists = makerName.map(name -> Stream.of(name.split("[;]")).map(String::trim)).orElse(Stream.empty())
+                               .map(name -> new Entry(createUriForLocalArtist(name), name))
+                               .collect(toList());
           }
         //
         // Even though we're in fallback mode, we could have a MusicBrainz artist id. Actually, fallback mode can be
