@@ -17908,6 +17908,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Antonio Vivaldi, uri=http://dbtune.o
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Antonio Vivaldi, uri=urn:bluemarine:artist:c7845dced60d2033c6c0791da8ed1698b998ee4f):
   RepositoryRecord(rdfs:label=Five Cello Concerti, urn:bluemarine:record:00f1bbfeee262949f7950170220a884dcaa65dd9)
+  RepositoryRecord(rdfs:label=Violin Concerti, urn:bluemarine:record:20a4a1489465b36dc5620e1bf2c547ea98a4a3ae)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Antonín Dvořák, uri=http://dbtune.org/musicbrainz/resource/artist/819eaeb2-8dd8-48a5-ad07-0bcd137985ef):
   RepositoryRecord(rdfs:label=Four-Hand Piano Music, Volume 2: Slavonic Dances 1-16 (Silke-Thora Matthies, Christian Köhn), http://dbtune.org/musicbrainz/resource/record/0bdeec35-2869-4d10-a961-b38ec345774e)
@@ -18135,11 +18136,11 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Chris Botti, uri=urn:bluemarine:arti
   RepositoryRecord(rdfs:label=December, urn:bluemarine:record:f89c9fc8351917978087405f79117d23ab690618)
   RepositoryRecord(rdfs:label=Italia (Bonus Track Version), urn:bluemarine:record:f8709ed07e6f5c7e9e93f874a92c9f324ce70310)
   RepositoryRecord(rdfs:label=Slowing Down the World, urn:bluemarine:record:200304a101b144d93b16a6181c8063801fd157a6)
+  RepositoryRecord(rdfs:label=This is Chris Botti, urn:bluemarine:record:147fbac4715e551cfe719d950555cdfae2cb36fe)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Chris Botti & Sting, uri=urn:bluemarine:artist:7ae8f49a7fa04fa7015e92bf5ab637e94e41a876):
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Chris Botti (feat. Dean Martin), uri=urn:bluemarine:artist:c997be78f55c909a4a66b44649f4eac96f3d7025):
-  RepositoryRecord(rdfs:label=This is Chris Botti, urn:bluemarine:record:147fbac4715e551cfe719d950555cdfae2cb36fe)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Chris Botti (feat. Paula Cole), uri=urn:bluemarine:artist:d24de3bc4b975bf51ba0fda336293e979d045725):
 
@@ -18303,7 +18304,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Edvard Grieg, uri=http://dbtune.org/
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Edvard Grieg, uri=urn:bluemarine:artist:59e5542ce937cce2cecdb5ef6c6aa179efd52a7f):
   RepositoryRecord(rdfs:label=Music for Peer Gynt, urn:bluemarine:record:9fb1aa995ec7e46de4915956bd897ea3a3e906f6)
-  RepositoryRecord(rdfs:label=Piano Concertos, urn:bluemarine:record:c094e25df7457f707d218fd7241b06b67eba324c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Edwin Hawkins Singers, uri=urn:bluemarine:artist:565c6c8de1186e0472f29a13bbd6a258784155d6):
   RepositoryRecord(rdfs:label=Oh Happy Day, urn:bluemarine:record:16f1a81299cff2286dc696186184c2be3d6eda2e)
@@ -18473,7 +18473,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Franz Liszt, uri=urn:bluemarine:arti
   RepositoryRecord(rdfs:label=Hungarian Rhapsodies / Liebestraum, urn:bluemarine:record:3f86a53ebc606a5cfb5de649f170a8a7140c48b0)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Franz Schubert, uri=urn:bluemarine:artist:309b873e7f3b770fbf9a8ffcf95c3f23d5e42d6b):
-  RepositoryRecord(rdfs:label=Cello Sonatas, urn:bluemarine:record:e495bc8b8c5e8574a1c65ad616d9ae6d96f591a1)
+  RepositoryRecord(rdfs:label=Schubert: Symphonie no. 8 "Unvollendete" / Schumann: Symphonie no. 3 "Rheinische", urn:bluemarine:record:6bd53cf0cc2d3ef446fa40e9d32e8ed66af702a7)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Fred Hersch, uri=urn:bluemarine:artist:eed9520b64a430c40b28f9ec90412289cd28396f):
   RepositoryRecord(rdfs:label=Songs Without Words, urn:bluemarine:record:4c4fac9e7c6da7f1b71455cac593b943cbc33767)
@@ -18703,7 +18703,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Johann Sebastian Bach, uri=urn:bluem
   RepositoryRecord(rdfs:label=Bach: Famous Choruses, urn:bluemarine:record:977f39609910424e2bffcc83e0a39bb345adccf4)
   RepositoryRecord(rdfs:label=Cantatas BWV 61 - 63, urn:bluemarine:record:8497d90316dcb9b59e8480acc5413cad8943799e)
   RepositoryRecord(rdfs:label=Das wohltemperierte Klavier II, urn:bluemarine:record:d56894b04ef6079af797cdb6e4aece22d5888eb3)
-  RepositoryRecord(rdfs:label=Violin Concerti, urn:bluemarine:record:20a4a1489465b36dc5620e1bf2c547ea98a4a3ae)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Johannes Brahms, uri=http://dbtune.org/musicbrainz/resource/artist/c70d12a2-24fe-4f83-a6e6-57d84f8efb51):
   RepositoryRecord(rdfs:label=Complete Brahms Edition, Volume 2: Concertos (disc 3), http://dbtune.org/musicbrainz/resource/record/636fd43e-c048-4d3d-ae3f-0442cc2d66e1)
@@ -19231,8 +19230,9 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Ripchord, uri=urn:bluemarine:artist:
   RepositoryRecord(rdfs:label=Beginners Luck, urn:bluemarine:record:f6b1edc0375a955fa6187408cbb2dbc85f3d7e77)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Robert Schumann, uri=urn:bluemarine:artist:d3964826e3b6ca9c2ae0c8c252cff3dfd785d20d):
+  RepositoryRecord(rdfs:label=Cello Sonatas, urn:bluemarine:record:e495bc8b8c5e8574a1c65ad616d9ae6d96f591a1)
   RepositoryRecord(rdfs:label=Davidsbündlertänze Op. 6/Kreisleriana Op. 16, urn:bluemarine:record:ea78deb62c85141e1e2236a1a022a265e8566598)
-  RepositoryRecord(rdfs:label=Schubert: Symphonie no. 8 "Unvollendete" / Schumann: Symphonie no. 3 "Rheinische", urn:bluemarine:record:6bd53cf0cc2d3ef446fa40e9d32e8ed66af702a7)
+  RepositoryRecord(rdfs:label=Piano Concertos, urn:bluemarine:record:c094e25df7457f707d218fd7241b06b67eba324c)
   RepositoryRecord(rdfs:label=Schumann: The Masterworks, urn:bluemarine:record:8c1bf558c107f53a5396ad9829ffae3dd7d8fdf0)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Roberto Prosseda, uri=urn:bluemarine:artist:19ba0540603684805c2b26eb86c58e9986a0aab7):
