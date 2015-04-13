@@ -59,6 +59,9 @@ import static java.util.stream.Collectors.*;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.vocabulary.DbTune;
+import it.tidalwave.bluemarine2.vocabulary.Purl;
+import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import lombok.Getter;
@@ -219,37 +222,53 @@ public class EmbeddedMetadataManager
         log.debug(">>>> metadata of {}: {}", trackUri, metadata);
         
         final Optional<String> title      = metadata.get(Metadata.TITLE);
+        final Optional<String> artistOrGroupName = metadata.get(Metadata.ARTIST);
         // FIXME: try to split multiple names?
-        final Stream<String> artistNames  = metadata.get(Metadata.ARTIST).map(name -> 
-                Stream.of(name.split(";")).map(s -> s.trim()))
+        // FIXME: can't easily split on , : e.g. "Victoria Mullova, violin" or "Perosi, Lorenzo"
+        // Perhaps we can split if the segment has got a space within
+        final Stream<String> artistNames  = artistOrGroupName.map(name -> 
+                Stream.of(name.split("[,;&]")).map(s -> s.trim()))
                .orElse(Stream.empty());
+        List<Entry<URI, String>> artistUris  = artistNames.map(name -> 
+                new Entry<>(createUriForLocalArtist(name), name)).collect(Collectors.toList());
+        List<URI> makers = artistUris.stream().map(e -> e.getKey()).collect(Collectors.toList());
         
-        // TODO: insert "full_name" -> collaboratesWith singles
-//        final Stream<String> artistNames  = metadata.get(Metadata.ARTIST)
+        if (artistUris.size() > 1) // MULTIPLE
+          {
+            final URI groupUri = createUriForLocalArtist(artistOrGroupName.get());
+            statementManager.requestAddStatements()
+                .with(groupUri,  RDF.TYPE,                 MO.C_MUSIC_ARTIST)
+                .with(groupUri,  RDFS.LABEL,               literalFor(artistOrGroupName))
+                .with(groupUri,  FOAF.NAME,                literalFor(artistOrGroupName))
+                .with(groupUri,  DbTune.ARTIST_TYPE,       literalFor((short)2))
+                .with(groupUri,  Purl.COLLABORATES_WITH,   artistUris.stream().map(e -> e.getKey()))
+                .publish();
+            
+            makers = Arrays.asList(groupUri);
+          }
+        
 //        final List<Id> artistsMBIds       = metadata.getAll(Metadata.MBZ_ARTIST_ID);
         final String recordTitle          = metadata.get(Metadata.ALBUM)
                                                     .orElse(((MediaFolder)parent).getPath().toFile().getName()); // FIXME
 //                                                    .orElse(parent.as(Displayable).getDisplayName());
         
-        final List<Entry<URI, String>> artists  = artistNames.map(name -> 
-                new Entry<>(createUriForLocalArtist(name), name)).collect(Collectors.toList());
         final Optional<URI> recordUri     = Optional.of(createUriForLocalRecord(recordTitle));
 
-        final Stream<Entry<URI, String>> newArtists   = artists.stream().filter(e -> 
+        final Stream<Entry<URI, String>> newArtists   = artistUris.stream().filter(e -> 
                 seenArtistUris.putIfAbsentAndGetNewKey(e.getKey(), true).isPresent());
         final Optional<URI> newRecordUri  = seenRecordUris.putIfAbsentAndGetNewKey(recordUri, true);
         
         statementManager.requestAddStatements()
             .with(trackUri,      RDFS.LABEL,       literalFor(title))
             .with(trackUri,      DC.TITLE,         literalFor(title))
-            .with(trackUri,      FOAF.MAKER,       artists.stream().map(e -> e.getKey()))
+            .with(trackUri,      FOAF.MAKER,       makers.stream())
 
             .with(recordUri,     MO.P_TRACK,       trackUri)
 
             .with(newRecordUri,  RDF.TYPE,         MO.C_RECORD)
             .with(newRecordUri,  RDFS.LABEL,       literalFor(recordTitle))
             .with(newRecordUri,  DC.TITLE,         literalFor(recordTitle))
-            .with(newRecordUri,  FOAF.MAKER,       artists.stream().map(e -> e.getKey()))
+            .with(newRecordUri,  FOAF.MAKER,       makers.stream())
             .with(newRecordUri,  MO.P_MEDIA_TYPE,  MO.C_CD)
             .with(newRecordUri,  MO.P_TRACK_COUNT, literalFor(parent.as(SimpleComposite8).findChildren().count()))
             .publish();

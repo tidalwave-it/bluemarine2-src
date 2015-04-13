@@ -152,6 +152,16 @@ final class Utilities
      *
      ******************************************************************************************************************/
     @Nonnull
+    public static Value literalFor (final short value) 
+      {
+        return FACTORY.createLiteral(value);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
     public static Value literalFor (final float value) 
       {
         return FACTORY.createLiteral(value);
