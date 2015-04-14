@@ -42,7 +42,8 @@ import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
-import lombok.Getter;
+import javafx.scene.Node;
+import javafx.scene.control.ScrollBar;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
@@ -59,26 +60,42 @@ import lombok.extern.slf4j.Slf4j;
 @Configurable @Slf4j
 public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPresentation
   {
-    @Getter @ToString
+    @ToString
     static class Memento
       {
         private final int selectedIndex;  
         
+        private final double scrollPosition;
+        
         public Memento()
           {
             selectedIndex = 0;
+            scrollPosition = 0;
           }
         
         public Memento (final @Nonnull ListView lvFiles) 
           {
-        // TODO: add further properties, such as the precise scroller position
             selectedIndex = lvFiles.getSelectionModel().getSelectedIndex();  
+            scrollPosition = findScrollBar(lvFiles).getValue();
           }
         
         public void applyTo (final @Nonnull ListView lvFiles)
           {
+            log.debug(">>>> applying memento: {}", this);
             lvFiles.getSelectionModel().select(selectedIndex);
-            lvFiles.scrollTo(selectedIndex);
+            findScrollBar(lvFiles).setValue(scrollPosition);
+          }
+        
+//        https://gist.github.com/jewelsea/1684622
+        // And they say listening to scroll events is broken in Java 8
+        @Nonnull
+        private static ScrollBar findScrollBar (final @Nonnull ListView listView)
+          {
+            return (ScrollBar)listView.lookupAll(".scroll-bar").stream()
+                                                    .filter(node -> node instanceof ScrollBar)
+                                                    .findFirst()
+                                                    .orElseThrow(() -> new RuntimeException());
+
           }
       }
     
