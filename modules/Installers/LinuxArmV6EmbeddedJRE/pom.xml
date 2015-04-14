@@ -63,6 +63,11 @@
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>    
         </dependency>
+        <!-- FIXME: why is it not brought by transitive dependencies? -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
     </dependencies>
    
     <build>
