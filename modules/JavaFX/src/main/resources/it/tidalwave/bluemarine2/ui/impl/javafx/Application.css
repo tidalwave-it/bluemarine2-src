@@ -3,15 +3,66 @@
     -fx-font-size:          40px;
   }*/
 
-.mainFxmlClass
-  {
-    -fx-background-color:   black;
-  }
-
 .label
   {
     -fx-font-size:          3.1em;
     -fx-text-fill:          white;
+  }
+
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:focused:selected,
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected
+  {
+    -fx-background-color:   linear-gradient(rgb(95.0, 165.0, 221.0),
+                                            rgb(54.0, 124.0, 192.0)),
+                            linear-gradient(rgb(116.0, 186.0, 232.0),
+                                            rgb(116.0, 186.0, 232.0) 1.0%,
+                                            rgb(109.0, 178.0, 227.0) 1.0%,
+                                            rgb(59.0, 136.0, 208.0) 100.0%);
+    -fx-background-insets:  0.0, 0.025em 0.0 0.025em 0.0;
+    -fx-text-fill:          black;
+  }
+
+.button
+  {
+    -fx-background-color:   rgb(20,20,20);
+    -fx-text-fill:          white;
+    -fx-font-size:          3.15em;
+    -fx-border-color:       rgb(50, 50, 50);
+    -fx-border-radius:      0.25em;
+    -fx-background-radius:  0.25em;
+  }
+
+.button:focused
+  {
+    -fx-border-color:       rgb(130,130,130);
+  }
+
+.list-view
+  {
+    -fx-background-color:   rgb(20,20,20);
+  }
+
+.list-cell
+  {
+    -fx-font-size:          2.36em;
+    -fx-background-color:   transparent;
+    /*-fx-padding:            2em 2.5em 2em 2.5em;*/
+    -fx-text-fill:          white;
+  }
+
+.list-cell:even
+  {
+    -fx-background-color:   rgb(30,30,30);
+  }
+
+
+  
+  
+  
+  
+.mainFxmlClass
+  {
+    -fx-background-color:   black;
   }
 
 .content-panel
@@ -44,21 +95,6 @@
     -fx-font-size:          3.9em;
   }
 
-.button
-  {
-    -fx-background-color:   rgb(20,20,20);
-    -fx-text-fill:          white;
-    -fx-font-size:          3.15em;
-    -fx-border-color:       rgb(50, 50, 50);
-    -fx-border-radius:      0.25em;
-    -fx-background-radius:  0.25em;
-  }
-
-.button:focused
-  {
-    -fx-border-color:       rgb(130,130,130);
-  }
-
 .smallButton
   {
     -fx-font-size:          2.2em;
@@ -72,24 +108,6 @@
     -fx-border-radius:      0.5em;
     -fx-background-radius:  0.5em;
     -fx-padding:            0.125em;
-  }
-
-.list-view
-  {
-    -fx-background-color:   rgb(20,20,20);
-  }
-
-.list-cell
-  {
-    -fx-font-size:          2.36em;
-    -fx-background-color:   transparent;
-    /*-fx-padding:            2em 2.5em 2em 2.5em;*/
-    -fx-text-fill:          white;
-  }
-
-.list-cell:even
-  {
-    -fx-background-color:   rgb(30,30,30);
   }
 
 .cell-container
@@ -107,13 +125,17 @@
     -fx-min-width:              2.2em;
     -fx-max-width:              2.2em;
     -fx-pref-width:             2.2em;
-    -fx-background-image:       url("music-128.png");
     -fx-background-repeat:      no-repeat;
     -fx-background-position:    left center;
     -fx-background-size:        1.9em 1.9em;
     -fx-alignment:              center;
   }
 
+.track-icon
+  {
+    -fx-background-image:       url("note-128.png");
+  }
+  
 .folder-icon
   {
     -fx-background-image:       url("music-128.png");
@@ -166,19 +188,6 @@
     -fx-font-size:              0.7em;
     -fx-alignment:              baseline-right;
     -fx-text-fill:              rgb(200, 200, 200);
-  }
-
-.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:focused:selected,
-.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected
-  {
-    -fx-background-color:   linear-gradient(rgb(95.0, 165.0, 221.0),
-                                            rgb(54.0, 124.0, 192.0)),
-                            linear-gradient(rgb(116.0, 186.0, 232.0),
-                                            rgb(116.0, 186.0, 232.0) 1.0%,
-                                            rgb(109.0, 178.0, 227.0) 1.0%,
-                                            rgb(59.0, 136.0, 208.0) 100.0%);
-    -fx-background-insets:  0.0, 0.025em 0.0 0.025em 0.0;
-    -fx-text-fill:          black;
   }
 
 #btUpm
