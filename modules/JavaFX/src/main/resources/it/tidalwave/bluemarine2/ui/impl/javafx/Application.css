@@ -52,7 +52,7 @@
 
 .list-cell:even
   {
-    -fx-background-color:   rgb(30,30,30);
+    -fx-background-color:   rgb(25,25,25);
   }
   
 .toggle-button
@@ -240,9 +240,9 @@
 .record-duration,
 .track-duration
   {
-    -fx-min-width:              5.6em;
-    -fx-max-width:              5.6em;
-    -fx-pref-width:             5.6em;
+    -fx-min-width:              6.2em;
+    -fx-max-width:              6.2em;
+    -fx-pref-width:             6.2em;
     -fx-font-size:              0.7em;
     -fx-alignment:              baseline-right;
     -fx-text-fill:              rgb(200, 200, 200);
