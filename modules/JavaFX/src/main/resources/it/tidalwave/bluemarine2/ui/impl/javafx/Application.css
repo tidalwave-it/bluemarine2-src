@@ -54,9 +54,67 @@
   {
     -fx-background-color:   rgb(30,30,30);
   }
-
-
   
+.toggle-button
+  {
+    -fx-background-color:    black;
+  }
+  
+.toggle-button:selected
+  {
+    -fx-background-color:   linear-gradient(rgb(95.0, 165.0, 221.0),
+                                            rgb(54.0, 124.0, 192.0)),
+                            linear-gradient(rgb(116.0, 186.0, 232.0),
+                                            rgb(116.0, 186.0, 232.0) 1.0%,
+                                            rgb(109.0, 178.0, 227.0) 1.0%,
+                                            rgb(59.0, 136.0, 208.0) 100.0%);
+  }
+
+.toggle-button:armed, .toggle-button:selected:armed
+  {
+    -fx-background-color: rgb(87.0, 87.0, 87.0), -toggle-armed-base, -toggle-shadow-armed;
+  }
+  
+
+.MediaFileSystem,
+.RepositoryBrowserByArtistThenTrack,
+.RepositoryBrowserByArtistThenRecord,
+.RepositoryBrowserByRecordThenTrack,
+.RepositoryBrowserByTrack
+  {
+    -fx-min-width:           3em;
+    -fx-max-width:           3em;
+    -fx-pref-width:          3em;
+    -fx-padding:             0.2em;
+    -fx-background-size:     1.8em 1.8em;
+    -fx-background-repeat:   no-repeat;
+    -fx-background-position: center;
+  }
+
+.MediaFileSystem
+  {
+    -fx-background-image:    url("music-128.png");
+  }
+  
+.RepositoryBrowserByArtistThenTrack
+  {
+    -fx-background-image:    url("contacts-128.png");
+  }
+  
+.RepositoryBrowserByArtistThenRecord
+  {
+    -fx-background-image:    url("contacts-128.png");
+  }
+  
+.RepositoryBrowserByRecordThenTrack
+  {
+    -fx-background-image:    url("cd-128.png");
+  }
+
+.RepositoryBrowserByTrack
+  {
+    -fx-background-image:    url("note-128.png");
+  }
   
   
   

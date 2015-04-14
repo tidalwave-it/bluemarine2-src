@@ -26,19 +26,30 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl.browser;
+package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 
-import it.tidalwave.dci.annotation.DciContext;
+import javax.annotation.Nonnull;
+import java.util.Arrays;
+import java.util.Collection;
+import it.tidalwave.role.ui.Styleable;
+import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.model.MediaFileSystem;
+import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
- * @stereotype  Context
- * 
- * @author  Fabrizio Giudici
+ * @author  fritz
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciContext
-public class RepositoryBrowserByArtistThenTrack extends RepositoryBrowserByArtistSupport
+@RequiredArgsConstructor @DciRole(datumType = MediaFileSystem.class)
+public class MediaFileSystemStyleable implements Styleable
   {
+    private final MediaFileSystem owner;
+    
+    @Override @Nonnull
+    public Collection<String> getStyles() 
+      {
+        return Arrays.asList("MediaFileSystem");
+      }
   }

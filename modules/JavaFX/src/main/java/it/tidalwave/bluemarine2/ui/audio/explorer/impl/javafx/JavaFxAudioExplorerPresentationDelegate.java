@@ -32,11 +32,18 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.Optional;
 import javafx.fxml.FXML;
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 import org.springframework.beans.factory.annotation.Configurable;
+import it.tidalwave.util.NotFoundException;
+import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
@@ -45,6 +52,12 @@ import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.role.Displayable.*;
+import it.tidalwave.role.Identifiable;
+import static it.tidalwave.role.SimpleComposite.SimpleComposite;
+import it.tidalwave.role.ui.Styleable;
+import static it.tidalwave.role.ui.UserActionProvider.*;
+import it.tidalwave.util.AsException;
 
 /***********************************************************************************************************************
  *
@@ -92,7 +105,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     private Label lbFolderName;
     
     @FXML
-    private ComboBox<PresentationModel> cbBrowsers;
+    private HBox hbBrowserButtons;
     
     @Inject
     private JavaFXBinder binder;
@@ -112,7 +125,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     @Override
     public void populateBrowsers (final @Nonnull PresentationModel pm)
       {
-        binder.bind(cbBrowsers, pm);
+          bindToggleButtons(hbBrowserButtons, pm);
       }
       
     @Override
@@ -137,5 +150,52 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     public Object getMemento()
       {
         return new Memento(lvFiles);
+      }
+    
+    /*
+     * FIXME: move to SteelBlue
+     * The pane must be populated with at least one button, which will be queried for the CSS style.
+    */
+    private void bindToggleButtons (final @Nonnull Pane pane, final @Nonnull PresentationModel pm)
+      {
+        final ToggleGroup group = new ToggleGroup();
+        final ObservableList<Node> children = pane.getChildren();
+        final ObservableList<String> styleClass = children.get(0).getStyleClass();
+        children.clear();
+        final SimpleComposite<PresentationModel> pmc = pm.as(SimpleComposite);
+        pmc.findChildren().results().stream().forEach(cpm -> 
+          {
+            try 
+              {
+                final ToggleButton button = new ToggleButton();
+                
+                try // can't use asOptional() since PresentationModel is constrained to Java 7
+                  {
+                    button.setText((cpm.as(Displayable).getDisplayName()));
+                  } 
+                catch (AsException e2) 
+                  {
+                    e2.printStackTrace();
+                  }
+                
+                button.getStyleClass().addAll(styleClass);
+                button.setToggleGroup(group);
+                binder.bind(button, cpm.as(UserActionProvider).getDefaultAction());
+                children.add(button);
+                
+                try // can't use asOptional() since PresentationModel is constrained to Java 7
+                  {
+                    button.getStyleClass().addAll(cpm.as(Styleable.Styleable).getStyles());
+                  } 
+                catch (AsException e2) 
+                  {
+                    e2.printStackTrace();
+                  }
+              } 
+            catch (NotFoundException e) 
+              {
+                e.printStackTrace(); // FIXME
+              }
+          });
       }
   }

@@ -28,25 +28,16 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl.browser;
 
-import javax.annotation.Nonnull;
-import it.tidalwave.role.Displayable;
-
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryBrowserByRecordThenTrack extends RepositoryBrowserSupport implements Displayable
+public class RepositoryBrowserByRecordThenTrack extends RepositoryBrowserSupport 
   {
     public RepositoryBrowserByRecordThenTrack()
       {
         setFinder(() -> getCatalog().findRecords());
       }
-
-    @Override @Nonnull
-    public String getDisplayName() 
-      {
-        return "by Record, then track"; // FIXME: use a Bundle
-      }  
   }
