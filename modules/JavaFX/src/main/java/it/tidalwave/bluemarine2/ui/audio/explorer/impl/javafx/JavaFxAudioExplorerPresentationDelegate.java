@@ -43,7 +43,6 @@ import it.tidalwave.role.ui.javafx.JavaFXBinder;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
@@ -60,15 +59,27 @@ import lombok.extern.slf4j.Slf4j;
 @Configurable @Slf4j
 public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPresentation
   {
-    @RequiredArgsConstructor @Getter @ToString
+    @Getter @ToString
     static class Memento
       {
-        public Memento() // default constructor
+        private final int selectedIndex;  
+        
+        public Memento()
           {
-            selectedIndex = 0;  
+            selectedIndex = 0;
           }
         
-        private final int selectedIndex;  
+        public Memento (final @Nonnull ListView lvFiles) 
+          {
+        // TODO: add further properties, such as the precise scroller position
+            selectedIndex = lvFiles.getSelectionModel().getSelectedIndex();  
+          }
+        
+        public void applyTo (final @Nonnull ListView lvFiles)
+          {
+            lvFiles.getSelectionModel().select(selectedIndex);
+            lvFiles.scrollTo(selectedIndex);
+          }
       }
     
     @FXML
@@ -111,9 +122,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
           {
             if (!lvFiles.getItems().isEmpty())
               {
-                final Memento memento = (Memento)optionalMemento.orElse(new Memento());
-                lvFiles.getSelectionModel().select(memento.getSelectedIndex());
-                lvFiles.scrollTo(memento.getSelectedIndex());
+                ((Memento)optionalMemento.orElse(new Memento())).applyTo(lvFiles);
               }
           });
       }
@@ -127,7 +136,6 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     @Override
     public Object getMemento()
       {
-        // TODO: add further properties, such as the precise scroller position
-        return new Memento(lvFiles.getSelectionModel().getSelectedIndex());
+        return new Memento(lvFiles);
       }
   }
