@@ -55,7 +55,7 @@ public class MusicArtistCustomGraphicProvider implements CustomGraphicProvider
     public Node getGraphic() 
       {
         final Label lbIcon = new Label("");
-        lbIcon.getStyleClass().setAll("list-cell", "artist-icon"); // TODO: use artist-group-icon for groups
+        lbIcon.getStyleClass().setAll("list-cell", (artist.getType() == 1) ? "artist-icon" : "artist-group-icon"); 
         final Label lbName = new Label(artist.as(Displayable).getDisplayName());
         lbName.getStyleClass().setAll("list-cell", "artist-label");
         final HBox hBox = new HBox(lbIcon, lbName);

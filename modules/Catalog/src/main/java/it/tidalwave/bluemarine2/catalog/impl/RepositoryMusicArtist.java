@@ -52,9 +52,13 @@ import org.openrdf.query.BindingSet;
 @Immutable @Getter
 public class RepositoryMusicArtist extends RepositoryEntitySupport implements MusicArtist
   {
+    @Getter
+    private int type;
+    
     public RepositoryMusicArtist (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
         super(repository, bindingSet, "artist");
+        type = Integer.parseInt(bindingSet.getBinding("artist_type").getValue().stringValue());
       }
     
     @Override @Nonnull
