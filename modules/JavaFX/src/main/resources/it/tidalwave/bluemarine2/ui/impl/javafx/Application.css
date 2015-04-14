@@ -16,7 +16,7 @@
   
 .content-panel
   {
-    -fx-padding:            20px;
+    -fx-padding:            1em;
   }
 
 .header-label
@@ -50,8 +50,8 @@
     -fx-text-fill:          white;
     -fx-font-size:          40;
     -fx-border-color:       rgb(50, 50, 50);
-    -fx-border-radius:      10px;
-    -fx-background-radius:  10px;
+    -fx-border-radius:      0.25em;
+    -fx-background-radius:  0.25em;
   }
   
 .button:focused
@@ -62,16 +62,16 @@
 .smallButton
   {
     -fx-font-size:          28;
-    -fx-border-radius:      12px;
-    -fx-background-radius:  12px;
+    -fx-border-radius:      0.3em;
+    -fx-background-radius:  0.3em
   }
   
 .mainMenuButton
   {
     -fx-font-size:          60;
-    -fx-border-radius:      20px;
-    -fx-background-radius:  20px;
-    -fx-padding:            5px;
+    -fx-border-radius:      0.5em;
+    -fx-background-radius:  0.5em;
+    -fx-padding:            0.125em;
   }
   
 .list-view
@@ -97,7 +97,7 @@
     -fx-background-image:       url("music-128.png");
     -fx-background-repeat:      no-repeat;
     -fx-background-position:    left center;
-    -fx-background-size:        24 24;
+    -fx-background-size:        0.6em 0.6em;
     -fx-alignment:              center;    
   }
   
@@ -106,7 +106,7 @@
     -fx-background-image:       url("contacts-128.png");
     -fx-background-repeat:      no-repeat;
     -fx-background-position:    left center;
-    -fx-background-size:        24 24;
+    -fx-background-size:        0.6em 0.6em;
     -fx-alignment:              center;    
   }
   
@@ -120,7 +120,7 @@
     -fx-background-image:       url("cd-128.png");
     -fx-background-repeat:      no-repeat;
     -fx-background-position:    left center;
-    -fx-background-size:        24 24;
+    -fx-background-size:        0.6em 0.6em;
     -fx-alignment:              center;    
   }
   
@@ -129,7 +129,7 @@
     -fx-background-image:       url("note-128.png");
     -fx-background-repeat:      no-repeat;
     -fx-background-position:    left center;
-    -fx-background-size:        24 24;
+    -fx-background-size:        0.6em 0.6em;
     -fx-alignment:              center;    
   }
   
@@ -164,13 +164,13 @@
                                             rgb(116.0, 186.0, 232.0) 1.0%, 
                                             rgb(109.0, 178.0, 227.0) 1.0%, 
                                             rgb(59.0, 136.0, 208.0) 100.0%);
-    -fx-background-insets:  0.0, 1.0 0.0 1.0 0.0;
+    -fx-background-insets:  0.0, 0.025em 0.0 0.025em 0.0;
     -fx-text-fill:          black;
   }
   
 #btUp
   {    
-    -fx-padding:             8;
+    -fx-padding:             0.2em;
     -fx-background-image:    url("arrow-135-128.png");
     -fx-background-size:     32 32;
     -fx-background-repeat:   no-repeat;
@@ -179,45 +179,45 @@
 
 #btPlay
   {    
-    -fx-padding:             8;
+    -fx-padding:             0.2em;
     -fx-background-image:    url("play-5-128.png");
-    -fx-background-size:     32 32;
+    -fx-background-size:     0.8em 0.8em;
     -fx-background-repeat:   no-repeat;
     -fx-background-position: center;   
   }
 
 #btStop
   {          
-    -fx-padding:             8;
+    -fx-padding:             0.2em;
     -fx-background-image:    url("stop-128.png");
-    -fx-background-size:     32 32;
+    -fx-background-size:     0.8em 0.8em;
     -fx-background-repeat:   no-repeat;
     -fx-background-position: center;   
   }
 
 #btPause
   {          
-    -fx-padding:             8;
+    -fx-padding:             0.2em;
     -fx-background-image:    url("pause-128.png");
-    -fx-background-size:     32 32;
+    -fx-background-size:     1.2em 1.2em;
     -fx-background-repeat:   no-repeat;
     -fx-background-position: center;   
   }
 
 #btRewind
   {          
-    -fx-padding:             8;
+    -fx-padding:             0.2em;
     -fx-background-image:    url("arrow-69-128.png");
-    -fx-background-size:     48 48;
+    -fx-background-size:     1.2em 1.2em;
     -fx-background-repeat:   no-repeat;
     -fx-background-position: center;   
   }
 
 #btFastForward
   {          
-    -fx-padding:             8;
+    -fx-padding:             0.2em;
     -fx-background-image:    url("arrow-44-128.png");
-    -fx-background-size:     48 48;
+    -fx-background-size:     1.2em 1.2em;
     -fx-background-repeat:   no-repeat;
     -fx-background-position: center;   
   }
