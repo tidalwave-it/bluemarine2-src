@@ -63,5 +63,6 @@
     <bean class="it.tidalwave.bluemarine2.catalog.impl.browser.RepositoryBrowserByArtistThenTrack" />
     <bean class="it.tidalwave.bluemarine2.catalog.impl.browser.RepositoryBrowserByArtistThenRecord" />
     <bean class="it.tidalwave.bluemarine2.catalog.impl.browser.RepositoryBrowserByRecordThenTrack" />
+    <bean class="it.tidalwave.bluemarine2.catalog.impl.browser.RepositoryBrowserByTrack" />
 
 </beans>
