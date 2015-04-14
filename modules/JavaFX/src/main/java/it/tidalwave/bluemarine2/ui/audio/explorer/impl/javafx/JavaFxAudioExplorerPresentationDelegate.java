@@ -43,8 +43,10 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.util.NotFoundException;
+import it.tidalwave.util.AsException;
 import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.role.ui.PresentationModel;
+import it.tidalwave.role.ui.Styleable;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
@@ -53,11 +55,8 @@ import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.Displayable.*;
-import it.tidalwave.role.Identifiable;
 import static it.tidalwave.role.SimpleComposite.SimpleComposite;
-import it.tidalwave.role.ui.Styleable;
 import static it.tidalwave.role.ui.UserActionProvider.*;
-import it.tidalwave.util.AsException;
 
 /***********************************************************************************************************************
  *
