@@ -2,8 +2,8 @@
  * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - lightweight MediaCenter
- * http://bluemarine.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * blueMarine2 - Semantic Media Center
+ * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -29,10 +29,7 @@
 package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.role.spi.DefaultDisplayable;
-import it.tidalwave.bluemarine2.model.Entity;
-import lombok.Delegate;
 
 /***********************************************************************************************************************
  *
@@ -40,13 +37,10 @@ import lombok.Delegate;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class NamedEntity implements Entity
+public class NamedEntity extends EntityWithRoles
   {
-    @Delegate
-    private final AsSupport asSupport;
-
     public NamedEntity (final @Nonnull String displayName) 
       {
-        this.asSupport = new AsSupport(this, new DefaultDisplayable(displayName));
+        super(new DefaultDisplayable(displayName));
       }
   }
