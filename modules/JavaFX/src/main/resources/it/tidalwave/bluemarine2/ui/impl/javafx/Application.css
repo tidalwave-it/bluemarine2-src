@@ -92,8 +92,17 @@
     -fx-background-color:   rgb(30,30,30);
   }
 
+.cell-container
+  {
+    -fx-pref-width:             100%;
+    -fx-alignment:              baseline-left;
+  }
+  
 .folder-icon
   {
+    -fx-min-width:              2.2em;
+    -fx-max-width:              2.2em;
+    -fx-pref-width:             2.2em;
     -fx-background-image:       url("music-128.png");
     -fx-background-repeat:      no-repeat;
     -fx-background-position:    left center;
@@ -103,6 +112,9 @@
   
 .artist-icon
   {
+    -fx-min-width:              2.2em;
+    -fx-max-width:              2.2em;
+    -fx-pref-width:             2.2em;
     -fx-background-image:       url("contacts-128.png");
     -fx-background-repeat:      no-repeat;
     -fx-background-position:    left center;
@@ -117,6 +129,9 @@
   
 .record-icon
   {
+    -fx-min-width:              2.2em;
+    -fx-max-width:              2.2em;
+    -fx-pref-width:             2.2em;
     -fx-background-image:       url("cd-128.png");
     -fx-background-repeat:      no-repeat;
     -fx-background-position:    left center;
@@ -126,6 +141,9 @@
   
 .track-icon
   {
+    -fx-min-width:              2.2em;
+    -fx-max-width:              2.2em;
+    -fx-pref-width:             2.2em;
     -fx-background-image:       url("note-128.png");
     -fx-background-repeat:      no-repeat;
     -fx-background-position:    left center;
@@ -135,7 +153,10 @@
   
 .track-index
   {
-    -fx-font-size:              1.57em; 
+    -fx-min-width:              3.7em;
+    -fx-max-width:              3.7em;
+    -fx-pref-width:             3.7em;
+    -fx-font-size:              0.6em; 
     -fx-alignment:              baseline-right;    
   }
   
@@ -144,13 +165,17 @@
 .record-label,
 .track-label
   {
+    -fx-pref-width:             9999; /* FIXME */
     -fx-wrap-text:              true;    
   }
   
 .record-duration,
 .track-duration
   {
-    -fx-font-size:              1.57em; 
+    -fx-min-width:              5.4em;
+    -fx-max-width:              5.4em;
+    -fx-pref-width:             5.4em;
+    -fx-font-size:              0.7em; 
     -fx-alignment:              baseline-right;    
     -fx-text-fill:              rgb(200, 200, 200);
   }

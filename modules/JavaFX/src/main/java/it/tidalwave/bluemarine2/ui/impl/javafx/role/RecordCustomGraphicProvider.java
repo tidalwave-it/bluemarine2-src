@@ -55,18 +55,13 @@ public class RecordCustomGraphicProvider implements CustomGraphicProvider
     public Node getGraphic() 
       {
         final Label lbIcon = new Label("");
-        lbIcon.setMinWidth(30); // FIXME
         lbIcon.getStyleClass().setAll("list-cell", "record-icon");
         final Label lbName = new Label(record.as(Displayable).getDisplayName());
-        lbName.setPrefWidth(9999); // FIXME
         lbName.getStyleClass().setAll("list-cell", "record-label");
         final Label lbDuration = new Label(/* format(record.getDuration()) FIXME */);
         lbDuration.getStyleClass().setAll("list-cell", "record-duration");
-        lbDuration.setMaxWidth(70);// FIXME
-        lbDuration.setMinWidth(70);
         final HBox hBox = new HBox(lbIcon, lbName, lbDuration);
-        hBox.setAlignment(Pos.BASELINE_LEFT);
-        hBox.setPrefWidth(500); // FIXME
+        hBox.getStyleClass().setAll("list-cell", "cell-container");
         return hBox;
       }
   }
