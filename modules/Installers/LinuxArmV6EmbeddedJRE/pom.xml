@@ -98,7 +98,7 @@
                             <goal>copy-dependencies</goal>
                         </goals>
                         <configuration>
-                            <scope>runtime</scope> <!-- FIXME: it also includes testng and junit -->
+                            <includeScope>runtime</includeScope>
                             <overWrite>true</overWrite>
                             <outputDirectory>${basedir}/target/classes/lib</outputDirectory>
                         </configuration>
