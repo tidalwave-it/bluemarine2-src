@@ -88,6 +88,8 @@ public class DbTuneMetadataManager
     private static final List<URI> VALID_TRACK_PREDICATES_FOR_SUBJECT = Arrays.asList(
             RDF.TYPE, RDFS.LABEL, DC.TITLE, FOAF.MAKER);
     
+    private final ConcurrentMap<URI, MediaItem> mediaItemMapByUri = new ConcurrentHashMap<>();
+    
     // Skip foaf:maker: it would include all the items in the database, not only in our collection
     // anyway, the required statements have been already added when importing tracks
     private static final List<URI> VALID_ARTIST_PREDICATES_FOR_SUBJECT = Arrays.asList(
@@ -138,8 +140,6 @@ public class DbTuneMetadataManager
                         && VALID_ARTIST_PREDICATES_FOR_SUBJECT.contains(statement.getPredicate());
       }
             
-    private final ConcurrentMap<URI, MediaItem> m = new ConcurrentHashMap<>();
-    
     /*******************************************************************************************************************
      *
      * Imports the DbTune.org metadata for the given track.
@@ -155,9 +155,16 @@ public class DbTuneMetadataManager
         try 
           {
             log.debug("importTrackMetadata({})", trackUri);
-            m.put(trackUri, mediaItem);
             statementManager.requestAdd(trackUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid));
-            requestDownload(urlFor(trackUri));
+            
+            if (mediaItemMapByUri.putIfAbsent(trackUri, mediaItem) != null)
+              {
+                log.warn("Track with duplicate MusicBrainz UUID: {}, {}", mediaItem, mbGuid);
+              }
+            else
+              {
+                requestDownload(urlFor(trackUri));
+              }
           }
         catch (MalformedURLException e) // shoudn't never happen
           {
@@ -171,8 +178,10 @@ public class DbTuneMetadataManager
      ******************************************************************************************************************/
     public void onTrackMetadataDownloadComplete (final @Nonnull DownloadComplete message) 
       {
+        log.debug("onTrackMetadataDownloadComplete({})", message);
+        
         final URI trackUri = uriFor(message.getUrl());
-        final MediaItem mediaItem = m.remove(trackUri);
+        final MediaItem mediaItem = mediaItemMapByUri.get(trackUri);
         
         assert mediaItem != null : "Null mediaItem for " + trackUri;
         
@@ -180,9 +189,9 @@ public class DbTuneMetadataManager
           {
             try 
               {
-                log.debug("onTrackMetadataDownloadComplete({})", message);
                 final Model model = parseModel(message);
                 statementManager.requestAdd(model.stream().filter(trackStatementFilterFor(trackUri)).collect(toList()));
+                
                 model.filter(trackUri, FOAF.MAKER, null)
                      .forEach(statement -> requestArtistMetadata((URI)statement.getObject(), Optional.empty()));
                 model.filter(null, MO.P_TRACK, trackUri)

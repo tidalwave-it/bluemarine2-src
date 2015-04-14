@@ -605,10 +605,10 @@ ALL TRACKS:
   RepositoryTrack(15, 02:18, rdfs:label=Caritas Habundant in Omnia (Antiphon), Anonymous 4/The Origin Of Fire - Music & Visions Of Hildegard Von Bingen/15 Bingen_ Antiphon - Caritas Habundant In Omnia.m4a, http://dbtune.org/musicbrainz/resource/track/f039b744-5493-451f-a704-66f1107fdedb)
   RepositoryTrack(06, 01:21, rdfs:label=Carlotta, Ennio Morricone/The Mission/06 Carlotta.m4a, http://dbtune.org/musicbrainz/resource/track/08765a0e-ccf3-416b-920c-51f49b7eefa4)
   RepositoryTrack(04, 03:16, rdfs:label=Carme veneziano, Rondò Veneziano/Barocco/04 Carme Veneziano.m4a, http://dbtune.org/musicbrainz/resource/track/4bb786f8-6e92-4925-9cbd-cb35d4a5d9ac)
-  RepositoryTrack(02, 04:21, rdfs:label=Carmen: Act II. "Les tringles des sistres tintaient" (Chanson bohème), Compilations/The Incomparable Callas - Favourite Arias/10 Bizet_ Carmen - Les Tringles Des Sistres Tintaient.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
-  RepositoryTrack(02, 04:24, rdfs:label=Carmen: Act II. "Les tringles des sistres tintaient" (Chanson bohème), Compilations/Callas - The Platinum Collection [Disc 3]/02 Bizet_ Carmen - Les Tringles Des Sistres Tintaient ... Chanson Boheme.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
-  RepositoryTrack(10, 04:21, rdfs:label=Carmen: Act II. "Les tringles des sistres tintaient" (Chanson bohème), Compilations/The Incomparable Callas - Favourite Arias/10 Bizet_ Carmen - Les Tringles Des Sistres Tintaient.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
-  RepositoryTrack(10, 04:24, rdfs:label=Carmen: Act II. "Les tringles des sistres tintaient" (Chanson bohème), Compilations/Callas - The Platinum Collection [Disc 3]/02 Bizet_ Carmen - Les Tringles Des Sistres Tintaient ... Chanson Boheme.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
+  RepositoryTrack(02, 04:21, rdfs:label=Carmen - Les tringles des sistres tintaient, Compilations/The Incomparable Callas - Favourite Arias/10 Bizet_ Carmen - Les Tringles Des Sistres Tintaient.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
+  RepositoryTrack(02, 04:24, rdfs:label=Carmen - Les tringles des sistres tintaient, Compilations/Callas - The Platinum Collection [Disc 3]/02 Bizet_ Carmen - Les Tringles Des Sistres Tintaient ... Chanson Boheme.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
+  RepositoryTrack(10, 04:24, rdfs:label=Carmen - Les tringles des sistres tintaient, Compilations/Callas - The Platinum Collection [Disc 3]/02 Bizet_ Carmen - Les Tringles Des Sistres Tintaient ... Chanson Boheme.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
+  RepositoryTrack(10, 04:21, rdfs:label=Carmen - Les tringles des sistres tintaient, Compilations/The Incomparable Callas - Favourite Arias/10 Bizet_ Carmen - Les Tringles Des Sistres Tintaient.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
   RepositoryTrack(03, 26:41, rdfs:label=Carnaval Op.9 (Schumann), Lambis Vassiliadis/Johannes Brahms, Robert Schumann/03 Carnaval Op.9 (Schumann).m4a, urn:bluemarine:track:defdb923d3f7314225d387e845358f43758fe765)
   RepositoryTrack(11, 03:41, rdfs:label=Carreau, pique... la mort! - Bizet (Carmen), Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - Carreau, Pique...La Mort!.m4a, http://dbtune.org/musicbrainz/resource/track/ac131cc0-b4f0-4c12-b0dd-b14213803602)
   RepositoryTrack(09, 03:33, rdfs:label=Carrousel, Rondò Veneziano/Concerto/09 Carrousel.m4a, http://dbtune.org/musicbrainz/resource/track/0c41c4d7-69ee-4fa7-a2f8-e605bae3cbbc)
@@ -2378,12 +2378,12 @@ ALL TRACKS:
   RepositoryTrack(04, 11:25, rdfs:label=Multum Miror Cuius Consilio, New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/04 Multum Miror Cuius Consilio.m4a, urn:bluemarine:track:e40ff44cbb016aa907295a00d54febdaee9fb023)
   RepositoryTrack(07, 02:31, rdfs:label=Munro's Office / Stockade, Compilations/The Last Of The Mohicans/07 Munro's Office_Stockade.m4a, http://dbtune.org/musicbrainz/resource/track/3033fb60-7f42-4e27-8fa5-dedfc8d7a235)
   RepositoryTrack(06, 02:33, rdfs:label=Music for Movies: Barley Wagons (from "Of Mice and Men"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-06 Music for Movies_ Copland.m4a, http://dbtune.org/musicbrainz/resource/track/fef95edb-9093-4fcb-941a-51ff1e586c11)
+  RepositoryTrack(08, 03:04, rdfs:label=Music for Movies: Grovers Corners (From "Our Town"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-09 Music for Movies_ Threshing Machines from _Of Mice and Men_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
+  RepositoryTrack(09, 03:10, rdfs:label=Music for Movies: Grovers Corners (From "Our Town"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-08 Music for Movies_ Grovers Corners from _Our Town_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
+  RepositoryTrack(09, 03:04, rdfs:label=Music for Movies: Grovers Corners (From "Our Town"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-09 Music for Movies_ Threshing Machines from _Of Mice and Men_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
+  RepositoryTrack(08, 03:10, rdfs:label=Music for Movies: Grovers Corners (From "Our Town"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-08 Music for Movies_ Grovers Corners from _Our Town_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
   RepositoryTrack(05, 06:11, rdfs:label=Music for Movies: New England Countryside (from "The City"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-05 Music for Movies_ New England Countryside from _The City_.m4a, http://dbtune.org/musicbrainz/resource/track/22de19c6-521e-45c2-8b91-b87f4c569478)
   RepositoryTrack(07, 02:41, rdfs:label=Music for Movies: Sunday Traffic (from "The City"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-07 Music for Movies_ Sunday Traffic from _The City_.m4a, http://dbtune.org/musicbrainz/resource/track/defe967f-5802-4733-9d3d-96c2ba7729e2)
-  RepositoryTrack(08, 03:04, rdfs:label=Music for Movies: Threshing Machines (From "Of Mice and Men"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-09 Music for Movies_ Threshing Machines from _Of Mice and Men_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
-  RepositoryTrack(09, 03:04, rdfs:label=Music for Movies: Threshing Machines (From "Of Mice and Men"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-09 Music for Movies_ Threshing Machines from _Of Mice and Men_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
-  RepositoryTrack(09, 03:10, rdfs:label=Music for Movies: Threshing Machines (From "Of Mice and Men"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-08 Music for Movies_ Grovers Corners from _Our Town_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
-  RepositoryTrack(08, 03:10, rdfs:label=Music for Movies: Threshing Machines (From "Of Mice and Men"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-08 Music for Movies_ Grovers Corners from _Our Town_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
   RepositoryTrack(12, 07:28, rdfs:label=Music for the Royal Fireworks, HWV 351: I. Ouverture, Compilations/Handel_ Music For The Royal Fireworks, Concerto #2 In F/12 Handel_ Music For The Royal Fireworks, HWV 351 - 1. Overture_ Adagio, Allegro, Lentement, Allegro.m4a, http://dbtune.org/musicbrainz/resource/track/7177f747-722d-4201-83bc-a42e0b17c058)
   RepositoryTrack(13, 01:03, rdfs:label=Music for the Royal Fireworks, HWV 351: II. Bourrée, Compilations/Handel_ Music For The Royal Fireworks, Concerto #2 In F/13 Handel_ Music For The Royal Fireworks, HWV 351 - Bourrée.m4a, http://dbtune.org/musicbrainz/resource/track/ef8229cd-9ebe-47ba-a07d-15c2a9a36050)
   RepositoryTrack(14, 03:16, rdfs:label=Music for the Royal Fireworks, HWV 351: III. La Paix, Compilations/Handel_ Music For The Royal Fireworks, Concerto #2 In F/14 Handel_ Music For The Royal Fireworks, HWV 351 - 3. La Paix.m4a, http://dbtune.org/musicbrainz/resource/track/50efbbc1-a24b-4ba4-9e1f-a683fb505d1c)
@@ -4836,6 +4836,7 @@ RepositoryRecord(rdfs:label=King Kong, urn:bluemarine:record:4aae3c106785ab758f4
 RepositoryRecord(rdfs:label=Kiri Sings Porter, urn:bluemarine:record:1703f4be742de38e3581fb11143d7a03bec67aa0)
 RepositoryRecord(rdfs:label=L'Allieva, urn:bluemarine:record:de566ac26dab3ad9cf79d54ebe553e422a666bdb)
 RepositoryRecord(rdfs:label=L'Apocalypse des animaux, http://dbtune.org/musicbrainz/resource/record/5d5ce68c-2e0e-48f7-beb0-36cfcf2cb660)
+RepositoryRecord(rdfs:label=L'Apocalypse des animaux, urn:bluemarine:record:66f8bc42899f252432023254dc0ab19d77adcdf3)
 RepositoryRecord(rdfs:label=La Domna Savorousa : Chants d’amour des troubadours et des trouvères, urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51)
 RepositoryRecord(rdfs:label=La Mer / Prélude à l'après-midi d'un faune / Nocturnes (Chicago Symphony Orchestra feat. conductor: Sir Georg Solti), http://dbtune.org/musicbrainz/resource/record/ed665e88-5761-4a33-b258-1a2eacf1d23f)
 RepositoryRecord(rdfs:label=La Vida de María - Cantigas de las Fiestas de Santa María, urn:bluemarine:record:3f6f3e6dcddc8323755b7eb8a003c46de8dd8de5)
@@ -5228,7 +5229,6 @@ RepositoryRecord(rdfs:label=The Great Guitar Concertos (feat. guitar: John Willi
 RepositoryRecord(rdfs:label=The Greatest Hits, http://dbtune.org/musicbrainz/resource/record/d32657ae-c765-45a8-85dc-b9efaaf59c24)
 RepositoryRecord(rdfs:label=The Hit Collection, http://dbtune.org/musicbrainz/resource/record/432e5974-d7ca-4386-9221-7fd9e50df244)
 RepositoryRecord(rdfs:label=The Incomparable Callas, http://dbtune.org/musicbrainz/resource/record/9d14232c-6bcc-4314-b713-8beec2e25cf9)
-RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:201c2cfc62f15d54d3379f6af28d0e5451c33e9b)
 RepositoryRecord(rdfs:label=The Indispensable Django Reinhardt (1949-1950), urn:bluemarine:record:31ac6165ebe8c8cd71b27384b904cc4fd145d44d)
 RepositoryRecord(rdfs:label=The Indispensable Django Reinhardt (disc 1), http://dbtune.org/musicbrainz/resource/record/0e90d571-c4fb-401a-80df-2c0379b78950)
 RepositoryRecord(rdfs:label=The Indispensable Django Reinhardt (disc 2), http://dbtune.org/musicbrainz/resource/record/e69f608e-49dc-4323-9b0e-b0a9a7794103)
@@ -5290,7 +5290,6 @@ RepositoryRecord(rdfs:label=Their Greatest Hits, urn:bluemarine:record:5a83a55ad
 RepositoryRecord(rdfs:label=Thelonious Monk - Live at The It Club (Complete), urn:bluemarine:record:ec3c9e1d961ab5d9225fa13651243e2b690af426)
 RepositoryRecord(rdfs:label=Thelonious Monk with John Coltrane, http://dbtune.org/musicbrainz/resource/record/04002e8a-68eb-4cef-a3b1-1a9f41b62f19)
 RepositoryRecord(rdfs:label=Themes, http://dbtune.org/musicbrainz/resource/record/ff7c291e-8dae-42d5-85bd-bdba89a3af1a)
-RepositoryRecord(rdfs:label=Themes, urn:bluemarine:record:b74b7f26c197fded8fd959d06ac303369e792636)
 RepositoryRecord(rdfs:label=This Girl's in Love With You, http://dbtune.org/musicbrainz/resource/record/b72eea89-2286-4cdb-8963-0ae7ff49cb37)
 RepositoryRecord(rdfs:label=This Is New, urn:bluemarine:record:eab233671cbc41faca4bf38218f08a4e89fb9cdd)
 RepositoryRecord(rdfs:label=This is Chris Botti, urn:bluemarine:record:147fbac4715e551cfe719d950555cdfae2cb36fe)
@@ -5546,7 +5545,6 @@ RepositoryMusicArtist(rdfs:label=Georg Friedrich Händel, uri=http://dbtune.org/
 RepositoryMusicArtist(rdfs:label=Georg Philipp Telemann, uri=http://dbtune.org/musicbrainz/resource/artist/8f831f50-e409-47c3-8598-71a61bc8cfb3)
 RepositoryMusicArtist(rdfs:label=George Gershwin, uri=http://dbtune.org/musicbrainz/resource/artist/65744963-191a-44ef-a3c7-b693a808a158)
 RepositoryMusicArtist(rdfs:label=Georges Barboteu/Horn, Lily Laskine/Harp, Jean-Francois Pail, uri=urn:bluemarine:artist:256f6d11705066dde3aa5f3aa7f0e8fdbd947881)
-RepositoryMusicArtist(rdfs:label=Georges Bizet, uri=http://dbtune.org/musicbrainz/resource/artist/9bd20e6a-b41d-4983-a5b6-c0ff849fa235)
 RepositoryMusicArtist(rdfs:label=Gipsy Kings, uri=http://dbtune.org/musicbrainz/resource/artist/44a7f7d5-79df-4f44-8f5e-02dfc0626904)
 RepositoryMusicArtist(rdfs:label=Giuseppe Verdi, uri=http://dbtune.org/musicbrainz/resource/artist/f1bedf1f-4445-4651-9c35-f4a3f3860a13)
 RepositoryMusicArtist(rdfs:label=Giuseppe Verdi, uri=urn:bluemarine:artist:e8d9dd0715ac21e0dd74c0ebf545887365578dce)
@@ -5861,10 +5859,10 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Aaron Copland, uri=http://dbtune.org/
   RepositoryTrack(11, 03:02, rdfs:label=Appalacian Spring/Allegro, Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-11 Appalachian Spring_ Allegro.m4a, http://dbtune.org/musicbrainz/resource/track/b061125b-28c6-40fc-9239-11fb0260695a)
   RepositoryTrack(14, 04:04, rdfs:label=Appalacian Spring/Subito Allegro, Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-14 Appalachian Spring_ Subito Allegro.m4a, http://dbtune.org/musicbrainz/resource/track/e0f3c234-21bc-46b2-992f-e3079fa0955d)
   RepositoryTrack(15, 01:07, rdfs:label=Appalacian Spring/As at First, Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-15 Appalachian Spring_ As At First (slowly).m4a, http://dbtune.org/musicbrainz/resource/track/46640eeb-911e-4ebe-8f82-0f33a77ebdb9)
-  RepositoryTrack(08, 03:04, rdfs:label=Music for Movies: Threshing Machines (From "Of Mice and Men"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-09 Music for Movies_ Threshing Machines from _Of Mice and Men_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
-  RepositoryTrack(08, 03:10, rdfs:label=Music for Movies: Threshing Machines (From "Of Mice and Men"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-08 Music for Movies_ Grovers Corners from _Our Town_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
-  RepositoryTrack(09, 03:04, rdfs:label=Music for Movies: Threshing Machines (From "Of Mice and Men"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-09 Music for Movies_ Threshing Machines from _Of Mice and Men_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
-  RepositoryTrack(09, 03:10, rdfs:label=Music for Movies: Threshing Machines (From "Of Mice and Men"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-08 Music for Movies_ Grovers Corners from _Our Town_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
+  RepositoryTrack(08, 03:04, rdfs:label=Music for Movies: Grovers Corners (From "Our Town"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-09 Music for Movies_ Threshing Machines from _Of Mice and Men_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
+  RepositoryTrack(08, 03:10, rdfs:label=Music for Movies: Grovers Corners (From "Our Town"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-08 Music for Movies_ Grovers Corners from _Our Town_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
+  RepositoryTrack(09, 03:04, rdfs:label=Music for Movies: Grovers Corners (From "Our Town"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-09 Music for Movies_ Threshing Machines from _Of Mice and Men_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
+  RepositoryTrack(09, 03:10, rdfs:label=Music for Movies: Grovers Corners (From "Our Town"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-08 Music for Movies_ Grovers Corners from _Our Town_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
   RepositoryTrack(01, 11:25, rdfs:label=El Salon Mexico, Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/1-01 El Salon Mexico.m4p, http://dbtune.org/musicbrainz/resource/track/2f5fd10f-b0e0-4612-a7ac-6e3bec197bbb)
   RepositoryTrack(02, 08:57, rdfs:label=An Outdoor Overture, Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/1-02 An Outdoor Overture.m4a, http://dbtune.org/musicbrainz/resource/track/f0eb42a2-00a7-4aa2-8603-d8606428bbde)
   RepositoryTrack(03, 03:21, rdfs:label=Billy the Kid Suite: Introduction - The Open Prairie, Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/1-03 Billy the Kid_ Introduction - The Open Prairie.m4a, http://dbtune.org/musicbrainz/resource/track/b5a00810-e14e-45a4-b7f1-fb2e2f150949)
@@ -8005,12 +8003,6 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=George Gershwin, uri=http://dbtune.or
 TRACKS OF RepositoryMusicArtist(rdfs:label=Georges Barboteu/Horn, Lily Laskine/Harp, Jean-Francois Pail, uri=urn:bluemarine:artist:256f6d11705066dde3aa5f3aa7f0e8fdbd947881):
   RepositoryTrack(02, 05:14, rdfs:label=Nicholas Charles BOCHSAAndante Sostenuto for horn and harp, Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas Charles BOCHSAAndante Sostenuto for horn and harp.m4a, urn:bluemarine:track:8e1afe58dc2af7e2ac338d87bd623cacfb33ce01)
 
-TRACKS OF RepositoryMusicArtist(rdfs:label=Georges Bizet, uri=http://dbtune.org/musicbrainz/resource/artist/9bd20e6a-b41d-4983-a5b6-c0ff849fa235):
-  RepositoryTrack(02, 04:21, rdfs:label=Carmen: Act II. "Les tringles des sistres tintaient" (Chanson bohème), Compilations/The Incomparable Callas - Favourite Arias/10 Bizet_ Carmen - Les Tringles Des Sistres Tintaient.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
-  RepositoryTrack(02, 04:24, rdfs:label=Carmen: Act II. "Les tringles des sistres tintaient" (Chanson bohème), Compilations/Callas - The Platinum Collection [Disc 3]/02 Bizet_ Carmen - Les Tringles Des Sistres Tintaient ... Chanson Boheme.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
-  RepositoryTrack(10, 04:21, rdfs:label=Carmen: Act II. "Les tringles des sistres tintaient" (Chanson bohème), Compilations/The Incomparable Callas - Favourite Arias/10 Bizet_ Carmen - Les Tringles Des Sistres Tintaient.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
-  RepositoryTrack(10, 04:24, rdfs:label=Carmen: Act II. "Les tringles des sistres tintaient" (Chanson bohème), Compilations/Callas - The Platinum Collection [Disc 3]/02 Bizet_ Carmen - Les Tringles Des Sistres Tintaient ... Chanson Boheme.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
-
 TRACKS OF RepositoryMusicArtist(rdfs:label=Gipsy Kings, uri=http://dbtune.org/musicbrainz/resource/artist/44a7f7d5-79df-4f44-8f5e-02dfc0626904):
   RepositoryTrack(11, 03:26, rdfs:label=Djobi djoba, Compilations/Top Of The Spot/11 DJobi DJoba.m4a, http://dbtune.org/musicbrainz/resource/track/343f9127-79fa-4781-adc0-1f78f52f7242)
 
@@ -9226,8 +9218,12 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Maria Callas, uri=http://dbtune.org/m
   RepositoryTrack(12, 05:17, rdfs:label=Mon cœur s'ouvre à ta voix - Saint-seans (Samson et Delila), Compilations/The Incomparable Callas - Favourite Arias/12 Saint-Saëns_ Samson Et Delila - Mon Coeur S'Ouvre À Ta Voix.m4a, http://dbtune.org/musicbrainz/resource/track/420b9b9a-c087-4c13-87c0-22b24b881476)
   RepositoryTrack(13, 06:03, rdfs:label=Pleurez, mes yeux - Massenet (Le Cid), Compilations/The Incomparable Callas - Favourite Arias/13 Massenet_ Le Cid - Pleurez, Mes Yeux.m4a, http://dbtune.org/musicbrainz/resource/track/6b63e4c1-237a-4b2a-a9a8-bb8274618e4b)
   RepositoryTrack(12, 04:07, rdfs:label=Spargi d'amaro pianto (Donizetti - Lucia di Lammermoor), Compilations/Callas - The Platinum Collection [Disc 3]/16 Donizetti_ Lucia Di Lammermoor - Spargi D'amaro Pianto.m4a, http://dbtune.org/musicbrainz/resource/track/dd16e5f5-0e01-4a2c-88f4-b8e5a984daf9)
+  RepositoryTrack(02, 04:21, rdfs:label=Carmen - Les tringles des sistres tintaient, Compilations/The Incomparable Callas - Favourite Arias/10 Bizet_ Carmen - Les Tringles Des Sistres Tintaient.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
+  RepositoryTrack(02, 04:24, rdfs:label=Carmen - Les tringles des sistres tintaient, Compilations/Callas - The Platinum Collection [Disc 3]/02 Bizet_ Carmen - Les Tringles Des Sistres Tintaient ... Chanson Boheme.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
   RepositoryTrack(03, 06:15, rdfs:label=Ernani - Ernani, Ernani, Involami, Compilations/Callas - The Platinum Collection [Disc 3]/03 Verdi_ Ernani - Surta E La Notte... Ernani! Ernani, Involami.m4a, http://dbtune.org/musicbrainz/resource/track/8cd966be-6b5c-4ef3-aa76-471b68240545)
   RepositoryTrack(09, 03:22, rdfs:label=La Bohème - Donde Lieta Usci, Compilations/Callas - The Platinum Collection [Disc 3]/09 Puccini_ La Bohème - Donde Lieta Usci.m4a, http://dbtune.org/musicbrainz/resource/track/90cc63ab-988f-44d7-bfed-49e1545e83f7)
+  RepositoryTrack(10, 04:21, rdfs:label=Carmen - Les tringles des sistres tintaient, Compilations/The Incomparable Callas - Favourite Arias/10 Bizet_ Carmen - Les Tringles Des Sistres Tintaient.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
+  RepositoryTrack(10, 04:24, rdfs:label=Carmen - Les tringles des sistres tintaient, Compilations/Callas - The Platinum Collection [Disc 3]/02 Bizet_ Carmen - Les Tringles Des Sistres Tintaient ... Chanson Boheme.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
   RepositoryTrack(01, 04:25, rdfs:label=Alceste - Divinités du Styx, Compilations/Callas - The Platinum Collection [Disc 3]/01 Gluck_ Alceste - Divinites Du Styx.m4a, http://dbtune.org/musicbrainz/resource/track/fcb8f7ce-9a81-4e31-8226-96d9ca67d89a)
   RepositoryTrack(04, 02:53, rdfs:label=Manon Lescaut - Il Quelle Trine Morbide, Compilations/Callas - The Platinum Collection [Disc 3]/04 Puccini_ Manon Lescaut - Il Quelle Trine Morbide.m4a, http://dbtune.org/musicbrainz/resource/track/76aa1185-0e9e-4f39-bc27-95abd699f8e8)
   RepositoryTrack(06, 04:24, rdfs:label=Orphée et Eurydice - J'ai Perdu Mon Eurydice, Compilations/Callas - The Platinum Collection [Disc 3]/06 Gluck_ Orphee Et Eurydice - J'ai Perdu Mon Eurydice.m4a, http://dbtune.org/musicbrainz/resource/track/fa6b8701-074b-49e7-b8bf-3f353634fe64)
@@ -11042,11 +11038,15 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=http://dbtune.org/music
   RepositoryTrack(06, 02:46, rdfs:label=The Tao of Love, Vangelis/Themes/06 The Tao Of Love.m4a, http://dbtune.org/musicbrainz/resource/track/f2428773-e2d5-4160-b910-467f7f1dcbff)
   RepositoryTrack(05, 03:33, rdfs:label=Chariots of Fire, Vangelis/Themes/14 Chariots Of Fire.m4a, http://dbtune.org/musicbrainz/resource/track/1844dd2e-4939-4086-b845-2bcb87070252)
   RepositoryTrack(01, 01:28, rdfs:label=Apocalypse des animaux - Générique, Vangelis/L'Apocalypse Des Animaux/01 Apocalypse Des Animaux - Generique.mp3, http://dbtune.org/musicbrainz/resource/track/8e327efc-429e-42a1-b96f-97a0ccba5521)
+  RepositoryTrack(02, 06:00, rdfs:label=La Petite Fille de la mer, Vangelis/L'Apocalypse Des Animaux/02 La Petite Fille De La Mer.mp3, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
+  RepositoryTrack(02, 05:54, rdfs:label=La Petite Fille de la mer, Vangelis/Themes/12 La Petite Fille De La Mer.m4a, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
   RepositoryTrack(03, 07:41, rdfs:label=Le Singe bleu, Vangelis/L'Apocalypse Des Animaux/03 Le Single Bleu.mp3, http://dbtune.org/musicbrainz/resource/track/bfecae7b-00cc-4d16-9028-480c6ae303c7)
   RepositoryTrack(04, 03:07, rdfs:label=La Mort du loup, Vangelis/L'Apocalypse Des Animaux/04 La Mort Du Loup.mp3, http://dbtune.org/musicbrainz/resource/track/406de607-761c-4d68-ac50-3c4cfdd94d8f)
   RepositoryTrack(05, 01:05, rdfs:label=L'Ours musicien, Vangelis/L'Apocalypse Des Animaux/05 L'ours Musicien.mp3, http://dbtune.org/musicbrainz/resource/track/258473ff-003a-4601-a25c-11953bbbc20b)
   RepositoryTrack(06, 10:07, rdfs:label=Création du monde, Vangelis/L'Apocalypse Des Animaux/06 Creation Du Monde.mp3, http://dbtune.org/musicbrainz/resource/track/6396d090-9676-4888-982f-adc01c0e99f5)
   RepositoryTrack(07, 05:56, rdfs:label=La Mer recommencée, Vangelis/L'Apocalypse Des Animaux/07 La Mer Recommencée.mp3, http://dbtune.org/musicbrainz/resource/track/b99bd3c5-b639-4e73-a56f-599dba13e06b)
+  RepositoryTrack(12, 06:00, rdfs:label=La Petite Fille de la mer, Vangelis/L'Apocalypse Des Animaux/02 La Petite Fille De La Mer.mp3, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
+  RepositoryTrack(12, 05:54, rdfs:label=La Petite Fille de la mer, Vangelis/Themes/12 La Petite Fille De La Mer.m4a, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
   RepositoryTrack(11, 05:44, rdfs:label=Memories of Green, Vangelis/Themes/11 Memories Of Green.m4a, http://dbtune.org/musicbrainz/resource/track/349101b9-0570-4859-9ad7-f939ea4e68ab)
   RepositoryTrack(01, 18:32, rdfs:label=Movement 1, Vangelis/Soil Festivities/01 Soil Festivities_ Movement 1.m4p, http://dbtune.org/musicbrainz/resource/track/e37e8e6c-9e3a-4f13-a3fa-48b216ae7050)
   RepositoryTrack(02, 06:20, rdfs:label=Movement 2, Vangelis/Soil Festivities/02 Soil Festivities_ Movement 2.m4a, http://dbtune.org/musicbrainz/resource/track/b3ee8722-7a20-4d56-b071-317689648ae0)
@@ -11055,8 +11055,6 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=http://dbtune.org/music
   RepositoryTrack(05, 07:20, rdfs:label=Movement 5, Vangelis/Soil Festivities/05 Soil Festivities_ Movement 5.m4a, http://dbtune.org/musicbrainz/resource/track/09e6f33f-3c17-4662-84f9-465edf3d180c)
   RepositoryTrack(11, 04:49, rdfs:label=China, Vangelis/Virtual Reality/China.mp3, http://dbtune.org/musicbrainz/resource/track/f239dbd7-d8ee-4b5c-9fd8-e83b1f59b309)
   RepositoryTrack(01, 05:01, rdfs:label=End Titles From "Blade Runner", Vangelis/Themes/01 End Titles From Blade Runner.m4a, http://dbtune.org/musicbrainz/resource/track/24f9f6b5-aa9f-486c-ae6a-161932aaa519)
-  RepositoryTrack(02, 06:00, rdfs:label=La Petite Fille de la mer, Vangelis/L'Apocalypse Des Animaux/02 La Petite Fille De La Mer.mp3, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
-  RepositoryTrack(02, 05:54, rdfs:label=La Petite Fille de la mer, Vangelis/Themes/12 La Petite Fille De La Mer.m4a, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
   RepositoryTrack(02, 04:01, rdfs:label=Main Theme From "Missing", Vangelis/Themes/02 Main Theme From Missing.m4a, http://dbtune.org/musicbrainz/resource/track/f7a37ed9-6511-4d3e-a216-c794c4a16391)
   RepositoryTrack(03, 05:02, rdfs:label=L'enfant, Vangelis/Themes/03 L'Enfant.m4a, http://dbtune.org/musicbrainz/resource/track/562f5479-35e9-4f84-9fca-b9ab005142e8)
   RepositoryTrack(04, 02:47, rdfs:label=Hymn, Vangelis/Themes/04 Hymn.m4a, http://dbtune.org/musicbrainz/resource/track/94b07470-a938-400d-bdaa-762ba4ef0a13)
@@ -11065,8 +11063,6 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=http://dbtune.org/music
   RepositoryTrack(08, 05:00, rdfs:label=Love Theme From "Blade Runner", Vangelis/Themes/08 Love Theme From Blade Runner.m4a, http://dbtune.org/musicbrainz/resource/track/431c038c-b7d0-4b00-8eb9-a36a11e1e721)
   RepositoryTrack(09, 04:18, rdfs:label=Opening Titles From "The Bounty", Vangelis/Themes/09 Opening Titles From The Bounty.m4a, http://dbtune.org/musicbrainz/resource/track/9af095cb-eddd-40f8-98cf-6e883ee57c28)
   RepositoryTrack(10, 05:00, rdfs:label=Closing Titles From "The Bounty", Vangelis/Themes/10 Closing Titles From The Bounty.m4a, http://dbtune.org/musicbrainz/resource/track/989c22f7-745d-46e1-a56f-b1ef7777c548)
-  RepositoryTrack(12, 06:00, rdfs:label=La Petite Fille de la mer, Vangelis/L'Apocalypse Des Animaux/02 La Petite Fille De La Mer.mp3, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
-  RepositoryTrack(12, 05:54, rdfs:label=La Petite Fille de la mer, Vangelis/Themes/12 La Petite Fille De La Mer.m4a, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
   RepositoryTrack(13, 05:20, rdfs:label=Five Circles, Vangelis/Themes/13 Five Circles.m4a, http://dbtune.org/musicbrainz/resource/track/0d3995f0-fbcc-4cc9-9f32-35402a325bac)
 
 TRACKS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=urn:bluemarine:artist:3aaced5008289e60b00a589e3e258abb08725493):
@@ -13846,6 +13842,12 @@ TRACKS IN RepositoryRecord(rdfs:label=L'Apocalypse des animaux, http://dbtune.or
   RepositoryTrack(06, 10:07, rdfs:label=Création du monde, Vangelis/L'Apocalypse Des Animaux/06 Creation Du Monde.mp3, http://dbtune.org/musicbrainz/resource/track/6396d090-9676-4888-982f-adc01c0e99f5)
   RepositoryTrack(07, 05:56, rdfs:label=La Mer recommencée, Vangelis/L'Apocalypse Des Animaux/07 La Mer Recommencée.mp3, http://dbtune.org/musicbrainz/resource/track/b99bd3c5-b639-4e73-a56f-599dba13e06b)
 
+TRACKS IN RepositoryRecord(rdfs:label=L'Apocalypse des animaux, urn:bluemarine:record:66f8bc42899f252432023254dc0ab19d77adcdf3):
+  RepositoryTrack(02, 06:00, rdfs:label=La Petite Fille de la mer, Vangelis/L'Apocalypse Des Animaux/02 La Petite Fille De La Mer.mp3, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
+  RepositoryTrack(02, 05:54, rdfs:label=La Petite Fille de la mer, Vangelis/Themes/12 La Petite Fille De La Mer.m4a, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
+  RepositoryTrack(12, 06:00, rdfs:label=La Petite Fille de la mer, Vangelis/L'Apocalypse Des Animaux/02 La Petite Fille De La Mer.mp3, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
+  RepositoryTrack(12, 05:54, rdfs:label=La Petite Fille de la mer, Vangelis/Themes/12 La Petite Fille De La Mer.m4a, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
+
 TRACKS IN RepositoryRecord(rdfs:label=La Domna Savorousa : Chants d’amour des troubadours et des trouvères, urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51):
   RepositoryTrack(01, 06:13, rdfs:label=S'anc fui bèla ni presada, Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/01 S'anc fui bèla ni presada.m4a, urn:bluemarine:track:3d659594bd719cfd69e222217cb37c0eaa6541e1)
   RepositoryTrack(02, 02:05, rdfs:label=Por coi me bait mes maris, Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/02 Por coi me bait mes maris.m4a, urn:bluemarine:track:d41c82f3da4aeed2372eace6c468cdda1bf69874)
@@ -16561,10 +16563,10 @@ TRACKS IN RepositoryRecord(rdfs:label=The Concert Sinatra, urn:bluemarine:record
   RepositoryTrack(07, 02:45, rdfs:label=This Nearly Was Mine, Frank Sinatra/The Concert Sinatra/07 This Nearly Was Mine.m4a, urn:bluemarine:track:d1475fffedb1c95a2ad5304f2d97e72e0b6f027b)
 
 TRACKS IN RepositoryRecord(rdfs:label=The Copland Collection: Orchestral and Ballet Works, 1936-1948, urn:bluemarine:record:fc150e1865fe91b2ae3e76a09f5173d2dccd4c3f):
-  RepositoryTrack(08, 03:04, rdfs:label=Music for Movies: Threshing Machines (From "Of Mice and Men"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-09 Music for Movies_ Threshing Machines from _Of Mice and Men_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
-  RepositoryTrack(08, 03:10, rdfs:label=Music for Movies: Threshing Machines (From "Of Mice and Men"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-08 Music for Movies_ Grovers Corners from _Our Town_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
-  RepositoryTrack(09, 03:04, rdfs:label=Music for Movies: Threshing Machines (From "Of Mice and Men"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-09 Music for Movies_ Threshing Machines from _Of Mice and Men_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
-  RepositoryTrack(09, 03:10, rdfs:label=Music for Movies: Threshing Machines (From "Of Mice and Men"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-08 Music for Movies_ Grovers Corners from _Our Town_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
+  RepositoryTrack(08, 03:04, rdfs:label=Music for Movies: Grovers Corners (From "Our Town"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-09 Music for Movies_ Threshing Machines from _Of Mice and Men_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
+  RepositoryTrack(08, 03:10, rdfs:label=Music for Movies: Grovers Corners (From "Our Town"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-08 Music for Movies_ Grovers Corners from _Our Town_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
+  RepositoryTrack(09, 03:04, rdfs:label=Music for Movies: Grovers Corners (From "Our Town"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-09 Music for Movies_ Threshing Machines from _Of Mice and Men_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
+  RepositoryTrack(09, 03:10, rdfs:label=Music for Movies: Grovers Corners (From "Our Town"), Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/2-08 Music for Movies_ Grovers Corners from _Our Town_.m4a, http://dbtune.org/musicbrainz/resource/track/7d10a4e3-93e7-4290-8d6d-ecc898b114ab)
 
 TRACKS IN RepositoryRecord(rdfs:label=The Copland Collection: Orchestral and Ballet Works, 1936-1948 (disc 1), http://dbtune.org/musicbrainz/resource/record/86af8470-fe29-45c2-8831-4322a7e2f4fe):
   RepositoryTrack(01, 11:25, rdfs:label=El Salon Mexico, Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/1-01 El Salon Mexico.m4p, http://dbtune.org/musicbrainz/resource/track/2f5fd10f-b0e0-4612-a7ac-6e3bec197bbb)
@@ -16736,12 +16738,6 @@ TRACKS IN RepositoryRecord(rdfs:label=The Incomparable Callas, http://dbtune.org
   RepositoryTrack(11, 03:41, rdfs:label=Carreau, pique... la mort! - Bizet (Carmen), Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - Carreau, Pique...La Mort!.m4a, http://dbtune.org/musicbrainz/resource/track/ac131cc0-b4f0-4c12-b0dd-b14213803602)
   RepositoryTrack(12, 05:17, rdfs:label=Mon cœur s'ouvre à ta voix - Saint-seans (Samson et Delila), Compilations/The Incomparable Callas - Favourite Arias/12 Saint-Saëns_ Samson Et Delila - Mon Coeur S'Ouvre À Ta Voix.m4a, http://dbtune.org/musicbrainz/resource/track/420b9b9a-c087-4c13-87c0-22b24b881476)
   RepositoryTrack(13, 06:03, rdfs:label=Pleurez, mes yeux - Massenet (Le Cid), Compilations/The Incomparable Callas - Favourite Arias/13 Massenet_ Le Cid - Pleurez, Mes Yeux.m4a, http://dbtune.org/musicbrainz/resource/track/6b63e4c1-237a-4b2a-a9a8-bb8274618e4b)
-
-TRACKS IN RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:201c2cfc62f15d54d3379f6af28d0e5451c33e9b):
-  RepositoryTrack(02, 04:21, rdfs:label=Carmen: Act II. "Les tringles des sistres tintaient" (Chanson bohème), Compilations/The Incomparable Callas - Favourite Arias/10 Bizet_ Carmen - Les Tringles Des Sistres Tintaient.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
-  RepositoryTrack(02, 04:24, rdfs:label=Carmen: Act II. "Les tringles des sistres tintaient" (Chanson bohème), Compilations/Callas - The Platinum Collection [Disc 3]/02 Bizet_ Carmen - Les Tringles Des Sistres Tintaient ... Chanson Boheme.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
-  RepositoryTrack(10, 04:21, rdfs:label=Carmen: Act II. "Les tringles des sistres tintaient" (Chanson bohème), Compilations/The Incomparable Callas - Favourite Arias/10 Bizet_ Carmen - Les Tringles Des Sistres Tintaient.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
-  RepositoryTrack(10, 04:24, rdfs:label=Carmen: Act II. "Les tringles des sistres tintaient" (Chanson bohème), Compilations/Callas - The Platinum Collection [Disc 3]/02 Bizet_ Carmen - Les Tringles Des Sistres Tintaient ... Chanson Boheme.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
 
 TRACKS IN RepositoryRecord(rdfs:label=The Indispensable Django Reinhardt (1949-1950), urn:bluemarine:record:31ac6165ebe8c8cd71b27384b904cc4fd145d44d):
   RepositoryTrack(07, 04:23, rdfs:label=Anniversary Song, Django Reinhardt/Djangology/09 Anniversary Song.m4a, http://dbtune.org/musicbrainz/resource/track/8ac558fc-3ae7-4b51-a413-fc1e02a924b2)
@@ -16924,8 +16920,12 @@ TRACKS IN RepositoryRecord(rdfs:label=The Planets / Close Encounters / Also Spra
   RepositoryTrack(15, 07:17, rdfs:label=The Throne Room and End Title, John Williams/Star Wars - Cinema Gala/06 The Throne Room And End Title.m4a, http://dbtune.org/musicbrainz/resource/track/586567c5-8825-4700-9564-bb64afd00ec6)
 
 TRACKS IN RepositoryRecord(rdfs:label=The Platinum Collection, urn:bluemarine:record:2784f99fc2eaef1bdf82aa9f912f7311c51735fd):
+  RepositoryTrack(02, 04:21, rdfs:label=Carmen - Les tringles des sistres tintaient, Compilations/The Incomparable Callas - Favourite Arias/10 Bizet_ Carmen - Les Tringles Des Sistres Tintaient.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
+  RepositoryTrack(02, 04:24, rdfs:label=Carmen - Les tringles des sistres tintaient, Compilations/Callas - The Platinum Collection [Disc 3]/02 Bizet_ Carmen - Les Tringles Des Sistres Tintaient ... Chanson Boheme.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
   RepositoryTrack(03, 06:15, rdfs:label=Ernani - Ernani, Ernani, Involami, Compilations/Callas - The Platinum Collection [Disc 3]/03 Verdi_ Ernani - Surta E La Notte... Ernani! Ernani, Involami.m4a, http://dbtune.org/musicbrainz/resource/track/8cd966be-6b5c-4ef3-aa76-471b68240545)
   RepositoryTrack(09, 03:22, rdfs:label=La Bohème - Donde Lieta Usci, Compilations/Callas - The Platinum Collection [Disc 3]/09 Puccini_ La Bohème - Donde Lieta Usci.m4a, http://dbtune.org/musicbrainz/resource/track/90cc63ab-988f-44d7-bfed-49e1545e83f7)
+  RepositoryTrack(10, 04:21, rdfs:label=Carmen - Les tringles des sistres tintaient, Compilations/The Incomparable Callas - Favourite Arias/10 Bizet_ Carmen - Les Tringles Des Sistres Tintaient.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
+  RepositoryTrack(10, 04:24, rdfs:label=Carmen - Les tringles des sistres tintaient, Compilations/Callas - The Platinum Collection [Disc 3]/02 Bizet_ Carmen - Les Tringles Des Sistres Tintaient ... Chanson Boheme.m4a, http://dbtune.org/musicbrainz/resource/track/db95abf4-82a4-4889-b835-1c7e6fcd31fa)
 
 TRACKS IN RepositoryRecord(rdfs:label=The Platinum Collection (disc 3), http://dbtune.org/musicbrainz/resource/record/906a9d34-11f1-4a9e-870a-314af537f818):
   RepositoryTrack(01, 04:25, rdfs:label=Alceste - Divinités du Styx, Compilations/Callas - The Platinum Collection [Disc 3]/01 Gluck_ Alceste - Divinites Du Styx.m4a, http://dbtune.org/musicbrainz/resource/track/fcb8f7ce-9a81-4e31-8226-96d9ca67d89a)
@@ -17111,12 +17111,6 @@ TRACKS IN RepositoryRecord(rdfs:label=Themes, http://dbtune.org/musicbrainz/reso
   RepositoryTrack(09, 04:18, rdfs:label=Opening Titles From "The Bounty", Vangelis/Themes/09 Opening Titles From The Bounty.m4a, http://dbtune.org/musicbrainz/resource/track/9af095cb-eddd-40f8-98cf-6e883ee57c28)
   RepositoryTrack(10, 05:00, rdfs:label=Closing Titles From "The Bounty", Vangelis/Themes/10 Closing Titles From The Bounty.m4a, http://dbtune.org/musicbrainz/resource/track/989c22f7-745d-46e1-a56f-b1ef7777c548)
   RepositoryTrack(13, 05:20, rdfs:label=Five Circles, Vangelis/Themes/13 Five Circles.m4a, http://dbtune.org/musicbrainz/resource/track/0d3995f0-fbcc-4cc9-9f32-35402a325bac)
-
-TRACKS IN RepositoryRecord(rdfs:label=Themes, urn:bluemarine:record:b74b7f26c197fded8fd959d06ac303369e792636):
-  RepositoryTrack(02, 06:00, rdfs:label=La Petite Fille de la mer, Vangelis/L'Apocalypse Des Animaux/02 La Petite Fille De La Mer.mp3, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
-  RepositoryTrack(02, 05:54, rdfs:label=La Petite Fille de la mer, Vangelis/Themes/12 La Petite Fille De La Mer.m4a, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
-  RepositoryTrack(12, 06:00, rdfs:label=La Petite Fille de la mer, Vangelis/L'Apocalypse Des Animaux/02 La Petite Fille De La Mer.mp3, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
-  RepositoryTrack(12, 05:54, rdfs:label=La Petite Fille de la mer, Vangelis/Themes/12 La Petite Fille De La Mer.m4a, http://dbtune.org/musicbrainz/resource/track/d4eb838b-c5ea-4ad3-beda-b3e0fe5ce41e)
 
 TRACKS IN RepositoryRecord(rdfs:label=This Girl's in Love With You, http://dbtune.org/musicbrainz/resource/record/b72eea89-2286-4cdb-8963-0ae7ff49cb37):
   RepositoryTrack(15, 02:58, rdfs:label=The Weight, Aretha Franklin/30 Greatest Hits [Disc 1]/1-15 The Weight.m4a, http://dbtune.org/musicbrainz/resource/track/514513e0-fb7a-4688-9e0b-51b61f247598)
@@ -17776,6 +17770,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Antonio Vivaldi, uri=http://dbtune.o
   RepositoryRecord(rdfs:label=Classical Bytes, http://dbtune.org/musicbrainz/resource/record/9982dd92-60a4-4087-be23-6653782c8678)
   RepositoryRecord(rdfs:label=Five Cello Concerti, urn:bluemarine:record:00f1bbfeee262949f7950170220a884dcaa65dd9)
   RepositoryRecord(rdfs:label=Musica de Camera e da chiesa/London Baroque, Charles Mediam, http://dbtune.org/musicbrainz/resource/record/21ab9c5c-e2e5-4abb-ac83-d6e98b3f2e83)
+  RepositoryRecord(rdfs:label=Violin Concerti, urn:bluemarine:record:20a4a1489465b36dc5620e1bf2c547ea98a4a3ae)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Antonín Dvořák, uri=http://dbtune.org/musicbrainz/resource/artist/819eaeb2-8dd8-48a5-ad07-0bcd137985ef):
   RepositoryRecord(rdfs:label=Four-Hand Piano Music, Volume 2: Slavonic Dances 1-16 (Silke-Thora Matthies, Christian Köhn), http://dbtune.org/musicbrainz/resource/record/0bdeec35-2869-4d10-a961-b38ec345774e)
@@ -17788,7 +17783,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Antonín Dvořák, uri=http://dbtune
 RECORDS OF RepositoryMusicArtist(rdfs:label=Antônio Carlos Jobim, uri=http://dbtune.org/musicbrainz/resource/artist/7a8dbe84-f4c0-4457-bfa3-edced1f8cde0):
   RepositoryRecord(rdfs:label=Francis Albert Sinatra & Antonio Carlos Jobim, urn:bluemarine:record:b3e08b2d6a99507c6cc29328abb297b7c3ae8a88)
   RepositoryRecord(rdfs:label=Francis Albert Sinatra & Antonio Carlos Jobim, http://dbtune.org/musicbrainz/resource/record/82015a54-7663-4a63-9da2-363af64adde0)
-  RepositoryRecord(rdfs:label=Their Greatest Hits, urn:bluemarine:record:5a83a55adc71938c360d9e642ed1f80d75c6e4ab)
   RepositoryRecord(rdfs:label=Wave: the Antonio Carlos Jobim Songbook, http://dbtune.org/musicbrainz/resource/record/76ef3401-c03c-47a0-9ad3-37601576619c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Aretha Franklin, uri=http://dbtune.org/musicbrainz/resource/artist/2f9ecbed-27be-40e6-abca-6de49d50299e):
@@ -17824,6 +17818,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=B.J. Thomas, uri=http://dbtune.org/m
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Baden Powell, uri=http://dbtune.org/musicbrainz/resource/artist/ba617653-44e4-404f-91cd-f74adce5687d):
   RepositoryRecord(rdfs:label=Afro Sambas, http://dbtune.org/musicbrainz/resource/record/45897c43-2a6c-4324-98e0-0260edd77f58)
+  RepositoryRecord(rdfs:label=Chega De Saudade, urn:bluemarine:record:41cad79a00a8e4b0fff8c7daa81506b19651854c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Baden Powell, uri=urn:bluemarine:artist:26176b402a7c0989c0d596341286fc01c06b8216):
   RepositoryRecord(rdfs:label=Three Originals: Tristeza On Guitar / Poema On Guitar / Apaixonado, urn:bluemarine:record:830a6d223dda1446900efe548f7c8e028a196234)
@@ -18041,9 +18036,9 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Cristóbal de Morales, uri=http://db
   RepositoryRecord(rdfs:label=Officium Defunctorum, Misa pro Defunctis, urn:bluemarine:record:d26eb81886db8737b3b5fad1e343371d6bd5861c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Cyrus Chestnut, uri=urn:bluemarine:artist:3d6fd8992205fc1496d77a69b05a2af6c6f30624):
-  RepositoryRecord(rdfs:label=Cyrus Chestnut, urn:bluemarine:record:e04028aeb6a39858946347d1b104547f18901cfa)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Cyrus Chestnut, Anita Baker, uri=urn:bluemarine:artist:edd06fdfa143362f40d203b8eccc3161ca11060c):
+  RepositoryRecord(rdfs:label=Cyrus Chestnut, urn:bluemarine:record:e04028aeb6a39858946347d1b104547f18901cfa)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Dakota Staton, uri=http://dbtune.org/musicbrainz/resource/artist/c5563de3-f9df-4cb9-889e-7b237093ffd0):
   RepositoryRecord(rdfs:label=The Late, Late Show, http://dbtune.org/musicbrainz/resource/record/7e00c6ca-0bbf-43fb-a6e1-9e54b44c51e1)
@@ -18364,9 +18359,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=George Gershwin, uri=http://dbtune.o
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Georges Barboteu/Horn, Lily Laskine/Harp, Jean-Francois Pail, uri=urn:bluemarine:artist:256f6d11705066dde3aa5f3aa7f0e8fdbd947881):
 
-RECORDS OF RepositoryMusicArtist(rdfs:label=Georges Bizet, uri=http://dbtune.org/musicbrainz/resource/artist/9bd20e6a-b41d-4983-a5b6-c0ff849fa235):
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:201c2cfc62f15d54d3379f6af28d0e5451c33e9b)
-
 RECORDS OF RepositoryMusicArtist(rdfs:label=Gipsy Kings, uri=http://dbtune.org/musicbrainz/resource/artist/44a7f7d5-79df-4f44-8f5e-02dfc0626904):
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Giuseppe Verdi, uri=http://dbtune.org/musicbrainz/resource/artist/f1bedf1f-4445-4651-9c35-f4a3f3860a13):
@@ -18535,7 +18527,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Johann Sebastian Bach, uri=http://db
   RepositoryRecord(rdfs:label=The Gould Variations (Glenn Gould), http://dbtune.org/musicbrainz/resource/record/a4995df2-4020-4a80-9fab-cd95a92764f6)
   RepositoryRecord(rdfs:label=The Two and Three Part Inventions (feat. piano: Glenn Gould), http://dbtune.org/musicbrainz/resource/record/a68563c6-033a-4ed7-82c1-8a6ca3f93269)
   RepositoryRecord(rdfs:label=Vier Suiten für Laute (feat. guitar: Göran Söllscher), http://dbtune.org/musicbrainz/resource/record/af175be8-7d23-4be1-91d4-ffedc1b06394)
-  RepositoryRecord(rdfs:label=Violin Concerti, urn:bluemarine:record:20a4a1489465b36dc5620e1bf2c547ea98a4a3ae)
   RepositoryRecord(rdfs:label=Works for Lute, Volume 2 (Göran Söllscher), http://dbtune.org/musicbrainz/resource/record/ae9162a8-635b-449e-ad85-cf764a063e32)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Johannes Brahms, uri=http://dbtune.org/musicbrainz/resource/artist/c70d12a2-24fe-4f83-a6e6-57d84f8efb51):
@@ -19143,6 +19134,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Seiji Ozawa: Boston Symphony Orchest
   RepositoryRecord(rdfs:label=Respighi: Ancient Airs & Dances, urn:bluemarine:record:72e9f34cad71a62c546a1c3e62a1d8c0ec1dc756)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Sergei Levitin, St Petersburg Kirov Orchestra & Valery Gergiev, uri=urn:bluemarine:artist:8af7d185d14f08c6b8e15acbca86ed58c17a64cc):
+  RepositoryRecord(rdfs:label=Rimsky-Korsakov: Scheherazade, urn:bluemarine:record:96fcf76b0b60ca92fc05cbdb4b2036896193c485)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Sheryl Crow, uri=http://dbtune.org/musicbrainz/resource/artist/80ccfede-c258-4575-a7ad-c982e9932e0f):
 
@@ -19163,9 +19155,9 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Sonny Simmons, uri=urn:bluemarine:ar
 RECORDS OF RepositoryMusicArtist(rdfs:label=Souvenirs de Django Reinhardt, uri=http://dbtune.org/musicbrainz/resource/artist/bc8ebdc1-0224-47f9-91d6-491821039332):
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=St Petersburg Kirov Orchestra & Valery Gergiev, uri=urn:bluemarine:artist:1dd96f1ceee460ed45e92ff2972a6754423f0b6f):
-  RepositoryRecord(rdfs:label=Rimsky-Korsakov: Scheherazade, urn:bluemarine:record:96fcf76b0b60ca92fc05cbdb4b2036896193c485)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Stan Getz, uri=http://dbtune.org/musicbrainz/resource/artist/8f2422ab-0ec6-4c92-80c4-afe9622fab32):
+  RepositoryRecord(rdfs:label=Their Greatest Hits, urn:bluemarine:record:5a83a55adc71938c360d9e642ed1f80d75c6e4ab)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Stefano Bollani, uri=http://dbtune.org/musicbrainz/resource/artist/a781f9c2-0e60-4862-b1bc-0b9272151014):
   RepositoryRecord(rdfs:label=Carioca, http://dbtune.org/musicbrainz/resource/record/6095a630-7b62-4063-8c31-fb2ab4fad57c)
@@ -19338,11 +19330,11 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=http://dbtune.org/musi
   RepositoryRecord(rdfs:label=Chariots of Fire, http://dbtune.org/musicbrainz/resource/record/89fb6b5b-6ac2-465c-93bf-be430010de66)
   RepositoryRecord(rdfs:label=China, http://dbtune.org/musicbrainz/resource/record/5c02926c-e65e-4107-b4e7-05751a2367d6)
   RepositoryRecord(rdfs:label=L'Apocalypse des animaux, http://dbtune.org/musicbrainz/resource/record/5d5ce68c-2e0e-48f7-beb0-36cfcf2cb660)
+  RepositoryRecord(rdfs:label=L'Apocalypse des animaux, urn:bluemarine:record:66f8bc42899f252432023254dc0ab19d77adcdf3)
   RepositoryRecord(rdfs:label=See You Later, http://dbtune.org/musicbrainz/resource/record/71771d40-0236-4cde-b71d-b0eee0270d6c)
   RepositoryRecord(rdfs:label=Soil Festivities, http://dbtune.org/musicbrainz/resource/record/f4576006-03fc-490c-820f-2e95535fbaa5)
   RepositoryRecord(rdfs:label=Synthesizer Greatest, urn:bluemarine:record:503c584783019506fa7f52800eb4e2f4e4f83b32)
   RepositoryRecord(rdfs:label=Themes, http://dbtune.org/musicbrainz/resource/record/ff7c291e-8dae-42d5-85bd-bdba89a3af1a)
-  RepositoryRecord(rdfs:label=Themes, urn:bluemarine:record:b74b7f26c197fded8fd959d06ac303369e792636)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=urn:bluemarine:artist:3aaced5008289e60b00a589e3e258abb08725493):
   RepositoryRecord(rdfs:label=1492 - Conquest of Paradise (Soundtrack from the Motion Picture), urn:bluemarine:record:0c5279832dcee2d414174a934ef470f71a415ce0)
@@ -19363,7 +19355,6 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Vladimir Spivakov, uri=urn:bluemarin
 RECORDS OF RepositoryMusicArtist(rdfs:label=Wanda Sá & Célia Vaz, uri=http://dbtune.org/musicbrainz/resource/artist/8cf2e214-d292-4d6e-9551-4fa380e7cd97):
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Wanda Sá & Roberto Menescal, uri=http://dbtune.org/musicbrainz/resource/artist/08bfcdaf-ef3f-4b40-bab6-8848278cf468):
-  RepositoryRecord(rdfs:label=Chega De Saudade, urn:bluemarine:record:41cad79a00a8e4b0fff8c7daa81506b19651854c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Wanda Sá & Roberto Menescal, uri=http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea):
 
