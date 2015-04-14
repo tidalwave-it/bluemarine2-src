@@ -26,19 +26,30 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl.browser;
+package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 
-import it.tidalwave.dci.annotation.DciContext;
+import javax.annotation.Nonnull;
+import java.util.Arrays;
+import java.util.Collection;
+import it.tidalwave.role.ui.Styleable;
+import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.catalog.impl.browser.RepositoryBrowserSupport;
+import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
- * @stereotype  Context
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciContext
-public class RepositoryBrowserByArtistThenTrack extends RepositoryBrowserByArtistSupport
+@DciRole(datumType = RepositoryBrowserSupport.class) @RequiredArgsConstructor
+public class BrowserStyleable implements Styleable
   {
+    private final RepositoryBrowserSupport owner;
+    
+    @Override @Nonnull
+    public Collection<String> getStyles() 
+      {
+        return Arrays.asList(owner.getClass().getSimpleName());
+      }
   }

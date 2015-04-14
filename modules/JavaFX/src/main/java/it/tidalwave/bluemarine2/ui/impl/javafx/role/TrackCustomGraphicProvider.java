@@ -56,21 +56,15 @@ public class TrackCustomGraphicProvider implements CustomGraphicProvider
     public Node getGraphic() 
       {
         final Label lbIcon = new Label("");
-        lbIcon.setMinWidth(30); // FIXME
         lbIcon.getStyleClass().setAll("list-cell", "track-icon");
         final Label lbTrack = new Label(String.format("%d.", track.getTrackNumber()));
-        lbTrack.setMinWidth(50); // FIXME
         lbTrack.getStyleClass().setAll("list-cell", "track-index");
         final Label lbName = new Label(track.as(Displayable).getDisplayName());
-        lbName.setPrefWidth(9999); // FIXME
         lbName.getStyleClass().setAll("list-cell", "track-label");
         final Label lbDuration = new Label(format(track.getDuration()));
         lbDuration.getStyleClass().setAll("list-cell", "track-duration");
-        lbDuration.setMaxWidth(70);// FIXME
-        lbDuration.setMinWidth(70);
         final HBox hBox = new HBox(lbIcon, lbTrack, lbName, lbDuration);
-        hBox.setAlignment(Pos.BASELINE_LEFT);
-        hBox.setPrefWidth(500); // FIXME
+        hBox.getStyleClass().setAll("list-cell", "cell-container");
         return hBox;
       }
   }

@@ -28,15 +28,13 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl.browser;
 
-import it.tidalwave.role.Displayable;
-
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public abstract class RepositoryBrowserByArtistSupport extends RepositoryBrowserSupport implements Displayable
+public abstract class RepositoryBrowserByArtistSupport extends RepositoryBrowserSupport
   {
     public RepositoryBrowserByArtistSupport()
       {

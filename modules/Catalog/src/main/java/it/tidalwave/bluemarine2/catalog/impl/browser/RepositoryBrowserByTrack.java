@@ -28,10 +28,8 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl.browser;
 
-import javax.annotation.Nonnull;
 import it.tidalwave.util.As;
 import it.tidalwave.util.DefaultFilterSortCriterion;
-import it.tidalwave.role.Displayable;
 import it.tidalwave.role.ui.DisplayableObjectComparator;
 
 /***********************************************************************************************************************
@@ -40,7 +38,7 @@ import it.tidalwave.role.ui.DisplayableObjectComparator;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryBrowserByTrack extends RepositoryBrowserSupport implements Displayable
+public class RepositoryBrowserByTrack extends RepositoryBrowserSupport 
   {
     static class ByTrackName extends DefaultFilterSortCriterion<As>
       {
@@ -54,10 +52,4 @@ public class RepositoryBrowserByTrack extends RepositoryBrowserSupport implement
       {
         setFinder(() -> getCatalog().findTracks().sort(new ByTrackName()));
       }
-
-    @Override @Nonnull
-    public String getDisplayName() 
-      {
-        return "by track"; // FIXME: use a Bundle
-      }  
   }

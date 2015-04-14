@@ -55,14 +55,11 @@ public class MusicArtistCustomGraphicProvider implements CustomGraphicProvider
     public Node getGraphic() 
       {
         final Label lbIcon = new Label("");
-        lbIcon.setMinWidth(30); // FIXME
-        lbIcon.getStyleClass().setAll("list-cell", "artist-icon"); // TODO: use artist-group-icon for groups
+        lbIcon.getStyleClass().setAll("list-cell", (artist.getType() == 1) ? "artist-icon" : "artist-group-icon"); 
         final Label lbName = new Label(artist.as(Displayable).getDisplayName());
-        lbName.setPrefWidth(9999); // FIXME
         lbName.getStyleClass().setAll("list-cell", "artist-label");
         final HBox hBox = new HBox(lbIcon, lbName);
-        hBox.setAlignment(Pos.BASELINE_LEFT);
-        hBox.setPrefWidth(500); // FIXME
+        hBox.getStyleClass().setAll("list-cell", "cell-container");
         return hBox;
       }
   }

@@ -48,7 +48,7 @@ import it.tidalwave.bluemarine2.persistence.Persistence;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryBrowserSupport extends EntityWithRoles implements EntityBrowser 
+public class RepositoryBrowserSupport extends EntityWithRoles implements EntityBrowser
   {
     @Inject 
     private Persistence persistence;

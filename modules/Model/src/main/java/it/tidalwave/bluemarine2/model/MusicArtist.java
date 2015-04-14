@@ -62,4 +62,6 @@ public interface MusicArtist extends Entity, Identifiable
      ******************************************************************************************************************/
     @Nonnull
     public RecordFinder findRecords();
+    
+    public int getType(); // FIXME: use an enum
   }

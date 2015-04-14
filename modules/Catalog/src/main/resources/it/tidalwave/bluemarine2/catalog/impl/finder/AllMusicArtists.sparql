@@ -1,8 +1,9 @@
 SELECT *
 WHERE  
   { 
-    ?artist     a           mo:MusicArtist. 
-    ?artist     rdfs:label  ?label. 
+    ?artist     a                   mo:MusicArtist. 
+    ?artist     rdfs:label          ?label. 
+    ?artist     vocab:artist_type   ?artist_type.
 
     MINUS 
       {

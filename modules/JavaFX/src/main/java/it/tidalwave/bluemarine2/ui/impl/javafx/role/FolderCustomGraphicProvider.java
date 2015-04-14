@@ -29,7 +29,6 @@
 package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 
 import javax.annotation.Nonnull;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -55,14 +54,11 @@ public class FolderCustomGraphicProvider implements CustomGraphicProvider
     public Node getGraphic() 
       {
         final Label lbIcon = new Label("");
-        lbIcon.setMinWidth(30); // FIXME
         lbIcon.getStyleClass().setAll("list-cell", "folder-icon");
         final Label lbName = new Label(folder.as(Displayable).getDisplayName());
-        lbName.setPrefWidth(9999); // FIXME
         lbName.getStyleClass().setAll("list-cell", "folder-label");
         final HBox hBox = new HBox(lbIcon, lbName);
-        hBox.setAlignment(Pos.BASELINE_LEFT);
-        hBox.setPrefWidth(500); // FIXME
+        hBox.getStyleClass().setAll("list-cell", "cell-container");
         return hBox;
       }
   }
