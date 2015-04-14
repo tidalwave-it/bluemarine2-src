@@ -26,45 +26,38 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl;
+package it.tidalwave.bluemarine2.catalog.impl.browser;
 
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
-import org.openrdf.repository.Repository;
-import org.openrdf.query.BindingSet;
-import it.tidalwave.bluemarine2.model.Record;
-import it.tidalwave.bluemarine2.model.finder.TrackFinder;
-import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryTrackFinder;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
+import it.tidalwave.util.As;
+import it.tidalwave.util.DefaultFilterSortCriterion;
+import it.tidalwave.role.Displayable;
+import it.tidalwave.role.ui.DisplayableObjectComparator;
 
 /***********************************************************************************************************************
  *
- * An implementation of {@link Record} that is mapped to a {@link Repository}.
- * 
- * @stereotype  Datum
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @Getter @Slf4j
-public class RepositoryRecord extends RepositoryEntitySupport implements Record
+public class RepositoryBrowserByTrack extends RepositoryBrowserSupport implements Displayable
   {
-    public RepositoryRecord (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
+    static class ByTrackName extends DefaultFilterSortCriterion<As>
       {
-        super(repository, bindingSet, "record");
+        public ByTrackName() 
+          {
+            super(new DisplayableObjectComparator(), "---");
+          }
       }
-   
-    @Override @Nonnull
-    public TrackFinder findTracks() 
+    
+    public RepositoryBrowserByTrack()
       {
-        return new RepositoryTrackFinder(repository).inRecord(this);
+        setFinder(() -> getCatalog().findTracks().sort(new ByTrackName()));
       }
 
     @Override @Nonnull
-    public String toString() 
+    public String getDisplayName() 
       {
-        return String.format("RepositoryRecord(rdfs:label=%s, %s)", rdfsLabel, id);
-      }
+        return "by track"; // FIXME: use a Bundle
+      }  
   }

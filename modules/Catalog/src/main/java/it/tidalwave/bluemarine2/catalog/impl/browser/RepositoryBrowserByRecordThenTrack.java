@@ -2,8 +2,8 @@
  * #%L
  * *********************************************************************************************************************
  *
- * blueMarine2 - lightweight MediaCenter
- * http://bluemarine.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * blueMarine2 - Semantic Media Center
+ * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -29,10 +29,7 @@
 package it.tidalwave.bluemarine2.catalog.impl.browser;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Finder8;
 import it.tidalwave.role.Displayable;
-import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.model.Record;
 
 /***********************************************************************************************************************
  *
@@ -44,15 +41,7 @@ public class RepositoryBrowserByRecordThenTrack extends RepositoryBrowserSupport
   {
     public RepositoryBrowserByRecordThenTrack()
       {
-//        super(() -> getCatalog().findRecords());
-        setCompositeForRootEntity(new SimpleComposite8<Record>() 
-          {
-            @Override @Nonnull
-            public Finder8<Record> findChildren() 
-              {
-                return getCatalog().findRecords();
-              }
-          });
+        setFinder(() -> getCatalog().findRecords());
       }
 
     @Override @Nonnull

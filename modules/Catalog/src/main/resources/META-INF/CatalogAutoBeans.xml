@@ -3,8 +3,8 @@
   #%L
   *********************************************************************************************************************
 
-  blueMarine2 - lightweight MediaCenter
-  http://bluemarine.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+  blueMarine2 - Semantic Media Center
+  http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
   %%
   Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
   %%
@@ -63,5 +63,6 @@
     <bean class="it.tidalwave.bluemarine2.catalog.impl.browser.RepositoryBrowserByArtistThenTrack" />
     <bean class="it.tidalwave.bluemarine2.catalog.impl.browser.RepositoryBrowserByArtistThenRecord" />
     <bean class="it.tidalwave.bluemarine2.catalog.impl.browser.RepositoryBrowserByRecordThenTrack" />
+    <bean class="it.tidalwave.bluemarine2.catalog.impl.browser.RepositoryBrowserByTrack" />
 
 </beans>

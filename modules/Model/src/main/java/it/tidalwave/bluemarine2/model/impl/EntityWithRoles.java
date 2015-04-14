@@ -26,45 +26,26 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl;
+package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
-import org.openrdf.repository.Repository;
-import org.openrdf.query.BindingSet;
-import it.tidalwave.bluemarine2.model.Record;
-import it.tidalwave.bluemarine2.model.finder.TrackFinder;
-import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryTrackFinder;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
+import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.bluemarine2.model.Entity;
+import lombok.Delegate;
 
 /***********************************************************************************************************************
  *
- * An implementation of {@link Record} that is mapped to a {@link Repository}.
- * 
- * @stereotype  Datum
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @Getter @Slf4j
-public class RepositoryRecord extends RepositoryEntitySupport implements Record
+public class EntityWithRoles implements Entity
   {
-    public RepositoryRecord (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
-      {
-        super(repository, bindingSet, "record");
-      }
-   
-    @Override @Nonnull
-    public TrackFinder findTracks() 
-      {
-        return new RepositoryTrackFinder(repository).inRecord(this);
-      }
+    @Delegate @Nonnull
+    private final AsSupport asSupport;
 
-    @Override @Nonnull
-    public String toString() 
+    public EntityWithRoles (final @Nonnull Object ... roles) 
       {
-        return String.format("RepositoryRecord(rdfs:label=%s, %s)", rdfsLabel, id);
+        this.asSupport = new AsSupport(this, roles);
       }
   }
