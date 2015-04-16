@@ -32,7 +32,6 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import javax.inject.Provider;
 import java.util.Optional;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javafx.fxml.FXML;
 import javafx.collections.ObservableList;
@@ -61,6 +60,7 @@ import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.*;
 import static it.tidalwave.role.Displayable.*;
 import static it.tidalwave.role.SimpleComposite.SimpleComposite;
 import static it.tidalwave.role.ui.UserActionProvider.*;
@@ -165,9 +165,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     @Override
     public void renderDetails (final @Nonnull String entityDetails)
       {
-        vbDetails.getChildren().setAll(Stream.of(entityDetails.split("\n"))
-                                             .map(s -> createLabel(s))
-                                             .collect(Collectors.toList()));
+        vbDetails.getChildren().setAll(Stream.of(entityDetails.split("\n")).map(s -> createLabel(s)).collect(toList()));
       }
     
     @Override
