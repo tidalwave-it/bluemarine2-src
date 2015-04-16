@@ -32,11 +32,15 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import javax.inject.Provider;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import javafx.fxml.FXML;
 import javafx.collections.ObservableList;
+import javafx.scene.layout.VBox;
 import javafx.scene.Node;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -107,11 +111,26 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     @FXML
     private HBox hbBrowserButtons;
     
+    @FXML
+    private Pane pnCoverArt;
+    
+    @FXML
+    private ImageView ivCoverArt;
+    
+    @FXML
+    private VBox vbDetails;
+    
     @Inject
     private Provider<JavaFXBinder> binder;
     
+    @FXML
+    private void initialize()
+      {
+        pnCoverArt.prefHeightProperty().bind(pnCoverArt.widthProperty());
+      }
+    
     @Override
-    public void bind (final @Nonnull AudioExplorerPresentation.Properties properties, final @Nonnull UserAction upAction)
+    public void bind (final @Nonnull Properties properties, final @Nonnull UserAction upAction)
       {
         binder.get().bind(btUp, upAction);
         lbFolderName.textProperty().bind(properties.folderNameProperty());
@@ -140,6 +159,14 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
           });
       }
 
+    @Override
+    public void renderDetails (final @Nonnull String entityDetails)
+      {
+        vbDetails.getChildren().setAll(Stream.of(entityDetails.split("\n"))
+                                             .map(s -> createLabel(s))
+                                             .collect(Collectors.toList()));
+      }
+    
     @Override
     public void focusOnMediaItems() 
       {
@@ -197,5 +224,13 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
                 e.printStackTrace(); // FIXME
               }
           });
+      }
+
+    @Nonnull
+    private static Label createLabel (final @Nonnull String s)
+      {
+        final Label label = new Label(s);
+        label.getStyleClass().setAll("label", "track-details");
+        return label;
       }
   }
