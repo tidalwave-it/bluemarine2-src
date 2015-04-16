@@ -36,8 +36,10 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javafx.fxml.FXML;
 import javafx.collections.ObservableList;
-import javafx.scene.layout.VBox;
 import javafx.scene.Node;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.image.ImageView;
@@ -155,6 +157,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
             if (!lvFiles.getItems().isEmpty())
               {
                 ((Memento)optionalMemento.orElse(new Memento())).applyTo(lvFiles);
+                lvFiles.requestFocus();
               }
           });
       }
@@ -177,6 +180,33 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     public Object getMemento()
       {
         return new Memento(lvFiles);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * With a remote there's no TAB key, so we must emulate some tab control with left and right arrows.
+     * 
+     * FIXME: try to generalise (e.g. cyclefocus?) and move to JavaFxApplicationPresentationDelegate.
+     * 
+     * @param   event   the key event
+     *
+     ******************************************************************************************************************/
+    @FXML
+    public void onKeyPressed (final @Nonnull KeyEvent event)
+      {
+        log.debug("onKeyPressed({})", event);
+        
+        if (lvFiles.isFocused())
+          {
+            if (event.getCode().equals(KeyCode.LEFT))
+              {
+                btUp.requestFocus();
+              }
+            else if (event.getCode().equals(KeyCode.RIGHT))
+              {
+                hbBrowserButtons.getChildren().get(0).requestFocus();
+              }
+          }
       }
     
     /*
