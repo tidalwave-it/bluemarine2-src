@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import javax.inject.Provider;
 import java.util.HashMap;
 import java.util.Map;
 import javafx.fxml.FXML;
@@ -97,7 +98,7 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     private Label lbPlayTime;
     
     @Inject
-    private JavaFXBinder binder;
+    private Provider<JavaFXBinder> binder;
 
     private final Map<KeyCombination, Runnable> accelerators = new HashMap<>();
     
@@ -126,11 +127,11 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
                       final @Nonnull UserAction playAction,
                       final @Nonnull UserAction fastForwardAction)
       {
-        binder.bind(btRewind,      rewindAction);  
-        binder.bind(btStop,        stopAction);  
-        binder.bind(btPause,       pauseAction);  
-        binder.bind(btPlay,        playAction);  
-        binder.bind(btFastForward, fastForwardAction); 
+        binder.get().bind(btRewind,      rewindAction);  
+        binder.get().bind(btStop,        stopAction);  
+        binder.get().bind(btPause,       pauseAction);  
+        binder.get().bind(btPlay,        playAction);  
+        binder.get().bind(btFastForward, fastForwardAction); 
         
         lbTitle.textProperty().bind(properties.titleProperty());
         lbFolderName.textProperty().bind(properties.folderNameProperty());

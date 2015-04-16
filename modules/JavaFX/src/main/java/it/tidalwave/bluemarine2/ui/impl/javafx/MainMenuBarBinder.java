@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.ui.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import javax.inject.Provider;
 import java.util.Collection;
 import java.util.concurrent.atomic.AtomicInteger;
 import javafx.collections.ObservableList;
@@ -62,7 +63,7 @@ public class MainMenuBarBinder
     private final GridPane gpMainMenuBar;
 
     @Inject
-    private JavaFXBinder binder;
+    private Provider<JavaFXBinder> binder;
     
     /*******************************************************************************************************************
      *
@@ -89,7 +90,7 @@ public class MainMenuBarBinder
             columnConstraints.add(column);
             final Button button = createButton();
             GridPane.setConstraints(button, columnIndex.getAndIncrement(), 0); 
-            binder.bind(button, menuAction);
+            binder.get().bind(button, menuAction);
             children.add(button);
           });
       }

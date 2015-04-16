@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.ui.mainscreen.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import javax.inject.Provider;
 import java.util.Collection;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -60,13 +61,13 @@ public class JavaFxMainScreenPresentationDelegate implements MainScreenPresentat
     private Button btPowerOff;
 
     @Inject
-    private JavaFXBinder binder;
-    
+    private Provider<JavaFXBinder> binder;
+
     @Override
     public void bind (final @Nonnull Collection<UserAction> mainMenuActions, final @Nonnull UserAction powerOffAction)
       {
         new MainMenuBarBinder(gpMainMenuBar).bind(mainMenuActions);
-        binder.bind(btPowerOff, powerOffAction);
+        binder.get().bind(btPowerOff, powerOffAction);
       }
 
     @Override

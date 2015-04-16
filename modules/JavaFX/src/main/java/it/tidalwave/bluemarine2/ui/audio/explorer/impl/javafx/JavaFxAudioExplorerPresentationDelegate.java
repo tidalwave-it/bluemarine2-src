@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import javax.inject.Provider;
 import java.util.Optional;
 import javafx.fxml.FXML;
 import javafx.collections.ObservableList;
@@ -107,12 +108,12 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     private HBox hbBrowserButtons;
     
     @Inject
-    private JavaFXBinder binder;
+    private Provider<JavaFXBinder> binder;
     
     @Override
-    public void bind (final @Nonnull Properties properties, final @Nonnull UserAction upAction)
+    public void bind (final @Nonnull AudioExplorerPresentation.Properties properties, final @Nonnull UserAction upAction)
       {
-        binder.bind(btUp, upAction);
+        binder.get().bind(btUp, upAction);
         lbFolderName.textProperty().bind(properties.folderNameProperty());
       }
     
@@ -124,13 +125,13 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     @Override
     public void populateBrowsers (final @Nonnull PresentationModel pm)
       {
-          bindToggleButtons(hbBrowserButtons, pm);
+        bindToggleButtons(hbBrowserButtons, pm);
       }
       
     @Override
     public void populateItems (final @Nonnull PresentationModel pm, final @Nonnull Optional<Object> optionalMemento)
       {
-        binder.bind(lvFiles, pm, () -> 
+        binder.get().bind(lvFiles, pm, () -> 
           {
             if (!lvFiles.getItems().isEmpty())
               {
@@ -174,12 +175,12 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
                   } 
                 catch (AsException e2) 
                   {
-                    e2.printStackTrace();
+//                    e2.printStackTrace();
                   }
                 
                 button.getStyleClass().addAll(styleClass);
                 button.setToggleGroup(group);
-                binder.bind(button, cpm.as(UserActionProvider).getDefaultAction());
+                binder.get().bind(button, cpm.as(UserActionProvider).getDefaultAction());
                 children.add(button);
                 
                 try // can't use asOptional() since PresentationModel is constrained to Java 7
@@ -188,7 +189,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
                   } 
                 catch (AsException e2) 
                   {
-                    e2.printStackTrace();
+//                    e2.printStackTrace();
                   }
               } 
             catch (NotFoundException e) 
