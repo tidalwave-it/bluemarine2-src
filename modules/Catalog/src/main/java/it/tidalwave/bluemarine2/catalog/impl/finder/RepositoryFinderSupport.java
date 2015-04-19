@@ -73,8 +73,8 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Configurable @Slf4j
-public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
+@Configurable @RequiredArgsConstructor @Slf4j
+public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
               extends Finder8Support<ENTITY, FINDER>
   {
     protected static final String PREFIXES =
@@ -87,30 +87,39 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
                 + "PREFIX xs:    <http://www.w3.org/2001/XMLSchema#>\n";
 
     @Nonnull
-    private Repository repository;
+    protected final Repository repository;
     
     @Inject
     private ContextManager contextManager;
     
     // TODO: push this to generic FinderSupport
     @Nonnull
-    private Optional<Object> context = Optional.empty();
+    private final Optional<Object> context;
+
+    /*******************************************************************************************************************
+     *
+     * Default constructor.
+     *
+     ******************************************************************************************************************/
+    protected RepositoryFinderSupport (final @Nonnull Repository repository) 
+      {
+        this.repository = repository;
+        context = Optional.empty();
+      }
     
     /*******************************************************************************************************************
      *
-     * {@inheritDoc}
+     * Clone constructor.
      *
      ******************************************************************************************************************/
-    @Override @Nonnull
-    public RepositoryFinderSupport clone()
+    protected RepositoryFinderSupport (final @Nonnull RepositoryFinderSupport<ENTITY, FINDER> other, 
+                                       final @Nonnull Object override) 
       {
-        final RepositoryFinderSupport clone = (RepositoryFinderSupport)super.clone();
-        clone.repository = this.repository;
-        clone.context = this.context;
-
-        return clone;
+        super(other, override);
+        final RepositoryFinderSupport<ENTITY, FINDER> source = getSource(RepositoryFinderSupport.class, other, override);
+        this.repository = source.repository;
+        this.context = source.context;
       }
-    
     
     // FIXME: push to Finder
     /*******************************************************************************************************************
@@ -121,9 +130,7 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
     /* @Override */ @Nonnull
     public FINDER withContext (final @Nonnull Object context)
       {
-        final RepositoryFinderSupport clone = (RepositoryFinderSupport)clone();
-        clone.context = Optional.of(context);
-        return (FINDER)clone;
+        return clone(new RepositoryFinderSupport<ENTITY, FINDER>(repository, Optional.of(context)));
       }
 
     /*******************************************************************************************************************

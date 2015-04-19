@@ -47,7 +47,7 @@ import static java.util.Collections.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
- @ToString
+@ToString
 public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicArtist, MusicArtistFinder> 
                                          implements MusicArtistFinder 
   {
@@ -55,16 +55,42 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
     private final static String QUERY_ARTISTS_MAKER_OF = readSparql(RepositoryMusicArtistFinder.class, "MakerArtists.sparql");
     
     @Nonnull
-    private Optional<Id> madeEntityId = Optional.empty();
+    private final Optional<Id> madeEntityId;
     
     /*******************************************************************************************************************
      *
-     * 
+     * Default constructor.
      *
      ******************************************************************************************************************/
     public RepositoryMusicArtistFinder (final @Nonnull Repository repository)
       {
         super(repository);
+        this.madeEntityId = Optional.empty();
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Clone constructor.
+     *
+     ******************************************************************************************************************/
+    public RepositoryMusicArtistFinder (final @Nonnull RepositoryMusicArtistFinder other,
+                                        final @Nonnull Object override) 
+      {
+        super(other, override);
+        final RepositoryMusicArtistFinder source = getSource(RepositoryMusicArtistFinder.class, other, override);
+        this.madeEntityId = source.madeEntityId;
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * Override constructor.
+     *
+     ******************************************************************************************************************/
+    private RepositoryMusicArtistFinder (final @Nonnull Repository repository, 
+                                         final @Nonnull Optional<Id> madeEntityId) 
+      {
+        super(repository);
+        this.madeEntityId = madeEntityId;
       }
     
     /*******************************************************************************************************************
@@ -75,23 +101,7 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
     @Override @Nonnull
     public MusicArtistFinder makerOf (final @Nonnull Id madeEntityId)
       {
-        final RepositoryMusicArtistFinder clone = clone();
-        clone.madeEntityId = Optional.of(madeEntityId);
-        return clone;
-      }
-    
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public RepositoryMusicArtistFinder clone()
-      {
-        final RepositoryMusicArtistFinder clone = (RepositoryMusicArtistFinder)super.clone();
-        clone.madeEntityId = this.madeEntityId;
-
-        return clone;
+        return clone(new RepositoryMusicArtistFinder(repository, Optional.of(madeEntityId)));
       }
     
     /*******************************************************************************************************************

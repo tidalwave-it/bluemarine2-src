@@ -40,7 +40,6 @@ import it.tidalwave.util.spi.SimpleFinder8Support;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.function.Consumer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -63,6 +62,14 @@ public class MediaFolderFinder extends SimpleFinder8Support<Entity>
     @Nonnull
     private final Path basePath;
 
+    public MediaFolderFinder (final @Nonnull MediaFolderFinder other, final @Nonnull Object override) 
+      {
+        super(other, override);
+        final MediaFolderFinder source = getSource(MediaFolderFinder.class, other, override);
+        this.mediaFolder = source.mediaFolder;
+        this.basePath = source.basePath;
+      }
+    
     @Override
     public int count() 
       {
