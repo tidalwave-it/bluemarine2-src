@@ -74,7 +74,7 @@
 
     <bean class="it.tidalwave.bluemarine2.mediascanner.impl.IdCreator" />
     
-    <bean class="it.tidalwave.util.test.MockInstantProvider" />
+    <bean class="it.tidalwave.util.spi.MockInstantProvider" />
     
     <bean class="it.tidalwave.bluemarine2.downloader.impl.DefaultDownloader" />
 
