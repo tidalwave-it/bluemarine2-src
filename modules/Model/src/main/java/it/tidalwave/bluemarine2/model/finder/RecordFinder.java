@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.model.finder;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.util.Id;
+import it.tidalwave.util.spi.ExtendedFinder8Support;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 
@@ -41,7 +42,7 @@ import it.tidalwave.bluemarine2.model.Record;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface RecordFinder extends FinderWithDciContext<Record, RecordFinder>
+public interface RecordFinder extends ExtendedFinder8Support<Record, RecordFinder>
   {
     /*******************************************************************************************************************
      *

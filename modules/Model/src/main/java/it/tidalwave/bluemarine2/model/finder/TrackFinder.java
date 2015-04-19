@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.model.finder;
 
 import javax.annotation.Nonnull;
+import it.tidalwave.util.spi.ExtendedFinder8Support;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.Track;
@@ -41,7 +42,7 @@ import it.tidalwave.bluemarine2.model.Track;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface TrackFinder extends FinderWithDciContext<Track, TrackFinder>
+public interface TrackFinder extends ExtendedFinder8Support<Track, TrackFinder>
   {
     /*******************************************************************************************************************
      *
