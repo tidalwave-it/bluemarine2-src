@@ -75,7 +75,7 @@ import lombok.extern.slf4j.Slf4j;
  **********************************************************************************************************************/
 @RequiredArgsConstructor @Configurable @Slf4j
 public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
-              extends Finder8Support<ENTITY, FINDER> 
+              extends Finder8Support<ENTITY, FINDER>
   {
     protected static final String PREFIXES =
                   "PREFIX foaf:  <http://xmlns.com/foaf/0.1/>\n" 

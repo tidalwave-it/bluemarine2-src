@@ -32,7 +32,6 @@ import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.function.Supplier;
-import it.tidalwave.util.Finder;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.catalog.Catalog;
@@ -65,9 +64,10 @@ public class RepositoryBrowserSupport extends EntityWithRoles implements EntityB
         return new EntityWithRoles(compositeForRootEntity);
       }
     
-    protected final void setFinder (final @Nonnull Supplier<Finder<? extends Entity>> finderSupplier)
+    protected final void setFinder (final @Nonnull Supplier<Finder8<? extends Entity>> finderSupplier)
       {
-        compositeForRootEntity = () -> (Finder8<Entity>)finderSupplier.get(); // FIXME: drop cast
+        compositeForRootEntity = () -> (Finder8<Entity>)finderSupplier.get();
+        // FIXME: drop cast - Finder8 should extend ExtenderFinder<Finder8<...>>
       }   
     
     @Nonnull

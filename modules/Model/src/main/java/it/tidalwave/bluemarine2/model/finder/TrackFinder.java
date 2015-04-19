@@ -33,6 +33,7 @@ import it.tidalwave.util.Finder8;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.Track;
+import it.tidalwave.util.spi.ExtendedFinder8Support;
 
 /***********************************************************************************************************************
  *
@@ -42,7 +43,7 @@ import it.tidalwave.bluemarine2.model.Track;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface TrackFinder extends Finder8<Track>
+public interface TrackFinder extends ExtendedFinder8Support<Track, Finder8<Track>>, Finder8<Track>
   {
     /*******************************************************************************************************************
      *

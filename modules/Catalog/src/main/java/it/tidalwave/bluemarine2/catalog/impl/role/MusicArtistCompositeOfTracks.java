@@ -35,6 +35,7 @@ import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.catalog.impl.browser.RepositoryBrowserByArtistThenTrack;
+import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
@@ -56,7 +57,7 @@ public class MusicArtistCompositeOfTracks implements SimpleComposite8<Track>
     private final MusicArtist artist;
     
     @Override @Nonnull
-    public Finder8<Track> findChildren() 
+    public TrackFinder findChildren() 
       {
         return artist.findTracks();
       }

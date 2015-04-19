@@ -29,12 +29,13 @@
 package it.tidalwave.bluemarine2.catalog.impl.role;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Finder8;
+import it.tidalwave.role.Composite;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.catalog.impl.browser.RepositoryBrowserByArtistThenRecord;
+import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
@@ -56,7 +57,7 @@ public class MusicArtistCompositeOfRecords implements SimpleComposite8<Record>
     private final MusicArtist artist;
     
     @Override @Nonnull
-    public Finder8<Record> findChildren() 
+    public RecordFinder findChildren() 
       {
         return artist.findRecords();
       }

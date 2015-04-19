@@ -37,6 +37,7 @@ import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryMusicArtist;
+import it.tidalwave.util.Finder8;
 import lombok.ToString;
 import static java.util.Arrays.*;
 import static java.util.Collections.*;
@@ -48,7 +49,7 @@ import static java.util.Collections.*;
  *
  **********************************************************************************************************************/
  @ToString
-public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicArtist, MusicArtistFinder> 
+public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicArtist, Finder8<MusicArtist>> 
                                          implements MusicArtistFinder 
   {
     private final static String QUERY_ARTISTS = readSparql(RepositoryMusicArtistFinder.class, "AllMusicArtists.sparql");
@@ -57,6 +58,10 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
     @Nonnull
     private Optional<Id> madeEntityId = Optional.empty();
     
+    @Override // FIXME
+    public MusicArtistFinder withContext(Object context) {
+        return (MusicArtistFinder)this;
+    }
     /*******************************************************************************************************************
      *
      * 
