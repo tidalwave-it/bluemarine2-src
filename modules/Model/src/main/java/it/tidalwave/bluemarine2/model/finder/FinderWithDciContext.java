@@ -40,7 +40,7 @@ import it.tidalwave.util.spi.ExtendedFinder8Support;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface FinderWithDciContext<TYPE, FINDER> extends ExtendedFinder8Support<TYPE, Finder8<TYPE>>, 
+public interface FinderWithDciContext<TYPE, FINDER extends Finder8<TYPE>> extends ExtendedFinder8Support<TYPE, FINDER>, 
         Finder8<TYPE> // FIXME: why is this needed?
   {
     // FIXME: push to Finder

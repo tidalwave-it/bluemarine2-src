@@ -39,7 +39,6 @@ import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrack;
-import it.tidalwave.util.Finder8;
 import lombok.ToString;
 import static java.util.Arrays.*;
 import static java.util.Collections.*;
@@ -51,7 +50,7 @@ import static java.util.Collections.*;
  *
  **********************************************************************************************************************/
 @ToString
-public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, Finder8<Track>>
+public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackFinder>
                                          implements TrackFinder
   {
     private final static String QUERY_TRACKS = readSparql(RepositoryMusicArtistFinder.class, "Tracks.sparql");
@@ -62,10 +61,6 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, Finder
     @Nonnull
     private Optional<Id> recordId = Optional.empty();
 
-    @Override // FIXME
-    public TrackFinder withContext(Object context) {
-        return (TrackFinder)this;
-    }
     /*******************************************************************************************************************
      *
      * 
