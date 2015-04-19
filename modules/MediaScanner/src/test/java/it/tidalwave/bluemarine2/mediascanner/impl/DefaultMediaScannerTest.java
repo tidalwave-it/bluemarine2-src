@@ -64,8 +64,6 @@ public class DefaultMediaScannerTest
     
     private CountDownLatch scanCompleted;
     
-    private CountDownLatch dumpCompleted;
-    
     // Listeners must be fields or they will garbage-collected
     private final MessageBus.Listener<ScanCompleted> onScanCompleted = (message) -> scanCompleted.countDown();
     
@@ -89,7 +87,6 @@ public class DefaultMediaScannerTest
         underTest = context.getBean(DefaultMediaScanner.class);
         
         scanCompleted = new CountDownLatch(1);
-        dumpCompleted = new CountDownLatch(1);
         messageBus.subscribe(ScanCompleted.class, onScanCompleted);
 
         final Map<Key<?>, Object> properties = new HashMap<>();
