@@ -74,8 +74,7 @@ public class FileSystemMediaFolder implements MediaFolder
     @Override @Nonnull
     public Finder8<Entity> findChildren() 
       {
-        // FIXME: the cast is due to a bug in SimpleFinder8Support
-        return (Finder8<Entity>)new MediaFolderFinder(this, basePath).sort(new AudioComparator());
+        return new MediaFolderFinder(this, basePath).sort(new AudioComparator());
       }
     
     @Override @Nonnull
