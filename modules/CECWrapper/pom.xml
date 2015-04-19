@@ -35,6 +35,10 @@
             <artifactId>it-tidalwave-messagebus-spring</artifactId>
         </dependency>
         <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-util</artifactId>
+        </dependency>
+        <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
         </dependency>

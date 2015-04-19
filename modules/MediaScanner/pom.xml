@@ -52,6 +52,10 @@
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-role-spring</artifactId>
         </dependency>
+        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-util-java8supplement</artifactId>
+        </dependency>
         
         <!-- FIXME: workaround against a compilation error -->
         <dependency>
