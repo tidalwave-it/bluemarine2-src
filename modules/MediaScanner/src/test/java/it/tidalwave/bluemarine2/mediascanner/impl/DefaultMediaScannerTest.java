@@ -67,9 +67,6 @@ public class DefaultMediaScannerTest
     private CountDownLatch dumpCompleted;
     
     // Listeners must be fields or they will garbage-collected
-    // FIXME: this means that the MediaScanner has completed, but it's likely there are still flying messages
-    // due to the Persistence service. Since the next DumpRequest is due to the Persistence service, it's likely
-    // it will be processed after all the flying messages have been consumed. But you can't be sured of it.
     private final MessageBus.Listener<ScanCompleted> onScanCompleted = (message) -> scanCompleted.countDown();
     
     private MediaFileSystem fileSystem;
