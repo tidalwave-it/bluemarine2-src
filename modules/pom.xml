@@ -175,13 +175,6 @@
             <version>RELEASE712</version>
             <scope>provided</scope>
         </dependency>
-        <!-- FIXME: workaround against a compilation error -->
-<!--        <dependency>
-            <groupId>org.netbeans.api</groupId>
-            <artifactId>org-openide-util-lookup</artifactId>
-            <version>RELEASE712</version>
-            <scope>provided</scope>
-        </dependency>-->
         
         <!-- TEST DEPENDENCIES -->
         <dependency>
