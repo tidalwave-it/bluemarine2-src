@@ -168,7 +168,8 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- FIXME: workaround against a compilation error -->
+        <!-- FIXME: workaround - without some modules don't get the .class files in the .jar -->
+        <!-- It is due to something from libraries in TheseFoolishThings, but the cause is not yet understood. -->
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-util</artifactId>
@@ -227,12 +228,6 @@
                 <dependency>
                     <groupId>it.tidalwave.thesefoolishthings</groupId>
                     <artifactId>it-tidalwave-messagebus</artifactId>
-                    <exclusions>
-                        <exclusion>
-                            <groupId>com.kenai.nbpwr</groupId>
-                            <artifactId>org-slf4j-jdk14</artifactId>
-                        </exclusion>
-                    </exclusions>
                 </dependency>
 
                 <dependency>
