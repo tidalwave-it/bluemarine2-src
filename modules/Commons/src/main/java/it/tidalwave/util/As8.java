@@ -26,18 +26,24 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.util;
 
-import it.tidalwave.util.As8;
+import javax.annotation.Nonnull;
+import java.util.Optional;
 
 /***********************************************************************************************************************
  *
- * @stereotype  Datum
+ * An extension of {@link As} for Java 8 which makes use of {@link Optional}.
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Entity extends As8
+public interface As8 extends As
   {
+    @Nonnull
+    default <T> Optional<T> asOptional (final @Nonnull Class<T> type)
+      {
+        return Optional.ofNullable(as(type, throwable -> null)); 
+      }
   }
