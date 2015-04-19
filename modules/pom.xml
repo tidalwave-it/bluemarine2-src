@@ -192,7 +192,35 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
+    
+    <profiles>
+        <profile>
+            <id>it.tidalwave-spring-messagebus-v1</id>
+            <activation>
+                <file>
+                    <exists>src/config/activate-it.tidalwave-spring-messagebus-v1-profile</exists>
+                </file>
+            </activation>
+            
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>aspectj-maven-plugin</artifactId>
+                        <configuration>
+                            <aspectLibraries>
+                                <dependency>
+                                    <groupId>it.tidalwave.thesefoolishthings</groupId>
+                                    <artifactId>it-tidalwave-messagebus-spring</artifactId>
+                                </dependency>
+                            </aspectLibraries>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    
     <modules>
         <module>Catalog</module>
         <module>CECNavigationAdapter</module>
