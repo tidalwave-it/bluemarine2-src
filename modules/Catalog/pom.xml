@@ -53,9 +53,25 @@
         </dependency>
         
         <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+        </dependency>
+        
+        <dependency>
             <groupId>org.openrdf.sesame</groupId>
             <artifactId>sesame-rio-n3</artifactId>
             <scope>runtime</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-messagebus-spring</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-role-spring</artifactId>
+            <scope>test</scope>
         </dependency>
         
         <!-- FIXME: workaround against a compilation error -->
@@ -64,11 +80,6 @@
             <artifactId>org-openide-util</artifactId>
             <version>RELEASE712</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
     

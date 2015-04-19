@@ -24,16 +24,6 @@
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-cec</artifactId>
         </dependency>
-        <dependency>
-            <groupId>it.tidalwave.thesefoolishthings</groupId>
-            <artifactId>it-tidalwave-messagebus</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.kenai.nbpwr</groupId>
-                    <artifactId>org-slf4j-jdk14</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
         
         <!-- FIXME: workaround against a compilation error -->
         <dependency>

@@ -159,6 +159,10 @@
             <artifactId>jsr305</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
@@ -187,6 +191,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <scope>test</scope>
@@ -202,13 +211,43 @@
                 </file>
             </activation>
             
+            <dependencies>
+                <dependency>
+                    <groupId>it.tidalwave.thesefoolishthings</groupId>
+                    <artifactId>it-tidalwave-messagebus-spring</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>it.tidalwave.thesefoolishthings</groupId>
+                    <artifactId>it-tidalwave-messagebus</artifactId>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>com.kenai.nbpwr</groupId>
+                            <artifactId>org-slf4j-jdk14</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-aspects</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.aspectj</groupId>
+                    <artifactId>aspectjrt</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.aspectj</groupId>
+                    <artifactId>aspectjweaver</artifactId>
+                </dependency>
+            </dependencies>
+            
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>aspectj-maven-plugin</artifactId>
                         <configuration>
-                            <aspectLibraries>
+                            <aspectLibraries combine.children="append">
                                 <dependency>
                                     <groupId>it.tidalwave.thesefoolishthings</groupId>
                                     <artifactId>it-tidalwave-messagebus-spring</artifactId>

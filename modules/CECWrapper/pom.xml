@@ -20,25 +20,12 @@
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
         </dependency>
-        <dependency>
-            <groupId>it.tidalwave.thesefoolishthings</groupId>
-            <artifactId>it-tidalwave-messagebus</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.kenai.nbpwr</groupId>
-                    <artifactId>org-slf4j-jdk14</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
         
-        <dependency>
-            <groupId>it.tidalwave.thesefoolishthings</groupId>
-            <artifactId>it-tidalwave-messagebus-spring</artifactId>
-        </dependency>
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-util</artifactId>
         </dependency>
+        
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
