@@ -41,14 +41,6 @@
             <artifactId>javax.inject</artifactId>
         </dependency>
         
-        <!-- FIXME: workaround against a compilation error -->
-        <dependency>
-            <groupId>org.netbeans.api</groupId>
-            <artifactId>org-openide-util</artifactId>
-            <version>RELEASE712</version>
-            <scope>provided</scope>
-        </dependency>
-        
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-role-spring</artifactId>

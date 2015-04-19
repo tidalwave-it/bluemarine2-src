@@ -150,7 +150,6 @@
             <artifactId>it-tidalwave-bluemarine2-catalog</artifactId>
         </dependency>
         
-        <!-- FIXME: workaround against a compilation error -->
     </dependencies>
     
 </project>

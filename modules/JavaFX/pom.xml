@@ -73,14 +73,6 @@
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
         </dependency>
-        
-        <!-- FIXME: workaround against a compilation error -->
-        <dependency>
-            <groupId>org.netbeans.api</groupId>
-            <artifactId>org-openide-util</artifactId>
-            <version>RELEASE712</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
     
 </project>
