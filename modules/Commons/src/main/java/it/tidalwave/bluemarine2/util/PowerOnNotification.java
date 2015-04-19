@@ -26,34 +26,35 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.util;
+package it.tidalwave.bluemarine2.util;
 
 import javax.annotation.Nonnull;
-import java.time.Instant;
-import java.util.function.Supplier;
-import it.tidalwave.util.spi.DefaultInstantProvider;
-import it.tidalwave.util.test.MockInstantProvider;
+import javax.annotation.concurrent.Immutable;
+import java.util.Map;
+import it.tidalwave.util.Key;
+import it.tidalwave.util.TypeSafeHashMap;
+import it.tidalwave.util.TypeSafeMap;
+import lombok.Getter;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *
- * A provider of {@link Instant}s. It should be used by code requiring a timestamp, so it can be mocked during tests.
- * {@link DefaultInstantProvider} provides a default implementation, while {@link MockInstantProvider} is the one for
- * tests.
+ * A message that notifies that the system has been just powered on.
  * 
- * @see     DefaultInstantProvider
- * @see     MockInstantProvider
+ * @stereotype  Message
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface InstantProvider extends Supplier<Instant>
+@Immutable @ToString
+public final class PowerOnNotification 
   {
-    @Nonnull
-    public Instant getInstant();
-    
-    @Override @Nonnull
-    default public Instant get()
+    @Getter @Nonnull
+    private final TypeSafeMap properties;
+
+    public PowerOnNotification (final @Nonnull Map<Key<?>, Object> properties)
       {
-        return getInstant();
+        this.properties = new TypeSafeHashMap(properties);
       }
   }

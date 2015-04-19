@@ -36,6 +36,7 @@ import java.util.Optional;
 import java.util.Stack;
 import javafx.application.Platform;
 import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.role.ui.Selectable;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.UserAction8;
@@ -46,7 +47,10 @@ import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
@@ -65,7 +69,7 @@ import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
-import it.tidalwave.role.ui.DisplayableObjectComparator;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
@@ -261,17 +265,43 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
+     * FIXME: move to a separate role (DetailsSupplier)
+     *
+     ******************************************************************************************************************/
+    private void renderAudioFileDetails (final @Nonnull AudioFileSupplier audioFileSupplier)
+      {
+        final AudioFile audioFile = audioFileSupplier.getAudioFile();
+        final Metadata metadata = audioFile.getMetadata();
+        
+        final String details = String.format("%s\n%s\n%s\n%s\n%s",
+            audioFile.findMakers().stream().map(m -> m.as(Displayable).getDisplayName())
+                                  .collect(joining(", ", "Artist: ", "")),
+            audioFile.findComposers().stream().map(e -> e.as(Displayable).getDisplayName())
+                                     .collect(joining(", ", "Composer: ", "")),
+            metadata.get(BIT_RATE).map(br -> "Bit rate: " + br + " kbps").orElse(""),
+            metadata.get(SAMPLE_RATE).map(sr -> String.format("Sample rate: %.1f kHz", sr / 1000.0)).orElse(""),
+            metadata.get(YEAR).map(y -> "Year: " + y).orElse(""));
+        
+        presentation.renderDetails(details);
+      }
+    
+    /*******************************************************************************************************************
+     *
      *
      ******************************************************************************************************************/
     // FIXME: inject with @DciRole and @DciContext?
     @Nonnull
-    private UserActionProvider rolesFor (final @Nonnull Entity entity)
+    private Object[] rolesFor (final @Nonnull Entity entity)
       {
+        final Selectable selectable = 
+                (entity instanceof AudioFileSupplier) ? () -> renderAudioFileDetails((AudioFileSupplier)entity)
+                                                      : () -> presentation.renderDetails("");
+        
         final UserAction action = isComposite(entity) 
             ? new UserActionLambda(() -> navigateTo(entity)) 
             : new UserActionLambda(() -> requestRenderAudioFileFile(entity));
         
-        return new DefaultUserActionProvider() // FIXME: new DefaultUserActionProvider(action)
+        final UserActionProvider uap = new DefaultUserActionProvider() // FIXME: new DefaultUserActionProvider(action)
           {
             @Override @Nonnull
             public UserAction getDefaultAction()
@@ -279,6 +309,8 @@ public class DefaultAudioExplorerPresentationControl
                 return action;
               }
           };
+        
+        return new Object[] { selectable, uap };
       }
     
     /*******************************************************************************************************************

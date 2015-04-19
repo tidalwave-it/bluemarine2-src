@@ -33,12 +33,6 @@
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-model</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
@@ -48,17 +42,14 @@
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
         </dependency>
+        
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-role-spring</artifactId>
         </dependency>
-        
-        <!-- FIXME: workaround against a compilation error -->
         <dependency>
-            <groupId>org.netbeans.api</groupId>
-            <artifactId>org-openide-util</artifactId>
-            <version>RELEASE712</version>
-            <scope>provided</scope>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-util-java8supplement</artifactId>
         </dependency>
         
         <dependency>
@@ -70,18 +61,6 @@
     
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>aspectj-maven-plugin</artifactId>
-                <configuration>
-                    <aspectLibraries combine.children="append">
-                        <dependency>
-                            <groupId>it.tidalwave.thesefoolishthings</groupId>
-                            <artifactId>it-tidalwave-messagebus-spring</artifactId>
-                        </dependency>
-                    </aspectLibraries>
-                </configuration>
-            </plugin>
             <!-- Disable creation of test jar. Usually it's harmless even when unneeded, but in this case it's a very large file. -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

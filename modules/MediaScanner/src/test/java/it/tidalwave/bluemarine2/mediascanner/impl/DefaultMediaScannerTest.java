@@ -36,15 +36,15 @@ import java.io.File;
 import java.nio.file.Paths;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.util.Key;
-import it.tidalwave.util.PowerOnNotification;
+import it.tidalwave.util.spi.MockInstantProvider;
+import it.tidalwave.util.test.FileComparisonUtils;
 import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import it.tidalwave.util.test.FileComparisonUtils;
-import it.tidalwave.util.test.MockInstantProvider;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************

@@ -29,8 +29,8 @@
 package it.tidalwave.bluemarine2.catalog.impl.browser;
 
 import it.tidalwave.util.As;
+import it.tidalwave.text.AsDisplayableComparator;
 import it.tidalwave.util.DefaultFilterSortCriterion;
-import it.tidalwave.role.ui.DisplayableObjectComparator;
 
 /***********************************************************************************************************************
  *
@@ -44,7 +44,7 @@ public class RepositoryBrowserByTrack extends RepositoryBrowserSupport
       {
         public ByTrackName() 
           {
-            super(new DisplayableObjectComparator(), "---");
+            super(new AsDisplayableComparator(), "---");
           }
       }
     

@@ -30,12 +30,18 @@ package it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import javax.inject.Provider;
 import java.util.Optional;
+import java.util.stream.Stream;
 import javafx.fxml.FXML;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -43,8 +49,10 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.util.NotFoundException;
+import it.tidalwave.util.AsException;
 import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.role.ui.PresentationModel;
+import it.tidalwave.role.ui.Styleable;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
@@ -52,12 +60,10 @@ import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.*;
 import static it.tidalwave.role.Displayable.*;
-import it.tidalwave.role.Identifiable;
 import static it.tidalwave.role.SimpleComposite.SimpleComposite;
-import it.tidalwave.role.ui.Styleable;
 import static it.tidalwave.role.ui.UserActionProvider.*;
-import it.tidalwave.util.AsException;
 
 /***********************************************************************************************************************
  *
@@ -107,13 +113,28 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     @FXML
     private HBox hbBrowserButtons;
     
+    @FXML
+    private Pane pnCoverArt;
+    
+    @FXML
+    private ImageView ivCoverArt;
+    
+    @FXML
+    private VBox vbDetails;
+    
     @Inject
-    private JavaFXBinder binder;
+    private Provider<JavaFXBinder> binder;
+    
+    @FXML
+    private void initialize()
+      {
+        pnCoverArt.prefHeightProperty().bind(pnCoverArt.widthProperty());
+      }
     
     @Override
     public void bind (final @Nonnull Properties properties, final @Nonnull UserAction upAction)
       {
-        binder.bind(btUp, upAction);
+        binder.get().bind(btUp, upAction);
         lbFolderName.textProperty().bind(properties.folderNameProperty());
       }
     
@@ -125,21 +146,28 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     @Override
     public void populateBrowsers (final @Nonnull PresentationModel pm)
       {
-          bindToggleButtons(hbBrowserButtons, pm);
+        bindToggleButtons(hbBrowserButtons, pm);
       }
       
     @Override
     public void populateItems (final @Nonnull PresentationModel pm, final @Nonnull Optional<Object> optionalMemento)
       {
-        binder.bind(lvFiles, pm, () -> 
+        binder.get().bind(lvFiles, pm, () -> 
           {
             if (!lvFiles.getItems().isEmpty())
               {
                 ((Memento)optionalMemento.orElse(new Memento())).applyTo(lvFiles);
+                lvFiles.requestFocus();
               }
           });
       }
 
+    @Override
+    public void renderDetails (final @Nonnull String entityDetails)
+      {
+        vbDetails.getChildren().setAll(Stream.of(entityDetails.split("\n")).map(s -> createLabel(s)).collect(toList()));
+      }
+    
     @Override
     public void focusOnMediaItems() 
       {
@@ -150,6 +178,33 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     public Object getMemento()
       {
         return new Memento(lvFiles);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * With a remote there's no TAB key, so we must emulate some tab control with left and right arrows.
+     * 
+     * FIXME: try to generalise (e.g. cyclefocus?) and move to JavaFxApplicationPresentationDelegate.
+     * 
+     * @param   event   the key event
+     *
+     ******************************************************************************************************************/
+    @FXML
+    public void onKeyPressed (final @Nonnull KeyEvent event)
+      {
+        log.debug("onKeyPressed({})", event);
+        
+        if (lvFiles.isFocused())
+          {
+            if (event.getCode().equals(KeyCode.LEFT))
+              {
+                btUp.requestFocus();
+              }
+            else if (event.getCode().equals(KeyCode.RIGHT))
+              {
+                hbBrowserButtons.getChildren().get(0).requestFocus();
+              }
+          }
       }
     
     /*
@@ -175,12 +230,12 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
                   } 
                 catch (AsException e2) 
                   {
-                    e2.printStackTrace();
+//                    e2.printStackTrace();
                   }
                 
                 button.getStyleClass().addAll(styleClass);
                 button.setToggleGroup(group);
-                binder.bind(button, cpm.as(UserActionProvider).getDefaultAction());
+                binder.get().bind(button, cpm.as(UserActionProvider).getDefaultAction());
                 children.add(button);
                 
                 try // can't use asOptional() since PresentationModel is constrained to Java 7
@@ -189,7 +244,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
                   } 
                 catch (AsException e2) 
                   {
-                    e2.printStackTrace();
+//                    e2.printStackTrace();
                   }
               } 
             catch (NotFoundException e) 
@@ -197,5 +252,13 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
                 e.printStackTrace(); // FIXME
               }
           });
+      }
+
+    @Nonnull
+    private static Label createLabel (final @Nonnull String s)
+      {
+        final Label label = new Label(s);
+        label.getStyleClass().setAll("label", "track-details");
+        return label;
       }
   }

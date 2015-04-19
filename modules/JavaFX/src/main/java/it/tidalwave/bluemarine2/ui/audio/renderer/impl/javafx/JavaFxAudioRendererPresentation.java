@@ -28,8 +28,9 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
-import javax.inject.Inject;
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
+import javax.inject.Provider;
 import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
@@ -58,7 +59,7 @@ public class JavaFxAudioRendererPresentation implements AudioRendererPresentatio
     private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/AudioRenderer.fxml";
     
     @Inject
-    private FlowController flowController;
+    private Provider<FlowController> flowController;
     
     private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
     
@@ -69,6 +70,6 @@ public class JavaFxAudioRendererPresentation implements AudioRendererPresentatio
     public void showUp (final @Nonnull Object control)  
       {
         delegate.showUp(control);
-        flowController.showPresentation(nad.getNode(), control);
+        flowController.get().showPresentation(nad.getNode(), control);
       }
   }

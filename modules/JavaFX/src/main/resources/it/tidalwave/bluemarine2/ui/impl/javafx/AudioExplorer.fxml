@@ -4,14 +4,15 @@
 <?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="apAudioExplorer" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx.JavaFxAudioExplorerPresentationDelegate">
+<AnchorPane id="apAudioExplorer" onKeyPressed="#onKeyPressed" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx.JavaFxAudioExplorerPresentationDelegate">
     <stylesheets>
         <URL value="@Application.css" />
     </stylesheets>
     <children>
-        <GridPane prefHeight="600.0" prefWidth="800.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <GridPane hgap="10.0" prefHeight="600.0" prefWidth="800.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
@@ -32,16 +33,31 @@
                     <children>
                         <Label style="-fx-padding: 0 0 20 0;" styleClass="header-label" text="Music" />
                         <HBox alignment="CENTER" HBox.hgrow="ALWAYS">
-<children><HBox fx:id="hbBrowserButtons" alignment="CENTER_LEFT" spacing="8.0">
-<children><ToggleButton mnemonicParsing="false" styleClass="smallButton" text="B1" /><ToggleButton mnemonicParsing="false" styleClass="smallButton" text="B2" /><ToggleButton mnemonicParsing="false" styleClass="smallButton" text="B3" />
-</children></HBox>
-</children>
+                            <children>
+                                <HBox fx:id="hbBrowserButtons" alignment="CENTER_LEFT" spacing="8.0">
+                                    <children>
+                                        <ToggleButton mnemonicParsing="false" styleClass="smallButton" text="B1" />
+                                        <ToggleButton mnemonicParsing="false" styleClass="smallButton" text="B2" />
+                                        <ToggleButton mnemonicParsing="false" styleClass="smallButton" text="B3" />
+                                    </children>
+                                </HBox>
+                            </children>
                         </HBox>
                     </children>
                 </HBox>
                 <VBox spacing="10.0" GridPane.rowIndex="2" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
                     <children>
                         <ListView fx:id="lvFiles" GridPane.rowIndex="2" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <children>
+                        <HBox fx:id="pnCoverArt" styleClass="cover-art">
+                            <children>
+                                <ImageView fx:id="ivCoverArt" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                            </children>
+                        </HBox>
+                        <VBox fx:id="vbDetails" prefHeight="200.0" prefWidth="100.0" styleClass="details" VBox.vgrow="ALWAYS" />
                     </children>
                 </VBox>
             </children>
