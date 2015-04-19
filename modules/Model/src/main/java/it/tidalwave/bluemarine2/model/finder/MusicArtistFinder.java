@@ -30,8 +30,6 @@ package it.tidalwave.bluemarine2.model.finder;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.util.Id;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.util.spi.ExtendedFinder8Support;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 
 /***********************************************************************************************************************
@@ -42,7 +40,7 @@ import it.tidalwave.bluemarine2.model.MusicArtist;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MusicArtistFinder extends ExtendedFinder8Support<MusicArtist, Finder8<MusicArtist>>, Finder8<MusicArtist>
+public interface MusicArtistFinder extends FinderWithDciContext<MusicArtist, MusicArtistFinder>
   {
     /*******************************************************************************************************************
      *
@@ -53,8 +51,4 @@ public interface MusicArtistFinder extends ExtendedFinder8Support<MusicArtist, F
      ******************************************************************************************************************/
     @Nonnull
     public MusicArtistFinder makerOf (@Nonnull Id entityId);
-    
-    // FIXME: push to Finder
-    @Nonnull
-    public MusicArtistFinder withContext (@Nonnull Object context);
   }

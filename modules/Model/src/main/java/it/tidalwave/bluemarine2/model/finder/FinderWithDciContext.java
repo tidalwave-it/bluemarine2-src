@@ -29,39 +29,21 @@
 package it.tidalwave.bluemarine2.model.finder;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.bluemarine2.model.MusicArtist;
-import it.tidalwave.bluemarine2.model.Record;
-import it.tidalwave.bluemarine2.model.Track;
+import it.tidalwave.util.Finder8;
+import it.tidalwave.util.spi.ExtendedFinder8Support;
 
 /***********************************************************************************************************************
  *
  * @stereotype      Finder
  * 
- * @author  Fabrizio Giudici
+ * @author  fritz
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface TrackFinder extends FinderWithDciContext<Track, TrackFinder>
+public interface FinderWithDciContext<TYPE, FINDER> extends ExtendedFinder8Support<TYPE, Finder8<TYPE>>, 
+        Finder8<TYPE> // FIXME: why is this needed?
   {
-    /*******************************************************************************************************************
-     *
-     * Constrains the search to records made by the given artist.
-     * 
-     * @param       artist      the artist
-     * @return      the {@code Finder}
-     *
-     ******************************************************************************************************************/
+    // FIXME: push to Finder
     @Nonnull
-    public TrackFinder madeBy (@Nonnull MusicArtist artist);
-    
-    /*******************************************************************************************************************
-     *
-     * Constrains the search to tracks contained in the given record.
-     * 
-     * @param       record      the record
-     * @return      the {@code Finder}
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public TrackFinder inRecord (@Nonnull Record record);
+    public FINDER withContext (@Nonnull Object context);
   }
