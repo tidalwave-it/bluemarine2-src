@@ -41,9 +41,9 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ConcurrentHashMapWithOptionals<K, V> extends ConcurrentHashMap<K, V>
   {
     @Nonnull
-    public Optional<K> putIfAbsentAndGetNewKey (final @Nonnull Optional<K> key, final @Nonnull V value)
+    public Optional<K> putIfAbsentAndGetNewKey (final @Nonnull Optional<K> optionalKey, final @Nonnull V value)
       {
-        return key.flatMap(k -> putIfAbsentAndGetNewKey(k, value));
+        return optionalKey.flatMap(key -> putIfAbsentAndGetNewKey(key, value));
       }
 
     @Nonnull
