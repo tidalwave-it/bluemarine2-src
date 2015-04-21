@@ -17663,6 +17663,7 @@ TRACKS IN RepositoryRecord(rdfs:label=Zoom - Film Themes, urn:bluemarine:record:
   RepositoryTrack(14, 02:24, rdfs:label=Suspence (Theme from the Film), Armando Sciascia Orchestra/Zoom - Film Themes/14 Suspence (Theme from the Film).m4a, urn:bluemarine:track:be8be74ab69654cab28ee03284e32952def2b0c8)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=, uri=urn:bluemarine:artist:1213d7939c2833521d9391cc820c0f932122f000):
+  RepositoryRecord(rdfs:label=, urn:bluemarine:record:fe349f2b71ea0f41e5a944aa37f4e420a35d441c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=6 in Jazz, uri=urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e):
   RepositoryRecord(rdfs:label=Tributo a Lucio Battisti (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito & Giuseppe La Pusata), urn:bluemarine:record:c5a4f3868bfac0380a98543d4e073a62a5c2de04)
@@ -17694,6 +17695,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Adam Aleksander, uri=urn:bluemarine:
   RepositoryRecord(rdfs:label=Adam Aleksander - Live Piano Performances: Balakirev, Chopin, Liszt, Szymanowski, Rachmaninov, Beethoven, Debussy, urn:bluemarine:record:cd382d734c133cbfd2e7e239afaf8143eab33b90)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Adiastemi, uri=urn:bluemarine:artist:b32c35b08bb27ae49006aea9023b29c7bd6089d8):
+  RepositoryRecord(rdfs:label=I Dodici Giardini: Cantico di Santa Caterina da Bologna, urn:bluemarine:record:b0a86156a49cbc4fce7a186168d441840c5d6ae1)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Ahmad Jamal Trio, uri=urn:bluemarine:artist:4fbe8d0f7b53628552e501a2fdd3d5b11fc02b1e):
   RepositoryRecord(rdfs:label=Cross Country Tour (1958-1961), urn:bluemarine:record:6fcc261391d7e2f55cc41a4b41007875be840349)
@@ -17720,6 +17722,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Andrea Bacchetti, uri=urn:bluemarine
   RepositoryRecord(rdfs:label=Cherubini: 6 Piano Sonatas, urn:bluemarine:record:1bc80e189f4d8d60f24c3e1fde6031ad49c11290)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Andrei Gavrilov, uri=urn:bluemarine:artist:1c397ef0fda5f39421da1964108f1fdcda5070df):
+  RepositoryRecord(rdfs:label=, urn:bluemarine:record:fe349f2b71ea0f41e5a944aa37f4e420a35d441c)
   RepositoryRecord(rdfs:label=Gavrilov Scriabin, urn:bluemarine:record:d802047b9373706b04cbf35d94ab76ed66f02706)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Angela Maria Blasi, Robert Holl, Etc., uri=urn:bluemarine:artist:95baddbd8fc9ce08767ec1848733f73827d0159e):
@@ -17750,6 +17753,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Antonín Dvořák, uri=http://dbtune
   RepositoryRecord(rdfs:label=The Best of Dvořák, http://dbtune.org/musicbrainz/resource/record/3f7bd910-7931-4bdd-8f51-b9ed13bf3deb)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Antônio Carlos Jobim, uri=http://dbtune.org/musicbrainz/resource/artist/7a8dbe84-f4c0-4457-bfa3-edced1f8cde0):
+  RepositoryRecord(rdfs:label=Chega de Saudade (disc 2), http://dbtune.org/musicbrainz/resource/record/6817e504-4b19-481d-b1d9-cffebb695eac)
   RepositoryRecord(rdfs:label=Francis Albert Sinatra & Antonio Carlos Jobim, urn:bluemarine:record:b3e08b2d6a99507c6cc29328abb297b7c3ae8a88)
   RepositoryRecord(rdfs:label=Francis Albert Sinatra & Antonio Carlos Jobim, http://dbtune.org/musicbrainz/resource/record/82015a54-7663-4a63-9da2-363af64adde0)
   RepositoryRecord(rdfs:label=Their Greatest Hits, urn:bluemarine:record:5a83a55adc71938c360d9e642ed1f80d75c6e4ab)
@@ -17760,6 +17764,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Aretha Franklin, uri=http://dbtune.o
   RepositoryRecord(rdfs:label=30 Greatest Hits (disc 1), http://dbtune.org/musicbrainz/resource/record/dd3bf152-8392-4e6b-95d0-28a5e297da2f)
   RepositoryRecord(rdfs:label=30 Greatest Hits (disc 2), http://dbtune.org/musicbrainz/resource/record/41179dec-8e6b-4f3a-a649-92a8918e17b4)
   RepositoryRecord(rdfs:label=A Natural Woman / Baby, Baby, Baby, http://dbtune.org/musicbrainz/resource/record/0015e113-f9c7-44f1-af3f-015e21abae41)
+  RepositoryRecord(rdfs:label=AM Gold: 1973, http://dbtune.org/musicbrainz/resource/record/7da35163-322a-41dc-bb1b-b17d401c4cd8)
   RepositoryRecord(rdfs:label=Aretha & Otis (disc 1), http://dbtune.org/musicbrainz/resource/record/2736de43-f39c-43bb-9ffa-4e2382b4dc5f)
   RepositoryRecord(rdfs:label=Aretha Queen of Soul (The Very Best Of), http://dbtune.org/musicbrainz/resource/record/6fed83ac-dc7c-4603-8b43-02a87d1591de)
   RepositoryRecord(rdfs:label=Aretha's Gold, http://dbtune.org/musicbrainz/resource/record/6f06ad48-e381-449f-9174-938872d24c92)
@@ -17775,8 +17780,10 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Arianna Savall, uri=http://dbtune.or
   RepositoryRecord(rdfs:label=Bella Terra, http://dbtune.org/musicbrainz/resource/record/d0c647a7-77d8-4287-85e7-2bc124537fc4)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Armando Sciascia Orchestra, uri=urn:bluemarine:artist:f237a6bd033fb576234f43738288fa00ea390a2b):
+  RepositoryRecord(rdfs:label=Zoom - Film Themes, urn:bluemarine:record:0f809a98d1372d0a707f8167761be63ed4654970)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Art of Noise, uri=http://dbtune.org/musicbrainz/resource/artist/be899560-1570-402e-9f95-3182898a8b70):
+  RepositoryRecord(rdfs:label=I Love Tecno Pop (disc 2), http://dbtune.org/musicbrainz/resource/record/ad7560e4-8108-4189-870c-da1dd824ad88)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Artie Shaw, uri=http://dbtune.org/musicbrainz/resource/artist/85545102-7c29-4707-aea2-30ff55018df9):
   RepositoryRecord(rdfs:label=Greatest Hits, http://dbtune.org/musicbrainz/resource/record/a2e677b1-e103-492c-ac75-e3d4af4b951b)
@@ -17785,16 +17792,20 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Astor Piazzolla, uri=http://dbtune.o
   RepositoryRecord(rdfs:label=The Best of Yo-Yo Ma, urn:bluemarine:record:709dcc651cbc9cc92f4ca69c66582068c0977aba)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=B.J. Thomas, uri=http://dbtune.org/musicbrainz/resource/artist/42a19448-ff60-4fd2-9d10-959bf2000729):
+  RepositoryRecord(rdfs:label=Forrest Gump (disc 2), http://dbtune.org/musicbrainz/resource/record/bf025ee9-cd21-42b1-bad6-1ae66bb92a3f)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Baden Powell, uri=http://dbtune.org/musicbrainz/resource/artist/ba617653-44e4-404f-91cd-f74adce5687d):
   RepositoryRecord(rdfs:label=Afro Sambas, http://dbtune.org/musicbrainz/resource/record/45897c43-2a6c-4324-98e0-0260edd77f58)
+  RepositoryRecord(rdfs:label=Chega De Saudade, urn:bluemarine:record:41cad79a00a8e4b0fff8c7daa81506b19651854c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Baden Powell, uri=urn:bluemarine:artist:26176b402a7c0989c0d596341286fc01c06b8216):
   RepositoryRecord(rdfs:label=Three Originals: Tristeza On Guitar / Poema On Guitar / Apaixonado, urn:bluemarine:record:830a6d223dda1446900efe548f7c8e028a196234)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Barbara Bonney, Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker, Neeme Järvi & Tor Stokke, uri=urn:bluemarine:artist:b5e65a7d818308b469fa9eabb7aa7cbc08e833ca):
+  RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Barbara Bonney, Göteborgs Symfoniker & Neeme Järvi, uri=urn:bluemarine:artist:88656c930c64e68db68a2b944ccdb56d26e3765f):
+  RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Barbara Hendricks, uri=urn:bluemarine:artist:6a1fd18006f107fb6672f499dc3202f42fe23048):
   RepositoryRecord(rdfs:label=Negro Spirituals, urn:bluemarine:record:2c5360cfcd5e909e8825eccc6f16e06e0e117b45)
@@ -17830,6 +17841,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Billie Holiday, uri=http://dbtune.or
   RepositoryRecord(rdfs:label=All or Nothing at All, Volume 1, http://dbtune.org/musicbrainz/resource/record/856cfe04-abf4-4528-af11-19609a8dd77a)
   RepositoryRecord(rdfs:label=All or Nothing at All, Volume 2, http://dbtune.org/musicbrainz/resource/record/9a79e0fd-d3d9-4f89-8cba-8e722833295c)
   RepositoryRecord(rdfs:label=Billie's Best, http://dbtune.org/musicbrainz/resource/record/2dd56925-4780-404d-b3d5-62987f4678c1)
+  RepositoryRecord(rdfs:label=RSVP, http://dbtune.org/musicbrainz/resource/record/d7629e76-e614-4a3b-834c-be860eab84af)
   RepositoryRecord(rdfs:label=Songs for Distingué Lovers, http://dbtune.org/musicbrainz/resource/record/48d3c9c2-4920-4d81-a0eb-d52ccad1969d)
   RepositoryRecord(rdfs:label=Songs for Distingué Lovers, http://dbtune.org/musicbrainz/resource/record/c9c00fe9-9215-4906-aabc-ccb45484f93b)
   RepositoryRecord(rdfs:label=The Complete Billie Holiday on Verve 1945-1959 (disc 9), http://dbtune.org/musicbrainz/resource/record/4ced03d1-39d0-48c9-8280-81b51570422c)
@@ -17843,9 +17855,11 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Billy Joel, uri=http://dbtune.org/mu
   RepositoryRecord(rdfs:label=Greatest Hits, Volume I: 1973-1978, http://dbtune.org/musicbrainz/resource/record/3e9e6b6d-af56-4612-8ba9-cfe7ce8ad214)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Billy Paul, uri=http://dbtune.org/musicbrainz/resource/artist/7e8a2d88-ebed-433c-9971-643a66834835):
+  RepositoryRecord(rdfs:label=Smooth Grooves: The Essential Collection, http://dbtune.org/musicbrainz/resource/record/023559c6-b55f-4bc1-8a65-9d8226a16204)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Bing Crosby, uri=http://dbtune.org/musicbrainz/resource/artist/2437980f-513a-44fc-80f1-b90d9d7fcf8f):
   RepositoryRecord(rdfs:label=Bing & Satchmo, http://dbtune.org/musicbrainz/resource/record/65c9db3a-da39-4890-8542-fb344507b29e)
+  RepositoryRecord(rdfs:label=Christmas: All Time Great Recordings, http://dbtune.org/musicbrainz/resource/record/3abccae0-ca13-4ef2-a409-404d8fc4b175)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Bing Crosby, uri=urn:bluemarine:artist:269be35ddb650886eea9f7f5e64db6811eaaa7b5):
   RepositoryRecord(rdfs:label=Bing Crosby's Christmas Classics, urn:bluemarine:record:4fe35d08dc3936f4992ab9ecf80c64b2524b89e3)
@@ -17856,6 +17870,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Bloom, uri=urn:bluemarine:artist:f1a
   RepositoryRecord(rdfs:label=Tre sogni, urn:bluemarine:record:1d0f1e13426e46fdd440351e5d1378286d546d8e)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Bobby Vinton, uri=http://dbtune.org/musicbrainz/resource/artist/f37f26ea-6a9a-49b8-9614-bdad762f1ba6):
+  RepositoryRecord(rdfs:label=Top of the Spot, http://dbtune.org/musicbrainz/resource/record/f87ba9ca-2265-4115-86c0-5fea2e64e007)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Boney M, uri=urn:bluemarine:artist:dd5af8ff69b0d55cc0f918d26bee6ddd7d24ff5e):
   RepositoryRecord(rdfs:label=Boney M, urn:bluemarine:record:7661e9695d16b035faa11f0a97b1fd445579b1bd)
@@ -17865,6 +17880,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Boney M., uri=http://dbtune.org/musi
   RepositoryRecord(rdfs:label=The Best of Boney M, http://dbtune.org/musicbrainz/resource/record/34ec2a82-a6a5-4d0c-8955-cd521ef55a91)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Boney M., uri=urn:bluemarine:artist:9860205b1f057eda3f928a0110fcde5319b07040):
+  RepositoryRecord(rdfs:label=Boney M, urn:bluemarine:record:7661e9695d16b035faa11f0a97b1fd445579b1bd)
   RepositoryRecord(rdfs:label=Boney M.: Their Most Beautiful Ballads, urn:bluemarine:record:6b2fa11cb7e4e770967b213a77d4d43550abf773)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Bonnie Tyler, uri=urn:bluemarine:artist:5e64019c88ee3df0ea567da0826167bca403b8aa):
@@ -17891,18 +17907,24 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Bruno Martino, uri=urn:bluemarine:ar
   RepositoryRecord(rdfs:label=I grandi successi originali: Bruno Martino, urn:bluemarine:record:a2b4ced55c71a81483de5917f358226d4c3ffae0)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Bïa, uri=http://dbtune.org/musicbrainz/resource/artist/a473a358-154d-464b-9391-b4bac69126e3):
+  RepositoryRecord(rdfs:label=Chega De Saudade, urn:bluemarine:record:41cad79a00a8e4b0fff8c7daa81506b19651854c)
+  RepositoryRecord(rdfs:label=Chega De Saudade (disc 1), http://dbtune.org/musicbrainz/resource/record/6c5bdb69-e576-456b-9b6b-9177a5f04e43)
+  RepositoryRecord(rdfs:label=Chega de Saudade (disc 2), http://dbtune.org/musicbrainz/resource/record/6817e504-4b19-481d-b1d9-cffebb695eac)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Cannonball Adderley, uri=http://dbtune.org/musicbrainz/resource/artist/a4c73ebe-b2c7-4f13-b99d-2fe1f9f27da8):
   RepositoryRecord(rdfs:label=Somethin' Else, http://dbtune.org/musicbrainz/resource/record/1983b60d-2df5-44ce-ac6d-9d41566b96b5)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Carl Gustaf Holmgren, Göteborgs Symfoniker, Neeme Järvi & Urban Malmberg, uri=urn:bluemarine:artist:218ecc45c64e8e09dbe1f27353462a233fd93981):
+  RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Carlos Lyra & Quarteto Em Cy, uri=http://dbtune.org/musicbrainz/resource/artist/46fb4453-910b-4349-bd92-a9457c4f31e5):
+  RepositoryRecord(rdfs:label=Chega de Saudade (disc 2), http://dbtune.org/musicbrainz/resource/record/6817e504-4b19-481d-b1d9-cffebb695eac)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Carol Wincenc, Stephen Gosling, uri=urn:bluemarine:artist:e7e88a273838e165f9508c5734d0c429d65df309):
   RepositoryRecord(rdfs:label=Café Music, urn:bluemarine:record:67e4e0a4265853b0c5a60a2adc405dad8111067d)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Cassandra Wilson, uri=http://dbtune.org/musicbrainz/resource/artist/eb6595d3-e559-4bcc-a516-843bfdba82e9):
+  RepositoryRecord(rdfs:label=Midnight in the Garden of Good and Evil, http://dbtune.org/musicbrainz/resource/record/28394132-f6e4-4c6d-8e48-5d3ce289eb62)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Catherine Asaro, uri=http://dbtune.org/musicbrainz/resource/artist/8cc1b4fd-545d-4b16-b348-821812210b4d):
   RepositoryRecord(rdfs:label=Ascendant Sun (disc 6), http://dbtune.org/musicbrainz/resource/record/4f47d2ad-1c8a-4259-8bf2-ce9c2ca97dc1)
@@ -17920,10 +17942,12 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Charles Mingus, uri=http://dbtune.or
   RepositoryRecord(rdfs:label=Tijuana Moods (disc 2), http://dbtune.org/musicbrainz/resource/record/715d9041-b7da-4350-9de8-0db93b19b002)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Charles Neidich, Lev Polyakin, Frances Renzi, uri=urn:bluemarine:artist:a105abe8631efbad26d7d1f951620df37144cf95):
+  RepositoryRecord(rdfs:label=Café Music, urn:bluemarine:record:67e4e0a4265853b0c5a60a2adc405dad8111067d)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Charles Trenet, uri=http://dbtune.org/musicbrainz/resource/artist/cf97f8c4-f287-4c0c-a07e-6ca2fdd8e8c2):
   RepositoryRecord(rdfs:label=Anthologie, http://dbtune.org/musicbrainz/resource/record/0264515e-b1a4-4a0b-bd14-93b0deb6bbf6)
   RepositoryRecord(rdfs:label=Ses plus belles chansons, http://dbtune.org/musicbrainz/resource/record/fda533f3-01cb-435d-9b98-42a35f33dd04)
+  RepositoryRecord(rdfs:label=Something's Gotta Give, http://dbtune.org/musicbrainz/resource/record/8e17d295-518f-4fbe-8ce1-a1929811dbda)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Charles Trenet, uri=urn:bluemarine:artist:1459385ac4d34c2b2fe039b4caf9faced8286f2c):
   RepositoryRecord(rdfs:label=Anthologie - Le fou chantant !, urn:bluemarine:record:90af4cdc5e5ae1a767926ef3fb536992534ea071)
@@ -17941,6 +17965,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Charlie Parker, uri=http://dbtune.or
   RepositoryRecord(rdfs:label=The Cole Porter Songbook, http://dbtune.org/musicbrainz/resource/record/380fdd66-7c9e-4020-b8b2-0d03308ffa0e)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Charlotte Forsberg, Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker, Maria Andersson, Monica Einarson, Neeme Järvi & Toralv Maurstad, uri=urn:bluemarine:artist:69087e5fd9c1a157699dddb5072b90be976c4334):
+  RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Chet Baker, uri=http://dbtune.org/musicbrainz/resource/artist/1ba1d493-7114-45e2-b163-a36d49a0c065):
   RepositoryRecord(rdfs:label=Chet For Lovers, urn:bluemarine:record:be9c5bd52e7aedb68a59ebfd27d21d53101510fb)
@@ -17965,22 +17990,30 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Chris Botti, uri=urn:bluemarine:arti
   RepositoryRecord(rdfs:label=Slowing Down the World, urn:bluemarine:record:200304a101b144d93b16a6181c8063801fd157a6)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Chris Botti & Sting, uri=urn:bluemarine:artist:7ae8f49a7fa04fa7015e92bf5ab637e94e41a876):
+  RepositoryRecord(rdfs:label=Slowing Down the World, urn:bluemarine:record:200304a101b144d93b16a6181c8063801fd157a6)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Christophe Beck, uri=http://dbtune.org/musicbrainz/resource/artist/0df890e1-f4f2-4b21-a413-cd8af1af32d8):
   RepositoryRecord(rdfs:label=Confidence, http://dbtune.org/musicbrainz/resource/record/7d70bc65-702a-4930-9064-8a8da5478d70)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Christopher Cross, uri=http://dbtune.org/musicbrainz/resource/artist/883e4ba4-8ccc-47ed-81df-df51e41792a9):
   RepositoryRecord(rdfs:label=Christopher Cross, http://dbtune.org/musicbrainz/resource/record/72c78298-14a0-4b9f-be05-225d5089bb20)
+  RepositoryRecord(rdfs:label=The Look of Love: The Burt Bacharach Collection (disc 3), http://dbtune.org/musicbrainz/resource/record/0e738eb0-64ff-4c77-ba95-df615c224e61)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Clannad, uri=http://dbtune.org/musicbrainz/resource/artist/d45641da-371c-430e-8907-6086590ab282):
+  RepositoryRecord(rdfs:label=The Last of the Mohicans, http://dbtune.org/musicbrainz/resource/record/d900dcd6-b119-4ac2-a33d-f51319c1ca37)
+  RepositoryRecord(rdfs:label=Top of the Spot, http://dbtune.org/musicbrainz/resource/record/f87ba9ca-2265-4115-86c0-5fea2e64e007)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Claude Debussy, uri=http://dbtune.org/musicbrainz/resource/artist/be50643c-0377-4968-b48c-47e06b2e2a3b):
+  RepositoryRecord(rdfs:label=Cello Sonatas, urn:bluemarine:record:e495bc8b8c5e8574a1c65ad616d9ae6d96f591a1)
   RepositoryRecord(rdfs:label=La Mer / Prélude à l'après-midi d'un faune / Nocturnes (Chicago Symphony Orchestra feat. conductor: Sir Georg Solti), http://dbtune.org/musicbrainz/resource/record/ed665e88-5761-4a33-b258-1a2eacf1d23f)
   RepositoryRecord(rdfs:label=Préludes Book I / Images Book I / Estampes (feat. piano: Claudio Arrau), http://dbtune.org/musicbrainz/resource/record/aabd08b1-12df-473d-a4f4-e558cc863f05)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Claudia Caffagni, uri=urn:bluemarine:artist:655383687751d14446973bdda9b025a6b25ce3a9):
+  RepositoryRecord(rdfs:label=I Dodici Giardini: Cantico di Santa Caterina da Bologna, urn:bluemarine:record:b0a86156a49cbc4fce7a186168d441840c5d6ae1)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Claudia Telles, uri=http://dbtune.org/musicbrainz/resource/artist/d52950f6-045a-4ea1-bdce-a9e789523654):
+  RepositoryRecord(rdfs:label=Chega De Saudade (disc 1), http://dbtune.org/musicbrainz/resource/record/6c5bdb69-e576-456b-9b6b-9177a5f04e43)
+  RepositoryRecord(rdfs:label=Chega de Saudade (disc 2), http://dbtune.org/musicbrainz/resource/record/6817e504-4b19-481d-b1d9-cffebb695eac)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Claudio Abbado: Chamber Orchestra Of Europe, uri=urn:bluemarine:artist:ebcd2d64bf85216a9abbd4dcccded2b1fb75e3d1):
   RepositoryRecord(rdfs:label=Vivaldi: The Four Seasons, urn:bluemarine:record:b96f8a8b8dfc9be308f9cf2ed91f2eea13d039be)
@@ -18004,6 +18037,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Cristóbal de Morales, uri=http://db
   RepositoryRecord(rdfs:label=Officium Defunctorum, Misa pro Defunctis, urn:bluemarine:record:d26eb81886db8737b3b5fad1e343371d6bd5861c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Cyrus Chestnut, uri=urn:bluemarine:artist:3d6fd8992205fc1496d77a69b05a2af6c6f30624):
+  RepositoryRecord(rdfs:label=Cyrus Chestnut, urn:bluemarine:record:e04028aeb6a39858946347d1b104547f18901cfa)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Cyrus Chestnut, Anita Baker, uri=urn:bluemarine:artist:edd06fdfa143362f40d203b8eccc3161ca11060c):
   RepositoryRecord(rdfs:label=Cyrus Chestnut, urn:bluemarine:record:e04028aeb6a39858946347d1b104547f18901cfa)
@@ -18044,6 +18078,8 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Dionne Warwick, uri=http://dbtune.or
   RepositoryRecord(rdfs:label=Dionne Warwick in Valley of the Dolls, http://dbtune.org/musicbrainz/resource/record/f3213ab5-819e-4144-be6a-715d548da041)
   RepositoryRecord(rdfs:label=Here Where There Is Love, http://dbtune.org/musicbrainz/resource/record/f3fd0ef6-c916-4630-a78e-28b4188e3b04)
   RepositoryRecord(rdfs:label=I Say a Little Prayer: The Bacharach and David Songbook, http://dbtune.org/musicbrainz/resource/record/151ffb59-b2e6-46fb-b974-7f336166920b)
+  RepositoryRecord(rdfs:label=The Look of Love: The Burt Bacharach Collection (disc 1), http://dbtune.org/musicbrainz/resource/record/1bcfd9b5-1046-4634-a734-ab6f10e52b8e)
+  RepositoryRecord(rdfs:label=The Look of Love: The Burt Bacharach Collection (disc 3), http://dbtune.org/musicbrainz/resource/record/0e738eb0-64ff-4c77-ba95-df615c224e61)
   RepositoryRecord(rdfs:label=The Very Best of Burt Bacharach, urn:bluemarine:record:66971c3bd27e9a5f4f0b156727e821bc828e3c1d)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Dionne Warwick, uri=urn:bluemarine:artist:f1e6e31347c276c2d3afb03c906ab436a7822eed):
@@ -18089,10 +18125,12 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Django Reinhardt, uri=http://dbtune.
   RepositoryRecord(rdfs:label=The Quintessential Django Reinhardt & Stéphane Grappelli, http://dbtune.org/musicbrainz/resource/record/3daded3c-4de2-4083-a360-481610f1b437)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Django Reinhardt and His American Swing Band, uri=http://dbtune.org/musicbrainz/resource/artist/d40428fa-bd80-4482-8be3-fb830a7eeabb):
+  RepositoryRecord(rdfs:label=Intégrale, Volume 12: "Manoir des mes rêves" (disc 2), http://dbtune.org/musicbrainz/resource/record/8476449d-f175-4a08-b32a-ae99ca8f149e)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Doris Day, uri=http://dbtune.org/musicbrainz/resource/artist/3db5dfb1-1b91-4038-8268-ae04d15b6a3e):
   RepositoryRecord(rdfs:label=Calamity Jane, http://dbtune.org/musicbrainz/resource/record/3f148f6b-caf1-484f-aa7a-073200100106)
   RepositoryRecord(rdfs:label=Daydreaming, http://dbtune.org/musicbrainz/resource/record/9dcbb1db-367a-4f8c-acf7-255466b2f08e)
+  RepositoryRecord(rdfs:label=Minnesboxen 1956, http://dbtune.org/musicbrainz/resource/record/7f624fb0-bc6b-4eb4-aadc-88512c0b14d4)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Duke Ellington, uri=http://dbtune.org/musicbrainz/resource/artist/3af06bc4-68ad-4cae-bb7a-7eeeb45e411f):
   RepositoryRecord(rdfs:label=Ella & Duke at the Côte d'Azur (disc 1), http://dbtune.org/musicbrainz/resource/record/3b3dbe37-7684-4b87-8910-96d04d87a656)
@@ -18125,6 +18163,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Edwin Hawkins Singers, uri=http://db
   RepositoryRecord(rdfs:label=Oh Happy Day, urn:bluemarine:record:16f1a81299cff2286dc696186184c2be3d6eda2e)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Elisabetta de Mircovich, uri=urn:bluemarine:artist:5773328cf285eb6e12a71d5bcf30bd7f6524a9c8):
+  RepositoryRecord(rdfs:label=I Dodici Giardini: Cantico di Santa Caterina da Bologna, urn:bluemarine:record:b0a86156a49cbc4fce7a186168d441840c5d6ae1)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Elizabeth Parry, flute, uri=urn:bluemarine:artist:c30e4113862b546d4cb333adffb0902ba8d4d2f1):
   RepositoryRecord(rdfs:label=Pieces de Clavecin, urn:bluemarine:record:52de1d60aa8794c986ab2649926c2171710d6b3a)
@@ -18167,12 +18206,15 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Ella Fitzgerald, uri=http://dbtune.o
   RepositoryRecord(rdfs:label=The Essential Ella Fitzgerald: The Great Songs, http://dbtune.org/musicbrainz/resource/record/6b7994b5-0463-4552-bcab-ff9b40c50c53)
   RepositoryRecord(rdfs:label=The Irving Berlin Songbook (disc 2), http://dbtune.org/musicbrainz/resource/record/34c9331c-d3bf-4ffc-b0bb-b8cf7ecfb56b)
   RepositoryRecord(rdfs:label=The Very Best of Ella Fitzgerald, http://dbtune.org/musicbrainz/resource/record/fdc11c80-fbd5-466d-9e96-d209d6437236)
+  RepositoryRecord(rdfs:label=Top of the Spot, http://dbtune.org/musicbrainz/resource/record/f87ba9ca-2265-4115-86c0-5fea2e64e007)
   RepositoryRecord(rdfs:label=Verve Jazz Masters 46: The Jazz Sides, http://dbtune.org/musicbrainz/resource/record/61a24db0-966d-40b1-b563-f456b1711203)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Ella Fitzgerald, uri=urn:bluemarine:artist:711570135ffc27f41845031de8a7d1de66b6036f):
+  RepositoryRecord(rdfs:label=, urn:bluemarine:record:fe349f2b71ea0f41e5a944aa37f4e420a35d441c)
   RepositoryRecord(rdfs:label=Ella Wishes You a Swinging Christmas, urn:bluemarine:record:1a9a39c8d9525e09c7c4a598b2920df06a07c8de)
   RepositoryRecord(rdfs:label=Hello Dolly!, urn:bluemarine:record:3e25602f04d21d8b96875aeffa653ac693adc38b)
   RepositoryRecord(rdfs:label=Love Songs - Best of the Verve Songbooks, urn:bluemarine:record:4d80be51d7602f4319f4f2f4c88a096d1605b291)
+  RepositoryRecord(rdfs:label=Take Love Easy, urn:bluemarine:record:1a63fd03457c0940352ab2781190d63cdb94ff46)
   RepositoryRecord(rdfs:label=The Best of the Songbooks, urn:bluemarine:record:8386d6f863bfeb8ddf55f45246937e6cfa6276a6)
   RepositoryRecord(rdfs:label=Verve Remixed 2 / Verve Unmixed 2, urn:bluemarine:record:fccb923ae50a71b92bc77e0dfc6787eeac8ae3ab)
 
@@ -18185,6 +18227,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Ella Fitzgerald & Joe Pass, uri=urn:
   RepositoryRecord(rdfs:label=Take Love Easy, urn:bluemarine:record:1a63fd03457c0940352ab2781190d63cdb94ff46)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Ella Fitzgerald & Oscar Peterson, uri=urn:bluemarine:artist:20096997340e3098a6340aa1eca4cadde35fe250):
+  RepositoryRecord(rdfs:label=Love Songs - Best of the Verve Songbooks, urn:bluemarine:record:4d80be51d7602f4319f4f2f4c88a096d1605b291)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Ella Fitzgerald & The Tommy Flanagan Trio, uri=urn:bluemarine:artist:723f8350887d328d983e558849bbb2654dee6ce2):
   RepositoryRecord(rdfs:label=Montreux '77, urn:bluemarine:record:719129f7b74b82c15689702a2c7efad4dcaac5bd)
@@ -18196,6 +18239,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Elton John, uri=urn:bluemarine:artis
   RepositoryRecord(rdfs:label=Rocket Man - The Definitive Hits (Deluxe Album), urn:bluemarine:record:608532ba0dcbb30014cf2b2534152435f1cc67b8)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Emer Buckley, uri=urn:bluemarine:artist:7ebd426a4784d0942df26a25ed7d4bb631154f08):
+  RepositoryRecord(rdfs:label=Marais: Pièces pour viole & autres instruments, urn:bluemarine:record:7c31cba698daf6642a6dac31f24d01d3493cbeeb)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Ennio Morricone, uri=http://dbtune.org/musicbrainz/resource/artist/a16e47f5-aa54-47fe-87e4-bb8af91a9fdd):
   RepositoryRecord(rdfs:label=Once Upon a Time in the West, http://dbtune.org/musicbrainz/resource/record/77c4dd65-5fec-4c91-92f9-64b875e7af92)
@@ -18235,8 +18279,10 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Francisco Aguabella, uri=urn:bluemar
   RepositoryRecord(rdfs:label=Cubacan, urn:bluemarine:record:aa92b1795dd10d672e7c8ee44b0d8f8ce164b414)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Francisco Buarque de Hollanda, uri=http://dbtune.org/musicbrainz/resource/artist/93185f2d-6181-4b12-95a5-fe41a812303e):
+  RepositoryRecord(rdfs:label=Chega de Saudade (disc 2), http://dbtune.org/musicbrainz/resource/record/6817e504-4b19-481d-b1d9-cffebb695eac)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Francisco Guerrero, uri=http://dbtune.org/musicbrainz/resource/artist/9d0671e3-2254-480b-a543-c37de339842f):
+  RepositoryRecord(rdfs:label=El Cançoner del Duc de Calabria: 1526-1554 (La Capella Reial de Catalunya, conductor: Jordi Savall), http://dbtune.org/musicbrainz/resource/record/a7680618-2d38-405e-a839-bdee9ca8db8a)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Frank Sinatra, uri=http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d):
   RepositoryRecord(rdfs:label=A Swingin' Affair!, http://dbtune.org/musicbrainz/resource/record/f8b8f391-5de9-407b-9492-700b3c4cfb99)
@@ -18266,6 +18312,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Frank Sinatra, uri=http://dbtune.org
   RepositoryRecord(rdfs:label=The Capitol Years (disc 2), http://dbtune.org/musicbrainz/resource/record/81584856-4fdb-4f96-b01d-805d8686d1f7)
   RepositoryRecord(rdfs:label=The Capitol Years (disc 3), http://dbtune.org/musicbrainz/resource/record/ef0305de-9d25-4b8d-8c8b-123894190eae)
   RepositoryRecord(rdfs:label=The Complete Capitol Singles Collection (disc 2), http://dbtune.org/musicbrainz/resource/record/1e9574a4-dbc5-418e-9c63-4a2aafe6a8d6)
+  RepositoryRecord(rdfs:label=What Women Want, http://dbtune.org/musicbrainz/resource/record/4d573ef3-5fcc-4f3f-89ef-b25400b0125c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Frank Sinatra, uri=urn:bluemarine:artist:f14e76940ffb697c99e83297257f5299c445ca2d):
   RepositoryRecord(rdfs:label=Christmas Album, urn:bluemarine:record:36ef37c48f3a5138642fbfb89339a7af7659d092)
@@ -18281,6 +18328,8 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Franz Liszt, uri=http://dbtune.org/m
   RepositoryRecord(rdfs:label=The 19 Hungarian Rhapsodies (feat. piano: Roberto Szidon) (disc 2), http://dbtune.org/musicbrainz/resource/record/d32a5cb7-c948-4f33-9a51-1a40821a81fa)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Franz Schubert, uri=http://dbtune.org/musicbrainz/resource/artist/f91e3a88-24ee-4563-8963-fab73d2765ed):
+  RepositoryRecord(rdfs:label=Cello Sonatas, urn:bluemarine:record:e495bc8b8c5e8574a1c65ad616d9ae6d96f591a1)
+  RepositoryRecord(rdfs:label=Schubert: Symphonie no. 8 "Unvollendete" / Schumann: Symphonie no. 3 "Rheinische", urn:bluemarine:record:6bd53cf0cc2d3ef446fa40e9d32e8ed66af702a7)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Fred Hersch, uri=urn:bluemarine:artist:eed9520b64a430c40b28f9ec90412289cd28396f):
   RepositoryRecord(rdfs:label=Songs Without Words, urn:bluemarine:record:4c4fac9e7c6da7f1b71455cac593b943cbc33767)
@@ -18295,19 +18344,24 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Gary Burton, Pat Metheny, Steve Swal
   RepositoryRecord(rdfs:label=Quartet Live!, http://dbtune.org/musicbrainz/resource/record/38f63535-719e-48ca-8118-68d1f2607159)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Gene Pitney, uri=http://dbtune.org/musicbrainz/resource/artist/828b1208-2ce4-40c1-b659-11d7f540748c):
+  RepositoryRecord(rdfs:label=The Look of Love: The Burt Bacharach Collection (disc 1), http://dbtune.org/musicbrainz/resource/record/1bcfd9b5-1046-4634-a734-ab6f10e52b8e)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Geoges Barboteu, Gilbert Coursier, Daniel Dubar, Michel Berg, uri=urn:bluemarine:artist:11a06443463d31e61f4b75adfcf118afc85da7c6):
   RepositoryRecord(rdfs:label=The Magic of The French Horn - Greatest Concertos, urn:bluemarine:record:543a080fce763a95471526d5465e7feb7133f2f5)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Geoges Barboteu, Jean-François Paillard Chamber Orchestra, uri=urn:bluemarine:artist:df1a1274f66decc4b2f8e5b0f65fbe36c7031a17):
+  RepositoryRecord(rdfs:label=The Magic of The French Horn - Greatest Concertos, urn:bluemarine:record:543a080fce763a95471526d5465e7feb7133f2f5)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Geoges Barboteu/Horn, Jean-Francois Paillard Chamber Orchest, uri=urn:bluemarine:artist:7d210718b959b9c5d9fbc02749502e991b14e9d9):
+  RepositoryRecord(rdfs:label=The Magic of The French Horn - Greatest Concertos, urn:bluemarine:record:543a080fce763a95471526d5465e7feb7133f2f5)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Geoges Barboteu/Horn, Lily Laskine/Harp, uri=urn:bluemarine:artist:281bf72be51d2b46491e82ef4a3faa1b489f19b3):
+  RepositoryRecord(rdfs:label=The Magic of The French Horn - Greatest Concertos, urn:bluemarine:record:543a080fce763a95471526d5465e7feb7133f2f5)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Georg Friedrich Händel, uri=http://dbtune.org/musicbrainz/resource/artist/27870d47-bb98-42d1-bf2b-c7e972e6befc):
   RepositoryRecord(rdfs:label=Händel Messiah Highlights, http://dbtune.org/musicbrainz/resource/record/7020411e-fe5e-4a7e-b2be-c16742b1ba51)
   RepositoryRecord(rdfs:label=Music for the Royal Fireworks, http://dbtune.org/musicbrainz/resource/record/c794e06e-fc09-4e96-b379-d5ffbb002ab7)
+  RepositoryRecord(rdfs:label=The Best Choral Album in the World... Ever! (disc 2), http://dbtune.org/musicbrainz/resource/record/8334438e-a058-4443-8f0b-8fc1b2b07d29)
   RepositoryRecord(rdfs:label=Water Music, urn:bluemarine:record:8982cccb0d65474edaa8eef34e57237ba05575a8)
   RepositoryRecord(rdfs:label=Water Music / Fireworks Music (English Baroque Soloists feat. conductor: John Eliot Gardiner), http://dbtune.org/musicbrainz/resource/record/f91b48e0-0ce1-45e5-8b63-6c87aa120c07)
   RepositoryRecord(rdfs:label=Water Music / Music for the Royal Fireworks (Le Concert des Nations feat. conductor: Jordi Savall), urn:bluemarine:record:59f97b2982c6ea0523ddf9c558efb174df56e938)
@@ -18316,6 +18370,8 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Georg Philipp Telemann, uri=http://d
   RepositoryRecord(rdfs:label=Wassermusik & 3 Konzerte (Musica Antiqua Köln feat. conductor: Reinhard Goebel), http://dbtune.org/musicbrainz/resource/record/dc8d99c4-22b6-44e9-ad96-2d1c80dbb5fb)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=George Gershwin, uri=http://dbtune.org/musicbrainz/resource/artist/65744963-191a-44ef-a3c7-b693a808a158):
+  RepositoryRecord(rdfs:label=George Gershwin: An American in Paris / Percy Grainger: Fantasy on George Gershwin's "Porgy and Bess" (feat. piano: Katia Labèque, Marielle Labèque), http://dbtune.org/musicbrainz/resource/record/377f13bb-17d3-4352-b231-8c9eaf7fbe9e)
+  RepositoryRecord(rdfs:label=In Classical Mood, Volume 26: Musical Travels, http://dbtune.org/musicbrainz/resource/record/86c306c4-3de7-476a-88f4-4ebda65f1205)
   RepositoryRecord(rdfs:label=Porgy and Bess (The Glyndebourne Chorus & London Philharmonic feat. conductor: Simon Rattle) (disc 1), http://dbtune.org/musicbrainz/resource/record/e7eef1f7-e507-4ae4-a1d7-771459f09129)
   RepositoryRecord(rdfs:label=Porgy and Bess (The Glyndebourne Chorus & London Philharmonic feat. conductor: Simon Rattle) (disc 2), http://dbtune.org/musicbrainz/resource/record/81ca5ea4-2daa-4c22-9a00-b6c36a89d340)
   RepositoryRecord(rdfs:label=Porgy and Bess (The Glyndebourne Chorus & London Philharmonic feat. conductor: Simon Rattle) (disc 3), http://dbtune.org/musicbrainz/resource/record/08eacc4b-267e-4d13-a685-99e5f108cd6e)
@@ -18324,8 +18380,10 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=George Gershwin, uri=http://dbtune.o
   RepositoryRecord(rdfs:label=Second Rhapsody: Music for Two Pianos by George Gershwin (feat. Katia & Marielle Labèque), urn:bluemarine:record:d885240644a5c0bc05dfc3eee7c25742aa0274be)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Georges Barboteu/Horn, Lily Laskine/Harp, Jean-Francois Pail, uri=urn:bluemarine:artist:256f6d11705066dde3aa5f3aa7f0e8fdbd947881):
+  RepositoryRecord(rdfs:label=The Magic of The French Horn - Greatest Concertos, urn:bluemarine:record:543a080fce763a95471526d5465e7feb7133f2f5)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Gipsy Kings, uri=http://dbtune.org/musicbrainz/resource/artist/44a7f7d5-79df-4f44-8f5e-02dfc0626904):
+  RepositoryRecord(rdfs:label=Top of the Spot, http://dbtune.org/musicbrainz/resource/record/f87ba9ca-2265-4115-86c0-5fea2e64e007)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Giuseppe Verdi, uri=http://dbtune.org/musicbrainz/resource/artist/f1bedf1f-4445-4651-9c35-f4a3f3860a13):
   RepositoryRecord(rdfs:label=Attila (Orchestra e Coro del Teatro alla Scala, Milano feat. conductor: Riccardo Muti) (disc 1), http://dbtune.org/musicbrainz/resource/record/7b2e4035-60e5-414d-af06-f0d31a0b96d4)
@@ -18333,6 +18391,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Giuseppe Verdi, uri=http://dbtune.or
   RepositoryRecord(rdfs:label=I Vespri Siciliani (feat. Conductor Riccardo Muti), urn:bluemarine:record:53dd417a6c11a9f5311815bd40388cf867a1df03)
   RepositoryRecord(rdfs:label=La forza del destino (Riccardo Muti) (disc 1), http://dbtune.org/musicbrainz/resource/record/ae1a047c-a6b9-4f88-b832-f0df2f4f1067)
   RepositoryRecord(rdfs:label=Rigoletto, urn:bluemarine:record:eb894e8957d8152b56292de3345dcf68d0d94402)
+  RepositoryRecord(rdfs:label=The Best of Classic FM (disc 3), http://dbtune.org/musicbrainz/resource/record/06e90c91-8550-420a-9f8b-c590e1f1b6e8)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Giuseppe Verdi, uri=urn:bluemarine:artist:e8d9dd0715ac21e0dd74c0ebf545887365578dce):
   RepositoryRecord(rdfs:label=Overtures/Orch. Works, urn:bluemarine:record:cf7ce2755a5834859c5949493a1fee0e8463de30)
@@ -18340,6 +18399,8 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Giuseppe Verdi, uri=urn:bluemarine:a
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Goldfrapp, uri=http://dbtune.org/musicbrainz/resource/artist/7b885d42-3c41-4f43-9944-a5855ec5155e):
   RepositoryRecord(rdfs:label=Felt Mountain, http://dbtune.org/musicbrainz/resource/record/d5b80206-c691-400d-95d7-830311451af9)
+  RepositoryRecord(rdfs:label=Hed Kandi: Winter Chill 3 (disc 1), http://dbtune.org/musicbrainz/resource/record/58c314df-bcad-4dab-89bb-31f2dbd2c340)
+  RepositoryRecord(rdfs:label=Tom Middleton Presents Crazy Covers, Volume 2 (disc 2: Beautiful Covers), http://dbtune.org/musicbrainz/resource/record/11c82fe2-94d7-48f9-8a2d-350198c0cce0)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Grant Green, uri=http://dbtune.org/musicbrainz/resource/artist/1a88b270-d763-48d5-a62c-2bb9cabb140c):
   RepositoryRecord(rdfs:label=Jazz Guitar, urn:bluemarine:record:516077b7306ad7be6d420eb8b093e032bcfb0bf0)
@@ -18353,6 +18414,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Guillaume de Machaut, uri=http://dbt
   RepositoryRecord(rdfs:label=Messe de Nostre Dame (Taverner Consort & Choir feat. conductor Andrew Parrott), http://dbtune.org/musicbrainz/resource/record/cc57d80b-e77e-423a-ad42-d7c8f8aae24f)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Gus Viseur, uri=http://dbtune.org/musicbrainz/resource/artist/d5c4d5fe-f8c0-41f5-aed5-48a3760cddbb):
+  RepositoryRecord(rdfs:label=Intégrale, Volume 9: "H.C.Q. Strut" (disc 2), http://dbtune.org/musicbrainz/resource/record/b774b421-3939-42d8-af3a-56ea8d26b396)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Gustav Mahler, uri=http://dbtune.org/musicbrainz/resource/artist/8d610e51-64b4-4654-b8df-064b0fb7a9d9):
   RepositoryRecord(rdfs:label=Symphony No. 5 in C sharp minor (Vienna Philharmonic feat. conductor: Lorin Maazel), http://dbtune.org/musicbrainz/resource/record/e53bd8f4-4a04-4910-ab5a-336471674d10)
@@ -18361,31 +18423,43 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Göran Söllscher, uri=urn:bluemarin
   RepositoryRecord(rdfs:label=Bach: Works For Lute, Vol. 2, urn:bluemarine:record:be85e3f9dfe6495589bbd51a469848d4653712ba)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker & Neeme Järvi, uri=urn:bluemarine:artist:21727ed6388d9a159404192a71bed04714f0bc06):
+  RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker, Kjell Magnus Sandve & Neeme Järvi, uri=urn:bluemarine:artist:b8e202dc87a12c6fc1d5c686234a0aea42bf88d8):
+  RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker, Marianne Eklöf & Neeme Järvi, uri=urn:bluemarine:artist:7b93c07bbb5667244dee32d2f2509567bae5dcc8):
+  RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker, Neeme Järvi & Tor Stokke, uri=urn:bluemarine:artist:f66c537dda239ad4964248a326dc3e6cf1407e02):
+  RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker, Neeme Järvi & Toralv Maurstad, uri=urn:bluemarine:artist:6c62c602fa9d04f208437d230a39ae3c25b6c3ac):
+  RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Gösta Ohlin, Gösta Ohlin's Voc. Ensemble & Pro Musica Chamber Choir, Göteborgs Symfoniker, Neeme Järvi, Tor Stokke & Toralv Maurstad, uri=urn:bluemarine:artist:16d19827fa8697e3f1c2affaa04b6ffe53b24da0):
+  RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Göteborgs Symfoniker & Neeme Järvi, uri=urn:bluemarine:artist:9eea80a7a6ef6d468f33542af83f90aebe7b9eec):
+  RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Göteborgs Symfoniker, Knut Buen & Neeme Järvi, uri=urn:bluemarine:artist:c5e91f3ae67cfe2f205bc109f59615aff06ed3c5):
+  RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Göteborgs Symfoniker, Malcolm Page, Neeme Järvi, Per Göran, Sören Hermans & Vivika Alm, uri=urn:bluemarine:artist:953f7f7d21f57a185cad8bda5750b56f79554b52):
+  RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Göteborgs Symfoniker, Neeme Järvi & Paul Cortese, uri=urn:bluemarine:artist:e4ae5af08bc101eafb68b6ab84e51fbe9ff24f25):
   RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Göteborgs Symfoniker, Neeme Järvi & Toralv Maurstad, uri=urn:bluemarine:artist:020270fa164edcd26fd69e696cecf6b65c50d768):
+  RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Göteborgs Symfoniker, Neeme Järvi & Urban Malmberg, uri=urn:bluemarine:artist:173503756c531466ac65a34437b08c5db92b9277):
+  RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Göteborgs Symfoniker, Neeme Järvi, Toralv Maurstad & Wenche Foss, uri=urn:bluemarine:artist:c96685ae85e197570c831aa6b2fd3e2e403dfc28):
+  RepositoryRecord(rdfs:label=Grieg: Peer Gynt; Sigurd Jorsalfar, urn:bluemarine:record:d45ed6b25ede3dcbc3aa02d2b0995eb168b13139)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Heinrich Schiff, uri=urn:bluemarine:artist:ec465a86d560127bfc5a1b0fd581c66167a03d27):
   RepositoryRecord(rdfs:label=Dvořák; Elgar: Cello Concertos, urn:bluemarine:record:1160a7cb012648df40d395a995fc1b686f90a25d)
@@ -18396,6 +18470,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Henry Mancini, uri=http://dbtune.org
   RepositoryRecord(rdfs:label=Dear Heart and Other Songs About Love, http://dbtune.org/musicbrainz/resource/record/0cae5758-ac72-4465-9a53-92f0fd9b645b)
   RepositoryRecord(rdfs:label=In the Pink, http://dbtune.org/musicbrainz/resource/record/086cf7e2-6dda-4440-90ea-7e1af635d16b)
   RepositoryRecord(rdfs:label=In the Pink: The Ultimate Collection (disc 1), http://dbtune.org/musicbrainz/resource/record/af359761-2b53-45f3-93dc-43b577c15842)
+  RepositoryRecord(rdfs:label=Instrumental Music: Best World's Hits. (disc 1), http://dbtune.org/musicbrainz/resource/record/e303682b-9493-4016-8129-bf95ef9316bd)
   RepositoryRecord(rdfs:label=Legendary Henry Mancini (disc 1), http://dbtune.org/musicbrainz/resource/record/d00a48d0-696b-4cba-9ccf-d86be356f68b)
   RepositoryRecord(rdfs:label=Legendary Henry Mancini (disc 2), http://dbtune.org/musicbrainz/resource/record/aa8b7708-403d-4fa8-8f21-d67a16e96dd5)
   RepositoryRecord(rdfs:label=Legendary Henry Mancini (disc 3), http://dbtune.org/musicbrainz/resource/record/35184c75-f013-44b6-bdec-ab568440a4f6)
@@ -18438,6 +18513,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Isaac Albéniz, uri=http://dbtune.or
   RepositoryRecord(rdfs:label=Spanish Dreams, urn:bluemarine:record:1ed30a4189ba9ede2fa795b6e79b77f1fd237552)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Jackie DeShannon, uri=http://dbtune.org/musicbrainz/resource/artist/194e5e92-0f2d-4d81-b5b9-c5f18d9edd59):
+  RepositoryRecord(rdfs:label=Forrest Gump (disc 1), http://dbtune.org/musicbrainz/resource/record/97b727f1-8f4e-42fc-ac00-cc87536273aa)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=James Abbuhl, uri=urn:bluemarine:artist:51a2e6a210bfb247da27424cf524b1375f43f673):
   RepositoryRecord(rdfs:label=Voyages & Homecomings, urn:bluemarine:record:b8c94ad58d69827496d26f95c716ec7d4c2f49da)
@@ -18454,11 +18530,15 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Jean Michel Jarre, uri=http://dbtune
   RepositoryRecord(rdfs:label=Waiting for Cousteau, http://dbtune.org/musicbrainz/resource/record/2f8b76c6-d705-4395-bac4-0a8abce3316c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Jean Sibelius, uri=http://dbtune.org/musicbrainz/resource/artist/691b0e9d-9e57-41cf-932d-a3d21b068e75):
+  RepositoryRecord(rdfs:label=Adagio 2 (Berliner Philharmoniker feat. conductor: Herbert von Karajan), http://dbtune.org/musicbrainz/resource/record/aee8851a-d6cb-419a-906c-e6436ffedc8e)
   RepositoryRecord(rdfs:label=Finlandia / Der Schwan von Tuonela / Valse Triste / Tapiola (Berliner Philharmoniker feat. conductor: Herbert von Karajan), http://dbtune.org/musicbrainz/resource/record/3f7af1bf-be83-4f98-9776-6debee36ee86)
+  RepositoryRecord(rdfs:label=Peer Gynt Suites (Berlin Philharmoniker feat. conductor: Herbert von Karajan), http://dbtune.org/musicbrainz/resource/record/0b93c522-a900-47a1-99b6-5aec4fd9e0cb)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Jean-François Paillard: Paillard Chamber Orchestra, uri=urn:bluemarine:artist:6c036a77a0e550f554933450081c57bbb52a9b64):
+  RepositoryRecord(rdfs:label=The Magic of The French Horn - Greatest Concertos, urn:bluemarine:record:543a080fce763a95471526d5465e7feb7133f2f5)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Jean-Jacques Justafre, Jean-Paul Gantiez, Jean-Claude Barro,, uri=urn:bluemarine:artist:403e962b3fbb3e65b41e4277bdcc0d17e92686cf):
+  RepositoryRecord(rdfs:label=The Magic of The French Horn - Greatest Concertos, urn:bluemarine:record:543a080fce763a95471526d5465e7feb7133f2f5)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Jean-Louis Rassinfosse, Chet Baker & Philip Catherine, uri=http://dbtune.org/musicbrainz/resource/artist/7631ba41-5e47-4f55-a621-40ab0f2a3a02):
   RepositoryRecord(rdfs:label=Crystal Bells, http://dbtune.org/musicbrainz/resource/record/ed0c2ec9-01d3-406b-a917-a7e4eab8dd0a)
@@ -18467,9 +18547,11 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Jim Hall, uri=http://dbtune.org/musi
   RepositoryRecord(rdfs:label=Jim Hall & Pat Metheny, http://dbtune.org/musicbrainz/resource/record/0b93acfa-676a-4911-9798-4a16939f1a3f)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Jim Henson, uri=http://dbtune.org/musicbrainz/resource/artist/53d60b8a-133b-42da-bd67-e1f55ce73863):
+  RepositoryRecord(rdfs:label=Television's Greatest Hits, Volume 3: 70's & 80's, http://dbtune.org/musicbrainz/resource/record/bc5fddae-eeaf-4be9-af25-0c5511a5b31f)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Joaquín Rodrigo, uri=http://dbtune.org/musicbrainz/resource/artist/fde4460b-868a-493e-8c53-221e418c8959):
   RepositoryRecord(rdfs:label=Concierto de Aranjuez / Fantasía para un gentilhombre (feat. guitar: John Williams), http://dbtune.org/musicbrainz/resource/record/417cf527-274e-4ba8-98c6-7c09d7d1eb92)
+  RepositoryRecord(rdfs:label=The Great Guitar Concertos (feat. guitar: John Williams) (disc 1), http://dbtune.org/musicbrainz/resource/record/69cd47d0-d2ee-4212-afc4-9b86e9d18381)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Joe Pass, uri=http://dbtune.org/musicbrainz/resource/artist/2f43e416-f1bf-4f04-8853-a0019aa12441):
   RepositoryRecord(rdfs:label=Speak Love, http://dbtune.org/musicbrainz/resource/record/ed52ca4f-c5dd-4974-8621-5ecdc46ee305)
@@ -18490,14 +18572,17 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Johann Sebastian Bach, uri=http://db
   RepositoryRecord(rdfs:label=Organ Works (feat. organ: Ton Koopman), http://dbtune.org/musicbrainz/resource/record/76ab8c16-d3ed-4d9e-97e7-b0287f0cd021)
   RepositoryRecord(rdfs:label=Sonatas and Partitas for Solo Violin (Nathan Milstein) (disc 1), http://dbtune.org/musicbrainz/resource/record/bb751c39-7d8b-480a-b1c6-120a53121ced)
   RepositoryRecord(rdfs:label=Sonatas and Partitas for Solo Violin (Nathan Milstein) (disc 2), http://dbtune.org/musicbrainz/resource/record/6c2c5be3-870d-4bfe-bda8-6b45a5e49b05)
+  RepositoryRecord(rdfs:label=The Complete Original Jacket Collection (disc 19: Johann Sebastian Bach: Two and Three Part Inventions and Sinfonias, BWV 772-801), http://dbtune.org/musicbrainz/resource/record/70148f17-da7d-4cce-a85f-1f5a78c7f002)
   RepositoryRecord(rdfs:label=The Gould Variations (Glenn Gould), http://dbtune.org/musicbrainz/resource/record/a4995df2-4020-4a80-9fab-cd95a92764f6)
   RepositoryRecord(rdfs:label=The Two and Three Part Inventions (feat. piano: Glenn Gould), http://dbtune.org/musicbrainz/resource/record/a68563c6-033a-4ed7-82c1-8a6ca3f93269)
   RepositoryRecord(rdfs:label=Vier Suiten für Laute (feat. guitar: Göran Söllscher), http://dbtune.org/musicbrainz/resource/record/af175be8-7d23-4be1-91d4-ffedc1b06394)
+  RepositoryRecord(rdfs:label=Violin Concerti, urn:bluemarine:record:20a4a1489465b36dc5620e1bf2c547ea98a4a3ae)
   RepositoryRecord(rdfs:label=Works for Lute, Volume 2 (Göran Söllscher), http://dbtune.org/musicbrainz/resource/record/ae9162a8-635b-449e-ad85-cf764a063e32)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Johannes Brahms, uri=http://dbtune.org/musicbrainz/resource/artist/c70d12a2-24fe-4f83-a6e6-57d84f8efb51):
   RepositoryRecord(rdfs:label=Brahms: Violin Concerto / Bruch: Violin Concerto No. 1, urn:bluemarine:record:95f33324d66ca1bfae5167819e12a9540e6aa6e6)
   RepositoryRecord(rdfs:label=Complete Brahms Edition, Volume 2: Concertos (disc 3), http://dbtune.org/musicbrainz/resource/record/636fd43e-c048-4d3d-ae3f-0442cc2d66e1)
+  RepositoryRecord(rdfs:label=Mendelssohn, Brahms: Violin Concertos (Berliner Philharmoniker feat. conductor: Herbert von Karajan, violin: Anne-Sophie Mutter), http://dbtune.org/musicbrainz/resource/record/53ba74d1-a471-422d-a40b-79a97ac05d0b)
   RepositoryRecord(rdfs:label=Piano Concerto No. 2 (Berliner Philharmoniker feat. conductor: Claudio Abbado, piano: Alfred Brendel), http://dbtune.org/musicbrainz/resource/record/162dc63f-669b-44fa-8758-96cb81b3c9e2)
   RepositoryRecord(rdfs:label=Symphony No. 4 in E minor, Op. 98 (Wiener Philharmoniker feat. conductor: Carlos Kleiber), http://dbtune.org/musicbrainz/resource/record/a5721574-29df-45b4-b3a1-1eab28f678e4)
 
@@ -18526,6 +18611,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=John Scofield & Pat Metheny, uri=urn
   RepositoryRecord(rdfs:label=I Can See Your House From Here, urn:bluemarine:record:40bf80eacc85c0f6395c2739da2db6bb756f8490)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=John Williams, uri=http://dbtune.org/musicbrainz/resource/artist/53b106e7-0cc6-42cc-ac95-ed8d30a3a98e):
+  RepositoryRecord(rdfs:label=The Planets / Close Encounters / Also Sprach Zarathustra (Los Angeles Philharmonic, Zubin Mehta) (disc 1), http://dbtune.org/musicbrainz/resource/record/5b0d6ee3-e6c5-4cef-adbe-6bd8293cc9f7)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=John Williams, uri=urn:bluemarine:artist:f5a1e04478d3e8382748be22b0ab48f5873ca181):
   RepositoryRecord(rdfs:label=Swing, urn:bluemarine:record:38aa66ee2b30834fcafd41cfcf15f85127d355d7)
@@ -18544,6 +18630,8 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Joseph Haydn, uri=http://dbtune.org/
   RepositoryRecord(rdfs:label=Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi" / no. 8 "Le Soir", urn:bluemarine:record:283714e8e74002c747907cb8099433a1fb78489d)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Joyce, uri=http://dbtune.org/musicbrainz/resource/artist/f47a0968-f2c1-4ec5-b0e3-0a15ae73b88d):
+  RepositoryRecord(rdfs:label=Chega De Saudade, urn:bluemarine:record:41cad79a00a8e4b0fff8c7daa81506b19651854c)
+  RepositoryRecord(rdfs:label=Chega De Saudade (disc 1), http://dbtune.org/musicbrainz/resource/record/6c5bdb69-e576-456b-9b6b-9177a5f04e43)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Julie Andrews, uri=http://dbtune.org/musicbrainz/resource/artist/16bdc7b3-6bfc-4f1c-89ad-d0756af40327):
   RepositoryRecord(rdfs:label=Best Of..., http://dbtune.org/musicbrainz/resource/record/e031c3cd-79b8-4c58-b838-8089f9d8ea93)
@@ -18577,14 +18665,17 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=La Capella Reial de Catalunya, uri=h
   RepositoryRecord(rdfs:label=Requiem k 626 - maurerische trauermusik K477, http://dbtune.org/musicbrainz/resource/record/c67f564f-3fbe-44b8-8faf-f09981634518)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=La Reverdie, uri=urn:bluemarine:artist:aa75bfe53a0c188fe5e1d825a4caba4faff34698):
+  RepositoryRecord(rdfs:label=I Dodici Giardini: Cantico di Santa Caterina da Bologna, urn:bluemarine:record:b0a86156a49cbc4fce7a186168d441840c5d6ae1)
   RepositoryRecord(rdfs:label=O tu chara sciença, urn:bluemarine:record:ac8d835894ae834c29ab7924ae7b001c8a0c2801)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Lachrimae Consort, uri=urn:bluemarine:artist:89c2744adc39d4310d2a82d8759d6bbee70c6504):
+  RepositoryRecord(rdfs:label=Marais: Pièces pour viole & autres instruments, urn:bluemarine:record:7c31cba698daf6642a6dac31f24d01d3493cbeeb)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Lambis Vassiliadis, uri=urn:bluemarine:artist:93739a9490d74b6bf335d9bbb6f16add3340efa6):
   RepositoryRecord(rdfs:label=Johannes Brahms, Robert Schumann, urn:bluemarine:record:02d4354157179bb8abff0759de123f384345c526)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Laura Fygi, uri=http://dbtune.org/musicbrainz/resource/artist/f51abb6f-fb5e-47c8-9089-c9e7b7fe7a55):
+  RepositoryRecord(rdfs:label=Top of the Spot, http://dbtune.org/musicbrainz/resource/record/f87ba9ca-2265-4115-86c0-5fea2e64e007)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Leonard Bernstein, uri=http://dbtune.org/musicbrainz/resource/artist/fa39bc82-9b27-4bbb-9425-d719a72e09ac):
   RepositoryRecord(rdfs:label=Essential Leonard Bernstein (disc 2), http://dbtune.org/musicbrainz/resource/record/3b30ced3-7121-40d6-90aa-0f221a44f704)
@@ -18602,10 +18693,13 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Les Deux Love Orchestra, uri=urn:blu
   RepositoryRecord(rdfs:label=King Kong, urn:bluemarine:record:4aae3c106785ab758f4181abf56469ce54249ff3)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Lev Polyakin, Charles Bernard, Frances Renzi, uri=urn:bluemarine:artist:a6d122f7943e4f4a4e0f980bf1e2db5dc931b196):
+  RepositoryRecord(rdfs:label=Café Music, urn:bluemarine:record:67e4e0a4265853b0c5a60a2adc405dad8111067d)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Lev Polyakin, Nathaniel Rosen, Etc., uri=urn:bluemarine:artist:b663fd7d21631b3ce9e98f7842557214641e1dbd):
+  RepositoryRecord(rdfs:label=Café Music, urn:bluemarine:record:67e4e0a4265853b0c5a60a2adc405dad8111067d)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Lionel Richie, uri=http://dbtune.org/musicbrainz/resource/artist/3cb25fb2-5547-4b05-adec-1a5e37830d46):
+  RepositoryRecord(rdfs:label=Top of the Spot, http://dbtune.org/musicbrainz/resource/record/f87ba9ca-2265-4115-86c0-5fea2e64e007)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Lisa Hilton, uri=urn:bluemarine:artist:831c57cab6109117a2bc52e900a79bea3eec9465):
   RepositoryRecord(rdfs:label=My Favorite Things, urn:bluemarine:record:193d749bdbb68763bba3ed0c188d4a0e4e2fc8ca)
@@ -18619,16 +18713,20 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Los Angeles Philharmonic, uri=http:/
 RECORDS OF RepositoryMusicArtist(rdfs:label=Louis Armstrong, uri=http://dbtune.org/musicbrainz/resource/artist/eea8a864-fcda-4602-9569-38ab446decd6):
   RepositoryRecord(rdfs:label=Bing & Satchmo, http://dbtune.org/musicbrainz/resource/record/65c9db3a-da39-4890-8542-fb344507b29e)
   RepositoryRecord(rdfs:label=Ella & Louis, urn:bluemarine:record:a4fd919950c54b2080231b5ec3fb6a551a9a5e6c)
+  RepositoryRecord(rdfs:label=Harold Arlen Songbook: That Old Black Magic, http://dbtune.org/musicbrainz/resource/record/0182e97e-b1f6-46b6-bb41-661fd09f2d8f)
   RepositoryRecord(rdfs:label=Hello Dolly, http://dbtune.org/musicbrainz/resource/record/acf8114a-ec17-4f30-b5af-f31dee7b312d)
   RepositoryRecord(rdfs:label=Hello, Dolly, http://dbtune.org/musicbrainz/resource/record/811ff5b1-ecde-4500-8c4a-bfde670ab648)
   RepositoryRecord(rdfs:label=In Concert: What a Wonderful World, http://dbtune.org/musicbrainz/resource/record/52c63a34-1e47-4a7d-8ed8-64a3a835c235)
+  RepositoryRecord(rdfs:label=Ken Burns Jazz: The Story of America's Music (disc 5), http://dbtune.org/musicbrainz/resource/record/beed539e-766e-4ce4-99fa-1cf45e5ccd5a)
   RepositoryRecord(rdfs:label=Let's Do It: Best of the Verve Years (disc 1), http://dbtune.org/musicbrainz/resource/record/276e0fa9-72df-447a-a6f4-bb821f1438cb)
   RepositoryRecord(rdfs:label=Let's Do It: Best of the Verve Years (disc 2), http://dbtune.org/musicbrainz/resource/record/fbe5e433-ed91-4996-9bbe-d7344d853703)
   RepositoryRecord(rdfs:label=Louis Armstrong (disc 3), http://dbtune.org/musicbrainz/resource/record/e7aa71d7-766c-42ab-9591-c380699f0b1f)
+  RepositoryRecord(rdfs:label=Louis Armstrong Meets Oscar Peterson, http://dbtune.org/musicbrainz/resource/record/abfb1f2e-4abf-44fc-be83-002124075450)
   RepositoryRecord(rdfs:label=Louis Armstrong at His Very Best (disc 1), http://dbtune.org/musicbrainz/resource/record/88aa4f8d-b8dd-48ae-b080-f96dce0da18c)
   RepositoryRecord(rdfs:label=Louis and the Good Book, http://dbtune.org/musicbrainz/resource/record/8b1bd9e6-fb6c-446f-8578-d6460497cb9c)
   RepositoryRecord(rdfs:label=Pure Gold of Louis Armstrong (disc 1), http://dbtune.org/musicbrainz/resource/record/9db60b2f-3274-4468-b337-5daf6699c40b)
   RepositoryRecord(rdfs:label=Pure Louis (disc 2), http://dbtune.org/musicbrainz/resource/record/d6661107-b308-4241-b4a3-e690fddb95eb)
+  RepositoryRecord(rdfs:label=Satchmo, urn:bluemarine:record:6db0e857f0e8875aee991d10b6ba48758495784a)
   RepositoryRecord(rdfs:label=The Best of Ella Fitzgerald & Louis Armstrong on Verve, http://dbtune.org/musicbrainz/resource/record/9fba2bb8-2ee9-4c24-976c-8fa9ea43625f)
   RepositoryRecord(rdfs:label=The Essential Louis Armstrong, http://dbtune.org/musicbrainz/resource/record/c5dca6b4-76da-402e-a037-0dfa197774e4)
   RepositoryRecord(rdfs:label=The Ultimate Collection, urn:bluemarine:record:66cfd4cebd04cfd6e4935718ea585115f9447b94)
@@ -18637,6 +18735,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Louis Armstrong, uri=http://dbtune.o
   RepositoryRecord(rdfs:label=The Very Best of Louis Armstrong (disc 1), http://dbtune.org/musicbrainz/resource/record/a916a1c9-1bd1-4298-9288-7b551fed6b99)
   RepositoryRecord(rdfs:label=The Wonderful World of (disc 1), http://dbtune.org/musicbrainz/resource/record/39486369-535c-4ad8-b389-6ce6d27b9f1c)
   RepositoryRecord(rdfs:label=The Wonderful World of (disc 2), http://dbtune.org/musicbrainz/resource/record/73fa12df-c501-4cff-9f7b-3248ba4e075d)
+  RepositoryRecord(rdfs:label=Top of the Spot, http://dbtune.org/musicbrainz/resource/record/f87ba9ca-2265-4115-86c0-5fea2e64e007)
   RepositoryRecord(rdfs:label=We Have All the Time in the World, http://dbtune.org/musicbrainz/resource/record/170671aa-48db-45e9-9196-4dff7b168e48)
   RepositoryRecord(rdfs:label=What a Wonderful World, http://dbtune.org/musicbrainz/resource/record/7613c3c2-ed6f-44ab-84ba-3240dbabcb7f)
   RepositoryRecord(rdfs:label=What a Wonderful World, urn:bluemarine:record:68a3ce3c800dd7189772801ebe88138770e951a9)
@@ -18678,6 +18777,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Ludwig van Beethoven, uri=http://dbt
   RepositoryRecord(rdfs:label=Violin Concerto in D major, Op. 61 (Wiener Philharmoniker feat. conductor: Kirill Kondrashin, violin: Kyung Wha Chung), http://dbtune.org/musicbrainz/resource/record/7d3d1a46-989f-4918-9671-f278bb5a4fc6)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=MPB-4 & Quarteto Em Cy, uri=http://dbtune.org/musicbrainz/resource/artist/35737db8-28db-4518-a829-e28a2729edc1):
+  RepositoryRecord(rdfs:label=Chega De Saudade (disc 1), http://dbtune.org/musicbrainz/resource/record/6c5bdb69-e576-456b-9b6b-9177a5f04e43)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Mantovani, uri=http://dbtune.org/musicbrainz/resource/artist/4c566ee7-8dd4-4edc-8cbe-a86ee30feb06):
   RepositoryRecord(rdfs:label=Mr. Music..., http://dbtune.org/musicbrainz/resource/record/3211ac12-0f6a-48db-9547-1fd345149e26)
@@ -18688,7 +18788,9 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Maria Bethânia, uri=http://dbtune.o
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Maria Callas, uri=http://dbtune.org/musicbrainz/resource/artist/9dee40b2-25ad-404c-9c9a-139feffd4b57):
   RepositoryRecord(rdfs:label=Aufnahmen von 1954-61, urn:bluemarine:record:b5cfcb3dc829d2ac4e9ff15611ebb9376b604af2)
+  RepositoryRecord(rdfs:label=Le Chant des Rêves (disc 2), http://dbtune.org/musicbrainz/resource/record/54af3115-006f-408d-8fe8-46e035084a2d)
   RepositoryRecord(rdfs:label=Maria Callas - The Platinum Collection (Disk 1), http://dbtune.org/musicbrainz/resource/record/5130e881-874a-44dc-b5e4-f9a5a218a058)
+  RepositoryRecord(rdfs:label=Philadelphia, http://dbtune.org/musicbrainz/resource/record/a91c1355-fedc-4ec3-bfe2-2ea0613f5e64)
   RepositoryRecord(rdfs:label=The Incomparable Callas, http://dbtune.org/musicbrainz/resource/record/9d14232c-6bcc-4314-b713-8beec2e25cf9)
   RepositoryRecord(rdfs:label=The Maria Callas Collection, urn:bluemarine:record:33c69cabab9b82c5c9a8a24ea116dfa0c02f31ff)
   RepositoryRecord(rdfs:label=The Platinum Collection, urn:bluemarine:record:2784f99fc2eaef1bdf82aa9f912f7311c51735fd)
@@ -18712,20 +18814,27 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Matia Bazar, uri=http://dbtune.org/m
   RepositoryRecord(rdfs:label=Brivido caldo, http://dbtune.org/musicbrainz/resource/record/11a6973a-81bc-4068-88dc-827bffa43d4e)
   RepositoryRecord(rdfs:label=Gold, http://dbtune.org/musicbrainz/resource/record/f980f800-af26-4c88-b28b-dab26d254dd9)
   RepositoryRecord(rdfs:label=Melancholia, http://dbtune.org/musicbrainz/resource/record/23c4fef2-0b72-44f7-989a-7c2310528206)
+  RepositoryRecord(rdfs:label=Millennium Italia (disc 1), http://dbtune.org/musicbrainz/resource/record/fa4f9d25-1811-4c32-b20d-7dd8f4332d20)
   RepositoryRecord(rdfs:label=Souvenir (disc 1), http://dbtune.org/musicbrainz/resource/record/c87ebcb1-f20a-4886-8cd6-d9308c1232d0)
   RepositoryRecord(rdfs:label=Souvenir (disc 2), http://dbtune.org/musicbrainz/resource/record/2b02736b-d7e3-4b2c-b0e1-b3cfff331179)
+  RepositoryRecord(rdfs:label=Tutto Sanremo: 40 anni di Festival 1974-1983, http://dbtune.org/musicbrainz/resource/record/c2ead908-e76b-4760-bf62-d5682a13c725)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Maurice Ravel, uri=http://dbtune.org/musicbrainz/resource/artist/6fdd3b3e-1ea6-4da9-8d6f-8f8de01c133a):
+  RepositoryRecord(rdfs:label=Chopin, Beethoven, Schumann, Ravel, Prokofieff feat. piano: Ivo Pogorelich (disc 3), http://dbtune.org/musicbrainz/resource/record/99945fa7-0778-4fb9-805d-6c25f8bcd31a)
   RepositoryRecord(rdfs:label=Le Tombeau de Couperin / Shéhérazade / Tzigane / Bolero (London Symphony Orchestra feat. conductor: Claudio Abbado), http://dbtune.org/musicbrainz/resource/record/ff183c58-590b-476a-90c2-d49b203cc77e)
+  RepositoryRecord(rdfs:label=Prokofiev: Cinderella Suite / Ravel: Ma mère l'oye (feat. piano: Martha Argerich, Mikhail Pletnev), http://dbtune.org/musicbrainz/resource/record/1de846ab-0012-4c50-aa8b-49ecd4c211b2)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Max Bruch, uri=http://dbtune.org/musicbrainz/resource/artist/e3d5cfcd-e42b-411d-add2-716a5029f59b):
+  RepositoryRecord(rdfs:label=Brahms: Violin Concerto / Bruch: Violin Concerto No. 1, urn:bluemarine:record:95f33324d66ca1bfae5167819e12a9540e6aa6e6)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Melle Mel, uri=http://dbtune.org/musicbrainz/resource/artist/2e5178d0-bf5f-42ea-a845-4423e6b39101):
+  RepositoryRecord(rdfs:label=The Message, http://dbtune.org/musicbrainz/resource/record/195f74bb-1af7-4ef1-893a-e9d652f6b0c1)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Metheny, Jarrett, Corea, uri=urn:bluemarine:artist:4b8a4386c82d6098019700e000c8c9d2c2c2bebd):
   RepositoryRecord(rdfs:label=Jazz Impro, urn:bluemarine:record:eab0d60d9605e5d8d581ae12af057e3ae6b4586f)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Michel Petrucciani, uri=http://dbtune.org/musicbrainz/resource/artist/2b75141c-05e9-42eb-ae63-6695d86cdc19):
+  RepositoryRecord(rdfs:label=Blue Note: The Ultimate Jazz Collection (disc 4), http://dbtune.org/musicbrainz/resource/record/e9adb70d-854c-43f4-8dac-999d9ace2ac8)
   RepositoryRecord(rdfs:label=Live, http://dbtune.org/musicbrainz/resource/record/2031225c-004e-4a94-b174-153f6cd0929d)
   RepositoryRecord(rdfs:label=Michel Petrucciani, http://dbtune.org/musicbrainz/resource/record/337fb789-6a68-4b65-8ed9-aa32b733f7d6)
   RepositoryRecord(rdfs:label=Michel Plays Petrucciani, http://dbtune.org/musicbrainz/resource/record/e638c709-23bc-4cf5-b19a-f6fbec2cec6c)
@@ -18738,10 +18847,13 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Michel Petrucciani, uri=urn:bluemari
   RepositoryRecord(rdfs:label=Days of Wine and Roses - The Owl Years (1981-1985), urn:bluemarine:record:f2985d19a662e59c8c9657f41c91d8a089afb643)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Michel Petrucciani & Lee Konitz, uri=urn:bluemarine:artist:ea9870c162db3acbe0140fe515c5bd0c105fb7f3):
+  RepositoryRecord(rdfs:label=Days of Wine and Roses - The Owl Years (1981-1985), urn:bluemarine:record:f2985d19a662e59c8c9657f41c91d8a089afb643)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Michel Warlop et son orchestre, uri=http://dbtune.org/musicbrainz/resource/artist/9e0bec6b-086b-4492-9cb2-497e426ebe90):
+  RepositoryRecord(rdfs:label=Intégrale, Volume 2: "I Saw Stars" (disc 1), http://dbtune.org/musicbrainz/resource/record/0de2c94c-7e31-4df6-9911-0ae4e4c6cb73)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Mike Oldfield, uri=http://dbtune.org/musicbrainz/resource/artist/a1684a49-feaa-4150-b758-d9412fc59f12):
+  RepositoryRecord(rdfs:label=Classic Movie Themes 4, http://dbtune.org/musicbrainz/resource/record/a957ed60-5dde-4db4-b7cb-3ea902165c27)
   RepositoryRecord(rdfs:label=QE2, http://dbtune.org/musicbrainz/resource/record/ae56b00e-8dc0-4fdb-91b8-70fdfbab0801)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Miles Davis, uri=http://dbtune.org/musicbrainz/resource/artist/561d854a-6a28-4aa7-8c99-323e6ce46c2a):
@@ -18775,6 +18887,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Mina, uri=http://dbtune.org/musicbra
   RepositoryRecord(rdfs:label=I miti musica: Mina, urn:bluemarine:record:591817a275d45df6ea9ebaa3ed0f8d2b96a31cd2)
   RepositoryRecord(rdfs:label=Mina canta i Beatles, http://dbtune.org/musicbrainz/resource/record/af2b9cf2-35e9-4e06-bb6a-dbe863d29778)
   RepositoryRecord(rdfs:label=Minantologia (disc 2), http://dbtune.org/musicbrainz/resource/record/501ac8ff-f8eb-46e6-b7ee-c71f13129cc1)
+  RepositoryRecord(rdfs:label=Un'ora con loro, http://dbtune.org/musicbrainz/resource/record/707d129e-ac7d-45f4-95bf-c63e87b758e4)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Mina, uri=urn:bluemarine:artist:0fdada5f3c368c38fd0b24de3b1d932cff259a18):
   RepositoryRecord(rdfs:label=Catene (Remastered), urn:bluemarine:record:46f559606391e28ba1a1e50002fb4960530e2930)
@@ -18783,6 +18896,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Mina, uri=urn:bluemarine:artist:0fda
   RepositoryRecord(rdfs:label=Sconcerto, urn:bluemarine:record:b58d1e5140e84988777f97e04abd9464310d6199)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Miriam Makeba, uri=http://dbtune.org/musicbrainz/resource/artist/bc5c2918-4aba-4ef6-a245-100563a4487f):
+  RepositoryRecord(rdfs:label=Top of the Spot, http://dbtune.org/musicbrainz/resource/record/f87ba9ca-2265-4115-86c0-5fea2e64e007)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Monsieur Lobster, Stereden, uri=http://dbtune.org/musicbrainz/resource/artist/0ce58f5b-2b0e-446b-8fa0-483bfef879ca):
   RepositoryRecord(rdfs:label=Lovely Reprises, Volume 2, urn:bluemarine:record:1429c44be0d335e646c93b63c93c7e634756be63)
@@ -18794,8 +18908,10 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Moyzes Quartet, uri=urn:bluemarine:a
   RepositoryRecord(rdfs:label=Dvořák: String Quartets Op. 96, "American" & Op. 105, urn:bluemarine:record:b7eb9dd9bcf9620005ac752d61301f6bcd4302aa)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Nana Caymmi, uri=http://dbtune.org/musicbrainz/resource/artist/c5597943-f7bc-48de-b00e-4b34c9f8558c):
+  RepositoryRecord(rdfs:label=Chega de Saudade (disc 2), http://dbtune.org/musicbrainz/resource/record/6817e504-4b19-481d-b1d9-cffebb695eac)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Nancy Sinatra, uri=http://dbtune.org/musicbrainz/resource/artist/c2e36518-9c3b-4dcb-82ad-a3fc7fe99c67):
+  RepositoryRecord(rdfs:label=The Best of James Bond: 30th Anniversary Limited Edition (disc 1), http://dbtune.org/musicbrainz/resource/record/391c4a3f-e770-48c1-8832-b345bd6366c6)
   RepositoryRecord(rdfs:label=The Very Best Of: 24 Great Songs, http://dbtune.org/musicbrainz/resource/record/3fdb56e3-52be-4d21-9cf9-dd5e6109088f)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Nat King Cole, uri=http://dbtune.org/musicbrainz/resource/artist/fbe054ec-a143-4101-9e9e-64abc5ff5ac9):
@@ -18823,6 +18939,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Natalie Cole, uri=http://dbtune.org/
   RepositoryRecord(rdfs:label=Unforgettable: With Love, http://dbtune.org/musicbrainz/resource/record/fadb3d1d-6a98-4265-951e-0f992fdb1c1e)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Natalie Cole, uri=urn:bluemarine:artist:c4715a8f91dd7c8020025259275df8bb89acc5cb):
+  RepositoryRecord(rdfs:label=, urn:bluemarine:record:fe349f2b71ea0f41e5a944aa37f4e420a35d441c)
   RepositoryRecord(rdfs:label=De-Lovely, urn:bluemarine:record:954ed01a6a999659f779fc1bd252efa6d280df71)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Natalie Haas, uri=http://dbtune.org/musicbrainz/resource/artist/d8c26c47-7275-4ceb-8b43-2d17e2bcc24c):
@@ -18865,6 +18982,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Nina Simone, uri=http://dbtune.org/m
   RepositoryRecord(rdfs:label=Verve Jazz Masters 58: Nina Simone Sings Nina, http://dbtune.org/musicbrainz/resource/record/a7ca3d7e-4d6f-494e-89a6-d25ddacdddd1)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Nino Rota, uri=http://dbtune.org/musicbrainz/resource/artist/d52ac009-4ed5-4d01-97d5-8280bb7dd460):
+  RepositoryRecord(rdfs:label=Cinema Classics (disc 2: 50er–70er), http://dbtune.org/musicbrainz/resource/record/69135f0c-64e5-4817-bb31-dce8e1e26000)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Oliver Onions, uri=http://dbtune.org/musicbrainz/resource/artist/26abed3a-65f3-4484-83b0-117d0fe29278):
   RepositoryRecord(rdfs:label=Greatest Hits, http://dbtune.org/musicbrainz/resource/record/2549484b-65b9-44ea-aec8-f6ff72de0997)
@@ -18886,17 +19004,20 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Pat Metheny, uri=http://dbtune.org/m
   RepositoryRecord(rdfs:label=Bright Size Life, http://dbtune.org/musicbrainz/resource/record/655219aa-f312-445d-9182-5af2d23ab65e)
   RepositoryRecord(rdfs:label=Jim Hall & Pat Metheny, http://dbtune.org/musicbrainz/resource/record/0b93acfa-676a-4911-9798-4a16939f1a3f)
   RepositoryRecord(rdfs:label=New Chautauqua, http://dbtune.org/musicbrainz/resource/record/df8a9dc4-4d71-4f9e-9195-2179162c71d6)
+  RepositoryRecord(rdfs:label=Orchestrion, urn:bluemarine:record:6ed0e27f7af79a0cedddc3968d73cf02ce206ff8)
   RepositoryRecord(rdfs:label=Rejoicing, http://dbtune.org/musicbrainz/resource/record/096d9cca-d093-4a33-9651-8ddd5a62e09b)
   RepositoryRecord(rdfs:label=Secret Story, http://dbtune.org/musicbrainz/resource/record/a5e8cd65-ae9a-40de-bb84-cab40402d58b)
   RepositoryRecord(rdfs:label=Selected Recordings, http://dbtune.org/musicbrainz/resource/record/bfba514f-4de7-426c-8d29-3825c8e0ad4d)
   RepositoryRecord(rdfs:label=Tokyo Day Trip Live (feat. Christian McBride & Antonio Sanchez), http://dbtune.org/musicbrainz/resource/record/1faf8528-35a2-4a0d-a4bb-4d72a53deb05)
   RepositoryRecord(rdfs:label=Watercolors, http://dbtune.org/musicbrainz/resource/record/aa57b4d5-a250-4a77-bece-3a5a8f7f0db1)
+  RepositoryRecord(rdfs:label=What's It All About, urn:bluemarine:record:7e573bcafae2012188592b33818524461773a7d7)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Pat Metheny, uri=urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640):
   RepositoryRecord(rdfs:label=Day Trip, urn:bluemarine:record:dae2718959fc7e2fe8e7ff70aca12f1532bf4b87)
   RepositoryRecord(rdfs:label=Exclusive, urn:bluemarine:record:a944301c98fdebb62740ae9d9ae12c2b18e1f4e1)
   RepositoryRecord(rdfs:label=One Quiet Night, urn:bluemarine:record:51923c77baa2233d045ee61fd64c19629290acf3)
   RepositoryRecord(rdfs:label=Secret Story (Bonus Track Version), urn:bluemarine:record:dd4fea1f40b96762787bbe7d39abc6a1c351ed9a)
+  RepositoryRecord(rdfs:label=What's It All About, urn:bluemarine:record:7e573bcafae2012188592b33818524461773a7d7)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Pat Metheny & Anna Maria Jopek, uri=http://dbtune.org/musicbrainz/resource/artist/1645f335-2367-427d-8e2d-ad206946a8eb):
   RepositoryRecord(rdfs:label=Upojenie, http://dbtune.org/musicbrainz/resource/record/4e29412f-f202-48ee-8a44-0b70e99ab1a8)
@@ -18920,6 +19041,8 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Pat Metheny Trio, uri=http://dbtune.
   RepositoryRecord(rdfs:label=Trio 99 -> 00, http://dbtune.org/musicbrainz/resource/record/5fdfc31c-b532-41cc-a49f-9bad2b014d52)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Patrick et son orchestre, uri=http://dbtune.org/musicbrainz/resource/artist/29bee9b2-4149-47d5-9704-c6aa5fb7dedd):
+  RepositoryRecord(rdfs:label=Intégrale, Volume 2: "I Saw Stars" (disc 1), http://dbtune.org/musicbrainz/resource/record/0de2c94c-7e31-4df6-9911-0ae4e4c6cb73)
+  RepositoryRecord(rdfs:label=Intégrale, Volume 2: "I Saw Stars" (disc 2), http://dbtune.org/musicbrainz/resource/record/ec1072ff-02e1-424e-8d7d-451c76c9728d)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Patrizia Bovi E Gilberte Casabianca, uri=urn:bluemarine:artist:6f63b80770339fb2ff46bfecefa695bfb5c28d7e):
   RepositoryRecord(rdfs:label=Tracce Della Tradizione Orale In Manoscritti Italiani Del XIV, XV Sec., urn:bluemarine:record:a001e416f8aaf12293dc878555303acde6428e3f)
@@ -18930,8 +19053,10 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Paul Machlis, uri=http://dbtune.org/
   RepositoryRecord(rdfs:label=The Road North, http://dbtune.org/musicbrainz/resource/record/75af3cb5-26af-4adf-a623-4c16f8116311)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Paul Schoenfield, uri=urn:bluemarine:artist:e2614374c6ad176461291e08c400693806e18e3b):
+  RepositoryRecord(rdfs:label=Café Music, urn:bluemarine:record:67e4e0a4265853b0c5a60a2adc405dad8111067d)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Pedro Paulo Castro-Neves & Michel Legrand, uri=http://dbtune.org/musicbrainz/resource/artist/90df35ed-c221-44ea-95fb-4e65b4085981):
+  RepositoryRecord(rdfs:label=Chega De Saudade (disc 1), http://dbtune.org/musicbrainz/resource/record/6c5bdb69-e576-456b-9b6b-9177a5f04e43)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Peggy Lee, uri=urn:bluemarine:artist:6a3b67b6ee19fee2c78feeea93d6be7fa0169dc4):
   RepositoryRecord(rdfs:label=Mink Jazz, urn:bluemarine:record:d8db9e679535defbc0c752e2cc2ca5d55d6bee48)
@@ -18947,17 +19072,22 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Peter Nero, uri=http://dbtune.org/mu
   RepositoryRecord(rdfs:label=Great Songs From the Movies, http://dbtune.org/musicbrainz/resource/record/670d6fa3-2c7a-4519-a112-957d58a3af3d)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Peter Nero, uri=urn:bluemarine:artist:6811c9defe82bd1663b7994ba06ef6aa4554b0d4):
+  RepositoryRecord(rdfs:label=, urn:bluemarine:record:fe349f2b71ea0f41e5a944aa37f4e420a35d441c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Philippe Brun "Jam Band", uri=http://dbtune.org/musicbrainz/resource/artist/fb04c57d-9e95-4348-b572-fc5b839c2ae7):
+  RepositoryRecord(rdfs:label=Intégrale, Volume 7: "Christmas Swing" (disc 2), http://dbtune.org/musicbrainz/resource/record/7b511686-91be-4ed3-9bcd-1a653d209056)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Philippe Foulon, uri=urn:bluemarine:artist:6e8d5c3fcc6688e575ca9026837ecad1e253f05b):
   RepositoryRecord(rdfs:label=Marais: Pièces pour viole & autres instruments, urn:bluemarine:record:7c31cba698daf6642a6dac31f24d01d3493cbeeb)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Pierre Del Vescovo, uri=urn:bluemarine:artist:1831e8c65bf212f6ae402abacd0668fd67ecf2b9):
+  RepositoryRecord(rdfs:label=The Magic of The French Horn - Greatest Concertos, urn:bluemarine:record:543a080fce763a95471526d5465e7feb7133f2f5)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Pierre Del Vescovo/Horn, Bamberger Symphoniker/Theodor Gusch, uri=urn:bluemarine:artist:cf8175e1c8d379728f9ca0c286e2684490300b2a):
+  RepositoryRecord(rdfs:label=The Magic of The French Horn - Greatest Concertos, urn:bluemarine:record:543a080fce763a95471526d5465e7feb7133f2f5)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Pierre Del Vescovo/Horn, Jean Hubeau/Piano, uri=urn:bluemarine:artist:11c8f71822ae609cd238d64deb828fb6cf3be33e):
+  RepositoryRecord(rdfs:label=The Magic of The French Horn - Greatest Concertos, urn:bluemarine:record:543a080fce763a95471526d5465e7feb7133f2f5)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Pinchas Zukerman, Midori, uri=urn:bluemarine:artist:c12a755995122e8d4a27445b87681827dbe04d2b):
   RepositoryRecord(rdfs:label=Bach; Vivaldi: Concertos For 2 Violins, urn:bluemarine:record:f659329767f275045dd29478db6fdf487366b896)
@@ -18970,10 +19100,13 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Pucci Amanda Jhones, uri=urn:bluemar
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Quarteto em Cy, uri=http://dbtune.org/musicbrainz/resource/artist/592a91ea-aa85-452a-8d10-e538c315765a):
   RepositoryRecord(rdfs:label=Chega De Saudade, urn:bluemarine:record:41cad79a00a8e4b0fff8c7daa81506b19651854c)
+  RepositoryRecord(rdfs:label=Chega de Saudade (disc 2), http://dbtune.org/musicbrainz/resource/record/6817e504-4b19-481d-b1d9-cffebb695eac)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Quintette du Hot Club de France, uri=http://dbtune.org/musicbrainz/resource/artist/ee55e4e8-807d-49b1-8470-d1c0898ed7cb):
+  RepositoryRecord(rdfs:label=Intégrale, Volume 11: "Swing 42" (disc 1), http://dbtune.org/musicbrainz/resource/record/5a21a2a5-3e05-4927-906f-497a53b83ff4)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=R_Goldstein Schoepflin Ganong, uri=urn:bluemarine:artist:6a03551071595ea5ab2909f1a6394eb2e965ab65):
+  RepositoryRecord(rdfs:label=, urn:bluemarine:record:fe349f2b71ea0f41e5a944aa37f4e420a35d441c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Randy Crawford, uri=http://dbtune.org/musicbrainz/resource/artist/614e392a-0d63-48a2-bbd5-03265c407bd1):
   RepositoryRecord(rdfs:label=The Best of Randy Crawford, urn:bluemarine:record:fbca086eb488d61d2b8a54db8a5471ee23d8f97e)
@@ -18983,6 +19116,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Randy Crawford & Joe Sample, uri=htt
   RepositoryRecord(rdfs:label=Feeling Good, http://dbtune.org/musicbrainz/resource/record/4d5ea06e-9575-4d33-b7d0-66ad56cb65c2)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Randy Edelman, uri=http://dbtune.org/musicbrainz/resource/artist/7cbdfc61-30a9-4f17-b2fc-dcae3757adba):
+  RepositoryRecord(rdfs:label=The Last of the Mohicans, http://dbtune.org/musicbrainz/resource/record/d900dcd6-b119-4ac2-a33d-f51319c1ca37)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=René Marie, uri=http://dbtune.org/musicbrainz/resource/artist/12822d4f-4607-4f1d-ab16-d6bacc27cafe):
   RepositoryRecord(rdfs:label=How Can I Keep From Singing?, http://dbtune.org/musicbrainz/resource/record/9f1b93de-f960-4ef7-8a60-155c7a7615c1)
@@ -18999,6 +19133,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Ripchord, uri=http://dbtune.org/musi
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Robert Schumann, uri=http://dbtune.org/musicbrainz/resource/artist/3cd3882c-00f8-4362-a0c2-ad89ed248533):
   RepositoryRecord(rdfs:label=Cello Sonatas, urn:bluemarine:record:e495bc8b8c5e8574a1c65ad616d9ae6d96f591a1)
+  RepositoryRecord(rdfs:label=Piano Concertos, urn:bluemarine:record:c094e25df7457f707d218fd7241b06b67eba324c)
   RepositoryRecord(rdfs:label=Schubert: Symphonie no. 8 "Unvollendete" / Schumann: Symphonie no. 3 "Rheinische", urn:bluemarine:record:6bd53cf0cc2d3ef446fa40e9d32e8ed66af702a7)
   RepositoryRecord(rdfs:label=Schumann: The Masterworks, urn:bluemarine:record:8c1bf558c107f53a5396ad9829ffae3dd7d8fdf0)
 
@@ -19022,6 +19157,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Rosa Passos, uri=http://dbtune.org/m
   RepositoryRecord(rdfs:label=Rosa Passos Canta Antonio Carlos Jobim, http://dbtune.org/musicbrainz/resource/record/b2ce4f51-7f75-485b-ad7c-6adf15e58f37)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Rosinha de Valença, uri=http://dbtune.org/musicbrainz/resource/artist/ed6192aa-3abb-4c0b-849e-24eae2ec60ea):
+  RepositoryRecord(rdfs:label=Chega De Saudade, urn:bluemarine:record:41cad79a00a8e4b0fff8c7daa81506b19651854c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=SILHOUETTE, uri=urn:bluemarine:artist:efe19474804802e7dd29a6ecc8974138af3a2dfe):
   RepositoryRecord(rdfs:label=Sax At Midnight, urn:bluemarine:record:6fe88056ed1f2a3b752f3f6b0fa1ac4d35393c21)
@@ -19034,12 +19170,16 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Sade, uri=http://dbtune.org/musicbra
   RepositoryRecord(rdfs:label=The Best of Sade, http://dbtune.org/musicbrainz/resource/record/aa916dc0-dee1-4e72-9883-dea2862de436)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Salvatore Accardo, uri=urn:bluemarine:artist:2dfc6672e0dc40cc46910dcc89c579974ec82372):
+  RepositoryRecord(rdfs:label=Maurice Ravel: Tzigane - Sheherazade - La Valse, urn:bluemarine:record:7261a21a9b912ea9345a53307854e61d352a113b)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Sam Pottle, uri=http://dbtune.org/musicbrainz/resource/artist/5743fb4f-5c5b-42b4-973e-5e233a286d4a):
+  RepositoryRecord(rdfs:label=Television's Greatest Hits, Volume 3: 70's & 80's, http://dbtune.org/musicbrainz/resource/record/bc5fddae-eeaf-4be9-af25-0c5511a5b31f)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Samuel Barber, uri=urn:bluemarine:artist:8f09a0cfb7c6bcca06e1b0bd80dc5442f95718ce):
+  RepositoryRecord(rdfs:label=Celebrate The American Spirit, urn:bluemarine:record:d91c025cb34e4a862e6e4585b5a9f03a0519c8c5)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Sandie Shaw, uri=http://dbtune.org/musicbrainz/resource/artist/16963107-9288-43a2-946c-81de2f5eddfa):
+  RepositoryRecord(rdfs:label=The Very Best of Burt Bacharach, http://dbtune.org/musicbrainz/resource/record/9fe3038a-88c8-433e-b33b-2f18e925dda0)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Santa Esmeralda, uri=urn:bluemarine:artist:35eea021925013a5fd8e23b7b4b4ca31032fa0fb):
   RepositoryRecord(rdfs:label=Santa Esmeralda - Hits Anthology, urn:bluemarine:record:3aa06c3649318c113aa28a9ea9d42f6dd15a322d)
@@ -19048,6 +19188,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Santana, uri=http://dbtune.org/music
   RepositoryRecord(rdfs:label=Oye Como Va (disc 1), http://dbtune.org/musicbrainz/resource/record/63ef8394-449c-4006-89f1-ac8df08c3ac9)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Santana, uri=urn:bluemarine:artist:06a8b12a6ecc21db2e361d26fd47586a7087d414):
+  RepositoryRecord(rdfs:label=, urn:bluemarine:record:fe349f2b71ea0f41e5a944aa37f4e420a35d441c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Santo & Johnny, uri=urn:bluemarine:artist:edf9f341ac564489f9ce7d6ca314a0923a32a5e9):
   RepositoryRecord(rdfs:label=Luna Rossa, urn:bluemarine:record:15412e64c202a80c020e0bd8a25c6dced8d0166b)
@@ -19080,16 +19221,20 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Sarah Vaughan, uri=http://dbtune.org
   RepositoryRecord(rdfs:label=The Complete Roulette Sarah Vaughan Studio Sessions (disc 7), http://dbtune.org/musicbrainz/resource/record/d75c49a2-293b-4b47-aed1-05c370dc49d9)
   RepositoryRecord(rdfs:label=The Complete Roulette Sarah Vaughan Studio Sessions (disc 8), http://dbtune.org/musicbrainz/resource/record/5e85bceb-4514-4938-9178-2417dc3676fb)
   RepositoryRecord(rdfs:label=The Complete Sarah Vaughan on Mercury, Volume 1: Great Jazz Years: 1954-1956 (disc 3), http://dbtune.org/musicbrainz/resource/record/eac8de86-f2fd-40d0-9a1c-2656f652f115)
+  RepositoryRecord(rdfs:label=The Only Jazz Album You'll Ever Need, http://dbtune.org/musicbrainz/resource/record/a2fc21fa-037a-4ff9-af9b-165043a0e109)
   RepositoryRecord(rdfs:label=The Roulette Years, http://dbtune.org/musicbrainz/resource/record/e2f114ef-9d0e-4d39-92ab-6211df6eab95)
+  RepositoryRecord(rdfs:label=Ultra-Lounge, Volume 15: Wild, Cool & Swingin' Too!, http://dbtune.org/musicbrainz/resource/record/570e95bb-a484-4b46-8daa-f2aeccb1fad1)
   RepositoryRecord(rdfs:label=You're Mine You, http://dbtune.org/musicbrainz/resource/record/fa25580a-c104-4b6e-b38d-7cab7515136c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Sarah Vaughan, uri=urn:bluemarine:artist:caa923263bb0b63c8b5abf4fac37db235fd06781):
   RepositoryRecord(rdfs:label=After Hours, urn:bluemarine:record:84334e98089d1584999e4525594bcdf1157a63b3)
   RepositoryRecord(rdfs:label=Sarah Vaughan Sings The Mancini Songbook, urn:bluemarine:record:e5b3d0a07db91cd70cac3404889815a9a498f312)
+  RepositoryRecord(rdfs:label=Sarah Vaughan the Collection, urn:bluemarine:record:b988f59741a900bf7c60e935b0d41e90ace78bb7)
   RepositoryRecord(rdfs:label=The Best of Sarah Vaughan, urn:bluemarine:record:7b529b37bb97f9b27273f51f627cb630a11cbee9)
   RepositoryRecord(rdfs:label=Ultimate Legends: Sarah Vaughan, urn:bluemarine:record:3d2123bf295688ad603d173e441298c9799e0bc9)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Sarah Vaughan & Sevend Saaby Choir, uri=urn:bluemarine:artist:13c41460ef5134e5d41d41f09278cedcd498b514):
+  RepositoryRecord(rdfs:label=Sarah Vaughan Sings The Mancini Songbook, urn:bluemarine:record:e5b3d0a07db91cd70cac3404889815a9a498f312)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Sarah Vaughan and Lester Young, uri=http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af):
   RepositoryRecord(rdfs:label=One Night Stand: The Town Hall Concert 1947, http://dbtune.org/musicbrainz/resource/record/d9fd214c-86e5-400d-b829-45ed43086b8c)
@@ -19099,15 +19244,19 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Scottish Chamber Orchestra, uri=urn:
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Seiji Ozawa: Boston Symphony Orchestra, uri=urn:bluemarine:artist:9273df63768a5a2f382e1885d889c44275fb16cf):
   RepositoryRecord(rdfs:label=Respighi: Ancient Airs & Dances, urn:bluemarine:record:72e9f34cad71a62c546a1c3e62a1d8c0ec1dc756)
+  RepositoryRecord(rdfs:label=Rimsky-Korsakov: Scheherazade, urn:bluemarine:record:96fcf76b0b60ca92fc05cbdb4b2036896193c485)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Sergei Levitin, St Petersburg Kirov Orchestra & Valery Gergiev, uri=urn:bluemarine:artist:8af7d185d14f08c6b8e15acbca86ed58c17a64cc):
+  RepositoryRecord(rdfs:label=Rimsky-Korsakov: Scheherazade, urn:bluemarine:record:96fcf76b0b60ca92fc05cbdb4b2036896193c485)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Sheryl Crow, uri=http://dbtune.org/musicbrainz/resource/artist/80ccfede-c258-4575-a7ad-c982e9932e0f):
+  RepositoryRecord(rdfs:label=Top of the Spot, http://dbtune.org/musicbrainz/resource/record/f87ba9ca-2265-4115-86c0-5fea2e64e007)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Shirley Kirsten, uri=urn:bluemarine:artist:128ebfff8b051db3df9f0b2821c774b88e02994a):
   RepositoryRecord(rdfs:label=A Musical Journey: Scarlatti, Schubert and Chopin, urn:bluemarine:record:cf16a4bd2764be317d0c8df5e9aba1ebe766b2d7)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Shivaree, uri=http://dbtune.org/musicbrainz/resource/artist/1692e094-48b6-4d0e-8555-43ca0bd42467):
+  RepositoryRecord(rdfs:label=Kill Bill: Vol. 2, http://dbtune.org/musicbrainz/resource/record/12214f66-66c9-4203-8d64-cfb526c34b7c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Silvio Cesar, uri=http://dbtune.org/musicbrainz/resource/artist/4eaa01e6-c9fa-4057-988a-8bf79bb25b9c):
   RepositoryRecord(rdfs:label=Bossa sempre nova, urn:bluemarine:record:b61b34355f51407e4f25f23d8316f5df19c9b0fb)
@@ -19119,11 +19268,13 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Sonny Simmons, uri=urn:bluemarine:ar
   RepositoryRecord(rdfs:label=Sonny Simmons Trio Live - In Paris, urn:bluemarine:record:bfe7386979fe7f99e0d42fef8db00e642b8df03b)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Souvenirs de Django Reinhardt, uri=http://dbtune.org/musicbrainz/resource/artist/bc8ebdc1-0224-47f9-91d6-491821039332):
+  RepositoryRecord(rdfs:label=Intégrale, Volume 14: "Django's Dream" (disc 2), http://dbtune.org/musicbrainz/resource/record/c294af1a-7260-496b-92e7-57193c587b58)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=St Petersburg Kirov Orchestra & Valery Gergiev, uri=urn:bluemarine:artist:1dd96f1ceee460ed45e92ff2972a6754423f0b6f):
   RepositoryRecord(rdfs:label=Rimsky-Korsakov: Scheherazade, urn:bluemarine:record:96fcf76b0b60ca92fc05cbdb4b2036896193c485)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Stan Getz, uri=http://dbtune.org/musicbrainz/resource/artist/8f2422ab-0ec6-4c92-80c4-afe9622fab32):
+  RepositoryRecord(rdfs:label=Their Greatest Hits, urn:bluemarine:record:5a83a55adc71938c360d9e642ed1f80d75c6e4ab)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Stefano Bollani, uri=http://dbtune.org/musicbrainz/resource/artist/a781f9c2-0e60-4862-b1bc-0b9272151014):
   RepositoryRecord(rdfs:label=Carioca, http://dbtune.org/musicbrainz/resource/record/6095a630-7b62-4063-8c31-fb2ab4fad57c)
@@ -19144,6 +19295,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Sting, uri=http://dbtune.org/musicbr
   RepositoryRecord(rdfs:label=The Soul Cages, http://dbtune.org/musicbrainz/resource/record/13f418fd-6251-47b9-927d-79fc2d0f11dd)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Stéphane Grappelli, uri=http://dbtune.org/musicbrainz/resource/artist/bfc03211-a3a2-4700-8fa3-00968c02c5d0):
+  RepositoryRecord(rdfs:label=Intégrale, Volume 16: "Festival 48" (disc 2), http://dbtune.org/musicbrainz/resource/record/f22c01f2-4a0c-4b60-8cdb-ff3399b5faf1)
   RepositoryRecord(rdfs:label=Le Hot Club De France, Volume 4, http://dbtune.org/musicbrainz/resource/record/dc92cb23-7df8-4f2d-882b-9267889dacf2)
   RepositoryRecord(rdfs:label=The Quintessential Django Reinhardt & Stéphane Grappelli, http://dbtune.org/musicbrainz/resource/record/3daded3c-4de2-4083-a360-481610f1b437)
 
@@ -19181,8 +19333,10 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Tears for Fears, uri=urn:bluemarine:
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=The 5th Dimension, uri=http://dbtune.org/musicbrainz/resource/artist/4f1949ab-fefd-4bf3-9317-814084c29cc0):
   RepositoryRecord(rdfs:label=Absolute 60's, urn:bluemarine:record:4647ce416d409efa54569eefdc67639e8215cd12)
+  RepositoryRecord(rdfs:label=The Very Best of Burt Bacharach, urn:bluemarine:record:66971c3bd27e9a5f4f0b156727e821bc828e3c1d)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=The Ambrosian Singers, uri=http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e):
+  RepositoryRecord(rdfs:label=Chariots of Fire, http://dbtune.org/musicbrainz/resource/record/89fb6b5b-6ac2-465c-93bf-be430010de66)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=The Beatles, uri=http://dbtune.org/musicbrainz/resource/artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d):
   RepositoryRecord(rdfs:label=1, http://dbtune.org/musicbrainz/resource/record/344362ed-39c0-40bb-b55f-2c9627e5d767)
@@ -19224,6 +19378,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=The Dave Brubeck Quartet, uri=http:/
   RepositoryRecord(rdfs:label=Time Out, http://dbtune.org/musicbrainz/resource/record/283e6240-0bad-4af0-8515-44182dea3d24)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=The Four Aces, uri=http://dbtune.org/musicbrainz/resource/artist/908e99b8-b2b0-49e8-a85b-0a41a98f3926):
+  RepositoryRecord(rdfs:label=Moments to Remember: The Golden Hits of the '50s and '60s (disc 1), http://dbtune.org/musicbrainz/resource/record/0fd53077-b193-41ae-8384-7b3a0d2ca9be)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=The Golden Gospel Singers, uri=urn:bluemarine:artist:b6b2fb143a9e189088f716d8fb762ae8ae9dc49c):
   RepositoryRecord(rdfs:label=A Capella Praise, urn:bluemarine:record:c5fcf9d63f8ebce0bc3bf7a831d0e2026ae2d3a2)
@@ -19248,8 +19403,10 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=The Platters, uri=urn:bluemarine:art
   RepositoryRecord(rdfs:label=The Platters, urn:bluemarine:record:e6705ce3925d4247c6f047fa040a6a8b7ec8618e)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=The Righteous Brothers, uri=http://dbtune.org/musicbrainz/resource/artist/1ac3366a-a0e9-4a55-8f6e-796fce32a3b2):
+  RepositoryRecord(rdfs:label=Always & Forever (disc 1), http://dbtune.org/musicbrainz/resource/record/0f399829-3713-4c3d-9b8d-201087959f2b)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=The Shirelles, uri=http://dbtune.org/musicbrainz/resource/artist/a8540ea0-1a74-4c22-8b70-1348a77a74a0):
+  RepositoryRecord(rdfs:label=The Look of Love: The Burt Bacharach Collection (disc 1), http://dbtune.org/musicbrainz/resource/record/1bcfd9b5-1046-4634-a734-ab6f10e52b8e)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Thelonious Monk, uri=http://dbtune.org/musicbrainz/resource/artist/8e8c7417-c905-46b1-b42a-5260b4274ed4):
   RepositoryRecord(rdfs:label=1963 In Japan, http://dbtune.org/musicbrainz/resource/record/d480196a-71b3-4593-ac07-8b1b6f41da9d)
@@ -19266,6 +19423,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Thomas Beecham: Royal Philharmonic O
   RepositoryRecord(rdfs:label=Grieg: Peer Gynt, Etc., urn:bluemarine:record:6d09d5cdf0bfecb779404e75ad5c17c84a62a7e6)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Tom Jones, uri=http://dbtune.org/musicbrainz/resource/artist/57c6f649-6cde-48a7-8114-2a200247601a):
+  RepositoryRecord(rdfs:label=The Look of Love: The Burt Bacharach Collection (disc 1), http://dbtune.org/musicbrainz/resource/record/1bcfd9b5-1046-4634-a734-ab6f10e52b8e)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Tomás de Torrejón y Velasco, uri=http://dbtune.org/musicbrainz/resource/artist/c51e622a-b208-4f24-ae78-e014ef5e1409):
   RepositoryRecord(rdfs:label=Villancicos y Danzas Criollas, urn:bluemarine:record:34ddc8da7151ed148f7ce2bc3355a6474aab7b33)
@@ -19274,6 +19432,8 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Tony McManus, uri=http://dbtune.org/
   RepositoryRecord(rdfs:label=Return to Kintail, http://dbtune.org/musicbrainz/resource/record/693dd397-6c7c-4a4c-b8e8-fe76e7562735)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Trevor Jones, uri=http://dbtune.org/musicbrainz/resource/artist/961f31f2-31bf-4469-bc66-f6a2fda12db5):
+  RepositoryRecord(rdfs:label=The Last of the Mohicans, http://dbtune.org/musicbrainz/resource/record/d94b02ba-aa39-4e0f-a397-8d25162f63cc)
+  RepositoryRecord(rdfs:label=The Last of the Mohicans, http://dbtune.org/musicbrainz/resource/record/d900dcd6-b119-4ac2-a33d-f51319c1ca37)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Trevor Nasser, uri=urn:bluemarine:artist:109dd36f0f0c3d942785dd3635aa55a617b1deed):
   RepositoryRecord(rdfs:label=Trevor, urn:bluemarine:record:92fae66e8f26be408d5aede910e629c1037437bd)
@@ -19282,6 +19442,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Trevor Pinnock, uri=urn:bluemarine:a
   RepositoryRecord(rdfs:label=Handel: Chaconne In G Major For Harpsichord, HWV 435, Keyboard Suites, urn:bluemarine:record:60d871e4e8ef4b5b5155ad0a2ec2c84e207082b5)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=UniqueTracks, uri=urn:bluemarine:artist:dd0f719b85a648cd6a978b26bf57406432323f1d):
+  RepositoryRecord(rdfs:label=, urn:bluemarine:record:fe349f2b71ea0f41e5a944aa37f4e420a35d441c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Vanessa Williams, uri=http://dbtune.org/musicbrainz/resource/artist/7cce3b8e-623c-4078-b079-837cbcf638c4):
   RepositoryRecord(rdfs:label=The Real Thing, http://dbtune.org/musicbrainz/resource/record/ffc14896-37fb-4ce1-a807-e1ccf7db743b)
@@ -19292,6 +19453,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=http://dbtune.org/musi
   RepositoryRecord(rdfs:label=Blade Runner: OWM 2000 Version (disc 2), http://dbtune.org/musicbrainz/resource/record/cd7e1359-98cc-42e3-9a88-ae8ec4cdf5ba)
   RepositoryRecord(rdfs:label=Chariots of Fire, http://dbtune.org/musicbrainz/resource/record/89fb6b5b-6ac2-465c-93bf-be430010de66)
   RepositoryRecord(rdfs:label=China, http://dbtune.org/musicbrainz/resource/record/5c02926c-e65e-4107-b4e7-05751a2367d6)
+  RepositoryRecord(rdfs:label=Golden Dreams (disc 2), http://dbtune.org/musicbrainz/resource/record/4e459d3d-8ae9-4902-8186-14477fb3efd4)
   RepositoryRecord(rdfs:label=L'Apocalypse des animaux, http://dbtune.org/musicbrainz/resource/record/5d5ce68c-2e0e-48f7-beb0-36cfcf2cb660)
   RepositoryRecord(rdfs:label=L'Apocalypse des animaux, urn:bluemarine:record:66f8bc42899f252432023254dc0ab19d77adcdf3)
   RepositoryRecord(rdfs:label=See You Later, http://dbtune.org/musicbrainz/resource/record/71771d40-0236-4cde-b71d-b0eee0270d6c)
@@ -19300,6 +19462,7 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=http://dbtune.org/musi
   RepositoryRecord(rdfs:label=Themes, http://dbtune.org/musicbrainz/resource/record/ff7c291e-8dae-42d5-85bd-bdba89a3af1a)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Vangelis, uri=urn:bluemarine:artist:3aaced5008289e60b00a589e3e258abb08725493):
+  RepositoryRecord(rdfs:label=, urn:bluemarine:record:fe349f2b71ea0f41e5a944aa37f4e420a35d441c)
   RepositoryRecord(rdfs:label=1492 - Conquest of Paradise (Soundtrack from the Motion Picture), urn:bluemarine:record:0c5279832dcee2d414174a934ef470f71a415ce0)
   RepositoryRecord(rdfs:label=Blade Runner (Orchestral Adaptation of Original Score), urn:bluemarine:record:b405798438817e06f162a6f19467dca00182ff47)
 
@@ -19316,12 +19479,17 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Vladimir Spivakov, uri=urn:bluemarin
   RepositoryRecord(rdfs:label=Violin Miniatures (It Ain't Necessarily So, And Others), urn:bluemarine:record:fe01634ac568a3f7e12b5d2f6e1c0a12c332f4fe)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Wanda Sá, uri=http://dbtune.org/musicbrainz/resource/artist/08bfcdaf-ef3f-4b40-bab6-8848278cf468):
+  RepositoryRecord(rdfs:label=Chega De Saudade, urn:bluemarine:record:41cad79a00a8e4b0fff8c7daa81506b19651854c)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Wanda Sá & Célia Vaz, uri=http://dbtune.org/musicbrainz/resource/artist/8cf2e214-d292-4d6e-9551-4fa380e7cd97):
+  RepositoryRecord(rdfs:label=Chega De Saudade (disc 1), http://dbtune.org/musicbrainz/resource/record/6c5bdb69-e576-456b-9b6b-9177a5f04e43)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Wanda Sá & Roberto Menescal, uri=http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea):
+  RepositoryRecord(rdfs:label=Chega De Saudade (disc 1), http://dbtune.org/musicbrainz/resource/record/6c5bdb69-e576-456b-9b6b-9177a5f04e43)
+  RepositoryRecord(rdfs:label=Chega de Saudade (disc 2), http://dbtune.org/musicbrainz/resource/record/6817e504-4b19-481d-b1d9-cffebb695eac)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=William Waters, uri=urn:bluemarine:artist:f7df56b7ac74a2a2ba858515b638a788640e97e9):
+  RepositoryRecord(rdfs:label=Marais: Pièces pour viole & autres instruments, urn:bluemarine:record:7c31cba698daf6642a6dac31f24d01d3493cbeeb)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Wolfgang Amadeus Mozart, uri=http://dbtune.org/musicbrainz/resource/artist/b972f589-fb0e-474e-b64a-803b0364fa75):
   RepositoryRecord(rdfs:label=Don Giovanni (The Monteverdi Choir, The English Baroque Soloists feat. conductor: John Eliot Gardiner) (disc 1), http://dbtune.org/musicbrainz/resource/record/12110e8b-6319-4541-912c-77d0fede5c2c)
@@ -19345,19 +19513,24 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Yves Montand, uri=urn:bluemarine:art
   RepositoryRecord(rdfs:label=St Germain des Prés, urn:bluemarine:record:e5ee62b6e34dcdac1fcaba2588509ac6c4efa9cb)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=[anonymous], uri=http://dbtune.org/musicbrainz/resource/artist/f731ccc4-e22a-43af-a747-64213329e088):
+  RepositoryRecord(rdfs:label=El Cançoner del Duc de Calabria: 1526-1554 (La Capella Reial de Catalunya, conductor: Jordi Savall), http://dbtune.org/musicbrainz/resource/record/a7680618-2d38-405e-a839-bdee9ca8db8a)
+  RepositoryRecord(rdfs:label=El canto espiritual judeoespañol, http://dbtune.org/musicbrainz/resource/record/5109aa4f-5ee8-4a58-b0ed-11838203383f)
   RepositoryRecord(rdfs:label=Lux Feminæ (900-1600), urn:bluemarine:record:d291d4e292e3f2179d136210c647a174cf8e2a4b)
+  RepositoryRecord(rdfs:label=Ninna Nanna ca. 1500-2002: Berceuses, urn:bluemarine:record:c0637ffe51f0e8f3cf1058f0d1a807e1b8423bba)
   RepositoryRecord(rdfs:label=Villancicos & Ensaladas, urn:bluemarine:record:b085d75643dd24542c09715129a4e0de3249e939)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=[gregorian chant], uri=http://dbtune.org/musicbrainz/resource/artist/ae636985-40e8-4010-ae02-0f35930f8017):
   RepositoryRecord(rdfs:label=Gregorian Chant (Choralschola der Wiener Hofburgkapelle feat. conductor: P. Hubert Dopf), http://dbtune.org/musicbrainz/resource/record/9f65e748-1167-42e4-a8cd-cad8c85644d3)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=[unknown], uri=http://dbtune.org/musicbrainz/resource/artist/125ec42a-7229-4250-afc5-e057484327fe):
+  RepositoryRecord(rdfs:label=Chega de Saudade (disc 2), http://dbtune.org/musicbrainz/resource/record/6817e504-4b19-481d-b1d9-cffebb695eac)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Александр Николаевич Скрябин, uri=http://dbtune.org/musicbrainz/resource/artist/a4eba7b5-aceb-4acf-b297-3c0a3cd42757):
   RepositoryRecord(rdfs:label=Piano Sonatas, urn:bluemarine:record:7103ec16a1f2b3c569297f9656b2d51ee753239b)
   RepositoryRecord(rdfs:label=The Complete Etudes, urn:bluemarine:record:d17637bba093b21acd5ef5b8c891bcecd45d33f8)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Александр Порфирьевич Бородин, uri=http://dbtune.org/musicbrainz/resource/artist/560b5e65-8d53-41b4-9913-83368f4721a0):
+  RepositoryRecord(rdfs:label=Sheherazade (Kirov Orchestra feat. conductor: Valery Gergiev), http://dbtune.org/musicbrainz/resource/record/690ba222-3f64-4116-8d54-ad13737de40a)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Игорь Фёдорович Стравинский, uri=http://dbtune.org/musicbrainz/resource/artist/c278de2c-9696-4fdf-a919-0781cd945e2c):
   RepositoryRecord(rdfs:label=Le Sacre du Printemps, urn:bluemarine:record:95baf538788231deb20bf5139cbfe64469e9f638)
@@ -19366,9 +19539,13 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Модест Петрович Мус
   RepositoryRecord(rdfs:label=Ninna Nanna ca. 1500-2002: Berceuses, urn:bluemarine:record:c0637ffe51f0e8f3cf1058f0d1a807e1b8423bba)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Николай Андреевич Римский-Корсаков, uri=http://dbtune.org/musicbrainz/resource/artist/4cfe7051-f649-4d07-83b3-7a732abe7249):
+  RepositoryRecord(rdfs:label=Pictures at an Exhibition (orch. Ravel) / Russian Easter Festival Overture (Vancouver Symphony Orchestra feat. conductor: Kazuyoshi Akiyama), http://dbtune.org/musicbrainz/resource/record/8eb43d01-c2ab-4745-89dc-31d67f70f290)
   RepositoryRecord(rdfs:label=Scheherazade, urn:bluemarine:record:6ebad467a37f367ff371c02ef0a39de4f47667ab)
+  RepositoryRecord(rdfs:label=Sheherazade (Kirov Orchestra feat. conductor: Valery Gergiev), http://dbtune.org/musicbrainz/resource/record/690ba222-3f64-4116-8d54-ad13737de40a)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Пётр Ильич Чайковский, uri=http://dbtune.org/musicbrainz/resource/artist/9ddd7abc-9e1b-471d-8031-583bc6bc8be9):
+  RepositoryRecord(rdfs:label=Classic FM Collectors CD: Best of Christmas, http://dbtune.org/musicbrainz/resource/record/753027c5-c1c2-456e-85ec-e65fc2d5e7c2)
+  RepositoryRecord(rdfs:label=Fantasia, http://dbtune.org/musicbrainz/resource/record/b9c5c49f-c831-41fa-a284-da5ccb19a6ec)
   RepositoryRecord(rdfs:label=Karajan conducts Tchaikovsky, urn:bluemarine:record:94b74918e06bb96808a6d3a9c4074ae87f93b6c2)
   RepositoryRecord(rdfs:label=Karajan conducts Tchaikovsky (Berliner Philharmoniker feat. conductor: Herbert von Karajan) (disc 6), http://dbtune.org/musicbrainz/resource/record/1757c816-c219-4ccc-87f6-8bb93d1ef9a1)
   RepositoryRecord(rdfs:label=Nutcracker / Swan Lake, urn:bluemarine:record:994bd05e313b860726377feb1bd8be287422fa47)
@@ -19386,6 +19563,8 @@ RECORDS OF RepositoryMusicArtist(rdfs:label=Сергей Васильевич Р
   RepositoryRecord(rdfs:label=Symphonie no. 2 / Die toteninsel, urn:bluemarine:record:a5420d5884098994eeeff4d3ec4f85541efe50d4)
 
 RECORDS OF RepositoryMusicArtist(rdfs:label=Сергей Сергеевич Прокофьев, uri=http://dbtune.org/musicbrainz/resource/artist/0e43fe9d-c472-4b62-be9e-55f971a023e1):
+  RepositoryRecord(rdfs:label=Chopin, Beethoven, Schumann, Ravel, Prokofieff feat. piano: Ivo Pogorelich (disc 3), http://dbtune.org/musicbrainz/resource/record/99945fa7-0778-4fb9-805d-6c25f8bcd31a)
+  RepositoryRecord(rdfs:label=Prokofiev: Cinderella Suite / Ravel: Ma mère l'oye (feat. piano: Martha Argerich, Mikhail Pletnev), http://dbtune.org/musicbrainz/resource/record/1de846ab-0012-4c50-aa8b-49ecd4c211b2)
   RepositoryRecord(rdfs:label=Romeo & Juliet, urn:bluemarine:record:bb715446687e936eb06153ae42724d774ae3fc40)
   RepositoryRecord(rdfs:label=Romeo & Juliet (Boston Symphony Orchestra feat. conductor: Seiji Ozawa) (disc 2), http://dbtune.org/musicbrainz/resource/record/91344303-264d-424a-8ae8-891189528ee9)
   RepositoryRecord(rdfs:label=Romeo and Juliet Highlights, urn:bluemarine:record:06448986f1da2be1360fb37eafd8a8131eaf8845)

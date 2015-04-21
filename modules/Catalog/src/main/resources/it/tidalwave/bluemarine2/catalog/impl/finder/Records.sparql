@@ -1,18 +1,25 @@
-            SELECT * 
-            WHERE  
-              { 
-                ?record       a             mo:Record. 
-                ?record       rdfs:label    ?label. 
+        SELECT DISTINCT * 
+        WHERE  
+          { 
+            ?record     a           mo:Record. 
+            ?record     rdfs:label  ?label. 
 
-@artist@          {
-@artist@            ?record       foaf:maker              ?artist.
-@artist@          }
-@artist@        UNION 
-@artist@          {
-@artist@            ?record       foaf:maker              ?artistGroup.
-@artist@            ?artistGroup  rel:collaboratesWith    ?artist.
-@artist@          }
+@artist@      {
+@artist@        ?record     foaf:maker                                  ?artist.
+@artist@      }
+@artist@    UNION 
+@artist@      {
+@artist@        ?record     mo:track/foaf:maker                         ?artist.
+@artist@      }
+@artist@    UNION 
+@artist@      {
+@artist@        ?record     foaf:maker/rel:collaboratesWith             ?artist.
+@artist@      }
+@artist@    UNION 
+@artist@      {
+@artist@        ?record     mo:track/foaf:maker/rel:collaboratesWith    ?artist.
+@artist@      }
                 
-@track@         ?record       mo:track      ?track.
-              }
-            ORDER BY ?label
+@track@     ?record     mo:track    ?track.
+          }
+        ORDER BY ?label
