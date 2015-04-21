@@ -32,7 +32,6 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.List;
 import org.openrdf.model.Statement;
-import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.RepositoryException;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
