@@ -66,8 +66,7 @@ public class RepositoryBrowserSupport extends EntityWithRoles implements EntityB
     
     protected final void setFinder (final @Nonnull Supplier<Finder8<? extends Entity>> finderSupplier)
       {
-        // FIXME: drop cast
-        compositeForRootEntity = () -> (Finder8<Entity>)finderSupplier.get();
+        compositeForRootEntity = () -> finderSupplier.get();
       }   
     
     @Nonnull
