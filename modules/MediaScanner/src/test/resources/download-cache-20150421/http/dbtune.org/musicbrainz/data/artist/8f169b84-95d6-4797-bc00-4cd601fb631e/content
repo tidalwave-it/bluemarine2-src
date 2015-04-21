@@ -1,0 +1,225 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/track/56da0325-fbfe-4b82-9abe-c3d43b9b04d4>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/track/fef74915-0b98-4628-a5c2-55607d7900a7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/618>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/129075>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/134694>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/track/a2969273-550e-4c88-8346-7105bf9fe509>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/track/1a82dcf6-0648-47b4-a125-181d49f73fea>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e>
+      a       mo:MusicArtist ;
+      rdfs:label "The Ambrosian Singers" ;
+      vocab:alias "Ambrosian Opera Chorus" , "Ambrosian Chorus" ;
+      vocab:artist_quality
+              "-1"^^xsd:short ;
+      vocab:artist_type "2"^^xsd:short ;
+      vocab:sortname "Ambrosian Singers, The" ;
+      mo:musicbrainz <http://musicbrainz.org/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      bio:event <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e/birth> ;
+      =       <http://www.bbc.co.uk/music/artists/8f169b84-95d6-4797-bc00-4cd601fb631e#artist> , <http://dbpedia.org/resource/Ambrosian_Singers> ;
+      foaf:name "The Ambrosian Singers" .
+
+<http://dbtune.org/musicbrainz/resource/track/f648f249-a18b-48a2-b6e8-495d9a12f866>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://musicbrainz.org/artist/8f169b84-95d6-4797-bc00-4cd601fb631e>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Fartist%2F8f169b84-95d6-4797-bc00-4cd601fb631e%3E> .
+
+<http://dbtune.org/musicbrainz/resource/performance/5734>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/data/artist/8f169b84-95d6-4797-bc00-4cd601fb631e>
+      rdfs:label "RDF Description of The Ambrosian Singers" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/133626>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/62934>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:lead_singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/track/cf5de61b-7d94-4bb8-9a5f-bca9ef83ff27>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/track/d48523e5-d451-4432-a831-2d1b042ce3a3>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/track/f943238a-a263-4afe-bd1a-95af01121519>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/77095>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/track/61e43cae-6c93-4c50-b8a8-af13e2864c74>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/85728>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/15172>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/track/5f176064-6e02-4bfc-a0bc-bef8f9a13535>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/track/64b32279-6d1f-4aef-88c4-dcc4a6ab9cbf>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/619>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/113344>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/134693>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/100064>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:invited_performer
+              <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/track/2f4ee4d0-de58-4b66-97b1-4ce1dea667ce>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/track/0b0a6bf4-981d-4272-a963-3974c80b18a3>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/track/59bf1a00-2161-4808-b1a8-73bdaf9c6a52>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/126181>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/track/a40bfd25-0364-46a1-9534-c3be25919f65>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+mo:MusicArtist
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FMusicArtist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/performance/104764>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/track/b9958891-71d4-458f-9530-b7c03cb2b09e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://www.bbc.co.uk/music/artists/8f169b84-95d6-4797-bc00-4cd601fb631e#artist>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.bbc.co.uk%2Fmusic%2Fartists%2F8f169b84-95d6-4797-bc00-4cd601fb631e%23artist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/performance/69555>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/track/6df728d7-c72b-41dc-bbf8-d67bef8a782b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/track/6baa7248-0a0b-4643-828c-4999a9b952a7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/72298>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/71542>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbpedia.org/resource/Ambrosian_Singers>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FAmbrosian_Singers%3E> .
+
+<http://dbtune.org/musicbrainz/resource/performance/100077>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/5735>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .
+
+<http://dbtune.org/musicbrainz/resource/performance/85727>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/8f169b84-95d6-4797-bc00-4cd601fb631e> .

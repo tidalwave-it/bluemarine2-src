@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/3d62ee74-edaa-42c3-a068-d4b777117379>
+      a       mo:Record ;
+      rdfs:label "Italia" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "13"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/215049> ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:date "2007-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Italia" ;
+      mo:musicbrainz <http://musicbrainz.org/album/3d62ee74-edaa-42c3-a068-d4b777117379> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/329041> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/72813eca-57c2-4f27-acb0-fdd9c17f0a13> , <http://dbtune.org/musicbrainz/resource/track/8c0b934f-3f2e-4b0e-8d75-676f98ad2d60> , <http://dbtune.org/musicbrainz/resource/track/03fa7f3e-7bf9-4b38-bce1-d8bd02e91559> , <http://dbtune.org/musicbrainz/resource/track/c130bedc-1dbc-4baa-940b-d95ef186c780> , <http://dbtune.org/musicbrainz/resource/track/23d4af0a-a3bf-48b5-a14a-c6558fcad7ca> , <http://dbtune.org/musicbrainz/resource/track/9df4d74e-542b-428f-8b74-2ae0dc9195d8> , <http://dbtune.org/musicbrainz/resource/track/e3134471-50d8-4fa9-98a1-b294ced7bf42> , <http://dbtune.org/musicbrainz/resource/track/208d164e-0b42-405a-8a8e-00aa9a6beb5a> , <http://dbtune.org/musicbrainz/resource/track/0dfa14da-2684-4027-a787-b5687a8cc17e> , <http://dbtune.org/musicbrainz/resource/track/3a333d86-32da-488f-9759-d2ae71829fab> , <http://dbtune.org/musicbrainz/resource/track/e8fe82d7-b2dc-420c-8eec-fbf4175433e0> , <http://dbtune.org/musicbrainz/resource/track/5aa28223-e3ed-4746-9509-26f5468f487f> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/0939452b-0c6f-422a-997f-e7c496ce1113> ;
+      foaf:page "357643586" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/3d62ee74-edaa-42c3-a068-d4b777117379>
+      rdfs:label "RDF Description of Italia" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/3d62ee74-edaa-42c3-a068-d4b777117379> .
+
+<http://dbtune.org/musicbrainz/resource/master/3d62ee74-edaa-42c3-a068-d4b777117379>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/3d62ee74-edaa-42c3-a068-d4b777117379> .
+
+<http://musicbrainz.org/album/3d62ee74-edaa-42c3-a068-d4b777117379>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F3d62ee74-edaa-42c3-a068-d4b777117379%3E> .

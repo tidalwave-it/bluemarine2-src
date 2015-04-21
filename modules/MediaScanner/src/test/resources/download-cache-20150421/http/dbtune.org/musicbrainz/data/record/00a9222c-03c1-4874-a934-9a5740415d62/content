@@ -1,0 +1,69 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/00a9222c-03c1-4874-a934-9a5740415d62>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/00a9222c-03c1-4874-a934-9a5740415d62> .
+
+<http://dbtune.org/musicbrainz/data/record/00a9222c-03c1-4874-a934-9a5740415d62>
+      rdfs:label "RDF Description of Ella Fitzgerald Sings the Duke Ellington Song Book (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/00a9222c-03c1-4874-a934-9a5740415d62> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B00000478A>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000478A%3E> .
+
+<http://musicbrainz.org/album/00a9222c-03c1-4874-a934-9a5740415d62>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F00a9222c-03c1-4874-a934-9a5740415d62%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00000478A>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00000478A%3E> .
+
+<http://dbpedia.org/resource/Ella_Fitzgerald_Sings_the_Duke_Ellington_Songbook>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FElla_Fitzgerald_Sings_the_Duke_Ellington_Songbook%3E> .
+
+<http://ec2.images-amazon.com/images/P/B00000478A.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec2.images-amazon.com%2Fimages%2FP%2FB00000478A.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/00a9222c-03c1-4874-a934-9a5740415d62>
+      a       mo:Record ;
+      rdfs:label "Ella Fitzgerald Sings the Duke Ellington Song Book (disc 2)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00000478A" ;
+      vocab:albummeta_coverarturl
+              "http://ec2.images-amazon.com/images/P/B00000478A.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "35"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/64822> ;
+      vocab:tracks "17"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Ella Fitzgerald Sings the Duke Ellington Song Book (disc 2)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00000478A> ;
+      mo:image <http://images.amazon.com/images/P/B00000478A> , <http://ec2.images-amazon.com/images/P/B00000478A.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/00a9222c-03c1-4874-a934-9a5740415d62> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/67e35b9a-e5e5-4775-807b-0557c8b28b83> , <http://dbtune.org/musicbrainz/resource/track/3fa2618c-26e6-45fe-9315-bf24e52c683e> , <http://dbtune.org/musicbrainz/resource/track/75ce8b4e-a994-438e-8e46-b78b5455b6c1> , <http://dbtune.org/musicbrainz/resource/track/cd1635ef-f7fa-4318-9758-365e649aaaae> , <http://dbtune.org/musicbrainz/resource/track/3459817a-8709-462a-a1cf-741b144be0b6> , <http://dbtune.org/musicbrainz/resource/track/4147e3b5-bc11-4121-b5e8-683d87d1c9e3> , <http://dbtune.org/musicbrainz/resource/track/f1b0f77f-aa76-48d7-a5d9-ff0cc1d445ef> , <http://dbtune.org/musicbrainz/resource/track/d4ffc0e4-15a5-4c5f-8388-1d6763596eb4> , <http://dbtune.org/musicbrainz/resource/track/30cca35b-70a6-46cd-ada6-f84a1d9cf03f> , <http://dbtune.org/musicbrainz/resource/track/935e8bcc-fa2b-42eb-a398-33e944919bc0> , <http://dbtune.org/musicbrainz/resource/track/9ca67c78-9a0d-4eab-bd09-21bc7cd31aea> , <http://dbtune.org/musicbrainz/resource/track/ddb45928-876b-42b2-8e5b-013034f2168b> , <http://dbtune.org/musicbrainz/resource/track/b17e9bab-fc25-444d-888a-9c22631a63ba> , <http://dbtune.org/musicbrainz/resource/track/88981eae-6d8d-4560-b938-bd25d0788b40> , <http://dbtune.org/musicbrainz/resource/track/1961331c-c7f1-482e-9cb8-232074157421> , <http://dbtune.org/musicbrainz/resource/track/85316fda-6f36-45b1-8882-dd12eb174ce9> , <http://dbtune.org/musicbrainz/resource/track/5ad87f2f-81cd-48ce-afb4-c72d48340b0e> ;
+      =       <http://dbpedia.org/resource/Ella_Fitzgerald_Sings_the_Duke_Ellington_Songbook> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
+      foaf:page "215386151" .

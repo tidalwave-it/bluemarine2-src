@@ -178,6 +178,10 @@ public class DefaultMediaScanner
                   }
               });
           }
+        catch (Exception e)
+          {
+            log.error("", e);  
+          }
         finally
           {
             progress.incrementScannedFolders();
@@ -366,10 +370,10 @@ public class DefaultMediaScanner
 //
 //        final Value createLiteral = literalFor(title);
 //        messageBus.publish(AddStatementsRequest.newAddStatementsRequest()
-//                                           .with(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(timestampProvider.getInstant()))
-//                                           .with(mediaItemUri, DC.TITLE, createLiteral)
-//                                           .with(mediaItemUri, RDFS.LABEL, createLiteral)
-//                                           .with(mediaItemUri, BM.FULL_CREDITS, literalFor(fullCredits))
+//                                           .withOptional(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(timestampProvider.getInstant()))
+//                                           .withOptional(mediaItemUri, DC.TITLE, createLiteral)
+//                                           .withOptional(mediaItemUri, RDFS.LABEL, createLiteral)
+//                                           .withOptional(mediaItemUri, BM.FULL_CREDITS, literalFor(fullCredits))
 //                                           .publish());
 //        // TODO: MO.CHANNELS
 //        // TODO: MO.COMPOSER

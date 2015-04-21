@@ -1,0 +1,49 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/c728fe04-78d7-4748-8d97-3fb7e39cf7e7>
+      rdfs:label "RDF Description of Tea for Two" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/c728fe04-78d7-4748-8d97-3fb7e39cf7e7> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/c728fe04-78d7-4748-8d97-3fb7e39cf7e7>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fc728fe04-78d7-4748-8d97-3fb7e39cf7e7%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/c728fe04-78d7-4748-8d97-3fb7e39cf7e7>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/c728fe04-78d7-4748-8d97-3fb7e39cf7e7> .
+
+<http://dbtune.org/musicbrainz/resource/record/c728fe04-78d7-4748-8d97-3fb7e39cf7e7>
+      a       mo:Record ;
+      rdfs:label "Tea for Two" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:tracks "20"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Tea for Two" ;
+      mo:musicbrainz <http://musicbrainz.org/album/c728fe04-78d7-4748-8d97-3fb7e39cf7e7> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/9d14edf3-a5ae-415a-b695-a286066ca9ce> , <http://dbtune.org/musicbrainz/resource/track/2eb62bb3-0e12-4173-b9c3-57a8415c78c2> , <http://dbtune.org/musicbrainz/resource/track/74380092-28f3-4862-a912-e927b936c0d3> , <http://dbtune.org/musicbrainz/resource/track/23f68efa-8a2b-4710-9a9f-f5bb5ad4a8e1> , <http://dbtune.org/musicbrainz/resource/track/1a06daa7-c02a-46a4-ae25-280c636425e9> , <http://dbtune.org/musicbrainz/resource/track/f3a2f80b-91f8-48c5-a4dd-c3ee4f4bc036> , <http://dbtune.org/musicbrainz/resource/track/bd73035b-a1e0-47e1-ba6a-4dfad9750b3e> , <http://dbtune.org/musicbrainz/resource/track/3fdfb2e7-ca27-4ffb-a6d1-d1d796f8e6dc> , <http://dbtune.org/musicbrainz/resource/track/04d08232-d345-41bd-ab30-3e814c9546de> , <http://dbtune.org/musicbrainz/resource/track/77878adf-1683-4119-b42d-578a3959808d> , <http://dbtune.org/musicbrainz/resource/track/32e4351a-36d6-4f9c-902b-ca7999598a18> , <http://dbtune.org/musicbrainz/resource/track/0284de08-0524-4a1d-a7ab-2b26dc609dbb> , <http://dbtune.org/musicbrainz/resource/track/3805532d-0d35-44fb-b42d-d61f22eafe8b> , <http://dbtune.org/musicbrainz/resource/track/f47919e7-8add-4b87-9f68-d86c1bc9ad81> , <http://dbtune.org/musicbrainz/resource/track/aab926b7-3adc-425b-955f-1eba30b2ebec> , <http://dbtune.org/musicbrainz/resource/track/8f948758-df9a-483a-b8e6-bc8184d10da5> , <http://dbtune.org/musicbrainz/resource/track/1c58cbe9-33d8-43cb-b3aa-dec1e2e12737> , <http://dbtune.org/musicbrainz/resource/track/45119a30-5142-4eae-b967-bc55cb2ef279> , <http://dbtune.org/musicbrainz/resource/track/541e7247-e832-40e0-9f12-fee2cdf1e5e3> , <http://dbtune.org/musicbrainz/resource/track/7e06c876-f629-4fe2-a597-a82434249ef7> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> ;
+      foaf:page "711001328" .

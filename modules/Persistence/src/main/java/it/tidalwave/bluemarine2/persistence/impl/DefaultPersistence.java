@@ -138,7 +138,6 @@ public class DefaultPersistence implements Persistence
       {
         log.info("runInTransaction({})", task);
         final long baseTime = System.nanoTime();
-        // FIXME: move to Persistence
         final RepositoryConnection connection = repository.getConnection(); // TODO: pool?
 
         try

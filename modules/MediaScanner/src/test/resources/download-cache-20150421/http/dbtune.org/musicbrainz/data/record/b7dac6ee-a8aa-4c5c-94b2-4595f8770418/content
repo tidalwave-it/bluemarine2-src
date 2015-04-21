@@ -1,0 +1,65 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00004S51G>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00004S51G%3E> .
+
+<http://images.amazon.com/images/P/B00004S51G>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00004S51G%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/b7dac6ee-a8aa-4c5c-94b2-4595f8770418>
+      a       mo:Record ;
+      rdfs:label "Time Signatures: A Career Retrospective (disc 3)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:albummeta_asin
+              "B00004S51G" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00004S51G.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "24"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/54045> ;
+      vocab:tracks "19"^^xsd:int ;
+      dc:date "1992-00-00" ;
+      dc:title "Time Signatures: A Career Retrospective (disc 3)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00004S51G> ;
+      mo:image <http://images.amazon.com/images/P/B00004S51G> , <http://ec1.images-amazon.com/images/P/B00004S51G.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/b7dac6ee-a8aa-4c5c-94b2-4595f8770418> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/523008> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/eb7917a2-2b1a-4647-80cc-14aded6195e8> , <http://dbtune.org/musicbrainz/resource/track/872c3810-3571-4db8-af25-aeeb59511f2f> , <http://dbtune.org/musicbrainz/resource/track/4683d17a-c732-4139-a25a-b301a3cfcfaa> , <http://dbtune.org/musicbrainz/resource/track/8940c7c4-8ca0-4eab-a59c-52e0b5eca3b6> , <http://dbtune.org/musicbrainz/resource/track/b57ea1f9-3cf7-4387-a8a7-a03ee7919754> , <http://dbtune.org/musicbrainz/resource/track/6c9169dd-803f-4a33-88e4-92f4f4715708> , <http://dbtune.org/musicbrainz/resource/track/f141f0e1-7597-42d9-ba51-0b03f5550c94> , <http://dbtune.org/musicbrainz/resource/track/dc7ef126-186c-4ed6-83c1-59732682f3bd> , <http://dbtune.org/musicbrainz/resource/track/ea14a24c-e2c9-4366-9335-eb7e870ecf90> , <http://dbtune.org/musicbrainz/resource/track/e1964ab8-88d0-4739-a304-d2731313fb27> , <http://dbtune.org/musicbrainz/resource/track/5c53a4c9-245c-4f01-a2f6-a6487e004ad0> , <http://dbtune.org/musicbrainz/resource/track/ef5e72eb-28cc-45c5-b613-128c20e96c1f> , <http://dbtune.org/musicbrainz/resource/track/4e9c68f4-ed6e-4451-b1d4-30c59276f800> , <http://dbtune.org/musicbrainz/resource/track/9a9d11f7-eaf1-4a81-872a-76d0a2d2a4e9> , <http://dbtune.org/musicbrainz/resource/track/f965e59d-3650-439d-9f4b-85dc5a242de9> , <http://dbtune.org/musicbrainz/resource/track/3fd8e724-860e-4c00-9803-8a53558b3937> , <http://dbtune.org/musicbrainz/resource/track/95c159a4-906d-4076-8a0a-dfa3385bb467> , <http://dbtune.org/musicbrainz/resource/track/79464be0-6302-476f-960b-13e3dcfbd8e4> , <http://dbtune.org/musicbrainz/resource/track/aa156f7c-b9f0-4bc2-a327-97cd3cbbb3f3> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/de0222a6-e1c4-403d-8b01-3f66d505061b> ;
+      foaf:page "715593780" .
+
+<http://dbtune.org/musicbrainz/data/record/b7dac6ee-a8aa-4c5c-94b2-4595f8770418>
+      rdfs:label "RDF Description of Time Signatures: A Career Retrospective (disc 3)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/b7dac6ee-a8aa-4c5c-94b2-4595f8770418> .
+
+<http://dbtune.org/musicbrainz/resource/master/b7dac6ee-a8aa-4c5c-94b2-4595f8770418>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/b7dac6ee-a8aa-4c5c-94b2-4595f8770418> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/b7dac6ee-a8aa-4c5c-94b2-4595f8770418>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fb7dac6ee-a8aa-4c5c-94b2-4595f8770418%3E> .
+
+<http://ec1.images-amazon.com/images/P/B00004S51G.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00004S51G.01.MZZZZZZZ.jpg%3E> .

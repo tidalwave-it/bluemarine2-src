@@ -131,6 +131,12 @@ public class AudioMetadata extends MetadataSupport
 //                  }
 //              }
           }
+        // FIXME: should we be more tolerant in general and expect an exception for every tag?
+        // e.g. for wav files
+        catch (UnsupportedOperationException e)
+          {
+            log.error("Unsupported tag in " + audioFile, e.toString());
+          }
         catch (IOException | CannotReadException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
           {
             log.error("While reading " + audioFile, path);  

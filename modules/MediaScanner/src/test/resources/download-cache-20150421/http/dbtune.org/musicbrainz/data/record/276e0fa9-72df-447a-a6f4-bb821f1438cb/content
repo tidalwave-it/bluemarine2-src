@@ -1,0 +1,65 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000004702>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000004702%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/276e0fa9-72df-447a-a6f4-bb821f1438cb>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/276e0fa9-72df-447a-a6f4-bb821f1438cb> .
+
+<http://musicbrainz.org/album/276e0fa9-72df-447a-a6f4-bb821f1438cb>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F276e0fa9-72df-447a-a6f4-bb821f1438cb%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://ec1.images-amazon.com/images/P/B000004702.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000004702.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/276e0fa9-72df-447a-a6f4-bb821f1438cb>
+      a       mo:Record ;
+      rdfs:label "Let's Do It: Best of the Verve Years (disc 1)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000004702" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000004702.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "21"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/281163> , <http://dbtune.org/musicbrainz/resource/toc/173786> ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Let's Do It: Best of the Verve Years (disc 1)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000004702> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000004702.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000004702> ;
+      mo:musicbrainz <http://musicbrainz.org/album/276e0fa9-72df-447a-a6f4-bb821f1438cb> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/2650b486-9358-48b6-8577-5ee6013a0703> , <http://dbtune.org/musicbrainz/resource/track/3066b063-a768-40e0-8cbd-8c86ca9ca45a> , <http://dbtune.org/musicbrainz/resource/track/c5848257-43c0-404d-9923-54c58f79a5fc> , <http://dbtune.org/musicbrainz/resource/track/52443556-2acb-4b81-851d-6d728e5b5979> , <http://dbtune.org/musicbrainz/resource/track/1f35fcd4-721d-46e7-8416-6144483baf88> , <http://dbtune.org/musicbrainz/resource/track/f35fc5db-47fb-4c7c-adfe-9af9ce68e87e> , <http://dbtune.org/musicbrainz/resource/track/a566288a-a0bd-4e06-9e26-8895f18b8723> , <http://dbtune.org/musicbrainz/resource/track/c9e75145-631b-4fcb-bfbe-a37618ed342d> , <http://dbtune.org/musicbrainz/resource/track/e90fdb35-5e27-4d5f-8401-45c4fbcc4f47> , <http://dbtune.org/musicbrainz/resource/track/d2b4013f-4450-4ca4-95ff-201b15597861> , <http://dbtune.org/musicbrainz/resource/track/8434c804-79ce-4dc5-9158-73297980b4e0> , <http://dbtune.org/musicbrainz/resource/track/a30d6f46-d2c8-49c7-8ed5-6847812b239d> , <http://dbtune.org/musicbrainz/resource/track/c9f8069e-4d4d-4096-a270-192327b2f3bf> , <http://dbtune.org/musicbrainz/resource/track/86391ea3-232a-45af-871e-b03b5ddff065> , <http://dbtune.org/musicbrainz/resource/track/e5a529af-e083-42e8-827e-a46b1ce37a0e> , <http://dbtune.org/musicbrainz/resource/track/f90565a5-1757-4904-bd31-79ad98f7b0fe> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/eea8a864-fcda-4602-9569-38ab446decd6> ;
+      foaf:page "443187841" .
+
+<http://images.amazon.com/images/P/B000004702>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000004702%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/276e0fa9-72df-447a-a6f4-bb821f1438cb>
+      rdfs:label "RDF Description of Let's Do It: Best of the Verve Years (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/276e0fa9-72df-447a-a6f4-bb821f1438cb> .

@@ -1,0 +1,51 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/21ab9c5c-e2e5-4abb-ac83-d6e98b3f2e83>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/21ab9c5c-e2e5-4abb-ac83-d6e98b3f2e83> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/21ab9c5c-e2e5-4abb-ac83-d6e98b3f2e83>
+      rdfs:label "RDF Description of Musica de Camera e da chiesa/London Baroque, Charles Mediam" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/21ab9c5c-e2e5-4abb-ac83-d6e98b3f2e83> .
+
+<http://musicbrainz.org/album/21ab9c5c-e2e5-4abb-ac83-d6e98b3f2e83>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F21ab9c5c-e2e5-4abb-ac83-d6e98b3f2e83%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/21ab9c5c-e2e5-4abb-ac83-d6e98b3f2e83>
+      a       mo:Record ;
+      rdfs:label "Musica de Camera e da chiesa/London Baroque, Charles Mediam" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:tracks "40"^^xsd:int ;
+      dc:date "1986-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Musica de Camera e da chiesa/London Baroque, Charles Mediam" ;
+      mo:musicbrainz <http://musicbrainz.org/album/21ab9c5c-e2e5-4abb-ac83-d6e98b3f2e83> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/523322> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/8d0dfddb-d704-4d7d-b4f3-66fb14f5ef59> , <http://dbtune.org/musicbrainz/resource/track/3f67dda9-33e5-4a57-95ae-92ce8436c350> , <http://dbtune.org/musicbrainz/resource/track/3bc89762-eb51-4e51-8893-8814bee9fca3> , <http://dbtune.org/musicbrainz/resource/track/846ec4da-36f0-483f-add9-3d53347608fd> , <http://dbtune.org/musicbrainz/resource/track/be0f2a36-0f6a-4669-a562-c325015dae6d> , <http://dbtune.org/musicbrainz/resource/track/423dddd2-4cb5-4cdb-824d-6f9a78717b8f> , <http://dbtune.org/musicbrainz/resource/track/6b49aa1e-0a2d-4a73-afd3-82d99d9f19f9> , <http://dbtune.org/musicbrainz/resource/track/28809677-6baf-4ae3-ac6b-8cdadeb5eb7b> , <http://dbtune.org/musicbrainz/resource/track/bf6ad3fc-3281-4cf8-90d1-85aa7047a772> , <http://dbtune.org/musicbrainz/resource/track/a49f23c3-1aca-4419-b5ae-e508d6c42ae8> , <http://dbtune.org/musicbrainz/resource/track/47d55055-2bdc-4020-a541-a2430979aba3> , <http://dbtune.org/musicbrainz/resource/track/a71e7156-b943-406e-8832-a9648d9e0c3b> , <http://dbtune.org/musicbrainz/resource/track/675d3323-a6dd-45f9-9476-c44748a1c9ff> , <http://dbtune.org/musicbrainz/resource/track/011ad8cf-6448-47d2-8f62-75bae59a9a8d> , <http://dbtune.org/musicbrainz/resource/track/79e0cc4e-1201-43d1-bc1b-e9c4135c4705> , <http://dbtune.org/musicbrainz/resource/track/0dd3652e-9222-412c-8d7b-a806d416a143> , <http://dbtune.org/musicbrainz/resource/track/85ef88a4-4eed-49f1-aacf-ae503f4bd086> , <http://dbtune.org/musicbrainz/resource/track/1f727eeb-267d-4b63-8a32-e24f9293d557> , <http://dbtune.org/musicbrainz/resource/track/99847acd-cf10-4fcb-97a5-173b42a6588d> , <http://dbtune.org/musicbrainz/resource/track/244be0b5-1a4a-4c6e-b72c-2479f3bb495d> , <http://dbtune.org/musicbrainz/resource/track/719688ae-f4ee-4db4-929e-d7f1b3645d37> , <http://dbtune.org/musicbrainz/resource/track/0ac645bd-b841-4545-8ea0-04aa501a5a28> , <http://dbtune.org/musicbrainz/resource/track/5dfff887-fe5c-49ce-8b04-6e755ca9ba82> , <http://dbtune.org/musicbrainz/resource/track/c12a11d8-4745-41c3-865b-9a6b59e82be8> , <http://dbtune.org/musicbrainz/resource/track/863761fd-ada7-4bcc-bc26-baf386443321> , <http://dbtune.org/musicbrainz/resource/track/b644f86f-971c-4b9a-a0b6-ca8dacf4a8ee> , <http://dbtune.org/musicbrainz/resource/track/cb0ab74d-5d5d-41c4-a000-7dda7bbd009c> , <http://dbtune.org/musicbrainz/resource/track/ee329277-ccf8-4ce4-9fa2-b87f670f9534> , <http://dbtune.org/musicbrainz/resource/track/40d5dd83-179e-40c3-97a3-3c702ac72654> , <http://dbtune.org/musicbrainz/resource/track/646b31aa-c36e-43df-9318-4bc5851c9727> , <http://dbtune.org/musicbrainz/resource/track/af929fc2-736a-4a1f-84f2-7c7f16a5c3a3> , <http://dbtune.org/musicbrainz/resource/track/54331d60-62b2-414f-9bb7-e7dd72d544b6> , <http://dbtune.org/musicbrainz/resource/track/ea70ef4b-a289-48a4-8b41-26d00b6a1fc0> , <http://dbtune.org/musicbrainz/resource/track/e29c3779-187a-48c7-b3ab-b567288c8de3> , <http://dbtune.org/musicbrainz/resource/track/e45a60fa-4a2e-4051-8ca0-d77837041ccc> , <http://dbtune.org/musicbrainz/resource/track/4f45e6c8-3d1b-425f-aa4e-32d8b263949c> , <http://dbtune.org/musicbrainz/resource/track/53bd430b-1b91-40c3-9d77-570ceffcb411> , <http://dbtune.org/musicbrainz/resource/track/de60953b-55e6-4bf0-92d3-9fd4814ae5c8> , <http://dbtune.org/musicbrainz/resource/track/11741298-48ab-417f-b756-abecefd4591f> , <http://dbtune.org/musicbrainz/resource/track/cb30a00c-914d-4e0b-aca3-43fcfc0ab6c6> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/ad79836d-9849-44df-8789-180bbc823f3c> ;
+      foaf:page "493496450" .

@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/97b727f1-8f4e-42fc-ac00-cc87536273aa>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F97b727f1-8f4e-42fc-ac00-cc87536273aa%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/97b727f1-8f4e-42fc-ac00-cc87536273aa>
+      a       mo:Record ;
+      rdfs:label "Forrest Gump (disc 1)" ;
+      vocab:album_attributes
+              "{0,5,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000002AQQ" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B000002AQQ.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "8"^^xsd:int ;
+      vocab:albummeta_puids
+              "134"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/135069> , <http://dbtune.org/musicbrainz/resource/toc/102869> , <http://dbtune.org/musicbrainz/resource/toc/188570> , <http://dbtune.org/musicbrainz/resource/toc/323354> , <http://dbtune.org/musicbrainz/resource/toc/157493> , <http://dbtune.org/musicbrainz/resource/toc/233918> , <http://dbtune.org/musicbrainz/resource/toc/2450> , <http://dbtune.org/musicbrainz/resource/toc/86881> ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:date "1994-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Forrest Gump (disc 1)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000002AQQ> ;
+      mo:image <http://images.amazon.com/images/P/B000002AQQ.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000002AQQ> ;
+      mo:musicbrainz <http://musicbrainz.org/album/97b727f1-8f4e-42fc-ac00-cc87536273aa> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/106052> , <http://dbtune.org/musicbrainz/resource/release/106062> , <http://dbtune.org/musicbrainz/resource/release/294725> , <http://dbtune.org/musicbrainz/resource/release/294728> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/8b16e63f-a790-49e9-a5fc-d22356d29625> , <http://dbtune.org/musicbrainz/resource/track/3bb572a3-7220-4612-9b62-c68ef026e2ba> , <http://dbtune.org/musicbrainz/resource/track/06beeb00-dd7b-4515-8c0b-68c6bc08b9ac> , <http://dbtune.org/musicbrainz/resource/track/b1dff632-45b9-48e0-af4f-8d03b2f1cbb1> , <http://dbtune.org/musicbrainz/resource/track/d5f94656-277c-4f30-8f50-499789be89b2> , <http://dbtune.org/musicbrainz/resource/track/11db74b6-303b-4a82-94ce-dc77c9143592> , <http://dbtune.org/musicbrainz/resource/track/84448684-924c-4b9a-a323-23ff39bec666> , <http://dbtune.org/musicbrainz/resource/track/73ed1bbc-a936-4e7e-97f7-e67c6323b1b9> , <http://dbtune.org/musicbrainz/resource/track/0a9fcffa-5ebd-4545-a299-ba75f79c8e95> , <http://dbtune.org/musicbrainz/resource/track/04370ee4-2370-498c-ba52-124baa512d06> , <http://dbtune.org/musicbrainz/resource/track/1460b1ea-cb2c-4dc5-9df3-5d2dc7143862> , <http://dbtune.org/musicbrainz/resource/track/580ca0a0-90c7-44d7-874d-08aa4ad62dd0> , <http://dbtune.org/musicbrainz/resource/track/c2d4ae08-5da0-4700-bb8d-6fad0fe520bf> , <http://dbtune.org/musicbrainz/resource/track/85323b77-8fce-47a1-ab0d-2366c5300115> , <http://dbtune.org/musicbrainz/resource/track/183bd03c-1225-4cc3-9746-6b1c50d24586> , <http://dbtune.org/musicbrainz/resource/track/9ce062b5-dcdb-4c84-931b-201e9d0806e7> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "252300500" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B000002AQQ.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002AQQ.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/97b727f1-8f4e-42fc-ac00-cc87536273aa>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/97b727f1-8f4e-42fc-ac00-cc87536273aa> .
+
+<http://images.amazon.com/images/P/B000002AQQ>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002AQQ%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/97b727f1-8f4e-42fc-ac00-cc87536273aa>
+      rdfs:label "RDF Description of Forrest Gump (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/97b727f1-8f4e-42fc-ac00-cc87536273aa> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000002AQQ>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000002AQQ%3E> .

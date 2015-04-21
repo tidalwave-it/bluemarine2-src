@@ -73,23 +73,27 @@ public class StatementManager
           }
         
         @Nonnull
-        public Builder with (final @Nonnull Optional<? extends Resource> subject, 
-                             final @Nonnull URI predicate,
-                             final @Nonnull Value object) 
+        public Builder withOptional (final @Nonnull Optional<? extends Resource> optionalSubject, 
+                                     final @Nonnull URI predicate,
+                                     final @Nonnull Value object) 
           {
-            return subject.isPresent()
-                    ? with(factory.createStatement(subject.get(), predicate, object)) 
-                    : this;
+            return optionalSubject.map(subject -> with(subject, predicate, object)).orElse(this);
           }
         
         @Nonnull
-        public Builder with (final @Nonnull Optional<? extends Resource> subject, 
-                             final @Nonnull URI predicate,
-                             final @Nonnull Optional<? extends Value> object) 
+        public Builder withOptional (final @Nonnull Resource subject, 
+                                     final @Nonnull URI predicate,
+                                     final @Nonnull Optional<? extends Value> optionalObject)
+          { 
+            return optionalObject.map(object -> with(subject, predicate, object)).orElse(this);
+          }
+        
+        @Nonnull
+        public Builder withOptional (final @Nonnull Optional<? extends Resource> optionalSubject, 
+                                     final @Nonnull URI predicate,
+                                     final @Nonnull Optional<? extends Value> optionalObject) 
           {
-            return subject.isPresent() && object.isPresent() 
-                    ? with(factory.createStatement(subject.get(), predicate, object.get())) 
-                    : this;
+            return optionalObject.map(object -> withOptional(optionalSubject, predicate, object)).orElse(this);
           }
         
         @Nonnull
@@ -97,7 +101,7 @@ public class StatementManager
                              final @Nonnull URI predicate,
                              final @Nonnull Value object)
           { 
-            subjects.stream().forEach(subject -> with(subject, predicate, object)); // FIXME ?? this = with(...)
+            subjects.stream().forEach(subject -> with(subject, predicate, object)); // FIXME ?? this = withOptional(...)
             return this;
           }
         
@@ -110,7 +114,7 @@ public class StatementManager
             
             for (int i = 0; i < subjects.size(); i++)
               {
-                with(subjects.get(i), predicate, objects.get(i)); // FIXME ?? this = with(...)
+                with(subjects.get(i), predicate, objects.get(i)); // FIXME ?? this = withOptional(...)
               }
             
             return this;
@@ -121,29 +125,21 @@ public class StatementManager
                              final @Nonnull URI predicate,
                              final @Nonnull Stream<? extends Value> objects)
           { 
-            objects.forEach(object -> with(subject, predicate, object)); // FIXME ?? this = with(...)
+            objects.forEach(object -> with(subject, predicate, object)); // FIXME ?? this = withOptional(...)
             return this;
           }
         
         @Nonnull
-        public Builder with (final @Nonnull Optional<? extends Resource> subject, 
-                             final @Nonnull URI predicate,
-                             final @Nonnull Stream<? extends Value> objects)
+        public Builder withOptional (final @Nonnull Optional<? extends Resource> subject, 
+                                     final @Nonnull URI predicate,
+                                     final @Nonnull Stream<? extends Value> objects)
           {
             if (subject.isPresent())
               {
-                objects.forEach(object -> with(subject, predicate, object)); // FIXME ?? this = with(...)
+                objects.forEach(object -> Builder.this.withOptional(subject, predicate, object)); // FIXME ?? this = withOptional(...)
               }
     
             return this;
-          }
-        
-        @Nonnull
-        public Builder with (final @Nonnull Resource subject, 
-                             final @Nonnull URI predicate,
-                             final @Nonnull Optional<? extends Value> object)
-          { 
-            return object.isPresent() ? with(subject, predicate, object.get()) : this;
           }
         
         @Nonnull

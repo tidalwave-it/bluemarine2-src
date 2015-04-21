@@ -1,0 +1,63 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/e638c709-23bc-4cf5-b19a-f6fbec2cec6c>
+      a       mo:Record ;
+      rdfs:label "Michel Plays Petrucciani" ;
+      vocab:album_attributes
+              "{0,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:albummeta_asin
+              "B000005H63" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000005H63.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "11"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/9530> ;
+      vocab:tracks "9"^^xsd:int ;
+      dc:title "Michel Plays Petrucciani" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000005H63> ;
+      mo:image <http://images.amazon.com/images/P/B000005H63> , <http://ec1.images-amazon.com/images/P/B000005H63.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/e638c709-23bc-4cf5-b19a-f6fbec2cec6c> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/31d2e863-52a7-4fa4-b0bf-4052ffe65456> , <http://dbtune.org/musicbrainz/resource/track/5e7fd2e3-f743-4326-9105-ad63da32d85a> , <http://dbtune.org/musicbrainz/resource/track/eeb28e29-bea3-47a0-b600-d8cf935cfebb> , <http://dbtune.org/musicbrainz/resource/track/dff93a1f-d7c1-4423-9660-5aeba64ece6c> , <http://dbtune.org/musicbrainz/resource/track/f07ef0fb-8079-4b2a-9c5a-749efb4ab57e> , <http://dbtune.org/musicbrainz/resource/track/df0144fa-75e8-4ded-b4d8-a2f894f7764c> , <http://dbtune.org/musicbrainz/resource/track/feb080b4-9886-463e-b2d5-38bf71bcd48c> , <http://dbtune.org/musicbrainz/resource/track/ecd25896-c7b1-43c9-a1e3-d0c4aa444869> , <http://dbtune.org/musicbrainz/resource/track/dca6bc53-1e8e-45cb-ac30-ddbcfe2d4f39> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/2b75141c-05e9-42eb-ae63-6695d86cdc19> ;
+      foaf:page "480388301" .
+
+<http://dbtune.org/musicbrainz/data/record/e638c709-23bc-4cf5-b19a-f6fbec2cec6c>
+      rdfs:label "RDF Description of Michel Plays Petrucciani" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/e638c709-23bc-4cf5-b19a-f6fbec2cec6c> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000005H63>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000005H63%3E> .
+
+<http://images.amazon.com/images/P/B000005H63>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000005H63%3E> .
+
+<http://ec1.images-amazon.com/images/P/B000005H63.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000005H63.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/e638c709-23bc-4cf5-b19a-f6fbec2cec6c>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/e638c709-23bc-4cf5-b19a-f6fbec2cec6c> .
+
+<http://musicbrainz.org/album/e638c709-23bc-4cf5-b19a-f6fbec2cec6c>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fe638c709-23bc-4cf5-b19a-f6fbec2cec6c%3E> .

@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/a91c1355-fedc-4ec3-bfe2-2ea0613f5e64>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fa91c1355-fedc-4ec3-bfe2-2ea0613f5e64%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/a91c1355-fedc-4ec3-bfe2-2ea0613f5e64>
+      a       mo:Record ;
+      rdfs:label "Philadelphia" ;
+      vocab:album_attributes
+              "{0,5,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000029F1" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B0000029F1.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "7"^^xsd:int ;
+      vocab:albummeta_puids
+              "26"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/119436> , <http://dbtune.org/musicbrainz/resource/toc/116375> , <http://dbtune.org/musicbrainz/resource/toc/139744> , <http://dbtune.org/musicbrainz/resource/toc/232747> , <http://dbtune.org/musicbrainz/resource/toc/3125> , <http://dbtune.org/musicbrainz/resource/toc/116494> , <http://dbtune.org/musicbrainz/resource/toc/205070> ;
+      vocab:tracks "10"^^xsd:int ;
+      dc:date "1994-01-04" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Philadelphia" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000029F1> ;
+      mo:image <http://images.amazon.com/images/P/B0000029F1> , <http://images.amazon.com/images/P/B0000029F1.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/a91c1355-fedc-4ec3-bfe2-2ea0613f5e64> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/21677> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/311c6898-3d55-44f8-9c03-b269840e6951> , <http://dbtune.org/musicbrainz/resource/track/6b2b5d68-eb5b-4667-b87e-0bcdd6dc7477> , <http://dbtune.org/musicbrainz/resource/track/698d0396-c0ac-480c-9570-4c177b92fa82> , <http://dbtune.org/musicbrainz/resource/track/6852b3c0-b38d-4b21-9dfc-dc59b7d55ea9> , <http://dbtune.org/musicbrainz/resource/track/fb150101-0597-465d-8129-000bfa5cb83f> , <http://dbtune.org/musicbrainz/resource/track/383fe0c5-7457-4c78-88c3-2dae6622de1d> , <http://dbtune.org/musicbrainz/resource/track/2538e1fe-dad3-4077-a23a-878bbe7c1ef3> , <http://dbtune.org/musicbrainz/resource/track/cb168c71-29f7-4dd2-a000-c8ec957de4d1> , <http://dbtune.org/musicbrainz/resource/track/6def11b3-0044-436f-b986-b98a10a2bb5d> , <http://dbtune.org/musicbrainz/resource/track/e6824012-2a0b-4877-9689-9a98b9be27a4> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "580203589" .
+
+<http://images.amazon.com/images/P/B0000029F1>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000029F1%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/a91c1355-fedc-4ec3-bfe2-2ea0613f5e64>
+      rdfs:label "RDF Description of Philadelphia" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/a91c1355-fedc-4ec3-bfe2-2ea0613f5e64> .
+
+<http://images.amazon.com/images/P/B0000029F1.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000029F1.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/a91c1355-fedc-4ec3-bfe2-2ea0613f5e64>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/a91c1355-fedc-4ec3-bfe2-2ea0613f5e64> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000029F1>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000029F1%3E> .

@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/5e6a942f-4967-4b98-bf09-5bde6b32e22d>
+      a       mo:Record ;
+      rdfs:label "The Benny Carter Sessions" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "12"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/147780> ;
+      vocab:tracks "24"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Benny Carter Sessions" ;
+      mo:musicbrainz <http://musicbrainz.org/album/5e6a942f-4967-4b98-bf09-5bde6b32e22d> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/3d886a59-4d98-488b-8ac1-b8f113683a9e> , <http://dbtune.org/musicbrainz/resource/track/a3323e61-015b-42cc-a569-f485e3175020> , <http://dbtune.org/musicbrainz/resource/track/621f4e19-551e-4b1d-b0f8-f08c374a150a> , <http://dbtune.org/musicbrainz/resource/track/864e1751-0392-4afa-ad32-8e85d870674a> , <http://dbtune.org/musicbrainz/resource/track/f52436a5-38c4-4f79-b547-1902ae32ca32> , <http://dbtune.org/musicbrainz/resource/track/4a66b929-239b-4839-8e53-0114f71eae00> , <http://dbtune.org/musicbrainz/resource/track/f431a4d0-5fe1-42c5-b740-7267055f784d> , <http://dbtune.org/musicbrainz/resource/track/28808ba5-d521-4424-b116-0b97e197bc85> , <http://dbtune.org/musicbrainz/resource/track/95f935dd-5ce7-434e-8508-3996ce41488d> , <http://dbtune.org/musicbrainz/resource/track/7a00f012-188c-4d53-9b1d-f92da6ecca22> , <http://dbtune.org/musicbrainz/resource/track/1095c5bb-e1f6-4700-b756-a522aa8c0e93> , <http://dbtune.org/musicbrainz/resource/track/a73d87fb-61ca-4133-aa68-69e961212026> , <http://dbtune.org/musicbrainz/resource/track/d0c9cb84-7248-43c4-a0b1-88d72da0bd43> , <http://dbtune.org/musicbrainz/resource/track/8784bd07-f9a9-4abc-a44e-eeec592cbc01> , <http://dbtune.org/musicbrainz/resource/track/b95dbb1d-0c9d-45ca-9268-5876a8fd6369> , <http://dbtune.org/musicbrainz/resource/track/5a4d4ef5-6496-4f66-95ce-c807452d732d> , <http://dbtune.org/musicbrainz/resource/track/88947fc9-f4f4-4bbd-a04f-c4f29da7492a> , <http://dbtune.org/musicbrainz/resource/track/7a6c5102-fac9-49ad-9c31-9500435bde6a> , <http://dbtune.org/musicbrainz/resource/track/dee297e3-f9ee-44cd-be84-4d04e1c59a09> , <http://dbtune.org/musicbrainz/resource/track/6a036ae1-3fec-41b5-be49-571d1ef3e2bb> , <http://dbtune.org/musicbrainz/resource/track/791dfeb9-c136-43f5-9848-96562b7b4fb5> , <http://dbtune.org/musicbrainz/resource/track/f5bd86ed-bf0c-4602-8169-3fe5b44c72c8> , <http://dbtune.org/musicbrainz/resource/track/3903622a-cbd3-44c8-a65f-bcf02857410c> , <http://dbtune.org/musicbrainz/resource/track/06686058-1a4e-47ef-b735-7b506b629bf8> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/351d8bdf-33a1-45e2-8c04-c85fad20da55> ;
+      foaf:page "714277990" .
+
+<http://dbtune.org/musicbrainz/data/record/5e6a942f-4967-4b98-bf09-5bde6b32e22d>
+      rdfs:label "RDF Description of The Benny Carter Sessions" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/5e6a942f-4967-4b98-bf09-5bde6b32e22d> .
+
+<http://dbtune.org/musicbrainz/resource/master/5e6a942f-4967-4b98-bf09-5bde6b32e22d>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/5e6a942f-4967-4b98-bf09-5bde6b32e22d> .
+
+<http://musicbrainz.org/album/5e6a942f-4967-4b98-bf09-5bde6b32e22d>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F5e6a942f-4967-4b98-bf09-5bde6b32e22d%3E> .

@@ -1,0 +1,66 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/4055e921-4f6a-4628-b083-4c0e9b19faed>
+      a       mo:Record ;
+      rdfs:label "Copland Conducts Copland - Expanded Edition" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00138D16I" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00138D16I.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "23"^^xsd:int ;
+      vocab:tracks "25"^^xsd:int ;
+      dc:date "2002-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Copland Conducts Copland - Expanded Edition" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00138D16I> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B00138D16I.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B00138D16I> ;
+      mo:musicbrainz <http://musicbrainz.org/album/4055e921-4f6a-4628-b083-4c0e9b19faed> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/480487> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/11a97455-3c2d-42a5-bc11-a136f9ebb717> , <http://dbtune.org/musicbrainz/resource/track/48962374-b8dc-4149-a0b8-ded188ee870c> , <http://dbtune.org/musicbrainz/resource/track/d73b5b4b-0a93-4140-9b07-2545252c82a4> , <http://dbtune.org/musicbrainz/resource/track/b061125b-28c6-40fc-9239-11fb0260695a> , <http://dbtune.org/musicbrainz/resource/track/d2ab067c-2709-4aa4-8f2b-a1e36e5e2c6e> , <http://dbtune.org/musicbrainz/resource/track/e0f3c234-21bc-46b2-992f-e3079fa0955d> , <http://dbtune.org/musicbrainz/resource/track/8415955d-03c2-4e63-b16c-8ea6ae953cc8> , <http://dbtune.org/musicbrainz/resource/track/dabb94dd-7ad5-4ec2-9c1f-64263d9e7ee6> , <http://dbtune.org/musicbrainz/resource/track/1bcf2d97-19b3-40ff-afca-2a6a0150611d> , <http://dbtune.org/musicbrainz/resource/track/e4571858-17bc-4b52-aa9d-95c768a154f6> , <http://dbtune.org/musicbrainz/resource/track/4e7b8512-2421-423b-ad64-f53ef345991e> , <http://dbtune.org/musicbrainz/resource/track/37259931-231a-436f-8ccc-37abdf3c96a6> , <http://dbtune.org/musicbrainz/resource/track/3d068fde-df55-442e-b1b7-35bb2beffc3d> , <http://dbtune.org/musicbrainz/resource/track/f95fffea-7534-4c95-ac02-1b81185f6562> , <http://dbtune.org/musicbrainz/resource/track/e724b5b0-3590-4450-bc5b-8a13c4205bbb> , <http://dbtune.org/musicbrainz/resource/track/860628b9-08a5-4f15-a35e-830b310b5b2d> , <http://dbtune.org/musicbrainz/resource/track/cddc732d-b024-4acf-8d5c-9df24f377ca3> , <http://dbtune.org/musicbrainz/resource/track/da5cb196-4b95-462c-8926-8694b6f37206> , <http://dbtune.org/musicbrainz/resource/track/548c6744-4973-409e-8625-e98e9ffceaf8> , <http://dbtune.org/musicbrainz/resource/track/1177fe9b-5e8f-4227-9ed5-239a553f2845> , <http://dbtune.org/musicbrainz/resource/track/3a668c22-0683-4cb9-86d6-9d273de9293b> , <http://dbtune.org/musicbrainz/resource/track/46640eeb-911e-4ebe-8f82-0f33a77ebdb9> , <http://dbtune.org/musicbrainz/resource/track/928c0252-a00d-4ebb-906f-870fa50eabc5> , <http://dbtune.org/musicbrainz/resource/track/c1683096-c7e5-4b19-9c88-1210abcbe33a> , <http://dbtune.org/musicbrainz/resource/track/ceb5574f-95c3-4b74-9ad6-651bd792aa9f> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09> ;
+      foaf:page "151565391" .
+
+<http://ec1.images-amazon.com/images/P/B00138D16I.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00138D16I.01.MZZZZZZZ.jpg%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/4055e921-4f6a-4628-b083-4c0e9b19faed>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/4055e921-4f6a-4628-b083-4c0e9b19faed> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00138D16I>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00138D16I%3E> .
+
+<http://images.amazon.com/images/P/B00138D16I>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00138D16I%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/4055e921-4f6a-4628-b083-4c0e9b19faed>
+      rdfs:label "RDF Description of Copland Conducts Copland - Expanded Edition" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/4055e921-4f6a-4628-b083-4c0e9b19faed> .
+
+<http://musicbrainz.org/album/4055e921-4f6a-4628-b083-4c0e9b19faed>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F4055e921-4f6a-4628-b083-4c0e9b19faed%3E> .

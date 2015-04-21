@@ -1,0 +1,71 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B000001ZSD.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000001ZSD.01.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000001ZSD>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000001ZSD%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/2f8b76c6-d705-4395-bac4-0a8abce3316c>
+      a       mo:Record ;
+      rdfs:label "Waiting for Cousteau" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000001ZSD" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B000001ZSD.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "4"^^xsd:int ;
+      vocab:albummeta_puids
+              "19"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/2975> , <http://dbtune.org/musicbrainz/resource/toc/57695> , <http://dbtune.org/musicbrainz/resource/toc/249904> , <http://dbtune.org/musicbrainz/resource/toc/215142> ;
+      vocab:tracks "4"^^xsd:int ;
+      dc:date "1990-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Waiting for Cousteau" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000001ZSD> ;
+      mo:image <http://images.amazon.com/images/P/B000001ZSD.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000001ZSD> ;
+      mo:musicbrainz <http://musicbrainz.org/album/2f8b76c6-d705-4395-bac4-0a8abce3316c> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/358334> , <http://dbtune.org/musicbrainz/resource/release/451379> , <http://dbtune.org/musicbrainz/resource/release/34746> , <http://dbtune.org/musicbrainz/resource/release/358335> , <http://dbtune.org/musicbrainz/resource/release/34747> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/b5edbd67-f4f7-4097-b690-762944bb9616> , <http://dbtune.org/musicbrainz/resource/track/d1f40dd8-3e06-42d7-8000-c2c00706e3da> , <http://dbtune.org/musicbrainz/resource/track/5aeeff80-75b9-4297-9ace-176133630c02> , <http://dbtune.org/musicbrainz/resource/track/083020eb-c2db-4726-bb9e-b3744a2c60ff> ;
+      =       <http://dbpedia.org/resource/Waiting_for_Cousteau> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> ;
+      foaf:page "807753039" .
+
+<http://dbtune.org/musicbrainz/resource/master/2f8b76c6-d705-4395-bac4-0a8abce3316c>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/2f8b76c6-d705-4395-bac4-0a8abce3316c> .
+
+<http://images.amazon.com/images/P/B000001ZSD>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000001ZSD%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/2f8b76c6-d705-4395-bac4-0a8abce3316c>
+      rdfs:label "RDF Description of Waiting for Cousteau" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/2f8b76c6-d705-4395-bac4-0a8abce3316c> .
+
+<http://musicbrainz.org/album/2f8b76c6-d705-4395-bac4-0a8abce3316c>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F2f8b76c6-d705-4395-bac4-0a8abce3316c%3E> .
+
+<http://dbpedia.org/resource/Waiting_for_Cousteau>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FWaiting_for_Cousteau%3E> .

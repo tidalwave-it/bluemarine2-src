@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B00000273Y>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000273Y%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/2c705df5-14d8-415c-bc5a-01fa6495e128>
+      rdfs:label "RDF Description of Standard Time, Volume 3: The Resolution of Romance" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/2c705df5-14d8-415c-bc5a-01fa6495e128> .
+
+<http://images.amazon.com/images/P/B00000273Y.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000273Y.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/2c705df5-14d8-415c-bc5a-01fa6495e128>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/2c705df5-14d8-415c-bc5a-01fa6495e128> .
+
+<http://dbtune.org/musicbrainz/resource/record/2c705df5-14d8-415c-bc5a-01fa6495e128>
+      a       mo:Record ;
+      rdfs:label "Standard Time, Volume 3: The Resolution of Romance" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00000273Y" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B00000273Y.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "27"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/68815> ;
+      vocab:tracks "21"^^xsd:int ;
+      dc:date "1990-05-15" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Standard Time, Volume 3: The Resolution of Romance" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00000273Y> ;
+      mo:image <http://images.amazon.com/images/P/B00000273Y> , <http://images.amazon.com/images/P/B00000273Y.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/2c705df5-14d8-415c-bc5a-01fa6495e128> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/188696> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/3e689c15-4875-4c5b-a47f-4eddac814f59> , <http://dbtune.org/musicbrainz/resource/track/d85b69fc-ccaa-43d0-9b62-91d200190fe7> , <http://dbtune.org/musicbrainz/resource/track/999f9cd6-67f9-49e2-ad41-ab2edf7a6361> , <http://dbtune.org/musicbrainz/resource/track/0e11cd0d-1217-47eb-9953-fee6b6d20165> , <http://dbtune.org/musicbrainz/resource/track/67396090-8caa-4725-98d3-6ec12bbbb922> , <http://dbtune.org/musicbrainz/resource/track/dd7dbf28-f89a-468d-9767-770c275825f9> , <http://dbtune.org/musicbrainz/resource/track/39f57e64-296d-4e52-b82a-d9348e027fee> , <http://dbtune.org/musicbrainz/resource/track/ed822703-faad-4767-87d1-73e686e26597> , <http://dbtune.org/musicbrainz/resource/track/3ac7b70b-e83d-47fc-8cdc-14bb8aa3d2ad> , <http://dbtune.org/musicbrainz/resource/track/405f59ee-00b0-4dd2-a990-37d8c28f48cd> , <http://dbtune.org/musicbrainz/resource/track/ce6ea26b-3e18-41dc-abcf-377baef2859f> , <http://dbtune.org/musicbrainz/resource/track/68ffff0b-ec66-4788-bffa-af8bb0904dd2> , <http://dbtune.org/musicbrainz/resource/track/bd8c11ce-432c-4b00-8acb-d6ee910481f4> , <http://dbtune.org/musicbrainz/resource/track/1b0fe4e7-7ee7-4be3-af3d-d3dbdc484488> , <http://dbtune.org/musicbrainz/resource/track/3163d756-2074-44c4-ab80-c3e20a2ac964> , <http://dbtune.org/musicbrainz/resource/track/53e0d075-866e-4af8-99ab-aa0c5dd2db0a> , <http://dbtune.org/musicbrainz/resource/track/2f3cde6e-e314-4fbb-b311-2c393d03219e> , <http://dbtune.org/musicbrainz/resource/track/03edcb6a-0973-461c-ab97-140c2134aa61> , <http://dbtune.org/musicbrainz/resource/track/3f4c1439-1921-43ef-8d51-b045f7cdeb53> , <http://dbtune.org/musicbrainz/resource/track/57662d52-7d25-4dbd-941c-b949257b90af> , <http://dbtune.org/musicbrainz/resource/track/29c976b0-cc92-4ce1-8678-70635288f83c> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/0d74dcc7-5684-4695-830f-a9846aad8ba9> ;
+      foaf:page "693189794" .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00000273Y>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00000273Y%3E> .
+
+<http://musicbrainz.org/album/2c705df5-14d8-415c-bc5a-01fa6495e128>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F2c705df5-14d8-415c-bc5a-01fa6495e128%3E> .

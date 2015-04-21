@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/e303682b-9493-4016-8129-bf95ef9316bd>
+      rdfs:label "RDF Description of Instrumental Music: Best World's Hits. (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/e303682b-9493-4016-8129-bf95ef9316bd> .
+
+<http://dbtune.org/musicbrainz/resource/master/e303682b-9493-4016-8129-bf95ef9316bd>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/e303682b-9493-4016-8129-bf95ef9316bd> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/e303682b-9493-4016-8129-bf95ef9316bd>
+      a       mo:Record ;
+      rdfs:label "Instrumental Music: Best World's Hits. (disc 1)" ;
+      vocab:album_attributes
+              "{0,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "20"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/34859> ;
+      vocab:tracks "19"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Instrumental Music: Best World's Hits. (disc 1)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/e303682b-9493-4016-8129-bf95ef9316bd> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/abc53b64-a7a1-422f-b8ae-f05d55f5bc12> , <http://dbtune.org/musicbrainz/resource/track/00206895-a18f-43df-832c-3e8003ea1df8> , <http://dbtune.org/musicbrainz/resource/track/dba2a5bf-6bb9-41d7-be80-aebbd4b585e6> , <http://dbtune.org/musicbrainz/resource/track/517af82b-7041-43bc-afde-c903e2346be4> , <http://dbtune.org/musicbrainz/resource/track/bb0436f8-9ee3-4c64-8270-c3ac452510ed> , <http://dbtune.org/musicbrainz/resource/track/efe969d7-bc1a-44ba-b9b7-bf813a709cb5> , <http://dbtune.org/musicbrainz/resource/track/4d2b2bda-cb88-4a96-a88d-2d1fa6a8baf8> , <http://dbtune.org/musicbrainz/resource/track/e18bb09b-9c5e-4051-9a39-9e5c4c2d9e2b> , <http://dbtune.org/musicbrainz/resource/track/3af83838-03cc-49e6-97f2-9ecb14eed11d> , <http://dbtune.org/musicbrainz/resource/track/f09db5f8-f2c3-4e77-8f27-5c7019e88683> , <http://dbtune.org/musicbrainz/resource/track/77fa7c55-25ff-45eb-9af0-a6ae6870497d> , <http://dbtune.org/musicbrainz/resource/track/0d208c41-27a0-4007-ba30-8415e5771966> , <http://dbtune.org/musicbrainz/resource/track/d50910ac-d897-4f01-ac17-6b2b74fe9ce0> , <http://dbtune.org/musicbrainz/resource/track/5c35fff0-4ddc-4fac-9f88-8fe716f79e53> , <http://dbtune.org/musicbrainz/resource/track/d1d4ccb6-5c0f-4a73-9b09-e77db0060312> , <http://dbtune.org/musicbrainz/resource/track/2dd4dfaf-1059-48a1-bf74-b10e9dac8730> , <http://dbtune.org/musicbrainz/resource/track/0d1d70d5-3faa-43ab-8f2e-7ea31114a2a4> , <http://dbtune.org/musicbrainz/resource/track/837d409c-02f3-4bea-85cc-67522e15c09a> , <http://dbtune.org/musicbrainz/resource/track/d46f3c90-d1c4-4e9c-8d03-a309952c216b> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "351950454" .
+
+<http://musicbrainz.org/album/e303682b-9493-4016-8129-bf95ef9316bd>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fe303682b-9493-4016-8129-bf95ef9316bd%3E> .

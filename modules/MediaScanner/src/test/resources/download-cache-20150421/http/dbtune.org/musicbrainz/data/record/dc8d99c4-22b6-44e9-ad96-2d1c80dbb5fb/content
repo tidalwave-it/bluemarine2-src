@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/dc8d99c4-22b6-44e9-ad96-2d1c80dbb5fb>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fdc8d99c4-22b6-44e9-ad96-2d1c80dbb5fb%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/dc8d99c4-22b6-44e9-ad96-2d1c80dbb5fb>
+      a       mo:Record ;
+      rdfs:label "Wassermusik & 3 Konzerte (Musica Antiqua Köln feat. conductor: Reinhard Goebel)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000057CI" ;
+      vocab:albummeta_coverarturl
+              "http://images-eu.amazon.com/images/P/B0000057CI.03.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "3"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/130311> , <http://dbtune.org/musicbrainz/resource/toc/68525> , <http://dbtune.org/musicbrainz/resource/toc/157766> ;
+      vocab:tracks "22"^^xsd:int ;
+      dc:date "1984-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/deu> ;
+      dc:title "Wassermusik & 3 Konzerte (Musica Antiqua Köln feat. conductor: Reinhard Goebel)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000057CI> ;
+      mo:image <http://images-eu.amazon.com/images/P/B0000057CI.03.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B0000057CI> ;
+      mo:musicbrainz <http://musicbrainz.org/album/dc8d99c4-22b6-44e9-ad96-2d1c80dbb5fb> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/286124> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/81158852-0cf4-4057-a13e-dd32cca2dd3d> , <http://dbtune.org/musicbrainz/resource/track/7a4b7fac-a360-4a87-bb94-04e7fe3ccccf> , <http://dbtune.org/musicbrainz/resource/track/8eb9ef40-05f7-497e-8ea1-abea37f4ae81> , <http://dbtune.org/musicbrainz/resource/track/b88a48aa-73ef-4668-b12d-a19c18d1d1de> , <http://dbtune.org/musicbrainz/resource/track/34195188-a439-45d4-80aa-3f8267392b96> , <http://dbtune.org/musicbrainz/resource/track/1d8879c9-2ed9-486c-845c-427118409ec3> , <http://dbtune.org/musicbrainz/resource/track/d888758a-3086-4a5c-bddb-440ea9034201> , <http://dbtune.org/musicbrainz/resource/track/abd09dc8-9d37-44f2-96c6-912964fb34aa> , <http://dbtune.org/musicbrainz/resource/track/aed64503-62b2-48d7-93dd-c4476e97fea6> , <http://dbtune.org/musicbrainz/resource/track/5b32f3d4-1d60-42f7-af71-f833271f74dd> , <http://dbtune.org/musicbrainz/resource/track/1099feae-c17f-4729-8b4f-6c80ec8461e2> , <http://dbtune.org/musicbrainz/resource/track/e58ee0af-09dc-49e1-86a0-7fa639a3518a> , <http://dbtune.org/musicbrainz/resource/track/ea7cc2f6-5aa5-4e9e-9c99-5224e811a8dd> , <http://dbtune.org/musicbrainz/resource/track/e5c577b0-cfb2-456a-a62a-701d3b14027a> , <http://dbtune.org/musicbrainz/resource/track/ad91eba5-b6de-4f49-89ca-d0c62627d698> , <http://dbtune.org/musicbrainz/resource/track/8965470f-0091-43f7-9c94-90b84c39f0eb> , <http://dbtune.org/musicbrainz/resource/track/555c34ee-6410-409e-9577-aac4d64893a8> , <http://dbtune.org/musicbrainz/resource/track/91f98d47-ffbd-42f5-9846-31796df940ee> , <http://dbtune.org/musicbrainz/resource/track/56a85da5-eaea-4673-a7f3-4431e3c2757b> , <http://dbtune.org/musicbrainz/resource/track/1d7a40ba-0004-4c7d-97e7-681000b89cd6> , <http://dbtune.org/musicbrainz/resource/track/a62b2f03-5108-4e18-9822-dab6f1cf7638> , <http://dbtune.org/musicbrainz/resource/track/5e63e98c-7882-4b20-9773-ed99fedd6a76> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8f831f50-e409-47c3-8598-71a61bc8cfb3> ;
+      foaf:page "808079571" .
+
+<http://dbtune.org/musicbrainz/resource/master/dc8d99c4-22b6-44e9-ad96-2d1c80dbb5fb>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/dc8d99c4-22b6-44e9-ad96-2d1c80dbb5fb> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000057CI>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000057CI%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/dc8d99c4-22b6-44e9-ad96-2d1c80dbb5fb>
+      rdfs:label "RDF Description of Wassermusik & 3 Konzerte (Musica Antiqua Köln feat. conductor: Reinhard Goebel)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/dc8d99c4-22b6-44e9-ad96-2d1c80dbb5fb> .
+
+<http://images-eu.amazon.com/images/P/B0000057CI.03.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages-eu.amazon.com%2Fimages%2FP%2FB0000057CI.03.MZZZZZZZ.jpg%3E> .
+
+<http://images.amazon.com/images/P/B0000057CI>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000057CI%3E> .

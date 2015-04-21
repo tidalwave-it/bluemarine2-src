@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/12805a2d-810f-4c92-8c13-3dcd7dd2e92f>
+      a       mo:Record ;
+      rdfs:label "A Portrait of Django Reinhardt (disc 1)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000024VU6" ;
+      vocab:albummeta_coverarturl
+              "http://ec2.images-amazon.com/images/P/B000024VU6.03.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "20"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/23032> ;
+      vocab:tracks "24"^^xsd:int ;
+      dc:date "1997-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "A Portrait of Django Reinhardt (disc 1)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000024VU6> ;
+      mo:image <http://images.amazon.com/images/P/B000024VU6> , <http://ec2.images-amazon.com/images/P/B000024VU6.03.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/12805a2d-810f-4c92-8c13-3dcd7dd2e92f> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/136020> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/cd359b00-2a28-44d5-a615-cf6b757e5a95> , <http://dbtune.org/musicbrainz/resource/track/8c93f52d-4b26-4e8b-86bd-80a90457e4b6> , <http://dbtune.org/musicbrainz/resource/track/9164d361-b7f3-46bc-b252-97d8700c32bb> , <http://dbtune.org/musicbrainz/resource/track/f67c8c80-d6f5-404b-8a82-4d1d14c6db02> , <http://dbtune.org/musicbrainz/resource/track/d9bbd6dd-cbdd-49f1-86ae-a2ed7240b9c0> , <http://dbtune.org/musicbrainz/resource/track/2630395a-988f-4ba7-88da-db106a118f8b> , <http://dbtune.org/musicbrainz/resource/track/77efc292-0af0-45f7-982c-f7dd607d5ee2> , <http://dbtune.org/musicbrainz/resource/track/46cdc937-3a84-453a-ae4a-1261957c2ff1> , <http://dbtune.org/musicbrainz/resource/track/41bce132-8274-4efd-ab67-4446349f51e4> , <http://dbtune.org/musicbrainz/resource/track/b06c8487-75c4-432a-af27-6d6b7dff9891> , <http://dbtune.org/musicbrainz/resource/track/9e8dd0a6-3d4f-4e6a-9464-0fa606213683> , <http://dbtune.org/musicbrainz/resource/track/3e020cc6-d5b4-41ae-9f94-36af1472698d> , <http://dbtune.org/musicbrainz/resource/track/f9c3231c-6419-4fac-bb8a-c7ad24c6bbca> , <http://dbtune.org/musicbrainz/resource/track/85e40524-04c8-4550-83c9-efa2c3788dee> , <http://dbtune.org/musicbrainz/resource/track/59459cd5-c870-4423-8d22-9f291823db5b> , <http://dbtune.org/musicbrainz/resource/track/eec52e70-12f6-43fc-86c9-bde34d9fe4dd> , <http://dbtune.org/musicbrainz/resource/track/763505ef-ef0d-4d43-ab1c-353bd3e49ea3> , <http://dbtune.org/musicbrainz/resource/track/ced90a0d-93a9-4895-898d-01090a1e232a> , <http://dbtune.org/musicbrainz/resource/track/25dc5e80-fc0b-4087-9443-ea8b8fb11ff2> , <http://dbtune.org/musicbrainz/resource/track/79081649-f705-4933-b94f-f299cf4b05bb> , <http://dbtune.org/musicbrainz/resource/track/018d9fe4-63b2-43ac-85c5-5edf0cbdbef8> , <http://dbtune.org/musicbrainz/resource/track/92fd0965-b3d3-477e-89fc-6b71d89ff4ee> , <http://dbtune.org/musicbrainz/resource/track/439bf474-a344-43f7-98d8-7f2a026af54d> , <http://dbtune.org/musicbrainz/resource/track/960d8244-4d57-4e55-af9a-2787ca25c2f5> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> ;
+      foaf:page "68731509" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000024VU6>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000024VU6%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/12805a2d-810f-4c92-8c13-3dcd7dd2e92f>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/12805a2d-810f-4c92-8c13-3dcd7dd2e92f> .
+
+<http://musicbrainz.org/album/12805a2d-810f-4c92-8c13-3dcd7dd2e92f>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F12805a2d-810f-4c92-8c13-3dcd7dd2e92f%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/12805a2d-810f-4c92-8c13-3dcd7dd2e92f>
+      rdfs:label "RDF Description of A Portrait of Django Reinhardt (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/12805a2d-810f-4c92-8c13-3dcd7dd2e92f> .
+
+<http://images.amazon.com/images/P/B000024VU6>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000024VU6%3E> .
+
+<http://ec2.images-amazon.com/images/P/B000024VU6.03.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec2.images-amazon.com%2Fimages%2FP%2FB000024VU6.03.MZZZZZZZ.jpg%3E> .

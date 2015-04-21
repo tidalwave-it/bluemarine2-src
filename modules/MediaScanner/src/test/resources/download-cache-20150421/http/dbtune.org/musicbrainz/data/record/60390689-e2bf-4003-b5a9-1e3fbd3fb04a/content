@@ -1,0 +1,51 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/60390689-e2bf-4003-b5a9-1e3fbd3fb04a>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/60390689-e2bf-4003-b5a9-1e3fbd3fb04a> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/60390689-e2bf-4003-b5a9-1e3fbd3fb04a>
+      rdfs:label "RDF Description of Viva Rei Ferrando" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/60390689-e2bf-4003-b5a9-1e3fbd3fb04a> .
+
+<http://dbtune.org/musicbrainz/resource/record/60390689-e2bf-4003-b5a9-1e3fbd3fb04a>
+      a       mo:Record ;
+      rdfs:label "Viva Rei Ferrando" ;
+      vocab:album_attributes
+              "{0}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:tracks "19"^^xsd:int ;
+      dc:title "Viva Rei Ferrando" ;
+      mo:musicbrainz <http://musicbrainz.org/album/60390689-e2bf-4003-b5a9-1e3fbd3fb04a> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/93f8c321-8620-4fa4-9241-0239d88b6418> , <http://dbtune.org/musicbrainz/resource/track/95577d46-33ef-4616-b5df-b0cfcfbeeb71> , <http://dbtune.org/musicbrainz/resource/track/bd334ca8-f021-4f15-9134-318e52d09cc0> , <http://dbtune.org/musicbrainz/resource/track/86b51d44-6815-4234-9e6b-486a1cd44902> , <http://dbtune.org/musicbrainz/resource/track/899ad100-75e7-42b5-ab52-a7b429227403> , <http://dbtune.org/musicbrainz/resource/track/29035e01-4d22-4c25-8b43-2e2d91d3cdc8> , <http://dbtune.org/musicbrainz/resource/track/05df50c6-568d-4a55-b154-7c8c524330ee> , <http://dbtune.org/musicbrainz/resource/track/3f0ddd57-196c-4bb9-b30f-1d620127afcc> , <http://dbtune.org/musicbrainz/resource/track/4eeeac5a-88f7-45c5-9937-84ad3e646cb0> , <http://dbtune.org/musicbrainz/resource/track/9605a565-e2b1-4e3c-8ab8-a704aa09a263> , <http://dbtune.org/musicbrainz/resource/track/048ec2b8-1b1d-407d-a16d-00d3a56214ea> , <http://dbtune.org/musicbrainz/resource/track/5370f2a7-d0d6-42a4-b13b-8c7ab913dda0> , <http://dbtune.org/musicbrainz/resource/track/3e7829c4-5496-4981-a07a-f62b12421be6> , <http://dbtune.org/musicbrainz/resource/track/3ae0b128-d861-42a6-b381-452ffa3f6dc1> , <http://dbtune.org/musicbrainz/resource/track/c74ce4cc-745b-486c-9971-5c039f64bfa0> , <http://dbtune.org/musicbrainz/resource/track/2cdfcdb5-25df-4b94-aa49-8c679b9ea00a> , <http://dbtune.org/musicbrainz/resource/track/7a0aa6ba-625d-4eb4-9685-da5c5c61dac7> , <http://dbtune.org/musicbrainz/resource/track/81e8a1af-d919-428a-ba58-d72ae8864d08> , <http://dbtune.org/musicbrainz/resource/track/cc3e0b3a-421a-4165-b26f-d501cf689295> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3a9f0e21-5796-4f04-bd4c-3deafd59ad80> ;
+      foaf:page "782993459" .
+
+<http://musicbrainz.org/album/60390689-e2bf-4003-b5a9-1e3fbd3fb04a>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F60390689-e2bf-4003-b5a9-1e3fbd3fb04a%3E> .

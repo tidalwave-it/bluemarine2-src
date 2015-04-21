@@ -1,0 +1,50 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/723052c1-ce18-420b-8a68-7b67463b2a63>
+      a       mo:Record ;
+      rdfs:label "Chrismas Concertos" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/285020> ;
+      vocab:tracks "11"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/ita> ;
+      dc:title "Chrismas Concertos" ;
+      mo:musicbrainz <http://musicbrainz.org/album/723052c1-ce18-420b-8a68-7b67463b2a63> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/b4aab4ca-be71-46ca-b7c9-b6ca95b03cb2> , <http://dbtune.org/musicbrainz/resource/track/c8ec175a-77ef-411e-b35d-9422ca2b93dd> , <http://dbtune.org/musicbrainz/resource/track/d41c5954-2108-4cf7-8416-e52e8c83441b> , <http://dbtune.org/musicbrainz/resource/track/e089918d-d631-4bb2-88ae-d4f807130987> , <http://dbtune.org/musicbrainz/resource/track/e94e0989-d4c7-4323-93bb-ccf73593e949> , <http://dbtune.org/musicbrainz/resource/track/0900f0cb-230f-4632-bd87-650801e5fdba> , <http://dbtune.org/musicbrainz/resource/track/b3a11a65-387b-4b36-a546-e3514e55556b> , <http://dbtune.org/musicbrainz/resource/track/7e74f2f7-ccf8-4aa7-b45a-b2cb84d6fd80> , <http://dbtune.org/musicbrainz/resource/track/fa086dff-3567-49f6-b11b-d5206ec36260> , <http://dbtune.org/musicbrainz/resource/track/aa578ca6-a34b-4f29-bec1-1768b7d9613f> , <http://dbtune.org/musicbrainz/resource/track/d9a20b2b-6bd5-4a41-a5ff-269330641541> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/5c8fd1e4-574d-495f-9a24-2dfaadf2e8c0> ;
+      foaf:page "144288398" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/723052c1-ce18-420b-8a68-7b67463b2a63>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/723052c1-ce18-420b-8a68-7b67463b2a63> .
+
+<http://dbtune.org/musicbrainz/data/record/723052c1-ce18-420b-8a68-7b67463b2a63>
+      rdfs:label "RDF Description of Chrismas Concertos" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/723052c1-ce18-420b-8a68-7b67463b2a63> .
+
+<http://musicbrainz.org/album/723052c1-ce18-420b-8a68-7b67463b2a63>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F723052c1-ce18-420b-8a68-7b67463b2a63%3E> .

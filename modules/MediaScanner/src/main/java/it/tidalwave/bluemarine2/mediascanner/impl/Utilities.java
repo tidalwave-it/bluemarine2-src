@@ -122,9 +122,9 @@ final class Utilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Optional<Value> literalFor (final Optional<String> string) 
+    public static Optional<Value> literalFor (final Optional<String> optionalString) 
       {
-        return string.map(s -> FACTORY.createLiteral(s));
+        return optionalString.map(s -> literalFor(s));
       }
     
     /*******************************************************************************************************************

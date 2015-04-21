@@ -1,0 +1,53 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/9d14232c-6bcc-4314-b713-8beec2e25cf9>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F9d14232c-6bcc-4314-b713-8beec2e25cf9%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/9d14232c-6bcc-4314-b713-8beec2e25cf9>
+      a       mo:Record ;
+      rdfs:label "The Incomparable Callas" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "0"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:tracks "13"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/ita> ;
+      dc:title "The Incomparable Callas" ;
+      mo:musicbrainz <http://musicbrainz.org/album/9d14232c-6bcc-4314-b713-8beec2e25cf9> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/771dc1dc-5814-427f-81a3-e35aba439ad6> , <http://dbtune.org/musicbrainz/resource/track/b2e5d465-a084-46aa-bb34-a911da3ff716> , <http://dbtune.org/musicbrainz/resource/track/4311e780-2841-404f-aab6-6fec3d2d96c1> , <http://dbtune.org/musicbrainz/resource/track/aa701759-0701-40ed-bc1a-a561c67e9e51> , <http://dbtune.org/musicbrainz/resource/track/55341514-32d5-48cc-ad34-e497ee03b06d> , <http://dbtune.org/musicbrainz/resource/track/420b9b9a-c087-4c13-87c0-22b24b881476> , <http://dbtune.org/musicbrainz/resource/track/ac131cc0-b4f0-4c12-b0dd-b14213803602> , <http://dbtune.org/musicbrainz/resource/track/7cd5a740-cdc8-4c85-974b-38298a720c7f> , <http://dbtune.org/musicbrainz/resource/track/6b63e4c1-237a-4b2a-a9a8-bb8274618e4b> , <http://dbtune.org/musicbrainz/resource/track/f5240d8f-05a3-4c56-af1f-f63524a6fb4a> , <http://dbtune.org/musicbrainz/resource/track/22d94e19-e569-432d-9874-d7ee447b0fc5> , <http://dbtune.org/musicbrainz/resource/track/6502fe10-5299-4362-8a9f-cd35aaeedcdf> , <http://dbtune.org/musicbrainz/resource/track/b3bb6a77-73b9-46f8-8055-aa702644c203> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/9dee40b2-25ad-404c-9c9a-139feffd4b57> ;
+      foaf:page "714278223" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/9d14232c-6bcc-4314-b713-8beec2e25cf9>
+      rdfs:label "RDF Description of The Incomparable Callas" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/9d14232c-6bcc-4314-b713-8beec2e25cf9> .
+
+<http://dbtune.org/musicbrainz/resource/master/9d14232c-6bcc-4314-b713-8beec2e25cf9>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/9d14232c-6bcc-4314-b713-8beec2e25cf9> .

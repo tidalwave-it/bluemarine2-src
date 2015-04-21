@@ -1,0 +1,51 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/c87ebcb1-f20a-4886-8cd6-d9308c1232d0>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fc87ebcb1-f20a-4886-8cd6-d9308c1232d0%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/c87ebcb1-f20a-4886-8cd6-d9308c1232d0>
+      a       mo:Record ;
+      rdfs:label "Souvenir (disc 1)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "2"^^xsd:int ;
+      vocab:tracks "15"^^xsd:int ;
+      dc:date "1998-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/ita> ;
+      dc:title "Souvenir (disc 1)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/c87ebcb1-f20a-4886-8cd6-d9308c1232d0> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/120240> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/982c56ad-7210-4d9c-8513-6ee504ebd092> , <http://dbtune.org/musicbrainz/resource/track/da3d216b-eb3e-4bc9-b4e2-98137508bfcf> , <http://dbtune.org/musicbrainz/resource/track/1bc0c2f3-79b4-49cf-b5d2-ea94de520fef> , <http://dbtune.org/musicbrainz/resource/track/4d8a0031-8df3-45a8-a8cc-d4451d88ad90> , <http://dbtune.org/musicbrainz/resource/track/3f3b9d3f-a0f9-4d26-9b26-a182a07fe388> , <http://dbtune.org/musicbrainz/resource/track/bc10281e-40c3-4f9b-a199-ab860125aa22> , <http://dbtune.org/musicbrainz/resource/track/4ca3cd30-164c-4072-92a5-ed67ac721e23> , <http://dbtune.org/musicbrainz/resource/track/52c76cf6-9feb-45a2-99fa-80c4c11842fa> , <http://dbtune.org/musicbrainz/resource/track/d1c41f45-8e77-4286-94a1-b580426b915d> , <http://dbtune.org/musicbrainz/resource/track/b0f8ef6b-5176-47c6-9486-c749f98af386> , <http://dbtune.org/musicbrainz/resource/track/300f2303-2a96-4f33-8cc3-c1056b839772> , <http://dbtune.org/musicbrainz/resource/track/9741fd14-d6ff-4829-aa40-0788c1cd16e1> , <http://dbtune.org/musicbrainz/resource/track/a5621bc3-e789-42d1-a330-0b1091b490f4> , <http://dbtune.org/musicbrainz/resource/track/524bc9ef-ad63-48db-8403-52445262769d> , <http://dbtune.org/musicbrainz/resource/track/dbb687a0-ada8-41af-85d5-331589174b2d> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/0daeccf9-9a55-4726-a845-80b439d8e4c9> ;
+      foaf:page "688610511" .
+
+<http://dbtune.org/musicbrainz/data/record/c87ebcb1-f20a-4886-8cd6-d9308c1232d0>
+      rdfs:label "RDF Description of Souvenir (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/c87ebcb1-f20a-4886-8cd6-d9308c1232d0> .
+
+<http://dbtune.org/musicbrainz/resource/master/c87ebcb1-f20a-4886-8cd6-d9308c1232d0>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/c87ebcb1-f20a-4886-8cd6-d9308c1232d0> .

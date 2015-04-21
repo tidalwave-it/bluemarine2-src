@@ -3,7 +3,11 @@ WHERE
   { 
     ?artist     a                   mo:MusicArtist. 
     ?artist     rdfs:label          ?label. 
-    ?artist     vocab:artist_type   ?artist_type.
     ?madeEntity foaf:maker          ?artist.
+
+    OPTIONAL
+      {
+        ?artist     vocab:artist_type       ?artist_type.
+      }
   } 
 ORDER BY ?label

@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00021TMZ6>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00021TMZ6%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/7f3ec222-a4f2-4d68-9555-a7a987445012>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F7f3ec222-a4f2-4d68-9555-a7a987445012%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/7f3ec222-a4f2-4d68-9555-a7a987445012>
+      a       mo:Record ;
+      rdfs:label "Countdown: Time in Outer Space" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00021TMZ6" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00021TMZ6.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "13"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/84364> ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:date "2004-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Countdown: Time in Outer Space" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00021TMZ6> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B00021TMZ6.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B00021TMZ6> ;
+      mo:musicbrainz <http://musicbrainz.org/album/7f3ec222-a4f2-4d68-9555-a7a987445012> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/162667> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/194dbfd0-eb93-4c9d-8877-797f162d1c83> , <http://dbtune.org/musicbrainz/resource/track/e375ca74-e140-4877-b362-39b3e5262f51> , <http://dbtune.org/musicbrainz/resource/track/c4c2c8e7-5bc9-4a12-a42a-bd2a0af9427a> , <http://dbtune.org/musicbrainz/resource/track/566f2760-3096-424f-9906-96000b4c51e7> , <http://dbtune.org/musicbrainz/resource/track/8c8e56bc-4137-4e80-b6fc-0eb9c76247cd> , <http://dbtune.org/musicbrainz/resource/track/5a3d0a96-045b-46a7-b8e8-eac065db1ddd> , <http://dbtune.org/musicbrainz/resource/track/aed62130-80b3-4185-b3c8-08a2742e3177> , <http://dbtune.org/musicbrainz/resource/track/2a596484-1755-4e33-b6ad-f14bc2026d15> , <http://dbtune.org/musicbrainz/resource/track/f2f80c24-8e7e-4adb-b5d3-e05fcd4196c6> , <http://dbtune.org/musicbrainz/resource/track/b7ef30c2-5c62-4139-857c-b598231a712c> , <http://dbtune.org/musicbrainz/resource/track/226495bb-d353-4fc5-a133-ae071cefc8ef> , <http://dbtune.org/musicbrainz/resource/track/b67002f3-c17a-49bb-9262-07451f93c211> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7bf711e9-4e69-4e08-b6e8-c0cb5805f1e7> ;
+      foaf:page "151731877" .
+
+<http://dbtune.org/musicbrainz/data/record/7f3ec222-a4f2-4d68-9555-a7a987445012>
+      rdfs:label "RDF Description of Countdown: Time in Outer Space" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/7f3ec222-a4f2-4d68-9555-a7a987445012> .
+
+<http://ec1.images-amazon.com/images/P/B00021TMZ6.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00021TMZ6.01.MZZZZZZZ.jpg%3E> .
+
+<http://images.amazon.com/images/P/B00021TMZ6>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00021TMZ6%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/7f3ec222-a4f2-4d68-9555-a7a987445012>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/7f3ec222-a4f2-4d68-9555-a7a987445012> .

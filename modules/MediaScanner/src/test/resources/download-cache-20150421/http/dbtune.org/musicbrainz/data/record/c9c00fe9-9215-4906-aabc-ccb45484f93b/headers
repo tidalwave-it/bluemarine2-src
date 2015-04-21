@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Date: Mon, 06 Apr 2015 20:48:54 GMT
+Server: Jetty(6.1.11)
+X-Joseki-Server: Joseki-3.2
+Content-Type: application/n3; charset=utf-8
+Access-Control-Allow-Origin: *
+Connection: close
+Transfer-Encoding: chunked
+Via: 1.1 localhost (Apache-HttpClient/4.4 (cache))
+

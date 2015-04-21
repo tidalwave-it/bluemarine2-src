@@ -61,6 +61,7 @@ import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryMusicArtist;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecord;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrack;
+import lombok.AccessLevel;
 import lombok.Cleanup;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -73,9 +74,9 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Configurable @Slf4j
-public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
-              extends Finder8Support<ENTITY, FINDER> 
+@Configurable @RequiredArgsConstructor(access = AccessLevel.PROTECTED) @Slf4j
+public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
+              extends Finder8Support<ENTITY, FINDER>
   {
     protected static final String PREFIXES =
                   "PREFIX foaf:  <http://xmlns.com/foaf/0.1/>\n" 
@@ -87,45 +88,24 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
                 + "PREFIX xs:    <http://www.w3.org/2001/XMLSchema#>\n";
 
     @Nonnull
-    private Repository repository;
+    protected final Repository repository;
     
     @Inject
     private ContextManager contextManager;
     
-    // TODO: push this to generic FinderSupport
-    @Nonnull
-    private Optional<Object> context = Optional.empty();
-    
     /*******************************************************************************************************************
      *
-     * {@inheritDoc}
+     * Clone constructor.
      *
      ******************************************************************************************************************/
-    @Override @Nonnull
-    public RepositoryFinderSupport clone()
+    protected RepositoryFinderSupport (final @Nonnull RepositoryFinderSupport<ENTITY, FINDER> other, 
+                                       final @Nonnull Object override) 
       {
-        final RepositoryFinderSupport clone = (RepositoryFinderSupport)super.clone();
-        clone.repository = this.repository;
-        clone.context = this.context;
-
-        return clone;
+        super(other, override);
+        final RepositoryFinderSupport<ENTITY, FINDER> source = getSource(RepositoryFinderSupport.class, other, override);
+        this.repository = source.repository;
       }
     
-    
-    // FIXME: push to Finder
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    /* @Override */ @Nonnull
-    public FINDER withContext (final @Nonnull Object context)
-      {
-        final RepositoryFinderSupport clone = (RepositoryFinderSupport)clone();
-        clone.context = Optional.of(context);
-        return (FINDER)clone;
-      }
-
     /*******************************************************************************************************************
      *
      * 
@@ -224,9 +204,9 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
       {
         try
           {
-            if (context.isPresent())
+            if (context != null)
               {
-                contextManager.addLocalContext(context.get());
+                contextManager.addLocalContext(context);
               }
 
             final List<E> entities = new ArrayList<>();
@@ -240,9 +220,9 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
           }
         finally
           {
-            if (context.isPresent())
+            if (context != null)
               {
-                contextManager.removeLocalContext(context.get());
+                contextManager.removeLocalContext(context);
               }
           }
       }

@@ -1,0 +1,71 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B0000047G2>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000047G2%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/6604b6ac-10dc-48d4-a76d-2388833ca728>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/6604b6ac-10dc-48d4-a76d-2388833ca728> .
+
+<http://ec1.images-amazon.com/images/P/B0000047G2.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0000047G2.01.MZZZZZZZ.jpg%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/6604b6ac-10dc-48d4-a76d-2388833ca728>
+      a       mo:Record ;
+      rdfs:label "Ella Fitzgerald Sings the Johnny Mercer Song Book" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000047G2" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0000047G2.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "25"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/211368> ;
+      vocab:tracks "13"^^xsd:int ;
+      dc:date "1965-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Ella Fitzgerald Sings the Johnny Mercer Song Book" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000047G2> ;
+      mo:image <http://images.amazon.com/images/P/B0000047G2> , <http://ec1.images-amazon.com/images/P/B0000047G2.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/6604b6ac-10dc-48d4-a76d-2388833ca728> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/323168> , <http://dbtune.org/musicbrainz/resource/release/323169> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/ad59f990-c89e-4de7-a179-47da6dc7bd38> , <http://dbtune.org/musicbrainz/resource/track/18bba2ef-2997-4a5a-9558-a8ab08304112> , <http://dbtune.org/musicbrainz/resource/track/a23fe123-1fd9-41d9-8129-900358ae01e9> , <http://dbtune.org/musicbrainz/resource/track/89658445-a2e0-4fe8-a133-521c327d6081> , <http://dbtune.org/musicbrainz/resource/track/0fa79135-1d44-4d5e-92ac-e059af8c11f0> , <http://dbtune.org/musicbrainz/resource/track/0864891b-7bbe-4b41-b78b-969062d76012> , <http://dbtune.org/musicbrainz/resource/track/0b4e27d0-8147-4eab-99fa-e1e8eb894489> , <http://dbtune.org/musicbrainz/resource/track/43431d36-4e46-4595-90ea-496c413a512a> , <http://dbtune.org/musicbrainz/resource/track/c4112591-d392-4aea-b317-c57a2cd84458> , <http://dbtune.org/musicbrainz/resource/track/66524ea1-2305-40b4-9921-66ae263b89c0> , <http://dbtune.org/musicbrainz/resource/track/cc599ff5-427b-4fa0-80fe-4e2e788bd796> , <http://dbtune.org/musicbrainz/resource/track/4177754c-61ca-4daf-8df4-534cf7d992b5> , <http://dbtune.org/musicbrainz/resource/track/2bbd5a8c-90ff-4c23-8501-54056885aded> ;
+      =       <http://dbpedia.org/resource/Ella_Fitzgerald_Sings_the_Johnny_Mercer_Songbook> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
+      foaf:page "215386151" .
+
+<http://dbtune.org/musicbrainz/data/record/6604b6ac-10dc-48d4-a76d-2388833ca728>
+      rdfs:label "RDF Description of Ella Fitzgerald Sings the Johnny Mercer Song Book" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/6604b6ac-10dc-48d4-a76d-2388833ca728> .
+
+<http://dbpedia.org/resource/Ella_Fitzgerald_Sings_the_Johnny_Mercer_Songbook>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FElla_Fitzgerald_Sings_the_Johnny_Mercer_Songbook%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000047G2>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000047G2%3E> .
+
+<http://musicbrainz.org/album/6604b6ac-10dc-48d4-a76d-2388833ca728>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F6604b6ac-10dc-48d4-a76d-2388833ca728%3E> .

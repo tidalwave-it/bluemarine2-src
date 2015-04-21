@@ -1,0 +1,55 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/670d6fa3-2c7a-4519-a112-957d58a3af3d>
+      rdfs:label "RDF Description of Great Songs From the Movies" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/670d6fa3-2c7a-4519-a112-957d58a3af3d> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/670d6fa3-2c7a-4519-a112-957d58a3af3d>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F670d6fa3-2c7a-4519-a112-957d58a3af3d%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/670d6fa3-2c7a-4519-a112-957d58a3af3d>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/670d6fa3-2c7a-4519-a112-957d58a3af3d> .
+
+<http://dbtune.org/musicbrainz/resource/record/670d6fa3-2c7a-4519-a112-957d58a3af3d>
+      a       mo:Record ;
+      rdfs:label "Great Songs From the Movies" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:tracks "10"^^xsd:int ;
+      dc:date "1995-01-12" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Great Songs From the Movies" ;
+      mo:musicbrainz <http://musicbrainz.org/album/670d6fa3-2c7a-4519-a112-957d58a3af3d> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/535172> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/b2d8ba5c-75f9-4b92-99b9-a81686ee6a73> , <http://dbtune.org/musicbrainz/resource/track/a611360b-f046-4fdb-bad9-775a3d1c9715> , <http://dbtune.org/musicbrainz/resource/track/30eba1d4-9b9c-4650-9e33-ada017b6f085> , <http://dbtune.org/musicbrainz/resource/track/d5e3e786-da38-4984-a311-7855359562e5> , <http://dbtune.org/musicbrainz/resource/track/4214b340-cb18-4318-8e5c-c19563fe0cc1> , <http://dbtune.org/musicbrainz/resource/track/a739832e-98d5-4e79-afb4-955a9836e216> , <http://dbtune.org/musicbrainz/resource/track/e50a9bf8-6980-4529-bb60-730bb9cb91df> , <http://dbtune.org/musicbrainz/resource/track/aae9ad68-392a-44a0-a49d-7ed74cf5b779> , <http://dbtune.org/musicbrainz/resource/track/522939fc-29e1-4290-b928-888a6af7f938> , <http://dbtune.org/musicbrainz/resource/track/24110f12-eff6-4fca-8efe-57e1d71a2d34> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/bc4ca610-333b-424b-8c3c-c724e6327b62> ;
+      foaf:page "288557729" .

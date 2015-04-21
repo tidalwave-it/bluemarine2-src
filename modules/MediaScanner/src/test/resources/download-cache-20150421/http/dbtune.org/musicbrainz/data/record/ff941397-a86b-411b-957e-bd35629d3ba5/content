@@ -1,0 +1,60 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbpedia.org/resource/West_Side_Story>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FWest_Side_Story%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/ff941397-a86b-411b-957e-bd35629d3ba5>
+      a       mo:Record ;
+      rdfs:label "West Side Story" ;
+      vocab:album_attributes
+              "{0,5,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "19"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/155368> ;
+      vocab:tracks "15"^^xsd:int ;
+      dc:date "1985-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "West Side Story" ;
+      mo:musicbrainz <http://musicbrainz.org/album/ff941397-a86b-411b-957e-bd35629d3ba5> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/418116> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/9870c6c9-009f-43b9-a85e-f6268d169d5a> , <http://dbtune.org/musicbrainz/resource/track/f0920797-d14d-4e23-a53a-474cb38929d4> , <http://dbtune.org/musicbrainz/resource/track/81e28a4e-b4c6-4af0-9001-f7e86db35992> , <http://dbtune.org/musicbrainz/resource/track/e2fbc3db-b6a1-4c4e-b78e-7ccada710ecb> , <http://dbtune.org/musicbrainz/resource/track/88e4769a-6c80-4fd2-8b61-44ee231fc3e4> , <http://dbtune.org/musicbrainz/resource/track/fb84fa95-1a9d-4ed5-bc75-ae5a6317fabc> , <http://dbtune.org/musicbrainz/resource/track/1b13c41d-fd97-4a4d-a7ba-0cfade7445c5> , <http://dbtune.org/musicbrainz/resource/track/80524927-0a3c-4148-ae57-6c3ed3439996> , <http://dbtune.org/musicbrainz/resource/track/dc9b6461-166f-4ea4-986c-7ee32397635e> , <http://dbtune.org/musicbrainz/resource/track/ee7dcf8a-54db-4800-a695-6019dab400b3> , <http://dbtune.org/musicbrainz/resource/track/2bbab0ed-b9af-4842-a4c8-a203d83cd5e3> , <http://dbtune.org/musicbrainz/resource/track/19d3a444-a243-46b9-a6c8-1cc83a861b3f> , <http://dbtune.org/musicbrainz/resource/track/4eeefedb-7803-4db2-a05f-dfdbc743ffbf> , <http://dbtune.org/musicbrainz/resource/track/329be7e5-bf50-463d-aa48-642ac6432a92> , <http://dbtune.org/musicbrainz/resource/track/a8611785-a297-49a7-b61a-ed0bf910b49b> ;
+      =       <http://dbpedia.org/resource/West_Side_Story> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fa39bc82-9b27-4bbb-9425-d719a72e09ac> ;
+      foaf:page "812274740" .
+
+<http://dbtune.org/musicbrainz/resource/master/ff941397-a86b-411b-957e-bd35629d3ba5>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/ff941397-a86b-411b-957e-bd35629d3ba5> .
+
+<http://musicbrainz.org/album/ff941397-a86b-411b-957e-bd35629d3ba5>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fff941397-a86b-411b-957e-bd35629d3ba5%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/ff941397-a86b-411b-957e-bd35629d3ba5>
+      rdfs:label "RDF Description of West Side Story" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/ff941397-a86b-411b-957e-bd35629d3ba5> .
