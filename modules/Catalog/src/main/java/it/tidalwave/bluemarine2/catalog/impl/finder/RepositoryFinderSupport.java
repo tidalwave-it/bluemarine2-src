@@ -198,16 +198,16 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
      ******************************************************************************************************************/
     @Nonnull
     private <E extends Entity> List<E> createEntities (final @Nonnull Repository repository, 
-                                                   final @Nonnull Class<E> entityClass,
-                                                   final @Nonnull TupleQueryResult result) 
+                                                       final @Nonnull Class<E> entityClass,
+                                                       final @Nonnull TupleQueryResult result) 
       throws QueryEvaluationException 
       {
+        // FinderSupport is still Java 7
+        final Optional<Object> optionalContext = Optional.ofNullable(context);
+        
         try
           {
-            if (context != null)
-              {
-                contextManager.addLocalContext(context);
-              }
+            optionalContext.ifPresent(context -> contextManager.addLocalContext(context));
 
             final List<E> entities = new ArrayList<>();
 
@@ -220,10 +220,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
           }
         finally
           {
-            if (context != null)
-              {
-                contextManager.removeLocalContext(context);
-              }
+            optionalContext.ifPresent(context -> contextManager.removeLocalContext(context));
           }
       }
     
