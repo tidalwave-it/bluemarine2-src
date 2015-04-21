@@ -28,12 +28,16 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
+import it.tidalwave.bluemarine2.downloader.DownloadComplete;
+import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.util.List;
 import java.util.Optional;
 import java.util.Stack;
+import java.util.concurrent.atomic.AtomicReference;
+import java.net.URL;
 import javafx.application.Platform;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.role.ui.Selectable;
@@ -50,6 +54,7 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
@@ -111,6 +116,8 @@ public class DefaultAudioExplorerPresentationControl
     
     private final UserAction8 navigateUpAction = new UserActionLambda(() -> navigateUp()); 
     
+    private final AtomicReference<Optional<URL>> coverImageUrl = new AtomicReference<Optional<URL>>(Optional.empty());
+    
     /*******************************************************************************************************************
      *
      *
@@ -133,6 +140,23 @@ public class DefaultAudioExplorerPresentationControl
         selectBrowser(browsers.stream()
                               .filter(browser -> browser.getClass().getName().contains("BrowserByArtistThenTrack"))
                               .findAny().get());
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    /* VisibleForTesting */  void onDownloadComplete (final @ListensTo @Nonnull DownloadComplete notification)
+      {
+        log.info("onDownloadComplete({})", notification);
+        
+        if (coverImageUrl.get().map(url -> url.equals(notification.getUrl())).orElse(false))
+          {
+            if (notification.getStatusCode() == 200)
+              {
+                presentation.setCoverImage(Optional.of(notification.getCachedUri()));
+              }
+          }
       }
     
     /*******************************************************************************************************************
@@ -283,7 +307,20 @@ public class DefaultAudioExplorerPresentationControl
             metadata.get(YEAR).map(y -> "Year: " + y).orElse(""));
         
         presentation.renderDetails(details);
+        audioFile.getRecord().ifPresent(record -> requestRecordCover(record.getImageUrl()));
       }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void requestRecordCover (final @Nonnull Optional<URL> optionalImageUrl)
+      {
+        log.debug("requestRecordCover({})", optionalImageUrl);
+        presentation.setCoverImage(Optional.empty());
+        coverImageUrl.set(optionalImageUrl);
+        optionalImageUrl.ifPresent(url -> messageBus.publish(new DownloadRequest(url)));
+      } 
     
     /*******************************************************************************************************************
      *

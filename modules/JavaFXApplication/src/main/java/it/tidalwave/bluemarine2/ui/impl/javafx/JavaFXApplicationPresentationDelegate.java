@@ -125,8 +125,10 @@ public class JavaFXApplicationPresentationDelegate
         final Path configPath = getConfiguratonPath();
         log.info("configPath is {}", configPath);
         final Path repositoryPath = configPath.resolve("repository.n3");
+        final Path cachePath = configPath.resolve("cache");
         properties.put(it.tidalwave.bluemarine2.persistence.PropertyNames.REPOSITORY_PATH, repositoryPath);
         properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, configPath);
+        properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, cachePath);
         messageBus.get().publish(new PowerOnNotification(properties));        
       }    
     

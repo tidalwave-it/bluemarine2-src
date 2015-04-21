@@ -33,6 +33,7 @@ import javax.inject.Inject;
 import javax.inject.Provider;
 import java.util.Optional;
 import java.util.stream.Stream;
+import java.net.URI;
 import javafx.fxml.FXML;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
@@ -41,6 +42,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -178,6 +180,12 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     public Object getMemento()
       {
         return new Memento(lvFiles);
+      }
+    
+    @Override
+    public void setCoverImage (final @Nonnull Optional<URI> imageUri)
+      {
+        ivCoverArt.setImage(imageUri.map(uri -> new Image(uri.toString())).orElse(null));
       }
     
     /*******************************************************************************************************************

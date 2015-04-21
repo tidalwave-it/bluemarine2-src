@@ -26,13 +26,17 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.catalog.impl.finder;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 import java.net.URL;
-import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import org.openrdf.repository.Repository;
+import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.util.Finder8;
+import lombok.ToString;
+import static java.util.Arrays.*;
 
 /***********************************************************************************************************************
  *
@@ -40,20 +44,37 @@ import it.tidalwave.bluemarine2.model.finder.TrackFinder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Record extends Entity, Identifiable
+@ToString
+public class RepositoryRecordImageFinder extends RepositoryFinderSupport<URL, Finder8<URL>>
+//                                         implements TrackFinder
   {
-    public static final Class<Record> Record = Record.class;
+    private final static String QUERY_RECORD_IMAGE = readSparql(RepositoryMusicArtistFinder.class, "RecordImage.sparql");
     
+    @Nonnull
+    private final Record record;
+
     /*******************************************************************************************************************
      *
-     * Finds the tracks in this record.
-     * 
-     * @return  the tracks
+     * Default constructor.
      *
      ******************************************************************************************************************/
-    @Nonnull
-    public TrackFinder findTracks();
-    
-    @Nonnull
-    public Optional<URL> getImageUrl();
+    public RepositoryRecordImageFinder (final @Nonnull Repository repository, final @Nonnull Record record)
+      {
+        super(repository);
+        this.record = record;
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    protected List<? extends URL> computeNeededResults() 
+      {
+        final List<Object> parameters = new ArrayList<>();
+        parameters.addAll(asList("record", uriFor(record.getId())));
+        
+        return query(URL.class, QUERY_RECORD_IMAGE, parameters.toArray());
+      }
   }

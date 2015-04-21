@@ -30,10 +30,12 @@ package it.tidalwave.bluemarine2.ui.audio.explorer;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
+import java.net.URI;
 import javafx.beans.property.StringProperty;
 import javafx.beans.property.SimpleStringProperty;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
+import it.tidalwave.bluemarine2.model.Entity;
 import lombok.Getter;
 import lombok.experimental.Accessors;
 
@@ -115,4 +117,10 @@ public interface AudioExplorerPresentation
      ******************************************************************************************************************/
     @Nonnull
     public Object getMemento();
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    public void setCoverImage (@Nonnull Optional<URI> imageUri);
   }

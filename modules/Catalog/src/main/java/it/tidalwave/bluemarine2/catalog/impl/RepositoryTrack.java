@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl;
 
+import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordFinder;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
@@ -42,7 +43,9 @@ import it.tidalwave.bluemarine2.util.Formatters;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
+import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
+import java.util.Optional;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -84,6 +87,12 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
         this.trackNumber = toInteger(bindingSet.getBinding("track_number"));
 //        this.recordRdfsLabel = toString(bindingSet.getBinding("record_label"));
 //        this.trackCount = toInteger(bindingSet.getBinding("track_number")));
+      }
+    
+    @Override @Nonnull
+    public Optional<Record> getRecord()
+      {
+        return new RepositoryRecordFinder(repository).recordOf(id).optionalFirstResult();
       }
     
     @Override @Nonnull

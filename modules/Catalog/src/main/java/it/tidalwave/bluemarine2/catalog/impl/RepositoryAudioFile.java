@@ -41,8 +41,9 @@ import org.openrdf.repository.Repository;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.AudioFile;
+import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.impl.AudioMetadata;
 import it.tidalwave.bluemarine2.model.impl.NamedEntity;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryMusicArtistFinder;
@@ -141,7 +142,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
       }
  
     @Override
-    public Optional<? extends Entity> getRecord()
+    public Optional<Record> getRecord()
       {
         return new RepositoryRecordFinder(repository).recordOf(id).optionalFirstResult();
       }

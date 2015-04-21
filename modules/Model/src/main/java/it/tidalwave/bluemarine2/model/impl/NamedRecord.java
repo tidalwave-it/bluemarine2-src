@@ -26,12 +26,13 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.net.URL;
-import it.tidalwave.role.Identifiable;
+import it.tidalwave.util.Id;
+import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 
 /***********************************************************************************************************************
@@ -40,20 +41,28 @@ import it.tidalwave.bluemarine2.model.finder.TrackFinder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Record extends Entity, Identifiable
+public class NamedRecord extends NamedEntity implements Record
   {
-    public static final Class<Record> Record = Record.class;
-    
-    /*******************************************************************************************************************
-     *
-     * Finds the tracks in this record.
-     * 
-     * @return  the tracks
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public TrackFinder findTracks();
-    
-    @Nonnull
-    public Optional<URL> getImageUrl();
+    public NamedRecord (final @Nonnull String displayName) 
+      {
+        super(displayName);
+      }
+
+    @Override @Nonnull
+    public TrackFinder findTracks() 
+      {
+        throw new UnsupportedOperationException("Not supported yet."); // FIXME: return empty finder
+      }
+
+    @Override @Nonnull
+    public Optional<URL> getImageUrl() 
+      {
+        return Optional.empty();
+      }
+
+    @Override @Nonnull
+    public Id getId() 
+      {
+        throw new UnsupportedOperationException("Not supported yet."); // FIXME
+      }
   }
