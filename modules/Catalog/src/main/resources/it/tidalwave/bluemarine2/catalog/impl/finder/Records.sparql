@@ -4,6 +4,8 @@
             ?record     a           mo:Record. 
             ?record     rdfs:label  ?label. 
 
+@track@     ?record     mo:track    ?track.
+
 @artist@      {
 @artist@        ?record     foaf:maker                                  ?artist.
 @artist@      }
@@ -19,7 +21,5 @@
 @artist@      {
 @artist@        ?record     mo:track/foaf:maker/rel:collaboratesWith    ?artist.
 @artist@      }
-                
-@track@     ?record     mo:track    ?track.
           }
         ORDER BY ?label
