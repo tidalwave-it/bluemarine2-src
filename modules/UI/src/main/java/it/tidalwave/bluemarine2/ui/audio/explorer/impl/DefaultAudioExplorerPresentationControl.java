@@ -75,6 +75,7 @@ import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePr
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import it.tidalwave.bluemarine2.model.MusicArtist;
 
 /***********************************************************************************************************************
  *
@@ -312,6 +313,28 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
+     * FIXME: move to a separate role
+     *
+     ******************************************************************************************************************/
+    private void renderRecordDetails (final @Nonnull Record record)
+      {
+        presentation.setCoverImage(Optional.empty());
+        presentation.renderDetails("");
+        requestRecordCover(record.getImageUrl());
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void clearDetails()
+      {
+        presentation.setCoverImage(Optional.empty());
+        presentation.renderDetails("");
+      }
+    
+    /*******************************************************************************************************************
+     *
      *
      ******************************************************************************************************************/
     private void requestRecordCover (final @Nonnull Optional<URL> optionalImageUrl)
@@ -332,8 +355,8 @@ public class DefaultAudioExplorerPresentationControl
       {
         final Selectable selectable = 
                 (entity instanceof AudioFileSupplier) ? () -> renderAudioFileDetails((AudioFileSupplier)entity)
-               :(entity instanceof Record)            ? () -> requestRecordCover(((Record)entity).getImageUrl())
-                                                      : () -> presentation.renderDetails("");
+               :(entity instanceof Record)            ? () -> renderRecordDetails(((Record)entity))
+                                                      : () -> clearDetails();
         
         final UserAction action = isComposite(entity) 
             ? new UserActionLambda(() -> navigateTo(entity)) 
