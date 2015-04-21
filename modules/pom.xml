@@ -31,7 +31,7 @@
         <slf4j.version>1.7.10</slf4j.version>
         <spring.version>4.1.4.RELEASE</spring.version>
         <steelblue.version>1.0-ALPHA-5</steelblue.version>
-        <thesefoolishthings.version>1.40-SNAPSHOT</thesefoolishthings.version>
+        <thesefoolishthings.version>2.0-SNAPSHOT</thesefoolishthings.version>
         <uuid.version>2.1.5-201007271250</uuid.version>
         
         <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass> 
