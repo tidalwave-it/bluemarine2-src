@@ -178,6 +178,10 @@ public class DefaultMediaScanner
                   }
               });
           }
+        catch (Exception e)
+          {
+            log.error("", e);  
+          }
         finally
           {
             progress.incrementScannedFolders();

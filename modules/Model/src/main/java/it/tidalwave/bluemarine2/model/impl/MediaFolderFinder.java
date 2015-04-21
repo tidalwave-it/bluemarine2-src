@@ -40,6 +40,10 @@ import it.tidalwave.util.spi.SimpleFinder8Support;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -61,6 +65,9 @@ public class MediaFolderFinder extends SimpleFinder8Support<Entity>
     
     @Nonnull
     private final Path basePath;
+    
+    // FIXME: implement a better filter looking at the file name suffix
+    private final Predicate<? super Path> audioFileFilter = (path) -> !path.toFile().getName().equals(".DS_Store");
 
     public MediaFolderFinder (final @Nonnull MediaFolderFinder other, final @Nonnull Object override) 
       {
@@ -75,13 +82,14 @@ public class MediaFolderFinder extends SimpleFinder8Support<Entity>
       {
         final AtomicInteger c = new AtomicInteger(0);
         
-        try (final DirectoryStream<Path> stream = Files.newDirectoryStream(mediaFolder.getPath()))
+        try (final DirectoryStream<Path> dStream = Files.newDirectoryStream(mediaFolder.getPath()))
           {
-            stream.forEach(path -> c.incrementAndGet());
+            toStream(dStream).filter(audioFileFilter).forEach(path -> c.incrementAndGet());
           } 
         catch (IOException e)
           {
             log.error("", e);
+            throw new RuntimeException(e);
           }
         
         return c.intValue();
@@ -90,21 +98,24 @@ public class MediaFolderFinder extends SimpleFinder8Support<Entity>
     @Override @Nonnull
     protected List<? extends Entity> computeResults() 
       {
-        final List<Entity> result = new ArrayList<>();
-
-        try (final DirectoryStream<Path> stream = Files.newDirectoryStream(mediaFolder.getPath()))
+        try (final DirectoryStream<Path> dStream = Files.newDirectoryStream(mediaFolder.getPath()))
           {
-            for (final Path child : stream)
-              {
-                result.add(child.toFile().isDirectory() ? new FileSystemMediaFolder(child, mediaFolder, basePath)
-                                                        : new FileSystemAudioFile(child, mediaFolder, basePath));
-              }
+            return toStream(dStream).filter(audioFileFilter)
+                                    .map(child -> child.toFile().isDirectory()
+                                                ? new FileSystemMediaFolder(child, mediaFolder, basePath)
+                                                : new FileSystemAudioFile(child, mediaFolder, basePath))
+                                    .collect(Collectors.toList());
           } 
         catch (IOException e)
           {
             log.error("", e);
+            throw new RuntimeException(e);
           }
-        
-        return result;
+      }
+    
+    @Nonnull
+    private static Stream<Path> toStream (final @Nonnull DirectoryStream<Path> dStream)
+      {
+        return StreamSupport.stream(dStream.spliterator(), false);
       }
   }
