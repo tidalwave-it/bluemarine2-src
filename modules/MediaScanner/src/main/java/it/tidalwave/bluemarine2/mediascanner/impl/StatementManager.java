@@ -136,7 +136,7 @@ public class StatementManager
           {
             if (subject.isPresent())
               {
-                objects.forEach(object -> Builder.this.withOptional(subject, predicate, object)); // FIXME ?? this = withOptional(...)
+                objects.forEach(object -> withOptional(subject, predicate, object)); // FIXME ?? this = withOptional(...)
               }
     
             return this;
@@ -220,7 +220,7 @@ public class StatementManager
       {
         log.info("onAddStatementsRequest({})", request);
         progress.incrementCompletedInsertions();
-        persistence.runInTransaction((RepositoryConnection connection) -> 
+        persistence.runInTransaction(connection -> 
           {
             request.getStatements().stream().forEach(s ->
               {
