@@ -131,6 +131,8 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     private void initialize()
       {
         pnCoverArt.prefHeightProperty().bind(pnCoverArt.widthProperty());
+        ivCoverArt.fitWidthProperty().bind(pnCoverArt.widthProperty().multiply(0.9));
+        ivCoverArt.fitHeightProperty().bind(pnCoverArt.heightProperty().multiply(0.9));
       }
     
     @Override
