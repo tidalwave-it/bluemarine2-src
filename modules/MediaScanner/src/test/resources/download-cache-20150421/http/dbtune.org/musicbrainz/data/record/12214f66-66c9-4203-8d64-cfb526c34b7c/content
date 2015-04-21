@@ -1,0 +1,71 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/12214f66-66c9-4203-8d64-cfb526c34b7c>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F12214f66-66c9-4203-8d64-cfb526c34b7c%3E> .
+
+<http://dbpedia.org/resource/Kill_Bill_Volume_2_(soundtrack)>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FKill_Bill_Volume_2_%28soundtrack%29%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/12214f66-66c9-4203-8d64-cfb526c34b7c>
+      a       mo:Record ;
+      rdfs:label "Kill Bill: Vol. 2" ;
+      vocab:album_attributes
+              "{0,5,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0001LJCPC" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B0001LJCPC.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "3"^^xsd:int ;
+      vocab:albummeta_puids
+              "82"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/298682> , <http://dbtune.org/musicbrainz/resource/toc/295478> , <http://dbtune.org/musicbrainz/resource/toc/90906> ;
+      vocab:tracks "15"^^xsd:int ;
+      dc:date "2004-04-13" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/mul> ;
+      dc:title "Kill Bill: Vol. 2" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0001LJCPC> ;
+      mo:image <http://images.amazon.com/images/P/B0001LJCPC> , <http://images.amazon.com/images/P/B0001LJCPC.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/12214f66-66c9-4203-8d64-cfb526c34b7c> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/15971> , <http://dbtune.org/musicbrainz/resource/release/531450> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/58113dec-963b-480c-b9a0-a866f7c8fbd2> , <http://dbtune.org/musicbrainz/resource/track/51bcd034-bd5c-4278-8fec-56f7828dc0ed> , <http://dbtune.org/musicbrainz/resource/track/e06e2b3f-cac0-474b-a71e-a16ace2be88f> , <http://dbtune.org/musicbrainz/resource/track/de78a0bb-b1a5-42df-8661-2cb8b88ba26f> , <http://dbtune.org/musicbrainz/resource/track/58e04a01-b74e-4d6d-ad6b-9f8493c148eb> , <http://dbtune.org/musicbrainz/resource/track/2a6a2610-3391-41ea-9781-7be59e58600b> , <http://dbtune.org/musicbrainz/resource/track/7c5846e0-3057-4307-b36f-779ffe78ec85> , <http://dbtune.org/musicbrainz/resource/track/3c38631b-8aab-46f4-807f-5a1b1378185b> , <http://dbtune.org/musicbrainz/resource/track/57f8afff-aff0-49b9-8631-62f9901cf94b> , <http://dbtune.org/musicbrainz/resource/track/e4f34634-493a-466a-99ae-14039c02cb71> , <http://dbtune.org/musicbrainz/resource/track/26ecd039-92e1-4626-9e1c-f615cfc62534> , <http://dbtune.org/musicbrainz/resource/track/5177cc1d-9d24-4ecd-9c4d-6291dc1689ba> , <http://dbtune.org/musicbrainz/resource/track/957535cc-ba13-4f42-a217-f14b76b5c140> , <http://dbtune.org/musicbrainz/resource/track/3c9abbe6-5a68-4650-bfd2-4f6a738274a0> , <http://dbtune.org/musicbrainz/resource/track/79642601-c8f3-4e57-b65e-c7985b5b0a65> ;
+      =       <http://dbpedia.org/resource/Kill_Bill_Volume_2_(soundtrack)> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "413578275" .
+
+<http://images.amazon.com/images/P/B0001LJCPC>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0001LJCPC%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B0001LJCPC.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0001LJCPC.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/12214f66-66c9-4203-8d64-cfb526c34b7c>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/12214f66-66c9-4203-8d64-cfb526c34b7c> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0001LJCPC>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0001LJCPC%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/12214f66-66c9-4203-8d64-cfb526c34b7c>
+      rdfs:label "RDF Description of Kill Bill: Vol. 2" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/12214f66-66c9-4203-8d64-cfb526c34b7c> .

@@ -1,0 +1,56 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/da3c49d5-5ac8-469d-8d8f-866eaec3c788>
+      rdfs:label "RDF Description of Sting at the Movies" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/da3c49d5-5ac8-469d-8d8f-866eaec3c788> .
+
+<http://musicbrainz.org/album/da3c49d5-5ac8-469d-8d8f-866eaec3c788>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fda3c49d5-5ac8-469d-8d8f-866eaec3c788%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/da3c49d5-5ac8-469d-8d8f-866eaec3c788>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/da3c49d5-5ac8-469d-8d8f-866eaec3c788> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/da3c49d5-5ac8-469d-8d8f-866eaec3c788>
+      a       mo:Record ;
+      rdfs:label "Sting at the Movies" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "27"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/220> ;
+      vocab:tracks "17"^^xsd:int ;
+      dc:date "1997-11-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Sting at the Movies" ;
+      mo:musicbrainz <http://musicbrainz.org/album/da3c49d5-5ac8-469d-8d8f-866eaec3c788> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/490413> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/02145236-f2f7-4d30-a63d-9fdba0bc69e7> , <http://dbtune.org/musicbrainz/resource/track/e810f6fb-f65d-42e9-8fe5-1474fc1ac9e5> , <http://dbtune.org/musicbrainz/resource/track/8db2c6a6-6522-40a5-aff5-b33f746dbdf6> , <http://dbtune.org/musicbrainz/resource/track/5cf13fad-3d0b-4139-a14b-59e7ade89242> , <http://dbtune.org/musicbrainz/resource/track/54e2aefc-90d0-4c96-b32b-28272a99d3e6> , <http://dbtune.org/musicbrainz/resource/track/20bb3765-3738-46c1-a56c-711699f5f3d2> , <http://dbtune.org/musicbrainz/resource/track/6186a20b-2339-4831-bdb1-2a9f75d69b0b> , <http://dbtune.org/musicbrainz/resource/track/95ad0855-cf32-4973-b039-ee99f933b499> , <http://dbtune.org/musicbrainz/resource/track/5d9f14e5-ee6b-4553-bacb-498656566971> , <http://dbtune.org/musicbrainz/resource/track/4bb3a21f-61a4-4c43-9989-1bc3946e5c73> , <http://dbtune.org/musicbrainz/resource/track/0dd8fc08-54fe-484c-80db-e29e49dc36a2> , <http://dbtune.org/musicbrainz/resource/track/1f2ef824-d898-4b2a-9d7e-5042829c9e0c> , <http://dbtune.org/musicbrainz/resource/track/2259702f-ecd5-4bc2-adb0-8b5ae364ade5> , <http://dbtune.org/musicbrainz/resource/track/da5058fd-7e14-4ed3-adf0-ddb6d8934da0> , <http://dbtune.org/musicbrainz/resource/track/9cbd22b3-ad91-4016-b83c-ad9de074093e> , <http://dbtune.org/musicbrainz/resource/track/171fc826-e9f8-4141-8355-f4db228cbc55> , <http://dbtune.org/musicbrainz/resource/track/3fcef175-8bef-4f94-8355-8eba87cd8564> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7944ed53-2a58-4035-9b93-140a71e41c34> ;
+      foaf:page "693452033" .

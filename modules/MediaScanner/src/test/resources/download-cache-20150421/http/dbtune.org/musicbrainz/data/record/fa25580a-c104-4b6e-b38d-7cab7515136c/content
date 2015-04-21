@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/fa25580a-c104-4b6e-b38d-7cab7515136c>
+      a       mo:Record ;
+      rdfs:label "You're Mine You" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000005H9O" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B000005H9O.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "14"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/156604> ;
+      vocab:tracks "14"^^xsd:int ;
+      dc:date "1997-07-01" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "You're Mine You" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000005H9O> ;
+      mo:image <http://images.amazon.com/images/P/B000005H9O> , <http://images.amazon.com/images/P/B000005H9O.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/fa25580a-c104-4b6e-b38d-7cab7515136c> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/138436> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/45bc5d3e-c1f0-46b8-ad7b-c476b0d4ba2f> , <http://dbtune.org/musicbrainz/resource/track/f69794b5-1c36-45eb-9cad-57487ed1f435> , <http://dbtune.org/musicbrainz/resource/track/a925901f-2ce3-4ac1-b9b3-159f587a56ca> , <http://dbtune.org/musicbrainz/resource/track/1a44e189-383d-46f3-a3c0-84276d3fb651> , <http://dbtune.org/musicbrainz/resource/track/eb0edaa3-7c42-43c1-9c92-e106eccc69be> , <http://dbtune.org/musicbrainz/resource/track/7c4d23b1-1f4e-4fff-8b1d-94396b00b1f3> , <http://dbtune.org/musicbrainz/resource/track/b417a4df-022c-458e-a33d-546d01c81c06> , <http://dbtune.org/musicbrainz/resource/track/31c1dcd6-4af5-4ca2-89ca-c1d19f81dfb1> , <http://dbtune.org/musicbrainz/resource/track/b84dacb1-c361-41f7-9fc7-41bdb1c4bcb4> , <http://dbtune.org/musicbrainz/resource/track/38a67bab-eefa-4ebb-a1f2-ac5335a87b3f> , <http://dbtune.org/musicbrainz/resource/track/d41bce71-0482-4eba-b770-8922c061cb86> , <http://dbtune.org/musicbrainz/resource/track/271af88d-c6c4-4fd1-9909-8e2bf38a6048> , <http://dbtune.org/musicbrainz/resource/track/bd326992-76db-431a-8e79-db3f0a9c0c03> , <http://dbtune.org/musicbrainz/resource/track/e298d421-f6a9-4dbb-9884-0e334f825e35> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/351d8bdf-33a1-45e2-8c04-c85fad20da55> ;
+      foaf:page "889913958" .
+
+<http://dbtune.org/musicbrainz/resource/master/fa25580a-c104-4b6e-b38d-7cab7515136c>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/fa25580a-c104-4b6e-b38d-7cab7515136c> .
+
+<http://images.amazon.com/images/P/B000005H9O>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000005H9O%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/fa25580a-c104-4b6e-b38d-7cab7515136c>
+      rdfs:label "RDF Description of You're Mine You" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/fa25580a-c104-4b6e-b38d-7cab7515136c> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000005H9O>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000005H9O%3E> .
+
+<http://images.amazon.com/images/P/B000005H9O.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000005H9O.01.MZZZZZZZ.jpg%3E> .
+
+<http://musicbrainz.org/album/fa25580a-c104-4b6e-b38d-7cab7515136c>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Ffa25580a-c104-4b6e-b38d-7cab7515136c%3E> .

@@ -1,0 +1,66 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/1de846ab-0012-4c50-aa8b-49ecd4c211b2>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F1de846ab-0012-4c50-aa8b-49ecd4c211b2%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/1de846ab-0012-4c50-aa8b-49ecd4c211b2>
+      a       mo:Record ;
+      rdfs:label "Prokofiev: Cinderella Suite / Ravel: Ma mère l'oye (feat. piano: Martha Argerich, Mikhail Pletnev)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0001ZWGH4" ;
+      vocab:albummeta_coverarturl
+              "http://ec2.images-amazon.com/images/P/B0001ZWGH4.03.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "2"^^xsd:int ;
+      vocab:tracks "14"^^xsd:int ;
+      dc:date "2004-07-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/mul> ;
+      dc:title "Prokofiev: Cinderella Suite / Ravel: Ma mère l'oye (feat. piano: Martha Argerich, Mikhail Pletnev)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0001ZWGH4> ;
+      mo:image <http://images.amazon.com/images/P/B0001ZWGH4> , <http://ec2.images-amazon.com/images/P/B0001ZWGH4.03.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/1de846ab-0012-4c50-aa8b-49ecd4c211b2> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/381998> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/22b3325d-e8fa-41b9-afcf-cd0b59fd086f> , <http://dbtune.org/musicbrainz/resource/track/d6e8e875-71b1-4643-a79e-c2d33913e705> , <http://dbtune.org/musicbrainz/resource/track/252b1480-2538-42ed-a336-c2395e35679d> , <http://dbtune.org/musicbrainz/resource/track/0b3b26ec-6627-4012-b339-fb8227711639> , <http://dbtune.org/musicbrainz/resource/track/7b4e1e4b-ad62-4952-889e-584e4d03e3c2> , <http://dbtune.org/musicbrainz/resource/track/aba8dda2-565d-45f1-810b-02a301006286> , <http://dbtune.org/musicbrainz/resource/track/95af62b7-099b-460c-acfb-94d5f73c5dbe> , <http://dbtune.org/musicbrainz/resource/track/a2d4fcaf-9bd5-40ae-830f-1b5ecff0a76e> , <http://dbtune.org/musicbrainz/resource/track/7219e1a0-1483-4fe3-a8f1-dc950cb9ce29> , <http://dbtune.org/musicbrainz/resource/track/acb41296-68db-4d44-b9c4-3d393f24e709> , <http://dbtune.org/musicbrainz/resource/track/7c4942b6-0de9-45e7-9de7-c6f6e0adb6e2> , <http://dbtune.org/musicbrainz/resource/track/d3180daf-bf9b-4929-9fb0-d143b6fa972c> , <http://dbtune.org/musicbrainz/resource/track/c99a9e9c-c58d-4133-a8ee-adf3e797308b> , <http://dbtune.org/musicbrainz/resource/track/1de1a06f-6456-4b4d-bcb1-582a2bf85bbc> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "590885383" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B0001ZWGH4>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0001ZWGH4%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/1de846ab-0012-4c50-aa8b-49ecd4c211b2>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/1de846ab-0012-4c50-aa8b-49ecd4c211b2> .
+
+<http://ec2.images-amazon.com/images/P/B0001ZWGH4.03.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec2.images-amazon.com%2Fimages%2FP%2FB0001ZWGH4.03.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0001ZWGH4>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0001ZWGH4%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/1de846ab-0012-4c50-aa8b-49ecd4c211b2>
+      rdfs:label "RDF Description of Prokofiev: Cinderella Suite / Ravel: Ma mère l'oye (feat. piano: Martha Argerich, Mikhail Pletnev)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/1de846ab-0012-4c50-aa8b-49ecd4c211b2> .

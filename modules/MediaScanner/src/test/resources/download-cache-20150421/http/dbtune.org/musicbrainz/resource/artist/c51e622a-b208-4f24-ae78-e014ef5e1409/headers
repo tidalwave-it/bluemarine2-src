@@ -1,0 +1,11 @@
+HTTP/1.1 303 See Other
+Date: Tue, 21 Apr 2015 13:09:04 GMT
+Server: Jetty(6.1.11)
+Location: http://dbtune.org/musicbrainz/data/artist/c51e622a-b208-4f24-ae78-e014ef5e1409
+Access-Control-Allow-Origin: *
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/plain; charset=UTF-8
+Via: 1.1 localhost (Apache-HttpClient/4.4 (cache))
+Expires: Mon, 31 Dec 2099 00:00:00 GMT
+

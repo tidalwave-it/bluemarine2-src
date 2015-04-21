@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/7f624fb0-bc6b-4eb4-aadc-88512c0b14d4>
+      a       mo:Record ;
+      rdfs:label "Minnesboxen 1956" ;
+      vocab:album_attributes
+              "{0,11,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/266877> ;
+      vocab:tracks "27"^^xsd:int ;
+      dc:date "1999-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/swe> ;
+      dc:title "Minnesboxen 1956" ;
+      mo:musicbrainz <http://musicbrainz.org/album/7f624fb0-bc6b-4eb4-aadc-88512c0b14d4> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/439077> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/4fbab1bc-6169-4b44-b329-546adf8d5cdf> , <http://dbtune.org/musicbrainz/resource/track/2b36ce22-64fb-4005-b2b3-850c4bcc4332> , <http://dbtune.org/musicbrainz/resource/track/d48c9dbe-4693-493b-9f45-7634a002ae34> , <http://dbtune.org/musicbrainz/resource/track/4eb722ee-f0d7-4f71-8d58-4a9e27acfe8a> , <http://dbtune.org/musicbrainz/resource/track/49c502e3-7c18-4064-a0e4-f5fdecd433db> , <http://dbtune.org/musicbrainz/resource/track/11ecbae9-f759-4bb9-b798-58f8cc397257> , <http://dbtune.org/musicbrainz/resource/track/ed271e02-2103-4763-ac66-97f9da65ecd1> , <http://dbtune.org/musicbrainz/resource/track/2e97950d-6fb7-40e5-a16a-bdda6021d2d0> , <http://dbtune.org/musicbrainz/resource/track/3aef70bd-dfac-4aab-a1fc-7eec978edfe0> , <http://dbtune.org/musicbrainz/resource/track/1a840a40-990a-44ae-84a8-71c95b7cc909> , <http://dbtune.org/musicbrainz/resource/track/deb412b7-61a1-4f89-9297-9a0aa0a9de01> , <http://dbtune.org/musicbrainz/resource/track/6b63c086-8a0f-48de-97e1-447e9ce5fc23> , <http://dbtune.org/musicbrainz/resource/track/b7ab7426-c60d-42d6-8b57-59c93b71eb70> , <http://dbtune.org/musicbrainz/resource/track/46f809db-6afb-4a77-a01b-8d8a8b22c923> , <http://dbtune.org/musicbrainz/resource/track/cabc7547-69b4-4a36-b0cf-39f0a3bc4a39> , <http://dbtune.org/musicbrainz/resource/track/eef0b2c3-88a5-4b56-b436-70376a2aa128> , <http://dbtune.org/musicbrainz/resource/track/6e88b334-f635-4e32-9593-ca9cd4fc7e47> , <http://dbtune.org/musicbrainz/resource/track/6f54f2f4-c199-4a10-b9fd-e91bf4e81c0e> , <http://dbtune.org/musicbrainz/resource/track/8e0b722b-598d-4cbe-9b3f-67fa8dcc0340> , <http://dbtune.org/musicbrainz/resource/track/aded6db4-b882-40ae-9c86-368ae1abd61f> , <http://dbtune.org/musicbrainz/resource/track/2b67dd73-78f3-4499-94a0-d90060b0a20b> , <http://dbtune.org/musicbrainz/resource/track/d2d8364b-be1f-4b63-8060-e855ddb0b25d> , <http://dbtune.org/musicbrainz/resource/track/66bb80d6-6e6b-44ff-b10a-f6208869ead5> , <http://dbtune.org/musicbrainz/resource/track/7e38f8cc-8044-4526-afe4-de07dad4e452> , <http://dbtune.org/musicbrainz/resource/track/8d054038-e002-425d-997a-a7004fed930f> , <http://dbtune.org/musicbrainz/resource/track/1af34499-cc4a-4d01-b3d0-c58c74743775> , <http://dbtune.org/musicbrainz/resource/track/7a2ac671-0217-4376-a09e-01738113f06e> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "480754900" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/7f624fb0-bc6b-4eb4-aadc-88512c0b14d4>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F7f624fb0-bc6b-4eb4-aadc-88512c0b14d4%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/7f624fb0-bc6b-4eb4-aadc-88512c0b14d4>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/7f624fb0-bc6b-4eb4-aadc-88512c0b14d4> .
+
+<http://dbtune.org/musicbrainz/data/record/7f624fb0-bc6b-4eb4-aadc-88512c0b14d4>
+      rdfs:label "RDF Description of Minnesboxen 1956" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/7f624fb0-bc6b-4eb4-aadc-88512c0b14d4> .

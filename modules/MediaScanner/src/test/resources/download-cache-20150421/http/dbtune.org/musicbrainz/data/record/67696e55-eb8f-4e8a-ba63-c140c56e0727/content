@@ -1,0 +1,66 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/67696e55-eb8f-4e8a-ba63-c140c56e0727>
+      rdfs:label "RDF Description of Sweet 'n' Sassy" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/67696e55-eb8f-4e8a-ba63-c140c56e0727> .
+
+<http://dbtune.org/musicbrainz/resource/master/67696e55-eb8f-4e8a-ba63-c140c56e0727>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/67696e55-eb8f-4e8a-ba63-c140c56e0727> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/67696e55-eb8f-4e8a-ba63-c140c56e0727>
+      a       mo:Record ;
+      rdfs:label "Sweet 'n' Sassy" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00005NU69" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00005NU69.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "12"^^xsd:int ;
+      vocab:tracks "13"^^xsd:int ;
+      dc:date "2001-09-11" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Sweet 'n' Sassy" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00005NU69> ;
+      mo:image <http://images.amazon.com/images/P/B00005NU69> , <http://ec1.images-amazon.com/images/P/B00005NU69.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/67696e55-eb8f-4e8a-ba63-c140c56e0727> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/117429> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/86bf0899-0dca-4899-be9c-05ec48ab6489> , <http://dbtune.org/musicbrainz/resource/track/0599703b-4f75-4f92-baad-a0bea6ee99f4> , <http://dbtune.org/musicbrainz/resource/track/453d519f-987b-4f9c-83b8-b2a5c9be30ec> , <http://dbtune.org/musicbrainz/resource/track/867e1a9e-8e0c-42da-93ac-c2e6ec735940> , <http://dbtune.org/musicbrainz/resource/track/397c93e9-0e6b-401b-8d6e-2913a0ca3010> , <http://dbtune.org/musicbrainz/resource/track/7a4d7b40-963b-457e-99cd-36f84f9e9e6a> , <http://dbtune.org/musicbrainz/resource/track/171ba615-3e84-4827-a5f1-6f1d2a62e032> , <http://dbtune.org/musicbrainz/resource/track/7ad90602-dbe1-45c3-a469-cc7808f4983c> , <http://dbtune.org/musicbrainz/resource/track/cbaaffff-cdab-4c85-9a9b-77e2a673888d> , <http://dbtune.org/musicbrainz/resource/track/a985d94d-32c1-44aa-93e3-8a4c9c3a30e7> , <http://dbtune.org/musicbrainz/resource/track/08d759eb-5a05-4f88-9cf3-68934f4607db> , <http://dbtune.org/musicbrainz/resource/track/342c88a6-deaf-45e8-8fa3-2ce1a2dec684> , <http://dbtune.org/musicbrainz/resource/track/ce50c5f0-111b-4b47-be71-21bb61b9d93f> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/351d8bdf-33a1-45e2-8c04-c85fad20da55> ;
+      foaf:page "696457889" .
+
+<http://images.amazon.com/images/P/B00005NU69>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00005NU69%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00005NU69>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00005NU69%3E> .
+
+<http://musicbrainz.org/album/67696e55-eb8f-4e8a-ba63-c140c56e0727>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F67696e55-eb8f-4e8a-ba63-c140c56e0727%3E> .
+
+<http://ec1.images-amazon.com/images/P/B00005NU69.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00005NU69.01.MZZZZZZZ.jpg%3E> .

@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00005UMTB>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00005UMTB%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/6a47b153-791e-475b-ba7f-8ad06d4d97a9>
+      rdfs:label "RDF Description of Close to You and More" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/6a47b153-791e-475b-ba7f-8ad06d4d97a9> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://ec1.images-amazon.com/images/P/B00005UMTB.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00005UMTB.01.MZZZZZZZ.jpg%3E> .
+
+<http://musicbrainz.org/album/6a47b153-791e-475b-ba7f-8ad06d4d97a9>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F6a47b153-791e-475b-ba7f-8ad06d4d97a9%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/6a47b153-791e-475b-ba7f-8ad06d4d97a9>
+      a       mo:Record ;
+      rdfs:label "Close to You and More" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00005UMTB" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00005UMTB.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "35"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/26831> ;
+      vocab:tracks "15"^^xsd:int ;
+      dc:date "2002-01-08" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Close to You and More" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00005UMTB> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B00005UMTB.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B00005UMTB> ;
+      mo:musicbrainz <http://musicbrainz.org/album/6a47b153-791e-475b-ba7f-8ad06d4d97a9> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/187794> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/bf872f8c-8a5d-4cef-a649-6829bf56d7d3> , <http://dbtune.org/musicbrainz/resource/track/5ea254ca-19b9-47a4-b364-812e215a19c2> , <http://dbtune.org/musicbrainz/resource/track/71c26804-8e6d-4c0d-9f7d-0918498f2971> , <http://dbtune.org/musicbrainz/resource/track/1a4f72d5-a53d-4e9f-ae24-7defc31c01e3> , <http://dbtune.org/musicbrainz/resource/track/68f0d969-4e54-49d8-bea8-f7dafc9033db> , <http://dbtune.org/musicbrainz/resource/track/9970be52-ca61-4afb-9eb8-22350b778f59> , <http://dbtune.org/musicbrainz/resource/track/94491ccb-0022-46f1-97a8-ffc04d393a7d> , <http://dbtune.org/musicbrainz/resource/track/c323d053-b7dd-4a87-a3ab-7f88cbc92a0b> , <http://dbtune.org/musicbrainz/resource/track/2164ce7d-9f82-475f-a83d-6fcaafb92fc9> , <http://dbtune.org/musicbrainz/resource/track/0384b239-a4f9-4669-be3f-4ced187983c0> , <http://dbtune.org/musicbrainz/resource/track/36976d80-30f2-4d6c-b46f-b1c65461a861> , <http://dbtune.org/musicbrainz/resource/track/fd733958-e53d-4050-ac46-2d7f39d993c0> , <http://dbtune.org/musicbrainz/resource/track/823477f7-5e38-4d06-aa33-9eb28c2cb23a> , <http://dbtune.org/musicbrainz/resource/track/fa273c6b-dbd4-45f8-bcc6-671458f5898c> , <http://dbtune.org/musicbrainz/resource/track/45f7820e-e27b-433d-b5d5-cffb5907f31c> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d> ;
+      foaf:page "148394177" .
+
+<http://dbtune.org/musicbrainz/resource/master/6a47b153-791e-475b-ba7f-8ad06d4d97a9>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/6a47b153-791e-475b-ba7f-8ad06d4d97a9> .
+
+<http://images.amazon.com/images/P/B00005UMTB>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00005UMTB%3E> .

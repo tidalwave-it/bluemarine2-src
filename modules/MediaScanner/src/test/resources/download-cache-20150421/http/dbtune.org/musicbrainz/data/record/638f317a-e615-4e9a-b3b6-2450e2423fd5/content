@@ -1,0 +1,56 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/638f317a-e615-4e9a-b3b6-2450e2423fd5>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F638f317a-e615-4e9a-b3b6-2450e2423fd5%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/638f317a-e615-4e9a-b3b6-2450e2423fd5>
+      a       mo:Record ;
+      rdfs:label "Ne Me Quitte Pas" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "39"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/153331> ;
+      vocab:tracks "22"^^xsd:int ;
+      dc:date "1999-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Ne Me Quitte Pas" ;
+      mo:musicbrainz <http://musicbrainz.org/album/638f317a-e615-4e9a-b3b6-2450e2423fd5> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/128819> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/e098b7ba-0c97-40e0-ac5a-fb7b574f8931> , <http://dbtune.org/musicbrainz/resource/track/e95a8db9-7b26-4280-aa02-6a16def9580d> , <http://dbtune.org/musicbrainz/resource/track/25a54b37-a2fa-458d-9c2c-5448b7248884> , <http://dbtune.org/musicbrainz/resource/track/5a316823-ecc2-45f4-9f8b-f64f92fa7d08> , <http://dbtune.org/musicbrainz/resource/track/b623dc20-751f-40fa-a2b2-706d9c9e27bf> , <http://dbtune.org/musicbrainz/resource/track/237da88e-572c-4276-a637-5a0dd2a471c3> , <http://dbtune.org/musicbrainz/resource/track/87244f53-f71d-4b3b-91ae-31033640c708> , <http://dbtune.org/musicbrainz/resource/track/e2e27763-5dfe-45e2-ada1-85a0487be10f> , <http://dbtune.org/musicbrainz/resource/track/3c7756e2-573c-4891-93b0-380e91eebce7> , <http://dbtune.org/musicbrainz/resource/track/7be6a3bb-232c-4f8c-b2cc-6f955d96a523> , <http://dbtune.org/musicbrainz/resource/track/5be5539a-c886-45ba-bf18-8814469e91bd> , <http://dbtune.org/musicbrainz/resource/track/e0dc3886-795f-4f5b-9fbd-baffde358157> , <http://dbtune.org/musicbrainz/resource/track/f03deec9-a9a8-49be-a9c0-cc7a0f02f998> , <http://dbtune.org/musicbrainz/resource/track/c324ae81-6cad-4d09-8d71-3f711c046266> , <http://dbtune.org/musicbrainz/resource/track/4d4f499e-4108-4d27-87e7-9b28e96b5ea2> , <http://dbtune.org/musicbrainz/resource/track/3a3f7456-40a2-4979-8fb6-76944ed24281> , <http://dbtune.org/musicbrainz/resource/track/61cbaf85-be83-4802-8be7-1b28b9ccaa7c> , <http://dbtune.org/musicbrainz/resource/track/5ae5b2e0-391d-4de4-8b1e-f4f580471dde> , <http://dbtune.org/musicbrainz/resource/track/0bf85267-b856-4fc1-ad03-8439f34f1eea> , <http://dbtune.org/musicbrainz/resource/track/a300357f-45d1-4211-b366-63fe890680f6> , <http://dbtune.org/musicbrainz/resource/track/ef401552-5bc6-4c2a-af1e-8a867974daf5> , <http://dbtune.org/musicbrainz/resource/track/00aa440b-2cea-4f23-ae8b-298bf371ceeb> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/2944824d-4c26-476f-a981-be849081942f> ;
+      foaf:page "509655233" .
+
+<http://dbtune.org/musicbrainz/data/record/638f317a-e615-4e9a-b3b6-2450e2423fd5>
+      rdfs:label "RDF Description of Ne Me Quitte Pas" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/638f317a-e615-4e9a-b3b6-2450e2423fd5> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/638f317a-e615-4e9a-b3b6-2450e2423fd5>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/638f317a-e615-4e9a-b3b6-2450e2423fd5> .

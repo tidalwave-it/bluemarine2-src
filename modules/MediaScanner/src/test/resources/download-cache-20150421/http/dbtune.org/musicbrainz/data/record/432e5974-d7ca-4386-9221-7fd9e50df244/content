@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/432e5974-d7ca-4386-9221-7fd9e50df244>
+      rdfs:label "RDF Description of The Hit Collection" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/432e5974-d7ca-4386-9221-7fd9e50df244> .
+
+<http://dbtune.org/musicbrainz/resource/record/432e5974-d7ca-4386-9221-7fd9e50df244>
+      a       mo:Record ;
+      rdfs:label "The Hit Collection" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "10"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/50754> ;
+      vocab:tracks "17"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Hit Collection" ;
+      mo:musicbrainz <http://musicbrainz.org/album/432e5974-d7ca-4386-9221-7fd9e50df244> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/f1b23027-bf90-4819-86f5-302dfba442c9> , <http://dbtune.org/musicbrainz/resource/track/3c6bd7fe-360c-41d1-b39a-b52b2f73bfd7> , <http://dbtune.org/musicbrainz/resource/track/bc3427e1-3ca4-4dea-a5b6-424b0efe774c> , <http://dbtune.org/musicbrainz/resource/track/09dba8a4-c24a-4efc-b44e-84b47bf18f4b> , <http://dbtune.org/musicbrainz/resource/track/bace4cf9-3d56-405c-ad31-97c2cbdad713> , <http://dbtune.org/musicbrainz/resource/track/7d8b5c88-b106-4916-8d7a-ea04180988ee> , <http://dbtune.org/musicbrainz/resource/track/9b2d92a5-f67c-4a2f-b921-3574c216e3a2> , <http://dbtune.org/musicbrainz/resource/track/75c6f380-8a4a-4004-b022-7078ff54a7b0> , <http://dbtune.org/musicbrainz/resource/track/337e1095-39f1-4530-9799-5ea440a4acf7> , <http://dbtune.org/musicbrainz/resource/track/61a4d398-a8e3-418c-85f7-616333b259be> , <http://dbtune.org/musicbrainz/resource/track/cd208653-d916-426f-a703-065d30679ca4> , <http://dbtune.org/musicbrainz/resource/track/26e4765a-77f7-48ed-8cf9-a2b2abfc0075> , <http://dbtune.org/musicbrainz/resource/track/d090e88b-99d2-47b3-bd8d-e65d96c62ecb> , <http://dbtune.org/musicbrainz/resource/track/0cfddbf9-b744-43ea-a32b-f00449a10db4> , <http://dbtune.org/musicbrainz/resource/track/d4fdd835-d539-4cea-a428-5b8c80e0bc09> , <http://dbtune.org/musicbrainz/resource/track/805a9971-6b43-49ff-a89a-2633af2c3ace> , <http://dbtune.org/musicbrainz/resource/track/4f7c5bf2-0133-4aa7-9ae9-f8da1100390e> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fbe054ec-a143-4101-9e9e-64abc5ff5ac9> ;
+      foaf:page "714278186" .
+
+<http://musicbrainz.org/album/432e5974-d7ca-4386-9221-7fd9e50df244>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F432e5974-d7ca-4386-9221-7fd9e50df244%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/432e5974-d7ca-4386-9221-7fd9e50df244>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/432e5974-d7ca-4386-9221-7fd9e50df244> .

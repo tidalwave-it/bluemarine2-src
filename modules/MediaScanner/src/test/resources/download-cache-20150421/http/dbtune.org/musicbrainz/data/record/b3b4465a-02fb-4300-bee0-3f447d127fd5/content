@@ -1,0 +1,49 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/b3b4465a-02fb-4300-bee0-3f447d127fd5>
+      a       mo:Record ;
+      rdfs:label "Music for Lovers" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Music for Lovers" ;
+      mo:musicbrainz <http://musicbrainz.org/album/b3b4465a-02fb-4300-bee0-3f447d127fd5> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/8132d9d5-76b2-4dd3-81b4-d1b2ddb4dac9> , <http://dbtune.org/musicbrainz/resource/track/fb749ff5-2373-4bc7-9e26-d5388e1666af> , <http://dbtune.org/musicbrainz/resource/track/374e769b-4dac-4194-9529-eb9ce896e87b> , <http://dbtune.org/musicbrainz/resource/track/05a35144-970a-4185-a968-b9d0c4d61c63> , <http://dbtune.org/musicbrainz/resource/track/45f494f0-afef-43b7-b4c7-fa61618a1cfd> , <http://dbtune.org/musicbrainz/resource/track/93eeadb3-897f-4c3b-891b-5f3be463fa1f> , <http://dbtune.org/musicbrainz/resource/track/9ddebf55-f88b-40a2-b680-6f27f039ddcb> , <http://dbtune.org/musicbrainz/resource/track/e0501452-9df5-443c-bdb3-529479199a58> , <http://dbtune.org/musicbrainz/resource/track/140ab56d-c20e-4c50-85fb-a5c8c5652008> , <http://dbtune.org/musicbrainz/resource/track/ec44e863-cfe2-476b-a1b9-8fe0289eed34> , <http://dbtune.org/musicbrainz/resource/track/7ff4dcf2-c618-4782-bca9-c5cd669928ec> , <http://dbtune.org/musicbrainz/resource/track/97c7afdb-576e-492e-8e74-a39e5a91d698> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/351d8bdf-33a1-45e2-8c04-c85fad20da55> ;
+      foaf:page "493496449" .
+
+<http://dbtune.org/musicbrainz/data/record/b3b4465a-02fb-4300-bee0-3f447d127fd5>
+      rdfs:label "RDF Description of Music for Lovers" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/b3b4465a-02fb-4300-bee0-3f447d127fd5> .
+
+<http://musicbrainz.org/album/b3b4465a-02fb-4300-bee0-3f447d127fd5>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fb3b4465a-02fb-4300-bee0-3f447d127fd5%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/b3b4465a-02fb-4300-bee0-3f447d127fd5>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/b3b4465a-02fb-4300-bee0-3f447d127fd5> .

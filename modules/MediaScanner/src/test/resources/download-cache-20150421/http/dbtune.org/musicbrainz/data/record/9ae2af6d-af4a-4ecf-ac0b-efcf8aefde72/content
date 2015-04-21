@@ -1,0 +1,64 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B00004SRJO>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00004SRJO%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/9ae2af6d-af4a-4ecf-ac0b-efcf8aefde72>
+      a       mo:Record ;
+      rdfs:label "The Best of the Crusaders" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00004SRJO" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00004SRJO.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "1"^^xsd:int ;
+      vocab:tracks "14"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Best of the Crusaders" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00004SRJO> ;
+      mo:image <http://images.amazon.com/images/P/B00004SRJO> , <http://ec1.images-amazon.com/images/P/B00004SRJO.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/9ae2af6d-af4a-4ecf-ac0b-efcf8aefde72> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/454f573e-2bf0-456e-b5e5-5c2970916315> , <http://dbtune.org/musicbrainz/resource/track/0e8c4bc9-1771-4a0b-b1c4-3bda1e0513bf> , <http://dbtune.org/musicbrainz/resource/track/79f816f6-7080-459e-901b-4927199c3d32> , <http://dbtune.org/musicbrainz/resource/track/1ab1501f-ddda-4103-ab34-ce3dcac26d16> , <http://dbtune.org/musicbrainz/resource/track/a4e4e48b-2ccc-4cb3-90ac-c8fa684d25eb> , <http://dbtune.org/musicbrainz/resource/track/f668cf01-1925-4b1b-bea6-25d0c2c984d9> , <http://dbtune.org/musicbrainz/resource/track/5c48ec77-b1f9-4269-9a53-f48af7f91053> , <http://dbtune.org/musicbrainz/resource/track/09551f04-3784-4e56-8262-584914ad3f08> , <http://dbtune.org/musicbrainz/resource/track/6224d4a7-ce38-4f3b-90d0-9df671efbefd> , <http://dbtune.org/musicbrainz/resource/track/416b1770-216e-436e-8417-c61cc9f1c26e> , <http://dbtune.org/musicbrainz/resource/track/308f4411-30b5-49d3-bde7-1e1275f6c616> , <http://dbtune.org/musicbrainz/resource/track/eb29eae3-575e-4a81-a0b1-4c1ec6a295fd> , <http://dbtune.org/musicbrainz/resource/track/aa015834-77f7-4c92-96cf-d32bc5df9073> , <http://dbtune.org/musicbrainz/resource/track/151cbe14-6715-4eda-8674-5b3fc9dbbe0c> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fcb79f1a-d3a9-41fe-9cd7-d16537907337> ;
+      foaf:page "714277990" .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00004SRJO>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00004SRJO%3E> .
+
+<http://ec1.images-amazon.com/images/P/B00004SRJO.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00004SRJO.01.MZZZZZZZ.jpg%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/9ae2af6d-af4a-4ecf-ac0b-efcf8aefde72>
+      rdfs:label "RDF Description of The Best of the Crusaders" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/9ae2af6d-af4a-4ecf-ac0b-efcf8aefde72> .
+
+<http://dbtune.org/musicbrainz/resource/master/9ae2af6d-af4a-4ecf-ac0b-efcf8aefde72>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/9ae2af6d-af4a-4ecf-ac0b-efcf8aefde72> .
+
+<http://musicbrainz.org/album/9ae2af6d-af4a-4ecf-ac0b-efcf8aefde72>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F9ae2af6d-af4a-4ecf-ac0b-efcf8aefde72%3E> .

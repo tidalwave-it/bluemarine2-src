@@ -1,0 +1,51 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/f87ba9ca-2265-4115-86c0-5fea2e64e007>
+      rdfs:label "RDF Description of Top of the Spot" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/f87ba9ca-2265-4115-86c0-5fea2e64e007> .
+
+<http://dbtune.org/musicbrainz/resource/master/f87ba9ca-2265-4115-86c0-5fea2e64e007>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/f87ba9ca-2265-4115-86c0-5fea2e64e007> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/f87ba9ca-2265-4115-86c0-5fea2e64e007>
+      a       mo:Record ;
+      rdfs:label "Top of the Spot" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "5"^^xsd:int ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:date "1994-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Top of the Spot" ;
+      mo:musicbrainz <http://musicbrainz.org/album/f87ba9ca-2265-4115-86c0-5fea2e64e007> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/345842> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/e44c094f-e719-4290-b6e5-6562233f7ce5> , <http://dbtune.org/musicbrainz/resource/track/364fefbc-7c19-43c7-ba28-206aa0afcee4> , <http://dbtune.org/musicbrainz/resource/track/92086f20-a66b-4e9c-8b63-9256cc7f572a> , <http://dbtune.org/musicbrainz/resource/track/59e5183b-39ab-4be4-bd93-a34e5cebafe5> , <http://dbtune.org/musicbrainz/resource/track/93643cea-ba78-444f-bd9e-f27cadd0a13e> , <http://dbtune.org/musicbrainz/resource/track/eda4bfb4-0de0-45e4-94c8-6d5bc458fb82> , <http://dbtune.org/musicbrainz/resource/track/5f857fbf-184f-4179-b104-e547cc0467aa> , <http://dbtune.org/musicbrainz/resource/track/4f7125a3-044d-4828-90a5-475db0a7f81c> , <http://dbtune.org/musicbrainz/resource/track/a7874111-773e-4e1d-88b9-abd63ab4eba5> , <http://dbtune.org/musicbrainz/resource/track/4ca2261e-eb0e-47c9-93ef-858b199370f9> , <http://dbtune.org/musicbrainz/resource/track/3692c31f-07a2-4fcf-bf5d-9b4b7576d7c0> , <http://dbtune.org/musicbrainz/resource/track/1abbcd64-5c0f-454b-9916-1fbf4bdbb6cb> , <http://dbtune.org/musicbrainz/resource/track/c8d70a39-5a78-43b3-b6ee-718105c2ad46> , <http://dbtune.org/musicbrainz/resource/track/6e8b4759-bde0-417e-a56f-0f5d8d14fff1> , <http://dbtune.org/musicbrainz/resource/track/343f9127-79fa-4781-adc0-1f78f52f7242> , <http://dbtune.org/musicbrainz/resource/track/4da77409-7ed3-4bd2-a448-855f9d7ae88b> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "721978887" .
+
+<http://musicbrainz.org/album/f87ba9ca-2265-4115-86c0-5fea2e64e007>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Ff87ba9ca-2265-4115-86c0-5fea2e64e007%3E> .

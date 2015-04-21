@@ -1,0 +1,65 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/23838c32-f955-4ab3-8775-84236bf87dda>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F23838c32-f955-4ab3-8775-84236bf87dda%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/23838c32-f955-4ab3-8775-84236bf87dda>
+      rdfs:label "RDF Description of Golden Hits" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/23838c32-f955-4ab3-8775-84236bf87dda> .
+
+<http://dbtune.org/musicbrainz/resource/record/23838c32-f955-4ab3-8775-84236bf87dda>
+      a       mo:Record ;
+      rdfs:label "Golden Hits" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000008JHA" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000008JHA.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "27"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/161327> , <http://dbtune.org/musicbrainz/resource/toc/270714> ;
+      vocab:tracks "18"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Golden Hits" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000008JHA> ;
+      mo:image <http://images.amazon.com/images/P/B000008JHA> , <http://ec1.images-amazon.com/images/P/B000008JHA.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/23838c32-f955-4ab3-8775-84236bf87dda> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/8c782b05-c394-4519-9789-8a42aafa2291> , <http://dbtune.org/musicbrainz/resource/track/bcef5ea9-5e11-4f56-8d05-4608d8139a0c> , <http://dbtune.org/musicbrainz/resource/track/a1ce256f-8c62-426f-a376-b13e2889ff6a> , <http://dbtune.org/musicbrainz/resource/track/c5163e13-4c33-4ad6-b4f2-4aaad0e3a734> , <http://dbtune.org/musicbrainz/resource/track/f199c529-07ca-4aec-bc17-6a192ff0c7c7> , <http://dbtune.org/musicbrainz/resource/track/bfcdfd92-8380-4ab0-96f6-3b440dffee06> , <http://dbtune.org/musicbrainz/resource/track/eec67840-ee0c-4cd2-9932-db97d65b9252> , <http://dbtune.org/musicbrainz/resource/track/536437ac-1295-41ff-a017-7e79e79ac110> , <http://dbtune.org/musicbrainz/resource/track/aa969a31-9e26-4394-8ce7-14b35962f304> , <http://dbtune.org/musicbrainz/resource/track/aba6288e-9aec-4068-8fb5-d263321f0dfd> , <http://dbtune.org/musicbrainz/resource/track/5c89f96d-7d28-4265-ab96-2c3705b8b555> , <http://dbtune.org/musicbrainz/resource/track/1dfcfc5e-03af-4f27-bf14-832a471d25ba> , <http://dbtune.org/musicbrainz/resource/track/c58ed688-fc2c-48be-af88-58c74d288c53> , <http://dbtune.org/musicbrainz/resource/track/101e0c9f-b44f-4344-a780-f1131d504336> , <http://dbtune.org/musicbrainz/resource/track/62d35395-05c5-4556-9b4f-2984a3e6e40a> , <http://dbtune.org/musicbrainz/resource/track/32d4cadb-1cb0-4d3f-b2a2-e81af3e81384> , <http://dbtune.org/musicbrainz/resource/track/20785ede-4d5e-4911-af7e-fca7dcdc9cd0> , <http://dbtune.org/musicbrainz/resource/track/bb4a07d4-c290-4374-b338-c19dd86762db> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3fb55c03-3ad9-4341-8d0b-7c4c49aefca0> ;
+      foaf:page "285643983" .
+
+<http://dbtune.org/musicbrainz/resource/master/23838c32-f955-4ab3-8775-84236bf87dda>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/23838c32-f955-4ab3-8775-84236bf87dda> .
+
+<http://images.amazon.com/images/P/B000008JHA>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000008JHA%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000008JHA>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000008JHA%3E> .
+
+<http://ec1.images-amazon.com/images/P/B000008JHA.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000008JHA.01.MZZZZZZZ.jpg%3E> .

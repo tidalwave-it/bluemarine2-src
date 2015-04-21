@@ -1,0 +1,56 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/08eacc4b-267e-4d13-a685-99e5f108cd6e>
+      a       mo:Record ;
+      rdfs:label "Porgy and Bess (The Glyndebourne Chorus & London Philharmonic feat. conductor: Simon Rattle) (disc 3)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "36"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/65280> , <http://dbtune.org/musicbrainz/resource/toc/148701> ;
+      vocab:tracks "19"^^xsd:int ;
+      dc:date "1989-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Porgy and Bess (The Glyndebourne Chorus & London Philharmonic feat. conductor: Simon Rattle) (disc 3)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/08eacc4b-267e-4d13-a685-99e5f108cd6e> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/284668> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/d69e1079-0c07-427a-b32d-6ebe7c99396e> , <http://dbtune.org/musicbrainz/resource/track/1976d835-a766-4600-b8b5-406b0eebddcc> , <http://dbtune.org/musicbrainz/resource/track/012d60a9-cf62-41d2-aab1-a1390d70c33b> , <http://dbtune.org/musicbrainz/resource/track/0355802e-824a-4be1-a2c6-071000315b28> , <http://dbtune.org/musicbrainz/resource/track/a60fa7a9-f534-476a-b551-bbed042b6384> , <http://dbtune.org/musicbrainz/resource/track/54ff5069-407a-46f5-b20f-7cc1414e4c3e> , <http://dbtune.org/musicbrainz/resource/track/3a6e1b64-7c3b-4f58-8d9d-49a6c03080cd> , <http://dbtune.org/musicbrainz/resource/track/29d29370-cefe-4dd6-9163-35e92b187b2c> , <http://dbtune.org/musicbrainz/resource/track/f1681612-0b00-49ea-8d2f-c1e1ff867e54> , <http://dbtune.org/musicbrainz/resource/track/f00b93c9-f71b-4640-963a-e4b6525a8bd8> , <http://dbtune.org/musicbrainz/resource/track/ffd1a8aa-dc21-47e3-84d6-52b860e0da40> , <http://dbtune.org/musicbrainz/resource/track/3a943f6f-52e1-4921-b20e-2a80c39e3b36> , <http://dbtune.org/musicbrainz/resource/track/f34b18fb-c9fd-404d-a62d-b9bb6f220aee> , <http://dbtune.org/musicbrainz/resource/track/515c9649-ea43-4558-b572-6ce1ab309f7c> , <http://dbtune.org/musicbrainz/resource/track/18a2fe49-f5ac-4d1f-a8b8-b82ecc779d50> , <http://dbtune.org/musicbrainz/resource/track/1fa1e323-4310-4336-9320-f4997005a84c> , <http://dbtune.org/musicbrainz/resource/track/53b8ace5-22a6-4a0f-a477-74c9d90f55df> , <http://dbtune.org/musicbrainz/resource/track/1ab165f9-09df-4d4a-9bcf-a193e92eb961> , <http://dbtune.org/musicbrainz/resource/track/6aa223fb-4ad2-4b52-8296-f6c19019856b> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/65744963-191a-44ef-a3c7-b693a808a158> ;
+      foaf:page "587834177" .
+
+<http://dbtune.org/musicbrainz/data/record/08eacc4b-267e-4d13-a685-99e5f108cd6e>
+      rdfs:label "RDF Description of Porgy and Bess (The Glyndebourne Chorus & London Philharmonic feat. conductor: Simon Rattle) (disc 3)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/08eacc4b-267e-4d13-a685-99e5f108cd6e> .
+
+<http://musicbrainz.org/album/08eacc4b-267e-4d13-a685-99e5f108cd6e>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F08eacc4b-267e-4d13-a685-99e5f108cd6e%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/08eacc4b-267e-4d13-a685-99e5f108cd6e>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/08eacc4b-267e-4d13-a685-99e5f108cd6e> .

@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/077e2197-3073-4016-b627-e91d007fa253>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/077e2197-3073-4016-b627-e91d007fa253> .
+
+<http://dbtune.org/musicbrainz/resource/record/077e2197-3073-4016-b627-e91d007fa253>
+      a       mo:Record ;
+      rdfs:label "The Best Of" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "22"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/109445> ;
+      vocab:tracks "10"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Best Of" ;
+      mo:musicbrainz <http://musicbrainz.org/album/077e2197-3073-4016-b627-e91d007fa253> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/2d9c5fcc-a4d3-4733-b4f9-b0cda6b03e79> , <http://dbtune.org/musicbrainz/resource/track/e4788038-a97f-475d-bb17-4a30a041627c> , <http://dbtune.org/musicbrainz/resource/track/0277db5c-38f7-451d-a9ce-e8e17c813e6b> , <http://dbtune.org/musicbrainz/resource/track/95647c8d-609c-43d4-81a3-95fae11e013b> , <http://dbtune.org/musicbrainz/resource/track/1c3f2ba5-f382-4fbf-bde3-ac47e4785d75> , <http://dbtune.org/musicbrainz/resource/track/ad55bfcf-02a7-4227-a5b2-7852baa7b7a4> , <http://dbtune.org/musicbrainz/resource/track/9afc047e-e3b4-4bf8-af05-349e0583d286> , <http://dbtune.org/musicbrainz/resource/track/55a6533f-a5bd-4c18-87b8-97289232b9be> , <http://dbtune.org/musicbrainz/resource/track/85ec7e5f-5b4b-4871-a88c-bb4be6691eae> , <http://dbtune.org/musicbrainz/resource/track/608f0f98-11ee-4c26-8ebf-712164005f61> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fbe054ec-a143-4101-9e9e-64abc5ff5ac9> ;
+      foaf:page "714277990" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/077e2197-3073-4016-b627-e91d007fa253>
+      rdfs:label "RDF Description of The Best Of" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/077e2197-3073-4016-b627-e91d007fa253> .
+
+<http://musicbrainz.org/album/077e2197-3073-4016-b627-e91d007fa253>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F077e2197-3073-4016-b627-e91d007fa253%3E> .

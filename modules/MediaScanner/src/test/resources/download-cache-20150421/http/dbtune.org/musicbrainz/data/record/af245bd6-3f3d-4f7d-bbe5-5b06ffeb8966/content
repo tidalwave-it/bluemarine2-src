@@ -1,0 +1,55 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/af245bd6-3f3d-4f7d-bbe5-5b06ffeb8966>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/af245bd6-3f3d-4f7d-bbe5-5b06ffeb8966> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/af245bd6-3f3d-4f7d-bbe5-5b06ffeb8966>
+      a       mo:Record ;
+      rdfs:label "Barocco" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "13"^^xsd:int ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:date "1990-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/ita> ;
+      dc:title "Barocco" ;
+      mo:musicbrainz <http://musicbrainz.org/album/af245bd6-3f3d-4f7d-bbe5-5b06ffeb8966> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/406147> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/3a7cbdd9-3f41-40b4-80c1-162697cbd9a2> , <http://dbtune.org/musicbrainz/resource/track/0567a179-70d8-4c54-baa2-46d8e546ab05> , <http://dbtune.org/musicbrainz/resource/track/02ecd8e1-54fc-40e3-a863-804c567db1e4> , <http://dbtune.org/musicbrainz/resource/track/f0561f24-e999-4bf4-8d3f-157ea2cbc428> , <http://dbtune.org/musicbrainz/resource/track/284853f8-80ee-420d-9a8c-0edf5d9629dc> , <http://dbtune.org/musicbrainz/resource/track/ef92f27e-7c78-4730-b482-7d7372114d08> , <http://dbtune.org/musicbrainz/resource/track/38eb4276-3f08-4e69-9f45-e21852cbed64> , <http://dbtune.org/musicbrainz/resource/track/46475d50-d380-4701-97c3-cc958d15bceb> , <http://dbtune.org/musicbrainz/resource/track/c59a9ac2-adc1-4803-9b11-9e8ff0720d14> , <http://dbtune.org/musicbrainz/resource/track/17ffecfd-a70f-4be5-9a45-0ddb4c107f71> , <http://dbtune.org/musicbrainz/resource/track/c0dc4ab7-0f12-4d2f-8808-2977c24a9f20> , <http://dbtune.org/musicbrainz/resource/track/f56eea23-69b1-446a-8ff8-1d53e79f8b79> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/940a5867-a2e5-4af5-ae05-91cf63bd0b52> ;
+      foaf:page "103399556" .
+
+<http://musicbrainz.org/album/af245bd6-3f3d-4f7d-bbe5-5b06ffeb8966>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Faf245bd6-3f3d-4f7d-bbe5-5b06ffeb8966%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/af245bd6-3f3d-4f7d-bbe5-5b06ffeb8966>
+      rdfs:label "RDF Description of Barocco" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/af245bd6-3f3d-4f7d-bbe5-5b06ffeb8966> .

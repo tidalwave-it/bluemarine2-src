@@ -1,0 +1,43 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/signal/6b0183dd-7bb7-471e-bb9e-656fba8bc2f1>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/track/6b0183dd-7bb7-471e-bb9e-656fba8bc2f1> .
+
+<http://dbtune.org/musicbrainz/data/track/6b0183dd-7bb7-471e-bb9e-656fba8bc2f1>
+      rdfs:label "RDF Description of The Flat Foot Floogie" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/track/6b0183dd-7bb7-471e-bb9e-656fba8bc2f1> .
+
+<http://dbtune.org/musicbrainz/resource/record/2807e647-1450-4823-b3b6-ed5133732f24>
+      mo:track <http://dbtune.org/musicbrainz/resource/track/6b0183dd-7bb7-471e-bb9e-656fba8bc2f1> .
+
+<http://musicbrainz.org/track/6b0183dd-7bb7-471e-bb9e-656fba8bc2f1>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Ftrack%2F6b0183dd-7bb7-471e-bb9e-656fba8bc2f1%3E> .
+
+mo:Track
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FTrack%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/6b0183dd-7bb7-471e-bb9e-656fba8bc2f1>
+      a       mo:Track ;
+      rdfs:label "The Flat Foot Floogie" ;
+      dc:date "0"^^xsd:int ;
+      dc:title "The Flat Foot Floogie" ;
+      mo:length "175853"^^xsd:int ;
+      mo:musicbrainz <http://musicbrainz.org/track/6b0183dd-7bb7-471e-bb9e-656fba8bc2f1> ;
+      mo:track_number "12"^^xsd:int ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> .

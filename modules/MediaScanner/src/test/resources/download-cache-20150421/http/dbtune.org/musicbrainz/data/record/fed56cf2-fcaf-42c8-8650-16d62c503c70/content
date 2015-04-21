@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B000007P27>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000007P27%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/fed56cf2-fcaf-42c8-8650-16d62c503c70>
+      a       mo:Record ;
+      rdfs:label "The Very Best Of" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000007P27" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B000007P27.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "23"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/8782> ;
+      vocab:tracks "24"^^xsd:int ;
+      dc:date "1998-06-23" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Very Best Of" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000007P27> ;
+      mo:image <http://images.amazon.com/images/P/B000007P27> , <http://images.amazon.com/images/P/B000007P27.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/fed56cf2-fcaf-42c8-8650-16d62c503c70> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/104441> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/2464782c-3f0a-4432-945c-dc0ea65ffa64> , <http://dbtune.org/musicbrainz/resource/track/54aa1c09-1452-49e5-bd90-e97b78f99a11> , <http://dbtune.org/musicbrainz/resource/track/9259159b-6d90-4738-b4ea-84048916f209> , <http://dbtune.org/musicbrainz/resource/track/517c0528-fea1-4e59-aa8f-853863a6624a> , <http://dbtune.org/musicbrainz/resource/track/7d223a9f-aac6-482f-9f86-33d6fc38ee63> , <http://dbtune.org/musicbrainz/resource/track/5612bcf7-d217-4f7e-b29b-93c23a0ec21c> , <http://dbtune.org/musicbrainz/resource/track/4216c173-eeae-49cf-9cb2-25bab67f4f42> , <http://dbtune.org/musicbrainz/resource/track/36158799-19fc-494a-b433-ece19f2e2e21> , <http://dbtune.org/musicbrainz/resource/track/ec6840c3-ce26-4696-9b61-a5ab6bde3ede> , <http://dbtune.org/musicbrainz/resource/track/7324d364-ead4-4a8c-a21d-f3b1548e9496> , <http://dbtune.org/musicbrainz/resource/track/efaa21c9-3e23-46a1-a94a-3aa7afa0983d> , <http://dbtune.org/musicbrainz/resource/track/b11325f6-6ca9-4c0b-a5a5-33bd073d8804> , <http://dbtune.org/musicbrainz/resource/track/4e656884-fc4c-4142-bab0-9d8040da9392> , <http://dbtune.org/musicbrainz/resource/track/2f116def-5302-4f5c-9ecf-0e703cc6dfea> , <http://dbtune.org/musicbrainz/resource/track/6b80c2c6-4e20-4eb6-8a21-96da1ecdb128> , <http://dbtune.org/musicbrainz/resource/track/f68ffd91-f787-4b88-959a-566b54391b89> , <http://dbtune.org/musicbrainz/resource/track/1fb90aeb-01c1-441b-988e-ad69e35358a4> , <http://dbtune.org/musicbrainz/resource/track/e373bc6a-7ec0-4d91-afdd-0c191679b7bf> , <http://dbtune.org/musicbrainz/resource/track/51a26a69-3d78-48fe-8784-7d83a90a047b> , <http://dbtune.org/musicbrainz/resource/track/9c4edafb-8277-4e2a-9129-7f6722ceff2f> , <http://dbtune.org/musicbrainz/resource/track/5f1e4787-cbbb-48b9-926f-7576b900769d> , <http://dbtune.org/musicbrainz/resource/track/50e5b6a5-20cb-432a-ae7d-427ceaecaa83> , <http://dbtune.org/musicbrainz/resource/track/93738ed5-9181-47e3-9126-85accfee8ad5> , <http://dbtune.org/musicbrainz/resource/track/89cd57a9-be53-499d-a448-0205337d8903> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/eea8a864-fcda-4602-9569-38ab446decd6> ;
+      foaf:page "714278630" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000007P27>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000007P27%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/fed56cf2-fcaf-42c8-8650-16d62c503c70>
+      rdfs:label "RDF Description of The Very Best Of" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/fed56cf2-fcaf-42c8-8650-16d62c503c70> .
+
+<http://musicbrainz.org/album/fed56cf2-fcaf-42c8-8650-16d62c503c70>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Ffed56cf2-fcaf-42c8-8650-16d62c503c70%3E> .
+
+<http://images.amazon.com/images/P/B000007P27.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000007P27.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/fed56cf2-fcaf-42c8-8650-16d62c503c70>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/fed56cf2-fcaf-42c8-8650-16d62c503c70> .

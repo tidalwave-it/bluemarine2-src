@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B000XCOUVU>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000XCOUVU%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000XCOUVU>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000XCOUVU%3E> .
+
+<http://ec1.images-amazon.com/images/P/B000XCOUVU.08.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000XCOUVU.08.MZZZZZZZ.jpg%3E> .
+
+<http://musicbrainz.org/album/45f9e3f9-4f39-4f45-9d53-fb60145883ba>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F45f9e3f9-4f39-4f45-9d53-fb60145883ba%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/45f9e3f9-4f39-4f45-9d53-fb60145883ba>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/45f9e3f9-4f39-4f45-9d53-fb60145883ba> .
+
+<http://dbtune.org/musicbrainz/resource/record/45f9e3f9-4f39-4f45-9d53-fb60145883ba>
+      a       mo:Record ;
+      rdfs:label "Plays Django Reinhardt (disc 3: 1942-1947)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000XCOUVU" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000XCOUVU.08.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "15"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/263194> ;
+      vocab:tracks "26"^^xsd:int ;
+      dc:date "2008-02-08" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/fra> ;
+      dc:title "Plays Django Reinhardt (disc 3: 1942-1947)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000XCOUVU> ;
+      mo:image <http://images.amazon.com/images/P/B000XCOUVU> , <http://ec1.images-amazon.com/images/P/B000XCOUVU.08.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/45f9e3f9-4f39-4f45-9d53-fb60145883ba> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/432077> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/c9a16e73-1e7d-49a8-bba6-4a5304963341> , <http://dbtune.org/musicbrainz/resource/track/a623265e-b16a-4581-970c-8144e222003e> , <http://dbtune.org/musicbrainz/resource/track/44ac01de-aad7-4301-a431-9e37dc7fede6> , <http://dbtune.org/musicbrainz/resource/track/a248e294-fc7a-4635-a137-2aab8798e41a> , <http://dbtune.org/musicbrainz/resource/track/7f295780-2f34-4974-9c6b-b512f9cdeb6a> , <http://dbtune.org/musicbrainz/resource/track/b13e7daa-be49-4248-9286-837eab10b96d> , <http://dbtune.org/musicbrainz/resource/track/870fc056-ddb0-4d45-a586-23b74f9e474c> , <http://dbtune.org/musicbrainz/resource/track/2d375336-d3be-46f6-82c2-ab2ed8c5ed3b> , <http://dbtune.org/musicbrainz/resource/track/d8d875e6-583b-4d02-81d5-4213d5ed244b> , <http://dbtune.org/musicbrainz/resource/track/b3b6abd5-8859-403a-84c7-0061c4975f1d> , <http://dbtune.org/musicbrainz/resource/track/cbc0ee8d-71fb-4f49-b6d9-4dc9ebc97517> , <http://dbtune.org/musicbrainz/resource/track/58a4fc55-bbe0-436f-9eb1-5a1495b1da1b> , <http://dbtune.org/musicbrainz/resource/track/6fd7e8b2-e5c5-4a71-b47e-ee5b6f0aa116> , <http://dbtune.org/musicbrainz/resource/track/287d34f6-6fb8-422c-afb8-354a40dd09ad> , <http://dbtune.org/musicbrainz/resource/track/5b85780a-ecf1-430b-82d5-b853691e8a72> , <http://dbtune.org/musicbrainz/resource/track/3a40ebeb-62f7-4acc-84da-e32a656b7d73> , <http://dbtune.org/musicbrainz/resource/track/d8f86854-d681-4d1c-8cbe-4a02f62da9c5> , <http://dbtune.org/musicbrainz/resource/track/64d4d6c8-dbc8-4323-b1df-babec4501975> , <http://dbtune.org/musicbrainz/resource/track/3bbc8c90-1237-4ec5-aa5e-0a4a809a07a8> , <http://dbtune.org/musicbrainz/resource/track/503d0749-1343-469f-97ae-a9bc6b6a6d59> , <http://dbtune.org/musicbrainz/resource/track/683384c1-d4e6-493b-bfd4-1c32f950a293> , <http://dbtune.org/musicbrainz/resource/track/3062ef2a-be94-434a-b82b-341f22bf5c4e> , <http://dbtune.org/musicbrainz/resource/track/e82d8be7-b4df-4018-8442-5c000e4f5735> , <http://dbtune.org/musicbrainz/resource/track/9a506e38-6c1e-4fbe-b896-04d85884d482> , <http://dbtune.org/musicbrainz/resource/track/69e63139-dba2-4f02-a271-3b78189c9839> , <http://dbtune.org/musicbrainz/resource/track/20ccf89b-4500-47e7-807c-7aa4d80e4390> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> ;
+      foaf:page "584149633" .
+
+<http://dbtune.org/musicbrainz/data/record/45f9e3f9-4f39-4f45-9d53-fb60145883ba>
+      rdfs:label "RDF Description of Plays Django Reinhardt (disc 3: 1942-1947)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/45f9e3f9-4f39-4f45-9d53-fb60145883ba> .

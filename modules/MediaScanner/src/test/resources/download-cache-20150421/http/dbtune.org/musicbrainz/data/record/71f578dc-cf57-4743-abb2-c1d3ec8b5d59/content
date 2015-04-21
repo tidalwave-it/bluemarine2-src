@@ -1,0 +1,56 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/71f578dc-cf57-4743-abb2-c1d3ec8b5d59>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/71f578dc-cf57-4743-abb2-c1d3ec8b5d59> .
+
+<http://musicbrainz.org/album/71f578dc-cf57-4743-abb2-c1d3ec8b5d59>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F71f578dc-cf57-4743-abb2-c1d3ec8b5d59%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/71f578dc-cf57-4743-abb2-c1d3ec8b5d59>
+      a       mo:Record ;
+      rdfs:label "The Essential" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "32"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/220858> , <http://dbtune.org/musicbrainz/resource/toc/18290> ;
+      vocab:tracks "14"^^xsd:int ;
+      dc:date "1985-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Essential" ;
+      mo:musicbrainz <http://musicbrainz.org/album/71f578dc-cf57-4743-abb2-c1d3ec8b5d59> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/327960> , <http://dbtune.org/musicbrainz/resource/release/38413> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/aa257100-d8b3-4f53-8925-ad70c6595723> , <http://dbtune.org/musicbrainz/resource/track/9d7cf825-b279-4f35-a9b1-359b1389cb25> , <http://dbtune.org/musicbrainz/resource/track/9d6b7221-05b2-4907-8225-ca9bf9f7a4e4> , <http://dbtune.org/musicbrainz/resource/track/a14652f8-804b-4208-9d24-629bc25b93c8> , <http://dbtune.org/musicbrainz/resource/track/4fbc0353-6fa9-4fe0-8159-43f3aa13ef26> , <http://dbtune.org/musicbrainz/resource/track/eb5abd2a-9874-48c5-9353-f8ab6d892be9> , <http://dbtune.org/musicbrainz/resource/track/e5c84618-67dd-48e9-9f9a-745700451705> , <http://dbtune.org/musicbrainz/resource/track/14f605cf-fc2d-4f66-8a30-33fa111544fc> , <http://dbtune.org/musicbrainz/resource/track/cf111a16-9851-4fa5-95ab-38c26297b148> , <http://dbtune.org/musicbrainz/resource/track/d55e50c0-e955-4b41-bb7a-39528e63967a> , <http://dbtune.org/musicbrainz/resource/track/d5b9b868-bff4-4ad2-8e98-39a80eee463a> , <http://dbtune.org/musicbrainz/resource/track/959ae32f-f326-4012-b5d3-d5684d939975> , <http://dbtune.org/musicbrainz/resource/track/73fcec0c-cbae-44a7-aa93-d9f38633d1ec> , <http://dbtune.org/musicbrainz/resource/track/14ad8712-44e9-47ac-b24d-675e68a7f586> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/86e2e2ad-6d1b-44fd-9463-b6683718a1cc> ;
+      foaf:page "714278100" .
+
+<http://dbtune.org/musicbrainz/data/record/71f578dc-cf57-4743-abb2-c1d3ec8b5d59>
+      rdfs:label "RDF Description of The Essential" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/71f578dc-cf57-4743-abb2-c1d3ec8b5d59> .

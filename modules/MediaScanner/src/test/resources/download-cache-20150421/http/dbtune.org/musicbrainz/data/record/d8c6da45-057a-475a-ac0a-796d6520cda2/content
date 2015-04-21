@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/d8c6da45-057a-475a-ac0a-796d6520cda2>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/d8c6da45-057a-475a-ac0a-796d6520cda2> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/d8c6da45-057a-475a-ac0a-796d6520cda2>
+      rdfs:label "RDF Description of Symphonien Nos. 4, 7 (Berliner Philharmoniker feat. conductor: Herbert von Karajan)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/d8c6da45-057a-475a-ac0a-796d6520cda2> .
+
+<http://ec1.images-amazon.com/images/P/B000001GJO.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000001GJO.01.MZZZZZZZ.jpg%3E> .
+
+<http://musicbrainz.org/album/d8c6da45-057a-475a-ac0a-796d6520cda2>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fd8c6da45-057a-475a-ac0a-796d6520cda2%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/d8c6da45-057a-475a-ac0a-796d6520cda2>
+      a       mo:Record ;
+      rdfs:label "Symphonien Nos. 4, 7 (Berliner Philharmoniker feat. conductor: Herbert von Karajan)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000001GJO" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000001GJO.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "11"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/206153> ;
+      vocab:tracks "8"^^xsd:int ;
+      dc:date "1985-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/deu> ;
+      dc:title "Symphonien Nos. 4, 7 (Berliner Philharmoniker feat. conductor: Herbert von Karajan)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000001GJO> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000001GJO.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000001GJO> ;
+      mo:musicbrainz <http://musicbrainz.org/album/d8c6da45-057a-475a-ac0a-796d6520cda2> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/302477> , <http://dbtune.org/musicbrainz/resource/release/546088> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/7d29648b-961e-4bbe-af54-4be141a34797> , <http://dbtune.org/musicbrainz/resource/track/cb3d4093-7dd1-4d50-b89a-30cf6ccb08a8> , <http://dbtune.org/musicbrainz/resource/track/5acd5225-fec7-400c-807b-080fc77c9f66> , <http://dbtune.org/musicbrainz/resource/track/1ff45757-ab7d-4437-8d0e-7542b4ef8b40> , <http://dbtune.org/musicbrainz/resource/track/84d11547-8c65-4c38-bbbe-a0b9f9f0ca22> , <http://dbtune.org/musicbrainz/resource/track/d45318c1-ffb2-4c66-a5a3-928c1da44b02> , <http://dbtune.org/musicbrainz/resource/track/ee0428fc-34c5-4732-a026-a227437177ab> , <http://dbtune.org/musicbrainz/resource/track/9dc883f0-4143-489c-9f2e-812d9787285e> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/1f9df192-a621-4f54-8850-2c5373b7eac9> ;
+      foaf:page "698828080" .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000001GJO>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000001GJO%3E> .
+
+<http://images.amazon.com/images/P/B000001GJO>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000001GJO%3E> .

@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/60b89cd8-3867-4b3f-b949-ebb7336c8e69>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/60b89cd8-3867-4b3f-b949-ebb7336c8e69> .
+
+<http://dbtune.org/musicbrainz/resource/record/60b89cd8-3867-4b3f-b949-ebb7336c8e69>
+      a       mo:Record ;
+      rdfs:label "Piano Concertos. No.2,3 Entremont, Watts" ;
+      vocab:album_attributes
+              "{0}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/64185> ;
+      vocab:tracks "6"^^xsd:int ;
+      dc:title "Piano Concertos. No.2,3 Entremont, Watts" ;
+      mo:musicbrainz <http://musicbrainz.org/album/60b89cd8-3867-4b3f-b949-ebb7336c8e69> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/486e2bda-55e7-46fc-80ff-85a656f5feb0> , <http://dbtune.org/musicbrainz/resource/track/c89c38d0-d6bb-4a64-bbb2-9faf7b503118> , <http://dbtune.org/musicbrainz/resource/track/7e7239f4-d68f-408e-b78c-9f692da5df5a> , <http://dbtune.org/musicbrainz/resource/track/04665d1c-dabf-4fed-8b24-fa1126e8cd3e> , <http://dbtune.org/musicbrainz/resource/track/56d030c6-a429-45f8-bc95-dfda045d1e0b> , <http://dbtune.org/musicbrainz/resource/track/90e162b0-5452-4999-8d14-3a4b5616b7ce> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/44b16e44-da77-4580-b851-0d765904573e> ;
+      foaf:page "580992513" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/60b89cd8-3867-4b3f-b949-ebb7336c8e69>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F60b89cd8-3867-4b3f-b949-ebb7336c8e69%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/60b89cd8-3867-4b3f-b949-ebb7336c8e69>
+      rdfs:label "RDF Description of Piano Concertos. No.2,3 Entremont, Watts" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/60b89cd8-3867-4b3f-b949-ebb7336c8e69> .

@@ -1,0 +1,50 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/195f74bb-1af7-4ef1-893a-e9d652f6b0c1>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/195f74bb-1af7-4ef1-893a-e9d652f6b0c1> .
+
+<http://dbtune.org/musicbrainz/data/record/195f74bb-1af7-4ef1-893a-e9d652f6b0c1>
+      rdfs:label "RDF Description of The Message" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/195f74bb-1af7-4ef1-893a-e9d652f6b0c1> .
+
+<http://dbtune.org/musicbrainz/resource/record/195f74bb-1af7-4ef1-893a-e9d652f6b0c1>
+      a       mo:Record ;
+      rdfs:label "The Message" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "3"^^xsd:int ;
+      vocab:tracks "14"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Message" ;
+      mo:musicbrainz <http://musicbrainz.org/album/195f74bb-1af7-4ef1-893a-e9d652f6b0c1> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/476120> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/c0fb275e-6f3e-4199-9fa2-19c3d3529854> , <http://dbtune.org/musicbrainz/resource/track/90d966c0-06d4-45dc-8bf7-0c5991bbf4f7> , <http://dbtune.org/musicbrainz/resource/track/bf09204f-a5a3-4597-8fb0-4f7c7749ebd4> , <http://dbtune.org/musicbrainz/resource/track/a355b33a-0c4f-4425-9655-e41ed5bcd4f1> , <http://dbtune.org/musicbrainz/resource/track/50fff1c2-910d-4e2b-900b-5e83f80965bf> , <http://dbtune.org/musicbrainz/resource/track/a59b03d3-f7ee-4dca-a341-dcf122711901> , <http://dbtune.org/musicbrainz/resource/track/4a846faa-cb27-4bca-8782-58baabfe0057> , <http://dbtune.org/musicbrainz/resource/track/6fb3995f-bdf8-4da7-9b6c-d270ab56e69c> , <http://dbtune.org/musicbrainz/resource/track/7ed95314-270f-423e-8477-77c109ae608d> , <http://dbtune.org/musicbrainz/resource/track/227bb2bb-f57c-43dc-ba1c-64807460df51> , <http://dbtune.org/musicbrainz/resource/track/c488a061-ead2-4af9-a414-2ad2c03d1519> , <http://dbtune.org/musicbrainz/resource/track/1f92ee2f-f5b9-40f6-83c8-844335da88ee> , <http://dbtune.org/musicbrainz/resource/track/a665c338-8e5b-48b1-b4f6-cf07d1baf950> , <http://dbtune.org/musicbrainz/resource/track/4212d43e-57d7-451a-8fb1-f93a0340f8a5> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7db590cd-d7e6-4b36-b4e7-e8209426b02d> ;
+      foaf:page "714278342" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/195f74bb-1af7-4ef1-893a-e9d652f6b0c1>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F195f74bb-1af7-4ef1-893a-e9d652f6b0c1%3E> .

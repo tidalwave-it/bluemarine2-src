@@ -1,0 +1,65 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/edf99004-eaca-4295-b2f9-581891ba044f>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/edf99004-eaca-4295-b2f9-581891ba044f> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00004SZWD>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00004SZWD%3E> .
+
+<http://musicbrainz.org/album/edf99004-eaca-4295-b2f9-581891ba044f>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fedf99004-eaca-4295-b2f9-581891ba044f%3E> .
+
+<http://images.amazon.com/images/P/B00004SZWD>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00004SZWD%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/edf99004-eaca-4295-b2f9-581891ba044f>
+      a       mo:Record ;
+      rdfs:label "Songs in the Key of Life (disc 2)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00004SZWD" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00004SZWD.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "3"^^xsd:int ;
+      vocab:albummeta_puids
+              "43"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/263355> , <http://dbtune.org/musicbrainz/resource/toc/5922> , <http://dbtune.org/musicbrainz/resource/toc/18967> ;
+      vocab:tracks "9"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Songs in the Key of Life (disc 2)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00004SZWD> ;
+      mo:image <http://images.amazon.com/images/P/B00004SZWD> , <http://ec1.images-amazon.com/images/P/B00004SZWD.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/edf99004-eaca-4295-b2f9-581891ba044f> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/8186c4c4-3575-41b6-b9e6-2941d46acf26> , <http://dbtune.org/musicbrainz/resource/track/c3a0464b-7467-4a3a-be01-b3d306f3c4e9> , <http://dbtune.org/musicbrainz/resource/track/aae32ac0-6e8c-4ef6-b1c4-57467935f73f> , <http://dbtune.org/musicbrainz/resource/track/117df2f0-87c5-4daa-8ee8-f87de17a47d0> , <http://dbtune.org/musicbrainz/resource/track/0f37a260-7ef0-41c0-bf7d-e1a2e37dfbab> , <http://dbtune.org/musicbrainz/resource/track/f45ca484-1357-4693-9657-1f674694c93e> , <http://dbtune.org/musicbrainz/resource/track/9e5f7720-7bfe-4dca-9182-2ab392d5bbd3> , <http://dbtune.org/musicbrainz/resource/track/93d1902f-33b4-4db6-8c70-73d770683603> , <http://dbtune.org/musicbrainz/resource/track/8ad83803-0e2a-4678-8a2d-19f6f42450ef> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/1ee18fb3-18a6-4c7f-8ba0-bc41cdd0462e> ;
+      foaf:page "688366209" .
+
+<http://dbtune.org/musicbrainz/data/record/edf99004-eaca-4295-b2f9-581891ba044f>
+      rdfs:label "RDF Description of Songs in the Key of Life (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/edf99004-eaca-4295-b2f9-581891ba044f> .
+
+<http://ec1.images-amazon.com/images/P/B00004SZWD.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00004SZWD.01.MZZZZZZZ.jpg%3E> .

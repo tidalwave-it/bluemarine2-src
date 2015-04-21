@@ -1,0 +1,56 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/bfaf1501-9420-476a-800f-f55a35a18b0b>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fbfaf1501-9420-476a-800f-f55a35a18b0b%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/bfaf1501-9420-476a-800f-f55a35a18b0b>
+      rdfs:label "RDF Description of Non calpestare i fiori nel deserto" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/bfaf1501-9420-476a-800f-f55a35a18b0b> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/bfaf1501-9420-476a-800f-f55a35a18b0b>
+      a       mo:Record ;
+      rdfs:label "Non calpestare i fiori nel deserto" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "15"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/34588> ;
+      vocab:tracks "13"^^xsd:int ;
+      dc:date "1995-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/ita> ;
+      dc:title "Non calpestare i fiori nel deserto" ;
+      mo:musicbrainz <http://musicbrainz.org/album/bfaf1501-9420-476a-800f-f55a35a18b0b> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/120547> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/f72e254a-1829-4a4c-a4c7-aea3474a105a> , <http://dbtune.org/musicbrainz/resource/track/f9cbb1ef-1b16-4de3-a1cd-10314752a765> , <http://dbtune.org/musicbrainz/resource/track/34a6bdb7-73a7-4bc3-8bbb-0688efb06829> , <http://dbtune.org/musicbrainz/resource/track/55a21eeb-6c6b-4ece-8597-8582611f2d5a> , <http://dbtune.org/musicbrainz/resource/track/e79eb68b-471f-4d32-963b-43b0b8eaf64b> , <http://dbtune.org/musicbrainz/resource/track/e09dd488-bbd6-4ecc-ab7b-d56a1a541f52> , <http://dbtune.org/musicbrainz/resource/track/58161370-57d2-45b2-a549-b17a074728f3> , <http://dbtune.org/musicbrainz/resource/track/50635f6b-8d1d-4e2c-9e38-e405ef2daf97> , <http://dbtune.org/musicbrainz/resource/track/adfb0031-b349-40ad-b481-041d366a7036> , <http://dbtune.org/musicbrainz/resource/track/45e7b07e-1b21-4951-a931-2d183bd93160> , <http://dbtune.org/musicbrainz/resource/track/eea58705-5494-428f-890c-aac7bbeda606> , <http://dbtune.org/musicbrainz/resource/track/4160a43b-6027-4247-8637-b9877f078066> , <http://dbtune.org/musicbrainz/resource/track/affde51c-06af-4978-a0f5-d276811eec8c> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/5b1633c8-cb78-4d85-a7d1-a6d145d8d472> ;
+      foaf:page "520586370" .
+
+<http://dbtune.org/musicbrainz/resource/master/bfaf1501-9420-476a-800f-f55a35a18b0b>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/bfaf1501-9420-476a-800f-f55a35a18b0b> .

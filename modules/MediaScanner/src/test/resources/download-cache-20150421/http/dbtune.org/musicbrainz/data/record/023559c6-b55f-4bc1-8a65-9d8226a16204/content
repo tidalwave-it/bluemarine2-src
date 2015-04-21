@@ -1,0 +1,49 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/023559c6-b55f-4bc1-8a65-9d8226a16204>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F023559c6-b55f-4bc1-8a65-9d8226a16204%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/023559c6-b55f-4bc1-8a65-9d8226a16204>
+      a       mo:Record ;
+      rdfs:label "Smooth Grooves: The Essential Collection" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "2"^^xsd:int ;
+      vocab:tracks "20"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Smooth Grooves: The Essential Collection" ;
+      mo:musicbrainz <http://musicbrainz.org/album/023559c6-b55f-4bc1-8a65-9d8226a16204> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/acc36611-00a1-4cf9-9790-f3e30c61f312> , <http://dbtune.org/musicbrainz/resource/track/fdd4a775-aac7-4829-9d51-7304bb12d27a> , <http://dbtune.org/musicbrainz/resource/track/34ec435c-bac5-4df4-b6a6-6a782e3f9e65> , <http://dbtune.org/musicbrainz/resource/track/7b009b4d-02e4-44ee-a19d-43eb85bc5f73> , <http://dbtune.org/musicbrainz/resource/track/1dd85088-74b4-4ccb-9e4c-a902d0003e59> , <http://dbtune.org/musicbrainz/resource/track/981e023a-bdea-4f26-8e28-14b80204d3db> , <http://dbtune.org/musicbrainz/resource/track/4c6b778a-1946-4ca8-9dfe-96b66e2d3d4e> , <http://dbtune.org/musicbrainz/resource/track/f74d357a-f00a-41a0-b796-2a71570fc356> , <http://dbtune.org/musicbrainz/resource/track/83cd3dc0-79ab-496f-bbeb-20036c863ce8> , <http://dbtune.org/musicbrainz/resource/track/c53eb722-6517-4791-8c52-fee5554675cd> , <http://dbtune.org/musicbrainz/resource/track/e64bede4-fd68-48cc-86cf-499ad7b9e525> , <http://dbtune.org/musicbrainz/resource/track/47d32b66-417b-4848-889c-3868c3b092f6> , <http://dbtune.org/musicbrainz/resource/track/5770b035-5c8e-4fba-9490-fde3e8364e2a> , <http://dbtune.org/musicbrainz/resource/track/594469ab-0b6b-4412-88dc-347eb66cce11> , <http://dbtune.org/musicbrainz/resource/track/46cf63cd-0aa4-492f-9fca-8c0e3b6f2d99> , <http://dbtune.org/musicbrainz/resource/track/ec5e509d-456c-4add-82e7-0b7005e13a69> , <http://dbtune.org/musicbrainz/resource/track/bdeb0ac5-009f-4e97-8dd7-eb0bda56f5b3> , <http://dbtune.org/musicbrainz/resource/track/1af55b83-196a-4a4b-b799-2537270bf711> , <http://dbtune.org/musicbrainz/resource/track/1f2ad1e0-db11-4321-a0ac-3df7475c5992> , <http://dbtune.org/musicbrainz/resource/track/0dde17bd-bd73-47dc-9f14-c974b61a5b79> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "686310057" .
+
+<http://dbtune.org/musicbrainz/resource/master/023559c6-b55f-4bc1-8a65-9d8226a16204>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/023559c6-b55f-4bc1-8a65-9d8226a16204> .
+
+<http://dbtune.org/musicbrainz/data/record/023559c6-b55f-4bc1-8a65-9d8226a16204>
+      rdfs:label "RDF Description of Smooth Grooves: The Essential Collection" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/023559c6-b55f-4bc1-8a65-9d8226a16204> .
