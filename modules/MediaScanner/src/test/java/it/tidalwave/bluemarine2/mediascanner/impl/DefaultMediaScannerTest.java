@@ -115,8 +115,8 @@ public class DefaultMediaScannerTest
         final File expectedFile = new File("src/test/resources/expected-results/" + modelName);
         persistence.dump(actualFile.toPath());
 
-        // FIXME: OOM
-//        FileComparisonUtils.assertSameContents(expectedFile, actualFile);
+        // FIXME: likely OOM in case of mismatch
+        FileComparisonUtils.assertSameContents(expectedFile, actualFile);
       }
     
     @DataProvider(name = "dataSetNames")
