@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import java.util.Optional;
 import org.openrdf.model.URI;
+import it.tidalwave.bluemarine2.util.ConcurrentHashMapWithOptionals;
 
 /***********************************************************************************************************************
  *
