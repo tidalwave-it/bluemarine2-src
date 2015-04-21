@@ -332,6 +332,7 @@ public class DefaultAudioExplorerPresentationControl
       {
         final Selectable selectable = 
                 (entity instanceof AudioFileSupplier) ? () -> renderAudioFileDetails((AudioFileSupplier)entity)
+               :(entity instanceof Record)            ? () -> requestRecordCover(((Record)entity).getImageUrl())
                                                       : () -> presentation.renderDetails("");
         
         final UserAction action = isComposite(entity) 
