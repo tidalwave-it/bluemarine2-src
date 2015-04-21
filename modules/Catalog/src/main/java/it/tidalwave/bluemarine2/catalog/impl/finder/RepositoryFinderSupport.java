@@ -37,6 +37,7 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
@@ -121,7 +122,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
             log.info("query({}, ...)", entityClass);
             
             final String sparql = PREFIXES + 
-                                  Arrays.asList(originalSparql.split("\n")).stream()
+                                  Stream.of(originalSparql.split("\n"))
                                     .filter(s -> matches(s, bindings))
                                     .map(s -> s.replaceAll("^@[A-Za-z0-9]*@", ""))
                                     .collect(Collectors.joining("\n"));
@@ -282,12 +283,12 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
       {
         if (log.isDebugEnabled())
           {
-            Arrays.asList(originalSparql.split("\n")).stream().forEach(s -> log.debug(">>>> original query: {}", s));
+            Stream.of(originalSparql.split("\n")).forEach(s -> log.debug(">>>> original query: {}", s));
           }
         
         if (log.isInfoEnabled())
           {
-            Arrays.asList(sparql.split("\n")).stream().forEach(s -> log.info(">>>> query: {}", s));
+            Stream.of(sparql.split("\n")).forEach(s -> log.info(">>>> query: {}", s));
           }
      }
   }
