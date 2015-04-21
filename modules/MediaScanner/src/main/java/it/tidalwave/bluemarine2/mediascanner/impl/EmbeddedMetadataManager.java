@@ -235,31 +235,31 @@ public class EmbeddedMetadataManager
                                                     .orElse(((MediaFolder)parent).getPath().toFile().getName()); // FIXME
 //                                                    .orElse(parent.as(Displayable).getDisplayName());
         
-        final Optional<URI> recordUri     = Optional.of(createUriForLocalRecord(recordTitle));
+        final URI recordUri               = createUriForLocalRecord(recordTitle);
         final Optional<URI> newRecordUri  = shared.seenRecordUris.putIfAbsentAndGetNewKey(recordUri, true);
         
         statementManager.requestAddStatements()
-            .with(trackUri,      RDFS.LABEL,                literalFor(title))
-            .with(trackUri,      DC.TITLE,                  literalFor(title))
-            .with(trackUri,      FOAF.MAKER,                makerUris.stream())
+            .withOptional(trackUri,      RDFS.LABEL,                literalFor(title))
+            .withOptional(trackUri,      DC.TITLE,                  literalFor(title))
+            .with(        trackUri,      FOAF.MAKER,                makerUris.stream())
 
-            .with(recordUri,     MO.P_TRACK,                trackUri)
+            .with(        recordUri,     MO.P_TRACK,                trackUri)
 
-            .with(newRecordUri,  RDF.TYPE,                  MO.C_RECORD)
-            .with(newRecordUri,  RDFS.LABEL,                literalFor(recordTitle))
-            .with(newRecordUri,  DC.TITLE,                  literalFor(recordTitle))
-            .with(newRecordUri,  FOAF.MAKER,                makerUris.stream())
-            .with(newRecordUri,  MO.P_MEDIA_TYPE,           MO.C_CD)
+            .withOptional(newRecordUri,  RDF.TYPE,                  MO.C_RECORD)
+            .withOptional(newRecordUri,  RDFS.LABEL,                literalFor(recordTitle))
+            .withOptional(newRecordUri,  DC.TITLE,                  literalFor(recordTitle))
+            .withOptional(newRecordUri,  MO.P_MEDIA_TYPE,           MO.C_CD)
+            .withOptional(newRecordUri,  FOAF.MAKER,                makerUris.stream())
                 
-            .with(newArtistUris, RDF.TYPE,                  MO.C_MUSIC_ARTIST)
-            .with(newArtistUris, RDFS.LABEL,                newArtistLiterals)
-            .with(newArtistUris, FOAF.NAME,                 newArtistLiterals)
+            .with(        newArtistUris, RDF.TYPE,                  MO.C_MUSIC_ARTIST)
+            .with(        newArtistUris, RDFS.LABEL,                newArtistLiterals)
+            .with(        newArtistUris, FOAF.NAME,                 newArtistLiterals)
                 
-            .with(newGroupUri,   RDF.TYPE,                  MO.C_MUSIC_ARTIST)
-            .with(newGroupUri,   RDFS.LABEL,                literalFor(makerName))
-            .with(newGroupUri,   FOAF.NAME,                 literalFor(makerName))
-            .with(newGroupUri,   DbTune.ARTIST_TYPE,        literalFor((short)2))
-            .with(newGroupUri,   Purl.COLLABORATES_WITH,    artists.stream().map(Entry::getUri))
+            .withOptional(newGroupUri,   RDF.TYPE,                  MO.C_MUSIC_ARTIST)
+            .withOptional(newGroupUri,   RDFS.LABEL,                literalFor(makerName))
+            .withOptional(newGroupUri,   FOAF.NAME,                 literalFor(makerName))
+            .withOptional(newGroupUri,   DbTune.ARTIST_TYPE,        literalFor((short)2))
+            .withOptional(newGroupUri,   Purl.COLLABORATES_WITH,    artists.stream().map(Entry::getUri))
             .publish();
       }
 
