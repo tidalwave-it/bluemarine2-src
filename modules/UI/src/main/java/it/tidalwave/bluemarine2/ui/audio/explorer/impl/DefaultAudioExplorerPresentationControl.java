@@ -105,7 +105,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
     
     private final UserAction8 navigateUpAction = new UserActionLambda(() -> navigateUp()); 
     
-    private final AtomicReference<Optional<URL>> coverImageUrl = new AtomicReference<>(Optional.empty());
+    private final AtomicReference<Optional<URL>> currentCoverArtUrl = new AtomicReference<>(Optional.empty());
     
     /*******************************************************************************************************************
      *
@@ -136,11 +136,11 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
       {
         log.info("onDownloadComplete({})", notification);
         
-        if (coverImageUrl.get().map(url -> url.equals(notification.getUrl())).orElse(false))
+        if (currentCoverArtUrl.get().map(url -> url.equals(notification.getUrl())).orElse(false))
           {
-            if (notification.getStatusCode() == 200)
+            if (notification.getStatusCode() == 200) // FIXME
               {
-                presentation.setCoverImage(Optional.of(notification.getCachedUri()));
+                presentation.setCoverArt(Optional.of(notification.getCachedUri()));
               }
           }
       }
@@ -222,7 +222,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
     @Override
     public void clearDetails()
       {
-        presentation.setCoverImage(Optional.empty());
+        presentation.setCoverArt(Optional.empty());
         presentation.renderDetails("");
       }
     
@@ -232,12 +232,11 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
      *
      ******************************************************************************************************************/
     @Override
-    public void requestRecordCover (final @Nonnull Optional<URL> optionalImageUrl)
+    public void requestCoverArt (final @Nonnull Optional<URL> optionalCoverArtUrl)
       {
-        log.debug("requestRecordCover({})", optionalImageUrl);
-//        presentation.setCoverImage(Optional.empty());
-        coverImageUrl.set(optionalImageUrl);
-        optionalImageUrl.ifPresent(url -> messageBus.publish(new DownloadRequest(url)));
+        log.debug("requestCoverArt({})", optionalCoverArtUrl);
+        currentCoverArtUrl.set(optionalCoverArtUrl);
+        optionalCoverArtUrl.ifPresent(url -> messageBus.publish(new DownloadRequest(url)));
       } 
     
     /*******************************************************************************************************************

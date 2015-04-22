@@ -81,5 +81,5 @@ public interface AudioExplorerPresentationControlSpi
      * Requests to download some cover art.
      *
      ******************************************************************************************************************/
-    public void requestRecordCover (@Nonnull Optional<URL> optionalImageUri);
+    public void requestCoverArt (@Nonnull Optional<URL> optionalImageUri);
   }

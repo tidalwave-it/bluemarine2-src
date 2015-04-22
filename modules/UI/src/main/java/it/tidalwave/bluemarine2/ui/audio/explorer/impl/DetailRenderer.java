@@ -70,7 +70,7 @@ public abstract class DetailRenderer<ENTITY> implements Selectable
     
     protected void renderCoverArt (final @Nonnull Optional<URL> optionalImageUri) 
       {
-        control.requestRecordCover(optionalImageUri);
+        control.requestCoverArt(optionalImageUri);
       }
     
     protected abstract void renderDetails();

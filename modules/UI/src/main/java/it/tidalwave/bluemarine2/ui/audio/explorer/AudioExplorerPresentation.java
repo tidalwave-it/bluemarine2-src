@@ -122,5 +122,5 @@ public interface AudioExplorerPresentation
      *
      *
      ******************************************************************************************************************/
-    public void setCoverImage (@Nonnull Optional<URI> imageUri);
+    public void setCoverArt (@Nonnull Optional<URI> optionalCoverArtUri);
   }
