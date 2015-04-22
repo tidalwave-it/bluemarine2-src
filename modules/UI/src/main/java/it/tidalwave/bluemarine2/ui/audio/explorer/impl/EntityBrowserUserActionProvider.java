@@ -40,6 +40,8 @@ import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
+ * @stereotype  Role
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *

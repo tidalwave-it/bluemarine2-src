@@ -64,6 +64,8 @@ import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
+import it.tidalwave.role.ContextManager;
+import it.tidalwave.util.SimpleTask;
 
 /***********************************************************************************************************************
  *
@@ -93,6 +95,9 @@ public class DefaultAudioExplorerPresentationControl
     
     @Inject
     private MessageBus messageBus;
+    
+    @Inject
+    private ContextManager contextManager;
     
     @Inject
     private List<EntityBrowser> browsers;
@@ -226,8 +231,25 @@ public class DefaultAudioExplorerPresentationControl
       {
         log.debug("populateBrowsers()");
 
+        // FIXME: in this case role injection doesn't work because browsers are pre-instantiated by Spring and not
+        // in this context.
+//        contextManager.runWithContext(this, new SimpleTask()
+//          {
+//            @Override 
+//            public Void run() 
+//              {
+//                final PresentationModel pm = browsers.stream() // natively sorted by @OrderBy
+//                                                     .map(o -> o.as(Presentable).createPresentationModel())
+//                                                     .collect(toCompositePresentationModel());
+//                presentation.populateBrowsers(pm);
+//                selectBrowser(browsers.get(0));
+//                return null;
+//              }
+//           });
+        
         final PresentationModel pm = browsers.stream() // natively sorted by @OrderBy
-                                             .map(o -> o.as(Presentable).createPresentationModel(new EntityBrowserUserActionProvider(o)))
+                                             .map(o -> o.as(Presentable).createPresentationModel(
+                                                                            new EntityBrowserUserActionProvider(o)))
                                              .collect(toCompositePresentationModel());
         presentation.populateBrowsers(pm);
         selectBrowser(browsers.get(0));
