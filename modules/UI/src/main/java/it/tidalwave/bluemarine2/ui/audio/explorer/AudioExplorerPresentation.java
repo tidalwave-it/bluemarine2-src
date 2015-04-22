@@ -80,7 +80,7 @@ public interface AudioExplorerPresentation
      * @param   pm                  the {@link PresentationModel}
      *
      ******************************************************************************************************************/
-    public void populateBrowsers (final @Nonnull PresentationModel pm);
+    public void populateBrowsers (@Nonnull PresentationModel pm);
     
     /*******************************************************************************************************************
      *
