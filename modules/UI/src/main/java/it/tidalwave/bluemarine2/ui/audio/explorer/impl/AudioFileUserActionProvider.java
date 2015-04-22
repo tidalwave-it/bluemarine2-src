@@ -55,6 +55,7 @@ import org.springframework.beans.factory.annotation.Configurable;
 @Configurable @RequiredArgsConstructor @Slf4j
 public class AudioFileUserActionProvider extends DefaultUserActionProvider
   {
+    @Nonnull
     private final AudioFileSupplier audioFileSupplier;
     
     @Inject
