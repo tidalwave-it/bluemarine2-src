@@ -272,7 +272,6 @@ public class DefaultAudioExplorerPresentationControl
         // FIXME: shouldn't deal with JavaFX threads here
         Platform.runLater(() -> navigateUpAction.enabledProperty().setValue(!navigationStack.isEmpty()));
         Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentPathLabel()));
-        // FIXME: waiting signal while loading
         final SimpleComposite8<Entity> composite = currentFolder.as(SimpleComposite8);
         // Uses native ordering provided by the Composite.
         final PresentationModel pm = composite.findChildren()
