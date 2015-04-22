@@ -28,8 +28,6 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
-import it.tidalwave.bluemarine2.downloader.DownloadComplete;
-import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -51,12 +49,12 @@ import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
+import it.tidalwave.bluemarine2.downloader.DownloadComplete;
+import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.RenderAudioFileRequest;
@@ -74,8 +72,6 @@ import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import it.tidalwave.bluemarine2.model.MusicArtist;
 
 /***********************************************************************************************************************
  *
@@ -290,44 +286,9 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
-     * FIXME: move to a separate role (DetailsSupplier)
      *
      ******************************************************************************************************************/
-    private void renderAudioFileDetails (final @Nonnull AudioFileSupplier audioFileSupplier)
-      {
-        final AudioFile audioFile = audioFileSupplier.getAudioFile();
-        final Metadata metadata = audioFile.getMetadata();
-        
-        final String details = String.format("%s\n%s\n%s\n%s\n%s",
-            audioFile.findMakers().stream().map(m -> m.as(Displayable).getDisplayName())
-                                  .collect(joining(", ", "Artist: ", "")),
-            audioFile.findComposers().stream().map(e -> e.as(Displayable).getDisplayName())
-                                     .collect(joining(", ", "Composer: ", "")),
-            metadata.get(BIT_RATE).map(br -> "Bit rate: " + br + " kbps").orElse(""),
-            metadata.get(SAMPLE_RATE).map(sr -> String.format("Sample rate: %.1f kHz", sr / 1000.0)).orElse(""),
-            metadata.get(YEAR).map(y -> "Year: " + y).orElse(""));
-        
-        presentation.renderDetails(details);
-        audioFile.getRecord().ifPresent(record -> requestRecordCover(record.getImageUrl()));
-      }
-    
-    /*******************************************************************************************************************
-     *
-     * FIXME: move to a separate role
-     *
-     ******************************************************************************************************************/
-    private void renderRecordDetails (final @Nonnull Record record)
-      {
-        presentation.setCoverImage(Optional.empty());
-        presentation.renderDetails("");
-        requestRecordCover(record.getImageUrl());
-      }
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private void clearDetails()
+    protected void clearDetails()
       {
         presentation.setCoverImage(Optional.empty());
         presentation.renderDetails("");
@@ -337,7 +298,7 @@ public class DefaultAudioExplorerPresentationControl
      *
      *
      ******************************************************************************************************************/
-    private void requestRecordCover (final @Nonnull Optional<URL> optionalImageUrl)
+    protected void requestRecordCover (final @Nonnull Optional<URL> optionalImageUrl)
       {
         log.debug("requestRecordCover({})", optionalImageUrl);
         presentation.setCoverImage(Optional.empty());
@@ -349,13 +310,13 @@ public class DefaultAudioExplorerPresentationControl
      *
      *
      ******************************************************************************************************************/
-    // FIXME: inject with @DciRole and @DciContext?
     @Nonnull
     private Object[] rolesFor (final @Nonnull Entity entity)
       {
+    // FIXME: inject with @DciRole and @DciContext? The problem is how to inject the fallback to clearDetails()
         final Selectable selectable = 
-                (entity instanceof AudioFileSupplier) ? () -> renderAudioFileDetails((AudioFileSupplier)entity)
-               :(entity instanceof Record)            ? () -> renderRecordDetails(((Record)entity))
+                (entity instanceof AudioFileSupplier) ? new AudioFileDetailRenderer(((AudioFileSupplier)entity).getAudioFile())
+               :(entity instanceof Record)            ? new RecordDetailRenderer((Record)entity)
                                                       : () -> clearDetails();
         
         final UserAction action = isComposite(entity) 
