@@ -43,7 +43,6 @@ import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.UserAction8;
 import it.tidalwave.role.ui.UserActionProvider;
-import it.tidalwave.role.ui.spi.DefaultPresentable;
 import it.tidalwave.role.ui.spi.UserActionLambda;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.messagebus.MessageBus;
@@ -55,7 +54,6 @@ import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
-import it.tidalwave.bluemarine2.ui.commons.RenderAudioFileRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnActivate;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import lombok.AllArgsConstructor;
@@ -68,7 +66,6 @@ import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
-import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
 
 /***********************************************************************************************************************
@@ -225,19 +222,6 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
-     * Publishes a request to render an audio file.
-     * 
-     * @param   entity      the {@code Entity} referencing the audio file
-     *
-     ******************************************************************************************************************/
-    private void requestRenderAudioFileFile (final @Nonnull Entity entity)
-      {
-        log.debug("requestRenderAudioFileFile({})", entity);
-        messageBus.publish(new RenderAudioFileRequest(entity.as(AudioFileSupplier).getAudioFile()));    
-      }
-
-    /*******************************************************************************************************************
-     *
      * 
      * 
      ******************************************************************************************************************/
@@ -314,10 +298,13 @@ public class DefaultAudioExplorerPresentationControl
     @Nonnull
     private Object[] rolesFor (final @Nonnull Entity entity)
       {
+        if (!isComposite(entity))
+          {
+            return new Object[0];  
+          }
+        
         // FIXME: inject with @DciRole and @DciContext? 
-        final UserAction action = isComposite(entity) 
-            ? new UserActionLambda(() -> navigateTo(entity)) 
-            : new UserActionLambda(() -> requestRenderAudioFileFile(entity));
+        final UserAction action = new UserActionLambda(() -> navigateTo(entity));
         
         final UserActionProvider uap = new DefaultUserActionProvider() // FIXME: new DefaultUserActionProvider(action)
           {
