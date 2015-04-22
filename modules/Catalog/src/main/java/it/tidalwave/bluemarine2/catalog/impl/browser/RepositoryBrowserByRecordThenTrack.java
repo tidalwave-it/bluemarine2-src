@@ -28,12 +28,15 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl.browser;
 
+import org.springframework.core.annotation.Order;
+
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
+@Order(30)
 public class RepositoryBrowserByRecordThenTrack extends RepositoryBrowserSupport 
   {
     public RepositoryBrowserByRecordThenTrack()

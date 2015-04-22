@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.model;
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
+import org.springframework.core.annotation.Order;
 
 /***********************************************************************************************************************
  *
@@ -42,6 +43,7 @@ import it.tidalwave.bluemarine2.model.role.EntityBrowser;
  * @version $Id$
  *
  **********************************************************************************************************************/
+@Order(50) // FIXME: perhaps we should separate a subclass that implements EntityBrowser
 public interface MediaFileSystem extends Entity, EntityBrowser
   {
     /*******************************************************************************************************************

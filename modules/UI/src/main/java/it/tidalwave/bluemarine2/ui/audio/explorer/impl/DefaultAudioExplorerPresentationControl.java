@@ -249,9 +249,8 @@ public class DefaultAudioExplorerPresentationControl
     private void populateBrowsers()
       {
         log.debug("populateBrowsers()");
-        
-        final PresentationModel pm = browsers.stream()
-//                                             .sorted(new DisplayableObjectComparator())
+
+        final PresentationModel pm = browsers.stream() // sorted by @OrderBy
                                              .map(object -> new DefaultPresentable(object)
                                                                .createPresentationModel(rolesFor(object)))
                                              .collect(toCompositePresentationModel());
