@@ -179,9 +179,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
     
     /*******************************************************************************************************************
      *
-     * Selects a browser.
-     * 
-     * @param   browser     the browser
+     * {@inheritDoc}
      *
      ******************************************************************************************************************/
     @Override
@@ -194,9 +192,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
     
     /*******************************************************************************************************************
      *
-     * Navigates to a new folder, saving the current folder to the stack.
-     * 
-     * @param   newMediaFolder  the new folder
+     * {@inheritDoc}
      *
      ******************************************************************************************************************/
     @Override
@@ -206,6 +202,43 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         navigationStack.push(new FolderAndMemento(currentFolder, Optional.of(presentation.getMemento())));
         populateItems(new FolderAndMemento(newMediaFolder, Optional.empty()));
       }
+    
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void renderDetails (final @Nonnull String details)
+      {
+        presentation.renderDetails(details);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void clearDetails()
+      {
+        presentation.setCoverImage(Optional.empty());
+        presentation.renderDetails("");
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override
+    public void requestRecordCover (final @Nonnull Optional<URL> optionalImageUrl)
+      {
+        log.debug("requestRecordCover({})", optionalImageUrl);
+//        presentation.setCoverImage(Optional.empty());
+        coverImageUrl.set(optionalImageUrl);
+        optionalImageUrl.ifPresent(url -> messageBus.publish(new DownloadRequest(url)));
+      } 
     
     /*******************************************************************************************************************
      *
@@ -276,40 +309,6 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         presentation.populateItems(pm, folderAndMemento.getMemento());
       }
     
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Override
-    public void renderDetails (final @Nonnull String details)
-      {
-        presentation.renderDetails(details);
-      }
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Override
-    public void clearDetails()
-      {
-        presentation.setCoverImage(Optional.empty());
-        presentation.renderDetails("");
-      }
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Override
-    public void requestRecordCover (final @Nonnull Optional<URL> optionalImageUrl)
-      {
-        log.debug("requestRecordCover({})", optionalImageUrl);
-//        presentation.setCoverImage(Optional.empty());
-        coverImageUrl.set(optionalImageUrl);
-        optionalImageUrl.ifPresent(url -> messageBus.publish(new DownloadRequest(url)));
-      } 
-        
     /*******************************************************************************************************************
      *
      * Computes the label describing the current navigation path.
