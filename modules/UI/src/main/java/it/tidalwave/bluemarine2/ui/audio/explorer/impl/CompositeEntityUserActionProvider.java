@@ -68,7 +68,7 @@ public class CompositeEntityUserActionProvider extends DefaultUserActionProvider
     private final Entity mediaFolder;
     
     @Inject
-    private DefaultAudioExplorerPresentationControl control;
+    private AudioExplorerPresentationControlSpi control;
     
     @Override @Nonnull
     public UserAction getDefaultAction() 

@@ -54,7 +54,7 @@ public class EntityBrowserUserActionProvider extends DefaultUserActionProvider
     private final EntityBrowser entityBrowser;
 
     @Inject
-    private DefaultAudioExplorerPresentationControl control;
+    private AudioExplorerPresentationControlSpi control;
     
     @Override @Nonnull
     public UserAction getDefaultAction() 

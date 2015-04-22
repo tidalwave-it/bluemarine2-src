@@ -78,7 +78,7 @@ import it.tidalwave.util.SimpleTask;
  *
  **********************************************************************************************************************/
 @SimpleMessageSubscriber @DciContext @Slf4j
-public class DefaultAudioExplorerPresentationControl 
+public class DefaultAudioExplorerPresentationControl implements AudioExplorerPresentationControlSpi
   {
     @AllArgsConstructor @Getter @ToString
     private static class FolderAndMemento
@@ -189,7 +189,8 @@ public class DefaultAudioExplorerPresentationControl
      * @param   browser     the browser
      *
      ******************************************************************************************************************/
-    protected void selectBrowser (final @Nonnull EntityBrowser browser)
+    @Override
+    public void selectBrowser (final @Nonnull EntityBrowser browser)
       {
         log.info("selectBrowser({})", browser);
         navigationStack.clear();
@@ -203,7 +204,8 @@ public class DefaultAudioExplorerPresentationControl
      * @param   newMediaFolder  the new folder
      *
      ******************************************************************************************************************/
-    protected void navigateTo (final @Nonnull Entity newMediaFolder)
+    @Override
+    public void navigateTo (final @Nonnull Entity newMediaFolder)
       {
         log.debug("navigateTo({})", newMediaFolder);
         navigationStack.push(new FolderAndMemento(currentFolder, Optional.of(presentation.getMemento())));
@@ -283,7 +285,8 @@ public class DefaultAudioExplorerPresentationControl
      *
      *
      ******************************************************************************************************************/
-    protected void renderDetails (final @Nonnull String details)
+    @Override
+    public void renderDetails (final @Nonnull String details)
       {
         presentation.renderDetails(details);
       }
@@ -292,7 +295,8 @@ public class DefaultAudioExplorerPresentationControl
      *
      *
      ******************************************************************************************************************/
-    protected void clearDetails()
+    @Override
+    public void clearDetails()
       {
         presentation.setCoverImage(Optional.empty());
         presentation.renderDetails("");
@@ -302,7 +306,8 @@ public class DefaultAudioExplorerPresentationControl
      *
      *
      ******************************************************************************************************************/
-    protected void requestRecordCover (final @Nonnull Optional<URL> optionalImageUrl)
+    @Override
+    public void requestRecordCover (final @Nonnull Optional<URL> optionalImageUrl)
       {
         log.debug("requestRecordCover({})", optionalImageUrl);
 //        presentation.setCoverImage(Optional.empty());

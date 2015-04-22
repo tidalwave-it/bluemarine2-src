@@ -54,7 +54,7 @@ public abstract class DetailRenderer<ENTITY> implements Selectable
     protected final ENTITY owner;
     
     @Inject
-    private DefaultAudioExplorerPresentationControl control;
+    private AudioExplorerPresentationControlSpi control;
 
     @Override
     public void select() 
