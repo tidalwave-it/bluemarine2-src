@@ -296,14 +296,14 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
      ******************************************************************************************************************/
     private void log (final @Nonnull String originalSparql, final @Nonnull String sparql)
       {
-        if (log.isDebugEnabled())
+        if (log.isTraceEnabled())
           {
-            Stream.of(originalSparql.split("\n")).forEach(s -> log.debug(">>>> original query: {}", s));
+            Stream.of(originalSparql.split("\n")).forEach(s -> log.trace(">>>> original query: {}", s));
           }
 
-        if (log.isInfoEnabled())
+        if (log.isDebugEnabled())
           {
-            Stream.of(sparql.split("\n")).forEach(s -> log.info(">>>> query: {}", s));
+            Stream.of(sparql.split("\n")).forEach(s -> log.debug(">>>> query: {}", s));
           }
      }
   }
