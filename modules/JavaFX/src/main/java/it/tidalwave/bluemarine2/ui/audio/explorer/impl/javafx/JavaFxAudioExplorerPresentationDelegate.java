@@ -35,8 +35,6 @@ import java.util.Optional;
 import java.util.stream.Stream;
 import java.net.URI;
 import javafx.fxml.FXML;
-import javafx.collections.ObservableList;
-import javafx.scene.Node;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
@@ -47,27 +45,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
 import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.util.NotFoundException;
-import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
+import it.tidalwave.bluemarine2.util.JavaFXBinderSupplements;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.role.ui.Styleable.Styleable;
-import static it.tidalwave.role.SimpleComposite.SimpleComposite;
-import static it.tidalwave.role.ui.UserActionProvider.*;
-import it.tidalwave.util.As;
-import it.tidalwave.util.AsException;
-import static java.util.Collections.*;
 
 /***********************************************************************************************************************
  *
@@ -129,6 +117,9 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     @Inject
     private Provider<JavaFXBinder> binder;
     
+    @Inject
+    private Provider<JavaFXBinderSupplements> binderSupplements;
+    
     @FXML
     private void initialize()
       {
@@ -152,7 +143,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     @Override
     public void populateBrowsers (final @Nonnull PresentationModel pm)
       {
-        bindToggleButtons(hbBrowserButtons, pm);
+        binderSupplements.get().bindToggleButtons(hbBrowserButtons, pm);
       }
       
     @Override
@@ -219,66 +210,6 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
           }
       }
     
-    /*
-     * FIXME: move to SteelBlue
-     * The pane must be pre-populated with at least one button, which will be queried for the CSS style.
-    */
-    private void bindToggleButtons (final @Nonnull Pane pane, final @Nonnull PresentationModel pm)
-      {
-        final ToggleGroup group = new ToggleGroup();
-        final ObservableList<Node> children = pane.getChildren();
-        final ObservableList<String> prototypeStyleClass = children.get(0).getStyleClass();
-        final SimpleComposite<PresentationModel> pmc = pm.as(SimpleComposite);
-        children.setAll(pmc.findChildren().results().stream()
-                                                    .map(cpm -> createButton(cpm, prototypeStyleClass, group))
-                                                    .collect(toList()));
-      }
-    
-    @Nonnull
-    private ToggleButton createButton (final @Nonnull PresentationModel pm,
-                                       final @Nonnull ObservableList<String> baseStyleClass,
-                                       final @Nonnull ToggleGroup group)
-      {
-        final ToggleButton button = new ToggleButton();
-        button.setToggleGroup(group);
-        button.setText(asOptional(pm, Displayable).map(d -> d.getDisplayName()).orElse(""));
-        button.getStyleClass().addAll(baseStyleClass);
-        button.getStyleClass().addAll(asOptional(pm, Styleable).map(s -> s.getStyles()).orElse(emptyList()));
-        
-        try 
-          {
-            binder.get().bind(button, pm.as(UserActionProvider).getDefaultAction());
-          }
-        catch (NotFoundException e)
-          {
-            // ok, no UserActionProvider
-          }
-
-        if (group.getSelectedToggle() == null)
-          {
-            group.selectToggle(button);
-          }
-        
-        return button;
-      }
-    
-    @Nonnull
-    private static <T> Optional<T> asOptional (final @Nonnull As asObject, final Class<T> roleClass)
-      {
-        // can't use asOptional() since PresentationModel is constrained to Java 7
-        // FIXME The shortest implementation doesn't work - see DefaultPresentationModel implementation of as()
-        // It doesn't call as() with NotFoundBehaviour - it's probably a bug
-//        return Optional.ofNullable(asObject.as(roleClass, throwable -> null));
-          try
-            {
-              return Optional.of(asObject.as(roleClass));  
-            }
-          catch (AsException e)
-            {
-              return Optional.empty();
-            }
-      }
-
     @Nonnull
     private static Label createLabel (final @Nonnull String s)
       {

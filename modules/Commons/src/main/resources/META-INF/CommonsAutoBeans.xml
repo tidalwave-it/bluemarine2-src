@@ -84,4 +84,6 @@
         <property name="taskExecutor" ref="applicationMessageBusTaskExecutor"/>
     </bean>
     
+    <bean class="it.tidalwave.bluemarine2.util.JavaFXBinderSupplements" />
+    
 </beans>
