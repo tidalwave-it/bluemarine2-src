@@ -274,7 +274,7 @@ public class DefaultAudioExplorerPresentationControl
         final PresentationModel pm = composite.findChildren()
                                               .withContext(this)
                                               .stream()
-                                              .map(o -> o.as(Presentable).createPresentationModel(o))
+                                              .map(o -> o.as(Presentable).createPresentationModel())
                                               .collect(toCompositePresentationModel());
         presentation.populateItems(pm, folderAndMemento.getMemento());
       }
