@@ -61,8 +61,7 @@ import static java.util.stream.Collectors.*;
 import static java.util.stream.Stream.*;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
-import static it.tidalwave.role.ui.Presentable.Presentable;
-import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
+import static it.tidalwave.role.ui.spi.PresentationModelCollectors.*;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
 
 /***********************************************************************************************************************
@@ -276,10 +275,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
 //              }
 //           });
         
-        final PresentationModel pm = browsers.stream() // natively sorted by @OrderBy
-                                             .map(o -> o.as(Presentable).createPresentationModel(
-                                                                            new EntityBrowserUserActionProvider(o)))
-                                             .collect(toCompositePresentationModel());
+        final PresentationModel pm = toCompositePresentationModel(browsers, o -> new EntityBrowserUserActionProvider(o));
         presentation.populateBrowsers(pm);
         selectBrowser(browsers.get(0));
       }
@@ -300,11 +296,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentPathLabel()));
         final SimpleComposite8<Entity> composite = currentFolder.as(SimpleComposite8);
         // Uses native ordering provided by the Composite.
-        final PresentationModel pm = composite.findChildren()
-                                              .withContext(this)
-                                              .stream()
-                                              .map(o -> o.as(Presentable).createPresentationModel())
-                                              .collect(toCompositePresentationModel());
+        final PresentationModel pm = toCompositePresentationModel(composite.findChildren().withContext(this));
         presentation.populateItems(pm, folderAndMemento.getMemento());
       }
     
