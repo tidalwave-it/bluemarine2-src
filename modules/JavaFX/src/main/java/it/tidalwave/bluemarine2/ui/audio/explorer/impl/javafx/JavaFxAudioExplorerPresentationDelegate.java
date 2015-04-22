@@ -66,6 +66,7 @@ import static java.util.stream.Collectors.*;
 import static it.tidalwave.role.Displayable.*;
 import static it.tidalwave.role.SimpleComposite.SimpleComposite;
 import static it.tidalwave.role.ui.UserActionProvider.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /***********************************************************************************************************************
  *
@@ -219,15 +220,17 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     
     /*
      * FIXME: move to SteelBlue
-     * The pane must be populated with at least one button, which will be queried for the CSS style.
+     * The pane must be pre-populated with at least one button, which will be queried for the CSS style.
     */
-    private void bindToggleButtons (final @Nonnull Pane pane, final @Nonnull PresentationModel pm)
+    private void bindToggleButtons (final @Nonnull Pane pane, 
+                                    final @Nonnull PresentationModel pm)
       {
         final ToggleGroup group = new ToggleGroup();
         final ObservableList<Node> children = pane.getChildren();
         final ObservableList<String> styleClass = children.get(0).getStyleClass();
         children.clear();
         final SimpleComposite<PresentationModel> pmc = pm.as(SimpleComposite);
+        final AtomicBoolean first = new AtomicBoolean(true);
         pmc.findChildren().results().stream().forEach(cpm -> 
           {
             try 
@@ -247,6 +250,11 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
                 button.setToggleGroup(group);
                 binder.get().bind(button, cpm.as(UserActionProvider).getDefaultAction());
                 children.add(button);
+                
+                if (first.getAndSet(false))
+                  {
+                    group.selectToggle(button);
+                  }
                 
                 try // can't use asOptional() since PresentationModel is constrained to Java 7
                   {

@@ -134,9 +134,6 @@ public class DefaultAudioExplorerPresentationControl
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp(this);
         populateBrowsers();
-        selectBrowser(browsers.stream()
-                              .filter(browser -> browser.getClass().getName().contains("BrowserByArtistThenTrack"))
-                              .findAny().get());
       }
     
     /*******************************************************************************************************************
@@ -255,6 +252,7 @@ public class DefaultAudioExplorerPresentationControl
                                                                .createPresentationModel(rolesFor(object)))
                                              .collect(toCompositePresentationModel());
         presentation.populateBrowsers(pm);
+        selectBrowser(browsers.get(0));
       }
     
     /*******************************************************************************************************************
