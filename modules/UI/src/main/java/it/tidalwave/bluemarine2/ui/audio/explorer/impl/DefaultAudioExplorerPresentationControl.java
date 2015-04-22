@@ -246,8 +246,7 @@ public class DefaultAudioExplorerPresentationControl
         log.debug("populateBrowsers()");
 
         final PresentationModel pm = browsers.stream() // sorted by @OrderBy
-                                             .map(object -> new DefaultPresentable(object)
-                                                               .createPresentationModel(rolesFor(object)))
+                                             .map(o -> o.as(Presentable).createPresentationModel(rolesFor(o)))
                                              .collect(toCompositePresentationModel());
         presentation.populateBrowsers(pm);
         selectBrowser(browsers.get(0));
@@ -272,9 +271,7 @@ public class DefaultAudioExplorerPresentationControl
         final PresentationModel pm = composite.findChildren()
                                               .withContext(this)
                                               .stream()
-                                              .map(object -> object.asOptional(Presentable)
-                                                                   .orElse(new DefaultPresentable(object))
-                                                                   .createPresentationModel(rolesFor(object)))
+                                              .map(o -> o.as(Presentable).createPresentationModel(rolesFor(o)))
                                               .collect(toCompositePresentationModel());
         presentation.populateItems(pm, folderAndMemento.getMemento());
       }
