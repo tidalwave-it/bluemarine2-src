@@ -64,8 +64,6 @@ import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
-import it.tidalwave.role.ContextManager;
-import it.tidalwave.util.SimpleTask;
 
 /***********************************************************************************************************************
  *
@@ -97,9 +95,6 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
     private MessageBus messageBus;
     
     @Inject
-    private ContextManager contextManager;
-    
-    @Inject
     private List<EntityBrowser> browsers;
     
     private Entity currentFolder;
@@ -110,7 +105,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
     
     private final UserAction8 navigateUpAction = new UserActionLambda(() -> navigateUp()); 
     
-    private final AtomicReference<Optional<URL>> coverImageUrl = new AtomicReference<Optional<URL>>(Optional.empty());
+    private final AtomicReference<Optional<URL>> coverImageUrl = new AtomicReference<>(Optional.empty());
     
     /*******************************************************************************************************************
      *
