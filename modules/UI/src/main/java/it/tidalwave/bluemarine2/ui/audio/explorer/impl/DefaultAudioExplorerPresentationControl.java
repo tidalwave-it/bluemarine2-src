@@ -201,7 +201,7 @@ public class DefaultAudioExplorerPresentationControl
      * @param   newMediaFolder  the new folder
      *
      ******************************************************************************************************************/
-    private void navigateTo (final @Nonnull Entity newMediaFolder)
+    protected void navigateTo (final @Nonnull Entity newMediaFolder)
       {
         log.debug("navigateTo({})", newMediaFolder);
         navigationStack.push(new FolderAndMemento(currentFolder, Optional.of(presentation.getMemento())));
@@ -255,7 +255,7 @@ public class DefaultAudioExplorerPresentationControl
         final PresentationModel pm = composite.findChildren()
                                               .withContext(this)
                                               .stream()
-                                              .map(o -> o.as(Presentable).createPresentationModel(rolesFor(o)))
+                                              .map(o -> o.as(Presentable).createPresentationModel(o))
                                               .collect(toCompositePresentationModel());
         presentation.populateItems(pm, folderAndMemento.getMemento());
       }
@@ -290,34 +290,7 @@ public class DefaultAudioExplorerPresentationControl
         coverImageUrl.set(optionalImageUrl);
         optionalImageUrl.ifPresent(url -> messageBus.publish(new DownloadRequest(url)));
       } 
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private Object[] rolesFor (final @Nonnull Entity entity)
-      {
-        if (!isComposite(entity))
-          {
-            return new Object[0];  
-          }
         
-        // FIXME: inject with @DciRole and @DciContext? 
-        final UserAction action = new UserActionLambda(() -> navigateTo(entity));
-        
-        final UserActionProvider uap = new DefaultUserActionProvider() // FIXME: new DefaultUserActionProvider(action)
-          {
-            @Override @Nonnull
-            public UserAction getDefaultAction()
-              {
-                return action;
-              }
-          };
-        
-        return new Object[] { uap };
-      }
-    
     /*******************************************************************************************************************
      *
      *
@@ -351,15 +324,5 @@ public class DefaultAudioExplorerPresentationControl
                 .filter(i -> i.asOptional(Displayable).map(d -> true).orElse(false))
                 .map(i -> i.asOptional(Displayable).map(o -> o.getDisplayName()).orElse("???"))
                 .collect(joining(" / "));
-      }
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    private static boolean isComposite (final @Nonnull Entity entity)
-      {
-        // FIXME: Composite doesn't work. Introduce Composite8?
-        return entity.asOptional(SimpleComposite8).map(c -> true).orElse(false);
       }
   }
