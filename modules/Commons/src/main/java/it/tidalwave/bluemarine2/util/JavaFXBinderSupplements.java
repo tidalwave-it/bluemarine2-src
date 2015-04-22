@@ -29,7 +29,9 @@
 package it.tidalwave.bluemarine2.util;
 
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
 import java.util.Optional;
+import java.util.List;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
@@ -40,14 +42,13 @@ import it.tidalwave.util.AsException;
 import it.tidalwave.util.NotFoundException;
 import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.role.ui.PresentationModel;
-import static java.util.stream.Collectors.*;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.role.ui.Styleable.Styleable;
-import static it.tidalwave.role.SimpleComposite.SimpleComposite;
-import static it.tidalwave.role.ui.UserActionProvider.*;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
+import static java.util.stream.Collectors.*;
 import static java.util.Collections.*;
-import javax.inject.Inject;
+import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.SimpleComposite.SimpleComposite;
+import static it.tidalwave.role.ui.Styleable.Styleable;
+import static it.tidalwave.role.ui.UserActionProvider.*;
 
 /***********************************************************************************************************************
  *
@@ -77,7 +78,7 @@ public class JavaFXBinderSupplements
     
     @Nonnull
     private ToggleButton createButton (final @Nonnull PresentationModel pm,
-                                       final @Nonnull ObservableList<String> baseStyleClass,
+                                       final @Nonnull List<String> baseStyleClass,
                                        final @Nonnull ToggleGroup group)
       {
         final ToggleButton button = new ToggleButton();
