@@ -60,7 +60,7 @@ import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
  **********************************************************************************************************************/
 @DciRole(datumType = Entity.class, context = DefaultAudioExplorerPresentationControl.class)
 @Configurable @RequiredArgsConstructor @Slf4j
-public class DefaultSimpleComposite8UserActionProvider extends DefaultUserActionProvider
+public class CompositeEntityUserActionProvider extends DefaultUserActionProvider
   {
     // FIXME: should only be injected in those entities which have the Composite role
     
