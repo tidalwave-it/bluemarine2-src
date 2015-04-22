@@ -29,12 +29,13 @@
 package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
+import java.util.Optional;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.MusicArtist;
 
 /***********************************************************************************************************************
  *
- * The role for an {@link Record} that is capable to render details upon selection, in the context of
+ * The role for an {@link MusicArtist} that is capable to render details upon selection, in the context of
  * {@link DefaultAudioExplorerPresentationControl}.
  * 
  * @stereotype  Role
@@ -43,18 +44,18 @@ import it.tidalwave.bluemarine2.model.Record;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = Record.class, context = DefaultAudioExplorerPresentationControl.class)
-public class RecordDetailRenderer extends DetailRenderer<Record>
+@DciRole(datumType = MusicArtist.class, context = DefaultAudioExplorerPresentationControl.class)
+public class MusicArtistDetailRenderer extends DetailRenderer<MusicArtist>
   {
-    public RecordDetailRenderer (final @Nonnull Record record) 
+    public MusicArtistDetailRenderer (final @Nonnull MusicArtist artist) 
       {
-        super(record);
+        super(artist);
       }
     
     @Override
     protected void renderDetails() 
       {
         renderDetails("");
-        renderCoverArt(owner.getImageUrl());
+        renderCoverArt(Optional.empty());
       }
   }

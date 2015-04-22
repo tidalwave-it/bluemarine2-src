@@ -38,6 +38,11 @@ import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
+ * Support class for roles that are capable to render details upon selection, in the context of
+ * {@link DefaultAudioExplorerPresentationControl}.
+ * 
+ * @stereotype  Role
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *

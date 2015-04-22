@@ -33,7 +33,6 @@ import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -63,6 +62,7 @@ import it.tidalwave.role.ContextManager;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryMusicArtist;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryRecord;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrack;
+import it.tidalwave.util.Task;
 import lombok.AccessLevel;
 import lombok.Cleanup;
 import lombok.RequiredArgsConstructor;
@@ -205,26 +205,22 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
                                         final @Nonnull TupleQueryResult result)
       throws QueryEvaluationException
       {
-        // FinderSupport is still Java 7
-        final Optional<Object> optionalContext = Optional.ofNullable(context);
-
-        try
+        return contextManager.runWithContexts(getContexts(), new Task<List<E>, QueryEvaluationException>() 
           {
-            optionalContext.ifPresent(context -> contextManager.addLocalContext(context));
-
-            final List<E> entities = new ArrayList<>();
-
-            while (result.hasNext())
+            @Override @Nonnull
+            public List<E> run()
+              throws QueryEvaluationException
               {
-                entities.add(createEntity(repository, entityClass, result.next()));
-              }
+                final List<E> entities = new ArrayList<>();
 
-            return entities;
-          }
-        finally
-          {
-            optionalContext.ifPresent(context -> contextManager.removeLocalContext(context));
-          }
+                while (result.hasNext())
+                  {
+                    entities.add(createEntity(repository, entityClass, result.next()));
+                  }
+
+                return entities;
+              }
+          });
       }
 
     /*******************************************************************************************************************

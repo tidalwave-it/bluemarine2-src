@@ -29,13 +29,16 @@
 package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
+import java.util.Optional;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.impl.FileSystemMediaFolder;
 
 /***********************************************************************************************************************
  *
- * The role for an {@link Record} that is capable to render details upon selection, in the context of
+ * The role for an {@link FileSystemMediaFolder} that is capable to render details upon selection, in the context of
  * {@link DefaultAudioExplorerPresentationControl}.
+ * 
+ * FIXME: doesn't work
  * 
  * @stereotype  Role
  * 
@@ -43,18 +46,18 @@ import it.tidalwave.bluemarine2.model.Record;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = Record.class, context = DefaultAudioExplorerPresentationControl.class)
-public class RecordDetailRenderer extends DetailRenderer<Record>
+@DciRole(datumType = FileSystemMediaFolder.class, context = DefaultAudioExplorerPresentationControl.class)
+public class FileSystemMediaFolderDetailRenderer extends DetailRenderer<FileSystemMediaFolder>
   {
-    public RecordDetailRenderer (final @Nonnull Record record) 
+    public FileSystemMediaFolderDetailRenderer (final @Nonnull FileSystemMediaFolder folder) 
       {
-        super(record);
+        super(folder);
       }
     
     @Override
     protected void renderDetails() 
       {
         renderDetails("");
-        renderCoverArt(owner.getImageUrl());
+        renderCoverArt(Optional.empty());
       }
   }

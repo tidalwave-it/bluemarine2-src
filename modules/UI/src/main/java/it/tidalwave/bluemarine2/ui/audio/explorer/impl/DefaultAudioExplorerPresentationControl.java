@@ -37,8 +37,8 @@ import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
 import java.net.URL;
 import javafx.application.Platform;
+import it.tidalwave.dci.annotation.DciContext;
 import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.role.ui.Selectable;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.UserAction8;
@@ -50,8 +50,6 @@ import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.Record;
-import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;
@@ -83,7 +81,7 @@ import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@SimpleMessageSubscriber @Slf4j
+@SimpleMessageSubscriber @DciContext @Slf4j
 public class DefaultAudioExplorerPresentationControl 
   {
     @AllArgsConstructor @Getter @ToString
@@ -272,6 +270,7 @@ public class DefaultAudioExplorerPresentationControl
         final SimpleComposite8<Entity> composite = currentFolder.as(SimpleComposite8);
         // Uses native ordering provided by the Composite.
         final PresentationModel pm = composite.findChildren()
+                                              .withContext(this)
                                               .stream()
                                               .map(object -> object.asOptional(Presentable)
                                                                    .orElse(new DefaultPresentable(object))
@@ -318,12 +317,7 @@ public class DefaultAudioExplorerPresentationControl
     @Nonnull
     private Object[] rolesFor (final @Nonnull Entity entity)
       {
-    // FIXME: inject with @DciRole and @DciContext? The problem is how to inject the fallback to clearDetails()
-        final Selectable selectable = 
-                (entity instanceof AudioFileSupplier) ? new AudioFileDetailRenderer(((AudioFileSupplier)entity).getAudioFile())
-               :(entity instanceof Record)            ? new RecordDetailRenderer((Record)entity)
-                                                      : () -> clearDetails();
-        
+        // FIXME: inject with @DciRole and @DciContext? 
         final UserAction action = isComposite(entity) 
             ? new UserActionLambda(() -> navigateTo(entity)) 
             : new UserActionLambda(() -> requestRenderAudioFileFile(entity));
@@ -337,7 +331,7 @@ public class DefaultAudioExplorerPresentationControl
               }
           };
         
-        return new Object[] { selectable, uap };
+        return new Object[] { uap };
       }
     
     /*******************************************************************************************************************
