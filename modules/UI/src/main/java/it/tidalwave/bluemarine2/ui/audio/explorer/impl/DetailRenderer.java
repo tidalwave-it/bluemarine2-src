@@ -34,7 +34,6 @@ import java.net.URL;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.role.ui.Selectable;
-import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
@@ -50,12 +49,7 @@ public abstract class DetailRenderer<ENTITY> implements Selectable
     protected final ENTITY owner;
     
     @Inject
-    private AudioExplorerPresentation presentation;
-    
-    @Inject
     private DefaultAudioExplorerPresentationControl control;
-    
-    protected abstract void renderDetails();
 
     @Override
     public void select() 
@@ -66,11 +60,13 @@ public abstract class DetailRenderer<ENTITY> implements Selectable
     
     protected void renderDetails (final @Nonnull String details) 
       {
-        presentation.renderDetails(details);
+        control.renderDetails(details);
       }
     
-    protected void renderCoverArt (final @Nonnull Optional<URL> imageUrl) 
+    protected void renderCoverArt (final @Nonnull Optional<URL> optionalImageUri) 
       {
-        control.requestRecordCover(imageUrl);
+        control.requestRecordCover(optionalImageUri);
       }
+    
+    protected abstract void renderDetails();
   }

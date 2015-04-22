@@ -288,6 +288,15 @@ public class DefaultAudioExplorerPresentationControl
      *
      *
      ******************************************************************************************************************/
+    protected void renderDetails (final @Nonnull String details)
+      {
+        presentation.renderDetails(details);
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
     protected void clearDetails()
       {
         presentation.setCoverImage(Optional.empty());
@@ -301,7 +310,7 @@ public class DefaultAudioExplorerPresentationControl
     protected void requestRecordCover (final @Nonnull Optional<URL> optionalImageUrl)
       {
         log.debug("requestRecordCover({})", optionalImageUrl);
-        presentation.setCoverImage(Optional.empty());
+//        presentation.setCoverImage(Optional.empty());
         coverImageUrl.set(optionalImageUrl);
         optionalImageUrl.ifPresent(url -> messageBus.publish(new DownloadRequest(url)));
       } 
