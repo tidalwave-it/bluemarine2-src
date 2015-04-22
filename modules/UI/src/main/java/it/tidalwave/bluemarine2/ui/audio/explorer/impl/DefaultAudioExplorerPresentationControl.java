@@ -40,11 +40,8 @@ import javafx.application.Platform;
 import it.tidalwave.dci.annotation.DciContext;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.role.ui.PresentationModel;
-import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.UserAction8;
-import it.tidalwave.role.ui.UserActionProvider;
 import it.tidalwave.role.ui.spi.UserActionLambda;
-import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
@@ -187,7 +184,7 @@ public class DefaultAudioExplorerPresentationControl
      * @param   browser     the browser
      *
      ******************************************************************************************************************/
-    private void selectBrowser (final @Nonnull EntityBrowser browser)
+    protected void selectBrowser (final @Nonnull EntityBrowser browser)
       {
         log.info("selectBrowser({})", browser);
         navigationStack.clear();
@@ -229,8 +226,8 @@ public class DefaultAudioExplorerPresentationControl
       {
         log.debug("populateBrowsers()");
 
-        final PresentationModel pm = browsers.stream() // sorted by @OrderBy
-                                             .map(o -> o.as(Presentable).createPresentationModel(rolesFor(o)))
+        final PresentationModel pm = browsers.stream() // natively sorted by @OrderBy
+                                             .map(o -> o.as(Presentable).createPresentationModel(new EntityBrowserUserActionProvider(o)))
                                              .collect(toCompositePresentationModel());
         presentation.populateBrowsers(pm);
         selectBrowser(browsers.get(0));
@@ -291,26 +288,6 @@ public class DefaultAudioExplorerPresentationControl
         optionalImageUrl.ifPresent(url -> messageBus.publish(new DownloadRequest(url)));
       } 
         
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    // FIXME: inject with @DciRole and @DciContext?
-    @Nonnull
-    private UserActionProvider rolesFor (final @Nonnull EntityBrowser entitySupplier)
-      {
-        final UserAction8 selectBrowser = new UserActionLambda(()-> selectBrowser(entitySupplier));
-    
-        return new DefaultUserActionProvider() // FIXME: new DefaultUserActionProvider(action)
-          {
-            @Override @Nonnull
-            public UserAction getDefaultAction()
-              {
-                return selectBrowser;
-              }
-          };
-      }
-    
     /*******************************************************************************************************************
      *
      * Computes the label describing the current navigation path.
