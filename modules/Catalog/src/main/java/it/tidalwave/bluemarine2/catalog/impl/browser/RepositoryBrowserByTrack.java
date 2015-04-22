@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl.browser;
 
+import org.springframework.core.annotation.Order;
 import it.tidalwave.util.As;
 import it.tidalwave.text.AsDisplayableComparator;
 import it.tidalwave.util.DefaultFilterSortCriterion;
@@ -38,6 +39,7 @@ import it.tidalwave.util.DefaultFilterSortCriterion;
  * @version $Id$
  *
  **********************************************************************************************************************/
+@Order(40)
 public class RepositoryBrowserByTrack extends RepositoryBrowserSupport 
   {
     static class ByTrackName extends DefaultFilterSortCriterion<As>

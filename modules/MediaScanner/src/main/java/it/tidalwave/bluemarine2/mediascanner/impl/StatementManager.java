@@ -30,24 +30,23 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.util.List;
-import org.openrdf.model.Statement;
-import org.openrdf.repository.RepositoryConnection;
-import org.openrdf.repository.RepositoryException;
-import it.tidalwave.messagebus.annotation.ListensTo;
-import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
-import lombok.extern.slf4j.Slf4j;
+import org.openrdf.model.Statement;
 import org.openrdf.model.Resource;
 import org.openrdf.model.URI;
 import org.openrdf.model.Value;
 import org.openrdf.model.ValueFactory;
 import org.openrdf.model.impl.ValueFactoryImpl;
+import org.openrdf.repository.RepositoryException;
+import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.messagebus.annotation.ListensTo;
+import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.persistence.Persistence;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -136,7 +135,7 @@ public class StatementManager
           {
             if (subject.isPresent())
               {
-                objects.forEach(object -> Builder.this.withOptional(subject, predicate, object)); // FIXME ?? this = withOptional(...)
+                objects.forEach(object -> withOptional(subject, predicate, object)); // FIXME ?? this = withOptional(...)
               }
     
             return this;
@@ -220,7 +219,7 @@ public class StatementManager
       {
         log.info("onAddStatementsRequest({})", request);
         progress.incrementCompletedInsertions();
-        persistence.runInTransaction((RepositoryConnection connection) -> 
+        persistence.runInTransaction(connection -> 
           {
             request.getStatements().stream().forEach(s ->
               {

@@ -60,30 +60,8 @@
 
     <aop:aspectj-autoproxy/>
     
-    <!-- DCI role injector -->
-    <bean id="roleManager"
-          class="it.tidalwave.role.spring.spi.AnnotationSpringRoleManager" />
-
-    <bean id="contextManager"
-         class="it.tidalwave.role.spi.DefaultContextManager" />
-
-    <!-- MessageBus stuff -->
-    <bean id="applicationMessageBusTaskExecutor"
-          class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor"
-          autowire-candidate="false">
-        <!-- FIXME use properties -->
-        <property name="waitForTasksToCompleteOnShutdown" value="false"/>
-        <property name="threadNamePrefix" value="messageBus-" />
-        <property name="corePoolSize" value="10" />
-        <property name="maxPoolSize" value="100" /> 
-        <property name="queueCapacity" value="100000" /> <!-- FIXME -->
-    </bean>
-
-    <bean id="applicationMessageBus"
-          class="it.tidalwave.messagebus.impl.spring.SpringMessageBus">
-        <property name="taskExecutor" ref="applicationMessageBusTaskExecutor"/>
-    </bean>
+    <bean class="it.tidalwave.bluemarine2.downloader.impl.DefaultDownloader" />
     
-    <bean class="it.tidalwave.bluemarine2.util.JavaFXBinderSupplements" />
+    <bean class="it.tidalwave.bluemarine2.downloader.impl.SimpleHttpCacheStorage"/>
     
 </beans>

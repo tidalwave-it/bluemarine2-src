@@ -33,37 +33,29 @@ import javax.inject.Inject;
 import javax.inject.Provider;
 import java.util.Optional;
 import java.util.stream.Stream;
+import java.net.URI;
 import javafx.fxml.FXML;
-import javafx.collections.ObservableList;
-import javafx.scene.Node;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
 import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.util.NotFoundException;
-import it.tidalwave.util.AsException;
-import it.tidalwave.role.SimpleComposite;
 import it.tidalwave.role.ui.PresentationModel;
-import it.tidalwave.role.ui.Styleable;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
+import it.tidalwave.bluemarine2.util.JavaFXBinderSupplements;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
-import static it.tidalwave.role.Displayable.*;
-import static it.tidalwave.role.SimpleComposite.SimpleComposite;
-import static it.tidalwave.role.ui.UserActionProvider.*;
 
 /***********************************************************************************************************************
  *
@@ -125,10 +117,15 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     @Inject
     private Provider<JavaFXBinder> binder;
     
+    @Inject
+    private Provider<JavaFXBinderSupplements> binderSupplements;
+    
     @FXML
     private void initialize()
       {
         pnCoverArt.prefHeightProperty().bind(pnCoverArt.widthProperty());
+        ivCoverArt.fitWidthProperty().bind(pnCoverArt.widthProperty().multiply(0.9));
+        ivCoverArt.fitHeightProperty().bind(pnCoverArt.heightProperty().multiply(0.9));
       }
     
     @Override
@@ -146,7 +143,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     @Override
     public void populateBrowsers (final @Nonnull PresentationModel pm)
       {
-        bindToggleButtons(hbBrowserButtons, pm);
+        binderSupplements.get().bindToggleButtons(hbBrowserButtons, pm);
       }
       
     @Override
@@ -180,6 +177,12 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
         return new Memento(lvFiles);
       }
     
+    @Override
+    public void setCoverImage (final @Nonnull Optional<URI> imageUri)
+      {
+        ivCoverArt.setImage(imageUri.map(uri -> new Image(uri.toString())).orElse(null));
+      }
+    
     /*******************************************************************************************************************
      *
      * With a remote there's no TAB key, so we must emulate some tab control with left and right arrows.
@@ -207,53 +210,6 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
           }
       }
     
-    /*
-     * FIXME: move to SteelBlue
-     * The pane must be populated with at least one button, which will be queried for the CSS style.
-    */
-    private void bindToggleButtons (final @Nonnull Pane pane, final @Nonnull PresentationModel pm)
-      {
-        final ToggleGroup group = new ToggleGroup();
-        final ObservableList<Node> children = pane.getChildren();
-        final ObservableList<String> styleClass = children.get(0).getStyleClass();
-        children.clear();
-        final SimpleComposite<PresentationModel> pmc = pm.as(SimpleComposite);
-        pmc.findChildren().results().stream().forEach(cpm -> 
-          {
-            try 
-              {
-                final ToggleButton button = new ToggleButton();
-                
-                try // can't use asOptional() since PresentationModel is constrained to Java 7
-                  {
-                    button.setText((cpm.as(Displayable).getDisplayName()));
-                  } 
-                catch (AsException e2) 
-                  {
-//                    e2.printStackTrace();
-                  }
-                
-                button.getStyleClass().addAll(styleClass);
-                button.setToggleGroup(group);
-                binder.get().bind(button, cpm.as(UserActionProvider).getDefaultAction());
-                children.add(button);
-                
-                try // can't use asOptional() since PresentationModel is constrained to Java 7
-                  {
-                    button.getStyleClass().addAll(cpm.as(Styleable.Styleable).getStyles());
-                  } 
-                catch (AsException e2) 
-                  {
-//                    e2.printStackTrace();
-                  }
-              } 
-            catch (NotFoundException e) 
-              {
-                e.printStackTrace(); // FIXME
-              }
-          });
-      }
-
     @Nonnull
     private static Label createLabel (final @Nonnull String s)
       {

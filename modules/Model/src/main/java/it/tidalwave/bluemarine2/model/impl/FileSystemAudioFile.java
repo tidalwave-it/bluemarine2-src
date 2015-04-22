@@ -38,8 +38,9 @@ import java.nio.file.Path;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.spi.AsSupport;
-import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.AudioFile;
+import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.Record;
 import lombok.Delegate;
 import lombok.Getter;
 import static java.util.Arrays.*;
@@ -143,10 +144,10 @@ public class FileSystemAudioFile implements AudioFile
       }
 
     @Override @Nonnull
-    public Optional<Entity> getRecord() 
+    public Optional<Record> getRecord() 
       {
             // FIXME: check - parent should be always present - correct?
-        return Optional.of(new NamedEntity(getParent().as(Displayable).getDisplayName()));
+        return Optional.of(new NamedRecord(getParent().as(Displayable).getDisplayName()));
       }
     
     @Override @Nonnull

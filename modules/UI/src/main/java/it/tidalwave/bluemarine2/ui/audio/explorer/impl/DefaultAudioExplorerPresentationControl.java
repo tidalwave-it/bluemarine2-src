@@ -34,9 +34,11 @@ import javax.inject.Inject;
 import java.util.List;
 import java.util.Optional;
 import java.util.Stack;
+import java.util.concurrent.atomic.AtomicReference;
+import java.net.URL;
 import javafx.application.Platform;
+import it.tidalwave.dci.annotation.DciContext;
 import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.role.ui.Selectable;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.UserAction8;
@@ -47,11 +49,10 @@ import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
+import it.tidalwave.bluemarine2.downloader.DownloadComplete;
+import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.RenderAudioFileRequest;
@@ -69,7 +70,6 @@ import static it.tidalwave.role.ui.Presentable.Presentable;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.toCompositePresentationModel;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
@@ -81,7 +81,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@SimpleMessageSubscriber @Slf4j
+@SimpleMessageSubscriber @DciContext @Slf4j
 public class DefaultAudioExplorerPresentationControl 
   {
     @AllArgsConstructor @Getter @ToString
@@ -111,6 +111,8 @@ public class DefaultAudioExplorerPresentationControl
     
     private final UserAction8 navigateUpAction = new UserActionLambda(() -> navigateUp()); 
     
+    private final AtomicReference<Optional<URL>> coverImageUrl = new AtomicReference<Optional<URL>>(Optional.empty());
+    
     /*******************************************************************************************************************
      *
      *
@@ -130,9 +132,23 @@ public class DefaultAudioExplorerPresentationControl
         log.info("onOpenAudioExplorerRequest({})", request);
         presentation.showUp(this);
         populateBrowsers();
-        selectBrowser(browsers.stream()
-                              .filter(browser -> browser.getClass().getName().contains("BrowserByArtistThenTrack"))
-                              .findAny().get());
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    /* VisibleForTesting */  void onDownloadComplete (final @ListensTo @Nonnull DownloadComplete notification)
+      {
+        log.info("onDownloadComplete({})", notification);
+        
+        if (coverImageUrl.get().map(url -> url.equals(notification.getUrl())).orElse(false))
+          {
+            if (notification.getStatusCode() == 200)
+              {
+                presentation.setCoverImage(Optional.of(notification.getCachedUri()));
+              }
+          }
       }
     
     /*******************************************************************************************************************
@@ -228,13 +244,13 @@ public class DefaultAudioExplorerPresentationControl
     private void populateBrowsers()
       {
         log.debug("populateBrowsers()");
-        
-        final PresentationModel pm = browsers.stream()
-//                                             .sorted(new DisplayableObjectComparator())
+
+        final PresentationModel pm = browsers.stream() // sorted by @OrderBy
                                              .map(object -> new DefaultPresentable(object)
                                                                .createPresentationModel(rolesFor(object)))
                                              .collect(toCompositePresentationModel());
         presentation.populateBrowsers(pm);
+        selectBrowser(browsers.get(0));
       }
     
     /*******************************************************************************************************************
@@ -251,10 +267,10 @@ public class DefaultAudioExplorerPresentationControl
         // FIXME: shouldn't deal with JavaFX threads here
         Platform.runLater(() -> navigateUpAction.enabledProperty().setValue(!navigationStack.isEmpty()));
         Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentPathLabel()));
-        // FIXME: waiting signal while loading
         final SimpleComposite8<Entity> composite = currentFolder.as(SimpleComposite8);
         // Uses native ordering provided by the Composite.
         final PresentationModel pm = composite.findChildren()
+                                              .withContext(this)
                                               .stream()
                                               .map(object -> object.asOptional(Presentable)
                                                                    .orElse(new DefaultPresentable(object))
@@ -265,23 +281,10 @@ public class DefaultAudioExplorerPresentationControl
     
     /*******************************************************************************************************************
      *
-     * FIXME: move to a separate role (DetailsSupplier)
      *
      ******************************************************************************************************************/
-    private void renderAudioFileDetails (final @Nonnull AudioFileSupplier audioFileSupplier)
+    protected void renderDetails (final @Nonnull String details)
       {
-        final AudioFile audioFile = audioFileSupplier.getAudioFile();
-        final Metadata metadata = audioFile.getMetadata();
-        
-        final String details = String.format("%s\n%s\n%s\n%s\n%s",
-            audioFile.findMakers().stream().map(m -> m.as(Displayable).getDisplayName())
-                                  .collect(joining(", ", "Artist: ", "")),
-            audioFile.findComposers().stream().map(e -> e.as(Displayable).getDisplayName())
-                                     .collect(joining(", ", "Composer: ", "")),
-            metadata.get(BIT_RATE).map(br -> "Bit rate: " + br + " kbps").orElse(""),
-            metadata.get(SAMPLE_RATE).map(sr -> String.format("Sample rate: %.1f kHz", sr / 1000.0)).orElse(""),
-            metadata.get(YEAR).map(y -> "Year: " + y).orElse(""));
-        
         presentation.renderDetails(details);
       }
     
@@ -289,14 +292,32 @@ public class DefaultAudioExplorerPresentationControl
      *
      *
      ******************************************************************************************************************/
-    // FIXME: inject with @DciRole and @DciContext?
+    protected void clearDetails()
+      {
+        presentation.setCoverImage(Optional.empty());
+        presentation.renderDetails("");
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    protected void requestRecordCover (final @Nonnull Optional<URL> optionalImageUrl)
+      {
+        log.debug("requestRecordCover({})", optionalImageUrl);
+//        presentation.setCoverImage(Optional.empty());
+        coverImageUrl.set(optionalImageUrl);
+        optionalImageUrl.ifPresent(url -> messageBus.publish(new DownloadRequest(url)));
+      } 
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
     @Nonnull
     private Object[] rolesFor (final @Nonnull Entity entity)
       {
-        final Selectable selectable = 
-                (entity instanceof AudioFileSupplier) ? () -> renderAudioFileDetails((AudioFileSupplier)entity)
-                                                      : () -> presentation.renderDetails("");
-        
+        // FIXME: inject with @DciRole and @DciContext? 
         final UserAction action = isComposite(entity) 
             ? new UserActionLambda(() -> navigateTo(entity)) 
             : new UserActionLambda(() -> requestRenderAudioFileFile(entity));
@@ -310,7 +331,7 @@ public class DefaultAudioExplorerPresentationControl
               }
           };
         
-        return new Object[] { selectable, uap };
+        return new Object[] { uap };
       }
     
     /*******************************************************************************************************************

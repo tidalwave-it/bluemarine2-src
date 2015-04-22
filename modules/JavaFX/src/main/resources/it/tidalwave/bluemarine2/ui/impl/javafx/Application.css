@@ -253,6 +253,11 @@
     -fx-background-color:       rgb(20,20,20);
   }
 
+.cover-art-image
+  {
+    -fx-background-color:       rgb(40,40,40);
+  }
+
 .details
   {
     -fx-background-color:       rgb(20,20,20);

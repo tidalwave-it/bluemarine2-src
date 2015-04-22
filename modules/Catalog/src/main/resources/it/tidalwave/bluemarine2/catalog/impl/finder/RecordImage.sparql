@@ -1,0 +1,6 @@
+SELECT * 
+WHERE  
+  { 
+    ?record     a           mo:Record. 
+    ?record     mo:image    ?image.
+  }

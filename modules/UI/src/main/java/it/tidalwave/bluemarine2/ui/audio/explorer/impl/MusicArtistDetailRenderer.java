@@ -26,20 +26,36 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl.browser;
+package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
-import org.springframework.core.annotation.Order;
-import it.tidalwave.dci.annotation.DciContext;
+import javax.annotation.Nonnull;
+import java.util.Optional;
+import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.model.MusicArtist;
 
 /***********************************************************************************************************************
  *
- * @stereotype  Context
+ * The role for an {@link MusicArtist} that is capable to render details upon selection, in the context of
+ * {@link DefaultAudioExplorerPresentationControl}.
+ * 
+ * @stereotype  Role
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciContext @Order(10)
-public class RepositoryBrowserByArtistThenRecord extends RepositoryBrowserByArtistSupport
+@DciRole(datumType = MusicArtist.class, context = DefaultAudioExplorerPresentationControl.class)
+public class MusicArtistDetailRenderer extends DetailRenderer<MusicArtist>
   {
+    public MusicArtistDetailRenderer (final @Nonnull MusicArtist artist) 
+      {
+        super(artist);
+      }
+    
+    @Override
+    protected void renderDetails() 
+      {
+        renderDetails("");
+        renderCoverArt(Optional.empty());
+      }
   }

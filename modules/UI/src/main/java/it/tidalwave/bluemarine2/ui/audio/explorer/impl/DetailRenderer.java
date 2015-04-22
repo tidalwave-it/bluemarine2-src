@@ -26,20 +26,52 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl.browser;
+package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
-import org.springframework.core.annotation.Order;
-import it.tidalwave.dci.annotation.DciContext;
+import javax.annotation.Nonnull;
+import javax.inject.Inject;
+import java.net.URL;
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Configurable;
+import it.tidalwave.role.ui.Selectable;
+import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
- * @stereotype  Context
+ * Support class for roles that are capable to render details upon selection, in the context of
+ * {@link DefaultAudioExplorerPresentationControl}.
+ * 
+ * @stereotype  Role
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciContext @Order(10)
-public class RepositoryBrowserByArtistThenRecord extends RepositoryBrowserByArtistSupport
+@Configurable @RequiredArgsConstructor
+public abstract class DetailRenderer<ENTITY> implements Selectable
   {
+    @Nonnull
+    protected final ENTITY owner;
+    
+    @Inject
+    private DefaultAudioExplorerPresentationControl control;
+
+    @Override
+    public void select() 
+      {
+        control.clearDetails();
+        renderDetails();
+      }
+    
+    protected void renderDetails (final @Nonnull String details) 
+      {
+        control.renderDetails(details);
+      }
+    
+    protected void renderCoverArt (final @Nonnull Optional<URL> optionalImageUri) 
+      {
+        control.requestRecordCover(optionalImageUri);
+      }
+    
+    protected abstract void renderDetails();
   }

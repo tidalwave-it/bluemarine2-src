@@ -30,10 +30,15 @@ package it.tidalwave.bluemarine2.catalog.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+import java.net.URL;
 import org.openrdf.repository.Repository;
 import org.openrdf.query.BindingSet;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordImageFinder;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryTrackFinder;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -62,6 +67,15 @@ public class RepositoryRecord extends RepositoryEntitySupport implements Record
         return new RepositoryTrackFinder(repository).inRecord(this);
       }
 
+    @Override @Nonnull
+    public Optional<URL> getImageUrl() 
+      {
+        final List<? extends URL> imageUrls = new RepositoryRecordImageFinder(repository, this).results();
+        // FIXME: check - images are ordered by size
+        Collections.reverse(imageUrls);
+        return imageUrls.isEmpty() ? Optional.empty() : Optional.of(imageUrls.get(0));
+      }
+    
     @Override @Nonnull
     public String toString() 
       {

@@ -26,20 +26,43 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl.browser;
+package it.tidalwave.bluemarine2.model.impl;
 
-import org.springframework.core.annotation.Order;
-import it.tidalwave.dci.annotation.DciContext;
+import javax.annotation.Nonnull;
+import java.util.Optional;
+import java.net.URL;
+import it.tidalwave.util.Id;
+import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 
 /***********************************************************************************************************************
  *
- * @stereotype  Context
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciContext @Order(10)
-public class RepositoryBrowserByArtistThenRecord extends RepositoryBrowserByArtistSupport
+public class NamedRecord extends NamedEntity implements Record
   {
+    public NamedRecord (final @Nonnull String displayName) 
+      {
+        super(displayName);
+      }
+
+    @Override @Nonnull
+    public TrackFinder findTracks() 
+      {
+        throw new UnsupportedOperationException("Not supported yet."); // FIXME: return empty finder
+      }
+
+    @Override @Nonnull
+    public Optional<URL> getImageUrl() 
+      {
+        return Optional.empty();
+      }
+
+    @Override @Nonnull
+    public Id getId() 
+      {
+        throw new UnsupportedOperationException("Not supported yet."); // FIXME
+      }
   }

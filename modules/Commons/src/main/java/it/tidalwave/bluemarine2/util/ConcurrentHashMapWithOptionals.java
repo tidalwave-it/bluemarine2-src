@@ -26,20 +26,29 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl.browser;
+package it.tidalwave.bluemarine2.util;
 
-import org.springframework.core.annotation.Order;
-import it.tidalwave.dci.annotation.DciContext;
+import javax.annotation.Nonnull;
+import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
 
 /***********************************************************************************************************************
  *
- * @stereotype  Context
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciContext @Order(10)
-public class RepositoryBrowserByArtistThenRecord extends RepositoryBrowserByArtistSupport
+public class ConcurrentHashMapWithOptionals<K, V> extends ConcurrentHashMap<K, V>
   {
+    @Nonnull
+    public Optional<K> putIfAbsentAndGetNewKey (final @Nonnull Optional<K> optionalKey, final @Nonnull V value)
+      {
+        return optionalKey.flatMap(key -> putIfAbsentAndGetNewKey(key, value));
+      }
+
+    @Nonnull
+    public Optional<K> putIfAbsentAndGetNewKey (final @Nonnull K key, final @Nonnull V value)
+      {
+        return (putIfAbsent(key, value) == null) ? Optional.of(key) : Optional.empty();
+      }
   }

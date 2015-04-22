@@ -26,29 +26,38 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.mediascanner.impl;
+package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
-import java.util.concurrent.ConcurrentHashMap;
+import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.model.impl.FileSystemMediaFolder;
 
 /***********************************************************************************************************************
  *
+ * The role for an {@link FileSystemMediaFolder} that is capable to render details upon selection, in the context of
+ * {@link DefaultAudioExplorerPresentationControl}.
+ * 
+ * FIXME: doesn't work
+ * 
+ * @stereotype  Role
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class ConcurrentHashMapWithOptionals<K, V> extends ConcurrentHashMap<K, V>
+@DciRole(datumType = FileSystemMediaFolder.class, context = DefaultAudioExplorerPresentationControl.class)
+public class FileSystemMediaFolderDetailRenderer extends DetailRenderer<FileSystemMediaFolder>
   {
-    @Nonnull
-    public Optional<K> putIfAbsentAndGetNewKey (final @Nonnull Optional<K> optionalKey, final @Nonnull V value)
+    public FileSystemMediaFolderDetailRenderer (final @Nonnull FileSystemMediaFolder folder) 
       {
-        return optionalKey.flatMap(key -> putIfAbsentAndGetNewKey(key, value));
+        super(folder);
       }
-
-    @Nonnull
-    public Optional<K> putIfAbsentAndGetNewKey (final @Nonnull K key, final @Nonnull V value)
+    
+    @Override
+    protected void renderDetails() 
       {
-        return (putIfAbsent(key, value) == null) ? Optional.of(key) : Optional.empty();
+        renderDetails("");
+        renderCoverArt(Optional.empty());
       }
   }

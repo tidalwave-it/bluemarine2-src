@@ -74,7 +74,7 @@ public interface AudioFile extends MediaItem // FIXME: MediaItem should not be s
      * @return  the makers
      *
      ******************************************************************************************************************/
-    // FIXME: and it should be Optional<MusicArtist>
+    // FIXME: MusicArtistFinder
     @Nonnull
     public Finder8<? extends Entity> findMakers();
 
@@ -87,7 +87,7 @@ public interface AudioFile extends MediaItem // FIXME: MediaItem should not be s
      * @return  the composer
      *
      ******************************************************************************************************************/
-    // FIXME: and it should be Optional<MusicArtist>
+    // FIXME: MusicArtistFinder
     @Nonnull
     public Finder8<? extends Entity> findComposers();
 
@@ -100,6 +100,6 @@ public interface AudioFile extends MediaItem // FIXME: MediaItem should not be s
      * @return  the composer
      *
      ******************************************************************************************************************/
-    // FIXME: and it should be Optional<Record>
-    public Optional<? extends Entity> getRecord();
+    @Nonnull
+    public Optional<Record> getRecord();
   }

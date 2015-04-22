@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl.browser;
 
+import org.springframework.core.annotation.Order;
 import it.tidalwave.dci.annotation.DciContext;
 
 /***********************************************************************************************************************
@@ -38,7 +39,7 @@ import it.tidalwave.dci.annotation.DciContext;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciContext
+@DciContext @Order(20)
 public class RepositoryBrowserByArtistThenTrack extends RepositoryBrowserByArtistSupport
   {
   }
