@@ -29,16 +29,17 @@
 package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
+import java.net.URL;
 import java.util.Optional;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.impl.FileSystemMediaFolder;
+import org.springframework.beans.factory.annotation.Configurable;
+import it.tidalwave.role.ui.Selectable;
+import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
- * The role for an {@link FileSystemMediaFolder} that is capable to render details upon selection, in the context of
+ * Support class for roles that are capable to render details upon selection, in the context of
  * {@link DefaultAudioExplorerPresentationControl}.
- * 
- * FIXME: doesn't work
  * 
  * @stereotype  Role
  * 
@@ -46,18 +47,31 @@ import it.tidalwave.bluemarine2.model.impl.FileSystemMediaFolder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = FileSystemMediaFolder.class, context = DefaultAudioExplorerPresentationControl.class)
-public class FileSystemMediaFolderDetailRenderer extends DetailRenderer<FileSystemMediaFolder>
+@Configurable @RequiredArgsConstructor
+public abstract class DetailRendererSelectable<ENTITY> implements Selectable
   {
-    public FileSystemMediaFolderDetailRenderer (final @Nonnull FileSystemMediaFolder folder) 
+    @Nonnull
+    protected final ENTITY owner;
+    
+    @Inject
+    private AudioExplorerPresentationControlSpi control;
+
+    @Override
+    public void select() 
       {
-        super(folder);
+        control.clearDetails();
+        renderDetails();
       }
     
-    @Override
-    protected void renderDetails() 
+    protected void renderDetails (final @Nonnull String details) 
       {
-        renderDetails("");
-        renderCoverArt(Optional.empty());
+        control.renderDetails(details);
       }
+    
+    protected void renderCoverArt (final @Nonnull Optional<URL> optionalImageUri) 
+      {
+        control.requestCoverArt(optionalImageUri);
+      }
+    
+    protected abstract void renderDetails();
   }

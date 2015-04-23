@@ -57,7 +57,7 @@ public interface AudioExplorerPresentationControlSpi
      *
      * Navigates to a new folder, saving the current folder to the stack.
      * 
-     * @param   newMediaFolder  the new folder
+     * @param   mediaFolder  the new folder
      *
      ******************************************************************************************************************/
     public void navigateTo (@Nonnull Entity mediaFolder);
@@ -81,5 +81,5 @@ public interface AudioExplorerPresentationControlSpi
      * Requests to download some cover art.
      *
      ******************************************************************************************************************/
-    public void requestCoverArt (@Nonnull Optional<URL> optionalImageUri);
+    public void requestCoverArt (@Nonnull Optional<URL> optionalCoverArtUri);
   }

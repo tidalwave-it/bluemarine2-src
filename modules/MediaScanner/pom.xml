@@ -67,7 +67,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>package-jar</id>
+                        <id>package-test-jar</id>
                         <phase>none</phase>
                         <goals>
                             <goal>test-jar</goal>
