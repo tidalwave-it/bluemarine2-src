@@ -46,8 +46,8 @@
                 <VBox spacing="10.0" GridPane.rowIndex="1">
                     <children>
                         <Label fx:id="lbArtist" alignment="CENTER" contentDisplay="CENTER" prefWidth="9999.0" styleClass="very-small-label" text="Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt: Concentus Musicus Wien, Arnold Schoenberg Choir" textAlignment="CENTER" wrapText="true" />
-                        <Label fx:id="lbFolderName" alignment="CENTER" prefWidth="9999.0" text="Bach: Mass In B Minor, BWV 232 [Disc 1]" textAlignment="CENTER" />
-                        <Label fx:id="lbTitle" alignment="CENTER" contentDisplay="CENTER" prefWidth="9999.0" style="-fx-font-weight: bold; -fx-text-fill: rgb(250,210,0);" styleClass="large-label" text="Gloria: Laudamus Te" />
+                        <Label fx:id="lbFolderName" alignment="CENTER" prefWidth="9999.0" text="Bach: Mass In B Minor, BWV 232 [Disc 1]" textAlignment="CENTER" wrapText="true" />
+                        <Label fx:id="lbTitle" alignment="CENTER" contentDisplay="CENTER" prefWidth="9999.0" style="-fx-font-weight: bold; -fx-text-fill: rgb(250,210,0);" styleClass="large-label" text="Gloria: Laudamus Te" textAlignment="CENTER" wrapText="true" />
                         <Label fx:id="lbComposer" alignment="CENTER" contentDisplay="CENTER" prefWidth="9999.0" styleClass="medium-label" text="Bach, Johann Sebastian" textAlignment="CENTER" />
                         <GridPane vgap="5.0">
                             <columnConstraints>
