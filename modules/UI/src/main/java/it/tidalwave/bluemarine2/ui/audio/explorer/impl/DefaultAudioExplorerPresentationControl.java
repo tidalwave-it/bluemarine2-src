@@ -245,7 +245,6 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
      ******************************************************************************************************************/
     private void navigateUp() 
       {
-        // TODO: assert not UI thread
         log.debug("navigateUp()");
         populateItems(navigationStack.pop());
       }
@@ -295,7 +294,6 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         Platform.runLater(() -> navigateUpAction.enabledProperty().setValue(!navigationStack.isEmpty()));
         Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentPathLabel()));
         final SimpleComposite8<Entity> composite = currentFolder.as(SimpleComposite8);
-        // Uses native ordering provided by the Composite.
         final PresentationModel pm = toCompositePresentationModel(composite.findChildren().withContext(this));
         presentation.populateItems(pm, folderAndMemento.getMemento());
       }
