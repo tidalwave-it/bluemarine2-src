@@ -26,60 +26,65 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.catalog.impl;
+package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-import java.net.URL;
-import org.openrdf.repository.Repository;
-import org.openrdf.query.BindingSet;
-import it.tidalwave.bluemarine2.model.Record;
-import it.tidalwave.bluemarine2.model.finder.TrackFinder;
-import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordImageFinder;
-import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryTrackFinder;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
+import java.util.Comparator;
+import it.tidalwave.util.As;
+import it.tidalwave.util.AsException;
+import it.tidalwave.util.DefaultFilterSortCriterion;
+import it.tidalwave.bluemarine2.model.Track;
+import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
- * An implementation of {@link Record} that is mapped to a {@link Repository}.
- * 
- * @stereotype  Datum
- * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @Getter @Slf4j
-public class RepositoryRecord extends RepositoryEntitySupport implements Record
+public class TrackComparator extends DefaultFilterSortCriterion<Track>
   {
-    public RepositoryRecord (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
+    private final static Comparator<Track> COMPARATOR = (tr1, tr2) ->
       {
-        super(repository, bindingSet, "record");
-      }
-   
-    @Override @Nonnull
-    public TrackFinder findTracks() 
-      {
-        return new RepositoryTrackFinder(repository).inRecord(this);
-        // FIXME? sorted in the query - .sort(new TrackComparator());
-      }
+        try
+          {
+            final int d1 = tr1.getDiskNumber().orElse(1);
+            final int d2 = tr2.getDiskNumber().orElse(1);
+            final int t1 = tr1.getTrackNumber();
+            final int t2 = tr2.getTrackNumber();
 
-    @Override @Nonnull
-    public Optional<URL> getImageUrl() 
+            if (d1 != d2)
+              {
+                return d1 - d2;
+              }
+            
+            if (t1 != t2)
+              {
+                return t1 - t2;
+              }
+          }
+        catch (AsException e)
+          {
+          }
+        
+        return displayName(tr1).compareTo(displayName(tr2));
+      };
+    
+    public TrackComparator() 
       {
-        final List<? extends URL> imageUrls = new RepositoryRecordImageFinder(repository, this).results();
-        // FIXME: check - images are ordered by size
-        Collections.reverse(imageUrls);
-        return imageUrls.isEmpty() ? Optional.empty() : Optional.of(imageUrls.get(0));
+        super(COMPARATOR, "TrackComparator");
       }
     
-    @Override @Nonnull
-    public String toString() 
+    @Nonnull
+    private static String displayName (final @Nonnull As object)
       {
-        return String.format("RepositoryRecord(rdfs:label=%s, %s)", rdfsLabel, id);
+        try
+          {
+            return object.as(Displayable).getDisplayName();  
+          }
+        catch (AsException e)
+          {
+            return "???";
+          }
       }
   }
