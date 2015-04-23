@@ -94,7 +94,6 @@ public class FileSystemAudioFile implements AudioFile
         return metadata;
       }
 
-
     @Override @Nonnull
     public Optional<String> getLabel() 
       {
