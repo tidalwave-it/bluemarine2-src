@@ -79,13 +79,16 @@ public class DefaultAudioRendererPresentationControl
     
     private PlayList playList = PlayList.EMPTY;
     
+    // Discriminates a forced stop from media player just terminating
+    private boolean stopped;
+    
     private final UserAction8 rewindAction = new UserActionLambda(() -> mediaPlayer.rewind());
     
-    private final UserAction8 stopAction = new UserActionLambda(() -> mediaPlayer.stop());
+    private final UserAction8 stopAction = new UserActionLambda(() -> stop());
     
-    private final UserAction8 pauseAction = new UserActionLambda(() ->  mediaPlayer.pause());
+    private final UserAction8 pauseAction = new UserActionLambda(() -> mediaPlayer.pause());
     
-    private final UserAction8 playAction = new UserActionLambda(() -> mediaPlayer.play());
+    private final UserAction8 playAction = new UserActionLambda(() -> play());
     
     private final UserAction8 fastForwardAction = new UserActionLambda(() -> mediaPlayer.fastForward());
     
@@ -139,7 +142,7 @@ public class DefaultAudioRendererPresentationControl
     /* VisibleForTesting */ OnDeactivate.Result onDeactivate()
       throws MediaPlayer.Exception 
       {
-        mediaPlayer.stop();
+        stop();
         unbindMediaPlayer();
         return OnDeactivate.Result.PROCEED;
       }
@@ -185,19 +188,43 @@ public class DefaultAudioRendererPresentationControl
         log.info("onMediaPlayerStopped()");
         presentation.focusOnPlayButton();
 
-        // FIXME: check whether the disk is not gapless, and eventually pause
-        if (playList.hasNext())
+        if (!stopped && playList.hasNext())
           {
+            // FIXME: check whether the disk is not gapless, and eventually pause
             try 
               {
                 setAudioFile(playList.next().get());
-                mediaPlayer.play();
+                play();
               } 
             catch (MediaPlayer.Exception e)
               {
                 log.error("", e);
               }
           }
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
+    private void play()
+      throws MediaPlayer.Exception
+      {
+        stopped = false;
+        mediaPlayer.play();
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
+    private void stop() 
+      throws MediaPlayer.Exception
+      {
+        stopped = true;
+        mediaPlayer.stop();
       }
     
     /*******************************************************************************************************************
