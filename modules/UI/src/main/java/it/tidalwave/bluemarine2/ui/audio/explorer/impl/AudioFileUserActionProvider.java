@@ -56,7 +56,7 @@ public class AudioFileUserActionProvider extends DefaultUserActionProvider
     private final AudioFileSupplier audioFileSupplier;
     
     @Nonnull
-    private MessageBus messageBus;
+    private final MessageBus messageBus;
     
     @Override @Nonnull
     public UserAction getDefaultAction() 
