@@ -146,4 +146,16 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     public void showUp (final @Nonnull Object control) 
       {
       }
+
+    @Override
+    public void focusOnPlayButton() 
+      {
+        btPlay.requestFocus();
+      }
+
+    @Override
+    public void focusOnStopButton() 
+      {
+        btStop.requestFocus();
+      }
   }

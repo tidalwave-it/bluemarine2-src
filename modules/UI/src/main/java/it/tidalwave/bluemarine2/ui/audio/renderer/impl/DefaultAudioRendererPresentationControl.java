@@ -147,6 +147,7 @@ public class DefaultAudioRendererPresentationControl
         bindMediaPlayer();
 
         presentation.showUp(this);
+        presentation.focusOnPlayButton();
       }
     
     /*******************************************************************************************************************
@@ -175,6 +176,20 @@ public class DefaultAudioRendererPresentationControl
         pauseAction.enabledProperty().bind(status.isEqualTo(PLAYING));
         playAction.enabledProperty().bind(status.isNotEqualTo(PLAYING));
         mediaPlayer.playTimeProperty().addListener(l);
+        
+        status.addListener((observable, oldValue, newValue) -> 
+          {
+            switch (newValue)
+              {
+                case STOPPED:
+                    presentation.focusOnPlayButton();
+                    break;
+                    
+                case PLAYING:
+                    presentation.focusOnStopButton();
+                    break;
+              }
+          });
       }
     
     /*******************************************************************************************************************
