@@ -113,6 +113,7 @@ public class SoXMediaPlayer extends MediaPlayerSupport
         checkNotPlaying();
         this.mediaItem = mediaItem;  
         playTime = Duration.ZERO;
+        playTimeProperty.set(playTime);
         statusProperty.setValue(Status.STOPPED);
       }
     

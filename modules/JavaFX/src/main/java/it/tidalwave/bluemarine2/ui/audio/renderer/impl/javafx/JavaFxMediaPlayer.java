@@ -84,6 +84,8 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
         log.debug("path:     {}", path);
         log.debug("metadata: {}", mediaItem.getMetadata());
         media = new Media(path.toUri().toString());
+        statusProperty.set(Status.STOPPED);
+        playTimeProperty.set(Duration.ZERO);
       }
 
     /*******************************************************************************************************************
