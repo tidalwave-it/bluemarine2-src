@@ -29,7 +29,6 @@
 package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 
 import javax.annotation.Nonnull;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
