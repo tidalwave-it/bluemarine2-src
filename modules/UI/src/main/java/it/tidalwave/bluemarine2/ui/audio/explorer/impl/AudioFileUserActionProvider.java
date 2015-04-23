@@ -29,7 +29,6 @@
 package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.role.ui.spi.UserActionLambda;
@@ -38,8 +37,6 @@ import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.ui.commons.RenderAudioFileRequest;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Configurable;
 
 /***********************************************************************************************************************
  *
@@ -52,13 +49,13 @@ import org.springframework.beans.factory.annotation.Configurable;
  *
  **********************************************************************************************************************/
 @DciRole(datumType = AudioFileSupplier.class, context = DefaultAudioExplorerPresentationControl.class)
-@Configurable @RequiredArgsConstructor @Slf4j
+@RequiredArgsConstructor 
 public class AudioFileUserActionProvider extends DefaultUserActionProvider
   {
     @Nonnull
     private final AudioFileSupplier audioFileSupplier;
     
-    @Inject
+    @Nonnull
     private MessageBus messageBus;
     
     @Override @Nonnull

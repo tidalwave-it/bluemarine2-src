@@ -29,16 +29,14 @@
 package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.util.NotFoundException;
+import it.tidalwave.role.Composite;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.role.ui.spi.UserActionLambda;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.Entity;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 
 /***********************************************************************************************************************
@@ -59,7 +57,7 @@ import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
  *
  **********************************************************************************************************************/
 @DciRole(datumType = Entity.class, context = DefaultAudioExplorerPresentationControl.class)
-@Configurable @RequiredArgsConstructor @Slf4j
+@RequiredArgsConstructor
 public class CompositeEntityUserActionProvider extends DefaultUserActionProvider
   {
     // FIXME: should only be injected in those entities which have the Composite role
@@ -67,7 +65,7 @@ public class CompositeEntityUserActionProvider extends DefaultUserActionProvider
     @Nonnull
     private final Entity mediaFolder;
     
-    @Inject
+    @Nonnull
     private AudioExplorerPresentationControlSpi control;
     
     @Override @Nonnull
