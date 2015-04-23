@@ -152,6 +152,13 @@
   {
     -fx-font-size:          3.9em;
   }
+  
+.large-title-label
+  {
+    -fx-font-size:          3.5em;
+    -fx-font-weight:        bold;
+    -fx-text-fill:          rgb(250,210,0);
+  }
 
 .smallButton
   {
