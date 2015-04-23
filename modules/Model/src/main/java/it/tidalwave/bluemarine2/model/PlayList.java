@@ -35,7 +35,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Optional;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import lombok.Getter;
+import lombok.experimental.Accessors;
 
 /***********************************************************************************************************************
  *
@@ -56,6 +59,12 @@ public class PlayList
     
     private final ListIterator<AudioFile> iterator;
     
+    @Getter @Accessors(fluent = true)
+    private final BooleanProperty hasPreviousProperty = new SimpleBooleanProperty();
+    
+    @Getter @Accessors(fluent = true)
+    private final BooleanProperty hasNextProperty = new SimpleBooleanProperty();
+    
     private PlayList()
       {
         currentFile = Optional.empty(); 
@@ -68,16 +77,38 @@ public class PlayList
         this.list = new ArrayList<>(list.isEmpty() ? Arrays.asList(audioFile) : list);
         iterator = this.list.listIterator(this.list.indexOf(audioFile));
         currentFile = Optional.of(iterator.next());
+        update();
       }
     
+    public boolean hasPrevious()
+      {
+        return hasPreviousProperty.get();
+      }
+
     public boolean hasNext()
       {
-        return iterator.hasNext();
+        return hasNextProperty.get();
       }
 
     @Nonnull
+    public Optional<AudioFile> previous() 
+      {
+        currentFile = Optional.of(iterator.previous());
+        update();
+        return currentFile;
+      }
+    
+    @Nonnull
     public Optional<AudioFile> next() 
       {
-        return currentFile = Optional.of(iterator.next());
+        currentFile = Optional.of(iterator.next());
+        update();
+        return currentFile;
+      }
+    
+    private void update()
+      {
+        hasPreviousProperty.set(iterator.hasPrevious());
+        hasNextProperty.set(iterator.hasNext());
       }
   }
