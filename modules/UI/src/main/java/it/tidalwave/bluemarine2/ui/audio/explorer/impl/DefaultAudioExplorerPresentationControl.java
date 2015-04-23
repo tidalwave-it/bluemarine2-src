@@ -49,6 +49,8 @@ import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;
+import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.OnActivate;
@@ -63,6 +65,8 @@ import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.*;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
+import it.tidalwave.util.Finder8;
+import java.util.ArrayList;
 
 /***********************************************************************************************************************
  *
@@ -105,6 +109,9 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
     private final UserAction8 navigateUpAction = new UserActionLambda(() -> navigateUp()); 
     
     private final AtomicReference<Optional<URL>> currentCoverArtUrl = new AtomicReference<>(Optional.empty());
+    
+    @Getter
+    private final List<AudioFileSupplier> mediaItems = new ArrayList<>();
     
     /*******************************************************************************************************************
      *
@@ -294,7 +301,13 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         Platform.runLater(() -> navigateUpAction.enabledProperty().setValue(!navigationStack.isEmpty()));
         Platform.runLater(() -> properties.folderNameProperty().setValue(getCurrentPathLabel()));
         final SimpleComposite8<Entity> composite = currentFolder.as(SimpleComposite8);
-        final PresentationModel pm = toCompositePresentationModel(composite.findChildren().withContext(this));
+        final Finder8<? extends Entity> finder = composite.findChildren().withContext(this);
+        mediaItems.clear();
+//        mediaItems.addAll(finder.stream().filter(i -> i instanceof MediaItem).map(i -> (MediaItem)i).collect(toList()));
+        mediaItems.addAll(finder.stream().filter(i -> i instanceof AudioFileSupplier)
+                                         .map(i -> ((AudioFileSupplier)i).getAudioFile())
+                                         .collect(toList()));
+        final PresentationModel pm = toCompositePresentationModel(finder);
         presentation.populateItems(pm, folderAndMemento.getMemento());
       }
     

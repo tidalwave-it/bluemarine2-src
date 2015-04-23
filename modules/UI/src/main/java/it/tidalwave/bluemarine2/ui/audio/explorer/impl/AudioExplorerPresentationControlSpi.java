@@ -29,9 +29,12 @@
 package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
+import java.util.List;
 import java.util.Optional;
 import java.net.URL;
 import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 
 /***********************************************************************************************************************
@@ -82,4 +85,14 @@ public interface AudioExplorerPresentationControlSpi
      *
      ******************************************************************************************************************/
     public void requestCoverArt (@Nonnull Optional<URL> optionalCoverArtUri);
+    
+    /*******************************************************************************************************************
+     *
+     * Returns the list of media items in the current folder.
+     * 
+     * FIXME: should be List<MediaItems>
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public List<AudioFileSupplier> getMediaItems();
   }

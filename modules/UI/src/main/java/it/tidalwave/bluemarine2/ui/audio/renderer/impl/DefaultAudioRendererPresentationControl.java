@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.ui.audio.renderer.impl;
 
+import it.tidalwave.bluemarine2.model.PlayList;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -76,6 +77,8 @@ public class DefaultAudioRendererPresentationControl
     
     private Duration duration = Duration.ZERO;
     
+    private PlayList playList = PlayList.EMPTY;
+    
     private final UserAction8 rewindAction = new UserActionLambda(() -> mediaPlayer.rewind());
     
     private final UserAction8 stopAction = new UserActionLambda(() -> mediaPlayer.stop());
@@ -121,11 +124,37 @@ public class DefaultAudioRendererPresentationControl
       {
         log.info("onRenderAudioFileRequest({})", request);
         
-        final AudioFile audioFile = request.getAudioFile();
+        playList = request.getPlayList();
+        setAudioFile(playList.getCurrentFile().get());
+        bindMediaPlayer();
+        presentation.showUp(this);
+        presentation.focusOnPlayButton();
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @OnDeactivate
+    /* VisibleForTesting */ OnDeactivate.Result onDeactivate()
+      throws MediaPlayer.Exception 
+      {
+        mediaPlayer.stop();
+        unbindMediaPlayer();
+        return OnDeactivate.Result.PROCEED;
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void setAudioFile (final @Nonnull AudioFile audioFile)
+      throws MediaPlayer.Exception
+      {
+        log.info("setAudioFile({})", audioFile);
         final Metadata metadata = audioFile.getMetadata();
-        log.info(">>>> audiofile: {}", audioFile);
         log.info(">>>> metadata:  {}", metadata);
-
+        
         // FIXME: the control shouldn't mess with JavaFX stuff
         // FIXME: this performs some (short) queries that are executed in the JavaFX thread
         Platform.runLater(() ->
@@ -144,23 +173,31 @@ public class DefaultAudioRendererPresentationControl
           });
         
         mediaPlayer.setMediaItem(audioFile);
-        bindMediaPlayer();
-
-        presentation.showUp(this);
-        presentation.focusOnPlayButton();
       }
     
     /*******************************************************************************************************************
      *
-     *
+     * 
+     * 
      ******************************************************************************************************************/
-    @OnDeactivate
-    /* VisibleForTesting */ OnDeactivate.Result onDeactivate()
-      throws MediaPlayer.Exception 
+    private void onMediaPlayerStopped()
       {
-        mediaPlayer.stop();
-        unbindMediaPlayer();
-        return OnDeactivate.Result.PROCEED;
+        log.info("onMediaPlayerStopped()");
+        presentation.focusOnPlayButton();
+
+        // FIXME: check whether the disk is not gapless, and eventually pause
+        if (playList.hasNext())
+          {
+            try 
+              {
+                setAudioFile(playList.next().get());
+                mediaPlayer.play();
+              } 
+            catch (MediaPlayer.Exception e)
+              {
+                log.error("", e);
+              }
+          }
       }
     
     /*******************************************************************************************************************
@@ -182,7 +219,7 @@ public class DefaultAudioRendererPresentationControl
             switch (newValue)
               {
                 case STOPPED:
-                    presentation.focusOnPlayButton();
+                    onMediaPlayerStopped();
                     break;
                     
                 case PLAYING:

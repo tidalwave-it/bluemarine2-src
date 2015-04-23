@@ -26,50 +26,58 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.commons;
+package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
-import it.tidalwave.bluemarine2.model.AudioFile;
-import it.tidalwave.bluemarine2.model.PlayList;
-import lombok.ToString;
-import static java.util.Collections.*;
+import java.util.ListIterator;
+import java.util.Optional;
+import lombok.Getter;
 
 /***********************************************************************************************************************
  *
- * A message that requests to render an {@link AudioFile}.
- * 
- * @stereotype  Message
+ * FIXME: make it of MediaItem, not AudioFile
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @ToString
-public class RenderAudioFileRequest 
+public class PlayList
   {
-    @Nonnull
-    private final AudioFile audioFile;
+    public static final PlayList EMPTY = new PlayList();
     
-    @Nonnull
+    @Getter
+    private Optional<AudioFile> currentFile;
+    
     private final List<AudioFile> list;
     
-    public RenderAudioFileRequest (final @Nonnull AudioFile audioFile)
+    private final ListIterator<AudioFile> iterator;
+    
+    private PlayList()
       {
-        this(audioFile, emptyList());
+        currentFile = Optional.empty(); 
+        list = Collections.emptyList();
+        iterator = list.listIterator();
       }
     
-    public RenderAudioFileRequest (final @Nonnull AudioFile audioFile, final @Nonnull List<AudioFile> list)
+    public PlayList (final @Nonnull AudioFile audioFile, final @Nonnull List<AudioFile> list) 
       {
-        this.audioFile = audioFile;
-        this.list = unmodifiableList(new ArrayList<>(list));
+        this.list = new ArrayList<>(list.isEmpty() ? Arrays.asList(audioFile) : list);
+        iterator = this.list.listIterator(this.list.indexOf(audioFile));
+        currentFile = Optional.of(iterator.next());
       }
     
+    public boolean hasNext()
+      {
+        return iterator.hasNext();
+      }
+
     @Nonnull
-    public PlayList getPlayList()
+    public Optional<AudioFile> next() 
       {
-        return new PlayList(audioFile, list);  
+        return currentFile = Optional.of(iterator.next());
       }
   }

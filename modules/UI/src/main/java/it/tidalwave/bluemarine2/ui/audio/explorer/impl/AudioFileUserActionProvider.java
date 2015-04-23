@@ -29,11 +29,14 @@
 package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
+import java.util.List;
+import java.util.stream.Collectors;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.role.ui.spi.UserActionLambda;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.ui.commons.RenderAudioFileRequest;
 import lombok.RequiredArgsConstructor;
@@ -54,6 +57,9 @@ public class AudioFileUserActionProvider extends DefaultUserActionProvider
   {
     @Nonnull
     private final AudioFileSupplier audioFileSupplier;
+
+    @Nonnull // FIXME: use the Spi interface, but this needs a change in RoleManagerSupport
+    private final DefaultAudioExplorerPresentationControl control;
     
     @Nonnull
     private final MessageBus messageBus;
@@ -61,6 +67,14 @@ public class AudioFileUserActionProvider extends DefaultUserActionProvider
     @Override @Nonnull
     public UserAction getDefaultAction() 
       {
-        return new UserActionLambda(() -> messageBus.publish(new RenderAudioFileRequest(audioFileSupplier.getAudioFile())));
+        return new UserActionLambda(() -> 
+          {
+            final List<AudioFile> audioFiles = control.getMediaItems().stream()
+                    .filter(i -> i instanceof AudioFileSupplier)
+                    .map(i -> ((AudioFileSupplier)i).getAudioFile())
+                    .collect(Collectors.toList());
+            
+            messageBus.publish(new RenderAudioFileRequest(audioFileSupplier.getAudioFile(), audioFiles));
+          });
       }
   }

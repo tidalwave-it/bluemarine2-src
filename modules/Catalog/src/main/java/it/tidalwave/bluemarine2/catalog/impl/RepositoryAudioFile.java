@@ -48,6 +48,7 @@ import it.tidalwave.bluemarine2.model.impl.AudioMetadata;
 import it.tidalwave.bluemarine2.model.impl.NamedEntity;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordFinder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
@@ -61,7 +62,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable
+@Immutable @EqualsAndHashCode(of = { "path", "trackId" }, callSuper = false)
 public class RepositoryAudioFile extends RepositoryEntitySupport implements AudioFile
   {
     @Getter @Nonnull
