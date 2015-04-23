@@ -127,6 +127,7 @@ public class DefaultAudioRendererPresentationControl
         log.info(">>>> metadata:  {}", metadata);
 
         // FIXME: the control shouldn't mess with JavaFX stuff
+        // FIXME: this performs some (short) queries that are executed in the JavaFX thread
         Platform.runLater(() ->
           {
             properties.titleProperty().setValue(audioFile.getLabel().orElse(""));
