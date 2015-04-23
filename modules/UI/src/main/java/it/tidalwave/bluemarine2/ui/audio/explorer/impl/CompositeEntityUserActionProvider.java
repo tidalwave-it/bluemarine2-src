@@ -60,8 +60,6 @@ import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 @RequiredArgsConstructor
 public class CompositeEntityUserActionProvider extends DefaultUserActionProvider
   {
-    // FIXME: should only be injected in those entities which have the Composite role
-    
     @Nonnull
     private final Entity mediaFolder;
     
