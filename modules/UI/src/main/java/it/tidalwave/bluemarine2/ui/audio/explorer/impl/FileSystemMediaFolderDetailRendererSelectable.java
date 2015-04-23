@@ -29,21 +29,16 @@
 package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
+import java.util.Optional;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.AudioFile;
-import it.tidalwave.bluemarine2.model.MediaItem;
-import it.tidalwave.bluemarine2.model.Record;
-import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
-import static java.util.stream.Collectors.joining;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.BIT_RATE;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.SAMPLE_RATE;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.YEAR;
+import it.tidalwave.bluemarine2.model.impl.FileSystemMediaFolder;
 
 /***********************************************************************************************************************
  *
- * The role for an {@link AudioFileSupplier} that is capable to render details upon selection, in the context of
+ * The role for an {@link FileSystemMediaFolder} that is capable to render details upon selection, in the context of
  * {@link DefaultAudioExplorerPresentationControl}.
+ * 
+ * FIXME: doesn't work
  * 
  * @stereotype  Role
  * 
@@ -51,30 +46,18 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.YEAR;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = AudioFileSupplier.class, context = DefaultAudioExplorerPresentationControl.class)
-public class AudioFileDetailRenderer extends DetailRenderer<AudioFileSupplier>
+@DciRole(datumType = FileSystemMediaFolder.class, context = DefaultAudioExplorerPresentationControl.class)
+public class FileSystemMediaFolderDetailRendererSelectable extends DetailRendererSelectable<FileSystemMediaFolder>
   {
-    public AudioFileDetailRenderer (final @Nonnull AudioFileSupplier audioFileSupplier)
+    public FileSystemMediaFolderDetailRendererSelectable (final @Nonnull FileSystemMediaFolder folder) 
       {
-        super(audioFileSupplier);
+        super(folder);
       }
     
     @Override
     protected void renderDetails() 
       {
-        final AudioFile audioFile = this.owner.getAudioFile();
-        final MediaItem.Metadata metadata = audioFile.getMetadata();
-        
-        final String details = String.format("%s\n%s\n%s\n%s\n%s",
-            audioFile.findMakers().stream().map(m -> m.as(Displayable).getDisplayName())
-                                  .collect(joining(", ", "Artist: ", "")),
-            audioFile.findComposers().stream().map(e -> e.as(Displayable).getDisplayName())
-                                     .collect(joining(", ", "Composer: ", "")),
-            metadata.get(BIT_RATE).map(br -> "Bit rate: " + br + " kbps").orElse(""),
-            metadata.get(SAMPLE_RATE).map(sr -> String.format("Sample rate: %.1f kHz", sr / 1000.0)).orElse(""),
-            metadata.get(YEAR).map(y -> "Year: " + y).orElse(""));
-        
-        renderDetails(details);
-        renderCoverArt(audioFile.getRecord().flatMap(Record::getImageUrl));
+        renderDetails("");
+        renderCoverArt(Optional.empty());
       }
   }

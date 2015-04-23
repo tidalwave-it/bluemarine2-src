@@ -30,11 +30,19 @@ package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.model.AudioFile;
+import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
+import static java.util.stream.Collectors.joining;
+import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.BIT_RATE;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.SAMPLE_RATE;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.YEAR;
 
 /***********************************************************************************************************************
  *
- * The role for an {@link Record} that is capable to render details upon selection, in the context of
+ * The role for an {@link AudioFileSupplier} that is capable to render details upon selection, in the context of
  * {@link DefaultAudioExplorerPresentationControl}.
  * 
  * @stereotype  Role
@@ -43,18 +51,30 @@ import it.tidalwave.bluemarine2.model.Record;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = Record.class, context = DefaultAudioExplorerPresentationControl.class)
-public class RecordDetailRenderer extends DetailRenderer<Record>
+@DciRole(datumType = AudioFileSupplier.class, context = DefaultAudioExplorerPresentationControl.class)
+public class AudioFileDetailRendererSelectable extends DetailRendererSelectable<AudioFileSupplier>
   {
-    public RecordDetailRenderer (final @Nonnull Record record) 
+    public AudioFileDetailRendererSelectable (final @Nonnull AudioFileSupplier audioFileSupplier)
       {
-        super(record);
+        super(audioFileSupplier);
       }
     
     @Override
     protected void renderDetails() 
       {
-        renderDetails("");
-        renderCoverArt(owner.getImageUrl());
+        final AudioFile audioFile = this.owner.getAudioFile();
+        final MediaItem.Metadata metadata = audioFile.getMetadata();
+        
+        final String details = String.format("%s\n%s\n%s\n%s\n%s",
+            audioFile.findMakers().stream().map(m -> m.as(Displayable).getDisplayName())
+                                  .collect(joining(", ", "Artist: ", "")),
+            audioFile.findComposers().stream().map(e -> e.as(Displayable).getDisplayName())
+                                     .collect(joining(", ", "Composer: ", "")),
+            metadata.get(BIT_RATE).map(br -> "Bit rate: " + br + " kbps").orElse(""),
+            metadata.get(SAMPLE_RATE).map(sr -> String.format("Sample rate: %.1f kHz", sr / 1000.0)).orElse(""),
+            metadata.get(YEAR).map(y -> "Year: " + y).orElse(""));
+        
+        renderDetails(details);
+        renderCoverArt(audioFile.getRecord().flatMap(Record::getImageUrl));
       }
   }
