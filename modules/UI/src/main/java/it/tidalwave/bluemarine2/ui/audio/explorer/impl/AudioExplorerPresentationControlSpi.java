@@ -26,101 +26,60 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.audio.explorer;
+package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
-import java.net.URI;
-import javafx.beans.property.StringProperty;
-import javafx.beans.property.SimpleStringProperty;
-import it.tidalwave.role.ui.PresentationModel;
-import it.tidalwave.role.ui.UserAction;
+import java.net.URL;
 import it.tidalwave.bluemarine2.model.Entity;
-import lombok.Getter;
-import lombok.experimental.Accessors;
+import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 
 /***********************************************************************************************************************
  *
- * The Presentation of the explorer of audio media files.
- * 
- * @stereotype  Presentation
+ * A SPI interface to {@link DefaultAudioExplorerPresentationControl} which is only exposed to local roles.
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface AudioExplorerPresentation 
+public interface AudioExplorerPresentationControlSpi 
   {
-    @Getter @Accessors(fluent = true)
-    public static class Properties
-      {
-        private final StringProperty folderNameProperty = new SimpleStringProperty("");
-      }
-    
     /*******************************************************************************************************************
      *
-     * Binds the UI with the callbacks.
+     * Selects a browser.
      * 
-     * @param   upAction    the action to go to the upper folder
+     * @param   entityBrowser     the browser
      *
      ******************************************************************************************************************/
-    public void bind (@Nonnull Properties properties, @Nonnull UserAction upAction);
+    public void selectBrowser (@Nonnull EntityBrowser entityBrowser);
     
     /*******************************************************************************************************************
      *
-     * Shows this presentation on the screen.
-     *
-     ******************************************************************************************************************/
-    public void showUp (@Nonnull Object control);
-    
-    /*******************************************************************************************************************
-     *
-     * Populates the presentation with the available media browsers.
+     * Navigates to a new folder, saving the current folder to the stack.
      * 
-     * @param   pm                  the {@link PresentationModel}
+     * @param   newMediaFolder  the new folder
      *
      ******************************************************************************************************************/
-    public void populateBrowsers (@Nonnull PresentationModel pm);
-    
+    public void navigateTo (@Nonnull Entity mediaFolder);
+
     /*******************************************************************************************************************
      *
-     * Populates the presentation with a set of items and optionally restores some visual properties.
-     * 
-     * @param   pm                  the {@link PresentationModel}
-     * @param   optionalMemento     the container of properties
+     * Clears the details area.
      *
      ******************************************************************************************************************/
-    public void populateItems (@Nonnull PresentationModel pm, @Nonnull Optional<Object> optionalMemento);
-    
+    public void clearDetails();
+
     /*******************************************************************************************************************
      *
-     * Renders some details about an {@link Entity}.
-     * 
-     * @param   entityDetails       the details
+     * Renders a text in the details area.
      *
      ******************************************************************************************************************/
-    public void renderDetails (@Nonnull String entityDetails);
-    
+    public void renderDetails (@Nonnull String details);
+
     /*******************************************************************************************************************
      *
-     * Puts the focus on the list to select media items.
+     * Requests to download some cover art.
      *
      ******************************************************************************************************************/
-    public void focusOnMediaItems();
-    
-    /*******************************************************************************************************************
-     *
-     * Returns an object containing the snapshot of some relevant visual properties.
-     * 
-     * @return      the memento object
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Object getMemento();
-    
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    public void setCoverArt (@Nonnull Optional<URI> optionalCoverArtUri);
+    public void requestCoverArt (@Nonnull Optional<URL> optionalImageUri);
   }

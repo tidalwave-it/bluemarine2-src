@@ -30,48 +30,35 @@ package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.net.URL;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.role.ui.Selectable;
+import it.tidalwave.role.ui.UserAction;
+import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
+import it.tidalwave.role.ui.spi.UserActionLambda;
+import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
- * Support class for roles that are capable to render details upon selection, in the context of
- * {@link DefaultAudioExplorerPresentationControl}.
- * 
  * @stereotype  Role
  * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
+//@DciRole(datumType = EntityBrowser.class, context = DefaultAudioExplorerPresentationControl.class)
 @Configurable @RequiredArgsConstructor
-public abstract class DetailRenderer<ENTITY> implements Selectable
+public class EntityBrowserUserActionProvider extends DefaultUserActionProvider
   {
     @Nonnull
-    protected final ENTITY owner;
-    
+    private final EntityBrowser entityBrowser;
+
     @Inject
     private AudioExplorerPresentationControlSpi control;
-
-    @Override
-    public void select() 
-      {
-        control.clearDetails();
-        renderDetails();
-      }
     
-    protected void renderDetails (final @Nonnull String details) 
+    @Override @Nonnull
+    public UserAction getDefaultAction() 
       {
-        control.renderDetails(details);
+        return new UserActionLambda(()-> control.selectBrowser(entityBrowser));
       }
-    
-    protected void renderCoverArt (final @Nonnull Optional<URL> optionalImageUri) 
-      {
-        control.requestCoverArt(optionalImageUri);
-      }
-    
-    protected abstract void renderDetails();
   }

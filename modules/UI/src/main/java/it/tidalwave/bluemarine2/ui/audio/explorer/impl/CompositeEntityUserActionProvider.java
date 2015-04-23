@@ -30,48 +30,53 @@ package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.net.URL;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.role.ui.Selectable;
+import it.tidalwave.util.NotFoundException;
+import it.tidalwave.role.ui.UserAction;
+import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
+import it.tidalwave.role.ui.spi.UserActionLambda;
+import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.model.Entity;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 
 /***********************************************************************************************************************
  *
- * Support class for roles that are capable to render details upon selection, in the context of
- * {@link DefaultAudioExplorerPresentationControl}.
+ * A default role for {@link Entity} instances in the context of {@link DefaultAudioExplorerPresentationControl} and
+ * containing a {@link Composite} role that provides a default action for that navigates inside the composite contents.
+ * 
+ * FIXME: it should be only injected in entities with the Composite role, but the DCI Role library is not capable of
+ * navigating inside data; in other words, @DciRole(datumType = ...) can only refer to a datum class.
+ * 
+ * As a workaround, since this role is a factory of {@link UserAction}s, it just refuses to create them in case there's
+ * no Composite.
  * 
  * @stereotype  Role
- * 
+ *  
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable @RequiredArgsConstructor
-public abstract class DetailRenderer<ENTITY> implements Selectable
+@DciRole(datumType = Entity.class, context = DefaultAudioExplorerPresentationControl.class)
+@Configurable @RequiredArgsConstructor @Slf4j
+public class CompositeEntityUserActionProvider extends DefaultUserActionProvider
   {
+    // FIXME: should only be injected in those entities which have the Composite role
+    
     @Nonnull
-    protected final ENTITY owner;
+    private final Entity mediaFolder;
     
     @Inject
     private AudioExplorerPresentationControlSpi control;
-
-    @Override
-    public void select() 
-      {
-        control.clearDetails();
-        renderDetails();
-      }
     
-    protected void renderDetails (final @Nonnull String details) 
+    @Override @Nonnull
+    public UserAction getDefaultAction() 
+      throws NotFoundException 
       {
-        control.renderDetails(details);
+        // test for the Composite role
+        // FIXME: Composite doesn't work. Introduce Composite8?
+        mediaFolder.asOptional(SimpleComposite8).orElseThrow(() -> new NotFoundException());
+        return new UserActionLambda(() -> control.navigateTo(mediaFolder));
       }
-    
-    protected void renderCoverArt (final @Nonnull Optional<URL> optionalImageUri) 
-      {
-        control.requestCoverArt(optionalImageUri);
-      }
-    
-    protected abstract void renderDetails();
   }

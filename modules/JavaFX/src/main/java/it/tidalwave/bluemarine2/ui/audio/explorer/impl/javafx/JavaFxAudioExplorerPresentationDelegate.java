@@ -178,9 +178,9 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
       }
     
     @Override
-    public void setCoverImage (final @Nonnull Optional<URI> imageUri)
+    public void setCoverArt (final @Nonnull Optional<URI> optionalCoverArtUri)
       {
-        ivCoverArt.setImage(imageUri.map(uri -> new Image(uri.toString())).orElse(null));
+        ivCoverArt.setImage(optionalCoverArtUri.map(uri -> new Image(uri.toString())).orElse(null));
       }
     
     /*******************************************************************************************************************

@@ -30,16 +30,20 @@ package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.net.URL;
-import java.util.Optional;
-import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.role.ui.Selectable;
+import it.tidalwave.role.ui.UserAction;
+import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
+import it.tidalwave.role.ui.spi.UserActionLambda;
+import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
+import it.tidalwave.bluemarine2.ui.commons.RenderAudioFileRequest;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Configurable;
 
 /***********************************************************************************************************************
  *
- * Support class for roles that are capable to render details upon selection, in the context of
- * {@link DefaultAudioExplorerPresentationControl}.
+ * A role for {@link AudioFileSupplier} that provides a default action that fires a request to render the audio file.
  * 
  * @stereotype  Role
  * 
@@ -47,31 +51,19 @@ import lombok.RequiredArgsConstructor;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable @RequiredArgsConstructor
-public abstract class DetailRenderer<ENTITY> implements Selectable
+@DciRole(datumType = AudioFileSupplier.class, context = DefaultAudioExplorerPresentationControl.class)
+@Configurable @RequiredArgsConstructor @Slf4j
+public class AudioFileUserActionProvider extends DefaultUserActionProvider
   {
     @Nonnull
-    protected final ENTITY owner;
+    private final AudioFileSupplier audioFileSupplier;
     
     @Inject
-    private AudioExplorerPresentationControlSpi control;
-
-    @Override
-    public void select() 
-      {
-        control.clearDetails();
-        renderDetails();
-      }
+    private MessageBus messageBus;
     
-    protected void renderDetails (final @Nonnull String details) 
+    @Override @Nonnull
+    public UserAction getDefaultAction() 
       {
-        control.renderDetails(details);
+        return new UserActionLambda(() -> messageBus.publish(new RenderAudioFileRequest(audioFileSupplier.getAudioFile())));
       }
-    
-    protected void renderCoverArt (final @Nonnull Optional<URL> optionalImageUri) 
-      {
-        control.requestCoverArt(optionalImageUri);
-      }
-    
-    protected abstract void renderDetails();
   }

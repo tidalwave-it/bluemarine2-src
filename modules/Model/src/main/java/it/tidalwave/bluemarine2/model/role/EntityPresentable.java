@@ -26,22 +26,16 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.roles;
+package it.tidalwave.bluemarine2.model.role;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.As;
-import it.tidalwave.role.ui.Presentable;
-import it.tidalwave.role.ui.PresentationModel;
-import it.tidalwave.role.ui.spi.DefaultPresentationModel;
+import it.tidalwave.role.ui.spi.DefaultPresentable;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.MediaItem;
-import lombok.RequiredArgsConstructor;
+import it.tidalwave.bluemarine2.model.Entity;
 
 /***********************************************************************************************************************
  *
- * The {@link Presentable} role for a {@link MediaFolder} or a {@link MediaItem}. It creates a standard
- * {@link DefaultPresentationModel}
+ * The default {@link Presentable} for all instances of {@link Entity}.
  * 
  * @stereotype  Role
  * 
@@ -49,22 +43,11 @@ import lombok.RequiredArgsConstructor;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = { MediaFolder.class, MediaItem.class }) @RequiredArgsConstructor
-public class MediaPresentable implements Presentable // FIXME: use DefaultPresentable
+@DciRole(datumType = { Entity.class, EntityBrowser.class } )
+public class EntityPresentable extends DefaultPresentable
   {
-    @Nonnull
-    private final As object;
-    
-    @Override @Nonnull
-    public PresentationModel createPresentationModel (final @Nonnull Object... instanceRoles) 
+    public EntityPresentable (final @Nonnull Object entity)
       {
-        return new DefaultPresentationModel(object, instanceRoles);
+        super(entity);
       }
   }
-//public class MediaPresentable extends DefaultPresentable
-//  {
-//    public MediaPresentable (final @Nonnull Object owner) 
-//      {
-//        super(owner);
-//      }
-//  }
