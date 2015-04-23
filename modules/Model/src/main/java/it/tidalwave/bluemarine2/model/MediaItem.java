@@ -69,6 +69,8 @@ public interface MediaItem extends Entity, Parentable<Entity>, AudioFileSupplier
         public static final Key<Integer> YEAR = new Key<>("mp3.year");
         public static final Key<String> ALBUM = new Key<>("mp3.album");
         public static final Key<Integer> TRACK = new Key<>("mp3.track");
+        public static final Key<Integer> DISK_NUMBER = new Key<>("mp3.diskNumber");
+        public static final Key<Integer> DISK_COUNT = new Key<>("mp3.diskCount");
         public static final Key<String> COMMENT = new Key<>("mp3.comment");
         
         public static final Key<Id> MBZ_TRACK_ID = new Key<>("mbz.trackId");
