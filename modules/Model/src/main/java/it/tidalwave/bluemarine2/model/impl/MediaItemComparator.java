@@ -42,7 +42,7 @@ import static it.tidalwave.role.Displayable.Displayable;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class AudioComparator extends DefaultFilterSortCriterion<As>
+public class MediaItemComparator extends DefaultFilterSortCriterion<As>
   {
     private final static Comparator<As> COMPARATOR = (o1, o2) ->
       {
@@ -52,9 +52,16 @@ public class AudioComparator extends DefaultFilterSortCriterion<As>
             final MediaItem mi2 = o2.as(MediaItem.class);
             final MediaItem.Metadata m1 = mi1.getMetadata();
             final MediaItem.Metadata m2 = mi2.getMetadata();
+            final int d1 = m1.get(MediaItem.Metadata.DISK_NUMBER).orElse(1);
+            final int d2 = m2.get(MediaItem.Metadata.DISK_NUMBER).orElse(1);
             final int t1 = m1.get(MediaItem.Metadata.TRACK).orElse(0);
             final int t2 = m2.get(MediaItem.Metadata.TRACK).orElse(0);
 
+            if (d1 != d2)
+              {
+                return d1 - d2;
+              }
+            
             if (t1 != t2)
               {
                 return t1 - t2;
@@ -67,9 +74,9 @@ public class AudioComparator extends DefaultFilterSortCriterion<As>
         return displayName(o1).compareTo(displayName(o2));
       };
     
-    public AudioComparator() 
+    public MediaItemComparator() 
       {
-        super(COMPARATOR, "AudioComparator");
+        super(COMPARATOR, "MediaItemComparator");
       }
     
     @Nonnull
