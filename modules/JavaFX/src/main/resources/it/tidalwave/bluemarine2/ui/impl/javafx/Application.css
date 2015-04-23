@@ -284,7 +284,9 @@
 #btStop,
 #btPause,
 #btRewind,
-#btFastForward
+#btFastForward,
+#btPrev,
+#btNext
   {
     -fx-padding:             0.2em;
     -fx-background-size:     2em 2em;
@@ -321,3 +323,14 @@
   {
     -fx-background-image:    url("arrow-44-128.png");
   }
+
+#btPrev
+  {
+    -fx-background-image:    url("arrow-107-128.png");
+  }
+  
+#btNext
+  {
+    -fx-background-image:    url("arrow-41-128.png");
+  }
+  

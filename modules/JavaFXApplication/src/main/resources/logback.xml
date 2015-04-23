@@ -8,7 +8,7 @@
   %%
   Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
   %%
-  
+
   *********************************************************************************************************************
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
@@ -48,6 +48,7 @@
 
     <logger name="it" level="DEBUG"/>
     <logger name="org.springframework" level="INFO"/>
+    <logger name="org.apache.http" level="INFO"/>
     <logger name="it.tidalwave.util.spi.FinderSupport" level="INFO"/>
     <!--<logger name="it.tidalwave.role" level="TRACE" />-->
 

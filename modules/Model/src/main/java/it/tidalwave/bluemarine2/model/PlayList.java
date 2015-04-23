@@ -33,10 +33,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Optional;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javax.annotation.Nonnegative;
 import lombok.Getter;
 import lombok.experimental.Accessors;
 
@@ -56,8 +56,9 @@ public class PlayList
     private Optional<AudioFile> currentFile;
     
     private final List<AudioFile> list;
-    
-    private final ListIterator<AudioFile> iterator;
+
+    @Getter
+    private int index;
     
     @Getter @Accessors(fluent = true)
     private final BooleanProperty hasPreviousProperty = new SimpleBooleanProperty();
@@ -69,14 +70,13 @@ public class PlayList
       {
         currentFile = Optional.empty(); 
         list = Collections.emptyList();
-        iterator = list.listIterator();
       }
     
     public PlayList (final @Nonnull AudioFile audioFile, final @Nonnull List<AudioFile> list) 
       {
         this.list = new ArrayList<>(list.isEmpty() ? Arrays.asList(audioFile) : list);
-        iterator = this.list.listIterator(this.list.indexOf(audioFile));
-        currentFile = Optional.of(iterator.next());
+        index = this.list.indexOf(audioFile);
+        this.currentFile = Optional.of(audioFile);
         update();
       }
     
@@ -93,7 +93,7 @@ public class PlayList
     @Nonnull
     public Optional<AudioFile> previous() 
       {
-        currentFile = Optional.of(iterator.previous());
+        currentFile = Optional.of(list.get(--index));
         update();
         return currentFile;
       }
@@ -101,14 +101,26 @@ public class PlayList
     @Nonnull
     public Optional<AudioFile> next() 
       {
-        currentFile = Optional.of(iterator.next());
+        currentFile = Optional.of(list.get(++index));
         update();
         return currentFile;
       }
     
+    @Nonnull
+    public Optional<AudioFile> peekNext() 
+      {
+        return hasNext() ? Optional.of(list.get(index + 1)) : Optional.empty();
+      }
+    
+    @Nonnegative
+    public int getSize()
+      {
+        return list.size();
+      }
+    
     private void update()
       {
-        hasPreviousProperty.set(iterator.hasPrevious());
-        hasNextProperty.set(iterator.hasNext());
+        hasPreviousProperty.set(index > 0);
+        hasNextProperty.set(index < list.size() - 1);
       }
   }

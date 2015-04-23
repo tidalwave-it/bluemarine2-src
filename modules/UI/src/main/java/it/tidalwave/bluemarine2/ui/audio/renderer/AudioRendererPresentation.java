@@ -63,6 +63,7 @@ public interface AudioRendererPresentation
         private final Property<String> composerProperty = new SimpleStringProperty("");
         private final Property<String> durationProperty = new SimpleStringProperty("");
         private final Property<String> playTimeProperty = new SimpleStringProperty("");
+        private final Property<String> nextTrackProperty = new SimpleStringProperty("");
         private final DoubleProperty progressProperty = new SimpleDoubleProperty(0);
       }
     
@@ -71,11 +72,13 @@ public interface AudioRendererPresentation
      *
      ******************************************************************************************************************/
     public void bind (@Nonnull Properties properties,
+                      @Nonnull UserAction prevAction,
                       @Nonnull UserAction rewindAction,
                       @Nonnull UserAction stopAction,
                       @Nonnull UserAction pauseAction,
                       @Nonnull UserAction playAction,
-                      @Nonnull UserAction fastForwardAction);
+                      @Nonnull UserAction fastForwardAction,
+                      @Nonnull UserAction nextAction);
     
     /*******************************************************************************************************************
      *
