@@ -192,10 +192,25 @@ public class DefaultAudioRendererPresentationControl
      * 
      * 
      ******************************************************************************************************************/
+    private void onMediaPlayerStarted()
+      {
+        log.info("onMediaPlayerStarted()");
+//        presentation.focusOnStopButton();
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
     private void onMediaPlayerStopped()
       {
         log.info("onMediaPlayerStopped()");
-        presentation.focusOnPlayButton();
+        
+        if (!stopped)
+          {
+            presentation.focusOnPlayButton();
+          }
 
         if (!stopped && playList.hasNext())
           {
@@ -284,7 +299,7 @@ public class DefaultAudioRendererPresentationControl
                     break;
                     
                 case PLAYING:
-                    presentation.focusOnStopButton();
+                    onMediaPlayerStarted();
                     break;
               }
           });
