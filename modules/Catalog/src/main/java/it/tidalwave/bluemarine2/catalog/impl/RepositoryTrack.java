@@ -69,6 +69,13 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     
     @Nonnull
     private final Path audioFilePath;
+    
+    @Nonnull
+    private final Optional<Integer> diskNumber;
+    
+    @Nonnull
+    private final Optional<Integer> diskCount;
+    
 //    private final String recordRdfsLabel;
 //    
 //    private final Integer trackCount;
@@ -85,6 +92,8 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
         this.audioFilePath = Paths.get(toString(bindingSet.getBinding("path")));
         this.duration = toDuration(bindingSet.getBinding("duration"));
         this.trackNumber = toInteger(bindingSet.getBinding("track_number"));
+        this.diskNumber = toOptionalInteger(bindingSet.getBinding("disk_number"));
+        this.diskCount = toOptionalInteger(bindingSet.getBinding("disk_count"));
 //        this.recordRdfsLabel = toString(bindingSet.getBinding("record_label"));
 //        this.trackCount = toInteger(bindingSet.getBinding("track_number")));
       }
@@ -116,7 +125,8 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Override @Nonnull
     public String toString() 
       {
-        return String.format("RepositoryTrack(%02d, %s, rdfs:label=%s, %s, %s)",
+        return String.format("RepositoryTrack(%02d/%02d %02d, %s, rdfs:label=%s, %s, %s)",
+                             diskNumber.orElse(1), diskCount.orElse(1),
                              trackNumber, Formatters.format(duration), rdfsLabel, audioFilePath, id);
       }
   }

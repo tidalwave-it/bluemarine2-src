@@ -5,6 +5,15 @@
                 ?track        rdfs:label              ?label. 
                 ?track        mo:track_number         ?track_number. 
                       
+                OPTIONAL
+                  {
+                    ?track        bm:diskNumber           ?disk_number. 
+                  }
+                OPTIONAL
+                  {
+                    ?track        bm:diskCount            ?disk_count. 
+                  }
+
 @artist@          {
 @artist@            ?track        foaf:maker              ?artist.
 @artist@          }

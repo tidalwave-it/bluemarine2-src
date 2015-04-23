@@ -64,6 +64,12 @@ public interface Track extends Entity, Identifiable
      ******************************************************************************************************************/
     public Integer getTrackNumber(); // FIXME: use Optional<Integer>
     
+    @Nonnull
+    public Optional<Integer> getDiskNumber();
+    
+    @Nonnull
+    public Optional<Integer> getDiskCount();
+    
     /*******************************************************************************************************************
      *
      * Returns the duration.
