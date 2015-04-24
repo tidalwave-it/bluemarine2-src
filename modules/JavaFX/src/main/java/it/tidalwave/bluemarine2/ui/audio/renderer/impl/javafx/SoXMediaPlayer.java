@@ -39,9 +39,6 @@ import it.tidalwave.util.ProcessExecutor.ConsoleOutput.Listener;
 import it.tidalwave.util.spi.DefaultProcessExecutor;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.renderer.spi.MediaPlayerSupport;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -139,11 +136,6 @@ public class SoXMediaPlayer extends MediaPlayerSupport
               }
             else
               {
-                // FIXME: attempt to workaround BMT-36, but it doesn't work
-//                final Path tempFile = Files.createTempFile("play", "." + mediaItem.getPath().toFile().getName().replaceAll("^.*\\.", ""));
-//                Files.copy(mediaItem.getPath(), tempFile, StandardCopyOption.REPLACE_EXISTING);
-//                
-//                final String path = tempFile.toAbsolutePath().toString();
                 final String path = mediaItem.getPath().toAbsolutePath().toString();
                 executor = DefaultProcessExecutor.forExecutable("/usr/bin/play") // FIXME
                                                  .withArguments(path)
