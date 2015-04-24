@@ -92,7 +92,7 @@ public class DefaultPersistence implements Persistence
                 log.info("Importing repository from {} ...", repositoryPath);
                 @Cleanup final InputStream is = Files.newInputStream(repositoryPath);
                 final Reader reader = new InputStreamReader(is, "UTF-8");
-                connection.add(reader, null, RDFFormat.N3);
+                connection.add(reader, repositoryPath.toUri().toString(), RDFFormat.N3);
                 connection.commit();
                 connection.close();
               }
