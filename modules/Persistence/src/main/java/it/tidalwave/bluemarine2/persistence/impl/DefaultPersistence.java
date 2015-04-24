@@ -30,9 +30,11 @@ package it.tidalwave.bluemarine2.persistence.impl;
 
 import javax.annotation.Nonnull;
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import org.openrdf.model.Namespace;
@@ -52,6 +54,8 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import it.tidalwave.bluemarine2.persistence.PropertyNames;
+import java.io.BufferedReader;
+import lombok.Cleanup;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -86,7 +90,9 @@ public class DefaultPersistence implements Persistence
             if (Files.exists(repositoryPath))
               {
                 log.info("Importing repository from {} ...", repositoryPath);
-                connection.add(repositoryPath.toFile(), null, RDFFormat.N3);
+                @Cleanup final InputStream is = Files.newInputStream(repositoryPath);
+                final Reader reader = new InputStreamReader(is, "UTF-8");
+                connection.add(reader, null, RDFFormat.N3);
                 connection.commit();
                 connection.close();
               }
@@ -103,12 +109,12 @@ public class DefaultPersistence implements Persistence
      ******************************************************************************************************************/
     @Override
     public void dump (final @Nonnull Path path)
-      throws RDFHandlerException, FileNotFoundException, RepositoryException 
+      throws RDFHandlerException, IOException, RepositoryException 
       {
         log.info("dump({})", path);
         final File file = path.toFile();
         file.getParentFile().mkdirs();
-        final PrintWriter pw = new PrintWriter(file);
+        @Cleanup final PrintWriter pw = new PrintWriter(file, "UTF-8");
         final RDFHandler writer = new SortingRDFHandler(new N3Writer(pw));
         final RepositoryConnection connection = repository.getConnection();
         
