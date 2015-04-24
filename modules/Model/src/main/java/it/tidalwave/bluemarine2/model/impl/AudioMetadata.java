@@ -91,6 +91,24 @@ public class AudioMetadata extends MetadataSupport
                 log.warn("Cannot parse track number", e.toString());  
               }
             
+            try
+              {
+                put(DISK_NUMBER, Integer.parseInt(tag.getFirst(FieldKey.DISC_NO)));
+              }
+            catch (NumberFormatException e)
+              {
+                log.warn("Cannot parse disk number", e.toString());  
+              }
+            
+            try
+              {
+                put(DISK_COUNT, Integer.parseInt(tag.getFirst(FieldKey.DISC_TOTAL)));
+              }
+            catch (NumberFormatException e)
+              {
+                log.warn("Cannot parse disk count", e.toString());  
+              }
+            
 //            put(TRACK, tag.getFirst(FieldKey.DISC_NO));
             put(COMPOSER, tag.getFirst(FieldKey.COMPOSER));
             

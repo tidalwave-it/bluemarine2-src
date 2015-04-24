@@ -66,7 +66,7 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <ProgressBar fx:id="pbPlayProgress" maxHeight="7.0" minHeight="7.0" prefHeight="7.0" prefWidth="9999.0" progress="0.0" GridPane.columnIndex="1" />
+                                <ProgressBar fx:id="pbPlayProgress" maxHeight="10.0" minHeight="10.0" prefHeight="10.0" prefWidth="9999.0" progress="0.0" GridPane.columnIndex="1" />
                                 <GridPane prefWidth="9999.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />

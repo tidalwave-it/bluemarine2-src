@@ -179,9 +179,10 @@ public class RepositoryCatalogTest
       {
         return new Object[][]
           {
-              { "tiny-model.n3",  "tiny-dump.txt"  },
-              { "small-model.n3", "small-dump.txt" },
-              { "large-model.n3", "large-dump.txt" }
+              { "tiny-model.n3",     "tiny-dump.txt"           },
+              { "small-model.n3",    "small-dump.txt"          },
+              { "model-20150406.n3", "model-20150406-dump.txt" },
+              { "model-20150421.n3", "model-20150421-dump.txt" }
           };
       }
   }

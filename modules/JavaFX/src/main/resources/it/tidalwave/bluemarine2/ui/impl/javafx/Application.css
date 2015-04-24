@@ -228,9 +228,9 @@
 
 .track-index
   {
-    -fx-min-width:              3.7em;
-    -fx-max-width:              3.7em;
-    -fx-pref-width:             3.7em;
+    -fx-min-width:              4.3em;
+    -fx-max-width:              4.3em;
+    -fx-pref-width:             4.3em;
     -fx-font-size:              0.6em;
     -fx-alignment:              baseline-right;
   }
