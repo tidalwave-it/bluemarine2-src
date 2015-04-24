@@ -79,7 +79,7 @@ public class SoXMediaPlayer extends MediaPlayerSupport
      * 
      *
      ******************************************************************************************************************/
-    private final Listener mpg123ConsoleListener = (string) ->
+    private final Listener soxConsoleListener = (string) ->
       {
         if (FINISHED_PATTERN.matcher(string).matches()) 
           {
@@ -148,7 +148,7 @@ public class SoXMediaPlayer extends MediaPlayerSupport
                 executor = DefaultProcessExecutor.forExecutable("/usr/bin/play") // FIXME
                                                  .withArguments(path)
                                                  .start();
-                executor.getStderr().setListener(mpg123ConsoleListener);
+                executor.getStderr().setListener(soxConsoleListener);
               }
           }
         catch (IOException e) 
