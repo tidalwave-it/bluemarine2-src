@@ -89,7 +89,7 @@ public class CecClientAdapter
               }
             catch (NotFoundException e)
               {
-                log.warn("Not found: {}", e.getMessage());
+                log.warn("Not found: {} / {}", string, e.getMessage());
               }
           }
       };
