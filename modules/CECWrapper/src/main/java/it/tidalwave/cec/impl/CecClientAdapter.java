@@ -89,6 +89,9 @@ public class CecClientAdapter
               }
             catch (NotFoundException e)
               {
+                // 04:1a:01 - Give deck status
+                // 04:90:00 - Report power status
+                // 04:89:01 - Vendor specific data
                 log.warn("Not found: {} / {}", string, e.getMessage());
               }
           }
