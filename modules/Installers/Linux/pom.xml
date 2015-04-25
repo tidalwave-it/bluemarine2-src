@@ -34,7 +34,7 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-6</version>
+        <version>1.0-ALPHA-7-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
@@ -47,7 +47,7 @@
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-linux</artifactId>
-    <version>1.0-ALPHA-6</version>
+    <version>1.0-ALPHA-7-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine2 - Installer, Linux</name>
     <description>This module creates a Linux application bundle.</description>
