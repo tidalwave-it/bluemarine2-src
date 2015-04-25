@@ -157,7 +157,7 @@ public class AudioMetadata extends MetadataSupport
           }
         catch (IOException | CannotReadException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
           {
-            log.error("While reading " + audioFile, path);  
+            log.error("While reading " + audioFile + " --- " + path, e);  
           } 
       }
     
