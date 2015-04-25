@@ -80,13 +80,13 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
             selectedIndex = 0;
           }
         
-        public Memento (final @Nonnull ListView lvFiles) 
+        public Memento (final @Nonnull ListView<PresentationModel> lvFiles) 
           {
         // TODO: add further properties, such as the precise scroller position
             selectedIndex = lvFiles.getSelectionModel().getSelectedIndex();  
           }
         
-        public void applyTo (final @Nonnull ListView lvFiles)
+        public void applyTo (final @Nonnull ListView<PresentationModel> lvFiles)
           {
             lvFiles.getSelectionModel().select(selectedIndex);
             lvFiles.scrollTo(selectedIndex);
