@@ -18,9 +18,10 @@
     <description>blueMarine2 (master)</description>
 
     <properties>
-        <scm.repo.url>https://bitbucket.org/tidalwave/blueMarine2~src</scm.repo.url>
-        <scm.repo.readonly.url>http://bitbucket.org/tidalwave/blueMarine2~src</scm.repo.readonly.url>
-        <scm.repo.browse.url>http://bitbucket.org/tidalwave/blueMarine2~src</scm.repo.browse.url>
+        <tft.scm>git</tft.scm>
+        <scm.repo.url>git@bitbucket.org:tidalwave/bluemarine2-src.git</scm.repo.url>
+        <scm.repo.readonly.url>https://bitbucket.org/tidalwave/bluemarine2-src.git</scm.repo.readonly.url>
+        <scm.repo.browse.url>https://bitbucket.org/tidalwave/bluemarine2-src/src</scm.repo.browse.url>
 
         <tidalwave.ci.view>blueMarine2</tidalwave.ci.view>
         <tidalwave.issues>BMT</tidalwave.issues>
@@ -101,7 +102,7 @@
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
-                <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>    
+                <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>
                 <version>1.0-ALPHA-7-SNAPSHOT</version>
             </dependency>
             <dependency>
@@ -149,8 +150,8 @@
 
     <!-- Repeated because of http://jira.codehaus.org/browse/SCM-442 -->
     <scm>
-        <connection>scm:hg:${scm.repo.readonly.url}</connection>
-        <developerConnection>scm:hg:${scm.repo.effective.url}</developerConnection>
+        <connection>scm:git:${scm.repo.readonly.url}</connection>
+        <developerConnection>scm:git:${scm.repo.effective.url}</developerConnection>
         <url>${scm.repo.browse.url}</url>
       <tag>HEAD</tag>
   </scm>
