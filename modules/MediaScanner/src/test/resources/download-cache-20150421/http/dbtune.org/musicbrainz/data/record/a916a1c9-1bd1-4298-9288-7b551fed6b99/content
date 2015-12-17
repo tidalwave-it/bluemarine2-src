@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/a916a1c9-1bd1-4298-9288-7b551fed6b99>
+      a       mo:Record ;
+      rdfs:label "The Very Best of Louis Armstrong (disc 1)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00004TWRX" ;
+      vocab:albummeta_coverarturl
+              "http://images-eu.amazon.com/images/P/B00004TWRX.02.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "26"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/87699> ;
+      vocab:tracks "20"^^xsd:int ;
+      dc:date "2000-07-17" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Very Best of Louis Armstrong (disc 1)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00004TWRX> ;
+      mo:image <http://images-eu.amazon.com/images/P/B00004TWRX.02.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B00004TWRX> ;
+      mo:musicbrainz <http://musicbrainz.org/album/a916a1c9-1bd1-4298-9288-7b551fed6b99> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/140337> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/972d0454-c4c9-451e-a436-3aa94185bfcf> , <http://dbtune.org/musicbrainz/resource/track/a989c0c2-f2fe-47bf-9e6b-6658e8cbff7c> , <http://dbtune.org/musicbrainz/resource/track/71471def-8b90-4adf-a3b3-67ec396c007a> , <http://dbtune.org/musicbrainz/resource/track/53957223-80cf-43fb-bfd7-9c72b9670877> , <http://dbtune.org/musicbrainz/resource/track/c162cabc-9b51-4e64-94dc-a02e3e3fe06a> , <http://dbtune.org/musicbrainz/resource/track/4a09c3e0-64da-468c-9c6c-f712915b71f5> , <http://dbtune.org/musicbrainz/resource/track/3fe2bdf5-4c4a-4739-bfbb-4b84bd4333b0> , <http://dbtune.org/musicbrainz/resource/track/6eef356c-dbc0-43cb-86ab-de9281ba4681> , <http://dbtune.org/musicbrainz/resource/track/bd085569-6914-4a31-8cb6-cafbac4554b2> , <http://dbtune.org/musicbrainz/resource/track/c31cec7d-9bec-4f0d-930e-11ea8d426172> , <http://dbtune.org/musicbrainz/resource/track/084c7004-70dc-4f69-b07d-e10bcb3c1e33> , <http://dbtune.org/musicbrainz/resource/track/3841a2e2-c0a6-4621-ac78-5b12c42edefb> , <http://dbtune.org/musicbrainz/resource/track/42161cda-a02c-46ef-b455-e8a3ee04acbc> , <http://dbtune.org/musicbrainz/resource/track/e662dbd7-ad8d-44b0-9004-57b221a96e1a> , <http://dbtune.org/musicbrainz/resource/track/1b56f1d3-e0fd-4a57-b150-b45d357b1094> , <http://dbtune.org/musicbrainz/resource/track/987c433c-50b1-4731-9311-fcd7bc47d03e> , <http://dbtune.org/musicbrainz/resource/track/ff4cb7fd-0950-44c1-85c3-87b504f17f2b> , <http://dbtune.org/musicbrainz/resource/track/6b1b0c7c-ef1e-49e3-b1a1-f1ac581d1f62> , <http://dbtune.org/musicbrainz/resource/track/8097d39a-36f7-47de-b8cf-206c2def0bdf> , <http://dbtune.org/musicbrainz/resource/track/e305924c-1f52-4c6c-9c0c-02b1a3bd5455> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/eea8a864-fcda-4602-9569-38ab446decd6> ;
+      foaf:page "714278630" .
+
+<http://images-eu.amazon.com/images/P/B00004TWRX.02.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages-eu.amazon.com%2Fimages%2FP%2FB00004TWRX.02.MZZZZZZZ.jpg%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/a916a1c9-1bd1-4298-9288-7b551fed6b99>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fa916a1c9-1bd1-4298-9288-7b551fed6b99%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/a916a1c9-1bd1-4298-9288-7b551fed6b99>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/a916a1c9-1bd1-4298-9288-7b551fed6b99> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00004TWRX>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00004TWRX%3E> .
+
+<http://images.amazon.com/images/P/B00004TWRX>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00004TWRX%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/a916a1c9-1bd1-4298-9288-7b551fed6b99>
+      rdfs:label "RDF Description of The Very Best of Louis Armstrong (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/a916a1c9-1bd1-4298-9288-7b551fed6b99> .

@@ -5,13 +5,13 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-5-SNAPSHOT</version>
+        <version>1.0-ALPHA-7-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>    
-    <version>1.0-ALPHA-5-SNAPSHOT</version>
+    <version>1.0-ALPHA-7-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>blueMarine2 - Application (JavaFX)</name>
 
@@ -23,7 +23,15 @@
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-cec</artifactId>
+            <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
         </dependency>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
@@ -31,60 +39,28 @@
         </dependency>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
+            <artifactId>it-tidalwave-cec</artifactId>
         </dependency>
         
         <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.kenai.nbpwr</groupId>
-                    <artifactId>org-slf4j-jdk14</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-messagebus-spring</artifactId>
         </dependency>
-        <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
-        </dependency>
-        
+
         <dependency>
             <groupId>it.tidalwave.steelblue</groupId>
             <artifactId>it-tidalwave-role-ui-javafx</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-jdk14</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.kenai.nbpwr</groupId>
-                    <artifactId>org-slf4j-jdk14</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-messagebus</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.kenai.nbpwr</groupId>
-                    <artifactId>org-slf4j-jdk14</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <!-- These are indirect dependencies, directly referencing them solves convergency problems -->
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-role-spring</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.kenai.nbpwr</groupId>
-                    <artifactId>org-slf4j-jdk14</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -101,16 +77,23 @@
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-util</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.kenai.nbpwr</groupId>
-                    <artifactId>org-slf4j-jdk14</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.netbeans.api</groupId>
-                    <artifactId>org-openide-util</artifactId>
-                </exclusion>
-            </exclusions>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
         </dependency>
         
         <dependency>
@@ -129,30 +112,10 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aspects</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-        </dependency>
+        
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>it.tidalwave.thesefoolishthings</groupId>
-            <artifactId>it-tidalwave-messagebus-spring</artifactId>
         </dependency>
 
         <!-- These should really be runtime -->        
@@ -161,7 +124,6 @@
             <artifactId>it-tidalwave-bluemarine2-catalog</artifactId>
         </dependency>
         
-        <!-- FIXME: workaround against a compilation error -->
     </dependencies>
     
 </project>

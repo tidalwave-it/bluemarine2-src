@@ -1,0 +1,71 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/1dbacf08-e08c-4f44-a409-81ea1fb4b8aa>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/1dbacf08-e08c-4f44-a409-81ea1fb4b8aa> .
+
+<http://musicbrainz.org/album/1dbacf08-e08c-4f44-a409-81ea1fb4b8aa>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F1dbacf08-e08c-4f44-a409-81ea1fb4b8aa%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/1dbacf08-e08c-4f44-a409-81ea1fb4b8aa>
+      rdfs:label "RDF Description of My Favorite Things" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/1dbacf08-e08c-4f44-a409-81ea1fb4b8aa> .
+
+<http://dbpedia.org/resource/My_Favorite_Things_(album)>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FMy_Favorite_Things_%28album%29%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/1dbacf08-e08c-4f44-a409-81ea1fb4b8aa>
+      a       mo:Record ;
+      rdfs:label "My Favorite Things" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000002I53" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000002I53.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "6"^^xsd:int ;
+      vocab:albummeta_puids
+              "22"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/203737> , <http://dbtune.org/musicbrainz/resource/toc/222673> , <http://dbtune.org/musicbrainz/resource/toc/195195> , <http://dbtune.org/musicbrainz/resource/toc/184683> , <http://dbtune.org/musicbrainz/resource/toc/17206> , <http://dbtune.org/musicbrainz/resource/toc/195406> ;
+      vocab:tracks "4"^^xsd:int ;
+      dc:date "1961-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "My Favorite Things" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000002I53> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000002I53.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000002I53> ;
+      mo:musicbrainz <http://musicbrainz.org/album/1dbacf08-e08c-4f44-a409-81ea1fb4b8aa> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/272417> , <http://dbtune.org/musicbrainz/resource/release/36636> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/0ce974ff-d220-4ba8-be31-6a3a385011bd> , <http://dbtune.org/musicbrainz/resource/track/503aea6d-42d2-4870-bec8-50993889eca4> , <http://dbtune.org/musicbrainz/resource/track/a4b7eed8-56bc-48c5-82a8-89fcfcfad376> , <http://dbtune.org/musicbrainz/resource/track/a8661daf-63c6-4ef1-a746-ce162abb11ef> ;
+      =       <http://dbpedia.org/resource/My_Favorite_Things_(album)> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/b625448e-bf4a-41c3-a421-72ad46cdb831> ;
+      foaf:page "497065047" .
+
+<http://ec1.images-amazon.com/images/P/B000002I53.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000002I53.01.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000002I53>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000002I53%3E> .
+
+<http://images.amazon.com/images/P/B000002I53>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002I53%3E> .

@@ -5,31 +5,26 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-5-SNAPSHOT</version>   
+        <version>1.0-ALPHA-7-SNAPSHOT</version>   
         <relativePath>../pom.xml</relativePath>
     </parent>
     
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-catalog</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-5-SNAPSHOT</version>
+    <version>1.0-ALPHA-7-SNAPSHOT</version>
     <name>blueMarine2 - Catalog</name>
     
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-model</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
         </dependency>
+        
 <!--        <dependency>
             <groupId>org.openrdf.alibaba</groupId>
             <artifactId>alibaba-repository-object</artifactId>
@@ -41,10 +36,6 @@
         </dependency>
         <dependency>
             <groupId>org.openrdf.sesame</groupId>
-            <artifactId>sesame-sail-memory</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.openrdf.sesame</groupId>
             <artifactId>sesame-repository-sail</artifactId>
         </dependency>
         <dependency> 
@@ -53,24 +44,39 @@
         </dependency>        
         <dependency>
             <groupId>org.openrdf.sesame</groupId>
-            <artifactId>sesame-rio-n3</artifactId>
-            <scope>runtime</scope>
+            <artifactId>sesame-sail-memory</artifactId>
         </dependency>
+        
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         
-        <!-- FIXME: workaround against a compilation error -->
         <dependency>
-            <groupId>org.netbeans.api</groupId>
-            <artifactId>org-openide-util</artifactId>
-            <version>RELEASE712</version>
-            <scope>provided</scope>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.openrdf.sesame</groupId>
+            <artifactId>sesame-rio-n3</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-messagebus-spring</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-role-spring</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

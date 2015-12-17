@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/b8ccca79-9419-4e07-a30d-d869475043a5>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fb8ccca79-9419-4e07-a30d-d869475043a5%3E> .
+
+<http://images.amazon.com/images/P/B0000069ON>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000069ON%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://ec1.images-amazon.com/images/P/B0000069ON.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0000069ON.01.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000069ON>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000069ON%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/b8ccca79-9419-4e07-a30d-d869475043a5>
+      a       mo:Record ;
+      rdfs:label "Pure Ella: The Very Best of Ella Fitzgerald" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000069ON" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0000069ON.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "34"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/213529> , <http://dbtune.org/musicbrainz/resource/toc/44966> ;
+      vocab:tracks "18"^^xsd:int ;
+      dc:date "1998-03-31" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Pure Ella: The Very Best of Ella Fitzgerald" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000069ON> ;
+      mo:image <http://images.amazon.com/images/P/B0000069ON> , <http://ec1.images-amazon.com/images/P/B0000069ON.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/b8ccca79-9419-4e07-a30d-d869475043a5> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/231383> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/ad5cfdad-32ec-4664-8ee2-9602ac1bc5e6> , <http://dbtune.org/musicbrainz/resource/track/1756452c-8377-47a0-a446-f7fdd58f63a5> , <http://dbtune.org/musicbrainz/resource/track/21665ba3-ceb4-4e9f-b763-ceee782d5d49> , <http://dbtune.org/musicbrainz/resource/track/e636c2c8-d1cb-493d-a576-9091995f5202> , <http://dbtune.org/musicbrainz/resource/track/1f8a2c95-651d-4848-969b-e4f361eae3d7> , <http://dbtune.org/musicbrainz/resource/track/c0034051-0b2a-4337-a830-8592d04c2bb5> , <http://dbtune.org/musicbrainz/resource/track/c1c1f2e2-ed47-4f02-9399-f95cd89910be> , <http://dbtune.org/musicbrainz/resource/track/e6556734-6481-4ee8-a763-c01763abef76> , <http://dbtune.org/musicbrainz/resource/track/9b786326-a63f-4369-a155-b0e16fc332dc> , <http://dbtune.org/musicbrainz/resource/track/25b03e78-a3b7-4a4f-bad9-f09bfcddfb6a> , <http://dbtune.org/musicbrainz/resource/track/bcde03ee-420e-4787-90fb-f1ebddf2a3e9> , <http://dbtune.org/musicbrainz/resource/track/93b0352e-ae0e-43fa-9a8d-1fecb46cfd18> , <http://dbtune.org/musicbrainz/resource/track/a69d34f4-3540-4d4d-99cc-5c5ebdd37533> , <http://dbtune.org/musicbrainz/resource/track/415225e4-eab1-4e71-9949-e4ab8d55cec0> , <http://dbtune.org/musicbrainz/resource/track/3fb5ba1b-3e46-42ec-8066-a94c97bd7225> , <http://dbtune.org/musicbrainz/resource/track/e006f069-a184-4959-95f2-bd21e676fec1> , <http://dbtune.org/musicbrainz/resource/track/a4aa6cbb-1094-403c-a683-28189838d73b> , <http://dbtune.org/musicbrainz/resource/track/4535d61c-b13a-4912-ba18-492baf90f2c0> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
+      foaf:page "594122790" .
+
+<http://dbtune.org/musicbrainz/data/record/b8ccca79-9419-4e07-a30d-d869475043a5>
+      rdfs:label "RDF Description of Pure Ella: The Very Best of Ella Fitzgerald" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/b8ccca79-9419-4e07-a30d-d869475043a5> .
+
+<http://dbtune.org/musicbrainz/resource/master/b8ccca79-9419-4e07-a30d-d869475043a5>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/b8ccca79-9419-4e07-a30d-d869475043a5> .

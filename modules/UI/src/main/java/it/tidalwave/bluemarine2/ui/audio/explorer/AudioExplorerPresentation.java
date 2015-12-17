@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -30,10 +30,12 @@ package it.tidalwave.bluemarine2.ui.audio.explorer;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
+import java.net.URI;
 import javafx.beans.property.StringProperty;
 import javafx.beans.property.SimpleStringProperty;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
+import it.tidalwave.bluemarine2.model.Entity;
 import lombok.Getter;
 import lombok.experimental.Accessors;
 
@@ -78,7 +80,7 @@ public interface AudioExplorerPresentation
      * @param   pm                  the {@link PresentationModel}
      *
      ******************************************************************************************************************/
-    public void populateBrowsers (final @Nonnull PresentationModel pm);
+    public void populateBrowsers (@Nonnull PresentationModel pm);
     
     /*******************************************************************************************************************
      *
@@ -89,6 +91,15 @@ public interface AudioExplorerPresentation
      *
      ******************************************************************************************************************/
     public void populateItems (@Nonnull PresentationModel pm, @Nonnull Optional<Object> optionalMemento);
+    
+    /*******************************************************************************************************************
+     *
+     * Renders some details about an {@link Entity}.
+     * 
+     * @param   entityDetails       the details
+     *
+     ******************************************************************************************************************/
+    public void renderDetails (@Nonnull String entityDetails);
     
     /*******************************************************************************************************************
      *
@@ -106,4 +117,10 @@ public interface AudioExplorerPresentation
      ******************************************************************************************************************/
     @Nonnull
     public Object getMemento();
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    public void setCoverArt (@Nonnull Optional<URI> optionalCoverArtUri);
   }

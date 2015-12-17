@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl.browser;
 
+import org.springframework.core.annotation.Order;
 import it.tidalwave.dci.annotation.DciContext;
 
 /***********************************************************************************************************************
@@ -38,11 +39,7 @@ import it.tidalwave.dci.annotation.DciContext;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciContext
+@DciContext @Order(20)
 public class RepositoryBrowserByArtistThenTrack extends RepositoryBrowserByArtistSupport
   {
-    public String getDisplayName() 
-      {
-        return "by Artist, then track"; // FIXME: use a Bundle
-      }  
   }

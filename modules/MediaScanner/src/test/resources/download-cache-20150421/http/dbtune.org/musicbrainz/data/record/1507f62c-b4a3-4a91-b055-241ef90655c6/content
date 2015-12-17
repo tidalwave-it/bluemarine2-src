@@ -1,0 +1,56 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/1507f62c-b4a3-4a91-b055-241ef90655c6>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F1507f62c-b4a3-4a91-b055-241ef90655c6%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/1507f62c-b4a3-4a91-b055-241ef90655c6>
+      a       mo:Record ;
+      rdfs:label "Masquerade" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "9"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/96316> ;
+      vocab:tracks "10"^^xsd:int ;
+      dc:date "1989-10-31" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/ita> ;
+      dc:title "Masquerade" ;
+      mo:musicbrainz <http://musicbrainz.org/album/1507f62c-b4a3-4a91-b055-241ef90655c6> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/406146> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/d7ae7e25-4a8e-4d05-899d-dc8bef41beab> , <http://dbtune.org/musicbrainz/resource/track/6cb801cf-69f7-4c83-a086-f96fc56805e2> , <http://dbtune.org/musicbrainz/resource/track/5a68f930-617c-4d49-814d-bb8b47c7e09e> , <http://dbtune.org/musicbrainz/resource/track/7c0d77d5-f993-47c6-b6bd-28dd468d93bb> , <http://dbtune.org/musicbrainz/resource/track/0c90c290-b01e-4466-9bc3-77fd17939de0> , <http://dbtune.org/musicbrainz/resource/track/c54eb793-b7ce-4155-9752-9dada8c3b893> , <http://dbtune.org/musicbrainz/resource/track/4a062278-5dde-4e87-bf9d-66c9616ee137> , <http://dbtune.org/musicbrainz/resource/track/98035aba-aed7-465e-95bf-c2196d5c595b> , <http://dbtune.org/musicbrainz/resource/track/22cd68f2-c744-4c9a-99a3-1d11c56f8d69> , <http://dbtune.org/musicbrainz/resource/track/4d7d5c7f-42b7-468d-b6d2-5f151ce996fb> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/940a5867-a2e5-4af5-ae05-91cf63bd0b52> ;
+      foaf:page "472533702" .
+
+<http://dbtune.org/musicbrainz/resource/master/1507f62c-b4a3-4a91-b055-241ef90655c6>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/1507f62c-b4a3-4a91-b055-241ef90655c6> .
+
+<http://dbtune.org/musicbrainz/data/record/1507f62c-b4a3-4a91-b055-241ef90655c6>
+      rdfs:label "RDF Description of Masquerade" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/1507f62c-b4a3-4a91-b055-241ef90655c6> .

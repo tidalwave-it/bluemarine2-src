@@ -1,0 +1,64 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://ec2.images-amazon.com/images/P/B0000073F0.03.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec2.images-amazon.com%2Fimages%2FP%2FB0000073F0.03.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/c2dc5888-f122-4818-9763-c9ae86a74355>
+      rdfs:label "RDF Description of Poesia di Venezia" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/c2dc5888-f122-4818-9763-c9ae86a74355> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B0000073F0>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000073F0%3E> .
+
+<http://musicbrainz.org/album/c2dc5888-f122-4818-9763-c9ae86a74355>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fc2dc5888-f122-4818-9763-c9ae86a74355%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/c2dc5888-f122-4818-9763-c9ae86a74355>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/c2dc5888-f122-4818-9763-c9ae86a74355> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000073F0>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000073F0%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/c2dc5888-f122-4818-9763-c9ae86a74355>
+      a       mo:Record ;
+      rdfs:label "Poesia di Venezia" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000073F0" ;
+      vocab:albummeta_coverarturl
+              "http://ec2.images-amazon.com/images/P/B0000073F0.03.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "26"^^xsd:int ;
+      vocab:tracks "13"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/ita> ;
+      dc:title "Poesia di Venezia" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000073F0> ;
+      mo:image <http://ec2.images-amazon.com/images/P/B0000073F0.03.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B0000073F0> ;
+      mo:musicbrainz <http://musicbrainz.org/album/c2dc5888-f122-4818-9763-c9ae86a74355> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/0da0e6b3-d7fc-4c51-aa32-4da108eeffcd> , <http://dbtune.org/musicbrainz/resource/track/d1d44ac2-60d4-47f4-ac36-4bcc80cac8bf> , <http://dbtune.org/musicbrainz/resource/track/2b707f94-9688-46f5-91b5-f60b7bbc62ce> , <http://dbtune.org/musicbrainz/resource/track/0c41c4d7-69ee-4fa7-a2f8-e605bae3cbbc> , <http://dbtune.org/musicbrainz/resource/track/c7f0f211-b1bd-42a4-b7f3-c468db189049> , <http://dbtune.org/musicbrainz/resource/track/982314e7-a3a7-4e96-bfb2-7031c280bc01> , <http://dbtune.org/musicbrainz/resource/track/4d621ee3-53c2-4301-92c0-63d23a1bb652> , <http://dbtune.org/musicbrainz/resource/track/8e9808b1-ce93-451f-8927-6a74e6601a36> , <http://dbtune.org/musicbrainz/resource/track/3dc3b502-6a7d-40ba-a1a6-6882bfebaabd> , <http://dbtune.org/musicbrainz/resource/track/c411bea1-fc1f-49f1-9ac9-0cff86a58e72> , <http://dbtune.org/musicbrainz/resource/track/bf36e089-6c15-45c9-a343-4aca762cea23> , <http://dbtune.org/musicbrainz/resource/track/66c88515-f7b7-4d57-8a3b-5588cbdd79da> , <http://dbtune.org/musicbrainz/resource/track/50cc438c-4d65-45a5-8ca8-10d9a08c36e7> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/940a5867-a2e5-4af5-ae05-91cf63bd0b52> ;
+      foaf:page "587419970" .

@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B0013D8JCO>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0013D8JCO%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/a02d0580-3e01-4217-a42e-6569ec7e6e4b>
+      rdfs:label "RDF Description of Brad Mehldau Trio Live (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/a02d0580-3e01-4217-a42e-6569ec7e6e4b> .
+
+<http://dbtune.org/musicbrainz/resource/record/a02d0580-3e01-4217-a42e-6569ec7e6e4b>
+      a       mo:Record ;
+      rdfs:label "Brad Mehldau Trio Live (disc 2)" ;
+      vocab:album_attributes
+              "{0,9,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0013D8JCO" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0013D8JCO.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "6"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/236893> ;
+      vocab:tracks "6"^^xsd:int ;
+      dc:date "2008-03-25" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Brad Mehldau Trio Live (disc 2)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0013D8JCO> ;
+      mo:image <http://images.amazon.com/images/P/B0013D8JCO> , <http://ec1.images-amazon.com/images/P/B0013D8JCO.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/a02d0580-3e01-4217-a42e-6569ec7e6e4b> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/376689> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/97aa2bcb-05fa-4bc3-b300-b0f3fe3e7f93> , <http://dbtune.org/musicbrainz/resource/track/09eea47f-1081-4292-b087-3290b039e81d> , <http://dbtune.org/musicbrainz/resource/track/a808631c-f351-40a3-870f-7953cc981324> , <http://dbtune.org/musicbrainz/resource/track/69d35c6f-9372-4715-815d-9d9eab6aed09> , <http://dbtune.org/musicbrainz/resource/track/9cdbc460-8b30-4c97-9b9c-97637d801b46> , <http://dbtune.org/musicbrainz/resource/track/38fe2218-583b-48d3-8af9-b28ef8bcfc30> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/2c43503a-fb94-433a-98a9-8898367ea71f> ;
+      foaf:page "120656942" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://ec1.images-amazon.com/images/P/B0013D8JCO.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0013D8JCO.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/a02d0580-3e01-4217-a42e-6569ec7e6e4b>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/a02d0580-3e01-4217-a42e-6569ec7e6e4b> .
+
+<http://musicbrainz.org/album/a02d0580-3e01-4217-a42e-6569ec7e6e4b>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fa02d0580-3e01-4217-a42e-6569ec7e6e4b%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0013D8JCO>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0013D8JCO%3E> .

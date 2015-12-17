@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/54af3115-006f-408d-8fe8-46e035084a2d>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F54af3115-006f-408d-8fe8-46e035084a2d%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/54af3115-006f-408d-8fe8-46e035084a2d>
+      a       mo:Record ;
+      rdfs:label "Le Chant des Rêves (disc 2)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "1"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/277681> ;
+      vocab:tracks "11"^^xsd:int ;
+      dc:date "2005-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/mul> ;
+      dc:title "Le Chant des Rêves (disc 2)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/54af3115-006f-408d-8fe8-46e035084a2d> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/461640> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/737528e3-ed94-404d-a778-7da96add450a> , <http://dbtune.org/musicbrainz/resource/track/c99b7369-c611-468d-8fd1-b78dd8c57d2b> , <http://dbtune.org/musicbrainz/resource/track/809ef592-3cc0-4df1-adab-15478f82a3d2> , <http://dbtune.org/musicbrainz/resource/track/34601f18-98f3-40e7-8518-456f96198fd8> , <http://dbtune.org/musicbrainz/resource/track/0bca23e8-9b83-4c25-b902-6d484e28fcea> , <http://dbtune.org/musicbrainz/resource/track/dc7fe54f-916b-4f42-a3d8-fc954d0731cf> , <http://dbtune.org/musicbrainz/resource/track/8f991cfe-ff8b-4f80-bb6c-4574fe1cd2f8> , <http://dbtune.org/musicbrainz/resource/track/227fd062-5c52-43af-8d7a-35bef5bb9f40> , <http://dbtune.org/musicbrainz/resource/track/ae40f3ef-8032-4de0-b28e-4c0155e292dc> , <http://dbtune.org/musicbrainz/resource/track/5b75672e-7108-4dc6-baf0-34e3b99011f2> , <http://dbtune.org/musicbrainz/resource/track/a58f5eec-2a04-4f4b-b291-a14b0987dce8> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "442536226" .
+
+<http://dbtune.org/musicbrainz/resource/master/54af3115-006f-408d-8fe8-46e035084a2d>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/54af3115-006f-408d-8fe8-46e035084a2d> .
+
+<http://dbtune.org/musicbrainz/data/record/54af3115-006f-408d-8fe8-46e035084a2d>
+      rdfs:label "RDF Description of Le Chant des Rêves (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/54af3115-006f-408d-8fe8-46e035084a2d> .

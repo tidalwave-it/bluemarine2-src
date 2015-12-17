@@ -1,0 +1,55 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/b0d6a3df-4417-4fea-9dba-4a03622c2e4b>
+      a       mo:Record ;
+      rdfs:label "Django Reinhardt and His American Friends, Complete Sessions (disc 4)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "14"^^xsd:int ;
+      vocab:tracks "24"^^xsd:int ;
+      dc:date "2000-11-14" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Django Reinhardt and His American Friends, Complete Sessions (disc 4)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/b0d6a3df-4417-4fea-9dba-4a03622c2e4b> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/162318> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/fb36a8d1-d547-4652-8c56-7f0c210c5c45> , <http://dbtune.org/musicbrainz/resource/track/04f6e3cf-e41b-4805-aa8c-2ddbbfbc4f1b> , <http://dbtune.org/musicbrainz/resource/track/456b34e8-b55e-4a20-ada5-aa98e92bac1b> , <http://dbtune.org/musicbrainz/resource/track/ba6a875d-8edd-427b-a693-3e17f3b918f4> , <http://dbtune.org/musicbrainz/resource/track/18b64f75-4f84-4a13-8f30-8b733a66512f> , <http://dbtune.org/musicbrainz/resource/track/b7c814c4-a453-4a17-bb8a-48143d093c05> , <http://dbtune.org/musicbrainz/resource/track/b5b1ca04-9de5-46f9-a4be-6415dcf7f500> , <http://dbtune.org/musicbrainz/resource/track/f8e19248-ccf0-4273-9db8-50af9e8e7985> , <http://dbtune.org/musicbrainz/resource/track/43dcbfdf-8f2a-409e-879c-40c601f93db3> , <http://dbtune.org/musicbrainz/resource/track/d0b4ef04-b8b1-4bd1-9a15-04d39d294a99> , <http://dbtune.org/musicbrainz/resource/track/153266d8-9dd8-4309-aa54-fad51d07bf6e> , <http://dbtune.org/musicbrainz/resource/track/33f2e45c-3a08-4852-a789-4d0bb2e9f1ee> , <http://dbtune.org/musicbrainz/resource/track/8ad6de4d-cfe9-4009-913d-ebed91b09809> , <http://dbtune.org/musicbrainz/resource/track/7a4c90e9-d8e7-4570-a9da-0cea2d5deabb> , <http://dbtune.org/musicbrainz/resource/track/8bf09dfb-8773-4335-a8ea-05f8d806c929> , <http://dbtune.org/musicbrainz/resource/track/1d91835c-0a40-4a93-8f21-b12dd6693ca2> , <http://dbtune.org/musicbrainz/resource/track/df3f9840-e422-4a67-b01c-1e8bd81053fa> , <http://dbtune.org/musicbrainz/resource/track/6469251f-1f48-4dad-ae69-d4dd1d393af9> , <http://dbtune.org/musicbrainz/resource/track/0ba16692-99ba-40f0-8217-0cc80c69114a> , <http://dbtune.org/musicbrainz/resource/track/a7e4a1d1-87d1-44cc-b6ed-5a24f1770f60> , <http://dbtune.org/musicbrainz/resource/track/f981e717-bf37-493c-9c6f-bbd6adffe81e> , <http://dbtune.org/musicbrainz/resource/track/9606b5d7-00c6-43a4-8cb8-25d726312bb6> , <http://dbtune.org/musicbrainz/resource/track/06dcb6fd-a5ff-4197-9cf6-c793c79aa4ff> , <http://dbtune.org/musicbrainz/resource/track/5b3f8bda-da84-40f5-ba3f-6a9cd6be979b> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> ;
+      foaf:page "179387664" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/b0d6a3df-4417-4fea-9dba-4a03622c2e4b>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/b0d6a3df-4417-4fea-9dba-4a03622c2e4b> .
+
+<http://musicbrainz.org/album/b0d6a3df-4417-4fea-9dba-4a03622c2e4b>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fb0d6a3df-4417-4fea-9dba-4a03622c2e4b%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/b0d6a3df-4417-4fea-9dba-4a03622c2e4b>
+      rdfs:label "RDF Description of Django Reinhardt and His American Friends, Complete Sessions (disc 4)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/b0d6a3df-4417-4fea-9dba-4a03622c2e4b> .

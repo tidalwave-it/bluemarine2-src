@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/28394132-f6e4-4c6d-8e48-5d3ce289eb62>
+      rdfs:label "RDF Description of Midnight in the Garden of Good and Evil" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/28394132-f6e4-4c6d-8e48-5d3ce289eb62> .
+
+<http://images.amazon.com/images/P/B000002NJF>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002NJF%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000002NJF>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000002NJF%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/28394132-f6e4-4c6d-8e48-5d3ce289eb62>
+      a       mo:Record ;
+      rdfs:label "Midnight in the Garden of Good and Evil" ;
+      vocab:album_attributes
+              "{0,5,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000002NJF" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B000002NJF.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "18"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/202304> ;
+      vocab:tracks "14"^^xsd:int ;
+      dc:date "1997-11-18" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Midnight in the Garden of Good and Evil" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000002NJF> ;
+      mo:image <http://images.amazon.com/images/P/B000002NJF> , <http://images.amazon.com/images/P/B000002NJF.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/28394132-f6e4-4c6d-8e48-5d3ce289eb62> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/196887> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/bee3ac90-f479-481a-9c6f-18d70e720d94> , <http://dbtune.org/musicbrainz/resource/track/61c6622c-dc21-4532-b546-614f6836ae76> , <http://dbtune.org/musicbrainz/resource/track/e9f8fc67-949c-41a2-a84e-3dfb26f26bad> , <http://dbtune.org/musicbrainz/resource/track/ac04a468-edcb-4c49-bc18-01389586fd20> , <http://dbtune.org/musicbrainz/resource/track/03407e6e-e83e-42c3-b28e-1329f81e7f27> , <http://dbtune.org/musicbrainz/resource/track/e50fbc32-fa29-4161-ae8e-ee5c96541406> , <http://dbtune.org/musicbrainz/resource/track/db50f907-9bcd-4b39-868b-c1348f741447> , <http://dbtune.org/musicbrainz/resource/track/2cbe1c28-7b61-42fe-8dc6-7e01f7cde332> , <http://dbtune.org/musicbrainz/resource/track/e5df1d9e-38d8-40dc-8f2b-28c585844988> , <http://dbtune.org/musicbrainz/resource/track/5cc6d67a-ccce-42c8-be74-50aeafbfef14> , <http://dbtune.org/musicbrainz/resource/track/b3ebbc19-bdf3-4be2-890e-dcc0956aeb05> , <http://dbtune.org/musicbrainz/resource/track/7475f894-64e6-411e-b620-ce1e5a15e648> , <http://dbtune.org/musicbrainz/resource/track/744345e6-2159-4757-97b1-c235b351dab0> , <http://dbtune.org/musicbrainz/resource/track/935305d8-7d85-4b39-976e-68fe1a9d25e8> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "480427336" .
+
+<http://images.amazon.com/images/P/B000002NJF.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002NJF.01.MZZZZZZZ.jpg%3E> .
+
+<http://musicbrainz.org/album/28394132-f6e4-4c6d-8e48-5d3ce289eb62>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F28394132-f6e4-4c6d-8e48-5d3ce289eb62%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/28394132-f6e4-4c6d-8e48-5d3ce289eb62>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/28394132-f6e4-4c6d-8e48-5d3ce289eb62> .

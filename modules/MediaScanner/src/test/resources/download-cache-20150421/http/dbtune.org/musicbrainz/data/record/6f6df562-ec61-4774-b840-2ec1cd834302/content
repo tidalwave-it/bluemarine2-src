@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/6f6df562-ec61-4774-b840-2ec1cd834302>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F6f6df562-ec61-4774-b840-2ec1cd834302%3E> .
+
+<http://images.amazon.com/images/P/B00005UMT8>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00005UMT8%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/6f6df562-ec61-4774-b840-2ec1cd834302>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/6f6df562-ec61-4774-b840-2ec1cd834302> .
+
+<http://dbtune.org/musicbrainz/data/record/6f6df562-ec61-4774-b840-2ec1cd834302>
+      rdfs:label "RDF Description of Come Swing With Me!" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/6f6df562-ec61-4774-b840-2ec1cd834302> .
+
+<http://images.amazon.com/images/P/B00005UMT8.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00005UMT8.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/6f6df562-ec61-4774-b840-2ec1cd834302>
+      a       mo:Record ;
+      rdfs:label "Come Swing With Me!" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00005UMT8" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B00005UMT8.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "39"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/157401> , <http://dbtune.org/musicbrainz/resource/toc/99636> ;
+      vocab:tracks "17"^^xsd:int ;
+      dc:date "1961-03-20" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Come Swing With Me!" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00005UMT8> ;
+      mo:image <http://images.amazon.com/images/P/B00005UMT8> , <http://images.amazon.com/images/P/B00005UMT8.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/6f6df562-ec61-4774-b840-2ec1cd834302> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/187813> , <http://dbtune.org/musicbrainz/resource/release/187814> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/ee52d669-ed8a-4be9-a755-abb130d2480e> , <http://dbtune.org/musicbrainz/resource/track/7cc00894-ce12-4a6a-b3b1-e35bc7f19760> , <http://dbtune.org/musicbrainz/resource/track/a5bb9100-75b6-4d46-8f81-83793745c986> , <http://dbtune.org/musicbrainz/resource/track/db18e880-7791-4187-9497-433a94e92b73> , <http://dbtune.org/musicbrainz/resource/track/7f538081-95b3-4c3a-998f-2b92e59e9441> , <http://dbtune.org/musicbrainz/resource/track/991967d6-f9a0-47fa-bbec-c8b3ade1661d> , <http://dbtune.org/musicbrainz/resource/track/1eed3c8b-50f6-4850-badf-63326c090ed0> , <http://dbtune.org/musicbrainz/resource/track/3a5d1725-9e83-43c1-9a97-9787ec445edf> , <http://dbtune.org/musicbrainz/resource/track/256996d1-d13b-4cf1-91cb-d34e9db84542> , <http://dbtune.org/musicbrainz/resource/track/897368e9-1327-461a-9272-9d3db3415ba7> , <http://dbtune.org/musicbrainz/resource/track/77e57275-e919-430d-9d98-a30f84a53562> , <http://dbtune.org/musicbrainz/resource/track/d38e16d2-702e-4fbf-b522-98b7c830461e> , <http://dbtune.org/musicbrainz/resource/track/0e0369a4-d5f3-4596-9f69-1ea78b283e87> , <http://dbtune.org/musicbrainz/resource/track/9033918e-6011-4658-a7a7-7fefa263c146> , <http://dbtune.org/musicbrainz/resource/track/f0638afd-f978-4b58-9a61-aea123e999aa> , <http://dbtune.org/musicbrainz/resource/track/a8ba15d2-2e56-42f3-8041-cec142f25c53> , <http://dbtune.org/musicbrainz/resource/track/7a01ed78-6056-429a-b859-e70ef050ce76> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d> ;
+      foaf:page "151459892" .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00005UMT8>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00005UMT8%3E> .

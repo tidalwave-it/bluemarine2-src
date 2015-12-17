@@ -34,7 +34,7 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-5-SNAPSHOT</version>
+        <version>1.0-ALPHA-7-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
@@ -47,7 +47,7 @@
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-macosx-embedded-jre</artifactId>
-    <version>1.0-ALPHA-5-SNAPSHOT</version>
+    <version>1.0-ALPHA-7-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine2 - Installer, Mac OS X with embedded JRE</name>
     <description>This module creates a Mac OS X application bundle with an embedded JRE.</description>
@@ -57,6 +57,17 @@
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>    
         </dependency>
+        
+        <!-- FIXME: why are not brought by transitive dependencies? -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
-
 </project>

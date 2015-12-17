@@ -1,0 +1,65 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/76809c00-0f9b-43fa-aec7-9de7f0634f95>
+      a       mo:Record ;
+      rdfs:label "West Side Story" ;
+      vocab:album_attributes
+              "{0,5,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:albummeta_asin
+              "B000009ON5" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000009ON5.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "47"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/84910> ;
+      vocab:tracks "27"^^xsd:int ;
+      dc:date "1998-08-11" ;
+      dc:title "West Side Story" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000009ON5> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000009ON5.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000009ON5> ;
+      mo:musicbrainz <http://musicbrainz.org/album/76809c00-0f9b-43fa-aec7-9de7f0634f95> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/14355> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/2bcfe59e-5d42-4b5b-bbcb-a125617e45da> , <http://dbtune.org/musicbrainz/resource/track/f37b7691-4fbe-48a2-913e-50ccff7e5427> , <http://dbtune.org/musicbrainz/resource/track/83b48b0c-c86d-465b-ba81-18f7c61dc51c> , <http://dbtune.org/musicbrainz/resource/track/e0784c85-829e-45e1-bd2f-e55f089ce97d> , <http://dbtune.org/musicbrainz/resource/track/777325b0-f132-404f-9a22-607eafa66f4a> , <http://dbtune.org/musicbrainz/resource/track/7acbcbb3-775b-4b75-97d6-13c764f1b39a> , <http://dbtune.org/musicbrainz/resource/track/926cec68-0efe-4a2f-913f-1740d14c3bdf> , <http://dbtune.org/musicbrainz/resource/track/225f207a-23d2-4194-a7d0-cffa8499986b> , <http://dbtune.org/musicbrainz/resource/track/25dbb70a-9ca1-4b2e-8d4c-1235a4c22f23> , <http://dbtune.org/musicbrainz/resource/track/00270741-e962-4a97-aa28-8ad08885a82a> , <http://dbtune.org/musicbrainz/resource/track/b6c9cf52-7aa8-4498-92da-29c030402b2b> , <http://dbtune.org/musicbrainz/resource/track/1657fbd0-1343-4d84-8aeb-c7be1878dde3> , <http://dbtune.org/musicbrainz/resource/track/cdb536b7-ff13-470d-8bf7-086e943648a3> , <http://dbtune.org/musicbrainz/resource/track/51dab90e-4a98-47ad-8563-83ac2dab2606> , <http://dbtune.org/musicbrainz/resource/track/6a2a1e24-b8a0-4ec9-b6cd-84f9e7123c12> , <http://dbtune.org/musicbrainz/resource/track/672129c7-0149-419f-9a8e-719a23af0f66> , <http://dbtune.org/musicbrainz/resource/track/3d39007c-eac1-4871-8c62-6739e769ca99> , <http://dbtune.org/musicbrainz/resource/track/a7436123-6703-4a98-a87d-5652085c863d> , <http://dbtune.org/musicbrainz/resource/track/5edd7e66-4060-4e42-b75a-800a3c8a259b> , <http://dbtune.org/musicbrainz/resource/track/e7a155f1-3e8f-4f72-9cce-50be053eb616> , <http://dbtune.org/musicbrainz/resource/track/8e728abd-564e-4f74-ad9b-1cf1d1b13fe7> , <http://dbtune.org/musicbrainz/resource/track/645d0806-18c2-4115-9c2d-f6289a07aad8> , <http://dbtune.org/musicbrainz/resource/track/350ba3f5-4210-4944-8a12-4f631894f711> , <http://dbtune.org/musicbrainz/resource/track/51cbe2e0-d74e-4736-8780-398e99e3782b> , <http://dbtune.org/musicbrainz/resource/track/af9b1ab6-7150-470c-aa10-e5f3a49b2c35> , <http://dbtune.org/musicbrainz/resource/track/3cb47d1a-f14e-4658-aa55-473b666df9a8> , <http://dbtune.org/musicbrainz/resource/track/f35ff9bf-8b0d-4585-bd97-cbd35a09a86f> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fa39bc82-9b27-4bbb-9425-d719a72e09ac> ;
+      foaf:page "812274740" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/76809c00-0f9b-43fa-aec7-9de7f0634f95>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/76809c00-0f9b-43fa-aec7-9de7f0634f95> .
+
+<http://ec1.images-amazon.com/images/P/B000009ON5.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000009ON5.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/76809c00-0f9b-43fa-aec7-9de7f0634f95>
+      rdfs:label "RDF Description of West Side Story" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/76809c00-0f9b-43fa-aec7-9de7f0634f95> .
+
+<http://images.amazon.com/images/P/B000009ON5>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000009ON5%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000009ON5>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000009ON5%3E> .
+
+<http://musicbrainz.org/album/76809c00-0f9b-43fa-aec7-9de7f0634f95>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F76809c00-0f9b-43fa-aec7-9de7f0634f95%3E> .

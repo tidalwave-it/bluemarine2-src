@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -31,11 +31,10 @@ package it.tidalwave.bluemarine2.model.impl;
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
 import it.tidalwave.util.NotFoundException;
-import it.tidalwave.util.PowerOnNotification;
 import it.tidalwave.util.spi.AsSupport;
-import it.tidalwave.role.Displayable;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.PropertyNames;
@@ -50,7 +49,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @SimpleMessageSubscriber @Slf4j
-public class DefaultMediaFileSystem implements MediaFileSystem, Displayable
+public class DefaultMediaFileSystem implements MediaFileSystem
   {
     @Getter
     private Path rootPath;
@@ -67,17 +66,6 @@ public class DefaultMediaFileSystem implements MediaFileSystem, Displayable
       {
         return new FileSystemMediaFolder(rootPath, null, rootPath);
       }
-    
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public String getDisplayName() 
-      {
-        return "by File"; // FIXME: use a Bundle
-      }  
     
     /*******************************************************************************************************************
      *

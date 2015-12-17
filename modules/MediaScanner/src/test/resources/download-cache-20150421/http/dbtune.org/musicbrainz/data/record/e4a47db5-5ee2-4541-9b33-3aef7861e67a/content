@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/e4a47db5-5ee2-4541-9b33-3aef7861e67a>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/e4a47db5-5ee2-4541-9b33-3aef7861e67a> .
+
+<http://dbtune.org/musicbrainz/data/record/e4a47db5-5ee2-4541-9b33-3aef7861e67a>
+      rdfs:label "RDF Description of Le Paris de Montand" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/e4a47db5-5ee2-4541-9b33-3aef7861e67a> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/e4a47db5-5ee2-4541-9b33-3aef7861e67a>
+      a       mo:Record ;
+      rdfs:label "Le Paris de Montand" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000006M13" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000006M13.08.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/247474> ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:date "1992-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/fra> ;
+      dc:title "Le Paris de Montand" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000006M13> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000006M13.08.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000006M13> ;
+      mo:musicbrainz <http://musicbrainz.org/album/e4a47db5-5ee2-4541-9b33-3aef7861e67a> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/526727> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/4d1f9098-9b4f-415b-8657-eed27b8fafe3> , <http://dbtune.org/musicbrainz/resource/track/7d5647f5-fdbf-48a7-9efb-16ef795e54f1> , <http://dbtune.org/musicbrainz/resource/track/387947ef-4c2e-4f5d-9408-6a8daad46f57> , <http://dbtune.org/musicbrainz/resource/track/87b6ddfd-6525-4eb7-b976-93f00854400e> , <http://dbtune.org/musicbrainz/resource/track/560c7636-84b4-45a6-82c9-7f87618a2a45> , <http://dbtune.org/musicbrainz/resource/track/52c49004-9d52-4883-80e3-7986599c58b3> , <http://dbtune.org/musicbrainz/resource/track/96dced44-28cd-4ac8-82ae-26b9aa18b151> , <http://dbtune.org/musicbrainz/resource/track/dc266959-2ad3-4929-a428-ba9c15d9e1ec> , <http://dbtune.org/musicbrainz/resource/track/6c93a0a2-ae73-4dc2-8be7-8762483476ab> , <http://dbtune.org/musicbrainz/resource/track/39ab020b-5286-478a-a5ae-af5bc7b4f37d> , <http://dbtune.org/musicbrainz/resource/track/51344fae-0355-4a25-bcba-38b6101ab6c5> , <http://dbtune.org/musicbrainz/resource/track/e638fb67-c9da-42ea-a05f-12bb08073d4f> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/edd6a7c3-d174-4e5b-9134-0f0cc6e2b0a5> ;
+      foaf:page "442549331" .
+
+<http://ec1.images-amazon.com/images/P/B000006M13.08.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000006M13.08.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000006M13>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000006M13%3E> .
+
+<http://musicbrainz.org/album/e4a47db5-5ee2-4541-9b33-3aef7861e67a>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fe4a47db5-5ee2-4541-9b33-3aef7861e67a%3E> .
+
+<http://images.amazon.com/images/P/B000006M13>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000006M13%3E> .

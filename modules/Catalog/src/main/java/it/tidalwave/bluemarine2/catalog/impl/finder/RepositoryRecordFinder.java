@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -45,7 +45,7 @@ import static java.util.Collections.*;
 /***********************************************************************************************************************
  *
  * @stereotype      Finder
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -55,76 +55,86 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
                                     implements RecordFinder
   {
     private final static String QUERY_RECORDS = readSparql(RepositoryMusicArtistFinder.class, "Records.sparql");
-    
-    @Nonnull
-    private Optional<Id> makerId = Optional.empty();
 
     @Nonnull
-    private Optional<Id> trackId = Optional.empty();
+    private final Optional<Id> makerId;
+
+    @Nonnull
+    private final Optional<Id> trackId;
 
     /*******************************************************************************************************************
      *
-     * 
+     * Default constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryRecordFinder (final @Nonnull Repository repository)  
+    public RepositoryRecordFinder (final @Nonnull Repository repository)
       {
         super(repository);
+        this.makerId = Optional.empty();
+        this.trackId = Optional.empty();
       }
-    
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public RecordFinder madeBy (final @Nonnull MusicArtist artist)  
-      {
-        final RepositoryRecordFinder clone = clone();
-        clone.makerId = Optional.of(artist.getId());
-        return clone;
-      }
-    
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public RecordFinder recordOf (final @Nonnull Id trackId)  
-      {
-        final RepositoryRecordFinder clone = clone();
-        clone.trackId = Optional.of(trackId);
-        return clone;
-      }
-    
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public RepositoryRecordFinder clone()
-      {
-        final RepositoryRecordFinder clone = (RepositoryRecordFinder)super.clone();
-        clone.makerId = this.makerId;
-        clone.trackId = this.trackId;
 
-        return clone;
+    /*******************************************************************************************************************
+     *
+     * Clone constructor.
+     *
+     ******************************************************************************************************************/
+    public RepositoryRecordFinder (final @Nonnull RepositoryRecordFinder other, final @Nonnull Object override) 
+      {
+        super(other, override);
+        final RepositoryRecordFinder source = getSource(RepositoryRecordFinder.class, other, override);
+        this.makerId = source.makerId;
+        this.trackId = source.trackId;
       }
     
+    /*******************************************************************************************************************
+     *
+     * Override constructor.
+     *
+     ******************************************************************************************************************/
+    private RepositoryRecordFinder (final @Nonnull Repository repository,
+                                    final @Nonnull Optional<Id> makerId,
+                                    final @Nonnull Optional<Id> trackId)
+      {
+        super(repository);
+        this.makerId = makerId;
+        this.trackId = trackId;
+      }
+
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    protected List<? extends Record> computeNeededResults() 
+    public RecordFinder madeBy (final @Nonnull MusicArtist artist)
+      {
+        return clone(new RepositoryRecordFinder(repository, Optional.of(artist.getId()), trackId));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public RecordFinder recordOf (final @Nonnull Id trackId)
+      {
+        return clone(new RepositoryRecordFinder(repository, makerId, Optional.of(trackId)));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    protected List<? extends Record> computeNeededResults()
       {
         final List<Object> parameters = new ArrayList<>();
         parameters.addAll(makerId.map(id -> asList("artist", uriFor(id))).orElse(emptyList()));
         parameters.addAll(trackId.map(id -> asList("track", uriFor(id))).orElse(emptyList()));
-        
+
         return query(RepositoryRecord.class, QUERY_RECORDS, parameters.toArray());
       }
   }

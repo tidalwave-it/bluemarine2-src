@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -28,11 +28,10 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl.browser;
 
-import javax.annotation.Nonnull;
+import org.springframework.core.annotation.Order;
 import it.tidalwave.util.As;
+import it.tidalwave.text.AsDisplayableComparator;
 import it.tidalwave.util.DefaultFilterSortCriterion;
-import it.tidalwave.role.Displayable;
-import it.tidalwave.role.ui.DisplayableObjectComparator;
 
 /***********************************************************************************************************************
  *
@@ -40,13 +39,14 @@ import it.tidalwave.role.ui.DisplayableObjectComparator;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryBrowserByTrack extends RepositoryBrowserSupport implements Displayable
+@Order(40)
+public class RepositoryBrowserByTrack extends RepositoryBrowserSupport 
   {
     static class ByTrackName extends DefaultFilterSortCriterion<As>
       {
         public ByTrackName() 
           {
-            super(new DisplayableObjectComparator(), "---");
+            super(new AsDisplayableComparator(), "---");
           }
       }
     
@@ -54,10 +54,4 @@ public class RepositoryBrowserByTrack extends RepositoryBrowserSupport implement
       {
         setFinder(() -> getCatalog().findTracks().sort(new ByTrackName()));
       }
-
-    @Override @Nonnull
-    public String getDisplayName() 
-      {
-        return "by track"; // FIXME: use a Bundle
-      }  
   }

@@ -1,0 +1,172 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbpedia.org/resource/La_Capella_Reial_de_Catalunya>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FLa_Capella_Reial_de_Catalunya%3E> .
+
+<http://dbtune.org/musicbrainz/resource/performance/85524>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:orchestra <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/performance/75874>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:orchestra <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/track/a24dd63e-d13f-467e-aef6-8aec72b42252>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/performance/128950>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://www.bbc.co.uk/music/artists/22872b62-5faa-43f3-8a45-f4386385af1d#artist>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.bbc.co.uk%2Fmusic%2Fartists%2F22872b62-5faa-43f3-8a45-f4386385af1d%23artist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/performance/141842>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/performance/75853>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/track/a77c8688-856c-41c2-8920-cbf1e18e5547>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/performance/139447>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/track/44ca6c1f-1424-4061-a561-73c8ebb4cb2c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/track/838fd0be-d521-4b0f-a9b1-178efdef6536>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/track/6484d962-9af3-4754-a0f2-10195bab6794>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://musicbrainz.org/artist/22872b62-5faa-43f3-8a45-f4386385af1d>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Fartist%2F22872b62-5faa-43f3-8a45-f4386385af1d%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/c67f564f-3fbe-44b8-8faf-f09981634518>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/data/artist/22872b62-5faa-43f3-8a45-f4386385af1d>
+      rdfs:label "RDF Description of La Capella Reial de Catalunya" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/track/1a829d59-16dc-4dcb-b85e-79547cfa59d7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/performance/85234>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/performance/75878>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/track/94da1c44-a6ab-4f56-8d87-99235d5ccb87>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/track/315f96c1-a03a-412f-b944-59c9fa96dd07>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+mo:ChamberOrchestra
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FChamberOrchestra%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/6a88b764-3024-4755-a527-4f594b467021>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/record/8cf4c2f0-86b3-4afb-9082-b3a740e9045d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/performance/75873>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/track/6cb2882f-4e71-48f9-a28a-577fdceb4500>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d>
+      a       mo:MusicArtist , mo:ChamberOrchestra ;
+      rdfs:label "La Capella Reial de Catalunya" ;
+      vocab:alias "La Capella Reial" ;
+      vocab:artist_quality
+              "-1"^^xsd:short ;
+      vocab:artist_tag_count
+              "1"^^xsd:int ;
+      vocab:artist_type "2"^^xsd:short ;
+      vocab:sortname "Capella Reial de Catalunya, La" ;
+      mo:musicbrainz <http://musicbrainz.org/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      bio:event <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d/birth> ;
+      tags:taggedWithTag <http://dbtune.org/musicbrainz/resource/tag/15> ;
+      =       <http://dbpedia.org/resource/La_Capella_Reial_de_Catalunya> , <http://www.bbc.co.uk/music/artists/22872b62-5faa-43f3-8a45-f4386385af1d#artist> ;
+      foaf:member <http://dbtune.org/musicbrainz/resource/artist/aa0f1d93-95f3-476c-8bae-5d2b965b781e> , <http://dbtune.org/musicbrainz/resource/artist/9578bb5f-e7c4-4814-be92-ff2da82ba201> , <http://dbtune.org/musicbrainz/resource/artist/47cb7c9e-e5a4-4319-b51c-5f69c52945eb> , <http://dbtune.org/musicbrainz/resource/artist/03bb45b2-06b3-4043-9600-e8443b1d9529> , <http://dbtune.org/musicbrainz/resource/artist/adeb145a-8172-412a-b245-3b7ed9eb3368> , <http://dbtune.org/musicbrainz/resource/artist/aebb1ed0-5b89-4134-972b-aaf2470383bb> , <http://dbtune.org/musicbrainz/resource/artist/c56a2f83-e42c-4c0b-b40b-19023a192f9d> , <http://dbtune.org/musicbrainz/resource/artist/981ad8d7-7396-480e-b2d7-468b5e04ec6f> , <http://dbtune.org/musicbrainz/resource/artist/58929c5b-f3c4-40bc-9ea9-da4fd4e7016d> , <http://dbtune.org/musicbrainz/resource/artist/25b22b65-bdec-4f96-8f6c-9c2bf8f63f2a> , <http://dbtune.org/musicbrainz/resource/artist/8ef4795f-2dea-46e3-a1cb-7cbfda076a21> , <http://dbtune.org/musicbrainz/resource/artist/147d82cc-dda7-405d-8b17-e88060d1a86e> , <http://dbtune.org/musicbrainz/resource/artist/e9280629-d08b-4acf-b833-3ca753571755> , <http://dbtune.org/musicbrainz/resource/artist/2caeea7f-f7cb-4ad4-b675-05de9b5dd0e7> , <http://dbtune.org/musicbrainz/resource/artist/951daf47-14f5-44f0-b683-0d863a4c6674> , <http://dbtune.org/musicbrainz/resource/artist/7f95286a-dd71-49db-896d-67dfb7c1b4a8> , <http://dbtune.org/musicbrainz/resource/artist/361fcd46-41c5-4503-aa43-a87937583909> , <http://dbtune.org/musicbrainz/resource/artist/f951b676-f981-4825-83b5-94d0fe597394> , <http://dbtune.org/musicbrainz/resource/artist/9a4bb654-35c5-4c88-8460-39d5bb01aa57> , <http://dbtune.org/musicbrainz/resource/artist/dde61900-129a-4327-bba8-4f7ebc893ff6> , <http://dbtune.org/musicbrainz/resource/artist/6a89784c-2df0-41e7-a052-775c7ccb1399> , <http://dbtune.org/musicbrainz/resource/artist/ea9b8b8a-f1b1-406e-b526-beb52f969eec> , <http://dbtune.org/musicbrainz/resource/artist/c93e1170-aee8-417f-b4cc-ef2c1ab2d52c> , <http://dbtune.org/musicbrainz/resource/artist/e4aa135c-71fa-4977-a8cb-f10ebaf2c527> , <http://dbtune.org/musicbrainz/resource/artist/93dacad8-ec38-49c1-b342-f760e11fae4a> , <http://dbtune.org/musicbrainz/resource/artist/aaef2c6d-1449-4db0-b83a-aa838919cf92> , <http://dbtune.org/musicbrainz/resource/artist/57d00186-7f32-4ef2-a5cf-f48b867d7ac8> , <http://dbtune.org/musicbrainz/resource/artist/f59936d6-3c22-4312-8e73-307cb06ae120> , <http://dbtune.org/musicbrainz/resource/artist/92b20972-0f8b-429e-a243-0516b0090df0> , <http://dbtune.org/musicbrainz/resource/artist/9ce28f81-e1b4-454e-a7e9-d87795ff5fac> , <http://dbtune.org/musicbrainz/resource/artist/e4f4eab7-e864-4838-9908-8ccd37c9ce35> , <http://dbtune.org/musicbrainz/resource/artist/b2d66616-7613-45b5-b595-5e5007e60c88> , <http://dbtune.org/musicbrainz/resource/artist/bc1fa80b-26ae-40fd-8675-f3be8828d075> , <http://dbtune.org/musicbrainz/resource/artist/bd259757-3065-4cf5-9658-c2bf260244c3> , <http://dbtune.org/musicbrainz/resource/artist/5e0b7613-34e4-4694-b907-8e7e1a12bceb> , <http://dbtune.org/musicbrainz/resource/artist/5e8a9b38-cc7f-48a7-8bcb-47e3af35e6f6> , <http://dbtune.org/musicbrainz/resource/artist/4af89329-6050-46f9-9dc8-7762af1d0736> , <http://dbtune.org/musicbrainz/resource/artist/a7dd7112-6738-4846-9f55-367184730180> ;
+      foaf:name "La Capella Reial de Catalunya" .
+
+<http://dbtune.org/musicbrainz/resource/track/fe7e4d11-8b3d-4fe0-80fa-86b4ec380fc8>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/performance/75852>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:orchestra <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+mo:MusicArtist
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FMusicArtist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/de0794fb-7af1-4ec4-8625-0c7b07853123>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/performance/74274>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:orchestra <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/track/4574addd-2e2e-4912-8b20-f2898e5ee0a2>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/track/0fc6fec9-0e38-43cc-b6ee-602ca843d848>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/performance/141338>
+      event:agent <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:choir <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:performer <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> ;
+      mo:singer <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/track/1b76b860-83b5-4645-b1bd-a7fcfd37aa9a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/track/da34f936-c27e-4289-9aea-15e2cdc7ce69>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .
+
+<http://dbtune.org/musicbrainz/resource/track/5f2031cd-f2ed-487f-97a8-c19210d05893>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/22872b62-5faa-43f3-8a45-f4386385af1d> .

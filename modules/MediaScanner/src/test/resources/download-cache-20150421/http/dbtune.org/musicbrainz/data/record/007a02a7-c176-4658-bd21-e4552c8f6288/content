@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/007a02a7-c176-4658-bd21-e4552c8f6288>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/007a02a7-c176-4658-bd21-e4552c8f6288> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/007a02a7-c176-4658-bd21-e4552c8f6288>
+      a       mo:Record ;
+      rdfs:label "Song Review: A Greatest Hits Collection" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "45"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/9348> ;
+      vocab:tracks "21"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Song Review: A Greatest Hits Collection" ;
+      mo:musicbrainz <http://musicbrainz.org/album/007a02a7-c176-4658-bd21-e4552c8f6288> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/2b6e955e-85ee-45d4-ae21-6a891a1655bd> , <http://dbtune.org/musicbrainz/resource/track/9a4eda8c-a904-460e-8863-1bbdd2cc482c> , <http://dbtune.org/musicbrainz/resource/track/9b61f586-b420-43d5-930e-28721f1e7b48> , <http://dbtune.org/musicbrainz/resource/track/42c1fbbe-1b9d-44f3-ac3c-7b29a6f6ed63> , <http://dbtune.org/musicbrainz/resource/track/eca4e154-3685-43ae-af0d-1f5af4e1afab> , <http://dbtune.org/musicbrainz/resource/track/5e0294be-f56e-49b6-af1a-a8c4ca055cb7> , <http://dbtune.org/musicbrainz/resource/track/c7d782ee-82ca-48c6-92dd-96a8fb1d95fe> , <http://dbtune.org/musicbrainz/resource/track/4925efbb-8b62-4819-9a6d-3012ef248d4e> , <http://dbtune.org/musicbrainz/resource/track/1fcb0139-19c4-4ad6-a5a7-306b8a37a836> , <http://dbtune.org/musicbrainz/resource/track/361176f1-7e69-4fdc-acf9-6f3eb83e29e3> , <http://dbtune.org/musicbrainz/resource/track/0ea4145e-566c-4bce-a0f8-e522c9d44ef1> , <http://dbtune.org/musicbrainz/resource/track/5eef7e80-3f70-463c-9c56-77fc778c9019> , <http://dbtune.org/musicbrainz/resource/track/68ceb6f1-a30c-420b-9aef-535fd8b3146c> , <http://dbtune.org/musicbrainz/resource/track/d0f9187e-3921-4216-acbd-044f361fd0a8> , <http://dbtune.org/musicbrainz/resource/track/648075b9-9612-4cbc-a7ca-0cb202c4d3ab> , <http://dbtune.org/musicbrainz/resource/track/78d34bf4-335b-4a76-919a-1bfb58be94c7> , <http://dbtune.org/musicbrainz/resource/track/0b48097f-342e-46c6-a253-407eaea0c4a9> , <http://dbtune.org/musicbrainz/resource/track/ef417200-843d-4111-9b8e-ff275570b5a2> , <http://dbtune.org/musicbrainz/resource/track/632a2454-b1b5-4483-b85d-4e5c39e8590d> , <http://dbtune.org/musicbrainz/resource/track/494d9df9-19e0-450a-b275-0de6c4e3ea4e> , <http://dbtune.org/musicbrainz/resource/track/4b73cf13-c79b-4dcd-aa2b-d538cbc9bae1> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/1ee18fb3-18a6-4c7f-8ba0-bc41cdd0462e> ;
+      foaf:page "688365619" .
+
+<http://dbtune.org/musicbrainz/data/record/007a02a7-c176-4658-bd21-e4552c8f6288>
+      rdfs:label "RDF Description of Song Review: A Greatest Hits Collection" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/007a02a7-c176-4658-bd21-e4552c8f6288> .
+
+<http://musicbrainz.org/album/007a02a7-c176-4658-bd21-e4552c8f6288>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F007a02a7-c176-4658-bd21-e4552c8f6288%3E> .

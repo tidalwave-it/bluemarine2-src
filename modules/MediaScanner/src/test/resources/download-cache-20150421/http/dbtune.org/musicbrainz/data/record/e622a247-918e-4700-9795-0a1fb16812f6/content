@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/e622a247-918e-4700-9795-0a1fb16812f6>
+      a       mo:Record ;
+      rdfs:label "Live From the Cave Supper Club Vancouver DC, Canada, 19 May 1968" ;
+      vocab:album_attributes
+              "{0,9,102}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00000I84O" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B00000I84O.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "1"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/156135> ;
+      vocab:tracks "14"^^xsd:int ;
+      dc:date "1999-04-06" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Live From the Cave Supper Club Vancouver DC, Canada, 19 May 1968" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00000I84O> ;
+      mo:image <http://images.amazon.com/images/P/B00000I84O.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B00000I84O> ;
+      mo:musicbrainz <http://musicbrainz.org/album/e622a247-918e-4700-9795-0a1fb16812f6> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/103287> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/c9e5c3c4-3ad3-4cf1-984f-729dc1e98f91> , <http://dbtune.org/musicbrainz/resource/track/c513a828-5300-46ea-8ac6-afd624bef6f1> , <http://dbtune.org/musicbrainz/resource/track/a7744a2e-1e7c-464f-85c8-973ddb0ae8d8> , <http://dbtune.org/musicbrainz/resource/track/5ee42aaf-049b-4f46-ab89-0bf33d096597> , <http://dbtune.org/musicbrainz/resource/track/af947c08-b251-4ee1-9cc2-6b4e0e66cf86> , <http://dbtune.org/musicbrainz/resource/track/6f5d832c-0845-4290-b871-3d61022055cd> , <http://dbtune.org/musicbrainz/resource/track/d97639b1-a769-4c5d-9808-a26618d71745> , <http://dbtune.org/musicbrainz/resource/track/d6f52f34-1c98-40cc-9e30-69b431a4d752> , <http://dbtune.org/musicbrainz/resource/track/096042cd-b9dd-4584-bde7-7012fe8a4be1> , <http://dbtune.org/musicbrainz/resource/track/4596d087-f96f-4399-bcaa-a6b4b5a1dfa6> , <http://dbtune.org/musicbrainz/resource/track/12c320f4-078f-4b77-b64a-e96d1bc9e0db> , <http://dbtune.org/musicbrainz/resource/track/582ada19-25bf-477b-95b0-73175ec47cfb> , <http://dbtune.org/musicbrainz/resource/track/eee167c9-ca81-4416-82fa-c43103c6f4da> , <http://dbtune.org/musicbrainz/resource/track/adbd5f05-c0fd-4612-92b3-0b0021dcb9c9> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
+      foaf:page "447453223" .
+
+<http://musicbrainz.org/album/e622a247-918e-4700-9795-0a1fb16812f6>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fe622a247-918e-4700-9795-0a1fb16812f6%3E> .
+
+<http://images.amazon.com/images/P/B00000I84O.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000I84O.01.MZZZZZZZ.jpg%3E> .
+
+<http://images.amazon.com/images/P/B00000I84O>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000I84O%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/e622a247-918e-4700-9795-0a1fb16812f6>
+      rdfs:label "RDF Description of Live From the Cave Supper Club Vancouver DC, Canada, 19 May 1968" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/e622a247-918e-4700-9795-0a1fb16812f6> .
+
+<http://dbtune.org/musicbrainz/resource/master/e622a247-918e-4700-9795-0a1fb16812f6>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/e622a247-918e-4700-9795-0a1fb16812f6> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00000I84O>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00000I84O%3E> .

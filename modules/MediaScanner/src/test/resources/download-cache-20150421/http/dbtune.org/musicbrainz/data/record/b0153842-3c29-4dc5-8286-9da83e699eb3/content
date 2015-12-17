@@ -1,0 +1,55 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/b0153842-3c29-4dc5-8286-9da83e699eb3>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/b0153842-3c29-4dc5-8286-9da83e699eb3> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/b0153842-3c29-4dc5-8286-9da83e699eb3>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fb0153842-3c29-4dc5-8286-9da83e699eb3%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/b0153842-3c29-4dc5-8286-9da83e699eb3>
+      a       mo:Record ;
+      rdfs:label "The Best of Mancini" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "17"^^xsd:int ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:date "1993-03-23" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Best of Mancini" ;
+      mo:musicbrainz <http://musicbrainz.org/album/b0153842-3c29-4dc5-8286-9da83e699eb3> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/58646> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/fddcd401-7da9-4b4d-bcc9-e60b58c4dc6a> , <http://dbtune.org/musicbrainz/resource/track/6680d9e4-e079-4048-82eb-6693190339a1> , <http://dbtune.org/musicbrainz/resource/track/7efacc88-8017-4d93-8b1f-9caf4c6aa739> , <http://dbtune.org/musicbrainz/resource/track/30d00e28-4435-4178-8144-058faea3dd7d> , <http://dbtune.org/musicbrainz/resource/track/accb0210-6063-4a7d-b5f4-33456d634653> , <http://dbtune.org/musicbrainz/resource/track/7b4e6cac-f8cc-47b4-85fd-44c63556b2aa> , <http://dbtune.org/musicbrainz/resource/track/b88b85b4-f2b4-476e-82cb-4126e43344d1> , <http://dbtune.org/musicbrainz/resource/track/44753b18-589b-4018-af72-639c0eaeae2c> , <http://dbtune.org/musicbrainz/resource/track/566866d3-73d5-43f3-93c9-f404a45d7e19> , <http://dbtune.org/musicbrainz/resource/track/727223dd-d6f2-4300-93cc-e6f8d8d60ab4> , <http://dbtune.org/musicbrainz/resource/track/04a4cbc9-ad86-43ae-8f8c-ff059d11fb22> , <http://dbtune.org/musicbrainz/resource/track/847b19cc-898a-4614-b781-8909b79a96d7> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/83e71a21-caf7-4e48-8ff7-6512d51e88a3> ;
+      foaf:page "714277990" .
+
+<http://dbtune.org/musicbrainz/data/record/b0153842-3c29-4dc5-8286-9da83e699eb3>
+      rdfs:label "RDF Description of The Best of Mancini" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/b0153842-3c29-4dc5-8286-9da83e699eb3> .

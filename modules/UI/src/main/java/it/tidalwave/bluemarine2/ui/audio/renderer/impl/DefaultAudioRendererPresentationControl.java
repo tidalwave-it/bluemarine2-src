@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -43,6 +43,7 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import it.tidalwave.bluemarine2.model.PlayList;
 import it.tidalwave.bluemarine2.ui.commons.RenderAudioFileRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer;
@@ -76,15 +77,24 @@ public class DefaultAudioRendererPresentationControl
     
     private Duration duration = Duration.ZERO;
     
+    private PlayList playList = PlayList.EMPTY;
+    
+    // Discriminates a forced stop from media player just terminating
+    private boolean stopped;
+    
+    private final UserAction8 prevAction = new UserActionLambda(() -> changeTrack(playList.previous().get()));
+    
     private final UserAction8 rewindAction = new UserActionLambda(() -> mediaPlayer.rewind());
     
-    private final UserAction8 stopAction = new UserActionLambda(() -> mediaPlayer.stop());
+    private final UserAction8 stopAction = new UserActionLambda(() -> stop());
     
-    private final UserAction8 pauseAction = new UserActionLambda(() ->  mediaPlayer.pause());
+    private final UserAction8 pauseAction = new UserActionLambda(() -> mediaPlayer.pause());
     
-    private final UserAction8 playAction = new UserActionLambda(() -> mediaPlayer.play());
+    private final UserAction8 playAction = new UserActionLambda(() -> play());
     
     private final UserAction8 fastForwardAction = new UserActionLambda(() -> mediaPlayer.fastForward());
+    
+    private final UserAction8 nextAction = new UserActionLambda(() -> changeTrack(playList.next().get()));
     
     // FIXME: use expression binding
     // e.g.  properties.progressProperty().bind(mediaPlayer.playTimeProperty().asDuration().dividedBy/duration));
@@ -109,7 +119,8 @@ public class DefaultAudioRendererPresentationControl
     @PostConstruct
     /* VisibleForTesting */ void initialize()
       {
-        presentation.bind(properties, rewindAction, stopAction, pauseAction, playAction, fastForwardAction);
+        presentation.bind(properties,
+                          prevAction, rewindAction, stopAction, pauseAction, playAction, fastForwardAction, nextAction);
       }
     
     /*******************************************************************************************************************
@@ -121,12 +132,40 @@ public class DefaultAudioRendererPresentationControl
       {
         log.info("onRenderAudioFileRequest({})", request);
         
-        final AudioFile audioFile = request.getAudioFile();
+        playList = request.getPlayList();
+        setAudioFile(playList.getCurrentFile().get());
+        bindMediaPlayer();
+        presentation.showUp(this);
+        presentation.focusOnPlayButton();
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @OnDeactivate
+    /* VisibleForTesting */ OnDeactivate.Result onDeactivate()
+      throws MediaPlayer.Exception 
+      {
+        stop();
+        unbindMediaPlayer();
+        playList = PlayList.EMPTY;
+        return OnDeactivate.Result.PROCEED;
+      }
+    
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void setAudioFile (final @Nonnull AudioFile audioFile)
+      throws MediaPlayer.Exception
+      {
+        log.info("setAudioFile({})", audioFile);
         final Metadata metadata = audioFile.getMetadata();
-        log.info(">>>> audiofile: {}", audioFile);
         log.info(">>>> metadata:  {}", metadata);
-
+        
         // FIXME: the control shouldn't mess with JavaFX stuff
+        // FIXME: this performs some (short) queries that are executed in the JavaFX thread
         Platform.runLater(() ->
           {
             properties.titleProperty().setValue(audioFile.getLabel().orElse(""));
@@ -140,27 +179,101 @@ public class DefaultAudioRendererPresentationControl
             properties.durationProperty().setValue(format(duration)); 
             properties.folderNameProperty().setValue(
                     audioFile.getRecord().map(record -> record.as(Displayable).getDisplayName()).orElse(""));
+            properties.nextTrackProperty().setValue(
+                    ((playList.getSize() == 1) ? "" : String.format("%d / %d", playList.getIndex() + 1, playList.getSize()) +
+                    playList.peekNext().map(t -> " - Next track: " + t.getLabel().orElse("")).orElse("")));
           });
         
         mediaPlayer.setMediaItem(audioFile);
-        bindMediaPlayer();
-
-        presentation.showUp(this);
       }
     
     /*******************************************************************************************************************
      *
-     *
+     * 
+     * 
      ******************************************************************************************************************/
-    @OnDeactivate
-    /* VisibleForTesting */ OnDeactivate.Result onDeactivate()
-      throws MediaPlayer.Exception 
+    private void onMediaPlayerStarted()
       {
-        mediaPlayer.stop();
-        unbindMediaPlayer();
-        return OnDeactivate.Result.PROCEED;
+        log.info("onMediaPlayerStarted()");
+//        presentation.focusOnStopButton();
       }
     
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
+    private void onMediaPlayerStopped()
+      {
+        log.info("onMediaPlayerStopped()");
+        
+        if (!stopped)
+          {
+            presentation.focusOnPlayButton();
+          }
+
+        if (!stopped && playList.hasNext())
+          {
+            // FIXME: check whether the disk is not gapless, and eventually pause
+            try 
+              {
+                setAudioFile(playList.next().get());
+                play();
+              } 
+            catch (MediaPlayer.Exception e)
+              {
+                log.error("", e);
+              }
+          }
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
+    private void play()
+      throws MediaPlayer.Exception
+      {
+        stopped = false;
+        mediaPlayer.play();
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
+    private void stop() 
+      throws MediaPlayer.Exception
+      {
+        stopped = true;
+        mediaPlayer.stop();
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     * 
+     ******************************************************************************************************************/
+    private void changeTrack (final @Nonnull AudioFile audioFile)
+      throws MediaPlayer.Exception
+      {
+        final boolean wasPlaying = mediaPlayer.statusProperty().get().equals(Status.PLAYING);
+        
+        if (wasPlaying)
+          {
+            stop();
+          }
+        
+        setAudioFile(audioFile);
+        
+        if (wasPlaying)
+          {
+            play();
+          }
+      }
+ 
     /*******************************************************************************************************************
      *
      * Binds to the {@link MediaPlayer}.
@@ -173,7 +286,23 @@ public class DefaultAudioRendererPresentationControl
         stopAction.enabledProperty().bind(status.isEqualTo(PLAYING));
         pauseAction.enabledProperty().bind(status.isEqualTo(PLAYING));
         playAction.enabledProperty().bind(status.isNotEqualTo(PLAYING));
+        prevAction.enabledProperty().bind(playList.hasPreviousProperty());
+        nextAction.enabledProperty().bind(playList.hasNextProperty());
         mediaPlayer.playTimeProperty().addListener(l);
+        
+        status.addListener((observable, oldValue, newValue) -> 
+          {
+            switch (newValue)
+              {
+                case STOPPED:
+                    onMediaPlayerStopped();
+                    break;
+                    
+                case PLAYING:
+                    onMediaPlayerStarted();
+                    break;
+              }
+          });
       }
     
     /*******************************************************************************************************************
@@ -187,6 +316,8 @@ public class DefaultAudioRendererPresentationControl
         stopAction.enabledProperty().unbind();
         pauseAction.enabledProperty().unbind();
         playAction.enabledProperty().unbind();
+        prevAction.enabledProperty().unbind();
+        nextAction.enabledProperty().unbind();
         mediaPlayer.playTimeProperty().removeListener(l);
       }
   }

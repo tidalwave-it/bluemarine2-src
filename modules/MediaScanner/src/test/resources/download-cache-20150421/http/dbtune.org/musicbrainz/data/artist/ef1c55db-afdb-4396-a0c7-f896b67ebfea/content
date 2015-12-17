@@ -1,0 +1,72 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/track/e2d7753d-9eee-410c-b2b5-f069d93bfbd2>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea> .
+
+<http://dbtune.org/musicbrainz/resource/track/ed92962d-a958-41e6-8b61-a214020d0358>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea> .
+
+<http://dbtune.org/musicbrainz/resource/track/76c22e74-60ad-41ca-82e8-98a4c2b5b87c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea> .
+
+<http://musicbrainz.org/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Fartist%2Fef1c55db-afdb-4396-a0c7-f896b67ebfea%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/d1f366b7-8c98-4b43-914e-9a936bbf543c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea> .
+
+<http://dbtune.org/musicbrainz/resource/track/6162d570-7771-4ae6-98af-aebb4b4ded08>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea> .
+
+<http://dbtune.org/musicbrainz/data/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea>
+      rdfs:label "RDF Description of Wanda Sá & Roberto Menescal" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea> .
+
+<http://dbtune.org/musicbrainz/resource/track/2df710c5-60a0-4623-a7b7-4873406e474e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea> .
+
+mo:MusicArtist
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FMusicArtist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea>
+      a       mo:MusicArtist ;
+      rdfs:label "Wanda Sá & Roberto Menescal" ;
+      vocab:alias "Wanda Sá e Roberto Menescal" ;
+      vocab:artist_quality
+              "-1"^^xsd:short ;
+      vocab:artist_type "2"^^xsd:short ;
+      vocab:sortname "Sá, Wanda & Menescal, Roberto" ;
+      mo:musicbrainz <http://musicbrainz.org/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea> ;
+      =       <http://www.bbc.co.uk/music/artists/ef1c55db-afdb-4396-a0c7-f896b67ebfea#artist> ;
+      foaf:name "Wanda Sá & Roberto Menescal" .
+
+<http://dbtune.org/musicbrainz/resource/track/3e700516-d804-481c-a5c9-cb13a10aac8e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea> .
+
+<http://dbtune.org/musicbrainz/resource/track/e3bb1b3a-7769-464e-b5f6-3fd766a71b91>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea> .
+
+<http://dbtune.org/musicbrainz/resource/track/456c81fc-9fd9-452c-bf92-4d44188d3345>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea> .
+
+<http://dbtune.org/musicbrainz/resource/track/ca26440a-0684-4773-9188-94e4e67f7c11>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/ef1c55db-afdb-4396-a0c7-f896b67ebfea> .
+
+<http://www.bbc.co.uk/music/artists/ef1c55db-afdb-4396-a0c7-f896b67ebfea#artist>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.bbc.co.uk%2Fmusic%2Fartists%2Fef1c55db-afdb-4396-a0c7-f896b67ebfea%23artist%3E> .

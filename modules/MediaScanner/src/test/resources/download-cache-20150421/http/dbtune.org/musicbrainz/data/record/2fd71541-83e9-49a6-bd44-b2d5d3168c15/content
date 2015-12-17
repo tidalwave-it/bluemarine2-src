@@ -1,0 +1,63 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/2fd71541-83e9-49a6-bd44-b2d5d3168c15>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F2fd71541-83e9-49a6-bd44-b2d5d3168c15%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/2fd71541-83e9-49a6-bd44-b2d5d3168c15>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/2fd71541-83e9-49a6-bd44-b2d5d3168c15> .
+
+<http://dbtune.org/musicbrainz/resource/record/2fd71541-83e9-49a6-bd44-b2d5d3168c15>
+      a       mo:Record ;
+      rdfs:label "Djangology (disc 2)" ;
+      vocab:album_attributes
+              "{0,100,4}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:albummeta_asin
+              "B000069CPD" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000069CPD.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "2"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/74498> ;
+      vocab:tracks "20"^^xsd:int ;
+      dc:title "Djangology (disc 2)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000069CPD> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000069CPD.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000069CPD> ;
+      mo:musicbrainz <http://musicbrainz.org/album/2fd71541-83e9-49a6-bd44-b2d5d3168c15> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/b641d6ba-371a-41de-8282-0fb009f6c755> , <http://dbtune.org/musicbrainz/resource/track/24429b61-4ea2-4165-a1ad-e7c778291cbb> , <http://dbtune.org/musicbrainz/resource/track/5de5b967-c275-44e6-b693-c7fbfdba79e2> , <http://dbtune.org/musicbrainz/resource/track/1b554cd3-cedc-4b74-a641-01f946269fd1> , <http://dbtune.org/musicbrainz/resource/track/719386f0-a579-4598-a493-be7eed0cdb5a> , <http://dbtune.org/musicbrainz/resource/track/d0961a69-bf0f-403f-8784-5a6b37b6d528> , <http://dbtune.org/musicbrainz/resource/track/ceab81ad-eea4-4539-a691-bfa6044ba661> , <http://dbtune.org/musicbrainz/resource/track/41b8cdb5-0fa9-4888-a90d-61ab41310e42> , <http://dbtune.org/musicbrainz/resource/track/af3bec08-49c8-4468-bca7-8bbd88865939> , <http://dbtune.org/musicbrainz/resource/track/4ad9c779-e956-4077-90ee-d974301be926> , <http://dbtune.org/musicbrainz/resource/track/2f94b298-1108-4c1c-a619-c95755bf5f58> , <http://dbtune.org/musicbrainz/resource/track/9e1b9701-119d-46f4-bab5-959aea594c1d> , <http://dbtune.org/musicbrainz/resource/track/f83d49fb-140c-4c6b-82ee-3a4a03716ebc> , <http://dbtune.org/musicbrainz/resource/track/c993b7bf-13e5-4d6d-8375-2bc9506d0af9> , <http://dbtune.org/musicbrainz/resource/track/8380a81d-8877-47f5-9e09-36598a2285ac> , <http://dbtune.org/musicbrainz/resource/track/adab6b64-3c79-4787-85f8-dfab5b3c7860> , <http://dbtune.org/musicbrainz/resource/track/1ba82111-1584-4bad-9418-dceb14469918> , <http://dbtune.org/musicbrainz/resource/track/8e530c1b-3224-417e-a4c5-be7f0af557fb> , <http://dbtune.org/musicbrainz/resource/track/1e69a7bf-5194-4ba2-8880-5f895867970a> , <http://dbtune.org/musicbrainz/resource/track/adb06413-eb5d-4d49-bf8f-ed4ab26a2293> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> ;
+      foaf:page "179387664" .
+
+<http://ec1.images-amazon.com/images/P/B000069CPD.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000069CPD.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/2fd71541-83e9-49a6-bd44-b2d5d3168c15>
+      rdfs:label "RDF Description of Djangology (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/2fd71541-83e9-49a6-bd44-b2d5d3168c15> .
+
+<http://images.amazon.com/images/P/B000069CPD>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000069CPD%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000069CPD>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000069CPD%3E> .

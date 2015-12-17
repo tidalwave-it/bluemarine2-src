@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl;
 
+import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordFinder;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
@@ -42,7 +43,9 @@ import it.tidalwave.bluemarine2.util.Formatters;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
+import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
+import java.util.Optional;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -66,6 +69,13 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     
     @Nonnull
     private final Path audioFilePath;
+    
+    @Nonnull
+    private final Optional<Integer> diskNumber;
+    
+    @Nonnull
+    private final Optional<Integer> diskCount;
+    
 //    private final String recordRdfsLabel;
 //    
 //    private final Integer trackCount;
@@ -82,8 +92,16 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
         this.audioFilePath = Paths.get(toString(bindingSet.getBinding("path")));
         this.duration = toDuration(bindingSet.getBinding("duration"));
         this.trackNumber = toInteger(bindingSet.getBinding("track_number"));
+        this.diskNumber = toOptionalInteger(bindingSet.getBinding("disk_number"));
+        this.diskCount = toOptionalInteger(bindingSet.getBinding("disk_count"));
 //        this.recordRdfsLabel = toString(bindingSet.getBinding("record_label"));
 //        this.trackCount = toInteger(bindingSet.getBinding("track_number")));
+      }
+    
+    @Override @Nonnull
+    public Optional<Record> getRecord()
+      {
+        return new RepositoryRecordFinder(repository).recordOf(id).optionalFirstResult();
       }
     
     @Override @Nonnull
@@ -107,7 +125,8 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Override @Nonnull
     public String toString() 
       {
-        return String.format("RepositoryTrack(%02d, %s, rdfs:label=%s, %s, %s)",
+        return String.format("RepositoryTrack(%02d/%02d %02d, %s, rdfs:label=%s, %s, %s)",
+                             diskNumber.orElse(1), diskCount.orElse(1),
                              trackNumber, Formatters.format(duration), rdfsLabel, audioFilePath, id);
       }
   }

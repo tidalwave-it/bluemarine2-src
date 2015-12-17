@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -91,6 +91,24 @@ public class AudioMetadata extends MetadataSupport
                 log.warn("Cannot parse track number", e.toString());  
               }
             
+            try
+              {
+                put(DISK_NUMBER, Integer.parseInt(tag.getFirst(FieldKey.DISC_NO)));
+              }
+            catch (NumberFormatException e)
+              {
+                log.warn("Cannot parse disk number", e.toString());  
+              }
+            
+            try
+              {
+                put(DISK_COUNT, Integer.parseInt(tag.getFirst(FieldKey.DISC_TOTAL)));
+              }
+            catch (NumberFormatException e)
+              {
+                log.warn("Cannot parse disk count", e.toString());  
+              }
+            
 //            put(TRACK, tag.getFirst(FieldKey.DISC_NO));
             put(COMPOSER, tag.getFirst(FieldKey.COMPOSER));
             
@@ -131,9 +149,15 @@ public class AudioMetadata extends MetadataSupport
 //                  }
 //              }
           }
+        // FIXME: should we be more tolerant in general and expect an exception for every tag?
+        // e.g. for wav files
+        catch (UnsupportedOperationException e)
+          {
+            log.error("Unsupported tag in " + audioFile, e.toString());
+          }
         catch (IOException | CannotReadException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
           {
-            log.error("While reading " + audioFile, path);  
+            log.error("While reading " + audioFile + " --- " + path, e);  
           } 
       }
     

@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -33,11 +33,11 @@ import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import java.util.Collection;
 import org.springframework.beans.factory.ListableBeanFactory;
-import it.tidalwave.util.PowerOnNotification;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.UserActionSupport;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 import lombok.extern.slf4j.Slf4j;

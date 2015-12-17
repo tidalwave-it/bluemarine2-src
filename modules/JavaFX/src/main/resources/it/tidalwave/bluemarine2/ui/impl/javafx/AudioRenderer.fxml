@@ -2,6 +2,7 @@
 
 <?import java.lang.*?>
 <?import java.net.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -15,30 +16,35 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" percentHeight="25.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" percentHeight="45.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" percentHeight="15.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
                     <children>
-                        <GridPane hgap="20.0" prefHeight="241.0" prefWidth="498.0">
+                        <GridPane fx:id="gpButtons" hgap="20.0">
                             <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="14.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="14.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="14.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="14.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="14.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="14.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             </columnConstraints>
                             <rowConstraints>
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Button fx:id="btRewind" mnemonicParsing="false" prefWidth="999.0" textOverrun="CLIP" />
-                                <Button fx:id="btStop" mnemonicParsing="false" prefWidth="999.0" GridPane.columnIndex="1" />
-                                <Button fx:id="btPlay" mnemonicParsing="false" prefWidth="999.0" GridPane.columnIndex="3" />
-                                <Button fx:id="btFastForward" mnemonicParsing="false" prefWidth="999.0" textOverrun="CLIP" GridPane.columnIndex="4" />
-                                <Button fx:id="btPause" mnemonicParsing="false" prefWidth="999.0" GridPane.columnIndex="2" />
+                                <Button fx:id="btRewind" mnemonicParsing="false" prefWidth="999.0" textOverrun="CLIP" GridPane.columnIndex="1" />
+                                <Button fx:id="btStop" mnemonicParsing="false" prefWidth="999.0" GridPane.columnIndex="2" />
+                                <Button fx:id="btPlay" mnemonicParsing="false" prefWidth="999.0" GridPane.columnIndex="4" />
+                                <Button fx:id="btFastForward" mnemonicParsing="false" prefWidth="999.0" textOverrun="CLIP" GridPane.columnIndex="5" />
+                                <Button fx:id="btPause" mnemonicParsing="false" prefWidth="999.0" GridPane.columnIndex="3" />
+                                <Button fx:id="btPrev" mnemonicParsing="false" prefWidth="999.0" textOverrun="CLIP" />
+                                <Button fx:id="btNext" mnemonicParsing="false" prefWidth="999.0" textOverrun="CLIP" GridPane.columnIndex="6" />
                             </children>
                         </GridPane>
                     </children>
@@ -46,8 +52,8 @@
                 <VBox spacing="10.0" GridPane.rowIndex="1">
                     <children>
                         <Label fx:id="lbArtist" alignment="CENTER" contentDisplay="CENTER" prefWidth="9999.0" styleClass="very-small-label" text="Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt: Concentus Musicus Wien, Arnold Schoenberg Choir" textAlignment="CENTER" wrapText="true" />
-                        <Label fx:id="lbFolderName" alignment="CENTER" prefWidth="9999.0" text="Bach: Mass In B Minor, BWV 232 [Disc 1]" textAlignment="CENTER" />
-                        <Label fx:id="lbTitle" alignment="CENTER" contentDisplay="CENTER" prefWidth="9999.0" style="-fx-font-weight: bold; -fx-text-fill: rgb(250,210,0);" styleClass="large-label" text="Gloria: Laudamus Te" />
+                        <Label fx:id="lbFolderName" alignment="CENTER" prefWidth="9999.0" text="Bach: Mass In B Minor, BWV 232 [Disc 1]" textAlignment="CENTER" wrapText="true" />
+                        <Label fx:id="lbTitle" alignment="CENTER" contentDisplay="CENTER" prefWidth="9999.0" styleClass="large-title-label" text="Gloria: Laudamus Te" textAlignment="CENTER" wrapText="true" />
                         <Label fx:id="lbComposer" alignment="CENTER" contentDisplay="CENTER" prefWidth="9999.0" styleClass="medium-label" text="Bach, Johann Sebastian" textAlignment="CENTER" />
                         <GridPane vgap="5.0">
                             <columnConstraints>
@@ -60,7 +66,7 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <ProgressBar fx:id="pbPlayProgress" prefWidth="9999.0" progress="0.0" GridPane.columnIndex="1" />
+                                <ProgressBar fx:id="pbPlayProgress" maxHeight="10.0" minHeight="10.0" prefHeight="10.0" prefWidth="9999.0" progress="0.0" GridPane.columnIndex="1" />
                                 <GridPane prefWidth="9999.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
@@ -75,9 +81,17 @@
                                     </children>
                                 </GridPane>
                             </children>
+                            <padding>
+                                <Insets top="20.0" />
+                            </padding>
                         </GridPane>
                     </children>
                 </VBox>
+                <Label fx:id="lbNextTrack" alignment="CENTER" contentDisplay="CENTER" prefWidth="9999.0" styleClass="small-label" text="3/5 - Next track: Gloria: Benedicimus Te" textAlignment="CENTER" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets left="40.0" right="40.0" />
+                    </GridPane.margin>
+                </Label>
             </children>
         </GridPane>
     </children>

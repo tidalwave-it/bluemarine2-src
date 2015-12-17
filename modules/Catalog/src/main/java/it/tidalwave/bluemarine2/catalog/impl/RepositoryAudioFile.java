@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -31,23 +31,28 @@ package it.tidalwave.bluemarine2.catalog.impl;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import java.text.Normalizer;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.AudioFile;
+import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.impl.AudioMetadata;
 import it.tidalwave.bluemarine2.model.impl.NamedEntity;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordFinder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import static java.text.Normalizer.Form.NFD;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
@@ -60,7 +65,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable
+@Immutable @EqualsAndHashCode(of = { "path", "trackId" }, callSuper = false)
 public class RepositoryAudioFile extends RepositoryEntitySupport implements AudioFile
   {
     @Getter @Nonnull
@@ -92,10 +97,11 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
       {
         super(repository, id, rdfsLabel);
         this.trackId = trackId;
-        this.path = path;
         this.parent = parent;
-        this.relativePath = path; // basePath.relativize(path);
         this.duration = duration;
+        // See BMT-36
+        this.path = Paths.get(Normalizer.normalize(path.toString(), NFD));
+        this.relativePath = Paths.get(Normalizer.normalize(path.toString(), NFD)); // basePath.relativize(path);
       }
     
     @Override @Nonnull
@@ -141,7 +147,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
       }
  
     @Override
-    public Optional<? extends Entity> getRecord()
+    public Optional<Record> getRecord()
       {
         return new RepositoryRecordFinder(repository).recordOf(id).optionalFirstResult();
       }

@@ -1,0 +1,71 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/3b3dbe37-7684-4b87-8910-96d04d87a656>
+      rdfs:label "RDF Description of Ella & Duke at the Côte d'Azur (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/3b3dbe37-7684-4b87-8910-96d04d87a656> .
+
+<http://dbtune.org/musicbrainz/resource/record/3b3dbe37-7684-4b87-8910-96d04d87a656>
+      a       mo:Record ;
+      rdfs:label "Ella & Duke at the Côte d'Azur (disc 1)" ;
+      vocab:album_attributes
+              "{0,9,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000047FT" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B0000047FT.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "11"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/35130> ;
+      vocab:tracks "8"^^xsd:int ;
+      dc:date "1997-10-28" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Ella & Duke at the Côte d'Azur (disc 1)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000047FT> ;
+      mo:image <http://images.amazon.com/images/P/B0000047FT> , <http://images.amazon.com/images/P/B0000047FT.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/3b3dbe37-7684-4b87-8910-96d04d87a656> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/193350> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/f4ee92d5-d630-4ebb-b111-e80d6468cf84> , <http://dbtune.org/musicbrainz/resource/track/1c4752fc-a2f0-4eaf-9b7a-e848b70ec641> , <http://dbtune.org/musicbrainz/resource/track/28e8d5ea-ba4c-41a6-9133-5a4f6a209457> , <http://dbtune.org/musicbrainz/resource/track/b93ad5c3-0737-4463-aa55-f44816f77f96> , <http://dbtune.org/musicbrainz/resource/track/46afe5db-ed70-4886-adf1-415e0178dc87> , <http://dbtune.org/musicbrainz/resource/track/4726ec68-6c4e-41c2-8fbb-b5978dbfcddf> , <http://dbtune.org/musicbrainz/resource/track/4d4c1d8d-ae87-492a-b154-97199722abfb> , <http://dbtune.org/musicbrainz/resource/track/14b9b93b-8d61-4ca9-b3a7-2159cc4a4b58> ;
+      =       <http://dbpedia.org/resource/Ella_and_Duke_at_the_Cote_D%27Azur> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/508c07ad-276f-4d15-acc4-713b294ff7f0> ;
+      foaf:page "215386144" .
+
+<http://dbtune.org/musicbrainz/resource/master/3b3dbe37-7684-4b87-8910-96d04d87a656>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/3b3dbe37-7684-4b87-8910-96d04d87a656> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B0000047FT>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000047FT%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000047FT>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000047FT%3E> .
+
+<http://images.amazon.com/images/P/B0000047FT.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000047FT.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbpedia.org/resource/Ella_and_Duke_at_the_Cote_D%27Azur>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FElla_and_Duke_at_the_Cote_D%2527Azur%3E> .
+
+<http://musicbrainz.org/album/3b3dbe37-7684-4b87-8910-96d04d87a656>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F3b3dbe37-7684-4b87-8910-96d04d87a656%3E> .

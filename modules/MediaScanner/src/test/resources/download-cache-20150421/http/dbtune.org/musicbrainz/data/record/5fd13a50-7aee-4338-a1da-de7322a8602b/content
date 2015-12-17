@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/5fd13a50-7aee-4338-a1da-de7322a8602b>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F5fd13a50-7aee-4338-a1da-de7322a8602b%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/5fd13a50-7aee-4338-a1da-de7322a8602b>
+      rdfs:label "RDF Description of Una mattina" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/5fd13a50-7aee-4338-a1da-de7322a8602b> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0002LMLSQ>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0002LMLSQ%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/5fd13a50-7aee-4338-a1da-de7322a8602b>
+      a       mo:Record ;
+      rdfs:label "Una mattina" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0002LMLSQ" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0002LMLSQ.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "14"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/47512> ;
+      vocab:tracks "13"^^xsd:int ;
+      dc:date "2004-09-06" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/ita> ;
+      dc:title "Una mattina" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0002LMLSQ> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B0002LMLSQ.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B0002LMLSQ> ;
+      mo:musicbrainz <http://musicbrainz.org/album/5fd13a50-7aee-4338-a1da-de7322a8602b> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/224642> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/b5f4d05e-0e7d-4a0b-9f64-0653f4ae39c9> , <http://dbtune.org/musicbrainz/resource/track/299b65b9-9eec-4f11-8116-0dd586e5c16e> , <http://dbtune.org/musicbrainz/resource/track/acc487da-2f55-4d8d-abb2-f7864e1b7d67> , <http://dbtune.org/musicbrainz/resource/track/278f0a92-b2e5-45e7-aa63-3f69f85da039> , <http://dbtune.org/musicbrainz/resource/track/f63ef8cc-7e08-4350-b559-e04887182b73> , <http://dbtune.org/musicbrainz/resource/track/d983c184-deb1-4987-824f-5b558c2e7210> , <http://dbtune.org/musicbrainz/resource/track/a41102b3-295d-4ebe-acab-d8142cf7eaca> , <http://dbtune.org/musicbrainz/resource/track/917a3798-204c-48e8-a8d4-a747e392255f> , <http://dbtune.org/musicbrainz/resource/track/c22d454b-f500-4da1-a5d4-b1cca98e4f63> , <http://dbtune.org/musicbrainz/resource/track/cc0e036b-129e-4756-ba84-c27ad702efa1> , <http://dbtune.org/musicbrainz/resource/track/6b149beb-9fca-4bd4-ada0-7b4757135124> , <http://dbtune.org/musicbrainz/resource/track/f93a56d4-ac15-466d-b516-3ad6e11aa8aa> , <http://dbtune.org/musicbrainz/resource/track/4338c632-9429-4531-a3dd-bdded8a6e9d4> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fa34b363-79df-434f-a5b8-be4e6898543f> ;
+      foaf:page "753993154" .
+
+<http://ec1.images-amazon.com/images/P/B0002LMLSQ.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0002LMLSQ.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/5fd13a50-7aee-4338-a1da-de7322a8602b>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/5fd13a50-7aee-4338-a1da-de7322a8602b> .
+
+<http://images.amazon.com/images/P/B0002LMLSQ>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0002LMLSQ%3E> .

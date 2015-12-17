@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -39,6 +39,7 @@ import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.Entity;
+import java.util.Optional;
 import lombok.Delegate;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -113,6 +114,24 @@ public class RepositoryEntitySupport implements Entity, Identifiable
         final Value value = binding.getValue();
         
         return (value != null) ? Integer.parseInt(value.stringValue()) : null;
+      }
+    
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
+    @Nullable
+    protected static Optional<Integer> toOptionalInteger (final @Nullable Binding binding)
+      {
+        if (binding == null)
+          {
+            return Optional.empty();  
+          }
+        
+        final Value value = binding.getValue();
+        
+        return (value != null) ? Optional.of(Integer.parseInt(value.stringValue())) : Optional.empty();
       }
     
     /*******************************************************************************************************************

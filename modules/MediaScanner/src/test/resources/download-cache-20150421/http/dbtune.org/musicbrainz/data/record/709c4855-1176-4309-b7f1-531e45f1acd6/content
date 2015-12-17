@@ -1,0 +1,66 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B000I0QKD8>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000I0QKD8%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000I0QKD8>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000I0QKD8%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/709c4855-1176-4309-b7f1-531e45f1acd6>
+      a       mo:Record ;
+      rdfs:label "December" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000I0QKD8" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000I0QKD8.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "14"^^xsd:int ;
+      vocab:tracks "13"^^xsd:int ;
+      dc:date "2006-10-10" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "December" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000I0QKD8> ;
+      mo:image <http://images.amazon.com/images/P/B000I0QKD8> , <http://ec1.images-amazon.com/images/P/B000I0QKD8.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/709c4855-1176-4309-b7f1-531e45f1acd6> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/223464> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/2ca3e06f-39c4-4714-a896-0cbc0cd986d6> , <http://dbtune.org/musicbrainz/resource/track/5d1d379c-bb4c-4e31-8f2e-f63c7d83e025> , <http://dbtune.org/musicbrainz/resource/track/98320f03-18ce-4803-9fbd-543642f96fcc> , <http://dbtune.org/musicbrainz/resource/track/ac1f1839-bc65-40c8-a9f9-371499aa5024> , <http://dbtune.org/musicbrainz/resource/track/fa399e21-1fbd-4195-8b3a-9c93df9bb14b> , <http://dbtune.org/musicbrainz/resource/track/406af098-b329-41d7-bd6a-78af972b6ac2> , <http://dbtune.org/musicbrainz/resource/track/c6de16b2-291b-40ec-9ba0-7e15b0ca9246> , <http://dbtune.org/musicbrainz/resource/track/ea08defe-4961-4a69-87b5-9491dd079887> , <http://dbtune.org/musicbrainz/resource/track/ebdd11ed-44d4-40c5-b514-1586543228e6> , <http://dbtune.org/musicbrainz/resource/track/e0f37320-fb02-4b1d-ac19-09ab4db2d2d5> , <http://dbtune.org/musicbrainz/resource/track/ba5cc44d-456d-42f5-a059-1091da4f0cd8> , <http://dbtune.org/musicbrainz/resource/track/89cd5133-d63d-4b87-b8a9-8723ab63d10f> , <http://dbtune.org/musicbrainz/resource/track/604620a4-27d1-47ed-9e3f-96c3d87ccf12> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/0939452b-0c6f-422a-997f-e7c496ce1113> ;
+      foaf:page "174201283" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/709c4855-1176-4309-b7f1-531e45f1acd6>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/709c4855-1176-4309-b7f1-531e45f1acd6> .
+
+<http://dbtune.org/musicbrainz/data/record/709c4855-1176-4309-b7f1-531e45f1acd6>
+      rdfs:label "RDF Description of December" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/709c4855-1176-4309-b7f1-531e45f1acd6> .
+
+<http://ec1.images-amazon.com/images/P/B000I0QKD8.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000I0QKD8.01.MZZZZZZZ.jpg%3E> .
+
+<http://musicbrainz.org/album/709c4855-1176-4309-b7f1-531e45f1acd6>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F709c4855-1176-4309-b7f1-531e45f1acd6%3E> .

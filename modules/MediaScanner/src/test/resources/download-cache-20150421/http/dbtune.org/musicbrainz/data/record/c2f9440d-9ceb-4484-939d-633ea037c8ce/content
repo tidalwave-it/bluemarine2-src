@@ -1,0 +1,66 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/c2f9440d-9ceb-4484-939d-633ea037c8ce>
+      rdfs:label "RDF Description of Pini di Roma / Fontane di Roma / Feste Romane (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/c2f9440d-9ceb-4484-939d-633ea037c8ce> .
+
+<http://images.amazon.com/images/P/B000DZV8BC>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000DZV8BC%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/c2f9440d-9ceb-4484-939d-633ea037c8ce>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/c2f9440d-9ceb-4484-939d-633ea037c8ce> .
+
+<http://ec1.images-amazon.com/images/P/B000DZV8BC.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000DZV8BC.01.MZZZZZZZ.jpg%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/c2f9440d-9ceb-4484-939d-633ea037c8ce>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fc2f9440d-9ceb-4484-939d-633ea037c8ce%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000DZV8BC>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000DZV8BC%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/c2f9440d-9ceb-4484-939d-633ea037c8ce>
+      a       mo:Record ;
+      rdfs:label "Pini di Roma / Fontane di Roma / Feste Romane (disc 1)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000DZV8BC" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000DZV8BC.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "3"^^xsd:int ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:date "2006-01-24" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/ita> ;
+      dc:title "Pini di Roma / Fontane di Roma / Feste Romane (disc 1)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000DZV8BC> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000DZV8BC.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000DZV8BC> ;
+      mo:musicbrainz <http://musicbrainz.org/album/c2f9440d-9ceb-4484-939d-633ea037c8ce> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/454359> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/d2068a75-1201-47e1-bc20-7899a953d123> , <http://dbtune.org/musicbrainz/resource/track/84561919-82ab-4cf5-9404-997772942bd9> , <http://dbtune.org/musicbrainz/resource/track/c8b8cae2-fd70-4bb5-8b7a-c0f5baebc981> , <http://dbtune.org/musicbrainz/resource/track/15d494aa-50dd-44d0-9a02-75d3525ec597> , <http://dbtune.org/musicbrainz/resource/track/6c382bdd-6c06-47bb-9c09-c46c611769b3> , <http://dbtune.org/musicbrainz/resource/track/20a60451-bab6-49a6-b843-fab46cddb5be> , <http://dbtune.org/musicbrainz/resource/track/fb5164e6-2cbd-4a72-9bc1-cc64edb44133> , <http://dbtune.org/musicbrainz/resource/track/fbee5fda-8ca0-4c56-9b1b-a3dccd66dda4> , <http://dbtune.org/musicbrainz/resource/track/42fb9cf1-c0ed-48c4-bcd5-98d28df350b0> , <http://dbtune.org/musicbrainz/resource/track/77e18cfb-92d2-4462-bf78-a5ee0c0c8a73> , <http://dbtune.org/musicbrainz/resource/track/b1a9df5f-9f4e-4d65-b337-9e1912e568be> , <http://dbtune.org/musicbrainz/resource/track/5934638f-dd6f-4318-a577-c920f33f0670> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/788c380d-247b-42f0-b7a9-64881e1f0fd9> ;
+      foaf:page "581412901" .

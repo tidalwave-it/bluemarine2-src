@@ -7,26 +7,20 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-5-SNAPSHOT</version>
+        <version>1.0-ALPHA-7-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-5-SNAPSHOT</version>
+    <version>1.0-ALPHA-7-SNAPSHOT</version>
     <name>blueMarine2 - Persistence</name>
     
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-model</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
@@ -58,36 +52,11 @@
             <artifactId>sesame-rio-n3</artifactId>
         </dependency>       
         
-        <!-- FIXME: workaround against a compilation error -->
-        <dependency>
-            <groupId>org.netbeans.api</groupId>
-            <artifactId>org-openide-util</artifactId>
-            <version>RELEASE712</version>
-            <scope>provided</scope>
-        </dependency>
-        
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
-    
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>aspectj-maven-plugin</artifactId>
-                <configuration>
-                    <aspectLibraries combine.children="append">
-                        <dependency>
-                            <groupId>it.tidalwave.thesefoolishthings</groupId>
-                            <artifactId>it-tidalwave-messagebus-spring</artifactId>
-                        </dependency>
-                    </aspectLibraries>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
     
 </project>

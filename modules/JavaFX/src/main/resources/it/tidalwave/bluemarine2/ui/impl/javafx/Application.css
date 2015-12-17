@@ -52,11 +52,69 @@
 
 .list-cell:even
   {
-    -fx-background-color:   rgb(30,30,30);
+    -fx-background-color:   rgb(25,25,25);
+  }
+  
+.toggle-button
+  {
+    -fx-background-color:    black;
+  }
+  
+.toggle-button:selected
+  {
+    -fx-background-color:   linear-gradient(rgb(95.0, 165.0, 221.0),
+                                            rgb(54.0, 124.0, 192.0)),
+                            linear-gradient(rgb(116.0, 186.0, 232.0),
+                                            rgb(116.0, 186.0, 232.0) 1.0%,
+                                            rgb(109.0, 178.0, 227.0) 1.0%,
+                                            rgb(59.0, 136.0, 208.0) 100.0%);
   }
 
-
+.toggle-button:armed, .toggle-button:selected:armed
+  {
+    -fx-background-color: rgb(87.0, 87.0, 87.0), -toggle-armed-base, -toggle-shadow-armed;
+  }
   
+
+.MediaFileSystem,
+.RepositoryBrowserByArtistThenTrack,
+.RepositoryBrowserByArtistThenRecord,
+.RepositoryBrowserByRecordThenTrack,
+.RepositoryBrowserByTrack
+  {
+    -fx-min-width:           3em;
+    -fx-max-width:           3em;
+    -fx-pref-width:          3em;
+    -fx-padding:             0.2em;
+    -fx-background-size:     1.8em 1.8em;
+    -fx-background-repeat:   no-repeat;
+    -fx-background-position: center;
+  }
+
+.MediaFileSystem
+  {
+    -fx-background-image:    url("music-128.png");
+  }
+  
+.RepositoryBrowserByArtistThenTrack
+  {
+    -fx-background-image:    url("contacts-128.png");
+  }
+  
+.RepositoryBrowserByArtistThenRecord
+  {
+    -fx-background-image:    url("contacts-128.png");
+  }
+  
+.RepositoryBrowserByRecordThenTrack
+  {
+    -fx-background-image:    url("cd-128.png");
+  }
+
+.RepositoryBrowserByTrack
+  {
+    -fx-background-image:    url("note-128.png");
+  }
   
   
   
@@ -93,6 +151,13 @@
 .large-label
   {
     -fx-font-size:          3.9em;
+  }
+  
+.large-title-label
+  {
+    -fx-font-size:          3.5em;
+    -fx-font-weight:        bold;
+    -fx-text-fill:          rgb(250,210,0);
   }
 
 .smallButton
@@ -163,9 +228,9 @@
 
 .track-index
   {
-    -fx-min-width:              3.7em;
-    -fx-max-width:              3.7em;
-    -fx-pref-width:             3.7em;
+    -fx-min-width:              4.3em;
+    -fx-max-width:              4.3em;
+    -fx-pref-width:             4.3em;
     -fx-font-size:              0.6em;
     -fx-alignment:              baseline-right;
   }
@@ -182,20 +247,46 @@
 .record-duration,
 .track-duration
   {
-    -fx-min-width:              5.6em;
-    -fx-max-width:              5.6em;
-    -fx-pref-width:             5.6em;
+    -fx-min-width:              6.2em;
+    -fx-max-width:              6.2em;
+    -fx-pref-width:             6.2em;
     -fx-font-size:              0.7em;
     -fx-alignment:              baseline-right;
     -fx-text-fill:              rgb(200, 200, 200);
   }
+  
+.cover-art
+  {
+    -fx-background-color:       rgb(20,20,20);
+  }
 
+.cover-art-image
+  {
+    -fx-background-color:       rgb(40,40,40);
+  }
+
+.details
+  {
+    -fx-background-color:       rgb(20,20,20);
+    -fx-padding:                0.125em;
+  }
+  
+.track-details  
+  {
+    -fx-font-size:              2.0em;
+    -fx-wrap-text:              true;
+  }
+
+  
+  
 #btUp,
 #btPlay,
 #btStop,
 #btPause,
 #btRewind,
-#btFastForward
+#btFastForward,
+#btPrev,
+#btNext
   {
     -fx-padding:             0.2em;
     -fx-background-size:     2em 2em;
@@ -232,3 +323,14 @@
   {
     -fx-background-image:    url("arrow-44-128.png");
   }
+
+#btPrev
+  {
+    -fx-background-image:    url("arrow-107-128.png");
+  }
+  
+#btNext
+  {
+    -fx-background-image:    url("arrow-41-128.png");
+  }
+  

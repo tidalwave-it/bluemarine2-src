@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -30,10 +30,12 @@ package it.tidalwave.bluemarine2.ui.commons;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import java.util.ArrayList;
+import java.util.List;
 import it.tidalwave.bluemarine2.model.AudioFile;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import it.tidalwave.bluemarine2.model.PlayList;
 import lombok.ToString;
+import static java.util.Collections.*;
 
 /***********************************************************************************************************************
  *
@@ -45,9 +47,29 @@ import lombok.ToString;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @RequiredArgsConstructor @ToString
+@Immutable @ToString
 public class RenderAudioFileRequest 
   {
-    @Getter @Nonnull
+    @Nonnull
     private final AudioFile audioFile;
+    
+    @Nonnull
+    private final List<AudioFile> list;
+    
+    public RenderAudioFileRequest (final @Nonnull AudioFile audioFile)
+      {
+        this(audioFile, emptyList());
+      }
+    
+    public RenderAudioFileRequest (final @Nonnull AudioFile audioFile, final @Nonnull List<AudioFile> list)
+      {
+        this.audioFile = audioFile;
+        this.list = unmodifiableList(new ArrayList<>(list));
+      }
+    
+    @Nonnull
+    public PlayList getPlayList()
+      {
+        return new PlayList(audioFile, list);  
+      }
   }

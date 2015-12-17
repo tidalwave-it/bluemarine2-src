@@ -1,0 +1,89 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://images.amazon.com/images/P/B000002AGN>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002AGN%3E> .
+
+<http://images.amazon.com/images/P/B0000057JT>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000057JT%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000002AGN>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000002AGN%3E> .
+
+<http://images.amazon.com/images/P/B0001BH2GI>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0001BH2GI%3E> .
+
+<http://ec1.images-amazon.com/images/P/B000002AGN.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000002AGN.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/283e6240-0bad-4af0-8515-44182dea3d24>
+      a       mo:Record ;
+      rdfs:label "Time Out" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000002AGN" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000002AGN.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "10"^^xsd:int ;
+      vocab:albummeta_puids
+              "46"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/268786> , <http://dbtune.org/musicbrainz/resource/toc/74061> , <http://dbtune.org/musicbrainz/resource/toc/171488> , <http://dbtune.org/musicbrainz/resource/toc/113479> , <http://dbtune.org/musicbrainz/resource/toc/141436> , <http://dbtune.org/musicbrainz/resource/toc/114901> , <http://dbtune.org/musicbrainz/resource/toc/49226> , <http://dbtune.org/musicbrainz/resource/toc/164315> , <http://dbtune.org/musicbrainz/resource/toc/1536> , <http://dbtune.org/musicbrainz/resource/toc/196700> ;
+      vocab:tracks "7"^^xsd:int ;
+      dc:date "1959-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Time Out" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000002AGN> ;
+      mo:image <http://images.amazon.com/images/P/B000002AGN> , <http://images.amazon.com/images/P/B0000057JT> , <http://images.amazon.com/images/P/B0001BH2GI> , <http://images.amazon.com/images/P/B00004S3AN> , <http://ec1.images-amazon.com/images/P/B000002AGN.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000024F6I> , <http://images.amazon.com/images/P/B00005GA1J> , <http://images.amazon.com/images/P/B000056C6D> ;
+      mo:musicbrainz <http://musicbrainz.org/album/283e6240-0bad-4af0-8515-44182dea3d24> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/376021> , <http://dbtune.org/musicbrainz/resource/release/361920> , <http://dbtune.org/musicbrainz/resource/release/367187> , <http://dbtune.org/musicbrainz/resource/release/308310> , <http://dbtune.org/musicbrainz/resource/release/78323> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/dd637f48-6e0f-4606-8df4-f10b55ebe1c9> , <http://dbtune.org/musicbrainz/resource/track/79b66dc4-1b8e-4a04-947b-1b6d5d6fee4c> , <http://dbtune.org/musicbrainz/resource/track/b5c01dd6-2952-40c4-a37e-0dc492b2d885> , <http://dbtune.org/musicbrainz/resource/track/eafb5bca-4ea9-4ea2-aa4b-4963a43b07a4> , <http://dbtune.org/musicbrainz/resource/track/69db5ee7-2114-4dda-981d-d2aa8cba6f1f> , <http://dbtune.org/musicbrainz/resource/track/ffdffa5d-9165-4ff3-b21b-b2980d8dcedb> , <http://dbtune.org/musicbrainz/resource/track/83827cc1-9902-44c3-a96c-c761f312fef2> ;
+      =       <http://dbpedia.org/resource/Time_Out_%28album%29> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7bf711e9-4e69-4e08-b6e8-c0cb5805f1e7> ;
+      foaf:page "715593776" .
+
+<http://dbtune.org/musicbrainz/resource/master/283e6240-0bad-4af0-8515-44182dea3d24>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/283e6240-0bad-4af0-8515-44182dea3d24> .
+
+<http://images.amazon.com/images/P/B000056C6D>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000056C6D%3E> .
+
+<http://dbpedia.org/resource/Time_Out_%28album%29>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FTime_Out_%2528album%2529%3E> .
+
+<http://images.amazon.com/images/P/B00004S3AN>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00004S3AN%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/283e6240-0bad-4af0-8515-44182dea3d24>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F283e6240-0bad-4af0-8515-44182dea3d24%3E> .
+
+<http://images.amazon.com/images/P/B000024F6I>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000024F6I%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/283e6240-0bad-4af0-8515-44182dea3d24>
+      rdfs:label "RDF Description of Time Out" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/283e6240-0bad-4af0-8515-44182dea3d24> .
+
+<http://images.amazon.com/images/P/B00005GA1J>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00005GA1J%3E> .

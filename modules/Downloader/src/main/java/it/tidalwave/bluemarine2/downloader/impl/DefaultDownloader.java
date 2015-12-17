@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -56,10 +56,10 @@ import org.apache.http.impl.client.cache.CachingHttpClients;
 import org.apache.http.impl.client.cache.HeapResource;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import it.tidalwave.util.NotFoundException;
-import it.tidalwave.util.PowerOnNotification;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete.Origin;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;

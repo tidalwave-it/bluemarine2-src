@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/5b57c313-42cc-416b-a957-4fe0c9769d69>
+      a       mo:Record ;
+      rdfs:label "The Days of Wine and Roses (disc 1)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "27"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/103088> ;
+      vocab:tracks "25"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Days of Wine and Roses (disc 1)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/5b57c313-42cc-416b-a957-4fe0c9769d69> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/02df68c8-5bcc-4096-aa87-d1b4f423c8b0> , <http://dbtune.org/musicbrainz/resource/track/3de76de5-620e-4b76-bec3-e77ddd56d534> , <http://dbtune.org/musicbrainz/resource/track/d9a45b41-4528-47f4-9966-6da2f745562b> , <http://dbtune.org/musicbrainz/resource/track/3d2e6040-f8da-4afb-a6cd-ad627a881c2e> , <http://dbtune.org/musicbrainz/resource/track/32346aed-264a-4151-8b88-efb60f31b9cd> , <http://dbtune.org/musicbrainz/resource/track/2a220791-cb2d-444f-b201-f874b1b54ff0> , <http://dbtune.org/musicbrainz/resource/track/867581e9-d5f7-4e7f-af90-caa975ebc1e3> , <http://dbtune.org/musicbrainz/resource/track/6c5192d3-c5d9-49e1-bc98-018dbfacff84> , <http://dbtune.org/musicbrainz/resource/track/49a5c5ee-2c82-4fbb-8108-3f00137fe145> , <http://dbtune.org/musicbrainz/resource/track/edae4778-23b3-4204-a2fc-da4f6a4f8d60> , <http://dbtune.org/musicbrainz/resource/track/b4971abc-bd2a-4046-9b63-d4d85884cb37> , <http://dbtune.org/musicbrainz/resource/track/0051a985-8a83-49f4-88e4-6dbf38bd3aad> , <http://dbtune.org/musicbrainz/resource/track/f334cae1-3a7b-4792-b634-0f1e11090ba9> , <http://dbtune.org/musicbrainz/resource/track/d2806ba8-f394-424f-8c14-dbdcde35d14c> , <http://dbtune.org/musicbrainz/resource/track/11a4a6cb-4767-410b-9f67-a5d3e004e672> , <http://dbtune.org/musicbrainz/resource/track/919e389f-f9bb-4020-985f-313f3143ab27> , <http://dbtune.org/musicbrainz/resource/track/0a215a61-e883-4e05-b50f-a4a44ca83931> , <http://dbtune.org/musicbrainz/resource/track/6e0dd7a0-eccb-44ce-a711-46b21335b647> , <http://dbtune.org/musicbrainz/resource/track/bb4e9f64-193e-4df4-89d9-c1d9e7e16236> , <http://dbtune.org/musicbrainz/resource/track/c205901b-ce73-4c35-a0e2-a900b521f03b> , <http://dbtune.org/musicbrainz/resource/track/3734bc7b-5e15-4f09-832d-291460a12571> , <http://dbtune.org/musicbrainz/resource/track/e71c7ba6-7765-45c1-b5ce-8101ef8c420a> , <http://dbtune.org/musicbrainz/resource/track/6be6f942-164f-4f97-a4eb-39d55360cdaa> , <http://dbtune.org/musicbrainz/resource/track/8294f63e-eeae-4d77-88db-8255b42cbf90> , <http://dbtune.org/musicbrainz/resource/track/86877ac3-b3e5-4eb0-a6ea-b6af449690dc> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/83e71a21-caf7-4e48-8ff7-6512d51e88a3> ;
+      foaf:page "714278050" .
+
+<http://musicbrainz.org/album/5b57c313-42cc-416b-a957-4fe0c9769d69>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F5b57c313-42cc-416b-a957-4fe0c9769d69%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/5b57c313-42cc-416b-a957-4fe0c9769d69>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/5b57c313-42cc-416b-a957-4fe0c9769d69> .
+
+<http://dbtune.org/musicbrainz/data/record/5b57c313-42cc-416b-a957-4fe0c9769d69>
+      rdfs:label "RDF Description of The Days of Wine and Roses (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/5b57c313-42cc-416b-a957-4fe0c9769d69> .

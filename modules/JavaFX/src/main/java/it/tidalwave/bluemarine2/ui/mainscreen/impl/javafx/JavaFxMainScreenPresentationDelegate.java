@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.ui.mainscreen.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import javax.inject.Provider;
 import java.util.Collection;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -60,13 +61,13 @@ public class JavaFxMainScreenPresentationDelegate implements MainScreenPresentat
     private Button btPowerOff;
 
     @Inject
-    private JavaFXBinder binder;
-    
+    private Provider<JavaFXBinder> binder;
+
     @Override
     public void bind (final @Nonnull Collection<UserAction> mainMenuActions, final @Nonnull UserAction powerOffAction)
       {
         new MainMenuBarBinder(gpMainMenuBar).bind(mainMenuActions);
-        binder.bind(btPowerOff, powerOffAction);
+        binder.get().bind(btPowerOff, powerOffAction);
       }
 
     @Override

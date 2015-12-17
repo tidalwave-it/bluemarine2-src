@@ -1,0 +1,66 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://ec1.images-amazon.com/images/P/B000025931.08.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000025931.08.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000025931>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000025931%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/b3523284-a80e-4b79-8641-7b0110e314b4>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/b3523284-a80e-4b79-8641-7b0110e314b4> .
+
+<http://musicbrainz.org/album/b3523284-a80e-4b79-8641-7b0110e314b4>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fb3523284-a80e-4b79-8641-7b0110e314b4%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/b3523284-a80e-4b79-8641-7b0110e314b4>
+      rdfs:label "RDF Description of Intégrale, Volume 11: \"Swing 42\" (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/b3523284-a80e-4b79-8641-7b0110e314b4> .
+
+<http://dbtune.org/musicbrainz/resource/record/b3523284-a80e-4b79-8641-7b0110e314b4>
+      a       mo:Record ;
+      rdfs:label "Intégrale, Volume 11: \"Swing 42\" (disc 2)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000025931" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000025931.08.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "20"^^xsd:int ;
+      vocab:tracks "20"^^xsd:int ;
+      dc:date "1999-03-08" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/fra> ;
+      dc:title "Intégrale, Volume 11: \"Swing 42\" (disc 2)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000025931> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000025931.08.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000025931> ;
+      mo:musicbrainz <http://musicbrainz.org/album/b3523284-a80e-4b79-8641-7b0110e314b4> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/441233> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/409110fd-d65c-4046-bd9d-ecf3c00726aa> , <http://dbtune.org/musicbrainz/resource/track/76282fe9-b480-4314-8e13-f1e843109e82> , <http://dbtune.org/musicbrainz/resource/track/105a4b7f-91bc-4d27-a412-204ce4aaa744> , <http://dbtune.org/musicbrainz/resource/track/cc1afd02-29d4-4edf-a0c8-66e1268689ae> , <http://dbtune.org/musicbrainz/resource/track/0b89a23a-58f8-4297-bd49-cd03f50aa2b9> , <http://dbtune.org/musicbrainz/resource/track/c1eb5eca-0878-4352-96d9-01a59bb87d42> , <http://dbtune.org/musicbrainz/resource/track/edefbaa2-72ca-466b-9370-f1b96d9bf7cb> , <http://dbtune.org/musicbrainz/resource/track/365127dd-9e7e-4a90-9054-f6b7177785de> , <http://dbtune.org/musicbrainz/resource/track/726ebde0-6c97-4817-b1f3-ebfeeef2cc22> , <http://dbtune.org/musicbrainz/resource/track/2fdd0202-eb5b-4599-a625-0a95feff040f> , <http://dbtune.org/musicbrainz/resource/track/d2bc5ee0-0a2a-4f95-86c5-bae6c0302d4d> , <http://dbtune.org/musicbrainz/resource/track/e83dbb93-cba7-4c42-8ce7-10c3c94218f1> , <http://dbtune.org/musicbrainz/resource/track/179fe5ba-9430-48c0-af05-71060760571c> , <http://dbtune.org/musicbrainz/resource/track/3d58468e-6731-45c6-86e4-9f1150eca599> , <http://dbtune.org/musicbrainz/resource/track/b988e848-7509-4143-8c9b-3dcf1d3b05b1> , <http://dbtune.org/musicbrainz/resource/track/de2cf8c6-bfdb-4d67-b663-38c489e8c634> , <http://dbtune.org/musicbrainz/resource/track/764bbaee-b476-4162-9b98-0f4e0da3e335> , <http://dbtune.org/musicbrainz/resource/track/0c2fbd6d-4859-4a4a-84b4-9162656506d2> , <http://dbtune.org/musicbrainz/resource/track/cd3ee84a-f54d-43d3-b051-60efa12dd205> , <http://dbtune.org/musicbrainz/resource/track/92780fc9-ae6b-41e3-8306-e171891245fb> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> ;
+      foaf:page "351967507" .
+
+<http://images.amazon.com/images/P/B000025931>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000025931%3E> .

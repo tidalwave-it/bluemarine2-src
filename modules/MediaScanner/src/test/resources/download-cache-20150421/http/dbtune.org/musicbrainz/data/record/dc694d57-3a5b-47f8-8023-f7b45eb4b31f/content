@@ -1,0 +1,65 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/dc694d57-3a5b-47f8-8023-f7b45eb4b31f>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fdc694d57-3a5b-47f8-8023-f7b45eb4b31f%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00000DQU1>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00000DQU1%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/dc694d57-3a5b-47f8-8023-f7b45eb4b31f>
+      rdfs:label "RDF Description of Love Is the Thing (and More)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/dc694d57-3a5b-47f8-8023-f7b45eb4b31f> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B00000DQU1>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000DQU1%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/dc694d57-3a5b-47f8-8023-f7b45eb4b31f>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/dc694d57-3a5b-47f8-8023-f7b45eb4b31f> .
+
+<http://images.amazon.com/images/P/B00000DQU1.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000DQU1.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/dc694d57-3a5b-47f8-8023-f7b45eb4b31f>
+      a       mo:Record ;
+      rdfs:label "Love Is the Thing (and More)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00000DQU1" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B00000DQU1.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "8"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/99163> ;
+      vocab:tracks "15"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Love Is the Thing (and More)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00000DQU1> ;
+      mo:image <http://images.amazon.com/images/P/B00000DQU1> , <http://images.amazon.com/images/P/B00000DQU1.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/dc694d57-3a5b-47f8-8023-f7b45eb4b31f> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/a4d6cb57-9be1-4b8f-b2bb-eb726f2d32f0> , <http://dbtune.org/musicbrainz/resource/track/0519303a-047e-4bf5-a461-e015d1ea0b23> , <http://dbtune.org/musicbrainz/resource/track/5b2c822c-42b2-45ef-8d94-cdeab4654874> , <http://dbtune.org/musicbrainz/resource/track/f43aefec-08e9-4710-bc3b-c2eb24c6103c> , <http://dbtune.org/musicbrainz/resource/track/cb275017-5976-41e1-88aa-37daa99cce7a> , <http://dbtune.org/musicbrainz/resource/track/c18b54df-cbbc-4983-84f5-6d21f4f360b8> , <http://dbtune.org/musicbrainz/resource/track/99280633-dfc2-4813-bf3f-10ddacbf027e> , <http://dbtune.org/musicbrainz/resource/track/29b104e9-d3f6-485a-9c15-3a94b9e9c9bf> , <http://dbtune.org/musicbrainz/resource/track/e5c3b595-de57-481c-bbf7-2bd23e1443c3> , <http://dbtune.org/musicbrainz/resource/track/9065f8dc-5e9a-4082-a72e-491e630167f0> , <http://dbtune.org/musicbrainz/resource/track/4df375c2-662c-4965-81a7-a765c3a07fbc> , <http://dbtune.org/musicbrainz/resource/track/659d74d9-97f5-4144-9950-368fd3191964> , <http://dbtune.org/musicbrainz/resource/track/75a242fd-153c-4b66-9279-e535db395c30> , <http://dbtune.org/musicbrainz/resource/track/54f9cf4b-a2e4-4652-bfb3-09bdcd20550a> , <http://dbtune.org/musicbrainz/resource/track/61fbde49-eadb-476c-af34-06455b717c94> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/fbe054ec-a143-4101-9e9e-64abc5ff5ac9> ;
+      foaf:page "453744682" .

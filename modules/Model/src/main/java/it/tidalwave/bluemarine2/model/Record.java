@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -29,6 +29,8 @@
 package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
+import java.util.Optional;
+import java.net.URL;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 
@@ -51,4 +53,7 @@ public interface Record extends Entity, Identifiable
      ******************************************************************************************************************/
     @Nonnull
     public TrackFinder findTracks();
+    
+    @Nonnull
+    public Optional<URL> getImageUrl();
   }

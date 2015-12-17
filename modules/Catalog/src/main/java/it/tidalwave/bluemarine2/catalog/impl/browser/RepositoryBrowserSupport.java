@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -32,7 +32,6 @@ import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.function.Supplier;
-import it.tidalwave.util.Finder;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.catalog.Catalog;
@@ -48,7 +47,7 @@ import it.tidalwave.bluemarine2.persistence.Persistence;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class RepositoryBrowserSupport extends EntityWithRoles implements EntityBrowser 
+public class RepositoryBrowserSupport extends EntityWithRoles implements EntityBrowser
   {
     @Inject 
     private Persistence persistence;
@@ -65,9 +64,9 @@ public class RepositoryBrowserSupport extends EntityWithRoles implements EntityB
         return new EntityWithRoles(compositeForRootEntity);
       }
     
-    protected final void setFinder (final @Nonnull Supplier<Finder<? extends Entity>> finderSupplier)
+    protected final void setFinder (final @Nonnull Supplier<Finder8<? extends Entity>> finderSupplier)
       {
-        compositeForRootEntity = () -> (Finder8<Entity>)finderSupplier.get(); // FIXME: drop cast
+        compositeForRootEntity = () -> finderSupplier.get();
       }   
     
     @Nonnull

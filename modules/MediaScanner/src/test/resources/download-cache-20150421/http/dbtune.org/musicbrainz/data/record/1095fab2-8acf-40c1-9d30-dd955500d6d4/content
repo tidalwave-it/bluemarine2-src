@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/1095fab2-8acf-40c1-9d30-dd955500d6d4>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/1095fab2-8acf-40c1-9d30-dd955500d6d4> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000261UH>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000261UH%3E> .
+
+<http://ec1.images-amazon.com/images/P/B0000261UH.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0000261UH.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/1095fab2-8acf-40c1-9d30-dd955500d6d4>
+      rdfs:label "RDF Description of First Circle" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/1095fab2-8acf-40c1-9d30-dd955500d6d4> .
+
+<http://images.amazon.com/images/P/B0000261UH>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000261UH%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/1095fab2-8acf-40c1-9d30-dd955500d6d4>
+      a       mo:Record ;
+      rdfs:label "First Circle" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000261UH" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0000261UH.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "11"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/304246> , <http://dbtune.org/musicbrainz/resource/toc/18554> ;
+      vocab:tracks "8"^^xsd:int ;
+      dc:date "1984-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "First Circle" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000261UH> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B0000261UH.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B0000261UH> ;
+      mo:musicbrainz <http://musicbrainz.org/album/1095fab2-8acf-40c1-9d30-dd955500d6d4> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/114698> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/99c3f263-cac2-4067-8cd7-2ffad147cb08> , <http://dbtune.org/musicbrainz/resource/track/3938fb32-bba5-4428-b918-d59aaee28219> , <http://dbtune.org/musicbrainz/resource/track/551e1109-d115-4354-b96e-1fcfca382236> , <http://dbtune.org/musicbrainz/resource/track/86906b91-fdbd-4407-bcf1-6105f42525e5> , <http://dbtune.org/musicbrainz/resource/track/eb1d7050-e2a1-4df6-af53-be7e2b8c1d37> , <http://dbtune.org/musicbrainz/resource/track/a548db8e-38f4-4a6c-9aa1-3525f3d326ce> , <http://dbtune.org/musicbrainz/resource/track/b97980c4-a3da-47c2-b291-66319d08ea3e> , <http://dbtune.org/musicbrainz/resource/track/fadaf367-1cb6-490c-a3e0-a526a823529c> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/66a7f1f8-0ad6-4e3a-9346-a643e2739a8c> ;
+      foaf:page "246010529" .
+
+<http://musicbrainz.org/album/1095fab2-8acf-40c1-9d30-dd955500d6d4>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F1095fab2-8acf-40c1-9d30-dd955500d6d4%3E> .

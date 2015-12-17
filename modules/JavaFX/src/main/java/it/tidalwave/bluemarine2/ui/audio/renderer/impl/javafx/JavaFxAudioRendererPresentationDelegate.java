@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import javax.inject.Provider;
 import java.util.HashMap;
 import java.util.Map;
 import javafx.fxml.FXML;
@@ -61,6 +62,9 @@ import static javafx.scene.input.KeyCode.*;
 public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPresentation
   {
     @FXML
+    private Button btPrev;
+    
+    @FXML
     private Button btRewind;
     
     @FXML
@@ -74,6 +78,9 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     
     @FXML
     private Button btFastForward;
+    
+    @FXML
+    private Button btNext;
     
     @FXML
     private ProgressBar pbPlayProgress;
@@ -96,8 +103,11 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     @FXML
     private Label lbPlayTime;
     
+    @FXML
+    private Label lbNextTrack;
+    
     @Inject
-    private JavaFXBinder binder;
+    private Provider<JavaFXBinder> binder;
 
     private final Map<KeyCombination, Runnable> accelerators = new HashMap<>();
     
@@ -120,17 +130,21 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     
     @Override
     public void bind (final @Nonnull Properties properties,
+                      final @Nonnull UserAction prevAction,
                       final @Nonnull UserAction rewindAction,
                       final @Nonnull UserAction stopAction,
                       final @Nonnull UserAction pauseAction,
                       final @Nonnull UserAction playAction,
-                      final @Nonnull UserAction fastForwardAction)
+                      final @Nonnull UserAction fastForwardAction,
+                      final @Nonnull UserAction nextAction)
       {
-        binder.bind(btRewind,      rewindAction);  
-        binder.bind(btStop,        stopAction);  
-        binder.bind(btPause,       pauseAction);  
-        binder.bind(btPlay,        playAction);  
-        binder.bind(btFastForward, fastForwardAction); 
+        binder.get().bind(btPrev,        prevAction);  
+        binder.get().bind(btRewind,      rewindAction);  
+        binder.get().bind(btStop,        stopAction);  
+        binder.get().bind(btPause,       pauseAction);  
+        binder.get().bind(btPlay,        playAction);  
+        binder.get().bind(btFastForward, fastForwardAction); 
+        binder.get().bind(btNext,        nextAction);  
         
         lbTitle.textProperty().bind(properties.titleProperty());
         lbFolderName.textProperty().bind(properties.folderNameProperty());
@@ -138,11 +152,24 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
         lbComposer.textProperty().bind(properties.composerProperty());
         lbDuration.textProperty().bind(properties.durationProperty());
         lbPlayTime.textProperty().bind(properties.playTimeProperty());
+        lbNextTrack.textProperty().bind(properties.nextTrackProperty());
         pbPlayProgress.progressProperty().bind(properties.progressProperty());
       }
     
     @Override
     public void showUp (final @Nonnull Object control) 
       {
+      }
+
+    @Override
+    public void focusOnPlayButton() 
+      {
+        btPlay.requestFocus();
+      }
+
+    @Override
+    public void focusOnStopButton() 
+      {
+        btStop.requestFocus();
       }
   }

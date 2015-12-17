@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -30,10 +30,15 @@ package it.tidalwave.bluemarine2.catalog.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+import java.net.URL;
 import org.openrdf.repository.Repository;
 import org.openrdf.query.BindingSet;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordImageFinder;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryTrackFinder;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -60,8 +65,18 @@ public class RepositoryRecord extends RepositoryEntitySupport implements Record
     public TrackFinder findTracks() 
       {
         return new RepositoryTrackFinder(repository).inRecord(this);
+        // FIXME? sorted in the query - .sort(new TrackComparator());
       }
 
+    @Override @Nonnull
+    public Optional<URL> getImageUrl() 
+      {
+        final List<? extends URL> imageUrls = new RepositoryRecordImageFinder(repository, this).results();
+        // FIXME: check - images are ordered by size
+        Collections.reverse(imageUrls);
+        return imageUrls.isEmpty() ? Optional.empty() : Optional.of(imageUrls.get(0));
+      }
+    
     @Override @Nonnull
     public String toString() 
       {

@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/858bde8e-2978-4502-ba61-8380ce146f10>
+      rdfs:label "RDF Description of My Way: The Best of Frank Sinatra (bonus disc)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/858bde8e-2978-4502-ba61-8380ce146f10> .
+
+<http://images.amazon.com/images/P/B000024SLM>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000024SLM%3E> .
+
+<http://musicbrainz.org/album/858bde8e-2978-4502-ba61-8380ce146f10>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F858bde8e-2978-4502-ba61-8380ce146f10%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/858bde8e-2978-4502-ba61-8380ce146f10>
+      a       mo:Record ;
+      rdfs:label "My Way: The Best of Frank Sinatra (bonus disc)" ;
+      vocab:album_attributes
+              "{0,100,4}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000024SLM" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B000024SLM.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "70"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/17266> ;
+      vocab:tracks "22"^^xsd:int ;
+      dc:date "1997-07-21" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "My Way: The Best of Frank Sinatra (bonus disc)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000024SLM> ;
+      mo:image <http://images.amazon.com/images/P/B000024SLM> , <http://images.amazon.com/images/P/B000024SLM.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/858bde8e-2978-4502-ba61-8380ce146f10> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/98299> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/ebcee54b-acf1-4ab6-ab80-6506a4c075bd> , <http://dbtune.org/musicbrainz/resource/track/5c3c54ae-9b9b-4c1c-8ac5-10cbc1d93cd0> , <http://dbtune.org/musicbrainz/resource/track/8a1f2e2e-7ca7-4b7c-98da-a90b1de806a6> , <http://dbtune.org/musicbrainz/resource/track/b0c9ae0c-cc74-491f-9939-9bc4e4fd02ae> , <http://dbtune.org/musicbrainz/resource/track/c24ca90a-314b-4cea-8345-bd65624ee776> , <http://dbtune.org/musicbrainz/resource/track/3fce8e78-e8f5-4967-b929-b66a924467bd> , <http://dbtune.org/musicbrainz/resource/track/929ecfd1-95e5-40ce-b8ef-58065aa7a7b9> , <http://dbtune.org/musicbrainz/resource/track/d6412a39-1c2a-45ec-b83c-61ebd82f3b45> , <http://dbtune.org/musicbrainz/resource/track/1dad4568-b74e-4da7-aa1a-18547f0c876f> , <http://dbtune.org/musicbrainz/resource/track/852689ad-d55d-4940-8afa-50e9577fa23d> , <http://dbtune.org/musicbrainz/resource/track/5e6eced2-3001-472c-bc7e-4442898eef64> , <http://dbtune.org/musicbrainz/resource/track/d5f60d53-e634-439f-9e93-0bb89a2f76ec> , <http://dbtune.org/musicbrainz/resource/track/d65e5105-625b-4e52-99c9-eb770a7de005> , <http://dbtune.org/musicbrainz/resource/track/10a165a7-a4f7-4eab-84fc-ce6c3816ab17> , <http://dbtune.org/musicbrainz/resource/track/7937467b-a89a-4ac7-bb9a-f4cdd696795b> , <http://dbtune.org/musicbrainz/resource/track/bc157d81-8c47-47e6-8aaa-d93e354ac562> , <http://dbtune.org/musicbrainz/resource/track/01fdb4a2-36fb-4630-a421-9a571e9aaee4> , <http://dbtune.org/musicbrainz/resource/track/b0f00a78-a728-4509-8425-2205bb268823> , <http://dbtune.org/musicbrainz/resource/track/046f3ac4-b773-4f06-a2e6-cc2896e69f8b> , <http://dbtune.org/musicbrainz/resource/track/4d888be5-e003-4347-9a22-e64e411cdd2d> , <http://dbtune.org/musicbrainz/resource/track/e2f32eca-1262-4b6b-882b-657dd7da9a75> , <http://dbtune.org/musicbrainz/resource/track/5ff58ef1-73af-4acf-aeb3-d451e57a198f> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d> ;
+      foaf:page "497082458" .
+
+<http://dbtune.org/musicbrainz/resource/master/858bde8e-2978-4502-ba61-8380ce146f10>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/858bde8e-2978-4502-ba61-8380ce146f10> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000024SLM>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000024SLM%3E> .
+
+<http://images.amazon.com/images/P/B000024SLM.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000024SLM.01.MZZZZZZZ.jpg%3E> .

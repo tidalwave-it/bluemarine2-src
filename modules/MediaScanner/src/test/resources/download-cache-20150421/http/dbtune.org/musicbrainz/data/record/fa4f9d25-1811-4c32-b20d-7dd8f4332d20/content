@@ -1,0 +1,51 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/fa4f9d25-1811-4c32-b20d-7dd8f4332d20>
+      rdfs:label "RDF Description of Millennium Italia (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/fa4f9d25-1811-4c32-b20d-7dd8f4332d20> .
+
+<http://dbtune.org/musicbrainz/resource/record/fa4f9d25-1811-4c32-b20d-7dd8f4332d20>
+      a       mo:Record ;
+      rdfs:label "Millennium Italia (disc 1)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "3"^^xsd:int ;
+      vocab:tracks "18"^^xsd:int ;
+      dc:date "2002-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/ita> ;
+      dc:title "Millennium Italia (disc 1)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/fa4f9d25-1811-4c32-b20d-7dd8f4332d20> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/509862> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/48df9a12-6a4e-4ece-ab88-4b192445bba8> , <http://dbtune.org/musicbrainz/resource/track/6aa1c5c4-bc1e-4d42-9935-1072d54b4792> , <http://dbtune.org/musicbrainz/resource/track/66b55b23-c0ea-49f1-8727-a4c5506422be> , <http://dbtune.org/musicbrainz/resource/track/38b930c3-185b-471c-b352-f3cd00f4fd2a> , <http://dbtune.org/musicbrainz/resource/track/fd1613ef-67d6-4299-89f9-1e7a098ca230> , <http://dbtune.org/musicbrainz/resource/track/c3ba2069-366b-4043-93ec-5eb86e68b06b> , <http://dbtune.org/musicbrainz/resource/track/b0996853-7a18-42da-b94a-7e2cddec4497> , <http://dbtune.org/musicbrainz/resource/track/10afd018-b56f-45f7-9df5-27354090defb> , <http://dbtune.org/musicbrainz/resource/track/21b4eaf9-0ae9-4775-bea4-48b1059fa167> , <http://dbtune.org/musicbrainz/resource/track/a6c4b617-0e79-462d-bd8d-326397cb661a> , <http://dbtune.org/musicbrainz/resource/track/044a07c0-8cb0-4fbd-aa2e-4ec63528fe3f> , <http://dbtune.org/musicbrainz/resource/track/5247caf6-bdd7-448d-b255-551ea619f9a2> , <http://dbtune.org/musicbrainz/resource/track/a54548fb-25b7-4330-ba2f-9932f4146f3c> , <http://dbtune.org/musicbrainz/resource/track/f1a36dac-7a27-4734-9b79-613125e65930> , <http://dbtune.org/musicbrainz/resource/track/f391c4b9-3a92-41f9-9414-2b62b5c7b0f4> , <http://dbtune.org/musicbrainz/resource/track/c17570c0-c4a6-4eb5-b316-65b75e55e2cb> , <http://dbtune.org/musicbrainz/resource/track/07e8b94c-f9be-43d7-a9bf-22f9d4bddb84> , <http://dbtune.org/musicbrainz/resource/track/32eeb6f7-cde9-465e-8636-937950acf6bb> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "480687311" .
+
+<http://dbtune.org/musicbrainz/resource/master/fa4f9d25-1811-4c32-b20d-7dd8f4332d20>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/fa4f9d25-1811-4c32-b20d-7dd8f4332d20> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/fa4f9d25-1811-4c32-b20d-7dd8f4332d20>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Ffa4f9d25-1811-4c32-b20d-7dd8f4332d20%3E> .

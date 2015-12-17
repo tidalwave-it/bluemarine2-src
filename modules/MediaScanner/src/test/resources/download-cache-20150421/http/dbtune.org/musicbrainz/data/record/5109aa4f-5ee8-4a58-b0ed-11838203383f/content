@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/5109aa4f-5ee8-4a58-b0ed-11838203383f>
+      a       mo:Record ;
+      rdfs:label "El canto espiritual judeoespañol" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000269LV" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B0000269LV.08.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/204141> ;
+      vocab:tracks "14"^^xsd:int ;
+      dc:date "1998-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/spa> ;
+      dc:title "El canto espiritual judeoespañol" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000269LV> ;
+      mo:image <http://images.amazon.com/images/P/B0000269LV> , <http://ec1.images-amazon.com/images/P/B0000269LV.08.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/5109aa4f-5ee8-4a58-b0ed-11838203383f> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/296213> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/74500613-155b-43b3-99c3-763521157429> , <http://dbtune.org/musicbrainz/resource/track/e6705be1-f875-4139-b87a-5eccb1b54bc6> , <http://dbtune.org/musicbrainz/resource/track/40bf4265-d718-450e-b7d4-b42f699c7a54> , <http://dbtune.org/musicbrainz/resource/track/718953a0-3342-4a6a-82a7-b67776654ff4> , <http://dbtune.org/musicbrainz/resource/track/2b9156dc-b907-47a9-b252-49af6bdfc542> , <http://dbtune.org/musicbrainz/resource/track/2622dc1f-b2b3-455c-9d44-77ea6b5a8946> , <http://dbtune.org/musicbrainz/resource/track/b6916fdb-7c7a-4374-b765-32e6a331d396> , <http://dbtune.org/musicbrainz/resource/track/60e6ec4e-d89d-4841-b64c-20dd1bd225b5> , <http://dbtune.org/musicbrainz/resource/track/ab48d8b8-7ac3-4731-a2cd-69d1c4dec954> , <http://dbtune.org/musicbrainz/resource/track/fec1ba4a-65b8-44d3-b864-82fe5d4088b8> , <http://dbtune.org/musicbrainz/resource/track/bd954a59-daec-45bd-a096-bff5f1b5d54b> , <http://dbtune.org/musicbrainz/resource/track/d50bf18c-53ba-4aa7-984b-83b2d381f733> , <http://dbtune.org/musicbrainz/resource/track/a854cc92-3e89-4d96-b320-bd5bd76edb91> , <http://dbtune.org/musicbrainz/resource/track/3f4e1fc8-a13e-467c-a902-5c70be58d5b5> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/8fe75b2e-6b7b-45f1-9239-6a25ae97c85e> ;
+      foaf:page "214995023" .
+
+<http://images.amazon.com/images/P/B0000269LV>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000269LV%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/5109aa4f-5ee8-4a58-b0ed-11838203383f>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F5109aa4f-5ee8-4a58-b0ed-11838203383f%3E> .
+
+<http://ec1.images-amazon.com/images/P/B0000269LV.08.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB0000269LV.08.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/5109aa4f-5ee8-4a58-b0ed-11838203383f>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/5109aa4f-5ee8-4a58-b0ed-11838203383f> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000269LV>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000269LV%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/5109aa4f-5ee8-4a58-b0ed-11838203383f>
+      rdfs:label "RDF Description of El canto espiritual judeoespañol" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/5109aa4f-5ee8-4a58-b0ed-11838203383f> .

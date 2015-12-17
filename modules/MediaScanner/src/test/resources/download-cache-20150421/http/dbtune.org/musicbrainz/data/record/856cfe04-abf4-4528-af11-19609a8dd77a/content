@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/856cfe04-abf4-4528-af11-19609a8dd77a>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/856cfe04-abf4-4528-af11-19609a8dd77a> .
+
+<http://dbtune.org/musicbrainz/resource/record/856cfe04-abf4-4528-af11-19609a8dd77a>
+      a       mo:Record ;
+      rdfs:label "All or Nothing at All, Volume 1" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "11"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/65002> ;
+      vocab:tracks "15"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "All or Nothing at All, Volume 1" ;
+      mo:musicbrainz <http://musicbrainz.org/album/856cfe04-abf4-4528-af11-19609a8dd77a> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/6c781176-e690-4655-a081-64162c901b2d> , <http://dbtune.org/musicbrainz/resource/track/a52bd9cc-eebe-4e40-950a-7c4ab86e3850> , <http://dbtune.org/musicbrainz/resource/track/500cac11-3b1e-4c84-84d7-3b122a84d01a> , <http://dbtune.org/musicbrainz/resource/track/6a61ae11-588a-4797-bb06-b29fdbcb9809> , <http://dbtune.org/musicbrainz/resource/track/8d0dd7e0-c70d-49fc-985e-b2cde7fb5f7b> , <http://dbtune.org/musicbrainz/resource/track/b783349b-a325-49a5-b9fa-3d7104aad95d> , <http://dbtune.org/musicbrainz/resource/track/528603d0-8df9-4458-8146-bedfc5fc701c> , <http://dbtune.org/musicbrainz/resource/track/812de8d2-dbc6-4fd9-bd50-1d2e38283f2c> , <http://dbtune.org/musicbrainz/resource/track/049f8e5e-f383-4f03-9878-387c4db3f7b2> , <http://dbtune.org/musicbrainz/resource/track/5bd006bd-1058-4c47-b08d-d71d92caf381> , <http://dbtune.org/musicbrainz/resource/track/16715720-8b94-4aa8-b399-540610c82102> , <http://dbtune.org/musicbrainz/resource/track/88230504-2c3f-4029-a889-0ce13478bdd1> , <http://dbtune.org/musicbrainz/resource/track/aecd8a60-f9a0-4716-bd09-ee95be514633> , <http://dbtune.org/musicbrainz/resource/track/fce42848-a911-4437-9dd3-81187881fab3> , <http://dbtune.org/musicbrainz/resource/track/9d80c375-bde2-4f2a-b486-1cad79390807> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/d59c4cda-11d9-48db-8bfe-b557ee602aed> ;
+      foaf:page "81167891" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/856cfe04-abf4-4528-af11-19609a8dd77a>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F856cfe04-abf4-4528-af11-19609a8dd77a%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/856cfe04-abf4-4528-af11-19609a8dd77a>
+      rdfs:label "RDF Description of All or Nothing at All, Volume 1" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/856cfe04-abf4-4528-af11-19609a8dd77a> .

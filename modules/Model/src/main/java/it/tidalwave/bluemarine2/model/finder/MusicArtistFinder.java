@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -30,7 +30,7 @@ package it.tidalwave.bluemarine2.model.finder;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.util.Id;
-import it.tidalwave.util.Finder8;
+import it.tidalwave.util.spi.ExtendedFinder8Support;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 
 /***********************************************************************************************************************
@@ -41,7 +41,7 @@ import it.tidalwave.bluemarine2.model.MusicArtist;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MusicArtistFinder extends Finder8<MusicArtist>
+public interface MusicArtistFinder extends ExtendedFinder8Support<MusicArtist, MusicArtistFinder>
   {
     /*******************************************************************************************************************
      *
@@ -52,8 +52,4 @@ public interface MusicArtistFinder extends Finder8<MusicArtist>
      ******************************************************************************************************************/
     @Nonnull
     public MusicArtistFinder makerOf (@Nonnull Id entityId);
-    
-    // FIXME: push to Finder
-    @Nonnull
-    public MusicArtistFinder withContext (@Nonnull Object context);
   }

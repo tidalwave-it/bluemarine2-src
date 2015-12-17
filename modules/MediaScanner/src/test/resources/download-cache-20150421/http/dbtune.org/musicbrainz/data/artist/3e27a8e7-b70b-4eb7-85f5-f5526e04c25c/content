@@ -1,0 +1,99 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/track/b1b5db5b-1f2e-4fcd-b68c-0736a86fca87>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://dbtune.org/musicbrainz/resource/track/ec0c44dd-b701-40a8-9965-d6848eb91951>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://dbtune.org/musicbrainz/resource/track/0bbbe428-13c3-47b1-a251-cef291d61c88>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://dbtune.org/musicbrainz/resource/track/13e7b4dc-e7fd-4468-97ae-af9dc2dd44b4>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://dbtune.org/musicbrainz/resource/track/c860696f-a8fc-49d4-a269-20794981b71d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://dbtune.org/musicbrainz/resource/track/ca261ab7-4b2a-4673-a8fc-a7fad2afbbe6>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://dbtune.org/musicbrainz/resource/track/c38f23d6-6930-424e-a758-5b0a13c40f6d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://www.bbc.co.uk/music/artists/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c#artist>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.bbc.co.uk%2Fmusic%2Fartists%2F3e27a8e7-b70b-4eb7-85f5-f5526e04c25c%23artist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/c57c1640-56f8-4b72-afd7-46e2100284d0>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://dbtune.org/musicbrainz/data/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c>
+      rdfs:label "RDF Description of Paul Machlis" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c>
+      a       mo:MusicArtist ;
+      rdfs:label "Paul Machlis" ;
+      vocab:artist_quality
+              "-1"^^xsd:short ;
+      vocab:artist_type "1"^^xsd:short ;
+      vocab:sortname "Machlis, Paul" ;
+      mo:musicbrainz <http://musicbrainz.org/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> ;
+      =       <http://www.bbc.co.uk/music/artists/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c#artist> ;
+      foaf:name "Paul Machlis" .
+
+<http://dbtune.org/musicbrainz/resource/track/2d0ef799-318a-4981-acfa-994688a32d62>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://dbtune.org/musicbrainz/resource/record/e9032bf7-4467-49c6-a0dd-8503d994252c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://dbtune.org/musicbrainz/resource/artist/c8d0a9fc-f547-4113-87f1-e7e029b58d6f>
+      rel:collaboratesWith
+              <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://dbtune.org/musicbrainz/resource/track/22c13259-3538-44ad-b5bb-a8b9be878b7f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+mo:MusicArtist
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FMusicArtist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/b4cee1f0-934e-4e1f-a203-f657c40b713a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://dbtune.org/musicbrainz/resource/track/5265c4a8-6dbf-4b8f-ae75-9b621967f47c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://dbtune.org/musicbrainz/resource/track/59439f0f-939f-4337-b8b4-83e731cc251a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://musicbrainz.org/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Fartist%2F3e27a8e7-b70b-4eb7-85f5-f5526e04c25c%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/1f0728eb-2479-48ba-8a84-5b33147ffb41>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://dbtune.org/musicbrainz/resource/track/4b14893d-1a2f-494e-9e7d-6d87e043110a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://dbtune.org/musicbrainz/resource/track/c8bf458f-f127-4672-9f29-cfd03d933670>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .
+
+<http://dbtune.org/musicbrainz/resource/track/99eb845f-357a-49fd-b9bd-d0370803c1ef>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3e27a8e7-b70b-4eb7-85f5-f5526e04c25c> .

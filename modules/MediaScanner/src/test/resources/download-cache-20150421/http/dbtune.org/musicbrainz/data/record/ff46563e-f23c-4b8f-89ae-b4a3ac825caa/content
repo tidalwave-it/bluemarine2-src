@@ -1,0 +1,71 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbpedia.org/resource/Nefertiti_%28album%29>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FNefertiti_%2528album%2529%3E> .
+
+<http://musicbrainz.org/album/ff46563e-f23c-4b8f-89ae-b4a3ac825caa>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fff46563e-f23c-4b8f-89ae-b4a3ac825caa%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/ff46563e-f23c-4b8f-89ae-b4a3ac825caa>
+      rdfs:label "RDF Description of Nefertiti" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/ff46563e-f23c-4b8f-89ae-b4a3ac825caa> .
+
+<http://images.amazon.com/images/P/B00000DCH0>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000DCH0%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/ff46563e-f23c-4b8f-89ae-b4a3ac825caa>
+      a       mo:Record ;
+      rdfs:label "Nefertiti" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00000DCH0" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00000DCH0.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "3"^^xsd:int ;
+      vocab:albummeta_puids
+              "19"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/3797> , <http://dbtune.org/musicbrainz/resource/toc/262009> , <http://dbtune.org/musicbrainz/resource/toc/163162> ;
+      vocab:tracks "10"^^xsd:int ;
+      dc:date "1998-10-13" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Nefertiti" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00000DCH0> ;
+      mo:image <http://images.amazon.com/images/P/B00000DCH0> , <http://ec1.images-amazon.com/images/P/B00000DCH0.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/ff46563e-f23c-4b8f-89ae-b4a3ac825caa> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/68032> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/136ff6ba-a33d-4e3d-a909-558b23a96656> , <http://dbtune.org/musicbrainz/resource/track/379b3538-a287-4bc7-a6c4-f48d3fe0ff59> , <http://dbtune.org/musicbrainz/resource/track/5d4ef6a1-c344-4ba5-bc9b-9ff6bcee1ed7> , <http://dbtune.org/musicbrainz/resource/track/9471317a-34f6-49b7-8a5c-511deba9551b> , <http://dbtune.org/musicbrainz/resource/track/7c7bd18b-63b5-4b8a-9568-161e6791cc71> , <http://dbtune.org/musicbrainz/resource/track/42fb0fa9-e168-4437-972d-321ca6607709> , <http://dbtune.org/musicbrainz/resource/track/6237de20-f5a7-4bdd-ba3d-56640cb67a94> , <http://dbtune.org/musicbrainz/resource/track/f54b3fc0-0dbc-4927-ab77-1ad0e960e40e> , <http://dbtune.org/musicbrainz/resource/track/976a7c1d-57c6-4643-bfc8-291bcd25887e> , <http://dbtune.org/musicbrainz/resource/track/c62d30ec-b21f-40e2-be30-5c06cad9a09d> ;
+      =       <http://dbpedia.org/resource/Nefertiti_%28album%29> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/561d854a-6a28-4aa7-8c99-323e6ce46c2a> ;
+      foaf:page "509844085" .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00000DCH0>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00000DCH0%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/ff46563e-f23c-4b8f-89ae-b4a3ac825caa>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/ff46563e-f23c-4b8f-89ae-b4a3ac825caa> .
+
+<http://ec1.images-amazon.com/images/P/B00000DCH0.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00000DCH0.01.MZZZZZZZ.jpg%3E> .
