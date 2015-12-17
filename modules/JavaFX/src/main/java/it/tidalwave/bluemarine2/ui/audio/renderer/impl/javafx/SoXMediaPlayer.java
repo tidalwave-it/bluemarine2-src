@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -76,7 +76,7 @@ public class SoXMediaPlayer extends MediaPlayerSupport
      * 
      *
      ******************************************************************************************************************/
-    private final Listener mpg123ConsoleListener = (string) ->
+    private final Listener soxConsoleListener = (string) ->
       {
         if (FINISHED_PATTERN.matcher(string).matches()) 
           {
@@ -113,6 +113,7 @@ public class SoXMediaPlayer extends MediaPlayerSupport
         checkNotPlaying();
         this.mediaItem = mediaItem;  
         playTime = Duration.ZERO;
+        playTimeProperty.set(playTime);
         statusProperty.setValue(Status.STOPPED);
       }
     
@@ -139,7 +140,7 @@ public class SoXMediaPlayer extends MediaPlayerSupport
                 executor = DefaultProcessExecutor.forExecutable("/usr/bin/play") // FIXME
                                                  .withArguments(path)
                                                  .start();
-                executor.getStderr().setListener(mpg123ConsoleListener);
+                executor.getStderr().setListener(soxConsoleListener);
               }
           }
         catch (IOException e) 

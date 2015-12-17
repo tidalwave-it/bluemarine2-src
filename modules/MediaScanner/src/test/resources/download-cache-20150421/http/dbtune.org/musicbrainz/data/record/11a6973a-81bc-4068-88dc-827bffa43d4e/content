@@ -1,0 +1,66 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/11a6973a-81bc-4068-88dc-827bffa43d4e>
+      rdfs:label "RDF Description of Brivido caldo" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/11a6973a-81bc-4068-88dc-827bffa43d4e> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/11a6973a-81bc-4068-88dc-827bffa43d4e>
+      a       mo:Record ;
+      rdfs:label "Brivido caldo" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000050IFX" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000050IFX.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "2"^^xsd:int ;
+      vocab:tracks "13"^^xsd:int ;
+      dc:date "2000-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/ita> ;
+      dc:title "Brivido caldo" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000050IFX> ;
+      mo:image <http://images.amazon.com/images/P/B000050IFX> , <http://ec1.images-amazon.com/images/P/B000050IFX.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/11a6973a-81bc-4068-88dc-827bffa43d4e> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/120236> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/0efc3315-9d25-4a67-b512-e4c5478fe5b0> , <http://dbtune.org/musicbrainz/resource/track/4f3ce253-9e87-4eac-8ac1-efe52467c632> , <http://dbtune.org/musicbrainz/resource/track/f8c1b8bd-4d84-4ce4-af26-189005376e02> , <http://dbtune.org/musicbrainz/resource/track/427b4a6c-1eb4-44ef-b931-e93c687b3e31> , <http://dbtune.org/musicbrainz/resource/track/a51af771-ef57-456c-9bcf-b9131682c03e> , <http://dbtune.org/musicbrainz/resource/track/7638c366-0608-4b1f-85ff-e3d8eb29b9a9> , <http://dbtune.org/musicbrainz/resource/track/22309d6f-16e9-416a-bb7a-297d7ba764ac> , <http://dbtune.org/musicbrainz/resource/track/943b14a1-5fb0-4ab9-98e6-aa60d1ef07dd> , <http://dbtune.org/musicbrainz/resource/track/6f273bc4-c913-42ed-8d1c-788f558a03e0> , <http://dbtune.org/musicbrainz/resource/track/cc2f59bd-0e9b-4d61-8d56-c73265c20aa4> , <http://dbtune.org/musicbrainz/resource/track/5e799012-0a8d-4e1b-96e8-a2abb47c5932> , <http://dbtune.org/musicbrainz/resource/track/b712b81c-b6fd-487a-9c04-607d3f7e4037> , <http://dbtune.org/musicbrainz/resource/track/b528c8c1-4692-4df8-a8ba-cfc464172ff7> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/0daeccf9-9a55-4726-a845-80b439d8e4c9> ;
+      foaf:page "120937797" .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000050IFX>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000050IFX%3E> .
+
+<http://images.amazon.com/images/P/B000050IFX>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000050IFX%3E> .
+
+<http://musicbrainz.org/album/11a6973a-81bc-4068-88dc-827bffa43d4e>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F11a6973a-81bc-4068-88dc-827bffa43d4e%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/11a6973a-81bc-4068-88dc-827bffa43d4e>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/11a6973a-81bc-4068-88dc-827bffa43d4e> .
+
+<http://ec1.images-amazon.com/images/P/B000050IFX.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000050IFX.01.MZZZZZZZ.jpg%3E> .

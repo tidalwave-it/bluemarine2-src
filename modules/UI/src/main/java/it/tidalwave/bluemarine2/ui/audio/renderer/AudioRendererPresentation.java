@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -63,6 +63,7 @@ public interface AudioRendererPresentation
         private final Property<String> composerProperty = new SimpleStringProperty("");
         private final Property<String> durationProperty = new SimpleStringProperty("");
         private final Property<String> playTimeProperty = new SimpleStringProperty("");
+        private final Property<String> nextTrackProperty = new SimpleStringProperty("");
         private final DoubleProperty progressProperty = new SimpleDoubleProperty(0);
       }
     
@@ -71,11 +72,13 @@ public interface AudioRendererPresentation
      *
      ******************************************************************************************************************/
     public void bind (@Nonnull Properties properties,
+                      @Nonnull UserAction prevAction,
                       @Nonnull UserAction rewindAction,
                       @Nonnull UserAction stopAction,
                       @Nonnull UserAction pauseAction,
                       @Nonnull UserAction playAction,
-                      @Nonnull UserAction fastForwardAction);
+                      @Nonnull UserAction fastForwardAction,
+                      @Nonnull UserAction nextAction);
     
     /*******************************************************************************************************************
      *
@@ -83,4 +86,18 @@ public interface AudioRendererPresentation
      *
      ******************************************************************************************************************/
     public void showUp (@Nonnull Object control);
+    
+    /*******************************************************************************************************************
+     *
+     * Put focus on the play button.
+     *
+     ******************************************************************************************************************/
+    public void focusOnPlayButton();
+
+    /*******************************************************************************************************************
+     *
+     * Put focus on the stop button.
+     *
+     ******************************************************************************************************************/
+    public void focusOnStopButton();
   }

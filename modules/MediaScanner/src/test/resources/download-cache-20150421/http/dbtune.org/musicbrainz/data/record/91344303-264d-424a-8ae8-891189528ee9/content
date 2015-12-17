@@ -1,0 +1,56 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/91344303-264d-424a-8ae8-891189528ee9>
+      rdfs:label "RDF Description of Romeo & Juliet (Boston Symphony Orchestra feat. conductor: Seiji Ozawa) (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/91344303-264d-424a-8ae8-891189528ee9> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/91344303-264d-424a-8ae8-891189528ee9>
+      a       mo:Record ;
+      rdfs:label "Romeo & Juliet (Boston Symphony Orchestra feat. conductor: Seiji Ozawa) (disc 2)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/3347> ;
+      vocab:tracks "27"^^xsd:int ;
+      dc:date "1986-10-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Romeo & Juliet (Boston Symphony Orchestra feat. conductor: Seiji Ozawa) (disc 2)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/91344303-264d-424a-8ae8-891189528ee9> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/205695> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/df60e3f3-a6fc-47d1-9307-11898e299a2f> , <http://dbtune.org/musicbrainz/resource/track/9337a52e-c68b-46e6-915a-f12cfccf23fa> , <http://dbtune.org/musicbrainz/resource/track/e1b1fbc6-6674-42ba-8a28-14e1b1a5186e> , <http://dbtune.org/musicbrainz/resource/track/8f56bf59-46f4-4cb3-a425-5dcad9578d75> , <http://dbtune.org/musicbrainz/resource/track/32dc5132-da4b-4509-9026-ee2d2d8c9b49> , <http://dbtune.org/musicbrainz/resource/track/8fcf165e-bd0f-4722-842d-8c58973310f4> , <http://dbtune.org/musicbrainz/resource/track/40931200-4642-40c6-900f-36d2f36ea6a1> , <http://dbtune.org/musicbrainz/resource/track/f8e41d6e-6f85-4f2f-95b1-95b4bf19411f> , <http://dbtune.org/musicbrainz/resource/track/94229844-db13-4111-9bc3-adebee2808a2> , <http://dbtune.org/musicbrainz/resource/track/0a5865ff-08ea-4126-b1ae-896f832a5f3f> , <http://dbtune.org/musicbrainz/resource/track/0475c27e-3c0e-4038-9003-24f594926eff> , <http://dbtune.org/musicbrainz/resource/track/dcb62e5c-d3f9-4ddf-bace-3f868c472ece> , <http://dbtune.org/musicbrainz/resource/track/3c67ab69-a89c-4522-bb6e-8d90d0729ca7> , <http://dbtune.org/musicbrainz/resource/track/90e3d7f4-2a22-48f5-b059-c8bb4f08d8d5> , <http://dbtune.org/musicbrainz/resource/track/4b3e6c11-f134-4dc8-8520-cbc12e54ba67> , <http://dbtune.org/musicbrainz/resource/track/340421b5-8296-4dc5-a9ed-c0c132be1ee0> , <http://dbtune.org/musicbrainz/resource/track/accc5ca2-c739-43ae-a405-11c1db4cdc35> , <http://dbtune.org/musicbrainz/resource/track/05d3f842-0bb5-47ee-8a74-095c0f3b77f0> , <http://dbtune.org/musicbrainz/resource/track/14e84a2d-8e26-49b5-bcb2-d607f663ca32> , <http://dbtune.org/musicbrainz/resource/track/51c71bb5-c796-45d9-a1e8-19598863582f> , <http://dbtune.org/musicbrainz/resource/track/230a377f-6cb2-4775-9377-d6f4a661342e> , <http://dbtune.org/musicbrainz/resource/track/4c73cae0-f53f-4806-866b-0a7705e8f6b8> , <http://dbtune.org/musicbrainz/resource/track/eb8af10a-7f0d-4b41-80d7-f6e296a86633> , <http://dbtune.org/musicbrainz/resource/track/f395e908-4c64-43e7-a689-cec457b1e440> , <http://dbtune.org/musicbrainz/resource/track/35212bf8-7bce-4fe4-93e4-40ed0e33db4e> , <http://dbtune.org/musicbrainz/resource/track/e1feb2ff-624c-4bd1-81e7-3a6ff8a517aa> , <http://dbtune.org/musicbrainz/resource/track/c49326d0-66d8-45b4-ac5a-e7e2593360de> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/0e43fe9d-c472-4b62-be9e-55f971a023e1> ;
+      foaf:page "654776833" .
+
+<http://musicbrainz.org/album/91344303-264d-424a-8ae8-891189528ee9>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F91344303-264d-424a-8ae8-891189528ee9%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/91344303-264d-424a-8ae8-891189528ee9>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/91344303-264d-424a-8ae8-891189528ee9> .

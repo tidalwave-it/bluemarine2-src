@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/a7ca3d7e-4d6f-494e-89a6-d25ddacdddd1>
+      a       mo:Record ;
+      rdfs:label "Verve Jazz Masters 58: Nina Simone Sings Nina" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00000471I" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B00000471I.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "23"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/13609> ;
+      vocab:tracks "14"^^xsd:int ;
+      dc:date "1996-09-24" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Verve Jazz Masters 58: Nina Simone Sings Nina" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00000471I> ;
+      mo:image <http://images.amazon.com/images/P/B00000471I> , <http://images.amazon.com/images/P/B00000471I.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/a7ca3d7e-4d6f-494e-89a6-d25ddacdddd1> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/152719> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/9a570831-b2fc-4c21-938a-93aac91954de> , <http://dbtune.org/musicbrainz/resource/track/992cc023-d2e6-41be-a5a9-95c8fc62636b> , <http://dbtune.org/musicbrainz/resource/track/a3246137-2fa3-4a08-b7ce-7f022230d041> , <http://dbtune.org/musicbrainz/resource/track/06761160-aebd-4636-8fb0-96e0bb805a36> , <http://dbtune.org/musicbrainz/resource/track/f46726a4-7706-43a4-b006-2e1bbfa9e03f> , <http://dbtune.org/musicbrainz/resource/track/4d7888eb-63b8-4a0b-8b4c-eaa5b6fab04f> , <http://dbtune.org/musicbrainz/resource/track/c92eb305-3038-438b-ba1b-bfaeedce242f> , <http://dbtune.org/musicbrainz/resource/track/bd00de33-1c87-4b18-9992-b454c7a4b5c3> , <http://dbtune.org/musicbrainz/resource/track/659c5efb-e606-4c9e-b240-87a415e764c8> , <http://dbtune.org/musicbrainz/resource/track/70cf93f6-4ed2-4f5e-a2f0-1194c17fcadd> , <http://dbtune.org/musicbrainz/resource/track/800efa5e-32d3-4113-ab5d-c06a3631693b> , <http://dbtune.org/musicbrainz/resource/track/ad476561-72a6-465f-b723-c8604b92640d> , <http://dbtune.org/musicbrainz/resource/track/89ea879f-7e1c-4337-8a16-43d476fec1b6> , <http://dbtune.org/musicbrainz/resource/track/cb2d7457-57cf-424c-a51f-f1e18e2ae71c> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/2944824d-4c26-476f-a981-be849081942f> ;
+      foaf:page "778689729" .
+
+<http://dbtune.org/musicbrainz/data/record/a7ca3d7e-4d6f-494e-89a6-d25ddacdddd1>
+      rdfs:label "RDF Description of Verve Jazz Masters 58: Nina Simone Sings Nina" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/a7ca3d7e-4d6f-494e-89a6-d25ddacdddd1> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B00000471I>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000471I%3E> .
+
+<http://images.amazon.com/images/P/B00000471I.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000471I.01.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00000471I>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00000471I%3E> .
+
+<http://musicbrainz.org/album/a7ca3d7e-4d6f-494e-89a6-d25ddacdddd1>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fa7ca3d7e-4d6f-494e-89a6-d25ddacdddd1%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/a7ca3d7e-4d6f-494e-89a6-d25ddacdddd1>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/a7ca3d7e-4d6f-494e-89a6-d25ddacdddd1> .

@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/c921cbda-c513-4ec5-ae37-4f71493cabd4>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/c921cbda-c513-4ec5-ae37-4f71493cabd4> .
+
+<http://musicbrainz.org/album/c921cbda-c513-4ec5-ae37-4f71493cabd4>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fc921cbda-c513-4ec5-ae37-4f71493cabd4%3E> .
+
+<http://images.amazon.com/images/P/B00021TMYW>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00021TMYW%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://ec1.images-amazon.com/images/P/B00021TMYW.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00021TMYW.01.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00021TMYW>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00021TMYW%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/c921cbda-c513-4ec5-ae37-4f71493cabd4>
+      a       mo:Record ;
+      rdfs:label "Time Changes" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00021TMYW" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00021TMYW.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "7"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/84385> ;
+      vocab:tracks "7"^^xsd:int ;
+      dc:date "1964-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Time Changes" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00021TMYW> ;
+      mo:image <http://images.amazon.com/images/P/B00021TMYW> , <http://ec1.images-amazon.com/images/P/B00021TMYW.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/c921cbda-c513-4ec5-ae37-4f71493cabd4> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/78328> , <http://dbtune.org/musicbrainz/resource/release/162668> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/51104255-96de-4286-bc4d-fcaad1804d07> , <http://dbtune.org/musicbrainz/resource/track/2f465222-2dad-42d0-a342-4e4f40998b61> , <http://dbtune.org/musicbrainz/resource/track/8b3c2aab-e246-45f9-bc1e-a64ca31050d6> , <http://dbtune.org/musicbrainz/resource/track/f11fb7fd-8f51-41bf-8abd-3f6c06ec86c8> , <http://dbtune.org/musicbrainz/resource/track/9a7d991d-236c-45f2-94e2-7a8e498404fb> , <http://dbtune.org/musicbrainz/resource/track/1548465e-7d5e-403d-ba85-de3149af8f23> , <http://dbtune.org/musicbrainz/resource/track/ad528823-7bee-4e4e-a882-b519445d0de5> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7bf711e9-4e69-4e08-b6e8-c0cb5805f1e7> ;
+      foaf:page "715593764" .
+
+<http://dbtune.org/musicbrainz/data/record/c921cbda-c513-4ec5-ae37-4f71493cabd4>
+      rdfs:label "RDF Description of Time Changes" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/c921cbda-c513-4ec5-ae37-4f71493cabd4> .

@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/5d7bd412-f1f1-4cb4-b5a3-5a2170f8f4bc>
+      rdfs:label "RDF Description of Sex Machine: The Very Best of James Brown" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/5d7bd412-f1f1-4cb4-b5a3-5a2170f8f4bc> .
+
+<http://dbtune.org/musicbrainz/resource/record/5d7bd412-f1f1-4cb4-b5a3-5a2170f8f4bc>
+      a       mo:Record ;
+      rdfs:label "Sex Machine: The Very Best of James Brown" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000AS1HFY" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B000AS1HFY.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "5"^^xsd:int ;
+      vocab:albummeta_puids
+              "84"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/107886> , <http://dbtune.org/musicbrainz/resource/toc/473> , <http://dbtune.org/musicbrainz/resource/toc/36164> , <http://dbtune.org/musicbrainz/resource/toc/221853> , <http://dbtune.org/musicbrainz/resource/toc/280982> ;
+      vocab:tracks "20"^^xsd:int ;
+      dc:date "1991-11-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Sex Machine: The Very Best of James Brown" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000AS1HFY> ;
+      mo:image <http://images.amazon.com/images/P/B000AS1HFY> , <http://images.amazon.com/images/P/B000AS1HFY.01.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/5d7bd412-f1f1-4cb4-b5a3-5a2170f8f4bc> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/146974> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/079c5e4a-f552-4aa0-b7b4-641ce0febafc> , <http://dbtune.org/musicbrainz/resource/track/01c8265e-375f-462f-99d4-0e8801bdf030> , <http://dbtune.org/musicbrainz/resource/track/d769dbd7-28c8-4db3-8f11-f1c54864be14> , <http://dbtune.org/musicbrainz/resource/track/8d8bd708-99b9-4828-92f6-fc2df3c14678> , <http://dbtune.org/musicbrainz/resource/track/097c362d-72b7-4a53-96e2-d9ff02f8be1f> , <http://dbtune.org/musicbrainz/resource/track/2a719640-dca7-4453-a9c9-e97963011ec1> , <http://dbtune.org/musicbrainz/resource/track/739a3624-c2d2-46ab-9832-e5d7c8725d70> , <http://dbtune.org/musicbrainz/resource/track/af74d936-3a34-4c6f-a5b2-51a0edfa5dbf> , <http://dbtune.org/musicbrainz/resource/track/16d7ebc8-73cf-4bf2-be44-a5ef42a141a4> , <http://dbtune.org/musicbrainz/resource/track/ca3ce55c-8e8e-4c3d-b05d-00abf3e3352a> , <http://dbtune.org/musicbrainz/resource/track/4ca90ae4-3cce-4521-a21f-764c33b1169e> , <http://dbtune.org/musicbrainz/resource/track/48e6c58c-39de-4173-92ba-1d9dfca7badf> , <http://dbtune.org/musicbrainz/resource/track/0979be0b-0ca0-459f-82df-06896c5ed695> , <http://dbtune.org/musicbrainz/resource/track/479072e1-66fa-470b-863c-aaecccaa244a> , <http://dbtune.org/musicbrainz/resource/track/502d8693-01fb-4159-8ebf-0bf848d7ae49> , <http://dbtune.org/musicbrainz/resource/track/097290ca-e3eb-49f9-b611-086a2554bcd5> , <http://dbtune.org/musicbrainz/resource/track/42347c27-5ca5-4992-8e68-cb432e1acfac> , <http://dbtune.org/musicbrainz/resource/track/3994109f-6389-4ebf-8c0d-c5795e482fb8> , <http://dbtune.org/musicbrainz/resource/track/cabdcb35-1c19-4513-b3fd-63b3601d3368> , <http://dbtune.org/musicbrainz/resource/track/40788898-90ac-4d85-b648-30c67271890c> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/20ff3303-4fe2-4a47-a1b6-291e26aa3438> ;
+      foaf:page "678200770" .
+
+<http://musicbrainz.org/album/5d7bd412-f1f1-4cb4-b5a3-5a2170f8f4bc>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F5d7bd412-f1f1-4cb4-b5a3-5a2170f8f4bc%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://images.amazon.com/images/P/B000AS1HFY>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000AS1HFY%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/5d7bd412-f1f1-4cb4-b5a3-5a2170f8f4bc>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/5d7bd412-f1f1-4cb4-b5a3-5a2170f8f4bc> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000AS1HFY>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000AS1HFY%3E> .
+
+<http://images.amazon.com/images/P/B000AS1HFY.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000AS1HFY.01.MZZZZZZZ.jpg%3E> .

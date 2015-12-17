@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -29,7 +29,6 @@
 package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 
 import javax.annotation.Nonnull;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -56,21 +55,18 @@ public class TrackCustomGraphicProvider implements CustomGraphicProvider
     public Node getGraphic() 
       {
         final Label lbIcon = new Label("");
-        lbIcon.setMinWidth(30); // FIXME
         lbIcon.getStyleClass().setAll("list-cell", "track-icon");
-        final Label lbTrack = new Label(String.format("%d.", track.getTrackNumber()));
-        lbTrack.setMinWidth(50); // FIXME
+        final Integer diskCount = track.getDiskCount().orElse(1);
+        final Label lbTrack = new Label(String.format("%s%s.", 
+                track.getDiskNumber().map(n -> (diskCount == 1) ? "" : String.format("%d.", n)).orElse(""), 
+                track.getTrackNumber()));
         lbTrack.getStyleClass().setAll("list-cell", "track-index");
         final Label lbName = new Label(track.as(Displayable).getDisplayName());
-        lbName.setPrefWidth(9999); // FIXME
         lbName.getStyleClass().setAll("list-cell", "track-label");
         final Label lbDuration = new Label(format(track.getDuration()));
         lbDuration.getStyleClass().setAll("list-cell", "track-duration");
-        lbDuration.setMaxWidth(70);// FIXME
-        lbDuration.setMinWidth(70);
         final HBox hBox = new HBox(lbIcon, lbTrack, lbName, lbDuration);
-        hBox.setAlignment(Pos.BASELINE_LEFT);
-        hBox.setPrefWidth(500); // FIXME
+        hBox.getStyleClass().setAll("list-cell", "cell-container");
         return hBox;
       }
   }

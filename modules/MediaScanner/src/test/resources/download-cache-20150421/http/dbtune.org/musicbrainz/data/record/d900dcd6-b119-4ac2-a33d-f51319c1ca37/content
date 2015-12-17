@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000042MY>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000042MY%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/d900dcd6-b119-4ac2-a33d-f51319c1ca37>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fd900dcd6-b119-4ac2-a33d-f51319c1ca37%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/d900dcd6-b119-4ac2-a33d-f51319c1ca37>
+      a       mo:Record ;
+      rdfs:label "The Last of the Mohicans" ;
+      vocab:album_attributes
+              "{0,5,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000042MY" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B0000042MY.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "5"^^xsd:int ;
+      vocab:albummeta_puids
+              "64"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/16004> , <http://dbtune.org/musicbrainz/resource/toc/213858> , <http://dbtune.org/musicbrainz/resource/toc/249210> , <http://dbtune.org/musicbrainz/resource/toc/4536> , <http://dbtune.org/musicbrainz/resource/toc/49250> ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:date "1992-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Last of the Mohicans" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000042MY> ;
+      mo:image <http://images.amazon.com/images/P/B0000042MY.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B0000042MY> ;
+      mo:musicbrainz <http://musicbrainz.org/album/d900dcd6-b119-4ac2-a33d-f51319c1ca37> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/464991> , <http://dbtune.org/musicbrainz/resource/release/18738> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/06054e57-5816-4da6-ad6d-54ab37e94e07> , <http://dbtune.org/musicbrainz/resource/track/ed2db33e-1007-4bd0-a101-603c1f790065> , <http://dbtune.org/musicbrainz/resource/track/d6f6c265-73f7-4c3f-9c4b-0335874e87b5> , <http://dbtune.org/musicbrainz/resource/track/29345d34-9153-4686-9741-c731eba6ecd5> , <http://dbtune.org/musicbrainz/resource/track/e08b05f6-a26d-49c1-89e3-61ed31db3c6d> , <http://dbtune.org/musicbrainz/resource/track/770b73a1-08db-4bea-b235-5211dbce3275> , <http://dbtune.org/musicbrainz/resource/track/d5550ca3-f75d-4d7c-b67e-e7bb378583c2> , <http://dbtune.org/musicbrainz/resource/track/d382b93c-2701-4e13-99f3-6e555ca9a46b> , <http://dbtune.org/musicbrainz/resource/track/31e9b5a3-e7f7-46f5-b765-19d2cb6ae400> , <http://dbtune.org/musicbrainz/resource/track/014dce6c-500d-4e26-b258-6f7c1719188f> , <http://dbtune.org/musicbrainz/resource/track/16eb62ea-3c8e-43e1-80c1-9911a6a22812> , <http://dbtune.org/musicbrainz/resource/track/20968a00-e279-466c-af5c-a76e7707dc0d> , <http://dbtune.org/musicbrainz/resource/track/f5751f62-f35e-4c3e-9fc5-1d8883daacc4> , <http://dbtune.org/musicbrainz/resource/track/966eebe7-58a3-46d5-a15f-f219b760991a> , <http://dbtune.org/musicbrainz/resource/track/3033fb60-7f42-4e27-8fa5-dedfc8d7a235> , <http://dbtune.org/musicbrainz/resource/track/2651f2ca-15c9-4a3e-94f0-9672bcc2e67e> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "714278306" .
+
+<http://images.amazon.com/images/P/B0000042MY.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000042MY.01.MZZZZZZZ.jpg%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/d900dcd6-b119-4ac2-a33d-f51319c1ca37>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/d900dcd6-b119-4ac2-a33d-f51319c1ca37> .
+
+<http://images.amazon.com/images/P/B0000042MY>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000042MY%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/d900dcd6-b119-4ac2-a33d-f51319c1ca37>
+      rdfs:label "RDF Description of The Last of the Mohicans" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/d900dcd6-b119-4ac2-a33d-f51319c1ca37> .

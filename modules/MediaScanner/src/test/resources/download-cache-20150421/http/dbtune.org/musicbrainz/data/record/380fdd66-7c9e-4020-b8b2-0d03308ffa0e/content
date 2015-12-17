@@ -1,0 +1,54 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/380fdd66-7c9e-4020-b8b2-0d03308ffa0e>
+      rdfs:label "RDF Description of The Cole Porter Songbook" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/380fdd66-7c9e-4020-b8b2-0d03308ffa0e> .
+
+<http://dbtune.org/musicbrainz/resource/record/380fdd66-7c9e-4020-b8b2-0d03308ffa0e>
+      a       mo:Record ;
+      rdfs:label "The Cole Porter Songbook" ;
+      vocab:album_attributes
+              "{0,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "17"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/23663> ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Cole Porter Songbook" ;
+      mo:musicbrainz <http://musicbrainz.org/album/380fdd66-7c9e-4020-b8b2-0d03308ffa0e> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/8c076ca8-3a9d-4621-b3cb-f8da5b66acb0> , <http://dbtune.org/musicbrainz/resource/track/492d48fd-8d81-4062-9045-2ff2c59b7491> , <http://dbtune.org/musicbrainz/resource/track/69369ef8-3d2c-4f0c-8a3e-fae7880b43dd> , <http://dbtune.org/musicbrainz/resource/track/527ec972-af1f-4682-afb9-5ff9a1c1c207> , <http://dbtune.org/musicbrainz/resource/track/2ac90b42-eae3-4046-b315-0eab1b399175> , <http://dbtune.org/musicbrainz/resource/track/ccbb78ba-21ed-4266-bd7e-215a8b0e2376> , <http://dbtune.org/musicbrainz/resource/track/47fd9cd3-623f-4346-99e8-edec4ab627b5> , <http://dbtune.org/musicbrainz/resource/track/a601cb3d-5ea4-4266-95da-12c99cc60f43> , <http://dbtune.org/musicbrainz/resource/track/86fbb353-434c-4032-aeed-abbead2419b8> , <http://dbtune.org/musicbrainz/resource/track/954ee0a1-d4c3-47f0-9f66-588a3155b4e1> , <http://dbtune.org/musicbrainz/resource/track/c6c0eee2-7771-4c5b-b4b9-b2eb033856d5> , <http://dbtune.org/musicbrainz/resource/track/afd2ee8d-aa88-4bd4-a8ee-8e8dbacd1393> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/c7356af9-9ea6-4a78-a55b-c73775716312> ;
+      foaf:page "714278032" .
+
+<http://musicbrainz.org/album/380fdd66-7c9e-4020-b8b2-0d03308ffa0e>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F380fdd66-7c9e-4020-b8b2-0d03308ffa0e%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/380fdd66-7c9e-4020-b8b2-0d03308ffa0e>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/380fdd66-7c9e-4020-b8b2-0d03308ffa0e> .

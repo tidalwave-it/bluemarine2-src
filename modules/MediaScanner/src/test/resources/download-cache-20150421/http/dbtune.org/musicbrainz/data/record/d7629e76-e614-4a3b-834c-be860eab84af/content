@@ -1,0 +1,49 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/d7629e76-e614-4a3b-834c-be860eab84af>
+      rdfs:label "RDF Description of RSVP" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/d7629e76-e614-4a3b-834c-be860eab84af> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/d7629e76-e614-4a3b-834c-be860eab84af>
+      a       mo:Record ;
+      rdfs:label "RSVP" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "14"^^xsd:int ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "RSVP" ;
+      mo:musicbrainz <http://musicbrainz.org/album/d7629e76-e614-4a3b-834c-be860eab84af> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/fa09942f-0db1-4cd4-a23c-1db536eaf9a5> , <http://dbtune.org/musicbrainz/resource/track/00694451-3f1e-4ef0-a9a5-8e93db73b5c6> , <http://dbtune.org/musicbrainz/resource/track/0361b406-f9f4-4d4d-b8bb-ba2312955a10> , <http://dbtune.org/musicbrainz/resource/track/f61e1731-ec03-4590-993b-67a21c12fcac> , <http://dbtune.org/musicbrainz/resource/track/73af251c-ba56-4c1a-9246-cf738fa82add> , <http://dbtune.org/musicbrainz/resource/track/efe235be-7535-4e5f-83d3-437a36b0047e> , <http://dbtune.org/musicbrainz/resource/track/c33e5f0d-7dc1-4f84-a38c-2c4261fd5ab2> , <http://dbtune.org/musicbrainz/resource/track/5d5b06c8-545f-45ef-99a4-87397e2a6f8c> , <http://dbtune.org/musicbrainz/resource/track/a1122103-5b40-4aa2-8a6a-1c5f250d877d> , <http://dbtune.org/musicbrainz/resource/track/63ca1595-0b72-40a1-8c16-195c1441b227> , <http://dbtune.org/musicbrainz/resource/track/d9b48175-b327-4339-b939-ece5f3b560e0> , <http://dbtune.org/musicbrainz/resource/track/d9865a0a-acea-43b3-abaa-e8175132e930> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "659276800" .
+
+<http://dbtune.org/musicbrainz/resource/master/d7629e76-e614-4a3b-834c-be860eab84af>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/d7629e76-e614-4a3b-834c-be860eab84af> .
+
+<http://musicbrainz.org/album/d7629e76-e614-4a3b-834c-be860eab84af>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fd7629e76-e614-4a3b-834c-be860eab84af%3E> .

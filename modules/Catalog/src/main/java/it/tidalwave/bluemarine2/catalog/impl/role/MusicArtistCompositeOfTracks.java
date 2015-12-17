@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -35,6 +35,7 @@ import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.catalog.impl.browser.RepositoryBrowserByArtistThenTrack;
+import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
@@ -56,7 +57,7 @@ public class MusicArtistCompositeOfTracks implements SimpleComposite8<Track>
     private final MusicArtist artist;
     
     @Override @Nonnull
-    public Finder8<Track> findChildren() 
+    public TrackFinder findChildren() 
       {
         return artist.findTracks();
       }

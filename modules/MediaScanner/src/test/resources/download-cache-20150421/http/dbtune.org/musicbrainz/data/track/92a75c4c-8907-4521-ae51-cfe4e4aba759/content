@@ -1,0 +1,43 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/track/92a75c4c-8907-4521-ae51-cfe4e4aba759>
+      a       mo:Track ;
+      rdfs:label "Maybe You'll Be There" ;
+      dc:date "0"^^xsd:int ;
+      dc:title "Maybe You'll Be There" ;
+      mo:length "347613"^^xsd:int ;
+      mo:musicbrainz <http://musicbrainz.org/track/92a75c4c-8907-4521-ae51-cfe4e4aba759> ;
+      mo:track_number "8"^^xsd:int ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/67d2cb7a-9ddb-4a7f-82bf-5a2d1a038e98> .
+
+<http://dbtune.org/musicbrainz/data/track/92a75c4c-8907-4521-ae51-cfe4e4aba759>
+      rdfs:label "RDF Description of Maybe You'll Be There" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/track/92a75c4c-8907-4521-ae51-cfe4e4aba759> .
+
+<http://dbtune.org/musicbrainz/resource/signal/92a75c4c-8907-4521-ae51-cfe4e4aba759>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/track/92a75c4c-8907-4521-ae51-cfe4e4aba759> .
+
+<http://musicbrainz.org/track/92a75c4c-8907-4521-ae51-cfe4e4aba759>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Ftrack%2F92a75c4c-8907-4521-ae51-cfe4e4aba759%3E> .
+
+mo:Track
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FTrack%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/4abb7376-f2b2-4fb4-a003-1f80d877ae63>
+      mo:track <http://dbtune.org/musicbrainz/resource/track/92a75c4c-8907-4521-ae51-cfe4e4aba759> .

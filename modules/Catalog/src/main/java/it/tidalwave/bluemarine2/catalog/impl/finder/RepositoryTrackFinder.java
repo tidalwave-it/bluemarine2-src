@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -51,26 +51,55 @@ import static java.util.Collections.*;
  **********************************************************************************************************************/
 @ToString
 public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackFinder>
-                                         implements TrackFinder
+                                   implements TrackFinder
   {
     private final static String QUERY_TRACKS = readSparql(RepositoryMusicArtistFinder.class, "Tracks.sparql");
     
     @Nonnull
-    private Optional<Id> makerId = Optional.empty();
+    private final Optional<Id> makerId;
 
     @Nonnull
-    private Optional<Id> recordId = Optional.empty();
+    private final Optional<Id> recordId;
 
     /*******************************************************************************************************************
      *
-     * 
+     * Default constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryTrackFinder (final @Nonnull Repository repository)  
+    public RepositoryTrackFinder (final @Nonnull Repository repository)
       {
         super(repository);
+        this.makerId = Optional.empty();
+        this.recordId = Optional.empty();
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Clone constructor.
+     *
+     ******************************************************************************************************************/
+    public RepositoryTrackFinder (final @Nonnull RepositoryTrackFinder other, final @Nonnull Object override) 
+      {
+        super(other, override);
+        final RepositoryTrackFinder source = getSource(RepositoryTrackFinder.class, other, override);
+        this.makerId = source.makerId;
+        this.recordId = source.recordId;
       }
     
+    /*******************************************************************************************************************
+     *
+     * Override constructor.
+     *
+     ******************************************************************************************************************/
+    private RepositoryTrackFinder (final @Nonnull Repository repository,
+                                   final @Nonnull Optional<Id> makerId,
+                                   final @Nonnull Optional<Id> recordId)
+      {
+        super(repository);
+        this.makerId = makerId;
+        this.recordId = recordId;
+      }
+
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
@@ -79,9 +108,7 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
     @Override @Nonnull
     public TrackFinder madeBy (final @Nonnull MusicArtist artist)  
       {
-        final RepositoryTrackFinder clone = clone();
-        clone.makerId = Optional.of(artist.getId());
-        return clone;
+        return clone(new RepositoryTrackFinder(repository, Optional.of(artist.getId()), recordId));
       }
     
     /*******************************************************************************************************************
@@ -92,24 +119,7 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
     @Override @Nonnull
     public TrackFinder inRecord (final @Nonnull Record record)  
       {
-        final RepositoryTrackFinder clone = clone();
-        clone.recordId = Optional.of(record.getId());
-        return clone;
-      }
-    
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public RepositoryTrackFinder clone()
-      {
-        final RepositoryTrackFinder clone = (RepositoryTrackFinder)super.clone();
-        clone.makerId = this.makerId;
-        clone.recordId = this.recordId;
-
-        return clone;
+        return clone(new RepositoryTrackFinder(repository, makerId, Optional.of(record.getId())));
       }
     
     /*******************************************************************************************************************

@@ -34,7 +34,7 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-5-SNAPSHOT</version>
+        <version>1.0-ALPHA-7-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
@@ -47,7 +47,7 @@
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-linux</artifactId>
-    <version>1.0-ALPHA-5-SNAPSHOT</version>
+    <version>1.0-ALPHA-7-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine2 - Installer, Linux</name>
     <description>This module creates a Linux application bundle.</description>
@@ -56,6 +56,18 @@
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>    
+        </dependency>
+        
+        <!-- FIXME: why are not brought by transitive dependencies? -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
     
@@ -72,7 +84,7 @@
                             <goal>copy-dependencies</goal>
                         </goals>
                         <configuration>
-                            <scope>runtime</scope> <!-- FIXME: it also includes testng and junit -->
+                            <includeScope>runtime</includeScope>
                             <overWrite>true</overWrite>
                             <outputDirectory>${basedir}/target/classes/lib</outputDirectory>
                         </configuration>

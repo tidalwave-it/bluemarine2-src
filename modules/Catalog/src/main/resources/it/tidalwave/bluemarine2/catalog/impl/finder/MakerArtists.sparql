@@ -1,8 +1,13 @@
 SELECT *
 WHERE  
   { 
-    ?artist     a           mo:MusicArtist. 
-    ?artist     rdfs:label  ?label. 
-    ?madeEntity foaf:maker  ?artist.
+    ?artist     a                   mo:MusicArtist. 
+    ?artist     rdfs:label          ?label. 
+    ?madeEntity foaf:maker          ?artist.
+
+    OPTIONAL
+      {
+        ?artist     vocab:artist_type       ?artist_type.
+      }
   } 
 ORDER BY ?label

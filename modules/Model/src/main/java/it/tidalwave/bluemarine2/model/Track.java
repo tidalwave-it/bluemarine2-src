@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -28,6 +28,8 @@
  */
 package it.tidalwave.bluemarine2.model;
 
+import javax.annotation.Nonnull;
+import java.util.Optional;
 import java.time.Duration;
 import it.tidalwave.role.Identifiable;
 
@@ -42,6 +44,16 @@ import it.tidalwave.role.Identifiable;
 public interface Track extends Entity, Identifiable
   {
     public static final Class<Track> Track = Track.class;
+
+    /*******************************************************************************************************************
+     *
+     * Returns the record that contains this track
+     * 
+     * @return  the record
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Optional<Record> getRecord();
     
     /*******************************************************************************************************************
      *
@@ -51,6 +63,12 @@ public interface Track extends Entity, Identifiable
      *
      ******************************************************************************************************************/
     public Integer getTrackNumber(); // FIXME: use Optional<Integer>
+    
+    @Nonnull
+    public Optional<Integer> getDiskNumber();
+    
+    @Nonnull
+    public Optional<Integer> getDiskCount();
     
     /*******************************************************************************************************************
      *

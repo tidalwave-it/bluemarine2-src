@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/a77e7218-140a-44c8-afdd-dc62b420be09>
+      a       mo:Record ;
+      rdfs:label "Sinatra 80th: All the Best (disc 2)" ;
+      vocab:album_attributes
+              "{0,100,4}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000002U1E" ;
+      vocab:albummeta_coverarturl
+              "http://images.amazon.com/images/P/B000002U1E.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "35"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/16396> ;
+      vocab:tracks "20"^^xsd:int ;
+      dc:date "1994-11-14" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Sinatra 80th: All the Best (disc 2)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000002U1E> ;
+      mo:image <http://images.amazon.com/images/P/B000002U1E.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000002U1E> ;
+      mo:musicbrainz <http://musicbrainz.org/album/a77e7218-140a-44c8-afdd-dc62b420be09> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/188015> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/3f1ffa91-34e3-415d-8714-e5268ec1f73d> , <http://dbtune.org/musicbrainz/resource/track/f3dc8449-a54d-4240-ad22-e5516b0d989a> , <http://dbtune.org/musicbrainz/resource/track/c506703f-9eb1-421d-92d8-072b297dd500> , <http://dbtune.org/musicbrainz/resource/track/aaa3b20f-2328-4ac3-9b35-cd204963a0e2> , <http://dbtune.org/musicbrainz/resource/track/db0d3ab3-be04-4efd-9417-b02db8b46fb9> , <http://dbtune.org/musicbrainz/resource/track/fac6cbc8-1988-43bd-999c-9d78d946cf43> , <http://dbtune.org/musicbrainz/resource/track/57dc3c7d-0f57-4862-a6be-8df42d617adc> , <http://dbtune.org/musicbrainz/resource/track/41dd8599-c417-4f42-812e-4f9fd95da3c5> , <http://dbtune.org/musicbrainz/resource/track/a85e732e-0be3-40da-b264-cd994fe583a6> , <http://dbtune.org/musicbrainz/resource/track/9b021816-79e2-45f3-b4af-779d57e1343d> , <http://dbtune.org/musicbrainz/resource/track/0bad95f6-6a16-464a-a793-d89c45d05f28> , <http://dbtune.org/musicbrainz/resource/track/26b46f2c-41c9-410d-88d0-c873885d931e> , <http://dbtune.org/musicbrainz/resource/track/a5a0c01e-8f9e-4bc4-a0e5-04a519c115f0> , <http://dbtune.org/musicbrainz/resource/track/00729159-e4b3-4200-84b1-15698bc5f7c2> , <http://dbtune.org/musicbrainz/resource/track/7aa9a7a3-4214-4726-bfe7-c821180df162> , <http://dbtune.org/musicbrainz/resource/track/3b390ea7-072e-458f-910f-c75254e80063> , <http://dbtune.org/musicbrainz/resource/track/d4892ed8-1501-48df-8c58-f2efd8e10666> , <http://dbtune.org/musicbrainz/resource/track/6d1f1300-c238-4899-8079-eb2d090e591a> , <http://dbtune.org/musicbrainz/resource/track/915894df-afc1-4809-b69b-1eb5c9863b0c> , <http://dbtune.org/musicbrainz/resource/track/bb24df48-a656-471e-871c-5c799d8b9ff6> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/197450cd-0124-4164-b723-3c22dd16494d> ;
+      foaf:page "682068659" .
+
+<http://dbtune.org/musicbrainz/data/record/a77e7218-140a-44c8-afdd-dc62b420be09>
+      rdfs:label "RDF Description of Sinatra 80th: All the Best (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/a77e7218-140a-44c8-afdd-dc62b420be09> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/a77e7218-140a-44c8-afdd-dc62b420be09>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/a77e7218-140a-44c8-afdd-dc62b420be09> .
+
+<http://images.amazon.com/images/P/B000002U1E.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002U1E.01.MZZZZZZZ.jpg%3E> .
+
+<http://musicbrainz.org/album/a77e7218-140a-44c8-afdd-dc62b420be09>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fa77e7218-140a-44c8-afdd-dc62b420be09%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000002U1E>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000002U1E%3E> .
+
+<http://images.amazon.com/images/P/B000002U1E>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002U1E%3E> .

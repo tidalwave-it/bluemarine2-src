@@ -4,7 +4,7 @@
   *********************************************************************************************************************
 
   blueMarine2 - Semantic Media Center
-  http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+  http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
   %%
   Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
   %%
@@ -74,14 +74,19 @@
         <!-- FIXME use properties -->
         <property name="waitForTasksToCompleteOnShutdown" value="false"/>
         <property name="threadNamePrefix" value="messageBus-" />
-        <property name="corePoolSize" value="10" />
+        <property name="corePoolSize" value="20" />
         <property name="maxPoolSize" value="100" /> 
-        <property name="queueCapacity" value="100000" /> <!-- FIXME -->
+        <property name="queueCapacity" value="100" /> 
     </bean>
 
     <bean id="applicationMessageBus"
-          class="it.tidalwave.messagebus.impl.spring.SpringMessageBus">
-        <property name="taskExecutor" ref="applicationMessageBusTaskExecutor"/>
+          class="it.tidalwave.messagebus.spi.SimpleMessageBus">
+        <constructor-arg ref="applicationMessageBusTaskExecutor" />
+        <constructor-arg>
+            <bean class="it.tidalwave.messagebus.spi.RoundRobinAsyncMessageDelivery" >
+                <property name="workers" value="20" />
+            </bean>
+        </constructor-arg>
     </bean>
     
 </beans>

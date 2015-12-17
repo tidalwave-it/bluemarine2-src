@@ -1,0 +1,55 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/0015e113-f9c7-44f1-af3f-015e21abae41>
+      a       mo:Record ;
+      rdfs:label "A Natural Woman / Baby, Baby, Baby" ;
+      vocab:album_attributes
+              "{0,2,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "2"^^xsd:int ;
+      vocab:tracks "2"^^xsd:int ;
+      dc:date "1967-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "A Natural Woman / Baby, Baby, Baby" ;
+      mo:musicbrainz <http://musicbrainz.org/album/0015e113-f9c7-44f1-af3f-015e21abae41> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/290462> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/0d4800dc-0e53-4d85-90e1-a4a316e47b8e> , <http://dbtune.org/musicbrainz/resource/track/b9b6dfec-6fb4-4359-8112-94a0cf231833> ;
+      =       <http://dbpedia.org/resource/(You_Make_Me_Feel_Like)_A_Natural_Woman> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/2f9ecbed-27be-40e6-abca-6de49d50299e> ;
+      foaf:page "68651702" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/0015e113-f9c7-44f1-af3f-015e21abae41>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/0015e113-f9c7-44f1-af3f-015e21abae41> .
+
+<http://dbpedia.org/resource/(You_Make_Me_Feel_Like)_A_Natural_Woman>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%28You_Make_Me_Feel_Like%29_A_Natural_Woman%3E> .
+
+<http://musicbrainz.org/album/0015e113-f9c7-44f1-af3f-015e21abae41>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F0015e113-f9c7-44f1-af3f-015e21abae41%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/0015e113-f9c7-44f1-af3f-015e21abae41>
+      rdfs:label "RDF Description of A Natural Woman / Baby, Baby, Baby" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/0015e113-f9c7-44f1-af3f-015e21abae41> .

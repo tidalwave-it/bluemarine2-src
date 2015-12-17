@@ -1,0 +1,53 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/23c4fef2-0b72-44f7-989a-7c2310528206>
+      rdfs:label "RDF Description of Melancholia" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/23c4fef2-0b72-44f7-989a-7c2310528206> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/23c4fef2-0b72-44f7-989a-7c2310528206>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F23c4fef2-0b72-44f7-989a-7c2310528206%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/23c4fef2-0b72-44f7-989a-7c2310528206>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/23c4fef2-0b72-44f7-989a-7c2310528206> .
+
+<http://dbtune.org/musicbrainz/resource/record/23c4fef2-0b72-44f7-989a-7c2310528206>
+      a       mo:Record ;
+      rdfs:label "Melancholia" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "12"^^xsd:int ;
+      vocab:tracks "10"^^xsd:int ;
+      dc:date "1985-00-00" ;
+      dc:title "Melancholia" ;
+      mo:musicbrainz <http://musicbrainz.org/album/23c4fef2-0b72-44f7-989a-7c2310528206> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/120238> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/64a2ad21-419b-47f2-8992-19319ceb74d3> , <http://dbtune.org/musicbrainz/resource/track/68ee01fa-7ef8-4856-88ce-b99ca9d21d5f> , <http://dbtune.org/musicbrainz/resource/track/b2f83d9f-a095-4167-a447-7a00caa15e7e> , <http://dbtune.org/musicbrainz/resource/track/f20ddcee-1cd3-4a05-aa08-0618d5e6f42f> , <http://dbtune.org/musicbrainz/resource/track/38930db5-862e-46b8-82f8-897d297af095> , <http://dbtune.org/musicbrainz/resource/track/c453d068-b487-4d77-948c-303f97a71aea> , <http://dbtune.org/musicbrainz/resource/track/033e78ad-3b51-42d6-a197-82f3bb61056a> , <http://dbtune.org/musicbrainz/resource/track/ef57143d-250f-48ac-a9fe-f18e78dbafde> , <http://dbtune.org/musicbrainz/resource/track/87edaee4-fdbb-43a2-b3da-41ab9412f203> , <http://dbtune.org/musicbrainz/resource/track/8589604d-e56a-4bc3-beba-ec251f0587a9> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/0daeccf9-9a55-4726-a845-80b439d8e4c9> ;
+      foaf:page "476482020" .

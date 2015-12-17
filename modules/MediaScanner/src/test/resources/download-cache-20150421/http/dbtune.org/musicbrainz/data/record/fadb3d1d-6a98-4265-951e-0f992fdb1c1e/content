@@ -1,0 +1,71 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbpedia.org/resource/Unforgettable..._with_Love>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FUnforgettable..._with_Love%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000002H8X>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000002H8X%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/fadb3d1d-6a98-4265-951e-0f992fdb1c1e>
+      rdfs:label "RDF Description of Unforgettable: With Love" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/fadb3d1d-6a98-4265-951e-0f992fdb1c1e> .
+
+<http://ec1.images-amazon.com/images/P/B000002H8X.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000002H8X.01.MZZZZZZZ.jpg%3E> .
+
+<http://images.amazon.com/images/P/B000002H8X>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000002H8X%3E> .
+
+<http://musicbrainz.org/album/fadb3d1d-6a98-4265-951e-0f992fdb1c1e>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Ffadb3d1d-6a98-4265-951e-0f992fdb1c1e%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/fadb3d1d-6a98-4265-951e-0f992fdb1c1e>
+      a       mo:Record ;
+      rdfs:label "Unforgettable: With Love" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000002H8X" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000002H8X.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "9"^^xsd:int ;
+      vocab:albummeta_puids
+              "92"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/279349> , <http://dbtune.org/musicbrainz/resource/toc/312949> , <http://dbtune.org/musicbrainz/resource/toc/166138> , <http://dbtune.org/musicbrainz/resource/toc/115704> , <http://dbtune.org/musicbrainz/resource/toc/23210> , <http://dbtune.org/musicbrainz/resource/toc/245104> , <http://dbtune.org/musicbrainz/resource/toc/315132> , <http://dbtune.org/musicbrainz/resource/toc/111> , <http://dbtune.org/musicbrainz/resource/toc/51423> ;
+      vocab:tracks "22"^^xsd:int ;
+      dc:date "1991-06-11" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Unforgettable: With Love" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000002H8X> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000002H8X.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000002H8X> ;
+      mo:musicbrainz <http://musicbrainz.org/album/fadb3d1d-6a98-4265-951e-0f992fdb1c1e> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/223188> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/8d2fd673-4598-4ba4-8b49-ce6b1a38c710> , <http://dbtune.org/musicbrainz/resource/track/35971451-6235-41a4-a3e4-ec7392ab9437> , <http://dbtune.org/musicbrainz/resource/track/edef4e59-82bd-41fe-a5eb-f9787c7b0d37> , <http://dbtune.org/musicbrainz/resource/track/a9f1c94c-9e40-4746-a6ad-9383d619d865> , <http://dbtune.org/musicbrainz/resource/track/bcf8d9b7-c08f-495d-b040-909b883bdf76> , <http://dbtune.org/musicbrainz/resource/track/121cc5f6-6b56-4b61-b4b2-b5fe08cf515a> , <http://dbtune.org/musicbrainz/resource/track/4a5b045f-c14b-46e8-a979-d00db58de387> , <http://dbtune.org/musicbrainz/resource/track/3ab68dda-36e8-4286-bb52-2969faa3f0ab> , <http://dbtune.org/musicbrainz/resource/track/790db2d1-ddd8-48b9-bd34-ea2031c768d9> , <http://dbtune.org/musicbrainz/resource/track/f3fecbbc-b33f-4c64-bd1e-aae088ca23be> , <http://dbtune.org/musicbrainz/resource/track/ffe225a5-c2ca-40a5-be2a-50389ab93617> , <http://dbtune.org/musicbrainz/resource/track/d6f54a8d-0bcf-4c53-9b0d-28bbbdb8b13a> , <http://dbtune.org/musicbrainz/resource/track/ef50e115-0fe8-4671-b086-82b285c71bef> , <http://dbtune.org/musicbrainz/resource/track/a6c90589-a22f-4005-b382-87eedbda0518> , <http://dbtune.org/musicbrainz/resource/track/99d902f3-26bd-4669-bd80-57d6affed5cc> , <http://dbtune.org/musicbrainz/resource/track/71ec9faa-d8dc-4b71-b4eb-35b42a628b7c> , <http://dbtune.org/musicbrainz/resource/track/0783b18f-39c5-4a09-b02d-dd0d221f74ce> , <http://dbtune.org/musicbrainz/resource/track/eb8f56b5-d885-4c27-9ec1-7e56a7d9aec9> , <http://dbtune.org/musicbrainz/resource/track/3cd03d3b-87e7-4bd2-bbd3-49c08dcab451> , <http://dbtune.org/musicbrainz/resource/track/0dfbd996-88ef-44df-8038-c250cfdac44a> , <http://dbtune.org/musicbrainz/resource/track/5a668671-2a7e-4e25-a8b9-ccc85e900847> , <http://dbtune.org/musicbrainz/resource/track/b27f1c05-bfb9-46a2-8e05-c70f1ed553e6> ;
+      =       <http://dbpedia.org/resource/Unforgettable..._with_Love> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/eb45032c-80da-469c-be20-1d09f08ef37f> ;
+      foaf:page "754172520" .
+
+<http://dbtune.org/musicbrainz/resource/master/fadb3d1d-6a98-4265-951e-0f992fdb1c1e>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/fadb3d1d-6a98-4265-951e-0f992fdb1c1e> .

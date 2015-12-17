@@ -1,0 +1,53 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/9b78dee9-62e5-44d4-b7ce-8001230f8d8c>
+      rdfs:label "RDF Description of Via dell'amore" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/9b78dee9-62e5-44d4-b7ce-8001230f8d8c> .
+
+<http://musicbrainz.org/album/9b78dee9-62e5-44d4-b7ce-8001230f8d8c>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F9b78dee9-62e5-44d4-b7ce-8001230f8d8c%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/9b78dee9-62e5-44d4-b7ce-8001230f8d8c>
+      a       mo:Record ;
+      rdfs:label "Via dell'amore" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "14"^^xsd:int ;
+      vocab:tracks "18"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/ita> ;
+      dc:title "Via dell'amore" ;
+      mo:musicbrainz <http://musicbrainz.org/album/9b78dee9-62e5-44d4-b7ce-8001230f8d8c> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/0c665a06-93d1-49be-bfa9-d580ac07a018> , <http://dbtune.org/musicbrainz/resource/track/46a61646-1f5f-488d-a6b0-de3be24c946a> , <http://dbtune.org/musicbrainz/resource/track/7d4224b1-c829-4d38-9940-aed632a1df79> , <http://dbtune.org/musicbrainz/resource/track/d56b6086-dcf8-40b9-a7f1-4ce523bff3fc> , <http://dbtune.org/musicbrainz/resource/track/1e8c6444-eb8c-479f-a56d-88d1dfcad091> , <http://dbtune.org/musicbrainz/resource/track/20e040f8-28f5-47cd-84ba-3786e5fc98d8> , <http://dbtune.org/musicbrainz/resource/track/f99e4ca0-d24e-4d47-b627-a1678ab99adc> , <http://dbtune.org/musicbrainz/resource/track/98daa05e-c8f3-4931-a973-b3c93d701cf1> , <http://dbtune.org/musicbrainz/resource/track/95fcdae7-5efa-4c29-bcec-232a66a5d210> , <http://dbtune.org/musicbrainz/resource/track/e849482a-84bb-4d5d-9606-a36ba01a4e53> , <http://dbtune.org/musicbrainz/resource/track/9ae098db-c0db-4c42-ab06-803637213a78> , <http://dbtune.org/musicbrainz/resource/track/90cf2a4c-9440-4237-a7dc-900e504075ff> , <http://dbtune.org/musicbrainz/resource/track/a0003f70-eecc-4c7b-bb94-01b14b8e8a55> , <http://dbtune.org/musicbrainz/resource/track/e175a599-5cd4-44f9-9559-953b889f2649> , <http://dbtune.org/musicbrainz/resource/track/ee8b63f0-3dd8-4355-8496-3f43bd8ed8cf> , <http://dbtune.org/musicbrainz/resource/track/df9a1960-6cdf-4030-b455-978e765cb925> , <http://dbtune.org/musicbrainz/resource/track/58b3d535-9f8b-4118-a203-f38126b6009f> , <http://dbtune.org/musicbrainz/resource/track/d29c7431-09cb-4a2c-b00a-1b0feadcaabd> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/940a5867-a2e5-4af5-ae05-91cf63bd0b52> ;
+      foaf:page "782304422" .
+
+<http://dbtune.org/musicbrainz/resource/master/9b78dee9-62e5-44d4-b7ce-8001230f8d8c>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/9b78dee9-62e5-44d4-b7ce-8001230f8d8c> .

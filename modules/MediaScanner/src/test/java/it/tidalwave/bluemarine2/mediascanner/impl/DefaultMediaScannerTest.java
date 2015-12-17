@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -36,16 +36,18 @@ import java.io.File;
 import java.nio.file.Paths;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.util.Key;
-import it.tidalwave.util.PowerOnNotification;
+import it.tidalwave.util.spi.MockInstantProvider;
+import it.tidalwave.util.test.FileComparisonUtils;
 import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.persistence.Persistence;
+import javax.annotation.Nonnull;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import it.tidalwave.util.test.FileComparisonUtils;
-import it.tidalwave.util.test.MockInstantProvider;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.DataProvider;
 
 /***********************************************************************************************************************
  *
@@ -64,12 +66,7 @@ public class DefaultMediaScannerTest
     
     private CountDownLatch scanCompleted;
     
-    private CountDownLatch dumpCompleted;
-    
     // Listeners must be fields or they will garbage-collected
-    // FIXME: this means that the MediaScanner has completed, but it's likely there are still flying messages
-    // due to the Persistence service. Since the next DumpRequest is due to the Persistence service, it's likely
-    // it will be processed after all the flying messages have been consumed. But you can't be sured of it.
     private final MessageBus.Listener<ScanCompleted> onScanCompleted = (message) -> scanCompleted.countDown();
     
     private MediaFileSystem fileSystem;
@@ -92,30 +89,45 @@ public class DefaultMediaScannerTest
         underTest = context.getBean(DefaultMediaScanner.class);
         
         scanCompleted = new CountDownLatch(1);
-        dumpCompleted = new CountDownLatch(1);
         messageBus.subscribe(ScanCompleted.class, onScanCompleted);
 
+      }
+    
+    @Test(dataProvider = "dataSetNames")
+    public void testScan (final @Nonnull String dataSetName) 
+      throws Exception
+      {
+        // FIXME: we should find a way to force HttpClient to pretend the network doesn't work
+        log.warn("******* YOU SHOULD RUN THIS TEST WITH THE NETWORK DISCONNECTED");
         final Map<Key<?>, Object> properties = new HashMap<>();
         properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, Paths.get("/Users/fritz/Personal/Music/iTunes/iTunes Music"));
-        properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, Paths.get("target/test-classes/download-cache"));
+        properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, Paths.get("target/test-classes/download-cache-" + dataSetName));
         messageBus.publish(new PowerOnNotification(properties));
         
         // Wait for the MediaFileSystem to initialize. Indeed, MediaFileSystem should be probably mocked
         Thread.sleep(1000);
-      }
-    
-    @Test
-    public void testScan() 
-      throws Exception
-      {
+        
         underTest.process(fileSystem.getRoot());
         scanCompleted.await();
 
-        final File actualFile = new File("target/test-results/model.n3");
-        final File expectedFile = new File("src/test/resources/expected-results/model.n3");
+        final String modelName = "model-" + dataSetName + ".n3";
+        final File actualFile = new File("target/test-results/" + modelName);
+        final File expectedFile = new File("src/test/resources/expected-results/" + modelName);
         persistence.dump(actualFile.toPath());
 
-        // FIXME: OOM
+        // FIXME: likely OOM in case of mismatch
         FileComparisonUtils.assertSameContents(expectedFile, actualFile);
+      }
+    
+    @DataProvider(name = "dataSetNames")
+    private static Object[][] dataSetNames()
+      {
+        return new Object[][]
+          {
+          // 20150406 contains some missing resurces that were missing from DbTune. While this is not the correct
+          // behaviour, it's a real-world scenario.
+              { "20150406" },
+              { "20150421" }
+          };
       }
   }

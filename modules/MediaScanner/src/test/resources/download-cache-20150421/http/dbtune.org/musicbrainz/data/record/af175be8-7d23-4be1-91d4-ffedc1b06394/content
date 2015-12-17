@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/af175be8-7d23-4be1-91d4-ffedc1b06394>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Faf175be8-7d23-4be1-91d4-ffedc1b06394%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/af175be8-7d23-4be1-91d4-ffedc1b06394>
+      rdfs:label "RDF Description of Vier Suiten für Laute (feat. guitar: Göran Söllscher)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/af175be8-7d23-4be1-91d4-ffedc1b06394> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/af175be8-7d23-4be1-91d4-ffedc1b06394>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/af175be8-7d23-4be1-91d4-ffedc1b06394> .
+
+<http://dbtune.org/musicbrainz/resource/record/af175be8-7d23-4be1-91d4-ffedc1b06394>
+      a       mo:Record ;
+      rdfs:label "Vier Suiten für Laute (feat. guitar: Göran Söllscher)" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "22"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/218067> ;
+      vocab:tracks "22"^^xsd:int ;
+      dc:date "1995-08-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/deu> ;
+      dc:title "Vier Suiten für Laute (feat. guitar: Göran Söllscher)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/af175be8-7d23-4be1-91d4-ffedc1b06394> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/336411> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/72924d11-d7f0-473a-ab96-0917ba8810ba> , <http://dbtune.org/musicbrainz/resource/track/682a9773-8e86-471a-a763-1e3885c77a8c> , <http://dbtune.org/musicbrainz/resource/track/a137c6e9-3e40-42a0-8113-325db90aed54> , <http://dbtune.org/musicbrainz/resource/track/f0a2f29d-1803-4d2b-8791-c1356c11668f> , <http://dbtune.org/musicbrainz/resource/track/ef273a77-5ad9-4905-aa25-a7b34110cba1> , <http://dbtune.org/musicbrainz/resource/track/5b8c4a43-9960-486b-9a3e-a34f13a7f1b4> , <http://dbtune.org/musicbrainz/resource/track/1bb0ae2a-8a7f-42fa-af53-e49d565a4275> , <http://dbtune.org/musicbrainz/resource/track/dec36254-49b4-4e92-a378-fbaa1b689c8a> , <http://dbtune.org/musicbrainz/resource/track/b262e201-4dfc-483d-a707-e7d000817bed> , <http://dbtune.org/musicbrainz/resource/track/41d66ee6-838f-4a55-bf71-db599e08a63b> , <http://dbtune.org/musicbrainz/resource/track/333fd1a4-4c87-4c57-9ec4-e3831a8d0c56> , <http://dbtune.org/musicbrainz/resource/track/1174854d-d5fd-402b-95cd-7b15ccc94824> , <http://dbtune.org/musicbrainz/resource/track/01fccc67-e779-4fb1-8724-394cae073acc> , <http://dbtune.org/musicbrainz/resource/track/6d9c0adf-5736-4f79-a85d-eaba94e9ca78> , <http://dbtune.org/musicbrainz/resource/track/8cd9950d-298a-456d-8d5a-85b56c52b214> , <http://dbtune.org/musicbrainz/resource/track/01bce016-1064-416c-9988-914e9f5dc6ac> , <http://dbtune.org/musicbrainz/resource/track/9c4dc519-cecc-4d4c-9316-d08f195df3e9> , <http://dbtune.org/musicbrainz/resource/track/9465c4ba-f042-4c39-837b-97d70cbf8128> , <http://dbtune.org/musicbrainz/resource/track/03b0ead2-1506-473c-ae42-414b352f7469> , <http://dbtune.org/musicbrainz/resource/track/82bf52b3-a6c9-4d55-a566-0635d925a3dc> , <http://dbtune.org/musicbrainz/resource/track/84dc20a3-f5a7-4408-9d32-780d82465acb> , <http://dbtune.org/musicbrainz/resource/track/543f3d64-1ade-4746-add3-66d915f7d175> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/24f1766e-9635-4d58-a4d4-9413f9f98a4c> ;
+      foaf:page "782453812" .

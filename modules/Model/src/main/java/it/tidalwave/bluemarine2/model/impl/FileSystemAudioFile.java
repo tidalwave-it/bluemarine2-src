@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -38,8 +38,9 @@ import java.nio.file.Path;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.spi.AsSupport;
-import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.AudioFile;
+import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.Record;
 import lombok.Delegate;
 import lombok.Getter;
 import static java.util.Arrays.*;
@@ -93,7 +94,6 @@ public class FileSystemAudioFile implements AudioFile
         return metadata;
       }
 
-
     @Override @Nonnull
     public Optional<String> getLabel() 
       {
@@ -143,10 +143,10 @@ public class FileSystemAudioFile implements AudioFile
       }
 
     @Override @Nonnull
-    public Optional<Entity> getRecord() 
+    public Optional<Record> getRecord() 
       {
             // FIXME: check - parent should be always present - correct?
-        return Optional.of(new NamedEntity(getParent().as(Displayable).getDisplayName()));
+        return Optional.of(new NamedRecord(getParent().as(Displayable).getDisplayName()));
       }
     
     @Override @Nonnull

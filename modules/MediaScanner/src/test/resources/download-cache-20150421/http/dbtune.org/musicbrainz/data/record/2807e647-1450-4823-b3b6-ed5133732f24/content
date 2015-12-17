@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/2807e647-1450-4823-b3b6-ed5133732f24>
+      a       mo:Record ;
+      rdfs:label "Body and Soul" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "1"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/283887> ;
+      vocab:tracks "20"^^xsd:int ;
+      dc:date "2000-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Body and Soul" ;
+      mo:musicbrainz <http://musicbrainz.org/album/2807e647-1450-4823-b3b6-ed5133732f24> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/472003> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/9e29bd3a-a6f1-46ab-ad4f-7a50c6cd3ad4> , <http://dbtune.org/musicbrainz/resource/track/620efc26-d8d7-4f1f-a598-d1aea4ed9273> , <http://dbtune.org/musicbrainz/resource/track/77643460-ecf3-433e-b406-1aecd527cbdc> , <http://dbtune.org/musicbrainz/resource/track/f694d0b2-19a5-45f9-8ce0-fff1dc73c52e> , <http://dbtune.org/musicbrainz/resource/track/0f7564e6-3fea-4c53-8de9-7e6cbc564822> , <http://dbtune.org/musicbrainz/resource/track/ccb8cd4a-1139-4749-aa17-77faae7d0ddc> , <http://dbtune.org/musicbrainz/resource/track/998c0b5c-e6cb-40bb-8ecb-5437b2316ca5> , <http://dbtune.org/musicbrainz/resource/track/3c89102a-2173-4609-9cb8-874b219e3e53> , <http://dbtune.org/musicbrainz/resource/track/79e238c7-32fb-40ee-8e55-a6f364b90a9e> , <http://dbtune.org/musicbrainz/resource/track/7e92ac01-ac6a-4d05-8003-d8050fa819e8> , <http://dbtune.org/musicbrainz/resource/track/2e231532-3b27-44ed-b008-795c20664d35> , <http://dbtune.org/musicbrainz/resource/track/115859ac-b5d2-4782-9c00-c5304c37a414> , <http://dbtune.org/musicbrainz/resource/track/c147de6c-3fbb-479f-8edc-586a44cc6f2c> , <http://dbtune.org/musicbrainz/resource/track/12df2db4-58b8-4d0d-bae4-49f2c072fe76> , <http://dbtune.org/musicbrainz/resource/track/dd883d5d-f8a0-4c85-b8f7-5b5d701d4564> , <http://dbtune.org/musicbrainz/resource/track/6b0183dd-7bb7-471e-bb9e-656fba8bc2f1> , <http://dbtune.org/musicbrainz/resource/track/d312e35c-3f4f-4627-b62b-165e627eb78a> , <http://dbtune.org/musicbrainz/resource/track/c0901aef-7a53-4284-86bf-0ffbcfc52351> , <http://dbtune.org/musicbrainz/resource/track/4429ebe5-b4ac-422e-9a55-b5b779cb6842> , <http://dbtune.org/musicbrainz/resource/track/b7a4046a-e27c-4cb5-adc3-a58969421020> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> ;
+      foaf:page "117631010" .
+
+<http://musicbrainz.org/album/2807e647-1450-4823-b3b6-ed5133732f24>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F2807e647-1450-4823-b3b6-ed5133732f24%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/2807e647-1450-4823-b3b6-ed5133732f24>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/2807e647-1450-4823-b3b6-ed5133732f24> .
+
+<http://dbtune.org/musicbrainz/data/record/2807e647-1450-4823-b3b6-ed5133732f24>
+      rdfs:label "RDF Description of Body and Soul" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/2807e647-1450-4823-b3b6-ed5133732f24> .

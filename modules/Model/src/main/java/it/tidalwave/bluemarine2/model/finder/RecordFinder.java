@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -30,7 +30,7 @@ package it.tidalwave.bluemarine2.model.finder;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.util.Id;
-import it.tidalwave.util.Finder8;
+import it.tidalwave.util.spi.ExtendedFinder8Support;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 
@@ -42,7 +42,7 @@ import it.tidalwave.bluemarine2.model.Record;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface RecordFinder extends Finder8<Record>
+public interface RecordFinder extends ExtendedFinder8Support<Record, RecordFinder>
   {
     /*******************************************************************************************************************
      *
@@ -61,8 +61,4 @@ public interface RecordFinder extends Finder8<Record>
      ******************************************************************************************************************/
     @Nonnull
     public RecordFinder recordOf (@Nonnull Id trackId);
-    
-    // FIXME: push to Finder
-    @Nonnull
-    public RecordFinder withContext (@Nonnull Object context);
   }

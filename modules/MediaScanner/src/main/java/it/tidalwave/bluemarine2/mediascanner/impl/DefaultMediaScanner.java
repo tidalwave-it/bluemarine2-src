@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -177,6 +177,10 @@ public class DefaultMediaScanner
                     messageBus.publish(new InternalMediaFolderScanRequest((MediaFolder)item));
                   }
               });
+          }
+        catch (Exception e)
+          {
+            log.error("", e);  
           }
         finally
           {
@@ -366,10 +370,10 @@ public class DefaultMediaScanner
 //
 //        final Value createLiteral = literalFor(title);
 //        messageBus.publish(AddStatementsRequest.newAddStatementsRequest()
-//                                           .with(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(timestampProvider.getInstant()))
-//                                           .with(mediaItemUri, DC.TITLE, createLiteral)
-//                                           .with(mediaItemUri, RDFS.LABEL, createLiteral)
-//                                           .with(mediaItemUri, BM.FULL_CREDITS, literalFor(fullCredits))
+//                                           .withOptional(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(timestampProvider.getInstant()))
+//                                           .withOptional(mediaItemUri, DC.TITLE, createLiteral)
+//                                           .withOptional(mediaItemUri, RDFS.LABEL, createLiteral)
+//                                           .withOptional(mediaItemUri, BM.FULL_CREDITS, literalFor(fullCredits))
 //                                           .publish());
 //        // TODO: MO.CHANNELS
 //        // TODO: MO.COMPOSER

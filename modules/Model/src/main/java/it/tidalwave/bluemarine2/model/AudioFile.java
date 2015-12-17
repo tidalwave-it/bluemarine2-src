@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -74,7 +74,7 @@ public interface AudioFile extends MediaItem // FIXME: MediaItem should not be s
      * @return  the makers
      *
      ******************************************************************************************************************/
-    // FIXME: and it should be Optional<MusicArtist>
+    // FIXME: MusicArtistFinder
     @Nonnull
     public Finder8<? extends Entity> findMakers();
 
@@ -87,7 +87,7 @@ public interface AudioFile extends MediaItem // FIXME: MediaItem should not be s
      * @return  the composer
      *
      ******************************************************************************************************************/
-    // FIXME: and it should be Optional<MusicArtist>
+    // FIXME: MusicArtistFinder
     @Nonnull
     public Finder8<? extends Entity> findComposers();
 
@@ -100,6 +100,6 @@ public interface AudioFile extends MediaItem // FIXME: MediaItem should not be s
      * @return  the composer
      *
      ******************************************************************************************************************/
-    // FIXME: and it should be Optional<Record>
-    public Optional<? extends Entity> getRecord();
+    @Nonnull
+    public Optional<Record> getRecord();
   }

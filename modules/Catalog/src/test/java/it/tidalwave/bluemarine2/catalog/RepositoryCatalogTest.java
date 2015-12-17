@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -53,8 +53,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.annotations.DataProvider;
 import it.tidalwave.util.Key;
-import it.tidalwave.util.PowerOnNotification;
 import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalog;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryTrack;
 import it.tidalwave.bluemarine2.model.MusicArtist;
@@ -179,9 +179,10 @@ public class RepositoryCatalogTest
       {
         return new Object[][]
           {
-              { "tiny-model.n3",  "tiny-dump.txt"  },
-              { "small-model.n3", "small-dump.txt" },
-              { "large-model.n3", "large-dump.txt" }
+              { "tiny-model.n3",     "tiny-dump.txt"           },
+              { "small-model.n3",    "small-dump.txt"          },
+              { "model-20150406.n3", "model-20150406-dump.txt" },
+              { "model-20150421.n3", "model-20150421-dump.txt" }
           };
       }
   }

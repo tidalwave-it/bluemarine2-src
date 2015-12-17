@@ -1,0 +1,53 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/cd7e1359-98cc-42e3-9a88-ae8ec4cdf5ba>
+      a       mo:Record ;
+      rdfs:label "Blade Runner: OWM 2000 Version (disc 2)" ;
+      vocab:album_attributes
+              "{0,5,102}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "16"^^xsd:int ;
+      vocab:tracks "16"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Blade Runner: OWM 2000 Version (disc 2)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/cd7e1359-98cc-42e3-9a88-ae8ec4cdf5ba> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/a7ba8220-533d-4dee-aa1b-70b9ed29e949> , <http://dbtune.org/musicbrainz/resource/track/852ae666-77b0-4631-a7ea-067ffc014904> , <http://dbtune.org/musicbrainz/resource/track/f03f4b6e-293c-42e5-a63b-9bfaba496de8> , <http://dbtune.org/musicbrainz/resource/track/c0cff07b-6d6f-4e0e-a144-3b14603cd586> , <http://dbtune.org/musicbrainz/resource/track/78e1d70d-52c8-42b1-84ca-f47c408c3c1c> , <http://dbtune.org/musicbrainz/resource/track/740efe3d-64a3-42d7-ad1b-20674bf30196> , <http://dbtune.org/musicbrainz/resource/track/6a0fd91c-7cc4-42df-8677-39425bd5cb96> , <http://dbtune.org/musicbrainz/resource/track/3c0d1364-f50e-484a-921c-8728773a70c0> , <http://dbtune.org/musicbrainz/resource/track/af48c5fe-6166-4ce9-a9d6-14b5333d1b2f> , <http://dbtune.org/musicbrainz/resource/track/4ad3db2e-e601-41ec-903e-ad786f382c2d> , <http://dbtune.org/musicbrainz/resource/track/afe8f6db-b272-4a9f-8b4b-9f6139b40b56> , <http://dbtune.org/musicbrainz/resource/track/1f5f91ca-f495-407c-9df3-eeca681a023d> , <http://dbtune.org/musicbrainz/resource/track/687338e8-a4cb-49c0-828a-6a82a7de2a54> , <http://dbtune.org/musicbrainz/resource/track/c52ae20b-b9fd-4be4-8d56-2cfb3c583507> , <http://dbtune.org/musicbrainz/resource/track/1752864a-2cc3-4ad6-9ea3-39911315fe15> , <http://dbtune.org/musicbrainz/resource/track/b35f8788-58f0-41e5-b5f9-10926f0709ff> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/57fca0e2-f9ad-4ae6-af9d-6a6f50cbcd5f> ;
+      foaf:page "114365633" .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/cd7e1359-98cc-42e3-9a88-ae8ec4cdf5ba>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/cd7e1359-98cc-42e3-9a88-ae8ec4cdf5ba> .
+
+<http://dbtune.org/musicbrainz/data/record/cd7e1359-98cc-42e3-9a88-ae8ec4cdf5ba>
+      rdfs:label "RDF Description of Blade Runner: OWM 2000 Version (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/cd7e1359-98cc-42e3-9a88-ae8ec4cdf5ba> .
+
+<http://musicbrainz.org/album/cd7e1359-98cc-42e3-9a88-ae8ec4cdf5ba>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fcd7e1359-98cc-42e3-9a88-ae8ec4cdf5ba%3E> .

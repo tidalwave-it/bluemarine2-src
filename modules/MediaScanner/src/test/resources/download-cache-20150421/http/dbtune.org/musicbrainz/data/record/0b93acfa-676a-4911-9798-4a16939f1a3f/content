@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://ec1.images-amazon.com/images/P/B00000IFTK.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00000IFTK.01.MZZZZZZZ.jpg%3E> .
+
+<http://images.amazon.com/images/P/B00000IFTK>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000IFTK%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/0b93acfa-676a-4911-9798-4a16939f1a3f>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F0b93acfa-676a-4911-9798-4a16939f1a3f%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/0b93acfa-676a-4911-9798-4a16939f1a3f>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/0b93acfa-676a-4911-9798-4a16939f1a3f> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00000IFTK>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00000IFTK%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/0b93acfa-676a-4911-9798-4a16939f1a3f>
+      rdfs:label "RDF Description of Jim Hall & Pat Metheny" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/0b93acfa-676a-4911-9798-4a16939f1a3f> .
+
+<http://dbtune.org/musicbrainz/resource/record/0b93acfa-676a-4911-9798-4a16939f1a3f>
+      a       mo:Record ;
+      rdfs:label "Jim Hall & Pat Metheny" ;
+      vocab:album_attributes
+              "{0,9,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00000IFTK" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00000IFTK.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "2"^^xsd:int ;
+      vocab:albummeta_puids
+              "23"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/297613> , <http://dbtune.org/musicbrainz/resource/toc/59815> ;
+      vocab:tracks "17"^^xsd:int ;
+      dc:date "1999-04-27" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Jim Hall & Pat Metheny" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00000IFTK> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B00000IFTK.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B00000IFTK> ;
+      mo:musicbrainz <http://musicbrainz.org/album/0b93acfa-676a-4911-9798-4a16939f1a3f> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/128274> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/04cc0e1f-ed89-4cb3-8aa5-3a9ef52ff72d> , <http://dbtune.org/musicbrainz/resource/track/228e8ce6-427b-4774-9e37-b5ac38a220d0> , <http://dbtune.org/musicbrainz/resource/track/6d5f9371-bd01-4344-984d-a0d0a5cbf4ac> , <http://dbtune.org/musicbrainz/resource/track/61c1207b-2ebd-4735-8f35-84b070cef89b> , <http://dbtune.org/musicbrainz/resource/track/c7b2cb7f-1a39-4301-89bb-8cdc442e648d> , <http://dbtune.org/musicbrainz/resource/track/5fddd113-be9c-48da-b018-7fa8d0393e57> , <http://dbtune.org/musicbrainz/resource/track/c105cff3-5971-414f-b403-e0513b306f16> , <http://dbtune.org/musicbrainz/resource/track/98be8ed4-01ea-4002-bcef-db8fd69e059b> , <http://dbtune.org/musicbrainz/resource/track/02bbbedc-a945-4d1e-a7db-0390020e6d21> , <http://dbtune.org/musicbrainz/resource/track/5bd524c7-5615-4658-93fe-c81649520030> , <http://dbtune.org/musicbrainz/resource/track/f0edbc9f-af5a-405a-9ab0-9f7222aba3c4> , <http://dbtune.org/musicbrainz/resource/track/da6b5abe-130e-43dc-9c1f-7c783f18fb7c> , <http://dbtune.org/musicbrainz/resource/track/eb13b366-f132-4889-99b0-68abbcaba1b8> , <http://dbtune.org/musicbrainz/resource/track/cb3b31ed-4d9e-47a0-b1b9-8775ebd62f41> , <http://dbtune.org/musicbrainz/resource/track/a711b368-68e0-4b65-ac9b-078cf9814e7d> , <http://dbtune.org/musicbrainz/resource/track/afc68777-9a55-4dc1-92fb-f12b86e657f2> , <http://dbtune.org/musicbrainz/resource/track/4dc91c68-ad6a-4f14-9563-f814fc8d440b> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/f4af7dc1-a968-4985-ab49-cc5b9cdae30b> ;
+      foaf:page "380044578" .

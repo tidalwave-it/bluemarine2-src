@@ -1,225 +1,336 @@
 /*.root
   {
-    -fx-font-size:          40px; 
+    -fx-font-size:          40px;
   }*/
 
-.mainFxmlClass 
-  {
-    -fx-background-color:   black;
-  }
-  
 .label
   {
-    -fx-font-size:          40; 
+    -fx-font-size:          3.1em;
     -fx-text-fill:          white;
   }
-  
-.content-panel
-  {
-    -fx-padding:            20px;
-  }
 
-.header-label
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:focused:selected,
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected
   {
-    -fx-font-size:          60; 
-  }
-  
-.very-small-label
-  {
-    -fx-font-size:          20; 
-  }
-
-.small-label
-  {
-    -fx-font-size:          28; 
-  }
-
-.medium-label
-  {
-    -fx-font-size:          30; 
-  }
-
-.large-label
-  {
-    -fx-font-size:          50; 
+    -fx-background-color:   linear-gradient(rgb(95.0, 165.0, 221.0),
+                                            rgb(54.0, 124.0, 192.0)),
+                            linear-gradient(rgb(116.0, 186.0, 232.0),
+                                            rgb(116.0, 186.0, 232.0) 1.0%,
+                                            rgb(109.0, 178.0, 227.0) 1.0%,
+                                            rgb(59.0, 136.0, 208.0) 100.0%);
+    -fx-background-insets:  0.0, 0.025em 0.0 0.025em 0.0;
+    -fx-text-fill:          black;
   }
 
 .button
   {
     -fx-background-color:   rgb(20,20,20);
     -fx-text-fill:          white;
-    -fx-font-size:          40;
+    -fx-font-size:          3.15em;
     -fx-border-color:       rgb(50, 50, 50);
-    -fx-border-radius:      10px;
-    -fx-background-radius:  10px;
+    -fx-border-radius:      0.25em;
+    -fx-background-radius:  0.25em;
   }
-  
+
 .button:focused
   {
     -fx-border-color:       rgb(130,130,130);
   }
 
-.smallButton
-  {
-    -fx-font-size:          28;
-    -fx-border-radius:      12px;
-    -fx-background-radius:  12px;
-  }
-  
-.mainMenuButton
-  {
-    -fx-font-size:          60;
-    -fx-border-radius:      20px;
-    -fx-background-radius:  20px;
-    -fx-padding:            5px;
-  }
-  
 .list-view
   {
     -fx-background-color:   rgb(20,20,20);
   }
 
-.list-cell 
+.list-cell
   {
-    -fx-font-size:          30; 
+    -fx-font-size:          2.36em;
     -fx-background-color:   transparent;
     /*-fx-padding:            2em 2.5em 2em 2.5em;*/
     -fx-text-fill:          white;
   }
-  
+
 .list-cell:even
   {
-    -fx-background-color:   rgb(30,30,30);
+    -fx-background-color:   rgb(25,25,25);
+  }
+  
+.toggle-button
+  {
+    -fx-background-color:    black;
+  }
+  
+.toggle-button:selected
+  {
+    -fx-background-color:   linear-gradient(rgb(95.0, 165.0, 221.0),
+                                            rgb(54.0, 124.0, 192.0)),
+                            linear-gradient(rgb(116.0, 186.0, 232.0),
+                                            rgb(116.0, 186.0, 232.0) 1.0%,
+                                            rgb(109.0, 178.0, 227.0) 1.0%,
+                                            rgb(59.0, 136.0, 208.0) 100.0%);
   }
 
+.toggle-button:armed, .toggle-button:selected:armed
+  {
+    -fx-background-color: rgb(87.0, 87.0, 87.0), -toggle-armed-base, -toggle-shadow-armed;
+  }
+  
+
+.MediaFileSystem,
+.RepositoryBrowserByArtistThenTrack,
+.RepositoryBrowserByArtistThenRecord,
+.RepositoryBrowserByRecordThenTrack,
+.RepositoryBrowserByTrack
+  {
+    -fx-min-width:           3em;
+    -fx-max-width:           3em;
+    -fx-pref-width:          3em;
+    -fx-padding:             0.2em;
+    -fx-background-size:     1.8em 1.8em;
+    -fx-background-repeat:   no-repeat;
+    -fx-background-position: center;
+  }
+
+.MediaFileSystem
+  {
+    -fx-background-image:    url("music-128.png");
+  }
+  
+.RepositoryBrowserByArtistThenTrack
+  {
+    -fx-background-image:    url("contacts-128.png");
+  }
+  
+.RepositoryBrowserByArtistThenRecord
+  {
+    -fx-background-image:    url("contacts-128.png");
+  }
+  
+.RepositoryBrowserByRecordThenTrack
+  {
+    -fx-background-image:    url("cd-128.png");
+  }
+
+.RepositoryBrowserByTrack
+  {
+    -fx-background-image:    url("note-128.png");
+  }
+  
+  
+  
+.mainFxmlClass
+  {
+    -fx-background-color:   black;
+  }
+
+.content-panel
+  {
+    -fx-padding:            1em;
+  }
+
+.header-label
+  {
+    -fx-font-size:          4.7em;
+  }
+
+.very-small-label
+  {
+    -fx-font-size:          1.57em;
+  }
+
+.small-label
+  {
+    -fx-font-size:          2.2em;
+  }
+
+.medium-label
+  {
+    -fx-font-size:          2.4em;
+  }
+
+.large-label
+  {
+    -fx-font-size:          3.9em;
+  }
+  
+.large-title-label
+  {
+    -fx-font-size:          3.5em;
+    -fx-font-weight:        bold;
+    -fx-text-fill:          rgb(250,210,0);
+  }
+
+.smallButton
+  {
+    -fx-font-size:          2.2em;
+    -fx-border-radius:      0.3em;
+    -fx-background-radius:  0.3em
+  }
+
+.mainMenuButton
+  {
+    -fx-font-size:          4.72em;
+    -fx-border-radius:      0.5em;
+    -fx-background-radius:  0.5em;
+    -fx-padding:            0.125em;
+  }
+
+.cell-container
+  {
+    -fx-pref-width:             100%;
+    -fx-alignment:              baseline-left;
+  }
+
+.folder-icon,
+.artist-icon,
+.artist-group-icon,
+.record-icon,
+.track-icon
+  {
+    -fx-min-width:              2.2em;
+    -fx-max-width:              2.2em;
+    -fx-pref-width:             2.2em;
+    -fx-background-repeat:      no-repeat;
+    -fx-background-position:    left center;
+    -fx-background-size:        1.9em 1.9em;
+    -fx-alignment:              center;
+  }
+
+.track-icon
+  {
+    -fx-background-image:       url("note-128.png");
+  }
+  
 .folder-icon
   {
     -fx-background-image:       url("music-128.png");
-    -fx-background-repeat:      no-repeat;
-    -fx-background-position:    left center;
-    -fx-background-size:        24 24;
-    -fx-alignment:              center;    
   }
-  
+
 .artist-icon
   {
     -fx-background-image:       url("contacts-128.png");
-    -fx-background-repeat:      no-repeat;
-    -fx-background-position:    left center;
-    -fx-background-size:        24 24;
-    -fx-alignment:              center;    
   }
-  
+
 .artist-group-icon
   {
     -fx-background-image:       url("group-128.png");
   }
-  
+
 .record-icon
   {
     -fx-background-image:       url("cd-128.png");
-    -fx-background-repeat:      no-repeat;
-    -fx-background-position:    left center;
-    -fx-background-size:        24 24;
-    -fx-alignment:              center;    
   }
-  
+
 .track-icon
   {
     -fx-background-image:       url("note-128.png");
-    -fx-background-repeat:      no-repeat;
-    -fx-background-position:    left center;
-    -fx-background-size:        24 24;
-    -fx-alignment:              center;    
   }
-  
+
 .track-index
   {
-    -fx-font-size:              20; 
-    -fx-alignment:              baseline-right;    
+    -fx-min-width:              4.3em;
+    -fx-max-width:              4.3em;
+    -fx-pref-width:             4.3em;
+    -fx-font-size:              0.6em;
+    -fx-alignment:              baseline-right;
   }
-  
+
 .folder-label,
 .artist-label,
 .record-label,
 .track-label
   {
-    -fx-wrap-text:              true;    
+    -fx-pref-width:             9999; /* FIXME */
+    -fx-wrap-text:              true;
   }
-  
+
 .record-duration,
 .track-duration
   {
-    -fx-font-size:              20; 
-    -fx-alignment:              baseline-right;    
+    -fx-min-width:              6.2em;
+    -fx-max-width:              6.2em;
+    -fx-pref-width:             6.2em;
+    -fx-font-size:              0.7em;
+    -fx-alignment:              baseline-right;
     -fx-text-fill:              rgb(200, 200, 200);
   }
   
-.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:focused:selected,
-.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected 
+.cover-art
   {
-    -fx-background-color:   linear-gradient(rgb(95.0, 165.0, 221.0),
-                                            rgb(54.0, 124.0, 192.0)),
-                            linear-gradient(rgb(116.0, 186.0, 232.0), 
-                                            rgb(116.0, 186.0, 232.0) 1.0%, 
-                                            rgb(109.0, 178.0, 227.0) 1.0%, 
-                                            rgb(59.0, 136.0, 208.0) 100.0%);
-    -fx-background-insets:  0.0, 1.0 0.0 1.0 0.0;
-    -fx-text-fill:          black;
+    -fx-background-color:       rgb(20,20,20);
+  }
+
+.cover-art-image
+  {
+    -fx-background-color:       rgb(40,40,40);
+  }
+
+.details
+  {
+    -fx-background-color:       rgb(20,20,20);
+    -fx-padding:                0.125em;
   }
   
-#btUp
-  {    
-    -fx-padding:             8;
-    -fx-background-image:    url("arrow-135-128.png");
-    -fx-background-size:     32 32;
+.track-details  
+  {
+    -fx-font-size:              2.0em;
+    -fx-wrap-text:              true;
+  }
+
+  
+  
+#btUp,
+#btPlay,
+#btStop,
+#btPause,
+#btRewind,
+#btFastForward,
+#btPrev,
+#btNext
+  {
+    -fx-padding:             0.2em;
+    -fx-background-size:     2em 2em;
     -fx-background-repeat:   no-repeat;
-    -fx-background-position: center;   
+    -fx-background-position: center;
+  }
+
+#btUp
+  {
+    -fx-background-image:    url("arrow-135-128.png");
   }
 
 #btPlay
-  {    
-    -fx-padding:             8;
+  {
     -fx-background-image:    url("play-5-128.png");
-    -fx-background-size:     32 32;
-    -fx-background-repeat:   no-repeat;
-    -fx-background-position: center;   
   }
 
 #btStop
-  {          
-    -fx-padding:             8;
+  {
     -fx-background-image:    url("stop-128.png");
-    -fx-background-size:     32 32;
-    -fx-background-repeat:   no-repeat;
-    -fx-background-position: center;   
   }
 
 #btPause
-  {          
-    -fx-padding:             8;
+  {
     -fx-background-image:    url("pause-128.png");
-    -fx-background-size:     32 32;
-    -fx-background-repeat:   no-repeat;
-    -fx-background-position: center;   
   }
 
 #btRewind
-  {          
-    -fx-padding:             8;
+  {
     -fx-background-image:    url("arrow-69-128.png");
-    -fx-background-size:     48 48;
-    -fx-background-repeat:   no-repeat;
-    -fx-background-position: center;   
   }
 
 #btFastForward
-  {          
-    -fx-padding:             8;
+  {
     -fx-background-image:    url("arrow-44-128.png");
-    -fx-background-size:     48 48;
-    -fx-background-repeat:   no-repeat;
-    -fx-background-position: center;   
   }
 
+#btPrev
+  {
+    -fx-background-image:    url("arrow-107-128.png");
+  }
+  
+#btNext
+  {
+    -fx-background-image:    url("arrow-41-128.png");
+  }
   

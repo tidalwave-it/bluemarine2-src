@@ -1,0 +1,66 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/7b511686-91be-4ed3-9bcd-1a653d209056>
+      a       mo:Record ;
+      rdfs:label "Intégrale, Volume 7: \"Christmas Swing\" (disc 2)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000024WFK" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000024WFK.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "20"^^xsd:int ;
+      vocab:tracks "21"^^xsd:int ;
+      dc:date "1999-03-08" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Intégrale, Volume 7: \"Christmas Swing\" (disc 2)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000024WFK> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000024WFK.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000024WFK> ;
+      mo:musicbrainz <http://musicbrainz.org/album/7b511686-91be-4ed3-9bcd-1a653d209056> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/440957> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/f46a3633-403d-4f51-8fb7-a4275e85e801> , <http://dbtune.org/musicbrainz/resource/track/cc363c77-e969-406f-836a-3d152605ceb8> , <http://dbtune.org/musicbrainz/resource/track/061c90d8-06e5-440d-bb26-6ca0ac456084> , <http://dbtune.org/musicbrainz/resource/track/f48447c1-f3f1-4bf9-921d-c4a5afe4c078> , <http://dbtune.org/musicbrainz/resource/track/41310931-f55b-4b8f-ab43-8eaf157ee5b9> , <http://dbtune.org/musicbrainz/resource/track/5267261d-b979-4afc-be14-405e8163aa16> , <http://dbtune.org/musicbrainz/resource/track/c4273518-9d64-4c1f-9a24-361c4b611fa5> , <http://dbtune.org/musicbrainz/resource/track/ea3f36e0-5466-4177-a47a-02c98bcb7407> , <http://dbtune.org/musicbrainz/resource/track/052d0c38-1c39-4776-9d3f-5d03e5525de6> , <http://dbtune.org/musicbrainz/resource/track/ffaf34e8-21fb-4cf1-9430-c40bea21514c> , <http://dbtune.org/musicbrainz/resource/track/9f75f371-70fa-4f79-94a3-6c4584a2c0c7> , <http://dbtune.org/musicbrainz/resource/track/63e5be2d-2995-4336-8eb7-2508ffcb6182> , <http://dbtune.org/musicbrainz/resource/track/7402fdb6-3591-48f1-9eed-22629c25ac47> , <http://dbtune.org/musicbrainz/resource/track/4a141be7-37f2-46a2-acd8-efd23cac77e4> , <http://dbtune.org/musicbrainz/resource/track/3dc0676c-ae6c-4ea9-bac9-0c555176ccc7> , <http://dbtune.org/musicbrainz/resource/track/419cf3d6-76ff-4a1a-85d5-81035eae9253> , <http://dbtune.org/musicbrainz/resource/track/f5e2135d-a351-47d5-a9f7-6a2ac6a9cb2d> , <http://dbtune.org/musicbrainz/resource/track/0670d9c3-54fc-46f9-a274-1086f2e109a8> , <http://dbtune.org/musicbrainz/resource/track/becddd10-315a-4615-ad14-0ea79b6a00b0> , <http://dbtune.org/musicbrainz/resource/track/69e1eba0-b31c-43b6-b190-7183f8042c57> , <http://dbtune.org/musicbrainz/resource/track/ae7d9ef0-23e4-4303-a49a-e1d9a35cc4d4> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> ;
+      foaf:page "351967507" .
+
+<http://dbtune.org/musicbrainz/data/record/7b511686-91be-4ed3-9bcd-1a653d209056>
+      rdfs:label "RDF Description of Intégrale, Volume 7: \"Christmas Swing\" (disc 2)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/7b511686-91be-4ed3-9bcd-1a653d209056> .
+
+<http://dbtune.org/musicbrainz/resource/master/7b511686-91be-4ed3-9bcd-1a653d209056>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/7b511686-91be-4ed3-9bcd-1a653d209056> .
+
+<http://ec1.images-amazon.com/images/P/B000024WFK.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000024WFK.01.MZZZZZZZ.jpg%3E> .
+
+<http://images.amazon.com/images/P/B000024WFK>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000024WFK%3E> .
+
+<http://musicbrainz.org/album/7b511686-91be-4ed3-9bcd-1a653d209056>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F7b511686-91be-4ed3-9bcd-1a653d209056%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000024WFK>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000024WFK%3E> .

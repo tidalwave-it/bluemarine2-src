@@ -1,0 +1,66 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/0f399829-3713-4c3d-9b8d-201087959f2b>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F0f399829-3713-4c3d-9b8d-201087959f2b%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/0f399829-3713-4c3d-9b8d-201087959f2b>
+      a       mo:Record ;
+      rdfs:label "Always & Forever (disc 1)" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00009L56Z" ;
+      vocab:albummeta_coverarturl
+              "http://images-eu.amazon.com/images/P/B00009L56Z.02.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "4"^^xsd:int ;
+      vocab:tracks "20"^^xsd:int ;
+      dc:date "2003-06-02" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Always & Forever (disc 1)" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00009L56Z> ;
+      mo:image <http://images.amazon.com/images/P/B00009L56Z> , <http://images-eu.amazon.com/images/P/B00009L56Z.02.MZZZZZZZ.jpg> ;
+      mo:musicbrainz <http://musicbrainz.org/album/0f399829-3713-4c3d-9b8d-201087959f2b> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/199540> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/ea7921a6-3da2-4864-9b0e-00dbea469a39> , <http://dbtune.org/musicbrainz/resource/track/1e391409-b457-430d-8c82-4c8638c1b61d> , <http://dbtune.org/musicbrainz/resource/track/960fc173-853b-433a-96e5-8d373e54979f> , <http://dbtune.org/musicbrainz/resource/track/4275e6c6-4ab9-4c00-b907-58e94c585f58> , <http://dbtune.org/musicbrainz/resource/track/0dd0ad5c-adf9-4fe6-8739-4e58246a4d64> , <http://dbtune.org/musicbrainz/resource/track/b76a3c01-cfd4-4e59-8f8d-1b90f14401d2> , <http://dbtune.org/musicbrainz/resource/track/d247cbab-4b21-4443-9a4d-72630c5b3558> , <http://dbtune.org/musicbrainz/resource/track/7cf7cc38-2e99-47e8-b07b-57929e74e0a3> , <http://dbtune.org/musicbrainz/resource/track/47f1df92-b669-4f07-963f-317b48c62dab> , <http://dbtune.org/musicbrainz/resource/track/d51d684d-7262-410f-ac2f-3a60e5b66e53> , <http://dbtune.org/musicbrainz/resource/track/e4f4d4ac-45b0-4aea-add0-0271de6e6674> , <http://dbtune.org/musicbrainz/resource/track/2b636f00-d669-44d8-a739-03f63ccdf8a0> , <http://dbtune.org/musicbrainz/resource/track/c973451a-8a8d-471f-9667-18cb2293ea4e> , <http://dbtune.org/musicbrainz/resource/track/b96d6887-e16e-4d8b-b799-a39b0a50059d> , <http://dbtune.org/musicbrainz/resource/track/b0589b89-8e19-4f03-82b4-953287184c7d> , <http://dbtune.org/musicbrainz/resource/track/ce94a827-7299-4def-a9d7-ba0ce535e509> , <http://dbtune.org/musicbrainz/resource/track/b0284376-c2c2-4875-bbb4-fc7f9fb74620> , <http://dbtune.org/musicbrainz/resource/track/1429b795-6eca-419d-a35f-5b571d67e238> , <http://dbtune.org/musicbrainz/resource/track/094e6b2f-5e1f-45a7-8f32-4c9a3bcdf7fa> , <http://dbtune.org/musicbrainz/resource/track/26ba25c7-12df-4a80-b215-e329d6c3ad3c> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "81529684" .
+
+<http://images.amazon.com/images/P/B00009L56Z>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00009L56Z%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/0f399829-3713-4c3d-9b8d-201087959f2b>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/0f399829-3713-4c3d-9b8d-201087959f2b> .
+
+<http://dbtune.org/musicbrainz/data/record/0f399829-3713-4c3d-9b8d-201087959f2b>
+      rdfs:label "RDF Description of Always & Forever (disc 1)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/0f399829-3713-4c3d-9b8d-201087959f2b> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00009L56Z>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00009L56Z%3E> .
+
+<http://images-eu.amazon.com/images/P/B00009L56Z.02.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages-eu.amazon.com%2Fimages%2FP%2FB00009L56Z.02.MZZZZZZZ.jpg%3E> .

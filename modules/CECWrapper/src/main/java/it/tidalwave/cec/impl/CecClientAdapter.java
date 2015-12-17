@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -34,7 +34,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.IOException;
 import it.tidalwave.util.NotFoundException;
-import it.tidalwave.util.PowerOnNotification;
 import it.tidalwave.util.ProcessExecutor;
 import it.tidalwave.util.ProcessExecutor.ConsoleOutput;
 import it.tidalwave.util.spi.DefaultProcessExecutor;
@@ -43,6 +42,7 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.cec.CecEvent;
 import it.tidalwave.cec.CecEvent.EventType;
+import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -89,7 +89,10 @@ public class CecClientAdapter
               }
             catch (NotFoundException e)
               {
-                log.warn("Not found: {}", e.getMessage());
+                // 04:1a:01 - Give deck status
+                // 04:90:00 - Report power status
+                // 04:89:01 - Vendor specific data
+                log.warn("Not found: {} / {}", string, e.getMessage());
               }
           }
       };

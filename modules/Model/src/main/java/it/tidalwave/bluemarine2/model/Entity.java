@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -28,9 +28,7 @@
  */
 package it.tidalwave.bluemarine2.model;
 
-import javax.annotation.Nonnull;
-import java.util.Optional;
-import it.tidalwave.util.As;
+import it.tidalwave.util.As8;
 
 /***********************************************************************************************************************
  *
@@ -40,12 +38,6 @@ import it.tidalwave.util.As;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Entity extends As
+public interface Entity extends As8
   {
-    // FIXME: introduce As8 and push up there
-    @Nonnull
-    default <T> Optional<T> asOptional (final @Nonnull Class<T> type)
-      {
-        return Optional.ofNullable(as(type, throwable -> null)); 
-      }
   }

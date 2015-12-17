@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -28,10 +28,14 @@
  */
 package it.tidalwave.bluemarine2.downloader;
 
+import java.io.IOException;
+import java.net.URI;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -62,4 +66,21 @@ public class DownloadComplete
     
     @Nonnull
     private final Origin origin;
+    
+    @Nonnull
+    public URI getCachedUri()
+      {
+        // FIXME: pass the URI of the cached datum instead
+        // Refactor getBytes() so it loads on demand from the URI
+        try 
+          {
+            final Path tempFile = Files.createTempFile("tmp", "image");
+            Files.write(tempFile, bytes);
+            return tempFile.toUri();
+          } 
+        catch (IOException e) 
+          {
+            throw new RuntimeException(e);
+          }
+      }
   }

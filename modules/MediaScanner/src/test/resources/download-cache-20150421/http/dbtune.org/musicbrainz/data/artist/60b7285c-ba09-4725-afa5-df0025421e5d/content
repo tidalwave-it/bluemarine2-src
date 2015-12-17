@@ -1,0 +1,1047 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/track/f916eae3-4ae9-4041-93b2-c5e0c121930f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/67cc0a09-2496-4536-8395-e1ca2292e27a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/51ec5aa9-b975-4d91-82d2-bf8bcfafcb4c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/3ea646f5-c453-4521-96c4-88a4cdc8c39f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/83658f60-15be-4aeb-82bb-dd002af89209>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/0d37ba52-1f8e-4667-a95c-1648e6856782>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/a12a63d1-f67e-483e-8d4f-ce99d2f600be>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/5f042439-8b1c-4d4d-afb4-7c9529291d59>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/619f61f4-34f7-4fbb-a106-ca309b86e8d0>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/7e29a0e1-1b21-434c-85b6-60d2fa006ed5>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/fecfded8-beca-467a-909b-63beef0163d3>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/632a6654-610f-4ab7-a0e8-004ada93aefa>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/8874d770-9ddf-440c-ade2-88a84a552f63>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/f19de7c1-41cb-47f4-bce8-3280770c1582>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/9e0a4725-8afa-4b94-8d96-f1a6924d4ec8>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/b12a47db-bf3a-4a5d-b4d1-5e1512ca07dc>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/0748c01c-29f8-4f9d-ae93-6d19f29cc87d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/9cd117bc-44fe-4664-a642-8605f14a90a5>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/8c9346d2-4a0c-4687-9d8f-c99fb9a903a3>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/b5c84489-3a6f-4fd2-b618-ac851baf53ad>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/645348a4-c666-4e61-91bd-a881914179d1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/2a8b14a0-928f-4162-91c9-4969f373cc2e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/529f5575-603e-413f-a2dd-233cab08babc>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/ff4d95d2-d95d-4a37-99e2-d0846694d68a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/f6821b59-c0d0-48dd-8a10-13defca07a33>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/87e821a7-c576-4c76-9bf9-c72a1b8f1eac>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/b942de11-3a56-4a22-9c7f-dfeac233d3a7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/d3279921-5d11-4145-bcb4-c8fc4af733c2>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/ca5b172e-a402-4200-95f4-1e80008b9a4b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/d5b6c5e3-a12e-4223-9a4f-1bf3ef4d6c9b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/ddb73a78-8c42-4916-a148-d1cf75d479ea>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/d75a0616-970a-4869-b9c6-bcd25503a308>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/bfe0e865-fe64-4315-a739-d4789489ef92>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/ba6074a7-8e87-40fd-a7f6-5c538d1a8418>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/1672b44f-ac91-4728-a97a-f2328dbfeba1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/366a8784-f130-42ac-8ca3-103df1c1629e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/1d40c090-c7e0-4b00-afe8-cbeec0658388>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/f488670c-4c09-4288-bc73-377e74d278e8>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/b6fc7d47-648c-4712-81b8-96953902bd90>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/a1017cb4-d7c3-40d2-95b6-7491e02677ac>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/0fe96507-8f33-4901-b5ff-9a1ef4aff5b2>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/cdcda59f-189b-42bb-9db9-f4edacca3c9c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/32bb5c76-94cf-401c-b276-899cf308f7ce>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/b402dc27-b040-4ff3-a7ce-fdbf47437f52>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/9e02761a-7bdd-4e1f-9d3c-441f1876ce39>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/e29ab2a5-bc13-44a9-93da-5b02ba33f3c1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/73ab6a8a-7849-43cc-87a0-70f1dad25315>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/05c54e32-00c6-45c7-b9cd-fb33222db960>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/c35f4bba-c652-4c1e-b3be-dbf87313db03>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/d7f72a38-b890-4764-bf74-c43f37706594>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/62f65ca7-a9e7-4956-b9ec-4f65f47fdb1f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/91381e62-a51b-458a-a8c3-caffe0844bea>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/0a09aaaa-a328-43e8-bd5f-21e24fbff61e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/2c180c6e-e361-4b62-8d04-2f0c3e872afa>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/ea0ddade-b8f8-41ab-b3a9-9a1c8751b9a3>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/d7cd5b0c-1781-4a69-8e19-00e65a9bd7fe>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/e0d3cd16-d8c2-49f8-b219-4fa7f167980d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/158025ab-7df6-495c-9f40-cefa07be2d7c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/5b474b41-8523-40e9-81c9-90ffa8614afa>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/dfeb7bbf-2572-452a-9bc1-6a50b837001b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/4a25ed41-39ab-47f7-aab4-cc3dc112c42f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/4ef9c222-1b0c-425a-ab91-1508f5fa94f7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/d5b425be-dc35-4edc-82de-95d01284ee2f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/e20207a6-601b-43d2-9e36-a3d7196f5d1a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/03c19d0c-dad0-40b3-b782-5df024e91d5e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/8313bb07-3cfa-48e6-9c6e-c8ff32db786b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/de848010-b4c6-4037-bda4-d11f855e6d78>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/18a0904f-ecba-4dfd-ab48-4d5792e5b3e0>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/44548691-c31a-466f-b679-3a8cbde662e1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/528e3762-935e-4489-b44b-ad77fd8f6fe5>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/e06e1d9b-d728-4807-9611-84eba6094e68>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/0d98e3b8-1cd6-4b48-bda1-0cf90de4e80b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/a607531d-23e7-45c5-b3fa-4633b3bd546a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/0420e072-4e11-40dc-9459-e78282062fba>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/266bd076-7d84-4e19-a191-e5e97b748ab6>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/c0b20757-cb88-41a4-9ad8-b308a007b969>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/5e6be4b4-fd83-4648-9b77-56b526404845>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/b416b079-58c2-4acf-8d9f-abab9e00f586>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/da93aa8a-033c-432a-b05e-27b84b909459>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/1c365667-fafa-4aad-9ee0-398948e2ca2e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/a4a2b1ef-dbe7-49d7-80ad-a99fc38e689f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/1da7be23-d657-4c88-aac5-3b501b36aa71>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/1650254d-5ff5-45ef-9a2e-fe966ac65c13>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/bd9bf99c-7808-4bf1-b90d-325eacda8c99>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/d7c30eed-747e-4dd9-a95e-8eaac9404a87>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/975f3500-bd15-43a5-acf3-8cffe25ece4b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/f75a381f-90f9-4887-a741-7d918dd8f343>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/6daee2f5-6a37-47cb-bf1b-ad5cb4ba5910>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/4f81eb6e-79c2-4fae-906d-f24292fe788a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/9806b196-32fe-4441-8bc5-52c384412d43>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/1f57ea6c-fb1e-4724-a714-5781d5ab74e9>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/38f65a8a-df11-4687-a8ce-7a1e549b6430>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/778b54a2-be58-429f-928e-7f86c84348fc>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/80ff69ee-9f4f-4dc0-aed3-b588474bb706>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/2592f1b9-d64d-4e07-96a1-b3de33a95b6d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/18032bbd-7e9c-4299-ad11-7d664606f0d4>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/61bf8fb5-9607-47a7-9b2d-4fb4b8db79a8>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/c45dd0aa-84e2-46d8-9b76-eb065ddb0853>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/fddfcd23-71e0-4dce-af47-2b4d36964a14>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/6eae4dfe-3a25-4104-8306-93ed9cca5894>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/e7241ed5-ba5a-46d3-b104-111e3468bd48>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/84eaf57d-fea7-443f-9a48-500f4d248cb7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/78ba6d08-6179-46af-a9aa-5f42fb69b1e9>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/227571d6-588b-4bfc-a477-550293edcb66>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/537bc998-d460-4acd-a7ac-b2fc09d665e7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/b56f3ec5-b96d-4405-b6d6-54ca7599d00d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/7e11e281-8513-4c84-ae95-7cd5b2dbe366>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/be3ec49b-76c1-4cb9-832d-58b6534ac6f3>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/24936d9d-f5ef-4978-9a6e-c165dc6e8680>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/cad795c2-65e4-45cf-82df-dcfe7a9c855c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/693ef994-9eb1-445f-9075-250fe9bd5e28>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/7b53e3ae-e502-4619-b132-d2e778be68d1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/dea3d4f3-0cb3-448d-8c65-f5c41757a094>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/ae8def87-d66a-431a-9b3b-e42355147536>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/35df0f50-f40a-49d5-8a40-e5ee57617f8a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/22a9d14a-e936-4cbf-a1e7-31defdb71833>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/3ea95b0d-fea9-4e26-b364-73c61fb954eb>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/07fefaec-e99a-4a7b-9aa4-57e52f8e235e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/fb2707e6-e19d-4354-bbb5-af26fb36cf8f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/2d202889-3468-40ff-a49e-8028dd1e91ad>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/df9c5d9f-877f-4245-8fe6-a50d9d138239>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/549825b8-6c2a-4eba-b167-64076976a67e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/06541ed4-d364-461c-821f-c7498fe9e40e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/625f622b-2025-463b-9b1c-3f06a63902cc>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/73ca337a-0942-4bd1-9f2c-80620f8227f7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/b793574f-222e-4689-a5b2-20c7c30f526e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/44f70693-e709-4242-9a70-c03a71cf0928>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/997ba23f-8be0-425a-807e-f4d33bfdd642>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/29823413-9e1d-4a62-bb5e-a07716569bba>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/788d606f-50a3-4129-ae49-98bc8ddbc248>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/0c83a56c-e4de-4567-bb40-725a690aa400>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/7d075550-ba83-45d0-afee-c7e044d8232b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/c019fd2b-d7d3-4faa-9cb7-2e9b254d9e20>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/a39f53d8-3763-4817-807d-b9aaffba6d36>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/e0de84ac-c997-421e-be6d-9f99a56f908b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/de9f90cb-59fd-4bec-abc1-e319bf19cdf1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/e6434b73-2289-472e-8985-4f8f26c6921d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/e1871699-4cc3-4c31-8c5d-6692819cc305>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/b8d9d0ab-1019-4779-8aa6-8c28f2c12882>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/088dd43d-47b1-4042-a7ad-10ffd32d14d5>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/b301324d-8b77-4e7d-a8b2-3f107725bb69>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/08485120-1ac4-45a8-9f3d-b58b55a06dbf>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/d5939702-7d3d-4c36-b1e2-78dd601de37f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/dd4883d3-d635-4c25-8947-63be03670f47>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/c031754b-ed2a-432d-8dac-ad2e6f55d3ef>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/96f1501a-734a-418d-b750-8af84cacddf5>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/fd6af450-d144-4176-b27b-c1c230d58010>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/50b9172b-05ac-4d66-93d4-000bcca87476>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/25386627-4034-4842-8a8f-2397828326d8>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/561cf33f-7cff-43d5-8d53-27425050dd6f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/1b110a80-d9ab-4160-b1e4-38a96e239433>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/a1843a14-cfbe-4190-b60b-a0315ae26461>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/fd50c08e-f11c-42f0-9d6e-ea831ff51c60>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/e68cf246-4102-473d-ac98-3e779e1ef4b5>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://musicbrainz.org/artist/60b7285c-ba09-4725-afa5-df0025421e5d>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Fartist%2F60b7285c-ba09-4725-afa5-df0025421e5d%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/0e727b92-651f-4feb-a483-47e0ec519ec0>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/dfe0feaf-63d9-4852-810c-abc15f872c0d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/80fb0490-24aa-4fca-99c6-892b2750492e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/2baac975-e6c2-4f07-bab3-e5022545f317>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/c73e3c91-e548-4560-87b7-f66e91c5fcbd>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/13ae6f13-df91-47b0-90e9-8a15398baa77>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/5653d4be-751c-4001-ba2a-bf97eacc9e5a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/e1921e40-e724-4466-a631-afa1cbaab35d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/f1f4d414-8078-4de6-ae32-a9970aeb43c1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/39370faa-80ae-4ca6-ac44-707805fb9e78>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/9f6e7ad4-bfda-471e-8e2f-cdb685011fb9>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/c702e27a-02c7-4b9d-b1dc-b588855c339e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/6e81b273-738c-47e8-a017-175cafc75b0a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/2960b57d-22db-40ee-99dc-833bd8f5a4f1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/bb9ebb7f-cb7a-4eb9-aa26-f74920187b92>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/cc485fb0-7326-4f59-9fbc-ebfa0b9c3b3d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/04e907a1-6b43-4283-9917-6c79851ac3c1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/96341c00-9b96-4f62-9a88-c8967c9cde74>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/c9290370-cbc0-49c8-91d9-bb45cc983bd5>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/be4f89ca-9b87-4fe0-855f-9e0397418071>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/265e6fcc-e8eb-4f34-9bb6-efea2faed0b0>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/87cbb8ef-00ff-45ae-ab74-1d680f2f1496>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/fd0512fc-d6a0-46d4-8d1e-b37b8c379f16>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/62f6be95-a08f-4473-bec0-99c3a3639fa6>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/e8aaec89-f010-460c-9993-ebdbdf650e7b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/3e495c99-fca9-4470-b21b-6d4364195a69>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/fabb299e-9044-4b94-94aa-3429a0532bac>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/5616a83e-b9ad-45ad-abf9-053384832087>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/66f59d2b-d5d9-43db-804a-89b88b432fd1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/0c3fa627-2dc5-42d5-a3fc-d8ee95da08a2>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/3638e3bd-2053-47dd-baee-3793b1eeadf3>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/ad057492-631f-4a6b-80bf-caffb5d3a4be>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/d0cf0f26-1a5a-41c6-9ae0-597e8476fc7a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/62268461-208e-4fc9-a314-d568846824ef>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/7953b27d-d807-4757-9fed-cdc4420a948e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/9f10ae97-8b06-44d6-908d-991243a26251>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/69bdb09b-d35e-4f5c-ade3-a4d007f052cf>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/fc253924-8c92-462c-84c5-9e665c0a31c0>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/86c53444-2ee2-4d12-a1fd-16a36b4ce19f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/6cb26e4a-61f0-405a-835b-e2e0bb83e59e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/b0e25983-3879-4d4c-a068-3e782b27648d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/700147f6-20ec-41cc-ab78-ab14159defc3>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/ac057583-8185-4e4b-82af-34eefc5519f4>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/cc59f1f3-09e7-43e1-96df-7470eb4def4a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/8b24faaa-ab92-47ce-b3f7-d7e63c7271ee>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/107aa87e-3810-41c1-ae0c-1b9aaa369cef>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/5ecb3e52-a12e-46b9-bcc1-1a35366d70af>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/81caccd7-6566-41ad-803b-d01aecf4c61b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/053b4bf7-e9c9-473e-8058-a729bcf6301e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/a6c8a79d-090c-4302-8ba9-65062f25fad8>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/3a1dc806-072c-41c4-af05-ca3393b6bdb1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/54bb8444-1546-4eb6-9cd5-a336e42307cf>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/dbddd56a-0c40-4dbf-ad40-12bfe11f96db>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/6b498527-d168-4f60-be49-a890a8966f49>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/2750ccad-dfac-4f3c-9f92-cd3992923da3>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/0033bd21-d1c3-480c-917f-38e59d4d52e5>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/1288b76a-c1fb-45b9-a18c-b62127a43176>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/044e6c2f-6105-4b84-96ee-55a1bbc2f12c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/ca870969-433a-4815-b4a3-6bc666542393>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d>
+      a       mo:MusicArtist ;
+      rdfs:label "The Benedictine Monks of Santo Domingo de Silos" ;
+      vocab:alias "The Benedictine Monks of Santo Domingo de Silos" , "Monjcs del Monasterio Benedictino de Santo Domingo de Silos" , "Coro de Monjes del Monasterio Benedictino de Santo Domingo de Silos" , "Santo Domingo de Silos" , "The Benedictine Monks of Santa Domingo De Silos" , "Benedictine Monks Of Santo Domingo De Silos" ;
+      vocab:artist_quality
+              "-1"^^xsd:short ;
+      vocab:artist_type "2"^^xsd:short ;
+      vocab:sortname "Benedictine Monks of Santo Domingo de Silos, The" ;
+      mo:musicbrainz <http://musicbrainz.org/artist/60b7285c-ba09-4725-afa5-df0025421e5d> ;
+      =       <http://www.bbc.co.uk/music/artists/60b7285c-ba09-4725-afa5-df0025421e5d#artist> ;
+      foaf:name "The Benedictine Monks of Santo Domingo de Silos" .
+
+<http://dbtune.org/musicbrainz/resource/track/903afbdf-9054-4640-bbb5-b8ad68a6ecf6>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/6c5c3827-bcf4-432c-9625-4dd2b3bb42ff>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/8ccb499f-301c-4e10-8097-0b7b2087c80c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/3408055d-7966-49d2-8f19-bae5fa70c20c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/d15ea63c-af40-4f44-98b0-d7838b5810f8>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/6eb35661-a809-432a-96ba-09b15ac6290f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/6d141d66-17ba-4e3c-af5a-6511f0bda560>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/2212842f-9093-4384-bb52-649aaaf44321>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/a7f5ecea-219b-4dac-b870-4c644af35a9b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/820f8842-2d37-43ac-b52c-17869874a2e7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/a7997f95-477c-4877-97b7-af1e289cdc0b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/8c00ebff-4c5d-4f20-b083-bd1436b4406c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/bb68c300-b4ab-4c51-82e4-2d6e8fb7d37c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/d45c5078-deb8-47ba-a8b5-3fe61809e487>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/9569078d-ba39-4107-8343-6831300cf3a7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/9175f059-5b54-45db-adb0-f7ccb10d3360>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/36c5bae4-9058-476a-9f0a-ae4aefe0169f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/77a67798-8c79-4641-8205-aae94a7a4fca>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/18bf8d07-9090-4189-a127-c70af1a108d8>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/cc83aec7-4a6b-4218-a0a3-f3bc00f462ff>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/477f473d-760a-4056-8173-a6c6c05a9aba>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/1ee0e748-72b5-42fa-bf12-b838ca367072>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/eb2d5dcf-b324-48ea-8612-d46e6beefe75>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/264f250c-4ccb-4a77-b9ae-961b385ecf4c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/3f49e84c-febe-4ce0-b5c9-fcfe9bf5946d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/e48d34ea-d151-4c0b-8032-814c99d9c7d7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/f415f449-9c7a-48bf-8f9c-13bd66c26d3c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/2bd2dce5-2287-4c18-afe0-41059f6ed36f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/6fc56445-8e20-41e5-9e32-3f28354d96da>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/4f79dbff-00f8-4e77-a733-0df8104d8fa1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/7204dec4-e507-495a-b8f2-376ce075894f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/74efdaec-606e-4e1e-9251-bb8b00c99118>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/656a30a0-4f05-4eee-99b8-914d18dbf7d9>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/d4b7fd8d-13ab-421f-95a7-2e4ea6698cdf>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/ebfd6c26-03c8-49f4-a13f-40b60f8a99dd>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/542cd066-d5ff-4b84-b04d-1eaca2defc02>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/13198a34-3d96-4767-9b3b-08895734ef02>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/76b1b69c-b66f-4c9d-9614-54fc223ea33f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/3c14ecb9-9ae1-4791-a93e-e196567b7ce2>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/64e3bdd6-1876-4358-b132-029fb9c93482>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/af6bbccd-1eb6-46bb-8337-90c8571cd534>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/cb529a7f-63d3-4d1e-a2af-5253c4910be2>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/22b3cec6-be43-4505-8d3c-59c087a114d6>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/3083a821-c7fe-4f69-b425-99f02f64812b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/6572bba8-d239-43ac-a664-e2949af08688>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/caed896e-d781-41ac-9a30-540cea7f3082>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/b81f9e99-5a7c-4f9f-8c55-1a1d6e645e35>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/dc4c73e6-6500-4063-98f3-b267c001fc62>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/95081d65-2457-4fc8-9bb5-e66ad22240fd>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/1d5f1b42-8784-4c7b-8d0f-11b2787caa73>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/88f01a85-95f1-4be1-a853-488c1b37302d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/2047476b-d50c-40c9-aa9c-c084043c8c26>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/99374fde-4262-4810-a269-0b689a914f8e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/509d6b93-28eb-4a0c-8913-1cb7a42acd2d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/06eba73f-4f11-4abd-9033-ad6d5dcc6832>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/2005520d-2022-4f60-87a4-9412b6589633>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/c3cde7f8-df1c-49b1-b2db-aaedb3b4b6b8>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/460dc1c9-f0fa-4550-9595-7221dd5bfdfb>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/4ae7282c-8771-4dcf-b40f-b7ab47b1589c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/52579935-1989-4c35-bb3c-20460f2d6ac3>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/96ee330d-80cc-4b57-bbb8-76f717da0c6a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/955b55e9-cb4a-41d4-acd5-167baecbc1b0>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/67e137b8-95ba-4797-b22a-176cf1220632>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/14264f45-3aee-4458-a1e0-a53a18514322>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/d4f98b3a-d7b0-4e8c-9640-dda03eb28136>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/df2cd88c-50ca-43ba-a55e-0606d139eef7>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/d2120fb8-73a8-4060-aa14-7b14d892af8d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/47833d71-132d-4670-8c94-710e26d888dc>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/f5ded8b0-f990-4fbc-8ac8-7e8586245e6b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/af6acba1-4fa8-4264-a04b-32681ee28a69>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/d38b74d5-d635-4682-93a5-2cdb34afc448>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/b4810023-e462-4631-ada1-c8cf5d605dae>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/32e60b14-6ad9-48e2-ba41-b21f1200c45f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/8f5cdc9e-9ad3-4edf-968e-e729034f52ef>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/c14233f4-e1db-4cd5-b6a9-eb2ec0ccfcbb>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/81eeaeb7-a809-4542-9f78-253305b2123a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/26439203-9d85-49f8-ba6e-80c6bbbd42a4>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/4b337fea-1f4f-4ae4-a3ae-c1971ad2d963>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/d7bb32b9-0e66-4e1a-96e0-3594a01531b3>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/fface760-7a51-4500-915a-6658321a1036>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/28d8fab0-cd73-47b9-8465-541b93795241>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/6c6640ce-8fef-446f-915d-651720fe6294>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/16b4e7b3-9662-4277-9d0a-3617f8afcdee>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/e739140c-7b91-43c3-a302-13e82247f92f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/661ea4ab-8aea-4da5-b94d-8be7c7b56f67>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/data/artist/60b7285c-ba09-4725-afa5-df0025421e5d>
+      rdfs:label "RDF Description of The Benedictine Monks of Santo Domingo de Silos" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/2d2f054d-79b2-4d70-887c-af9dc80eb40d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/459691cd-f718-4a95-8b42-ae2ed813fca0>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/291720cd-cae8-4dc5-a969-4181c8ec5488>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/39be4bb9-3a56-4dea-a7a7-e444eadd2cde>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/ce7de96e-fa87-40b2-ba64-e20673e01596>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/b23d14f4-c2fb-41b1-b579-789401226b07>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/f8f99d7a-d6a4-4ea2-a954-aefeaddd7c18>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/21bac67d-1486-48ad-9ceb-312182d2a370>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/06c544ce-8fc3-49f9-a597-a0ad7ae8c97e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/0376e83f-7d9d-4c7d-86fb-d253a2781ada>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/6fe56650-e939-4ab7-bc34-b175e048172d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/4bb040d0-d2b0-4f6c-ba7f-455bbbb73384>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/d4312c4d-099d-4f93-885c-4efce912c32e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/3e8beb99-d266-4296-bd54-564edf4beb40>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/26c5e180-babf-4fda-87a4-85e346d34c56>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/280758d9-01d6-4199-8328-9e799e744409>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/3041e936-3435-4769-9694-fb21410c3341>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/83fe0ec4-f13a-4d18-b2a8-aee86feb6839>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://www.bbc.co.uk/music/artists/60b7285c-ba09-4725-afa5-df0025421e5d#artist>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.bbc.co.uk%2Fmusic%2Fartists%2F60b7285c-ba09-4725-afa5-df0025421e5d%23artist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/1ff4b3e2-b337-497b-9e60-43b5c8befe5d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/296685db-8397-4d15-b0a0-52f53d667b4a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/record/bcb8c1c2-0f1e-4439-851a-29b491995211>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/415beb8e-c646-4300-be40-daa5e978a9a0>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/b34a7623-187d-41fe-8955-c1347323bdc4>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/4db87bb9-6166-4792-a66a-1a41000b9887>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/ec0c8f0a-1348-4eda-a1bb-3d0e29dc95c1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/7592149d-d760-41c6-aea8-7f3911999be0>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/0f1a87c9-43a5-4827-82cb-9c15330cba18>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/bac71861-933d-4fdf-bdde-476602728859>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+mo:MusicArtist
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FMusicArtist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/f8905bb7-575b-4250-8ebe-d650c29a4d25>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/5f21e2b4-a191-48f8-aa13-61ba6b6dd418>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/f37144b9-4357-46c4-836e-623481f0250c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/f027f574-e61a-4fbe-80b3-5d87bbd4ed17>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/85365add-60a9-4362-af26-49d7a9a748ec>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/21a9ec20-348b-4986-a6c1-c7cf056f8662>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/799a3548-861d-4788-b183-c421753bf63b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/dd741fb5-f385-4537-a5bb-a8bb9b833bd1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .
+
+<http://dbtune.org/musicbrainz/resource/track/eea8e354-a6f3-4617-9190-4560defa5d2b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/60b7285c-ba09-4725-afa5-df0025421e5d> .

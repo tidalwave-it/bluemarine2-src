@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/b9c5c49f-c831-41fa-a284-da5ccb19a6ec>
+      rdfs:label "RDF Description of Fantasia" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/b9c5c49f-c831-41fa-a284-da5ccb19a6ec> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/master/b9c5c49f-c831-41fa-a284-da5ccb19a6ec>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/b9c5c49f-c831-41fa-a284-da5ccb19a6ec> .
+
+<http://musicbrainz.org/album/b9c5c49f-c831-41fa-a284-da5ccb19a6ec>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fb9c5c49f-c831-41fa-a284-da5ccb19a6ec%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/b9c5c49f-c831-41fa-a284-da5ccb19a6ec>
+      a       mo:Record ;
+      rdfs:label "Fantasia" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000QQRBXW" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000QQRBXW.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "0"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/288011> ;
+      vocab:tracks "13"^^xsd:int ;
+      dc:date "1997-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Fantasia" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000QQRBXW> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000QQRBXW.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000QQRBXW> ;
+      mo:musicbrainz <http://musicbrainz.org/album/b9c5c49f-c831-41fa-a284-da5ccb19a6ec> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/478575> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/ef98bb1a-7f47-4c6a-91df-c96fae509441> , <http://dbtune.org/musicbrainz/resource/track/7ba61d1b-942b-43b9-917e-8cd1ba4626ae> , <http://dbtune.org/musicbrainz/resource/track/f96551ea-19b1-4f90-b85f-fe8c16fee737> , <http://dbtune.org/musicbrainz/resource/track/297affbe-17f5-4918-b926-2ca16eab4421> , <http://dbtune.org/musicbrainz/resource/track/2b60a20d-e13d-4377-9ee5-71873566c967> , <http://dbtune.org/musicbrainz/resource/track/64ce1d59-a835-4edd-8ad3-1e6249d5a048> , <http://dbtune.org/musicbrainz/resource/track/24f1752a-73f8-4434-828d-abc160e12dfb> , <http://dbtune.org/musicbrainz/resource/track/b5855173-2ad0-48fb-8448-9105b30a4842> , <http://dbtune.org/musicbrainz/resource/track/0e01ccc7-59c1-46e5-935d-7c97fe91b909> , <http://dbtune.org/musicbrainz/resource/track/c3f4bf03-2b43-466d-a55f-2410f91e4578> , <http://dbtune.org/musicbrainz/resource/track/6f259b94-c37a-4c87-9bc2-d943e9b6aa7e> , <http://dbtune.org/musicbrainz/resource/track/8b3d1861-af54-4e10-a79b-ec4da986c549> , <http://dbtune.org/musicbrainz/resource/track/5336e523-aed4-4b41-9461-26a1c54632ee> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "237491284" .
+
+<http://ec1.images-amazon.com/images/P/B000QQRBXW.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000QQRBXW.01.MZZZZZZZ.jpg%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000QQRBXW>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000QQRBXW%3E> .
+
+<http://images.amazon.com/images/P/B000QQRBXW>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000QQRBXW%3E> .

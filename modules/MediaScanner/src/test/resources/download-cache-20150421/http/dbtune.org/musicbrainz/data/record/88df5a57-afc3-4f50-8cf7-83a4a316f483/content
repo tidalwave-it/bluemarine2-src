@@ -1,0 +1,53 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/88df5a57-afc3-4f50-8cf7-83a4a316f483>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F88df5a57-afc3-4f50-8cf7-83a4a316f483%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/88df5a57-afc3-4f50-8cf7-83a4a316f483>
+      rdfs:label "RDF Description of The Platters" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/88df5a57-afc3-4f50-8cf7-83a4a316f483> .
+
+<http://dbtune.org/musicbrainz/resource/master/88df5a57-afc3-4f50-8cf7-83a4a316f483>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/88df5a57-afc3-4f50-8cf7-83a4a316f483> .
+
+<http://dbtune.org/musicbrainz/resource/record/88df5a57-afc3-4f50-8cf7-83a4a316f483>
+      a       mo:Record ;
+      rdfs:label "The Platters" ;
+      vocab:album_attributes
+              "{0,1,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "          " ;
+      vocab:albummeta_coverarturl
+              "" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "4"^^xsd:int ;
+      vocab:tracks "20"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "The Platters" ;
+      mo:musicbrainz <http://musicbrainz.org/album/88df5a57-afc3-4f50-8cf7-83a4a316f483> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/58923860-9e91-4903-9d88-d6f891ca4827> , <http://dbtune.org/musicbrainz/resource/track/f69fa858-aa15-4a63-8c59-ab0a54f71000> , <http://dbtune.org/musicbrainz/resource/track/a515ef61-f9fc-4bc1-b733-fc8a795709a5> , <http://dbtune.org/musicbrainz/resource/track/2f8dc4dc-0eaf-46db-861a-999c6421d57d> , <http://dbtune.org/musicbrainz/resource/track/63b6431c-954f-4a6a-90ac-287df95f0046> , <http://dbtune.org/musicbrainz/resource/track/315b8749-ea01-48c2-b0dc-96901035e8e1> , <http://dbtune.org/musicbrainz/resource/track/16b1b2f0-f109-4b86-8a87-ffc4756743ee> , <http://dbtune.org/musicbrainz/resource/track/92487ea3-fcd6-4c00-893c-a78562e387bb> , <http://dbtune.org/musicbrainz/resource/track/1b97eafd-d116-4470-ae96-f83e95a359e5> , <http://dbtune.org/musicbrainz/resource/track/e5363978-3a1d-48a4-9bad-fbf94fdb311e> , <http://dbtune.org/musicbrainz/resource/track/aac83c11-5fae-460f-bfea-3a724657eb72> , <http://dbtune.org/musicbrainz/resource/track/9fa88ac4-596e-45f7-9df5-c87604cae3d0> , <http://dbtune.org/musicbrainz/resource/track/3d960390-a18b-42cc-978b-3a9ed3b59ee7> , <http://dbtune.org/musicbrainz/resource/track/b1a49820-39df-403b-becd-def8073ace85> , <http://dbtune.org/musicbrainz/resource/track/3db45d43-2f1b-4795-bad3-af8649e13eb0> , <http://dbtune.org/musicbrainz/resource/track/64b639ad-79f8-4d9d-9c16-501a4ae69173> , <http://dbtune.org/musicbrainz/resource/track/a61922a6-cd10-4caa-beb3-a26e23523370> , <http://dbtune.org/musicbrainz/resource/track/57aa73c5-0629-4deb-a183-bdb30215019f> , <http://dbtune.org/musicbrainz/resource/track/3bd5ce58-948a-498a-8114-aad82ebb7ad1> , <http://dbtune.org/musicbrainz/resource/track/a25c1e68-7cc6-4202-9e6c-b2c2c78bb195> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/3fb55c03-3ad9-4341-8d0b-7c4c49aefca0> ;
+      foaf:page "714278445" .

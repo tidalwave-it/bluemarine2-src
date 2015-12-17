@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.ui.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import javax.inject.Provider;
 import java.util.HashMap;
 import java.util.Map;
 import javafx.fxml.FXML;
@@ -44,8 +45,8 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.util.Key;
-import it.tidalwave.util.PowerOnNotification;
 import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController;
 import java.nio.file.Path;
@@ -65,11 +66,11 @@ import lombok.extern.slf4j.Slf4j;
 @Configurable @Slf4j
 public class JavaFXApplicationPresentationDelegate
   {
-    @Inject @Nonnull
-    private JavaFxFlowController flowController;
+    @Inject
+    private Provider<JavaFxFlowController> flowController;
     
-    @Inject @Nonnull
-    private MessageBus messageBus;
+    @Inject
+    private Provider<MessageBus> messageBus;
     
     @FXML
     private GridPane gpGridPane;
@@ -119,14 +120,16 @@ public class JavaFXApplicationPresentationDelegate
           }
         // END FIXME
         
-        flowController.setContentPane(spContent);
+        flowController.get().setContentPane(spContent);
         final Map<Key<?>, Object> properties = new HashMap<>();
         final Path configPath = getConfiguratonPath();
         log.info("configPath is {}", configPath);
         final Path repositoryPath = configPath.resolve("repository.n3");
+        final Path cachePath = configPath.resolve("cache");
         properties.put(it.tidalwave.bluemarine2.persistence.PropertyNames.REPOSITORY_PATH, repositoryPath);
         properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, configPath);
-        messageBus.publish(new PowerOnNotification(properties));        
+        properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, cachePath);
+        messageBus.get().publish(new PowerOnNotification(properties));        
       }    
     
     /*******************************************************************************************************************
@@ -142,7 +145,7 @@ public class JavaFXApplicationPresentationDelegate
         if (event.getCode().equals(KeyCode.BACK_SPACE))
           {
             log.debug("onKeyReleased({})", event);
-            flowController.tryToDismissCurrentPresentation();
+            flowController.get().tryToDismissCurrentPresentation();
           }
       }
     

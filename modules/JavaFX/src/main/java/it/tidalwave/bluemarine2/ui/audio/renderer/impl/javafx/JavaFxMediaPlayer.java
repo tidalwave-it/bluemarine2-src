@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -84,6 +84,8 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
         log.debug("path:     {}", path);
         log.debug("metadata: {}", mediaItem.getMetadata());
         media = new Media(path.toUri().toString());
+        statusProperty.set(Status.STOPPED);
+        playTimeProperty.set(Duration.ZERO);
       }
 
     /*******************************************************************************************************************

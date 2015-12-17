@@ -1,0 +1,64 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/7da35163-322a-41dc-bb1b-b17d401c4cd8>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F7da35163-322a-41dc-bb1b-b17d401c4cd8%3E> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B000GPG6KM>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB000GPG6KM%3E> .
+
+<http://ec1.images-amazon.com/images/P/B000GPG6KM.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB000GPG6KM.01.MZZZZZZZ.jpg%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/7da35163-322a-41dc-bb1b-b17d401c4cd8>
+      rdfs:label "RDF Description of AM Gold: 1973" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/7da35163-322a-41dc-bb1b-b17d401c4cd8> .
+
+<http://dbtune.org/musicbrainz/resource/record/7da35163-322a-41dc-bb1b-b17d401c4cd8>
+      a       mo:Record ;
+      rdfs:label "AM Gold: 1973" ;
+      vocab:album_attributes
+              "{0,4,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B000GPG6KM" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B000GPG6KM.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "33"^^xsd:int ;
+      vocab:tracks "21"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "AM Gold: 1973" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B000GPG6KM> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B000GPG6KM.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B000GPG6KM> ;
+      mo:musicbrainz <http://musicbrainz.org/album/7da35163-322a-41dc-bb1b-b17d401c4cd8> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/b2d836d9-8cd1-4069-a2dd-6b360df089cd> , <http://dbtune.org/musicbrainz/resource/track/317d478f-d77e-4fe3-8d8f-5c6f431cfb3c> , <http://dbtune.org/musicbrainz/resource/track/0e9b3502-9a7c-41eb-8792-60bd120d33d8> , <http://dbtune.org/musicbrainz/resource/track/2b07f090-8f06-4f5b-9357-9e557914d4e8> , <http://dbtune.org/musicbrainz/resource/track/453e0878-0477-4766-b592-8980ee86cf1a> , <http://dbtune.org/musicbrainz/resource/track/8dff2132-a5d2-4ed6-bc8b-7cb8fe37c463> , <http://dbtune.org/musicbrainz/resource/track/2f234cc7-edd2-4a9f-8798-e2ad7ce9959f> , <http://dbtune.org/musicbrainz/resource/track/51aea56b-2293-430d-b5a7-63ae24b4c0a8> , <http://dbtune.org/musicbrainz/resource/track/4e640c1c-465c-4600-8d35-3198c935ba68> , <http://dbtune.org/musicbrainz/resource/track/7656daa0-90ce-48f8-9fec-6458a2ed7a6b> , <http://dbtune.org/musicbrainz/resource/track/45e9733f-5500-4bce-8534-56bac109be54> , <http://dbtune.org/musicbrainz/resource/track/302fcd7b-0efd-449b-b9b2-70280e526fc7> , <http://dbtune.org/musicbrainz/resource/track/0cc0db70-81ed-4488-a8ac-99c41cce2d7a> , <http://dbtune.org/musicbrainz/resource/track/7b2fc639-82aa-487b-af70-191fca4a375f> , <http://dbtune.org/musicbrainz/resource/track/d7af5bce-5311-45dd-bdec-bf649bea9271> , <http://dbtune.org/musicbrainz/resource/track/b9d3a9df-89c4-41ec-8357-32419324c997> , <http://dbtune.org/musicbrainz/resource/track/272a3f2c-8b6f-4c1d-b816-9cefa05628a6> , <http://dbtune.org/musicbrainz/resource/track/b1a44a80-f597-4859-85b2-476c7b75891f> , <http://dbtune.org/musicbrainz/resource/track/cf624f5c-659a-412c-98b6-e745e21600c2> , <http://dbtune.org/musicbrainz/resource/track/f649b84d-041f-4cb1-a141-3d18d774e466> , <http://dbtune.org/musicbrainz/resource/track/844de4e3-9bb9-40cd-8bee-af3ff8c1df65> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/89ad4ac3-39f7-470e-963a-56509c546377> ;
+      foaf:page "81830413" .
+
+<http://dbtune.org/musicbrainz/resource/master/7da35163-322a-41dc-bb1b-b17d401c4cd8>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/7da35163-322a-41dc-bb1b-b17d401c4cd8> .
+
+<http://images.amazon.com/images/P/B000GPG6KM>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB000GPG6KM%3E> .

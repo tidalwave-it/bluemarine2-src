@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -28,18 +28,16 @@
  */
 package it.tidalwave.bluemarine2.catalog.impl.browser;
 
-import it.tidalwave.role.Displayable;
-
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public abstract class RepositoryBrowserByArtistSupport extends RepositoryBrowserSupport implements Displayable
+public abstract class RepositoryBrowserByArtistSupport extends RepositoryBrowserSupport
   {
     public RepositoryBrowserByArtistSupport()
       {
-        setFinder(() -> getCatalog().findArtists().withContext(RepositoryBrowserByArtistSupport.this));
+        setFinder(() -> getCatalog().findArtists().withContext(this));
       }
   }

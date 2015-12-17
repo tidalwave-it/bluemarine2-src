@@ -1,0 +1,49 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://musicbrainz.org/album/396174ab-7e15-4b8b-b720-dc849f9e3ce2>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F396174ab-7e15-4b8b-b720-dc849f9e3ce2%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/396174ab-7e15-4b8b-b720-dc849f9e3ce2>
+      a       mo:Record ;
+      rdfs:label "Chronological Classics (1934-1935)" ;
+      vocab:album_attributes
+              "{0}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "0"^^xsd:int ;
+      vocab:albummeta_puids
+              "2"^^xsd:int ;
+      vocab:tracks "23"^^xsd:int ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Chronological Classics (1934-1935)" ;
+      mo:musicbrainz <http://musicbrainz.org/album/396174ab-7e15-4b8b-b720-dc849f9e3ce2> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/fbfe5f58-6b70-4abb-8fee-9f8f7a005b0c> , <http://dbtune.org/musicbrainz/resource/track/ab630f66-fae4-4d2b-a905-26ac58239140> , <http://dbtune.org/musicbrainz/resource/track/24bd2ab0-7ed5-4b23-8fc5-001f95d85c70> , <http://dbtune.org/musicbrainz/resource/track/d7c52813-7c04-4dad-83b0-af71ca099f56> , <http://dbtune.org/musicbrainz/resource/track/1aa4c091-16da-41eb-944c-cbbe23e137d1> , <http://dbtune.org/musicbrainz/resource/track/da6f1aa7-3831-45ac-a78d-0ac23efe01af> , <http://dbtune.org/musicbrainz/resource/track/32d3305f-584b-4b90-89f6-4934e271cb52> , <http://dbtune.org/musicbrainz/resource/track/7aab3913-ead7-4d65-be0b-f559bfd7d9f3> , <http://dbtune.org/musicbrainz/resource/track/7bcd4cbd-b110-4689-840c-c58b19261eab> , <http://dbtune.org/musicbrainz/resource/track/26859053-f300-4e2f-b777-cd4e03dc0dac> , <http://dbtune.org/musicbrainz/resource/track/0cf660ea-4ea3-4562-93f2-26ce454eba4d> , <http://dbtune.org/musicbrainz/resource/track/2edd10ce-3587-477f-91c9-fc1f85029841> , <http://dbtune.org/musicbrainz/resource/track/62430d55-c00d-4161-8c61-3568d45ed5e9> , <http://dbtune.org/musicbrainz/resource/track/d4b55f72-4236-4f72-bb5d-c66e01565598> , <http://dbtune.org/musicbrainz/resource/track/18cf60e9-1225-4d58-b4b8-29b62ca13a3a> , <http://dbtune.org/musicbrainz/resource/track/67dfa8b2-1096-47d8-a018-7427be1866f0> , <http://dbtune.org/musicbrainz/resource/track/a046c1d1-cc94-4af0-9dff-62e592178cc6> , <http://dbtune.org/musicbrainz/resource/track/3d243ec1-dc8c-4a14-b34e-dd7fd07229f1> , <http://dbtune.org/musicbrainz/resource/track/7f2d9b74-9013-47c1-ad03-20fe7e612b55> , <http://dbtune.org/musicbrainz/resource/track/52557e88-0ca7-422c-aa11-e6b55c32973e> , <http://dbtune.org/musicbrainz/resource/track/eb45c25b-a8fb-4e23-bf15-13c5f0caac6c> , <http://dbtune.org/musicbrainz/resource/track/8a1a76ef-0c6b-4e27-b956-c1072aeb243c> , <http://dbtune.org/musicbrainz/resource/track/6316baac-4c7a-4b8d-93cf-d3054f64682c> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/650bf385-6f6d-4992-a3b9-779d144920a4> ;
+      foaf:page "144294384" .
+
+<http://dbtune.org/musicbrainz/resource/master/396174ab-7e15-4b8b-b720-dc849f9e3ce2>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/396174ab-7e15-4b8b-b720-dc849f9e3ce2> .
+
+<http://dbtune.org/musicbrainz/data/record/396174ab-7e15-4b8b-b720-dc849f9e3ce2>
+      rdfs:label "RDF Description of Chronological Classics (1934-1935)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/396174ab-7e15-4b8b-b720-dc849f9e3ce2> .

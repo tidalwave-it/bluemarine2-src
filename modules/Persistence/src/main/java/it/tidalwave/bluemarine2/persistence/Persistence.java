@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -28,14 +28,14 @@
  */
 package it.tidalwave.bluemarine2.persistence;
 
-import java.io.FileNotFoundException;
-import java.nio.file.Path;
 import javax.annotation.Nonnull;
-import lombok.NonNull;
+import java.io.IOException;
+import java.nio.file.Path;
 import org.openrdf.repository.Repository;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.RepositoryException;
 import org.openrdf.rio.RDFHandlerException;
+import lombok.NonNull;
 
 /***********************************************************************************************************************
  *
@@ -64,5 +64,5 @@ public interface Persistence
       throws E, RepositoryException;
     
     public void dump (final @Nonnull Path path)
-      throws RDFHandlerException, FileNotFoundException, RepositoryException;
+      throws RDFHandlerException, IOException, RepositoryException;
   }

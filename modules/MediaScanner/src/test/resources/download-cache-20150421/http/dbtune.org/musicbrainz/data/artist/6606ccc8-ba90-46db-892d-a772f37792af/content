@@ -1,0 +1,91 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/track/cd2c739b-1a37-4a90-b294-7de25aef7438>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+<http://dbtune.org/musicbrainz/resource/track/74b6a81d-88e2-4cd2-b90d-464e800f8514>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+<http://dbtune.org/musicbrainz/data/artist/6606ccc8-ba90-46db-892d-a772f37792af>
+      rdfs:label "RDF Description of Sarah Vaughan and Lester Young" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+<http://dbtune.org/musicbrainz/resource/track/58ec4b5c-5339-4f96-a461-9abef563a68b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+<http://dbtune.org/musicbrainz/resource/track/64842022-6e62-4135-9672-8a17673cc9e2>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+<http://dbtune.org/musicbrainz/resource/track/ad630215-4f1c-4ae7-ad13-a739023a5d20>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+<http://dbtune.org/musicbrainz/resource/track/af195496-0fea-4bd0-b89a-3606c8140558>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+<http://dbtune.org/musicbrainz/resource/track/c336723d-e8a0-44f6-a7c4-37f0eb9fa0c6>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+<http://dbtune.org/musicbrainz/resource/track/a9562a45-9f93-4b55-b54e-e97beee51432>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+<http://dbtune.org/musicbrainz/resource/track/c3bf8cf2-73c7-4a98-ae75-b971e0964a2c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+<http://dbtune.org/musicbrainz/resource/record/d9fd214c-86e5-400d-b829-45ed43086b8c>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+mo:MusicArtist
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FMusicArtist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/005bb1f3-2bcb-498a-86d2-9d078916d034>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+<http://musicbrainz.org/artist/6606ccc8-ba90-46db-892d-a772f37792af>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Fartist%2F6606ccc8-ba90-46db-892d-a772f37792af%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/45bbcd73-2640-4308-b6e2-6e3a1cb1351b>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+<http://dbtune.org/musicbrainz/resource/track/b5154c1b-94dc-43c1-ba4a-372483a0f6d5>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+<http://dbtune.org/musicbrainz/resource/track/554bf08b-8f72-4820-badb-931a70e567c3>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+<http://www.bbc.co.uk/music/artists/6606ccc8-ba90-46db-892d-a772f37792af#artist>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.bbc.co.uk%2Fmusic%2Fartists%2F6606ccc8-ba90-46db-892d-a772f37792af%23artist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/6363cc58-7cc2-46f2-8839-abfa2ed60305>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+<http://dbtune.org/musicbrainz/resource/track/5e1e02d7-48b5-411e-8209-a37dead6af85>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .
+
+<http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af>
+      a       mo:MusicArtist ;
+      rdfs:label "Sarah Vaughan and Lester Young" ;
+      vocab:artist_quality
+              "-1"^^xsd:short ;
+      vocab:sortname "Vaughan, Sarah and Young, Lester" ;
+      mo:musicbrainz <http://musicbrainz.org/artist/6606ccc8-ba90-46db-892d-a772f37792af> ;
+      =       <http://www.bbc.co.uk/music/artists/6606ccc8-ba90-46db-892d-a772f37792af#artist> ;
+      foaf:name "Sarah Vaughan and Lester Young" .
+
+<http://dbtune.org/musicbrainz/resource/track/bcf98a74-a981-43c2-8bf8-f176562c0073>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/6606ccc8-ba90-46db-892d-a772f37792af> .

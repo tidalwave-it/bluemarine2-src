@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/d0c647a7-77d8-4287-85e7-2bc124537fc4>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/d0c647a7-77d8-4287-85e7-2bc124537fc4> .
+
+<http://ec2.images-amazon.com/images/P/B0000U1EHI.03.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec2.images-amazon.com%2Fimages%2FP%2FB0000U1EHI.03.MZZZZZZZ.jpg%3E> .
+
+<http://images.amazon.com/images/P/B0000U1EHI>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB0000U1EHI%3E> .
+
+<http://dbtune.org/musicbrainz/data/record/d0c647a7-77d8-4287-85e7-2bc124537fc4>
+      rdfs:label "RDF Description of Bella Terra" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/d0c647a7-77d8-4287-85e7-2bc124537fc4> .
+
+<http://dbtune.org/musicbrainz/resource/record/d0c647a7-77d8-4287-85e7-2bc124537fc4>
+      a       mo:Record ;
+      rdfs:label "Bella Terra" ;
+      vocab:album_attributes
+              "{0,1}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B0000U1EHI" ;
+      vocab:albummeta_coverarturl
+              "http://ec2.images-amazon.com/images/P/B0000U1EHI.03.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "12"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/230319> ;
+      vocab:tracks "12"^^xsd:int ;
+      dc:date "2003-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/spa> ;
+      dc:title "Bella Terra" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B0000U1EHI> ;
+      mo:image <http://ec2.images-amazon.com/images/P/B0000U1EHI.03.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B0000U1EHI> ;
+      mo:musicbrainz <http://musicbrainz.org/album/d0c647a7-77d8-4287-85e7-2bc124537fc4> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/366975> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/3bd6172e-e765-4e21-a561-d69ca9f9734a> , <http://dbtune.org/musicbrainz/resource/track/7648c893-66bf-4eba-a58d-969394208d4b> , <http://dbtune.org/musicbrainz/resource/track/cdcc276a-eb49-4d43-a025-890e1528ac3d> , <http://dbtune.org/musicbrainz/resource/track/f6f5bcfb-8afc-496c-b8b6-d147b4fa9923> , <http://dbtune.org/musicbrainz/resource/track/505194cc-fcb8-4d32-ad22-eff145c9f1b0> , <http://dbtune.org/musicbrainz/resource/track/1c2b3a5f-fe22-4ebb-9a03-ca1ea57a4e74> , <http://dbtune.org/musicbrainz/resource/track/e47376a6-6821-4640-b783-6d6e7725f2c5> , <http://dbtune.org/musicbrainz/resource/track/742ffe3c-fd83-4469-8efb-2686025098fb> , <http://dbtune.org/musicbrainz/resource/track/19b5c105-0483-4f79-ae57-2833582df460> , <http://dbtune.org/musicbrainz/resource/track/629debe4-91fe-43fe-b24d-b3dc83f23ebc> , <http://dbtune.org/musicbrainz/resource/track/71581f7e-363e-40ad-97a3-959b22ff4135> , <http://dbtune.org/musicbrainz/resource/track/689ef1e3-de04-492f-b241-19cda698911a> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/9846b065-0d97-4232-aecc-31a281108b72> ;
+      foaf:page "107394113" .
+
+<http://www.amazon.com/exec/obidos/ASIN/B0000U1EHI>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB0000U1EHI%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/d0c647a7-77d8-4287-85e7-2bc124537fc4>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2Fd0c647a7-77d8-4287-85e7-2bc124537fc4%3E> .

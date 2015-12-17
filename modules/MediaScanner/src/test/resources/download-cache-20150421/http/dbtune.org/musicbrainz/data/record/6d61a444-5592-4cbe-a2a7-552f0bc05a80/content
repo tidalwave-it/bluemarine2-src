@@ -1,0 +1,52 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/master/6d61a444-5592-4cbe-a2a7-552f0bc05a80>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/6d61a444-5592-4cbe-a2a7-552f0bc05a80> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://musicbrainz.org/album/6d61a444-5592-4cbe-a2a7-552f0bc05a80>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F6d61a444-5592-4cbe-a2a7-552f0bc05a80%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/6d61a444-5592-4cbe-a2a7-552f0bc05a80>
+      a       mo:Record ;
+      rdfs:label "Paperback Writer / Rain" ;
+      vocab:album_attributes
+              "{0,2,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_discids
+              "1"^^xsd:int ;
+      vocab:albummeta_puids
+              "5"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/261447> ;
+      vocab:tracks "2"^^xsd:int ;
+      dc:date "1966-05-30" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Paperback Writer / Rain" ;
+      mo:musicbrainz <http://musicbrainz.org/album/6d61a444-5592-4cbe-a2a7-552f0bc05a80> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/184038> , <http://dbtune.org/musicbrainz/resource/release/212062> , <http://dbtune.org/musicbrainz/resource/release/184037> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/f28b465d-7adb-479d-a363-0c49368e59d3> , <http://dbtune.org/musicbrainz/resource/track/3053c12e-7426-414f-b8b5-fd553c593cd6> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d> ;
+      foaf:page "573086307" .
+
+<http://dbtune.org/musicbrainz/data/record/6d61a444-5592-4cbe-a2a7-552f0bc05a80>
+      rdfs:label "RDF Description of Paperback Writer / Rain" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/6d61a444-5592-4cbe-a2a7-552f0bc05a80> .

@@ -1,0 +1,61 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+mo:MusicArtist
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FMusicArtist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/af937fce-6656-46a7-8443-256f0247b98f>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7631ba41-5e47-4f55-a621-40ab0f2a3a02> .
+
+<http://dbtune.org/musicbrainz/resource/track/060cec01-9734-4d53-89da-39814089f332>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7631ba41-5e47-4f55-a621-40ab0f2a3a02> .
+
+<http://dbtune.org/musicbrainz/resource/track/91ff9d5e-e69f-40c1-a47d-753edb2245b2>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7631ba41-5e47-4f55-a621-40ab0f2a3a02> .
+
+<http://dbtune.org/musicbrainz/data/artist/7631ba41-5e47-4f55-a621-40ab0f2a3a02>
+      rdfs:label "RDF Description of Jean-Louis Rassinfosse, Chet Baker & Philip Catherine" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/artist/7631ba41-5e47-4f55-a621-40ab0f2a3a02> .
+
+<http://dbtune.org/musicbrainz/resource/track/476d7040-bd7a-4356-a0d4-9d4fd415d858>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7631ba41-5e47-4f55-a621-40ab0f2a3a02> .
+
+<http://dbtune.org/musicbrainz/resource/artist/7631ba41-5e47-4f55-a621-40ab0f2a3a02>
+      a       mo:MusicArtist ;
+      rdfs:label "Jean-Louis Rassinfosse, Chet Baker & Philip Catherine" ;
+      vocab:artist_quality
+              "-1"^^xsd:short ;
+      vocab:sortname "Jean-Louis Rassinfosse, Chet Baker & Philip Catherine" ;
+      mo:musicbrainz <http://musicbrainz.org/artist/7631ba41-5e47-4f55-a621-40ab0f2a3a02> ;
+      =       <http://www.bbc.co.uk/music/artists/7631ba41-5e47-4f55-a621-40ab0f2a3a02#artist> ;
+      foaf:name "Jean-Louis Rassinfosse, Chet Baker & Philip Catherine" .
+
+<http://dbtune.org/musicbrainz/resource/track/cb4d0e63-8651-4696-86ed-21220c4a49a9>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7631ba41-5e47-4f55-a621-40ab0f2a3a02> .
+
+<http://www.bbc.co.uk/music/artists/7631ba41-5e47-4f55-a621-40ab0f2a3a02#artist>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.bbc.co.uk%2Fmusic%2Fartists%2F7631ba41-5e47-4f55-a621-40ab0f2a3a02%23artist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/bf70aae2-c743-469a-abcb-03c940c63122>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7631ba41-5e47-4f55-a621-40ab0f2a3a02> .
+
+<http://dbtune.org/musicbrainz/resource/record/ed0c2ec9-01d3-406b-a917-a7e4eab8dd0a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/7631ba41-5e47-4f55-a621-40ab0f2a3a02> .
+
+<http://musicbrainz.org/artist/7631ba41-5e47-4f55-a621-40ab0f2a3a02>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Fartist%2F7631ba41-5e47-4f55-a621-40ab0f2a3a02%3E> .

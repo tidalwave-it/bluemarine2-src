@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - hg clone https://bitbucket.org/tidalwave/bluemarine2-src
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -30,24 +30,23 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.util.List;
-import org.openrdf.model.Statement;
-import org.openrdf.repository.RepositoryConnection;
-import org.openrdf.repository.RepositoryException;
-import it.tidalwave.messagebus.annotation.ListensTo;
-import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
-import lombok.extern.slf4j.Slf4j;
+import org.openrdf.model.Statement;
 import org.openrdf.model.Resource;
 import org.openrdf.model.URI;
 import org.openrdf.model.Value;
 import org.openrdf.model.ValueFactory;
 import org.openrdf.model.impl.ValueFactoryImpl;
+import org.openrdf.repository.RepositoryException;
+import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.messagebus.annotation.ListensTo;
+import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.persistence.Persistence;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -73,23 +72,27 @@ public class StatementManager
           }
         
         @Nonnull
-        public Builder with (final @Nonnull Optional<? extends Resource> subject, 
-                             final @Nonnull URI predicate,
-                             final @Nonnull Value object) 
+        public Builder withOptional (final @Nonnull Optional<? extends Resource> optionalSubject, 
+                                     final @Nonnull URI predicate,
+                                     final @Nonnull Value object) 
           {
-            return subject.isPresent()
-                    ? with(factory.createStatement(subject.get(), predicate, object)) 
-                    : this;
+            return optionalSubject.map(subject -> with(subject, predicate, object)).orElse(this);
           }
         
         @Nonnull
-        public Builder with (final @Nonnull Optional<? extends Resource> subject, 
-                             final @Nonnull URI predicate,
-                             final @Nonnull Optional<? extends Value> object) 
+        public Builder withOptional (final @Nonnull Resource subject, 
+                                     final @Nonnull URI predicate,
+                                     final @Nonnull Optional<? extends Value> optionalObject)
+          { 
+            return optionalObject.map(object -> with(subject, predicate, object)).orElse(this);
+          }
+        
+        @Nonnull
+        public Builder withOptional (final @Nonnull Optional<? extends Resource> optionalSubject, 
+                                     final @Nonnull URI predicate,
+                                     final @Nonnull Optional<? extends Value> optionalObject) 
           {
-            return subject.isPresent() && object.isPresent() 
-                    ? with(factory.createStatement(subject.get(), predicate, object.get())) 
-                    : this;
+            return optionalObject.map(object -> withOptional(optionalSubject, predicate, object)).orElse(this);
           }
         
         @Nonnull
@@ -97,7 +100,7 @@ public class StatementManager
                              final @Nonnull URI predicate,
                              final @Nonnull Value object)
           { 
-            subjects.stream().forEach(subject -> with(subject, predicate, object)); // FIXME ?? this = with(...)
+            subjects.stream().forEach(subject -> with(subject, predicate, object)); // FIXME ?? this = withOptional(...)
             return this;
           }
         
@@ -110,7 +113,7 @@ public class StatementManager
             
             for (int i = 0; i < subjects.size(); i++)
               {
-                with(subjects.get(i), predicate, objects.get(i)); // FIXME ?? this = with(...)
+                with(subjects.get(i), predicate, objects.get(i)); // FIXME ?? this = withOptional(...)
               }
             
             return this;
@@ -121,29 +124,21 @@ public class StatementManager
                              final @Nonnull URI predicate,
                              final @Nonnull Stream<? extends Value> objects)
           { 
-            objects.forEach(object -> with(subject, predicate, object)); // FIXME ?? this = with(...)
+            objects.forEach(object -> with(subject, predicate, object)); // FIXME ?? this = withOptional(...)
             return this;
           }
         
         @Nonnull
-        public Builder with (final @Nonnull Optional<? extends Resource> subject, 
-                             final @Nonnull URI predicate,
-                             final @Nonnull Stream<? extends Value> objects)
+        public Builder withOptional (final @Nonnull Optional<? extends Resource> subject, 
+                                     final @Nonnull URI predicate,
+                                     final @Nonnull Stream<? extends Value> objects)
           {
             if (subject.isPresent())
               {
-                objects.forEach(object -> with(subject, predicate, object)); // FIXME ?? this = with(...)
+                objects.forEach(object -> withOptional(subject, predicate, object)); // FIXME ?? this = withOptional(...)
               }
     
             return this;
-          }
-        
-        @Nonnull
-        public Builder with (final @Nonnull Resource subject, 
-                             final @Nonnull URI predicate,
-                             final @Nonnull Optional<? extends Value> object)
-          { 
-            return object.isPresent() ? with(subject, predicate, object.get()) : this;
           }
         
         @Nonnull
@@ -224,7 +219,7 @@ public class StatementManager
       {
         log.info("onAddStatementsRequest({})", request);
         progress.incrementCompletedInsertions();
-        persistence.runInTransaction((RepositoryConnection connection) -> 
+        persistence.runInTransaction(connection -> 
           {
             request.getStatements().stream().forEach(s ->
               {

@@ -1,0 +1,67 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/data/record/43a848b4-8a13-4410-a282-a992f5c912f2>
+      rdfs:label "RDF Description of Hot House Flowers" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/record/43a848b4-8a13-4410-a282-a992f5c912f2> .
+
+<http://www.amazon.com/exec/obidos/ASIN/B00000260U>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.amazon.com%2Fexec%2Fobidos%2FASIN%2FB00000260U%3E> .
+
+<http://ec1.images-amazon.com/images/P/B00000260U.01.MZZZZZZZ.jpg>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fec1.images-amazon.com%2Fimages%2FP%2FB00000260U.01.MZZZZZZZ.jpg%3E> .
+
+mo:Record
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FRecord%3E> .
+
+<http://dbtune.org/musicbrainz/resource/record/43a848b4-8a13-4410-a282-a992f5c912f2>
+      a       mo:Record ;
+      rdfs:label "Hot House Flowers" ;
+      vocab:album_attributes
+              "{0,100}" ;
+      vocab:album_quality "-1"^^xsd:short ;
+      vocab:album_script "28"^^xsd:int ;
+      vocab:albummeta_asin
+              "B00000260U" ;
+      vocab:albummeta_coverarturl
+              "http://ec1.images-amazon.com/images/P/B00000260U.01.MZZZZZZZ.jpg" ;
+      vocab:albummeta_discids
+              "3"^^xsd:int ;
+      vocab:albummeta_puids
+              "10"^^xsd:int ;
+      vocab:toc <http://dbtune.org/musicbrainz/resource/toc/277567> , <http://dbtune.org/musicbrainz/resource/toc/11696> , <http://dbtune.org/musicbrainz/resource/toc/283637> ;
+      vocab:tracks "8"^^xsd:int ;
+      dc:date "1984-00-00" ;
+      dc:language <http://dbtune.org/musicbrainz/resource/language/eng> ;
+      dc:title "Hot House Flowers" ;
+      mo:amazon_asin <http://www.amazon.com/exec/obidos/ASIN/B00000260U> ;
+      mo:image <http://ec1.images-amazon.com/images/P/B00000260U.01.MZZZZZZZ.jpg> , <http://images.amazon.com/images/P/B00000260U> ;
+      mo:musicbrainz <http://musicbrainz.org/album/43a848b4-8a13-4410-a282-a992f5c912f2> ;
+      mo:release <http://dbtune.org/musicbrainz/resource/release/471449> ;
+      mo:track <http://dbtune.org/musicbrainz/resource/track/8788e78e-2c88-4c9a-b49c-0590e8c59351> , <http://dbtune.org/musicbrainz/resource/track/03a41b20-f04b-4f32-8863-7bddddb6650b> , <http://dbtune.org/musicbrainz/resource/track/ec33f626-763c-482b-9285-a943006eebb5> , <http://dbtune.org/musicbrainz/resource/track/413c9085-5ae4-40dd-bf71-66eeb60ff0f8> , <http://dbtune.org/musicbrainz/resource/track/a4a7b558-73bc-4267-8ac0-65bf86174590> , <http://dbtune.org/musicbrainz/resource/track/367f081e-d6d8-41d1-a3a5-6ef32c4f7e60> , <http://dbtune.org/musicbrainz/resource/track/8792c587-3ce3-408d-ab64-4e088c605c48> , <http://dbtune.org/musicbrainz/resource/track/57c59082-0df6-467e-a5a7-030e2a6a9eb9> ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/0d74dcc7-5684-4695-830f-a9846aad8ba9> ;
+      foaf:page "319456560" .
+
+<http://dbtune.org/musicbrainz/resource/master/43a848b4-8a13-4410-a282-a992f5c912f2>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/record/43a848b4-8a13-4410-a282-a992f5c912f2> .
+
+<http://musicbrainz.org/album/43a848b4-8a13-4410-a282-a992f5c912f2>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Falbum%2F43a848b4-8a13-4410-a282-a992f5c912f2%3E> .
+
+<http://images.amazon.com/images/P/B00000260U>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fimages.amazon.com%2Fimages%2FP%2FB00000260U%3E> .

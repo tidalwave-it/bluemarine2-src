@@ -1,0 +1,98 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/track/5e477710-49c4-4277-a2f7-db95dd527587>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://dbtune.org/musicbrainz/resource/track/6cab18a9-fbd6-4936-a010-bae7ef09ea14>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://musicbrainz.org/artist/56c5055d-f656-4ed2-a040-7d860feccfb7>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Fartist%2F56c5055d-f656-4ed2-a040-7d860feccfb7%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/ebb2095e-a56a-42ca-b746-92ecf1f883ef>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://dbtune.org/musicbrainz/resource/track/12a95197-6bf9-4ccf-8616-2ebac610432d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://www.bbc.co.uk/music/artists/56c5055d-f656-4ed2-a040-7d860feccfb7#artist>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fwww.bbc.co.uk%2Fmusic%2Fartists%2F56c5055d-f656-4ed2-a040-7d860feccfb7%23artist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/2d898b63-edba-43fc-909a-cdaaeede7a71>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://dbtune.org/musicbrainz/resource/track/9af58406-169a-4e65-b9d5-4620a740b38a>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://dbtune.org/musicbrainz/data/artist/56c5055d-f656-4ed2-a040-7d860feccfb7>
+      rdfs:label "RDF Description of Charlie Haden & Pat Metheny" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://dbtune.org/musicbrainz/resource/track/c335cbbd-1452-4987-8df0-6948741e4e40>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://dbtune.org/musicbrainz/resource/track/64add485-f247-4645-b961-561b41717d2e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://dbtune.org/musicbrainz/resource/track/97673a1b-18e1-4185-a50a-83fcab389736>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://dbtune.org/musicbrainz/resource/track/2bf004cb-9173-4a45-abf3-7bf2db114ca6>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7>
+      a       mo:MusicArtist ;
+      rdfs:label "Charlie Haden & Pat Metheny" ;
+      vocab:alias "Charlie Haden and Pat Metheny" ;
+      vocab:artist_quality
+              "-1"^^xsd:short ;
+      vocab:artist_type "2"^^xsd:short ;
+      vocab:sortname "Haden, Charlie & Metheny, Pat" ;
+      mo:musicbrainz <http://musicbrainz.org/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> ;
+      rel:collaboratesWith
+              <http://dbtune.org/musicbrainz/resource/artist/1f0cdc02-c8d5-4228-8227-37ec0c289b48> , <http://dbtune.org/musicbrainz/resource/artist/7daac7f9-8fcc-485f-a14f-f8091d98cf25> ;
+      =       <http://www.bbc.co.uk/music/artists/56c5055d-f656-4ed2-a040-7d860feccfb7#artist> ;
+      foaf:name "Charlie Haden & Pat Metheny" .
+
+mo:MusicArtist
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FMusicArtist%3E> .
+
+<http://dbtune.org/musicbrainz/resource/track/dd7b40b6-12f7-4d3c-bf28-205da615711e>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://dbtune.org/musicbrainz/resource/track/643b273b-4bdb-47b6-ae2b-81e578ce8cbe>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://dbtune.org/musicbrainz/resource/track/d1784022-559c-49be-9678-3faf821f59e0>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://dbtune.org/musicbrainz/resource/track/16354d2a-f8c9-4114-993c-4ef1c345bd42>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://dbtune.org/musicbrainz/resource/track/7375caa9-b026-4bf6-b60a-60b790494bf0>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://dbtune.org/musicbrainz/resource/track/58052e01-05a1-4299-a97e-e800588a19f4>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://dbtune.org/musicbrainz/resource/track/2de08a80-f410-431d-a5c1-54f02956f8c1>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .
+
+<http://dbtune.org/musicbrainz/resource/record/2517bcb6-89fd-4780-b497-f46bfd49030d>
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/56c5055d-f656-4ed2-a040-7d860feccfb7> .

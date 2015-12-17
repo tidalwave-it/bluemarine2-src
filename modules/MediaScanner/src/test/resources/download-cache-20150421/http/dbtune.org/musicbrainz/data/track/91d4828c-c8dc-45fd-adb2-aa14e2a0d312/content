@@ -1,0 +1,43 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/signal/91d4828c-c8dc-45fd-adb2-aa14e2a0d312>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/track/91d4828c-c8dc-45fd-adb2-aa14e2a0d312> .
+
+<http://dbtune.org/musicbrainz/resource/record/715d9041-b7da-4350-9de8-0db93b19b002>
+      mo:track <http://dbtune.org/musicbrainz/resource/track/91d4828c-c8dc-45fd-adb2-aa14e2a0d312> .
+
+mo:Track
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FTrack%3E> .
+
+<http://dbtune.org/musicbrainz/data/track/91d4828c-c8dc-45fd-adb2-aa14e2a0d312>
+      rdfs:label "RDF Description of A Colloquial Dream (Scenes in the City)" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/track/91d4828c-c8dc-45fd-adb2-aa14e2a0d312> .
+
+<http://dbtune.org/musicbrainz/resource/track/91d4828c-c8dc-45fd-adb2-aa14e2a0d312>
+      a       mo:Track ;
+      rdfs:label "A Colloquial Dream (Scenes in the City)" ;
+      dc:date "0"^^xsd:int ;
+      dc:title "A Colloquial Dream (Scenes in the City)" ;
+      mo:length "658893"^^xsd:int ;
+      mo:musicbrainz <http://musicbrainz.org/track/91d4828c-c8dc-45fd-adb2-aa14e2a0d312> ;
+      mo:track_number "2"^^xsd:int ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/f3b8e107-abe8-4743-b6a3-4a4ee995e71f> .
+
+<http://musicbrainz.org/track/91d4828c-c8dc-45fd-adb2-aa14e2a0d312>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Ftrack%2F91d4828c-c8dc-45fd-adb2-aa14e2a0d312%3E> .

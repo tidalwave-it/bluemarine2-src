@@ -1,0 +1,43 @@
+@prefix tags:    <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix db:      <http://dbtune.org/musicbrainz/resource/> .
+@prefix geo:     <http://www.geonames.org/ontology#> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lingvoj:  <http://www.lingvoj.org/ontology#> .
+@prefix mbz:     <http://purl.org/ontology/mbz#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix map:     <file:/home/moustaki/work/motools/musicbrainz/d2r-server-0.4/mbz_mapping_raw.n3#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rel:     <http://purl.org/vocab/relationship/> .
+@prefix vocab:   <http://dbtune.org/musicbrainz/resource/vocab/> .
+
+<http://dbtune.org/musicbrainz/resource/record/aabd08b1-12df-473d-a4f4-e558cc863f05>
+      mo:track <http://dbtune.org/musicbrainz/resource/track/10564048-e9f5-48a9-8842-de14f3af79cd> .
+
+<http://dbtune.org/musicbrainz/resource/track/10564048-e9f5-48a9-8842-de14f3af79cd>
+      a       mo:Track ;
+      rdfs:label "Preludes, Book I, L. 117 No. 9: La sérénade interrompue" ;
+      dc:date "0"^^xsd:int ;
+      dc:title "Preludes, Book I, L. 117 No. 9: La sérénade interrompue" ;
+      mo:length "179000"^^xsd:int ;
+      mo:musicbrainz <http://musicbrainz.org/track/10564048-e9f5-48a9-8842-de14f3af79cd> ;
+      mo:track_number "9"^^xsd:int ;
+      foaf:maker <http://dbtune.org/musicbrainz/resource/artist/be50643c-0377-4968-b48c-47e06b2e2a3b> .
+
+<http://musicbrainz.org/track/10564048-e9f5-48a9-8842-de14f3af79cd>
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fmusicbrainz.org%2Ftrack%2F10564048-e9f5-48a9-8842-de14f3af79cd%3E> .
+
+mo:Track
+      rdfs:seeAlso <http://dbtune.org/musicbrainz/sparql?query=DESCRIBE+%3Chttp%3A%2F%2Fpurl.org%2Fontology%2Fmo%2FTrack%3E> .
+
+<http://dbtune.org/musicbrainz/data/track/10564048-e9f5-48a9-8842-de14f3af79cd>
+      rdfs:label "RDF Description of Preludes, Book I, L. 117 No. 9: La sérénade interrompue" ;
+      foaf:primaryTopic <http://dbtune.org/musicbrainz/resource/track/10564048-e9f5-48a9-8842-de14f3af79cd> .
+
+<http://dbtune.org/musicbrainz/resource/signal/10564048-e9f5-48a9-8842-de14f3af79cd>
+      mo:published_as <http://dbtune.org/musicbrainz/resource/track/10564048-e9f5-48a9-8842-de14f3af79cd> .
