@@ -41,6 +41,14 @@
 
         <tft.appbundle.name>blueMarine2</tft.appbundle.name>
         <tft.appbundle.signature>TDLW</tft.appbundle.signature>
+
+        <tft.javadoc.doclint>-Xdoclint:none</tft.javadoc.doclint>
+
+        <!-- Clirr is not compatible with JDK 8 -->
+        <tft.clirr.skip>true</tft.clirr.skip>
+
+        <!-- disables javancss since it's broken with JDK 1.7 -->
+        <tft.profile.metrics.defaultGoal>install findbugs:findbugs pmd:cpd pmd:pmd checkstyle:checkstyle clirr:clirr dependency:analyze</tft.profile.metrics.defaultGoal>
     </properties>
 
     <url>http://blueMarine.tidalwave.it</url>
