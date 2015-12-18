@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
-        <artifactId>blueMarine2-master</artifactId>
+        <artifactId>blueMarine2</artifactId>
         <version>1.0-ALPHA-7-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>

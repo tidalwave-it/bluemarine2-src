@@ -6,12 +6,12 @@
     <parent>
         <groupId>it.tidalwave.superpom</groupId>
         <artifactId>superpom</artifactId>
-        <version>2.16</version>
+        <version>2.18</version>
         <relativePath />
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>blueMarine2-master</artifactId>
+    <artifactId>blueMarine2</artifactId>
     <version>1.0-ALPHA-7-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine2 (master)</name>
@@ -41,9 +41,17 @@
 
         <tft.appbundle.name>blueMarine2</tft.appbundle.name>
         <tft.appbundle.signature>TDLW</tft.appbundle.signature>
+
+        <tft.javadoc.doclint>-Xdoclint:none</tft.javadoc.doclint>
+
+        <!-- Clirr is not compatible with JDK 8 -->
+        <tft.clirr.skip>true</tft.clirr.skip>
+
+        <!-- disables javancss since it's broken with JDK 1.7 -->
+        <tft.profile.metrics.defaultGoal>install findbugs:findbugs pmd:cpd pmd:pmd checkstyle:checkstyle clirr:clirr dependency:analyze</tft.profile.metrics.defaultGoal>
     </properties>
 
-    <url>http://blueMarine2.tidalwave.it</url>
+    <url>http://blueMarine.tidalwave.it</url>
     <inceptionYear>2015</inceptionYear>
 
     <issueManagement>
@@ -54,13 +62,13 @@
     <mailingLists>
         <mailingList>
             <name>Continuous Integration</name>
-            <post>ci@blueMarine2.java.net</post>
-            <archive>http://bitbucket.org/projects/blueMarine2/lists/ci/archive</archive>
+            <post>ci@blueMarine.java.net</post>
+            <archive>http://java.net/projects/blueMarine/lists/ci/archive</archive>
         </mailingList>
         <mailingList>
             <name>Developers</name>
-            <post>dev@blueMarine2.java.net</post>
-            <archive>http://bitbucket.org/projects/blueMarine2/lists/dev/archive</archive>
+            <post>dev@blueMarine.java.net</post>
+            <archive>http://java.net/projects/blueMarine/lists/dev/archive</archive>
         </mailingList>
     </mailingLists>
 
