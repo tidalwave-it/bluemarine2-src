@@ -43,7 +43,7 @@
         <tft.appbundle.signature>TDLW</tft.appbundle.signature>
     </properties>
 
-    <url>http://blueMarine2.tidalwave.it</url>
+    <url>http://blueMarine.tidalwave.it</url>
     <inceptionYear>2015</inceptionYear>
 
     <issueManagement>
@@ -54,13 +54,13 @@
     <mailingLists>
         <mailingList>
             <name>Continuous Integration</name>
-            <post>ci@blueMarine2.java.net</post>
-            <archive>http://bitbucket.org/projects/blueMarine2/lists/ci/archive</archive>
+            <post>ci@blueMarine.java.net</post>
+            <archive>http://java.net/projects/blueMarine/lists/ci/archive</archive>
         </mailingList>
         <mailingList>
             <name>Developers</name>
-            <post>dev@blueMarine2.java.net</post>
-            <archive>http://bitbucket.org/projects/blueMarine2/lists/dev/archive</archive>
+            <post>dev@blueMarine.java.net</post>
+            <archive>http://java.net/projects/blueMarine/lists/dev/archive</archive>
         </mailingList>
     </mailingLists>
 
