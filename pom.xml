@@ -26,7 +26,7 @@
         <tidalwave.ci.view>blueMarine2</tidalwave.ci.view>
         <tidalwave.issues>BMT</tidalwave.issues>
 
-        <tft.maven.requiredJdk>[1.8.0-31,1.8.0-99)</tft.maven.requiredJdk>
+        <tft.maven.requiredJdk>[1.8.0-0,1.8.0-99)</tft.maven.requiredJdk>
         <tft.javac.source>1.8</tft.javac.source>
         <tft.javac.target>1.8</tft.javac.target>
 
