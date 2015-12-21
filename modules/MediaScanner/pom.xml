@@ -15,7 +15,7 @@
     <artifactId>it-tidalwave-bluemarine2-mediascanner</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-7-SNAPSHOT</version>
-    <name>blueMarine2 - Media Scanner</name>
+    <name>blueMarine II - Media Scanner</name>
     
     <dependencies>
         <dependency>

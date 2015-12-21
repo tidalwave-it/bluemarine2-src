@@ -13,7 +13,7 @@
     <artifactId>it-tidalwave-bluemarine2-catalog</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-7-SNAPSHOT</version>
-    <name>blueMarine2 - Catalog</name>
+    <name>blueMarine II - Catalog</name>
     
     <dependencies>
         <dependency>

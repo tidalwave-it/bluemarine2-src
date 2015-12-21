@@ -15,7 +15,7 @@
     <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-7-SNAPSHOT</version>
-    <name>blueMarine2 - Persistence</name>
+    <name>blueMarine II - Persistence</name>
     
     <dependencies>
         <dependency>

@@ -49,7 +49,7 @@
     <artifactId>bluemarine2-linux-armv6-embedded-jre</artifactId>
     <version>1.0-ALPHA-7-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>blueMarine2 - Installer, Linux ARM v6 with embedded JRE</name>
+    <name>blueMarine II - Installer, Linux ARM v6 with embedded JRE</name>
     <description>This module creates a Linux ARM v6 application bundle with an embedded JRE.</description>
     
     <properties>

@@ -13,7 +13,7 @@
     <artifactId>it-tidalwave-bluemarine2-cecnavigationadapter</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-7-SNAPSHOT</version>
-    <name>blueMarine2 - CEC Navigation Adapter</name>
+    <name>blueMarine II - CEC Navigation Adapter</name>
     
     <dependencies>
         <dependency>

@@ -6,7 +6,7 @@
     <parent>
         <groupId>it.tidalwave.superpom</groupId>
         <artifactId>superpom</artifactId>
-        <version>2.18</version>
+        <version>3.0</version>
         <relativePath />
     </parent>
 
@@ -14,8 +14,15 @@
     <artifactId>blueMarine2</artifactId>
     <version>1.0-ALPHA-7-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine2 (master)</name>
-    <description>blueMarine2 (master)</description>
+    <name>blueMarine II</name>
+    <description>
+[![Build Status](https://drone.io/bitbucket.org/tidalwave/bluemarine2-src/status.png)](https://drone.io/bitbucket.org/tidalwave/bluemarine2-src/latest)
+
+blueMarine II is a small media centre for the Raspberry PI, based on a semantic database. It is developed on Java 8 and
+Java FX.
+
+Still at the early stage of development, it can be used with some hack to reproduce audio files.
+    </description>
 
     <properties>
         <tft.scm>git</tft.scm>
@@ -26,7 +33,7 @@
         <tidalwave.ci.view>blueMarine2</tidalwave.ci.view>
         <tidalwave.issues>BMT</tidalwave.issues>
 
-        <tft.maven.requiredJdk>[1.8.0-40,1.8.0-99)</tft.maven.requiredJdk>
+        <tft.maven.requiredJdk>[1.8.0-0,1.8.0-99)</tft.maven.requiredJdk>
         <tft.javac.source>1.8</tft.javac.source>
         <tft.javac.target>1.8</tft.javac.target>
 
@@ -42,13 +49,7 @@
         <tft.appbundle.name>blueMarine2</tft.appbundle.name>
         <tft.appbundle.signature>TDLW</tft.appbundle.signature>
 
-        <tft.javadoc.doclint>-Xdoclint:none</tft.javadoc.doclint>
-
-        <!-- Clirr is not compatible with JDK 8 -->
-        <tft.clirr.skip>true</tft.clirr.skip>
-
-        <!-- disables javancss since it's broken with JDK 1.7 -->
-        <tft.profile.metrics.defaultGoal>install findbugs:findbugs pmd:cpd pmd:pmd checkstyle:checkstyle clirr:clirr dependency:analyze</tft.profile.metrics.defaultGoal>
+        <tft.clirr.skip>true</tft.clirr.skip> <!-- Clirr is not compatible with JDK 8 -->
     </properties>
 
     <url>http://blueMarine.tidalwave.it</url>
@@ -59,28 +60,10 @@
         <url>http://services.tidalwave.it/jira/browse/BM2</url>
     </issueManagement>
 
-    <mailingLists>
-        <mailingList>
-            <name>Continuous Integration</name>
-            <post>ci@blueMarine.java.net</post>
-            <archive>http://java.net/projects/blueMarine/lists/ci/archive</archive>
-        </mailingList>
-        <mailingList>
-            <name>Developers</name>
-            <post>dev@blueMarine.java.net</post>
-            <archive>http://java.net/projects/blueMarine/lists/dev/archive</archive>
-        </mailingList>
-    </mailingLists>
-
     <repositories>
         <repository>
             <id>jaudiotagger-repository</id>
             <url>https://dl.bintray.com/ijabz/maven</url>
-        </repository>
-        <repository>
-            <id>releases-oss.sonatype.org</id>
-            <name>Sonatype Releases Repository</name>
-            <url>http://oss.sonatype.org/content/repositories/releases/</url>
         </repository>
         <repository>
             <id>snapshots-oss.sonatype.org</id>
