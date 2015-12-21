@@ -1,4 +1,4 @@
-blueMarine2
+blueMarine II
 ================================
 
 [![Build Status](https://drone.io/bitbucket.org/tidalwave/bluemarine2-src/status.png)](https://drone.io/bitbucket.org/tidalwave/bluemarine2-src/latest)
