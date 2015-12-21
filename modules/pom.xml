@@ -15,7 +15,7 @@
     <artifactId>blueMarine2-modules</artifactId>
     <version>1.0-ALPHA-7-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine2 (modules)</name>
+    <name>blueMarine II (modules)</name>
     <description>blueMarine2 (modules)</description>
 
     <properties>

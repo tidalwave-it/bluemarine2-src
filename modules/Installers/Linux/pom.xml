@@ -49,7 +49,7 @@
     <artifactId>bluemarine2-linux</artifactId>
     <version>1.0-ALPHA-7-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine2 - Installer, Linux</name>
+    <name>blueMarine II - Installer, Linux</name>
     <description>This module creates a Linux application bundle.</description>
     
     <dependencies>

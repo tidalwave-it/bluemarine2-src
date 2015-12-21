@@ -15,7 +15,7 @@
     <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-7-SNAPSHOT</version>
-    <name>blueMarine2 - Commons</name>
+    <name>blueMarine II - Commons</name>
     
     <dependencies>
         <dependency>
