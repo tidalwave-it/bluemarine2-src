@@ -1,7 +1,7 @@
-sudo: required
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -y mkisofs
+addons:
+  apt:
+    packages:
+    - mkisofs
 language: java
 jdk:
   - oraclejdk8
