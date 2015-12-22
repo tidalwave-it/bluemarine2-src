@@ -40,6 +40,7 @@
         -->
 
         <tft.clirr.skip>true</tft.clirr.skip> <!-- breaks Hudson, see BH-5 -->
+        <tft.jacoco-maven-plugin.version>0.7.5.201505241946</tft.jacoco-maven-plugin.version>
     </properties>
 
     <dependencyManagement>

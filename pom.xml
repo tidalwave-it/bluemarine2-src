@@ -42,7 +42,7 @@ Still at the early stage of development, it can be used with some hack to reprod
         <tft.embedded-jdk-name>jdk1.8.0</tft.embedded-jdk-name>
         <tft.embedded-jdk-version>1.8.0-1</tft.embedded-jdk-version>
 
-        <netbeans.hint.jdkPlatform>JDK_1.8.0_40</netbeans.hint.jdkPlatform>
+        <netbeans.hint.jdkPlatform>JDK_1.8.0</netbeans.hint.jdkPlatform>
         <netbeans.hint.license>Tidalwave-ASF</netbeans.hint.license>
         <netbeans.compile.on.save>all</netbeans.compile.on.save>
 
