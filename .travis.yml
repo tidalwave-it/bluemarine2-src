@@ -1,7 +1,7 @@
 addons:
   apt:
     packages:
-    - mkisofs
+    - genisoimage
 language: java
 jdk:
   - oraclejdk8
