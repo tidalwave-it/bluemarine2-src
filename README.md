@@ -1,7 +1,10 @@
+![Maven Central](https://img.shields.io/maven-central/v/it.tidalwave.bluemarine2/blueMarine2.svg)
+[![Build Status](https://img.shields.io/jenkins/s/http/services.tidalwave.it/ci/blueMarine2_Build_from_Scratch.svg)](http://services.tidalwave.it/ci/view/blueMarine2)
+[![Test Status](https://img.shields.io/jenkins/t/http/services.tidalwave.it/ci/blueMarine2.svg)](http://services.tidalwave.it/ci/view/blueMarine2)
+[![Coverage](https://img.shields.io/jenkins/c/http/services.tidalwave.it/ci/blueMarine2.svg)](http://services.tidalwave.it/ci/view/blueMarine2)
+
 blueMarine II
 ================================
-
-[![Build Status](https://drone.io/bitbucket.org/tidalwave/bluemarine2-src/status.png)](https://drone.io/bitbucket.org/tidalwave/bluemarine2-src/latest)
 
 blueMarine II is a small media centre for the Raspberry PI, based on a semantic database. It is developed on Java 8 and
 Java FX.
@@ -43,7 +46,7 @@ Alternatively you can pull it from the central Maven repositories:
 Contributing
 ------------
 
-We accept pull requests via BitBucket or GitHub.
+We accept pull requests via Bitbucket or GitHub.
 
 There are some guidelines which will make applying pull requests easier for us:
 
@@ -68,4 +71,4 @@ Additional Resources
 
 * [Tidalwave Homepage](http://tidalwave.it)
 * [Project Issue Tracker (Jira)](http://services.tidalwave.it/jira/browse/BM2)
-* [Project Continuous Integration (hudson)](http://ci.tidalwave.it/ci/view/blueMarine2)
+* [Project Continuous Integration (Jenkins)](http://services.tidalwave.it/ci/view/blueMarine2)
