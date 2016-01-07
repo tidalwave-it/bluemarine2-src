@@ -7,15 +7,15 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-7-SNAPSHOT</version>
+        <version>1.0-ALPHA-8-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-musicbrainz</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-7-SNAPSHOT</version>
-    <name>blueMarine2 - MusicBrainz REST</name>
+    <version>1.0-ALPHA-8-SNAPSHOT</version>
+    <name>blueMarine II - MusicBrainz REST</name>
 
     <properties>
         <!--        <tft.jaxb2-maven-plugin.version>2.0</tft.jaxb2-maven-plugin.version> FIXME -->
