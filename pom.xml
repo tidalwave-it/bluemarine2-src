@@ -35,10 +35,10 @@ Still at the early stage of development, it can be used with some hack to reprod
         <tft.javac.source>1.8</tft.javac.source>
         <tft.javac.target>1.8</tft.javac.target>
 
-        <tft.embedded-jdk-artifactId>it-tidalwave-oraclejdk8</tft.embedded-jdk-artifactId>
+        <tft.embedded-jdk-artifactId>it-tidalwave-oraclejre8</tft.embedded-jdk-artifactId>
         <tft.embedded-jdk-classifier>macosx-intel</tft.embedded-jdk-classifier>
-        <tft.embedded-jdk-name>jdk1.8.0</tft.embedded-jdk-name>
-        <tft.embedded-jdk-version>1.8.0-1</tft.embedded-jdk-version>
+        <tft.embedded-jdk-name>jre1.8.0_66</tft.embedded-jdk-name>
+        <tft.embedded-jdk-version>1.8.0_66-1</tft.embedded-jdk-version>
 
         <netbeans.hint.jdkPlatform>JDK_1.8.0</netbeans.hint.jdkPlatform>
         <netbeans.hint.license>Tidalwave-ASF</netbeans.hint.license>
