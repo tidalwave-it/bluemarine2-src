@@ -6,16 +6,21 @@
     <parent>
         <groupId>it.tidalwave.superpom</groupId>
         <artifactId>superpom</artifactId>
-        <version>2.16</version>
+        <version>3.3</version>
         <relativePath />
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>blueMarine2-master</artifactId>
-    <version>1.0-ALPHA-7-SNAPSHOT</version>
+    <artifactId>blueMarine2</artifactId>
+    <version>1.0-ALPHA-8-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine2 (master)</name>
-    <description>blueMarine2 (master)</description>
+    <name>blueMarine II</name>
+    <description>
+blueMarine II is a small media centre for the Raspberry PI, based on a semantic database. It is developed on Java 8 and
+Java FX.
+
+Still at the early stage of development, it can be used with some hack to reproduce audio files.
+    </description>
 
     <properties>
         <tft.scm>git</tft.scm>
@@ -26,24 +31,26 @@
         <tidalwave.ci.view>blueMarine2</tidalwave.ci.view>
         <tidalwave.issues>BMT</tidalwave.issues>
 
-        <tft.maven.requiredJdk>[1.8.0-40,1.8.0-99)</tft.maven.requiredJdk>
+        <tft.maven.requiredJdk>[1.8.0-0,1.8.0-99)</tft.maven.requiredJdk>
         <tft.javac.source>1.8</tft.javac.source>
         <tft.javac.target>1.8</tft.javac.target>
 
-        <tft.embedded-jdk-artifactId>it-tidalwave-oraclejdk8</tft.embedded-jdk-artifactId>
+        <tft.embedded-jdk-artifactId>it-tidalwave-oraclejre8</tft.embedded-jdk-artifactId>
         <tft.embedded-jdk-classifier>macosx-intel</tft.embedded-jdk-classifier>
-        <tft.embedded-jdk-name>jdk1.8.0</tft.embedded-jdk-name>
-        <tft.embedded-jdk-version>1.8.0-1</tft.embedded-jdk-version>
+        <tft.embedded-jdk-name>jre1.8.0_66</tft.embedded-jdk-name>
+        <tft.embedded-jdk-version>1.8.0_66-1</tft.embedded-jdk-version>
 
-        <netbeans.hint.jdkPlatform>JDK_1.8.0_40</netbeans.hint.jdkPlatform>
+        <netbeans.hint.jdkPlatform>JDK_1.8.0</netbeans.hint.jdkPlatform>
         <netbeans.hint.license>Tidalwave-ASF</netbeans.hint.license>
         <netbeans.compile.on.save>all</netbeans.compile.on.save>
 
         <tft.appbundle.name>blueMarine2</tft.appbundle.name>
         <tft.appbundle.signature>TDLW</tft.appbundle.signature>
+
+        <tft.clirr.skip>true</tft.clirr.skip> <!-- Clirr is not compatible with JDK 8 -->
     </properties>
 
-    <url>http://blueMarine2.tidalwave.it</url>
+    <url>http://blueMarine.tidalwave.it</url>
     <inceptionYear>2015</inceptionYear>
 
     <issueManagement>
@@ -51,24 +58,10 @@
         <url>http://services.tidalwave.it/jira/browse/BM2</url>
     </issueManagement>
 
-    <mailingLists>
-        <mailingList>
-            <name>Continuous Integration</name>
-            <post>ci@blueMarine2.java.net</post>
-            <archive>http://bitbucket.org/projects/blueMarine2/lists/ci/archive</archive>
-        </mailingList>
-        <mailingList>
-            <name>Developers</name>
-            <post>dev@blueMarine2.java.net</post>
-            <archive>http://bitbucket.org/projects/blueMarine2/lists/dev/archive</archive>
-        </mailingList>
-    </mailingLists>
-
     <repositories>
         <repository>
-            <id>releases-oss.sonatype.org</id>
-            <name>Sonatype Releases Repository</name>
-            <url>http://oss.sonatype.org/content/repositories/releases/</url>
+            <id>jaudiotagger-repository</id>
+            <url>https://dl.bintray.com/ijabz/maven</url>
         </repository>
         <repository>
             <id>snapshots-oss.sonatype.org</id>
@@ -88,62 +81,62 @@
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
-                <version>1.0-ALPHA-7-SNAPSHOT</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
-                <version>1.0-ALPHA-7-SNAPSHOT</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
-                <version>1.0-ALPHA-7-SNAPSHOT</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>
-                <version>1.0-ALPHA-7-SNAPSHOT</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-cec</artifactId>
-                <version>1.0-ALPHA-7-SNAPSHOT</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-cecnavigationadapter</artifactId>
-                <version>1.0-ALPHA-7-SNAPSHOT</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-model</artifactId>
-                <version>1.0-ALPHA-7-SNAPSHOT</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-mediascanner</artifactId>
-                <version>1.0-ALPHA-7-SNAPSHOT</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
-                <version>1.0-ALPHA-7-SNAPSHOT</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-musicbrainz</artifactId>
-                <version>1.0-ALPHA-7-SNAPSHOT</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-downloader</artifactId>
-                <version>1.0-ALPHA-7-SNAPSHOT</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-catalog</artifactId>
-                <version>1.0-ALPHA-7-SNAPSHOT</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

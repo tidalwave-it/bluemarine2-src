@@ -5,15 +5,15 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-7-SNAPSHOT</version>
+        <version>1.0-ALPHA-8-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>    
-    <version>1.0-ALPHA-7-SNAPSHOT</version>
+    <version>1.0-ALPHA-8-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>blueMarine2 - Application (JavaFX)</name>
+    <name>blueMarine II - Application (JavaFX)</name>
 
     <properties>
         <!-- Otherwise can't be released because of missing javadocs -->
