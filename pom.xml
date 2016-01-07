@@ -12,7 +12,7 @@
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>blueMarine2</artifactId>
-    <version>1.0-ALPHA-7</version>
+    <version>1.0-ALPHA-8-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine II</name>
     <description>
@@ -81,62 +81,62 @@ Still at the early stage of development, it can be used with some hack to reprod
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
-                <version>1.0-ALPHA-7</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
-                <version>1.0-ALPHA-7</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
-                <version>1.0-ALPHA-7</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>
-                <version>1.0-ALPHA-7</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-cec</artifactId>
-                <version>1.0-ALPHA-7</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-cecnavigationadapter</artifactId>
-                <version>1.0-ALPHA-7</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-model</artifactId>
-                <version>1.0-ALPHA-7</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-mediascanner</artifactId>
-                <version>1.0-ALPHA-7</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
-                <version>1.0-ALPHA-7</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-musicbrainz</artifactId>
-                <version>1.0-ALPHA-7</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-downloader</artifactId>
-                <version>1.0-ALPHA-7</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-catalog</artifactId>
-                <version>1.0-ALPHA-7</version>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -146,7 +146,7 @@ Still at the early stage of development, it can be used with some hack to reprod
         <connection>scm:git:${scm.repo.readonly.url}</connection>
         <developerConnection>scm:git:${scm.repo.effective.url}</developerConnection>
         <url>${scm.repo.browse.url}</url>
-      <tag>1.0-ALPHA-7</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <build>

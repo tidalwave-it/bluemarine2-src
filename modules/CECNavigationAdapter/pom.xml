@@ -5,14 +5,14 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-7</version>   
+        <version>1.0-ALPHA-8-SNAPSHOT</version>   
         <relativePath>../pom.xml</relativePath>
     </parent>
     
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-cecnavigationadapter</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-7</version>
+    <version>1.0-ALPHA-8-SNAPSHOT</version>
     <name>blueMarine II - CEC Navigation Adapter</name>
     
     <dependencies>
