@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import javax.inject.Inject;
 import java.util.Collections;
 import java.util.List;
 import org.fourthline.cling.binding.annotations.UpnpAction;
@@ -52,7 +53,6 @@ import it.tidalwave.role.Identifiable;
 import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.role.spi.DefaultSimpleComposite;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
-import it.tidalwave.bluemarine2.mediaserver.DefaultContentDirectory;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -77,7 +77,8 @@ import static it.tidalwave.role.SimpleComposite.SimpleComposite;
 @Slf4j
 public class ContentDirectoryClingAdapter
   {
-    private ContentDirectory contentDirectory = new DefaultContentDirectory(); // FIXME: @Inject
+    @Inject
+    private ContentDirectory contentDirectory;
 
     @Immutable
     @AllArgsConstructor @Getter @ToString
@@ -245,7 +246,7 @@ public class ContentDirectoryClingAdapter
 
     /*******************************************************************************************************************
      *
-     * 
+     *
      *
      ******************************************************************************************************************/
     @Nonnull

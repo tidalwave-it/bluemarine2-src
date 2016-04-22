@@ -42,7 +42,7 @@ public class ClingContentDirectoryAdapterTest extends ClingTestSupport
   {
     public ClingContentDirectoryAdapterTest()
       {
-        super("META-INF/UPnPAutoBeans.xml");
+        super("META-INF/MediaServerAutoBeans.xml", "META-INF/UPnPAutoBeans.xml");
       }
 
     @Test

@@ -47,7 +47,7 @@ public class DefaultDevicePublisherTest extends ClingTestSupport
   {
     public DefaultDevicePublisherTest()
       {
-        super("META-INF/UPnPAutoBeans.xml", "META-INF/DefaultDevicePublisherTest.xml");
+        super("META-INF/DefaultDevicePublisherTest.xml");
       }
 
     @Test

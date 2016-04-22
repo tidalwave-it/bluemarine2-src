@@ -58,6 +58,7 @@ public class DefaultContentDirectory implements ContentDirectory
         return new ArrayListFinder<>(Arrays.asList(music, photo, video, services));
       }
 
+    @Nonnull
     private As createObject (final @Nonnull String displayName)
       {
         return new AsSupport(null,
