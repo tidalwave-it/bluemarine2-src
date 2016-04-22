@@ -46,7 +46,7 @@ import org.testng.annotations.Test;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class DefaultDeviceFactoryTest
+public class DefaultDevicePublisherTest
   {
     private ApplicationContext context;
 
@@ -58,7 +58,7 @@ public class DefaultDeviceFactoryTest
         SLF4JBridgeHandler.removeHandlersForRootLogger();
         SLF4JBridgeHandler.install();
         context = new ClassPathXmlApplicationContext("META-INF/UPnPAutoBeans.xml",
-                                                     "META-INF/DefaultDeviceFactoryTest.xml");
+                                                     "META-INF/DefaultDevicePublisherTest.xml");
         upnpService = context.getBean(UpnpService.class);
       }
 
@@ -76,10 +76,10 @@ public class DefaultDeviceFactoryTest
       throws Exception
       {
         System.err.println("Starting Cling...");
-        final DefaultDeviceFactory<UPnPServerMock> underTest = context.getBean("underTest", DefaultDeviceFactory.class);
+        final DefaultDevicePublisher<UPnPServerMock> underTest = context.getBean("underTest", DefaultDevicePublisher.class);
         underTest.setUdn(UDN.uniqueSystemIdentifier("1"));
         underTest.setIcons(Arrays.asList(createDefaultDeviceIcon()));
-        underTest.registerDevice();
+        underTest.publishDevice();
 
         System.err.println("Completed device registration");
 

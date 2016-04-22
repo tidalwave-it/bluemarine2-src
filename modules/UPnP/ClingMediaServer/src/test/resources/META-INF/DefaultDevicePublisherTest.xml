@@ -37,7 +37,7 @@
                            http://www.springframework.org/schema/context/spring-context.xsd"
        default-autowire="byType">
 
-    <bean id="underTest" class="it.tidalwave.bluemarine2.upnp.mediaserver.impl.device.DefaultDeviceFactory">
+    <bean id="underTest" class="it.tidalwave.bluemarine2.upnp.mediaserver.impl.device.DefaultDevicePublisher">
         <constructor-arg ref="upnpService" />
         <constructor-arg value="it.tidalwave.bluemarine2.upnp.mediaserver.mock.impl.UPnPServerMock" />
         <property name="friendlyName" value="UPnP Server Mock"/>

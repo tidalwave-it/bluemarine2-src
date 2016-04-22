@@ -38,13 +38,13 @@ import org.fourthline.cling.model.meta.LocalDevice;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface DeviceFactory<T>
+public interface DevicePublisher<T>
   {
     @Nonnull
     public LocalDevice getDevice()
       throws ValidationException;
 
     @Nonnull
-    public void registerDevice()
+    public void publishDevice()
       throws ValidationException;
   }

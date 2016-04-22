@@ -28,7 +28,7 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
-import it.tidalwave.bluemarine2.upnp.mediaserver.impl.device.DefaultDeviceFactory;
+import it.tidalwave.bluemarine2.upnp.mediaserver.impl.device.DefaultDevicePublisher;
 import it.tidalwave.util.spi.AsDelegateProvider;
 import it.tidalwave.util.spi.EmptyAsDelegateProvider;
 import org.fourthline.cling.UpnpService;
@@ -78,10 +78,10 @@ public class DefaultContentDirectoryTest
     public void registerDevice()
       throws Exception
       {
-        final DefaultDeviceFactory<ContentDirectoryClingAdapter> underTest = context.getBean(DefaultDeviceFactory.class);
+        final DefaultDevicePublisher<ContentDirectoryClingAdapter> underTest = context.getBean(DefaultDevicePublisher.class);
         underTest.setUdn(UDN.uniqueSystemIdentifier("1"));
 //        underTest.setIcons(Arrays.asList(createDefaultDeviceIcon()));
-        underTest.registerDevice();
+        underTest.publishDevice();
 
         log.info("Completed device registration");
         Thread.sleep(60000);

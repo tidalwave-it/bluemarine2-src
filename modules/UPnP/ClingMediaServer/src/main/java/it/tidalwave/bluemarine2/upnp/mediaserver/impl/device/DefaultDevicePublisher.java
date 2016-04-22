@@ -60,7 +60,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class DefaultDeviceFactory<T> implements DeviceFactory<T>
+public class DefaultDevicePublisher<T> implements DevicePublisher<T>
   {
     @Nonnull
     private final UpnpService upnpService;
@@ -112,7 +112,7 @@ public class DefaultDeviceFactory<T> implements DeviceFactory<T>
 
     private ValidationException exception;
 
-    public DefaultDeviceFactory (final @Nonnull UpnpService upnpService, final @Nonnull Class<T> serviceClass)
+    public DefaultDevicePublisher (final @Nonnull UpnpService upnpService, final @Nonnull Class<T> serviceClass)
       {
         this.upnpService = upnpService;
         service = serviceBinder.read(serviceClass);
@@ -135,7 +135,7 @@ public class DefaultDeviceFactory<T> implements DeviceFactory<T>
       }
 
     @Override
-    public void registerDevice()
+    public void publishDevice()
       throws ValidationException
       {
         try
