@@ -112,6 +112,10 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
 
     private ValidationException exception;
 
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
     public DefaultDevicePublisher (final @Nonnull UpnpService upnpService, final @Nonnull Class<T> serviceClass)
       {
         this.upnpService = upnpService;
@@ -120,6 +124,11 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
         service.setManager(serviceManager);
       }
 
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override
     public LocalDevice getDevice()
       throws ValidationException
@@ -134,6 +143,11 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
         return device;
       }
 
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override
     public void publishDevice()
       throws ValidationException
@@ -158,6 +172,10 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
           }
       }
 
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
     @Nonnull
     private String computeFriendyName()
       {
@@ -177,4 +195,4 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
 
         return buffer.toString();
       }
-    }
+  }

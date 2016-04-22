@@ -133,6 +133,11 @@ public class ContentDirectoryClingAdapter
 
     int xxxId = 3;
 
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     @UpnpAction(name = "Browse",
                 out =
                   {
@@ -199,6 +204,11 @@ public class ContentDirectoryClingAdapter
           }
       }
 
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     @UpnpAction(name = "GetSearchCapabilities",
                 out = @UpnpOutputArgument(name = "SearchCaps"))
     public String getSearchCapabilities()
@@ -207,6 +217,11 @@ public class ContentDirectoryClingAdapter
         return searchCapabilities;
       }
 
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     @UpnpAction(name = "GetSortCapabilities",
                 out = @UpnpOutputArgument(name = "SortCaps"))
     public String getSortCapabilities()
@@ -215,6 +230,11 @@ public class ContentDirectoryClingAdapter
         return sortCapabilities;
       }
 
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     @UpnpAction(name = "GetSystemUpdateID",
                 out = @UpnpOutputArgument(name = "Id"))
     public String getSystemUpdateID()
@@ -223,6 +243,11 @@ public class ContentDirectoryClingAdapter
         return systemUpdateId;
       }
 
+    /*******************************************************************************************************************
+     *
+     * 
+     *
+     ******************************************************************************************************************/
     @Nonnull
     private Container asContainer (final @Nonnull As asObject,
                                    final @Nonnull String parentId,
