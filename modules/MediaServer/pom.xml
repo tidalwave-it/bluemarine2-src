@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>it.tidalwave.bluemarine2</groupId>
+        <artifactId>blueMarine2-modules</artifactId>
+        <version>1.0-ALPHA-8-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <groupId>it.tidalwave.bluemarine2</groupId>
+    <artifactId>it-tidalwave-bluemarine2-mediaserver</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-ALPHA-8-SNAPSHOT</version>
+    <name>blueMarine II - Media Server</name>
+    <description>blueMarine2 - Media Server</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-role</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

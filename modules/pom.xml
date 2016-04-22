@@ -20,6 +20,7 @@
 
     <properties>
         <aquafx.version>0.2</aquafx.version>
+        <cling.version>2.1.0</cling.version>
         <httpclient.version>4.4</httpclient.version>
         <jaudiotagger.version>2.2.3</jaudiotagger.version>
         <mp3agic.version>0.8.3</mp3agic.version>
@@ -71,6 +72,23 @@
                 <groupId>com.aquafx-project</groupId>
                 <artifactId>aquafx</artifactId>
                 <version>${aquafx.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.fourthline.cling</groupId>
+                <artifactId>cling-support</artifactId>
+                <version>${cling.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.fourthline.cling</groupId>
+                <artifactId>cling-workbench</artifactId>
+                <version>${cling.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jul-to-slf4j</artifactId>
+                <version>${tft.slf4j.version}</version>
             </dependency>
 
             <dependency>
@@ -257,6 +275,7 @@
         <module>Plugins</module>
         <module>UI</module>
         <module>UPnP</module>
+        <module>MediaServer</module>
     </modules>
 
 </project>

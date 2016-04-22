@@ -17,7 +17,8 @@
     <packaging>pom</packaging>
     <name>blueMarine II - UPnP (modules)</name>
     <description>blueMarine2 UPnp (modules)</description>
+
     <modules>
-        <module>MediaServer</module>
+        <module>ClingMediaServer</module>
     </modules>
 </project>
