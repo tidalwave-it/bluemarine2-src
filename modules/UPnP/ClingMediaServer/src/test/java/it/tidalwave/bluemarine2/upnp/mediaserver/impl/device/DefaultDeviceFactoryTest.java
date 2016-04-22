@@ -31,10 +31,11 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl.device;
 import java.util.Arrays;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.fourthline.cling.UpnpService;
-import org.fourthline.cling.UpnpServiceImpl;
 import org.fourthline.cling.model.meta.Icon;
 import org.fourthline.cling.model.types.UDN;
 import it.tidalwave.bluemarine2.upnp.mediaserver.mock.impl.UPnPServerMock;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -47,6 +48,8 @@ import org.testng.annotations.Test;
  **********************************************************************************************************************/
 public class DefaultDeviceFactoryTest
   {
+    private ApplicationContext context;
+
     private UpnpService upnpService;
 
     @BeforeClass
@@ -54,14 +57,16 @@ public class DefaultDeviceFactoryTest
       {
         SLF4JBridgeHandler.removeHandlersForRootLogger();
         SLF4JBridgeHandler.install();
-        upnpService = new UpnpServiceImpl();
+        context = new ClassPathXmlApplicationContext("META-INF/UPnPAutoBeans.xml",
+                                                     "META-INF/DefaultDeviceFactoryTest.xml");
+        upnpService = context.getBean(UpnpService.class);
       }
 
     @AfterClass
     public void shutdown()
       throws InterruptedException
       {
-        Thread.sleep(60000);
+        Thread.sleep(10000);
         System.err.println("Shutting down...");
         upnpService.shutdown();
       }
@@ -71,14 +76,14 @@ public class DefaultDeviceFactoryTest
       throws Exception
       {
         System.err.println("Starting Cling...");
-        final DefaultDeviceFactory<UPnPServerMock> underTest =
-                new DefaultDeviceFactory<>(upnpService, UPnPServerMock.class);
+        final DefaultDeviceFactory<UPnPServerMock> underTest = context.getBean("underTest", DefaultDeviceFactory.class);
         underTest.setUdn(UDN.uniqueSystemIdentifier("1"));
-        underTest.setFriendlyName("UPnP Server Mock");
         underTest.setIcons(Arrays.asList(createDefaultDeviceIcon()));
         underTest.registerDevice();
 
         System.err.println("Completed device registration");
+
+        // FIXME: assert service can be discovered
       }
 
     private static Icon createDefaultDeviceIcon()

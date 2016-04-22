@@ -39,6 +39,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /***********************************************************************************************************************
  *
@@ -49,6 +51,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DefaultContentDirectoryTest
   {
+    private ApplicationContext context;
+
     private UpnpService upnpService;
 
     @BeforeClass
@@ -56,8 +60,11 @@ public class DefaultContentDirectoryTest
       {
         SLF4JBridgeHandler.removeHandlersForRootLogger();
         SLF4JBridgeHandler.install();
+
+        context = new ClassPathXmlApplicationContext("META-INF/UPnPAutoBeans.xml");
+
         AsDelegateProvider.Locator.set(new EmptyAsDelegateProvider()); // FIXME: use Spring
-        upnpService = new UpnpServiceImpl();
+        upnpService = context.getBean(UpnpService.class);
       }
 
     @AfterClass
@@ -71,10 +78,8 @@ public class DefaultContentDirectoryTest
     public void registerDevice()
       throws Exception
       {
-        final DefaultDeviceFactory<ContentDirectoryClingAdapter> underTest =
-                new DefaultDeviceFactory<>(upnpService, ContentDirectoryClingAdapter.class);
+        final DefaultDeviceFactory<ContentDirectoryClingAdapter> underTest = context.getBean(DefaultDeviceFactory.class);
         underTest.setUdn(UDN.uniqueSystemIdentifier("1"));
-        underTest.setFriendlyName("blueMarine II");
 //        underTest.setIcons(Arrays.asList(createDefaultDeviceIcon()));
         underTest.registerDevice();
 
