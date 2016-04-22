@@ -254,7 +254,9 @@
         <module>Model</module>
         <module>MusicBrainzREST</module>
         <module>Persistence</module>
+        <module>Plugins</module>
         <module>UI</module>
+        <module>UPnP</module>
     </modules>
 
 </project>
