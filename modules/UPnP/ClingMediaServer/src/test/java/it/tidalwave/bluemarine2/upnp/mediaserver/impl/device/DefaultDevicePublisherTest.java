@@ -29,16 +29,12 @@
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl.device;
 
 import java.util.Arrays;
-import org.slf4j.bridge.SLF4JBridgeHandler;
-import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.model.meta.Icon;
 import org.fourthline.cling.model.types.UDN;
+import it.tidalwave.bluemarine2.upnp.mediaserver.impl.ClingTestSupport;
 import it.tidalwave.bluemarine2.upnp.mediaserver.mock.impl.UPnPServerMock;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -46,44 +42,27 @@ import org.testng.annotations.Test;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class DefaultDevicePublisherTest
+@Slf4j
+public class DefaultDevicePublisherTest extends ClingTestSupport
   {
-    private ApplicationContext context;
-
-    private UpnpService upnpService;
-
-    @BeforeClass
-    public void setup()
+    public DefaultDevicePublisherTest()
       {
-        SLF4JBridgeHandler.removeHandlersForRootLogger();
-        SLF4JBridgeHandler.install();
-        context = new ClassPathXmlApplicationContext("META-INF/UPnPAutoBeans.xml",
-                                                     "META-INF/DefaultDevicePublisherTest.xml");
-        upnpService = context.getBean(UpnpService.class);
-      }
-
-    @AfterClass
-    public void shutdown()
-      throws InterruptedException
-      {
-        Thread.sleep(10000);
-        System.err.println("Shutting down...");
-        upnpService.shutdown();
+        super("META-INF/UPnPAutoBeans.xml", "META-INF/DefaultDevicePublisherTest.xml");
       }
 
     @Test
     public void registerDevice()
       throws Exception
       {
-        System.err.println("Starting Cling...");
         final DefaultDevicePublisher<UPnPServerMock> underTest = context.getBean("underTest", DefaultDevicePublisher.class);
         underTest.setUdn(UDN.uniqueSystemIdentifier("1"));
         underTest.setIcons(Arrays.asList(createDefaultDeviceIcon()));
         underTest.publishDevice();
 
-        System.err.println("Completed device registration");
+        log.info("Completed device registration");
 
         // FIXME: assert service can be discovered
+        delay();
       }
 
     private static Icon createDefaultDeviceIcon()

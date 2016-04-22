@@ -28,7 +28,15 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
-import org.testng.annotations.Test;
+import javax.annotation.Nonnull;
+import org.slf4j.bridge.SLF4JBridgeHandler;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.fourthline.cling.UpnpService;
+import it.tidalwave.util.spi.AsDelegateProvider;
+import it.tidalwave.util.spi.EmptyAsDelegateProvider;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -38,19 +46,41 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class ClingContentDirectoryAdapterTest extends ClingTestSupport
+public class ClingTestSupport
   {
-    public ClingContentDirectoryAdapterTest()
+    protected ApplicationContext context;
+
+    protected UpnpService upnpService;
+
+    private final String[] configLocations;
+
+    public ClingTestSupport (final @Nonnull String ... configLocations)
       {
-        super("META-INF/UPnPAutoBeans.xml");
+        this.configLocations = configLocations;
       }
 
-    @Test
-    public void registerDevice()
-      throws Exception
+    @BeforeClass
+    public void setup()
       {
-        // device is automatically published
-        log.info("Completed device registration");
-        delay();
+        SLF4JBridgeHandler.removeHandlersForRootLogger();
+        SLF4JBridgeHandler.install();
+
+        context = new ClassPathXmlApplicationContext(configLocations);
+
+        AsDelegateProvider.Locator.set(new EmptyAsDelegateProvider()); // FIXME: use Spring
+        upnpService = context.getBean(UpnpService.class);
+      }
+
+    @AfterClass
+    public void shutdown()
+      {
+        log.info("Shutting down...");
+        upnpService.shutdown();
+      }
+
+    protected void delay()
+      throws InterruptedException
+      {
+        Thread.sleep(Long.getLong("delay", 2000));
       }
   }
