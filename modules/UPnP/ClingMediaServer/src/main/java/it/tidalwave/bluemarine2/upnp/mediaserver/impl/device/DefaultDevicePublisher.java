@@ -34,6 +34,7 @@ import java.util.Collections;
 import java.util.List;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import javax.annotation.PostConstruct;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.binding.annotations.AnnotationLocalServiceBinder;
 import org.fourthline.cling.model.DefaultServiceManager;
@@ -70,6 +71,9 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
     private final DefaultServiceManager<T>  serviceManager;
 
     private final AnnotationLocalServiceBinder serviceBinder = new AnnotationLocalServiceBinder();
+
+    @Getter @Setter
+    private boolean autoPublish = true;
 
     @Getter @Setter
     private UDN udn = UDN.uniqueSystemIdentifier("1");
@@ -154,6 +158,7 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
       {
         try
           {
+            log.info("publishDevice() - {}", service);
             device = new LocalDevice(new DeviceIdentity(udn, 1800),
                                      udaDeviceType,
                                      new DeviceDetails(computeFriendyName(),
@@ -169,6 +174,20 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
           {
             this.exception = e;
             throw e;
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @PostConstruct
+    private void initialize()
+      throws ValidationException
+      {
+        if (autoPublish)
+          {
+            publishDevice();
           }
       }
 

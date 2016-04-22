@@ -40,7 +40,8 @@
     <bean id="underTest" class="it.tidalwave.bluemarine2.upnp.mediaserver.impl.device.DefaultDevicePublisher">
         <constructor-arg ref="upnpService" />
         <constructor-arg value="it.tidalwave.bluemarine2.upnp.mediaserver.mock.impl.UPnPServerMock" />
-        <property name="friendlyName" value="UPnP Server Mock"/>
+        <property name="friendlyName" value="UPnP Server Mock" />
+        <property name="autoPublish" value="false" />
     </bean>
 
 </beans>

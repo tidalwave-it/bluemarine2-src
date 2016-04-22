@@ -49,7 +49,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class DefaultContentDirectoryTest
+public class ClingContentDirectoryAdapterTest
   {
     private ApplicationContext context;
 
@@ -78,11 +78,7 @@ public class DefaultContentDirectoryTest
     public void registerDevice()
       throws Exception
       {
-        final DefaultDevicePublisher<ContentDirectoryClingAdapter> underTest = context.getBean(DefaultDevicePublisher.class);
-        underTest.setUdn(UDN.uniqueSystemIdentifier("1"));
-//        underTest.setIcons(Arrays.asList(createDefaultDeviceIcon()));
-        underTest.publishDevice();
-
+        // device is automatically published
         log.info("Completed device registration");
         Thread.sleep(60000);
       }
