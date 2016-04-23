@@ -144,7 +144,7 @@ public class ContentDirectoryClingAdapter
       {
         try
           {
-            log.info("browse(objectId: {}, browseFlag: {}, filter: {}, startingIndex: {}, requestedCount: {}, sortCriteria: {})",
+            log.info("browse({}, {}, filter: {}, startingIndex: {}, requestedCount: {}, sortCriteria: {})",
                      objectId, browseFlag, filter, startingIndex, requestedCount, sortCriteria);
 
             final Entity entity = contentDirectory.findEntityById(new Id(objectId));
