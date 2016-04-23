@@ -30,6 +30,7 @@
 import javax.annotation.Nonnull;
 import java.util.Arrays;
 import java.util.List;
+import java.nio.file.Path;
 import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
 import org.fourthline.cling.support.model.DIDLObject;
@@ -40,7 +41,6 @@ import org.fourthline.cling.support.model.dlna.DLNAProtocolInfo;
 import org.fourthline.cling.support.model.item.Photo;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter;
-import java.nio.file.Path;
 import lombok.RequiredArgsConstructor;
 import static java.util.Collections.reverseOrder;
 import static java.util.stream.Collectors.toList;
