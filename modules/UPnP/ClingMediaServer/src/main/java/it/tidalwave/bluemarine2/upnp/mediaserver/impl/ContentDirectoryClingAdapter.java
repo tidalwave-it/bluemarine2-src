@@ -37,15 +37,16 @@ import org.fourthline.cling.binding.annotations.UpnpServiceId;
 import org.fourthline.cling.binding.annotations.UpnpServiceType;
 import org.fourthline.cling.binding.annotations.UpnpStateVariable;
 import org.fourthline.cling.support.contentdirectory.DIDLParser;
+import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
-import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.mediaserver.impl.DefaultContentDirectory;
+import it.tidalwave.bluemarine2.model.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
-import org.fourthline.cling.support.model.BrowseFlag;
 
 /***********************************************************************************************************************
  *
@@ -146,8 +147,8 @@ public class ContentDirectoryClingAdapter
                      objectId, browseFlag, filter, startingIndex, requestedCount, sortCriteria);
 
             // FIXME: search the child with the given objectId
-            final MediaFolder root = contentDirectory.findRoot();
-            final DIDLAdapter didlAdapter = new DIDLAdapter(root);
+            final Entity entity = contentDirectory.findEntityById(new Id(objectId));
+            final DIDLAdapter didlAdapter = new DIDLAdapter(entity);
             final DIDLContent content = didlAdapter.toContent(BrowseFlag.valueOrNullOf(browseFlag));
             final DIDLParser parser = new DIDLParser();
             final int n = (int)content.getCount();

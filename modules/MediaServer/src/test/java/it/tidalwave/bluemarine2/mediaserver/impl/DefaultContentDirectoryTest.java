@@ -34,8 +34,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
+import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.Entity;
 import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.CoreMatchers.*;
 
@@ -61,7 +63,8 @@ public class DefaultContentDirectoryTest
     @Test
     public void must_return_correct_root_children()
       {
-        List<? extends Entity> children = underTest.findRoot().findChildren().results();
+        final Entity root = underTest.findEntityById(new Id("0"));
+        final List<? extends Entity> children = root.as(SimpleComposite8).findChildren().results();
         assertThat(children.size(), is(4));
         assertThat(children.get(0).as(Displayable).getDisplayName(), is("Music Library"));
         assertThat(children.get(1).as(Displayable).getDisplayName(), is("Photo Library"));

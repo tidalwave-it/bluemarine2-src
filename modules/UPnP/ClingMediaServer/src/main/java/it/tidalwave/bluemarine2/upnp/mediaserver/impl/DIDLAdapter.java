@@ -31,18 +31,21 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 import javax.annotation.Nonnull;
 import java.util.Collections;
 import java.util.List;
+import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
 import org.fourthline.cling.support.model.container.Container;
 import org.fourthline.cling.support.model.container.StorageFolder;
+import it.tidalwave.util.As;
 import it.tidalwave.util.AsException;
 import it.tidalwave.util.Finder;
 import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.role.Parentable;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
-import org.fourthline.cling.support.model.BrowseFlag;
+import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
 
 /***********************************************************************************************************************
  *
@@ -53,6 +56,8 @@ import org.fourthline.cling.support.model.BrowseFlag;
 @RequiredArgsConstructor @Slf4j
 public class DIDLAdapter // FIXME: turn into @DciRole
   {
+    private static final String ID_NONE = "-1";
+
     @Nonnull
     private final Entity owner;
 
@@ -69,11 +74,11 @@ public class DIDLAdapter // FIXME: turn into @DciRole
         switch (browseFlag)
           {
             case METADATA:
-                content.addContainer(createContainer(owner, "-1"));
+                content.addContainer(createContainer(owner));
                 break;
 
             case DIRECT_CHILDREN:
-                toContainer(owner, "-1").getContainers().stream().forEach(c -> content.addContainer(c));
+                toContainer(owner).getContainers().stream().forEach(c -> content.addContainer(c));
                 break;
           }
 
@@ -86,18 +91,17 @@ public class DIDLAdapter // FIXME: turn into @DciRole
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static Container toContainer (final @Nonnull Entity entity, final @Nonnull String parentId)
+    private static Container toContainer (final @Nonnull Entity entity)
       {
-        log.debug("asContainer({}, {})", entity, parentId);
-        final Container container = createContainer(entity, parentId);
+        log.debug("toContainer({})", entity);
+        final Container container = createContainer(entity);
 
         try
           {
             final Finder<Entity> childFinder = entity.as(SimpleComposite8).findChildren();
             container.setChildCount(childFinder.count());
             final List<Container> childContainers = container.getContainers();
-            childFinder.results().stream().forEach(child ->
-                    childContainers.add(toContainer(child, container.getId())));
+            childFinder.results().stream().forEach(child -> childContainers.add(toContainer(child)));
           }
         catch (AsException e) // no Composite
           {
@@ -113,18 +117,28 @@ public class DIDLAdapter // FIXME: turn into @DciRole
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static Container createContainer (final @Nonnull Entity entity, final @Nonnull String parentId)
+    private static Container createContainer (final @Nonnull Entity entity)
       {
         final Container container = new Container();
         container.setClazz(StorageFolder.CLASS);
         container.setRestricted(false);
         container.setId(entity.as(Identifiable).getId().stringValue()); // FIXME: translate "0" for root
-        container.setParentID(parentId);
         container.setTitle(entity.as(Displayable).getDisplayName());
-        container.setCreator("blueMarine II");
+        container.setCreator("blueMarine II"); // FIXME
         container.setChildCount(0);
         container.setItems(Collections.emptyList());
 
+        try
+          {
+            final Parentable<As> parentable = entity.as(Parentable);
+            container.setParentID(parentable.hasParent()
+                    ? parentable.getParent().as(Identifiable).getId().stringValue()
+                    : ID_NONE);
+          }
+        catch (AsException e)
+          {
+            container.setParentID(ID_NONE);
+          }
 //                container.getSearchClasses().add(PhotoAlbum.CLASS);
 //                container.getSearchClasses().add(MusicAlbum.CLASS);
 //                container.getSearchClasses().add("object.item.imageItem.photo");

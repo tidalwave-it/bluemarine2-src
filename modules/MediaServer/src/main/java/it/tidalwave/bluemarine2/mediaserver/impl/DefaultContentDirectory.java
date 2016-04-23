@@ -38,6 +38,10 @@ import it.tidalwave.util.spi.ArrayListFinder8;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /***********************************************************************************************************************
  *
@@ -49,32 +53,41 @@ public class DefaultContentDirectory implements ContentDirectory
   {
     private final MediaFolder root;
 
+    private final Map<Id, Entity> entityMapById = new HashMap<>();
+
     public DefaultContentDirectory()
       {
-        final Entity music = createFolder("Music Library");
-        final Entity photo = createFolder("Photo Library");
-        final Entity video = createFolder("Video Library");
-        final Entity services = createFolder("Services");
+        final List<Entity> children = new ArrayList<>();
 
         root = new VirtualMediaFolder(new Id("0"), Paths.get("Root"), null)
           {
             @Override @Nonnull
             public Finder8<Entity> findChildren()
               {
-                return new ArrayListFinder8<>(Arrays.asList(music, photo, video, services));
+                return new ArrayListFinder8<>(children);
               }
           };
+
+        entityMapById.put(new Id("0"), root);
+
+        children.add(createFolder(root, "Music Library"));
+        children.add(createFolder(root, "Photo Library"));
+        children.add(createFolder(root, "Video Library"));
+        children.add(createFolder(root, "Services"));
       }
 
     @Override @Nonnull
-    public MediaFolder findRoot()
+    public Entity findEntityById (final @Nonnull Id id) // FIXME: use a Finder
       {
-        return root;
+        return entityMapById.get(id); // FIXME: NPE
       }
 
     @Nonnull
-    private MediaFolder createFolder (final @Nonnull String displayName)
+    private MediaFolder createFolder (final @Nonnull MediaFolder owner, final @Nonnull String displayName)
       {
-        return new VirtualMediaFolder(new Id(UUID.randomUUID().toString()), Paths.get(displayName), null);
+        final Id id = new Id(UUID.randomUUID().toString());
+        final VirtualMediaFolder folder = new VirtualMediaFolder(id, Paths.get(displayName), owner);
+        entityMapById.put(id, folder);
+        return folder;
       }
   }
