@@ -36,7 +36,7 @@ import org.fourthline.cling.support.model.DIDLObject;
 
 /***********************************************************************************************************************
  *
- * @stereotype  DCI Role
+ * @stereotype  Role
  *
  * @author  Fabrizio Giudici
  * @version $Id$
