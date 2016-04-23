@@ -29,7 +29,6 @@
 package it.tidalwave.bluemarine2.mediaserver.impl;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
 import java.util.UUID;
 import java.nio.file.Paths;
 import it.tidalwave.util.Finder8;
