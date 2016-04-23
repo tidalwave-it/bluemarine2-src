@@ -55,11 +55,12 @@ public class ClingTestSupport
 
     private final String[] configLocations;
 
-    public ClingTestSupport (final @Nonnull String ... configLocations)
+    protected ClingTestSupport (final @Nonnull String ... configLocations)
       {
         final List<String> list = new ArrayList<>(Arrays.asList(configLocations));
         list.add(0, "META-INF/DciBeans.xml"); // for DCI injectors
         this.configLocations = list.toArray(new String[0]);
+        log.info(">>>> Spring configuration locations: {}", (Object[])this.configLocations);
       }
 
     @BeforeClass
