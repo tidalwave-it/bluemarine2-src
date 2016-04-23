@@ -50,6 +50,7 @@ import lombok.extern.slf4j.Slf4j;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static it.tidalwave.role.Displayable.Displayable;
+import it.tidalwave.util.NotFoundException;
 
 /***********************************************************************************************************************
  *
@@ -60,6 +61,9 @@ import static it.tidalwave.role.Displayable.Displayable;
 @Slf4j
 public class VirtualMediaFolderTest
   {
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     static class TestCaseBuilder
       {
         @Getter
@@ -134,6 +138,9 @@ public class VirtualMediaFolderTest
 
     private VirtualMediaFolder underTest;
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @BeforeMethod
     public void setup()
       {
@@ -141,6 +148,9 @@ public class VirtualMediaFolderTest
         underTest = new TestCaseBuilder().getFolderMap().get(Paths.get("/"));
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Test
     public void must_correctly_find_all_children()
       {
@@ -150,14 +160,22 @@ public class VirtualMediaFolderTest
         assertThat(children.get(1).as(Displayable).getDisplayName(), is("/photos"));
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Test(dataProvider = "pathsProvider")
-    public void must_correctly_find_children_by_path (final @Nonnull Path path)
+    public void must_correctly_find_child_by_path (final @Nonnull Path path)
+      throws NotFoundException
       {
-        final List<? extends Entity> children = underTest.findChildren().withPath(path).results();
-        assertThat(children.size(), is(1));
-        assertThat(children.get(0).as(Displayable).getDisplayName(), is(path.toString()));
+        final Entity child = underTest.findChildren().withPath(path).result();
+        assertThat(child.as(Displayable).getDisplayName(), is(path.toString()));
       }
 
+    // TODO: add test for withPath() and no results
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @DataProvider
     public static Object[][] pathsProvider()
       {
