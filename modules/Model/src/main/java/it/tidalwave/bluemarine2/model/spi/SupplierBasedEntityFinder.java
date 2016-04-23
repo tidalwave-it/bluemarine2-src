@@ -184,9 +184,14 @@ public class SupplierBasedEntityFinder extends Finder8Support<Entity, EntityFind
      *
      *
      ******************************************************************************************************************/
-    @Nonnull
-    private Path relative (final @Nonnull Path path)
+    @CheckForNull
+    private Path relative (final @Nullable Path path)
       {
+        if (path == null)
+          {
+            return null;
+          }
+
         return mediaFolder.isRoot() ? path :
                 path.startsWith(mediaFolder.getPath()) ? path.subpath(mediaFolder.getPath().getNameCount(), path.getNameCount())
                                                        : null;
