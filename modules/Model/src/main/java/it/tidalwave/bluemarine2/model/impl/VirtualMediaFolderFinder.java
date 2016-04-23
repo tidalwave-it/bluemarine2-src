@@ -133,7 +133,6 @@ public class VirtualMediaFolderFinder extends Finder8Support<Entity, EntityFinde
     @Nonnull
     private List<? extends Entity> filteredByPath (final @Nonnull Path path)
       {
-        // FIXME: please refactor this mess!
         if (mediaFolder.getPath().equals(path))
           {
             return Collections.singletonList(mediaFolder);

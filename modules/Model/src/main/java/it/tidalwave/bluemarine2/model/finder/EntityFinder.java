@@ -36,8 +36,6 @@ import it.tidalwave.bluemarine2.model.Entity;
 
 /***********************************************************************************************************************
  *
- * A {@link Finder} extension that is able to search by {@link Path}.
- * 
  * @stereotype      Finder
  *
  * @author  Fabrizio Giudici

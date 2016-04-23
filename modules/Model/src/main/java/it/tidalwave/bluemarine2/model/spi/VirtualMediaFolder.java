@@ -46,11 +46,6 @@ import lombok.Getter;
 
 /***********************************************************************************************************************
  *
- * An implementation of {@link MediaFolder} that is not backed by a file system or a database, but can be created in
- * memory. Useful, for instance, for creating intermediate folders in a hierarchy.
- *
- * @stereotype  Datum
- *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -66,16 +61,6 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
     @Getter @Nonnull
     private final Supplier<Collection<Entity>> childrenSupplier;
 
-    /*******************************************************************************************************************
-     *
-     * Creates an instance given a {@link Supplier} of children.
-     *
-     * @param   parent              an optional parent
-     * @param   path                the path (must be a simple path element)
-     * @param   displayName         the display name
-     * @param   childrenSupplier    the {@code Supplier] of children
-     *
-     ******************************************************************************************************************/
     public VirtualMediaFolder (final @Nullable MediaFolder parent,
                                final @Nonnull Path path,
                                final @Nonnull String displayName,
@@ -88,48 +73,24 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
         this.childrenSupplier = childrenSupplier;
       }
 
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
     @Override
     public boolean isRoot()
       {
         return parent == null;
       }
 
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
     @Override @Nonnull
     public EntityFinder findChildren()
       {
         return new VirtualMediaFolderFinder(this);
       }
 
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
     @Override @Nonnull
     public String toString()
       {
         return String.format("VirtualMediaFolder(%s)", path);
       }
 
-    /*******************************************************************************************************************
-     *
-     * Computes the absolute path given an optional parent.
-     *
-     * @param   parent  the parent (optional)
-     * @param   path    the path
-     * @return          the absolute path
-     *
-     ******************************************************************************************************************/
     @Nonnull
     private static Path absolutePath (final @Nullable MediaFolder parent, final @Nonnull Path path)
       {
