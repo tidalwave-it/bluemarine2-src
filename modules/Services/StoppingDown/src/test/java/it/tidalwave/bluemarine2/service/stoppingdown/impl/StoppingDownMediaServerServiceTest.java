@@ -47,7 +47,7 @@ public class StoppingDownMediaServerServiceTest extends ClingTestSupport
       }
 
     @Test
-    public void testSomeMethod()
+    public void test_deploy()
       throws InterruptedException
       {
         delay();
