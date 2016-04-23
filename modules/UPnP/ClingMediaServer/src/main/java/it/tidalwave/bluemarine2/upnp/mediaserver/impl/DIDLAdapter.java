@@ -30,23 +30,8 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
-import java.util.Collections;
 import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
-import org.fourthline.cling.support.model.container.Container;
-import org.fourthline.cling.support.model.container.StorageFolder;
-import it.tidalwave.util.As;
-import it.tidalwave.util.AsException;
-import it.tidalwave.util.Finder;
-import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.role.Parentable;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.role.Identifiable.Identifiable;
-import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
-import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
-import it.tidalwave.util.Id;
 
 /***********************************************************************************************************************
  *
@@ -54,93 +39,17 @@ import it.tidalwave.util.Id;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j
-public class DIDLAdapter // FIXME: turn into @DciRole
+public interface DIDLAdapter
   {
-    private static final String ID_ROOT = "0";
-
-    private static final String ID_NONE = "-1";
-
-    @Nonnull
-    private final Entity owner;
-
+    public static final Class<DIDLAdapter> DIDLAdapter = DIDLAdapter.class;
+    
     /*******************************************************************************************************************
      *
      *
      *
      ******************************************************************************************************************/
     @Nonnull
-    public DIDLContent toContent (final @Nonnull BrowseFlag browseFlag,
-                                  final @Nonnegative int from,
-                                  final @Nonnegative int maxResults)
-      {
-        final DIDLContent content = new DIDLContent();
-
-        switch (browseFlag)
-          {
-            case METADATA:
-                content.addContainer(createContainer(owner));
-                break;
-
-            case DIRECT_CHILDREN:
-                try
-                  {
-                    final Finder<Entity> finder = owner.as(SimpleComposite8).findChildren();
-                    finder.from(from)
-//                          .max(maxResults) FIXME: doesn't work
-                          .results()
-                          .stream()
-                          .forEach(child -> content.addContainer(createContainer(child)));
-                  }
-                catch (AsException e) // no Composite
-                  {
-                    log.debug("", e);
-                  }
-
-                break;
-          }
-
-        return content;
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private static Container createContainer (final @Nonnull Entity entity)
-      {
-        final Container container = new Container();
-        container.setClazz(StorageFolder.CLASS);
-        container.setRestricted(false);
-        container.setId(didlId(entity.as(Identifiable).getId()));
-        container.setTitle(entity.as(Displayable).getDisplayName());
-        container.setCreator("blueMarine II"); // FIXME
-        container.setChildCount(0);
-        container.setItems(Collections.emptyList());
-
-        try
-          {
-            final Parentable<As> parentable = entity.as(Parentable);
-            container.setParentID(parentable.hasParent()
-                    ? didlId(parentable.getParent().as(Identifiable).getId())
-                    : ID_NONE);
-          }
-        catch (AsException e)
-          {
-            container.setParentID(ID_NONE);
-          }
-//                container.getSearchClasses().add(PhotoAlbum.CLASS);
-//                container.getSearchClasses().add(MusicAlbum.CLASS);
-//                container.getSearchClasses().add("object.item.imageItem.photo");
-
-        return container;
-      }
-
-    @Nonnull
-    private static String didlId (final @Nonnull Id id)
-      {
-        return id.stringValue().replaceAll("^/$", ID_ROOT);
-      }
+    public DIDLContent toContent (@Nonnull BrowseFlag browseFlag,
+                                  @Nonnegative int from,
+                                  @Nonnegative int maxResults);
   }

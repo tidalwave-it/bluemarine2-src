@@ -49,6 +49,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter.DIDLAdapter;
 
 /***********************************************************************************************************************
  *
@@ -150,7 +151,7 @@ public class ContentDirectoryClingAdapter
 
             final Path path = Paths.get(objectId.equals("0") ? "/" : objectId);
             final Entity entity = contentDirectory.findRoot().findChildren().withPath(path).result();
-            final DIDLAdapter didlAdapter = new DIDLAdapter(entity);
+            final DIDLAdapter didlAdapter = entity.as(DIDLAdapter);
             final DIDLContent content = didlAdapter.toContent(BrowseFlag.valueOrNullOf(browseFlag),
                                                               startingIndex,
                                                               maxCount(requestedCount));
