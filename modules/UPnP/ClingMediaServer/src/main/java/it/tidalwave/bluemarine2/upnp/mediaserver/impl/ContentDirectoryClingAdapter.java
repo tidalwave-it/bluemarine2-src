@@ -28,10 +28,7 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
-import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import java.util.Collections;
-import java.util.List;
 import org.fourthline.cling.binding.annotations.UpnpAction;
 import org.fourthline.cling.binding.annotations.UpnpInputArgument;
 import org.fourthline.cling.binding.annotations.UpnpOutputArgument;
@@ -41,20 +38,14 @@ import org.fourthline.cling.binding.annotations.UpnpServiceType;
 import org.fourthline.cling.binding.annotations.UpnpStateVariable;
 import org.fourthline.cling.support.contentdirectory.DIDLParser;
 import org.fourthline.cling.support.model.DIDLContent;
-import org.fourthline.cling.support.model.container.Container;
-import org.fourthline.cling.support.model.container.StorageFolder;
-import it.tidalwave.util.As;
-import it.tidalwave.util.AsException;
-import it.tidalwave.util.Finder;
+import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.mediaserver.impl.DefaultContentDirectory;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.role.Identifiable.Identifiable;
-import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
+import org.fourthline.cling.support.model.BrowseFlag;
 
 /***********************************************************************************************************************
  *
@@ -154,35 +145,13 @@ public class ContentDirectoryClingAdapter
             log.info("browse(objectId: {}, browseFlag: {}, filter: {}, startingIndex: {}, requestedCount: {}, sortCriteria: {})",
                      objectId, browseFlag, filter, startingIndex, requestedCount, sortCriteria);
 
-            final DIDLContent content = new DIDLContent();
-
-            if ("BrowseMetadata".equals(browseFlag))
-              {
-                final Container container = new Container();
-                content.addContainer(container);
-                container.setRestricted(false);
-                container.setChildCount(0);
-                container.setId(objectId);
-                container.setParentID("-1");
-                container.setClazz(StorageFolder.CLASS);
-                container.setTitle("Root");
-                container.setCreator("blueMarine II");
-                container.setItems(Collections.emptyList());
-//                container.getSearchClasses().add(PhotoAlbum.CLASS);
-//                container.getSearchClasses().add(MusicAlbum.CLASS);
-//                container.getSearchClasses().add("object.item.imageItem.photo");
-              }
-            else if ("BrowseDirectChildren".equals(browseFlag))
-              {
-                final As root = contentDirectory.findRoot();
-                final Container c1 = asContainer(root, objectId, false);
-                c1.getContainers().stream().forEach(ccc -> content.addContainer(ccc));
-              }
-
-            final DIDLParser dp = new DIDLParser();
-
+            // FIXME: search the child with the given objectId
+            final MediaFolder root = contentDirectory.findRoot();
+            final DIDLAdapter didlAdapter = new DIDLAdapter(root);
+            final DIDLContent content = didlAdapter.toContent(BrowseFlag.valueOrNullOf(browseFlag));
+            final DIDLParser parser = new DIDLParser();
             final int n = (int)content.getCount();
-            final BrowseResult result = new BrowseResult(dp.generate(content), n, n, ++xxxId);
+            final BrowseResult result = new BrowseResult(parser.generate(content), n, n, ++xxxId);
             log.info(">>>> returning {}", result);
 
             return result;
@@ -231,47 +200,5 @@ public class ContentDirectoryClingAdapter
       {
         log.info("getSystemUpdateID");
         return systemUpdateId;
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private Container asContainer (final @Nonnull As asObject,
-                                   final @Nonnull String parentId,
-                                   final boolean metadataOnly) // FIXME: use Enum
-      {
-        log.debug("asContainer({}, {}, {})", asObject, parentId, metadataOnly);
-        final Container container = new Container();
-        container.setRestricted(false);
-        container.setId(asObject.as(Identifiable).getId().stringValue());
-        container.setParentID(parentId);
-        container.setClazz(StorageFolder.CLASS); // FIXME: container
-        container.setTitle(asObject.as(Displayable).getDisplayName());
-        container.setCreator("blueMarine II"); // FIXME
-
-        try
-          {
-            final Finder<As> childFinder = asObject.as(SimpleComposite8).findChildren();
-            container.setChildCount(childFinder.count());
-
-            if (!metadataOnly)
-              {
-                final List<Container> childContainers = container.getContainers();
-                childFinder.results().stream().forEach(child -> log.debug(">>>> child: {}", child));
-                childFinder.results().stream().forEach(child ->
-                        childContainers.add(asContainer(child, container.getId(), metadataOnly)));
-              }
-          }
-        catch (AsException e) // no Composite
-          {
-            log.debug("", e);
-            container.setChildCount(0);
-            container.setItems(Collections.emptyList());
-          }
-
-        return container;
       }
   }
