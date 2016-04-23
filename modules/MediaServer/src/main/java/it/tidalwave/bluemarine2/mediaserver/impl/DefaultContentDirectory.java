@@ -28,19 +28,25 @@
  */
 package it.tidalwave.bluemarine2.mediaserver.impl;
 
+import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import javax.annotation.Nonnull;
+import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import java.nio.file.Paths;
+import org.springframework.beans.factory.annotation.Autowired;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.ArrayListFinder8;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -48,13 +54,19 @@ import java.util.Map;
  * @version $Id$
  *
  **********************************************************************************************************************/
+@Slf4j
 public class DefaultContentDirectory implements ContentDirectory
   {
-    private final MediaFolder root;
+//    @Inject FIXME
+    @Autowired(required = false)
+    private List<MediaServerService> services = Collections.emptyList();
+
+    private MediaFolder root;
 
     private final Map<Id, Entity> entityMapById = new HashMap<>();
 
-    public DefaultContentDirectory()
+    @PostConstruct
+    private void initialize()
       {
         final List<Entity> children = new ArrayList<>();
 
@@ -73,6 +85,11 @@ public class DefaultContentDirectory implements ContentDirectory
         children.add(createFolder(root, "Photos"));
         children.add(createFolder(root, "Videos"));
         children.add(createFolder(root, "Services"));
+
+        log.info(">>>> discovered services: {}", services);
+        // FIXME: put under Services
+        // FIXME: those aren't registered in entityMapById
+        services.stream().forEach(service -> children.add(service.findMediaFolder()));
       }
 
     @Override @Nonnull

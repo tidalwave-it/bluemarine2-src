@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.mediaserver.impl;
+package it.tidalwave.bluemarine2.model.spi;
 
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
