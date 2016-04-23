@@ -28,9 +28,9 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import java.util.Collections;
-import java.util.List;
 import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
 import org.fourthline.cling.support.model.container.Container;
@@ -67,7 +67,9 @@ public class DIDLAdapter // FIXME: turn into @DciRole
      *
      ******************************************************************************************************************/
     @Nonnull
-    public DIDLContent toContent (final @Nonnull BrowseFlag browseFlag)
+    public DIDLContent toContent (final @Nonnull BrowseFlag browseFlag,
+                                  final @Nonnegative int from,
+                                  final @Nonnegative int maxResults)
       {
         final DIDLContent content = new DIDLContent();
 
@@ -78,37 +80,24 @@ public class DIDLAdapter // FIXME: turn into @DciRole
                 break;
 
             case DIRECT_CHILDREN:
-                toContainer(owner).getContainers().stream().forEach(c -> content.addContainer(c));
+                try
+                  {
+                    final Finder<Entity> finder = owner.as(SimpleComposite8).findChildren();
+                    finder.from(from)
+//                          .max(maxResults) FIXME: doesn't work
+                          .results()
+                          .stream()
+                          .forEach(child -> content.addContainer(createContainer(child)));
+                  }
+                catch (AsException e) // no Composite
+                  {
+                    log.debug("", e);
+                  }
+
                 break;
           }
 
         return content;
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private static Container toContainer (final @Nonnull Entity entity)
-      {
-        log.debug("toContainer({})", entity);
-        final Container container = createContainer(entity);
-
-        try
-          {
-            final Finder<Entity> childFinder = entity.as(SimpleComposite8).findChildren();
-            container.setChildCount(childFinder.count());
-            final List<Container> childContainers = container.getContainers();
-            childFinder.results().stream().forEach(child -> childContainers.add(toContainer(child)));
-          }
-        catch (AsException e) // no Composite
-          {
-            log.debug("", e);
-          }
-
-        return container;
       }
 
     /*******************************************************************************************************************

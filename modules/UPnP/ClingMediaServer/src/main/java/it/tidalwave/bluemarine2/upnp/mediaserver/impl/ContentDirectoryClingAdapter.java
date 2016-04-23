@@ -43,6 +43,7 @@ import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.mediaserver.impl.DefaultContentDirectory;
 import it.tidalwave.bluemarine2.model.Entity;
+import javax.annotation.Nonnegative;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -146,10 +147,11 @@ public class ContentDirectoryClingAdapter
             log.info("browse(objectId: {}, browseFlag: {}, filter: {}, startingIndex: {}, requestedCount: {}, sortCriteria: {})",
                      objectId, browseFlag, filter, startingIndex, requestedCount, sortCriteria);
 
-            // FIXME: search the child with the given objectId
             final Entity entity = contentDirectory.findEntityById(new Id(objectId));
             final DIDLAdapter didlAdapter = new DIDLAdapter(entity);
-            final DIDLContent content = didlAdapter.toContent(BrowseFlag.valueOrNullOf(browseFlag));
+            final DIDLContent content = didlAdapter.toContent(BrowseFlag.valueOrNullOf(browseFlag),
+                                                              startingIndex,
+                                                              maxCount(requestedCount));
             final DIDLParser parser = new DIDLParser();
             final int n = (int)content.getCount();
             final BrowseResult result = new BrowseResult(parser.generate(content), n, n, ++xxxId);
@@ -201,5 +203,16 @@ public class ContentDirectoryClingAdapter
       {
         log.info("getSystemUpdateID");
         return systemUpdateId;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnegative
+    private static int maxCount (final @Nonnegative int value)
+      {
+        return (value == 0) ? Integer.MAX_VALUE : value;
       }
   }
