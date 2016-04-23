@@ -70,9 +70,9 @@ public class DefaultContentDirectory implements ContentDirectory
 
         entityMapById.put(new Id("0"), root);
 
-        children.add(createFolder(root, "Music Library"));
-        children.add(createFolder(root, "Photo Library"));
-        children.add(createFolder(root, "Video Library"));
+        children.add(createFolder(root, "Music"));
+        children.add(createFolder(root, "Photos"));
+        children.add(createFolder(root, "Videos"));
         children.add(createFolder(root, "Services"));
       }
 
