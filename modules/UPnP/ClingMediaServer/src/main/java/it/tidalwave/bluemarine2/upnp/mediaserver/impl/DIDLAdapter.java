@@ -46,6 +46,7 @@ import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
+import it.tidalwave.util.Id;
 
 /***********************************************************************************************************************
  *
@@ -56,6 +57,8 @@ import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
 @RequiredArgsConstructor @Slf4j
 public class DIDLAdapter // FIXME: turn into @DciRole
   {
+    private static final String ID_ROOT = "0";
+
     private static final String ID_NONE = "-1";
 
     @Nonnull
@@ -111,7 +114,7 @@ public class DIDLAdapter // FIXME: turn into @DciRole
         final Container container = new Container();
         container.setClazz(StorageFolder.CLASS);
         container.setRestricted(false);
-        container.setId(entity.as(Identifiable).getId().stringValue()); // FIXME: translate "0" for root
+        container.setId(didlId(entity.as(Identifiable).getId()));
         container.setTitle(entity.as(Displayable).getDisplayName());
         container.setCreator("blueMarine II"); // FIXME
         container.setChildCount(0);
@@ -121,7 +124,7 @@ public class DIDLAdapter // FIXME: turn into @DciRole
           {
             final Parentable<As> parentable = entity.as(Parentable);
             container.setParentID(parentable.hasParent()
-                    ? parentable.getParent().as(Identifiable).getId().stringValue()
+                    ? didlId(parentable.getParent().as(Identifiable).getId())
                     : ID_NONE);
           }
         catch (AsException e)
@@ -133,5 +136,11 @@ public class DIDLAdapter // FIXME: turn into @DciRole
 //                container.getSearchClasses().add("object.item.imageItem.photo");
 
         return container;
+      }
+
+    @Nonnull
+    private static String didlId (final @Nonnull Id id)
+      {
+        return id.stringValue().replaceAll("^/$", ID_ROOT);
       }
   }

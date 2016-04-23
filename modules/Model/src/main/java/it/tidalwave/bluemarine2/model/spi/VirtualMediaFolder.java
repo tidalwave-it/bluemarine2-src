@@ -31,16 +31,17 @@ package it.tidalwave.bluemarine2.model.spi;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.Collections;
+import java.util.Collection;
+import java.util.function.Supplier;
 import java.nio.file.Path;
-import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Id;
-import it.tidalwave.util.spi.ArrayListFinder8;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.impl.EntityWithRoles;
+import it.tidalwave.bluemarine2.model.impl.VirtualMediaFolderFinder;
 import lombok.Getter;
 
 /***********************************************************************************************************************
@@ -57,12 +58,19 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
     @Getter @CheckForNull
     private MediaFolder parent;
 
-    public VirtualMediaFolder (final @Nonnull Id id, final @Nonnull Path path, final @Nullable MediaFolder parent)
+    @Getter @Nonnull
+    private final Supplier<Collection<Entity>> childrenSupplier;
+
+    public VirtualMediaFolder (final @Nullable MediaFolder parent,
+                               final @Nonnull Path path,
+                               final @Nonnull String displayName,
+                               final @Nonnull Supplier<Collection<Entity>> childrenSupplier)
       {
-        super((Identifiable)() -> id,
-              new DefaultDisplayable(path.toString()));
-        this.path = path;
+        super((Identifiable)() -> new Id(absolutePath(parent, path).toString()),
+              new DefaultDisplayable(displayName));
+        this.path = absolutePath(parent, path);
         this.parent = parent;
+        this.childrenSupplier = childrenSupplier;
       }
 
     @Override
@@ -72,14 +80,20 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
       }
 
     @Override @Nonnull
-    public Finder8<Entity> findChildren()
+    public EntityFinder findChildren()
       {
-        return new ArrayListFinder8<>(Collections.emptyList());
+        return new VirtualMediaFolderFinder(this);
       }
 
     @Override @Nonnull
     public String toString()
       {
         return String.format("VirtualMediaFolder(%s)", path);
+      }
+
+    @Nonnull
+    private static Path absolutePath (final @Nullable MediaFolder parent, final @Nonnull Path path)
+      {
+        return (parent == null) ? path : parent.getPath().resolve(path);
       }
   }

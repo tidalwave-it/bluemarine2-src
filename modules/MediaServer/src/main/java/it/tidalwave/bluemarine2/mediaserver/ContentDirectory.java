@@ -29,8 +29,7 @@
 package it.tidalwave.bluemarine2.mediaserver;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.MediaFolder;
 
 /***********************************************************************************************************************
  *
@@ -41,5 +40,5 @@ import it.tidalwave.bluemarine2.model.Entity;
 public interface ContentDirectory
   {
     @Nonnull
-    public Entity findEntityById (@Nonnull Id id);
+    public MediaFolder findRoot();
   }

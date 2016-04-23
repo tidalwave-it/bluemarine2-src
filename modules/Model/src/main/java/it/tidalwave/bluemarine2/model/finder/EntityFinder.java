@@ -26,42 +26,44 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.finder;
 
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
-import it.tidalwave.util.As;
-import it.tidalwave.role.Composite;
-import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.model.role.Parentable;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import java.nio.file.Paths;
+import it.tidalwave.util.spi.ExtendedFinder8Support;
+import it.tidalwave.bluemarine2.model.Entity;
 
 /***********************************************************************************************************************
  *
- * Represents a folder on a filesystem that contains media items. It is associated with the {@link Composite<As>} role.
- * The filesystem can be a physycal one (on the disk), or a virtual one (e.g. on a database); the folder concept is
- * flexible and represents any composite collection of items.
- *
- * @stereotype  Datum
+ * @stereotype      Finder
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaFolder extends Entity, Parentable<MediaFolder>, SimpleComposite8<Entity>
+public interface EntityFinder extends ExtendedFinder8Support<Entity, EntityFinder>
   {
     /*******************************************************************************************************************
      *
-     * Returns the {@link Path} associated with this object.
+     * Constrains the search to the entity with the given path.
      *
-     * @return  the path
+     * @return      the {@code Finder}
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Path getPath();
+    public EntityFinder withPath (@Nonnull Path path);
 
-    public boolean isRoot();
-
-    @Override
-    public EntityFinder findChildren();
+    /*******************************************************************************************************************
+     *
+     * Constrains the search to the entity with the given path.
+     *
+     * @return      the {@code Finder}
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public default EntityFinder withPath (@Nonnull String path)
+      {
+        return withPath(Paths.get(path));
+      }
   }

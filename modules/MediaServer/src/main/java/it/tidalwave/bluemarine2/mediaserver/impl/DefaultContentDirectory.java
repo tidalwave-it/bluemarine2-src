@@ -28,22 +28,18 @@
  */
 package it.tidalwave.bluemarine2.mediaserver.impl;
 
-import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.function.Supplier;
 import java.nio.file.Paths;
 import org.springframework.beans.factory.annotation.Autowired;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.util.Id;
-import it.tidalwave.util.spi.ArrayListFinder8;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
 import lombok.extern.slf4j.Slf4j;
@@ -57,53 +53,42 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DefaultContentDirectory implements ContentDirectory
   {
+    private static final Supplier<Collection<Entity>> EMPTY_SUPPLIER = () -> Collections.emptyList();
+
 //    @Inject FIXME
     @Autowired(required = false)
     private List<MediaServerService> services = Collections.emptyList();
 
     private MediaFolder root;
 
-    private final Map<Id, Entity> entityMapById = new HashMap<>();
+    @Override @Nonnull
+    public MediaFolder findRoot()
+      {
+        return root;
+      }
 
     @PostConstruct
     private void initialize()
       {
         final List<Entity> children = new ArrayList<>();
 
-        root = new VirtualMediaFolder(new Id("0"), Paths.get("Root"), null)
-          {
-            @Override @Nonnull
-            public Finder8<Entity> findChildren()
-              {
-                return new ArrayListFinder8<>(children);
-              }
-          };
+        root =       new VirtualMediaFolder(null, Paths.get("/"),      "",       () -> children);
+        children.add(new VirtualMediaFolder(root, Paths.get("music"),  "Music",  EMPTY_SUPPLIER));
+        children.add(new VirtualMediaFolder(root, Paths.get("photos"), "Photos", EMPTY_SUPPLIER));
+        children.add(new VirtualMediaFolder(root, Paths.get("videos"), "Videos", EMPTY_SUPPLIER));
 
-        entityMapById.put(new Id("0"), root);
-
-        children.add(createFolder(root, "Music"));
-        children.add(createFolder(root, "Photos"));
-        children.add(createFolder(root, "Videos"));
-        children.add(createFolder(root, "Services"));
-
-        log.info(">>>> discovered services: {}", services);
-        // FIXME: put under Services
-        // FIXME: those aren't registered in entityMapById
-        services.stream().forEach(service -> children.add(service.findMediaFolder()));
-      }
-
-    @Override @Nonnull
-    public Entity findEntityById (final @Nonnull Id id) // FIXME: use a Finder
-      {
-        return entityMapById.get(id); // FIXME: NPE
+        children.add(createServicesRootFolder(root));
       }
 
     @Nonnull
-    private MediaFolder createFolder (final @Nonnull MediaFolder owner, final @Nonnull String displayName)
+    private MediaFolder createServicesRootFolder (final @Nonnull MediaFolder root)
       {
-        final Id id = new Id(UUID.randomUUID().toString());
-        final VirtualMediaFolder folder = new VirtualMediaFolder(id, Paths.get(displayName), owner);
-        entityMapById.put(id, folder);
-        return folder;
+        log.info(">>>> discovered services: {}", services);
+
+        final List<Entity> children = new ArrayList<>();
+        final MediaFolder servicesRootFolder = new VirtualMediaFolder(root, Paths.get("services"), "Services", () -> children);
+        services.stream().forEach(service -> children.add(service.createRootFolder(servicesRootFolder)));
+
+        return servicesRootFolder;
       }
   }

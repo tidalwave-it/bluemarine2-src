@@ -31,6 +31,8 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 import javax.annotation.Nonnegative;
 import javax.annotation.concurrent.Immutable;
 import javax.inject.Inject;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import org.fourthline.cling.binding.annotations.UpnpAction;
 import org.fourthline.cling.binding.annotations.UpnpInputArgument;
 import org.fourthline.cling.binding.annotations.UpnpOutputArgument;
@@ -41,7 +43,6 @@ import org.fourthline.cling.binding.annotations.UpnpStateVariable;
 import org.fourthline.cling.support.contentdirectory.DIDLParser;
 import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
-import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.model.Entity;
 import lombok.AllArgsConstructor;
@@ -147,7 +148,8 @@ public class ContentDirectoryClingAdapter
             log.info("browse({}, {}, filter: {}, startingIndex: {}, requestedCount: {}, sortCriteria: {})",
                      objectId, browseFlag, filter, startingIndex, requestedCount, sortCriteria);
 
-            final Entity entity = contentDirectory.findEntityById(new Id(objectId));
+            final Path path = Paths.get(objectId.equals("0") ? "/" : objectId);
+            final Entity entity = contentDirectory.findRoot().findChildren().withPath(path).result();
             final DIDLAdapter didlAdapter = new DIDLAdapter(entity);
             final DIDLContent content = didlAdapter.toContent(BrowseFlag.valueOrNullOf(browseFlag),
                                                               startingIndex,
