@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <item id="20150524-0034" parentID="/folder" restricted="0">
+        <dc:title>20150524-0034</dc:title>
+        <dc:creator>Fabrizio Giudici</dc:creator>
+        <upnp:class>object.item.imageItem.photo</upnp:class>
+        <upnp:album>/folder</upnp:album>
+        <res protocolInfo="http-get:*:image/jpeg:*">http://stoppingdown.net/media/stillimages/20150524-0034/2560/image.jpg</res>
+        <res protocolInfo="http-get:*:image/jpeg:*">http://stoppingdown.net/media/stillimages/20150524-0034/1920/image.jpg</res>
+        <res protocolInfo="http-get:*:image/jpeg:*">http://stoppingdown.net/media/stillimages/20150524-0034/1280/image.jpg</res>
+        <res protocolInfo="http-get:*:image/jpeg:*">http://stoppingdown.net/media/stillimages/20150524-0034/800/image.jpg</res>
+        <res protocolInfo="http-get:*:image/jpeg:*">http://stoppingdown.net/media/stillimages/20150524-0034/400/image.jpg</res>
+        <res protocolInfo="http-get:*:image/jpeg:*">http://stoppingdown.net/media/stillimages/20150524-0034/200/image.jpg</res>
+    </item>
+</DIDL-Lite>
