@@ -90,7 +90,7 @@ public class VirtualMediaFolderDIDLAdapter implements DIDLAdapter
             case DIRECT_CHILDREN:
                 final Finder<Entity> finder = owner.findChildren();
                 finder.from(from)
-//                          .max(maxResults) FIXME: doesn't work
+//                      .max(maxResults) FIXME: doesn't work with the LG tv set
                       .results()
                       .stream()
                       .forEach(child -> content.addObject(child.as(DIDLAdapter).toObject()));
@@ -117,7 +117,7 @@ public class VirtualMediaFolderDIDLAdapter implements DIDLAdapter
         container.setId(didlId(owner.as(Identifiable).getId()));
         container.setTitle(owner.as(Displayable).getDisplayName());
         container.setCreator("blueMarine II"); // FIXME
-        container.setChildCount(0);
+        container.setChildCount(owner.findChildren().count());
         container.setItems(Collections.emptyList());
 
         try
