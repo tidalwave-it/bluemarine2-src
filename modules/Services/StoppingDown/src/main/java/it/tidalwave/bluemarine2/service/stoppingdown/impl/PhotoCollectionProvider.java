@@ -29,7 +29,8 @@
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
-import java.util.List;
+import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 
 /***********************************************************************************************************************
  *
@@ -40,5 +41,5 @@ import java.util.List;
 public interface PhotoCollectionProvider
   {
     @Nonnull
-    public List<String> getPhotoIds();
+    public EntityFinder findPhotos (@Nonnull MediaFolder parent);
   }

@@ -39,7 +39,6 @@ import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
-import java.util.stream.Collectors;
 
 /***********************************************************************************************************************
  *
@@ -51,7 +50,7 @@ public class StoppingDownMediaServerService implements MediaServerService
   {
     private static final Supplier<Collection<Entity>> EMPTY_SUPPLIER = () -> Collections.emptyList();
 
-    private PhotoCollectionProvider photoCollectionProvider = new MockPhotoCollectionProvider();
+    private PhotoCollectionProvider themesProvider = new MockPhotoCollectionProvider();
 
     @Override @Nonnull
     public MediaFolder createRootFolder (final @Nonnull MediaFolder parent)
@@ -59,16 +58,9 @@ public class StoppingDownMediaServerService implements MediaServerService
         final List<Entity> children = new ArrayList<>();
 
         final MediaFolder root = new VirtualMediaFolder(parent, Paths.get("stoppingdown.net"), "Stopping Down", () -> children);
-
         children.add(new VirtualMediaFolder(root, Paths.get("diary"),  "Diary",  EMPTY_SUPPLIER));
+        children.add(new VirtualMediaFolder(root, Paths.get("themes"), "Themes", themesProvider::findPhotos));
 
-        final List<Entity> photos = new ArrayList<>();
-        final VirtualMediaFolder themes = new VirtualMediaFolder(root, Paths.get("themes"), "Themes", () -> photos);
-        children.add(themes);
-
-        photos.addAll(photoCollectionProvider.getPhotoIds().stream()
-                                                           .map(id -> new PhotoItem(themes, id))
-                                                           .collect(Collectors.toList()));
         return root;
       }
   }

@@ -26,15 +26,17 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.impl;
+package it.tidalwave.bluemarine2.model.spi;
 
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.nio.file.Path;
 import it.tidalwave.util.Finder8Support;
@@ -42,12 +44,11 @@ import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
- * An {@link EntityFinder} for retrieving children of a {@link VirtualMediaFolder}.
+ * An {@link EntityFinder} implementation that retrieves children from a {@link Supplier}.
  *
  * @stereotype  Finder
  *
@@ -56,12 +57,15 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class VirtualMediaFolderFinder extends Finder8Support<Entity, EntityFinder> implements EntityFinder
+public class SupplierBasedEntityFinder extends Finder8Support<Entity, EntityFinder> implements EntityFinder
   {
     private static final long serialVersionUID = 4429676480224742813L;
 
     @Nonnull
-    private final VirtualMediaFolder mediaFolder;
+    private final MediaFolder mediaFolder;
+
+    @Nonnull
+    private final Supplier<Collection<Entity>> childrenSupplier;
 
     @Nonnull
     private final Optional<Path> path;
@@ -71,9 +75,11 @@ public class VirtualMediaFolderFinder extends Finder8Support<Entity, EntityFinde
      * Default constructor.
      *
      ******************************************************************************************************************/
-    public VirtualMediaFolderFinder (final @Nonnull VirtualMediaFolder mediaFolder)
+    public SupplierBasedEntityFinder (final @Nonnull MediaFolder mediaFolder,
+                                      final @Nonnull Supplier<Collection<Entity>> childrenSupplier)
       {
         this.mediaFolder = mediaFolder;
+        this.childrenSupplier = childrenSupplier;
         this.path = Optional.empty();
       }
 
@@ -82,11 +88,12 @@ public class VirtualMediaFolderFinder extends Finder8Support<Entity, EntityFinde
      * Clone constructor.
      *
      ******************************************************************************************************************/
-    public VirtualMediaFolderFinder (final @Nonnull VirtualMediaFolderFinder other, final @Nonnull Object override)
+    public SupplierBasedEntityFinder (final @Nonnull SupplierBasedEntityFinder other, final @Nonnull Object override)
       {
         super(other, override);
-        final VirtualMediaFolderFinder source = getSource(VirtualMediaFolderFinder.class, other, override);
+        final SupplierBasedEntityFinder source = getSource(SupplierBasedEntityFinder.class, other, override);
         this.mediaFolder = source.mediaFolder;
+        this.childrenSupplier = source.childrenSupplier;
         this.path = source.path;
       }
 
@@ -95,10 +102,12 @@ public class VirtualMediaFolderFinder extends Finder8Support<Entity, EntityFinde
      * Override constructor.
      *
      ******************************************************************************************************************/
-    private VirtualMediaFolderFinder (final @Nonnull VirtualMediaFolder mediaFolder,
-                                      final @Nonnull Optional<Path> path)
+    private SupplierBasedEntityFinder (final @Nonnull MediaFolder mediaFolder,
+                                       final @Nonnull Supplier<Collection<Entity>> childrenSupplier,
+                                       final @Nonnull Optional<Path> path)
       {
         this.mediaFolder = mediaFolder;
+        this.childrenSupplier = childrenSupplier;
         this.path = path;
       }
 
@@ -110,7 +119,7 @@ public class VirtualMediaFolderFinder extends Finder8Support<Entity, EntityFinde
     @Override @Nonnull
     public EntityFinder withPath (final @Nonnull Path path)
       {
-        return clone(new VirtualMediaFolderFinder(mediaFolder, Optional.of(path)));
+        return clone(new SupplierBasedEntityFinder(mediaFolder, childrenSupplier, Optional.of(path)));
       }
 
     /*******************************************************************************************************************
@@ -122,7 +131,7 @@ public class VirtualMediaFolderFinder extends Finder8Support<Entity, EntityFinde
     protected List<? extends Entity> computeResults()
       {
         return path.isPresent() ? filteredByPath(path.get())
-                                : new CopyOnWriteArrayList<>(mediaFolder.getChildrenSupplier().get());
+                                : new CopyOnWriteArrayList<>(childrenSupplier.get());
       }
 
     /*******************************************************************************************************************
@@ -142,7 +151,7 @@ public class VirtualMediaFolderFinder extends Finder8Support<Entity, EntityFinde
           {
             final Path relativePath = relative(path);
 
-            final List<Entity> filtered = mediaFolder.getChildrenSupplier().get().stream()
+            final List<Entity> filtered = childrenSupplier.get().stream()
                     .filter(entity -> sameHead(relative(pathOf(entity)), relativePath))
                     .collect(Collectors.toList());
 
