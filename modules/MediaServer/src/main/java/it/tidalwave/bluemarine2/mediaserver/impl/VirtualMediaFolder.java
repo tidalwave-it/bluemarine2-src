@@ -26,18 +26,22 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.mediaserver;
+package it.tidalwave.bluemarine2.mediaserver.impl;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.UUID;
-import it.tidalwave.util.As;
-import it.tidalwave.util.Finder;
+import javax.annotation.Nullable;
+import java.util.Collections;
+import java.nio.file.Path;
+import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Id;
-import it.tidalwave.util.spi.ArrayListFinder;
-import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.util.spi.ArrayListFinder8;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.role.spi.DefaultDisplayable;
+import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.impl.EntityWithRoles;
+import lombok.Getter;
 
 /***********************************************************************************************************************
  *
@@ -45,25 +49,37 @@ import it.tidalwave.role.spi.DefaultDisplayable;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class DefaultContentDirectory implements ContentDirectory
+public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
   {
-    @Override @Nonnull
-    public Finder<As> findObjects()
-      {
-        final As music = createObject("Music Library");
-        final As photo = createObject("Photo Library");
-        final As video = createObject("Video Library");
-        final As services = createObject("Services");
+    @Getter @Nonnull
+    private final Path path;
 
-        return new ArrayListFinder<>(Arrays.asList(music, photo, video, services));
+    @Getter @CheckForNull
+    private MediaFolder parent;
+
+    public VirtualMediaFolder (final @Nonnull Id id, final @Nonnull Path path, final @Nullable MediaFolder parent)
+      {
+        super((Identifiable)() -> id,
+              new DefaultDisplayable(path.toString()));
+        this.path = path;
+        this.parent = parent;
       }
 
-    @Nonnull
-    private As createObject (final @Nonnull String displayName)
+    @Override
+    public boolean isRoot()
       {
-        return new AsSupport(null,
-            (Identifiable) () -> new Id(UUID.randomUUID().toString()),
-            new DefaultDisplayable(displayName)
-        );
+        return parent == null;
+      }
+
+    @Override @Nonnull
+    public Finder8<Entity> findChildren()
+      {
+        return new ArrayListFinder8<>(Collections.emptyList());
+      }
+
+    @Override @Nonnull
+    public String toString()
+      {
+        return String.format("VirtualMediaFolder(%s)", path);
       }
   }

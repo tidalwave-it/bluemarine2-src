@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import javax.inject.Inject;
 import java.util.Collections;
 import java.util.List;
 import org.fourthline.cling.binding.annotations.UpnpAction;
@@ -47,19 +46,15 @@ import org.fourthline.cling.support.model.container.StorageFolder;
 import it.tidalwave.util.As;
 import it.tidalwave.util.AsException;
 import it.tidalwave.util.Finder;
-import it.tidalwave.util.Id;
-import it.tidalwave.util.spi.AsSupport;
-import it.tidalwave.role.Identifiable;
-import it.tidalwave.role.spi.DefaultDisplayable;
-import it.tidalwave.role.spi.DefaultSimpleComposite;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
+import it.tidalwave.bluemarine2.mediaserver.impl.DefaultContentDirectory;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.Identifiable.Identifiable;
-import static it.tidalwave.role.SimpleComposite.SimpleComposite;
+import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 
 /***********************************************************************************************************************
  *
@@ -77,8 +72,8 @@ import static it.tidalwave.role.SimpleComposite.SimpleComposite;
 @Slf4j
 public class ContentDirectoryClingAdapter
   {
-    @Inject
-    private ContentDirectory contentDirectory;
+//    @Inject FIXME doesn't work
+    private ContentDirectory contentDirectory = new DefaultContentDirectory();
 
     @Immutable
     @AllArgsConstructor @Getter @ToString
@@ -179,14 +174,8 @@ public class ContentDirectoryClingAdapter
               }
             else if ("BrowseDirectChildren".equals(browseFlag))
               {
-                final As root = new AsSupport(null,
-                    (Identifiable) () -> new Id("0"),
-                    new DefaultDisplayable("Root"),
-                    new DefaultSimpleComposite<>(contentDirectory.findObjects())
-                );
-
+                final As root = contentDirectory.findRoot();
                 final Container c1 = asContainer(root, objectId, false);
-
                 c1.getContainers().stream().forEach(ccc -> content.addContainer(ccc));
               }
 
@@ -254,6 +243,7 @@ public class ContentDirectoryClingAdapter
                                    final @Nonnull String parentId,
                                    final boolean metadataOnly) // FIXME: use Enum
       {
+        log.debug("asContainer({}, {}, {})", asObject, parentId, metadataOnly);
         final Container container = new Container();
         container.setRestricted(false);
         container.setId(asObject.as(Identifiable).getId().stringValue());
@@ -264,18 +254,20 @@ public class ContentDirectoryClingAdapter
 
         try
           {
-            final Finder<As> children = asObject.as(SimpleComposite).findChildren();
-            container.setChildCount(children.count());
+            final Finder<As> childFinder = asObject.as(SimpleComposite8).findChildren();
+            container.setChildCount(childFinder.count());
 
             if (!metadataOnly)
               {
                 final List<Container> childContainers = container.getContainers();
-                children.results().stream().forEach(child ->
+                childFinder.results().stream().forEach(child -> log.debug(">>>> child: {}", child));
+                childFinder.results().stream().forEach(child ->
                         childContainers.add(asContainer(child, container.getId(), metadataOnly)));
               }
           }
-        catch (AsException e)
+        catch (AsException e) // no Composite
           {
+            log.debug("", e);
             container.setChildCount(0);
             container.setItems(Collections.emptyList());
           }

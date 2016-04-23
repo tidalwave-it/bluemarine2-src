@@ -29,12 +29,13 @@
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.fourthline.cling.UpnpService;
-import it.tidalwave.util.spi.AsDelegateProvider;
-import it.tidalwave.util.spi.EmptyAsDelegateProvider;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import lombok.extern.slf4j.Slf4j;
@@ -56,7 +57,9 @@ public class ClingTestSupport
 
     public ClingTestSupport (final @Nonnull String ... configLocations)
       {
-        this.configLocations = configLocations;
+        final List<String> list = new ArrayList<>(Arrays.asList(configLocations));
+        list.add(0, "META-INF/DciBeans.xml"); // for DCI injectors
+        this.configLocations = list.toArray(new String[0]);
       }
 
     @BeforeClass
@@ -64,10 +67,7 @@ public class ClingTestSupport
       {
         SLF4JBridgeHandler.removeHandlersForRootLogger();
         SLF4JBridgeHandler.install();
-
         context = new ClassPathXmlApplicationContext(configLocations);
-
-        AsDelegateProvider.Locator.set(new EmptyAsDelegateProvider()); // FIXME: use Spring
         upnpService = context.getBean(UpnpService.class);
       }
 

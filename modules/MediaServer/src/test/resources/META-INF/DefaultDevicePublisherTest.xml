@@ -37,9 +37,6 @@
                            http://www.springframework.org/schema/context/spring-context.xsd"
        default-autowire="byType">
 
-    <!-- Turns on @Autowired, @PostConstruct, etc. -->
-    <context:annotation-config />
-
-    <bean id="contentDirectory" class="it.tidalwave.bluemarine2.mediaserver.impl.DefaultContentDirectory" />
+    <bean id="underTest" class="it.tidalwave.bluemarine2.mediaserver.impl.DefaultContentDirectory" />
 
 </beans>

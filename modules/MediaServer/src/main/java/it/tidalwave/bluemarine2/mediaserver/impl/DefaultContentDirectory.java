@@ -26,10 +26,18 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.mediaserver;
+package it.tidalwave.bluemarine2.mediaserver.impl;
 
 import javax.annotation.Nonnull;
+import java.util.Arrays;
+import java.util.UUID;
+import java.nio.file.Paths;
+import it.tidalwave.util.Finder8;
+import it.tidalwave.util.Id;
+import it.tidalwave.util.spi.ArrayListFinder8;
+import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 
 /***********************************************************************************************************************
  *
@@ -37,8 +45,36 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface ContentDirectory
+public class DefaultContentDirectory implements ContentDirectory
   {
+    private final MediaFolder root;
+
+    public DefaultContentDirectory()
+      {
+        final Entity music = createFolder("Music Library");
+        final Entity photo = createFolder("Photo Library");
+        final Entity video = createFolder("Video Library");
+        final Entity services = createFolder("Services");
+
+        root = new VirtualMediaFolder(new Id("0"), Paths.get("Root"), null)
+          {
+            @Override @Nonnull
+            public Finder8<Entity> findChildren()
+              {
+                return new ArrayListFinder8<>(Arrays.asList(music, photo, video, services));
+              }
+          };
+      }
+
+    @Override @Nonnull
+    public MediaFolder findRoot()
+      {
+        return root;
+      }
+
     @Nonnull
-    public MediaFolder findRoot();
+    private MediaFolder createFolder (final @Nonnull String displayName)
+      {
+        return new VirtualMediaFolder(new Id(UUID.randomUUID().toString()), Paths.get(displayName), null);
+      }
   }
