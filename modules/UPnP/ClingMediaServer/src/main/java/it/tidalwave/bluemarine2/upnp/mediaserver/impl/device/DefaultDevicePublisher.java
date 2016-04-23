@@ -29,12 +29,13 @@
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl.device;
 
 import javax.annotation.Nonnull;
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import javax.annotation.PostConstruct;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.binding.annotations.AnnotationLocalServiceBinder;
 import org.fourthline.cling.model.DefaultServiceManager;
@@ -50,7 +51,9 @@ import org.fourthline.cling.model.types.DLNACaps;
 import org.fourthline.cling.model.types.DLNADoc;
 import org.fourthline.cling.model.types.UDADeviceType;
 import org.fourthline.cling.model.types.UDN;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -60,15 +63,20 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
+@RequiredArgsConstructor @Slf4j
 public class DefaultDevicePublisher<T> implements DevicePublisher<T>
   {
-    @Nonnull
-    private final UpnpService upnpService;
+    @Inject
+    private UpnpService upnpService;
 
-    private final LocalService service;
+    @Inject
+    private AutowireCapableBeanFactory beanFactory;
 
-    private final DefaultServiceManager<T>  serviceManager;
+    private final Class<?> serviceClass;
+
+    private LocalService service;
+
+    private DefaultServiceManager<T>  serviceManager;
 
     private final AnnotationLocalServiceBinder serviceBinder = new AnnotationLocalServiceBinder();
 
@@ -118,18 +126,6 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
 
     /*******************************************************************************************************************
      *
-     *
-     ******************************************************************************************************************/
-    public DefaultDevicePublisher (final @Nonnull UpnpService upnpService, final @Nonnull Class<T> serviceClass)
-      {
-        this.upnpService = upnpService;
-        service = serviceBinder.read(serviceClass);
-        serviceManager = new DefaultServiceManager(service, serviceClass);
-        service.setManager(serviceManager);
-      }
-
-    /*******************************************************************************************************************
-     *
      * {@inheritDoc}
      *
      ******************************************************************************************************************/
@@ -158,6 +154,9 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
       {
         try
           {
+            service = serviceBinder.read(serviceClass);
+            serviceManager = new AutowireServiceManager<>(beanFactory, service, serviceClass);
+            service.setManager(serviceManager);
             log.info("publishDevice() - {}", service);
             device = new LocalDevice(new DeviceIdentity(udn, 1800),
                                      udaDeviceType,

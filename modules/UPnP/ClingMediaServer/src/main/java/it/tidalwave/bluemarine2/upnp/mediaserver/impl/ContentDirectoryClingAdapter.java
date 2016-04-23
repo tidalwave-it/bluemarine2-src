@@ -28,7 +28,9 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.concurrent.Immutable;
+import javax.inject.Inject;
 import org.fourthline.cling.binding.annotations.UpnpAction;
 import org.fourthline.cling.binding.annotations.UpnpInputArgument;
 import org.fourthline.cling.binding.annotations.UpnpOutputArgument;
@@ -41,9 +43,7 @@ import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
-import it.tidalwave.bluemarine2.mediaserver.impl.DefaultContentDirectory;
 import it.tidalwave.bluemarine2.model.Entity;
-import javax.annotation.Nonnegative;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -65,8 +65,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ContentDirectoryClingAdapter
   {
-//    @Inject FIXME doesn't work
-    private ContentDirectory contentDirectory = new DefaultContentDirectory();
+    @Inject
+    private ContentDirectory contentDirectory;
 
     @Immutable
     @AllArgsConstructor @Getter @ToString
