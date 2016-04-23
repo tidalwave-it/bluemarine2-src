@@ -32,8 +32,11 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
+import org.fourthline.cling.support.model.DIDLObject;
 
 /***********************************************************************************************************************
+ *
+ * @stereotype  DCI Role
  *
  * @author  Fabrizio Giudici
  * @version $Id$
@@ -42,7 +45,7 @@ import org.fourthline.cling.support.model.DIDLContent;
 public interface DIDLAdapter
   {
     public static final Class<DIDLAdapter> DIDLAdapter = DIDLAdapter.class;
-    
+
     /*******************************************************************************************************************
      *
      *
@@ -52,4 +55,12 @@ public interface DIDLAdapter
     public DIDLContent toContent (@Nonnull BrowseFlag browseFlag,
                                   @Nonnegative int from,
                                   @Nonnegative int maxResults);
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public DIDLObject toObject();
   }

@@ -28,8 +28,17 @@
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
-import it.tidalwave.bluemarine2.upnp.mediaserver.impl.ClingTestSupport;
+import java.nio.file.Paths;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.fourthline.cling.support.contentdirectory.DIDLParser;
+import org.fourthline.cling.support.model.BrowseFlag;
+import org.fourthline.cling.support.model.DIDLContent;
+import it.tidalwave.bluemarine2.model.MediaFolder;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import lombok.extern.slf4j.Slf4j;
+import static org.mockito.Mockito.*;
 
 /***********************************************************************************************************************
  *
@@ -37,19 +46,34 @@ import org.testng.annotations.Test;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class StoppingDownMediaServerServiceTest extends ClingTestSupport
+@Slf4j
+public class PhotoItemDIDLAdapterTest
   {
-    public StoppingDownMediaServerServiceTest()
+    private ApplicationContext context;
+
+    @BeforeMethod
+    public void setup()
       {
-        super("classpath*:META-INF/StoppingDownServiceAutoBeans.xml",
-              "classpath*:META-INF/MediaServerAutoBeans.xml",
-              "classpath*:META-INF/UPnPAutoBeans.xml");
+        // required for DCI stuff
+        context = new ClassPathXmlApplicationContext("classpath*:META-INF/DciBeans.xml");
       }
 
     @Test
     public void testSomeMethod()
-      throws InterruptedException
+      throws Exception
       {
-        delay();
+        // given
+        final MediaFolder mediaFolder = mock(MediaFolder.class);
+        when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
+        final PhotoItem photoItem = new PhotoItem(mediaFolder, "20150524-0034");
+        final PhotoItemDIDLAdapter underTest = new PhotoItemDIDLAdapter(photoItem);
+        // when
+        final DIDLContent content = new DIDLContent();
+        content.addObject(underTest.toObject());
+        // then
+        final DIDLParser parser = new DIDLParser();
+        final String xml = parser.generate(content);
+        // FIXME: assertions
+        log.info("xml {}", xml);
       }
   }

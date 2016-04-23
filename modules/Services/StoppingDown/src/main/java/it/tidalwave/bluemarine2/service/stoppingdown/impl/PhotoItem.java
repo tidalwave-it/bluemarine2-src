@@ -28,28 +28,28 @@
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
-import it.tidalwave.bluemarine2.upnp.mediaserver.impl.ClingTestSupport;
-import org.testng.annotations.Test;
+import it.tidalwave.bluemarine2.model.MediaFolder;
+import javax.annotation.Nonnull;
+import it.tidalwave.bluemarine2.model.impl.EntityWithRoles;
+import it.tidalwave.bluemarine2.model.role.Parentable;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 /***********************************************************************************************************************
+ *
+ * At the moment there's no support for images in the Model.
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class StoppingDownMediaServerServiceTest extends ClingTestSupport
+@RequiredArgsConstructor @ToString
+public class PhotoItem extends EntityWithRoles implements Parentable
   {
-    public StoppingDownMediaServerServiceTest()
-      {
-        super("classpath*:META-INF/StoppingDownServiceAutoBeans.xml",
-              "classpath*:META-INF/MediaServerAutoBeans.xml",
-              "classpath*:META-INF/UPnPAutoBeans.xml");
-      }
+    @Getter @Nonnull
+    private final MediaFolder parent;
 
-    @Test
-    public void testSomeMethod()
-      throws InterruptedException
-      {
-        delay();
-      }
+    @Getter @Nonnull
+    private final String id;
   }

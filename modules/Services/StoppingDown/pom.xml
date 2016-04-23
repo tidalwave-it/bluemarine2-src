@@ -23,12 +23,18 @@
             <artifactId>it-tidalwave-bluemarine2-mediaserver</artifactId>
         </dependency>
 
-        <!-- TEST DEPENDENCIES -->
+        <!-- FIXME: temporary until photos are implemented in the model -->
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-upnp-mediaserver</artifactId>
-            <scope>test</scope>
         </dependency>
+
+        <!-- TEST DEPENDENCIES -->
+<!--        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-upnp-mediaserver</artifactId>
+            <scope>test</scope>
+        </dependency>-->
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-upnp-mediaserver</artifactId>

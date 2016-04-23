@@ -48,8 +48,11 @@ import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
+import org.fourthline.cling.support.model.DIDLObject;
 
 /***********************************************************************************************************************
+ *
+ * @see http://upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf
  *
  * @author  Fabrizio Giudici
  * @version $Id$
@@ -71,7 +74,7 @@ public class VirtualMediaFolderDIDLAdapter implements DIDLAdapter
      *
      *
      ******************************************************************************************************************/
-    @Nonnull
+    @Override @Nonnull
     public DIDLContent toContent (final @Nonnull BrowseFlag browseFlag,
                                   final @Nonnegative int from,
                                   final @Nonnegative int maxResults)
@@ -81,25 +84,20 @@ public class VirtualMediaFolderDIDLAdapter implements DIDLAdapter
         switch (browseFlag)
           {
             case METADATA:
-                content.addContainer(createContainer(owner));
+                content.addObject(toObject());
                 break;
 
             case DIRECT_CHILDREN:
-                try
-                  {
-                    final Finder<Entity> finder = owner.findChildren();
-                    finder.from(from)
+                final Finder<Entity> finder = owner.findChildren();
+                finder.from(from)
 //                          .max(maxResults) FIXME: doesn't work
-                          .results()
-                          .stream()
-                          .forEach(child -> content.addContainer(createContainer(child)));
-                  }
-                catch (AsException e) // no Composite
-                  {
-                    log.debug("", e);
-                  }
-
+                      .results()
+                      .stream()
+                      .forEach(child -> content.addObject(child.as(DIDLAdapter).toObject()));
                 break;
+
+            default:
+                throw new IllegalArgumentException(browseFlag.toString());
           }
 
         return content;
@@ -110,21 +108,21 @@ public class VirtualMediaFolderDIDLAdapter implements DIDLAdapter
      *
      *
      ******************************************************************************************************************/
-    @Nonnull
-    private static Container createContainer (final @Nonnull Entity entity)
+    @Override @Nonnull
+    public DIDLObject toObject()
       {
         final Container container = new Container();
         container.setClazz(StorageFolder.CLASS);
         container.setRestricted(false);
-        container.setId(didlId(entity.as(Identifiable).getId()));
-        container.setTitle(entity.as(Displayable).getDisplayName());
+        container.setId(didlId(owner.as(Identifiable).getId()));
+        container.setTitle(owner.as(Displayable).getDisplayName());
         container.setCreator("blueMarine II"); // FIXME
         container.setChildCount(0);
         container.setItems(Collections.emptyList());
 
         try
           {
-            final Parentable<As> parentable = entity.as(Parentable);
+            final Parentable<As> parentable = owner.as(Parentable);
             container.setParentID(parentable.hasParent()
                     ? didlId(parentable.getParent().as(Identifiable).getId())
                     : ID_NONE);

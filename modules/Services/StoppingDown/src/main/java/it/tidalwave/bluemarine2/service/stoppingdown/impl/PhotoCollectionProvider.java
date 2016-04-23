@@ -28,8 +28,8 @@
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
-import it.tidalwave.bluemarine2.upnp.mediaserver.impl.ClingTestSupport;
-import org.testng.annotations.Test;
+import javax.annotation.Nonnull;
+import java.util.List;
 
 /***********************************************************************************************************************
  *
@@ -37,19 +37,8 @@ import org.testng.annotations.Test;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class StoppingDownMediaServerServiceTest extends ClingTestSupport
+public interface PhotoCollectionProvider
   {
-    public StoppingDownMediaServerServiceTest()
-      {
-        super("classpath*:META-INF/StoppingDownServiceAutoBeans.xml",
-              "classpath*:META-INF/MediaServerAutoBeans.xml",
-              "classpath*:META-INF/UPnPAutoBeans.xml");
-      }
-
-    @Test
-    public void testSomeMethod()
-      throws InterruptedException
-      {
-        delay();
-      }
+    @Nonnull
+    public List<String> getPhotoIds();
   }
