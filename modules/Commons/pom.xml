@@ -36,6 +36,10 @@
                     <groupId>commons-logging</groupId>
                     <artifactId>commons-logging</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>com.aquafx-project</groupId>
+                    <artifactId>aquafx</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
 
