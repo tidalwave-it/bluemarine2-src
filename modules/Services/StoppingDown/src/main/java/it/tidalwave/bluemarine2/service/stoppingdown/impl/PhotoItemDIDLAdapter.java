@@ -76,7 +76,9 @@ public class PhotoItemDIDLAdapter implements DIDLAdapter
     @Override
     public DIDLContent toContent (final BrowseFlag browseFlag, final int from, final int maxResults)
       {
-        throw new UnsupportedOperationException();
+        final DIDLContent content = new DIDLContent();
+        content.addObject(toObject());
+        return content;
       }
 
     /*******************************************************************************************************************
