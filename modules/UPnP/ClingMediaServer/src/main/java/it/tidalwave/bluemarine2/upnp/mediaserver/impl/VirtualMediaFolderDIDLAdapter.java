@@ -90,7 +90,7 @@ public class VirtualMediaFolderDIDLAdapter implements DIDLAdapter
             case DIRECT_CHILDREN:
                 final Finder<Entity> finder = owner.findChildren();
                 finder.from(from)
-//                      .max(maxResults) FIXME: doesn't work with the LG tv set
+                      .max(maxResults)
                       .results()
                       .stream()
                       .forEach(child -> content.addObject(child.as(DIDLAdapter).toObject()));

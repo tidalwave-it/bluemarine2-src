@@ -161,10 +161,11 @@ public class ContentDirectoryClingAdapter
             final DIDLAdapter didlAdapter = entity.as(DIDLAdapter);
             final DIDLContent content = didlAdapter.toContent(BrowseFlag.valueOrNullOf(browseFlag),
                                                               startingIndex,
-                                                              maxCount(requestedCount));
+                                                              // FIXME: workaround for the LG tv set
+                                                              maxCount((requestedCount == 1) ? 0 : requestedCount));
             final DIDLParser parser = new DIDLParser();
             final int n = (int)content.getCount();
-            final BrowseResult result = new BrowseResult(parser.generate(content), n, n, ++xxxId);
+            final BrowseResult result = new BrowseResult(parser.generate(content), n, n, 777);
 
             if (log.isDebugEnabled()) // result.toString() is expensive
               {
