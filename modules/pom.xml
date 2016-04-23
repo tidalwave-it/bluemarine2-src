@@ -273,6 +273,7 @@
         <module>MusicBrainzREST</module>
         <module>Persistence</module>
         <module>Plugins</module>
+        <module>Services</module>
         <module>UI</module>
         <module>UPnP</module>
         <module>MediaServer</module>
