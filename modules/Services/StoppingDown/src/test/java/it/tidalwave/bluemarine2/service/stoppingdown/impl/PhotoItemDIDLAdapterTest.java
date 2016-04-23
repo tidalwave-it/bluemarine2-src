@@ -28,18 +28,10 @@
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
-import javax.annotation.Nonnull;
-import java.io.StringReader;
-import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.fourthline.cling.support.contentdirectory.DIDLParser;
@@ -49,6 +41,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import lombok.extern.slf4j.Slf4j;
 import static org.mockito.Mockito.*;
+import static it.tidalwave.bluemarine2.util.PrettyPrint.xmlPrettyPrinted;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 
 /***********************************************************************************************************************
@@ -83,26 +76,12 @@ public class PhotoItemDIDLAdapterTest
         content.addObject(underTest.toObject());
         // then
         final DIDLParser parser = new DIDLParser();
-        final String xml = formatted(parser.generate(content));
+        final String xml = xmlPrettyPrinted(parser.generate(content));
 
         final Path actualResult = Paths.get("target", "test-results", "didl.xml");
         final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "didl.xml");
         Files.createDirectories(actualResult.getParent());
         Files.write(actualResult, xml.getBytes(StandardCharsets.UTF_8));
         assertSameContents(expectedResult.toFile(), actualResult.toFile());
-      }
-
-    @Nonnull
-    private static String formatted (final @Nonnull String xml)
-      throws Exception
-      {
-        final TransformerFactory transformerFactory = TransformerFactory.newInstance();
-        transformerFactory.setAttribute("indent-number", 4);
-        final Transformer transformer = transformerFactory.newTransformer();
-        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-        final StringWriter out = new StringWriter();
-        transformer.transform(new StreamSource(new StringReader(xml)), new StreamResult(out));
-
-        return out.toString();
       }
   }
