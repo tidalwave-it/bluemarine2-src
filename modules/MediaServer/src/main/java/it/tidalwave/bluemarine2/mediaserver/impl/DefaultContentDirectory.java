@@ -55,6 +55,8 @@ public class DefaultContentDirectory implements ContentDirectory
   {
     private static final Supplier<Collection<Entity>> EMPTY_SUPPLIER = () -> Collections.emptyList();
 
+    private static final String PATH_SERVICES = "services";
+
 //    @Inject FIXME
     @Autowired(required = false)
     private List<MediaServerService> services = Collections.emptyList();
@@ -86,7 +88,7 @@ public class DefaultContentDirectory implements ContentDirectory
         log.info(">>>> discovered services: {}", services);
 
         final List<Entity> children = new ArrayList<>();
-        final MediaFolder servicesRootFolder = new VirtualMediaFolder(root, Paths.get("services"), "Services", () -> children);
+        final MediaFolder servicesRootFolder = new VirtualMediaFolder(root, Paths.get(PATH_SERVICES), "Services", () -> children);
         services.stream().forEach(service -> children.add(service.createRootFolder(servicesRootFolder)));
 
         return servicesRootFolder;
