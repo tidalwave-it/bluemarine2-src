@@ -34,25 +34,28 @@ import java.io.File;
 import javafx.application.Platform;
 //import it.tidalwave.accounting.util.DefaultPreferencesHandler;
 //import it.tidalwave.accounting.util.PreferencesHandler;
+import org.slf4j.bridge.SLF4JBridgeHandler;
 import it.tidalwave.ui.javafx.JavaFXSpringApplication;
 
 /***********************************************************************************************************************
  *
  * The main class initializes the logging facility and starts the JavaFX application.
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 public class Main extends JavaFXSpringApplication
   {
-    public Main() 
+    public Main()
       {
+        SLF4JBridgeHandler.removeHandlersForRootLogger();
+        SLF4JBridgeHandler.install();
 //        setMaximized(true);
         setFullScreen(true);
         setFullScreenLocked(true);
       }
-    
+
     public static void main (final @Nonnull String ... args)
       {
         try
@@ -61,9 +64,9 @@ public class Main extends JavaFXSpringApplication
 //            final PreferencesHandler preferenceHandler = new DefaultPreferencesHandler();
 //            final Path logfolder = preferenceHandler.getLogFolder();
 //            System.setProperty("it.tidalwave.bluemarine2.logFolder", logfolder.toFile().getAbsolutePath());
-            System.setProperty("it.tidalwave.bluemarine2.logFolder", 
+            System.setProperty("it.tidalwave.bluemarine2.logFolder",
                     new File(System.getProperty("user.home"), ".blueMarine2/logs").getAbsolutePath());
-            
+
             Platform.setImplicitExit(true);
             launch(args);
           }
