@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.util;
 import javax.annotation.Nonnull;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
@@ -54,15 +55,21 @@ public final class PrettyPrint
      ******************************************************************************************************************/
     @Nonnull
     public static String xmlPrettyPrinted (final @Nonnull String xml)
-      throws Exception
       {
-        final TransformerFactory transformerFactory = TransformerFactory.newInstance();
-        transformerFactory.setAttribute("indent-number", 4);
-        final Transformer transformer = transformerFactory.newTransformer();
-        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-        final StringWriter out = new StringWriter();
-        transformer.transform(new StreamSource(new StringReader(xml)), new StreamResult(out));
+        try
+          {
+            final TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            transformerFactory.setAttribute("indent-number", 4);
+            final Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            final StringWriter out = new StringWriter();
+            transformer.transform(new StreamSource(new StringReader(xml)), new StreamResult(out));
 
-        return out.toString();
+            return out.toString();
+          }
+        catch (TransformerException e)
+          {
+            throw new RuntimeException(e);
+          }
       }
   }

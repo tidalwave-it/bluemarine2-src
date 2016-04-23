@@ -47,8 +47,8 @@ import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.model.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.util.PrettyPrint.*;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter.DIDLAdapter;
 
 /***********************************************************************************************************************
@@ -71,13 +71,20 @@ public class ContentDirectoryClingAdapter
     private ContentDirectory contentDirectory;
 
     @Immutable
-    @AllArgsConstructor @Getter @ToString
+    @AllArgsConstructor @Getter
     public static class BrowseResult
       {
         private final String result;
         private final int numberReturned;
         private final int totalMatches;
         private final int updateID;
+
+        @Override
+        public String toString()
+          {
+            return String.format("BrowseResult(numberReturned=%d, totalMatches=%d, updateID=%d, result=%s)",
+                    numberReturned, totalMatches, updateID, xmlPrettyPrinted(result));
+          }
       }
 
     @UpnpStateVariable(name = "ObjectID", defaultValue = "", sendEvents = false, datatype = "string")
@@ -158,7 +165,11 @@ public class ContentDirectoryClingAdapter
             final DIDLParser parser = new DIDLParser();
             final int n = (int)content.getCount();
             final BrowseResult result = new BrowseResult(parser.generate(content), n, n, ++xxxId);
-            log.info(">>>> returning {}", result);
+
+            if (log.isDebugEnabled()) // result.toString() is expensive
+              {
+                log.debug(">>>> returning {}", result);
+              }
 
             return result;
           }
