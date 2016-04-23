@@ -40,6 +40,7 @@ import org.fourthline.cling.support.model.dlna.DLNAProtocolInfo;
 import org.fourthline.cling.support.model.item.Photo;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter;
+import java.nio.file.Path;
 import lombok.RequiredArgsConstructor;
 import static java.util.Collections.reverseOrder;
 import static java.util.stream.Collectors.toList;
@@ -92,8 +93,11 @@ public class PhotoItemDIDLAdapter implements DIDLAdapter
                                      .map(size -> new Res(protocolInfo, null, computeUrl(size)))
                                      .collect(toList())
                                      .toArray(new Res[0]);
-        final String parentId = photo.getParent().getPath().toString();
-        final Photo item = new Photo(photo.getId(), parentId, photo.getId(), creator, parentId, resources);
+        final Path parentPath = photo.getParent().getPath();
+        final String parentId = parentPath.toString();
+        final String photoId = parentPath.resolve(photo.getId()).toString();
+        final String title = photo.getId();
+        final Photo item = new Photo(photoId, parentId, title, creator, parentId, resources);
         return item;
       }
 
