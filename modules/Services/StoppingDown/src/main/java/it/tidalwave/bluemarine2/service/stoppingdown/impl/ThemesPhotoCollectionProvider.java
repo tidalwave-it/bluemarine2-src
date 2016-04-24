@@ -199,9 +199,11 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     public MediaFolder createMediaFolder (final @Nonnull MediaFolder parent,
                                           final @Nonnull GalleryDescription galleryDescription)
       {
-        final EntityCollectionFactory factory = p -> findPhotos(p, galleryDescription.getUrl());
+        final String url = galleryDescription.getUrl();
+        final EntityCollectionFactory factory = p -> findPhotos(p, url);
+        final Path path = Paths.get(url.replaceAll("^.*themes\\/([a-z,A-Z,0-9,-]*).*", "$1"));
         return new VirtualMediaFolder(parent,
-                                      Paths.get(galleryDescription.getDisplayName()),
+                                      path,
                                       galleryDescription.getDisplayName(),
                                       factory);
       }
