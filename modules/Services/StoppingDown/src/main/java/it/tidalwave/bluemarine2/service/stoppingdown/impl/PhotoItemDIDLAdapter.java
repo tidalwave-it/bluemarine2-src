@@ -100,6 +100,8 @@ public class PhotoItemDIDLAdapter implements DIDLAdapter
         final String photoId = parentPath.resolve(photo.getId()).toString();
         final String title = photo.getId();
         final Photo item = new Photo(photoId, parentId, title, creator, parentId, resources);
+        item.setDescription(photo.getTitle());
+        item.setDate(dateFor(photo.getId()));
         return item;
       }
 
@@ -121,5 +123,14 @@ public class PhotoItemDIDLAdapter implements DIDLAdapter
     private String computeUrl (final int size)
       {
         return String.format(MEDIA_URL_TEMPLATE, photo.getId(), size);
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static String dateFor (final String id)
+      {
+        return String.format("%s-%s-%s", id.substring(0, 4), id.substring(4, 6), id.substring(6, 8));
       }
   }
