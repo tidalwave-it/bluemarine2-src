@@ -28,15 +28,13 @@
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Collection;
-import java.util.stream.Stream;
-import it.tidalwave.bluemarine2.model.Entity;
-import org.testng.annotations.Test;
-import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import it.tidalwave.bluemarine2.model.MediaFolder;
+import org.testng.annotations.BeforeMethod;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.mock;
 
 /***********************************************************************************************************************
  *
@@ -44,26 +42,23 @@ import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class PhotoCollectionProviderSupportTest extends PhotoCollectionProviderTestSupport
+public class PhotoCollectionProviderTestSupport
   {
-    private static final String URL_MOCK_RESOURCE = "file:src/test/resources/images.xml";
-    
-    @Test
-    public void must_properly_parse_PhotoItems()
-      throws Exception
+    protected ApplicationContext context;
+
+    protected MediaFolder mediaFolder;
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @BeforeMethod
+    public void setup()
       {
-        // given
-        final PhotoCollectionProviderSupport underTest = new PhotoCollectionProviderSupport();
-        // when
-        final Collection<Entity> photoItems = underTest.findPhotos(mediaFolder, URL_MOCK_RESOURCE);
-        // then
-        final Path actualResult = Paths.get("target", "test-results", "photoItems.txt");
-        final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "photoItems.txt");
-        Files.createDirectories(actualResult.getParent());
-        final Stream<String> stream = photoItems.stream()
-                                                .map(e -> (PhotoItem)e)
-                                                .map(pi -> String.format("%s: %s", pi.getId(), pi.getTitle()));
-        Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
-        assertSameContents(expectedResult.toFile(), actualResult.toFile());
+        // required for DCI stuff
+        context = new ClassPathXmlApplicationContext("classpath*:META-INF/DciBeans.xml");
+
+        mediaFolder = mock(MediaFolder.class);
+        when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
+        when(mediaFolder.toString()).thenReturn("MediaFolder(\"/folder\"))");
       }
   }

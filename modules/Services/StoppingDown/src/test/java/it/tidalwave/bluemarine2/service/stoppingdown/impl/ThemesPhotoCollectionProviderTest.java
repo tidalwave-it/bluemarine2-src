@@ -37,16 +37,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.mock;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 
 /***********************************************************************************************************************
@@ -55,27 +51,9 @@ import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class ThemesPhotoCollectionProviderSupportTest
+public class ThemesPhotoCollectionProviderTest extends PhotoCollectionProviderTestSupport
   {
     private static final String URL_MOCK_RESOURCE = "file:src/test/resources/themes.xhtml";
-
-    private ApplicationContext context;
-
-    private MediaFolder mediaFolder;
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @BeforeMethod
-    public void setup()
-      {
-        // required for DCI stuff
-        context = new ClassPathXmlApplicationContext("classpath*:META-INF/DciBeans.xml");
-
-        mediaFolder = mock(MediaFolder.class);
-        when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
-        when(mediaFolder.toString()).thenReturn("MediaFolder(\"/folder\"))");
-      }
 
     /*******************************************************************************************************************
      *
