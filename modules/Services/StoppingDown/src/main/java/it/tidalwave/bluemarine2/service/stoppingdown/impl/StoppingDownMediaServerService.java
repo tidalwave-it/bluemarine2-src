@@ -52,7 +52,7 @@ public class StoppingDownMediaServerService implements MediaServerService
 
     private PhotoCollectionProvider diaryProvider = new DiaryPhotoCollectionProvider();
 
-    private PhotoCollectionProvider themesProvider = new ThemesPhotoCollectionProvider("http://stoppingdown.net/themes/");
+    private PhotoCollectionProvider themesProvider = new ThemesPhotoCollectionProvider();
 
     @Override @Nonnull
     public MediaFolder createRootFolder (final @Nonnull MediaFolder parent)

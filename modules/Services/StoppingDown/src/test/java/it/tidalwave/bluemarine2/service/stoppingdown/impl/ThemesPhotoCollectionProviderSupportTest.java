@@ -57,10 +57,13 @@ import org.testng.annotations.DataProvider;
  **********************************************************************************************************************/
 public class ThemesPhotoCollectionProviderSupportTest
   {
-    private static final String URL_TEST_RESOURCE = "file:src/test/resources/themes.xhtml";
+    private static final String URL_MOCK_RESOURCE = "file:src/test/resources/themes.xhtml";
 
     private ApplicationContext context;
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @BeforeMethod
     public void setup()
       {
@@ -68,6 +71,11 @@ public class ThemesPhotoCollectionProviderSupportTest
         context = new ClassPathXmlApplicationContext("classpath*:META-INF/DciBeans.xml");
       }
 
+    /*******************************************************************************************************************
+     *
+     * This test uses mock data.
+     *
+     ******************************************************************************************************************/
     @Test(dataProvider = "selectorProvider")
     public void must_properly_parse_themes (final @Nonnull String selector,
                                             final @Nonnull XPathExpression expression)
@@ -77,7 +85,7 @@ public class ThemesPhotoCollectionProviderSupportTest
         final MediaFolder mediaFolder = mock(MediaFolder.class);
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
         when(mediaFolder.toString()).thenReturn("MediaFolder(\"/folder\"))");
-        final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider(URL_TEST_RESOURCE);
+        final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider(URL_MOCK_RESOURCE);
         // when
         final List<GalleryDescription> themeDescriptions = underTest.parseThemes(expression);
         // then
@@ -90,6 +98,11 @@ public class ThemesPhotoCollectionProviderSupportTest
         assertSameContents(expectedResult.toFile(), actualResult.toFile());
       }
 
+    /*******************************************************************************************************************
+     *
+     * This test retrieves actual data from the network.
+     *
+     ******************************************************************************************************************/
     @Test
     public void must_properly_create_hierarchy()
       throws Exception
@@ -98,7 +111,7 @@ public class ThemesPhotoCollectionProviderSupportTest
         final MediaFolder mediaFolder = mock(MediaFolder.class);
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
         when(mediaFolder.toString()).thenReturn("MediaFolder(\"/folder\"))");
-        final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider(URL_TEST_RESOURCE);
+        final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider();
         // when
         final EntityFinder finder = underTest.findPhotos(mediaFolder);
         when(mediaFolder.findChildren()).thenReturn(finder);
@@ -111,6 +124,9 @@ public class ThemesPhotoCollectionProviderSupportTest
         assertSameContents(expectedResult.toFile(), actualResult.toFile());
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Nonnull
     private static List<String> dump (final @Nonnull Entity entity)
       {
@@ -125,6 +141,9 @@ public class ThemesPhotoCollectionProviderSupportTest
         return result;
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @DataProvider
     private static Object[][] selectorProvider()
       {

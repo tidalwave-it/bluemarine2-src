@@ -67,7 +67,9 @@ import static javax.xml.xpath.XPathConstants.*;
 @RequiredArgsConstructor @Slf4j
 public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSupport
   {
-    private static final String URL_TEMPLATE = "http://stoppingdown.net%s/images.xml";
+    private static final String URL_THEMES = "http://stoppingdown.net/themes/";
+
+    private static final String URL_GALLERY_TEMPLATE = "http://stoppingdown.net%s/images.xml";
 
     private static final Path PATH_SUBJECTS = Paths.get("subjects");
 
@@ -113,13 +115,21 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @Override @Nonnull
-    public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
+    public ThemesPhotoCollectionProvider ()
       {
+        this(URL_THEMES);
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Override
+    @Nonnull
+    public EntityFinder findPhotos(final @Nonnull MediaFolder parent) {
         return new FactoryBasedEntityFinder(parent, p -> Arrays.asList(
                 new VirtualMediaFolder(p, PATH_PLACES,   "Places",   this::placesFactory),
                 new VirtualMediaFolder(p, PATH_SUBJECTS, "Subjects", this::subjectsFactory)));
-      }
+    }
 
     /*******************************************************************************************************************
      *
@@ -164,7 +174,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
                     final Node thumbnailNode = thumbnailNodes.item(i);
                     final String description = (String)XPATH_THUMBNAIL_DESCRIPTION_EXPR.evaluate(thumbnailNode, STRING);
                     final String url = (String)XPATH_THUMBNAIL_URL_EXPR.evaluate(thumbnailNode, STRING);
-                    galleryDescriptions.add(new GalleryDescription(description, String.format(URL_TEMPLATE, url)
+                    galleryDescriptions.add(new GalleryDescription(description, String.format(URL_GALLERY_TEMPLATE, url)
                                                                                       .replace("//", "/")
                                                                                       .replace(":/", "://")));
                   }
