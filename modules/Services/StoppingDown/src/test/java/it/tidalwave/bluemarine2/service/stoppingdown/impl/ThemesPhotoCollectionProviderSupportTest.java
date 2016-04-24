@@ -42,6 +42,7 @@ import org.testng.annotations.Test;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.mock;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
+import java.util.List;
 
 /***********************************************************************************************************************
  *
@@ -49,7 +50,7 @@ import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class PhotoCollectionProviderSupportTest
+public class ThemesPhotoCollectionProviderSupportTest
   {
     private ApplicationContext context;
 
@@ -61,22 +62,21 @@ public class PhotoCollectionProviderSupportTest
       }
 
     @Test
-    public void must_properly_parse_PhotoItems()
+    public void must_properly_parse_Themes()
       throws Exception
       {
         // given
         final MediaFolder mediaFolder = mock(MediaFolder.class);
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
-        final PhotoCollectionProviderSupport underTest = new PhotoCollectionProviderSupport();
+        final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider();
         // when
-        final EntityFinder photoItems = underTest.findPhotos(mediaFolder, "file:src/test/resources/images.xml");
+        final List<GalleryDescription> galleryDescriptions = underTest.parseThemes("file:src/test/resources/themes.xhtml");
         // then
-        final Path actualResult = Paths.get("target", "test-results", "photoItems.txt");
-        final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "photoItems.txt");
+        final Path actualResult = Paths.get("target", "test-results", "themes.txt");
+        final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "themes.txt");
         Files.createDirectories(actualResult.getParent());
-        final Stream<String> stream = photoItems.stream()
-                                                .map(e -> (PhotoItem)e)
-                                                .map(pi -> String.format("%s: %s", pi.getId(), pi.getTitle()));
+        final Stream<String> stream = galleryDescriptions.stream()
+                                                .map(gd -> String.format("%s: %s", gd.getDisplayName(), gd.getUrl()));
         Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
         assertSameContents(expectedResult.toFile(), actualResult.toFile());
       }

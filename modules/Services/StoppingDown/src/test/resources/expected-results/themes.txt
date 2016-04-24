@@ -1,0 +1,22 @@
+The Best Ones: /themes/the-best-ones/
+Birds: /themes/birds/
+Flowers: /themes/flowers/
+Fog: /themes/fog/
+Clouds: /themes/clouds/
+Churches and chapels: /themes/churches/
+Castles: /themes/castles/
+Lonely trees: /themes/lonely-trees/
+Toscana: /themes/toscana/
+Bourgogne: /themes/bourgogne/
+Le long de la Durance: /themes/le-long-de-la-durance/
+San Francisco and surroundings: /themes/san-francisco-and-surroundings/
+Paysages du Rhône: /themes/paysages-du-rhone/
+Liguria: /themes/liguria/
+Ceillac: /themes/ceillac/
+Haute vallée de l'Ubaye: /themes/haute-vallee-de-l-ubaye/
+Orbetello: /themes/orbetello/
+Le Massif des Maures: /themes/le-massif-des-maures/
+Oltregiogo e 4 province: /themes/oltregiogo-e-quattro-province/
+Lac Léman et alentours: /themes/lac-leman-et-alentours
+Drôme et Vaucluse: /themes/drome-et-vaucluse
+Trentino - Alto Adige: /themes/trentino-alto-adige

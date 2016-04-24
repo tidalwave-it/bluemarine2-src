@@ -31,6 +31,8 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.parsers.DocumentBuilder;
@@ -41,6 +43,7 @@ import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
 import java.io.IOException;
 import org.w3c.dom.Document;
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -48,8 +51,6 @@ import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.SupplierBasedEntityFinder;
-import java.util.HashMap;
-import java.util.Map;
 
 /***********************************************************************************************************************
  *
@@ -59,9 +60,11 @@ import java.util.Map;
  **********************************************************************************************************************/
 public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
   {
-    private static final DocumentBuilderFactory PARSER_FACTORY = DocumentBuilderFactory.newInstance();
-    private static final XPathFactory XPATH_FACTORY = XPathFactory.newInstance();
-    private static final XPathExpression XPATH_EXPR;
+    protected static final DocumentBuilderFactory PARSER_FACTORY = DocumentBuilderFactory.newInstance();
+
+    protected static final XPathFactory XPATH_FACTORY = XPathFactory.newInstance();
+
+    private static final XPathExpression XPATH_STILLIMAGE_EXPR;
 
     /**
      * A local cache for finders. It's advisable, since clients will frequently retrieve a finder because of pagination.
@@ -76,7 +79,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
         try
           {
             final XPath xpath = XPATH_FACTORY.newXPath();
-            XPATH_EXPR = xpath.compile("/gallery/stillImage");
+            XPATH_STILLIMAGE_EXPR = xpath.compile("/gallery/stillImage");
           }
         catch (XPathExpressionException e)
           {
@@ -127,15 +130,15 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
           {
             final DocumentBuilder builder = PARSER_FACTORY.newDocumentBuilder();
             final Document doc = builder.parse(galleryUrl);
-            final NodeList nodes = (NodeList)XPATH_EXPR.evaluate(doc, XPathConstants.NODESET);;
+            final NodeList nodes = (NodeList)XPATH_STILLIMAGE_EXPR.evaluate(doc, XPathConstants.NODESET);
 
             final Collection<Entity> photoItems = new ArrayList<>();
 
             for (int i = 0; i < nodes.getLength(); i++)
               {
                 final Node node = nodes.item(i);
-                final String id = node.getAttributes().getNamedItem("id").getNodeValue();
-                final String title = node.getAttributes().getNamedItem("title").getNodeValue();
+                final String id = getAttribute(node, "id");
+                final String title = getAttribute(node, "title");
                 photoItems.add(new PhotoItem(parent, id, title));
               }
 
@@ -145,5 +148,15 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
           {
             throw new RuntimeException(e);
           }
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    protected static String getAttribute (final @Nonnull Node node, final @Nonnull String attrName)
+      throws DOMException
+      {
+        return node.getAttributes().getNamedItem(attrName).getNodeValue();
       }
   }

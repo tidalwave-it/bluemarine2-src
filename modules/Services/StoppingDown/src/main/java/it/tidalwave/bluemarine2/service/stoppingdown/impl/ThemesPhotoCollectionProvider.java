@@ -37,6 +37,20 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.SupplierBasedEntityFinder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
+import static it.tidalwave.bluemarine2.service.stoppingdown.impl.PhotoCollectionProviderSupport.PARSER_FACTORY;
+import java.io.IOException;
+import java.util.Collection;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathExpressionException;
+import lombok.extern.slf4j.Slf4j;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 /***********************************************************************************************************************
  *
@@ -44,8 +58,36 @@ import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
  * @version $Id$
  *
  **********************************************************************************************************************/
+@Slf4j
 public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSupport
   {
+    private static final XPathExpression XPATH_THUMBNAIL_EXPR;
+
+    private static final XPathExpression XPATH_THUMBNAIL_A_EXPR;
+
+    private static final XPathExpression XPATH_THUMBNAIL_CAPTION_EXPR;
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    static
+      {
+        try
+          {
+            final XPath xpath = XPATH_FACTORY.newXPath();
+            XPATH_THUMBNAIL_EXPR = xpath.compile("//div[@class='thumbnail']");
+            XPATH_THUMBNAIL_A_EXPR = xpath.compile("a/@href");
+            XPATH_THUMBNAIL_CAPTION_EXPR = xpath.compile(".//div[@class='caption']/h3/text()");
+          }
+        catch (XPathExpressionException e)
+          {
+            throw new ExceptionInInitializerError(e);
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Override @Nonnull
     public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
@@ -60,9 +102,43 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
         return new SupplierBasedEntityFinder(parent, () -> children);
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    /* VisibleForTesting */ List<GalleryDescription> parseThemes (final @Nonnull String themesUrl)
+      {
+        log.debug("parseThemes({})", themesUrl);
+
+        try
+          {
+            final DocumentBuilder builder = PARSER_FACTORY.newDocumentBuilder();
+            final Document doc = builder.parse(themesUrl);
+            final NodeList thumbnailNodes = (NodeList)XPATH_THUMBNAIL_EXPR.evaluate(doc, XPathConstants.NODESET);
+
+            final List<GalleryDescription> galleryDescriptions = new ArrayList<>();
+
+            for (int i = 0; i < thumbnailNodes.getLength(); i++)
+              {
+                final Node thumbnailNode = thumbnailNodes.item(i);
+                final String caption = (String)XPATH_THUMBNAIL_CAPTION_EXPR.evaluate(thumbnailNode, XPathConstants.STRING);
+                final String url = (String)XPATH_THUMBNAIL_A_EXPR.evaluate(thumbnailNode, XPathConstants.STRING);
+                galleryDescriptions.add(new GalleryDescription(caption, url));
+              }
+
+            return galleryDescriptions;
+          }
+        catch (SAXException | IOException | XPathExpressionException | ParserConfigurationException e)
+          {
+            throw new RuntimeException(e);
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     // FIXME: even though the finder is retrived later, through the supplier, the translation to DIDL does compute
     // the finder because it calls the count() for the children count
-
     @Nonnull
     private MediaFolder c (final @Nonnull MediaFolder parent,
                            final @Nonnull String path,
