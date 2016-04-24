@@ -77,10 +77,15 @@ public class DefaultPhotoCollectionProvider implements PhotoCollectionProvider
     @Override @Nonnull
     public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
+        return findPhotos(parent, "file:src/test/resources/images.xml");
+      }
+
+    /* VisibleForTesting */ EntityFinder findPhotos (final @Nonnull MediaFolder parent, final @Nonnull String url)
+      {
         try
           {
             final DocumentBuilder builder = PARSER_FACTORY.newDocumentBuilder();
-            final Document doc = builder.parse("src/test/resources/images.xml");
+            final Document doc = builder.parse(url);
             final NodeList nodes = (NodeList)XPATH_EXPR.evaluate(doc, XPathConstants.NODESET);;
 
             final Collection<Entity> photoItems = new ArrayList<>();

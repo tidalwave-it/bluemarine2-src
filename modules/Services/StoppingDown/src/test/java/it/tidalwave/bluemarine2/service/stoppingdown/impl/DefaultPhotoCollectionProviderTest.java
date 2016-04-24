@@ -67,9 +67,9 @@ public class DefaultPhotoCollectionProviderTest
         // given
         final MediaFolder mediaFolder = mock(MediaFolder.class);
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
-        final PhotoCollectionProvider underTest = new DefaultPhotoCollectionProvider();
+        final DefaultPhotoCollectionProvider underTest = new DefaultPhotoCollectionProvider();
         // when
-        final EntityFinder photoItems = underTest.findPhotos(mediaFolder);
+        final EntityFinder photoItems = underTest.findPhotos(mediaFolder, "file:src/test/resources/images.xml");
         // then
         final Path actualResult = Paths.get("target", "test-results", "photoItems.txt");
         final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "photoItems.txt");
