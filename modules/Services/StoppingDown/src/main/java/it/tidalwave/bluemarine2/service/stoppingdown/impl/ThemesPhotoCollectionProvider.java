@@ -52,7 +52,6 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
-import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder.EntityCollectionFactory;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
@@ -125,11 +124,12 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      ******************************************************************************************************************/
     @Override
     @Nonnull
-    public EntityFinder findPhotos(final @Nonnull MediaFolder parent) {
+    public EntityFinder findPhotos(final @Nonnull MediaFolder parent)
+      {
         return new FactoryBasedEntityFinder(parent, p -> Arrays.asList(
                 new VirtualMediaFolder(p, PATH_PLACES,   "Places",   this::placesFactory),
                 new VirtualMediaFolder(p, PATH_SUBJECTS, "Subjects", this::subjectsFactory)));
-    }
+      }
 
     /*******************************************************************************************************************
      *
@@ -138,7 +138,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     private Collection<Entity> subjectsFactory (final @Nonnull MediaFolder parent)
       {
         return parseThemes(XPATH_SUBJECTS_THUMBNAIL_EXPR).stream()
-                                                         .map(item -> createMediaFolder(parent, item))
+                                                         .map(gallery -> gallery.createFolder(parent, this::findPhotos))
                                                          .collect(toList());
       }
 
@@ -149,7 +149,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     private Collection<Entity> placesFactory (final @Nonnull MediaFolder parent)
       {
         return parseThemes(XPATH_PLACES_THUMBNAIL_EXPR).stream()
-                                                       .map(item -> createMediaFolder(parent, item))
+                                                       .map(gallery -> gallery.createFolder(parent, this::findPhotos))
                                                        .collect(toList());
       }
 
@@ -188,23 +188,5 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
                 throw new RuntimeException(e);
               }
           });
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    // FIXME: even though the finder is retrived later, through the supplier, the translation to DIDL does compute
-    // the finder because it calls the count() for the children count
-    @Nonnull
-    public MediaFolder createMediaFolder (final @Nonnull MediaFolder parent,
-                                          final @Nonnull GalleryDescription galleryDescription)
-      {
-        final String url = galleryDescription.getUrl();
-        final EntityCollectionFactory factory = p -> findPhotos(p, url);
-        final Path path = Paths.get(url.replaceAll("^.*themes\\/([a-z,A-Z,0-9,-]*).*", "$1"));
-        return new VirtualMediaFolder(parent,
-                                      path,
-                                      galleryDescription.getDisplayName(),
-                                      factory);
       }
   }
