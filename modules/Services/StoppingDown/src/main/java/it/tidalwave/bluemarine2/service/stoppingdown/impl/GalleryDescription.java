@@ -62,7 +62,7 @@ public class GalleryDescription implements Comparable<GalleryDescription>
     /*******************************************************************************************************************
      *
      * Creates a {@link MediaFolder} with the given parent and the children provided by a factory.
-     * 
+     *
      * @param   parent              the parent folder
      * @param   entitiesFactory     a function which, given the parent and a URL, provides the entities
      * @return                      the folder
@@ -74,7 +74,7 @@ public class GalleryDescription implements Comparable<GalleryDescription>
     public Entity createFolder (final @Nonnull MediaFolder parent,
                                 final @Nonnull BiFunction<MediaFolder, String, Collection<Entity>> entitiesFactory)
       {
-        final Path path = Paths.get(url.replaceAll("^.*themes\\/([a-z,A-Z,0-9,-]*).*", "$1"));
+        final Path path = Paths.get(url.replaceAll("^.*(themes|diary\\/[0-9]{4})\\/(.*)\\/images\\.xml", "$2"));
         final EntityCollectionFactory ecf = p -> entitiesFactory.apply(p, url);
         return new VirtualMediaFolder(parent, path, displayName, ecf);
       }

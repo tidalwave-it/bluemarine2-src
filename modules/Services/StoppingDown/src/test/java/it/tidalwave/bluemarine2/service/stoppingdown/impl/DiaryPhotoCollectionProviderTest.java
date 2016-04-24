@@ -28,6 +28,9 @@
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
+import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import static it.tidalwave.bluemarine2.service.stoppingdown.impl.PhotoCollectionProviderTestSupport.dump;
+import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -35,7 +38,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Stream;
 import org.testng.annotations.Test;
-import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
+import static org.mockito.Mockito.when;
 
 /***********************************************************************************************************************
  *
@@ -66,6 +69,29 @@ public class DiaryPhotoCollectionProviderTest extends PhotoCollectionProviderTes
         Files.createDirectories(actualResult.getParent());
         final Stream<String> stream = diaryDescriptions.stream()
                                                 .map(gd -> String.format("%s: %s", gd.getDisplayName(), gd.getUrl()));
+        Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
+        assertSameContents(expectedResult.toFile(), actualResult.toFile());
+      }
+
+    /*******************************************************************************************************************
+     *
+     * This test retrieves actual data from the network.
+     *
+     ******************************************************************************************************************/
+    @Test
+    public void must_properly_create_hierarchy()
+      throws Exception
+      {
+        // given
+        final DiaryPhotoCollectionProvider underTest = new DiaryPhotoCollectionProvider(URL_MOCK_RESOURCE); // FIXME: use the real one
+        // when
+        final EntityFinder finder = underTest.findPhotos(mediaFolder);
+        when(mediaFolder.findChildren()).thenReturn(finder);
+        // then
+        final Path actualResult = Paths.get("target", "test-results", "diary-hierarchy.txt");
+        final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "diary-hierarchy.txt");
+        Files.createDirectories(actualResult.getParent());
+        final Stream<String> stream = dump(mediaFolder).stream();
         Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
         assertSameContents(expectedResult.toFile(), actualResult.toFile());
       }

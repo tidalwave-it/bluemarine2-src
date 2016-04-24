@@ -29,12 +29,9 @@
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
-import static it.tidalwave.bluemarine2.service.stoppingdown.impl.PhotoCollectionProviderSupport.XPATH_FACTORY;
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -42,15 +39,23 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
-import static javax.xml.xpath.XPathConstants.NODESET;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import java.io.IOException;
+import java.nio.file.Paths;
+import org.xml.sax.SAXException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
+import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
+import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.toList;
+import static javax.xml.xpath.XPathConstants.NODESET;
 
 /***********************************************************************************************************************
  *
@@ -61,16 +66,7 @@ import org.xml.sax.SAXException;
 @RequiredArgsConstructor @Slf4j
 public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
   {
-    @Override @Nonnull
-    public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
-      {
-        return new FactoryBasedEntityFinder(parent,
-                p -> findPhotos(p, "http://stoppingdown.net/private/diary/20160407/images.xml"));
-      }
-
     private static final String URL_DIARY = "http://stoppingdown.net/diary/";
-
-//    private static final String URL_GALLERY_TEMPLATE = "http://stoppingdown.net%s/images.xml";
 
     private static final XPathExpression XPATH_DIARY_EXPR;
 
@@ -107,16 +103,15 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
       }
 
     /*******************************************************************************************************************
-//     *
-//     ******************************************************************************************************************/
-//    @Override
-//    @Nonnull
-//    public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
-//      {
-//        return new FactoryBasedEntityFinder(parent, p -> Arrays.asList(
-//                new VirtualMediaFolder(p, PATH_PLACES,   "Places",   this::placesFactory),
-//                new VirtualMediaFolder(p, PATH_SUBJECTS, "Subjects", this::subjectsFactory)));
-//      }
+     *
+     ******************************************************************************************************************/
+    @Override
+    @Nonnull
+    public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
+      {
+        return new FactoryBasedEntityFinder(parent, p -> Arrays.asList(
+                new VirtualMediaFolder(p, Paths.get("2016"), "2016", this::subjectsFactory)));
+      }
 
     /*******************************************************************************************************************
      *
@@ -130,27 +125,15 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
         diaryCache.clear();
       }
 
-//    /*******************************************************************************************************************
-//     *
-//     ******************************************************************************************************************/
-//    @Nonnull
-//    private Collection<Entity> subjectsFactory (final @Nonnull MediaFolder parent)
-//      {
-//        return parseThemes(XPATH_DIARY_EXPR).stream()
-//                                                         .map(gallery -> gallery.createFolder(parent, this::findPhotos))
-//                                                         .collect(toList());
-//      }
-//
-//    /*******************************************************************************************************************
-//     *
-//     ******************************************************************************************************************/
-//    @Nonnull
-//    private Collection<Entity> placesFactory (final @Nonnull MediaFolder parent)
-//      {
-//        return parseThemes(XPATH_PLACES_THUMBNAIL_EXPR).stream()
-//                                                       .map(gallery -> gallery.createFolder(parent, this::findPhotos))
-//                                                       .collect(toList());
-//      }
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private Collection<Entity> subjectsFactory (final @Nonnull MediaFolder parent)
+      {
+        return parseDiary().stream().map(gallery -> gallery.createFolder(parent, this::findPhotos))
+                                    .collect(toList());
+      }
 
     /*******************************************************************************************************************
      *
@@ -170,10 +153,10 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
 
                 for (int i = 0; i < thumbnailNodes.getLength(); i++)
                   {
-                    final Node thumbnailNode = thumbnailNodes.item(i);
-                    final String url = getAttribute(thumbnailNode, "href");
+                    final Node entryNode = thumbnailNodes.item(i);
+                    final String url = getAttribute(entryNode, "href") + "images.xml";
                     String date = url.substring(url.length() - 11, url.length() - 1);
-                    final String displayName = date + " - " + thumbnailNode.getTextContent();
+                    final String displayName = date + " - " + entryNode.getTextContent();
                     galleryDescriptions.add(new GalleryDescription(displayName, url.replace("//", "/")
                                                                                    .replace(":/", "://")));
                   }
