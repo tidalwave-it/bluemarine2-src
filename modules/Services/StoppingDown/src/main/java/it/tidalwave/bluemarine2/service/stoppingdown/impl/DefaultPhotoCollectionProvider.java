@@ -57,17 +57,31 @@ import it.tidalwave.bluemarine2.model.spi.SupplierBasedEntityFinder;
  **********************************************************************************************************************/
 public class DefaultPhotoCollectionProvider implements PhotoCollectionProvider
   {
+    private static final DocumentBuilderFactory PARSER_FACTORY = DocumentBuilderFactory.newInstance();
+    private static final XPathFactory XPATH_FACTORY = XPathFactory.newInstance();
+    private static final XPathExpression XPATH_EXPR;
+
+    static
+      {
+        try
+          {
+            final XPath xpath = XPATH_FACTORY.newXPath();
+            XPATH_EXPR = xpath.compile("/gallery/stillImage");
+          }
+        catch (XPathExpressionException e)
+          {
+            throw new ExceptionInInitializerError(e);
+          }
+      }
+
     @Override @Nonnull
     public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
-        try {
-            final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            final DocumentBuilder builder = factory.newDocumentBuilder();
+        try
+          {
+            final DocumentBuilder builder = PARSER_FACTORY.newDocumentBuilder();
             final Document doc = builder.parse("src/test/resources/images.xml");
-            final XPathFactory xPathfactory = XPathFactory.newInstance();
-            final XPath xpath = xPathfactory.newXPath();
-            final XPathExpression expr = xpath.compile("/gallery/stillImage");
-            final NodeList nodes = (NodeList) expr.evaluate(doc, XPathConstants.NODESET);;
+            final NodeList nodes = (NodeList)XPATH_EXPR.evaluate(doc, XPathConstants.NODESET);;
 
             final Collection<Entity> photoItems = new ArrayList<>();
 
