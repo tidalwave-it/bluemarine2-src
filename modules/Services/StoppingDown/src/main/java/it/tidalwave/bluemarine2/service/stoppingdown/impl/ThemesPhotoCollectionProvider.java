@@ -51,6 +51,8 @@ import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import lombok.extern.slf4j.Slf4j;
 import static javax.xml.xpath.XPathConstants.*;
 import static it.tidalwave.bluemarine2.service.stoppingdown.impl.PhotoCollectionProviderSupport.PARSER_FACTORY;
+import java.util.Arrays;
+import static java.util.stream.Collectors.toList;
 
 /***********************************************************************************************************************
  *
@@ -63,13 +65,15 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
   {
     private static final String URL_TEMPLATE = "http://stoppingdown.net%s/images.xml";
 
-    /* VisibleForTesting */ static final XPathExpression XPATH_THEMES_THUMBNAIL_EXPR;
+    /* VisibleForTesting */ static final XPathExpression XPATH_SUBJECTS_THUMBNAIL_EXPR;
 
-    /* VisibleForTesting */  static final XPathExpression XPATH_PLACES_THUMBNAIL_EXPR;
+    /* VisibleForTesting */ static final XPathExpression XPATH_PLACES_THUMBNAIL_EXPR;
 
     private static final XPathExpression XPATH_THUMBNAIL_URL_EXPR;
 
     private static final XPathExpression XPATH_THUMBNAIL_DESCRIPTION_EXPR;
+
+    private final String themesUrl = "file:src/test/resources/themes.xhtml";
 
     /*******************************************************************************************************************
      *
@@ -79,9 +83,9 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
         try
           {
             final XPath xpath = XPATH_FACTORY.newXPath();
-//            XPATH_THEMES_THUMBNAIL_EXPR = xpath.compile("//div[@class='container-fluid']/h3[1]/following-sibling::div[@class='thumbnail']");
+//            XPATH_SUBJECTS_THUMBNAIL_EXPR = xpath.compile("//div[@class='container-fluid']/h3[1]/following-sibling::div[@class='thumbnail']");
 //            XPATH_PLACES_THUMBNAIL_EXPR = xpath.compile("//div[@class='container-fluid']/h3[2]/following-sibling::div[@class='thumbnail']");
-            XPATH_THEMES_THUMBNAIL_EXPR = xpath.compile("//div[@class='container-fluid']/div[@class='row'][1]//div[@class='thumbnail']");
+            XPATH_SUBJECTS_THUMBNAIL_EXPR = xpath.compile("//div[@class='container-fluid']/div[@class='row'][1]//div[@class='thumbnail']");
             XPATH_PLACES_THUMBNAIL_EXPR = xpath.compile("//div[@class='container-fluid']/div[@class='row'][2]//div[@class='thumbnail']");
             XPATH_THUMBNAIL_URL_EXPR = xpath.compile("a/@href");
             XPATH_THUMBNAIL_DESCRIPTION_EXPR = xpath.compile(".//div[@class='caption']/h3/text()");
@@ -98,25 +102,24 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     @Override @Nonnull
     public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
-        final List<Entity> children = new ArrayList<>();
-        children.add(c(parent, "birds", "Birds"));
-        children.add(c(parent, "castles", "Castles"));
-        children.add(c(parent, "churches", "Churches & chapels"));
-        children.add(c(parent, "clouds", "Clouds"));
-        children.add(c(parent, "fog", "Fog"));
-        children.add(c(parent, "lonely-trees", "Lonely Trees"));
+        final List<Entity> subjectChildren = new ArrayList<>();
+        final VirtualMediaFolder subjects = new VirtualMediaFolder(parent, Paths.get("subjects"), "Subjects", () -> subjectChildren);
 
-        return new SupplierBasedEntityFinder(parent, () -> children);
+        subjectChildren.addAll(parseThemes(themesUrl, XPATH_SUBJECTS_THUMBNAIL_EXPR)
+                .stream()
+                .map(item -> createMediaFolder(subjects, item))
+                .collect(toList()));
+
+        final List<Entity> placeChildren = new ArrayList<>();
+        final VirtualMediaFolder places = new VirtualMediaFolder(parent, Paths.get("places"), "Places", () -> placeChildren);
+
+        placeChildren.addAll(parseThemes(themesUrl, XPATH_PLACES_THUMBNAIL_EXPR)
+                .stream()
+                .map(item -> createMediaFolder(places, item))
+                .collect(toList()));
+
+        return new SupplierBasedEntityFinder(parent, () -> Arrays.asList(subjects, places));
       }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-//    @Nonnull
-//    /* VisibleForTesting */ List<GalleryDescription> parseThemes (final @Nonnull String themesUrl)
-//      {
-//
-//      }
 
     /*******************************************************************************************************************
      *
@@ -139,7 +142,9 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
                 final Node thumbnailNode = thumbnailNodes.item(i);
                 final String description = (String)XPATH_THUMBNAIL_DESCRIPTION_EXPR.evaluate(thumbnailNode, STRING);
                 final String url = (String)XPATH_THUMBNAIL_URL_EXPR.evaluate(thumbnailNode, STRING);
-                galleryDescriptions.add(new GalleryDescription(description, String.format(URL_TEMPLATE, url)));
+                galleryDescriptions.add(new GalleryDescription(description, String.format(URL_TEMPLATE, url)
+                                                                                  .replace("//", "/")
+                                                                                  .replace(":/", "://")));
               }
 
             Collections.sort(galleryDescriptions);
@@ -158,11 +163,11 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     // FIXME: even though the finder is retrived later, through the supplier, the translation to DIDL does compute
     // the finder because it calls the count() for the children count
     @Nonnull
-    private MediaFolder c (final @Nonnull MediaFolder parent,
-                           final @Nonnull String path,
-                           final @Nonnull String displayName)
+    public MediaFolder createMediaFolder (final @Nonnull MediaFolder parent,
+                                          final @Nonnull GalleryDescription galleryDescription)
       {
-        return new VirtualMediaFolder(parent, Paths.get(path),  displayName,
-            (p) -> findCachedPhotos(p, String.format("http://stoppingdown.net/themes/%s/images.xml", path)));
+        return new VirtualMediaFolder(parent, Paths.get(galleryDescription.getDisplayName()),  galleryDescription.getDisplayName(),
+            (p) -> findCachedPhotos(p, galleryDescription.getUrl()));
       }
+
   }

@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
+import it.tidalwave.bluemarine2.model.Entity;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -36,11 +37,13 @@ import java.util.stream.Stream;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.mock;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Nonnull;
 import javax.xml.xpath.XPathExpression;
@@ -73,6 +76,7 @@ public class ThemesPhotoCollectionProviderSupportTest
         // given
         final MediaFolder mediaFolder = mock(MediaFolder.class);
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
+        when(mediaFolder.toString()).thenReturn("MediaFolder(\"/folder\"))");
         final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider();
         // when
         final List<GalleryDescription> themeDescriptions = underTest.parseThemes(URL_TEST_RESOURCE, expression);
@@ -86,12 +90,47 @@ public class ThemesPhotoCollectionProviderSupportTest
         assertSameContents(expectedResult.toFile(), actualResult.toFile());
       }
 
+    @Test
+    public void must_properly_create_hierarchy()
+      throws Exception
+      {
+        // given
+        final MediaFolder mediaFolder = mock(MediaFolder.class);
+        when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
+        when(mediaFolder.toString()).thenReturn("MediaFolder(\"/folder\"))");
+        final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider();
+        // when
+        final EntityFinder finder = underTest.findPhotos(mediaFolder);
+        when(mediaFolder.findChildren()).thenReturn(finder);
+        // then
+        final Path actualResult = Paths.get("target", "test-results", "nodes.txt");
+        final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "nodes.txt");
+        Files.createDirectories(actualResult.getParent());
+        final Stream<String> stream = dump(mediaFolder).stream();
+        Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
+        assertSameContents(expectedResult.toFile(), actualResult.toFile());
+      }
+
+    @Nonnull
+    private static List<String> dump (final @Nonnull Entity entity)
+      {
+        final List<String> result = new ArrayList<>();
+        result.add("" + entity);
+
+        if (entity instanceof MediaFolder)
+          {
+            ((MediaFolder)entity).findChildren().forEach(child -> result.addAll(dump(child)));
+          }
+
+        return result;
+      }
+
     @DataProvider
     private static Object[][] selectorProvider()
       {
         return new Object[][]
           {
-            { "themes.txt", ThemesPhotoCollectionProvider.XPATH_THEMES_THUMBNAIL_EXPR },
+            { "themes.txt", ThemesPhotoCollectionProvider.XPATH_SUBJECTS_THUMBNAIL_EXPR },
             { "places.txt", ThemesPhotoCollectionProvider.XPATH_PLACES_THUMBNAIL_EXPR }
           };
       }

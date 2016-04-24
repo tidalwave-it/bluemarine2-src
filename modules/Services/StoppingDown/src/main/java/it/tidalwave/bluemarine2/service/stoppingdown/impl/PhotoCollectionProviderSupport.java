@@ -51,6 +51,7 @@ import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.SupplierBasedEntityFinder;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -58,6 +59,7 @@ import it.tidalwave.bluemarine2.model.spi.SupplierBasedEntityFinder;
  * @version $Id$
  *
  **********************************************************************************************************************/
+@Slf4j
 public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
   {
     protected static final DocumentBuilderFactory PARSER_FACTORY = DocumentBuilderFactory.newInstance();
@@ -128,6 +130,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
       {
         try
           {
+            log.debug("findPhotos({}, {}", parent, galleryUrl);
             final DocumentBuilder builder = PARSER_FACTORY.newDocumentBuilder();
             final Document doc = builder.parse(galleryUrl);
             final NodeList nodes = (NodeList)XPATH_STILLIMAGE_EXPR.evaluate(doc, XPathConstants.NODESET);
