@@ -29,8 +29,14 @@
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
+import java.util.List;
+import java.nio.file.Paths;
+import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import it.tidalwave.bluemarine2.model.spi.SupplierBasedEntityFinder;
+import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 
 /***********************************************************************************************************************
  *
@@ -43,6 +49,26 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     @Override @Nonnull
     public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
-        return findCachedPhotos(parent, "http://stoppingdown.net/themes/lonely-trees/images.xml");
+        final List<Entity> children = new ArrayList<>();
+        children.add(c(parent, "birds", "Birds"));
+        children.add(c(parent, "castles", "Castles"));
+        children.add(c(parent, "churches", "Churches & chapels"));
+        children.add(c(parent, "clouds", "Clouds"));
+        children.add(c(parent, "fog", "Fog"));
+        children.add(c(parent, "lonely-trees", "Lonely Trees"));
+
+        return new SupplierBasedEntityFinder(parent, () -> children);
+      }
+
+    // FIXME: even though the finder is retrived later, through the supplier, the translation to DIDL does compute
+    // the finder because it calls the count() for the children count
+
+    @Nonnull
+    private MediaFolder c (final @Nonnull MediaFolder parent,
+                           final @Nonnull String path,
+                           final @Nonnull String displayName)
+      {
+        return new VirtualMediaFolder(parent, Paths.get(path),  displayName,
+            (p) -> findCachedPhotos(p, String.format("http://stoppingdown.net/themes/%s/images.xml", path)));
       }
   }
