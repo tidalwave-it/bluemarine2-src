@@ -61,16 +61,18 @@ public class GalleryDescription implements Comparable<GalleryDescription>
 
     /*******************************************************************************************************************
      *
+     * Creates a {@link MediaFolder} with the given parent and the children provided by a factory.
+     * 
      * @param   parent              the parent folder
-     * @param   entitiesFactory     a function which, given the parent and a URL, provides the entity
+     * @param   entitiesFactory     a function which, given the parent and a URL, provides the entities
      * @return                      the folder
      *
      ******************************************************************************************************************/
-    // FIXME: even though the finder is retrived later, through the supplier, the translation to DIDL does compute
+    // FIXME: even though the finder is retrieved later, through the factory, the translation to DIDL does compute
     // the finder because it calls the count() for the children count
     @Nonnull
     public Entity createFolder (final @Nonnull MediaFolder parent,
-                                     final BiFunction<MediaFolder, String, Collection<Entity>> entitiesFactory)
+                                final @Nonnull BiFunction<MediaFolder, String, Collection<Entity>> entitiesFactory)
       {
         final Path path = Paths.get(url.replaceAll("^.*themes\\/([a-z,A-Z,0-9,-]*).*", "$1"));
         final EntityCollectionFactory ecf = p -> entitiesFactory.apply(p, url);
