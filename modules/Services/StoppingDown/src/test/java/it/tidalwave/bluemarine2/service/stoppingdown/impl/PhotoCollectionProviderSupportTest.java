@@ -46,16 +46,17 @@ import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
  **********************************************************************************************************************/
 public class PhotoCollectionProviderSupportTest extends PhotoCollectionProviderTestSupport
   {
-    private static final String URL_MOCK_RESOURCE = "file:src/test/resources/images.xml";
-    
+    private static final String URL_MOCK_RESOURCE = "http://localhost:8080";
+//    private static final String URL_MOCK_RESOURCE = "file:src/test/resources/images.xml";
+
     @Test
     public void must_properly_parse_PhotoItems()
       throws Exception
       {
         // given
-        final PhotoCollectionProviderSupport underTest = new PhotoCollectionProviderSupport();
+        final PhotoCollectionProviderSupport underTest = new PhotoCollectionProviderSupport(URL_MOCK_RESOURCE);
         // when
-        final Collection<Entity> photoItems = underTest.findPhotos(mediaFolder, URL_MOCK_RESOURCE);
+        final Collection<Entity> photoItems = underTest.findPhotos(mediaFolder, "file:src/test/resources/images.xml");
         // then
         final Path actualResult = Paths.get("target", "test-results", "photoItems.txt");
         final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "photoItems.txt");

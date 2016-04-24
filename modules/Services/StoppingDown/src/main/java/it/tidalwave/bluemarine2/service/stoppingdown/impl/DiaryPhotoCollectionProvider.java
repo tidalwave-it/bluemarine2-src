@@ -36,6 +36,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.IntStream;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathExpression;
@@ -52,10 +53,8 @@ import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder.EntityCollectionFactory;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
-import java.util.stream.IntStream;
 import static javax.xml.xpath.XPathConstants.NODESET;
 
 /***********************************************************************************************************************
@@ -64,17 +63,12 @@ import static javax.xml.xpath.XPathConstants.NODESET;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j
+@Slf4j
 public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
   {
-    private static final String URL_DIARY = "http://stoppingdown.net/diary/";
-
-    private static final String URL_GALLERY_TEMPLATE = "http://stoppingdown.net%s/images.xml";
+    private static final String URL_DIARY_TEMPLATE = "%s/diary/%d";
 
     private static final XPathExpression XPATH_DIARY_EXPR;
-
-    @Nonnull
-    private final String themesUrl;
 
     /**
      * A local cache for themes is advisable because multiple calls will be performed.
@@ -102,7 +96,15 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
      ******************************************************************************************************************/
     public DiaryPhotoCollectionProvider()
       {
-        this(URL_DIARY);
+        this(URL_STOPPINGDOWN);
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    public DiaryPhotoCollectionProvider (final @Nonnull String baseUrl)
+      {
+        super(baseUrl);
       }
 
     /*******************************************************************************************************************
@@ -110,17 +112,16 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
      ******************************************************************************************************************/
     @Override
     @Nonnull
-    public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
-      {
+    public EntityFinder findPhotos(final @Nonnull MediaFolder parent) {
         return new FactoryBasedEntityFinder(parent,
-            p1 -> IntStream.range(1999, 2016 + 1)
-                           .mapToObj(x -> x)
-                           .map(year -> new VirtualMediaFolder(p1,
-                                                               Paths.get("" + year),
-                                                               "" + year,
-                                                               (EntityCollectionFactory)(p2 -> subjectsFactory(p2, year))))
-                           .collect(toList()));
-      }
+                p1 -> IntStream.range(1999, 2016 + 1)
+                        .mapToObj(x -> x)
+                        .map(year -> new VirtualMediaFolder(p1,
+                                Paths.get("" + year),
+                                "" + year,
+                                (EntityCollectionFactory)(p2 -> subjectsFactory(p2, year))))
+                        .collect(toList()));
+    }
 
     /*******************************************************************************************************************
      *
@@ -141,7 +142,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
     private Collection<Entity> subjectsFactory (final @Nonnull MediaFolder parent, final int year)
       {
         return parseDiary(year).stream().map(gallery -> gallery.createFolder(parent, this::findPhotos))
-                                    .collect(toList());
+                                        .collect(toList());
       }
 
     /*******************************************************************************************************************
@@ -150,13 +151,14 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
     @Nonnull
     /* VisibleForTesting */ List<GalleryDescription> parseDiary (final int year)
       {
-        log.debug("parseThemes({})", themesUrl);
+        final String xurl = String.format(URL_DIARY_TEMPLATE, baseUrl, year);
+        log.debug("parseThemes({})", xurl);
 
         return diaryCache.computeIfAbsent(year, key ->
           {
             try
               {
-                final Document document = downloadXml(String.format(themesUrl, year));
+                final Document document = downloadXml(xurl);
                 final NodeList thumbnailNodes = (NodeList)XPATH_DIARY_EXPR.evaluate(document, NODESET);
                 final List<GalleryDescription> galleryDescriptions = new ArrayList<>();
 
@@ -164,8 +166,8 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
                   {
                     final Node entryNode = thumbnailNodes.item(i);
                     final String href = getAttribute(entryNode, "href").replaceAll("http:\\/\\/[^\\/]*", "");
-                    final String url = String.format(URL_GALLERY_TEMPLATE, href).replace("//", "/")
-                                                                                .replace(":/", "://");
+                    final String url = String.format(URL_GALLERY_TEMPLATE, baseUrl, href).replace("//", "/")
+                                                                                         .replace(":/", "://");
                     final String date = href.substring(href.length() - 11, href.length() - 1);
                     final String displayName = date + " - " + entryNode.getTextContent();
                     galleryDescriptions.add(new GalleryDescription(displayName, url));

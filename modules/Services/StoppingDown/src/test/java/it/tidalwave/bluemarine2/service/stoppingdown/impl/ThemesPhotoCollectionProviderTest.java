@@ -44,7 +44,8 @@ import static org.mockito.Mockito.when;
  **********************************************************************************************************************/
 public class ThemesPhotoCollectionProviderTest extends PhotoCollectionProviderTestSupport
   {
-    private static final String URL_MOCK_RESOURCE = "file:src/test/resources/stoppingdown.net/themes/index.xhtml";
+    private static final String URL_MOCK_RESOURCE = "http://localhost:8080";
+//    private static final String URL_MOCK_RESOURCE = "file:src/test/resources/stoppingdown.net/themes/index.xhtml";
 
     /*******************************************************************************************************************
      *
@@ -74,7 +75,7 @@ public class ThemesPhotoCollectionProviderTest extends PhotoCollectionProviderTe
       throws Exception
       {
         // given
-        final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider();
+        final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider(URL_MOCK_RESOURCE);
         // when
         final EntityFinder finder = underTest.findPhotos(mediaFolder);
         // then

@@ -59,7 +59,8 @@ import static java.util.stream.Collectors.toList;
 @DciRole(datumType = PhotoItem.class)
 public class PhotoItemDIDLAdapter implements DIDLAdapter
   {
-    private static final String MEDIA_URL_TEMPLATE = "http://stoppingdown.net/media/stillimages/%s/%d/image.jpg";
+    private static final String MEDIA_URL_TEMPLATE =
+            PhotoCollectionProviderSupport.URL_STOPPINGDOWN + "/media/stillimages/%s/%d/image.jpg";
 
     private static final List<Integer> SIZES = Arrays.asList(200, 400, 800, 1280, 1920, 2560);
 

@@ -50,6 +50,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -58,14 +59,21 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
+@RequiredArgsConstructor @Slf4j
 public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
   {
+    protected static final String URL_STOPPINGDOWN = System.getProperty("stoppingdown", "http://stoppingdown.net");
+
+    protected static final String URL_GALLERY_TEMPLATE = "%s%s/images.xml";
+
     protected static final DocumentBuilderFactory PARSER_FACTORY = DocumentBuilderFactory.newInstance();
 
     protected static final XPathFactory XPATH_FACTORY = XPathFactory.newInstance();
 
     private static final XPathExpression XPATH_STILLIMAGE_EXPR;
+
+    @Nonnull
+    protected final String baseUrl;
 
     /**
      * A local cache for finders. It's advisable, since clients will frequently retrieve a finder because of pagination.

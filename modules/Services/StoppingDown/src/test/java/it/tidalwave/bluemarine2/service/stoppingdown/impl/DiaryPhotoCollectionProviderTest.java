@@ -42,7 +42,8 @@ import static it.tidalwave.bluemarine2.service.stoppingdown.impl.PhotoCollection
  **********************************************************************************************************************/
 public class DiaryPhotoCollectionProviderTest extends PhotoCollectionProviderTestSupport
   {
-    private static final String URL_MOCK_RESOURCE = "file:src/test/resources/stoppingdown.net/diary/%d/index.xhtml";
+    private static final String URL_MOCK_RESOURCE = "http://localhost:8080";
+//    private static final String URL_MOCK_RESOURCE = "file:src/test/resources/stoppingdown.net/diary/%d/index.xhtml";
 
     /*******************************************************************************************************************
      *

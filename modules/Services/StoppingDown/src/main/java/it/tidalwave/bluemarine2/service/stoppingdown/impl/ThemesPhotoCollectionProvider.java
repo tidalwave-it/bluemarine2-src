@@ -52,7 +52,6 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
 import static javax.xml.xpath.XPathConstants.*;
@@ -63,12 +62,10 @@ import static javax.xml.xpath.XPathConstants.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j
+@Slf4j
 public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSupport
   {
-    private static final String URL_THEMES = "http://stoppingdown.net/themes/";
-
-    private static final String URL_GALLERY_TEMPLATE = "http://stoppingdown.net%s/images.xml";
+    private static final String URL_THEMES_TEMPLATE = "%s/themes/";
 
     private static final Path PATH_SUBJECTS = Paths.get("subjects");
 
@@ -81,9 +78,6 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     private static final XPathExpression XPATH_THUMBNAIL_URL_EXPR;
 
     private static final XPathExpression XPATH_THUMBNAIL_DESCRIPTION_EXPR;
-
-    @Nonnull
-    private final String themesUrl;
 
     /**
      * A local cache for themes is advisable because multiple calls will be performed.
@@ -116,7 +110,15 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      ******************************************************************************************************************/
     public ThemesPhotoCollectionProvider()
       {
-        this(URL_THEMES);
+        this(URL_STOPPINGDOWN);
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    public ThemesPhotoCollectionProvider (final @Nonnull String baseUrl)
+      {
+        super(baseUrl);
       }
 
     /*******************************************************************************************************************
@@ -171,13 +173,14 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     @Nonnull
     /* VisibleForTesting */ List<GalleryDescription> parseThemes (final @Nonnull XPathExpression expr)
       {
-        log.debug("parseThemes({}, {})", themesUrl, expr);
+        final String xurl = String.format(URL_THEMES_TEMPLATE, baseUrl);
+        log.debug("parseThemes({}, {})", xurl, expr);
 
         return themesCache.computeIfAbsent(expr, key ->
           {
             try
               {
-                final Document document = downloadXml(themesUrl);
+                final Document document = downloadXml(xurl);
                 final NodeList thumbnailNodes = (NodeList)expr.evaluate(document, NODESET);
                 final List<GalleryDescription> galleryDescriptions = new ArrayList<>();
 
@@ -185,10 +188,10 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
                   {
                     final Node thumbnailNode = thumbnailNodes.item(i);
                     final String description = (String)XPATH_THUMBNAIL_DESCRIPTION_EXPR.evaluate(thumbnailNode, STRING);
-                    final String url = (String)XPATH_THUMBNAIL_URL_EXPR.evaluate(thumbnailNode, STRING);
-                    galleryDescriptions.add(new GalleryDescription(description, String.format(URL_GALLERY_TEMPLATE, url)
-                                                                                      .replace("//", "/")
-                                                                                      .replace(":/", "://")));
+                    final String href = (String)XPATH_THUMBNAIL_URL_EXPR.evaluate(thumbnailNode, STRING);
+                    final String url = String.format(URL_GALLERY_TEMPLATE, baseUrl, href).replace("//", "/")
+                                                                                         .replace(":/", "://");
+                    galleryDescriptions.add(new GalleryDescription(description, url));
                   }
 
                 Collections.sort(galleryDescriptions);
