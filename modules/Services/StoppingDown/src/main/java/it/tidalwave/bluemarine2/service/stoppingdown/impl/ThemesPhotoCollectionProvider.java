@@ -53,6 +53,7 @@ import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
 import static javax.xml.xpath.XPathConstants.*;
 
@@ -194,7 +195,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
                     galleryDescriptions.add(new GalleryDescription(description, url));
                   }
 
-                Collections.sort(galleryDescriptions);
+                Collections.sort(galleryDescriptions, comparing(GalleryDescription::getDisplayName));
 
                 return galleryDescriptions;
               }

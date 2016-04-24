@@ -32,7 +32,6 @@ import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -54,6 +53,7 @@ import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder.EntityCollectionFactory;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 import static javax.xml.xpath.XPathConstants.NODESET;
 
@@ -173,7 +173,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
                     galleryDescriptions.add(new GalleryDescription(displayName, url));
                   }
 
-                Collections.sort(galleryDescriptions, Comparator.comparing(GalleryDescription::getUrl));
+                Collections.sort(galleryDescriptions, comparing(GalleryDescription::getUrl));
 
                 return galleryDescriptions;
               }

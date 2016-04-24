@@ -51,7 +51,7 @@ import lombok.ToString;
  **********************************************************************************************************************/
 @Immutable
 @RequiredArgsConstructor @Getter @EqualsAndHashCode @ToString
-public class GalleryDescription implements Comparable<GalleryDescription>
+public class GalleryDescription
   {
     @Nonnull
     private final String displayName;
@@ -77,15 +77,5 @@ public class GalleryDescription implements Comparable<GalleryDescription>
         final Path path = Paths.get(url.replaceAll("^.*(themes|diary\\/[0-9]{4})\\/(.*)\\/images\\.xml", "$2"));
         final EntityCollectionFactory ecf = p -> entitiesFactory.apply(p, url);
         return new VirtualMediaFolder(parent, path, displayName, ecf);
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Override
-    public int compareTo (final @Nonnull GalleryDescription other)
-      {
-        return this.displayName.compareTo(other.displayName);
       }
   }
