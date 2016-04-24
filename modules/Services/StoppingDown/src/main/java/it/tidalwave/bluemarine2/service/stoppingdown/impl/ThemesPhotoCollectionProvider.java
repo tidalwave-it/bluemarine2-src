@@ -56,6 +56,7 @@ import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
 import static javax.xml.xpath.XPathConstants.*;
 import static it.tidalwave.bluemarine2.service.stoppingdown.impl.PhotoCollectionProviderSupport.PARSER_FACTORY;
+import java.nio.file.Path;
 
 /***********************************************************************************************************************
  *
@@ -67,6 +68,10 @@ import static it.tidalwave.bluemarine2.service.stoppingdown.impl.PhotoCollection
 public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSupport
   {
     private static final String URL_TEMPLATE = "http://stoppingdown.net%s/images.xml";
+
+    private static final Path PATH_SUBJECTS = Paths.get("subjects");
+    
+    private static final Path PATH_PLACES = Paths.get("places");
 
     /* VisibleForTesting */ static final XPathExpression XPATH_SUBJECTS_THUMBNAIL_EXPR;
 
@@ -107,8 +112,8 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
         return new FactoryBasedEntityFinder(parent, p -> Arrays.asList(
-                new VirtualMediaFolder(p, Paths.get("places"),   "Places",   this::placesFactory),
-                new VirtualMediaFolder(p, Paths.get("subjects"), "Subjects", this::subjectsFactory)));
+                new VirtualMediaFolder(p, PATH_PLACES,   "Places",   this::placesFactory),
+                new VirtualMediaFolder(p, PATH_SUBJECTS, "Subjects", this::subjectsFactory)));
       }
 
     /*******************************************************************************************************************
