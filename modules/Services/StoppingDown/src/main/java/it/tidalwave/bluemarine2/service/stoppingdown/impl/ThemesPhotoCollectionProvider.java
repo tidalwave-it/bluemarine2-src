@@ -37,7 +37,6 @@ import java.nio.file.Paths;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import org.xml.sax.SAXException;
@@ -50,6 +49,7 @@ import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.SupplierBasedEntityFinder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import lombok.extern.slf4j.Slf4j;
+import static javax.xml.xpath.XPathConstants.*;
 import static it.tidalwave.bluemarine2.service.stoppingdown.impl.PhotoCollectionProviderSupport.PARSER_FACTORY;
 
 /***********************************************************************************************************************
@@ -61,6 +61,8 @@ import static it.tidalwave.bluemarine2.service.stoppingdown.impl.PhotoCollection
 @Slf4j
 public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSupport
   {
+    private static final String URL_TEMPLATE = "http://stoppingdown.net%s/images.xml";
+
     private static final XPathExpression XPATH_THUMBNAIL_EXPR;
 
     private static final XPathExpression XPATH_THUMBNAIL_URL_EXPR;
@@ -114,16 +116,16 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
           {
             final DocumentBuilder builder = PARSER_FACTORY.newDocumentBuilder();
             final Document doc = builder.parse(themesUrl);
-            final NodeList thumbnailNodes = (NodeList)XPATH_THUMBNAIL_EXPR.evaluate(doc, XPathConstants.NODESET);
+            final NodeList thumbnailNodes = (NodeList)XPATH_THUMBNAIL_EXPR.evaluate(doc, NODESET);
 
             final List<GalleryDescription> galleryDescriptions = new ArrayList<>();
 
             for (int i = 0; i < thumbnailNodes.getLength(); i++)
               {
                 final Node thumbnailNode = thumbnailNodes.item(i);
-                final String description = (String)XPATH_THUMBNAIL_DESCRIPTION_EXPR.evaluate(thumbnailNode, XPathConstants.STRING);
-                final String url = (String)XPATH_THUMBNAIL_URL_EXPR.evaluate(thumbnailNode, XPathConstants.STRING);
-                galleryDescriptions.add(new GalleryDescription(description, String.format("http://stoppingdown.net%s/images.xml", url)));
+                final String description = (String)XPATH_THUMBNAIL_DESCRIPTION_EXPR.evaluate(thumbnailNode, STRING);
+                final String url = (String)XPATH_THUMBNAIL_URL_EXPR.evaluate(thumbnailNode, STRING);
+                galleryDescriptions.add(new GalleryDescription(description, String.format(URL_TEMPLATE, url)));
               }
 
             Collections.sort(galleryDescriptions);
