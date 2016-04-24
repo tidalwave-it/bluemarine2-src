@@ -67,8 +67,7 @@ public class DiaryPhotoCollectionProviderTest extends PhotoCollectionProviderTes
         final Path actualResult = Paths.get("target", "test-results", "diary.txt");
         final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "diary.txt");
         Files.createDirectories(actualResult.getParent());
-        final Stream<String> stream = diaryDescriptions.stream()
-                                                .map(gd -> String.format("%s: %s", gd.getDisplayName(), gd.getUrl()));
+        final Stream<String> stream = diaryDescriptions.stream().map(GalleryDescription::toString);
         Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
         assertSameContents(expectedResult.toFile(), actualResult.toFile());
       }

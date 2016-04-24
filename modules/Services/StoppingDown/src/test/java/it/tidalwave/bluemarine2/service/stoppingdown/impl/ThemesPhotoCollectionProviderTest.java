@@ -70,8 +70,7 @@ public class ThemesPhotoCollectionProviderTest extends PhotoCollectionProviderTe
         final Path actualResult = Paths.get("target", "test-results", selector);
         final Path expectedResult = Paths.get("target", "test-classes", "expected-results", selector);
         Files.createDirectories(actualResult.getParent());
-        final Stream<String> stream = themeDescriptions.stream()
-                                                .map(gd -> String.format("%s: %s", gd.getDisplayName(), gd.getUrl()));
+        final Stream<String> stream = themeDescriptions.stream().map(GalleryDescription::toString);
         Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
         assertSameContents(expectedResult.toFile(), actualResult.toFile());
       }

@@ -1,14 +1,14 @@
-Bourgogne: http://stoppingdown.net/themes/bourgogne/images.xml
-Ceillac: http://stoppingdown.net/themes/ceillac/images.xml
-Drôme et Vaucluse: http://stoppingdown.net/themes/drome-et-vaucluse/images.xml
-Haute vallée de l'Ubaye: http://stoppingdown.net/themes/haute-vallee-de-l-ubaye/images.xml
-Lac Léman et alentours: http://stoppingdown.net/themes/lac-leman-et-alentours/images.xml
-Le Massif des Maures: http://stoppingdown.net/themes/le-massif-des-maures/images.xml
-Le long de la Durance: http://stoppingdown.net/themes/le-long-de-la-durance/images.xml
-Liguria: http://stoppingdown.net/themes/liguria/images.xml
-Oltregiogo e 4 province: http://stoppingdown.net/themes/oltregiogo-e-quattro-province/images.xml
-Orbetello: http://stoppingdown.net/themes/orbetello/images.xml
-Paysages du Rhône: http://stoppingdown.net/themes/paysages-du-rhone/images.xml
-San Francisco and surroundings: http://stoppingdown.net/themes/san-francisco-and-surroundings/images.xml
-Toscana: http://stoppingdown.net/themes/toscana/images.xml
-Trentino - Alto Adige: http://stoppingdown.net/themes/trentino-alto-adige/images.xml
+GalleryDescription(displayName=Bourgogne, url=http://stoppingdown.net/themes/bourgogne/images.xml)
+GalleryDescription(displayName=Ceillac, url=http://stoppingdown.net/themes/ceillac/images.xml)
+GalleryDescription(displayName=Drôme et Vaucluse, url=http://stoppingdown.net/themes/drome-et-vaucluse/images.xml)
+GalleryDescription(displayName=Haute vallée de l'Ubaye, url=http://stoppingdown.net/themes/haute-vallee-de-l-ubaye/images.xml)
+GalleryDescription(displayName=Lac Léman et alentours, url=http://stoppingdown.net/themes/lac-leman-et-alentours/images.xml)
+GalleryDescription(displayName=Le Massif des Maures, url=http://stoppingdown.net/themes/le-massif-des-maures/images.xml)
+GalleryDescription(displayName=Le long de la Durance, url=http://stoppingdown.net/themes/le-long-de-la-durance/images.xml)
+GalleryDescription(displayName=Liguria, url=http://stoppingdown.net/themes/liguria/images.xml)
+GalleryDescription(displayName=Oltregiogo e 4 province, url=http://stoppingdown.net/themes/oltregiogo-e-quattro-province/images.xml)
+GalleryDescription(displayName=Orbetello, url=http://stoppingdown.net/themes/orbetello/images.xml)
+GalleryDescription(displayName=Paysages du Rhône, url=http://stoppingdown.net/themes/paysages-du-rhone/images.xml)
+GalleryDescription(displayName=San Francisco and surroundings, url=http://stoppingdown.net/themes/san-francisco-and-surroundings/images.xml)
+GalleryDescription(displayName=Toscana, url=http://stoppingdown.net/themes/toscana/images.xml)
+GalleryDescription(displayName=Trentino - Alto Adige, url=http://stoppingdown.net/themes/trentino-alto-adige/images.xml)

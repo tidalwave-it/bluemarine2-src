@@ -1,8 +1,8 @@
-Birds: http://stoppingdown.net/themes/birds/images.xml
-Castles: http://stoppingdown.net/themes/castles/images.xml
-Churches and chapels: http://stoppingdown.net/themes/churches/images.xml
-Clouds: http://stoppingdown.net/themes/clouds/images.xml
-Flowers: http://stoppingdown.net/themes/flowers/images.xml
-Fog: http://stoppingdown.net/themes/fog/images.xml
-Lonely trees: http://stoppingdown.net/themes/lonely-trees/images.xml
-The Best Ones: http://stoppingdown.net/themes/the-best-ones/images.xml
+GalleryDescription(displayName=Birds, url=http://stoppingdown.net/themes/birds/images.xml)
+GalleryDescription(displayName=Castles, url=http://stoppingdown.net/themes/castles/images.xml)
+GalleryDescription(displayName=Churches and chapels, url=http://stoppingdown.net/themes/churches/images.xml)
+GalleryDescription(displayName=Clouds, url=http://stoppingdown.net/themes/clouds/images.xml)
+GalleryDescription(displayName=Flowers, url=http://stoppingdown.net/themes/flowers/images.xml)
+GalleryDescription(displayName=Fog, url=http://stoppingdown.net/themes/fog/images.xml)
+GalleryDescription(displayName=Lonely trees, url=http://stoppingdown.net/themes/lonely-trees/images.xml)
+GalleryDescription(displayName=The Best Ones, url=http://stoppingdown.net/themes/the-best-ones/images.xml)
