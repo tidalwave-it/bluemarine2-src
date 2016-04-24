@@ -137,9 +137,9 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      * {@inheritDoc}
      *
      ******************************************************************************************************************/
-    protected void clearCaches()
+    protected void clearCachesImpl()
       {
-        super.clearCaches();
+        super.clearCachesImpl();
         themesCache.clear();
       }
 

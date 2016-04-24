@@ -46,6 +46,7 @@ import org.w3c.dom.DOMException;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import org.springframework.scheduling.annotation.Scheduled;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
@@ -100,10 +101,22 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
 
     /*******************************************************************************************************************
      *
+     *
+     *
+     ******************************************************************************************************************/
+    @Scheduled(fixedDelay = 14_400_000) // 12 hours TODO: yes, can use properties here
+    private final void clearCaches()
+      {
+        log.info("clearCaches()");
+        clearCachesImpl();
+      }
+
+    /*******************************************************************************************************************
+     *
      * {@inheritDoc}
      *
      ******************************************************************************************************************/
-    protected void clearCaches()
+    protected void clearCachesImpl()
       {
         photoCollectionCache.clear();
       }
