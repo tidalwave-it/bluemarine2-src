@@ -1,0 +1,10 @@
+2016/01/04 - Esercizi genovesi (Piani di Praglia): http://localhost:8080/diary/2016/01/04/
+2016/01/29 - Maremma: http://localhost:8080/diary/2016/01/29/
+2016/02/04 - Ciociaria: http://localhost:8080/diary/2016/02/04/
+2016/02/10 - Trentino: http://localhost:8080/diary/2016/02/10/
+2016/02/20 - Mimosas en Côte d'Azur: http://localhost:8080/diary/2016/02/20/
+2016/02/25 - Ciociaria: http://localhost:8080/diary/2016/02/25/
+2016/03/02 - Trentino: http://localhost:8080/diary/2016/03/02/
+2016/03/12 - Esercizi genovesi: http://localhost:8080/diary/2016/03/12/
+2016/03/19 - Esercizi genovesi (Lago di Giacopiane): http://localhost:8080/diary/2016/03/19/
+2016/03/26 - Esercizi genovesi: http://localhost:8080/diary/2016/03/26/
