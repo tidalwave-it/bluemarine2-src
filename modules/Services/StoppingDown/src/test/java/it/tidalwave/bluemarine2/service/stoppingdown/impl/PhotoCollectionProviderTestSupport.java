@@ -54,8 +54,9 @@ import static org.mockito.Mockito.mock;
  **********************************************************************************************************************/
 public class PhotoCollectionProviderTestSupport
   {
-    protected static final String URL_MOCK_RESOURCE = "http://localhost:8080";
-    
+    protected static final String URL_MOCK_RESOURCE = "file:src/test/resources/stoppingdown.net";
+//            "http://localhost:8080";
+
     protected ApplicationContext context;
 
     protected MediaFolder mediaFolder;

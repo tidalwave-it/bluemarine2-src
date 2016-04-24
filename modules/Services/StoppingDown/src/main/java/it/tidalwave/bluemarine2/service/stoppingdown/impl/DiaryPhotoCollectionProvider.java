@@ -66,7 +66,7 @@ import static javax.xml.xpath.XPathConstants.NODESET;
 @Slf4j
 public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
   {
-    private static final String URL_DIARY_TEMPLATE = "%s/diary/%d";
+    private static final String URL_DIARY_TEMPLATE = "%s/diary/%d/";
 
     private static final XPathExpression XPATH_DIARY_EXPR;
 

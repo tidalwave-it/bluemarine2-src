@@ -175,10 +175,16 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
      ******************************************************************************************************************/
     // FIXME: implement a local cache on disk
     @Nonnull
-    protected Document downloadXml (final @Nonnull String url)
+    protected Document downloadXml (@Nonnull String url)
       throws SAXException, ParserConfigurationException, IOException
       {
         log.info("downloadXml({})", url);
+
+        if (url.startsWith("file:") && url.endsWith("/")) // To support local test resources
+          {
+            url += "/index.xhtml";
+          }
+
         return PARSER_FACTORY.newDocumentBuilder().parse(url);
       }
 
