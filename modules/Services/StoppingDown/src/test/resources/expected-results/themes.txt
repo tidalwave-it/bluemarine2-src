@@ -1,22 +1,22 @@
-Birds: /themes/birds/
-Bourgogne: /themes/bourgogne/
-Castles: /themes/castles/
-Ceillac: /themes/ceillac/
-Churches and chapels: /themes/churches/
-Clouds: /themes/clouds/
-Drôme et Vaucluse: /themes/drome-et-vaucluse
-Flowers: /themes/flowers/
-Fog: /themes/fog/
-Haute vallée de l'Ubaye: /themes/haute-vallee-de-l-ubaye/
-Lac Léman et alentours: /themes/lac-leman-et-alentours
-Le Massif des Maures: /themes/le-massif-des-maures/
-Le long de la Durance: /themes/le-long-de-la-durance/
-Liguria: /themes/liguria/
-Lonely trees: /themes/lonely-trees/
-Oltregiogo e 4 province: /themes/oltregiogo-e-quattro-province/
-Orbetello: /themes/orbetello/
-Paysages du Rhône: /themes/paysages-du-rhone/
-San Francisco and surroundings: /themes/san-francisco-and-surroundings/
-The Best Ones: /themes/the-best-ones/
-Toscana: /themes/toscana/
-Trentino - Alto Adige: /themes/trentino-alto-adige
+Birds: http://stoppingdown.net/themes/birds//images.xml
+Bourgogne: http://stoppingdown.net/themes/bourgogne//images.xml
+Castles: http://stoppingdown.net/themes/castles//images.xml
+Ceillac: http://stoppingdown.net/themes/ceillac//images.xml
+Churches and chapels: http://stoppingdown.net/themes/churches//images.xml
+Clouds: http://stoppingdown.net/themes/clouds//images.xml
+Drôme et Vaucluse: http://stoppingdown.net/themes/drome-et-vaucluse/images.xml
+Flowers: http://stoppingdown.net/themes/flowers//images.xml
+Fog: http://stoppingdown.net/themes/fog//images.xml
+Haute vallée de l'Ubaye: http://stoppingdown.net/themes/haute-vallee-de-l-ubaye//images.xml
+Lac Léman et alentours: http://stoppingdown.net/themes/lac-leman-et-alentours/images.xml
+Le Massif des Maures: http://stoppingdown.net/themes/le-massif-des-maures//images.xml
+Le long de la Durance: http://stoppingdown.net/themes/le-long-de-la-durance//images.xml
+Liguria: http://stoppingdown.net/themes/liguria//images.xml
+Lonely trees: http://stoppingdown.net/themes/lonely-trees//images.xml
+Oltregiogo e 4 province: http://stoppingdown.net/themes/oltregiogo-e-quattro-province//images.xml
+Orbetello: http://stoppingdown.net/themes/orbetello//images.xml
+Paysages du Rhône: http://stoppingdown.net/themes/paysages-du-rhone//images.xml
+San Francisco and surroundings: http://stoppingdown.net/themes/san-francisco-and-surroundings//images.xml
+The Best Ones: http://stoppingdown.net/themes/the-best-ones//images.xml
+Toscana: http://stoppingdown.net/themes/toscana//images.xml
+Trentino - Alto Adige: http://stoppingdown.net/themes/trentino-alto-adige/images.xml

@@ -123,7 +123,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
                 final Node thumbnailNode = thumbnailNodes.item(i);
                 final String description = (String)XPATH_THUMBNAIL_DESCRIPTION_EXPR.evaluate(thumbnailNode, XPathConstants.STRING);
                 final String url = (String)XPATH_THUMBNAIL_URL_EXPR.evaluate(thumbnailNode, XPathConstants.STRING);
-                galleryDescriptions.add(new GalleryDescription(description, url));
+                galleryDescriptions.add(new GalleryDescription(description, String.format("http://stoppingdown.net%s/images.xml", url)));
               }
 
             Collections.sort(galleryDescriptions);
