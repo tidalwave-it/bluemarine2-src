@@ -53,6 +53,7 @@ import static javax.xml.xpath.XPathConstants.*;
 import static it.tidalwave.bluemarine2.service.stoppingdown.impl.PhotoCollectionProviderSupport.PARSER_FACTORY;
 import java.util.Arrays;
 import static java.util.stream.Collectors.toList;
+import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
@@ -60,7 +61,7 @@ import static java.util.stream.Collectors.toList;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
+@RequiredArgsConstructor @Slf4j
 public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSupport
   {
     private static final String URL_TEMPLATE = "http://stoppingdown.net%s/images.xml";
@@ -73,7 +74,8 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
 
     private static final XPathExpression XPATH_THUMBNAIL_DESCRIPTION_EXPR;
 
-    private final String themesUrl = "file:src/test/resources/themes.xhtml";
+    @Nonnull
+    private final String themesUrl;
 
     /*******************************************************************************************************************
      *
@@ -105,7 +107,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
         final List<Entity> subjectChildren = new ArrayList<>();
         final VirtualMediaFolder subjects = new VirtualMediaFolder(parent, Paths.get("subjects"), "Subjects", () -> subjectChildren);
 
-        subjectChildren.addAll(parseThemes(themesUrl, XPATH_SUBJECTS_THUMBNAIL_EXPR)
+        subjectChildren.addAll(parseThemes(XPATH_SUBJECTS_THUMBNAIL_EXPR)
                 .stream()
                 .map(item -> createMediaFolder(subjects, item))
                 .collect(toList()));
@@ -113,7 +115,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
         final List<Entity> placeChildren = new ArrayList<>();
         final VirtualMediaFolder places = new VirtualMediaFolder(parent, Paths.get("places"), "Places", () -> placeChildren);
 
-        placeChildren.addAll(parseThemes(themesUrl, XPATH_PLACES_THUMBNAIL_EXPR)
+        placeChildren.addAll(parseThemes(XPATH_PLACES_THUMBNAIL_EXPR)
                 .stream()
                 .map(item -> createMediaFolder(places, item))
                 .collect(toList()));
@@ -125,8 +127,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* VisibleForTesting */ List<GalleryDescription> parseThemes (final @Nonnull String themesUrl,
-                                                                  final @Nonnull XPathExpression expr)
+    /* VisibleForTesting */ List<GalleryDescription> parseThemes (final @Nonnull XPathExpression expr)
       {
         log.debug("parseThemes({}, {})", themesUrl, expr);
 

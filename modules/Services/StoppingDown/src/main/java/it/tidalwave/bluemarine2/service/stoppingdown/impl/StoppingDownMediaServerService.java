@@ -46,7 +46,7 @@ import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
 public class StoppingDownMediaServerService implements MediaServerService
   {
     private PhotoCollectionProvider diaryProvider = new DiaryPhotoCollectionProvider();
-    private PhotoCollectionProvider themesProvider = new ThemesPhotoCollectionProvider();
+    private PhotoCollectionProvider themesProvider = new ThemesPhotoCollectionProvider("http://stoppingdown.net/themes/");
 
     @Override @Nonnull
     public MediaFolder createRootFolder (final @Nonnull MediaFolder parent)

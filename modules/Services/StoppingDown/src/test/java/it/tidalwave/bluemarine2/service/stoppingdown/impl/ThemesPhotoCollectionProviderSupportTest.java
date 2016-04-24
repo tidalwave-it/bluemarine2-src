@@ -77,9 +77,9 @@ public class ThemesPhotoCollectionProviderSupportTest
         final MediaFolder mediaFolder = mock(MediaFolder.class);
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
         when(mediaFolder.toString()).thenReturn("MediaFolder(\"/folder\"))");
-        final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider();
+        final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider(URL_TEST_RESOURCE);
         // when
-        final List<GalleryDescription> themeDescriptions = underTest.parseThemes(URL_TEST_RESOURCE, expression);
+        final List<GalleryDescription> themeDescriptions = underTest.parseThemes(expression);
         // then
         final Path actualResult = Paths.get("target", "test-results", selector);
         final Path expectedResult = Paths.get("target", "test-classes", "expected-results", selector);
@@ -98,7 +98,7 @@ public class ThemesPhotoCollectionProviderSupportTest
         final MediaFolder mediaFolder = mock(MediaFolder.class);
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
         when(mediaFolder.toString()).thenReturn("MediaFolder(\"/folder\"))");
-        final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider();
+        final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider(URL_TEST_RESOURCE);
         // when
         final EntityFinder finder = underTest.findPhotos(mediaFolder);
         when(mediaFolder.findChildren()).thenReturn(finder);
