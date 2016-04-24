@@ -44,8 +44,6 @@ public class DiaryPhotoCollectionProviderTest extends PhotoCollectionProviderTes
   {
     /*******************************************************************************************************************
      *
-     * This test uses mock data.
-     *
      ******************************************************************************************************************/
     @Test
     public void must_properly_parse_diary()
@@ -61,15 +59,13 @@ public class DiaryPhotoCollectionProviderTest extends PhotoCollectionProviderTes
 
     /*******************************************************************************************************************
      *
-     * This test retrieves actual data from the network.
-     *
      ******************************************************************************************************************/
-    @Test
+    @Test(dependsOnMethods = "must_properly_parse_diary")
     public void must_properly_create_hierarchy()
       throws Exception
       {
         // given
-        final DiaryPhotoCollectionProvider underTest = new DiaryPhotoCollectionProvider(URL_MOCK_RESOURCE); // FIXME: use the real one
+        final DiaryPhotoCollectionProvider underTest = new DiaryPhotoCollectionProvider(URL_MOCK_RESOURCE);
         // when
         final EntityFinder finder = underTest.findPhotos(mediaFolder);
         // then

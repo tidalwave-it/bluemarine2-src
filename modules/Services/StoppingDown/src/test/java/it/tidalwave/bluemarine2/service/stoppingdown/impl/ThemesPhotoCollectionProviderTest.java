@@ -46,8 +46,6 @@ public class ThemesPhotoCollectionProviderTest extends PhotoCollectionProviderTe
   {
     /*******************************************************************************************************************
      *
-     * This test uses mock data.
-     *
      ******************************************************************************************************************/
     @Test(dataProvider = "selectorProvider")
     public void must_properly_parse_themes (final @Nonnull String selector,
@@ -64,10 +62,8 @@ public class ThemesPhotoCollectionProviderTest extends PhotoCollectionProviderTe
 
     /*******************************************************************************************************************
      *
-     * This test retrieves actual data from the network.
-     *
      ******************************************************************************************************************/
-    @Test
+    @Test(dependsOnMethods = "must_properly_parse_themes")
     public void must_properly_create_hierarchy()
       throws Exception
       {
