@@ -161,8 +161,9 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
                 for (int i = 0; i < thumbnailNodes.getLength(); i++)
                   {
                     final Node entryNode = thumbnailNodes.item(i);
-                    final String url = getAttribute(entryNode, "href") + "images.xml";
-                    String date = url.substring(url.length() - 11, url.length() - 1);
+                    final String href = getAttribute(entryNode, "href");
+                    final String url = href + "images.xml";
+                    String date = href.substring(href.length() - 11, href.length() - 1);
                     final String displayName = date + " - " + entryNode.getTextContent();
                     galleryDescriptions.add(new GalleryDescription(displayName, url.replace("//", "/")
                                                                                    .replace(":/", "://")));
