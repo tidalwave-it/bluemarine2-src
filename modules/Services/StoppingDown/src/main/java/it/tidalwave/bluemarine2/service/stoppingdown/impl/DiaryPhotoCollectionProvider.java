@@ -69,6 +69,8 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
   {
     private static final String URL_DIARY = "http://stoppingdown.net/diary/";
 
+    private static final String URL_GALLERY_TEMPLATE = "http://stoppingdown.net%s/images.xml";
+
     private static final XPathExpression XPATH_DIARY_EXPR;
 
     @Nonnull
@@ -161,12 +163,12 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
                 for (int i = 0; i < thumbnailNodes.getLength(); i++)
                   {
                     final Node entryNode = thumbnailNodes.item(i);
-                    final String href = getAttribute(entryNode, "href");
-                    final String url = href + "images.xml";
-                    String date = href.substring(href.length() - 11, href.length() - 1);
+                    final String href = getAttribute(entryNode, "href").replaceAll("http:\\/\\/[^\\/]*", "");
+                    final String url = String.format(URL_GALLERY_TEMPLATE, href).replace("//", "/")
+                                                                                .replace(":/", "://");
+                    final String date = href.substring(href.length() - 11, href.length() - 1);
                     final String displayName = date + " - " + entryNode.getTextContent();
-                    galleryDescriptions.add(new GalleryDescription(displayName, url.replace("//", "/")
-                                                                                   .replace(":/", "://")));
+                    galleryDescriptions.add(new GalleryDescription(displayName, url));
                   }
 
                 Collections.sort(galleryDescriptions, Comparator.comparing(GalleryDescription::getUrl));
