@@ -48,7 +48,7 @@ import static org.mockito.Mockito.when;
  **********************************************************************************************************************/
 public class DiaryPhotoCollectionProviderTest extends PhotoCollectionProviderTestSupport
   {
-    private static final String URL_MOCK_RESOURCE = "file:src/test/resources/diary.xhtml";
+    private static final String URL_MOCK_RESOURCE = "file:src/test/resources/diary/%d/index.xhtml";
 
     /*******************************************************************************************************************
      *
@@ -62,7 +62,7 @@ public class DiaryPhotoCollectionProviderTest extends PhotoCollectionProviderTes
         // given
         final DiaryPhotoCollectionProvider underTest = new DiaryPhotoCollectionProvider(URL_MOCK_RESOURCE);
         // when
-        final List<GalleryDescription> diaryDescriptions = underTest.parseDiary();
+        final List<GalleryDescription> diaryDescriptions = underTest.parseDiary(2016);
         // then
         final Path actualResult = Paths.get("target", "test-results", "diary.txt");
         final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "diary.txt");

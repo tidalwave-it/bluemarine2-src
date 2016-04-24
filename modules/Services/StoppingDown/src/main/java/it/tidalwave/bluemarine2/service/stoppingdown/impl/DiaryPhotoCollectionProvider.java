@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
@@ -52,9 +51,11 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
+import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder.EntityCollectionFactory;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
+import java.util.stream.IntStream;
 import static javax.xml.xpath.XPathConstants.NODESET;
 
 /***********************************************************************************************************************
@@ -109,8 +110,14 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
     @Nonnull
     public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
-        return new FactoryBasedEntityFinder(parent, p -> Arrays.asList(
-                new VirtualMediaFolder(p, Paths.get("2016"), "2016", this::subjectsFactory)));
+        return new FactoryBasedEntityFinder(parent,
+            p1 -> IntStream.range(1999, 2016 + 1)
+                           .mapToObj(x -> x)
+                           .map(year -> new VirtualMediaFolder(p1,
+                                                               Paths.get("" + year),
+                                                               "" + year,
+                                                               (EntityCollectionFactory)(p2 -> subjectsFactory(p2, year))))
+                           .collect(toList()));
       }
 
     /*******************************************************************************************************************
@@ -129,9 +136,9 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<Entity> subjectsFactory (final @Nonnull MediaFolder parent)
+    private Collection<Entity> subjectsFactory (final @Nonnull MediaFolder parent, final int year)
       {
-        return parseDiary().stream().map(gallery -> gallery.createFolder(parent, this::findPhotos))
+        return parseDiary(year).stream().map(gallery -> gallery.createFolder(parent, this::findPhotos))
                                     .collect(toList());
       }
 
@@ -139,15 +146,15 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* VisibleForTesting */ List<GalleryDescription> parseDiary()
+    /* VisibleForTesting */ List<GalleryDescription> parseDiary (final int year)
       {
         log.debug("parseThemes({})", themesUrl);
 
-        return diaryCache.computeIfAbsent(2016, key ->
+        return diaryCache.computeIfAbsent(year, key ->
           {
             try
               {
-                final Document document = downloadXml(themesUrl);
+                final Document document = downloadXml(String.format(themesUrl, year));
                 final NodeList thumbnailNodes = (NodeList)XPATH_DIARY_EXPR.evaluate(document, NODESET);
                 final List<GalleryDescription> galleryDescriptions = new ArrayList<>();
 
