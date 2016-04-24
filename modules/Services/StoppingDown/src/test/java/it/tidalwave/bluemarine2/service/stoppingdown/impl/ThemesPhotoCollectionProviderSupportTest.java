@@ -36,13 +36,15 @@ import java.util.stream.Stream;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.mock;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 import java.util.List;
+import javax.annotation.Nonnull;
+import javax.xml.xpath.XPathExpression;
+import org.testng.annotations.DataProvider;
 
 /***********************************************************************************************************************
  *
@@ -52,6 +54,8 @@ import java.util.List;
  **********************************************************************************************************************/
 public class ThemesPhotoCollectionProviderSupportTest
   {
+    private static final String URL_TEST_RESOURCE = "file:src/test/resources/themes.xhtml";
+
     private ApplicationContext context;
 
     @BeforeMethod
@@ -61,8 +65,9 @@ public class ThemesPhotoCollectionProviderSupportTest
         context = new ClassPathXmlApplicationContext("classpath*:META-INF/DciBeans.xml");
       }
 
-    @Test
-    public void must_properly_parse_Themes()
+    @Test(dataProvider = "selectorProvider")
+    public void must_properly_parse_themes (final @Nonnull String selector,
+                                            final @Nonnull XPathExpression expression)
       throws Exception
       {
         // given
@@ -70,14 +75,24 @@ public class ThemesPhotoCollectionProviderSupportTest
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
         final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider();
         // when
-        final List<GalleryDescription> galleryDescriptions = underTest.parseThemes("file:src/test/resources/themes.xhtml");
+        final List<GalleryDescription> themeDescriptions = underTest.parseThemes(URL_TEST_RESOURCE, expression);
         // then
-        final Path actualResult = Paths.get("target", "test-results", "themes.txt");
-        final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "themes.txt");
+        final Path actualResult = Paths.get("target", "test-results", selector);
+        final Path expectedResult = Paths.get("target", "test-classes", "expected-results", selector);
         Files.createDirectories(actualResult.getParent());
-        final Stream<String> stream = galleryDescriptions.stream()
+        final Stream<String> stream = themeDescriptions.stream()
                                                 .map(gd -> String.format("%s: %s", gd.getDisplayName(), gd.getUrl()));
         Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
         assertSameContents(expectedResult.toFile(), actualResult.toFile());
+      }
+
+    @DataProvider
+    private static Object[][] selectorProvider()
+      {
+        return new Object[][]
+          {
+            { "themes.txt", ThemesPhotoCollectionProvider.XPATH_THEMES_THUMBNAIL_EXPR },
+            { "places.txt", ThemesPhotoCollectionProvider.XPATH_PLACES_THUMBNAIL_EXPR }
+          };
       }
   }

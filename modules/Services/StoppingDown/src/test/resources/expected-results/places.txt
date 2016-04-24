@@ -1,0 +1,14 @@
+Bourgogne: http://stoppingdown.net/themes/bourgogne//images.xml
+Ceillac: http://stoppingdown.net/themes/ceillac//images.xml
+Drôme et Vaucluse: http://stoppingdown.net/themes/drome-et-vaucluse/images.xml
+Haute vallée de l'Ubaye: http://stoppingdown.net/themes/haute-vallee-de-l-ubaye//images.xml
+Lac Léman et alentours: http://stoppingdown.net/themes/lac-leman-et-alentours/images.xml
+Le Massif des Maures: http://stoppingdown.net/themes/le-massif-des-maures//images.xml
+Le long de la Durance: http://stoppingdown.net/themes/le-long-de-la-durance//images.xml
+Liguria: http://stoppingdown.net/themes/liguria//images.xml
+Oltregiogo e 4 province: http://stoppingdown.net/themes/oltregiogo-e-quattro-province//images.xml
+Orbetello: http://stoppingdown.net/themes/orbetello//images.xml
+Paysages du Rhône: http://stoppingdown.net/themes/paysages-du-rhone//images.xml
+San Francisco and surroundings: http://stoppingdown.net/themes/san-francisco-and-surroundings//images.xml
+Toscana: http://stoppingdown.net/themes/toscana//images.xml
+Trentino - Alto Adige: http://stoppingdown.net/themes/trentino-alto-adige/images.xml

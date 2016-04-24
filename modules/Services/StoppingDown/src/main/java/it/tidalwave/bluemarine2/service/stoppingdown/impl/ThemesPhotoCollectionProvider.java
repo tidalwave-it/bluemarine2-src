@@ -63,7 +63,9 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
   {
     private static final String URL_TEMPLATE = "http://stoppingdown.net%s/images.xml";
 
-    private static final XPathExpression XPATH_THUMBNAIL_EXPR;
+    /* VisibleForTesting */ static final XPathExpression XPATH_THEMES_THUMBNAIL_EXPR;
+
+    /* VisibleForTesting */  static final XPathExpression XPATH_PLACES_THUMBNAIL_EXPR;
 
     private static final XPathExpression XPATH_THUMBNAIL_URL_EXPR;
 
@@ -77,7 +79,10 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
         try
           {
             final XPath xpath = XPATH_FACTORY.newXPath();
-            XPATH_THUMBNAIL_EXPR = xpath.compile("//div[@class='thumbnail']");
+//            XPATH_THEMES_THUMBNAIL_EXPR = xpath.compile("//div[@class='container-fluid']/h3[1]/following-sibling::div[@class='thumbnail']");
+//            XPATH_PLACES_THUMBNAIL_EXPR = xpath.compile("//div[@class='container-fluid']/h3[2]/following-sibling::div[@class='thumbnail']");
+            XPATH_THEMES_THUMBNAIL_EXPR = xpath.compile("//div[@class='container-fluid']/div[@class='row'][1]//div[@class='thumbnail']");
+            XPATH_PLACES_THUMBNAIL_EXPR = xpath.compile("//div[@class='container-fluid']/div[@class='row'][2]//div[@class='thumbnail']");
             XPATH_THUMBNAIL_URL_EXPR = xpath.compile("a/@href");
             XPATH_THUMBNAIL_DESCRIPTION_EXPR = xpath.compile(".//div[@class='caption']/h3/text()");
           }
@@ -107,17 +112,26 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
+//    @Nonnull
+//    /* VisibleForTesting */ List<GalleryDescription> parseThemes (final @Nonnull String themesUrl)
+//      {
+//
+//      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Nonnull
-    /* VisibleForTesting */ List<GalleryDescription> parseThemes (final @Nonnull String themesUrl)
+    /* VisibleForTesting */ List<GalleryDescription> parseThemes (final @Nonnull String themesUrl,
+                                                                  final @Nonnull XPathExpression expr)
       {
-        log.debug("parseThemes({})", themesUrl);
+        log.debug("parseThemes({}, {})", themesUrl, expr);
 
         try
           {
             final DocumentBuilder builder = PARSER_FACTORY.newDocumentBuilder();
             final Document doc = builder.parse(themesUrl);
-            final NodeList thumbnailNodes = (NodeList)XPATH_THUMBNAIL_EXPR.evaluate(doc, NODESET);
-
+            final NodeList thumbnailNodes = (NodeList)expr.evaluate(doc, NODESET);
             final List<GalleryDescription> galleryDescriptions = new ArrayList<>();
 
             for (int i = 0; i < thumbnailNodes.getLength(); i++)
