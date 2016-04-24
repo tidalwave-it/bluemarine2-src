@@ -68,6 +68,8 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
   {
     private static final String URL_DIARY_TEMPLATE = "%s/diary/%d/";
 
+    private static final String REGEXP_URL_HOST_AND_PORT = "http:\\/\\/[^\\/]*";
+
     private static final XPathExpression XPATH_DIARY_EXPR;
 
     /**
@@ -119,7 +121,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
                         .map(year -> new VirtualMediaFolder(p1,
                                 Paths.get("" + year),
                                 "" + year,
-                                (EntityCollectionFactory)(p2 -> subjectsFactory(p2, year))))
+                                (EntityCollectionFactory)(p2 -> entriesFactory(p2, year))))
                         .collect(toList()));
     }
 
@@ -139,7 +141,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<Entity> subjectsFactory (final @Nonnull MediaFolder parent, final int year)
+    private Collection<Entity> entriesFactory (final @Nonnull MediaFolder parent, final int year)
       {
         return parseDiary(year).stream().map(gallery -> gallery.createFolder(parent, this::findPhotos))
                                         .collect(toList());
@@ -151,21 +153,21 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
     @Nonnull
     /* VisibleForTesting */ List<GalleryDescription> parseDiary (final int year)
       {
-        final String xurl = String.format(URL_DIARY_TEMPLATE, baseUrl, year);
-        log.debug("parseThemes({})", xurl);
+        final String diaryUrl = String.format(URL_DIARY_TEMPLATE, baseUrl, year);
+        log.debug("parseDiary({})", diaryUrl);
 
         return diaryCache.computeIfAbsent(year, key ->
           {
             try
               {
-                final Document document = downloadXml(xurl);
-                final NodeList thumbnailNodes = (NodeList)XPATH_DIARY_EXPR.evaluate(document, NODESET);
+                final Document document = downloadXml(diaryUrl);
+                final NodeList entryNodes = (NodeList)XPATH_DIARY_EXPR.evaluate(document, NODESET);
                 final List<GalleryDescription> galleryDescriptions = new ArrayList<>();
 
-                for (int i = 0; i < thumbnailNodes.getLength(); i++)
+                for (int i = 0; i < entryNodes.getLength(); i++)
                   {
-                    final Node entryNode = thumbnailNodes.item(i);
-                    final String href = getAttribute(entryNode, "href").replaceAll("http:\\/\\/[^\\/]*", "");
+                    final Node entryNode = entryNodes.item(i);
+                    final String href = getAttribute(entryNode, "href").replaceAll(REGEXP_URL_HOST_AND_PORT, "");
                     final String url = String.format(URL_GALLERY_TEMPLATE, baseUrl, href).replace("//", "/")
                                                                                          .replace(":/", "://");
                     final String date = href.substring(href.length() - 11, href.length() - 1);

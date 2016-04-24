@@ -124,10 +124,11 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
 
     /*******************************************************************************************************************
      *
+     * {@inheritDoc}
+     *
      ******************************************************************************************************************/
-    @Override
-    @Nonnull
-    public EntityFinder findPhotos(final @Nonnull MediaFolder parent)
+    @Override @Nonnull
+    public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
         return new FactoryBasedEntityFinder(parent, p -> Arrays.asList(
                 new VirtualMediaFolder(p, PATH_PLACES,   "Places",   this::placesFactory),
@@ -174,14 +175,14 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     @Nonnull
     /* VisibleForTesting */ List<GalleryDescription> parseThemes (final @Nonnull XPathExpression expr)
       {
-        final String xurl = String.format(URL_THEMES_TEMPLATE, baseUrl);
-        log.debug("parseThemes({}, {})", xurl, expr);
+        final String themeUrl = String.format(URL_THEMES_TEMPLATE, baseUrl);
+        log.debug("parseThemes({}, {})", themeUrl, expr);
 
         return themesCache.computeIfAbsent(expr, key ->
           {
             try
               {
-                final Document document = downloadXml(xurl);
+                final Document document = downloadXml(themeUrl);
                 final NodeList thumbnailNodes = (NodeList)expr.evaluate(document, NODESET);
                 final List<GalleryDescription> galleryDescriptions = new ArrayList<>();
 
