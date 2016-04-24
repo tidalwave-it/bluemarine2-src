@@ -48,6 +48,8 @@ import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.SupplierBasedEntityFinder;
+import java.util.HashMap;
+import java.util.Map;
 
 /***********************************************************************************************************************
  *
@@ -61,6 +63,14 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
     private static final XPathFactory XPATH_FACTORY = XPathFactory.newInstance();
     private static final XPathExpression XPATH_EXPR;
 
+    /**
+     * A local cache for finders. It's advisable, since clients will frequently retrieve a finder because of pagination.
+     */
+    private final Map<String, EntityFinder> finderCache = new HashMap<>();
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     static
       {
         try
@@ -74,18 +84,49 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
           }
       }
 
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override @Nonnull
     public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
-        return findPhotos(parent, "file:src/test/resources/images.xml");
+        throw new UnsupportedOperationException("must be implemented in subclasses");
       }
 
-    /* VisibleForTesting */ EntityFinder findPhotos (final @Nonnull MediaFolder parent, final @Nonnull String url)
+    /*******************************************************************************************************************
+     *
+     * Retrieves a finder for the given gallery URL, possibly a previously cached one.
+     *
+     * @param   parent      the parent node
+     * @param   galleryUrl  the gallery URL
+     * @return              the finder
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    protected EntityFinder findCachedPhotos (final @Nonnull MediaFolder parent, final @Nonnull String galleryUrl)
+      {
+        return finderCache.computeIfAbsent(galleryUrl, u -> findPhotos(parent, u));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Creates a finder for the given gallery URL.
+     *
+     * @param   parent      the parent node
+     * @param   galleryUrl  the gallery URL
+     * @return              the finder
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    /* VisibleForTesting */ EntityFinder findPhotos (final @Nonnull MediaFolder parent,
+                                                     final @Nonnull String galleryUrl)
       {
         try
           {
             final DocumentBuilder builder = PARSER_FACTORY.newDocumentBuilder();
-            final Document doc = builder.parse(url);
+            final Document doc = builder.parse(galleryUrl);
             final NodeList nodes = (NodeList)XPATH_EXPR.evaluate(doc, XPathConstants.NODESET);;
 
             final Collection<Entity> photoItems = new ArrayList<>();

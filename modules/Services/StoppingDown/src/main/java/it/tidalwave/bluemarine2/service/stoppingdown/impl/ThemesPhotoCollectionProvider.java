@@ -43,6 +43,6 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     @Override @Nonnull
     public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
-        return findPhotos(parent, "http://stoppingdown.net/themes/lonely-trees/images.xml");
+        return findCachedPhotos(parent, "http://stoppingdown.net/themes/lonely-trees/images.xml");
       }
   }

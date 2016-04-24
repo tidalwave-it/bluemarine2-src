@@ -43,6 +43,6 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
     @Override @Nonnull
     public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
-        return findPhotos(parent, "http://stoppingdown.net/private/diary/20160407/images.xml");
+        return findCachedPhotos(parent, "http://stoppingdown.net/private/diary/20160407/images.xml");
       }
   }
