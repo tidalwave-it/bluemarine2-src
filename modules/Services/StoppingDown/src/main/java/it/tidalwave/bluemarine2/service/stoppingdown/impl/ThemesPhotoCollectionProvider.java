@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.List;
 import java.util.Map;
 import java.io.IOException;
@@ -52,7 +52,6 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
-import java.util.concurrent.ConcurrentHashMap;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
@@ -115,7 +114,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public ThemesPhotoCollectionProvider ()
+    public ThemesPhotoCollectionProvider()
       {
         this(URL_THEMES);
       }
