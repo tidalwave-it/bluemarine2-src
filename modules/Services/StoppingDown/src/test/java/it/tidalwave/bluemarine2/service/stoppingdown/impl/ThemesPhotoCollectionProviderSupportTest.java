@@ -28,26 +28,26 @@
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
-import it.tidalwave.bluemarine2.model.Entity;
+import javax.annotation.Nonnull;
+import javax.xml.xpath.XPathExpression;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.mock;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
-import java.util.ArrayList;
-import java.util.List;
-import javax.annotation.Nonnull;
-import javax.xml.xpath.XPathExpression;
-import org.testng.annotations.DataProvider;
 
 /***********************************************************************************************************************
  *
@@ -61,6 +61,8 @@ public class ThemesPhotoCollectionProviderSupportTest
 
     private ApplicationContext context;
 
+    private MediaFolder mediaFolder;
+
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
@@ -69,6 +71,10 @@ public class ThemesPhotoCollectionProviderSupportTest
       {
         // required for DCI stuff
         context = new ClassPathXmlApplicationContext("classpath*:META-INF/DciBeans.xml");
+
+        mediaFolder = mock(MediaFolder.class);
+        when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
+        when(mediaFolder.toString()).thenReturn("MediaFolder(\"/folder\"))");
       }
 
     /*******************************************************************************************************************
@@ -82,9 +88,6 @@ public class ThemesPhotoCollectionProviderSupportTest
       throws Exception
       {
         // given
-        final MediaFolder mediaFolder = mock(MediaFolder.class);
-        when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
-        when(mediaFolder.toString()).thenReturn("MediaFolder(\"/folder\"))");
         final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider(URL_MOCK_RESOURCE);
         // when
         final List<GalleryDescription> themeDescriptions = underTest.parseThemes(expression);
@@ -108,9 +111,6 @@ public class ThemesPhotoCollectionProviderSupportTest
       throws Exception
       {
         // given
-        final MediaFolder mediaFolder = mock(MediaFolder.class);
-        when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
-        when(mediaFolder.toString()).thenReturn("MediaFolder(\"/folder\"))");
         final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider();
         // when
         final EntityFinder finder = underTest.findPhotos(mediaFolder);
