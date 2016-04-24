@@ -60,6 +60,9 @@ import static it.tidalwave.role.Displayable.Displayable;
 @Slf4j
 public class VirtualMediaFolderTest
   {
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     static class TestCaseBuilder
       {
         @Getter
@@ -135,6 +138,9 @@ public class VirtualMediaFolderTest
 
     private VirtualMediaFolder underTest;
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @BeforeMethod
     public void setup()
       {
@@ -142,6 +148,9 @@ public class VirtualMediaFolderTest
         underTest = new TestCaseBuilder().getFolderMap().get(Paths.get("/"));
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Test
     public void must_correctly_find_all_children()
       {
@@ -151,6 +160,9 @@ public class VirtualMediaFolderTest
         assertThat(children.get(1).as(Displayable).getDisplayName(), is("/photos"));
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Test(dataProvider = "pathsProvider")
     public void must_correctly_find_children_by_path (final @Nonnull Path path)
       {
@@ -159,6 +171,9 @@ public class VirtualMediaFolderTest
         assertThat(children.get(0).as(Displayable).getDisplayName(), is(path.toString()));
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @DataProvider
     public static Object[][] pathsProvider()
       {
