@@ -101,11 +101,11 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
 
     /*******************************************************************************************************************
      *
-     * Retrieves a finder for the given gallery URL, possibly a previously cached one.
+     * Retrieves a collection of entities for the given gallery URL, possibly a previously cached one.
      *
      * @param   parent      the parent node
      * @param   galleryUrl  the gallery URL
-     * @return              the finder
+     * @return              the collection of entities
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -116,11 +116,11 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
 
     /*******************************************************************************************************************
      *
-     * Creates a finder for the given gallery URL.
+     * Creates a collection of entities for the given gallery URL.
      *
      * @param   parent      the parent node
      * @param   galleryUrl  the gallery URL
-     * @return              the finder
+     * @return              the collection of entities
      *
      ******************************************************************************************************************/
     @Nonnull
