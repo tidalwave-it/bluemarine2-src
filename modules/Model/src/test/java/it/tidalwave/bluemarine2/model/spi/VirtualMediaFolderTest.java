@@ -119,7 +119,8 @@ public class VirtualMediaFolderTest
                       }
                   }
 
-                folder = new VirtualMediaFolder(parent, path, path.toString(), () -> childrenMap.get(path));
+                final VirtualMediaFolder.EntityCollectionFactory f = p -> childrenMap.get(path);
+                folder = new VirtualMediaFolder(parent, path, path.toString(), f);
                 folderMap.put(path, folder);
 
                 if (parentPath != null)

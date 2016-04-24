@@ -34,7 +34,6 @@ import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.function.Function;
-import java.util.function.Supplier;
 import java.nio.file.Path;
 import it.tidalwave.util.Id;
 import it.tidalwave.role.Identifiable;
@@ -53,6 +52,15 @@ import lombok.Getter;
  **********************************************************************************************************************/
 public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
   {
+    // These two interfaces are needed to avoid clashes with constructor overloading
+    public static interface EntityCollectionFactory extends Function<MediaFolder, Collection<Entity>>
+      {
+      }
+
+    public static interface EntityFinderFactory extends Function<MediaFolder, EntityFinder>
+      {
+      }
+
     @Getter @Nonnull
     private final Path path;
 
@@ -60,12 +68,12 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
     private MediaFolder parent;
 
     @Nonnull
-    private final Function<MediaFolder, EntityFinder> finderFactory;
+    private final EntityFinderFactory finderFactory;
 
     public VirtualMediaFolder (final @Nullable MediaFolder parent,
                                final @Nonnull Path path,
                                final @Nonnull String displayName,
-                               final @Nonnull Supplier<Collection<Entity>> childrenSupplier)
+                               final @Nonnull EntityCollectionFactory childrenSupplier)
       {
         this(parent, path, displayName, Optional.of(childrenSupplier), Optional.empty());
       }
@@ -73,7 +81,7 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
     public VirtualMediaFolder (final @Nullable MediaFolder parent,
                                final @Nonnull Path path,
                                final @Nonnull String displayName,
-                               final @Nonnull Function<MediaFolder, EntityFinder> finderFactory)
+                               final @Nonnull EntityFinderFactory finderFactory)
       {
         this(parent, path, displayName, Optional.empty(), Optional.of(finderFactory));
       }
@@ -81,15 +89,15 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
     private VirtualMediaFolder (final @Nullable MediaFolder parent,
                                 final @Nonnull Path path,
                                 final @Nonnull String displayName,
-                                final @Nonnull Optional<Supplier<Collection<Entity>>> childrenSupplier,
-                                final @Nonnull Optional<Function<MediaFolder, EntityFinder>> finderFactory)
+                                final @Nonnull Optional<EntityCollectionFactory> childrenSupplier,
+                                final @Nonnull Optional<EntityFinderFactory> finderFactory)
       {
         super((Identifiable)() -> new Id(absolutePath(parent, path).toString()),
               new DefaultDisplayable(displayName));
         this.path = absolutePath(parent, path);
         this.parent = parent;
         this.finderFactory = finderFactory.orElse(
-                mediaFolder -> new SupplierBasedEntityFinder(mediaFolder, childrenSupplier.get()));
+                mediaFolder -> new FactoryBasedEntityFinder(mediaFolder, childrenSupplier.get()));
       }
 
     @Override

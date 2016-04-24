@@ -50,7 +50,6 @@ import org.xml.sax.SAXException;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import it.tidalwave.bluemarine2.model.spi.SupplierBasedEntityFinder;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -71,7 +70,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
     /**
      * A local cache for finders. It's advisable, since clients will frequently retrieve a finder because of pagination.
      */
-    private final Map<String, EntityFinder> finderCache = new HashMap<>();
+    private final Map<String, Collection<Entity>> finderCache = new HashMap<>();
 
     /*******************************************************************************************************************
      *
@@ -110,7 +109,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected EntityFinder findCachedPhotos (final @Nonnull MediaFolder parent, final @Nonnull String galleryUrl)
+    protected Collection<Entity> findCachedPhotos (final @Nonnull MediaFolder parent, final @Nonnull String galleryUrl)
       {
         return finderCache.computeIfAbsent(galleryUrl, u -> findPhotos(parent, u));
       }
@@ -125,8 +124,8 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* VisibleForTesting */ EntityFinder findPhotos (final @Nonnull MediaFolder parent,
-                                                     final @Nonnull String galleryUrl)
+    /* VisibleForTesting */ Collection<Entity> findPhotos (final @Nonnull MediaFolder parent,
+                                                           final @Nonnull String galleryUrl)
       {
         try
           {
@@ -145,7 +144,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
                 photoItems.add(new PhotoItem(parent, id, title));
               }
 
-            return new SupplierBasedEntityFinder(parent, () -> photoItems);
+            return photoItems;
           }
         catch (SAXException | IOException | XPathExpressionException | ParserConfigurationException e)
           {

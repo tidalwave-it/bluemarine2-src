@@ -36,7 +36,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.function.Supplier;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.nio.file.Path;
 import it.tidalwave.util.Finder8Support;
@@ -48,7 +48,8 @@ import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
- * An {@link EntityFinder} implementation that retrieves children from a {@link Supplier}.
+ * An {@link EntityFinder} implementation that retrieves children from a {@link Functio} user as a factory. The
+ * argument of the function is the {@link MediaFolder} parent of the created children.
  *
  * @stereotype  Finder
  *
@@ -57,7 +58,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class SupplierBasedEntityFinder extends Finder8Support<Entity, EntityFinder> implements EntityFinder
+public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinder> implements EntityFinder
   {
     private static final long serialVersionUID = 4429676480224742813L;
 
@@ -65,7 +66,7 @@ public class SupplierBasedEntityFinder extends Finder8Support<Entity, EntityFind
     private final MediaFolder mediaFolder;
 
     @Nonnull
-    private final Supplier<Collection<Entity>> childrenSupplier;
+    private final Function<MediaFolder, Collection<Entity>> childrenFactory;
 
     @Nonnull
     private final Optional<Path> path;
@@ -75,11 +76,11 @@ public class SupplierBasedEntityFinder extends Finder8Support<Entity, EntityFind
      * Default constructor.
      *
      ******************************************************************************************************************/
-    public SupplierBasedEntityFinder (final @Nonnull MediaFolder mediaFolder,
-                                      final @Nonnull Supplier<Collection<Entity>> childrenSupplier)
+    public FactoryBasedEntityFinder (final @Nonnull MediaFolder mediaFolder,
+                                     final @Nonnull Function<MediaFolder, Collection<Entity>> childrenFactory)
       {
         this.mediaFolder = mediaFolder;
-        this.childrenSupplier = childrenSupplier;
+        this.childrenFactory = childrenFactory;
         this.path = Optional.empty();
       }
 
@@ -88,12 +89,12 @@ public class SupplierBasedEntityFinder extends Finder8Support<Entity, EntityFind
      * Clone constructor.
      *
      ******************************************************************************************************************/
-    public SupplierBasedEntityFinder (final @Nonnull SupplierBasedEntityFinder other, final @Nonnull Object override)
+    public FactoryBasedEntityFinder (final @Nonnull FactoryBasedEntityFinder other, final @Nonnull Object override)
       {
         super(other, override);
-        final SupplierBasedEntityFinder source = getSource(SupplierBasedEntityFinder.class, other, override);
+        final FactoryBasedEntityFinder source = getSource(FactoryBasedEntityFinder.class, other, override);
         this.mediaFolder = source.mediaFolder;
-        this.childrenSupplier = source.childrenSupplier;
+        this.childrenFactory = source.childrenFactory;
         this.path = source.path;
       }
 
@@ -102,12 +103,12 @@ public class SupplierBasedEntityFinder extends Finder8Support<Entity, EntityFind
      * Override constructor.
      *
      ******************************************************************************************************************/
-    private SupplierBasedEntityFinder (final @Nonnull MediaFolder mediaFolder,
-                                       final @Nonnull Supplier<Collection<Entity>> childrenSupplier,
-                                       final @Nonnull Optional<Path> path)
+    private FactoryBasedEntityFinder (final @Nonnull MediaFolder mediaFolder,
+                                      final @Nonnull Function<MediaFolder, Collection<Entity>> childrenFactory,
+                                      final @Nonnull Optional<Path> path)
       {
         this.mediaFolder = mediaFolder;
-        this.childrenSupplier = childrenSupplier;
+        this.childrenFactory = childrenFactory;
         this.path = path;
       }
 
@@ -119,7 +120,7 @@ public class SupplierBasedEntityFinder extends Finder8Support<Entity, EntityFind
     @Override @Nonnull
     public EntityFinder withPath (final @Nonnull Path path)
       {
-        return clone(new SupplierBasedEntityFinder(mediaFolder, childrenSupplier, Optional.of(path)));
+        return clone(new FactoryBasedEntityFinder(mediaFolder, childrenFactory, Optional.of(path)));
       }
 
     /*******************************************************************************************************************
@@ -131,7 +132,7 @@ public class SupplierBasedEntityFinder extends Finder8Support<Entity, EntityFind
     protected List<? extends Entity> computeResults()
       {
         return path.isPresent() ? filteredByPath(path.get())
-                                : new CopyOnWriteArrayList<>(childrenSupplier.get());
+                                : new CopyOnWriteArrayList<>(childrenFactory.apply(mediaFolder));
       }
 
     /*******************************************************************************************************************
@@ -151,7 +152,7 @@ public class SupplierBasedEntityFinder extends Finder8Support<Entity, EntityFind
           {
             final Path relativePath = relative(path);
 
-            final List<Entity> filtered = childrenSupplier.get().stream()
+            final List<Entity> filtered = childrenFactory.apply(mediaFolder).stream()
                     .filter(entity -> sameHead(relative(pathOf(entity)), relativePath))
                     .collect(Collectors.toList());
 

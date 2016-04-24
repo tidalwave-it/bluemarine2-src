@@ -29,13 +29,13 @@
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import java.util.Collection;
 import java.nio.file.Paths;
-import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
+import it.tidalwave.bluemarine2.model.Entity;
 
 /***********************************************************************************************************************
  *
@@ -51,12 +51,13 @@ public class StoppingDownMediaServerService implements MediaServerService
     @Override @Nonnull
     public MediaFolder createRootFolder (final @Nonnull MediaFolder parent)
       {
-        final List<Entity> children = new ArrayList<>();
+        return new VirtualMediaFolder(parent, Paths.get("stoppingdown.net"), "Stopping Down", this::childrenFactory);
+      }
 
-        final MediaFolder root = new VirtualMediaFolder(parent, Paths.get("stoppingdown.net"), "Stopping Down", () -> children);
-        children.add(new VirtualMediaFolder(root, Paths.get("diary"),  "Diary",  diaryProvider::findPhotos));
-        children.add(new VirtualMediaFolder(root, Paths.get("themes"), "Themes", themesProvider::findPhotos));
-
-        return root;
+    @Nonnull
+    private Collection<Entity> childrenFactory (final @Nonnull MediaFolder parent)
+      {
+        return Arrays.asList(new VirtualMediaFolder(parent, Paths.get("diary"),  "Diary",  diaryProvider::findPhotos),
+                             new VirtualMediaFolder(parent, Paths.get("themes"), "Themes", themesProvider::findPhotos));
       }
   }

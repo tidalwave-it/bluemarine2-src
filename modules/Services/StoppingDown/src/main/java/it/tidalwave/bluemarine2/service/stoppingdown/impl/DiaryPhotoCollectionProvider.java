@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 import javax.annotation.Nonnull;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
 
 /***********************************************************************************************************************
  *
@@ -43,6 +44,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
     @Override @Nonnull
     public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
-        return findCachedPhotos(parent, "http://stoppingdown.net/private/diary/20160407/images.xml");
+        return new FactoryBasedEntityFinder(parent,
+                p -> findCachedPhotos(p, "http://stoppingdown.net/private/diary/20160407/images.xml"));
       }
   }

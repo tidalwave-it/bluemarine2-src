@@ -30,19 +30,18 @@ package it.tidalwave.bluemarine2.mediaserver.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.function.Supplier;
 import java.nio.file.Paths;
 import org.springframework.beans.factory.annotation.Autowired;
-import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
+import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder.EntityCollectionFactory;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.*;
 
 /***********************************************************************************************************************
  *
@@ -53,7 +52,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DefaultContentDirectory implements ContentDirectory
   {
-    private static final Supplier<Collection<Entity>> EMPTY_SUPPLIER = () -> Collections.emptyList();
+    private static final EntityCollectionFactory EMPTY = x -> Collections.emptyList();
 
     private static final String PATH_SERVICES = "services";
 
@@ -72,25 +71,21 @@ public class DefaultContentDirectory implements ContentDirectory
     @PostConstruct
     private void initialize()
       {
-        final List<Entity> children = new ArrayList<>();
-
-        root =       new VirtualMediaFolder(null, Paths.get("/"),      "",       () -> children);
-        children.add(new VirtualMediaFolder(root, Paths.get("music"),  "Music",  EMPTY_SUPPLIER));
-        children.add(new VirtualMediaFolder(root, Paths.get("photos"), "Photos", EMPTY_SUPPLIER));
-        children.add(new VirtualMediaFolder(root, Paths.get("videos"), "Videos", EMPTY_SUPPLIER));
-
-        children.add(createServicesRootFolder(root));
+        final EntityCollectionFactory factory = parent -> Arrays.asList(
+                        new VirtualMediaFolder(parent, Paths.get("music"),  "Music",  EMPTY),
+                        new VirtualMediaFolder(parent, Paths.get("photos"), "Photos", EMPTY),
+                        new VirtualMediaFolder(parent, Paths.get("videos"), "Videos", EMPTY),
+                        createServicesRootFolder(parent));
+        root = new VirtualMediaFolder(null, Paths.get("/"), "", factory);
       }
 
     @Nonnull
     private MediaFolder createServicesRootFolder (final @Nonnull MediaFolder root)
       {
         log.info(">>>> discovered services: {}", services);
-
-        final List<Entity> children = new ArrayList<>();
-        final MediaFolder servicesRootFolder = new VirtualMediaFolder(root, Paths.get(PATH_SERVICES), "Services", () -> children);
-        services.stream().forEach(service -> children.add(service.createRootFolder(servicesRootFolder)));
-
-        return servicesRootFolder;
+        final EntityCollectionFactory factory = parent -> services.stream()
+                                                                  .map(service -> service.createRootFolder(parent))
+                                                                  .collect(toList());
+        return new VirtualMediaFolder(root, Paths.get(PATH_SERVICES), "Services", factory);
       }
   }

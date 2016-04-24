@@ -32,11 +32,12 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collection;
 import java.util.stream.Stream;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import static org.mockito.Mockito.when;
@@ -69,7 +70,7 @@ public class PhotoCollectionProviderSupportTest
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
         final PhotoCollectionProviderSupport underTest = new PhotoCollectionProviderSupport();
         // when
-        final EntityFinder photoItems = underTest.findPhotos(mediaFolder, "file:src/test/resources/images.xml");
+        final Collection<Entity> photoItems = underTest.findPhotos(mediaFolder, "file:src/test/resources/images.xml");
         // then
         final Path actualResult = Paths.get("target", "test-results", "photoItems.txt");
         final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "photoItems.txt");

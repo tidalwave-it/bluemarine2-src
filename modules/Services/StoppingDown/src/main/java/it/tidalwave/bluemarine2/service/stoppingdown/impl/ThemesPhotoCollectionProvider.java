@@ -30,6 +30,8 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.io.IOException;
@@ -46,14 +48,14 @@ import org.w3c.dom.NodeList;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import it.tidalwave.bluemarine2.model.spi.SupplierBasedEntityFinder;
+import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
+import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder.EntityCollectionFactory;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.*;
 import static javax.xml.xpath.XPathConstants.*;
 import static it.tidalwave.bluemarine2.service.stoppingdown.impl.PhotoCollectionProviderSupport.PARSER_FACTORY;
-import java.util.Arrays;
-import static java.util.stream.Collectors.toList;
-import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
@@ -104,23 +106,31 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     @Override @Nonnull
     public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
-        final List<Entity> subjectChildren = new ArrayList<>();
-        final VirtualMediaFolder subjects = new VirtualMediaFolder(parent, Paths.get("subjects"), "Subjects", () -> subjectChildren);
+        return new FactoryBasedEntityFinder(parent, p -> Arrays.asList(
+                new VirtualMediaFolder(p, Paths.get("places"),   "Places",   this::placesFactory),
+                new VirtualMediaFolder(p, Paths.get("subjects"), "Subjects", this::subjectsFactory)));
+      }
 
-        subjectChildren.addAll(parseThemes(XPATH_SUBJECTS_THUMBNAIL_EXPR)
-                .stream()
-                .map(item -> createMediaFolder(subjects, item))
-                .collect(toList()));
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private Collection<Entity> subjectsFactory (final @Nonnull MediaFolder parent)
+      {
+        return parseThemes(XPATH_SUBJECTS_THUMBNAIL_EXPR).stream()
+                                                         .map(item -> createMediaFolder(parent, item))
+                                                         .collect(toList());
+      }
 
-        final List<Entity> placeChildren = new ArrayList<>();
-        final VirtualMediaFolder places = new VirtualMediaFolder(parent, Paths.get("places"), "Places", () -> placeChildren);
-
-        placeChildren.addAll(parseThemes(XPATH_PLACES_THUMBNAIL_EXPR)
-                .stream()
-                .map(item -> createMediaFolder(places, item))
-                .collect(toList()));
-
-        return new SupplierBasedEntityFinder(parent, () -> Arrays.asList(subjects, places));
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private Collection<Entity> placesFactory (final @Nonnull MediaFolder parent)
+      {
+        return parseThemes(XPATH_PLACES_THUMBNAIL_EXPR).stream()
+                                                       .map(item -> createMediaFolder(parent, item))
+                                                       .collect(toList());
       }
 
     /*******************************************************************************************************************
@@ -167,8 +177,10 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     public MediaFolder createMediaFolder (final @Nonnull MediaFolder parent,
                                           final @Nonnull GalleryDescription galleryDescription)
       {
-        return new VirtualMediaFolder(parent, Paths.get(galleryDescription.getDisplayName()),  galleryDescription.getDisplayName(),
-            (p) -> findCachedPhotos(p, galleryDescription.getUrl()));
+        final EntityCollectionFactory factory = p -> findCachedPhotos(p, galleryDescription.getUrl());
+        return new VirtualMediaFolder(parent,
+                                      Paths.get(galleryDescription.getDisplayName()),
+                                      galleryDescription.getDisplayName(),
+                                      factory);
       }
-
   }
