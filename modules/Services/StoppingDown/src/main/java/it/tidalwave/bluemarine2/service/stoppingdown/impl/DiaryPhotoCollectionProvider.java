@@ -45,6 +45,6 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
     public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
         return new FactoryBasedEntityFinder(parent,
-                p -> findCachedPhotos(p, "http://stoppingdown.net/private/diary/20160407/images.xml"));
+                p -> findPhotos(p, "http://stoppingdown.net/private/diary/20160407/images.xml"));
       }
   }

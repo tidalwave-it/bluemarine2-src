@@ -35,7 +35,6 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
-import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
@@ -70,7 +69,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
     /**
      * A local cache for finders. It's advisable, since clients will frequently retrieve a finder because of pagination.
      */
-    private final Map<String, Collection<Entity>> finderCache = new HashMap<>();
+    private final Map<String, Collection<Entity>> photoCollectionCache = new HashMap<>();
 
     /*******************************************************************************************************************
      *
@@ -101,21 +100,6 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
 
     /*******************************************************************************************************************
      *
-     * Retrieves a collection of entities for the given gallery URL, possibly a previously cached one.
-     *
-     * @param   parent      the parent node
-     * @param   galleryUrl  the gallery URL
-     * @return              the collection of entities
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    protected Collection<Entity> findCachedPhotos (final @Nonnull MediaFolder parent, final @Nonnull String galleryUrl)
-      {
-        return finderCache.computeIfAbsent(galleryUrl, u -> findPhotos(parent, u));
-      }
-
-    /*******************************************************************************************************************
-     *
      * Creates a collection of entities for the given gallery URL.
      *
      * @param   parent      the parent node
@@ -124,32 +108,47 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* VisibleForTesting */ Collection<Entity> findPhotos (final @Nonnull MediaFolder parent,
-                                                           final @Nonnull String galleryUrl)
+    /* VisibleForTesting */ synchronized Collection<Entity> findPhotos (final @Nonnull MediaFolder parent,
+                                                                        final @Nonnull String galleryUrl)
       {
-        try
+        log.debug("findPhotos({}, {}", parent, galleryUrl);
+
+        return photoCollectionCache.computeIfAbsent(galleryUrl, u ->
           {
-            log.debug("findPhotos({}, {}", parent, galleryUrl);
-            final DocumentBuilder builder = PARSER_FACTORY.newDocumentBuilder();
-            final Document doc = builder.parse(galleryUrl);
-            final NodeList nodes = (NodeList)XPATH_STILLIMAGE_EXPR.evaluate(doc, XPathConstants.NODESET);
-
-            final Collection<Entity> photoItems = new ArrayList<>();
-
-            for (int i = 0; i < nodes.getLength(); i++)
+            try
               {
-                final Node node = nodes.item(i);
-                final String id = getAttribute(node, "id");
-                final String title = getAttribute(node, "title");
-                photoItems.add(new PhotoItem(parent, id, title));
-              }
+                final Document document = downloadXml(galleryUrl);
+                final NodeList nodes = (NodeList)XPATH_STILLIMAGE_EXPR.evaluate(document, XPathConstants.NODESET);
 
-            return photoItems;
-          }
-        catch (SAXException | IOException | XPathExpressionException | ParserConfigurationException e)
-          {
-            throw new RuntimeException(e);
-          }
+                final Collection<Entity> photoItems = new ArrayList<>();
+
+                for (int i = 0; i < nodes.getLength(); i++)
+                  {
+                    final Node node = nodes.item(i);
+                    final String id = getAttribute(node, "id");
+                    final String title = getAttribute(node, "title");
+                    photoItems.add(new PhotoItem(parent, id, title));
+                  }
+
+                return photoItems;
+              }
+            catch (SAXException | IOException | XPathExpressionException | ParserConfigurationException e)
+              {
+                throw new RuntimeException(e);
+              }
+          });
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    // FIXME: implement a local cache on disk
+    @Nonnull
+    protected Document downloadXml (final @Nonnull String url)
+      throws SAXException, ParserConfigurationException, IOException
+      {
+        log.info("downloadXml({})", url);
+        return PARSER_FACTORY.newDocumentBuilder().parse(url);
       }
 
     /*******************************************************************************************************************

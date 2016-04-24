@@ -33,10 +33,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.io.IOException;
 import java.nio.file.Paths;
-import javax.xml.parsers.DocumentBuilder;
+import java.nio.file.Path;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathExpression;
@@ -55,8 +57,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
 import static javax.xml.xpath.XPathConstants.*;
-import static it.tidalwave.bluemarine2.service.stoppingdown.impl.PhotoCollectionProviderSupport.PARSER_FACTORY;
-import java.nio.file.Path;
 
 /***********************************************************************************************************************
  *
@@ -70,7 +70,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     private static final String URL_TEMPLATE = "http://stoppingdown.net%s/images.xml";
 
     private static final Path PATH_SUBJECTS = Paths.get("subjects");
-    
+
     private static final Path PATH_PLACES = Paths.get("places");
 
     /* VisibleForTesting */ static final XPathExpression XPATH_SUBJECTS_THUMBNAIL_EXPR;
@@ -83,6 +83,11 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
 
     @Nonnull
     private final String themesUrl;
+
+    /**
+     * A local cache for themes is advisable because multiple calls will be performed.
+     */
+    private final Map<XPathExpression, List<GalleryDescription>> themesCache = new HashMap<>();
 
     /*******************************************************************************************************************
      *
@@ -142,35 +147,37 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* VisibleForTesting */ List<GalleryDescription> parseThemes (final @Nonnull XPathExpression expr)
+    /* VisibleForTesting */ synchronized List<GalleryDescription> parseThemes (final @Nonnull XPathExpression expr)
       {
         log.debug("parseThemes({}, {})", themesUrl, expr);
 
-        try
+        return themesCache.computeIfAbsent(expr, key ->
           {
-            final DocumentBuilder builder = PARSER_FACTORY.newDocumentBuilder();
-            final Document doc = builder.parse(themesUrl);
-            final NodeList thumbnailNodes = (NodeList)expr.evaluate(doc, NODESET);
-            final List<GalleryDescription> galleryDescriptions = new ArrayList<>();
-
-            for (int i = 0; i < thumbnailNodes.getLength(); i++)
+            try
               {
-                final Node thumbnailNode = thumbnailNodes.item(i);
-                final String description = (String)XPATH_THUMBNAIL_DESCRIPTION_EXPR.evaluate(thumbnailNode, STRING);
-                final String url = (String)XPATH_THUMBNAIL_URL_EXPR.evaluate(thumbnailNode, STRING);
-                galleryDescriptions.add(new GalleryDescription(description, String.format(URL_TEMPLATE, url)
-                                                                                  .replace("//", "/")
-                                                                                  .replace(":/", "://")));
+                final Document document = downloadXml(themesUrl);
+                final NodeList thumbnailNodes = (NodeList)expr.evaluate(document, NODESET);
+                final List<GalleryDescription> galleryDescriptions = new ArrayList<>();
+
+                for (int i = 0; i < thumbnailNodes.getLength(); i++)
+                  {
+                    final Node thumbnailNode = thumbnailNodes.item(i);
+                    final String description = (String)XPATH_THUMBNAIL_DESCRIPTION_EXPR.evaluate(thumbnailNode, STRING);
+                    final String url = (String)XPATH_THUMBNAIL_URL_EXPR.evaluate(thumbnailNode, STRING);
+                    galleryDescriptions.add(new GalleryDescription(description, String.format(URL_TEMPLATE, url)
+                                                                                      .replace("//", "/")
+                                                                                      .replace(":/", "://")));
+                  }
+
+                Collections.sort(galleryDescriptions);
+
+                return galleryDescriptions;
               }
-
-            Collections.sort(galleryDescriptions);
-
-            return galleryDescriptions;
-          }
-        catch (SAXException | IOException | XPathExpressionException | ParserConfigurationException e)
-          {
-            throw new RuntimeException(e);
-          }
+            catch (SAXException | IOException | XPathExpressionException | ParserConfigurationException e)
+              {
+                throw new RuntimeException(e);
+              }
+          });
       }
 
     /*******************************************************************************************************************
@@ -182,7 +189,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     public MediaFolder createMediaFolder (final @Nonnull MediaFolder parent,
                                           final @Nonnull GalleryDescription galleryDescription)
       {
-        final EntityCollectionFactory factory = p -> findCachedPhotos(p, galleryDescription.getUrl());
+        final EntityCollectionFactory factory = p -> findPhotos(p, galleryDescription.getUrl());
         return new VirtualMediaFolder(parent,
                                       Paths.get(galleryDescription.getDisplayName()),
                                       galleryDescription.getDisplayName(),
