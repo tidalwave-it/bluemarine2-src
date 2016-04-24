@@ -82,6 +82,7 @@ public class DefaultContentDirectory implements ContentDirectory
     @PostConstruct
     private void initialize()
       {
+        // FIXME: why is this called multiple times?
         log.info(">>>> discovered services: {}", services);
         root = new VirtualMediaFolder(null, PATH_ROOT, "", this::childrenFactory);
       }
