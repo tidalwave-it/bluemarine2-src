@@ -43,11 +43,17 @@ import lombok.ToString;
  **********************************************************************************************************************/
 @Immutable
 @RequiredArgsConstructor @Getter @EqualsAndHashCode @ToString
-public class GalleryDescription
+public class GalleryDescription implements Comparable<GalleryDescription>
   {
     @Nonnull
     private final String displayName;
 
     @Nonnull
     private final String url;
+
+    @Override
+    public int compareTo (final @Nonnull GalleryDescription other)
+      {
+        return this.displayName.compareTo(other.displayName);
+      }
   }

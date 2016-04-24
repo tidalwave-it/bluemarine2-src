@@ -30,27 +30,27 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.nio.file.Paths;
-import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import it.tidalwave.bluemarine2.model.spi.SupplierBasedEntityFinder;
-import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
-import static it.tidalwave.bluemarine2.service.stoppingdown.impl.PhotoCollectionProviderSupport.PARSER_FACTORY;
 import java.io.IOException;
-import java.util.Collection;
+import java.nio.file.Paths;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
-import lombok.extern.slf4j.Slf4j;
+import org.xml.sax.SAXException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
+import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import it.tidalwave.bluemarine2.model.spi.SupplierBasedEntityFinder;
+import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
+import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.service.stoppingdown.impl.PhotoCollectionProviderSupport.PARSER_FACTORY;
 
 /***********************************************************************************************************************
  *
@@ -63,9 +63,9 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
   {
     private static final XPathExpression XPATH_THUMBNAIL_EXPR;
 
-    private static final XPathExpression XPATH_THUMBNAIL_A_EXPR;
+    private static final XPathExpression XPATH_THUMBNAIL_URL_EXPR;
 
-    private static final XPathExpression XPATH_THUMBNAIL_CAPTION_EXPR;
+    private static final XPathExpression XPATH_THUMBNAIL_DESCRIPTION_EXPR;
 
     /*******************************************************************************************************************
      *
@@ -76,8 +76,8 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
           {
             final XPath xpath = XPATH_FACTORY.newXPath();
             XPATH_THUMBNAIL_EXPR = xpath.compile("//div[@class='thumbnail']");
-            XPATH_THUMBNAIL_A_EXPR = xpath.compile("a/@href");
-            XPATH_THUMBNAIL_CAPTION_EXPR = xpath.compile(".//div[@class='caption']/h3/text()");
+            XPATH_THUMBNAIL_URL_EXPR = xpath.compile("a/@href");
+            XPATH_THUMBNAIL_DESCRIPTION_EXPR = xpath.compile(".//div[@class='caption']/h3/text()");
           }
         catch (XPathExpressionException e)
           {
@@ -121,10 +121,12 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
             for (int i = 0; i < thumbnailNodes.getLength(); i++)
               {
                 final Node thumbnailNode = thumbnailNodes.item(i);
-                final String caption = (String)XPATH_THUMBNAIL_CAPTION_EXPR.evaluate(thumbnailNode, XPathConstants.STRING);
-                final String url = (String)XPATH_THUMBNAIL_A_EXPR.evaluate(thumbnailNode, XPathConstants.STRING);
-                galleryDescriptions.add(new GalleryDescription(caption, url));
+                final String description = (String)XPATH_THUMBNAIL_DESCRIPTION_EXPR.evaluate(thumbnailNode, XPathConstants.STRING);
+                final String url = (String)XPATH_THUMBNAIL_URL_EXPR.evaluate(thumbnailNode, XPathConstants.STRING);
+                galleryDescriptions.add(new GalleryDescription(description, url));
               }
+
+            Collections.sort(galleryDescriptions);
 
             return galleryDescriptions;
           }
