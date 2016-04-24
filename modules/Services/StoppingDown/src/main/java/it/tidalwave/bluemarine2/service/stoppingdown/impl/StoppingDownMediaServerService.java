@@ -50,7 +50,7 @@ public class StoppingDownMediaServerService implements MediaServerService
   {
     private static final Supplier<Collection<Entity>> EMPTY_SUPPLIER = () -> Collections.emptyList();
 
-    private PhotoCollectionProvider themesProvider = new MockPhotoCollectionProvider();
+    private PhotoCollectionProvider themesProvider = new DefaultPhotoCollectionProvider();
 
     @Override @Nonnull
     public MediaFolder createRootFolder (final @Nonnull MediaFolder parent)

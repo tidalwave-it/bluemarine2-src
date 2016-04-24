@@ -32,16 +32,15 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.stream.Stream;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.fourthline.cling.support.contentdirectory.DIDLParser;
-import org.fourthline.cling.support.model.DIDLContent;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import lombok.extern.slf4j.Slf4j;
-import static org.mockito.Mockito.*;
-import static it.tidalwave.bluemarine2.util.PrettyPrint.xmlPrettyPrinted;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 
 /***********************************************************************************************************************
@@ -50,8 +49,7 @@ import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class PhotoItemDIDLAdapterTest
+public class DefaultPhotoCollectionProviderTest
   {
     private ApplicationContext context;
 
@@ -63,25 +61,23 @@ public class PhotoItemDIDLAdapterTest
       }
 
     @Test
-    public void must_properly_generate_DIDL_content()
+    public void must_properly_parse_PhotoItems()
       throws Exception
       {
         // given
         final MediaFolder mediaFolder = mock(MediaFolder.class);
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
-        final PhotoItem photoItem = new PhotoItem(mediaFolder, "20150524-0034", "description");
-        final PhotoItemDIDLAdapter underTest = new PhotoItemDIDLAdapter(photoItem);
+        final PhotoCollectionProvider underTest = new DefaultPhotoCollectionProvider();
         // when
-        final DIDLContent content = new DIDLContent();
-        content.addObject(underTest.toObject());
+        final EntityFinder photoItems = underTest.findPhotos(mediaFolder);
         // then
-        final DIDLParser parser = new DIDLParser();
-        final String xml = xmlPrettyPrinted(parser.generate(content));
-
-        final Path actualResult = Paths.get("target", "test-results", "didl.xml");
-        final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "didl.xml");
+        final Path actualResult = Paths.get("target", "test-results", "photoItems.txt");
+        final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "photoItems.txt");
         Files.createDirectories(actualResult.getParent());
-        Files.write(actualResult, xml.getBytes(StandardCharsets.UTF_8));
+        final Stream<String> stream = photoItems.stream()
+                                                .map(e -> (PhotoItem)e)
+                                                .map(pi -> String.format("%s: %s", pi.getId(), pi.getTitle()));
+        Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
         assertSameContents(expectedResult.toFile(), actualResult.toFile());
       }
   }

@@ -28,13 +28,12 @@
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
+import javax.annotation.Nonnull;
+import java.nio.file.Path;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import javax.annotation.Nonnull;
 import it.tidalwave.bluemarine2.model.impl.EntityWithRoles;
-import it.tidalwave.bluemarine2.model.role.Parentable;
-import java.nio.file.Path;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -56,25 +55,28 @@ public class PhotoItem extends EntityWithRoles implements MediaItem
     @Getter @Nonnull
     private final String id;
 
-    @Override
+    @Getter @Nonnull
+    private final String title;
+
+    @Override @Nonnull
     public Path getPath()
       {
         return parent.getPath().resolve(id);
       }
 
-    @Override
+    @Override @Nonnull
     public Path getRelativePath()
       {
         throw new UnsupportedOperationException("Not supported yet.");
       }
 
-    @Override
+    @Override @Nonnull
     public Metadata getMetadata()
       {
         throw new UnsupportedOperationException("Not supported yet.");
       }
 
-    @Override
+    @Override @Nonnull
     public AudioFile getAudioFile()
       {
         throw new UnsupportedOperationException("Not supported yet.");

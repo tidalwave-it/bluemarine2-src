@@ -29,9 +29,22 @@
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Collection;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathFactory;
+import java.io.IOException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.SupplierBasedEntityFinder;
@@ -42,27 +55,35 @@ import it.tidalwave.bluemarine2.model.spi.SupplierBasedEntityFinder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class MockPhotoCollectionProvider implements PhotoCollectionProvider
+public class DefaultPhotoCollectionProvider implements PhotoCollectionProvider
   {
-    private final static List<String> DATA = Arrays.asList("20071209-0072",
-                                                           "20080223-0086",
-                                                           "20151107-0301a",
-                                                           "20151107-0315",
-                                                           "20151107-0380",
-                                                           "20160306-0100",
-                                                           "20160306-0120",
-                                                           "20160306-0132",
-                                                           "20160306-0141",
-                                                           "20160306-0233",
-                                                           "20160306-0235",
-                                                           "20160306-0587",
-                                                           "20160306-0649",
-                                                           "20160306-0715");
-
     @Override @Nonnull
     public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
-        return new SupplierBasedEntityFinder(parent,
-            () -> DATA.stream().map(id -> new PhotoItem(parent, id)).collect(Collectors.toList()));
+        try {
+            final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            final DocumentBuilder builder = factory.newDocumentBuilder();
+            final Document doc = builder.parse("src/test/resources/images.xml");
+            final XPathFactory xPathfactory = XPathFactory.newInstance();
+            final XPath xpath = xPathfactory.newXPath();
+            final XPathExpression expr = xpath.compile("/gallery/stillImage");
+            final NodeList nodes = (NodeList) expr.evaluate(doc, XPathConstants.NODESET);;
+
+            final Collection<Entity> photoItems = new ArrayList<>();
+
+            for (int i = 0; i < nodes.getLength(); i++)
+              {
+                final Node node = nodes.item(i);
+                final String id = node.getAttributes().getNamedItem("id").getNodeValue();
+                final String title = node.getAttributes().getNamedItem("title").getNodeValue();
+                photoItems.add(new PhotoItem(parent, id, title));
+              }
+
+            return new SupplierBasedEntityFinder(parent, () -> photoItems);
+          }
+        catch (SAXException | IOException | XPathExpressionException | ParserConfigurationException e)
+          {
+            throw new RuntimeException(e);
+          }
       }
   }
