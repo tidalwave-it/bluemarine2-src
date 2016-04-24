@@ -42,6 +42,8 @@ import org.testng.annotations.Test;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
+import static org.mockito.Mockito.mock;
+import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 
 /***********************************************************************************************************************
  *
@@ -49,7 +51,7 @@ import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class DefaultPhotoCollectionProviderTest
+public class PhotoCollectionProviderSupportTest
   {
     private ApplicationContext context;
 
@@ -67,7 +69,7 @@ public class DefaultPhotoCollectionProviderTest
         // given
         final MediaFolder mediaFolder = mock(MediaFolder.class);
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
-        final DefaultPhotoCollectionProvider underTest = new DefaultPhotoCollectionProvider();
+        final PhotoCollectionProviderSupport underTest = new PhotoCollectionProviderSupport();
         // when
         final EntityFinder photoItems = underTest.findPhotos(mediaFolder, "file:src/test/resources/images.xml");
         // then

@@ -29,13 +29,8 @@
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.List;
-import java.nio.file.Paths;
-import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
-import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
+import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 
 /***********************************************************************************************************************
  *
@@ -43,20 +38,11 @@ import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class StoppingDownMediaServerService implements MediaServerService
+public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
   {
-    private PhotoCollectionProvider diaryProvider = new DiaryPhotoCollectionProvider();
-    private PhotoCollectionProvider themesProvider = new ThemesPhotoCollectionProvider();
-
     @Override @Nonnull
-    public MediaFolder createRootFolder (final @Nonnull MediaFolder parent)
+    public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
-        final List<Entity> children = new ArrayList<>();
-
-        final MediaFolder root = new VirtualMediaFolder(parent, Paths.get("stoppingdown.net"), "Stopping Down", () -> children);
-        children.add(new VirtualMediaFolder(root, Paths.get("diary"),  "Diary",  diaryProvider::findPhotos));
-        children.add(new VirtualMediaFolder(root, Paths.get("themes"), "Themes", themesProvider::findPhotos));
-
-        return root;
+        return findPhotos(parent, "http://stoppingdown.net/private/diary/20160407/images.xml");
       }
   }

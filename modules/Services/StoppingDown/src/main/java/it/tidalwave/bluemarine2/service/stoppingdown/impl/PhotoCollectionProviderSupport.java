@@ -55,7 +55,7 @@ import it.tidalwave.bluemarine2.model.spi.SupplierBasedEntityFinder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class DefaultPhotoCollectionProvider implements PhotoCollectionProvider
+public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
   {
     private static final DocumentBuilderFactory PARSER_FACTORY = DocumentBuilderFactory.newInstance();
     private static final XPathFactory XPATH_FACTORY = XPathFactory.newInstance();
