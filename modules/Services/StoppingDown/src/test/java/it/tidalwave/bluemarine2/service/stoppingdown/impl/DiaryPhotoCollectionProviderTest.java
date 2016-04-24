@@ -48,7 +48,7 @@ import static org.mockito.Mockito.when;
  **********************************************************************************************************************/
 public class DiaryPhotoCollectionProviderTest extends PhotoCollectionProviderTestSupport
   {
-    private static final String URL_MOCK_RESOURCE = "file:src/test/resources/diary/%d/index.xhtml";
+    private static final String URL_MOCK_RESOURCE = "file:src/test/resources/stoppingdown.net/diary/%d/index.xhtml";
 
     /*******************************************************************************************************************
      *

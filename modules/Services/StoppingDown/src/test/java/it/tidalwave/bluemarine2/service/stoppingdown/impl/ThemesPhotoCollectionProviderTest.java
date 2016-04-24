@@ -50,7 +50,7 @@ import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
  **********************************************************************************************************************/
 public class ThemesPhotoCollectionProviderTest extends PhotoCollectionProviderTestSupport
   {
-    private static final String URL_MOCK_RESOURCE = "file:src/test/resources/themes.xhtml";
+    private static final String URL_MOCK_RESOURCE = "file:src/test/resources/stoppingdown.net/themes/index.xhtml";
 
     /*******************************************************************************************************************
      *
