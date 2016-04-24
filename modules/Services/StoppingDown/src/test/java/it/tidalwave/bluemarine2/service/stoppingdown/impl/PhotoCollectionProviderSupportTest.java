@@ -46,9 +46,6 @@ import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
  **********************************************************************************************************************/
 public class PhotoCollectionProviderSupportTest extends PhotoCollectionProviderTestSupport
   {
-    private static final String URL_MOCK_RESOURCE = "http://localhost:8080";
-//    private static final String URL_MOCK_RESOURCE = "file:src/test/resources/images.xml";
-
     @Test
     public void must_properly_parse_PhotoItems()
       throws Exception

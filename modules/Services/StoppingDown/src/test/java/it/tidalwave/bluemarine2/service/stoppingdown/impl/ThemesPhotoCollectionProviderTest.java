@@ -44,9 +44,6 @@ import static org.mockito.Mockito.when;
  **********************************************************************************************************************/
 public class ThemesPhotoCollectionProviderTest extends PhotoCollectionProviderTestSupport
   {
-    private static final String URL_MOCK_RESOURCE = "http://localhost:8080";
-//    private static final String URL_MOCK_RESOURCE = "file:src/test/resources/stoppingdown.net/themes/index.xhtml";
-
     /*******************************************************************************************************************
      *
      * This test uses mock data.
