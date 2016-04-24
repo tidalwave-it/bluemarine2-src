@@ -52,6 +52,7 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
+import java.util.concurrent.ConcurrentHashMap;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
@@ -88,7 +89,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     /**
      * A local cache for themes is advisable because multiple calls will be performed.
      */
-    private final Map<XPathExpression, List<GalleryDescription>> themesCache = new HashMap<>();
+    private final Map<XPathExpression, List<GalleryDescription>> themesCache = new ConcurrentHashMap<>();
 
     /*******************************************************************************************************************
      *
@@ -133,6 +134,17 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
 
     /*******************************************************************************************************************
      *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    protected void clearCaches()
+      {
+        super.clearCaches();
+        themesCache.clear();
+      }
+
+    /*******************************************************************************************************************
+     *
      ******************************************************************************************************************/
     @Nonnull
     private Collection<Entity> subjectsFactory (final @Nonnull MediaFolder parent)
@@ -157,7 +169,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* VisibleForTesting */ synchronized List<GalleryDescription> parseThemes (final @Nonnull XPathExpression expr)
+    /* VisibleForTesting */ List<GalleryDescription> parseThemes (final @Nonnull XPathExpression expr)
       {
         log.debug("parseThemes({}, {})", themesUrl, expr);
 

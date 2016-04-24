@@ -31,7 +31,7 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.Map;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
@@ -69,7 +69,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
     /**
      * A local cache for finders. It's advisable, since clients will frequently retrieve a finder because of pagination.
      */
-    private final Map<String, Collection<Entity>> photoCollectionCache = new HashMap<>();
+    private final Map<String, Collection<Entity>> photoCollectionCache = new ConcurrentHashMap<>();
 
     /*******************************************************************************************************************
      *
@@ -100,6 +100,16 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
 
     /*******************************************************************************************************************
      *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    protected void clearCaches()
+      {
+        photoCollectionCache.clear();
+      }
+
+    /*******************************************************************************************************************
+     *
      * Creates a collection of entities for the given gallery URL.
      *
      * @param   parent      the parent node
@@ -108,8 +118,8 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* VisibleForTesting */ synchronized Collection<Entity> findPhotos (final @Nonnull MediaFolder parent,
-                                                                        final @Nonnull String galleryUrl)
+    /* VisibleForTesting */ Collection<Entity> findPhotos (final @Nonnull MediaFolder parent,
+                                                           final @Nonnull String galleryUrl)
       {
         log.debug("findPhotos({}, {}", parent, galleryUrl);
 

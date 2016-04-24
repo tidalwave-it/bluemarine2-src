@@ -43,4 +43,10 @@
     <bean id="stoppingDownMediaServerService"
           class="it.tidalwave.bluemarine2.service.stoppingdown.impl.StoppingDownMediaServerService" />
 
+    <bean id="diaryPhotoCollectionProvider"
+          class="it.tidalwave.bluemarine2.service.stoppingdown.impl.DiaryPhotoCollectionProvider" />
+
+    <bean id="themesPhotoCollectionProvider"
+          class="it.tidalwave.bluemarine2.service.stoppingdown.impl.ThemesPhotoCollectionProvider" />
+
 </beans>

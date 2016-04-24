@@ -29,6 +29,8 @@
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.Arrays;
 import java.util.Collection;
 import java.nio.file.Path;
@@ -47,12 +49,16 @@ import it.tidalwave.bluemarine2.model.Entity;
 public class StoppingDownMediaServerService implements MediaServerService
   {
     private static final Path PATH_ROOT = Paths.get("stoppingdown.net");
+
     private static final Path PATH_DIARY = Paths.get("diary");
+    
     private static final Path PATH_THEMES = Paths.get("themes");
 
-    private PhotoCollectionProvider diaryProvider = new DiaryPhotoCollectionProvider();
+    @Inject @Named("diaryPhotoCollectionProvider")
+    private PhotoCollectionProvider diaryProvider;
 
-    private PhotoCollectionProvider themesProvider = new ThemesPhotoCollectionProvider();
+    @Inject @Named("themesPhotoCollectionProvider")
+    private PhotoCollectionProvider themesProvider;
 
     @Override @Nonnull
     public MediaFolder createRootFolder (final @Nonnull MediaFolder parent)
