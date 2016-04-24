@@ -34,11 +34,8 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
-import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -94,29 +91,12 @@ public class ThemesPhotoCollectionProviderTest extends PhotoCollectionProviderTe
         final EntityFinder finder = underTest.findPhotos(mediaFolder);
         when(mediaFolder.findChildren()).thenReturn(finder);
         // then
-        final Path actualResult = Paths.get("target", "test-results", "nodes.txt");
-        final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "nodes.txt");
+        final Path actualResult = Paths.get("target", "test-results", "themes-hierarchy.txt");
+        final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "themes-hierarchy.txt");
         Files.createDirectories(actualResult.getParent());
         final Stream<String> stream = dump(mediaFolder).stream();
         Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
         assertSameContents(expectedResult.toFile(), actualResult.toFile());
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private static List<String> dump (final @Nonnull Entity entity)
-      {
-        final List<String> result = new ArrayList<>();
-        result.add("" + entity);
-
-        if (entity instanceof MediaFolder)
-          {
-            ((MediaFolder)entity).findChildren().forEach(child -> result.addAll(dump(child)));
-          }
-
-        return result;
       }
 
     /*******************************************************************************************************************

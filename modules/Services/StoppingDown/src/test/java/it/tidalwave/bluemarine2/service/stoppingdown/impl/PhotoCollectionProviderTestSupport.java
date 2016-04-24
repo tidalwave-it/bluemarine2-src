@@ -28,9 +28,13 @@
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
+import javax.annotation.Nonnull;
+import java.util.ArrayList;
+import java.util.List;
 import java.nio.file.Paths;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import org.testng.annotations.BeforeMethod;
 import static org.mockito.Mockito.when;
@@ -61,4 +65,22 @@ public class PhotoCollectionProviderTestSupport
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
         when(mediaFolder.toString()).thenReturn("MediaFolder(\"/folder\"))");
       }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    protected static List<String> dump (final @Nonnull Entity entity)
+      {
+        final List<String> result = new ArrayList<>();
+        result.add("" + entity);
+
+        if (entity instanceof MediaFolder)
+          {
+            ((MediaFolder)entity).findChildren().forEach(child -> result.addAll(dump(child)));
+          }
+
+        return result;
+      }
+
   }
