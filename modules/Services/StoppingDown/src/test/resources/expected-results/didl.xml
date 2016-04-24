@@ -4,11 +4,11 @@
         <dc:creator>Fabrizio Giudici</dc:creator>
         <upnp:class>object.item.imageItem.photo</upnp:class>
         <upnp:album>/folder</upnp:album>
-        <res protocolInfo="http-get:*:image/jpeg:*">http://stoppingdown.net/media/stillimages/20150524-0034/2560/image.jpg</res>
-        <res protocolInfo="http-get:*:image/jpeg:*">http://stoppingdown.net/media/stillimages/20150524-0034/1920/image.jpg</res>
-        <res protocolInfo="http-get:*:image/jpeg:*">http://stoppingdown.net/media/stillimages/20150524-0034/1280/image.jpg</res>
-        <res protocolInfo="http-get:*:image/jpeg:*">http://stoppingdown.net/media/stillimages/20150524-0034/800/image.jpg</res>
-        <res protocolInfo="http-get:*:image/jpeg:*">http://stoppingdown.net/media/stillimages/20150524-0034/400/image.jpg</res>
-        <res protocolInfo="http-get:*:image/jpeg:*">http://stoppingdown.net/media/stillimages/20150524-0034/200/image.jpg</res>
+        <res protocolInfo="http-get:*:image/jpeg:*" resolution="2560x2560">http://stoppingdown.net/media/stillimages/20150524-0034/2560/image.jpg</res>
+        <res protocolInfo="http-get:*:image/jpeg:*" resolution="1920x1920">http://stoppingdown.net/media/stillimages/20150524-0034/1920/image.jpg</res>
+        <res protocolInfo="http-get:*:image/jpeg:*" resolution="1280x1280">http://stoppingdown.net/media/stillimages/20150524-0034/1280/image.jpg</res>
+        <res protocolInfo="http-get:*:image/jpeg:*" resolution="800x800">http://stoppingdown.net/media/stillimages/20150524-0034/800/image.jpg</res>
+        <res protocolInfo="http-get:*:image/jpeg:*" resolution="400x400">http://stoppingdown.net/media/stillimages/20150524-0034/400/image.jpg</res>
+        <res protocolInfo="http-get:*:image/jpeg:*" resolution="200x200">http://stoppingdown.net/media/stillimages/20150524-0034/200/image.jpg</res>
     </item>
 </DIDL-Lite>

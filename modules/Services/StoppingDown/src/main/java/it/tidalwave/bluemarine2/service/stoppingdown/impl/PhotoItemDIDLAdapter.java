@@ -92,7 +92,7 @@ public class PhotoItemDIDLAdapter implements DIDLAdapter
         final ProtocolInfo protocolInfo = new DLNAProtocolInfo(Protocol.HTTP_GET, "*", "image/jpeg", "*");
         final Res[] resources = SIZES.stream()
                                      .sorted(reverseOrder())
-                                     .map(size -> new Res(protocolInfo, null, computeUrl(size)))
+                                     .map(size -> createResource(protocolInfo, size))
                                      .collect(toList())
                                      .toArray(new Res[0]);
         final Path parentPath = photo.getParent().getPath();
@@ -101,6 +101,17 @@ public class PhotoItemDIDLAdapter implements DIDLAdapter
         final String title = photo.getId();
         final Photo item = new Photo(photoId, parentId, title, creator, parentId, resources);
         return item;
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private Res createResource (final @Nonnull ProtocolInfo protocolInfo, final int size)
+      {
+        final Res resource = new Res(protocolInfo, null, computeUrl(size));
+        resource.setResolution(size, size);
+        return resource;
       }
 
     /*******************************************************************************************************************
