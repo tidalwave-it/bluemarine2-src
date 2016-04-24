@@ -31,12 +31,18 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import org.testng.annotations.BeforeMethod;
+import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.mock;
 
@@ -69,6 +75,20 @@ public class PhotoCollectionProviderTestSupport
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
+    protected static void dumpAndAssertResults (final @Nonnull String fileName, final @Nonnull List<?> data)
+      throws IOException
+      {
+        final Path actualResult = Paths.get("target", "test-results", fileName);
+        final Path expectedResult = Paths.get("target", "test-classes", "expected-results", fileName);
+        Files.createDirectories(actualResult.getParent());
+        final Stream<String> stream = data.stream().map(Object::toString);
+        Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
+        assertSameContents(expectedResult.toFile(), actualResult.toFile());
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Nonnull
     protected static List<String> dump (final @Nonnull Entity entity)
       {
@@ -82,5 +102,4 @@ public class PhotoCollectionProviderTestSupport
 
         return result;
       }
-
   }
