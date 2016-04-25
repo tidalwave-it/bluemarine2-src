@@ -28,15 +28,9 @@
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Collection;
-import java.util.stream.Stream;
 import it.tidalwave.bluemarine2.model.Entity;
 import org.testng.annotations.Test;
-import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 
 /***********************************************************************************************************************
  *
@@ -55,13 +49,6 @@ public class PhotoCollectionProviderSupportTest extends PhotoCollectionProviderT
         // when
         final Collection<Entity> photoItems = underTest.findPhotos(mediaFolder, "file:src/test/resources/images.xml");
         // then
-        final Path actualResult = Paths.get("target", "test-results", "photoItems.txt");
-        final Path expectedResult = Paths.get("target", "test-classes", "expected-results", "photoItems.txt");
-        Files.createDirectories(actualResult.getParent());
-        final Stream<String> stream = photoItems.stream()
-                                                .map(e -> (PhotoItem)e)
-                                                .map(pi -> String.format("%s: %s", pi.getId(), pi.getTitle()));
-        Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
-        assertSameContents(expectedResult.toFile(), actualResult.toFile());
+        dumpAndAssertResults("photoItems.txt", photoItems);
       }
   }

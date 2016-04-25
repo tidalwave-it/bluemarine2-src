@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Stream;
 import java.io.IOException;
@@ -79,7 +80,7 @@ public class PhotoCollectionProviderTestSupport
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    protected static void dumpAndAssertResults (final @Nonnull String fileName, final @Nonnull List<?> data)
+    protected static void dumpAndAssertResults (final @Nonnull String fileName, final @Nonnull Collection<?> data)
       throws IOException
       {
         final Path actualResult = Paths.get("target", "test-results", fileName);

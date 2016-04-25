@@ -1,14 +1,14 @@
-20071209-0072: Châteauneuf-en-Auxois.
-20080223-0086: 
-20151107-0301a: Il Castello di Oramala.
-20151107-0315: Il castello e il borgo di Oramala.
-20151107-0380: Paesaggio al tramonto con Castello Malaspina e Monte Rosa.
-20160306-0100: Castel Madruzzo.
-20160306-0120: Castel Madruzzo.
-20160306-0132: Castel Madruzzo.
-20160306-0141: Castel Madruzzo.
-20160306-0233: Castel Drena.
-20160306-0235: Castel Drena.
-20160306-0587: Il Castello di Stenico.
-20160306-0649: Castel Restor.
-20160306-0715: Castel Spine.
+PhotoItem(parent=MediaFolder("/folder")), id=20071209-0072, title=Châteauneuf-en-Auxois.)
+PhotoItem(parent=MediaFolder("/folder")), id=20080223-0086, title=)
+PhotoItem(parent=MediaFolder("/folder")), id=20151107-0301a, title=Il Castello di Oramala.)
+PhotoItem(parent=MediaFolder("/folder")), id=20151107-0315, title=Il castello e il borgo di Oramala.)
+PhotoItem(parent=MediaFolder("/folder")), id=20151107-0380, title=Paesaggio al tramonto con Castello Malaspina e Monte Rosa.)
+PhotoItem(parent=MediaFolder("/folder")), id=20160306-0100, title=Castel Madruzzo.)
+PhotoItem(parent=MediaFolder("/folder")), id=20160306-0120, title=Castel Madruzzo.)
+PhotoItem(parent=MediaFolder("/folder")), id=20160306-0132, title=Castel Madruzzo.)
+PhotoItem(parent=MediaFolder("/folder")), id=20160306-0141, title=Castel Madruzzo.)
+PhotoItem(parent=MediaFolder("/folder")), id=20160306-0233, title=Castel Drena.)
+PhotoItem(parent=MediaFolder("/folder")), id=20160306-0235, title=Castel Drena.)
+PhotoItem(parent=MediaFolder("/folder")), id=20160306-0587, title=Il Castello di Stenico.)
+PhotoItem(parent=MediaFolder("/folder")), id=20160306-0649, title=Castel Restor.)
+PhotoItem(parent=MediaFolder("/folder")), id=20160306-0715, title=Castel Spine.)
