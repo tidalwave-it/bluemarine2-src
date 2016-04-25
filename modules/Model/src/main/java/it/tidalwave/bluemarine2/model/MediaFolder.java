@@ -5,7 +5,7 @@
  * blueMarine2 - Semantic Media Center
  * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
- * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
+ * Copyright (C) 2015 - 2016 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
  *
  * *********************************************************************************************************************
@@ -34,15 +34,16 @@ import it.tidalwave.util.As;
 import it.tidalwave.role.Composite;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.role.Parentable;
+import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 
 /***********************************************************************************************************************
  *
  * Represents a folder on a filesystem that contains media items. It is associated with the {@link Composite<As>} role.
  * The filesystem can be a physycal one (on the disk), or a virtual one (e.g. on a database); the folder concept is
  * flexible and represents any composite collection of items.
- * 
+ *
  * @stereotype  Datum
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -52,12 +53,15 @@ public interface MediaFolder extends Entity, Parentable<MediaFolder>, SimpleComp
     /*******************************************************************************************************************
      *
      * Returns the {@link Path} associated with this object.
-     * 
+     *
      * @return  the path
      *
      ******************************************************************************************************************/
     @Nonnull
     public Path getPath();
-    
+
     public boolean isRoot();
+
+    @Override
+    public EntityFinder findChildren();
   }
