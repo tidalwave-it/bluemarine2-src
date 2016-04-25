@@ -28,6 +28,7 @@
  */package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
+import javax.annotation.concurrent.Immutable;
 import java.util.Arrays;
 import java.util.List;
 import java.nio.file.Path;
@@ -55,8 +56,10 @@ import static java.util.stream.Collectors.toList;
  * @version $Id$
  *
  **********************************************************************************************************************/
+ // FIXME: this introduces a dependency on UPnP. It's needed because it contains stuff related to StoppingDown (URLs).
+ // FIXME: move PhotoItem to Model, this class to UPnP and try to make the URLs contained in metadata of PhotoItem.
 @RequiredArgsConstructor
-@DciRole(datumType = PhotoItem.class)
+@Immutable @DciRole(datumType = PhotoItem.class)
 public class PhotoItemDIDLAdapter implements DIDLAdapter
   {
     private static final String MEDIA_URL_TEMPLATE =
@@ -65,7 +68,7 @@ public class PhotoItemDIDLAdapter implements DIDLAdapter
     private static final List<Integer> SIZES = Arrays.asList(200, 400, 800, 1280, 1920, 2560);
 
     @Nonnull
-    private final PhotoItem photo;
+    private final PhotoItem datum;
 
     private final String creator = "Fabrizio Giudici";
 
@@ -75,11 +78,11 @@ public class PhotoItemDIDLAdapter implements DIDLAdapter
      *
      ******************************************************************************************************************/
     @Override
-    public DIDLContent toContent (final BrowseFlag browseFlag, final int from, final int maxResults)
+    public ContentHolder toContent (final BrowseFlag browseFlag, final int from, final int maxResults)
       {
         final DIDLContent content = new DIDLContent();
         content.addObject(toObject());
-        return content;
+        return new ContentHolder(content, 1, 1);
       }
 
     /*******************************************************************************************************************
@@ -96,13 +99,13 @@ public class PhotoItemDIDLAdapter implements DIDLAdapter
                                      .map(size -> createResource(protocolInfo, size))
                                      .collect(toList())
                                      .toArray(new Res[0]);
-        final Path parentPath = photo.getParent().getPath();
+        final Path parentPath = datum.getParent().getPath();
         final String parentId = parentPath.toString();
-        final String photoId = parentPath.resolve(photo.getId()).toString();
-        final String title = photo.getId();
+        final String photoId = parentPath.resolve(datum.getId()).toString();
+        final String title = datum.getId();
         final Photo item = new Photo(photoId, parentId, title, creator, parentId, resources);
-        item.setDescription(photo.getTitle());
-        item.setDate(dateFor(photo.getId()));
+        item.setDescription(datum.getTitle());
+        item.setDate(dateFor(datum.getId()));
         return item;
       }
 
@@ -123,7 +126,7 @@ public class PhotoItemDIDLAdapter implements DIDLAdapter
     @Nonnull
     private String computeUrl (final int size)
       {
-        return String.format(MEDIA_URL_TEMPLATE, photo.getId(), size);
+        return String.format(MEDIA_URL_TEMPLATE, datum.getId(), size);
       }
 
     /*******************************************************************************************************************

@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
+import javax.annotation.concurrent.Immutable;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import java.util.Collections;
@@ -42,7 +43,6 @@ import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.role.Parentable;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.Displayable.Displayable;
@@ -62,17 +62,11 @@ import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UPnPUtilities.*;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor @Slf4j
-@DciRole(datumType = MediaFolder.class)
+@Immutable @DciRole(datumType = MediaFolder.class)
 public class MediaFolderDIDLAdapter implements DIDLAdapter
   {
     @Nonnull
-    private final MediaFolder owner;
-
-    @Getter
-    private int numberReturned = 0;
-
-    @Getter
-    private int totalMatches = 0;
+    private final MediaFolder datum;
 
     /*******************************************************************************************************************
      *
@@ -80,11 +74,13 @@ public class MediaFolderDIDLAdapter implements DIDLAdapter
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public DIDLContent toContent (final @Nonnull BrowseFlag browseFlag,
-                                  final @Nonnegative int from,
-                                  final @Nonnegative int maxResults)
+    public ContentHolder toContent (final @Nonnull BrowseFlag browseFlag,
+                                    final @Nonnegative int from,
+                                    final @Nonnegative int maxResults)
       {
         final DIDLContent content = new DIDLContent();
+        int numberReturned = 0;
+        int totalMatches = 0;
 
         switch (browseFlag)
           {
@@ -94,7 +90,7 @@ public class MediaFolderDIDLAdapter implements DIDLAdapter
                 break;
 
             case DIRECT_CHILDREN:
-                final Finder<Entity> finder = owner.findChildren();
+                final Finder<Entity> finder = datum.findChildren();
                 totalMatches = finder.count();
                 finder.from(from)
                       .max(maxResults)
@@ -108,7 +104,7 @@ public class MediaFolderDIDLAdapter implements DIDLAdapter
                 throw new IllegalArgumentException(browseFlag.toString());
           }
 
-        return content;
+        return new ContentHolder(content, numberReturned, totalMatches);
       }
 
     /*******************************************************************************************************************
@@ -122,15 +118,15 @@ public class MediaFolderDIDLAdapter implements DIDLAdapter
         final Container container = new Container();
         container.setClazz(StorageFolder.CLASS);
         container.setRestricted(false);
-        container.setId(pathToDidlId(owner.getPath()));
-        container.setTitle(owner.as(Displayable).getDisplayName());
+        container.setId(pathToDidlId(datum.getPath()));
+        container.setTitle(datum.as(Displayable).getDisplayName());
         container.setCreator("blueMarine II"); // FIXME
-        container.setChildCount(owner.findChildren().count());
+        container.setChildCount(datum.findChildren().count());
         container.setItems(Collections.emptyList());
 
         try
           {
-            final Parentable<MediaFolder> parentable = owner.as(Parentable);
+            final Parentable<MediaFolder> parentable = datum.as(Parentable);
             container.setParentID(parentable.hasParent() ? pathToDidlId(parentable.getParent().getPath()) : ID_NONE);
           }
         catch (AsException e)

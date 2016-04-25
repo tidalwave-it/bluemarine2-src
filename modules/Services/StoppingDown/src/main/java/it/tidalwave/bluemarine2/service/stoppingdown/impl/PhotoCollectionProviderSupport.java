@@ -68,6 +68,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
 
     protected static final DocumentBuilderFactory PARSER_FACTORY = DocumentBuilderFactory.newInstance();
 
+    // FIXME: XPath stuff is not thread-safe - fix!
     protected static final XPathFactory XPATH_FACTORY = XPathFactory.newInstance();
 
     private static final XPathExpression XPATH_STILLIMAGE_EXPR;

@@ -40,7 +40,6 @@ import org.fourthline.cling.binding.annotations.UpnpServiceType;
 import org.fourthline.cling.binding.annotations.UpnpStateVariable;
 import org.fourthline.cling.support.contentdirectory.DIDLParser;
 import org.fourthline.cling.support.model.BrowseFlag;
-import org.fourthline.cling.support.model.DIDLContent;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.model.Entity;
 import lombok.AllArgsConstructor;
@@ -48,6 +47,7 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.util.PrettyPrint.*;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter.DIDLAdapter;
+import it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter.ContentHolder;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UPnPUtilities.*;
 
 /***********************************************************************************************************************
@@ -174,14 +174,14 @@ public class ContentDirectoryClingAdapter
 
             final Path path = didlIdToPath(objectId);
             final Entity entity = contentDirectory.findRoot().findChildren().withPath(path).result();
-            final DIDLAdapter didlAdapter = entity.as(DIDLAdapter);
-            final DIDLContent content = didlAdapter.toContent(BrowseFlag.valueOrNullOf(browseFlag),
-                                                              startingIndex,
-                                                              maxCount(requestedCount));
-            final int numberReturned = didlAdapter.getNumberReturned();
-            final int totalMatches = didlAdapter.getTotalMatches();
+            final ContentHolder holder = entity.as(DIDLAdapter).toContent(BrowseFlag.valueOrNullOf(browseFlag),
+                                                                          startingIndex,
+                                                                          maxCount(requestedCount));
             final DIDLParser parser = new DIDLParser();
-            final BrowseResult result = new BrowseResult(parser.generate(content), numberReturned, totalMatches, 1);
+            final BrowseResult result = new BrowseResult(parser.generate(holder.getContent()),
+                                                         holder.getNumberReturned(),
+                                                         holder.getTotalMatches(),
+                                                         1);
             log.debug(">>>> returning {}", result);
 
             return result;

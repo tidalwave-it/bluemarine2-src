@@ -30,6 +30,10 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
 import org.fourthline.cling.support.model.DIDLObject;
@@ -50,18 +54,44 @@ public interface DIDLAdapter
 
     /*******************************************************************************************************************
      *
+     ******************************************************************************************************************/
+    @RequiredArgsConstructor @Getter @EqualsAndHashCode  @ToString
+    public static class ContentHolder
+      {
+        /**
+         * The {@link DIDLContent}.
+         */
+        @Nonnull
+        private final DIDLContent content;
+
+        /**
+         * The number of items that are being returned - this take into account the fact that the client has
+         * requested a subset of data.
+         */
+        @Nonnegative
+        private final int numberReturned;
+
+        /**
+         * The number of items that would match the client request.
+         */
+        @Nonnegative
+        private final int totalMatches;
+      }
+
+    /*******************************************************************************************************************
+     *
      * Converts the owner object to a {@link DIDLContent}.
      *
      * @param   browseFlag  whether metadata for a single object or enumeration of children should be returned
      * @param   from        in case of multiple results, the first item to return
      * @param   maxResults  in case of multiple results, how many items to return
-     * @return              the {@code DIDLContent}
+     * @return              the holder of {@code DIDLContent}
      *
      ******************************************************************************************************************/
     @Nonnull
-    public DIDLContent toContent (@Nonnull BrowseFlag browseFlag,
-                                  @Nonnegative int from,
-                                  @Nonnegative int maxResults);
+    public ContentHolder toContent (@Nonnull BrowseFlag browseFlag,
+                                    @Nonnegative int from,
+                                    @Nonnegative int maxResults);
 
     /*******************************************************************************************************************
      *
@@ -72,37 +102,4 @@ public interface DIDLAdapter
      ******************************************************************************************************************/
     @Nonnull
     public DIDLObject toObject();
-
-    /*******************************************************************************************************************
-     *
-     * Returns the number of items that are being returned - this take into account the fact that the client has
-     * requested a subset of data.
-     *
-     * This method provides a meaningful result only after
-     * {@link #toContent(org.fourthline.cling.support.model.BrowseFlag, int, int)} has been called.
-     *
-     * @return  the number of items being returned.
-     *
-     ******************************************************************************************************************/
-    @Nonnegative
-    public default int getNumberReturned()
-      {
-        return 1;
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Returns the number of items that would match the client request.
-     *
-     * This method provides a meaningful result only after
-     * {@link #toContent(org.fourthline.cling.support.model.BrowseFlag, int, int)} has been called.
-     *
-     * @return  the number of items that matched.
-     *
-     ******************************************************************************************************************/
-    @Nonnegative
-    public default int getTotalMatches()
-      {
-        return 1;
-      }
   }
