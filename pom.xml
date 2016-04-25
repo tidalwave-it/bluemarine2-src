@@ -23,7 +23,6 @@ Still at the early stage of development, it can be used with some hack to reprod
     </description>
 
     <properties>
-        <tft.scm>git</tft.scm>
         <scm.repo.url>git@bitbucket.org:tidalwave/bluemarine2-src.git</scm.repo.url>
         <scm.repo.readonly.url>https://bitbucket.org/tidalwave/bluemarine2-src.git</scm.repo.readonly.url>
         <scm.repo.browse.url>https://bitbucket.org/tidalwave/bluemarine2-src/src</scm.repo.browse.url>
@@ -46,8 +45,6 @@ Still at the early stage of development, it can be used with some hack to reprod
 
         <tft.appbundle.name>blueMarine2</tft.appbundle.name>
         <tft.appbundle.signature>TDLW</tft.appbundle.signature>
-
-        <tft.clirr.skip>true</tft.clirr.skip> <!-- Clirr is not compatible with JDK 8 -->
     </properties>
 
     <url>http://blueMarine.tidalwave.it</url>
@@ -62,16 +59,15 @@ Still at the early stage of development, it can be used with some hack to reprod
         <repository>
             <id>jaudiotagger-repository</id>
             <url>https://dl.bintray.com/ijabz/maven</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
         <repository>
-            <id>snapshots-oss.sonatype.org</id>
-            <name>Sonatype Snapshots Repository</name>
-            <url>http://oss.sonatype.org/content/repositories/snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
+            <id>4thline-repo</id>
+            <url>http://4thline.org/m2</url>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </snapshots>
         </repository>
     </repositories>
@@ -138,6 +134,28 @@ Still at the early stage of development, it can be used with some hack to reprod
                 <artifactId>it-tidalwave-bluemarine2-catalog</artifactId>
                 <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
+
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-mediaserver</artifactId>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-upnp-mediaserver</artifactId>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-upnp-mediaserver</artifactId>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
+                <classifier>tests</classifier>
+            </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-services-stoppingdown</artifactId>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -148,39 +166,6 @@ Still at the early stage of development, it can be used with some hack to reprod
         <url>${scm.repo.browse.url}</url>
       <tag>HEAD</tag>
   </scm>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <properties>
-                        <property>
-                            <name>listener</name>
-                            <value>${tft.test.listeners}</value>
-                        </property>
-                    </properties>
-                </configuration>
-            </plugin>
-
-            <!-- Needed for setting that inherited = false -->
-            <plugin>
-                <groupId>com.mycila.maven-license-plugin</groupId>
-                <artifactId>maven-license-plugin</artifactId>
-                <inherited>false</inherited>
-                <configuration>
-                    <excludes>
-                        <exclude>LICENSE.txt</exclude>
-                        <exclude>**/*.mf</exclude>
-                        <exclude>**/.revision</exclude>
-                        <exclude>.hgtags</exclude>
-                        <exclude>.hgignore</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <modules>
         <module>modules</module>
