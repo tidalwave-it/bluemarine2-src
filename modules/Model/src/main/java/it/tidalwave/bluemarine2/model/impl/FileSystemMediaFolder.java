@@ -32,10 +32,9 @@ import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.nio.file.Path;
-import it.tidalwave.util.Finder8;
 import it.tidalwave.util.spi.AsSupport;
-import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import lombok.AllArgsConstructor;
 import lombok.Delegate;
 import lombok.Getter;
@@ -43,9 +42,9 @@ import lombok.Getter;
 /***********************************************************************************************************************
  *
  * The default implementation of {@link MediaFolder}. It basically does nothing, it just acts as an aggregator of roles.
- * 
+ *
  * @stereotype  Datum
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -55,30 +54,30 @@ public class FileSystemMediaFolder implements MediaFolder
   {
     @Getter @Nonnull
     private final Path path;
-    
+
     @Getter @CheckForNull
     private MediaFolder parent;
-    
+
     @Getter @Nonnull
     private final Path basePath;
-    
+
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
 
     @Override
-    public boolean isRoot() 
+    public boolean isRoot()
       {
         return parent == null;
       }
 
     @Override @Nonnull
-    public Finder8<Entity> findChildren() 
+    public EntityFinder findChildren()
       {
         return new MediaFolderFinder(this, basePath).sort(new MediaItemComparator());
       }
-    
+
     @Override @Nonnull
-    public String toString() 
+    public String toString()
       {
         return String.format("FileSystemMediaFolder(%s)", basePath.relativize(path));
       }

@@ -59,6 +59,16 @@ Still at the early stage of development, it can be used with some hack to reprod
         <repository>
             <id>jaudiotagger-repository</id>
             <url>https://dl.bintray.com/ijabz/maven</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>4thline-repo</id>
+            <url>http://4thline.org/m2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
     </repositories>
 
@@ -122,6 +132,28 @@ Still at the early stage of development, it can be used with some hack to reprod
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-catalog</artifactId>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-mediaserver</artifactId>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-upnp-mediaserver</artifactId>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-upnp-mediaserver</artifactId>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
+                <classifier>tests</classifier>
+            </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-services-stoppingdown</artifactId>
                 <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
         </dependencies>

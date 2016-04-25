@@ -34,15 +34,16 @@ import it.tidalwave.util.As;
 import it.tidalwave.role.Composite;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.role.Parentable;
+import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 
 /***********************************************************************************************************************
  *
  * Represents a folder on a filesystem that contains media items. It is associated with the {@link Composite<As>} role.
  * The filesystem can be a physycal one (on the disk), or a virtual one (e.g. on a database); the folder concept is
  * flexible and represents any composite collection of items.
- * 
+ *
  * @stereotype  Datum
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -52,12 +53,15 @@ public interface MediaFolder extends Entity, Parentable<MediaFolder>, SimpleComp
     /*******************************************************************************************************************
      *
      * Returns the {@link Path} associated with this object.
-     * 
+     *
      * @return  the path
      *
      ******************************************************************************************************************/
     @Nonnull
     public Path getPath();
-    
+
     public boolean isRoot();
+
+    @Override
+    public EntityFinder findChildren();
   }
