@@ -129,8 +129,6 @@ public class ContentDirectoryClingAdapter
     @UpnpStateVariable(name = "Id", defaultValue = "", sendEvents = false)
     private String systemUpdateId = "";
 
-    int xxxId = 3;
-
     /*******************************************************************************************************************
      *
      *
@@ -161,12 +159,11 @@ public class ContentDirectoryClingAdapter
             final DIDLAdapter didlAdapter = entity.as(DIDLAdapter);
             final DIDLContent content = didlAdapter.toContent(BrowseFlag.valueOrNullOf(browseFlag),
                                                               startingIndex,
-                                                              // FIXME: workaround for the LG tv set
-                                                              maxCount((requestedCount == 1) ? 0 : requestedCount));
+                                                              maxCount(requestedCount));
+            final int numberReturned = didlAdapter.getNumberReturned();
+            final int totalMatches = didlAdapter.getTotalMatches();
             final DIDLParser parser = new DIDLParser();
-            final int numberReturned = (int)content.getCount();
-            final int totalMatches = numberReturned;
-            final BrowseResult result = new BrowseResult(parser.generate(content), numberReturned, totalMatches, 777);
+            final BrowseResult result = new BrowseResult(parser.generate(content), numberReturned, totalMatches, 1);
 
             if (log.isDebugEnabled()) // result.toString() is expensive
               {

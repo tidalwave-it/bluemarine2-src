@@ -63,4 +63,37 @@ public interface DIDLAdapter
      ******************************************************************************************************************/
     @Nonnull
     public DIDLObject toObject();
+
+    /*******************************************************************************************************************
+     *
+     * Returns the number of items that are being returned - this take into account the fact that the client has
+     * requested a subset of data.
+     *
+     * This method provides a meaningful result only after
+     * {@link #toContent(org.fourthline.cling.support.model.BrowseFlag, int, int)} has been called.
+     *
+     * @return  the number of items being returned.
+     *
+     ******************************************************************************************************************/
+    @Nonnegative
+    public default int getNumberReturned()
+      {
+        return 1;
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Returns the number of items that would match the client request.
+     *
+     * This method provides a meaningful result only after
+     * {@link #toContent(org.fourthline.cling.support.model.BrowseFlag, int, int)} has been called.
+     *
+     * @return  the number of items that matched.
+     *
+     ******************************************************************************************************************/
+    @Nonnegative
+    public default int getTotalMatches()
+      {
+        return 1;
+      }
   }

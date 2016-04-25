@@ -33,6 +33,7 @@ import javax.annotation.Nonnull;
 import java.util.Collections;
 import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
+import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.Container;
 import org.fourthline.cling.support.model.container.StorageFolder;
 import it.tidalwave.util.As;
@@ -43,7 +44,7 @@ import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.role.Parentable;
-import org.fourthline.cling.support.model.DIDLObject;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.Displayable.Displayable;
@@ -69,6 +70,12 @@ public class MediaFolderDIDLAdapter implements DIDLAdapter
     @Nonnull
     private final MediaFolder owner;
 
+    @Getter
+    private int numberReturned = 0;
+
+    @Getter
+    private int totalMatches = 0;
+
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
@@ -84,16 +91,19 @@ public class MediaFolderDIDLAdapter implements DIDLAdapter
         switch (browseFlag)
           {
             case METADATA:
+                totalMatches = numberReturned = 1;
                 content.addObject(toObject());
                 break;
 
             case DIRECT_CHILDREN:
                 final Finder<Entity> finder = owner.findChildren();
+                totalMatches = finder.count();
                 finder.from(from)
                       .max(maxResults)
                       .results()
                       .stream()
                       .forEach(child -> content.addObject(child.as(DIDLAdapter).toObject()));
+                numberReturned = (int)content.getCount();
                 break;
 
             default:
