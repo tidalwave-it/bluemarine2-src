@@ -52,15 +52,16 @@ import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordFinder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import static java.text.Normalizer.Form.NFD;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
  * An implementation of {@link AudioFile} that is mapped to a {@link Repository}.
- * 
+ *
  * @stereotype  Datum
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -70,22 +71,22 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
   {
     @Getter @Nonnull
     private final Path path;
-    
+
     @Getter @Nonnull
     private final Path relativePath;
-    
+
     @Getter @CheckForNull
     private final Entity parent;
-    
+
     @CheckForNull
     private Metadata metadata;
-    
+
     @Nonnull
     private final Id trackId;
-    
+
     @Nonnull
     private final Duration duration;
-    
+
     public RepositoryAudioFile (final @Nonnull Repository repository,
                                 final @Nonnull Id id,
                                 final @Nonnull Id trackId,
@@ -103,32 +104,32 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
         this.path = Paths.get(Normalizer.normalize(path.toString(), NFD));
         this.relativePath = Paths.get(Normalizer.normalize(path.toString(), NFD)); // basePath.relativize(path);
       }
-    
+
     @Override @Nonnull
-    public String toString() 
+    public String toString()
       {
         return String.format("RepositoryAudioFileEntity(%s, %s)", relativePath, id);
       }
 
     @Override @Nonnull
-    public synchronized Metadata getMetadata() 
+    public synchronized Metadata getMetadata()
       {
         if (metadata == null)
           {
             metadata = new AudioMetadata(path);
           }
-        
+
         return metadata;
       }
 
     @Override @Nonnull
-    public Optional<String> getLabel() 
+    public Optional<String> getLabel()
       {
         return Optional.of(rdfsLabel);
       }
 
     @Override @Nonnull
-    public Optional<Duration> getDuration() 
+    public Optional<Duration> getDuration()
       {
         return getMetadata().get(DURATION);
 //        return Optional.of(duration);
@@ -141,30 +142,46 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
       }
 
     @Override @Nonnull
-    public Finder8<? extends Entity> findMakers() 
+    public Finder8<? extends Entity> findMakers()
       {
         return new RepositoryMusicArtistFinder(repository).makerOf(trackId);
       }
- 
+
     @Override
     public Optional<Record> getRecord()
       {
         return new RepositoryRecordFinder(repository).recordOf(id).optionalFirstResult();
       }
-    
-    @Override @Nonnull
-    public Finder8<? extends Entity> findComposers() 
+
+    @RequiredArgsConstructor
+    public static class RepositoryAudioFileFinder extends Finder8Support<Entity, Finder8<Entity>>
       {
-        // FIXME: query the repository
-        return new Finder8Support<Entity, Finder8<Entity>>()
+        private static final long serialVersionUID = -4130836861989484793L;
+
+        @Nonnull
+        private final RepositoryAudioFile file;
+
+        /** Clone constructor. */
+        public RepositoryAudioFileFinder (final @Nonnull RepositoryAudioFileFinder other,
+                                          final @Nonnull Object override)
           {
-            @Override
-            protected List<? extends Entity> computeNeededResults() 
-              {
-                return getMetadata().get(Metadata.COMPOSER)
-                                    .map(artistName -> Arrays.asList(new NamedEntity(artistName)))
-                                    .orElse(Collections.emptyList());
-              }
-          };
+            super(other, override);
+            this.file = other.file;
+          }
+
+        // FIXME: query the repository
+        @Override @Nonnull
+        protected List<? extends Entity> computeNeededResults()
+          {
+            return file.getMetadata().get(Metadata.COMPOSER)
+                                     .map(artistName -> Arrays.asList(new NamedEntity(artistName)))
+                                     .orElse(Collections.emptyList());
+          }
+      }
+
+    @Override @Nonnull
+    public Finder8<? extends Entity> findComposers()
+      {
+        return new RepositoryAudioFileFinder(this);
       }
   }
