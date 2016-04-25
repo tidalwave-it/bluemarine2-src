@@ -5,7 +5,7 @@
  * blueMarine2 - Semantic Media Center
  * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
- * Copyright (C) 2015 - 2015 Tidalwave s.a.s. (http://tidalwave.it)
+ * Copyright (C) 2015 - 2016 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
  *
  * *********************************************************************************************************************
@@ -29,74 +29,79 @@
 package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.List;
 import java.io.IOException;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import it.tidalwave.util.Finder;
-import it.tidalwave.util.spi.SimpleFinder8Support;
-import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.MediaFolder;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
+import it.tidalwave.util.Finder8Support;
+import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
- * A {@link Finder} for retrieving children of a {@link MediaFolder}.
- * 
+ * An {@link EntityFinder} for retrieving children of a {@link MediaFolder}.
+ *
  * @stereotype  Finder
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j 
-public class MediaFolderFinder extends SimpleFinder8Support<Entity>
+@RequiredArgsConstructor @Slf4j
+public class MediaFolderFinder extends Finder8Support<Entity, EntityFinder> implements EntityFinder
   {
     @Nonnull
     private final MediaFolder mediaFolder;
-    
+
     @Nonnull
     private final Path basePath;
-    
+
     // FIXME: implement a better filter looking at the file name suffix
     private final Predicate<? super Path> audioFileFilter = (path) -> !path.toFile().getName().equals(".DS_Store");
 
-    public MediaFolderFinder (final @Nonnull MediaFolderFinder other, final @Nonnull Object override) 
+    public MediaFolderFinder (final @Nonnull MediaFolderFinder other, final @Nonnull Object override)
       {
         super(other, override);
         final MediaFolderFinder source = getSource(MediaFolderFinder.class, other, override);
         this.mediaFolder = source.mediaFolder;
         this.basePath = source.basePath;
       }
-    
+
     @Override
-    public int count() 
+    public int count()
       {
         final AtomicInteger c = new AtomicInteger(0);
-        
+
         try (final DirectoryStream<Path> dStream = Files.newDirectoryStream(mediaFolder.getPath()))
           {
             toStream(dStream).filter(audioFileFilter).forEach(path -> c.incrementAndGet());
-          } 
+          }
         catch (IOException e)
           {
             log.error("", e);
             throw new RuntimeException(e);
           }
-        
+
         return c.intValue();
       }
-    
+
     @Override @Nonnull
-    protected List<? extends Entity> computeResults() 
+    public EntityFinder withPath (final @Nonnull Path path)
+      {
+        throw new UnsupportedOperationException("Not supported yet."); // TODO
+      }
+
+    @Override @Nonnull
+    protected List<? extends Entity> computeResults()
       {
         try (final DirectoryStream<Path> dStream = Files.newDirectoryStream(mediaFolder.getPath()))
           {
@@ -105,14 +110,14 @@ public class MediaFolderFinder extends SimpleFinder8Support<Entity>
                                                 ? new FileSystemMediaFolder(child, mediaFolder, basePath)
                                                 : new FileSystemAudioFile(child, mediaFolder, basePath))
                                     .collect(Collectors.toList());
-          } 
+          }
         catch (IOException e)
           {
             log.error("", e);
             throw new RuntimeException(e);
           }
       }
-    
+
     @Nonnull
     private static Stream<Path> toStream (final @Nonnull DirectoryStream<Path> dStream)
       {
