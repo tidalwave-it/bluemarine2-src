@@ -140,6 +140,11 @@
             <artifactId>it-tidalwave-bluemarine2-services-stoppingdown</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-services-vimeo</artifactId>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
 </project>

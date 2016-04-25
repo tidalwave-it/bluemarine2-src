@@ -156,6 +156,11 @@ Still at the early stage of development, it can be used with some hack to reprod
                 <artifactId>it-tidalwave-bluemarine2-services-stoppingdown</artifactId>
                 <version>1.0-ALPHA-8-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-services-vimeo</artifactId>
+                <version>1.0-ALPHA-8-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
