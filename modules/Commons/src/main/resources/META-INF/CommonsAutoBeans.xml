@@ -8,7 +8,7 @@
   %%
   Copyright (C) 2015 - 2016 Tidalwave s.a.s. (http://tidalwave.it)
   %%
-  
+
   *********************************************************************************************************************
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
@@ -59,7 +59,7 @@
     <context:spring-configured />
 
     <aop:aspectj-autoproxy/>
-    
+
     <!-- DCI role injector -->
     <bean id="roleManager"
           class="it.tidalwave.role.spring.spi.AnnotationSpringRoleManager" />
@@ -67,26 +67,28 @@
     <bean id="contextManager"
          class="it.tidalwave.role.spi.DefaultContextManager" />
 
-    <!-- MessageBus stuff -->
-    <bean id="applicationMessageBusTaskExecutor"
+    <!-- This is the master pool of tasks for a number of services. It is required to have it named 'taskExector' so
+         it is disambiguated from other task executors that might be present in some libraries. -->
+    <bean id="taskExecutor"
           class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor"
           autowire-candidate="false">
         <!-- FIXME use properties -->
         <property name="waitForTasksToCompleteOnShutdown" value="false"/>
-        <property name="threadNamePrefix" value="messageBus-" />
+        <property name="threadNamePrefix" value="task-" />
         <property name="corePoolSize" value="20" />
-        <property name="maxPoolSize" value="100" /> 
-        <property name="queueCapacity" value="100" /> 
+        <property name="maxPoolSize" value="100" />
+        <property name="queueCapacity" value="100" />
     </bean>
 
+    <!-- MessageBus stuff -->
     <bean id="applicationMessageBus"
           class="it.tidalwave.messagebus.spi.SimpleMessageBus">
-        <constructor-arg ref="applicationMessageBusTaskExecutor" />
+        <constructor-arg ref="taskExecutor" />
         <constructor-arg>
             <bean class="it.tidalwave.messagebus.spi.RoundRobinAsyncMessageDelivery" >
                 <property name="workers" value="20" />
             </bean>
         </constructor-arg>
     </bean>
-    
+
 </beans>

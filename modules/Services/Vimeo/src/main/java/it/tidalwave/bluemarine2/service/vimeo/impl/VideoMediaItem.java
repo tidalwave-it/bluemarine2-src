@@ -29,41 +29,62 @@
 package it.tidalwave.bluemarine2.service.vimeo.impl;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.Collection;
 import java.nio.file.Path;
-import java.nio.file.Paths;
+import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
-import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.model.impl.EntityWithRoles;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 /***********************************************************************************************************************
+ *
+ * At the moment there's no support for images in the Model.
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class VimeoMediaServerService implements MediaServerService
+@RequiredArgsConstructor @ToString
+public class VideoMediaItem extends EntityWithRoles implements MediaItem
   {
-    private static final Path PATH_ROOT = Paths.get("vimeo");
+    @Getter @Nonnull
+    private final MediaFolder parent;
+
+    @Getter @Nonnull
+    private final String id;
+
+    @Getter @Nonnull
+    private final String title;
+
+    @Getter @Nonnull
+    private final String mimeType;
+
+    @Getter @Nonnull
+    private final String url;
 
     @Override @Nonnull
-    public MediaFolder createRootFolder (final @Nonnull MediaFolder parent)
+    public Path getPath()
       {
-        return new VirtualMediaFolder(parent, PATH_ROOT, "Vimeo", this::childrenFactory);
+        return parent.getPath().resolve(id);
       }
 
-    @Nonnull
-    private Collection<Entity> childrenFactory (final @Nonnull MediaFolder parent)
+    @Override @Nonnull
+    public Path getRelativePath()
       {
-        return Arrays.asList(
-            new VideoMediaItem(parent, "id1", "mp4", "video/mp4", "http://stoppingdown.net/media/movies/20071209-0076/800/movie.mp4"),
-            new VideoMediaItem(parent, "id2", "mkv", "video/mkv", "http://trailers.divx.com/divx_prod/profiles/WiegelesHeliSki_DivXPlus_19Mbps.mkv"));
+        throw new UnsupportedOperationException("Not supported yet.");
+      }
 
+    @Override @Nonnull
+    public Metadata getMetadata()
+      {
+        throw new UnsupportedOperationException("Not supported yet.");
+      }
 
-
-//        return Arrays.asList(new VirtualMediaFolder(parent, PATH_DIARY,  "Diary",  diaryProvider::findPhotos),
-//                             new VirtualMediaFolder(parent, PATH_THEMES, "Themes", themesProvider::findPhotos));
+    @Override @Nonnull
+    public AudioFile getAudioFile()
+      {
+        throw new UnsupportedOperationException("Not supported yet.");
       }
   }
