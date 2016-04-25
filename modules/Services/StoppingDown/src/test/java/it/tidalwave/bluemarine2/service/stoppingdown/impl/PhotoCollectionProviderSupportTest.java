@@ -47,7 +47,7 @@ public class PhotoCollectionProviderSupportTest extends PhotoCollectionProviderT
         // given
         final PhotoCollectionProviderSupport underTest = new PhotoCollectionProviderSupport(URL_MOCK_RESOURCE);
         // when
-        final Collection<Entity> photoItems = underTest.findPhotos(mediaFolder, "file:src/test/resources/images.xml");
+        final Collection<Entity> photoItems = underTest.findPhotos(mediaFolder, URL_MOCK_RESOURCE + "/themes/castles/images.xml");
         // then
         dumpAndAssertResults("photoItems.txt", photoItems);
       }
