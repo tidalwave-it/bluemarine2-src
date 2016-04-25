@@ -36,7 +36,9 @@ import org.fourthline.cling.support.model.DIDLObject;
 
 /***********************************************************************************************************************
  *
- * @stereotype  Role
+ * An adapter which converts an object into DIDL stuff.
+ *
+ * @stereotype  Role, Adapter
  *
  * @author  Fabrizio Giudici
  * @version $Id$
@@ -48,7 +50,12 @@ public interface DIDLAdapter
 
     /*******************************************************************************************************************
      *
+     * Converts the owner object to a {@link DIDLContent}.
      *
+     * @param   browseFlag  whether metadata for a single object or enumeration of children should be returned
+     * @param   from        in case of multiple results, the first item to return
+     * @param   maxResults  in case of multiple results, how many items to return
+     * @return              the {@code DIDLContent}
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -58,7 +65,9 @@ public interface DIDLAdapter
 
     /*******************************************************************************************************************
      *
+     * Converts the owner object to a {@link DIDLObject}.
      *
+     * @return              the {@code DIDLObject}
      *
      ******************************************************************************************************************/
     @Nonnull

@@ -53,7 +53,12 @@ import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter.DIDLAda
 
 /***********************************************************************************************************************
  *
+ * This class implements a minimal "ContentDirectory" compliant to the UPnP specifications. It acts as an adapter with
+ * respect to a {@link ContentDirectory}, which provides contents.
+ *
  * @see http://upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf
+ *
+ * @stereotype Adapter
  *
  * @author  Fabrizio Giudici
  * @version $Id$
@@ -131,7 +136,16 @@ public class ContentDirectoryClingAdapter
 
     /*******************************************************************************************************************
      *
+     * Returns information about an object.
      *
+     * @see http://upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf
+     *
+     * @param   objectId        the id of the object to browse
+     * @param   browseFlag      whether metadata or children content are requested
+     * @param   filter          a filter for returned data
+     * @param   startingIndex   the first index of the items to return
+     * @param   requestedCount  the maximum number of items to return
+     * @param   sortCriteria    the sort criteria
      *
      ******************************************************************************************************************/
     @UpnpAction(name = "Browse",
@@ -142,12 +156,12 @@ public class ContentDirectoryClingAdapter
                     @UpnpOutputArgument(name="TotalMatches", getterName = "getTotalMatches"),
                     @UpnpOutputArgument(name="UpdateID", getterName = "getUpdateID")
                   })
-    public BrowseResult browse (@UpnpInputArgument(name = "ObjectID") String objectId,
-                                @UpnpInputArgument(name = "BrowseFlag") String browseFlag,
-                                @UpnpInputArgument(name = "Filter") String filter,
-                                @UpnpInputArgument(name = "StartingIndex") int startingIndex,
-                                @UpnpInputArgument(name = "RequestedCount") int requestedCount,
-                                @UpnpInputArgument(name = "SortCriteria") String sortCriteria)
+    public BrowseResult browse (final @UpnpInputArgument(name = "ObjectID") String objectId,
+                                final @UpnpInputArgument(name = "BrowseFlag") String browseFlag,
+                                final @UpnpInputArgument(name = "Filter") String filter,
+                                final @UpnpInputArgument(name = "StartingIndex") int startingIndex,
+                                final @UpnpInputArgument(name = "RequestedCount") int requestedCount,
+                                final @UpnpInputArgument(name = "SortCriteria") String sortCriteria)
       {
         try
           {
@@ -181,7 +195,11 @@ public class ContentDirectoryClingAdapter
 
     /*******************************************************************************************************************
      *
+     * Returns the search capabilities
      *
+     * @see http://upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf
+     *
+     * @return      the search capabilities
      *
      ******************************************************************************************************************/
     @UpnpAction(name = "GetSearchCapabilities",
@@ -194,7 +212,11 @@ public class ContentDirectoryClingAdapter
 
     /*******************************************************************************************************************
      *
+     * Returns the sort capabilities
      *
+     * @see http://upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf
+     *
+     * @return      the sort capabilities
      *
      ******************************************************************************************************************/
     @UpnpAction(name = "GetSortCapabilities",
@@ -207,7 +229,11 @@ public class ContentDirectoryClingAdapter
 
     /*******************************************************************************************************************
      *
+     * Returns the System UpdateID
      *
+     * @see http://upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf
+     *
+     * @return      the System UpdateID
      *
      ******************************************************************************************************************/
     @UpnpAction(name = "GetSystemUpdateID",

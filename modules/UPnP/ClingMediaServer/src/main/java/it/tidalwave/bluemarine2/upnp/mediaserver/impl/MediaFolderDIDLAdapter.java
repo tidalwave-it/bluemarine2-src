@@ -53,7 +53,11 @@ import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
 
 /***********************************************************************************************************************
  *
+ * An implementation of {@link DIDLAdapter} for {@link MediaFolder}.
+ *
  * @see http://upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf
+ *
+ * @stereotype  Role, Adapter
  *
  * @author  Fabrizio Giudici
  * @version $Id$
