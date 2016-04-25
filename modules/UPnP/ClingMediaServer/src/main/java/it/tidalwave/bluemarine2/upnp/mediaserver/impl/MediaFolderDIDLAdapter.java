@@ -41,14 +41,14 @@ import it.tidalwave.util.Finder;
 import it.tidalwave.util.Id;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.role.Parentable;
-import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
+import org.fourthline.cling.support.model.DIDLObject;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
-import org.fourthline.cling.support.model.DIDLObject;
 
 /***********************************************************************************************************************
  *
@@ -59,15 +59,15 @@ import org.fourthline.cling.support.model.DIDLObject;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor @Slf4j
-@DciRole(datumType = VirtualMediaFolder.class)
-public class VirtualMediaFolderDIDLAdapter implements DIDLAdapter
+@DciRole(datumType = MediaFolder.class)
+public class MediaFolderDIDLAdapter implements DIDLAdapter
   {
     private static final String ID_ROOT = "0";
 
     private static final String ID_NONE = "-1";
 
     @Nonnull
-    private final VirtualMediaFolder owner;
+    private final MediaFolder owner;
 
     /*******************************************************************************************************************
      *

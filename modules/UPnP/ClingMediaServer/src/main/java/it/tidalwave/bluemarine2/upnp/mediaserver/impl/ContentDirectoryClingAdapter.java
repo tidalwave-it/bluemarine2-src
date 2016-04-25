@@ -164,8 +164,9 @@ public class ContentDirectoryClingAdapter
                                                               // FIXME: workaround for the LG tv set
                                                               maxCount((requestedCount == 1) ? 0 : requestedCount));
             final DIDLParser parser = new DIDLParser();
-            final int n = (int)content.getCount();
-            final BrowseResult result = new BrowseResult(parser.generate(content), n, n, 777);
+            final int numberReturned = (int)content.getCount();
+            final int totalMatches = numberReturned;
+            final BrowseResult result = new BrowseResult(parser.generate(content), numberReturned, totalMatches, 777);
 
             if (log.isDebugEnabled()) // result.toString() is expensive
               {
