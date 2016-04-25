@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.upnp.mediaserver.mock.impl;
+package it.tidalwave.bluemarine2.upnp.mediaserver.mock;
 
 import java.beans.PropertyChangeSupport;
 import lombok.extern.slf4j.Slf4j;

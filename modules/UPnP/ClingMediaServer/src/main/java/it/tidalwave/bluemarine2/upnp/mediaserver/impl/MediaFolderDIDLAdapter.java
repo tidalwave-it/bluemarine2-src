@@ -36,10 +36,8 @@ import org.fourthline.cling.support.model.DIDLContent;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.Container;
 import org.fourthline.cling.support.model.container.StorageFolder;
-import it.tidalwave.util.As;
 import it.tidalwave.util.AsException;
 import it.tidalwave.util.Finder;
-import it.tidalwave.util.Id;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
@@ -48,8 +46,8 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
+import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UPnPUtilities.*;
 
 /***********************************************************************************************************************
  *
@@ -67,10 +65,6 @@ import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
 @DciRole(datumType = MediaFolder.class)
 public class MediaFolderDIDLAdapter implements DIDLAdapter
   {
-    private static final String ID_ROOT = "0";
-
-    private static final String ID_NONE = "-1";
-
     @Nonnull
     private final MediaFolder owner;
 
@@ -128,7 +122,7 @@ public class MediaFolderDIDLAdapter implements DIDLAdapter
         final Container container = new Container();
         container.setClazz(StorageFolder.CLASS);
         container.setRestricted(false);
-        container.setId(didlId(owner.as(Identifiable).getId()));
+        container.setId(pathToDidlId(owner.getPath()));
         container.setTitle(owner.as(Displayable).getDisplayName());
         container.setCreator("blueMarine II"); // FIXME
         container.setChildCount(owner.findChildren().count());
@@ -136,10 +130,8 @@ public class MediaFolderDIDLAdapter implements DIDLAdapter
 
         try
           {
-            final Parentable<As> parentable = owner.as(Parentable);
-            container.setParentID(parentable.hasParent()
-                    ? didlId(parentable.getParent().as(Identifiable).getId())
-                    : ID_NONE);
+            final Parentable<MediaFolder> parentable = owner.as(Parentable);
+            container.setParentID(parentable.hasParent() ? pathToDidlId(parentable.getParent().getPath()) : ID_NONE);
           }
         catch (AsException e)
           {
@@ -150,11 +142,5 @@ public class MediaFolderDIDLAdapter implements DIDLAdapter
 //                container.getSearchClasses().add("object.item.imageItem.photo");
 
         return container;
-      }
-
-    @Nonnull
-    private static String didlId (final @Nonnull Id id)
-      {
-        return id.stringValue().replaceAll("^/$", ID_ROOT);
       }
   }

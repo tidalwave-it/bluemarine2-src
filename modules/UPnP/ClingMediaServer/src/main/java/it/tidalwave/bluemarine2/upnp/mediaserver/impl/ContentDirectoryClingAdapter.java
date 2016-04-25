@@ -28,11 +28,9 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
-import javax.annotation.Nonnegative;
 import javax.annotation.concurrent.Immutable;
 import javax.inject.Inject;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import org.fourthline.cling.binding.annotations.UpnpAction;
 import org.fourthline.cling.binding.annotations.UpnpInputArgument;
 import org.fourthline.cling.binding.annotations.UpnpOutputArgument;
@@ -50,6 +48,7 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.util.PrettyPrint.*;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter.DIDLAdapter;
+import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UPnPUtilities.*;
 
 /***********************************************************************************************************************
  *
@@ -72,9 +71,12 @@ import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter.DIDLAda
 @Slf4j
 public class ContentDirectoryClingAdapter
   {
-    @Inject
-    private ContentDirectory contentDirectory;
-
+    /*******************************************************************************************************************
+     *
+     * Holder of data returned by
+     * {@link #browse(java.lang.String, java.lang.String, java.lang.String, int, int, java.lang.String)}
+     *
+     ******************************************************************************************************************/
     @Immutable
     @AllArgsConstructor @Getter
     public static class BrowseResult
@@ -91,6 +93,9 @@ public class ContentDirectoryClingAdapter
                     numberReturned, totalMatches, updateID, xmlPrettyPrinted(result));
           }
       }
+
+    @Inject
+    private ContentDirectory contentDirectory;
 
     @UpnpStateVariable(name = "ObjectID", defaultValue = "", sendEvents = false, datatype = "string")
     private String objectId;
@@ -109,7 +114,6 @@ public class ContentDirectoryClingAdapter
 
     @UpnpStateVariable(name = "SortCriteria", defaultValue = "", sendEvents = false, datatype = "string")
     private String sortCriteria;
-
 
 
 
@@ -151,24 +155,24 @@ public class ContentDirectoryClingAdapter
     @UpnpAction(name = "Browse",
                 out =
                   {
-                    @UpnpOutputArgument(name="Result", getterName = "getResult"),
-                    @UpnpOutputArgument(name="NumberReturned", getterName = "getNumberReturned"),
-                    @UpnpOutputArgument(name="TotalMatches", getterName = "getTotalMatches"),
-                    @UpnpOutputArgument(name="UpdateID", getterName = "getUpdateID")
+                    @UpnpOutputArgument(name="Result",          getterName = "getResult"),
+                    @UpnpOutputArgument(name="NumberReturned",  getterName = "getNumberReturned"),
+                    @UpnpOutputArgument(name="TotalMatches",    getterName = "getTotalMatches"),
+                    @UpnpOutputArgument(name="UpdateID",        getterName = "getUpdateID")
                   })
-    public BrowseResult browse (final @UpnpInputArgument(name = "ObjectID") String objectId,
-                                final @UpnpInputArgument(name = "BrowseFlag") String browseFlag,
-                                final @UpnpInputArgument(name = "Filter") String filter,
-                                final @UpnpInputArgument(name = "StartingIndex") int startingIndex,
+    public BrowseResult browse (final @UpnpInputArgument(name = "ObjectID")       String objectId,
+                                final @UpnpInputArgument(name = "BrowseFlag")     String browseFlag,
+                                final @UpnpInputArgument(name = "Filter")         String filter,
+                                final @UpnpInputArgument(name = "StartingIndex")  int startingIndex,
                                 final @UpnpInputArgument(name = "RequestedCount") int requestedCount,
-                                final @UpnpInputArgument(name = "SortCriteria") String sortCriteria)
+                                final @UpnpInputArgument(name = "SortCriteria")   String sortCriteria)
       {
         try
           {
             log.info("browse({}, {}, filter: {}, startingIndex: {}, requestedCount: {}, sortCriteria: {})",
                      objectId, browseFlag, filter, startingIndex, requestedCount, sortCriteria);
 
-            final Path path = Paths.get(objectId.equals("0") ? "/" : objectId);
+            final Path path = didlIdToPath(objectId);
             final Entity entity = contentDirectory.findRoot().findChildren().withPath(path).result();
             final DIDLAdapter didlAdapter = entity.as(DIDLAdapter);
             final DIDLContent content = didlAdapter.toContent(BrowseFlag.valueOrNullOf(browseFlag),
@@ -178,11 +182,7 @@ public class ContentDirectoryClingAdapter
             final int totalMatches = didlAdapter.getTotalMatches();
             final DIDLParser parser = new DIDLParser();
             final BrowseResult result = new BrowseResult(parser.generate(content), numberReturned, totalMatches, 1);
-
-            if (log.isDebugEnabled()) // result.toString() is expensive
-              {
-                log.debug(">>>> returning {}", result);
-              }
+            log.debug(">>>> returning {}", result);
 
             return result;
           }
@@ -242,16 +242,5 @@ public class ContentDirectoryClingAdapter
       {
         log.info("getSystemUpdateID");
         return systemUpdateId;
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnegative
-    private static int maxCount (final @Nonnegative int value)
-      {
-        return (value == 0) ? Integer.MAX_VALUE : value;
       }
   }
