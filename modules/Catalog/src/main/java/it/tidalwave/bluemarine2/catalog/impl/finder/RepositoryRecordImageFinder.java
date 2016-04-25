@@ -49,7 +49,7 @@ public class RepositoryRecordImageFinder extends RepositoryFinderSupport<URL, Fi
 //                                         implements TrackFinder
   {
     private final static String QUERY_RECORD_IMAGE = readSparql(RepositoryMusicArtistFinder.class, "RecordImage.sparql");
-    
+
     @Nonnull
     private final Record record;
 
@@ -66,15 +66,28 @@ public class RepositoryRecordImageFinder extends RepositoryFinderSupport<URL, Fi
 
     /*******************************************************************************************************************
      *
+     * Clone constructor.
+     *
+     ******************************************************************************************************************/
+    public RepositoryRecordImageFinder (final @Nonnull RepositoryRecordImageFinder other,
+                                        final @Nonnull Object override)
+      {
+        super(other, override);
+        final RepositoryRecordImageFinder source = getSource(RepositoryRecordImageFinder.class, other, override);
+        this.record = source.record;
+      }
+
+    /*******************************************************************************************************************
+     *
      * {@inheritDoc}
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    protected List<? extends URL> computeNeededResults() 
+    protected List<? extends URL> computeNeededResults()
       {
         final List<Object> parameters = new ArrayList<>();
         parameters.addAll(asList("record", uriFor(record.getId())));
-        
+
         return query(URL.class, QUERY_RECORD_IMAGE, parameters.toArray());
       }
   }
