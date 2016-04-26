@@ -28,27 +28,24 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
-import javax.annotation.concurrent.Immutable;
+import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.nio.file.Path;
-import org.fourthline.cling.binding.annotations.UpnpAction;
-import org.fourthline.cling.binding.annotations.UpnpInputArgument;
-import org.fourthline.cling.binding.annotations.UpnpOutputArgument;
-import org.fourthline.cling.binding.annotations.UpnpService;
-import org.fourthline.cling.binding.annotations.UpnpServiceId;
-import org.fourthline.cling.binding.annotations.UpnpServiceType;
-import org.fourthline.cling.binding.annotations.UpnpStateVariable;
-import org.fourthline.cling.support.contentdirectory.DIDLParser;
 import org.fourthline.cling.support.model.BrowseFlag;
+import org.fourthline.cling.support.model.BrowseResult;
+import org.fourthline.cling.support.model.SortCriterion;
+import org.fourthline.cling.support.contentdirectory.AbstractContentDirectoryService;
+import org.fourthline.cling.support.contentdirectory.ContentDirectoryException;
+import org.fourthline.cling.support.contentdirectory.ContentDirectoryErrorCode;
+import org.fourthline.cling.support.contentdirectory.DIDLParser;
+import it.tidalwave.util.NotFoundException;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.model.Entity;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.util.PrettyPrint.*;
-import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter.DIDLAdapter;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter.ContentHolder;
+import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter.DIDLAdapter;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UPnPUtilities.*;
+import static it.tidalwave.bluemarine2.util.PrettyPrint.xmlPrettyPrinted;
 
 /***********************************************************************************************************************
  *
@@ -63,80 +60,26 @@ import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UPnPUtilities.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@UpnpService
-  (
-    serviceId = @UpnpServiceId("ContentDirectory"),
-    serviceType = @UpnpServiceType(value = "ContentDirectory", version = 1)
-  )
 @Slf4j
-public class ContentDirectoryClingAdapter
+public class ContentDirectoryClingAdapter extends AbstractContentDirectoryService
   {
-    /*******************************************************************************************************************
-     *
-     * Holder of data returned by
-     * {@link #browse(java.lang.String, java.lang.String, java.lang.String, int, int, java.lang.String)}
-     *
-     ******************************************************************************************************************/
-    @Immutable
-    @AllArgsConstructor @Getter
-    public static class BrowseResult
+    public static class MyBrowseResult extends BrowseResult
       {
-        private final String result;
-        private final int numberReturned;
-        private final int totalMatches;
-        private final int updateID;
+        public MyBrowseResult (String result, long count, long totalMatches, long updatedId)
+          {
+            super(result, count, totalMatches, updatedId);
+          }
 
         @Override
         public String toString()
           {
-            return String.format("BrowseResult(numberReturned=%d, totalMatches=%d, updateID=%d, result=%s)",
-                    numberReturned, totalMatches, updateID, xmlPrettyPrinted(result));
+            return String.format("MyBrowseResult(%s, %s, %s, %s)",
+                                 xmlPrettyPrinted(result), count, totalMatches, containerUpdateID);
           }
       }
 
     @Inject
     private ContentDirectory contentDirectory;
-
-    @UpnpStateVariable(name = "ObjectID", defaultValue = "", sendEvents = false, datatype = "string")
-    private String objectId;
-
-    @UpnpStateVariable(name = "BrowseFlag", defaultValue = "", sendEvents = false, datatype = "string")
-    private String browseFlag;
-
-    @UpnpStateVariable(name = "Filter", defaultValue = "", sendEvents = false, datatype = "string")
-    private String filter;
-
-    @UpnpStateVariable(name = "StartingIndex", defaultValue = "0", sendEvents = false, datatype = "i4")
-    private int startingIndex;
-
-    @UpnpStateVariable(name = "RequestedCount", defaultValue = "0", sendEvents = false, datatype = "i4")
-    private int requestedCount;
-
-    @UpnpStateVariable(name = "SortCriteria", defaultValue = "", sendEvents = false, datatype = "string")
-    private String sortCriteria;
-
-
-
-    @UpnpStateVariable(name = "Result", defaultValue = "", sendEvents = false)
-    private String result;
-
-    @UpnpStateVariable(name = "NumberReturned", defaultValue = "0", sendEvents = false)
-    private int numberReturned;
-
-    @UpnpStateVariable(name = "TotalMatches", defaultValue = "0", sendEvents = false)
-    private int totalMatches;
-
-    @UpnpStateVariable(name = "UpdateID", defaultValue = "0", sendEvents = false)
-    private int updateID;
-
-    @UpnpStateVariable(name = "SearchCaps", defaultValue = "", sendEvents = false)
-    private String searchCapabilities = "";
-
-    @UpnpStateVariable(name = "SortCaps", defaultValue = "", sendEvents = false)
-    private String sortCapabilities = "";
-
-    @UpnpStateVariable(name = "Id", defaultValue = "", sendEvents = false)
-    private String systemUpdateId = "";
 
     /*******************************************************************************************************************
      *
@@ -147,100 +90,48 @@ public class ContentDirectoryClingAdapter
      * @param   objectId        the id of the object to browse
      * @param   browseFlag      whether metadata or children content are requested
      * @param   filter          a filter for returned data
-     * @param   startingIndex   the first index of the items to return
-     * @param   requestedCount  the maximum number of items to return
-     * @param   sortCriteria    the sort criteria
+     * @param   firstResult     the first index of the items to return
+     * @param   maxResults      the maximum number of items to return
+     * @param   orderby         the sort criteria
      *
      ******************************************************************************************************************/
-    @UpnpAction(name = "Browse",
-                out =
-                  {
-                    @UpnpOutputArgument(name="Result",          getterName = "getResult"),
-                    @UpnpOutputArgument(name="NumberReturned",  getterName = "getNumberReturned"),
-                    @UpnpOutputArgument(name="TotalMatches",    getterName = "getTotalMatches"),
-                    @UpnpOutputArgument(name="UpdateID",        getterName = "getUpdateID")
-                  })
-    public BrowseResult browse (final @UpnpInputArgument(name = "ObjectID")       String objectId,
-                                final @UpnpInputArgument(name = "BrowseFlag")     String browseFlag,
-                                final @UpnpInputArgument(name = "Filter")         String filter,
-                                final @UpnpInputArgument(name = "StartingIndex")  int startingIndex,
-                                final @UpnpInputArgument(name = "RequestedCount") int requestedCount,
-                                final @UpnpInputArgument(name = "SortCriteria")   String sortCriteria)
+    @Override
+    public BrowseResult browse (final @Nonnull String objectId,
+                                final @Nonnull BrowseFlag browseFlag,
+                                final String filter,
+                                final long firstResult,
+                                final long maxResults,
+                                final SortCriterion[] orderby)
+      throws ContentDirectoryException
       {
         try
           {
             log.info("browse({}, {}, filter: {}, startingIndex: {}, requestedCount: {}, sortCriteria: {})",
-                     objectId, browseFlag, filter, startingIndex, requestedCount, sortCriteria);
+                     objectId, browseFlag, filter, firstResult, maxResults, orderby);
 
             final Path path = didlIdToPath(objectId);
             final Entity entity = contentDirectory.findRoot().findChildren().withPath(path).result();
-            final ContentHolder holder = entity.as(DIDLAdapter).toContent(BrowseFlag.valueOrNullOf(browseFlag),
-                                                                          startingIndex,
-                                                                          maxCount(requestedCount));
+            final ContentHolder holder = entity.as(DIDLAdapter).toContent(browseFlag,
+                                                                          (int)firstResult,
+                                                                          maxCount(maxResults));
             final DIDLParser parser = new DIDLParser();
-            final BrowseResult result = new BrowseResult(parser.generate(holder.getContent()),
-                                                         holder.getNumberReturned(),
-                                                         holder.getTotalMatches(),
-                                                         1);
+            final BrowseResult result = new MyBrowseResult(parser.generate(holder.getContent()),
+                                                           holder.getNumberReturned(),
+                                                           holder.getTotalMatches(),
+                                                           1); /// FIXME: updateId
             log.debug(">>>> returning {}", result);
 
             return result;
           }
+        catch (NotFoundException e)
+          {
+            log.error("", e);
+            throw new ContentDirectoryException(ContentDirectoryErrorCode.NO_SUCH_OBJECT);
+          }
         catch (Exception e)
           {
             log.error("", e);
-            throw new RuntimeException(e);
+            throw new ContentDirectoryException(ContentDirectoryErrorCode.CANNOT_PROCESS);
           }
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Returns the search capabilities
-     *
-     * @see http://upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf
-     *
-     * @return      the search capabilities
-     *
-     ******************************************************************************************************************/
-    @UpnpAction(name = "GetSearchCapabilities",
-                out = @UpnpOutputArgument(name = "SearchCaps"))
-    public String getSearchCapabilities()
-      {
-        log.info("getSearchCapabilities");
-        return searchCapabilities;
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Returns the sort capabilities
-     *
-     * @see http://upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf
-     *
-     * @return      the sort capabilities
-     *
-     ******************************************************************************************************************/
-    @UpnpAction(name = "GetSortCapabilities",
-                out = @UpnpOutputArgument(name = "SortCaps"))
-    public String getSortCapabilities()
-      {
-        log.info("getSortCapabilities");
-        return sortCapabilities;
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Returns the System UpdateID
-     *
-     * @see http://upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf
-     *
-     * @return      the System UpdateID
-     *
-     ******************************************************************************************************************/
-    @UpnpAction(name = "GetSystemUpdateID",
-                out = @UpnpOutputArgument(name = "Id"))
-    public String getSystemUpdateID()
-      {
-        log.info("getSystemUpdateID");
-        return systemUpdateId;
       }
   }
