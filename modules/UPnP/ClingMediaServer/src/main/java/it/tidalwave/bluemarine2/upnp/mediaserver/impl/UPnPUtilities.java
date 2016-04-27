@@ -87,8 +87,8 @@ public class UPnPUtilities
      *
      ******************************************************************************************************************/
     @Nonnegative
-    public static int maxCount (final @Nonnegative int value)
+    public static int maxCount (final @Nonnegative long value)
       {
-        return (value == 0) ? Integer.MAX_VALUE : value;
+        return (value == 0) ? Integer.MAX_VALUE : (int)value;
       }
   }
