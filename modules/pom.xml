@@ -26,7 +26,7 @@
         <mp3agic.version>0.8.3</mp3agic.version>
         <sesame.version>2.8.0</sesame.version>
         <steelblue.version>1.0-ALPHA-11</steelblue.version>
-        <thesefoolishthings.version>3.0.1</thesefoolishthings.version>
+        <thesefoolishthings.version>3.0.2</thesefoolishthings.version>
         <uuid.version>2.1.5-201007271250</uuid.version>
 
         <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass>
