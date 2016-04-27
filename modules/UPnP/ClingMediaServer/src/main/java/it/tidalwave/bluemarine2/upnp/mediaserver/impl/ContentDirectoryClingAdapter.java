@@ -36,16 +36,15 @@ import org.fourthline.cling.support.model.BrowseResult;
 import org.fourthline.cling.support.model.SortCriterion;
 import org.fourthline.cling.support.contentdirectory.AbstractContentDirectoryService;
 import org.fourthline.cling.support.contentdirectory.ContentDirectoryException;
-import org.fourthline.cling.support.contentdirectory.ContentDirectoryErrorCode;
 import org.fourthline.cling.support.contentdirectory.DIDLParser;
-import it.tidalwave.util.NotFoundException;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter.ContentHolder;
 import lombok.extern.slf4j.Slf4j;
+import static org.fourthline.cling.support.contentdirectory.ContentDirectoryErrorCode.*;
+import static it.tidalwave.bluemarine2.util.PrettyPrint.xmlPrettyPrinted;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter.DIDLAdapter;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UPnPUtilities.*;
-import static it.tidalwave.bluemarine2.util.PrettyPrint.xmlPrettyPrinted;
 
 /***********************************************************************************************************************
  *
@@ -110,7 +109,11 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
                      objectId, browseFlag, filter, firstResult, maxResults, orderby);
 
             final Path path = didlIdToPath(objectId);
-            final Entity entity = contentDirectory.findRoot().findChildren().withPath(path).result();
+            final Entity entity = contentDirectory.findRoot()
+                                                  .findChildren()
+                                                  .withPath(path)
+                                                  .optionalResult()
+                                                  .orElseThrow(() -> new ContentDirectoryException(NO_SUCH_OBJECT));
             final ContentHolder holder = entity.as(DIDLAdapter).toContent(browseFlag,
                                                                           (int)firstResult,
                                                                           maxCount(maxResults));
@@ -123,15 +126,10 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
 
             return result;
           }
-        catch (NotFoundException e)
-          {
-            log.error("", e);
-            throw new ContentDirectoryException(ContentDirectoryErrorCode.NO_SUCH_OBJECT);
-          }
         catch (Exception e)
           {
             log.error("", e);
-            throw new ContentDirectoryException(ContentDirectoryErrorCode.CANNOT_PROCESS);
+            throw new ContentDirectoryException(CANNOT_PROCESS);
           }
       }
   }
