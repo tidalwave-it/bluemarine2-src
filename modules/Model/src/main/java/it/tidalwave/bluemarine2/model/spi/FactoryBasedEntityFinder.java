@@ -44,7 +44,9 @@ import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
@@ -57,7 +59,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
+@RequiredArgsConstructor(access = PRIVATE) @Slf4j
 public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinder> implements EntityFinder
   {
     private static final long serialVersionUID = 4429676480224742813L;
@@ -79,9 +81,7 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
     public FactoryBasedEntityFinder (final @Nonnull MediaFolder mediaFolder,
                                      final @Nonnull Function<MediaFolder, Collection<Entity>> childrenFactory)
       {
-        this.mediaFolder = mediaFolder;
-        this.childrenFactory = childrenFactory;
-        this.path = Optional.empty();
+        this(mediaFolder, childrenFactory, Optional.empty());
       }
 
     /*******************************************************************************************************************
@@ -96,20 +96,6 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
         this.mediaFolder = source.mediaFolder;
         this.childrenFactory = source.childrenFactory;
         this.path = source.path;
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Override constructor.
-     *
-     ******************************************************************************************************************/
-    private FactoryBasedEntityFinder (final @Nonnull MediaFolder mediaFolder,
-                                      final @Nonnull Function<MediaFolder, Collection<Entity>> childrenFactory,
-                                      final @Nonnull Optional<Path> path)
-      {
-        this.mediaFolder = mediaFolder;
-        this.childrenFactory = childrenFactory;
-        this.path = path;
       }
 
     /*******************************************************************************************************************
