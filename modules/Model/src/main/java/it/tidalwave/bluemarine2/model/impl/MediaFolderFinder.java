@@ -109,7 +109,6 @@ public class MediaFolderFinder extends Finder8Support<EntityWithPath, EntityFind
                                     .map(child -> child.toFile().isDirectory()
                                                 ? new FileSystemMediaFolder(child, mediaFolder, basePath)
                                                 : new FileSystemAudioFile(child, mediaFolder, basePath))
-                                    .map(e -> (EntityWithPath)e)
                                     .collect(Collectors.toList());
           }
         catch (IOException e)

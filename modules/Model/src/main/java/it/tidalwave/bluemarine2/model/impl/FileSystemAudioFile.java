@@ -60,7 +60,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  *
  **********************************************************************************************************************/
 @Immutable
-public class FileSystemAudioFile implements AudioFile
+public class FileSystemAudioFile implements AudioFile, EntityWithPath
   {
     @Getter @Nonnull
     private final Path path;
