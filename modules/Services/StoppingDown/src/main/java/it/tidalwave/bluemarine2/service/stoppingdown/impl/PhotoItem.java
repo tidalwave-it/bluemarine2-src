@@ -48,7 +48,7 @@ import lombok.ToString;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @ToString
+@RequiredArgsConstructor @ToString(doNotUseGetters = true)
 public class PhotoItem extends EntityWithRoles implements MediaItem, EntityWithPath
   {
     @Nonnull
