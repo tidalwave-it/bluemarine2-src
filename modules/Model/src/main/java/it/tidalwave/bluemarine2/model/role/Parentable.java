@@ -33,9 +33,9 @@ import javax.annotation.CheckForNull;
 /***********************************************************************************************************************
  *
  * The role of an object that has, or can have, a parent.
- * 
+ *
  * @stereotype  Role
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -43,10 +43,10 @@ import javax.annotation.CheckForNull;
 public interface Parentable<T>
   {
     public final static Class<Parentable> Parentable = Parentable.class;
-    
-    @CheckForNull // FIXME: use NotFoundException or Optional<>
+
+    @CheckForNull // FIXME: use Optional<>
     public T getParent();
-    
+
     public default boolean hasParent()
       {
         return getParent() != null;
