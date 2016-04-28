@@ -110,7 +110,7 @@ public class FileSystemAudioFile implements AudioFile
     @Override @Nonnull
     public Finder8<? extends Entity> findComposers()
       {
-        return new Finder8Support<Entity, Finder8<Entity>>()
+        return new Finder8Support<Entity, Finder8<Entity>>() // FIXME: must be upgraded to 3.0
           {
             @Override
             protected List<? extends Entity> computeNeededResults()
@@ -125,7 +125,7 @@ public class FileSystemAudioFile implements AudioFile
     @Override @Nonnull
     public Finder8<Entity> findMakers()
       {
-        return new Finder8Support<Entity, Finder8<Entity>>()
+        return new Finder8Support<Entity, Finder8<Entity>>() // FIXME: must be upgraded to 3.0
           {
             @Override
             protected List<? extends Entity> computeNeededResults()
