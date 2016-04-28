@@ -42,9 +42,9 @@ import java.nio.file.Path;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Parentable<T>
+public interface Child<T>
   {
-    public final static Class<Parentable> Parentable = Parentable.class;
+    public final static Class<Child> Child = Child.class;
 
     @CheckForNull // FIXME: use Optional<>
     public T getParent();

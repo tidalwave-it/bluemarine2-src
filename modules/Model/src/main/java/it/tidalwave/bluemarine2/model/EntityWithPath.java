@@ -30,7 +30,7 @@ package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
-import it.tidalwave.bluemarine2.model.role.Parentable;
+import it.tidalwave.bluemarine2.model.role.Child;
 
 /***********************************************************************************************************************
  *
@@ -42,7 +42,7 @@ import it.tidalwave.bluemarine2.model.role.Parentable;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface EntityWithPath extends Entity, Parentable<EntityWithPath>
+public interface EntityWithPath extends Entity, Child<EntityWithPath>
   {
     @Nonnull
     public default Path getRelativePath()
