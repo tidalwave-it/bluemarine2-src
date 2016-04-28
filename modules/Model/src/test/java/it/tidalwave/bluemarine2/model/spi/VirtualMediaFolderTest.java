@@ -53,6 +53,8 @@ import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
+ * This is an integration test, also exercises {@link FactoryBasedEntityFinder}.
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -110,25 +112,13 @@ public class VirtualMediaFolderTest
               {
                 final Path parentPath = path.getParent();
                 final VirtualMediaFolder parent = (parentPath != null) ? createFolder(parentPath) : null;
-
-                if (parentPath != null)
-                  {
-                    Collection<Entity> c = childrenMap.get(parentPath);
-
-                    if (c == null)
-                      {
-                        c = new ArrayList<>();
-                        childrenMap.put(parentPath, c);
-                      }
-                  }
-
                 final VirtualMediaFolder.EntityCollectionFactory f = p -> childrenMap.get(path);
                 folder = new VirtualMediaFolder(parent, path, path.toString(), f);
                 folderMap.put(path, folder);
 
                 if (parentPath != null)
                   {
-                    childrenMap.get(parentPath).add(folder);
+                    childrenMap.computeIfAbsent(parentPath, key -> new ArrayList<>()).add(folder);
                   }
               }
 
@@ -175,7 +165,7 @@ public class VirtualMediaFolderTest
      *
      ******************************************************************************************************************/
     @DataProvider
-    public static Object[][] pathsProvider()
+    private static Object[][] pathsProvider()
       {
         return new TestCaseBuilder().getPaths().stream()
                                                .map(p -> new Object[] { p })
