@@ -34,6 +34,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,7 +85,7 @@ public class DefaultContentDirectory implements ContentDirectory
       {
         // FIXME: why is this called multiple times?
         log.info(">>>> discovered services: {}", services);
-        root = new VirtualMediaFolder(null, PATH_ROOT, "", this::childrenFactory);
+        root = new VirtualMediaFolder(Optional.empty(), PATH_ROOT, "", this::childrenFactory);
       }
 
     @Nonnull

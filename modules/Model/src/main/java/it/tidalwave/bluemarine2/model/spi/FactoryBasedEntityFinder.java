@@ -71,7 +71,7 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
     private final Function<MediaFolder, Collection<Entity>> childrenFactory;
 
     @Nonnull
-    private final Optional<Path> path;
+    private final Optional<Path> optionalPath;
 
     /*******************************************************************************************************************
      *
@@ -95,7 +95,7 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
         final FactoryBasedEntityFinder source = getSource(FactoryBasedEntityFinder.class, other, override);
         this.mediaFolder = source.mediaFolder;
         this.childrenFactory = source.childrenFactory;
-        this.path = source.path;
+        this.optionalPath = source.optionalPath;
       }
 
     /*******************************************************************************************************************
@@ -117,8 +117,8 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
     @Override @Nonnull
     protected List<? extends Entity> computeResults()
       {
-        return new CopyOnWriteArrayList<>(path.isPresent() ? filteredByPath(path.get())
-                                                           : childrenFactory.apply(mediaFolder));
+        return new CopyOnWriteArrayList<>(optionalPath.isPresent() ? filteredByPath(optionalPath.get())
+                                                                   : childrenFactory.apply(mediaFolder));
       }
 
     /*******************************************************************************************************************
@@ -139,7 +139,7 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
             final Path relativePath = relative(path);
 
             final List<Entity> filtered = childrenFactory.apply(mediaFolder).stream()
-                    .filter(entity -> sameHead(relative(pathOf(entity)), relativePath))
+                    .filter(entity -> sameHead(relativePath, relative(pathOf(entity))))
                     .collect(Collectors.toList());
 
             if (filtered.isEmpty())

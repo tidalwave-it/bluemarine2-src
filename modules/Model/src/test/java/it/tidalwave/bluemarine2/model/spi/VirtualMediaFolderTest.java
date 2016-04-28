@@ -34,6 +34,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
@@ -105,17 +106,13 @@ public class VirtualMediaFolderTest
           {
             return folderMap.computeIfAbsent(path, k1 ->
               {
-                final Path parentPath = path.getParent();
-                final VirtualMediaFolder parent = (parentPath != null) ? findOrCreateFolder(parentPath) : null;
+                paths.add(path);
+                final Optional<Path> parentPath = Optional.ofNullable(path.getParent());
+                final Optional<VirtualMediaFolder> parent = parentPath.map(this::findOrCreateFolder);
                 final VirtualMediaFolder.EntityCollectionFactory f = p -> childrenMap.get(path);
                 final VirtualMediaFolder folder = new VirtualMediaFolder(parent, path, path.toString(), f);
                 folderMap.put(path, folder);
-                paths.add(path);
-
-                if (parentPath != null)
-                  {
-                    childrenMap.computeIfAbsent(parentPath, k2 -> new ArrayList<>()).add(folder);
-                  }
+                parentPath.ifPresent(pp -> childrenMap.computeIfAbsent(pp, k2 -> new ArrayList<>()).add(folder));
 
                 return folder;
               });
@@ -140,7 +137,9 @@ public class VirtualMediaFolderTest
     @Test
     public void must_correctly_find_all_children()
       {
+        // when
         final List<? extends Entity> children = underTest.findChildren().results();
+        // then
         assertThat(children.size(), is(2));
         assertThat(children.get(0).as(Displayable).getDisplayName(), is("/music"));
         assertThat(children.get(1).as(Displayable).getDisplayName(), is("/photos"));
@@ -152,7 +151,10 @@ public class VirtualMediaFolderTest
     @Test(dataProvider = "pathsProvider")
     public void must_correctly_find_children_by_path (final @Nonnull Path path)
       {
+        // when
         final List<? extends Entity> children = underTest.findChildren().withPath(path).results();
+        // then
+        log.debug("findChildren().withPath({}).results() = {}", path, children);
         assertThat(children.size(), is(1));
         assertThat(children.get(0).as(Displayable).getDisplayName(), is(path.toString()));
       }
