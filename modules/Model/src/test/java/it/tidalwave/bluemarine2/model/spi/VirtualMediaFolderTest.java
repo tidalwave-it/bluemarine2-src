@@ -95,34 +95,30 @@ public class VirtualMediaFolderTest
           }
 
         @Nonnull
-        private VirtualMediaFolder createFolder (final @Nonnull String pathAsString)
+        private void createFolder (final @Nonnull String pathAsString)
           {
-            return createFolder(Paths.get(pathAsString));
+            findOrCreateFolder(Paths.get(pathAsString));
           }
 
         @Nonnull
-        private VirtualMediaFolder createFolder (final @Nonnull Path path)
+        private VirtualMediaFolder findOrCreateFolder (final @Nonnull Path path)
           {
-//            log.info("createFolder({})", path);
-            paths.add(path);
-
-            VirtualMediaFolder folder = folderMap.get(path);
-
-            if (folder == null)
+            return folderMap.computeIfAbsent(path, k1 ->
               {
                 final Path parentPath = path.getParent();
-                final VirtualMediaFolder parent = (parentPath != null) ? createFolder(parentPath) : null;
+                final VirtualMediaFolder parent = (parentPath != null) ? findOrCreateFolder(parentPath) : null;
                 final VirtualMediaFolder.EntityCollectionFactory f = p -> childrenMap.get(path);
-                folder = new VirtualMediaFolder(parent, path, path.toString(), f);
+                final VirtualMediaFolder folder = new VirtualMediaFolder(parent, path, path.toString(), f);
                 folderMap.put(path, folder);
+                paths.add(path);
 
                 if (parentPath != null)
                   {
-                    childrenMap.computeIfAbsent(parentPath, key -> new ArrayList<>()).add(folder);
+                    childrenMap.computeIfAbsent(parentPath, k2 -> new ArrayList<>()).add(folder);
                   }
-              }
 
-            return folder;
+                return folder;
+              });
           }
       }
 
