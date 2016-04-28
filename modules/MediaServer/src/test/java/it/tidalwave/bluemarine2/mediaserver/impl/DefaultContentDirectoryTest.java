@@ -66,7 +66,7 @@ public class DefaultContentDirectoryTest
         final List<? extends Entity> children = root.findChildren().results();
         assertThat(children.size(), is(4));
         assertThat(children.get(0).as(Displayable).getDisplayName(), is("Music"));
-        assertThat(children.get(1).as(Displayable).getDisplayName(), is("Photo"));
+        assertThat(children.get(1).as(Displayable).getDisplayName(), is("Photos"));
         assertThat(children.get(2).as(Displayable).getDisplayName(), is("Video"));
         assertThat(children.get(3).as(Displayable).getDisplayName(), is("Services"));
       }
