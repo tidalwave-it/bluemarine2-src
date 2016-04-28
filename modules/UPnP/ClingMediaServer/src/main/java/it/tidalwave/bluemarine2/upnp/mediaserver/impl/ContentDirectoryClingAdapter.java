@@ -105,10 +105,10 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
                                                                           maxCount(maxResults));
             final DIDLParser parser = new DIDLParser();
             final BrowseResult result = new BrowseResult(parser.generate(holder.getContent()),
-                                                         holder.getNumberReturned(),
-                                                         holder.getTotalMatches(),
-                                                         1); /// FIXME: updateId
-            log(">>>> returning {}", result);
+                                                           holder.getNumberReturned(),
+                                                           holder.getTotalMatches(),
+                                                           1); /// FIXME: updateId
+            log(">>>> returning", result);
 
             return result;
           }
