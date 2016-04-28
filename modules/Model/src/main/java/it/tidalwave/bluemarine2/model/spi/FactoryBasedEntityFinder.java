@@ -170,7 +170,7 @@ public class FactoryBasedEntityFinder extends Finder8Support<EntityWithPath, Ent
             return null;
           }
 
-        return mediaFolder.isRoot() ? path :
+        return !mediaFolder.hasParent() ? path :
                 path.startsWith(mediaFolder.getPath()) ? path.subpath(mediaFolder.getPath().getNameCount(), path.getNameCount())
                                                        : null;
       }

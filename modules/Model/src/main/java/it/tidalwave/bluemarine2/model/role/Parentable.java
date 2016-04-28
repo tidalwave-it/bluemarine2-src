@@ -63,9 +63,4 @@ public interface Parentable<T>
       {
         return getParent() != null;
       }
-
-    public default boolean isRoot()
-      {
-        return getParent() == null;
-      }
   }

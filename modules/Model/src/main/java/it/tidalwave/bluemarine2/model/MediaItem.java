@@ -34,10 +34,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Map;
 import java.util.Set;
-import java.nio.file.Path;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
-import it.tidalwave.bluemarine2.model.role.Parentable;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 
 /***********************************************************************************************************************
@@ -50,7 +48,7 @@ import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaItem extends Entity, Parentable<EntityWithPath>, AudioFileSupplier
+public interface MediaItem extends EntityWithPath, AudioFileSupplier
   {
     /*******************************************************************************************************************
      *
@@ -117,16 +115,6 @@ public interface MediaItem extends Entity, Parentable<EntityWithPath>, AudioFile
         @Nonnull
         public Set<Map.Entry<Key<?>, ?>> getEntries();
     }
-
-    /*******************************************************************************************************************
-     *
-     * Returns the {@link Path} associated with this object.
-     *
-     * @return  the path
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Path getPath();
 
     /*******************************************************************************************************************
      *
