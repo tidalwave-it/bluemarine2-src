@@ -28,15 +28,15 @@
  */
 package it.tidalwave.bluemarine2.model.impl;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Function;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 import it.tidalwave.util.Finder8Support;
@@ -45,6 +45,7 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.*;
 
 /***********************************************************************************************************************
  *
@@ -59,6 +60,8 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor @Slf4j
 public class MediaFolderFinder extends Finder8Support<EntityWithPath, EntityFinder> implements EntityFinder
   {
+    private static final long serialVersionUID = 7656309392185783930L;
+
     @Nonnull
     private final MediaFolder mediaFolder;
 
@@ -66,7 +69,7 @@ public class MediaFolderFinder extends Finder8Support<EntityWithPath, EntityFind
     private final Path basePath;
 
     // FIXME: implement a better filter looking at the file name suffix
-    private final Predicate<? super Path> audioFileFilter = (path) -> !path.toFile().getName().equals(".DS_Store");
+    private final Predicate<? super Path> fileFilter = path -> !path.toFile().getName().equals(".DS_Store");
 
     public MediaFolderFinder (final @Nonnull MediaFolderFinder other, final @Nonnull Object override)
       {
@@ -76,22 +79,10 @@ public class MediaFolderFinder extends Finder8Support<EntityWithPath, EntityFind
         this.basePath = source.basePath;
       }
 
-    @Override
+    @Override @Nonnegative
     public int count()
       {
-        final AtomicInteger c = new AtomicInteger(0);
-
-        try (final DirectoryStream<Path> dStream = Files.newDirectoryStream(mediaFolder.getPath()))
-          {
-            toStream(dStream).filter(audioFileFilter).forEach(path -> c.incrementAndGet());
-          }
-        catch (IOException e)
-          {
-            log.error("", e);
-            throw new RuntimeException(e);
-          }
-
-        return c.intValue();
+        return evaluateDirectoryStream(stream -> stream.filter(fileFilter).collect(counting())).intValue();
       }
 
     @Override @Nonnull
@@ -103,24 +94,24 @@ public class MediaFolderFinder extends Finder8Support<EntityWithPath, EntityFind
     @Override @Nonnull
     protected List<? extends EntityWithPath> computeResults()
       {
-        try (final DirectoryStream<Path> dStream = Files.newDirectoryStream(mediaFolder.getPath()))
+        return evaluateDirectoryStream(stream -> stream
+                                                .filter(fileFilter)
+                                                .map(child -> Files.isDirectory(child)
+                                                            ? new FileSystemMediaFolder(child, mediaFolder, basePath)
+                                                            : new FileSystemAudioFile(child, mediaFolder, basePath))
+                                                .collect(toList()));
+      }
+
+    private <T> T evaluateDirectoryStream (final @Nonnull Function<Stream<Path>, T> function)
+      {
+        try (final DirectoryStream<Path> stream = Files.newDirectoryStream(mediaFolder.getPath()))
           {
-            return toStream(dStream).filter(audioFileFilter)
-                                    .map(child -> child.toFile().isDirectory()
-                                                ? new FileSystemMediaFolder(child, mediaFolder, basePath)
-                                                : new FileSystemAudioFile(child, mediaFolder, basePath))
-                                    .collect(Collectors.toList());
+            return function.apply(StreamSupport.stream(stream.spliterator(), false));
           }
         catch (IOException e)
           {
             log.error("", e);
             throw new RuntimeException(e);
           }
-      }
-
-    @Nonnull
-    private static Stream<Path> toStream (final @Nonnull DirectoryStream<Path> dStream)
-      {
-        return StreamSupport.stream(dStream.spliterator(), false);
       }
   }
