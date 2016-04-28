@@ -68,7 +68,7 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
     private final MediaFolder mediaFolder;
 
     @Nonnull
-    private final Function<MediaFolder, Collection<Entity>> childrenFactory;
+    private final Function<MediaFolder, Collection<? extends Entity>> childrenFactory;
 
     @Nonnull
     private final Optional<Path> optionalPath;
@@ -79,7 +79,7 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
      *
      ******************************************************************************************************************/
     public FactoryBasedEntityFinder (final @Nonnull MediaFolder mediaFolder,
-                                     final @Nonnull Function<MediaFolder, Collection<Entity>> childrenFactory)
+                                     final @Nonnull Function<MediaFolder, Collection<? extends Entity>> childrenFactory)
       {
         this(mediaFolder, childrenFactory, Optional.empty());
       }
@@ -117,8 +117,8 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
     @Override @Nonnull
     protected List<? extends Entity> computeResults()
       {
-        return new CopyOnWriteArrayList<>(optionalPath.isPresent() ? filteredByPath(optionalPath.get())
-                                                                   : childrenFactory.apply(mediaFolder));
+        return new CopyOnWriteArrayList<>(optionalPath.map(this::filteredByPath)
+                                                      .orElse(childrenFactory.apply(mediaFolder)));
       }
 
     /*******************************************************************************************************************
@@ -127,7 +127,7 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
      *
      ******************************************************************************************************************/
     @Nonnull
-    private List<? extends Entity> filteredByPath (final @Nonnull Path path)
+    private Collection<? extends Entity> filteredByPath (final @Nonnull Path path)
       {
         if (mediaFolder.getPath().equals(path))
           {

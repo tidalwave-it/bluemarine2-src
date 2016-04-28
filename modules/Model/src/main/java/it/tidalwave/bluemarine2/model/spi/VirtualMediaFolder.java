@@ -52,7 +52,7 @@ import lombok.Getter;
 public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
   {
     // These two interfaces are needed to avoid clashes with constructor overloading
-    public static interface EntityCollectionFactory extends Function<MediaFolder, Collection<Entity>>
+    public static interface EntityCollectionFactory extends Function<MediaFolder, Collection<? extends Entity>>
       {
       }
 
