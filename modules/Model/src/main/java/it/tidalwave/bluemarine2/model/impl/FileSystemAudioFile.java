@@ -48,6 +48,8 @@ import static java.util.Arrays.*;
 import static java.util.Collections.*;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import it.tidalwave.util.Key;
+import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
@@ -62,6 +64,33 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 @Immutable
 public class FileSystemAudioFile implements AudioFile, EntityWithPath
   {
+    @RequiredArgsConstructor
+    static class ArtistFinder extends Finder8Support<Entity, Finder8<Entity>>
+      {
+        private static final long serialVersionUID = 7969726066626602758L;
+
+        @Nonnull
+        private final Metadata metadata;
+
+        @Nonnull
+        private final Key<String> metadataKey;
+
+        public ArtistFinder (final @Nonnull ArtistFinder other, final @Nonnull Object override)
+          {
+            super(other, override);
+            final ArtistFinder source = getSource(ArtistFinder.class, other, override);
+            this.metadata = source.metadata;
+            this.metadataKey = source.metadataKey;
+          }
+
+        @Override
+        protected List<? extends Entity> computeNeededResults()
+          {
+            return metadata.get(metadataKey).map(artistName -> asList(new NamedEntity(artistName)))
+                                            .orElse(emptyList());
+          }
+      }
+
     @Getter @Nonnull
     private final Path path;
 
@@ -116,31 +145,13 @@ public class FileSystemAudioFile implements AudioFile, EntityWithPath
     @Override @Nonnull
     public Finder8<? extends Entity> findComposers()
       {
-        return new Finder8Support<Entity, Finder8<Entity>>() // FIXME: must be upgraded to 3.0
-          {
-            @Override
-            protected List<? extends Entity> computeNeededResults()
-              {
-                return getMetadata().get(Metadata.COMPOSER)
-                                    .map(artistName -> asList(new NamedEntity(artistName)))
-                                    .orElse(emptyList());
-              }
-          };
+        return new ArtistFinder(getMetadata(), Metadata.COMPOSER);
       }
 
     @Override @Nonnull
     public Finder8<Entity> findMakers()
       {
-        return new Finder8Support<Entity, Finder8<Entity>>() // FIXME: must be upgraded to 3.0
-          {
-            @Override
-            protected List<? extends Entity> computeNeededResults()
-              {
-                return getMetadata().get(Metadata.ARTIST)
-                                    .map(artistName -> asList(new NamedEntity(artistName)))
-                                    .orElse(emptyList());
-              }
-          };
+        return new ArtistFinder(getMetadata(), Metadata.ARTIST);
       }
 
     @Override @Nonnull
