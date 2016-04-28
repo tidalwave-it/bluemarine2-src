@@ -35,7 +35,7 @@ import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import it.tidalwave.bluemarine2.model.impl.EntityWithRoles;
+import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;

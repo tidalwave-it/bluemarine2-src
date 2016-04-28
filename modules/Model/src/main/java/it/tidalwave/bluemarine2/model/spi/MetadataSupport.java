@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.impl;
+package it.tidalwave.bluemarine2.model.spi;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -54,9 +54,9 @@ public class MetadataSupport implements MediaItem.Metadata
   {
     @Getter @Nonnull
     protected final Path path;
-    
+
     protected final Map<Key<?>, Object> properties = new HashMap<>();
-    
+
     /*******************************************************************************************************************
      *
      * {@inheritDocs}
@@ -101,22 +101,22 @@ public class MetadataSupport implements MediaItem.Metadata
       {
         return Collections.unmodifiableSet(properties.keySet());
       }
-    
+
     /*******************************************************************************************************************
      *
      * {@inheritDocs}
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public Set<Map.Entry<Key<?>, ?>> getEntries() 
+    public Set<Map.Entry<Key<?>, ?>> getEntries()
       {
         return Collections.unmodifiableSet(properties.entrySet());
       }
-    
+
     /*******************************************************************************************************************
      *
-     * 
-     * 
+     *
+     *
      ******************************************************************************************************************/
     protected <V> void put (final @Nonnull Key<V> key, final @Nullable V value)
       {
@@ -125,5 +125,4 @@ public class MetadataSupport implements MediaItem.Metadata
             properties.put(key, value);
           }
       }
-
   }

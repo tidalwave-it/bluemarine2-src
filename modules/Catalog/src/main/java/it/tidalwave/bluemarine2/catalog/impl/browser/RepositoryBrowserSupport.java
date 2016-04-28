@@ -37,7 +37,7 @@ import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.catalog.Catalog;
 import it.tidalwave.bluemarine2.catalog.impl.RepositoryCatalog;
 import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.impl.EntityWithRoles;
+import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 

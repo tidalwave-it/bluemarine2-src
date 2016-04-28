@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.model.impl;
 
+import it.tidalwave.bluemarine2.model.spi.NamedEntity;
 import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.net.URL;

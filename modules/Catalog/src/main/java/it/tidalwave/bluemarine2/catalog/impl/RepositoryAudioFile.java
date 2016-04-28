@@ -48,7 +48,7 @@ import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.impl.AudioMetadata;
-import it.tidalwave.bluemarine2.model.impl.NamedEntity;
+import it.tidalwave.bluemarine2.model.spi.NamedEntity;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.catalog.impl.finder.RepositoryRecordFinder;
 import lombok.EqualsAndHashCode;

@@ -39,7 +39,6 @@ import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import it.tidalwave.bluemarine2.model.impl.EntityWithRoles;
 import lombok.Getter;
 
 /***********************************************************************************************************************

@@ -37,19 +37,20 @@ import java.util.Optional;
 import java.nio.file.Path;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Finder8Support;
+import it.tidalwave.util.Key;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.spi.NamedEntity;
 import lombok.Delegate;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import static java.util.Arrays.*;
 import static java.util.Collections.*;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import it.tidalwave.util.Key;
-import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
