@@ -146,7 +146,7 @@ public class EmbeddedMetadataManager
       {
         TRACK_MAPPER. put(Metadata.TRACK,       v -> new Pair(MO.P_TRACK_NUMBER,    literalFor((int)v)));
         TRACK_MAPPER. put(Metadata.DISK_NUMBER, v -> new Pair(BM.DISK_NUMBER,       literalFor((int)v)));
-        TRACK_MAPPER. put(Metadata.DISK_COUNT,  v -> new Pair(BM.DISK_COUNT,       literalFor((int)v)));
+        TRACK_MAPPER. put(Metadata.DISK_COUNT,  v -> new Pair(BM.DISK_COUNT,        literalFor((int)v)));
 
         SIGNAL_MAPPER.put(Metadata.SAMPLE_RATE, v -> new Pair(MO.P_SAMPLE_RATE,     literalFor((int)v)));
         SIGNAL_MAPPER.put(Metadata.BIT_RATE,    v -> new Pair(MO.P_BITS_PER_SAMPLE, literalFor((int)v)));
