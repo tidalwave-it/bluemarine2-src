@@ -45,7 +45,7 @@ public interface EntityWithPath extends Entity
   {
     /*******************************************************************************************************************
      *
-     * Returns the path.
+     * Returns the {@link Path} associated with this object.
      *
      * @return  the path
      *
