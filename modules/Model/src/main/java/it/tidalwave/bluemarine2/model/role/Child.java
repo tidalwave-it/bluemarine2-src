@@ -28,8 +28,8 @@
  */
 package it.tidalwave.bluemarine2.model.role;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
+import java.util.Optional;
 import java.nio.file.Path;
 
 /***********************************************************************************************************************
@@ -46,8 +46,8 @@ public interface Child<T>
   {
     public final static Class<Child> Child = Child.class;
 
-    @CheckForNull // FIXME: use Optional<>
-    public T getParent();
+    @Nonnull
+    public Optional<T> getParent();
 
     /*******************************************************************************************************************
      *
@@ -58,9 +58,4 @@ public interface Child<T>
      ******************************************************************************************************************/
     @Nonnull
     public Path getPath();
-
-    public default boolean hasParent()
-      {
-        return getParent() != null;
-      }
   }

@@ -76,8 +76,8 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     @Getter @Nonnull
     private final Path relativePath;
 
-    @Getter @CheckForNull
-    private final EntityWithPath parent;
+    @Getter @Nonnull
+    private final Optional<EntityWithPath> parent;
 
     @CheckForNull
     private Metadata metadata;
@@ -99,7 +99,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
       {
         super(repository, id, rdfsLabel);
         this.trackId = trackId;
-        this.parent = parent;
+        this.parent = Optional.of(parent);
         this.duration = duration;
         // See BMT-36
         this.path = Paths.get(Normalizer.normalize(path.toString(), NFD));

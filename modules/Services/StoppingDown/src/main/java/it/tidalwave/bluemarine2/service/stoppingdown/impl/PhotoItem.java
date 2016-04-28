@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
+import java.util.Optional;
 import java.nio.file.Path;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.EntityWithPath;
@@ -50,7 +51,7 @@ import lombok.ToString;
 @RequiredArgsConstructor @ToString
 public class PhotoItem extends EntityWithRoles implements MediaItem, EntityWithPath
   {
-    @Getter @Nonnull
+    @Nonnull
     private final MediaFolder parent;
 
     @Getter @Nonnull
@@ -75,5 +76,11 @@ public class PhotoItem extends EntityWithRoles implements MediaItem, EntityWithP
     public AudioFile getAudioFile()
       {
         throw new UnsupportedOperationException("Not supported yet.");
+      }
+
+    @Override @Nonnull
+    public Optional<EntityWithPath> getParent()
+      {
+        return Optional.of(parent);
       }
   }

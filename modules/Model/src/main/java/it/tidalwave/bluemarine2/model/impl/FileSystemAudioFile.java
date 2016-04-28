@@ -68,7 +68,7 @@ public class FileSystemAudioFile implements AudioFile, EntityWithPath
     @Getter @Nonnull
     private final Path relativePath;
 
-    @Getter @CheckForNull
+    @Nonnull
     private final EntityWithPath parent;
 
     @CheckForNull
@@ -82,6 +82,12 @@ public class FileSystemAudioFile implements AudioFile, EntityWithPath
         this.path = path;
         this.parent = parent;
         this.relativePath = basePath.relativize(path);
+      }
+
+    @Override @Nonnull
+    public Optional<EntityWithPath> getParent()
+      {
+        return Optional.of(parent);
       }
 
     @Override @Nonnull
@@ -147,7 +153,7 @@ public class FileSystemAudioFile implements AudioFile, EntityWithPath
     public Optional<Record> getRecord()
       {
             // FIXME: check - parent should be always present - correct?
-        return Optional.of(new NamedRecord(getParent().as(Displayable).getDisplayName()));
+        return getParent().map(parent -> new NamedRecord(parent.as(Displayable).getDisplayName()));
       }
 
     @Override @Nonnull

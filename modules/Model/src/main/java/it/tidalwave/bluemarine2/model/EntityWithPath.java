@@ -47,7 +47,6 @@ public interface EntityWithPath extends Entity, Child<EntityWithPath>
     @Nonnull
     public default Path getRelativePath()
       {
-        final EntityWithPath parent = getParent();
-        return (parent != null) ? parent.getPath().relativize(getPath()) : getPath();
+        return getParent().map(parent -> parent.getPath().relativize(getPath())).orElse(getPath());
       }
   }

@@ -28,11 +28,13 @@
  */
 package it.tidalwave.bluemarine2.model.impl;
 
+import java.util.Optional;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.nio.file.Path;
 import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import lombok.AllArgsConstructor;
@@ -55,7 +57,7 @@ public class FileSystemMediaFolder implements MediaFolder
     @Getter @Nonnull
     private final Path path;
 
-    @Getter @CheckForNull
+    @CheckForNull
     private MediaFolder parent;
 
     @Getter @Nonnull
@@ -63,6 +65,12 @@ public class FileSystemMediaFolder implements MediaFolder
 
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
+
+    @Override @Nonnull
+    public Optional<EntityWithPath> getParent()
+      {
+        return Optional.ofNullable(parent);
+      }
 
     @Override @Nonnull
     public EntityFinder findChildren()

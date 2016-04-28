@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.model.spi;
 
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
+import java.util.Optional;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.EntityWithPath;
 import lombok.Getter;
@@ -58,8 +59,8 @@ public class EntityWithPathDecorator implements EntityWithPath
     private final Path path;
 
     @Override
-    public EntityWithPath getParent()
+    public Optional<EntityWithPath> getParent()
       {
-        return null; // FIXME
+        return Optional.empty(); // FIXME
       }
   }

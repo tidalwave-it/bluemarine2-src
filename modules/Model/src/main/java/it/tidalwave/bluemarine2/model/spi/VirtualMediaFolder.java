@@ -28,7 +28,6 @@
  */
 package it.tidalwave.bluemarine2.model.spi;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import java.util.Collection;
 import java.util.Optional;
@@ -115,10 +114,10 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
                 mediaFolder -> new FactoryBasedEntityFinder(mediaFolder, childrenSupplier.get()));
       }
 
-    @Override @CheckForNull
-    public MediaFolder getParent()
+    @Override @Nonnull
+    public Optional<EntityWithPath> getParent()
       {
-        return optionalParent.orElse(null);
+        return (Optional<EntityWithPath>)(Object)optionalParent;
       }
 
     @Override @Nonnull

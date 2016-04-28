@@ -41,11 +41,11 @@ import it.tidalwave.util.AsException;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import it.tidalwave.bluemarine2.model.role.Child;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UPnPUtilities.*;
-import it.tidalwave.bluemarine2.model.role.Child;
 import static it.tidalwave.bluemarine2.model.role.Child.Child;
 
 /***********************************************************************************************************************
@@ -125,8 +125,8 @@ public class MediaFolderDIDLAdapter implements DIDLAdapter
 
         try
           {
-            final Child<MediaFolder> parentable = datum.as(Child);
-            container.setParentID(parentable.hasParent() ? pathToDidlId(parentable.getParent().getPath()) : ID_NONE);
+            final Child<MediaFolder> child = datum.as(Child);
+            container.setParentID(child.getParent().map(p -> pathToDidlId(p.getPath())).orElse(ID_NONE));
           }
         catch (AsException e)
           {
