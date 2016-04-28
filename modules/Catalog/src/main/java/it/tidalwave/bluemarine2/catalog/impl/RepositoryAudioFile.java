@@ -154,7 +154,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
         return new RepositoryRecordFinder(repository).recordOf(id).optionalFirstResult();
       }
 
-    @RequiredArgsConstructor
+    @RequiredArgsConstructor // FIXME: refactor with a Factory of children
     public static class RepositoryAudioFileFinder extends Finder8Support<Entity, Finder8<Entity>>
       {
         private static final long serialVersionUID = -4130836861989484793L;
