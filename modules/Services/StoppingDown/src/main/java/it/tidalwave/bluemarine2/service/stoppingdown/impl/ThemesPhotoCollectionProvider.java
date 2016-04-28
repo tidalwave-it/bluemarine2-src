@@ -48,6 +48,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
@@ -151,7 +152,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<Entity> subjectsFactory (final @Nonnull MediaFolder parent)
+    private Collection<EntityWithPath> subjectsFactory (final @Nonnull MediaFolder parent)
       {
         return parseThemes(XPATH_SUBJECTS_THUMBNAIL_EXPR).stream()
                                                          .map(gallery -> gallery.createFolder(parent, this::findPhotos))
@@ -162,7 +163,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<Entity> placesFactory (final @Nonnull MediaFolder parent)
+    private Collection<EntityWithPath> placesFactory (final @Nonnull MediaFolder parent)
       {
         return parseThemes(XPATH_PLACES_THUMBNAIL_EXPR).stream()
                                                        .map(gallery -> gallery.createFolder(parent, this::findPhotos))

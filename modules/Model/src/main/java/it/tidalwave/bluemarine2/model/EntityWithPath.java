@@ -30,17 +30,10 @@ package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
-import it.tidalwave.util.As;
-import it.tidalwave.role.Composite;
-import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.model.role.Parentable;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 
 /***********************************************************************************************************************
  *
- * Represents a folder on a filesystem that contains media items. It is associated with the {@link Composite<As>} role.
- * The filesystem can be a physycal one (on the disk), or a virtual one (e.g. on a database); the folder concept is
- * flexible and represents any composite collection of items.
+ * A specialisation of {@link Entity} that is associated to a {@link Path},
  *
  * @stereotype  Datum
  *
@@ -48,20 +41,15 @@ import it.tidalwave.bluemarine2.model.finder.EntityFinder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaFolder extends EntityWithPath, Parentable<MediaFolder>, SimpleComposite8<EntityWithPath>
+public interface EntityWithPath extends Entity
   {
     /*******************************************************************************************************************
      *
-     * Returns the {@link Path} associated with this object.
+     * Returns the path.
      *
      * @return  the path
      *
      ******************************************************************************************************************/
     @Nonnull
     public Path getPath();
-
-    public boolean isRoot();
-
-    @Override
-    public EntityFinder findChildren();
   }

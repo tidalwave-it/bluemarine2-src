@@ -26,42 +26,34 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.spi;
 
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
-import it.tidalwave.util.As;
-import it.tidalwave.role.Composite;
-import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.model.role.Parentable;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
+import lombok.experimental.Delegate;
 
 /***********************************************************************************************************************
  *
- * Represents a folder on a filesystem that contains media items. It is associated with the {@link Composite<As>} role.
- * The filesystem can be a physycal one (on the disk), or a virtual one (e.g. on a database); the folder concept is
- * flexible and represents any composite collection of items.
+ * A decorator for {@link Entity} which associates a {@link Path}. It can be used to adapt entities that naturally do
+ * not belong to a hierarchy, such as an artist, to contexts where a hierarchy is needed (e.g. for browsing).
  *
- * @stereotype  Datum
+ * @stereotype Datum
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaFolder extends EntityWithPath, Parentable<MediaFolder>, SimpleComposite8<EntityWithPath>
+@RequiredArgsConstructor @ToString
+public class EntityWithPathDecorator implements EntityWithPath
   {
-    /*******************************************************************************************************************
-     *
-     * Returns the {@link Path} associated with this object.
-     *
-     * @return  the path
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Path getPath();
+    @Delegate @Nonnull
+    private final Entity delegate;
 
-    public boolean isRoot();
-
-    @Override
-    public EntityFinder findChildren();
+    @Getter @Nonnull
+    private final Path path;
   }

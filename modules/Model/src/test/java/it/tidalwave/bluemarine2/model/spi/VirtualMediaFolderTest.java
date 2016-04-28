@@ -42,7 +42,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.util.spi.AsDelegateProvider;
 import it.tidalwave.util.spi.EmptyAsDelegateProvider;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -71,7 +71,7 @@ public class VirtualMediaFolderTest
         @Getter
         private final Map<Path, VirtualMediaFolder> folderMap = new HashMap<>();
 
-        private final Map<Path, Collection<Entity>> childrenMap = new HashMap<>();
+        private final Map<Path, Collection<EntityWithPath>> childrenMap = new HashMap<>();
 
         @Getter
         private final Set<Path> paths = new TreeSet<>();
@@ -138,7 +138,7 @@ public class VirtualMediaFolderTest
     public void must_correctly_find_all_children()
       {
         // when
-        final List<? extends Entity> children = underTest.findChildren().results();
+        final List<? extends EntityWithPath> children = underTest.findChildren().results();
         // then
         assertThat(children.size(), is(2));
         assertThat(children.get(0).as(Displayable).getDisplayName(), is("/music"));
@@ -152,7 +152,7 @@ public class VirtualMediaFolderTest
     public void must_correctly_find_children_by_path (final @Nonnull Path path)
       {
         // when
-        final List<? extends Entity> children = underTest.findChildren().withPath(path).results();
+        final List<? extends EntityWithPath> children = underTest.findChildren().withPath(path).results();
         // then
         log.debug("findChildren().withPath({}).results() = {}", path, children);
         assertThat(children.size(), is(1));

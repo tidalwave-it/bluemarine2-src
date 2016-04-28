@@ -45,6 +45,7 @@ import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.impl.AudioMetadata;
 import it.tidalwave.bluemarine2.model.impl.NamedEntity;
@@ -76,7 +77,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     private final Path relativePath;
 
     @Getter @CheckForNull
-    private final Entity parent;
+    private final EntityWithPath parent;
 
     @CheckForNull
     private Metadata metadata;
@@ -91,7 +92,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
                                 final @Nonnull Id id,
                                 final @Nonnull Id trackId,
                                 final @Nonnull Path path,
-                                final @Nonnull Entity parent,
+                                final @Nonnull EntityWithPath parent,
                                 final @Nonnull Path basePath,
                                 final @Nonnull Duration duration,
                                 final String rdfsLabel)

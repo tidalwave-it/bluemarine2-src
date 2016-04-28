@@ -38,10 +38,9 @@ import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.Container;
 import org.fourthline.cling.support.model.container.StorageFolder;
 import it.tidalwave.util.AsException;
-import it.tidalwave.util.Finder;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.role.Parentable;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -90,7 +89,7 @@ public class MediaFolderDIDLAdapter implements DIDLAdapter
                 break;
 
             case DIRECT_CHILDREN:
-                final Finder<Entity> finder = datum.findChildren();
+                final EntityFinder finder = datum.findChildren();
                 totalMatches = finder.count();
                 finder.from(from)
                       .max(maxResults)

@@ -45,6 +45,7 @@ import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
+import it.tidalwave.bluemarine2.model.spi.EntityWithPathDecorator;
 import java.util.Optional;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -52,9 +53,9 @@ import lombok.extern.slf4j.Slf4j;
 /***********************************************************************************************************************
  *
  * An implementation of {@link Track} that is mapped to a {@link Repository}.
- * 
+ *
  * @stereotype  Datum
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -63,29 +64,29 @@ import lombok.extern.slf4j.Slf4j;
 public class RepositoryTrack extends RepositoryEntitySupport implements Track, AudioFileSupplier
   {
     private final Integer trackNumber;
-    
+
     @Nonnull
     private final Duration duration;
-    
+
     @Nonnull
     private final Path audioFilePath;
-    
+
     @Nonnull
     private final Optional<Integer> diskNumber;
-    
+
     @Nonnull
     private final Optional<Integer> diskCount;
-    
+
 //    private final String recordRdfsLabel;
-//    
+//
 //    private final Integer trackCount;
-    
+
     @CheckForNull
     private AudioFile audioFile;
-    
+
     @Inject
     private MediaFileSystem fileSystem;
-    
+
     public RepositoryTrack (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
         super(repository, bindingSet, "track");
@@ -97,33 +98,33 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 //        this.recordRdfsLabel = toString(bindingSet.getBinding("record_label"));
 //        this.trackCount = toInteger(bindingSet.getBinding("track_number")));
       }
-    
+
     @Override @Nonnull
     public Optional<Record> getRecord()
       {
         return new RepositoryRecordFinder(repository).recordOf(id).optionalFirstResult();
       }
-    
+
     @Override @Nonnull
     public synchronized AudioFile getAudioFile()
       {
         if (audioFile == null)
           {
-            audioFile = new RepositoryAudioFile(repository, 
+            audioFile = new RepositoryAudioFile(repository,
                                                 id, // FIXME: this should really be the AudioFileId
                                                 id,
                                                 fileSystem.getRootPath().resolve(audioFilePath),
-                                                this,
+                                                new EntityWithPathDecorator(this, Paths.get("record")),
                                                 audioFilePath,
-                                                duration,   
+                                                duration,
                                                 rdfsLabel);
           }
-        
+
         return audioFile;
       }
 
     @Override @Nonnull
-    public String toString() 
+    public String toString()
       {
         return String.format("RepositoryTrack(%02d/%02d %02d, %s, rdfs:label=%s, %s, %s)",
                              diskNumber.orElse(1), diskCount.orElse(1),

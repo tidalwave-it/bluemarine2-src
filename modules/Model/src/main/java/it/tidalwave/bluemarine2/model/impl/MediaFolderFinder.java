@@ -40,7 +40,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 import it.tidalwave.util.Finder8Support;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import lombok.RequiredArgsConstructor;
@@ -57,7 +57,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor @Slf4j
-public class MediaFolderFinder extends Finder8Support<Entity, EntityFinder> implements EntityFinder
+public class MediaFolderFinder extends Finder8Support<EntityWithPath, EntityFinder> implements EntityFinder
   {
     @Nonnull
     private final MediaFolder mediaFolder;
@@ -101,7 +101,7 @@ public class MediaFolderFinder extends Finder8Support<Entity, EntityFinder> impl
       }
 
     @Override @Nonnull
-    protected List<? extends Entity> computeResults()
+    protected List<? extends EntityWithPath> computeResults()
       {
         try (final DirectoryStream<Path> dStream = Files.newDirectoryStream(mediaFolder.getPath()))
           {
@@ -109,6 +109,7 @@ public class MediaFolderFinder extends Finder8Support<Entity, EntityFinder> impl
                                     .map(child -> child.toFile().isDirectory()
                                                 ? new FileSystemMediaFolder(child, mediaFolder, basePath)
                                                 : new FileSystemAudioFile(child, mediaFolder, basePath))
+                                    .map(e -> (EntityWithPath)e)
                                     .collect(Collectors.toList());
           }
         catch (IOException e)

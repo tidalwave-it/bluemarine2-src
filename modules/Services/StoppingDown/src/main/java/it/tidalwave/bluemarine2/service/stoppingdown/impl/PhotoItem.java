@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
 import it.tidalwave.bluemarine2.model.AudioFile;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.impl.EntityWithRoles;
@@ -47,7 +48,7 @@ import lombok.ToString;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor @ToString
-public class PhotoItem extends EntityWithRoles implements MediaItem
+public class PhotoItem extends EntityWithRoles implements MediaItem, EntityWithPath
   {
     @Getter @Nonnull
     private final MediaFolder parent;

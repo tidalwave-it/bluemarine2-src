@@ -37,7 +37,7 @@ import java.nio.file.Path;
 import it.tidalwave.util.Id;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.role.spi.DefaultDisplayable;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.impl.EntityWithRoles;
@@ -52,7 +52,7 @@ import lombok.Getter;
 public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
   {
     // These two interfaces are needed to avoid clashes with constructor overloading
-    public static interface EntityCollectionFactory extends Function<MediaFolder, Collection<? extends Entity>>
+    public static interface EntityCollectionFactory extends Function<MediaFolder, Collection<? extends EntityWithPath>>
       {
       }
 

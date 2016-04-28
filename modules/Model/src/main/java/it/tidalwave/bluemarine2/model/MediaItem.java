@@ -43,14 +43,14 @@ import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 /***********************************************************************************************************************
  *
  * Represents a media item. It is usually associated with one or more files on a filesystem.
- * 
+ *
  * @stereotype  Datum
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaItem extends Entity, Parentable<Entity>, AudioFileSupplier
+public interface MediaItem extends Entity, Parentable<EntityWithPath>, AudioFileSupplier
   {
     /*******************************************************************************************************************
      *
@@ -72,15 +72,15 @@ public interface MediaItem extends Entity, Parentable<Entity>, AudioFileSupplier
         public static final Key<Integer> DISK_NUMBER = new Key<>("mp3.diskNumber");
         public static final Key<Integer> DISK_COUNT = new Key<>("mp3.diskCount");
         public static final Key<String> COMMENT = new Key<>("mp3.comment");
-        
+
         public static final Key<Id> MBZ_TRACK_ID = new Key<>("mbz.trackId");
         public static final Key<Id> MBZ_WORK_ID = new Key<>("mbz.workId");
         public static final Key<Id> MBZ_DISC_ID = new Key<>("mbz.discId");
         public static final Key<List<Id>> MBZ_ARTIST_ID = new Key<>("mbz.artistId");
-        
+
         /***************************************************************************************************************
          *
-         * 
+         *
          *
          **************************************************************************************************************/
         @Nonnull
@@ -88,7 +88,7 @@ public interface MediaItem extends Entity, Parentable<Entity>, AudioFileSupplier
 
         /***************************************************************************************************************
          *
-         * 
+         *
          *
          **************************************************************************************************************/
         @Nonnull
@@ -96,38 +96,38 @@ public interface MediaItem extends Entity, Parentable<Entity>, AudioFileSupplier
 
         /***************************************************************************************************************
          *
-         * 
+         *
          *
          **************************************************************************************************************/
         public boolean containsKey (@Nonnull Key<?> key);
 
         /***************************************************************************************************************
          *
-         * 
+         *
          *
          **************************************************************************************************************/
         @Nonnull
         public Set<Key<?>> getKeys();
-        
+
         /***************************************************************************************************************
          *
-         * 
+         *
          *
          **************************************************************************************************************/
         @Nonnull
         public Set<Map.Entry<Key<?>, ?>> getEntries();
     }
-    
+
     /*******************************************************************************************************************
      *
      * Returns the {@link Path} associated with this object.
-     * 
+     *
      * @return  the path
      *
      ******************************************************************************************************************/
     @Nonnull
     public Path getPath();
-    
+
     /*******************************************************************************************************************
      *
      * @return  the path
@@ -135,11 +135,11 @@ public interface MediaItem extends Entity, Parentable<Entity>, AudioFileSupplier
      ******************************************************************************************************************/
     @Nonnull
     public Path getRelativePath();
-    
+
     /*******************************************************************************************************************
      *
      * Returns the {@link Metadata} associated with this object.
-     * 
+     *
      * @return  the metadata
      *
      ******************************************************************************************************************/
