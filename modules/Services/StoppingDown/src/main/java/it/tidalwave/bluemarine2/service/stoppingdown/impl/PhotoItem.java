@@ -66,12 +66,6 @@ public class PhotoItem extends EntityWithRoles implements MediaItem, EntityWithP
       }
 
     @Override @Nonnull
-    public Path getRelativePath()
-      {
-        throw new UnsupportedOperationException("Not supported yet.");
-      }
-
-    @Override @Nonnull
     public Metadata getMetadata()
       {
         throw new UnsupportedOperationException("Not supported yet.");

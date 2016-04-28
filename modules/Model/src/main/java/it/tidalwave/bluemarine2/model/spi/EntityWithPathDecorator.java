@@ -56,4 +56,10 @@ public class EntityWithPathDecorator implements EntityWithPath
 
     @Getter @Nonnull
     private final Path path;
+
+    @Override
+    public EntityWithPath getParent()
+      {
+        return null; // FIXME
+      }
   }

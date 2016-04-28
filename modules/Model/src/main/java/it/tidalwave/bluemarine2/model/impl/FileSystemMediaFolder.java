@@ -64,12 +64,6 @@ public class FileSystemMediaFolder implements MediaFolder
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
 
-    @Override
-    public boolean isRoot()
-      {
-        return parent == null;
-      }
-
     @Override @Nonnull
     public EntityFinder findChildren()
       {

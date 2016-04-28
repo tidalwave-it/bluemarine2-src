@@ -115,12 +115,6 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
                 mediaFolder -> new FactoryBasedEntityFinder(mediaFolder, childrenSupplier.get()));
       }
 
-    @Override
-    public boolean isRoot()
-      {
-        return !optionalParent.isPresent();
-      }
-
     @Override @CheckForNull
     public MediaFolder getParent()
       {

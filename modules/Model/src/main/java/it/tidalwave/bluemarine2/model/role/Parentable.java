@@ -29,6 +29,8 @@
 package it.tidalwave.bluemarine2.model.role;
 
 import javax.annotation.CheckForNull;
+import javax.annotation.Nonnull;
+import java.nio.file.Path;
 
 /***********************************************************************************************************************
  *
@@ -47,8 +49,23 @@ public interface Parentable<T>
     @CheckForNull // FIXME: use Optional<>
     public T getParent();
 
+    /*******************************************************************************************************************
+     *
+     * Returns the {@link Path} associated with this object.
+     *
+     * @return  the path
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Path getPath();
+
     public default boolean hasParent()
       {
         return getParent() != null;
+      }
+
+    public default boolean isRoot()
+      {
+        return getParent() == null;
       }
   }

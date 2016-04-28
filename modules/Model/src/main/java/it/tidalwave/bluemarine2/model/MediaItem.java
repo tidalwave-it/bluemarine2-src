@@ -130,14 +130,6 @@ public interface MediaItem extends Entity, Parentable<EntityWithPath>, AudioFile
 
     /*******************************************************************************************************************
      *
-     * @return  the path
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Path getRelativePath();
-
-    /*******************************************************************************************************************
-     *
      * Returns the {@link Metadata} associated with this object.
      *
      * @return  the metadata
