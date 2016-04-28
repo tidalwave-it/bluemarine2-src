@@ -117,8 +117,8 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
     @Override @Nonnull
     protected List<? extends Entity> computeResults()
       {
-        return path.isPresent() ? filteredByPath(path.get())
-                                : new CopyOnWriteArrayList<>(childrenFactory.apply(mediaFolder));
+        return new CopyOnWriteArrayList<>(path.isPresent() ? filteredByPath(path.get())
+                                                           : childrenFactory.apply(mediaFolder));
       }
 
     /*******************************************************************************************************************
@@ -149,15 +149,7 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
             else
               {
                 final Entity e = filtered.get(0);
-
-                if (path.equals(pathOf(e)))
-                  {
-                    return filtered;
-                  }
-                else
-                  {
-                    return ((MediaFolder)e).findChildren().withPath(path).results();
-                  }
+                return path.equals(pathOf(e)) ? filtered : ((MediaFolder)e).findChildren().withPath(path).results();
               }
           }
         catch (IllegalArgumentException e) // path can't be relativised
