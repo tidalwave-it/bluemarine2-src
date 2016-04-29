@@ -70,7 +70,7 @@ public class DefaultContentDirectory implements ContentDirectory
 
 //    @Inject FIXME
     @Autowired(required = false)
-    private List<MediaServerService> services = Collections.emptyList();
+    private final List<MediaServerService> services = Collections.emptyList();
 
     private MediaFolder root;
 
