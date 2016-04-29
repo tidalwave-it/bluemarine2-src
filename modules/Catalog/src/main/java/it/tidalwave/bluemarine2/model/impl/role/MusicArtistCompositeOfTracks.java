@@ -26,30 +26,39 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx.role;
+package it.tidalwave.bluemarine2.model.impl.role;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.Collection;
-import it.tidalwave.role.ui.Styleable;
+import it.tidalwave.role.Composite;
+import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserSupport;
+import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.Track;
+import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserByArtistThenTrack;
+import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
+ *
+ * A role that makes a {@link MusicArtist} act as a {@link Composite} of {@link Track}s. It is only injected in the
+ * {@link RepositoryBrowserByArtistThenTrack} context.
+ *
+ * @stereotype  Role
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = RepositoryBrowserSupport.class) @RequiredArgsConstructor
-public class BrowserStyleable implements Styleable
+@DciRole(datumType = MusicArtist.class, context = RepositoryBrowserByArtistThenTrack.class)
+@RequiredArgsConstructor
+public class MusicArtistCompositeOfTracks implements SimpleComposite8<Track>
   {
-    private final RepositoryBrowserSupport owner;
-    
+    @Nonnull
+    private final MusicArtist artist;
+
     @Override @Nonnull
-    public Collection<String> getStyles() 
+    public TrackFinder findChildren()
       {
-        return Arrays.asList(owner.getClass().getSimpleName());
+        return artist.findTracks();
       }
   }

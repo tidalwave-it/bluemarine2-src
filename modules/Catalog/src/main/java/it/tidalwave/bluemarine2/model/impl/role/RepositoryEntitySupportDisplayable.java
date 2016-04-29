@@ -26,30 +26,33 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx.role;
+package it.tidalwave.bluemarine2.model.impl.role;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.Collection;
-import it.tidalwave.role.ui.Styleable;
+import it.tidalwave.role.Displayable;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserSupport;
+import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryEntitySupport;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
+ *
+ * Provides the {@link Displayable} role to instances of {@link RepositoryEntitySupport} by using their RDFS label.
+ *
+ * @stereotype  Role
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = RepositoryBrowserSupport.class) @RequiredArgsConstructor
-public class BrowserStyleable implements Styleable
+@DciRole(datumType = RepositoryEntitySupport.class) @RequiredArgsConstructor
+public class RepositoryEntitySupportDisplayable implements Displayable
   {
-    private final RepositoryBrowserSupport owner;
-    
+    @Nonnull
+    private final RepositoryEntitySupport owner;
+
     @Override @Nonnull
-    public Collection<String> getStyles() 
+    public String getDisplayName()
       {
-        return Arrays.asList(owner.getClass().getSimpleName());
+        return owner.getRdfsLabel();
       }
   }

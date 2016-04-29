@@ -26,15 +26,13 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx.role;
+package it.tidalwave.bluemarine2.model.vocabulary;
 
-import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.Collection;
-import it.tidalwave.role.ui.Styleable;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserSupport;
-import lombok.RequiredArgsConstructor;
+import org.openrdf.model.URI;
+import org.openrdf.model.ValueFactory;
+import org.openrdf.model.impl.ValueFactoryImpl;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /***********************************************************************************************************************
  *
@@ -42,14 +40,20 @@ import lombok.RequiredArgsConstructor;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = RepositoryBrowserSupport.class) @RequiredArgsConstructor
-public class BrowserStyleable implements Styleable
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class DbTune 
   {
-    private final RepositoryBrowserSupport owner;
+    private final static ValueFactory factory = ValueFactoryImpl.getInstance();
     
-    @Override @Nonnull
-    public Collection<String> getStyles() 
-      {
-        return Arrays.asList(owner.getClass().getSimpleName());
-      }
+    public static final String PREFIX = "http://dbtune.org/musicbrainz/resource/vocab/";
+    
+    public static final String S_ALBUMMETA_COVERART_URL     = PREFIX + "albummeta_coverarturl";
+    public static final String S_ARTIST_TYPE                = PREFIX + "artist_type";
+    public static final String S_SORT_NAME                  = PREFIX + "sortname";
+    
+    public static final URI ARTIST_TYPE                     = factory.createURI(S_ARTIST_TYPE);
+
+    public static final URI SORT_NAME                       = factory.createURI(S_SORT_NAME);
+    
+    public static final URI ALBUMMETA_COVERART_URL          = factory.createURI(S_ALBUMMETA_COVERART_URL);
   }

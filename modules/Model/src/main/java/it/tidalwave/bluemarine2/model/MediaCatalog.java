@@ -26,15 +26,12 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx.role;
+package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.Collection;
-import it.tidalwave.role.ui.Styleable;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserSupport;
-import lombok.RequiredArgsConstructor;
+import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.model.finder.RecordFinder;
+import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 
 /***********************************************************************************************************************
  *
@@ -42,14 +39,16 @@ import lombok.RequiredArgsConstructor;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = RepositoryBrowserSupport.class) @RequiredArgsConstructor
-public class BrowserStyleable implements Styleable
+public interface MediaCatalog 
   {
-    private final RepositoryBrowserSupport owner;
+    public static final Class<MediaCatalog> MediaCatalog = MediaCatalog.class;
     
-    @Override @Nonnull
-    public Collection<String> getStyles() 
-      {
-        return Arrays.asList(owner.getClass().getSimpleName());
-      }
+    @Nonnull
+    public MusicArtistFinder findArtists();
+
+    @Nonnull
+    public RecordFinder findRecords();
+
+    @Nonnull
+    public TrackFinder findTracks();
   }

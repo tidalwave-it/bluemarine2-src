@@ -26,15 +26,13 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx.role;
+package it.tidalwave.bluemarine2.model.vocabulary;
 
-import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.Collection;
-import it.tidalwave.role.ui.Styleable;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserSupport;
-import lombok.RequiredArgsConstructor;
+import org.openrdf.model.URI;
+import org.openrdf.model.ValueFactory;
+import org.openrdf.model.impl.ValueFactoryImpl;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /***********************************************************************************************************************
  *
@@ -42,14 +40,15 @@ import lombok.RequiredArgsConstructor;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = RepositoryBrowserSupport.class) @RequiredArgsConstructor
-public class BrowserStyleable implements Styleable
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class Purl 
   {
-    private final RepositoryBrowserSupport owner;
+    private final static ValueFactory factory = ValueFactoryImpl.getInstance();
     
-    @Override @Nonnull
-    public Collection<String> getStyles() 
-      {
-        return Arrays.asList(owner.getClass().getSimpleName());
-      }
-  }
+    private static final String PREFIX_BIO          = "http://purl.org/vocab/bio/0.1/";
+    private static final String PREFIX_RELATIONSHIP = "http://purl.org/vocab/relationship/";
+    
+    public static final URI EVENT              = factory.createURI(PREFIX_BIO + "event");
+    
+    public static final URI COLLABORATES_WITH  = factory.createURI(PREFIX_RELATIONSHIP + "collaboratesWith");
+}

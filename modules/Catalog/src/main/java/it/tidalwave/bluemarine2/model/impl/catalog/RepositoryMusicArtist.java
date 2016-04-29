@@ -26,30 +26,59 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx.role;
+package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.Collection;
-import it.tidalwave.role.ui.Styleable;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserSupport;
-import lombok.RequiredArgsConstructor;
+import javax.annotation.concurrent.Immutable;
+import org.openrdf.repository.Repository;
+import org.openrdf.query.BindingSet;
+import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.finder.RecordFinder;
+import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
+import lombok.Getter;
 
 /***********************************************************************************************************************
+ *
+ * An implementation of {@link MusicArtist} that is mapped to a {@link Repository}.
+ *
+ * @stereotype  Datum
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = RepositoryBrowserSupport.class) @RequiredArgsConstructor
-public class BrowserStyleable implements Styleable
+@Immutable @Getter
+public class RepositoryMusicArtist extends RepositoryEntitySupport implements MusicArtist
   {
-    private final RepositoryBrowserSupport owner;
-    
-    @Override @Nonnull
-    public Collection<String> getStyles() 
+    @Getter
+    private int type;
+
+    public RepositoryMusicArtist (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
-        return Arrays.asList(owner.getClass().getSimpleName());
+        super(repository, bindingSet, "artist");
+
+        type = bindingSet.hasBinding("artist_type")
+                ? Integer.parseInt(bindingSet.getBinding("artist_type").getValue().stringValue())
+                : 1;
+      }
+
+    @Override @Nonnull
+    public TrackFinder findTracks()
+      {
+        return new RepositoryTrackFinder(repository).madeBy(this);
+      }
+
+    @Override @Nonnull
+    public RecordFinder findRecords()
+      {
+        return new RepositoryRecordFinder(repository).madeBy(this);
+      }
+
+    @Override @Nonnull
+    public String toString()
+      {
+        return String.format("RepositoryMusicArtist(rdfs:label=%s, uri=%s)", rdfsLabel, id);
       }
   }

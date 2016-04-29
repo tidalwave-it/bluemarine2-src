@@ -26,30 +26,33 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx.role;
+package it.tidalwave.bluemarine2.model.impl.role;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.Collection;
-import it.tidalwave.role.ui.Styleable;
+import it.tidalwave.util.Finder8;
+import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserSupport;
+import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.Track;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
+ * @stereotype  Role
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = RepositoryBrowserSupport.class) @RequiredArgsConstructor
-public class BrowserStyleable implements Styleable
+@DciRole(datumType = Record.class) @RequiredArgsConstructor
+public class RecordComposite implements SimpleComposite8<Track>
   {
-    private final RepositoryBrowserSupport owner;
+    @Nonnull
+    private final Record record;
     
     @Override @Nonnull
-    public Collection<String> getStyles() 
+    public Finder8<Track> findChildren() 
       {
-        return Arrays.asList(owner.getClass().getSimpleName());
+        return record.findTracks();
       }
   }

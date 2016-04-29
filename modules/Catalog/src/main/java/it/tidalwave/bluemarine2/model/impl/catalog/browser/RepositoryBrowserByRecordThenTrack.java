@@ -26,15 +26,9 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx.role;
+package it.tidalwave.bluemarine2.model.impl.catalog.browser;
 
-import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.Collection;
-import it.tidalwave.role.ui.Styleable;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserSupport;
-import lombok.RequiredArgsConstructor;
+import org.springframework.core.annotation.Order;
 
 /***********************************************************************************************************************
  *
@@ -42,14 +36,11 @@ import lombok.RequiredArgsConstructor;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = RepositoryBrowserSupport.class) @RequiredArgsConstructor
-public class BrowserStyleable implements Styleable
+@Order(30)
+public class RepositoryBrowserByRecordThenTrack extends RepositoryBrowserSupport 
   {
-    private final RepositoryBrowserSupport owner;
-    
-    @Override @Nonnull
-    public Collection<String> getStyles() 
+    public RepositoryBrowserByRecordThenTrack()
       {
-        return Arrays.asList(owner.getClass().getSimpleName());
+        setFinder(() -> getCatalog().findRecords());
       }
   }

@@ -26,30 +26,20 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx.role;
+package it.tidalwave.bluemarine2.model.impl.catalog.browser;
 
-import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.Collection;
-import it.tidalwave.role.ui.Styleable;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserSupport;
-import lombok.RequiredArgsConstructor;
+import org.springframework.core.annotation.Order;
+import it.tidalwave.dci.annotation.DciContext;
 
 /***********************************************************************************************************************
  *
+ * @stereotype  Context
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = RepositoryBrowserSupport.class) @RequiredArgsConstructor
-public class BrowserStyleable implements Styleable
+@DciContext @Order(20)
+public class RepositoryBrowserByArtistThenTrack extends RepositoryBrowserByArtistSupport
   {
-    private final RepositoryBrowserSupport owner;
-    
-    @Override @Nonnull
-    public Collection<String> getStyles() 
-      {
-        return Arrays.asList(owner.getClass().getSimpleName());
-      }
   }

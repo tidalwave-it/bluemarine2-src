@@ -26,15 +26,20 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx.role;
+package it.tidalwave.bluemarine2.model.impl.catalog.browser;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.Collection;
-import it.tidalwave.role.ui.Styleable;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserSupport;
-import lombok.RequiredArgsConstructor;
+import javax.inject.Inject;
+import java.util.function.Supplier;
+import it.tidalwave.util.Finder8;
+import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.MediaCatalog;
+import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
+import it.tidalwave.bluemarine2.model.role.EntityBrowser;
+import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMediaCatalog;
+import it.tidalwave.bluemarine2.persistence.Persistence;
 
 /***********************************************************************************************************************
  *
@@ -42,14 +47,36 @@ import lombok.RequiredArgsConstructor;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = RepositoryBrowserSupport.class) @RequiredArgsConstructor
-public class BrowserStyleable implements Styleable
+public class RepositoryBrowserSupport extends EntityWithRoles implements EntityBrowser
   {
-    private final RepositoryBrowserSupport owner;
-    
+    @Inject
+    private Persistence persistence;
+
+    @CheckForNull
+    private MediaCatalog catalog;
+
+    @Nonnull
+    protected SimpleComposite8<? extends Entity> compositeForRootEntity;
+
     @Override @Nonnull
-    public Collection<String> getStyles() 
+    public Entity getRoot()
       {
-        return Arrays.asList(owner.getClass().getSimpleName());
+        return new EntityWithRoles(compositeForRootEntity);
+      }
+
+    protected final void setFinder (final @Nonnull Supplier<Finder8<? extends Entity>> finderSupplier)
+      {
+        compositeForRootEntity = () -> finderSupplier.get();
+      }
+
+    @Nonnull
+    protected final synchronized MediaCatalog getCatalog()
+      {
+        if (catalog == null)
+          {
+            catalog = new RepositoryMediaCatalog(persistence.getRepository());
+          }
+
+        return catalog;
       }
   }

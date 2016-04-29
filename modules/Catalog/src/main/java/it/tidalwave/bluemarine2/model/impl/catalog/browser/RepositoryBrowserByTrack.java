@@ -26,15 +26,12 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx.role;
+package it.tidalwave.bluemarine2.model.impl.catalog.browser;
 
-import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.Collection;
-import it.tidalwave.role.ui.Styleable;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserSupport;
-import lombok.RequiredArgsConstructor;
+import org.springframework.core.annotation.Order;
+import it.tidalwave.util.As;
+import it.tidalwave.util.DefaultFilterSortCriterion;
+import it.tidalwave.text.AsDisplayableComparator;
 
 /***********************************************************************************************************************
  *
@@ -42,14 +39,19 @@ import lombok.RequiredArgsConstructor;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = RepositoryBrowserSupport.class) @RequiredArgsConstructor
-public class BrowserStyleable implements Styleable
+@Order(40)
+public class RepositoryBrowserByTrack extends RepositoryBrowserSupport
   {
-    private final RepositoryBrowserSupport owner;
-    
-    @Override @Nonnull
-    public Collection<String> getStyles() 
+    static class ByTrackName extends DefaultFilterSortCriterion<As>
       {
-        return Arrays.asList(owner.getClass().getSimpleName());
+        public ByTrackName()
+          {
+            super(new AsDisplayableComparator(), "---");
+          }
+      }
+
+    public RepositoryBrowserByTrack()
+      {
+        setFinder(() -> getCatalog().findTracks().sort(new ByTrackName()));
       }
   }

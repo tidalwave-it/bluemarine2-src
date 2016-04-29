@@ -26,14 +26,17 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx.role;
+package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.Collection;
-import it.tidalwave.role.ui.Styleable;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserSupport;
+import org.openrdf.repository.Repository;
+import it.tidalwave.bluemarine2.model.MediaCatalog;
+import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
+import it.tidalwave.bluemarine2.model.finder.RecordFinder;
+import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
@@ -42,14 +45,27 @@ import lombok.RequiredArgsConstructor;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = RepositoryBrowserSupport.class) @RequiredArgsConstructor
-public class BrowserStyleable implements Styleable
+@RequiredArgsConstructor
+public class RepositoryMediaCatalog implements MediaCatalog
   {
-    private final RepositoryBrowserSupport owner;
-    
+    @Nonnull
+    private final Repository repository;
+
     @Override @Nonnull
-    public Collection<String> getStyles() 
+    public MusicArtistFinder findArtists()
       {
-        return Arrays.asList(owner.getClass().getSimpleName());
+        return new RepositoryMusicArtistFinder(repository);
+      }
+
+    @Override @Nonnull
+    public RecordFinder findRecords()
+      {
+        return new RepositoryRecordFinder(repository);
+      }
+
+    @Override @Nonnull
+    public TrackFinder findTracks()
+      {
+        return new RepositoryTrackFinder(repository);
       }
   }

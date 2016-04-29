@@ -26,15 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx.role;
-
-import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.Collection;
-import it.tidalwave.role.ui.Styleable;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserSupport;
-import lombok.RequiredArgsConstructor;
+package it.tidalwave.bluemarine2.model.impl.catalog.browser;
 
 /***********************************************************************************************************************
  *
@@ -42,14 +34,10 @@ import lombok.RequiredArgsConstructor;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = RepositoryBrowserSupport.class) @RequiredArgsConstructor
-public class BrowserStyleable implements Styleable
+public abstract class RepositoryBrowserByArtistSupport extends RepositoryBrowserSupport
   {
-    private final RepositoryBrowserSupport owner;
-    
-    @Override @Nonnull
-    public Collection<String> getStyles() 
+    public RepositoryBrowserByArtistSupport()
       {
-        return Arrays.asList(owner.getClass().getSimpleName());
+        setFinder(() -> getCatalog().findArtists().withContext(this));
       }
   }
