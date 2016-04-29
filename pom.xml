@@ -45,6 +45,8 @@ Still at the early stage of development, it can be used with some hack to reprod
 
         <tft.appbundle.name>blueMarine2</tft.appbundle.name>
         <tft.appbundle.signature>TDLW</tft.appbundle.signature>
+
+        <tft.clirr.skip>true</tft.clirr.skip> <!-- Clirr is not compatible with JDK 8 -->
     </properties>
 
     <url>http://blueMarine.tidalwave.it</url>

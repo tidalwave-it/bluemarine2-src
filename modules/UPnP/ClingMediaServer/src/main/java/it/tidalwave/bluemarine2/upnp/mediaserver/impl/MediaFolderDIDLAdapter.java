@@ -37,16 +37,12 @@ import org.fourthline.cling.support.model.DIDLContent;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.Container;
 import org.fourthline.cling.support.model.container.StorageFolder;
-import it.tidalwave.util.AsException;
-import it.tidalwave.util.Finder;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.role.Parentable;
+import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UPnPUtilities.*;
 
 /***********************************************************************************************************************
@@ -90,7 +86,7 @@ public class MediaFolderDIDLAdapter implements DIDLAdapter
                 break;
 
             case DIRECT_CHILDREN:
-                final Finder<Entity> finder = datum.findChildren();
+                final EntityFinder finder = datum.findChildren();
                 totalMatches = finder.count();
                 finder.from(from)
                       .max(maxResults)
@@ -119,24 +115,11 @@ public class MediaFolderDIDLAdapter implements DIDLAdapter
         container.setClazz(StorageFolder.CLASS);
         container.setRestricted(false);
         container.setId(pathToDidlId(datum.getPath()));
+        container.setParentID(datum.getParent().map(parent -> pathToDidlId(parent.getPath())).orElse(ID_NONE));
         container.setTitle(datum.as(Displayable).getDisplayName());
         container.setCreator("blueMarine II"); // FIXME
         container.setChildCount(datum.findChildren().count());
         container.setItems(Collections.emptyList());
-
-        try
-          {
-            final Parentable<MediaFolder> parentable = datum.as(Parentable);
-            container.setParentID(parentable.hasParent() ? pathToDidlId(parentable.getParent().getPath()) : ID_NONE);
-          }
-        catch (AsException e)
-          {
-            container.setParentID(ID_NONE);
-          }
-//                container.getSearchClasses().add(PhotoAlbum.CLASS);
-//                container.getSearchClasses().add(MusicAlbum.CLASS);
-//                container.getSearchClasses().add("object.item.imageItem.photo");
-
         return container;
       }
   }

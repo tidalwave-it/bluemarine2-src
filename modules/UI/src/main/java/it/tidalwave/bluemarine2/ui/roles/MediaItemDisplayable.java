@@ -36,10 +36,11 @@ import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
- * The {@link Displayable} role for {@link MediaItem}. It just uses the file name.
- * 
+ * Provides the {@link Displayable} role for {@link MediaItem}. It tries to use the title in {@link Metadata}, and as
+ * a fall back uses its file name.
+ *
  * @stereotype  Role
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -51,7 +52,7 @@ public class MediaItemDisplayable implements Displayable
     private final MediaItem mediaItem;
 
     @Override @Nonnull
-    public String getDisplayName() 
+    public String getDisplayName()
       {
         return mediaItem.getMetadata().get(MediaItem.Metadata.TITLE)
                                       .orElse(mediaItem.getPath().toFile().getName());

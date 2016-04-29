@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import java.util.stream.Stream;
 import java.nio.file.Path;
 import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.BrowseResult;
@@ -62,21 +63,6 @@ import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UPnPUtilities.*;
 @Slf4j
 public class ContentDirectoryClingAdapter extends AbstractContentDirectoryService
   {
-    public static class MyBrowseResult extends BrowseResult
-      {
-        public MyBrowseResult (String result, long count, long totalMatches, long updatedId)
-          {
-            super(result, count, totalMatches, updatedId);
-          }
-
-        @Override
-        public String toString()
-          {
-            return String.format("MyBrowseResult(%s, %s, %s, %s)",
-                                 xmlPrettyPrinted(result), count, totalMatches, containerUpdateID);
-          }
-      }
-
     @Inject
     private ContentDirectory contentDirectory;
 
@@ -118,11 +104,11 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
                                                                           (int)firstResult,
                                                                           maxCount(maxResults));
             final DIDLParser parser = new DIDLParser();
-            final BrowseResult result = new MyBrowseResult(parser.generate(holder.getContent()),
+            final BrowseResult result = new BrowseResult(parser.generate(holder.getContent()),
                                                            holder.getNumberReturned(),
                                                            holder.getTotalMatches(),
                                                            1); /// FIXME: updateId
-            log.debug(">>>> returning {}", result);
+            log(">>>> returning", result);
 
             return result;
           }
@@ -130,6 +116,23 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
           {
             log.error("", e);
             throw new ContentDirectoryException(CANNOT_PROCESS);
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    private static void log (final @Nonnull String message, final @Nonnull BrowseResult browseResult)
+      {
+        if (log.isDebugEnabled())
+          {
+            log.debug("{} BrowseResult(xml below, {}, {}, {})",
+                    message,
+                    browseResult.getCountLong(),
+                    browseResult.getTotalMatchesLong(),
+                    browseResult.getContainerUpdateIDLong());
+            Stream.of(xmlPrettyPrinted(browseResult.getResult()).split("\n"))
+                                                                .forEach(s -> log.debug("{} {}", message, s));
           }
       }
   }
