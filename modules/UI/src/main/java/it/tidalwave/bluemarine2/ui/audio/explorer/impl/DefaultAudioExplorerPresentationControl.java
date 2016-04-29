@@ -49,8 +49,8 @@ import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;
-import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
+import it.tidalwave.bluemarine2.model.role.Child;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.OnActivate;
@@ -64,16 +64,16 @@ import static java.util.stream.Stream.*;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.*;
-import static it.tidalwave.bluemarine2.model.role.Parentable.Parentable;
+import static it.tidalwave.bluemarine2.model.role.Child.Child;
 import it.tidalwave.util.Finder8;
 import java.util.ArrayList;
 
 /***********************************************************************************************************************
  *
  * The Control of the {@link AudioExplorerPresentation}.
- * 
+ *
  * @stereotype  Control
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -90,39 +90,39 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         @Nonnull
         private final Optional<Object> memento;
       }
-    
+
     @Inject
     private AudioExplorerPresentation presentation;
-    
+
     @Inject
     private MessageBus messageBus;
-    
+
     @Inject
     private List<EntityBrowser> browsers;
-    
+
     private Entity currentFolder;
-    
+
     private final Stack<FolderAndMemento> navigationStack = new Stack<>();
-    
+
     private final AudioExplorerPresentation.Properties properties = new AudioExplorerPresentation.Properties();
-    
-    private final UserAction8 navigateUpAction = new UserActionLambda(() -> navigateUp()); 
-    
+
+    private final UserAction8 navigateUpAction = new UserActionLambda(() -> navigateUp());
+
     private final AtomicReference<Optional<URL>> currentCoverArtUrl = new AtomicReference<>(Optional.empty());
-    
+
     @Getter
     private final List<AudioFileSupplier> mediaItems = new ArrayList<>();
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
-    @PostConstruct 
+    @PostConstruct
     /* VisibleForTesting */ void initialize()
       {
-        presentation.bind(properties, navigateUpAction);  
+        presentation.bind(properties, navigateUpAction);
       }
-    
+
     /*******************************************************************************************************************
      *
      *
@@ -133,7 +133,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         presentation.showUp(this);
         populateBrowsers();
       }
-    
+
     /*******************************************************************************************************************
      *
      *
@@ -141,7 +141,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
     /* VisibleForTesting */  void onDownloadComplete (final @ListensTo @Nonnull DownloadComplete notification)
       {
         log.info("onDownloadComplete({})", notification);
-        
+
         if (currentCoverArtUrl.get().map(url -> url.equals(notification.getUrl())).orElse(false))
           {
             if (notification.getStatusCode() == 200) // FIXME
@@ -150,10 +150,10 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
               }
           }
       }
-    
+
     /*******************************************************************************************************************
      *
-     * 
+     *
      *
      ******************************************************************************************************************/
     @OnActivate
@@ -161,7 +161,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
       {
         presentation.focusOnMediaItems();
       }
-    
+
     /*******************************************************************************************************************
      *
      * Deactivation is disabled (and acts as navigateUpAction) when the stack is not empty.
@@ -171,18 +171,18 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
     /* VisibleForTesting */ OnDeactivate.Result onDeactivate()
       {
         log.debug("onDeactivate()");
-        
+
         if (navigationStack.isEmpty())
-          {  
-            return OnDeactivate.Result.PROCEED;  
-          }  
+          {
+            return OnDeactivate.Result.PROCEED;
+          }
         else
           {
             navigateUp();
             return OnDeactivate.Result.IGNORE;
           }
       }
-    
+
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
@@ -195,7 +195,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         navigationStack.clear();
         populateItems(new FolderAndMemento(browser.getRoot(), Optional.empty()));
       }
-    
+
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
@@ -208,7 +208,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         navigationStack.push(new FolderAndMemento(currentFolder, Optional.of(presentation.getMemento())));
         populateItems(new FolderAndMemento(newMediaFolder, Optional.empty()));
       }
-    
+
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
@@ -219,7 +219,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
       {
         presentation.renderDetails(details);
       }
-    
+
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
@@ -231,7 +231,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         presentation.setCoverArt(Optional.empty());
         presentation.renderDetails("");
       }
-    
+
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
@@ -243,23 +243,23 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         log.debug("requestCoverArt({})", optionalCoverArtUrl);
         currentCoverArtUrl.set(optionalCoverArtUrl);
         optionalCoverArtUrl.ifPresent(url -> messageBus.publish(new DownloadRequest(url)));
-      } 
-    
+      }
+
     /*******************************************************************************************************************
      *
      * Navigates up to the parent folder.
      *
      ******************************************************************************************************************/
-    private void navigateUp() 
+    private void navigateUp()
       {
         log.debug("navigateUp()");
         populateItems(navigationStack.pop());
       }
-    
+
     /*******************************************************************************************************************
      *
-     * 
-     * 
+     *
+     *
      ******************************************************************************************************************/
     private void populateBrowsers()
       {
@@ -269,8 +269,8 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         // in this context.
 //        contextManager.runWithContext(this, new SimpleTask()
 //          {
-//            @Override 
-//            public Void run() 
+//            @Override
+//            public Void run()
 //              {
 //                final PresentationModel pm = browsers.stream() // natively sorted by @OrderBy
 //                                                     .map(o -> o.as(Presentable).createPresentationModel())
@@ -280,16 +280,16 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
 //                return null;
 //              }
 //           });
-        
+
         final PresentationModel pm = toCompositePresentationModel(browsers, o -> new EntityBrowserUserActionProvider(o));
         presentation.populateBrowsers(pm);
         selectBrowser(browsers.get(0));
       }
-    
+
     /*******************************************************************************************************************
      *
      * Populates the presentation with the contents of a folder and selects an item.
-     * 
+     *
      * @param   folderAndMemento    the folder and the presentation memento
      *
      ******************************************************************************************************************/
@@ -310,17 +310,17 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
         final PresentationModel pm = toCompositePresentationModel(finder);
         presentation.populateItems(pm, folderAndMemento.getMemento());
       }
-    
+
     /*******************************************************************************************************************
      *
      * Computes the label describing the current navigation path.
-     * 
+     *
      ******************************************************************************************************************/
     @Nonnull
     private String getCurrentPathLabel()
       {
         return concat(navigationStack.stream().map(i -> i.getFolder()), of(currentFolder))
-                .filter(i -> i.asOptional(Parentable).map(p -> p.hasParent()).orElse(true))
+                .filter(i -> i.asOptional(Child).map(p -> p.getParent().isPresent()).orElse(true))
                 .filter(i -> i.asOptional(Displayable).map(d -> true).orElse(false))
                 .map(i -> i.asOptional(Displayable).map(o -> o.getDisplayName()).orElse("???"))
                 .collect(joining(" / "));

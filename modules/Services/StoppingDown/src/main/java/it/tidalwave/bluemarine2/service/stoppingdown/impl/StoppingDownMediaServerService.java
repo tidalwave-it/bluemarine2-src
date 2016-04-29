@@ -39,6 +39,7 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
 import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 
 /***********************************************************************************************************************
  *
@@ -51,7 +52,7 @@ public class StoppingDownMediaServerService implements MediaServerService
     private static final Path PATH_ROOT = Paths.get("stoppingdown.net");
 
     private static final Path PATH_DIARY = Paths.get("diary");
-    
+
     private static final Path PATH_THEMES = Paths.get("themes");
 
     @Inject @Named("diaryPhotoCollectionProvider")
@@ -67,7 +68,7 @@ public class StoppingDownMediaServerService implements MediaServerService
       }
 
     @Nonnull
-    private Collection<Entity> childrenFactory (final @Nonnull MediaFolder parent)
+    private Collection<EntityWithPath> childrenFactory (final @Nonnull MediaFolder parent)
       {
         return Arrays.asList(new VirtualMediaFolder(parent, PATH_DIARY,  "Diary",  diaryProvider::findPhotos),
                              new VirtualMediaFolder(parent, PATH_THEMES, "Themes", themesProvider::findPhotos));

@@ -29,11 +29,13 @@
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
+import java.util.Optional;
 import java.nio.file.Path;
 import it.tidalwave.bluemarine2.model.AudioFile;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import it.tidalwave.bluemarine2.model.impl.EntityWithRoles;
+import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -46,10 +48,10 @@ import lombok.ToString;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @ToString
-public class PhotoItem extends EntityWithRoles implements MediaItem
+@RequiredArgsConstructor @ToString(doNotUseGetters = true)
+public class PhotoItem extends EntityWithRoles implements MediaItem, EntityWithPath
   {
-    @Getter @Nonnull
+    @Nonnull
     private final MediaFolder parent;
 
     @Getter @Nonnull
@@ -65,12 +67,6 @@ public class PhotoItem extends EntityWithRoles implements MediaItem
       }
 
     @Override @Nonnull
-    public Path getRelativePath()
-      {
-        throw new UnsupportedOperationException("Not supported yet.");
-      }
-
-    @Override @Nonnull
     public Metadata getMetadata()
       {
         throw new UnsupportedOperationException("Not supported yet.");
@@ -80,5 +76,11 @@ public class PhotoItem extends EntityWithRoles implements MediaItem
     public AudioFile getAudioFile()
       {
         throw new UnsupportedOperationException("Not supported yet.");
+      }
+
+    @Override @Nonnull
+    public Optional<EntityWithPath> getParent()
+      {
+        return Optional.of(parent);
       }
   }

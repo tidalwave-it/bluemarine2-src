@@ -34,15 +34,16 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.beans.factory.annotation.Autowired;
-import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder.EntityCollectionFactory;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
 
@@ -84,11 +85,11 @@ public class DefaultContentDirectory implements ContentDirectory
       {
         // FIXME: why is this called multiple times?
         log.info(">>>> discovered services: {}", services);
-        root = new VirtualMediaFolder(null, PATH_ROOT, "", this::childrenFactory);
+        root = new VirtualMediaFolder(Optional.empty(), PATH_ROOT, "", this::childrenFactory);
       }
 
     @Nonnull
-    private Collection<Entity> childrenFactory (final @Nonnull MediaFolder parent)
+    private Collection<EntityWithPath> childrenFactory (final @Nonnull MediaFolder parent)
       {
         return Arrays.asList(new VirtualMediaFolder(parent, PATH_MUSIC,    "Music",    EMPTY),
                              new VirtualMediaFolder(parent, PATH_PHOTOS,   "Photos",   EMPTY),
@@ -97,7 +98,7 @@ public class DefaultContentDirectory implements ContentDirectory
       }
 
     @Nonnull
-    private Collection<Entity> servicesFactory (final @Nonnull MediaFolder parent)
+    private Collection<EntityWithPath> servicesFactory (final @Nonnull MediaFolder parent)
       {
         return services.stream().map(service -> service.createRootFolder(parent)).collect(toList());
       }
