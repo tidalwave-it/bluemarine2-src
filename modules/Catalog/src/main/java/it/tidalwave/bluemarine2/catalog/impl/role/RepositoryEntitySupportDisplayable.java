@@ -36,8 +36,10 @@ import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
+ * Provides the {@link Displayable} role to instances of {@link RepositoryEntitySupport} by using their RDFS label.
+ *
  * @stereotype  Role
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -47,9 +49,9 @@ public class RepositoryEntitySupportDisplayable implements Displayable
   {
     @Nonnull
     private final RepositoryEntitySupport owner;
-    
+
     @Override @Nonnull
-    public String getDisplayName() 
+    public String getDisplayName()
       {
         return owner.getRdfsLabel();
       }
