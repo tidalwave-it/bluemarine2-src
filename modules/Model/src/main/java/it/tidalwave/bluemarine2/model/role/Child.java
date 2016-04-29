@@ -34,7 +34,7 @@ import java.nio.file.Path;
 
 /***********************************************************************************************************************
  *
- * The role of an object that has, or can have, a parent.
+ * The role of an object that has, or can have, a parent - hence, a {@link Path}.
  *
  * @stereotype  Role
  *
@@ -46,6 +46,13 @@ public interface Child<T>
   {
     public final static Class<Child> Child = Child.class;
 
+    /*******************************************************************************************************************
+     *
+     * Returns the optional parent of this object.
+     *
+     * @return  the parent
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public Optional<T> getParent();
 
