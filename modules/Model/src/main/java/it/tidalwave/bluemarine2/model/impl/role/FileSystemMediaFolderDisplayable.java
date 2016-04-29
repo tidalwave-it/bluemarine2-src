@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.role;
+package it.tidalwave.bluemarine2.model.impl.role;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.role.Displayable;
