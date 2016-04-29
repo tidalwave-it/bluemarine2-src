@@ -30,7 +30,7 @@ package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Comparator;
-import it.tidalwave.util.As;
+import it.tidalwave.util.As8;
 import it.tidalwave.util.AsException;
 import it.tidalwave.util.DefaultFilterSortCriterion;
 import it.tidalwave.bluemarine2.model.Track;
@@ -44,6 +44,8 @@ import static it.tidalwave.role.Displayable.Displayable;
  **********************************************************************************************************************/
 public class TrackComparator extends DefaultFilterSortCriterion<Track>
   {
+    private static final long serialVersionUID = 4456361901785601384L;
+
     private final static Comparator<Track> COMPARATOR = (tr1, tr2) ->
       {
         try
@@ -57,7 +59,7 @@ public class TrackComparator extends DefaultFilterSortCriterion<Track>
               {
                 return d1 - d2;
               }
-            
+
             if (t1 != t2)
               {
                 return t1 - t2;
@@ -66,25 +68,18 @@ public class TrackComparator extends DefaultFilterSortCriterion<Track>
         catch (AsException e)
           {
           }
-        
-        return displayName(tr1).compareTo(displayName(tr2));
+
+        return displayNameOf(tr1).compareTo(displayNameOf(tr2));
       };
-    
-    public TrackComparator() 
+
+    public TrackComparator()
       {
         super(COMPARATOR, "TrackComparator");
       }
-    
+
     @Nonnull
-    private static String displayName (final @Nonnull As object)
+    private static String displayNameOf (final @Nonnull As8 object)
       {
-        try
-          {
-            return object.as(Displayable).getDisplayName();  
-          }
-        catch (AsException e)
-          {
-            return "???";
-          }
+        return object.asOptional(Displayable).map(d -> d.getDisplayName()).orElse("???");
       }
   }

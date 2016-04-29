@@ -34,6 +34,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
@@ -41,7 +42,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.util.spi.AsDelegateProvider;
 import it.tidalwave.util.spi.EmptyAsDelegateProvider;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -52,6 +53,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
+ *
+ * This is an integration test, also exercises {@link FactoryBasedEntityFinder}.
  *
  * @author  Fabrizio Giudici
  * @version $Id$
@@ -68,7 +71,7 @@ public class VirtualMediaFolderTest
         @Getter
         private final Map<Path, VirtualMediaFolder> folderMap = new HashMap<>();
 
-        private final Map<Path, Collection<Entity>> childrenMap = new HashMap<>();
+        private final Map<Path, Collection<EntityWithPath>> childrenMap = new HashMap<>();
 
         @Getter
         private final Set<Path> paths = new TreeSet<>();
@@ -93,46 +96,26 @@ public class VirtualMediaFolderTest
           }
 
         @Nonnull
-        private VirtualMediaFolder createFolder (final @Nonnull String pathAsString)
+        private void createFolder (final @Nonnull String pathAsString)
           {
-            return createFolder(Paths.get(pathAsString));
+            findOrCreateFolder(Paths.get(pathAsString));
           }
 
         @Nonnull
-        private VirtualMediaFolder createFolder (final @Nonnull Path path)
+        private VirtualMediaFolder findOrCreateFolder (final @Nonnull Path path)
           {
-//            log.info("createFolder({})", path);
-            paths.add(path);
-
-            VirtualMediaFolder folder = folderMap.get(path);
-
-            if (folder == null)
+            return folderMap.computeIfAbsent(path, k1 ->
               {
-                final Path parentPath = path.getParent();
-                final VirtualMediaFolder parent = (parentPath != null) ? createFolder(parentPath) : null;
-
-                if (parentPath != null)
-                  {
-                    Collection<Entity> c = childrenMap.get(parentPath);
-
-                    if (c == null)
-                      {
-                        c = new ArrayList<>();
-                        childrenMap.put(parentPath, c);
-                      }
-                  }
-
+                paths.add(path);
+                final Optional<Path> parentPath = Optional.ofNullable(path.getParent());
+                final Optional<VirtualMediaFolder> parent = parentPath.map(this::findOrCreateFolder);
                 final VirtualMediaFolder.EntityCollectionFactory f = p -> childrenMap.get(path);
-                folder = new VirtualMediaFolder(parent, path, path.toString(), f);
+                final VirtualMediaFolder folder = new VirtualMediaFolder(parent, path, path.toString(), f);
                 folderMap.put(path, folder);
+                parentPath.ifPresent(pp -> childrenMap.computeIfAbsent(pp, k2 -> new ArrayList<>()).add(folder));
 
-                if (parentPath != null)
-                  {
-                    childrenMap.get(parentPath).add(folder);
-                  }
-              }
-
-            return folder;
+                return folder;
+              });
           }
       }
 
@@ -154,7 +137,9 @@ public class VirtualMediaFolderTest
     @Test
     public void must_correctly_find_all_children()
       {
-        final List<? extends Entity> children = underTest.findChildren().results();
+        // when
+        final List<? extends EntityWithPath> children = underTest.findChildren().results();
+        // then
         assertThat(children.size(), is(2));
         assertThat(children.get(0).as(Displayable).getDisplayName(), is("/music"));
         assertThat(children.get(1).as(Displayable).getDisplayName(), is("/photos"));
@@ -166,7 +151,10 @@ public class VirtualMediaFolderTest
     @Test(dataProvider = "pathsProvider")
     public void must_correctly_find_children_by_path (final @Nonnull Path path)
       {
-        final List<? extends Entity> children = underTest.findChildren().withPath(path).results();
+        // when
+        final List<? extends EntityWithPath> children = underTest.findChildren().withPath(path).results();
+        // then
+        log.debug("findChildren().withPath({}).results() = {}", path, children);
         assertThat(children.size(), is(1));
         assertThat(children.get(0).as(Displayable).getDisplayName(), is(path.toString()));
       }
@@ -175,7 +163,7 @@ public class VirtualMediaFolderTest
      *
      ******************************************************************************************************************/
     @DataProvider
-    public static Object[][] pathsProvider()
+    private static Object[][] pathsProvider()
       {
         return new TestCaseBuilder().getPaths().stream()
                                                .map(p -> new Object[] { p })

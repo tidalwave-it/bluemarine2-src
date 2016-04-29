@@ -33,8 +33,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.time.Duration;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import java.io.IOException;
-import java.nio.file.Path; 
+import java.nio.file.Path;
 import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.audio.AudioHeader;
@@ -45,7 +46,7 @@ import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
 import it.tidalwave.util.Id;
-import java.util.stream.Stream;
+import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -59,8 +60,8 @@ public class AudioMetadata extends MetadataSupport
   {
     @Nonnull
     /* VisibleForTesting */ AudioFile audioFile;
-    
-    public AudioMetadata (final @Nonnull Path path) 
+
+    public AudioMetadata (final @Nonnull Path path)
       {
         super(path);
 
@@ -69,49 +70,49 @@ public class AudioMetadata extends MetadataSupport
             final Path aPath = path.toAbsolutePath();
             log.debug("path: {}", aPath);
             audioFile = AudioFileIO.read(aPath.toFile());
-        
+
             final AudioHeader header = audioFile.getAudioHeader();
             put(DURATION, Duration.ofSeconds(header.getTrackLength()));
             put(BIT_RATE, (int)header.getBitRateAsNumber());
             put(SAMPLE_RATE, header.getSampleRateAsNumber());
-            
+
             final Tag tag = audioFile.getTag();
             put(ARTIST, tag.getFirst(FieldKey.ARTIST));
             put(ALBUM, tag.getFirst(FieldKey.ALBUM));
             put(TITLE, tag.getFirst(FieldKey.TITLE));
             put(COMMENT, tag.getFirst(FieldKey.COMMENT));
 //            put(YEAR, Integer.valueOf(tag.getFirst(FieldKey.YEAR)));
-            
+
             try
               {
                 put(TRACK, Integer.parseInt(tag.getFirst(FieldKey.TRACK)));
               }
             catch (NumberFormatException e)
               {
-                log.warn("Cannot parse track number", e.toString());  
+                log.warn("Cannot parse track number", e.toString());
               }
-            
+
             try
               {
                 put(DISK_NUMBER, Integer.parseInt(tag.getFirst(FieldKey.DISC_NO)));
               }
             catch (NumberFormatException e)
               {
-                log.warn("Cannot parse disk number", e.toString());  
+                log.warn("Cannot parse disk number", e.toString());
               }
-            
+
             try
               {
                 put(DISK_COUNT, Integer.parseInt(tag.getFirst(FieldKey.DISC_TOTAL)));
               }
             catch (NumberFormatException e)
               {
-                log.warn("Cannot parse disk count", e.toString());  
+                log.warn("Cannot parse disk count", e.toString());
               }
-            
+
 //            put(TRACK, tag.getFirst(FieldKey.DISC_NO));
             put(COMPOSER, tag.getFirst(FieldKey.COMPOSER));
-            
+
             put(MBZ_TRACK_ID,  id(tag.getFirst(FieldKey.MUSICBRAINZ_TRACK_ID)));
             put(MBZ_WORK_ID,   id(tag.getFirst(FieldKey.MUSICBRAINZ_WORK_ID)));
             put(MBZ_DISC_ID,   id(tag.getFirst(FieldKey.MUSICBRAINZ_DISC_ID)));
@@ -120,7 +121,7 @@ public class AudioMetadata extends MetadataSupport
                                   .flatMap(s -> Stream.of(s.split("/"))) // FIXME: correct?
                                   .map(s -> id(s))
                                   .collect(Collectors.toList()));
-            
+
 //            tag.getFirst(FieldKey.ARTIST_SORT);
 
 ////            log.debug("Bitrate: " + mp3File.getBitrate()+ " kbps " + (mp3File.isVbr() ? "(VBR)" : "(CBR)"));
@@ -131,7 +132,7 @@ public class AudioMetadata extends MetadataSupport
 //                log.debug("Genre: " + id3v1Tag.getGenre() + " (" + id3v1Tag.getGenreDescription() + ")");
 //              }
 //
-//            if (mp3File.hasId3v2Tag()) 
+//            if (mp3File.hasId3v2Tag())
 //              {
 //                final ID3v2 id3v2Tag = mp3File.getId3v2Tag();
 //                put(PUBLISHER, id3v2Tag.getPublisher());
@@ -142,7 +143,7 @@ public class AudioMetadata extends MetadataSupport
 //                log.debug("Encoder: " + id3v2Tag.getEncoder());
 //                final byte[] albumImageData = id3v2Tag.getAlbumImage();
 //
-//                if (albumImageData != null) 
+//                if (albumImageData != null)
 //                  {
 //                    log.debug("Have album image data, length: " + albumImageData.length + " bytes");
 //                    log.debug("Album image mime type: " + id3v2Tag.getAlbumImageMimeType());
@@ -157,18 +158,18 @@ public class AudioMetadata extends MetadataSupport
           }
         catch (IOException | CannotReadException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
           {
-            log.error("While reading " + audioFile + " --- " + path, e);  
-          } 
+            log.error("While reading " + audioFile + " --- " + path, e);
+          }
       }
-    
+
     @CheckForNull
     private static Id id (final @Nullable String string)
       {
         if ((string == null) || "".equals(string))
           {
-            return null;  
+            return null;
           }
-        
+
         return new Id(string);
       }
   }

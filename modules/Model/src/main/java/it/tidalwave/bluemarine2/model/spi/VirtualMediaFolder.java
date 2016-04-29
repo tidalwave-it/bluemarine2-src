@@ -28,9 +28,7 @@
  */
 package it.tidalwave.bluemarine2.model.spi;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.function.Function;
@@ -38,10 +36,9 @@ import java.nio.file.Path;
 import it.tidalwave.util.Id;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.role.spi.DefaultDisplayable;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import it.tidalwave.bluemarine2.model.impl.EntityWithRoles;
 import lombok.Getter;
 
 /***********************************************************************************************************************
@@ -53,7 +50,7 @@ import lombok.Getter;
 public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
   {
     // These two interfaces are needed to avoid clashes with constructor overloading
-    public static interface EntityCollectionFactory extends Function<MediaFolder, Collection<Entity>>
+    public static interface EntityCollectionFactory extends Function<MediaFolder, Collection<? extends EntityWithPath>>
       {
       }
 
@@ -64,46 +61,62 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
     @Getter @Nonnull
     private final Path path;
 
-    @Getter @CheckForNull
-    private MediaFolder parent;
+    @Nonnull
+    private final Optional<? extends MediaFolder> optionalParent;
 
     @Nonnull
     private final EntityFinderFactory finderFactory;
 
-    public VirtualMediaFolder (final @Nullable MediaFolder parent,
-                               final @Nonnull Path path,
+    public VirtualMediaFolder (final @Nonnull MediaFolder parent,
+                               final @Nonnull Path pathSegment,
                                final @Nonnull String displayName,
-                               final @Nonnull EntityCollectionFactory childrenSupplier)
+                               final @Nonnull EntityCollectionFactory childrenFactory)
       {
-        this(parent, path, displayName, Optional.of(childrenSupplier), Optional.empty());
+        this(Optional.of(parent), pathSegment, displayName, Optional.of(childrenFactory), Optional.empty());
       }
 
-    public VirtualMediaFolder (final @Nullable MediaFolder parent,
-                               final @Nonnull Path path,
+    public VirtualMediaFolder (final @Nonnull MediaFolder parent,
+                               final @Nonnull Path pathSegment,
                                final @Nonnull String displayName,
                                final @Nonnull EntityFinderFactory finderFactory)
       {
-        this(parent, path, displayName, Optional.empty(), Optional.of(finderFactory));
+        this(Optional.of(parent), pathSegment, displayName, Optional.empty(), Optional.of(finderFactory));
       }
 
-    private VirtualMediaFolder (final @Nullable MediaFolder parent,
-                                final @Nonnull Path path,
+    public VirtualMediaFolder (final @Nonnull Optional<? extends MediaFolder> optionalParent,
+                               final @Nonnull Path pathSegment,
+                               final @Nonnull String displayName,
+                               final @Nonnull EntityCollectionFactory childrenFactory)
+      {
+        this(optionalParent, pathSegment, displayName, Optional.of(childrenFactory), Optional.empty());
+      }
+
+    public VirtualMediaFolder (final @Nonnull Optional<? extends MediaFolder> optionalParent,
+                               final @Nonnull Path pathSegment,
+                               final @Nonnull String displayName,
+                               final @Nonnull EntityFinderFactory finderFactory)
+      {
+        this(optionalParent, pathSegment, displayName, Optional.empty(), Optional.of(finderFactory));
+      }
+
+    private VirtualMediaFolder (final @Nonnull Optional<? extends MediaFolder> optionalParent,
+                                final @Nonnull Path pathSegment,
                                 final @Nonnull String displayName,
                                 final @Nonnull Optional<EntityCollectionFactory> childrenSupplier,
                                 final @Nonnull Optional<EntityFinderFactory> finderFactory)
       {
-        super((Identifiable)() -> new Id(absolutePath(parent, path).toString()),
+        super((Identifiable)() -> new Id(absolutePath(optionalParent, pathSegment).toString()),
               new DefaultDisplayable(displayName));
-        this.path = absolutePath(parent, path);
-        this.parent = parent;
+        this.path = absolutePath(optionalParent, pathSegment);
+        this.optionalParent = optionalParent;
         this.finderFactory = finderFactory.orElse(
                 mediaFolder -> new FactoryBasedEntityFinder(mediaFolder, childrenSupplier.get()));
       }
 
-    @Override
-    public boolean isRoot()
+    @Override @Nonnull
+    public Optional<EntityWithPath> getParent()
       {
-        return parent == null;
+        return (Optional<EntityWithPath>)(Object)optionalParent;
       }
 
     @Override @Nonnull
@@ -119,8 +132,9 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
       }
 
     @Nonnull
-    private static Path absolutePath (final @Nullable MediaFolder parent, final @Nonnull Path path)
+    private static Path absolutePath (final @Nonnull Optional<? extends MediaFolder> optionalParent,
+                                      final @Nonnull Path pathSegment)
       {
-        return (parent == null) ? path : parent.getPath().resolve(path);
+        return optionalParent.map(parent -> parent.getPath().resolve(pathSegment)).orElse(pathSegment);
       }
   }

@@ -29,11 +29,9 @@
 package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
-import java.nio.file.Path;
 import it.tidalwave.util.As;
 import it.tidalwave.role.Composite;
 import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.model.role.Parentable;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 
 /***********************************************************************************************************************
@@ -48,20 +46,8 @@ import it.tidalwave.bluemarine2.model.finder.EntityFinder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaFolder extends Entity, Parentable<MediaFolder>, SimpleComposite8<Entity>
+public interface MediaFolder extends EntityWithPath, SimpleComposite8<EntityWithPath>
   {
-    /*******************************************************************************************************************
-     *
-     * Returns the {@link Path} associated with this object.
-     *
-     * @return  the path
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Path getPath();
-
-    public boolean isRoot();
-
-    @Override
+    @Override @Nonnull
     public EntityFinder findChildren();
   }

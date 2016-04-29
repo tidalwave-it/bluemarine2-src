@@ -27,6 +27,7 @@
  * #L%
  */package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.util.Arrays;
@@ -99,7 +100,7 @@ public class PhotoItemDIDLAdapter implements DIDLAdapter
                                      .map(size -> createResource(protocolInfo, size))
                                      .collect(toList())
                                      .toArray(new Res[0]);
-        final Path parentPath = datum.getParent().getPath();
+        final Path parentPath = datum.getParent().map(e -> e.getPath()).orElseThrow(() -> new RuntimeException());
         final String parentId = parentPath.toString();
         final String photoId = parentPath.resolve(datum.getId()).toString();
         final String title = datum.getId();
