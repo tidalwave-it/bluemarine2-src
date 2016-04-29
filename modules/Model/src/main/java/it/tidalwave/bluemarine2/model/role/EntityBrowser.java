@@ -35,9 +35,9 @@ import it.tidalwave.bluemarine2.model.Entity;
 /***********************************************************************************************************************
  *
  * A generic role which can supply an {@link Entity}. For instance, it can be the supplier of the root of a hierarchy.
- * 
+ *
  * @stereotype  Role
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *

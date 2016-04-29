@@ -40,11 +40,12 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.nio.file.Path;
 import it.tidalwave.util.Finder8Support;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
@@ -57,8 +58,8 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinder> implements EntityFinder
+@RequiredArgsConstructor(access = PRIVATE) @Slf4j
+public class FactoryBasedEntityFinder extends Finder8Support<EntityWithPath, EntityFinder> implements EntityFinder
   {
     private static final long serialVersionUID = 4429676480224742813L;
 
@@ -66,10 +67,10 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
     private final MediaFolder mediaFolder;
 
     @Nonnull
-    private final Function<MediaFolder, Collection<Entity>> childrenFactory;
+    private final Function<MediaFolder, Collection<? extends EntityWithPath>> childrenFactory;
 
     @Nonnull
-    private final Optional<Path> path;
+    private final Optional<Path> optionalPath;
 
     /*******************************************************************************************************************
      *
@@ -77,11 +78,9 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
      *
      ******************************************************************************************************************/
     public FactoryBasedEntityFinder (final @Nonnull MediaFolder mediaFolder,
-                                     final @Nonnull Function<MediaFolder, Collection<Entity>> childrenFactory)
+                                     final @Nonnull Function<MediaFolder, Collection<? extends EntityWithPath>> childrenFactory)
       {
-        this.mediaFolder = mediaFolder;
-        this.childrenFactory = childrenFactory;
-        this.path = Optional.empty();
+        this(mediaFolder, childrenFactory, Optional.empty());
       }
 
     /*******************************************************************************************************************
@@ -95,21 +94,7 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
         final FactoryBasedEntityFinder source = getSource(FactoryBasedEntityFinder.class, other, override);
         this.mediaFolder = source.mediaFolder;
         this.childrenFactory = source.childrenFactory;
-        this.path = source.path;
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Override constructor.
-     *
-     ******************************************************************************************************************/
-    private FactoryBasedEntityFinder (final @Nonnull MediaFolder mediaFolder,
-                                      final @Nonnull Function<MediaFolder, Collection<Entity>> childrenFactory,
-                                      final @Nonnull Optional<Path> path)
-      {
-        this.mediaFolder = mediaFolder;
-        this.childrenFactory = childrenFactory;
-        this.path = path;
+        this.optionalPath = source.optionalPath;
       }
 
     /*******************************************************************************************************************
@@ -129,10 +114,10 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    protected List<? extends Entity> computeResults()
+    protected List<? extends EntityWithPath> computeResults()
       {
-        return path.isPresent() ? filteredByPath(path.get())
-                                : new CopyOnWriteArrayList<>(childrenFactory.apply(mediaFolder));
+        return new CopyOnWriteArrayList<>(optionalPath.map(this::filteredByPath)
+                                                      .orElse(childrenFactory.apply(mediaFolder)));
       }
 
     /*******************************************************************************************************************
@@ -141,7 +126,7 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
      *
      ******************************************************************************************************************/
     @Nonnull
-    private List<? extends Entity> filteredByPath (final @Nonnull Path path)
+    private Collection<? extends EntityWithPath> filteredByPath (final @Nonnull Path path)
       {
         if (mediaFolder.getPath().equals(path))
           {
@@ -152,8 +137,8 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
           {
             final Path relativePath = relative(path);
 
-            final List<Entity> filtered = childrenFactory.apply(mediaFolder).stream()
-                    .filter(entity -> sameHead(relative(pathOf(entity)), relativePath))
+            final List<EntityWithPath> filtered = childrenFactory.apply(mediaFolder).stream()
+                    .filter(entity -> sameHead(relativePath, relative(entity.getPath())))
                     .collect(Collectors.toList());
 
             if (filtered.isEmpty())
@@ -162,16 +147,8 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
               }
             else
               {
-                final Entity e = filtered.get(0);
-
-                if (path.equals(pathOf(e)))
-                  {
-                    return filtered;
-                  }
-                else
-                  {
-                    return ((MediaFolder)e).findChildren().withPath(path).results();
-                  }
+                final EntityWithPath e = filtered.get(0);
+                return path.equals(e.getPath()) ? filtered : ((MediaFolder)e).findChildren().withPath(path).results();
               }
           }
         catch (IllegalArgumentException e) // path can't be relativised
@@ -193,31 +170,9 @@ public class FactoryBasedEntityFinder extends Finder8Support<Entity, EntityFinde
             return null;
           }
 
-        return mediaFolder.isRoot() ? path :
+        return !mediaFolder.getParent().isPresent() ? path :
                 path.startsWith(mediaFolder.getPath()) ? path.subpath(mediaFolder.getPath().getNameCount(), path.getNameCount())
                                                        : null;
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @CheckForNull
-    private static Path pathOf (final @Nonnull Entity entity)
-      {
-        if (entity instanceof MediaFolder)
-          {
-            return ((MediaFolder)entity).getPath();
-          }
-        else if (entity instanceof MediaItem)
-          {
-            return ((MediaItem)entity).getPath();
-          }
-        else
-          {
-            return null;
-          }
       }
 
     /*******************************************************************************************************************

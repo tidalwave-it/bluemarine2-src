@@ -33,7 +33,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import it.tidalwave.role.ui.Styleable;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.catalog.impl.browser.RepositoryBrowserSupport;
+import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserSupport;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
