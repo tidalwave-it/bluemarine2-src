@@ -89,9 +89,14 @@ public interface DIDLAdapter
      *
      ******************************************************************************************************************/
     @Nonnull
-    public ContentHolder toContent (@Nonnull BrowseFlag browseFlag,
-                                    @Nonnegative int from,
-                                    @Nonnegative int maxResults);
+    public default ContentHolder toContent (final @Nonnull BrowseFlag browseFlag,
+                                            final @Nonnegative int from,
+                                            final @Nonnegative int maxResults)
+      {
+        final DIDLContent content = new DIDLContent();
+        content.addObject(toObject());
+        return new ContentHolder(content, 1, 1);
+      }
 
     /*******************************************************************************************************************
      *
