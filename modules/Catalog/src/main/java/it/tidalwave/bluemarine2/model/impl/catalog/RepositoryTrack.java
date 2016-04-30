@@ -45,7 +45,7 @@ import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
-import it.tidalwave.bluemarine2.model.spi.EntityWithPathDecorator;
+import it.tidalwave.bluemarine2.model.spi.EntityWithPathAdapter;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -114,7 +114,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
                                                 id, // FIXME: this should really be the AudioFileId
                                                 id,
                                                 fileSystem.getRootPath().resolve(audioFilePath),
-                                                new EntityWithPathDecorator(this, Paths.get("record")),
+                                                new EntityWithPathAdapter(this, Paths.get("record")),
                                                 audioFilePath,
                                                 duration,
                                                 rdfsLabel);
