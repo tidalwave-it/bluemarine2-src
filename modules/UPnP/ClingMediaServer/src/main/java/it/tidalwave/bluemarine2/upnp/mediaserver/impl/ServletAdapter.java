@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import java.io.IOException;
+import java.util.Enumeration;
 import javax.annotation.Nonnull;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -58,7 +59,14 @@ public class ServletAdapter extends HttpServlet
           {
             log.trace("handle({}, {}, {}, {}", target, baseRequest, request, response);
             service(request, response);
+
+            log.debug(">>>> response {}", response.getStatus());
             baseRequest.setHandled(true);
+
+            for (final String headerName : response.getHeaderNames())
+              {
+                log.debug(">>>> response header: {} = {}", headerName, response.getHeaders(headerName));
+              }
           }
       };
 
