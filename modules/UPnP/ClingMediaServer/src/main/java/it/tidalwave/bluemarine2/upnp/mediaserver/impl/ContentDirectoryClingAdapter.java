@@ -93,6 +93,9 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
           {
             log.info("browse({}, {}, filter: {}, startingIndex: {}, requestedCount: {}, sortCriteria: {})",
                      objectId, browseFlag, filter, firstResult, maxResults, orderby);
+            // this repeated log is for capturing test recordings
+            log.trace("browse @@@ {} @@@ {} @@@ {} @@@ {} @@@ {} @@@ {})",
+                     objectId, browseFlag, firstResult, maxResults, filter, orderby);
 
             final Path path = didlIdToPath(objectId);
             final Entity entity = contentDirectory.findRoot()

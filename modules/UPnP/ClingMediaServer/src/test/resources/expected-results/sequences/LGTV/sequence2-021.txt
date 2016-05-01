@@ -1,0 +1,83 @@
+Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=16, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:d35745456c06770731c83193c38f12cc9cb3c202" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Andrea Bacchetti</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="2" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:1c397ef0fda5f39421da1964108f1fdcda5070df" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Andrei Gavrilov</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="2" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:95baddbd8fc9ce08767ec1848733f73827d0159e" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Angela Maria Blasi, Robert Holl, Etc.</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:89f770090b040058a958fc4331d3bc7f9075f87d" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Anita Baker</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_musicbrainz_resource_artist_bdbd99ab-3f4b-4028-9306-cd71d8695fbc" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Anonymous 4</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:df9d14f08d7c7169889de333c2db2c331169ee30" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Anthony Rooley &amp; Consort of Musicke</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="4" id="/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_musicbrainz_resource_artist_ad79836d-9849-44df-8789-180bbc823f3c" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Antonio Vivaldi</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="6" id="/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_musicbrainz_resource_artist_819eaeb2-8dd8-48a5-ad07-0bcd137985ef" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Antonín Dvořák</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="5" id="/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_musicbrainz_resource_artist_7a8dbe84-f4c0-4457-bfa3-edced1f8cde0" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Antônio Carlos Jobim</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="15" id="/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_musicbrainz_resource_artist_2f9ecbed-27be-40e6-abca-6de49d50299e" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Aretha Franklin</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_musicbrainz_resource_artist_9846b065-0d97-4232-aecc-31a281108b72" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Arianna Savall</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:f237a6bd033fb576234f43738288fa00ea390a2b" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Armando Sciascia Orchestra</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_musicbrainz_resource_artist_be899560-1570-402e-9f95-3182898a8b70" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Art of Noise</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_musicbrainz_resource_artist_85545102-7c29-4707-aea2-30ff55018df9" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Artie Shaw</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_musicbrainz_resource_artist_e280268a-a5ab-4bb0-be4d-ec470ca59131" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Astor Piazzolla</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_musicbrainz_resource_artist_42a19448-ff60-4fd2-9d10-959bf2000729" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>B.J. Thomas</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+</DIDL-Lite>

@@ -1,0 +1,83 @@
+Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=176, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:736f0b12cf7368508a8c2b71712d21a31a8bb8af" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Göran Söllscher</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:21727ed6388d9a159404192a71bed04714f0bc06" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Gösta Ohlin, Gösta Ohlin's Voc. Ensemble &amp; Pro Musica Chamber Choir, Göteborgs Symfoniker &amp; Neeme Järvi</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:b8e202dc87a12c6fc1d5c686234a0aea42bf88d8" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Gösta Ohlin, Gösta Ohlin's Voc. Ensemble &amp; Pro Musica Chamber Choir, Göteborgs Symfoniker, Kjell Magnus Sandve &amp; Neeme Järvi</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:7b93c07bbb5667244dee32d2f2509567bae5dcc8" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Gösta Ohlin, Gösta Ohlin's Voc. Ensemble &amp; Pro Musica Chamber Choir, Göteborgs Symfoniker, Marianne Eklöf &amp; Neeme Järvi</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:f66c537dda239ad4964248a326dc3e6cf1407e02" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Gösta Ohlin, Gösta Ohlin's Voc. Ensemble &amp; Pro Musica Chamber Choir, Göteborgs Symfoniker, Neeme Järvi &amp; Tor Stokke</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:6c62c602fa9d04f208437d230a39ae3c25b6c3ac" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Gösta Ohlin, Gösta Ohlin's Voc. Ensemble &amp; Pro Musica Chamber Choir, Göteborgs Symfoniker, Neeme Järvi &amp; Toralv Maurstad</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:16d19827fa8697e3f1c2affaa04b6ffe53b24da0" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Gösta Ohlin, Gösta Ohlin's Voc. Ensemble &amp; Pro Musica Chamber Choir, Göteborgs Symfoniker, Neeme Järvi, Tor Stokke &amp; Toralv Maurstad</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:9eea80a7a6ef6d468f33542af83f90aebe7b9eec" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Göteborgs Symfoniker &amp; Neeme Järvi</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c5e91f3ae67cfe2f205bc109f59615aff06ed3c5" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Göteborgs Symfoniker, Knut Buen &amp; Neeme Järvi</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:953f7f7d21f57a185cad8bda5750b56f79554b52" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Göteborgs Symfoniker, Malcolm Page, Neeme Järvi, Per Göran, Sören Hermans &amp; Vivika Alm</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:e4ae5af08bc101eafb68b6ab84e51fbe9ff24f25" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Göteborgs Symfoniker, Neeme Järvi &amp; Paul Cortese</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:020270fa164edcd26fd69e696cecf6b65c50d768" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Göteborgs Symfoniker, Neeme Järvi &amp; Toralv Maurstad</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:173503756c531466ac65a34437b08c5db92b9277" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Göteborgs Symfoniker, Neeme Järvi &amp; Urban Malmberg</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c96685ae85e197570c831aa6b2fd3e2e403dfc28" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Göteborgs Symfoniker, Neeme Järvi, Toralv Maurstad &amp; Wenche Foss</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:ec465a86d560127bfc5a1b0fd581c66167a03d27" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Heinrich Schiff</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="13" id="/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_musicbrainz_resource_artist_83e71a21-caf7-4e48-8ff7-6512d51e88a3" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Henry Mancini</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+</DIDL-Lite>

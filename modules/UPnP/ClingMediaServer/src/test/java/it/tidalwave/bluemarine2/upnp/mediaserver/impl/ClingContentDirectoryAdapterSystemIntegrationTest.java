@@ -36,7 +36,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.stream.Stream;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -56,7 +56,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
@@ -66,6 +65,12 @@ import static it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH;
 
 /***********************************************************************************************************************
  *
+ * This is a complex integration test that brings up the real MediaServer and exposes it.
+ *
+ * To just bring up the service and keep it running for some time, run
+ *
+ *      mvn surefire:test -Dtest=ClingContentDirectoryAdapterSystemIntegrationTest#test_service_publishing -Ddelay=9999999 | grep -v TRACE
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -73,7 +78,7 @@ import static it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH;
 @Slf4j
 public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTestSupport
   {
-    private static final Path EXPECTED_PATH = Paths.get("src/test/resources/expected-results");
+    private static final Path EXPECTED_PATH = Paths.get("src/test/resources/expected-results/sequences");
 
     private static final Path ACTUAL_PATH = Paths.get("target/test-results");
 
@@ -84,13 +89,22 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @RequiredArgsConstructor @Getter @ToString
+    @Getter @ToString
     static class Params
       {
         private final String objectId;
         private final String browseFlag;
         private final int firstResult;
         private final int maxResult;
+
+        public Params (final @Nonnull String string)
+          {
+            final String[] parts = string.split(" @@@ ");
+            objectId = parts[1];
+            browseFlag = parts[2];
+            firstResult = Integer.parseInt(parts[3]);
+            maxResult = Integer.parseInt(parts[4]);
+          }
       }
 
     /*******************************************************************************************************************
@@ -167,14 +181,26 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @Test(dataProvider = "sequences", timeOut = 120000)
-    public void test_sequence (final @Nonnull String sequenceName, final @Nonnull Collection<Params> sequence)
+    @Test
+    public void test_service_publishing()
+      throws Exception
+      {
+        log.info("Completed device registration");
+        delay();
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Test(dataProvider = "sequences", dependsOnMethods = "test_service_publishing", timeOut = 120000)
+    public void test_sequence (final @Nonnull String clientDeviceName, final @Nonnull String sequenceName)
       throws Throwable
       {
         final AtomicInteger n = new AtomicInteger(0);
         final AtomicReference<Throwable> error = new AtomicReference<>();
+        final Path sequencePath = Paths.get("src/test/resources/sequences", clientDeviceName, sequenceName + ".txt");
 
-        for (final Params params : sequence)
+        for (final Params params : toParams(sequencePath))
           {
             final CountDownLatch latch = new CountDownLatch(1);
 
@@ -191,7 +217,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                     try
                       {
                         log.info("received() - {}", actionInvocation);
-                        final String fileName = String.format("%s/%s-%02d.txt", sequenceName, sequenceName, n.getAndIncrement());
+                        final String fileName = String.format("%s/%s-%03d.txt", clientDeviceName, sequenceName, n.getAndIncrement());
                         final Path expectedFile = EXPECTED_PATH.resolve(fileName);
                         final Path actualFile = ACTUAL_PATH.resolve(fileName);
                         Files.createDirectories(actualFile.getParent());
@@ -249,10 +275,12 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
      ******************************************************************************************************************/
     @DataProvider
     private static Object[][] sequences()
+      throws IOException
       {
         return new Object[][]
           {
-            { "sequence1", toParams(sequence1()) }
+            { "LGTV", "sequence1" },
+            { "LGTV", "sequence2" }
           };
       }
 
@@ -260,56 +288,9 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static Collection<Params> toParams (final @Nonnull Object[][] objects)
+    private static Collection<Params> toParams (final @Nonnull Path path)
+      throws IOException
       {
-        return Stream.of(objects).map(p -> new Params((String)p[0], (String)p[1], (Integer)p[2], (Integer)p[2]))
-                                 .collect(toList());
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private static Object[][] sequence1()
-      {
-        return new Object[][]
-          {
-            { "0", "BrowseMetadata", 0, 0 },
-            { "0", "BrowseDirectChildren", 0, 16 },
-            { "0", "BrowseDirectChildren", 4, 12 },
-            { "0", "BrowseDirectChildren", 4, 12 },
-            { "0", "BrowseDirectChildren", 0, 1 },
-            { "0", "BrowseDirectChildren", 0, 16 },
-            { "0", "BrowseDirectChildren", 0, 16 },
-            { "/music", "BrowseMetadata", 0, 0 },
-            { "/music", "BrowseDirectChildren", 0, 16 },
-            { "/music", "BrowseDirectChildren", 0, 1 },
-            { "/music", "BrowseDirectChildren", 0, 16 },
-            { "/music", "BrowseDirectChildren", 5, 11 },
-            { "/music", "BrowseDirectChildren", 5, 11 },
-            { "/music", "BrowseDirectChildren", 0, 16 },
-            { "/music", "BrowseDirectChildren", 5, 11 },
-            { "/music", "BrowseDirectChildren", 5, 11 },
-            { "/music/RepositoryBrowserByArtistThenRecord", "BrowseMetadata", 0, 0 },
-            { "/music/RepositoryBrowserByArtistThenRecord", "BrowseDirectChildren", 0, 16 },
-            { "/music/RepositoryBrowserByArtistThenRecord", "BrowseDirectChildren", 0, 1 },
-            { "/music/RepositoryBrowserByArtistThenRecord", "BrowseDirectChildren", 0, 16 },
-            { "/music/RepositoryBrowserByArtistThenRecord", "BrowseDirectChildren", 0, 16 },
-            { "/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e", "BrowseMetadata", 0, 0 },
-            { "/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e", "BrowseDirectChildren", 0, 16 },
-            { "/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e", "BrowseDirectChildren", 0, 1 },
-            { "/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e", "BrowseDirectChildren", 0, 16 },
-            { "/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e", "BrowseDirectChildren", 1, 15 },
-            { "/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e", "BrowseDirectChildren", 1, 15 },
-            { "/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e", "BrowseDirectChildren", 0, 16 },
-            { "/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e", "BrowseDirectChildren", 1, 15 },
-            { "/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e", "BrowseDirectChildren", 1, 15 },
-            { "/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e/urn:bluemarine:record:c5a4f3868bfac0380a98543d4e073a62a5c2de04", "BrowseMetadata", 0, 0 },
-            { "/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e/urn:bluemarine:record:c5a4f3868bfac0380a98543d4e073a62a5c2de04", "BrowseDirectChildren", 0, 16 },
-            { "/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e/urn:bluemarine:record:c5a4f3868bfac0380a98543d4e073a62a5c2de04", "BrowseDirectChildren", 0, 1 },
-            { "/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e/urn:bluemarine:record:c5a4f3868bfac0380a98543d4e073a62a5c2de04", "BrowseDirectChildren", 0, 16 },
-            { "/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e/urn:bluemarine:record:c5a4f3868bfac0380a98543d4e073a62a5c2de04", "BrowseDirectChildren", 8, 8 },
-            { "/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e/urn:bluemarine:record:c5a4f3868bfac0380a98543d4e073a62a5c2de04", "BrowseDirectChildren", 8, 8 },
-          };
+        return Files.readAllLines(path, StandardCharsets.UTF_8).stream().map(Params::new).collect(toList());
       }
   }
