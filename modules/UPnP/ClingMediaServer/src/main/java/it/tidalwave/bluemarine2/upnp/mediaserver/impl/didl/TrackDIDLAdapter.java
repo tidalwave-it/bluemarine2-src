@@ -26,27 +26,28 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
+package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
-import it.tidalwave.bluemarine2.model.AudioFile;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import org.fourthline.cling.support.model.DIDLObject;
-import org.fourthline.cling.support.model.item.MusicTrack;
-import it.tidalwave.role.Displayable;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.Track;
-import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
-import lombok.RequiredArgsConstructor;
-import static it.tidalwave.role.Identifiable.Identifiable;
+import java.util.Collections;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.Collections;
-import lombok.extern.slf4j.Slf4j;
+import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.Protocol;
 import org.fourthline.cling.support.model.ProtocolInfo;
 import org.fourthline.cling.support.model.Res;
 import org.fourthline.cling.support.model.dlna.DLNAProtocolInfo;
+import org.fourthline.cling.support.model.item.MusicTrack;
+import it.tidalwave.role.Displayable;
+import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.model.AudioFile;
+import it.tidalwave.bluemarine2.model.Track;
+import it.tidalwave.bluemarine2.upnp.mediaserver.impl.ResourceServer;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.role.Identifiable.Identifiable;
+import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 
 /***********************************************************************************************************************
  *

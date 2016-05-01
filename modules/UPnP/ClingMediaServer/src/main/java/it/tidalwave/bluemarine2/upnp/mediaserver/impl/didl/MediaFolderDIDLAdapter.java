@@ -26,31 +26,40 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
+package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
-import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import javax.annotation.Nonnull;
+import java.util.Collections;
 import org.fourthline.cling.support.model.DIDLObject;
+import org.fourthline.cling.support.model.container.Container;
+import org.fourthline.cling.support.model.container.StorageFolder;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.spi.EntityWithPathAdapter;
+import it.tidalwave.bluemarine2.model.MediaFolder;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
 
 /***********************************************************************************************************************
  *
- * @stereotype Role
+ * An implementation of {@link DIDLAdapter} for {@link MediaFolder}.
+ *
+ * @see http://upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf
+ *
+ * @stereotype  Role, Adapter
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @Slf4j
-@Immutable @DciRole(datumType = EntityWithPathAdapter.class)
-public class EntityWithPathDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<EntityWithPathAdapter>
+@Immutable @DciRole(datumType = MediaFolder.class)
+public class MediaFolderDIDLAdapter extends CompositeDIDLAdapterSupport<MediaFolder>
   {
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public EntityWithPathDecoratorDIDLAdapter (final @Nonnull EntityWithPathAdapter datum)
+    public MediaFolderDIDLAdapter (final @Nonnull MediaFolder datum)
       {
         super(datum);
       }
@@ -62,13 +71,16 @@ public class EntityWithPathDecoratorDIDLAdapter extends CompositeDIDLAdapterSupp
      ******************************************************************************************************************/
     @Override @Nonnull
     public DIDLObject toObject()
-      throws Exception
       {
-        log.debug("toObject() - {}", datum.getAdaptee());
-        final DIDLObject item = asDIDLAdapter(datum.getAdaptee()).toObject();
-        log.trace(">>>> item: {}", item);
-        datum.getParent().ifPresent(parent -> item.setParentID(parent.getPath().toString()));
-        item.setId(datum.getPath().toString());
-        return item;
+        final Container container = new Container();
+        container.setClazz(StorageFolder.CLASS);
+        container.setRestricted(false);
+        container.setId(pathToDidlId(datum.getPath()));
+        container.setParentID(datum.getParent().map(parent -> pathToDidlId(parent.getPath())).orElse(ID_NONE));
+        container.setTitle(datum.as(Displayable).getDisplayName());
+        container.setCreator("blueMarine II"); // FIXME
+        container.setChildCount(datum.findChildren().count());
+        container.setItems(Collections.emptyList());
+        return container;
       }
   }

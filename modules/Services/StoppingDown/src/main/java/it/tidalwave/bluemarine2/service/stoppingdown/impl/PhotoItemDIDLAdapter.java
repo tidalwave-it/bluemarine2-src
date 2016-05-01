@@ -39,7 +39,7 @@ import org.fourthline.cling.support.model.Res;
 import org.fourthline.cling.support.model.dlna.DLNAProtocolInfo;
 import org.fourthline.cling.support.model.item.Photo;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter;
+import it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter;
 import lombok.RequiredArgsConstructor;
 import static java.util.Collections.reverseOrder;
 import static java.util.stream.Collectors.toList;

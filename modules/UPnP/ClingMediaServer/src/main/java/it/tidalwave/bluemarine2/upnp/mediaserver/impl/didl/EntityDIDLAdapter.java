@@ -26,40 +26,35 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
+package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
-import javax.annotation.concurrent.Immutable;
 import javax.annotation.Nonnull;
-import java.util.Collections;
+import javax.annotation.concurrent.Immutable;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.Container;
 import org.fourthline.cling.support.model.container.StorageFolder;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.role.Displayable;
+import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.bluemarine2.model.Entity;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
+import static it.tidalwave.role.Identifiable.Identifiable;
 
 /***********************************************************************************************************************
  *
- * An implementation of {@link DIDLAdapter} for {@link MediaFolder}.
- *
- * @see http://upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf
- *
- * @stereotype  Role, Adapter
+ * @stereotype Role
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @Slf4j
-@Immutable @DciRole(datumType = MediaFolder.class)
-public class MediaFolderDIDLAdapter extends CompositeDIDLAdapterSupport<MediaFolder>
+@Immutable //@DciRole(datumType = Entity.class)
+public class EntityDIDLAdapter extends CompositeDIDLAdapterSupport<Entity>
   {
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public MediaFolderDIDLAdapter (final @Nonnull MediaFolder datum)
+    public EntityDIDLAdapter (final @Nonnull Entity datum)
       {
         super(datum);
       }
@@ -72,15 +67,17 @@ public class MediaFolderDIDLAdapter extends CompositeDIDLAdapterSupport<MediaFol
     @Override @Nonnull
     public DIDLObject toObject()
       {
+        log.trace("toObject() - {}", datum);
         final Container container = new Container();
-        container.setClazz(StorageFolder.CLASS);
+        container.setId(datum.asOptional(Identifiable).map(d -> d.getId().stringValue()).orElse("???")); // FIXME
+        container.setParentID("parentId"); // FIXME
         container.setRestricted(false);
-        container.setId(pathToDidlId(datum.getPath()));
-        container.setParentID(datum.getParent().map(parent -> pathToDidlId(parent.getPath())).orElse(ID_NONE));
-        container.setTitle(datum.as(Displayable).getDisplayName());
-        container.setCreator("blueMarine II"); // FIXME
-        container.setChildCount(datum.findChildren().count());
-        container.setItems(Collections.emptyList());
+
+        datum.asOptional(SimpleComposite8.class).ifPresent(c -> container.setChildCount(c.findChildren().count()));
+        // FIXME: missing children count
+//        container.set(new DIDLObject.Class(datum.getClass().getName()));
+        container.setClazz(StorageFolder.CLASS); // FIXME: or Container?
+        container.setTitle(datum.asOptional(Displayable.Displayable).map(d -> d.getDisplayName()).orElse("???"));
         return container;
       }
   }

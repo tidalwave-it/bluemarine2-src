@@ -26,20 +26,20 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
+package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import org.fourthline.cling.support.model.DIDLObject;
 import it.tidalwave.role.Displayable;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.MusicArtist;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Identifiable.Identifiable;
 
 /***********************************************************************************************************************
  *
- * The {@link DIDLAdapter} for {@link Record}.
+ * The {@link DIDLAdapter} for {@link MusicArtist}.
  *
  * @stereotype Role
  *
@@ -48,18 +48,18 @@ import static it.tidalwave.role.Identifiable.Identifiable;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor
-@Immutable @DciRole(datumType = Record.class)
-public class RecordDIDLAdapter implements DIDLAdapter
+@Immutable @DciRole(datumType = MusicArtist.class)
+public class MusicArtistDIDLAdapter implements DIDLAdapter
   {
     @Nonnull
-    private final Record datum;
+    private final MusicArtist datum;
 
     @Override @Nonnull
     public DIDLObject toObject()
       {
         // parentID not set here
-        final org.fourthline.cling.support.model.container.MusicAlbum item =
-                new org.fourthline.cling.support.model.container.MusicAlbum();
+        final org.fourthline.cling.support.model.container.MusicArtist item =
+                new org.fourthline.cling.support.model.container.MusicArtist();
         item.setId(datum.as(Identifiable).getId().stringValue());
         item.setTitle(datum.asOptional(Displayable.Displayable).map(d -> d.getDisplayName()).orElse("???"));
         item.setRestricted(false);
