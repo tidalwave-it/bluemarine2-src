@@ -79,6 +79,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
 
     private UpnpClient upnpClient;
 
+    private DefaultResourceServer resourceServer;
+
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
@@ -120,6 +122,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
         final Path repositoryPath = configPath.resolve("repository.n3");
         properties.put(ROOT_PATH, configPath); // FIXME: why is this needed?
         properties.put(PropertyNames.REPOSITORY_PATH, repositoryPath);
+        resourceServer = context.getBean(DefaultResourceServer.class);
         context.getBean(MessageBus.class).publish(new PowerOnNotification(properties));
         Thread.sleep(4000); // wait for power on
       }
@@ -194,7 +197,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                         Files.createDirectories(actualFile.getParent());
                         final String header = String.format("%s(%s)", actionInvocation.getAction().getName(), actionInvocation.getInputMap());
                         final DIDLParser parser = new DIDLParser();
-                        final String result = xmlPrettyPrinted(parser.generate(didl));
+                        final String hostAndPort = String.format("%s:%d", resourceServer.getIpAddress(), resourceServer.getPort());
+                        final String result = xmlPrettyPrinted(parser.generate(didl)).replaceAll(hostAndPort, "<server>");
                         Files.write(actualFile, (header + "\n" + result).getBytes(StandardCharsets.UTF_8));
 
                         try

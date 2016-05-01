@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
+import it.tidalwave.bluemarine2.model.AudioFile;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import org.fourthline.cling.support.model.DIDLObject;
@@ -35,8 +36,15 @@ import org.fourthline.cling.support.model.item.MusicTrack;
 import it.tidalwave.role.Displayable;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.Track;
+import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Identifiable.Identifiable;
+import java.util.Collections;
+import lombok.extern.slf4j.Slf4j;
+import org.fourthline.cling.support.model.Protocol;
+import org.fourthline.cling.support.model.ProtocolInfo;
+import org.fourthline.cling.support.model.Res;
+import org.fourthline.cling.support.model.dlna.DLNAProtocolInfo;
 
 /***********************************************************************************************************************
  *
@@ -48,21 +56,33 @@ import static it.tidalwave.role.Identifiable.Identifiable;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor
+@RequiredArgsConstructor @Slf4j
 @Immutable @DciRole(datumType = Track.class)
 public class TrackDIDLAdapter implements DIDLAdapter
   {
     @Nonnull
     private final Track datum;
 
+    @Nonnull
+    private final ResourceServer resourceServer;
+
     @Override @Nonnull
     public DIDLObject toObject()
       {
+        log.debug("toObject() - {}", datum);
         // parentID not set here
+
+        final ProtocolInfo protocolInfo = new DLNAProtocolInfo(Protocol.HTTP_GET, "*", "audio/mp3", "*"); // FIXME: MIME
+        final AudioFile audioFile = datum.as(AudioFileSupplier).getAudioFile();
+
+        final Res resource = new Res(protocolInfo, null, resourceServer.urlForResource(audioFile));
+//        resource.setResolution(size, size);
+
         final MusicTrack item = new MusicTrack();
         item.setId(datum.as(Identifiable).getId().stringValue());
         item.setTitle(datum.asOptional(Displayable.Displayable).map(d -> d.getDisplayName()).orElse("???"));
         item.setOriginalTrackNumber(datum.getTrackNumber());
+        item.setResources(Collections.singletonList(resource));
 //        datum.getDuration();
 //        datum.getDiskNumber();
 //        datum.getTrackNumber();
