@@ -92,6 +92,7 @@ public interface DIDLAdapter
     public default ContentHolder toContent (final @Nonnull BrowseFlag browseFlag,
                                             final @Nonnegative int from,
                                             final @Nonnegative int maxResults)
+      throws Exception
       {
         final DIDLContent content = new DIDLContent();
         content.addObject(toObject());
@@ -106,5 +107,6 @@ public interface DIDLAdapter
      *
      ******************************************************************************************************************/
     @Nonnull
-    public DIDLObject toObject();
+    public DIDLObject toObject()
+      throws Exception;
   }

@@ -65,6 +65,7 @@ public abstract class CompositeDIDLAdapterSupport<T extends As8> implements DIDL
     public ContentHolder toContent (final @Nonnull BrowseFlag browseFlag,
                                     final @Nonnegative int from,
                                     final @Nonnegative int maxResults)
+      throws Exception
       {
         final DIDLContent content = new DIDLContent();
         int numberReturned = 0;
@@ -84,7 +85,16 @@ public abstract class CompositeDIDLAdapterSupport<T extends As8> implements DIDL
                       .max(maxResults)
                       .results()
                       .stream()
-                      .forEach(child -> content.addObject(asDIDLAdapter(child).toObject()));
+                      .forEach(child -> {
+            try
+              {
+                content.addObject(asDIDLAdapter(child).toObject());
+              }
+            catch (Exception e)
+              {
+                throw new RuntimeException(e);
+              }
+        });
                 numberReturned = (int)content.getCount();
                 break;
 

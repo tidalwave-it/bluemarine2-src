@@ -39,6 +39,8 @@ import it.tidalwave.bluemarine2.model.Track;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Identifiable.Identifiable;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.Collections;
 import lombok.extern.slf4j.Slf4j;
 import org.fourthline.cling.support.model.Protocol;
@@ -68,6 +70,7 @@ public class TrackDIDLAdapter implements DIDLAdapter
 
     @Override @Nonnull
     public DIDLObject toObject()
+      throws IOException
       {
         log.debug("toObject() - {}", datum);
         // parentID not set here
@@ -75,18 +78,24 @@ public class TrackDIDLAdapter implements DIDLAdapter
         final ProtocolInfo protocolInfo = new DLNAProtocolInfo(Protocol.HTTP_GET, "*", "audio/mp3", "*"); // FIXME: MIME
         final AudioFile audioFile = datum.as(AudioFileSupplier).getAudioFile();
 
-        final Res resource = new Res(protocolInfo, null, resourceServer.urlForResource(audioFile));
-//        resource.setResolution(size, size);
+        final long size = Files.size(audioFile.getPath()); // FIXME: should be in metadata
+        final Res resource = new Res(protocolInfo, size, resourceServer.urlForResource(audioFile));
+        resource.setDuration("" + datum.getDuration().getSeconds());
+//        resource.setBitrate(size); // TODO
+//        resource.setBitsPerSample(size); // TODO
+//        resource.setNrAudioChannels(size); // TODO
+//        resource.setSampleFrequency(size); // TODO
 
         final MusicTrack item = new MusicTrack();
         item.setId(datum.as(Identifiable).getId().stringValue());
         item.setTitle(datum.asOptional(Displayable.Displayable).map(d -> d.getDisplayName()).orElse("???"));
         item.setOriginalTrackNumber(datum.getTrackNumber());
         item.setResources(Collections.singletonList(resource));
-//        datum.getDuration();
 //        datum.getDiskNumber();
 //        datum.getTrackNumber();
         item.setRestricted(false);
+
+        // TODO     <desc id="cdudn" nameSpace="urn:schemas-rinconnetworks-com:metadata-1-0/">SA_RINCON5127_42????35</desc>
         return item;
       }
   }

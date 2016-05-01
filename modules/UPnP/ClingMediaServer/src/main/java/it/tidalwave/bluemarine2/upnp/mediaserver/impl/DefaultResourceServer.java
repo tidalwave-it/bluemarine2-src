@@ -29,7 +29,6 @@
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import javax.annotation.Nonnull;
-import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -37,7 +36,6 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.URLDecoder;
@@ -46,7 +44,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.eclipse.jetty.server.Server;
+import it.tidalwave.messagebus.annotation.ListensTo;
+import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.AudioFile;
+import it.tidalwave.bluemarine2.model.PropertyNames;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -56,7 +58,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
+@SimpleMessageSubscriber @Slf4j
 public class DefaultResourceServer implements ResourceServer
   {
     @Getter
@@ -67,7 +69,7 @@ public class DefaultResourceServer implements ResourceServer
 
     private Server server;
 
-    private final Path root = Paths.get("/Users/fritz/Library/Application Support/blueMarine2/"); // FIXME
+    private Path rootPath;
 
     /*******************************************************************************************************************
      *
@@ -83,7 +85,7 @@ public class DefaultResourceServer implements ResourceServer
           throws ServletException, IOException
           {
             log.debug("request URI: {}", request.getRequestURI());
-            final Path resourcePath = root.resolve(urlDecoded(request.getRequestURI().replaceAll("^/", "")));
+            final Path resourcePath = rootPath.resolve(urlDecoded(request.getRequestURI().replaceAll("^/", "")));
             log.debug(">>>> resource path: {}", resourcePath);
 
             if (!Files.exists(resourcePath))
@@ -103,18 +105,18 @@ public class DefaultResourceServer implements ResourceServer
     /*******************************************************************************************************************
      *
      *
-     *
      ******************************************************************************************************************/
-    @PostConstruct // FIXME: user power on
-    private void initialize()
+    /* VisibleForTesting */ void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
       throws Exception
       {
+        log.info("onPowerOnNotification({})", notification);
+        rootPath = notification.getProperties().get(PropertyNames.ROOT_PATH);
         ipAddress = InetAddress.getLocalHost().getHostAddress();
         server = new Server(InetSocketAddress.createUnresolved(ipAddress, Integer.getInteger("port", 0)));
         server.setHandler(servlet.asHandler());
         server.start();
         port = server.getConnectors()[0].getLocalPort();
-        log.info(">>>> resource server jetty started at {}:{}", ipAddress, port);
+        log.info(">>>> resource server jetty started at {}:{} serving resources at {}", ipAddress, port, rootPath);
       }
 
     /*******************************************************************************************************************
@@ -122,8 +124,8 @@ public class DefaultResourceServer implements ResourceServer
      *
      *
      ******************************************************************************************************************/
-    @PreDestroy // FIXME: user power off
-    private void destroy()
+    @PreDestroy // FIXME: user PowerOffNotification
+    private void shutDown()
       throws Exception
       {
         server.stop();
@@ -137,8 +139,7 @@ public class DefaultResourceServer implements ResourceServer
     @Override
     public String urlForResource (final @Nonnull AudioFile resource)
       {
-        final Path path = root.relativize(resource.getPath());
-
+        final Path path = rootPath.relativize(resource.getPath());
         final String s = StreamSupport.stream(path.spliterator(), false)
                                       .map(p -> urlEncoded(p.toString()))
                                       .collect(Collectors.joining("/"));

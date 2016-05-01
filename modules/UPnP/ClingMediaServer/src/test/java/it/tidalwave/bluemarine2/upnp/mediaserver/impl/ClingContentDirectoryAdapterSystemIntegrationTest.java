@@ -197,8 +197,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                         Files.createDirectories(actualFile.getParent());
                         final String header = String.format("%s(%s)", actionInvocation.getAction().getName(), actionInvocation.getInputMap());
                         final DIDLParser parser = new DIDLParser();
-                        final String hostAndPort = String.format("%s:%d", resourceServer.getIpAddress(), resourceServer.getPort());
-                        final String result = xmlPrettyPrinted(parser.generate(didl)).replaceAll(hostAndPort, "<server>");
+                        final String hostAndPort = String.format("http://%s:%d", resourceServer.getIpAddress(), resourceServer.getPort());
+                        final String result = xmlPrettyPrinted(parser.generate(didl)).replaceAll(hostAndPort, "http://<server>");
                         Files.write(actualFile, (header + "\n" + result).getBytes(StandardCharsets.UTF_8));
 
                         try

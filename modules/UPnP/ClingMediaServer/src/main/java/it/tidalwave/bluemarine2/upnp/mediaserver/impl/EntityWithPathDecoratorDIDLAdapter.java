@@ -62,6 +62,7 @@ public class EntityWithPathDecoratorDIDLAdapter extends CompositeDIDLAdapterSupp
      ******************************************************************************************************************/
     @Override @Nonnull
     public DIDLObject toObject()
+      throws Exception
       {
         log.debug("toObject() - {}", datum.getAdaptee());
         final DIDLObject item = asDIDLAdapter(datum.getAdaptee()).toObject();
