@@ -95,7 +95,8 @@ public class DefaultResourceServer implements ResourceServer
               }
             else
               {
-                response.setContentType(Files.probeContentType(resourcePath));
+                response.setContentType("audio/mpeg");
+//                response.setContentType(Files.probeContentType(resourcePath)); FIXME
                 response.setContentLength((int)Files.size(resourcePath));
                 Files.copy(resourcePath, response.getOutputStream());
               }

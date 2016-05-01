@@ -4,6 +4,6 @@ Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_mu
         <dc:title>Above the Treetops</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="164" protocolInfo="http-get:*:audio/mp3:*" size="4046151">http://<server>/Music/Pat+Metheny/Secret+Story/01+Above+The+Treetops.mp3</res>
+        <res duration="00:02:44" protocolInfo="http-get:*:audio/mpeg:*" size="4046151">http://<server>/Music/Pat+Metheny/Secret+Story/01+Above+The+Treetops.mp3</res>
     </item>
 </DIDL-Lite>

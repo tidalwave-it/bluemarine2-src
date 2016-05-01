@@ -4,6 +4,6 @@ Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artis
         <dc:title>Con il nastro rosa (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito, Giuseppe La Pusata)</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="435" protocolInfo="http-get:*:audio/mp3:*" size="15047344">http://<server>/Music/6+in+Jazz/Tributo+a+Lucio+Battisti+%28feat.+Sandro+Deidda%2C+Alessandro+Castiglione%2C+Pierpaolo+Bisogno%2C+Guglielmo+Guglielmi%2C+Aldo+Vigorito+%26+Giuseppe+La+Pusata%29/01+Con+il+nastro+rosa+%28feat.+Sandro+Deidda%2C+Alessandro+Castiglione%2C+Pierpaolo+Bisogno%2C+Guglielmo+Guglielmi%2C+Aldo+Vigorito%2C+Giuseppe+La+Pusata%29.m4a</res>
+        <res duration="00:07:15" protocolInfo="http-get:*:audio/mpeg:*" size="15047344">http://<server>/Music/6+in+Jazz/Tributo+a+Lucio+Battisti+%28feat.+Sandro+Deidda%2C+Alessandro+Castiglione%2C+Pierpaolo+Bisogno%2C+Guglielmo+Guglielmi%2C+Aldo+Vigorito+%26+Giuseppe+La+Pusata%29/01+Con+il+nastro+rosa+%28feat.+Sandro+Deidda%2C+Alessandro+Castiglione%2C+Pierpaolo+Bisogno%2C+Guglielmo+Guglielmi%2C+Aldo+Vigorito%2C+Giuseppe+La+Pusata%29.m4a</res>
     </item>
 </DIDL-Lite>
