@@ -29,58 +29,45 @@
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import org.slf4j.bridge.SLF4JBridgeHandler;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.fourthline.cling.UpnpService;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import javax.annotation.concurrent.Immutable;
+import org.fourthline.cling.support.model.DIDLObject;
+import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.model.spi.EntityWithPathAdapter;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
+ *
+ * @stereotype Role
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @Slf4j
-public class ClingTestSupport
+@Immutable @DciRole(datumType = EntityWithPathAdapter.class)
+public class EntityWithPathDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<EntityWithPathAdapter>
   {
-    protected ClassPathXmlApplicationContext context;
-
-    protected UpnpService upnpService;
-
-    private final String[] configLocations;
-
-    protected ClingTestSupport (final @Nonnull String ... configLocations)
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    public EntityWithPathDecoratorDIDLAdapter (final @Nonnull EntityWithPathAdapter datum)
       {
-        final List<String> list = new ArrayList<>(Arrays.asList(configLocations));
-        list.add(0, "META-INF/DciBeans.xml"); // for DCI injectors
-        this.configLocations = list.toArray(new String[0]);
-        log.info(">>>> Spring configuration locations: {}", (Object[])this.configLocations);
+        super(datum);
       }
 
-    @BeforeClass
-    public void setup()
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public DIDLObject toObject()
       {
-        SLF4JBridgeHandler.removeHandlersForRootLogger();
-        SLF4JBridgeHandler.install();
-        context = new ClassPathXmlApplicationContext(configLocations);
-        upnpService = context.getBean(UpnpService.class);
-      }
-
-    @AfterClass
-    public void shutdown()
-      {
-        log.info("Shutting down...");
-        upnpService.shutdown();
-      }
-
-    protected void delay()
-      throws InterruptedException
-      {
-        Thread.sleep(Long.getLong("delay", 2000));
+        log.debug("toObject() - {}", datum.getAdaptee());
+        final DIDLObject item = asDIDLAdapter(datum.getAdaptee()).toObject();
+        log.trace(">>>> item: {}", item);
+        datum.getParent().ifPresent(parent -> item.setParentID(parent.getPath().toString()));
+        item.setId(datum.getPath().toString());
+        return item;
       }
   }

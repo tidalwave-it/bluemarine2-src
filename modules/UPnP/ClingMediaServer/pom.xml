@@ -53,9 +53,22 @@
         <!-- TEST DEPENDENCIES -->
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
+            <artifactId>it-tidalwave-messagebus-spring</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.aspectj</groupId>
+                    <artifactId>aspectjweaver</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-util-test</artifactId>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-role-spring</artifactId>

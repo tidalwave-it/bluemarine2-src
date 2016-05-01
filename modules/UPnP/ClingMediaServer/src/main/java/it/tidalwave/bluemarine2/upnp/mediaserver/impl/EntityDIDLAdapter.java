@@ -28,68 +28,56 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
-import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import javax.annotation.concurrent.Immutable;
+import org.fourthline.cling.support.model.DIDLObject;
+import org.fourthline.cling.support.model.container.Container;
+import org.fourthline.cling.support.model.container.StorageFolder;
+import it.tidalwave.role.Displayable;
+import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.bluemarine2.model.Entity;
+import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.role.Identifiable.Identifiable;
 
 /***********************************************************************************************************************
  *
- * Holder of miscellaneous utility methods.
+ * @stereotype Role
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class UPnPUtilities
+@Slf4j
+@Immutable //@DciRole(datumType = Entity.class)
+public class EntityDIDLAdapter extends CompositeDIDLAdapterSupport<Entity>
   {
-    public static final String ID_NONE = "-1";
-
-    private static final String ID_ROOT = "0";
-
-    private static final String PATH_ROOT = "/";
-
-    private static final String REGEXP_ROOT = "^/$";
-
     /*******************************************************************************************************************
      *
-     * Converts to a {@link Path} to a a DIDL id.
-     *
-     * @param       path    the path
-     * @return              the DIDL id
-     *
      ******************************************************************************************************************/
-    @Nonnull
-    public static String pathToDidlId (final @Nonnull Path path)
+    public EntityDIDLAdapter (final @Nonnull Entity datum)
       {
-        return path.toString().replaceAll(REGEXP_ROOT, ID_ROOT);
+        super(datum);
       }
 
     /*******************************************************************************************************************
      *
-     * Converts a DIDL id to a {@link Path}.
-     *
-     * @param       id      the DIDL id
-     * @return              the path
+     * {@inheritDoc}
      *
      ******************************************************************************************************************/
-    @Nonnull
-    public static Path didlIdToPath (final @Nonnull String id)
+    @Override @Nonnull
+    public DIDLObject toObject()
       {
-        return Paths.get(id.equals(ID_ROOT) ? PATH_ROOT : id);
-      }
+        log.trace("toObject() - {}", datum);
+        final Container container = new Container();
+        container.setId(datum.asOptional(Identifiable).map(d -> d.getId().stringValue()).orElse("???")); // FIXME
+        container.setParentID("parentId"); // FIXME
+        container.setRestricted(false);
 
-    /*******************************************************************************************************************
-     *
-     * Fixes the {@code maxCount} parameter of ContentDirectory {@code browse()}.
-     *
-     * @param   value   the input value
-     * @return          the max count
-     *
-     ******************************************************************************************************************/
-    @Nonnegative
-    public static int maxCount (final @Nonnegative long value)
-      {
-        return (value == 0) ? Integer.MAX_VALUE : (int)value;
+        datum.asOptional(SimpleComposite8.class).ifPresent(c -> container.setChildCount(c.findChildren().count()));
+        // FIXME: missing children count
+//        container.set(new DIDLObject.Class(datum.getClass().getName()));
+        container.setClazz(StorageFolder.CLASS); // FIXME: or Container?
+        container.setTitle(datum.asOptional(Displayable.Displayable).map(d -> d.getDisplayName()).orElse("???"));
+        return container;
       }
   }

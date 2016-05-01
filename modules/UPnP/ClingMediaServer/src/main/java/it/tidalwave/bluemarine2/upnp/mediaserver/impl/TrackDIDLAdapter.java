@@ -29,58 +29,44 @@
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import org.slf4j.bridge.SLF4JBridgeHandler;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.fourthline.cling.UpnpService;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.concurrent.Immutable;
+import org.fourthline.cling.support.model.DIDLObject;
+import org.fourthline.cling.support.model.item.MusicTrack;
+import it.tidalwave.role.Displayable;
+import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.model.Track;
+import lombok.RequiredArgsConstructor;
+import static it.tidalwave.role.Identifiable.Identifiable;
 
 /***********************************************************************************************************************
+ *
+ * The {@link DIDLAdapter} for {@link Track}.
+ *
+ * @stereotype Role
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class ClingTestSupport
+@RequiredArgsConstructor
+@Immutable @DciRole(datumType = Track.class)
+public class TrackDIDLAdapter implements DIDLAdapter
   {
-    protected ClassPathXmlApplicationContext context;
+    @Nonnull
+    private final Track datum;
 
-    protected UpnpService upnpService;
-
-    private final String[] configLocations;
-
-    protected ClingTestSupport (final @Nonnull String ... configLocations)
+    @Override @Nonnull
+    public DIDLObject toObject()
       {
-        final List<String> list = new ArrayList<>(Arrays.asList(configLocations));
-        list.add(0, "META-INF/DciBeans.xml"); // for DCI injectors
-        this.configLocations = list.toArray(new String[0]);
-        log.info(">>>> Spring configuration locations: {}", (Object[])this.configLocations);
-      }
-
-    @BeforeClass
-    public void setup()
-      {
-        SLF4JBridgeHandler.removeHandlersForRootLogger();
-        SLF4JBridgeHandler.install();
-        context = new ClassPathXmlApplicationContext(configLocations);
-        upnpService = context.getBean(UpnpService.class);
-      }
-
-    @AfterClass
-    public void shutdown()
-      {
-        log.info("Shutting down...");
-        upnpService.shutdown();
-      }
-
-    protected void delay()
-      throws InterruptedException
-      {
-        Thread.sleep(Long.getLong("delay", 2000));
+        // parentID not set here
+        final MusicTrack item = new MusicTrack();
+        item.setId(datum.as(Identifiable).getId().stringValue());
+        item.setTitle(datum.asOptional(Displayable.Displayable).map(d -> d.getDisplayName()).orElse("???"));
+        item.setOriginalTrackNumber(datum.getTrackNumber());
+//        datum.getDuration();
+//        datum.getDiskNumber();
+//        datum.getTrackNumber();
+        item.setRestricted(false);
+        return item;
       }
   }

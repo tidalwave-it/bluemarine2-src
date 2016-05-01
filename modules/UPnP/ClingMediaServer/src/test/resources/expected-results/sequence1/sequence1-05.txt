@@ -1,0 +1,23 @@
+Browse({ObjectID=0, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=0, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="5" id="/music" parentID="0" restricted="0" searchable="0">
+        <dc:title>Music</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="0" id="/photos" parentID="0" restricted="0" searchable="0">
+        <dc:title>Photos</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="0" id="/videos" parentID="0" restricted="0" searchable="0">
+        <dc:title>Videos</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="0" id="/services" parentID="0" restricted="0" searchable="0">
+        <dc:title>Services</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+</DIDL-Lite>

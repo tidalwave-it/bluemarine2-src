@@ -28,59 +28,71 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
-import javax.annotation.concurrent.Immutable;
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
-import java.util.Collections;
-import org.fourthline.cling.support.model.DIDLObject;
-import org.fourthline.cling.support.model.container.Container;
-import org.fourthline.cling.support.model.container.StorageFolder;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import lombok.NoArgsConstructor;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
- * An implementation of {@link DIDLAdapter} for {@link MediaFolder}.
- *
- * @see http://upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf
- *
- * @stereotype  Role, Adapter
+ * Holder of miscellaneous utility methods.
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-@Immutable @DciRole(datumType = MediaFolder.class)
-public class MediaFolderDIDLAdapter extends CompositeDIDLAdapterSupport<MediaFolder>
+@NoArgsConstructor(access = PRIVATE)
+public final class UpnpUtilities
   {
+    public static final String ID_NONE = "-1";
+
+    private static final String ID_ROOT = "0";
+
+    private static final String PATH_ROOT = "/";
+
+    private static final String REGEXP_ROOT = "^/$";
+
     /*******************************************************************************************************************
      *
+     * Converts to a {@link Path} to a a DIDL id.
+     *
+     * @param       path    the path
+     * @return              the DIDL id
+     *
      ******************************************************************************************************************/
-    public MediaFolderDIDLAdapter (final @Nonnull MediaFolder datum)
+    @Nonnull
+    public static String pathToDidlId (final @Nonnull Path path)
       {
-        super(datum);
+        return path.toString().replaceAll(REGEXP_ROOT, ID_ROOT);
       }
 
     /*******************************************************************************************************************
      *
-     * {@inheritDoc}
+     * Converts a DIDL id to a {@link Path}.
+     *
+     * @param       id      the DIDL id
+     * @return              the path
      *
      ******************************************************************************************************************/
-    @Override @Nonnull
-    public DIDLObject toObject()
+    @Nonnull
+    public static Path didlIdToPath (final @Nonnull String id)
       {
-        final Container container = new Container();
-        container.setClazz(StorageFolder.CLASS);
-        container.setRestricted(false);
-        container.setId(pathToDidlId(datum.getPath()));
-        container.setParentID(datum.getParent().map(parent -> pathToDidlId(parent.getPath())).orElse(ID_NONE));
-        container.setTitle(datum.as(Displayable).getDisplayName());
-        container.setCreator("blueMarine II"); // FIXME
-        container.setChildCount(datum.findChildren().count());
-        container.setItems(Collections.emptyList());
-        return container;
+        return Paths.get(id.equals(ID_ROOT) ? PATH_ROOT : id);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Fixes the {@code maxCount} parameter of ContentDirectory {@code browse()}.
+     *
+     * @param   value   the input value
+     * @return          the max count
+     *
+     ******************************************************************************************************************/
+    @Nonnegative
+    public static int maxCount (final @Nonnegative long value)
+      {
+        return (value == 0) ? Integer.MAX_VALUE : (int)value;
       }
   }
