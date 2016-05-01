@@ -80,7 +80,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
   {
     private static final Path EXPECTED_PATH = Paths.get("src/test/resources/expected-results/sequences");
 
-    private static final Path ACTUAL_PATH = Paths.get("target/test-results");
+    private static final Path ACTUAL_PATH = Paths.get("target/test-results/sequences");
 
     private UpnpClient upnpClient;
 
@@ -217,7 +217,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                     try
                       {
                         log.info("received() - {}", actionInvocation);
-                        final String fileName = String.format("%s/%s-%03d.txt", clientDeviceName, sequenceName, n.getAndIncrement());
+                        final String fileName = String.format("%s/%s/%s-%03d.txt",
+                                clientDeviceName, sequenceName, sequenceName, n.getAndIncrement());
                         final Path expectedFile = EXPECTED_PATH.resolve(fileName);
                         final Path actualFile = ACTUAL_PATH.resolve(fileName);
                         Files.createDirectories(actualFile.getParent());
