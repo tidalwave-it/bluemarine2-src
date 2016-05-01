@@ -1,3 +1,6 @@
+#
+# ByArtistThenRecord / 6 in Jazz / Tributo a Lucio Battisti
+#
 browse @@@ 0 @@@ BrowseMetadata @@@ 0 @@@ 0 @@@ @id,@parentID,@restricted,@childCount,dc:title,dc:creator, upnp:artist,upnp:class,dc:date,upnp:album,upnp:genre,res,res@size,res@duration,res@protection,res@bitrate,res@resolution,res@protocolInfo,res@nrAudioChannels,res@sampleFrequency,upnp:albumArtURI,upnp:albumArtURI@dlna:profileID @@@ [])
 browse @@@ 0 @@@ BrowseDirectChildren @@@ 0 @@@ 16 @@@ @id,@parentID,@restricted,@childCount,dc:title,dc:creator, upnp:artist,upnp:class,dc:date,upnp:album,upnp:genre,res,res@size,res@duration,res@protection,res@bitrate,res@resolution,res@protocolInfo,res@nrAudioChannels,res@sampleFrequency,upnp:albumArtURI,upnp:albumArtURI@dlna:profileID @@@ [])
 browse @@@ 0 @@@ BrowseDirectChildren @@@ 4 @@@ 12 @@@ @id,@parentID,@restricted,@childCount,dc:title,dc:creator, upnp:artist,upnp:class,dc:date,upnp:album,upnp:genre,res,res@size,res@duration,res@protection,res@bitrate,res@resolution,res@protocolInfo,res@nrAudioChannels,res@sampleFrequency,upnp:albumArtURI,upnp:albumArtURI@dlna:profileID @@@ [])

@@ -62,6 +62,7 @@ import static java.util.stream.Collectors.toList;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 import static it.tidalwave.bluemarine2.util.PrettyPrint.xmlPrettyPrinted;
 import static it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /***********************************************************************************************************************
  *
@@ -292,6 +293,6 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
     private static Collection<Params> toParams (final @Nonnull Path path)
       throws IOException
       {
-        return Files.readAllLines(path, StandardCharsets.UTF_8).stream().map(Params::new).collect(toList());
+        return Files.readAllLines(path, UTF_8).stream().filter(s -> !s.startsWith("#")).map(Params::new).collect(toList());
       }
   }
