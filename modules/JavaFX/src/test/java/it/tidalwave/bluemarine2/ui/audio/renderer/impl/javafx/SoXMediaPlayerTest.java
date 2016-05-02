@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
  */
 public class SoXMediaPlayerTest
   {
+    // Quick test to exercise a charset problem with file names on the Raspberry PI
     @Test(enabled = false)
     public void testSetMediaItem()
       throws Exception
