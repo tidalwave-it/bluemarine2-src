@@ -27,14 +27,11 @@
  * #L%
  */package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
-import it.tidalwave.bluemarine2.model.EntityWithPath;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.util.Arrays;
 import java.util.List;
 import java.nio.file.Path;
-import org.fourthline.cling.support.model.BrowseFlag;
-import org.fourthline.cling.support.model.DIDLContent;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.Protocol;
 import org.fourthline.cling.support.model.ProtocolInfo;
@@ -42,7 +39,7 @@ import org.fourthline.cling.support.model.Res;
 import org.fourthline.cling.support.model.dlna.DLNAProtocolInfo;
 import org.fourthline.cling.support.model.item.Photo;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter;
+import it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter;
 import lombok.RequiredArgsConstructor;
 import static java.util.Collections.reverseOrder;
 import static java.util.stream.Collectors.toList;
@@ -72,19 +69,6 @@ public class PhotoItemDIDLAdapter implements DIDLAdapter
     private final PhotoItem datum;
 
     private final String creator = "Fabrizio Giudici";
-
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override
-    public ContentHolder toContent (final BrowseFlag browseFlag, final int from, final int maxResults)
-      {
-        final DIDLContent content = new DIDLContent();
-        content.addObject(toObject());
-        return new ContentHolder(content, 1, 1);
-      }
 
     /*******************************************************************************************************************
      *

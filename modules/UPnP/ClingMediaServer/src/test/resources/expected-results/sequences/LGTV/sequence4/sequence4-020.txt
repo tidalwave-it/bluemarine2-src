@@ -1,0 +1,83 @@
+Browse({ObjectID=/music/RepositoryBrowserByRecordThenTrack, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="12" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:fe349f2b71ea0f41e5a944aa37f4e420a35d441c" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+        <dc:title/>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByRecordThenTrack/http:__dbtune.org_musicbrainz_resource_record_5b933d56-b905-43c3-bc55-cc4c1796d569" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+        <dc:title>"Miles Ahead"</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="3" id="/music/RepositoryBrowserByRecordThenTrack/http:__dbtune.org_musicbrainz_resource_record_8e5f4ff4-28ca-4b7d-a1d5-1a6128ca3df6" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+        <dc:title>'Round About Midnight</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="9" id="/music/RepositoryBrowserByRecordThenTrack/http:__dbtune.org_musicbrainz_resource_record_98bf409f-28bb-406c-a319-0271ed051b28" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+        <dc:title>'Round About Midnight</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="9" id="/music/RepositoryBrowserByRecordThenTrack/http:__dbtune.org_musicbrainz_resource_record_e151f1b6-3bdc-4103-90ee-facdebbd4435" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+        <dc:title>'Round About Midnight (disc 2)</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="15" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:ce887dfbe136b4d870d171248ad1200ac73e6918" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+        <dc:title>.. Per La Viola Da Gamba..</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="2" id="/music/RepositoryBrowserByRecordThenTrack/http:__dbtune.org_musicbrainz_resource_record_344362ed-39c0-40bb-b55f-2c9627e5d767" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+        <dc:title>1</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="14" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:0e4b2a28e79b3d32f83668d48ce5b1422c711a76" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+        <dc:title>1</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:29dc11814dd7b4de347c400655253bbc1df26312" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+        <dc:title>100% Hits 2001</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="12" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:0c5279832dcee2d414174a934ef470f71a415ce0" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+        <dc:title>1492 - Conquest of Paradise (Soundtrack from the Motion Picture)</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:ae542bc0da647a52f8b0f4c253783cf725d40f5a" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+        <dc:title>15 Years of Fine Jazz By TCB – The Montreux Jazz Label</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="3" id="/music/RepositoryBrowserByRecordThenTrack/http:__dbtune.org_musicbrainz_resource_record_98807398-19c8-4c81-bba4-ffba0f1c27c9" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+        <dc:title>1935</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="11" id="/music/RepositoryBrowserByRecordThenTrack/http:__dbtune.org_musicbrainz_resource_record_50e81e43-ac2d-4011-b1d1-1b9fe9c0adad" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+        <dc:title>1935-1936</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="7" id="/music/RepositoryBrowserByRecordThenTrack/http:__dbtune.org_musicbrainz_resource_record_642d00ae-14f9-4552-bdd1-f2f6793b416e" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+        <dc:title>1958 Miles</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByRecordThenTrack/http:__dbtune.org_musicbrainz_resource_record_4401c938-928c-4174-9cb1-f1595df587a5" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+        <dc:title>1962-1970</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByRecordThenTrack/http:__dbtune.org_musicbrainz_resource_record_d480196a-71b3-4593-ac07-8b1b6f41da9d" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+        <dc:title>1963 In Japan</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+</DIDL-Lite>

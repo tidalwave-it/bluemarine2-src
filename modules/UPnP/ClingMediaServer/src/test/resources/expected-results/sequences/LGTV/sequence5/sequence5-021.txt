@@ -1,0 +1,99 @@
+Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=16, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_b2d096c1-8ccb-44cf-baf0-97e7fe0dc38e" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>All of You</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
+        <res duration="00:07:00" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%27Round+About+Midnight+%28Legacy+Edition%29/1-03+All+Of+You.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_f850b86a-55d2-41c5-8c4a-e9594cba6ba0" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Bye Bye Blackbird</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
+        <res duration="00:07:54" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%27Round+About+Midnight+%28Legacy+Edition%29/1-04+Bye+Bye+Blackbird.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_d02625e0-3656-437a-9d6b-4315e3af72f5" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Tadd's Delight</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
+        <res duration="00:04:26" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%27Round+About+Midnight+%28Legacy+Edition%29/1-05+Tadd%27s+Delight+%28Alternate+Take%29.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_0ba4f516-252b-45cd-a6b5-1de7bf843769" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>'Round Midnight</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
+        <res duration="00:05:55" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%27Round+About+Midnight+%28Legacy+Edition%29/1-01+%27Round+Midnight.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_0ba4f516-252b-45cd-a6b5-1de7bf843769" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>'Round Midnight</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
+        <res duration="00:05:57" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/The+Essential+Miles+Davis+%5BDisc+1%5D/1-06+%27Round+Midnight.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_8bb7b63c-9188-4e63-8192-16ae289a3ada" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Dear Old Stockholm</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
+        <res duration="00:07:48" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%27Round+About+Midnight+%28Legacy+Edition%29/1-06+Dear+Old+Stockholm.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_14b4271d-9aa5-4e12-92bc-741b8b2cd2e1" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Bye Bye Blackbird</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
+        <res duration="00:07:55" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/The+Essential+Miles+Davis+%5BDisc+1%5D/1-07+Bye+Bye+Blackbird.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_a3a99921-dead-485d-9599-c860e822ceee" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Two Bass Hit</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
+        <res duration="00:03:42" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%27Round+About+Midnight+%28Legacy+Edition%29/1-07+Two+Bass+Hit.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_3a76abae-d343-4781-ab47-710dde108bf1" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Sweet Sue, Just You</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
+        <res duration="00:03:40" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%27Round+About+Midnight+%28Legacy+Edition%29/1-10+Sweet+Sue%2C+Just+You.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_823f4210-3ebb-4737-ac1c-3bc0f692b84a" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>'Round Midnight</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
+        <res duration="00:05:59" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%27Round+About+Midnight+%28Legacy+Edition%29/2-01+%27Round+Midnight+%28Live%29.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_0678f77a-1c77-476e-8d0d-2a8ba0fe7227" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>[introduction by Gene Norman]</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
+        <res duration="00:01:35" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%27Round+About+Midnight+%28Legacy+Edition%29/2-02+Introduction+by+Gene+Norman+%28Live%29.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_a84b472f-3bc2-458f-b1e2-a1ec9357203f" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Chance It (a.k.a. Max Is Making Wax)</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
+        <res duration="00:04:33" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%27Round+About+Midnight+%28Legacy+Edition%29/2-03+Chance+It+%28aka+Max+Is+Making+Wax%29+%5BLive%5D.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_67fd338c-4ca5-48d0-b20c-1e1fda929e0c" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Walkin'</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
+        <res duration="00:10:02" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%27Round+About+Midnight+%28Legacy+Edition%29/2-04+Walkin%27+%28Live%29.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_a4db3902-d5d9-4554-9bd4-bdc8e03b030f" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Gene Norman &amp; Miles Davis</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
+        <res duration="00:00:27" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%27Round+About+Midnight+%28Legacy+Edition%29/2-05+Gene+Norman+%26+Miles+Davis+%28Live%29.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_ba7652d8-27f1-4713-985c-ceae7d651cd7" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>It Never Entered My Mind</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
+        <res duration="00:05:17" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%27Round+About+Midnight+%28Legacy+Edition%29/2-06+It+Never+Entered+My+Mind+%28Live%29.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_7ab1dc7a-ad7e-4264-9f9a-35c1c2ce6c56" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Woody 'n You</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
+        <res duration="00:05:46" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%27Round+About+Midnight+%28Legacy+Edition%29/2-07+Woody+%27N+You+%28Live%29.m4a</res>
+    </item>
+</DIDL-Lite>

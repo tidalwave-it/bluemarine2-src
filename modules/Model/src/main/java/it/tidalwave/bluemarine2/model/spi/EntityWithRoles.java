@@ -44,8 +44,14 @@ public class EntityWithRoles implements Entity
     @Delegate @Nonnull
     private final AsSupport asSupport;
 
-    public EntityWithRoles (final @Nonnull Object ... roles) 
+    public EntityWithRoles (final @Nonnull Object ... roles)
       {
         this.asSupport = new AsSupport(this, roles);
+      }
+
+    @Override @Nonnull
+    public String toString()
+      {
+        return "EntityWithRoles()";
       }
   }
