@@ -59,23 +59,23 @@ import org.testng.annotations.DataProvider;
 public class DefaultMediaScannerTest
   {
     private DefaultMediaScanner underTest;
-    
+
     private ClassPathXmlApplicationContext context;
-    
+
     private MessageBus messageBus;
-    
+
     private CountDownLatch scanCompleted;
-    
+
     // Listeners must be fields or they will garbage-collected
     private final MessageBus.Listener<ScanCompleted> onScanCompleted = (message) -> scanCompleted.countDown();
-    
+
     private MediaFileSystem fileSystem;
-    
+
     private Persistence persistence;
-    
+
     @BeforeMethod
-    private void prepareTest() 
-      throws InterruptedException 
+    private void prepareTest()
+      throws InterruptedException
       {
         final String s1 = "classpath:/META-INF/CommonsAutoBeans.xml";
         final String s2 = "classpath:/META-INF/PersistenceAutoBeans.xml";
@@ -83,18 +83,18 @@ public class DefaultMediaScannerTest
         context = new ClassPathXmlApplicationContext(s1, s2, s3);
         fileSystem = context.getBean(MediaFileSystem.class);
         persistence = context.getBean(Persistence.class);
-        
+
         context.getBean(MockInstantProvider.class).setInstant(Instant.ofEpochSecond(1428232317L));
         messageBus = context.getBean(MessageBus.class);
         underTest = context.getBean(DefaultMediaScanner.class);
-        
+
         scanCompleted = new CountDownLatch(1);
         messageBus.subscribe(ScanCompleted.class, onScanCompleted);
 
       }
-    
-    @Test(dataProvider = "dataSetNames")
-    public void testScan (final @Nonnull String dataSetName) 
+
+    @Test(dataProvider = "dataSetNames", groups = "no-ci") // until we manage to run it without downloading stuff, it's not reproducible
+    public void testScan (final @Nonnull String dataSetName)
       throws Exception
       {
         // FIXME: we should find a way to force HttpClient to pretend the network doesn't work
@@ -103,10 +103,10 @@ public class DefaultMediaScannerTest
         properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, Paths.get("/Users/fritz/Personal/Music/iTunes/iTunes Music"));
         properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, Paths.get("target/test-classes/download-cache-" + dataSetName));
         messageBus.publish(new PowerOnNotification(properties));
-        
+
         // Wait for the MediaFileSystem to initialize. Indeed, MediaFileSystem should be probably mocked
         Thread.sleep(1000);
-        
+
         underTest.process(fileSystem.getRoot());
         scanCompleted.await();
 
@@ -118,7 +118,7 @@ public class DefaultMediaScannerTest
         // FIXME: likely OOM in case of mismatch
         FileComparisonUtils.assertSameContents(expectedFile, actualFile);
       }
-    
+
     @DataProvider(name = "dataSetNames")
     private static Object[][] dataSetNames()
       {

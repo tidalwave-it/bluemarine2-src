@@ -43,10 +43,10 @@ import org.testng.annotations.Test;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class AudioMetadataTest 
+public class AudioMetadataTest
   {
-    @Test
-    public void testScan() 
+    @Test(groups = "no-ci") // requires files on my disk
+    public void testScan()
       {
         final AudioMetadata am = new AudioMetadata(Paths.get("/Users/fritz/Personal/Music/iTunes/iTunes Music/Music/Compilations/Beethoven Symphonies 1 & 2/01 Beethoven_ Symphonie #1 C-dur op. 21 (1. Adagio molto - Allegro con brio).m4a"));
         System.err.println(am);
@@ -55,18 +55,18 @@ public class AudioMetadataTest
         final List<TagField> fields = toList(tag.getFields());
         System.err.println("FIELDS: " + fields);
 //        tag.getFields(FieldKey.)
-        
-      } 
-    
+
+      }
+
     private <T> List<T> toList (final @Nonnull Iterator<T> i)
       {
-        final List<T> result = new ArrayList<>();  
-        
+        final List<T> result = new ArrayList<>();
+
         while (i.hasNext())
           {
-            result.add(i.next());  
+            result.add(i.next());
           }
-        
+
         return result;
       }
-}
+  }
