@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import java.time.Duration;
 import java.util.Collections;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -43,13 +44,11 @@ import it.tidalwave.role.Displayable;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Track;
-import it.tidalwave.bluemarine2.upnp.mediaserver.impl.ResourceServer;
+import it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver.ResourceServer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
-import java.time.Duration;
-import java.time.temporal.TemporalUnit;
 
 /***********************************************************************************************************************
  *
@@ -82,7 +81,7 @@ public class TrackDIDLAdapter implements DIDLAdapter
         final AudioFile audioFile = datum.as(AudioFileSupplier).getAudioFile();
 
         final Long size = Files.exists(audioFile.getPath()) ? Files.size(audioFile.getPath()) : null; // FIXME: should be in metadata
-        
+
         final Res resource = new Res(protocolInfo, size, resourceServer.urlForResource(audioFile));
         resource.setDuration(durationToString(datum.getDuration()));
 //        resource.setBitrate(size); // TODO

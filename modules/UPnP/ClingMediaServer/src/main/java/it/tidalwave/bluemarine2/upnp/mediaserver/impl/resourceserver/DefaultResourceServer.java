@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
+package it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver;
 
 import javax.annotation.Nonnull;
 import javax.annotation.PreDestroy;

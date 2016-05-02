@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
+import it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver.DefaultResourceServer;
 import javax.annotation.Nonnull;
 import java.util.Collection;
 import java.util.HashMap;
