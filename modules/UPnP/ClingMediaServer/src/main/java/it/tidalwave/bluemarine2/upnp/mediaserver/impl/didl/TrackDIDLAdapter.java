@@ -81,7 +81,8 @@ public class TrackDIDLAdapter implements DIDLAdapter
         final ProtocolInfo protocolInfo = new DLNAProtocolInfo(Protocol.HTTP_GET, "*", "audio/mpeg", "*"); // FIXME: MIME
         final AudioFile audioFile = datum.as(AudioFileSupplier).getAudioFile();
 
-        final long size = Files.size(audioFile.getPath()); // FIXME: should be in metadata
+        final Long size = Files.exists(audioFile.getPath()) ? Files.size(audioFile.getPath()) : null; // FIXME: should be in metadata
+        
         final Res resource = new Res(protocolInfo, size, resourceServer.urlForResource(audioFile));
         resource.setDuration(durationToString(datum.getDuration()));
 //        resource.setBitrate(size); // TODO
