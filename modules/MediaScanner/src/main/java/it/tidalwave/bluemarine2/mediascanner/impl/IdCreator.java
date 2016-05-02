@@ -39,6 +39,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import it.tidalwave.util.Id;
 import lombok.Cleanup;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /***********************************************************************************************************************
  *
@@ -46,7 +47,7 @@ import lombok.Cleanup;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class IdCreator 
+public class IdCreator
   {
     /*******************************************************************************************************************
      *
@@ -55,7 +56,7 @@ public class IdCreator
     @Nonnull
     public Id createSha1Id (final @Nonnull Path path)
       {
-        try 
+        try
           {
             final File file = path.toFile();
             final String algorithm = "SHA1";
@@ -65,8 +66,8 @@ public class IdCreator
             digestComputer.update(byteBuffer);
             randomAccessFile.close();
             return new Id(toString(digestComputer.digest()));
-          } 
-        catch (NoSuchAlgorithmException | IOException e) 
+          }
+        catch (NoSuchAlgorithmException | IOException e)
           {
             throw new RuntimeException(e);
           }
@@ -79,14 +80,14 @@ public class IdCreator
     @Nonnull
     public Id createSha1 (final @Nonnull String string)
       {
-        try 
+        try
           {
             final String algorithm = "SHA1";
             final MessageDigest digestComputer = MessageDigest.getInstance(algorithm);
-            digestComputer.update(string.getBytes());
+            digestComputer.update(string.getBytes(UTF_8));
             return new Id(toString(digestComputer.digest()));
-          } 
-        catch (NoSuchAlgorithmException e) 
+          }
+        catch (NoSuchAlgorithmException e)
           {
             throw new RuntimeException(e);
           }

@@ -65,43 +65,43 @@ import static org.hamcrest.CoreMatchers.*;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class DefaultDownloaderTest 
+public class DefaultDownloaderTest
   {
     private static final Path CACHE_RESOURCES_PATH = Paths.get("target/test-classes/download-cache");
-        
+
     private static final Path CACHE_PATH = Paths.get("target/download-cache");
-        
+
     private static final Path TEST_RESULTS = Paths.get("target/test-results");
-            
+
     private static final Path EXPECTED_TEST_RESULTS = Paths.get("src/test/resources/expected-results");
-            
+
     private DefaultDownloader underTest;
-    
+
     private SimpleHttpCacheStorage cacheStorage;
-    
+
     private ClassPathXmlApplicationContext context;
-    
+
     private MessageBus messageBus;
-    
+
     private CountDownLatch downloadCompleted;
-    
+
     private DownloadComplete response;
-    
+
     // Listeners must be fields or they will garbage-collected
     private final MessageBus.Listener<DownloadComplete> onDownloadCompleted = (response) ->
       {
         downloadCompleted.countDown();
         this.response = response;
       };
-            
+
     /*******************************************************************************************************************
      *
-     * 
-     * 
+     *
+     *
      ******************************************************************************************************************/
     @BeforeMethod
-    public void prepare() 
-      throws IOException, NotFoundException 
+    public void prepare()
+      throws IOException, NotFoundException
       {
         deleteDirectory(CACHE_PATH.toFile());
         copyDirectory(CACHE_RESOURCES_PATH.toFile(), CACHE_PATH.toFile());
@@ -111,14 +111,14 @@ public class DefaultDownloaderTest
         context = new ClassPathXmlApplicationContext(s1, s2);
         underTest = context.getBean(DefaultDownloader.class);
         cacheStorage = context.getBean(SimpleHttpCacheStorage.class);
-        messageBus = context.getBean(MessageBus.class); 
+        messageBus = context.getBean(MessageBus.class);
         downloadCompleted = new CountDownLatch(1);
         response = null;
         messageBus.subscribe(DownloadComplete.class, onDownloadCompleted);
-        
+
         // FIXME: should also test with false
         cacheStorage.setNeverExpiring(true);
-        
+
         final Map<Key<?>, Object> properties = new HashMap<>();
         properties.put(CACHE_FOLDER_PATH, CACHE_PATH);
         messageBus.publish(new PowerOnNotification(properties));
@@ -126,10 +126,10 @@ public class DefaultDownloaderTest
 
     /*******************************************************************************************************************
      *
-     * 
-     * 
+     *
+     *
      ******************************************************************************************************************/
-    @Test(dataProvider = "downloadDataProvider")
+    @Test(dataProvider = "downloadDataProvider", groups = "no-ci") // dbtune.org has been returing HTTP status 503 for months
     public void testCache (final @Nonnull String urlAsString,
                            final @Nonnull Option option,
                            final int expectedStatusCode,
@@ -142,7 +142,7 @@ public class DefaultDownloaderTest
         downloadCompleted.await();
         assertThat(response.getUrl(), is(url));
         assertThat(response.getStatusCode(), is(expectedStatusCode));
-        
+
         if (!"".equals(expectedContentFileName))
           {
             final Path actualResult = TEST_RESULTS.resolve(expectedContentFileName);
@@ -151,20 +151,20 @@ public class DefaultDownloaderTest
             write(actualResult, response.getBytes());
             assertSameContents(expectedResult.toFile(), actualResult.toFile());
           }
-        
+
         if (!Arrays.asList(-1, HttpStatus.SC_SEE_OTHER, HttpStatus.SC_NOT_FOUND).contains(response.getStatusCode()))
           {
             assertThat("Cache updated?", cacheStorage.isCachedResourcePresent(urlAsString), is(true));
           }
-        
+
         // FIXME: verify it didn't go to the network
         // FIXME: verify that the cache has not been updated
       }
-    
+
     /*******************************************************************************************************************
      *
-     * 
-     * 
+     *
+     *
      ******************************************************************************************************************/
     @DataProvider(name = "downloadDataProvider")
     private static Object[][] downloadDataProvider()

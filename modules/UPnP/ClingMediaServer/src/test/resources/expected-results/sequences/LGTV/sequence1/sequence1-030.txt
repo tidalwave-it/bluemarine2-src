@@ -1,0 +1,8 @@
+Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e/urn:bluemarine:record:c5a4f3868bfac0380a98543d4e073a62a5c2de04, BrowseFlag=BrowseMetadata, Filter=, StartingIndex=0, RequestedCount=0, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="8" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e/urn:bluemarine:record:c5a4f3868bfac0380a98543d4e073a62a5c2de04" parentID="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e" restricted="0" searchable="0">
+        <dc:title>Tributo a Lucio Battisti (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito &amp; Giuseppe La Pusata)</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+</DIDL-Lite>

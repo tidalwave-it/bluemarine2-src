@@ -45,8 +45,8 @@ import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
-import it.tidalwave.bluemarine2.model.spi.EntityWithPathDecorator;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
+import java.nio.file.InvalidPathException;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -90,7 +90,21 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     public RepositoryTrack (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
         super(repository, bindingSet, "track");
-        this.audioFilePath = Paths.get(toString(bindingSet.getBinding("path")));
+
+        Path thePath = null;
+
+        try // FIXME: see BMT-46
+          {
+            thePath = Paths.get(toString(bindingSet.getBinding("path")));
+          }
+        catch (InvalidPathException e)
+          {
+            log.error("Invalid path {}", e.toString());
+            thePath = Paths.get("broken");
+          }
+
+        this.audioFilePath = thePath;
+
         this.duration = toDuration(bindingSet.getBinding("duration"));
         this.trackNumber = toInteger(bindingSet.getBinding("track_number"));
         this.diskNumber = toOptionalInteger(bindingSet.getBinding("disk_number"));
@@ -114,7 +128,6 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
                                                 id, // FIXME: this should really be the AudioFileId
                                                 id,
                                                 fileSystem.getRootPath().resolve(audioFilePath),
-                                                new EntityWithPathDecorator(this, Paths.get("record")),
                                                 audioFilePath,
                                                 duration,
                                                 rdfsLabel);

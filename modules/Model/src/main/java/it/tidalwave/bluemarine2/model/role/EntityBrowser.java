@@ -29,7 +29,7 @@
 package it.tidalwave.bluemarine2.model.role;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.As;
+import it.tidalwave.util.As8;
 import it.tidalwave.bluemarine2.model.Entity;
 
 /***********************************************************************************************************************
@@ -42,7 +42,7 @@ import it.tidalwave.bluemarine2.model.Entity;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface EntityBrowser extends As
+public interface EntityBrowser extends As8
   {
     @Nonnull
     public Entity getRoot();

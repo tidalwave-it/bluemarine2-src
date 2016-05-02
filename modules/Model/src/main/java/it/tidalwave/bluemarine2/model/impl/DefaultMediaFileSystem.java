@@ -53,7 +53,7 @@ public class DefaultMediaFileSystem implements MediaFileSystem
   {
     @Getter
     private Path rootPath;
-    
+
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
 
@@ -62,17 +62,17 @@ public class DefaultMediaFileSystem implements MediaFileSystem
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public MediaFolder getRoot() 
+    public MediaFolder getRoot()
       {
         return new FileSystemMediaFolder(rootPath, null, rootPath);
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
     /* VisibleForTesting */ void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
-      throws NotFoundException 
+      throws NotFoundException
       {
         log.info("onPowerOnNotification({})", notification);
         rootPath = notification.getProperties().get(PropertyNames.ROOT_PATH).resolve("Music");
