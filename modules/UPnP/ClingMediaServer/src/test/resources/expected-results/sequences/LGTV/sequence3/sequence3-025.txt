@@ -1,0 +1,83 @@
+Browse({ObjectID=/music/RepositoryBrowserByArtistThenTrack, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=384, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="3" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_23d8426c-18c7-46e6-a51d-7395bd43c641" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Tangerine Dream</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:633a93683e265ef2f10c75a64a684ee69e20b617" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Tangerine Dream</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="4" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:b1eaa0a303a180c7a0e6e0b515756ca134431abe" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Tears for Fears</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="2" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_4f1949ab-fefd-4bf3-9317-814084c29cc0" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>The 5th Dimension</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_8f169b84-95d6-4797-bc00-4cd601fb631e" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>The Ambrosian Singers</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="29" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>The Beatles</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="3" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_232cb32e-b192-4d6c-b33b-dc9a92ebdb6e" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>The Benedictine Monks of Santo Domingo de Silos</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="29" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_60b7285c-ba09-4725-afa5-df0025421e5d" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>The Benedictine Monks of Santo Domingo de Silos</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:fac36b09b994f9b781154cddb54ccf13d169d9d4" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>The Buggles</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_fce5eb9a-95a7-4a54-b9e4-fe1b036fbe57" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>The Chieftains</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_fcb79f1a-d3a9-41fe-9cd7-d16537907337" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>The Crusaders</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="37" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_7bf711e9-4e69-4e08-b6e8-c0cb5805f1e7" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>The Dave Brubeck Quartet</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_908e99b8-b2b0-49e8-a85b-0a41a98f3926" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>The Four Aces</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:b6b2fb143a9e189088f716d8fb762ae8ae9dc49c" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>The Golden Gospel Singers</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:9595678368aace2d9c1879f862e86196b516eb3d" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>The Good Fellas</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_6f49184a-8757-48d7-9145-f773ea572188" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>The Korgis</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+</DIDL-Lite>

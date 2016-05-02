@@ -1,0 +1,83 @@
+Browse({ObjectID=/music/RepositoryBrowserByArtistThenTrack, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=352, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:35eea021925013a5fd8e23b7b4b4ca31032fa0fb" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Santa Esmeralda</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_9a3bf45c-347d-4630-894d-7cf3e8e0b632" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Santana</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="0" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:06a8b12a6ecc21db2e361d26fd47586a7087d414" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Santana</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:edf9f341ac564489f9ce7d6ca314a0923a32a5e9" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Santo &amp; Johnny</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:5a3532aca97cb0c3f8f7511a418ecd86e4954faf" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Santo &amp; Johnny-Il Meglio</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:85e20a8a754192bda2d1a2c2571dd11bc6ff14b1" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Santo E Johnny</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_9cf82d0f-85fd-4b67-b96c-d9316542fab4" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Sarah Jane Morris</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="69" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_351d8bdf-33a1-45e2-8c04-c85fad20da55" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Sarah Vaughan</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="18" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:caa923263bb0b63c8b5abf4fac37db235fd06781" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Sarah Vaughan</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:13c41460ef5134e5d41d41f09278cedcd498b514" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Sarah Vaughan &amp; Sevend Saaby Choir</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="2" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_6606ccc8-ba90-46db-892d-a772f37792af" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Sarah Vaughan and Lester Young</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="8" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:b106c779addff77b80350dfc376fcdb9cb42f212" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Scottish Chamber Orchestra</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="12" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:9273df63768a5a2f382e1885d889c44275fb16cf" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Seiji Ozawa: Boston Symphony Orchestra</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:8af7d185d14f08c6b8e15acbca86ed58c17a64cc" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Sergei Levitin, St Petersburg Kirov Orchestra &amp; Valery Gergiev</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_80ccfede-c258-4575-a7ad-c982e9932e0f" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Sheryl Crow</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:128ebfff8b051db3df9f0b2821c774b88e02994a" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Shirley Kirsten</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+</DIDL-Lite>
