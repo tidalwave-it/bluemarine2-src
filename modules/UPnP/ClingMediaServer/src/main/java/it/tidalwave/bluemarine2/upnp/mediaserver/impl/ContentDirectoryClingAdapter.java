@@ -30,6 +30,8 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Stream;
 import java.nio.file.Path;
 import org.fourthline.cling.support.model.BrowseFlag;
@@ -42,6 +44,9 @@ import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.ContentHolder;
 import lombok.extern.slf4j.Slf4j;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 import static org.fourthline.cling.support.contentdirectory.ContentDirectoryErrorCode.*;
 import static it.tidalwave.bluemarine2.util.PrettyPrint.xmlPrettyPrinted;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.DIDLAdapter;
@@ -66,6 +71,22 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
     @Inject
     private ContentDirectory contentDirectory;
 
+    @RequiredArgsConstructor @EqualsAndHashCode @ToString
+    static class BrowseParams
+      {
+        private final String objectId;
+        private final BrowseFlag browseFlag;
+        private final String filter;
+        private final long firstResult;
+        private final long maxResults;
+        private final SortCriterion[] orderby;
+      }
+
+    /**
+     * This cache is just a palliative. An effective cache should be placed on the Repository finder.
+     */
+    private final Map<BrowseParams, Object> cache = new ConcurrentHashMap<>();
+
     /*******************************************************************************************************************
      *
      * Returns information about an object.
@@ -89,14 +110,37 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
                                 final SortCriterion[] orderby)
       throws ContentDirectoryException
       {
-        try
-          {
             log.info("browse({}, {}, filter: {}, startingIndex: {}, requestedCount: {}, sortCriteria: {})",
                      objectId, browseFlag, filter, firstResult, maxResults, orderby);
             // this repeated log is for capturing test recordings
             log.trace("browse @@@ {} @@@ {} @@@ {} @@@ {} @@@ {} @@@ {})",
                      objectId, browseFlag, firstResult, maxResults, filter, orderby);
 
+            final BrowseParams params = new BrowseParams(objectId, browseFlag, filter, firstResult, maxResults, orderby);
+            final Object result = cache.computeIfAbsent(params, key ->
+                    computeResult(objectId, browseFlag, filter, firstResult, maxResults, orderby));
+
+            if (result instanceof ContentDirectoryException)
+              {
+                throw (ContentDirectoryException)result;
+              }
+
+            log(">>>> returning", (BrowseResult) result);
+            return (BrowseResult) result;
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    private Object computeResult (final @Nonnull String objectId,
+                                  final @Nonnull BrowseFlag browseFlag,
+                                  final String filter,
+                                  final long firstResult,
+                                  final long maxResults,
+                                  final SortCriterion[] orderby)
+      {
+        try
+          {
             final Path path = didlIdToPath(objectId);
             final Entity entity = contentDirectory.findRoot()
                                                   .findChildren()
@@ -108,18 +152,15 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
                                                                           (int)firstResult,
                                                                           maxCount(maxResults));
             final DIDLParser parser = new DIDLParser();
-            final BrowseResult result = new BrowseResult(parser.generate(holder.getContent()),
+            return new BrowseResult(parser.generate(holder.getContent()),
                                                            holder.getNumberReturned(),
                                                            holder.getTotalMatches(),
                                                            1); /// FIXME: updateId
-            log(">>>> returning", result);
-
-            return result;
           }
         catch (Exception e)
           {
             log.error("", e);
-            throw new ContentDirectoryException(CANNOT_PROCESS);
+            return new ContentDirectoryException(CANNOT_PROCESS);
           }
       }
 
