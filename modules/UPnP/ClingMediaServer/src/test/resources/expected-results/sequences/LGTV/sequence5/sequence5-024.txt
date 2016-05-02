@@ -1,0 +1,99 @@
+Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=64, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_2df46dec-b453-4444-91b9-5fa5d7515fd9" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>The Long and Winding Road</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>27</upnp:originalTrackNumber>
+        <res duration="00:03:37" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/1/27+The+Long+And+Winding+Road.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:1b6a8fc5361b6ebac8ee34cfbcc261a8eb7f0b82" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Dancing In the Moonlight</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>11</upnp:originalTrackNumber>
+        <res duration="00:03:07" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Front+End/100%25+Hits+2001/11+Dancing+In+the+Moonlight.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:580e13f42a4a5d820268a920e85090a46dd3c9cc" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Opening</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
+        <res duration="00:01:21" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Vangelis/1492+-+Conquest+of+Paradise+%28Soundtrack+from+the+Motion+Picture%29/01+Opening.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:1cc7c4952833ff0484aef52b6e801a2f325ee9f0" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Conquest of Paradise</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
+        <res duration="00:04:38" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Vangelis/1492+-+Conquest+of+Paradise+%28Soundtrack+from+the+Motion+Picture%29/02+Conquest+of+Paradise.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:65f56cbd3489a5fe4ad83d54922d378cdddf5498" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Monastery of la Rabida</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
+        <res duration="00:03:39" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Vangelis/1492+-+Conquest+of+Paradise+%28Soundtrack+from+the+Motion+Picture%29/03+Monastery+of+la+Rabida.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:5504c22dff30d4ebcfd391e742aa4e2804d7ff9c" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>City of Isabel</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
+        <res duration="00:02:16" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Vangelis/1492+-+Conquest+of+Paradise+%28Soundtrack+from+the+Motion+Picture%29/04+City+of+Isabel.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:97900cdb485d2478602bb14d88511d74bc696fcf" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Light and Shadow</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
+        <res duration="00:03:46" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Vangelis/1492+-+Conquest+of+Paradise+%28Soundtrack+from+the+Motion+Picture%29/05+Light+and+Shadow.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:cc3cd42e7af7c6af0d3946a145e2392874df404d" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Deliverance</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
+        <res duration="00:03:28" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Vangelis/1492+-+Conquest+of+Paradise+%28Soundtrack+from+the+Motion+Picture%29/06+Deliverance.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:878430ea6312aca7faba6288acddbc11eea1857d" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>West Across the Ocean Sea</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
+        <res duration="00:02:53" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Vangelis/1492+-+Conquest+of+Paradise+%28Soundtrack+from+the+Motion+Picture%29/07+West+Across+the+Ocean+Sea.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:42da7a8b07d704ad44a709aab24121248b1eae3f" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Eternity</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
+        <res duration="00:01:58" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Vangelis/1492+-+Conquest+of+Paradise+%28Soundtrack+from+the+Motion+Picture%29/08+Eternity.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:1b4f3911b54958808c0a687443b9e875df7a63ad" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Hispanola</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
+        <res duration="00:04:56" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Vangelis/1492+-+Conquest+of+Paradise+%28Soundtrack+from+the+Motion+Picture%29/09+Hispanola.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:0e3c397d01448ee0ce67b80a91beacca5860936a" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Moxica and the Horse</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
+        <res duration="00:07:06" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Vangelis/1492+-+Conquest+of+Paradise+%28Soundtrack+from+the+Motion+Picture%29/10+Moxica+and+the+Horse.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:be1c86ef4e0bf09aac133b00fe1924e4efa2b277" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Twenty Eighth Parallel</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>11</upnp:originalTrackNumber>
+        <res duration="00:05:14" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Vangelis/1492+-+Conquest+of+Paradise+%28Soundtrack+from+the+Motion+Picture%29/11+Twenty+Eighth+Parallel.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:6b4fd9a82906d125c5d7f4d2548eabf6c97dcc66" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Pinta, Nina, Santa Maria (Into Eternity)</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>12</upnp:originalTrackNumber>
+        <res duration="00:13:20" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Vangelis/1492+-+Conquest+of+Paradise+%28Soundtrack+from+the+Motion+Picture%29/12+Pinta%2C+Nina%2C+Santa+Maria+%28Into+Eternity%29+2.m4p</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:f67440420a42c6f0ea118f58afb81f1fac309a6c" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Estate</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
+        <res duration="00:06:17" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/15+Years+of+Fine+Jazz+By+TCB+%E2%80%93+The+Montreux+Jazz+Label/06+Estate.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_991fc553-67e7-4752-9be9-aa2e7e2ec9d4" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>You and the Night and the Music</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
+        <res duration="00:02:49" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Django+Reinhardt/Django+Reinhardt+%26+Friends/02+You+and+the+Night+and+the+Music.m4a</res>
+    </item>
+</DIDL-Lite>

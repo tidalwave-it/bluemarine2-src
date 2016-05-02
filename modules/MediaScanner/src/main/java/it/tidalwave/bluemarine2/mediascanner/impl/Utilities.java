@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.time.Instant;
 import java.util.Date;
+import java.util.Optional;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -51,9 +52,9 @@ import org.openrdf.rio.helpers.RDFHandlerBase;
 import org.openrdf.rio.n3.N3ParserFactory;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
-import java.util.Optional;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /***********************************************************************************************************************
  *
@@ -62,10 +63,10 @@ import lombok.NoArgsConstructor;
  *
  **********************************************************************************************************************/
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-final class Utilities 
+final class Utilities
   {
     private final static ValueFactory FACTORY = ValueFactoryImpl.getInstance(); // FIXME
-    
+
     /*******************************************************************************************************************
      *
      *
@@ -77,7 +78,7 @@ final class Utilities
         final N3ParserFactory n3ParserFactory = new N3ParserFactory();
         final RDFParser parser = n3ParserFactory.getParser();
         final Model model = new LinkedHashModel();
-        
+
         parser.setRDFHandler(new RDFHandlerBase()
           {
             @Override
@@ -88,95 +89,95 @@ final class Utilities
           });
 
         // FIXME
-        final byte[] bytes = new String(message.getBytes()).replaceAll(" = ", "owl:sameAs")
-                                                           .replaceAll("/ASIN/ *>", "/ASIN>")
-                                                           .getBytes(); 
-        final String uri = message.getUrl().toString();          
+        final byte[] bytes = new String(message.getBytes(), UTF_8).replaceAll(" = ", "owl:sameAs")
+                                                                  .replaceAll("/ASIN/ *>", "/ASIN>")
+                                                                  .getBytes(UTF_8);
+        final String uri = message.getUrl().toString();
         parser.parse(new ByteArrayInputStream(bytes), uri);
 
         return model;
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Value literalFor (final Path path) 
+    public static Value literalFor (final Path path)
       {
         return FACTORY.createLiteral(path.toString());
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Value literalFor (final String string) 
+    public static Value literalFor (final String string)
       {
         return FACTORY.createLiteral(string);
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Optional<Value> literalFor (final Optional<String> optionalString) 
+    public static Optional<Value> literalFor (final Optional<String> optionalString)
       {
         return optionalString.map(s -> literalFor(s));
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Value literalFor (final Id id) 
+    public static Value literalFor (final Id id)
       {
         return FACTORY.createLiteral(id.stringValue());
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Value literalFor (final int value) 
+    public static Value literalFor (final int value)
       {
         return FACTORY.createLiteral(value);
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Value literalFor (final short value) 
+    public static Value literalFor (final short value)
       {
         return FACTORY.createLiteral(value);
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Value literalFor (final float value) 
+    public static Value literalFor (final float value)
       {
         return FACTORY.createLiteral(value);
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Value literalFor (final @Nonnull Instant instant) 
+    public static Value literalFor (final @Nonnull Instant instant)
       {
         return FACTORY.createLiteral(new Date(instant.toEpochMilli()));
       }
-    
+
     /*******************************************************************************************************************
      *
      *
@@ -196,7 +197,7 @@ final class Utilities
       {
         return FACTORY.createURI(id);
       }
-    
+
     /*******************************************************************************************************************
      *
      *
@@ -206,7 +207,7 @@ final class Utilities
       {
         return FACTORY.createURI(url.toString());
       }
-    
+
     /*******************************************************************************************************************
      *
      *
@@ -217,7 +218,7 @@ final class Utilities
       {
         return new URL(uri.toString());
       }
-    
+
     /*******************************************************************************************************************
      *
      *
@@ -225,6 +226,6 @@ final class Utilities
     @Nonnull
     public static String emptyWhenNull (final @Nullable String string)
       {
-        return (string != null) ? string : "";  
+        return (string != null) ? string : "";
       }
   }

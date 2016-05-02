@@ -32,13 +32,13 @@ package it.tidalwave.bluemarine2.mediaserver.impl;
 import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import it.tidalwave.bluemarine2.model.Entity;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
-import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import static it.tidalwave.role.Displayable.Displayable;
+import lombok.extern.slf4j.Slf4j;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.CoreMatchers.*;
+import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
@@ -46,6 +46,7 @@ import static org.hamcrest.CoreMatchers.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
+@Slf4j
 public class DefaultContentDirectoryTest
   {
     private ApplicationContext context;
@@ -55,19 +56,24 @@ public class DefaultContentDirectoryTest
     @BeforeMethod
     public void setup()
       {
-        context = new ClassPathXmlApplicationContext("META-INF/DciBeans.xml", "META-INF/DefaultDevicePublisherTest.xml");
+        context = new ClassPathXmlApplicationContext("META-INF/DciBeans.xml",
+                                                     "META-INF/DefaultDevicePublisherTest.xml");
         underTest = context.getBean(DefaultContentDirectory.class);
       }
 
     @Test
     public void must_return_correct_root_children()
+      throws Exception
       {
-        final MediaFolder root = underTest.findRoot();
-        final List<? extends Entity> children = root.findChildren().results();
+        // when
+        final List<? extends Entity> children = underTest.findRoot().findChildren().results();
+        // then
         assertThat(children.size(), is(4));
         assertThat(children.get(0).as(Displayable).getDisplayName(), is("Music"));
         assertThat(children.get(1).as(Displayable).getDisplayName(), is("Photos"));
-        assertThat(children.get(2).as(Displayable).getDisplayName(), is("Video"));
+        assertThat(children.get(2).as(Displayable).getDisplayName(), is("Videos"));
         assertThat(children.get(3).as(Displayable).getDisplayName(), is("Services"));
+
+        // TODO: mock music and services, assert contents
       }
-}
+  }

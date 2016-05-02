@@ -12,9 +12,10 @@ import org.testng.annotations.Test;
  */
 public class SoXMediaPlayerTest
   {
-    @Test
-    public void testSetMediaItem() 
-      throws Exception 
+    // Quick test to exercise a charset problem with file names on the Raspberry PI
+    @Test(enabled = false)
+    public void testSetMediaItem()
+      throws Exception
       {
         File dir = new File("/root/.blueMarine2/Music/Compilations/Debussy_ Piano Works [Disc 1]");
         File[] files = dir.listFiles();
@@ -34,7 +35,5 @@ public class SoXMediaPlayerTest
                 executor.start();
               }
           }
-        
       }
-
   }

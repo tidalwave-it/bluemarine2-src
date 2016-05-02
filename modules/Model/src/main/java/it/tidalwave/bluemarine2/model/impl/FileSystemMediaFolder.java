@@ -75,7 +75,7 @@ public class FileSystemMediaFolder implements MediaFolder
     @Override @Nonnull
     public EntityFinder findChildren()
       {
-        return new MediaFolderFinder(this, basePath).sort(new MediaItemComparator());
+        return new FileSystemMediaFolderFinder(this, basePath).sort(new MediaItemComparator());
       }
 
     @Override @Nonnull
