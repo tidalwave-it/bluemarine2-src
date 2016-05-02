@@ -33,7 +33,6 @@ import javax.annotation.PreDestroy;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
 import java.io.EOFException;
 import java.io.OutputStream;
@@ -50,6 +49,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.eclipse.jetty.server.Server;
+//import org.eclipse.jetty.server.ServerConnector;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
@@ -200,7 +200,7 @@ public class DefaultResourceServer implements ResourceServer
               }
             catch (EOFException e)
               {
-                log.info("EOF - probably client closed connection");
+                log.debug("EOF - probably client closed connection");
               }
           }
 
@@ -275,7 +275,8 @@ public class DefaultResourceServer implements ResourceServer
         server = new Server(InetSocketAddress.createUnresolved(ipAddress, Integer.getInteger("port", 0)));
         server.setHandler(servlet.asHandler());
         server.start();
-        port = server.getConnectors()[0].getLocalPort();
+        port = server.getConnectors()[0].getLocalPort(); // jetty 8
+//        port = ((ServerConnector)server.getConnectors()[0]).getLocalPort(); // jetty 9
         log.info(">>>> resource server jetty started at {}:{} serving resources at {}", ipAddress, port, rootPath);
       }
 
