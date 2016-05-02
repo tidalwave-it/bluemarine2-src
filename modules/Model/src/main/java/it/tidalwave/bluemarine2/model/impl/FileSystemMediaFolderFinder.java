@@ -104,6 +104,11 @@ public class FileSystemMediaFolderFinder extends Finder8Support<EntityWithPath, 
 
     private <T> T evaluateDirectoryStream (final @Nonnull Function<Stream<Path>, T> function)
       {
+        if (!Files.exists(mediaFolder.getPath()))
+          {
+            return function.apply(Stream.of());
+          }
+
         try (final DirectoryStream<Path> stream = Files.newDirectoryStream(mediaFolder.getPath()))
           {
             return function.apply(StreamSupport.stream(stream.spliterator(), false));
