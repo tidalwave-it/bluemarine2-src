@@ -72,18 +72,6 @@ public class DefaultContentDirectory implements ContentDirectory
 
     private static final EntityCollectionFactory EMPTY = x -> Collections.emptyList(); // FIXME: move to ECF
 
-//    @Inject
-//    private RepositoryBrowserByArtistThenTrack x1;
-//
-//    @Inject
-//    private RepositoryBrowserByArtistThenRecord x2;
-//
-//    @Inject
-//    private RepositoryBrowserByRecordThenTrack x3;
-//
-//    @Inject
-//    private RepositoryBrowserByTrack x4;
-
 //    @Inject FIXME
     @Autowired(required = false)
     private final List<EntityBrowser> entityBrowsers = Collections.emptyList();
@@ -112,11 +100,6 @@ public class DefaultContentDirectory implements ContentDirectory
     @Nonnull
     private Collection<EntityWithPath> childrenFactory (final @Nonnull MediaFolder parent)
       {
-//        final EntityCollectionFactory c = p -> Arrays.asList(createMediaFolder(x1, p, "artist+track",  "By artist and track"),
-//                                                             createMediaFolder(x2, p, "artist+record", "By artist and record"),
-//                                                             createMediaFolder(x3, p, "record+track",  "By record and track"),
-//                                                             createMediaFolder(x4, p, "track",         "By track"));
-//
         return Arrays.asList(new VirtualMediaFolder(parent, PATH_MUSIC,    "Music",    this::musicFactory),
                              new VirtualMediaFolder(parent, PATH_PHOTOS,   "Photos",   EMPTY),
                              new VirtualMediaFolder(parent, PATH_VIDEOS,   "Videos",   EMPTY),
