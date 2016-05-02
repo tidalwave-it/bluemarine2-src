@@ -116,7 +116,7 @@ public class RepositoryCatalogTest
         final Path actualResult = TEST_RESULTS.resolve(dumpName);
         final Path expectedResult = EXPECTED_TEST_RESULTS.resolve(dumpName);
         createDirectories(TEST_RESULTS);
-        final PrintWriter pw = new PrintWriter(actualResult.toFile());
+        final PrintWriter pw = new PrintWriter(actualResult.toFile(), "UTF-8");
 
         final List<? extends MusicArtist> artists = catalog.findArtists().results();
         final List<? extends Record> records = catalog.findRecords().results();
