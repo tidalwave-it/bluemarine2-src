@@ -28,7 +28,6 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
-import it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver.DefaultResourceServer;
 import javax.annotation.Nonnull;
 import java.util.Collection;
 import java.util.HashMap;
@@ -50,8 +49,9 @@ import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
 import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.persistence.PropertyNames;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
+import it.tidalwave.bluemarine2.persistence.PropertyNames;
+import it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver.DefaultResourceServer;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -226,7 +226,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                                      final @Nonnull String defaultMsg)
                   {
                     log.error("failure({}, {}, {})", invocation, operation, defaultMsg);
-                    error.set(new RuntimeException("browse failure"));
+                    error.set(new RuntimeException("browse failure " + defaultMsg));
                     latch.countDown();
                   }
               };
