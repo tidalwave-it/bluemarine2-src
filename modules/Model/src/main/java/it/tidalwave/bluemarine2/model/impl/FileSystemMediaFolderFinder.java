@@ -49,7 +49,7 @@ import static java.util.stream.Collectors.*;
 
 /***********************************************************************************************************************
  *
- * An {@link EntityFinder} for retrieving children of a {@link MediaFolder}.
+ * An {@link EntityFinder} for retrieving children of a {@link FileSystemMediaFolder}.
  *
  * @stereotype  Finder
  *
@@ -58,12 +58,12 @@ import static java.util.stream.Collectors.*;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor @Slf4j
-public class MediaFolderFinder extends Finder8Support<EntityWithPath, EntityFinder> implements EntityFinder
+public class FileSystemMediaFolderFinder extends Finder8Support<EntityWithPath, EntityFinder> implements EntityFinder
   {
     private static final long serialVersionUID = 7656309392185783930L;
 
     @Nonnull
-    private final MediaFolder mediaFolder;
+    private final FileSystemMediaFolder mediaFolder;
 
     @Nonnull
     private final Path basePath;
@@ -71,10 +71,10 @@ public class MediaFolderFinder extends Finder8Support<EntityWithPath, EntityFind
     // FIXME: implement a better filter looking at the file name suffix
     private final Predicate<? super Path> fileFilter = path -> !path.toFile().getName().equals(".DS_Store");
 
-    public MediaFolderFinder (final @Nonnull MediaFolderFinder other, final @Nonnull Object override)
+    public FileSystemMediaFolderFinder (final @Nonnull FileSystemMediaFolderFinder other, final @Nonnull Object override)
       {
         super(other, override);
-        final MediaFolderFinder source = getSource(MediaFolderFinder.class, other, override);
+        final FileSystemMediaFolderFinder source = getSource(FileSystemMediaFolderFinder.class, other, override);
         this.mediaFolder = source.mediaFolder;
         this.basePath = source.basePath;
       }
