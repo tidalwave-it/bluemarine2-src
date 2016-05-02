@@ -203,6 +203,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
 
         for (final Params params : toParams(sequencePath))
           {
+            log.info(">>>> running {} ...", params);
             final CountDownLatch latch = new CountDownLatch(1);
 
             final Browse browse = new Browse(upnpClient.getService(),
@@ -278,7 +279,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
             { "LGTV", "sequence1" },
             { "LGTV", "sequence2" },
             { "LGTV", "sequence3" },
-            { "LGTV", "sequence4" }
+            { "LGTV", "sequence4" },
+            { "LGTV", "sequence5" },
           };
       }
 
