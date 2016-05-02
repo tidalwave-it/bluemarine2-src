@@ -76,6 +76,7 @@ public class UpnpClient implements Runnable
         // FIXME: wait
         while (service.get() == null)
           {
+            log.debug(">>>> waiting for service... (if this runs too long, check the firewall)");
             Thread.sleep(100);
           }
 
