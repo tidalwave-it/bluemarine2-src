@@ -30,26 +30,37 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.ClingTestSupport;
 import org.testng.annotations.Test;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
+ *
+ * This is a complex integration test that brings up the real service and exposes it.
+ *
+ * To just bring up the service and keep it running for some time, run
+ *
+ *      mvn -Prun-service
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class StoppingDownMediaServerServiceTest extends ClingTestSupport
+@Slf4j
+public class StoppingDownMediaServerServiceIntegrationTest extends ClingTestSupport
   {
-    public StoppingDownMediaServerServiceTest()
+    public StoppingDownMediaServerServiceIntegrationTest()
       {
-        super("classpath*:META-INF/StoppingDownServiceAutoBeans.xml",
-              "classpath*:META-INF/MediaServerAutoBeans.xml",
-              "classpath*:META-INF/UPnPAutoBeans.xml");
+        super("META-INF/StoppingDownServiceAutoBeans.xml",
+              "META-INF/MediaServerAutoBeans.xml",
+              "META-INF/UPnPAutoBeans.xml",
+              "META-INF/CommonsAutoBeans.xml",
+              "META-INF/ModelAutoBeans.xml");
       }
 
     @Test
-    public void test_deploy()
+    public void test_service_publishing()
       throws InterruptedException
       {
+        log.info("The service is up and running");
         delay();
       }
   }
