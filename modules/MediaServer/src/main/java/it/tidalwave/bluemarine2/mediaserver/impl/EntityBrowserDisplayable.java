@@ -59,6 +59,7 @@ public class EntityBrowserDisplayable implements Displayable
         BUNDLE.put("RepositoryBrowserByArtistThenTrack", "By artist & track");
         BUNDLE.put("RepositoryBrowserByRecordThenTrack", "By record & track");
         BUNDLE.put("RepositoryBrowserByTrack", "By track");
+        BUNDLE.put("DefaultMediaFileSystem", "By file");
       }
 
     @Nonnull
