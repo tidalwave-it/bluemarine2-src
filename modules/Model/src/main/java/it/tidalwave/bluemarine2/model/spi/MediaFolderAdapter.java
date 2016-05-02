@@ -75,9 +75,9 @@ public class MediaFolderAdapter extends EntityAdapterSupport<MediaFolder> implem
               computeRoles(parent, pathSegment, displayName, roles));
       }
 
-    public MediaFolderAdapter (final @Nonnull MediaFolder delegate, final @Nonnull Path pathSegment)
+    public MediaFolderAdapter (final @Nonnull MediaFolder adaptee, final @Nonnull Path pathSegment)
       {
-        super(pathSegment, delegate, Optional.empty());
+        super(pathSegment, adaptee, Optional.empty());
       }
 
     /*******************************************************************************************************************
