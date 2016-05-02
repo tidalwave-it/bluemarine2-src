@@ -134,7 +134,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
         Executors.newSingleThreadExecutor().submit(upnpClient);
         // FIXME: should use local resources
         final Map<Key<?>, Object> properties = new HashMap<>();
-        final Path configPath = getConfiguratonPath();
+        final Path configPath = Paths.get("src/test/resources/config");
         final Path repositoryPath = configPath.resolve("repository.n3");
         properties.put(ROOT_PATH, configPath); // FIXME: why is this needed?
         properties.put(PropertyNames.REPOSITORY_PATH, repositoryPath);
@@ -151,33 +151,6 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
       {
         upnpClient.shutdown();
         context.close();
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private Path getConfiguratonPath()
-      {
-        String s = System.getProperty("user.home", "/");
-        final String osName = System.getProperty("os.name").toLowerCase();
-
-        switch (osName)
-          {
-            case "linux":
-                s += "/.blueMarine2";
-                break;
-
-            case "mac os x":
-                s += "/Library/Application Support/blueMarine2";
-                break;
-
-            case "windows":
-                s += "/.blueMarine2";
-                break;
-          }
-
-        return Paths.get(s);
       }
 
     /*******************************************************************************************************************

@@ -4,6 +4,6 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:title>Track 01</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="00:04:54" protocolInfo="http-get:*:audio/mpeg:*" size="4626756">http://<server>/Music/Unknown+Artist/Unknown+Album/01+Track+01.m4a</res>
+        <res duration="00:04:54" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Unknown+Artist/Unknown+Album/01+Track+01.m4a</res>
     </item>
 </DIDL-Lite>

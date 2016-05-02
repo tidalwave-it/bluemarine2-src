@@ -4,96 +4,96 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:title>Bach: Sonata In G Minor, BWV 1029 - 3. Allegro</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>15</upnp:originalTrackNumber>
-        <res duration="00:04:12" protocolInfo="http-get:*:audio/mpeg:*" size="4067154">http://<server>/Music/Compilations/_.+Per+La+Viola+Da+Gamba._/15+Bach_+Sonata+In+G+Minor%2C+BWV+1029+-+3.+Allegro.m4a</res>
+        <res duration="00:04:12" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/_.+Per+La+Viola+Da+Gamba._/15+Bach_+Sonata+In+G+Minor%2C+BWV+1029+-+3.+Allegro.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_1f518811-7cf9-4bdc-a656-0958e130f312" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Love Me Do</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="00:02:20" protocolInfo="http-get:*:audio/mpeg:*" size="2320054">http://<server>/Music/Compilations/1/01+Love+Me+Do.m4a</res>
+        <res duration="00:02:20" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/1/01+Love+Me+Do.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_dc87225b-46bc-4a5d-837f-14e7eb8f2ca2" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>From Me to You</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
-        <res duration="00:01:56" protocolInfo="http-get:*:audio/mpeg:*" size="1931082">http://<server>/Music/Compilations/1/02+From+Me+To+You.m4a</res>
+        <res duration="00:01:56" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/1/02+From+Me+To+You.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_21047249-7b3f-4651-acca-246669c081fd" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>She Loves You</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
-        <res duration="00:02:21" protocolInfo="http-get:*:audio/mpeg:*" size="2330810">http://<server>/Music/Compilations/1/03+She+Loves+You.m4a</res>
+        <res duration="00:02:21" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/1/03+She+Loves+You.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_3cac3c71-8828-4eda-9af5-33fa9478a44c" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>I Want to Hold Your Hand</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
-        <res duration="00:02:25" protocolInfo="http-get:*:audio/mpeg:*" size="2390576">http://<server>/Music/Compilations/1/04+I+Want+To+Hold+Your+Hand.m4a</res>
+        <res duration="00:02:25" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/1/04+I+Want+To+Hold+Your+Hand.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_c4676f4b-0557-4fd8-8ad9-29047b6043f3" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>I Feel Fine</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
-        <res duration="00:02:18" protocolInfo="http-get:*:audio/mpeg:*" size="2284761">http://<server>/Music/Compilations/1/07+I+Feel+Fine.m4a</res>
+        <res duration="00:02:18" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/1/07+I+Feel+Fine.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_b8759150-f1a1-4619-9c4b-0d74af33782d" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Ticket to Ride</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
-        <res duration="00:03:10" protocolInfo="http-get:*:audio/mpeg:*" size="3119965">http://<server>/Music/Compilations/1/09+Ticket+To+Ride.m4a</res>
+        <res duration="00:03:10" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/1/09+Ticket+To+Ride.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_4416d38e-0f68-4c75-93b9-c1a793fccb49" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Help!</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
-        <res duration="00:02:18" protocolInfo="http-get:*:audio/mpeg:*" size="2291395">http://<server>/Music/Compilations/1/10+Help%21.m4a</res>
+        <res duration="00:02:18" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/1/10+Help%21.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_c05194a3-f6f0-4f52-b78a-13fb5580bc0f" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Yesterday</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>11</upnp:originalTrackNumber>
-        <res duration="00:02:05" protocolInfo="http-get:*:audio/mpeg:*" size="2076858">http://<server>/Music/Compilations/1/11+Yesterday.m4a</res>
+        <res duration="00:02:05" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/1/11+Yesterday.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_e432f23f-4fad-4780-ba3d-9b33240dfd10" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>We Can Work It Out</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>13</upnp:originalTrackNumber>
-        <res duration="00:02:15" protocolInfo="http-get:*:audio/mpeg:*" size="2233150">http://<server>/Music/Compilations/1/13+We+Can+Work+It+Out.m4a</res>
+        <res duration="00:02:15" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/1/13+We+Can+Work+It+Out.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_e8137501-c9bd-41ed-a74b-3babc18dec23" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Penny Lane</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>17</upnp:originalTrackNumber>
-        <res duration="00:02:59" protocolInfo="http-get:*:audio/mpeg:*" size="2949926">http://<server>/Music/Compilations/1/17+Penny+Lane.m4a</res>
+        <res duration="00:02:59" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/1/17+Penny+Lane.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_8f76f968-0691-4556-a908-85956b4f4fe4" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Hello, Goodbye</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>19</upnp:originalTrackNumber>
-        <res duration="00:03:27" protocolInfo="http-get:*:audio/mpeg:*" size="3386347">http://<server>/Music/Compilations/1/19+Hello+Goodbye.m4a</res>
+        <res duration="00:03:27" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/1/19+Hello+Goodbye.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_6c267ad5-e2ba-44a8-8882-a4c2879b7768" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Lady Madonna</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>20</upnp:originalTrackNumber>
-        <res duration="00:02:16" protocolInfo="http-get:*:audio/mpeg:*" size="2262662">http://<server>/Music/Compilations/1/20+Lady+Madonna.m4a</res>
+        <res duration="00:02:16" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/1/20+Lady+Madonna.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_0acc282b-c4db-44b2-a6ae-3c037fa3255a" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Hey Jude</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>21</upnp:originalTrackNumber>
-        <res duration="00:07:04" protocolInfo="http-get:*:audio/mpeg:*" size="6896151">http://<server>/Music/Compilations/1/21+Hey+Jude.m4a</res>
+        <res duration="00:07:04" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/1/21+Hey+Jude.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_b2d2881c-d968-4926-82de-de874d37eea7" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Get Back</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>22</upnp:originalTrackNumber>
-        <res duration="00:03:12" protocolInfo="http-get:*:audio/mpeg:*" size="3145458">http://<server>/Music/Compilations/1/22+Get+Back.m4a</res>
+        <res duration="00:03:12" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/1/22+Get+Back.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_485bbe7f-d0f7-4ffe-8adb-0f1093dd2dbf" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Come Together</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>25</upnp:originalTrackNumber>
-        <res duration="00:04:18" protocolInfo="http-get:*:audio/mpeg:*" size="4209212">http://<server>/Music/Compilations/1/25+Come+Together.m4a</res>
+        <res duration="00:04:18" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/1/25+Come+Together.m4a</res>
     </item>
 </DIDL-Lite>

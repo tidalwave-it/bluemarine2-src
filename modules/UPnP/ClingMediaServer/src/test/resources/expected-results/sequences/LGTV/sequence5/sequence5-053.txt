@@ -82,13 +82,13 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:title>On Green Dolphin Street</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="00:09:51" protocolInfo="http-get:*:audio/mpeg:*" size="14333812">http://<server>/Music/Miles+Davis/%2758+Sessions/01+On+Green+Dolphin+Street.m4a</res>
+        <res duration="00:09:51" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%2758+Sessions/01+On+Green+Dolphin+Street.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_8a1e3906-d68d-4085-88b1-6c3768a00ec4" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Fran Dance</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
-        <res duration="00:05:51" protocolInfo="http-get:*:audio/mpeg:*" size="8507761">http://<server>/Music/Miles+Davis/%2758+Sessions/02+Fran+Dance.m4a</res>
+        <res duration="00:05:51" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%2758+Sessions/02+Fran+Dance.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_c7adfbed-16e0-4c91-a41d-8fcf2afeb664" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Stella by Starlight</dc:title>

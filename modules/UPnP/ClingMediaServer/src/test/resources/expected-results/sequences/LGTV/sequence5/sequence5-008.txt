@@ -20,7 +20,7 @@ Browse({ObjectID=/music, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.storageFolder</upnp:class>
     </container>
-    <container childCount="290" id="/music/DefaultMediaFileSystem" parentID="/music" restricted="0" searchable="0">
+    <container childCount="0" id="/music/DefaultMediaFileSystem" parentID="/music" restricted="0" searchable="0">
         <dc:title>DefaultMediaFileSystem</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.storageFolder</upnp:class>

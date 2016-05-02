@@ -28,7 +28,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:title>'Round Midnight</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
-        <res duration="00:05:57" protocolInfo="http-get:*:audio/mpeg:*" size="8674827">http://<server>/Music/Compilations/The+Essential+Miles+Davis+%5BDisc+1%5D/1-06+%27Round+Midnight.m4a</res>
+        <res duration="00:05:57" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/The+Essential+Miles+Davis+%5BDisc+1%5D/1-06+%27Round+Midnight.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_8bb7b63c-9188-4e63-8192-16ae289a3ada" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Dear Old Stockholm</dc:title>
@@ -40,7 +40,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:title>Bye Bye Blackbird</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
-        <res duration="00:07:55" protocolInfo="http-get:*:audio/mpeg:*" size="11527137">http://<server>/Music/Compilations/The+Essential+Miles+Davis+%5BDisc+1%5D/1-07+Bye+Bye+Blackbird.m4a</res>
+        <res duration="00:07:55" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Compilations/The+Essential+Miles+Davis+%5BDisc+1%5D/1-07+Bye+Bye+Blackbird.m4a</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_a3a99921-dead-485d-9599-c860e822ceee" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Two Bass Hit</dc:title>
