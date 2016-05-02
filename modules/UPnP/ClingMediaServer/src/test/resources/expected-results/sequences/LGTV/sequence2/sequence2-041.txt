@@ -1,0 +1,8 @@
+Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_musicbrainz_resource_artist_7daac7f9-8fcc-485f-a14f-f8091d98cf25, BrowseFlag=BrowseMetadata, Filter=, StartingIndex=0, RequestedCount=0, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="13" id="/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_musicbrainz_resource_artist_7daac7f9-8fcc-485f-a14f-f8091d98cf25" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+        <dc:title>Pat Metheny</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+</DIDL-Lite>

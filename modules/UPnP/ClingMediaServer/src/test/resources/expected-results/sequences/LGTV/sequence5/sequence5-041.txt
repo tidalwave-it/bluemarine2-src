@@ -1,0 +1,99 @@
+Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=80, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_646d1bc3-423a-466c-8232-37d03a4a926e" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Easter Parade</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>13</upnp:originalTrackNumber>
+        <res duration="00:03:05" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Django+Reinhardt/Django+Reinhardt+%26+Friends/61+Easter+Parade.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_a751fb4e-8ffb-450f-9a9f-eb770843eba7" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>I'm Gonna Wash My Hands of You</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>14</upnp:originalTrackNumber>
+        <res duration="00:02:35" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Django+Reinhardt/Django+Reinhardt+%26+Friends/23+I%27m+Gonna+Wash+My+Hands+of+You.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_ae9f42b3-8acf-44f4-9e9f-a5c361a3dfeb" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Some of These Days</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
+        <res duration="00:02:29" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Django+Reinhardt/Django+Reinhardt+%26+Friends/27+Some+of+These+Days.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_a0a40220-f8ef-46f6-a6dd-96115a245281" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Rosetta</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
+        <res duration="00:02:44" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Django+Reinhardt/Django+Reinhardt+%26+Friends/03+Rosetta.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_a4a8b128-da89-4210-9da0-336c13d17014" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>The Object of My Affection</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
+        <res duration="00:02:52" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Django+Reinhardt/Django+Reinhardt+%26+Friends/35+The+Object+of+My+Affection.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_e39a0838-694c-41d4-8a0e-00200066ea12" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Magic Strings</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
+        <res duration="00:03:14" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Django+Reinhardt/Django+Reinhardt+%26+Friends/58+Magic+Strings.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_4bad1645-49c6-432d-aa4b-dc783d2f23ac" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>I Can't Give You Anything but Love</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>13</upnp:originalTrackNumber>
+        <res duration="00:03:27" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Django+Reinhardt/Django+Reinhardt+%26+Friends/04+I+Can%27t+Give+You+Anything+But+Love.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_5905b990-a960-417d-a222-d565a0cdcc23" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Oriental Shuffle</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>14</upnp:originalTrackNumber>
+        <res duration="00:02:44" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Django+Reinhardt/Django+Reinhardt+%26+Friends/53+Oriental+Shuffle.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_68069f59-08b0-4835-9e4f-187f79f4ba96" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Limehouse Blues</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>17</upnp:originalTrackNumber>
+        <res duration="00:02:51" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Django+Reinhardt/Django+Reinhardt+%26+Friends/49+Limehouse+Blues.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_6323d8e7-eb10-4b98-b424-83a8e8a2ff5a" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Nagasaki</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>18</upnp:originalTrackNumber>
+        <res duration="00:02:54" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Django+Reinhardt/Django+Reinhardt+%26+Friends/33+Nagasaki.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_43f39428-4c26-4dd9-8e36-ce53529d1427" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Swing Guitars</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>19</upnp:originalTrackNumber>
+        <res duration="00:02:30" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Django+Reinhardt/Django+Reinhardt+%26+Friends/11+Swing+Guitars.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_c9e8c579-118d-4955-ba27-fdf7caeb6c80" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Georgia on My Mind</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>20</upnp:originalTrackNumber>
+        <res duration="00:03:18" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Django+Reinhardt/Django+Reinhardt+%26+Friends/64+Georgia+On+My+Mind.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_174d9e9c-aeed-4267-9ad2-f91d4fcb1cd4" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>In the Still of the Night</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>22</upnp:originalTrackNumber>
+        <res duration="00:03:09" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Django+Reinhardt/Django+Reinhardt+%26+Friends/01+In+the+Still+of+the+Night.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_c6b724c8-fe32-47eb-965e-3dbc02be53cf" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>On Green Dolphin Street</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
+        <res duration="00:09:51" protocolInfo="http-get:*:audio/mpeg:*" size="14333812">http://<server>/Music/Miles+Davis/%2758+Sessions/01+On+Green+Dolphin+Street.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_8a1e3906-d68d-4085-88b1-6c3768a00ec4" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Fran Dance</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
+        <res duration="00:05:51" protocolInfo="http-get:*:audio/mpeg:*" size="8507761">http://<server>/Music/Miles+Davis/%2758+Sessions/02+Fran+Dance.m4a</res>
+    </item>
+    <item id="/music/RepositoryBrowserByTrack/http:__dbtune.org_musicbrainz_resource_track_c7adfbed-16e0-4c91-a41d-8fcf2afeb664" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+        <dc:title>Stella by Starlight</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
+        <res duration="00:04:44" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Miles+Davis/%2758+Sessions/03+Stella+By+Starlight.m4a</res>
+    </item>
+</DIDL-Lite>

@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.model.spi;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import it.tidalwave.util.As;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -43,8 +44,10 @@ import it.tidalwave.util.Finder8Support;
 import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import it.tidalwave.role.SimpleComposite8;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -147,14 +150,24 @@ public class FactoryBasedEntityFinder extends Finder8Support<EntityWithPath, Ent
               }
             else
               {
+                assert filtered.size() == 1;
                 final EntityWithPath e = filtered.get(0);
-                return path.equals(e.getPath()) ? filtered : ((MediaFolder)e).findChildren().withPath(path).results();
+                return path.equals(e.getPath()) ? filtered
+                                                : ((EntityFinder)asSimpleComposite(e).findChildren())
+                                                                                     .withPath(path)
+                                                                                     .results();
               }
           }
         catch (IllegalArgumentException e) // path can't be relativised
           {
             return Collections.emptyList();
           }
+      }
+
+    @Nonnull // FIXME: this should be normally done by as()
+    private SimpleComposite8 asSimpleComposite (final @Nonnull As object)
+      {
+        return (object instanceof SimpleComposite8) ? (SimpleComposite8)object : object.as(SimpleComposite8);
       }
 
     /*******************************************************************************************************************

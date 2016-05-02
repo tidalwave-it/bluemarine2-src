@@ -1,0 +1,9 @@
+Browse({ObjectID=/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:ce887dfbe136b4d870d171248ad1200ac73e6918, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=1, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:ce887dfbe136b4d870d171248ad1200ac73e6918/urn:bluemarine:track:d95df502f71639a7102e0158edce0391c6cf03db" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:ce887dfbe136b4d870d171248ad1200ac73e6918" restricted="0">
+        <dc:title>Bach: Suite Per La Viola Da Gamba In D Minor, BWV 1011 - 1. Prelude</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
+        <res duration="00:05:43" protocolInfo="http-get:*:audio/mpeg:*" size="5561031">http://<server>/Music/Compilations/_.+Per+La+Viola+Da+Gamba._/01+Bach_+Suite+Per+La+Viola+Da+Gamba+In+D+Minor%2C+BWV+1011+-+1.+Prelude.m4a</res>
+    </item>
+</DIDL-Lite>
