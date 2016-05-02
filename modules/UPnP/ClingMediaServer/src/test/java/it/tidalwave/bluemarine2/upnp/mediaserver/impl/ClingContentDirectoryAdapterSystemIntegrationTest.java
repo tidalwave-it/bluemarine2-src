@@ -283,7 +283,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
           {
             { "LGTV", "sequence1" },
             { "LGTV", "sequence2" },
-            { "LGTV", "sequence3" }
+            { "LGTV", "sequence3" },
+            { "LGTV", "sequence4" }
           };
       }
 
