@@ -59,10 +59,10 @@ import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 import static it.tidalwave.bluemarine2.util.PrettyPrint.xmlPrettyPrinted;
 import static it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH;
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 /***********************************************************************************************************************
  *
@@ -228,19 +228,12 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                         final String hostAndPort = String.format("http://%s:%d", resourceServer.getIpAddress(), resourceServer.getPort());
                         final String result = xmlPrettyPrinted(parser.generate(didl)).replaceAll(hostAndPort, "http://<server>");
                         Files.write(actualFile, (header + "\n" + result).getBytes(StandardCharsets.UTF_8));
-
-                        try
-                          {
-                            assertSameContents(expectedFile.toFile(), actualFile.toFile());
-                          }
-                        catch (Throwable e)
-                          {
-                            error.set(e);
-                          }
+                        assertSameContents(expectedFile.toFile(), actualFile.toFile());
                       }
-                    catch (Exception e)
+                    catch (Throwable e)
                       {
                         log.error("", e);
+                        error.set(e);
                       }
 
                     latch.countDown();
@@ -258,6 +251,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                                      final @Nonnull String defaultMsg)
                   {
                     log.error("failure({}, {}, {})", invocation, operation, defaultMsg);
+                    error.set(new RuntimeException("browse failure"));
                     latch.countDown();
                   }
               };
