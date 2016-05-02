@@ -1,0 +1,83 @@
+Browse({ObjectID=/music/RepositoryBrowserByArtistThenTrack, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=320, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="0" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:6811c9defe82bd1663b7994ba06ef6aa4554b0d4" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Peter Nero</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_fb04c57d-9e95-4348-b572-fc5b839c2ae7" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Philippe Brun "Jam Band"</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="4" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:6e8d5c3fcc6688e575ca9026837ecad1e253f05b" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Philippe Foulon</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:1831e8c65bf212f6ae402abacd0668fd67ecf2b9" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Pierre Del Vescovo</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:cf8175e1c8d379728f9ca0c286e2684490300b2a" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Pierre Del Vescovo/Horn, Bamberger Symphoniker/Theodor Gusch</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:11c8f71822ae609cd238d64deb828fb6cf3be33e" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Pierre Del Vescovo/Horn, Jean Hubeau/Piano</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="10" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:c12a755995122e8d4a27445b87681827dbe04d2b" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Pinchas Zukerman, Midori</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_5b1633c8-cb78-4d85-a7d1-a6d145d8d472" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Pino Daniele</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:e95e296e4ba154a520926bdd0f01dce9bdf40254" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Pucci Amanda Jhones</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="3" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_592a91ea-aa85-452a-8d10-e538c315765a" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Quarteto em Cy</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_ee55e4e8-807d-49b1-8470-d1c0898ed7cb" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Quintette du Hot Club de France</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="0" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:6a03551071595ea5ab2909f1a6394eb2e965ab65" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>R_Goldstein Schoepflin Ganong</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="3" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_614e392a-0d63-48a2-bbd5-03265c407bd1" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Randy Crawford</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_974f2396-37a9-4e63-b13b-8462a806b3b2" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Randy Crawford &amp; Joe Sample</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="6" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_7cbdfc61-30a9-4f17-b2fc-dcae3757adba" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Randy Edelman</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_12822d4f-4607-4f1d-ab16-d6bacc27cafe" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>René Marie</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+</DIDL-Lite>

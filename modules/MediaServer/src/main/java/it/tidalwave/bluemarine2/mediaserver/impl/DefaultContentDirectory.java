@@ -38,14 +38,18 @@ import java.util.Optional;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.beans.factory.annotation.Autowired;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.spi.MediaFolderAdapter;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder.EntityCollectionFactory;
+import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
-import it.tidalwave.bluemarine2.model.EntityWithPath;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
+import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.Identifiable.Identifiable;
 
 /***********************************************************************************************************************
  *
@@ -70,7 +74,11 @@ public class DefaultContentDirectory implements ContentDirectory
 
 //    @Inject FIXME
     @Autowired(required = false)
-    private List<MediaServerService> services = Collections.emptyList();
+    private final List<EntityBrowser> entityBrowsers = Collections.emptyList();
+
+//    @Inject FIXME
+    @Autowired(required = false)
+    private final List<MediaServerService> services = Collections.emptyList();
 
     private MediaFolder root;
 
@@ -84,6 +92,7 @@ public class DefaultContentDirectory implements ContentDirectory
     private void initialize()
       {
         // FIXME: why is this called multiple times?
+        log.info(">>>> discovered entity browsers: {}", entityBrowsers);
         log.info(">>>> discovered services: {}", services);
         root = new VirtualMediaFolder(Optional.empty(), PATH_ROOT, "", this::childrenFactory);
       }
@@ -91,15 +100,33 @@ public class DefaultContentDirectory implements ContentDirectory
     @Nonnull
     private Collection<EntityWithPath> childrenFactory (final @Nonnull MediaFolder parent)
       {
-        return Arrays.asList(new VirtualMediaFolder(parent, PATH_MUSIC,    "Music",    EMPTY),
+        return Arrays.asList(new VirtualMediaFolder(parent, PATH_MUSIC,    "Music",    this::musicFactory),
                              new VirtualMediaFolder(parent, PATH_PHOTOS,   "Photos",   EMPTY),
                              new VirtualMediaFolder(parent, PATH_VIDEOS,   "Videos",   EMPTY),
                              new VirtualMediaFolder(parent, PATH_SERVICES, "Services", this::servicesFactory));
       }
 
     @Nonnull
-    private Collection<EntityWithPath> servicesFactory (final @Nonnull MediaFolder parent)
+    private Collection<MediaFolder> musicFactory (final @Nonnull MediaFolder parent)
+      {
+        // TODO: filter by MIME type
+        return entityBrowsers.stream().map(browser -> createMediaFolder(parent, browser)).collect(toList());
+      }
+
+    @Nonnull
+    private Collection<MediaFolder> servicesFactory (final @Nonnull MediaFolder parent)
       {
         return services.stream().map(service -> service.createRootFolder(parent)).collect(toList());
+      }
+
+    @Nonnull
+    private static MediaFolder createMediaFolder (final @Nonnull MediaFolder parent,
+                                                  final @Nonnull EntityBrowser browser)
+      {
+        final String default_ = browser.getClass().getSimpleName();
+        final String pathSegment = browser.asOptional(Identifiable).map(i -> i.getId().stringValue()).orElse(default_);
+        final String displayName = browser.asOptional(Displayable).map(d -> d.getDisplayName()).orElse(default_);
+        log.trace("createMediaFolder({}, {}) - path: {} displayName: {}", parent, browser, pathSegment, displayName);
+        return new MediaFolderAdapter(browser.getRoot(), Paths.get(pathSegment), parent, displayName);
       }
   }

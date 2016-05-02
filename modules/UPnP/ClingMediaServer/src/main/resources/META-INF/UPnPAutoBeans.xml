@@ -49,4 +49,6 @@
         <property name="friendlyName" value="blueMarine II"/>
     </bean>
 
+    <bean id="resourceServer" class="it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver.DefaultResourceServer" />
+
 </beans>
