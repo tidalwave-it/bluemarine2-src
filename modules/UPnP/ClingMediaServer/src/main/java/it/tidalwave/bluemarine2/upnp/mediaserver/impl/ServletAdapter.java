@@ -58,6 +58,14 @@ public class ServletAdapter extends HttpServlet
           throws IOException, ServletException
           {
             log.trace("handle({}, {}, {}, {}", target, baseRequest, request, response);
+            log.debug(">>>> request URI: {}", request.getRequestURI());
+
+            for (final Enumeration<String> names = request.getHeaderNames(); names.hasMoreElements(); )
+              {
+                final String headerName = names.nextElement();
+                log.debug(">>>> request header: {} = {}", headerName, request.getHeader(headerName));
+              }
+
             service(request, response);
 
             log.debug(">>>> response {}", response.getStatus());

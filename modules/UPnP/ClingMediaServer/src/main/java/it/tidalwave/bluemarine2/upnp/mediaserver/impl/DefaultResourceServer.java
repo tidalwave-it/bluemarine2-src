@@ -32,6 +32,12 @@ import javax.annotation.Nonnull;
 import javax.annotation.PreDestroy;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
+import java.io.EOFException;
+import java.io.OutputStream;
+import java.io.RandomAccessFile;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
@@ -49,14 +55,9 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.PropertyNames;
-import java.io.EOFException;
-import java.io.OutputStream;
-import java.io.RandomAccessFile;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import static javax.servlet.http.HttpServletResponse.*;
 
 /***********************************************************************************************************************
  *
@@ -114,103 +115,92 @@ public class DefaultResourceServer implements ResourceServer
         protected void doGet (final @Nonnull HttpServletRequest request, final @Nonnull HttpServletResponse response)
           throws ServletException, IOException
           {
-            log.debug("request URI: {}", request.getRequestURI());
-
-            for (final Enumeration<String> names = request.getHeaderNames(); names.hasMoreElements(); )
-              {
-                final String headerName = names.nextElement();
-                log.debug(">>>> header: {} = {}", headerName, request.getHeader(headerName));
-              }
-
             final Path resourcePath = rootPath.resolve(urlDecoded(request.getRequestURI().replaceAll("^/", "")));
             log.debug(">>>> resource path: {}", resourcePath);
 
             if (!Files.exists(resourcePath))
               {
                 log.error(">>>> resource not found: {}", resourcePath);
-                response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                response.setStatus(SC_NOT_FOUND);
+                return;
               }
-            else
+
+            final long length = (int)Files.size(resourcePath);
+            final Range fullRange = new Range(0, length - 1, length);
+            final List<Range> ranges = new ArrayList<>();
+
+            final String range = request.getHeader("Range");
+
+            if (range != null)
               {
-                final long length = (int)Files.size(resourcePath);
-                final Range full = new Range(0, length - 1, length);
-                final List<Range> ranges = new ArrayList<>();
-
-                final String range = request.getHeader("Range");
-
-                if (range != null)
+                // Range header should match format "bytes=n-n,n-n,n-n...".
+                if (!range.matches("^bytes=\\d*-\\d*(,\\d*-\\d*)*$"))
                   {
-                    // Range header should match format "bytes=n-n,n-n,n-n...".
-                    if (!range.matches("^bytes=\\d*-\\d*(,\\d*-\\d*)*$"))
+                    log.error("Invalid range: {}", range);
+                    response.setHeader("Content-Range", "bytes */" + length); // Required in 416.
+                    response.sendError(SC_REQUESTED_RANGE_NOT_SATISFIABLE);
+                    return;
+                  }
+
+                // If any valid If-Range header, then process each part of byte range.
+                for (final String part : range.substring(6).split(","))
+                  {
+                    // Assuming a file with length of 100, the following examples returns bytes at:
+                    // 50-80 (50 to 80), 40- (40 to length=100), -20 (length-20=80 to length=100).
+                    long start = subStringOrMinusOne(part, 0, part.indexOf("-"));
+                    long end = subStringOrMinusOne(part, part.indexOf("-") + 1, part.length());
+
+                    if (start == -1)
+                      {
+                        start = length - end;
+                        end = length - 1;
+                      }
+                    else if ((end == -1) || (end > length - 1))
+                      {
+                        end = length - 1;
+                      }
+
+                    if (start > end)
                       {
                         log.error("Invalid range: {}", range);
                         response.setHeader("Content-Range", "bytes */" + length); // Required in 416.
-                        response.sendError(HttpServletResponse.SC_REQUESTED_RANGE_NOT_SATISFIABLE);
+                        response.sendError(SC_REQUESTED_RANGE_NOT_SATISFIABLE);
                         return;
                       }
 
-                    // If any valid If-Range header, then process each part of byte range.
-                    for (final String part : range.substring(6).split(","))
-                      {
-                        // Assuming a file with length of 100, the following examples returns bytes at:
-                        // 50-80 (50 to 80), 40- (40 to length=100), -20 (length-20=80 to length=100).
-                        long start = subStringOrMinusOne(part, 0, part.indexOf("-"));
-                        long end = subStringOrMinusOne(part, part.indexOf("-") + 1, part.length());
-
-                        if (start == -1)
-                          {
-                            start = length - end;
-                            end = length - 1;
-                          }
-                        else if ((end == -1) || (end > length - 1))
-                          {
-                            end = length - 1;
-                          }
-
-                        if (start > end)
-                          {
-                            log.error("Invalid range: {}", range);
-                            response.setHeader("Content-Range", "bytes */" + length); // Required in 416.
-                            response.sendError(HttpServletResponse.SC_REQUESTED_RANGE_NOT_SATISFIABLE);
-                            return;
-                          }
-
-                        ranges.add(new Range(start, end, length));
-                      }
+                    ranges.add(new Range(start, end, length));
                   }
+              }
 
-                response.setContentType("audio/mpeg");
-        //                response.setContentType(Files.probeContentType(resourcePath)); FIXME
+            if (ranges.size() > 1)
+              {
+                log.error("Can't support multi-range: {}", range);
+                response.setStatus(SC_INTERNAL_SERVER_ERROR);
+                return;
+              }
 
-                try (final RandomAccessFile input = new RandomAccessFile(resourcePath.toFile(), "r");
-                     final OutputStream output = response.getOutputStream())
-                  {
-                    if (ranges.isEmpty() || ranges.get(0) == full)
-                      {
-                        response.setContentLength((int)Files.size(resourcePath));
-                        Files.copy(resourcePath, output);
-                      }
-                    else if (ranges.size() == 1)
-                      {
-                        final Range r = ranges.get(0);
-                        response.setHeader("Content-Range", "bytes " + r.start + "-" + r.end + "/" + r.total);
-                        response.setContentLength((int)r.length);
-                        response.setStatus(HttpServletResponse.SC_PARTIAL_CONTENT); // 206.
-                        // FIXME: use memory mapped i/o
-                        copy(input, output, r.start, r.length);
-                      }
-                    else
-                      {
-                        log.error("Can't support multi-range: {}", range);
-                        response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-                      }
+            response.setContentType("audio/mpeg");
+    //                response.setContentType(Files.probeContentType(resourcePath)); FIXME
+            final Range r = ranges.stream().findFirst().orElse(fullRange);
+            response.setBufferSize(0);
+            response.setContentLength((int)r.length);
 
-                    output.close(); // force EOF in case
-                  }
-                catch (EOFException e)
-                  {
-                    log.info("EOF - probably client closed connection");
-                  }
+            if (!fullRange.equals(r))
+              {
+                response.setHeader("Content-Range", "bytes " + r.start + "-" + r.end + "/" + r.total);
+                response.setStatus(SC_PARTIAL_CONTENT);
+              }
+
+            try (final RandomAccessFile input = new RandomAccessFile(resourcePath.toFile(), "r");
+                 final OutputStream output = response.getOutputStream())
+              {
+                // FIXME: use memory mapped i/o
+                copy(input, output, r.start, r.length);
+                output.flush(); // force EOF in case
+              }
+            catch (EOFException e)
+              {
+                log.info("EOF - probably client closed connection");
               }
           }
 
