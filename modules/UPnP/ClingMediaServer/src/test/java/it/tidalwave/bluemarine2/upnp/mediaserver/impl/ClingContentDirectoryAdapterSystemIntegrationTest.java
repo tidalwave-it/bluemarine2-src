@@ -71,7 +71,7 @@ import static it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH;
  *
  * To just bring up the service and keep it running for some time, run
  *
- *      mvn surefire:test -Dtest=ClingContentDirectoryAdapterSystemIntegrationTest#test_service_publishing -Ddelay=9999999 | grep -v TRACE
+ *      mvn -Prun-service
  *
  * @author  Fabrizio Giudici
  * @version $Id$
@@ -187,7 +187,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
     public void test_service_publishing()
       throws Exception
       {
-        log.info("Completed device registration");
+        log.info("The service is up and running");
         delay();
       }
 

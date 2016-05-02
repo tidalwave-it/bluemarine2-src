@@ -91,4 +91,25 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>run-service</id>
+            <build>
+                <defaultGoal>surefire:test</defaultGoal>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <test>ClingContentDirectoryAdapterSystemIntegrationTest#test_service_publishing</test>
+                            <systemPropertyVariables>
+                                <delay>9999999</delay>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 </project>
