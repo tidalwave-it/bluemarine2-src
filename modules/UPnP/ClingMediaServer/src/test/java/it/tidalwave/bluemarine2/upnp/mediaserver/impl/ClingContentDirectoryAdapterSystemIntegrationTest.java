@@ -250,11 +250,11 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
       {
         return new Object[][]
           {
-            { "LGTV", "sequence1" },
-            { "LGTV", "sequence2" },
-            { "LGTV", "sequence3" },
-            { "LGTV", "sequence4" },
-            { "LGTV", "sequence5" },
+            { "LG-37LS5600", "sequence1" },
+            { "LG-37LS5600", "sequence2" },
+            { "LG-37LS5600", "sequence3" },
+            { "LG-37LS5600", "sequence4" },
+            { "LG-37LS5600", "sequence5" },
           };
       }
 
