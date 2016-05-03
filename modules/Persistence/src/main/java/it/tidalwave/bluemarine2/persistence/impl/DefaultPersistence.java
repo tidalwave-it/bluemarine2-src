@@ -70,23 +70,23 @@ public class DefaultPersistence implements Persistence
   {
     @Getter
     private Repository repository;
-        
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification) 
+    /* VisibleForTesting */ void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
       throws RepositoryException, IOException, RDFParseException
       {
         log.info("onPowerOnNotification({})", notification);
         repository = new SailRepository(new MemoryStore());
         repository.initialize();
-        
+
         try
           {
             final Path repositoryPath = notification.getProperties().get(PropertyNames.REPOSITORY_PATH);
             final RepositoryConnection connection = repository.getConnection();
-            
+
             if (Files.exists(repositoryPath))
               {
                 log.info("Importing repository from {} ...", repositoryPath);
@@ -97,19 +97,19 @@ public class DefaultPersistence implements Persistence
                 connection.close();
               }
           }
-        catch (NotFoundException e) 
+        catch (NotFoundException e)
           {
             log.warn("No repository path: operating in memory");
           }
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
     @Override
     public void dump (final @Nonnull Path path)
-      throws RDFHandlerException, IOException, RepositoryException 
+      throws RDFHandlerException, IOException, RepositoryException
       {
         log.info("dump({})", path);
         final File file = path.toFile();
@@ -117,7 +117,7 @@ public class DefaultPersistence implements Persistence
         @Cleanup final PrintWriter pw = new PrintWriter(file, "UTF-8");
         final RDFHandler writer = new SortingRDFHandler(new N3Writer(pw));
         final RepositoryConnection connection = repository.getConnection();
-        
+
         for (final Namespace namespace : connection.getNamespaces().asList())
           {
             writer.handleNamespace(namespace.getPrefix(), namespace.getName());
@@ -150,7 +150,7 @@ public class DefaultPersistence implements Persistence
           {
             task.run(connection);
             connection.commit();
-            connection.close(); 
+            connection.close();
           }
         catch (Exception e)
           {
@@ -158,7 +158,10 @@ public class DefaultPersistence implements Persistence
             connection.rollback();
             connection.close();
           }
-        
-        log.debug(">>>> done in {} ns", System.nanoTime() - baseTime);
+
+        if (log.isDebugEnabled())
+          {
+            log.debug(">>>> done in {} ms", (System.nanoTime() - baseTime) * 1E-6);
+          }
       }
   }
