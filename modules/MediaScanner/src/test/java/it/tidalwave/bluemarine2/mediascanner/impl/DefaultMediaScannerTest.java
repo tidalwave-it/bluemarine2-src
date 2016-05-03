@@ -94,13 +94,13 @@ public class DefaultMediaScannerTest
       }
 
     @Test(dataProvider = "dataSetNames", groups = "no-ci") // until we manage to run it without downloading stuff, it's not reproducible
-    public void testScan (final @Nonnull String dataSetName)
+    public void testScan (final @Nonnull String folder, final @Nonnull String dataSetName)
       throws Exception
       {
         // FIXME: we should find a way to force HttpClient to pretend the network doesn't work
         log.warn("******* YOU SHOULD RUN THIS TEST WITH THE NETWORK DISCONNECTED");
         final Map<Key<?>, Object> properties = new HashMap<>();
-        properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, Paths.get("/Users/fritz/Personal/Music/iTunes/iTunes Music"));
+        properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, Paths.get(folder));
         properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, Paths.get("target/test-classes/download-cache-" + dataSetName));
         messageBus.publish(new PowerOnNotification(properties));
 
@@ -119,15 +119,17 @@ public class DefaultMediaScannerTest
         FileComparisonUtils.assertSameContents(expectedFile, actualFile);
       }
 
-    @DataProvider(name = "dataSetNames")
+    @DataProvider
     private static Object[][] dataSetNames()
       {
         return new Object[][]
           {
           // 20150406 contains some missing resurces that were missing from DbTune. While this is not the correct
           // behaviour, it's a real-world scenario.
-              { "20150406" },
-              { "20150421" }
+              { "/Users/fritz/Personal/Music/iTunes/iTunes Music", "20150406" },
+              { "/Users/fritz/Personal/Music/iTunes/iTunes Music", "20150421" },
+
+              { "/Volumes/Users/music/Music/iTunes/iTunes Media", "iTunes-fg-20160503" }
           };
       }
   }
