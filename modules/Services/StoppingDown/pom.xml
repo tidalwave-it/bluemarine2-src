@@ -6,13 +6,13 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-services-modules</artifactId>
-        <version>1.0-ALPHA-9-SNAPSHOT</version>
+        <version>1.0-ALPHA-9</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-services-stoppingdown</artifactId>
-    <version>1.0-ALPHA-9-SNAPSHOT</version>
+    <version>1.0-ALPHA-9</version>
     <packaging>jar</packaging>
     <name>blueMarine II - Services - StoppingDown</name>
     <description>blueMarine II - Services - StoppingDown</description>
