@@ -43,10 +43,13 @@ import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.persistence.Persistence;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import javax.annotation.Nonnull;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 
 /***********************************************************************************************************************
@@ -58,6 +61,8 @@ import org.testng.annotations.DataProvider;
 @Slf4j
 public class DefaultMediaScannerTest
   {
+    private Path musicTestSets;
+
     private DefaultMediaScanner underTest;
 
     private ClassPathXmlApplicationContext context;
@@ -72,6 +77,18 @@ public class DefaultMediaScannerTest
     private MediaFileSystem fileSystem;
 
     private Persistence persistence;
+
+    @BeforeClass
+    public void checkTestSets()
+      {
+        musicTestSets = Paths.get(System.getProperty("blueMarine2.musicTestSets.path", "/doesNotExist"));
+
+        if (!Files.exists(musicTestSets))
+          {
+            throw new RuntimeException("Cannot run tests: set 'blueMarine2.musicTestSets.path' to the folder "
+                                     + "containing test sets (" + musicTestSets + ")");
+          }
+      }
 
     @BeforeMethod
     private void prepareTest()
@@ -94,14 +111,15 @@ public class DefaultMediaScannerTest
       }
 
     @Test(dataProvider = "dataSetNames", groups = "no-ci") // until we manage to run it without downloading stuff, it's not reproducible
-    public void testScan (final @Nonnull String folder, final @Nonnull String dataSetName)
+    public void testScan (final @Nonnull String dataSetName)
       throws Exception
       {
+        final Path p = musicTestSets.resolve(dataSetName);
         // FIXME: we should find a way to force HttpClient to pretend the network doesn't work
-        log.warn("******* YOU SHOULD RUN THIS TEST WITH THE NETWORK DISCONNECTED");
+//        log.warn("******* YOU SHOULD RUN THIS TEST WITH THE NETWORK DISCONNECTED");
         final Map<Key<?>, Object> properties = new HashMap<>();
-        properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, Paths.get(folder));
-        properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, Paths.get("target/test-classes/download-cache-" + dataSetName));
+        properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, p);
+//        properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, Paths.get("target/test-classes/download-cache-" + dataSetName));
         messageBus.publish(new PowerOnNotification(properties));
 
         // Wait for the MediaFileSystem to initialize. Indeed, MediaFileSystem should be probably mocked
@@ -126,10 +144,10 @@ public class DefaultMediaScannerTest
           {
           // 20150406 contains some missing resurces that were missing from DbTune. While this is not the correct
           // behaviour, it's a real-world scenario.
-              { "/Users/fritz/Personal/Music/iTunes/iTunes Music", "20150406" },
-              { "/Users/fritz/Personal/Music/iTunes/iTunes Music", "20150421" },
+//              { "/Users/fritz/Personal/Music/iTunes/iTunes Music", "20150406" },
+//              { "/Users/fritz/Personal/Music/iTunes/iTunes Music", "20150421" },
 
-              { "/Volumes/Users/music/Music/iTunes/iTunes Media", "iTunes-fg-20160503" }
+              { "iTunes-fg-20160504-1" }
           };
       }
   }

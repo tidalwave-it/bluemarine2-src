@@ -56,9 +56,9 @@ import lombok.extern.slf4j.Slf4j;
 /***********************************************************************************************************************
  *
  * The JavaFX Delegate for the main application screen.
- * 
+ *
  * @stereotype  JavaFXDelegate
- * 
+ *
  * @author Fabrizio Giudici
  * @version $Id$
  *
@@ -68,27 +68,27 @@ public class JavaFXApplicationPresentationDelegate
   {
     @Inject
     private Provider<JavaFxFlowController> flowController;
-    
+
     @Inject
     private Provider<MessageBus> messageBus;
-    
+
     @FXML
     private GridPane gpGridPane;
-    
+
     @FXML
     private StackPane spContent;
-    
+
     private final DoubleProperty leftOverscan = new SimpleDoubleProperty(0);
-    
+
     private final DoubleProperty rightOverscan = new SimpleDoubleProperty(0);
-    
+
     private final DoubleProperty topOverscan = new SimpleDoubleProperty(0);
-    
+
     private final DoubleProperty bottomOverscan = new SimpleDoubleProperty(0);
 
     /*******************************************************************************************************************
      *
-     * When initialization is completed, binds the screen estate to the {@link FlowController} and fires a 
+     * When initialization is completed, binds the screen estate to the {@link FlowController} and fires a
      * {@link PowerOnNotification}, so other actors can start working.
      *
      ******************************************************************************************************************/
@@ -107,10 +107,10 @@ public class JavaFXApplicationPresentationDelegate
         rows.get(0).maxHeightProperty().bind(topOverscan);
         rows.get(2).minHeightProperty().bind(bottomOverscan);
         rows.get(2).maxHeightProperty().bind(bottomOverscan);
-        
+
         // FIXME: this is hardwired for my TV set - must be configurable by JavaFXApplicationWithSplash
         // Or FlowController, repurposed as a UIController
-        
+
         if ("arm".equals(System.getProperty("os.arch")))
           {
             leftOverscan.set(38);
@@ -119,23 +119,23 @@ public class JavaFXApplicationPresentationDelegate
             bottomOverscan.set(22);
           }
         // END FIXME
-        
+
         flowController.get().setContentPane(spContent);
         final Map<Key<?>, Object> properties = new HashMap<>();
-        final Path configPath = getConfiguratonPath();
+        final Path configPath = getConfigurationPath();
         log.info("configPath is {}", configPath);
         final Path repositoryPath = configPath.resolve("repository.n3");
         final Path cachePath = configPath.resolve("cache");
         properties.put(it.tidalwave.bluemarine2.persistence.PropertyNames.REPOSITORY_PATH, repositoryPath);
         properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, configPath);
         properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, cachePath);
-        messageBus.get().publish(new PowerOnNotification(properties));        
-      }    
-    
+        messageBus.get().publish(new PowerOnNotification(properties));
+      }
+
     /*******************************************************************************************************************
      *
      * Binds the BACK_SPACE key to backward navigation.
-     * 
+     *
      * @param   event   the key event
      *
      ******************************************************************************************************************/
@@ -148,34 +148,41 @@ public class JavaFXApplicationPresentationDelegate
             flowController.get().tryToDismissCurrentPresentation();
           }
       }
-    
+
     /*******************************************************************************************************************
-     * 
-     * 
-     * 
+     *
+     *
+     *
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Path getConfiguratonPath()
+    private Path getConfigurationPath()
       {
-        String s = System.getProperty("user.home", "/");
+        String s = System.getProperty("blueMarine2.workspace");
+
+        if (s != null)
+          {
+            return Paths.get(s);
+          }
+
+        s = System.getProperty("user.home", "/");
         final String osName = System.getProperty("os.name").toLowerCase();
-        
+
         switch (osName)
           {
             case "linux":
                 s += "/.blueMarine2";
                 break;
-                
+
             case "mac os x":
                 s += "/Library/Application Support/blueMarine2";
                 break;
-                
+
             case "windows":
                 s += "/.blueMarine2";
                 break;
           }
-        
+
         return Paths.get(s);
       }
   }
