@@ -36,7 +36,7 @@ import java.nio.file.Paths;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 
 /***********************************************************************************************************************
  *
@@ -55,7 +55,7 @@ public class VimeoMediaServerService implements MediaServerService
       }
 
     @Nonnull
-    private Collection<Entity> childrenFactory (final @Nonnull MediaFolder parent)
+    private Collection<EntityWithPath> childrenFactory (final @Nonnull MediaFolder parent)
       {
         return Arrays.asList(
             new VideoMediaItem(parent, "id1", "mp4", "video/mp4", "http://stoppingdown.net/media/movies/20071209-0076/800/movie.mp4"),

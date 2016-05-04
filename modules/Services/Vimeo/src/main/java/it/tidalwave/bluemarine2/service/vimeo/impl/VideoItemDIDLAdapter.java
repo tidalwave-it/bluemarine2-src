@@ -41,7 +41,8 @@ import org.fourthline.cling.support.model.Res;
 import org.fourthline.cling.support.model.dlna.DLNAProtocolInfo;
 import org.fourthline.cling.support.model.item.VideoItem;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.upnp.mediaserver.impl.DIDLAdapter;
+import it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter;
+import it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.ContentHolder;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
@@ -85,7 +86,7 @@ public class VideoItemDIDLAdapter implements DIDLAdapter
     public DIDLObject toObject()
       {
         final ProtocolInfo protocolInfo = new DLNAProtocolInfo(Protocol.HTTP_GET, "*", datum.getMimeType(), "*");
-        final Path parentPath = datum.getParent().getPath();
+        final Path parentPath = datum.getParent().get().getPath();
         final VideoItem item = new VideoItem();
         item.setId(parentPath.resolve(datum.getId()).toString()); // FIXME: use relativePath
         item.setParentID(parentPath.toString());

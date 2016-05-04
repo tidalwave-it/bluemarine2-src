@@ -31,9 +31,11 @@ package it.tidalwave.bluemarine2.service.vimeo.impl;
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
 import it.tidalwave.bluemarine2.model.AudioFile;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import it.tidalwave.bluemarine2.model.impl.EntityWithRoles;
+import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
+import java.util.Optional;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -47,9 +49,9 @@ import lombok.ToString;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor @ToString
-public class VideoMediaItem extends EntityWithRoles implements MediaItem
+ class VideoMediaItem extends EntityWithRoles implements MediaItem
   {
-    @Getter @Nonnull
+    @Nonnull
     private final MediaFolder parent;
 
     @Getter @Nonnull
@@ -74,6 +76,12 @@ public class VideoMediaItem extends EntityWithRoles implements MediaItem
     public Path getRelativePath()
       {
         throw new UnsupportedOperationException("Not supported yet.");
+      }
+
+    @Override @Nonnull
+    public Optional<EntityWithPath> getParent()
+      {
+        return Optional.of(parent);
       }
 
     @Override @Nonnull
