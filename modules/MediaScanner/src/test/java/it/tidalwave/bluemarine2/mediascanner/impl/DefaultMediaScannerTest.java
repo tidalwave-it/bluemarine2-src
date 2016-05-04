@@ -28,29 +28,29 @@
  */
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
+import javax.annotation.Nonnull;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.time.Instant;
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.spi.MockInstantProvider;
-import it.tidalwave.util.test.FileComparisonUtils;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.persistence.Persistence;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import javax.annotation.Nonnull;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
+import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 
 /***********************************************************************************************************************
  *
@@ -61,6 +61,8 @@ import org.testng.annotations.DataProvider;
 @Slf4j
 public class DefaultMediaScannerTest
   {
+    private static final Instant MOCK_TIMESTAMP = Instant.ofEpochSecond(1428232317L);
+
     private Path musicTestSets;
 
     private DefaultMediaScanner underTest;
@@ -72,7 +74,7 @@ public class DefaultMediaScannerTest
     private CountDownLatch scanCompleted;
 
     // Listeners must be fields or they will garbage-collected
-    private final MessageBus.Listener<ScanCompleted> onScanCompleted = (message) -> scanCompleted.countDown();
+    private final MessageBus.Listener<ScanCompleted> onScanCompleted = message -> scanCompleted.countDown();
 
     private MediaFileSystem fileSystem;
 
@@ -86,7 +88,7 @@ public class DefaultMediaScannerTest
         if (!Files.exists(musicTestSets))
           {
             throw new RuntimeException("Cannot run tests: set 'blueMarine2.musicTestSets.path' to the folder "
-                                     + "containing test sets (" + musicTestSets + ")");
+                                     + "containing test sets (current value: " + musicTestSets + ")");
           }
       }
 
@@ -94,14 +96,13 @@ public class DefaultMediaScannerTest
     private void prepareTest()
       throws InterruptedException
       {
-        final String s1 = "classpath:/META-INF/CommonsAutoBeans.xml";
-        final String s2 = "classpath:/META-INF/PersistenceAutoBeans.xml";
-        final String s3 = "classpath:/META-INF/DefaultMediaScannerTestBeans.xml";
-        context = new ClassPathXmlApplicationContext(s1, s2, s3);
+        context = new ClassPathXmlApplicationContext("META-INF/CommonsAutoBeans.xml",
+                                                     "META-INF/PersistenceAutoBeans.xml",
+                                                     "META-INF/DefaultMediaScannerTestBeans.xml");
         fileSystem = context.getBean(MediaFileSystem.class);
         persistence = context.getBean(Persistence.class);
 
-        context.getBean(MockInstantProvider.class).setInstant(Instant.ofEpochSecond(1428232317L));
+        context.getBean(MockInstantProvider.class).setInstant(MOCK_TIMESTAMP);
         messageBus = context.getBean(MessageBus.class);
         underTest = context.getBean(DefaultMediaScanner.class);
 
@@ -134,7 +135,7 @@ public class DefaultMediaScannerTest
         persistence.dump(actualFile.toPath());
 
         // FIXME: likely OOM in case of mismatch
-        FileComparisonUtils.assertSameContents(expectedFile, actualFile);
+        assertSameContents(expectedFile, actualFile);
       }
 
     @DataProvider
@@ -142,11 +143,6 @@ public class DefaultMediaScannerTest
       {
         return new Object[][]
           {
-          // 20150406 contains some missing resurces that were missing from DbTune. While this is not the correct
-          // behaviour, it's a real-world scenario.
-//              { "/Users/fritz/Personal/Music/iTunes/iTunes Music", "20150406" },
-//              { "/Users/fritz/Personal/Music/iTunes/iTunes Music", "20150421" },
-
               { "iTunes-fg-20160504-1" }
           };
       }
