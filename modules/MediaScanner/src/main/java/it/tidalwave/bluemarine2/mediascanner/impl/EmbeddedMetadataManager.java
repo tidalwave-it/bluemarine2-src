@@ -123,6 +123,8 @@ public class EmbeddedMetadataManager
      ******************************************************************************************************************/
     static class Mapper extends HashMap<Key<?>, Function<Object, Pair>>
       {
+        private static final long serialVersionUID = 9180433348240275721L;
+        
         @Nonnull
         public List<Statement> statementsFor (final @Nonnull Metadata metadata, final @Nonnull URI subjectUri)
           {
