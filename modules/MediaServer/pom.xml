@@ -42,8 +42,8 @@
         </dependency>
 
         <dependency>
-            <groupId>it.tidalwave.thesefoolishthings</groupId>
-            <artifactId>it-tidalwave-util-test</artifactId>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-commons-test</artifactId>
             <scope>test</scope>
         </dependency>
 

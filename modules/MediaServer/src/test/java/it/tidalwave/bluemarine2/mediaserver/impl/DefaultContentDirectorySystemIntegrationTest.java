@@ -29,33 +29,23 @@
 package it.tidalwave.bluemarine2.mediaserver.impl;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Optional;
-import java.util.stream.Stream;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.util.Key;
-import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
-import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.persistence.PropertyNames;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
 import static it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH;
-import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 
 /***********************************************************************************************************************
  *
@@ -89,7 +79,7 @@ public class DefaultContentDirectorySystemIntegrationTest
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "testSetNamesProvider")
-    public void must_return_correct_root_children (final @Nonnull String testSetName)
+    public void must_properly_expose_data (final @Nonnull String testSetName)
       throws Exception
       {
         // given
@@ -97,7 +87,7 @@ public class DefaultContentDirectorySystemIntegrationTest
         // The file system browser is not tested here, because we can't share audio files
         final Path PATH_TEST_SETS = Paths.get("target/test-classes/test-sets");
         final Path repositoryPath = PATH_TEST_SETS.resolve(testSetName + ".n3").toAbsolutePath();
-        properties.put(ROOT_PATH, PATH_TEST_SETS); // FIXME: why is this needed?
+        properties.put(ROOT_PATH, PATH_TEST_SETS); // FIXME: why is this needed? - mock the file system!
         properties.put(PropertyNames.REPOSITORY_PATH, repositoryPath);
         context.getBean(MessageBus.class).publish(new PowerOnNotification(properties));
         // when
@@ -118,35 +108,5 @@ public class DefaultContentDirectorySystemIntegrationTest
 //              { "small-model"                   },
               { "model-iTunes-fg-20160504-1"    },
           };
-      }
-
-    // FIXME: copy and paste below
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    protected static void dumpAndAssertResults (final @Nonnull String fileName, final @Nonnull Collection<?> data)
-      throws IOException
-      {
-        final Path actualResult = Paths.get("target", "test-results", fileName);
-        final Path expectedResult = Paths.get("target", "test-classes", "expected-results", fileName);
-        Files.createDirectories(actualResult.getParent());
-        final Stream<String> stream = data.stream().map(Object::toString);
-        Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
-        assertSameContents(expectedResult.toFile(), actualResult.toFile());
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    protected static List<String> dump (final @Nonnull Entity entity)
-      {
-        final List<String> result = new ArrayList<>();
-        result.add("" + entity);
-
-        final Optional<SimpleComposite8> asOptional = entity.asOptional(SimpleComposite8.class);
-        asOptional.ifPresent(c -> c.findChildren().results().forEach(child -> result.addAll(dump((Entity)child))));
-
-        return result;
       }
   }
