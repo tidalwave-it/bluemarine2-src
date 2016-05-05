@@ -107,7 +107,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
 
       }
 
-    @Test(dataProvider = "dataSetNames", groups = "no-ci") // until we manage to run it without downloading stuff, it's not reproducible
+    @Test(dataProvider = "dataSetNames", groups = "no-ci") // FIXME: because of BMT-46
     public void testScan (final @Nonnull String dataSetName)
       throws Exception
       {
