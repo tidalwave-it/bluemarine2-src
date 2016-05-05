@@ -53,7 +53,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 @SimpleMessageSubscriber @Slf4j
 public class DefaultMediaFileSystem implements MediaFileSystem
   {
-    private CountDownLatch initialized = new CountDownLatch(1);
+    private final CountDownLatch initialized = new CountDownLatch(1);
 
     @Getter
     private Path rootPath;
@@ -81,7 +81,7 @@ public class DefaultMediaFileSystem implements MediaFileSystem
       {
         log.info("onPowerOnNotification({})", notification);
         rootPath = notification.getProperties().get(PropertyNames.ROOT_PATH).resolve("Music");
-        log.info("rootPath: {}", rootPath);
+        log.info(">>>> rootPath: {}", rootPath);
         initialized.countDown();
       }
 
