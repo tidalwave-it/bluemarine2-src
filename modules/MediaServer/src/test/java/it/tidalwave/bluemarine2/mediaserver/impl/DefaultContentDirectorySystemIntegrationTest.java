@@ -99,7 +99,6 @@ public class DefaultContentDirectorySystemIntegrationTest
         properties.put(ROOT_PATH, configPath); // FIXME: why is this needed?
         properties.put(PropertyNames.REPOSITORY_PATH, repositoryPath);
         context.getBean(MessageBus.class).publish(new PowerOnNotification(properties));
-        Thread.sleep(4000);
         // when
         final MediaFolder root = underTest.findRoot();
         // then

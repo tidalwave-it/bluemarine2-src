@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
+import java.util.concurrent.CountDownLatch;
 import java.nio.file.Path;
 import it.tidalwave.util.NotFoundException;
 import it.tidalwave.util.spi.AsSupport;
@@ -41,6 +42,7 @@ import it.tidalwave.bluemarine2.model.PropertyNames;
 import lombok.Delegate;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.concurrent.TimeUnit.SECONDS;
 
 /***********************************************************************************************************************
  *
@@ -51,6 +53,8 @@ import lombok.extern.slf4j.Slf4j;
 @SimpleMessageSubscriber @Slf4j
 public class DefaultMediaFileSystem implements MediaFileSystem
   {
+    private CountDownLatch initialized = new CountDownLatch(1);
+
     @Getter
     private Path rootPath;
 
@@ -64,6 +68,7 @@ public class DefaultMediaFileSystem implements MediaFileSystem
     @Override @Nonnull
     public MediaFolder getRoot()
       {
+        waitForPowerOn();
         return new FileSystemMediaFolder(rootPath, null, rootPath);
       }
 
@@ -77,5 +82,25 @@ public class DefaultMediaFileSystem implements MediaFileSystem
         log.info("onPowerOnNotification({})", notification);
         rootPath = notification.getProperties().get(PropertyNames.ROOT_PATH).resolve("Music");
         log.info("rootPath: {}", rootPath);
+        initialized.countDown();
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void waitForPowerOn()
+      {
+        try
+          {
+            if (!initialized.await(10, SECONDS))
+              {
+                throw new IllegalStateException("rooPath null: did not receive PowerOnNotification");
+              }
+          }
+        catch (InterruptedException ex)
+          {
+            throw new IllegalStateException("Interrupted while waiting for PowerOnNotification");
+          }
       }
   }
