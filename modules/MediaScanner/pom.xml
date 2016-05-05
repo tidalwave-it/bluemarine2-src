@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-catalog</artifactId>
+            <artifactId>it-tidalwave-bluemarine2-vocabulary</artifactId>
         </dependency>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
@@ -63,6 +63,13 @@
             </exclusions>
         </dependency>
 
+        <!-- TEST DEPENDENCIES -->
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-commons-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -75,23 +82,4 @@
             </exclusions>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <!-- Disable creation of test jar. Usually it's harmless even when unneeded, but in this case it's a very large file. -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>package-test-jar</id>
-                        <phase>none</phase>
-                        <goals>
-                            <goal>test-jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>

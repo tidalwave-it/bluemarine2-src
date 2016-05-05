@@ -58,8 +58,8 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 
 /***********************************************************************************************************************
  *
- * 
- * mo:AudioFile             
+ *
+ * mo:AudioFile
  *      URI                                                     computed from the fingerprint
  *      foaf:sha1           the fingerprint of the file         locally computed
  *      bm:latestInd.Time   the latest import time              locally computed
@@ -67,7 +67,7 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
  *      dc:title            the title                           locally computed    WRONG: USELESS?
  *      rdfs:label          the display name                    locally computed    WRONG: should be the file name without path?
  *      mo:encodes          points to the signal                locally computed
- * 
+ *
  * mo:DigitalSignal
  *      URI                                                     computed from the fingerprint
  *      mo:bitsPerSample    the bits per sample                 locally extracted from the file
@@ -77,7 +77,7 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
  *      MISSING mo:channels
  *      MISSING? mo:time
  *      MISSING? mo:trmid
- * 
+ *
  * mo:Track
  *      URI                                                     the DbTune one if available, else computed from SHA1
  *      mo:musicbrainz      the MusicBrainz URI                 locally extracted from the file
@@ -85,7 +85,7 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
  *      rdfs:label          the display name                    taken from DbTune
  *      foaf:maker          points to the MusicArtist           taken from DbTune
  *      mo:track_number     the track number in the record      taken from DbTune
- * 
+ *
  * mo:Record
  *      URI                                                     taken from DbTune
  *      dc:date
@@ -97,48 +97,48 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
  *      mo:track            points to the Tracks                taken from DbTune
  *      foaf:maker          points to the MusicArtist           taken from DbTune
  *      owl:sameAs          point to external resources         taken from DbTune
- * 
+ *
  * mo:Artist
- *      
- * 
+ *
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @SimpleMessageSubscriber @Slf4j
-public class DefaultMediaScanner 
+public class DefaultMediaScanner
   {
 //    // FIXME: inject
 //    private final DefaultMusicBrainzApi mbApi = new DefaultMusicBrainzApi();
-    
+
     @Inject
     private DbTuneMetadataManager dbTuneMetadataManager;
-    
+
     @Inject
     private EmbeddedMetadataManager embeddedMetadataManager;
-    
+
     @Inject
     private ProgressHandler progress;
 
     @Inject
     private MessageBus messageBus;
-    
+
     @Inject
     private StatementManager statementManager;
-    
+
     @Inject
     private InstantProvider timestampProvider;
-    
+
     @Inject
     private IdCreator idCreator;
-    
+
     @Inject
     private Shared shared;
 
     /*******************************************************************************************************************
      *
      * Processes a folder of {@link MediaItem}s.
-     * 
+     *
      * @param   folder      the folder
      *
      ******************************************************************************************************************/
@@ -150,20 +150,20 @@ public class DefaultMediaScanner
         progress.incrementTotalFolders();
         messageBus.publish(new InternalMediaFolderScanRequest(folder));
       }
-    
+
     /*******************************************************************************************************************
      *
      * Scans a folder of {@link MediaItem}s.
-     * 
+     *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onInternalMediaFolderScanRequest 
+    /* VisibleForTesting */ void onInternalMediaFolderScanRequest
                                     (final @ListensTo @Nonnull InternalMediaFolderScanRequest request)
       {
         try
           {
             log.info("onInternalMediaFolderScanRequest({})", request);
 
-            request.getFolder().findChildren().stream().forEach(item -> 
+            request.getFolder().findChildren().stream().forEach(item ->
               {
                 if (item instanceof MediaItem)
                   {
@@ -180,19 +180,19 @@ public class DefaultMediaScanner
           }
         catch (Exception e)
           {
-            log.error("", e);  
+            log.error("", e);
           }
         finally
           {
             progress.incrementScannedFolders();
           }
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onMediaItemImportRequest (final @ListensTo @Nonnull MediaItemImportRequest request) 
+    /* VisibleForTesting */ void onMediaItemImportRequest (final @ListensTo @Nonnull MediaItemImportRequest request)
       throws InterruptedException
       {
         try
@@ -200,17 +200,17 @@ public class DefaultMediaScanner
             log.info("onMediaItemImportRequest({})", request);
             importMediaItem(request.getMediaItem());
           }
-        finally 
+        finally
           {
             progress.incrementImportedMediaItems();
           }
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onArtistImportRequest (final @ListensTo @Nonnull ArtistImportRequest request) 
+    /* VisibleForTesting */ void onArtistImportRequest (final @ListensTo @Nonnull ArtistImportRequest request)
       throws InterruptedException
       {
         try
@@ -227,17 +227,17 @@ public class DefaultMediaScanner
                             .with(artistUri, MO.P_MUSICBRAINZ_GUID, literalFor(artistId.stringValue()))
                             .publish();
 }
-        finally 
+        finally
           {
             progress.incrementImportedArtists();
           }
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onDownloadComplete (final @ListensTo @Nonnull DownloadComplete message) 
+    /* VisibleForTesting */ void onDownloadComplete (final @ListensTo @Nonnull DownloadComplete message)
       throws InterruptedException, IOException
       {
         // FIXME: check if it's a expected download
@@ -245,7 +245,7 @@ public class DefaultMediaScanner
           {
             log.info("onDownloadComplete({})", message);
             final String url = message.getUrl().toString();
-            
+
             if (url.matches("http://dbtune.org/.*/resource/track/.*"))
               {
                 dbTuneMetadataManager.onTrackMetadataDownloadComplete(message);
@@ -259,7 +259,7 @@ public class DefaultMediaScanner
                 dbTuneMetadataManager.onRecordMetadataDownloadComplete(message);
               }
           }
-        finally 
+        finally
           {
             progress.incrementCompletedDownloads();
           }
@@ -268,12 +268,12 @@ public class DefaultMediaScanner
     /*******************************************************************************************************************
      *
      * Processes a {@link MediaItem}.
-     * 
+     *
      * @param                           audioFile   the item
      *
      ******************************************************************************************************************/
     private void importMediaItem (final @Nonnull MediaItem audioFile)
-      { 
+      {
         log.debug("importMediaItem({})", audioFile);
         final Id sha1 = idCreator.createSha1Id(audioFile.getPath());
         final Metadata metadata = audioFile.getMetadata();
@@ -293,16 +293,17 @@ public class DefaultMediaScanner
                         .with(audioFileUri, RDF.TYPE,                MO.C_AUDIO_FILE)
                         .with(audioFileUri, FOAF.SHA1,               literalFor(sha1))
                         .with(audioFileUri, MO.P_ENCODES,            signalUri)
-                        .with(audioFileUri, BM.PATH,                 literalFor(audioFile.getRelativePath())) 
+                        .with(audioFileUri, BM.PATH,                 literalFor(audioFile.getRelativePath()))
                         .with(audioFileUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
-                
+
                         .with(trackUri,     RDF.TYPE,                MO.C_TRACK)
-                
+
                         .with(signalUri,    RDF.TYPE,                MO.C_DIGITAL_SIGNAL)
                         .with(signalUri,    MO.P_PUBLISHED_AS,       trackUri)
                         .publish();
         embeddedMetadataManager.importAudioFileMetadata(audioFile, signalUri, trackUri);
 
+        // FIXME: use a Chain of Responsibility
         if (musicBrainzTrackId.isPresent())
           {
             dbTuneMetadataManager.importTrackMetadata(audioFile, trackUri, musicBrainzTrackId.get());
@@ -311,9 +312,9 @@ public class DefaultMediaScanner
         else
           {
             embeddedMetadataManager.importFallbackTrackMetadata(audioFile, trackUri);
-          } 
+          }
       }
-    
+
     /*******************************************************************************************************************
      *
      *
@@ -331,11 +332,11 @@ public class DefaultMediaScanner
             return timestampProvider.getInstant();
           }
       }
-    
+
     /*******************************************************************************************************************
      *
      * Imports the MusicBrainz metadata for the given {@link MediaItem}.
-     * 
+     *
      * @param   mediaItem               the {@code MediaItem}.
      * @param   mediaItemUri            the URI of the item
      * @throws  IOException             when an I/O problem occurred
@@ -343,21 +344,21 @@ public class DefaultMediaScanner
      * @throws  InterruptedException    if the operation is interrupted
      *
      ******************************************************************************************************************/
-//    private void importMediaItemMusicBrainzMetadata (final @Nonnull MediaItem mediaItem, 
+//    private void importMediaItemMusicBrainzMetadata (final @Nonnull MediaItem mediaItem,
 //                                                     final @Nonnull URI mediaItemUri)
-//      throws IOException, JAXBException, InterruptedException 
-//      { 
+//      throws IOException, JAXBException, InterruptedException
+//      {
 //        log.info("importMediaItemMusicBrainzMetadata({}, {})", mediaItem, mediaItemUri);
-//        
+//
 //        final Metadata metadata = mediaItem.getMetadata();
 //        final String mbGuid = metadata.get(Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
 //        messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid)));
-//        
+//
 //        if (true)
 //          {
-//            throw new IOException("fake"); // FIXME  
+//            throw new IOException("fake"); // FIXME
 //          }
-//        
+//
 //        final org.musicbrainz.ns.mmd_2.Metadata m = mbApi.getMusicBrainzEntity("recording", mbGuid, "?inc=artists");
 //        final Recording recording = m.getRecording();
 //        final String title = recording.getTitle();
@@ -386,7 +387,7 @@ public class DefaultMediaScanner
 //        // TODO: MO.OPUS
 //        // TOOD: MO.RECORD_NUMBER
 //        // TODO: MO.SINGER
-//        
+//
 //// FIXME       nameCredits.forEach(credit -> addStatement(mediaItemUri, FOAF.MAKER, uriFor(credit.getArtist().getId())));
 //      }
 
@@ -401,11 +402,11 @@ public class DefaultMediaScanner
 ////                log.warn("Resubmitting {} ... - {}", mediaItem, e.toString());
 ////                pendingMediaItems.requestAddStatements(mediaItem);
 //              }
-//          } 
-    
+//          }
+
     /*******************************************************************************************************************
      *
-     * 
+     *
      *
      ******************************************************************************************************************/
 //    private void addArtist (final @Nonnull Artist artist)
@@ -413,7 +414,7 @@ public class DefaultMediaScanner
 //        synchronized (seenArtistIds)
 //          {
 //            final Id artistId = new Id("http://musicbrainz.org/artist/" + artist.getId());
-//            
+//
 //            if (!seenArtistIds.contains(artistId))
 //              {
 //                seenArtistIds.requestAddStatements(artistId);

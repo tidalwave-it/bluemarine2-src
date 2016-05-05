@@ -291,7 +291,7 @@ public class DbTuneMetadataManager
           {
             log.debug("requestArtistMetadata({})", artistUri);
 
-            if (shared.seenArtistUris.putIfAbsent(artistUri, fallbackName) == null) // FIXME: returns Optional.empty() or null?
+            if (!shared.seenArtistUris.putIfAbsent(artistUri, fallbackName).isPresent())
               {
                 progress.incrementTotalArtists();
                 requestDownload(urlFor(artistUri));

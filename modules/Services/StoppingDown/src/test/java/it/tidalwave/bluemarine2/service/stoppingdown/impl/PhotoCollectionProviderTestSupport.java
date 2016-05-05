@@ -70,7 +70,7 @@ public class PhotoCollectionProviderTestSupport
     public void setup()
       {
         // required for DCI stuff
-        context = new ClassPathXmlApplicationContext("classpath*:META-INF/DciBeans.xml");
+        context = new ClassPathXmlApplicationContext("META-INF/DciAutoBeans.xml");
 
         mediaFolder = mock(MediaFolder.class);
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));

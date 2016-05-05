@@ -37,6 +37,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
+import java.util.stream.Stream;
 import org.openrdf.model.URI;
 import org.openrdf.model.Statement;
 import org.openrdf.model.Value;
@@ -46,22 +47,21 @@ import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
 import org.openrdf.model.vocabulary.RDFS;
 import it.tidalwave.util.Key;
+import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.vocabulary.BM;
 import it.tidalwave.bluemarine2.model.vocabulary.MO;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
-import static java.util.stream.Collectors.*;
-import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
-import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.vocabulary.DbTune;
 import it.tidalwave.bluemarine2.model.vocabulary.Purl;
 import static java.util.Arrays.*;
 import static java.util.Collections.*;
-import java.util.stream.Stream;
+import static java.util.stream.Collectors.*;
+import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -123,6 +123,8 @@ public class EmbeddedMetadataManager
      ******************************************************************************************************************/
     static class Mapper extends HashMap<Key<?>, Function<Object, Pair>>
       {
+        private static final long serialVersionUID = 9180433348240275721L;
+
         @Nonnull
         public List<Statement> statementsFor (final @Nonnull Metadata metadata, final @Nonnull URI subjectUri)
           {

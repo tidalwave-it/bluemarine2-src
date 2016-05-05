@@ -50,8 +50,8 @@ public class DefaultDevicePublisherTest extends ClingTestSupport
         super("META-INF/DefaultDevicePublisherTest.xml");
       }
 
-    @Test
-    public void registerDevice()
+    @Test(timeOut = 120000)
+    public void must_properly_publish_a_device()
       throws Exception
       {
         final DefaultDevicePublisher<UPnPServerMock> underTest = context.getBean("underTest", DefaultDevicePublisher.class);
