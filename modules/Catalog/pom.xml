@@ -24,6 +24,10 @@
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
         </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-vocabulary</artifactId>
+        </dependency>
 
         <!--        <dependency>
             <groupId>org.openrdf.alibaba</groupId>
@@ -77,11 +81,6 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>it.tidalwave.thesefoolishthings</groupId>
-            <artifactId>it-tidalwave-messagebus-spring</artifactId>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-role-spring</artifactId>

@@ -249,6 +249,14 @@
                     <exists>src/config/activate-it.tidalwave.bluemarine2-retrieve-testsets-profile</exists>
                 </file>
             </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>it.tidalwave.bluemarine2</groupId>
+                    <artifactId>it-tidalwave-bluemarine2-mediascanner</artifactId>
+                    <classifier>tests</classifier>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
             <build>
                 <plugins>
                     <plugin>
@@ -372,6 +380,7 @@
         <module>UPnP</module>
         <module>MediaServer</module>
         <module>TestCommons</module>
+        <module>Vocabulary</module>
     </modules>
 
 </project>
