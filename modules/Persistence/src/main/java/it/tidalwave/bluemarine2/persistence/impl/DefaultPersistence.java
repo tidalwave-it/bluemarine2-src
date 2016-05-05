@@ -31,8 +31,6 @@ package it.tidalwave.bluemarine2.persistence.impl;
 import javax.annotation.Nonnull;
 import java.util.concurrent.CountDownLatch;
 import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Reader;
@@ -55,10 +53,11 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import it.tidalwave.bluemarine2.persistence.PropertyNames;
-import static java.util.concurrent.TimeUnit.SECONDS;
 import lombok.Cleanup;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.concurrent.TimeUnit.SECONDS;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /***********************************************************************************************************************
  *
@@ -92,12 +91,13 @@ public class DefaultPersistence implements Persistence
 
             if (Files.exists(repositoryPath))
               {
-                log.info("Importing repository from {} ...", repositoryPath);
-                @Cleanup final InputStream is = Files.newInputStream(repositoryPath);
-                final Reader reader = new InputStreamReader(is, "UTF-8");
-                connection.add(reader, repositoryPath.toUri().toString(), RDFFormat.N3);
-                connection.commit();
-                connection.close();
+                try (final Reader reader = Files.newBufferedReader(repositoryPath, UTF_8))
+                  {
+                    log.info("Importing repository from {} ...", repositoryPath);
+                    connection.add(reader, repositoryPath.toUri().toString(), RDFFormat.N3);
+                    connection.commit();
+                    connection.close();
+                  }
               }
           }
         catch (NotFoundException e)
