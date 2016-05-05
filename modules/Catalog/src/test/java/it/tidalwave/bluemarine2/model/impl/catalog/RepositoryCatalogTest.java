@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -48,9 +47,6 @@ import org.openrdf.sail.memory.MemoryStore;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.annotations.DataProvider;
-import it.tidalwave.util.Key;
-import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
@@ -79,8 +75,6 @@ public class RepositoryCatalogTest
 
     private ApplicationContext context;
 
-    private MessageBus messageBus;
-
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
@@ -89,11 +83,6 @@ public class RepositoryCatalogTest
       {
         context = new ClassPathXmlApplicationContext("META-INF/CommonsAutoBeans.xml",
                                                      "META-INF/RepositoryCatalogTestBeans.xml");
-        // FIXME: this is unneeded; just to avoid a runtime error from the file system - exclude it from the test setup
-        messageBus = context.getBean(MessageBus.class);
-        final Map<Key<?>, Object> properties = new HashMap<>();
-        properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, Paths.get("/base/path"));
-        messageBus.publish(new PowerOnNotification(properties));
       }
 
     /*******************************************************************************************************************
@@ -101,7 +90,7 @@ public class RepositoryCatalogTest
      * Queries the catalog for the whole data in various ways and dumps the results to check the consistency.
      *
      ******************************************************************************************************************/
-    @Test(dataProvider = "testSetNamesProvider", groups = "no-ci") // On Linux fails because of BMT-46
+    @Test(dataProvider = "testSetNamesProvider", groups = "no-ci") // FIXME On Linux fails because of BMT-46
     public void must_properly_query_the_whole_catalog_in_various_ways (final @Nonnull String testSetName)
       throws Exception
       {

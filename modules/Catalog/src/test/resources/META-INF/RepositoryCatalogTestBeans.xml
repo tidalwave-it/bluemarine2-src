@@ -8,7 +8,7 @@
   %%
   Copyright (C) 2015 - 2016 Tidalwave s.a.s. (http://tidalwave.it)
   %%
-  
+
   *********************************************************************************************************************
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
@@ -59,7 +59,9 @@
     <context:spring-configured />
 
     <aop:aspectj-autoproxy/>
-    
-    <bean class="it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem" />
-    
+
+    <bean class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="it.tidalwave.bluemarine2.model.MediaFileSystem" />
+    </bean>
+
 </beans>
