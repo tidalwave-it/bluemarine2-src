@@ -65,7 +65,7 @@ import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class RepositoryCatalogTest
+public class RepositoryMediaCatalogTest
   {
     private static final Path PATH_TEST_SETS = Paths.get("target/test-classes/test-sets");
 
