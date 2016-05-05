@@ -34,14 +34,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import org.openrdf.query.MalformedQueryException;
-import org.openrdf.query.QueryEvaluationException;
 import org.openrdf.repository.Repository;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.RepositoryException;
@@ -59,11 +55,12 @@ import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import static java.util.stream.Collectors.*;
 import static java.nio.file.Files.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
-import org.testng.annotations.BeforeMethod;
 
 /***********************************************************************************************************************
  *
@@ -131,7 +128,7 @@ public class RepositoryCatalogTest
         pw.println("ALL TRACKS:\n");
         final Map<String, RepositoryTrack> allTracks = catalog.findTracks().results().stream()
                         .map(t -> (RepositoryTrack)t)
-                        .collect(Collectors.toMap(RepositoryTrack::toString, Function.identity()));
+                        .collect(toMap(RepositoryTrack::toString, Function.identity()));
         final Comparator<RepositoryTrack> c = (o1, o2) -> o1.getRdfsLabel().compareTo(o2.getRdfsLabel());
         allTracks.values().stream().sorted(c).forEach(track -> pw.printf("  %s\n", track));
 
