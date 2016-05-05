@@ -83,6 +83,11 @@ Still at the early stage of development, it can be used with some hack to reprod
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-commons-test</artifactId>
+                <version>1.0-ALPHA-10-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
                 <version>1.0-ALPHA-10-SNAPSHOT</version>
             </dependency>
@@ -113,8 +118,19 @@ Still at the early stage of development, it can be used with some hack to reprod
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-vocabulary</artifactId>
+                <version>1.0-ALPHA-10-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-mediascanner</artifactId>
                 <version>1.0-ALPHA-10-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-mediascanner</artifactId>
+                <version>1.0-ALPHA-10-SNAPSHOT</version>
+                <classifier>tests</classifier>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
