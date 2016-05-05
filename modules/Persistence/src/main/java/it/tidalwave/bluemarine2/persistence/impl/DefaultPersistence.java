@@ -54,7 +54,6 @@ import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import it.tidalwave.bluemarine2.persistence.PropertyNames;
 import lombok.Cleanup;
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -70,8 +69,19 @@ public class DefaultPersistence implements Persistence
   {
     private final CountDownLatch initialized = new CountDownLatch(1);
 
-    @Getter
     private Repository repository;
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public Repository getRepository()
+      {
+        waitForPowerOn();
+        return repository;
+      }
 
     /*******************************************************************************************************************
      *
