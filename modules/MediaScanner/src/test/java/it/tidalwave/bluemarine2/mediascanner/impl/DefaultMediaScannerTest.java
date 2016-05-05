@@ -89,7 +89,8 @@ public class DefaultMediaScannerTest
     private void prepareTest()
       throws InterruptedException
       {
-        context = new ClassPathXmlApplicationContext("META-INF/CommonsAutoBeans.xml",
+        context = new ClassPathXmlApplicationContext("META-INF/DciAutoBeans.xml",
+                                                     "META-INF/CommonsAutoBeans.xml",
                                                      "META-INF/PersistenceAutoBeans.xml",
                                                      "META-INF/DefaultMediaScannerTestBeans.xml");
         fileSystem = context.getBean(MediaFileSystem.class);
