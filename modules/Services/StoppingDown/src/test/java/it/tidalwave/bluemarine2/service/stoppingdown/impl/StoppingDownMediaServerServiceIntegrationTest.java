@@ -49,11 +49,12 @@ public class StoppingDownMediaServerServiceIntegrationTest extends ClingTestSupp
   {
     public StoppingDownMediaServerServiceIntegrationTest()
       {
-        super("META-INF/StoppingDownServiceAutoBeans.xml",
+        super("META-INF/DciAutoBeans.xml",
+              "META-INF/CommonsAutoBeans.xml",
+              "META-INF/ModelAutoBeans.xml",
               "META-INF/MediaServerAutoBeans.xml",
               "META-INF/UPnPAutoBeans.xml",
-              "META-INF/CommonsAutoBeans.xml",
-              "META-INF/ModelAutoBeans.xml");
+              "META-INF/StoppingDownServiceAutoBeans.xml");
       }
 
     @Test

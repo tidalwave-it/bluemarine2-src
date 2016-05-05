@@ -8,7 +8,7 @@
   %%
   Copyright (C) 2015 - 2016 Tidalwave s.a.s. (http://tidalwave.it)
   %%
-  
+
   *********************************************************************************************************************
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
@@ -37,19 +37,19 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:task="http://www.springframework.org/schema/task"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context
-                           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                           http://www.springframework.org/schema/context/spring-context.xsd
                            http://www.springframework.org/schema/tx
-                           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+                           http://www.springframework.org/schema/tx/spring-tx.xsd
                            http://www.springframework.org/schema/aop
-                           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                           http://www.springframework.org/schema/aop/spring-aop.xsd
                            http://www.springframework.org/schema/lang
-                           http://www.springframework.org/schema/lang/spring-lang-3.0.xsd
+                           http://www.springframework.org/schema/lang/spring-lang.xsd
                            http://www.springframework.org/schema/util
-                           http://www.springframework.org/schema/util/spring-util-3.0.xsd
+                           http://www.springframework.org/schema/util/spring-util.xsd
                            http://www.springframework.org/schema/task
-                           http://www.springframework.org/schema/task/spring-task-3.0.xsd"
+                           http://www.springframework.org/schema/task/spring-task.xsd"
        default-autowire="byType">
 
     <!-- Turns on @Autowired, @PostConstruct, etc. -->
@@ -59,7 +59,9 @@
     <context:spring-configured />
 
     <aop:aspectj-autoproxy/>
-    
-    <bean class="it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem" />
-    
+
+    <bean class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="it.tidalwave.bluemarine2.model.MediaFileSystem" />
+    </bean>
+
 </beans>
