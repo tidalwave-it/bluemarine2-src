@@ -32,8 +32,9 @@ import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import javax.inject.Inject;
-import java.util.Optional;
 import java.time.Duration;
+import java.util.Optional;
+import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -46,9 +47,9 @@ import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
-import java.nio.file.InvalidPathException;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.normalized;
 
 /***********************************************************************************************************************
  *
@@ -95,12 +96,12 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
         try // FIXME: see BMT-46
           {
-            thePath = Paths.get(toString(bindingSet.getBinding("path")));
+            thePath = Paths.get(normalized(toString(bindingSet.getBinding("path"))));
           }
         catch (InvalidPathException e)
           {
             log.error("Invalid path {}", e.toString());
-            thePath = Paths.get("broken");
+            thePath = Paths.get("broken SEE BMT-46");
           }
 
         this.audioFilePath = thePath;

@@ -82,7 +82,7 @@ public class DefaultContentDirectorySystemIntegrationTest extends SpringTestSupp
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @Test(dataProvider = "testSetNamesProvider", groups = "no-ci") // FIXME: because of BMT-46
+    @Test(dataProvider = "testSetNamesProvider")
     public void must_properly_expose_data (final @Nonnull String testSetName)
       throws Exception
       {

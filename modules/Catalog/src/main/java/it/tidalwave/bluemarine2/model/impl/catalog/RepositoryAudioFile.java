@@ -31,14 +31,12 @@ package it.tidalwave.bluemarine2.model.impl.catalog;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import java.text.Normalizer;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import org.openrdf.repository.Repository;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Finder8Support;
@@ -54,7 +52,6 @@ import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
@@ -97,8 +94,8 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
         this.trackId = trackId;
         this.duration = duration;
         // See BMT-36
-        this.path = normalized(path);
-        this.relativePath = normalized(path);// basePath.relativize(path);
+        this.path = path;
+        this.relativePath = path;// FIXME basePath.relativize(path);
       }
 
     @Override @Nonnull

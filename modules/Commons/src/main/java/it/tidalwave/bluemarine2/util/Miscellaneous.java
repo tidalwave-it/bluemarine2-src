@@ -31,11 +31,10 @@ package it.tidalwave.bluemarine2.util;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nullable;
 import java.text.Normalizer;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import lombok.NoArgsConstructor;
-import static java.text.Normalizer.Form.NFD;
+import static java.text.Normalizer.Form.*;
 import static lombok.AccessLevel.PRIVATE;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -43,18 +42,40 @@ import static lombok.AccessLevel.PRIVATE;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@NoArgsConstructor(access = PRIVATE)
+@NoArgsConstructor(access = PRIVATE) @Slf4j
 public final class Miscellaneous
   {
+    private static final Normalizer.Form NATIVE_FORM;
+
+    static
+      {
+        final String osName = System.getProperty("os.name").toLowerCase();
+
+        switch (osName)
+          {
+            case "linux":
+                NATIVE_FORM = NFC;
+                break;
+
+            case "mac os x":
+                NATIVE_FORM = NFD;
+                break;
+
+            case "windows":
+                NATIVE_FORM = NFD; // FIXME: just guessing
+                break;
+
+            default:
+                throw new ExceptionInInitializerError("Unknown o.s.: " + osName);
+          }
+
+        log.info(">>>> Charset normalizer form: {}", NATIVE_FORM);
+      }
+
+    // See http://askubuntu.com/questions/533690/rsync-with-special-character-files-not-working-between-mac-and-linux
     @CheckForNull
     public static String normalized (final @Nullable String string)
       {
-        return (string == null) ? null : Normalizer.normalize(string, NFD); // FIXME: should use native form?
-      }
-
-    @CheckForNull
-    public static Path normalized (final @Nullable Path path)
-      {
-        return Paths.get(Miscellaneous.normalized(path.toString()));
+        return (string == null) ? null : Normalizer.normalize(string, NATIVE_FORM);
       }
   }
