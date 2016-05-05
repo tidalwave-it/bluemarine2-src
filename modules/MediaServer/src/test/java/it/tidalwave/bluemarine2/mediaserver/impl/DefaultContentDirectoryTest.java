@@ -57,7 +57,7 @@ public class DefaultContentDirectoryTest
     public void setup()
       {
         context = new ClassPathXmlApplicationContext("META-INF/DciAutoBeans.xml",
-                                                     "META-INF/DefaultDevicePublisherTest.xml");
+                                                     "META-INF/DefaultContentDirectoryTestBeans.xml");
         underTest = context.getBean(DefaultContentDirectory.class);
       }
 

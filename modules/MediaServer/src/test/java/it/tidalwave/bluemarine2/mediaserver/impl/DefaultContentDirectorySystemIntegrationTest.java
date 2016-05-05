@@ -67,11 +67,11 @@ public class DefaultContentDirectorySystemIntegrationTest
     public void setup()
       {
         context = new ClassPathXmlApplicationContext("META-INF/DciAutoBeans.xml",
-                                                     "META-INF/DefaultDevicePublisherTest.xml",
-                                                     "META-INF/CatalogAutoBeans.xml",
                                                      "META-INF/CommonsAutoBeans.xml",
                                                      "META-INF/ModelAutoBeans.xml",
-                                                     "META-INF/PersistenceAutoBeans.xml");
+                                                     "META-INF/CatalogAutoBeans.xml",
+                                                     "META-INF/PersistenceAutoBeans.xml",
+                                                     "META-INF/DefaultContentDirectoryTestBeans.xml");
         underTest = context.getBean(DefaultContentDirectory.class);
       }
 
