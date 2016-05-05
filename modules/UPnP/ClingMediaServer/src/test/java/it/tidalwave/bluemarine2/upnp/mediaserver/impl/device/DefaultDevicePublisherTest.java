@@ -51,7 +51,7 @@ public class DefaultDevicePublisherTest extends ClingTestSupport
       }
 
     @Test(timeOut = 120000)
-    public void registerDevice()
+    public void must_properly_publish_a_device()
       throws Exception
       {
         final DefaultDevicePublisher<UPnPServerMock> underTest = context.getBean("underTest", DefaultDevicePublisher.class);

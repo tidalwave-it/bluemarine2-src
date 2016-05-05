@@ -35,7 +35,6 @@ import java.util.concurrent.CountDownLatch;
 import java.time.Instant;
 import java.io.File;
 import java.nio.file.Path;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.spi.MockInstantProvider;
 import it.tidalwave.messagebus.MessageBus;
@@ -48,6 +47,7 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
+import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 
@@ -58,15 +58,13 @@ import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class DefaultMediaScannerTest
+public class DefaultMediaScannerTest extends SpringTestSupport
   {
     private static final Instant MOCK_TIMESTAMP = Instant.ofEpochSecond(1428232317L);
 
     private Path musicTestSets;
 
     private DefaultMediaScanner underTest;
-
-    private ClassPathXmlApplicationContext context;
 
     private MessageBus messageBus;
 
@@ -79,6 +77,14 @@ public class DefaultMediaScannerTest
 
     private Persistence persistence;
 
+    public DefaultMediaScannerTest()
+      {
+        super("META-INF/DciAutoBeans.xml",
+              "META-INF/CommonsAutoBeans.xml",
+              "META-INF/PersistenceAutoBeans.xml",
+              "META-INF/DefaultMediaScannerTestBeans.xml");
+      }
+
     @BeforeClass
     public void checkTestSets()
       {
@@ -86,13 +92,9 @@ public class DefaultMediaScannerTest
       }
 
     @BeforeMethod
-    private void prepareTest()
+    public void prepareTest()
       throws InterruptedException
       {
-        context = new ClassPathXmlApplicationContext("META-INF/DciAutoBeans.xml",
-                                                     "META-INF/CommonsAutoBeans.xml",
-                                                     "META-INF/PersistenceAutoBeans.xml",
-                                                     "META-INF/DefaultMediaScannerTestBeans.xml");
         fileSystem = context.getBean(MediaFileSystem.class);
         persistence = context.getBean(Persistence.class);
 

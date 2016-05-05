@@ -44,15 +44,13 @@ import org.openrdf.repository.sail.SailRepository;
 import org.openrdf.rio.RDFFormat;
 import org.openrdf.rio.RDFParseException;
 import org.openrdf.sail.memory.MemoryStore;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.annotations.DataProvider;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 import lombok.extern.slf4j.Slf4j;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import static java.util.stream.Collectors.*;
 import static java.nio.file.Files.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
@@ -65,7 +63,7 @@ import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class RepositoryMediaCatalogTest
+public class RepositoryMediaCatalogTest extends SpringTestSupport
   {
     private static final Path PATH_TEST_SETS = Paths.get("target/test-classes/test-sets");
 
@@ -73,16 +71,13 @@ public class RepositoryMediaCatalogTest
             (e1, e2) -> ((RepositoryEntitySupport)e1).getRdfsLabel().compareTo(
                         ((RepositoryEntitySupport)e2).getRdfsLabel());
 
-    private ApplicationContext context;
-
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @BeforeMethod
-    public void setup()
+    public RepositoryMediaCatalogTest()
       {
-        context = new ClassPathXmlApplicationContext("META-INF/DciAutoBeans.xml",
-                                                     "META-INF/RepositoryCatalogTestBeans.xml");
+        super("META-INF/DciAutoBeans.xml",
+              "META-INF/RepositoryCatalogTestBeans.xml");
       }
 
     /*******************************************************************************************************************

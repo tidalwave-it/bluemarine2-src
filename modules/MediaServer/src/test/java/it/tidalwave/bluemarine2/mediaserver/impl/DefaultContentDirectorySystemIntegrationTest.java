@@ -33,8 +33,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
@@ -43,6 +41,7 @@ import it.tidalwave.bluemarine2.persistence.PropertyNames;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
 import static it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH;
@@ -54,11 +53,22 @@ import static it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class DefaultContentDirectorySystemIntegrationTest
+public class DefaultContentDirectorySystemIntegrationTest extends SpringTestSupport
   {
-    private ApplicationContext context;
-
     private DefaultContentDirectory underTest;
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    public DefaultContentDirectorySystemIntegrationTest()
+      {
+        super("META-INF/DciAutoBeans.xml",
+              "META-INF/CommonsAutoBeans.xml",
+              "META-INF/ModelAutoBeans.xml",
+              "META-INF/CatalogAutoBeans.xml",
+              "META-INF/PersistenceAutoBeans.xml",
+              "META-INF/DefaultContentDirectoryTestBeans.xml");
+      }
 
     /*******************************************************************************************************************
      *
@@ -66,12 +76,6 @@ public class DefaultContentDirectorySystemIntegrationTest
     @BeforeMethod
     public void setup()
       {
-        context = new ClassPathXmlApplicationContext("META-INF/DciAutoBeans.xml",
-                                                     "META-INF/CommonsAutoBeans.xml",
-                                                     "META-INF/ModelAutoBeans.xml",
-                                                     "META-INF/CatalogAutoBeans.xml",
-                                                     "META-INF/PersistenceAutoBeans.xml",
-                                                     "META-INF/DefaultContentDirectoryTestBeans.xml");
         underTest = context.getBean(DefaultContentDirectory.class);
       }
 

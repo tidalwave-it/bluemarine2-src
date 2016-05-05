@@ -26,42 +26,44 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.service.stoppingdown.impl;
+package it.tidalwave.bluemarine2.commons.test;
 
-import it.tidalwave.bluemarine2.upnp.mediaserver.impl.ClingTestSupport;
-import org.testng.annotations.Test;
+import javax.annotation.Nonnull;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
- *
- * This is a complex integration test that brings up the real service and exposes it.
- *
- * To just bring up the service and keep it running for some time, run
- *
- *      mvn -Prun-service
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @Slf4j
-public class StoppingDownMediaServerServiceIntegrationTest extends ClingTestSupport
+public class SpringTestSupport
   {
-    public StoppingDownMediaServerServiceIntegrationTest()
+    protected ClassPathXmlApplicationContext context;
+
+    private final String[] configLocations;
+
+    protected SpringTestSupport (final @Nonnull String ... configLocations)
       {
-        super("META-INF/DciAutoBeans.xml",
-              "META-INF/CommonsAutoBeans.xml",
-              "META-INF/ModelAutoBeans.xml",
-              "META-INF/MediaServerAutoBeans.xml",
-              "META-INF/UPnPAutoBeans.xml",
-              "META-INF/StoppingDownServiceAutoBeans.xml");
+        this.configLocations = configLocations;
+        log.info(">>>> Spring configuration locations: {}", (Object[])this.configLocations);
       }
 
-    @Test
-    public void test_service_publishing()
-      throws InterruptedException
+    @BeforeMethod
+    public final void createSpringContext()
       {
-        log.info("The service is up and running");
-        delay();
+        context = new ClassPathXmlApplicationContext(configLocations);
+      }
+
+    @AfterMethod(timeOut = 60000)
+    public final void closeSpringContext()
+      {
+        log.info("Closing Spring context...");
+        context.close();
+        context = null; // don't keep in memory useless stuff
       }
   }

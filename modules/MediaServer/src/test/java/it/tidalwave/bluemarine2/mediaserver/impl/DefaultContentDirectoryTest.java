@@ -30,9 +30,8 @@
 package it.tidalwave.bluemarine2.mediaserver.impl;
 
 import java.util.List;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import lombok.extern.slf4j.Slf4j;
@@ -47,17 +46,19 @@ import static it.tidalwave.role.Displayable.Displayable;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class DefaultContentDirectoryTest
+public class DefaultContentDirectoryTest extends SpringTestSupport
   {
-    private ApplicationContext context;
-
     private DefaultContentDirectory underTest;
+
+    public DefaultContentDirectoryTest()
+      {
+        super("META-INF/DciAutoBeans.xml",
+              "META-INF/DefaultContentDirectoryTestBeans.xml");
+      }
 
     @BeforeMethod
     public void setup()
       {
-        context = new ClassPathXmlApplicationContext("META-INF/DciAutoBeans.xml",
-                                                     "META-INF/DefaultContentDirectoryTestBeans.xml");
         underTest = context.getBean(DefaultContentDirectory.class);
       }
 

@@ -52,10 +52,10 @@ import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.persistence.PropertyNames;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver.DefaultResourceServer;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
@@ -114,20 +114,20 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
      ******************************************************************************************************************/
     public ClingContentDirectoryAdapterSystemIntegrationTest()
       {
-        super("META-INF/MediaServerAutoBeans.xml" ,
-              "META-INF/UPnPAutoBeans.xml" ,
-                                                    "META-INF/DciAutoBeans.xml" ,
-                                                     "classpath*:META-INF/CatalogAutoBeans.xml" ,
-                                                     "classpath*:META-INF/CommonsAutoBeans.xml" ,
-                                                     "classpath*:META-INF/ModelAutoBeans.xml" ,
-                                                     "classpath*:META-INF/PersistenceAutoBeans.xml");
+        super("META-INF/DciAutoBeans.xml" ,
+              "META-INF/CommonsAutoBeans.xml" ,
+              "META-INF/ModelAutoBeans.xml" ,
+              "META-INF/PersistenceAutoBeans.xml",
+              "META-INF/CatalogAutoBeans.xml" ,
+              "META-INF/MediaServerAutoBeans.xml",
+              "META-INF/UPnPAutoBeans.xml");
       }
 
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @BeforeClass
-    public void setup2()
+    @BeforeMethod
+    public final void setup()
       throws Exception
       {
         upnpClient = new UpnpClient("ContentDirectory");
@@ -140,17 +140,15 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
         properties.put(PropertyNames.REPOSITORY_PATH, repositoryPath);
         resourceServer = context.getBean(DefaultResourceServer.class);
         context.getBean(MessageBus.class).publish(new PowerOnNotification(properties));
-        Thread.sleep(4000); // wait for power on
       }
 
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @AfterClass
-    public void shutdown()
+    @AfterMethod
+    public final void shutdown()
       {
         upnpClient.shutdown();
-        context.close();
       }
 
     /*******************************************************************************************************************
@@ -167,7 +165,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @Test(dataProvider = "sequences", dependsOnMethods = "test_service_publishing", timeOut = 120000)
+    @Test(dataProvider = "sequences", dependsOnMethods = "test_service_publishing", timeOut = 120000,
+          groups = "no-ci")  // FIXME On Linux fails because of BMT-46
     public void test_sequence (final @Nonnull String clientDeviceName, final @Nonnull String sequenceName)
       throws Throwable
       {
