@@ -28,12 +28,12 @@
  */
 package it.tidalwave.bluemarine2.commons.test;
 
+import javax.annotation.Nonnegative;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import javax.annotation.Nonnegative;
-import static lombok.AccessLevel.PRIVATE;
 import lombok.NoArgsConstructor;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
