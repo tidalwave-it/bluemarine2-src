@@ -29,14 +29,12 @@
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import org.slf4j.bridge.SLF4JBridgeHandler;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.fourthline.cling.UpnpService;
-import org.testng.annotations.AfterClass;
+import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -46,33 +44,30 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class ClingTestSupport
+public class ClingTestSupport extends SpringTestSupport
   {
-    protected ClassPathXmlApplicationContext context;
-
     protected UpnpService upnpService;
-
-    private final String[] configLocations;
 
     protected ClingTestSupport (final @Nonnull String ... configLocations)
       {
-        final List<String> list = new ArrayList<>(Arrays.asList(configLocations));
-        list.add(0, "META-INF/DciBeans.xml"); // for DCI injectors
-        this.configLocations = list.toArray(new String[0]);
-        log.info(">>>> Spring configuration locations: {}", (Object[])this.configLocations);
+        super(configLocations);
       }
 
     @BeforeClass
-    public void setup()
+    public final void setupJulLoggingBridge()
       {
         SLF4JBridgeHandler.removeHandlersForRootLogger();
         SLF4JBridgeHandler.install();
-        context = new ClassPathXmlApplicationContext(configLocations);
+      }
+
+    @BeforeMethod
+    public final void setupCling()
+      {
         upnpService = context.getBean(UpnpService.class);
       }
 
-    @AfterClass
-    public void shutdown()
+    @AfterMethod(timeOut = 60000)
+    public final void shutdownCling()
       {
         log.info("Shutting down...");
         upnpService.shutdown();

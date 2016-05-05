@@ -28,26 +28,28 @@
  */
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
+import javax.annotation.Nonnull;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.time.Instant;
 import java.io.File;
-import java.nio.file.Paths;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import java.nio.file.Path;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.spi.MockInstantProvider;
-import it.tidalwave.util.test.FileComparisonUtils;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.persistence.Persistence;
-import javax.annotation.Nonnull;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
+import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
+import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
+import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 
 /***********************************************************************************************************************
  *
@@ -56,35 +58,47 @@ import org.testng.annotations.DataProvider;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class DefaultMediaScannerTest
+public class DefaultMediaScannerTest extends SpringTestSupport
   {
-    private DefaultMediaScanner underTest;
+    private static final Instant MOCK_TIMESTAMP = Instant.ofEpochSecond(1428232317L);
 
-    private ClassPathXmlApplicationContext context;
+    private Path musicTestSets;
+
+    private DefaultMediaScanner underTest;
 
     private MessageBus messageBus;
 
     private CountDownLatch scanCompleted;
 
     // Listeners must be fields or they will garbage-collected
-    private final MessageBus.Listener<ScanCompleted> onScanCompleted = (message) -> scanCompleted.countDown();
+    private final MessageBus.Listener<ScanCompleted> onScanCompleted = message -> scanCompleted.countDown();
 
     private MediaFileSystem fileSystem;
 
     private Persistence persistence;
 
+    public DefaultMediaScannerTest()
+      {
+        super("META-INF/DciAutoBeans.xml",
+              "META-INF/CommonsAutoBeans.xml",
+              "META-INF/PersistenceAutoBeans.xml",
+              "META-INF/DefaultMediaScannerTestBeans.xml");
+      }
+
+    @BeforeClass
+    public void checkTestSets()
+      {
+        musicTestSets = TestSetLocator.getMusicTestSetsPath();
+      }
+
     @BeforeMethod
-    private void prepareTest()
+    public void prepareTest()
       throws InterruptedException
       {
-        final String s1 = "classpath:/META-INF/CommonsAutoBeans.xml";
-        final String s2 = "classpath:/META-INF/PersistenceAutoBeans.xml";
-        final String s3 = "classpath:/META-INF/DefaultMediaScannerTestBeans.xml";
-        context = new ClassPathXmlApplicationContext(s1, s2, s3);
         fileSystem = context.getBean(MediaFileSystem.class);
         persistence = context.getBean(Persistence.class);
 
-        context.getBean(MockInstantProvider.class).setInstant(Instant.ofEpochSecond(1428232317L));
+        context.getBean(MockInstantProvider.class).setInstant(MOCK_TIMESTAMP);
         messageBus = context.getBean(MessageBus.class);
         underTest = context.getBean(DefaultMediaScanner.class);
 
@@ -93,15 +107,16 @@ public class DefaultMediaScannerTest
 
       }
 
-    @Test(dataProvider = "dataSetNames", groups = "no-ci") // until we manage to run it without downloading stuff, it's not reproducible
-    public void testScan (final @Nonnull String folder, final @Nonnull String dataSetName)
+    @Test(dataProvider = "dataSetNames", groups = "no-ci") // FIXME: because of BMT-46
+    public void testScan (final @Nonnull String dataSetName)
       throws Exception
       {
+        final Path p = musicTestSets.resolve(dataSetName);
         // FIXME: we should find a way to force HttpClient to pretend the network doesn't work
-        log.warn("******* YOU SHOULD RUN THIS TEST WITH THE NETWORK DISCONNECTED");
+//        log.warn("******* YOU SHOULD RUN THIS TEST WITH THE NETWORK DISCONNECTED");
         final Map<Key<?>, Object> properties = new HashMap<>();
-        properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, Paths.get(folder));
-        properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, Paths.get("target/test-classes/download-cache-" + dataSetName));
+        properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, p);
+//        properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, Paths.get("target/test-classes/download-cache-" + dataSetName));
         messageBus.publish(new PowerOnNotification(properties));
 
         // Wait for the MediaFileSystem to initialize. Indeed, MediaFileSystem should be probably mocked
@@ -116,7 +131,7 @@ public class DefaultMediaScannerTest
         persistence.dump(actualFile.toPath());
 
         // FIXME: likely OOM in case of mismatch
-        FileComparisonUtils.assertSameContents(expectedFile, actualFile);
+        assertSameContents(expectedFile, actualFile);
       }
 
     @DataProvider
@@ -124,12 +139,7 @@ public class DefaultMediaScannerTest
       {
         return new Object[][]
           {
-          // 20150406 contains some missing resurces that were missing from DbTune. While this is not the correct
-          // behaviour, it's a real-world scenario.
-              { "/Users/fritz/Personal/Music/iTunes/iTunes Music", "20150406" },
-              { "/Users/fritz/Personal/Music/iTunes/iTunes Music", "20150421" },
-
-              { "/Volumes/Users/music/Music/iTunes/iTunes Media", "iTunes-fg-20160503" }
+              { "iTunes-fg-20160504-1" }
           };
       }
   }

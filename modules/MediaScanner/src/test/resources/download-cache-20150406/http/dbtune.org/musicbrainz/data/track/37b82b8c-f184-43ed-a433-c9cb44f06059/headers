@@ -1,9 +1,0 @@
-HTTP/1.1 404 Not Found
-Date: Mon, 06 Apr 2015 09:48:34 GMT
-Server: Jetty(6.1.11)
-Content-Type: text/html; charset=iso-8859-1
-Content-Length: 1433
-Access-Control-Allow-Origin: *
-Connection: close
-Via: 1.1 localhost (Apache-HttpClient/4.4 (cache))
-

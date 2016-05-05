@@ -29,9 +29,8 @@
 package it.tidalwave.bluemarine2.persistence.impl;
 
 import javax.annotation.Nonnull;
+import java.util.concurrent.CountDownLatch;
 import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Reader;
@@ -54,10 +53,10 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import it.tidalwave.bluemarine2.persistence.PropertyNames;
-import java.io.BufferedReader;
 import lombok.Cleanup;
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.concurrent.TimeUnit.SECONDS;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /***********************************************************************************************************************
  *
@@ -68,8 +67,21 @@ import lombok.extern.slf4j.Slf4j;
 @SimpleMessageSubscriber @Slf4j
 public class DefaultPersistence implements Persistence
   {
-    @Getter
+    private final CountDownLatch initialized = new CountDownLatch(1);
+
     private Repository repository;
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public Repository getRepository()
+      {
+        waitForPowerOn();
+        return repository;
+      }
 
     /*******************************************************************************************************************
      *
@@ -89,18 +101,21 @@ public class DefaultPersistence implements Persistence
 
             if (Files.exists(repositoryPath))
               {
-                log.info("Importing repository from {} ...", repositoryPath);
-                @Cleanup final InputStream is = Files.newInputStream(repositoryPath);
-                final Reader reader = new InputStreamReader(is, "UTF-8");
-                connection.add(reader, repositoryPath.toUri().toString(), RDFFormat.N3);
-                connection.commit();
-                connection.close();
+                try (final Reader reader = Files.newBufferedReader(repositoryPath, UTF_8))
+                  {
+                    log.info("Importing repository from {} ...", repositoryPath);
+                    connection.add(reader, repositoryPath.toUri().toString(), RDFFormat.N3);
+                    connection.commit();
+                    connection.close();
+                  }
               }
           }
         catch (NotFoundException e)
           {
             log.warn("No repository path: operating in memory");
           }
+
+        initialized.countDown();
       }
 
     /*******************************************************************************************************************
@@ -138,11 +153,16 @@ public class DefaultPersistence implements Persistence
         connection.close();
       }
 
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
     @Override
     public <E extends Exception> void runInTransaction (final @Nonnull TransactionalTask<E> task)
       throws E, RepositoryException
       {
         log.info("runInTransaction({})", task);
+        waitForPowerOn();
         final long baseTime = System.nanoTime();
         final RepositoryConnection connection = repository.getConnection(); // TODO: pool?
 
@@ -162,6 +182,25 @@ public class DefaultPersistence implements Persistence
         if (log.isDebugEnabled())
           {
             log.debug(">>>> done in {} ms", (System.nanoTime() - baseTime) * 1E-6);
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void waitForPowerOn()
+      {
+        try
+          {
+            if (!initialized.await(10, SECONDS))
+              {
+                throw new IllegalStateException("Did not receive PowerOnNotification");
+              }
+          }
+        catch (InterruptedException ex)
+          {
+            throw new IllegalStateException("Interrupted while waiting for PowerOnNotification");
           }
       }
   }

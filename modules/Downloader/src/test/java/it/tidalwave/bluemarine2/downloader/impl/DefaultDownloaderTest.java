@@ -38,7 +38,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.io.IOException;
 import org.apache.http.HttpStatus;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.NotFoundException;
 import it.tidalwave.messagebus.MessageBus;
@@ -51,6 +50,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import static java.nio.file.Files.*;
 import static org.apache.commons.io.FileUtils.*;
 import static it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH;
@@ -65,7 +65,7 @@ import static org.hamcrest.CoreMatchers.*;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class DefaultDownloaderTest
+public class DefaultDownloaderTest extends SpringTestSupport
   {
     private static final Path CACHE_RESOURCES_PATH = Paths.get("target/test-classes/download-cache");
 
@@ -78,8 +78,6 @@ public class DefaultDownloaderTest
     private DefaultDownloader underTest;
 
     private SimpleHttpCacheStorage cacheStorage;
-
-    private ClassPathXmlApplicationContext context;
 
     private MessageBus messageBus;
 
@@ -96,7 +94,14 @@ public class DefaultDownloaderTest
 
     /*******************************************************************************************************************
      *
-     *
+     ******************************************************************************************************************/
+    public DefaultDownloaderTest()
+      {
+        super("META-INF/CommonsAutoBeans.xml",
+              "META-INF/DefaultDownloaderTestBeans.xml");
+      }
+
+    /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
     @BeforeMethod
@@ -106,9 +111,6 @@ public class DefaultDownloaderTest
         deleteDirectory(CACHE_PATH.toFile());
         copyDirectory(CACHE_RESOURCES_PATH.toFile(), CACHE_PATH.toFile());
 
-        final String s1 = "classpath:/META-INF/CommonsAutoBeans.xml";
-        final String s2 = "classpath:/META-INF/DefaultDownloaderTestBeans.xml";
-        context = new ClassPathXmlApplicationContext(s1, s2);
         underTest = context.getBean(DefaultDownloader.class);
         cacheStorage = context.getBean(SimpleHttpCacheStorage.class);
         messageBus = context.getBean(MessageBus.class);
@@ -129,7 +131,7 @@ public class DefaultDownloaderTest
      *
      *
      ******************************************************************************************************************/
-    @Test(dataProvider = "downloadDataProvider", groups = "no-ci") // dbtune.org has been returing HTTP status 503 for months
+    @Test(dataProvider = "downloadDataProvider", groups = "no-ci", enabled = false) // FIXME dbtune.org has been returing HTTP status 503 for months
     public void testCache (final @Nonnull String urlAsString,
                            final @Nonnull Option option,
                            final int expectedStatusCode,

@@ -32,13 +32,11 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.fourthline.cling.support.contentdirectory.DIDLParser;
 import org.fourthline.cling.support.model.DIDLContent;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
 import static org.mockito.Mockito.*;
 import static it.tidalwave.bluemarine2.util.PrettyPrint.xmlPrettyPrinted;
@@ -51,15 +49,11 @@ import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class PhotoItemDIDLAdapterTest
+public class PhotoItemDIDLAdapterTest extends SpringTestSupport
   {
-    private ApplicationContext context;
-
-    @BeforeMethod
-    public void setup()
+    public PhotoItemDIDLAdapterTest()
       {
-        // required for DCI stuff
-        context = new ClassPathXmlApplicationContext("classpath*:META-INF/DciBeans.xml");
+        super("META-INF/DciAutoBeans.xml");
       }
 
     @Test
