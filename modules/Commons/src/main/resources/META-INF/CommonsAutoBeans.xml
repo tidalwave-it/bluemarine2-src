@@ -60,13 +60,6 @@
 
     <aop:aspectj-autoproxy/>
 
-    <!-- DCI role injector -->
-    <bean id="roleManager"
-          class="it.tidalwave.role.spring.spi.AnnotationSpringRoleManager" />
-
-    <bean id="contextManager"
-         class="it.tidalwave.role.spi.DefaultContextManager" />
-
     <!-- This is the master pool of tasks for a number of services. It is required to have it named 'taskExector' so
          it is disambiguated from other task executors that might be present in some libraries. -->
     <bean id="taskExecutor"

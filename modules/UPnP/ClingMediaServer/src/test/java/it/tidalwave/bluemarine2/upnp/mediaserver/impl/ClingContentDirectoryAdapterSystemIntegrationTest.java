@@ -116,7 +116,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
       {
         super("META-INF/MediaServerAutoBeans.xml" ,
               "META-INF/UPnPAutoBeans.xml" ,
-                                                    "META-INF/DciBeans.xml" ,
+                                                    "META-INF/DciAutoBeans.xml" ,
                                                      "classpath*:META-INF/CatalogAutoBeans.xml" ,
                                                      "classpath*:META-INF/CommonsAutoBeans.xml" ,
                                                      "classpath*:META-INF/ModelAutoBeans.xml" ,

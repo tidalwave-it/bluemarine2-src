@@ -81,7 +81,7 @@ public class RepositoryCatalogTest
     @BeforeMethod
     public void setup()
       {
-        context = new ClassPathXmlApplicationContext("META-INF/CommonsAutoBeans.xml",
+        context = new ClassPathXmlApplicationContext("META-INF/DciAutoBeans.xml",
                                                      "META-INF/RepositoryCatalogTestBeans.xml");
       }
 

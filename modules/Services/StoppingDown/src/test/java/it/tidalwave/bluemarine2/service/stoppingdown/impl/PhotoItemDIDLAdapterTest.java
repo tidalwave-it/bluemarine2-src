@@ -59,7 +59,7 @@ public class PhotoItemDIDLAdapterTest
     public void setup()
       {
         // required for DCI stuff
-        context = new ClassPathXmlApplicationContext("classpath*:META-INF/DciBeans.xml");
+        context = new ClassPathXmlApplicationContext("META-INF/DciAutoBeans.xml");
       }
 
     @Test
