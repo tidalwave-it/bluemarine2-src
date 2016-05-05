@@ -54,7 +54,7 @@ import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import static java.text.Normalizer.Form.NFD;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
@@ -97,8 +97,8 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
         this.trackId = trackId;
         this.duration = duration;
         // See BMT-36
-        this.path = Paths.get(Normalizer.normalize(path.toString(), NFD));
-        this.relativePath = Paths.get(Normalizer.normalize(path.toString(), NFD)); // basePath.relativize(path);
+        this.path = normalized(path);
+        this.relativePath = normalized(path);// basePath.relativize(path);
       }
 
     @Override @Nonnull
