@@ -63,6 +63,7 @@ import org.testng.annotations.Test;
 import static java.nio.file.Files.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import org.testng.annotations.BeforeMethod;
 
 /***********************************************************************************************************************
  *
@@ -75,45 +76,54 @@ public class RepositoryCatalogTest
   {
     private static final Path PATH_TEST_SETS = Paths.get("target/test-classes/test-sets");
 
-    private Repository repository;
-
     private ApplicationContext context;
 
     private MessageBus messageBus;
 
-    @Test(dataProvider = "testSetNamesProvider", groups = "no-ci") // On Linux fails because of BMT-46
-    public void must_properly_query_the_whole_catalog_in_various_ways (final @Nonnull String testSetName)
-      throws RepositoryException, IOException, RDFParseException, MalformedQueryException, QueryEvaluationException
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @BeforeMethod
+    public void setup()
       {
         context = new ClassPathXmlApplicationContext("META-INF/CommonsAutoBeans.xml",
                                                      "META-INF/RepositoryCatalogTestBeans.xml");
+        // FIXME: this is unneeded; just to avoid a runtime error from the file system - exclude it from the test setup
         messageBus = context.getBean(MessageBus.class);
-
         final Map<Key<?>, Object> properties = new HashMap<>();
         properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, Paths.get("/base/path"));
         messageBus.publish(new PowerOnNotification(properties));
+      }
 
-        repository = new SailRepository(new MemoryStore());
-        repository.initialize();
-        final File file = PATH_TEST_SETS.resolve(testSetName).toFile();
-        final RepositoryConnection connection = repository.getConnection();
+    /*******************************************************************************************************************
+     *
+     * Queries the catalog for the whole data in various ways and dumps the results to check the consistency.
+     *
+     ******************************************************************************************************************/
+    @Test(dataProvider = "testSetNamesProvider", groups = "no-ci") // On Linux fails because of BMT-46
+    public void must_properly_query_the_whole_catalog_in_various_ways (final @Nonnull String testSetName)
+      throws Exception
+      {
+        // given
+        final Repository repository = loadInMemoryCatalog(PATH_TEST_SETS.resolve(testSetName + ".n3"));
+        // when
+        final MediaCatalog underTest = new RepositoryMediaCatalog(repository);
+        // then
+        final Path expectedResult = PATH_EXPECTED_TEST_RESULTS.resolve(testSetName + "-dump.txt");
+        final Path actualResult = PATH_TEST_RESULTS.resolve(testSetName + "-dump.txt");
+        dumpQueries(underTest, actualResult);
+        assertSameContents(expectedResult.toFile(), actualResult.toFile());
+      }
 
-        connection.add(file, null, RDFFormat.N3);
-        connection.commit();
-        connection.close();
-
-    // https://bitbucket.org/openrdf/alibaba/src/master/object-repository/
-//        ObjectRepositoryFactory factory = new ObjectRepositoryFactory();
-//        ObjectRepository oRepository = factory.createRepository(repository);
-
-        final MediaCatalog catalog = new RepositoryMediaCatalog(repository);
-
-        final String dumpName = testSetName.replaceAll("^(.*)\\.n3$", "$1-dump.txt");
-        final Path actualResult = PATH_TEST_RESULTS.resolve(dumpName);
-        log.info("Dumping to {} ...", actualResult);
-        final Path expectedResult = PATH_EXPECTED_TEST_RESULTS.resolve(dumpName);
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    private void dumpQueries (final @Nonnull MediaCatalog catalog, final @Nonnull Path dumpPath)
+      throws IOException
+      {
+        log.info("dumpQueries({})", dumpPath);
         createDirectories(PATH_TEST_RESULTS);
-        final PrintWriter pw = new PrintWriter(actualResult.toFile(), "UTF-8");
+        final PrintWriter pw = new PrintWriter(dumpPath.toFile(), "UTF-8");
 
         final List<? extends MusicArtist> artists = catalog.findArtists().results();
         final List<? extends Record> records = catalog.findRecords().results();
@@ -166,18 +176,37 @@ public class RepositoryCatalogTest
         allTracks.values().stream().sorted(c).forEach(track -> pw.printf("  %s\n", track));
 
         pw.close();
-
-        assertSameContents(expectedResult.toFile(), actualResult.toFile());
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static Repository loadInMemoryCatalog (final @Nonnull Path path)
+      throws RDFParseException, IOException, RepositoryException
+      {
+        final Repository repository = new SailRepository(new MemoryStore());
+        repository.initialize();
+
+        final RepositoryConnection connection = repository.getConnection();
+        connection.add(path.toFile(), null, RDFFormat.N3);
+        connection.commit();
+        connection.close();
+
+        return repository;
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @DataProvider
     private static Object[][] testSetNamesProvider()
       {
         return new Object[][]
           {
-              { "tiny-model.n3",   },
-              { "small-model.n3",  },
-              { "model-iTunes-fg-20160504-1.n3",  },
+              { "tiny-model"                    },
+              { "small-model"                   },
+              { "model-iTunes-fg-20160504-1"    },
           };
       }
   }
