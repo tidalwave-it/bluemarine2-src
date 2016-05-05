@@ -78,7 +78,7 @@ public class DefaultContentDirectorySystemIntegrationTest
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @Test(dataProvider = "testSetNamesProvider")
+    @Test(dataProvider = "testSetNamesProvider", groups = "no-ci") // FIXME: because of BMT-46
     public void must_properly_expose_data (final @Nonnull String testSetName)
       throws Exception
       {
