@@ -62,6 +62,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 import static java.nio.file.Files.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
+import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 
 /***********************************************************************************************************************
  *
@@ -72,11 +73,7 @@ import static it.tidalwave.util.test.FileComparisonUtils.*;
 @Slf4j
 public class RepositoryCatalogTest
   {
-    private static final Path MODELS = Paths.get("src/test/resources");
-
-    private static final Path TEST_RESULTS = Paths.get("target/test-results");
-
-    private static final Path EXPECTED_TEST_RESULTS = Paths.get("src/test/resources/expected-results");
+    private static final Path PATH_TEST_SETS = Paths.get("target/test-classes/test-sets");
 
     private Repository repository;
 
@@ -84,23 +81,21 @@ public class RepositoryCatalogTest
 
     private MessageBus messageBus;
 
-    @Test(dataProvider = "p", groups = "no-ci") // On Linux fails because of BMT-46
-    public void dumpCatalog (final @Nonnull String catalogName, final @Nonnull String dumpName)
+    @Test(dataProvider = "testSetNamesProvider", groups = "no-ci") // On Linux fails because of BMT-46
+    public void must_properly_query_the_whole_catalog_in_various_ways (final @Nonnull String testSetName)
       throws RepositoryException, IOException, RDFParseException, MalformedQueryException, QueryEvaluationException
       {
-        final String s1 = "classpath:/META-INF/CommonsAutoBeans.xml";
-        final String s2 = "classpath:/META-INF/RepositoryCatalogTestBeans.xml";
-        context = new ClassPathXmlApplicationContext(s1, s2);
+        context = new ClassPathXmlApplicationContext("META-INF/CommonsAutoBeans.xml",
+                                                     "META-INF/RepositoryCatalogTestBeans.xml");
         messageBus = context.getBean(MessageBus.class);
 
         final Map<Key<?>, Object> properties = new HashMap<>();
         properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, Paths.get("/base/path"));
-        final PowerOnNotification notification = new PowerOnNotification(properties);
-        messageBus.publish(notification);
+        messageBus.publish(new PowerOnNotification(properties));
 
         repository = new SailRepository(new MemoryStore());
         repository.initialize();
-        final File file = MODELS.resolve(catalogName).toFile();
+        final File file = PATH_TEST_SETS.resolve(testSetName).toFile();
         final RepositoryConnection connection = repository.getConnection();
 
         connection.add(file, null, RDFFormat.N3);
@@ -113,9 +108,11 @@ public class RepositoryCatalogTest
 
         final MediaCatalog catalog = new RepositoryMediaCatalog(repository);
 
-        final Path actualResult = TEST_RESULTS.resolve(dumpName);
-        final Path expectedResult = EXPECTED_TEST_RESULTS.resolve(dumpName);
-        createDirectories(TEST_RESULTS);
+        final String dumpName = testSetName.replaceAll("^(.*)\\.n3$", "$1-dump.txt");
+        final Path actualResult = PATH_TEST_RESULTS.resolve(dumpName);
+        log.info("Dumping to {} ...", actualResult);
+        final Path expectedResult = PATH_EXPECTED_TEST_RESULTS.resolve(dumpName);
+        createDirectories(PATH_TEST_RESULTS);
         final PrintWriter pw = new PrintWriter(actualResult.toFile(), "UTF-8");
 
         final List<? extends MusicArtist> artists = catalog.findArtists().results();
@@ -173,15 +170,14 @@ public class RepositoryCatalogTest
         assertSameContents(expectedResult.toFile(), actualResult.toFile());
       }
 
-    @DataProvider(name = "p")
-    private static Object[][] p()
+    @DataProvider
+    private static Object[][] testSetNamesProvider()
       {
         return new Object[][]
           {
-              { "tiny-model.n3",     "tiny-dump.txt"           },
-              { "small-model.n3",    "small-dump.txt"          },
-              { "model-20150406.n3", "model-20150406-dump.txt" },
-              { "model-20150421.n3", "model-20150421-dump.txt" }
+              { "tiny-model.n3",   },
+              { "small-model.n3",  },
+              { "model-iTunes-fg-20160504-1.n3",  },
           };
       }
   }

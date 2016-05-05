@@ -34,9 +34,7 @@ import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.time.Instant;
 import java.io.File;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.spi.MockInstantProvider;
@@ -49,6 +47,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
+import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 
@@ -83,13 +82,7 @@ public class DefaultMediaScannerTest
     @BeforeClass
     public void checkTestSets()
       {
-        musicTestSets = Paths.get(System.getProperty("blueMarine2.musicTestSets.path", "/doesNotExist"));
-
-        if (!Files.exists(musicTestSets))
-          {
-            throw new RuntimeException("Cannot run tests: set 'blueMarine2.musicTestSets.path' to the folder "
-                                     + "containing test sets (current value: " + musicTestSets + ")");
-          }
+        musicTestSets = TestSetLocator.getMusicTestSetsPath();
       }
 
     @BeforeMethod

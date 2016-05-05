@@ -314,6 +314,7 @@
         <module>UI</module>
         <module>UPnP</module>
         <module>MediaServer</module>
+        <module>TestCommons</module>
     </modules>
 
 </project>
