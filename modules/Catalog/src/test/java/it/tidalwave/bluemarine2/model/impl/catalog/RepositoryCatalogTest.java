@@ -73,6 +73,10 @@ public class RepositoryCatalogTest
   {
     private static final Path PATH_TEST_SETS = Paths.get("target/test-classes/test-sets");
 
+    private static final Comparator<Object> BY_RDFS_LABEL =
+            (e1, e2) -> ((RepositoryEntitySupport)e1).getRdfsLabel().compareTo(
+                        ((RepositoryEntitySupport)e2).getRdfsLabel());
+
     private ApplicationContext context;
 
     private MessageBus messageBus;
@@ -108,37 +112,34 @@ public class RepositoryCatalogTest
         // then
         final Path expectedResult = PATH_EXPECTED_TEST_RESULTS.resolve(testSetName + "-dump.txt");
         final Path actualResult = PATH_TEST_RESULTS.resolve(testSetName + "-dump.txt");
-        dumpQueries(underTest, actualResult);
+        queryAndDump(underTest, actualResult);
         assertSameContents(expectedResult.toFile(), actualResult.toFile());
       }
 
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    private void dumpQueries (final @Nonnull MediaCatalog catalog, final @Nonnull Path dumpPath)
+    private void queryAndDump (final @Nonnull MediaCatalog catalog, final @Nonnull Path dumpPath)
       throws IOException
       {
-        log.info("dumpQueries({})", dumpPath);
+        log.info("queryAndDump(.., {})", dumpPath);
         createDirectories(PATH_TEST_RESULTS);
         final PrintWriter pw = new PrintWriter(dumpPath.toFile(), "UTF-8");
 
-        final List<? extends MusicArtist> artists = catalog.findArtists().results();
-        final List<? extends Record> records = catalog.findRecords().results();
+        final List<? extends MusicArtist> artists = catalog.findArtists().stream().sorted(BY_RDFS_LABEL).collect(toList());
+        final List<? extends Record> records = catalog.findRecords().stream().sorted(BY_RDFS_LABEL).collect(toList());
 
         pw.println("ALL TRACKS:\n");
         final Map<String, RepositoryTrack> allTracks = catalog.findTracks().results().stream()
                         .map(t -> (RepositoryTrack)t)
                         .collect(toMap(RepositoryTrack::toString, Function.identity()));
-        final Comparator<RepositoryTrack> c = (o1, o2) -> o1.getRdfsLabel().compareTo(o2.getRdfsLabel());
-        allTracks.values().stream().sorted(c).forEach(track -> pw.printf("  %s\n", track));
+        allTracks.values().stream().sorted(BY_RDFS_LABEL).forEach(track -> pw.printf("  %s\n", track));
 
         pw.println("\n\n\nALL RECORDS:\n");
         records.forEach(artist -> pw.printf("%s\n", artist));
 
         pw.println("\n\n\nALL ARTISTS:\n");
         artists.forEach(artist -> pw.printf("%s\n", artist));
-
-        // FIXME: not correctly sorted in many cases
 
         artists.forEach(artist ->
           {
@@ -170,7 +171,7 @@ public class RepositoryCatalogTest
           });
 
         pw.println("\n\nORPHANED TRACKS:\n");
-        allTracks.values().stream().sorted(c).forEach(track -> pw.printf("  %s\n", track));
+        allTracks.values().stream().sorted(BY_RDFS_LABEL).forEach(track -> pw.printf("  %s\n", track));
 
         pw.close();
       }
