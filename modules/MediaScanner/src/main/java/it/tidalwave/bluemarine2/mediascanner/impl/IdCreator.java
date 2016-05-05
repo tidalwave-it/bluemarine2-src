@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
+import java.util.concurrent.Semaphore;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -49,6 +50,10 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  **********************************************************************************************************************/
 public class IdCreator
   {
+    // With magnetic disks it's better to access files one at a time
+    // TODO: with SSD, this is not true
+    private final Semaphore diskSemaphore = new Semaphore(1);
+
     /*******************************************************************************************************************
      *
      *
@@ -58,6 +63,7 @@ public class IdCreator
       {
         try
           {
+            diskSemaphore.acquire();
             final File file = path.toFile();
             final String algorithm = "SHA1";
             final @Cleanup RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
@@ -67,9 +73,13 @@ public class IdCreator
             randomAccessFile.close();
             return new Id(toString(digestComputer.digest()));
           }
-        catch (NoSuchAlgorithmException | IOException e)
+        catch (InterruptedException | NoSuchAlgorithmException | IOException e)
           {
             throw new RuntimeException(e);
+          }
+        finally
+          {
+            diskSemaphore.release();
           }
       }
 
