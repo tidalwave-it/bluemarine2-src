@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.persistence.impl;
 
 import javax.annotation.Nonnull;
+import java.util.concurrent.CountDownLatch;
 import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -54,7 +55,7 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import it.tidalwave.bluemarine2.persistence.PropertyNames;
-import java.io.BufferedReader;
+import static java.util.concurrent.TimeUnit.SECONDS;
 import lombok.Cleanup;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -68,6 +69,8 @@ import lombok.extern.slf4j.Slf4j;
 @SimpleMessageSubscriber @Slf4j
 public class DefaultPersistence implements Persistence
   {
+    private final CountDownLatch initialized = new CountDownLatch(1);
+
     @Getter
     private Repository repository;
 
@@ -101,6 +104,8 @@ public class DefaultPersistence implements Persistence
           {
             log.warn("No repository path: operating in memory");
           }
+
+        initialized.countDown();
       }
 
     /*******************************************************************************************************************
@@ -138,11 +143,16 @@ public class DefaultPersistence implements Persistence
         connection.close();
       }
 
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
     @Override
     public <E extends Exception> void runInTransaction (final @Nonnull TransactionalTask<E> task)
       throws E, RepositoryException
       {
         log.info("runInTransaction({})", task);
+        waitForPowerOn();
         final long baseTime = System.nanoTime();
         final RepositoryConnection connection = repository.getConnection(); // TODO: pool?
 
@@ -162,6 +172,25 @@ public class DefaultPersistence implements Persistence
         if (log.isDebugEnabled())
           {
             log.debug(">>>> done in {} ms", (System.nanoTime() - baseTime) * 1E-6);
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    private void waitForPowerOn()
+      {
+        try
+          {
+            if (!initialized.await(10, SECONDS))
+              {
+                throw new IllegalStateException("Did not receive PowerOnNotification");
+              }
+          }
+        catch (InterruptedException ex)
+          {
+            throw new IllegalStateException("Interrupted while waiting for PowerOnNotification");
           }
       }
   }
