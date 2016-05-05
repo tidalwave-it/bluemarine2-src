@@ -50,8 +50,9 @@ import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.persistence.PropertyNames;
-import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
@@ -87,22 +88,36 @@ public class DefaultContentDirectorySystemIntegrationTest
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @Test
-    public void must_return_correct_root_children()
+    @Test(dataProvider = "testSetNamesProvider")
+    public void must_return_correct_root_children (final @Nonnull String testSetName)
       throws Exception
       {
         // given
         final Map<Key<?>, Object> properties = new HashMap<>();
         // The file system browser is not tested here, because we can't share audio files
-        final Path configPath = Paths.get("src/test/resources/config");
-        final Path repositoryPath = configPath.resolve("repository.n3");
-        properties.put(ROOT_PATH, configPath); // FIXME: why is this needed?
+        final Path PATH_TEST_SETS = Paths.get("target/test-classes/test-sets");
+        final Path repositoryPath = PATH_TEST_SETS.resolve(testSetName + ".n3").toAbsolutePath();
+        properties.put(ROOT_PATH, PATH_TEST_SETS); // FIXME: why is this needed?
         properties.put(PropertyNames.REPOSITORY_PATH, repositoryPath);
         context.getBean(MessageBus.class).publish(new PowerOnNotification(properties));
         // when
         final MediaFolder root = underTest.findRoot();
         // then
-        dumpAndAssertResults("media-server-dump.txt", dump(root));
+        dumpAndAssertResults(testSetName + "-dump.txt", dump(root));
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @DataProvider
+    private static Object[][] testSetNamesProvider()
+      {
+        return new Object[][]
+          {
+//              { "tiny-model"                    }, TODO
+//              { "small-model"                   },
+              { "model-iTunes-fg-20160504-1"    },
+          };
       }
 
     // FIXME: copy and paste below
@@ -134,5 +149,4 @@ public class DefaultContentDirectorySystemIntegrationTest
 
         return result;
       }
-
-}
+  }
