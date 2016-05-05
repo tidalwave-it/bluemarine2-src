@@ -129,7 +129,7 @@ public class DefaultDownloaderTest
      *
      *
      ******************************************************************************************************************/
-    @Test(dataProvider = "downloadDataProvider", groups = "no-ci") // dbtune.org has been returing HTTP status 503 for months
+    @Test(dataProvider = "downloadDataProvider", groups = "no-ci", enabled = false) // FIXME dbtune.org has been returing HTTP status 503 for months
     public void testCache (final @Nonnull String urlAsString,
                            final @Nonnull Option option,
                            final int expectedStatusCode,
