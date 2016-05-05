@@ -50,7 +50,7 @@ public class DefaultDevicePublisherTest extends ClingTestSupport
         super("META-INF/DefaultDevicePublisherTest.xml");
       }
 
-    @Test
+    @Test(timeOut = 120000)
     public void registerDevice()
       throws Exception
       {
