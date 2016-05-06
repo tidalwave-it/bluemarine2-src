@@ -94,7 +94,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
         Path thePath = null;
 
-        try // FIXME: see BMT-46
+        try // FIXME: see BMT-46 - try all posibile normalizations; hen try utf-8 as an option to /etc/fstab
           {
             thePath = Paths.get(normalized(toString(bindingSet.getBinding("path"))));
           }
