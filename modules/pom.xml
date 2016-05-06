@@ -196,6 +196,15 @@
     </dependencies>
 
     <profiles>
+
+        <!-- FIXME: the property should be put in the settings.xml of the CI -->
+        <profile>
+            <id>it.tidalwave-ci-v1</id>
+            <properties>
+                <blueMarine2.musicTestSets.path>/var/MusicTestSets</blueMarine2.musicTestSets.path>
+            </properties>
+        </profile>
+
         <profile>
             <id>it.tidalwave-spring-messagebus-v1</id>
             <activation>
