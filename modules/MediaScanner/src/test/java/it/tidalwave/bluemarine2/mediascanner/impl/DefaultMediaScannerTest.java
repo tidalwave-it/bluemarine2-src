@@ -46,6 +46,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
+import org.slf4j.bridge.SLF4JBridgeHandler;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
@@ -76,6 +77,13 @@ public class DefaultMediaScannerTest extends SpringTestSupport
     private MediaFileSystem fileSystem;
 
     private Persistence persistence;
+
+    static
+      {
+        // Some libraries use JUL
+        SLF4JBridgeHandler.removeHandlersForRootLogger();
+        SLF4JBridgeHandler.install();
+      }
 
     public DefaultMediaScannerTest()
       {
