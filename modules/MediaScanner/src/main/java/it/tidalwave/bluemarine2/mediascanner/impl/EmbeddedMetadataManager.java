@@ -72,6 +72,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class EmbeddedMetadataManager
   {
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     @RequiredArgsConstructor @Getter @ToString
     static class Entry
       {
@@ -81,18 +86,6 @@ public class EmbeddedMetadataManager
         @Nonnull
         private final String name;
       }
-
-    @Inject
-    private DbTuneMetadataManager dbTuneMetadataManager;
-
-    @Inject
-    private StatementManager statementManager;
-
-    @Inject
-    private IdCreator idCreator;
-
-    @Inject
-    private Shared shared;
 
     /*******************************************************************************************************************
      *
@@ -140,6 +133,18 @@ public class EmbeddedMetadataManager
             return get(entry.getKey()).apply(entry.getValue());
           }
       }
+
+    @Inject
+    private DbTuneMetadataManager dbTuneMetadataManager;
+
+    @Inject
+    private StatementManager statementManager;
+
+    @Inject
+    private IdCreator idCreator;
+
+    @Inject
+    private Shared shared;
 
     private static final Mapper SIGNAL_MAPPER = new Mapper();
     private static final Mapper TRACK_MAPPER = new Mapper();
