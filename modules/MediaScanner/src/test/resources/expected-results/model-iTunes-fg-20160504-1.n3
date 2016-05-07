@@ -4540,7 +4540,7 @@
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:01738b5d43a973b31f408e45fe05ac0b58a3bbf2> , <urn:bluemarine:track:431dca35e331b8e687e5c65cc6a5cc1c8ab9e913> , <urn:bluemarine:track:753d71fbad70f2b3576124a020d286cc62fa4b36> ;
 	rdfs:label "Callas - La Mamma Morta" ;
-	foaf:maker <urn:bluemarine:artist:8b98e8a5b1492eee57ecdf0f05866ef858579677> .
+	foaf:maker <urn:bluemarine:artist:7a0c9a21082b9118669c9211a92cbd953f775a6b> , <urn:bluemarine:artist:8b98e8a5b1492eee57ecdf0f05866ef858579677> , <urn:bluemarine:artist:d560b95343051120592d39bef02265160fc68a02> .
 
 <urn:bluemarine:record:1160a7cb012648df40d395a995fc1b686f90a25d> a mo:Record ;
 	dc:title "Dvořák; Elgar: Cello Concertos" ;
@@ -4561,7 +4561,7 @@
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:04bb20c6e4debae47c6fe8b7e90dff33fa0ddcfb> , <urn:bluemarine:track:0e25297a1bd47c17b9a4d013b030fe3227d939c7> , <urn:bluemarine:track:13dd63d35f1d3a664a9e5acbbd6740569334b25d> , <urn:bluemarine:track:1d0180c200678e47a8e52b25f35350bbdaa0dfa3> , <urn:bluemarine:track:207325cdad3246f934ced3df302eb2e36186bf0f> , <urn:bluemarine:track:33514f38e706690fd59eb0feb9d87661d73e8f42> , <urn:bluemarine:track:75ef8039c40b25d2a6b1ee8972d7d6cf58456012> , <urn:bluemarine:track:80b1183bce515464dadef877d958578119662699> , <urn:bluemarine:track:86eb0bb5f414d10ec73117d328592827cf87dde4> , <urn:bluemarine:track:88cac4f683119b99491310382e43bbc099de6f48> , <urn:bluemarine:track:890fb583ee3e5c53066024ac305f6a5786b82eca> , <urn:bluemarine:track:aa573a69317eaf15f3ac2b7991924a91ab17affb> , <urn:bluemarine:track:ad41790193fec3023537f5532f9661cbabcbecab> , <urn:bluemarine:track:dff7654bc3f050de25b0049a1aad96aafb95aeb1> , <urn:bluemarine:track:e6508a014a04dc87e682db421376b9536de0c508> ;
 	rdfs:label "Satchmo 2" ;
-	foaf:maker <urn:bluemarine:artist:517fa5e0bf55168a84aff87ca735e2bbf09a13fe> .
+	foaf:maker <urn:bluemarine:artist:517fa5e0bf55168a84aff87ca735e2bbf09a13fe> , <urn:bluemarine:artist:526a0556494ffaea89d97acb4bcf3e360dc4f58b> .
 
 <urn:bluemarine:record:193ee7253ba484ff66216ee2d366e662c941d67f> a mo:Record ;
 	dc:title "Borodin, String Quartet 2. Tchaikovsky, string Quartet 3" ;
@@ -4652,7 +4652,7 @@
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:33cdda68d7fd88c6c4964344202479088696604e> , <urn:bluemarine:track:8e357a725402f819c393cdfbca65f30a09dfc55f> , <urn:bluemarine:track:961dd17d8a96a640b83a96d3eefd349daf4d6b2f> , <urn:bluemarine:track:9fc3f68a64d3754e593ea57c5028ca85681b7986> , <urn:bluemarine:track:a3253acff41dc3eba8af26241ed14fd5f4fbf978> , <urn:bluemarine:track:ace37be6588ec81d67a7926cad605283ac4d31d1> , <urn:bluemarine:track:bf9dfc883827d7f4bcc041d614a4c489b2037e79> , <urn:bluemarine:track:c5c0b5ab074609eff1524a662cd53ab1e254ffd4> , <urn:bluemarine:track:cab283df6c548c3f3a3889c75d0b5f18353a34dc> , <urn:bluemarine:track:e4a7a24ac55d85335f69ba2d9377a227a2e61a8a> , <urn:bluemarine:track:f616ae0dab4723db6f87f5e165ea2db8f54ad19f> , <urn:bluemarine:track:ff01595ad247c63efa27a35e270f4f97b100a16f> ;
 	rdfs:label "The Magic of The French Horn - Greatest Concertos" ;
-	foaf:maker <urn:bluemarine:artist:11a06443463d31e61f4b75adfcf118afc85da7c6> .
+	foaf:maker <urn:bluemarine:artist:11a06443463d31e61f4b75adfcf118afc85da7c6> , <urn:bluemarine:artist:11c8f71822ae609cd238d64deb828fb6cf3be33e> , <urn:bluemarine:artist:1dc5acd6297e44f22fcb3872c902a4f36c1eaabd> , <urn:bluemarine:artist:256f6d11705066dde3aa5f3aa7f0e8fdbd947881> , <urn:bluemarine:artist:281bf72be51d2b46491e82ef4a3faa1b489f19b3> , <urn:bluemarine:artist:403e962b3fbb3e65b41e4277bdcc0d17e92686cf> , <urn:bluemarine:artist:7d210718b959b9c5d9fbc02749502e991b14e9d9> , <urn:bluemarine:artist:cf8175e1c8d379728f9ca0c286e2684490300b2a> , <urn:bluemarine:artist:df1a1274f66decc4b2f8e5b0f65fbe36c7031a17> .
 
 <urn:bluemarine:record:5dd78f4336a9eadc96053bbc8114a0c25b3e8df2> a mo:Record ;
 	dc:title "Daniel And The Lions - Ludus Danielis" ;
@@ -4708,7 +4708,7 @@
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:144c7c324716d1d7f0d0a4de4c88a139b9e3edd5> , <urn:bluemarine:track:14620414c291b6120b8c57f51165eb9317341e64> , <urn:bluemarine:track:215b43a9565dab2b6a59a72e9c8fc8cde9dfe8bd> , <urn:bluemarine:track:2ac8e8ec0d08d7028f47c88ecca44c5e8faaea73> , <urn:bluemarine:track:2edfd46e7a360bed1fe347f30300b3d765d5fb4d> , <urn:bluemarine:track:2f2dd7120a3cf87122a193282abfb906a9d45e8c> , <urn:bluemarine:track:4130a3cb45557c15cb4663019e484fd509ceff6d> , <urn:bluemarine:track:45a710a3cb4793737d8302dd3d178698c5845918> , <urn:bluemarine:track:5e5be8cf038ef9fbf83c016973eb9d0281c53b7e> , <urn:bluemarine:track:72251f0be21f1761426699feaf1c4067b9f023a6> , <urn:bluemarine:track:7c8db007f1efa7496f2508c3ded25c1b2c73636d> , <urn:bluemarine:track:88243c7cd80a5c70cb04537de7717004ddd6005b> , <urn:bluemarine:track:9099702c3640d157bf96537861b5fee1f4ede89a> , <urn:bluemarine:track:96f1dff28f1d3d053ab4e7bc8104880a92a0d775> , <urn:bluemarine:track:9e56a8a80b03122fb3872d70cb85f2b7f7e9fad9> , <urn:bluemarine:track:a075a76c32aff4eae8ea1c45e44c2448190dd76a> , <urn:bluemarine:track:b43f6d6919e2b1793136530cc095086fb1446808> , <urn:bluemarine:track:b7865da82843a6203497dc91e4e1a7258f351114> , <urn:bluemarine:track:c06cd46c9b566670977bf6e41581c3c065c688d6> , <urn:bluemarine:track:e65b7a58495dcf05bf6c1a095ed1d7d251184303> , <urn:bluemarine:track:f0899c135f87e44f41839f9473d460a9ffb32538> , <urn:bluemarine:track:f8f144066c151a86855c33e8266622bfb1bd7fa9> ;
 	rdfs:label "Mendelssohn: Paulus [Disc 1]" ;
-	foaf:maker <urn:bluemarine:artist:848b5c45a7d88132260bc42d1dcffb013678fe6c> .
+	foaf:maker <urn:bluemarine:artist:848b5c45a7d88132260bc42d1dcffb013678fe6c> , <urn:bluemarine:artist:c57d68228039cb34a762956fccc0cab859536a64> .
 
 <urn:bluemarine:record:830bd6aedaf50e48796e088f1a7481e7ed9e6ff4> a mo:Record ;
 	dc:title "Vivaldi: Musica da camera e da chiesa" ;
@@ -4729,7 +4729,7 @@
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:0a9eaaca68cefa0a6e7e413ad3f87535714d4654> , <urn:bluemarine:track:29031fd2d77f2e909f390f767533ea044b36e903> , <urn:bluemarine:track:2ad8f5ebb68af34332f38d5c02dc47e99822e909> , <urn:bluemarine:track:319fc0064039d6c93c0164ccefc55b136df96e52> , <urn:bluemarine:track:4eea2cdff9880b7d0d05420cc35768c1e8da04cc> , <urn:bluemarine:track:64f01c112754032534cad4eb62aed00f914fb524> , <urn:bluemarine:track:6cd19de29636cbb97554f6502d2f585a90656782> , <urn:bluemarine:track:783f8852306220dc94a9661bbbe148c6a720c6b4> , <urn:bluemarine:track:79cd27fa99c96a2961a1cabbcc7832c38162ddd9> , <urn:bluemarine:track:93cf88238ce7b09c9fc745d456abf51d7ab487e2> , <urn:bluemarine:track:b5f0ace4bb821217c97a24df7997c61ff95f2b39> , <urn:bluemarine:track:b7757b5b86e81bf80a54fd0086d36de3e155e1d1> , <urn:bluemarine:track:c2f5393c2345060515d8a48b455346bae5522b0c> , <urn:bluemarine:track:d7da1ed6011aa027ea14a4c0e9a55abb003c0c56> , <urn:bluemarine:track:db15e9a1f17c253fa032cd75242b8de0d4f8ef27> , <urn:bluemarine:track:e0973389e5cb436ce783b4ed2cf44b5d5f45c584> , <urn:bluemarine:track:e0adcc6d3236057d6a58f2b38562d7d04da517bf> , <urn:bluemarine:track:e58f5ea2456b0a32250105e22105fe2ca6678b7f> ;
 	rdfs:label "Pure Ella" ;
-	foaf:maker <urn:bluemarine:artist:711570135ffc27f41845031de8a7d1de66b6036f> .
+	foaf:maker <urn:bluemarine:artist:526a0556494ffaea89d97acb4bcf3e360dc4f58b> , <urn:bluemarine:artist:711570135ffc27f41845031de8a7d1de66b6036f> .
 
 <urn:bluemarine:record:935938e0a00a570e9a6079229a9d401cdc5a033a> a mo:Record ;
 	dc:title "Rossini Overtures" ;
@@ -4750,7 +4750,7 @@
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:4014eb87e5fbf95f70b72a3e0e2d56016e4777b8> , <urn:bluemarine:track:50a60b7bdb3f4c801b9524328b2e192b6d66c772> , <urn:bluemarine:track:51d11feb096c52d841e2ba1ac32b0fc0e3dd7006> , <urn:bluemarine:track:5febc394a6313719d935eab61ac9c9ad45709464> , <urn:bluemarine:track:81273cfb69c4a1a27e1f3cf64fea6a76289e5907> , <urn:bluemarine:track:9302cd52e404788d711c11ab8cf64bd34b66d20e> , <urn:bluemarine:track:95182b36cd14c1c38e9aef38019ec455e79c620b> , <urn:bluemarine:track:9cb9cb9cdce374e8dad2c017120b38e3bee2e705> , <urn:bluemarine:track:9f8501c3363edabf90a9aa9693c4a0b05c6a0bf9> , <urn:bluemarine:track:e33ddbab0938fbf3a0ed1ae6874c87e0cbfcb8bf> , <urn:bluemarine:track:fcf0c8c61b9bcc1703f0b25f3fbae9a211cbd29b> ;
 	rdfs:label "Rimsky-Korsakov: Scheherazade" ;
-	foaf:maker <urn:bluemarine:artist:9273df63768a5a2f382e1885d889c44275fb16cf> .
+	foaf:maker <urn:bluemarine:artist:33eac2ba6800b5a55d81cf496ef6c980cf002ca4> , <urn:bluemarine:artist:9273df63768a5a2f382e1885d889c44275fb16cf> .
 
 <urn:bluemarine:record:9701ce237c35cc77dce0c5f36ebb48de313c5dd8> a mo:Record ;
 	dc:title "Handel: Music For The Royal Fireworks, Concerto #2 In F" ;
@@ -4827,7 +4827,7 @@
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:2c0c132bed8ed3082af23bc240877502ca7e525d> , <urn:bluemarine:track:3199fbbe3e7ba75acb3994b21281a35942221a55> , <urn:bluemarine:track:6224e1b076c55d1c84eb343044818a1b1a19b9e1> , <urn:bluemarine:track:70f50fef6ba179dbe9ce8c53518ea26a958d46b5> , <urn:bluemarine:track:72725edbfd9e3e6dd2ec81727c4512ad80c3cc44> , <urn:bluemarine:track:7c56ec8eb3010c8f97b4b364c3f4846bdedf7431> , <urn:bluemarine:track:8c2826fd21f5c8c9dbfa4e445cb9cd7c993189ea> , <urn:bluemarine:track:b9a85a48c8c17f23fe7db3fe6fa1b9070dc81505> , <urn:bluemarine:track:c597c2a42dac8e26761147057b2ff5521daa2ec2> , <urn:bluemarine:track:d7bae4ddf08e62d4abddbb94c06ee5db6fbfba14> , <urn:bluemarine:track:df0b0108b6e16cfc9d4f0a5b7db355450a4fd209> , <urn:bluemarine:track:e2cfe4cffdeb06101e59bed4a6783bf4ef39bd82> , <urn:bluemarine:track:e342bbae40a67df1df5ae6b91fd3487536d797a2> , <urn:bluemarine:track:e5f6b6c6d7328254495d968c8592d96443b38a47> , <urn:bluemarine:track:f81d11d84fff568dc1cbfc70794ab24d1cf4f599> ;
 	rdfs:label "La Divina 2" ;
-	foaf:maker <urn:bluemarine:artist:9ef5edc4dd9c4e8faef8783549ba74bf67224e89> .
+	foaf:maker <urn:bluemarine:artist:12294f523d0339380a9b6d0a35771d7eb1447951> , <urn:bluemarine:artist:692b8679488970a37b9432faefb9a348c625b204> , <urn:bluemarine:artist:9ef5edc4dd9c4e8faef8783549ba74bf67224e89> , <urn:bluemarine:artist:c4e538c0662b53afd5e01def72d7ab489d91523a> , <urn:bluemarine:artist:d03c9656b13d39afb612568f23f0e428d252dda3> , <urn:bluemarine:artist:d560b95343051120592d39bef02265160fc68a02> , <urn:bluemarine:artist:d67dd0c7b097a7c4fd7934177626e492eb6b3b91> , <urn:bluemarine:artist:e48eba7d35c83e9d2bcba6e05dc3950a22c8abbc> , <urn:bluemarine:artist:e9d05b4578b2970e384c8003f04e6b66ab339139> , <urn:bluemarine:artist:f012720042116daf2b1e51d8061b4fd9c204f272> .
 
 <urn:bluemarine:record:d7fe8453c0c11c727023268d3453e4c3c30fd2b3> a mo:Record ;
 	dc:title "Tracce della tradizione orale" ;
@@ -4855,7 +4855,7 @@
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:2e7bc56d8455b352288db7c347939f4f82b23bd6> , <urn:bluemarine:track:6beb9ab895d675b1f7f886444666dcb391bccc33> , <urn:bluemarine:track:70e20c280a98bf10f0cd61de797f8e68cf5a4d8c> , <urn:bluemarine:track:9264b2b55f98aebd0774d4f73aba14e1eace92ec> , <urn:bluemarine:track:cdab9eec597f75abc124f3a19ed55646060309de> , <urn:bluemarine:track:dc150078ceb2ed603f8f98cd9585442fbe2bdebc> , <urn:bluemarine:track:fec911c3786dd00e632f457528557da4106aa1d5> ;
 	rdfs:label "Holst: The Planets" ;
-	foaf:maker <urn:bluemarine:artist:b8b1746a5de43c69385905a4603951984f5c9088> .
+	foaf:maker <urn:bluemarine:artist:1ff4976495c1cb4807e3a392ca663941f3e38da5> , <urn:bluemarine:artist:b8b1746a5de43c69385905a4603951984f5c9088> .
 
 <urn:bluemarine:record:f03b8c41ee63f693af9059ef8ca297f2d973f981> a mo:Record ;
 	dc:title "Mostly French" ;
@@ -4869,7 +4869,7 @@
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:0d366263dc3461fcdb10877dea571e94c9399e54> , <urn:bluemarine:track:1fe1b8ea753b8bf0fe5b23de92b857c130ae2ab8> , <urn:bluemarine:track:212f98c93d1b3df07f3ef5ec05515bfad20ddce7> , <urn:bluemarine:track:2b72f70689da714497daef2ffac470c70bb03023> , <urn:bluemarine:track:78aeda13e32a63eb3ec86f6d3d6813c91eaa685e> , <urn:bluemarine:track:826f6e25a07348f06d3805a4f77426c9d78d9336> , <urn:bluemarine:track:872ec09082f01520e8e18ec55e6a77a04b202bf2> , <urn:bluemarine:track:98dfef2ab9297264225fa5398219c6883f9c568a> , <urn:bluemarine:track:9cbe8b9a157e711e876c8306e50f11b888dcc6a3> , <urn:bluemarine:track:d0b6e80136b379c889f60d5309a0072db406095f> , <urn:bluemarine:track:da26f05b69c8455dc634a0023f338ec7e9380bfc> , <urn:bluemarine:track:da94d839badeb6db588008cfa9892df4f50d9a83> , <urn:bluemarine:track:e35342f4a08f548073b2a09889927d65523a74e0> ;
 	rdfs:label "The Incomparable Callas - Favourite Arias" ;
-	foaf:maker <urn:bluemarine:artist:5dd45d2171ab56d0a5217f414439168041f8a15f> .
+	foaf:maker <urn:bluemarine:artist:2ebfc6096a920b2cfcc766b53777a944a57dcaa0> , <urn:bluemarine:artist:359542e8df8d19872fa5fb2d2a953d96f6125334> , <urn:bluemarine:artist:36deb580f53fc0cf00679d515afd3de976b781d8> , <urn:bluemarine:artist:5dd45d2171ab56d0a5217f414439168041f8a15f> , <urn:bluemarine:artist:6daaab52389a7a95765bee13372f9efa43d17352> , <urn:bluemarine:artist:8b98e8a5b1492eee57ecdf0f05866ef858579677> , <urn:bluemarine:artist:dc4bccd88e43ab11427d4de8bec73984d5a62488> , <urn:bluemarine:artist:fbf3e5000150188cea44e17ad1e59e60c3d02879> .
 
 <urn:bluemarine:record:f659329767f275045dd29478db6fdf487366b896> a mo:Record ;
 	dc:title "Bach; Vivaldi: Concertos For 2 Violins" ;

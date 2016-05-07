@@ -252,12 +252,12 @@ public class EmbeddedMetadataManager
             .with(        trackUri,      FOAF.MAKER,                makerUris.stream())
 
             .with(        recordUri,     MO.P_TRACK,                trackUri)
+            .with(        recordUri,     FOAF.MAKER,                makerUris.stream())
 
             .withOptional(newRecordUri,  RDF.TYPE,                  MO.C_RECORD)
             .withOptional(newRecordUri,  RDFS.LABEL,                literalFor(recordTitle))
             .withOptional(newRecordUri,  DC.TITLE,                  literalFor(recordTitle))
             .withOptional(newRecordUri,  MO.P_MEDIA_TYPE,           MO.C_CD)
-            .withOptional(newRecordUri,  FOAF.MAKER,                makerUris.stream())
 
             .with(        newArtistUris, RDF.TYPE,                  MO.C_MUSIC_ARTIST)
             .with(        newArtistUris, RDFS.LABEL,                newArtistLiterals)
