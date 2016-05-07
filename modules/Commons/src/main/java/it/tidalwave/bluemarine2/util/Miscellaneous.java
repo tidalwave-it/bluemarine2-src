@@ -29,9 +29,13 @@
 package it.tidalwave.bluemarine2.util;
 
 import javax.annotation.CheckForNull;
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
+import java.nio.file.InvalidPathException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.text.Normalizer.Form.*;
@@ -71,6 +75,35 @@ public final class Miscellaneous
           }
 
         log.info(">>>> Charset normalizer form: {}", NATIVE_FORM);
+      }
+
+
+    @Nonnull
+    public static Path normalizedPath (final @Nonnull String string)
+      {
+        try
+          {
+            return Paths.get(string);
+          }
+        catch (InvalidPathException e1)
+          {
+            log.trace(">>>> invalid path, now trying normalisation {}", e1.toString());
+
+            for (final Form form : Form.values())
+              {
+                try
+                  {
+                    return Paths.get(normalized(string, form));
+                  }
+                catch (InvalidPathException e2)
+                  {
+                    log.trace(">>>> failed path normalisation with {}", form);
+                  }
+              }
+
+            log.error("Invalid path, all normalisations failed: {}", string);
+            return Paths.get("broken SEE BMT-46");
+          }
       }
 
     // See http://askubuntu.com/questions/533690/rsync-with-special-character-files-not-working-between-mac-and-linux
