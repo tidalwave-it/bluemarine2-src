@@ -110,23 +110,23 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
                                 final SortCriterion[] orderby)
       throws ContentDirectoryException
       {
-            log.info("browse({}, {}, filter: {}, startingIndex: {}, requestedCount: {}, sortCriteria: {})",
-                     objectId, browseFlag, filter, firstResult, maxResults, orderby);
-            // this repeated log is for capturing test recordings
-            log.trace("browse @@@ {} @@@ {} @@@ {} @@@ {} @@@ {} @@@ {})",
-                     objectId, browseFlag, firstResult, maxResults, filter, orderby);
+        log.info("browse({}, {}, filter: {}, startingIndex: {}, requestedCount: {}, sortCriteria: {})",
+                 objectId, browseFlag, filter, firstResult, maxResults, orderby);
+        // this repeated log is for capturing test recordings
+        log.trace("browse @@@ {} @@@ {} @@@ {} @@@ {} @@@ {} @@@ {})",
+                 objectId, browseFlag, firstResult, maxResults, filter, orderby);
 
-            final BrowseParams params = new BrowseParams(objectId, browseFlag, filter, firstResult, maxResults, orderby);
-            final Object result = cache.computeIfAbsent(params, key ->
-                    computeResult(objectId, browseFlag, filter, firstResult, maxResults, orderby));
+        final BrowseParams params = new BrowseParams(objectId, browseFlag, filter, firstResult, maxResults, orderby);
+        final Object result = cache.computeIfAbsent(params, key ->
+                computeResult(objectId, browseFlag, filter, firstResult, maxResults, orderby));
 
-            if (result instanceof ContentDirectoryException)
-              {
-                throw (ContentDirectoryException)result;
-              }
+        if (result instanceof ContentDirectoryException)
+          {
+            throw (ContentDirectoryException)result;
+          }
 
-            log(">>>> returning", (BrowseResult) result);
-            return (BrowseResult) result;
+        log(">>>> returning", (BrowseResult) result);
+        return (BrowseResult) result;
       }
 
     /*******************************************************************************************************************
@@ -156,6 +156,11 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
                                                            holder.getNumberReturned(),
                                                            holder.getTotalMatches(),
                                                            1); /// FIXME: updateId
+          }
+        catch (ContentDirectoryException e)
+          {
+            log.error("", e);
+            return e;
           }
         catch (Exception e)
           {
