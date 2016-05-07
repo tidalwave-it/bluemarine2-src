@@ -233,8 +233,9 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
                                        final @Nonnull Class<E> entityClass,
                                        final @Nonnull BindingSet bindingSet)
       {
+//        log.trace("createEntity(.., {}, ..)", entityClass.getSimpleName());
 //        log.trace(">>>> bindingSet: {}", bindingSet.getBindingNames());
-        // FIXME
+        // FIXME: use a map
         if (entityClass.equals(String.class))
           {
             return (E)bindingSet.iterator().next().getValue().stringValue();
