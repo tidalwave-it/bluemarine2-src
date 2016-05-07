@@ -165,8 +165,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @Test(dataProvider = "sequences", dependsOnMethods = "test_service_publishing", timeOut = 120000,
-          groups = "no-ci")  // FIXME On Linux fails because of BMT-46
+    @Test(dataProvider = "sequences", dependsOnMethods = "test_service_publishing", timeOut = 120000)
     public void test_sequence (final @Nonnull String clientDeviceName, final @Nonnull String sequenceName)
       throws Throwable
       {

@@ -85,7 +85,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
      * Queries the catalog for the whole data in various ways and dumps the results to check the consistency.
      *
      ******************************************************************************************************************/
-    @Test(dataProvider = "testSetNamesProvider", groups = "no-ci") // FIXME On Linux fails because of BMT-46
+    @Test(dataProvider = "testSetNamesProvider")
     public void must_properly_query_the_whole_catalog_in_various_ways (final @Nonnull String testSetName)
       throws Exception
       {
