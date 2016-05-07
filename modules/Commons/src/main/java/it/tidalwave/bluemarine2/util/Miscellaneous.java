@@ -31,10 +31,11 @@ package it.tidalwave.bluemarine2.util;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nullable;
 import java.text.Normalizer;
+import java.text.Normalizer.Form;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import static java.text.Normalizer.Form.*;
 import static lombok.AccessLevel.PRIVATE;
-import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -45,7 +46,7 @@ import lombok.extern.slf4j.Slf4j;
 @NoArgsConstructor(access = PRIVATE) @Slf4j
 public final class Miscellaneous
   {
-    private static final Normalizer.Form NATIVE_FORM;
+    private static final Form NATIVE_FORM;
 
     static
       {
@@ -76,6 +77,13 @@ public final class Miscellaneous
     @CheckForNull
     public static String normalized (final @Nullable String string)
       {
-        return (string == null) ? null : Normalizer.normalize(string, NATIVE_FORM);
+        return normalized(string, NATIVE_FORM);
+      }
+
+    // See http://askubuntu.com/questions/533690/rsync-with-special-character-files-not-working-between-mac-and-linux
+    @CheckForNull
+    public static String normalized (final @Nullable String string, Form form)
+      {
+        return (string == null) ? null : Normalizer.normalize(string, form);
       }
   }

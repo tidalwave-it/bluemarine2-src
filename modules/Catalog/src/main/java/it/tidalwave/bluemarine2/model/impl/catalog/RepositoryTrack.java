@@ -50,6 +50,8 @@ import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.normalized;
+import java.text.Normalizer.Form;
+import sun.misc.FormattedFloatingDecimal;
 
 /***********************************************************************************************************************
  *
@@ -92,20 +94,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
       {
         super(repository, bindingSet, "track");
 
-        Path thePath = null;
-
-        try // FIXME: see BMT-46 - try all posibile normalizations; hen try utf-8 as an option to /etc/fstab
-          {
-            thePath = Paths.get(normalized(toString(bindingSet.getBinding("path"))));
-          }
-        catch (InvalidPathException e)
-          {
-            log.error("Invalid path {}", e.toString());
-            thePath = Paths.get("broken SEE BMT-46");
-          }
-
-        this.audioFilePath = thePath;
-
+        this.audioFilePath = normalizedPath(toString(bindingSet.getBinding("path")));
         this.duration = toDuration(bindingSet.getBinding("duration"));
         this.trackNumber = toInteger(bindingSet.getBinding("track_number"));
         this.diskNumber = toOptionalInteger(bindingSet.getBinding("disk_number"));
@@ -143,5 +132,33 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
         return String.format("RepositoryTrack(%02d/%02d %02d, %s, rdfs:label=%s, %s, %s)",
                              diskNumber.orElse(1), diskCount.orElse(1),
                              trackNumber, Formatters.format(duration), rdfsLabel, audioFilePath, id);
+      }
+
+    @Nonnull
+    private static Path normalizedPath (final @Nonnull String string)
+      {
+        try
+          {
+            return Paths.get(string);
+          }
+        catch (InvalidPathException e1)
+          {
+            log.trace(">>>> invalid path, now trying normalisation {}", e1.toString());
+
+            for (final Form form : Form.values())
+              {
+                try
+                  {
+                    return Paths.get(normalized(string, form));
+                  }
+                catch (InvalidPathException e2)
+                  {
+                    log.trace(">>>> failed path normalisation with {}", form);
+                  }
+              }
+
+            log.error("Invalid path, all normalisations failed: {}", string);
+            return Paths.get("broken SEE BMT-46");
+          }
       }
   }
