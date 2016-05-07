@@ -15,8 +15,8 @@
     <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-10-SNAPSHOT</version>
-    <name>blueMarine II - UI (JavaFX)</name>
-    <description>blueMarine2 - UI (JavaFX)</description>
+    <name>blueMarine II - UI - JavaFX</name>
+    <description>blueMarine2 - UI - JavaFX</description>
 
     <dependencies>
         <dependency>
