@@ -45,7 +45,7 @@ import org.testng.annotations.Test;
  **********************************************************************************************************************/
 public class AudioMetadataTest
   {
-    @Test(groups = "no-ci") // requires files on my disk
+    @Test(enabled = false, groups = "no-ci") // requires files on my disk
     public void testScan()
       {
         final AudioMetadata am = new AudioMetadata(Paths.get("/Users/fritz/Personal/Music/iTunes/iTunes Music/Music/Compilations/Beethoven Symphonies 1 & 2/01 Beethoven_ Symphonie #1 C-dur op. 21 (1. Adagio molto - Allegro con brio).m4a"));
