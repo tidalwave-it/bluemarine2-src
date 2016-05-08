@@ -86,7 +86,7 @@ public class AudioMetadataFactoryTest
         final Path testSetPath = TestSetLocator.getMusicTestSetsPath().resolve(testSetName);
         return Files.walk(testSetPath, FOLLOW_LINKS)
                     .filter(path -> Files.isRegularFile(path))
-                    .filter(path -> !path.getFileName().startsWith("."))
+                    .filter(path -> !path.getFileName().toString().startsWith(".")) // isHidden() throws exception
                     .map(path -> new Object[] { testSetName, path, testSetPath.relativize(path) })
                     .collect(toList())
                     .toArray(new Object[0][0]);
