@@ -46,6 +46,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
+import org.slf4j.bridge.SLF4JBridgeHandler;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
@@ -77,6 +78,13 @@ public class DefaultMediaScannerTest extends SpringTestSupport
 
     private Persistence persistence;
 
+    static
+      {
+        // Some libraries use JUL
+        SLF4JBridgeHandler.removeHandlersForRootLogger();
+        SLF4JBridgeHandler.install();
+      }
+
     public DefaultMediaScannerTest()
       {
         super("META-INF/DciAutoBeans.xml",
@@ -107,7 +115,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
 
       }
 
-    @Test(dataProvider = "dataSetNames", groups = "no-ci") // FIXME: because of BMT-46
+    @Test(dataProvider = "dataSetNames") // FIXME: because of BMT-46
     public void testScan (final @Nonnull String dataSetName)
       throws Exception
       {

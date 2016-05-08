@@ -32,8 +32,9 @@ import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import javax.inject.Inject;
-import java.util.Optional;
 import java.time.Duration;
+import java.util.Optional;
+import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -43,12 +44,15 @@ import it.tidalwave.bluemarine2.util.Formatters;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
-import java.nio.file.InvalidPathException;
+import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.normalized;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
@@ -60,13 +64,13 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @Configurable @Getter @Slf4j
+@Immutable @Configurable @Slf4j
 public class RepositoryTrack extends RepositoryEntitySupport implements Track, AudioFileSupplier
   {
-    private final Integer trackNumber;
+    private final Optional<Integer> trackNumber;
 
     @Nonnull
-    private final Duration duration;
+    private final Optional<Duration> duration;
 
     @Nonnull
     private final Path audioFilePath;
@@ -87,30 +91,41 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Inject
     private MediaFileSystem fileSystem;
 
+    @Getter
+    private final Metadata metadata;
+
+    private final Optional<Long> fileSize;
+
     public RepositoryTrack (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
         super(repository, bindingSet, "track");
 
         Path thePath = null;
 
-        try // FIXME: see BMT-46
+        try // FIXME: see BMT-46 - try all posibile normalizations; hen try utf-8 as an option to /etc/fstab
           {
-            thePath = Paths.get(toString(bindingSet.getBinding("path")));
+            thePath = Paths.get(normalized(toString(bindingSet.getBinding("path")).get()));
           }
         catch (InvalidPathException e)
           {
             log.error("Invalid path {}", e.toString());
-            thePath = Paths.get("broken");
+            thePath = Paths.get("broken SEE BMT-46");
           }
 
         this.audioFilePath = thePath;
 
         this.duration = toDuration(bindingSet.getBinding("duration"));
         this.trackNumber = toInteger(bindingSet.getBinding("track_number"));
-        this.diskNumber = toOptionalInteger(bindingSet.getBinding("disk_number"));
-        this.diskCount = toOptionalInteger(bindingSet.getBinding("disk_count"));
+        this.diskNumber = toInteger(bindingSet.getBinding("disk_number"));
+        this.diskCount = toInteger(bindingSet.getBinding("disk_count"));
+        this.fileSize = toLong(bindingSet.getBinding("fileSize"));
 //        this.recordRdfsLabel = toString(bindingSet.getBinding("record_label"));
 //        this.trackCount = toInteger(bindingSet.getBinding("track_number")));
+
+        this.metadata = new MetadataSupport(audioFilePath).with(DURATION, duration)
+                                                          .with(TRACK_NUMBER, trackNumber)
+                                                          .with(DISK_NUMBER, diskNumber)
+                                                          .with(DISK_COUNT, diskCount);
       }
 
     @Override @Nonnull
@@ -130,7 +145,8 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
                                                 fileSystem.getRootPath().resolve(audioFilePath),
                                                 audioFilePath,
                                                 duration,
-                                                rdfsLabel);
+                                                rdfsLabel,
+                                                fileSize);
           }
 
         return audioFile;
@@ -140,7 +156,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     public String toString()
       {
         return String.format("RepositoryTrack(%02d/%02d %02d, %s, rdfs:label=%s, %s, %s)",
-                             diskNumber.orElse(1), diskCount.orElse(1),
-                             trackNumber, Formatters.format(duration), rdfsLabel, audioFilePath, id);
+                             diskNumber.orElse(1), diskCount.orElse(1), trackNumber.orElse(1),
+                             duration.map(Formatters::format).orElse("??:??"), rdfsLabel, audioFilePath, id);
       }
   }

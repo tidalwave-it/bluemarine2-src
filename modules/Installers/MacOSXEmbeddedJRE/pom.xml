@@ -40,7 +40,7 @@
 
     <!-- ===============================================================================================================
 
-        This is the "Mac OS X Installer with embedded JRE module" of the project. It generates a Mac OS X application 
+        This is the "Mac OS X Installer with embedded JRE module" of the project. It generates a Mac OS X application
         bundle in form of a dmg.gz file  an embedded JRE.
 
     ================================================================================================================ -->
@@ -49,15 +49,15 @@
     <artifactId>bluemarine2-macosx-embedded-jre</artifactId>
     <version>1.0-ALPHA-10-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine II - Installer, Mac OS X with embedded JRE</name>
+    <name>blueMarine II - Installer - Mac OS X, embedded JRE</name>
     <description>This module creates a Mac OS X application bundle with an embedded JRE.</description>
-    
+
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>    
+            <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>
         </dependency>
-        
+
         <!-- FIXME: why are not brought by transitive dependencies? -->
         <dependency>
             <groupId>ch.qos.logback</groupId>

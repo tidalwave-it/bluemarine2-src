@@ -85,16 +85,17 @@ public abstract class CompositeDIDLAdapterSupport<T extends As8> implements DIDL
                       .max(maxResults)
                       .results()
                       .stream()
-                      .forEach(child -> {
-            try
-              {
-                content.addObject(asDIDLAdapter(child).toObject());
-              }
-            catch (Exception e)
-              {
-                throw new RuntimeException(e);
-              }
-        });
+                      .forEach(child ->
+                        {
+                          try
+                            {
+                              content.addObject(asDIDLAdapter(child).toObject());
+                            }
+                          catch (Exception e)
+                            {
+                              throw new RuntimeException(e);
+                            }
+                        });
                 numberReturned = (int)content.getCount();
                 break;
 

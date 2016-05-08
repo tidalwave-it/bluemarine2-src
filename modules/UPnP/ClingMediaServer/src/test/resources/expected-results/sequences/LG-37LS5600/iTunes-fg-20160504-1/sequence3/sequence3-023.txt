@@ -1,0 +1,83 @@
+Browse({ObjectID=/music/RepositoryBrowserByArtistThenTrack, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=64, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="14" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:4b586be006267f207484c9d3b3e37dc18aefcdd0" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Miguel Sánchez: Alia Música</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="11" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:aea9b063de535b043c67f0988cf4078bb5b969dd" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Mstislav Rostropovich, Benjamin Britten</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="13" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:9520bf3e565c2b7c4f22565f4605fa3860ee58cc" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Neville Marriner: Academy Of St. Martin In The Fields</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="7" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:4d35d7dcadfde3a258dd6409e94032a82b932a68" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Neville Marriner: Staatskapelle Dresden</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="13" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:d2d6b4a9979f22c79f9ab0f61547f42dcc0c654a" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>New York's Ensemble for Early Music - Frederick Renz director</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:d67dd0c7b097a7c4fd7934177626e492eb6b3b91" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Nicola Rescigno/Maria Callas/Orchestre De La Société Des Concerts Du Conservatoire</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:12294f523d0339380a9b6d0a35771d7eb1447951" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Nicola Rescigno/Philharmonia Orchestra/Maria Callas</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:647da5bbd460463f91983450df8bffb27451051f" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Nicolà Rescigno: Paris Conservatory Orchestra</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:3bda5fbfd0c38076b117bfb1e4d86b083c4fabd3" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Nicolà Rescigno: Philharmonia Orchestra</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="25" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:c4b7f779c69c63cbda346ddb2f6c6343d2549856" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Nikolaus Harnoncourt: Concentus Musicus Wien, Arnold Schoenberg Choir</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="11" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Pat Metheny</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="17" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:97315434ec55952a0673e4126848e8cfc6715c73" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Patrizia Bovi&amp;Gilberte Casabianca</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="26" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:0c38ed5b89c985229200e9fd28c7b45076795b1f" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Perosi, Lorenzo</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:1831e8c65bf212f6ae402abacd0668fd67ecf2b9" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Pierre Del Vescovo</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:cf8175e1c8d379728f9ca0c286e2684490300b2a" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Pierre Del Vescovo/Horn, Bamberger Symphoniker/Theodor Gusch</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+    <container childCount="1" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:11c8f71822ae609cd238d64deb828fb6cf3be33e" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+        <dc:title>Pierre Del Vescovo/Horn, Jean Hubeau/Piano</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+</DIDL-Lite>

@@ -1,9 +1,0 @@
-Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_musicbrainz_resource_artist_7daac7f9-8fcc-485f-a14f-f8091d98cf25/http:__dbtune.org_musicbrainz_resource_record_a5e8cd65-ae9a-40de-bb84-cab40402d58b, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=1, SortCriteria=})
-<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <item id="/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_musicbrainz_resource_artist_7daac7f9-8fcc-485f-a14f-f8091d98cf25/http:__dbtune.org_musicbrainz_resource_record_a5e8cd65-ae9a-40de-bb84-cab40402d58b/http:__dbtune.org_musicbrainz_resource_track_30593865-af30-42e3-8338-bcd19734aabe" parentID="/music/RepositoryBrowserByArtistThenRecord/http:__dbtune.org_musicbrainz_resource_artist_7daac7f9-8fcc-485f-a14f-f8091d98cf25/http:__dbtune.org_musicbrainz_resource_record_a5e8cd65-ae9a-40de-bb84-cab40402d58b" restricted="0">
-        <dc:title>Above the Treetops</dc:title>
-        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
-        <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="00:02:44" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Pat+Metheny/Secret+Story/01+Above+The+Treetops.mp3</res>
-    </item>
-</DIDL-Lite>

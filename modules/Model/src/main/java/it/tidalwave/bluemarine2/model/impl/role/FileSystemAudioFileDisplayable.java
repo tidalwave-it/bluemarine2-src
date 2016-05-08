@@ -33,6 +33,7 @@ import it.tidalwave.role.Displayable;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.impl.FileSystemAudioFile;
 import lombok.RequiredArgsConstructor;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.TITLE;
 
 /***********************************************************************************************************************
  *
@@ -44,10 +45,10 @@ import lombok.RequiredArgsConstructor;
 public class FileSystemAudioFileDisplayable implements Displayable
   {
     private final FileSystemAudioFile file;
-    
+
     @Override @Nonnull
-    public String getDisplayName() 
+    public String getDisplayName()
       {
-        return file.getLabel().orElse("???");
+        return file.getMetadata().get(TITLE).orElse("???");
       }
   }

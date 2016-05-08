@@ -1,0 +1,9 @@
+Browse({ObjectID=/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:1d83fe775e3b0c5b7bc865cc24fa21eb3ea485e0, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=1, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <item id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:1d83fe775e3b0c5b7bc865cc24fa21eb3ea485e0/urn:bluemarine:track:10104179248f8ff78b06e6e3ded96192990499d0" parentID="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:1d83fe775e3b0c5b7bc865cc24fa21eb3ea485e0" restricted="0">
+        <dc:title>Bach: Concerto In D Minor For 2 Violins, BWV 1043, "Double" - 1. Vivace</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
+        <res duration="00:04:02" protocolInfo="http-get:*:audio/mpeg:*" size="9685435">http://<server>/Music/Midori%3B+Pinchas+Zukerman_+St.+Paul+Chamber+Orchestra/Bach%3B+Vivaldi_+Concertos+For+2+Violins/01+Bach_+Concerto+In+D+Minor+For+2+Violins%2C+BWV+1043%2C+_Double_+-+1.+Vivace.mp3</res>
+    </item>
+</DIDL-Lite>

@@ -1,9 +1,0 @@
-Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=1, SortCriteria=})
-<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:bb8ce04c6c12a90c5c5b19dc220782a81f706768" parentID="/music/RepositoryBrowserByTrack" restricted="0">
-        <dc:title>Track 01</dc:title>
-        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
-        <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="00:04:54" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Unknown+Artist/Unknown+Album/01+Track+01.m4a</res>
-    </item>
-</DIDL-Lite>
