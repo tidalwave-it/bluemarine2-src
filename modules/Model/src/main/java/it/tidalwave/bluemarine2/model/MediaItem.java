@@ -57,6 +57,8 @@ public interface MediaItem extends EntityWithPath, AudioFileSupplier
      ******************************************************************************************************************/
     public interface Metadata
       {
+        public static final Key<Long> FILE_SIZE = new Key<>("file.size");
+
         public static final Key<Duration> DURATION = new Key<>("mp3.duration");
         public static final Key<Integer> BIT_RATE = new Key<>("mp3.bitRate");
         public static final Key<Integer> SAMPLE_RATE = new Key<>("mp3.sampleRate");
@@ -66,10 +68,14 @@ public interface MediaItem extends EntityWithPath, AudioFileSupplier
         public static final Key<String> TITLE = new Key<>("mp3.title");
         public static final Key<Integer> YEAR = new Key<>("mp3.year");
         public static final Key<String> ALBUM = new Key<>("mp3.album");
-        public static final Key<Integer> TRACK = new Key<>("mp3.track");
+        public static final Key<Integer> TRACK_NUMBER = new Key<>("mp3.trackNumber");
         public static final Key<Integer> DISK_NUMBER = new Key<>("mp3.diskNumber");
         public static final Key<Integer> DISK_COUNT = new Key<>("mp3.diskCount");
         public static final Key<String> COMMENT = new Key<>("mp3.comment");
+        public static final Key<Integer> BITS_PER_SAMPLE = new Key<>("mp3.bitsPerSample");
+        public static final Key<String> FORMAT = new Key<>("mp3.format");
+        public static final Key<String> ENCODING_TYPE = new Key<>("mp3.encodingType");
+        public static final Key<Integer> CHANNELS = new Key<>("mp3.channels");
 
         public static final Key<Id> MBZ_TRACK_ID = new Key<>("mbz.trackId");
         public static final Key<Id> MBZ_WORK_ID = new Key<>("mbz.workId");
@@ -114,6 +120,32 @@ public interface MediaItem extends EntityWithPath, AudioFileSupplier
          **************************************************************************************************************/
         @Nonnull
         public Set<Map.Entry<Key<?>, ?>> getEntries();
+
+        /***************************************************************************************************************
+         *
+         * Returns a clone of this object with an additional value.
+         *
+         * @para        <T>     the value type
+         * @param       key     the key
+         * @param       value   the value
+         * @return              the clone
+         *
+         **************************************************************************************************************/
+        @Nonnull
+        public <T> Metadata with (@Nonnull Key<T> key, T value);
+
+        /***************************************************************************************************************
+         *
+         * Returns a clone of this object with an additional optional value.
+         *
+         * @para        <T>     the value type
+         * @param       key     the key
+         * @param       value   the value
+         * @return              the clone
+         *
+         **************************************************************************************************************/
+        @Nonnull
+        public <T> Metadata with (@Nonnull Key<T> key, Optional<T> value);
     }
 
     /*******************************************************************************************************************

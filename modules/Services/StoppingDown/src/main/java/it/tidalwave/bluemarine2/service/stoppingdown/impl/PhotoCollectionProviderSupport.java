@@ -182,6 +182,8 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
       {
         log.info("downloadXml({})", url);
 
+        url = url.replaceAll("(^.*)\\/([0-9]{2})-([0-9]{2})\\/(.*)$", "$1/$2/$3/$4");
+
         if (url.startsWith("file:") && url.endsWith("/")) // To support local test resources
           {
             url += "/index.xhtml";

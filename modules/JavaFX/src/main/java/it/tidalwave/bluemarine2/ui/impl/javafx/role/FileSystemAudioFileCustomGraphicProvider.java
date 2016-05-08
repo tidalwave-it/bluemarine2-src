@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 
 import javax.annotation.Nonnull;
 import java.time.Duration;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -48,18 +47,18 @@ import static it.tidalwave.bluemarine2.util.Formatters.format;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @DciRole(datumType = FileSystemAudioFile.class) 
+@RequiredArgsConstructor @DciRole(datumType = FileSystemAudioFile.class)
 public class FileSystemAudioFileCustomGraphicProvider implements CustomGraphicProvider
   {
     @Nonnull
     private final FileSystemAudioFile file;
-    
+
     @Override @Nonnull
-    public Node getGraphic() 
+    public Node getGraphic()
       {
         final Label lbIcon = new Label("");
         lbIcon.getStyleClass().setAll("list-cell", "track-icon");
-        final Label lbTrack = new Label(String.format("%d.", file.getMetadata().get(Metadata.TRACK).orElse(0)));
+        final Label lbTrack = new Label(String.format("%d.", file.getMetadata().get(Metadata.TRACK_NUMBER).orElse(0)));
         lbTrack.getStyleClass().setAll("list-cell", "track-index");
         final Label lbName = new Label(file.as(Displayable).getDisplayName());
         lbName.getStyleClass().setAll("list-cell", "track-label");

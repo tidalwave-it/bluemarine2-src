@@ -44,9 +44,9 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.YEAR;
  *
  * The role for an {@link AudioFileSupplier} that is capable to render details upon selection, in the context of
  * {@link DefaultAudioExplorerPresentationControl}.
- * 
+ *
  * @stereotype  Role
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -58,13 +58,13 @@ public class AudioFileDetailRendererSelectable extends DetailRendererSelectable<
       {
         super(audioFileSupplier);
       }
-    
+
     @Override
-    protected void renderDetails() 
+    protected void renderDetails()
       {
         final AudioFile audioFile = this.owner.getAudioFile();
         final MediaItem.Metadata metadata = audioFile.getMetadata();
-        
+
         final String details = String.format("%s\n%s\n%s\n%s\n%s",
             audioFile.findMakers().stream().map(m -> m.as(Displayable).getDisplayName())
                                   .collect(joining(", ", "Artist: ", "")),
@@ -73,7 +73,7 @@ public class AudioFileDetailRendererSelectable extends DetailRendererSelectable<
             metadata.get(BIT_RATE).map(br -> "Bit rate: " + br + " kbps").orElse(""),
             metadata.get(SAMPLE_RATE).map(sr -> String.format("Sample rate: %.1f kHz", sr / 1000.0)).orElse(""),
             metadata.get(YEAR).map(y -> "Year: " + y).orElse(""));
-        
+
         renderDetails(details);
         renderCoverArt(audioFile.getRecord().flatMap(Record::getImageUrl));
       }
