@@ -66,7 +66,7 @@ public interface MediaItem extends EntityWithPath, AudioFileSupplier
         public static final Key<String> TITLE = new Key<>("mp3.title");
         public static final Key<Integer> YEAR = new Key<>("mp3.year");
         public static final Key<String> ALBUM = new Key<>("mp3.album");
-        public static final Key<Integer> TRACK = new Key<>("mp3.track");
+        public static final Key<Integer> TRACK_NUMBER = new Key<>("mp3.trackNumber");
         public static final Key<Integer> DISK_NUMBER = new Key<>("mp3.diskNumber");
         public static final Key<Integer> DISK_COUNT = new Key<>("mp3.diskCount");
         public static final Key<String> COMMENT = new Key<>("mp3.comment");
@@ -127,6 +127,19 @@ public interface MediaItem extends EntityWithPath, AudioFileSupplier
          **************************************************************************************************************/
         @Nonnull
         public <T> Metadata with (@Nonnull Key<T> key, T value);
+
+        /***************************************************************************************************************
+         *
+         * Returns a clone of this object with an additional optional value.
+         *
+         * @para        <T>     the value type
+         * @param       key     the key
+         * @param       value   the value
+         * @return              the clone
+         *
+         **************************************************************************************************************/
+        @Nonnull
+        public <T> Metadata with (@Nonnull Key<T> key, Optional<T> value);
     }
 
     /*******************************************************************************************************************

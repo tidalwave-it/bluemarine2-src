@@ -35,6 +35,7 @@ import it.tidalwave.util.AsException;
 import it.tidalwave.util.DefaultFilterSortCriterion;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
@@ -48,20 +49,21 @@ public class MediaItemComparator extends DefaultFilterSortCriterion<As>
       {
         try
           {
+            // FIXME: use comparators chaining for lambdas
             final MediaItem mi1 = o1.as(MediaItem.class);
             final MediaItem mi2 = o2.as(MediaItem.class);
             final MediaItem.Metadata m1 = mi1.getMetadata();
             final MediaItem.Metadata m2 = mi2.getMetadata();
-            final int d1 = m1.get(MediaItem.Metadata.DISK_NUMBER).orElse(1);
-            final int d2 = m2.get(MediaItem.Metadata.DISK_NUMBER).orElse(1);
-            final int t1 = m1.get(MediaItem.Metadata.TRACK).orElse(0);
-            final int t2 = m2.get(MediaItem.Metadata.TRACK).orElse(0);
+            final int d1 = m1.get(DISK_NUMBER).orElse(1);
+            final int d2 = m2.get(DISK_NUMBER).orElse(1);
+            final int t1 = m1.get(TRACK_NUMBER).orElse(0);
+            final int t2 = m2.get(TRACK_NUMBER).orElse(0);
 
             if (d1 != d2)
               {
                 return d1 - d2;
               }
-            
+
             if (t1 != t2)
               {
                 return t1 - t2;
@@ -70,21 +72,21 @@ public class MediaItemComparator extends DefaultFilterSortCriterion<As>
         catch (AsException e)
           {
           }
-        
+
         return displayName(o1).compareTo(displayName(o2));
       };
-    
-    public MediaItemComparator() 
+
+    public MediaItemComparator()
       {
         super(COMPARATOR, "MediaItemComparator");
       }
-    
+
     @Nonnull
     private static String displayName (final @Nonnull As object)
       {
         try
           {
-            return object.as(Displayable).getDisplayName();  
+            return object.as(Displayable).getDisplayName();
           }
         catch (AsException e)
           {

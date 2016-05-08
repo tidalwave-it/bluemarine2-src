@@ -129,7 +129,8 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
         if (metadata == null)
           {
             // FIXME: this reads from file, it shoudln't
-            metadata = new AudioMetadata(path).with(TITLE, rdfsLabel);
+            metadata = new AudioMetadata(path).with(TITLE, rdfsLabel)
+                                              .with(DURATION, duration);
           }
 
         return metadata;

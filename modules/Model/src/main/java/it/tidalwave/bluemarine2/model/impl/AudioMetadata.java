@@ -86,7 +86,7 @@ public class AudioMetadata extends MetadataSupport
 
             try
               {
-                put(TRACK, Integer.parseInt(tag.getFirst(FieldKey.TRACK)));
+                put(TRACK_NUMBER, Integer.parseInt(tag.getFirst(FieldKey.TRACK)));
               }
             catch (NumberFormatException e)
               {

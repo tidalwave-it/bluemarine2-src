@@ -122,8 +122,20 @@ public class MetadataSupport implements MediaItem.Metadata
     public <T> MediaItem.Metadata with (final @Nonnull Key<T> key, final @Nonnull T value)
       {
         final MetadataSupport clone = new MetadataSupport(path);
+        clone.properties.putAll(this.properties);
         clone.put(key, value);
         return clone;
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDocs}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public <T> MediaItem.Metadata with (final @Nonnull Key<T> key, final @Nonnull Optional<T> value)
+      {
+        return !value.isPresent() ? this : with(key, value.get()); // FIXME: use lambda
       }
 
     /*******************************************************************************************************************

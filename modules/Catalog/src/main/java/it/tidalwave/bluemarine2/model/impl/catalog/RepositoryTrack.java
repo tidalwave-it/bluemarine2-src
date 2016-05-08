@@ -44,12 +44,15 @@ import it.tidalwave.bluemarine2.util.Formatters;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
+import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.normalized;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
@@ -61,7 +64,7 @@ import static it.tidalwave.bluemarine2.util.Miscellaneous.normalized;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @Configurable @Getter @Slf4j
+@Immutable @Configurable @Slf4j
 public class RepositoryTrack extends RepositoryEntitySupport implements Track, AudioFileSupplier
   {
     private final Integer trackNumber;
@@ -88,6 +91,9 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Inject
     private MediaFileSystem fileSystem;
 
+    @Getter
+    private final Metadata metadata;
+
     public RepositoryTrack (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
         super(repository, bindingSet, "track");
@@ -112,6 +118,11 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
         this.diskCount = toOptionalInteger(bindingSet.getBinding("disk_count"));
 //        this.recordRdfsLabel = toString(bindingSet.getBinding("record_label"));
 //        this.trackCount = toInteger(bindingSet.getBinding("track_number")));
+
+        this.metadata = new MetadataSupport(audioFilePath).with(DURATION, duration)
+                                                          .with(TRACK_NUMBER, trackNumber)
+                                                          .with(DISK_NUMBER, diskNumber)
+                                                          .with(DISK_COUNT, diskCount);
       }
 
     @Override @Nonnull

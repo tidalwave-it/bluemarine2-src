@@ -54,14 +54,14 @@ import it.tidalwave.bluemarine2.model.vocabulary.BM;
 import it.tidalwave.bluemarine2.model.vocabulary.MO;
 import it.tidalwave.bluemarine2.model.vocabulary.DbTune;
 import it.tidalwave.bluemarine2.model.vocabulary.Purl;
-import static java.util.Arrays.*;
-import static java.util.Collections.*;
-import static java.util.stream.Collectors.*;
-import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.Arrays.*;
+import static java.util.Collections.*;
+import static java.util.stream.Collectors.*;
+import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 
 /***********************************************************************************************************************
  *
@@ -151,14 +151,14 @@ public class EmbeddedMetadataManager
 
     static
       {
-        TRACK_MAPPER. put(Metadata.TRACK,       v -> new Pair(MO.P_TRACK_NUMBER,    literalFor((int)v)));
-        TRACK_MAPPER. put(Metadata.DISK_NUMBER, v -> new Pair(BM.DISK_NUMBER,       literalFor((int)v)));
-        TRACK_MAPPER. put(Metadata.DISK_COUNT,  v -> new Pair(BM.DISK_COUNT,        literalFor((int)v)));
+        TRACK_MAPPER. put(Metadata.TRACK_NUMBER, v -> new Pair(MO.P_TRACK_NUMBER,    literalFor((int)v)));
+        TRACK_MAPPER. put(Metadata.DISK_NUMBER,  v -> new Pair(BM.DISK_NUMBER,       literalFor((int)v)));
+        TRACK_MAPPER. put(Metadata.DISK_COUNT,   v -> new Pair(BM.DISK_COUNT,        literalFor((int)v)));
 
-        SIGNAL_MAPPER.put(Metadata.SAMPLE_RATE, v -> new Pair(MO.P_SAMPLE_RATE,     literalFor((int)v)));
-        SIGNAL_MAPPER.put(Metadata.BIT_RATE,    v -> new Pair(MO.P_BITS_PER_SAMPLE, literalFor((int)v)));
-        SIGNAL_MAPPER.put(Metadata.DURATION,    v -> new Pair(MO.P_DURATION,
-                                                           literalFor((float)((Duration)v).toMillis())));
+        SIGNAL_MAPPER.put(Metadata.SAMPLE_RATE,  v -> new Pair(MO.P_SAMPLE_RATE,     literalFor((int)v)));
+        SIGNAL_MAPPER.put(Metadata.BIT_RATE,     v -> new Pair(MO.P_BITS_PER_SAMPLE, literalFor((int)v)));
+        SIGNAL_MAPPER.put(Metadata.DURATION,     v -> new Pair(MO.P_DURATION,
+                                                            literalFor((float)((Duration)v).toMillis())));
       }
 
     /*******************************************************************************************************************
