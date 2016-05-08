@@ -2,11 +2,14 @@ Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/13 Haydn_ Symphony #8 In G, H 1_8, _Le Soir_ - 4. Presto, La Tempesta.mp3.Key[mp3.album] = Haydn: Symphonies #6-8
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/13 Haydn_ Symphony #8 In G, H 1_8, _Le Soir_ - 4. Presto, La Tempesta.mp3.Key[mp3.artist] = Neville Marriner: Academy Of St. Martin In The Fields
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/13 Haydn_ Symphony #8 In G, H 1_8, _Le Soir_ - 4. Presto, La Tempesta.mp3.Key[mp3.bitRate] = 320
+Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/13 Haydn_ Symphony #8 In G, H 1_8, _Le Soir_ - 4. Presto, La Tempesta.mp3.Key[mp3.bitsPerSample] = 16
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/13 Haydn_ Symphony #8 In G, H 1_8, _Le Soir_ - 4. Presto, La Tempesta.mp3.Key[mp3.comment] = 0
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/13 Haydn_ Symphony #8 In G, H 1_8, _Le Soir_ - 4. Presto, La Tempesta.mp3.Key[mp3.composer] = Haydn, Franz Joseph/Franz Joseph Haydn
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/13 Haydn_ Symphony #8 In G, H 1_8, _Le Soir_ - 4. Presto, La Tempesta.mp3.Key[mp3.diskCount] = 1
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/13 Haydn_ Symphony #8 In G, H 1_8, _Le Soir_ - 4. Presto, La Tempesta.mp3.Key[mp3.diskNumber] = 1
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/13 Haydn_ Symphony #8 In G, H 1_8, _Le Soir_ - 4. Presto, La Tempesta.mp3.Key[mp3.duration] = PT3M39S
+Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/13 Haydn_ Symphony #8 In G, H 1_8, _Le Soir_ - 4. Presto, La Tempesta.mp3.Key[mp3.encodingType] = mp3
+Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/13 Haydn_ Symphony #8 In G, H 1_8, _Le Soir_ - 4. Presto, La Tempesta.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/13 Haydn_ Symphony #8 In G, H 1_8, _Le Soir_ - 4. Presto, La Tempesta.mp3.Key[mp3.sampleRate] = 44100
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/13 Haydn_ Symphony #8 In G, H 1_8, _Le Soir_ - 4. Presto, La Tempesta.mp3.Key[mp3.title] = Haydn: Symphony #8 In G, H 1/8, "Le Soir" - 4. Presto, La Tempesta
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/13 Haydn_ Symphony #8 In G, H 1_8, _Le Soir_ - 4. Presto, La Tempesta.mp3.Key[mp3.trackNumber] = 13

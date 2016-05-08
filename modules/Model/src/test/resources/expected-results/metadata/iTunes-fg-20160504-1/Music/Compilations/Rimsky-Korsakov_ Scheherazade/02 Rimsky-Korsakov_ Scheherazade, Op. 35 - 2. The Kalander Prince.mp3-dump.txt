@@ -2,11 +2,14 @@ Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazad
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mp3.album] = Rimsky-Korsakov: Scheherazade
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mp3.artist] = Lorin Maazel: Berlin Philharmonic Orchestra
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mp3.bitsPerSample] = 16
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mp3.comment] = 0
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mp3.composer] = Nikolai Rimsky-Korsakov
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mp3.diskCount] = 1
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mp3.diskNumber] = 1
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mp3.duration] = PT11M43S
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mp3.encodingType] = mp3
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mp3.title] = Rimsky-Korsakov: Scheherazade, Op. 35 - 2. The Kalander Prince
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mp3.trackNumber] = 2

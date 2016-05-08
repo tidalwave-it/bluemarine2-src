@@ -2,11 +2,14 @@ Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B F
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mp3.album] = Cherubini: 6 Piano Sonatas
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mp3.artist] = Andrea Bacchetti
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mp3.bitRate] = 320
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mp3.bitsPerSample] = 16
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mp3.comment] = 0
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mp3.composer] = Luigi Cherubini/Luigi Cherubini (1760-1842)
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mp3.diskCount] = 1
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mp3.diskNumber] = 1
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mp3.duration] = PT8M38S
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mp3.encodingType] = mp3
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mp3.sampleRate] = 44100
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mp3.title] = Cherubini: Sonata #3 In B Flat - 1. Allegro Comodo
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mp3.trackNumber] = 5

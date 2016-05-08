@@ -2,11 +2,14 @@ Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_ Suite In G - Chaconne.mp3.Key[mp3.album] = Marais: Pièces À Deux Violes 1686
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_ Suite In G - Chaconne.mp3.Key[mp3.artist] = Smithsonian Chamber Players
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_ Suite In G - Chaconne.mp3.Key[mp3.bitRate] = 320
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_ Suite In G - Chaconne.mp3.Key[mp3.bitsPerSample] = 16
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_ Suite In G - Chaconne.mp3.Key[mp3.comment] = 0
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_ Suite In G - Chaconne.mp3.Key[mp3.composer] = Marin Marais (1656-1728)/Marin Marais
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_ Suite In G - Chaconne.mp3.Key[mp3.diskCount] = 1
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_ Suite In G - Chaconne.mp3.Key[mp3.diskNumber] = 1
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_ Suite In G - Chaconne.mp3.Key[mp3.duration] = PT6M31S
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_ Suite In G - Chaconne.mp3.Key[mp3.encodingType] = mp3
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_ Suite In G - Chaconne.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_ Suite In G - Chaconne.mp3.Key[mp3.sampleRate] = 44100
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_ Suite In G - Chaconne.mp3.Key[mp3.title] = Marais: Suite In G - Chaconne
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_ Suite In G - Chaconne.mp3.Key[mp3.trackNumber] = 17

@@ -2,9 +2,12 @@ Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/06 Impression N
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/06 Impression Nocturna For Strings.mp3.Key[mp3.album] = Mostly French
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/06 Impression Nocturna For Strings.mp3.Key[mp3.artist] = Griffes/Faure/Debussy/Gaos/Saint-Saens/Ravel
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/06 Impression Nocturna For Strings.mp3.Key[mp3.bitRate] = 320
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/06 Impression Nocturna For Strings.mp3.Key[mp3.bitsPerSample] = 16
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/06 Impression Nocturna For Strings.mp3.Key[mp3.comment] = 0
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/06 Impression Nocturna For Strings.mp3.Key[mp3.composer] = 
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/06 Impression Nocturna For Strings.mp3.Key[mp3.duration] = PT11M40S
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/06 Impression Nocturna For Strings.mp3.Key[mp3.encodingType] = mp3
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/06 Impression Nocturna For Strings.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/06 Impression Nocturna For Strings.mp3.Key[mp3.sampleRate] = 44100
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/06 Impression Nocturna For Strings.mp3.Key[mp3.title] = Impression Nocturna For Strings
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/06 Impression Nocturna For Strings.mp3.Key[mp3.trackNumber] = 6

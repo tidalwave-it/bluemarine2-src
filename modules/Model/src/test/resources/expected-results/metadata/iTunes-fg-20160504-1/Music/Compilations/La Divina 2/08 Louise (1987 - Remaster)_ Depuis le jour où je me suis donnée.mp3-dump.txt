@@ -2,11 +2,14 @@ Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où j
 Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mp3.album] = La Divina 2
 Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mp3.artist] = Maria Callas; Georges Prêtre: French National Radio Orchestra
 Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mp3.bitsPerSample] = 16
 Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mp3.comment] = 0
 Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mp3.composer] = Gustave Charpentier
 Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mp3.diskCount] = 1
 Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mp3.diskNumber] = 1
 Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mp3.duration] = PT4M48S
+Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mp3.encodingType] = mp3
+Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mp3.title] = Louise (1987 - Remaster): Depuis le jour où je me suis donnée
 Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mp3.trackNumber] = 8

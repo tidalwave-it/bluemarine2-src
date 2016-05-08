@@ -2,11 +2,14 @@ Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/06 Bach_ Concerto In C
 Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/06 Bach_ Concerto In C For 3 Harpsichords, BWV 1064 - 3. Allegro.mp3.Key[mp3.album] = Bach: Concertos For 3 & 4 Harpsichords
 Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/06 Bach_ Concerto In C For 3 Harpsichords, BWV 1064 - 3. Allegro.mp3.Key[mp3.artist] = Kenneth Gilbert, Lars Ulrik Mortensen; Trevor Pinnock: English Concert
 Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/06 Bach_ Concerto In C For 3 Harpsichords, BWV 1064 - 3. Allegro.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/06 Bach_ Concerto In C For 3 Harpsichords, BWV 1064 - 3. Allegro.mp3.Key[mp3.bitsPerSample] = 16
 Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/06 Bach_ Concerto In C For 3 Harpsichords, BWV 1064 - 3. Allegro.mp3.Key[mp3.comment] = 0
 Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/06 Bach_ Concerto In C For 3 Harpsichords, BWV 1064 - 3. Allegro.mp3.Key[mp3.composer] = Johann Sebastian Bach (1685-1750)/Johann Sebastian Bach
 Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/06 Bach_ Concerto In C For 3 Harpsichords, BWV 1064 - 3. Allegro.mp3.Key[mp3.diskCount] = 1
 Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/06 Bach_ Concerto In C For 3 Harpsichords, BWV 1064 - 3. Allegro.mp3.Key[mp3.diskNumber] = 1
 Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/06 Bach_ Concerto In C For 3 Harpsichords, BWV 1064 - 3. Allegro.mp3.Key[mp3.duration] = PT4M45S
+Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/06 Bach_ Concerto In C For 3 Harpsichords, BWV 1064 - 3. Allegro.mp3.Key[mp3.encodingType] = mp3
+Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/06 Bach_ Concerto In C For 3 Harpsichords, BWV 1064 - 3. Allegro.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/06 Bach_ Concerto In C For 3 Harpsichords, BWV 1064 - 3. Allegro.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/06 Bach_ Concerto In C For 3 Harpsichords, BWV 1064 - 3. Allegro.mp3.Key[mp3.title] = Bach: Concerto In C For 3 Harpsichords, BWV 1064 - 3. Allegro
 Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/06 Bach_ Concerto In C For 3 Harpsichords, BWV 1064 - 3. Allegro.mp3.Key[mp3.trackNumber] = 6

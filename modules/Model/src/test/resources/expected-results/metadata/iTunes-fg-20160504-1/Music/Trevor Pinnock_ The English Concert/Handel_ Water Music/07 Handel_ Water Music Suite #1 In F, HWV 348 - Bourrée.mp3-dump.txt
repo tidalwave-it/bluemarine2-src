@@ -2,11 +2,14 @@ Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/07 Handel_ Water M
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/07 Handel_ Water Music Suite #1 In F, HWV 348 - Bourrée.mp3.Key[mp3.album] = Handel: Water Music
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/07 Handel_ Water Music Suite #1 In F, HWV 348 - Bourrée.mp3.Key[mp3.artist] = Trevor Pinnock: The English Concert
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/07 Handel_ Water Music Suite #1 In F, HWV 348 - Bourrée.mp3.Key[mp3.bitRate] = 320
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/07 Handel_ Water Music Suite #1 In F, HWV 348 - Bourrée.mp3.Key[mp3.bitsPerSample] = 16
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/07 Handel_ Water Music Suite #1 In F, HWV 348 - Bourrée.mp3.Key[mp3.comment] = 0
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/07 Handel_ Water Music Suite #1 In F, HWV 348 - Bourrée.mp3.Key[mp3.composer] = George Frideric Handel
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/07 Handel_ Water Music Suite #1 In F, HWV 348 - Bourrée.mp3.Key[mp3.diskCount] = 1
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/07 Handel_ Water Music Suite #1 In F, HWV 348 - Bourrée.mp3.Key[mp3.diskNumber] = 1
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/07 Handel_ Water Music Suite #1 In F, HWV 348 - Bourrée.mp3.Key[mp3.duration] = PT2M8S
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/07 Handel_ Water Music Suite #1 In F, HWV 348 - Bourrée.mp3.Key[mp3.encodingType] = mp3
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/07 Handel_ Water Music Suite #1 In F, HWV 348 - Bourrée.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/07 Handel_ Water Music Suite #1 In F, HWV 348 - Bourrée.mp3.Key[mp3.sampleRate] = 44100
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/07 Handel_ Water Music Suite #1 In F, HWV 348 - Bourrée.mp3.Key[mp3.title] = Handel: Water Music Suite #1 In F, HWV 348 - Bourrée
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/07 Handel_ Water Music Suite #1 In F, HWV 348 - Bourrée.mp3.Key[mp3.trackNumber] = 7

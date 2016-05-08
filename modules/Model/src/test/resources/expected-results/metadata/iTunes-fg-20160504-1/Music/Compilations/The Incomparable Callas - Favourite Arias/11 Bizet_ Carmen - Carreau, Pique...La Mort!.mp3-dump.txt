@@ -2,11 +2,14 @@ Music/Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - 
 Music/Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - Carreau, Pique...La Mort!.mp3.Key[mp3.album] = The Incomparable Callas - Favourite Arias
 Music/Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - Carreau, Pique...La Mort!.mp3.Key[mp3.artist] = Jane Berbie, Maria Callas, Etc.; Georges Prêtre: Paris Opera Orchestra & Chorus
 Music/Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - Carreau, Pique...La Mort!.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - Carreau, Pique...La Mort!.mp3.Key[mp3.bitsPerSample] = 16
 Music/Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - Carreau, Pique...La Mort!.mp3.Key[mp3.comment] = 0
 Music/Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - Carreau, Pique...La Mort!.mp3.Key[mp3.composer] = Georges Bizet
 Music/Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - Carreau, Pique...La Mort!.mp3.Key[mp3.diskCount] = 1
 Music/Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - Carreau, Pique...La Mort!.mp3.Key[mp3.diskNumber] = 1
 Music/Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - Carreau, Pique...La Mort!.mp3.Key[mp3.duration] = PT3M41S
+Music/Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - Carreau, Pique...La Mort!.mp3.Key[mp3.encodingType] = mp3
+Music/Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - Carreau, Pique...La Mort!.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - Carreau, Pique...La Mort!.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - Carreau, Pique...La Mort!.mp3.Key[mp3.title] = Bizet: Carmen - Carreau, Pique...La Mort!
 Music/Compilations/The Incomparable Callas - Favourite Arias/11 Bizet_ Carmen - Carreau, Pique...La Mort!.mp3.Key[mp3.trackNumber] = 11

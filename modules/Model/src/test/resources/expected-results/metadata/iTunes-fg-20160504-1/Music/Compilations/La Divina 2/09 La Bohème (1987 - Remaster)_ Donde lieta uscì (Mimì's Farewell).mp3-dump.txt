@@ -2,11 +2,14 @@ Music/Compilations/La Divina 2/09 La Bohème (1987 - Remaster)_ Donde lieta usc�
 Music/Compilations/La Divina 2/09 La Bohème (1987 - Remaster)_ Donde lieta uscì (Mimì's Farewell).mp3.Key[mp3.album] = La Divina 2
 Music/Compilations/La Divina 2/09 La Bohème (1987 - Remaster)_ Donde lieta uscì (Mimì's Farewell).mp3.Key[mp3.artist] = Maria Callas, The Philharmonia Orchestra Tullio Serafin
 Music/Compilations/La Divina 2/09 La Bohème (1987 - Remaster)_ Donde lieta uscì (Mimì's Farewell).mp3.Key[mp3.bitRate] = 320
+Music/Compilations/La Divina 2/09 La Bohème (1987 - Remaster)_ Donde lieta uscì (Mimì's Farewell).mp3.Key[mp3.bitsPerSample] = 16
 Music/Compilations/La Divina 2/09 La Bohème (1987 - Remaster)_ Donde lieta uscì (Mimì's Farewell).mp3.Key[mp3.comment] = 0
 Music/Compilations/La Divina 2/09 La Bohème (1987 - Remaster)_ Donde lieta uscì (Mimì's Farewell).mp3.Key[mp3.composer] = Giacomo Puccini
 Music/Compilations/La Divina 2/09 La Bohème (1987 - Remaster)_ Donde lieta uscì (Mimì's Farewell).mp3.Key[mp3.diskCount] = 1
 Music/Compilations/La Divina 2/09 La Bohème (1987 - Remaster)_ Donde lieta uscì (Mimì's Farewell).mp3.Key[mp3.diskNumber] = 1
 Music/Compilations/La Divina 2/09 La Bohème (1987 - Remaster)_ Donde lieta uscì (Mimì's Farewell).mp3.Key[mp3.duration] = PT3M22S
+Music/Compilations/La Divina 2/09 La Bohème (1987 - Remaster)_ Donde lieta uscì (Mimì's Farewell).mp3.Key[mp3.encodingType] = mp3
+Music/Compilations/La Divina 2/09 La Bohème (1987 - Remaster)_ Donde lieta uscì (Mimì's Farewell).mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Compilations/La Divina 2/09 La Bohème (1987 - Remaster)_ Donde lieta uscì (Mimì's Farewell).mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/La Divina 2/09 La Bohème (1987 - Remaster)_ Donde lieta uscì (Mimì's Farewell).mp3.Key[mp3.title] = La Bohème (1987 - Remaster): Donde lieta uscì (Mimì's Farewell)
 Music/Compilations/La Divina 2/09 La Bohème (1987 - Remaster)_ Donde lieta uscì (Mimì's Farewell).mp3.Key[mp3.trackNumber] = 9

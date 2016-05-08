@@ -2,11 +2,14 @@ Music/Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Min
 Music/Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3.Key[mp3.album] = Brahms: Symphony #4 In E Minor, Op. 98
 Music/Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3.Key[mp3.artist] = Carlos Kleiber: Vienna Philharmonic Orchestra
 Music/Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3.Key[mp3.bitRate] = 320
+Music/Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3.Key[mp3.bitsPerSample] = 16
 Music/Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3.Key[mp3.comment] = 0
 Music/Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3.Key[mp3.composer] = Brahms Johannes (1833-1897)/Johannes Brahms
 Music/Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3.Key[mp3.diskCount] = 1
 Music/Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3.Key[mp3.diskNumber] = 1
 Music/Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3.Key[mp3.duration] = PT6M6S
+Music/Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3.Key[mp3.encodingType] = mp3
+Music/Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3.Key[mp3.sampleRate] = 44100
 Music/Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3.Key[mp3.title] = Brahms: Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso
 Music/Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3.Key[mp3.trackNumber] = 3

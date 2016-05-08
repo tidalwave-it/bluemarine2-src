@@ -2,11 +2,14 @@ Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Pr
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.album] = Ravel: Gaspard De La Nuit; Prokofiev: Piano Sonata #6
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.artist] = Ivo Pogorelich
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.bitRate] = 320
+Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.bitsPerSample] = 16
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.comment] = 0
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.composer] = Sergei Prokofiev
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.diskCount] = 1
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.diskNumber] = 1
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.duration] = PT4M45S
+Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.encodingType] = mp3
+Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.sampleRate] = 44100
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.title] = Prokofiev: Piano Sonata #6 In A, Op. 82 - 2. Allegretto
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.trackNumber] = 5

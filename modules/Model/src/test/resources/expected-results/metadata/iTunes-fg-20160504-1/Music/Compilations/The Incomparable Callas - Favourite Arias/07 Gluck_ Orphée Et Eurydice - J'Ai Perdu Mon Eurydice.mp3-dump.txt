@@ -2,11 +2,14 @@ Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée E
 Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mp3.album] = The Incomparable Callas - Favourite Arias
 Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mp3.artist] = Maria Callas; Georges Prêtre: Orchestre National De L'ORTF
 Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mp3.bitsPerSample] = 16
 Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mp3.comment] = 0
 Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mp3.composer] = Christoph Willibald Von Gluck
 Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mp3.diskCount] = 1
 Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mp3.diskNumber] = 1
 Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mp3.duration] = PT4M23S
+Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mp3.encodingType] = mp3
+Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mp3.title] = Gluck: Orphée Et Eurydice - J'Ai Perdu Mon Eurydice
 Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mp3.trackNumber] = 7

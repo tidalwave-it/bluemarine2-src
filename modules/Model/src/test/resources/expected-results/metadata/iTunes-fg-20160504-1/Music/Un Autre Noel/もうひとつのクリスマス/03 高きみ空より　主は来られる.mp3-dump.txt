@@ -2,11 +2,14 @@ Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　�
 Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mp3.album] = もうひとつのクリスマス
 Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mp3.artist] = Un Autre Noel
 Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mp3.bitRate] = 320
+Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mp3.bitsPerSample] = 16
 Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mp3.comment] = 0
 Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mp3.composer] = 
 Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mp3.diskCount] = 1
 Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mp3.diskNumber] = 1
 Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mp3.duration] = PT6M50S
+Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mp3.encodingType] = mp3
+Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mp3.sampleRate] = 44100
 Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mp3.title] = 高きみ空より　主は来られる
 Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mp3.trackNumber] = 3

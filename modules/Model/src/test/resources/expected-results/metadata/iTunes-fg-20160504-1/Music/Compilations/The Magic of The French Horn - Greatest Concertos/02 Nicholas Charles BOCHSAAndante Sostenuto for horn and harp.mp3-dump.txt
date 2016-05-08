@@ -2,11 +2,14 @@ Music/Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas Charles BOCHSAAndante Sostenuto for horn and harp.mp3.Key[mp3.album] = The Magic of The French Horn - Greatest Concertos
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas Charles BOCHSAAndante Sostenuto for horn and harp.mp3.Key[mp3.artist] = Georges Barboteu/Horn, Lily Laskine/Harp, Jean-Francois Pail
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas Charles BOCHSAAndante Sostenuto for horn and harp.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas Charles BOCHSAAndante Sostenuto for horn and harp.mp3.Key[mp3.bitsPerSample] = 16
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas Charles BOCHSAAndante Sostenuto for horn and harp.mp3.Key[mp3.comment] = 0
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas Charles BOCHSAAndante Sostenuto for horn and harp.mp3.Key[mp3.composer] = Nicholas Charles Bochsa (1789-1856)
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas Charles BOCHSAAndante Sostenuto for horn and harp.mp3.Key[mp3.diskCount] = 1
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas Charles BOCHSAAndante Sostenuto for horn and harp.mp3.Key[mp3.diskNumber] = 1
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas Charles BOCHSAAndante Sostenuto for horn and harp.mp3.Key[mp3.duration] = PT5M14S
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas Charles BOCHSAAndante Sostenuto for horn and harp.mp3.Key[mp3.encodingType] = mp3
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas Charles BOCHSAAndante Sostenuto for horn and harp.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas Charles BOCHSAAndante Sostenuto for horn and harp.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas Charles BOCHSAAndante Sostenuto for horn and harp.mp3.Key[mp3.title] = Nicholas Charles BOCHSAAndante Sostenuto for horn and harp
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas Charles BOCHSAAndante Sostenuto for horn and harp.mp3.Key[mp3.trackNumber] = 2

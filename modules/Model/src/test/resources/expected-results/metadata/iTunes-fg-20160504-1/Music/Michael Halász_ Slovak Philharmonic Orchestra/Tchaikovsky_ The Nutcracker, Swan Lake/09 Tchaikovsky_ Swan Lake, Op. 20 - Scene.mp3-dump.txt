@@ -2,11 +2,14 @@ Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker
 Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/09 Tchaikovsky_ Swan Lake, Op. 20 - Scene.mp3.Key[mp3.album] = Tchaikovsky: The Nutcracker, Swan Lake
 Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/09 Tchaikovsky_ Swan Lake, Op. 20 - Scene.mp3.Key[mp3.artist] = Michael Halász: Slovak Philharmonic Orchestra
 Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/09 Tchaikovsky_ Swan Lake, Op. 20 - Scene.mp3.Key[mp3.bitRate] = 320
+Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/09 Tchaikovsky_ Swan Lake, Op. 20 - Scene.mp3.Key[mp3.bitsPerSample] = 16
 Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/09 Tchaikovsky_ Swan Lake, Op. 20 - Scene.mp3.Key[mp3.comment] = 0
 Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/09 Tchaikovsky_ Swan Lake, Op. 20 - Scene.mp3.Key[mp3.composer] = Tchaikovsky/Peter Ilyich Tchaikovsky
 Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/09 Tchaikovsky_ Swan Lake, Op. 20 - Scene.mp3.Key[mp3.diskCount] = 1
 Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/09 Tchaikovsky_ Swan Lake, Op. 20 - Scene.mp3.Key[mp3.diskNumber] = 1
 Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/09 Tchaikovsky_ Swan Lake, Op. 20 - Scene.mp3.Key[mp3.duration] = PT2M36S
+Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/09 Tchaikovsky_ Swan Lake, Op. 20 - Scene.mp3.Key[mp3.encodingType] = mp3
+Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/09 Tchaikovsky_ Swan Lake, Op. 20 - Scene.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/09 Tchaikovsky_ Swan Lake, Op. 20 - Scene.mp3.Key[mp3.sampleRate] = 44100
 Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/09 Tchaikovsky_ Swan Lake, Op. 20 - Scene.mp3.Key[mp3.title] = Tchaikovsky: Swan Lake, Op. 20 - Scene
 Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/09 Tchaikovsky_ Swan Lake, Op. 20 - Scene.mp3.Key[mp3.trackNumber] = 9

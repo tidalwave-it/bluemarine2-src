@@ -2,11 +2,14 @@ Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gr
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.album] = Las Mejores Obras Del Canto Gregoriano [Disc 2]
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.artist] = Benedictine Monks Of Santo Domingo De Silos
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.bitRate] = 320
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.bitsPerSample] = 16
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.comment] = 0
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.composer] = Traditional/Anonymous
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.diskCount] = 4
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.diskNumber] = 2
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.duration] = PT2M57S
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.encodingType] = mp3
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.sampleRate] = 44100
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.title] = Anon: Nos Autem
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.trackNumber] = 1

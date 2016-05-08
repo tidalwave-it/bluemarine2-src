@@ -2,11 +2,14 @@ Music/Compilations/La Divina 2/15 Adriana Lecouvreur (1986 - Remaster)_ Ecco_ re
 Music/Compilations/La Divina 2/15 Adriana Lecouvreur (1986 - Remaster)_ Ecco_ respiro appena...Io son l'umile ancella.mp3.Key[mp3.album] = La Divina 2
 Music/Compilations/La Divina 2/15 Adriana Lecouvreur (1986 - Remaster)_ Ecco_ respiro appena...Io son l'umile ancella.mp3.Key[mp3.artist] = Maria Callas
 Music/Compilations/La Divina 2/15 Adriana Lecouvreur (1986 - Remaster)_ Ecco_ respiro appena...Io son l'umile ancella.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/La Divina 2/15 Adriana Lecouvreur (1986 - Remaster)_ Ecco_ respiro appena...Io son l'umile ancella.mp3.Key[mp3.bitsPerSample] = 16
 Music/Compilations/La Divina 2/15 Adriana Lecouvreur (1986 - Remaster)_ Ecco_ respiro appena...Io son l'umile ancella.mp3.Key[mp3.comment] = 0
 Music/Compilations/La Divina 2/15 Adriana Lecouvreur (1986 - Remaster)_ Ecco_ respiro appena...Io son l'umile ancella.mp3.Key[mp3.composer] = Francesco Cilèa
 Music/Compilations/La Divina 2/15 Adriana Lecouvreur (1986 - Remaster)_ Ecco_ respiro appena...Io son l'umile ancella.mp3.Key[mp3.diskCount] = 1
 Music/Compilations/La Divina 2/15 Adriana Lecouvreur (1986 - Remaster)_ Ecco_ respiro appena...Io son l'umile ancella.mp3.Key[mp3.diskNumber] = 1
 Music/Compilations/La Divina 2/15 Adriana Lecouvreur (1986 - Remaster)_ Ecco_ respiro appena...Io son l'umile ancella.mp3.Key[mp3.duration] = PT3M47S
+Music/Compilations/La Divina 2/15 Adriana Lecouvreur (1986 - Remaster)_ Ecco_ respiro appena...Io son l'umile ancella.mp3.Key[mp3.encodingType] = mp3
+Music/Compilations/La Divina 2/15 Adriana Lecouvreur (1986 - Remaster)_ Ecco_ respiro appena...Io son l'umile ancella.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Compilations/La Divina 2/15 Adriana Lecouvreur (1986 - Remaster)_ Ecco_ respiro appena...Io son l'umile ancella.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/La Divina 2/15 Adriana Lecouvreur (1986 - Remaster)_ Ecco_ respiro appena...Io son l'umile ancella.mp3.Key[mp3.title] = Adriana Lecouvreur (1986 - Remaster): Ecco: respiro appena...Io son l'umile ancella
 Music/Compilations/La Divina 2/15 Adriana Lecouvreur (1986 - Remaster)_ Ecco_ respiro appena...Io son l'umile ancella.mp3.Key[mp3.trackNumber] = 15

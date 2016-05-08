@@ -2,11 +2,14 @@ Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/15 Sonata in G minor,
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/15 Sonata in G minor, RV 42.mp3.Key[mp3.album] = Vivaldi: Musica da camera e da chiesa
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/15 Sonata in G minor, RV 42.mp3.Key[mp3.artist] = London Baroque
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/15 Sonata in G minor, RV 42.mp3.Key[mp3.bitRate] = 320
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/15 Sonata in G minor, RV 42.mp3.Key[mp3.bitsPerSample] = 16
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/15 Sonata in G minor, RV 42.mp3.Key[mp3.comment] = 0
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/15 Sonata in G minor, RV 42.mp3.Key[mp3.composer] = Antonio Vivaldi
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/15 Sonata in G minor, RV 42.mp3.Key[mp3.diskCount] = 1
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/15 Sonata in G minor, RV 42.mp3.Key[mp3.diskNumber] = 1
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/15 Sonata in G minor, RV 42.mp3.Key[mp3.duration] = PT2M55S
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/15 Sonata in G minor, RV 42.mp3.Key[mp3.encodingType] = mp3
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/15 Sonata in G minor, RV 42.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/15 Sonata in G minor, RV 42.mp3.Key[mp3.sampleRate] = 44100
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/15 Sonata in G minor, RV 42.mp3.Key[mp3.title] = Sonata in G minor, RV 42
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/15 Sonata in G minor, RV 42.mp3.Key[mp3.trackNumber] = 15

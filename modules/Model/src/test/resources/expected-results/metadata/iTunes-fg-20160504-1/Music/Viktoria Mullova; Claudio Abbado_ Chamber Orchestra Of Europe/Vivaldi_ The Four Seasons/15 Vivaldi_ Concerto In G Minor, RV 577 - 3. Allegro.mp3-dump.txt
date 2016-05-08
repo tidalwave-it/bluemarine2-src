@@ -2,11 +2,14 @@ Music/Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The
 Music/Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/15 Vivaldi_ Concerto In G Minor, RV 577 - 3. Allegro.mp3.Key[mp3.album] = Vivaldi: The Four Seasons
 Music/Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/15 Vivaldi_ Concerto In G Minor, RV 577 - 3. Allegro.mp3.Key[mp3.artist] = Viktoria Mullova; Claudio Abbado: Chamber Orchestra Of Europe
 Music/Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/15 Vivaldi_ Concerto In G Minor, RV 577 - 3. Allegro.mp3.Key[mp3.bitRate] = 320
+Music/Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/15 Vivaldi_ Concerto In G Minor, RV 577 - 3. Allegro.mp3.Key[mp3.bitsPerSample] = 16
 Music/Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/15 Vivaldi_ Concerto In G Minor, RV 577 - 3. Allegro.mp3.Key[mp3.comment] = 0
 Music/Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/15 Vivaldi_ Concerto In G Minor, RV 577 - 3. Allegro.mp3.Key[mp3.composer] = Antonio Vivaldi (1678-1741)/Antonio Vivaldi
 Music/Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/15 Vivaldi_ Concerto In G Minor, RV 577 - 3. Allegro.mp3.Key[mp3.diskCount] = 1
 Music/Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/15 Vivaldi_ Concerto In G Minor, RV 577 - 3. Allegro.mp3.Key[mp3.diskNumber] = 1
 Music/Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/15 Vivaldi_ Concerto In G Minor, RV 577 - 3. Allegro.mp3.Key[mp3.duration] = PT3M38S
+Music/Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/15 Vivaldi_ Concerto In G Minor, RV 577 - 3. Allegro.mp3.Key[mp3.encodingType] = mp3
+Music/Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/15 Vivaldi_ Concerto In G Minor, RV 577 - 3. Allegro.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/15 Vivaldi_ Concerto In G Minor, RV 577 - 3. Allegro.mp3.Key[mp3.sampleRate] = 44100
 Music/Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/15 Vivaldi_ Concerto In G Minor, RV 577 - 3. Allegro.mp3.Key[mp3.title] = Vivaldi: Concerto In G Minor, RV 577 - 3. Allegro
 Music/Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/15 Vivaldi_ Concerto In G Minor, RV 577 - 3. Allegro.mp3.Key[mp3.trackNumber] = 15

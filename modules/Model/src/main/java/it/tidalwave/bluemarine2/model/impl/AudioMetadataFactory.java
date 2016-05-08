@@ -32,6 +32,9 @@ import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.io.IOException;
@@ -46,15 +49,13 @@ import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
 import it.tidalwave.util.Id;
+import it.tidalwave.util.Key;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static lombok.AccessLevel.PRIVATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import it.tidalwave.util.Key;
-import java.util.Arrays;
-import java.util.List;
 
 /***********************************************************************************************************************
  *
@@ -87,6 +88,10 @@ public final class AudioMetadataFactory
             metadata = metadata.with(DURATION, Duration.ofSeconds(header.getTrackLength()));
             metadata = metadata.with(BIT_RATE, (int)header.getBitRateAsNumber());
             metadata = metadata.with(SAMPLE_RATE, header.getSampleRateAsNumber());
+            metadata = metadata.with(BITS_PER_SAMPLE, header.getBitsPerSample());
+            metadata = metadata.with(CHANNELS, parseOptionalInt(header.getChannels()));
+            metadata = metadata.with(FORMAT, Optional.ofNullable(header.getFormat()));
+            metadata = metadata.with(ENCODING_TYPE, Optional.ofNullable(header.getEncodingType()));
 
             final Tag tag = audioFile.getTag(); // FIXME: getFirst below... should get all
             metadata = metadata.with(ARTIST, tag.getFirst(FieldKey.ARTIST));
@@ -189,6 +194,19 @@ public final class AudioMetadataFactory
           }
 
         return metadata;
+      }
+
+    @Nonnull
+    private static Optional<Integer> parseOptionalInt (final @Nullable String string)
+      {
+        try
+          {
+            return Optional.of(Integer.parseInt(string));
+          }
+        catch (NumberFormatException e)
+          {
+            return Optional.empty();
+          }
       }
 
     @CheckForNull

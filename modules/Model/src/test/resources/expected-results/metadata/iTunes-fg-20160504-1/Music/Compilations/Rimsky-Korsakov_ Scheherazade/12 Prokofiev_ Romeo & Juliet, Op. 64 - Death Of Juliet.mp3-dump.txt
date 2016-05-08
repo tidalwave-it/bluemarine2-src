@@ -2,11 +2,14 @@ Music/Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, O
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, Op. 64 - Death Of Juliet.mp3.Key[mp3.album] = Rimsky-Korsakov: Scheherazade
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, Op. 64 - Death Of Juliet.mp3.Key[mp3.artist] = Seiji Ozawa: Boston Symphony Orchestra
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, Op. 64 - Death Of Juliet.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, Op. 64 - Death Of Juliet.mp3.Key[mp3.bitsPerSample] = 16
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, Op. 64 - Death Of Juliet.mp3.Key[mp3.comment] = 0
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, Op. 64 - Death Of Juliet.mp3.Key[mp3.composer] = Sergei Prokofiev
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, Op. 64 - Death Of Juliet.mp3.Key[mp3.diskCount] = 1
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, Op. 64 - Death Of Juliet.mp3.Key[mp3.diskNumber] = 1
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, Op. 64 - Death Of Juliet.mp3.Key[mp3.duration] = PT4M27S
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, Op. 64 - Death Of Juliet.mp3.Key[mp3.encodingType] = mp3
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, Op. 64 - Death Of Juliet.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, Op. 64 - Death Of Juliet.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, Op. 64 - Death Of Juliet.mp3.Key[mp3.title] = Prokofiev: Romeo & Juliet, Op. 64 - Death Of Juliet
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, Op. 64 - Death Of Juliet.mp3.Key[mp3.trackNumber] = 12

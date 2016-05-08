@@ -2,11 +2,14 @@ Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/01 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 1. Adagio, Allegro.mp3.Key[mp3.album] = Haydn: Symphonies #6-8
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/01 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 1. Adagio, Allegro.mp3.Key[mp3.artist] = Neville Marriner: Academy Of St. Martin In The Fields
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/01 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 1. Adagio, Allegro.mp3.Key[mp3.bitRate] = 320
+Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/01 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 1. Adagio, Allegro.mp3.Key[mp3.bitsPerSample] = 16
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/01 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 1. Adagio, Allegro.mp3.Key[mp3.comment] = 0
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/01 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 1. Adagio, Allegro.mp3.Key[mp3.composer] = Haydn, Franz Joseph/Franz Joseph Haydn
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/01 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 1. Adagio, Allegro.mp3.Key[mp3.diskCount] = 1
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/01 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 1. Adagio, Allegro.mp3.Key[mp3.diskNumber] = 1
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/01 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 1. Adagio, Allegro.mp3.Key[mp3.duration] = PT4M7S
+Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/01 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 1. Adagio, Allegro.mp3.Key[mp3.encodingType] = mp3
+Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/01 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 1. Adagio, Allegro.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/01 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 1. Adagio, Allegro.mp3.Key[mp3.sampleRate] = 44100
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/01 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 1. Adagio, Allegro.mp3.Key[mp3.title] = Haydn: Symphony #6 In D, H 1/6, "Le Matin" - 1. Adagio, Allegro
 Music/Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/01 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 1. Adagio, Allegro.mp3.Key[mp3.trackNumber] = 1

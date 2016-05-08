@@ -2,11 +2,14 @@ Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B 
 Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.mp3.Key[mp3.album] = Bach: Mass In B Minor, BWV 232 [Disc 1]
 Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.mp3.Key[mp3.artist] = Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt: Concentus Musicus Wien, Arnold Schoenberg Choir
 Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.mp3.Key[mp3.bitsPerSample] = 16
 Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.mp3.Key[mp3.comment] = 0
 Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.mp3.Key[mp3.composer] = Bach, Johann Sebastian (1685-1750)/Johann Sebastian Bach
 Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.mp3.Key[mp3.diskCount] = 2
 Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.mp3.Key[mp3.diskNumber] = 1
 Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.mp3.Key[mp3.duration] = PT4M18S
+Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.mp3.Key[mp3.encodingType] = mp3
+Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.mp3.Key[mp3.title] = Bach: Mass In B Minor, BWV 232 - Gloria: Cum Sancto Spiritu
 Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.mp3.Key[mp3.trackNumber] = 11

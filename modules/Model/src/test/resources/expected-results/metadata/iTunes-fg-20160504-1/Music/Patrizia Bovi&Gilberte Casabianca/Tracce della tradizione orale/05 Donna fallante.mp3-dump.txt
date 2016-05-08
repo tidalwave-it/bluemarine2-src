@@ -2,11 +2,14 @@ Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/05 Donna f
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/05 Donna fallante.mp3.Key[mp3.album] = Tracce della tradizione orale
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/05 Donna fallante.mp3.Key[mp3.artist] = Patrizia Bovi&Gilberte Casabianca
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/05 Donna fallante.mp3.Key[mp3.bitRate] = 320
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/05 Donna fallante.mp3.Key[mp3.bitsPerSample] = 16
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/05 Donna fallante.mp3.Key[mp3.comment] = 0
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/05 Donna fallante.mp3.Key[mp3.composer] = 
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/05 Donna fallante.mp3.Key[mp3.diskCount] = 1
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/05 Donna fallante.mp3.Key[mp3.diskNumber] = 1
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/05 Donna fallante.mp3.Key[mp3.duration] = PT6M35S
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/05 Donna fallante.mp3.Key[mp3.encodingType] = mp3
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/05 Donna fallante.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/05 Donna fallante.mp3.Key[mp3.sampleRate] = 44100
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/05 Donna fallante.mp3.Key[mp3.title] = Donna fallante
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/05 Donna fallante.mp3.Key[mp3.trackNumber] = 5

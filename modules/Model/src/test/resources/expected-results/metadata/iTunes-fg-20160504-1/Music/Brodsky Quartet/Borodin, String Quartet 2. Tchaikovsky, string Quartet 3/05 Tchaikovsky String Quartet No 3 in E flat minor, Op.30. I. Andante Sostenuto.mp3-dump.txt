@@ -2,11 +2,14 @@ Music/Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/0
 Music/Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/05 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. I. Andante Sostenuto.mp3.Key[mp3.album] = Borodin, String Quartet 2. Tchaikovsky, string Quartet 3
 Music/Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/05 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. I. Andante Sostenuto.mp3.Key[mp3.artist] = Brodsky Quartet
 Music/Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/05 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. I. Andante Sostenuto.mp3.Key[mp3.bitRate] = 320
+Music/Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/05 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. I. Andante Sostenuto.mp3.Key[mp3.bitsPerSample] = 16
 Music/Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/05 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. I. Andante Sostenuto.mp3.Key[mp3.comment] = 0
 Music/Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/05 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. I. Andante Sostenuto.mp3.Key[mp3.composer] = Piotr Ilyich Tchaikovsky (1840-1893)
 Music/Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/05 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. I. Andante Sostenuto.mp3.Key[mp3.diskCount] = 1
 Music/Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/05 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. I. Andante Sostenuto.mp3.Key[mp3.diskNumber] = 1
 Music/Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/05 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. I. Andante Sostenuto.mp3.Key[mp3.duration] = PT16M5S
+Music/Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/05 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. I. Andante Sostenuto.mp3.Key[mp3.encodingType] = mp3
+Music/Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/05 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. I. Andante Sostenuto.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/05 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. I. Andante Sostenuto.mp3.Key[mp3.sampleRate] = 44100
 Music/Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/05 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. I. Andante Sostenuto.mp3.Key[mp3.title] = Tchaikovsky String Quartet No 3 in E flat minor, Op.30. I. Andante Sostenuto
 Music/Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/05 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. I. Andante Sostenuto.mp3.Key[mp3.trackNumber] = 5

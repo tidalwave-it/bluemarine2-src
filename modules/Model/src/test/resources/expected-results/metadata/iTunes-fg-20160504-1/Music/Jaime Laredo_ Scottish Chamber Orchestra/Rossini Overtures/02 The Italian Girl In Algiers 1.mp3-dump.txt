@@ -2,9 +2,12 @@ Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian 
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers 1.mp3.Key[mp3.album] = Rossini Overtures
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers 1.mp3.Key[mp3.artist] = Jaime Laredo: Scottish Chamber Orchestra
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers 1.mp3.Key[mp3.bitRate] = 320
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers 1.mp3.Key[mp3.bitsPerSample] = 16
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers 1.mp3.Key[mp3.comment] = 0
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers 1.mp3.Key[mp3.composer] = Gioacchino Antonio Rossini
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers 1.mp3.Key[mp3.duration] = PT8M
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers 1.mp3.Key[mp3.encodingType] = mp3
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers 1.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers 1.mp3.Key[mp3.sampleRate] = 44100
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers 1.mp3.Key[mp3.title] = The Italian Girl In Algiers
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers 1.mp3.Key[mp3.trackNumber] = 2

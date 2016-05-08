@@ -2,11 +2,14 @@ Music/Compilations/La Divina 2/14 La Sonnambula (1987 - Remaster)_ Compagne, tem
 Music/Compilations/La Divina 2/14 La Sonnambula (1987 - Remaster)_ Compagne, temiri amici ....Come per me sereno.mp3.Key[mp3.album] = La Divina 2
 Music/Compilations/La Divina 2/14 La Sonnambula (1987 - Remaster)_ Compagne, temiri amici ....Come per me sereno.mp3.Key[mp3.artist] = Maria Callas
 Music/Compilations/La Divina 2/14 La Sonnambula (1987 - Remaster)_ Compagne, temiri amici ....Come per me sereno.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/La Divina 2/14 La Sonnambula (1987 - Remaster)_ Compagne, temiri amici ....Come per me sereno.mp3.Key[mp3.bitsPerSample] = 16
 Music/Compilations/La Divina 2/14 La Sonnambula (1987 - Remaster)_ Compagne, temiri amici ....Come per me sereno.mp3.Key[mp3.comment] = 0
 Music/Compilations/La Divina 2/14 La Sonnambula (1987 - Remaster)_ Compagne, temiri amici ....Come per me sereno.mp3.Key[mp3.composer] = Vincenzo Bellini
 Music/Compilations/La Divina 2/14 La Sonnambula (1987 - Remaster)_ Compagne, temiri amici ....Come per me sereno.mp3.Key[mp3.diskCount] = 1
 Music/Compilations/La Divina 2/14 La Sonnambula (1987 - Remaster)_ Compagne, temiri amici ....Come per me sereno.mp3.Key[mp3.diskNumber] = 1
 Music/Compilations/La Divina 2/14 La Sonnambula (1987 - Remaster)_ Compagne, temiri amici ....Come per me sereno.mp3.Key[mp3.duration] = PT5M48S
+Music/Compilations/La Divina 2/14 La Sonnambula (1987 - Remaster)_ Compagne, temiri amici ....Come per me sereno.mp3.Key[mp3.encodingType] = mp3
+Music/Compilations/La Divina 2/14 La Sonnambula (1987 - Remaster)_ Compagne, temiri amici ....Come per me sereno.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Compilations/La Divina 2/14 La Sonnambula (1987 - Remaster)_ Compagne, temiri amici ....Come per me sereno.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/La Divina 2/14 La Sonnambula (1987 - Remaster)_ Compagne, temiri amici ....Come per me sereno.mp3.Key[mp3.title] = La Sonnambula (1987 - Remaster): Compagne, temiri amici ....Come per me sereno
 Music/Compilations/La Divina 2/14 La Sonnambula (1987 - Remaster)_ Compagne, temiri amici ....Come per me sereno.mp3.Key[mp3.trackNumber] = 14

@@ -2,11 +2,14 @@ Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-01 Mendelssohn_ Paulus, Op. 36
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-01 Mendelssohn_ Paulus, Op. 36 - Ouvertüre.mp3.Key[mp3.album] = Mendelssohn: Paulus [Disc 1]
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-01 Mendelssohn_ Paulus, Op. 36 - Ouvertüre.mp3.Key[mp3.artist] = Kurt Masur: Leipzig Gewandhaus Orchestra
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-01 Mendelssohn_ Paulus, Op. 36 - Ouvertüre.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-01 Mendelssohn_ Paulus, Op. 36 - Ouvertüre.mp3.Key[mp3.bitsPerSample] = 16
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-01 Mendelssohn_ Paulus, Op. 36 - Ouvertüre.mp3.Key[mp3.comment] = 0
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-01 Mendelssohn_ Paulus, Op. 36 - Ouvertüre.mp3.Key[mp3.composer] = Mendelssohn, Felix/Felix Mendelssohn
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-01 Mendelssohn_ Paulus, Op. 36 - Ouvertüre.mp3.Key[mp3.diskCount] = 2
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-01 Mendelssohn_ Paulus, Op. 36 - Ouvertüre.mp3.Key[mp3.diskNumber] = 1
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-01 Mendelssohn_ Paulus, Op. 36 - Ouvertüre.mp3.Key[mp3.duration] = PT6M2S
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-01 Mendelssohn_ Paulus, Op. 36 - Ouvertüre.mp3.Key[mp3.encodingType] = mp3
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-01 Mendelssohn_ Paulus, Op. 36 - Ouvertüre.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-01 Mendelssohn_ Paulus, Op. 36 - Ouvertüre.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-01 Mendelssohn_ Paulus, Op. 36 - Ouvertüre.mp3.Key[mp3.title] = Mendelssohn: Paulus, Op. 36 - Ouvertüre
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-01 Mendelssohn_ Paulus, Op. 36 - Ouvertüre.mp3.Key[mp3.trackNumber] = 1

@@ -2,11 +2,14 @@ Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sona
 Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3.Key[mp3.album] = Beethoven: Piano Sonatas #21, 23 & 26
 Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3.Key[mp3.artist] = Emil Gilels
 Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3.Key[mp3.bitRate] = 320
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3.Key[mp3.bitsPerSample] = 16
 Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3.Key[mp3.comment] = 0
 Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3.Key[mp3.composer] = Ludwig van Beethoven/Ludwig Van Beethoven
 Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3.Key[mp3.diskCount] = 1
 Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3.Key[mp3.diskNumber] = 1
 Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3.Key[mp3.duration] = PT4M38S
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3.Key[mp3.encodingType] = mp3
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3.Key[mp3.sampleRate] = 44100
 Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3.Key[mp3.title] = Beethoven: Piano Sonata #21 In C, Op. 53, "Waldstein" - 2. Introduzione: Adagio Molto
 Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3.Key[mp3.trackNumber] = 2

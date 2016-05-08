@@ -2,11 +2,14 @@ Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vaten
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mp3.album] = Tracce della tradizione orale
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mp3.artist] = Patrizia Bovi&Gilberte Casabianca
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mp3.bitRate] = 320
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mp3.bitsPerSample] = 16
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mp3.comment] = 0
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mp3.composer] = 
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mp3.diskCount] = 1
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mp3.diskNumber] = 1
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mp3.duration] = PT4M45S
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mp3.encodingType] = mp3
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mp3.sampleRate] = 44100
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mp3.title] = E vatende segnor mio
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mp3.trackNumber] = 17

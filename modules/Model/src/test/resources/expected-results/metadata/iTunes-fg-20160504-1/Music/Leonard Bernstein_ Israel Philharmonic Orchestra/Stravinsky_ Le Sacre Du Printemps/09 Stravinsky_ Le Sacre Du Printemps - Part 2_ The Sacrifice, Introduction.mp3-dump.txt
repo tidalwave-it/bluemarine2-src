@@ -2,11 +2,14 @@ Music/Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du P
 Music/Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/09 Stravinsky_ Le Sacre Du Printemps - Part 2_ The Sacrifice, Introduction.mp3.Key[mp3.album] = Stravinsky: Le Sacre Du Printemps
 Music/Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/09 Stravinsky_ Le Sacre Du Printemps - Part 2_ The Sacrifice, Introduction.mp3.Key[mp3.artist] = Leonard Bernstein: Israel Philharmonic Orchestra
 Music/Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/09 Stravinsky_ Le Sacre Du Printemps - Part 2_ The Sacrifice, Introduction.mp3.Key[mp3.bitRate] = 320
+Music/Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/09 Stravinsky_ Le Sacre Du Printemps - Part 2_ The Sacrifice, Introduction.mp3.Key[mp3.bitsPerSample] = 16
 Music/Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/09 Stravinsky_ Le Sacre Du Printemps - Part 2_ The Sacrifice, Introduction.mp3.Key[mp3.comment] = 0
 Music/Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/09 Stravinsky_ Le Sacre Du Printemps - Part 2_ The Sacrifice, Introduction.mp3.Key[mp3.composer] = Igor Stravinsky
 Music/Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/09 Stravinsky_ Le Sacre Du Printemps - Part 2_ The Sacrifice, Introduction.mp3.Key[mp3.diskCount] = 1
 Music/Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/09 Stravinsky_ Le Sacre Du Printemps - Part 2_ The Sacrifice, Introduction.mp3.Key[mp3.diskNumber] = 1
 Music/Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/09 Stravinsky_ Le Sacre Du Printemps - Part 2_ The Sacrifice, Introduction.mp3.Key[mp3.duration] = PT5M28S
+Music/Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/09 Stravinsky_ Le Sacre Du Printemps - Part 2_ The Sacrifice, Introduction.mp3.Key[mp3.encodingType] = mp3
+Music/Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/09 Stravinsky_ Le Sacre Du Printemps - Part 2_ The Sacrifice, Introduction.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/09 Stravinsky_ Le Sacre Du Printemps - Part 2_ The Sacrifice, Introduction.mp3.Key[mp3.sampleRate] = 44100
 Music/Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/09 Stravinsky_ Le Sacre Du Printemps - Part 2_ The Sacrifice, Introduction.mp3.Key[mp3.title] = Stravinsky: Le Sacre Du Printemps - Part 2: The Sacrifice, Introduction
 Music/Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/09 Stravinsky_ Le Sacre Du Printemps - Part 2_ The Sacrifice, Introduction.mp3.Key[mp3.trackNumber] = 9

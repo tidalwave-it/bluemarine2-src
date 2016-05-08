@@ -2,9 +2,12 @@ Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/02 Book 2 - Variations
 Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/02 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3.Key[mp3.album] = Johannes Brahms, Robert Schumann
 Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/02 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3.Key[mp3.artist] = Lambis Vassiliadis
 Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/02 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3.Key[mp3.bitRate] = 320
+Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/02 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3.Key[mp3.bitsPerSample] = 16
 Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/02 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3.Key[mp3.comment] = 0
 Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/02 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3.Key[mp3.composer] = Johannes Brahms, Robert Schumann
 Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/02 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3.Key[mp3.duration] = PT10M37S
+Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/02 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3.Key[mp3.encodingType] = mp3
+Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/02 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/02 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3.Key[mp3.sampleRate] = 44100
 Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/02 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3.Key[mp3.title] = Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms)
 Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/02 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3.Key[mp3.trackNumber] = 2

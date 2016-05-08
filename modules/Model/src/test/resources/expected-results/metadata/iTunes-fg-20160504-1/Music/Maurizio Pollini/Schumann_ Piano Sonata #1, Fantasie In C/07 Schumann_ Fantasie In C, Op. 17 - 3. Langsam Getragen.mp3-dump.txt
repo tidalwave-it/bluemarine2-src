@@ -2,11 +2,14 @@ Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fan
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mp3.album] = Schumann: Piano Sonata #1, Fantasie In C
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mp3.artist] = Maurizio Pollini
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mp3.bitRate] = 320
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mp3.bitsPerSample] = 16
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mp3.comment] = 0
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mp3.composer] = Schumann, Robert (1810-1856)/Robert Schumann
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mp3.diskCount] = 1
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mp3.diskNumber] = 1
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mp3.duration] = PT10M46S
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mp3.encodingType] = mp3
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mp3.format] = MPEG-1 Layer 3
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mp3.sampleRate] = 44100
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mp3.title] = Schumann: Fantasie In C, Op. 17 - 3. Langsam Getragen
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mp3.trackNumber] = 7
