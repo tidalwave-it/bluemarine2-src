@@ -61,6 +61,7 @@ public class AudioMetadata extends MetadataSupport
     @Nonnull
     /* VisibleForTesting */ AudioFile audioFile;
 
+    // FIXME: remove it, turn into a static factory method
     public AudioMetadata (final @Nonnull Path path)
       {
         super(path);
