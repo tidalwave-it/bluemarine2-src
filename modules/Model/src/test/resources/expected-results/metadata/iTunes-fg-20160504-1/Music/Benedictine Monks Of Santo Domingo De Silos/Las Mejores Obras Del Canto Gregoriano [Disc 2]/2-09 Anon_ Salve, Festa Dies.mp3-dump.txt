@@ -10,3 +10,8 @@ Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gr
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-09 Anon_ Salve, Festa Dies.mp3.Key[mp3.sampleRate] = 44100
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-09 Anon_ Salve, Festa Dies.mp3.Key[mp3.title] = Anon: Salve, Festa Dies
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-09 Anon_ Salve, Festa Dies.mp3.Key[mp3.trackNumber] = 9
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-09 Anon_ Salve, Festa Dies.mp3.Key[tag.COMMENT] = [0,  000000FF 00000137 00002496 00003359 0001B9BC 00026043 00006ED9 00007AF0 0001B987 00026029,  00000000 00000210 00000B28 000000000077C748 00000000 006C8FD7 00000000 00000000 00000000 00000000 00000000 00000000, FB0B4C12+217050+18+150+13425+26000+42275+52550+64987+72200+83787+89100+102450+111675+122825+136325+151850+170550+173737+183975+196012, 9]
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-09 Anon_ Salve, Festa Dies.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-09 Anon_ Salve, Festa Dies.mp3.Key[tag.GENRE] = [Classical]
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-09 Anon_ Salve, Festa Dies.mp3.Key[tag.TRACK_TOTAL] = [18]
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-09 Anon_ Salve, Festa Dies.mp3.Key[tag.YEAR] = [1993]

@@ -10,3 +10,9 @@ Music/Compilations/La Divina 2/02 Carmen (1987 - Remaster), Act II_ Chanson boh�
 Music/Compilations/La Divina 2/02 Carmen (1987 - Remaster), Act II_ Chanson bohème_ Les tringles des sistres tintaient (Carmen).mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/La Divina 2/02 Carmen (1987 - Remaster), Act II_ Chanson bohème_ Les tringles des sistres tintaient (Carmen).mp3.Key[mp3.title] = Carmen (1987 - Remaster), Act II: Chanson bohème: Les tringles des sistres tintaient (Carmen)
 Music/Compilations/La Divina 2/02 Carmen (1987 - Remaster), Act II_ Chanson bohème_ Les tringles des sistres tintaient (Carmen).mp3.Key[mp3.trackNumber] = 2
+Music/Compilations/La Divina 2/02 Carmen (1987 - Remaster), Act II_ Chanson bohème_ Les tringles des sistres tintaient (Carmen).mp3.Key[tag.COMMENT] = [0,  000002D7 0000022B 000030DB 0000442A 000396E0 00039714 00007202 00007A94 0003E46D 0003E439,  00000000 00000210 000008E8 0000000000B1EB08 00000000 00A149CC 00000000 00000000 00000000 00000000 00000000 00000000, 16++]
+Music/Compilations/La Divina 2/02 Carmen (1987 - Remaster), Act II_ Chanson bohème_ Les tringles des sistres tintaient (Carmen).mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/La Divina 2/02 Carmen (1987 - Remaster), Act II_ Chanson bohème_ Les tringles des sistres tintaient (Carmen).mp3.Key[tag.GENRE] = [Classical]
+Music/Compilations/La Divina 2/02 Carmen (1987 - Remaster), Act II_ Chanson bohème_ Les tringles des sistres tintaient (Carmen).mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/La Divina 2/02 Carmen (1987 - Remaster), Act II_ Chanson bohème_ Les tringles des sistres tintaient (Carmen).mp3.Key[tag.TRACK_TOTAL] = [16]
+Music/Compilations/La Divina 2/02 Carmen (1987 - Remaster), Act II_ Chanson bohème_ Les tringles des sistres tintaient (Carmen).mp3.Key[tag.YEAR] = [1964]

@@ -10,3 +10,8 @@ Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/09 Handel_ Water M
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/09 Handel_ Water Music Suite #1 In F, HWV 348 - Andante.mp3.Key[mp3.sampleRate] = 44100
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/09 Handel_ Water Music Suite #1 In F, HWV 348 - Andante.mp3.Key[mp3.title] = Handel: Water Music Suite #1 In F, HWV 348 - Andante
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/09 Handel_ Water Music Suite #1 In F, HWV 348 - Andante.mp3.Key[mp3.trackNumber] = 9
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/09 Handel_ Water Music Suite #1 In F, HWV 348 - Andante.mp3.Key[tag.COMMENT] = [0,  00000144 0000013E 00001821 00000D36 000125FA 0001302F 00003E3E 00004EBE 00017734 00021D53,  00000000 00000210 000007F8 000000000082B978 00000000 00767A9D 00000000 00000000 00000000 00000000 00000000 00000000, 260CB513+244167+19+182+15097+25137+60317+74892+88582+103885+113517+125352+139922+149537+168732+181780+194145+203370+209422+214430+221877+228540, 9]
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/09 Handel_ Water Music Suite #1 In F, HWV 348 - Andante.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/09 Handel_ Water Music Suite #1 In F, HWV 348 - Andante.mp3.Key[tag.GENRE] = [Classical]
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/09 Handel_ Water Music Suite #1 In F, HWV 348 - Andante.mp3.Key[tag.TRACK_TOTAL] = [19]
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/09 Handel_ Water Music Suite #1 In F, HWV 348 - Andante.mp3.Key[tag.YEAR] = [1983]

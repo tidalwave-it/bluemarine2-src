@@ -10,3 +10,8 @@ Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours e
 Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/03 Avant hier en un vert pré.mp3.Key[mp3.sampleRate] = 44100
 Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/03 Avant hier en un vert pré.mp3.Key[mp3.title] = Avant hier en un vert pré
 Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/03 Avant hier en un vert pré.mp3.Key[mp3.trackNumber] = 3
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/03 Avant hier en un vert pré.mp3.Key[tag.COMMENT] = [0,  0000014F 000000D7 000028ED 00000FCF 0004931F 000490E0 00006235 00004AD4 00049305 000490E0,  00000000 00000210 000009FC 0000000000D2DF74 00000000 00BF2EDC 00000000 00000000 00000000 00000000 00000000 00000000, BE0F9F0E+300124+14+150+28133+37515+61018+87753+108706+139467+154833+173141+202671+222067+251194+264674+281375, 3]
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/03 Avant hier en un vert pré.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/03 Avant hier en un vert pré.mp3.Key[tag.GENRE] = [Pop]
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/03 Avant hier en un vert pré.mp3.Key[tag.TRACK_TOTAL] = [14]
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/03 Avant hier en un vert pré.mp3.Key[tag.YEAR] = [2010]

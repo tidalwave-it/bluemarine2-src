@@ -10,3 +10,8 @@ Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/12 Miseric
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/12 Misericordia altissimo dio.mp3.Key[mp3.sampleRate] = 44100
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/12 Misericordia altissimo dio.mp3.Key[mp3.title] = Misericordia altissimo dio
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/12 Misericordia altissimo dio.mp3.Key[mp3.trackNumber] = 12
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/12 Misericordia altissimo dio.mp3.Key[tag.COMMENT] = [0,  0000014E 000000C7 00000F09 00000A7A 0000D234 00003092 00003FE1 00002DB3 0000D234 00002FC1,  00000000 00000210 00000A5C 00000000004B9294 00000000 00447688 00000000 00000000 00000000 00000000 00000000 00000000, EB0D7D11+259179+17+150+12916+27156+52055+59903+89584+106683+119528+139301+151670+162344+172808+181231+195034+208749+222790+237727, 12]
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/12 Misericordia altissimo dio.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/12 Misericordia altissimo dio.mp3.Key[tag.GENRE] = [Classical]
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/12 Misericordia altissimo dio.mp3.Key[tag.TRACK_TOTAL] = [17]
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/12 Misericordia altissimo dio.mp3.Key[tag.YEAR] = [2002]

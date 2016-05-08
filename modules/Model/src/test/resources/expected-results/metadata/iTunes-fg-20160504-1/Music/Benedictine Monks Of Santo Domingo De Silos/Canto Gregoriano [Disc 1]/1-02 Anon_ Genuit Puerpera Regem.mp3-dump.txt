@@ -10,3 +10,8 @@ Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-02
 Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-02 Anon_ Genuit Puerpera Regem.mp3.Key[mp3.sampleRate] = 44100
 Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-02 Anon_ Genuit Puerpera Regem.mp3.Key[mp3.title] = Anon: Genuit Puerpera Regem
 Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-02 Anon_ Genuit Puerpera Regem.mp3.Key[mp3.trackNumber] = 2
+Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-02 Anon_ Genuit Puerpera Regem.mp3.Key[tag.COMMENT] = [0,  00000100 0000016A 00000D42 0000263F 00025763 0001CFC6 000042EA 0000685C 0000964E 0001CFAC,  00000000 00000210 00000738 00000000007964B8 00000000 006E0344 00000000 00000000 00000000 00000000 00000000 00000000, AB0B110E+212665+14+182+16700+30230+49895+65305+77107+91640+104612+121875+140215+150802+164647+176915+184722, 2]
+Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-02 Anon_ Genuit Puerpera Regem.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-02 Anon_ Genuit Puerpera Regem.mp3.Key[tag.GENRE] = [Classical]
+Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-02 Anon_ Genuit Puerpera Regem.mp3.Key[tag.TRACK_TOTAL] = [14]
+Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-02 Anon_ Genuit Puerpera Regem.mp3.Key[tag.YEAR] = [1994]

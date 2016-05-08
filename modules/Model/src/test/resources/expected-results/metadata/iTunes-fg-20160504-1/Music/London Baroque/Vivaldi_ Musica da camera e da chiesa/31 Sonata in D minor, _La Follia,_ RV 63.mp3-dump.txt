@@ -10,3 +10,8 @@ Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/31 Sonata in D minor,
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/31 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[mp3.sampleRate] = 44100
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/31 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[mp3.title] = Sonata in D minor, "La Follia," RV 63
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/31 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[mp3.trackNumber] = 31
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/31 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[tag.COMMENT] = [0,  00000056 0000003F 00000194 0000010C 00003DA1 0000438D 000016D2 00001459 00001C92 00001E34,  00000000 00000210 00000990 00000000000D4760 00000000 000BF53A 00000000 00000000 00000000 00000000 00000000 00000000, 890C2B28+233833+40+183+9755+16435+24705+36375+45700+77445+86248+92925+100998+108090+117318+122980+125990+129763+142940+153623+168178+178098+181363+183458+185103+186693+188440+190105+191873+193933+198598+200095+201710+205303+206783+208293+212783+214250+215728+217193+218435+220863+228393, 31]
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/31 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/31 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[tag.GENRE] = [Classical]
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/31 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[tag.TRACK_TOTAL] = [40]
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/31 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[tag.YEAR] = [1985]

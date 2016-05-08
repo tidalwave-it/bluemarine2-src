@@ -10,3 +10,8 @@ Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gr
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.sampleRate] = 44100
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.title] = Anon: Nos Autem
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.trackNumber] = 1
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[tag.COMMENT] = [0,  00000138 000001AD 00001805 00001D4E 00005639 00005F34 00005F13 0000673E 0001D634 000056A1,  00000000 00000210 000007EC 0000000000771B04 00000000 006BF0A8 00000000 00000000 00000000 00000000 00000000 00000000, FB0B4C12+217050+18+150+13425+26000+42275+52550+64987+72200+83787+89100+102450+111675+122825+136325+151850+170550+173737+183975+196012, 1]
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[tag.GENRE] = [Classical]
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[tag.TRACK_TOTAL] = [18]
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[tag.YEAR] = [1993]

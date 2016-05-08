@@ -10,3 +10,8 @@ Music/Compilations/The Magic of The French Horn - Greatest Concertos/11 Robert S
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/11 Robert SCHUMANN Conzertstuck for 4 horn and orchestra - Lebh.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/11 Robert SCHUMANN Conzertstuck for 4 horn and orchestra - Lebh.mp3.Key[mp3.title] = Robert SCHUMANN Conzertstuck for 4 horn and orchestra - Lebh
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/11 Robert SCHUMANN Conzertstuck for 4 horn and orchestra - Lebh.mp3.Key[mp3.trackNumber] = 11
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/11 Robert SCHUMANN Conzertstuck for 4 horn and orchestra - Lebh.mp3.Key[tag.COMMENT] = [0,  000001FA 0000018D 000023E3 00002058 00044FAC 00001934 000078DE 000074BE 00044EC1 00045100,  00000000 00000210 00000A2C 000000000123CD44 00000000 010896B2 00000000 00000000 00000000 00000000 00000000 00000000, AA0E8E0C+279600+12+150+12817+36400+46330+61277+75065+104070+123687+139767+168687+199862+232385, 11]
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/11 Robert SCHUMANN Conzertstuck for 4 horn and orchestra - Lebh.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/11 Robert SCHUMANN Conzertstuck for 4 horn and orchestra - Lebh.mp3.Key[tag.GENRE] = [Classical]
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/11 Robert SCHUMANN Conzertstuck for 4 horn and orchestra - Lebh.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/11 Robert SCHUMANN Conzertstuck for 4 horn and orchestra - Lebh.mp3.Key[tag.TRACK_TOTAL] = [12]

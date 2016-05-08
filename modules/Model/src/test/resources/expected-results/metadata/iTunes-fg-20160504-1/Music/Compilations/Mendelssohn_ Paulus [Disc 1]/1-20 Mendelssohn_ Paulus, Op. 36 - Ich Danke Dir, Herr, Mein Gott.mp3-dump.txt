@@ -10,3 +10,9 @@ Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-20 Mendelssohn_ Paulus, Op. 36
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-20 Mendelssohn_ Paulus, Op. 36 - Ich Danke Dir, Herr, Mein Gott.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-20 Mendelssohn_ Paulus, Op. 36 - Ich Danke Dir, Herr, Mein Gott.mp3.Key[mp3.title] = Mendelssohn: Paulus, Op. 36 - Ich Danke Dir, Herr, Mein Gott
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-20 Mendelssohn_ Paulus, Op. 36 - Ich Danke Dir, Herr, Mein Gott.mp3.Key[mp3.trackNumber] = 20
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-20 Mendelssohn_ Paulus, Op. 36 - Ich Danke Dir, Herr, Mein Gott.mp3.Key[tag.COMMENT] = [0,  000000C3 000000B6 00000A2E 00000EFF 000343B6 000238C6 00003DD0 000045C5 00034678 00022C1F,  00000000 00000210 00000B28 0000000000B6A7C8 00000000 00A597D6 00000000 00000000 00000000 00000000 00000000 00000000, 3A0F0616+288633+22+183+27333+45633+51483+59378+74685+93225+104505+112630+123183+126378+145308+155318+165708+174183+196233+205170+209410+232608+238725+259083+266030, 20]
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-20 Mendelssohn_ Paulus, Op. 36 - Ich Danke Dir, Herr, Mein Gott.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-20 Mendelssohn_ Paulus, Op. 36 - Ich Danke Dir, Herr, Mein Gott.mp3.Key[tag.GENRE] = [Classical]
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-20 Mendelssohn_ Paulus, Op. 36 - Ich Danke Dir, Herr, Mein Gott.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-20 Mendelssohn_ Paulus, Op. 36 - Ich Danke Dir, Herr, Mein Gott.mp3.Key[tag.TRACK_TOTAL] = [22]
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-20 Mendelssohn_ Paulus, Op. 36 - Ich Danke Dir, Herr, Mein Gott.mp3.Key[tag.YEAR] = [1986]

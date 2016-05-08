@@ -10,3 +10,8 @@ Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/04 Schumann_ Pia
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/04 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 4. Finale.mp3.Key[mp3.sampleRate] = 44100
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/04 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 4. Finale.mp3.Key[mp3.title] = Schumann: Piano Sonata #1 In F Sharp Minor, Op. 11 - 4. Finale
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/04 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 4. Finale.mp3.Key[mp3.trackNumber] = 4
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/04 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 4. Finale.mp3.Key[tag.COMMENT] = [0,  000001D8 000001A8 00003D3A 00003076 00097778 00077AB1 000072B3 00006BF1 0009310F 0009741A,  00000000 00000210 00000828 0000000001DC14C8 00000000 01AFBA73 00000000 00000000 00000000 00000000 00000000 00000000, 5D0EC907+284070+7+183+54558+68733+92133+145195+199903+235603, 4]
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/04 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 4. Finale.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/04 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 4. Finale.mp3.Key[tag.GENRE] = [Classical]
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/04 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 4. Finale.mp3.Key[tag.TRACK_TOTAL] = [7]
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/04 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 4. Finale.mp3.Key[tag.YEAR] = [1973]

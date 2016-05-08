@@ -10,3 +10,8 @@ Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gr
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-02 Anon_ Pange Lingua Gloriosi.mp3.Key[mp3.sampleRate] = 44100
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-02 Anon_ Pange Lingua Gloriosi.mp3.Key[mp3.title] = Anon: Pange Lingua Gloriosi
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-02 Anon_ Pange Lingua Gloriosi.mp3.Key[mp3.trackNumber] = 2
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-02 Anon_ Pange Lingua Gloriosi.mp3.Key[tag.COMMENT] = [0,  000000A4 000000C4 00001AF1 00001324 0000B2C6 0001DA97 00005E0D 00005155 0000B2AC 0000B2AC,  00000000 00000210 0000093C 000000000070D334 00000000 00663F83 00000000 00000000 00000000 00000000 00000000 00000000, FB0B4C12+217050+18+150+13425+26000+42275+52550+64987+72200+83787+89100+102450+111675+122825+136325+151850+170550+173737+183975+196012, 2]
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-02 Anon_ Pange Lingua Gloriosi.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-02 Anon_ Pange Lingua Gloriosi.mp3.Key[tag.GENRE] = [Classical]
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-02 Anon_ Pange Lingua Gloriosi.mp3.Key[tag.TRACK_TOTAL] = [18]
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-02 Anon_ Pange Lingua Gloriosi.mp3.Key[tag.YEAR] = [1993]

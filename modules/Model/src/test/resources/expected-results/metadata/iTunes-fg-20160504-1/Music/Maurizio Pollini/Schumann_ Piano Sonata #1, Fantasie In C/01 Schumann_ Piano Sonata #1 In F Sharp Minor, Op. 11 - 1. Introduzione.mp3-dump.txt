@@ -10,3 +10,8 @@ Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/01 Schumann_ Pia
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/01 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 1. Introduzione.mp3.Key[mp3.sampleRate] = 44100
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/01 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 1. Introduzione.mp3.Key[mp3.title] = Schumann: Piano Sonata #1 In F Sharp Minor, Op. 11 - 1. Introduzione
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/01 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 1. Introduzione.mp3.Key[mp3.trackNumber] = 1
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/01 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 1. Introduzione.mp3.Key[tag.COMMENT] = [0,  0000010E 000000F6 00002AE1 00002FC4 000980C1 0008FD53 000065A0 00006DEF 0008FE72 0008FE72,  00000000 00000210 0000075C 0000000001E7DC94 00000000 01BA6925 00000000 00000000 00000000 00000000 00000000 00000000, 5D0EC907+284070+7+183+54558+68733+92133+145195+199903+235603, 1]
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/01 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 1. Introduzione.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/01 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 1. Introduzione.mp3.Key[tag.GENRE] = [Classical]
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/01 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 1. Introduzione.mp3.Key[tag.TRACK_TOTAL] = [7]
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/01 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 1. Introduzione.mp3.Key[tag.YEAR] = [1973]

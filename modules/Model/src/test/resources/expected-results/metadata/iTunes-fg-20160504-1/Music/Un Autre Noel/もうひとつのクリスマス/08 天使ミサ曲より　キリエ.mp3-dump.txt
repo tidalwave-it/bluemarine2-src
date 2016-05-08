@@ -10,3 +10,8 @@ Music/Un Autre Noel/もうひとつのクリスマス/08 天使ミサ曲より�
 Music/Un Autre Noel/もうひとつのクリスマス/08 天使ミサ曲より　キリエ.mp3.Key[mp3.sampleRate] = 44100
 Music/Un Autre Noel/もうひとつのクリスマス/08 天使ミサ曲より　キリエ.mp3.Key[mp3.title] = 天使ミサ曲より　キリエ
 Music/Un Autre Noel/もうひとつのクリスマス/08 天使ミサ曲より　キリエ.mp3.Key[mp3.trackNumber] = 8
+Music/Un Autre Noel/もうひとつのクリスマス/08 天使ミサ曲より　キリエ.mp3.Key[tag.COMMENT] = [0,  000000D9 000000E5 000003DA 00000768 0003EE6D 00005378 00003C81 00004173 0004443E 0000930A,  00000000 00000210 00000A44 0000000000D8D92C 00000000 00C49A9D 00000000 00000000 00000000 00000000 00000000 00000000, 6C0D920A+260717+10+150+22206+30947+61747+84747+121728+153295+173714+197883+225084, 8]
+Music/Un Autre Noel/もうひとつのクリスマス/08 天使ミサ曲より　キリエ.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Un Autre Noel/もうひとつのクリスマス/08 天使ミサ曲より　キリエ.mp3.Key[tag.GENRE] = [Other]
+Music/Un Autre Noel/もうひとつのクリスマス/08 天使ミサ曲より　キリエ.mp3.Key[tag.TRACK_TOTAL] = [10]
+Music/Un Autre Noel/もうひとつのクリスマス/08 天使ミサ曲より　キリエ.mp3.Key[tag.YEAR] = [2007]

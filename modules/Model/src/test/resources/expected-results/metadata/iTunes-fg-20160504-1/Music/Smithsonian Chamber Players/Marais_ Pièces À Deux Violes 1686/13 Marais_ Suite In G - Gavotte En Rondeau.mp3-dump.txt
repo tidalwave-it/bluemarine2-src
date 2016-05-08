@@ -10,3 +10,8 @@ Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/13 Marais_
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/13 Marais_ Suite In G - Gavotte En Rondeau.mp3.Key[mp3.sampleRate] = 44100
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/13 Marais_ Suite In G - Gavotte En Rondeau.mp3.Key[mp3.title] = Marais: Suite In G - Gavotte En Rondeau
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/13 Marais_ Suite In G - Gavotte En Rondeau.mp3.Key[mp3.trackNumber] = 13
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/13 Marais_ Suite In G - Gavotte En Rondeau.mp3.Key[tag.COMMENT] = [0,  000000CE 0000009A 00000BFC 00000603 00008FE0 0001018D 0000507A 00003C6A 00010982 0001D4AC,  00000000 00000210 0000090C 00000000005C3064 00000000 005387AD 00000000 00000000 00000000 00000000 00000000 00000000, F80C5712+237133+18+183+17293+31258+38475+53978+64098+69358+77133+89115+103720+111765+123678+137723+147998+155878+160543+169195+198538, 13]
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/13 Marais_ Suite In G - Gavotte En Rondeau.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/13 Marais_ Suite In G - Gavotte En Rondeau.mp3.Key[tag.GENRE] = [Classical]
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/13 Marais_ Suite In G - Gavotte En Rondeau.mp3.Key[tag.TRACK_TOTAL] = [18]
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/13 Marais_ Suite In G - Gavotte En Rondeau.mp3.Key[tag.YEAR] = [1990]

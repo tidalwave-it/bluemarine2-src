@@ -10,3 +10,8 @@ Music/Compilations/The Magic of The French Horn - Greatest Concertos/09 Louis Fr
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/09 Louis Francois DAUPRAT Sonata for horn and harp.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/09 Louis Francois DAUPRAT Sonata for horn and harp.mp3.Key[mp3.title] = Louis Francois DAUPRAT Sonata for horn and harp
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/09 Louis Francois DAUPRAT Sonata for horn and harp.mp3.Key[mp3.trackNumber] = 9
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/09 Louis Francois DAUPRAT Sonata for horn and harp.mp3.Key[tag.COMMENT] = [0,  000001AA 000000B0 00002048 000009E4 0005554E 00025C97 000054E9 0000433F 0005554E 00034B78,  00000000 00000210 00000A50 00000000010379A0 00000000 00EB4493 00000000 00000000 00000000 00000000 00000000 00000000, AA0E8E0C+279600+12+150+12817+36400+46330+61277+75065+104070+123687+139767+168687+199862+232385, 9]
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/09 Louis Francois DAUPRAT Sonata for horn and harp.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/09 Louis Francois DAUPRAT Sonata for horn and harp.mp3.Key[tag.GENRE] = [Classical]
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/09 Louis Francois DAUPRAT Sonata for horn and harp.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/09 Louis Francois DAUPRAT Sonata for horn and harp.mp3.Key[tag.TRACK_TOTAL] = [12]

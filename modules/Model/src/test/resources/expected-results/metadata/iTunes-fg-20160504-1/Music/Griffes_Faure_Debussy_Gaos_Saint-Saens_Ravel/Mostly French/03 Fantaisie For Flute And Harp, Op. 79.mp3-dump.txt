@@ -8,3 +8,7 @@ Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/03 Fantaisie Fo
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/03 Fantaisie For Flute And Harp, Op. 79.mp3.Key[mp3.sampleRate] = 44100
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/03 Fantaisie For Flute And Harp, Op. 79.mp3.Key[mp3.title] = Fantaisie For Flute And Harp, Op. 79
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/03 Fantaisie For Flute And Harp, Op. 79.mp3.Key[mp3.trackNumber] = 3
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/03 Fantaisie For Flute And Harp, Op. 79.mp3.Key[tag.COMMENT] = [0,  0000011F 000000E2 000066D0 000043BD 0003680A 000367BC 00006007 0000568C 0001F10A 0004ADF5,  00000000 00000210 00000AC8 0000000000D40328 00000000 00C0382A 00000000 00000000 00000000 00000000 00000000 00000000, 5B111308+327987+8+150+46240+84377+108007+154427+166080+218585+278057, 3]
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/03 Fantaisie For Flute And Harp, Op. 79.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/03 Fantaisie For Flute And Harp, Op. 79.mp3.Key[tag.GENRE] = [Classical]
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/03 Fantaisie For Flute And Harp, Op. 79.mp3.Key[tag.TRACK_TOTAL] = [8]

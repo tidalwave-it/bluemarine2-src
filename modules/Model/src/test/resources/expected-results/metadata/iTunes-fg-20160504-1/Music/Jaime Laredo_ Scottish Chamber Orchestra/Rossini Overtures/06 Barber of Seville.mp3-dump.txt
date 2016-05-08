@@ -8,3 +8,8 @@ Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/06 Barber of Se
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/06 Barber of Seville.mp3.Key[mp3.sampleRate] = 44100
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/06 Barber of Seville.mp3.Key[mp3.title] = Barber of Seville
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/06 Barber of Seville.mp3.Key[mp3.trackNumber] = 6
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/06 Barber of Seville.mp3.Key[tag.COMMENT] = [0,  00000106 000000D1 000015DC 00001022 000439BC 00069068 00005DE4 0000653B 0006901A 00069000,  00000000 00000210 000009E4 0000000001274D0C 00000000 010BC2F1 00000000 00000000 00000000 00000000 00000000 00000000, 7B0F2D08+291575+8+150+53175+89200+112450+147862+173837+206750+235800, 6]
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/06 Barber of Seville.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/06 Barber of Seville.mp3.Key[tag.GENRE] = [Classical]
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/06 Barber of Seville.mp3.Key[tag.TRACK_TOTAL] = [8]
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/06 Barber of Seville.mp3.Key[tag.YEAR] = [1986]

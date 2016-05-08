@@ -10,3 +10,8 @@ Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/08 Cherubini_ Sonata #4 In G -
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/08 Cherubini_ Sonata #4 In G - 2. Rondò_ Andantino.mp3.Key[mp3.sampleRate] = 44100
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/08 Cherubini_ Sonata #4 In G - 2. Rondò_ Andantino.mp3.Key[mp3.title] = Cherubini: Sonata #4 In G - 2. Rondò: Andantino
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/08 Cherubini_ Sonata #4 In G - 2. Rondò_ Andantino.mp3.Key[mp3.trackNumber] = 8
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/08 Cherubini_ Sonata #4 In G - 2. Rondò_ Andantino.mp3.Key[tag.COMMENT] = [0,  0000008F 0000006D 00000B87 00000BBA 00054429 00024400 000039F4 000035B1 00038BF5 00038FBC,  00000000 00000210 000007A4 000000000119F34C 00000000 00FFA4E6 00000000 00000000 00000000 00000000 00000000 00000000, CF11B50C+340142+12+150+29238+51438+85863+103563+142413+161163+191913+223338+254313+277263+312663, 8]
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/08 Cherubini_ Sonata #4 In G - 2. Rondò_ Andantino.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/08 Cherubini_ Sonata #4 In G - 2. Rondò_ Andantino.mp3.Key[tag.GENRE] = [Classical]
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/08 Cherubini_ Sonata #4 In G - 2. Rondò_ Andantino.mp3.Key[tag.TRACK_TOTAL] = [12]
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/08 Cherubini_ Sonata #4 In G - 2. Rondò_ Andantino.mp3.Key[tag.YEAR] = [2007]

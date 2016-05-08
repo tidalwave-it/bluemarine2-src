@@ -8,3 +8,7 @@ Music/Perosi, Lorenzo/Lorenzo Perosi/09 Lauda Ierusalem.mp3.Key[mp3.duration] = 
 Music/Perosi, Lorenzo/Lorenzo Perosi/09 Lauda Ierusalem.mp3.Key[mp3.sampleRate] = 44100
 Music/Perosi, Lorenzo/Lorenzo Perosi/09 Lauda Ierusalem.mp3.Key[mp3.title] = Lauda Ierusalem
 Music/Perosi, Lorenzo/Lorenzo Perosi/09 Lauda Ierusalem.mp3.Key[mp3.trackNumber] = 9
+Music/Perosi, Lorenzo/Lorenzo Perosi/09 Lauda Ierusalem.mp3.Key[tag.COMMENT] = [0,  000001C5 00000161 00003D34 00002C1F 000132BC 000365E5 000073EA 000073E2 00044282 000365B1,  00000000 00000210 00000A68 0000000000D18008 00000000 00BDF07E 00000000 00000000 00000000 00000000 00000000 00000000, 8410371A+311475+26+182+10100+20100+41525+50550+74850+95250+108450+119250+142600+152775+163162+173262+179587+191962+201112+214162+231150+237525+246000+254987+262837+272250+280612+290775+302775, 9]
+Music/Perosi, Lorenzo/Lorenzo Perosi/09 Lauda Ierusalem.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Perosi, Lorenzo/Lorenzo Perosi/09 Lauda Ierusalem.mp3.Key[tag.GENRE] = [Other]
+Music/Perosi, Lorenzo/Lorenzo Perosi/09 Lauda Ierusalem.mp3.Key[tag.TRACK_TOTAL] = [26]

@@ -10,3 +10,9 @@ Music/Compilations/Pure Ella/04 They Can't Take That Away From Me.mp3.Key[mp3.du
 Music/Compilations/Pure Ella/04 They Can't Take That Away From Me.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Pure Ella/04 They Can't Take That Away From Me.mp3.Key[mp3.title] = They Can't Take That Away From Me
 Music/Compilations/Pure Ella/04 They Can't Take That Away From Me.mp3.Key[mp3.trackNumber] = 4
+Music/Compilations/Pure Ella/04 They Can't Take That Away From Me.mp3.Key[tag.COMMENT] = [0,  00000563 00000563 00006D74 00006D74 00034BAC 00034BAC 00007FFE 00007FFE 00012B63 00012B63,  00000000 00000210 000007D4 0000000000BC079C 00000000 00AA74BC 00000000 00000000 00000000 00000000 00000000 00000000, 0C10F312+325620+18+150+21860+38705+47155+68112+81095+99740+114517+131995+145947+163532+176950+188370+218577+241080+272992+287877+307292, 4]
+Music/Compilations/Pure Ella/04 They Can't Take That Away From Me.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/Pure Ella/04 They Can't Take That Away From Me.mp3.Key[tag.GENRE] = [Jazz]
+Music/Compilations/Pure Ella/04 They Can't Take That Away From Me.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/Pure Ella/04 They Can't Take That Away From Me.mp3.Key[tag.TRACK_TOTAL] = [18]
+Music/Compilations/Pure Ella/04 They Can't Take That Away From Me.mp3.Key[tag.YEAR] = [1956]

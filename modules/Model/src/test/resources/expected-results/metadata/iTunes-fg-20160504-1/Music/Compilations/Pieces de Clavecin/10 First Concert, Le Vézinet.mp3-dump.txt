@@ -10,3 +10,9 @@ Music/Compilations/Pieces de Clavecin/10 First Concert, Le Vézinet.mp3.Key[mp3.
 Music/Compilations/Pieces de Clavecin/10 First Concert, Le Vézinet.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Pieces de Clavecin/10 First Concert, Le Vézinet.mp3.Key[mp3.title] = First Concert, Le Vézinet
 Music/Compilations/Pieces de Clavecin/10 First Concert, Le Vézinet.mp3.Key[mp3.trackNumber] = 10
+Music/Compilations/Pieces de Clavecin/10 First Concert, Le Vézinet.mp3.Key[tag.COMMENT] = [0,  0000005C 0000003E 00000434 000003F5 00021458 0001807D 000028F7 00002459 00022B1A 00022B1A,  00000000 00000210 00000B04 000000000093CC6C 00000000 0085F9F6 00000000 00000000 00000000 00000000 00000000 00000000, E70E8710+279128+16+150+18758+26593+46840+72085+92965+104388+126078+141965+154435+170908+192433+218033+229818+243160+266943, 10]
+Music/Compilations/Pieces de Clavecin/10 First Concert, Le Vézinet.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/Pieces de Clavecin/10 First Concert, Le Vézinet.mp3.Key[tag.GENRE] = [Classical]
+Music/Compilations/Pieces de Clavecin/10 First Concert, Le Vézinet.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/Pieces de Clavecin/10 First Concert, Le Vézinet.mp3.Key[tag.TRACK_TOTAL] = [16]
+Music/Compilations/Pieces de Clavecin/10 First Concert, Le Vézinet.mp3.Key[tag.YEAR] = [1990]

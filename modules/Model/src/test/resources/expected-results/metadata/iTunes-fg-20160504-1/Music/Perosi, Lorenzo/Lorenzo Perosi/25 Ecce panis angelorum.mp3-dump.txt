@@ -8,3 +8,7 @@ Music/Perosi, Lorenzo/Lorenzo Perosi/25 Ecce panis angelorum.mp3.Key[mp3.duratio
 Music/Perosi, Lorenzo/Lorenzo Perosi/25 Ecce panis angelorum.mp3.Key[mp3.sampleRate] = 44100
 Music/Perosi, Lorenzo/Lorenzo Perosi/25 Ecce panis angelorum.mp3.Key[mp3.title] = Ecce panis angelorum
 Music/Perosi, Lorenzo/Lorenzo Perosi/25 Ecce panis angelorum.mp3.Key[mp3.trackNumber] = 25
+Music/Perosi, Lorenzo/Lorenzo Perosi/25 Ecce panis angelorum.mp3.Key[tag.COMMENT] = [0,  0000019E 0000011E 000027A0 000022E7 0001E605 0001E605 00006295 00005675 0001E01A 0001E5D0,  00000000 00000210 000006F0 00000000006BAA80 00000000 00618F83 00000000 00000000 00000000 00000000 00000000 00000000, 8410371A+311475+26+182+10100+20100+41525+50550+74850+95250+108450+119250+142600+152775+163162+173262+179587+191962+201112+214162+231150+237525+246000+254987+262837+272250+280612+290775+302775, 25]
+Music/Perosi, Lorenzo/Lorenzo Perosi/25 Ecce panis angelorum.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Perosi, Lorenzo/Lorenzo Perosi/25 Ecce panis angelorum.mp3.Key[tag.GENRE] = [Other]
+Music/Perosi, Lorenzo/Lorenzo Perosi/25 Ecce panis angelorum.mp3.Key[tag.TRACK_TOTAL] = [26]

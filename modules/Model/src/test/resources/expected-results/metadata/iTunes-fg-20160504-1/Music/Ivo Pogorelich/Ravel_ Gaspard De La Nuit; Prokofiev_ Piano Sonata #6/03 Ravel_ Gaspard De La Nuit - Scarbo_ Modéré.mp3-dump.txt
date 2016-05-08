@@ -10,3 +10,8 @@ Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/03 Ra
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/03 Ravel_ Gaspard De La Nuit - Scarbo_ Modéré.mp3.Key[mp3.sampleRate] = 44100
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/03 Ravel_ Gaspard De La Nuit - Scarbo_ Modéré.mp3.Key[mp3.title] = Ravel: Gaspard De La Nuit - Scarbo: Modéré
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/03 Ravel_ Gaspard De La Nuit - Scarbo_ Modéré.mp3.Key[mp3.trackNumber] = 3
+Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/03 Ravel_ Gaspard De La Nuit - Scarbo_ Modéré.mp3.Key[tag.COMMENT] = [0,  000000B9 000000A7 000036AD 000024AC 0007CB68 00046392 00007212 00006E6A 0007F5C1 0004142F,  00000000 00000210 00000B64 000000000180978C 00000000 015CC1A2 00000000 00000000 00000000 00000000 00000000 00000000, 5A0C3907+234830+7+182+33522+64430+107295+145825+167250+204670, 3]
+Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/03 Ravel_ Gaspard De La Nuit - Scarbo_ Modéré.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/03 Ravel_ Gaspard De La Nuit - Scarbo_ Modéré.mp3.Key[tag.GENRE] = [Classical]
+Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/03 Ravel_ Gaspard De La Nuit - Scarbo_ Modéré.mp3.Key[tag.TRACK_TOTAL] = [7]
+Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/03 Ravel_ Gaspard De La Nuit - Scarbo_ Modéré.mp3.Key[tag.YEAR] = [1908]

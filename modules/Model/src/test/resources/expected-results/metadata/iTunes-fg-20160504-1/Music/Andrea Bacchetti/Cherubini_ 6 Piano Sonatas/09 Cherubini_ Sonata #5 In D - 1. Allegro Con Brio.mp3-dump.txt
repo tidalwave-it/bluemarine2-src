@@ -10,3 +10,8 @@ Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/09 Cherubini_ Sonata #5 In D -
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/09 Cherubini_ Sonata #5 In D - 1. Allegro Con Brio.mp3.Key[mp3.sampleRate] = 44100
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/09 Cherubini_ Sonata #5 In D - 1. Allegro Con Brio.mp3.Key[mp3.title] = Cherubini: Sonata #5 In D - 1. Allegro Con Brio
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/09 Cherubini_ Sonata #5 In D - 1. Allegro Con Brio.mp3.Key[mp3.trackNumber] = 9
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/09 Cherubini_ Sonata #5 In D - 1. Allegro Con Brio.mp3.Key[tag.COMMENT] = [0,  0000010E 000000B7 00000E05 00000B93 0005476D 0001814E 000045AC 000046AF 0003F55E 0003F543,  00000000 00000210 00000ABC 000000000115E9B4 00000000 00FBFE34 00000000 00000000 00000000 00000000 00000000 00000000, CF11B50C+340142+12+150+29238+51438+85863+103563+142413+161163+191913+223338+254313+277263+312663, 9]
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/09 Cherubini_ Sonata #5 In D - 1. Allegro Con Brio.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/09 Cherubini_ Sonata #5 In D - 1. Allegro Con Brio.mp3.Key[tag.GENRE] = [Classical]
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/09 Cherubini_ Sonata #5 In D - 1. Allegro Con Brio.mp3.Key[tag.TRACK_TOTAL] = [12]
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/09 Cherubini_ Sonata #5 In D - 1. Allegro Con Brio.mp3.Key[tag.YEAR] = [2007]

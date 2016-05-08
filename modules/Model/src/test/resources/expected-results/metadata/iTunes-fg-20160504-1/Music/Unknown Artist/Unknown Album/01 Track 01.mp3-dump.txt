@@ -8,3 +8,6 @@ Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[mp3.duration] = PT10M32S
 Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[mp3.sampleRate] = 44100
 Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[mp3.title] = Track 01
 Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[mp3.trackNumber] = 1
+Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[tag.COMMENT] = [0,  00000241 00000221 00002B5A 000025E5 000619D6 000619F0 00007240 000069C3 00053424 00082034,  00000000 00000210 000009A8 0000000001A9D648 00000000 01822925 00000000 00000000 00000000 00000000 00000000 00000000, C011000C+326558+12+183+47645+100408+146945+205383+211178+218500+245870+251433+257445+281883+306508, 1]
+Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[tag.TRACK_TOTAL] = [12]

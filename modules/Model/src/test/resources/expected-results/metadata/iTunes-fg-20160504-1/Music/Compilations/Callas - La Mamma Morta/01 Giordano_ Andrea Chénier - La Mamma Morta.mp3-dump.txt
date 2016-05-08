@@ -8,3 +8,9 @@ Music/Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mam
 Music/Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mamma Morta.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mamma Morta.mp3.Key[mp3.title] = Giordano: Andrea Chénier - La Mamma Morta
 Music/Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mamma Morta.mp3.Key[mp3.trackNumber] = 1
+Music/Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mamma Morta.mp3.Key[tag.COMMENT] = [0,  0000073B 00000749 0000B291 0000D4F9 00041878 0004192F 00007A3D 00007A3D 00040EFA 00038397,  00000000 00000210 00000888 0000000000C4F068 00000000 00B28A20 00000000 00000000 00000000 00000000 00000000 00000000, 2402D903+54880+3+183+22133+43920, 1]
+Music/Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mamma Morta.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mamma Morta.mp3.Key[tag.GENRE] = [Classical]
+Music/Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mamma Morta.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mamma Morta.mp3.Key[tag.TRACK_TOTAL] = [3]
+Music/Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mamma Morta.mp3.Key[tag.YEAR] = [1954]

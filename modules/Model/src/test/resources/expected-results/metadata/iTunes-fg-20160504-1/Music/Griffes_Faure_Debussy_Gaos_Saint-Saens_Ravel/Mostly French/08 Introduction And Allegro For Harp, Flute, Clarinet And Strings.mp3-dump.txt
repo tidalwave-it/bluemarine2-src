@@ -8,3 +8,7 @@ Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/08 Introduction
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/08 Introduction And Allegro For Harp, Flute, Clarinet And Strings.mp3.Key[mp3.sampleRate] = 44100
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/08 Introduction And Allegro For Harp, Flute, Clarinet And Strings.mp3.Key[mp3.title] = Introduction And Allegro For Harp, Flute, Clarinet And Strings
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/08 Introduction And Allegro For Harp, Flute, Clarinet And Strings.mp3.Key[mp3.trackNumber] = 8
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/08 Introduction And Allegro For Harp, Flute, Clarinet And Strings.mp3.Key[tag.COMMENT] = [0,  00000093 0000007F 00001D4C 00000C47 0006200F 0006200F 000067DD 000054AE 0006200F 00061FF5,  00000000 00000210 00000AF8 0000000001BFFAF8 00000000 01964000 00000000 00000000 00000000 00000000 00000000 00000000, 5B111308+327987+8+150+46240+84377+108007+154427+166080+218585+278057, 8]
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/08 Introduction And Allegro For Harp, Flute, Clarinet And Strings.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/08 Introduction And Allegro For Harp, Flute, Clarinet And Strings.mp3.Key[tag.GENRE] = [Classical]
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/08 Introduction And Allegro For Harp, Flute, Clarinet And Strings.mp3.Key[tag.TRACK_TOTAL] = [8]

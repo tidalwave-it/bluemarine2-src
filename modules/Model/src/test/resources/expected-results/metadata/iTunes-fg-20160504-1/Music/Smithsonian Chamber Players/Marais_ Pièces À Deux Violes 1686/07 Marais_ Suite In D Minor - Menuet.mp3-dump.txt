@@ -10,3 +10,8 @@ Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/07 Marais_
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/07 Marais_ Suite In D Minor - Menuet.mp3.Key[mp3.sampleRate] = 44100
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/07 Marais_ Suite In D Minor - Menuet.mp3.Key[mp3.title] = Marais: Suite In D Minor - Menuet
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/07 Marais_ Suite In D Minor - Menuet.mp3.Key[mp3.trackNumber] = 7
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/07 Marais_ Suite In D Minor - Menuet.mp3.Key[tag.COMMENT] = [0,  00000094 0000008F 0000042E 000004A7 0001274E 00008697 00002EE1 00002F20 0000746D 00007439,  00000000 00000210 0000093C 000000000045C234 00000000 003F2F83 00000000 00000000 00000000 00000000 00000000 00000000, F80C5712+237133+18+183+17293+31258+38475+53978+64098+69358+77133+89115+103720+111765+123678+137723+147998+155878+160543+169195+198538, 7]
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/07 Marais_ Suite In D Minor - Menuet.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/07 Marais_ Suite In D Minor - Menuet.mp3.Key[tag.GENRE] = [Classical]
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/07 Marais_ Suite In D Minor - Menuet.mp3.Key[tag.TRACK_TOTAL] = [18]
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/07 Marais_ Suite In D Minor - Menuet.mp3.Key[tag.YEAR] = [1990]

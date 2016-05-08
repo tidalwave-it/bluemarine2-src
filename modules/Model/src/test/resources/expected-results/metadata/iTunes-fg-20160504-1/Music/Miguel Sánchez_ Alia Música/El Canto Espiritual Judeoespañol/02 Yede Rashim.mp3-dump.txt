@@ -10,3 +10,8 @@ Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/02 Yede Ra
 Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/02 Yede Rashim.mp3.Key[mp3.sampleRate] = 44100
 Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/02 Yede Rashim.mp3.Key[mp3.title] = Yede Rashim
 Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/02 Yede Rashim.mp3.Key[mp3.trackNumber] = 2
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/02 Yede Rashim.mp3.Key[tag.COMMENT] = [0,  000000FB 000000C2 00003BEC 00002FF2 000578B6 0005789C 00007246 0000622F 0005789C 000575DB,  00000000 00000210 00000A98 00000000016FF2D8 00000000 014DA854 00000000 00000000 00000000 00000000 00000000 00000000, C80EA50E+281397+14+150+10555+51565+78410+101720+119740+133815+158440+166227+182057+209942+239620+249675+270352, 2]
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/02 Yede Rashim.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/02 Yede Rashim.mp3.Key[tag.GENRE] = [Classical]
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/02 Yede Rashim.mp3.Key[tag.TRACK_TOTAL] = [14]
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/02 Yede Rashim.mp3.Key[tag.YEAR] = [1997]

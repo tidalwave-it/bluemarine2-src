@@ -10,3 +10,8 @@ Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-12
 Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-12 Anon_ Christus Factus Est Pro Nobis.mp3.Key[mp3.sampleRate] = 44100
 Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-12 Anon_ Christus Factus Est Pro Nobis.mp3.Key[mp3.title] = Anon: Christus Factus Est Pro Nobis
 Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-12 Anon_ Christus Factus Est Pro Nobis.mp3.Key[mp3.trackNumber] = 12
+Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-12 Anon_ Christus Factus Est Pro Nobis.mp3.Key[tag.COMMENT] = [0,  0000015A 000001A5 00002300 00002844 0000A11F 00011E05 00005EB5 00006350 0000A105 00011E6D,  00000000 00000210 000007E0 00000000006E1210 00000000 0063BEB2 00000000 00000000 00000000 00000000 00000000 00000000, AB0B110E+212665+14+182+16700+30230+49895+65305+77107+91640+104612+121875+140215+150802+164647+176915+184722, 12]
+Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-12 Anon_ Christus Factus Est Pro Nobis.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-12 Anon_ Christus Factus Est Pro Nobis.mp3.Key[tag.GENRE] = [Classical]
+Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-12 Anon_ Christus Factus Est Pro Nobis.mp3.Key[tag.TRACK_TOTAL] = [14]
+Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-12 Anon_ Christus Factus Est Pro Nobis.mp3.Key[tag.YEAR] = [1994]

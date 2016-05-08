@@ -10,3 +10,9 @@ Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-07 Mendelssohn_ Paulus, Op. 36
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-07 Mendelssohn_ Paulus, Op. 36 - Jerusalem.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-07 Mendelssohn_ Paulus, Op. 36 - Jerusalem.mp3.Key[mp3.title] = Mendelssohn: Paulus, Op. 36 - Jerusalem
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-07 Mendelssohn_ Paulus, Op. 36 - Jerusalem.mp3.Key[mp3.trackNumber] = 7
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-07 Mendelssohn_ Paulus, Op. 36 - Jerusalem.mp3.Key[tag.COMMENT] = [0,  000000AD 000000D1 00001F4A 0000264A 00017D53 00017D53 0000494E 00005633 00017D39 00017D39,  00000000 00000210 00000930 00000000006534C0 00000000 005BB58D 00000000 00000000 00000000 00000000 00000000 00000000, 3A0F0616+288633+22+183+27333+45633+51483+59378+74685+93225+104505+112630+123183+126378+145308+155318+165708+174183+196233+205170+209410+232608+238725+259083+266030, 7]
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-07 Mendelssohn_ Paulus, Op. 36 - Jerusalem.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-07 Mendelssohn_ Paulus, Op. 36 - Jerusalem.mp3.Key[tag.GENRE] = [Classical]
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-07 Mendelssohn_ Paulus, Op. 36 - Jerusalem.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-07 Mendelssohn_ Paulus, Op. 36 - Jerusalem.mp3.Key[tag.TRACK_TOTAL] = [22]
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-07 Mendelssohn_ Paulus, Op. 36 - Jerusalem.mp3.Key[tag.YEAR] = [1986]

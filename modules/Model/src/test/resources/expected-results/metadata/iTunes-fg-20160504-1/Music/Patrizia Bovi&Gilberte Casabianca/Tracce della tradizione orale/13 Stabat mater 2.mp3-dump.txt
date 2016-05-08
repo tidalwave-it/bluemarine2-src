@@ -10,3 +10,8 @@ Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/13 Stabat 
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/13 Stabat mater 2.mp3.Key[mp3.sampleRate] = 44100
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/13 Stabat mater 2.mp3.Key[mp3.title] = Stabat mater 2
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/13 Stabat mater 2.mp3.Key[mp3.trackNumber] = 13
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/13 Stabat mater 2.mp3.Key[tag.COMMENT] = [0,  00000324 000001EF 000031D9 000017B9 0002053E 0002058D 00005FB6 000041BD 00020558 00020572,  00000000 00000210 00000A2C 00000000007BD7C4 00000000 00703EB2 00000000 00000000 00000000 00000000 00000000 00000000, EB0D7D11+259179+17+150+12916+27156+52055+59903+89584+106683+119528+139301+151670+162344+172808+181231+195034+208749+222790+237727, 13]
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/13 Stabat mater 2.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/13 Stabat mater 2.mp3.Key[tag.GENRE] = [Classical]
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/13 Stabat mater 2.mp3.Key[tag.TRACK_TOTAL] = [17]
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/13 Stabat mater 2.mp3.Key[tag.YEAR] = [2002]

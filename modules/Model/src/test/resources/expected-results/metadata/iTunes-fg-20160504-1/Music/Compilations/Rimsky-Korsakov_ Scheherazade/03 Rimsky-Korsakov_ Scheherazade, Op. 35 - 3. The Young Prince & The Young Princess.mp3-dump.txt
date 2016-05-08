@@ -10,3 +10,9 @@ Music/Compilations/Rimsky-Korsakov_ Scheherazade/03 Rimsky-Korsakov_ Scheherazad
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/03 Rimsky-Korsakov_ Scheherazade, Op. 35 - 3. The Young Prince & The Young Princess.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/03 Rimsky-Korsakov_ Scheherazade, Op. 35 - 3. The Young Prince & The Young Princess.mp3.Key[mp3.title] = Rimsky-Korsakov: Scheherazade, Op. 35 - 3. The Young Prince & The Young Princess
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/03 Rimsky-Korsakov_ Scheherazade, Op. 35 - 3. The Young Prince & The Young Princess.mp3.Key[mp3.trackNumber] = 3
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/03 Rimsky-Korsakov_ Scheherazade, Op. 35 - 3. The Young Prince & The Young Princess.mp3.Key[tag.COMMENT] = [0,  0000008D 00000064 00001D2C 00000FC6 00072182 00072097 0000682F 00005CB2 00073B53 00071DD6,  00000000 00000210 00000A44 0000000001A189AC 00000000 017AA29D 00000000 00000000 00000000 00000000 00000000 00000000, 12++]
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/03 Rimsky-Korsakov_ Scheherazade, Op. 35 - 3. The Young Prince & The Young Princess.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/03 Rimsky-Korsakov_ Scheherazade, Op. 35 - 3. The Young Prince & The Young Princess.mp3.Key[tag.GENRE] = [Classical]
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/03 Rimsky-Korsakov_ Scheherazade, Op. 35 - 3. The Young Prince & The Young Princess.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/03 Rimsky-Korsakov_ Scheherazade, Op. 35 - 3. The Young Prince & The Young Princess.mp3.Key[tag.TRACK_TOTAL] = [12]
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/03 Rimsky-Korsakov_ Scheherazade, Op. 35 - 3. The Young Prince & The Young Princess.mp3.Key[tag.YEAR] = [1985]

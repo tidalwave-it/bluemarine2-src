@@ -10,3 +10,8 @@ Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-07
 Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-07 Anon_ Os Iusti.mp3.Key[mp3.sampleRate] = 44100
 Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-07 Anon_ Os Iusti.mp3.Key[mp3.title] = Anon: Os Iusti
 Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-07 Anon_ Os Iusti.mp3.Key[mp3.trackNumber] = 7
+Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-07 Anon_ Os Iusti.mp3.Key[tag.COMMENT] = [0,  00000167 00000132 00001A69 00001731 0000EBD0 000057F5 00005E0F 00005AC4 0000ED3E 000057DB,  00000000 00000210 00000AE0 0000000000746310 00000000 00697C15 00000000 00000000 00000000 00000000 00000000 00000000, AB0B110E+212665+14+182+16700+30230+49895+65305+77107+91640+104612+121875+140215+150802+164647+176915+184722, 7]
+Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-07 Anon_ Os Iusti.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-07 Anon_ Os Iusti.mp3.Key[tag.GENRE] = [Classical]
+Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-07 Anon_ Os Iusti.mp3.Key[tag.TRACK_TOTAL] = [14]
+Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-07 Anon_ Os Iusti.mp3.Key[tag.YEAR] = [1994]

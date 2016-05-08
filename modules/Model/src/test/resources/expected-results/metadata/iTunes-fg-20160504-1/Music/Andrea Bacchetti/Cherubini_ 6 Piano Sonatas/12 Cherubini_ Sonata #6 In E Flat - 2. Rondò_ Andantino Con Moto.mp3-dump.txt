@@ -10,3 +10,8 @@ Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/12 Cherubini_ Sonata #6 In E F
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/12 Cherubini_ Sonata #6 In E Flat - 2. Rondò_ Andantino Con Moto.mp3.Key[mp3.sampleRate] = 44100
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/12 Cherubini_ Sonata #6 In E Flat - 2. Rondò_ Andantino Con Moto.mp3.Key[mp3.title] = Cherubini: Sonata #6 In E Flat - 2. Rondò: Andantino Con Moto
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/12 Cherubini_ Sonata #6 In E Flat - 2. Rondò_ Andantino Con Moto.mp3.Key[mp3.trackNumber] = 12
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/12 Cherubini_ Sonata #6 In E Flat - 2. Rondò_ Andantino Con Moto.mp3.Key[tag.COMMENT] = [0,  00000071 00000078 00001311 00000A84 00022D8D 00022E78 0000337D 00002E5C 00022D72 00034A8D,  00000000 00000210 0000081C 0000000000F68BD4 00000000 00DF887E 00000000 00000000 00000000 00000000 00000000 00000000, CF11B50C+340142+12+150+29238+51438+85863+103563+142413+161163+191913+223338+254313+277263+312663, 12]
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/12 Cherubini_ Sonata #6 In E Flat - 2. Rondò_ Andantino Con Moto.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/12 Cherubini_ Sonata #6 In E Flat - 2. Rondò_ Andantino Con Moto.mp3.Key[tag.GENRE] = [Classical]
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/12 Cherubini_ Sonata #6 In E Flat - 2. Rondò_ Andantino Con Moto.mp3.Key[tag.TRACK_TOTAL] = [12]
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/12 Cherubini_ Sonata #6 In E Flat - 2. Rondò_ Andantino Con Moto.mp3.Key[tag.YEAR] = [2007]

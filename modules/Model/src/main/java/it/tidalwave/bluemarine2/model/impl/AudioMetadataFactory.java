@@ -52,6 +52,9 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static lombok.AccessLevel.PRIVATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import it.tidalwave.util.Key;
+import java.util.Arrays;
+import java.util.List;
 
 /***********************************************************************************************************************
  *
@@ -62,6 +65,11 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 @Slf4j @NoArgsConstructor(access = PRIVATE)
 public final class AudioMetadataFactory
   {
+    private final static List<FieldKey> UNMAPPED_TAGS = Arrays.asList(
+        FieldKey.ARTIST, FieldKey.ALBUM, FieldKey.TITLE,
+        FieldKey.TRACK, FieldKey.DISC_NO, FieldKey.DISC_TOTAL, FieldKey.COMPOSER,
+        FieldKey.MUSICBRAINZ_TRACK_ID, FieldKey.MUSICBRAINZ_WORK_ID, FieldKey.MUSICBRAINZ_DISC_ID, FieldKey.MUSICBRAINZ_ARTISTID);
+
     // FIXME: use interface and implementation
     @Nonnull
     public static Metadata loadFrom (final @Nonnull Path path)
@@ -80,11 +88,26 @@ public final class AudioMetadataFactory
             metadata = metadata.with(BIT_RATE, (int)header.getBitRateAsNumber());
             metadata = metadata.with(SAMPLE_RATE, header.getSampleRateAsNumber());
 
-            final Tag tag = audioFile.getTag();
+            final Tag tag = audioFile.getTag(); // FIXME: getFirst below... should get all
             metadata = metadata.with(ARTIST, tag.getFirst(FieldKey.ARTIST));
             metadata = metadata.with(ALBUM, tag.getFirst(FieldKey.ALBUM));
             metadata = metadata.with(TITLE, tag.getFirst(FieldKey.TITLE));
-            metadata = metadata.with(COMMENT, tag.getFirst(FieldKey.COMMENT));
+            metadata = metadata.with(COMMENT, tag.getFirst(FieldKey.COMMENT)); // FIXME: doesn't work
+
+            for (final FieldKey fieldKey : FieldKey.values())
+              {
+                if (!UNMAPPED_TAGS.contains(fieldKey))
+                  {
+                    final Key<Object> key = new Key<>("tag." + fieldKey.name());
+                    final List<String> values = tag.getAll(fieldKey);
+
+                    if (!values.isEmpty())
+                      {
+                        metadata = metadata.with(key, values);
+                      }
+                  }
+              }
+
 //            put(YEAR, Integer.valueOf(tag.getFirst(FieldKey.YEAR)));
 
             try

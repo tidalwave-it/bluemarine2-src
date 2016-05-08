@@ -10,3 +10,8 @@ Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/02 Handel_ Water M
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/02 Handel_ Water Music Suite #1 In F, HWV 348 - Adagio E Staccato.mp3.Key[mp3.sampleRate] = 44100
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/02 Handel_ Water Music Suite #1 In F, HWV 348 - Adagio E Staccato.mp3.Key[mp3.title] = Handel: Water Music Suite #1 In F, HWV 348 - Adagio E Staccato
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/02 Handel_ Water Music Suite #1 In F, HWV 348 - Adagio E Staccato.mp3.Key[mp3.trackNumber] = 2
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/02 Handel_ Water Music Suite #1 In F, HWV 348 - Adagio E Staccato.mp3.Key[tag.COMMENT] = [0,  00000099 00000090 0000061B 00000556 000166C6 00012268 00002579 00002D8B 0000D339 00012282,  00000000 00000210 000008D0 00000000005A14A0 00000000 00519DE1 00000000 00000000 00000000 00000000 00000000 00000000, 260CB513+244167+19+182+15097+25137+60317+74892+88582+103885+113517+125352+139922+149537+168732+181780+194145+203370+209422+214430+221877+228540, 2]
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/02 Handel_ Water Music Suite #1 In F, HWV 348 - Adagio E Staccato.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/02 Handel_ Water Music Suite #1 In F, HWV 348 - Adagio E Staccato.mp3.Key[tag.GENRE] = [Classical]
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/02 Handel_ Water Music Suite #1 In F, HWV 348 - Adagio E Staccato.mp3.Key[tag.TRACK_TOTAL] = [19]
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/02 Handel_ Water Music Suite #1 In F, HWV 348 - Adagio E Staccato.mp3.Key[tag.YEAR] = [1983]

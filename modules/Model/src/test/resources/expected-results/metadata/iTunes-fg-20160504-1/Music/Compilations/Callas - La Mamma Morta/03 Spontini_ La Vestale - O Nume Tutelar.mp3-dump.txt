@@ -8,3 +8,9 @@ Music/Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tute
 Music/Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3.Key[mp3.title] = Spontini: La Vestale - O Nume Tutelar
 Music/Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3.Key[mp3.trackNumber] = 3
+Music/Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3.Key[tag.COMMENT] = [0,  000000E6 000000E8 00001272 00001153 000191F0 000191F0 0000391B 000035B6 000191BC 000191D6,  00000000 00000210 00000AB0 00000000006255C0 00000000 00591C3F 00000000 00000000 00000000 00000000 00000000 00000000, 2402D903+54880+3+183+22133+43920, 3]
+Music/Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3.Key[tag.GENRE] = [Classical]
+Music/Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3.Key[tag.TRACK_TOTAL] = [3]
+Music/Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3.Key[tag.YEAR] = [1955]

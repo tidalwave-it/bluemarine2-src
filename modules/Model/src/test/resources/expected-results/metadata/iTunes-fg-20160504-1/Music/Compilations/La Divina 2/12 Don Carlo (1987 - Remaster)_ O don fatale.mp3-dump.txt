@@ -10,3 +10,9 @@ Music/Compilations/La Divina 2/12 Don Carlo (1987 - Remaster)_ O don fatale.mp3.
 Music/Compilations/La Divina 2/12 Don Carlo (1987 - Remaster)_ O don fatale.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/La Divina 2/12 Don Carlo (1987 - Remaster)_ O don fatale.mp3.Key[mp3.title] = Don Carlo (1987 - Remaster): O don fatale
 Music/Compilations/La Divina 2/12 Don Carlo (1987 - Remaster)_ O don fatale.mp3.Key[mp3.trackNumber] = 12
+Music/Compilations/La Divina 2/12 Don Carlo (1987 - Remaster)_ O don fatale.mp3.Key[tag.COMMENT] = [0,  0000057B 000004CA 00004B56 00004697 00006E4E 00006E4E 000072E8 000077F2 000426DB 00036DC1,  00000000 00000210 00000AE0 0000000000C02F10 00000000 00AE3C15 00000000 00000000 00000000 00000000 00000000 00000000, 16++]
+Music/Compilations/La Divina 2/12 Don Carlo (1987 - Remaster)_ O don fatale.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/La Divina 2/12 Don Carlo (1987 - Remaster)_ O don fatale.mp3.Key[tag.GENRE] = [Classical]
+Music/Compilations/La Divina 2/12 Don Carlo (1987 - Remaster)_ O don fatale.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/La Divina 2/12 Don Carlo (1987 - Remaster)_ O don fatale.mp3.Key[tag.TRACK_TOTAL] = [16]
+Music/Compilations/La Divina 2/12 Don Carlo (1987 - Remaster)_ O don fatale.mp3.Key[tag.YEAR] = [1964]

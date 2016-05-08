@@ -10,3 +10,8 @@ Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/06 Schumann_ Fan
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/06 Schumann_ Fantasie In C, Op. 17 - 2. Massig.mp3.Key[mp3.sampleRate] = 44100
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/06 Schumann_ Fantasie In C, Op. 17 - 2. Massig.mp3.Key[mp3.title] = Schumann: Fantasie In C, Op. 17 - 2. Massig
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/06 Schumann_ Fantasie In C, Op. 17 - 2. Massig.mp3.Key[mp3.trackNumber] = 6
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/06 Schumann_ Fantasie In C, Op. 17 - 2. Massig.mp3.Key[tag.COMMENT] = [0,  00000163 0000012A 000025BC 00002532 000701C6 000701C6 000070C7 00006612 000589F5 0002E505,  00000000 00000210 00000780 0000000001404E70 00000000 01226F05 00000000 00000000 00000000 00000000 00000000 00000000, 5D0EC907+284070+7+183+54558+68733+92133+145195+199903+235603, 6]
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/06 Schumann_ Fantasie In C, Op. 17 - 2. Massig.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/06 Schumann_ Fantasie In C, Op. 17 - 2. Massig.mp3.Key[tag.GENRE] = [Classical]
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/06 Schumann_ Fantasie In C, Op. 17 - 2. Massig.mp3.Key[tag.TRACK_TOTAL] = [7]
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/06 Schumann_ Fantasie In C, Op. 17 - 2. Massig.mp3.Key[tag.YEAR] = [1973]

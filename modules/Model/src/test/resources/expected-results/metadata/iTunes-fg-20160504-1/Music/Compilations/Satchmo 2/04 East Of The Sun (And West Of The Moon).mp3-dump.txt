@@ -10,3 +10,9 @@ Music/Compilations/Satchmo 2/04 East Of The Sun (And West Of The Moon).mp3.Key[m
 Music/Compilations/Satchmo 2/04 East Of The Sun (And West Of The Moon).mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Satchmo 2/04 East Of The Sun (And West Of The Moon).mp3.Key[mp3.title] = East Of The Sun (And West Of The Moon)
 Music/Compilations/Satchmo 2/04 East Of The Sun (And West Of The Moon).mp3.Key[mp3.trackNumber] = 4
+Music/Compilations/Satchmo 2/04 East Of The Sun (And West Of The Moon).mp3.Key[tag.COMMENT] = [0,  000004F0 000003EF 0000CF7D 0000B3D1 00010900 00010AD6 00007FFD 00007FFE 000107E0 00010658,  00000000 00000210 00000A74 000000000082ADFC 00000000 00767273 00000000 00000000 00000000 00000000 00000000 00000000, 16++]
+Music/Compilations/Satchmo 2/04 East Of The Sun (And West Of The Moon).mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/Satchmo 2/04 East Of The Sun (And West Of The Moon).mp3.Key[tag.GENRE] = [Jazz]
+Music/Compilations/Satchmo 2/04 East Of The Sun (And West Of The Moon).mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/Satchmo 2/04 East Of The Sun (And West Of The Moon).mp3.Key[tag.TRACK_TOTAL] = [16]
+Music/Compilations/Satchmo 2/04 East Of The Sun (And West Of The Moon).mp3.Key[tag.YEAR] = [1995]

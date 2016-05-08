@@ -8,3 +8,8 @@ Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/07 The Silken L
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/07 The Silken Ladder 1.mp3.Key[mp3.sampleRate] = 44100
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/07 The Silken Ladder 1.mp3.Key[mp3.title] = The Silken Ladder
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/07 The Silken Ladder 1.mp3.Key[mp3.trackNumber] = 7
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/07 The Silken Ladder 1.mp3.Key[tag.COMMENT] = [0,  00000075 0000004C 00000CBE 000005F7 0005CD68 0005D149 000040C9 000028F4 0005CD4E 0005D197,  00000000 00000210 000008B8 000000000104A438 00000000 00EC51F6 00000000 00000000 00000000 00000000 00000000 00000000, 7B0F2D08+291575+8+150+53175+89200+112450+147862+173837+206750+235800, 7]
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/07 The Silken Ladder 1.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/07 The Silken Ladder 1.mp3.Key[tag.GENRE] = [Classical]
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/07 The Silken Ladder 1.mp3.Key[tag.TRACK_TOTAL] = [8]
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/07 The Silken Ladder 1.mp3.Key[tag.YEAR] = [1986]

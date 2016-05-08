@@ -8,3 +8,7 @@ Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And T
 Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/01 (Strumentale).mp3.Key[mp3.sampleRate] = 44100
 Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/01 (Strumentale).mp3.Key[mp3.title] = (Strumentale)
 Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/01 (Strumentale).mp3.Key[mp3.trackNumber] = 1
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/01 (Strumentale).mp3.Key[tag.COMMENT] = [0,  00000081 00000031 00001299 0000067A 00089CE5 000A44AC 000067FD 000053BB 00089CCB 000A44AC,  00000000 00000210 00000828 0000000001C68C48 00000000 019C3273 00000000 00000000 00000000 00000000 00000000 00000000, B210900D+318158+13+183+50845+83150+98093+149488+160113+178838+198968+214093+234425+240313+266383+287610, 1]
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/01 (Strumentale).mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/01 (Strumentale).mp3.Key[tag.GENRE] = [Classical]
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/01 (Strumentale).mp3.Key[tag.TRACK_TOTAL] = [13]

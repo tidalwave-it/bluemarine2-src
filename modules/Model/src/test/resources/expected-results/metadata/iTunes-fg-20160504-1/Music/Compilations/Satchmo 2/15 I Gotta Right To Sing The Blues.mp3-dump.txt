@@ -10,3 +10,9 @@ Music/Compilations/Satchmo 2/15 I Gotta Right To Sing The Blues.mp3.Key[mp3.dura
 Music/Compilations/Satchmo 2/15 I Gotta Right To Sing The Blues.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Satchmo 2/15 I Gotta Right To Sing The Blues.mp3.Key[mp3.title] = I Gotta Right To Sing The Blues
 Music/Compilations/Satchmo 2/15 I Gotta Right To Sing The Blues.mp3.Key[mp3.trackNumber] = 15
+Music/Compilations/Satchmo 2/15 I Gotta Right To Sing The Blues.mp3.Key[tag.COMMENT] = [0,  000007BF 000006D3 00005C77 00003FBB 0000231A 00004CBC 00007B04 000072F2 00001C0F 0000312F,  00000000 00000210 00000B64 0000000000A25E8C 00000000 009331A2 00000000 00000000 00000000 00000000 00000000 00000000, 16++]
+Music/Compilations/Satchmo 2/15 I Gotta Right To Sing The Blues.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/Satchmo 2/15 I Gotta Right To Sing The Blues.mp3.Key[tag.GENRE] = [Jazz]
+Music/Compilations/Satchmo 2/15 I Gotta Right To Sing The Blues.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/Satchmo 2/15 I Gotta Right To Sing The Blues.mp3.Key[tag.TRACK_TOTAL] = [16]
+Music/Compilations/Satchmo 2/15 I Gotta Right To Sing The Blues.mp3.Key[tag.YEAR] = [1995]

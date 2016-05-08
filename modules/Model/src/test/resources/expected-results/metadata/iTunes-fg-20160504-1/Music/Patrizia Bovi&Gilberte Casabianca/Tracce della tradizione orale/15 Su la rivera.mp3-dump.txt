@@ -10,3 +10,8 @@ Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/15 Su la r
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/15 Su la rivera.mp3.Key[mp3.sampleRate] = 44100
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/15 Su la rivera.mp3.Key[mp3.title] = Su la rivera
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/15 Su la rivera.mp3.Key[mp3.trackNumber] = 15
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/15 Su la rivera.mp3.Key[tag.COMMENT] = [0,  00000393 000002D5 000050BB 0000321F 000288C6 000288C6 000063CA 00004F43 0001FBDB 000288C6,  00000000 00000210 00000804 00000000007DFA6C 00000000 00722C93 00000000 00000000 00000000 00000000 00000000 00000000, EB0D7D11+259179+17+150+12916+27156+52055+59903+89584+106683+119528+139301+151670+162344+172808+181231+195034+208749+222790+237727, 15]
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/15 Su la rivera.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/15 Su la rivera.mp3.Key[tag.GENRE] = [Classical]
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/15 Su la rivera.mp3.Key[tag.TRACK_TOTAL] = [17]
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/15 Su la rivera.mp3.Key[tag.YEAR] = [2002]

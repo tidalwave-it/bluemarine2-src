@@ -8,3 +8,8 @@ Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian 
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers.mp3.Key[mp3.sampleRate] = 44100
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers.mp3.Key[mp3.title] = The Italian Girl In Algiers
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers.mp3.Key[mp3.trackNumber] = 2
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers.mp3.Key[tag.COMMENT] = [0,  000000D0 00000098 00000E07 00000856 0007323E 0007323E 00003F04 000040E5 00073224 0007323E,  00000000 00000210 00000804 00000000014338EC 00000000 01251493 00000000 00000000 00000000 00000000 00000000 00000000, 7B0F2D08+291575+8+150+53175+89200+112450+147862+173837+206750+235800, 2]
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers.mp3.Key[tag.GENRE] = [Classical]
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers.mp3.Key[tag.TRACK_TOTAL] = [8]
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers.mp3.Key[tag.YEAR] = [1986]

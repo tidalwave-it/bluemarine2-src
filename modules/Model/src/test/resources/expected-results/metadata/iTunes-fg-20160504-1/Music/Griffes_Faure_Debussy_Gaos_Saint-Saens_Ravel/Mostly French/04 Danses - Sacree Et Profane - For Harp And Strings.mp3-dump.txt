@@ -8,3 +8,7 @@ Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/04 Danses - Sac
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/04 Danses - Sacree Et Profane - For Harp And Strings.mp3.Key[mp3.sampleRate] = 44100
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/04 Danses - Sacree Et Profane - For Harp And Strings.mp3.Key[mp3.title] = Danses - Sacree Et Profane - For Harp And Strings
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/04 Danses - Sacree Et Profane - For Harp And Strings.mp3.Key[mp3.trackNumber] = 4
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/04 Danses - Sacree Et Profane - For Harp And Strings.mp3.Key[tag.COMMENT] = [0,  000000E4 000000BD 000017F0 00001034 0008D01F 0008F472 00006737 0000680D 0008F2D1 0008DE34,  00000000 00000210 00000900 0000000001A07CF0 00000000 0179ADB7 00000000 00000000 00000000 00000000 00000000 00000000, 5B111308+327987+8+150+46240+84377+108007+154427+166080+218585+278057, 4]
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/04 Danses - Sacree Et Profane - For Harp And Strings.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/04 Danses - Sacree Et Profane - For Harp And Strings.mp3.Key[tag.GENRE] = [Classical]
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/04 Danses - Sacree Et Profane - For Harp And Strings.mp3.Key[tag.TRACK_TOTAL] = [8]

@@ -10,3 +10,9 @@ Music/Compilations/Holst_ The Planets/05 Holst_ The Planets, Op. 32, H 125 - Sat
 Music/Compilations/Holst_ The Planets/05 Holst_ The Planets, Op. 32, H 125 - Saturn, The Bringer Of Old Age.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Holst_ The Planets/05 Holst_ The Planets, Op. 32, H 125 - Saturn, The Bringer Of Old Age.mp3.Key[mp3.title] = Holst: The Planets, Op. 32, H 125 - Saturn, The Bringer Of Old Age
 Music/Compilations/Holst_ The Planets/05 Holst_ The Planets, Op. 32, H 125 - Saturn, The Bringer Of Old Age.mp3.Key[mp3.trackNumber] = 5
+Music/Compilations/Holst_ The Planets/05 Holst_ The Planets, Op. 32, H 125 - Saturn, The Bringer Of Old Age.mp3.Key[tag.COMMENT] = [0,  00000286 000002A0 00003EA9 0000381B 0004CF05 00051C78 00007D2F 00007E7D 00051FD6 0005239C,  00000000 00000210 00000B28 00000000017A2D48 00000000 0156EFD6 00000000 00000000 00000000 00000000 00000000 00000000, 7++]
+Music/Compilations/Holst_ The Planets/05 Holst_ The Planets, Op. 32, H 125 - Saturn, The Bringer Of Old Age.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/Holst_ The Planets/05 Holst_ The Planets, Op. 32, H 125 - Saturn, The Bringer Of Old Age.mp3.Key[tag.GENRE] = [Classical]
+Music/Compilations/Holst_ The Planets/05 Holst_ The Planets, Op. 32, H 125 - Saturn, The Bringer Of Old Age.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/Holst_ The Planets/05 Holst_ The Planets, Op. 32, H 125 - Saturn, The Bringer Of Old Age.mp3.Key[tag.TRACK_TOTAL] = [7]
+Music/Compilations/Holst_ The Planets/05 Holst_ The Planets, Op. 32, H 125 - Saturn, The Bringer Of Old Age.mp3.Key[tag.YEAR] = [1981]

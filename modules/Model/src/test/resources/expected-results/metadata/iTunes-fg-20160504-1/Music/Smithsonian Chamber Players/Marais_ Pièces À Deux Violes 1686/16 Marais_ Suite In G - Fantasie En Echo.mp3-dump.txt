@@ -10,3 +10,8 @@ Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/16 Marais_
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/16 Marais_ Suite In G - Fantasie En Echo.mp3.Key[mp3.sampleRate] = 44100
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/16 Marais_ Suite In G - Fantasie En Echo.mp3.Key[mp3.title] = Marais: Suite In G - Fantasie En Echo
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/16 Marais_ Suite In G - Fantasie En Echo.mp3.Key[mp3.trackNumber] = 16
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/16 Marais_ Suite In G - Fantasie En Echo.mp3.Key[tag.COMMENT] = [0,  00000085 00000087 000003DF 000003CC 0001428D 00007D1A 000030B5 0000323B 0000C9F0 0000C9F0,  00000000 00000210 00000AE0 00000000004DA090 00000000 00465415 00000000 00000000 00000000 00000000 00000000 00000000, F80C5712+237133+18+183+17293+31258+38475+53978+64098+69358+77133+89115+103720+111765+123678+137723+147998+155878+160543+169195+198538, 16]
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/16 Marais_ Suite In G - Fantasie En Echo.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/16 Marais_ Suite In G - Fantasie En Echo.mp3.Key[tag.GENRE] = [Classical]
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/16 Marais_ Suite In G - Fantasie En Echo.mp3.Key[tag.TRACK_TOTAL] = [18]
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/16 Marais_ Suite In G - Fantasie En Echo.mp3.Key[tag.YEAR] = [1990]

@@ -10,3 +10,9 @@ Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, O
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[mp3.title] = Prokofiev: Romeo & Juliet, Op. 64 - The Last Farewell
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[mp3.trackNumber] = 10
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[tag.COMMENT] = [0,  0000003E 00000034 00000420 000002D4 0002E5F0 0002C597 000020FB 00001D4C 00046A00 00046A4E,  00000000 00000210 000008E8 0000000000DB4308 00000000 00C6C9CC 00000000 00000000 00000000 00000000 00000000 00000000, 12++]
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[tag.GENRE] = [Classical]
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[tag.TRACK_TOTAL] = [12]
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[tag.YEAR] = [1986]

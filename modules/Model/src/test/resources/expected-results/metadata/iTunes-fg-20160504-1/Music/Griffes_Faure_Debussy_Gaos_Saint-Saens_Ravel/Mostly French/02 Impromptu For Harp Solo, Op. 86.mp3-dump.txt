@@ -8,3 +8,7 @@ Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/02 Impromptu Fo
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/02 Impromptu For Harp Solo, Op. 86.mp3.Key[mp3.sampleRate] = 44100
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/02 Impromptu For Harp Solo, Op. 86.mp3.Key[mp3.title] = Impromptu For Harp Solo, Op. 86
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/02 Impromptu For Harp Solo, Op. 86.mp3.Key[mp3.trackNumber] = 2
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/02 Impromptu For Harp Solo, Op. 86.mp3.Key[tag.COMMENT] = [0,  00000056 00000051 00001402 00001209 0007418D 0007418D 0000698C 0000629B 000741A7 0007418D,  00000000 00000210 00000804 0000000001562BEC 00000000 01364492 00000000 00000000 00000000 00000000 00000000 00000000, 5B111308+327987+8+150+46240+84377+108007+154427+166080+218585+278057, 2]
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/02 Impromptu For Harp Solo, Op. 86.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/02 Impromptu For Harp Solo, Op. 86.mp3.Key[tag.GENRE] = [Classical]
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/02 Impromptu For Harp Solo, Op. 86.mp3.Key[tag.TRACK_TOTAL] = [8]

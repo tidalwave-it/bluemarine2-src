@@ -8,3 +8,7 @@ Music/Perosi, Lorenzo/Lorenzo Perosi/02 Ave verum.mp3.Key[mp3.duration] = PT2M13
 Music/Perosi, Lorenzo/Lorenzo Perosi/02 Ave verum.mp3.Key[mp3.sampleRate] = 44100
 Music/Perosi, Lorenzo/Lorenzo Perosi/02 Ave verum.mp3.Key[mp3.title] = Ave verum
 Music/Perosi, Lorenzo/Lorenzo Perosi/02 Ave verum.mp3.Key[mp3.trackNumber] = 2
+Music/Perosi, Lorenzo/Lorenzo Perosi/02 Ave verum.mp3.Key[tag.COMMENT] = [0,  000003E8 00000372 0000512C 0000498A 000179F5 0001793E 00007FFF 00007FFF 00009253 00017663,  00000000 00000210 00000AB0 000000000059B8C0 00000000 00514C3F 00000000 00000000 00000000 00000000 00000000 00000000, 8410371A+311475+26+182+10100+20100+41525+50550+74850+95250+108450+119250+142600+152775+163162+173262+179587+191962+201112+214162+231150+237525+246000+254987+262837+272250+280612+290775+302775, 2]
+Music/Perosi, Lorenzo/Lorenzo Perosi/02 Ave verum.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Perosi, Lorenzo/Lorenzo Perosi/02 Ave verum.mp3.Key[tag.GENRE] = [Other]
+Music/Perosi, Lorenzo/Lorenzo Perosi/02 Ave verum.mp3.Key[tag.TRACK_TOTAL] = [26]

@@ -10,3 +10,9 @@ Music/Compilations/Pieces de Clavecin/11 Fifth Concert, Le Forqueray.mp3.Key[mp3
 Music/Compilations/Pieces de Clavecin/11 Fifth Concert, Le Forqueray.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Pieces de Clavecin/11 Fifth Concert, Le Forqueray.mp3.Key[mp3.title] = Fifth Concert, Le Forqueray
 Music/Compilations/Pieces de Clavecin/11 Fifth Concert, Le Forqueray.mp3.Key[mp3.trackNumber] = 11
+Music/Compilations/Pieces de Clavecin/11 Fifth Concert, Le Forqueray.mp3.Key[tag.COMMENT] = [0,  00000047 00000043 00000408 00000616 00026043 0003C3E0 000022F7 00002791 000254F0 0003C3C6,  00000000 00000210 00000834 0000000000C1203C 00000000 00AF1469 00000000 00000000 00000000 00000000 00000000 00000000, E70E8710+279128+16+150+18758+26593+46840+72085+92965+104388+126078+141965+154435+170908+192433+218033+229818+243160+266943, 11]
+Music/Compilations/Pieces de Clavecin/11 Fifth Concert, Le Forqueray.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/Pieces de Clavecin/11 Fifth Concert, Le Forqueray.mp3.Key[tag.GENRE] = [Classical]
+Music/Compilations/Pieces de Clavecin/11 Fifth Concert, Le Forqueray.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/Pieces de Clavecin/11 Fifth Concert, Le Forqueray.mp3.Key[tag.TRACK_TOTAL] = [16]
+Music/Compilations/Pieces de Clavecin/11 Fifth Concert, Le Forqueray.mp3.Key[tag.YEAR] = [1990]

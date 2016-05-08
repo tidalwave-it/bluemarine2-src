@@ -8,3 +8,8 @@ Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/04 Cinderella.m
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/04 Cinderella.mp3.Key[mp3.sampleRate] = 44100
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/04 Cinderella.mp3.Key[mp3.title] = Cinderella
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/04 Cinderella.mp3.Key[mp3.trackNumber] = 4
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/04 Cinderella.mp3.Key[tag.COMMENT] = [0,  000000E2 000000B2 00000BE3 00000D10 00071472 0007148D 000041A4 000047D5 00020AA7 00071424,  00000000 00000210 00000780 00000000013DB8F0 00000000 01201705 00000000 00000000 00000000 00000000 00000000 00000000, 7B0F2D08+291575+8+150+53175+89200+112450+147862+173837+206750+235800, 4]
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/04 Cinderella.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/04 Cinderella.mp3.Key[tag.GENRE] = [Classical]
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/04 Cinderella.mp3.Key[tag.TRACK_TOTAL] = [8]
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/04 Cinderella.mp3.Key[tag.YEAR] = [1986]

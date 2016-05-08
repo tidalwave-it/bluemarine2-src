@@ -10,3 +10,8 @@ Music/Un Autre Noel/もうひとつのクリスマス/05 ノエル.mp3.Key[mp3.d
 Music/Un Autre Noel/もうひとつのクリスマス/05 ノエル.mp3.Key[mp3.sampleRate] = 44100
 Music/Un Autre Noel/もうひとつのクリスマス/05 ノエル.mp3.Key[mp3.title] = ノエル
 Music/Un Autre Noel/もうひとつのクリスマス/05 ノエル.mp3.Key[mp3.trackNumber] = 5
+Music/Un Autre Noel/もうひとつのクリスマス/05 ノエル.mp3.Key[tag.COMMENT] = [0,  000000B4 000000DB 0000038C 0000041F 00028C3E 00026F29 00004182 000046AD 0002E99C 0000101F,  00000000 00000210 00000834 00000000014BCCBC 00000000 012CDC69 00000000 00000000 00000000 00000000 00000000 00000000, 6C0D920A+260717+10+150+22206+30947+61747+84747+121728+153295+173714+197883+225084, 5]
+Music/Un Autre Noel/もうひとつのクリスマス/05 ノエル.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Un Autre Noel/もうひとつのクリスマス/05 ノエル.mp3.Key[tag.GENRE] = [Other]
+Music/Un Autre Noel/もうひとつのクリスマス/05 ノエル.mp3.Key[tag.TRACK_TOTAL] = [10]
+Music/Un Autre Noel/もうひとつのクリスマス/05 ノエル.mp3.Key[tag.YEAR] = [2007]

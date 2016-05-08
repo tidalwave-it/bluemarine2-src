@@ -10,3 +10,9 @@ Music/Compilations/The Incomparable Callas - Favourite Arias/12 Saint-Saëns_ Sa
 Music/Compilations/The Incomparable Callas - Favourite Arias/12 Saint-Saëns_ Samson Et Delila - Mon Coeur S'Ouvre À Ta Voix.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/The Incomparable Callas - Favourite Arias/12 Saint-Saëns_ Samson Et Delila - Mon Coeur S'Ouvre À Ta Voix.mp3.Key[mp3.title] = Saint-Saëns: Samson Et Delila - Mon Coeur S'Ouvre À Ta Voix
 Music/Compilations/The Incomparable Callas - Favourite Arias/12 Saint-Saëns_ Samson Et Delila - Mon Coeur S'Ouvre À Ta Voix.mp3.Key[mp3.trackNumber] = 12
+Music/Compilations/The Incomparable Callas - Favourite Arias/12 Saint-Saëns_ Samson Et Delila - Mon Coeur S'Ouvre À Ta Voix.mp3.Key[tag.COMMENT] = [0,  000001B6 00000144 00003C42 000033C9 0001EF9C 0001EF34 000063E1 000057F8 0004083E 0001EF1A,  00000000 00000210 00000B58 0000000000D5A098 00000000 00C1AFAD 00000000 00000000 00000000 00000000 00000000 00000000, B10FC80D+303187+13+182+25455+61932+90030+121737+142575+156562+176312+192760+215900+235475+252087+275897, 12]
+Music/Compilations/The Incomparable Callas - Favourite Arias/12 Saint-Saëns_ Samson Et Delila - Mon Coeur S'Ouvre À Ta Voix.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/The Incomparable Callas - Favourite Arias/12 Saint-Saëns_ Samson Et Delila - Mon Coeur S'Ouvre À Ta Voix.mp3.Key[tag.GENRE] = [Classical]
+Music/Compilations/The Incomparable Callas - Favourite Arias/12 Saint-Saëns_ Samson Et Delila - Mon Coeur S'Ouvre À Ta Voix.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/The Incomparable Callas - Favourite Arias/12 Saint-Saëns_ Samson Et Delila - Mon Coeur S'Ouvre À Ta Voix.mp3.Key[tag.TRACK_TOTAL] = [13]
+Music/Compilations/The Incomparable Callas - Favourite Arias/12 Saint-Saëns_ Samson Et Delila - Mon Coeur S'Ouvre À Ta Voix.mp3.Key[tag.YEAR] = [1982]

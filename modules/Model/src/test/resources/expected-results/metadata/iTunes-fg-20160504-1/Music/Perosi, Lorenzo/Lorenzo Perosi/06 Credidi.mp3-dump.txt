@@ -8,3 +8,7 @@ Music/Perosi, Lorenzo/Lorenzo Perosi/06 Credidi.mp3.Key[mp3.duration] = PT4M32S
 Music/Perosi, Lorenzo/Lorenzo Perosi/06 Credidi.mp3.Key[mp3.sampleRate] = 44100
 Music/Perosi, Lorenzo/Lorenzo Perosi/06 Credidi.mp3.Key[mp3.title] = Credidi
 Music/Perosi, Lorenzo/Lorenzo Perosi/06 Credidi.mp3.Key[mp3.trackNumber] = 6
+Music/Perosi, Lorenzo/Lorenzo Perosi/06 Credidi.mp3.Key[tag.COMMENT] = [0,  000002A7 000002A7 00003BD0 00003643 0001C0FA 0000F892 00007FFF 000073AD 0001B382 0001CE72,  00000000 00000210 00000930 0000000000B70840 00000000 00A5ED8D 00000000 00000000 00000000 00000000 00000000 00000000, 8410371A+311475+26+182+10100+20100+41525+50550+74850+95250+108450+119250+142600+152775+163162+173262+179587+191962+201112+214162+231150+237525+246000+254987+262837+272250+280612+290775+302775, 6]
+Music/Perosi, Lorenzo/Lorenzo Perosi/06 Credidi.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Perosi, Lorenzo/Lorenzo Perosi/06 Credidi.mp3.Key[tag.GENRE] = [Other]
+Music/Perosi, Lorenzo/Lorenzo Perosi/06 Credidi.mp3.Key[tag.TRACK_TOTAL] = [26]

@@ -10,3 +10,9 @@ Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps 
 Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[mp3.title] = Samson et Dalila (1987 - Remaster): Printemps qui commence
 Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[mp3.trackNumber] = 13
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[tag.COMMENT] = [0,  000000E7 000000A9 000022A9 000018C1 00037A68 00021D53 000052B7 00004745 00021D39 000219F5,  00000000 00000210 00000B58 0000000000D5A098 00000000 00C1AFAD 00000000 00000000 00000000 00000000 00000000 00000000, 16++]
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[tag.GENRE] = [Classical]
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[tag.TRACK_TOTAL] = [16]
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[tag.YEAR] = [1961]

@@ -10,3 +10,8 @@ Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/04 Handel_ Water M
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/04 Handel_ Water Music Suite #1 In F, HWV 348 - Minuet.mp3.Key[mp3.sampleRate] = 44100
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/04 Handel_ Water Music Suite #1 In F, HWV 348 - Minuet.mp3.Key[mp3.title] = Handel: Water Music Suite #1 In F, HWV 348 - Minuet
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/04 Handel_ Water Music Suite #1 In F, HWV 348 - Minuet.mp3.Key[mp3.trackNumber] = 4
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/04 Handel_ Water Music Suite #1 In F, HWV 348 - Minuet.mp3.Key[tag.COMMENT] = [0,  00000235 0000019B 00002398 00001374 0000A153 00026CD0 0000627B 00005E49 00011214 0001122F,  00000000 00000210 000009FC 000000000082C4F4 00000000 007686DC 00000000 00000000 00000000 00000000 00000000 00000000, 260CB513+244167+19+182+15097+25137+60317+74892+88582+103885+113517+125352+139922+149537+168732+181780+194145+203370+209422+214430+221877+228540, 4]
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/04 Handel_ Water Music Suite #1 In F, HWV 348 - Minuet.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/04 Handel_ Water Music Suite #1 In F, HWV 348 - Minuet.mp3.Key[tag.GENRE] = [Classical]
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/04 Handel_ Water Music Suite #1 In F, HWV 348 - Minuet.mp3.Key[tag.TRACK_TOTAL] = [19]
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/04 Handel_ Water Music Suite #1 In F, HWV 348 - Minuet.mp3.Key[tag.YEAR] = [1983]

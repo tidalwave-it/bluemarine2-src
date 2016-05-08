@@ -10,3 +10,9 @@ Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-09 Bach_ Mass In B 
 Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-09 Bach_ Mass In B Minor, BWV 232 - Gloria_ Qui Sedes Ad Dexteram Patris.mp3.Key[mp3.sampleRate] = 44100
 Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-09 Bach_ Mass In B Minor, BWV 232 - Gloria_ Qui Sedes Ad Dexteram Patris.mp3.Key[mp3.title] = Bach: Mass In B Minor, BWV 232 - Gloria: Qui Sedes Ad Dexteram Patris
 Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-09 Bach_ Mass In B Minor, BWV 232 - Gloria_ Qui Sedes Ad Dexteram Patris.mp3.Key[mp3.trackNumber] = 9
+Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-09 Bach_ Mass In B Minor, BWV 232 - Gloria_ Qui Sedes Ad Dexteram Patris.mp3.Key[tag.COMMENT] = [0,  00000035 0000002A 0000077F 00000476 00040E29 00040E43 000026FA 00001FAF 00040E43 00034D9C,  00000000 00000210 00000A74 0000000000C18E7C 00000000 00AF7A73 00000000 00000000 00000000 00000000 00000000 00000000, A60D010B+249827+11+150+47495+71245+84690+114582+133140+144937+171662+185302+206875+230457, 9]
+Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-09 Bach_ Mass In B Minor, BWV 232 - Gloria_ Qui Sedes Ad Dexteram Patris.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-09 Bach_ Mass In B Minor, BWV 232 - Gloria_ Qui Sedes Ad Dexteram Patris.mp3.Key[tag.GENRE] = [Classical]
+Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-09 Bach_ Mass In B Minor, BWV 232 - Gloria_ Qui Sedes Ad Dexteram Patris.mp3.Key[tag.IS_COMPILATION] = [1]
+Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-09 Bach_ Mass In B Minor, BWV 232 - Gloria_ Qui Sedes Ad Dexteram Patris.mp3.Key[tag.TRACK_TOTAL] = [11]
+Music/Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-09 Bach_ Mass In B Minor, BWV 232 - Gloria_ Qui Sedes Ad Dexteram Patris.mp3.Key[tag.YEAR] = [1986]

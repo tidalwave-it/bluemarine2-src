@@ -8,3 +8,7 @@ Music/Perosi, Lorenzo/Lorenzo Perosi/16 Tantum ergo.mp3.Key[mp3.duration] = PT2M
 Music/Perosi, Lorenzo/Lorenzo Perosi/16 Tantum ergo.mp3.Key[mp3.sampleRate] = 44100
 Music/Perosi, Lorenzo/Lorenzo Perosi/16 Tantum ergo.mp3.Key[mp3.title] = Tantum ergo
 Music/Perosi, Lorenzo/Lorenzo Perosi/16 Tantum ergo.mp3.Key[mp3.trackNumber] = 16
+Music/Perosi, Lorenzo/Lorenzo Perosi/16 Tantum ergo.mp3.Key[tag.COMMENT] = [0,  00000160 0000014A 00000ED0 000010F2 0001B692 0001EDE0 00003C56 00003C90 0001B692 0001B692,  00000000 00000210 00000738 0000000000751638 00000000 006A1B44 00000000 00000000 00000000 00000000 00000000 00000000, 8410371A+311475+26+182+10100+20100+41525+50550+74850+95250+108450+119250+142600+152775+163162+173262+179587+191962+201112+214162+231150+237525+246000+254987+262837+272250+280612+290775+302775, 16]
+Music/Perosi, Lorenzo/Lorenzo Perosi/16 Tantum ergo.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Perosi, Lorenzo/Lorenzo Perosi/16 Tantum ergo.mp3.Key[tag.GENRE] = [Other]
+Music/Perosi, Lorenzo/Lorenzo Perosi/16 Tantum ergo.mp3.Key[tag.TRACK_TOTAL] = [26]

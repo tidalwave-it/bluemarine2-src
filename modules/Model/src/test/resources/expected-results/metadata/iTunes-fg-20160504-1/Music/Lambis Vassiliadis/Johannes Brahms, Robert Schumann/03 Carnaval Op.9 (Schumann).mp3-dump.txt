@@ -8,3 +8,8 @@ Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/03 Carnaval Op.9 (Schu
 Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/03 Carnaval Op.9 (Schumann).mp3.Key[mp3.sampleRate] = 44100
 Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/03 Carnaval Op.9 (Schumann).mp3.Key[mp3.title] = Carnaval Op.9 (Schumann)
 Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/03 Carnaval Op.9 (Schumann).mp3.Key[mp3.trackNumber] = 3
+Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/03 Carnaval Op.9 (Schumann).mp3.Key[tag.COMMENT] = [0,  000000B3 000000EA 00001ED6 00003B8B 000B8CA2 00142FA7 00005521 00006341 001847B6 0016A300,  00000000 00000210 000006F0 000000000434A900 00000000 03D07782 00000000 00000000 00000000 00000000 00000000 00000000, 240B9503+222557+3+150+54692+102480, 3]
+Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/03 Carnaval Op.9 (Schumann).mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/03 Carnaval Op.9 (Schumann).mp3.Key[tag.GENRE] = [Classical]
+Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/03 Carnaval Op.9 (Schumann).mp3.Key[tag.TRACK_TOTAL] = [3]
+Music/Lambis Vassiliadis/Johannes Brahms, Robert Schumann/03 Carnaval Op.9 (Schumann).mp3.Key[tag.YEAR] = [1995]

@@ -10,3 +10,8 @@ Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Pr
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.sampleRate] = 44100
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.title] = Prokofiev: Piano Sonata #6 In A, Op. 82 - 2. Allegretto
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[mp3.trackNumber] = 5
+Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[tag.COMMENT] = [0,  0000005F 00000060 00000760 00000B97 00016B29 00009443 00003A8B 00004435 0000A97D 0000A97D,  00000000 00000210 00000864 0000000000C03A8C 00000000 00AE443F 00000000 00000000 00000000 00000000 00000000 00000000, 5A0C3907+234830+7+182+33522+64430+107295+145825+167250+204670, 5]
+Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[tag.GENRE] = [Classical]
+Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[tag.TRACK_TOTAL] = [7]
+Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/05 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 2. Allegretto.mp3.Key[tag.YEAR] = [1940]

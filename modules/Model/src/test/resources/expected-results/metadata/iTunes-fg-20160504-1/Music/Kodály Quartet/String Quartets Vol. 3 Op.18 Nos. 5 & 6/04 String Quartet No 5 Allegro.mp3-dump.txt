@@ -8,3 +8,7 @@ Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/04 String Quartet 
 Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/04 String Quartet No 5 Allegro.mp3.Key[mp3.sampleRate] = 44100
 Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/04 String Quartet No 5 Allegro.mp3.Key[mp3.title] = String Quartet No 5 Allegro
 Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/04 String Quartet No 5 Allegro.mp3.Key[mp3.trackNumber] = 4
+Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/04 String Quartet No 5 Allegro.mp3.Key[tag.COMMENT] = [0,  000000E4 000000C7 00002BD9 000029F1 0004A824 0004A83E 000064CF 00006579 0004A824 0004A824,  00000000 00000210 000009B4 0000000001161C3C 00000000 00FC2B1A 00000000 00000000 00000000 00000000 00000000 00000000, 670D1508+251387+8+182+32250+57495+104065+135062+166467+196972+212557, 4]
+Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/04 String Quartet No 5 Allegro.mp3.Key[tag.ENCODER] = [iTunes 12.3.3.17]
+Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/04 String Quartet No 5 Allegro.mp3.Key[tag.GENRE] = [Classical]
+Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/04 String Quartet No 5 Allegro.mp3.Key[tag.TRACK_TOTAL] = [8]
