@@ -1,0 +1,10 @@
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/01 Poem For Flute And Orchesta.mp3.Key[mbz.artistId] = []
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/01 Poem For Flute And Orchesta.mp3.Key[mp3.album] = Mostly French
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/01 Poem For Flute And Orchesta.mp3.Key[mp3.artist] = Griffes/Faure/Debussy/Gaos/Saint-Saens/Ravel
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/01 Poem For Flute And Orchesta.mp3.Key[mp3.bitRate] = 320
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/01 Poem For Flute And Orchesta.mp3.Key[mp3.comment] = 0
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/01 Poem For Flute And Orchesta.mp3.Key[mp3.composer] = 
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/01 Poem For Flute And Orchesta.mp3.Key[mp3.duration] = PT10M14S
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/01 Poem For Flute And Orchesta.mp3.Key[mp3.sampleRate] = 44100
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/01 Poem For Flute And Orchesta.mp3.Key[mp3.title] = Poem For Flute And Orchesta
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/01 Poem For Flute And Orchesta.mp3.Key[mp3.trackNumber] = 1

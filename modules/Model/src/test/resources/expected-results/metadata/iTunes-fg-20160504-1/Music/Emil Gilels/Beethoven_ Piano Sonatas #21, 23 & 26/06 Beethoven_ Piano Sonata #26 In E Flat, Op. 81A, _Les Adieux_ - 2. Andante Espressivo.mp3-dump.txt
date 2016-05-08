@@ -1,0 +1,12 @@
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/06 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 2. Andante Espressivo.mp3.Key[mbz.artistId] = []
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/06 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 2. Andante Espressivo.mp3.Key[mp3.album] = Beethoven: Piano Sonatas #21, 23 & 26
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/06 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 2. Andante Espressivo.mp3.Key[mp3.artist] = Emil Gilels
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/06 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 2. Andante Espressivo.mp3.Key[mp3.bitRate] = 320
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/06 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 2. Andante Espressivo.mp3.Key[mp3.comment] = 0
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/06 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 2. Andante Espressivo.mp3.Key[mp3.composer] = Ludwig van Beethoven/Ludwig Van Beethoven
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/06 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 2. Andante Espressivo.mp3.Key[mp3.diskCount] = 1
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/06 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 2. Andante Espressivo.mp3.Key[mp3.diskNumber] = 1
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/06 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 2. Andante Espressivo.mp3.Key[mp3.duration] = PT4M1S
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/06 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 2. Andante Espressivo.mp3.Key[mp3.sampleRate] = 44100
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/06 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 2. Andante Espressivo.mp3.Key[mp3.title] = Beethoven: Piano Sonata #26 In E Flat, Op. 81A, "Les Adieux" - 2. Andante Espressivo
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/06 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 2. Andante Espressivo.mp3.Key[mp3.trackNumber] = 6

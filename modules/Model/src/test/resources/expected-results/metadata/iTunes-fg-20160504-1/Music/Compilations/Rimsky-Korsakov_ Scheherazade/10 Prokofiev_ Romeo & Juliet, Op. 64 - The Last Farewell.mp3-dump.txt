@@ -1,0 +1,12 @@
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[mbz.artistId] = []
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[mp3.album] = Rimsky-Korsakov: Scheherazade
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[mp3.artist] = Seiji Ozawa: Boston Symphony Orchestra
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[mp3.comment] = 0
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[mp3.composer] = Sergei Prokofiev
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[mp3.diskCount] = 1
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[mp3.diskNumber] = 1
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[mp3.duration] = PT5M25S
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[mp3.sampleRate] = 44100
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[mp3.title] = Prokofiev: Romeo & Juliet, Op. 64 - The Last Farewell
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/10 Prokofiev_ Romeo & Juliet, Op. 64 - The Last Farewell.mp3.Key[mp3.trackNumber] = 10

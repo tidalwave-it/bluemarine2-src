@@ -1,0 +1,12 @@
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/14 Tuit cil qui sunt enamourat.mp3.Key[mbz.artistId] = []
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/14 Tuit cil qui sunt enamourat.mp3.Key[mp3.album] = La Domna Savorousa : Chants d’amour des troubadours et des trouvères
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/14 Tuit cil qui sunt enamourat.mp3.Key[mp3.artist] = Ensemble In Cortezia
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/14 Tuit cil qui sunt enamourat.mp3.Key[mp3.bitRate] = 320
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/14 Tuit cil qui sunt enamourat.mp3.Key[mp3.comment] = 0
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/14 Tuit cil qui sunt enamourat.mp3.Key[mp3.composer] = Anon., 13C
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/14 Tuit cil qui sunt enamourat.mp3.Key[mp3.diskCount] = 1
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/14 Tuit cil qui sunt enamourat.mp3.Key[mp3.diskNumber] = 1
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/14 Tuit cil qui sunt enamourat.mp3.Key[mp3.duration] = PT4M10S
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/14 Tuit cil qui sunt enamourat.mp3.Key[mp3.sampleRate] = 44100
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/14 Tuit cil qui sunt enamourat.mp3.Key[mp3.title] = Tuit cil qui sunt enamourat
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/14 Tuit cil qui sunt enamourat.mp3.Key[mp3.trackNumber] = 14

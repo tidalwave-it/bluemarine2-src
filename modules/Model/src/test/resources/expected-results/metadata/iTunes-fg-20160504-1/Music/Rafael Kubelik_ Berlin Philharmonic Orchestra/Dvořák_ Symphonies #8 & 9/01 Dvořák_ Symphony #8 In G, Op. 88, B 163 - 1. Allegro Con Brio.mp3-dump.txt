@@ -1,0 +1,12 @@
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3.Key[mbz.artistId] = []
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3.Key[mp3.album] = Dvořák: Symphonies #8 & 9
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3.Key[mp3.artist] = Rafael Kubelik: Berlin Philharmonic Orchestra
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3.Key[mp3.bitRate] = 320
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3.Key[mp3.comment] = 0
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3.Key[mp3.composer] = Antonín Dvořák/Antonín Dvořák
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3.Key[mp3.diskCount] = 1
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3.Key[mp3.diskNumber] = 1
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3.Key[mp3.duration] = PT9M57S
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3.Key[mp3.sampleRate] = 44100
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3.Key[mp3.title] = Dvořák: Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3.Key[mp3.trackNumber] = 1

@@ -1,0 +1,12 @@
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/10 Veris ad imperia - A l'entrada del tens clar.mp3.Key[mbz.artistId] = []
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/10 Veris ad imperia - A l'entrada del tens clar.mp3.Key[mp3.album] = La Domna Savorousa : Chants d’amour des troubadours et des trouvères
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/10 Veris ad imperia - A l'entrada del tens clar.mp3.Key[mp3.artist] = Ensemble In Cortezia
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/10 Veris ad imperia - A l'entrada del tens clar.mp3.Key[mp3.bitRate] = 320
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/10 Veris ad imperia - A l'entrada del tens clar.mp3.Key[mp3.comment] = 0
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/10 Veris ad imperia - A l'entrada del tens clar.mp3.Key[mp3.composer] = Anon., 13C/Anon., 12C
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/10 Veris ad imperia - A l'entrada del tens clar.mp3.Key[mp3.diskCount] = 1
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/10 Veris ad imperia - A l'entrada del tens clar.mp3.Key[mp3.diskNumber] = 1
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/10 Veris ad imperia - A l'entrada del tens clar.mp3.Key[mp3.duration] = PT4M18S
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/10 Veris ad imperia - A l'entrada del tens clar.mp3.Key[mp3.sampleRate] = 44100
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/10 Veris ad imperia - A l'entrada del tens clar.mp3.Key[mp3.title] = Veris ad imperia - A l'entrada del tens clar
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/10 Veris ad imperia - A l'entrada del tens clar.mp3.Key[mp3.trackNumber] = 10

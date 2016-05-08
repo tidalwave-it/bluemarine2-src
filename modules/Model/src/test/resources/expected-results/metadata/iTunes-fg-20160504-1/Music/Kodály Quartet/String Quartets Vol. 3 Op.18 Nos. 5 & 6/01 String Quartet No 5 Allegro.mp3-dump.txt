@@ -1,0 +1,10 @@
+Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/01 String Quartet No 5 Allegro.mp3.Key[mbz.artistId] = []
+Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/01 String Quartet No 5 Allegro.mp3.Key[mp3.album] = String Quartets Vol. 3 Op.18 Nos. 5 & 6
+Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/01 String Quartet No 5 Allegro.mp3.Key[mp3.artist] = Kodály Quartet
+Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/01 String Quartet No 5 Allegro.mp3.Key[mp3.bitRate] = 320
+Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/01 String Quartet No 5 Allegro.mp3.Key[mp3.comment] = 0
+Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/01 String Quartet No 5 Allegro.mp3.Key[mp3.composer] = Beethoven
+Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/01 String Quartet No 5 Allegro.mp3.Key[mp3.duration] = PT7M7S
+Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/01 String Quartet No 5 Allegro.mp3.Key[mp3.sampleRate] = 44100
+Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/01 String Quartet No 5 Allegro.mp3.Key[mp3.title] = String Quartet No 5 Allegro
+Music/Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/01 String Quartet No 5 Allegro.mp3.Key[mp3.trackNumber] = 1

@@ -1,0 +1,12 @@
+Music/John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/09 Handel_ Concerto A Due Cori #3 In F, HWV 334 - 3. Adagio.mp3.Key[mbz.artistId] = []
+Music/John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/09 Handel_ Concerto A Due Cori #3 In F, HWV 334 - 3. Adagio.mp3.Key[mp3.album] = Handel: Music For The Royal Fireworks, Concerto #2 In F
+Music/John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/09 Handel_ Concerto A Due Cori #3 In F, HWV 334 - 3. Adagio.mp3.Key[mp3.artist] = John Eliot Gardiner: English Baroque Soloists
+Music/John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/09 Handel_ Concerto A Due Cori #3 In F, HWV 334 - 3. Adagio.mp3.Key[mp3.bitRate] = 320
+Music/John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/09 Handel_ Concerto A Due Cori #3 In F, HWV 334 - 3. Adagio.mp3.Key[mp3.comment] = 0
+Music/John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/09 Handel_ Concerto A Due Cori #3 In F, HWV 334 - 3. Adagio.mp3.Key[mp3.composer] = George Frideric Handel
+Music/John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/09 Handel_ Concerto A Due Cori #3 In F, HWV 334 - 3. Adagio.mp3.Key[mp3.diskCount] = 1
+Music/John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/09 Handel_ Concerto A Due Cori #3 In F, HWV 334 - 3. Adagio.mp3.Key[mp3.diskNumber] = 1
+Music/John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/09 Handel_ Concerto A Due Cori #3 In F, HWV 334 - 3. Adagio.mp3.Key[mp3.duration] = PT1M10S
+Music/John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/09 Handel_ Concerto A Due Cori #3 In F, HWV 334 - 3. Adagio.mp3.Key[mp3.sampleRate] = 44100
+Music/John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/09 Handel_ Concerto A Due Cori #3 In F, HWV 334 - 3. Adagio.mp3.Key[mp3.title] = Handel: Concerto A Due Cori #3 In F, HWV 334 - 3. Adagio
+Music/John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/09 Handel_ Concerto A Due Cori #3 In F, HWV 334 - 3. Adagio.mp3.Key[mp3.trackNumber] = 9

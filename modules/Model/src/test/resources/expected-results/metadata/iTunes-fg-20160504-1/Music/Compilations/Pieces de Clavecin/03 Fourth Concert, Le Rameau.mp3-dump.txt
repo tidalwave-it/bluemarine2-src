@@ -1,0 +1,12 @@
+Music/Compilations/Pieces de Clavecin/03 Fourth Concert, Le Rameau.mp3.Key[mbz.artistId] = []
+Music/Compilations/Pieces de Clavecin/03 Fourth Concert, Le Rameau.mp3.Key[mp3.album] = Pieces de Clavecin
+Music/Compilations/Pieces de Clavecin/03 Fourth Concert, Le Rameau.mp3.Key[mp3.artist] = Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba
+Music/Compilations/Pieces de Clavecin/03 Fourth Concert, Le Rameau.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/Pieces de Clavecin/03 Fourth Concert, Le Rameau.mp3.Key[mp3.comment] = 0
+Music/Compilations/Pieces de Clavecin/03 Fourth Concert, Le Rameau.mp3.Key[mp3.composer] = Jean-Philippe Rameau
+Music/Compilations/Pieces de Clavecin/03 Fourth Concert, Le Rameau.mp3.Key[mp3.diskCount] = 1
+Music/Compilations/Pieces de Clavecin/03 Fourth Concert, Le Rameau.mp3.Key[mp3.diskNumber] = 1
+Music/Compilations/Pieces de Clavecin/03 Fourth Concert, Le Rameau.mp3.Key[mp3.duration] = PT4M29S
+Music/Compilations/Pieces de Clavecin/03 Fourth Concert, Le Rameau.mp3.Key[mp3.sampleRate] = 44100
+Music/Compilations/Pieces de Clavecin/03 Fourth Concert, Le Rameau.mp3.Key[mp3.title] = Fourth Concert, Le Rameau
+Music/Compilations/Pieces de Clavecin/03 Fourth Concert, Le Rameau.mp3.Key[mp3.trackNumber] = 3

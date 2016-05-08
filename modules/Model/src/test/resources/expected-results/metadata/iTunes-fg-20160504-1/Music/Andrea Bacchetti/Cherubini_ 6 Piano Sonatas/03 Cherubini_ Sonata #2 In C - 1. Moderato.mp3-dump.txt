@@ -1,0 +1,12 @@
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/03 Cherubini_ Sonata #2 In C - 1. Moderato.mp3.Key[mbz.artistId] = []
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/03 Cherubini_ Sonata #2 In C - 1. Moderato.mp3.Key[mp3.album] = Cherubini: 6 Piano Sonatas
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/03 Cherubini_ Sonata #2 In C - 1. Moderato.mp3.Key[mp3.artist] = Andrea Bacchetti
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/03 Cherubini_ Sonata #2 In C - 1. Moderato.mp3.Key[mp3.bitRate] = 320
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/03 Cherubini_ Sonata #2 In C - 1. Moderato.mp3.Key[mp3.comment] = 0
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/03 Cherubini_ Sonata #2 In C - 1. Moderato.mp3.Key[mp3.composer] = Luigi Cherubini/Luigi Cherubini (1760-1842)
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/03 Cherubini_ Sonata #2 In C - 1. Moderato.mp3.Key[mp3.diskCount] = 1
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/03 Cherubini_ Sonata #2 In C - 1. Moderato.mp3.Key[mp3.diskNumber] = 1
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/03 Cherubini_ Sonata #2 In C - 1. Moderato.mp3.Key[mp3.duration] = PT7M39S
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/03 Cherubini_ Sonata #2 In C - 1. Moderato.mp3.Key[mp3.sampleRate] = 44100
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/03 Cherubini_ Sonata #2 In C - 1. Moderato.mp3.Key[mp3.title] = Cherubini: Sonata #2 In C - 1. Moderato
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/03 Cherubini_ Sonata #2 In C - 1. Moderato.mp3.Key[mp3.trackNumber] = 3

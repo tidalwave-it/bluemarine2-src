@@ -1,0 +1,10 @@
+Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[mbz.artistId] = []
+Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[mp3.album] = 
+Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[mp3.artist] = 
+Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[mp3.bitRate] = 320
+Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[mp3.comment] = 0
+Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[mp3.composer] = 
+Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[mp3.duration] = PT10M32S
+Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[mp3.sampleRate] = 44100
+Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[mp3.title] = Track 01
+Music/Unknown Artist/Unknown Album/01 Track 01.mp3.Key[mp3.trackNumber] = 1

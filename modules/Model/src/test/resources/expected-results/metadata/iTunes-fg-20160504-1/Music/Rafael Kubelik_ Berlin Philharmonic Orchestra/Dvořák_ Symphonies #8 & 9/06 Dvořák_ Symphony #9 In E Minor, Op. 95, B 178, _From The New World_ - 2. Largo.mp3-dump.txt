@@ -1,0 +1,12 @@
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3.Key[mbz.artistId] = []
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3.Key[mp3.album] = Dvořák: Symphonies #8 & 9
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3.Key[mp3.artist] = Rafael Kubelik: Berlin Philharmonic Orchestra
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3.Key[mp3.bitRate] = 320
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3.Key[mp3.comment] = 0
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3.Key[mp3.composer] = Antonín Dvořák/Antonín Dvořák
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3.Key[mp3.diskCount] = 1
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3.Key[mp3.diskNumber] = 1
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3.Key[mp3.duration] = PT13M3S
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3.Key[mp3.sampleRate] = 44100
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3.Key[mp3.title] = Dvořák: Symphony #9 In E Minor, Op. 95, B 178, "From The New World" - 2. Largo
+Music/Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3.Key[mp3.trackNumber] = 6

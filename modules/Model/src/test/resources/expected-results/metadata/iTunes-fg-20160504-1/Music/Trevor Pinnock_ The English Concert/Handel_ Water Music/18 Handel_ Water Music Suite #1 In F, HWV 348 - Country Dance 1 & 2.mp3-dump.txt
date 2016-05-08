@@ -1,0 +1,12 @@
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/18 Handel_ Water Music Suite #1 In F, HWV 348 - Country Dance 1 & 2.mp3.Key[mbz.artistId] = []
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/18 Handel_ Water Music Suite #1 In F, HWV 348 - Country Dance 1 & 2.mp3.Key[mp3.album] = Handel: Water Music
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/18 Handel_ Water Music Suite #1 In F, HWV 348 - Country Dance 1 & 2.mp3.Key[mp3.artist] = Trevor Pinnock: The English Concert
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/18 Handel_ Water Music Suite #1 In F, HWV 348 - Country Dance 1 & 2.mp3.Key[mp3.bitRate] = 320
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/18 Handel_ Water Music Suite #1 In F, HWV 348 - Country Dance 1 & 2.mp3.Key[mp3.comment] = 0
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/18 Handel_ Water Music Suite #1 In F, HWV 348 - Country Dance 1 & 2.mp3.Key[mp3.composer] = George Frideric Handel
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/18 Handel_ Water Music Suite #1 In F, HWV 348 - Country Dance 1 & 2.mp3.Key[mp3.diskCount] = 1
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/18 Handel_ Water Music Suite #1 In F, HWV 348 - Country Dance 1 & 2.mp3.Key[mp3.diskNumber] = 1
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/18 Handel_ Water Music Suite #1 In F, HWV 348 - Country Dance 1 & 2.mp3.Key[mp3.duration] = PT1M28S
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/18 Handel_ Water Music Suite #1 In F, HWV 348 - Country Dance 1 & 2.mp3.Key[mp3.sampleRate] = 44100
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/18 Handel_ Water Music Suite #1 In F, HWV 348 - Country Dance 1 & 2.mp3.Key[mp3.title] = Handel: Water Music Suite #1 In F, HWV 348 - Country Dance 1 & 2
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/18 Handel_ Water Music Suite #1 In F, HWV 348 - Country Dance 1 & 2.mp3.Key[mp3.trackNumber] = 18

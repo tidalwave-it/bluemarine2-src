@@ -1,0 +1,12 @@
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-16 Anon_ Pueri Hebraeorum Portantes.mp3.Key[mbz.artistId] = []
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-16 Anon_ Pueri Hebraeorum Portantes.mp3.Key[mp3.album] = Las Mejores Obras Del Canto Gregoriano [Disc 2]
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-16 Anon_ Pueri Hebraeorum Portantes.mp3.Key[mp3.artist] = Benedictine Monks Of Santo Domingo De Silos
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-16 Anon_ Pueri Hebraeorum Portantes.mp3.Key[mp3.bitRate] = 320
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-16 Anon_ Pueri Hebraeorum Portantes.mp3.Key[mp3.comment] = 0
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-16 Anon_ Pueri Hebraeorum Portantes.mp3.Key[mp3.composer] = Traditional/Anonymous
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-16 Anon_ Pueri Hebraeorum Portantes.mp3.Key[mp3.diskCount] = 4
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-16 Anon_ Pueri Hebraeorum Portantes.mp3.Key[mp3.diskNumber] = 2
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-16 Anon_ Pueri Hebraeorum Portantes.mp3.Key[mp3.duration] = PT2M16S
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-16 Anon_ Pueri Hebraeorum Portantes.mp3.Key[mp3.sampleRate] = 44100
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-16 Anon_ Pueri Hebraeorum Portantes.mp3.Key[mp3.title] = Anon: Pueri Hebraeorum Portantes
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-16 Anon_ Pueri Hebraeorum Portantes.mp3.Key[mp3.trackNumber] = 16

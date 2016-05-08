@@ -1,0 +1,10 @@
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/11 Huius Rei Non Sum Reus.mp3.Key[mbz.artistId] = []
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/11 Huius Rei Non Sum Reus.mp3.Key[mp3.album] = Daniel And The Lions - Ludus Danielis
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/11 Huius Rei Non Sum Reus.mp3.Key[mp3.artist] = New York's Ensemble for Early Music - Frederick Renz director
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/11 Huius Rei Non Sum Reus.mp3.Key[mp3.bitRate] = 320
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/11 Huius Rei Non Sum Reus.mp3.Key[mp3.comment] = 0
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/11 Huius Rei Non Sum Reus.mp3.Key[mp3.composer] = Anon
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/11 Huius Rei Non Sum Reus.mp3.Key[mp3.duration] = PT5M47S
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/11 Huius Rei Non Sum Reus.mp3.Key[mp3.sampleRate] = 44100
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/11 Huius Rei Non Sum Reus.mp3.Key[mp3.title] = Huius Rei Non Sum Reus
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/11 Huius Rei Non Sum Reus.mp3.Key[mp3.trackNumber] = 11

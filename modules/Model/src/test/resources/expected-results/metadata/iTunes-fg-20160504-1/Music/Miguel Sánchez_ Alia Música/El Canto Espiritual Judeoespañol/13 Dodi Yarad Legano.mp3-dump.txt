@@ -1,0 +1,12 @@
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/13 Dodi Yarad Legano.mp3.Key[mbz.artistId] = []
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/13 Dodi Yarad Legano.mp3.Key[mp3.album] = El Canto Espiritual Judeoespañol
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/13 Dodi Yarad Legano.mp3.Key[mp3.artist] = Miguel Sánchez: Alia Música
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/13 Dodi Yarad Legano.mp3.Key[mp3.bitRate] = 320
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/13 Dodi Yarad Legano.mp3.Key[mp3.comment] = 0
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/13 Dodi Yarad Legano.mp3.Key[mp3.composer] = 
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/13 Dodi Yarad Legano.mp3.Key[mp3.diskCount] = 1
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/13 Dodi Yarad Legano.mp3.Key[mp3.diskNumber] = 1
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/13 Dodi Yarad Legano.mp3.Key[mp3.duration] = PT4M35S
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/13 Dodi Yarad Legano.mp3.Key[mp3.sampleRate] = 44100
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/13 Dodi Yarad Legano.mp3.Key[mp3.title] = Dodi Yarad Legano
+Music/Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/13 Dodi Yarad Legano.mp3.Key[mp3.trackNumber] = 13

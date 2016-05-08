@@ -1,0 +1,10 @@
+Music/Perosi, Lorenzo/Lorenzo Perosi/04 Laudate Dominum.mp3.Key[mbz.artistId] = []
+Music/Perosi, Lorenzo/Lorenzo Perosi/04 Laudate Dominum.mp3.Key[mp3.album] = Lorenzo Perosi
+Music/Perosi, Lorenzo/Lorenzo Perosi/04 Laudate Dominum.mp3.Key[mp3.artist] = Perosi, Lorenzo
+Music/Perosi, Lorenzo/Lorenzo Perosi/04 Laudate Dominum.mp3.Key[mp3.bitRate] = 320
+Music/Perosi, Lorenzo/Lorenzo Perosi/04 Laudate Dominum.mp3.Key[mp3.comment] = 0
+Music/Perosi, Lorenzo/Lorenzo Perosi/04 Laudate Dominum.mp3.Key[mp3.composer] = 
+Music/Perosi, Lorenzo/Lorenzo Perosi/04 Laudate Dominum.mp3.Key[mp3.duration] = PT2M
+Music/Perosi, Lorenzo/Lorenzo Perosi/04 Laudate Dominum.mp3.Key[mp3.sampleRate] = 44100
+Music/Perosi, Lorenzo/Lorenzo Perosi/04 Laudate Dominum.mp3.Key[mp3.title] = Laudate Dominum
+Music/Perosi, Lorenzo/Lorenzo Perosi/04 Laudate Dominum.mp3.Key[mp3.trackNumber] = 4

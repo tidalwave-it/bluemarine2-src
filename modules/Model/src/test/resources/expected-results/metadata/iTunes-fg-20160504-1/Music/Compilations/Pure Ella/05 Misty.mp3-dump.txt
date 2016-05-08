@@ -1,0 +1,12 @@
+Music/Compilations/Pure Ella/05 Misty.mp3.Key[mbz.artistId] = []
+Music/Compilations/Pure Ella/05 Misty.mp3.Key[mp3.album] = Pure Ella
+Music/Compilations/Pure Ella/05 Misty.mp3.Key[mp3.artist] = Ella Fitzgerald
+Music/Compilations/Pure Ella/05 Misty.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/Pure Ella/05 Misty.mp3.Key[mp3.comment] = 0
+Music/Compilations/Pure Ella/05 Misty.mp3.Key[mp3.composer] = Johnny Burke/Erroll Garner
+Music/Compilations/Pure Ella/05 Misty.mp3.Key[mp3.diskCount] = 1
+Music/Compilations/Pure Ella/05 Misty.mp3.Key[mp3.diskNumber] = 1
+Music/Compilations/Pure Ella/05 Misty.mp3.Key[mp3.duration] = PT2M53S
+Music/Compilations/Pure Ella/05 Misty.mp3.Key[mp3.sampleRate] = 44100
+Music/Compilations/Pure Ella/05 Misty.mp3.Key[mp3.title] = Misty
+Music/Compilations/Pure Ella/05 Misty.mp3.Key[mp3.trackNumber] = 5

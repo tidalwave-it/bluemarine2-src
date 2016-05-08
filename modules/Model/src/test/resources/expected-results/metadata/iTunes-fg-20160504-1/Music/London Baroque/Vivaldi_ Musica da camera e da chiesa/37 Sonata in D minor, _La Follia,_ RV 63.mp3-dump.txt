@@ -1,0 +1,12 @@
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/37 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[mbz.artistId] = []
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/37 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[mp3.album] = Vivaldi: Musica da camera e da chiesa
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/37 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[mp3.artist] = London Baroque
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/37 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[mp3.bitRate] = 320
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/37 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[mp3.comment] = 0
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/37 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[mp3.composer] = Antonio Vivaldi
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/37 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[mp3.diskCount] = 1
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/37 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[mp3.diskNumber] = 1
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/37 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[mp3.duration] = PT16S
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/37 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[mp3.sampleRate] = 44100
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/37 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[mp3.title] = Sonata in D minor, "La Follia," RV 63
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/37 Sonata in D minor, _La Follia,_ RV 63.mp3.Key[mp3.trackNumber] = 37

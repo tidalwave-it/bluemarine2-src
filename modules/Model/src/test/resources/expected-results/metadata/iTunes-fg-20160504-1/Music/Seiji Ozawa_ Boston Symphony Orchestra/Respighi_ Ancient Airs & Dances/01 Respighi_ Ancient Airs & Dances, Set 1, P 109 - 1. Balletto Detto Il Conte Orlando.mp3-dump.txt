@@ -1,0 +1,12 @@
+Music/Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/01 Respighi_ Ancient Airs & Dances, Set 1, P 109 - 1. Balletto Detto Il Conte Orlando.mp3.Key[mbz.artistId] = []
+Music/Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/01 Respighi_ Ancient Airs & Dances, Set 1, P 109 - 1. Balletto Detto Il Conte Orlando.mp3.Key[mp3.album] = Respighi: Ancient Airs & Dances
+Music/Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/01 Respighi_ Ancient Airs & Dances, Set 1, P 109 - 1. Balletto Detto Il Conte Orlando.mp3.Key[mp3.artist] = Seiji Ozawa: Boston Symphony Orchestra
+Music/Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/01 Respighi_ Ancient Airs & Dances, Set 1, P 109 - 1. Balletto Detto Il Conte Orlando.mp3.Key[mp3.bitRate] = 320
+Music/Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/01 Respighi_ Ancient Airs & Dances, Set 1, P 109 - 1. Balletto Detto Il Conte Orlando.mp3.Key[mp3.comment] = 0
+Music/Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/01 Respighi_ Ancient Airs & Dances, Set 1, P 109 - 1. Balletto Detto Il Conte Orlando.mp3.Key[mp3.composer] = Ottorino Respighi/Respighi/Respighi, Ottorino [Composer]
+Music/Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/01 Respighi_ Ancient Airs & Dances, Set 1, P 109 - 1. Balletto Detto Il Conte Orlando.mp3.Key[mp3.diskCount] = 1
+Music/Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/01 Respighi_ Ancient Airs & Dances, Set 1, P 109 - 1. Balletto Detto Il Conte Orlando.mp3.Key[mp3.diskNumber] = 1
+Music/Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/01 Respighi_ Ancient Airs & Dances, Set 1, P 109 - 1. Balletto Detto Il Conte Orlando.mp3.Key[mp3.duration] = PT3M4S
+Music/Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/01 Respighi_ Ancient Airs & Dances, Set 1, P 109 - 1. Balletto Detto Il Conte Orlando.mp3.Key[mp3.sampleRate] = 44100
+Music/Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/01 Respighi_ Ancient Airs & Dances, Set 1, P 109 - 1. Balletto Detto Il Conte Orlando.mp3.Key[mp3.title] = Respighi: Ancient Airs & Dances, Set 1, P 109 - 1. Balletto Detto Il Conte Orlando
+Music/Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/01 Respighi_ Ancient Airs & Dances, Set 1, P 109 - 1. Balletto Detto Il Conte Orlando.mp3.Key[mp3.trackNumber] = 1

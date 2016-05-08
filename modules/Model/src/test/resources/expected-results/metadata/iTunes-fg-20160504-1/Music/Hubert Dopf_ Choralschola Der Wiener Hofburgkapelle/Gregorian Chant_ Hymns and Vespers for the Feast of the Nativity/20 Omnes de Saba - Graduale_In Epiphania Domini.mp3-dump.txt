@@ -1,0 +1,12 @@
+Music/Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/20 Omnes de Saba - Graduale_In Epiphania Domini.mp3.Key[mbz.artistId] = []
+Music/Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/20 Omnes de Saba - Graduale_In Epiphania Domini.mp3.Key[mp3.album] = Gregorian Chant: Hymns and Vespers for the Feast of the Nativity
+Music/Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/20 Omnes de Saba - Graduale_In Epiphania Domini.mp3.Key[mp3.artist] = Hubert Dopf: Choralschola Der Wiener Hofburgkapelle
+Music/Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/20 Omnes de Saba - Graduale_In Epiphania Domini.mp3.Key[mp3.bitRate] = 320
+Music/Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/20 Omnes de Saba - Graduale_In Epiphania Domini.mp3.Key[mp3.comment] = 0
+Music/Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/20 Omnes de Saba - Graduale_In Epiphania Domini.mp3.Key[mp3.composer] = Gregorian Chant
+Music/Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/20 Omnes de Saba - Graduale_In Epiphania Domini.mp3.Key[mp3.diskCount] = 1
+Music/Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/20 Omnes de Saba - Graduale_In Epiphania Domini.mp3.Key[mp3.diskNumber] = 1
+Music/Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/20 Omnes de Saba - Graduale_In Epiphania Domini.mp3.Key[mp3.duration] = PT2M31S
+Music/Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/20 Omnes de Saba - Graduale_In Epiphania Domini.mp3.Key[mp3.sampleRate] = 44100
+Music/Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/20 Omnes de Saba - Graduale_In Epiphania Domini.mp3.Key[mp3.title] = Omnes de Saba - Graduale/In Epiphania Domini
+Music/Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/20 Omnes de Saba - Graduale_In Epiphania Domini.mp3.Key[mp3.trackNumber] = 20

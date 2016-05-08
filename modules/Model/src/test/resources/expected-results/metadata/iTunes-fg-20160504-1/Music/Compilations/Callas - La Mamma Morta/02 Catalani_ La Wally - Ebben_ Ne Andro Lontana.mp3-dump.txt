@@ -1,0 +1,10 @@
+Music/Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3.Key[mbz.artistId] = []
+Music/Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3.Key[mp3.album] = Callas - La Mamma Morta
+Music/Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3.Key[mp3.artist] = Maria Callas
+Music/Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3.Key[mp3.comment] = 0
+Music/Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3.Key[mp3.composer] = Alfredo Catalani
+Music/Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3.Key[mp3.duration] = PT4M50S
+Music/Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3.Key[mp3.sampleRate] = 44100
+Music/Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3.Key[mp3.title] = Catalani: La Wally - Ebben? Ne Andro Lontana
+Music/Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3.Key[mp3.trackNumber] = 2

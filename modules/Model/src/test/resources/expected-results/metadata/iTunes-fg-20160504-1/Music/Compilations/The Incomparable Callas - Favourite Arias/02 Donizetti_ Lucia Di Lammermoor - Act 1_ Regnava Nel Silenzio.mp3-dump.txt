@@ -1,0 +1,12 @@
+Music/Compilations/The Incomparable Callas - Favourite Arias/02 Donizetti_ Lucia Di Lammermoor - Act 1_ Regnava Nel Silenzio.mp3.Key[mbz.artistId] = []
+Music/Compilations/The Incomparable Callas - Favourite Arias/02 Donizetti_ Lucia Di Lammermoor - Act 1_ Regnava Nel Silenzio.mp3.Key[mp3.album] = The Incomparable Callas - Favourite Arias
+Music/Compilations/The Incomparable Callas - Favourite Arias/02 Donizetti_ Lucia Di Lammermoor - Act 1_ Regnava Nel Silenzio.mp3.Key[mp3.artist] = Maria Callas, Ferruccio Tagliavini, Etc.; Tullio Serafin: Philharmonia Orchestra & Chorus
+Music/Compilations/The Incomparable Callas - Favourite Arias/02 Donizetti_ Lucia Di Lammermoor - Act 1_ Regnava Nel Silenzio.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/The Incomparable Callas - Favourite Arias/02 Donizetti_ Lucia Di Lammermoor - Act 1_ Regnava Nel Silenzio.mp3.Key[mp3.comment] = 0
+Music/Compilations/The Incomparable Callas - Favourite Arias/02 Donizetti_ Lucia Di Lammermoor - Act 1_ Regnava Nel Silenzio.mp3.Key[mp3.composer] = Gaetano Donizetti
+Music/Compilations/The Incomparable Callas - Favourite Arias/02 Donizetti_ Lucia Di Lammermoor - Act 1_ Regnava Nel Silenzio.mp3.Key[mp3.diskCount] = 1
+Music/Compilations/The Incomparable Callas - Favourite Arias/02 Donizetti_ Lucia Di Lammermoor - Act 1_ Regnava Nel Silenzio.mp3.Key[mp3.diskNumber] = 1
+Music/Compilations/The Incomparable Callas - Favourite Arias/02 Donizetti_ Lucia Di Lammermoor - Act 1_ Regnava Nel Silenzio.mp3.Key[mp3.duration] = PT8M6S
+Music/Compilations/The Incomparable Callas - Favourite Arias/02 Donizetti_ Lucia Di Lammermoor - Act 1_ Regnava Nel Silenzio.mp3.Key[mp3.sampleRate] = 44100
+Music/Compilations/The Incomparable Callas - Favourite Arias/02 Donizetti_ Lucia Di Lammermoor - Act 1_ Regnava Nel Silenzio.mp3.Key[mp3.title] = Donizetti: Lucia Di Lammermoor - Act 1: Regnava Nel Silenzio
+Music/Compilations/The Incomparable Callas - Favourite Arias/02 Donizetti_ Lucia Di Lammermoor - Act 1_ Regnava Nel Silenzio.mp3.Key[mp3.trackNumber] = 2

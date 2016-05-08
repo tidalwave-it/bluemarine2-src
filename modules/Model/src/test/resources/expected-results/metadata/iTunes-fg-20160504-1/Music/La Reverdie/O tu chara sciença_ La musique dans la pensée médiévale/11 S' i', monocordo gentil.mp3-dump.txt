@@ -1,0 +1,12 @@
+Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/11 S' i', monocordo gentil.mp3.Key[mbz.artistId] = []
+Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/11 S' i', monocordo gentil.mp3.Key[mp3.album] = O tu chara sciença: La musique dans la pensée médiévale
+Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/11 S' i', monocordo gentil.mp3.Key[mp3.artist] = La Reverdie
+Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/11 S' i', monocordo gentil.mp3.Key[mp3.bitRate] = 320
+Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/11 S' i', monocordo gentil.mp3.Key[mp3.comment] = 0
+Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/11 S' i', monocordo gentil.mp3.Key[mp3.composer] = 
+Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/11 S' i', monocordo gentil.mp3.Key[mp3.diskCount] = 1
+Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/11 S' i', monocordo gentil.mp3.Key[mp3.diskNumber] = 1
+Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/11 S' i', monocordo gentil.mp3.Key[mp3.duration] = PT3M15S
+Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/11 S' i', monocordo gentil.mp3.Key[mp3.sampleRate] = 44100
+Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/11 S' i', monocordo gentil.mp3.Key[mp3.title] = S' i', monocordo gentil
+Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/11 S' i', monocordo gentil.mp3.Key[mp3.trackNumber] = 11

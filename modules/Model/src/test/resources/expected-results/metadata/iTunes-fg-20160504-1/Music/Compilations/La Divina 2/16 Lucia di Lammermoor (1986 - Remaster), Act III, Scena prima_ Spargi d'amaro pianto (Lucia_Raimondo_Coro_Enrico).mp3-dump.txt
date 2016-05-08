@@ -1,0 +1,12 @@
+Music/Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3.Key[mbz.artistId] = []
+Music/Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3.Key[mp3.album] = La Divina 2
+Music/Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3.Key[mp3.artist] = Maria Callas/Piero Cappuccilli/Bernard Ladysz/Philharmonia Chorus/Philharmonia Orchestra/Tullio Serafin
+Music/Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3.Key[mp3.bitRate] = 320
+Music/Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3.Key[mp3.comment] = 0
+Music/Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3.Key[mp3.composer] = Gaetano Donizetti
+Music/Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3.Key[mp3.diskCount] = 1
+Music/Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3.Key[mp3.diskNumber] = 1
+Music/Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3.Key[mp3.duration] = PT4M7S
+Music/Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3.Key[mp3.sampleRate] = 44100
+Music/Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3.Key[mp3.title] = Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima: Spargi d'amaro pianto (Lucia/Raimondo/Coro/Enrico)
+Music/Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3.Key[mp3.trackNumber] = 16

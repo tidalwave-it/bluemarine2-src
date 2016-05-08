@@ -1,0 +1,10 @@
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/10 (Strumentale).mp3.Key[mbz.artistId] = []
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/10 (Strumentale).mp3.Key[mp3.album] = Daniel And The Lions - Ludus Danielis
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/10 (Strumentale).mp3.Key[mp3.artist] = New York's Ensemble for Early Music - Frederick Renz director
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/10 (Strumentale).mp3.Key[mp3.bitRate] = 320
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/10 (Strumentale).mp3.Key[mp3.comment] = 0
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/10 (Strumentale).mp3.Key[mp3.composer] = Anon
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/10 (Strumentale).mp3.Key[mp3.duration] = PT1M18S
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/10 (Strumentale).mp3.Key[mp3.sampleRate] = 44100
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/10 (Strumentale).mp3.Key[mp3.title] = (Strumentale)
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/10 (Strumentale).mp3.Key[mp3.trackNumber] = 10

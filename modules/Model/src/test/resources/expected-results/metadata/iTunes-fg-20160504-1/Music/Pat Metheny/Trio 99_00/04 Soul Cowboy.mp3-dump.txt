@@ -1,0 +1,12 @@
+Music/Pat Metheny/Trio 99_00/04 Soul Cowboy.mp3.Key[mbz.artistId] = []
+Music/Pat Metheny/Trio 99_00/04 Soul Cowboy.mp3.Key[mp3.album] = Trio 99>00
+Music/Pat Metheny/Trio 99_00/04 Soul Cowboy.mp3.Key[mp3.artist] = Pat Metheny
+Music/Pat Metheny/Trio 99_00/04 Soul Cowboy.mp3.Key[mp3.bitRate] = 320
+Music/Pat Metheny/Trio 99_00/04 Soul Cowboy.mp3.Key[mp3.comment] = 0
+Music/Pat Metheny/Trio 99_00/04 Soul Cowboy.mp3.Key[mp3.composer] = 
+Music/Pat Metheny/Trio 99_00/04 Soul Cowboy.mp3.Key[mp3.diskCount] = 1
+Music/Pat Metheny/Trio 99_00/04 Soul Cowboy.mp3.Key[mp3.diskNumber] = 1
+Music/Pat Metheny/Trio 99_00/04 Soul Cowboy.mp3.Key[mp3.duration] = PT8M28S
+Music/Pat Metheny/Trio 99_00/04 Soul Cowboy.mp3.Key[mp3.sampleRate] = 44100
+Music/Pat Metheny/Trio 99_00/04 Soul Cowboy.mp3.Key[mp3.title] = Soul Cowboy
+Music/Pat Metheny/Trio 99_00/04 Soul Cowboy.mp3.Key[mp3.trackNumber] = 4

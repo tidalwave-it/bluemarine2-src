@@ -28,18 +28,22 @@
  */
 package it.tidalwave.bluemarine2.model.impl;
 
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import java.nio.file.Path;
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Comparator;
 import java.util.List;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import lombok.extern.slf4j.Slf4j;
-import org.jaudiotagger.tag.FieldKey;
-import org.jaudiotagger.tag.Tag;
-import org.jaudiotagger.tag.TagField;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import static java.util.stream.Collectors.toList;
+import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
+import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
+import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 
 /***********************************************************************************************************************
  *
@@ -50,30 +54,41 @@ import org.testng.annotations.Test;
 @Slf4j
 public class AudioMetadataFactoryTest
   {
-    @Test(groups = "no-ci") // requires files on my disk
-    public void testScan()
+    @Test(dataProvider = "pathProvider", groups = "no-ci") // because of BMT-46
+    public void must_properly_read_metadata (final @Nonnull String testSetName,
+                                             final @Nonnull Path path,
+                                             final @Nonnull Path relativePath)
+      throws IOException
       {
-        final Path path = Paths.get("/Users/fritz/Personal/Music/iTunes/iTunes Music/Music/Compilations/Beethoven Symphonies 1 & 2/01 Beethoven_ Symphonie #1 C-dur op. 21 (1. Adagio molto - Allegro con brio).m4a");
+        final Path p = Paths.get(testSetName, relativePath.toString() + "-dump.txt");
+        final Path actualFile = PATH_TEST_RESULTS.resolve(p);
+        final Path expectedFile = PATH_EXPECTED_TEST_RESULTS.resolve("metadata").resolve(p);
+        Files.createDirectories(actualFile.getParent());
         final Metadata metadata = AudioMetadataFactory.loadFrom(path);
-
-        metadata.getEntries().stream().forEach(e -> log.info("{} = {}", e.getKey(), e.getValue()));
+        final List<String> collect = metadata.getEntries().stream()
+                .sorted(Comparator.comparing(e -> e.getKey()))
+                .map(e -> String.format("%s.%s = %s", relativePath, e.getKey(), e.getValue()))
+                .collect(toList());
+        Files.write(actualFile, collect);
+        assertSameContents(expectedFile.toFile(), actualFile.toFile());
 //        System.err.println(am.audioFile);
 //        final Tag tag = metadata.audioFile.getTag();
 //        final List<TagField> fields = toList(tag.getFields());
 //        System.err.println("FIELDS: " + fields);
 //        tag.getFields(FieldKey.)
-
       }
 
-    private <T> List<T> toList (final @Nonnull Iterator<T> i)
+    @DataProvider
+    private static Object[][] pathProvider()
+      throws IOException
       {
-        final List<T> result = new ArrayList<>();
-
-        while (i.hasNext())
-          {
-            result.add(i.next());
-          }
-
-        return result;
+        final String testSetName = "iTunes-fg-20160504-1";
+        final Path testSetPath = TestSetLocator.getMusicTestSetsPath().resolve(testSetName);
+        return Files.walk(testSetPath, FOLLOW_LINKS)
+                    .filter(path -> Files.isRegularFile(path))
+                    .filter(path -> !path.getFileName().startsWith("."))
+                    .map(path -> new Object[] { testSetName, path, testSetPath.relativize(path) })
+                    .collect(toList())
+                    .toArray(new Object[0][0]);
       }
   }

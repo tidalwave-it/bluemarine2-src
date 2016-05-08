@@ -1,0 +1,12 @@
+Music/Compilations/La Divina 2/06 Orphée et Eurydice (1987 - Remaster)_ J'ai perdu mon Eurydice.mp3.Key[mbz.artistId] = []
+Music/Compilations/La Divina 2/06 Orphée et Eurydice (1987 - Remaster)_ J'ai perdu mon Eurydice.mp3.Key[mp3.album] = La Divina 2
+Music/Compilations/La Divina 2/06 Orphée et Eurydice (1987 - Remaster)_ J'ai perdu mon Eurydice.mp3.Key[mp3.artist] = Maria Callas, Orchestre National De La Radiodiffusion Française, Georges Prêtre
+Music/Compilations/La Divina 2/06 Orphée et Eurydice (1987 - Remaster)_ J'ai perdu mon Eurydice.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/La Divina 2/06 Orphée et Eurydice (1987 - Remaster)_ J'ai perdu mon Eurydice.mp3.Key[mp3.comment] = 0
+Music/Compilations/La Divina 2/06 Orphée et Eurydice (1987 - Remaster)_ J'ai perdu mon Eurydice.mp3.Key[mp3.composer] = Christoph Willibald Von Gluck
+Music/Compilations/La Divina 2/06 Orphée et Eurydice (1987 - Remaster)_ J'ai perdu mon Eurydice.mp3.Key[mp3.diskCount] = 1
+Music/Compilations/La Divina 2/06 Orphée et Eurydice (1987 - Remaster)_ J'ai perdu mon Eurydice.mp3.Key[mp3.diskNumber] = 1
+Music/Compilations/La Divina 2/06 Orphée et Eurydice (1987 - Remaster)_ J'ai perdu mon Eurydice.mp3.Key[mp3.duration] = PT4M24S
+Music/Compilations/La Divina 2/06 Orphée et Eurydice (1987 - Remaster)_ J'ai perdu mon Eurydice.mp3.Key[mp3.sampleRate] = 44100
+Music/Compilations/La Divina 2/06 Orphée et Eurydice (1987 - Remaster)_ J'ai perdu mon Eurydice.mp3.Key[mp3.title] = Orphée et Eurydice (1987 - Remaster): J'ai perdu mon Eurydice
+Music/Compilations/La Divina 2/06 Orphée et Eurydice (1987 - Remaster)_ J'ai perdu mon Eurydice.mp3.Key[mp3.trackNumber] = 6

@@ -1,0 +1,12 @@
+Music/Compilations/Holst_ The Planets/07 Holst_ The Planets, Op. 32, H 125 - Neptune, The Mystic.mp3.Key[mbz.artistId] = []
+Music/Compilations/Holst_ The Planets/07 Holst_ The Planets, Op. 32, H 125 - Neptune, The Mystic.mp3.Key[mp3.album] = Holst: The Planets
+Music/Compilations/Holst_ The Planets/07 Holst_ The Planets, Op. 32, H 125 - Neptune, The Mystic.mp3.Key[mp3.artist] = Herbert Von Karajan: Berlin Philharmonic Orchestra, RIAS Chamber Choir
+Music/Compilations/Holst_ The Planets/07 Holst_ The Planets, Op. 32, H 125 - Neptune, The Mystic.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/Holst_ The Planets/07 Holst_ The Planets, Op. 32, H 125 - Neptune, The Mystic.mp3.Key[mp3.comment] = 0
+Music/Compilations/Holst_ The Planets/07 Holst_ The Planets, Op. 32, H 125 - Neptune, The Mystic.mp3.Key[mp3.composer] = Gustav Holst
+Music/Compilations/Holst_ The Planets/07 Holst_ The Planets, Op. 32, H 125 - Neptune, The Mystic.mp3.Key[mp3.diskCount] = 1
+Music/Compilations/Holst_ The Planets/07 Holst_ The Planets, Op. 32, H 125 - Neptune, The Mystic.mp3.Key[mp3.diskNumber] = 1
+Music/Compilations/Holst_ The Planets/07 Holst_ The Planets, Op. 32, H 125 - Neptune, The Mystic.mp3.Key[mp3.duration] = PT8M47S
+Music/Compilations/Holst_ The Planets/07 Holst_ The Planets, Op. 32, H 125 - Neptune, The Mystic.mp3.Key[mp3.sampleRate] = 44100
+Music/Compilations/Holst_ The Planets/07 Holst_ The Planets, Op. 32, H 125 - Neptune, The Mystic.mp3.Key[mp3.title] = Holst: The Planets, Op. 32, H 125 - Neptune, The Mystic
+Music/Compilations/Holst_ The Planets/07 Holst_ The Planets, Op. 32, H 125 - Neptune, The Mystic.mp3.Key[mp3.trackNumber] = 7

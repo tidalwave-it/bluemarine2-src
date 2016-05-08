@@ -1,0 +1,12 @@
+Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/08 Bach_ Concerto In D Minor For 3 Harpsichords, BWV 1063 - 2. Alla Siciliana.mp3.Key[mbz.artistId] = []
+Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/08 Bach_ Concerto In D Minor For 3 Harpsichords, BWV 1063 - 2. Alla Siciliana.mp3.Key[mp3.album] = Bach: Concertos For 3 & 4 Harpsichords
+Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/08 Bach_ Concerto In D Minor For 3 Harpsichords, BWV 1063 - 2. Alla Siciliana.mp3.Key[mp3.artist] = Kenneth Gilbert, Lars Ulrik Mortensen; Trevor Pinnock: English Concert
+Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/08 Bach_ Concerto In D Minor For 3 Harpsichords, BWV 1063 - 2. Alla Siciliana.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/08 Bach_ Concerto In D Minor For 3 Harpsichords, BWV 1063 - 2. Alla Siciliana.mp3.Key[mp3.comment] = 0
+Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/08 Bach_ Concerto In D Minor For 3 Harpsichords, BWV 1063 - 2. Alla Siciliana.mp3.Key[mp3.composer] = Johann Sebastian Bach (1685-1750)/Johann Sebastian Bach
+Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/08 Bach_ Concerto In D Minor For 3 Harpsichords, BWV 1063 - 2. Alla Siciliana.mp3.Key[mp3.diskCount] = 1
+Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/08 Bach_ Concerto In D Minor For 3 Harpsichords, BWV 1063 - 2. Alla Siciliana.mp3.Key[mp3.diskNumber] = 1
+Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/08 Bach_ Concerto In D Minor For 3 Harpsichords, BWV 1063 - 2. Alla Siciliana.mp3.Key[mp3.duration] = PT3M45S
+Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/08 Bach_ Concerto In D Minor For 3 Harpsichords, BWV 1063 - 2. Alla Siciliana.mp3.Key[mp3.sampleRate] = 44100
+Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/08 Bach_ Concerto In D Minor For 3 Harpsichords, BWV 1063 - 2. Alla Siciliana.mp3.Key[mp3.title] = Bach: Concerto In D Minor For 3 Harpsichords, BWV 1063 - 2. Alla Siciliana
+Music/Compilations/Bach_ Concertos For 3 & 4 Harpsichords/08 Bach_ Concerto In D Minor For 3 Harpsichords, BWV 1063 - 2. Alla Siciliana.mp3.Key[mp3.trackNumber] = 8

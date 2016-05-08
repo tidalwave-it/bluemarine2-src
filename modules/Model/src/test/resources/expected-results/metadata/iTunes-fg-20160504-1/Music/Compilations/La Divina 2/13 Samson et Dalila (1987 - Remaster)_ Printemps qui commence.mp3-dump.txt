@@ -1,0 +1,12 @@
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[mbz.artistId] = []
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[mp3.album] = La Divina 2
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[mp3.artist] = Maria Callas; Georges Prêtre: French National Radio Orchestra
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[mp3.comment] = 0
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[mp3.composer] = Camille Saint-Saëns
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[mp3.diskCount] = 1
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[mp3.diskNumber] = 1
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[mp3.duration] = PT5M17S
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[mp3.sampleRate] = 44100
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[mp3.title] = Samson et Dalila (1987 - Remaster): Printemps qui commence
+Music/Compilations/La Divina 2/13 Samson et Dalila (1987 - Remaster)_ Printemps qui commence.mp3.Key[mp3.trackNumber] = 13

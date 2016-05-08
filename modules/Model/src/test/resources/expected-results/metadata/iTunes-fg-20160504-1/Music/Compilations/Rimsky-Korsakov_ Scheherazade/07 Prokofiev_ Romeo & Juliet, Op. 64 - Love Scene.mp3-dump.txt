@@ -1,0 +1,12 @@
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/07 Prokofiev_ Romeo & Juliet, Op. 64 - Love Scene.mp3.Key[mbz.artistId] = []
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/07 Prokofiev_ Romeo & Juliet, Op. 64 - Love Scene.mp3.Key[mp3.album] = Rimsky-Korsakov: Scheherazade
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/07 Prokofiev_ Romeo & Juliet, Op. 64 - Love Scene.mp3.Key[mp3.artist] = Seiji Ozawa: Boston Symphony Orchestra
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/07 Prokofiev_ Romeo & Juliet, Op. 64 - Love Scene.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/07 Prokofiev_ Romeo & Juliet, Op. 64 - Love Scene.mp3.Key[mp3.comment] = 0
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/07 Prokofiev_ Romeo & Juliet, Op. 64 - Love Scene.mp3.Key[mp3.composer] = Sergei Prokofiev
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/07 Prokofiev_ Romeo & Juliet, Op. 64 - Love Scene.mp3.Key[mp3.diskCount] = 1
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/07 Prokofiev_ Romeo & Juliet, Op. 64 - Love Scene.mp3.Key[mp3.diskNumber] = 1
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/07 Prokofiev_ Romeo & Juliet, Op. 64 - Love Scene.mp3.Key[mp3.duration] = PT6M4S
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/07 Prokofiev_ Romeo & Juliet, Op. 64 - Love Scene.mp3.Key[mp3.sampleRate] = 44100
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/07 Prokofiev_ Romeo & Juliet, Op. 64 - Love Scene.mp3.Key[mp3.title] = Prokofiev: Romeo & Juliet, Op. 64 - Love Scene
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/07 Prokofiev_ Romeo & Juliet, Op. 64 - Love Scene.mp3.Key[mp3.trackNumber] = 7

@@ -1,0 +1,12 @@
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3.Key[mbz.artistId] = []
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3.Key[mp3.album] = Beethoven: Piano Sonatas #21, 23 & 26
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3.Key[mp3.artist] = Emil Gilels
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3.Key[mp3.bitRate] = 320
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3.Key[mp3.comment] = 0
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3.Key[mp3.composer] = Ludwig van Beethoven/Ludwig Van Beethoven
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3.Key[mp3.diskCount] = 1
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3.Key[mp3.diskNumber] = 1
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3.Key[mp3.duration] = PT7M53S
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3.Key[mp3.sampleRate] = 44100
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3.Key[mp3.title] = Beethoven: Piano Sonata #23 In F Minor, Op. 57, "Appassionata" - 3. Allegro Ma Non Troppo
+Music/Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3.Key[mp3.trackNumber] = 10

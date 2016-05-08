@@ -1,0 +1,10 @@
+Music/Perosi, Lorenzo/Lorenzo Perosi/13 O cor iesu.mp3.Key[mbz.artistId] = []
+Music/Perosi, Lorenzo/Lorenzo Perosi/13 O cor iesu.mp3.Key[mp3.album] = Lorenzo Perosi
+Music/Perosi, Lorenzo/Lorenzo Perosi/13 O cor iesu.mp3.Key[mp3.artist] = Perosi, Lorenzo
+Music/Perosi, Lorenzo/Lorenzo Perosi/13 O cor iesu.mp3.Key[mp3.bitRate] = 320
+Music/Perosi, Lorenzo/Lorenzo Perosi/13 O cor iesu.mp3.Key[mp3.comment] = 0
+Music/Perosi, Lorenzo/Lorenzo Perosi/13 O cor iesu.mp3.Key[mp3.composer] = 
+Music/Perosi, Lorenzo/Lorenzo Perosi/13 O cor iesu.mp3.Key[mp3.duration] = PT1M24S
+Music/Perosi, Lorenzo/Lorenzo Perosi/13 O cor iesu.mp3.Key[mp3.sampleRate] = 44100
+Music/Perosi, Lorenzo/Lorenzo Perosi/13 O cor iesu.mp3.Key[mp3.title] = O cor iesu
+Music/Perosi, Lorenzo/Lorenzo Perosi/13 O cor iesu.mp3.Key[mp3.trackNumber] = 13

@@ -1,0 +1,12 @@
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-16 Mendelssohn_ Paulus, Op. 36 - Wachet Auf! Ruft Uns Die Stimme.mp3.Key[mbz.artistId] = []
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-16 Mendelssohn_ Paulus, Op. 36 - Wachet Auf! Ruft Uns Die Stimme.mp3.Key[mp3.album] = Mendelssohn: Paulus [Disc 1]
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-16 Mendelssohn_ Paulus, Op. 36 - Wachet Auf! Ruft Uns Die Stimme.mp3.Key[mp3.artist] = Gundula Janowitz, Rosemarie Lang, Etc.; Kurt Masur: Leipzig Gewandhaus Orchestra, Leipzig Radio Chorus
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-16 Mendelssohn_ Paulus, Op. 36 - Wachet Auf! Ruft Uns Die Stimme.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-16 Mendelssohn_ Paulus, Op. 36 - Wachet Auf! Ruft Uns Die Stimme.mp3.Key[mp3.comment] = 0
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-16 Mendelssohn_ Paulus, Op. 36 - Wachet Auf! Ruft Uns Die Stimme.mp3.Key[mp3.composer] = Mendelssohn, Felix/Felix Mendelssohn
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-16 Mendelssohn_ Paulus, Op. 36 - Wachet Auf! Ruft Uns Die Stimme.mp3.Key[mp3.diskCount] = 2
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-16 Mendelssohn_ Paulus, Op. 36 - Wachet Auf! Ruft Uns Die Stimme.mp3.Key[mp3.diskNumber] = 1
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-16 Mendelssohn_ Paulus, Op. 36 - Wachet Auf! Ruft Uns Die Stimme.mp3.Key[mp3.duration] = PT1M59S
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-16 Mendelssohn_ Paulus, Op. 36 - Wachet Auf! Ruft Uns Die Stimme.mp3.Key[mp3.sampleRate] = 44100
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-16 Mendelssohn_ Paulus, Op. 36 - Wachet Auf! Ruft Uns Die Stimme.mp3.Key[mp3.title] = Mendelssohn: Paulus, Op. 36 - Wachet Auf! Ruft Uns Die Stimme
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-16 Mendelssohn_ Paulus, Op. 36 - Wachet Auf! Ruft Uns Die Stimme.mp3.Key[mp3.trackNumber] = 16

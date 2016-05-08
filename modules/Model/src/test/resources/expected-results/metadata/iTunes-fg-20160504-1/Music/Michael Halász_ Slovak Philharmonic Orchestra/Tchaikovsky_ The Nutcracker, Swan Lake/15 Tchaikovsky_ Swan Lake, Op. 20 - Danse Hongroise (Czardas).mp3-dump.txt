@@ -1,0 +1,12 @@
+Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/15 Tchaikovsky_ Swan Lake, Op. 20 - Danse Hongroise (Czardas).mp3.Key[mbz.artistId] = []
+Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/15 Tchaikovsky_ Swan Lake, Op. 20 - Danse Hongroise (Czardas).mp3.Key[mp3.album] = Tchaikovsky: The Nutcracker, Swan Lake
+Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/15 Tchaikovsky_ Swan Lake, Op. 20 - Danse Hongroise (Czardas).mp3.Key[mp3.artist] = Michael Halász: Slovak Philharmonic Orchestra
+Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/15 Tchaikovsky_ Swan Lake, Op. 20 - Danse Hongroise (Czardas).mp3.Key[mp3.bitRate] = 320
+Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/15 Tchaikovsky_ Swan Lake, Op. 20 - Danse Hongroise (Czardas).mp3.Key[mp3.comment] = 0
+Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/15 Tchaikovsky_ Swan Lake, Op. 20 - Danse Hongroise (Czardas).mp3.Key[mp3.composer] = Tchaikovsky/Peter Ilyich Tchaikovsky
+Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/15 Tchaikovsky_ Swan Lake, Op. 20 - Danse Hongroise (Czardas).mp3.Key[mp3.diskCount] = 1
+Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/15 Tchaikovsky_ Swan Lake, Op. 20 - Danse Hongroise (Czardas).mp3.Key[mp3.diskNumber] = 1
+Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/15 Tchaikovsky_ Swan Lake, Op. 20 - Danse Hongroise (Czardas).mp3.Key[mp3.duration] = PT3M4S
+Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/15 Tchaikovsky_ Swan Lake, Op. 20 - Danse Hongroise (Czardas).mp3.Key[mp3.sampleRate] = 44100
+Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/15 Tchaikovsky_ Swan Lake, Op. 20 - Danse Hongroise (Czardas).mp3.Key[mp3.title] = Tchaikovsky: Swan Lake, Op. 20 - Danse Hongroise (Czardas)
+Music/Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/15 Tchaikovsky_ Swan Lake, Op. 20 - Danse Hongroise (Czardas).mp3.Key[mp3.trackNumber] = 15

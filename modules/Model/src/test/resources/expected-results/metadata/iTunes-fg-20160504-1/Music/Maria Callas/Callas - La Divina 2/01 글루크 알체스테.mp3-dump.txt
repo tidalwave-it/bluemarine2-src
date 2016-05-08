@@ -1,0 +1,12 @@
+Music/Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3.Key[mbz.artistId] = []
+Music/Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3.Key[mp3.album] = Callas - La Divina 2
+Music/Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3.Key[mp3.artist] = Maria Callas
+Music/Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3.Key[mp3.bitRate] = 320
+Music/Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3.Key[mp3.comment] = 0
+Music/Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3.Key[mp3.composer] = Christoph Willibald Von Gluck
+Music/Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3.Key[mp3.diskCount] = 1
+Music/Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3.Key[mp3.diskNumber] = 1
+Music/Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3.Key[mp3.duration] = PT4M25S
+Music/Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3.Key[mp3.sampleRate] = 44100
+Music/Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3.Key[mp3.title] = 글루크 알체스테
+Music/Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3.Key[mp3.trackNumber] = 1

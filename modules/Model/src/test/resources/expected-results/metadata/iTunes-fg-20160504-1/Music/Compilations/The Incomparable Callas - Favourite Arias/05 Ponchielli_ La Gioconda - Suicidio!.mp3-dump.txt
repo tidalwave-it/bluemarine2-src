@@ -1,0 +1,12 @@
+Music/Compilations/The Incomparable Callas - Favourite Arias/05 Ponchielli_ La Gioconda - Suicidio!.mp3.Key[mbz.artistId] = []
+Music/Compilations/The Incomparable Callas - Favourite Arias/05 Ponchielli_ La Gioconda - Suicidio!.mp3.Key[mp3.album] = The Incomparable Callas - Favourite Arias
+Music/Compilations/The Incomparable Callas - Favourite Arias/05 Ponchielli_ La Gioconda - Suicidio!.mp3.Key[mp3.artist] = Maria Callas; Antonino Votto: Orchestra Of La Scala Milan
+Music/Compilations/The Incomparable Callas - Favourite Arias/05 Ponchielli_ La Gioconda - Suicidio!.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/The Incomparable Callas - Favourite Arias/05 Ponchielli_ La Gioconda - Suicidio!.mp3.Key[mp3.comment] = 0
+Music/Compilations/The Incomparable Callas - Favourite Arias/05 Ponchielli_ La Gioconda - Suicidio!.mp3.Key[mp3.composer] = Amilcare Ponchielli
+Music/Compilations/The Incomparable Callas - Favourite Arias/05 Ponchielli_ La Gioconda - Suicidio!.mp3.Key[mp3.diskCount] = 1
+Music/Compilations/The Incomparable Callas - Favourite Arias/05 Ponchielli_ La Gioconda - Suicidio!.mp3.Key[mp3.diskNumber] = 1
+Music/Compilations/The Incomparable Callas - Favourite Arias/05 Ponchielli_ La Gioconda - Suicidio!.mp3.Key[mp3.duration] = PT4M37S
+Music/Compilations/The Incomparable Callas - Favourite Arias/05 Ponchielli_ La Gioconda - Suicidio!.mp3.Key[mp3.sampleRate] = 44100
+Music/Compilations/The Incomparable Callas - Favourite Arias/05 Ponchielli_ La Gioconda - Suicidio!.mp3.Key[mp3.title] = Ponchielli: La Gioconda - Suicidio!
+Music/Compilations/The Incomparable Callas - Favourite Arias/05 Ponchielli_ La Gioconda - Suicidio!.mp3.Key[mp3.trackNumber] = 5

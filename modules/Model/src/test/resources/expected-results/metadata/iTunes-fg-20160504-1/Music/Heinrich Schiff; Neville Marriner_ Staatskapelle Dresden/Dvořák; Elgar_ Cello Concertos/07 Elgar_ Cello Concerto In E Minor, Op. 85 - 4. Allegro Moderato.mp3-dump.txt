@@ -1,0 +1,12 @@
+Music/Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/07 Elgar_ Cello Concerto In E Minor, Op. 85 - 4. Allegro Moderato.mp3.Key[mbz.artistId] = []
+Music/Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/07 Elgar_ Cello Concerto In E Minor, Op. 85 - 4. Allegro Moderato.mp3.Key[mp3.album] = Dvořák; Elgar: Cello Concertos
+Music/Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/07 Elgar_ Cello Concerto In E Minor, Op. 85 - 4. Allegro Moderato.mp3.Key[mp3.artist] = Heinrich Schiff; Neville Marriner: Staatskapelle Dresden
+Music/Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/07 Elgar_ Cello Concerto In E Minor, Op. 85 - 4. Allegro Moderato.mp3.Key[mp3.bitRate] = 320
+Music/Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/07 Elgar_ Cello Concerto In E Minor, Op. 85 - 4. Allegro Moderato.mp3.Key[mp3.comment] = 0
+Music/Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/07 Elgar_ Cello Concerto In E Minor, Op. 85 - 4. Allegro Moderato.mp3.Key[mp3.composer] = Edward Elgar
+Music/Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/07 Elgar_ Cello Concerto In E Minor, Op. 85 - 4. Allegro Moderato.mp3.Key[mp3.diskCount] = 1
+Music/Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/07 Elgar_ Cello Concerto In E Minor, Op. 85 - 4. Allegro Moderato.mp3.Key[mp3.diskNumber] = 1
+Music/Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/07 Elgar_ Cello Concerto In E Minor, Op. 85 - 4. Allegro Moderato.mp3.Key[mp3.duration] = PT11M10S
+Music/Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/07 Elgar_ Cello Concerto In E Minor, Op. 85 - 4. Allegro Moderato.mp3.Key[mp3.sampleRate] = 44100
+Music/Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/07 Elgar_ Cello Concerto In E Minor, Op. 85 - 4. Allegro Moderato.mp3.Key[mp3.title] = Elgar: Cello Concerto In E Minor, Op. 85 - 4. Allegro Moderato
+Music/Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/07 Elgar_ Cello Concerto In E Minor, Op. 85 - 4. Allegro Moderato.mp3.Key[mp3.trackNumber] = 7

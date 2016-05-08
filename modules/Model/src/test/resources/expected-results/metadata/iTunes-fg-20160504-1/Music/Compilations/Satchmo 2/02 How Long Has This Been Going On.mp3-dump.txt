@@ -1,0 +1,12 @@
+Music/Compilations/Satchmo 2/02 How Long Has This Been Going On.mp3.Key[mbz.artistId] = []
+Music/Compilations/Satchmo 2/02 How Long Has This Been Going On.mp3.Key[mp3.album] = Satchmo 2
+Music/Compilations/Satchmo 2/02 How Long Has This Been Going On.mp3.Key[mp3.artist] = Louis Armstrong
+Music/Compilations/Satchmo 2/02 How Long Has This Been Going On.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/Satchmo 2/02 How Long Has This Been Going On.mp3.Key[mp3.comment] = 0
+Music/Compilations/Satchmo 2/02 How Long Has This Been Going On.mp3.Key[mp3.composer] = 
+Music/Compilations/Satchmo 2/02 How Long Has This Been Going On.mp3.Key[mp3.diskCount] = 1
+Music/Compilations/Satchmo 2/02 How Long Has This Been Going On.mp3.Key[mp3.diskNumber] = 1
+Music/Compilations/Satchmo 2/02 How Long Has This Been Going On.mp3.Key[mp3.duration] = PT5M59S
+Music/Compilations/Satchmo 2/02 How Long Has This Been Going On.mp3.Key[mp3.sampleRate] = 44100
+Music/Compilations/Satchmo 2/02 How Long Has This Been Going On.mp3.Key[mp3.title] = How Long Has This Been Going On
+Music/Compilations/Satchmo 2/02 How Long Has This Been Going On.mp3.Key[mp3.trackNumber] = 2

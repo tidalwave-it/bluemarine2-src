@@ -1,0 +1,12 @@
+Music/Compilations/La Divina 2/03 Ernani (1987 - Remaster)_ Surta è la notte .... Ernani! Ernani, involami.mp3.Key[mbz.artistId] = []
+Music/Compilations/La Divina 2/03 Ernani (1987 - Remaster)_ Surta è la notte .... Ernani! Ernani, involami.mp3.Key[mp3.album] = La Divina 2
+Music/Compilations/La Divina 2/03 Ernani (1987 - Remaster)_ Surta è la notte .... Ernani! Ernani, involami.mp3.Key[mp3.artist] = Nicola Rescigno/Philharmonia Orchestra/Maria Callas
+Music/Compilations/La Divina 2/03 Ernani (1987 - Remaster)_ Surta è la notte .... Ernani! Ernani, involami.mp3.Key[mp3.bitRate] = 320
+Music/Compilations/La Divina 2/03 Ernani (1987 - Remaster)_ Surta è la notte .... Ernani! Ernani, involami.mp3.Key[mp3.comment] = 0
+Music/Compilations/La Divina 2/03 Ernani (1987 - Remaster)_ Surta è la notte .... Ernani! Ernani, involami.mp3.Key[mp3.composer] = Giuseppe Verdi
+Music/Compilations/La Divina 2/03 Ernani (1987 - Remaster)_ Surta è la notte .... Ernani! Ernani, involami.mp3.Key[mp3.diskCount] = 1
+Music/Compilations/La Divina 2/03 Ernani (1987 - Remaster)_ Surta è la notte .... Ernani! Ernani, involami.mp3.Key[mp3.diskNumber] = 1
+Music/Compilations/La Divina 2/03 Ernani (1987 - Remaster)_ Surta è la notte .... Ernani! Ernani, involami.mp3.Key[mp3.duration] = PT6M15S
+Music/Compilations/La Divina 2/03 Ernani (1987 - Remaster)_ Surta è la notte .... Ernani! Ernani, involami.mp3.Key[mp3.sampleRate] = 44100
+Music/Compilations/La Divina 2/03 Ernani (1987 - Remaster)_ Surta è la notte .... Ernani! Ernani, involami.mp3.Key[mp3.title] = Ernani (1987 - Remaster): Surta è la notte .... Ernani! Ernani, involami
+Music/Compilations/La Divina 2/03 Ernani (1987 - Remaster)_ Surta è la notte .... Ernani! Ernani, involami.mp3.Key[mp3.trackNumber] = 3
