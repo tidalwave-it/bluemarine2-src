@@ -1,0 +1,8 @@
+Browse({ObjectID=/music/RepositoryBrowserByRecordThenTrack, BrowseFlag=BrowseMetadata, Filter=, StartingIndex=0, RequestedCount=0, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="53" id="/music/RepositoryBrowserByRecordThenTrack" parentID="/music" restricted="0" searchable="0">
+        <dc:title>By record &amp; track</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
+</DIDL-Lite>

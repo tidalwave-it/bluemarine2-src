@@ -33,7 +33,6 @@ import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.fourthline.cling.UpnpService;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import lombok.extern.slf4j.Slf4j;
 
@@ -64,13 +63,6 @@ public class ClingTestSupport extends SpringTestSupport
     public final void setupCling()
       {
         upnpService = context.getBean(UpnpService.class);
-      }
-
-    @AfterMethod(timeOut = 60000)
-    public final void shutdownCling()
-      {
-        log.info("Shutting down...");
-        upnpService.shutdown();
       }
 
     protected void delay()

@@ -52,6 +52,7 @@ public class EntityWithRoles implements Entity
     @Override @Nonnull
     public String toString()
       {
-        return "EntityWithRoles()";
+        return String.format("%s()", getClass().getSimpleName());
+//        return String.format("%s()@%s", getClass().getSimpleName(), Integer.toHexString(System.identityHashCode(this)));
       }
   }

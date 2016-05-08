@@ -1,0 +1,5 @@
+<included>
+    <logger name="it.tidalwave.util" level="DEBUG"/>
+    <logger name="it.tidalwave.role" level="DEBUG"/>
+    <logger name="it.tidalwave.messagebus.spi" level="DEBUG"/>
+</included>

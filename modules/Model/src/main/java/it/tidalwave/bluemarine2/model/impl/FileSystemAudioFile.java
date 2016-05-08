@@ -31,18 +31,20 @@ package it.tidalwave.bluemarine2.model.impl;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import java.time.Duration;
 import java.util.List;
 import java.util.Optional;
 import java.nio.file.Path;
-import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Finder8Support;
+import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.bluemarine2.model.AudioFile;
-import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.EntityWithPath;
+import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
+import it.tidalwave.bluemarine2.model.finder.RecordFinder;
+import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.model.spi.NamedEntity;
 import lombok.Delegate;
 import lombok.Getter;
@@ -50,7 +52,6 @@ import lombok.RequiredArgsConstructor;
 import static java.util.Arrays.*;
 import static java.util.Collections.*;
 import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
@@ -65,8 +66,50 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 @Immutable
 public class FileSystemAudioFile implements AudioFile, EntityWithPath
   {
+    /*******************************************************************************************************************
+     *
+     * Minimal implementation of {@link MusicArtist} without search capabilities.
+     *
+     ******************************************************************************************************************/
+    static class ArtistFallback extends NamedEntity implements MusicArtist
+      {
+        public ArtistFallback (final @Nonnull String displayName)
+          {
+            super(displayName);
+          }
+
+        @Override @Nonnull
+        public TrackFinder findTracks()
+          {
+            throw new UnsupportedOperationException("Not supported yet."); // FIXME
+          }
+
+        @Override @Nonnull
+        public RecordFinder findRecords()
+          {
+            throw new UnsupportedOperationException("Not supported yet."); // FIXME
+          }
+
+        @Override @Nonnull
+        public int getType()
+          {
+            throw new UnsupportedOperationException("Not supported yet."); // FIXME
+          }
+
+        @Override @Nonnull
+        public Id getId()
+          {
+            throw new UnsupportedOperationException("Not supported yet."); // FIXME
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     @RequiredArgsConstructor
-    static class ArtistFinder extends Finder8Support<Entity, Finder8<Entity>>
+    static class ArtistFallbackFinder extends Finder8Support<MusicArtist, MusicArtistFinder> implements MusicArtistFinder
       {
         private static final long serialVersionUID = 7969726066626602758L;
 
@@ -76,19 +119,24 @@ public class FileSystemAudioFile implements AudioFile, EntityWithPath
         @Nonnull
         private final Key<String> metadataKey;
 
-        public ArtistFinder (final @Nonnull ArtistFinder other, final @Nonnull Object override)
+        public ArtistFallbackFinder (final @Nonnull ArtistFallbackFinder other, final @Nonnull Object override)
           {
             super(other, override);
-            final ArtistFinder source = getSource(ArtistFinder.class, other, override);
+            final ArtistFallbackFinder source = getSource(ArtistFallbackFinder.class, other, override);
             this.metadata = source.metadata;
             this.metadataKey = source.metadataKey;
           }
 
-        @Override
-        protected List<? extends Entity> computeNeededResults()
+        @Override @Nonnull
+        protected List<? extends MusicArtist> computeNeededResults()
           {
-            return metadata.get(metadataKey).map(artistName -> asList(new NamedEntity(artistName)))
-                                            .orElse(emptyList());
+            return metadata.get(metadataKey).map(artistName -> asList(new ArtistFallback(artistName))).orElse(emptyList());
+          }
+
+        @Override @Nonnull
+        public MusicArtistFinder makerOf (final @Nonnull Id entityId)
+          {
+            throw new UnsupportedOperationException("Not supported yet."); // FIXME
           }
       }
 
@@ -107,7 +155,9 @@ public class FileSystemAudioFile implements AudioFile, EntityWithPath
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
 
-    public FileSystemAudioFile (final @Nonnull Path path, final @Nonnull EntityWithPath parent, final @Nonnull Path basePath)
+    public FileSystemAudioFile (final @Nonnull Path path,
+                                final @Nonnull EntityWithPath parent,
+                                final @Nonnull Path basePath)
       {
         this.path = path;
         this.parent = parent;
@@ -125,34 +175,24 @@ public class FileSystemAudioFile implements AudioFile, EntityWithPath
       {
         if (metadata == null)
           {
-            metadata = new AudioMetadata(path);
+            metadata = AudioMetadataFactory.loadFrom(path);
           }
 
         return metadata;
       }
 
     @Override @Nonnull
-    public Optional<String> getLabel()
+    public MusicArtistFinder findComposers()
       {
-        return getMetadata().get(TITLE);
+        // FIXME: when present, should use a Repository finder
+        return new ArtistFallbackFinder(getMetadata(), Metadata.COMPOSER);
       }
 
     @Override @Nonnull
-    public Optional<Duration> getDuration()
+    public MusicArtistFinder findMakers()
       {
-        return getMetadata().get(DURATION);
-      }
-
-    @Override @Nonnull
-    public Finder8<? extends Entity> findComposers()
-      {
-        return new ArtistFinder(getMetadata(), Metadata.COMPOSER);
-      }
-
-    @Override @Nonnull
-    public Finder8<Entity> findMakers()
-      {
-        return new ArtistFinder(getMetadata(), Metadata.ARTIST);
+        // FIXME: when present, should use a Repository finder
+        return new ArtistFallbackFinder(getMetadata(), Metadata.ARTIST);
       }
 
     @Override @Nonnull
