@@ -28,34 +28,23 @@
  */
 package it.tidalwave.bluemarine2.model.impl.catalog;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import java.text.Normalizer;
 import java.time.Duration;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 import java.util.Optional;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import org.openrdf.repository.Repository;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.AudioFile;
-import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.Record;
-import it.tidalwave.bluemarine2.model.spi.NamedEntity;
-import it.tidalwave.bluemarine2.model.impl.AudioMetadata;
+import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import static java.text.Normalizer.Form.NFD;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 
 /***********************************************************************************************************************
  *
@@ -70,35 +59,62 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 @Immutable @EqualsAndHashCode(of = { "path", "trackId" }, callSuper = false)
 public class RepositoryAudioFile extends RepositoryEntitySupport implements AudioFile
   {
+//    @RequiredArgsConstructor // FIXME: refactor with a Factory of children
+//    public static class RepositoryAudioFileArtistFinder extends Finder8Support<MusicArtist, MusicArtistFinder> implements MusicArtistFinder
+//      {
+//        private static final long serialVersionUID = -4130836861989484793L;
+//
+//        @Nonnull
+//        private final RepositoryAudioFile file;
+//
+//        /** Clone constructor. */
+//        public RepositoryAudioFileArtistFinder (final @Nonnull RepositoryAudioFileArtistFinder other,
+//                                          final @Nonnull Object override)
+//          {
+//            super(other, override);
+//            this.file = other.file;
+//          }
+//
+//        // FIXME: query the repository
+//        @Override @Nonnull
+//        protected List<MusicArtist> computeNeededResults()
+//          {
+//            return file.getMetadata().get(Metadata.COMPOSER)
+//                                     .map(artistName -> Arrays.asList(new RepositoryMusicArtist(file.repository, artistName)))
+//                                     .orElse(Collections.emptyList());
+//          }
+//      }
+
     @Getter @Nonnull
     private final Path path;
 
     @Getter @Nonnull
     private final Path relativePath;
 
-    @CheckForNull
-    private Metadata metadata;
+    @Getter @Nonnull
+    private final Metadata metadata;
 
     @Nonnull
     private final Id trackId;
 
-    @Nonnull
-    private final Duration duration;
-
+    // FIXME: too maby arguments, pass a BindingSet
     public RepositoryAudioFile (final @Nonnull Repository repository,
                                 final @Nonnull Id id,
                                 final @Nonnull Id trackId,
                                 final @Nonnull Path path,
                                 final @Nonnull Path basePath,
-                                final @Nonnull Duration duration,
-                                final String rdfsLabel)
+                                final @Nonnull Optional<Duration> duration,
+                                final String rdfsLabel,
+                                final @Nonnull Optional<Long> fileSize)
       {
         super(repository, id, rdfsLabel);
         this.trackId = trackId;
-        this.duration = duration;
         // See BMT-36
-        this.path = Paths.get(Normalizer.normalize(path.toString(), NFD));
-        this.relativePath = Paths.get(Normalizer.normalize(path.toString(), NFD)); // basePath.relativize(path);
+        this.path = path;
+        this.relativePath = path;// FIXME basePath.relativize(path);
+        this.metadata = new MetadataSupport(path).with(TITLE, rdfsLabel)
+                                                 .with(DURATION, duration)
+                                                 .with(FILE_SIZE, fileSize);
       }
 
     @Override @Nonnull
@@ -108,82 +124,33 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
       }
 
     @Override @Nonnull
-    public synchronized Metadata getMetadata()
-      {
-        if (metadata == null)
-          {
-            metadata = new AudioMetadata(path);
-          }
-
-        return metadata;
-      }
-
-    @Override @Nonnull
-    public Optional<String> getLabel()
-      {
-        return Optional.of(rdfsLabel);
-      }
-
-    @Override @Nonnull
-    public Optional<Duration> getDuration()
-      {
-        return getMetadata().get(DURATION);
-//        return Optional.of(duration);
-      }
-
-    @Override @Nonnull
     public AudioFile getAudioFile()
       {
         return this;
       }
 
     @Override @Nonnull
-    public Finder8<? extends Entity> findMakers()
+    public MusicArtistFinder findMakers()
       {
         return new RepositoryMusicArtistFinder(repository).makerOf(trackId);
       }
 
-    @Override
+    @Override @Nonnull
+    public MusicArtistFinder findComposers()
+      {
+        return new RepositoryMusicArtistFinder(repository).makerOf(trackId);
+//        return new RepositoryAudioFileArtistFinder(this); FIXME
+      }
+
+    @Override @Nonnull
     public Optional<Record> getRecord()
       {
         return new RepositoryRecordFinder(repository).recordOf(id).optionalFirstResult();
       }
 
-    @Override
+    @Override @Nonnull
     public Optional<EntityWithPath> getParent() // FIXME: drop it
       {
         throw new UnsupportedOperationException();
-      }
-
-    @RequiredArgsConstructor // FIXME: refactor with a Factory of children
-    public static class RepositoryAudioFileFinder extends Finder8Support<Entity, Finder8<Entity>>
-      {
-        private static final long serialVersionUID = -4130836861989484793L;
-
-        @Nonnull
-        private final RepositoryAudioFile file;
-
-        /** Clone constructor. */
-        public RepositoryAudioFileFinder (final @Nonnull RepositoryAudioFileFinder other,
-                                          final @Nonnull Object override)
-          {
-            super(other, override);
-            this.file = other.file;
-          }
-
-        // FIXME: query the repository
-        @Override @Nonnull
-        protected List<? extends Entity> computeNeededResults()
-          {
-            return file.getMetadata().get(Metadata.COMPOSER)
-                                     .map(artistName -> Arrays.asList(new NamedEntity(artistName)))
-                                     .orElse(Collections.emptyList());
-          }
-      }
-
-    @Override @Nonnull
-    public Finder8<? extends Entity> findComposers()
-      {
-        return new RepositoryAudioFileFinder(this);
       }
   }

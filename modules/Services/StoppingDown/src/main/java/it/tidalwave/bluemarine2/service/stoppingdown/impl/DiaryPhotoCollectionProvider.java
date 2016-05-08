@@ -116,7 +116,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
     @Nonnull
     public EntityFinder findPhotos(final @Nonnull MediaFolder parent) {
         return new FactoryBasedEntityFinder(parent,
-                p1 -> IntStream.range(1999, 2016 + 1)
+                p1 -> IntStream.range(1999, 2016 + 1) // FIXME: use current year
                         .mapToObj(x -> x)
                         .map(year -> new VirtualMediaFolder(p1,
                                 Paths.get("" + year),
@@ -169,7 +169,8 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
                     final Node entryNode = entryNodes.item(i);
                     final String href = getAttribute(entryNode, "href").replaceAll(REGEXP_URL_HOST_AND_PORT, "");
                     final String url = String.format(URL_GALLERY_TEMPLATE, baseUrl, href).replace("//", "/")
-                                                                                         .replace(":/", "://");
+                                                                                         .replace(":/", "://")
+                                               .replaceAll("(^.*)\\/([0-9]{2})\\/([0-9]{2})\\/(.*)$", "$1/$2-$3/$4");
                     final String date = href.substring(href.length() - 11, href.length() - 1);
                     final String displayName = date + " - " + entryNode.getTextContent();
                     galleryDescriptions.add(new GalleryDescription(displayName, url));

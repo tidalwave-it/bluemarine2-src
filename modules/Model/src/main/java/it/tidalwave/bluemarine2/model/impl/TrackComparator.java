@@ -33,8 +33,10 @@ import java.util.Comparator;
 import it.tidalwave.util.As8;
 import it.tidalwave.util.AsException;
 import it.tidalwave.util.DefaultFilterSortCriterion;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.Track;
 import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
@@ -50,10 +52,12 @@ public class TrackComparator extends DefaultFilterSortCriterion<Track>
       {
         try
           {
-            final int d1 = tr1.getDiskNumber().orElse(1);
-            final int d2 = tr2.getDiskNumber().orElse(1);
-            final int t1 = tr1.getTrackNumber();
-            final int t2 = tr2.getTrackNumber();
+            final Metadata m1 = tr1.getMetadata();
+            final Metadata m2 = tr2.getMetadata();
+            final int d1 = m1.get(DISK_NUMBER).orElse(1);
+            final int d2 = m2.get(DISK_NUMBER).orElse(1);
+            final int t1 = m1.get(TRACK_NUMBER).get();
+            final int t2 = m2.get(TRACK_NUMBER).get();
 
             if (d1 != d2)
               {

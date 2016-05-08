@@ -33,7 +33,6 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 import java.time.Duration;
 import org.openrdf.repository.Repository;
-import org.openrdf.model.Value;
 import org.openrdf.query.Binding;
 import org.openrdf.query.BindingSet;
 import it.tidalwave.util.Id;
@@ -76,8 +75,8 @@ public class RepositoryEntitySupport implements Entity, Identifiable
                                     final @Nonnull String idName)
       {
         this.repository = repository;
-        this.id = new Id(toString(bindingSet.getBinding(idName)));
-        this.rdfsLabel = toString(bindingSet.getBinding("label"));
+        this.id = new Id(toString(bindingSet.getBinding(idName)).get());
+        this.rdfsLabel = toString(bindingSet.getBinding("label")).get();
       }
 
     /*******************************************************************************************************************
@@ -85,17 +84,10 @@ public class RepositoryEntitySupport implements Entity, Identifiable
      *
      *
      ******************************************************************************************************************/
-    @Nullable
-    protected static String toString (final @Nullable Binding binding)
+    @Nonnull
+    protected static Optional<String> toString (final @Nullable Binding binding)
       {
-        if (binding == null)
-          {
-            return null;
-          }
-
-        final Value value = binding.getValue();
-
-        return (value != null) ? value.stringValue() : null;
+        return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> v.stringValue());
       }
 
     /*******************************************************************************************************************
@@ -103,17 +95,10 @@ public class RepositoryEntitySupport implements Entity, Identifiable
      *
      *
      ******************************************************************************************************************/
-    @Nullable
-    protected static Integer toInteger (final @Nullable Binding binding)
+    @Nonnull
+    protected static Optional<Integer> toInteger (final @Nullable Binding binding)
       {
-        if (binding == null)
-          {
-            return null;
-          }
-
-        final Value value = binding.getValue();
-
-        return (value != null) ? Integer.parseInt(value.stringValue()) : null;
+        return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> Integer.parseInt(v.stringValue()));
       }
 
     /*******************************************************************************************************************
@@ -121,17 +106,10 @@ public class RepositoryEntitySupport implements Entity, Identifiable
      *
      *
      ******************************************************************************************************************/
-    @Nullable
-    protected static Optional<Integer> toOptionalInteger (final @Nullable Binding binding)
+    @Nonnull
+    protected static Optional<Long> toLong (final @Nullable Binding binding)
       {
-        if (binding == null)
-          {
-            return Optional.empty();
-          }
-
-        final Value value = binding.getValue();
-
-        return (value != null) ? Optional.of(Integer.parseInt(value.stringValue())) : Optional.empty();
+        return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> Long.parseLong(v.stringValue()));
       }
 
     /*******************************************************************************************************************
@@ -139,16 +117,9 @@ public class RepositoryEntitySupport implements Entity, Identifiable
      *
      *
      ******************************************************************************************************************/
-    @Nullable
-    protected static Duration toDuration (final @Nullable Binding binding)
+    @Nonnull
+    protected static Optional<Duration> toDuration (final @Nullable Binding binding)
       {
-        if (binding == null)
-          {
-            return null;
-          }
-
-        final Value value = binding.getValue();
-
-        return (value != null) ? Duration.ofMillis((int)Float.parseFloat(value.stringValue())) : null;
+        return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> Duration.ofMillis((int)Float.parseFloat(v.stringValue())));
       }
   }

@@ -50,6 +50,13 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- TEST DEPENDENCIES -->
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-commons-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>

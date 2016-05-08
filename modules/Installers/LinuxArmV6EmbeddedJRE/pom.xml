@@ -40,7 +40,7 @@
 
     <!-- ===============================================================================================================
 
-        This is the "Mac OS X Installer with embedded JRE module" of the project. It generates a Mac OS X application 
+        This is the "Mac OS X Installer with embedded JRE module" of the project. It generates a Mac OS X application
         bundle in form of a dmg.gz file  an embedded JRE.
 
     ================================================================================================================ -->
@@ -49,9 +49,9 @@
     <artifactId>bluemarine2-linux-armv6-embedded-jre</artifactId>
     <version>1.0-ALPHA-10-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>blueMarine II - Installer, Linux ARM v6 with embedded JRE</name>
+    <name>blueMarine II - Installer - Linux ARM v6, embedded JRE</name>
     <description>This module creates a Linux ARM v6 application bundle with an embedded JRE.</description>
-    
+
     <properties>
         <tft.embedded-jdk-name>jre1.8.0_33</tft.embedded-jdk-name>
         <tft.embedded-jdk-version>1.8.0_33-1</tft.embedded-jdk-version>
@@ -61,9 +61,9 @@
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>    
+            <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>
         </dependency>
-        
+
         <!-- FIXME: why are not brought by transitive dependencies? -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -76,7 +76,7 @@
             <scope>runtime</scope>
         </dependency>
     </dependencies>
-   
+
     <build>
         <plugins>
             <plugin>
@@ -128,10 +128,10 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>make-assembly</id> 
-                        <phase>package</phase> 
+                        <id>make-assembly</id>
+                        <phase>package</phase>
                         <goals>
-                            <goal>single</goal> 
+                            <goal>single</goal>
                         </goals>
                     </execution>
                 </executions>
