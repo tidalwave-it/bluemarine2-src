@@ -140,6 +140,24 @@ public class RepositoryEntitySupport implements Entity, Identifiable
      *
      ******************************************************************************************************************/
     @Nullable
+    protected static Optional<Long> toOptionalLong (final @Nullable Binding binding)
+      {
+        if (binding == null)
+          {
+            return Optional.empty();
+          }
+
+        final Value value = binding.getValue();
+
+        return (value != null) ? Optional.of(Long.parseLong(value.stringValue())) : Optional.empty();
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nullable
     protected static Duration toDuration (final @Nullable Binding binding)
       {
         if (binding == null)

@@ -4,96 +4,96 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:title>Cherubini: Sonata #3 In B Flat - 2. Andantino</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
-        <res duration="00:04:10" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/06+Cherubini_+Sonata+%233+In+B+Flat+-+2.+Andantino.mp3</res>
+        <res duration="00:04:10" protocolInfo="http-get:*:audio/mpeg:*" size="10005121">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/06+Cherubini_+Sonata+%233+In+B+Flat+-+2.+Andantino.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:b493c36149027123dbd1c87e8930bb21e5b8bf25" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Cherubini: Sonata #4 In G - 1. Moderato</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
-        <res duration="00:06:50" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/07+Cherubini_+Sonata+%234+In+G+-+1.+Moderato.mp3</res>
+        <res duration="00:06:50" protocolInfo="http-get:*:audio/mpeg:*" size="16405115">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/07+Cherubini_+Sonata+%234+In+G+-+1.+Moderato.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:48957c42017faf10c87e89109dd9d82f565dbb53" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Cherubini: Sonata #4 In G - 2. Rondò: Andantino</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
-        <res duration="00:06:59" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/08+Cherubini_+Sonata+%234+In+G+-+2.+Rond%C3%B2_+Andantino.mp3</res>
+        <res duration="00:06:59" protocolInfo="http-get:*:audio/mpeg:*" size="16764618">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/08+Cherubini_+Sonata+%234+In+G+-+2.+Rond%C3%B2_+Andantino.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:a1d807e0290de33152670dd78db45a3590dd2c90" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Cherubini: Sonata #5 In D - 1. Allegro Con Brio</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
-        <res duration="00:06:53" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/09+Cherubini_+Sonata+%235+In+D+-+1.+Allegro+Con+Brio.mp3</res>
+        <res duration="00:06:53" protocolInfo="http-get:*:audio/mpeg:*" size="16525287">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/09+Cherubini_+Sonata+%235+In+D+-+1.+Allegro+Con+Brio.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:a738f21b84995af3f75d91bb355b3bc93765b99a" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Cherubini: Sonata #5 In D - 2. Rondò: Allegretto</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
-        <res duration="00:05:06" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/10+Cherubini_+Sonata+%235+In+D+-+2.+Rond%C3%B2_+Allegretto.mp3</res>
+        <res duration="00:05:06" protocolInfo="http-get:*:audio/mpeg:*" size="12245438">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/10+Cherubini_+Sonata+%235+In+D+-+2.+Rond%C3%B2_+Allegretto.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:3a3cb04724ccce3b13b17a72a610822353953d6e" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Cherubini: Sonata #6 In E Flat - 1. Allegro Spiritoso</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>11</upnp:originalTrackNumber>
-        <res duration="00:07:52" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/11+Cherubini_+Sonata+%236+In+E+Flat+-+1.+Allegro+Spiritoso.mp3</res>
+        <res duration="00:07:52" protocolInfo="http-get:*:audio/mpeg:*" size="18884673">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/11+Cherubini_+Sonata+%236+In+E+Flat+-+1.+Allegro+Spiritoso.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:ca003c0225e299df4ddc462721cbeba5659f19f4" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Cherubini: Sonata #6 In E Flat - 2. Rondò: Andantino Con Moto</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>12</upnp:originalTrackNumber>
-        <res duration="00:06:06" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/12+Cherubini_+Sonata+%236+In+E+Flat+-+2.+Rond%C3%B2_+Andantino+Con+Moto.mp3</res>
+        <res duration="00:06:06" protocolInfo="http-get:*:audio/mpeg:*" size="14660223">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/12+Cherubini_+Sonata+%236+In+E+Flat+-+2.+Rond%C3%B2_+Andantino+Con+Moto.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:479916a47b2393ca2753e07134812efdef32aaa1" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>(Strumentale)</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="00:11:15" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/01+%28Strumentale%29.mp3</res>
+        <res duration="00:11:15" protocolInfo="http-get:*:audio/mpeg:*" size="27024381">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/01+%28Strumentale%29.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:ebabff8d3124b1a3edc803a4eb9242d872cc81b2" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Ad Honorem Tui, Christe</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
-        <res duration="00:07:10" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/02+Ad+Honorem+Tui%2C+Christe.mp3</res>
+        <res duration="00:07:10" protocolInfo="http-get:*:audio/mpeg:*" size="17234742">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/02+Ad+Honorem+Tui%2C+Christe.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:90e0f2700ec3c8a7db0c63ed715e3ee5973888d6" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Rex, In Aeternum Vive!</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
-        <res duration="00:03:19" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/03+Rex%2C+In+Aeternum+Vive%21.mp3</res>
+        <res duration="00:03:19" protocolInfo="http-get:*:audio/mpeg:*" size="7974856">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/03+Rex%2C+In+Aeternum+Vive%21.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:0cf106e17c29d06c2ecf23b7aa9f40730ff90733" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Multum Miror Cuius Consilio</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
-        <res duration="00:11:25" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/04+Multum+Miror+Cuius+Consilio.mp3</res>
+        <res duration="00:11:25" protocolInfo="http-get:*:audio/mpeg:*" size="27415187">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/04+Multum+Miror+Cuius+Consilio.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:33a5919fd8111782d4091d8cca70c5b2ffa611cc" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Solvitur In Libro Salomonis</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
-        <res duration="00:02:21" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/05+Solvitur+In+Libro+Salomonis.mp3</res>
+        <res duration="00:02:21" protocolInfo="http-get:*:audio/mpeg:*" size="5671906">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/05+Solvitur+In+Libro+Salomonis.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:63c46dee79c4a3185b85f26fe0a5cfac3d4bdf50" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Et Caetera</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
-        <res duration="00:04:09" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/06+Et+Caetera.mp3</res>
+        <res duration="00:04:09" protocolInfo="http-get:*:audio/mpeg:*" size="9991497">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/06+Et+Caetera.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:fc6f81057ea887d4306d6b81f02305eee057feb7" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Ecce Rex Darius</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
-        <res duration="00:04:28" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/07+Ecce+Rex+Darius.mp3</res>
+        <res duration="00:04:28" protocolInfo="http-get:*:audio/mpeg:*" size="10740694">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/07+Ecce+Rex+Darius.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:8c7cfc9dce8749f7d75c27a43d0ce16ebee12ad3" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Ex Regali Venit Imperio</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
-        <res duration="00:03:21" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/08+Ex+Regali+Venit+Imperio.mp3</res>
+        <res duration="00:03:21" protocolInfo="http-get:*:audio/mpeg:*" size="8072032">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/08+Ex+Regali+Venit+Imperio.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:c923b481db0ff6828c67bd53f0a6c471ba986ad2" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Rex, In Aeternum Vive!</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
-        <res duration="00:04:31" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/09+Rex%2C+In+Aeternum+Vive%21.mp3</res>
+        <res duration="00:04:31" protocolInfo="http-get:*:audio/mpeg:*" size="10848325">http://<server>/Music/New+York%27s+Ensemble+for+Early+Music+-+Frederick+Renz+director/Daniel+And+The+Lions+-+Ludus+Danielis/09+Rex%2C+In+Aeternum+Vive%21.mp3</res>
     </item>
 </DIDL-Lite>

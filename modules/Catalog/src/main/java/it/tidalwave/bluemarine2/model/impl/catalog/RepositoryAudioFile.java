@@ -93,48 +93,36 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     @Getter @Nonnull
     private final Path relativePath;
 
-    @CheckForNull
-    private Metadata metadata;
+    @Getter @Nonnull
+    private final Metadata metadata;
 
     @Nonnull
     private final Id trackId;
 
-    @Nonnull
-    private final Duration duration;
-
+    // FIXME: too maby arguments, pass a BindingSet
     public RepositoryAudioFile (final @Nonnull Repository repository,
                                 final @Nonnull Id id,
                                 final @Nonnull Id trackId,
                                 final @Nonnull Path path,
                                 final @Nonnull Path basePath,
                                 final @Nonnull Duration duration,
-                                final String rdfsLabel)
+                                final String rdfsLabel,
+                                final @Nonnull Optional<Long> fileSize)
       {
         super(repository, id, rdfsLabel);
         this.trackId = trackId;
-        this.duration = duration;
         // See BMT-36
         this.path = path;
         this.relativePath = path;// FIXME basePath.relativize(path);
+        this.metadata = new MetadataSupport(path).with(TITLE, rdfsLabel)
+                                                 .with(DURATION, duration)
+                                                 .with(FILE_SIZE, fileSize);
       }
 
     @Override @Nonnull
     public String toString()
       {
         return String.format("RepositoryAudioFileEntity(%s, %s)", relativePath, id);
-      }
-
-    @Override @Nonnull
-    public synchronized Metadata getMetadata()
-      {
-        if (metadata == null)
-          {
-            // FIXME: this reads from file, it shoudln't
-            metadata = new MetadataSupport(path).with(TITLE, rdfsLabel)
-                                                .with(DURATION, duration);
-          }
-
-        return metadata;
       }
 
     @Override @Nonnull

@@ -4,6 +4,6 @@ Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artis
         <dc:title>Cherubini: Sonata #1 In F - 1. Moderato</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="00:06:27" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/01+Cherubini_+Sonata+%231+In+F+-+1.+Moderato.mp3</res>
+        <res duration="00:06:27" protocolInfo="http-get:*:audio/mpeg:*" size="15517997">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/01+Cherubini_+Sonata+%231+In+F+-+1.+Moderato.mp3</res>
     </item>
 </DIDL-Lite>

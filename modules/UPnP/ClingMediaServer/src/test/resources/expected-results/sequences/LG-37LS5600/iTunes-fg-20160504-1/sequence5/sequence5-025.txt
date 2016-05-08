@@ -4,96 +4,96 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:title>Anon: Occuli Omnium</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
-        <res duration="00:03:25" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-04+Anon_+Occuli+Omnium.mp3</res>
+        <res duration="00:03:25" protocolInfo="http-get:*:audio/mpeg:*" size="8223548">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-04+Anon_+Occuli+Omnium.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:b2ff50bedf2161c3667cd83400e07863d831852b" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Anon: Veni Creator Spiritus</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
-        <res duration="00:02:37" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-05+Anon_+Veni+Creator+Spiritus.mp3</res>
+        <res duration="00:02:37" protocolInfo="http-get:*:audio/mpeg:*" size="6298854">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-05+Anon_+Veni+Creator+Spiritus.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:dd83f063f3e39bf52b44b8f658f8c8bc6a41f129" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Anon: Alleluia, Beatus Vir Qui Suffert</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
-        <res duration="00:03:13" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-06+Anon_+Alleluia%2C+Beatus+Vir+Qui+Suffert.mp3</res>
+        <res duration="00:03:13" protocolInfo="http-get:*:audio/mpeg:*" size="7755453">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-06+Anon_+Alleluia%2C+Beatus+Vir+Qui+Suffert.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:f455552bf8e65c084a4fc534f2d0302483ee5e88" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Anon: Os Iusti</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
-        <res duration="00:02:53" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-07+Anon_+Os+Iusti.mp3</res>
+        <res duration="00:02:53" protocolInfo="http-get:*:audio/mpeg:*" size="6923690">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-07+Anon_+Os+Iusti.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:2ce1229cadb069b4abb1090f6754a160c570206a" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Anon: Spiritus Domini</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
-        <res duration="00:03:50" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-08+Anon_+Spiritus+Domini.mp3</res>
+        <res duration="00:03:50" protocolInfo="http-get:*:audio/mpeg:*" size="9212024">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-08+Anon_+Spiritus+Domini.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:9ca87b13ca41360e5c34aee5849a25fb4233e633" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Anon: Kyrie Fons Bonitatis</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
-        <res duration="00:04:04" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-09+Anon_+Kyrie+Fons+Bonitatis.mp3</res>
+        <res duration="00:04:04" protocolInfo="http-get:*:audio/mpeg:*" size="9786723">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-09+Anon_+Kyrie+Fons+Bonitatis.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:0c38df36a4ac1ed0f2db97d4cf3cc8c6e5019023" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Anon: Laetatus Sum</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
-        <res duration="00:02:21" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-10+Anon_+Laetatus+Sum.mp3</res>
+        <res duration="00:02:21" protocolInfo="http-get:*:audio/mpeg:*" size="5651010">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-10+Anon_+Laetatus+Sum.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:a5c70ce5d8a97b68d4ddc172c6c6997c12676775" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Anon: A Solis Ortus Cardine</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>11</upnp:originalTrackNumber>
-        <res duration="00:03:04" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-11+Anon_+A+Solis+Ortus+Cardine.mp3</res>
+        <res duration="00:03:04" protocolInfo="http-get:*:audio/mpeg:*" size="7388684">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-11+Anon_+A+Solis+Ortus+Cardine.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:71305629dfd2f13cccab150cef2e0129e8266f94" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Anon: Christus Factus Est Pro Nobis</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>12</upnp:originalTrackNumber>
-        <res duration="00:02:43" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-12+Anon_+Christus+Factus+Est+Pro+Nobis.mp3</res>
+        <res duration="00:02:43" protocolInfo="http-get:*:audio/mpeg:*" size="6547549">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-12+Anon_+Christus+Factus+Est+Pro+Nobis.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:a9cd7acec7c672668b914caa2d7f99d4f79ba360" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Anon: Mandatum Novum Do Vobis</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>13</upnp:originalTrackNumber>
-        <res duration="00:01:44" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-13+Anon_+Mandatum+Novum+Do+Vobis.mp3</res>
+        <res duration="00:01:44" protocolInfo="http-get:*:audio/mpeg:*" size="4168311">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-13+Anon_+Mandatum+Novum+Do+Vobis.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:33bfbc313477f05baf1f064a7f968beb956a944a" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Anon: Media Vita In Morte Sumus</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>14</upnp:originalTrackNumber>
-        <res duration="00:06:12" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-14+Anon_+Media+Vita+In+Morte+Sumus.mp3</res>
+        <res duration="00:06:12" protocolInfo="http-get:*:audio/mpeg:*" size="14907774">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-14+Anon_+Media+Vita+In+Morte+Sumus.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:48132eba42f33755bb5e3981dbd2e73e12a914f0" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Cherubini: Sonata #1 In F - 1. Moderato</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="00:06:27" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/01+Cherubini_+Sonata+%231+In+F+-+1.+Moderato.mp3</res>
+        <res duration="00:06:27" protocolInfo="http-get:*:audio/mpeg:*" size="15517997">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/01+Cherubini_+Sonata+%231+In+F+-+1.+Moderato.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:934f35231977cf95d26afac857dca848fcad8731" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Cherubini: Sonata #1 In F - 2. Allegretto Moderato</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
-        <res duration="00:04:56" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/02+Cherubini_+Sonata+%231+In+F+-+2.+Allegretto+Moderato.mp3</res>
+        <res duration="00:04:56" protocolInfo="http-get:*:audio/mpeg:*" size="11845192">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/02+Cherubini_+Sonata+%231+In+F+-+2.+Allegretto+Moderato.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:e86b061fa7e8bc118662f30b246b1deb748d8cb2" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Cherubini: Sonata #2 In C - 1. Moderato</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
-        <res duration="00:07:39" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/03+Cherubini_+Sonata+%232+In+C+-+1.+Moderato.mp3</res>
+        <res duration="00:07:39" protocolInfo="http-get:*:audio/mpeg:*" size="18365344">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/03+Cherubini_+Sonata+%232+In+C+-+1.+Moderato.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:a1ca175f7e25d4ae2404637f4791ad4424e59aea" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Cherubini: Sonata #2 In C - 2. Rondò Allegro</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
-        <res duration="00:03:56" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/04+Cherubini_+Sonata+%232+In+C+-+2.+Rond%C3%B2+Allegro.mp3</res>
+        <res duration="00:03:56" protocolInfo="http-get:*:audio/mpeg:*" size="9445102">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/04+Cherubini_+Sonata+%232+In+C+-+2.+Rond%C3%B2+Allegro.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:56697af34ee1a5a3a41bdca0e749e15ef1f1af72" parentID="/music/RepositoryBrowserByTrack" restricted="0">
         <dc:title>Cherubini: Sonata #3 In B Flat - 1. Allegro Comodo</dc:title>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
-        <res duration="00:08:38" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/05+Cherubini_+Sonata+%233+In+B+Flat+-+1.+Allegro+Comodo.mp3</res>
+        <res duration="00:08:38" protocolInfo="http-get:*:audio/mpeg:*" size="20724735">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/05+Cherubini_+Sonata+%233+In+B+Flat+-+1.+Allegro+Comodo.mp3</res>
     </item>
 </DIDL-Lite>
