@@ -84,6 +84,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
 
     private static final Path ACTUAL_PATH = Paths.get("target/test-results/sequences");
 
+    private static final Path PATH_SEQUENCES = Paths.get("src/test/resources/sequences");
+
     private UpnpClient upnpClient;
 
     private DefaultResourceServer resourceServer;
@@ -172,8 +174,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
       {
         final AtomicInteger n = new AtomicInteger(0);
         final AtomicReference<Throwable> error = new AtomicReference<>();
-        final Path sequencePath = Paths.get("src/test/resources/sequences",
-                clientDeviceName, testSetName, sequenceName + ".txt");
+        final Path sequencePath = PATH_SEQUENCES.resolve(Paths.get(clientDeviceName, testSetName, sequenceName + ".txt"));
 
         for (final Params params : toParams(sequencePath))
           {
