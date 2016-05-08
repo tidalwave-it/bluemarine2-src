@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import it.tidalwave.role.ContextManager;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -65,5 +66,6 @@ public class SpringTestSupport
         log.info("Closing Spring context...");
         context.close();
         context = null; // don't keep in memory useless stuff
+        ContextManager.Locator.set(null);
       }
   }
