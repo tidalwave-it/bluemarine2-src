@@ -128,23 +128,11 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
       {
         if (metadata == null)
           {
-            metadata = new AudioMetadata(path);
+            // FIXME: this reads from file, it shoudln't
+            metadata = new AudioMetadata(path).with(TITLE, rdfsLabel);
           }
 
         return metadata;
-      }
-
-    @Override @Nonnull
-    public Optional<String> getLabel()
-      {
-        return Optional.of(rdfsLabel);
-      }
-
-    @Override @Nonnull
-    public Optional<Duration> getDuration()
-      {
-        return getMetadata().get(DURATION);
-//        return Optional.of(duration);
       }
 
     @Override @Nonnull
@@ -163,7 +151,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     public MusicArtistFinder findComposers()
       {
         return new RepositoryMusicArtistFinder(repository).makerOf(trackId);
-//        return new RepositoryAudioFileArtistFinder(this);
+//        return new RepositoryAudioFileArtistFinder(this); FIXME
       }
 
     @Override @Nonnull

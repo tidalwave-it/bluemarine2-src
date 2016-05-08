@@ -115,7 +115,20 @@ public class MetadataSupport implements MediaItem.Metadata
 
     /*******************************************************************************************************************
      *
+     * {@inheritDocs}
      *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public <T> MediaItem.Metadata with (final @Nonnull Key<T> key, final @Nonnull T value)
+      {
+        final MetadataSupport clone = new MetadataSupport(path);
+        clone.put(key, value);
+        return clone;
+      }
+
+    /*******************************************************************************************************************
+     *
+     * FIXME: remove this, make it truly immutable.
      *
      ******************************************************************************************************************/
     protected <V> void put (final @Nonnull Key<V> key, final @Nullable V value)

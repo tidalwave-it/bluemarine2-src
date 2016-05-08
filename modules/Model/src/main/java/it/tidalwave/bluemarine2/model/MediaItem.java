@@ -114,6 +114,19 @@ public interface MediaItem extends EntityWithPath, AudioFileSupplier
          **************************************************************************************************************/
         @Nonnull
         public Set<Map.Entry<Key<?>, ?>> getEntries();
+
+        /***************************************************************************************************************
+         *
+         * Returns a clone of this object with an additional value.
+         *
+         * @para        <T>     the value type
+         * @param       key     the key
+         * @param       value   the value
+         * @return              the clone
+         *
+         **************************************************************************************************************/
+        @Nonnull
+        public <T> Metadata with (@Nonnull Key<T> key, T value);
     }
 
     /*******************************************************************************************************************

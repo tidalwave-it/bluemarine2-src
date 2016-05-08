@@ -184,18 +184,6 @@ public class FileSystemAudioFile implements AudioFile, EntityWithPath
       }
 
     @Override @Nonnull
-    public Optional<String> getLabel()
-      {
-        return getMetadata().get(TITLE);
-      }
-
-    @Override @Nonnull
-    public Optional<Duration> getDuration()
-      {
-        return getMetadata().get(DURATION);
-      }
-
-    @Override @Nonnull
     public MusicArtistFinder findComposers()
       {
         // FIXME: when present, should use a Repository finder

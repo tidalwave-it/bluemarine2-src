@@ -47,26 +47,6 @@ public interface AudioFile extends MediaItem // FIXME: MediaItem should not be s
   {
     /*******************************************************************************************************************
      *
-     * Returns the label of this audio file.
-     *
-     * @return  the label
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Optional<String> getLabel();
-
-    /*******************************************************************************************************************
-     *
-     * Returns the duration of this audio file.
-     *
-     * @return  the duration
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Optional<Duration> getDuration();
-
-    /*******************************************************************************************************************
-     *
      * Returns the makers of this audio file.
      *
      * FIXME: shouldn't be here - should be in getTrack().findMakers().
