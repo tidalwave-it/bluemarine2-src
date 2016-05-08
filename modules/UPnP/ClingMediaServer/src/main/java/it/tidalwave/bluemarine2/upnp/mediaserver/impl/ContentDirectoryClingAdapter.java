@@ -146,7 +146,8 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
                                                   .findChildren()
                                                   .withPath(path)
                                                   .optionalResult()
-                                                  .orElseThrow(() -> new ContentDirectoryException(NO_SUCH_OBJECT));
+                                                  .orElseThrow(() ->
+                                                          new ContentDirectoryException(NO_SUCH_OBJECT, objectId));
             log.debug(">>>> found {}", entity);
             final ContentHolder holder = entity.as(DIDLAdapter).toContent(browseFlag,
                                                                           (int)firstResult,
