@@ -31,7 +31,6 @@ package it.tidalwave.bluemarine2.model.impl;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import java.time.Duration;
 import java.util.List;
 import java.util.Optional;
 import java.nio.file.Path;
@@ -53,7 +52,6 @@ import lombok.RequiredArgsConstructor;
 import static java.util.Arrays.*;
 import static java.util.Collections.*;
 import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
@@ -177,7 +175,7 @@ public class FileSystemAudioFile implements AudioFile, EntityWithPath
       {
         if (metadata == null)
           {
-            metadata = new AudioMetadata(path);
+            metadata = AudioMetadataFactory.loadFrom(path);
           }
 
         return metadata;

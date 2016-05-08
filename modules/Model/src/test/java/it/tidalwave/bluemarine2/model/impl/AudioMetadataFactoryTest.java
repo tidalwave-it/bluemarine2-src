@@ -28,11 +28,15 @@
  */
 package it.tidalwave.bluemarine2.model.impl;
 
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import java.nio.file.Path;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.nio.file.Paths;
+import lombok.extern.slf4j.Slf4j;
+import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagField;
 import org.testng.annotations.Test;
@@ -43,17 +47,20 @@ import org.testng.annotations.Test;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class AudioMetadataTest
+@Slf4j
+public class AudioMetadataFactoryTest
   {
-    @Test(enabled = false, groups = "no-ci") // requires files on my disk
+    @Test(groups = "no-ci") // requires files on my disk
     public void testScan()
       {
-        final AudioMetadata am = new AudioMetadata(Paths.get("/Users/fritz/Personal/Music/iTunes/iTunes Music/Music/Compilations/Beethoven Symphonies 1 & 2/01 Beethoven_ Symphonie #1 C-dur op. 21 (1. Adagio molto - Allegro con brio).m4a"));
-        System.err.println(am);
-        System.err.println(am.audioFile);
-        final Tag tag = am.audioFile.getTag();
-        final List<TagField> fields = toList(tag.getFields());
-        System.err.println("FIELDS: " + fields);
+        final Path path = Paths.get("/Users/fritz/Personal/Music/iTunes/iTunes Music/Music/Compilations/Beethoven Symphonies 1 & 2/01 Beethoven_ Symphonie #1 C-dur op. 21 (1. Adagio molto - Allegro con brio).m4a");
+        final Metadata metadata = AudioMetadataFactory.loadFrom(path);
+
+        metadata.getEntries().stream().forEach(e -> log.info("{} = {}", e.getKey(), e.getValue()));
+//        System.err.println(am.audioFile);
+//        final Tag tag = metadata.audioFile.getTag();
+//        final List<TagField> fields = toList(tag.getFields());
+//        System.err.println("FIELDS: " + fields);
 //        tag.getFields(FieldKey.)
 
       }

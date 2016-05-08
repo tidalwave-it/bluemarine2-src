@@ -40,7 +40,7 @@ import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
-import it.tidalwave.bluemarine2.model.impl.AudioMetadata;
+import it.tidalwave.bluemarine2.model.impl.AudioMetadataFactory;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import lombok.EqualsAndHashCode;
@@ -129,8 +129,8 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
         if (metadata == null)
           {
             // FIXME: this reads from file, it shoudln't
-            metadata = new AudioMetadata(path).with(TITLE, rdfsLabel)
-                                              .with(DURATION, duration);
+            metadata = AudioMetadataFactory.loadFrom(path).with(TITLE, rdfsLabel)
+                                                          .with(DURATION, duration);
           }
 
         return metadata;
