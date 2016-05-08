@@ -40,8 +40,8 @@
 
     <!-- ===============================================================================================================
 
-    
-        
+
+
 
     ================================================================================================================ -->
 
@@ -49,15 +49,15 @@
     <artifactId>bluemarine2-linux</artifactId>
     <version>1.0-ALPHA-10-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine II - Installer, Linux</name>
+    <name>blueMarine II - Installer - Linux</name>
     <description>This module creates a Linux application bundle.</description>
-    
+
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>    
+            <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>
         </dependency>
-        
+
         <!-- FIXME: why are not brought by transitive dependencies? -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -70,7 +70,7 @@
             <scope>runtime</scope>
         </dependency>
     </dependencies>
-    
+
     <build>
         <plugins>
             <plugin>
@@ -102,10 +102,10 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>make-assembly</id> 
-                        <phase>package</phase> 
+                        <id>make-assembly</id>
+                        <phase>package</phase>
                         <goals>
-                            <goal>single</goal> 
+                            <goal>single</goal>
                         </goals>
                     </execution>
                 </executions>

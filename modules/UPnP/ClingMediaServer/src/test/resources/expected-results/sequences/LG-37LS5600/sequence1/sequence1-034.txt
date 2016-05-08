@@ -1,2 +1,0 @@
-Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c58ba442a69066b53f80306ffa3bc65938c0017e/urn:bluemarine:record:c5a4f3868bfac0380a98543d4e073a62a5c2de04, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=8, RequestedCount=8, SortCriteria=})
-<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"/>

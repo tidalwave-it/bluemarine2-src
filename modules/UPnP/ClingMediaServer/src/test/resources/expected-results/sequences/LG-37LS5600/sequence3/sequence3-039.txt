@@ -1,9 +1,0 @@
-Browse({ObjectID=/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_7daac7f9-8fcc-485f-a14f-f8091d98cf25, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=1, SortCriteria=})
-<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <item id="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_7daac7f9-8fcc-485f-a14f-f8091d98cf25/http:__dbtune.org_musicbrainz_resource_track_9dd4b751-13d5-4a54-8461-25fb96148894" parentID="/music/RepositoryBrowserByArtistThenTrack/http:__dbtune.org_musicbrainz_resource_artist_7daac7f9-8fcc-485f-a14f-f8091d98cf25" restricted="0">
-        <dc:title>Every Day (I Thank You)</dc:title>
-        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
-        <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
-        <res duration="00:13:21" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Pat+Metheny/Selected+Recordings/05+Every+Day+%28I+Thank+You%29.m4a</res>
-    </item>
-</DIDL-Lite>
