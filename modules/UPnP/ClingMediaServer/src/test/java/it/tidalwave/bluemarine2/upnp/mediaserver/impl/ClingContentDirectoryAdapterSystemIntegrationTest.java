@@ -37,7 +37,6 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicReference;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -84,6 +83,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
     private static final Path EXPECTED_PATH = Paths.get("src/test/resources/expected-results/sequences");
 
     private static final Path ACTUAL_PATH = Paths.get("target/test-results/sequences");
+
+    private static final Path PATH_SEQUENCES = Paths.get("src/test/resources/sequences");
 
     private UpnpClient upnpClient;
 
@@ -172,8 +173,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
       {
         final AtomicInteger n = new AtomicInteger(0);
         final AtomicReference<Throwable> error = new AtomicReference<>();
-        final Path sequencePath = Paths.get("src/test/resources/sequences",
-                clientDeviceName, testSetName, sequenceName + ".txt");
+        final Path sequencePath = PATH_SEQUENCES.resolve(Paths.get(clientDeviceName, testSetName, sequenceName + ".txt"));
 
         for (final Params params : toParams(sequencePath))
           {
@@ -202,7 +202,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                         final DIDLParser parser = new DIDLParser();
                         final String hostAndPort = String.format("http://%s:%d", resourceServer.getIpAddress(), resourceServer.getPort());
                         final String result = xmlPrettyPrinted(parser.generate(didl)).replaceAll(hostAndPort, "http://<server>");
-                        Files.write(actualFile, (header + "\n" + result).getBytes(StandardCharsets.UTF_8));
+                        Files.write(actualFile, (header + "\n" + result).getBytes(UTF_8));
                         assertSameContents(expectedFile.toFile(), actualFile.toFile());
                       }
                     catch (Throwable e)
