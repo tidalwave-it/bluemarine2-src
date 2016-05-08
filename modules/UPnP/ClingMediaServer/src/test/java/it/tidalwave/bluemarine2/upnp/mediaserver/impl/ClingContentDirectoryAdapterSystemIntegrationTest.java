@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
+import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import javax.annotation.Nonnull;
 import java.util.Collection;
 import java.util.HashMap;
@@ -132,11 +133,9 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
       {
         upnpClient = new UpnpClient("ContentDirectory");
         Executors.newSingleThreadExecutor().submit(upnpClient);
-        // FIXME: should use local resources
         final Map<Key<?>, Object> properties = new HashMap<>();
-        final Path configPath = Paths.get("src/test/resources/config");
-        final Path repositoryPath = configPath.resolve("repository.n3");
-        properties.put(ROOT_PATH, configPath); // FIXME: why is this needed?
+        final Path repositoryPath = Paths.get("target/test-classes/test-sets/model-iTunes-fg-20160504-1.n3");
+        properties.put(ROOT_PATH, TestSetLocator.getMusicTestSetsPath().resolve("iTunes-fg-20160504-1"));
         properties.put(PropertyNames.REPOSITORY_PATH, repositoryPath);
         resourceServer = context.getBean(DefaultResourceServer.class);
         context.getBean(MessageBus.class).publish(new PowerOnNotification(properties));
@@ -167,12 +166,15 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
      ******************************************************************************************************************/
     @Test(dataProvider = "sequences", dependsOnMethods = "test_service_publishing", timeOut = 120000,
           groups = "no-ci")  // FIXME On Linux fails because of BMT-46
-    public void test_sequence (final @Nonnull String clientDeviceName, final @Nonnull String sequenceName)
+    public void test_sequence (final @Nonnull String clientDeviceName,
+                               final @Nonnull String testSetName,
+                               final @Nonnull String sequenceName)
       throws Throwable
       {
         final AtomicInteger n = new AtomicInteger(0);
         final AtomicReference<Throwable> error = new AtomicReference<>();
-        final Path sequencePath = Paths.get("src/test/resources/sequences", clientDeviceName, sequenceName + ".txt");
+        final Path sequencePath = Paths.get("src/test/resources/sequences",
+                clientDeviceName, testSetName, sequenceName + ".txt");
 
         for (final Params params : toParams(sequencePath))
           {
@@ -192,8 +194,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                     try
                       {
                         log.info("received() - {}", actionInvocation);
-                        final String fileName = String.format("%s/%s/%s-%03d.txt",
-                                clientDeviceName, sequenceName, sequenceName, n.getAndIncrement());
+                        final String fileName = String.format("%s/%s/%s/%s-%03d.txt",
+                                clientDeviceName, testSetName, sequenceName, sequenceName, n.getAndIncrement());
                         final Path expectedFile = EXPECTED_PATH.resolve(fileName);
                         final Path actualFile = ACTUAL_PATH.resolve(fileName);
                         Files.createDirectories(actualFile.getParent());
@@ -249,11 +251,12 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
       {
         return new Object[][]
           {
-            { "LG-37LS5600", "sequence1" },
-            { "LG-37LS5600", "sequence2" },
-            { "LG-37LS5600", "sequence3" },
-            { "LG-37LS5600", "sequence4" },
-            { "LG-37LS5600", "sequence5" },
+           // device name    test set name           sequence name
+            { "LG-37LS5600", "iTunes-fg-20160504-1", "sequence1" },
+            { "LG-37LS5600", "iTunes-fg-20160504-1", "sequence2" },
+            { "LG-37LS5600", "iTunes-fg-20160504-1", "sequence3" },
+            { "LG-37LS5600", "iTunes-fg-20160504-1", "sequence4" },
+            { "LG-37LS5600", "iTunes-fg-20160504-1", "sequence5" },
           };
       }
 

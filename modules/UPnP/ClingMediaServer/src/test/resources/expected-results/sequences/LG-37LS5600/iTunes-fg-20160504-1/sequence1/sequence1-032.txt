@@ -1,0 +1,9 @@
+Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:d35745456c06770731c83193c38f12cc9cb3c202/urn:bluemarine:record:1bc80e189f4d8d60f24c3e1fde6031ad49c11290, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=1, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <item id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:d35745456c06770731c83193c38f12cc9cb3c202/urn:bluemarine:record:1bc80e189f4d8d60f24c3e1fde6031ad49c11290/urn:bluemarine:track:48132eba42f33755bb5e3981dbd2e73e12a914f0" parentID="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:d35745456c06770731c83193c38f12cc9cb3c202/urn:bluemarine:record:1bc80e189f4d8d60f24c3e1fde6031ad49c11290" restricted="0">
+        <dc:title>Cherubini: Sonata #1 In F - 1. Moderato</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
+        <res duration="00:06:27" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/01+Cherubini_+Sonata+%231+In+F+-+1.+Moderato.mp3</res>
+    </item>
+</DIDL-Lite>

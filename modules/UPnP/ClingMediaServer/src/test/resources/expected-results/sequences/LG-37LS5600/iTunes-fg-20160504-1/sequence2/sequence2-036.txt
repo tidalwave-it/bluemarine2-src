@@ -1,0 +1,69 @@
+Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <item id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c/urn:bluemarine:track:a21ecc7ec3d9b521597863a8b4c909d1455d568c" parentID="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c" restricted="0">
+        <dc:title>(Go) Get It</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
+        <res duration="00:05:37" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Pat+Metheny/Trio+99_00/01+%28Go%29+Get+It.mp3</res>
+    </item>
+    <item id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c/urn:bluemarine:track:b3443aadbe7751c2a8aefc29f5b2b4321a7d6d37" parentID="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c" restricted="0">
+        <dc:title>Giant Steps</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
+        <res duration="00:07:53" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Pat+Metheny/Trio+99_00/02+Giant+Steps.mp3</res>
+    </item>
+    <item id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c/urn:bluemarine:track:bdf644fe3bb10d82a83f3bfc2f3dd341d878b061" parentID="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c" restricted="0">
+        <dc:title>Just Like The Day</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
+        <res duration="00:04:43" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Pat+Metheny/Trio+99_00/03+Just+Like+The+Day.mp3</res>
+    </item>
+    <item id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c/urn:bluemarine:track:1b96cc13f644ff8e9138990215e1b994835bcb92" parentID="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c" restricted="0">
+        <dc:title>Soul Cowboy</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
+        <res duration="00:08:28" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Pat+Metheny/Trio+99_00/04+Soul+Cowboy.mp3</res>
+    </item>
+    <item id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c/urn:bluemarine:track:c269636dfa9d2a47e091bdfe84b16511cd487561" parentID="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c" restricted="0">
+        <dc:title>The Sun In Montreal</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
+        <res duration="00:04:35" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Pat+Metheny/Trio+99_00/05+The+Sun+In+Montreal.mp3</res>
+    </item>
+    <item id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c/urn:bluemarine:track:c14d744c48d2cdf85ff4fd732dad89a3a8893ecb" parentID="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c" restricted="0">
+        <dc:title>Capricorn</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
+        <res duration="00:06:19" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Pat+Metheny/Trio+99_00/06+Capricorn.mp3</res>
+    </item>
+    <item id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c/urn:bluemarine:track:29e7b220e0a5db55b8f68ab7f0fa2130245a59f0" parentID="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c" restricted="0">
+        <dc:title>We Had A Sister</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
+        <res duration="00:05:30" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Pat+Metheny/Trio+99_00/07+We+Had+A+Sister.mp3</res>
+    </item>
+    <item id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c/urn:bluemarine:track:0339dd0d49208657a9c5a8b59f26f304412995fb" parentID="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c" restricted="0">
+        <dc:title>What Do You Want?</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
+        <res duration="00:05:24" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Pat+Metheny/Trio+99_00/08+What+Do+You+Want_.mp3</res>
+    </item>
+    <item id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c/urn:bluemarine:track:bbf471089bc07763a3f3cbc42d8ae9a957ea3f31" parentID="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c" restricted="0">
+        <dc:title>A Lot Of Livin' To Do</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
+        <res duration="00:05:29" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Pat+Metheny/Trio+99_00/09+A+Lot+Of+Livin%27+To+Do.mp3</res>
+    </item>
+    <item id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c/urn:bluemarine:track:a6424a9ed04686d2565dd21bd0c2daecae0b1330" parentID="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c" restricted="0">
+        <dc:title>Lone Jack</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
+        <res duration="00:05:30" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Pat+Metheny/Trio+99_00/10+Lone+Jack.mp3</res>
+    </item>
+    <item id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c/urn:bluemarine:track:d8382fba369e9bb8798785e14a34372c295cbcef" parentID="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c" restricted="0">
+        <dc:title>Travels</dc:title>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>11</upnp:originalTrackNumber>
+        <res duration="00:05:48" protocolInfo="http-get:*:audio/mpeg:*">http://<server>/Music/Pat+Metheny/Trio+99_00/11+Travels.mp3</res>
+    </item>
+</DIDL-Lite>

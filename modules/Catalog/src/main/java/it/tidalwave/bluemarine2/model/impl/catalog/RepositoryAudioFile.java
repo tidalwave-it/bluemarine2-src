@@ -46,6 +46,7 @@ import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 
 /***********************************************************************************************************************
  *
@@ -129,8 +130,8 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
         if (metadata == null)
           {
             // FIXME: this reads from file, it shoudln't
-            metadata = AudioMetadataFactory.loadFrom(path).with(TITLE, rdfsLabel)
-                                                          .with(DURATION, duration);
+            metadata = new MetadataSupport(path).with(TITLE, rdfsLabel)
+                                                .with(DURATION, duration);
           }
 
         return metadata;
