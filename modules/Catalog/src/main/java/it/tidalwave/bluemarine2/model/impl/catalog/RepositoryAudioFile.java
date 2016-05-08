@@ -28,7 +28,6 @@
  */
 package it.tidalwave.bluemarine2.model.impl.catalog;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.time.Duration;
@@ -40,7 +39,6 @@ import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
-import it.tidalwave.bluemarine2.model.impl.AudioMetadataFactory;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import lombok.EqualsAndHashCode;
@@ -105,7 +103,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
                                 final @Nonnull Id trackId,
                                 final @Nonnull Path path,
                                 final @Nonnull Path basePath,
-                                final @Nonnull Duration duration,
+                                final @Nonnull Optional<Duration> duration,
                                 final String rdfsLabel,
                                 final @Nonnull Optional<Long> fileSize)
       {

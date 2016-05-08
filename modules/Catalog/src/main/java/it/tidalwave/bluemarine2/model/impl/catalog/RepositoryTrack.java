@@ -67,10 +67,10 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 @Immutable @Configurable @Slf4j
 public class RepositoryTrack extends RepositoryEntitySupport implements Track, AudioFileSupplier
   {
-    private final Integer trackNumber;
+    private final Optional<Integer> trackNumber;
 
     @Nonnull
-    private final Duration duration;
+    private final Optional<Duration> duration;
 
     @Nonnull
     private final Path audioFilePath;
@@ -104,7 +104,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
         try // FIXME: see BMT-46 - try all posibile normalizations; hen try utf-8 as an option to /etc/fstab
           {
-            thePath = Paths.get(normalized(toString(bindingSet.getBinding("path"))));
+            thePath = Paths.get(normalized(toString(bindingSet.getBinding("path")).get()));
           }
         catch (InvalidPathException e)
           {
@@ -116,9 +116,9 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
         this.duration = toDuration(bindingSet.getBinding("duration"));
         this.trackNumber = toInteger(bindingSet.getBinding("track_number"));
-        this.diskNumber = toOptionalInteger(bindingSet.getBinding("disk_number"));
-        this.diskCount = toOptionalInteger(bindingSet.getBinding("disk_count"));
-        this.fileSize = toOptionalLong(bindingSet.getBinding("fileSize"));
+        this.diskNumber = toInteger(bindingSet.getBinding("disk_number"));
+        this.diskCount = toInteger(bindingSet.getBinding("disk_count"));
+        this.fileSize = toLong(bindingSet.getBinding("fileSize"));
 //        this.recordRdfsLabel = toString(bindingSet.getBinding("record_label"));
 //        this.trackCount = toInteger(bindingSet.getBinding("track_number")));
 
@@ -156,7 +156,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     public String toString()
       {
         return String.format("RepositoryTrack(%02d/%02d %02d, %s, rdfs:label=%s, %s, %s)",
-                             diskNumber.orElse(1), diskCount.orElse(1),
-                             trackNumber, Formatters.format(duration), rdfsLabel, audioFilePath, id);
+                             diskNumber.orElse(1), diskCount.orElse(1), trackNumber.orElse(1),
+                             duration.map(Formatters::format).orElse("??:??"), rdfsLabel, audioFilePath, id);
       }
   }
