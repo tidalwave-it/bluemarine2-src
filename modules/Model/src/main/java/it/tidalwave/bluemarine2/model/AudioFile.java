@@ -29,7 +29,6 @@
 package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
-import java.time.Duration;
 import java.util.Optional;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 
