@@ -1,3 +1,4 @@
+Music/Compilations/Pure Ella/16 All The Things You Are.mp3.Key[file.size] = 7943495
 Music/Compilations/Pure Ella/16 All The Things You Are.mp3.Key[mbz.artistId] = []
 Music/Compilations/Pure Ella/16 All The Things You Are.mp3.Key[mp3.album] = Pure Ella
 Music/Compilations/Pure Ella/16 All The Things You Are.mp3.Key[mp3.artist] = Ella Fitzgerald

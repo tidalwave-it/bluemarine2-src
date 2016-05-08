@@ -1,3 +1,4 @@
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/11 Robert SCHUMANN Conzertstuck for 4 horn and orchestra - Lebh.mp3.Key[file.size] = 17350818
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/11 Robert SCHUMANN Conzertstuck for 4 horn and orchestra - Lebh.mp3.Key[mbz.artistId] = []
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/11 Robert SCHUMANN Conzertstuck for 4 horn and orchestra - Lebh.mp3.Key[mp3.album] = The Magic of The French Horn - Greatest Concertos
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/11 Robert SCHUMANN Conzertstuck for 4 horn and orchestra - Lebh.mp3.Key[mp3.artist] = Jean-Jacques Justafre, Jean-Paul Gantiez, Jean-Claude Barro,

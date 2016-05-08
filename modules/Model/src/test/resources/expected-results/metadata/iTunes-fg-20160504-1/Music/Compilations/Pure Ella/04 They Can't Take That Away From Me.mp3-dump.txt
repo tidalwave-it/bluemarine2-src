@@ -1,3 +1,4 @@
+Music/Compilations/Pure Ella/04 They Can't Take That Away From Me.mp3.Key[file.size] = 11181640
 Music/Compilations/Pure Ella/04 They Can't Take That Away From Me.mp3.Key[mbz.artistId] = []
 Music/Compilations/Pure Ella/04 They Can't Take That Away From Me.mp3.Key[mp3.album] = Pure Ella
 Music/Compilations/Pure Ella/04 They Can't Take That Away From Me.mp3.Key[mp3.artist] = Ella Fitzgerald

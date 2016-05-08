@@ -1,3 +1,4 @@
+Music/Compilations/The Incomparable Callas - Favourite Arias/04 Verdi_ Aida - Ritorna Vincitor!.mp3.Key[file.size] = 16915118
 Music/Compilations/The Incomparable Callas - Favourite Arias/04 Verdi_ Aida - Ritorna Vincitor!.mp3.Key[mbz.artistId] = []
 Music/Compilations/The Incomparable Callas - Favourite Arias/04 Verdi_ Aida - Ritorna Vincitor!.mp3.Key[mp3.album] = The Incomparable Callas - Favourite Arias
 Music/Compilations/The Incomparable Callas - Favourite Arias/04 Verdi_ Aida - Ritorna Vincitor!.mp3.Key[mp3.artist] = Maria Callas; Nicolà Rescigno: Paris Conservatory Orchestra

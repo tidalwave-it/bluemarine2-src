@@ -1,3 +1,4 @@
+Music/Un Autre Noel/もうひとつのクリスマス/02 オルガン　エスタンピ.mp3.Key[file.size] = 4666661
 Music/Un Autre Noel/もうひとつのクリスマス/02 オルガン　エスタンピ.mp3.Key[mbz.artistId] = []
 Music/Un Autre Noel/もうひとつのクリスマス/02 オルガン　エスタンピ.mp3.Key[mp3.album] = もうひとつのクリスマス
 Music/Un Autre Noel/もうひとつのクリスマス/02 オルガン　エスタンピ.mp3.Key[mp3.artist] = Un Autre Noel

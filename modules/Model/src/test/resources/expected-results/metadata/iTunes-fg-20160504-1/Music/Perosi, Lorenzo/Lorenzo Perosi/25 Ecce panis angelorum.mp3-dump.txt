@@ -1,3 +1,4 @@
+Music/Perosi, Lorenzo/Lorenzo Perosi/25 Ecce panis angelorum.mp3.Key[file.size] = 6404292
 Music/Perosi, Lorenzo/Lorenzo Perosi/25 Ecce panis angelorum.mp3.Key[mbz.artistId] = []
 Music/Perosi, Lorenzo/Lorenzo Perosi/25 Ecce panis angelorum.mp3.Key[mp3.album] = Lorenzo Perosi
 Music/Perosi, Lorenzo/Lorenzo Perosi/25 Ecce panis angelorum.mp3.Key[mp3.artist] = Perosi, Lorenzo

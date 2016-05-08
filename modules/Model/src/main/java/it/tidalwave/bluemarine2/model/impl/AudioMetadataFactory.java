@@ -56,6 +56,7 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static lombok.AccessLevel.PRIVATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import java.nio.file.Files;
 
 /***********************************************************************************************************************
  *
@@ -85,6 +86,7 @@ public final class AudioMetadataFactory
             audioFile = AudioFileIO.read(aPath.toFile());
 
             final AudioHeader header = audioFile.getAudioHeader();
+            metadata = metadata.with(FILE_SIZE, Files.size(path));
             metadata = metadata.with(DURATION, Duration.ofSeconds(header.getTrackLength()));
             metadata = metadata.with(BIT_RATE, (int)header.getBitRateAsNumber());
             metadata = metadata.with(SAMPLE_RATE, header.getSampleRateAsNumber());

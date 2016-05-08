@@ -1,3 +1,4 @@
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/08 Sonata in D minor, RV 14.mp3.Key[file.size] = 3566420
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/08 Sonata in D minor, RV 14.mp3.Key[mbz.artistId] = []
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/08 Sonata in D minor, RV 14.mp3.Key[mp3.album] = Vivaldi: Musica da camera e da chiesa
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/08 Sonata in D minor, RV 14.mp3.Key[mp3.artist] = London Baroque

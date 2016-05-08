@@ -1,3 +1,4 @@
+Music/Compilations/Satchmo 2/10 Stars Feel On Alabama.mp3.Key[file.size] = 8616368
 Music/Compilations/Satchmo 2/10 Stars Feel On Alabama.mp3.Key[mbz.artistId] = []
 Music/Compilations/Satchmo 2/10 Stars Feel On Alabama.mp3.Key[mp3.album] = Satchmo 2
 Music/Compilations/Satchmo 2/10 Stars Feel On Alabama.mp3.Key[mp3.artist] = Louis Armstrong

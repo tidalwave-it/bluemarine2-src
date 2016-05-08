@@ -1,3 +1,4 @@
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/02 Sonata in E flat major, RV 130.mp3.Key[file.size] = 3567471
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/02 Sonata in E flat major, RV 130.mp3.Key[mbz.artistId] = []
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/02 Sonata in E flat major, RV 130.mp3.Key[mp3.album] = Vivaldi: Musica da camera e da chiesa
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/02 Sonata in E flat major, RV 130.mp3.Key[mp3.artist] = London Baroque

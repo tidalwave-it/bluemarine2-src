@@ -1,3 +1,4 @@
+Music/Compilations/La Divina 2/02 Carmen (1987 - Remaster), Act II_ Chanson bohème_ Les tringles des sistres tintaient (Carmen).mp3.Key[file.size] = 10581299
 Music/Compilations/La Divina 2/02 Carmen (1987 - Remaster), Act II_ Chanson bohème_ Les tringles des sistres tintaient (Carmen).mp3.Key[mbz.artistId] = []
 Music/Compilations/La Divina 2/02 Carmen (1987 - Remaster), Act II_ Chanson bohème_ Les tringles des sistres tintaient (Carmen).mp3.Key[mp3.album] = La Divina 2
 Music/Compilations/La Divina 2/02 Carmen (1987 - Remaster), Act II_ Chanson bohème_ Les tringles des sistres tintaient (Carmen).mp3.Key[mp3.artist] = Georges Prêtre/Maria Callas/Nicolai Gedda/Nadine Sautereau/Jane Berbié/Choeurs René Duclos/Choeurs d'Enfants Jean Pesneaud/Choeurs Et Orchestre De l'Opéra National De Paris

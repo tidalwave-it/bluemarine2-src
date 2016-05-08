@@ -1,3 +1,4 @@
+Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/03 Ravel_ Gaspard De La Nuit - Scarbo_ Modéré.mp3.Key[file.size] = 22866806
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/03 Ravel_ Gaspard De La Nuit - Scarbo_ Modéré.mp3.Key[mbz.artistId] = []
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/03 Ravel_ Gaspard De La Nuit - Scarbo_ Modéré.mp3.Key[mp3.album] = Ravel: Gaspard De La Nuit; Prokofiev: Piano Sonata #6
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/03 Ravel_ Gaspard De La Nuit - Scarbo_ Modéré.mp3.Key[mp3.artist] = Ivo Pogorelich

@@ -1,3 +1,4 @@
+Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/07 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 4. Vivace.mp3.Key[file.size] = 16090610
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/07 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 4. Vivace.mp3.Key[mbz.artistId] = []
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/07 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 4. Vivace.mp3.Key[mp3.album] = Ravel: Gaspard De La Nuit; Prokofiev: Piano Sonata #6
 Music/Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/07 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 4. Vivace.mp3.Key[mp3.artist] = Ivo Pogorelich

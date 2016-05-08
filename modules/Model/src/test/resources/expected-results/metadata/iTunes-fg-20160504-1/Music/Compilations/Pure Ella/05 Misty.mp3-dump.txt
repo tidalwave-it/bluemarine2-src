@@ -1,3 +1,4 @@
+Music/Compilations/Pure Ella/05 Misty.mp3.Key[file.size] = 6928875
 Music/Compilations/Pure Ella/05 Misty.mp3.Key[mbz.artistId] = []
 Music/Compilations/Pure Ella/05 Misty.mp3.Key[mp3.album] = Pure Ella
 Music/Compilations/Pure Ella/05 Misty.mp3.Key[mp3.artist] = Ella Fitzgerald

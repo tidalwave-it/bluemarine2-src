@@ -1,3 +1,4 @@
+Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/01 A poste messe.mp3.Key[file.size] = 8378214
 Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/01 A poste messe.mp3.Key[mbz.artistId] = []
 Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/01 A poste messe.mp3.Key[mp3.album] = O tu chara sciença: La musique dans la pensée médiévale
 Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/01 A poste messe.mp3.Key[mp3.artist] = La Reverdie

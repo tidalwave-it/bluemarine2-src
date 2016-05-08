@@ -1,3 +1,4 @@
+Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[file.size] = 10538192
 Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mbz.artistId] = []
 Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mp3.album] = The Incomparable Callas - Favourite Arias
 Music/Compilations/The Incomparable Callas - Favourite Arias/07 Gluck_ Orphée Et Eurydice - J'Ai Perdu Mon Eurydice.mp3.Key[mp3.artist] = Maria Callas; Georges Prêtre: Orchestre National De L'ORTF

@@ -1,3 +1,4 @@
+Music/Compilations/Satchmo 2/13 When Your Love Has Gone.mp3.Key[file.size] = 11244288
 Music/Compilations/Satchmo 2/13 When Your Love Has Gone.mp3.Key[mbz.artistId] = []
 Music/Compilations/Satchmo 2/13 When Your Love Has Gone.mp3.Key[mp3.album] = Satchmo 2
 Music/Compilations/Satchmo 2/13 When Your Love Has Gone.mp3.Key[mp3.artist] = Louis Armstrong

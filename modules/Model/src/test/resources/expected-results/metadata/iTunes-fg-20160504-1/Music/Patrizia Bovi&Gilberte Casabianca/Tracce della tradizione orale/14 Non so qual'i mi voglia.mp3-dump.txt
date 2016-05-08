@@ -1,3 +1,4 @@
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/14 Non so qual'i mi voglia.mp3.Key[file.size] = 7319682
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/14 Non so qual'i mi voglia.mp3.Key[mbz.artistId] = []
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/14 Non so qual'i mi voglia.mp3.Key[mp3.album] = Tracce della tradizione orale
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/14 Non so qual'i mi voglia.mp3.Key[mp3.artist] = Patrizia Bovi&Gilberte Casabianca

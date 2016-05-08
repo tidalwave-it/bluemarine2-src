@@ -1,3 +1,4 @@
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/03 Marais_ Suite In D Minor - Courante.mp3.Key[file.size] = 3853845
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/03 Marais_ Suite In D Minor - Courante.mp3.Key[mbz.artistId] = []
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/03 Marais_ Suite In D Minor - Courante.mp3.Key[mp3.album] = Marais: Pièces À Deux Violes 1686
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/03 Marais_ Suite In D Minor - Courante.mp3.Key[mp3.artist] = Smithsonian Chamber Players

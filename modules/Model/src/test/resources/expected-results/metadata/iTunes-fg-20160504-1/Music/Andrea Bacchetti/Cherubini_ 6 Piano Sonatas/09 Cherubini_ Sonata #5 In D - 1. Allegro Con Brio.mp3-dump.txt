@@ -1,3 +1,4 @@
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/09 Cherubini_ Sonata #5 In D - 1. Allegro Con Brio.mp3.Key[file.size] = 16525287
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/09 Cherubini_ Sonata #5 In D - 1. Allegro Con Brio.mp3.Key[mbz.artistId] = []
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/09 Cherubini_ Sonata #5 In D - 1. Allegro Con Brio.mp3.Key[mp3.album] = Cherubini: 6 Piano Sonatas
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/09 Cherubini_ Sonata #5 In D - 1. Allegro Con Brio.mp3.Key[mp3.artist] = Andrea Bacchetti

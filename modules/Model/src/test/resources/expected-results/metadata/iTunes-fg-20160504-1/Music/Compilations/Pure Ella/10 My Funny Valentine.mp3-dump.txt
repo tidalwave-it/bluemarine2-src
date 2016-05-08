@@ -1,3 +1,4 @@
+Music/Compilations/Pure Ella/10 My Funny Valentine.mp3.Key[file.size] = 9383355
 Music/Compilations/Pure Ella/10 My Funny Valentine.mp3.Key[mbz.artistId] = []
 Music/Compilations/Pure Ella/10 My Funny Valentine.mp3.Key[mp3.album] = Pure Ella
 Music/Compilations/Pure Ella/10 My Funny Valentine.mp3.Key[mp3.artist] = Ella Fitzgerald

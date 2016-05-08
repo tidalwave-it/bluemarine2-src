@@ -1,3 +1,4 @@
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/06 Marais_ Suite In D Minor - Gavotte.mp3.Key[file.size] = 2809991
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/06 Marais_ Suite In D Minor - Gavotte.mp3.Key[mbz.artistId] = []
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/06 Marais_ Suite In D Minor - Gavotte.mp3.Key[mp3.album] = Marais: Pièces À Deux Violes 1686
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/06 Marais_ Suite In D Minor - Gavotte.mp3.Key[mp3.artist] = Smithsonian Chamber Players

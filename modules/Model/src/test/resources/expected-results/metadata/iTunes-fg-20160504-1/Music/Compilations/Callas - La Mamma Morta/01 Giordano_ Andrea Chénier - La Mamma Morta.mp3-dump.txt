@@ -1,3 +1,4 @@
+Music/Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mamma Morta.mp3.Key[file.size] = 11711483
 Music/Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mamma Morta.mp3.Key[mbz.artistId] = []
 Music/Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mamma Morta.mp3.Key[mp3.album] = Callas - La Mamma Morta
 Music/Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mamma Morta.mp3.Key[mp3.artist] = Maria Callas; Tullio Serafin: Philharmonia Orchestra

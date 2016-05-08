@@ -1,3 +1,4 @@
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/02 Cherubini_ Sonata #1 In F - 2. Allegretto Moderato.mp3.Key[file.size] = 11845192
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/02 Cherubini_ Sonata #1 In F - 2. Allegretto Moderato.mp3.Key[mbz.artistId] = []
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/02 Cherubini_ Sonata #1 In F - 2. Allegretto Moderato.mp3.Key[mp3.album] = Cherubini: 6 Piano Sonatas
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/02 Cherubini_ Sonata #1 In F - 2. Allegretto Moderato.mp3.Key[mp3.artist] = Andrea Bacchetti

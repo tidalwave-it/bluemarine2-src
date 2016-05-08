@@ -1,3 +1,4 @@
+Music/Compilations/Satchmo 2/07 We'll Be Together Again.mp3.Key[file.size] = 9832630
 Music/Compilations/Satchmo 2/07 We'll Be Together Again.mp3.Key[mbz.artistId] = []
 Music/Compilations/Satchmo 2/07 We'll Be Together Again.mp3.Key[mp3.album] = Satchmo 2
 Music/Compilations/Satchmo 2/07 We'll Be Together Again.mp3.Key[mp3.artist] = Louis Armstrong

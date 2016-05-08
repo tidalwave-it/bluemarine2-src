@@ -1,3 +1,4 @@
+Music/Compilations/Pure Ella/15 How High The Moon.mp3.Key[file.size] = 17024693
 Music/Compilations/Pure Ella/15 How High The Moon.mp3.Key[mbz.artistId] = []
 Music/Compilations/Pure Ella/15 How High The Moon.mp3.Key[mp3.album] = Pure Ella
 Music/Compilations/Pure Ella/15 How High The Moon.mp3.Key[mp3.artist] = Ella Fitzgerald

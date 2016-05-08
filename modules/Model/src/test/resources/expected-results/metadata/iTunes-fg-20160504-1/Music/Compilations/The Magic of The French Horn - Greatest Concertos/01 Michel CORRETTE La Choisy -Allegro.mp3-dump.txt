@@ -1,3 +1,4 @@
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/01 Michel CORRETTE La Choisy -Allegro.mp3.Key[file.size] = 6760738
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/01 Michel CORRETTE La Choisy -Allegro.mp3.Key[mbz.artistId] = []
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/01 Michel CORRETTE La Choisy -Allegro.mp3.Key[mp3.album] = The Magic of The French Horn - Greatest Concertos
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/01 Michel CORRETTE La Choisy -Allegro.mp3.Key[mp3.artist] = Geoges Barboteu, Gilbert Coursier, Daniel Dubar, Michel Berg

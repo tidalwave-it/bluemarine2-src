@@ -1,3 +1,4 @@
+Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/07 Pantheon abluitur - Apollonis eclipsatur - Zodiacum signis lustrantibus.mp3.Key[file.size] = 6157864
 Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/07 Pantheon abluitur - Apollonis eclipsatur - Zodiacum signis lustrantibus.mp3.Key[mbz.artistId] = []
 Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/07 Pantheon abluitur - Apollonis eclipsatur - Zodiacum signis lustrantibus.mp3.Key[mp3.album] = O tu chara sciença: La musique dans la pensée médiévale
 Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/07 Pantheon abluitur - Apollonis eclipsatur - Zodiacum signis lustrantibus.mp3.Key[mp3.artist] = La Reverdie

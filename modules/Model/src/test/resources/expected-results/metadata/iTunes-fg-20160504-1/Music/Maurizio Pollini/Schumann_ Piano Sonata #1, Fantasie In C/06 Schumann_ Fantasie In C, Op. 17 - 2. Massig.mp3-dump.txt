@@ -1,3 +1,4 @@
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/06 Schumann_ Fantasie In C, Op. 17 - 2. Massig.mp3.Key[file.size] = 19044546
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/06 Schumann_ Fantasie In C, Op. 17 - 2. Massig.mp3.Key[mbz.artistId] = []
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/06 Schumann_ Fantasie In C, Op. 17 - 2. Massig.mp3.Key[mp3.album] = Schumann: Piano Sonata #1, Fantasie In C
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/06 Schumann_ Fantasie In C, Op. 17 - 2. Massig.mp3.Key[mp3.artist] = Maurizio Pollini

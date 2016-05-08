@@ -1,3 +1,4 @@
+Music/Compilations/La Divina 2/05 Aida (1987 - Remaster)_ Ritorna vincitor (Act I).mp3.Key[file.size] = 17023820
 Music/Compilations/La Divina 2/05 Aida (1987 - Remaster)_ Ritorna vincitor (Act I).mp3.Key[mbz.artistId] = []
 Music/Compilations/La Divina 2/05 Aida (1987 - Remaster)_ Ritorna vincitor (Act I).mp3.Key[mp3.album] = La Divina 2
 Music/Compilations/La Divina 2/05 Aida (1987 - Remaster)_ Ritorna vincitor (Act I).mp3.Key[mp3.artist] = Nicola Rescigno/Maria Callas/Orchestre De La Société Des Concerts Du Conservatoire

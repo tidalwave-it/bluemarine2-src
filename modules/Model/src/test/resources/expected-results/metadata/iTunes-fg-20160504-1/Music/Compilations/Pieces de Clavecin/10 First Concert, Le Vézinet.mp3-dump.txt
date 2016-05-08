@@ -1,3 +1,4 @@
+Music/Compilations/Pieces de Clavecin/10 First Concert, Le Vézinet.mp3.Key[file.size] = 8791026
 Music/Compilations/Pieces de Clavecin/10 First Concert, Le Vézinet.mp3.Key[mbz.artistId] = []
 Music/Compilations/Pieces de Clavecin/10 First Concert, Le Vézinet.mp3.Key[mp3.album] = Pieces de Clavecin
 Music/Compilations/Pieces de Clavecin/10 First Concert, Le Vézinet.mp3.Key[mp3.artist] = Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba

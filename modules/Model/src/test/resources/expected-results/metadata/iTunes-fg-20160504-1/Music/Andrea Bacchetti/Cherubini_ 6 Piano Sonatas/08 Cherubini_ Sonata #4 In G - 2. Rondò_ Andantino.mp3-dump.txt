@@ -1,3 +1,4 @@
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/08 Cherubini_ Sonata #4 In G - 2. Rondò_ Andantino.mp3.Key[file.size] = 16764618
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/08 Cherubini_ Sonata #4 In G - 2. Rondò_ Andantino.mp3.Key[mbz.artistId] = []
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/08 Cherubini_ Sonata #4 In G - 2. Rondò_ Andantino.mp3.Key[mp3.album] = Cherubini: 6 Piano Sonatas
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/08 Cherubini_ Sonata #4 In G - 2. Rondò_ Andantino.mp3.Key[mp3.artist] = Andrea Bacchetti

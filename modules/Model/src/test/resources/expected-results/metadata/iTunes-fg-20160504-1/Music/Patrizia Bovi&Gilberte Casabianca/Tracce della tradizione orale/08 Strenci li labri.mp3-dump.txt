@@ -1,3 +1,4 @@
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/08 Strenci li labri.mp3.Key[file.size] = 10550498
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/08 Strenci li labri.mp3.Key[mbz.artistId] = []
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/08 Strenci li labri.mp3.Key[mp3.album] = Tracce della tradizione orale
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/08 Strenci li labri.mp3.Key[mp3.artist] = Patrizia Bovi&Gilberte Casabianca

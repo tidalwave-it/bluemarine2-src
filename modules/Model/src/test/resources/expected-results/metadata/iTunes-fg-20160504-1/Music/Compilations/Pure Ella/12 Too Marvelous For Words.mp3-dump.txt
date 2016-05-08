@@ -1,3 +1,4 @@
+Music/Compilations/Pure Ella/12 Too Marvelous For Words.mp3.Key[file.size] = 6095068
 Music/Compilations/Pure Ella/12 Too Marvelous For Words.mp3.Key[mbz.artistId] = []
 Music/Compilations/Pure Ella/12 Too Marvelous For Words.mp3.Key[mp3.album] = Pure Ella
 Music/Compilations/Pure Ella/12 Too Marvelous For Words.mp3.Key[mp3.artist] = Ella Fitzgerald

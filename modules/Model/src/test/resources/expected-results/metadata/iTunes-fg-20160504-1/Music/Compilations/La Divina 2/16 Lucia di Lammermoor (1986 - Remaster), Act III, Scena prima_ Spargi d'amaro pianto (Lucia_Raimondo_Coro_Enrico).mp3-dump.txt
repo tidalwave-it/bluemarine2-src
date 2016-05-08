@@ -1,3 +1,4 @@
+Music/Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3.Key[file.size] = 9888215
 Music/Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3.Key[mbz.artistId] = []
 Music/Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3.Key[mp3.album] = La Divina 2
 Music/Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3.Key[mp3.artist] = Maria Callas/Piero Cappuccilli/Bernard Ladysz/Philharmonia Chorus/Philharmonia Orchestra/Tullio Serafin

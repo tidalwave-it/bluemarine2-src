@@ -1,3 +1,4 @@
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/07 Con dogliosi martiri.mp3.Key[file.size] = 6855743
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/07 Con dogliosi martiri.mp3.Key[mbz.artistId] = []
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/07 Con dogliosi martiri.mp3.Key[mp3.album] = Tracce della tradizione orale
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/07 Con dogliosi martiri.mp3.Key[mp3.artist] = Patrizia Bovi&Gilberte Casabianca

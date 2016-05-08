@@ -1,3 +1,4 @@
+Music/Compilations/Holst_ The Planets/03 Track 03.mp3.Key[file.size] = 10244338
 Music/Compilations/Holst_ The Planets/03 Track 03.mp3.Key[mbz.artistId] = []
 Music/Compilations/Holst_ The Planets/03 Track 03.mp3.Key[mp3.album] = Holst: The Planets
 Music/Compilations/Holst_ The Planets/03 Track 03.mp3.Key[mp3.artist] = Herbert Von Karajan: Berlin Philharmonic Orchestra

@@ -1,3 +1,4 @@
+Music/Compilations/La Divina 2/04 Manon Lescaut (1987 - Remaster)_ In quelle trine morbide.mp3.Key[file.size] = 6957170
 Music/Compilations/La Divina 2/04 Manon Lescaut (1987 - Remaster)_ In quelle trine morbide.mp3.Key[mbz.artistId] = []
 Music/Compilations/La Divina 2/04 Manon Lescaut (1987 - Remaster)_ In quelle trine morbide.mp3.Key[mp3.album] = La Divina 2
 Music/Compilations/La Divina 2/04 Manon Lescaut (1987 - Remaster)_ In quelle trine morbide.mp3.Key[mp3.artist] = Maria Callas, The Philharmonia Orchestra Tullio Serafin

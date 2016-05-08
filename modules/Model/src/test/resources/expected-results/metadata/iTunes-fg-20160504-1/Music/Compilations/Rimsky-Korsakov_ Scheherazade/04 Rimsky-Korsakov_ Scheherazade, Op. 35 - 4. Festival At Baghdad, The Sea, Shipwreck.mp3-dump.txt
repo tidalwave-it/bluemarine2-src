@@ -1,3 +1,4 @@
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/04 Rimsky-Korsakov_ Scheherazade, Op. 35 - 4. Festival At Baghdad, The Sea, Shipwreck.mp3.Key[file.size] = 31171675
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/04 Rimsky-Korsakov_ Scheherazade, Op. 35 - 4. Festival At Baghdad, The Sea, Shipwreck.mp3.Key[mbz.artistId] = []
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/04 Rimsky-Korsakov_ Scheherazade, Op. 35 - 4. Festival At Baghdad, The Sea, Shipwreck.mp3.Key[mp3.album] = Rimsky-Korsakov: Scheherazade
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/04 Rimsky-Korsakov_ Scheherazade, Op. 35 - 4. Festival At Baghdad, The Sea, Shipwreck.mp3.Key[mp3.artist] = Lorin Maazel: Berlin Philharmonic Orchestra

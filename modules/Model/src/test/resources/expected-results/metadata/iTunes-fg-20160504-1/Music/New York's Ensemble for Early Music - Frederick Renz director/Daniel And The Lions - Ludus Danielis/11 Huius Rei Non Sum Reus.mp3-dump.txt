@@ -1,3 +1,4 @@
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/11 Huius Rei Non Sum Reus.mp3.Key[file.size] = 13908832
 Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/11 Huius Rei Non Sum Reus.mp3.Key[mbz.artistId] = []
 Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/11 Huius Rei Non Sum Reus.mp3.Key[mp3.album] = Daniel And The Lions - Ludus Danielis
 Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/11 Huius Rei Non Sum Reus.mp3.Key[mp3.artist] = New York's Ensemble for Early Music - Frederick Renz director

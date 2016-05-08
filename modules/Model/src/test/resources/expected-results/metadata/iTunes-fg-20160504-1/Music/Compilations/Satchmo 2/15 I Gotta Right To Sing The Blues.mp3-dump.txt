@@ -1,3 +1,4 @@
+Music/Compilations/Satchmo 2/15 I Gotta Right To Sing The Blues.mp3.Key[file.size] = 9657096
 Music/Compilations/Satchmo 2/15 I Gotta Right To Sing The Blues.mp3.Key[mbz.artistId] = []
 Music/Compilations/Satchmo 2/15 I Gotta Right To Sing The Blues.mp3.Key[mp3.album] = Satchmo 2
 Music/Compilations/Satchmo 2/15 I Gotta Right To Sing The Blues.mp3.Key[mp3.artist] = Louis Armstrong

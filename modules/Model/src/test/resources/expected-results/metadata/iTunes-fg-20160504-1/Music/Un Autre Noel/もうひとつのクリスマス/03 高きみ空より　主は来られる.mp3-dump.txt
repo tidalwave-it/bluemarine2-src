@@ -1,3 +1,4 @@
+Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[file.size] = 16431173
 Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mbz.artistId] = []
 Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mp3.album] = もうひとつのクリスマス
 Music/Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3.Key[mp3.artist] = Un Autre Noel

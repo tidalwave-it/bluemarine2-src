@@ -1,3 +1,4 @@
+Music/Compilations/Pieces de Clavecin/15 Third Concert, La Timide, Rondeaux 1 & 2.mp3.Key[file.size] = 12689527
 Music/Compilations/Pieces de Clavecin/15 Third Concert, La Timide, Rondeaux 1 & 2.mp3.Key[mbz.artistId] = []
 Music/Compilations/Pieces de Clavecin/15 Third Concert, La Timide, Rondeaux 1 & 2.mp3.Key[mp3.album] = Pieces de Clavecin
 Music/Compilations/Pieces de Clavecin/15 Third Concert, La Timide, Rondeaux 1 & 2.mp3.Key[mp3.artist] = Alan Cuckston, harpsichord; Elizabeth Parry, flute; Kenneth Mitchell, violin; Alison Crum, viola da gamba

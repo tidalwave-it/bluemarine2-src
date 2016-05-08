@@ -1,3 +1,4 @@
+Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-05 Anon_ Veni Creator Spiritus.mp3.Key[file.size] = 6298854
 Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-05 Anon_ Veni Creator Spiritus.mp3.Key[mbz.artistId] = []
 Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-05 Anon_ Veni Creator Spiritus.mp3.Key[mp3.album] = Canto Gregoriano [Disc 1]
 Music/Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-05 Anon_ Veni Creator Spiritus.mp3.Key[mp3.artist] = Benedictine Monks Of Santo Domingo De Silos

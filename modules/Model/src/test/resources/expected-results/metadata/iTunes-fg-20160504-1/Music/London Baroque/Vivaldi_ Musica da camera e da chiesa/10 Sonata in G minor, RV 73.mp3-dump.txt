@@ -1,3 +1,4 @@
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/10 Sonata in G minor, RV 73.mp3.Key[file.size] = 3786895
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/10 Sonata in G minor, RV 73.mp3.Key[mbz.artistId] = []
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/10 Sonata in G minor, RV 73.mp3.Key[mp3.album] = Vivaldi: Musica da camera e da chiesa
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/10 Sonata in G minor, RV 73.mp3.Key[mp3.artist] = London Baroque

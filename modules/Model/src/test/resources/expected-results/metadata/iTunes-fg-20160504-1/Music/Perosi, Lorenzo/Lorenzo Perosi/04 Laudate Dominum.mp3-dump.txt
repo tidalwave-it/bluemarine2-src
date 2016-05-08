@@ -1,3 +1,4 @@
+Music/Perosi, Lorenzo/Lorenzo Perosi/04 Laudate Dominum.mp3.Key[file.size] = 4818131
 Music/Perosi, Lorenzo/Lorenzo Perosi/04 Laudate Dominum.mp3.Key[mbz.artistId] = []
 Music/Perosi, Lorenzo/Lorenzo Perosi/04 Laudate Dominum.mp3.Key[mp3.album] = Lorenzo Perosi
 Music/Perosi, Lorenzo/Lorenzo Perosi/04 Laudate Dominum.mp3.Key[mp3.artist] = Perosi, Lorenzo

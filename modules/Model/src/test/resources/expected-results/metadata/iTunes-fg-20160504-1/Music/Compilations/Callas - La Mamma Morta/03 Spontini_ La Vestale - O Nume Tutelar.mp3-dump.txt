@@ -1,3 +1,4 @@
+Music/Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3.Key[file.size] = 5850616
 Music/Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3.Key[mbz.artistId] = []
 Music/Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3.Key[mp3.album] = Callas - La Mamma Morta
 Music/Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3.Key[mp3.artist] = Maria Callas; Tullio Serafin: Orchestra & Chorus Of La Scala Milan

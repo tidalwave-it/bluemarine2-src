@@ -1,3 +1,4 @@
+Music/Compilations/The Incomparable Callas - Favourite Arias/10 Bizet_ Carmen - Les Tringles Des Sistres Tintaient.mp3.Key[file.size] = 10445169
 Music/Compilations/The Incomparable Callas - Favourite Arias/10 Bizet_ Carmen - Les Tringles Des Sistres Tintaient.mp3.Key[mbz.artistId] = []
 Music/Compilations/The Incomparable Callas - Favourite Arias/10 Bizet_ Carmen - Les Tringles Des Sistres Tintaient.mp3.Key[mp3.album] = The Incomparable Callas - Favourite Arias
 Music/Compilations/The Incomparable Callas - Favourite Arias/10 Bizet_ Carmen - Les Tringles Des Sistres Tintaient.mp3.Key[mp3.artist] = Jane Berbie, Maria Callas, Etc.; Georges Prêtre: Paris Opera Orchestra & Chorus

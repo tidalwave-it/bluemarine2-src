@@ -1,3 +1,4 @@
+Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/02 Por coi me bait mes maris.mp3.Key[file.size] = 5008498
 Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/02 Por coi me bait mes maris.mp3.Key[mbz.artistId] = []
 Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/02 Por coi me bait mes maris.mp3.Key[mp3.album] = La Domna Savorousa : Chants d’amour des troubadours et des trouvères
 Music/Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/02 Por coi me bait mes maris.mp3.Key[mp3.artist] = Ensemble In Cortezia

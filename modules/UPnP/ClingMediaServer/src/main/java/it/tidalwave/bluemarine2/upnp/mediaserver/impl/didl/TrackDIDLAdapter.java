@@ -84,9 +84,9 @@ public class TrackDIDLAdapter implements DIDLAdapter
         final Metadata trackMetadata = datum.getMetadata();
         final Metadata audioFileMetadata = audioFile.getMetadata();
 
-        final Long size = Files.exists(audioFile.getPath()) ? Files.size(audioFile.getPath()) : null; // FIXME: should be in metadata
-
-        final Res resource = new Res(protocolInfo, size, resourceServer.urlForResource(audioFile));
+        final Res resource = new Res(protocolInfo,
+                                     audioFileMetadata.get(FILE_SIZE).orElse(null),
+                                     resourceServer.urlForResource(audioFile));
         audioFileMetadata.get(DURATION).ifPresent(duration -> resource.setDuration(durationToString(duration)));
 //        resource.setBitrate(size); // TODO
 //        resource.setBitsPerSample(size); // TODO

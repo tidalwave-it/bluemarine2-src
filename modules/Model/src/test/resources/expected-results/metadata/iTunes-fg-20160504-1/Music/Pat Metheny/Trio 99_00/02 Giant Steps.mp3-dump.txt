@@ -1,3 +1,4 @@
+Music/Pat Metheny/Trio 99_00/02 Giant Steps.mp3.Key[file.size] = 18962925
 Music/Pat Metheny/Trio 99_00/02 Giant Steps.mp3.Key[mbz.artistId] = []
 Music/Pat Metheny/Trio 99_00/02 Giant Steps.mp3.Key[mp3.album] = Trio 99>00
 Music/Pat Metheny/Trio 99_00/02 Giant Steps.mp3.Key[mp3.artist] = Pat Metheny

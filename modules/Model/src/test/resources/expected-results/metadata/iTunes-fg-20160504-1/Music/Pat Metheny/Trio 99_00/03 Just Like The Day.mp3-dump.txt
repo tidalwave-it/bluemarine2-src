@@ -1,3 +1,4 @@
+Music/Pat Metheny/Trio 99_00/03 Just Like The Day.mp3.Key[file.size] = 11339355
 Music/Pat Metheny/Trio 99_00/03 Just Like The Day.mp3.Key[mbz.artistId] = []
 Music/Pat Metheny/Trio 99_00/03 Just Like The Day.mp3.Key[mp3.album] = Trio 99>00
 Music/Pat Metheny/Trio 99_00/03 Just Like The Day.mp3.Key[mp3.artist] = Pat Metheny

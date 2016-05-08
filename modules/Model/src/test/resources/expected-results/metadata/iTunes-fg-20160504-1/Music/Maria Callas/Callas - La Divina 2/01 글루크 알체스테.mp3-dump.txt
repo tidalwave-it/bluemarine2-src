@@ -1,3 +1,4 @@
+Music/Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3.Key[file.size] = 10626786
 Music/Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3.Key[mbz.artistId] = []
 Music/Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3.Key[mp3.album] = Callas - La Divina 2
 Music/Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3.Key[mp3.artist] = Maria Callas

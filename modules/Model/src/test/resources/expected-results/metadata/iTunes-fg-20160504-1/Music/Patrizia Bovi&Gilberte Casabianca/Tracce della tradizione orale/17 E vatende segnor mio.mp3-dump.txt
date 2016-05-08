@@ -1,3 +1,4 @@
+Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[file.size] = 11405230
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mbz.artistId] = []
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mp3.album] = Tracce della tradizione orale
 Music/Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3.Key[mp3.artist] = Patrizia Bovi&Gilberte Casabianca

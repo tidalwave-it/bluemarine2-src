@@ -1,3 +1,4 @@
+Music/Compilations/The Incomparable Callas - Favourite Arias/06 Puccini_ Tosca - Vissi D'Arte.mp3.Key[file.size] = 7465058
 Music/Compilations/The Incomparable Callas - Favourite Arias/06 Puccini_ Tosca - Vissi D'Arte.mp3.Key[mbz.artistId] = []
 Music/Compilations/The Incomparable Callas - Favourite Arias/06 Puccini_ Tosca - Vissi D'Arte.mp3.Key[mp3.album] = The Incomparable Callas - Favourite Arias
 Music/Compilations/The Incomparable Callas - Favourite Arias/06 Puccini_ Tosca - Vissi D'Arte.mp3.Key[mp3.artist] = Maria Callas; Georges Prêtre: Paris Conservatory Orchestra

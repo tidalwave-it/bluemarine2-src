@@ -1,3 +1,4 @@
+Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/16 Sonata in G minor, RV 42.mp3.Key[file.size] = 5702193
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/16 Sonata in G minor, RV 42.mp3.Key[mbz.artistId] = []
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/16 Sonata in G minor, RV 42.mp3.Key[mp3.album] = Vivaldi: Musica da camera e da chiesa
 Music/London Baroque/Vivaldi_ Musica da camera e da chiesa/16 Sonata in G minor, RV 42.mp3.Key[mp3.artist] = London Baroque

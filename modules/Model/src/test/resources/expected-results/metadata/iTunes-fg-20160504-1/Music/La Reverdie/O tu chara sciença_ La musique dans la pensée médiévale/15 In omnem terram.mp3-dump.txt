@@ -1,3 +1,4 @@
+Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/15 In omnem terram.mp3.Key[file.size] = 8764830
 Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/15 In omnem terram.mp3.Key[mbz.artistId] = []
 Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/15 In omnem terram.mp3.Key[mp3.album] = O tu chara sciença: La musique dans la pensée médiévale
 Music/La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/15 In omnem terram.mp3.Key[mp3.artist] = La Reverdie

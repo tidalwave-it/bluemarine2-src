@@ -1,3 +1,4 @@
+Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[file.size] = 11529787
 Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mbz.artistId] = []
 Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mp3.album] = La Divina 2
 Music/Compilations/La Divina 2/08 Louise (1987 - Remaster)_ Depuis le jour où je me suis donnée.mp3.Key[mp3.artist] = Maria Callas; Georges Prêtre: French National Radio Orchestra

@@ -1,3 +1,4 @@
+Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[file.size] = 25854156
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mbz.artistId] = []
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mp3.album] = Schumann: Piano Sonata #1, Fantasie In C
 Music/Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3.Key[mp3.artist] = Maurizio Pollini

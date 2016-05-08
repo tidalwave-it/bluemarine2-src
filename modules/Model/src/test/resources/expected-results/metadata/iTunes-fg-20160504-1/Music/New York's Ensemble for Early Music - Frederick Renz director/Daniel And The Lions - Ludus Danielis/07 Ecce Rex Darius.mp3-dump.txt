@@ -1,3 +1,4 @@
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/07 Ecce Rex Darius.mp3.Key[file.size] = 10740694
 Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/07 Ecce Rex Darius.mp3.Key[mbz.artistId] = []
 Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/07 Ecce Rex Darius.mp3.Key[mp3.album] = Daniel And The Lions - Ludus Danielis
 Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/07 Ecce Rex Darius.mp3.Key[mp3.artist] = New York's Ensemble for Early Music - Frederick Renz director

@@ -1,3 +1,4 @@
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/09 Louis Francois DAUPRAT Sonata for horn and harp.mp3.Key[file.size] = 15429223
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/09 Louis Francois DAUPRAT Sonata for horn and harp.mp3.Key[mbz.artistId] = []
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/09 Louis Francois DAUPRAT Sonata for horn and harp.mp3.Key[mp3.album] = The Magic of The French Horn - Greatest Concertos
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/09 Louis Francois DAUPRAT Sonata for horn and harp.mp3.Key[mp3.artist] = Geoges Barboteu/Horn, Lily Laskine/Harp

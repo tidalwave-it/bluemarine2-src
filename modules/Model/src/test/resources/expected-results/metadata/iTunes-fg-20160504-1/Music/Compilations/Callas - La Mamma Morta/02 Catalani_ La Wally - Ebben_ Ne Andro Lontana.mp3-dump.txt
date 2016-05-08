@@ -1,3 +1,4 @@
+Music/Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3.Key[file.size] = 11624675
 Music/Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3.Key[mbz.artistId] = []
 Music/Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3.Key[mp3.album] = Callas - La Mamma Morta
 Music/Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3.Key[mp3.artist] = Maria Callas

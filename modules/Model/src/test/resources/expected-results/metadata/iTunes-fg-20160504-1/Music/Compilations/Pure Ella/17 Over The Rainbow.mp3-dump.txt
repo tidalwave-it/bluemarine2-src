@@ -1,3 +1,4 @@
+Music/Compilations/Pure Ella/17 Over The Rainbow.mp3.Key[file.size] = 10359286
 Music/Compilations/Pure Ella/17 Over The Rainbow.mp3.Key[mbz.artistId] = []
 Music/Compilations/Pure Ella/17 Over The Rainbow.mp3.Key[mp3.album] = Pure Ella
 Music/Compilations/Pure Ella/17 Over The Rainbow.mp3.Key[mp3.artist] = Ella Fitzgerald

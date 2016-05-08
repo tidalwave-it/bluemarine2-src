@@ -1,3 +1,4 @@
+Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/02 Handel_ Water Music Suite #1 In F, HWV 348 - Adagio E Staccato.mp3.Key[file.size] = 5359513
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/02 Handel_ Water Music Suite #1 In F, HWV 348 - Adagio E Staccato.mp3.Key[mbz.artistId] = []
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/02 Handel_ Water Music Suite #1 In F, HWV 348 - Adagio E Staccato.mp3.Key[mp3.album] = Handel: Water Music
 Music/Trevor Pinnock_ The English Concert/Handel_ Water Music/02 Handel_ Water Music Suite #1 In F, HWV 348 - Adagio E Staccato.mp3.Key[mp3.artist] = Trevor Pinnock: The English Concert

@@ -1,3 +1,4 @@
+Music/Un Autre Noel/もうひとつのクリスマス/08 天使ミサ曲より　キリエ.mp3.Key[file.size] = 12895234
 Music/Un Autre Noel/もうひとつのクリスマス/08 天使ミサ曲より　キリエ.mp3.Key[mbz.artistId] = []
 Music/Un Autre Noel/もうひとつのクリスマス/08 天使ミサ曲より　キリエ.mp3.Key[mp3.album] = もうひとつのクリスマス
 Music/Un Autre Noel/もうひとつのクリスマス/08 天使ミサ曲より　キリエ.mp3.Key[mp3.artist] = Un Autre Noel

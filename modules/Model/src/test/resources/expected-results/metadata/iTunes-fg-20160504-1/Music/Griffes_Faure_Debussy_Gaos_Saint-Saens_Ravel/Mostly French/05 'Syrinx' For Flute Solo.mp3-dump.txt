@@ -1,3 +1,4 @@
+Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/05 'Syrinx' For Flute Solo.mp3.Key[file.size] = 6219374
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/05 'Syrinx' For Flute Solo.mp3.Key[mbz.artistId] = []
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/05 'Syrinx' For Flute Solo.mp3.Key[mp3.album] = Mostly French
 Music/Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/05 'Syrinx' For Flute Solo.mp3.Key[mp3.artist] = Griffes/Faure/Debussy/Gaos/Saint-Saens/Ravel

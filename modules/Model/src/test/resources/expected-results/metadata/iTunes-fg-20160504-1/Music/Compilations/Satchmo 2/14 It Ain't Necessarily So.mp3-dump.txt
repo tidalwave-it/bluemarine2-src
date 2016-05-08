@@ -1,3 +1,4 @@
+Music/Compilations/Satchmo 2/14 It Ain't Necessarily So.mp3.Key[file.size] = 15710200
 Music/Compilations/Satchmo 2/14 It Ain't Necessarily So.mp3.Key[mbz.artistId] = []
 Music/Compilations/Satchmo 2/14 It Ain't Necessarily So.mp3.Key[mp3.album] = Satchmo 2
 Music/Compilations/Satchmo 2/14 It Ain't Necessarily So.mp3.Key[mp3.artist] = Ella Fitzgerald & Louis Armstrong

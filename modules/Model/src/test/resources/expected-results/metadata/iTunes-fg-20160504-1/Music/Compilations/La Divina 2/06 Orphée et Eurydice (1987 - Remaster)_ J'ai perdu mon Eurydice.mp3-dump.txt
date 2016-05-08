@@ -1,3 +1,4 @@
+Music/Compilations/La Divina 2/06 Orphée et Eurydice (1987 - Remaster)_ J'ai perdu mon Eurydice.mp3.Key[file.size] = 10593604
 Music/Compilations/La Divina 2/06 Orphée et Eurydice (1987 - Remaster)_ J'ai perdu mon Eurydice.mp3.Key[mbz.artistId] = []
 Music/Compilations/La Divina 2/06 Orphée et Eurydice (1987 - Remaster)_ J'ai perdu mon Eurydice.mp3.Key[mp3.album] = La Divina 2
 Music/Compilations/La Divina 2/06 Orphée et Eurydice (1987 - Remaster)_ J'ai perdu mon Eurydice.mp3.Key[mp3.artist] = Maria Callas, Orchestre National De La Radiodiffusion Française, Georges Prêtre

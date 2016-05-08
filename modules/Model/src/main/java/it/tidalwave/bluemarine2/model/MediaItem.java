@@ -57,6 +57,8 @@ public interface MediaItem extends EntityWithPath, AudioFileSupplier
      ******************************************************************************************************************/
     public interface Metadata
       {
+        public static final Key<Long> FILE_SIZE = new Key<>("file.size");
+
         public static final Key<Duration> DURATION = new Key<>("mp3.duration");
         public static final Key<Integer> BIT_RATE = new Key<>("mp3.bitRate");
         public static final Key<Integer> SAMPLE_RATE = new Key<>("mp3.sampleRate");

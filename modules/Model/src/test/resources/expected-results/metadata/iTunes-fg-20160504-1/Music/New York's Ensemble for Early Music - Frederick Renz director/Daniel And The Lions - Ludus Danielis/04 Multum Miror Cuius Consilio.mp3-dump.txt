@@ -1,3 +1,4 @@
+Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/04 Multum Miror Cuius Consilio.mp3.Key[file.size] = 27415187
 Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/04 Multum Miror Cuius Consilio.mp3.Key[mbz.artistId] = []
 Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/04 Multum Miror Cuius Consilio.mp3.Key[mp3.album] = Daniel And The Lions - Ludus Danielis
 Music/New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/04 Multum Miror Cuius Consilio.mp3.Key[mp3.artist] = New York's Ensemble for Early Music - Frederick Renz director

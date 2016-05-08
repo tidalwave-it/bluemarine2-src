@@ -1,3 +1,4 @@
+Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers.mp3.Key[file.size] = 19217955
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers.mp3.Key[mbz.artistId] = []
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers.mp3.Key[mp3.album] = Rossini Overtures
 Music/Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers.mp3.Key[mp3.artist] = Jaime Laredo: Scottish Chamber Orchestra

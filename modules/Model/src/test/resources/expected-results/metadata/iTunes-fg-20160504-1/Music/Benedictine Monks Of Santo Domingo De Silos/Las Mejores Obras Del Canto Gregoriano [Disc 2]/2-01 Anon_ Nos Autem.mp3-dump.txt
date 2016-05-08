@@ -1,3 +1,4 @@
+Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[file.size] = 7084628
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mbz.artistId] = []
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.album] = Las Mejores Obras Del Canto Gregoriano [Disc 2]
 Music/Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3.Key[mp3.artist] = Benedictine Monks Of Santo Domingo De Silos

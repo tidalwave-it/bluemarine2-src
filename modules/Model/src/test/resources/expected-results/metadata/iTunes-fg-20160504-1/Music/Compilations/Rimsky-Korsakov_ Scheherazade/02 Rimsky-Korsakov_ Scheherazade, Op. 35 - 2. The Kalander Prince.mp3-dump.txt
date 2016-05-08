@@ -1,3 +1,4 @@
+Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[file.size] = 28145631
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mbz.artistId] = []
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mp3.album] = Rimsky-Korsakov: Scheherazade
 Music/Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3.Key[mp3.artist] = Lorin Maazel: Berlin Philharmonic Orchestra

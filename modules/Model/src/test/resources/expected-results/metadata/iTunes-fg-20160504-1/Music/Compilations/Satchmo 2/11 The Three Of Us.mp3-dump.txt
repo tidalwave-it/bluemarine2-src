@@ -1,3 +1,4 @@
+Music/Compilations/Satchmo 2/11 The Three Of Us.mp3.Key[file.size] = 6093978
 Music/Compilations/Satchmo 2/11 The Three Of Us.mp3.Key[mbz.artistId] = []
 Music/Compilations/Satchmo 2/11 The Three Of Us.mp3.Key[mp3.album] = Satchmo 2
 Music/Compilations/Satchmo 2/11 The Three Of Us.mp3.Key[mp3.artist] = Louis Armstrong

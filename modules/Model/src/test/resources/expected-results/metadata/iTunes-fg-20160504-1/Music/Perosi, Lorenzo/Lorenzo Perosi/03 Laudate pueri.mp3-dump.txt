@@ -1,3 +1,4 @@
+Music/Perosi, Lorenzo/Lorenzo Perosi/03 Laudate pueri.mp3.Key[file.size] = 11431288
 Music/Perosi, Lorenzo/Lorenzo Perosi/03 Laudate pueri.mp3.Key[mbz.artistId] = []
 Music/Perosi, Lorenzo/Lorenzo Perosi/03 Laudate pueri.mp3.Key[mp3.album] = Lorenzo Perosi
 Music/Perosi, Lorenzo/Lorenzo Perosi/03 Laudate pueri.mp3.Key[mp3.artist] = Perosi, Lorenzo

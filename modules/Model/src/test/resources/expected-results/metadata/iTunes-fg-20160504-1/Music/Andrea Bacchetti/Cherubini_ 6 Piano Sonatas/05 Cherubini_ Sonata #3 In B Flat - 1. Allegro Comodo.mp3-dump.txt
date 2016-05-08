@@ -1,3 +1,4 @@
+Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[file.size] = 20724735
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mbz.artistId] = []
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mp3.album] = Cherubini: 6 Piano Sonatas
 Music/Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/05 Cherubini_ Sonata #3 In B Flat - 1. Allegro Comodo.mp3.Key[mp3.artist] = Andrea Bacchetti

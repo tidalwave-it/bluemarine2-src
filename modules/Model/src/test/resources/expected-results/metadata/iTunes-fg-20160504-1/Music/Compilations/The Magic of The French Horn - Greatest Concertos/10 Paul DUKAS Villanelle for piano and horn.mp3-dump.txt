@@ -1,3 +1,4 @@
+Music/Compilations/The Magic of The French Horn - Greatest Concertos/10 Paul DUKAS Villanelle for piano and horn.mp3.Key[file.size] = 16631885
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/10 Paul DUKAS Villanelle for piano and horn.mp3.Key[mbz.artistId] = []
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/10 Paul DUKAS Villanelle for piano and horn.mp3.Key[mp3.album] = The Magic of The French Horn - Greatest Concertos
 Music/Compilations/The Magic of The French Horn - Greatest Concertos/10 Paul DUKAS Villanelle for piano and horn.mp3.Key[mp3.artist] = Pierre Del Vescovo/Horn, Jean Hubeau/Piano

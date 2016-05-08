@@ -1,3 +1,4 @@
+Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-18 Mendelssohn_ Paulus, Op. 36 - Gott Sei Mir Gnädig.mp3.Key[file.size] = 12377187
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-18 Mendelssohn_ Paulus, Op. 36 - Gott Sei Mir Gnädig.mp3.Key[mbz.artistId] = []
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-18 Mendelssohn_ Paulus, Op. 36 - Gott Sei Mir Gnädig.mp3.Key[mp3.album] = Mendelssohn: Paulus [Disc 1]
 Music/Compilations/Mendelssohn_ Paulus [Disc 1]/1-18 Mendelssohn_ Paulus, Op. 36 - Gott Sei Mir Gnädig.mp3.Key[mp3.artist] = Gundula Janowitz, Rosemarie Lang, Etc.; Kurt Masur: Leipzig Gewandhaus Orchestra, Leipzig Radio Chorus

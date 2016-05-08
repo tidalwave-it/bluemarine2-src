@@ -1,3 +1,4 @@
+Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/16 Marais_ Suite In G - Fantasie En Echo.mp3.Key[file.size] = 4619758
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/16 Marais_ Suite In G - Fantasie En Echo.mp3.Key[mbz.artistId] = []
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/16 Marais_ Suite In G - Fantasie En Echo.mp3.Key[mp3.album] = Marais: Pièces À Deux Violes 1686
 Music/Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/16 Marais_ Suite In G - Fantasie En Echo.mp3.Key[mp3.artist] = Smithsonian Chamber Players
