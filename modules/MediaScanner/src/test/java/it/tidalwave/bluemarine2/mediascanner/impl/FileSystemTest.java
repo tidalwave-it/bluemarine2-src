@@ -78,6 +78,9 @@ public class FileSystemTest
     private void tryToOpen (final Path path)
       throws IOException
       {
+        assertThat(Files.exists(path), is(true));
+        assertThat(path.toFile().exists(), is(true));
+        
         try (final InputStream is = Files.newInputStream(path))
           {
           }
