@@ -82,13 +82,18 @@ public class BMT46WorkaroundTest
         log.info(">>>> expected: {}", toDebugString(expected));
 
         final Path tmpDir = Paths.get(System.getProperty("java.io.tmpdir"));
-        final Path parent = tmpDir.resolve("test");
+        final Path parent = tmpDir.resolve("test-diacritics");
 
         final String parentAbsPath = parent.toAbsolutePath().toString();
 
         // BE AWARE, rm -r BELOW!
         Runtime.getRuntime().exec("/bin/rm -r " + parentAbsPath);
-        Files.createDirectory(parent);
+
+        if (!Files.exists(parent))
+          {
+            Files.createDirectory(parent);
+          }
+        
         Runtime.getRuntime().exec("/bin/cp /etc/hosts " + parentAbsPath + "/" + expected);
 //        Runtime.getRuntime().exec("/bin/cp /etc/hosts " + parentAbsPath + "/" + string2);
 
@@ -124,6 +129,14 @@ public class BMT46WorkaroundTest
             // iconv
             // hex    M   o    d    C3    A9    r    C3    A9
             fromBytes(77, 111, 100, 0303, 0251, 114, 0303, 0251),
+            // hex    M   o    d    EF    BF    BD    EF    BF    BD    r    EF    BF    BD    EF    BF    BD
+            fromBytes(77, 111, 100, 0357, 0277, 0275, 0357, 0277, 0275, 114, 0357, 0277, 0275, 0357, 0277, 0275)
+            },
+
+            {
+            // noiconv
+            // hex    M   o    d    CC    81    r    CC    81
+            fromBytes(77, 111, 100, 0314, 0201, 114, 0314, 0201),
             // hex    M   o    d    EF    BF    BD    EF    BF    BD    r    EF    BF    BD    EF    BF    BD
             fromBytes(77, 111, 100, 0357, 0277, 0275, 0357, 0277, 0275, 114, 0357, 0277, 0275, 0357, 0277, 0275)
             }
