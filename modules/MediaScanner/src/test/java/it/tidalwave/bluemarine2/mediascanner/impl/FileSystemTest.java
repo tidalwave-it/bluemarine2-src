@@ -116,8 +116,24 @@ public class FileSystemTest
     private void tryToOpen (final Path path)
       throws IOException
       {
-        assertThat("Files.exists() " + toDebugString(path.toString()), Files.exists(path), is(true));
-        assertThat("toFile.exists() " + toDebugString(path.toString()), path.toFile().exists(), is(true));
+        final boolean filesExists = Files.exists(path);
+        final boolean pathToFileExists = path.toFile().exists();
+        boolean canBeOpened = false;
+
+        try
+          {
+            Files.readAllLines(path);
+            canBeOpened = true;
+          }
+        catch (IOException e)
+          {
+          }
+
+        log.info("Files.exists(): {}, toFile.exists(): {}, canBeOpened: {}", filesExists, pathToFileExists, canBeOpened);
+
+        assertThat("Files.exists() " + toDebugString(path.toString()), filesExists, is(true));
+        assertThat("toFile.exists() " + toDebugString(path.toString()), pathToFileExists, is(true));
+        assertThat("canBeOpened " + toDebugString(path.toString()), canBeOpened, is(true));
 //
 //        try (final InputStream is = Files.newInputStream(path))
 //          {
