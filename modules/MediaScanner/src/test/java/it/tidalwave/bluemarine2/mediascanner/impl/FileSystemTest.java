@@ -40,13 +40,13 @@ import java.io.InputStream;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import static java.util.stream.Collectors.toList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 /***********************************************************************************************************************
+ *
+ * This is not a test for the application, but a demonstrator of a possible bug in Java.
  *
  * @author  Fabrizio Giudici
  * @version $Id$
@@ -55,7 +55,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @Slf4j
 public class FileSystemTest
   {
-    @Test
+    @Test(enabled = false)
     public void test_filesystem_consistency()
       throws IOException
       {
