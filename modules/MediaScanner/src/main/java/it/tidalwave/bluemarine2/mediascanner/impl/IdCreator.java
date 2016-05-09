@@ -30,17 +30,13 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
 import java.util.concurrent.Semaphore;
-import java.io.File;
 import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.nio.MappedByteBuffer;
 import java.nio.file.Path;
+import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import it.tidalwave.util.Id;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static java.nio.channels.FileChannel.MapMode.*;
-import static it.tidalwave.bluemarine2.util.BMT46Workaround.*;
 
 /***********************************************************************************************************************
  *
@@ -61,22 +57,23 @@ public class IdCreator
     @Nonnull
     public Id createSha1Id (final @Nonnull Path path)
       {
-        Path fixedPath = null;
+//        Path fixedPath = null;
 
         try
           {
             diskSemaphore.acquire();
-            fixedPath = fixedPathBMT46(path);
-            final File file = fixedPath.toFile();
             final String algorithm = "SHA1";
+//            fixedPath = fixedPathBMT46(path);
 
-            try (final RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r"))
-              {
-                final MappedByteBuffer byteBuffer = randomAccessFile.getChannel().map(READ_ONLY, 0, file.length());
-                final MessageDigest digestComputer = MessageDigest.getInstance(algorithm);
-                digestComputer.update(byteBuffer);
-                return new Id(toString(digestComputer.digest()));
-              }
+//            try (final RandomAccessFile randomAccessFile = new RandomAccessFile(fixedPath.toFile(), "r"))
+//              {
+//                final MappedByteBuffer byteBuffer = randomAccessFile.getChannel().map(READ_ONLY, 0, Files.size(path));
+            // Because of BMT-46 java.io.File can't be used with some files, while NIO works
+            final byte[] byteBuffer = Files.readAllBytes(path);
+            final MessageDigest digestComputer = MessageDigest.getInstance(algorithm);
+            digestComputer.update(byteBuffer);
+            return new Id(toString(digestComputer.digest()));
+//              }
           }
         catch (InterruptedException | NoSuchAlgorithmException | IOException e)
           {
@@ -85,7 +82,7 @@ public class IdCreator
         finally
           {
             diskSemaphore.release();
-            deleteBMT46(fixedPath);
+//            deleteBMT46(fixedPath);
           }
       }
 
