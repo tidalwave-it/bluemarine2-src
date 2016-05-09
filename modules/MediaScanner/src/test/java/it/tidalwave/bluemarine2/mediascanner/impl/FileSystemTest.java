@@ -38,6 +38,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 import static java.util.stream.Collectors.toList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -51,6 +52,39 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @Slf4j
 public class FileSystemTest
   {
+    @Test
+    public void test_filesystem_consistency()
+      throws IOException
+      {
+        final Path tmpDir = Paths.get("/tmp");
+        final Path parent = tmpDir.resolve("test");
+        final Path file1 = parent.resolve(new String(new byte[] { 65, (byte)0314, (byte)0201 }));
+        final Path file2 = parent.resolve(new String(new byte[] { 65, (byte)0303, (byte)0251 }));
+
+        Runtime.getRuntime().exec("/bin/rm -r " + parent.toAbsolutePath().toString());
+        Files.createDirectory(parent);
+        Runtime.getRuntime().exec("/usr/bin/touch " + file1.toAbsolutePath().toString());
+        Runtime.getRuntime().exec("/usr/bin/touch " + file2.toAbsolutePath().toString());
+
+        Files.walk(parent).forEach(path ->
+          {
+            System.err.println("FILE: " + path.toString());
+            System.err.println("Files.exists(): " + Files.exists(path));
+            System.err.println("toFile().exists(): " + path.toFile().exists());
+
+            try (final InputStream is = Files.newInputStream(path))
+              {
+                System.err.println("Can be opened");
+              }
+            catch (IOException e)
+              {
+                System.err.println("Can't be opened");
+              }
+          });
+//        Files.createFile(file1);
+//        Files.createFile(file2);
+      }
+
     /**
      * With a wrong encoding, on EXT4 some files can't be ever accessed.
      */
