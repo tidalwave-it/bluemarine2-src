@@ -33,6 +33,7 @@ import java.nio.file.Path;
 import org.testng.annotations.Test;
 import org.testng.annotations.DataProvider;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
+import java.io.FileInputStream;
 import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.io.InputStream;
@@ -127,25 +128,36 @@ public class FileSystemTest
       {
         final boolean filesExists = Files.exists(path);
         final boolean pathToFileExists = path.toFile().exists();
-        boolean canBeOpened = false;
+        boolean canBeOpenedNio = false;
 
         try
           {
             Files.readAllBytes(path);
-            canBeOpened = true;
+            canBeOpenedNio = true;
+          }
+        catch (IOException e)
+          {
+          }
+
+        boolean canBeOpenedIo = false;
+
+        try (final InputStream is = new FileInputStream(path.toFile()))
+          {
+            is.read();
+            canBeOpenedIo = true;
           }
         catch (IOException e)
           {
           }
 
         final String result =
-            String.format("Files.exists(): %s, toFile.exists(): %s, canBeOpened: %s",
-                    filesExists, pathToFileExists, canBeOpened)
+            String.format("Files.exists(): %s, toFile.exists(): %s, canBeOpened NIO: %s canBeOpened IO: %s ",
+                    filesExists, pathToFileExists, canBeOpenedNio, canBeOpenedIo)
                 + toDebugString(path.toString());
 
         assertThat(result + toDebugString(path.toString()), filesExists, is(true));
         assertThat(result + toDebugString(path.toString()), pathToFileExists, is(true));
-        assertThat(result + toDebugString(path.toString()), canBeOpened, is(true));
+        assertThat(result + toDebugString(path.toString()), canBeOpenedNio, is(true));
 //
 //        try (final InputStream is = Files.newInputStream(path))
 //          {
