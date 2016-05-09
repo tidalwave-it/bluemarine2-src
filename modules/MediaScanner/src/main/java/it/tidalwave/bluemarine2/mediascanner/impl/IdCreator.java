@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
+import it.tidalwave.bluemarine2.util.BMT46Workaround;
 import javax.annotation.Nonnull;
 import java.util.concurrent.Semaphore;
 import java.io.File;
@@ -61,10 +62,13 @@ public class IdCreator
     @Nonnull
     public Id createSha1Id (final @Nonnull Path path)
       {
+        Path fixedPath = null;
+
         try
           {
             diskSemaphore.acquire();
-            final File file = path.toFile();
+            fixedPath = BMT46Workaround.fixedPathBMT46(path);
+            final File file = fixedPath.toFile();
             final String algorithm = "SHA1";
             final @Cleanup RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
             final MappedByteBuffer byteBuffer = randomAccessFile.getChannel().map(FileChannel.MapMode.READ_ONLY, 0, file.length());
@@ -80,6 +84,7 @@ public class IdCreator
         finally
           {
             diskSemaphore.release();
+            BMT46Workaround.deleteBMT46(fixedPath);
           }
       }
 

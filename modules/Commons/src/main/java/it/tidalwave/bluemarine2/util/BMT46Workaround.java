@@ -49,18 +49,27 @@ public final class BMT46Workaround
   {
     private final static String PREFIX = "fix-for-BMT46-";
 
+    private final static String LINUX_FS = "sun.nio.fs.LinuxFileSystem";
+
     @Nonnull
     public static Path fixedPathBMT46 (final @Nonnull Path path)
       throws IOException
       {
-        log.trace(">>>> fs name: {}", path.getFileSystem());
-        final String suffix = path.getFileName().toString().replaceAll("^.*\\.", "");
-        // FIXME: only for ext on Linux - workaround for BMT-46
-        final Path tempFile = Files.createTempFile(PREFIX, "." + suffix);
-        // FIXME: delete on exit
-        Files.copy(path, tempFile, StandardCopyOption.REPLACE_EXISTING);
-        log.warn(">>>> workaround for BMT-46: file copied to {}", tempFile);
-        return tempFile;
+        // it would be nice to detect only EXT* (BRTFS is not affected)
+        if (!path.getFileSystem().getClass().getName().equals(LINUX_FS))
+          {
+            return path;
+          }
+        else
+          {
+            final String suffix = path.getFileName().toString().replaceAll("^.*\\.", "");
+            // FIXME: only for ext on Linux - workaround for BMT-46
+            final Path tempFile = Files.createTempFile(PREFIX, "." + suffix);
+            // FIXME: delete on exit
+            Files.copy(path, tempFile, StandardCopyOption.REPLACE_EXISTING);
+            log.warn(">>>> workaround for BMT-46: file copied to {}", tempFile);
+            return tempFile;
+          }
       }
 
     public static void deleteBMT46 (final @Nullable Path path)
@@ -68,7 +77,7 @@ public final class BMT46Workaround
         if (path != null)
           {
             final String fileName = path.getFileName().toString();
-            
+
             if (fileName.startsWith(PREFIX))
               {
                 try
