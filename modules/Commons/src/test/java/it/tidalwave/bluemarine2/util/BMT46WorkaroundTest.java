@@ -41,6 +41,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 import org.testng.annotations.DataProvider;
 
 /***********************************************************************************************************************
@@ -52,7 +54,7 @@ import org.testng.annotations.DataProvider;
 @Slf4j
 public class BMT46WorkaroundTest
   {
-    @Test(dataProvider = "stringsProvider")
+    @Test(dataProvider = "stringsProvider", enabled = false)
     public void test_encoding (final @Nonnull String expected, final @Nonnull String actual)
       {
         log.info(">>>> expected: {}", expected);
@@ -80,18 +82,18 @@ public class BMT46WorkaroundTest
       {
         return new Object[][]
           {
-            { "iTunes-fg-20160504-1/Music/Ivo Pogorelich/" },
-            { "iTunes-fg-20160504-1-noiconv/Music/Ivo Pogorelich/" },
-            { "iTunes-fg-20160504-1-iconv/Music/Ivo Pogorelich/"   }
+            { "iTunes-fg-20160504-1"         },
+            { "iTunes-fg-20160504-1-noiconv" },
+            { "iTunes-fg-20160504-1-iconv"   }
           };
       }
 
     @Test(dataProvider = "testSetProvider")
-    public void test_walk_diacritics (final @Nonnull String y)
+    public void test_walk_diacritics (final @Nonnull String testSetName)
       throws IOException
       {
-        final String x = System.getProperty("blueMarine2.musicTestSets.path");
-        final Path parent = Paths.get(x, y);
+        final String testSetFolder = System.getProperty("blueMarine2.musicTestSets.path");
+        final Path parent = Paths.get(testSetFolder, testSetName, "Music", "Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6");
 
         if (!Files.exists(parent))
           {
@@ -99,16 +101,72 @@ public class BMT46WorkaroundTest
           }
         else
           {
+            final AtomicBoolean walked = new AtomicBoolean();
             Files.walk(parent).filter(Files::isRegularFile).forEach(path ->
               {
+                walked.set(true);
                 final String s =  parent.relativize(path).toString();
                 log.info(">>>> found: {}", s);
                 log.info(">>>> found: {}", toDebugString(s));
               });
+
+            assertThat(walked.get(), is(true));
           }
       }
 
-    @Test(dataProvider = "stringsProvider")
+    @Test(dataProvider = "testSetProvider")
+    public void test_walk_diacritics2 (final @Nonnull String testSetName)
+      throws IOException
+      {
+        final String testSetFolder = System.getProperty("blueMarine2.musicTestSets.path");
+        final Path parent = Paths.get(testSetFolder, testSetName, "Music", "Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6");
+
+        if (!Files.exists(parent))
+          {
+            log.warn("Doesn't exist: {}", parent);
+          }
+        else
+          {
+            final AtomicBoolean walked = new AtomicBoolean();
+            Files.list(parent).filter(Files::isRegularFile).forEach(path ->
+              {
+                walked.set(true);
+                final String s =  parent.relativize(path).toString();
+                log.info(">>>> found: {}", s);
+                log.info(">>>> found: {}", toDebugString(s));
+              });
+
+            assertThat(walked.get(), is(true));
+          }
+      }
+
+    @Test(dataProvider = "testSetProvider")
+    public void test_walk_diacritics3 (final @Nonnull String testSetName)
+      throws IOException
+      {
+        final String testSetFolder = System.getProperty("blueMarine2.musicTestSets.path");
+        final Path parent = Paths.get(testSetFolder, testSetName, "Music", "Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6");
+
+        if (!Files.exists(parent))
+          {
+            log.warn("Doesn't exist: {}", parent);
+          }
+        else
+          {
+            final AtomicBoolean walked = new AtomicBoolean();
+            Stream.of(parent.toFile().listFiles()).map(file -> file.toPath()).filter(Files::isRegularFile).forEach(path ->
+              {
+                walked.set(true);
+                final String s =  parent.relativize(path).toString();
+                log.info(">>>> found: {}", s);
+                log.info(">>>> found: {}", toDebugString(s));
+              });
+
+            assertThat(walked.get(), is(true));
+          }
+      }
+
+    @Test(dataProvider = "stringsProvider", enabled = false)
     public void test2 (final @Nonnull String expected, final @Nonnull String actual)
       throws IOException
       {
