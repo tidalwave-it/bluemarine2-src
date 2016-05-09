@@ -34,13 +34,12 @@ import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.MappedByteBuffer;
-import java.nio.channels.FileChannel;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import it.tidalwave.util.Id;
-import lombok.Cleanup;
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static java.nio.channels.FileChannel.MapMode.*;
 import static it.tidalwave.bluemarine2.util.BMT46Workaround.*;
 
 /***********************************************************************************************************************
@@ -70,12 +69,14 @@ public class IdCreator
             fixedPath = fixedPathBMT46(path);
             final File file = fixedPath.toFile();
             final String algorithm = "SHA1";
-            final @Cleanup RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
-            final MappedByteBuffer byteBuffer = randomAccessFile.getChannel().map(FileChannel.MapMode.READ_ONLY, 0, file.length());
-            final MessageDigest digestComputer = MessageDigest.getInstance(algorithm);
-            digestComputer.update(byteBuffer);
-            randomAccessFile.close();
-            return new Id(toString(digestComputer.digest()));
+
+            try (final RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r"))
+              {
+                final MappedByteBuffer byteBuffer = randomAccessFile.getChannel().map(READ_ONLY, 0, file.length());
+                final MessageDigest digestComputer = MessageDigest.getInstance(algorithm);
+                digestComputer.update(byteBuffer);
+                return new Id(toString(digestComputer.digest()));
+              }
           }
         catch (InterruptedException | NoSuchAlgorithmException | IOException e)
           {
