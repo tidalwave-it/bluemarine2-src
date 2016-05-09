@@ -51,6 +51,7 @@ import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
+import java.util.TimeZone;
 
 /***********************************************************************************************************************
  *
@@ -96,6 +97,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
     @BeforeClass
     public void checkTestSets()
       {
+        TimeZone.setDefault(TimeZone.getTimeZone("CET")); // expected file was generated in CET
         musicTestSets = TestSetLocator.getMusicTestSetsPath();
       }
 
