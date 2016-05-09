@@ -36,6 +36,10 @@ import org.testng.annotations.Test;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
 import static it.tidalwave.bluemarine2.util.BMT46Workaround.*;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import org.testng.annotations.DataProvider;
 
 /***********************************************************************************************************************
@@ -52,6 +56,8 @@ public class BMT46WorkaroundTest
       {
         log.info(">>>> expected: {}", expected);
         log.info(">>>> actual:   {}", actual);
+        log.info(">>>> expected: {}", toDebugString(expected));
+        log.info(">>>> actual:   {}", toDebugString(actual));
 
         for (final Normalizer.Form form : Normalizer.Form.values())
           {
@@ -66,6 +72,47 @@ public class BMT46WorkaroundTest
           }
 
         assertThat(normalized(actual), is(expected));
+      }
+
+    @Test(dataProvider = "stringsProvider")
+    public void test2 (final @Nonnull String expected, final @Nonnull String actual)
+      throws IOException
+      {
+        log.info(">>>> expected: {}", expected);
+        log.info(">>>> expected: {}", toDebugString(expected));
+
+        final Path tmpDir = Paths.get(System.getProperty("java.io.tmpdir"));
+        final Path parent = tmpDir.resolve("test");
+
+        final String parentAbsPath = parent.toAbsolutePath().toString();
+
+        // BE AWARE, rm -r BELOW!
+        Runtime.getRuntime().exec("/bin/rm -r " + parentAbsPath);
+        Files.createDirectory(parent);
+        Runtime.getRuntime().exec("/bin/cp /etc/hosts " + parentAbsPath + "/" + expected);
+//        Runtime.getRuntime().exec("/bin/cp /etc/hosts " + parentAbsPath + "/" + string2);
+
+        Files.walk(parent).filter(Files::isRegularFile).forEach(path ->
+          {
+            final String s =  parent.relativize(path).toString();
+            log.info(">>>> found: {}", s);
+            log.info(">>>> found:   {}", toDebugString(s));
+
+            assertThat(s, is(expected));
+//            System.err.println("FILE: " + path.toString());
+//            System.err.println(">>>> Files.exists(): " + Files.exists(path));
+//            System.err.println(">>>> toFile().exists(): " + path.toFile().exists());
+//
+//            try
+//              {
+//                Files.readAllLines(path);
+//                System.err.println(">>>> Can be opened");
+//              }
+//            catch (IOException e)
+//              {
+//                System.err.println(">>>> Can't be opened");
+//              }
+          });
       }
 
     @DataProvider
