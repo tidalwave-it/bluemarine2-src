@@ -56,6 +56,7 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static lombok.AccessLevel.PRIVATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import it.tidalwave.bluemarine2.util.BMT46Workaround;
 import java.nio.file.Files;
 
 /***********************************************************************************************************************
@@ -77,16 +78,18 @@ public final class AudioMetadataFactory
     public static Metadata loadFrom (final @Nonnull Path path)
       {
         Metadata metadata = new MetadataSupport(path);
+        Path workingPath = null;
         AudioFile audioFile = null;
 
         try
           {
             final Path aPath = path.toAbsolutePath();
             log.debug("path: {}", aPath);
-            audioFile = AudioFileIO.read(aPath.toFile());
+            workingPath = BMT46Workaround.fixedPathBMT46(aPath);
+            audioFile = AudioFileIO.read(workingPath.toFile());
 
             final AudioHeader header = audioFile.getAudioHeader();
-            metadata = metadata.with(FILE_SIZE, Files.size(path));
+            metadata = metadata.with(FILE_SIZE, Files.size(workingPath));
             metadata = metadata.with(DURATION, Duration.ofSeconds(header.getTrackLength()));
             metadata = metadata.with(BIT_RATE, (int)header.getBitRateAsNumber());
             metadata = metadata.with(SAMPLE_RATE, header.getSampleRateAsNumber());
@@ -193,6 +196,10 @@ public final class AudioMetadataFactory
         catch (IOException | CannotReadException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
           {
             log.error("While reading " + audioFile + " --- " + path, e);
+          }
+        finally
+          {
+            BMT46Workaround.deleteBMT46(workingPath);
           }
 
         return metadata;
