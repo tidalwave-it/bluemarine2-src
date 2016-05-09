@@ -71,18 +71,18 @@ public class FileSystemTest
 
         Files.walk(parent).filter(Files::isRegularFile).forEach(path ->
           {
-            System.err.println("FILE: " + path.toString());
-            System.err.println(">>>> Files.exists(): " + Files.exists(path));
-            System.err.println(">>>> toFile().exists(): " + path.toFile().exists());
+            log.info("FILE: " + path.toString());
+            log.info(">>>> Files.exists(): " + Files.exists(path));
+            log.info(">>>> toFile().exists(): " + path.toFile().exists());
 
             try
               {
                 Files.readAllLines(path);
-                System.err.println(">>>> Can be opened");
+                log.info(">>>> Can be opened");
               }
             catch (IOException e)
               {
-                System.err.println(">>>> Can't be opened");
+                log.info(">>>> Can't be opened");
               }
           });
 //        Files.createFile(file1);
