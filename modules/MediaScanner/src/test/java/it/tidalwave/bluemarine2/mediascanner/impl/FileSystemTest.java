@@ -58,28 +58,30 @@ public class FileSystemTest
       {
         final Path tmpDir = Paths.get("/tmp");
         final Path parent = tmpDir.resolve("test");
-        final Path file1 = parent.resolve(new String(new byte[] { 65, (byte)0314, (byte)0201 }));
-        final Path file2 = parent.resolve(new String(new byte[] { 65, (byte)0303, (byte)0251 }));
+        final String string1 = new String(new byte[] { 65, (byte)0314, (byte)0201 });
+        final String string2 = new String(new byte[] { 65, (byte)0303, (byte)0251 });
+//        final Path file1 = parent.resolve(string1);
+//        final Path file2 = parent.resolve(string2);
 
         Runtime.getRuntime().exec("/bin/rm -r " + parent.toAbsolutePath().toString());
         Files.createDirectory(parent);
-        Runtime.getRuntime().exec("/bin/cp /etc/hosts " + file1.toAbsolutePath().toString());
-        Runtime.getRuntime().exec("/bin/cp /etc/hosts " + file2.toAbsolutePath().toString());
+        Runtime.getRuntime().exec("/bin/cp /etc/hosts " + parent.toAbsolutePath().toString() + "/" + string1);
+        Runtime.getRuntime().exec("/bin/cp /etc/hosts " + parent.toAbsolutePath().toString() + "/" + string2);
 
         Files.walk(parent).filter(Files::isRegularFile).forEach(path ->
           {
             System.err.println("FILE: " + path.toString());
-            System.err.println("Files.exists(): " + Files.exists(path));
-            System.err.println("toFile().exists(): " + path.toFile().exists());
+            System.err.println(">>>> Files.exists(): " + Files.exists(path));
+            System.err.println(">>>> toFile().exists(): " + path.toFile().exists());
 
             try
               {
                 Files.readAllLines(path);
-                System.err.println("Can be opened");
+                System.err.println(">>>> Can be opened");
               }
             catch (IOException e)
               {
-                System.err.println("Can't be opened");
+                System.err.println(">>>> Can't be opened");
               }
           });
 //        Files.createFile(file1);
