@@ -78,12 +78,13 @@ public class FileSystemTest
     private void tryToOpen (final Path path)
       throws IOException
       {
+        log.debug("tryToOpen - {}", toDebugString(path.toString()));
         assertThat(Files.exists(path), is(true));
         assertThat(path.toFile().exists(), is(true));
-        
-        try (final InputStream is = Files.newInputStream(path))
-          {
-          }
+//
+//        try (final InputStream is = Files.newInputStream(path))
+//          {
+//          }
       }
 
     @DataProvider
@@ -93,14 +94,12 @@ public class FileSystemTest
         return pathProviderFor("iTunes-fg-20160504-1");
       }
 
-
     @DataProvider
     private static Object[][] pathProviderIconv()
       throws IOException
       {
         return pathProviderFor("iTunes-fg-20160504-1-iconv");
       }
-
 
     @DataProvider
     private static Object[][] pathProviderNoIconv()
@@ -119,5 +118,28 @@ public class FileSystemTest
                     .map(path -> new Object[] { path })
                     .collect(toList())
                     .toArray(new Object[0][0]);
+      }
+
+    @Nonnull
+    private String toDebugString (final @Nonnull String string)
+      {
+        final StringBuilder buffer = new StringBuilder();
+        final byte[] bytes = string.getBytes();
+
+        for (int i = 0; i < bytes.length; i++)
+          {
+            final int b = bytes[i] & 0xff;
+
+            if ((b >= 32) && (b <= 127))
+              {
+                buffer.append((char)b);
+              }
+            else
+              {
+                buffer.append("_" + Integer.toHexString(b).toUpperCase());
+              }
+          }
+
+        return buffer.toString();
       }
   }
