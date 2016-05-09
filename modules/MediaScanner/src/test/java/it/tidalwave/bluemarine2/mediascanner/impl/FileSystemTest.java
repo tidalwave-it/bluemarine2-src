@@ -56,7 +56,7 @@ public class FileSystemTest
     public void test_filesystem_consistency()
       throws IOException
       {
-        final Path tmpDir = Paths.get("/tmp");
+        final Path tmpDir = Paths.get(System.getProperty("java.io.tmpdir"));
         final Path parent = tmpDir.resolve("test");
         final String string1 = new String(new byte[] { 65, (byte)0314, (byte)0201 });
         final String string2 = new String(new byte[] { 65, (byte)0303, (byte)0251 });
