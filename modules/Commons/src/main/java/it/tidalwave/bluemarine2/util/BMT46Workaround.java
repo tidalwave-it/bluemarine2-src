@@ -35,7 +35,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import static java.nio.file.StandardCopyOption.*;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -49,14 +48,10 @@ public final class BMT46Workaround
   {
     private final static String PREFIX = "fix-for-BMT46-";
 
-//    private final static String LINUX_FS = "sun.nio.fs.LinuxFileSystem";
-
     @Nonnull
     public static Path fixedPathBMT46 (final @Nonnull Path path)
       throws IOException
       {
-        // it would be nice to detect only EXT* (BRTFS is not affected)
-        // if (!path.getFileSystem().getClass().getName().equals(LINUX_FS))
         if (!isTroubled(path))
           {
             return path;
@@ -65,8 +60,9 @@ public final class BMT46Workaround
           {
             final String suffix = path.getFileName().toString().replaceAll("^.*\\.", "");
             final Path tempFile = Files.createTempFile(PREFIX, "." + suffix);
-            Files.copy(path, tempFile, REPLACE_EXISTING);
-            log.warn(">>>> workaround for BMT-46: file copied to {}", tempFile);
+            Files.delete(tempFile); // it was a trick to get a temporary path
+            Files.createSymbolicLink(tempFile, path);
+            log.warn(">>>> workaround for BMT-46: file linked from {}", tempFile);
             return tempFile;
           }
       }
@@ -77,11 +73,11 @@ public final class BMT46Workaround
           {
             final String fileName = path.getFileName().toString();
 
-            if (fileName.startsWith(PREFIX))
+            if (fileName.startsWith(PREFIX) && Files.isSymbolicLink(path))
               {
                 try
                   {
-                    log.debug(">>>> deleting temp file for BMT-46 workaround {}", path);
+                    log.debug(">>>> deleting temp link for BMT-46 workaround {}", path);
                     Files.delete(path);
                   }
                 catch (IOException e)
