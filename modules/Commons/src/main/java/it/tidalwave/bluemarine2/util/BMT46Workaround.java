@@ -33,6 +33,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.text.Normalizer;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
@@ -167,7 +168,7 @@ public final class BMT46Workaround
     public static String toDebugString (final @Nonnull String string)
       {
         final StringBuilder buffer = new StringBuilder();
-        final byte[] bytes = string.getBytes();
+        final byte[] bytes = string.getBytes(StandardCharsets.UTF_8);
 
         for (int i = 0; i < bytes.length; i++)
           {
