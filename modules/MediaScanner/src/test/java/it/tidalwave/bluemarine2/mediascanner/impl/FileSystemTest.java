@@ -78,9 +78,8 @@ public class FileSystemTest
     private void tryToOpen (final Path path)
       throws IOException
       {
-        log.debug("tryToOpen - {}", toDebugString(path.toString()));
-        assertThat(Files.exists(path), is(true));
-        assertThat(path.toFile().exists(), is(true));
+        assertThat("Files.exists() " + toDebugString(path.toString()), Files.exists(path), is(true));
+        assertThat("toFile.exists() " + toDebugString(path.toString()), path.toFile().exists(), is(true));
 //
 //        try (final InputStream is = Files.newInputStream(path))
 //          {
