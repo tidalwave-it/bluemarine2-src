@@ -112,10 +112,9 @@ public class DefaultMediaScannerTest extends SpringTestSupport
 
         scanCompleted = new CountDownLatch(1);
         messageBus.subscribe(ScanCompleted.class, onScanCompleted);
-
       }
 
-    @Test(dataProvider = "dataSetNames") // FIXME: because of BMT-46
+    @Test(dataProvider = "testSetNames")
     public void testScan (final @Nonnull String dataSetName)
       throws Exception
       {
@@ -143,7 +142,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
       }
 
     @DataProvider
-    private static Object[][] dataSetNames()
+    private static Object[][] testSetNames()
       {
         return new Object[][]
           {
