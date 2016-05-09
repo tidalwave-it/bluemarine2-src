@@ -33,9 +33,9 @@ import javax.annotation.Nullable;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import static java.nio.file.StandardCopyOption.*;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -49,24 +49,23 @@ public final class BMT46Workaround
   {
     private final static String PREFIX = "fix-for-BMT46-";
 
-    private final static String LINUX_FS = "sun.nio.fs.LinuxFileSystem";
+//    private final static String LINUX_FS = "sun.nio.fs.LinuxFileSystem";
 
     @Nonnull
     public static Path fixedPathBMT46 (final @Nonnull Path path)
       throws IOException
       {
         // it would be nice to detect only EXT* (BRTFS is not affected)
-        if (!path.getFileSystem().getClass().getName().equals(LINUX_FS))
+        // if (!path.getFileSystem().getClass().getName().equals(LINUX_FS))
+        if (!isTroubled(path))
           {
             return path;
           }
         else
           {
             final String suffix = path.getFileName().toString().replaceAll("^.*\\.", "");
-            // FIXME: only for ext on Linux - workaround for BMT-46
             final Path tempFile = Files.createTempFile(PREFIX, "." + suffix);
-            // FIXME: delete on exit
-            Files.copy(path, tempFile, StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(path, tempFile, REPLACE_EXISTING);
             log.warn(">>>> workaround for BMT-46: file copied to {}", tempFile);
             return tempFile;
           }
@@ -91,5 +90,10 @@ public final class BMT46Workaround
                   }
               }
           }
+      }
+
+    private static boolean isTroubled (final @Nonnull Path path)
+      {
+        return Files.exists(path) != path.toFile().exists();
       }
   }
