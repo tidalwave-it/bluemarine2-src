@@ -40,6 +40,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.testng.annotations.DataProvider;
 
 /***********************************************************************************************************************
@@ -83,17 +84,20 @@ public class BMT46WorkaroundTest
 
         final Path parent = Files.createTempDirectory("test-diacritics");
         log.info(">>>> parent dir is {}", parent.toAbsolutePath());
-        
+
         final String parentAbsPath = parent.toAbsolutePath().toString();
 
         Runtime.getRuntime().exec("/bin/cp /etc/hosts " + parentAbsPath + "/" + expected);
 //        Runtime.getRuntime().exec("/bin/cp /etc/hosts " + parentAbsPath + "/" + string2);
 
+        final AtomicBoolean walked = new AtomicBoolean();
+
         Files.walk(parent).filter(Files::isRegularFile).forEach(path ->
           {
+            walked.set(true);
             final String s =  parent.relativize(path).toString();
             log.info(">>>> found: {}", s);
-            log.info(">>>> found:   {}", toDebugString(s));
+            log.info(">>>> found: {}", toDebugString(s));
 
             assertThat(s, is(expected));
 //            System.err.println("FILE: " + path.toString());
@@ -110,6 +114,8 @@ public class BMT46WorkaroundTest
 //                System.err.println(">>>> Can't be opened");
 //              }
           });
+
+        assertThat(walked.get(), is(true));
       }
 
     @DataProvider
