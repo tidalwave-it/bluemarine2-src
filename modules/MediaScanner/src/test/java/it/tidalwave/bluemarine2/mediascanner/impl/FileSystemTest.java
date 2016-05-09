@@ -39,6 +39,8 @@ import java.io.InputStream;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static java.util.stream.Collectors.toList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -71,18 +73,25 @@ public class FileSystemTest
 
         Files.walk(parent).filter(Files::isRegularFile).forEach(path ->
           {
-            log.info("FILE: " + path.toString());
-            log.info(">>>> Files.exists(): " + Files.exists(path));
-            log.info(">>>> toFile().exists(): " + path.toFile().exists());
-
-            try
-              {
-                Files.readAllLines(path);
-                log.info(">>>> Can be opened");
-              }
+            try {
+                log.info("FILE: " + path.toString());
+                tryToOpen(path);
+//            log.info(">>>> Files.exists(): " + Files.exists(path));
+//            log.info(">>>> toFile().exists(): " + path.toFile().exists());
+//
+//            try
+//              {
+//                Files.readAllLines(path);
+//                log.info(">>>> Can be opened");
+//              }
+//            catch (IOException e)
+//              {
+//                log.info(">>>> Can't be opened");
+//              }
+            }
             catch (IOException e)
               {
-                log.info(">>>> Can't be opened");
+                throw new RuntimeException(e);
               }
           });
 //        Files.createFile(file1);
@@ -122,18 +131,21 @@ public class FileSystemTest
 
         try
           {
-            Files.readAllLines(path);
+            Files.readAllBytes(path);
             canBeOpened = true;
           }
         catch (IOException e)
           {
           }
 
-        log.info("Files.exists(): {}, toFile.exists(): {}, canBeOpened: {}", filesExists, pathToFileExists, canBeOpened);
+        final String result =
+            String.format("Files.exists(): %s, toFile.exists(): %s, canBeOpened: %s",
+                    filesExists, pathToFileExists, canBeOpened)
+                + toDebugString(path.toString());
 
-        assertThat("Files.exists() " + toDebugString(path.toString()), filesExists, is(true));
-        assertThat("toFile.exists() " + toDebugString(path.toString()), pathToFileExists, is(true));
-        assertThat("canBeOpened " + toDebugString(path.toString()), canBeOpened, is(true));
+        assertThat(result + toDebugString(path.toString()), filesExists, is(true));
+        assertThat(result + toDebugString(path.toString()), pathToFileExists, is(true));
+        assertThat(result + toDebugString(path.toString()), canBeOpened, is(true));
 //
 //        try (final InputStream is = Files.newInputStream(path))
 //          {
