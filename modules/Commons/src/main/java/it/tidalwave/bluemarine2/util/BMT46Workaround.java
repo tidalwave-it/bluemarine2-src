@@ -163,6 +163,29 @@ public final class BMT46Workaround
           }
       }
 
+    @Nonnull
+    public static String toDebugString (final @Nonnull String string)
+      {
+        final StringBuilder buffer = new StringBuilder();
+        final byte[] bytes = string.getBytes();
+
+        for (int i = 0; i < bytes.length; i++)
+          {
+            final int b = bytes[i] & 0xff;
+
+            if ((b >= 32) && (b <= 127))
+              {
+                buffer.append((char)b);
+              }
+            else
+              {
+                buffer.append("_" + Integer.toHexString(b).toUpperCase());
+              }
+          }
+
+        return buffer.toString();
+      }
+
     private static boolean isTroubled (final @Nonnull Path path)
       {
         return Files.exists(path) != path.toFile().exists();

@@ -30,17 +30,18 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
-import org.testng.annotations.Test;
-import org.testng.annotations.DataProvider;
-import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import java.io.FileInputStream;
-import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.io.InputStream;
-import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
+import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.Test;
+import org.testng.annotations.DataProvider;
+import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 import static java.util.stream.Collectors.toList;
+import static it.tidalwave.bluemarine2.util.BMT46Workaround.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -195,28 +196,5 @@ public class FileSystemTest
                     .map(path -> new Object[] { path })
                     .collect(toList())
                     .toArray(new Object[0][0]);
-      }
-
-    @Nonnull
-    private String toDebugString (final @Nonnull String string)
-      {
-        final StringBuilder buffer = new StringBuilder();
-        final byte[] bytes = string.getBytes();
-
-        for (int i = 0; i < bytes.length; i++)
-          {
-            final int b = bytes[i] & 0xff;
-
-            if ((b >= 32) && (b <= 127))
-              {
-                buffer.append((char)b);
-              }
-            else
-              {
-                buffer.append("_" + Integer.toHexString(b).toUpperCase());
-              }
-          }
-
-        return buffer.toString();
       }
   }
