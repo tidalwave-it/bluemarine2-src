@@ -91,9 +91,9 @@ public class BMT46WorkaroundTest
 
         if (!Files.exists(parent))
           {
-            Files.createDirectory(parent);
+            Files.createDirectories(parent);
           }
-        
+
         Runtime.getRuntime().exec("/bin/cp /etc/hosts " + parentAbsPath + "/" + expected);
 //        Runtime.getRuntime().exec("/bin/cp /etc/hosts " + parentAbsPath + "/" + string2);
 
