@@ -28,7 +28,6 @@
  */
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
-import it.tidalwave.bluemarine2.util.BMT46Workaround;
 import javax.annotation.Nonnull;
 import java.util.concurrent.Semaphore;
 import java.io.File;
@@ -42,6 +41,7 @@ import java.security.NoSuchAlgorithmException;
 import it.tidalwave.util.Id;
 import lombok.Cleanup;
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static it.tidalwave.bluemarine2.util.BMT46Workaround.*;
 
 /***********************************************************************************************************************
  *
@@ -67,7 +67,7 @@ public class IdCreator
         try
           {
             diskSemaphore.acquire();
-            fixedPath = BMT46Workaround.fixedPathBMT46(path);
+            fixedPath = fixedPathBMT46(path);
             final File file = fixedPath.toFile();
             final String algorithm = "SHA1";
             final @Cleanup RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
@@ -84,7 +84,7 @@ public class IdCreator
         finally
           {
             diskSemaphore.release();
-            BMT46Workaround.deleteBMT46(fixedPath);
+            deleteBMT46(fixedPath);
           }
       }
 
