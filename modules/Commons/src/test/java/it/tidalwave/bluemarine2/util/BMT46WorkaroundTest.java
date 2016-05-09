@@ -75,6 +75,39 @@ public class BMT46WorkaroundTest
         assertThat(normalized(actual), is(expected));
       }
 
+    @DataProvider
+    private Object[][] testSetProvider()
+      {
+        return new Object[][]
+          {
+            { "iTunes-fg-20160504-1/Music/Ivo Pogorelich/" },
+            { "iTunes-fg-20160504-1-noiconv/Music/Ivo Pogorelich/" },
+            { "iTunes-fg-20160504-1-iconv/Music/Ivo Pogorelich/"   }
+          };
+      }
+
+    @Test(dataProvider = "testSetProvider")
+    public void test_walk_diacritics (final @Nonnull String y)
+      throws IOException
+      {
+        final String x = System.getProperty("blueMarine2.musicTestSets.path");
+        final Path parent = Paths.get(x, y);
+
+        if (!Files.exists(parent))
+          {
+            log.warn("Doesn't exist: {}", parent);
+          }
+        else
+          {
+            Files.walk(parent).filter(Files::isRegularFile).forEach(path ->
+              {
+                final String s =  parent.relativize(path).toString();
+                log.info(">>>> found: {}", s);
+                log.info(">>>> found: {}", toDebugString(s));
+              });
+          }
+      }
+
     @Test(dataProvider = "stringsProvider")
     public void test2 (final @Nonnull String expected, final @Nonnull String actual)
       throws IOException
