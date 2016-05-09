@@ -81,18 +81,10 @@ public class BMT46WorkaroundTest
         log.info(">>>> expected: {}", expected);
         log.info(">>>> expected: {}", toDebugString(expected));
 
-        final Path tmpDir = Paths.get(System.getProperty("java.io.tmpdir"));
-        final Path parent = tmpDir.resolve("test-diacritics");
-
+        final Path parent = Files.createTempDirectory("test-diacritics");
+        log.info(">>>> parent dir is {}", parent.toAbsolutePath());
+        
         final String parentAbsPath = parent.toAbsolutePath().toString();
-
-        // BE AWARE, rm -r BELOW!
-        Runtime.getRuntime().exec("/bin/rm -r " + parentAbsPath);
-
-        if (!Files.exists(parent))
-          {
-            Files.createDirectories(parent);
-          }
 
         Runtime.getRuntime().exec("/bin/cp /etc/hosts " + parentAbsPath + "/" + expected);
 //        Runtime.getRuntime().exec("/bin/cp /etc/hosts " + parentAbsPath + "/" + string2);
