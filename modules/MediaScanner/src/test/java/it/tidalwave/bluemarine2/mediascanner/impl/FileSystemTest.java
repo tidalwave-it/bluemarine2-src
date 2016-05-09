@@ -60,13 +60,14 @@ public class FileSystemTest
         final Path parent = tmpDir.resolve("test");
         final String string1 = new String(new byte[] { 65, (byte)0314, (byte)0201 });
         final String string2 = new String(new byte[] { 65, (byte)0303, (byte)0251 });
-//        final Path file1 = parent.resolve(string1);
-//        final Path file2 = parent.resolve(string2);
 
-        Runtime.getRuntime().exec("/bin/rm -r " + parent.toAbsolutePath().toString());
+        final String parentAbsPath = parent.toAbsolutePath().toString();
+
+        // BE AWARE, rm -r BELOW!
+        Runtime.getRuntime().exec("/bin/rm -r " + parentAbsPath);
         Files.createDirectory(parent);
-        Runtime.getRuntime().exec("/bin/cp /etc/hosts " + parent.toAbsolutePath().toString() + "/" + string1);
-        Runtime.getRuntime().exec("/bin/cp /etc/hosts " + parent.toAbsolutePath().toString() + "/" + string2);
+        Runtime.getRuntime().exec("/bin/cp /etc/hosts " + parentAbsPath + "/" + string1);
+        Runtime.getRuntime().exec("/bin/cp /etc/hosts " + parentAbsPath + "/" + string2);
 
         Files.walk(parent).filter(Files::isRegularFile).forEach(path ->
           {
