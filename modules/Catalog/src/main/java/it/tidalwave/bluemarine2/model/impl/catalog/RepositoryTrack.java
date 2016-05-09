@@ -49,7 +49,7 @@ import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder
 import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
+import static it.tidalwave.bluemarine2.util.BMT46Workaround.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
