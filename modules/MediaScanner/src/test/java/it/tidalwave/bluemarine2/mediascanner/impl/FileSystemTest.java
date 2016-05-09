@@ -102,21 +102,21 @@ public class FileSystemTest
     /**
      * With a wrong encoding, on EXT4 some files can't be ever accessed.
      */
-    @Test(dataProvider = "pathProvider")
+    @Test(dataProvider = "pathProvider", enabled = false)
     public void test_that_all_files_are_accessible (final @Nonnull Path path)
       throws Exception
       {
         tryToOpen(path);
       }
 
-    @Test(dataProvider = "pathProviderIconv")
+    @Test(dataProvider = "pathProviderIconv", enabled = false)
     public void test_that_all_files_are_accessible_iconv (final @Nonnull Path path)
       throws Exception
       {
         tryToOpen(path);
       }
 
-    @Test(dataProvider = "pathProviderNoIconv")
+    @Test(dataProvider = "pathProviderNoIconv", enabled = false)
     public void test_that_all_files_are_accessible_noiconv (final @Nonnull Path path)
       throws Exception
       {
