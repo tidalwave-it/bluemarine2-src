@@ -63,17 +63,18 @@ public class FileSystemTest
 
         Runtime.getRuntime().exec("/bin/rm -r " + parent.toAbsolutePath().toString());
         Files.createDirectory(parent);
-        Runtime.getRuntime().exec("/usr/bin/touch " + file1.toAbsolutePath().toString());
-        Runtime.getRuntime().exec("/usr/bin/touch " + file2.toAbsolutePath().toString());
+        Runtime.getRuntime().exec("/bin/cp /etc/hosts " + file1.toAbsolutePath().toString());
+        Runtime.getRuntime().exec("/bin/cp /etc/hosts " + file2.toAbsolutePath().toString());
 
-        Files.walk(parent).forEach(path ->
+        Files.walk(parent).filter(Files::isRegularFile).forEach(path ->
           {
             System.err.println("FILE: " + path.toString());
             System.err.println("Files.exists(): " + Files.exists(path));
             System.err.println("toFile().exists(): " + path.toFile().exists());
 
-            try (final InputStream is = Files.newInputStream(path))
+            try
               {
+                Files.readAllLines(path);
                 System.err.println("Can be opened");
               }
             catch (IOException e)
