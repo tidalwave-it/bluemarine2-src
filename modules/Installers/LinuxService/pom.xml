@@ -40,28 +40,22 @@
 
     <!-- ===============================================================================================================
 
-        This is the "Mac OS X Installer with embedded JRE module" of the project. It generates a Mac OS X application
-        bundle in form of a dmg.gz file  an embedded JRE.
+
+
 
     ================================================================================================================ -->
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>bluemarine2-linux-armv6-embedded-jre</artifactId>
+    <artifactId>bluemarine2-service-linux</artifactId>
     <version>1.0-ALPHA-10-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    <name>blueMarine II - Installer - Linux ARM v6, embedded JRE</name>
-    <description>This module creates a Linux ARM v6 application bundle with an embedded JRE.</description>
-
-    <properties>
-        <tft.embedded-jdk-name>jre1.8.0_33</tft.embedded-jdk-name>
-        <tft.embedded-jdk-version>1.8.0_33-1</tft.embedded-jdk-version>
-        <tft.embedded-jdk-classifier>linux-armv6</tft.embedded-jdk-classifier>
-    </properties>
+    <packaging>pom</packaging>
+    <name>blueMarine II - Installer - Service, Linux</name>
+    <description>This module creates a Linux service bundle.</description>
 
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>
+            <artifactId>it-tidalwave-bluemarine2-service</artifactId>
         </dependency>
 
         <!-- FIXME: why are not brought by transitive dependencies? -->
@@ -80,29 +74,30 @@
     <build>
         <plugins>
             <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/zip</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/resources</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
-                    <execution>
-                        <id>unpack-embedded-jdk</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>${tft.embedded-jdk-groupId}</groupId>
-                                    <artifactId>${tft.embedded-jdk-artifactId}</artifactId>
-                                    <version>${tft.embedded-jdk-version}</version>
-                                    <type>tgz</type>
-                                    <classifier>${tft.embedded-jdk-classifier}</classifier>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${project.basedir}/target/jre/${tft.embedded-jdk-name}</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
                     <execution>
                         <id>copy-dependencies</id>
                         <phase>package</phase>
@@ -112,7 +107,7 @@
                         <configuration>
                             <includeScope>runtime</includeScope>
                             <overWrite>true</overWrite>
-                            <outputDirectory>${basedir}/target/classes/lib</outputDirectory>
+                            <outputDirectory>${basedir}/target/zip/lib</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>

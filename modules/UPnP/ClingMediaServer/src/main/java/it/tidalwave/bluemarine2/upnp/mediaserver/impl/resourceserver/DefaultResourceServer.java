@@ -33,23 +33,26 @@ import javax.annotation.PreDestroy;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
+import java.net.InetAddress;
+import java.net.Inet4Address;
+import java.net.InetSocketAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.io.EOFException;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.io.RandomAccessFile;
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.eclipse.jetty.server.Server;
-//import org.eclipse.jetty.server.ServerConnector;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
@@ -122,6 +125,13 @@ public class DefaultResourceServer implements ResourceServer
               {
                 log.error(">>>> resource not found: {}", resourcePath);
                 response.setStatus(SC_NOT_FOUND);
+                return;
+              }
+
+            if (Files.isDirectory(resourcePath))
+              {
+                log.error(">>>> cannot serve directories: {}", resourcePath);
+                response.setStatus(SC_UNAUTHORIZED);
                 return;
               }
 
@@ -271,13 +281,41 @@ public class DefaultResourceServer implements ResourceServer
       {
         log.info("onPowerOnNotification({})", notification);
         rootPath = notification.getProperties().get(PropertyNames.ROOT_PATH);
-        ipAddress = InetAddress.getLocalHost().getHostAddress();
+        ipAddress = getNonLoopbackIPv4Address().getHostAddress();
         server = new Server(InetSocketAddress.createUnresolved(ipAddress, Integer.getInteger("port", 0)));
         server.setHandler(servlet.asHandler());
         server.start();
         port = server.getConnectors()[0].getLocalPort(); // jetty 8
 //        port = ((ServerConnector)server.getConnectors()[0]).getLocalPort(); // jetty 9
         log.info(">>>> resource server jetty started at {}:{} serving resources at {}", ipAddress, port, rootPath);
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private InetAddress getNonLoopbackIPv4Address()
+      throws SocketException
+      {
+        for (final Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements() ; )
+          {
+            final NetworkInterface itf =  en.nextElement();
+
+            for (final Enumeration<InetAddress> ee = itf.getInetAddresses(); ee.hasMoreElements() ;)
+              {
+                final InetAddress address = ee.nextElement();
+
+                if (!address.isLoopbackAddress() && (address instanceof Inet4Address))
+                  {
+                    return address;
+                  }
+              }
+          }
+
+        log.warn("Returning loopback address!");
+        return InetAddress.getLoopbackAddress();
       }
 
     /*******************************************************************************************************************

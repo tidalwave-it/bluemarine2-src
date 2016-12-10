@@ -46,10 +46,10 @@
     ================================================================================================================ -->
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>bluemarine2-linux</artifactId>
+    <artifactId>bluemarine2-application-javafx-linux</artifactId>
     <version>1.0-ALPHA-10-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine II - Installer - Linux</name>
+    <name>blueMarine II - Installer - JavaFX Application, Linux</name>
     <description>This module creates a Linux application bundle.</description>
 
     <dependencies>

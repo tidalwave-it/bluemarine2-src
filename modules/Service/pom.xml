@@ -10,50 +10,31 @@
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>
+    <artifactId>it-tidalwave-bluemarine2-service</artifactId>
     <version>1.0-ALPHA-10-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>blueMarine II - Application - JavaFX</name>
+    <name>blueMarine II - Service</name>
 
     <properties>
         <!-- Otherwise can't be released because of missing javadocs -->
         <tft.javadoc.excludePackageNames />
+        <tft.mainClass>it.tidalwave.bluemarine2.service.impl.Main</tft.mainClass>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-service</artifactId>
+            <artifactId>it-tidalwave-bluemarine2-downloader</artifactId>
         </dependency>
-        <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-ui</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-cecnavigationadapter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-cec</artifactId>
         </dependency>
 
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-messagebus-spring</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>it.tidalwave.steelblue</groupId>
-            <artifactId>it-tidalwave-role-ui-javafx</artifactId>
         </dependency>
 
         <dependency>
@@ -146,4 +127,20 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>${tft.mainClass}</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
