@@ -128,6 +128,13 @@ public class DefaultResourceServer implements ResourceServer
                 return;
               }
 
+            if (Files.isDirectory(resourcePath))
+              {
+                log.error(">>>> cannot serve directories: {}", resourcePath);
+                response.setStatus(SC_UNAUTHORIZED);
+                return;
+              }
+
             final long length = (int)Files.size(resourcePath);
             final Range fullRange = new Range(0, length - 1, length);
             final List<Range> ranges = new ArrayList<>();
