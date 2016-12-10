@@ -103,6 +103,11 @@ Still at the early stage of development, it can be used with some hack to reprod
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-bluemarine2-service</artifactId>
+                <version>1.0-ALPHA-10-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-cec</artifactId>
                 <version>1.0-ALPHA-10-SNAPSHOT</version>
             </dependency>
@@ -174,6 +179,13 @@ Still at the early stage of development, it can be used with some hack to reprod
                 <artifactId>it-tidalwave-bluemarine2-services-stoppingdown</artifactId>
                 <version>1.0-ALPHA-10-SNAPSHOT</version>
             </dependency>
+
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>it-tidalwave-role-ui-javafxsupplements</artifactId>
+                <version>1.0-ALPHA-10-SNAPSHOT</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

@@ -12,10 +12,10 @@
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>it-tidalwave-bluemarine2-commons</artifactId>
+    <artifactId>it-tidalwave-role-ui-javafxsupplements</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-10-SNAPSHOT</version>
-    <name>blueMarine II - Commons</name>
+    <name>blueMarine II - SteelBlue Supplements</name>
 
     <dependencies>
         <dependency>
@@ -28,7 +28,21 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        
+        <dependency>
+            <groupId>it.tidalwave.steelblue</groupId>
+            <artifactId>it-tidalwave-role-ui-javafx</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.aquafx-project</groupId>
+                    <artifactId>aquafx</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
