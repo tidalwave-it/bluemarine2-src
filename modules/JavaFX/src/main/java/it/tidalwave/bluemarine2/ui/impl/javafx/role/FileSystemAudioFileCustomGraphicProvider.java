@@ -31,7 +31,6 @@ package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 import javax.annotation.Nonnull;
 import java.time.Duration;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
 import it.tidalwave.dci.annotation.DciRole;
@@ -58,10 +57,10 @@ public class FileSystemAudioFileCustomGraphicProvider implements CustomGraphicPr
     public Node getGraphic()
       {
         final Metadata metadata = file.getMetadata();
-        final Label lbIcon = label("track-icon", "");
-        final Label lbTrack = label("track-index", String.format("%d.", metadata.get(TRACK_NUMBER).orElse(0)));
-        final Label lbName = label("track-label", file.as(Displayable).getDisplayName());
-        final Label lbDuration = label("track-duration", format(metadata.get(DURATION).orElse(Duration.ZERO)));
-        return hBox("cell-container", lbIcon, lbTrack, lbName, lbDuration);
+        return hBox("cell-container",
+                    label("track-icon", ""),
+                    label("track-index", String.format("%d.", metadata.get(TRACK_NUMBER).orElse(0))),
+                    label("track-label", file.as(Displayable).getDisplayName()),
+                    label("track-duration", format(metadata.get(DURATION).orElse(Duration.ZERO))));
       }
   }

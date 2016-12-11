@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 
 import javax.annotation.Nonnull;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
 import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.Record;
@@ -53,9 +52,9 @@ public class RecordCustomGraphicProvider implements CustomGraphicProvider
     @Override @Nonnull
     public Node getGraphic()
       {
-        final Label lbIcon = label("record-icon", "");
-        final Label lbName = label("record-label", record.as(Displayable).getDisplayName());
-        final Label lbDuration = label("record-duration", ""); // FIXME; format(record.getDuration())
-        return hBox("cell-container", lbIcon, lbName, lbDuration);
+        return hBox("cell-container",
+                    label("record-icon", ""),
+                    label("record-label", record.as(Displayable).getDisplayName()),
+                    label("record-duration", "")); // FIXME format(record.getDuration())
       }
   }

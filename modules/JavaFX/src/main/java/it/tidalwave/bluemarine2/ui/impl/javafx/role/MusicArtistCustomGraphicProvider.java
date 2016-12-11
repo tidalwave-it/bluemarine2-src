@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 
 import javax.annotation.Nonnull;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
 import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MusicArtist;
@@ -53,8 +52,8 @@ public class MusicArtistCustomGraphicProvider implements CustomGraphicProvider
     @Override @Nonnull
     public Node getGraphic()
       {
-        final Label lbIcon = label((artist.getType() == 1) ? "artist-icon" : "artist-group-icon", "");
-        final Label lbName = label("artist-label", artist.as(Displayable).getDisplayName());
-        return hBox("cell-container", lbIcon, lbName);
+        return hBox("cell-container",
+                    label((artist.getType() == 1) ? "artist-icon" : "artist-group-icon", ""),
+                    label("artist-label", artist.as(Displayable).getDisplayName()));
       }
   }

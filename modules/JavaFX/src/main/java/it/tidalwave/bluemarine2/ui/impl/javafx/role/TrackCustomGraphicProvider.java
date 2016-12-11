@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 
 import javax.annotation.Nonnull;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
 import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
@@ -57,14 +56,20 @@ public class TrackCustomGraphicProvider implements CustomGraphicProvider
     public Node getGraphic()
       {
         final Metadata metadata = track.getMetadata();
+        return hBox("cell-container",
+                    label("track-icon", ""),
+                    label("track-index", trackLabel(metadata)),
+                    label("track-label", track.as(Displayable).getDisplayName()),
+                    label("track-duration", format(metadata.get(DURATION).get())));
+      }
+
+    @Nonnull
+    private static String trackLabel (final @Nonnull Metadata metadata)
+      {
         final int diskCount = metadata.get(DISK_COUNT).orElse(1);
-        final Label lbIcon = label("track-icon", "");
-        final Label lbTrack = label("track-index", String.format("%s%s.",
-                metadata.get(DISK_NUMBER).map(diskNumber -> diskLabel(diskNumber, diskCount)).orElse(""),
-                metadata.get(TRACK_NUMBER).map(trackNumber -> "" + trackNumber).orElse("")));
-        final Label lbName = label("track-label", track.as(Displayable).getDisplayName());
-        final Label lbDuration = label("track-duration", format(metadata.get(DURATION).get()));
-        return hBox("cell-container", lbIcon, lbTrack, lbName, lbDuration);
+        return String.format("%s%s.",
+                              metadata.get(DISK_NUMBER).map(diskNumber -> diskLabel(diskNumber, diskCount)).orElse(""),
+                              metadata.get(TRACK_NUMBER).map(trackNumber -> "" + trackNumber).orElse(""));
       }
 
     @Nonnull

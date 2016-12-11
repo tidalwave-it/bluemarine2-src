@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 
 import javax.annotation.Nonnull;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
 import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MediaFolder;
@@ -53,8 +52,8 @@ public class FolderCustomGraphicProvider implements CustomGraphicProvider
     @Override @Nonnull
     public Node getGraphic()
       {
-        final Label lbIcon = label("folder-icon", "");
-        final Label lbName = label("folder-label", folder.as(Displayable).getDisplayName());
-        return hBox("cell-container", lbIcon, lbName);
+        return hBox("cell-container",
+                    label("folder-icon", ""),
+                    label("folder-label", folder.as(Displayable).getDisplayName()));
       }
   }
