@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.impl.javafx.role;
+package it.tidalwave.bluemarine2.ui.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javafx.scene.Node;

@@ -35,7 +35,7 @@ import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.bluemarine2.ui.impl.javafx.role.NodeFactory.*;
+import static it.tidalwave.bluemarine2.ui.impl.javafx.NodeFactory.*;
 
 /***********************************************************************************************************************
  *
