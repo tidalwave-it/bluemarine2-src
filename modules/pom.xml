@@ -7,13 +7,13 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2</artifactId>
-        <version>1.0-ALPHA-10-SNAPSHOT</version>
+        <version>1.0-ALPHA-11-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>blueMarine2-modules</artifactId>
-    <version>1.0-ALPHA-10-SNAPSHOT</version>
+    <version>1.0-ALPHA-11-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine II (modules)</name>
     <description>blueMarine2 (modules)</description>
@@ -378,9 +378,10 @@
         <module>CECWrapper</module>
         <module>Commons</module>
         <module>Downloader</module>
-        <module>Installers/Linux</module>
-        <module>Installers/LinuxArmV6EmbeddedJRE</module>
-        <module>Installers/MacOSXEmbeddedJRE</module>
+        <module>Installers/LinuxJavaFXApplication</module>
+        <module>Installers/LinuxApplicationArmV6EmbeddedJRE</module>
+        <module>Installers/LinuxService</module>
+        <module>Installers/MacOSXJavaFXApplicationEmbeddedJRE</module>
         <module>JavaFX</module>
         <module>JavaFXApplication</module>
         <module>MediaScanner</module>
@@ -394,6 +395,8 @@
         <module>MediaServer</module>
         <module>TestCommons</module>
         <module>Vocabulary</module>
+        <module>Service</module>
+        <module>SteelBlueSupplements</module>
     </modules>
 
 </project>

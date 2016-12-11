@@ -7,14 +7,14 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-10-SNAPSHOT</version>
+        <version>1.0-ALPHA-11-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-10-SNAPSHOT</version>
+    <version>1.0-ALPHA-11-SNAPSHOT</version>
     <name>blueMarine II - UI - JavaFX</name>
     <description>blueMarine2 - UI - JavaFX</description>
 
@@ -35,6 +35,10 @@
         <dependency>
             <groupId>it.tidalwave.steelblue</groupId>
             <artifactId>it-tidalwave-role-ui-javafx</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-role-ui-javafxsupplements</artifactId>
         </dependency>
 
         <dependency>

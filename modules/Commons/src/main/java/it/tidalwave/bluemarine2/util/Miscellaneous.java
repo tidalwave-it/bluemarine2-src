@@ -29,12 +29,20 @@
 package it.tidalwave.bluemarine2.util;
 
 import javax.annotation.CheckForNull;
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.List;
 import java.text.Normalizer;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import lombok.NoArgsConstructor;
-import static java.text.Normalizer.Form.*;
-import static lombok.AccessLevel.PRIVATE;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.toList;
+import static java.text.Normalizer.Form.*;
+import java.util.stream.Stream;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
@@ -72,10 +80,80 @@ public final class Miscellaneous
         log.info(">>>> Charset normalizer form: {}", NATIVE_FORM);
       }
 
-    // See http://askubuntu.com/questions/533690/rsync-with-special-character-files-not-working-between-mac-and-linux
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     @CheckForNull
-    public static String normalized (final @Nullable String string)
+    public static String normalizedToNativeForm (final @Nullable String string)
       {
         return (string == null) ? null : Normalizer.normalize(string, NATIVE_FORM);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Takes a path, and in case it can't be resolved, it tries to replace with an equivalent representation of an
+     * existing path, with the native form of character encoding (i.e. the one used by the file system).
+     * If there is no normalized path to replace with, the original path is returned.
+     * Note that this method is I/O heavy, as it must access the file system.
+     * FIXME: what about using a cache?
+     *
+     * See http://askubuntu.com/questions/533690/rsync-with-special-character-files-not-working-between-mac-and-linux
+     *
+     * @param   path    the path
+     * @return          the normalized path
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static Path normalizedPath (final @Nonnull Path path)
+      throws IOException
+      {
+        if (Files.exists(path))
+          {
+            return path;
+          }
+
+        Path pathSoFar = Paths.get("/");
+
+        for (final Path element : path)
+          {
+            log.trace(">>>> pathSoFar: {} element: {}", pathSoFar, element);
+            final Path resolved = pathSoFar.resolve(element);
+
+            if (Files.exists(resolved))
+              {
+                pathSoFar = resolved;
+              }
+            else
+              {
+                // FIXME: refactor with lambdas
+                try (final Stream<Path> stream = Files.list(pathSoFar))
+                  {
+                    boolean found = false;
+
+                    for (final Path child : stream.collect(toList()))
+                      {
+                        final Path childName = child.getFileName();
+                        found = normalizedToNativeForm(element.toString())
+                                .equals(normalizedToNativeForm(childName.toString()));
+                        log.trace(">>>> original: {} found: {} same: {}", element, childName, found);
+
+                        if (found)
+                          {
+                            pathSoFar = pathSoFar.resolve(childName);
+                            break;
+                          }
+                      }
+
+                    if (!found)
+                      {
+                        return path; // fail
+                      }
+                  }
+              }
+          }
+
+        return pathSoFar;
       }
   }
