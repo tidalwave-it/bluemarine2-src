@@ -31,7 +31,6 @@ package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 import javax.annotation.Nonnull;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
 import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
@@ -40,6 +39,7 @@ import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.util.Formatters.format;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static it.tidalwave.bluemarine2.ui.impl.javafx.role.NodeFactory.*;
 
 /***********************************************************************************************************************
  *
@@ -56,20 +56,20 @@ public class TrackCustomGraphicProvider implements CustomGraphicProvider
     @Override @Nonnull
     public Node getGraphic()
       {
-        final Label lbIcon = new Label("");
-        lbIcon.getStyleClass().setAll("list-cell", "track-icon");
         final Metadata metadata = track.getMetadata();
-        final Integer diskCount = metadata.get(DISK_COUNT).orElse(1);
-        final Label lbTrack = new Label(String.format("%s%s.",
-                metadata.get(DISK_NUMBER).map(n -> (diskCount == 1) ? "" : String.format("%d.", n)).orElse(""),
+        final int diskCount = metadata.get(DISK_COUNT).orElse(1);
+        final Label lbIcon = label("track-icon", "");
+        final Label lbTrack = label("track-index", String.format("%s%s.",
+                metadata.get(DISK_NUMBER).map(diskNumber -> diskLabel(diskNumber, diskCount)).orElse(""),
                 metadata.get(TRACK_NUMBER)));
-        lbTrack.getStyleClass().setAll("list-cell", "track-index");
-        final Label lbName = new Label(track.as(Displayable).getDisplayName());
-        lbName.getStyleClass().setAll("list-cell", "track-label");
-        final Label lbDuration = new Label(format(metadata.get(DURATION).get()));
-        lbDuration.getStyleClass().setAll("list-cell", "track-duration");
-        final HBox hBox = new HBox(lbIcon, lbTrack, lbName, lbDuration);
-        hBox.getStyleClass().setAll("list-cell", "cell-container");
-        return hBox;
+        final Label lbName = label("track-label", track.as(Displayable).getDisplayName());
+        final Label lbDuration = label("track-duration", format(metadata.get(DURATION).get()));
+        return hBox("cell-container", lbIcon, lbTrack, lbName, lbDuration);
+      }
+
+    @Nonnull
+    private static String diskLabel (final int diskNumber, final int diskCount)
+      {
+        return (diskCount == 1) ? "" : String.format("%d.", diskNumber);
       }
   }

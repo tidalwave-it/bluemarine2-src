@@ -32,7 +32,6 @@ import javax.annotation.Nonnull;
 import java.time.Duration;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
 import it.tidalwave.dci.annotation.DciRole;
@@ -40,6 +39,8 @@ import it.tidalwave.bluemarine2.model.impl.FileSystemAudioFile;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.util.Formatters.format;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static it.tidalwave.bluemarine2.ui.impl.javafx.role.NodeFactory.*;
 
 /***********************************************************************************************************************
  *
@@ -56,16 +57,11 @@ public class FileSystemAudioFileCustomGraphicProvider implements CustomGraphicPr
     @Override @Nonnull
     public Node getGraphic()
       {
-        final Label lbIcon = new Label("");
-        lbIcon.getStyleClass().setAll("list-cell", "track-icon");
-        final Label lbTrack = new Label(String.format("%d.", file.getMetadata().get(Metadata.TRACK_NUMBER).orElse(0)));
-        lbTrack.getStyleClass().setAll("list-cell", "track-index");
-        final Label lbName = new Label(file.as(Displayable).getDisplayName());
-        lbName.getStyleClass().setAll("list-cell", "track-label");
-        final Label lbDuration = new Label(format(file.getMetadata().get(Metadata.DURATION).orElse(Duration.ZERO)));
-        lbDuration.getStyleClass().setAll("list-cell", "track-duration");
-        final HBox hBox = new HBox(lbIcon, lbTrack, lbName, lbDuration);
-        hBox.getStyleClass().setAll("list-cell", "cell-container");
-        return hBox;
+        final Metadata metadata = file.getMetadata();
+        final Label lbIcon = label("track-icon", "");
+        final Label lbTrack = label("track-index", String.format("%d.", metadata.get(TRACK_NUMBER).orElse(0)));
+        final Label lbName = label("track-label", file.as(Displayable).getDisplayName());
+        final Label lbDuration = label("track-duration", format(metadata.get(DURATION).orElse(Duration.ZERO)));
+        return hBox("cell-container", lbIcon, lbTrack, lbName, lbDuration);
       }
   }
