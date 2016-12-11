@@ -29,15 +29,13 @@
 package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 
 import javax.annotation.Nonnull;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
 import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.Record;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.bluemarine2.ui.impl.javafx.role.NodeFactory.*;
 
 /***********************************************************************************************************************
  *
@@ -45,23 +43,18 @@ import static it.tidalwave.role.Displayable.Displayable;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @DciRole(datumType = Record.class) 
+@RequiredArgsConstructor @DciRole(datumType = Record.class)
 public class RecordCustomGraphicProvider implements CustomGraphicProvider
   {
     @Nonnull
     private final Record record;
-    
+
     @Override @Nonnull
-    public Node getGraphic() 
+    public Node getGraphic()
       {
-        final Label lbIcon = new Label("");
-        lbIcon.getStyleClass().setAll("list-cell", "record-icon");
-        final Label lbName = new Label(record.as(Displayable).getDisplayName());
-        lbName.getStyleClass().setAll("list-cell", "record-label");
-        final Label lbDuration = new Label(/* format(record.getDuration()) FIXME */);
-        lbDuration.getStyleClass().setAll("list-cell", "record-duration");
-        final HBox hBox = new HBox(lbIcon, lbName, lbDuration);
-        hBox.getStyleClass().setAll("list-cell", "cell-container");
-        return hBox;
+        return hBox("cell-container",
+                    label("record-icon", ""),
+                    label("record-label", record.as(Displayable).getDisplayName()),
+                    label("record-duration", "")); // FIXME format(record.getDuration())
       }
   }

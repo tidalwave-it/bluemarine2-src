@@ -30,12 +30,10 @@ package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 
 import javax.annotation.Nonnull;
 import javafx.scene.Node;
-import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.MusicArtist;
-import lombok.RequiredArgsConstructor;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.bluemarine2.ui.impl.javafx.role.NodeFactory.*;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import lombok.NoArgsConstructor;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
@@ -43,17 +41,22 @@ import static it.tidalwave.bluemarine2.ui.impl.javafx.role.NodeFactory.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @DciRole(datumType = MusicArtist.class)
-public class MusicArtistCustomGraphicProvider implements CustomGraphicProvider
+@NoArgsConstructor(access = PRIVATE)
+public final class NodeFactory
   {
     @Nonnull
-    private final MusicArtist artist;
-
-    @Override @Nonnull
-    public Node getGraphic()
+    public static Label label (final @Nonnull String style, final @Nonnull String content)
       {
-        return hBox("cell-container",
-                    label((artist.getType() == 1) ? "artist-icon" : "artist-group-icon", ""),
-                    label("artist-label", artist.as(Displayable).getDisplayName()));
+        final Label label = new Label(content);
+        label.getStyleClass().setAll("list-cell", style);
+        return label;
+      }
+
+    @Nonnull
+    public static HBox hBox (final @Nonnull String style, final @Nonnull Node ... children)
+      {
+        final HBox hBox = new HBox(children);
+        hBox.getStyleClass().setAll("list-cell", style);
+        return hBox;
       }
   }
