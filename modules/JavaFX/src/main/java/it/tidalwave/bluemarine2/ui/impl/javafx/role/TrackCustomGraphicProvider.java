@@ -61,7 +61,7 @@ public class TrackCustomGraphicProvider implements CustomGraphicProvider
         final Label lbIcon = label("track-icon", "");
         final Label lbTrack = label("track-index", String.format("%s%s.",
                 metadata.get(DISK_NUMBER).map(diskNumber -> diskLabel(diskNumber, diskCount)).orElse(""),
-                metadata.get(TRACK_NUMBER)));
+                metadata.get(TRACK_NUMBER).map(trackNumber -> "" + trackNumber).orElse("")));
         final Label lbName = label("track-label", track.as(Displayable).getDisplayName());
         final Label lbDuration = label("track-duration", format(metadata.get(DURATION).get()));
         return hBox("cell-container", lbIcon, lbTrack, lbName, lbDuration);
