@@ -83,7 +83,7 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${basedir}/target/zip</outputDirectory>
+                            <outputDirectory>${basedir}/target/tgz</outputDirectory>
                             <resources>
                                 <resource>
                                     <directory>src/main/resources</directory>
@@ -107,7 +107,7 @@
                         <configuration>
                             <includeScope>runtime</includeScope>
                             <overWrite>true</overWrite>
-                            <outputDirectory>${basedir}/target/zip/lib</outputDirectory>
+                            <outputDirectory>${basedir}/target/tgz/lib</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
@@ -117,7 +117,7 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
                     <descriptors>
-                        <descriptor>${basedir}/src/main/assembly/zip.xml</descriptor>
+                        <descriptor>${basedir}/src/main/assembly/tar.gz.xml</descriptor>
                     </descriptors>
                     <runOnlyAtExecutionRoot>false</runOnlyAtExecutionRoot>
                 </configuration>

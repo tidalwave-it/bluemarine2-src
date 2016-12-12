@@ -5,11 +5,11 @@
     <includeBaseDirectory>true</includeBaseDirectory>
     <includeSiteDirectory>false</includeSiteDirectory>
     <formats>
-        <format>zip</format>
+        <format>tar.gz</format>
     </formats>
     <fileSets>
         <fileSet>
-            <directory>${project.build.directory}/zip/</directory>
+            <directory>${project.build.directory}/tgz/</directory>
             <outputDirectory>/</outputDirectory>
         </fileSet>
     </fileSets>
