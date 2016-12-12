@@ -113,11 +113,11 @@ public class JavaFxAudioRendererPresentationDelegate implements AudioRendererPre
     private void initialize()
       {
 //        final ObservableMap<KeyCombination, Runnable> accelerators = btPlay.getScene().getAccelerators();
-        accelerators.put(new KeyCodeCombination(PLAY),     () -> btPlay.fire());
-        accelerators.put(new KeyCodeCombination(STOP),     () -> btStop.fire());
-        accelerators.put(new KeyCodeCombination(PAUSE),    () -> btPause.fire());
-        accelerators.put(new KeyCodeCombination(REWIND),   () -> btRewind.fire());
-        accelerators.put(new KeyCodeCombination(FAST_FWD), () -> btFastForward.fire());
+        accelerators.put(new KeyCodeCombination(PLAY),     btPlay::fire);
+        accelerators.put(new KeyCodeCombination(STOP),     btStop::fire);
+        accelerators.put(new KeyCodeCombination(PAUSE),    btPause::fire);
+        accelerators.put(new KeyCodeCombination(REWIND),   btRewind::fire);
+        accelerators.put(new KeyCodeCombination(FAST_FWD), btFastForward::fire);
       }
 
     @FXML // TODO: should be useless, but getScene().getAccelerators() doesn't work
