@@ -34,6 +34,8 @@
 
         <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass>
         <tft.javafx.vmargs>${tft.mainClass}</tft.javafx.vmargs>
+
+        <tft.maven-jdeb-plugin.version>1.5</tft.maven-jdeb-plugin.version> <!-- FIXME: push to Super POM -->
     </properties>
 
     <dependencyManagement>
@@ -209,7 +211,7 @@
             </properties>
         </profile>
 
-        <profile>
+        <profile> <!-- FIXME: push to Super POM -->
             <id>it.tidalwave-spring-messagebus-v1</id>
             <activation>
                 <file>
@@ -319,9 +321,59 @@
                 </plugins>
             </build>
         </profile>
+
+        <profile> <!-- FIXME: push to Super POM -->
+            <id>it.tidalwave-deb-v1</id>
+            <activation>
+                <file>
+                    <exists>src/config/activate-it.tidalwave-deb-v1-profile</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.vafer</groupId>
+                        <artifactId>jdeb</artifactId>
+                        <configuration>
+                            <signPackage>true</signPackage>
+                            <signMethod>dpkg-sig</signMethod>
+                            <signRole>origin</signRole>
+                            <key>${gpg.keyname}</key>
+                            <passphrase>${gpg.passphrase}</passphrase>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jdeb</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 
     <build>
+        <extensions> <!-- FIXME: push to Super POM -->
+            <extension>
+                <groupId>org.vafer</groupId>
+                <artifactId>jdeb</artifactId>
+                <version>${tft.maven-jdeb-plugin.version}</version>
+            </extension>
+        </extensions>
+
+        <pluginManagement> <!-- FIXME: push to Super POM -->
+            <plugins>
+                <plugin>
+                    <groupId>org.vafer</groupId>
+                    <artifactId>jdeb</artifactId>
+                    <version>${tft.maven-jdeb-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -380,7 +432,8 @@
         <module>Downloader</module>
         <module>Installers/LinuxJavaFXApplication</module>
         <module>Installers/LinuxApplicationArmV6EmbeddedJRE</module>
-        <module>Installers/LinuxService</module>
+        <module>Installers/Service</module>
+        <module>Installers/LinuxServiceDEB</module>
         <module>Installers/MacOSXJavaFXApplicationEmbeddedJRE</module>
         <module>JavaFX</module>
         <module>JavaFXApplication</module>

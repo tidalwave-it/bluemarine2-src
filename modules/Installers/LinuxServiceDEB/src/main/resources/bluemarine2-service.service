@@ -1,0 +1,9 @@
+[Unit]
+Description=blueMarine II headless service
+
+[Service]
+ExecStart=/opt/bluemarine2/bin/bluemarine2-service.sh
+#User=bluemarine2 # root is required for multicast networking
+
+[Install]
+WantedBy=multi-user.target
