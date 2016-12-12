@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.ui.audio.explorer.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import javax.inject.Provider;
 import java.util.Optional;
 import java.util.stream.Stream;
 import java.net.URI;
@@ -45,13 +44,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
 import it.tidalwave.bluemarine2.ui.audio.explorer.AudioExplorerPresentation;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
-import it.tidalwave.bluemarine2.util.JavaFXBinderSupplements;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
@@ -68,7 +65,7 @@ import static it.tidalwave.bluemarine2.ui.impl.javafx.NodeFactory.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable @Slf4j
+@Slf4j
 public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPresentation
   {
     @Getter @ToString
@@ -116,10 +113,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     private VBox vbDetails;
 
     @Inject
-    private Provider<JavaFXBinder> binder;
-
-    @Inject
-    private Provider<JavaFXBinderSupplements> binderSupplements;
+    private JavaFXBinder binder;
 
     @FXML
     private void initialize()
@@ -132,7 +126,7 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     @Override
     public void bind (final @Nonnull Properties properties, final @Nonnull UserAction upAction)
       {
-        binder.get().bind(btUp, upAction);
+        binder.bind(btUp, upAction);
         lbFolderName.textProperty().bind(properties.folderNameProperty());
       }
 
@@ -144,13 +138,13 @@ public class JavaFxAudioExplorerPresentationDelegate implements AudioExplorerPre
     @Override
     public void populateBrowsers (final @Nonnull PresentationModel pm)
       {
-        binderSupplements.get().bindToggleButtons(hbBrowserButtons, pm);
+        binder.bindToggleButtons(hbBrowserButtons, pm);
       }
 
     @Override
     public void populateItems (final @Nonnull PresentationModel pm, final @Nonnull Optional<Object> optionalMemento)
       {
-        binder.get().bind(lvFiles, pm, () ->
+        binder.bind(lvFiles, pm, () ->
           {
             if (!lvFiles.getItems().isEmpty())
               {

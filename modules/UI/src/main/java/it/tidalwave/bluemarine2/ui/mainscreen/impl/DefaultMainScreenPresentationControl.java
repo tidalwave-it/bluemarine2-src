@@ -48,22 +48,22 @@ import static it.tidalwave.bluemarine2.ui.util.BundleUtilities.*;
 /***********************************************************************************************************************
  *
  * The control of the {@link MainScreenPresentation}.
- * 
+ *
  * @stereotype  Control
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @SimpleMessageSubscriber @Slf4j
-public class DefaultMainScreenPresentationControl 
+public class DefaultMainScreenPresentationControl
   {
     @Inject
     private MainScreenPresentation presentation;
 
     @Inject
     private FlowController flowController;
-    
+
     @Inject
     private ListableBeanFactory beanFactory;
 
