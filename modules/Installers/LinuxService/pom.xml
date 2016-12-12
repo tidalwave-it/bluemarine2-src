@@ -83,7 +83,7 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${basedir}/target/tgz</outputDirectory>
+                            <outputDirectory>${basedir}/target/bin</outputDirectory>
                             <resources>
                                 <resource>
                                     <directory>src/main/resources</directory>

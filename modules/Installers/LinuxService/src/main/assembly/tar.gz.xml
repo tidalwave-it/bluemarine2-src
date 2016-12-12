@@ -12,5 +12,10 @@
             <directory>${project.build.directory}/tgz/</directory>
             <outputDirectory>/</outputDirectory>
         </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}/bin/</directory>
+            <fileMode>755</fileMode>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
     </fileSets>
 </assembly>
