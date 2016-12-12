@@ -26,40 +26,29 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.service.impl;
+package it.tidalwave.bluemarine2.util;
 
-import javax.annotation.Nonnull;
-import it.tidalwave.bluemarine2.service.Service;
-import it.tidalwave.bluemarine2.util.Logging;
-import org.slf4j.bridge.SLF4JBridgeHandler;
+import java.io.File;
+import static lombok.AccessLevel.PRIVATE;
+import lombok.NoArgsConstructor;
 
 /***********************************************************************************************************************
  *
- * The main class initializes the logging facility and starts the JavaFX application.
- *
- * @author  Fabrizio Giudici
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class Main
+@NoArgsConstructor(access = PRIVATE)
+public final class Logging
   {
-    private final static SpringContextHelper INSTANCE = new SpringContextHelper();
+    private static final String PROP_LOG_OLDER = "blueMarine2.logFolder";
 
-    public static void main (final @Nonnull String ... args)
+    public static void setupLogFolder()
       {
-        try
+        if (System.getProperty(PROP_LOG_OLDER) == null)
           {
-            Logging.setupLogFolder();
-            SLF4JBridgeHandler.removeHandlersForRootLogger();
-            SLF4JBridgeHandler.install();
-            INSTANCE.initialize();
-            INSTANCE.getApplicationContext().getBean(Service.class).boot();
-          }
-        catch (Throwable t)
-          {
-            // Don't use logging facilities here, they could be not initialized
-            t.printStackTrace();
-            System.exit(-1);
+            final String logFolder = new File(System.getProperty("user.home"), ".blueMarine2/logs").getAbsolutePath();
+            System.setProperty(PROP_LOG_OLDER, logFolder);
           }
       }
   }
