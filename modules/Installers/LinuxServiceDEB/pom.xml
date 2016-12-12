@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  #%L
+  *********************************************************************************************************************
+
+  blueMarine - lightweight MediaCenter
+  %%
+  Copyright (C) 2015 - 2016 Tidalwave_s.a.s. (http://tidalwave.it)
+  %%
+
+  *********************************************************************************************************************
+
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+  the License. You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+  an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations under the License.
+
+  *********************************************************************************************************************
+
+  $Id$
+
+*********************************************************************************************************************
+#L%
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>it.tidalwave.bluemarine2</groupId>
+        <artifactId>blueMarine2-modules</artifactId>
+        <version>1.0-ALPHA-11-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+
+    <!-- ===============================================================================================================
+
+
+
+
+    ================================================================================================================ -->
+
+    <groupId>it.tidalwave.bluemarine2</groupId>
+    <artifactId>bluemarine2-service-linux</artifactId>
+    <version>1.0-ALPHA-11-SNAPSHOT</version>
+    <packaging>deb</packaging>
+    <name>blueMarine II - Installer - Service, Linux DEB</name>
+    <description>This module creates a Linux service bundle.</description>
+
+    <properties>
+        <linux-user>bluemarine2</linux-user>
+        <linux-group>nogroup</linux-group>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2</groupId>
+                                    <artifactId>bluemarine2-service</artifactId>
+                                    <classifier>bin</classifier>
+                                    <version>${project.version}</version>
+                                    <type>tar.gz</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.vafer</groupId>
+                <artifactId>jdeb</artifactId>
+                <configuration>
+                    <!-- TODO: copyright? -->
+                    <dataSet>
+                        <data>
+                            <type>archive</type>
+                            <src>target/bluemarine2-service-${project.version}-bin.tar.gz</src>
+                            <mapper>
+                                <type>perm</type>
+                                <prefix>/opt</prefix>
+                                <user>${linux-user}</user>
+                                <group>${linux-group}</group>
+                                <dirmode>755</dirmode>
+                            </mapper>
+                        </data>
+                        <data>
+                            <type>link</type>
+                            <linkName>/opt/bluemarine2-service</linkName>
+                            <linkTarget>/opt/bluemarine2-service-${project.version}</linkTarget>
+                            <symlink>true</symlink>
+                            <mapper>
+                                <type>perm</type>
+                                <user>${linux-user}</user>
+                                <group>${linux-group}</group>
+                            </mapper>
+                        </data>
+                        <data>
+                            <type>file</type>
+                            <src>${project.build.directory}/classes/bluemarine2-service.service</src>
+                            <dst>/etc/systemd/system/bluemarine2-service.service</dst>
+                            <mapper>
+                                <type>perm</type>
+                                <user>${linux-user}</user>
+                                <group>${linux-group}</group>
+                            </mapper>
+                        </data>
+                    </dataSet>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

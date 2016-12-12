@@ -46,11 +46,11 @@
     ================================================================================================================ -->
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>bluemarine2-service-linux</artifactId>
+    <artifactId>bluemarine2-service</artifactId>
     <version>1.0-ALPHA-11-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine II - Installer - Service, Linux</name>
-    <description>This module creates a Linux service bundle.</description>
+    <name>blueMarine II - Installer - Service</name>
+    <description>This module creates a headless service.</description>
 
     <dependencies>
         <dependency>
@@ -107,7 +107,7 @@
                         <configuration>
                             <includeScope>runtime</includeScope>
                             <overWrite>true</overWrite>
-                            <outputDirectory>${basedir}/target/tgz/lib</outputDirectory>
+                            <outputDirectory>${basedir}/target/dist/lib</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
@@ -117,7 +117,8 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
                     <descriptors>
-                        <descriptor>${basedir}/src/main/assembly/tar.gz.xml</descriptor>
+                        <descriptor>src/main/assembly/tar.gz.xml</descriptor>
+                        <descriptor>src/main/assembly/zip.xml</descriptor>
                     </descriptors>
                     <runOnlyAtExecutionRoot>false</runOnlyAtExecutionRoot>
                 </configuration>
