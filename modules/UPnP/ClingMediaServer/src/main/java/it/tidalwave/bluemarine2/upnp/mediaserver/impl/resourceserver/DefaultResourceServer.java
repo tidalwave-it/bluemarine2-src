@@ -61,8 +61,7 @@ import it.tidalwave.bluemarine2.model.PropertyNames;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static javax.servlet.http.HttpServletResponse.*;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedToNativeForm;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
+import static it.tidalwave.bluemarine2.util.BMT46Workaround.normalizedPath;
 
 /***********************************************************************************************************************
  *
@@ -121,7 +120,7 @@ public class DefaultResourceServer implements ResourceServer
           throws ServletException, IOException
           {
             final Path resourcePath =
-                    normalizedPath(rootPath.resolve(urlDecoded(request.getRequestURI().replaceAll("^/", ""))));
+                    normalizedPath(rootPath.resolve(urlDecoded(request.getRequestURI().replaceAll("^/", ""))).toString());
             log.debug(">>>> resource path: {}", resourcePath);
 
 //            if (isTroubled(resourcePath))

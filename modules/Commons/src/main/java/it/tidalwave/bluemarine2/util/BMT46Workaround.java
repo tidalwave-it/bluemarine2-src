@@ -112,7 +112,7 @@ public final class BMT46Workaround
 
     // See http://askubuntu.com/questions/533690/rsync-with-special-character-files-not-working-between-mac-and-linux
     @CheckForNull
-    public static String normalized (final @Nullable String string)
+    public static String normalizedToNativeForm (final @Nullable String string)
       {
         return normalized(string, NATIVE_FORM);
       }

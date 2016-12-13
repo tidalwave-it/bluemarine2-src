@@ -34,9 +34,12 @@ import javax.annotation.concurrent.Immutable;
 import javax.inject.Inject;
 import java.time.Duration;
 import java.util.Optional;
+import java.nio.file.InvalidPathException;
+import java.nio.file.Paths;
 import java.nio.file.Path;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.openrdf.repository.Repository;
+import org.openrdf.query.Binding;
 import org.openrdf.query.BindingSet;
 import it.tidalwave.bluemarine2.util.Formatters;
 import it.tidalwave.bluemarine2.model.AudioFile;
@@ -49,13 +52,8 @@ import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder
 import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.util.BMT46Workaround.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import org.openrdf.query.Binding;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedToNativeForm;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
-import java.nio.file.InvalidPathException;
-import java.nio.file.Paths;
+import static it.tidalwave.bluemarine2.util.BMT46Workaround.normalizedToNativeForm;
 
 /***********************************************************************************************************************
  *
@@ -108,7 +106,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
       {
         super(repository, bindingSet, "track");
 
-        this.audioFilePath = normalizedPath(toString(bindingSet.getBinding("path")).get());
+        this.audioFilePath = fixedPath(bindingSet.getBinding("path"));
         this.duration = toDuration(bindingSet.getBinding("duration"));
         this.trackNumber = toInteger(bindingSet.getBinding("track_number"));
         this.diskNumber = toInteger(bindingSet.getBinding("disk_number"));
