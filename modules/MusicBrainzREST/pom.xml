@@ -7,14 +7,14 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-11-SNAPSHOT</version>
+        <version>1.0-ALPHA-11</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-musicbrainz</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-11-SNAPSHOT</version>
+    <version>1.0-ALPHA-11</version>
     <name>blueMarine II - MusicBrainz REST</name>
 
     <properties>
