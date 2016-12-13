@@ -323,11 +323,11 @@
         </profile>
 
         <profile> <!-- FIXME: push to Super POM -->
-            <id>it.tidalwave-deb-v1</id>
+            <!--<id>it.tidalwave-deb-v1</id>-->
             <activation>
-                <file>
-                    <exists>src/config/activate-it.tidalwave-deb-v1-profile</exists>
-                </file>
+                <property>
+                    <name>gpg.keyname</name>
+                </property>
             </activation>
             <build>
                 <plugins>
@@ -341,6 +341,23 @@
                             <key>${gpg.keyname}</key>
                             <passphrase>${gpg.passphrase}</passphrase>
                         </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile> <!-- FIXME: push to Super POM -->
+            <id>it.tidalwave-deb-v1</id>
+            <activation>
+                <file>
+                    <exists>src/config/activate-it.tidalwave-deb-v1-profile</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.vafer</groupId>
+                        <artifactId>jdeb</artifactId>
                         <executions>
                             <execution>
                                 <phase>package</phase>
