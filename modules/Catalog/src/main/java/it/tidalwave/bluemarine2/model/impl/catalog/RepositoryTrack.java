@@ -51,6 +51,11 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.util.BMT46Workaround.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import org.openrdf.query.Binding;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedToNativeForm;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
+import java.nio.file.InvalidPathException;
+import java.nio.file.Paths;
 
 /***********************************************************************************************************************
  *
@@ -94,6 +99,11 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
     private final Optional<Long> fileSize;
 
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     public RepositoryTrack (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
         super(repository, bindingSet, "track");
@@ -113,12 +123,22 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
                                                           .with(DISK_COUNT, diskCount);
       }
 
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     @Override @Nonnull
     public Optional<Record> getRecord()
       {
         return new RepositoryRecordFinder(repository).recordOf(id).optionalFirstResult();
       }
 
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     @Override @Nonnull
     public synchronized AudioFile getAudioFile()
       {
@@ -137,11 +157,44 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
         return audioFile;
       }
 
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     @Override @Nonnull
     public String toString()
       {
         return String.format("RepositoryTrack(%02d/%02d %02d, %s, rdfs:label=%s, %s, %s)",
                              diskNumber.orElse(1), diskCount.orElse(1), trackNumber.orElse(1),
                              duration.map(Formatters::format).orElse("??:??"), rdfsLabel, audioFilePath, id);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Tries to fix a path for character normalization issues (see BMT-46). The idea is to first normalize the encoding
+     * to the native form. If it doesn't work, a broken path is replaced to avoid further errors (of course, the
+     * resource won't be available when requested).
+     * It doesn't try to call normalizedPath() because it's expensive.
+     *
+     * @param   binding     the binding
+     * @return              the path
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private Path fixedPath (final @Nonnull Binding binding)
+      {
+        try // FIXME: see BMT-46 - try all posibile normalizations
+          {
+            return Paths.get(normalizedToNativeForm(toString(binding).get()));
+          }
+        catch (InvalidPathException e)
+          {
+            // FIXME: perhaps we could try a similar trick to normalizedPath() - the problem being the fact that it
+            // currently accepts a Path, but we can't convert to a Path. It should be rewritten to work with a String
+            // in input.
+            log.error("Invalid path {}", e.toString());
+            return Paths.get("broken SEE BMT-46");
+          }
       }
   }

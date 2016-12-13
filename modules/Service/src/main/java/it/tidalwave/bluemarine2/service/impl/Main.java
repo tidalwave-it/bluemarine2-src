@@ -29,8 +29,8 @@
 package it.tidalwave.bluemarine2.service.impl;
 
 import javax.annotation.Nonnull;
-import java.io.File;
 import it.tidalwave.bluemarine2.service.Service;
+import it.tidalwave.bluemarine2.util.Logging;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 
 /***********************************************************************************************************************
@@ -49,14 +49,9 @@ public class Main
       {
         try
           {
+            Logging.setupLogFolder();
             SLF4JBridgeHandler.removeHandlersForRootLogger();
             SLF4JBridgeHandler.install();
-            // FIXME
-//            final PreferencesHandler preferenceHandler = new DefaultPreferencesHandler();
-//            final Path logfolder = preferenceHandler.getLogFolder();
-//            System.setProperty("it.tidalwave.bluemarine2.logFolder", logfolder.toFile().getAbsolutePath());
-            System.setProperty("it.tidalwave.bluemarine2.logFolder",
-                    new File(System.getProperty("user.home"), ".blueMarine2/logs").getAbsolutePath());
             INSTANCE.initialize();
             INSTANCE.getApplicationContext().getBean(Service.class).boot();
           }

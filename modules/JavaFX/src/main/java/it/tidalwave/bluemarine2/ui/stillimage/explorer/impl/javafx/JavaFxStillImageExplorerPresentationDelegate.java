@@ -28,24 +28,22 @@
  */
 package it.tidalwave.bluemarine2.ui.stillimage.explorer.impl.javafx;
 
-import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.bluemarine2.ui.stillimage.explorer.StillImageExplorerPresentation;
 
 /***********************************************************************************************************************
  *
  * The JavaFX Delegate for {@link StillImageExplorerPresentation}.
- * 
+ *
  * @stereotype  JavaFXDelegate
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable
 public class JavaFxStillImageExplorerPresentationDelegate implements StillImageExplorerPresentation
   {
     @Override
-    public void showUp() 
-      {  
+    public void showUp()
+      {
       }
   }

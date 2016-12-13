@@ -7,14 +7,14 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-10-SNAPSHOT</version>
+        <version>1.0-ALPHA-12-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-10-SNAPSHOT</version>
+    <version>1.0-ALPHA-12-SNAPSHOT</version>
     <name>blueMarine II - UI - JavaFX</name>
     <description>blueMarine2 - UI - JavaFX</description>
 
@@ -35,10 +35,6 @@
         <dependency>
             <groupId>it.tidalwave.steelblue</groupId>
             <artifactId>it-tidalwave-role-ui-javafx</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-role-ui-javafxsupplements</artifactId>
         </dependency>
 
         <dependency>
@@ -64,16 +60,6 @@
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aspects</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.aspectj</groupId>
-                    <artifactId>aspectjweaver</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
     </dependencies>
 

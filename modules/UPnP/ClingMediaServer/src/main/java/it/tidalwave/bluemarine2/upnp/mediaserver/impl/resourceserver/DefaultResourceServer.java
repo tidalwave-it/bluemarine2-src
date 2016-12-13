@@ -61,6 +61,8 @@ import it.tidalwave.bluemarine2.model.PropertyNames;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static javax.servlet.http.HttpServletResponse.*;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedToNativeForm;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
 
 /***********************************************************************************************************************
  *
@@ -118,8 +120,16 @@ public class DefaultResourceServer implements ResourceServer
         protected void doGet (final @Nonnull HttpServletRequest request, final @Nonnull HttpServletResponse response)
           throws ServletException, IOException
           {
-            final Path resourcePath = rootPath.resolve(urlDecoded(request.getRequestURI().replaceAll("^/", "")));
+            final Path resourcePath =
+                    normalizedPath(rootPath.resolve(urlDecoded(request.getRequestURI().replaceAll("^/", ""))));
             log.debug(">>>> resource path: {}", resourcePath);
+
+//            if (isTroubled(resourcePath))
+//              {
+//                log.error(">>>> path affected by BMT-46: {}", resourcePath);
+//                response.setStatus(SC_INTERNAL_SERVER_ERROR);
+//                return;
+//              }
 
             if (!Files.exists(resourcePath))
               {
@@ -362,8 +372,8 @@ public class DefaultResourceServer implements ResourceServer
           {
             throw new RuntimeException(e);
           }
-
       }
+
     /*******************************************************************************************************************
      *
      *
