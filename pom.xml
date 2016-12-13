@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>blueMarine2</artifactId>
+    <artifactId>bluemarine2</artifactId>
     <version>1.0-ALPHA-12-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine II</name>
