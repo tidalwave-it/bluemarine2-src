@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "Stopping bluemarine2-service... "
+systemctl stop bluemarine2-service
+systemctl disable bluemarine2-service

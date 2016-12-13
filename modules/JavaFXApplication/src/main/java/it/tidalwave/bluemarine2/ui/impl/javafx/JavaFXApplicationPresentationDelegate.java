@@ -31,8 +31,8 @@ package it.tidalwave.bluemarine2.ui.impl.javafx;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import javax.inject.Provider;
-import java.util.HashMap;
-import java.util.Map;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import javafx.fxml.FXML;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -44,13 +44,10 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
 import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.util.Key;
-import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import it.tidalwave.bluemarine2.service.Service;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -70,7 +67,7 @@ public class JavaFXApplicationPresentationDelegate
     private Provider<JavaFxFlowController> flowController;
 
     @Inject
-    private Provider<MessageBus> messageBus;
+    private Provider<Service> service;
 
     @FXML
     private GridPane gpGridPane;
@@ -121,20 +118,12 @@ public class JavaFXApplicationPresentationDelegate
         // END FIXME
 
         flowController.get().setContentPane(spContent);
-        final Map<Key<?>, Object> properties = new HashMap<>();
-        final Path configPath = getConfigurationPath();
-        log.info("configPath is {}", configPath);
-        final Path repositoryPath = configPath.resolve("repository.n3");
-        final Path cachePath = configPath.resolve("cache");
-        properties.put(it.tidalwave.bluemarine2.persistence.PropertyNames.REPOSITORY_PATH, repositoryPath);
-        properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, configPath);
-        properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, cachePath);
-        messageBus.get().publish(new PowerOnNotification(properties));
+        service.get().boot();
       }
 
     /*******************************************************************************************************************
      *
-     * Binds the BACK_SPACE key to backward navigation.
+     * Binds the BACK_SPACE key to backward navigation, which for the main UI means to quit the application.
      *
      * @param   event   the key event
      *
@@ -147,42 +136,5 @@ public class JavaFXApplicationPresentationDelegate
             log.debug("onKeyReleased({})", event);
             flowController.get().tryToDismissCurrentPresentation();
           }
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private Path getConfigurationPath()
-      {
-        String s = System.getProperty("blueMarine2.workspace");
-
-        if (s != null)
-          {
-            return Paths.get(s);
-          }
-
-        s = System.getProperty("user.home", "/");
-        final String osName = System.getProperty("os.name").toLowerCase();
-
-        switch (osName)
-          {
-            case "linux":
-                s += "/.blueMarine2";
-                break;
-
-            case "mac os x":
-                s += "/Library/Application Support/blueMarine2";
-                break;
-
-            case "windows":
-                s += "/.blueMarine2";
-                break;
-          }
-
-        return Paths.get(s);
       }
   }

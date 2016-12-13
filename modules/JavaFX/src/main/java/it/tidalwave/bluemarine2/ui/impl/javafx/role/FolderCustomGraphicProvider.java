@@ -30,13 +30,12 @@ package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 
 import javax.annotation.Nonnull;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
 import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.bluemarine2.ui.impl.javafx.NodeFactory.*;
 
 /***********************************************************************************************************************
  *
@@ -44,21 +43,17 @@ import static it.tidalwave.role.Displayable.Displayable;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @DciRole(datumType = MediaFolder.class) 
+@RequiredArgsConstructor @DciRole(datumType = MediaFolder.class)
 public class FolderCustomGraphicProvider implements CustomGraphicProvider
   {
     @Nonnull
     private final MediaFolder folder;
-    
+
     @Override @Nonnull
-    public Node getGraphic() 
+    public Node getGraphic()
       {
-        final Label lbIcon = new Label("");
-        lbIcon.getStyleClass().setAll("list-cell", "folder-icon");
-        final Label lbName = new Label(folder.as(Displayable).getDisplayName());
-        lbName.getStyleClass().setAll("list-cell", "folder-label");
-        final HBox hBox = new HBox(lbIcon, lbName);
-        hBox.getStyleClass().setAll("list-cell", "cell-container");
-        return hBox;
+        return hBox("cell-container",
+                    label("folder-icon", ""),
+                    label("folder-label", folder.as(Displayable).getDisplayName()));
       }
   }

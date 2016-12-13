@@ -7,13 +7,13 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2</artifactId>
-        <version>1.0-ALPHA-10-SNAPSHOT</version>
+        <version>1.0-ALPHA-12-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>blueMarine2-modules</artifactId>
-    <version>1.0-ALPHA-10-SNAPSHOT</version>
+    <version>1.0-ALPHA-12-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine II (modules)</name>
     <description>blueMarine2 (modules)</description>
@@ -28,12 +28,14 @@
         <!--<jetty.version>9.3.8.v20160314</jetty.version>-->
         <mp3agic.version>0.8.3</mp3agic.version>
         <sesame.version>2.8.0</sesame.version>
-        <steelblue.version>1.0-ALPHA-11</steelblue.version>
+        <steelblue.version>1.0-ALPHA-12</steelblue.version>
         <thesefoolishthings.version>3.0.3</thesefoolishthings.version>
         <uuid.version>2.1.5-201007271250</uuid.version>
 
         <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass>
         <tft.javafx.vmargs>${tft.mainClass}</tft.javafx.vmargs>
+
+        <tft.maven-jdeb-plugin.version>1.5</tft.maven-jdeb-plugin.version> <!-- FIXME: push to Super POM -->
     </properties>
 
     <dependencyManagement>
@@ -209,7 +211,7 @@
             </properties>
         </profile>
 
-        <profile>
+        <profile> <!-- FIXME: push to Super POM -->
             <id>it.tidalwave-spring-messagebus-v1</id>
             <activation>
                 <file>
@@ -319,9 +321,59 @@
                 </plugins>
             </build>
         </profile>
+
+        <profile> <!-- FIXME: push to Super POM -->
+            <id>it.tidalwave-deb-v1</id>
+            <activation>
+                <file>
+                    <exists>src/config/activate-it.tidalwave-deb-v1-profile</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.vafer</groupId>
+                        <artifactId>jdeb</artifactId>
+                        <configuration>
+                            <signPackage>true</signPackage>
+                            <signMethod>dpkg-sig</signMethod>
+                            <signRole>origin</signRole>
+                            <key>${gpg.keyname}</key>
+                            <passphrase>${gpg.passphrase}</passphrase>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jdeb</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 
     <build>
+        <extensions> <!-- FIXME: push to Super POM -->
+            <extension>
+                <groupId>org.vafer</groupId>
+                <artifactId>jdeb</artifactId>
+                <version>${tft.maven-jdeb-plugin.version}</version>
+            </extension>
+        </extensions>
+
+        <pluginManagement> <!-- FIXME: push to Super POM -->
+            <plugins>
+                <plugin>
+                    <groupId>org.vafer</groupId>
+                    <artifactId>jdeb</artifactId>
+                    <version>${tft.maven-jdeb-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -378,9 +430,11 @@
         <module>CECWrapper</module>
         <module>Commons</module>
         <module>Downloader</module>
-        <module>Installers/Linux</module>
-        <module>Installers/LinuxArmV6EmbeddedJRE</module>
-        <module>Installers/MacOSXEmbeddedJRE</module>
+        <module>Installers/LinuxJavaFXApplication</module>
+        <module>Installers/LinuxApplicationArmV6EmbeddedJRE</module>
+        <module>Installers/Service</module>
+        <module>Installers/LinuxServiceDEB</module>
+        <module>Installers/MacOSXJavaFXApplicationEmbeddedJRE</module>
         <module>JavaFX</module>
         <module>JavaFXApplication</module>
         <module>MediaScanner</module>
@@ -394,6 +448,7 @@
         <module>MediaServer</module>
         <module>TestCommons</module>
         <module>Vocabulary</module>
+        <module>Service</module>
     </modules>
 
 </project>

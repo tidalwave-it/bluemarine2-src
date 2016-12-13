@@ -28,24 +28,22 @@
  */
 package it.tidalwave.bluemarine2.ui.video.explorer.impl.javafx;
 
-import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.bluemarine2.ui.video.explorer.VideoExplorerPresentation;
 
 /***********************************************************************************************************************
  *
  * The JavaFX Delegate for {@link VideoExplorerPresentation}.
- * 
+ *
  * @stereotype  JavaFXDelegate
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable
 public class JavaFxVideoExplorerPresentationDelegate implements VideoExplorerPresentation
   {
     @Override
-    public void showUp() 
+    public void showUp()
       {
       }
   }
