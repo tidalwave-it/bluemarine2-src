@@ -7,14 +7,14 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-10-SNAPSHOT</version>
+        <version>1.0-ALPHA-12-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-commons-test</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-10-SNAPSHOT</version>
+    <version>1.0-ALPHA-12-SNAPSHOT</version>
     <name>blueMarine II - Commons for Tests</name>
 
     <dependencies>
@@ -39,6 +39,16 @@
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-util-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>

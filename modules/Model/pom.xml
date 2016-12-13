@@ -7,14 +7,14 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-10-SNAPSHOT</version>
+        <version>1.0-ALPHA-12-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-model</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-10-SNAPSHOT</version>
+    <version>1.0-ALPHA-12-SNAPSHOT</version>
     <name>blueMarine II - Model</name>
 
     <dependencies>
@@ -58,5 +58,34 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-test-resources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>expected-metadata-iTunes-fg-20160504-1</artifactId>
+                                    <version>2</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.basedir}/target/test-classes/expected-results/metadata</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

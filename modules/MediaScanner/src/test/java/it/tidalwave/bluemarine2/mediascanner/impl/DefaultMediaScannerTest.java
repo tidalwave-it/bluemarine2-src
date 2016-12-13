@@ -51,6 +51,8 @@ import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
+import java.io.FileNotFoundException;
+import java.nio.file.Files;
 
 /***********************************************************************************************************************
  *
@@ -112,7 +114,6 @@ public class DefaultMediaScannerTest extends SpringTestSupport
 
         scanCompleted = new CountDownLatch(1);
         messageBus.subscribe(ScanCompleted.class, onScanCompleted);
-
       }
 
     @Test(dataProvider = "dataSetNames") // FIXME: because of BMT-46
@@ -120,6 +121,12 @@ public class DefaultMediaScannerTest extends SpringTestSupport
       throws Exception
       {
         final Path p = musicTestSets.resolve(dataSetName);
+
+        if (!Files.isDirectory(p))
+          {
+            throw new FileNotFoundException("Missing test folder: " + p);
+          }
+        
         // FIXME: we should find a way to force HttpClient to pretend the network doesn't work
 //        log.warn("******* YOU SHOULD RUN THIS TEST WITH THE NETWORK DISCONNECTED");
         final Map<Key<?>, Object> properties = new HashMap<>();
@@ -147,7 +154,8 @@ public class DefaultMediaScannerTest extends SpringTestSupport
       {
         return new Object[][]
           {
-              { "iTunes-fg-20160504-1" }
+              { "iTunes-fg-20160504-1" },
+              { "iTunes-fg-20161210-1" }
           };
       }
   }
