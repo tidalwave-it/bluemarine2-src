@@ -93,7 +93,7 @@
                     <dataSet>
                         <data>
                             <type>archive</type>
-                            <src>target/bluemarine2-service-${project.version}-bin.tar.gz</src>
+                            <src>${project.build.directory}/bluemarine2-service-${project.version}-bin.tar.gz</src>
                             <mapper>
                                 <type>perm</type>
                                 <prefix>/opt</prefix>
