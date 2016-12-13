@@ -29,15 +29,13 @@
 package it.tidalwave.bluemarine2.ui.impl.javafx.role;
 
 import javax.annotation.Nonnull;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
 import it.tidalwave.ui.role.javafx.CustomGraphicProvider;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.bluemarine2.ui.impl.javafx.NodeFactory.*;
 
 /***********************************************************************************************************************
  *
@@ -45,21 +43,17 @@ import static it.tidalwave.role.Displayable.Displayable;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @DciRole(datumType = MusicArtist.class) 
+@RequiredArgsConstructor @DciRole(datumType = MusicArtist.class)
 public class MusicArtistCustomGraphicProvider implements CustomGraphicProvider
   {
     @Nonnull
     private final MusicArtist artist;
-    
+
     @Override @Nonnull
-    public Node getGraphic() 
+    public Node getGraphic()
       {
-        final Label lbIcon = new Label("");
-        lbIcon.getStyleClass().setAll("list-cell", (artist.getType() == 1) ? "artist-icon" : "artist-group-icon"); 
-        final Label lbName = new Label(artist.as(Displayable).getDisplayName());
-        lbName.getStyleClass().setAll("list-cell", "artist-label");
-        final HBox hBox = new HBox(lbIcon, lbName);
-        hBox.getStyleClass().setAll("list-cell", "cell-container");
-        return hBox;
+        return hBox("cell-container",
+                    label((artist.getType() == 1) ? "artist-icon" : "artist-group-icon", ""),
+                    label("artist-label", artist.as(Displayable).getDisplayName()));
       }
   }

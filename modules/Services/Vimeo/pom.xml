@@ -6,13 +6,13 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-services-modules</artifactId>
-        <version>1.0-ALPHA-10-SNAPSHOT</version>
+        <version>1.0-ALPHA-12-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-services-vimeo</artifactId>
-    <version>1.0-ALPHA-10-SNAPSHOT</version>
+    <version>1.0-ALPHA-12-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>blueMarine II - Services - Vimeo</name>
     <description>blueMarine II - Services - Vimeo</description>

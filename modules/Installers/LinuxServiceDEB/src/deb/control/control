@@ -1,0 +1,10 @@
+Package: blueMarine-II-Headless-Service
+Version: [[version]]
+Section: misc
+Priority: optional
+Architecture: all
+Depends: java8-runtime
+Maintainer: Fabrizio Giudici <fabrizio.giudici@tidalwave.it>
+Description: blueMarine II Headless Service
+Distribution: development
+Homepage: http://bluemarine.tidalwave.it

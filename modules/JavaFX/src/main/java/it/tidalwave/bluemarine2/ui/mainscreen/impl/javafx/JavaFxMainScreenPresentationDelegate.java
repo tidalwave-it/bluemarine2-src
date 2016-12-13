@@ -30,44 +30,40 @@ package it.tidalwave.bluemarine2.ui.mainscreen.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import javax.inject.Provider;
 import java.util.Collection;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
-import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.javafx.JavaFXBinder;
-import it.tidalwave.bluemarine2.ui.impl.javafx.MainMenuBarBinder;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 
 /***********************************************************************************************************************
  *
  * The JavaFX Delegate for {@link MainScreenPresentation}.
- * 
+ *
  * @stereotype  JavaFXDelegate
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable
 public class JavaFxMainScreenPresentationDelegate implements MainScreenPresentation
   {
     @FXML
     private GridPane gpMainMenuBar;
-    
+
     @FXML
     private Button btPowerOff;
 
     @Inject
-    private Provider<JavaFXBinder> binder;
+    private JavaFXBinder binder;
 
     @Override
     public void bind (final @Nonnull Collection<UserAction> mainMenuActions, final @Nonnull UserAction powerOffAction)
       {
-        new MainMenuBarBinder(gpMainMenuBar).bind(mainMenuActions);
-        binder.get().bind(btPowerOff, powerOffAction);
+        binder.bindButtonsInPane(gpMainMenuBar, mainMenuActions);
+        binder.bind(btPowerOff, powerOffAction);
       }
 
     @Override
