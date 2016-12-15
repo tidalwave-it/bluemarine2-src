@@ -126,7 +126,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
           {
             throw new FileNotFoundException("Missing test folder: " + p);
           }
-        
+
         // FIXME: we should find a way to force HttpClient to pretend the network doesn't work
 //        log.warn("******* YOU SHOULD RUN THIS TEST WITH THE NETWORK DISCONNECTED");
         final Map<Key<?>, Object> properties = new HashMap<>();
@@ -155,7 +155,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
         return new Object[][]
           {
               { "iTunes-fg-20160504-1" },
-              { "iTunes-fg-20161210-1" }
+//              { "iTunes-fg-20161210-1" } not yet deployed
           };
       }
   }
