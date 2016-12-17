@@ -164,7 +164,7 @@ public final class Miscellaneous
           {
             File fileSoFar = new File("/");
 
-            for (final String element : fileSoFar.toString().split("/"))
+            for (final String element : path.toString().split("/"))
               {
                 log.trace(">>>> fileSoFar: {} element: {}", fileSoFar, element);
                 final File resolved = new File(fileSoFar, element);
