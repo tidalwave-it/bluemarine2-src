@@ -109,7 +109,7 @@ public final class Miscellaneous
     public static Path normalizedPath (final @Nonnull Path path)
       throws IOException
       {
-        if (Files.exists(path))
+        if (Files.exists(path) && path.toFile().exists())
           {
             return path;
           }
