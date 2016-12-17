@@ -99,6 +99,8 @@ public class DefaultMediaScannerTest extends SpringTestSupport
     public void checkTestSets()
       {
         musicTestSets = TestSetLocator.getMusicTestSetsPath();
+
+        System.getProperties().forEach((name, value) -> log.info(">>>> {}: {}", name, value));
       }
 
     @BeforeMethod
