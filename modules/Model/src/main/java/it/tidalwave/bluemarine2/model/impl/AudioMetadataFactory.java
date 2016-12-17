@@ -38,6 +38,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
@@ -56,7 +57,7 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static lombok.AccessLevel.PRIVATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import java.nio.file.Files;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
 
 /***********************************************************************************************************************
  *
@@ -81,7 +82,7 @@ public final class AudioMetadataFactory
 
         try
           {
-            final Path aPath = path.toAbsolutePath();
+            final Path aPath = normalizedPath(path.toAbsolutePath());
             log.debug("path: {}", aPath);
             audioFile = AudioFileIO.read(aPath.toFile());
 
