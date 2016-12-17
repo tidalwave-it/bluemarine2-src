@@ -313,13 +313,16 @@ public class DefaultResourceServer implements ResourceServer
           {
             final NetworkInterface itf =  en.nextElement();
 
-            for (final Enumeration<InetAddress> ee = itf.getInetAddresses(); ee.hasMoreElements() ;)
+            if (!itf.getName().startsWith("docker"))
               {
-                final InetAddress address = ee.nextElement();
-
-                if (!address.isLoopbackAddress() && (address instanceof Inet4Address))
+                for (final Enumeration<InetAddress> ee = itf.getInetAddresses(); ee.hasMoreElements() ;)
                   {
-                    return address;
+                    final InetAddress address = ee.nextElement();
+
+                    if (!address.isLoopbackAddress() && (address instanceof Inet4Address))
+                      {
+                        return address;
+                      }
                   }
               }
           }
