@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.time.Instant;
+import java.text.Normalizer;
 import java.util.Date;
 import java.util.Optional;
 import java.io.ByteArrayInputStream;
@@ -55,6 +56,7 @@ import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static java.text.Normalizer.Form.NFC;
 
 /***********************************************************************************************************************
  *
@@ -105,7 +107,7 @@ final class Utilities
     @Nonnull
     public static Value literalFor (final Path path)
       {
-        return FACTORY.createLiteral(path.toString());
+        return FACTORY.createLiteral(Normalizer.normalize(path.toString(), NFC));
       }
 
     /*******************************************************************************************************************
