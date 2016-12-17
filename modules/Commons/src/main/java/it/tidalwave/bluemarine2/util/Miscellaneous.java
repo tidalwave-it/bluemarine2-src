@@ -156,6 +156,8 @@ public final class Miscellaneous
               }
           }
 
+        log.trace(">>>> returning {} file-exists? {}", pathSoFar, pathSoFar.toFile().exists());
+
         return pathSoFar;
       }
   }
