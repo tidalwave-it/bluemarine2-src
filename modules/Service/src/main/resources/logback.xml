@@ -32,7 +32,7 @@
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${blueMarine2.logFolder}/bluemarine2-service.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${blueMarine2.logFolder}/bluemarine2-service.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
             <maxHistory>5</maxHistory>
         </rollingPolicy>
         <encoder>
