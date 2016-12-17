@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.util;
 
+import java.io.File;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -158,6 +159,47 @@ public final class Miscellaneous
 
         log.trace(">>>> original {} file-exists? {}", path, path.toFile().exists());
         log.trace(">>>> returning {} file-exists? {}", pathSoFar, pathSoFar.toFile().exists());
+
+        if (!pathSoFar.toFile().exists())
+          {
+            File fileSoFar = new File("/");
+
+            for (final String element : fileSoFar.toString().split("/"))
+              {
+                log.trace(">>>> fileSoFar: {} element: {}", fileSoFar, element);
+                final File resolved = new File(fileSoFar, element);
+
+                if (resolved.exists())
+                  {
+                    fileSoFar = resolved;
+                  }
+                else
+                  {
+                    // FIXME: refactor with lambdas
+                    boolean found = false;
+
+                    for (final String childName : fileSoFar.list())
+                      {
+                        found = normalizedToNativeForm(element.toString())
+                                .equals(normalizedToNativeForm(childName.toString()));
+                        log.trace(">>>> original: {} found: {} same: {}", element, childName, found);
+
+                        if (found)
+                          {
+                            fileSoFar = new File(fileSoFar, childName);
+                            break;
+                          }
+                      }
+
+                    if (!found)
+                      {
+                        return path; // fail
+                      }
+                  }
+              }
+
+            pathSoFar = fileSoFar.toPath();
+          }
 
         return pathSoFar;
       }
