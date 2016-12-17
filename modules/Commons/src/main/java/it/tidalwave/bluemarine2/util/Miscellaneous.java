@@ -109,6 +109,8 @@ public final class Miscellaneous
     public static Path normalizedPath (final @Nonnull Path path)
       throws IOException
       {
+        log.trace("normalizedPath({}", path);
+        
         if (Files.exists(path) && path.toFile().exists())
           {
             return path;
