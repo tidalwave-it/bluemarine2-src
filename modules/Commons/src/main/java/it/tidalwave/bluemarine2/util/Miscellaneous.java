@@ -110,11 +110,11 @@ public final class Miscellaneous
       throws IOException
       {
         log.trace("normalizedPath({}", path);
-        
-        if (Files.exists(path) && path.toFile().exists())
-          {
-            return path;
-          }
+
+//        if (Files.exists(path) && path.toFile().exists())
+//          {
+//            return path;
+//          }
 
         Path pathSoFar = Paths.get("/");
 
