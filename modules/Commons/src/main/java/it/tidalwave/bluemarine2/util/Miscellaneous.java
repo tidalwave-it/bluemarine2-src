@@ -180,8 +180,7 @@ public final class Miscellaneous
 
                     for (final String childName : fileSoFar.list())
                       {
-                        found = normalizedToNativeForm(element.toString())
-                                .equals(normalizedToNativeForm(childName.toString()));
+                        found = normalizedToNativeForm(element).equals(normalizedToNativeForm(childName));
                         log.trace(">>>> original: {} found: {} same: {}", element, childName, found);
 
                         if (found)
