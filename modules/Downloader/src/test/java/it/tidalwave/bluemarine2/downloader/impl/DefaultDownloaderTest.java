@@ -54,7 +54,7 @@ import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import static java.nio.file.Files.*;
 import static org.apache.commons.io.FileUtils.*;
 import static it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH;
-import static it.tidalwave.util.test.FileComparisonUtils.*;
+import static it.tidalwave.util.test.FileComparisonUtils8.*;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.CoreMatchers.*;
 
@@ -131,7 +131,7 @@ public class DefaultDownloaderTest extends SpringTestSupport
      *
      *
      ******************************************************************************************************************/
-    @Test(dataProvider = "downloadDataProvider", groups = "no-ci", enabled = false) // FIXME dbtune.org has been returing HTTP status 503 for months
+    @Test(dataProvider = "downloadDataProvider", enabled = false) // FIXME dbtune.org has been returing HTTP status 503 for months
     public void testCache (final @Nonnull String urlAsString,
                            final @Nonnull Option option,
                            final int expectedStatusCode,
@@ -151,7 +151,7 @@ public class DefaultDownloaderTest extends SpringTestSupport
             final Path expectedResult = EXPECTED_TEST_RESULTS.resolve(expectedContentFileName);
             createDirectories(TEST_RESULTS);
             write(actualResult, response.getBytes());
-            assertSameContents(expectedResult.toFile(), actualResult.toFile());
+            assertSameContents(expectedResult, actualResult);
           }
 
         if (!Arrays.asList(-1, HttpStatus.SC_SEE_OTHER, HttpStatus.SC_NOT_FOUND).contains(response.getStatusCode()))

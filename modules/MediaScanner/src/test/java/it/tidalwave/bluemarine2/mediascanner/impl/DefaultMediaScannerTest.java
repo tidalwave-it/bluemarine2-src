@@ -32,8 +32,12 @@ import javax.annotation.Nonnull;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
+import java.util.stream.Stream;
 import java.time.Instant;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.spi.MockInstantProvider;
@@ -51,8 +55,10 @@ import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
-import java.io.FileNotFoundException;
-import java.nio.file.Files;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
+import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
+import java.util.Locale;
+import static org.testng.AssertJUnit.*;
 
 /***********************************************************************************************************************
  *
@@ -98,6 +104,8 @@ public class DefaultMediaScannerTest extends SpringTestSupport
     @BeforeClass
     public void checkTestSets()
       {
+        Locale.setDefault(Locale.ITALIAN); // For the time zone
+        System.getProperties().forEach((name, value) -> log.info(">>>> {}: {}", name, value));
         musicTestSets = TestSetLocator.getMusicTestSetsPath();
       }
 
@@ -117,6 +125,39 @@ public class DefaultMediaScannerTest extends SpringTestSupport
       }
 
     @Test(dataProvider = "dataSetNames") // FIXME: because of BMT-46
+    public void testFileSystemConsistency (final @Nonnull String dataSetName)
+      throws Exception
+      {
+        final Path p = musicTestSets.resolve(dataSetName);
+
+        if (!Files.isDirectory(p))
+          {
+            throw new FileNotFoundException("Missing test folder: " + p);
+          }
+
+        try (final Stream<Path> dirStream = Files.walk(p.resolve("Music"), FOLLOW_LINKS))
+          {
+            dirStream.forEach(path ->
+              {
+                try
+                  {
+                    assertTrue("Inconsistent file: " + path, Files.exists(normalizedPath(path)));
+//                    assertTrue("Inconsistent file: " + path, normalizedPath(path).toFile().exists());
+                  }
+                catch (IOException e)
+                  {
+                    throw new RuntimeException(e);
+                  }
+              });
+          }
+
+//        for (final File file : p.resolve("Music").toFile().listFiles())
+//          {
+//            assertTrue("Inconsistent file: " + file, file.exists());
+//          }
+      }
+
+    @Test(dataProvider = "dataSetNames", dependsOnMethods = "testFileSystemConsistency")
     public void testScan (final @Nonnull String dataSetName)
       throws Exception
       {
@@ -126,7 +167,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
           {
             throw new FileNotFoundException("Missing test folder: " + p);
           }
-        
+
         // FIXME: we should find a way to force HttpClient to pretend the network doesn't work
 //        log.warn("******* YOU SHOULD RUN THIS TEST WITH THE NETWORK DISCONNECTED");
         final Map<Key<?>, Object> properties = new HashMap<>();
@@ -155,7 +196,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
         return new Object[][]
           {
               { "iTunes-fg-20160504-1" },
-              { "iTunes-fg-20161210-1" }
+//              { "iTunes-fg-20161210-1" } not yet deployed
           };
       }
   }

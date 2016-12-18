@@ -123,6 +123,16 @@
                                 <group>${linux-group}</group>
                             </mapper>
                         </data>
+                        <data>
+                            <type>file</type>
+                            <src>${project.build.directory}/classes/logback-override.xml</src>
+                            <dst>/var/lib/bluemarine2/config/logback-override.xml</dst>
+                            <mapper>
+                                <type>perm</type>
+                                <user>${linux-user}</user>
+                                <group>${linux-group}</group>
+                            </mapper>
+                        </data>
                     </dataSet>
                 </configuration>
             </plugin>
