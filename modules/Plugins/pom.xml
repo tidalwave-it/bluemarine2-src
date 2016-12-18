@@ -7,13 +7,13 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-12-SNAPSHOT</version>
+        <version>1.0-ALPHA-13-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>blueMarine2-plugins-modules</artifactId>
-    <version>1.0-ALPHA-12-SNAPSHOT</version>
+    <version>1.0-ALPHA-13-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine II - Plugins (modules)</name>
     <description>blueMarine2 Plugins (modules)</description>
