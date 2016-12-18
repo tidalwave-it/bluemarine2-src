@@ -35,7 +35,7 @@
         <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass>
         <tft.javafx.vmargs>${tft.mainClass}</tft.javafx.vmargs>
 
-        <tft.test.vmOptions>-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8</tft.test.vmOptions>
+        <tft.test.vmOptions>-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -Duser.timezone=Europe/Rome</tft.test.vmOptions>
 
         <tft.maven-jdeb-plugin.version>1.5</tft.maven-jdeb-plugin.version> <!-- FIXME: push to Super POM -->
     </properties>
