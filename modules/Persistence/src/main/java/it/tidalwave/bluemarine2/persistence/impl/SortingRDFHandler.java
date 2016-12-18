@@ -51,33 +51,33 @@ public class SortingRDFHandler implements RDFHandler
   {
     interface Exclusions
       {
-        public void handleStatement (Statement statement) 
+        public void handleStatement (Statement statement)
           throws RDFHandlerException;
-        
+
         public void endRDF()
           throws RDFHandlerException;
       }
-     
+
     @Nonnull @Delegate(excludes = Exclusions.class)
     private final RDFHandler delegate;
-    
+
     private final List<Statement> statements = new ArrayList<>();
-    
+
     @Override
-    public void handleStatement (final @Nonnull Statement statement) 
+    public void handleStatement (final @Nonnull Statement statement)
       throws RDFHandlerException
       {
         statements.add(statement);
-      }    
-    
+      }
+
     @Override
     public void endRDF()
       throws RDFHandlerException
       {
-        Collections.sort(statements, new Comparator<Statement>() 
+        Collections.sort(statements, new Comparator<Statement>()
           {
             @Override
-            public int compare (final @Nonnull Statement st1, final @Nonnull Statement st2) 
+            public int compare (final @Nonnull Statement st1, final @Nonnull Statement st2)
               {
                 final String s1 = st1.getSubject().stringValue();
                 final String s2 = st2.getSubject().stringValue();
@@ -85,9 +85,9 @@ public class SortingRDFHandler implements RDFHandler
 
                 if (c1 != 0)
                   {
-                    return c1;  
+                    return c1;
                   }
-                
+
                 final String p1 = st1.getPredicate().stringValue();
                 final String p2 = st2.getPredicate().stringValue();
                 final int c2 = p1.compareTo(p2);
@@ -96,23 +96,23 @@ public class SortingRDFHandler implements RDFHandler
                   {
                     if (p1.equals(RDF.TYPE.stringValue()))
                       {
-                        return -1;  
+                        return -1;
                       }
                     else if (p2.equals(RDF.TYPE.stringValue()))
                       {
-                        return +1;  
+                        return +1;
                       }
-                    
-                    return c2;  
+
+                    return c2;
                   }
-                
+
                 final String o1 = st1.getObject().stringValue();
                 final String o2 = st2.getObject().stringValue();
-               
+
                 return o1.compareTo(o2);
               }
           });
-        
+
         for (final Statement statement : statements)
           {
             delegate.handleStatement(statement);

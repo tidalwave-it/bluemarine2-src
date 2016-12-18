@@ -37,7 +37,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import org.musicbrainz.ns.mmd_2.Artist;
 import org.openrdf.model.Resource;
-import org.openrdf.model.URI;
+import org.openrdf.model.IRI;
 import org.openrdf.model.Value;
 import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
@@ -60,7 +60,7 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
  *
  *
  * mo:AudioFile
- *      URI                                                     computed from the fingerprint
+ *      IRI                                                     computed from the fingerprint
  *      foaf:sha1           the fingerprint of the file         locally computed
  *      bm:latestInd.Time   the latest import time              locally computed
  *      bm:path             the path of the file                locally computed
@@ -69,7 +69,7 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
  *      mo:encodes          points to the signal                locally computed
  *
  * mo:DigitalSignal
- *      URI                                                     computed from the fingerprint
+ *      IRI                                                     computed from the fingerprint
  *      mo:bitsPerSample    the bits per sample                 locally extracted from the file
  *      mo:duration         the duration                        locally extracted from the file
  *      mo:sample_rate      the sample rate                     locally extracted from the file
@@ -79,21 +79,21 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
  *      MISSING? mo:trmid
  *
  * mo:Track
- *      URI                                                     the DbTune one if available, else computed from SHA1
- *      mo:musicbrainz      the MusicBrainz URI                 locally extracted from the file
+ *      IRI                                                     the DbTune one if available, else computed from SHA1
+ *      mo:musicbrainz      the MusicBrainz IRI                 locally extracted from the file
  *      dc:title            the title                           taken from DbTune
  *      rdfs:label          the display name                    taken from DbTune
  *      foaf:maker          points to the MusicArtist           taken from DbTune
  *      mo:track_number     the track number in the record      taken from DbTune
  *
  * mo:Record
- *      URI                                                     taken from DbTune
+ *      IRI                                                     taken from DbTune
  *      dc:date
  *      dc:language
  *      dc:title            the title                           taken from DbTune
  *      rdfs:label          the display name                    taken from DbTune
  *      mo:release          TODO points to the Label (EMI, etc...)
- *      mo:musicbrainz      the MusicBrainz URI                 locally extracted from the file
+ *      mo:musicbrainz      the MusicBrainz IRI                 locally extracted from the file
  *      mo:track            points to the Tracks                taken from DbTune
  *      foaf:maker          points to the MusicArtist           taken from DbTune
  *      owl:sameAs          point to external resources         taken from DbTune
@@ -280,12 +280,12 @@ public class DefaultMediaScanner
         final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
         log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
 
-        final URI audioFileUri = BM.audioFileUriFor(sha1);
+        final IRI audioFileUri = BM.audioFileUriFor(sha1);
         // FIXME: DbTune has got Signals. E.g. http://dbtune.org/musicbrainz/page/signal/0900f0cb-230f-4632-bd87-650801e5fdba
         // FIXME: Try to use them. It seems there is no extra information, but use their Uri.
-        final URI signalUri = BM.signalUriFor(sha1);
+        final IRI signalUri = BM.signalUriFor(sha1);
         // FIXME: the same contents in different places will give the same sha1. Disambiguates by hashing the path too?
-        final URI trackUri = !musicBrainzTrackId.isPresent() ? BM.localTrackUriFor(sha1)
+        final IRI trackUri = !musicBrainzTrackId.isPresent() ? BM.localTrackUriFor(sha1)
                                                              : BM.musicBrainzUriFor("track", musicBrainzTrackId.get());
 
         final Instant lastModifiedTime = getLastModifiedTime(audioFile.getPath());
@@ -338,14 +338,14 @@ public class DefaultMediaScanner
      * Imports the MusicBrainz metadata for the given {@link MediaItem}.
      *
      * @param   mediaItem               the {@code MediaItem}.
-     * @param   mediaItemUri            the URI of the item
+     * @param   mediaItemUri            the IRI of the item
      * @throws  IOException             when an I/O problem occurred
      * @throws  JAXBException           when an XML error occurs
      * @throws  InterruptedException    if the operation is interrupted
      *
      ******************************************************************************************************************/
 //    private void importMediaItemMusicBrainzMetadata (final @Nonnull MediaItem mediaItem,
-//                                                     final @Nonnull URI mediaItemUri)
+//                                                     final @Nonnull IRI mediaItemUri)
 //      throws IOException, JAXBException, InterruptedException
 //      {
 //        log.info("importMediaItemMusicBrainzMetadata({}, {})", mediaItem, mediaItemUri);
