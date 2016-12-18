@@ -53,6 +53,7 @@ import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 import java.io.FileNotFoundException;
 import java.nio.file.Files;
+import junit.framework.Assert;
 
 /***********************************************************************************************************************
  *
@@ -119,6 +120,23 @@ public class DefaultMediaScannerTest extends SpringTestSupport
       }
 
     @Test(dataProvider = "dataSetNames") // FIXME: because of BMT-46
+    public void testFileSystemConsistency (final @Nonnull String dataSetName)
+      throws Exception
+      {
+        final Path p = musicTestSets.resolve(dataSetName);
+
+        if (!Files.isDirectory(p))
+          {
+            throw new FileNotFoundException("Missing test folder: " + p);
+          }
+
+        for (final File file : p.toFile().listFiles())
+          {
+            Assert.assertTrue("Inconsistent file: " + file, file.exists());
+          }
+      }
+
+    @Test(dataProvider = "dataSetNames", dependsOnMethods = "testFileSystemConsistency") // FIXME: because of BMT-46
     public void testScan (final @Nonnull String dataSetName)
       throws Exception
       {
