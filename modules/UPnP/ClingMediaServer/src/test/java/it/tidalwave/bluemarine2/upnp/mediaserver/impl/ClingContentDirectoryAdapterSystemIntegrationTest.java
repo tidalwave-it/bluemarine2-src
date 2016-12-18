@@ -62,6 +62,7 @@ import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.bluemarine2.util.PrettyPrint.xmlPrettyPrinted;
 import static it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH;
 
@@ -204,7 +205,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                         final String hostAndPort = String.format("http://%s:%d", resourceServer.getIpAddress(), resourceServer.getPort());
                         final String result = xmlPrettyPrinted(parser.generate(didl)).replaceAll(hostAndPort, "http://<server>");
                         Files.write(actualFile, (header + "\n" + result).getBytes(UTF_8));
-                        assertSameContents(expectedFile.toFile(), actualFile.toFile());
+                        assertSameContents(normalizedPath(expectedFile).toFile(), normalizedPath(actualFile).toFile());
                       }
                     catch (Throwable e)
                       {
