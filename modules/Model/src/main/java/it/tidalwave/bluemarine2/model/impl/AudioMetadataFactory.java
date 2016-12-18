@@ -37,14 +37,15 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import org.jaudiotagger.audio.AudioFile;
-import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.audio.AudioHeader;
-import org.jaudiotagger.audio.exceptions.CannotReadException;
 import org.jaudiotagger.audio.exceptions.InvalidAudioFrameException;
 import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
+import org.jaudiotagger.audio.mp3.MP3FileReader;
 import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
@@ -56,7 +57,7 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static lombok.AccessLevel.PRIVATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import java.nio.file.Files;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 
 /***********************************************************************************************************************
  *
@@ -81,9 +82,11 @@ public final class AudioMetadataFactory
 
         try
           {
-            final Path aPath = path.toAbsolutePath();
+            final Path aPath = normalizedPath(path.toAbsolutePath());
             log.debug("path: {}", aPath);
-            audioFile = AudioFileIO.read(aPath.toFile());
+            final File file = toFileBMT46(aPath);
+//            audioFile = AudioFileIO.read(aPath.toFile());
+            audioFile = new MP3FileReader().read(file); // FIXME in some cases AudioFileIO doesn't get the right file extension
 
             final AudioHeader header = audioFile.getAudioHeader();
             metadata = metadata.with(FILE_SIZE, Files.size(path));
@@ -190,7 +193,8 @@ public final class AudioMetadataFactory
           {
             log.error("Unsupported tag in " + audioFile, e.toString());
           }
-        catch (IOException | CannotReadException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
+        catch (IOException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
+//        catch (IOException | CannotReadException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
           {
             log.error("While reading " + audioFile + " --- " + path, e);
           }
