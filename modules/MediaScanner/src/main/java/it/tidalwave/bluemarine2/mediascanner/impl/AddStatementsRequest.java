@@ -34,9 +34,9 @@ import java.util.Arrays;
 import java.util.List;
 import org.openrdf.model.Resource;
 import org.openrdf.model.Statement;
-import org.openrdf.model.URI;
+import org.openrdf.model.IRI;
 import org.openrdf.model.Value;
-import org.openrdf.model.impl.ValueFactoryImpl;
+import org.openrdf.model.impl.SimpleValueFactory;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -55,9 +55,9 @@ public class AddStatementsRequest
     
     
     public AddStatementsRequest (final @Nonnull Resource subject, 
-                                 final @Nonnull URI predicate,
+                                 final @Nonnull IRI predicate,
                                  final @Nonnull Value object) 
       {
-        this(Arrays.asList(ValueFactoryImpl.getInstance().createStatement(subject, predicate, object)));
+        this(Arrays.asList(SimpleValueFactory.getInstance().createStatement(subject, predicate, object)));
       }
   }

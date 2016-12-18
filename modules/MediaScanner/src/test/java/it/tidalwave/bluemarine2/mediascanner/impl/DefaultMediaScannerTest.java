@@ -104,7 +104,6 @@ public class DefaultMediaScannerTest extends SpringTestSupport
     @BeforeClass
     public void checkTestSets()
       {
-        Locale.setDefault(Locale.ITALIAN); // For the time zone
         System.getProperties().forEach((name, value) -> log.info(">>>> {}: {}", name, value));
         musicTestSets = TestSetLocator.getMusicTestSetsPath();
       }

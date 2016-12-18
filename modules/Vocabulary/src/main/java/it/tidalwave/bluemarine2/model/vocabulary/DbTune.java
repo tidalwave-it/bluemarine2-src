@@ -28,9 +28,9 @@
  */
 package it.tidalwave.bluemarine2.model.vocabulary;
 
-import org.openrdf.model.URI;
+import org.openrdf.model.IRI;
 import org.openrdf.model.ValueFactory;
-import org.openrdf.model.impl.ValueFactoryImpl;
+import org.openrdf.model.impl.SimpleValueFactory;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
@@ -43,7 +43,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class DbTune 
   {
-    private final static ValueFactory factory = ValueFactoryImpl.getInstance();
+    private final static ValueFactory factory = SimpleValueFactory.getInstance();
     
     public static final String PREFIX = "http://dbtune.org/musicbrainz/resource/vocab/";
     
@@ -51,9 +51,9 @@ public final class DbTune
     public static final String S_ARTIST_TYPE                = PREFIX + "artist_type";
     public static final String S_SORT_NAME                  = PREFIX + "sortname";
     
-    public static final URI ARTIST_TYPE                     = factory.createURI(S_ARTIST_TYPE);
+    public static final IRI ARTIST_TYPE                     = factory.createIRI(S_ARTIST_TYPE);
 
-    public static final URI SORT_NAME                       = factory.createURI(S_SORT_NAME);
+    public static final IRI SORT_NAME                       = factory.createIRI(S_SORT_NAME);
     
-    public static final URI ALBUMMETA_COVERART_URL          = factory.createURI(S_ALBUMMETA_COVERART_URL);
+    public static final IRI ALBUMMETA_COVERART_URL          = factory.createIRI(S_ALBUMMETA_COVERART_URL);
   }
