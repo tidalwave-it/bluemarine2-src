@@ -42,6 +42,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import static java.util.stream.Collectors.toList;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 
@@ -70,7 +71,7 @@ public class AudioMetadataFactoryTest
                 .map(e -> String.format("%s.%s = %s", relativePath, e.getKey(), e.getValue()))
                 .collect(toList());
         Files.write(actualFile, collect);
-        assertSameContents(expectedFile.toFile(), actualFile.toFile());
+        assertSameContents(normalizedPath(expectedFile).toFile(), normalizedPath(actualFile).toFile());
 //        System.err.println(am.audioFile);
 //        final Tag tag = metadata.audioFile.getTag();
 //        final List<TagField> fields = toList(tag.getFields());
