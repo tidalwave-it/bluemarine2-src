@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.model.impl;
 import javax.annotation.Nonnull;
 import java.util.Comparator;
 import java.util.List;
+import java.text.Normalizer;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -42,7 +43,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import static java.util.stream.Collectors.toList;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
-import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
+import static it.tidalwave.util.test.FileComparisonUtils8.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 
 /***********************************************************************************************************************
@@ -54,7 +56,7 @@ import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 @Slf4j
 public class AudioMetadataFactoryTest
   {
-    @Test(dataProvider = "pathProvider", groups = "no-ci") // because of BMT-46
+    @Test(dataProvider = "pathProvider")
     public void must_properly_read_metadata (final @Nonnull String testSetName,
                                              final @Nonnull Path path,
                                              final @Nonnull Path relativePath)
@@ -65,12 +67,14 @@ public class AudioMetadataFactoryTest
         final Path expectedFile = PATH_EXPECTED_TEST_RESULTS.resolve("metadata").resolve(p);
         Files.createDirectories(actualFile.getParent());
         final Metadata metadata = AudioMetadataFactory.loadFrom(path);
-        final List<String> collect = metadata.getEntries().stream()
+        final List<String> metadataDump = metadata.getEntries().stream()
                 .sorted(Comparator.comparing(e -> e.getKey()))
-                .map(e -> String.format("%s.%s = %s", relativePath, e.getKey(), e.getValue()))
+                .map(e -> String.format("%s.%s = %s",
+                                        Normalizer.normalize(relativePath.toString(), Normalizer.Form.NFC),
+                                        e.getKey(), e.getValue()))
                 .collect(toList());
-        Files.write(actualFile, collect);
-        assertSameContents(expectedFile.toFile(), actualFile.toFile());
+        Files.write(actualFile, metadataDump);
+        assertSameContents(normalizedPath(expectedFile.toAbsolutePath()), normalizedPath(actualFile.toAbsolutePath()));
 //        System.err.println(am.audioFile);
 //        final Tag tag = metadata.audioFile.getTag();
 //        final List<TagField> fields = toList(tag.getFields());
