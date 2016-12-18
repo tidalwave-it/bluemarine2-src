@@ -35,6 +35,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -54,10 +55,10 @@ public final class WorkaroundForBMT46
 
         if (Files.exists(path) && !file.exists()) // FIXME: see BMT-46
           {
-            file = File.createTempFile("temp", "mp3"); // FIXME: extension
+            file = File.createTempFile("temp", ".mp3"); // FIXME: extension
             file.deleteOnExit();
             log.warn("Workaround for BMT-46: copying to temporary file: {}", file);
-            Files.copy(path, file.toPath());
+            Files.copy(path, file.toPath(), REPLACE_EXISTING);
           }
 
         return file;
