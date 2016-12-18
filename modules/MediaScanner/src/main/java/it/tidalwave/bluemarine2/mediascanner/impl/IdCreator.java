@@ -41,7 +41,7 @@ import java.security.NoSuchAlgorithmException;
 import it.tidalwave.util.Id;
 import lombok.Cleanup;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static it.tidalwave.bluemarine2.util.WorkaroundForBMT46.toFileBMT46;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.toFileBMT46;
 
 /***********************************************************************************************************************
  *

@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.util;
 
+import java.io.File;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -37,6 +38,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
@@ -156,5 +158,25 @@ public final class Miscellaneous
           }
 
         return pathSoFar;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static File toFileBMT46(@Nonnull final Path path) throws IOException
+      {
+        File file = path.toFile();
+
+        if (Files.exists(path) && !file.exists())
+          {
+            file.deleteOnExit();
+            log.warn("Workaround for BMT-46: copying to temporary file: {}", file);
+            Files.copy(path, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+          }
+
+        return file;
       }
   }

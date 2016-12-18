@@ -57,8 +57,7 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static lombok.AccessLevel.PRIVATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
-import static it.tidalwave.bluemarine2.util.WorkaroundForBMT46.toFileBMT46;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 
 /***********************************************************************************************************************
  *
