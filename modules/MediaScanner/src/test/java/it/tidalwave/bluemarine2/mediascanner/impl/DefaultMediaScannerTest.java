@@ -150,13 +150,13 @@ public class DefaultMediaScannerTest extends SpringTestSupport
               });
           }
 
-        for (final File file : p.resolve("Music").toFile().listFiles())
-          {
-            assertTrue("Inconsistent file: " + file, file.exists());
-          }
+//        for (final File file : p.resolve("Music").toFile().listFiles())
+//          {
+//            assertTrue("Inconsistent file: " + file, file.exists());
+//          }
       }
 
-    @Test(dataProvider = "dataSetNames" /*, dependsOnMethods = "testFileSystemConsistency" */) // FIXME: because of BMT-46
+    @Test(dataProvider = "dataSetNames", dependsOnMethods = "testFileSystemConsistency")
     public void testScan (final @Nonnull String dataSetName)
       throws Exception
       {
