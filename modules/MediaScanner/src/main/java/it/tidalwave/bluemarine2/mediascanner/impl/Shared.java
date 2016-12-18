@@ -29,7 +29,7 @@
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import java.util.Optional;
-import org.openrdf.model.URI;
+import org.openrdf.model.IRI;
 import it.tidalwave.bluemarine2.util.ConcurrentHashMapWithOptionals;
 
 /***********************************************************************************************************************
@@ -41,10 +41,10 @@ import it.tidalwave.bluemarine2.util.ConcurrentHashMapWithOptionals;
 public class Shared 
   {
     // Set would suffice, but there's no ConcurrentSet
-    public final ConcurrentHashMapWithOptionals<URI, Optional<String>> seenArtistUris = 
+    public final ConcurrentHashMapWithOptionals<IRI, Optional<String>> seenArtistUris = 
             new ConcurrentHashMapWithOptionals<>();
     
-    public final ConcurrentHashMapWithOptionals<URI, Boolean> seenRecordUris = new ConcurrentHashMapWithOptionals<>();
+    public final ConcurrentHashMapWithOptionals<IRI, Boolean> seenRecordUris = new ConcurrentHashMapWithOptionals<>();
     
     /*******************************************************************************************************************
      *
