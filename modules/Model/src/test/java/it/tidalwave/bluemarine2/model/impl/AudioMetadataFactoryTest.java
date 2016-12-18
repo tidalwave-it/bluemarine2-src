@@ -66,11 +66,11 @@ public class AudioMetadataFactoryTest
         final Path expectedFile = PATH_EXPECTED_TEST_RESULTS.resolve("metadata").resolve(p);
         Files.createDirectories(actualFile.getParent());
         final Metadata metadata = AudioMetadataFactory.loadFrom(path);
-        final List<String> collect = metadata.getEntries().stream()
+        final List<String> metadataDump = metadata.getEntries().stream()
                 .sorted(Comparator.comparing(e -> e.getKey()))
                 .map(e -> String.format("%s.%s = %s", relativePath, e.getKey(), e.getValue()))
                 .collect(toList());
-        Files.write(actualFile, collect);
+        Files.write(actualFile, metadataDump);
         assertSameContents(normalizedPath(expectedFile.toAbsolutePath()).toFile(),
                            normalizedPath(actualFile.toAbsolutePath()).toFile());
 //        System.err.println(am.audioFile);
