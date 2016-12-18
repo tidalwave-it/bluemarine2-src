@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.model.impl;
 import javax.annotation.Nonnull;
 import java.util.Comparator;
 import java.util.List;
+import java.text.Normalizer;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -68,11 +69,12 @@ public class AudioMetadataFactoryTest
         final Metadata metadata = AudioMetadataFactory.loadFrom(path);
         final List<String> metadataDump = metadata.getEntries().stream()
                 .sorted(Comparator.comparing(e -> e.getKey()))
-                .map(e -> String.format("%s.%s = %s", relativePath, e.getKey(), e.getValue()))
+                .map(e -> String.format("%s.%s = %s",
+                                        Normalizer.normalize(relativePath.toString(), Normalizer.Form.NFC),
+                                        e.getKey(), e.getValue()))
                 .collect(toList());
         Files.write(actualFile, metadataDump);
-        assertSameContents(normalizedPath(expectedFile.toAbsolutePath()),
-                           normalizedPath(actualFile.toAbsolutePath()));
+        assertSameContents(normalizedPath(expectedFile.toAbsolutePath()), normalizedPath(actualFile.toAbsolutePath()));
 //        System.err.println(am.audioFile);
 //        final Tag tag = metadata.audioFile.getTag();
 //        final List<TagField> fields = toList(tag.getFields());
