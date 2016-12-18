@@ -30,10 +30,10 @@ package it.tidalwave.util.test;
 
 import javax.annotation.Nonnull;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils.commonPrefix;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.toFileBMT46;
 
 /***********************************************************************************************************************
  *
@@ -57,7 +57,8 @@ public class FileComparisonUtils8
         log.info(">>>> path is: {}", commonPath);
         log.info(">>>> exp is:  {}", expectedPath.toString().substring(commonPath.length()));
         log.info(">>>> act is:  {}", actualPath.toString().substring(commonPath.length()));
-        FileComparisonUtils.assertSameContents(Files.readAllLines(expectedPath), Files.readAllLines(actualPath));
+        FileComparisonUtils.assertSameContents(toFileBMT46(expectedPath), toFileBMT46(actualPath));
+//        FileComparisonUtils.assertSameContents(Files.readAllLines(expectedPath), Files.readAllLines(actualPath));
       }
 
   }
