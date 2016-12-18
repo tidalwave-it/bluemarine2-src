@@ -112,7 +112,7 @@ public final class Miscellaneous
       {
         log.trace("normalizedPath({}", path);
 
-        if (Files.exists(path) && path.toFile().exists())
+        if (!probeBMT46(path))
           {
             return path;
           }
@@ -170,13 +170,24 @@ public final class Miscellaneous
       {
         File file = path.toFile();
 
-        if (Files.exists(path) && !file.exists())
+        if (probeBMT46(path))
           {
+            file = File.createTempFile("temp", ".mp3");
             file.deleteOnExit();
             log.warn("Workaround for BMT-46: copying to temporary file: {}", file);
             Files.copy(path, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
           }
 
         return file;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private static boolean probeBMT46 (final @Nonnull Path path)
+      {
+        return Files.exists(path) && !path.toFile().exists();
       }
   }
