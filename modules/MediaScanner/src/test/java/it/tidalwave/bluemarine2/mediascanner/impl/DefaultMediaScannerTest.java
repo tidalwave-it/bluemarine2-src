@@ -130,7 +130,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
             throw new FileNotFoundException("Missing test folder: " + p);
           }
 
-        for (final File file : p.toFile().listFiles())
+        for (final File file : p.resolve("Music").toFile().listFiles())
           {
             Assert.assertTrue("Inconsistent file: " + file, file.exists());
           }
