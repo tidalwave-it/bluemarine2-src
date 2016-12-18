@@ -28,12 +28,11 @@
  */
 package it.tidalwave.bluemarine2.util;
 
-import java.io.File;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.List;
 import java.text.Normalizer;
+import java.util.stream.Stream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -42,7 +41,6 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
 import static java.text.Normalizer.Form.*;
-import java.util.stream.Stream;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -112,10 +110,10 @@ public final class Miscellaneous
       {
         log.trace("normalizedPath({}", path);
 
-//        if (Files.exists(path) && path.toFile().exists())
-//          {
-//            return path;
-//          }
+        if (Files.exists(path) && path.toFile().exists())
+          {
+            return path;
+          }
 
         Path pathSoFar = Paths.get("/");
 
@@ -155,51 +153,6 @@ public final class Miscellaneous
                       }
                   }
               }
-          }
-
-        log.trace(">>>> original {} file-exists? {}", path, path.toFile().exists());
-        log.trace(">>>> returning {} file-exists? {}", pathSoFar, pathSoFar.toFile().exists());
-
-        if (!pathSoFar.toFile().exists())
-          {
-            File fileSoFar = new File("/");
-
-            for (final String element : path.toString().split("/"))
-              {
-                log.trace(">>>> fileSoFar: {} element: {}", fileSoFar, element);
-                final File resolved = new File(fileSoFar, element);
-
-                if (resolved.exists())
-                  {
-                    fileSoFar = resolved;
-                  }
-                else
-                  {
-                    // FIXME: refactor with lambdas
-                    boolean found = false;
-
-                    final String[] list = fileSoFar.list();
-
-                    for (final String childName : ((list != null) ? list : new String[0]))
-                      {
-                        found = normalizedToNativeForm(element).equals(normalizedToNativeForm(childName));
-                        log.trace(">>>> original: {} found: {} same: {}", element, childName, found);
-
-                        if (found)
-                          {
-                            fileSoFar = new File(fileSoFar, childName);
-                            break;
-                          }
-                      }
-
-                    if (!found)
-                      {
-                        return path; // fail
-                      }
-                  }
-              }
-
-            pathSoFar = fileSoFar.toPath();
           }
 
         return pathSoFar;
