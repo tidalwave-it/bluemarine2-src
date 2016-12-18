@@ -54,7 +54,6 @@ import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import org.openrdf.query.Binding;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedToNativeForm;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
 
 /***********************************************************************************************************************
  *

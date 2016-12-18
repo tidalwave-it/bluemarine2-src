@@ -28,20 +28,21 @@
  */
 package it.tidalwave.bluemarine2.util;
 
+import java.io.File;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.List;
 import java.text.Normalizer;
+import java.util.stream.Stream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
 import static java.text.Normalizer.Form.*;
-import java.util.stream.Stream;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -109,6 +110,8 @@ public final class Miscellaneous
     public static Path normalizedPath (final @Nonnull Path path)
       throws IOException
       {
+        log.trace("normalizedPath({}", path);
+
         if (Files.exists(path))
           {
             return path;
@@ -155,5 +158,37 @@ public final class Miscellaneous
           }
 
         return pathSoFar;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static File toFileBMT46 (final @Nonnull Path path)
+      throws IOException
+      {
+        File file = path.toFile();
+
+        if (probeBMT46(path))
+          {
+            file = File.createTempFile("temp", ".mp3");
+            file.deleteOnExit();
+            log.warn("Workaround for BMT-46: copying to temporary file: {}", file);
+            Files.copy(path, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+          }
+
+        return file;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private static boolean probeBMT46 (final @Nonnull Path path)
+      {
+        return Files.exists(path) && !path.toFile().exists();
       }
   }
