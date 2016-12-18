@@ -71,7 +71,8 @@ public class AudioMetadataFactoryTest
                 .map(e -> String.format("%s.%s = %s", relativePath, e.getKey(), e.getValue()))
                 .collect(toList());
         Files.write(actualFile, collect);
-        assertSameContents(normalizedPath(expectedFile).toFile(), normalizedPath(actualFile).toFile());
+        assertSameContents(normalizedPath(expectedFile.toAbsolutePath()).toFile(),
+                           normalizedPath(actualFile.toAbsolutePath()).toFile());
 //        System.err.println(am.audioFile);
 //        final Tag tag = metadata.audioFile.getTag();
 //        final List<TagField> fields = toList(tag.getFields());
