@@ -58,6 +58,7 @@ import lombok.extern.slf4j.Slf4j;
 import static lombok.AccessLevel.PRIVATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
+import org.jaudiotagger.audio.mp3.MP3FileReader;
 
 /***********************************************************************************************************************
  *
@@ -84,7 +85,8 @@ public final class AudioMetadataFactory
           {
             final Path aPath = normalizedPath(path.toAbsolutePath());
             log.debug("path: {}", aPath);
-            audioFile = AudioFileIO.read(aPath.toFile());
+//            audioFile = AudioFileIO.read(aPath.toFile());
+            audioFile = new MP3FileReader().read(aPath.toFile()); // FIXME in some cases AudioFileIO doesn't get the right file extension
 
             final AudioHeader header = audioFile.getAudioHeader();
             metadata = metadata.with(FILE_SIZE, Files.size(path));
@@ -191,7 +193,8 @@ public final class AudioMetadataFactory
           {
             log.error("Unsupported tag in " + audioFile, e.toString());
           }
-        catch (IOException | CannotReadException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
+        catch (IOException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
+//        catch (IOException | CannotReadException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
           {
             log.error("While reading " + audioFile + " --- " + path, e);
           }
