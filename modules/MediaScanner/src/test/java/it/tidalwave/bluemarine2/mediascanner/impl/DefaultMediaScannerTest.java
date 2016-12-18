@@ -32,8 +32,12 @@ import javax.annotation.Nonnull;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
+import java.util.stream.Stream;
 import java.time.Instant;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.spi.MockInstantProvider;
@@ -51,12 +55,9 @@ import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
-import java.io.FileNotFoundException;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
-import java.nio.file.Files;
-import java.nio.file.LinkOption;
-import java.util.stream.Stream;
-import junit.framework.Assert;
+import static org.testng.AssertJUnit.*;
 
 /***********************************************************************************************************************
  *
@@ -137,14 +138,21 @@ public class DefaultMediaScannerTest extends SpringTestSupport
           {
             dirStream.forEach(path ->
               {
-                Assert.assertTrue("Inconsistent file: " + path, Files.exists(path));
-                Assert.assertTrue("Inconsistent file: " + path, path.toFile().exists());
+                try
+                  {
+                    assertTrue("Inconsistent file: " + path, Files.exists(normalizedPath(path)));
+                    assertTrue("Inconsistent file: " + path, normalizedPath(path).toFile().exists());
+                  }
+                catch (IOException e)
+                  {
+                    throw new RuntimeException(e);
+                  }
               });
           }
 
         for (final File file : p.resolve("Music").toFile().listFiles())
           {
-            Assert.assertTrue("Inconsistent file: " + file, file.exists());
+            assertTrue("Inconsistent file: " + file, file.exists());
           }
       }
 
