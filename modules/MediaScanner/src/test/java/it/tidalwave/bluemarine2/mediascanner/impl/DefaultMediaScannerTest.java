@@ -57,6 +57,7 @@ import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
+import java.util.Locale;
 import static org.testng.AssertJUnit.*;
 
 /***********************************************************************************************************************
@@ -103,9 +104,9 @@ public class DefaultMediaScannerTest extends SpringTestSupport
     @BeforeClass
     public void checkTestSets()
       {
-        musicTestSets = TestSetLocator.getMusicTestSetsPath();
-
+        Locale.setDefault(Locale.ITALIAN); // For the time zone
         System.getProperties().forEach((name, value) -> log.info(">>>> {}: {}", name, value));
+        musicTestSets = TestSetLocator.getMusicTestSetsPath();
       }
 
     @BeforeMethod
