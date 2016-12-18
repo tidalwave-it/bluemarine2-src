@@ -182,7 +182,7 @@ Still at the early stage of development, it can be used with some hack to reprod
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-services-vimeo</artifactId>
-                <version>1.0-ALPHA-12-SNAPSHOT</version>
+                <version>1.0-ALPHA-13-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
