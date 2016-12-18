@@ -112,7 +112,7 @@ public final class Miscellaneous
       {
         log.trace("normalizedPath({}", path);
 
-        if (!probeBMT46(path))
+        if (Files.exists(path))
           {
             return path;
           }
