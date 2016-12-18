@@ -4,14 +4,14 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-12</version>
+        <version>1.0-ALPHA-13-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-mediaserver</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-12</version>
+    <version>1.0-ALPHA-13-SNAPSHOT</version>
     <name>blueMarine II - Media Server</name>
     <description>blueMarine2 - Media Server</description>
 
