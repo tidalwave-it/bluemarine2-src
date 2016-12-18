@@ -28,9 +28,9 @@
  */
 package it.tidalwave.bluemarine2.model.vocabulary;
 
-import org.openrdf.model.URI;
+import org.openrdf.model.IRI;
 import org.openrdf.model.ValueFactory;
-import org.openrdf.model.impl.ValueFactoryImpl;
+import org.openrdf.model.impl.SimpleValueFactory;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
@@ -43,12 +43,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class Purl 
   {
-    private final static ValueFactory factory = ValueFactoryImpl.getInstance();
+    private final static ValueFactory factory = SimpleValueFactory.getInstance();
     
     private static final String PREFIX_BIO          = "http://purl.org/vocab/bio/0.1/";
     private static final String PREFIX_RELATIONSHIP = "http://purl.org/vocab/relationship/";
     
-    public static final URI EVENT              = factory.createURI(PREFIX_BIO + "event");
+    public static final IRI EVENT              = factory.createIRI(PREFIX_BIO + "event");
     
-    public static final URI COLLABORATES_WITH  = factory.createURI(PREFIX_RELATIONSHIP + "collaboratesWith");
+    public static final IRI COLLABORATES_WITH  = factory.createIRI(PREFIX_RELATIONSHIP + "collaboratesWith");
 }
