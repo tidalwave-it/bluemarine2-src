@@ -43,8 +43,9 @@ import org.testng.annotations.Test;
 import static java.util.stream.Collectors.toList;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
-import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import it.tidalwave.util.test.FileComparisonUtils;
+import static it.tidalwave.util.test.FileComparisonUtils.*;
 
 /***********************************************************************************************************************
  *
@@ -71,14 +72,31 @@ public class AudioMetadataFactoryTest
                 .map(e -> String.format("%s.%s = %s", relativePath, e.getKey(), e.getValue()))
                 .collect(toList());
         Files.write(actualFile, metadataDump);
-        assertSameContents(normalizedPath(expectedFile.toAbsolutePath()).toFile(),
-                           normalizedPath(actualFile.toAbsolutePath()).toFile());
+        assertSameContents(normalizedPath(expectedFile.toAbsolutePath()),
+                           normalizedPath(actualFile.toAbsolutePath()));
 //        System.err.println(am.audioFile);
 //        final Tag tag = metadata.audioFile.getTag();
 //        final List<TagField> fields = toList(tag.getFields());
 //        System.err.println("FIELDS: " + fields);
 //        tag.getFields(FieldKey.)
       }
+
+    /*******************************************************************************************************************
+     *
+     * FIXME: move to Commons for Tests, reuse elsewhere.
+     *
+     ******************************************************************************************************************/
+    public static void assertSameContents (final @Nonnull Path expectedPath, final @Nonnull Path actualPath)
+      throws IOException
+      {
+        final String commonPath = commonPrefix(expectedPath.toString(), actualPath.toString());
+        log.info("******** Comparing files:");
+        log.info(">>>> path is: {}", commonPath);
+        log.info(">>>> exp is:  {}", expectedPath.toString().substring(commonPath.length()));
+        log.info(">>>> act is:  {}", actualPath.toString().substring(commonPath.length()));
+        FileComparisonUtils.assertSameContents(Files.readAllLines(expectedPath), Files.readAllLines(actualPath));
+      }
+
 
     @DataProvider
     private static Object[][] pathProvider()
