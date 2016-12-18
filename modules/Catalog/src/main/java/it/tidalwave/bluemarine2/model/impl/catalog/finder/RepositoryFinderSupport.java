@@ -43,7 +43,7 @@ import java.nio.charset.Charset;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.openrdf.model.Value;
-import org.openrdf.model.impl.ValueFactoryImpl;
+import org.openrdf.model.impl.SimpleValueFactory;
 import org.openrdf.query.BindingSet;
 import org.openrdf.query.MalformedQueryException;
 import org.openrdf.query.QueryEvaluationException;
@@ -191,7 +191,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     @Nonnull
     protected Value uriFor (final @Nonnull Id id)
       {
-        return ValueFactoryImpl.getInstance().createURI(id.stringValue());
+        return SimpleValueFactory.getInstance().createIRI(id.stringValue());
       }
 
     /*******************************************************************************************************************

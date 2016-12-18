@@ -41,7 +41,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import org.openrdf.model.Model;
 import org.openrdf.model.Statement;
-import org.openrdf.model.URI;
+import org.openrdf.model.IRI;
 import org.openrdf.model.vocabulary.DC;
 import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
@@ -86,14 +86,14 @@ public class DbTuneMetadataManager
     @Inject
     private Shared shared;
 
-    private static final List<URI> VALID_TRACK_PREDICATES_FOR_SUBJECT = Arrays.asList(
+    private static final List<IRI> VALID_TRACK_PREDICATES_FOR_SUBJECT = Arrays.asList(
             RDF.TYPE, RDFS.LABEL, DC.TITLE, FOAF.MAKER);
 
-    private final ConcurrentMap<URI, MediaItem> mediaItemMapByUri = new ConcurrentHashMap<>();
+    private final ConcurrentMap<IRI, MediaItem> mediaItemMapByUri = new ConcurrentHashMap<>();
 
     // Skip foaf:maker: it would include all the items in the database, not only in our collection
     // anyway, the required statements have been already added when importing tracks
-    private static final List<URI> VALID_ARTIST_PREDICATES_FOR_SUBJECT = Arrays.asList(
+    private static final List<IRI> VALID_ARTIST_PREDICATES_FOR_SUBJECT = Arrays.asList(
             DbTune.ARTIST_TYPE, DbTune.SORT_NAME, Purl.EVENT, Purl.COLLABORATES_WITH, RDF.TYPE, RDFS.LABEL, FOAF.NAME);
 
 //  TODO: extract only GUID?       mo:musicbrainz <http://musicbrainz.org/artist/1f9df192-a621-4f54-8850-2c5373b7eac9> ;
@@ -124,7 +124,7 @@ public class DbTuneMetadataManager
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static Predicate<Statement> trackStatementFilterFor (final @Nonnull URI trackUri)
+    private static Predicate<Statement> trackStatementFilterFor (final @Nonnull IRI trackUri)
       {
         return statement -> statement.getSubject().equals(trackUri)
                         && VALID_TRACK_PREDICATES_FOR_SUBJECT.contains(statement.getPredicate());
@@ -135,7 +135,7 @@ public class DbTuneMetadataManager
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static Predicate<Statement> artistStatementFilterFor (final @Nonnull URI artistUri)
+    private static Predicate<Statement> artistStatementFilterFor (final @Nonnull IRI artistUri)
       {
         return statement -> statement.getSubject().equals(artistUri)
                         && VALID_ARTIST_PREDICATES_FOR_SUBJECT.contains(statement.getPredicate());
@@ -145,12 +145,12 @@ public class DbTuneMetadataManager
      *
      * Imports the DbTune.org metadata for the given track.
      *
-     * @param   trackUri            the URI of the item
+     * @param   trackUri            the IRI of the item
      * @param   mbGuid              the MusicBrainz id
      *
      ******************************************************************************************************************/
     public void importTrackMetadata (final @Nonnull MediaItem mediaItem,
-                                     final @Nonnull URI trackUri,
+                                     final @Nonnull IRI trackUri,
                                      final @Nonnull Id mbGuid)
       {
         try
@@ -181,7 +181,7 @@ public class DbTuneMetadataManager
       {
         log.debug("onTrackMetadataDownloadComplete({})", message);
 
-        final URI trackUri = uriFor(message.getUrl());
+        final IRI trackUri = uriFor(message.getUrl());
         final MediaItem mediaItem = mediaItemMapByUri.get(trackUri);
 
         assert mediaItem != null : "Null mediaItem for " + trackUri;
@@ -194,9 +194,9 @@ public class DbTuneMetadataManager
                 statementManager.requestAdd(model.stream().filter(trackStatementFilterFor(trackUri)).collect(toList()));
 
                 model.filter(trackUri, FOAF.MAKER, null)
-                     .forEach(statement -> requestArtistMetadata((URI)statement.getObject(), Optional.empty()));
+                     .forEach(statement -> requestArtistMetadata((IRI)statement.getObject(), Optional.empty()));
                 model.filter(null, MO.P_TRACK, trackUri)
-                     .forEach(statement -> requestRecordMetadata((URI)statement.getSubject()));
+                     .forEach(statement -> requestRecordMetadata((IRI)statement.getSubject()));
               }
             catch (IOException | RDFHandlerException | RDFParseException e)
               {
@@ -206,7 +206,7 @@ public class DbTuneMetadataManager
           }
         else
           {
-            embeddedMetadataManager.importFallbackTrackMetadata(mediaItem, uriFor(message.getUrl())); // CORRECT URI?
+            embeddedMetadataManager.importFallbackTrackMetadata(mediaItem, uriFor(message.getUrl())); // CORRECT IRI?
           }
       }
 
@@ -219,14 +219,14 @@ public class DbTuneMetadataManager
         try
           {
             log.debug("onArtistMetadataDownloadComplete({})", message);
-            final URI artistUri = uriFor(message.getUrl());
+            final IRI artistUri = uriFor(message.getUrl());
 
             if (message.getStatusCode() == 200) // FIXME
               {
                 final Model model = parseModel(message);
                 statementManager.requestAdd(model.stream().filter(artistStatementFilterFor(artistUri)).collect(toList()));
                 model.filter(artistUri, Purl.COLLABORATES_WITH, null)
-                     .forEach(statement -> requestArtistMetadata((URI)statement.getObject(), Optional.empty()));
+                     .forEach(statement -> requestArtistMetadata((IRI)statement.getObject(), Optional.empty()));
               }
             else
               {
@@ -261,7 +261,7 @@ public class DbTuneMetadataManager
         try
           {
             log.debug("onRecordMetadataDownloadComplete({})", message);
-            final URI recordUri = uriFor(message.getUrl());
+            final IRI recordUri = uriFor(message.getUrl());
             final Model model = parseModel(message);
              // FIXME: filter away some more stuff
             statementManager.requestAdd(model.filter(recordUri, null, null).stream().collect(toList()));
@@ -281,11 +281,11 @@ public class DbTuneMetadataManager
      *
      * Posts a requesto to download metadata for the given {@code artistUri}, if not available yet.
      *
-     * @param   artistUri       the URI of the artist
+     * @param   artistUri       the IRI of the artist
      * @param   fallbackName    an optional name that will be used as a fallback
      *
      ******************************************************************************************************************/
-    public void requestArtistMetadata (final @Nonnull URI artistUri, final @Nonnull Optional<String> fallbackName)
+    public void requestArtistMetadata (final @Nonnull IRI artistUri, final @Nonnull Optional<String> fallbackName)
       {
         try
           {
@@ -307,10 +307,10 @@ public class DbTuneMetadataManager
      *
      * Posts a requesto to download metadata for the given {@code artistUri}, if not available yet.
      *
-     * @param   recordUri   the URI of the artist
+     * @param   recordUri   the IRI of the artist
      *
      ******************************************************************************************************************/
-    private void requestRecordMetadata (final @Nonnull URI recordUri)
+    private void requestRecordMetadata (final @Nonnull IRI recordUri)
       {
         try
           {

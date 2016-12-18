@@ -38,10 +38,10 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Stream;
-import org.openrdf.model.URI;
+import org.openrdf.model.IRI;
 import org.openrdf.model.Statement;
 import org.openrdf.model.Value;
-import org.openrdf.model.impl.ValueFactoryImpl;
+import org.openrdf.model.impl.SimpleValueFactory;
 import org.openrdf.model.vocabulary.DC;
 import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
@@ -81,7 +81,7 @@ public class EmbeddedMetadataManager
     static class Entry
       {
         @Nonnull
-        private final URI uri;
+        private final IRI uri;
 
         @Nonnull
         private final String name;
@@ -96,15 +96,15 @@ public class EmbeddedMetadataManager
     static class Pair
       {
         @Nonnull
-        private final URI predicate;
+        private final IRI predicate;
 
         @Nonnull
         private final Value object;
 
         @Nonnull
-        public Statement createStatementWithSubject (final @Nonnull URI subject)
+        public Statement createStatementWithSubject (final @Nonnull IRI subject)
           {
-            return ValueFactoryImpl.getInstance().createStatement(subject, predicate, object);
+            return SimpleValueFactory.getInstance().createStatement(subject, predicate, object);
           }
       }
 
@@ -119,7 +119,7 @@ public class EmbeddedMetadataManager
         private static final long serialVersionUID = 9180433348240275721L;
 
         @Nonnull
-        public List<Statement> statementsFor (final @Nonnull Metadata metadata, final @Nonnull URI subjectUri)
+        public List<Statement> statementsFor (final @Nonnull Metadata metadata, final @Nonnull IRI subjectUri)
           {
             return metadata.getEntries().stream()
                                         .filter(e -> containsKey(e.getKey()))
@@ -168,13 +168,13 @@ public class EmbeddedMetadataManager
      * metadata which are never superseded by external catalogs (such as sample rate, duration, etc...).
      *
      * @param   mediaItem               the {@code MediaItem}.
-     * @param   signalUri               the URI of the signal
-     * @param   trackUri                the URI of the track
+     * @param   signalUri               the IRI of the signal
+     * @param   trackUri                the IRI of the track
      *
      ******************************************************************************************************************/
     public void importAudioFileMetadata (final @Nonnull MediaItem mediaItem,
-                                         final @Nonnull URI signalUri,
-                                         final @Nonnull URI trackUri)
+                                         final @Nonnull IRI signalUri,
+                                         final @Nonnull IRI trackUri)
       {
         log.debug("importAudioFileMetadata({}, {}, {})", mediaItem, signalUri, trackUri);
         final Metadata metadata = mediaItem.getMetadata();
@@ -188,10 +188,10 @@ public class EmbeddedMetadataManager
      * when we failed to match a track to an external catalog.
      *
      * @param   mediaItem               the {@code MediaItem}.
-     * @param   trackUri                the URI of the track
+     * @param   trackUri                the IRI of the track
      *
      ******************************************************************************************************************/
-    public void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull URI trackUri)
+    public void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull IRI trackUri)
       {
         // TODO: consider the MBZ COMPOSER.
         log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackUri);
@@ -202,7 +202,7 @@ public class EmbeddedMetadataManager
         final Optional<String> title      = metadata.get(Metadata.TITLE);
         final Optional<String> makerName  = metadata.get(Metadata.ARTIST);
 
-        List<URI> makerUris               = null;
+        List<IRI> makerUris               = null;
         List<Entry> artists  = metadata.getAll(Metadata.MBZ_ARTIST_ID).stream()
                 .map(id -> new Entry(BM.musicBrainzUriFor("artist", id), makerName.orElse("???")))
                 .collect(toList());
@@ -224,19 +224,19 @@ public class EmbeddedMetadataManager
           }
         else  // no MusicBrainz artist
           {
-            makerUris =  makerName.map(name -> asList(createUriForLocalArtist(name))).orElse(emptyList());
+            makerUris =  makerName.map(name -> asList(createIRIForLocalArtist(name))).orElse(emptyList());
             artists = makerName.map(name -> Stream.of(name.split("[;]")).map(String::trim)).orElse(Stream.empty())
-                               .map(name -> new Entry(createUriForLocalArtist(name), name))
+                               .map(name -> new Entry(createIRIForLocalArtist(name), name))
                                .collect(toList());
           }
 
         final List<Entry> newArtists   = artists.stream().filter(
                 e -> shared.seenArtistUris.putIfAbsentAndGetNewKey(e.getUri(), Optional.empty()).isPresent())
                 .collect(toList());
-        final List<URI> newArtistUris       = newArtists.stream().map(Entry::getUri).collect(toList());
+        final List<IRI> newArtistUris       = newArtists.stream().map(Entry::getUri).collect(toList());
         final List<Value> newArtistLiterals = newArtists.stream().map(e -> literalFor(e.getName())).collect(toList());
 
-        final Optional<URI> newGroupUri = (artists.size() <= 1) ? Optional.empty()
+        final Optional<IRI> newGroupUri = (artists.size() <= 1) ? Optional.empty()
                 : shared.seenArtistUris.putIfAbsentAndGetNewKey(makerUris.get(0), Optional.empty()); // FIXME: onlt first one?
 
         final EntityWithPath parent       = mediaItem.getParent().map(p -> p).orElseThrow(() -> new RuntimeException());
@@ -244,8 +244,8 @@ public class EmbeddedMetadataManager
                                                     .orElse(parent.getPath().toFile().getName());
 //                                                    .orElse(parent.as(Displayable).getDisplayName());
 
-        final URI recordUri               = createUriForLocalRecord(recordTitle);
-        final Optional<URI> newRecordUri  = shared.seenRecordUris.putIfAbsentAndGetNewKey(recordUri, true);
+        final IRI recordUri               = createIRIForLocalRecord(recordTitle);
+        final Optional<IRI> newRecordUri  = shared.seenRecordUris.putIfAbsentAndGetNewKey(recordUri, true);
 
         statementManager.requestAddStatements()
             .withOptional(trackUri,      RDFS.LABEL,                literalFor(title))
@@ -277,7 +277,7 @@ public class EmbeddedMetadataManager
      *
      ******************************************************************************************************************/
     @Nonnull
-    private URI createUriForLocalRecord (final @Nonnull String recordTitle)
+    private IRI createIRIForLocalRecord (final @Nonnull String recordTitle)
       {
         return BM.localRecordUriFor(idCreator.createSha1("RECORD:" + recordTitle));
       }
@@ -287,7 +287,7 @@ public class EmbeddedMetadataManager
      *
      ******************************************************************************************************************/
     @Nonnull
-    private URI createUriForLocalArtist (final @Nonnull String name)
+    private IRI createIRIForLocalArtist (final @Nonnull String name)
       {
         return BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + name));
       }

@@ -37,10 +37,10 @@ import java.util.Optional;
 import java.util.stream.Stream;
 import org.openrdf.model.Statement;
 import org.openrdf.model.Resource;
-import org.openrdf.model.URI;
+import org.openrdf.model.IRI;
 import org.openrdf.model.Value;
 import org.openrdf.model.ValueFactory;
-import org.openrdf.model.impl.ValueFactoryImpl;
+import org.openrdf.model.impl.SimpleValueFactory;
 import org.openrdf.repository.RepositoryException;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
@@ -61,11 +61,11 @@ public class StatementManager
       {
         private final List<Statement> statements = new ArrayList<>();
         
-        private final ValueFactory factory = ValueFactoryImpl.getInstance();
+        private final ValueFactory factory = SimpleValueFactory.getInstance();
 
         @Nonnull
         public Builder with (final @Nonnull Resource subject, 
-                             final @Nonnull URI predicate,
+                             final @Nonnull IRI predicate,
                              final @Nonnull Value object) 
           {
             return with(factory.createStatement(subject, predicate, object));
@@ -73,7 +73,7 @@ public class StatementManager
         
         @Nonnull
         public Builder withOptional (final @Nonnull Optional<? extends Resource> optionalSubject, 
-                                     final @Nonnull URI predicate,
+                                     final @Nonnull IRI predicate,
                                      final @Nonnull Value object) 
           {
             return optionalSubject.map(subject -> with(subject, predicate, object)).orElse(this);
@@ -81,7 +81,7 @@ public class StatementManager
         
         @Nonnull
         public Builder withOptional (final @Nonnull Resource subject, 
-                                     final @Nonnull URI predicate,
+                                     final @Nonnull IRI predicate,
                                      final @Nonnull Optional<? extends Value> optionalObject)
           { 
             return optionalObject.map(object -> with(subject, predicate, object)).orElse(this);
@@ -89,7 +89,7 @@ public class StatementManager
         
         @Nonnull
         public Builder withOptional (final @Nonnull Optional<? extends Resource> optionalSubject, 
-                                     final @Nonnull URI predicate,
+                                     final @Nonnull IRI predicate,
                                      final @Nonnull Optional<? extends Value> optionalObject) 
           {
             return optionalObject.map(object -> withOptional(optionalSubject, predicate, object)).orElse(this);
@@ -97,7 +97,7 @@ public class StatementManager
         
         @Nonnull
         public Builder with (final @Nonnull List<? extends Resource> subjects, 
-                             final @Nonnull URI predicate,
+                             final @Nonnull IRI predicate,
                              final @Nonnull Value object)
           { 
             subjects.stream().forEach(subject -> with(subject, predicate, object)); // FIXME ?? this = withOptional(...)
@@ -106,7 +106,7 @@ public class StatementManager
         
         @Nonnull
         public Builder with (final @Nonnull List<? extends Resource> subjects, 
-                             final @Nonnull URI predicate,
+                             final @Nonnull IRI predicate,
                              final @Nonnull List<? extends Value> objects)
           { 
             assert subjects.size() == objects.size();
@@ -121,7 +121,7 @@ public class StatementManager
         
         @Nonnull
         public Builder with (final @Nonnull Resource subject, 
-                             final @Nonnull URI predicate,
+                             final @Nonnull IRI predicate,
                              final @Nonnull Stream<? extends Value> objects)
           { 
             objects.forEach(object -> with(subject, predicate, object)); // FIXME ?? this = withOptional(...)
@@ -130,7 +130,7 @@ public class StatementManager
         
         @Nonnull
         public Builder withOptional (final @Nonnull Optional<? extends Resource> subject, 
-                                     final @Nonnull URI predicate,
+                                     final @Nonnull IRI predicate,
                                      final @Nonnull Stream<? extends Value> objects)
           {
             if (subject.isPresent())
@@ -176,7 +176,7 @@ public class StatementManager
      *
      *
      ******************************************************************************************************************/
-    public void requestAdd (final @Nonnull Resource subject, final @Nonnull URI predicate, final @Nonnull Value literal) 
+    public void requestAdd (final @Nonnull Resource subject, final @Nonnull IRI predicate, final @Nonnull Value literal) 
       {
         requestAdd(new AddStatementsRequest(subject, predicate, literal));
       }

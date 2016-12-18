@@ -42,82 +42,82 @@ import lombok.experimental.Accessors;
 /***********************************************************************************************************************
  *
  * The Presentation of the explorer of audio media files.
- * 
+ *
  * @stereotype  Presentation
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface AudioExplorerPresentation 
+public interface AudioExplorerPresentation
   {
     @Getter @Accessors(fluent = true)
     public static class Properties
       {
         private final StringProperty folderNameProperty = new SimpleStringProperty("");
       }
-    
+
     /*******************************************************************************************************************
      *
      * Binds the UI with the callbacks.
-     * 
+     *
      * @param   upAction    the action to go to the upper folder
      *
      ******************************************************************************************************************/
     public void bind (@Nonnull Properties properties, @Nonnull UserAction upAction);
-    
+
     /*******************************************************************************************************************
      *
      * Shows this presentation on the screen.
      *
      ******************************************************************************************************************/
     public void showUp (@Nonnull Object control);
-    
+
     /*******************************************************************************************************************
      *
      * Populates the presentation with the available media browsers.
-     * 
+     *
      * @param   pm                  the {@link PresentationModel}
      *
      ******************************************************************************************************************/
     public void populateBrowsers (@Nonnull PresentationModel pm);
-    
+
     /*******************************************************************************************************************
      *
      * Populates the presentation with a set of items and optionally restores some visual properties.
-     * 
+     *
      * @param   pm                  the {@link PresentationModel}
      * @param   optionalMemento     the container of properties
      *
      ******************************************************************************************************************/
     public void populateItems (@Nonnull PresentationModel pm, @Nonnull Optional<Object> optionalMemento);
-    
+
     /*******************************************************************************************************************
      *
      * Renders some details about an {@link Entity}.
-     * 
+     *
      * @param   entityDetails       the details
      *
      ******************************************************************************************************************/
     public void renderDetails (@Nonnull String entityDetails);
-    
+
     /*******************************************************************************************************************
      *
      * Puts the focus on the list to select media items.
      *
      ******************************************************************************************************************/
     public void focusOnMediaItems();
-    
+
     /*******************************************************************************************************************
      *
      * Returns an object containing the snapshot of some relevant visual properties.
-     * 
+     *
      * @return      the memento object
      *
      ******************************************************************************************************************/
     @Nonnull
     public Object getMemento();
-    
+
     /*******************************************************************************************************************
      *
      *

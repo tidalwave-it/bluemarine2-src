@@ -41,10 +41,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import org.openrdf.model.Model;
 import org.openrdf.model.Statement;
-import org.openrdf.model.URI;
+import org.openrdf.model.IRI;
 import org.openrdf.model.Value;
 import org.openrdf.model.ValueFactory;
-import org.openrdf.model.impl.ValueFactoryImpl;
+import org.openrdf.model.impl.SimpleValueFactory;
 import org.openrdf.model.impl.LinkedHashModel;
 import org.openrdf.rio.RDFHandlerException;
 import org.openrdf.rio.RDFParseException;
@@ -67,7 +67,7 @@ import static java.text.Normalizer.Form.NFC;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 final class Utilities
   {
-    private final static ValueFactory FACTORY = ValueFactoryImpl.getInstance(); // FIXME
+    private final static ValueFactory FACTORY = SimpleValueFactory.getInstance(); // FIXME
 
     /*******************************************************************************************************************
      *
@@ -195,7 +195,7 @@ final class Utilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static URI uriFor (final @Nonnull Id id)
+    public static IRI uriFor (final @Nonnull Id id)
       {
         return uriFor(id.stringValue());
       }
@@ -205,9 +205,9 @@ final class Utilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static URI uriFor (final @Nonnull String id)
+    public static IRI uriFor (final @Nonnull String id)
       {
-        return FACTORY.createURI(id);
+        return FACTORY.createIRI(id);
       }
 
     /*******************************************************************************************************************
@@ -215,9 +215,9 @@ final class Utilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static URI uriFor (final @Nonnull URL url)
+    public static IRI uriFor (final @Nonnull URL url)
       {
-        return FACTORY.createURI(url.toString());
+        return FACTORY.createIRI(url.toString());
       }
 
     /*******************************************************************************************************************
@@ -225,7 +225,7 @@ final class Utilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static URL urlFor (final @Nonnull URI uri)
+    public static URL urlFor (final @Nonnull IRI uri)
       throws MalformedURLException
       {
         return new URL(uri.toString());
