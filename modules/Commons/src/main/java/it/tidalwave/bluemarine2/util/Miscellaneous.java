@@ -178,7 +178,9 @@ public final class Miscellaneous
                     // FIXME: refactor with lambdas
                     boolean found = false;
 
-                    for (final String childName : fileSoFar.list())
+                    final String[] list = fileSoFar.list();
+
+                    for (final String childName : ((list != null) ? list : new String[0]))
                       {
                         found = normalizedToNativeForm(element).equals(normalizedToNativeForm(childName));
                         log.trace(">>>> original: {} found: {} same: {}", element, childName, found);
