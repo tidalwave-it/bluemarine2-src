@@ -55,6 +55,7 @@ import java.io.FileNotFoundException;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
+import java.util.stream.Stream;
 import junit.framework.Assert;
 
 /***********************************************************************************************************************
@@ -132,16 +133,19 @@ public class DefaultMediaScannerTest extends SpringTestSupport
             throw new FileNotFoundException("Missing test folder: " + p);
           }
 
-        Files.walk(p.resolve("Music"), FOLLOW_LINKS).forEach(path ->
+        try (final Stream<Path> dirStream = Files.walk(p.resolve("Music"), FOLLOW_LINKS))
           {
-            Assert.assertTrue("Inconsistent file: " + path, Files.exists(path));
-            Assert.assertTrue("Inconsistent file: " + path, path.toFile().exists());
-          });
+            dirStream.forEach(path ->
+              {
+                Assert.assertTrue("Inconsistent file: " + path, Files.exists(path));
+                Assert.assertTrue("Inconsistent file: " + path, path.toFile().exists());
+              });
+          }
 
-//        for (final File file : p.resolve("Music").toFile().listFiles())
-//          {
-//            Assert.assertTrue("Inconsistent file: " + file, file.exists());
-//          }
+        for (final File file : p.resolve("Music").toFile().listFiles())
+          {
+            Assert.assertTrue("Inconsistent file: " + file, file.exists());
+          }
       }
 
     @Test(dataProvider = "dataSetNames", dependsOnMethods = "testFileSystemConsistency") // FIXME: because of BMT-46
