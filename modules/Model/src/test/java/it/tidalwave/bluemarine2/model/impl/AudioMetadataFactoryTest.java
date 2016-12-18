@@ -55,7 +55,7 @@ import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 @Slf4j
 public class AudioMetadataFactoryTest
   {
-    @Test(dataProvider = "pathProvider", groups = "no-ci") // because of BMT-46
+    @Test(dataProvider = "pathProvider")
     public void must_properly_read_metadata (final @Nonnull String testSetName,
                                              final @Nonnull Path path,
                                              final @Nonnull Path relativePath)
