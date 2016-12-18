@@ -156,7 +156,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
           }
       }
 
-    @Test(dataProvider = "dataSetNames", dependsOnMethods = "testFileSystemConsistency") // FIXME: because of BMT-46
+    @Test(dataProvider = "dataSetNames" /*, dependsOnMethods = "testFileSystemConsistency" */) // FIXME: because of BMT-46
     public void testScan (final @Nonnull String dataSetName)
       throws Exception
       {

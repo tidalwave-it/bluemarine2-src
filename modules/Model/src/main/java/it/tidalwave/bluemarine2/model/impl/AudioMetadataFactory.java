@@ -58,6 +58,7 @@ import lombok.extern.slf4j.Slf4j;
 import static lombok.AccessLevel.PRIVATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
+import java.io.File;
 import org.jaudiotagger.audio.mp3.MP3FileReader;
 
 /***********************************************************************************************************************
@@ -85,8 +86,18 @@ public final class AudioMetadataFactory
           {
             final Path aPath = normalizedPath(path.toAbsolutePath());
             log.debug("path: {}", aPath);
+            File file = aPath.toFile();
+
+            if (Files.exists(path) && !file.exists()) // FIXME: see BMT-46
+              {
+                file = File.createTempFile("temp", "");
+                file.deleteOnExit();
+                log.warn("Workaround for BMT-46: copying to temporary file: {}", file);
+                Files.copy(aPath, file.toPath());
+              }
+
 //            audioFile = AudioFileIO.read(aPath.toFile());
-            audioFile = new MP3FileReader().read(aPath.toFile()); // FIXME in some cases AudioFileIO doesn't get the right file extension
+            audioFile = new MP3FileReader().read(file); // FIXME in some cases AudioFileIO doesn't get the right file extension
 
             final AudioHeader header = audioFile.getAudioHeader();
             metadata = metadata.with(FILE_SIZE, Files.size(path));
