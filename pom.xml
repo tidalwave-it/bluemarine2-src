@@ -187,7 +187,7 @@ Still at the early stage of development, it can be used with some hack to reprod
         <connection>scm:git:${scm.repo.readonly.url}</connection>
         <developerConnection>scm:git:${scm.repo.effective.url}</developerConnection>
         <url>${scm.repo.browse.url}</url>
-      <tag>HEAD</tag>
+        <tag>HEAD</tag>
   </scm>
 
     <modules>
