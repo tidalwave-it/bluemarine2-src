@@ -37,15 +37,15 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import org.jaudiotagger.audio.AudioFile;
-import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.audio.AudioHeader;
-import org.jaudiotagger.audio.exceptions.CannotReadException;
 import org.jaudiotagger.audio.exceptions.InvalidAudioFrameException;
 import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
+import org.jaudiotagger.audio.mp3.MP3FileReader;
 import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 import org.jaudiotagger.tag.TagException;
@@ -58,8 +58,7 @@ import lombok.extern.slf4j.Slf4j;
 import static lombok.AccessLevel.PRIVATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
-import java.io.File;
-import org.jaudiotagger.audio.mp3.MP3FileReader;
+import static it.tidalwave.bluemarine2.util.WorkaroundForBMT46.toFileBMT46;
 
 /***********************************************************************************************************************
  *
@@ -86,16 +85,7 @@ public final class AudioMetadataFactory
           {
             final Path aPath = normalizedPath(path.toAbsolutePath());
             log.debug("path: {}", aPath);
-            File file = aPath.toFile();
-
-            if (Files.exists(path) && !file.exists()) // FIXME: see BMT-46
-              {
-                file = File.createTempFile("temp", "");
-                file.deleteOnExit();
-                log.warn("Workaround for BMT-46: copying to temporary file: {}", file);
-                Files.copy(aPath, file.toPath());
-              }
-
+            final File file = toFileBMT46(aPath);
 //            audioFile = AudioFileIO.read(aPath.toFile());
             audioFile = new MP3FileReader().read(file); // FIXME in some cases AudioFileIO doesn't get the right file extension
 

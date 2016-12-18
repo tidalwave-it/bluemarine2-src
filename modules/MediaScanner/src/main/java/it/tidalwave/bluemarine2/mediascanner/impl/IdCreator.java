@@ -41,6 +41,7 @@ import java.security.NoSuchAlgorithmException;
 import it.tidalwave.util.Id;
 import lombok.Cleanup;
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static it.tidalwave.bluemarine2.util.WorkaroundForBMT46.toFileBMT46;
 
 /***********************************************************************************************************************
  *
@@ -64,7 +65,7 @@ public class IdCreator
         try
           {
             diskSemaphore.acquire();
-            final File file = path.toFile();
+            final File file = toFileBMT46(path);
             final String algorithm = "SHA1";
             final @Cleanup RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
             final MappedByteBuffer byteBuffer = randomAccessFile.getChannel().map(FileChannel.MapMode.READ_ONLY, 0, file.length());

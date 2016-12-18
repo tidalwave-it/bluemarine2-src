@@ -141,7 +141,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
                 try
                   {
                     assertTrue("Inconsistent file: " + path, Files.exists(normalizedPath(path)));
-                    assertTrue("Inconsistent file: " + path, normalizedPath(path).toFile().exists());
+//                    assertTrue("Inconsistent file: " + path, normalizedPath(path).toFile().exists());
                   }
                 catch (IOException e)
                   {
