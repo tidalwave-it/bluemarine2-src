@@ -166,7 +166,8 @@ public final class Miscellaneous
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static File toFileBMT46(@Nonnull final Path path) throws IOException
+    public static File toFileBMT46 (final @Nonnull Path path)
+      throws IOException
       {
         File file = path.toFile();
 
