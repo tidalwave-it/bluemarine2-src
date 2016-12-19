@@ -30,15 +30,16 @@ package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
+import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import org.springframework.core.annotation.Order;
 
 /***********************************************************************************************************************
  *
  * Represents a filesystem (even a virtual one) that contains {@link MediaFolder}s and {@link MediaItem}s.
- * 
+ *
  * @stereotype  Datum
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -49,13 +50,13 @@ public interface MediaFileSystem extends Entity, EntityBrowser
     /*******************************************************************************************************************
      *
      * Returns the root {@link MediaFolder}.
-     * 
+     *
      * @return  the path
      *
      ******************************************************************************************************************/
     @Override @Nonnull // FIXME: this declaration could be dropped if we don't need covariance on return type
     public MediaFolder getRoot();
-    
+
     @Nonnull
     public Path getRootPath();
   }

@@ -41,7 +41,7 @@ import org.fourthline.cling.support.contentdirectory.AbstractContentDirectorySer
 import org.fourthline.cling.support.contentdirectory.ContentDirectoryException;
 import org.fourthline.cling.support.contentdirectory.DIDLParser;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.ContentHolder;
 import lombok.extern.slf4j.Slf4j;
 import lombok.EqualsAndHashCode;

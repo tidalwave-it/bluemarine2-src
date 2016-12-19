@@ -35,7 +35,7 @@ import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
 import it.tidalwave.role.ui.spi.UserActionLambda;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.role.Entity;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 

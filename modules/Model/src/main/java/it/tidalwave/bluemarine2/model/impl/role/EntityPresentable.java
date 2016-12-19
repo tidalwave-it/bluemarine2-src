@@ -31,7 +31,7 @@ package it.tidalwave.bluemarine2.model.impl.role;
 import javax.annotation.Nonnull;
 import it.tidalwave.role.ui.spi.DefaultPresentable;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 
 /***********************************************************************************************************************

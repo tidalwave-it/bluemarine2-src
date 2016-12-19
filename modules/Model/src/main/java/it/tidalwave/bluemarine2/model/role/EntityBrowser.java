@@ -30,11 +30,10 @@ package it.tidalwave.bluemarine2.model.role;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.util.As8;
-import it.tidalwave.bluemarine2.model.Entity;
 
 /***********************************************************************************************************************
  *
- * A generic role which can supply an {@link Entity}. For instance, it can be the supplier of the root of a hierarchy.
+ * A generic role which can supply an {@link Entity} that is the root of a hierarchy.
  *
  * @stereotype  Role
  *
@@ -44,6 +43,13 @@ import it.tidalwave.bluemarine2.model.Entity;
  **********************************************************************************************************************/
 public interface EntityBrowser extends As8
   {
+    /*******************************************************************************************************************
+     *
+     * Returns the root {@link Entity}.
+     *
+     * @return  the root {@code Entity}
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public Entity getRoot();
   }

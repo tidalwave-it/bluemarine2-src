@@ -32,34 +32,33 @@ import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Optional;
 import java.net.URL;
-import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 
 /***********************************************************************************************************************
  *
  * A SPI interface to {@link DefaultAudioExplorerPresentationControl} which is only exposed to local roles.
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface AudioExplorerPresentationControlSpi 
+public interface AudioExplorerPresentationControlSpi
   {
     /*******************************************************************************************************************
      *
      * Selects a browser.
-     * 
+     *
      * @param   entityBrowser     the browser
      *
      ******************************************************************************************************************/
     public void selectBrowser (@Nonnull EntityBrowser entityBrowser);
-    
+
     /*******************************************************************************************************************
      *
      * Navigates to a new folder, saving the current folder to the stack.
-     * 
+     *
      * @param   mediaFolder  the new folder
      *
      ******************************************************************************************************************/
@@ -85,11 +84,11 @@ public interface AudioExplorerPresentationControlSpi
      *
      ******************************************************************************************************************/
     public void requestCoverArt (@Nonnull Optional<URL> optionalCoverArtUri);
-    
+
     /*******************************************************************************************************************
      *
      * Returns the list of media items in the current folder.
-     * 
+     *
      * FIXME: should be List<MediaItems>
      *
      ******************************************************************************************************************/

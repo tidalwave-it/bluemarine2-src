@@ -38,7 +38,7 @@ import org.openrdf.query.BindingSet;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.role.Entity;
 import lombok.Delegate;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
