@@ -26,24 +26,58 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.role;
 
 import javax.annotation.Nonnull;
+import java.util.Optional;
 import java.nio.file.Path;
-import it.tidalwave.bluemarine2.model.role.Child;
 
 /***********************************************************************************************************************
  *
- * A specialisation of {@link Entity} that is associated to a {@link Path},
+ * A specialisation of {@link Entity} that has, or can have, a parent - hence, a {@link Path}.
  *
- * @stereotype  Datum
+ * @stereotype  Role
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface EntityWithPath extends Entity, Child<EntityWithPath>
+public interface EntityWithPath extends Entity
   {
+    public static final Class<EntityWithPath> EntityWithPath = EntityWithPath.class;
+
+    /*******************************************************************************************************************
+     *
+     * Returns the optional parent of this object.
+     *
+     * @return  the parent
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Optional<EntityWithPath> getParent();
+
+    /*******************************************************************************************************************
+     *
+     * Returns the {@link Path} associated with this entity.
+     *
+     * @see #getRelativePath()
+     *
+     * @return  the path
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Path getPath();
+
+    /*******************************************************************************************************************
+     *
+     * Returns the relative path of this entity. For instances without a parent, this method returns the same value as
+     * {@link #getPath()}.
+     *
+     * @see #getPath()
+     *
+     * @return      the relative path
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public default Path getRelativePath()
       {

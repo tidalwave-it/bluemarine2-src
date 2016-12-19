@@ -36,8 +36,8 @@ import java.nio.file.Path;
 import it.tidalwave.util.Id;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.role.spi.DefaultDisplayable;
-import it.tidalwave.bluemarine2.model.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import lombok.Getter;
 

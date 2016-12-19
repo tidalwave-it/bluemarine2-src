@@ -36,7 +36,7 @@ import org.fourthline.cling.support.model.DIDLContent;
 import it.tidalwave.util.Finder;
 import it.tidalwave.util.As8;
 import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.role.Entity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.DIDLAdapter;

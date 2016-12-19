@@ -45,12 +45,11 @@ import it.tidalwave.role.ui.spi.UserActionLambda;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
+import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;
-import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
-import it.tidalwave.bluemarine2.model.role.Child;
 import it.tidalwave.bluemarine2.ui.commons.OpenAudioExplorerRequest;
 import it.tidalwave.bluemarine2.ui.commons.OnDeactivate;
 import it.tidalwave.bluemarine2.ui.commons.OnActivate;
@@ -64,7 +63,7 @@ import static java.util.stream.Stream.*;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.*;
-import static it.tidalwave.bluemarine2.model.role.Child.Child;
+import static it.tidalwave.bluemarine2.model.role.EntityWithPath.EntityWithPath;
 import it.tidalwave.util.Finder8;
 import java.util.ArrayList;
 
@@ -320,7 +319,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
     private String getCurrentPathLabel()
       {
         return concat(navigationStack.stream().map(i -> i.getFolder()), of(currentFolder))
-                .filter(i -> i.asOptional(Child).map(p -> p.getParent().isPresent()).orElse(true))
+                .filter(i -> i.asOptional(EntityWithPath).map(p -> p.getParent().isPresent()).orElse(true))
                 .filter(i -> i.asOptional(Displayable).map(d -> true).orElse(false))
                 .map(i -> i.asOptional(Displayable).map(o -> o.getDisplayName()).orElse("???"))
                 .collect(joining(" / "));
