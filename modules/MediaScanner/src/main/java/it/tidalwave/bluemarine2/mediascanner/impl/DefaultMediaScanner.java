@@ -50,6 +50,10 @@ import it.tidalwave.bluemarine2.model.vocabulary.BM;
 import it.tidalwave.bluemarine2.model.vocabulary.MO;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITUNES_COMMENT;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITunesComment;
+import it.tidalwave.util.Key;
+import java.util.List;
 
 /***********************************************************************************************************************
  *
@@ -219,17 +223,20 @@ public class DefaultMediaScanner
 
         final Instant lastModifiedTime = getLastModifiedTime(audioFile.getPath());
         statementManager.requestAddStatements()
-                        .with(audioFileUri, RDF.TYPE,                MO.C_AUDIO_FILE)
-                        .with(audioFileUri, FOAF.SHA1,               literalFor(sha1))
-                        .with(audioFileUri, MO.P_ENCODES,            signalUri)
-                        .with(audioFileUri, BM.PATH,                 literalFor(audioFile.getRelativePath()))
-                        .with(audioFileUri, BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
+                        .with(audioFileUri,     RDF.TYPE,                MO.C_AUDIO_FILE)
+                        .with(audioFileUri,     FOAF.SHA1,               literalFor(sha1))
+                        .with(audioFileUri,     MO.P_ENCODES,            signalUri)
+                        .with(audioFileUri,     BM.PATH,                 literalFor(audioFile.getRelativePath()))
+                        .with(audioFileUri,     BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
 
-                        .with(trackUri,     RDF.TYPE,                MO.C_TRACK)
+                        .with(trackUri,         RDF.TYPE,                MO.C_TRACK)
+                        .withOptional(trackUri, BM.ITUNES_CDDB_ID,       literalFor(metadata.get(ITUNES_COMMENT)
+                                                                                            .map(c -> c.getTrackId())))
 
-                        .with(signalUri,    RDF.TYPE,                MO.C_DIGITAL_SIGNAL)
-                        .with(signalUri,    MO.P_PUBLISHED_AS,       trackUri)
+                        .with(signalUri,        RDF.TYPE,                MO.C_DIGITAL_SIGNAL)
+                        .with(signalUri,        MO.P_PUBLISHED_AS,       trackUri)
                         .publish();
+
         embeddedMetadataManager.importAudioFileMetadata(audioFile, signalUri, trackUri);
 
         // FIXME: use a Chain of Responsibility
