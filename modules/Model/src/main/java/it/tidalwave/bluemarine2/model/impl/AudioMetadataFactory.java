@@ -111,11 +111,11 @@ public final class AudioMetadataFactory
             metadata = metadata.with(MBZ_TRACK_ID,    id(tag.getFirst(FieldKey.MUSICBRAINZ_TRACK_ID)));
             metadata = metadata.with(MBZ_WORK_ID,     id(tag.getFirst(FieldKey.MUSICBRAINZ_WORK_ID)));
             metadata = metadata.with(MBZ_DISC_ID,     id(tag.getFirst(FieldKey.MUSICBRAINZ_DISC_ID)));
-            metadata = metadata.with(MBZ_ARTIST_ID,   tag.getAll(FieldKey.MUSICBRAINZ_ARTISTID).stream()
+            metadata = metadata.with(MBZ_ARTIST_ID,   optionalList(tag.getAll(FieldKey.MUSICBRAINZ_ARTISTID).stream()
                                                                 .filter(s -> ((s != null) && !"".equals(s)))
                                                                 .flatMap(s -> Stream.of(s.split("/"))) // FIXME:correct?
                                                                 .map(s -> id(s))
-                                                                .collect(toList()));
+                                                                .collect(toList())));
 
             for (final FieldKey fieldKey : FieldKey.values())
               {
@@ -175,6 +175,12 @@ public final class AudioMetadataFactory
           }
 
         return metadata;
+      }
+
+    @Nonnull
+    private static Optional<List<Id>> optionalList (final @Nonnull List<Id> list)
+      {
+        return list.isEmpty() ? Optional.empty() : Optional.of(list);
       }
 
     @Nonnull

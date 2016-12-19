@@ -75,7 +75,7 @@
                                 <artifactItem>
                                     <groupId>it.tidalwave.bluemarine2.testsets</groupId>
                                     <artifactId>expected-metadata-iTunes-fg-20160504-1</artifactId>
-                                    <version>2</version>
+                                    <version>3</version>
                                     <type>zip</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.basedir}/target/test-classes/expected-results/metadata</outputDirectory>
