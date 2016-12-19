@@ -229,7 +229,7 @@ public class DefaultMediaScanner
                         .with(audioFileUri,     BM.PATH,                 literalFor(audioFile.getRelativePath()))
                         .with(audioFileUri,     BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
 
-                        .with(trackUri,         RDF.TYPE,                MO.C_TRACK)
+                        .with(        trackUri, RDF.TYPE,                MO.C_TRACK)
                         .withOptional(trackUri, BM.ITUNES_CDDB_ID,       literalFor(metadata.get(ITUNES_COMMENT)
                                                                                             .map(c -> c.getTrackId())))
 
