@@ -93,7 +93,7 @@ public class AudioMetadataFactoryTest
         final String testSetName = "iTunes-fg-20160504-1";
         final Path testSetPath = TestSetLocator.getMusicTestSetsPath().resolve(testSetName);
         return Files.walk(testSetPath, FOLLOW_LINKS)
-                    .filter(path -> Files.isRegularFile(path))
+                    .filter(Files::isRegularFile)
                     .filter(path -> !path.getFileName().toString().startsWith(".")) // isHidden() throws exception
                     .map(path -> new Object[] { testSetName, path, testSetPath.relativize(path) })
                     .collect(toList())
