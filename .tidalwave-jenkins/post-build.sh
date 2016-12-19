@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Hudson uses thejava.io.File API to remove and archive files in the workspace,
+# Hudson uses the java.io.File API to remove and archive files in the workspace,
 # so it fails with file names containing diacritics. We have to manually remove them.
 
 if [ -z ${WORKSPACE+x} ]; then 

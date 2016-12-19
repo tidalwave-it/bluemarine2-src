@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
+import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.role.Identifiable;
@@ -42,26 +43,26 @@ import it.tidalwave.role.Identifiable;
 public interface MusicArtist extends Entity, Identifiable
   {
     public static final Class<MusicArtist> MusicArtist = MusicArtist.class;
-    
+
     /*******************************************************************************************************************
      *
      * Finds the tracks made by this artist.
-     * 
+     *
      * @return  the tracks
      *
      ******************************************************************************************************************/
     @Nonnull
     public TrackFinder findTracks();
-    
+
     /*******************************************************************************************************************
      *
      * Finds the records made by this artist.
-     * 
+     *
      * @return  the records
      *
      ******************************************************************************************************************/
     @Nonnull
     public RecordFinder findRecords();
-    
+
     public int getType(); // FIXME: use an enum
   }

@@ -28,41 +28,54 @@
  */
 package it.tidalwave.bluemarine2.model.role;
 
-import javax.annotation.Nonnull;
-import java.util.Optional;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Optional;
+import org.testng.annotations.Test;
+import static org.mockito.Mockito.*;
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /***********************************************************************************************************************
- *
- * The role of an object that has, or can have, a parent - hence, a {@link Path}.
- *
- * @stereotype  Role
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Child<T>
+public class EntityWithPathTest
   {
-    public final static Class<Child> Child = Child.class;
+    private static final Path PARENT_PATH = Paths.get("/parent");
+    private static final Path CHILD_PATH = PARENT_PATH.resolve("child");
+    private static final Path FULL_PATH = PARENT_PATH.resolve("/foo/bar");
 
-    /*******************************************************************************************************************
-     *
-     * Returns the optional parent of this object.
-     *
-     * @return  the parent
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Optional<T> getParent();
+    @Test
+    public void relativePath_in_entity_with_parent_must_be_relativised()
+      {
+        // given
+        final EntityWithPath parentEntity = mock(EntityWithPath.class);
+        when(parentEntity.getPath()).thenReturn(PARENT_PATH);
+        
+        final EntityWithPath underTest = mock(EntityWithPath.class);
+        when(underTest.getParent()).thenReturn(Optional.of(parentEntity));
+        when(underTest.getPath()).thenReturn(CHILD_PATH);
+        when(underTest.getRelativePath()).thenCallRealMethod();
+        // when
+        final Path relativePath = underTest.getRelativePath();
+        // then
+        assertThat(relativePath.toString(), is("child"));
+      }
 
-    /*******************************************************************************************************************
-     *
-     * Returns the {@link Path} associated with this object.
-     *
-     * @return  the path
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Path getPath();
+    @Test
+    public void relativePath_in_parentless_entity_must_be_the_same_as_Path()
+      {
+        // given
+        final EntityWithPath underTest = mock(EntityWithPath.class);
+        when(underTest.getParent()).thenReturn(Optional.empty());
+        when(underTest.getPath()).thenReturn(FULL_PATH);
+        when(underTest.getRelativePath()).thenCallRealMethod();
+        // when
+        final Path relativePath = underTest.getRelativePath();
+        // then
+        assertThat(relativePath.toString(), is("/foo/bar"));
+      }
   }

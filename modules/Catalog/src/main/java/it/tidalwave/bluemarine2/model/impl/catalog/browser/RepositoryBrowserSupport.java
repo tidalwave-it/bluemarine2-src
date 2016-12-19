@@ -34,10 +34,10 @@ import javax.inject.Inject;
 import java.util.function.Supplier;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.model.Entity;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
-import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
+import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMediaCatalog;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 
