@@ -30,7 +30,7 @@ package it.tidalwave.bluemarine2.model.spi;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.util.spi.AsSupport;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.role.Entity;
 import lombok.Delegate;
 
 /***********************************************************************************************************************

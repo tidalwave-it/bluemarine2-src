@@ -35,7 +35,7 @@ import org.fourthline.cling.support.model.container.Container;
 import org.fourthline.cling.support.model.container.StorageFolder;
 import it.tidalwave.role.Displayable;
 import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.model.Entity;
+import it.tidalwave.bluemarine2.model.role.Entity;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.Identifiable.Identifiable;
 

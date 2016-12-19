@@ -32,7 +32,7 @@ import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.nio.file.Path;
 import it.tidalwave.bluemarine2.model.AudioFile;
-import it.tidalwave.bluemarine2.model.EntityWithPath;
+import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;

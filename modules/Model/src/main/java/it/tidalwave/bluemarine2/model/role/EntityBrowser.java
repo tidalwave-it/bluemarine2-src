@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.model.role;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.util.As8;
-import it.tidalwave.bluemarine2.model.Entity;
 
 /***********************************************************************************************************************
  *

@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.net.URL;
 import it.tidalwave.role.Identifiable;
+import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 
 /***********************************************************************************************************************
@@ -43,17 +44,17 @@ import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 public interface Record extends Entity, Identifiable
   {
     public static final Class<Record> Record = Record.class;
-    
+
     /*******************************************************************************************************************
      *
      * Finds the tracks in this record.
-     * 
+     *
      * @return  the tracks
      *
      ******************************************************************************************************************/
     @Nonnull
     public TrackFinder findTracks();
-    
+
     @Nonnull
     public Optional<URL> getImageUrl();
   }

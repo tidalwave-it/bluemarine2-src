@@ -37,6 +37,7 @@ import java.util.Set;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
+import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 
 /***********************************************************************************************************************
  *
