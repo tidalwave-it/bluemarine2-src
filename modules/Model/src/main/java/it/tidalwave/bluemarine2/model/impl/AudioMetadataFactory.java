@@ -69,7 +69,7 @@ import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 public final class AudioMetadataFactory
   {
     private final static List<FieldKey> UNMAPPED_TAGS = Arrays.asList(
-        FieldKey.ARTIST, FieldKey.ALBUM, FieldKey.TITLE,
+        FieldKey.ARTIST, FieldKey.ALBUM, FieldKey.TITLE, FieldKey.TITLE, FieldKey.COMMENT,
         FieldKey.TRACK, FieldKey.DISC_NO, FieldKey.DISC_TOTAL, FieldKey.COMPOSER,
         FieldKey.MUSICBRAINZ_TRACK_ID, FieldKey.MUSICBRAINZ_WORK_ID, FieldKey.MUSICBRAINZ_DISC_ID, FieldKey.MUSICBRAINZ_ARTISTID);
 
@@ -98,11 +98,11 @@ public final class AudioMetadataFactory
             metadata = metadata.with(FORMAT,          Optional.ofNullable(header.getFormat()));
             metadata = metadata.with(ENCODING_TYPE,   Optional.ofNullable(header.getEncodingType()));
 
-            final Tag tag = audioFile.getTag(); // FIXME: getFirst below... should get all
+            final Tag tag = audioFile.getTag(); // FIXME: getFirst below... should get all?
             metadata = metadata.with(ARTIST,          tag.getFirst(FieldKey.ARTIST));
             metadata = metadata.with(ALBUM,           tag.getFirst(FieldKey.ALBUM));
             metadata = metadata.with(TITLE,           tag.getFirst(FieldKey.TITLE));
-            metadata = metadata.with(COMMENT,         tag.getFirst(FieldKey.COMMENT)); // FIXME: doesn't work
+            metadata = metadata.with(COMMENT,         tag.getAll(FieldKey.COMMENT));
             metadata = metadata.with(TRACK_NUMBER,    parseOptionalInt(tag.getFirst(FieldKey.TRACK)));
             metadata = metadata.with(DISK_NUMBER,     parseOptionalInt(tag.getFirst(FieldKey.DISC_NO)));
             metadata = metadata.with(DISK_COUNT,      parseOptionalInt(tag.getFirst(FieldKey.DISC_TOTAL)));
