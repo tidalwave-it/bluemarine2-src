@@ -103,8 +103,8 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 @SimpleMessageSubscriber @Slf4j
 public class DefaultMediaScanner
   {
-    @Inject // FIXME: refactor Db Tune support in a different class
-    private DbTuneMetadataManager dbTuneMetadataManager;
+//    @Inject // FIXME: refactor Db Tune support in a different class
+//    private DbTuneMetadataManager dbTuneMetadataManager;
 
     @Inject
     private EmbeddedMetadataManager embeddedMetadataManager;
@@ -210,16 +210,12 @@ public class DefaultMediaScanner
         log.debug("importMediaItem({})", audioFile);
         final Id sha1 = idCreator.createSha1Id(audioFile.getPath());
         final Metadata metadata = audioFile.getMetadata();
-        final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
-        log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
 
         final IRI audioFileUri = BM.audioFileUriFor(sha1);
         // FIXME: DbTune has got Signals. E.g. http://dbtune.org/musicbrainz/page/signal/0900f0cb-230f-4632-bd87-650801e5fdba
         // FIXME: Try to use them. It seems there is no extra information, but use their Uri.
         final IRI signalUri = BM.signalUriFor(sha1);
-        // FIXME: the same contents in different places will give the same sha1. Disambiguates by hashing the path too?
-        final IRI trackUri = !musicBrainzTrackId.isPresent() ? BM.localTrackUriFor(sha1)
-                                                             : BM.musicBrainzUriFor("track", musicBrainzTrackId.get());
+        final IRI trackUri = createTrackUri(metadata, sha1);
 
         final Instant lastModifiedTime = getLastModifiedTime(audioFile.getPath());
         statementManager.requestAddStatements()
@@ -237,15 +233,30 @@ public class DefaultMediaScanner
         embeddedMetadataManager.importAudioFileMetadata(audioFile, signalUri, trackUri);
 
         // FIXME: use a Chain of Responsibility
-        if (musicBrainzTrackId.isPresent())
-          {
-            dbTuneMetadataManager.importTrackMetadata(audioFile, trackUri, musicBrainzTrackId.get());
-//                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
-          }
-        else
-          {
+//        if (musicBrainzTrackId.isPresent())
+//          {
+//            dbTuneMetadataManager.importTrackMetadata(audioFile, trackUri, musicBrainzTrackId.get());
+////                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
+//          }
+//        else
+//          {
             embeddedMetadataManager.importFallbackTrackMetadata(audioFile, trackUri);
-          }
+//          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private IRI createTrackUri (final @Nonnull Metadata metadata, final @Nonnull Id sha1)
+      {
+        // FIXME: use a chain of responsibility
+        final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
+        log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
+        // FIXME: the same contents in different places will give the same sha1. Disambiguates by hashing the path too?
+        return !musicBrainzTrackId.isPresent() ? BM.localTrackUriFor(sha1)
+                                               : BM.musicBrainzUriFor("track", musicBrainzTrackId.get());
       }
 
     /*******************************************************************************************************************
