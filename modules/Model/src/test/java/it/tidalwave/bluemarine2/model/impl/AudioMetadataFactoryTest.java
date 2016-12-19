@@ -44,9 +44,8 @@ import static java.util.stream.Collectors.toList;
 import static java.text.Normalizer.Form.NFC;
 import static java.text.Normalizer.normalize;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
-import static it.tidalwave.util.test.FileComparisonUtils8.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents2;
 
 /***********************************************************************************************************************
  *
@@ -81,7 +80,7 @@ public class AudioMetadataFactoryTest
                                         e.getKey(), e.getValue()))
                 .collect(toList());
         Files.write(actualFile, metadataDump);
-        assertSameContents(normalizedPath(expectedFile.toAbsolutePath()), normalizedPath(actualFile.toAbsolutePath()));
+        assertSameContents2(expectedFile, actualFile);
       }
 
     /*******************************************************************************************************************
