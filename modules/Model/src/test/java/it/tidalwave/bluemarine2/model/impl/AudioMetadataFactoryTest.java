@@ -56,6 +56,12 @@ import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 @Slf4j
 public class AudioMetadataFactoryTest
   {
+    /*******************************************************************************************************************
+     *
+     * Scans a test set and dumps the read metadata to text files with the same name of the sample plus the '-dump.txt'
+     * suffix. They are checked against a collection of files with expected values, that have been manually validated.
+     *
+     ******************************************************************************************************************/
     @Test(dataProvider = "pathProvider")
     public void must_properly_read_metadata (final @Nonnull String testSetName,
                                              final @Nonnull Path path,
@@ -82,6 +88,9 @@ public class AudioMetadataFactoryTest
 //        tag.getFields(FieldKey.)
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @DataProvider
     private static Object[][] pathProvider()
       throws IOException
