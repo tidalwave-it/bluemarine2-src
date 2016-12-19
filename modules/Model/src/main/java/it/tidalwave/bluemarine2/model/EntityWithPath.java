@@ -44,6 +44,16 @@ import it.tidalwave.bluemarine2.model.role.Child;
  **********************************************************************************************************************/
 public interface EntityWithPath extends Entity, Child<EntityWithPath>
   {
+    /*******************************************************************************************************************
+     *
+     * Returns the relative path of this entity. For instances without a parent, this method returns the same value as
+     * {@link #getPath()}.
+     *
+     * @see #getPath()
+     *
+     * @return      the relative path
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public default Path getRelativePath()
       {
