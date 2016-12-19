@@ -31,8 +31,8 @@ package it.tidalwave.bluemarine2.model.spi;
 import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.nio.file.Path;
-import it.tidalwave.bluemarine2.model.Entity;
-import it.tidalwave.bluemarine2.model.EntityWithPath;
+import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import it.tidalwave.bluemarine2.model.impl.EntityAdapterSupport;
 import lombok.extern.slf4j.Slf4j;
 

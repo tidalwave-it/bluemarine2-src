@@ -29,7 +29,7 @@
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import java.util.Collection;
-import it.tidalwave.bluemarine2.model.EntityWithPath;
+import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import org.testng.annotations.Test;
 
 /***********************************************************************************************************************

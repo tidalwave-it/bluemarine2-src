@@ -42,7 +42,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.util.spi.AsDelegateProvider;
 import it.tidalwave.util.spi.EmptyAsDelegateProvider;
-import it.tidalwave.bluemarine2.model.EntityWithPath;
+import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

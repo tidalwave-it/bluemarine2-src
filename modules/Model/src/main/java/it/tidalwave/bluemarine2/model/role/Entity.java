@@ -26,14 +26,14 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.role;
 
 import it.tidalwave.util.As8;
 
 /***********************************************************************************************************************
  *
- * @stereotype  Datum
- * 
+ * @stereotype  Role
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
