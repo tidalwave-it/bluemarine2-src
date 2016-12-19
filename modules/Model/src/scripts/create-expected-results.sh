@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 function usage()
   {
     echo "Usage: create-expected-results test_set_name version"
@@ -8,7 +10,9 @@ function usage()
 readonly TEST_SET=$1
 readonly VERSION=$2
 
-readonly FILE=$PWD/target/artifact.zip
+readonly GROUP_ID=it.tidalwave.bluemarine2.testsets
+readonly ARTIFACT_ID=expected-metadata-$TEST_SET
+readonly FILE=$PWD/target/$ARTIFACT_ID.zip
 readonly TEST_RESULTS=target/test-results
 
 if [ ! -d "$TEST_RESULTS/$TEST_SET" ] ; then
@@ -29,7 +33,5 @@ rm -vf $FILE
 
 cd $TEST_RESULTS ; zip -prq $FILE $TEST_SET/*
 
-readonly GROUP_ID=it.tidalwave.bluemarine2.testsets
-readonly ARTIFACT_ID=expected-metadata-$TEST_SET
 
 mvn install:install-file -Dfile=$FILE -DgeneratePom=true -DgroupId=$GROUP_ID -DartifactId=$ARTIFACT_ID -Dversion=$VERSION -Dpackaging=zip
