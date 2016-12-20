@@ -94,20 +94,24 @@ public class DefaultGracenoteApiTest
         assertSameContents(PATH_EXPECTED_TEST_RESULTS.resolve("queryAlbumFetchResponse.txt"), actualResult);
       }
 
-    @Test(enabled = false)
+    @Test
     public void downloadGracenoteResource()
       throws IOException
       {
-        try (final Stream<Path> dirStream = Files.walk(Paths.get("target/metadata/iTunes-fg-20160504-1"), FOLLOW_LINKS))
+        underTest.initialize();
+
+        final Path basePath = Paths.get("target/metadata").resolve("iTunes-fg-20160504-1");
+        try (final Stream<Path> dirStream = Files.walk(basePath, FOLLOW_LINKS))
           {
-            dirStream.forEach(path -> process(path));
+            dirStream.forEach(path -> process("iTunes-fg-20160504-1", path));
           }
       }
 
-    private void process (final @Nonnull Path path)
+    private void process (final @Nonnull String testSet, final @Nonnull Path path)
       {
 //        if (path.endsWith("-dump.txt"))
-        if (Files.isRegularFile(path))          {
+        if (Files.isRegularFile(path))
+          {
             try
               {
                 log.info("{}", path);
@@ -119,7 +123,16 @@ public class DefaultGracenoteApiTest
                 if (iTunesComment.isPresent())
                   {
                     final String offsets = itunesCommentToAlbumToc(iTunesComment.get());
-//                    underTest.queryAlbumToc(offsets);
+                    final Path targetFolder = Paths.get("target/gracenote");
+                    final Path dest = targetFolder.resolve(testSet).resolve("albumToc").resolve(offsets.replace(' ', '/')).resolve("response.txt");
+
+                    if (!Files.exists(dest))
+                      {
+                        log.info(">>>> writing to {}", dest);
+                        Files.createDirectories(dest.getParent());
+                        final ResponseEntity<String> response = underTest.queryAlbumToc(offsets);
+                        dump(dest, response);
+                      }
                   }
               }
             catch (IOException e)
@@ -132,7 +145,7 @@ public class DefaultGracenoteApiTest
     @Nonnull
     private static String itunesCommentToAlbumToc (final @Nonnull String comment)
       {
-        return Stream.of(comment.split("\\+")).skip(2).collect(Collectors.joining(" "));
+        return Stream.of(comment.split("\\+")).skip(3).collect(Collectors.joining(" "));
       }
 
     private final static List<String> IGNORED_HEADERS =
@@ -143,6 +156,14 @@ public class DefaultGracenoteApiTest
       throws IOException
       {
         final Path actualResult = PATH_TEST_RESULTS.resolve(resourceName);
+        dump(actualResult, response);
+        return actualResult;
+      }
+
+    @Nonnull
+    private static void dump (final @Nonnull Path actualResult, final @Nonnull ResponseEntity<String> response)
+      throws IOException
+      {
         Files.createDirectories(actualResult.getParent());
         final StringWriter sw = new StringWriter();
         final PrintWriter pw = new PrintWriter(sw);
@@ -155,6 +176,5 @@ public class DefaultGracenoteApiTest
         pw.print(response.getBody());
         pw.close();
         Files.write(actualResult, Arrays.asList(sw.toString()), UTF_8);
-        return actualResult;
       }
   }

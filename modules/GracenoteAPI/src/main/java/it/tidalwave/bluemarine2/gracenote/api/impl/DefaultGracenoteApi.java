@@ -82,6 +82,7 @@ public class DefaultGracenoteApi implements GracenoteApi
     public ResponseEntity<String> queryAlbumToc (final @Nonnull String offsets)
       throws IOException
       {
+        log.info("queryAlbumToc({})", offsets);
         return request("query-album-toc.xml", "@OFFSETS@", offsets);
       }
 
@@ -94,6 +95,7 @@ public class DefaultGracenoteApi implements GracenoteApi
     public ResponseEntity<String> queryAlbumFetch (final @Nonnull String gnId)
       throws IOException
       {
+        log.info("queryAlbumFetch({})", gnId);
         return request("query-album-fetch.xml", "@GN_ID@", gnId);
       }
 
