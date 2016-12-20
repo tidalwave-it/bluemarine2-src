@@ -30,24 +30,25 @@ package it.tidalwave.bluemarine2.gracenote.api.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.Files;
+import org.springframework.http.ResponseEntity;
+import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static java.util.Comparator.comparing;
+import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 import static it.tidalwave.util.test.FileComparisonUtils8.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
-import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
-import java.nio.file.Paths;
-import java.util.Optional;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
 
 /***********************************************************************************************************************
  *
@@ -76,9 +77,9 @@ public class DefaultGracenoteApiTest
         // given
         // when
         final ResponseEntity<String> response = underTest.queryAlbumToc("150 21860 38705 47155 68112 81095 99740 114517 131995 145947 163532 176950 188370 218577 241080 272992 287877 307292");
-        final Path actualResult = dump("queryAlbumTocResponse.xml", response);
+        final Path actualResult = dump("queryAlbumTocResponse.txt", response);
         // then
-        assertSameContents(PATH_EXPECTED_TEST_RESULTS.resolve("queryAlbumTocResponse.xml"), actualResult);
+        assertSameContents(PATH_EXPECTED_TEST_RESULTS.resolve("queryAlbumTocResponse.txt"), actualResult);
       }
 
     @Test
@@ -88,12 +89,12 @@ public class DefaultGracenoteApiTest
         // given
         // when
         final ResponseEntity<String> response = underTest.queryAlbumFetch("161343049-DE60B292E7510AB532A959E2F8140814");
-        final Path actualResult = dump("queryAlbumFetchResponse.xml", response);
+        final Path actualResult = dump("queryAlbumFetchResponse.txt", response);
         // then
-        assertSameContents(PATH_EXPECTED_TEST_RESULTS.resolve("queryAlbumFetchResponse.xml"), actualResult);
+        assertSameContents(PATH_EXPECTED_TEST_RESULTS.resolve("queryAlbumFetchResponse.txt"), actualResult);
       }
 
-    @Test
+    @Test(enabled = false)
     public void downloadGracenoteResource()
       throws IOException
       {
@@ -134,13 +135,26 @@ public class DefaultGracenoteApiTest
         return Stream.of(comment.split("\\+")).skip(2).collect(Collectors.joining(" "));
       }
 
+    private final static List<String> IGNORED_HEADERS =
+            Arrays.asList("Date", "Server", "X-Powered-By", "Connection", "Keep-Alive", "Vary");
+
     @Nonnull
     private static Path dump (final @Nonnull String resourceName, final @Nonnull ResponseEntity<String> response)
       throws IOException
       {
         final Path actualResult = PATH_TEST_RESULTS.resolve(resourceName);
         Files.createDirectories(actualResult.getParent());
-        Files.write(actualResult, Arrays.asList(response.getBody()), UTF_8);
+        final StringWriter sw = new StringWriter();
+        final PrintWriter pw = new PrintWriter(sw);
+        pw.printf("HTTP/1.1 %d %s%n", response.getStatusCode().value(), response.getStatusCode().name());
+        response.getHeaders().entrySet().stream()
+                                        .filter(e -> !IGNORED_HEADERS.contains(e.getKey()))
+                                        .sorted(comparing(e -> e.getKey()))
+                                        .forEach(e -> pw.printf("%s: %s%n", e.getKey(), e.getValue().get(0)));
+        pw.println();
+        pw.print(response.getBody());
+        pw.close();
+        Files.write(actualResult, Arrays.asList(sw.toString()), UTF_8);
         return actualResult;
       }
   }
