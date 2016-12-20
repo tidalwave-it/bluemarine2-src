@@ -64,7 +64,7 @@ public class DefaultGracenoteApiTest
       {
         // given
         // when
-        final String response = underTest.queryAlbumToc();
+        final String response = underTest.queryAlbumToc("150 21860 38705 47155 68112 81095 99740 114517 131995 145947 163532 176950 188370 218577 241080 272992 287877 307292");
         final Path actualResult = dump("queryAlbumTocResponse.xml", response);
         // then
         assertSameContents(PATH_EXPECTED_TEST_RESULTS.resolve("queryAlbumTocResponse.xml"), actualResult);
@@ -76,7 +76,7 @@ public class DefaultGracenoteApiTest
       {
         // given
         // when
-        final String response = underTest.queryAlbumFetch();
+        final String response = underTest.queryAlbumFetch("161343049-DE60B292E7510AB532A959E2F8140814");
         final Path actualResult = dump("queryAlbumFetchResponse.xml", response);
         // then
         assertSameContents(PATH_EXPECTED_TEST_RESULTS.resolve("queryAlbumFetchResponse.xml"), actualResult);

@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.gracenote.api;
 
+import javax.annotation.Nonnull;
 import java.io.IOException;
 
 /***********************************************************************************************************************
@@ -41,16 +42,18 @@ public interface GracenoteApi
     /*******************************************************************************************************************
      *
      *
+     * @param   offsets     the CD offsets
      *
      ******************************************************************************************************************/
-    public String queryAlbumToc()
+    public String queryAlbumToc (@Nonnull String offsets)
       throws IOException;
 
     /*******************************************************************************************************************
      *
      *
+     * @param   gnId        the Gracenote id
      *
      ******************************************************************************************************************/
-    public String queryAlbumFetch()
+    public String queryAlbumFetch (@Nonnull String gnId)
       throws IOException;
   }

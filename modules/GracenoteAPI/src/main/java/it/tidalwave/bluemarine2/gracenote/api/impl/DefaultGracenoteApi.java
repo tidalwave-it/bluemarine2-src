@@ -79,10 +79,10 @@ public class DefaultGracenoteApi implements GracenoteApi
      *
      ******************************************************************************************************************/
     @Override
-    public String queryAlbumToc()
+    public String queryAlbumToc (final @Nonnull String offsets)
       throws IOException
       {
-        return request("query-album-toc.xml").getBody();
+        return request("query-album-toc.xml", "@OFFSETS@", offsets).getBody();
       }
 
     /*******************************************************************************************************************
@@ -91,10 +91,10 @@ public class DefaultGracenoteApi implements GracenoteApi
      *
      ******************************************************************************************************************/
     @Override
-    public String queryAlbumFetch()
+    public String queryAlbumFetch (final @Nonnull String gnId)
       throws IOException
       {
-        return request("query-album-fetch.xml").getBody();
+        return request("query-album-fetch.xml", "@GN_ID@", gnId).getBody();
       }
 
     /*******************************************************************************************************************
@@ -103,10 +103,18 @@ public class DefaultGracenoteApi implements GracenoteApi
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ResponseEntity<String> request (final @Nonnull String templateName)
+    private ResponseEntity<String> request (final @Nonnull String templateName, final @Nonnull String ... args)
       throws IOException
       {
-        final String request = loadTemplate(templateName);
+        String template = loadTemplate(templateName).replace("@CLIENT_ID@", clientId)
+                                                    .replace("@USER_ID@", userId);
+
+        for (int i = 0; i < args.length; i += 2)
+          {
+            template = template.replace(args[i], args[i + 1]);
+          }
+
+        final String request = template;
         log.trace(">>>> request: {}", request);
         final ResponseEntity<String> response = restTemplate.postForEntity(serviceUrl, request, String.class);
         log.trace(">>>> response: {}", response);
@@ -128,9 +136,7 @@ public class DefaultGracenoteApi implements GracenoteApi
           {
             final byte[] buffer  = new byte[(int)classPathResource.contentLength()];
             is.read(buffer);
-            final String string = new String(buffer, UTF_8);
-            return string.replace("@CLIENT_ID@", clientId)
-                         .replace("@USER_ID@", userId);
+            return new String(buffer, UTF_8);
           }
       }
   }
