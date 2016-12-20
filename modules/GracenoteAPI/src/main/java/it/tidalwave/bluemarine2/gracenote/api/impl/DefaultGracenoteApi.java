@@ -57,12 +57,12 @@ public class DefaultGracenoteApi implements GracenoteApi
   {
     public enum CacheMode
       {
-        /** Always tries the network. */
+        /** Always use the network. */
         DONT_USE_CACHE,
-        /** Never goes to the network. */
-        ALWAYS_USE_CACHE,
+        /** Never use the network. */
+        ONLY_USE_CACHE,
         /** First try the cache, then the network. */
-        POSSIBLY_USE_CACHE
+        USE_CACHE
       }
 
     private static final String SERVICE_URL_TEMPLATE = "https://c%s.web.cddbp.net/webapi/xml/1.0/";
@@ -78,7 +78,7 @@ public class DefaultGracenoteApi implements GracenoteApi
     private String clientId;
 
     @Getter @Setter
-    private CacheMode cacheMode = CacheMode.POSSIBLY_USE_CACHE;
+    private CacheMode cacheMode = CacheMode.USE_CACHE;
 
     @Getter @Setter
     private Path cachePath;
@@ -157,13 +157,13 @@ public class DefaultGracenoteApi implements GracenoteApi
       {
         switch (cacheMode)
           {
-            case ALWAYS_USE_CACHE:
+            case ONLY_USE_CACHE:
                 return requestFromCache(cacheKey).get();
 
             case DONT_USE_CACHE:
                 return requestFromNetwork(templateName, args);
 
-            case POSSIBLY_USE_CACHE:
+            case USE_CACHE:
                 return requestFromCache(cacheKey).orElseGet(() ->
                   {
                     try

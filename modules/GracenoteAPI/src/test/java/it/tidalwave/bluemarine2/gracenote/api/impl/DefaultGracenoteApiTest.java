@@ -99,7 +99,7 @@ public class DefaultGracenoteApiTest
       throws Exception
       {
         // given
-        underTest.setCacheMode(ALWAYS_USE_CACHE);
+        underTest.setCacheMode(ONLY_USE_CACHE);
         underTest.setCachePath(GRACENOTE_CACHE);
         // when
         final Response<Album> response = underTest.findAlbumByToc(PURE_ELLA_OFFSETS);
@@ -119,7 +119,7 @@ public class DefaultGracenoteApiTest
       throws Exception
       {
         // given
-        underTest.setCacheMode(ALWAYS_USE_CACHE);
+        underTest.setCacheMode(ONLY_USE_CACHE);
         underTest.setCachePath(GRACENOTE_CACHE);
         // when
         final Response<Album> response = underTest.findAlbumByToc(CALLAS_LA_DIVINA_2_OFFSETS);
@@ -139,7 +139,7 @@ public class DefaultGracenoteApiTest
       throws Exception
       {
         // given
-        underTest.setCacheMode(ALWAYS_USE_CACHE);
+        underTest.setCacheMode(ONLY_USE_CACHE);
         underTest.setCachePath(GRACENOTE_CACHE);
        // when
         final Response<Album> response = underTest.findAlbumByToc(PURE_ELLA_OFFSETS);
@@ -159,7 +159,7 @@ public class DefaultGracenoteApiTest
       throws Exception
       {
         // given
-        underTest.setCacheMode(ALWAYS_USE_CACHE);
+        underTest.setCacheMode(ONLY_USE_CACHE);
         underTest.setCachePath(GRACENOTE_CACHE);
         // when
         final Response<Album> response = underTest.findAlbumByToc("183 69955 94303 142758 206005 238393");
