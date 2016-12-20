@@ -58,6 +58,15 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.basedir}/target/metadata</outputDirectory>
                                 </artifactItem>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>gracenote-metadata-iTunes-fg-20160504-1</artifactId>
+                                    <version>1</version>
+                                    <!--<version>${testSet.iTunes-fg-20160504-1.version}</version>-->
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.basedir}/target/test-classes/expected-results/gracenote</outputDirectory>
+                                </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>

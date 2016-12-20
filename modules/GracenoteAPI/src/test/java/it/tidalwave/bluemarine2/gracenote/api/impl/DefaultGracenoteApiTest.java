@@ -123,15 +123,18 @@ public class DefaultGracenoteApiTest
                 if (iTunesComment.isPresent())
                   {
                     final String offsets = itunesCommentToAlbumToc(iTunesComment.get());
-                    final Path targetFolder = Paths.get("target/gracenote");
-                    final Path dest = targetFolder.resolve(testSet).resolve("albumToc").resolve(offsets.replace(' ', '/')).resolve("response.txt");
+                    final Path targetFolder = Paths.get("target/test-results/gracenote");
+                    final Path actualResult = targetFolder.resolve(testSet).resolve("albumToc").resolve(offsets.replace(' ', '/')).resolve("response.txt");
+                    final Path expectedResult = PATH_EXPECTED_TEST_RESULTS.resolve("gracenote").resolve(testSet).resolve("albumToc").resolve(offsets.replace(' ', '/')).resolve("response.txt");
 
-                    if (!Files.exists(dest))
+                    if (!Files.exists(actualResult))
                       {
-                        log.info(">>>> writing to {}", dest);
-                        Files.createDirectories(dest.getParent());
+                        log.info(">>>> writing to {}", actualResult);
+                        Files.createDirectories(actualResult.getParent());
                         final ResponseEntity<String> response = underTest.queryAlbumToc(offsets);
-                        dump(dest, response);
+                        dump(actualResult, response);
+
+                        assertSameContents(expectedResult, actualResult);
                       }
                   }
               }
