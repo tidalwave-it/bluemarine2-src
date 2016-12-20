@@ -43,8 +43,8 @@ import it.tidalwave.bluemarine2.gracenote.api.Response;
 import lombok.extern.slf4j.Slf4j;
 import lombok.Getter;
 import lombok.Setter;
-import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.util.Collections.emptyList;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /***********************************************************************************************************************
  *
@@ -58,11 +58,63 @@ public class DefaultGracenoteApi implements GracenoteApi
     public enum CacheMode
       {
         /** Always use the network. */
-        DONT_USE_CACHE,
+        DONT_USE_CACHE
+          {
+            @Override @Nonnull
+            public ResponseEntity<String> request (final @Nonnull DefaultGracenoteApi api,
+                                                   final @Nonnull String templateName,
+                                                   final @Nonnull String cacheKey,
+                                                   final @Nonnull String ... args)
+              throws IOException
+              {
+                return api.requestFromNetwork(templateName, args);
+              }
+          },
         /** Never use the network. */
-        ONLY_USE_CACHE,
+        ONLY_USE_CACHE
+          {
+            @Override @Nonnull
+            public ResponseEntity<String> request (final @Nonnull DefaultGracenoteApi api,
+                                                   final @Nonnull String templateName,
+                                                   final @Nonnull String cacheKey,
+                                                   final @Nonnull String ... args)
+              throws IOException
+              {
+                return api.requestFromCache(cacheKey).get();
+              }
+          },
         /** First try the cache, then the network. */
         USE_CACHE
+          {
+            @Override @Nonnull
+            public ResponseEntity<String> request (final @Nonnull DefaultGracenoteApi api,
+                                                   final @Nonnull String templateName,
+                                                   final @Nonnull String cacheKey,
+                                                   final @Nonnull String ... args)
+              throws IOException
+              {
+                return api.requestFromCache(cacheKey).orElseGet(() ->
+                  {
+                    try
+                      {
+                        final ResponseEntity<String> response = api.requestFromNetwork(templateName, args);
+                        ResponseEntityIo.store(api.cachePath.resolve(cacheKey), response, emptyList());
+                        return response;
+                      }
+                    catch (IOException e)
+                      {
+                        throw new RuntimeException(e); // FIXME
+                      }
+                  });
+              }
+          };
+
+        @Nonnull
+        public abstract ResponseEntity<String> request (@Nonnull DefaultGracenoteApi api,
+                                                        @Nonnull String templateName,
+                                                        @Nonnull String cacheKey,
+                                                        @Nonnull String ... args)
+          throws IOException;
       }
 
     private static final String SERVICE_URL_TEMPLATE = "https://c%s.web.cddbp.net/webapi/xml/1.0/";
@@ -123,6 +175,7 @@ public class DefaultGracenoteApi implements GracenoteApi
      *
      *
      ******************************************************************************************************************/
+    @Nonnull
     /* package */ ResponseEntity<String> queryAlbumToc (final @Nonnull String offsets)
       throws IOException
       {
@@ -136,6 +189,7 @@ public class DefaultGracenoteApi implements GracenoteApi
      *
      *
      ******************************************************************************************************************/
+    @Nonnull
     public ResponseEntity<String> queryAlbumFetch (final @Nonnull String gnId)
       throws IOException
       {
@@ -162,32 +216,7 @@ public class DefaultGracenoteApi implements GracenoteApi
                                             final @Nonnull String ... args)
       throws IOException
       {
-        switch (cacheMode)
-          {
-            case ONLY_USE_CACHE:
-                return requestFromCache(cacheKey).get();
-
-            case DONT_USE_CACHE:
-                return requestFromNetwork(templateName, args);
-
-            case USE_CACHE:
-                return requestFromCache(cacheKey).orElseGet(() ->
-                  {
-                    try
-                      {
-                        final ResponseEntity<String> response = requestFromNetwork(templateName, args);
-                        ResponseEntityIo.store(cachePath.resolve(cacheKey), response, emptyList());
-                        return response;
-                      }
-                    catch (IOException e)
-                      {
-                        throw new RuntimeException(e); // FIXME
-                      }
-                  });
-
-            default:
-                throw new IllegalStateException("Unexpected cache mode: " + cacheMode);
-          }
+        return cacheMode.request(this, templateName, cacheKey, args);
       }
 
     /*******************************************************************************************************************
