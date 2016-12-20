@@ -28,11 +28,11 @@
  */
 package it.tidalwave.util.test;
 
+import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
 import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.nio.file.Path;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.util.test.FileComparisonUtils.commonPrefix;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.toFileBMT46;
 
 /***********************************************************************************************************************
@@ -52,13 +52,19 @@ public class FileComparisonUtils8
     public static void assertSameContents (final @Nonnull Path expectedPath, final @Nonnull Path actualPath)
       throws IOException
       {
-        final String commonPath = commonPrefix(expectedPath.toString(), actualPath.toString());
-        log.info("******** Comparing files:");
-        log.info(">>>> path is: {}", commonPath);
-        log.info(">>>> exp is:  {}", expectedPath.toString().substring(commonPath.length()));
-        log.info(">>>> act is:  {}", actualPath.toString().substring(commonPath.length()));
         FileComparisonUtils.assertSameContents(toFileBMT46(expectedPath), toFileBMT46(actualPath));
 //        FileComparisonUtils.assertSameContents(Files.readAllLines(expectedPath), Files.readAllLines(actualPath));
       }
 
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    public static void assertSameContents2 (final @Nonnull Path expectedPath, final @Nonnull Path actualPath)
+      throws IOException
+      {
+        FileComparisonUtils.assertSameContents(toFileBMT46(normalizedPath(expectedPath.toAbsolutePath())),
+                                               toFileBMT46(normalizedPath(actualPath.toAbsolutePath())));
+      }
   }
