@@ -20,7 +20,7 @@ readonly VERSION=$2
 readonly GROUP_ID=it.tidalwave.bluemarine2.testsets
 readonly ARTIFACT_ID=gracenote-metadata-$TEST_SET
 readonly FILE=$PWD/target/$ARTIFACT_ID.zip
-readonly TEST_RESULTS=target/gracenote
+readonly TEST_RESULTS=target/test-results/gracenote
 
 if [ ! -d "$TEST_RESULTS/$TEST_SET" ] ; then
     readonly TEST_SETS=`cd $TEST_RESULTS; echo *`

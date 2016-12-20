@@ -61,7 +61,7 @@
                                 <artifactItem>
                                     <groupId>it.tidalwave.bluemarine2.testsets</groupId>
                                     <artifactId>gracenote-metadata-iTunes-fg-20160504-1</artifactId>
-                                    <version>1</version>
+                                    <version>20161220-2050</version>
                                     <!--<version>${testSet.iTunes-fg-20160504-1.version}</version>-->
                                     <type>zip</type>
                                     <overWrite>true</overWrite>
