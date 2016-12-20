@@ -139,7 +139,7 @@ public class DefaultGracenoteApiTest
         underTest.setCacheMode(ALWAYS_USE_CACHE);
         underTest.setCachePath(GRACENOTE_CACHE);
         // when
-        final Response<Album> response = underTest.findAlbumByToc("183 69955 94303 142758 206005 238393/");
+        final Response<Album> response = underTest.findAlbumByToc("183 69955 94303 142758 206005 238393");
         // then
         assertThat(response.isPresent(), is(false));
       }
@@ -160,6 +160,8 @@ public class DefaultGracenoteApiTest
 //        assertThat(response.isPresent(), is(false));
 //        final Album album = response.get();
 //      }
+
+    // FIXME: test cache miss, ALWAYS_USE_CACHE
 
     //////// TESTS BELOW USE THE NETWORK
 
