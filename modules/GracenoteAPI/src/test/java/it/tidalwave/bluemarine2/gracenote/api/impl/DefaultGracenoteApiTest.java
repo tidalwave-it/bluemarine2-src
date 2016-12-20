@@ -32,13 +32,13 @@ import javax.annotation.Nonnull;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.Files;
 import org.springframework.http.ResponseEntity;
+import it.tidalwave.bluemarine2.gracenote.api.Album;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -48,9 +48,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.nio.file.FileVisitOption.*;
 import static it.tidalwave.util.test.FileComparisonUtils8.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
-import it.tidalwave.bluemarine2.gracenote.api.Album;
 import static it.tidalwave.bluemarine2.gracenote.api.impl.DefaultGracenoteApi.CacheMode.*;
-import org.hamcrest.MatcherAssert;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
@@ -138,8 +136,8 @@ public class DefaultGracenoteApiTest
         underTest.setCacheMode(DONT_USE_CACHE);
         // when
         final ResponseEntity<String> response = underTest.queryAlbumToc(PURE_ELLA_OFFSETS);
-        final Path actualResult = dump("queryAlbumTocResponse.txt", response);
         // then
+        final Path actualResult = dump("queryAlbumTocResponse.txt", response);
         assertSameContents(gracenoteFilesPath("iTunes-fg-20160504-1").resolve("albumToc")
                                                                      .resolve(PURE_ELLA_OFFSETS.replace(' ', '/'))
                                                                      .resolve(RESPONSE_TXT),
@@ -157,8 +155,8 @@ public class DefaultGracenoteApiTest
         underTest.setCacheMode(DONT_USE_CACHE);
         // when
         final ResponseEntity<String> response = underTest.queryAlbumFetch(PURE_ELLA_GN_ID);
-        final Path actualResult = dump("queryAlbumFetchResponse.txt", response);
         // then
+        final Path actualResult = dump("queryAlbumFetchResponse.txt", response);
         assertSameContents(gracenoteFilesPath("iTunes-fg-20160504-1").resolve("albumFetch")
                                                                      .resolve(PURE_ELLA_GN_ID)
                                                                      .resolve(RESPONSE_TXT),
@@ -171,6 +169,7 @@ public class DefaultGracenoteApiTest
     @Test(dataProvider = "gracenoteResourcesProvider", groups = "no-ci")
     public void downloadGracenoteResource (final @Nonnull String testSet, final @Nonnull Path path)
       {
+        // given
         underTest.setCacheMode(DONT_USE_CACHE);
         underTest.initialize(); // FIXME
 
@@ -192,7 +191,9 @@ public class DefaultGracenoteApiTest
                   {
                     log.info(">>>> writing to {}", actualResult);
                     Files.createDirectories(actualResult.getParent());
+                    // when
                     final ResponseEntity<String> response = underTest.queryAlbumToc(offsets);
+                    // then
                     ResponseEntityIo.store(actualResult, response, IGNORED_HEADERS);
                     assertSameContents(expectedResult, actualResult);
                   }
@@ -244,7 +245,7 @@ public class DefaultGracenoteApiTest
     @Nonnull
     private static String itunesCommentToAlbumToc (final @Nonnull String comment)
       {
-        return Stream.of(comment.split("\\+")).skip(3).collect(Collectors.joining(" "));
+        return Stream.of(comment.split("\\+")).skip(3).collect(joining(" "));
       }
 
     /*******************************************************************************************************************
