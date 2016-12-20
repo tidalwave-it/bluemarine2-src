@@ -41,6 +41,9 @@
         <tft.test.vmOptions>-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -Duser.timezone=Europe/Rome</tft.test.vmOptions>
 
         <tft.maven-jdeb-plugin.version>1.5</tft.maven-jdeb-plugin.version> <!-- FIXME: push to Super POM -->
+
+        <testSet.iTunes-fg-20160504-1.version>4</testSet.iTunes-fg-20160504-1.version>
+
     </properties>
 
     <dependencyManagement>
