@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
+import javax.annotation.concurrent.Immutable;
 import java.time.Duration;
 import java.util.List;
 import java.util.Optional;
@@ -38,6 +39,11 @@ import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.role.EntityWithPath;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
@@ -82,6 +88,48 @@ public interface MediaItem extends EntityWithPath, AudioFileSupplier
         public static final Key<Id> MBZ_WORK_ID = new Key<>("mbz.workId");
         public static final Key<Id> MBZ_DISC_ID = new Key<>("mbz.discId");
         public static final Key<List<Id>> MBZ_ARTIST_ID = new Key<>("mbz.artistId");
+
+        public final Key<List<String>> ENCODER = new Key<>("tag.ENCODER"); // FIXME: key name
+
+        public static final Key<ITunesComment> ITUNES_COMMENT = new Key<>("iTunes.comment");
+
+        /***************************************************************************************************************
+         *
+         *
+         *
+         **************************************************************************************************************/
+        @Immutable @AllArgsConstructor(access = PRIVATE) @Getter @ToString @EqualsAndHashCode
+        public static class ITunesComment
+          {
+            @Nonnull
+            private final String cddb1;
+
+            @Nonnull
+            private final String cddbTrackNumber;
+
+            @Nonnull
+            public String getTrackId()
+              {
+                return cddb1 + "/" + cddbTrackNumber;
+              }
+
+            @Nonnull
+            public static Optional<ITunesComment> from (final @Nonnull Metadata metadata)
+              {
+                return metadata.get(ENCODER).flatMap(
+                        encoders -> encoders.stream().anyMatch(encoder -> encoder.startsWith("iTunes"))
+                                                        ? metadata.get(COMMENT).flatMap(comments -> from(comments))
+                                                        : Optional.empty());
+              }
+
+            @Nonnull
+            private static Optional<ITunesComment> from (final @Nonnull List <String> comments)
+              {
+                return comments.get(comments.size() - 2).contains("+")
+                        ? Optional.of(new ITunesComment(comments.get(3), comments.get(4)))
+                        : Optional.empty();
+              }
+          }
 
         /***************************************************************************************************************
          *
