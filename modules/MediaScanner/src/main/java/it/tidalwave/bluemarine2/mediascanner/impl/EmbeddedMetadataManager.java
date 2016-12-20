@@ -260,8 +260,8 @@ public class EmbeddedMetadataManager
             .withOptional(newRecordUri,  RDFS.LABEL,                literalFor(recordTitle))
             .withOptional(newRecordUri,  DC.TITLE,                  literalFor(recordTitle))
             .withOptional(newRecordUri,  MO.P_MEDIA_TYPE,           MO.C_CD)
-            .withOptional(newRecordUri,  BM.ITUNES_CDDB_ID,         literalFor(metadata.get(ITUNES_COMMENT)
-                                                                                       .map(c -> c.getCddbId())))
+            .withOptional(newRecordUri,  BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
+                                                                                       .map(c -> c.getCddb1())))
 
             .with(        newArtistUris, RDF.TYPE,                  MO.C_MUSIC_ARTIST)
             .with(        newArtistUris, RDFS.LABEL,                newArtistLiterals)

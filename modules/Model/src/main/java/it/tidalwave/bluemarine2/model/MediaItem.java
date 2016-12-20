@@ -102,7 +102,7 @@ public interface MediaItem extends EntityWithPath, AudioFileSupplier
         public static class ITunesComment
           {
             @Nonnull
-            private final String cddbId;
+            private final String cddb1;
 
             @Nonnull
             private final String cddbTrackNumber;
@@ -110,7 +110,7 @@ public interface MediaItem extends EntityWithPath, AudioFileSupplier
             @Nonnull
             public String getTrackId()
               {
-                return cddbId + "/" + cddbTrackNumber;
+                return cddb1 + "/" + cddbTrackNumber;
               }
 
             @Nonnull

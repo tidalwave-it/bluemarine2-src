@@ -54,7 +54,7 @@ public final class BM
     public static final String S_DISK_COUNT             = PREFIX + "diskCount";
     public static final String S_PATH                   = PREFIX + "path";
     public static final String S_FILE_SIZE              = PREFIX + "fileSize";
-    public static final String S_ITUNES_CDDB_ID         = PREFIX + "iTunesCddbId";
+    public static final String S_ITUNES_CDDB1           = PREFIX + "iTunesCddb1";
 
 //    public static final String S_FULL_CREDITS           = PREFIX + "fullCredits";
 
@@ -71,7 +71,7 @@ public final class BM
 
     public static final IRI FILE_SIZE                   = factory.createIRI(S_FILE_SIZE);
 
-    public static final IRI ITUNES_CDDB_ID              = factory.createIRI(S_ITUNES_CDDB_ID);
+    public static final IRI ITUNES_CDDB1                = factory.createIRI(S_ITUNES_CDDB1);
 
 //    /** Means that the file couldn't download metadata. The object is the timestamp of the latest attempt. */
 //    public static final IRI LATEST_MB_METADATA          = factory.createIRI(PREFIX + "latestMusicBrainzMetadata");
