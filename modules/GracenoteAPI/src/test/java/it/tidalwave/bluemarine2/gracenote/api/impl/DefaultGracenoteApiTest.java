@@ -48,7 +48,11 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.nio.file.FileVisitOption.*;
 import static it.tidalwave.util.test.FileComparisonUtils8.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import it.tidalwave.bluemarine2.gracenote.api.Album;
 import static it.tidalwave.bluemarine2.gracenote.api.impl.DefaultGracenoteApi.CacheMode.*;
+import org.hamcrest.MatcherAssert;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 
 /***********************************************************************************************************************
  *
@@ -89,40 +93,36 @@ public class DefaultGracenoteApiTest
      *
      ******************************************************************************************************************/
     @Test
-    public void testQueryAlbumTocFromTheCache()
+    public void must_retrieve_an_album_by_offsets()
       throws Exception
       {
         // given
         underTest.setCacheMode(ALWAYS_USE_CACHE);
         underTest.setCachePath(GRACENOTE_CACHE);
         // when
-        final ResponseEntity<String> response = underTest.queryAlbumToc(PURE_ELLA_OFFSETS);
-        final Path actualResult = dump("queryAlbumTocResponse.txt", response);
+        final Album album = underTest.findAlbumByToc(PURE_ELLA_OFFSETS).get();
         // then
-        assertSameContents(gracenoteFilesPath("iTunes-fg-20160504-1").resolve("albumToc")
-                                                                     .resolve(PURE_ELLA_OFFSETS.replace(' ', '/'))
-                                                                     .resolve(RESPONSE_TXT),
-                           actualResult);
+        assertThat(album.getGnId(), is(PURE_ELLA_GN_ID));
+        assertThat(album.getArtist(), is("Ella Fitzgerald"));
+        assertThat(album.getTitle(), is("Essential (Pure Ella) [Live]"));
       }
 
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
     @Test
-    public void testQueryAlbumFetchFromTheCache()
+    public void must_retrieve_an_album_by_GN_ID()
       throws Exception
       {
         // given
         underTest.setCacheMode(ALWAYS_USE_CACHE);
         underTest.setCachePath(GRACENOTE_CACHE);
         // when
-        final ResponseEntity<String> response = underTest.queryAlbumFetch(PURE_ELLA_GN_ID);
-        final Path actualResult = dump("queryAlbumFetchResponse.txt", response);
+        final Album album = underTest.findAlbumByGnId(PURE_ELLA_GN_ID).get();
         // then
-        assertSameContents(gracenoteFilesPath("iTunes-fg-20160504-1").resolve("albumFetch")
-                                                                     .resolve(PURE_ELLA_GN_ID)
-                                                                     .resolve(RESPONSE_TXT),
-                           actualResult);
+        assertThat(album.getGnId(), is(PURE_ELLA_GN_ID));
+        assertThat(album.getArtist(), is("Ella Fitzgerald"));
+        assertThat(album.getTitle(), is("Essential (Pure Ella) [Live]"));
       }
 
     //////// TESTS BELOW USE THE NETWORK

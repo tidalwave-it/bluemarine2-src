@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.gracenote.api.impl;
 
+import it.tidalwave.bluemarine2.gracenote.api.Album;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import java.util.Optional;
@@ -97,8 +98,31 @@ public class DefaultGracenoteApi implements GracenoteApi
      * {@inheritDoc}
      *
      ******************************************************************************************************************/
-    @Override
-    public ResponseEntity<String> queryAlbumToc (final @Nonnull String offsets)
+    @Override @Nonnull
+    public Optional<Album> findAlbumByToc (@Nonnull String offsets)
+      throws IOException
+      {
+        return Optional.of(Album.of(queryAlbumToc(offsets)));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public Optional<Album> findAlbumByGnId (@Nonnull String gnId)
+      throws IOException
+      {
+        return Optional.of(Album.of(queryAlbumFetch(gnId)));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    /* package */ ResponseEntity<String> queryAlbumToc (final @Nonnull String offsets)
       throws IOException
       {
         log.info("queryAlbumToc({})", offsets);
@@ -108,10 +132,9 @@ public class DefaultGracenoteApi implements GracenoteApi
 
     /*******************************************************************************************************************
      *
-     * {@inheritDoc}
+     *
      *
      ******************************************************************************************************************/
-    @Override
     public ResponseEntity<String> queryAlbumFetch (final @Nonnull String gnId)
       throws IOException
       {

@@ -29,8 +29,8 @@
 package it.tidalwave.bluemarine2.gracenote.api;
 
 import javax.annotation.Nonnull;
+import java.util.Optional;
 import java.io.IOException;
-import org.springframework.http.ResponseEntity;
 
 /***********************************************************************************************************************
  *
@@ -44,17 +44,21 @@ public interface GracenoteApi
      *
      *
      * @param   offsets     the CD offsets
+     * @return              an {@code Album}
      *
      ******************************************************************************************************************/
-    public ResponseEntity<String> queryAlbumToc (@Nonnull String offsets)
+    @Nonnull
+    public Optional<Album> findAlbumByToc (@Nonnull String offsets)
       throws IOException;
 
     /*******************************************************************************************************************
      *
      *
-     * @param   gnId        the Gracenote id
+     * @param   gnId        the Gracenote Id
+     * @return              an {@code Album}
      *
      ******************************************************************************************************************/
-    public ResponseEntity<String> queryAlbumFetch (@Nonnull String gnId)
+    @Nonnull
+    public Optional<Album> findAlbumByGnId (@Nonnull String gnId)
       throws IOException;
   }
