@@ -79,10 +79,10 @@ public class DefaultGracenoteApi implements GracenoteApi
      *
      ******************************************************************************************************************/
     @Override
-    public String queryAlbumToc (final @Nonnull String offsets)
+    public ResponseEntity<String> queryAlbumToc (final @Nonnull String offsets)
       throws IOException
       {
-        return request("query-album-toc.xml", "@OFFSETS@", offsets).getBody();
+        return request("query-album-toc.xml", "@OFFSETS@", offsets);
       }
 
     /*******************************************************************************************************************
@@ -91,10 +91,10 @@ public class DefaultGracenoteApi implements GracenoteApi
      *
      ******************************************************************************************************************/
     @Override
-    public String queryAlbumFetch (final @Nonnull String gnId)
+    public ResponseEntity<String> queryAlbumFetch (final @Nonnull String gnId)
       throws IOException
       {
-        return request("query-album-fetch.xml", "@GN_ID@", gnId).getBody();
+        return request("query-album-fetch.xml", "@GN_ID@", gnId);
       }
 
     /*******************************************************************************************************************

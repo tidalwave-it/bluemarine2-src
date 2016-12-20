@@ -37,19 +37,43 @@
         </dependency>
     </dependencies>
 
-        <build>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <configuration>
-                        <systemPropertyVariables>
-                            <gracenote.user>${gracenote.user}</gracenote.user>
-                            <gracenote.client>${gracenote.client}</gracenote.client>
-                        </systemPropertyVariables>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-test-resources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>expected-metadata-iTunes-fg-20160504-1</artifactId>
+                                    <version>${testSet.iTunes-fg-20160504-1.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.basedir}/target/metadata</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <systemPropertyVariables>
+                        <gracenote.user>${gracenote.user}</gracenote.user>
+                        <gracenote.client>${gracenote.client}</gracenote.client>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
