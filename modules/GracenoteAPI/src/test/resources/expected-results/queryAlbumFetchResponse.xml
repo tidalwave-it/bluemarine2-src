@@ -1,0 +1,131 @@
+<RESPONSES>
+ <RESPONSE STATUS="OK">
+   <ALBUM>
+      <GN_ID>161343049-DE60B292E7510AB532A959E2F8140814</GN_ID>
+      <ARTIST>Ella Fitzgerald</ARTIST>
+      <ARTIST_ORIGIN ID="29908">United States</ARTIST_ORIGIN>
+      <ARTIST_TYPE ID="29423">Female</ARTIST_TYPE>
+      <ARTIST_ERA ID="29488">1950s</ARTIST_ERA>
+      <TITLE>Essential (Pure Ella) [Live]</TITLE>
+      <PKG_LANG>ENG</PKG_LANG>
+      <DATE>2013</DATE>
+      <GENRE NUM="64735" ID="27101">Jazz Vocals</GENRE>
+      <XID DATASOURCE="deezer-album-id">6653375</XID>
+      <TRACK_COUNT>17</TRACK_COUNT>
+      <TRACK>
+         <TRACK_NUM>1</TRACK_NUM>
+         <GN_ID>161343050-0AF9D2CC6449B0E065EDB3DF22004996</GN_ID>
+         <TITLE>Mack the Knife [Live]</TITLE>
+         <XID DATASOURCE="deezer-track-id">67946877</XID>
+      </TRACK>
+      <TRACK>
+         <TRACK_NUM>2</TRACK_NUM>
+         <GN_ID>161343051-5C0739BB587B23A26158A2D9E773F095</GN_ID>
+         <TITLE>Blue Skies [Live]</TITLE>
+         <MOOD ID="65332">Lively</MOOD>
+         <TEMPO ID="34313">70s</TEMPO>
+         <XID DATASOURCE="deezer-track-id">67946878</XID>
+      </TRACK>
+      <TRACK>
+         <TRACK_NUM>3</TRACK_NUM>
+         <GN_ID>161343052-344ABD438A6976BB259D72B14F60BE81</GN_ID>
+         <TITLE>A-Tisket, A-Tasket [Live]</TITLE>
+         <MOOD ID="65332">Lively</MOOD>
+         <TEMPO ID="34325">120s</TEMPO>
+         <XID DATASOURCE="deezer-track-id">67946879</XID>
+      </TRACK>
+      <TRACK>
+         <TRACK_NUM>4</TRACK_NUM>
+         <GN_ID>161343053-DDC02FC4A3413D69C4C54D0FF8E5ECC3</GN_ID>
+         <TITLE>They Can&apos;t Take That Away From Me [Live]</TITLE>
+         <XID DATASOURCE="deezer-track-id">67946880</XID>
+      </TRACK>
+      <TRACK>
+         <TRACK_NUM>5</TRACK_NUM>
+         <GN_ID>161343054-BE324C4CFD1D087098C79FC79E394166</GN_ID>
+         <TITLE>Misty [Live]</TITLE>
+         <XID DATASOURCE="deezer-track-id">67946881</XID>
+      </TRACK>
+      <TRACK>
+         <TRACK_NUM>6</TRACK_NUM>
+         <GN_ID>161343055-15A5EC517AEDC6286E37E35097C84372</GN_ID>
+         <TITLE>You&apos;ll Have to Swing It (Mr. Paganini) [Live]</TITLE>
+         <MOOD ID="65332">Lively</MOOD>
+         <TEMPO ID="34318">90s</TEMPO>
+         <XID DATASOURCE="deezer-track-id">67946882</XID>
+      </TRACK>
+      <TRACK>
+         <TRACK_NUM>7</TRACK_NUM>
+         <GN_ID>161343056-D4221676A4F1F91DD14C1C5B44D7D9D2</GN_ID>
+         <TITLE>Tea for Two [Live]</TITLE>
+         <XID DATASOURCE="deezer-track-id">67946883</XID>
+      </TRACK>
+      <TRACK>
+         <TRACK_NUM>8</TRACK_NUM>
+         <GN_ID>161343057-94212D2C75FDA9A1FAC9449726EA7BFB</GN_ID>
+         <TITLE>Love Is Here to Stay [Live]</TITLE>
+         <XID DATASOURCE="deezer-track-id">67946884</XID>
+      </TRACK>
+      <TRACK>
+         <TRACK_NUM>9</TRACK_NUM>
+         <GN_ID>161343058-F1531FA0B31C7D5AB279D4D89EEB5E8A</GN_ID>
+         <TITLE>Night and Day [Live]</TITLE>
+         <XID DATASOURCE="deezer-track-id">67946885</XID>
+      </TRACK>
+      <TRACK>
+         <TRACK_NUM>10</TRACK_NUM>
+         <GN_ID>161343059-BDD9E61936028CAAC8E2498F7C2B559A</GN_ID>
+         <TITLE>My Funny Valentine [Live]</TITLE>
+         <XID DATASOURCE="deezer-track-id">67946886</XID>
+      </TRACK>
+      <TRACK>
+         <TRACK_NUM>11</TRACK_NUM>
+         <GN_ID>161343060-301786C8E19171FD98030DC018FD0504</GN_ID>
+         <TITLE>The Boy from Ipanema [Live]</TITLE>
+         <XID DATASOURCE="deezer-track-id">67946887</XID>
+      </TRACK>
+      <TRACK>
+         <TRACK_NUM>12</TRACK_NUM>
+         <GN_ID>161343061-BEBD8ED609D0C156C16233F626FF86EC</GN_ID>
+         <TITLE>Too Marvelous for Words [Live]</TITLE>
+         <XID DATASOURCE="deezer-track-id">67946888</XID>
+      </TRACK>
+      <TRACK>
+         <TRACK_NUM>13</TRACK_NUM>
+         <GN_ID>161343062-3C33141A883E5B0255C3538CD56B241B</GN_ID>
+         <TITLE>Take the &apos;A&apos; Train [Live]</TITLE>
+         <XID DATASOURCE="deezer-track-id">67946889</XID>
+      </TRACK>
+      <TRACK>
+         <TRACK_NUM>14</TRACK_NUM>
+         <GN_ID>161343063-4E9A9276EB0F266B80329C2D37C488A7</GN_ID>
+         <TITLE>Summertime [Live]</TITLE>
+         <XID DATASOURCE="deezer-track-id">67946890</XID>
+      </TRACK>
+      <TRACK>
+         <TRACK_NUM>15</TRACK_NUM>
+         <GN_ID>161343064-FCF727F4D913938257D70CCAD607AEC3</GN_ID>
+         <TITLE>How High the Moon [Live]</TITLE>
+         <MOOD ID="65333">Upbeat</MOOD>
+         <TEMPO ID="34331">150s</TEMPO>
+         <XID DATASOURCE="deezer-track-id">67946891</XID>
+      </TRACK>
+      <TRACK>
+         <TRACK_NUM>16</TRACK_NUM>
+         <GN_ID>161343065-90CE779B058CC09FBF6B9392E1CC1FAB</GN_ID>
+         <TITLE>All the Things You Are [Live]</TITLE>
+         <XID DATASOURCE="deezer-track-id">67946892</XID>
+      </TRACK>
+      <TRACK>
+         <TRACK_NUM>17</TRACK_NUM>
+         <GN_ID>161343066-5B81F8F968F23AAA018BC521565FAAB6</GN_ID>
+         <TITLE>Over the Rainbow [Live]</TITLE>
+         <MOOD ID="65323">Romantic</MOOD>
+         <TEMPO ID="34303">40s</TEMPO>
+         <XID DATASOURCE="deezer-track-id">67946893</XID>
+      </TRACK>
+   </ALBUM>
+ </RESPONSE>
+                                                                                
+</RESPONSES>
+
