@@ -82,11 +82,7 @@ public class DefaultGracenoteApi implements GracenoteApi
     public String queryAlbumToc()
       throws IOException
       {
-        final String request = loadTemplate("query-album-toc.xml");
-        log.trace(">>>> request: {}", request);
-        final ResponseEntity<String> response = restTemplate.postForEntity(serviceUrl, request, String.class);
-        log.trace("response: {}", response);
-        return response.getBody();
+        return request("query-album-toc.xml").getBody();
       }
 
     /*******************************************************************************************************************
@@ -98,11 +94,23 @@ public class DefaultGracenoteApi implements GracenoteApi
     public String queryAlbumFetch()
       throws IOException
       {
-        final String request = loadTemplate("query-album-fetch.xml");
+        return request("query-album-fetch.xml").getBody();
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private ResponseEntity<String> request (final @Nonnull String templateName)
+      throws IOException
+      {
+        final String request = loadTemplate(templateName);
         log.trace(">>>> request: {}", request);
         final ResponseEntity<String> response = restTemplate.postForEntity(serviceUrl, request, String.class);
-        log.trace("response: {}", response);
-        return response.getBody();
+        log.trace(">>>> response: {}", response);
+        return response;
       }
 
     /*******************************************************************************************************************
