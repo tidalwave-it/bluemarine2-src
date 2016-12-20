@@ -462,7 +462,6 @@
         <module>JavaFXApplication</module>
         <module>MediaScanner</module>
         <module>Model</module>
-        <module>MusicBrainzREST</module>
         <module>Persistence</module>
         <module>Plugins</module>
         <module>Services</module>
