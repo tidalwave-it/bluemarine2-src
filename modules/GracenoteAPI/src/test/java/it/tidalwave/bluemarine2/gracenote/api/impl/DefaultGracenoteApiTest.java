@@ -67,6 +67,9 @@ public class DefaultGracenoteApiTest
     private static final String PURE_ELLA_OFFSETS = "150 21860 38705 47155 68112 81095 99740 114517 131995 145947 "
                                                   + "163532 176950 188370 218577 241080 272992 287877 307292";
 
+    private static final String CALLAS_LA_DIVINA_2_OFFSETS = "183 20100 39930 68110 81145 113055 132908 151000 172608 "
+                                                           + "187760 211130 235045 256465 280275 306418 323443";
+
     private static final String RESPONSE_TXT = "response.txt";
 
     private static final Path GRACENOTE_CACHE = PATH_EXPECTED_TEST_RESULTS.resolve("gracenote/iTunes-fg-20160504-1/");
@@ -106,6 +109,26 @@ public class DefaultGracenoteApiTest
         assertThat(album.getGnId(), is(PURE_ELLA_GN_ID));
         assertThat(album.getArtist(), is("Ella Fitzgerald"));
         assertThat(album.getTitle(), is("Essential (Pure Ella) [Live]"));
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Test
+    public void must_retrieve_an_album_by_offsets_2() // FIXME: use @DataProvider
+      throws Exception
+      {
+        // given
+        underTest.setCacheMode(ALWAYS_USE_CACHE);
+        underTest.setCachePath(GRACENOTE_CACHE);
+        // when
+        final Response<Album> response = underTest.findAlbumByToc(CALLAS_LA_DIVINA_2_OFFSETS);
+        // then
+        assertThat(response.isPresent(), is(true));
+        final Album album = response.get();
+        assertThat(album.getGnId(), is("38603393-EDE145149322F90ED2DD32958DB7AD49"));
+        assertThat(album.getArtist(), is("Maria Callas"));
+        assertThat(album.getTitle(), is("Callas La Divina 2"));
       }
 
     /*******************************************************************************************************************
