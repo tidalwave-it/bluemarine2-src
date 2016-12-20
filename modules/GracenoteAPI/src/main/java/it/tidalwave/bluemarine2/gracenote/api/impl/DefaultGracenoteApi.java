@@ -30,14 +30,9 @@ package it.tidalwave.bluemarine2.gracenote.api.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Optional;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.ResponseEntity;
@@ -48,12 +43,6 @@ import lombok.Getter;
 import lombok.Setter;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.util.Collections.emptyList;
-import static java.util.Comparator.comparing;
-import java.util.stream.Collectors;
-import org.springframework.http.HttpStatus;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.client.HttpStatusCodeException;
 
 /***********************************************************************************************************************
  *
@@ -156,7 +145,7 @@ public class DefaultGracenoteApi implements GracenoteApi
                     try
                       {
                         final ResponseEntity<String> response = requestFromNetwork(templateName, args);
-                        store(cachePath.resolve(cacheKey), response, emptyList());
+                        ResponseEntityIo.store(cachePath.resolve(cacheKey), response, emptyList());
                         return response;
                       }
                     catch (IOException e)
@@ -179,7 +168,7 @@ public class DefaultGracenoteApi implements GracenoteApi
     private Optional<ResponseEntity<String>> requestFromCache (final @Nonnull String cacheKey)
       throws IOException
       {
-        return retrieve(cachePath.resolve(cacheKey).resolve("response.txt"));
+        return ResponseEntityIo.retrieve(cachePath.resolve(cacheKey).resolve("response.txt"));
       }
 
     /*******************************************************************************************************************
@@ -205,70 +194,6 @@ public class DefaultGracenoteApi implements GracenoteApi
         final ResponseEntity<String> response = restTemplate.postForEntity(serviceUrl, request, String.class);
         log.trace(">>>> response: {}", response);
         return response;
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    /* package */ static void store (final @Nonnull Path path,
-                                     final @Nonnull ResponseEntity<String> response,
-                                     final @Nonnull List<String> ignoredHeaders)
-      throws IOException
-      {
-        Files.createDirectories(path.getParent());
-        final StringWriter sw = new StringWriter();
-        final PrintWriter pw = new PrintWriter(sw);
-        pw.printf("HTTP/1.1 %d %s%n", response.getStatusCode().value(), response.getStatusCode().name());
-        response.getHeaders().entrySet().stream()
-                                        .filter(e -> !ignoredHeaders.contains(e.getKey()))
-                                        .sorted(comparing(e -> e.getKey()))
-                                        .forEach(e -> pw.printf("%s: %s%n", e.getKey(), e.getValue().get(0)));
-        pw.println();
-        pw.print(response.getBody());
-        pw.close();
-        Files.write(path, Arrays.asList(sw.toString()), UTF_8);
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    /* package */ static Optional<ResponseEntity<String>> retrieve (final @Nonnull Path path)
-      throws IOException
-      {
-        log.trace("retrieve({})", path);
-
-        if (!Files.exists(path))
-          {
-            return Optional.empty();
-          }
-
-        final List<String> lines = Files.readAllLines(path);
-
-        final HttpStatus status = HttpStatus.valueOf(Integer.parseInt(lines.get(0).split(" ")[1]));
-        final MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-
-        int i = 1;
-
-        for (; i < lines.size(); i++)
-          {
-            if (lines.get(i).equals(""))
-              {
-                break;
-              }
-
-            final String[] split = lines.get(i).split(":");
-            headers.add(split[0], split[1].trim());
-          }
-
-        final String body = lines.stream().skip(i + 1).collect(Collectors.joining("\n"));
-        final ResponseEntity<String> response = new ResponseEntity<>(body, headers, status);
-        log.trace(">>>> returning {}", response);
-
-        return Optional.of(response);
       }
 
     /*******************************************************************************************************************

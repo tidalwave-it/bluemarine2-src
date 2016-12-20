@@ -193,7 +193,7 @@ public class DefaultGracenoteApiTest
                     log.info(">>>> writing to {}", actualResult);
                     Files.createDirectories(actualResult.getParent());
                     final ResponseEntity<String> response = underTest.queryAlbumToc(offsets);
-                    DefaultGracenoteApi.store(actualResult, response, IGNORED_HEADERS);
+                    ResponseEntityIo.store(actualResult, response, IGNORED_HEADERS);
                     assertSameContents(expectedResult, actualResult);
                   }
               }
@@ -255,7 +255,7 @@ public class DefaultGracenoteApiTest
       throws IOException
       {
         final Path actualResult = PATH_TEST_RESULTS.resolve(resourceName);
-        DefaultGracenoteApi.store(actualResult, response, IGNORED_HEADERS);
+        ResponseEntityIo.store(actualResult, response, IGNORED_HEADERS);
         return actualResult;
       }
 
