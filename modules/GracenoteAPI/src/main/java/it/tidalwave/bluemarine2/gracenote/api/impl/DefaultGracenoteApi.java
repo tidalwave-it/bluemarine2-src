@@ -146,7 +146,14 @@ public class DefaultGracenoteApi implements GracenoteApi
 
     /*******************************************************************************************************************
      *
+     * Performs a Gracenote web request. Since unfortunately the Gracenote API is not REST, but based on XML requests
+     * and responses, an explicit key of the request must be specified in order to implement caching. The key must be
+     * unique for the given template and arguments.
      *
+     * @param   templateName    the name of the XML template of the request
+     * @param   cacheKey        the key for the cache
+     * @param   args            the arguments to interpolate the template
+     * @return                  the response
      *
      ******************************************************************************************************************/
     @Nonnull
