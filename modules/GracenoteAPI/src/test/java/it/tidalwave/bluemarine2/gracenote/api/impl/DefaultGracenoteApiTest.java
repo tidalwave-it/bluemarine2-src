@@ -129,7 +129,7 @@ public class DefaultGracenoteApiTest
      *
      ******************************************************************************************************************/
     @Test(groups = "no-ci")
-    public void testQueryAlbumTocFromTheNetwork()
+    public void must_properly_query_album_TOC()
       throws Exception
       {
         // given
@@ -148,7 +148,7 @@ public class DefaultGracenoteApiTest
      *
      ******************************************************************************************************************/
     @Test(groups = "no-ci")
-    public void testQueryAlbumFetchFromTheNetwork()
+    public void must_properly_fetch_album_details()
       throws Exception
       {
         // given
@@ -167,7 +167,7 @@ public class DefaultGracenoteApiTest
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "gracenoteResourcesProvider", groups = "no-ci")
-    public void downloadGracenoteResource (final @Nonnull String testSet, final @Nonnull Path path)
+    public void must_correctly_download_Gracenote_resources (final @Nonnull String testSet, final @Nonnull Path path)
       {
         // given
         underTest.setCacheMode(DONT_USE_CACHE);

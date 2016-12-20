@@ -58,6 +58,10 @@ import org.xml.sax.SAXException;
 @Immutable @Getter @EqualsAndHashCode @ToString @Builder
 public class Album
   {
+    private static final DocumentBuilderFactory DOCBUILDER_FACTORY = DocumentBuilderFactory.newInstance();
+
+    private static final XPathFactory XPATH_FACTORY = XPathFactory.newInstance();
+
     @Nonnull
     private final String gnId;
 
@@ -77,29 +81,32 @@ public class Album
       {
         try
           {
-            final XPathFactory xPathFactory = XPathFactory.newInstance();
-            final XPath xPath = xPathFactory.newXPath();
-            final XPathExpression exprGnId = xPath.compile("/RESPONSES/RESPONSE/ALBUM/GN_ID");
+            final XPath xPath = XPATH_FACTORY.newXPath();
+            final XPathExpression exprGnId   = xPath.compile("/RESPONSES/RESPONSE/ALBUM/GN_ID");
             final XPathExpression exprArtist = xPath.compile("/RESPONSES/RESPONSE/ALBUM/ARTIST");
-            final XPathExpression exprTitle = xPath.compile("/RESPONSES/RESPONSE/ALBUM/TITLE");
+            final XPathExpression exprTitle  = xPath.compile("/RESPONSES/RESPONSE/ALBUM/TITLE");
 
-            final DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-            final DocumentBuilder db = dbf.newDocumentBuilder();
-
-            try (final InputStream is = new ByteArrayInputStream(response.getBody().getBytes(UTF_8)))
-              {
-                final Document dom = db.parse(is);
-
-                return builder().gnId(exprGnId.evaluate(dom))
-                                .artist(exprArtist.evaluate(dom))
-                                .title(exprTitle.evaluate(dom))
-                                .build();
-              }
+            final Document dom = toDom(response);
+            return builder().gnId(exprGnId.evaluate(dom))
+                            .artist(exprArtist.evaluate(dom))
+                            .title(exprTitle.evaluate(dom))
+                            .build();
           }
         catch (XPathExpressionException | ParserConfigurationException | SAXException e)
           {
             throw new IOException(e);
           }
+      }
 
+    @Nonnull
+    private static Document toDom (final @Nonnull ResponseEntity<String> response)
+      throws IOException, SAXException, ParserConfigurationException
+      {
+        final DocumentBuilder db = DOCBUILDER_FACTORY.newDocumentBuilder();
+
+        try (final InputStream is = new ByteArrayInputStream(response.getBody().getBytes(UTF_8)))
+          {
+            return db.parse(is);
+          }
       }
   }
