@@ -43,10 +43,12 @@ import java.nio.file.Files;
 import org.springframework.http.ResponseEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import static java.util.Comparator.*;
+import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static java.util.Comparator.comparing;
-import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
+import static java.nio.file.FileVisitOption.*;
 import static it.tidalwave.util.test.FileComparisonUtils8.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 
@@ -94,55 +96,73 @@ public class DefaultGracenoteApiTest
         assertSameContents(PATH_EXPECTED_TEST_RESULTS.resolve("queryAlbumFetchResponse.txt"), actualResult);
       }
 
-    @Test
-    public void downloadGracenoteResource()
-      throws IOException
+    @Test(dataProvider = "gracenoteResourcesProvider")
+    public void downloadGracenoteResource (final @Nonnull String testSet, final @Nonnull Path path)
       {
-        underTest.initialize();
+        underTest.initialize(); // FIXME
 
-        final Path basePath = Paths.get("target/metadata").resolve("iTunes-fg-20160504-1");
-        try (final Stream<Path> dirStream = Files.walk(basePath, FOLLOW_LINKS))
+        try
           {
-            dirStream.forEach(path -> process("iTunes-fg-20160504-1", path));
+            final Optional<String> iTunesComment = readiTunesCommentFrom(path);
+            log.info(">>>> {}", iTunesComment);
+
+            final Path targetFolder = Paths.get("target/test-results/gracenote");
+
+            if (iTunesComment.isPresent())
+              {
+                final String offsets = itunesCommentToAlbumToc(iTunesComment.get());
+                final Path actualResult = targetFolder.resolve(testSet).resolve("albumToc").resolve(offsets.replace(' ', '/')).resolve("response.txt");
+                final Path expectedResult = PATH_EXPECTED_TEST_RESULTS.resolve("gracenote").resolve(testSet).resolve("albumToc").resolve(offsets.replace(' ', '/')).resolve("response.txt");
+
+                if (!Files.exists(actualResult))
+                  {
+                    log.info(">>>> writing to {}", actualResult);
+                    Files.createDirectories(actualResult.getParent());
+                    final ResponseEntity<String> response = underTest.queryAlbumToc(offsets);
+                    dump(actualResult, response);
+
+                    assertSameContents(expectedResult, actualResult);
+                  }
+              }
+            else
+              {
+                  // TODO: write a file telling that there are no offsets, so you can assert it
+              }
+
+          }
+        catch (IOException e)
+          {
+            log.error("", e);
           }
       }
 
-    private void process (final @Nonnull String testSet, final @Nonnull Path path)
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private Optional<String> readiTunesCommentFrom (final @Nonnull Path path)
+      throws IOException
       {
-//        if (path.endsWith("-dump.txt"))
-        if (Files.isRegularFile(path))
-          {
-            try
-              {
-                log.info("{}", path);
-                final Optional<String> iTunesComment = Files.lines(path, UTF_8).filter(s -> s.contains("[iTunes.comment]"))
-                                                            .findFirst()
-                                                            .map(s -> s.replaceAll("^.*cddb1=", "").replaceAll(", .*$", ""));
-                log.info(">>>> {}", iTunesComment);
+        return Files.lines(path, UTF_8).filter(s -> s.contains("[iTunes.comment]"))
+                                       .findFirst()
+                                       .map(s -> s.replaceAll("^.*cddb1=", "").replaceAll(", .*$", ""));
+      }
 
-                if (iTunesComment.isPresent())
-                  {
-                    final String offsets = itunesCommentToAlbumToc(iTunesComment.get());
-                    final Path targetFolder = Paths.get("target/test-results/gracenote");
-                    final Path actualResult = targetFolder.resolve(testSet).resolve("albumToc").resolve(offsets.replace(' ', '/')).resolve("response.txt");
-                    final Path expectedResult = PATH_EXPECTED_TEST_RESULTS.resolve("gracenote").resolve(testSet).resolve("albumToc").resolve(offsets.replace(' ', '/')).resolve("response.txt");
-
-                    if (!Files.exists(actualResult))
-                      {
-                        log.info(">>>> writing to {}", actualResult);
-                        Files.createDirectories(actualResult.getParent());
-                        final ResponseEntity<String> response = underTest.queryAlbumToc(offsets);
-                        dump(actualResult, response);
-
-                        assertSameContents(expectedResult, actualResult);
-                      }
-                  }
-              }
-            catch (IOException e)
-              {
-                log.error("", e);
-              }
-          }
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @DataProvider
+    private static Object[][] gracenoteResourcesProvider()
+      throws IOException
+      {
+        final String testSetName = "iTunes-fg-20160504-1";
+        final Path basePath = Paths.get("target/metadata").resolve(testSetName);
+        return Files.walk(basePath, FOLLOW_LINKS)
+                    .filter(Files::isRegularFile)
+                    .filter(path -> !path.getFileName().toString().startsWith(".")) // isHidden() throws exception
+                    .map(path -> new Object[] { testSetName, path })
+                    .collect(toList())
+                    .toArray(new Object[0][0]);
       }
 
     @Nonnull
