@@ -35,8 +35,6 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.Files;
@@ -45,12 +43,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import static java.util.Comparator.*;
 import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.nio.file.FileVisitOption.*;
 import static it.tidalwave.util.test.FileComparisonUtils8.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import static it.tidalwave.bluemarine2.gracenote.api.impl.DefaultGracenoteApi.CacheMode.*;
 
 /***********************************************************************************************************************
  *
@@ -61,8 +59,23 @@ import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 @Slf4j
 public class DefaultGracenoteApiTest
   {
+    private static final String GN_ID = "161343049-DE60B292E7510AB532A959E2F8140814";
+
+    private static final String OFFSETS = "150 21860 38705 47155 68112 81095 99740 114517 131995 145947 "
+                                        + "163532 176950 188370 218577 241080 272992 287877 307292";
+
+    private static final String RESPONSE_TXT = "response.txt";
+
+    private static final Path GRACENOTE_CACHE = PATH_EXPECTED_TEST_RESULTS.resolve("gracenote/iTunes-fg-20160504-1/");
+
+    private final static List<String> IGNORED_HEADERS =
+            Arrays.asList("Date", "Server", "X-Powered-By", "Connection", "Keep-Alive", "Vary");
+
     private DefaultGracenoteApi underTest;
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @BeforeMethod
     public void setup()
       {
@@ -72,33 +85,93 @@ public class DefaultGracenoteApiTest
         underTest.setClientId(System.getProperty("gracenote.client", ""));
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Test
-    public void testQueryAlbumToc()
+    public void testQueryAlbumTocFromTheCache()
       throws Exception
       {
         // given
+        underTest.setCacheMode(ALWAYS_USE_CACHE);
+        underTest.setCachePath(GRACENOTE_CACHE);
         // when
-        final ResponseEntity<String> response = underTest.queryAlbumToc("150 21860 38705 47155 68112 81095 99740 114517 131995 145947 163532 176950 188370 218577 241080 272992 287877 307292");
+        final ResponseEntity<String> response = underTest.queryAlbumToc(OFFSETS);
         final Path actualResult = dump("queryAlbumTocResponse.txt", response);
         // then
-        assertSameContents(PATH_EXPECTED_TEST_RESULTS.resolve("queryAlbumTocResponse.txt"), actualResult);
+        assertSameContents(gracenoteFilesPath("iTunes-fg-20160504-1").resolve("albumToc")
+                                                                     .resolve(OFFSETS.replace(' ', '/'))
+                                                                     .resolve(RESPONSE_TXT),
+                           actualResult);
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Test
-    public void testQueryAlbumFetch()
+    public void testQueryAlbumFetchFromTheCache()
       throws Exception
       {
         // given
+        underTest.setCacheMode(ALWAYS_USE_CACHE);
+        underTest.setCachePath(GRACENOTE_CACHE);
         // when
-        final ResponseEntity<String> response = underTest.queryAlbumFetch("161343049-DE60B292E7510AB532A959E2F8140814");
+        final ResponseEntity<String> response = underTest.queryAlbumFetch(GN_ID);
         final Path actualResult = dump("queryAlbumFetchResponse.txt", response);
         // then
-        assertSameContents(PATH_EXPECTED_TEST_RESULTS.resolve("queryAlbumFetchResponse.txt"), actualResult);
+        assertSameContents(gracenoteFilesPath("iTunes-fg-20160504-1").resolve("albumFetch")
+                                                                     .resolve(GN_ID)
+                                                                     .resolve(RESPONSE_TXT),
+                           actualResult);
       }
 
-    @Test(dataProvider = "gracenoteResourcesProvider")
+    //////// TESTS BELOW USE THE NETWORK
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Test(groups = "no-ci")
+    public void testQueryAlbumTocFromTheNetwork()
+      throws Exception
+      {
+        // given
+        underTest.setCacheMode(DONT_USE_CACHE);
+        // when
+        final ResponseEntity<String> response = underTest.queryAlbumToc(OFFSETS);
+        final Path actualResult = dump("queryAlbumTocResponse.txt", response);
+        // then
+        assertSameContents(gracenoteFilesPath("iTunes-fg-20160504-1").resolve("albumToc")
+                                                                     .resolve(OFFSETS.replace(' ', '/'))
+                                                                     .resolve(RESPONSE_TXT),
+                           actualResult);
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Test(groups = "no-ci")
+    public void testQueryAlbumFetchFromTheNetwork()
+      throws Exception
+      {
+        // given
+        underTest.setCacheMode(DONT_USE_CACHE);
+        // when
+        final ResponseEntity<String> response = underTest.queryAlbumFetch(GN_ID);
+        final Path actualResult = dump("queryAlbumFetchResponse.txt", response);
+        // then
+        assertSameContents(gracenoteFilesPath("iTunes-fg-20160504-1").resolve("albumFetch")
+                                                                     .resolve(GN_ID)
+                                                                     .resolve(RESPONSE_TXT),
+                           actualResult);
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Test(dataProvider = "gracenoteResourcesProvider", groups = "no-ci")
     public void downloadGracenoteResource (final @Nonnull String testSet, final @Nonnull Path path)
       {
+        underTest.setCacheMode(DONT_USE_CACHE);
         underTest.initialize(); // FIXME
 
         try
@@ -111,16 +184,16 @@ public class DefaultGracenoteApiTest
             if (iTunesComment.isPresent())
               {
                 final String offsets = itunesCommentToAlbumToc(iTunesComment.get());
-                final Path actualResult = targetFolder.resolve(testSet).resolve("albumToc").resolve(offsets.replace(' ', '/')).resolve("response.txt");
-                final Path expectedResult = PATH_EXPECTED_TEST_RESULTS.resolve("gracenote").resolve(testSet).resolve("albumToc").resolve(offsets.replace(' ', '/')).resolve("response.txt");
+                final String p = "albumToc/" + offsets.replace(' ', '/') + "/" + RESPONSE_TXT;
+                final Path actualResult = targetFolder.resolve(testSet).resolve(p);
+                final Path expectedResult = gracenoteFilesPath(testSet).resolve(p);
 
                 if (!Files.exists(actualResult))
                   {
                     log.info(">>>> writing to {}", actualResult);
                     Files.createDirectories(actualResult.getParent());
                     final ResponseEntity<String> response = underTest.queryAlbumToc(offsets);
-                    dump(actualResult, response);
-
+                    DefaultGracenoteApi.store(actualResult, response, IGNORED_HEADERS);
                     assertSameContents(expectedResult, actualResult);
                   }
               }
@@ -165,39 +238,33 @@ public class DefaultGracenoteApiTest
                     .toArray(new Object[0][0]);
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Nonnull
     private static String itunesCommentToAlbumToc (final @Nonnull String comment)
       {
         return Stream.of(comment.split("\\+")).skip(3).collect(Collectors.joining(" "));
       }
 
-    private final static List<String> IGNORED_HEADERS =
-            Arrays.asList("Date", "Server", "X-Powered-By", "Connection", "Keep-Alive", "Vary");
-
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Nonnull
     private static Path dump (final @Nonnull String resourceName, final @Nonnull ResponseEntity<String> response)
       throws IOException
       {
         final Path actualResult = PATH_TEST_RESULTS.resolve(resourceName);
-        dump(actualResult, response);
+        DefaultGracenoteApi.store(actualResult, response, IGNORED_HEADERS);
         return actualResult;
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Nonnull
-    private static void dump (final @Nonnull Path actualResult, final @Nonnull ResponseEntity<String> response)
-      throws IOException
+    private static Path gracenoteFilesPath (final @Nonnull String testSet)
       {
-        Files.createDirectories(actualResult.getParent());
-        final StringWriter sw = new StringWriter();
-        final PrintWriter pw = new PrintWriter(sw);
-        pw.printf("HTTP/1.1 %d %s%n", response.getStatusCode().value(), response.getStatusCode().name());
-        response.getHeaders().entrySet().stream()
-                                        .filter(e -> !IGNORED_HEADERS.contains(e.getKey()))
-                                        .sorted(comparing(e -> e.getKey()))
-                                        .forEach(e -> pw.printf("%s: %s%n", e.getKey(), e.getValue().get(0)));
-        pw.println();
-        pw.print(response.getBody());
-        pw.close();
-        Files.write(actualResult, Arrays.asList(sw.toString()), UTF_8);
+        return PATH_EXPECTED_TEST_RESULTS.resolve("gracenote").resolve(testSet);
       }
   }
