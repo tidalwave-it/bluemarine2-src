@@ -29,9 +29,7 @@
 package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
-import java.util.Comparator;
 import java.util.List;
-import java.text.Normalizer;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -41,11 +39,13 @@ import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
+import static java.text.Normalizer.Form.NFC;
+import static java.text.Normalizer.normalize;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
-import static it.tidalwave.util.test.FileComparisonUtils8.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents2;
 
 /***********************************************************************************************************************
  *
@@ -56,6 +56,12 @@ import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 @Slf4j
 public class AudioMetadataFactoryTest
   {
+    /*******************************************************************************************************************
+     *
+     * Scans a test set and dumps the read metadata to text files with the same name of the sample plus the '-dump.txt'
+     * suffix. They are checked against a collection of files with expected values, that have been manually validated.
+     *
+     ******************************************************************************************************************/
     @Test(dataProvider = "pathProvider")
     public void must_properly_read_metadata (final @Nonnull String testSetName,
                                              final @Nonnull Path path,
@@ -68,20 +74,18 @@ public class AudioMetadataFactoryTest
         Files.createDirectories(actualFile.getParent());
         final Metadata metadata = AudioMetadataFactory.loadFrom(path);
         final List<String> metadataDump = metadata.getEntries().stream()
-                .sorted(Comparator.comparing(e -> e.getKey()))
+                .sorted(comparing(e -> e.getKey()))
                 .map(e -> String.format("%s.%s = %s",
-                                        Normalizer.normalize(relativePath.toString(), Normalizer.Form.NFC),
+                                        normalize(relativePath.toString(), NFC),
                                         e.getKey(), e.getValue()))
                 .collect(toList());
         Files.write(actualFile, metadataDump);
-        assertSameContents(normalizedPath(expectedFile.toAbsolutePath()), normalizedPath(actualFile.toAbsolutePath()));
-//        System.err.println(am.audioFile);
-//        final Tag tag = metadata.audioFile.getTag();
-//        final List<TagField> fields = toList(tag.getFields());
-//        System.err.println("FIELDS: " + fields);
-//        tag.getFields(FieldKey.)
+        assertSameContents2(expectedFile, actualFile);
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @DataProvider
     private static Object[][] pathProvider()
       throws IOException
@@ -89,7 +93,7 @@ public class AudioMetadataFactoryTest
         final String testSetName = "iTunes-fg-20160504-1";
         final Path testSetPath = TestSetLocator.getMusicTestSetsPath().resolve(testSetName);
         return Files.walk(testSetPath, FOLLOW_LINKS)
-                    .filter(path -> Files.isRegularFile(path))
+                    .filter(Files::isRegularFile)
                     .filter(path -> !path.getFileName().toString().startsWith(".")) // isHidden() throws exception
                     .map(path -> new Object[] { testSetName, path, testSetPath.relativize(path) })
                     .collect(toList())

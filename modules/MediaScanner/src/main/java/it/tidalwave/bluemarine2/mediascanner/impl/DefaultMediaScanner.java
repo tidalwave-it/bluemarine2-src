@@ -35,13 +35,9 @@ import java.util.Optional;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import org.musicbrainz.ns.mmd_2.Artist;
-import org.openrdf.model.Resource;
 import org.openrdf.model.IRI;
-import org.openrdf.model.Value;
 import org.openrdf.model.vocabulary.FOAF;
 import org.openrdf.model.vocabulary.RDF;
-import org.openrdf.model.vocabulary.RDFS;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.InstantProvider;
 import it.tidalwave.messagebus.MessageBus;
@@ -52,7 +48,6 @@ import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.vocabulary.BM;
 import it.tidalwave.bluemarine2.model.vocabulary.MO;
-import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 
@@ -108,11 +103,8 @@ import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
 @SimpleMessageSubscriber @Slf4j
 public class DefaultMediaScanner
   {
-//    // FIXME: inject
-//    private final DefaultMusicBrainzApi mbApi = new DefaultMusicBrainzApi();
-
-    @Inject
-    private DbTuneMetadataManager dbTuneMetadataManager;
+//    @Inject // FIXME: refactor Db Tune support in a different class
+//    private DbTuneMetadataManager dbTuneMetadataManager;
 
     @Inject
     private EmbeddedMetadataManager embeddedMetadataManager;
@@ -208,65 +200,6 @@ public class DefaultMediaScanner
 
     /*******************************************************************************************************************
      *
-     *
-     ******************************************************************************************************************/
-    /* VisibleForTesting */ void onArtistImportRequest (final @ListensTo @Nonnull ArtistImportRequest request)
-      throws InterruptedException
-      {
-        try
-          {
-            log.info("onArtistImportRequest({})", request);
-            final Id artistId = request.getArtistId();
-            final Resource artistUri = uriFor("http://musicmusicbrainz.org/ws/2/artist/" + artistId);
-            final Artist artist = request.getArtist();
-            final Value nameLiteral = literalFor(artist.getName());
-            statementManager.requestAddStatements()
-                            .with(artistUri, RDF.TYPE, MO.C_MUSIC_ARTIST)
-                            .with(artistUri, RDFS.LABEL, nameLiteral)
-                            .with(artistUri, FOAF.NAME, nameLiteral)
-                            .with(artistUri, MO.P_MUSICBRAINZ_GUID, literalFor(artistId.stringValue()))
-                            .publish();
-}
-        finally
-          {
-            progress.incrementImportedArtists();
-          }
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    /* VisibleForTesting */ void onDownloadComplete (final @ListensTo @Nonnull DownloadComplete message)
-      throws InterruptedException, IOException
-      {
-        // FIXME: check if it's a expected download
-        try
-          {
-            log.info("onDownloadComplete({})", message);
-            final String url = message.getUrl().toString();
-
-            if (url.matches("http://dbtune.org/.*/resource/track/.*"))
-              {
-                dbTuneMetadataManager.onTrackMetadataDownloadComplete(message);
-              }
-            else if (url.matches("http://dbtune.org/.*/resource/artist/.*"))
-              {
-                dbTuneMetadataManager.onArtistMetadataDownloadComplete(message);
-              }
-            else if (url.matches("http://dbtune.org/.*/resource/record/.*"))
-              {
-                dbTuneMetadataManager.onRecordMetadataDownloadComplete(message);
-              }
-          }
-        finally
-          {
-            progress.incrementCompletedDownloads();
-          }
-      }
-
-    /*******************************************************************************************************************
-     *
      * Processes a {@link MediaItem}.
      *
      * @param                           audioFile   the item
@@ -277,16 +210,12 @@ public class DefaultMediaScanner
         log.debug("importMediaItem({})", audioFile);
         final Id sha1 = idCreator.createSha1Id(audioFile.getPath());
         final Metadata metadata = audioFile.getMetadata();
-        final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
-        log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
 
         final IRI audioFileUri = BM.audioFileUriFor(sha1);
         // FIXME: DbTune has got Signals. E.g. http://dbtune.org/musicbrainz/page/signal/0900f0cb-230f-4632-bd87-650801e5fdba
         // FIXME: Try to use them. It seems there is no extra information, but use their Uri.
         final IRI signalUri = BM.signalUriFor(sha1);
-        // FIXME: the same contents in different places will give the same sha1. Disambiguates by hashing the path too?
-        final IRI trackUri = !musicBrainzTrackId.isPresent() ? BM.localTrackUriFor(sha1)
-                                                             : BM.musicBrainzUriFor("track", musicBrainzTrackId.get());
+        final IRI trackUri = createTrackUri(metadata, sha1);
 
         final Instant lastModifiedTime = getLastModifiedTime(audioFile.getPath());
         statementManager.requestAddStatements()
@@ -304,15 +233,30 @@ public class DefaultMediaScanner
         embeddedMetadataManager.importAudioFileMetadata(audioFile, signalUri, trackUri);
 
         // FIXME: use a Chain of Responsibility
-        if (musicBrainzTrackId.isPresent())
-          {
-            dbTuneMetadataManager.importTrackMetadata(audioFile, trackUri, musicBrainzTrackId.get());
-//                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
-          }
-        else
-          {
+//        if (musicBrainzTrackId.isPresent())
+//          {
+//            dbTuneMetadataManager.importTrackMetadata(audioFile, trackUri, musicBrainzTrackId.get());
+////                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
+//          }
+//        else
+//          {
             embeddedMetadataManager.importFallbackTrackMetadata(audioFile, trackUri);
-          }
+//          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private IRI createTrackUri (final @Nonnull Metadata metadata, final @Nonnull Id sha1)
+      {
+        // FIXME: use a chain of responsibility
+        final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
+        log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
+        // FIXME: the same contents in different places will give the same sha1. Disambiguates by hashing the path too?
+        return !musicBrainzTrackId.isPresent() ? BM.localTrackUriFor(sha1)
+                                               : BM.musicBrainzUriFor("track", musicBrainzTrackId.get());
       }
 
     /*******************************************************************************************************************
@@ -332,95 +276,4 @@ public class DefaultMediaScanner
             return timestampProvider.getInstant();
           }
       }
-
-    /*******************************************************************************************************************
-     *
-     * Imports the MusicBrainz metadata for the given {@link MediaItem}.
-     *
-     * @param   mediaItem               the {@code MediaItem}.
-     * @param   mediaItemUri            the IRI of the item
-     * @throws  IOException             when an I/O problem occurred
-     * @throws  JAXBException           when an XML error occurs
-     * @throws  InterruptedException    if the operation is interrupted
-     *
-     ******************************************************************************************************************/
-//    private void importMediaItemMusicBrainzMetadata (final @Nonnull MediaItem mediaItem,
-//                                                     final @Nonnull IRI mediaItemUri)
-//      throws IOException, JAXBException, InterruptedException
-//      {
-//        log.info("importMediaItemMusicBrainzMetadata({}, {})", mediaItem, mediaItemUri);
-//
-//        final Metadata metadata = mediaItem.getMetadata();
-//        final String mbGuid = metadata.get(Metadata.MBZ_TRACK_ID).get().stringValue().replaceAll("^mbz:", "");
-//        messageBus.publish(new AddStatementsRequest(mediaItemUri, MO.P_MUSICBRAINZ_GUID, literalFor(mbGuid)));
-//
-//        if (true)
-//          {
-//            throw new IOException("fake"); // FIXME
-//          }
-//
-//        final org.musicbrainz.ns.mmd_2.Metadata m = mbApi.getMusicBrainzEntity("recording", mbGuid, "?inc=artists");
-//        final Recording recording = m.getRecording();
-//        final String title = recording.getTitle();
-//        final ArtistCredit artistCredit = recording.getArtistCredit();
-//        final List<NameCredit> nameCredits = artistCredit.getNameCredit();
-//        final String fullCredits = nameCredits.stream()
-//                                              .map(c -> c.getArtist().getName() + emptyWhenNull(c.getJoinphrase()))
-//                                              .collect(joining());
-//        nameCredits.forEach(nameCredit -> addArtist(nameCredit.getArtist()));
-//
-//        final Value createLiteral = literalFor(title);
-//        messageBus.publish(AddStatementsRequest.newAddStatementsRequest()
-//                                           .withOptional(mediaItemUri, BM.LATEST_MB_METADATA, literalFor(timestampProvider.getInstant()))
-//                                           .withOptional(mediaItemUri, DC.TITLE, createLiteral)
-//                                           .withOptional(mediaItemUri, RDFS.LABEL, createLiteral)
-//                                           .withOptional(mediaItemUri, BM.FULL_CREDITS, literalFor(fullCredits))
-//                                           .publish());
-//        // TODO: MO.CHANNELS
-//        // TODO: MO.COMPOSER
-//        // TODO: MO.CONDUCTOR
-//        // TODO: MO.ENCODING "MP3 CBR @ 128kbps", "OGG @ 160kbps", "FLAC",
-//        // TODO: MO.GENRE
-//        // TODO: MO.INTERPRETER
-//        // TODO: MO.LABEL
-//        // TODO: MO.P_MEDIA_TYPE (MIME)
-//        // TODO: MO.OPUS
-//        // TOOD: MO.RECORD_NUMBER
-//        // TODO: MO.SINGER
-//
-//// FIXME       nameCredits.forEach(credit -> addStatement(mediaItemUri, FOAF.MAKER, uriFor(credit.getArtist().getId())));
-//      }
-
-//        catch (IOException e)
-//          {
-//            log.warn("Cannot retrieve MusicBrainz metadata {} ... - {}", mediaItem, e.toString());
-//            embeddedMetadataManager.importFallbackTrackMetadata(mediaItem, mediaItemUri);
-//            messageBus.publish(new AddStatementsRequest(mediaItemUri, BM.FAILED_MB_METADATA, literalFor(timestampProvider.getInstant())));
-//
-//            if (e.getMessage().contains("503")) // throttling error
-//              {
-////                log.warn("Resubmitting {} ... - {}", mediaItem, e.toString());
-////                pendingMediaItems.requestAddStatements(mediaItem);
-//              }
-//          }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-//    private void addArtist (final @Nonnull Artist artist)
-//      {
-//        synchronized (seenArtistIds)
-//          {
-//            final Id artistId = new Id("http://musicbrainz.org/artist/" + artist.getId());
-//
-//            if (!seenArtistIds.contains(artistId))
-//              {
-//                seenArtistIds.requestAddStatements(artistId);
-//                progress.incrementTotalArtists();
-//                messageBus.publish(new ArtistImportRequest(artistId, artist));
-//              }
-//          }
-//      }
   }

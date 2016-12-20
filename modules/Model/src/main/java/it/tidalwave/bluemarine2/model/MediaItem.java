@@ -72,7 +72,7 @@ public interface MediaItem extends EntityWithPath, AudioFileSupplier
         public static final Key<Integer> TRACK_NUMBER = new Key<>("mp3.trackNumber");
         public static final Key<Integer> DISK_NUMBER = new Key<>("mp3.diskNumber");
         public static final Key<Integer> DISK_COUNT = new Key<>("mp3.diskCount");
-        public static final Key<String> COMMENT = new Key<>("mp3.comment");
+        public static final Key<List<String>> COMMENT = new Key<>("mp3.comment");
         public static final Key<Integer> BITS_PER_SAMPLE = new Key<>("mp3.bitsPerSample");
         public static final Key<String> FORMAT = new Key<>("mp3.format");
         public static final Key<String> ENCODING_TYPE = new Key<>("mp3.encodingType");

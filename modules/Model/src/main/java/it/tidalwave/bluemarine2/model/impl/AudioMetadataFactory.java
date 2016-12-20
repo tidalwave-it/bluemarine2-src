@@ -35,7 +35,6 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.io.File;
 import java.io.IOException;
@@ -55,6 +54,7 @@ import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.toList;
 import static lombok.AccessLevel.PRIVATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
@@ -69,7 +69,7 @@ import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 public final class AudioMetadataFactory
   {
     private final static List<FieldKey> UNMAPPED_TAGS = Arrays.asList(
-        FieldKey.ARTIST, FieldKey.ALBUM, FieldKey.TITLE,
+        FieldKey.ARTIST, FieldKey.ALBUM, FieldKey.TITLE, FieldKey.TITLE, FieldKey.COMMENT,
         FieldKey.TRACK, FieldKey.DISC_NO, FieldKey.DISC_TOTAL, FieldKey.COMPOSER,
         FieldKey.MUSICBRAINZ_TRACK_ID, FieldKey.MUSICBRAINZ_WORK_ID, FieldKey.MUSICBRAINZ_DISC_ID, FieldKey.MUSICBRAINZ_ARTISTID);
 
@@ -89,20 +89,33 @@ public final class AudioMetadataFactory
             audioFile = new MP3FileReader().read(file); // FIXME in some cases AudioFileIO doesn't get the right file extension
 
             final AudioHeader header = audioFile.getAudioHeader();
-            metadata = metadata.with(FILE_SIZE, Files.size(path));
-            metadata = metadata.with(DURATION, Duration.ofSeconds(header.getTrackLength()));
-            metadata = metadata.with(BIT_RATE, (int)header.getBitRateAsNumber());
-            metadata = metadata.with(SAMPLE_RATE, header.getSampleRateAsNumber());
+            metadata = metadata.with(FILE_SIZE,       Files.size(path));
+            metadata = metadata.with(DURATION,        Duration.ofSeconds(header.getTrackLength()));
+            metadata = metadata.with(BIT_RATE,        (int)header.getBitRateAsNumber());
+            metadata = metadata.with(SAMPLE_RATE,     header.getSampleRateAsNumber());
             metadata = metadata.with(BITS_PER_SAMPLE, header.getBitsPerSample());
-            metadata = metadata.with(CHANNELS, parseOptionalInt(header.getChannels()));
-            metadata = metadata.with(FORMAT, Optional.ofNullable(header.getFormat()));
-            metadata = metadata.with(ENCODING_TYPE, Optional.ofNullable(header.getEncodingType()));
+            metadata = metadata.with(CHANNELS,        parseOptionalInt(header.getChannels()));
+            metadata = metadata.with(FORMAT,          Optional.ofNullable(header.getFormat()));
+            metadata = metadata.with(ENCODING_TYPE,   Optional.ofNullable(header.getEncodingType()));
 
-            final Tag tag = audioFile.getTag(); // FIXME: getFirst below... should get all
-            metadata = metadata.with(ARTIST, tag.getFirst(FieldKey.ARTIST));
-            metadata = metadata.with(ALBUM, tag.getFirst(FieldKey.ALBUM));
-            metadata = metadata.with(TITLE, tag.getFirst(FieldKey.TITLE));
-            metadata = metadata.with(COMMENT, tag.getFirst(FieldKey.COMMENT)); // FIXME: doesn't work
+            final Tag tag = audioFile.getTag(); // FIXME: getFirst below... should get all?
+            metadata = metadata.with(ARTIST,          tag.getFirst(FieldKey.ARTIST));
+            metadata = metadata.with(ALBUM,           tag.getFirst(FieldKey.ALBUM));
+            metadata = metadata.with(TITLE,           tag.getFirst(FieldKey.TITLE));
+            metadata = metadata.with(COMMENT,         tag.getAll(FieldKey.COMMENT));
+            metadata = metadata.with(TRACK_NUMBER,    parseOptionalInt(tag.getFirst(FieldKey.TRACK)));
+            metadata = metadata.with(DISK_NUMBER,     parseOptionalInt(tag.getFirst(FieldKey.DISC_NO)));
+            metadata = metadata.with(DISK_COUNT,      parseOptionalInt(tag.getFirst(FieldKey.DISC_TOTAL)));
+            metadata = metadata.with(COMPOSER,        tag.getFirst(FieldKey.COMPOSER));
+
+            metadata = metadata.with(MBZ_TRACK_ID,    id(tag.getFirst(FieldKey.MUSICBRAINZ_TRACK_ID)));
+            metadata = metadata.with(MBZ_WORK_ID,     id(tag.getFirst(FieldKey.MUSICBRAINZ_WORK_ID)));
+            metadata = metadata.with(MBZ_DISC_ID,     id(tag.getFirst(FieldKey.MUSICBRAINZ_DISC_ID)));
+            metadata = metadata.with(MBZ_ARTIST_ID,   optionalList(tag.getAll(FieldKey.MUSICBRAINZ_ARTISTID).stream()
+                                                                .filter(s -> ((s != null) && !"".equals(s)))
+                                                                .flatMap(s -> Stream.of(s.split("/"))) // FIXME:correct?
+                                                                .map(s -> id(s))
+                                                                .collect(toList())));
 
             for (final FieldKey fieldKey : FieldKey.values())
               {
@@ -120,44 +133,6 @@ public final class AudioMetadataFactory
 
 //            put(YEAR, Integer.valueOf(tag.getFirst(FieldKey.YEAR)));
 
-            try
-              {
-                metadata = metadata.with(TRACK_NUMBER, Integer.parseInt(tag.getFirst(FieldKey.TRACK)));
-              }
-            catch (NumberFormatException e)
-              {
-                log.warn("Cannot parse track number", e.toString());
-              }
-
-            try
-              {
-                metadata = metadata.with(DISK_NUMBER, Integer.parseInt(tag.getFirst(FieldKey.DISC_NO)));
-              }
-            catch (NumberFormatException e)
-              {
-                log.warn("Cannot parse disk number", e.toString());
-              }
-
-            try
-              {
-                metadata = metadata.with(DISK_COUNT, Integer.parseInt(tag.getFirst(FieldKey.DISC_TOTAL)));
-              }
-            catch (NumberFormatException e)
-              {
-                log.warn("Cannot parse disk count", e.toString());
-              }
-
-//            put(TRACK, tag.getFirst(FieldKey.DISC_NO));
-            metadata = metadata.with(COMPOSER, tag.getFirst(FieldKey.COMPOSER));
-
-            metadata = metadata.with(MBZ_TRACK_ID,  id(tag.getFirst(FieldKey.MUSICBRAINZ_TRACK_ID)));
-            metadata = metadata.with(MBZ_WORK_ID,   id(tag.getFirst(FieldKey.MUSICBRAINZ_WORK_ID)));
-            metadata = metadata.with(MBZ_DISC_ID,   id(tag.getFirst(FieldKey.MUSICBRAINZ_DISC_ID)));
-            metadata = metadata.with(MBZ_ARTIST_ID, tag.getAll(FieldKey.MUSICBRAINZ_ARTISTID).stream()
-                                  .filter(s -> ((s != null) && !"".equals(s)))
-                                  .flatMap(s -> Stream.of(s.split("/"))) // FIXME: correct?
-                                  .map(s -> id(s))
-                                  .collect(Collectors.toList()));
 
 //            tag.getFirst(FieldKey.ARTIST_SORT);
 
@@ -200,6 +175,12 @@ public final class AudioMetadataFactory
           }
 
         return metadata;
+      }
+
+    @Nonnull
+    private static Optional<List<Id>> optionalList (final @Nonnull List<Id> list)
+      {
+        return list.isEmpty() ? Optional.empty() : Optional.of(list);
       }
 
     @Nonnull
