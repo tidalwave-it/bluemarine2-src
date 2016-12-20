@@ -452,6 +452,7 @@
         <module>CECWrapper</module>
         <module>Commons</module>
         <module>Downloader</module>
+        <module>GracenoteAPI</module>
         <module>Installers/LinuxJavaFXApplication</module>
         <module>Installers/LinuxApplicationArmV6EmbeddedJRE</module>
         <module>Installers/Service</module>
