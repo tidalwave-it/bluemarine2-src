@@ -48,6 +48,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.nio.file.FileVisitOption.*;
 import static it.tidalwave.util.test.FileComparisonUtils8.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import it.tidalwave.bluemarine2.gracenote.api.Response;
 import static it.tidalwave.bluemarine2.gracenote.api.impl.DefaultGracenoteApi.CacheMode.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -98,8 +99,10 @@ public class DefaultGracenoteApiTest
         underTest.setCacheMode(ALWAYS_USE_CACHE);
         underTest.setCachePath(GRACENOTE_CACHE);
         // when
-        final Album album = underTest.findAlbumByToc(PURE_ELLA_OFFSETS).get();
+        final Response<Album> response = underTest.findAlbumByToc(PURE_ELLA_OFFSETS);
         // then
+        assertThat(response.isPresent(), is(true));
+        final Album album = response.get();
         assertThat(album.getGnId(), is(PURE_ELLA_GN_ID));
         assertThat(album.getArtist(), is("Ella Fitzgerald"));
         assertThat(album.getTitle(), is("Essential (Pure Ella) [Live]"));
@@ -115,9 +118,11 @@ public class DefaultGracenoteApiTest
         // given
         underTest.setCacheMode(ALWAYS_USE_CACHE);
         underTest.setCachePath(GRACENOTE_CACHE);
-        // when
-        final Album album = underTest.findAlbumByGnId(PURE_ELLA_GN_ID).get();
+       // when
+        final Response<Album> response = underTest.findAlbumByToc(PURE_ELLA_OFFSETS);
         // then
+        assertThat(response.isPresent(), is(true));
+        final Album album = response.get();
         assertThat(album.getGnId(), is(PURE_ELLA_GN_ID));
         assertThat(album.getArtist(), is("Ella Fitzgerald"));
         assertThat(album.getTitle(), is("Essential (Pure Ella) [Live]"));

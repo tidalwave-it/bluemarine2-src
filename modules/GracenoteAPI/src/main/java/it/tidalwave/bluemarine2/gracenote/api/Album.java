@@ -28,15 +28,8 @@
  */
 package it.tidalwave.bluemarine2.gracenote.api;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import static java.nio.charset.StandardCharsets.UTF_8;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
@@ -45,9 +38,7 @@ import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
-import org.springframework.http.ResponseEntity;
 import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
 /***********************************************************************************************************************
  *
@@ -58,8 +49,6 @@ import org.xml.sax.SAXException;
 @Immutable @Getter @EqualsAndHashCode @ToString @Builder
 public class Album
   {
-    private static final DocumentBuilderFactory DOCBUILDER_FACTORY = DocumentBuilderFactory.newInstance();
-
     private static final XPathFactory XPATH_FACTORY = XPathFactory.newInstance();
 
     @Nonnull
@@ -76,8 +65,7 @@ public class Album
     // TODO: genre
 
     @Nonnull
-    public static Album of (final @Nonnull ResponseEntity<String> response)
-      throws IOException
+    public static Album of (final @Nonnull Document dom)
       {
         try
           {
@@ -86,27 +74,14 @@ public class Album
             final XPathExpression exprArtist = xPath.compile("/RESPONSES/RESPONSE/ALBUM/ARTIST");
             final XPathExpression exprTitle  = xPath.compile("/RESPONSES/RESPONSE/ALBUM/TITLE");
 
-            final Document dom = toDom(response);
             return builder().gnId(exprGnId.evaluate(dom))
                             .artist(exprArtist.evaluate(dom))
                             .title(exprTitle.evaluate(dom))
                             .build();
           }
-        catch (XPathExpressionException | ParserConfigurationException | SAXException e)
+        catch (XPathExpressionException e)
           {
-            throw new IOException(e);
-          }
-      }
-
-    @Nonnull
-    private static Document toDom (final @Nonnull ResponseEntity<String> response)
-      throws IOException, SAXException, ParserConfigurationException
-      {
-        final DocumentBuilder db = DOCBUILDER_FACTORY.newDocumentBuilder();
-
-        try (final InputStream is = new ByteArrayInputStream(response.getBody().getBytes(UTF_8)))
-          {
-            return db.parse(is);
+            throw new RuntimeException(e);
           }
       }
   }

@@ -28,7 +28,6 @@
  */
 package it.tidalwave.bluemarine2.gracenote.api.impl;
 
-import it.tidalwave.bluemarine2.gracenote.api.Album;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import java.util.Optional;
@@ -38,7 +37,9 @@ import java.nio.file.Path;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import it.tidalwave.bluemarine2.gracenote.api.Album;
 import it.tidalwave.bluemarine2.gracenote.api.GracenoteApi;
+import it.tidalwave.bluemarine2.gracenote.api.Response;
 import lombok.extern.slf4j.Slf4j;
 import lombok.Getter;
 import lombok.Setter;
@@ -99,10 +100,10 @@ public class DefaultGracenoteApi implements GracenoteApi
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public Optional<Album> findAlbumByToc (@Nonnull String offsets)
+    public Response<Album> findAlbumByToc (@Nonnull String offsets)
       throws IOException
       {
-        return Optional.of(Album.of(queryAlbumToc(offsets)));
+        return Response.of(queryAlbumToc(offsets), Album::of);
       }
 
     /*******************************************************************************************************************
@@ -111,10 +112,10 @@ public class DefaultGracenoteApi implements GracenoteApi
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public Optional<Album> findAlbumByGnId (@Nonnull String gnId)
+    public Response<Album> findAlbumByGnId (@Nonnull String gnId)
       throws IOException
       {
-        return Optional.of(Album.of(queryAlbumFetch(gnId)));
+        return Response.of(queryAlbumFetch(gnId), Album::of);
       }
 
     /*******************************************************************************************************************
