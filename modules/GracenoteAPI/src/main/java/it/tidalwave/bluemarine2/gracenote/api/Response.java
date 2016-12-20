@@ -42,7 +42,14 @@ import lombok.AllArgsConstructor;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 import static java.nio.charset.StandardCharsets.UTF_8;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import static lombok.AccessLevel.PRIVATE;
+import org.springframework.http.HttpStatus;
 
 /***********************************************************************************************************************
  *
@@ -54,6 +61,8 @@ import static lombok.AccessLevel.PRIVATE;
 public class Response<T>
   {
     private static final DocumentBuilderFactory DOCBUILDER_FACTORY = DocumentBuilderFactory.newInstance();
+
+    private static final XPathFactory XPATH_FACTORY = XPathFactory.newInstance();
 
     private final Optional<T> datum;
 
@@ -86,9 +95,37 @@ public class Response<T>
     public static <X> Response<X> of (final @Nonnull ResponseEntity<String> response,
                                       final @Nonnull Function<Document, X> parser)
       {
-        final Document dom = toDom(response);
-        // FIXME: must check the error code
-        return new Response<>(Optional.of(parser.apply(dom)));
+        try
+          {
+            final int httpStatus = response.getStatusCodeValue();
+
+            if (httpStatus != HttpStatus.OK.value())
+              {
+                throw new RuntimeException("Unexpected HTTP status: " + response.getStatusCode());
+              }
+
+            final Document dom = toDom(response);
+
+            final XPath xPath = XPATH_FACTORY.newXPath();
+            final XPathExpression exprResponseStatus = xPath.compile("/RESPONSES/RESPONSE/@STATUS");
+            final String responseStatus = exprResponseStatus.evaluate(dom);
+
+            switch (responseStatus)
+              {
+                case "NO_MATCH":
+                  return new Response<>(Optional.empty());
+
+                case "OK":
+                  return new Response<>(Optional.of(parser.apply(dom)));
+
+                default:
+                  throw new RuntimeException("Unexpected response status: " + responseStatus);
+              }
+          }
+        catch (XPathExpressionException e)
+          {
+            throw new RuntimeException(e);
+          }
       }
 
     @Nonnull

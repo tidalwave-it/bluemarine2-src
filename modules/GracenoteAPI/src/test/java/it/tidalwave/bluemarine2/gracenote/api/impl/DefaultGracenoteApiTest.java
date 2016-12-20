@@ -128,6 +128,39 @@ public class DefaultGracenoteApiTest
         assertThat(album.getTitle(), is("Essential (Pure Ella) [Live]"));
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Test
+    public void must_properly_report_on_offsets_not_recognized()
+      throws Exception
+      {
+        // given
+        underTest.setCacheMode(ALWAYS_USE_CACHE);
+        underTest.setCachePath(GRACENOTE_CACHE);
+        // when
+        final Response<Album> response = underTest.findAlbumByToc("183 69955 94303 142758 206005 238393/");
+        // then
+        assertThat(response.isPresent(), is(false));
+      }
+
+//    /*******************************************************************************************************************
+//     *
+//     ******************************************************************************************************************/
+//    @Test
+//    public void must_properly_report_on_GN_ID_not_found()
+//      throws Exception
+//      {
+//        // given
+//        underTest.setCacheMode(ALWAYS_USE_CACHE);
+//        underTest.setCachePath(GRACENOTE_CACHE);
+//       // when
+//        final Response<Album> response = underTest.findAlbumByToc("invalid-gnid");
+//        // then
+//        assertThat(response.isPresent(), is(false));
+//        final Album album = response.get();
+//      }
+
     //////// TESTS BELOW USE THE NETWORK
 
     /*******************************************************************************************************************
