@@ -59,10 +59,10 @@ import static it.tidalwave.bluemarine2.gracenote.api.impl.DefaultGracenoteApi.Ca
 @Slf4j
 public class DefaultGracenoteApiTest
   {
-    private static final String GN_ID = "161343049-DE60B292E7510AB532A959E2F8140814";
+    private static final String PURE_ELLA_GN_ID = "161343049-DE60B292E7510AB532A959E2F8140814";
 
-    private static final String OFFSETS = "150 21860 38705 47155 68112 81095 99740 114517 131995 145947 "
-                                        + "163532 176950 188370 218577 241080 272992 287877 307292";
+    private static final String PURE_ELLA_OFFSETS = "150 21860 38705 47155 68112 81095 99740 114517 131995 145947 "
+                                                  + "163532 176950 188370 218577 241080 272992 287877 307292";
 
     private static final String RESPONSE_TXT = "response.txt";
 
@@ -96,11 +96,11 @@ public class DefaultGracenoteApiTest
         underTest.setCacheMode(ALWAYS_USE_CACHE);
         underTest.setCachePath(GRACENOTE_CACHE);
         // when
-        final ResponseEntity<String> response = underTest.queryAlbumToc(OFFSETS);
+        final ResponseEntity<String> response = underTest.queryAlbumToc(PURE_ELLA_OFFSETS);
         final Path actualResult = dump("queryAlbumTocResponse.txt", response);
         // then
         assertSameContents(gracenoteFilesPath("iTunes-fg-20160504-1").resolve("albumToc")
-                                                                     .resolve(OFFSETS.replace(' ', '/'))
+                                                                     .resolve(PURE_ELLA_OFFSETS.replace(' ', '/'))
                                                                      .resolve(RESPONSE_TXT),
                            actualResult);
       }
@@ -116,11 +116,11 @@ public class DefaultGracenoteApiTest
         underTest.setCacheMode(ALWAYS_USE_CACHE);
         underTest.setCachePath(GRACENOTE_CACHE);
         // when
-        final ResponseEntity<String> response = underTest.queryAlbumFetch(GN_ID);
+        final ResponseEntity<String> response = underTest.queryAlbumFetch(PURE_ELLA_GN_ID);
         final Path actualResult = dump("queryAlbumFetchResponse.txt", response);
         // then
         assertSameContents(gracenoteFilesPath("iTunes-fg-20160504-1").resolve("albumFetch")
-                                                                     .resolve(GN_ID)
+                                                                     .resolve(PURE_ELLA_GN_ID)
                                                                      .resolve(RESPONSE_TXT),
                            actualResult);
       }
@@ -137,11 +137,11 @@ public class DefaultGracenoteApiTest
         // given
         underTest.setCacheMode(DONT_USE_CACHE);
         // when
-        final ResponseEntity<String> response = underTest.queryAlbumToc(OFFSETS);
+        final ResponseEntity<String> response = underTest.queryAlbumToc(PURE_ELLA_OFFSETS);
         final Path actualResult = dump("queryAlbumTocResponse.txt", response);
         // then
         assertSameContents(gracenoteFilesPath("iTunes-fg-20160504-1").resolve("albumToc")
-                                                                     .resolve(OFFSETS.replace(' ', '/'))
+                                                                     .resolve(PURE_ELLA_OFFSETS.replace(' ', '/'))
                                                                      .resolve(RESPONSE_TXT),
                            actualResult);
       }
@@ -156,11 +156,11 @@ public class DefaultGracenoteApiTest
         // given
         underTest.setCacheMode(DONT_USE_CACHE);
         // when
-        final ResponseEntity<String> response = underTest.queryAlbumFetch(GN_ID);
+        final ResponseEntity<String> response = underTest.queryAlbumFetch(PURE_ELLA_GN_ID);
         final Path actualResult = dump("queryAlbumFetchResponse.txt", response);
         // then
         assertSameContents(gracenoteFilesPath("iTunes-fg-20160504-1").resolve("albumFetch")
-                                                                     .resolve(GN_ID)
+                                                                     .resolve(PURE_ELLA_GN_ID)
                                                                      .resolve(RESPONSE_TXT),
                            actualResult);
       }
