@@ -172,10 +172,11 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         final Repository repository = new SailRepository(new MemoryStore());
         repository.initialize();
 
-        final RepositoryConnection connection = repository.getConnection();
-        connection.add(path.toFile(), null, RDFFormat.N3);
-        connection.commit();
-        connection.close();
+        try (final RepositoryConnection connection = repository.getConnection())
+          {
+            connection.add(path.toFile(), null, RDFFormat.N3);
+            connection.commit();
+          }
 
         return repository;
       }
