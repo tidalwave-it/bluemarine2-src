@@ -46,6 +46,7 @@ import org.w3c.dom.Document;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static lombok.AccessLevel.PRIVATE;
 
@@ -62,7 +63,11 @@ public class Response<T>
 
     private static final XPathFactory XPATH_FACTORY = XPathFactory.newInstance();
 
+    @Nonnull
     private final Optional<T> datum;
+
+    @Getter @Nonnull
+    private final String responseStatus;
 
     // FIXME: add error code
 
@@ -111,10 +116,10 @@ public class Response<T>
             switch (responseStatus)
               {
                 case "NO_MATCH":
-                  return new Response<>(Optional.empty());
+                  return new Response<>(Optional.empty(), responseStatus);
 
                 case "OK":
-                  return new Response<>(Optional.of(parser.apply(dom)));
+                  return new Response<>(Optional.of(parser.apply(dom)), responseStatus);
 
                 default:
                   throw new RuntimeException("Unexpected response status: " + responseStatus);
