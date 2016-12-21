@@ -39,6 +39,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import it.tidalwave.bluemarine2.gracenote.api.Album;
 import it.tidalwave.bluemarine2.gracenote.api.GracenoteApi;
+import it.tidalwave.bluemarine2.gracenote.api.GracenoteException;
 import it.tidalwave.bluemarine2.gracenote.api.Response;
 import lombok.extern.slf4j.Slf4j;
 import lombok.Getter;
@@ -265,7 +266,7 @@ public class DefaultGracenoteApi implements GracenoteApi
               }
             catch (IOException e)
               {
-                throw new RuntimeException(e); // FIXME
+                throw new GracenoteException(e); // FIXME
               }
           });
       }
