@@ -110,7 +110,7 @@ public final class Miscellaneous
     public static Path normalizedPath (final @Nonnull Path path)
       throws IOException
       {
-        log.trace("normalizedPath({}", path);
+//        log.trace("normalizedPath({}", path);
 
         if (Files.exists(path))
           {
@@ -121,7 +121,7 @@ public final class Miscellaneous
 
         for (final Path element : path)
           {
-            log.trace(">>>> pathSoFar: {} element: {}", pathSoFar, element);
+//            log.trace(">>>> pathSoFar: {} element: {}", pathSoFar, element);
             final Path resolved = pathSoFar.resolve(element);
 
             if (Files.exists(resolved))
@@ -140,7 +140,7 @@ public final class Miscellaneous
                         final Path childName = child.getFileName();
                         found = normalizedToNativeForm(element.toString())
                                 .equals(normalizedToNativeForm(childName.toString()));
-                        log.trace(">>>> original: {} found: {} same: {}", element, childName, found);
+//                        log.trace(">>>> original: {} found: {} same: {}", element, childName, found);
 
                         if (found)
                           {

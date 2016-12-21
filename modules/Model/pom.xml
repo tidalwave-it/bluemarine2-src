@@ -80,6 +80,14 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.basedir}/target/test-classes/expected-results/metadata</outputDirectory>
                                 </artifactItem>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>expected-metadata-iTunes-fg-20161210-1</artifactId>
+                                    <version>${testSet.iTunes-fg-20161210-1.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.basedir}/target/test-classes/expected-results/metadata</outputDirectory>
+                                </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
