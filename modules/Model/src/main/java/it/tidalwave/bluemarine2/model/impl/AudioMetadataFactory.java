@@ -68,7 +68,7 @@ import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 @Slf4j @NoArgsConstructor(access = PRIVATE)
 public final class AudioMetadataFactory
   {
-    private final static List<FieldKey> UNMAPPED_TAGS = Arrays.asList(
+    private final static List<FieldKey> MAPPED_TAGS = Arrays.asList(
         FieldKey.ARTIST, FieldKey.ALBUM, FieldKey.TITLE, FieldKey.TITLE, FieldKey.COMMENT,
         FieldKey.TRACK, FieldKey.DISC_NO, FieldKey.DISC_TOTAL, FieldKey.COMPOSER,
         FieldKey.MUSICBRAINZ_TRACK_ID, FieldKey.MUSICBRAINZ_WORK_ID, FieldKey.MUSICBRAINZ_DISC_ID, FieldKey.MUSICBRAINZ_ARTISTID);
@@ -119,7 +119,7 @@ public final class AudioMetadataFactory
 
             for (final FieldKey fieldKey : FieldKey.values())
               {
-                if (!UNMAPPED_TAGS.contains(fieldKey))
+                if (!MAPPED_TAGS.contains(fieldKey))
                   {
                     final Key<Object> key = new Key<>("tag." + fieldKey.name());
                     final List<String> values = tag.getAll(fieldKey);
@@ -130,6 +130,8 @@ public final class AudioMetadataFactory
                       }
                   }
               }
+
+            metadata = metadata.with(ITUNES_COMMENT, ITunesComment.from(metadata));
 
 //            put(YEAR, Integer.valueOf(tag.getFirst(FieldKey.YEAR)));
 
@@ -178,7 +180,7 @@ public final class AudioMetadataFactory
       }
 
     @Nonnull
-    private static Optional<List<Id>> optionalList (final @Nonnull List<Id> list)
+    private static <T> Optional<List<T>> optionalList (final @Nonnull List<T> list)
       {
         return list.isEmpty() ? Optional.empty() : Optional.of(list);
       }
