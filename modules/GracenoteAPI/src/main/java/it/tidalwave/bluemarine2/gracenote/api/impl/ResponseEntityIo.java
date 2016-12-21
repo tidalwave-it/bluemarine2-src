@@ -67,15 +67,18 @@ public class ResponseEntityIo
       {
         Files.createDirectories(path.getParent());
         final StringWriter sw = new StringWriter();
-        final PrintWriter pw = new PrintWriter(sw);
-        pw.printf("HTTP/1.1 %d %s%n", response.getStatusCode().value(), response.getStatusCode().name());
-        response.getHeaders().entrySet().stream()
-                                        .filter(e -> !ignoredHeaders.contains(e.getKey()))
-                                        .sorted(comparing(e -> e.getKey()))
-                                        .forEach(e -> pw.printf("%s: %s%n", e.getKey(), e.getValue().get(0)));
-        pw.println();
-        pw.print(response.getBody());
-        pw.close();
+        
+        try (final PrintWriter pw = new PrintWriter(sw))
+          {
+            pw.printf("HTTP/1.1 %d %s%n", response.getStatusCode().value(), response.getStatusCode().name());
+            response.getHeaders().entrySet().stream()
+                    .filter(e -> !ignoredHeaders.contains(e.getKey()))
+                    .sorted(comparing(e -> e.getKey()))
+                    .forEach(e -> pw.printf("%s: %s%n", e.getKey(), e.getValue().get(0)));
+            pw.println();
+            pw.print(response.getBody());
+          }
+
         Files.write(path, Arrays.asList(sw.toString()), UTF_8);
       }
 
