@@ -37,19 +37,17 @@ import java.io.InputStream;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import org.springframework.http.ResponseEntity;
-import lombok.AllArgsConstructor;
-import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
-import static java.nio.charset.StandardCharsets.UTF_8;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
-import static lombok.AccessLevel.PRIVATE;
+import org.xml.sax.SAXException;
+import org.w3c.dom.Document;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import lombok.AllArgsConstructor;
+import static java.nio.charset.StandardCharsets.UTF_8;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
