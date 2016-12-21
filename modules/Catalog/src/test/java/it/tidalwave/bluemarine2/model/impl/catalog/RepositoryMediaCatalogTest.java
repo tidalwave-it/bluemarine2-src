@@ -168,13 +168,15 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
     private static Repository loadInMemoryCatalog (final @Nonnull Path path)
       throws RDFParseException, IOException, RepositoryException
       {
+        log.info("loadInMemoryCatalog({})", path);
         final Repository repository = new SailRepository(new MemoryStore());
         repository.initialize();
 
-        final RepositoryConnection connection = repository.getConnection();
-        connection.add(path.toFile(), null, RDFFormat.N3);
-        connection.commit();
-        connection.close();
+        try (final RepositoryConnection connection = repository.getConnection())
+          {
+            connection.add(path.toFile(), null, RDFFormat.N3);
+            connection.commit();
+          }
 
         return repository;
       }
@@ -190,6 +192,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
               { "tiny-model"                    },
               { "small-model"                   },
               { "model-iTunes-fg-20160504-1"    },
+              { "model-iTunes-fg-20161210-1"    },
           };
       }
   }
