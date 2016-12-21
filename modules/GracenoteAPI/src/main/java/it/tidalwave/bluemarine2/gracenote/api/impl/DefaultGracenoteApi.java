@@ -176,7 +176,7 @@ public class DefaultGracenoteApi implements GracenoteApi
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* package */ ResponseEntity<String> queryAlbumToc (final @Nonnull String offsets)
+    /* visible for testing */ ResponseEntity<String> queryAlbumToc (final @Nonnull String offsets)
       throws IOException
       {
         log.info("queryAlbumToc({})", offsets);
@@ -190,7 +190,7 @@ public class DefaultGracenoteApi implements GracenoteApi
      *
      ******************************************************************************************************************/
     @Nonnull
-    public ResponseEntity<String> queryAlbumFetch (final @Nonnull String gnId)
+    /* visible for testing */ ResponseEntity<String> queryAlbumFetch (final @Nonnull String gnId)
       throws IOException
       {
         log.info("queryAlbumFetch({})", gnId);
