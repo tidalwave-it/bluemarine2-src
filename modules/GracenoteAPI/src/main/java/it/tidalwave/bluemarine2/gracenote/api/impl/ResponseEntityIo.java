@@ -37,14 +37,14 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import org.springframework.http.ResponseEntity;
-import lombok.extern.slf4j.Slf4j;
-import static java.nio.charset.StandardCharsets.UTF_8;
-import static java.util.Comparator.comparing;
-import java.util.stream.Collectors;
-import org.springframework.http.HttpStatus;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+import lombok.extern.slf4j.Slf4j;
+import static java.util.Comparator.comparing;
+import static java.util.stream.Collectors.joining;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /***********************************************************************************************************************
  *
@@ -95,24 +95,18 @@ public class ResponseEntityIo
           }
 
         final List<String> lines = Files.readAllLines(path);
-
         final HttpStatus status = HttpStatus.valueOf(Integer.parseInt(lines.get(0).split(" ")[1]));
         final MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
 
         int i = 1;
 
-        for (; i < lines.size(); i++)
+        for (; (i < lines.size()) && !lines.get(i).equals(""); i++)
           {
-            if (lines.get(i).equals(""))
-              {
-                break;
-              }
-
             final String[] split = lines.get(i).split(":");
             headers.add(split[0], split[1].trim());
           }
 
-        final String body = lines.stream().skip(i + 1).collect(Collectors.joining("\n"));
+        final String body = lines.stream().skip(i + 1).collect(joining("\n"));
         final ResponseEntity<String> response = new ResponseEntity<>(body, headers, status);
         log.trace(">>>> returning {}", response);
 
