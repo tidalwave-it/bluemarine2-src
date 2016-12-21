@@ -93,19 +93,7 @@ public class DefaultGracenoteApi implements GracenoteApi
                                                    final @Nonnull String ... args)
               throws IOException
               {
-                return api.requestFromCache(cacheKey).orElseGet(() ->
-                  {
-                    try
-                      {
-                        final ResponseEntity<String> response = api.requestFromNetwork(templateName, args);
-                        ResponseEntityIo.store(api.cachePath.resolve(cacheKey), response, emptyList());
-                        return response;
-                      }
-                    catch (IOException e)
-                      {
-                        throw new RuntimeException(e); // FIXME
-                      }
-                  });
+                return api.requestFromCacheAndThenNetwork(templateName, cacheKey, args);
               }
           };
 
@@ -254,6 +242,32 @@ public class DefaultGracenoteApi implements GracenoteApi
         final ResponseEntity<String> response = restTemplate.postForEntity(serviceUrl, request, String.class);
         log.trace(">>>> response: {}", response);
         return response;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private ResponseEntity<String> requestFromCacheAndThenNetwork (final @Nonnull String templateName,
+                                                                   final @Nonnull String cacheKey,
+                                                                   final @Nonnull String ... args)
+      throws IOException
+      {
+        return requestFromCache(cacheKey).orElseGet(() ->
+          {
+            try
+              {
+                final ResponseEntity<String> response = requestFromNetwork(templateName, args);
+                ResponseEntityIo.store(cachePath.resolve(cacheKey), response, emptyList());
+                return response;
+              }
+            catch (IOException e)
+              {
+                throw new RuntimeException(e); // FIXME
+              }
+          });
       }
 
     /*******************************************************************************************************************
