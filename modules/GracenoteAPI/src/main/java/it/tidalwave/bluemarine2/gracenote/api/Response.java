@@ -152,7 +152,7 @@ public class Response<T>
 
             if (httpStatus != HttpStatus.OK.value())
               {
-                throw new RuntimeException("Unexpected HTTP status: " + response.getStatusCode());
+                throw new GracenoteException("Unexpected HTTP status", response.getStatusCode());
               }
 
             final Document dom = toDom(response);
@@ -170,12 +170,12 @@ public class Response<T>
                   return new Response<>(Optional.of(parser.apply(dom)), responseStatus);
 
                 default:
-                  throw new RuntimeException("Unexpected response status: " + responseStatus);
+                  throw new GracenoteException("Unexpected response status", responseStatus);
               }
           }
         catch (XPathExpressionException e)
           {
-            throw new RuntimeException(e);
+            throw new GracenoteException(e);
           }
       }
 
