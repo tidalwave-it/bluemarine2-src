@@ -198,7 +198,7 @@ public class Response<T>
           }
         catch (ParserConfigurationException | SAXException | IOException e)
           {
-            throw new RuntimeException(e);
+            throw new GracenoteException(e);
           }
       }
   }
