@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.stream.Stream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -46,6 +47,8 @@ import static java.text.Normalizer.normalize;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents2;
+import lombok.AllArgsConstructor;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *
@@ -68,9 +71,9 @@ public class AudioMetadataFactoryTest
                                              final @Nonnull Path relativePath)
       throws IOException
       {
-        final Path p = Paths.get(testSetName, relativePath.toString() + "-dump.txt");
-        final Path actualFile = PATH_TEST_RESULTS.resolve(p);
-        final Path expectedFile = PATH_EXPECTED_TEST_RESULTS.resolve("metadata").resolve(p);
+        final Path dumpRelativePath = Paths.get(testSetName, relativePath.toString() + "-dump.txt");
+        final Path actualFile = PATH_TEST_RESULTS.resolve(dumpRelativePath);
+        final Path expectedFile = PATH_EXPECTED_TEST_RESULTS.resolve("metadata").resolve(dumpRelativePath);
         Files.createDirectories(actualFile.getParent());
         final Metadata metadata = AudioMetadataFactory.loadFrom(path);
         final List<String> metadataDump = metadata.getEntries().stream()
@@ -86,17 +89,57 @@ public class AudioMetadataFactoryTest
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
+    @AllArgsConstructor @ToString
+    static class Triple
+      {
+        private final String testSetName;
+        private final Path testSetPath;
+        private final Path filePath;
+
+        public static Triple ofName (final @Nonnull String testSetName)
+          {
+            return new Triple(testSetName, TestSetLocator.getMusicTestSetsPath().resolve(testSetName), null);
+          }
+
+        @Nonnull
+        private Stream<Triple> walk()
+          {
+            try
+              {
+                if (Files.exists(testSetPath))
+                  {
+                    return Files.walk(testSetPath, FOLLOW_LINKS).map(filePath -> new Triple(testSetName, testSetPath, filePath));
+                  }
+                else
+                  {
+                    log.warn("MISSING TEST SET: {} - {}", testSetName, testSetPath);
+                    return Stream.empty();
+                  }
+              }
+            catch (IOException e)
+              {
+                throw new RuntimeException(e);
+              }
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * The number of provided test cases varies in function of the physical test sets available on the disk. Some
+     * test sets can't be distributed, as they contain commercial audio files.
+     *
+     ******************************************************************************************************************/
     @DataProvider
     private static Object[][] pathProvider()
       throws IOException
       {
-        final String testSetName = "iTunes-fg-20160504-1";
-        final Path testSetPath = TestSetLocator.getMusicTestSetsPath().resolve(testSetName);
-        return Files.walk(testSetPath, FOLLOW_LINKS)
-                    .filter(Files::isRegularFile)
-                    .filter(path -> !path.getFileName().toString().startsWith(".")) // isHidden() throws exception
-                    .map(path -> new Object[] { testSetName, path, testSetPath.relativize(path) })
-                    .collect(toList())
-                    .toArray(new Object[0][0]);
+        final Stream<String> testSetNames = Stream.of("iTunes-fg-20160504-1", "iTunes-fg-20161210-1");
+        return testSetNames.map(testSetName -> Triple.ofName(testSetName))
+                           .flatMap(Triple::walk)
+                           .filter(t -> Files.isRegularFile(t.filePath))
+                           .filter(t -> !t.filePath.getFileName().toString().startsWith(".")) // isHidden() throws exception
+                           .map(t -> new Object[] { t.testSetName, t.filePath, t.testSetPath.relativize(t.filePath) })
+                           .collect(toList())
+                           .toArray(new Object[0][0]);
       }
   }
