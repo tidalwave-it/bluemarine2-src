@@ -37,6 +37,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import lombok.AllArgsConstructor;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -45,10 +47,8 @@ import static java.util.stream.Collectors.toList;
 import static java.text.Normalizer.Form.NFC;
 import static java.text.Normalizer.normalize;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
-import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents2;
-import lombok.AllArgsConstructor;
-import lombok.ToString;
+import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 
 /***********************************************************************************************************************
  *
@@ -108,7 +108,8 @@ public class AudioMetadataFactoryTest
               {
                 if (Files.exists(testSetPath))
                   {
-                    return Files.walk(testSetPath, FOLLOW_LINKS).map(filePath -> new Triple(testSetName, testSetPath, filePath));
+                    return Files.walk(testSetPath, FOLLOW_LINKS)
+                                .map(path -> new Triple(testSetName, testSetPath, path));
                   }
                 else
                   {
