@@ -194,8 +194,8 @@ public class DefaultMediaScannerTest extends SpringTestSupport
       {
         return new Object[][]
           {
-              { "iTunes-fg-20160504-1" },
-//              { "iTunes-fg-20161210-1" } not yet deployed
+            { "iTunes-fg-20160504-1" },
+            { "iTunes-fg-20161210-1" }  // not yet deployed to Jenkins
           };
       }
   }
