@@ -16392,12 +16392,6 @@
 	mo:encodes <urn:bluemarine:signal:d46f72f792d7eeb11aa60e58d77ddfae5420ce11> ;
 	foaf:sha1 "d46f72f792d7eeb11aa60e58d77ddfae5420ce11" .
 
-<urn:bluemarine:audiofile:d4767d4bd98e23a7fa5a1daf58b6c7f8e019047d> a mo:AudioFile ;
-	bmmo:latestIndexingTime "2016-11-27T12:48:08.000+01:00"^^xs:dateTime ;
-	bmmo:path "Ensemble Discantus/Mare Nostrum_ Gregorian Chant, Troubadours and Motets in Languedoc-Roussillon, France/01 Deus in adiutorium (conduit).mp3" ;
-	mo:encodes <urn:bluemarine:signal:d4767d4bd98e23a7fa5a1daf58b6c7f8e019047d> ;
-	foaf:sha1 "d4767d4bd98e23a7fa5a1daf58b6c7f8e019047d" .
-
 <urn:bluemarine:audiofile:d47b8652e92c8847424565a70d7061a5b9e6bb42> a mo:AudioFile ;
 	bmmo:latestIndexingTime "2016-11-27T11:42:12.000+01:00"^^xs:dateTime ;
 	bmmo:path "Nat King Cole/The Nat King Cole Story [Disc 1]/1-12 Too Young.mp3" ;
@@ -19178,7 +19172,7 @@
 
 <urn:bluemarine:audiofile:fac2d6c9d2779e140b695fe9c74f20faaac078c5> a mo:AudioFile ;
 	bmmo:latestIndexingTime "2016-11-27T14:09:25.000+01:00"^^xs:dateTime ;
-	bmmo:path "Ensemble Discantus/Mare Nostrum_ Gregorian Chant, Troubadours and Motets in Languedoc-Roussillon, France/01 Deus in adiutorium (conduit) 1.mp3" ;
+	bmmo:path "Ensemble Discantus/Mare Nostrum_ Gregorian Chant, Troubadours and Motets in Languedoc-Roussillon, France/01 Deus in adiutorium (conduit).mp3" ;
 	mo:encodes <urn:bluemarine:signal:fac2d6c9d2779e140b695fe9c74f20faaac078c5> ;
 	foaf:sha1 "fac2d6c9d2779e140b695fe9c74f20faaac078c5" .
 
@@ -20783,12 +20777,6 @@
 	mo:track <urn:bluemarine:track:03c30610b6b2bbbb6eaf6827cab3e576989c2ba2> , <urn:bluemarine:track:09b6d51b1cb6166070bed4ad119670fcb4b32b3a> , <urn:bluemarine:track:3165b2767324f84656ba0538f59779f80491b28a> , <urn:bluemarine:track:32fc2d16d0aac06c9d5f750a9104de2378f60819> , <urn:bluemarine:track:40fcbf7eea5352391ec77a260ad21154a690ac86> , <urn:bluemarine:track:558f5846326222a9164df1931b3aeb4600cfb91b> , <urn:bluemarine:track:67a077bb0434b51e240cbfb25c2cc16746fc5386> , <urn:bluemarine:track:85f6754db6222cd63cb464a92d15dd1fe3b20a96> , <urn:bluemarine:track:8ee5fbf7df00ec67142a983d40420bfbb59ab768> , <urn:bluemarine:track:f3bdcaec9194f04c9b7ea7e662851ac179d517f9> , <urn:bluemarine:track:fc764ba522bef9e9b787959f9f3f186a444f4bee> ;
 	rdfs:label "Songs In The Key Of Life [Disc 2]" ;
 	foaf:maker <urn:bluemarine:artist:3493fe1d48187aca11bb4449efb660a8e0301a80> .
-
-<urn:bluemarine:record:9d64da032e467a42389afeca8fbc2db02fd2d2f9> a mo:Record ;
-	dc:title "Mare Nostrum_ Gregorian Chant, Troubadours and Motets in Languedoc-Roussillon, France" ;
-	mo:media_type mo:CD ;
-	mo:track <urn:bluemarine:track:d4767d4bd98e23a7fa5a1daf58b6c7f8e019047d> ;
-	rdfs:label "Mare Nostrum_ Gregorian Chant, Troubadours and Motets in Languedoc-Roussillon, France" .
 
 <urn:bluemarine:record:9f70bd3981c76606f936b8b2db33fcb28c97db68> a mo:Record ;
 	bmmo:iTunesCddb1 "C908100F+154950+15+182+19380+28500+42525+53325+57800+67230+72807+76912+90350+101962+115690+127537+136400+142077" ;
@@ -39090,9 +39078,6 @@
 	mo:duration "168000.0"^^xs:float ;
 	mo:published_as <urn:bluemarine:track:d46f72f792d7eeb11aa60e58d77ddfae5420ce11> ;
 	mo:sampleRate "44100"^^xs:int .
-
-<urn:bluemarine:signal:d4767d4bd98e23a7fa5a1daf58b6c7f8e019047d> a mo:DigitalSignal ;
-	mo:published_as <urn:bluemarine:track:d4767d4bd98e23a7fa5a1daf58b6c7f8e019047d> .
 
 <urn:bluemarine:signal:d47b8652e92c8847424565a70d7061a5b9e6bb42> a mo:DigitalSignal ;
 	bmmo:fileSize "8190086"^^xs:long ;
@@ -65260,8 +65245,6 @@
 	mo:track_number "8"^^xs:int ;
 	rdfs:label "The Meaning Of The Blues" ;
 	foaf:maker <urn:bluemarine:artist:354b95d04dee500eda0e12bc54c5d786acca6ffa> .
-
-<urn:bluemarine:track:d4767d4bd98e23a7fa5a1daf58b6c7f8e019047d> a mo:Track .
 
 <urn:bluemarine:track:d47b8652e92c8847424565a70d7061a5b9e6bb42> a mo:Track ;
 	bmmo:diskCount "2"^^xs:int ;
