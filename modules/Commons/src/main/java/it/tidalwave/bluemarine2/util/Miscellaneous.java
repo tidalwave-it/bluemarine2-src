@@ -177,7 +177,7 @@ public final class Miscellaneous
 
         if (probeBMT46(path))
           {
-            file = File.createTempFile("temp", "." + extensionOf(path));
+            file = File.createTempFile("bmt46-", "." + extensionOf(path));
             file.deleteOnExit();
             log.warn("Workaround for BMT-46: copying {} to temporary file: {}", path, file);
             Files.copy(path, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
@@ -196,7 +196,7 @@ public final class Miscellaneous
       {
         final int i = path.toString().lastIndexOf('.');
         return (i < 0) ? "" : path.toString().substring(i + 1);
-//        final Matcher matcher = PATTERN_EXTENSION.matcher(path.toString()); FIXME
+//        final Matcher matcher = PATTERN_EXTENSION.matcher(path.toString()); TODO
 //        return matcher.matches() ? matcher.group(0) : "";
       }
 
