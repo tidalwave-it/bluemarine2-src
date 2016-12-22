@@ -28,12 +28,11 @@
  */
 package it.tidalwave.util.test;
 
-import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
 import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.nio.file.Path;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.toFileBMT46;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 
 /***********************************************************************************************************************
  *
