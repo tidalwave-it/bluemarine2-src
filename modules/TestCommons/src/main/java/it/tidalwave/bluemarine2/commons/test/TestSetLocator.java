@@ -29,6 +29,10 @@
 package it.tidalwave.bluemarine2.commons.test;
 
 import javax.annotation.Nonnegative;
+import javax.annotation.Nonnull;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -50,6 +54,18 @@ public final class TestSetLocator
 
     public static final String PROPERTY_MUSIC_TEST_SETS_PATH = "blueMarine2.musicTestSets.path";
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static Collection<String> allTestSets()
+      {
+        return Collections.unmodifiableCollection(Arrays.asList("iTunes-fg-20160504-1", "iTunes-fg-20161210-1"));
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Nonnegative
     public static Path getMusicTestSetsPath()
       {

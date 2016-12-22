@@ -44,14 +44,15 @@ import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import it.tidalwave.bluemarine2.commons.test.TestSetTriple;
 import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static java.nio.file.FileVisitOption.*;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static it.tidalwave.util.test.FileComparisonUtils8.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
 import static it.tidalwave.bluemarine2.gracenote.api.impl.DefaultGracenoteApi.CacheMode.*;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
 
 /***********************************************************************************************************************
  *
@@ -230,7 +231,7 @@ public class DefaultGracenoteApiTest
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "gracenoteResourcesProvider", groups = "no-ci")
-    public void must_correctly_download_Gracenote_resources (final @Nonnull String testSet, final @Nonnull Path path)
+    public void must_correctly_download_Gracenote_resources (final @Nonnull TestSetTriple triple)
       {
         // given
         underTest.setCacheMode(DONT_USE_CACHE);
@@ -238,7 +239,7 @@ public class DefaultGracenoteApiTest
 
         try
           {
-            final Optional<String> iTunesComment = readiTunesCommentFrom(path);
+            final Optional<String> iTunesComment = readiTunesCommentFrom(triple.getFilePath());
             log.info(">>>> {}", iTunesComment);
 
             final Path targetFolder = Paths.get("target/test-results/gracenote");
@@ -247,8 +248,9 @@ public class DefaultGracenoteApiTest
               {
                 final String offsets = itunesCommentToAlbumToc(iTunesComment.get());
                 final String p = "albumToc/" + offsets.replace(' ', '/') + "/" + RESPONSE_TXT;
-                final Path actualResult = targetFolder.resolve(testSet).resolve(p);
-                final Path expectedResult = gracenoteFilesPath(testSet).resolve(p);
+                final String testSetName = triple.getTestSetName();
+                final Path actualResult = targetFolder.resolve(testSetName).resolve(p);
+                final Path expectedResult = gracenoteFilesPath(testSetName).resolve(p);
 
                 if (!Files.exists(actualResult))
                   {
@@ -290,16 +292,13 @@ public class DefaultGracenoteApiTest
      ******************************************************************************************************************/
     @DataProvider
     private static Object[][] gracenoteResourcesProvider()
-      throws IOException
       {
+//        final String testSetName = "iTunes-fg-20161210-1"; // FIXME: use both
         final String testSetName = "iTunes-fg-20160504-1";
-        final Path basePath = Paths.get("target/metadata").resolve(testSetName);
-        return Files.walk(basePath, FOLLOW_LINKS)
-                    .filter(Files::isRegularFile)
-                    .filter(path -> !path.getFileName().toString().startsWith(".")) // isHidden() throws exception
-                    .map(path -> new Object[] { testSetName, path })
-                    .collect(toList())
-                    .toArray(new Object[0][0]);
+
+        return streamOfTestSetTriples(Arrays.asList(testSetName),
+                                      name -> Paths.get("target/metadata").resolve(name))
+                            .collect(toTestNGDataProvider());
       }
 
     /*******************************************************************************************************************
