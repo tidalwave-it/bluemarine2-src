@@ -47,7 +47,6 @@ import static java.text.Normalizer.normalize;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents2;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
-import static java.util.Comparator.comparing;
 
 /***********************************************************************************************************************
  *
