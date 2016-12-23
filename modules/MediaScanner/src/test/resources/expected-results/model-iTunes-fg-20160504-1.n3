@@ -717,8 +717,8 @@
 	foaf:sha1 "0bc29eabd98a2eb3bfa0100a693bdfff7c720559" .
 
 <urn:bluemarine:audiofile:0bf1c00e9d8961cb25457b526c80cc8a40928b1f> a mo:AudioFile ;
-	bmmo:latestIndexingTime "2016-05-03T22:22:00.000+02:00"^^xs:dateTime , "2016-05-03T22:27:31.000+02:00"^^xs:dateTime ;
-	bmmo:path "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/06 Barber of Seville 1.mp3" , "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/06 Barber of Seville.mp3" ;
+	bmmo:latestIndexingTime "2016-05-03T22:22:00.000+02:00"^^xs:dateTime ;
+	bmmo:path "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/06 Barber of Seville.mp3" ;
 	mo:encodes <urn:bluemarine:signal:0bf1c00e9d8961cb25457b526c80cc8a40928b1f> ;
 	foaf:sha1 "0bf1c00e9d8961cb25457b526c80cc8a40928b1f" .
 
@@ -1041,8 +1041,8 @@
 	foaf:sha1 "23eb72889df8347c667cdd1183ef3cd19fdcb67b" .
 
 <urn:bluemarine:audiofile:24515f712395c88ab465a3d3b8df9dcb356fc434> a mo:AudioFile ;
-	bmmo:latestIndexingTime "2016-05-03T22:22:51.000+02:00"^^xs:dateTime , "2016-05-03T22:28:22.000+02:00"^^xs:dateTime ;
-	bmmo:path "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/08 Semiramide 1.mp3" , "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/08 Semiramide.mp3" ;
+	bmmo:latestIndexingTime "2016-05-03T22:22:51.000+02:00"^^xs:dateTime ;
+	bmmo:path "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/08 Semiramide.mp3" ;
 	mo:encodes <urn:bluemarine:signal:24515f712395c88ab465a3d3b8df9dcb356fc434> ;
 	foaf:sha1 "24515f712395c88ab465a3d3b8df9dcb356fc434" .
 
@@ -1071,8 +1071,8 @@
 	foaf:sha1 "2808297466208202efba0600fa86af942b62e94f" .
 
 <urn:bluemarine:audiofile:28d0fe2d6b8b63eee697e802c1f7cbec236ded8f> a mo:AudioFile ;
-	bmmo:latestIndexingTime "2016-05-03T22:20:52.000+02:00"^^xs:dateTime , "2016-05-03T22:26:23.000+02:00"^^xs:dateTime ;
-	bmmo:path "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/03 Il Signor Bruschino 1.mp3" , "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/03 Il Signor Bruschino.mp3" ;
+	bmmo:latestIndexingTime "2016-05-03T22:20:52.000+02:00"^^xs:dateTime ;
+	bmmo:path "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/03 Il Signor Bruschino.mp3" ;
 	mo:encodes <urn:bluemarine:signal:28d0fe2d6b8b63eee697e802c1f7cbec236ded8f> ;
 	foaf:sha1 "28d0fe2d6b8b63eee697e802c1f7cbec236ded8f" .
 
@@ -1269,8 +1269,8 @@
 	foaf:sha1 "2f2dd7120a3cf87122a193282abfb906a9d45e8c" .
 
 <urn:bluemarine:audiofile:2f47c40d4377e95fe1edf4a9013f43aba4d908ed> a mo:AudioFile ;
-	bmmo:latestIndexingTime "2016-05-03T22:21:19.000+02:00"^^xs:dateTime , "2016-05-03T22:26:50.000+02:00"^^xs:dateTime ;
-	bmmo:path "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/04 Cinderella 1.mp3" , "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/04 Cinderella.mp3" ;
+	bmmo:latestIndexingTime "2016-05-03T22:21:19.000+02:00"^^xs:dateTime ;
+	bmmo:path "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/04 Cinderella.mp3" ;
 	mo:encodes <urn:bluemarine:signal:2f47c40d4377e95fe1edf4a9013f43aba4d908ed> ;
 	foaf:sha1 "2f47c40d4377e95fe1edf4a9013f43aba4d908ed" .
 
@@ -1773,8 +1773,8 @@
 	foaf:sha1 "55034bbb9ae4bb062990a6e3a42a3821860e6731" .
 
 <urn:bluemarine:audiofile:55095e29eb0b43b534d2e04010e696c0fd4d86b1> a mo:AudioFile ;
-	bmmo:latestIndexingTime "2016-05-03T22:20:01.000+02:00"^^xs:dateTime , "2016-05-03T22:25:33.000+02:00"^^xs:dateTime ;
-	bmmo:path "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/01 William Tell 1.mp3" , "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/01 William Tell.mp3" ;
+	bmmo:latestIndexingTime "2016-05-03T22:20:01.000+02:00"^^xs:dateTime ;
+	bmmo:path "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/01 William Tell.mp3" ;
 	mo:encodes <urn:bluemarine:signal:55095e29eb0b43b534d2e04010e696c0fd4d86b1> ;
 	foaf:sha1 "55095e29eb0b43b534d2e04010e696c0fd4d86b1" .
 
@@ -2319,8 +2319,8 @@
 	foaf:sha1 "79cd27fa99c96a2961a1cabbcc7832c38162ddd9" .
 
 <urn:bluemarine:audiofile:7c17c347bcacebcad660036e5817222cfa11d0fb> a mo:AudioFile ;
-	bmmo:latestIndexingTime "2016-05-03T22:21:38.000+02:00"^^xs:dateTime , "2016-05-03T22:27:08.000+02:00"^^xs:dateTime ;
-	bmmo:path "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/05 Tancredi 1.mp3" , "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/05 Tancredi.mp3" ;
+	bmmo:latestIndexingTime "2016-05-03T22:21:38.000+02:00"^^xs:dateTime ;
+	bmmo:path "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/05 Tancredi.mp3" ;
 	mo:encodes <urn:bluemarine:signal:7c17c347bcacebcad660036e5817222cfa11d0fb> ;
 	foaf:sha1 "7c17c347bcacebcad660036e5817222cfa11d0fb" .
 
@@ -2469,8 +2469,8 @@
 	foaf:sha1 "81437415106f0c4a39c3bfab9e6aa9ba86aab0d3" .
 
 <urn:bluemarine:audiofile:81d1e837c0ef0c958b146436e2412f1a7ae5fbb4> a mo:AudioFile ;
-	bmmo:latestIndexingTime "2016-05-03T22:22:18.000+02:00"^^xs:dateTime , "2016-05-03T22:27:49.000+02:00"^^xs:dateTime ;
-	bmmo:path "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/07 The Silken Ladder 1.mp3" , "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/07 The Silken Ladder.mp3" ;
+	bmmo:latestIndexingTime "2016-05-03T22:22:18.000+02:00"^^xs:dateTime ;
+	bmmo:path "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/07 The Silken Ladder.mp3" ;
 	mo:encodes <urn:bluemarine:signal:81d1e837c0ef0c958b146436e2412f1a7ae5fbb4> ;
 	foaf:sha1 "81d1e837c0ef0c958b146436e2412f1a7ae5fbb4" .
 
@@ -3801,8 +3801,8 @@
 	foaf:sha1 "d8382fba369e9bb8798785e14a34372c295cbcef" .
 
 <urn:bluemarine:audiofile:d9857dc6e35c9a038c2af99a03b65729e520dfe0> a mo:AudioFile ;
-	bmmo:latestIndexingTime "2016-05-03T22:20:33.000+02:00"^^xs:dateTime , "2016-05-03T22:26:05.000+02:00"^^xs:dateTime ;
-	bmmo:path "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers 1.mp3" , "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers.mp3" ;
+	bmmo:latestIndexingTime "2016-05-03T22:20:33.000+02:00"^^xs:dateTime ;
+	bmmo:path "Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers.mp3" ;
 	mo:encodes <urn:bluemarine:signal:d9857dc6e35c9a038c2af99a03b65729e520dfe0> ;
 	foaf:sha1 "d9857dc6e35c9a038c2af99a03b65729e520dfe0" .
 
