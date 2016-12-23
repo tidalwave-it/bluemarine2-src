@@ -28,12 +28,13 @@
  */
 package it.tidalwave.bluemarine2.util;
 
-import java.io.File;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.text.Normalizer;
+//import java.util.regex.Pattern;
 import java.util.stream.Stream;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -43,6 +44,7 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
 import static java.text.Normalizer.Form.*;
+//import java.util.regex.Matcher;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -55,6 +57,8 @@ import static lombok.AccessLevel.PRIVATE;
 public final class Miscellaneous
   {
     private static final Normalizer.Form NATIVE_FORM;
+
+//    private static final Pattern PATTERN_EXTENSION = Pattern.compile("(\\.[^.]+)$");
 
     static
       {
@@ -173,13 +177,27 @@ public final class Miscellaneous
 
         if (probeBMT46(path))
           {
-            file = File.createTempFile("temp", ".mp3");
+            file = File.createTempFile("bmt46-", "." + extensionOf(path));
             file.deleteOnExit();
-            log.warn("Workaround for BMT-46: copying to temporary file: {}", file);
+            log.warn("Workaround for BMT-46: copying {} to temporary file: {}", path, file);
             Files.copy(path, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
           }
 
         return file;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static String extensionOf (final @Nonnull Path path)
+      {
+        final int i = path.toString().lastIndexOf('.');
+        return (i < 0) ? "" : path.toString().substring(i + 1);
+//        final Matcher matcher = PATTERN_EXTENSION.matcher(path.toString()); TODO
+//        return matcher.matches() ? matcher.group(0) : "";
       }
 
     /*******************************************************************************************************************
