@@ -67,12 +67,13 @@ public class AudioMetadataFactoryTest
     public void must_properly_read_metadata (final @Nonnull TestSetTriple triple)
       throws IOException
       {
+        // when
+        final Metadata metadata = AudioMetadataFactory.loadFrom(triple.getFilePath());
+        // then
         final String relativePath = triple.getRelativePath().toString();
         final Path dumpRelativePath = Paths.get(triple.getTestSetName(), relativePath + "-dump.txt");
         final Path actualFile = PATH_TEST_RESULTS.resolve(dumpRelativePath);
         final Path expectedFile = PATH_EXPECTED_TEST_RESULTS.resolve("metadata").resolve(dumpRelativePath);
-        Files.createDirectories(actualFile.getParent());
-        final Metadata metadata = AudioMetadataFactory.loadFrom(triple.getFilePath());
         final List<String> metadataDump = metadata.getEntries()
                                                   .stream()
                                                   .sorted(comparing(e -> e.getKey()))
@@ -80,6 +81,7 @@ public class AudioMetadataFactoryTest
                                                                                         e.getKey(),
                                                                                         e.getValue()))
                                                   .collect(toList());
+        Files.createDirectories(actualFile.getParent());
         Files.write(actualFile, metadataDump);
         assertSameContents2(expectedFile, actualFile);
       }
