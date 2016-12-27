@@ -5,4 +5,4 @@ pipelines:
   default:
     - step:
         script: # Modify the commands below to build your repository.
-          - mvn -B -DskipTests
+          - mvn -B -DskipTests -Pit.tidalwave-ci-v1
