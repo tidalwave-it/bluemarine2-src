@@ -29,10 +29,7 @@
 package it.tidalwave.bluemarine2.ui.impl.javafx;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import javax.inject.Provider;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.Optional;
 import javafx.fxml.FXML;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -43,11 +40,10 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
-import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
-import it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController;
-import it.tidalwave.bluemarine2.service.Service;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -60,20 +56,17 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable @Slf4j
+@Slf4j
 public class JavaFXApplicationPresentationDelegate
   {
-    @Inject
-    private Provider<JavaFxFlowController> flowController;
-
-    @Inject
-    private Provider<Service> service;
-
     @FXML
     private GridPane gpGridPane;
 
-    @FXML
+    @FXML @Getter
     private StackPane spContent;
+
+    @Getter @Setter
+    private Optional<Runnable> backspaceCallback = Optional.empty();
 
     private final DoubleProperty leftOverscan = new SimpleDoubleProperty(0);
 
@@ -116,9 +109,6 @@ public class JavaFXApplicationPresentationDelegate
             bottomOverscan.set(22);
           }
         // END FIXME
-
-        flowController.get().setContentPane(spContent);
-        service.get().boot();
       }
 
     /*******************************************************************************************************************
@@ -134,7 +124,7 @@ public class JavaFXApplicationPresentationDelegate
         if (event.getCode().equals(KeyCode.BACK_SPACE))
           {
             log.debug("onKeyReleased({})", event);
-            flowController.get().tryToDismissCurrentPresentation();
+            backspaceCallback.ifPresent(r -> r.run());
           }
       }
   }

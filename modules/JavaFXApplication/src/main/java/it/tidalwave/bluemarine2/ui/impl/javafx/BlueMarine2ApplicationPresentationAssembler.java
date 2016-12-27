@@ -29,51 +29,27 @@
 package it.tidalwave.bluemarine2.ui.impl.javafx;
 
 import javax.annotation.Nonnull;
-import javafx.application.Platform;
-import org.slf4j.bridge.SLF4JBridgeHandler;
-import org.springframework.context.ApplicationContext;
-import it.tidalwave.ui.javafx.JavaFXSpringApplication;
-import it.tidalwave.bluemarine2.util.Logging;
-import it.tidalwave.bluemarine2.service.Service;
+import javax.inject.Inject;
+import java.util.Optional;
+import it.tidalwave.role.ui.javafx.ApplicationPresentationAssembler;
+import it.tidalwave.bluemarine2.ui.commons.flowcontroller.impl.javafx.JavaFxFlowController;
 
 /***********************************************************************************************************************
  *
- * The main class initializes the logging facility and starts the JavaFX application.
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-public class Main extends JavaFXSpringApplication
+public class BlueMarine2ApplicationPresentationAssembler
+        implements ApplicationPresentationAssembler<JavaFXApplicationPresentationDelegate>
   {
-    public Main()
-      {
-        SLF4JBridgeHandler.removeHandlersForRootLogger();
-        SLF4JBridgeHandler.install();
-//        setMaximized(true);
-        setFullScreen(true);
-        setFullScreenLocked(true);
-      }
-
-    public static void main (final @Nonnull String ... args)
-      {
-        try
-          {
-            Logging.setupLogFolder();
-            Platform.setImplicitExit(true);
-            launch(args);
-          }
-        catch (Throwable t)
-          {
-            // Don't use logging facilities here, they could be not initialized
-            t.printStackTrace();
-            System.exit(-1);
-          }
-      }
+    @Inject
+    private JavaFxFlowController flowController;
 
     @Override
-    protected void onStageCreated (final @Nonnull ApplicationContext applicationContext)
+    public void assemble (final @Nonnull JavaFXApplicationPresentationDelegate delegate)
       {
-        applicationContext.getBean(Service.class).boot();
+        flowController.setContentPane(delegate.getSpContent());
+        delegate.setBackspaceCallback(Optional.of(() -> flowController.tryToDismissCurrentPresentation()));
       }
   }
