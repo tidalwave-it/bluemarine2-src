@@ -25,14 +25,11 @@
         <jaudiotagger.version>2.2.3</jaudiotagger.version>
         <javax-servlet-api.version>3.1.0</javax-servlet-api.version>
         <jetty.version>8.1.8.v20121106</jetty.version>
-        <tft.mockito.version>2.3.7</tft.mockito.version>
         <!--<jetty.version>9.3.8.v20160314</jetty.version>-->
-        <tft.slf4j.version>1.7.21</tft.slf4j.version>
         <mp3agic.version>0.8.3</mp3agic.version>
         <sesame.version>4.1.2</sesame.version>
-        <tft.spring.version>4.3.0.RELEASE</tft.spring.version>
-        <steelblue.version>1.0-ALPHA-12</steelblue.version>
-        <thesefoolishthings.version>3.0.3</thesefoolishthings.version>
+        <steelblue.version>1.0-ALPHA-13</steelblue.version>
+        <thesefoolishthings.version>3.1-ALPHA-1</thesefoolishthings.version>
         <uuid.version>2.1.5-201007271250</uuid.version>
 
         <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass>
@@ -40,11 +37,8 @@
 
         <tft.test.vmOptions>-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -Duser.timezone=Europe/Rome</tft.test.vmOptions>
 
-        <tft.maven-jdeb-plugin.version>1.5</tft.maven-jdeb-plugin.version> <!-- FIXME: push to Super POM -->
-
         <testSet.iTunes-fg-20160504-1.version>4</testSet.iTunes-fg-20160504-1.version>
         <testSet.iTunes-fg-20161210-1.version>2</testSet.iTunes-fg-20161210-1.version>
-
     </properties>
 
     <dependencyManagement>
@@ -60,13 +54,6 @@
                 <groupId>it.tidalwave.steelblue</groupId>
                 <artifactId>steelblue</artifactId>
                 <version>${steelblue.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-framework-bom</artifactId>
-                <version>${tft.spring.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -100,12 +87,6 @@
             </dependency>
 
             <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>jul-to-slf4j</artifactId>
-                <version>${tft.slf4j.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
                 <version>${httpclient.version}</version>
@@ -131,28 +112,6 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${javax-servlet-api.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-classic</artifactId>
-                <version>${tft.logback.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-core</artifactId>
-                <version>${tft.logback.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.google.code.findbugs</groupId>
-                <artifactId>annotations</artifactId>
-                <version>${tft.jsr305.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>javax.inject</groupId>
-                <artifactId>javax.inject</artifactId>
-                <version>${tft.jsr330.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -211,59 +170,12 @@
     </dependencies>
 
     <profiles>
-
         <!-- FIXME: the property should be put in the settings.xml of the CI -->
         <profile>
             <id>it.tidalwave-ci-v1</id>
             <properties>
                 <blueMarine2.musicTestSets.path>/var/test-sets/MusicTestSets</blueMarine2.musicTestSets.path>
             </properties>
-        </profile>
-
-        <profile> <!-- FIXME: push to Super POM -->
-            <id>it.tidalwave-spring-messagebus-v1</id>
-            <activation>
-                <file>
-                    <exists>src/config/activate-it.tidalwave-spring-messagebus-v1-profile</exists>
-                </file>
-            </activation>
-
-            <dependencies>
-                <dependency>
-                    <groupId>it.tidalwave.thesefoolishthings</groupId>
-                    <artifactId>it-tidalwave-messagebus-spring</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>it.tidalwave.thesefoolishthings</groupId>
-                    <artifactId>it-tidalwave-messagebus</artifactId>
-                </dependency>
-
-                <dependency>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-aspects</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.aspectj</groupId>
-                    <artifactId>aspectjrt</artifactId>
-                </dependency>
-            </dependencies>
-
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>aspectj-maven-plugin</artifactId>
-                        <configuration>
-                            <aspectLibraries combine.children="append">
-                                <dependency>
-                                    <groupId>it.tidalwave.thesefoolishthings</groupId>
-                                    <artifactId>it-tidalwave-messagebus-spring</artifactId>
-                                </dependency>
-                            </aspectLibraries>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
         </profile>
 
         <profile>
@@ -330,76 +242,9 @@
                 </plugins>
             </build>
         </profile>
-
-        <profile> <!-- FIXME: push to Super POM -->
-            <!--<id>it.tidalwave-deb-v1</id>-->
-            <activation>
-                <property>
-                    <name>gpg.keyname</name>
-                </property>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.vafer</groupId>
-                        <artifactId>jdeb</artifactId>
-                        <configuration>
-                            <signPackage>true</signPackage>
-                            <signMethod>dpkg-sig</signMethod>
-                            <signRole>origin</signRole>
-                            <key>${gpg.keyname}</key>
-                            <passphrase>${gpg.passphrase}</passphrase>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-        <profile> <!-- FIXME: push to Super POM -->
-            <id>it.tidalwave-deb-v1</id>
-            <activation>
-                <file>
-                    <exists>src/config/activate-it.tidalwave-deb-v1-profile</exists>
-                </file>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.vafer</groupId>
-                        <artifactId>jdeb</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jdeb</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
     </profiles>
 
     <build>
-        <extensions> <!-- FIXME: push to Super POM -->
-            <extension>
-                <groupId>org.vafer</groupId>
-                <artifactId>jdeb</artifactId>
-                <version>${tft.maven-jdeb-plugin.version}</version>
-            </extension>
-        </extensions>
-
-        <pluginManagement> <!-- FIXME: push to Super POM -->
-            <plugins>
-                <plugin>
-                    <groupId>org.vafer</groupId>
-                    <artifactId>jdeb</artifactId>
-                    <version>${tft.maven-jdeb-plugin.version}</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
