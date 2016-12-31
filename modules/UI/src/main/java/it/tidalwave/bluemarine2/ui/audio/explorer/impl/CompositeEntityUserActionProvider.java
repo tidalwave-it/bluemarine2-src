@@ -33,25 +33,25 @@ import it.tidalwave.util.NotFoundException;
 import it.tidalwave.role.Composite;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
-import it.tidalwave.role.ui.spi.UserActionLambda;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
+import it.tidalwave.role.ui.spi.UserActionSupport8;
 
 /***********************************************************************************************************************
  *
  * A default role for {@link Entity} instances in the context of {@link DefaultAudioExplorerPresentationControl} and
  * containing a {@link Composite} role that provides a default action for that navigates inside the composite contents.
- * 
+ *
  * FIXME: it should be only injected in entities with the Composite role, but the DCI Role library is not capable of
  * navigating inside data; in other words, @DciRole(datumType = ...) can only refer to a datum class.
- * 
+ *
  * As a workaround, since this role is a factory of {@link UserAction}s, it just refuses to create them in case there's
  * no Composite.
- * 
+ *
  * @stereotype  Role
- *  
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -62,17 +62,17 @@ public class CompositeEntityUserActionProvider extends DefaultUserActionProvider
   {
     @Nonnull
     private final Entity mediaFolder;
-    
+
     @Nonnull
     private final AudioExplorerPresentationControlSpi control;
-    
+
     @Override @Nonnull
-    public UserAction getDefaultAction() 
-      throws NotFoundException 
+    public UserAction getDefaultAction()
+      throws NotFoundException
       {
         // test for the Composite role
         // FIXME: Composite doesn't work. Introduce Composite8?
         mediaFolder.asOptional(SimpleComposite8).orElseThrow(() -> new NotFoundException());
-        return new UserActionLambda(() -> control.navigateTo(mediaFolder));
+        return new UserActionSupport8(() -> control.navigateTo(mediaFolder));
       }
   }
