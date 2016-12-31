@@ -17,6 +17,11 @@
     <name>blueMarine II - Services - StoppingDown</name>
     <description>blueMarine II - Services - StoppingDown</description>
 
+    <properties>
+        <!-- Otherwise can't be released because of missing javadocs -->
+        <tft.javadoc.excludePackageNames />
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>

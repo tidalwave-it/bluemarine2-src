@@ -18,6 +18,11 @@
     <name>blueMarine II - UI - JavaFX</name>
     <description>blueMarine2 - UI - JavaFX</description>
 
+    <properties>
+        <!-- Otherwise can't be released because of missing javadocs -->
+        <tft.javadoc.excludePackageNames />
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>

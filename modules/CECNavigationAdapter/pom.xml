@@ -15,6 +15,11 @@
     <version>1.0-ALPHA-13-SNAPSHOT</version>
     <name>blueMarine II - CEC Navigation Adapter</name>
 
+    <properties>
+        <!-- Otherwise can't be released because of missing javadocs -->
+        <tft.javadoc.excludePackageNames />
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
