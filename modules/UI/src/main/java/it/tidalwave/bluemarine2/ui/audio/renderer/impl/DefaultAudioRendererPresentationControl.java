@@ -38,7 +38,6 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.application.Platform;
 import it.tidalwave.role.ui.UserAction8;
-import it.tidalwave.role.ui.spi.UserActionLambda;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.AudioFile;
@@ -54,6 +53,7 @@ import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.util.Formatters.format;
 import static it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import it.tidalwave.role.ui.spi.UserActionSupport8;
 
 /***********************************************************************************************************************
  *
@@ -83,19 +83,19 @@ public class DefaultAudioRendererPresentationControl
     // Discriminates a forced stop from media player just terminating
     private boolean stopped;
 
-    private final UserAction8 prevAction = new UserActionLambda(() -> changeTrack(playList.previous().get()));
+    private final UserAction8 prevAction = new UserActionSupport8(() -> changeTrack(playList.previous().get()));
 
-    private final UserAction8 rewindAction = new UserActionLambda(() -> mediaPlayer.rewind());
+    private final UserAction8 rewindAction = new UserActionSupport8(() -> mediaPlayer.rewind());
 
-    private final UserAction8 stopAction = new UserActionLambda(() -> stop());
+    private final UserAction8 stopAction = new UserActionSupport8(() -> stop());
 
-    private final UserAction8 pauseAction = new UserActionLambda(() -> mediaPlayer.pause());
+    private final UserAction8 pauseAction = new UserActionSupport8(() -> mediaPlayer.pause());
 
-    private final UserAction8 playAction = new UserActionLambda(() -> play());
+    private final UserAction8 playAction = new UserActionSupport8(() -> play());
 
-    private final UserAction8 fastForwardAction = new UserActionLambda(() -> mediaPlayer.fastForward());
+    private final UserAction8 fastForwardAction = new UserActionSupport8(() -> mediaPlayer.fastForward());
 
-    private final UserAction8 nextAction = new UserActionLambda(() -> changeTrack(playList.next().get()));
+    private final UserAction8 nextAction = new UserActionSupport8(() -> changeTrack(playList.next().get()));
 
     // FIXME: use expression binding
     // e.g.  properties.progressProperty().bind(mediaPlayer.playTimeProperty().asDuration().dividedBy/duration));
