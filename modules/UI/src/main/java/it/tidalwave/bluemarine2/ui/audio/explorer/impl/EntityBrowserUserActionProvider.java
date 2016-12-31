@@ -33,15 +33,14 @@ import javax.inject.Inject;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
-import it.tidalwave.role.ui.spi.UserActionLambda;
-import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.role.ui.spi.UserActionSupport8;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
  * @stereotype  Role
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -55,10 +54,10 @@ public class EntityBrowserUserActionProvider extends DefaultUserActionProvider
 
     @Inject
     private AudioExplorerPresentationControlSpi control;
-    
+
     @Override @Nonnull
-    public UserAction getDefaultAction() 
+    public UserAction getDefaultAction()
       {
-        return new UserActionLambda(()-> control.selectBrowser(entityBrowser));
+        return new UserActionSupport8(()-> control.selectBrowser(entityBrowser));
       }
   }

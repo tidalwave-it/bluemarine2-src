@@ -32,12 +32,12 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.function.Supplier;
 import it.tidalwave.role.ui.UserAction;
-import it.tidalwave.role.ui.spi.UserActionLambda;
+import it.tidalwave.role.ui.spi.UserActionSupport8;
 import it.tidalwave.messagebus.MessageBus;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import lombok.RequiredArgsConstructor;
-import static it.tidalwave.bluemarine2.ui.util.BundleUtilities.*;
+import static it.tidalwave.role.Displayable8.displayableFromBundle;
 
 // TODO: if approved, move to TheseFoolishThings
 @RequiredArgsConstructor
@@ -47,40 +47,40 @@ class SupplierFromClass<T> implements Supplier<T>
     private final Class<T> factoryClass;
 
     @Override
-    public T get() 
+    public T get()
       {
         try
           {
             return factoryClass.newInstance();
-          } 
-        catch (InstantiationException | IllegalAccessException e) 
+          }
+        catch (InstantiationException | IllegalAccessException e)
           {
             throw new RuntimeException(e);
           }
-      } 
+      }
   }
 
 /***********************************************************************************************************************
  *
  * A proritized container of {@link UserAction}s to be placed on a menu.
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @Slf4j
-public class MainMenuItem 
+public class MainMenuItem
   {
     @Getter @Nonnull
     private final int priority;
-    
+
     @Inject
     private MessageBus messageBus;
-    
+
     @Getter @Nonnull
     private final UserAction action;
-    
-    public MainMenuItem (final @Nonnull String displayNameKey, 
+
+    public MainMenuItem (final @Nonnull String displayNameKey,
                          final @Nonnull String requestClassName,
                          final @Nonnull int priority)
       throws ClassNotFoundException
@@ -89,7 +89,7 @@ public class MainMenuItem
         final Class<?> requestClass = Thread.currentThread().getContextClassLoader().loadClass(requestClassName);
         final SupplierFromClass<?> supplier = new SupplierFromClass<>(requestClass);
         // FIXME: use MessageSendingUserAction?
-        this.action  = new UserActionLambda(displayableFromBundle(getClass(), displayNameKey), 
-                                            () -> messageBus.publish(supplier.get()));
+        this.action  = new UserActionSupport8(() -> messageBus.publish(supplier.get()),
+                                              displayableFromBundle(getClass(), displayNameKey));
       }
   }
