@@ -33,26 +33,26 @@ import java.util.List;
 import java.util.stream.Collectors;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
-import it.tidalwave.role.ui.spi.UserActionLambda;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.ui.commons.RenderAudioFileRequest;
+import it.tidalwave.role.ui.spi.UserActionSupport8;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
  * A role for {@link AudioFileSupplier} that provides a default action that fires a request to render the audio file.
- * 
+ *
  * @stereotype  Role
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @DciRole(datumType = AudioFileSupplier.class, context = DefaultAudioExplorerPresentationControl.class)
-@RequiredArgsConstructor 
+@RequiredArgsConstructor
 public class AudioFileUserActionProvider extends DefaultUserActionProvider
   {
     @Nonnull
@@ -60,20 +60,20 @@ public class AudioFileUserActionProvider extends DefaultUserActionProvider
 
     @Nonnull // FIXME: use the Spi interface, but this needs a change in RoleManagerSupport
     private final DefaultAudioExplorerPresentationControl control;
-    
+
     @Nonnull
     private final MessageBus messageBus;
-    
+
     @Override @Nonnull
-    public UserAction getDefaultAction() 
+    public UserAction getDefaultAction()
       {
-        return new UserActionLambda(() -> 
+        return new UserActionSupport8(() ->
           {
             final List<AudioFile> audioFiles = control.getMediaItems().stream()
                     .filter(i -> i instanceof AudioFileSupplier)
                     .map(i -> ((AudioFileSupplier)i).getAudioFile())
                     .collect(Collectors.toList());
-            
+
             messageBus.publish(new RenderAudioFileRequest(audioFileSupplier.getAudioFile(), audioFiles));
           });
       }

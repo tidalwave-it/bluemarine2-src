@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Stack;
@@ -38,10 +39,11 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.net.URL;
 import javafx.application.Platform;
 import it.tidalwave.dci.annotation.DciContext;
+import it.tidalwave.util.Finder8;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.role.ui.PresentationModel;
 import it.tidalwave.role.ui.UserAction8;
-import it.tidalwave.role.ui.spi.UserActionLambda;
+import it.tidalwave.role.ui.spi.UserActionSupport8;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
@@ -64,8 +66,6 @@ import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.*;
 import static it.tidalwave.bluemarine2.model.role.EntityWithPath.EntityWithPath;
-import it.tidalwave.util.Finder8;
-import java.util.ArrayList;
 
 /***********************************************************************************************************************
  *
@@ -105,7 +105,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
 
     private final AudioExplorerPresentation.Properties properties = new AudioExplorerPresentation.Properties();
 
-    private final UserAction8 navigateUpAction = new UserActionLambda(() -> navigateUp());
+    private final UserAction8 navigateUpAction = new UserActionSupport8(() -> navigateUp());
 
     private final AtomicReference<Optional<URL>> currentCoverArtUrl = new AtomicReference<>(Optional.empty());
 

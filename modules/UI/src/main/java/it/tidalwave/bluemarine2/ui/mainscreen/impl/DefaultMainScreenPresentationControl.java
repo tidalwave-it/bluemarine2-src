@@ -43,7 +43,7 @@ import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
-import static it.tidalwave.bluemarine2.ui.util.BundleUtilities.*;
+import static it.tidalwave.role.Displayable8.displayableFromBundle;
 
 /***********************************************************************************************************************
  *
