@@ -5,15 +5,20 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-13-SNAPSHOT</version>
+        <version>1.0-ALPHA-14-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-catalog</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-13-SNAPSHOT</version>
+    <version>1.0-ALPHA-14-SNAPSHOT</version>
     <name>blueMarine II - Catalog</name>
+
+    <properties>
+        <!-- Otherwise can't be released because of missing javadocs -->
+        <tft.javadoc.excludePackageNames />
+    </properties>
 
     <dependencies>
         <dependency>
