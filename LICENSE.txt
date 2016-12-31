@@ -1,7 +1,7 @@
 blueMarine2 - lightweight Media Center
 ======================================
 
-Copyright (C) 2015-2016 by Tidalwave s.a.s. (http://tidalwave.it)
+Copyright (C) 2015 - 2017 by Tidalwave s.a.s. (http://tidalwave.it)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
