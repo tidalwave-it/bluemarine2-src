@@ -23,7 +23,7 @@
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-service</artifactId>
+            <artifactId>it-tidalwave-bluemarine2-initializer</artifactId>
         </dependency>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>

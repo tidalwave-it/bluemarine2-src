@@ -26,9 +26,8 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.service.impl;
+package it.tidalwave.bluemarine2.initializer.impl;
 
-import it.tidalwave.bluemarine2.service.Service;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import javax.inject.Provider;
@@ -36,6 +35,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import it.tidalwave.bluemarine2.initializer.Initializer;
 import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
@@ -44,11 +44,11 @@ import lombok.extern.slf4j.Slf4j;
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
- * @version $Id: Class.java,v 631568052e17 2013/02/19 15:45:02 fabrizio $
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-@Slf4j
-public class DefaultService implements Service
+@Slf4j 
+public class DefaultInitializer implements Initializer
   {
     @Inject
     private Provider<MessageBus> messageBus;
@@ -59,7 +59,7 @@ public class DefaultService implements Service
      *
      ******************************************************************************************************************/
     @Override
-    public void boot()
+    public void boot ()
       {
         final Map<Key<?>, Object> properties = new HashMap<>();
         final Path configPath = getConfigurationPath();
@@ -74,8 +74,7 @@ public class DefaultService implements Service
 
     /*******************************************************************************************************************
      *
-     *
-     *
+     * FIXME: this is duplicated in JavaFXSpringApplication
      *
      ******************************************************************************************************************/
     @Nonnull

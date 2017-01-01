@@ -60,6 +60,6 @@
 
     <aop:aspectj-autoproxy/>
 
-    <bean class="it.tidalwave.bluemarine2.service.impl.DefaultService" />
+    <bean class="it.tidalwave.bluemarine2.initializer.impl.DefaultInitializer" />
 
 </beans>

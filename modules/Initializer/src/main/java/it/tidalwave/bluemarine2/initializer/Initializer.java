@@ -26,15 +26,15 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.service;
+package it.tidalwave.bluemarine2.initializer;
 
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
- * @version $Id: Class.java,v 631568052e17 2013/02/19 15:45:02 fabrizio $
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-public interface Service
+public interface Initializer
   {
     public void boot();
   }

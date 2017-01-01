@@ -34,7 +34,7 @@ import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.springframework.context.ApplicationContext;
 import it.tidalwave.ui.javafx.JavaFXSpringApplication;
 import it.tidalwave.bluemarine2.util.Logging;
-import it.tidalwave.bluemarine2.service.Service;
+import it.tidalwave.bluemarine2.initializer.Initializer;
 
 /***********************************************************************************************************************
  *
@@ -74,6 +74,6 @@ public class Main extends JavaFXSpringApplication
     @Override
     protected void onStageCreated (final @Nonnull ApplicationContext applicationContext)
       {
-        applicationContext.getBean(Service.class).boot();
+        applicationContext.getBean(Initializer.class).boot();
       }
   }
