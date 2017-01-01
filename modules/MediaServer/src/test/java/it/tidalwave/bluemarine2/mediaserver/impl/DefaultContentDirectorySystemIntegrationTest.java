@@ -37,14 +37,14 @@ import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.persistence.PropertyNames;
+import it.tidalwave.bluemarine2.persistence.PersistencePropertyNames;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
-import static it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH;
+import static it.tidalwave.bluemarine2.model.ModelPropertyNames.ROOT_PATH;
 
 /***********************************************************************************************************************
  *
@@ -92,7 +92,7 @@ public class DefaultContentDirectorySystemIntegrationTest extends SpringTestSupp
         final Path PATH_TEST_SETS = Paths.get("target/test-classes/test-sets");
         final Path repositoryPath = PATH_TEST_SETS.resolve(testSetName + ".n3").toAbsolutePath();
         properties.put(ROOT_PATH, PATH_TEST_SETS); // FIXME: why is this needed? - mock the file system!
-        properties.put(PropertyNames.REPOSITORY_PATH, repositoryPath);
+        properties.put(PersistencePropertyNames.REPOSITORY_PATH, repositoryPath);
         context.getBean(MessageBus.class).publish(new PowerOnNotification(properties));
         // when
         final MediaFolder root = underTest.findRoot();

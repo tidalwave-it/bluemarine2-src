@@ -35,7 +35,6 @@ import java.util.concurrent.CountDownLatch;
 import java.util.stream.Stream;
 import java.time.Instant;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -53,11 +52,11 @@ import org.testng.annotations.DataProvider;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
+import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
-import java.util.Locale;
 import static org.testng.AssertJUnit.*;
 
 /***********************************************************************************************************************
@@ -172,7 +171,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
         // FIXME: we should find a way to force HttpClient to pretend the network doesn't work
 //        log.warn("******* YOU SHOULD RUN THIS TEST WITH THE NETWORK DISCONNECTED");
         final Map<Key<?>, Object> properties = new HashMap<>();
-        properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, testSetPath);
+        properties.put(ModelPropertyNames.ROOT_PATH, testSetPath);
 //        properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, Paths.get("target/test-classes/download-cache-" + dataSetName));
         messageBus.publish(new PowerOnNotification(properties));
 

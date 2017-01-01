@@ -53,7 +53,7 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.persistence.Persistence;
-import it.tidalwave.bluemarine2.persistence.PropertyNames;
+import it.tidalwave.bluemarine2.persistence.PersistencePropertyNames;
 import it.tidalwave.bluemarine2.util.PersistenceInitializedNotification;
 import it.tidalwave.messagebus.MessageBus;
 import lombok.extern.slf4j.Slf4j;
@@ -101,7 +101,7 @@ public class DefaultPersistence implements Persistence
 
         try
           {
-            final Path repositoryPath = notification.getProperties().get(PropertyNames.REPOSITORY_PATH);
+            final Path repositoryPath = notification.getProperties().get(PersistencePropertyNames.REPOSITORY_PATH);
 
             if (Files.exists(repositoryPath))
               {

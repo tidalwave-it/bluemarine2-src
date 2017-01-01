@@ -40,9 +40,9 @@ import lombok.NoArgsConstructor;
  *
  **********************************************************************************************************************/
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class PropertyNames 
+public final class PersistencePropertyNames 
   {
-    private static final String PREFIX = PropertyNames.class.getPackage().getName();
+    private static final String PREFIX = PersistencePropertyNames.class.getPackage().getName();
     
     public static final Key<Path> REPOSITORY_PATH = new Key<>(PREFIX + ".repositoryPath");
   }

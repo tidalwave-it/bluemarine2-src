@@ -40,9 +40,9 @@ import lombok.NoArgsConstructor;
  *
  **********************************************************************************************************************/
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class PropertyNames 
+public final class ModelPropertyNames 
   {
-    private static final String PREFIX = PropertyNames.class.getPackage().getName();
+    private static final String PREFIX = ModelPropertyNames.class.getPackage().getName();
     
     public static final Key<Path> ROOT_PATH = new Key<>(PREFIX + ".rootPath");
   }

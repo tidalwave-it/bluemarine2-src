@@ -40,9 +40,9 @@ import lombok.NoArgsConstructor;
  *
  **********************************************************************************************************************/
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class PropertyNames 
+public final class DownloaderPropertyNames 
   {
-    private static final String PREFIX = PropertyNames.class.getPackage().getName();
+    private static final String PREFIX = DownloaderPropertyNames.class.getPackage().getName();
     
     public static final Key<Path> CACHE_FOLDER_PATH = new Key<>(PREFIX + ".cacheFolderPath");
   }

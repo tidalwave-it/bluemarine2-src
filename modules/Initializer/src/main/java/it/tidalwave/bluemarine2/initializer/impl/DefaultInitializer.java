@@ -35,10 +35,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import it.tidalwave.bluemarine2.initializer.Initializer;
 import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
+import it.tidalwave.bluemarine2.model.ModelPropertyNames;
+import it.tidalwave.bluemarine2.persistence.PersistencePropertyNames;
+import it.tidalwave.bluemarine2.downloader.DownloaderPropertyNames;
+import it.tidalwave.bluemarine2.initializer.Initializer;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -47,7 +50,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id: $
  *
  **********************************************************************************************************************/
-@Slf4j 
+@Slf4j
 public class DefaultInitializer implements Initializer
   {
     @Inject
@@ -59,16 +62,16 @@ public class DefaultInitializer implements Initializer
      *
      ******************************************************************************************************************/
     @Override
-    public void boot ()
+    public void boot()
       {
         final Map<Key<?>, Object> properties = new HashMap<>();
         final Path configPath = getConfigurationPath();
         log.info("configPath is {}", configPath);
         final Path repositoryPath = configPath.resolve("repository.n3");
         final Path cachePath = configPath.resolve("cache");
-        properties.put(it.tidalwave.bluemarine2.persistence.PropertyNames.REPOSITORY_PATH, repositoryPath);
-        properties.put(it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH, configPath);
-        properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, cachePath);
+        properties.put(PersistencePropertyNames.REPOSITORY_PATH, repositoryPath);
+        properties.put(ModelPropertyNames.ROOT_PATH, configPath);
+        properties.put(DownloaderPropertyNames.CACHE_FOLDER_PATH, cachePath);
         messageBus.get().publish(new PowerOnNotification(properties));
       }
 
