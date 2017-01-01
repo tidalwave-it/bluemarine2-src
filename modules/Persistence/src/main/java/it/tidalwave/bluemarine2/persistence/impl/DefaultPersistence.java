@@ -162,9 +162,8 @@ public class DefaultPersistence implements Persistence
         log.info("runInTransaction({})", task);
         waitForPowerOn();
         final long baseTime = System.nanoTime();
-        final RepositoryConnection connection = repository.getConnection(); // TODO: pool?
 
-        try
+        try (final RepositoryConnection connection = repository.getConnection()) // TODO: pool?
           {
             task.run(connection);
             connection.commit();
@@ -173,8 +172,6 @@ public class DefaultPersistence implements Persistence
         catch (Exception e)
           {
             log.error("Transaction failed: {}", e.toString());
-            connection.rollback(); // FIXME: should be useless, so you can use try-with-resources
-            connection.close();
           }
 
         if (log.isDebugEnabled())
