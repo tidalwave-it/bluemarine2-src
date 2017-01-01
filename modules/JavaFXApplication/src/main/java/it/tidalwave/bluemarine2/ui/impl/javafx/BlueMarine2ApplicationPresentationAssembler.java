@@ -50,6 +50,6 @@ public class BlueMarine2ApplicationPresentationAssembler
     public void assemble (final @Nonnull JavaFXApplicationPresentationDelegate delegate)
       {
         flowController.setContentPane(delegate.getSpContent());
-        delegate.setBackspaceCallback(Optional.of(() -> flowController.tryToDismissCurrentPresentation()));
+        delegate.setBackspaceCallback(Optional.of(flowController::tryToDismissCurrentPresentation));
       }
   }
