@@ -175,7 +175,7 @@ public class DefaultPersistence implements Persistence
         catch (Exception e)
           {
             log.error("Transaction failed: {}", e.toString());
-            connection.rollback();
+            connection.rollback(); // FIXME: should be useless, so you can use try-with-resources
             connection.close();
           }
 
