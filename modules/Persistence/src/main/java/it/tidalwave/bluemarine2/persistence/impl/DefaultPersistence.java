@@ -29,6 +29,8 @@
 package it.tidalwave.bluemarine2.persistence.impl;
 
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
+import javax.inject.Provider;
 import java.util.concurrent.CountDownLatch;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -52,6 +54,8 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import it.tidalwave.bluemarine2.persistence.PropertyNames;
+import it.tidalwave.bluemarine2.util.PersistenceInitializedNotification;
+import it.tidalwave.messagebus.MessageBus;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -65,6 +69,9 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 @SimpleMessageSubscriber @Slf4j
 public class DefaultPersistence implements Persistence
   {
+    @Inject
+    private Provider<MessageBus> messageBus;
+
     private final CountDownLatch initialized = new CountDownLatch(1);
 
     private Repository repository;
@@ -113,6 +120,7 @@ public class DefaultPersistence implements Persistence
           }
 
         initialized.countDown();
+        messageBus.get().publish(new PersistenceInitializedNotification());
       }
 
     /*******************************************************************************************************************
