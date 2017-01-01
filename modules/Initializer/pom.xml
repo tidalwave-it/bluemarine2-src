@@ -15,10 +15,6 @@
     <packaging>jar</packaging>
     <name>blueMarine II - Initializer</name>
 
-    <properties>
-        <tft.mainClass>it.tidalwave.bluemarine2.service.impl.Main</tft.mainClass>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>

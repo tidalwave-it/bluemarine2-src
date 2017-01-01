@@ -10,15 +10,16 @@
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>it-tidalwave-bluemarine2-service</artifactId>
+    <artifactId>it-tidalwave-bluemarine2-headlessservice</artifactId>
     <version>1.0-ALPHA-14-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>blueMarine II - Service</name>
+    <name>blueMarine II - Headless Service</name>
 
     <properties>
         <!-- Otherwise can't be released because of missing javadocs -->
         <tft.javadoc.excludePackageNames />
-        <tft.mainClass>it.tidalwave.bluemarine2.service.impl.Main</tft.mainClass>
+        <tft.jar.classpath>true</tft.jar.classpath>
+        <tft.mainClass>it.tidalwave.bluemarine2.headlessservice.impl.Main</tft.mainClass>
     </properties>
 
     <dependencies>
@@ -30,7 +31,6 @@
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-downloader</artifactId>
         </dependency>
-
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
@@ -40,7 +40,6 @@
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-messagebus-spring</artifactId>
         </dependency>
-
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-messagebus</artifactId>
@@ -133,13 +132,13 @@
 
     <build>
         <plugins>
-            <plugin>
+            <plugin> <!-- FIXME: push to super POM -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
                     <archive>
                         <manifest>
-                            <addClasspath>true</addClasspath>
+                            <addClasspath>${tft.jar.classpath}</addClasspath>
                             <mainClass>${tft.mainClass}</mainClass>
                         </manifest>
                     </archive>

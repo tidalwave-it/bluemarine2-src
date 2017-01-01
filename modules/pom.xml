@@ -301,6 +301,7 @@
         <module>CECWrapper</module>
         <module>Commons</module>
         <module>Downloader</module>
+        <module>HeadlessService</module>
         <module>Initializer</module>
         <module>Installers/LinuxJavaFXApplication</module>
         <module>Installers/LinuxApplicationArmV6EmbeddedJRE</module>
@@ -319,7 +320,6 @@
         <module>MediaServer</module>
         <module>TestCommons</module>
         <module>Vocabulary</module>
-        <module>Service</module>
     </modules>
 
 </project>

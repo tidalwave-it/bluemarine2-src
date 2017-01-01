@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.service.impl;
+package it.tidalwave.bluemarine2.headlessservice.impl;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.bluemarine2.util.Logging;

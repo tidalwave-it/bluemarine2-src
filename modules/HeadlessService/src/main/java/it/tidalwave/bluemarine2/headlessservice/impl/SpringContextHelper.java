@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.service.impl;
+package it.tidalwave.bluemarine2.headlessservice.impl;
 
 import java.util.ArrayList;
 import java.util.List;
