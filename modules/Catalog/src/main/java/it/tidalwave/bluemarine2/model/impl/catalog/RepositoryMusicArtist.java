@@ -30,8 +30,8 @@ package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import org.openrdf.repository.Repository;
-import org.openrdf.query.BindingSet;
+import org.eclipse.rdf4j.repository.Repository;
+import org.eclipse.rdf4j.query.BindingSet;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;

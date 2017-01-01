@@ -32,7 +32,7 @@ import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
 import java.net.URL;
-import org.openrdf.repository.Repository;
+import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.util.Finder8;
 import lombok.ToString;

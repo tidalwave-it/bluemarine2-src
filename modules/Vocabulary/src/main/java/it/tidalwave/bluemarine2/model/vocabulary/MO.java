@@ -30,9 +30,9 @@ package it.tidalwave.bluemarine2.model.vocabulary;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import org.openrdf.model.IRI;
-import org.openrdf.model.ValueFactory;
-import org.openrdf.model.impl.SimpleValueFactory;
+import org.eclipse.rdf4j.model.IRI;
+import org.eclipse.rdf4j.model.ValueFactory;
+import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 
 /***********************************************************************************************************************
  *

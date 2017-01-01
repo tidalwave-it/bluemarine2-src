@@ -29,7 +29,7 @@
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import java.util.Optional;
-import org.openrdf.model.IRI;
+import org.eclipse.rdf4j.model.IRI;
 import it.tidalwave.util.ConcurrentHashMapWithOptionals;
 
 /***********************************************************************************************************************

@@ -33,7 +33,7 @@ import javax.annotation.concurrent.Immutable;
 import java.time.Duration;
 import java.util.Optional;
 import java.nio.file.Path;
-import org.openrdf.repository.Repository;
+import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Record;

@@ -31,10 +31,10 @@ package it.tidalwave.bluemarine2.persistence;
 import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.nio.file.Path;
-import org.openrdf.repository.Repository;
-import org.openrdf.repository.RepositoryConnection;
-import org.openrdf.repository.RepositoryException;
-import org.openrdf.rio.RDFHandlerException;
+import org.eclipse.rdf4j.repository.Repository;
+import org.eclipse.rdf4j.repository.RepositoryConnection;
+import org.eclipse.rdf4j.repository.RepositoryException;
+import org.eclipse.rdf4j.rio.RDFHandlerException;
 import lombok.NonNull;
 
 /***********************************************************************************************************************

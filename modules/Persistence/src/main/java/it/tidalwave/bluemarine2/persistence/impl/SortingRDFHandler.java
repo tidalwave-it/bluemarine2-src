@@ -35,10 +35,10 @@ import java.util.Comparator;
 import java.util.List;
 import lombok.Delegate;
 import lombok.RequiredArgsConstructor;
-import org.openrdf.model.Statement;
-import org.openrdf.model.vocabulary.RDF;
-import org.openrdf.rio.RDFHandler;
-import org.openrdf.rio.RDFHandlerException;
+import org.eclipse.rdf4j.model.Statement;
+import org.eclipse.rdf4j.model.vocabulary.RDF;
+import org.eclipse.rdf4j.rio.RDFHandler;
+import org.eclipse.rdf4j.rio.RDFHandlerException;
 
 /***********************************************************************************************************************
  *

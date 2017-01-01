@@ -38,8 +38,8 @@ import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.beans.factory.annotation.Configurable;
-import org.openrdf.repository.Repository;
-import org.openrdf.query.BindingSet;
+import org.eclipse.rdf4j.repository.Repository;
+import org.eclipse.rdf4j.query.BindingSet;
 import it.tidalwave.bluemarine2.util.Formatters;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Track;
@@ -52,7 +52,7 @@ import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import org.openrdf.query.Binding;
+import org.eclipse.rdf4j.query.Binding;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedToNativeForm;
 
 /***********************************************************************************************************************
