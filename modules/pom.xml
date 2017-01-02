@@ -303,11 +303,7 @@
         <module>Downloader</module>
         <module>HeadlessService</module>
         <module>Initializer</module>
-        <module>Installers/LinuxJavaFXApplication</module>
-        <module>Installers/LinuxApplicationArmV6EmbeddedJRE</module>
-        <module>Installers/Service</module>
-        <module>Installers/LinuxServiceDEB</module>
-        <module>Installers/MacOSXJavaFXApplicationEmbeddedJRE</module>
+        <module>Installers</module>
         <module>JavaFX</module>
         <module>JavaFXApplication</module>
         <module>MediaScanner</module>

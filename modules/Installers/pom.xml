@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>it.tidalwave.bluemarine2</groupId>
+        <artifactId>bluemarine2-modules</artifactId>
+        <version>1.0-ALPHA-14-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <groupId>it.tidalwave.bluemarine2</groupId>
+    <artifactId>blueMarine2-installers</artifactId>
+    <version>1.0-ALPHA-14-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>blueMarine II - Installers (modules)</name>
+    <description>blueMarine II - Installers (modules)</description>
+
+    <modules>
+        <module>LinuxApplicationArmV6EmbeddedJRE</module>
+        <module>LinuxJavaFXApplication</module>
+        <module>LinuxServiceDEB</module>
+        <module>MacOSXJavaFXApplicationEmbeddedJRE</module>
+        <module>Service</module>
+    </modules>
+
+</project>
