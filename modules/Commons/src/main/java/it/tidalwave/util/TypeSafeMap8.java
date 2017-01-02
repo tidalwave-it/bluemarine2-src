@@ -26,35 +26,33 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.util;
+package it.tidalwave.util;
 
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
-import java.util.Map;
-import it.tidalwave.util.Key;
-import it.tidalwave.util.TypeSafeHashMap8;
-import it.tidalwave.util.TypeSafeMap8;
-import lombok.Getter;
-import lombok.ToString;
+import java.util.Optional;
 
 /***********************************************************************************************************************
  *
- * A message that notifies that the system has been just powered on.
- *
- * @stereotype  Message
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-@Immutable @ToString
-public final class PowerOnNotification
+public interface TypeSafeMap8 extends TypeSafeMap
   {
-    @Getter @Nonnull
-    private final TypeSafeMap8 properties;
-
-    public PowerOnNotification (final @Nonnull Map<Key<?>, Object> properties)
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public default <T> Optional<T> getOptional (@Nonnull Key<T> key)
       {
-        this.properties = new TypeSafeHashMap8(properties);
+        try
+          {
+            return Optional.of(get(key));
+          }
+        catch (NotFoundException ex)
+          {
+            return Optional.empty();
+          }
       }
   }
