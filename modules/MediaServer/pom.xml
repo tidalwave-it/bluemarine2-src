@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
-        <artifactId>blueMarine2-modules</artifactId>
+        <artifactId>bluemarine2-modules</artifactId>
         <version>1.0-ALPHA-14-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
