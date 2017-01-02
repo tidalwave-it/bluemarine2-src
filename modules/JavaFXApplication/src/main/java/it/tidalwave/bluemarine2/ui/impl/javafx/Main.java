@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
+ * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -34,7 +34,7 @@ import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.springframework.context.ApplicationContext;
 import it.tidalwave.ui.javafx.JavaFXSpringApplication;
 import it.tidalwave.bluemarine2.util.Logging;
-import it.tidalwave.bluemarine2.service.Service;
+import it.tidalwave.bluemarine2.initializer.Initializer;
 
 /***********************************************************************************************************************
  *
@@ -51,8 +51,12 @@ public class Main extends JavaFXSpringApplication
         SLF4JBridgeHandler.removeHandlersForRootLogger();
         SLF4JBridgeHandler.install();
 //        setMaximized(true);
-        setFullScreen(true);
-        setFullScreenLocked(true);
+
+        if ("arm".equals(System.getProperty("os.arch")))
+          {
+            setFullScreen(true);
+            setFullScreenLocked(true);
+          }
       }
 
     public static void main (final @Nonnull String ... args)
@@ -74,6 +78,6 @@ public class Main extends JavaFXSpringApplication
     @Override
     protected void onStageCreated (final @Nonnull ApplicationContext applicationContext)
       {
-        applicationContext.getBean(Service.class).boot();
+        applicationContext.getBean(Initializer.class).boot();
       }
   }

@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
+ * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -29,7 +29,7 @@
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import java.util.Optional;
-import org.openrdf.model.IRI;
+import org.eclipse.rdf4j.model.IRI;
 import it.tidalwave.util.ConcurrentHashMapWithOptionals;
 
 /***********************************************************************************************************************
