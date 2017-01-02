@@ -40,9 +40,16 @@ import lombok.NoArgsConstructor;
  *
  **********************************************************************************************************************/
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class PersistencePropertyNames 
+public final class PersistencePropertyNames
   {
     private static final String PREFIX = PersistencePropertyNames.class.getPackage().getName();
-    
-    public static final Key<Path> REPOSITORY_PATH = new Key<>(PREFIX + ".repositoryPath");
+
+    /** The path where to place disk storage. */
+    public static final Key<Path> STORAGE_FOLDER = new Key<>(PREFIX + ".storagePath");
+
+    /** The path of a file to import data from - used by tests. */
+    public static final Key<Path> IMPORT_FILE = new Key<>(PREFIX + ".importFile");
+
+    /** Whether the import file must be renamed after being used. */
+    public static final Key<Boolean> RENAME_IMPORT_FILE = new Key<>(PREFIX + ".renameImportFile");
   }

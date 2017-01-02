@@ -30,35 +30,40 @@ package it.tidalwave.bluemarine2.persistence.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import javax.inject.Provider;
+import java.util.Optional;
 import java.util.concurrent.CountDownLatch;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import org.eclipse.rdf4j.model.Namespace;
+import java.nio.file.Paths;
+import org.apache.commons.io.FileUtils;
+import com.google.common.annotations.VisibleForTesting;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 import org.eclipse.rdf4j.repository.RepositoryException;
 import org.eclipse.rdf4j.repository.sail.SailRepository;
+import org.eclipse.rdf4j.sail.Sail;
 import org.eclipse.rdf4j.sail.memory.MemoryStore;
+import org.eclipse.rdf4j.sail.nativerdf.NativeStore;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFHandler;
 import org.eclipse.rdf4j.rio.RDFHandlerException;
 import org.eclipse.rdf4j.rio.RDFParseException;
 import org.eclipse.rdf4j.rio.n3.N3Writer;
-import it.tidalwave.util.NotFoundException;
+import it.tidalwave.util.TypeSafeMap8;
+import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.util.PowerOffNotification;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
-import it.tidalwave.bluemarine2.persistence.Persistence;
-import it.tidalwave.bluemarine2.persistence.PersistencePropertyNames;
 import it.tidalwave.bluemarine2.util.PersistenceInitializedNotification;
-import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.persistence.Persistence;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static it.tidalwave.bluemarine2.persistence.PersistencePropertyNames.*;
 
 /***********************************************************************************************************************
  *
@@ -70,11 +75,13 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 public class DefaultPersistence implements Persistence
   {
     @Inject
-    private Provider<MessageBus> messageBus;
+    private MessageBus messageBus;
 
     private final CountDownLatch initialized = new CountDownLatch(1);
 
     private Repository repository;
+
+    @VisibleForTesting Sail sail;
 
     /*******************************************************************************************************************
      *
@@ -92,46 +99,80 @@ public class DefaultPersistence implements Persistence
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
+    @VisibleForTesting void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
       throws RepositoryException, IOException, RDFParseException
       {
         log.info("onPowerOnNotification({})", notification);
-        repository = new SailRepository(new MemoryStore());
+        final TypeSafeMap8 properties = notification.getProperties();
+
+        final Optional<Path> importFile = properties.getOptional(IMPORT_FILE);
+        final Optional<Path> storageFolder = properties.getOptional(STORAGE_FOLDER);
+
+        if (!storageFolder.isPresent())
+          {
+            log.warn("No storage path: working in memory");
+            sail = new MemoryStore();
+          }
+        else
+          {
+            log.info("Disk storage at {}", storageFolder);
+
+            if (importFile.isPresent() && Files.exists(importFile.get()))
+              {
+                log.warn("Scratching store ...");
+                FileUtils.deleteDirectory(storageFolder.get().toFile()); // FIXME: rename to backup folder with timestamp
+              }
+
+            sail = new NativeStore(storageFolder.get().toFile());
+          }
+
+        repository = new SailRepository(sail);
         repository.initialize();
 
-        try
+        if (importFile.isPresent() && Files.exists(importFile.get()))
           {
-            final Path repositoryPath = notification.getProperties().get(PersistencePropertyNames.REPOSITORY_PATH);
+            importFromFile(importFile.get());
 
-            if (Files.exists(repositoryPath))
+            if (properties.getOptional(RENAME_IMPORT_FILE).orElse(false))
               {
-                try (final RepositoryConnection connection = repository.getConnection();
-                     final Reader reader = Files.newBufferedReader(repositoryPath, UTF_8))
-                  {
-                    log.info("Importing repository from {} ...", repositoryPath);
-                    connection.add(reader, repositoryPath.toUri().toString(), RDFFormat.N3);
-                    connection.commit();
-                  }
+                Files.move(importFile.get(), Paths.get(importFile.get().toString() + "~"));
               }
-          }
-        catch (NotFoundException e)
-          {
-            log.warn("No repository path: operating in memory");
           }
 
         initialized.countDown();
-        messageBus.get().publish(new PersistenceInitializedNotification());
+        messageBus.publish(new PersistenceInitializedNotification());
       }
 
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
+    @VisibleForTesting void onPowerOffNotification (final @ListensTo @Nonnull PowerOffNotification notification)
+      throws RepositoryException, IOException, RDFParseException
+      {
+        log.info("onPowerOffNotification({})", notification);
+
+        if (repository != null)
+          {
+            repository.shutDown();
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Exports the repository to the given file.
+     *
+     * @param   path                    where to export the data to
+     * @throws  RDFHandlerException
+     * @throws  IOException
+     * @throws  RepositoryException
+     *
+     ******************************************************************************************************************/
     @Override
-    public void dump (final @Nonnull Path path)
+    public void exportToFile (final @Nonnull Path path)
       throws RDFHandlerException, IOException, RepositoryException
       {
-        log.info("dump({})", path);
+        log.info("exportToFile({})", path);
         Files.createDirectories(path.getParent());
 
         try (final PrintWriter pw = new PrintWriter(Files.newBufferedWriter(path, UTF_8));
@@ -139,10 +180,11 @@ public class DefaultPersistence implements Persistence
           {
             final RDFHandler writer = new SortingRDFHandler(new N3Writer(pw));
 
-            for (final Namespace namespace : connection.getNamespaces().asList())
-              {
-                writer.handleNamespace(namespace.getPrefix(), namespace.getName());
-              }
+//            FIXME: use Iterations - and sort
+//            for (final Namespace namespace : connection.getNamespaces().asList())
+//              {
+//                writer.handleNamespace(namespace.getPrefix(), namespace.getName());
+//              }
 
             writer.handleNamespace("bio",   "http://purl.org/vocab/bio/0.1/");
             writer.handleNamespace("bmmo",  "http://bluemarine.tidalwave.it/2015/04/mo/");
@@ -175,7 +217,6 @@ public class DefaultPersistence implements Persistence
           {
             task.run(connection);
             connection.commit();
-            connection.close();
           }
         catch (Exception e)
           {
@@ -185,6 +226,28 @@ public class DefaultPersistence implements Persistence
         if (log.isDebugEnabled())
           {
             log.debug(">>>> done in {} ms", (System.nanoTime() - baseTime) * 1E-6);
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Imports the repository from the given file.
+     *
+     * @param   path                    where to import the data from
+     * @throws  RDFHandlerException
+     * @throws  IOException
+     * @throws  RepositoryException
+     *
+     ******************************************************************************************************************/
+    private void importFromFile (final @Nonnull Path path)
+      throws IOException, RepositoryException, RDFParseException
+      {
+        try (final RepositoryConnection connection = repository.getConnection();
+             final Reader reader = Files.newBufferedReader(path, UTF_8))
+          {
+            log.info("Importing repository from {} ...", path);
+            connection.add(reader, path.toUri().toString(), RDFFormat.N3);
+            connection.commit();
           }
       }
 

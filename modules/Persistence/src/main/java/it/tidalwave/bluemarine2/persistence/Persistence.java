@@ -63,6 +63,6 @@ public interface Persistence
     public <E extends Exception> void runInTransaction (@Nonnull TransactionalTask<E> task)
       throws E, RepositoryException;
     
-    public void dump (final @Nonnull Path path)
+    public void exportToFile (final @Nonnull Path path)
       throws RDFHandlerException, IOException, RepositoryException;
   }

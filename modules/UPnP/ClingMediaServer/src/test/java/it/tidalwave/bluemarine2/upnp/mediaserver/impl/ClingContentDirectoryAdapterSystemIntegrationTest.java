@@ -138,7 +138,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
         final Map<Key<?>, Object> properties = new HashMap<>();
         final Path repositoryPath = Paths.get("target/test-classes/test-sets/model-iTunes-fg-20160504-1.n3");
         properties.put(ROOT_PATH, TestSetLocator.getMusicTestSetsPath().resolve("iTunes-fg-20160504-1"));
-        properties.put(PersistencePropertyNames.REPOSITORY_PATH, repositoryPath);
+        properties.put(PersistencePropertyNames.IMPORT_FILE, repositoryPath);
         resourceServer = context.getBean(DefaultResourceServer.class);
         context.getBean(MessageBus.class).publish(new PowerOnNotification(properties));
       }

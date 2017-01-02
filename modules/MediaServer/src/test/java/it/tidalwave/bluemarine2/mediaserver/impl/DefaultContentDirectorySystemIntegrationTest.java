@@ -92,7 +92,7 @@ public class DefaultContentDirectorySystemIntegrationTest extends SpringTestSupp
         final Path PATH_TEST_SETS = Paths.get("target/test-classes/test-sets");
         final Path repositoryPath = PATH_TEST_SETS.resolve(testSetName + ".n3").toAbsolutePath();
         properties.put(ROOT_PATH, PATH_TEST_SETS); // FIXME: why is this needed? - mock the file system!
-        properties.put(PersistencePropertyNames.REPOSITORY_PATH, repositoryPath);
+        properties.put(PersistencePropertyNames.IMPORT_FILE, repositoryPath);
         context.getBean(MessageBus.class).publish(new PowerOnNotification(properties));
         // when
         final MediaFolder root = underTest.findRoot();

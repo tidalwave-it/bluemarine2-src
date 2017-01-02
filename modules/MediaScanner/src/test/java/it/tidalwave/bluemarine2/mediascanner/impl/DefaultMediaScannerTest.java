@@ -53,10 +53,12 @@ import org.slf4j.bridge.SLF4JBridgeHandler;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import it.tidalwave.bluemarine2.model.ModelPropertyNames;
+import it.tidalwave.bluemarine2.persistence.PersistencePropertyNames;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
+import java.nio.file.Paths;
 import static org.testng.AssertJUnit.*;
 
 /***********************************************************************************************************************
@@ -160,6 +162,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
     public void testScan (final @Nonnull String testSetName)
       throws Exception
       {
+        // given
         final Path testSetPath = musicTestSets.resolve(testSetName);
 
         if (!Files.isDirectory(testSetPath))
@@ -172,19 +175,21 @@ public class DefaultMediaScannerTest extends SpringTestSupport
 //        log.warn("******* YOU SHOULD RUN THIS TEST WITH THE NETWORK DISCONNECTED");
         final Map<Key<?>, Object> properties = new HashMap<>();
         properties.put(ModelPropertyNames.ROOT_PATH, testSetPath);
+        // Large import with native RDF storage fails at end. Temporarily operating in memory. See BMT-114.
+//        properties.put(PersistencePropertyNames.STORAGE_FOLDER, Paths.get("target/test-results/storage-" + testSetName));
 //        properties.put(it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH, Paths.get("target/test-classes/download-cache-" + dataSetName));
         messageBus.publish(new PowerOnNotification(properties));
 
         // Wait for the MediaFileSystem to initialize. Indeed, MediaFileSystem should be probably mocked
         Thread.sleep(1000);
-
+        // when
         underTest.process(fileSystem.getRoot());
         scanCompleted.await();
-
+        // then
         final String modelName = "model-" + testSetName + ".n3";
         final File actualFile = new File("target/test-results/" + modelName);
         final File expectedFile = new File("src/test/resources/expected-results/" + modelName);
-        persistence.dump(actualFile.toPath());
+        persistence.exportToFile(actualFile.toPath());
 
         // FIXME: likely OOM in case of mismatch
         assertSameContents(expectedFile, actualFile);
