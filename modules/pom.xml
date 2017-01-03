@@ -303,7 +303,6 @@
         <module>Downloader</module>
         <module>HeadlessService</module>
         <module>Initializer</module>
-        <module>Installers</module>
         <module>JavaFX</module>
         <module>JavaFXApplication</module>
         <module>MediaScanner</module>
@@ -316,6 +315,7 @@
         <module>MediaServer</module>
         <module>TestCommons</module>
         <module>Vocabulary</module>
+        <module>Installers</module> <!-- Keep at last -->
     </modules>
 
 </project>
