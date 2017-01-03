@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
+ * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -32,11 +32,11 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.util.Arrays;
 import java.util.List;
-import org.openrdf.model.Resource;
-import org.openrdf.model.Statement;
-import org.openrdf.model.IRI;
-import org.openrdf.model.Value;
-import org.openrdf.model.impl.SimpleValueFactory;
+import org.eclipse.rdf4j.model.Resource;
+import org.eclipse.rdf4j.model.Statement;
+import org.eclipse.rdf4j.model.IRI;
+import org.eclipse.rdf4j.model.Value;
+import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;

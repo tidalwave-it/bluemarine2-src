@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
+ * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -30,8 +30,8 @@ package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import org.openrdf.repository.Repository;
-import org.openrdf.query.BindingSet;
+import org.eclipse.rdf4j.repository.Repository;
+import org.eclipse.rdf4j.query.BindingSet;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;

@@ -6,15 +6,15 @@
 
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
-        <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-14-SNAPSHOT</version>
+        <artifactId>bluemarine2-modules</artifactId>
+        <version>1.0-ALPHA-15-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-ui-javafx</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-14-SNAPSHOT</version>
+    <version>1.0-ALPHA-15-SNAPSHOT</version>
     <name>blueMarine II - UI - JavaFX</name>
     <description>blueMarine2 - UI - JavaFX</description>
 
@@ -43,17 +43,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-role</artifactId>
         </dependency>
@@ -63,8 +52,14 @@
         </dependency>
 
         <dependency>
-            <groupId>javax.inject</groupId>
-            <artifactId>javax.inject</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 

@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
+ * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -42,17 +42,17 @@ import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.net.MalformedURLException;
 import java.net.URL;
-import org.openrdf.model.Value;
-import org.openrdf.model.impl.SimpleValueFactory;
-import org.openrdf.query.BindingSet;
-import org.openrdf.query.MalformedQueryException;
-import org.openrdf.query.QueryEvaluationException;
-import org.openrdf.query.QueryLanguage;
-import org.openrdf.query.TupleQuery;
-import org.openrdf.query.TupleQueryResult;
-import org.openrdf.repository.Repository;
-import org.openrdf.repository.RepositoryConnection;
-import org.openrdf.repository.RepositoryException;
+import org.eclipse.rdf4j.model.Value;
+import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
+import org.eclipse.rdf4j.query.BindingSet;
+import org.eclipse.rdf4j.query.MalformedQueryException;
+import org.eclipse.rdf4j.query.QueryEvaluationException;
+import org.eclipse.rdf4j.query.QueryLanguage;
+import org.eclipse.rdf4j.query.TupleQuery;
+import org.eclipse.rdf4j.query.TupleQueryResult;
+import org.eclipse.rdf4j.repository.Repository;
+import org.eclipse.rdf4j.repository.RepositoryConnection;
+import org.eclipse.rdf4j.repository.RepositoryException;
 import org.springframework.util.StreamUtils;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.util.Id;
