@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
+ * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -65,8 +65,8 @@ import it.tidalwave.bluemarine2.downloader.DownloadComplete.Origin;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.downloader.PropertyNames.CACHE_FOLDER_PATH;
 import org.apache.http.HttpResponseInterceptor;
+import static it.tidalwave.bluemarine2.downloader.DownloaderPropertyNames.CACHE_FOLDER_PATH;
 
 /***********************************************************************************************************************
  *
@@ -75,21 +75,21 @@ import org.apache.http.HttpResponseInterceptor;
  *
  **********************************************************************************************************************/
 @SimpleMessageSubscriber @Slf4j
-public class DefaultDownloader 
+public class DefaultDownloader
   {
     @Inject
     private MessageBus messageBus;
-       
+
     @Inject
     private SimpleHttpCacheStorage cacheStorage;
-            
+
     private PoolingHttpClientConnectionManager connectionManager;
-    
+
     private CacheConfig cacheConfig;
-    
+
     private CloseableHttpClient httpClient;
-    
-private final HttpResponseInterceptor killCacheHeaders = (HttpResponse 
+
+private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
  response, HttpContext context) ->
  {
  response.removeHeaders("Expires");
@@ -100,22 +100,22 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
 
     /*******************************************************************************************************************
      *
-     * 
-     * 
+     *
+     *
      ******************************************************************************************************************/
     // FIXME: this is because there's a fix, and we explicitly save stuff in the cache - see below
-    private final RedirectStrategy dontFollowRedirect = new RedirectStrategy() 
+    private final RedirectStrategy dontFollowRedirect = new RedirectStrategy()
       {
         @Override
         public boolean isRedirected (HttpRequest request, HttpResponse response, HttpContext context)
-          throws ProtocolException 
+          throws ProtocolException
           {
             return false;
           }
 
         @Override
-        public HttpUriRequest getRedirect (HttpRequest request, HttpResponse response, HttpContext context) 
-          throws ProtocolException 
+        public HttpUriRequest getRedirect (HttpRequest request, HttpResponse response, HttpContext context)
+          throws ProtocolException
           {
             return null;
           }
@@ -123,8 +123,8 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
 
     /*******************************************************************************************************************
      *
-     * 
-     * 
+     *
+     *
      ******************************************************************************************************************/
     @PostConstruct
     /* VisibleForTesting */ void initialize()
@@ -150,30 +150,30 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
                 .addInterceptorFirst(killCacheHeaders) // FIXME: only if  explicitly configured
          .build();
       }
-    
+
     /*******************************************************************************************************************
      *
-     * 
-     * 
+     *
+     *
      ******************************************************************************************************************/
     /* VisibleForTesting */ void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
       throws NotFoundException
       {
-        log.info("onPowerOnNotification({})", notification);    
+        log.info("onPowerOnNotification({})", notification);
         cacheStorage.setFolderPath(notification.getProperties().get(CACHE_FOLDER_PATH));
       }
-    
+
     /*******************************************************************************************************************
      *
-     * 
-     * 
+     *
+     *
      ******************************************************************************************************************/
     /* VisibleForTesting */ void onDownloadRequest (final @ListensTo @Nonnull DownloadRequest request)
       throws URISyntaxException
       {
         try
           {
-            log.info("onDownloadRequest({})", request);    
+            log.info("onDownloadRequest({})", request);
 
             URL url = request.getUrl();
 
@@ -187,19 +187,19 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
 
                 final Origin origin = cacheResponseStatus.equals(CacheResponseStatus.CACHE_HIT) ? Origin.CACHE
                                                                                                 : Origin.NETWORK;
-                
+
                 // FIXME: shouldn't do this by myself
                 // FIXME: upon configuration, everything should be cached (needed for supporting integration tests)
                 if (!origin.equals(Origin.CACHE) && Arrays.asList(200, 303).contains(response.getStatusLine().getStatusCode()))
                   {
                     final Date date = new Date();
                     final Resource resource = new HeapResource(bytes);
-                    cacheStorage.putEntry(url.toExternalForm(), 
+                    cacheStorage.putEntry(url.toExternalForm(),
                             new HttpCacheEntry(date, date, response.getStatusLine(), response.getAllHeaders(), resource));
                   }
 
                 // FIXME: if the redirect were enabled, we could drop this check
-                if (request.isOptionPresent(DownloadRequest.Option.FOLLOW_REDIRECT) 
+                if (request.isOptionPresent(DownloadRequest.Option.FOLLOW_REDIRECT)
                     && response.getStatusLine().getStatusCode() == 303) // SEE_OTHER FIXME
                   {
                     url = new URL(response.getFirstHeader("Location").getValue());
@@ -207,7 +207,7 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
                   }
                 else
                   {
-                    messageBus.publish(new DownloadComplete(request.getUrl(), 
+                    messageBus.publish(new DownloadComplete(request.getUrl(),
                                                             response.getStatusLine().getStatusCode(),
                                                             bytes,
                                                             origin));
@@ -224,20 +224,20 @@ private final HttpResponseInterceptor killCacheHeaders = (HttpResponse
 
     /*******************************************************************************************************************
      *
-     * 
-     * 
+     *
+     *
      ******************************************************************************************************************/
     @Nonnull
-    private byte[] bytesFrom (final @Nonnull HttpResponse response) 
+    private byte[] bytesFrom (final @Nonnull HttpResponse response)
       throws IOException
       {
         final ByteArrayOutputStream baos = new ByteArrayOutputStream();
-      
+
         if (response.getEntity() != null)
           {
             response.getEntity().writeTo(baos);
           }
-        
-        return baos.toByteArray(); 
+
+        return baos.toByteArray();
       }
   }

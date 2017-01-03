@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
+ * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -50,6 +50,6 @@ public class BlueMarine2ApplicationPresentationAssembler
     public void assemble (final @Nonnull JavaFXApplicationPresentationDelegate delegate)
       {
         flowController.setContentPane(delegate.getSpContent());
-        delegate.setBackspaceCallback(Optional.of(() -> flowController.tryToDismissCurrentPresentation()));
+        delegate.setBackspaceCallback(Optional.of(flowController::tryToDismissCurrentPresentation));
       }
   }

@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
+ * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -31,10 +31,10 @@ package it.tidalwave.bluemarine2.persistence;
 import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.nio.file.Path;
-import org.openrdf.repository.Repository;
-import org.openrdf.repository.RepositoryConnection;
-import org.openrdf.repository.RepositoryException;
-import org.openrdf.rio.RDFHandlerException;
+import org.eclipse.rdf4j.repository.Repository;
+import org.eclipse.rdf4j.repository.RepositoryConnection;
+import org.eclipse.rdf4j.repository.RepositoryException;
+import org.eclipse.rdf4j.rio.RDFHandlerException;
 import lombok.NonNull;
 
 /***********************************************************************************************************************
@@ -63,6 +63,6 @@ public interface Persistence
     public <E extends Exception> void runInTransaction (@Nonnull TransactionalTask<E> task)
       throws E, RepositoryException;
     
-    public void dump (final @Nonnull Path path)
+    public void exportToFile (final @Nonnull Path path)
       throws RDFHandlerException, IOException, RepositoryException;
   }
