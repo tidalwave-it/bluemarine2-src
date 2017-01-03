@@ -73,10 +73,10 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>it.tidalwave.bluemarine2</groupId>
-                                    <artifactId>bluemarine2-headlessservice</artifactId>
+                                    <artifactId>bluemarine2-service</artifactId>
                                     <classifier>bin</classifier>
-                                    <version>${project.version}</version>
                                     <type>tar.gz</type>
+                                    <version>${project.version}</version>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
                                 </artifactItem>

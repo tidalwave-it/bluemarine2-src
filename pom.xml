@@ -179,6 +179,13 @@ Still at the early stage of development, it can be used with some hack to reprod
                 <artifactId>it-tidalwave-bluemarine2-initializer</artifactId>
                 <version>1.0-ALPHA-14-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>it.tidalwave.bluemarine2</groupId>
+                <artifactId>bluemarine2-service</artifactId>
+                <version>1.0-ALPHA-14-SNAPSHOT</version>
+                <classifier>bin</classifier>
+                <type>tar.gz</type>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
