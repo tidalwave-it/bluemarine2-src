@@ -19,11 +19,11 @@
     <description>blueMarine II - Installers (modules)</description>
 
     <modules>
-        <module>LinuxApplicationArmV6EmbeddedJRE</module>
-        <module>LinuxJavaFXApplication</module>
+        <module>Service</module> <!-- The order is important -->
         <module>LinuxServiceDEB</module>
+        <module>LinuxJavaFXApplication</module>
+        <module>LinuxApplicationArmV6EmbeddedJRE</module>
         <module>MacOSXJavaFXApplicationEmbeddedJRE</module>
-        <module>Service</module>
     </modules>
 
 </project>
