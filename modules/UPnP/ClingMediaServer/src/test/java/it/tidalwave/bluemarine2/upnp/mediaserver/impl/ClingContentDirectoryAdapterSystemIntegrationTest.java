@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
+ * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -50,7 +50,7 @@ import org.fourthline.cling.support.model.DIDLContent;
 import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
-import it.tidalwave.bluemarine2.persistence.PropertyNames;
+import it.tidalwave.bluemarine2.persistence.PersistencePropertyNames;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver.DefaultResourceServer;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -64,7 +64,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.bluemarine2.util.PrettyPrint.xmlPrettyPrinted;
-import static it.tidalwave.bluemarine2.model.PropertyNames.ROOT_PATH;
+import static it.tidalwave.bluemarine2.model.ModelPropertyNames.ROOT_PATH;
 
 /***********************************************************************************************************************
  *
@@ -138,7 +138,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
         final Map<Key<?>, Object> properties = new HashMap<>();
         final Path repositoryPath = Paths.get("target/test-classes/test-sets/model-iTunes-fg-20160504-1.n3");
         properties.put(ROOT_PATH, TestSetLocator.getMusicTestSetsPath().resolve("iTunes-fg-20160504-1"));
-        properties.put(PropertyNames.REPOSITORY_PATH, repositoryPath);
+        properties.put(PersistencePropertyNames.IMPORT_FILE, repositoryPath);
         resourceServer = context.getBean(DefaultResourceServer.class);
         context.getBean(MessageBus.class).publish(new PowerOnNotification(properties));
       }

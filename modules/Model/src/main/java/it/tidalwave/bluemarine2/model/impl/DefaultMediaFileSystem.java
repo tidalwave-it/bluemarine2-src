@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
+ * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -38,7 +38,7 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.PropertyNames;
+import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import lombok.Delegate;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -80,7 +80,7 @@ public class DefaultMediaFileSystem implements MediaFileSystem
       throws NotFoundException
       {
         log.info("onPowerOnNotification({})", notification);
-        rootPath = notification.getProperties().get(PropertyNames.ROOT_PATH).resolve("Music");
+        rootPath = notification.getProperties().get(ModelPropertyNames.ROOT_PATH).resolve("Music");
         log.info(">>>> rootPath: {}", rootPath);
         initialized.countDown();
       }

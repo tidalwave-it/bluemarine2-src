@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
+ * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -29,34 +29,41 @@
 package it.tidalwave.bluemarine2.persistence.impl;
 
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
+import java.util.Optional;
 import java.util.concurrent.CountDownLatch;
-import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import org.openrdf.model.Namespace;
-import org.openrdf.repository.Repository;
-import org.openrdf.repository.RepositoryConnection;
-import org.openrdf.repository.RepositoryException;
-import org.openrdf.repository.sail.SailRepository;
-import org.openrdf.sail.memory.MemoryStore;
-import org.openrdf.rio.RDFFormat;
-import org.openrdf.rio.RDFHandler;
-import org.openrdf.rio.RDFHandlerException;
-import org.openrdf.rio.RDFParseException;
-import org.openrdf.rio.n3.N3Writer;
-import it.tidalwave.util.NotFoundException;
+import java.nio.file.Paths;
+import org.apache.commons.io.FileUtils;
+import com.google.common.annotations.VisibleForTesting;
+import org.eclipse.rdf4j.repository.Repository;
+import org.eclipse.rdf4j.repository.RepositoryConnection;
+import org.eclipse.rdf4j.repository.RepositoryException;
+import org.eclipse.rdf4j.repository.sail.SailRepository;
+import org.eclipse.rdf4j.sail.Sail;
+import org.eclipse.rdf4j.sail.memory.MemoryStore;
+import org.eclipse.rdf4j.sail.nativerdf.NativeStore;
+import org.eclipse.rdf4j.rio.RDFFormat;
+import org.eclipse.rdf4j.rio.RDFHandler;
+import org.eclipse.rdf4j.rio.RDFHandlerException;
+import org.eclipse.rdf4j.rio.RDFParseException;
+import org.eclipse.rdf4j.rio.n3.N3Writer;
+import it.tidalwave.util.TypeSafeMap8;
+import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.util.PowerOffNotification;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
+import it.tidalwave.bluemarine2.util.PersistenceInitializedNotification;
 import it.tidalwave.bluemarine2.persistence.Persistence;
-import it.tidalwave.bluemarine2.persistence.PropertyNames;
-import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static it.tidalwave.bluemarine2.persistence.PersistencePropertyNames.*;
 
 /***********************************************************************************************************************
  *
@@ -67,9 +74,14 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 @SimpleMessageSubscriber @Slf4j
 public class DefaultPersistence implements Persistence
   {
+    @Inject
+    private MessageBus messageBus;
+
     private final CountDownLatch initialized = new CountDownLatch(1);
 
     private Repository repository;
+
+    @VisibleForTesting Sail sail;
 
     /*******************************************************************************************************************
      *
@@ -87,70 +99,106 @@ public class DefaultPersistence implements Persistence
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
+    @VisibleForTesting void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
       throws RepositoryException, IOException, RDFParseException
       {
         log.info("onPowerOnNotification({})", notification);
-        repository = new SailRepository(new MemoryStore());
+        final TypeSafeMap8 properties = notification.getProperties();
+
+        final Optional<Path> importFile = properties.getOptional(IMPORT_FILE);
+        final Optional<Path> storageFolder = properties.getOptional(STORAGE_FOLDER);
+
+        if (!storageFolder.isPresent())
+          {
+            log.warn("No storage path: working in memory");
+            sail = new MemoryStore();
+          }
+        else
+          {
+            log.info("Disk storage at {}", storageFolder);
+
+            if (importFile.isPresent() && Files.exists(importFile.get()))
+              {
+                log.warn("Scratching store ...");
+                FileUtils.deleteDirectory(storageFolder.get().toFile()); // FIXME: rename to backup folder with timestamp
+              }
+
+            sail = new NativeStore(storageFolder.get().toFile());
+          }
+
+        repository = new SailRepository(sail);
         repository.initialize();
 
-        try
+        if (importFile.isPresent() && Files.exists(importFile.get()))
           {
-            final Path repositoryPath = notification.getProperties().get(PropertyNames.REPOSITORY_PATH);
-            final RepositoryConnection connection = repository.getConnection();
+            importFromFile(importFile.get());
 
-            if (Files.exists(repositoryPath))
+            if (properties.getOptional(RENAME_IMPORT_FILE).orElse(false))
               {
-                try (final Reader reader = Files.newBufferedReader(repositoryPath, UTF_8))
-                  {
-                    log.info("Importing repository from {} ...", repositoryPath);
-                    connection.add(reader, repositoryPath.toUri().toString(), RDFFormat.N3);
-                    connection.commit();
-                    connection.close();
-                  }
+                Files.move(importFile.get(), Paths.get(importFile.get().toString() + "~"));
               }
-          }
-        catch (NotFoundException e)
-          {
-            log.warn("No repository path: operating in memory");
           }
 
         initialized.countDown();
+        messageBus.publish(new PersistenceInitializedNotification());
       }
 
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
+    @VisibleForTesting void onPowerOffNotification (final @ListensTo @Nonnull PowerOffNotification notification)
+      throws RepositoryException, IOException, RDFParseException
+      {
+        log.info("onPowerOffNotification({})", notification);
+
+        if (repository != null)
+          {
+            repository.shutDown();
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Exports the repository to the given file.
+     *
+     * @param   path                    where to export the data to
+     * @throws  RDFHandlerException
+     * @throws  IOException
+     * @throws  RepositoryException
+     *
+     ******************************************************************************************************************/
     @Override
-    public void dump (final @Nonnull Path path)
+    public void exportToFile (final @Nonnull Path path)
       throws RDFHandlerException, IOException, RepositoryException
       {
-        log.info("dump({})", path);
-        final File file = path.toFile();
-        file.getParentFile().mkdirs();
-        @Cleanup final PrintWriter pw = new PrintWriter(file, "UTF-8");
-        final RDFHandler writer = new SortingRDFHandler(new N3Writer(pw));
-        final RepositoryConnection connection = repository.getConnection();
+        log.info("exportToFile({})", path);
+        Files.createDirectories(path.getParent());
 
-        for (final Namespace namespace : connection.getNamespaces().asList())
+        try (final PrintWriter pw = new PrintWriter(Files.newBufferedWriter(path, UTF_8));
+             final RepositoryConnection connection = repository.getConnection())
           {
-            writer.handleNamespace(namespace.getPrefix(), namespace.getName());
+            final RDFHandler writer = new SortingRDFHandler(new N3Writer(pw));
+
+//            FIXME: use Iterations - and sort
+//            for (final Namespace namespace : connection.getNamespaces().asList())
+//              {
+//                writer.handleNamespace(namespace.getPrefix(), namespace.getName());
+//              }
+
+            writer.handleNamespace("bio",   "http://purl.org/vocab/bio/0.1/");
+            writer.handleNamespace("bmmo",  "http://bluemarine.tidalwave.it/2015/04/mo/");
+            writer.handleNamespace("dc",    "http://purl.org/dc/elements/1.1/");
+            writer.handleNamespace("foaf",  "http://xmlns.com/foaf/0.1/");
+            writer.handleNamespace("owl",   "http://www.w3.org/2002/07/owl#");
+            writer.handleNamespace("mo",    "http://purl.org/ontology/mo/");
+            writer.handleNamespace("rdfs",  "http://www.w3.org/2000/01/rdf-schema#");
+            writer.handleNamespace("rel",   "http://purl.org/vocab/relationship/");
+            writer.handleNamespace("vocab", "http://dbtune.org/musicbrainz/resource/vocab/");
+            writer.handleNamespace("xs",    "http://www.w3.org/2001/XMLSchema#");
+
+            connection.export(writer);
           }
-
-        writer.handleNamespace("bio",   "http://purl.org/vocab/bio/0.1/");
-        writer.handleNamespace("bmmo",  "http://bluemarine.tidalwave.it/2015/04/mo/");
-        writer.handleNamespace("dc",    "http://purl.org/dc/elements/1.1/");
-        writer.handleNamespace("foaf",  "http://xmlns.com/foaf/0.1/");
-        writer.handleNamespace("owl",   "http://www.w3.org/2002/07/owl#");
-        writer.handleNamespace("mo",    "http://purl.org/ontology/mo/");
-        writer.handleNamespace("rdfs",  "http://www.w3.org/2000/01/rdf-schema#");
-        writer.handleNamespace("rel",   "http://purl.org/vocab/relationship/");
-        writer.handleNamespace("vocab", "http://dbtune.org/musicbrainz/resource/vocab/");
-        writer.handleNamespace("xs",    "http://www.w3.org/2001/XMLSchema#");
-
-        connection.export(writer);
-        connection.close();
       }
 
     /*******************************************************************************************************************
@@ -164,24 +212,42 @@ public class DefaultPersistence implements Persistence
         log.info("runInTransaction({})", task);
         waitForPowerOn();
         final long baseTime = System.nanoTime();
-        final RepositoryConnection connection = repository.getConnection(); // TODO: pool?
 
-        try
+        try (final RepositoryConnection connection = repository.getConnection()) // TODO: pool?
           {
             task.run(connection);
             connection.commit();
-            connection.close();
           }
         catch (Exception e)
           {
             log.error("Transaction failed: {}", e.toString());
-            connection.rollback();
-            connection.close();
           }
 
         if (log.isDebugEnabled())
           {
             log.debug(">>>> done in {} ms", (System.nanoTime() - baseTime) * 1E-6);
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Imports the repository from the given file.
+     *
+     * @param   path                    where to import the data from
+     * @throws  RDFHandlerException
+     * @throws  IOException
+     * @throws  RepositoryException
+     *
+     ******************************************************************************************************************/
+    private void importFromFile (final @Nonnull Path path)
+      throws IOException, RepositoryException, RDFParseException
+      {
+        try (final RepositoryConnection connection = repository.getConnection();
+             final Reader reader = Files.newBufferedReader(path, UTF_8))
+          {
+            log.info("Importing repository from {} ...", path);
+            connection.add(reader, path.toUri().toString(), RDFFormat.N3);
+            connection.commit();
           }
       }
 

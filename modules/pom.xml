@@ -7,13 +7,13 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2</artifactId>
-        <version>1.0-ALPHA-14-SNAPSHOT</version>
+        <version>1.0-ALPHA-15-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>blueMarine2-modules</artifactId>
-    <version>1.0-ALPHA-14-SNAPSHOT</version>
+    <artifactId>bluemarine2-modules</artifactId>
+    <version>1.0-ALPHA-15-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine II (modules)</name>
     <description>blueMarine2 (modules)</description>
@@ -27,15 +27,15 @@
         <jetty.version>8.1.8.v20121106</jetty.version>
         <!--<jetty.version>9.3.8.v20160314</jetty.version>-->
         <mp3agic.version>0.8.3</mp3agic.version>
-        <sesame.version>4.1.2</sesame.version>
+        <rdf4j.version>2.1.4</rdf4j.version>
         <steelblue.version>1.0-ALPHA-15</steelblue.version>
         <thesefoolishthings.version>3.1-ALPHA-2</thesefoolishthings.version>
-        <uuid.version>2.1.5-201007271250</uuid.version>
 
         <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass>
         <tft.javafx.vmargs>${tft.mainClass}</tft.javafx.vmargs>
 
-        <tft.test.vmOptions>-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -Duser.timezone=Europe/Rome</tft.test.vmOptions>
+        <tft.test.vmOptions>-Xss512m -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -Duser.timezone=Europe/Rome</tft.test.vmOptions>
+        <tft.test.maxMemory>2048M</tft.test.maxMemory>
 
         <testSet.iTunes-fg-20160504-1.version>4</testSet.iTunes-fg-20160504-1.version>
         <testSet.iTunes-fg-20161210-1.version>2</testSet.iTunes-fg-20161210-1.version>
@@ -58,9 +58,9 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>org.openrdf.sesame</groupId>
-                <artifactId>sesame-bom</artifactId>
-                <version>${sesame.version}</version>
+                <groupId>org.eclipse.rdf4j</groupId>
+                <artifactId>rdf4j-bom</artifactId>
+                <version>${rdf4j.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -301,11 +301,8 @@
         <module>CECWrapper</module>
         <module>Commons</module>
         <module>Downloader</module>
-        <module>Installers/LinuxJavaFXApplication</module>
-        <module>Installers/LinuxApplicationArmV6EmbeddedJRE</module>
-        <module>Installers/Service</module>
-        <module>Installers/LinuxServiceDEB</module>
-        <module>Installers/MacOSXJavaFXApplicationEmbeddedJRE</module>
+        <module>HeadlessService</module>
+        <module>Initializer</module>
         <module>JavaFX</module>
         <module>JavaFXApplication</module>
         <module>MediaScanner</module>
@@ -318,7 +315,7 @@
         <module>MediaServer</module>
         <module>TestCommons</module>
         <module>Vocabulary</module>
-        <module>Service</module>
+        <module>Installers</module> <!-- Keep at last -->
     </modules>
 
 </project>
