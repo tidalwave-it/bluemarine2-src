@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
+ * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -57,11 +57,10 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.AudioFile;
-import it.tidalwave.bluemarine2.model.PropertyNames;
+import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static javax.servlet.http.HttpServletResponse.*;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedToNativeForm;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
 
 /***********************************************************************************************************************
@@ -290,7 +289,7 @@ public class DefaultResourceServer implements ResourceServer
       throws Exception
       {
         log.info("onPowerOnNotification({})", notification);
-        rootPath = notification.getProperties().get(PropertyNames.ROOT_PATH);
+        rootPath = notification.getProperties().get(ModelPropertyNames.ROOT_PATH);
         ipAddress = getNonLoopbackIPv4Address().getHostAddress();
         server = new Server(InetSocketAddress.createUnresolved(ipAddress, Integer.getInteger("port", 0)));
         server.setHandler(servlet.asHandler());

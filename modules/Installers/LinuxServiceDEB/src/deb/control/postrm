@@ -4,4 +4,4 @@ deluser [[linux-user]]
 
 echo "Files under /var/lib/bluemarine2/ not deleted."
 echo "Files under /var/cache/bluemarine2/ not deleted."
-echo "Log files under /var/log/ not deleted."
+echo "Log files under /var/lib/bluemarine2/logs/ not deleted."

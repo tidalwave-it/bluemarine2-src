@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
+ * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -32,29 +32,29 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.util.Map;
 import it.tidalwave.util.Key;
-import it.tidalwave.util.TypeSafeHashMap;
-import it.tidalwave.util.TypeSafeMap;
+import it.tidalwave.util.TypeSafeHashMap8;
+import it.tidalwave.util.TypeSafeMap8;
 import lombok.Getter;
 import lombok.ToString;
 
 /***********************************************************************************************************************
  *
  * A message that notifies that the system has been just powered on.
- * 
+ *
  * @stereotype  Message
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @Immutable @ToString
-public final class PowerOnNotification 
+public final class PowerOnNotification
   {
     @Getter @Nonnull
-    private final TypeSafeMap properties;
+    private final TypeSafeMap8 properties;
 
     public PowerOnNotification (final @Nonnull Map<Key<?>, Object> properties)
       {
-        this.properties = new TypeSafeHashMap(properties);
+        this.properties = new TypeSafeHashMap8(properties);
       }
   }
