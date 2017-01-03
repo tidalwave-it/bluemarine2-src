@@ -7,13 +7,13 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2</artifactId>
-        <version>1.0-ALPHA-14-SNAPSHOT</version>
+        <version>1.0-ALPHA-15-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>blueMarine2-modules</artifactId>
-    <version>1.0-ALPHA-14-SNAPSHOT</version>
+    <artifactId>bluemarine2-modules</artifactId>
+    <version>1.0-ALPHA-15-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine II (modules)</name>
     <description>blueMarine2 (modules)</description>
@@ -303,7 +303,6 @@
         <module>Downloader</module>
         <module>HeadlessService</module>
         <module>Initializer</module>
-        <module>Installers</module>
         <module>JavaFX</module>
         <module>JavaFXApplication</module>
         <module>MediaScanner</module>
@@ -316,6 +315,7 @@
         <module>MediaServer</module>
         <module>TestCommons</module>
         <module>Vocabulary</module>
+        <module>Installers</module> <!-- Keep at last -->
     </modules>
 
 </project>

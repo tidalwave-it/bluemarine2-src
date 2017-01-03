@@ -7,23 +7,23 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-modules</artifactId>
-        <version>1.0-ALPHA-14-SNAPSHOT</version>
+        <version>1.0-ALPHA-15-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>blueMarine2-installers</artifactId>
-    <version>1.0-ALPHA-14-SNAPSHOT</version>
+    <artifactId>bluemarine2-installers</artifactId>
+    <version>1.0-ALPHA-15-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine II - Installers (modules)</name>
     <description>blueMarine II - Installers (modules)</description>
 
     <modules>
-        <module>LinuxApplicationArmV6EmbeddedJRE</module>
-        <module>LinuxJavaFXApplication</module>
+        <module>Service</module> <!-- The order is important -->
         <module>LinuxServiceDEB</module>
+        <module>LinuxJavaFXApplication</module>
+        <module>LinuxApplicationArmV6EmbeddedJRE</module>
         <module>MacOSXJavaFXApplicationEmbeddedJRE</module>
-        <module>Service</module>
     </modules>
 
 </project>

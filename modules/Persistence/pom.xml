@@ -6,15 +6,15 @@
 
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
-        <artifactId>blueMarine2-modules</artifactId>
-        <version>1.0-ALPHA-14-SNAPSHOT</version>
+        <artifactId>bluemarine2-modules</artifactId>
+        <version>1.0-ALPHA-15-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-14-SNAPSHOT</version>
+    <version>1.0-ALPHA-15-SNAPSHOT</version>
     <name>blueMarine II - Persistence</name>
 
     <dependencies>
