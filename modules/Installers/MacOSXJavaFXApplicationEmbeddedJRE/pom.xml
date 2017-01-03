@@ -34,7 +34,7 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-modules</artifactId>
-        <version>1.0-ALPHA-14-SNAPSHOT</version>
+        <version>1.0-ALPHA-14</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
@@ -47,7 +47,7 @@
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-application-javafx-macosx-embedded-jre</artifactId>
-    <version>1.0-ALPHA-14-SNAPSHOT</version>
+    <version>1.0-ALPHA-14</version>
     <packaging>pom</packaging>
     <name>blueMarine II - Installer - JavaFX Application, Mac OS X, embedded JRE</name>
     <description>This module creates a Mac OS X application bundle with an embedded JRE.</description>

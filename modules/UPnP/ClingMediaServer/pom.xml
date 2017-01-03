@@ -7,13 +7,13 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>blueMarine2-upnp-modules</artifactId>
-        <version>1.0-ALPHA-14-SNAPSHOT</version>
+        <version>1.0-ALPHA-14</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-upnp-mediaserver</artifactId>
-    <version>1.0-ALPHA-14-SNAPSHOT</version>
+    <version>1.0-ALPHA-14</version>
     <packaging>jar</packaging>
     <name>blueMarine II - UPnP MediaServer</name>
     <description>blueMarine II - UPnP MediaServer</description>
