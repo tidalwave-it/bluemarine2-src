@@ -28,9 +28,11 @@
  */
 package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.Arrays;
+import java.util.function.Function;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -52,14 +54,19 @@ import it.tidalwave.util.Finder;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.Task;
+import it.tidalwave.util.spi.ReflectionUtils;
 import it.tidalwave.role.ContextManager;
 import it.tidalwave.bluemarine2.model.impl.catalog.factory.RepositoryEntityFactory;
-import lombok.AccessLevel;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
 import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.bluemarine2.model.impl.catalog.finder.Rdf4jUtilities.*;
+import java.util.ArrayList;
+import java.util.Optional;
+import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
@@ -74,8 +81,8 @@ import static it.tidalwave.bluemarine2.model.impl.catalog.finder.Rdf4jUtilities.
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable @RequiredArgsConstructor(access = AccessLevel.PROTECTED) @Slf4j
-public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
+@Configurable @Slf4j
+public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
               extends Finder8Support<ENTITY, FINDER>
   {
     private static final String REGEX_BINDING_TAG = "^@([A-Za-z0-9]*)@";
@@ -101,6 +108,60 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     @Inject
     private RepositoryEntityFactory entityFactory;
 
+    private final Class<ENTITY> entityClass;
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @RequiredArgsConstructor(staticName = "withSparql") @EqualsAndHashCode @ToString
+    protected static class QueryAndParameters
+      {
+        @Getter @Nonnull
+        private final String sparql;
+
+        @Nonnull
+        private final List<Object> parameters = new ArrayList<>();
+
+        @Nonnull
+        public QueryAndParameters withParameter (final @Nonnull String name, final @Nonnull Optional<Value> value)
+          {
+            return value.map(v -> withParameter(name, v)).orElse(this);
+          }
+
+        @Nonnull
+        public QueryAndParameters withParameter (final @Nonnull String name, final @Nonnull Value value)
+          {
+            parameters.addAll(Arrays.asList(name, value));
+            return this;
+          }
+
+        @Nonnull
+        public Object[] getParameters()
+          {
+            return parameters.toArray();
+          }
+
+//        @Nonnull
+//        private String getCountSparql()
+//          {
+//            return sparql.replace("SELECT *", "SELECT COUNT(*)");
+//          }
+
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    protected RepositoryFinderSupport (final @Nonnull Repository repository)
+      {
+        this.repository = repository;
+        this.entityClass = (Class<ENTITY>)ReflectionUtils.getTypeArguments(RepositoryFinderSupport.class, getClass()).get(0);
+      }
+
     /*******************************************************************************************************************
      *
      * Clone constructor.
@@ -112,28 +173,81 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
         super(other, override);
         final RepositoryFinderSupport<ENTITY, FINDER> source = getSource(RepositoryFinderSupport.class, other, override);
         this.repository = source.repository;
+        this.entityClass = source.entityClass;
      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    protected final List<? extends ENTITY> computeNeededResults()
+      {
+        return query(QueryAndParameters::getSparql,
+                     result -> createEntities(repository, entityClass, result),
+                     result -> String.format("%d entities", result.size()));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnegative
+    public final int count()
+      {
+        return query(QueryAndParameters::getSparql,
+                     result -> createEntities(repository, entityClass, result).size(),
+//        return query(QueryAndParameters::getCountSparql,
+//                     result -> Integer.parseInt(result.next().getValue("").stringValue()),
+                     result -> String.format("%d", result));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Prepares the SPARQL query and its parameters.
+     *
+     * @return      the SPARQL query and its parameters
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    protected abstract QueryAndParameters prepareQuery();
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private <E> E query (final @Nonnull Function<QueryAndParameters, String> sparqlProvider,
+                         final @Nonnull Function<TupleQueryResult, E> finalizer,
+                         final @Nonnull Function<E, String> resultToString)
+      {
+        log.info("query() - {}", entityClass);
+        final long baseTime = System.nanoTime();
+        final QueryAndParameters queryAndParameters = prepareQuery();
+        final E result = query(sparqlProvider.apply(queryAndParameters), finalizer, queryAndParameters.getParameters());
+        final long elapsedTime = System.nanoTime() - baseTime;
+        log.info(">>>> query returned {} in {} msec", resultToString.apply(result), elapsedTime / 1E6);
+        return result;
+      }
 
     /*******************************************************************************************************************
      *
      * Performs a query.
      *
-     * @param   <E>             the static type of the entity to query
-     * @param   entityClass     the dynamic type of the entity to query
-     * @param   originalSparql  the SPARQL of the query
+     * @param   sparql          the SPARQL of the query
+     * @param   finalizer       a function to transform the query raw result into the final result
      * @param   bindings        an optional set of bindings of the query ("name", value, "name", value ,,,)
      * @return                  the found entities
      *
      ******************************************************************************************************************/
     @Nonnull
-//    protected <E extends Entity> List<E> query (final @Nonnull Class<E> entityClass,
-    protected <E> List<E> query (final @Nonnull Class<E> entityClass,
-                                 final @Nonnull String originalSparql,
-                                 final @Nonnull Object ... bindings)
+    private <R> R query (final @Nonnull String originalSparql,
+                         final @Nonnull Function<TupleQueryResult, R> finalizer,
+                         final @Nonnull Object ... bindings)
       {
-        log.info("query({}, ...)", entityClass);
-
-        final long baseTime = System.nanoTime();
         final String sparql = PREFIXES + Stream.of(originalSparql.split("\n"))
                                                .filter(s -> matchesTag(s, bindings))
                                                .map(s -> s.replaceAll(REGEX_BINDING_TAG, ""))
@@ -151,10 +265,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
 
             try (final TupleQueryResult result = query.evaluate())
               {
-                final List<E> entities = createEntities(repository, entityClass, result);
-                final long elapsedTime = System.nanoTime() - baseTime;
-                log.info(">>>> query returned {} entities in {} msec", entities.size(), elapsedTime / 1E6);
-                return entities;
+                return finalizer.apply(result);
               }
           }
       }

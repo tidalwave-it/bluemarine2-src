@@ -29,18 +29,13 @@
 package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
-import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryRecord;
 import lombok.ToString;
-import static java.util.Arrays.*;
-import static java.util.Collections.*;
 
 /***********************************************************************************************************************
  *
@@ -79,14 +74,14 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
      * Clone constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryRecordFinder (final @Nonnull RepositoryRecordFinder other, final @Nonnull Object override) 
+    public RepositoryRecordFinder (final @Nonnull RepositoryRecordFinder other, final @Nonnull Object override)
       {
         super(other, override);
         final RepositoryRecordFinder source = getSource(RepositoryRecordFinder.class, other, override);
         this.makerId = source.makerId;
         this.trackId = source.trackId;
       }
-    
+
     /*******************************************************************************************************************
      *
      * Override constructor.
@@ -129,12 +124,10 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    protected List<? extends Record> computeNeededResults()
+    protected QueryAndParameters prepareQuery()
       {
-        final List<Object> parameters = new ArrayList<>();
-        parameters.addAll(makerId.map(id -> asList("artist", iriFor(id))).orElse(emptyList()));
-        parameters.addAll(trackId.map(id -> asList("track", iriFor(id))).orElse(emptyList()));
-
-        return query(RepositoryRecord.class, QUERY_RECORDS, parameters.toArray());
+        return QueryAndParameters.withSparql(QUERY_RECORDS)
+                                 .withParameter("artist", makerId.map(this::iriFor))
+                                 .withParameter("track", trackId.map(this::iriFor));
       }
   }

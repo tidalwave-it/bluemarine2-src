@@ -29,17 +29,12 @@
 package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
-import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMusicArtist;
 import lombok.ToString;
-import static java.util.Arrays.*;
-import static java.util.Collections.*;
 
 /***********************************************************************************************************************
  *
@@ -48,15 +43,16 @@ import static java.util.Collections.*;
  *
  **********************************************************************************************************************/
 @ToString
-public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicArtist, MusicArtistFinder> 
-                                         implements MusicArtistFinder 
+public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicArtist, MusicArtistFinder>
+                                         implements MusicArtistFinder
   {
     private final static String QUERY_ARTISTS = readSparql(RepositoryMusicArtistFinder.class, "AllMusicArtists.sparql");
+
     private final static String QUERY_ARTISTS_MAKER_OF = readSparql(RepositoryMusicArtistFinder.class, "MakerArtists.sparql");
-    
+
     @Nonnull
     private final Optional<Id> madeEntityId;
-    
+
     /*******************************************************************************************************************
      *
      * Default constructor.
@@ -74,25 +70,25 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
      *
      ******************************************************************************************************************/
     public RepositoryMusicArtistFinder (final @Nonnull RepositoryMusicArtistFinder other,
-                                        final @Nonnull Object override) 
+                                        final @Nonnull Object override)
       {
         super(other, override);
         final RepositoryMusicArtistFinder source = getSource(RepositoryMusicArtistFinder.class, other, override);
         this.madeEntityId = source.madeEntityId;
       }
-    
+
     /*******************************************************************************************************************
      *
      * Override constructor.
      *
      ******************************************************************************************************************/
-    private RepositoryMusicArtistFinder (final @Nonnull Repository repository, 
-                                         final @Nonnull Optional<Id> madeEntityId) 
+    private RepositoryMusicArtistFinder (final @Nonnull Repository repository,
+                                         final @Nonnull Optional<Id> madeEntityId)
       {
         super(repository);
         this.madeEntityId = madeEntityId;
       }
-    
+
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
@@ -103,22 +99,18 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
       {
         return clone(new RepositoryMusicArtistFinder(repository, Optional.of(madeEntityId)));
       }
-    
+
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    protected List<? extends MusicArtist> computeNeededResults() 
+    protected QueryAndParameters prepareQuery()
       {
-        final List<Object> parameters = new ArrayList<>();
-        parameters.addAll(madeEntityId.map(id -> asList("madeEntity", iriFor(id))).orElse(emptyList()));
-        
         // Two different queries because for the 'makerOf' we want to include collborations, as it's important their label
         // In other words, 'Ella Fitzgerald and Duke Ellington' matters, rather than a list of the two individuals
-        return madeEntityId.isPresent()
-                ? query(RepositoryMusicArtist.class, QUERY_ARTISTS_MAKER_OF, parameters.toArray())
-                : query(RepositoryMusicArtist.class, QUERY_ARTISTS);
+        return QueryAndParameters.withSparql(madeEntityId.isPresent() ? QUERY_ARTISTS_MAKER_OF : QUERY_ARTISTS)
+                                 .withParameter("madeEntity", madeEntityId.map(this::iriFor));
       }
   }
