@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -41,14 +40,11 @@ import java.io.InputStream;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Value;
 import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
-import org.eclipse.rdf4j.query.MalformedQueryException;
-import org.eclipse.rdf4j.query.QueryEvaluationException;
 import org.eclipse.rdf4j.query.QueryLanguage;
 import org.eclipse.rdf4j.query.TupleQuery;
 import org.eclipse.rdf4j.query.TupleQueryResult;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
-import org.eclipse.rdf4j.repository.RepositoryException;
 import org.springframework.util.StreamUtils;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.util.Id;
@@ -63,6 +59,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static it.tidalwave.bluemarine2.model.impl.catalog.finder.Rdf4jUtilities.*;
 
 /***********************************************************************************************************************
  *
@@ -121,10 +118,10 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
      *
      * Performs a query.
      *
-     * @param <E>               the static type of the entity to query
-     * @param entityClass       the dynamic type of the entity to query
-     * @param originalSparql    the SPARQL of the query
-     * @param bindings          an optional set of bindings of the query ("name", value, "name", value ,,,)
+     * @param   <E>             the static type of the entity to query
+     * @param   entityClass     the dynamic type of the entity to query
+     * @param   originalSparql  the SPARQL of the query
+     * @param   bindings        an optional set of bindings of the query ("name", value, "name", value ,,,)
      * @return                  the found entities
      *
      ******************************************************************************************************************/
@@ -134,38 +131,31 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
                                  final @Nonnull String originalSparql,
                                  final @Nonnull Object ... bindings)
       {
-        try
+        log.info("query({}, ...)", entityClass);
+
+        final long baseTime = System.nanoTime();
+        final String sparql = PREFIXES + Stream.of(originalSparql.split("\n"))
+                                               .filter(s -> matchesTag(s, bindings))
+                                               .map(s -> s.replaceAll(REGEX_BINDING_TAG, ""))
+                                               .collect(joining("\n"));
+        log(originalSparql, sparql, bindings);
+
+        try (final RepositoryConnection connection = repository.getConnection())
           {
-            log.info("query({}, ...)", entityClass);
+            final TupleQuery query = connection.prepareTupleQuery(QueryLanguage.SPARQL, sparql);
 
-            final long baseTime = System.nanoTime();
-            final String sparql = PREFIXES + Stream.of(originalSparql.split("\n"))
-                                                   .filter(s -> matchesTag(s, bindings))
-                                                   .map(s -> s.replaceAll(REGEX_BINDING_TAG, ""))
-                                                   .collect(joining("\n"));
-            log(originalSparql, sparql, bindings);
-
-            try (final RepositoryConnection connection = repository.getConnection())
+            for (int i = 0; i < bindings.length; i += 2)
               {
-                final TupleQuery query = connection.prepareTupleQuery(QueryLanguage.SPARQL, sparql);
-
-                for (int i = 0; i < bindings.length; i += 2)
-                  {
-                    query.setBinding((String)bindings[i], (Value)bindings[i + 1]);
-                  }
-
-                try (final TupleQueryResult result = query.evaluate())
-                  {
-                    final List<E> entities = createEntities(repository, entityClass, result);
-                    final long elapsedTime = System.nanoTime() - baseTime;
-                    log.info(">>>> query returned {} entities in {} msec", entities.size(), elapsedTime / 1E6);
-                    return entities;
-                  }
+                query.setBinding((String)bindings[i], (Value)bindings[i + 1]);
               }
-          }
-        catch (RepositoryException | MalformedQueryException | QueryEvaluationException e)
-          {
-            throw new RuntimeException(e);
+
+            try (final TupleQueryResult result = query.evaluate())
+              {
+                final List<E> entities = createEntities(repository, entityClass, result);
+                final long elapsedTime = System.nanoTime() - baseTime;
+                log.info(">>>> query returned {} entities in {} msec", entities.size(), elapsedTime / 1E6);
+                return entities;
+              }
           }
       }
 
@@ -221,24 +211,21 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     private <E> List<E> createEntities (final @Nonnull Repository repository,
                                         final @Nonnull Class<E> entityClass,
                                         final @Nonnull TupleQueryResult queryResult)
-      throws QueryEvaluationException
       {
-        return contextManager.runWithContexts(getContexts(), new Task<List<E>, QueryEvaluationException>()
+        return contextManager.runWithContexts(getContexts(), new Task<List<E>, RuntimeException>()
           {
             @Override @Nonnull
             public List<E> run()
-              throws QueryEvaluationException
               {
-                final List<E> entities = new ArrayList<>();
-
-                while (queryResult.hasNext())
-                  {
-                    entities.add(entityFactory.createEntity(repository, entityClass, queryResult.next()));
-                  }
-
-                return entities;
+                return streamOf(queryResult)
+                            .map(bindingSet -> entityFactory.createEntity(repository, entityClass, bindingSet))
+                            .collect(toList());
               }
           });
+        // TODO: requires TheseFoolishThings 3.1-ALPHA-3
+//        return contextManager.runWithContexts(getContexts(), () -> streamOf(queryResult)
+//                .map(bindingSet -> entityFactory.createEntity(repository, entityClass, bindingSet))
+//                .collect(toList()));
       }
 
     /*******************************************************************************************************************
