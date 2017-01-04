@@ -32,8 +32,10 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.Arrays;
-import java.util.function.Function;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
@@ -60,13 +62,11 @@ import it.tidalwave.bluemarine2.model.impl.catalog.factory.RepositoryEntityFacto
 import lombok.extern.slf4j.Slf4j;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.bluemarine2.model.impl.catalog.finder.Rdf4jUtilities.*;
-import java.util.ArrayList;
-import java.util.Optional;
-import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
@@ -96,6 +96,8 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
                                          + "PREFIX mo:    <http://purl.org/ontology/mo/>\n"
                                          + "PREFIX vocab: <http://dbtune.org/musicbrainz/resource/vocab/>\n"
                                          + "PREFIX xs:    <http://www.w3.org/2001/XMLSchema#>\n";
+
+    private static final String QUERY_COUNT_HOLDER = "queryCount";
 
     private static final long serialVersionUID = 1896412264314804227L;
 
@@ -143,12 +145,13 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
             return parameters.toArray();
           }
 
-//        @Nonnull
-//        private String getCountSparql()
-//          {
-//            return sparql.replace("SELECT *", "SELECT COUNT(*)");
-//          }
-
+        @Nonnull
+        private String getCountSparql()
+          {
+            return String.format("SELECT (COUNT(*) AS ?%s)\n  {\n%s\n  }",
+                                 QUERY_COUNT_HOLDER,
+                                 sparql.replaceAll("ORDER BY[\\s\\S]*", ""));
+          }
       }
 
     /*******************************************************************************************************************
@@ -197,10 +200,8 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
     @Override @Nonnegative
     public final int count()
       {
-        return query(QueryAndParameters::getSparql,
-                     result -> createEntities(repository, entityClass, result).size(),
-//        return query(QueryAndParameters::getCountSparql,
-//                     result -> Integer.parseInt(result.next().getValue("").stringValue()),
+        return query(QueryAndParameters::getCountSparql,
+                     result -> Integer.parseInt(result.next().getValue(QUERY_COUNT_HOLDER).stringValue()),
                      result -> String.format("%d", result));
       }
 
