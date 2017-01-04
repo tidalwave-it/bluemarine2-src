@@ -64,7 +64,6 @@ import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMusicArtist;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryRecord;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryTrack;
 import lombok.AccessLevel;
-import lombok.Cleanup;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -129,25 +128,25 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
                                     .map(s -> s.replaceAll("^@[A-Za-z0-9]*@", ""))
                                     .collect(Collectors.joining("\n"));
 
-            final RepositoryConnection connection = repository.getConnection();
-            final TupleQuery query = connection.prepareTupleQuery(QueryLanguage.SPARQL, sparql);
-
-            for (int i = 0; i < bindings.length; i += 2)
+            try (final RepositoryConnection connection = repository.getConnection())
               {
-                query.setBinding((String)bindings[i], (Value)bindings[i + 1]);
+                final TupleQuery query = connection.prepareTupleQuery(QueryLanguage.SPARQL, sparql);
+
+                for (int i = 0; i < bindings.length; i += 2)
+                  {
+                    query.setBinding((String)bindings[i], (Value)bindings[i + 1]);
+                  }
+
+                log(originalSparql, sparql);
+                log.info(">>>> query parameters: {}", Arrays.toString(bindings));
+
+                try (final TupleQueryResult result = query.evaluate())
+                  {
+                    final List<E> entities = createEntities(repository, entityClass, result);
+                    log.info(">>>> query returning {} entities", entities.size());
+                    return entities;
+                  }
               }
-
-            log(originalSparql, sparql);
-            log.info(">>>> query parameters: {}", Arrays.toString(bindings));
-
-            final TupleQueryResult result = query.evaluate();
-            final List<E> entities = createEntities(repository, entityClass, result);
-            result.close(); // FIXME: finally
-            connection.close(); // FIXME: finally
-
-            log.info(">>>> query returning {} entities", entities.size());
-
-            return entities;
           }
         catch (RepositoryException | MalformedQueryException | QueryEvaluationException e)
           {
@@ -189,7 +188,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected Value uriFor (final @Nonnull Id id)
+    protected Value iriFor (final @Nonnull Id id)
       {
         return SimpleValueFactory.getInstance().createIRI(id.stringValue());
       }
@@ -279,9 +278,8 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     @Nonnull
     protected static String readSparql (final @Nonnull Class<?> clazz, final @Nonnull String name)
       {
-        try
+        try (final InputStream is = clazz.getResourceAsStream(name))
           {
-            @Cleanup InputStream is = clazz.getResourceAsStream(name);
             return StreamUtils.copyToString(is, Charset.forName("UTF-8"));
           }
         catch (IOException e)
