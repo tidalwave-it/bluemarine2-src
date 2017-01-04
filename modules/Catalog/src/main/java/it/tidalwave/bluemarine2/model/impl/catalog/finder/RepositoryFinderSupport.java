@@ -35,16 +35,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.Charset;
-import java.net.MalformedURLException;
-import java.net.URL;
+import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Value;
 import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
-import org.eclipse.rdf4j.query.BindingSet;
 import org.eclipse.rdf4j.query.MalformedQueryException;
 import org.eclipse.rdf4j.query.QueryEvaluationException;
 import org.eclipse.rdf4j.query.QueryLanguage;
@@ -56,19 +52,17 @@ import org.eclipse.rdf4j.repository.RepositoryException;
 import org.springframework.util.StreamUtils;
 import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.util.Id;
+import it.tidalwave.util.Finder;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.Task;
 import it.tidalwave.role.ContextManager;
-import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMusicArtist;
-import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryRecord;
-import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryTrack;
-import it.tidalwave.util.Finder;
-import static java.util.stream.Collectors.joining;
+import it.tidalwave.bluemarine2.model.impl.catalog.factory.RepositoryEntityFactory;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.eclipse.rdf4j.model.IRI;
+import static java.util.stream.Collectors.*;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /***********************************************************************************************************************
  *
@@ -87,16 +81,17 @@ import org.eclipse.rdf4j.model.IRI;
 public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
               extends Finder8Support<ENTITY, FINDER>
   {
-    private static final String REGEX_BINDING_TAG = "^@([A-Za-z0-9]*)@.*";
+    private static final String REGEX_BINDING_TAG = "^@([A-Za-z0-9]*)@";
 
-    protected static final String PREFIXES =
-                  "PREFIX foaf:  <http://xmlns.com/foaf/0.1/>\n"
-                + "PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
-                + "PREFIX rel:   <http://purl.org/vocab/relationship/>\n"
-                + "PREFIX bm:    <http://bluemarine.tidalwave.it/2015/04/mo/>\n"
-                + "PREFIX mo:    <http://purl.org/ontology/mo/>\n"
-                + "PREFIX vocab: <http://dbtune.org/musicbrainz/resource/vocab/>\n"
-                + "PREFIX xs:    <http://www.w3.org/2001/XMLSchema#>\n";
+    private static final String REGEX_BINDING_TAG_LINE = REGEX_BINDING_TAG + ".*$";
+
+    private static final String PREFIXES = "PREFIX foaf:  <http://xmlns.com/foaf/0.1/>\n"
+                                         + "PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
+                                         + "PREFIX rel:   <http://purl.org/vocab/relationship/>\n"
+                                         + "PREFIX bm:    <http://bluemarine.tidalwave.it/2015/04/mo/>\n"
+                                         + "PREFIX mo:    <http://purl.org/ontology/mo/>\n"
+                                         + "PREFIX vocab: <http://dbtune.org/musicbrainz/resource/vocab/>\n"
+                                         + "PREFIX xs:    <http://www.w3.org/2001/XMLSchema#>\n";
 
     private static final long serialVersionUID = 1896412264314804227L;
 
@@ -105,6 +100,9 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
 
     @Inject
     private ContextManager contextManager;
+
+    @Inject
+    private RepositoryEntityFactory entityFactory;
 
     /*******************************************************************************************************************
      *
@@ -117,7 +115,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
         super(other, override);
         final RepositoryFinderSupport<ENTITY, FINDER> source = getSource(RepositoryFinderSupport.class, other, override);
         this.repository = source.repository;
-      }
+     }
 
     /*******************************************************************************************************************
      *
@@ -140,11 +138,12 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
           {
             log.info("query({}, ...)", entityClass);
 
-            final String sparql = PREFIXES +
-                                  Stream.of(originalSparql.split("\n"))
-                                    .filter(s -> matches(s, bindings))
-                                    .map(s -> s.replaceAll("^@[A-Za-z0-9]*@", ""))
-                                    .collect(Collectors.joining("\n"));
+            final long baseTime = System.nanoTime();
+            final String sparql = PREFIXES + Stream.of(originalSparql.split("\n"))
+                                                   .filter(s -> matchesTag(s, bindings))
+                                                   .map(s -> s.replaceAll(REGEX_BINDING_TAG, ""))
+                                                   .collect(joining("\n"));
+            log(originalSparql, sparql, bindings);
 
             try (final RepositoryConnection connection = repository.getConnection())
               {
@@ -154,9 +153,6 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
                   {
                     query.setBinding((String)bindings[i], (Value)bindings[i + 1]);
                   }
-
-                log(originalSparql, sparql, bindings);
-                final long baseTime = System.nanoTime();
 
                 try (final TupleQueryResult result = query.evaluate())
                   {
@@ -201,46 +197,12 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
       {
         try (final InputStream is = clazz.getResourceAsStream(name))
           {
-            return StreamUtils.copyToString(is, Charset.forName("UTF-8"));
+            return StreamUtils.copyToString(is, UTF_8);
           }
         catch (IOException e)
           {
             throw new RuntimeException(e);
           }
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Returns {@code true} if the given string contains a binding tag (in the form {@code @TAG@}) that matches one
-     * of the bindings; or if there are no binding tags. This is used as a filter to eliminate portions of SPARQL
-     * queries that don't match any binding.
-     *
-     * @param   string      the string
-     * @param   bindings    the bindings
-     * @return              {@code true} if there is a match
-     *
-     ******************************************************************************************************************/
-    private static boolean matches (final @Nonnull String string, final @Nonnull Object[] bindings)
-      {
-        final Pattern p = Pattern.compile(REGEX_BINDING_TAG);
-        final Matcher matcher = p.matcher(string);
-
-        if (!matcher.matches())
-          {
-            return true;
-          }
-
-        final String tag = matcher.group(1);
-
-        for (int i = 0; i < bindings.length; i+= 2)
-          {
-            if (tag.equals(bindings[i]))
-              {
-                return true;
-              }
-          }
-
-        return false;
       }
 
     /*******************************************************************************************************************
@@ -271,7 +233,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
 
                 while (queryResult.hasNext())
                   {
-                    entities.add(createEntity(repository, entityClass, queryResult.next()));
+                    entities.add(entityFactory.createEntity(repository, entityClass, queryResult.next()));
                   }
 
                 return entities;
@@ -281,56 +243,36 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
 
     /*******************************************************************************************************************
      *
-     * Instantiates an entity populating attributes from the given {@link BindingSet}.
+     * Returns {@code true} if the given string contains a binding tag (in the form {@code @TAG@}) that matches one
+     * of the bindings; or if there are no binding tags. This is used as a filter to eliminate portions of SPARQL
+     * queries that don't match any binding.
      *
-     * @param   <E>             the static type of the entity to instantiate
-     * @param   repository      the repository we're querying
-     * @param   entityClass     the dynamic type of the entity to instantiate
-     * #param   bindingSet      the {@code BindingSet}
-     * @return                  the instantiated entity
+     * @param   string      the string
+     * @param   bindings    the bindings
+     * @return              {@code true} if there is a match
      *
      ******************************************************************************************************************/
-    @Nonnull
-    private static <E> E createEntity (final @Nonnull Repository repository,
-                                       final @Nonnull Class<E> entityClass,
-                                       final @Nonnull BindingSet bindingSet)
+    private static boolean matchesTag (final @Nonnull String string, final @Nonnull Object[] bindings)
       {
-//        log.trace("createEntity(.., {}, ..)", entityClass.getSimpleName());
-//        log.trace(">>>> bindingSet: {}", bindingSet.getBindingNames());
-        // FIXME: use a map
-        if (entityClass.equals(String.class))
+        final Pattern patternBindingTagLine = Pattern.compile(REGEX_BINDING_TAG_LINE);
+        final Matcher matcher = patternBindingTagLine.matcher(string);
+
+        if (!matcher.matches())
           {
-            return (E)bindingSet.iterator().next().getValue().stringValue();
+            return true;
           }
 
-        if (entityClass.equals(URL.class))
+        final String tag = matcher.group(1);
+
+        for (int i = 0; i < bindings.length; i+= 2)
           {
-            try
+            if (tag.equals(bindings[i]))
               {
-                return (E)new URL(bindingSet.iterator().next().getValue().stringValue());
-              }
-            catch (MalformedURLException e)
-              {
-                throw new RuntimeException(e);
+                return true;
               }
           }
 
-        if (entityClass.equals(RepositoryMusicArtist.class))
-          {
-            return (E)new RepositoryMusicArtist(repository, bindingSet);
-          }
-
-        if (entityClass.equals(RepositoryRecord.class))
-          {
-            return (E)new RepositoryRecord(repository, bindingSet);
-          }
-
-        if (entityClass.equals(RepositoryTrack.class))
-          {
-            return (E)new RepositoryTrack(repository, bindingSet);
-          }
-
-        throw new RuntimeException("Unknown entity: " + entityClass);
+        return false;
       }
 
     /*******************************************************************************************************************
