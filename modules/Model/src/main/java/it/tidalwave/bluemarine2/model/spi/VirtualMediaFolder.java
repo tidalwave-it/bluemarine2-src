@@ -75,20 +75,20 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
         this(Optional.of(parent), pathSegment, displayName, Optional.of(childrenFactory), Optional.empty());
       }
 
-    public VirtualMediaFolder (final @Nonnull MediaFolder parent,
-                               final @Nonnull Path pathSegment,
-                               final @Nonnull String displayName,
-                               final @Nonnull EntityFinderFactory finderFactory)
-      {
-        this(Optional.of(parent), pathSegment, displayName, Optional.empty(), Optional.of(finderFactory));
-      }
-
     public VirtualMediaFolder (final @Nonnull Optional<? extends MediaFolder> optionalParent,
                                final @Nonnull Path pathSegment,
                                final @Nonnull String displayName,
                                final @Nonnull EntityCollectionFactory childrenFactory)
       {
         this(optionalParent, pathSegment, displayName, Optional.of(childrenFactory), Optional.empty());
+      }
+
+    public VirtualMediaFolder (final @Nonnull MediaFolder parent,
+                               final @Nonnull Path pathSegment,
+                               final @Nonnull String displayName,
+                               final @Nonnull EntityFinderFactory finderFactory)
+      {
+        this(Optional.of(parent), pathSegment, displayName, Optional.empty(), Optional.of(finderFactory));
       }
 
     public VirtualMediaFolder (final @Nonnull Optional<? extends MediaFolder> optionalParent,
