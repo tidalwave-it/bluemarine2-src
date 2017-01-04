@@ -132,8 +132,8 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
     protected List<? extends Record> computeNeededResults()
       {
         final List<Object> parameters = new ArrayList<>();
-        parameters.addAll(makerId.map(id -> asList("artist", uriFor(id))).orElse(emptyList()));
-        parameters.addAll(trackId.map(id -> asList("track", uriFor(id))).orElse(emptyList()));
+        parameters.addAll(makerId.map(id -> asList("artist", iriFor(id))).orElse(emptyList()));
+        parameters.addAll(trackId.map(id -> asList("track", iriFor(id))).orElse(emptyList()));
 
         return query(RepositoryRecord.class, QUERY_RECORDS, parameters.toArray());
       }

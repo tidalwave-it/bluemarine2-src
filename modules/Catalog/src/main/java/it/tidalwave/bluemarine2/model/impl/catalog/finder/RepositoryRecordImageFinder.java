@@ -86,7 +86,7 @@ public class RepositoryRecordImageFinder extends RepositoryFinderSupport<URL, Fi
     protected List<? extends URL> computeNeededResults()
       {
         final List<Object> parameters = new ArrayList<>();
-        parameters.addAll(asList("record", uriFor(record.getId())));
+        parameters.addAll(asList("record", iriFor(record.getId())));
 
         return query(URL.class, QUERY_RECORD_IMAGE, parameters.toArray());
       }

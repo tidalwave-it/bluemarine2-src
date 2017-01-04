@@ -131,8 +131,8 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
     protected List<? extends Track> computeNeededResults() 
       {
         final List<Object> parameters = new ArrayList<>();
-        parameters.addAll(makerId.map(id -> asList("artist", uriFor(id))).orElse(emptyList()));
-        parameters.addAll(recordId.map(id -> asList("record", uriFor(id))).orElse(emptyList()));
+        parameters.addAll(makerId.map(id -> asList("artist", iriFor(id))).orElse(emptyList()));
+        parameters.addAll(recordId.map(id -> asList("record", iriFor(id))).orElse(emptyList()));
         
         return query(RepositoryTrack.class, QUERY_TRACKS, parameters.toArray());
       }
