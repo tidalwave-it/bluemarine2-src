@@ -1,20 +1,20 @@
-ALL TRACKS:
+ALL TRACKS (0):
 
 
 
 
-ALL RECORDS:
+ALL RECORDS (0):
 
 
 
 
-ALL ARTISTS:
+ALL ARTISTS (1):
 
 RepositoryMusicArtist(rdfs:label=Aaron Copland, uri=http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09)
 
-TRACKS OF RepositoryMusicArtist(rdfs:label=Aaron Copland, uri=http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09):
+TRACKS OF RepositoryMusicArtist(rdfs:label=Aaron Copland, uri=http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09) (0):
 
-RECORDS OF RepositoryMusicArtist(rdfs:label=Aaron Copland, uri=http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09):
+RECORDS OF RepositoryMusicArtist(rdfs:label=Aaron Copland, uri=http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09) (0):
 
 
 ORPHANED TRACKS:

@@ -26,50 +26,50 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.service.stoppingdown.impl;
+package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import javax.inject.Named;
-import java.util.Arrays;
-import java.util.Collection;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
+import javax.annotation.concurrent.Immutable;
+import org.fourthline.cling.support.model.DIDLObject;
+import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
-import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
+import it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
+ *
+ * @stereotype Role
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class StoppingDownMediaServerService implements MediaServerService
+@Slf4j
+@Immutable @DciRole(datumType = PathAwareEntityDecorator.class)
+public class PathAwareEntityDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<PathAwareEntityDecorator>
   {
-    private static final Path PATH_ROOT = Paths.get("stoppingdown.net");
-
-    private static final Path PATH_DIARY = Paths.get("diary");
-
-    private static final Path PATH_THEMES = Paths.get("themes");
-
-    @Inject @Named("diaryPhotoCollectionProvider")
-    private PhotoCollectionProvider diaryProvider;
-
-    @Inject @Named("themesPhotoCollectionProvider")
-    private PhotoCollectionProvider themesProvider;
-
-    @Override @Nonnull
-    public MediaFolder createRootFolder (final @Nonnull MediaFolder parent)
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    public PathAwareEntityDecoratorDIDLAdapter (final @Nonnull PathAwareEntityDecorator datum)
       {
-        return new VirtualMediaFolder(parent, PATH_ROOT, "Stopping Down", this::childrenFactory);
+        super(datum);
       }
 
-    @Nonnull
-    private Collection<PathAwareEntity> childrenFactory (final @Nonnull MediaFolder parent)
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public DIDLObject toObject()
+      throws Exception
       {
-        return Arrays.asList(new VirtualMediaFolder(parent, PATH_DIARY,  "Diary",  diaryProvider::findPhotos),
-                             new VirtualMediaFolder(parent, PATH_THEMES, "Themes", themesProvider::findPhotos));
+        log.debug("toObject() - {}", datum.getDelegate());
+        final DIDLObject item = asDIDLAdapter(datum.getDelegate()).toObject();
+        log.trace(">>>> item: {}", item);
+        datum.getParent().ifPresent(parent -> item.setParentID(((PathAwareEntity)parent).getPath().toString()));
+        item.setId(datum.getPath().toString());
+        return item;
       }
   }

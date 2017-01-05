@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.mediaserver.impl;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -39,11 +40,16 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.beans.factory.annotation.Autowired;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
-import it.tidalwave.bluemarine2.model.spi.MediaFolderAdapter;
+import it.tidalwave.bluemarine2.model.impl.PathAwareMediaFolderDecorator2;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder.EntityCollectionFactory;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem;
+import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserByArtistThenRecord;
+import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserByArtistThenTrack;
+import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserByRecordThenTrack;
+import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserByTrack;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
 import lombok.extern.slf4j.Slf4j;
@@ -98,7 +104,7 @@ public class DefaultContentDirectory implements ContentDirectory
       }
 
     @Nonnull
-    private Collection<EntityWithPath> childrenFactory (final @Nonnull MediaFolder parent)
+    private Collection<PathAwareEntity> childrenFactory (final @Nonnull MediaFolder parent)
       {
         return Arrays.asList(new VirtualMediaFolder(parent, PATH_MUSIC,    "Music",    this::musicFactory),
                              new VirtualMediaFolder(parent, PATH_PHOTOS,   "Photos",   EMPTY),
@@ -109,24 +115,35 @@ public class DefaultContentDirectory implements ContentDirectory
     @Nonnull
     private Collection<MediaFolder> musicFactory (final @Nonnull MediaFolder parent)
       {
+        // FIXME: they weren't sorted at the beginning, and the test expects this order
+        final List<EntityBrowser> sorted = new ArrayList<>();
+        sorted.add(entityBrowsers.stream().filter(b -> b instanceof RepositoryBrowserByArtistThenRecord).findFirst().get());
+        sorted.add(entityBrowsers.stream().filter(b -> b instanceof RepositoryBrowserByArtistThenTrack).findFirst().get());
+        sorted.add(entityBrowsers.stream().filter(b -> b instanceof RepositoryBrowserByRecordThenTrack).findFirst().get());
+        sorted.add(entityBrowsers.stream().filter(b -> b instanceof RepositoryBrowserByTrack).findFirst().get());
+        sorted.add(entityBrowsers.stream().filter(b -> b instanceof DefaultMediaFileSystem).findFirst().get());
         // TODO: filter by MIME type
-        return entityBrowsers.stream().map(browser -> createMediaFolder(parent, browser)).collect(toList());
+        return sorted.stream()
+//                             .sorted(Comparator.comparing(browser -> browser.as(Displayable).getDisplayName()))
+                             .map(browser -> createMediaFolder(parent, browser)).collect(toList());
       }
 
     @Nonnull
     private Collection<MediaFolder> servicesFactory (final @Nonnull MediaFolder parent)
       {
-        return services.stream().map(service -> service.createRootFolder(parent)).collect(toList());
+        return services.stream()
+//                       .filter(service -> !service.getClass().getSimpleName().equals("RemoteService")) // FIXME: what's this?
+                       .map(service -> service.createRootFolder(parent)).collect(toList());
       }
 
     @Nonnull
     private static MediaFolder createMediaFolder (final @Nonnull MediaFolder parent,
                                                   final @Nonnull EntityBrowser browser)
       {
-        final String default_ = browser.getClass().getSimpleName();
-        final String pathSegment = browser.asOptional(Identifiable).map(i -> i.getId().stringValue()).orElse(default_);
-        final String displayName = browser.asOptional(Displayable).map(d -> d.getDisplayName()).orElse(default_);
+        final String fallBack = browser.getClass().getSimpleName();
+        final String pathSegment = browser.asOptional(Identifiable).map(i -> i.getId().stringValue()).orElse(fallBack);
+        final String displayName = browser.asOptional(Displayable).map(d -> d.getDisplayName()).orElse(fallBack);
         log.trace("createMediaFolder({}, {}) - path: {} displayName: {}", parent, browser, pathSegment, displayName);
-        return new MediaFolderAdapter(browser.getRoot(), Paths.get(pathSegment), parent, displayName);
+        return new PathAwareMediaFolderDecorator2(browser.getRoot(), Paths.get(pathSegment), parent, displayName);
       }
   }

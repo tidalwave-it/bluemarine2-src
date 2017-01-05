@@ -42,7 +42,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class EntityWithPathTest
+public class PathAwareEntityTest
   {
     private static final Path PARENT_PATH = Paths.get("/parent");
     private static final Path CHILD_PATH = PARENT_PATH.resolve("child");
@@ -52,10 +52,10 @@ public class EntityWithPathTest
     public void relativePath_in_entity_with_parent_must_be_relativised()
       {
         // given
-        final EntityWithPath parentEntity = mock(EntityWithPath.class);
+        final PathAwareEntity parentEntity = mock(PathAwareEntity.class);
         when(parentEntity.getPath()).thenReturn(PARENT_PATH);
-        
-        final EntityWithPath underTest = mock(EntityWithPath.class);
+
+        final PathAwareEntity underTest = mock(PathAwareEntity.class);
         when(underTest.getParent()).thenReturn(Optional.of(parentEntity));
         when(underTest.getPath()).thenReturn(CHILD_PATH);
         when(underTest.getRelativePath()).thenCallRealMethod();
@@ -69,7 +69,7 @@ public class EntityWithPathTest
     public void relativePath_in_parentless_entity_must_be_the_same_as_Path()
       {
         // given
-        final EntityWithPath underTest = mock(EntityWithPath.class);
+        final PathAwareEntity underTest = mock(PathAwareEntity.class);
         when(underTest.getParent()).thenReturn(Optional.empty());
         when(underTest.getPath()).thenReturn(FULL_PATH);
         when(underTest.getRelativePath()).thenCallRealMethod();

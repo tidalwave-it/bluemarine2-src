@@ -26,60 +26,68 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.impl.catalog.factory;
 
 import javax.annotation.Nonnull;
-import java.util.Collection;
-import java.util.function.Function;
-import it.tidalwave.util.As;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.role.Composite;
-import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import it.tidalwave.bluemarine2.model.impl.PathAwareEntityFinderDelegate;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import javax.annotation.PostConstruct;
+import java.util.HashMap;
+import java.util.Map;
+import java.net.URL;
+import org.eclipse.rdf4j.query.BindingSet;
+import org.eclipse.rdf4j.repository.Repository;
+import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.Track;
+import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMusicArtist;
+import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryRecord;
+import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryTrack;
 
 /***********************************************************************************************************************
  *
- * Represents a folder on a filesystem that contains media items. It is associated with the {@link Composite<As>} role.
- * The filesystem can be a physical one (on the disk), or a virtual one (e.g. on a database); the folder concept is
- * flexible and represents any composite collection of items.
- *
- * @stereotype  Datum
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-public interface MediaFolder extends PathAwareEntity, SimpleComposite8<PathAwareEntity>
+public class DefaultRepositoryEntityFactory implements RepositoryEntityFactory
   {
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public EntityFinder findChildren();
+    private final Map<Class<?>, EntityFactoryFunction<?>> factoryMapByType = new HashMap<>();
 
     /*******************************************************************************************************************
      *
-     *
+     * {@inheritDoc}
      *
      ******************************************************************************************************************/
-    @Nonnull
-    public default EntityFinder finderOf (final @Nonnull Finder8<PathAwareEntity> delegate)
+    @Override @Nonnull
+    public <E> E createEntity (final @Nonnull Repository repository,
+                               final @Nonnull Class<E> entityClass,
+                               final @Nonnull BindingSet bindingSet)
       {
-        return new PathAwareEntityFinderDelegate(this, delegate);
+        return (E)factoryMapByType.getOrDefault(entityClass, notFound(entityClass)).apply(repository, bindingSet);
       }
 
     /*******************************************************************************************************************
      *
-     *
-     *
      ******************************************************************************************************************/
     @Nonnull
-    public default EntityFinder finderOf (final @Nonnull Function<MediaFolder, Collection<? extends PathAwareEntity>> function)
+    private <E> EntityFactoryFunction<E> notFound (final @Nonnull Class<E> entityClass)
       {
-        return new PathAwareEntityFinderDelegate(this, function);
+        return (repository, bindingSet) ->
+          {
+            throw new RuntimeException("Unknown type: " + entityClass + "; registered: " + factoryMapByType.keySet());
+          };
+      };
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @PostConstruct
+    private void initialize()
+      {
+        // FIXME: use discovery. Either plain class discovery, or Spring bean discovery
+        factoryMapByType.put(String.class, new StringFactory());
+        factoryMapByType.put(URL.class, new UrlFactory());
+        factoryMapByType.put(Record.class, RepositoryRecord::new);
+        factoryMapByType.put(MusicArtist.class, RepositoryMusicArtist::new);
+        factoryMapByType.put(Track.class, RepositoryTrack::new);
       }
   }

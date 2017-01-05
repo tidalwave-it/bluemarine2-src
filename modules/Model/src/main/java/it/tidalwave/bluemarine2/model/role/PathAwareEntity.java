@@ -26,60 +26,61 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.role;
 
 import javax.annotation.Nonnull;
-import java.util.Collection;
-import java.util.function.Function;
-import it.tidalwave.util.As;
-import it.tidalwave.util.Finder8;
-import it.tidalwave.role.Composite;
-import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import it.tidalwave.bluemarine2.model.impl.PathAwareEntityFinderDelegate;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import java.util.Optional;
+import java.nio.file.Path;
 
 /***********************************************************************************************************************
  *
- * Represents a folder on a filesystem that contains media items. It is associated with the {@link Composite<As>} role.
- * The filesystem can be a physical one (on the disk), or a virtual one (e.g. on a database); the folder concept is
- * flexible and represents any composite collection of items.
+ * A specialisation of {@link Entity} that has, or can have, a parent - hence, a {@link Path}.
  *
- * @stereotype  Datum
+ * @stereotype  Role
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaFolder extends PathAwareEntity, SimpleComposite8<PathAwareEntity>
+public interface PathAwareEntity extends Entity
   {
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public EntityFinder findChildren();
+    public static final Class<PathAwareEntity> PathAwareEntity = PathAwareEntity.class;
 
     /*******************************************************************************************************************
      *
+     * Returns the optional parent of this object.
      *
+     * @return  the parent
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default EntityFinder finderOf (final @Nonnull Finder8<PathAwareEntity> delegate)
-      {
-        return new PathAwareEntityFinderDelegate(this, delegate);
-      }
+    public Optional<PathAwareEntity> getParent();
 
     /*******************************************************************************************************************
      *
+     * Returns the {@link Path} associated with this entity.
      *
+     * @see #getRelativePath()
+     *
+     * @return  the path
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default EntityFinder finderOf (final @Nonnull Function<MediaFolder, Collection<? extends PathAwareEntity>> function)
+    public Path getPath();
+
+    /*******************************************************************************************************************
+     *
+     * Returns the relative path of this entity. For instances without a parent, this method returns the same value as
+     * {@link #getPath()}.
+     *
+     * @see #getPath()
+     *
+     * @return      the relative path
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public default Path getRelativePath()
       {
-        return new PathAwareEntityFinderDelegate(this, function);
+        return getParent().map(parent -> parent.getPath().relativize(getPath())).orElse(getPath());
       }
   }
