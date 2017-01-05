@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.model.spi;
 
 import javax.annotation.CheckForNull;
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import it.tidalwave.util.As;
@@ -52,8 +53,13 @@ import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
- * An {@link EntityFinder} implementation that retrieves children from a {@link Functio} user as a factory. The
- * argument of the function is the {@link MediaFolder} parent of the created children.
+ * A decorator of an {@link Finder} of {@link EntityWithPath} that creates a virtual tree of entities. Each entity is
+ * given a path, which starts with the path of a {@link MediaFolder} and continues with the id of the entity.
+ *
+ * This {@code Finder} can filter by path. If a filter path is provided, the filtering happens in memory: this means
+ * that if the delegate queries a repository, all the data are first retrieve in memory.
+ *
+ * FIXME: rename to PathAwareEntityFinder
  *
  * @stereotype  Finder
  *
@@ -64,13 +70,47 @@ import static lombok.AccessLevel.PRIVATE;
 @RequiredArgsConstructor(access = PRIVATE) @Slf4j
 public class FactoryBasedEntityFinder extends Finder8Support<EntityWithPath, EntityFinder> implements EntityFinder
   {
+    /*******************************************************************************************************************
+     *
+     * FIXME: get rid of this, and use a delegate Finder instead.
+     *
+     ******************************************************************************************************************/
+    public static interface EntityProvider<SOURCE, ENTITY extends EntityWithPath>
+      {
+        @Nonnull
+        public Collection<? extends ENTITY> entities (@Nonnull SOURCE source);
+
+        @Nonnegative
+        public int count (@Nonnull SOURCE source);
+
+        @Nonnull
+        public static <SOURCE, ENTITY extends EntityWithPath> EntityProvider<SOURCE, ENTITY>
+                        of (@Nonnull Function<SOURCE, Collection<? extends ENTITY>> function)
+          {
+            return new EntityProvider<SOURCE, ENTITY>()
+              {
+                @Override @Nonnull
+                public Collection<? extends ENTITY> entities (final @Nonnull SOURCE source)
+                  {
+                    return function.apply(source);
+                  }
+
+                @Override @Nonnegative
+                public int count (final @Nonnull SOURCE source)
+                  {
+                    return entities(source).size();
+                  }
+              };
+          }
+      }
+
     private static final long serialVersionUID = 4429676480224742813L;
 
     @Nonnull
     private final MediaFolder mediaFolder;
 
     @Nonnull
-    private final Function<MediaFolder, Collection<? extends EntityWithPath>> childrenFactory;
+    private final EntityProvider<MediaFolder, EntityWithPath> childrenFactory;
 
     @Nonnull
     private final Optional<Path> optionalPath;
@@ -81,9 +121,20 @@ public class FactoryBasedEntityFinder extends Finder8Support<EntityWithPath, Ent
      *
      ******************************************************************************************************************/
     public FactoryBasedEntityFinder (final @Nonnull MediaFolder mediaFolder,
-                                     final @Nonnull Function<MediaFolder, Collection<? extends EntityWithPath>> childrenFactory)
+                                     final @Nonnull EntityProvider<MediaFolder, EntityWithPath> childrenFactory)
       {
         this(mediaFolder, childrenFactory, Optional.empty());
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Default constructor.
+     *
+     ******************************************************************************************************************/
+    public FactoryBasedEntityFinder (final @Nonnull MediaFolder mediaFolder,
+                                     final @Nonnull Function<MediaFolder, Collection<? extends EntityWithPath>> function)
+      {
+        this(mediaFolder, EntityProvider.of(function), Optional.empty());
       }
 
     /*******************************************************************************************************************
@@ -120,7 +171,22 @@ public class FactoryBasedEntityFinder extends Finder8Support<EntityWithPath, Ent
     protected List<? extends EntityWithPath> computeResults()
       {
         return new CopyOnWriteArrayList<>(optionalPath.map(this::filteredByPath)
-                                                      .orElse(childrenFactory.apply(mediaFolder)));
+                                                      .orElse(childrenFactory.entities(mediaFolder)));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnegative
+    public int count()
+      {
+//        return optionalPath.map(path -> filteredByPath(path).size())
+//                           .orElse(childrenFactory.count(mediaFolder));
+        return optionalPath.map(this::filteredByPath)
+                           .map(Collection::size)
+                           .orElse(childrenFactory.count(mediaFolder));
       }
 
     /*******************************************************************************************************************
@@ -140,7 +206,7 @@ public class FactoryBasedEntityFinder extends Finder8Support<EntityWithPath, Ent
           {
             final Path relativePath = relative(path);
 
-            final List<EntityWithPath> filtered = childrenFactory.apply(mediaFolder).stream()
+            final List<EntityWithPath> filtered = childrenFactory.entities(mediaFolder).stream()
                     .filter(entity -> sameHead(relativePath, relative(entity.getPath())))
                     .collect(Collectors.toList());
 
@@ -164,6 +230,11 @@ public class FactoryBasedEntityFinder extends Finder8Support<EntityWithPath, Ent
           }
       }
 
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     @Nonnull // FIXME: this should be normally done by as()
     private SimpleComposite8 asSimpleComposite (final @Nonnull As object)
       {
