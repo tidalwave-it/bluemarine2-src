@@ -31,7 +31,6 @@ package it.tidalwave.bluemarine2.mediaserver.impl;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import java.util.Arrays;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -45,14 +44,10 @@ import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder.EntityCollectionFactory;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
-import it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserByArtistThenRecord;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserByArtistThenTrack;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserByRecordThenTrack;
-import it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserByTrack;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.Identifiable.Identifiable;
@@ -115,25 +110,16 @@ public class DefaultContentDirectory implements ContentDirectory
     @Nonnull
     private Collection<MediaFolder> musicFactory (final @Nonnull MediaFolder parent)
       {
-        // FIXME: they weren't sorted at the beginning, and the test expects this order
-        final List<EntityBrowser> sorted = new ArrayList<>();
-        sorted.add(entityBrowsers.stream().filter(b -> b instanceof RepositoryBrowserByArtistThenRecord).findFirst().get());
-        sorted.add(entityBrowsers.stream().filter(b -> b instanceof RepositoryBrowserByArtistThenTrack).findFirst().get());
-        sorted.add(entityBrowsers.stream().filter(b -> b instanceof RepositoryBrowserByRecordThenTrack).findFirst().get());
-        sorted.add(entityBrowsers.stream().filter(b -> b instanceof RepositoryBrowserByTrack).findFirst().get());
-        sorted.add(entityBrowsers.stream().filter(b -> b instanceof DefaultMediaFileSystem).findFirst().get());
         // TODO: filter by MIME type
-        return sorted.stream()
-//                             .sorted(Comparator.comparing(browser -> browser.as(Displayable).getDisplayName()))
+        return entityBrowsers.stream()
+                             .sorted(comparing(browser -> browser.as(Displayable).getDisplayName()))
                              .map(browser -> createMediaFolder(parent, browser)).collect(toList());
       }
 
     @Nonnull
     private Collection<MediaFolder> servicesFactory (final @Nonnull MediaFolder parent)
       {
-        return services.stream()
-//                       .filter(service -> !service.getClass().getSimpleName().equals("RemoteService")) // FIXME: what's this?
-                       .map(service -> service.createRootFolder(parent)).collect(toList());
+        return services.stream().map(service -> service.createRootFolder(parent)).collect(toList());
       }
 
     @Nonnull
