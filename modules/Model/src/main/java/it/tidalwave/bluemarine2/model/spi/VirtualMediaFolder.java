@@ -91,14 +91,6 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
         this(Optional.of(parent), pathSegment, displayName, Optional.empty(), Optional.of(finderFactory));
       }
 
-    public VirtualMediaFolder (final @Nonnull Optional<? extends MediaFolder> optionalParent,
-                               final @Nonnull Path pathSegment,
-                               final @Nonnull String displayName,
-                               final @Nonnull EntityFinderFactory finderFactory)
-      {
-        this(optionalParent, pathSegment, displayName, Optional.empty(), Optional.of(finderFactory));
-      }
-
     private VirtualMediaFolder (final @Nonnull Optional<? extends MediaFolder> optionalParent,
                                 final @Nonnull Path pathSegment,
                                 final @Nonnull String displayName,
@@ -110,7 +102,7 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
         this.path = absolutePath(optionalParent, pathSegment);
         this.optionalParent = optionalParent;
         this.finderFactory = finderFactory.orElse(
-                mediaFolder -> new FactoryBasedEntityFinder(mediaFolder, childrenSupplier.get()));
+                mediaFolder -> new PathAwareEntityFinderDelegate(mediaFolder, childrenSupplier.get()));
       }
 
     @Override @Nonnull

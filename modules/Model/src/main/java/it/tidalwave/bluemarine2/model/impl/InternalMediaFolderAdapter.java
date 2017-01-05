@@ -40,7 +40,7 @@ import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
-import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
+import it.tidalwave.bluemarine2.model.spi.PathAwareEntityFinderDelegate;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import lombok.RequiredArgsConstructor;
 
@@ -75,7 +75,7 @@ public class InternalMediaFolderAdapter extends EntityWithRoles implements Media
         catch (AsException e)
           {
             final VirtualMediaFolder.EntityCollectionFactory EMPTY = p -> Collections.emptyList();
-            final FactoryBasedEntityFinder EMPTY_FINDER = new FactoryBasedEntityFinder(this, EMPTY);
+            final PathAwareEntityFinderDelegate EMPTY_FINDER = new PathAwareEntityFinderDelegate(this, EMPTY);
             return EMPTY_FINDER;
           }
       }

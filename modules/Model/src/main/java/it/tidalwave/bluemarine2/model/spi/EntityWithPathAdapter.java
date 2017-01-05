@@ -41,6 +41,8 @@ import lombok.extern.slf4j.Slf4j;
  * An adapter for {@link Entity} to a {@link MediaFolder}. It can be used to adapt entities that naturally do
  * not belong to a hierarchy, such as an artist, to contexts where a hierarchy is needed (e.g. for browsing).
  *
+ * FIXME: merge to EntityAdapterSupport
+ * 
  * @stereotype Datum
  *
  * @author  Fabrizio Giudici

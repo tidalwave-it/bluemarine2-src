@@ -48,18 +48,20 @@ import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.EntityWithPathAdapter;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
-import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
+import it.tidalwave.bluemarine2.model.spi.PathAwareEntityFinderDelegate;
 import it.tidalwave.bluemarine2.model.spi.MediaFolderAdapter;
 import lombok.Getter;
 import static it.tidalwave.role.Identifiable.Identifiable;
 
 /***********************************************************************************************************************
  *
+ * FIXME: rename to PathAwareEntityAdapter
+ * 
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public abstract class EntityAdapterSupport<ENTITY extends Entity> extends EntityWithRoles
+public abstract class EntityAdapterSupport<ENTITY extends Entity> extends EntityWithRoles // TODO implements EntityWithPath
   {
     @Getter @Nonnull
     protected final Path path;
@@ -163,7 +165,7 @@ public abstract class EntityAdapterSupport<ENTITY extends Entity> extends Entity
     protected static EntityFinder wrappedFinder (final @Nonnull MediaFolder parent,
                                                  final @Nonnull Finder8<? extends Entity> finder)
       {
-        return new FactoryBasedEntityFinder(parent, (Finder8)new MappingFilter<>((Finder8)finder, child -> wrappedEntity(parent, (Entity)child)));
+        return new PathAwareEntityFinderDelegate(parent, (Finder8)new MappingFilter<>((Finder8)finder, child -> wrappedEntity(parent, (Entity)child)));
       }
 
     /*******************************************************************************************************************

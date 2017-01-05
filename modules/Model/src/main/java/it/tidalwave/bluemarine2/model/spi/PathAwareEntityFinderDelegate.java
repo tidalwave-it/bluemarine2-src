@@ -62,8 +62,6 @@ import static lombok.AccessLevel.PRIVATE;
  * This {@code Finder} can filter by path. If a filter path is provided, the filtering happens in memory: this means
  * that if the delegate queries a repository, all the data are first retrieve in memory.
  *
- * FIXME: rename to PathAwareEntityFinderDelegate
- *
  * @stereotype  Finder
  *
  * @author  Fabrizio Giudici
@@ -71,7 +69,7 @@ import static lombok.AccessLevel.PRIVATE;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor(access = PRIVATE) @Slf4j
-public class FactoryBasedEntityFinder extends Finder8Support<EntityWithPath, EntityFinder> implements EntityFinder
+public class PathAwareEntityFinderDelegate extends Finder8Support<EntityWithPath, EntityFinder> implements EntityFinder
   {
     private static final long serialVersionUID = 4429676480224742813L;
 
@@ -89,8 +87,8 @@ public class FactoryBasedEntityFinder extends Finder8Support<EntityWithPath, Ent
      * Default constructor.
      *
      ******************************************************************************************************************/
-    public FactoryBasedEntityFinder (final @Nonnull MediaFolder mediaFolder,
-                                     final @Nonnull Finder8<EntityWithPath> delegate)
+    public PathAwareEntityFinderDelegate (final @Nonnull MediaFolder mediaFolder,
+                                          final @Nonnull Finder8<EntityWithPath> delegate)
       {
         this(mediaFolder, delegate, Optional.empty());
       }
@@ -100,8 +98,8 @@ public class FactoryBasedEntityFinder extends Finder8Support<EntityWithPath, Ent
      * Default constructor.
      *
      ******************************************************************************************************************/
-    public FactoryBasedEntityFinder (final @Nonnull MediaFolder mediaFolder,
-                                     final @Nonnull Function<MediaFolder, Collection<? extends EntityWithPath>> function)
+    public PathAwareEntityFinderDelegate (final @Nonnull MediaFolder mediaFolder,
+                                          final @Nonnull Function<MediaFolder, Collection<? extends EntityWithPath>> function)
       {
         this(mediaFolder, new SupplierBasedFinder8<>(() -> function.apply(mediaFolder)), Optional.empty());
       }
@@ -111,10 +109,11 @@ public class FactoryBasedEntityFinder extends Finder8Support<EntityWithPath, Ent
      * Clone constructor.
      *
      ******************************************************************************************************************/
-    public FactoryBasedEntityFinder (final @Nonnull FactoryBasedEntityFinder other, final @Nonnull Object override)
+    public PathAwareEntityFinderDelegate (final @Nonnull PathAwareEntityFinderDelegate other,
+                                          final @Nonnull Object override)
       {
         super(other, override);
-        final FactoryBasedEntityFinder source = getSource(FactoryBasedEntityFinder.class, other, override);
+        final PathAwareEntityFinderDelegate source = getSource(PathAwareEntityFinderDelegate.class, other, override);
         this.mediaFolder = source.mediaFolder;
         this.delegate = source.delegate;
         this.optionalPath = source.optionalPath;
@@ -128,7 +127,7 @@ public class FactoryBasedEntityFinder extends Finder8Support<EntityWithPath, Ent
     @Override @Nonnull
     public EntityFinder withPath (final @Nonnull Path path)
       {
-        return clone(new FactoryBasedEntityFinder(mediaFolder, delegate, Optional.of(path)));
+        return clone(new PathAwareEntityFinderDelegate(mediaFolder, delegate, Optional.of(path)));
       }
 
     /*******************************************************************************************************************

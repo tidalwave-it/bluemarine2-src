@@ -38,6 +38,8 @@ import java.nio.file.Path;
  *
  * @stereotype  Role
  *
+ * FIXME: rename to PathAwareEntity
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *

@@ -50,12 +50,13 @@ import org.w3c.dom.NodeList;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
+import it.tidalwave.bluemarine2.model.spi.PathAwareEntityFinderDelegate;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
 import static javax.xml.xpath.XPathConstants.*;
+import static java.util.Comparator.comparing;
 
 /***********************************************************************************************************************
  *
@@ -130,7 +131,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     @Override @Nonnull
     public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
-        return new FactoryBasedEntityFinder(parent, p -> Arrays.asList(
+        return new PathAwareEntityFinderDelegate(parent, p -> Arrays.asList(
                 new VirtualMediaFolder(p, PATH_PLACES,   "Places",   this::placesFactory),
                 new VirtualMediaFolder(p, PATH_SUBJECTS, "Subjects", this::subjectsFactory)));
       }
