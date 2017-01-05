@@ -26,49 +26,24 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
+package it.tidalwave.bluemarine2.model.impl.catalog.factory;
 
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
-import org.fourthline.cling.support.model.DIDLObject;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.spi.EntityWithPathAdapter;
-import lombok.extern.slf4j.Slf4j;
+import org.eclipse.rdf4j.query.BindingSet;
+import org.eclipse.rdf4j.repository.Repository;
+import it.tidalwave.bluemarine2.model.impl.catalog.factory.RepositoryEntityFactory.EntityFactoryFunction;
 
 /***********************************************************************************************************************
  *
- * @stereotype Role
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id $
  *
  **********************************************************************************************************************/
-@Slf4j
-@Immutable @DciRole(datumType = EntityWithPathAdapter.class)
-public class EntityWithPathDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<EntityWithPathAdapter>
+public class StringFactory implements EntityFactoryFunction<String>
   {
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    public EntityWithPathDecoratorDIDLAdapter (final @Nonnull EntityWithPathAdapter datum)
-      {
-        super(datum);
-      }
-
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
     @Override @Nonnull
-    public DIDLObject toObject()
-      throws Exception
+    public String apply (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
-        log.debug("toObject() - {}", datum.getAdaptee());
-        final DIDLObject item = asDIDLAdapter(datum.getAdaptee()).toObject();
-        log.trace(">>>> item: {}", item);
-        datum.getParent().ifPresent(parent -> item.setParentID(parent.getPath().toString()));
-        item.setId(datum.getPath().toString());
-        return item;
+        return bindingSet.iterator().next().getValue().stringValue();
       }
   }

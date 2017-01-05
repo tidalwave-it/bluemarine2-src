@@ -40,7 +40,7 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 import it.tidalwave.util.Finder8Support;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -57,7 +57,7 @@ import static java.util.stream.Collectors.*;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor @Slf4j
-public class FileSystemMediaFolderFinder extends Finder8Support<EntityWithPath, EntityFinder> implements EntityFinder
+public class FileSystemMediaFolderFinder extends Finder8Support<PathAwareEntity, EntityFinder> implements EntityFinder
   {
     private static final long serialVersionUID = 7656309392185783930L;
 
@@ -91,7 +91,7 @@ public class FileSystemMediaFolderFinder extends Finder8Support<EntityWithPath, 
       }
 
     @Override @Nonnull
-    protected List<? extends EntityWithPath> computeResults()
+    protected List<? extends PathAwareEntity> computeResults()
       {
         return evaluateDirectoryStream(stream -> stream
                                                 .filter(fileFilter)

@@ -26,18 +26,19 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.spi;
+package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.nio.file.Path;
+import it.tidalwave.util.Finder8;
+import it.tidalwave.util.MappingFilter;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.role.Entity;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import it.tidalwave.bluemarine2.model.impl.EntityAdapterSupport;
-import it.tidalwave.bluemarine2.model.impl.InternalMediaFolderAdapter;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator.wrappedEntity;
 
 /***********************************************************************************************************************
  *
@@ -51,33 +52,33 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class MediaFolderAdapter extends EntityAdapterSupport<MediaFolder> implements MediaFolder
+public class PathAwareMediaFolderDecorator2 extends PathAwareEntityDecorator<MediaFolder> implements MediaFolder
   {
-    public MediaFolderAdapter (final @Nonnull Entity adaptee,
-                               final @Nonnull Path pathSegment,
-                               final @Nonnull EntityWithPath parent,
-                               final @Nonnull String displayName,
-                               final @Nonnull Object ... roles)
+    public PathAwareMediaFolderDecorator2 (final @Nonnull Entity delegate,
+                                 final @Nonnull Path pathSegment,
+                                 final @Nonnull PathAwareEntity parent,
+                                 final @Nonnull String displayName,
+                                 final @Nonnull Object ... roles)
       {
-        this((adaptee instanceof MediaFolder) ? (MediaFolder)adaptee
-                                               : new InternalMediaFolderAdapter(adaptee, parent, pathSegment),
+        this((delegate instanceof MediaFolder) ? (MediaFolder)delegate
+                                               : new PathAwareMediaFolderDecorator(delegate, parent, pathSegment),
              pathSegment, parent, displayName, roles);
       }
 
-    public MediaFolderAdapter (final @Nonnull MediaFolder adaptee,
-                               final @Nonnull Path pathSegment,
-                               final @Nonnull EntityWithPath parent,
-                               final @Nonnull String displayName,
-                               final @Nonnull Object ... roles)
+    public PathAwareMediaFolderDecorator2 (final @Nonnull MediaFolder delegate,
+                                 final @Nonnull Path pathSegment,
+                                 final @Nonnull PathAwareEntity parent,
+                                 final @Nonnull String displayName,
+                                 final @Nonnull Object ... roles)
       {
         super(parent.getPath().resolve(pathSegment),
-              adaptee, Optional.of(parent),
+              delegate, Optional.of(parent),
               computeRoles(parent, pathSegment, displayName, roles));
       }
 
-    public MediaFolderAdapter (final @Nonnull MediaFolder adaptee, final @Nonnull Path pathSegment)
+    public PathAwareMediaFolderDecorator2 (final @Nonnull MediaFolder delegate, final @Nonnull Path pathSegment)
       {
-        super(pathSegment, adaptee, Optional.empty());
+        super(pathSegment, delegate, Optional.empty());
       }
 
     /*******************************************************************************************************************
@@ -88,6 +89,24 @@ public class MediaFolderAdapter extends EntityAdapterSupport<MediaFolder> implem
     @Override @Nonnull
     public EntityFinder findChildren()
       {
-        return wrappedFinder(this, adaptee.findChildren());
+        return wrappedFinder(this, delegate.findChildren());
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Creates a wrapped finder, that wraps all entities in its result.
+     *
+     * @param   parent          the parent
+     * @param   finder          the source finder
+     * @return                  the wrapped finder
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static EntityFinder wrappedFinder (final @Nonnull MediaFolder parent,
+                                              final @Nonnull Finder8<? extends Entity> finder)
+      {
+        return new PathAwareEntityFinderDelegate(parent,
+                                                 (Finder8)new MappingFilter<>((Finder8)finder,
+                                                                              child -> wrappedEntity(parent, (Entity)child)));
       }
   }

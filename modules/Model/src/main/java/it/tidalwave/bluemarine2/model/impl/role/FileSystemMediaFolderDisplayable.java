@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import it.tidalwave.role.Displayable;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.impl.FileSystemMediaFolder;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
@@ -40,13 +41,13 @@ import lombok.RequiredArgsConstructor;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@DciRole(datumType = MediaFolder.class) @RequiredArgsConstructor
+@DciRole(datumType = FileSystemMediaFolder.class) @RequiredArgsConstructor
 public class FileSystemMediaFolderDisplayable implements Displayable
   {
     private final MediaFolder folder;
-    
+
     @Override @Nonnull
-    public String getDisplayName() 
+    public String getDisplayName()
       {
         return folder.getPath().toFile().getName();
       }

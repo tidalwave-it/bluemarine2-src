@@ -37,14 +37,14 @@ import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.Record;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
+import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 
 /***********************************************************************************************************************
  *
@@ -149,7 +149,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
       }
 
     @Override @Nonnull
-    public Optional<EntityWithPath> getParent() // FIXME: drop it
+    public Optional<PathAwareEntity> getParent() // FIXME: drop it
       {
         throw new UnsupportedOperationException();
       }

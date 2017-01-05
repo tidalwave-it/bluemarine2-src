@@ -26,50 +26,45 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.service.stoppingdown.impl;
+package it.tidalwave.bluemarine2.commons.test;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import javax.inject.Named;
-import java.util.Arrays;
-import java.util.Collection;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
-import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
+import java.util.concurrent.CountDownLatch;
+import it.tidalwave.messagebus.MessageBus;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: Class.java,v 631568052e17 2013/02/19 15:45:02 fabrizio $
  *
  **********************************************************************************************************************/
-public class StoppingDownMediaServerService implements MediaServerService
+@Slf4j
+public class EventBarrier<TOPIC> implements MessageBus.Listener<TOPIC>
   {
-    private static final Path PATH_ROOT = Paths.get("stoppingdown.net");
-
-    private static final Path PATH_DIARY = Paths.get("diary");
-
-    private static final Path PATH_THEMES = Paths.get("themes");
-
-    @Inject @Named("diaryPhotoCollectionProvider")
-    private PhotoCollectionProvider diaryProvider;
-
-    @Inject @Named("themesPhotoCollectionProvider")
-    private PhotoCollectionProvider themesProvider;
-
-    @Override @Nonnull
-    public MediaFolder createRootFolder (final @Nonnull MediaFolder parent)
-      {
-        return new VirtualMediaFolder(parent, PATH_ROOT, "Stopping Down", this::childrenFactory);
-      }
+    private final CountDownLatch latch = new CountDownLatch(1);
 
     @Nonnull
-    private Collection<PathAwareEntity> childrenFactory (final @Nonnull MediaFolder parent)
+    private final Class<TOPIC> eventType;
+
+    public EventBarrier (final @Nonnull Class<TOPIC> topic, final @Nonnull MessageBus messageBus)
       {
-        return Arrays.asList(new VirtualMediaFolder(parent, PATH_DIARY,  "Diary",  diaryProvider::findPhotos),
-                             new VirtualMediaFolder(parent, PATH_THEMES, "Themes", themesProvider::findPhotos));
+        this.eventType = topic;
+        messageBus.subscribe(topic, this);
+      }
+
+    @Override
+    public void notify (final @Nonnull TOPIC event)
+      {
+        latch.countDown();
+      }
+
+    public void await()
+      throws InterruptedException
+      {
+//        final Class<EVENT> eventType = ReflectionUtils.getTypeArguments(EventBarrier.class, getClass()).get(0);
+        log.info("Waiting for {}... ", eventType.getName());
+        latch.await();
+        log.info("Got {}", eventType.getName());
       }
   }

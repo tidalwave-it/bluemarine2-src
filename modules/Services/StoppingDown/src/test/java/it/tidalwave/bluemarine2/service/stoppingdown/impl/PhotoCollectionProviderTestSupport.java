@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.function.Function;
 import java.util.List;
 import java.util.stream.Stream;
 import java.io.IOException;
@@ -40,12 +41,14 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.util.Finder8;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.model.role.Entity;
 import org.testng.annotations.BeforeMethod;
-import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.mock;
+import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 
 /***********************************************************************************************************************
  *
@@ -75,6 +78,8 @@ public class PhotoCollectionProviderTestSupport
         mediaFolder = mock(MediaFolder.class);
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
         when(mediaFolder.toString()).thenReturn("MediaFolder(\"/folder\"))");
+        when(mediaFolder.finderOf(any(Finder8.class))).thenCallRealMethod();
+        when(mediaFolder.finderOf(any(Function.class))).thenCallRealMethod();
       }
 
     /*******************************************************************************************************************

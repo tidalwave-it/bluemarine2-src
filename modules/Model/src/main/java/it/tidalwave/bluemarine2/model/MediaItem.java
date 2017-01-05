@@ -37,8 +37,8 @@ import java.util.Map;
 import java.util.Set;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -55,7 +55,7 @@ import static lombok.AccessLevel.PRIVATE;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaItem extends EntityWithPath, AudioFileSupplier
+public interface MediaItem extends PathAwareEntity, AudioFileSupplier
   {
     /*******************************************************************************************************************
      *

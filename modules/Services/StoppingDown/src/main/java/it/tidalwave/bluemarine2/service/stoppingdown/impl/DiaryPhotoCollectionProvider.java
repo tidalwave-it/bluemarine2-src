@@ -47,9 +47,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder.EntityCollectionFactory;
 import lombok.extern.slf4j.Slf4j;
@@ -115,7 +114,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
     @Override
     @Nonnull
     public EntityFinder findPhotos(final @Nonnull MediaFolder parent) {
-        return new FactoryBasedEntityFinder(parent,
+        return parent.finderOf(
                 p1 -> IntStream.range(1999, 2016 + 1) // FIXME: use current year
                         .mapToObj(x -> x)
                         .map(year -> new VirtualMediaFolder(p1,
@@ -141,7 +140,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<EntityWithPath> entriesFactory (final @Nonnull MediaFolder parent, final int year)
+    private Collection<PathAwareEntity> entriesFactory (final @Nonnull MediaFolder parent, final int year)
       {
         return parseDiary(year).stream().map(gallery -> gallery.createFolder(parent, this::findPhotos))
                                         .collect(toList());

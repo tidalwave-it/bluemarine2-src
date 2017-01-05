@@ -35,8 +35,8 @@ import javax.annotation.concurrent.Immutable;
 import java.nio.file.Path;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.AllArgsConstructor;
 import lombok.Delegate;
 import lombok.Getter;
@@ -67,7 +67,7 @@ public class FileSystemMediaFolder implements MediaFolder
     private final AsSupport asSupport = new AsSupport(this);
 
     @Override @Nonnull
-    public Optional<EntityWithPath> getParent()
+    public Optional<PathAwareEntity> getParent()
       {
         return Optional.ofNullable(parent);
       }

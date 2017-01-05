@@ -26,45 +26,33 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.spi;
+package it.tidalwave.bluemarine2.model.impl.catalog.factory;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
-import java.nio.file.Path;
-import it.tidalwave.bluemarine2.model.role.Entity;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
-import it.tidalwave.bluemarine2.model.impl.EntityAdapterSupport;
-import lombok.extern.slf4j.Slf4j;
+import java.net.MalformedURLException;
+import java.net.URL;
+import org.eclipse.rdf4j.query.BindingSet;
+import org.eclipse.rdf4j.repository.Repository;
+import it.tidalwave.bluemarine2.model.impl.catalog.factory.RepositoryEntityFactory.EntityFactoryFunction;
 
 /***********************************************************************************************************************
  *
- * An adapter for {@link Entity} to a {@link MediaFolder}. It can be used to adapt entities that naturally do
- * not belong to a hierarchy, such as an artist, to contexts where a hierarchy is needed (e.g. for browsing).
- *
- * @stereotype Datum
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id $
  *
  **********************************************************************************************************************/
-@Slf4j
-public class EntityWithPathAdapter extends EntityAdapterSupport<Entity> implements EntityWithPath
+public class UrlFactory implements EntityFactoryFunction<URL>
   {
-    public EntityWithPathAdapter (final @Nonnull Entity adaptee,
-                                  final @Nonnull Path pathSegment)
+    @Override @Nonnull
+    public URL apply (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
-        super(pathSegment, adaptee, Optional.empty());
-      }
-
-    public EntityWithPathAdapter (final @Nonnull Entity adaptee,
-                                  final @Nonnull Path pathSegment,
-                                  final @Nonnull EntityWithPath parent,
-                                  final @Nonnull String displayName,
-                                  final @Nonnull Object ... roles)
-      {
-        super(parent.getPath().resolve(pathSegment),
-              adaptee,
-              Optional.of(parent),
-              computeRoles(parent, pathSegment, displayName, roles));
+        try
+          {
+            return new URL(bindingSet.iterator().next().getValue().stringValue());
+          }
+        catch (MalformedURLException e)
+          {
+            throw new RuntimeException(e);
+          }
       }
   }

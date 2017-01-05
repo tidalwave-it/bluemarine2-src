@@ -29,8 +29,6 @@
 package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
@@ -38,10 +36,7 @@ import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
-import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryTrack;
 import lombok.ToString;
-import static java.util.Arrays.*;
-import static java.util.Collections.*;
 
 /***********************************************************************************************************************
  *
@@ -54,7 +49,7 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
                                    implements TrackFinder
   {
     private final static String QUERY_TRACKS = readSparql(RepositoryMusicArtistFinder.class, "Tracks.sparql");
-    
+
     @Nonnull
     private final Optional<Id> makerId;
 
@@ -78,14 +73,14 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
      * Clone constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryTrackFinder (final @Nonnull RepositoryTrackFinder other, final @Nonnull Object override) 
+    public RepositoryTrackFinder (final @Nonnull RepositoryTrackFinder other, final @Nonnull Object override)
       {
         super(other, override);
         final RepositoryTrackFinder source = getSource(RepositoryTrackFinder.class, other, override);
         this.makerId = source.makerId;
         this.recordId = source.recordId;
       }
-    
+
     /*******************************************************************************************************************
      *
      * Override constructor.
@@ -106,34 +101,32 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public TrackFinder madeBy (final @Nonnull MusicArtist artist)  
+    public TrackFinder madeBy (final @Nonnull MusicArtist artist)
       {
         return clone(new RepositoryTrackFinder(repository, Optional.of(artist.getId()), recordId));
       }
-    
+
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public TrackFinder inRecord (final @Nonnull Record record)  
+    public TrackFinder inRecord (final @Nonnull Record record)
       {
         return clone(new RepositoryTrackFinder(repository, makerId, Optional.of(record.getId())));
       }
-    
+
     /*******************************************************************************************************************
      *
      * {@inheritDoc}
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    protected List<? extends Track> computeNeededResults() 
+    protected QueryAndParameters prepareQuery()
       {
-        final List<Object> parameters = new ArrayList<>();
-        parameters.addAll(makerId.map(id -> asList("artist", uriFor(id))).orElse(emptyList()));
-        parameters.addAll(recordId.map(id -> asList("record", uriFor(id))).orElse(emptyList()));
-        
-        return query(RepositoryTrack.class, QUERY_TRACKS, parameters.toArray());
+        return QueryAndParameters.withSparql(QUERY_TRACKS)
+                                 .withParameter("artist", makerId.map(this::iriFor))
+                                 .withParameter("record", recordId.map(this::iriFor));
       }
   }

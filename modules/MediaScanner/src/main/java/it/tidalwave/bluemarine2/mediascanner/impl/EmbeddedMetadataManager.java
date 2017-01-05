@@ -49,11 +49,11 @@ import org.eclipse.rdf4j.model.vocabulary.RDFS;
 import it.tidalwave.util.Key;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import it.tidalwave.bluemarine2.model.vocabulary.BM;
 import it.tidalwave.bluemarine2.model.vocabulary.MO;
 import it.tidalwave.bluemarine2.model.vocabulary.DbTune;
 import it.tidalwave.bluemarine2.model.vocabulary.Purl;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -240,7 +240,7 @@ public class EmbeddedMetadataManager
         final Optional<IRI> newGroupUri = (artists.size() <= 1) ? Optional.empty()
                 : shared.seenArtistUris.putIfAbsentAndGetNewKey(makerUris.get(0), Optional.empty()); // FIXME: onlt first one?
 
-        final EntityWithPath parent       = mediaItem.getParent().map(p -> p).orElseThrow(() -> new RuntimeException());
+        final PathAwareEntity parent       = mediaItem.getParent().map(p -> p).orElseThrow(() -> new RuntimeException());
         final String recordTitle          = metadata.get(Metadata.ALBUM)
                                                     .orElse(parent.getPath().toFile().getName());
 //                                                    .orElse(parent.as(Displayable).getDisplayName());
