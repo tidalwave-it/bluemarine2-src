@@ -26,74 +26,39 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.impl.catalog.finder;
+package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
-import org.eclipse.rdf4j.repository.Repository;
-import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.model.MusicArtist;
-import it.tidalwave.bluemarine2.model.Record;
-import it.tidalwave.bluemarine2.model.finder.RecordFinder;
-import lombok.ToString;
+import it.tidalwave.util.As;
+import it.tidalwave.util.AsException;
+import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
+import lombok.Getter;
 
 /***********************************************************************************************************************
  *
- * @stereotype      Finder
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-@ToString
-public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, RecordFinder>
-                                    implements RecordFinder
+public class EntityDecorator<ENTITY extends Entity> extends EntityWithRoles
   {
-    private final static String QUERY_RECORDS = readSparql(RepositoryMusicArtistFinder.class, "Records.sparql");
-
-    @Nonnull
-    private final Optional<Id> makerId;
-
-    @Nonnull
-    private final Optional<Id> trackId;
+    @Getter @Nonnull
+    protected final ENTITY delegate;
 
     /*******************************************************************************************************************
      *
-     * Default constructor.
+     *
      *
      ******************************************************************************************************************/
-    public RepositoryRecordFinder (final @Nonnull Repository repository)
+    public EntityDecorator (final @Nonnull ENTITY delegate, final @Nonnull Object... roles)
       {
-        super(repository);
-        this.makerId = Optional.empty();
-        this.trackId = Optional.empty();
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Clone constructor.
-     *
-     ******************************************************************************************************************/
-    public RepositoryRecordFinder (final @Nonnull RepositoryRecordFinder other, final @Nonnull Object override)
-      {
-        super(other, override);
-        final RepositoryRecordFinder source = getSource(RepositoryRecordFinder.class, other, override);
-        this.makerId = source.makerId;
-        this.trackId = source.trackId;
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Override constructor.
-     *
-     ******************************************************************************************************************/
-    private RepositoryRecordFinder (final @Nonnull Repository repository,
-                                    final @Nonnull Optional<Id> makerId,
-                                    final @Nonnull Optional<Id> trackId)
-      {
-        super(repository);
-        this.makerId = makerId;
-        this.trackId = trackId;
+        super(roles);
+        this.delegate = delegate;
       }
 
     /*******************************************************************************************************************
@@ -102,9 +67,9 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public RecordFinder madeBy (final @Nonnull MusicArtist artist)
+    public <T> T as (final @Nonnull Class<T> type)
       {
-        return clone(new RepositoryRecordFinder(repository, Optional.of(artist.getId()), trackId));
+        return as(type, As.Defaults.throwAsException(type));
       }
 
     /*******************************************************************************************************************
@@ -113,9 +78,11 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public RecordFinder recordOf (final @Nonnull Id trackId)
+    public <T> Collection<T> asMany (Class<T> type)
       {
-        return clone(new RepositoryRecordFinder(repository, makerId, Optional.of(trackId)));
+        final List<T> result = new ArrayList<>(); // FIXME
+        asOptional(type).ifPresent(e -> result.add(e));
+        return result;
       }
 
     /*******************************************************************************************************************
@@ -124,10 +91,33 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    protected QueryAndParameters prepareQuery()
+    public <T> Optional<T> asOptional (final @Nonnull Class<T> type)
       {
-        return QueryAndParameters.withSparql(QUERY_RECORDS)
-                                 .withParameter("artist", makerId.map(this::iriFor))
-                                 .withParameter("track", trackId.map(this::iriFor));
+        return Optional.ofNullable(as(type, throwable -> null));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public <T> T as (final @Nonnull Class<T> type, final @Nonnull NotFoundBehaviour<T> notFoundBehaviour)
+      {
+        try
+          {
+            return super.as(type);
+          }
+        catch (AsException e1)
+          {
+            try
+              {
+                return delegate.as(type);
+              }
+            catch (AsException e2)
+              {
+                return notFoundBehaviour.run(e2);
+              }
+          }
       }
   }

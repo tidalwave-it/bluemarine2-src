@@ -56,6 +56,9 @@ import static java.nio.file.Files.*;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
+import it.tidalwave.bluemarine2.model.finder.RecordFinder;
+import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 
 /***********************************************************************************************************************
  *
@@ -111,25 +114,30 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         createDirectories(PATH_TEST_RESULTS);
         final PrintWriter pw = new PrintWriter(dumpPath.toFile(), "UTF-8");
 
-        final List<? extends MusicArtist> artists = catalog.findArtists().stream().sorted(BY_RDFS_LABEL).collect(toList());
-        final List<? extends Record> records = catalog.findRecords().stream().sorted(BY_RDFS_LABEL).collect(toList());
+        final MusicArtistFinder allArtistsFinder = catalog.findArtists();
+        final RecordFinder allRecordsFinder = catalog.findRecords();
+        final TrackFinder allTracksFinder = catalog.findTracks();
 
-        pw.println("ALL TRACKS:\n");
-        final Map<String, RepositoryTrack> allTracks = catalog.findTracks().results().stream()
+        final List<? extends MusicArtist> artists = allArtistsFinder.stream().sorted(BY_RDFS_LABEL).collect(toList());
+        final List<? extends Record> records = allRecordsFinder.stream().sorted(BY_RDFS_LABEL).collect(toList());
+
+        pw.printf("ALL TRACKS (%d):\n\n", allTracksFinder.count());
+        final Map<String, RepositoryTrack> allTracks = allTracksFinder.results().stream()
                         .map(t -> (RepositoryTrack)t)
                         .collect(toMap(RepositoryTrack::toString, Function.identity()));
         allTracks.values().stream().sorted(BY_RDFS_LABEL).forEach(track -> pw.printf("  %s\n", track));
 
-        pw.println("\n\n\nALL RECORDS:\n");
+        pw.printf("\n\n\nALL RECORDS (%d):\n\n", allRecordsFinder.count());
         records.forEach(artist -> pw.printf("%s\n", artist));
 
-        pw.println("\n\n\nALL ARTISTS:\n");
+        pw.printf("\n\n\nALL ARTISTS (%d):\n\n", allArtistsFinder.count());
         artists.forEach(artist -> pw.printf("%s\n", artist));
 
         artists.forEach(artist ->
           {
-            pw.printf("\nTRACKS OF %s:\n", artist);
-            artist.findTracks().stream().forEach(track ->
+            final TrackFinder artistTracksFinder = artist.findTracks();
+            pw.printf("\nTRACKS OF %s (%d):\n", artist, artistTracksFinder.count());
+            artistTracksFinder.stream().forEach(track ->
               {
                 pw.printf("  %s\n", track);
                 allTracks.remove(track.toString());
@@ -138,8 +146,9 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         records.forEach(record ->
           {
-            pw.printf("\nTRACKS IN %s:\n", record);
-            record.findTracks().stream().forEach(track ->
+            final TrackFinder recordTrackFinder = record.findTracks();
+            pw.printf("\nTRACKS IN %s (%d):\n", record, recordTrackFinder.count());
+            recordTrackFinder.stream().forEach(track ->
               {
                 pw.printf("  %s\n", track);
 //                allTracks.remove(track.toString()); FIXME: check orphans of Record too
@@ -148,8 +157,9 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         artists.forEach(artist ->
           {
-            pw.printf("\nRECORDS OF %s:\n", artist);
-            artist.findRecords().stream().forEach(record ->
+            final RecordFinder artistRecordFinder = artist.findRecords();
+            pw.printf("\nRECORDS OF %s (%d):\n", artist, artistRecordFinder.count());
+            artistRecordFinder.stream().forEach(record ->
               {
                 pw.printf("  %s\n", record);
               });

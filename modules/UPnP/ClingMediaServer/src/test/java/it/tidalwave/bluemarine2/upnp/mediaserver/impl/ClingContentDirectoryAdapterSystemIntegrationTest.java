@@ -28,7 +28,6 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
-import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import javax.annotation.Nonnull;
 import java.util.Collection;
 import java.util.HashMap;
@@ -49,6 +48,7 @@ import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
 import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.util.PersistenceInitializedNotification;
 import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.persistence.PersistencePropertyNames;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver.DefaultResourceServer;
@@ -56,6 +56,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import it.tidalwave.bluemarine2.commons.test.EventBarrier;
+import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
@@ -90,6 +92,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
     private UpnpClient upnpClient;
 
     private DefaultResourceServer resourceServer;
+
+    private EventBarrier<PersistenceInitializedNotification> barrier;
 
     /*******************************************************************************************************************
      *
@@ -140,7 +144,10 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
         properties.put(ROOT_PATH, TestSetLocator.getMusicTestSetsPath().resolve("iTunes-fg-20160504-1"));
         properties.put(PersistencePropertyNames.IMPORT_FILE, repositoryPath);
         resourceServer = context.getBean(DefaultResourceServer.class);
-        context.getBean(MessageBus.class).publish(new PowerOnNotification(properties));
+        final MessageBus messageBus = context.getBean(MessageBus.class);
+        barrier = new EventBarrier<>(PersistenceInitializedNotification.class, messageBus);
+        messageBus.publish(new PowerOnNotification(properties));
+        barrier.await();
       }
 
     /*******************************************************************************************************************
@@ -178,7 +185,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
 
         for (final Params params : toParams(sequencePath))
           {
-            log.info(">>>> running {} ...", params);
+            log.info("============================================================================================");
+            log.info(">>>> sending {} ...", params);
             final CountDownLatch latch = new CountDownLatch(1);
 
             final Browse browse = new Browse(upnpClient.getService(),
@@ -188,6 +196,12 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                                              (long)params.getFirstResult(),
                                              (long)params.getMaxResult())
               {
+                @Override
+                public void updateStatus (final @Nonnull Browse.Status status)
+                  {
+                    log.info("updateStatus({})", status);
+                  }
+
                 @Override
                 public void received (final @Nonnull ActionInvocation actionInvocation, final @Nonnull DIDLContent didl)
                   {
@@ -213,12 +227,6 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                       }
 
                     latch.countDown();
-                  }
-
-                @Override
-                public void updateStatus (final @Nonnull Browse.Status status)
-                  {
-                    log.info("updateStatus({})", status);
                   }
 
                 @Override

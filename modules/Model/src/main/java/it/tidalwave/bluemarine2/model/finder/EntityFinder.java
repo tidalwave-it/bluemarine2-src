@@ -32,7 +32,7 @@ import javax.annotation.Nonnull;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.util.spi.ExtendedFinder8Support;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 
 /***********************************************************************************************************************
  *
@@ -42,7 +42,7 @@ import it.tidalwave.bluemarine2.model.role.EntityWithPath;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface EntityFinder extends ExtendedFinder8Support<EntityWithPath, EntityFinder>
+public interface EntityFinder extends ExtendedFinder8Support<PathAwareEntity, EntityFinder>
   {
     /*******************************************************************************************************************
      *

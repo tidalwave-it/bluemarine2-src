@@ -60,6 +60,8 @@
 
     <aop:aspectj-autoproxy/>
 
+    <bean class="it.tidalwave.bluemarine2.model.impl.catalog.factory.DefaultRepositoryEntityFactory" />
+
     <bean class="org.mockito.Mockito" factory-method="mock">
         <constructor-arg value="it.tidalwave.bluemarine2.model.MediaFileSystem" />
     </bean>
