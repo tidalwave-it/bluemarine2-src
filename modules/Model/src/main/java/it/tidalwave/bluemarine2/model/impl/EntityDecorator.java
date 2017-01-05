@@ -26,63 +26,98 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.role;
+package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
-import java.nio.file.Path;
+import it.tidalwave.util.As;
+import it.tidalwave.util.AsException;
+import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
+import lombok.Getter;
 
 /***********************************************************************************************************************
  *
- * A specialisation of {@link Entity} that has, or can have, a parent - hence, a {@link Path}.
- *
- * @stereotype  Role
- *
- * FIXME: rename to PathAwareEntity
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-public interface EntityWithPath extends Entity
+public class EntityDecorator<ENTITY extends Entity> extends EntityWithRoles
   {
-    public static final Class<EntityWithPath> EntityWithPath = EntityWithPath.class;
+    @Getter @Nonnull
+    protected final ENTITY delegate;
 
     /*******************************************************************************************************************
      *
-     * Returns the optional parent of this object.
      *
-     * @return  the parent
      *
      ******************************************************************************************************************/
-    @Nonnull
-    public Optional<EntityWithPath> getParent();
-
-    /*******************************************************************************************************************
-     *
-     * Returns the {@link Path} associated with this entity.
-     *
-     * @see #getRelativePath()
-     *
-     * @return  the path
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Path getPath();
-
-    /*******************************************************************************************************************
-     *
-     * Returns the relative path of this entity. For instances without a parent, this method returns the same value as
-     * {@link #getPath()}.
-     *
-     * @see #getPath()
-     *
-     * @return      the relative path
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public default Path getRelativePath()
+    public EntityDecorator (final @Nonnull ENTITY delegate, final @Nonnull Object... roles)
       {
-        return getParent().map(parent -> parent.getPath().relativize(getPath())).orElse(getPath());
+        super(roles);
+        this.delegate = delegate;
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public <T> T as (final @Nonnull Class<T> type)
+      {
+        return as(type, As.Defaults.throwAsException(type));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public <T> Collection<T> asMany (Class<T> type)
+      {
+        final List<T> result = new ArrayList<>(); // FIXME
+        asOptional(type).ifPresent(e -> result.add(e));
+        return result;
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public <T> Optional<T> asOptional (final @Nonnull Class<T> type)
+      {
+        return Optional.ofNullable(as(type, throwable -> null));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public <T> T as (final @Nonnull Class<T> type, final @Nonnull NotFoundBehaviour<T> notFoundBehaviour)
+      {
+        try
+          {
+            return super.as(type);
+          }
+        catch (AsException e1)
+          {
+            try
+              {
+                return delegate.as(type);
+              }
+            catch (AsException e2)
+              {
+                return notFoundBehaviour.run(e2);
+              }
+          }
       }
   }

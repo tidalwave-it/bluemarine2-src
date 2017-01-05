@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.spi;
+package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnegative;
@@ -47,8 +47,8 @@ import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.SupplierBasedFinder8;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
@@ -56,7 +56,7 @@ import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
- * A decorator of an {@link Finder} of {@link EntityWithPath} that creates a virtual tree of entities. Each entity is
+ * A decorator of an {@link Finder} of {@link PathAwareEntity} that creates a virtual tree of entities. Each entity is
  * given a path, which starts with the path of a {@link MediaFolder} and continues with the id of the entity.
  *
  * This {@code Finder} can filter by path. If a filter path is provided, the filtering happens in memory: this means
@@ -69,7 +69,7 @@ import static lombok.AccessLevel.PRIVATE;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor(access = PRIVATE) @Slf4j
-public class PathAwareEntityFinderDelegate extends Finder8Support<EntityWithPath, EntityFinder> implements EntityFinder
+public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntity, EntityFinder> implements EntityFinder
   {
     private static final long serialVersionUID = 4429676480224742813L;
 
@@ -77,7 +77,7 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<EntityWithPath
     private final MediaFolder mediaFolder;
 
     @Nonnull
-    private final Finder8<EntityWithPath> delegate;
+    private final Finder8<PathAwareEntity> delegate;
 
     @Nonnull
     private final Optional<Path> optionalPath;
@@ -88,7 +88,7 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<EntityWithPath
      *
      ******************************************************************************************************************/
     public PathAwareEntityFinderDelegate (final @Nonnull MediaFolder mediaFolder,
-                                          final @Nonnull Finder8<EntityWithPath> delegate)
+                                          final @Nonnull Finder8<PathAwareEntity> delegate)
       {
         this(mediaFolder, delegate, Optional.empty());
       }
@@ -99,7 +99,7 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<EntityWithPath
      *
      ******************************************************************************************************************/
     public PathAwareEntityFinderDelegate (final @Nonnull MediaFolder mediaFolder,
-                                          final @Nonnull Function<MediaFolder, Collection<? extends EntityWithPath>> function)
+                                          final @Nonnull Function<MediaFolder, Collection<? extends PathAwareEntity>> function)
       {
         this(mediaFolder, new SupplierBasedFinder8<>(() -> function.apply(mediaFolder)), Optional.empty());
       }
@@ -136,7 +136,7 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<EntityWithPath
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    protected List<? extends EntityWithPath> computeResults()
+    protected List<? extends PathAwareEntity> computeResults()
       {
         return new CopyOnWriteArrayList<>(optionalPath.map(this::filteredByPath).orElse(delegate.results()));
       }
@@ -158,7 +158,7 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<EntityWithPath
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<? extends EntityWithPath> filteredByPath (final @Nonnull Path path)
+    private Collection<? extends PathAwareEntity> filteredByPath (final @Nonnull Path path)
       {
         if (mediaFolder.getPath().equals(path))
           {
@@ -169,7 +169,7 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<EntityWithPath
           {
             final Path relativePath = relative(path);
 
-            final List<EntityWithPath> filtered = delegate.results().stream()
+            final List<PathAwareEntity> filtered = delegate.results().stream()
                     .filter(entity -> sameHead(relativePath, relative(entity.getPath())))
                     .collect(Collectors.toList());
 
@@ -180,7 +180,7 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<EntityWithPath
             else
               {
                 assert filtered.size() == 1;
-                final EntityWithPath e = filtered.get(0);
+                final PathAwareEntity e = filtered.get(0);
                 return path.equals(e.getPath()) ? filtered
                                                 : ((EntityFinder)asSimpleComposite(e).findChildren())
                                                                                      .withPath(path)

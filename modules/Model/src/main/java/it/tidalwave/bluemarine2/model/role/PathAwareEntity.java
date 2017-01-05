@@ -26,49 +26,61 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
+package it.tidalwave.bluemarine2.model.role;
 
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
-import org.fourthline.cling.support.model.DIDLObject;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.spi.EntityWithPathAdapter;
-import lombok.extern.slf4j.Slf4j;
+import java.util.Optional;
+import java.nio.file.Path;
 
 /***********************************************************************************************************************
  *
- * @stereotype Role
+ * A specialisation of {@link Entity} that has, or can have, a parent - hence, a {@link Path}.
+ *
+ * @stereotype  Role
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-@Immutable @DciRole(datumType = EntityWithPathAdapter.class)
-public class EntityWithPathDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<EntityWithPathAdapter>
+public interface PathAwareEntity extends Entity
   {
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    public EntityWithPathDecoratorDIDLAdapter (final @Nonnull EntityWithPathAdapter datum)
-      {
-        super(datum);
-      }
+    public static final Class<PathAwareEntity> PathAwareEntity = PathAwareEntity.class;
 
     /*******************************************************************************************************************
      *
-     * {@inheritDoc}
+     * Returns the optional parent of this object.
+     *
+     * @return  the parent
      *
      ******************************************************************************************************************/
-    @Override @Nonnull
-    public DIDLObject toObject()
-      throws Exception
+    @Nonnull
+    public Optional<PathAwareEntity> getParent();
+
+    /*******************************************************************************************************************
+     *
+     * Returns the {@link Path} associated with this entity.
+     *
+     * @see #getRelativePath()
+     *
+     * @return  the path
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Path getPath();
+
+    /*******************************************************************************************************************
+     *
+     * Returns the relative path of this entity. For instances without a parent, this method returns the same value as
+     * {@link #getPath()}.
+     *
+     * @see #getPath()
+     *
+     * @return      the relative path
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public default Path getRelativePath()
       {
-        log.debug("toObject() - {}", datum.getAdaptee());
-        final DIDLObject item = asDIDLAdapter(datum.getAdaptee()).toObject();
-        log.trace(">>>> item: {}", item);
-        datum.getParent().ifPresent(parent -> item.setParentID(parent.getPath().toString()));
-        item.setId(datum.getPath().toString());
-        return item;
+        return getParent().map(parent -> parent.getPath().relativize(getPath())).orElse(getPath());
       }
   }

@@ -37,7 +37,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
 
 /***********************************************************************************************************************
@@ -67,7 +67,7 @@ public class StoppingDownMediaServerService implements MediaServerService
       }
 
     @Nonnull
-    private Collection<EntityWithPath> childrenFactory (final @Nonnull MediaFolder parent)
+    private Collection<PathAwareEntity> childrenFactory (final @Nonnull MediaFolder parent)
       {
         return Arrays.asList(new VirtualMediaFolder(parent, PATH_DIARY,  "Diary",  diaryProvider::findPhotos),
                              new VirtualMediaFolder(parent, PATH_THEMES, "Themes", themesProvider::findPhotos));

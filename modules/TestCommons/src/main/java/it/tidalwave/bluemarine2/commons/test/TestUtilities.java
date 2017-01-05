@@ -75,7 +75,13 @@ public class TestUtilities
     public static List<String> dump (final @Nonnull As8 entity)
       {
         final List<String> result = new ArrayList<>();
-        result.add("" + entity);
+        // Don't let the dump depent on implementation class names
+        result.add(("" + entity).replace("delegate=PathAwareMediaFolderDecorator(), ", "")
+                                .replace("delegate=PathAwareFolder(), ", "")
+                                .replace("PathAwareEntityDecorator", "Entity")
+                                .replace("PathAwareFolder", "Folder")
+                                .replace("PathAwareMediaFolderDecorator2", "Folder")
+                                .replace("PathAwareMediaFolderDecorator", "Folder"));
 
         final Optional<SimpleComposite8> asOptional = entity.asOptional(SimpleComposite8.class);
         asOptional.ifPresent(c -> c.findChildren().results().forEach(child -> result.addAll(dump((As8)child))));

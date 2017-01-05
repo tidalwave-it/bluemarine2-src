@@ -29,16 +29,20 @@
 package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
+import java.util.Collection;
+import java.util.function.Function;
 import it.tidalwave.util.As;
+import it.tidalwave.util.Finder8;
 import it.tidalwave.role.Composite;
 import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import it.tidalwave.bluemarine2.model.impl.PathAwareEntityFinderDelegate;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 
 /***********************************************************************************************************************
  *
  * Represents a folder on a filesystem that contains media items. It is associated with the {@link Composite<As>} role.
- * The filesystem can be a physycal one (on the disk), or a virtual one (e.g. on a database); the folder concept is
+ * The filesystem can be a physical one (on the disk), or a virtual one (e.g. on a database); the folder concept is
  * flexible and represents any composite collection of items.
  *
  * @stereotype  Datum
@@ -47,8 +51,35 @@ import it.tidalwave.bluemarine2.model.finder.EntityFinder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaFolder extends EntityWithPath, SimpleComposite8<EntityWithPath>
+public interface MediaFolder extends PathAwareEntity, SimpleComposite8<PathAwareEntity>
   {
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     @Override @Nonnull
     public EntityFinder findChildren();
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public default EntityFinder finderOf (final @Nonnull Finder8<PathAwareEntity> delegate)
+      {
+        return new PathAwareEntityFinderDelegate(this, delegate);
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public default EntityFinder finderOf (final @Nonnull Function<MediaFolder, Collection<? extends PathAwareEntity>> function)
+      {
+        return new PathAwareEntityFinderDelegate(this, function);
+      }
   }

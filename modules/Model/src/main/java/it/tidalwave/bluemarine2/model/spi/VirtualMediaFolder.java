@@ -37,8 +37,8 @@ import it.tidalwave.util.Id;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.Getter;
 
 /***********************************************************************************************************************
@@ -50,7 +50,7 @@ import lombok.Getter;
 public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
   {
     // These two interfaces are needed to avoid clashes with constructor overloading
-    public static interface EntityCollectionFactory extends Function<MediaFolder, Collection<? extends EntityWithPath>>
+    public static interface EntityCollectionFactory extends Function<MediaFolder, Collection<? extends PathAwareEntity>>
       {
       }
 
@@ -101,14 +101,13 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
               new DefaultDisplayable(displayName));
         this.path = absolutePath(optionalParent, pathSegment);
         this.optionalParent = optionalParent;
-        this.finderFactory = finderFactory.orElse(
-                mediaFolder -> new PathAwareEntityFinderDelegate(mediaFolder, childrenSupplier.get()));
+        this.finderFactory = finderFactory.orElse(mediaFolder -> mediaFolder.finderOf(childrenSupplier.get()));
       }
 
     @Override @Nonnull
-    public Optional<EntityWithPath> getParent()
+    public Optional<PathAwareEntity> getParent()
       {
-        return (Optional<EntityWithPath>)(Object)optionalParent;
+        return (Optional<PathAwareEntity>)(Object)optionalParent;
       }
 
     @Override @Nonnull

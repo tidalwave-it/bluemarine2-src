@@ -26,47 +26,50 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.spi;
+package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
-import java.nio.file.Path;
-import it.tidalwave.bluemarine2.model.role.Entity;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
-import it.tidalwave.bluemarine2.model.impl.EntityAdapterSupport;
+import javax.annotation.concurrent.Immutable;
+import org.fourthline.cling.support.model.DIDLObject;
+import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
- * An adapter for {@link Entity} to a {@link MediaFolder}. It can be used to adapt entities that naturally do
- * not belong to a hierarchy, such as an artist, to contexts where a hierarchy is needed (e.g. for browsing).
- *
- * FIXME: merge to EntityAdapterSupport
- * 
- * @stereotype Datum
+ * @stereotype Role
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @Slf4j
-public class EntityWithPathAdapter extends EntityAdapterSupport<Entity> implements EntityWithPath
+@Immutable @DciRole(datumType = PathAwareEntityDecorator.class)
+public class PathAwareEntityDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<PathAwareEntityDecorator>
   {
-    public EntityWithPathAdapter (final @Nonnull Entity adaptee,
-                                  final @Nonnull Path pathSegment)
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    public PathAwareEntityDecoratorDIDLAdapter (final @Nonnull PathAwareEntityDecorator datum)
       {
-        super(pathSegment, adaptee, Optional.empty());
+        super(datum);
       }
 
-    public EntityWithPathAdapter (final @Nonnull Entity adaptee,
-                                  final @Nonnull Path pathSegment,
-                                  final @Nonnull EntityWithPath parent,
-                                  final @Nonnull String displayName,
-                                  final @Nonnull Object ... roles)
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public DIDLObject toObject()
+      throws Exception
       {
-        super(parent.getPath().resolve(pathSegment),
-              adaptee,
-              Optional.of(parent),
-              computeRoles(parent, pathSegment, displayName, roles));
+        log.debug("toObject() - {}", datum.getDelegate());
+        final DIDLObject item = asDIDLAdapter(datum.getDelegate()).toObject();
+        log.trace(">>>> item: {}", item);
+        datum.getParent().ifPresent(parent -> item.setParentID(((PathAwareEntity)parent).getPath().toString()));
+        item.setId(datum.getPath().toString());
+        return item;
       }
   }

@@ -65,7 +65,7 @@ import static java.util.stream.Stream.*;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.role.ui.spi.PresentationModelCollectors.*;
-import static it.tidalwave.bluemarine2.model.role.EntityWithPath.EntityWithPath;
+import static it.tidalwave.bluemarine2.model.role.PathAwareEntity.PathAwareEntity;
 
 /***********************************************************************************************************************
  *
@@ -319,7 +319,7 @@ public class DefaultAudioExplorerPresentationControl implements AudioExplorerPre
     private String getCurrentPathLabel()
       {
         return concat(navigationStack.stream().map(i -> i.getFolder()), of(currentFolder))
-                .filter(i -> i.asOptional(EntityWithPath).map(p -> p.getParent().isPresent()).orElse(true))
+                .filter(i -> i.asOptional(PathAwareEntity).map(p -> p.getParent().isPresent()).orElse(true))
                 .filter(i -> i.asOptional(Displayable).map(d -> true).orElse(false))
                 .map(i -> i.asOptional(Displayable).map(o -> o.getDisplayName()).orElse("???"))
                 .collect(joining(" / "));

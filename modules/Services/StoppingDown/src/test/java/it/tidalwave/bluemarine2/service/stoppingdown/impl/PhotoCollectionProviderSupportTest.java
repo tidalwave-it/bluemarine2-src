@@ -29,8 +29,8 @@
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import java.util.Collection;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import org.testng.annotations.Test;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 
 /***********************************************************************************************************************
  *
@@ -47,7 +47,7 @@ public class PhotoCollectionProviderSupportTest extends PhotoCollectionProviderT
         // given
         final PhotoCollectionProviderSupport underTest = new PhotoCollectionProviderSupport(URL_MOCK_RESOURCE);
         // when
-        final Collection<EntityWithPath> photoItems =
+        final Collection<PathAwareEntity> photoItems =
                 underTest.findPhotos(mediaFolder, URL_MOCK_RESOURCE + "/themes/castles/images.xml");
         // then
         dumpAndAssertResults("photoItems.txt", photoItems);
