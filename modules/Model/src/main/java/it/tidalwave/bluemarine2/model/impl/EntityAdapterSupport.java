@@ -28,7 +28,6 @@
  */
 package it.tidalwave.bluemarine2.model.impl;
 
-import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,6 +38,7 @@ import java.nio.file.Path;
 import it.tidalwave.util.As;
 import it.tidalwave.util.AsException;
 import it.tidalwave.util.Finder8;
+import it.tidalwave.util.MappingFilter;
 import it.tidalwave.role.Displayable;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.role.spi.DefaultDisplayable;
@@ -49,10 +49,8 @@ import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.EntityWithPathAdapter;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
-import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder.EntityProvider;
 import it.tidalwave.bluemarine2.model.spi.MediaFolderAdapter;
 import lombok.Getter;
-import static java.util.stream.Collectors.toList;
 import static it.tidalwave.role.Identifiable.Identifiable;
 
 /***********************************************************************************************************************
@@ -165,21 +163,7 @@ public abstract class EntityAdapterSupport<ENTITY extends Entity> extends Entity
     protected static EntityFinder wrappedFinder (final @Nonnull MediaFolder parent,
                                                  final @Nonnull Finder8<? extends Entity> finder)
       {
-        return new FactoryBasedEntityFinder(parent, new EntityProvider<MediaFolder, EntityWithPath>()
-          {
-            @Override @Nonnull
-            public Collection<? extends EntityWithPath> entities (final @Nonnull MediaFolder mediaFolder)
-              {
-                 // FIXME: implement lazy mapping, on Finder
-                return finder.results().stream().map(child -> wrappedEntity(mediaFolder, child)).collect(toList());
-              }
-
-            @Override @Nonnegative
-            public int count (final @Nonnull MediaFolder mediaFolder)
-              {
-                return finder.count();
-              }
-          });
+        return new FactoryBasedEntityFinder(parent, (Finder8)new MappingFilter<>((Finder8)finder, child -> wrappedEntity(parent, (Entity)child)));
       }
 
     /*******************************************************************************************************************
