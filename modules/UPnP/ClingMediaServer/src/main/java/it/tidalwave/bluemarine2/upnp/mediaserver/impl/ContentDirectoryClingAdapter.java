@@ -40,8 +40,8 @@ import org.fourthline.cling.support.model.SortCriterion;
 import org.fourthline.cling.support.contentdirectory.AbstractContentDirectoryService;
 import org.fourthline.cling.support.contentdirectory.ContentDirectoryException;
 import org.fourthline.cling.support.contentdirectory.DIDLParser;
-import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.ContentHolder;
 import lombok.extern.slf4j.Slf4j;
 import lombok.EqualsAndHashCode;
@@ -175,13 +175,14 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
      ******************************************************************************************************************/
     private static void log (final @Nonnull String message, final @Nonnull BrowseResult browseResult)
       {
+        log.info("{} BrowseResult(..., {}, {}, {})",
+                message,
+                browseResult.getCountLong(),
+                browseResult.getTotalMatchesLong(),
+                browseResult.getContainerUpdateIDLong());
+
         if (log.isDebugEnabled())
           {
-            log.debug("{} BrowseResult(xml below, {}, {}, {})",
-                    message,
-                    browseResult.getCountLong(),
-                    browseResult.getTotalMatchesLong(),
-                    browseResult.getContainerUpdateIDLong());
             Stream.of(xmlPrettyPrinted(browseResult.getResult()).split("\n"))
                                                                 .forEach(s -> log.debug("{} {}", message, s));
           }

@@ -41,7 +41,7 @@ import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
@@ -64,7 +64,7 @@ import static it.tidalwave.role.Displayable.Displayable;
  *
  **********************************************************************************************************************/
 @Immutable
-public class FileSystemAudioFile implements AudioFile, EntityWithPath
+public class FileSystemAudioFile implements AudioFile, PathAwareEntity
   {
     /*******************************************************************************************************************
      *
@@ -147,7 +147,7 @@ public class FileSystemAudioFile implements AudioFile, EntityWithPath
     private final Path relativePath;
 
     @Nonnull
-    private final EntityWithPath parent;
+    private final PathAwareEntity parent;
 
     @CheckForNull
     private Metadata metadata;
@@ -156,7 +156,7 @@ public class FileSystemAudioFile implements AudioFile, EntityWithPath
     private final AsSupport asSupport = new AsSupport(this);
 
     public FileSystemAudioFile (final @Nonnull Path path,
-                                final @Nonnull EntityWithPath parent,
+                                final @Nonnull PathAwareEntity parent,
                                 final @Nonnull Path basePath)
       {
         this.path = path;
@@ -165,7 +165,7 @@ public class FileSystemAudioFile implements AudioFile, EntityWithPath
       }
 
     @Override @Nonnull
-    public Optional<EntityWithPath> getParent()
+    public Optional<PathAwareEntity> getParent()
       {
         return Optional.of(parent);
       }

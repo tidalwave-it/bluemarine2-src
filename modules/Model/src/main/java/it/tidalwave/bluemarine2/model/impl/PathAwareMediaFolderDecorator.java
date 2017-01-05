@@ -36,52 +36,55 @@ import it.tidalwave.util.AsException;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.role.Entity;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
-import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
-import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
+ *
+ * FIXME: why is this different than PathAwareMediaFolderDecorator2?
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-    // analogous to EntityWithPathDecorator, but implements MediaFolder
-@RequiredArgsConstructor
-public class InternalMediaFolderAdapter extends EntityWithRoles implements MediaFolder
+public class PathAwareMediaFolderDecorator extends EntityDecorator<Entity> implements MediaFolder
   {
     @Nonnull
-    private final Entity adaptee;
-
-    @Nonnull
-    private final EntityWithPath parent;
+    private final PathAwareEntity parent;
 
     @Nonnull
     private final Path pathSegment;
+
+    public PathAwareMediaFolderDecorator (final @Nonnull Entity delegate,
+                                          final @Nonnull PathAwareEntity parent,
+                                          final @Nonnull Path pathSegment)
+      {
+        super(delegate);
+        this.parent = parent;
+        this.pathSegment = pathSegment;
+      }
 
     @Override @Nonnull
     public EntityFinder findChildren()
       {
         try
           {
-            final SimpleComposite8<Entity> composite = adaptee.as(SimpleComposite8.class);
+            final SimpleComposite8<Entity> composite = delegate.as(SimpleComposite8.class);
             final Finder8<? extends Entity> finder = composite.findChildren();
-            return EntityAdapterSupport.wrappedFinder(this, finder);
+            return PathAwareMediaFolderDecorator2.wrappedFinder(this, finder);
           }
         catch (AsException e)
           {
             final VirtualMediaFolder.EntityCollectionFactory EMPTY = p -> Collections.emptyList();
-            final FactoryBasedEntityFinder EMPTY_FINDER = new FactoryBasedEntityFinder(this, EMPTY);
+            final PathAwareEntityFinderDelegate EMPTY_FINDER = new PathAwareEntityFinderDelegate(this, EMPTY);
             return EMPTY_FINDER;
           }
       }
 
     @Override @Nonnull
-    public Optional<EntityWithPath> getParent()
+    public Optional<PathAwareEntity> getParent()
       {
         return Optional.of(parent);
       }

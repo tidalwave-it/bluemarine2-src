@@ -48,9 +48,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Comparator.comparing;
@@ -130,7 +129,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
     @Override @Nonnull
     public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
       {
-        return new FactoryBasedEntityFinder(parent, p -> Arrays.asList(
+        return parent.finderOf(p -> Arrays.asList(
                 new VirtualMediaFolder(p, PATH_PLACES,   "Places",   this::placesFactory),
                 new VirtualMediaFolder(p, PATH_SUBJECTS, "Subjects", this::subjectsFactory)));
       }
@@ -151,7 +150,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<EntityWithPath> subjectsFactory (final @Nonnull MediaFolder parent)
+    private Collection<PathAwareEntity> subjectsFactory (final @Nonnull MediaFolder parent)
       {
         return parseThemes(XPATH_SUBJECTS_THUMBNAIL_EXPR).stream()
                                                          .map(gallery -> gallery.createFolder(parent, this::findPhotos))
@@ -162,7 +161,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<EntityWithPath> placesFactory (final @Nonnull MediaFolder parent)
+    private Collection<PathAwareEntity> placesFactory (final @Nonnull MediaFolder parent)
       {
         return parseThemes(XPATH_PLACES_THUMBNAIL_EXPR).stream()
                                                        .map(gallery -> gallery.createFolder(parent, this::findPhotos))

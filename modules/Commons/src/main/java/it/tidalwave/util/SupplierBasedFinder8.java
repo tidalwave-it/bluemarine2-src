@@ -26,50 +26,47 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.service.stoppingdown.impl;
+package it.tidalwave.util;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import javax.inject.Named;
-import java.util.Arrays;
+import javax.annotation.concurrent.Immutable;
 import java.util.Collection;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
-import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.function.Supplier;
+import it.tidalwave.util.spi.SimpleFinder8Support;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * A {@link Finder} which retrieve results from a {@link Supplier}.
+ *
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-public class StoppingDownMediaServerService implements MediaServerService
+@Immutable
+public class SupplierBasedFinder8<T> extends SimpleFinder8Support<T>
   {
-    private static final Path PATH_ROOT = Paths.get("stoppingdown.net");
-
-    private static final Path PATH_DIARY = Paths.get("diary");
-
-    private static final Path PATH_THEMES = Paths.get("themes");
-
-    @Inject @Named("diaryPhotoCollectionProvider")
-    private PhotoCollectionProvider diaryProvider;
-
-    @Inject @Named("themesPhotoCollectionProvider")
-    private PhotoCollectionProvider themesProvider;
-
-    @Override @Nonnull
-    public MediaFolder createRootFolder (final @Nonnull MediaFolder parent)
-      {
-        return new VirtualMediaFolder(parent, PATH_ROOT, "Stopping Down", this::childrenFactory);
-      }
+    private static final long serialVersionUID = 1344191036948400804L;
 
     @Nonnull
-    private Collection<PathAwareEntity> childrenFactory (final @Nonnull MediaFolder parent)
+    private final Supplier<Collection<? extends T>> supplier;
+
+    public SupplierBasedFinder8 (final @Nonnull Supplier<Collection<? extends T>> supplier)
       {
-        return Arrays.asList(new VirtualMediaFolder(parent, PATH_DIARY,  "Diary",  diaryProvider::findPhotos),
-                             new VirtualMediaFolder(parent, PATH_THEMES, "Themes", themesProvider::findPhotos));
+        this.supplier = supplier;
+      }
+
+    public SupplierBasedFinder8 (final @Nonnull SupplierBasedFinder8<T> other, @Nonnull Object override)
+      {
+        super(other, override);
+        final SupplierBasedFinder8<T> source = getSource(SupplierBasedFinder8.class, other, override);
+        this.supplier = source.supplier;
+      }
+
+    @Override @Nonnull
+    protected List<? extends T> computeResults() // FIXME: or computeNeededResults()?
+      {
+        return new CopyOnWriteArrayList<>(supplier.get());
       }
   }

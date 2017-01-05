@@ -47,9 +47,9 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import org.springframework.scheduling.annotation.Scheduled;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -79,7 +79,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
     /**
      * A local cache for finders. It's advisable, since clients will frequently retrieve a finder because of pagination.
      */
-    private final Map<String, Collection<EntityWithPath>> photoCollectionCache = new ConcurrentHashMap<>();
+    private final Map<String, Collection<PathAwareEntity>> photoCollectionCache = new ConcurrentHashMap<>();
 
     /*******************************************************************************************************************
      *
@@ -140,7 +140,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* VisibleForTesting */ Collection<EntityWithPath> findPhotos (final @Nonnull MediaFolder parent,
+    /* VisibleForTesting */ Collection<PathAwareEntity> findPhotos (final @Nonnull MediaFolder parent,
                                                                    final @Nonnull String galleryUrl)
       {
         log.debug("findPhotos({}, {}", parent, galleryUrl);
@@ -152,7 +152,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
                 final Document document = downloadXml(galleryUrl);
                 final NodeList nodes = (NodeList)XPATH_STILLIMAGE_EXPR.evaluate(document, XPathConstants.NODESET);
 
-                final Collection<EntityWithPath> photoItems = new ArrayList<>();
+                final Collection<PathAwareEntity> photoItems = new ArrayList<>();
 
                 for (int i = 0; i < nodes.getLength(); i++)
                   {
