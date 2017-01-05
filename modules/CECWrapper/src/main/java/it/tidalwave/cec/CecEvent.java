@@ -32,7 +32,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import it.tidalwave.util.NotFoundException;
 import it.tidalwave.cec.CecUserControlEvent.UserControlCode;
-import lombok.Delegate;
+import lombok.experimental.Delegate;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -41,19 +41,19 @@ import lombok.ToString;
 /***********************************************************************************************************************
  *
  * Abstract base class for all CEC events.
- * 
+ *
  * @see http://www.cec-o-matic.com/
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @Immutable @Getter @RequiredArgsConstructor @EqualsAndHashCode @ToString
-public abstract class CecEvent 
+public abstract class CecEvent
   {
     /*******************************************************************************************************************
      *
-     * Defines event types. 
+     * Defines event types.
      *
      ******************************************************************************************************************/
     @RequiredArgsConstructor @Getter
@@ -69,25 +69,25 @@ public abstract class CecEvent
               throws NotFoundException;
           }
 
-        private final int code;  
-        
+        private final int code;
+
         @Delegate @Nonnull
         private final CecEventFactory eventFactory;
-        
+
         @Nonnull
-        public static EventType forCode (final int code) 
+        public static EventType forCode (final int code)
           throws NotFoundException
           {
             for (final EventType eventType : values())
               {
                 if (eventType.getCode() == code)
                   {
-                    return eventType;  
+                    return eventType;
                   }
               }
-            
+
             throw new NotFoundException("CEC event type: " + Integer.toHexString(code));
-          } 
+          }
       }
 
     @Nonnull
