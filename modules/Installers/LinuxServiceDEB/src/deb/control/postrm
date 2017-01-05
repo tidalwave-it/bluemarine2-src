@@ -1,7 +1,7 @@
 #!/bin/sh
 
-deluser [[linux-user]]
-
-echo "Files under /var/lib/bluemarine2/ not deleted."
-echo "Files under /var/cache/bluemarine2/ not deleted."
-echo "Log files under /var/lib/bluemarine2/logs/ not deleted."
+if [ ! -d /opt/bluemarine2-service ]; then # fix for supporting upgrade from an older version
+    deluser [[linux-user]]
+    echo "Files under /var/lib/bluemarine2/ not deleted."
+    echo "Files under /var/cache/bluemarine2/ not deleted."
+    fi
