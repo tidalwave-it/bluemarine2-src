@@ -26,61 +26,42 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.role;
+package it.tidalwave.bluemarine2.model.impl.catalog.factory;
 
+import java.util.function.BiFunction;
 import javax.annotation.Nonnull;
-import java.util.Optional;
-import java.nio.file.Path;
+import org.eclipse.rdf4j.query.BindingSet;
+import org.eclipse.rdf4j.repository.Repository;
 
 /***********************************************************************************************************************
  *
- * A specialisation of {@link Entity} that has, or can have, a parent - hence, a {@link Path}.
+ * A factory for entities that populates their attributes out of a {@link BindingSet}.
  *
- * @stereotype  Role
+ * @stereotype  Factory
  *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id $
  *
  **********************************************************************************************************************/
-public interface EntityWithPath extends Entity
+public interface RepositoryEntityFactory
   {
-    public static final Class<EntityWithPath> EntityWithPath = EntityWithPath.class;
-
-    /*******************************************************************************************************************
-     *
-     * Returns the optional parent of this object.
-     *
-     * @return  the parent
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Optional<EntityWithPath> getParent();
-
-    /*******************************************************************************************************************
-     *
-     * Returns the {@link Path} associated with this entity.
-     *
-     * @see #getRelativePath()
-     *
-     * @return  the path
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Path getPath();
-
-    /*******************************************************************************************************************
-     *
-     * Returns the relative path of this entity. For instances without a parent, this method returns the same value as
-     * {@link #getPath()}.
-     *
-     * @see #getPath()
-     *
-     * @return      the relative path
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public default Path getRelativePath()
+    static interface EntityFactoryFunction<ENTITY> extends BiFunction<Repository, BindingSet, ENTITY>
       {
-        return getParent().map(parent -> parent.getPath().relativize(getPath())).orElse(getPath());
       }
+
+    /*******************************************************************************************************************
+     *
+     * Instantiates an entity populating attributes from the given {@link BindingSet}.
+     *
+     * @param   <E>             the static type of the entity to instantiate
+     * @param   repository      the repository we're querying
+     * @param   entityClass     the dynamic type of the entity to instantiate
+     * @param   bindingSet      the {@code BindingSet}
+     * @return                  the instantiated entity
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public <E> E createEntity (@Nonnull Repository repository,
+                               @Nonnull Class<E> entityClass,
+                               @Nonnull BindingSet bindingSet);
   }

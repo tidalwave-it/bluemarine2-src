@@ -26,50 +26,47 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.service.stoppingdown.impl;
+package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import javax.inject.Named;
-import java.util.Arrays;
-import java.util.Collection;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
-import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
+import java.util.Iterator;
+import java.util.stream.Stream;
+import org.eclipse.rdf4j.query.QueryResult;
+import static java.util.Spliterators.spliteratorUnknownSize;
+import static java.util.stream.StreamSupport.stream;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-public class StoppingDownMediaServerService implements MediaServerService
+public class Rdf4jUtilities
   {
-    private static final Path PATH_ROOT = Paths.get("stoppingdown.net");
-
-    private static final Path PATH_DIARY = Paths.get("diary");
-
-    private static final Path PATH_THEMES = Paths.get("themes");
-
-    @Inject @Named("diaryPhotoCollectionProvider")
-    private PhotoCollectionProvider diaryProvider;
-
-    @Inject @Named("themesPhotoCollectionProvider")
-    private PhotoCollectionProvider themesProvider;
-
-    @Override @Nonnull
-    public MediaFolder createRootFolder (final @Nonnull MediaFolder parent)
+    @Nonnull
+    public static <T> Stream<T> streamOf (final @Nonnull QueryResult<T> iteration)
       {
-        return new VirtualMediaFolder(parent, PATH_ROOT, "Stopping Down", this::childrenFactory);
+        return stream(spliteratorUnknownSize(iteratorOf(iteration), 0), false);
       }
 
     @Nonnull
-    private Collection<PathAwareEntity> childrenFactory (final @Nonnull MediaFolder parent)
+    private static <T> Iterator<T> iteratorOf (final @Nonnull QueryResult<T> iteration)
       {
-        return Arrays.asList(new VirtualMediaFolder(parent, PATH_DIARY,  "Diary",  diaryProvider::findPhotos),
-                             new VirtualMediaFolder(parent, PATH_THEMES, "Themes", themesProvider::findPhotos));
+        final Iterator<T> iterator = new Iterator<T>()
+          {
+            @Override
+            public boolean hasNext()
+              {
+                return iteration.hasNext();
+              }
+
+            @Override
+            public T next()
+              {
+                return iteration.next();
+              }
+          };
+
+        return iterator;
       }
   }

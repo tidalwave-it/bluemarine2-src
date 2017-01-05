@@ -31,88 +31,69 @@ package it.tidalwave.bluemarine2.model.impl;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.nio.file.Path;
-import it.tidalwave.util.As;
-import it.tidalwave.util.AsException;
-import it.tidalwave.util.Finder8;
 import it.tidalwave.role.Displayable;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.role.Entity;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import it.tidalwave.bluemarine2.model.spi.EntityWithPathAdapter;
-import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
-import it.tidalwave.bluemarine2.model.spi.FactoryBasedEntityFinder;
-import it.tidalwave.bluemarine2.model.spi.MediaFolderAdapter;
-import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder.EntityCollectionFactory;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.Getter;
-import static java.util.stream.Collectors.toList;
 import static it.tidalwave.role.Identifiable.Identifiable;
 
 /***********************************************************************************************************************
+ *
+ * An adapter for {@link Entity} to a {@link MediaFolder}. It can be used to adapt entities that naturally do
+ * not belong to a hierarchy, such as an artist, to contexts where a hierarchy is needed (e.g. for browsing).
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public abstract class EntityAdapterSupport<ENTITY extends Entity> extends EntityWithRoles
+public class PathAwareEntityDecorator<ENTITY extends Entity> extends EntityDecorator<ENTITY> implements PathAwareEntity
   {
     @Getter @Nonnull
     protected final Path path;
 
     @Getter @Nonnull
-    protected final ENTITY adaptee;
+    protected final Optional<PathAwareEntity> parent;
 
-    @Getter @Nonnull
-    protected final Optional<EntityWithPath> parent;
-
-    protected EntityAdapterSupport (final @Nonnull Path path,
-                                    final @Nonnull ENTITY adaptee,
-                                    final @Nonnull Optional<EntityWithPath> parent,
-                                    final @Nonnull Object... roles)
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    public PathAwareEntityDecorator (final @Nonnull ENTITY delegate, final @Nonnull Path pathSegment)
       {
-        super(roles);
+        this(pathSegment, delegate, Optional.empty());
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    public PathAwareEntityDecorator (final @Nonnull ENTITY delegate,
+                                     final @Nonnull Path pathSegment,
+                                     final @Nonnull PathAwareEntity parent,
+                                     final @Nonnull String displayName,
+                                     final @Nonnull Object ... roles)
+      {
+        this(parent.getPath().resolve(pathSegment),
+             delegate,
+             Optional.of(parent),
+             computeRoles(parent, pathSegment, displayName, roles));
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    protected PathAwareEntityDecorator (final @Nonnull Path path,
+                                        final @Nonnull ENTITY delegate,
+                                        final @Nonnull Optional<PathAwareEntity> parent,
+                                        final @Nonnull Object... roles)
+      {
+        super(delegate, roles);
         this.path = path;
-        this.adaptee = adaptee;
         this.parent = parent;
-      }
-
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public <T> T as (final @Nonnull Class<T> type)
-      {
-        return as(type, As.Defaults.throwAsException(type));
-      }
-
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public <T> Collection<T> asMany (Class<T> type)
-      {
-        throw new UnsupportedOperationException(); // TODO
-      }
-
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public <T> Optional<T> asOptional (final @Nonnull Class<T> type)
-      {
-        return Optional.ofNullable(as(type, throwable -> null));
       }
 
     /*******************************************************************************************************************
@@ -123,51 +104,7 @@ public abstract class EntityAdapterSupport<ENTITY extends Entity> extends Entity
     @Override @Nonnull
     public String toString()
       {
-        return String.format("%s(path=%s, delegate=%s, parent=%s)", getClass().getSimpleName(), path, adaptee, parent);
-      }
-
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public <T> T as (final @Nonnull Class<T> type, final @Nonnull NotFoundBehaviour<T> notFoundBehaviour)
-      {
-        try
-          {
-            return super.as(type);
-          }
-        catch (AsException e1)
-          {
-            try
-              {
-                return adaptee.as(type);
-              }
-            catch (AsException e2)
-              {
-                return notFoundBehaviour.run(e2);
-              }
-          }
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Creates a wrapped finder, that wraps all entities in its result.
-     *
-     * @param   parent          the parent
-     * @param   finder          the source finder
-     * @return                  the wrapped finder
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    protected static EntityFinder wrappedFinder (final @Nonnull MediaFolder parent,
-                                                 final @Nonnull Finder8<? extends Entity> finder)
-      {
-        final EntityCollectionFactory factory = p -> finder.results().stream()
-                                                                     .map(child -> wrappedEntity(p, child))
-                                                                     .collect(toList());
-        return new FactoryBasedEntityFinder(parent, factory);
+        return String.format("%s(path=%s, delegate=%s, parent=%s)", getClass().getSimpleName(), path, delegate, parent);
       }
 
     /*******************************************************************************************************************
@@ -180,11 +117,11 @@ public abstract class EntityAdapterSupport<ENTITY extends Entity> extends Entity
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected static EntityWithPath wrappedEntity (final @Nonnull EntityWithPath parent, final @Nonnull Entity entity)
+    protected static PathAwareEntity wrappedEntity (final @Nonnull PathAwareEntity parent, final @Nonnull Entity entity)
       {
-        if (entity instanceof EntityWithPath) // FIXME: possibly avoid calling
+        if (entity instanceof PathAwareEntity) // FIXME: possibly avoid calling
           {
-            return (EntityWithPath)entity;
+            return (PathAwareEntity)entity;
           }
 
         final Path path = parent.getPath().resolve(id(entity));
@@ -192,16 +129,19 @@ public abstract class EntityAdapterSupport<ENTITY extends Entity> extends Entity
 
         if (entity.asOptional(SimpleComposite8.class).isPresent())
           {
-            return new MediaFolderAdapter(entity, path, parent, displayName);
+            return new PathAwareMediaFolderDecorator2(entity, path, parent, displayName);
           }
         else
           {
-            return new EntityWithPathAdapter(entity, path, parent, displayName);
+            return new PathAwareEntityDecorator(entity, path, parent, displayName);
           }
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Nonnull
-    protected static Object[] computeRoles (final @Nonnull EntityWithPath parent,
+    protected static Object[] computeRoles (final @Nonnull PathAwareEntity parent,
                                             final @Nonnull Path pathSegment,
                                             final @Nonnull String displayName,
                                             final @Nonnull Object ... roles)
@@ -211,6 +151,9 @@ public abstract class EntityAdapterSupport<ENTITY extends Entity> extends Entity
         return r.toArray();
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Nonnull
     protected static String id (final @Nonnull Entity entity)
       {

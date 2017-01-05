@@ -26,50 +26,47 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.service.stoppingdown.impl;
+package it.tidalwave.util;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import javax.inject.Named;
-import java.util.Arrays;
-import java.util.Collection;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
-import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
+import javax.annotation.concurrent.Immutable;
+import java.util.List;
+import java.util.function.Supplier;
+import java.util.function.Function;
+import static java.util.stream.Collectors.toList;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * A {@link Finder} which retrieve results from a {@link Supplier}.
+ *
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-public class StoppingDownMediaServerService implements MediaServerService
+@Immutable
+public class MappingFilter<TYPE> extends SupplierBasedFinder8<TYPE>
   {
-    private static final Path PATH_ROOT = Paths.get("stoppingdown.net");
-
-    private static final Path PATH_DIARY = Paths.get("diary");
-
-    private static final Path PATH_THEMES = Paths.get("themes");
-
-    @Inject @Named("diaryPhotoCollectionProvider")
-    private PhotoCollectionProvider diaryProvider;
-
-    @Inject @Named("themesPhotoCollectionProvider")
-    private PhotoCollectionProvider themesProvider;
-
-    @Override @Nonnull
-    public MediaFolder createRootFolder (final @Nonnull MediaFolder parent)
-      {
-        return new VirtualMediaFolder(parent, PATH_ROOT, "Stopping Down", this::childrenFactory);
-      }
+    private static final long serialVersionUID = -6359683808082070089L;
 
     @Nonnull
-    private Collection<PathAwareEntity> childrenFactory (final @Nonnull MediaFolder parent)
+    private final Function<TYPE, TYPE> mapper;
+
+    public MappingFilter (final @Nonnull Finder8<TYPE> delegate, final @Nonnull Function<TYPE, TYPE> mapper)
       {
-        return Arrays.asList(new VirtualMediaFolder(parent, PATH_DIARY,  "Diary",  diaryProvider::findPhotos),
-                             new VirtualMediaFolder(parent, PATH_THEMES, "Themes", themesProvider::findPhotos));
+        super(delegate::results);
+        this.mapper = mapper;
+      }
+
+    public MappingFilter (final @Nonnull MappingFilter other, final @Nonnull Object override)
+      {
+        super(other, override);
+        final MappingFilter source = getSource(MappingFilter.class, other, override);
+        this.mapper = source.mapper;
+      }
+
+    @Override
+    protected List<? extends TYPE> computeResults()
+      {
+        return (List)super.computeResults().stream().map(mapper).collect(toList());
       }
   }

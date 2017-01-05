@@ -32,9 +32,9 @@ import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.nio.file.Path;
 import it.tidalwave.bluemarine2.model.AudioFile;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -49,7 +49,7 @@ import lombok.ToString;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor @ToString(doNotUseGetters = true)
-public class PhotoItem extends EntityWithRoles implements MediaItem, EntityWithPath
+public class PhotoItem extends EntityWithRoles implements MediaItem, PathAwareEntity
   {
     @Nonnull
     private final MediaFolder parent;
@@ -79,7 +79,7 @@ public class PhotoItem extends EntityWithRoles implements MediaItem, EntityWithP
       }
 
     @Override @Nonnull
-    public Optional<EntityWithPath> getParent()
+    public Optional<PathAwareEntity> getParent()
       {
         return Optional.of(parent);
       }

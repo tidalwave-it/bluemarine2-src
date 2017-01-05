@@ -29,14 +29,11 @@
 package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.List;
 import java.net.URL;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.util.Finder8;
 import lombok.ToString;
-import static java.util.Arrays.*;
 
 /***********************************************************************************************************************
  *
@@ -83,11 +80,9 @@ public class RepositoryRecordImageFinder extends RepositoryFinderSupport<URL, Fi
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    protected List<? extends URL> computeNeededResults()
+    protected QueryAndParameters prepareQuery()
       {
-        final List<Object> parameters = new ArrayList<>();
-        parameters.addAll(asList("record", uriFor(record.getId())));
-
-        return query(URL.class, QUERY_RECORD_IMAGE, parameters.toArray());
+        return QueryAndParameters.withSparql(QUERY_RECORD_IMAGE)
+                                 .withParameter("record", iriFor(record.getId()));
       }
   }
