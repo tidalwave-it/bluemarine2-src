@@ -77,7 +77,15 @@ public class MediaFolderDIDLAdapter extends CompositeDIDLAdapterSupport<MediaFol
         container.setRestricted(false);
         container.setId(pathToDidlId(datum.getPath()));
         container.setParentID(datum.getParent().map(parent -> pathToDidlId(parent.getPath())).orElse(ID_NONE));
-        container.setTitle(datum.as(Displayable).getDisplayName());
+
+        String displayName = datum.as(Displayable).getDisplayName();
+
+        if (!container.getId().equals("/music")) // FIXME workaround for DefaultMediaFileSystem
+          {
+            displayName = displayName.replace("Music", "By file");
+          }
+
+        container.setTitle(displayName);
         container.setCreator("blueMarine II"); // FIXME
         container.setChildCount(datum.findChildren().count());
         container.setItems(Collections.emptyList());

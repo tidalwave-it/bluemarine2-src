@@ -36,6 +36,7 @@ import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.Record;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Identifiable.Identifiable;
+import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 
 /***********************************************************************************************************************
  *
@@ -63,6 +64,8 @@ public class RecordDIDLAdapter implements DIDLAdapter
         item.setId(datum.as(Identifiable).getId().stringValue());
         item.setTitle(datum.asOptional(Displayable.Displayable).map(d -> d.getDisplayName()).orElse("???"));
         item.setRestricted(false);
+        item.setCreator("blueMarine II"); // FIXME
+        item.setChildCount(datum.as(SimpleComposite8).findChildren().count());
         return item;
       }
   }

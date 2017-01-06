@@ -29,8 +29,8 @@
 package it.tidalwave.bluemarine2.initializer.impl;
 
 import javax.annotation.Nonnull;
+import javax.annotation.PreDestroy;
 import javax.inject.Inject;
-import javax.inject.Provider;
 import java.util.HashMap;
 import java.util.Map;
 import java.nio.file.Path;
@@ -43,7 +43,6 @@ import it.tidalwave.bluemarine2.persistence.PersistencePropertyNames;
 import it.tidalwave.bluemarine2.downloader.DownloaderPropertyNames;
 import it.tidalwave.bluemarine2.initializer.Initializer;
 import it.tidalwave.bluemarine2.util.PowerOffNotification;
-import javax.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -56,7 +55,7 @@ import lombok.extern.slf4j.Slf4j;
 public class DefaultInitializer implements Initializer
   {
     @Inject
-    private Provider<MessageBus> messageBus;
+    private MessageBus messageBus;
 
     /*******************************************************************************************************************
      *
@@ -74,7 +73,7 @@ public class DefaultInitializer implements Initializer
         properties.put(PersistencePropertyNames.IMPORT_FILE, configPath.resolve("import").resolve("repository.n3"));
         properties.put(PersistencePropertyNames.RENAME_IMPORT_FILE, true);
         properties.put(DownloaderPropertyNames.CACHE_FOLDER_PATH, configPath.resolve("cache"));
-        messageBus.get().publish(new PowerOnNotification(properties));
+        messageBus.publish(new PowerOnNotification(properties));
       }
 
     /*******************************************************************************************************************
@@ -85,7 +84,7 @@ public class DefaultInitializer implements Initializer
     @PreDestroy
     private void shutdown()
       {
-        messageBus.get().publish(new PowerOffNotification());
+        messageBus.publish(new PowerOffNotification());
       }
 
     /*******************************************************************************************************************

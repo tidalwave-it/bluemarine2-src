@@ -33,10 +33,10 @@ import javax.annotation.concurrent.Immutable;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.Container;
 import org.fourthline.cling.support.model.container.StorageFolder;
-import it.tidalwave.role.Displayable;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.Identifiable.Identifiable;
 
 /***********************************************************************************************************************
@@ -75,9 +75,10 @@ public class EntityDIDLAdapter extends CompositeDIDLAdapterSupport<Entity>
 
         datum.asOptional(SimpleComposite8.class).ifPresent(c -> container.setChildCount(c.findChildren().count()));
         // FIXME: missing children count
+        container.setCreator("blueMarine II"); // FIXME
 //        container.set(new DIDLObject.Class(datum.getClass().getName()));
         container.setClazz(StorageFolder.CLASS); // FIXME: or Container?
-        container.setTitle(datum.asOptional(Displayable.Displayable).map(d -> d.getDisplayName()).orElse("???"));
+        container.setTitle(datum.asOptional(Displayable).map(d -> d.getDisplayName()).orElse("?????? " + datum));
         return container;
       }
   }

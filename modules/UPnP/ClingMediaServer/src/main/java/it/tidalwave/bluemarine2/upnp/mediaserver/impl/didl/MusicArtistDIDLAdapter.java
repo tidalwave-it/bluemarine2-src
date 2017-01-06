@@ -36,6 +36,7 @@ import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Identifiable.Identifiable;
+import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 
 /***********************************************************************************************************************
  *
@@ -62,7 +63,9 @@ public class MusicArtistDIDLAdapter implements DIDLAdapter
                 new org.fourthline.cling.support.model.container.MusicArtist();
         item.setId(datum.as(Identifiable).getId().stringValue());
         item.setTitle(datum.asOptional(Displayable.Displayable).map(d -> d.getDisplayName()).orElse("???"));
+        item.setCreator("blueMarine II"); // FIXME
         item.setRestricted(false);
+        item.setChildCount(datum.as(SimpleComposite8).findChildren().count());
         return item;
       }
   }

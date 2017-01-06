@@ -40,6 +40,7 @@ import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMediaCatalog;
 import it.tidalwave.bluemarine2.persistence.Persistence;
+import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
@@ -61,7 +62,7 @@ public class RepositoryBrowserSupport extends EntityWithRoles implements EntityB
     @Override @Nonnull
     public Entity getRoot()
       {
-        return new EntityWithRoles(compositeForRootEntity);
+        return new EntityWithRoles(compositeForRootEntity, this.as(Displayable)); // FIXME: what about an EntityDecorator?
       }
 
     protected final void setFinder (final @Nonnull Supplier<Finder8<? extends Entity>> finderSupplier)

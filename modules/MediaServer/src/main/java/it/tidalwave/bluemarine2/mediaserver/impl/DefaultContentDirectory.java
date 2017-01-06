@@ -39,18 +39,20 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.beans.factory.annotation.Autowired;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.impl.PathAwareMediaFolderDecorator2;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder.EntityCollectionFactory;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
+import it.tidalwave.bluemarine2.model.impl.PathAwareMediaFolderDecorator;
+import it.tidalwave.role.Displayable;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.Identifiable.Identifiable;
+import it.tidalwave.role.spi.DefaultDisplayable;
 
 /***********************************************************************************************************************
  *
@@ -129,8 +131,8 @@ public class DefaultContentDirectory implements ContentDirectory
       {
         final String fallBack = browser.getClass().getSimpleName();
         final String pathSegment = browser.asOptional(Identifiable).map(i -> i.getId().stringValue()).orElse(fallBack);
-        final String displayName = browser.asOptional(Displayable).map(d -> d.getDisplayName()).orElse(fallBack);
-        log.trace("createMediaFolder({}, {}) - path: {} displayName: {}", parent, browser, pathSegment, displayName);
-        return new PathAwareMediaFolderDecorator2(browser.getRoot(), Paths.get(pathSegment), parent, displayName);
+        final Displayable displayable = browser.asOptional(Displayable).orElse(new DefaultDisplayable(fallBack));
+        log.trace("createMediaFolder({}, {}) - path: {} displayable: {}", parent, browser, pathSegment, displayable);
+        return new PathAwareMediaFolderDecorator(browser.getRoot(), parent, Paths.get(pathSegment), displayable);
       }
   }

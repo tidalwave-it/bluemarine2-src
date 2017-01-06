@@ -100,6 +100,7 @@ public class TrackDIDLAdapter implements DIDLAdapter
         item.setResources(Collections.singletonList(resource));
 //        datum.getDiskNumber();
         item.setRestricted(false);
+//        item.setCreator("blueMarine II"); // FIXME
 
         return item;
       }

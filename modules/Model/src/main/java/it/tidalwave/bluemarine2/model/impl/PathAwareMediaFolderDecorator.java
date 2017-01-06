@@ -29,69 +29,84 @@
 package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
-import java.util.Collections;
 import java.util.Optional;
 import java.nio.file.Path;
-import it.tidalwave.util.AsException;
 import it.tidalwave.util.Finder8;
+import it.tidalwave.util.MappingFilter;
 import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
+import static it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator.*;
 
 /***********************************************************************************************************************
- *
- * FIXME: why is this different than PathAwareMediaFolderDecorator2?
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class PathAwareMediaFolderDecorator extends EntityDecorator<Entity> implements MediaFolder
+public class PathAwareMediaFolderDecorator extends PathAwareEntityDecorator implements MediaFolder
   {
-    @Nonnull
-    private final PathAwareEntity parent;
-
-    @Nonnull
-    private final Path pathSegment;
-
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     public PathAwareMediaFolderDecorator (final @Nonnull Entity delegate,
                                           final @Nonnull PathAwareEntity parent,
-                                          final @Nonnull Path pathSegment)
+                                          final @Nonnull Path pathSegment,
+                                          final @Nonnull Object ... roles)
       {
-        super(delegate);
-        this.parent = parent;
-        this.pathSegment = pathSegment;
+        super(delegate, parent, pathSegment, roles);
       }
 
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override @Nonnull
     public EntityFinder findChildren()
       {
-        try
-          {
-            final SimpleComposite8<Entity> composite = delegate.as(SimpleComposite8.class);
-            final Finder8<? extends Entity> finder = composite.findChildren();
-            return PathAwareMediaFolderDecorator2.wrappedFinder(this, finder);
-          }
-        catch (AsException e)
-          {
-            final VirtualMediaFolder.EntityCollectionFactory EMPTY = p -> Collections.emptyList();
-            final PathAwareEntityFinderDelegate EMPTY_FINDER = new PathAwareEntityFinderDelegate(this, EMPTY);
-            return EMPTY_FINDER;
-          }
+        final SimpleComposite8<Entity> composite = delegate.as(SimpleComposite8.class);
+        return wrappedFinder(this, composite.findChildren());
       }
 
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
     @Override @Nonnull
-    public Optional<PathAwareEntity> getParent()
+    public String toString()
       {
-        return Optional.of(parent);
+        return String.format("%s(path=%s, parent=%s)", getClass().getSimpleName(), getPath(),
+                (parent instanceof VirtualMediaFolder) ? Optional.of(parent) : "Optional[Folder()]");
+//        return String.format("%s(path=%s, delegate=%s, parent=%s)", getClass().getSimpleName(), getPath(), delegate, parent);
       }
 
-    @Override @Nonnull
-    public Path getPath()
+    /*******************************************************************************************************************
+     *
+     * Creates a wrapped finder, that wraps all entities in its result.
+     *
+     * @param   parent          the parent
+     * @param   finder          the source finder
+     * @return                  the wrapped finder
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static EntityFinder wrappedFinder (final @Nonnull MediaFolder parent,
+                                               final @Nonnull Finder8<? extends Entity> finder)
       {
-        return parent.getPath().resolve(pathSegment);
+        if (finder instanceof PathAwareEntityFinderDelegate)
+          {
+            return (EntityFinder)finder;
+          }
+
+        return new PathAwareEntityFinderDelegate(parent,
+                                                 (Finder8)new MappingFilter<>((Finder8)finder,
+                                                                              child -> wrappedEntity(parent, (Entity)child)));
       }
   }

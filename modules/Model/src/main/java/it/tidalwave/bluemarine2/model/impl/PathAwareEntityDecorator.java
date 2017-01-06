@@ -29,14 +29,10 @@
 package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Optional;
 import java.nio.file.Path;
-import it.tidalwave.role.Displayable;
+import java.nio.file.Paths;
 import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
@@ -52,48 +48,47 @@ import static it.tidalwave.role.Identifiable.Identifiable;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class PathAwareEntityDecorator<ENTITY extends Entity> extends EntityDecorator<ENTITY> implements PathAwareEntity
+public class PathAwareEntityDecorator extends EntityDecorator implements PathAwareEntity
   {
-    @Getter @Nonnull
-    protected final Path path;
+    @Nonnull
+    protected final PathAwareEntity parent;
 
     @Getter @Nonnull
-    protected final Optional<PathAwareEntity> parent;
+    protected final Path pathSegment;
 
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public PathAwareEntityDecorator (final @Nonnull ENTITY delegate, final @Nonnull Path pathSegment)
-      {
-        this(pathSegment, delegate, Optional.empty());
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    public PathAwareEntityDecorator (final @Nonnull ENTITY delegate,
-                                     final @Nonnull Path pathSegment,
-                                     final @Nonnull PathAwareEntity parent,
-                                     final @Nonnull String displayName,
-                                     final @Nonnull Object ... roles)
-      {
-        this(parent.getPath().resolve(pathSegment),
-             delegate,
-             Optional.of(parent),
-             computeRoles(parent, pathSegment, displayName, roles));
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    protected PathAwareEntityDecorator (final @Nonnull Path path,
-                                        final @Nonnull ENTITY delegate,
-                                        final @Nonnull Optional<PathAwareEntity> parent,
-                                        final @Nonnull Object... roles)
+    protected PathAwareEntityDecorator (final @Nonnull Entity delegate,
+                                        final @Nonnull PathAwareEntity parent,
+                                        final @Nonnull Path pathSegment,
+                                        final @Nonnull Object ... roles)
       {
         super(delegate, roles);
-        this.path = path;
+        this.pathSegment = pathSegment;
         this.parent = parent;
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public Optional<PathAwareEntity> getParent()
+      {
+        return Optional.of(parent);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public Path getPath()
+      {
+        return parent.getPath().resolve(pathSegment);
       }
 
     /*******************************************************************************************************************
@@ -104,7 +99,8 @@ public class PathAwareEntityDecorator<ENTITY extends Entity> extends EntityDecor
     @Override @Nonnull
     public String toString()
       {
-        return String.format("%s(path=%s, delegate=%s, parent=%s)", getClass().getSimpleName(), path, delegate, parent);
+//        return String.format("%s(path=%s, delegate=%s, parent=%s)", getClass().getSimpleName(), path, delegate, parent);
+        return String.format("%s(path=%s, delegate=%s, parent=%s)", getClass().getSimpleName(), getPath(), delegate, "Optional[Folder()]");
       }
 
     /*******************************************************************************************************************
@@ -124,16 +120,15 @@ public class PathAwareEntityDecorator<ENTITY extends Entity> extends EntityDecor
             return (PathAwareEntity)entity;
           }
 
-        final Path path = parent.getPath().resolve(id(entity));
-        final String displayName = entity.asOptional(Displayable.class).map(d -> d.getDisplayName()).orElse("???");
+        final Path pathSegment = idToPathSegment(entity);
 
         if (entity.asOptional(SimpleComposite8.class).isPresent())
           {
-            return new PathAwareMediaFolderDecorator2(entity, path, parent, displayName);
+            return new PathAwareMediaFolderDecorator(entity, parent, pathSegment);
           }
         else
           {
-            return new PathAwareEntityDecorator(entity, path, parent, displayName);
+            return new PathAwareEntityDecorator(entity, parent, pathSegment);
           }
       }
 
@@ -141,22 +136,8 @@ public class PathAwareEntityDecorator<ENTITY extends Entity> extends EntityDecor
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected static Object[] computeRoles (final @Nonnull PathAwareEntity parent,
-                                            final @Nonnull Path pathSegment,
-                                            final @Nonnull String displayName,
-                                            final @Nonnull Object ... roles)
+    private static Path idToPathSegment (final @Nonnull Entity entity)
       {
-        final List<Object> r = new ArrayList<>(Arrays.asList(roles));
-        r.add(new DefaultDisplayable(displayName));
-        return r.toArray();
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    protected static String id (final @Nonnull Entity entity)
-      {
-        return entity.as(Identifiable).getId().stringValue().replace('/', '_');
+        return Paths.get(entity.as(Identifiable).getId().stringValue().replace('/', '_'));
       }
   }
