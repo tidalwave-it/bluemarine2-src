@@ -148,7 +148,7 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
         @Nonnull
         private String getCountSparql()
           {
-            return String.format("SELECT (COUNT(*) AS ?%s)\n  {\n%s\n  }",
+            return String.format("SELECT (COUNT(*) AS ?%s)%n  {%n%s%n  }",
                                  QUERY_COUNT_HOLDER,
                                  sparql.replaceAll("ORDER BY[\\s\\S]*", ""));
           }
