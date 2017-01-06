@@ -41,7 +41,9 @@ public class VimeoMediaServerServiceTest extends ClingTestSupport
   {
     public VimeoMediaServerServiceTest()
       {
-        super("classpath*:META-INF/VimeoServiceAutoBeans.xml",
+        super("classpath*:META-INF/DciAutoBeans.xml",
+              "classpath*:META-INF/CommonsAutoBeans.xml",
+              "classpath*:META-INF/VimeoServiceAutoBeans.xml",
               "classpath*:META-INF/MediaServerAutoBeans.xml",
               "classpath*:META-INF/UPnPAutoBeans.xml");
       }
