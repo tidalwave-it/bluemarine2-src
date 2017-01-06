@@ -38,26 +38,33 @@ import it.tidalwave.util.AsException;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import lombok.Getter;
+import lombok.ToString;
 
 /***********************************************************************************************************************
+ *
+ * This class decorates an existing {@link Entity} with additional roles.
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id: $
  *
  **********************************************************************************************************************/
-public class EntityDecorator<ENTITY extends Entity> extends EntityWithRoles
+@ToString(callSuper = false)
+public class EntityDecorator extends EntityWithRoles
   {
     @Getter @Nonnull
-    protected final ENTITY delegate;
+    protected final Entity delegate;
 
     /*******************************************************************************************************************
      *
+     * Creates a new instance given a delegate and additional roles.
      *
+     * @param   delegate            the delegate
+     * @param   additionalRoles     the additional roles
      *
      ******************************************************************************************************************/
-    public EntityDecorator (final @Nonnull ENTITY delegate, final @Nonnull Object... roles)
+    public EntityDecorator (final @Nonnull Entity delegate, final @Nonnull Object... additionalRoles)
       {
-        super(roles);
+        super(additionalRoles);
         this.delegate = delegate;
       }
 

@@ -149,6 +149,7 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
     @Override @Nonnegative
     public int count()
       {
+        optionalPath.ifPresent(path -> log.warn("Path present: {} - count won't be a native query", path));
         return optionalPath.map(this::filteredByPath).map(Collection::size).orElse(delegate.count());
       }
 

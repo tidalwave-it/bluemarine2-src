@@ -3,6 +3,6 @@ Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artis
     <container childCount="12" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:d35745456c06770731c83193c38f12cc9cb3c202/urn:bluemarine:record:1bc80e189f4d8d60f24c3e1fde6031ad49c11290" parentID="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:d35745456c06770731c83193c38f12cc9cb3c202" restricted="0" searchable="0">
         <dc:title>Cherubini: 6 Piano Sonatas</dc:title>
         <dc:creator>blueMarine II</dc:creator>
-        <upnp:class>object.container.storageFolder</upnp:class>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
 </DIDL-Lite>

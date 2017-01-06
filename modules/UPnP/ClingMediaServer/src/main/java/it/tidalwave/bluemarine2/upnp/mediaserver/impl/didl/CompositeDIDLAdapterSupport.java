@@ -31,13 +31,13 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import java.util.Collection;
 import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
 import it.tidalwave.util.Finder;
 import it.tidalwave.util.As8;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.role.Entity;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.DIDLAdapter;
 
@@ -49,12 +49,13 @@ import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.DI
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j
-@Immutable
-public abstract class CompositeDIDLAdapterSupport<T extends As8> implements DIDLAdapter
+@Immutable @Slf4j
+public abstract class CompositeDIDLAdapterSupport<T extends As8> extends DIDLAdapterSupport<T>
   {
-    @Nonnull
-    protected final T datum;
+    public CompositeDIDLAdapterSupport (final @Nonnull T datum)
+      {
+        super(datum);
+      }
 
     /*******************************************************************************************************************
      *
@@ -112,7 +113,14 @@ public abstract class CompositeDIDLAdapterSupport<T extends As8> implements DIDL
     @Nonnull
     protected static DIDLAdapter asDIDLAdapter (final @Nonnull As8 object)
       {
-        return object.asOptional(DIDLAdapter)
+        final Collection<DIDLAdapter> adapters = object.asMany(DIDLAdapter);
+
+        if (adapters.size() > 1)
+          {
+            adapters.removeIf(adapter -> adapter instanceof MediaFolderDIDLAdapter);
+          }
+
+        return adapters.stream().findFirst()
                 .orElseGet(() ->
                   {
                     if (object instanceof Entity) // FIXME: must be fallback; annotations don't warrant this
