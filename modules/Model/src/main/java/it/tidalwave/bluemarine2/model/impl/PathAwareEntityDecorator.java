@@ -37,6 +37,7 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.Getter;
+import lombok.ToString;
 import static it.tidalwave.role.Identifiable.Identifiable;
 
 /***********************************************************************************************************************
@@ -48,6 +49,7 @@ import static it.tidalwave.role.Identifiable.Identifiable;
  * @version $Id$
  *
  **********************************************************************************************************************/
+@ToString(callSuper = true)
 public class PathAwareEntityDecorator extends EntityDecorator implements PathAwareEntity
   {
     @Nonnull
@@ -97,10 +99,9 @@ public class PathAwareEntityDecorator extends EntityDecorator implements PathAwa
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public String toString()
+    public String toDumpString()
       {
-//        return String.format("%s(path=%s, delegate=%s, parent=%s)", getClass().getSimpleName(), path, delegate, parent);
-        return String.format("%s(path=%s, delegate=%s, parent=%s)", getClass().getSimpleName(), getPath(), delegate, "Optional[Folder()]");
+        return String.format("Entity(path=%s, delegate=%s, parent=Folder(path=%s))", getPath(), delegate, parent.getPath());
       }
 
     /*******************************************************************************************************************
