@@ -30,14 +30,12 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
 import javax.annotation.concurrent.Immutable;
 import javax.annotation.Nonnull;
-import java.util.Collections;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.Container;
 import org.fourthline.cling.support.model.container.StorageFolder;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
 
 /***********************************************************************************************************************
@@ -56,29 +54,18 @@ import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
 @Immutable @DciRole(datumType = MediaFolder.class)
 public class MediaFolderDIDLAdapter extends CompositeDIDLAdapterSupport<MediaFolder>
   {
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
     public MediaFolderDIDLAdapter (final @Nonnull MediaFolder datum)
       {
         super(datum);
       }
 
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
     @Override @Nonnull
     public DIDLObject toObject()
       {
-        final Container container = new Container();
-        setCommonFields(container);
-
+        final Container container = setCommonFields(new Container());
         container.setClazz(StorageFolder.CLASS);
         container.setId(pathToDidlId(datum.getPath()));
         container.setParentID(datum.getParent().map(parent -> pathToDidlId(parent.getPath())).orElse(ID_NONE));
-        container.setItems(Collections.emptyList());
 
         if (!container.getId().equals("/music")) // FIXME workaround for DefaultMediaFileSystem
           {

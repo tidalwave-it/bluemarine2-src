@@ -31,7 +31,7 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator;
+import it.tidalwave.bluemarine2.model.impl.PathAwareMediaFolderDecorator;
 
 /***********************************************************************************************************************
  *
@@ -41,10 +41,10 @@ import it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @DciRole(datumType = PathAwareEntityDecorator.class)
-public class PathAwareEntityDecoratorDIDLAdapter extends PathAwareDecoratorDIDLAdapter
+@Immutable @DciRole(datumType = PathAwareMediaFolderDecorator.class)
+public class PathAwareMediaFolderDecoratorDIDLAdapter extends PathAwareDecoratorDIDLAdapter
   {
-    public PathAwareEntityDecoratorDIDLAdapter (final @Nonnull PathAwareEntityDecorator datum)
+    public PathAwareMediaFolderDecoratorDIDLAdapter (final @Nonnull PathAwareMediaFolderDecorator datum)
       {
         super(datum);
       }

@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import java.util.Collection;
 import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
 import it.tidalwave.util.Finder;
@@ -112,7 +113,14 @@ public abstract class CompositeDIDLAdapterSupport<T extends As8> extends DIDLAda
     @Nonnull
     protected static DIDLAdapter asDIDLAdapter (final @Nonnull As8 object)
       {
-        return object.asOptional(DIDLAdapter)
+        final Collection<DIDLAdapter> adapters = object.asMany(DIDLAdapter);
+
+        if (adapters.size() > 1)
+          {
+            adapters.removeIf(adapter -> adapter instanceof MediaFolderDIDLAdapter);
+          }
+
+        return adapters.stream().findFirst()
                 .orElseGet(() ->
                   {
                     if (object instanceof Entity) // FIXME: must be fallback; annotations don't warrant this

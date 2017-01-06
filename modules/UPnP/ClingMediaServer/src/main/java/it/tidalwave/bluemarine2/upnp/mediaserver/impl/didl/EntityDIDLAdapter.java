@@ -65,8 +65,7 @@ public class EntityDIDLAdapter extends CompositeDIDLAdapterSupport<Entity>
     public DIDLObject toObject()
       {
         log.trace("toObject() - {}", datum);
-        final Container container = new Container();
-        setCommonFields(container);
+        final Container container = setCommonFields(new Container());
         container.setClazz(StorageFolder.CLASS); // FIXME: or Container?
         container.setParentID("parentId"); // FIXME
         return container;

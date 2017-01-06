@@ -29,9 +29,10 @@
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.As8;
+import java.util.Collections;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.Container;
+import it.tidalwave.util.As8;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.Identifiable.Identifiable;
@@ -63,8 +64,15 @@ public abstract class DIDLAdapterSupport<T extends As8> implements DIDLAdapter
 
         if (didlObject instanceof Container)
           {
-            datum.asOptional(SimpleComposite8).ifPresent(c -> ((Container)didlObject).setChildCount(c.findChildren().count()));
+            final Container container = (Container)didlObject;
+            datum.asOptional(SimpleComposite8).ifPresent(c -> container.setChildCount(c.findChildren().count()));
+            container.setItems(Collections.emptyList());
           }
+
+//        if (datum instanceof PathAwareEntity)
+//          {
+//            didlObject.setParentID(((PathAwareEntity)datum).getParent().map(p -> p.getPath().toString()).orElse(ID_NONE));
+//          }
 
         return didlObject;
       }
