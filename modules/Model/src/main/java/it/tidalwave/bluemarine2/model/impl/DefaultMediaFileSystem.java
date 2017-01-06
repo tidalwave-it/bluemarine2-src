@@ -39,7 +39,7 @@ import it.tidalwave.bluemarine2.util.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.ModelPropertyNames;
-import lombok.Delegate;
+import lombok.experimental.Delegate;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.concurrent.TimeUnit.SECONDS;

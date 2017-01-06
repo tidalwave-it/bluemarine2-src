@@ -38,7 +38,7 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.AllArgsConstructor;
-import lombok.Delegate;
+import lombok.experimental.Delegate;
 import lombok.Getter;
 
 /***********************************************************************************************************************

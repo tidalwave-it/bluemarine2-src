@@ -32,7 +32,7 @@ import javax.inject.Inject;
 import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.video.explorer.VideoExplorerPresentation;
-import lombok.Delegate;
+import lombok.experimental.Delegate;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
 

@@ -26,53 +26,40 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.stillimage.explorer.impl.javafx;
+package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
-import javax.inject.Inject;
-import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
-import it.tidalwave.bluemarine2.ui.stillimage.explorer.StillImageExplorerPresentation;
-import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
-import lombok.experimental.Delegate;
+import javax.annotation.Nonnull;
+import javax.annotation.concurrent.Immutable;
+import org.fourthline.cling.support.model.DIDLObject;
+import it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
 
 /***********************************************************************************************************************
  *
- * The JavaFX implementation of {@link StillImageExplorerPresentation}.
- * 
- * @stereotype  Presentation
- * 
+ * A support for roles dealing with {@link PathAwareEntityDecorator} that creates the {@link DIDLObject} in function
+ * of the delegate; and properly sets the {@code id} and {@code parentId} in function of the path.
+ *
+ * @stereotype Role
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class JavaFxStillImageExplorerPresentation implements StillImageExplorerPresentation
+@Slf4j @Immutable
+public class PathAwareDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<PathAwareEntityDecorator>
   {
-    interface DelegateExclusions
+    public PathAwareDecoratorDIDLAdapter (final @Nonnull PathAwareEntityDecorator datum)
       {
-        public void showUp();
+        super(datum);
       }
-    
-    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/StillImageExplorer.fxml";
-    
-    @Inject
-    private FlowController flowController;
-    
-    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
-    
-    @Delegate(excludes = DelegateExclusions.class)
-    private final StillImageExplorerPresentation delegate = nad.getDelegate();
-            
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override
-    public void showUp()  
+
+    @Override @Nonnull
+    public final DIDLObject toObject()
+      throws Exception
       {
-        delegate.showUp();
-        flowController.showPresentation(nad.getNode());
+        final DIDLObject item = asDIDLAdapter(datum.getDelegate()).toObject();
+        datum.getParent().ifPresent(parent -> item.setParentID(parent.getPath().toString()));
+        item.setId(datum.getPath().toString());
+        return item;
       }
   }

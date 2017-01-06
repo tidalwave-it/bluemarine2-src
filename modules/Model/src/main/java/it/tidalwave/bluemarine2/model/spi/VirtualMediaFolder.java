@@ -40,6 +40,7 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.Getter;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *
@@ -47,6 +48,7 @@ import lombok.Getter;
  * @version $Id$
  *
  **********************************************************************************************************************/
+@ToString(callSuper = false)
 public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
   {
     // These two interfaces are needed to avoid clashes with constructor overloading
@@ -117,9 +119,9 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
       }
 
     @Override @Nonnull
-    public String toString()
+    public String toDumpString()
       {
-        return String.format("VirtualMediaFolder(%s)", path);
+        return String.format("Folder(path=%s)", path);
       }
 
     @Nonnull

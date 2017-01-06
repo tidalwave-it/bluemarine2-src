@@ -34,7 +34,7 @@ import javax.inject.Provider;
 import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.audio.renderer.AudioRendererPresentation;
-import lombok.Delegate;
+import lombok.experimental.Delegate;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
 

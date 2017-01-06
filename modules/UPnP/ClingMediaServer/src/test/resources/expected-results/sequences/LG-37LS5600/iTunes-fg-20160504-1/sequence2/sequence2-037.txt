@@ -2,6 +2,7 @@ Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artis
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
     <item id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c/urn:bluemarine:track:a21ecc7ec3d9b521597863a8b4c909d1455d568c" parentID="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/urn:bluemarine:record:2a19e56d563b2ff99a34c1a73b941e8f78818b3c" restricted="0">
         <dc:title>(Go) Get It</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
         <res duration="00:05:37" protocolInfo="http-get:*:audio/mpeg:*" size="13494974">http://<server>/Music/Pat+Metheny/Trio+99_00/01+%28Go%29+Get+It.mp3</res>

@@ -26,53 +26,26 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.ui.stillimage.explorer.impl.javafx;
+package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
-import javax.inject.Inject;
-import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
-import it.tidalwave.bluemarine2.ui.stillimage.explorer.StillImageExplorerPresentation;
-import it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.NodeAndDelegate;
-import lombok.experimental.Delegate;
-import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.ui.javafx.JavaFXSafeProxyCreator.createNodeAndDelegate;
+import javax.annotation.Nonnull;
+import javax.annotation.concurrent.Immutable;
+import it.tidalwave.dci.annotation.DciRole;
+import it.tidalwave.bluemarine2.model.impl.PathAwareMediaFolderDecorator;
 
 /***********************************************************************************************************************
  *
- * The JavaFX implementation of {@link StillImageExplorerPresentation}.
- * 
- * @stereotype  Presentation
- * 
+ * @stereotype Role
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class JavaFxStillImageExplorerPresentation implements StillImageExplorerPresentation
+@Immutable @DciRole(datumType = PathAwareMediaFolderDecorator.class)
+public class PathAwareMediaFolderDecoratorDIDLAdapter extends PathAwareDecoratorDIDLAdapter
   {
-    interface DelegateExclusions
+    public PathAwareMediaFolderDecoratorDIDLAdapter (final @Nonnull PathAwareMediaFolderDecorator datum)
       {
-        public void showUp();
-      }
-    
-    private static final String FXML_URL = "/it/tidalwave/bluemarine2/ui/impl/javafx/StillImageExplorer.fxml";
-    
-    @Inject
-    private FlowController flowController;
-    
-    private final NodeAndDelegate nad = createNodeAndDelegate(getClass(), FXML_URL);
-    
-    @Delegate(excludes = DelegateExclusions.class)
-    private final StillImageExplorerPresentation delegate = nad.getDelegate();
-            
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override
-    public void showUp()  
-      {
-        delegate.showUp();
-        flowController.showPresentation(nad.getNode());
+        super(datum);
       }
   }
