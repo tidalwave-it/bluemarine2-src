@@ -29,34 +29,43 @@
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
+import it.tidalwave.util.As8;
 import org.fourthline.cling.support.model.DIDLObject;
-import org.fourthline.cling.support.model.container.MusicAlbum;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.Record;
+import org.fourthline.cling.support.model.container.Container;
+import lombok.RequiredArgsConstructor;
+import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.Identifiable.Identifiable;
+import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 
 /***********************************************************************************************************************
  *
- * The {@link DIDLAdapter} for {@link Record}.
- *
- * @stereotype Role
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-@Immutable @DciRole(datumType = Record.class)
-public class RecordDIDLAdapter extends DIDLAdapterSupport<Record>
+@RequiredArgsConstructor
+public abstract class DIDLAdapterSupport<T extends As8> implements DIDLAdapter
   {
-    public RecordDIDLAdapter (final @Nonnull Record datum)
-      {
-        super(datum);
-      }
+    @Nonnull
+    protected final T datum;
 
-    @Override @Nonnull
-    public DIDLObject toObject()
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    protected <X extends DIDLObject> X setCommonFields (final @Nonnull X didlObject)
       {
-        // parentID not set here
-        return setCommonFields(new MusicAlbum());
+        didlObject.setRestricted(false);
+        didlObject.setCreator("blueMarine II"); // FIXME
+        datum.asOptional(Identifiable).ifPresent(identifiable -> didlObject.setId(identifiable.getId().stringValue()));
+        datum.asOptional(Displayable).map(displayable -> didlObject.setTitle(displayable.getDisplayName()));
+
+        if (didlObject instanceof Container)
+          {
+            datum.asOptional(SimpleComposite8).ifPresent(c -> ((Container)didlObject).setChildCount(c.findChildren().count()));
+          }
+
+        return didlObject;
       }
   }

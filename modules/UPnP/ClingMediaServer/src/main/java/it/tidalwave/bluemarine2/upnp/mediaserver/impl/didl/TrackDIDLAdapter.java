@@ -62,15 +62,18 @@ import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSup
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j
+@Slf4j
 @Immutable @DciRole(datumType = Track.class)
-public class TrackDIDLAdapter implements DIDLAdapter
+public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
   {
     @Nonnull
-    private final Track datum;
-
-    @Nonnull
     private final ResourceServer resourceServer;
+
+    public TrackDIDLAdapter (final @Nonnull Track track ,final @Nonnull ResourceServer resourceServer)
+      {
+        super(track);
+        this.resourceServer = resourceServer;
+      }
 
     @Override @Nonnull
     public DIDLObject toObject()
@@ -94,13 +97,15 @@ public class TrackDIDLAdapter implements DIDLAdapter
 //        resource.setSampleFrequency(size); // TODO
 
         final MusicTrack item = new MusicTrack();
-        item.setId(datum.as(Identifiable).getId().stringValue());
-        item.setTitle(datum.asOptional(Displayable.Displayable).map(d -> d.getDisplayName()).orElse("???"));
+        setCommonFields(item);
+//        item.setRestricted(false);
+//        item.setId(datum.as(Identifiable).getId().stringValue());
+//        item.setTitle(datum.asOptional(Displayable.Displayable).map(d -> d.getDisplayName()).orElse("???"));
+//        item.setCreator("blueMarine II"); // FIXME
+
         trackMetadata.get(TRACK_NUMBER).ifPresent(trackNumber -> item.setOriginalTrackNumber(trackNumber));
         item.setResources(Collections.singletonList(resource));
 //        datum.getDiskNumber();
-        item.setRestricted(false);
-//        item.setCreator("blueMarine II"); // FIXME
 
         return item;
       }

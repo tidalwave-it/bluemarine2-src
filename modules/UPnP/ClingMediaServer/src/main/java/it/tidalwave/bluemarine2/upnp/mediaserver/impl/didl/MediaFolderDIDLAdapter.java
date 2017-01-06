@@ -73,22 +73,18 @@ public class MediaFolderDIDLAdapter extends CompositeDIDLAdapterSupport<MediaFol
     public DIDLObject toObject()
       {
         final Container container = new Container();
+        setCommonFields(container);
+
         container.setClazz(StorageFolder.CLASS);
-        container.setRestricted(false);
         container.setId(pathToDidlId(datum.getPath()));
         container.setParentID(datum.getParent().map(parent -> pathToDidlId(parent.getPath())).orElse(ID_NONE));
-
-        String displayName = datum.as(Displayable).getDisplayName();
+        container.setItems(Collections.emptyList());
 
         if (!container.getId().equals("/music")) // FIXME workaround for DefaultMediaFileSystem
           {
-            displayName = displayName.replace("Music", "By file");
+            container.setTitle(container.getTitle().replace("Music", "By file"));
           }
 
-        container.setTitle(displayName);
-        container.setCreator("blueMarine II"); // FIXME
-        container.setChildCount(datum.findChildren().count());
-        container.setItems(Collections.emptyList());
         return container;
       }
   }

@@ -37,7 +37,6 @@ import it.tidalwave.util.Finder;
 import it.tidalwave.util.As8;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.role.Entity;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.DIDLAdapter;
 
@@ -49,12 +48,13 @@ import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.DI
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j
-@Immutable
-public abstract class CompositeDIDLAdapterSupport<T extends As8> implements DIDLAdapter
+@Immutable @Slf4j
+public abstract class CompositeDIDLAdapterSupport<T extends As8> extends DIDLAdapterSupport<T>
   {
-    @Nonnull
-    protected final T datum;
+    public CompositeDIDLAdapterSupport (final @Nonnull T datum)
+      {
+        super(datum);
+      }
 
     /*******************************************************************************************************************
      *
