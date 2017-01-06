@@ -34,7 +34,7 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-modules</artifactId>
-        <version>1.0-ALPHA-15</version>
+        <version>1.0-ALPHA-16-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
@@ -47,7 +47,7 @@
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-application-javafx-linux</artifactId>
-    <version>1.0-ALPHA-15</version>
+    <version>1.0-ALPHA-16-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine II - Installer - JavaFX Application, Linux</name>
     <description>This module creates a Linux application bundle.</description>
