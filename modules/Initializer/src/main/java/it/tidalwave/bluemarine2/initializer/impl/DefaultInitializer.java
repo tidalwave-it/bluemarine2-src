@@ -118,6 +118,9 @@ public class DefaultInitializer implements Initializer
             case "windows":
                 s += "/.blueMarine2";
                 break;
+
+            default:
+                throw new IllegalArgumentException("Unsupported operating system: " + osName);
           }
 
         return Paths.get(s);
