@@ -113,7 +113,8 @@ public class DefaultContentDirectory implements ContentDirectory
         // TODO: filter by MIME type
         return entityBrowsers.stream()
                              .sorted(comparing(browser -> browser.as(Displayable).getDisplayName()))
-                             .map(browser -> createMediaFolder(parent, browser)).collect(toList());
+                             .map(browser -> createMediaFolder(parent, browser))
+                             .collect(toList());
       }
 
     @Nonnull
