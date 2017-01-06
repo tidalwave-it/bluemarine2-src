@@ -65,7 +65,7 @@ public class AudioFileDetailRendererSelectable extends DetailRendererSelectable<
         final AudioFile audioFile = this.owner.getAudioFile();
         final MediaItem.Metadata metadata = audioFile.getMetadata();
 
-        final String details = String.format("%s\n%s\n%s\n%s\n%s",
+        final String details = String.format("%s%n%s%n%s%n%s%n%s",
             audioFile.findMakers().stream().map(m -> m.as(Displayable).getDisplayName())
                                   .collect(joining(", ", "Artist: ", "")),
             audioFile.findComposers().stream().map(e -> e.as(Displayable).getDisplayName())
