@@ -48,7 +48,7 @@ import lombok.extern.slf4j.Slf4j;
 public class JavaFxMediaPlayer extends MediaPlayerSupport
   {
     private static final javafx.util.Duration SKIP_DURATION = javafx.util.Duration.seconds(1);
-    
+
     @CheckForNull
     private Media media;
 
@@ -74,7 +74,7 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
      *
      ******************************************************************************************************************/
     @Override
-    public void setMediaItem (final @Nonnull MediaItem mediaItem)
+    public synchronized void setMediaItem (final @Nonnull MediaItem mediaItem)
       throws Exception
       {
         log.info("setMediaItem({})", mediaItem);
@@ -136,10 +136,10 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
      *
      ******************************************************************************************************************/
     @Override
-    public void stop()
+    public synchronized void stop()
       {
         log.info("stop()");
-        
+
         if (mediaPlayer != null)
           {
             mediaPlayer.stop();
@@ -153,10 +153,10 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
      *
      ******************************************************************************************************************/
     @Override
-    public void pause()
+    public synchronized void pause()
       {
         log.info("pause()");
-        
+
         if (mediaPlayer != null)
           {
             mediaPlayer.pause();
@@ -170,10 +170,10 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
      *
      ******************************************************************************************************************/
     @Override
-    public void rewind()
+    public synchronized void rewind()
       {
         log.info("rewind()");
-        
+
         if (mediaPlayer != null)
           {
             mediaPlayer.seek(mediaPlayer.getCurrentTime().subtract(SKIP_DURATION));
@@ -186,10 +186,10 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
      *
      ******************************************************************************************************************/
     @Override
-    public void fastForward()
+    public synchronized void fastForward()
       {
         log.info("fastForward()");
-        
+
         if (mediaPlayer != null)
           {
             mediaPlayer.seek(mediaPlayer.getCurrentTime().add(SKIP_DURATION));
