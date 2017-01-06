@@ -29,45 +29,51 @@
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
+import java.util.Collections;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.Container;
-import org.fourthline.cling.support.model.container.StorageFolder;
-import it.tidalwave.bluemarine2.model.role.Entity;
-import lombok.extern.slf4j.Slf4j;
+import it.tidalwave.util.As8;
+import lombok.RequiredArgsConstructor;
+import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.Identifiable.Identifiable;
+import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 
 /***********************************************************************************************************************
  *
- * @stereotype Role
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-@Slf4j
-@Immutable //@DciRole(datumType = Entity.class)
-public class EntityDIDLAdapter extends CompositeDIDLAdapterSupport<Entity>
+@RequiredArgsConstructor
+public abstract class DIDLAdapterSupport<T extends As8> implements DIDLAdapter
   {
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    public EntityDIDLAdapter (final @Nonnull Entity datum)
-      {
-        super(datum);
-      }
+    @Nonnull
+    protected final T datum;
 
     /*******************************************************************************************************************
      *
-     * {@inheritDoc}
+     *
      *
      ******************************************************************************************************************/
-    @Override @Nonnull
-    public DIDLObject toObject()
+    protected <X extends DIDLObject> X setCommonFields (final @Nonnull X didlObject)
       {
-        log.trace("toObject() - {}", datum);
-        final Container container = setCommonFields(new Container());
-        container.setClazz(StorageFolder.CLASS); // FIXME: or Container?
-        container.setParentID("parentId"); // FIXME
-        return container;
+        didlObject.setRestricted(false);
+        didlObject.setCreator("blueMarine II"); // FIXME
+        datum.asOptional(Identifiable).ifPresent(identifiable -> didlObject.setId(identifiable.getId().stringValue()));
+        datum.asOptional(Displayable).map(displayable -> didlObject.setTitle(displayable.getDisplayName()));
+
+        if (didlObject instanceof Container)
+          {
+            final Container container = (Container)didlObject;
+            datum.asOptional(SimpleComposite8).ifPresent(c -> container.setChildCount(c.findChildren().count()));
+            container.setItems(Collections.emptyList());
+          }
+
+//        if (datum instanceof PathAwareEntity)
+//          {
+//            didlObject.setParentID(((PathAwareEntity)datum).getParent().map(p -> p.getPath().toString()).orElse(ID_NONE));
+//          }
+
+        return didlObject;
       }
   }

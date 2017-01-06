@@ -33,22 +33,18 @@ import javax.annotation.concurrent.Immutable;
 import java.time.Duration;
 import java.util.Collections;
 import java.io.IOException;
-import java.nio.file.Files;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.Protocol;
 import org.fourthline.cling.support.model.ProtocolInfo;
 import org.fourthline.cling.support.model.Res;
 import org.fourthline.cling.support.model.dlna.DLNAProtocolInfo;
 import org.fourthline.cling.support.model.item.MusicTrack;
-import it.tidalwave.role.Displayable;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver.ResourceServer;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 
@@ -62,15 +58,18 @@ import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSup
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j
+@Slf4j
 @Immutable @DciRole(datumType = Track.class)
-public class TrackDIDLAdapter implements DIDLAdapter
+public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
   {
     @Nonnull
-    private final Track datum;
-
-    @Nonnull
     private final ResourceServer resourceServer;
+
+    public TrackDIDLAdapter (final @Nonnull Track track ,final @Nonnull ResourceServer resourceServer)
+      {
+        super(track);
+        this.resourceServer = resourceServer;
+      }
 
     @Override @Nonnull
     public DIDLObject toObject()
@@ -79,11 +78,21 @@ public class TrackDIDLAdapter implements DIDLAdapter
         log.debug("toObject() - {}", datum);
         // parentID not set here
 
-        final ProtocolInfo protocolInfo = new DLNAProtocolInfo(Protocol.HTTP_GET, "*", "audio/mpeg", "*"); // FIXME: MIME
+        final MusicTrack item = setCommonFields(new MusicTrack());
         final AudioFile audioFile = datum.as(AudioFileSupplier).getAudioFile();
         final Metadata trackMetadata = datum.getMetadata();
-        final Metadata audioFileMetadata = audioFile.getMetadata();
+        trackMetadata.get(TRACK_NUMBER).ifPresent(trackNumber -> item.setOriginalTrackNumber(trackNumber));
+        item.setResources(Collections.singletonList(getResource(audioFile)));
+//        datum.getDiskNumber();
 
+        return item;
+      }
+
+    @Nonnull
+    private Res getResource (final @Nonnull AudioFile audioFile)
+      {
+        final ProtocolInfo protocolInfo = new DLNAProtocolInfo(Protocol.HTTP_GET, "*", "audio/mpeg", "*"); // FIXME: MIME
+        final Metadata audioFileMetadata = audioFile.getMetadata();
         final Res resource = new Res(protocolInfo,
                                      audioFileMetadata.get(FILE_SIZE).orElse(null),
                                      resourceServer.urlForResource(audioFile));
@@ -93,15 +102,7 @@ public class TrackDIDLAdapter implements DIDLAdapter
 //        resource.setNrAudioChannels(size); // TODO
 //        resource.setSampleFrequency(size); // TODO
 
-        final MusicTrack item = new MusicTrack();
-        item.setId(datum.as(Identifiable).getId().stringValue());
-        item.setTitle(datum.asOptional(Displayable.Displayable).map(d -> d.getDisplayName()).orElse("???"));
-        trackMetadata.get(TRACK_NUMBER).ifPresent(trackNumber -> item.setOriginalTrackNumber(trackNumber));
-        item.setResources(Collections.singletonList(resource));
-//        datum.getDiskNumber();
-        item.setRestricted(false);
-
-        return item;
+        return resource;
       }
 
     @Nonnull

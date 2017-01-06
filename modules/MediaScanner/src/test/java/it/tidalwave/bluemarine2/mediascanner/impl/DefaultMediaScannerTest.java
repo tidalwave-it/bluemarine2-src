@@ -53,12 +53,10 @@ import org.slf4j.bridge.SLF4JBridgeHandler;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import it.tidalwave.bluemarine2.model.ModelPropertyNames;
-import it.tidalwave.bluemarine2.persistence.PersistencePropertyNames;
 import lombok.extern.slf4j.Slf4j;
+import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
-import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
-import java.nio.file.Paths;
 import static org.testng.AssertJUnit.*;
 
 /***********************************************************************************************************************

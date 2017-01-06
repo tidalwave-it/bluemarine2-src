@@ -41,23 +41,28 @@ import lombok.Getter;
 
 /***********************************************************************************************************************
  *
+ * This class decorates an existing {@link Entity} with additional roles.
+ *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id: $
  *
  **********************************************************************************************************************/
-public class EntityDecorator<ENTITY extends Entity> extends EntityWithRoles
+public class EntityDecorator extends EntityWithRoles
   {
     @Getter @Nonnull
-    protected final ENTITY delegate;
+    protected final Entity delegate;
 
     /*******************************************************************************************************************
      *
+     * Creates a new instance given a delegate and additional roles.
      *
+     * @param   delegate            the delegate
+     * @param   additionalRoles     the additional roles
      *
      ******************************************************************************************************************/
-    public EntityDecorator (final @Nonnull ENTITY delegate, final @Nonnull Object... roles)
+    public EntityDecorator (final @Nonnull Entity delegate, final @Nonnull Object... additionalRoles)
       {
-        super(roles);
+        super(additionalRoles);
         this.delegate = delegate;
       }
 

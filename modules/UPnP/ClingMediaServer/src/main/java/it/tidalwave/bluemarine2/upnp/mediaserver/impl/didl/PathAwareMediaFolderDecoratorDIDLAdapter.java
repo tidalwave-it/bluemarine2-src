@@ -30,14 +30,10 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import org.fourthline.cling.support.model.DIDLObject;
-import org.fourthline.cling.support.model.container.MusicAlbum;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.impl.PathAwareMediaFolderDecorator;
 
 /***********************************************************************************************************************
- *
- * The {@link DIDLAdapter} for {@link Record}.
  *
  * @stereotype Role
  *
@@ -45,18 +41,11 @@ import it.tidalwave.bluemarine2.model.Record;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @DciRole(datumType = Record.class)
-public class RecordDIDLAdapter extends DIDLAdapterSupport<Record>
+@Immutable @DciRole(datumType = PathAwareMediaFolderDecorator.class)
+public class PathAwareMediaFolderDecoratorDIDLAdapter extends PathAwareDecoratorDIDLAdapter
   {
-    public RecordDIDLAdapter (final @Nonnull Record datum)
+    public PathAwareMediaFolderDecoratorDIDLAdapter (final @Nonnull PathAwareMediaFolderDecorator datum)
       {
         super(datum);
-      }
-
-    @Override @Nonnull
-    public DIDLObject toObject()
-      {
-        // parentID not set here
-        return setCommonFields(new MusicAlbum());
       }
   }

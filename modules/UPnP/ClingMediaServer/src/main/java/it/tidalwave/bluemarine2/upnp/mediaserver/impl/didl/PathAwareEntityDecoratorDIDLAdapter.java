@@ -30,11 +30,8 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import org.fourthline.cling.support.model.DIDLObject;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator;
-import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -44,32 +41,11 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
 @Immutable @DciRole(datumType = PathAwareEntityDecorator.class)
-public class PathAwareEntityDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<PathAwareEntityDecorator>
+public class PathAwareEntityDecoratorDIDLAdapter extends PathAwareDecoratorDIDLAdapter
   {
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
     public PathAwareEntityDecoratorDIDLAdapter (final @Nonnull PathAwareEntityDecorator datum)
       {
         super(datum);
-      }
-
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public DIDLObject toObject()
-      throws Exception
-      {
-        log.debug("toObject() - {}", datum.getDelegate());
-        final DIDLObject item = asDIDLAdapter(datum.getDelegate()).toObject();
-        log.trace(">>>> item: {}", item);
-        datum.getParent().ifPresent(parent -> item.setParentID(((PathAwareEntity)parent).getPath().toString()));
-        item.setId(datum.getPath().toString());
-        return item;
       }
   }

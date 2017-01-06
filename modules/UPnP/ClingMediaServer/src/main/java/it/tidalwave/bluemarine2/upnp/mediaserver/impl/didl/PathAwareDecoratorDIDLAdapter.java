@@ -31,13 +31,13 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import org.fourthline.cling.support.model.DIDLObject;
-import org.fourthline.cling.support.model.container.MusicAlbum;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
- * The {@link DIDLAdapter} for {@link Record}.
+ * A support for roles dealing with {@link PathAwareEntityDecorator} that creates the {@link DIDLObject} in function
+ * of the delegate; and properly sets the {@code id} and {@code parentId} in function of the path.
  *
  * @stereotype Role
  *
@@ -45,18 +45,21 @@ import it.tidalwave.bluemarine2.model.Record;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @DciRole(datumType = Record.class)
-public class RecordDIDLAdapter extends DIDLAdapterSupport<Record>
+@Slf4j @Immutable
+public class PathAwareDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<PathAwareEntityDecorator>
   {
-    public RecordDIDLAdapter (final @Nonnull Record datum)
+    public PathAwareDecoratorDIDLAdapter (final @Nonnull PathAwareEntityDecorator datum)
       {
         super(datum);
       }
 
     @Override @Nonnull
-    public DIDLObject toObject()
+    public final DIDLObject toObject()
+      throws Exception
       {
-        // parentID not set here
-        return setCommonFields(new MusicAlbum());
+        final DIDLObject item = asDIDLAdapter(datum.getDelegate()).toObject();
+        datum.getParent().ifPresent(parent -> item.setParentID(parent.getPath().toString()));
+        item.setId(datum.getPath().toString());
+        return item;
       }
   }
