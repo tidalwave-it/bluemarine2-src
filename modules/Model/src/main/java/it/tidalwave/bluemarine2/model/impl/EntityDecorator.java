@@ -38,6 +38,7 @@ import it.tidalwave.util.AsException;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import lombok.Getter;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *
@@ -47,6 +48,7 @@ import lombok.Getter;
  * @version $Id: $
  *
  **********************************************************************************************************************/
+@ToString(callSuper = false)
 public class EntityDecorator extends EntityWithRoles
   {
     @Getter @Nonnull

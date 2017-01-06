@@ -29,7 +29,6 @@
 package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
 import java.nio.file.Path;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.MappingFilter;
@@ -38,7 +37,6 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
-import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import static it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator.*;
 
 /***********************************************************************************************************************
@@ -80,11 +78,9 @@ public class PathAwareMediaFolderDecorator extends PathAwareEntityDecorator impl
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public String toString()
+    public String toDumpString()
       {
-        return String.format("%s(path=%s, parent=%s)", getClass().getSimpleName(), getPath(),
-                (parent instanceof VirtualMediaFolder) ? Optional.of(parent) : "Optional[Folder()]");
-//        return String.format("%s(path=%s, delegate=%s, parent=%s)", getClass().getSimpleName(), getPath(), delegate, parent);
+        return String.format("Folder(path=%s, parent=Folder(path=%s))", getPath(), parent.getPath());
       }
 
     /*******************************************************************************************************************
