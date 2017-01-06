@@ -41,9 +41,8 @@ import org.fourthline.cling.support.model.Res;
 import org.fourthline.cling.support.model.dlna.DLNAProtocolInfo;
 import org.fourthline.cling.support.model.item.VideoItem;
 import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.ContentHolder;
-import lombok.RequiredArgsConstructor;
+import it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapterSupport;
 
 /***********************************************************************************************************************
  *
@@ -57,12 +56,13 @@ import lombok.RequiredArgsConstructor;
  **********************************************************************************************************************/
  // FIXME: this introduces a dependency on UPnP. It's needed because it contains stuff related to StoppingDown (URLs).
  // FIXME: move PhotoItem to Model, this class to UPnP and try to make the URLs contained in metadata of PhotoItem.
-@RequiredArgsConstructor
 @Immutable @DciRole(datumType = VideoMediaItem.class)
-public class VideoItemDIDLAdapter implements DIDLAdapter
+public class VideoItemDIDLAdapter extends DIDLAdapterSupport<VideoMediaItem>
   {
-    @Nonnull
-    private final VideoMediaItem datum;
+    public VideoItemDIDLAdapter (final @Nonnull VideoMediaItem datum)
+      {
+        super(datum);
+      }
 
     /*******************************************************************************************************************
      *
@@ -85,6 +85,7 @@ public class VideoItemDIDLAdapter implements DIDLAdapter
     @Override
     public DIDLObject toObject()
       {
+        // FIXME: use setCommonItems()
         final ProtocolInfo protocolInfo = new DLNAProtocolInfo(Protocol.HTTP_GET, "*", datum.getMimeType(), "*");
         final Path parentPath = datum.getParent().get().getPath();
         final VideoItem item = new VideoItem();

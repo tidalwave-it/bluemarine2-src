@@ -30,12 +30,12 @@ package it.tidalwave.bluemarine2.service.vimeo.impl;
 
 import javax.annotation.Nonnull;
 import java.nio.file.Path;
+import java.util.Optional;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import it.tidalwave.bluemarine2.model.role.EntityWithPath;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
-import java.util.Optional;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -49,7 +49,7 @@ import lombok.ToString;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor @ToString
- class VideoMediaItem extends EntityWithRoles implements MediaItem
+class VideoMediaItem extends EntityWithRoles implements MediaItem
   {
     @Nonnull
     private final MediaFolder parent;
@@ -79,7 +79,7 @@ import lombok.ToString;
       }
 
     @Override @Nonnull
-    public Optional<EntityWithPath> getParent()
+    public Optional<PathAwareEntity> getParent()
       {
         return Optional.of(parent);
       }
