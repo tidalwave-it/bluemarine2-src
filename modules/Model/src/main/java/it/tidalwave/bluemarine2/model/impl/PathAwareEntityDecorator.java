@@ -32,13 +32,13 @@ import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.Getter;
 import lombok.ToString;
 import static it.tidalwave.role.Identifiable.Identifiable;
+import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 
 /***********************************************************************************************************************
  *
@@ -122,15 +122,9 @@ public class PathAwareEntityDecorator extends EntityDecorator implements PathAwa
           }
 
         final Path pathSegment = idToPathSegment(entity);
-
-        if (entity.asOptional(SimpleComposite8.class).isPresent())
-          {
-            return new PathAwareMediaFolderDecorator(entity, parent, pathSegment);
-          }
-        else
-          {
-            return new PathAwareEntityDecorator(entity, parent, pathSegment);
-          }
+        return entity.asOptional(SimpleComposite8).isPresent()
+                ? new PathAwareMediaFolderDecorator(entity, parent, pathSegment)
+                : new PathAwareEntityDecorator(entity, parent, pathSegment);
       }
 
     /*******************************************************************************************************************

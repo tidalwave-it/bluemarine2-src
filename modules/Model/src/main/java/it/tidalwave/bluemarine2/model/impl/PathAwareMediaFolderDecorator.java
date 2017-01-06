@@ -49,15 +49,20 @@ public class PathAwareMediaFolderDecorator extends PathAwareEntityDecorator impl
   {
     /*******************************************************************************************************************
      *
+     * Default constructor.
      *
+     * @param   delegate            the delegate
+     * @param   parent              the parent
+     * @param   pathSegment         the path segment of this object
+     * @param   additionalRoles     some additional roles
      *
      ******************************************************************************************************************/
     public PathAwareMediaFolderDecorator (final @Nonnull Entity delegate,
                                           final @Nonnull PathAwareEntity parent,
                                           final @Nonnull Path pathSegment,
-                                          final @Nonnull Object ... roles)
+                                          final @Nonnull Object ... additionalRoles)
       {
-        super(delegate, parent, pathSegment, roles);
+        super(delegate, parent, pathSegment, additionalRoles);
       }
 
     /*******************************************************************************************************************
