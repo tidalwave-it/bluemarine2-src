@@ -44,23 +44,23 @@ import static java.util.stream.Collectors.toList;
  *
  **********************************************************************************************************************/
 @Immutable
-public class MappingFilter<TYPE> extends SupplierBasedFinder8<TYPE>
+public class MappingFinder<TYPE> extends SupplierBasedFinder8<TYPE>
   {
     private static final long serialVersionUID = -6359683808082070089L;
 
     @Nonnull
     private final Function<TYPE, TYPE> mapper;
 
-    public MappingFilter (final @Nonnull Finder8<TYPE> delegate, final @Nonnull Function<TYPE, TYPE> mapper)
+    public MappingFinder (final @Nonnull Finder8<TYPE> delegate, final @Nonnull Function<TYPE, TYPE> mapper)
       {
         super(delegate::results);
         this.mapper = mapper;
       }
 
-    public MappingFilter (final @Nonnull MappingFilter other, final @Nonnull Object override)
+    public MappingFinder (final @Nonnull MappingFinder other, final @Nonnull Object override)
       {
         super(other, override);
-        final MappingFilter source = getSource(MappingFilter.class, other, override);
+        final MappingFinder source = getSource(MappingFinder.class, other, override);
         this.mapper = source.mapper;
       }
 
