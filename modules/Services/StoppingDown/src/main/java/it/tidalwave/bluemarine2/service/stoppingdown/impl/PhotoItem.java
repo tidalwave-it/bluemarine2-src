@@ -1,3 +1,4 @@
+
 /*
  * #%L
  * *********************************************************************************************************************
@@ -82,5 +83,11 @@ public class PhotoItem extends EntityWithRoles implements MediaItem, PathAwareEn
     public Optional<PathAwareEntity> getParent()
       {
         return Optional.of(parent);
+      }
+
+    @Override @Nonnull
+    public String toDumpString()
+      {
+        return String.format("PhotoItem(parent=%s, id=%s, title=%s)", parent.getPath().toString(), id, title);
       }
   }
