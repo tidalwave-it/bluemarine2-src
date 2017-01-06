@@ -189,7 +189,7 @@ Still at the early stage of development, it can be used with some hack to reprod
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-services-vimeo</artifactId>
-                <version>1.0-ALPHA-14-SNAPSHOT</version>
+                <version>1.0-ALPHA-15-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
