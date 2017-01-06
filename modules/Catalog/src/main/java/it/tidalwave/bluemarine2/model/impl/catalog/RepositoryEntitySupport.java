@@ -39,7 +39,7 @@ import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.role.Entity;
-import lombok.Delegate;
+import lombok.experimental.Delegate;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;

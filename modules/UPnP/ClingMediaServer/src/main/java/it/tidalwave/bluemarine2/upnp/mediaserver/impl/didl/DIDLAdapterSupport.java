@@ -26,70 +26,54 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.cec;
+package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
-import it.tidalwave.util.NotFoundException;
-import it.tidalwave.cec.CecUserControlEvent.UserControlCode;
-import lombok.experimental.Delegate;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import java.util.Collections;
+import org.fourthline.cling.support.model.DIDLObject;
+import org.fourthline.cling.support.model.container.Container;
+import it.tidalwave.util.As8;
 import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.Identifiable.Identifiable;
+import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 
 /***********************************************************************************************************************
  *
- * Abstract base class for all CEC events.
- *
- * @see http://www.cec-o-matic.com/
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-@Immutable @Getter @RequiredArgsConstructor @EqualsAndHashCode @ToString
-public abstract class CecEvent
+@RequiredArgsConstructor
+public abstract class DIDLAdapterSupport<T extends As8> implements DIDLAdapter
   {
+    @Nonnull
+    protected final T datum;
+
     /*******************************************************************************************************************
      *
-     * Defines event types.
+     *
      *
      ******************************************************************************************************************/
-    @RequiredArgsConstructor @Getter
-    public enum EventType
+    protected <X extends DIDLObject> X setCommonFields (final @Nonnull X didlObject)
       {
-        USER_CONTROL_PRESSED(0x44,  (code) -> new CecUserControlEvent(forCode(0x44), UserControlCode.forCode(code))),
-        USER_CONTROL_RELEASED(0x8b, (code) -> new CecUserControlEvent(forCode(0x8b), UserControlCode.forCode(code)));
+        didlObject.setRestricted(false);
+        didlObject.setCreator("blueMarine II"); // FIXME
+        datum.asOptional(Identifiable).ifPresent(identifiable -> didlObject.setId(identifiable.getId().stringValue()));
+        datum.asOptional(Displayable).map(displayable -> didlObject.setTitle(displayable.getDisplayName()));
 
-        interface CecEventFactory
+        if (didlObject instanceof Container)
           {
-            @Nonnull
-            public CecEvent createEvent (int code)
-              throws NotFoundException;
+            final Container container = (Container)didlObject;
+            datum.asOptional(SimpleComposite8).ifPresent(c -> container.setChildCount(c.findChildren().count()));
+            container.setItems(Collections.emptyList());
           }
 
-        private final int code;
+//        if (datum instanceof PathAwareEntity)
+//          {
+//            didlObject.setParentID(((PathAwareEntity)datum).getParent().map(p -> p.getPath().toString()).orElse(ID_NONE));
+//          }
 
-        @Delegate @Nonnull
-        private final CecEventFactory eventFactory;
-
-        @Nonnull
-        public static EventType forCode (final int code)
-          throws NotFoundException
-          {
-            for (final EventType eventType : values())
-              {
-                if (eventType.getCode() == code)
-                  {
-                    return eventType;
-                  }
-              }
-
-            throw new NotFoundException("CEC event type: " + Integer.toHexString(code));
-          }
+        return didlObject;
       }
-
-    @Nonnull
-    private final EventType eventType;
   }

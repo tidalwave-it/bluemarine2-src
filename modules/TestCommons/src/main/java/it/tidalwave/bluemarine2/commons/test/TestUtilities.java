@@ -28,7 +28,9 @@
  */
 package it.tidalwave.bluemarine2.commons.test;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -75,13 +77,22 @@ public class TestUtilities
     public static List<String> dump (final @Nonnull As8 entity)
       {
         final List<String> result = new ArrayList<>();
-        // Don't let the dump depent on implementation class names
-        result.add(("" + entity).replace("delegate=PathAwareMediaFolderDecorator(), ", "")
-                                .replace("delegate=PathAwareFolder(), ", "")
-                                .replace("PathAwareEntityDecorator", "Entity")
-                                .replace("PathAwareFolder", "Folder")
-                                .replace("PathAwareMediaFolderDecorator2", "Folder")
-                                .replace("PathAwareMediaFolderDecorator", "Folder"));
+        String string = "null";
+
+        try
+          {
+            string = (String)entity.getClass().getDeclaredMethod("toDumpString").invoke(entity);
+          }
+        catch (NoSuchMethodException e)
+          {
+            string = entity.toString();
+          }
+        catch (SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
+          {
+            throw new RuntimeException(e);
+          }
+
+        result.add(string);
 
         final Optional<SimpleComposite8> asOptional = entity.asOptional(SimpleComposite8.class);
         asOptional.ifPresent(c -> c.findChildren().results().forEach(child -> result.addAll(dump((As8)child))));
