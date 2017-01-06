@@ -31,11 +31,8 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import org.fourthline.cling.support.model.DIDLObject;
-import it.tidalwave.role.Displayable;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MusicArtist;
-import lombok.RequiredArgsConstructor;
-import static it.tidalwave.role.Identifiable.Identifiable;
 
 /***********************************************************************************************************************
  *
@@ -47,22 +44,18 @@ import static it.tidalwave.role.Identifiable.Identifiable;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor
 @Immutable @DciRole(datumType = MusicArtist.class)
-public class MusicArtistDIDLAdapter implements DIDLAdapter
+public class MusicArtistDIDLAdapter extends DIDLAdapterSupport<MusicArtist>
   {
-    @Nonnull
-    private final MusicArtist datum;
+    public MusicArtistDIDLAdapter (final @Nonnull MusicArtist datum)
+      {
+        super(datum);
+      }
 
     @Override @Nonnull
     public DIDLObject toObject()
       {
         // parentID not set here
-        final org.fourthline.cling.support.model.container.MusicArtist item =
-                new org.fourthline.cling.support.model.container.MusicArtist();
-        item.setId(datum.as(Identifiable).getId().stringValue());
-        item.setTitle(datum.asOptional(Displayable.Displayable).map(d -> d.getDisplayName()).orElse("???"));
-        item.setRestricted(false);
-        return item;
+        return setCommonFields(new org.fourthline.cling.support.model.container.MusicArtist());
       }
   }

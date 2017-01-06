@@ -10,6 +10,11 @@ Browse({ObjectID=/music, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.storageFolder</upnp:class>
     </container>
+    <container childCount="41" id="/music/DefaultMediaFileSystem" parentID="/music" restricted="0" searchable="0">
+        <dc:title>By file</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.storageFolder</upnp:class>
+    </container>
     <container childCount="53" id="/music/RepositoryBrowserByRecordThenTrack" parentID="/music" restricted="0" searchable="0">
         <dc:title>By record &amp; track</dc:title>
         <dc:creator>blueMarine II</dc:creator>
@@ -17,11 +22,6 @@ Browse({ObjectID=/music, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex
     </container>
     <container childCount="668" id="/music/RepositoryBrowserByTrack" parentID="/music" restricted="0" searchable="0">
         <dc:title>By track</dc:title>
-        <dc:creator>blueMarine II</dc:creator>
-        <upnp:class>object.container.storageFolder</upnp:class>
-    </container>
-    <container childCount="41" id="/music/DefaultMediaFileSystem" parentID="/music" restricted="0" searchable="0">
-        <dc:title>By file</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.storageFolder</upnp:class>
     </container>

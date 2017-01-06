@@ -33,11 +33,8 @@ import javax.annotation.concurrent.Immutable;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.Container;
 import org.fourthline.cling.support.model.container.StorageFolder;
-import it.tidalwave.role.Displayable;
-import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.role.Identifiable.Identifiable;
 
 /***********************************************************************************************************************
  *
@@ -68,16 +65,9 @@ public class EntityDIDLAdapter extends CompositeDIDLAdapterSupport<Entity>
     public DIDLObject toObject()
       {
         log.trace("toObject() - {}", datum);
-        final Container container = new Container();
-        container.setId(datum.asOptional(Identifiable).map(d -> d.getId().stringValue()).orElse("???")); // FIXME
-        container.setParentID("parentId"); // FIXME
-        container.setRestricted(false);
-
-        datum.asOptional(SimpleComposite8.class).ifPresent(c -> container.setChildCount(c.findChildren().count()));
-        // FIXME: missing children count
-//        container.set(new DIDLObject.Class(datum.getClass().getName()));
+        final Container container = setCommonFields(new Container());
         container.setClazz(StorageFolder.CLASS); // FIXME: or Container?
-        container.setTitle(datum.asOptional(Displayable.Displayable).map(d -> d.getDisplayName()).orElse("???"));
+        container.setParentID("parentId"); // FIXME
         return container;
       }
   }
