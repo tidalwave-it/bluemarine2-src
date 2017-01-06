@@ -34,7 +34,7 @@ import java.util.List;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import static org.mockito.Mockito.when;
+import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
 
 /***********************************************************************************************************************
  *
@@ -72,8 +72,7 @@ public class ThemesPhotoCollectionProviderTest extends PhotoCollectionProviderTe
         // when
         final EntityFinder finder = underTest.findPhotos(mediaFolder);
         // then
-        when(mediaFolder.findChildren()).thenReturn(finder);
-        dumpAndAssertResults("themes-hierarchy.txt", dump(mediaFolder));
+        dumpAndAssertResults("themes-hierarchy.txt", dump(finder));
       }
 
     /*******************************************************************************************************************

@@ -93,6 +93,14 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
         this(Optional.of(parent), pathSegment, displayName, Optional.empty(), Optional.of(finderFactory));
       }
 
+    public VirtualMediaFolder (final @Nonnull Optional<? extends MediaFolder> optionalParent,
+                               final @Nonnull Path pathSegment,
+                               final @Nonnull String displayName,
+                               final @Nonnull EntityFinderFactory finderFactory)
+      {
+        this(optionalParent, pathSegment, displayName, Optional.empty(), Optional.of(finderFactory));
+      }
+
     private VirtualMediaFolder (final @Nonnull Optional<? extends MediaFolder> optionalParent,
                                 final @Nonnull Path pathSegment,
                                 final @Nonnull String displayName,

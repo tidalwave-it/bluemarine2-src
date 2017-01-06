@@ -31,8 +31,7 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 import java.util.List;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import org.testng.annotations.Test;
-import static org.mockito.Mockito.when;
-import static it.tidalwave.bluemarine2.service.stoppingdown.impl.PhotoCollectionProviderTestSupport.dump;
+import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
 
 /***********************************************************************************************************************
  *
@@ -69,7 +68,6 @@ public class DiaryPhotoCollectionProviderTest extends PhotoCollectionProviderTes
         // when
         final EntityFinder finder = underTest.findPhotos(mediaFolder);
         // then
-        when(mediaFolder.findChildren()).thenReturn(finder);
-        dumpAndAssertResults("diary-hierarchy.txt", dump(mediaFolder));
+        dumpAndAssertResults("diary-hierarchy.txt", dump(finder));
       }
   }
