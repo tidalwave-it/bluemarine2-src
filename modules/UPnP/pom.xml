@@ -7,13 +7,13 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-modules</artifactId>
-        <version>1.0-ALPHA-15-SNAPSHOT</version>
+        <version>1.0-ALPHA-15</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-upnp-modules</artifactId>
-    <version>1.0-ALPHA-15-SNAPSHOT</version>
+    <version>1.0-ALPHA-15</version>
     <packaging>pom</packaging>
     <name>blueMarine II - UPnP (modules)</name>
     <description>blueMarine2 UPnp (modules)</description>
