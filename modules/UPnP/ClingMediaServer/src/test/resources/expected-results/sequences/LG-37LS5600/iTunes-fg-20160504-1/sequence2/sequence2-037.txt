@@ -5,6 +5,8 @@ Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artis
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
+        <upnp:album>Trio 99&gt;00</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:05:37" protocolInfo="http-get:*:audio/mpeg:*" size="13494974">http://<server>/Music/Pat+Metheny/Trio+99_00/01+%28Go%29+Get+It.mp3</res>
     </item>
 </DIDL-Lite>

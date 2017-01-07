@@ -5,6 +5,8 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
+        <upnp:album>Beethoven: Piano Sonatas #21, 23 &amp; 26</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:04:38" protocolInfo="http-get:*:audio/mpeg:*" size="11149329">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/02+Beethoven_+Piano+Sonata+%2321+In+C%2C+Op.+53%2C+_Waldstein_+-+2.+Introduzione_+Adagio+Molto.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:bd97d8200fb520301fec16d84d15aa67f159678e" parentID="/music/RepositoryBrowserByTrack" restricted="0">
@@ -12,6 +14,8 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
+        <upnp:album>Beethoven: Piano Sonatas #21, 23 &amp; 26</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:07:34" protocolInfo="http-get:*:audio/mpeg:*" size="18164774">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/03+Beethoven_+Piano+Sonata+%2321+In+C%2C+Op.+53%2C+_Waldstein_+-+3.+Rondo_+Allegretto+Moderato.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:ca90bb42e95a3cc41068a281a72487e428444403" parentID="/music/RepositoryBrowserByTrack" restricted="0">
@@ -19,6 +23,8 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
+        <upnp:album>Beethoven: Piano Sonatas #21, 23 &amp; 26</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:01:55" protocolInfo="http-get:*:audio/mpeg:*" size="4624978">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/04+Beethoven_+Piano+Sonata+%2321+In+C%2C+Op.+53%2C+_Waldstein_+-+3.+Rondo_+Prestissimo.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:666a6a916a2cd3ebf71fffff7fa4ab29bca7f0f9" parentID="/music/RepositoryBrowserByTrack" restricted="0">
@@ -26,6 +32,8 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
+        <upnp:album>Beethoven: Piano Sonatas #21, 23 &amp; 26</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:07:16" protocolInfo="http-get:*:audio/mpeg:*" size="17444835">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/05+Beethoven_+Piano+Sonata+%2326+In+E+Flat%2C+Op.+81A%2C+_Les+Adieux_+-+1.+Adagio%2C+Allegro.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:55d464666f4d2678164ebf0d467c90af1ce6eb7e" parentID="/music/RepositoryBrowserByTrack" restricted="0">
@@ -33,6 +41,8 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
+        <upnp:album>Beethoven: Piano Sonatas #21, 23 &amp; 26</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:04:01" protocolInfo="http-get:*:audio/mpeg:*" size="9663483">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/06+Beethoven_+Piano+Sonata+%2326+In+E+Flat%2C+Op.+81A%2C+_Les+Adieux_+-+2.+Andante+Espressivo.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:228702f9566e94b303f8eda8a370cf2ceab7b777" parentID="/music/RepositoryBrowserByTrack" restricted="0">
@@ -40,6 +50,8 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
+        <upnp:album>Beethoven: Piano Sonatas #21, 23 &amp; 26</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:06:06" protocolInfo="http-get:*:audio/mpeg:*" size="14666452">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/07+Beethoven_+Piano+Sonata+%2326+In+E+Flat%2C+Op.+81A%2C+_Les+Adieux_+-+3.+Vivacissimamente.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:2cc2d02aa5791353301a33eaf2c9288bb3c88a8b" parentID="/music/RepositoryBrowserByTrack" restricted="0">
@@ -47,6 +59,8 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
+        <upnp:album>Beethoven: Piano Sonatas #21, 23 &amp; 26</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:11:07" protocolInfo="http-get:*:audio/mpeg:*" size="26704720">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/08+Beethoven_+Piano+Sonata+%2323+In+F+Minor%2C+Op.+57%2C+_Appassionata_+-+1.+Allegro+Assai.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:75b7393292d00e12a83b542d62f7128203612e0f" parentID="/music/RepositoryBrowserByTrack" restricted="0">
@@ -54,6 +68,8 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
+        <upnp:album>Beethoven: Piano Sonatas #21, 23 &amp; 26</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:06:29" protocolInfo="http-get:*:audio/mpeg:*" size="15585964">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/09+Beethoven_+Piano+Sonata+%2323+In+F+Minor%2C+Op.+57%2C+_Appassionata_+-+2.+Andante+Con+Moto.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:44c51fe0f536293ab799bc73115a3bb0e5facbb1" parentID="/music/RepositoryBrowserByTrack" restricted="0">
@@ -61,6 +77,8 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
+        <upnp:album>Beethoven: Piano Sonatas #21, 23 &amp; 26</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:07:53" protocolInfo="http-get:*:audio/mpeg:*" size="18943228">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/10+Beethoven_+Piano+Sonata+%2323+In+F+Minor%2C+Op.+57%2C+_Appassionata_+-+3.+Allegro+Ma+Non+Troppo.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:fa4352443773cadf03c83079928bd7afdfc840af" parentID="/music/RepositoryBrowserByTrack" restricted="0">
@@ -68,6 +86,8 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
+        <upnp:album>Borodin, String Quartet 2. Tchaikovsky, string Quartet 3</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:08:11" protocolInfo="http-get:*:audio/mpeg:*" size="19651647">http://<server>/Music/Brodsky+Quartet/Borodin%2C+String+Quartet+2.+Tchaikovsky%2C+string+Quartet+3/01+Borodin+String+Quartet+No+2+in+D+Major.+I.+Allegro+moderato.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:0f04ac54511143d3a05a8c33841ae0f8c6618af4" parentID="/music/RepositoryBrowserByTrack" restricted="0">
@@ -75,6 +95,8 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
+        <upnp:album>Borodin, String Quartet 2. Tchaikovsky, string Quartet 3</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:04:52" protocolInfo="http-get:*:audio/mpeg:*" size="11685337">http://<server>/Music/Brodsky+Quartet/Borodin%2C+String+Quartet+2.+Tchaikovsky%2C+string+Quartet+3/02+Borodin+String+Quartet+No+2+in+D+Major.+II.+Scherzo.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:77a1519df02ff37136421b605d6267f9eff2c98a" parentID="/music/RepositoryBrowserByTrack" restricted="0">
@@ -82,6 +104,8 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
+        <upnp:album>Borodin, String Quartet 2. Tchaikovsky, string Quartet 3</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:08:43" protocolInfo="http-get:*:audio/mpeg:*" size="20947317">http://<server>/Music/Brodsky+Quartet/Borodin%2C+String+Quartet+2.+Tchaikovsky%2C+string+Quartet+3/03+Shostakovich_+String+Quartet+%232+In+A%2C+Op.+68+-+Notturno+%28Excerpt%29.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:be5d07a01b98efe196be615a14d282277f3a5b80" parentID="/music/RepositoryBrowserByTrack" restricted="0">
@@ -89,6 +113,8 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
+        <upnp:album>Borodin, String Quartet 2. Tchaikovsky, string Quartet 3</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:07:02" protocolInfo="http-get:*:audio/mpeg:*" size="16900441">http://<server>/Music/Brodsky+Quartet/Borodin%2C+String+Quartet+2.+Tchaikovsky%2C+string+Quartet+3/04+Borodin+String+Quartet+No+2+in+D+Major.+IV.+Finale_+Andante+--+Vivace.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:df6f4a02c535584f288ae4eb632899d879ea474b" parentID="/music/RepositoryBrowserByTrack" restricted="0">
@@ -96,6 +122,8 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
+        <upnp:album>Borodin, String Quartet 2. Tchaikovsky, string Quartet 3</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:16:05" protocolInfo="http-get:*:audio/mpeg:*" size="38633287">http://<server>/Music/Brodsky+Quartet/Borodin%2C+String+Quartet+2.+Tchaikovsky%2C+string+Quartet+3/05+Tchaikovsky+String+Quartet+No+3+in+E+flat+minor%2C+Op.30.+I.+Andante+Sostenuto.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:f12fd04cd9ab5d41473bd745cbeefa33d3011ede" parentID="/music/RepositoryBrowserByTrack" restricted="0">
@@ -103,6 +131,8 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
+        <upnp:album>Borodin, String Quartet 2. Tchaikovsky, string Quartet 3</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:03:19" protocolInfo="http-get:*:audio/mpeg:*" size="7987470">http://<server>/Music/Brodsky+Quartet/Borodin%2C+String+Quartet+2.+Tchaikovsky%2C+string+Quartet+3/06+Tchaikovsky+String+Quartet+No+3+in+E+flat+minor%2C+Op.30.+II.+Allegretto.mp3</res>
     </item>
     <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:a1ece627f81baffa2bcab8788ebb4e926fe7ff3b" parentID="/music/RepositoryBrowserByTrack" restricted="0">
@@ -110,6 +140,8 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
+        <upnp:album>Borodin, String Quartet 2. Tchaikovsky, string Quartet 3</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:12:48" protocolInfo="http-get:*:audio/mpeg:*" size="30748511">http://<server>/Music/Brodsky+Quartet/Borodin%2C+String+Quartet+2.+Tchaikovsky%2C+string+Quartet+3/07+Tchaikovsky+String+Quartet+No+3+in+E+flat+minor%2C+Op.30.+III.+Andante+funebre+e+doloroso+ma+con+moto.mp3</res>
     </item>
 </DIDL-Lite>

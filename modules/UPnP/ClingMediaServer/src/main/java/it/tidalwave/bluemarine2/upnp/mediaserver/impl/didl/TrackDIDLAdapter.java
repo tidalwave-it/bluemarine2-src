@@ -47,6 +47,8 @@ import it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver.ResourceSer
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
+import it.tidalwave.role.Displayable;
+import org.fourthline.cling.support.model.StorageMedium;
 
 /***********************************************************************************************************************
  *
@@ -81,9 +83,28 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
         final MusicTrack item = setCommonFields(new MusicTrack());
         final AudioFile audioFile = datum.as(AudioFileSupplier).getAudioFile();
         final Metadata trackMetadata = datum.getMetadata();
-        trackMetadata.get(TRACK_NUMBER).ifPresent(trackNumber -> item.setOriginalTrackNumber(trackNumber));
         item.setResources(Collections.singletonList(getResource(audioFile)));
-//        datum.getDiskNumber();
+        trackMetadata.get(TRACK_NUMBER).ifPresent(trackNumber -> item.setOriginalTrackNumber(trackNumber));
+
+        datum.getRecord().flatMap(record -> record.asOptional(Displayable.class))
+                         .map(Displayable::getDisplayName)
+                         .ifPresent(album -> item.setAlbum(album));
+//        trackMetadata.get(DISK_COUNT);
+//        trackMetadata.get(DISK_NUMBER);
+//        trackMetadata.get(COMPOSER);
+//        trackMetadata.get(ARTIST);
+//        item.setAlbum(album);
+//        item.setArtists(artists);
+//        item.setContributors(contributors);
+//        item.setCreator(creator);
+//        item.setDate(date);
+//        item.setDescMetadata(descMetadata);
+//        item.setDescription(description);
+//        item.setGenres(genres);
+//        item.setLanguage(language);
+//        item.setLongDescription(description);
+//        item.setPublishers(publishers);
+        item.setStorageMedium(StorageMedium.HDD);
 
         return item;
       }
@@ -97,10 +118,10 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
                                      audioFileMetadata.get(FILE_SIZE).orElse(null),
                                      resourceServer.urlForResource(audioFile));
         audioFileMetadata.get(DURATION).ifPresent(duration -> resource.setDuration(durationToString(duration)));
-//        resource.setBitrate(size); // TODO
-//        resource.setBitsPerSample(size); // TODO
-//        resource.setNrAudioChannels(size); // TODO
-//        resource.setSampleFrequency(size); // TODO
+        audioFileMetadata.get(BIT_RATE).ifPresent(bitRate -> resource.setBitrate((long)(int)bitRate));
+        audioFileMetadata.get(BITS_PER_SAMPLE).ifPresent(bitPerSample -> resource.setBitsPerSample((long)(int)bitPerSample));
+        audioFileMetadata.get(CHANNELS).ifPresent(channels -> resource.setNrAudioChannels((long)(int)channels));
+        audioFileMetadata.get(SAMPLE_RATE).ifPresent(sampleRate -> resource.setSampleFrequency((long)(int)sampleRate));
 
         return resource;
       }
@@ -130,7 +151,6 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
         <upnp:artist role="AlbumArtist" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">Unknown</upnp:artist>
         <upnp:artist role="Conductor" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">Unknown</upnp:artist>
         <upnp:album xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">This Is The Life</upnp:album>
-            <upnp:originalTrackNumber xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">1</upnp:originalTrackNumber>
         <dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">Unknown</dc:date>
         <upnp:originalDiscNumber xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">0</upnp:originalDiscNumber>
         <upnp:originalDiscCount xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">0</upnp:originalDiscCount>

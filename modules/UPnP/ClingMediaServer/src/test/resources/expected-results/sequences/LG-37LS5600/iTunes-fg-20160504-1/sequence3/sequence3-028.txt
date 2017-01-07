@@ -5,6 +5,8 @@ Browse({ObjectID=/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
+        <upnp:album>Bach; Vivaldi: Concertos For 2 Violins</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="00:04:02" protocolInfo="http-get:*:audio/mpeg:*" size="9685435">http://<server>/Music/Midori%3B+Pinchas+Zukerman_+St.+Paul+Chamber+Orchestra/Bach%3B+Vivaldi_+Concertos+For+2+Violins/01+Bach_+Concerto+In+D+Minor+For+2+Violins%2C+BWV+1043%2C+_Double_+-+1.+Vivace.mp3</res>
     </item>
 </DIDL-Lite>
