@@ -62,7 +62,7 @@ public class DefaultCddbMetadataProvider extends CachingRestClientSupport implem
      ******************************************************************************************************************/
     @Override @Nonnull
     public CddbResponse<CddbAlbum> findCddbAlbum (final @Nonnull ITunesComment iTunesComment)
-      throws IOException
+      throws IOException, InterruptedException
       {
         final String freeDbDiscId = iTunesComment.getFreeDbDiscId();
         final ResponseEntity<String> response = request(String.format(FREEDB_URL_TEMPLATE, host, freeDbDiscId));

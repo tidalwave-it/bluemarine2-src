@@ -26,25 +26,20 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.rest;
+package it.tidalwave.bluemarine2.metadata.cddb.impl;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Optional;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.HttpStatus;
-import lombok.extern.slf4j.Slf4j;
-import static java.util.Comparator.comparing;
-import static java.util.stream.Collectors.joining;
+import java.nio.file.Paths;
+import org.testng.annotations.DataProvider;
+import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
+import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITunesComment;
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
 
 /***********************************************************************************************************************
  *
@@ -52,69 +47,52 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * @version $Id: $
  *
  **********************************************************************************************************************/
-@Slf4j
-public class ResponseEntityIo
+public class TestSupport
   {
+    protected static final Path METADATA = Paths.get("target/metadata");
+
+    protected static final Path CACHE = Paths.get("target/cache");
+
+    protected static final Path CDDB_CACHE = CACHE.resolve("cddb");
+
+    protected static final Path MUSICBRAINZ_CACHE = CACHE.resolve("musicbrainz");
+
+    protected static final Path TEST_RESULTS = Paths.get("target/test-results");
+
+    protected static final Path EXPECTED_RESULTS = Paths.get("target/expected-results");
+
+
     /*******************************************************************************************************************
-     *
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static void store (final @Nonnull Path path,
-                              final @Nonnull ResponseEntity<String> response,
-                              final @Nonnull List<String> ignoredHeaders)
+    protected Optional<ITunesComment> readiTunesCommentFrom (final @Nonnull Path path)
       throws IOException
       {
-        log.trace("store({}, ..., ...)", path);
-
-        Files.createDirectories(path.getParent());
-        final StringWriter sw = new StringWriter();
-
-        try (final PrintWriter pw = new PrintWriter(sw))
-          {
-            pw.printf("HTTP/1.1 %d %s%n", response.getStatusCode().value(), response.getStatusCode().name());
-            response.getHeaders().entrySet().stream()
-                    .filter(e -> !ignoredHeaders.contains(e.getKey()))
-                    .sorted(comparing(e -> e.getKey()))
-                    .forEach(e -> pw.printf("%s: %s%n", e.getKey(), e.getValue().get(0)));
-            pw.println();
-            pw.print(response.getBody());
-          }
-
-        Files.write(path, Arrays.asList(sw.toString()), UTF_8);
+        return Files.lines(path, UTF_8).filter(s -> s.contains("[iTunes.comment]"))
+                                       .findFirst()
+                                       .map(s -> MediaItem.Metadata.ITunesComment.fromToString(s.replaceAll("^.* = ", "")));
       }
 
     /*******************************************************************************************************************
      *
-     *
      ******************************************************************************************************************/
     @Nonnull
-    /* package */ static Optional<ResponseEntity<String>> retrieve (final @Nonnull Path path)
+    protected Optional<String> readAlbumTitleFrom (final @Nonnull Path path)
       throws IOException
       {
-        log.trace("retrieve({})", path);
+        return Files.lines(path, UTF_8).filter(s -> s.contains("[mp3.album]"))
+                                       .findFirst()
+                                       .map(s -> s.replaceAll("^.* = ", ""));
+      }
 
-        if (!Files.exists(path))
-          {
-            return Optional.empty();
-          }
-
-        final List<String> lines = Files.readAllLines(path, UTF_8);
-        final HttpStatus status = HttpStatus.valueOf(Integer.parseInt(lines.get(0).split(" ")[1]));
-        final MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-
-        int i = 1;
-
-        for (; (i < lines.size()) && !lines.get(i).equals(""); i++)
-          {
-            final String[] split = lines.get(i).split(":");
-            headers.add(split[0], split[1].trim());
-          }
-
-        final String body = lines.stream().skip(i + 1).collect(joining("\n"));
-        final ResponseEntity<String> response = new ResponseEntity<>(body, headers, status);
-//        log.trace(">>>> returning {}", response);
-
-        return Optional.of(response);
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @DataProvider
+    protected static Object[][] trackResourcesProvider()
+      {
+        return streamOfTestSetTriples(TestSetLocator.allTestSets(), name -> METADATA.resolve(name))
+                                                    .collect(toTestNGDataProvider());
       }
   }

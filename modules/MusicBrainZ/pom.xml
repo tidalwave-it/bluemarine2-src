@@ -49,6 +49,10 @@
 
         <musicbrainz-cddb-cache-iTunes-fg-20160504-1.version>20170107_1800</musicbrainz-cddb-cache-iTunes-fg-20160504-1.version>
         <musicbrainz-cddb-cache-iTunes-fg-20161210-1.version>20170107_1800</musicbrainz-cddb-cache-iTunes-fg-20161210-1.version>
+
+        <musicbrainz-cache-iTunes-fg-20160504-1.version>20170107_2230</musicbrainz-cache-iTunes-fg-20160504-1.version>
+        <musicbrainz-cache-iTunes-fg-20161210-1.version>20170107_2230</musicbrainz-cache-iTunes-fg-20161210-1.version>
+
         <expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-1.version>20170107_1800</expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-1.version>
         <expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>20170107_1800</expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>
     </properties>
@@ -100,6 +104,23 @@
                                     <type>zip</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${cache.folder}/cddb</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>musicbrainz-cache-iTunes-fg-20160504-1</artifactId>
+                                    <version>${musicbrainz-cache-iTunes-fg-20160504-1.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${cache.folder}/musicbrainz</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>musicbrainz-cache-iTunes-fg-20161210-1</artifactId>
+                                    <version>${musicbrainz-cache-iTunes-fg-20161210-1.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${cache.folder}/musicbrainz</outputDirectory>
                                 </artifactItem>
 
                                 <!-- Expected results -->

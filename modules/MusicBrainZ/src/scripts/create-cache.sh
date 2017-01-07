@@ -20,9 +20,9 @@ function usage()
 
 function createCache()
   {
-    readonly ARTIFACT_ID=musicbrainz-cddb-cache-$TEST_SET
+    readonly ARTIFACT_ID=musicbrainz-cache-$TEST_SET
     readonly FILE=$PWD/target/$ARTIFACT_ID.zip
-    readonly TEST_RESULTS=target/cache/cddb
+    readonly TEST_RESULTS=target/cache/musicbrainz
 
     if [ ! -d "$TEST_RESULTS/$TEST_SET" ] ; then
         readonly TEST_SETS=`cd $TEST_RESULTS; echo *`

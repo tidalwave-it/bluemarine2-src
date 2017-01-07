@@ -34,11 +34,17 @@ import java.util.Optional;
 import java.io.IOException;
 import java.nio.file.Path;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpRequest;
+import org.springframework.http.client.ClientHttpRequestExecution;
+import org.springframework.http.client.ClientHttpRequestInterceptor;
+import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.client.RestTemplate;
-import lombok.extern.slf4j.Slf4j;
 import lombok.Getter;
 import lombok.Setter;
-import static java.util.Collections.emptyList;
+import lombok.extern.slf4j.Slf4j;
+import static java.util.Collections.*;
+import static org.springframework.http.HttpHeaders.*;
 
 /***********************************************************************************************************************
  *
@@ -57,7 +63,7 @@ public class CachingRestClientSupport
             @Override @Nonnull
             public ResponseEntity<String> request (final @Nonnull CachingRestClientSupport api,
                                                    final @Nonnull String url)
-              throws IOException
+              throws IOException, InterruptedException
               {
                 return api.requestFromNetwork(url);
               }
@@ -79,7 +85,7 @@ public class CachingRestClientSupport
             @Override @Nonnull
             public ResponseEntity<String> request (final @Nonnull CachingRestClientSupport api,
                                                    final @Nonnull String url)
-              throws IOException
+              throws IOException, InterruptedException
               {
                 return api.requestFromCacheAndThenNetwork(url);
               }
@@ -88,7 +94,7 @@ public class CachingRestClientSupport
         @Nonnull
         public abstract ResponseEntity<String> request (@Nonnull CachingRestClientSupport api,
                                                         @Nonnull String url)
-          throws IOException;
+          throws IOException, InterruptedException;
       }
 
     private final RestTemplate restTemplate = new RestTemplate(); // FIXME: inject?
@@ -98,6 +104,43 @@ public class CachingRestClientSupport
 
     @Getter @Setter
     private Path cachePath;
+
+    @Getter @Setter
+    private String userAgent = "blueMarine II (fabrizio.giudici@tidalwave.it)";
+
+    @Getter @Setter
+    private long throttleLimit;
+
+    private long latestNetworkAccessTimestamp = 0;
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private final ClientHttpRequestInterceptor interceptor = new ClientHttpRequestInterceptor()
+      {
+        @Override
+        public ClientHttpResponse intercept (final HttpRequest request,
+                                             final byte[] body,
+                                             final ClientHttpRequestExecution execution)
+          throws IOException
+          {
+            final HttpHeaders headers = request.getHeaders();
+            headers.add(USER_AGENT, userAgent);
+            return execution.execute(request, body);
+          }
+      };
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    public CachingRestClientSupport()
+      {
+        restTemplate.setInterceptors(singletonList(interceptor));
+      }
 
     /*******************************************************************************************************************
      *
@@ -118,7 +161,7 @@ public class CachingRestClientSupport
      ******************************************************************************************************************/
     @Nonnull
     protected ResponseEntity<String> request (final @Nonnull String url)
-      throws IOException
+      throws IOException, InterruptedException
       {
         log.debug("request({})", url);
         return cacheMode.request(this, url);
@@ -144,9 +187,21 @@ public class CachingRestClientSupport
      ******************************************************************************************************************/
     @Nonnull
     private ResponseEntity<String> requestFromNetwork (final @Nonnull String url)
-      throws IOException
+      throws IOException, InterruptedException
       {
         log.debug("requestFromNetwork({})", url);
+
+        final long now = System.currentTimeMillis();
+        final long delta = now - latestNetworkAccessTimestamp;
+        final long toWait = Math.max(throttleLimit - delta, 0);
+
+        if (toWait > 0)
+          {
+            log.info(">>>> throttle limit: waiting for {} msec...", toWait);
+            Thread.sleep(toWait);
+          }
+
+        latestNetworkAccessTimestamp = now;
         final ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
 //        log.trace(">>>> response: {}", response);
         return response;
@@ -159,7 +214,7 @@ public class CachingRestClientSupport
      ******************************************************************************************************************/
     @Nonnull
     private ResponseEntity<String> requestFromCacheAndThenNetwork (final @Nonnull String url)
-      throws IOException
+      throws IOException, InterruptedException
       {
         log.debug("requestFromCacheAndThenNetwork({})", url);
 
@@ -171,7 +226,7 @@ public class CachingRestClientSupport
                 ResponseEntityIo.store(cachePath.resolve(fixedPath(url)), response, emptyList());
                 return response;
               }
-            catch (IOException e)
+            catch (IOException | InterruptedException e)
               {
                 throw new RestException(e); // FIXME
               }

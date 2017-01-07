@@ -30,22 +30,17 @@ package it.tidalwave.bluemarine2.metadata.cddb.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
-import java.io.IOException;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.nio.file.Files;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITunesComment;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
+import org.testng.annotations.BeforeTest;
 import it.tidalwave.bluemarine2.commons.test.TestSetTriple;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbResponse;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
 import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 
@@ -56,37 +51,28 @@ import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class DefaultCddbMetadataTest
+public class DefaultCddbMetadataProviderTest extends TestSupport
   {
-    private static final Path METADATA = Paths.get("target/metadata");
-
-    private static final Path CACHE = Paths.get("target/cache");
-
-    private static final Path CDDB_CACHE = CACHE.resolve("cddb");
-
-    private static final Path TEST_RESULTS = Paths.get("target/test-results");
-
-    private static final Path EXPECTED_RESULTS = Paths.get("target/expected-results");
-
     private DefaultCddbMetadataProvider underTest;
 
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @BeforeMethod
+    @BeforeTest
     public void setup()
       {
         underTest = new DefaultCddbMetadataProvider();
-//        underTest.initialize();
+        underTest.setCacheMode(ONLY_USE_CACHE);
+//        underTest.initialize(); // FIXME
       }
 
     /*******************************************************************************************************************
      *
-     * Test sets iTunes-fg-20160504-1 and iTunes-fg-20161210-1 validated on 2017-01-07 18:00.
+     * Test sets iTunes-fg-20160504-1 and iTunes-fg-20161210-1 manually validated on 2017-01-07 18:00.
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "trackResourcesProvider")
-    public void must_correctly_download_MusicBrainz_resources (final @Nonnull TestSetTriple triple)
+    public void must_correctly_download_CDDB_resources (final @Nonnull TestSetTriple triple)
       throws Exception
       {
         // given
@@ -94,10 +80,7 @@ public class DefaultCddbMetadataTest
         final String testSetName = triple.getTestSetName();
         final Path actualResult = TEST_RESULTS.resolve(testSetName).resolve(relativePath);
         final Path expectedResult = EXPECTED_RESULTS.resolve("cddb").resolve(testSetName).resolve(relativePath);
-
-        underTest.setCacheMode(USE_CACHE);
         underTest.setCachePath(CDDB_CACHE.resolve(testSetName));
-//        underTest.initialize(); // FIXME
 
         final Optional<ITunesComment> iTunesComment = readiTunesCommentFrom(triple.getFilePath());
         CddbResponse<CddbAlbum> response = null;
@@ -119,27 +102,5 @@ public class DefaultCddbMetadataTest
         Files.createDirectories(actualResult.getParent());
         Files.write(actualResult, singletonList(string), UTF_8);
         assertSameContents(expectedResult, actualResult);
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private Optional<ITunesComment> readiTunesCommentFrom (final @Nonnull Path path)
-      throws IOException
-      {
-        return Files.lines(path, UTF_8).filter(s -> s.contains("[iTunes.comment]"))
-                                       .findFirst()
-                                       .map(s -> ITunesComment.fromToString(s.replaceAll("^.* = ", "")));
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @DataProvider
-    private static Object[][] trackResourcesProvider()
-      {
-        return streamOfTestSetTriples(TestSetLocator.allTestSets(), name -> METADATA.resolve(name))
-                                                    .collect(toTestNGDataProvider());
       }
   }

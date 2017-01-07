@@ -26,11 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.metadata.cddb;
-
-import javax.annotation.Nonnull;
-import java.io.IOException;
-import it.tidalwave.bluemarine2.model.MediaItem;
+package it.tidalwave.bluemarine2.metadata.musicbrainz;
 
 /***********************************************************************************************************************
  *
@@ -38,13 +34,6 @@ import it.tidalwave.bluemarine2.model.MediaItem;
  * @version $Id: $
  *
  **********************************************************************************************************************/
-public interface CddbMetadataProvider
+public interface MusicBrainzMetadataProvider
   {
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public CddbResponse<CddbAlbum> findCddbAlbum (@Nonnull MediaItem.Metadata.ITunesComment iTunesComment)
-      throws IOException, InterruptedException;
   }
