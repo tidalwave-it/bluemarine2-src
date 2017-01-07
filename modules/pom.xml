@@ -307,6 +307,7 @@
         <module>JavaFXApplication</module>
         <module>MediaScanner</module>
         <module>Model</module>
+        <module>MusicBrainZ</module>
         <module>Persistence</module>
         <module>Plugins</module>
         <module>Services</module>

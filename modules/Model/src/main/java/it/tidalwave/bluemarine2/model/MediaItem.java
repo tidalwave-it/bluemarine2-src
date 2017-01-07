@@ -39,6 +39,9 @@ import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Stream;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -101,6 +104,9 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
         @Immutable @AllArgsConstructor(access = PRIVATE) @Getter @ToString @EqualsAndHashCode
         public static class ITunesComment
           {
+            private static final Pattern PATTERN_TO_STRING = Pattern.compile(
+                    "MediaItem.Metadata.ITunesComment\\(cddb1=([^,]*), cddbTrackNumber=([0-9]+)\\)");
+
             @Nonnull
             private final String cddb1;
 
@@ -114,12 +120,40 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
               }
 
             @Nonnull
+            public String getFreeDbDiscId()
+              {
+                return cddb1.split("\\+")[0];
+              }
+
+            @Nonnull
+            public int[] getTrackFrameOffsets()
+              {
+                return Stream.of(cddb1.split("\\+"))
+                              .skip(3)
+                              .mapToInt(Integer::parseInt)
+                              .toArray();
+              }
+
+            @Nonnull
             public static Optional<ITunesComment> from (final @Nonnull Metadata metadata)
               {
                 return metadata.get(ENCODER).flatMap(
                         encoders -> encoders.stream().anyMatch(encoder -> encoder.startsWith("iTunes"))
                                                         ? metadata.get(COMMENT).flatMap(comments -> from(comments))
                                                         : Optional.empty());
+              }
+
+            @Nonnull
+            public static ITunesComment fromToString (final @Nonnull String string)
+              {
+                final Matcher matcher = PATTERN_TO_STRING.matcher(string);
+
+                if (!matcher.matches())
+                  {
+                    throw new IllegalArgumentException("Invalid string: " + string);
+                  }
+
+                return new ITunesComment(matcher.group(1), matcher.group(2));
               }
 
             @Nonnull
