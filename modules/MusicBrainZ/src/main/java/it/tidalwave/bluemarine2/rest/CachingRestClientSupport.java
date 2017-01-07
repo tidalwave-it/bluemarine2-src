@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import java.util.Optional;
 import java.io.IOException;
+import java.net.URI;
 import java.nio.file.Path;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpHeaders;
@@ -106,6 +107,9 @@ public class CachingRestClientSupport
     private Path cachePath;
 
     @Getter @Setter
+    private String accept = "application/xml";
+
+    @Getter @Setter
     private String userAgent = "blueMarine II (fabrizio.giudici@tidalwave.it)";
 
     @Getter @Setter
@@ -128,6 +132,7 @@ public class CachingRestClientSupport
           {
             final HttpHeaders headers = request.getHeaders();
             headers.add(USER_AGENT, userAgent);
+            headers.add(ACCEPT, accept);
             return execution.execute(request, body);
           }
       };
@@ -202,7 +207,8 @@ public class CachingRestClientSupport
           }
 
         latestNetworkAccessTimestamp = now;
-        final ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+        final ResponseEntity<String> response = restTemplate.getForEntity(URI.create(url), String.class);
+//        final ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
 //        log.trace(">>>> response: {}", response);
         return response;
       }

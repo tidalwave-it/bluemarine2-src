@@ -31,15 +31,16 @@ package it.tidalwave.bluemarine2.metadata.cddb.impl;
 import javax.annotation.Nonnull;
 import java.io.IOException;
 import org.springframework.http.ResponseEntity;
-import lombok.extern.slf4j.Slf4j;
 import it.tidalwave.bluemarine2.rest.CachingRestClientSupport;
+import it.tidalwave.bluemarine2.rest.RestResponse;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
-import it.tidalwave.bluemarine2.metadata.cddb.CddbResponse;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbMetadataProvider;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITunesComment;
-import java.util.Arrays;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
@@ -61,58 +62,12 @@ public class DefaultCddbMetadataProvider extends CachingRestClientSupport implem
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public CddbResponse<CddbAlbum> findCddbAlbum (final @Nonnull ITunesComment iTunesComment)
+    public RestResponse<CddbAlbum> findCddbAlbum (final @Nonnull Metadata metadata)
       throws IOException, InterruptedException
       {
-        final String freeDbDiscId = iTunesComment.getFreeDbDiscId();
-        final ResponseEntity<String> response = request(String.format(FREEDB_URL_TEMPLATE, host, freeDbDiscId));
-        final CddbResponse<CddbAlbum> of = CddbResponse.of(response, CddbAlbum::of);
-
-        if (of.isPresent())
-          {
-            final CddbAlbum album = of.get();
-            final int[] requestedOffsets = iTunesComment.getTrackFrameOffsets();
-            final int[] albumOffsets = album.getTrackFrameOffsets();
-            boolean reject = false;
-
-            if (!Arrays.equals(albumOffsets, requestedOffsets))
-              {
-                if (albumOffsets.length != requestedOffsets.length)
-                  {
-                    log.debug(">>>> different number of tracks: found {}, requested {}",
-                              albumOffsets.length, requestedOffsets.length);
-                    reject = true;
-                  }
-                else
-                  {
-                    final int delta = requestedOffsets[0] - albumOffsets[0];
-                    double acc = 0;
-
-                    for (int i = 1; i < requestedOffsets.length; i++)
-                      {
-                        final double x = (requestedOffsets[i] - albumOffsets[i] - delta) / (double)albumOffsets[i];
-                        acc += x * x;
-                      }
-
-                    final int ppm = (int)Math.round(acc * 1E6);
-
-                    if (ppm > 2500)
-                      {
-                        log.debug(">>>> found track offsets:     {}", albumOffsets);
-                        log.debug(">>>> requested track offsets: {}", requestedOffsets);
-                        log.debug(">>>> ppm {}", ppm);
-                        reject = true;
-                      }
-                  }
-              }
-
-            if (reject)
-              {
-                log.warn("Rejected: " + album);
-                return CddbResponse.empty();
-              }
-          }
-
-        return of;
+        final ITunesComment iTunesComment = metadata.get(ITUNES_COMMENT).get();
+        final String discId = iTunesComment.getCddb().getDiscId();
+        final ResponseEntity<String> response = request(String.format(FREEDB_URL_TEMPLATE, host, discId));
+        return CddbResponse.of(response, CddbAlbum::of);
       }
   }

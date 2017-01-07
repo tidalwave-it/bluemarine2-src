@@ -26,12 +26,10 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.metadata.cddb;
+package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 
-import javax.annotation.Nonnull;
-import java.io.IOException;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.rest.RestResponse;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 /***********************************************************************************************************************
  *
@@ -39,13 +37,49 @@ import it.tidalwave.bluemarine2.rest.RestResponse;
  * @version $Id: $
  *
  **********************************************************************************************************************/
-public interface CddbMetadataProvider
+public class Wrapper
   {
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public RestResponse<CddbAlbum> findCddbAlbum (@Nonnull Metadata metadata)
-      throws IOException, InterruptedException;
+    @FunctionalInterface
+    public static interface FunctionWithException<T, R>
+      {
+        R apply (T t)
+          throws Exception;
+      }
+
+    @FunctionalInterface
+    public static interface ConsumerWithException<T>
+      {
+        void accept (T t)
+          throws Exception;
+      }
+
+    public static <T, R> Function<T, R> wf (final FunctionWithException<T, R> function)
+      {
+        return t ->
+          {
+            try
+              {
+                return function.apply(t);
+              }
+            catch (Exception e)
+              {
+                throw new RuntimeException(e);
+              }
+          };
+      }
+
+    public static <T> Consumer<T> wc (final ConsumerWithException<T> consumer)
+      {
+        return t ->
+          {
+            try
+              {
+                consumer.accept(t);
+              }
+            catch (Exception e)
+              {
+                throw new RuntimeException(e);
+              }
+          };
+      }
   }

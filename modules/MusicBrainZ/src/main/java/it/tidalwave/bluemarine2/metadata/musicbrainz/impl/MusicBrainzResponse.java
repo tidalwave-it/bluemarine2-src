@@ -26,37 +26,73 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.metadata.musicbrainz;
+package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 
 import javax.annotation.Nonnull;
-import java.io.IOException;
-import org.musicbrainz.ns.mmd_2.Release;
-import org.musicbrainz.ns.mmd_2.ReleaseGroupList;
+import java.util.Optional;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import it.tidalwave.bluemarine2.rest.RestException;
 import it.tidalwave.bluemarine2.rest.RestResponse;
+import java.io.StringReader;
+import java.util.function.Function;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import lombok.extern.slf4j.Slf4j;
+import org.musicbrainz.ns.mmd_2.Metadata;
 
 /***********************************************************************************************************************
+ *
+ * This class encapsulates a response from the MusicBrainz API, including the requested datum - if available - and some
+ * status codes.
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id: $
  *
  **********************************************************************************************************************/
-public interface MusicBrainzMetadataProvider
+@Slf4j
+class MusicBrainzResponse<T> extends RestResponse<T>
   {
     /*******************************************************************************************************************
      *
      *
-     *
      ******************************************************************************************************************/
-    @Nonnull
-    public RestResponse<ReleaseGroupList> findReleaseGroup (@Nonnull String title)
-      throws IOException, InterruptedException;
+    public MusicBrainzResponse (final @Nonnull Optional<T> datum, final @Nonnull String responseStatus)
+      {
+        super(datum, responseStatus);
+      }
 
     /*******************************************************************************************************************
      *
+     * Creates a {@code Response} containing a datum out of a {@link ResponseEntity} applying a parser. The parser
+     * receives an XML DOM as the input - it typically uses XPath to extract information.
      *
+     * @param <X>       the type of the datum
+     * @param response  the HTTP response
+     * @param parser    the parser that produces the datum
+     * @return          the {@code Response}
      *
      ******************************************************************************************************************/
     @Nonnull
-    public RestResponse<Release> findRelease (@Nonnull String releaseId)
-      throws IOException, InterruptedException;
+    public static <X> MusicBrainzResponse<X> of (final @Nonnull ResponseEntity<String> response,
+                                                 final @Nonnull Function<Metadata, X> function)
+      {
+        final int httpStatus = response.getStatusCodeValue();
+
+        if (httpStatus != HttpStatus.OK.value())
+          {
+            throw new RestException("Unexpected HTTP status", response.getStatusCode());
+          }
+
+        try
+          {
+            final JAXBContext ctx = JAXBContext.newInstance("org.musicbrainz.ns.mmd_2");
+            final Metadata metadata = (Metadata)ctx.createUnmarshaller().unmarshal(new StringReader(response.getBody()));
+            return new MusicBrainzResponse<>(Optional.of(function.apply(metadata)), "");
+          }
+        catch (JAXBException e)
+          {
+            throw new RuntimeException(e);
+          }
+      }
   }

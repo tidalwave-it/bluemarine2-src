@@ -1,0 +1,243 @@
+/*
+ * #%L
+ * *********************************************************************************************************************
+ *
+ * blueMarine2 - Semantic Media Center
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
+ * %%
+ * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
+ * %%
+ *
+ * *********************************************************************************************************************
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations under the License.
+ *
+ * *********************************************************************************************************************
+ *
+ * $Id$
+ *
+ * *********************************************************************************************************************
+ * #L%
+ */
+package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
+
+import javax.annotation.Nonnull;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.TreeMap;
+import javax.xml.namespace.QName;
+import java.io.IOException;
+import org.musicbrainz.ns.mmd_2.Medium;
+import org.musicbrainz.ns.mmd_2.Release;
+import org.musicbrainz.ns.mmd_2.ReleaseGroup;
+import org.musicbrainz.ns.mmd_2.ReleaseGroupList;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITunesComment;
+import it.tidalwave.bluemarine2.rest.RestResponse;
+import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
+import it.tidalwave.bluemarine2.metadata.cddb.CddbMetadataProvider;
+import it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.toList;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.cddbsOf;
+import static it.tidalwave.bluemarine2.metadata.musicbrainz.impl.Wrapper.*;
+
+/***********************************************************************************************************************
+ *
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
+ *
+ **********************************************************************************************************************/
+@Slf4j
+@RequiredArgsConstructor
+public class DefaultMusicBrainzProbe
+  {
+    private static final QName QNAME_SCORE = new QName("http://musicbrainz.org/ns/ext#-2.0", "score");
+
+    @Nonnull
+    private final CddbMetadataProvider cddbMetadataProvider;
+
+    @Nonnull
+    private final MusicBrainzMetadataProvider musicBrainzMetadataProvider;
+
+    @Getter @Setter
+    private int trackOffsetsMatchThreshold = 2500;
+
+    @Getter @Setter
+    private int releaseGroupScoreThreshold = 50;
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @RequiredArgsConstructor @Getter
+    public static class ReleaseAndMedium
+      {
+        @Nonnull
+        private final Release release;
+
+        @Nonnull
+        private final Medium medium;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Getter @ToString
+    private static class ReleaseGroupAndScore
+      {
+        @Nonnull
+        private final ReleaseGroup releaseGroup;
+
+        private final int score;
+
+        public ReleaseGroupAndScore (final @Nonnull ReleaseGroup releaseGroup)
+          {
+            this.releaseGroup = releaseGroup;
+            this.score = Integer.parseInt(releaseGroup.getOtherAttributes().get(QNAME_SCORE));
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public List<ReleaseAndMedium> probe (final @Nonnull Metadata metadata)
+      throws InterruptedException, IOException
+      {
+        final Optional<String> albumTitle = metadata.get(TITLE);
+        final Optional<ITunesComment> itunesComment = metadata.get(ITUNES_COMMENT);
+
+        if (!albumTitle.isPresent() || albumTitle.get().trim().isEmpty())
+          {
+            return Collections.emptyList();
+          }
+
+        log.info("============ PROBING METADATA FOR {}", albumTitle);
+        final List<ReleaseGroup> releaseGroups = new ArrayList<>();
+        musicBrainzMetadataProvider.findReleaseGroup(albumTitle.get()).ifPresent(rgl -> releaseGroups.addAll(rgl.getReleaseGroup()));
+
+        final Optional<String> cddbTitle = itunesComment.flatMap(wf(itc -> cddbTitle(metadata)));
+        final Optional<RestResponse<ReleaseGroupList>> response = cddbTitle.map(wf(t -> musicBrainzMetadataProvider.findReleaseGroup(t)));
+
+        if (response.isPresent())
+          {
+            log.info("======== ALSO USING ALTERNATE TITLE: {}", cddbTitle.get());
+            releaseGroups.addAll(response.get().get().getReleaseGroup());
+          }
+
+        return probe(releaseGroups, itunesComment);
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private List<ReleaseAndMedium> probe (final @Nonnull List<ReleaseGroup> releaseGroups,
+                                          final @Nonnull Optional<ITunesComment> itunesComment)
+      throws IOException, InterruptedException
+      {
+        final Map<String, ReleaseAndMedium> found = new TreeMap<>();
+
+        releaseGroups.stream().map(ReleaseGroupAndScore::new)
+                              .filter(rg -> rg.getScore() >= releaseGroupScoreThreshold)
+                              .map(ReleaseGroupAndScore::getReleaseGroup)
+                              .forEach(releaseGroup ->
+          {
+            log.debug(">>>> {} {} {} artist: {}",
+                    releaseGroup.getOtherAttributes().get(QNAME_SCORE),
+                    releaseGroup.getId(),
+                    releaseGroup.getTitle(),
+                    releaseGroup.getArtistCredit().getNameCredit().stream().map(nc -> nc.getArtist().getName()).collect(toList()));
+
+            releaseGroup.getReleaseList().getRelease().forEach(wc(release ->
+              {
+                log.info(">>>>>>>> release: {} {}", release.getId(), release.getTitle());
+                final Release release2 = musicBrainzMetadataProvider.findRelease(release.getId()).get();
+
+                for (final Medium medium : release2.getMediumList().getMedium())
+                  {
+                    if (!"CD".equals(medium.getFormat()))
+                      {
+                        log.info(">>>>>>>> discarded {} because not a CD ({})", medium.getTitle(), medium.getFormat());
+                        continue;
+                      }
+
+                    final List<CDDB> cddbs = cddbsOf(medium);
+                    final boolean matches = itunesComment.map(itc -> cddbs.stream().anyMatch(cddb -> itc.getCddb().matches(cddb, trackOffsetsMatchThreshold)))
+                                                         .orElse(true);
+
+//                    if (!cddbs.isEmpty() && !matches)
+                    if (!matches)
+                      {
+                        log.info(">>>>>>>> discarded {} because track offsets don't match", medium.getTitle());
+                        itunesComment.ifPresent(itc -> log.debug(">>>>>>>> iTunes offsets: {}", itc.getCddb().getTrackFrameOffsets()));
+                        cddbs.forEach(cddb -> log.debug(">>>>>>>> found offsets:  {}", cddb.getTrackFrameOffsets()));
+                        continue;
+                      }
+
+                    found.put(release.getId(), new ReleaseAndMedium(release, medium));
+                    continue;
+                  }
+              }));
+          });
+
+        return new ArrayList<>(found.values());
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private Optional<String> cddbTitle (final @Nonnull Metadata metadata)
+      throws IOException, InterruptedException
+      {
+        final RestResponse<CddbAlbum> album2 = cddbMetadataProvider.findCddbAlbum(metadata);
+
+        if (!album2.isPresent())
+          {
+            return Optional.empty();
+          }
+
+        final CddbAlbum album = album2.get();
+        final CDDB albumCddb = album.getCddb();
+        final CDDB requestedCddb = metadata.get(ITUNES_COMMENT).get().getCddb();
+        final Optional<String> dTitle = album.getProperty("DTITLE");
+
+        if (!albumCddb.matches(requestedCddb, trackOffsetsMatchThreshold))
+          {
+            log.info(">>>> discarded alternate title because mismatching track offsets: {}", dTitle);
+            log.debug(">>>>>>>> found track offsets:    {}", albumCddb.getTrackFrameOffsets());
+            log.debug(">>>>>>>> searched track offsets: {}", requestedCddb.getTrackFrameOffsets());
+            log.debug(">>>>>>>> ppm                     {}", albumCddb.computeDifference(requestedCddb));
+            return Optional.empty();
+          }
+
+        return dTitle;
+      }
+  }

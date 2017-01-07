@@ -28,15 +28,19 @@
  */
 package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 
+import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.escape;
 import javax.annotation.Nonnull;
-import java.net.URLEncoder;
 import java.io.IOException;
 import org.springframework.http.ResponseEntity;
+import org.musicbrainz.ns.mmd_2.Metadata;
+import org.musicbrainz.ns.mmd_2.Release;
+import org.musicbrainz.ns.mmd_2.ReleaseGroupList;
+import it.tidalwave.bluemarine2.rest.CachingRestClientSupport;
+import it.tidalwave.bluemarine2.rest.RestResponse;
+import it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider;
-import it.tidalwave.bluemarine2.rest.CachingRestClientSupport;
 
 /***********************************************************************************************************************
  *
@@ -47,15 +51,39 @@ import it.tidalwave.bluemarine2.rest.CachingRestClientSupport;
 @Slf4j
 public class DefaultMusicBrainzMetadataProvider extends CachingRestClientSupport implements MusicBrainzMetadataProvider
   {
-    private static final String URL_TEMPLATE = "http://%s/ws/2/release-group/?query=release:%s";
+    private static final String URL_RELEASE_GROUP = "http://%s/ws/2/release-group/?query=release:%s";
+
+//    private static final String URL_RELEASE = "http://%s/ws/2/release/%s?inc=aliases,artist-credits,discids,labels,recordings";
+    private static final String URL_RELEASE = "http://%s/ws/2/release/%s?inc=aliases%%2bartist-credits%%2bdiscids%%2blabels%%2brecordings";
 
     @Getter @Setter
     private String host = "musicbrainz.org";
 
-    public void findReleaseGroup (final @Nonnull String title)
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public RestResponse<ReleaseGroupList> findReleaseGroup (final @Nonnull String title)
       throws IOException, InterruptedException
       {
         log.info("findReleaseGroup({})", title);
-        final ResponseEntity<String> response = request(String.format(URL_TEMPLATE, host, URLEncoder.encode(title, "UTF-8")));
+        final ResponseEntity<String> response = request(String.format(URL_RELEASE_GROUP, host, escape(title)));
+        return MusicBrainzResponse.of(response, Metadata::getReleaseGroupList);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public RestResponse<Release> findRelease (final @Nonnull String releaseId)
+      throws IOException, InterruptedException
+      {
+        log.info("findRelease({})", releaseId);
+        final ResponseEntity<String> response = request(String.format(URL_RELEASE, host, releaseId));
+        return MusicBrainzResponse.of(response, Metadata::getRelease);
       }
   }

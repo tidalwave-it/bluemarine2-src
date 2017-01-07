@@ -28,24 +28,28 @@
  */
 package it.tidalwave.bluemarine2.model;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Stream;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Stream;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -101,6 +105,59 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
          *
          *
          **************************************************************************************************************/
+        @Immutable @AllArgsConstructor(access = PRIVATE) @Getter @Builder @ToString @EqualsAndHashCode
+        @Slf4j
+        public static class CDDB
+          {
+            @Nonnull
+            private final String discId;
+
+            @Nonnull
+            private final int[] trackFrameOffsets;
+
+            private final int discLength;
+
+            public boolean matches (final @Nonnull CDDB other, final @Nonnegative int threshold)
+              {
+                if (Arrays.equals(this.trackFrameOffsets, other.trackFrameOffsets))
+                  {
+                    return true;
+                  }
+
+                if (!this.sameTrackCountOf(other))
+                  {
+                    return false;
+                  }
+
+                return this.computeDifference(other) <= threshold;
+              }
+
+            public boolean sameTrackCountOf (final @Nonnull CDDB other)
+              {
+                return this.trackFrameOffsets.length == other.trackFrameOffsets.length;
+              }
+
+            public int computeDifference (final @Nonnull CDDB other)
+              {
+                final int delta = this.trackFrameOffsets[0] - other.trackFrameOffsets[0];
+                double acc = 0;
+
+                for (int i = 1; i < this.trackFrameOffsets.length; i++)
+                  {
+                    final double x = (this.trackFrameOffsets[i] - other.trackFrameOffsets[i] - delta)
+                                            / (double)other.trackFrameOffsets[i];
+                    acc += x * x;
+                  }
+
+                return (int)Math.round(acc * 1E6);
+              }
+          }
+
+        /***************************************************************************************************************
+         *
+         *
+         *
+         **************************************************************************************************************/
         @Immutable @AllArgsConstructor(access = PRIVATE) @Getter @ToString @EqualsAndHashCode
         public static class ITunesComment
           {
@@ -120,18 +177,14 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
               }
 
             @Nonnull
-            public String getFreeDbDiscId()
+            public CDDB getCddb()
               {
-                return cddb1.split("\\+")[0];
-              }
-
-            @Nonnull
-            public int[] getTrackFrameOffsets()
-              {
-                return Stream.of(cddb1.split("\\+"))
-                              .skip(3)
-                              .mapToInt(Integer::parseInt)
-                              .toArray();
+                return CDDB.builder().discId(cddb1.split("\\+")[0])
+                                     .trackFrameOffsets(Stream.of(cddb1.split("\\+"))
+                                                              .skip(3)
+                                                              .mapToInt(Integer::parseInt)
+                                                              .toArray())
+                                     .build();
               }
 
             @Nonnull

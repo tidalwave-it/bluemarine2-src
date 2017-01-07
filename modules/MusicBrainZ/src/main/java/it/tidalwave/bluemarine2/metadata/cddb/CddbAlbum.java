@@ -37,6 +37,7 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -60,30 +61,32 @@ public class CddbAlbum
     private final Map<String, String> properties;
 
     @Nonnull
-    private final int[] trackFrameOffsets;
-
-    @Nonnull
-    private final int discLength;
+    private final CDDB cddb;
 
     @Nonnull
     public static CddbAlbum of (final @Nonnull String stringResponse)
       {
         final String[] split = stringResponse.split("\n");
 
-        return builder().trackFrameOffsets(
-                                Stream.of(split)
-                                      .skip(2)
-                                      .filter(string -> PATTERN_TRACK_FRAME_OFFSETS.matcher(string).matches())
-                                      .mapToInt(s -> Integer.parseInt(s.substring(1).trim()))
-                                      .toArray())
-                        .discLength(
-                                Stream.of(split)
-                                      .skip(2)
-                                      .map(string -> PATTERN_DISC_LENGTH.matcher(string))
-                                      .filter(Matcher::matches)
-                                      .map(matcher -> Integer.parseInt(matcher.group(1)))
-                                      .findFirst()
-                                      .get())
+        final CDDB cddb = CDDB.builder()
+                            .discId("") // FIXME
+                            .trackFrameOffsets(
+                                    Stream.of(split)
+                                          .skip(2)
+                                          .filter(string -> PATTERN_TRACK_FRAME_OFFSETS.matcher(string).matches())
+                                          .mapToInt(s -> Integer.parseInt(s.substring(1).trim()))
+                                          .toArray())
+                            .discLength(
+                                    Stream.of(split)
+                                          .skip(2)
+                                          .map(string -> PATTERN_DISC_LENGTH.matcher(string))
+                                          .filter(Matcher::matches)
+                                          .map(matcher -> Integer.parseInt(matcher.group(1)))
+                                          .findFirst()
+                                          .get())
+                            .build();
+
+        return builder().cddb(cddb)
                         .properties(
                                 Stream.of(split)
                                       .skip(2)
@@ -107,10 +110,10 @@ public class CddbAlbum
     public String toDumpString()
       {
         return "CddbAlbum\n"
-              + "trackFrameOffsets: " + Arrays.stream(trackFrameOffsets)
+              + "trackFrameOffsets: " + Arrays.stream(cddb.getTrackFrameOffsets())
                                               .mapToObj(String::valueOf)
                                               .collect(joining(" ")) + "\n"
-              + "discLenght: " + discLength + "\n"
+              + "discLenght: " + cddb.getDiscLength() + "\n"
               + properties.entrySet().stream()
                                      .map(e -> String.format("%s: %s", e.getKey(), e.getValue()))
                                      .collect(joining("\n"));

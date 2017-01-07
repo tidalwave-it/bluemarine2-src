@@ -26,31 +26,26 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.metadata.cddb;
+package it.tidalwave.bluemarine2.rest;
 
-import it.tidalwave.bluemarine2.rest.RestException;
 import javax.annotation.Nonnull;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.function.Consumer;
 import java.util.function.Function;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import static lombok.AccessLevel.PRIVATE;
 import lombok.extern.slf4j.Slf4j;
+import static lombok.AccessLevel.*;
 
 /***********************************************************************************************************************
- *
- * This class encapsulates a response from the Gracenote API, including the requested datum - if available - and some
- * status codes.
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id: $
  *
  **********************************************************************************************************************/
-@AllArgsConstructor(access = PRIVATE) @Slf4j
-public class CddbResponse<T>
+@AllArgsConstructor(access = PROTECTED) @Slf4j
+public class RestResponse<T>
   {
     @Nonnull
     private final Optional<T> datum;
@@ -59,9 +54,9 @@ public class CddbResponse<T>
     private final String responseStatus;
 
     @Nonnull
-    public static <X> CddbResponse<X> empty()
+    public static <X> RestResponse<X> empty()
       {
-        return new CddbResponse<>(Optional.empty(), "");
+        return new RestResponse<>(Optional.empty(), "");
       }
 
     /*******************************************************************************************************************
@@ -124,39 +119,13 @@ public class CddbResponse<T>
 
     /*******************************************************************************************************************
      *
-     * Creates a {@code Response} containing a datum out of a {@link ResponseEntity} applying a parser. The parser
-     * receives an XML DOM as the input - it typically uses XPath to extract information.
+     * If a value is present, invoke the specified consumer with the value, otherwise do nothing.
      *
-     * @param <X>       the type of the datum
-     * @param response  the HTTP response
-     * @param parser    the parser that produces the datum
-     * @return          the {@code Response}
+     * @param consumer  code to be executed if a value is present
      *
      ******************************************************************************************************************/
-    @Nonnull
-    public static <X> CddbResponse<X> of (final @Nonnull ResponseEntity<String> response,
-                                          final @Nonnull Function<String, X> parser)
+    public void ifPresent (final @Nonnull Consumer<? super T> consumer)
       {
-        final int httpStatus = response.getStatusCodeValue();
-
-        if (httpStatus != HttpStatus.OK.value())
-          {
-            throw new RestException("Unexpected HTTP status", response.getStatusCode());
-          }
-
-        final String responseStatus = response.getBody().split("\n")[0].split(",")[0].split(" ")[0];
-        log.debug(">>>> responseStatus: {}", responseStatus);
-
-        switch (responseStatus)
-          {
-            case "401":
-              return new CddbResponse<>(Optional.empty(), responseStatus);
-
-            case "210":
-              return new CddbResponse<>(Optional.of(parser.apply(response.getBody())), responseStatus);
-
-            default:
-              throw new RestException("Unexpected response status", responseStatus);
-          }
+        datum.ifPresent(consumer);
       }
   }

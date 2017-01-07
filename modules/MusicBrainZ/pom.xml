@@ -22,6 +22,10 @@
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-model</artifactId>
         </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-musicbrainz-api</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -49,12 +53,12 @@
 
         <musicbrainz-cddb-cache-iTunes-fg-20160504-1.version>20170107_1800</musicbrainz-cddb-cache-iTunes-fg-20160504-1.version>
         <musicbrainz-cddb-cache-iTunes-fg-20161210-1.version>20170107_1800</musicbrainz-cddb-cache-iTunes-fg-20161210-1.version>
-
-        <musicbrainz-cache-iTunes-fg-20160504-1.version>20170107_2230</musicbrainz-cache-iTunes-fg-20160504-1.version>
-        <musicbrainz-cache-iTunes-fg-20161210-1.version>20170107_2230</musicbrainz-cache-iTunes-fg-20161210-1.version>
-
-        <expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-1.version>20170107_1800</expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-1.version>
-        <expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>20170107_1800</expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>
+        <musicbrainz-cache-iTunes-fg-20160504-1.version>20170108_1630</musicbrainz-cache-iTunes-fg-20160504-1.version>
+        <musicbrainz-cache-iTunes-fg-20161210-1.version>20170108_1630</musicbrainz-cache-iTunes-fg-20161210-1.version>
+        <expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-1.version>20170108_2230</expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-1.version>
+        <expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>20170108_2230</expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>
+        <expected-metadata-musicbrainz-iTunes-fg-20160504-1.version>20170108_1630</expected-metadata-musicbrainz-iTunes-fg-20160504-1.version>
+        <expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>20170108_1630</expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>
     </properties>
 
     <build>
@@ -105,7 +109,6 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${cache.folder}/cddb</outputDirectory>
                                 </artifactItem>
-
                                 <artifactItem>
                                     <groupId>it.tidalwave.bluemarine2.testsets</groupId>
                                     <artifactId>musicbrainz-cache-iTunes-fg-20160504-1</artifactId>
@@ -139,6 +142,22 @@
                                     <type>zip</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${expected-results.folder}/cddb</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>expected-metadata-musicbrainz-iTunes-fg-20160504-1</artifactId>
+                                    <version>${expected-metadata-musicbrainz-iTunes-fg-20160504-1.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${expected-results.folder}/musicbrainz</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>expected-metadata-musicbrainz-iTunes-fg-20161210-1</artifactId>
+                                    <version>${expected-metadata-musicbrainz-iTunes-fg-20161210-1.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${expected-results.folder}/musicbrainz</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>

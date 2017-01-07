@@ -26,12 +26,12 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.metadata.cddb;
+package it.tidalwave.bluemarine2.metadata.cddb.impl;
 
-import javax.annotation.Nonnull;
-import java.io.IOException;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.rest.RestResponse;
+import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.*;
+import java.io.UnsupportedEncodingException;
+import static org.testng.Assert.*;
+import org.testng.annotations.Test;
 
 /***********************************************************************************************************************
  *
@@ -39,13 +39,17 @@ import it.tidalwave.bluemarine2.rest.RestResponse;
  * @version $Id: $
  *
  **********************************************************************************************************************/
-public interface CddbMetadataProvider
+public class MusicBrainzUtilitiesTest
   {
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public RestResponse<CddbAlbum> findCddbAlbum (@Nonnull Metadata metadata)
-      throws IOException, InterruptedException;
+    // wrong: http://musicbrainz.org/ws/2/release-group/?query=release:Brahms\:%20Piano%20Concerto%20%232
+    // wrong: /ws/2/release-group/?query=release:Brahms\:%20Piano%20Concerto%20%232
+    // right: /ws/2/release-group/?query=release:Brahms\:%20Piano%20Concerto%20%232
+    @Test(enabled = false)
+    public void testSomeMethod()
+      throws UnsupportedEncodingException
+      {
+        final String string = "Brahms: Piano Concerto #2";
+        final String actual = escape(string);
+        assertEquals(actual, "Brahms\\:%20Piano%20Concerto%20%232");
+      }
   }

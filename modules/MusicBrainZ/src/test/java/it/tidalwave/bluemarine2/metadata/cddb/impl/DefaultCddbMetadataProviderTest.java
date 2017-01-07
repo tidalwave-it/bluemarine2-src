@@ -33,14 +33,16 @@ import java.util.Optional;
 import java.nio.file.Path;
 import java.nio.file.Files;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITunesComment;
+import it.tidalwave.bluemarine2.rest.RestResponse;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import it.tidalwave.bluemarine2.commons.test.TestSetTriple;
-import it.tidalwave.bluemarine2.metadata.cddb.CddbResponse;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITUNES_COMMENT;
 import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 
@@ -78,12 +80,12 @@ public class DefaultCddbMetadataProviderTest extends TestSupport
         // given
         final Path relativePath = triple.getRelativePath();
         final String testSetName = triple.getTestSetName();
-        final Path actualResult = TEST_RESULTS.resolve(testSetName).resolve(relativePath);
+        final Path actualResult = TEST_RESULTS.resolve("cddb").resolve(testSetName).resolve(relativePath);
         final Path expectedResult = EXPECTED_RESULTS.resolve("cddb").resolve(testSetName).resolve(relativePath);
         underTest.setCachePath(CDDB_CACHE.resolve(testSetName));
 
-        final Optional<ITunesComment> iTunesComment = readiTunesCommentFrom(triple.getFilePath());
-        CddbResponse<CddbAlbum> response = null;
+        final Metadata metadata = mockMetadataFrom(triple.getFilePath());
+        final Optional<ITunesComment> iTunesComment = metadata.get(ITUNES_COMMENT);
         final String string;
 
         if (!iTunesComment.isPresent())
@@ -93,7 +95,7 @@ public class DefaultCddbMetadataProviderTest extends TestSupport
         else
           {
             // when
-            response = underTest.findCddbAlbum(iTunesComment.get());
+            final RestResponse<CddbAlbum> response = underTest.findCddbAlbum(metadata);
             // then
             string = response.map(CddbAlbum::toDumpString).orElse("NOT FOUND");
           }

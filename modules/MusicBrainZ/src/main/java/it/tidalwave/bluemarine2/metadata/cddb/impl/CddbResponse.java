@@ -26,37 +26,73 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.metadata.musicbrainz;
+package it.tidalwave.bluemarine2.metadata.cddb.impl;
 
 import javax.annotation.Nonnull;
-import java.io.IOException;
-import org.musicbrainz.ns.mmd_2.Release;
-import org.musicbrainz.ns.mmd_2.ReleaseGroupList;
+import java.util.Optional;
+import java.util.function.Function;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import it.tidalwave.bluemarine2.rest.RestException;
 import it.tidalwave.bluemarine2.rest.RestResponse;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
+ *
+ * This class encapsulates a response from the CDDB API, including the requested datum - if available - and some
+ * status codes.
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id: $
  *
  **********************************************************************************************************************/
-public interface MusicBrainzMetadataProvider
+@Slf4j
+class CddbResponse<T> extends RestResponse<T>
   {
     /*******************************************************************************************************************
      *
      *
-     *
      ******************************************************************************************************************/
-    @Nonnull
-    public RestResponse<ReleaseGroupList> findReleaseGroup (@Nonnull String title)
-      throws IOException, InterruptedException;
+    public CddbResponse (final @Nonnull Optional<T> datum, final @Nonnull String responseStatus)
+      {
+        super(datum, responseStatus);
+      }
 
     /*******************************************************************************************************************
      *
+     * Creates a {@code Response} containing a datum out of a {@link ResponseEntity} applying a parser. The parser
+     * receives an XML DOM as the input - it typically uses XPath to extract information.
      *
+     * @param <X>       the type of the datum
+     * @param response  the HTTP response
+     * @param parser    the parser that produces the datum
+     * @return          the {@code Response}
      *
      ******************************************************************************************************************/
     @Nonnull
-    public RestResponse<Release> findRelease (@Nonnull String releaseId)
-      throws IOException, InterruptedException;
+    public static <X> CddbResponse<X> of (final @Nonnull ResponseEntity<String> response,
+                                          final @Nonnull Function<String, X> parser)
+      {
+        final int httpStatus = response.getStatusCodeValue();
+
+        if (httpStatus != HttpStatus.OK.value())
+          {
+            throw new RestException("Unexpected HTTP status", response.getStatusCode());
+          }
+
+        final String responseStatus = response.getBody().split("\n")[0].split(",")[0].split(" ")[0];
+        log.debug(">>>> responseStatus: {}", responseStatus);
+
+        switch (responseStatus)
+          {
+            case "401":
+              return new CddbResponse<>(Optional.empty(), responseStatus);
+
+            case "210":
+              return new CddbResponse<>(Optional.of(parser.apply(response.getBody())), responseStatus);
+
+            default:
+              throw new RestException("Unexpected response status", responseStatus);
+          }
+      }
   }

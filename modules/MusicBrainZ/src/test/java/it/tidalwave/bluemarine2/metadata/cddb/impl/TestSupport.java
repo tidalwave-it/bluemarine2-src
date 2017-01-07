@@ -36,10 +36,14 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.testng.annotations.DataProvider;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
-import it.tidalwave.bluemarine2.model.MediaItem;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITunesComment;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 /***********************************************************************************************************************
  *
@@ -61,29 +65,27 @@ public class TestSupport
 
     protected static final Path EXPECTED_RESULTS = Paths.get("target/expected-results");
 
-
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected Optional<ITunesComment> readiTunesCommentFrom (final @Nonnull Path path)
+    protected Metadata mockMetadataFrom (final @Nonnull Path file)
       throws IOException
       {
-        return Files.lines(path, UTF_8).filter(s -> s.contains("[iTunes.comment]"))
-                                       .findFirst()
-                                       .map(s -> MediaItem.Metadata.ITunesComment.fromToString(s.replaceAll("^.* = ", "")));
-      }
+        final Optional<String> albumTitle =
+                Files.lines(file, UTF_8).filter(s -> s.contains("[mp3.album]"))
+                                        .findFirst()
+                                        .map(s -> s.replaceAll("^.* = ", ""));
+        final Optional<ITunesComment> iTunesComment =
+                Files.lines(file, UTF_8).filter(s -> s.contains("[iTunes.comment]"))
+                                        .findFirst()
+                                        .map(s -> ITunesComment.fromToString(s.replaceAll("^.* = ", "")));
 
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    protected Optional<String> readAlbumTitleFrom (final @Nonnull Path path)
-      throws IOException
-      {
-        return Files.lines(path, UTF_8).filter(s -> s.contains("[mp3.album]"))
-                                       .findFirst()
-                                       .map(s -> s.replaceAll("^.* = ", ""));
+        final Metadata metadata = mock(Metadata.class);
+        when(metadata.get(eq(TITLE))).thenReturn(albumTitle);
+        when(metadata.get(eq(ITUNES_COMMENT))).thenReturn(iTunesComment);
+
+        return metadata;
       }
 
     /*******************************************************************************************************************
@@ -93,6 +95,7 @@ public class TestSupport
     protected static Object[][] trackResourcesProvider()
       {
         return streamOfTestSetTriples(TestSetLocator.allTestSets(), name -> METADATA.resolve(name))
+                .filter(triple -> triple.getFilePath().getFileName().toString().startsWith("01"))
                                                     .collect(toTestNGDataProvider());
       }
   }
