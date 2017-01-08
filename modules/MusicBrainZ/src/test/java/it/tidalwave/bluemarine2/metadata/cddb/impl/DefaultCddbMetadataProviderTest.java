@@ -34,11 +34,11 @@ import java.nio.file.Path;
 import java.nio.file.Files;
 import it.tidalwave.bluemarine2.rest.RestResponse;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import it.tidalwave.bluemarine2.commons.test.TestSetTriple;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -86,19 +86,10 @@ public class DefaultCddbMetadataProviderTest extends TestSupport
 
         final Metadata metadata = mockMetadataFrom(triple.getFilePath());
         final Optional<CDDB> cddb = metadata.get(CDDB_);
-        final String string;
-
-        if (!cddb.isPresent())
-          {
-            string = "NO ITUNES COMMENT";
-          }
-        else
-          {
-            // when
-            final RestResponse<CddbAlbum> response = underTest.findCddbAlbum(metadata);
-            // then
-            string = response.map(CddbAlbum::toDumpString).orElse("NOT FOUND");
-          }
+        // when
+        final RestResponse<CddbAlbum> response = underTest.findCddbAlbum(metadata);
+        // then
+        final String string = response.map(CddbAlbum::toDumpString).orElse(cddb.isPresent() ? "NOT FOUND" : "NO ITUNES COMMENT");
 
         log.info(">>>> writing to {}", actualResult);
         Files.createDirectories(actualResult.getParent());

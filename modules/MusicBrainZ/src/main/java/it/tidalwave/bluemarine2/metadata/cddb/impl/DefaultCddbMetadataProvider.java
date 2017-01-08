@@ -36,11 +36,11 @@ import it.tidalwave.bluemarine2.rest.RestResponse;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbMetadataProvider;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-//import it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITunesComment;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static it.tidalwave.bluemarine2.metadata.musicbrainz.impl.Wrapper.*;
 
 /***********************************************************************************************************************
  *
@@ -65,7 +65,16 @@ public class DefaultCddbMetadataProvider extends CachingRestClientSupport implem
     public RestResponse<CddbAlbum> findCddbAlbum (final @Nonnull Metadata metadata)
       throws IOException, InterruptedException
       {
-        final CDDB cddb = metadata.get(CDDB_).get();
+        return metadata.get(CDDB_).map(wf(this::findCddbAlbum)).orElse(CddbResponse.empty());
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private RestResponse<CddbAlbum> findCddbAlbum (final @Nonnull CDDB cddb)
+      throws IOException, InterruptedException
+      {
         final String discId = cddb.getDiscId();
         final ResponseEntity<String> response = request(String.format(FREEDB_URL_TEMPLATE, host, discId));
         return CddbResponse.of(response, CddbAlbum::of);
