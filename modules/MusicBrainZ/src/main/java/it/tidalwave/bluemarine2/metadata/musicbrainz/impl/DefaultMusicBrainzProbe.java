@@ -51,6 +51,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.Collections.emptyList;
 import static java.util.stream.Collectors.toList;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.cddbsOf;
@@ -105,17 +106,18 @@ public class DefaultMusicBrainzProbe
       throws InterruptedException, IOException
       {
         final Optional<String> albumTitle = metadata.get(TITLE);
-        final Optional<CDDB> oCddb = metadata.get(CDDB_);
+        final Optional<CDDB> cddb = metadata.get(CDDB_);
 
-        if (!albumTitle.isPresent() || albumTitle.get().trim().isEmpty() || !oCddb.isPresent())
+        if (!albumTitle.isPresent() || albumTitle.get().trim().isEmpty() || !cddb.isPresent())
           {
             return Collections.emptyList();
           }
 
         log.info("============ PROBING METADATA FOR {}", albumTitle);
-        final CDDB cddb = oCddb.get();
         final List<ReleaseGroup> releaseGroups = new ArrayList<>();
-        mbMetadataProvider.findReleaseGroup(albumTitle.get()).ifPresent(rgl -> releaseGroups.addAll(rgl.getReleaseGroup()));
+        releaseGroups.addAll(mbMetadataProvider.findReleaseGroup(albumTitle.get())
+                                               .map(ReleaseGroupList::getReleaseGroup)
+                                               .orElse(emptyList()));
 
         final Optional<String> cddbTitle = cddbTitle(metadata);
         cddbTitle.map(_f(mbMetadataProvider::findReleaseGroup)).ifPresent(response ->
@@ -124,7 +126,7 @@ public class DefaultMusicBrainzProbe
             releaseGroups.addAll(response.get().getReleaseGroup());
           });
 
-        return probe(releaseGroups, cddb);
+        return probe(releaseGroups, cddb.get());
       }
 
     /*******************************************************************************************************************
