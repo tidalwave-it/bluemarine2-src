@@ -198,6 +198,7 @@ public class DefaultMusicBrainzProbe
                         continue;
                       }
 
+                    log.info(">>>>>>>> FOUND {} - from score {}", medium.getTitle(), score(releaseGroup));
                     found.put(release.getId(), new ReleaseAndMedium(release, medium));
                     continue;
                   }
@@ -238,5 +239,15 @@ public class DefaultMusicBrainzProbe
           }
 
         return dTitle;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private static int score (final @Nonnull ReleaseGroup releaseGroup)
+      {
+        return Integer.parseInt(releaseGroup.getOtherAttributes().get(QNAME_SCORE));
       }
   }
