@@ -56,7 +56,7 @@ public final class FunctionWrappers
           throws Exception;
       }
 
-    public static <T, R> Function<T, R> wf (final FunctionWithException<T, R> function)
+    public static <T, R> Function<T, R> _f (final FunctionWithException<T, R> function)
       {
         return t ->
           {
@@ -71,7 +71,7 @@ public final class FunctionWrappers
           };
       }
 
-    public static <T> Consumer<T> wc (final ConsumerWithException<T> consumer)
+    public static <T> Consumer<T> _c (final ConsumerWithException<T> consumer)
       {
         return t ->
           {

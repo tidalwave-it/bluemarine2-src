@@ -119,7 +119,7 @@ public class DefaultMusicBrainzProbe
 
         final Optional<String> cddbTitle = cddbTitle(metadata);
         final Optional<RestResponse<ReleaseGroupList>> response =
-                cddbTitle.map(wf(title -> musicBrainzMetadataProvider.findReleaseGroup(title)));
+                cddbTitle.map(_f(title -> musicBrainzMetadataProvider.findReleaseGroup(title)));
 
         if (response.isPresent())
           {
@@ -150,7 +150,7 @@ public class DefaultMusicBrainzProbe
                     releaseGroup.getTitle(),
                     releaseGroup.getArtistCredit().getNameCredit().stream().map(nc -> nc.getArtist().getName()).collect(toList()));
 
-            releaseGroup.getReleaseList().getRelease().forEach(wc(release ->
+            releaseGroup.getReleaseList().getRelease().forEach(_c(release ->
               {
                 log.info(">>>>>>>> release: {} {}", release.getId(), release.getTitle());
                 final Release release2 = musicBrainzMetadataProvider.findRelease(release.getId()).get();

@@ -65,7 +65,7 @@ public class DefaultCddbMetadataProvider extends CachingRestClientSupport implem
     public RestResponse<CddbAlbum> findCddbAlbum (final @Nonnull Metadata metadata)
       throws IOException, InterruptedException
       {
-        return metadata.get(CDDB_).map(wf(this::findCddbAlbum)).orElse(CddbResponse.empty());
+        return metadata.get(CDDB_).map(_f(this::findCddbAlbum)).orElse(CddbResponse.empty());
       }
 
     /*******************************************************************************************************************
