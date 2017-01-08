@@ -72,7 +72,7 @@ public class DefaultMusicBrainzProbe
     private final CddbMetadataProvider cddbMetadataProvider;
 
     @Nonnull
-    private final MusicBrainzMetadataProvider musicBrainzMetadataProvider;
+    private final MusicBrainzMetadataProvider mbMetadataProvider;
 
     @Getter @Setter
     private int trackOffsetsMatchThreshold = 2500;
@@ -115,11 +115,10 @@ public class DefaultMusicBrainzProbe
         log.info("============ PROBING METADATA FOR {}", albumTitle);
         final CDDB cddb = oCddb.get();
         final List<ReleaseGroup> releaseGroups = new ArrayList<>();
-        musicBrainzMetadataProvider.findReleaseGroup(albumTitle.get()).ifPresent(rgl -> releaseGroups.addAll(rgl.getReleaseGroup()));
+        mbMetadataProvider.findReleaseGroup(albumTitle.get()).ifPresent(rgl -> releaseGroups.addAll(rgl.getReleaseGroup()));
 
         final Optional<String> cddbTitle = cddbTitle(metadata);
-        final Optional<RestResponse<ReleaseGroupList>> response =
-                cddbTitle.map(_f(title -> musicBrainzMetadataProvider.findReleaseGroup(title)));
+        final Optional<RestResponse<ReleaseGroupList>> response = cddbTitle.map(_f(mbMetadataProvider::findReleaseGroup));
 
         if (response.isPresent())
           {
@@ -153,7 +152,7 @@ public class DefaultMusicBrainzProbe
             releaseGroup.getReleaseList().getRelease().forEach(_c(release ->
               {
                 log.info(">>>>>>>> release: {} {}", release.getId(), release.getTitle());
-                final Release release2 = musicBrainzMetadataProvider.findRelease(release.getId()).get();
+                final Release release2 = mbMetadataProvider.findRelease(release.getId()).get();
 
                 for (final Medium medium : release2.getMediumList().getMedium())
                   {
