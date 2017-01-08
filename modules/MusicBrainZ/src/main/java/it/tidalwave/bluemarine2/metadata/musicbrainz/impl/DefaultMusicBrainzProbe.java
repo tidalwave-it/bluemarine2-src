@@ -50,7 +50,6 @@ import it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider
 import lombok.Getter;
 import lombok.Setter;
 import lombok.RequiredArgsConstructor;
-import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
@@ -101,26 +100,6 @@ public class DefaultMusicBrainzProbe
      *
      *
      ******************************************************************************************************************/
-    @Getter @ToString
-    private static class ReleaseGroupAndScore
-      {
-        @Nonnull
-        private final ReleaseGroup releaseGroup;
-
-        private final int score;
-
-        public ReleaseGroupAndScore (final @Nonnull ReleaseGroup releaseGroup)
-          {
-            this.releaseGroup = releaseGroup;
-            this.score = Integer.parseInt(releaseGroup.getOtherAttributes().get(QNAME_SCORE));
-          }
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
     @Nonnull
     public List<ReleaseAndMedium> probe (final @Nonnull Metadata metadata)
       throws InterruptedException, IOException
@@ -162,9 +141,7 @@ public class DefaultMusicBrainzProbe
       {
         final Map<String, ReleaseAndMedium> found = new TreeMap<>();
 
-        releaseGroups.stream().map(ReleaseGroupAndScore::new)
-                              .filter(rg -> rg.getScore() >= releaseGroupScoreThreshold)
-                              .map(ReleaseGroupAndScore::getReleaseGroup)
+        releaseGroups.stream().filter(releaseGroup -> score(releaseGroup) >= releaseGroupScoreThreshold)
                               .forEach(releaseGroup ->
           {
             log.debug(">>>> {} {} {} artist: {}",
