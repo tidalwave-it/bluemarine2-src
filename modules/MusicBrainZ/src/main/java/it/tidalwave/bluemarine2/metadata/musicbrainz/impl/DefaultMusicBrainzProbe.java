@@ -177,7 +177,7 @@ public class DefaultMusicBrainzProbe
 
                     log.info(">>>>>>>> FOUND {} - from score {}", medium.getTitle(), score(releaseGroup));
                     found.put(release.getId(), new ReleaseAndMedium(release, medium));
-                    continue;
+                    // FIXME: should break, not only this loop, but also the one on releaseGroup
                   }
               }));
           });
