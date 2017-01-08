@@ -118,13 +118,11 @@ public class DefaultMusicBrainzProbe
         mbMetadataProvider.findReleaseGroup(albumTitle.get()).ifPresent(rgl -> releaseGroups.addAll(rgl.getReleaseGroup()));
 
         final Optional<String> cddbTitle = cddbTitle(metadata);
-        final Optional<RestResponse<ReleaseGroupList>> response = cddbTitle.map(_f(mbMetadataProvider::findReleaseGroup));
-
-        if (response.isPresent())
+        cddbTitle.map(_f(mbMetadataProvider::findReleaseGroup)).ifPresent(response ->
           {
             log.info("======== ALSO USING ALTERNATE TITLE: {}", cddbTitle.get());
-            releaseGroups.addAll(response.get().get().getReleaseGroup());
-          }
+            releaseGroups.addAll(response.get().getReleaseGroup());
+          });
 
         return probe(releaseGroups, cddb);
       }
