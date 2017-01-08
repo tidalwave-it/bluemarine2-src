@@ -99,6 +99,7 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
         public final Key<List<String>> ENCODER = new Key<>("tag.ENCODER"); // FIXME: key name
 
         public static final Key<ITunesComment> ITUNES_COMMENT = new Key<>("iTunes.comment");
+        public static final Key<CDDB> CDDB_ = new Key<>("cddb");
 
         /***************************************************************************************************************
          *

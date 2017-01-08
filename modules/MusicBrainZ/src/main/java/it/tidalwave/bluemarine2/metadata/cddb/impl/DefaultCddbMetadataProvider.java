@@ -36,7 +36,7 @@ import it.tidalwave.bluemarine2.rest.RestResponse;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbMetadataProvider;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITunesComment;
+//import it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITunesComment;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -65,8 +65,8 @@ public class DefaultCddbMetadataProvider extends CachingRestClientSupport implem
     public RestResponse<CddbAlbum> findCddbAlbum (final @Nonnull Metadata metadata)
       throws IOException, InterruptedException
       {
-        final ITunesComment iTunesComment = metadata.get(ITUNES_COMMENT).get();
-        final String discId = iTunesComment.getCddb().getDiscId();
+        final CDDB cddb = metadata.get(CDDB_).get();
+        final String discId = cddb.getDiscId();
         final ResponseEntity<String> response = request(String.format(FREEDB_URL_TEMPLATE, host, discId));
         return CddbResponse.of(response, CddbAlbum::of);
       }

@@ -43,7 +43,6 @@ import org.musicbrainz.ns.mmd_2.ReleaseGroup;
 import org.musicbrainz.ns.mmd_2.ReleaseGroupList;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITunesComment;
 import it.tidalwave.bluemarine2.rest.RestResponse;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbMetadataProvider;
@@ -127,7 +126,7 @@ public class DefaultMusicBrainzProbe
       throws InterruptedException, IOException
       {
         final Optional<String> albumTitle = metadata.get(TITLE);
-        final Optional<ITunesComment> itunesComment = metadata.get(ITUNES_COMMENT);
+        final Optional<CDDB> cddb = metadata.get(CDDB_);
 
         if (!albumTitle.isPresent() || albumTitle.get().trim().isEmpty())
           {
@@ -138,7 +137,7 @@ public class DefaultMusicBrainzProbe
         final List<ReleaseGroup> releaseGroups = new ArrayList<>();
         musicBrainzMetadataProvider.findReleaseGroup(albumTitle.get()).ifPresent(rgl -> releaseGroups.addAll(rgl.getReleaseGroup()));
 
-        final Optional<String> cddbTitle = itunesComment.flatMap(wf(itc -> cddbTitle(metadata)));
+        final Optional<String> cddbTitle = cddb.flatMap(wf(x -> cddbTitle(metadata)));
         final Optional<RestResponse<ReleaseGroupList>> response = cddbTitle.map(wf(t -> musicBrainzMetadataProvider.findReleaseGroup(t)));
 
         if (response.isPresent())
@@ -147,17 +146,17 @@ public class DefaultMusicBrainzProbe
             releaseGroups.addAll(response.get().get().getReleaseGroup());
           }
 
-        return probe(releaseGroups, itunesComment);
+        return probe(releaseGroups, cddb);
       }
 
     /*******************************************************************************************************************
      *
-     *
+     * FIXME: ccdb is required, so no Optional.
      *
      ******************************************************************************************************************/
     @Nonnull
     private List<ReleaseAndMedium> probe (final @Nonnull List<ReleaseGroup> releaseGroups,
-                                          final @Nonnull Optional<ITunesComment> itunesComment)
+                                          final @Nonnull Optional<CDDB> cddb)
       throws IOException, InterruptedException
       {
         final Map<String, ReleaseAndMedium> found = new TreeMap<>();
@@ -186,16 +185,16 @@ public class DefaultMusicBrainzProbe
                         continue;
                       }
 
-                    final List<CDDB> cddbs = cddbsOf(medium);
-                    final boolean matches = itunesComment.map(itc -> cddbs.stream().anyMatch(cddb -> itc.getCddb().matches(cddb, trackOffsetsMatchThreshold)))
+                    final List<CDDB> mCddbs = cddbsOf(medium);
+                    final boolean matches = cddb.map(c1 -> mCddbs.stream().anyMatch(c2 -> c1.matches(c2, trackOffsetsMatchThreshold)))
                                                          .orElse(true);
 
 //                    if (!cddbs.isEmpty() && !matches)
                     if (!matches)
                       {
                         log.info(">>>>>>>> discarded {} because track offsets don't match", medium.getTitle());
-                        itunesComment.ifPresent(itc -> log.debug(">>>>>>>> iTunes offsets: {}", itc.getCddb().getTrackFrameOffsets()));
-                        cddbs.forEach(cddb -> log.debug(">>>>>>>> found offsets:  {}", cddb.getTrackFrameOffsets()));
+                        cddb.ifPresent(itc -> log.debug(">>>>>>>> iTunes offsets: {}", itc.getTrackFrameOffsets()));
+                        mCddbs.forEach(mCddb -> log.debug(">>>>>>>> found offsets:  {}", mCddb.getTrackFrameOffsets()));
                         continue;
                       }
 

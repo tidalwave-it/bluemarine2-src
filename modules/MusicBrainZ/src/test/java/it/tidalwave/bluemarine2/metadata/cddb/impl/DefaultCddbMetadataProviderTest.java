@@ -32,19 +32,19 @@ import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.nio.file.Path;
 import java.nio.file.Files;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITunesComment;
 import it.tidalwave.bluemarine2.rest.RestResponse;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import it.tidalwave.bluemarine2.commons.test.TestSetTriple;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITUNES_COMMENT;
-import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
+import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB_;
 
 /***********************************************************************************************************************
  *
@@ -85,10 +85,10 @@ public class DefaultCddbMetadataProviderTest extends TestSupport
         underTest.setCachePath(CDDB_CACHE.resolve(testSetName));
 
         final Metadata metadata = mockMetadataFrom(triple.getFilePath());
-        final Optional<ITunesComment> iTunesComment = metadata.get(ITUNES_COMMENT);
+        final Optional<CDDB> cddb = metadata.get(CDDB_);
         final String string;
 
-        if (!iTunesComment.isPresent())
+        if (!cddb.isPresent())
           {
             string = "NO ITUNES COMMENT";
           }

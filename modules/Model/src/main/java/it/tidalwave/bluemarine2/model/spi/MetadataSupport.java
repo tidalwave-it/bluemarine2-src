@@ -124,6 +124,12 @@ public class MetadataSupport implements MediaItem.Metadata
         final MetadataSupport clone = new MetadataSupport(path);
         clone.properties.putAll(this.properties);
         clone.put(key, value);
+
+        if (value instanceof ITunesComment)
+          {
+            clone.put(CDDB_, ((ITunesComment) value).getCddb());
+          }
+
         return clone;
       }
 

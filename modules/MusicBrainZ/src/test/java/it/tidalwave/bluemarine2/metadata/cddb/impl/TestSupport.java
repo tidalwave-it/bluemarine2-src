@@ -38,12 +38,10 @@ import org.testng.annotations.DataProvider;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITunesComment;
+import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 /***********************************************************************************************************************
  *
@@ -81,11 +79,8 @@ public class TestSupport
                                         .findFirst()
                                         .map(s -> ITunesComment.fromToString(s.replaceAll("^.* = ", "")));
 
-        final Metadata metadata = mock(Metadata.class);
-        when(metadata.get(eq(TITLE))).thenReturn(albumTitle);
-        when(metadata.get(eq(ITUNES_COMMENT))).thenReturn(iTunesComment);
-
-        return metadata;
+        return new MetadataSupport(file).with(TITLE, albumTitle)
+                                        .with(ITUNES_COMMENT, iTunesComment);
       }
 
     /*******************************************************************************************************************
