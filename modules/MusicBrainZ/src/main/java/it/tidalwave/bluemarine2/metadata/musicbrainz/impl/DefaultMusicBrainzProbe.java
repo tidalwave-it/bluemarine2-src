@@ -126,19 +126,21 @@ public class DefaultMusicBrainzProbe
       throws InterruptedException, IOException
       {
         final Optional<String> albumTitle = metadata.get(TITLE);
-        final Optional<CDDB> cddb = metadata.get(CDDB_);
+        final Optional<CDDB> oCddb = metadata.get(CDDB_);
 
-        if (!albumTitle.isPresent() || albumTitle.get().trim().isEmpty())
+        if (!albumTitle.isPresent() || albumTitle.get().trim().isEmpty() || !oCddb.isPresent())
           {
             return Collections.emptyList();
           }
 
         log.info("============ PROBING METADATA FOR {}", albumTitle);
+        final CDDB cddb = oCddb.get();
         final List<ReleaseGroup> releaseGroups = new ArrayList<>();
         musicBrainzMetadataProvider.findReleaseGroup(albumTitle.get()).ifPresent(rgl -> releaseGroups.addAll(rgl.getReleaseGroup()));
 
-        final Optional<String> cddbTitle = cddb.flatMap(wf(x -> cddbTitle(metadata)));
-        final Optional<RestResponse<ReleaseGroupList>> response = cddbTitle.map(wf(t -> musicBrainzMetadataProvider.findReleaseGroup(t)));
+        final Optional<String> cddbTitle = cddbTitle(metadata);
+        final Optional<RestResponse<ReleaseGroupList>> response =
+                cddbTitle.map(wf(title -> musicBrainzMetadataProvider.findReleaseGroup(title)));
 
         if (response.isPresent())
           {
@@ -151,12 +153,11 @@ public class DefaultMusicBrainzProbe
 
     /*******************************************************************************************************************
      *
-     * FIXME: ccdb is required, so no Optional.
+     *
      *
      ******************************************************************************************************************/
     @Nonnull
-    private List<ReleaseAndMedium> probe (final @Nonnull List<ReleaseGroup> releaseGroups,
-                                          final @Nonnull Optional<CDDB> cddb)
+    private List<ReleaseAndMedium> probe (final @Nonnull List<ReleaseGroup> releaseGroups, final @Nonnull CDDB cddb)
       throws IOException, InterruptedException
       {
         final Map<String, ReleaseAndMedium> found = new TreeMap<>();
@@ -185,16 +186,15 @@ public class DefaultMusicBrainzProbe
                         continue;
                       }
 
-                    final List<CDDB> mCddbs = cddbsOf(medium);
-                    final boolean matches = cddb.map(c1 -> mCddbs.stream().anyMatch(c2 -> c1.matches(c2, trackOffsetsMatchThreshold)))
-                                                         .orElse(true);
+                    final List<CDDB> cddbs = cddbsOf(medium);
+                    final boolean matches = cddbs.stream().anyMatch(c -> cddb.matches(c, trackOffsetsMatchThreshold));
 
 //                    if (!cddbs.isEmpty() && !matches)
                     if (!matches)
                       {
                         log.info(">>>>>>>> discarded {} because track offsets don't match", medium.getTitle());
-                        cddb.ifPresent(itc -> log.debug(">>>>>>>> iTunes offsets: {}", itc.getTrackFrameOffsets()));
-                        mCddbs.forEach(mCddb -> log.debug(">>>>>>>> found offsets:  {}", mCddb.getTrackFrameOffsets()));
+                        log.debug(">>>>>>>> iTunes offsets: {}", cddb.getTrackFrameOffsets());
+                        cddbs.forEach(c -> log.debug(">>>>>>>> found offsets:  {}", c.getTrackFrameOffsets()));
                         continue;
                       }
 
