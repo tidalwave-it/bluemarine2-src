@@ -30,6 +30,8 @@ package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
+import lombok.NoArgsConstructor;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
@@ -37,7 +39,8 @@ import java.util.function.Function;
  * @version $Id: $
  *
  **********************************************************************************************************************/
-public class Wrapper
+@NoArgsConstructor(access = PRIVATE)
+public final class Wrapper
   {
     @FunctionalInterface
     public static interface FunctionWithException<T, R>
