@@ -71,9 +71,19 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
 
     private DefaultMusicBrainzProbe underTest;
 
-    private final Map<String, AtomicInteger> countMap = new TreeMap<>();
+    private final Map<String, Stats> stats = new TreeMap<>();
 
-    private final Map<String, AtomicInteger> foundMap = new TreeMap<>();
+    static class Stats
+      {
+        private final AtomicInteger count = new AtomicInteger(0);
+        private final AtomicInteger found = new AtomicInteger(0);
+
+        @Override @Nonnull
+        public String toString()
+          {
+            return String.format("%s/%s (%d%%)", found, count, (found.intValue() * 100) / count.intValue());
+          }
+      }
 
     /*******************************************************************************************************************
      *
@@ -91,8 +101,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
 
         underTest = new DefaultMusicBrainzProbe(cddbMetadataProvider, musicBrainzMetadataProvider);
 
-        countMap.clear();
-        foundMap.clear();
+        stats.clear();
       }
 
     /*******************************************************************************************************************
@@ -103,8 +112,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
     @AfterClass
     public void printStats()
       {
-        log.info("STATS: COUNT: {}", countMap);
-        log.info("STATS: FOUND: {}", foundMap);
+        log.info("STATS: {}", stats);
       }
 
     /*******************************************************************************************************************
@@ -117,24 +125,23 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
       throws Exception
       {
         // given
-        final Path relativePath = triple.getRelativePath();
         final String testSetName = triple.getTestSetName();
-        final Path actualResult = TEST_RESULTS.resolve("musicbrainz").resolve(testSetName).resolve(relativePath);
-        final Path expectedResult = EXPECTED_RESULTS.resolve("musicbrainz").resolve(testSetName).resolve(relativePath);
         cddbMetadataProvider.setCachePath(CDDB_CACHE.resolve(testSetName));
         musicBrainzMetadataProvider.setCachePath(MUSICBRAINZ_CACHE.resolve(testSetName));
+        final Path relativePath = triple.getRelativePath();
+        final Path actualResult = TEST_RESULTS.resolve("musicbrainz").resolve(testSetName).resolve(relativePath);
+        final Path expectedResult = EXPECTED_RESULTS.resolve("musicbrainz").resolve(testSetName).resolve(relativePath);
 
         final Metadata metadata = mockMetadataFrom(triple.getFilePath());
 
-        countMap.putIfAbsent(testSetName, new AtomicInteger(0));
-        countMap.get(testSetName).incrementAndGet();
+        stats.putIfAbsent(testSetName, new Stats());
+        stats.get(testSetName).count.incrementAndGet();
         // when
         final List<ReleaseAndMedium> rams = underTest.probe(metadata);
         // then
         if (!rams.isEmpty())
           {
-            foundMap.putIfAbsent(testSetName, new AtomicInteger(0));
-            foundMap.get(testSetName).incrementAndGet();
+            stats.get(testSetName).found.incrementAndGet();
           }
 
         dump(rams, actualResult);
