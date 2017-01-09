@@ -1,81 +1,81 @@
-Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=32, RequestedCount=16, SortCriteria=})
+Browse({ObjectID=/music/a+r+t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=32, RequestedCount=16, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <container childCount="2" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:b8b1746a5de43c69385905a4603951984f5c9088" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="2" id="/music/a+r+t/a:b8b1746a5de43c69385905a4603951984f5c9088" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Herbert Von Karajan: Berlin Philharmonic Orchestra</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:1ff4976495c1cb4807e3a392ca663941f3e38da5" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:1ff4976495c1cb4807e3a392ca663941f3e38da5" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Herbert Von Karajan: Berlin Philharmonic Orchestra, RIAS Chamber Choir</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:6eae78edbbd1f90166638f72b9366780a4b656bd" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:6eae78edbbd1f90166638f72b9366780a4b656bd" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Hubert Dopf: Choralschola Der Wiener Hofburgkapelle</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c4175d2d7c08df0f3f87d3536e8c63bac4bfddc0" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:c4175d2d7c08df0f3f87d3536e8c63bac4bfddc0" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Ivo Pogorelich</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:65ab1bbbe6f9a85ff935c187d604f323d4292952" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:65ab1bbbe6f9a85ff935c187d604f323d4292952" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Jaime Laredo: Scottish Chamber Orchestra</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:e6613b4c6da49e6bac3a7568e93a1d738e703c3c" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:e6613b4c6da49e6bac3a7568e93a1d738e703c3c" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Jane Berbie, Maria Callas, Etc.</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:4401cf589083e1b3273e63548dcef38c0d0b440f" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:4401cf589083e1b3273e63548dcef38c0d0b440f" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Janet Baker, Paul Esswood, Etc.</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:6c036a77a0e550f554933450081c57bbb52a9b64" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:6c036a77a0e550f554933450081c57bbb52a9b64" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Jean-François Paillard: Paillard Chamber Orchestra</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:403e962b3fbb3e65b41e4277bdcc0d17e92686cf" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:403e962b3fbb3e65b41e4277bdcc0d17e92686cf" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Jean-Jacques Justafre, Jean-Paul Gantiez, Jean-Claude Barro,</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:221205788e5b328c520a40884b8e92b394409666" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:221205788e5b328c520a40884b8e92b394409666" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>John Eliot Gardiner: English Baroque Soloists</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:816a93294f9fea610f9e23219b0c6d6b8b83cf06" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:816a93294f9fea610f9e23219b0c6d6b8b83cf06" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Kenneth Gilbert, Lars Ulrik Mortensen</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:b85b8a1b8f791bae2e3789312550f9bc1c97b9ff" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:b85b8a1b8f791bae2e3789312550f9bc1c97b9ff" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Kenneth Mitchell, violin</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:919f0bd7c799a90b32c22f6ae50b7fbde21884f7" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:919f0bd7c799a90b32c22f6ae50b7fbde21884f7" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Kodály Quartet</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:03f0537d5140b0880bcfa1c746a4dd58e32ac548" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:03f0537d5140b0880bcfa1c746a4dd58e32ac548" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Krystian Zimerman</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c57d68228039cb34a762956fccc0cab859536a64" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:c57d68228039cb34a762956fccc0cab859536a64" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Kurt Masur: Leipzig Gewandhaus Orchestra</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="2" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:bbbde55766bb7d916b25771a9079a24a924521cc" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="2" id="/music/a+r+t/a:bbbde55766bb7d916b25771a9079a24a924521cc" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Kurt Masur: Leipzig Gewandhaus Orchestra, Leipzig Radio Chorus</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
