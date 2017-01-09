@@ -33,6 +33,7 @@ import javax.annotation.concurrent.Immutable;
 import org.fourthline.cling.support.model.DIDLObject;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MusicArtist;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -44,7 +45,7 @@ import it.tidalwave.bluemarine2.model.MusicArtist;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @DciRole(datumType = MusicArtist.class)
+@Immutable @DciRole(datumType = MusicArtist.class) @Slf4j
 public class MusicArtistDIDLAdapter extends DIDLAdapterSupport<MusicArtist>
   {
     public MusicArtistDIDLAdapter (final @Nonnull MusicArtist datum)
@@ -55,6 +56,7 @@ public class MusicArtistDIDLAdapter extends DIDLAdapterSupport<MusicArtist>
     @Override @Nonnull
     public DIDLObject toObject()
       {
+        log.debug("toObject() - {}", datum);
         // parentID not set here
         return setCommonFields(new org.fourthline.cling.support.model.container.MusicArtist());
       }

@@ -1,81 +1,81 @@
-Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=16, SortCriteria=})
+Browse({ObjectID=/music/a+r+t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=16, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:1213d7939c2833521d9391cc820c0f932122f000" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:1213d7939c2833521d9391cc820c0f932122f000" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title/>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:8c5973765bf031bbdf4002c9a4c576445e02ddea" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:8c5973765bf031bbdf4002c9a4c576445e02ddea" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Alan Cuckston, harpsichord</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:b0837fdbca91f263437b950bbf767e6dc65dbd0b" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:b0837fdbca91f263437b950bbf767e6dc65dbd0b" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Alfred Brendel</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:79288e4ed52dc530ae0e8f6710702d4b4c953c7f" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:79288e4ed52dc530ae0e8f6710702d4b4c953c7f" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Alison Crum, viola da gamba</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:d35745456c06770731c83193c38f12cc9cb3c202" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:d35745456c06770731c83193c38f12cc9cb3c202" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Andrea Bacchetti</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="2" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:95baddbd8fc9ce08767ec1848733f73827d0159e" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="2" id="/music/a+r+t/a:95baddbd8fc9ce08767ec1848733f73827d0159e" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Angela Maria Blasi, Robert Holl, Etc.</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:9a6af22c0b61d7abe197f97a9127eba0ce80cb09" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:9a6af22c0b61d7abe197f97a9127eba0ce80cb09" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Antonino Votto: Orchestra Of La Scala Milan</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="2" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:35a040d2c30c28e9627ae9079f1915b54224664e" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="2" id="/music/a+r+t/a:35a040d2c30c28e9627ae9079f1915b54224664e" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Benedictine Monks Of Santo Domingo De Silos</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c3628b2649fcf8de9e41b1c5d3153ab97a0f4af7" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:c3628b2649fcf8de9e41b1c5d3153ab97a0f4af7" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Brodsky Quartet</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:39254b0eae25550b1e39a43803e260f15a3252cc" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:39254b0eae25550b1e39a43803e260f15a3252cc" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Carlos Kleiber: Vienna Philharmonic Orchestra</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:1852c73c085cd665dc0805e3ed75d6335b648894" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:1852c73c085cd665dc0805e3ed75d6335b648894" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Charles Mackerras: English Chamber Orchestra, Ambrosian Singers</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:d73148922f9d27301a8792957f2488bf735e8c7c" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:d73148922f9d27301a8792957f2488bf735e8c7c" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Claudio Abbado: Berlin Philharmonic Orchestra</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:ebcd2d64bf85216a9abbd4dcccded2b1fb75e3d1" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:ebcd2d64bf85216a9abbd4dcccded2b1fb75e3d1" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Claudio Abbado: Chamber Orchestra Of Europe</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c30e4113862b546d4cb333adffb0902ba8d4d2f1" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:c30e4113862b546d4cb333adffb0902ba8d4d2f1" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Elizabeth Parry, flute</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:711570135ffc27f41845031de8a7d1de66b6036f" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:711570135ffc27f41845031de8a7d1de66b6036f" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Ella Fitzgerald</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="2" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:526a0556494ffaea89d97acb4bcf3e360dc4f58b" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="2" id="/music/a+r+t/a:526a0556494ffaea89d97acb4bcf3e360dc4f58b" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Ella Fitzgerald &amp; Louis Armstrong</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>

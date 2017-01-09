@@ -1,6 +1,6 @@
-Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=1, SortCriteria=})
+Browse({ObjectID=/music/t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=1, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:a479181c338d28ec7c1ac7cab60ba17e4f9f9df2" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:a479181c338d28ec7c1ac7cab60ba17e4f9f9df2" restricted="0">
+    <item id="/music/t/t:a479181c338d28ec7c1ac7cab60ba17e4f9f9df2" parentID="/music/t" refID="urn:bluemarine:track:a479181c338d28ec7c1ac7cab60ba17e4f9f9df2" restricted="0">
         <dc:title>Track 01</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>

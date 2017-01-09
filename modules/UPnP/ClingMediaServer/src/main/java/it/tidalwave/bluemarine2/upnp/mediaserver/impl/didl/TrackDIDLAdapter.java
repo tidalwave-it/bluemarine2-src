@@ -36,6 +36,7 @@ import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.Protocol;
 import org.fourthline.cling.support.model.ProtocolInfo;
 import org.fourthline.cling.support.model.Res;
+import org.fourthline.cling.support.model.StorageMedium;
 import org.fourthline.cling.support.model.dlna.DLNAProtocolInfo;
 import org.fourthline.cling.support.model.item.MusicTrack;
 import it.tidalwave.dci.annotation.DciRole;
@@ -48,7 +49,6 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 import static it.tidalwave.role.Displayable.Displayable;
 import static java.util.Collections.singletonList;
-import org.fourthline.cling.support.model.StorageMedium;
 
 /***********************************************************************************************************************
  *
@@ -83,7 +83,7 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
         final AudioFile audioFile = datum.as(AudioFileSupplier).getAudioFile();
         final Metadata trackMetadata = datum.getMetadata();
         item.setResources(singletonList(getResource(audioFile)));
-        trackMetadata.get(TRACK_NUMBER).ifPresent(trackNumber -> item.setOriginalTrackNumber(trackNumber));
+        trackMetadata.get(TRACK_NUMBER).ifPresent(item::setOriginalTrackNumber);
 
         datum.getRecord().flatMap(record -> record.asOptional(Displayable))
                          .map(d -> d.getDisplayName())

@@ -1,81 +1,81 @@
-Browse({ObjectID=/music/RepositoryBrowserByRecordThenTrack, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=16, SortCriteria=})
+Browse({ObjectID=/music/r+t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=16, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <container childCount="1" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:fe349f2b71ea0f41e5a944aa37f4e420a35d441c" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="1" id="/music/r+t/r:fe349f2b71ea0f41e5a944aa37f4e420a35d441c" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title/>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="9" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:c5a02d3f1916c080ae950ee0e967b95da1c9f08f" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="9" id="/music/r+t/r:c5a02d3f1916c080ae950ee0e967b95da1c9f08f" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Bach: Concertos For 3 &amp; 4 Harpsichords</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="11" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:001a4f6b04984b2cab35ed7b6cc9ac525d783778" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="11" id="/music/r+t/r:001a4f6b04984b2cab35ed7b6cc9ac525d783778" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 [Disc 1]</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="14" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:969366b80bdb4527af86e1d7d34911c90e8697d2" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="14" id="/music/r+t/r:969366b80bdb4527af86e1d7d34911c90e8697d2" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 [Disc 2]</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="12" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:f659329767f275045dd29478db6fdf487366b896" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="12" id="/music/r+t/r:f659329767f275045dd29478db6fdf487366b896" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Bach; Vivaldi: Concertos For 2 Violins</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="10" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:23e6f447dbbc58df83d3e0cd3a6252034ce94d98" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="10" id="/music/r+t/r:23e6f447dbbc58df83d3e0cd3a6252034ce94d98" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Beethoven: Piano Sonatas #21, 23 &amp; 26</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="8" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:193ee7253ba484ff66216ee2d366e662c941d67f" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="8" id="/music/r+t/r:193ee7253ba484ff66216ee2d366e662c941d67f" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Borodin, String Quartet 2. Tchaikovsky, string Quartet 3</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="4" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:6b600efe205b5b0ed0ee7c76824ce7db1f366c20" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="4" id="/music/r+t/r:6b600efe205b5b0ed0ee7c76824ce7db1f366c20" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Brahms: Piano Concerto #2</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="4" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:286a71682a76e45654e96b6b1a4480abae782907" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="4" id="/music/r+t/r:286a71682a76e45654e96b6b1a4480abae782907" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Brahms: Symphony #4 In E Minor, Op. 98</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:87b504b2582fd3254ad46cca8345527e4d9a77db" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="1" id="/music/r+t/r:87b504b2582fd3254ad46cca8345527e4d9a77db" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Callas - La Divina 2</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="3" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:0da0516ca3151ab94562ef8fc78d2c6011aad0cd" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="3" id="/music/r+t/r:0da0516ca3151ab94562ef8fc78d2c6011aad0cd" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Callas - La Mamma Morta</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="14" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:b65d509d8b986ab4a3ff58061adaa5230d17085f" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="14" id="/music/r+t/r:b65d509d8b986ab4a3ff58061adaa5230d17085f" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Canto Gregoriano [Disc 1]</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="12" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:1bc80e189f4d8d60f24c3e1fde6031ad49c11290" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="12" id="/music/r+t/r:1bc80e189f4d8d60f24c3e1fde6031ad49c11290" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Cherubini: 6 Piano Sonatas</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="13" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:5dd78f4336a9eadc96053bbc8114a0c25b3e8df2" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="13" id="/music/r+t/r:5dd78f4336a9eadc96053bbc8114a0c25b3e8df2" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Daniel And The Lions - Ludus Danielis</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="8" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:978088096196ae4c0c8d3c951d107c3e20905b24" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="8" id="/music/r+t/r:978088096196ae4c0c8d3c951d107c3e20905b24" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Dvořák: Symphonies #8 &amp; 9</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="7" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:1160a7cb012648df40d395a995fc1b686f90a25d" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="7" id="/music/r+t/r:1160a7cb012648df40d395a995fc1b686f90a25d" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Dvořák; Elgar: Cello Concertos</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>

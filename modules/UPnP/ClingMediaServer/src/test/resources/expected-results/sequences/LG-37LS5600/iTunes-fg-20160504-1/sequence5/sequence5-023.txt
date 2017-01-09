@@ -1,6 +1,6 @@
-Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=48, RequestedCount=16, SortCriteria=})
+Browse({ObjectID=/music/t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=48, RequestedCount=16, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:8545ad3cfd9d6d06e1dd6f96df82f8d99f03b0d5" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:8545ad3cfd9d6d06e1dd6f96df82f8d99f03b0d5" restricted="0">
+    <item id="/music/t/t:8545ad3cfd9d6d06e1dd6f96df82f8d99f03b0d5" parentID="/music/t" refID="urn:bluemarine:track:8545ad3cfd9d6d06e1dd6f96df82f8d99f03b0d5" restricted="0">
         <dc:title>Beethoven: Piano Sonata #21 In C, Op. 53, "Waldstein" - 2. Introduzione: Adagio Molto</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -9,7 +9,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:04:38.000" protocolInfo="http-get:*:audio/mpeg:*" size="11149329">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/02+Beethoven_+Piano+Sonata+%2321+In+C%2C+Op.+53%2C+_Waldstein_+-+2.+Introduzione_+Adagio+Molto.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:bd97d8200fb520301fec16d84d15aa67f159678e" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:bd97d8200fb520301fec16d84d15aa67f159678e" restricted="0">
+    <item id="/music/t/t:bd97d8200fb520301fec16d84d15aa67f159678e" parentID="/music/t" refID="urn:bluemarine:track:bd97d8200fb520301fec16d84d15aa67f159678e" restricted="0">
         <dc:title>Beethoven: Piano Sonata #21 In C, Op. 53, "Waldstein" - 3. Rondo: Allegretto Moderato</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -18,7 +18,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:07:34.000" protocolInfo="http-get:*:audio/mpeg:*" size="18164774">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/03+Beethoven_+Piano+Sonata+%2321+In+C%2C+Op.+53%2C+_Waldstein_+-+3.+Rondo_+Allegretto+Moderato.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:ca90bb42e95a3cc41068a281a72487e428444403" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:ca90bb42e95a3cc41068a281a72487e428444403" restricted="0">
+    <item id="/music/t/t:ca90bb42e95a3cc41068a281a72487e428444403" parentID="/music/t" refID="urn:bluemarine:track:ca90bb42e95a3cc41068a281a72487e428444403" restricted="0">
         <dc:title>Beethoven: Piano Sonata #21 In C, Op. 53, "Waldstein" - 3. Rondo: Prestissimo</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -27,7 +27,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:01:55.000" protocolInfo="http-get:*:audio/mpeg:*" size="4624978">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/04+Beethoven_+Piano+Sonata+%2321+In+C%2C+Op.+53%2C+_Waldstein_+-+3.+Rondo_+Prestissimo.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:666a6a916a2cd3ebf71fffff7fa4ab29bca7f0f9" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:666a6a916a2cd3ebf71fffff7fa4ab29bca7f0f9" restricted="0">
+    <item id="/music/t/t:666a6a916a2cd3ebf71fffff7fa4ab29bca7f0f9" parentID="/music/t" refID="urn:bluemarine:track:666a6a916a2cd3ebf71fffff7fa4ab29bca7f0f9" restricted="0">
         <dc:title>Beethoven: Piano Sonata #26 In E Flat, Op. 81A, "Les Adieux" - 1. Adagio, Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -36,7 +36,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:07:16.000" protocolInfo="http-get:*:audio/mpeg:*" size="17444835">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/05+Beethoven_+Piano+Sonata+%2326+In+E+Flat%2C+Op.+81A%2C+_Les+Adieux_+-+1.+Adagio%2C+Allegro.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:55d464666f4d2678164ebf0d467c90af1ce6eb7e" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:55d464666f4d2678164ebf0d467c90af1ce6eb7e" restricted="0">
+    <item id="/music/t/t:55d464666f4d2678164ebf0d467c90af1ce6eb7e" parentID="/music/t" refID="urn:bluemarine:track:55d464666f4d2678164ebf0d467c90af1ce6eb7e" restricted="0">
         <dc:title>Beethoven: Piano Sonata #26 In E Flat, Op. 81A, "Les Adieux" - 2. Andante Espressivo</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -45,7 +45,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:04:01.000" protocolInfo="http-get:*:audio/mpeg:*" size="9663483">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/06+Beethoven_+Piano+Sonata+%2326+In+E+Flat%2C+Op.+81A%2C+_Les+Adieux_+-+2.+Andante+Espressivo.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:228702f9566e94b303f8eda8a370cf2ceab7b777" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:228702f9566e94b303f8eda8a370cf2ceab7b777" restricted="0">
+    <item id="/music/t/t:228702f9566e94b303f8eda8a370cf2ceab7b777" parentID="/music/t" refID="urn:bluemarine:track:228702f9566e94b303f8eda8a370cf2ceab7b777" restricted="0">
         <dc:title>Beethoven: Piano Sonata #26 In E Flat, Op. 81A, "Les Adieux" - 3. Vivacissimamente</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -54,7 +54,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:06:06.000" protocolInfo="http-get:*:audio/mpeg:*" size="14666452">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/07+Beethoven_+Piano+Sonata+%2326+In+E+Flat%2C+Op.+81A%2C+_Les+Adieux_+-+3.+Vivacissimamente.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:2cc2d02aa5791353301a33eaf2c9288bb3c88a8b" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:2cc2d02aa5791353301a33eaf2c9288bb3c88a8b" restricted="0">
+    <item id="/music/t/t:2cc2d02aa5791353301a33eaf2c9288bb3c88a8b" parentID="/music/t" refID="urn:bluemarine:track:2cc2d02aa5791353301a33eaf2c9288bb3c88a8b" restricted="0">
         <dc:title>Beethoven: Piano Sonata #23 In F Minor, Op. 57, "Appassionata" - 1. Allegro Assai</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -63,7 +63,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:11:07.000" protocolInfo="http-get:*:audio/mpeg:*" size="26704720">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/08+Beethoven_+Piano+Sonata+%2323+In+F+Minor%2C+Op.+57%2C+_Appassionata_+-+1.+Allegro+Assai.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:75b7393292d00e12a83b542d62f7128203612e0f" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:75b7393292d00e12a83b542d62f7128203612e0f" restricted="0">
+    <item id="/music/t/t:75b7393292d00e12a83b542d62f7128203612e0f" parentID="/music/t" refID="urn:bluemarine:track:75b7393292d00e12a83b542d62f7128203612e0f" restricted="0">
         <dc:title>Beethoven: Piano Sonata #23 In F Minor, Op. 57, "Appassionata" - 2. Andante Con Moto</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -72,7 +72,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:06:29.000" protocolInfo="http-get:*:audio/mpeg:*" size="15585964">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/09+Beethoven_+Piano+Sonata+%2323+In+F+Minor%2C+Op.+57%2C+_Appassionata_+-+2.+Andante+Con+Moto.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:44c51fe0f536293ab799bc73115a3bb0e5facbb1" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:44c51fe0f536293ab799bc73115a3bb0e5facbb1" restricted="0">
+    <item id="/music/t/t:44c51fe0f536293ab799bc73115a3bb0e5facbb1" parentID="/music/t" refID="urn:bluemarine:track:44c51fe0f536293ab799bc73115a3bb0e5facbb1" restricted="0">
         <dc:title>Beethoven: Piano Sonata #23 In F Minor, Op. 57, "Appassionata" - 3. Allegro Ma Non Troppo</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -81,7 +81,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:07:53.000" protocolInfo="http-get:*:audio/mpeg:*" size="18943228">http://<server>/Music/Emil+Gilels/Beethoven_+Piano+Sonatas+%2321%2C+23+%26+26/10+Beethoven_+Piano+Sonata+%2323+In+F+Minor%2C+Op.+57%2C+_Appassionata_+-+3.+Allegro+Ma+Non+Troppo.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:fa4352443773cadf03c83079928bd7afdfc840af" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:fa4352443773cadf03c83079928bd7afdfc840af" restricted="0">
+    <item id="/music/t/t:fa4352443773cadf03c83079928bd7afdfc840af" parentID="/music/t" refID="urn:bluemarine:track:fa4352443773cadf03c83079928bd7afdfc840af" restricted="0">
         <dc:title>Borodin String Quartet No 2 in D Major. I. Allegro moderato</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -90,7 +90,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:08:11.000" protocolInfo="http-get:*:audio/mpeg:*" size="19651647">http://<server>/Music/Brodsky+Quartet/Borodin%2C+String+Quartet+2.+Tchaikovsky%2C+string+Quartet+3/01+Borodin+String+Quartet+No+2+in+D+Major.+I.+Allegro+moderato.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:0f04ac54511143d3a05a8c33841ae0f8c6618af4" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:0f04ac54511143d3a05a8c33841ae0f8c6618af4" restricted="0">
+    <item id="/music/t/t:0f04ac54511143d3a05a8c33841ae0f8c6618af4" parentID="/music/t" refID="urn:bluemarine:track:0f04ac54511143d3a05a8c33841ae0f8c6618af4" restricted="0">
         <dc:title>Borodin String Quartet No 2 in D Major. II. Scherzo</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -99,7 +99,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:04:52.000" protocolInfo="http-get:*:audio/mpeg:*" size="11685337">http://<server>/Music/Brodsky+Quartet/Borodin%2C+String+Quartet+2.+Tchaikovsky%2C+string+Quartet+3/02+Borodin+String+Quartet+No+2+in+D+Major.+II.+Scherzo.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:77a1519df02ff37136421b605d6267f9eff2c98a" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:77a1519df02ff37136421b605d6267f9eff2c98a" restricted="0">
+    <item id="/music/t/t:77a1519df02ff37136421b605d6267f9eff2c98a" parentID="/music/t" refID="urn:bluemarine:track:77a1519df02ff37136421b605d6267f9eff2c98a" restricted="0">
         <dc:title>Shostakovich: String Quartet #2 In A, Op. 68 - Notturno (Excerpt)</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -108,7 +108,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:08:43.000" protocolInfo="http-get:*:audio/mpeg:*" size="20947317">http://<server>/Music/Brodsky+Quartet/Borodin%2C+String+Quartet+2.+Tchaikovsky%2C+string+Quartet+3/03+Shostakovich_+String+Quartet+%232+In+A%2C+Op.+68+-+Notturno+%28Excerpt%29.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:be5d07a01b98efe196be615a14d282277f3a5b80" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:be5d07a01b98efe196be615a14d282277f3a5b80" restricted="0">
+    <item id="/music/t/t:be5d07a01b98efe196be615a14d282277f3a5b80" parentID="/music/t" refID="urn:bluemarine:track:be5d07a01b98efe196be615a14d282277f3a5b80" restricted="0">
         <dc:title>Borodin String Quartet No 2 in D Major. IV. Finale: Andante -- Vivace</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -117,7 +117,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:07:02.000" protocolInfo="http-get:*:audio/mpeg:*" size="16900441">http://<server>/Music/Brodsky+Quartet/Borodin%2C+String+Quartet+2.+Tchaikovsky%2C+string+Quartet+3/04+Borodin+String+Quartet+No+2+in+D+Major.+IV.+Finale_+Andante+--+Vivace.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:df6f4a02c535584f288ae4eb632899d879ea474b" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:df6f4a02c535584f288ae4eb632899d879ea474b" restricted="0">
+    <item id="/music/t/t:df6f4a02c535584f288ae4eb632899d879ea474b" parentID="/music/t" refID="urn:bluemarine:track:df6f4a02c535584f288ae4eb632899d879ea474b" restricted="0">
         <dc:title>Tchaikovsky String Quartet No 3 in E flat minor, Op.30. I. Andante Sostenuto</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -126,7 +126,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:16:05.000" protocolInfo="http-get:*:audio/mpeg:*" size="38633287">http://<server>/Music/Brodsky+Quartet/Borodin%2C+String+Quartet+2.+Tchaikovsky%2C+string+Quartet+3/05+Tchaikovsky+String+Quartet+No+3+in+E+flat+minor%2C+Op.30.+I.+Andante+Sostenuto.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:f12fd04cd9ab5d41473bd745cbeefa33d3011ede" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:f12fd04cd9ab5d41473bd745cbeefa33d3011ede" restricted="0">
+    <item id="/music/t/t:f12fd04cd9ab5d41473bd745cbeefa33d3011ede" parentID="/music/t" refID="urn:bluemarine:track:f12fd04cd9ab5d41473bd745cbeefa33d3011ede" restricted="0">
         <dc:title>Tchaikovsky String Quartet No 3 in E flat minor, Op.30. II. Allegretto</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -135,7 +135,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:03:19.000" protocolInfo="http-get:*:audio/mpeg:*" size="7987470">http://<server>/Music/Brodsky+Quartet/Borodin%2C+String+Quartet+2.+Tchaikovsky%2C+string+Quartet+3/06+Tchaikovsky+String+Quartet+No+3+in+E+flat+minor%2C+Op.30.+II.+Allegretto.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:a1ece627f81baffa2bcab8788ebb4e926fe7ff3b" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:a1ece627f81baffa2bcab8788ebb4e926fe7ff3b" restricted="0">
+    <item id="/music/t/t:a1ece627f81baffa2bcab8788ebb4e926fe7ff3b" parentID="/music/t" refID="urn:bluemarine:track:a1ece627f81baffa2bcab8788ebb4e926fe7ff3b" restricted="0">
         <dc:title>Tchaikovsky String Quartet No 3 in E flat minor, Op.30. III. Andante funebre e doloroso ma con moto</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>

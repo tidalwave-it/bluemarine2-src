@@ -34,11 +34,13 @@ import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.item.Item;
 import it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
 
 /***********************************************************************************************************************
  *
  * A support for roles dealing with {@link PathAwareEntityDecorator} that creates the {@link DIDLObject} in function
- * of the delegate; and properly sets the {@code id} and {@code parentId} in function of the path.
+ * of the delegate; and properly sets the {@code id} and {@code parentId} in function of the path, overriding any
+ * specific setting by the original datum adapter.
  *
  * @stereotype Role
  *
@@ -58,15 +60,17 @@ public class PathAwareDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<P
     public final DIDLObject toObject()
       throws Exception
       {
+        log.debug("toObject() - {}", datum);
         final DIDLObject item = asDIDLAdapter(datum.getDelegate()).toObject();
-        datum.getParent().ifPresent(parent -> item.setParentID(parent.getPath().toString()));
+        datum.getParent().ifPresent(parent -> item.setParentID(externalized(parent.getPath().toString())));
 
         if (item instanceof Item)
           {
-            ((Item)item).setRefID(item.getId());
+            ((Item)item).setRefID(item.getId()); // don't externalize this
           }
 
-        item.setId(datum.getPath().toString());
+        item.setId(externalized(datum.getPath().toString()));
+
         return item;
       }
   }

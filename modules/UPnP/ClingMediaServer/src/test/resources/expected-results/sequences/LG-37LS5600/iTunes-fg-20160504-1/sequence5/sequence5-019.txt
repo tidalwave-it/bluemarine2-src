@@ -1,6 +1,6 @@
-Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=16, SortCriteria=})
+Browse({ObjectID=/music/t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=16, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:a479181c338d28ec7c1ac7cab60ba17e4f9f9df2" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:a479181c338d28ec7c1ac7cab60ba17e4f9f9df2" restricted="0">
+    <item id="/music/t/t:a479181c338d28ec7c1ac7cab60ba17e4f9f9df2" parentID="/music/t" refID="urn:bluemarine:track:a479181c338d28ec7c1ac7cab60ba17e4f9f9df2" restricted="0">
         <dc:title>Track 01</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -9,7 +9,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:10:32.000" protocolInfo="http-get:*:audio/mpeg:*" size="25317920">http://<server>/Music/Unknown+Artist/Unknown+Album/01+Track+01.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:9beb5075fc52b58002b8986a298ab38fb302e4ef" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:9beb5075fc52b58002b8986a298ab38fb302e4ef" restricted="0">
+    <item id="/music/t/t:9beb5075fc52b58002b8986a298ab38fb302e4ef" parentID="/music/t" refID="urn:bluemarine:track:9beb5075fc52b58002b8986a298ab38fb302e4ef" restricted="0">
         <dc:title>Bach: Concerto In A Minor For 4 Harpsichords, BWV 1065 - 1. Without Tempo Indication</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -18,7 +18,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:04:03.000" protocolInfo="http-get:*:audio/mpeg:*" size="9755516">http://<server>/Music/Compilations/Bach_+Concertos+For+3+%26+4+Harpsichords/01+Bach_+Concerto+In+A+Minor+For+4+Harpsichords%2C+BWV+1065+-+1.+Without+Tempo+Indication.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:cff61957af3642b50765af74436266b7482db866" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:cff61957af3642b50765af74436266b7482db866" restricted="0">
+    <item id="/music/t/t:cff61957af3642b50765af74436266b7482db866" parentID="/music/t" refID="urn:bluemarine:track:cff61957af3642b50765af74436266b7482db866" restricted="0">
         <dc:title>Bach: Concerto In A Minor For 4 Harpsichords, BWV 1065 - 2. Largo</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -27,7 +27,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:02:08.000" protocolInfo="http-get:*:audio/mpeg:*" size="5137048">http://<server>/Music/Compilations/Bach_+Concertos+For+3+%26+4+Harpsichords/02+Bach_+Concerto+In+A+Minor+For+4+Harpsichords%2C+BWV+1065+-+2.+Largo.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:81437415106f0c4a39c3bfab9e6aa9ba86aab0d3" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:81437415106f0c4a39c3bfab9e6aa9ba86aab0d3" restricted="0">
+    <item id="/music/t/t:81437415106f0c4a39c3bfab9e6aa9ba86aab0d3" parentID="/music/t" refID="urn:bluemarine:track:81437415106f0c4a39c3bfab9e6aa9ba86aab0d3" restricted="0">
         <dc:title>Bach: Concerto In A Minor For 4 Harpsichords, BWV 1065 - 3. Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -36,7 +36,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:03:28.000" protocolInfo="http-get:*:audio/mpeg:*" size="8325034">http://<server>/Music/Compilations/Bach_+Concertos+For+3+%26+4+Harpsichords/03+Bach_+Concerto+In+A+Minor+For+4+Harpsichords%2C+BWV+1065+-+3.+Allegro.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:7f14b697fde40584527c90389ba3708283d652a9" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:7f14b697fde40584527c90389ba3708283d652a9" restricted="0">
+    <item id="/music/t/t:7f14b697fde40584527c90389ba3708283d652a9" parentID="/music/t" refID="urn:bluemarine:track:7f14b697fde40584527c90389ba3708283d652a9" restricted="0">
         <dc:title>Bach: Concerto In C For 3 Harpsichords, BWV 1064 - 1. Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -45,7 +45,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:06:18.000" protocolInfo="http-get:*:audio/mpeg:*" size="15155525">http://<server>/Music/Compilations/Bach_+Concertos+For+3+%26+4+Harpsichords/04+Bach_+Concerto+In+C+For+3+Harpsichords%2C+BWV+1064+-+1.+Allegro.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:1ffeb90c528fb0d40f4177ee8cac85c91adc8f1e" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:1ffeb90c528fb0d40f4177ee8cac85c91adc8f1e" restricted="0">
+    <item id="/music/t/t:1ffeb90c528fb0d40f4177ee8cac85c91adc8f1e" parentID="/music/t" refID="urn:bluemarine:track:1ffeb90c528fb0d40f4177ee8cac85c91adc8f1e" restricted="0">
         <dc:title>Bach: Concerto In C For 3 Harpsichords, BWV 1064 - 2. Adagio</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -54,7 +54,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:05:29.000" protocolInfo="http-get:*:audio/mpeg:*" size="13183802">http://<server>/Music/Compilations/Bach_+Concertos+For+3+%26+4+Harpsichords/05+Bach_+Concerto+In+C+For+3+Harpsichords%2C+BWV+1064+-+2.+Adagio.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:933bf67fa68ef034b1e9071ff395336a524fb2af" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:933bf67fa68ef034b1e9071ff395336a524fb2af" restricted="0">
+    <item id="/music/t/t:933bf67fa68ef034b1e9071ff395336a524fb2af" parentID="/music/t" refID="urn:bluemarine:track:933bf67fa68ef034b1e9071ff395336a524fb2af" restricted="0">
         <dc:title>Bach: Concerto In C For 3 Harpsichords, BWV 1064 - 3. Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -63,7 +63,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:04:45.000" protocolInfo="http-get:*:audio/mpeg:*" size="11414791">http://<server>/Music/Compilations/Bach_+Concertos+For+3+%26+4+Harpsichords/06+Bach_+Concerto+In+C+For+3+Harpsichords%2C+BWV+1064+-+3.+Allegro.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:5cf27ff1f5e864e155a4ad5eea46cf5c80156799" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:5cf27ff1f5e864e155a4ad5eea46cf5c80156799" restricted="0">
+    <item id="/music/t/t:5cf27ff1f5e864e155a4ad5eea46cf5c80156799" parentID="/music/t" refID="urn:bluemarine:track:5cf27ff1f5e864e155a4ad5eea46cf5c80156799" restricted="0">
         <dc:title>Bach: Concerto In D Minor For 3 Harpsichords, BWV 1063 - 1. Without Tempo Indication</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -72,7 +72,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:05:09.000" protocolInfo="http-get:*:audio/mpeg:*" size="12368806">http://<server>/Music/Compilations/Bach_+Concertos+For+3+%26+4+Harpsichords/07+Bach_+Concerto+In+D+Minor+For+3+Harpsichords%2C+BWV+1063+-+1.+Without+Tempo+Indication.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:0d4b72f8c7519ce1682210d4815d269b48fa6cd4" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:0d4b72f8c7519ce1682210d4815d269b48fa6cd4" restricted="0">
+    <item id="/music/t/t:0d4b72f8c7519ce1682210d4815d269b48fa6cd4" parentID="/music/t" refID="urn:bluemarine:track:0d4b72f8c7519ce1682210d4815d269b48fa6cd4" restricted="0">
         <dc:title>Bach: Concerto In D Minor For 3 Harpsichords, BWV 1063 - 2. Alla Siciliana</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -81,7 +81,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:03:45.000" protocolInfo="http-get:*:audio/mpeg:*" size="9010494">http://<server>/Music/Compilations/Bach_+Concertos+For+3+%26+4+Harpsichords/08+Bach_+Concerto+In+D+Minor+For+3+Harpsichords%2C+BWV+1063+-+2.+Alla+Siciliana.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:9238012d7b404875d19537bd2f622c9b16f63fe9" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:9238012d7b404875d19537bd2f622c9b16f63fe9" restricted="0">
+    <item id="/music/t/t:9238012d7b404875d19537bd2f622c9b16f63fe9" parentID="/music/t" refID="urn:bluemarine:track:9238012d7b404875d19537bd2f622c9b16f63fe9" restricted="0">
         <dc:title>Bach: Concerto In D Minor For 3 Harpsichords, BWV 1063 - 3. Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -90,7 +90,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:04:57.000" protocolInfo="http-get:*:audio/mpeg:*" size="11902764">http://<server>/Music/Compilations/Bach_+Concertos+For+3+%26+4+Harpsichords/09+Bach_+Concerto+In+D+Minor+For+3+Harpsichords%2C+BWV+1063+-+3.+Allegro.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:aded880da4c87b189f71d6903300005ec8c9574e" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:aded880da4c87b189f71d6903300005ec8c9574e" restricted="0">
+    <item id="/music/t/t:aded880da4c87b189f71d6903300005ec8c9574e" parentID="/music/t" refID="urn:bluemarine:track:aded880da4c87b189f71d6903300005ec8c9574e" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Kyrie: Kyrie Eleison 1</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -99,7 +99,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:10:31.000" protocolInfo="http-get:*:audio/mpeg:*" size="25255544">http://<server>/Music/Compilations/Bach_+Mass+In+B+Minor%2C+BWV+232+%5BDisc+1%5D/1-01+Bach_+Mass+In+B+Minor%2C+BWV+232+-+Kyrie_+Kyrie+Eleison+1.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:f3b46c3ae98f8f6d0a93d0b08ba147d083428e00" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:f3b46c3ae98f8f6d0a93d0b08ba147d083428e00" restricted="0">
+    <item id="/music/t/t:f3b46c3ae98f8f6d0a93d0b08ba147d083428e00" parentID="/music/t" refID="urn:bluemarine:track:f3b46c3ae98f8f6d0a93d0b08ba147d083428e00" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Kyrie: Christe Eleison</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -108,7 +108,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:05:16.000" protocolInfo="http-get:*:audio/mpeg:*" size="12671838">http://<server>/Music/Compilations/Bach_+Mass+In+B+Minor%2C+BWV+232+%5BDisc+1%5D/1-02+Bach_+Mass+In+B+Minor%2C+BWV+232+-+Kyrie_+Christe+Eleison.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:8010cd5b4c914bf06322611c17972daf647f11e0" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:8010cd5b4c914bf06322611c17972daf647f11e0" restricted="0">
+    <item id="/music/t/t:8010cd5b4c914bf06322611c17972daf647f11e0" parentID="/music/t" refID="urn:bluemarine:track:8010cd5b4c914bf06322611c17972daf647f11e0" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Kyrie: Kyrie Eleison 2</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -117,7 +117,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:02:59.000" protocolInfo="http-get:*:audio/mpeg:*" size="7175675">http://<server>/Music/Compilations/Bach_+Mass+In+B+Minor%2C+BWV+232+%5BDisc+1%5D/1-03+Bach_+Mass+In+B+Minor%2C+BWV+232+-+Kyrie_+Kyrie+Eleison+2.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:8f9abf1761f17ed32c76672a1ac3e4541e8a0f50" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:8f9abf1761f17ed32c76672a1ac3e4541e8a0f50" restricted="0">
+    <item id="/music/t/t:8f9abf1761f17ed32c76672a1ac3e4541e8a0f50" parentID="/music/t" refID="urn:bluemarine:track:8f9abf1761f17ed32c76672a1ac3e4541e8a0f50" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Gloria: Gloria In Excelsis Deo</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -126,7 +126,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:06:38.000" protocolInfo="http-get:*:audio/mpeg:*" size="15947601">http://<server>/Music/Compilations/Bach_+Mass+In+B+Minor%2C+BWV+232+%5BDisc+1%5D/1-04+Bach_+Mass+In+B+Minor%2C+BWV+232+-+Gloria_+Gloria+In+Excelsis+Deo.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:c9b63becbd69d455da9c8396601a9d312d00473c" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:c9b63becbd69d455da9c8396601a9d312d00473c" restricted="0">
+    <item id="/music/t/t:c9b63becbd69d455da9c8396601a9d312d00473c" parentID="/music/t" refID="urn:bluemarine:track:c9b63becbd69d455da9c8396601a9d312d00473c" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Gloria: Laudamus Te</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
@@ -135,7 +135,7 @@ Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildre
         <upnp:storageMedium>HDD</upnp:storageMedium>
         <res duration="0:04:07.000" protocolInfo="http-get:*:audio/mpeg:*" size="9902855">http://<server>/Music/Compilations/Bach_+Mass+In+B+Minor%2C+BWV+232+%5BDisc+1%5D/1-05+Bach_+Mass+In+B+Minor%2C+BWV+232+-+Gloria_+Laudamus+Te.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:ad3e020d5e973c7db9eb849effbd4886e74bc3d7" parentID="/music/RepositoryBrowserByTrack" refID="urn:bluemarine:track:ad3e020d5e973c7db9eb849effbd4886e74bc3d7" restricted="0">
+    <item id="/music/t/t:ad3e020d5e973c7db9eb849effbd4886e74bc3d7" parentID="/music/t" refID="urn:bluemarine:track:ad3e020d5e973c7db9eb849effbd4886e74bc3d7" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Gloria: Gratias Agimus</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>

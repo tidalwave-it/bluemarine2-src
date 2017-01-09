@@ -49,8 +49,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import static org.fourthline.cling.support.contentdirectory.ContentDirectoryErrorCode.*;
 import static it.tidalwave.bluemarine2.util.PrettyPrint.xmlPrettyPrinted;
-import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.DIDLAdapter;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
+import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.DIDLAdapter;
 
 /***********************************************************************************************************************
  *
@@ -147,7 +147,8 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
                                                   .withPath(path)
                                                   .optionalResult()
                                                   .orElseThrow(() ->
-                                                          new ContentDirectoryException(NO_SUCH_OBJECT, objectId));
+                                                          new ContentDirectoryException(NO_SUCH_OBJECT,
+                                                                        String.format("%s -> %s", objectId, path)));
             log.debug(">>>> found {}", entity);
             final ContentHolder holder = entity.as(DIDLAdapter).toContent(browseFlag,
                                                                           (int)firstResult,
