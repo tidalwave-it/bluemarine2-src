@@ -1,111 +1,111 @@
-Browse({ObjectID=/music/RepositoryBrowserByTrack, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=64, RequestedCount=16, SortCriteria=})
+Browse({ObjectID=/music/t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=64, RequestedCount=16, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:2e5cdc4dc67b3231bd34db3c42b48dde3a4e5f89" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+    <item id="/music/t/t:2e5cdc4dc67b3231bd34db3c42b48dde3a4e5f89" parentID="/music/t" restricted="0">
         <dc:title>Tchaikovsky String Quartet No 3 in E flat minor, Op.30. IV. Finale: Allegro non troppo e resoluto</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
         <res duration="00:05:51" protocolInfo="http-get:*:audio/mpeg:*" size="14054174">http://<server>/Music/Brodsky+Quartet/Borodin%2C+String+Quartet+2.+Tchaikovsky%2C+string+Quartet+3/08+Tchaikovsky+String+Quartet+No+3+in+E+flat+minor%2C+Op.30.+IV.+Finale_+Allegro+non+troppo+e+resoluto.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:8288d96cade7fc3051463013abbff46d3c6106f9" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+    <item id="/music/t/t:8288d96cade7fc3051463013abbff46d3c6106f9" parentID="/music/t" restricted="0">
         <dc:title>Brahms: Piano Concerto #2 In B Flat, Op. 83 - 1. Allegro Non Troppo</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
         <res duration="00:18:02" protocolInfo="http-get:*:audio/mpeg:*" size="43324892">http://<server>/Music/Alfred+Brendel%3B+Claudio+Abbado_+Berlin+Philharmonic+Orchestra/Brahms_+Piano+Concerto+%232/01+Brahms_+Piano+Concerto+%232+In+B+Flat%2C+Op.+83+-+1.+Allegro+Non+Troppo.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:9197858b4420c86d79efb4014c81dcc99e9fdc9e" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+    <item id="/music/t/t:9197858b4420c86d79efb4014c81dcc99e9fdc9e" parentID="/music/t" restricted="0">
         <dc:title>Brahms: Piano Concerto #2 In B Flat, Op. 83 - 2. Allegro Appassionato</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
         <res duration="00:09:25" protocolInfo="http-get:*:audio/mpeg:*" size="22645319">http://<server>/Music/Alfred+Brendel%3B+Claudio+Abbado_+Berlin+Philharmonic+Orchestra/Brahms_+Piano+Concerto+%232/02+Brahms_+Piano+Concerto+%232+In+B+Flat%2C+Op.+83+-+2.+Allegro+Appassionato.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:70df7ef0e9568699390501459714e63a06017d46" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+    <item id="/music/t/t:70df7ef0e9568699390501459714e63a06017d46" parentID="/music/t" restricted="0">
         <dc:title>Brahms: Piano Concerto #2 In B Flat, Op. 83 - 3. Andante</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
         <res duration="00:12:18" protocolInfo="http-get:*:audio/mpeg:*" size="29564620">http://<server>/Music/Alfred+Brendel%3B+Claudio+Abbado_+Berlin+Philharmonic+Orchestra/Brahms_+Piano+Concerto+%232/03+Brahms_+Piano+Concerto+%232+In+B+Flat%2C+Op.+83+-+3.+Andante.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:4ed55b8eb31e2d2077537a2d8fecbd4e26cb2ee5" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+    <item id="/music/t/t:4ed55b8eb31e2d2077537a2d8fecbd4e26cb2ee5" parentID="/music/t" restricted="0">
         <dc:title>Brahms: Piano Concerto #2 In B Flat, Op. 83 - 4. Allegro Grazioso</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
         <res duration="00:09:30" protocolInfo="http-get:*:audio/mpeg:*" size="22844890">http://<server>/Music/Alfred+Brendel%3B+Claudio+Abbado_+Berlin+Philharmonic+Orchestra/Brahms_+Piano+Concerto+%232/04+Brahms_+Piano+Concerto+%232+In+B+Flat%2C+Op.+83+-+4.+Allegro+Grazioso.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:fe1e7bab3304a7c421612af2a1bcf0afb1263681" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+    <item id="/music/t/t:fe1e7bab3304a7c421612af2a1bcf0afb1263681" parentID="/music/t" restricted="0">
         <dc:title>Brahms: Symphony #4 In E Minor, Op. 98 - 1. Allegro Non Troppo</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
         <res duration="00:12:49" protocolInfo="http-get:*:audio/mpeg:*" size="30804917">http://<server>/Music/Carlos+Kleiber_+Vienna+Philharmonic+Orchestra/Brahms_+Symphony+%234+In+E+Minor%2C+Op.+98/01+Brahms_+Symphony+%234+In+E+Minor%2C+Op.+98+-+1.+Allegro+Non+Troppo.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:835d5ea999fa0bb6c988bcb42276002aba8a85a4" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+    <item id="/music/t/t:835d5ea999fa0bb6c988bcb42276002aba8a85a4" parentID="/music/t" restricted="0">
         <dc:title>Brahms: Symphony #4 In E Minor, Op. 98 - 2. Andante Moderato</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
         <res duration="00:11:23" protocolInfo="http-get:*:audio/mpeg:*" size="27360931">http://<server>/Music/Carlos+Kleiber_+Vienna+Philharmonic+Orchestra/Brahms_+Symphony+%234+In+E+Minor%2C+Op.+98/02+Brahms_+Symphony+%234+In+E+Minor%2C+Op.+98+-+2.+Andante+Moderato.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:9ac161767460af7519ceef0c5e39d06a44e4d729" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+    <item id="/music/t/t:9ac161767460af7519ceef0c5e39d06a44e4d729" parentID="/music/t" restricted="0">
         <dc:title>Brahms: Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
         <res duration="00:06:06" protocolInfo="http-get:*:audio/mpeg:*" size="14681094">http://<server>/Music/Carlos+Kleiber_+Vienna+Philharmonic+Orchestra/Brahms_+Symphony+%234+In+E+Minor%2C+Op.+98/03+Brahms_+Symphony+%234+In+E+Minor%2C+Op.+98+-+3.+Allegro+Giocoso.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:5196ea844969307d7981a5cbf81c0c3d2266848d" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+    <item id="/music/t/t:5196ea844969307d7981a5cbf81c0c3d2266848d" parentID="/music/t" restricted="0">
         <dc:title>Brahms: Symphony #4 In E Minor, Op. 98 - 4. Allegro Energico E Passionato</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
         <res duration="00:09:11" protocolInfo="http-get:*:audio/mpeg:*" size="22049728">http://<server>/Music/Carlos+Kleiber_+Vienna+Philharmonic+Orchestra/Brahms_+Symphony+%234+In+E+Minor%2C+Op.+98/04+Brahms_+Symphony+%234+In+E+Minor%2C+Op.+98+-+4.+Allegro+Energico+E+Passionato.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:f8a61f82fec42118e253954831f7b3673950b4e6" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+    <item id="/music/t/t:f8a61f82fec42118e253954831f7b3673950b4e6" parentID="/music/t" restricted="0">
         <dc:title>글루크 알체스테</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
         <res duration="00:04:25" protocolInfo="http-get:*:audio/mpeg:*" size="10626786">http://<server>/Music/Maria+Callas/Callas+-+La+Divina+2/01+%EA%B8%80%EB%A3%A8%ED%81%AC+%EC%95%8C%EC%B2%B4%EC%8A%A4%ED%85%8C.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:01738b5d43a973b31f408e45fe05ac0b58a3bbf2" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+    <item id="/music/t/t:01738b5d43a973b31f408e45fe05ac0b58a3bbf2" parentID="/music/t" restricted="0">
         <dc:title>Giordano: Andrea Chénier - La Mamma Morta</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
         <res duration="00:04:52" protocolInfo="http-get:*:audio/mpeg:*" size="11711483">http://<server>/Music/Compilations/Callas+-+La+Mamma+Morta/01+Giordano_+Andrea+Ch%C3%A9nier+-+La+Mamma+Morta.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:753d71fbad70f2b3576124a020d286cc62fa4b36" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+    <item id="/music/t/t:753d71fbad70f2b3576124a020d286cc62fa4b36" parentID="/music/t" restricted="0">
         <dc:title>Catalani: La Wally - Ebben? Ne Andro Lontana</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
         <res duration="00:04:50" protocolInfo="http-get:*:audio/mpeg:*" size="11624675">http://<server>/Music/Compilations/Callas+-+La+Mamma+Morta/02+Catalani_+La+Wally+-+Ebben_+Ne+Andro+Lontana.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:431dca35e331b8e687e5c65cc6a5cc1c8ab9e913" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+    <item id="/music/t/t:431dca35e331b8e687e5c65cc6a5cc1c8ab9e913" parentID="/music/t" restricted="0">
         <dc:title>Spontini: La Vestale - O Nume Tutelar</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
         <res duration="00:02:26" protocolInfo="http-get:*:audio/mpeg:*" size="5850616">http://<server>/Music/Compilations/Callas+-+La+Mamma+Morta/03+Spontini_+La+Vestale+-+O+Nume+Tutelar.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:b249e52a597cfdeda63be9d5362924d4e8217564" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+    <item id="/music/t/t:b249e52a597cfdeda63be9d5362924d4e8217564" parentID="/music/t" restricted="0">
         <dc:title>Anon: Puer Natus Est Nobis</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
         <res duration="00:03:40" protocolInfo="http-get:*:audio/mpeg:*" size="8814968">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-01+Anon_+Puer+Natus+Est+Nobis.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:ecca8a967647b9e29a1d4aa4374aa03abe059935" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+    <item id="/music/t/t:ecca8a967647b9e29a1d4aa4374aa03abe059935" parentID="/music/t" restricted="0">
         <dc:title>Anon: Genuit Puerpera Regem</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
         <res duration="00:03:00" protocolInfo="http-get:*:audio/mpeg:*" size="7220454">http://<server>/Music/Benedictine+Monks+Of+Santo+Domingo+De+Silos/Canto+Gregoriano+%5BDisc+1%5D/1-02+Anon_+Genuit+Puerpera+Regem.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByTrack/urn:bluemarine:track:adef72342ea37623c839b20238ef3b86de300d46" parentID="/music/RepositoryBrowserByTrack" restricted="0">
+    <item id="/music/t/t:adef72342ea37623c839b20238ef3b86de300d46" parentID="/music/t" restricted="0">
         <dc:title>Anon: Ave Mundi Spes Maria</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>

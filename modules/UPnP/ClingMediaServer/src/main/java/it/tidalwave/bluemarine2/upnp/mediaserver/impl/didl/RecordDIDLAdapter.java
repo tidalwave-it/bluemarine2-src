@@ -34,6 +34,7 @@ import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.MusicAlbum;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.Record;
+import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
@@ -45,7 +46,7 @@ import it.tidalwave.bluemarine2.model.Record;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @DciRole(datumType = Record.class)
+@Immutable @DciRole(datumType = Record.class) @Slf4j
 public class RecordDIDLAdapter extends DIDLAdapterSupport<Record>
   {
     public RecordDIDLAdapter (final @Nonnull Record datum)
@@ -56,6 +57,7 @@ public class RecordDIDLAdapter extends DIDLAdapterSupport<Record>
     @Override @Nonnull
     public DIDLObject toObject()
       {
+        log.debug("toObject() - {}", datum);
         // parentID not set here
         return setCommonFields(new MusicAlbum());
       }
