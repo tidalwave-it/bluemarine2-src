@@ -31,7 +31,6 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.time.Duration;
-import java.util.Collections;
 import java.io.IOException;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.Protocol;
@@ -47,7 +46,8 @@ import it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver.ResourceSer
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
-import it.tidalwave.role.Displayable;
+import static it.tidalwave.role.Displayable.Displayable;
+import static java.util.Collections.singletonList;
 import org.fourthline.cling.support.model.StorageMedium;
 
 /***********************************************************************************************************************
@@ -79,32 +79,35 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
       {
         log.debug("toObject() - {}", datum);
         // parentID not set here
-
         final MusicTrack item = setCommonFields(new MusicTrack());
         final AudioFile audioFile = datum.as(AudioFileSupplier).getAudioFile();
         final Metadata trackMetadata = datum.getMetadata();
-        item.setResources(Collections.singletonList(getResource(audioFile)));
+        item.setResources(singletonList(getResource(audioFile)));
         trackMetadata.get(TRACK_NUMBER).ifPresent(trackNumber -> item.setOriginalTrackNumber(trackNumber));
 
-        datum.getRecord().flatMap(record -> record.asOptional(Displayable.class))
-                         .map(Displayable::getDisplayName)
-                         .ifPresent(album -> item.setAlbum(album));
+        datum.getRecord().flatMap(record -> record.asOptional(Displayable))
+                         .map(d -> d.getDisplayName())
+                         .ifPresent(item::setAlbum);
+
 //        trackMetadata.get(DISK_COUNT);
 //        trackMetadata.get(DISK_NUMBER);
 //        trackMetadata.get(COMPOSER);
 //        trackMetadata.get(ARTIST);
-//        item.setAlbum(album);
-//        item.setArtists(artists);
 //        item.setContributors(contributors);
 //        item.setCreator(creator);
 //        item.setDate(date);
 //        item.setDescMetadata(descMetadata);
 //        item.setDescription(description);
-//        item.setGenres(genres);
 //        item.setLanguage(language);
 //        item.setLongDescription(description);
-//        item.setPublishers(publishers);
         item.setStorageMedium(StorageMedium.HDD);
+
+//        item.setArtists(new PersonWithRole[] { new PersonWithRole("xyz", "AlbumArtist") });
+//        item.setGenres(new String[] { "Classical" });
+//        final Person publisher = new Person("Unknown");
+//        item.setPublishers(new Person[] { publisher });
+
+//        datum.getDiskNumber();
 
         return item;
       }
@@ -133,7 +136,7 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
         final int seconds = d % 60;
         final int minutes = (d / 60) % 60;
         final int hours = d / 3600;
-        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+        return String.format("%d:%02d:%02d.000", hours, minutes, seconds);
       }
 
     /*

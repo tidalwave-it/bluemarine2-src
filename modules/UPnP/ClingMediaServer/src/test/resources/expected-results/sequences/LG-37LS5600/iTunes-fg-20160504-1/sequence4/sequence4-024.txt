@@ -1,129 +1,129 @@
 Browse({ObjectID=/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=16, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:bea2e0b373d2030b682388aa66c4ca98260f5494" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" restricted="0">
+    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:bea2e0b373d2030b682388aa66c4ca98260f5494" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" refID="urn:bluemarine:track:bea2e0b373d2030b682388aa66c4ca98260f5494" restricted="0">
         <dc:title>S'anc fui bèla ni presada</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
         <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="00:06:13" protocolInfo="http-get:*:audio/mpeg:*" size="14928770">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/01+S%27anc+fui+b%C3%A8la+ni+presada.mp3</res>
+        <res duration="0:06:13.000" protocolInfo="http-get:*:audio/mpeg:*" size="14928770">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/01+S%27anc+fui+b%C3%A8la+ni+presada.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:47e154a3113ee1128b49f9768fb025ad7c4ff8bb" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" restricted="0">
+    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:47e154a3113ee1128b49f9768fb025ad7c4ff8bb" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" refID="urn:bluemarine:track:47e154a3113ee1128b49f9768fb025ad7c4ff8bb" restricted="0">
         <dc:title>Por coi me bait mes maris</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
         <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="00:02:05" protocolInfo="http-get:*:audio/mpeg:*" size="5008498">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/02+Por+coi+me+bait+mes+maris.mp3</res>
+        <res duration="0:02:05.000" protocolInfo="http-get:*:audio/mpeg:*" size="5008498">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/02+Por+coi+me+bait+mes+maris.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:b948e00271f35547dbe5977ae59e874dba5e505d" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" restricted="0">
+    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:b948e00271f35547dbe5977ae59e874dba5e505d" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" refID="urn:bluemarine:track:b948e00271f35547dbe5977ae59e874dba5e505d" restricted="0">
         <dc:title>Avant hier en un vert pré</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
         <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="00:05:13" protocolInfo="http-get:*:audio/mpeg:*" size="12540148">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/03+Avant+hier+en+un+vert+pr%C3%A9.mp3</res>
+        <res duration="0:05:13.000" protocolInfo="http-get:*:audio/mpeg:*" size="12540148">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/03+Avant+hier+en+un+vert+pr%C3%A9.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:2ec110b1a176683a9b5dfaf8760229c39e705d26" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" restricted="0">
+    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:2ec110b1a176683a9b5dfaf8760229c39e705d26" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" refID="urn:bluemarine:track:2ec110b1a176683a9b5dfaf8760229c39e705d26" restricted="0">
         <dc:title>Lasse pour quoi refusai</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
         <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="00:05:56" protocolInfo="http-get:*:audio/mpeg:*" size="14263137">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/04+Lasse+pour+quoi+refusai.mp3</res>
+        <res duration="0:05:56.000" protocolInfo="http-get:*:audio/mpeg:*" size="14263137">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/04+Lasse+pour+quoi+refusai.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:e14031d4ddbe298f69d60fc8d824bbbf0d22b187" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" restricted="0">
+    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:e14031d4ddbe298f69d60fc8d824bbbf0d22b187" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" refID="urn:bluemarine:track:e14031d4ddbe298f69d60fc8d824bbbf0d22b187" restricted="0">
         <dc:title>L'autrier jost' una sebissa</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
         <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="00:04:39" protocolInfo="http-get:*:audio/mpeg:*" size="11179651">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/05+L%27autrier+jost%27+una+sebissa.mp3</res>
+        <res duration="0:04:39.000" protocolInfo="http-get:*:audio/mpeg:*" size="11179651">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/05+L%27autrier+jost%27+una+sebissa.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:cdfff282cc28119b2a266a792fedb61946932638" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" restricted="0">
+    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:cdfff282cc28119b2a266a792fedb61946932638" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" refID="urn:bluemarine:track:cdfff282cc28119b2a266a792fedb61946932638" restricted="0">
         <dc:title>Pensamen ai e consir - Deduc Syon</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
         <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="00:06:50" protocolInfo="http-get:*:audio/mpeg:*" size="16410507">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/06+Pensamen+ai+e+consir+-+Deduc+Syon.mp3</res>
+        <res duration="0:06:50.000" protocolInfo="http-get:*:audio/mpeg:*" size="16410507">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/06+Pensamen+ai+e+consir+-+Deduc+Syon.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:4569383acd004a5deb9239b3b66f45e55655b707" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" restricted="0">
+    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:4569383acd004a5deb9239b3b66f45e55655b707" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" refID="urn:bluemarine:track:4569383acd004a5deb9239b3b66f45e55655b707" restricted="0">
         <dc:title>E dame jolie</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
         <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="00:03:24" protocolInfo="http-get:*:audio/mpeg:*" size="8200634">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/07+E+dame+jolie.mp3</res>
+        <res duration="0:03:24.000" protocolInfo="http-get:*:audio/mpeg:*" size="8200634">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/07+E+dame+jolie.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:02ea0ab6520cc96798b7449ec615a08ccd0270e5" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" restricted="0">
+    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:02ea0ab6520cc96798b7449ec615a08ccd0270e5" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" refID="urn:bluemarine:track:02ea0ab6520cc96798b7449ec615a08ccd0270e5" restricted="0">
         <dc:title>Tierche estampie reale</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
         <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="00:04:04" protocolInfo="http-get:*:audio/mpeg:*" size="9769036">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/08+Tierche+estampie+reale.mp3</res>
+        <res duration="0:04:04.000" protocolInfo="http-get:*:audio/mpeg:*" size="9769036">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/08+Tierche+estampie+reale.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:75275c85ea830b2ace075500cd4d42868b709ba8" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" restricted="0">
+    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:75275c85ea830b2ace075500cd4d42868b709ba8" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" refID="urn:bluemarine:track:75275c85ea830b2ace075500cd4d42868b709ba8" restricted="0">
         <dc:title>Au renouvel du tens</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
         <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="00:06:33" protocolInfo="http-get:*:audio/mpeg:*" size="15754208">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/09+Au+renouvel+du+tens.mp3</res>
+        <res duration="0:06:33.000" protocolInfo="http-get:*:audio/mpeg:*" size="15754208">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/09+Au+renouvel+du+tens.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:4fa8b86baaa2d2ae921bcee7094f512ca06dea0d" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" restricted="0">
+    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:4fa8b86baaa2d2ae921bcee7094f512ca06dea0d" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" refID="urn:bluemarine:track:4fa8b86baaa2d2ae921bcee7094f512ca06dea0d" restricted="0">
         <dc:title>Veris ad imperia - A l'entrada del tens clar</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
         <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="00:04:18" protocolInfo="http-get:*:audio/mpeg:*" size="10350033">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/10+Veris+ad+imperia+-+A+l%27entrada+del+tens+clar.mp3</res>
+        <res duration="0:04:18.000" protocolInfo="http-get:*:audio/mpeg:*" size="10350033">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/10+Veris+ad+imperia+-+A+l%27entrada+del+tens+clar.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:fa1fc8c93066b62fe55172b13961d3995f4cbfce" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" restricted="0">
+    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:fa1fc8c93066b62fe55172b13961d3995f4cbfce" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" refID="urn:bluemarine:track:fa1fc8c93066b62fe55172b13961d3995f4cbfce" restricted="0">
         <dc:title>A chantar m'er</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>11</upnp:originalTrackNumber>
         <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="00:06:28" protocolInfo="http-get:*:audio/mpeg:*" size="15538960">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/11+A+chantar+m%27er.mp3</res>
+        <res duration="0:06:28.000" protocolInfo="http-get:*:audio/mpeg:*" size="15538960">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/11+A+chantar+m%27er.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:f891382b0bb759b5343e930cfa646e349d8f1102" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" restricted="0">
+    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:f891382b0bb759b5343e930cfa646e349d8f1102" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" refID="urn:bluemarine:track:f891382b0bb759b5343e930cfa646e349d8f1102" restricted="0">
         <dc:title>L’autrier a l’ajornée</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>12</upnp:originalTrackNumber>
         <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="00:02:59" protocolInfo="http-get:*:audio/mpeg:*" size="7194431">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/12+L_autrier+a+l_ajorn%C3%A9e.mp3</res>
+        <res duration="0:02:59.000" protocolInfo="http-get:*:audio/mpeg:*" size="7194431">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/12+L_autrier+a+l_ajorn%C3%A9e.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:4e204c77fae0c2c25789085b20c1f48672b2eadf" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" restricted="0">
+    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:4e204c77fae0c2c25789085b20c1f48672b2eadf" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" refID="urn:bluemarine:track:4e204c77fae0c2c25789085b20c1f48672b2eadf" restricted="0">
         <dc:title>La Manfredina</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>13</upnp:originalTrackNumber>
         <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="00:03:42" protocolInfo="http-get:*:audio/mpeg:*" size="8912211">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/13+La+Manfredina.mp3</res>
+        <res duration="0:03:42.000" protocolInfo="http-get:*:audio/mpeg:*" size="8912211">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/13+La+Manfredina.mp3</res>
     </item>
-    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:daef1eda67b14705041210e5200ed3ba18765b3d" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" restricted="0">
+    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:daef1eda67b14705041210e5200ed3ba18765b3d" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" refID="urn:bluemarine:track:daef1eda67b14705041210e5200ed3ba18765b3d" restricted="0">
         <dc:title>Tuit cil qui sunt enamourat</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>14</upnp:originalTrackNumber>
         <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="00:04:10" protocolInfo="http-get:*:audio/mpeg:*" size="10004144">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/14+Tuit+cil+qui+sunt+enamourat.mp3</res>
+        <res duration="0:04:10.000" protocolInfo="http-get:*:audio/mpeg:*" size="10004144">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/14+Tuit+cil+qui+sunt+enamourat.mp3</res>
     </item>
 </DIDL-Lite>
