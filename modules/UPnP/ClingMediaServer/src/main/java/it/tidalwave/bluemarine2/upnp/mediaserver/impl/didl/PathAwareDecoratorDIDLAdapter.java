@@ -37,7 +37,8 @@ import lombok.extern.slf4j.Slf4j;
 /***********************************************************************************************************************
  *
  * A support for roles dealing with {@link PathAwareEntityDecorator} that creates the {@link DIDLObject} in function
- * of the delegate; and properly sets the {@code id} and {@code parentId} in function of the path.
+ * of the delegate; and properly sets the {@code id} and {@code parentId} in function of the path, overriding any
+ * specific setting by the original datum adapter.
  *
  * @stereotype Role
  *
@@ -57,6 +58,7 @@ public class PathAwareDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<P
     public final DIDLObject toObject()
       throws Exception
       {
+        log.debug("toObject() - {}", datum);
         final DIDLObject item = asDIDLAdapter(datum.getDelegate()).toObject();
         datum.getParent().ifPresent(parent -> item.setParentID(parent.getPath().toString()));
         item.setId(datum.getPath().toString());
