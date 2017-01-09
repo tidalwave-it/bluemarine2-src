@@ -47,6 +47,7 @@ import it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver.ResourceSer
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
+import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
@@ -77,11 +78,10 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
       {
         log.debug("toObject() - {}", datum);
         // parentID not set here
-
         final MusicTrack item = setCommonFields(new MusicTrack());
         final AudioFile audioFile = datum.as(AudioFileSupplier).getAudioFile();
         final Metadata trackMetadata = datum.getMetadata();
-        trackMetadata.get(TRACK_NUMBER).ifPresent(trackNumber -> item.setOriginalTrackNumber(trackNumber));
+        trackMetadata.get(TRACK_NUMBER).ifPresent(item::setOriginalTrackNumber);
         item.setResources(Collections.singletonList(getResource(audioFile)));
 //        datum.getDiskNumber();
 
@@ -113,6 +113,7 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
         final int minutes = (d / 60) % 60;
         final int hours = d / 3600;
         return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+//        return String.format("%d:%02d:%02d.000", hours, minutes, seconds);
       }
 
     /*
