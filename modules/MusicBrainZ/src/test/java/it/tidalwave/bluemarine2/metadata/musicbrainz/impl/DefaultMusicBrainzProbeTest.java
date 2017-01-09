@@ -55,6 +55,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
+import static java.util.stream.Collectors.joining;
 
 /***********************************************************************************************************************
  *
@@ -112,7 +113,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
     @AfterClass
     public void printStats()
       {
-        log.info("STATS: {}", stats);
+        log.info("STATS: {}", stats.entrySet().stream().map(Object::toString).collect(joining(", ")));
       }
 
     /*******************************************************************************************************************
