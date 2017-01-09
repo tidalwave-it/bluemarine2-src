@@ -1,81 +1,81 @@
-Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=48, RequestedCount=16, SortCriteria=})
+Browse({ObjectID=/music/a+r+t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=48, RequestedCount=16, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:aa75bfe53a0c188fe5e1d825a4caba4faff34698" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:aa75bfe53a0c188fe5e1d825a4caba4faff34698" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>La Reverdie</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:93739a9490d74b6bf335d9bbb6f16add3340efa6" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:93739a9490d74b6bf335d9bbb6f16add3340efa6" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Lambis Vassiliadis</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:973884f1defcc037a6bb74764d430fa412a68ce3" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:973884f1defcc037a6bb74764d430fa412a68ce3" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Leonard Bernstein: Israel Philharmonic Orchestra</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c61df49afd67115123baa5371c96239385510986" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:c61df49afd67115123baa5371c96239385510986" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>London Baroque</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:33eac2ba6800b5a55d81cf496ef6c980cf002ca4" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:33eac2ba6800b5a55d81cf496ef6c980cf002ca4" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Lorin Maazel: Berlin Philharmonic Orchestra</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:517fa5e0bf55168a84aff87ca735e2bbf09a13fe" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:517fa5e0bf55168a84aff87ca735e2bbf09a13fe" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Louis Armstrong</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="4" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:d560b95343051120592d39bef02265160fc68a02" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="4" id="/music/a+r+t/a:d560b95343051120592d39bef02265160fc68a02" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Maria Callas</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:bf9a3e4816b6df32aa2f18d8dc121f5370bbd32f" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:bf9a3e4816b6df32aa2f18d8dc121f5370bbd32f" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Maria Callas, Ferruccio Tagliavini, Etc.</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:692b8679488970a37b9432faefb9a348c625b204" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:692b8679488970a37b9432faefb9a348c625b204" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Maria Callas, Orchestre National De La Radiodiffusion Française, Georges Prêtre</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:f012720042116daf2b1e51d8061b4fd9c204f272" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:f012720042116daf2b1e51d8061b4fd9c204f272" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Maria Callas, Orquesta Sinfonica Del Teatro Nacional De Santa Carlos, Lisboa, Franco Ghione</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:9ef5edc4dd9c4e8faef8783549ba74bf67224e89" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:9ef5edc4dd9c4e8faef8783549ba74bf67224e89" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Maria Callas, The Philharmonia Orchestra Tullio Serafin</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:c4e538c0662b53afd5e01def72d7ab489d91523a" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:c4e538c0662b53afd5e01def72d7ab489d91523a" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Maria Callas/Nicola Rescigno/Orchestre De La Société Des Concerts Du Conservatoire</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:e48eba7d35c83e9d2bcba6e05dc3950a22c8abbc" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:e48eba7d35c83e9d2bcba6e05dc3950a22c8abbc" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Maria Callas/Piero Cappuccilli/Bernard Ladysz/Philharmonia Chorus/Philharmonia Orchestra/Tullio Serafin</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:361e5578c616dcd7c18e2877760fc46f92a20678" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:361e5578c616dcd7c18e2877760fc46f92a20678" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Maurizio Pollini</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:5ebd4fcc5c58e4a81cc0e391e8f892fee6b19edf" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:5ebd4fcc5c58e4a81cc0e391e8f892fee6b19edf" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Michael Halász: Slovak Philharmonic Orchestra</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:1d83fe775e3b0c5b7bc865cc24fa21eb3ea485e0" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:1d83fe775e3b0c5b7bc865cc24fa21eb3ea485e0" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Midori</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>

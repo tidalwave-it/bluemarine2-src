@@ -37,6 +37,7 @@ import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
+import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
 
 /***********************************************************************************************************************
  *
@@ -59,7 +60,7 @@ public abstract class DIDLAdapterSupport<T extends As8> implements DIDLAdapter
       {
         didlObject.setRestricted(false);
         didlObject.setCreator("blueMarine II"); // FIXME
-        datum.asOptional(Identifiable).ifPresent(identifiable -> didlObject.setId(identifiable.getId().stringValue()));
+        datum.asOptional(Identifiable).ifPresent(identifiable -> didlObject.setId(externalized(identifiable.getId().stringValue())));
         datum.asOptional(Displayable).map(displayable -> didlObject.setTitle(displayable.getDisplayName()));
 
         if (didlObject instanceof Container)

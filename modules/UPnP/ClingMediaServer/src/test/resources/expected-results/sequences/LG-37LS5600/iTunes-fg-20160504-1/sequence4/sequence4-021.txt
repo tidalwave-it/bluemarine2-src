@@ -1,81 +1,81 @@
-Browse({ObjectID=/music/RepositoryBrowserByRecordThenTrack, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=16, RequestedCount=16, SortCriteria=})
+Browse({ObjectID=/music/r+t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=16, RequestedCount=16, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <container childCount="14" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:e302c9e27238b8e130e86d253599c859740a2989" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="14" id="/music/r+t/r:e302c9e27238b8e130e86d253599c859740a2989" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>El Canto Espiritual Judeoespañol</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="22" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:284f7907828728281f7ef673afeeb4771a97277c" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="22" id="/music/r+t/r:284f7907828728281f7ef673afeeb4771a97277c" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Gregorian Chant: Hymns and Vespers for the Feast of the Nativity</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="14" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:a57e4b10a294f54c47fb69919e5955c8ace90b71" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="14" id="/music/r+t/r:a57e4b10a294f54c47fb69919e5955c8ace90b71" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Handel: Messiah (Highlights)</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="16" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:9701ce237c35cc77dce0c5f36ebb48de313c5dd8" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="16" id="/music/r+t/r:9701ce237c35cc77dce0c5f36ebb48de313c5dd8" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Handel: Music For The Royal Fireworks, Concerto #2 In F</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="19" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:6de64684818f82c13c2f0756e5e27d078945aa81" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="19" id="/music/r+t/r:6de64684818f82c13c2f0756e5e27d078945aa81" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Handel: Water Music</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="13" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:500fa865a0537a14739a468cb940c485430fa995" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="13" id="/music/r+t/r:500fa865a0537a14739a468cb940c485430fa995" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Haydn: Symphonies #6-8</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="7" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:ef878f3a1f304616b688f14d1fa5a6b09171b6c1" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="7" id="/music/r+t/r:ef878f3a1f304616b688f14d1fa5a6b09171b6c1" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Holst: The Planets</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="3" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:02d4354157179bb8abff0759de123f384345c526" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="3" id="/music/r+t/r:02d4354157179bb8abff0759de123f384345c526" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Johannes Brahms, Robert Schumann</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="15" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:d589d2cceb5109b14a99c02735128bb435c213cc" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="15" id="/music/r+t/r:d589d2cceb5109b14a99c02735128bb435c213cc" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>La Divina 2</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="14" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="14" id="/music/r+t/r:35e33404fc68537f63653a29f80b19e2b25f3c51" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="18" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:61b8b6fe0a3eaf045ea4219626b5e3192d865732" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="18" id="/music/r+t/r:61b8b6fe0a3eaf045ea4219626b5e3192d865732" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Las Mejores Obras Del Canto Gregoriano [Disc 2]</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="26" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:091d6a2ad58d10c47693e470144eac7ee4a1312c" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="26" id="/music/r+t/r:091d6a2ad58d10c47693e470144eac7ee4a1312c" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Lorenzo Perosi</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="18" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:99a107f7484f4be6651d1182ec97dde28a98b9b0" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="18" id="/music/r+t/r:99a107f7484f4be6651d1182ec97dde28a98b9b0" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Marais: Pièces À Deux Violes 1686</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="22" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:82710473e94127452baa1f98fcc52cae89320dd9" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="22" id="/music/r+t/r:82710473e94127452baa1f98fcc52cae89320dd9" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Mendelssohn: Paulus [Disc 1]</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="19" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:12a9298606ca12ae3f92799dda95dbdb90b97b98" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="19" id="/music/r+t/r:12a9298606ca12ae3f92799dda95dbdb90b97b98" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Mendelssohn: Paulus [Disc 2]</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="8" id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:f03b8c41ee63f693af9059ef8ca297f2d973f981" parentID="/music/RepositoryBrowserByRecordThenTrack" restricted="0" searchable="0">
+    <container childCount="8" id="/music/r+t/r:f03b8c41ee63f693af9059ef8ca297f2d973f981" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Mostly French</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
