@@ -28,9 +28,7 @@
  */
 package it.tidalwave.bluemarine2.commons.test;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -43,8 +41,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.util.As8;
 import it.tidalwave.role.SimpleComposite8;
+import it.tidalwave.bluemarine2.util.Dumpable;
 import lombok.NoArgsConstructor;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
+import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -77,25 +77,9 @@ public class TestUtilities
     public static List<String> dump (final @Nonnull As8 entity)
       {
         final List<String> result = new ArrayList<>();
-        String string = "null";
-
-        try
-          {
-            string = (String)entity.getClass().getDeclaredMethod("toDumpString").invoke(entity);
-          }
-        catch (NoSuchMethodException e)
-          {
-            string = entity.toString();
-          }
-        catch (SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
-          {
-            throw new RuntimeException(e);
-          }
-
-        result.add(string);
-
-        final Optional<SimpleComposite8> asOptional = entity.asOptional(SimpleComposite8.class);
-        asOptional.ifPresent(c -> c.findChildren().results().forEach(child -> result.addAll(dump((As8)child))));
+        result.add((entity instanceof Dumpable) ? ((Dumpable)entity).toDumpString() : entity.toString());
+        final Optional<SimpleComposite8> composite = entity.asOptional(SimpleComposite8);
+        composite.ifPresent(c -> c.findChildren().results().forEach(child -> result.addAll(dump((As8)child))));
 
         return result;
       }

@@ -26,53 +26,21 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
+package it.tidalwave.bluemarine2.util;
 
-import javax.annotation.concurrent.Immutable;
 import javax.annotation.Nonnull;
-import org.fourthline.cling.support.model.DIDLObject;
-import org.fourthline.cling.support.model.container.Container;
-import org.fourthline.cling.support.model.container.StorageFolder;
-import it.tidalwave.dci.annotation.DciRole;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
 
 /***********************************************************************************************************************
- *
- * An implementation of {@link DIDLAdapter} for {@link MediaFolder}.
- *
- * @see http://upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf
- *
- * @stereotype  Role, Adapter
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-@Immutable @DciRole(datumType = MediaFolder.class)
-public class MediaFolderDIDLAdapter extends CompositeDIDLAdapterSupport<MediaFolder>
+public interface Dumpable
   {
-    public MediaFolderDIDLAdapter (final @Nonnull MediaFolder datum)
+    @Nonnull
+    public default String toDumpString()
       {
-        super(datum);
-      }
-
-    @Override @Nonnull
-    public DIDLObject toObject()
-      {
-        log.debug("toObject() - {}", datum);
-        final Container container = setCommonFields(new Container());
-        container.setClazz(StorageFolder.CLASS);
-        container.setId(pathToDidlId(datum.getPath()));
-        container.setParentID(datum.getParent().map(parent -> pathToDidlId(parent.getPath())).orElse(ID_NONE));
-
-        if (!container.getId().equals("/music")) // FIXME workaround for DefaultMediaFileSystem
-          {
-            container.setTitle(container.getTitle().replace("Music", "By file"));
-          }
-
-        return container;
+        return toString();
       }
   }

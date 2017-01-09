@@ -56,6 +56,24 @@ public final class UpnpUtilities
 
     /*******************************************************************************************************************
      *
+     * A conversion table for shortening external URLs. This unfortunately introduces a dependency on browsers and
+     * entity types, but some DLNA cients don't accept long paths. See BMT-62.
+     *
+     ******************************************************************************************************************/
+    private final static String[][] REPLACEMENT_PAIRS = new String[][]
+      {
+        { "/urn:bluemarine:artist:",              "/a:"    },
+        { "/urn:bluemarine:record:",              "/r:"    },
+        { "/urn:bluemarine:track:",               "/t:"    },
+        { "/RepositoryBrowserByArtistThenRecord", "/a+r+t" },
+        { "/RepositoryBrowserByArtistThenTrack",  "/a+t"   },
+        { "/RepositoryBrowserByRecordThenTrack",  "/r+t"   },
+        { "/RepositoryBrowserByTrack",            "/t"     },
+        { "/DefaultMediaFileSystem",              "/fs"    },
+      };
+
+    /*******************************************************************************************************************
+     *
      * Converts to a {@link Path} to a a DIDL id.
      *
      * @param       path    the path
@@ -65,7 +83,7 @@ public final class UpnpUtilities
     @Nonnull
     public static String pathToDidlId (final @Nonnull Path path)
       {
-        return path.toString().replaceAll(REGEXP_ROOT, ID_ROOT);
+        return externalized(path.toString().replaceAll(REGEXP_ROOT, ID_ROOT));
       }
 
     /*******************************************************************************************************************
@@ -79,7 +97,39 @@ public final class UpnpUtilities
     @Nonnull
     public static Path didlIdToPath (final @Nonnull String id)
       {
-        return Paths.get(id.equals(ID_ROOT) ? PATH_ROOT : id);
+        return Paths.get(id.equals(ID_ROOT) ? PATH_ROOT : internalized(id));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * See BMT-62.
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static String externalized (@Nonnull String string)
+      {
+        for (final String[] pair : REPLACEMENT_PAIRS)
+          {
+            string = string.replace(pair[0], pair[1]);
+          }
+
+        return string;
+      }
+
+    /*******************************************************************************************************************
+     *
+     * See BMT-62.
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static String internalized (@Nonnull String string)
+      {
+        for (final String[] pair : REPLACEMENT_PAIRS)
+          {
+            string = string.replace(pair[1], pair[0]);
+          }
+
+        return string;
       }
 
     /*******************************************************************************************************************
