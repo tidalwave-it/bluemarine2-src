@@ -1,6 +1,6 @@
-Browse({ObjectID=/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:1d83fe775e3b0c5b7bc865cc24fa21eb3ea485e0, BrowseFlag=BrowseMetadata, Filter=, StartingIndex=0, RequestedCount=0, SortCriteria=})
+Browse({ObjectID=/music/a+t/a:1d83fe775e3b0c5b7bc865cc24fa21eb3ea485e0, BrowseFlag=BrowseMetadata, Filter=, StartingIndex=0, RequestedCount=0, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <container childCount="12" id="/music/RepositoryBrowserByArtistThenTrack/urn:bluemarine:artist:1d83fe775e3b0c5b7bc865cc24fa21eb3ea485e0" parentID="/music/RepositoryBrowserByArtistThenTrack" restricted="0" searchable="0">
+    <container childCount="12" id="/music/a+t/a:1d83fe775e3b0c5b7bc865cc24fa21eb3ea485e0" parentID="/music/a+t" restricted="0" searchable="0">
         <dc:title>Midori</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>

@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import org.fourthline.cling.support.model.DIDLObject;
 import it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator;
+import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.externalized;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -60,8 +61,8 @@ public class PathAwareDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<P
       {
         log.debug("toObject() - {}", datum);
         final DIDLObject item = asDIDLAdapter(datum.getDelegate()).toObject();
-        datum.getParent().ifPresent(parent -> item.setParentID(parent.getPath().toString()));
-        item.setId(datum.getPath().toString());
+        datum.getParent().ifPresent(parent -> item.setParentID(externalized(parent.getPath().toString())));
+        item.setId(externalized(datum.getPath().toString()));
         return item;
       }
   }

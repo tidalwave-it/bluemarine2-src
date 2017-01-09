@@ -1,6 +1,6 @@
-Browse({ObjectID=/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=1, SortCriteria=})
+Browse({ObjectID=/music/r+t/r:35e33404fc68537f63653a29f80b19e2b25f3c51, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=1, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <item id="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51/urn:bluemarine:track:bea2e0b373d2030b682388aa66c4ca98260f5494" parentID="/music/RepositoryBrowserByRecordThenTrack/urn:bluemarine:record:35e33404fc68537f63653a29f80b19e2b25f3c51" restricted="0">
+    <item id="/music/r+t/r:35e33404fc68537f63653a29f80b19e2b25f3c51/t:bea2e0b373d2030b682388aa66c4ca98260f5494" parentID="/music/r+t/r:35e33404fc68537f63653a29f80b19e2b25f3c51" restricted="0">
         <dc:title>S'anc fui bèla ni presada</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
