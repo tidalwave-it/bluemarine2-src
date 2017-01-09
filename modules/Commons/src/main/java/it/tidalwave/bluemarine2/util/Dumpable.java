@@ -26,19 +26,21 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.role;
+package it.tidalwave.bluemarine2.util;
 
-import it.tidalwave.util.As8;
-import it.tidalwave.bluemarine2.util.Dumpable;
+import javax.annotation.Nonnull;
 
 /***********************************************************************************************************************
- *
- * @stereotype  Role
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Entity extends As8, Dumpable
+public interface Dumpable
   {
+    @Nonnull
+    public default String toDumpString()
+      {
+        return toString();
+      }
   }
