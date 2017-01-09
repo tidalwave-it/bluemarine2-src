@@ -34,7 +34,7 @@ import java.util.List;
 import org.musicbrainz.ns.mmd_2.Disc;
 import org.musicbrainz.ns.mmd_2.Medium;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata.Cddb;
 import java.net.URLEncoder;
 import lombok.NoArgsConstructor;
 import static java.util.stream.Collectors.toList;
@@ -55,7 +55,7 @@ public final class MusicBrainzUtilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static List<CDDB> cddbsOf (final @Nonnull Medium medium)
+    public static List<Cddb> cddbsOf (final @Nonnull Medium medium)
       {
         return medium.getDiscList().getDisc().stream().map(disc -> cddbOf(disc)).collect(toList());
       }
@@ -66,9 +66,9 @@ public final class MusicBrainzUtilities
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static CDDB cddbOf (final @Nonnull Disc disc)
+    public static Cddb cddbOf (final @Nonnull Disc disc)
       {
-        return MediaItem.Metadata.CDDB.builder()
+        return MediaItem.Metadata.Cddb.builder()
                 .discId("") // FIXME
                 .trackFrameOffsets(disc.getOffsetList().getOffset()
                         .stream()

@@ -35,7 +35,7 @@ import java.nio.file.Files;
 import it.tidalwave.bluemarine2.rest.RestResponse;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata.Cddb;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import it.tidalwave.bluemarine2.commons.test.TestSetTriple;
@@ -44,7 +44,7 @@ import static java.util.Collections.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB_;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
@@ -85,7 +85,7 @@ public class DefaultCddbMetadataProviderTest extends TestSupport
         underTest.setCachePath(CDDB_CACHE.resolve(testSetName));
 
         final Metadata metadata = mockMetadataFrom(triple.getFilePath());
-        final Optional<CDDB> cddb = metadata.get(CDDB_);
+        final Optional<Cddb> cddb = metadata.get(CDDB);
         // when
         final RestResponse<CddbAlbum> response = underTest.findCddbAlbum(metadata);
         // then

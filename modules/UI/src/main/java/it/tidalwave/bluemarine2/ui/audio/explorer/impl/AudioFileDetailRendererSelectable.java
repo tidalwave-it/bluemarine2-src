@@ -39,6 +39,7 @@ import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.BIT_RATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.SAMPLE_RATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.YEAR;
+import static java.util.stream.Collectors.joining;
 
 /***********************************************************************************************************************
  *

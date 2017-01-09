@@ -37,7 +37,7 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata.Cddb;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -61,14 +61,14 @@ public class CddbAlbum
     private final Map<String, String> properties;
 
     @Nonnull
-    private final CDDB cddb;
+    private final Cddb cddb;
 
     @Nonnull
     public static CddbAlbum of (final @Nonnull String stringResponse)
       {
         final String[] split = stringResponse.split("\n");
 
-        final CDDB cddb = CDDB.builder()
+        final Cddb cddb = Cddb.builder()
                             .discId("") // FIXME
                             .trackFrameOffsets(
                                     Stream.of(split)

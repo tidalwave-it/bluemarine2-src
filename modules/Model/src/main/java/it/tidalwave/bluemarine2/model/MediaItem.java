@@ -99,7 +99,7 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
         public final Key<List<String>> ENCODER = new Key<>("tag.ENCODER"); // FIXME: key name
 
         public static final Key<ITunesComment> ITUNES_COMMENT = new Key<>("iTunes.comment");
-        public static final Key<CDDB> CDDB_ = new Key<>("cddb");
+        public static final Key<Cddb> CDDB = new Key<>("cddb");
 
         /***************************************************************************************************************
          *
@@ -108,7 +108,7 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
          **************************************************************************************************************/
         @Immutable @AllArgsConstructor(access = PRIVATE) @Getter @Builder @ToString @EqualsAndHashCode
         @Slf4j
-        public static class CDDB
+        public static class Cddb
           {
             @Nonnull
             private final String discId;
@@ -118,7 +118,7 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
 
             private final int discLength;
 
-            public boolean matches (final @Nonnull CDDB other, final @Nonnegative int threshold)
+            public boolean matches (final @Nonnull Cddb other, final @Nonnegative int threshold)
               {
                 if (Arrays.equals(this.trackFrameOffsets, other.trackFrameOffsets))
                   {
@@ -133,12 +133,12 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
                 return this.computeDifference(other) <= threshold;
               }
 
-            public boolean sameTrackCountOf (final @Nonnull CDDB other)
+            public boolean sameTrackCountOf (final @Nonnull Cddb other)
               {
                 return this.trackFrameOffsets.length == other.trackFrameOffsets.length;
               }
 
-            public int computeDifference (final @Nonnull CDDB other)
+            public int computeDifference (final @Nonnull Cddb other)
               {
                 final int delta = this.trackFrameOffsets[0] - other.trackFrameOffsets[0];
                 double acc = 0;
@@ -178,9 +178,9 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
               }
 
             @Nonnull
-            public CDDB getCddb()
+            public Cddb getCddb()
               {
-                return CDDB.builder().discId(cddb1.split("\\+")[0])
+                return Cddb.builder().discId(cddb1.split("\\+")[0])
                                      .trackFrameOffsets(Stream.of(cddb1.split("\\+"))
                                                               .skip(3)
                                                               .mapToInt(Integer::parseInt)

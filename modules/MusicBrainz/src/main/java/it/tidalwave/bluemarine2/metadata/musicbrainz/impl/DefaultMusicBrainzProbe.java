@@ -42,7 +42,7 @@ import org.musicbrainz.ns.mmd_2.Release;
 import org.musicbrainz.ns.mmd_2.ReleaseGroup;
 import org.musicbrainz.ns.mmd_2.ReleaseGroupList;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata.Cddb;
 import it.tidalwave.bluemarine2.rest.RestResponse;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbMetadataProvider;
@@ -106,7 +106,7 @@ public class DefaultMusicBrainzProbe
       throws InterruptedException, IOException
       {
         final Optional<String> albumTitle = metadata.get(TITLE);
-        final Optional<CDDB> cddb = metadata.get(CDDB_);
+        final Optional<Cddb> cddb = metadata.get(CDDB);
 
         if (!albumTitle.isPresent() || albumTitle.get().trim().isEmpty() || !cddb.isPresent())
           {
@@ -135,7 +135,7 @@ public class DefaultMusicBrainzProbe
      *
      ******************************************************************************************************************/
     @Nonnull
-    private List<ReleaseAndMedium> probe (final @Nonnull List<ReleaseGroup> releaseGroups, final @Nonnull CDDB cddb)
+    private List<ReleaseAndMedium> probe (final @Nonnull List<ReleaseGroup> releaseGroups, final @Nonnull Cddb cddb)
       throws IOException, InterruptedException
       {
         final Map<String, ReleaseAndMedium> found = new TreeMap<>();
@@ -162,7 +162,7 @@ public class DefaultMusicBrainzProbe
                         continue;
                       }
 
-                    final List<CDDB> cddbs = cddbsOf(medium);
+                    final List<Cddb> cddbs = cddbsOf(medium);
                     final boolean matches = cddbs.stream().anyMatch(c -> cddb.matches(c, trackOffsetsMatchThreshold));
 
 //                    if (!cddbs.isEmpty() && !matches)
@@ -201,8 +201,8 @@ public class DefaultMusicBrainzProbe
           }
 
         final CddbAlbum album = album2.get();
-        final CDDB albumCddb = album.getCddb();
-        final CDDB requestedCddb = metadata.get(ITUNES_COMMENT).get().getCddb();
+        final Cddb albumCddb = album.getCddb();
+        final Cddb requestedCddb = metadata.get(ITUNES_COMMENT).get().getCddb();
         final Optional<String> dTitle = album.getProperty("DTITLE");
 
         if (!albumCddb.matches(requestedCddb, trackOffsetsMatchThreshold))
