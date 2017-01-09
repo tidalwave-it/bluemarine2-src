@@ -12,10 +12,10 @@
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>it-tidalwave-bluemarine2-musicbrainz-api</artifactId>
+    <artifactId>it-tidalwave-bluemarine2-musicbrainz-datamodel</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-16-SNAPSHOT</version>
-    <name>blueMarine II - MusicBrainz API</name>
+    <name>blueMarine II - MusicBrainz Data Model</name>
 
     <properties>
         <!-- This module contains only automatically-generated code, so there's no meaning for running tests or QA -->

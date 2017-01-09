@@ -12,10 +12,10 @@
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>it-tidalwave-bluemarine2-musicbrainz</artifactId>
+    <artifactId>it-tidalwave-bluemarine2-metadata-musicbrainz</artifactId>
     <packaging>jar</packaging>
     <version>1.0-ALPHA-16-SNAPSHOT</version>
-    <name>blueMarine II - MusicBrainZ</name>
+    <name>blueMarine II - MusicBrainz</name>
 
     <dependencies>
         <dependency>
@@ -24,7 +24,7 @@
         </dependency>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-musicbrainz-api</artifactId>
+            <artifactId>it-tidalwave-bluemarine2-musicbrainz-datamodel</artifactId>
         </dependency>
 
         <dependency>

@@ -181,12 +181,12 @@ Still at the early stage of development, it can be used with some hack to reprod
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
-                <artifactId>it-tidalwave-bluemarine2-musicbrainz</artifactId>
+                <artifactId>it-tidalwave-bluemarine2-metadata-musicbrainz</artifactId>
                 <version>1.0-ALPHA-16-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
-                <artifactId>it-tidalwave-bluemarine2-musicbrainz-api</artifactId>
+                <artifactId>it-tidalwave-bluemarine2-musicbrainz-datamodel</artifactId>
                 <version>1.0-ALPHA-16-SNAPSHOT</version>
             </dependency>
             <dependency>
