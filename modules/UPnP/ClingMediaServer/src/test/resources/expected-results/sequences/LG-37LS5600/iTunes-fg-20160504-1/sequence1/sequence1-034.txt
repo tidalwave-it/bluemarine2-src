@@ -1,2 +1,2 @@
-Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:d35745456c06770731c83193c38f12cc9cb3c202/urn:bluemarine:record:1bc80e189f4d8d60f24c3e1fde6031ad49c11290, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=12, RequestedCount=4, SortCriteria=})
+Browse({ObjectID=/music/a+r+t/a:d35745456c06770731c83193c38f12cc9cb3c202/r:1bc80e189f4d8d60f24c3e1fde6031ad49c11290, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=12, RequestedCount=4, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"/>
