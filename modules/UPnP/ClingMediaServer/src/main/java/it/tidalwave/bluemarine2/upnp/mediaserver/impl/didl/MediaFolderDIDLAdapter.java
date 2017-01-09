@@ -62,6 +62,7 @@ public class MediaFolderDIDLAdapter extends CompositeDIDLAdapterSupport<MediaFol
     @Override @Nonnull
     public DIDLObject toObject()
       {
+        log.debug("toObject() - {}", datum);
         final Container container = setCommonFields(new Container());
         container.setClazz(StorageFolder.CLASS);
         container.setId(pathToDidlId(datum.getPath()));
