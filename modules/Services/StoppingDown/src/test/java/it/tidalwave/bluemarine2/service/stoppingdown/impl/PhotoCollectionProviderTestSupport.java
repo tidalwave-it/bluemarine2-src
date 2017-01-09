@@ -29,26 +29,21 @@
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.function.Function;
 import java.util.List;
-import java.util.stream.Stream;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.util.Optional;
+import java.util.function.Function;
 import java.nio.file.Paths;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
+import it.tidalwave.bluemarine2.commons.test.TestUtilities;
 import org.testng.annotations.BeforeMethod;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.mock;
-import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 
 /***********************************************************************************************************************
  *
@@ -77,7 +72,8 @@ public class PhotoCollectionProviderTestSupport
 
         mediaFolder = mock(MediaFolder.class);
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
-        when(mediaFolder.toString()).thenReturn("MediaFolder(\"/folder\"))");
+        when(mediaFolder.toString()).thenReturn("Folder(\"/folder\"))");
+//        when(mediaFolder.toDumpString()).thenReturn("Folder(\"/folder\"))");
         when(mediaFolder.finderOf(any(Finder8.class))).thenCallRealMethod();
         when(mediaFolder.finderOf(any(Function.class))).thenCallRealMethod();
       }
@@ -85,31 +81,39 @@ public class PhotoCollectionProviderTestSupport
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    protected static void dumpAndAssertResults (final @Nonnull String fileName, final @Nonnull Collection<?> data)
-      throws IOException
-      {
-        final Path actualResult = Paths.get("target", "test-results", fileName);
-        final Path expectedResult = Paths.get("target", "test-classes", "expected-results", fileName);
-        Files.createDirectories(actualResult.getParent());
-        final Stream<String> stream = data.stream().map(Object::toString);
-        Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
-        assertSameContents(expectedResult.toFile(), actualResult.toFile());
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
     @Nonnull
-    protected static List<String> dump (final @Nonnull Entity entity)
+    protected static List<String> dump (final @Nonnull EntityFinder finder)
       {
-        final List<String> result = new ArrayList<>();
-        result.add("" + entity);
-
-        if (entity instanceof MediaFolder)
-          {
-            ((MediaFolder)entity).findChildren().forEach(child -> result.addAll(dump(child)));
-          }
-
-        return result;
+        VirtualMediaFolder.EntityFinderFactory fff = t -> finder;
+        final VirtualMediaFolder md = new VirtualMediaFolder(Optional.empty(), Paths.get("/"), "xxx", fff);
+        return TestUtilities.dump(md);
       }
+//    protected static void dumpAndAssertResults (final @Nonnull String fileName, final @Nonnull Collection<?> data)
+//      throws IOException
+//      {
+//        TestUtilities.dumpAndAssertResults(fileName, data);
+//        final Path actualResult = Paths.get("target", "test-results", fileName);
+//        final Path expectedResult = Paths.get("target", "test-classes", "expected-results", fileName);
+//        Files.createDirectories(actualResult.getParent());
+//        final Stream<String> stream = data.stream().map(Object::toString);
+//        Files.write(actualResult, (Iterable<String>)stream::iterator, StandardCharsets.UTF_8);
+//        assertSameContents(expectedResult.toFile(), actualResult.toFile());
+//      }
+
+//    /*******************************************************************************************************************
+//     *
+//     ******************************************************************************************************************/
+//    @Nonnull
+//    protected static List<String> dump (final @Nonnull Entity entity)
+//      {
+//        final List<String> result = new ArrayList<>();
+//        result.add("" + entity);
+//
+//        if (entity instanceof MediaFolder)
+//          {
+//            ((MediaFolder)entity).findChildren().forEach(child -> result.addAll(dump(child)));
+//          }
+//
+//        return result;
+//      }
   }

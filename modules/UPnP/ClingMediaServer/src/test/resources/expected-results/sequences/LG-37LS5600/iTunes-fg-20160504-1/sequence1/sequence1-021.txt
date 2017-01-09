@@ -1,6 +1,6 @@
-Browse({ObjectID=/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:d35745456c06770731c83193c38f12cc9cb3c202, BrowseFlag=BrowseMetadata, Filter=, StartingIndex=0, RequestedCount=0, SortCriteria=})
+Browse({ObjectID=/music/a+r+t/a:d35745456c06770731c83193c38f12cc9cb3c202, BrowseFlag=BrowseMetadata, Filter=, StartingIndex=0, RequestedCount=0, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <container childCount="1" id="/music/RepositoryBrowserByArtistThenRecord/urn:bluemarine:artist:d35745456c06770731c83193c38f12cc9cb3c202" parentID="/music/RepositoryBrowserByArtistThenRecord" restricted="0" searchable="0">
+    <container childCount="1" id="/music/a+r+t/a:d35745456c06770731c83193c38f12cc9cb3c202" parentID="/music/a+r+t" restricted="0" searchable="0">
         <dc:title>Andrea Bacchetti</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.person.musicArtist</upnp:class>
