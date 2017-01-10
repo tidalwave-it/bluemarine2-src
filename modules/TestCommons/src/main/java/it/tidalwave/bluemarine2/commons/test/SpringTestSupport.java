@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.commons.test;
 
 import javax.annotation.Nonnull;
+import java.util.Arrays;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -46,18 +47,20 @@ public class SpringTestSupport
   {
     protected ClassPathXmlApplicationContext context;
 
+    @Nonnull
     private final String[] configLocations;
 
     protected SpringTestSupport (final @Nonnull String ... configLocations)
       {
         this.configLocations = configLocations;
-        log.info(">>>> Spring configuration locations: {}", (Object[])this.configLocations);
       }
 
     @BeforeMethod
     public final void createSpringContext()
       {
+        log.info("Spring configuration locations: {}", Arrays.toString(configLocations));
         context = new ClassPathXmlApplicationContext(configLocations);
+        log.info(">>>> bean names: {}", Arrays.toString(context.getBeanDefinitionNames()));
       }
 
     @AfterMethod(timeOut = 60000)
