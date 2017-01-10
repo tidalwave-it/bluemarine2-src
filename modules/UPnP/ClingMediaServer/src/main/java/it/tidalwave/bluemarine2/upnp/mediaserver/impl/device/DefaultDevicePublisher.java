@@ -87,7 +87,7 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
     private UDN udn = UDN.uniqueSystemIdentifier("1");
 
     @Getter @Setter
-    private String friendlyName = "foo bar";
+    private String friendlyName = "bm II";
 
     @Getter @Setter
     private boolean useHostNameInFriendlyName = true;
@@ -101,7 +101,7 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
     @Getter @Setter
     private ModelDetails modelDetails = new ModelDetails("blueMarine II",
                                                          "blueMarine II media server.",
-                                                         "v1", // FIXME: use build tag
+                                                         "v?", // FIXME: use build tag
                                                          "http://bluemarine.tidalwave.it");
 
     @Getter @Setter
