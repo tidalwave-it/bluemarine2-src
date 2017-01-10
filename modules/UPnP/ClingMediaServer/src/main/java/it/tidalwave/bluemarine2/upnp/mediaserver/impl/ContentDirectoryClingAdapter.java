@@ -30,8 +30,6 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Stream;
 import java.nio.file.Path;
 import org.fourthline.cling.support.model.BrowseFlag;
@@ -41,6 +39,7 @@ import org.fourthline.cling.support.contentdirectory.AbstractContentDirectorySer
 import org.fourthline.cling.support.contentdirectory.ContentDirectoryException;
 import org.fourthline.cling.support.contentdirectory.DIDLParser;
 import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.spi.CacheManager;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.ContentHolder;
 import lombok.extern.slf4j.Slf4j;
@@ -71,6 +70,9 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
     @Inject
     private ContentDirectory contentDirectory;
 
+    @Inject
+    private CacheManager cacheManager;
+
     @RequiredArgsConstructor @EqualsAndHashCode @ToString
     static class BrowseParams
       {
@@ -81,11 +83,6 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
         private final long maxResults;
         private final SortCriterion[] orderby;
       }
-
-    /**
-     * This cache is just a palliative. An effective cache should be placed on the Repository finder.
-     */
-    private final Map<BrowseParams, Object> cache = new ConcurrentHashMap<>();
 
     /*******************************************************************************************************************
      *
@@ -114,11 +111,12 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
                  objectId, browseFlag, filter, firstResult, maxResults, orderby);
         // this repeated log is for capturing test recordings
         log.trace("browse @@@ {} @@@ {} @@@ {} @@@ {} @@@ {} @@@ {})",
-                 objectId, browseFlag, firstResult, maxResults, filter, orderby);
+                  objectId, browseFlag, firstResult, maxResults, filter, orderby);
 
-        final BrowseParams params = new BrowseParams(objectId, browseFlag, filter, firstResult, maxResults, orderby);
-        final Object result = cache.computeIfAbsent(params, key ->
-                computeResult(objectId, browseFlag, filter, firstResult, maxResults, orderby));
+        // this cache is just a palliative. An effective cache should be placed on the Repository finder.
+        final BrowseParams key = new BrowseParams(objectId, browseFlag, filter, firstResult, maxResults, orderby);
+        final Object result = cacheManager.getCachedObject(key,
+                () -> computeResult(objectId, browseFlag, filter, firstResult, maxResults, orderby));
 
         if (result instanceof ContentDirectoryException)
           {

@@ -60,8 +60,6 @@
 
     <aop:aspectj-autoproxy/>
 
-    <bean class="it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem" />
-
-    <bean id="cacheManager" class="it.tidalwave.bluemarine2.model.impl.DefaultCacheManager"/>
+    <bean id="cacheManager" class="it.tidalwave.bluemarine2.model.impl.MockCacheManager" />
 
 </beans>
