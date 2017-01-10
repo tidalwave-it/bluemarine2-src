@@ -76,7 +76,9 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
     @RequiredArgsConstructor @EqualsAndHashCode @ToString
     static class BrowseParams
       {
+        @Nonnull
         private final String objectId;
+        @Nonnull
         private final BrowseFlag browseFlag;
         private final String filter;
         private final long firstResult;
@@ -114,48 +116,42 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
                   objectId, browseFlag, firstResult, maxResults, filter, orderby);
 
         // this cache is just a palliative. An effective cache should be placed on the Repository finder.
-        final BrowseParams key = new BrowseParams(objectId, browseFlag, filter, firstResult, maxResults, orderby);
-        final Object result = cacheManager.getCachedObject(key,
-                () -> computeResult(objectId, browseFlag, filter, firstResult, maxResults, orderby));
+        final BrowseParams params = new BrowseParams(objectId, browseFlag, filter, firstResult, maxResults, orderby);
+        final Object result = cacheManager.getCachedObject(params, () -> computeResult(params));
 
         if (result instanceof ContentDirectoryException)
           {
             throw (ContentDirectoryException)result;
           }
 
-        log(">>>> returning", (BrowseResult) result);
-        return (BrowseResult) result;
+        log(">>>> returning", (BrowseResult)result);
+        return (BrowseResult)result;
       }
 
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    private Object computeResult (final @Nonnull String objectId,
-                                  final @Nonnull BrowseFlag browseFlag,
-                                  final String filter,
-                                  final long firstResult,
-                                  final long maxResults,
-                                  final SortCriterion[] orderby)
+    private Object computeResult (final @Nonnull BrowseParams params)
       {
         try
           {
-            final Path path = didlIdToPath(objectId);
+            final Path path = didlIdToPath(params.objectId);
             final Entity entity = contentDirectory.findRoot()
                                                   .findChildren()
                                                   .withPath(path)
                                                   .optionalResult()
                                                   .orElseThrow(() ->
                                                           new ContentDirectoryException(NO_SUCH_OBJECT,
-                                                                        String.format("%s -> %s", objectId, path)));
+                                                                    String.format("%s -> %s", params.objectId, path)));
             log.debug(">>>> found {}", entity);
-            final ContentHolder holder = entity.as(DIDLAdapter).toContent(browseFlag,
-                                                                          (int)firstResult,
-                                                                          maxCount(maxResults));
+            final ContentHolder holder = entity.as(DIDLAdapter).toContent(params.browseFlag,
+                                                                          (int)params.firstResult,
+                                                                          maxCount(params.maxResults));
             final DIDLParser parser = new DIDLParser();
             return new BrowseResult(parser.generate(holder.getContent()),
-                                                           holder.getNumberReturned(),
-                                                           holder.getTotalMatches(),
-                                                           1); /// FIXME: updateId
+                                    holder.getNumberReturned(),
+                                    holder.getTotalMatches(),
+                                    1); /// FIXME: updateId
           }
         catch (ContentDirectoryException e)
           {
@@ -175,10 +171,10 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
     private static void log (final @Nonnull String message, final @Nonnull BrowseResult browseResult)
       {
         log.info("{} BrowseResult(..., {}, {}, {})",
-                message,
-                browseResult.getCountLong(),
-                browseResult.getTotalMatchesLong(),
-                browseResult.getContainerUpdateIDLong());
+                 message,
+                 browseResult.getCountLong(),
+                 browseResult.getTotalMatchesLong(),
+                 browseResult.getContainerUpdateIDLong());
 
         if (log.isDebugEnabled())
           {
