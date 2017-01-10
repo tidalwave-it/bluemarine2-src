@@ -38,7 +38,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 import java.nio.file.Path;
 import it.tidalwave.util.As;
 import it.tidalwave.util.Finder;
@@ -51,6 +50,8 @@ import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.Collections.singletonList;
+import static java.util.stream.Collectors.toList;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static lombok.AccessLevel.PRIVATE;
 
@@ -161,18 +162,21 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
     @Nonnull
     private Collection<? extends PathAwareEntity> filteredByPath (final @Nonnull Path path)
       {
+        log.debug("filteredByPath({})", path);
+
         if (mediaFolder.getPath().equals(path))
           {
-            return Collections.singletonList(mediaFolder);
+            return singletonList(mediaFolder);
           }
 
         try
           {
+            log.debug(">>>> bulk query to {}, filtering in memory", delegate); // See BMT-128
             final Path relativePath = relative(path);
 
             final List<PathAwareEntity> filtered = delegate.results().stream()
                     .filter(entity -> sameHead(relativePath, relative(entity.getPath())))
-                    .collect(Collectors.toList());
+                    .collect(toList());
 
             if (filtered.isEmpty())
               {
