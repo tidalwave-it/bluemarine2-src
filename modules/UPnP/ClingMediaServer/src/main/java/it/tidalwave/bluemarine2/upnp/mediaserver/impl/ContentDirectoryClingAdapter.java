@@ -92,12 +92,14 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
      *
      * @see http://upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf
      *
-     * @param   objectId        the id of the object to browse
-     * @param   browseFlag      whether metadata or children content are requested
-     * @param   filter          a filter for returned data
-     * @param   firstResult     the first index of the items to return
-     * @param   maxResults      the maximum number of items to return
-     * @param   orderby         the sort criteria
+     * @param   objectId                    the id of the object to browse
+     * @param   browseFlag                  whether metadata or children content are requested
+     * @param   filter                      a filter for returned data
+     * @param   firstResult                 the first index of the items to return
+     * @param   maxResults                  the maximum number of items to return
+     * @param   orderby                     the sort criteria
+     * @return                              the requested object
+     * @throws  ContentDirectoryException   in case of error
      *
      ******************************************************************************************************************/
     @Override
@@ -117,7 +119,7 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
 
         // this cache is just a palliative. An effective cache should be placed on the Repository finder.
         final BrowseParams params = new BrowseParams(objectId, browseFlag, filter, firstResult, maxResults, orderby);
-        final Object result = cacheManager.getCachedObject(params, () -> computeResult(params));
+        final Object result = cacheManager.getCachedObject(params, () -> findEntity(params));
 
         if (result instanceof ContentDirectoryException)
           {
@@ -130,8 +132,15 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
 
     /*******************************************************************************************************************
      *
+     * Searches an entity.
+     *
+     * @param   params  the search parameters
+     * @return          a {@link BrowseResult} if the requested entity has been found; a
+     *                  {@link ContentDirectoryException} in case of error
+     *
      ******************************************************************************************************************/
-    private Object computeResult (final @Nonnull BrowseParams params)
+    @Nonnull
+    private Object findEntity (final @Nonnull BrowseParams params)
       {
         try
           {
@@ -153,6 +162,7 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
                                     holder.getTotalMatches(),
                                     1); /// FIXME: updateId
           }
+        // this method returns the exception as a result, so it can be cached
         catch (ContentDirectoryException e)
           {
             log.error("", e);
