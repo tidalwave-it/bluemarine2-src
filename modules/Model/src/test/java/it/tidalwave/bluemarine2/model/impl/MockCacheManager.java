@@ -26,49 +26,23 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.commons.test;
+package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import it.tidalwave.role.ContextManager;
-import lombok.extern.slf4j.Slf4j;
+import java.util.function.Supplier;
+import it.tidalwave.bluemarine2.model.spi.CacheManager;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-@Slf4j
-public class SpringTestSupport
+public class MockCacheManager implements CacheManager
   {
-    protected ClassPathXmlApplicationContext context;
-
-    @Nonnull
-    private final String[] configLocations;
-
-    protected SpringTestSupport (final @Nonnull String ... configLocations)
+    @Override @Nonnull
+    public <T> T getCachedObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
       {
-        this.configLocations = configLocations;
-      }
-
-    @BeforeMethod
-    public final void createSpringContext()
-      {
-        log.info("Spring configuration locations: {}", Arrays.toString(configLocations));
-        context = new ClassPathXmlApplicationContext(configLocations);
-        log.info(">>>> bean names: {}", Arrays.toString(context.getBeanDefinitionNames()));
-      }
-
-    @AfterMethod(timeOut = 60000)
-    public final void closeSpringContext()
-      {
-        log.info("Closing Spring context...");
-        context.close();
-        context = null; // don't keep in memory useless stuff
-        ContextManager.Locator.set(null);
+        return supplier.get();
       }
   }

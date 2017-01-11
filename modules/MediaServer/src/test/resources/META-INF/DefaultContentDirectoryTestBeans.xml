@@ -39,4 +39,6 @@
 
     <bean id="underTest" class="it.tidalwave.bluemarine2.mediaserver.impl.DefaultContentDirectory" />
 
+    <bean id="cacheManager" class="it.tidalwave.bluemarine2.model.impl.MockCacheManager" />
+
 </beans>
