@@ -41,6 +41,7 @@ import org.fourthline.cling.support.contentdirectory.ContentDirectoryException;
 import org.fourthline.cling.support.contentdirectory.DIDLParser;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.spi.CacheManager;
+import it.tidalwave.bluemarine2.model.spi.CacheManager.Cache;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.ContentHolder;
 import lombok.extern.slf4j.Slf4j;
@@ -122,7 +123,8 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
 
         // this cache is just a palliative. An effective cache should be placed on the Repository finder.
         final BrowseParams params = new BrowseParams(objectId, browseFlag, filter, firstResult, maxResults, orderby);
-        final Object result = cacheManager.getCachedObject(params, () -> findEntity(params));
+        final Cache cache = cacheManager.getCache(getClass());
+        final Object result = cache.getCachedObject(params, () -> findEntity(params));
 
         if (result instanceof ContentDirectoryException)
           {

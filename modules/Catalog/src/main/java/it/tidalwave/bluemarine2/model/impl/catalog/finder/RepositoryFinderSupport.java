@@ -58,6 +58,8 @@ import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.Task;
 import it.tidalwave.util.spi.ReflectionUtils;
 import it.tidalwave.role.ContextManager;
+import it.tidalwave.bluemarine2.model.spi.CacheManager;
+import it.tidalwave.bluemarine2.model.spi.CacheManager.Cache;
 import it.tidalwave.bluemarine2.model.impl.catalog.factory.RepositoryEntityFactory;
 import lombok.extern.slf4j.Slf4j;
 import lombok.EqualsAndHashCode;
@@ -104,13 +106,17 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
     @Nonnull
     protected final Repository repository;
 
+    @Nonnull
+    private final Class<ENTITY> entityClass;
+
     @Inject
     private ContextManager contextManager;
 
     @Inject
     private RepositoryEntityFactory entityFactory;
 
-    private final Class<ENTITY> entityClass;
+    @Inject
+    private CacheManager cacheManager;
 
     /*******************************************************************************************************************
      *
@@ -217,18 +223,32 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
 
     /*******************************************************************************************************************
      *
+     * Performs a query, eventually using the cache.
      *
+     * @param   sparqlSelector  a function that select the SPARQL statement to use
+     * @param   finalizer       a function to transform the query raw result into the final result
+     * @param   resultToString  a function that provide the logging string for the result
+     * @return                  the found entities
      *
      ******************************************************************************************************************/
     @Nonnull
-    private <E> E query (final @Nonnull Function<QueryAndParameters, String> sparqlProvider,
+    private <E> E query (final @Nonnull Function<QueryAndParameters, String> sparqlSelector,
                          final @Nonnull Function<TupleQueryResult, E> finalizer,
                          final @Nonnull Function<E, String> resultToString)
       {
         log.info("query() - {}", entityClass);
         final long baseTime = System.nanoTime();
         final QueryAndParameters queryAndParameters = prepareQuery();
-        final E result = query(sparqlProvider.apply(queryAndParameters), finalizer, queryAndParameters.getParameters());
+        final Object[] parameters = queryAndParameters.getParameters();
+        final String originalSparql = sparqlSelector.apply(queryAndParameters);
+        final String sparql = PREFIXES + Stream.of(originalSparql.split("\n"))
+                                               .filter(s -> matchesTag(s, parameters))
+                                               .map(s -> s.replaceAll(REGEX_BINDING_TAG, ""))
+                                               .collect(joining("\n"));
+        log(originalSparql, sparql, parameters);
+        final Cache cache = cacheManager.getCache(RepositoryFinderSupport.class);
+        final String key = compacted(sparql) + " # " + entityClass.getName() + " # " + Arrays.toString(parameters);
+        final E result = cache.getCachedObject(key, () ->  query(sparql, finalizer, parameters));
         final long elapsedTime = System.nanoTime() - baseTime;
         log.info(">>>> query returned {} in {} msec", resultToString.apply(result), elapsedTime / 1E6);
         return result;
@@ -240,28 +260,22 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
      *
      * @param   sparql          the SPARQL of the query
      * @param   finalizer       a function to transform the query raw result into the final result
-     * @param   bindings        an optional set of bindings of the query ("name", value, "name", value ,,,)
+     * @param   parameters      an optional set of parameters of the query ("name", value, "name", value ,,,)
      * @return                  the found entities
      *
      ******************************************************************************************************************/
     @Nonnull
-    private <R> R query (final @Nonnull String originalSparql,
+    private <R> R query (final @Nonnull String sparql,
                          final @Nonnull Function<TupleQueryResult, R> finalizer,
-                         final @Nonnull Object ... bindings)
+                         final @Nonnull Object ... parameters)
       {
-        final String sparql = PREFIXES + Stream.of(originalSparql.split("\n"))
-                                               .filter(s -> matchesTag(s, bindings))
-                                               .map(s -> s.replaceAll(REGEX_BINDING_TAG, ""))
-                                               .collect(joining("\n"));
-        log(originalSparql, sparql, bindings);
-
         try (final RepositoryConnection connection = repository.getConnection())
           {
             final TupleQuery query = connection.prepareTupleQuery(QueryLanguage.SPARQL, sparql);
 
-            for (int i = 0; i < bindings.length; i += 2)
+            for (int i = 0; i < parameters.length; i += 2)
               {
-                query.setBinding((String)bindings[i], (Value)bindings[i + 1]);
+                query.setBinding((String)parameters[i], (Value)parameters[i + 1]);
               }
 
             try (final TupleQueryResult result = query.evaluate())
@@ -399,7 +413,7 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
 
         if (!log.isDebugEnabled() && log.isInfoEnabled())
           {
-            log.info(">>>> query: {}", sparql.replace("\n", " ").replaceAll("\\s+", " "));
+            log.info(">>>> query: {}", compacted(sparql));
           }
 
         if (log.isInfoEnabled())
@@ -407,4 +421,14 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
             log.info(">>>> query parameters: {}", Arrays.toString(bindings));
           }
      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static String compacted (final @Nonnull String sparql)
+      {
+        return sparql.replace("\n", " ").replaceAll("\\s+", " ").trim();
+      }
   }
