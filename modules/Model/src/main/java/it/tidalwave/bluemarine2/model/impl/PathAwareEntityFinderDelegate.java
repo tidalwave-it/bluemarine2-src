@@ -32,7 +32,6 @@ import javax.annotation.CheckForNull;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.inject.Inject;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -50,7 +49,6 @@ import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
-import it.tidalwave.bluemarine2.model.spi.CacheManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.singletonList;
@@ -85,9 +83,6 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
 
     @Nonnull
     private final Optional<Path> optionalPath;
-
-    @Inject
-    private CacheManager cacheManager;
 
     /*******************************************************************************************************************
      *
@@ -180,12 +175,10 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
         try
           {
             log.debug(">>>> bulk query to {}, filtering in memory", delegate); // See BMT-128
-            // FIXME: instead of caching the raw results and then filtering, filter once and cache a map by Path
             final Path relativePath = relative(path);
-            final String key = getClass().getName() + ":" + mediaFolder.getPath();
-            final List<PathAwareEntity> filtered = cacheManager.getCachedObject(key, delegate::results)
-                    .stream().filter(entity -> sameHead(relativePath, relative(entity.getPath())))
-                             .collect(toList());
+            final List<PathAwareEntity> filtered = delegate.results().stream()
+                    .filter(entity -> sameHead(relativePath, relative(entity.getPath())))
+                    .collect(toList());
 
             if (filtered.isEmpty())
               {
