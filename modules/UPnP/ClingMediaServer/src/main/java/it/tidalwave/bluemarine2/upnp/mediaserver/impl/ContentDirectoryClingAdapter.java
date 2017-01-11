@@ -30,8 +30,7 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 import java.nio.file.Path;
 import org.fourthline.cling.support.model.BrowseFlag;
@@ -41,6 +40,7 @@ import org.fourthline.cling.support.contentdirectory.AbstractContentDirectorySer
 import org.fourthline.cling.support.contentdirectory.ContentDirectoryException;
 import org.fourthline.cling.support.contentdirectory.DIDLParser;
 import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.spi.CacheManager;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.ContentHolder;
 import lombok.extern.slf4j.Slf4j;
@@ -71,10 +71,17 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
     @Inject
     private ContentDirectory contentDirectory;
 
+    @Inject
+    private CacheManager cacheManager;
+
+    private final AtomicInteger updateId = new AtomicInteger(1); // FIXME: increment on database update
+
     @RequiredArgsConstructor @EqualsAndHashCode @ToString
     static class BrowseParams
       {
+        @Nonnull
         private final String objectId;
+        @Nonnull
         private final BrowseFlag browseFlag;
         private final String filter;
         private final long firstResult;
@@ -82,23 +89,20 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
         private final SortCriterion[] orderby;
       }
 
-    /**
-     * This cache is just a palliative. An effective cache should be placed on the Repository finder.
-     */
-    private final Map<BrowseParams, Object> cache = new ConcurrentHashMap<>();
-
     /*******************************************************************************************************************
      *
      * Returns information about an object.
      *
      * @see http://upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf
      *
-     * @param   objectId        the id of the object to browse
-     * @param   browseFlag      whether metadata or children content are requested
-     * @param   filter          a filter for returned data
-     * @param   firstResult     the first index of the items to return
-     * @param   maxResults      the maximum number of items to return
-     * @param   orderby         the sort criteria
+     * @param   objectId                    the id of the object to browse
+     * @param   browseFlag                  whether metadata or children content are requested
+     * @param   filter                      a filter for returned data
+     * @param   firstResult                 the first index of the items to return
+     * @param   maxResults                  the maximum number of items to return
+     * @param   orderby                     the sort criteria
+     * @return                              the requested object
+     * @throws  ContentDirectoryException   in case of error
      *
      ******************************************************************************************************************/
     @Override
@@ -114,51 +118,54 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
                  objectId, browseFlag, filter, firstResult, maxResults, orderby);
         // this repeated log is for capturing test recordings
         log.trace("browse @@@ {} @@@ {} @@@ {} @@@ {} @@@ {} @@@ {})",
-                 objectId, browseFlag, firstResult, maxResults, filter, orderby);
+                  objectId, browseFlag, firstResult, maxResults, filter, orderby);
 
+        // this cache is just a palliative. An effective cache should be placed on the Repository finder.
         final BrowseParams params = new BrowseParams(objectId, browseFlag, filter, firstResult, maxResults, orderby);
-        final Object result = cache.computeIfAbsent(params, key ->
-                computeResult(objectId, browseFlag, filter, firstResult, maxResults, orderby));
+        final Object result = cacheManager.getCachedObject(params, () -> findEntity(params));
 
         if (result instanceof ContentDirectoryException)
           {
             throw (ContentDirectoryException)result;
           }
 
-        log(">>>> returning", (BrowseResult) result);
-        return (BrowseResult) result;
+        log(">>>> returning", (BrowseResult)result);
+        return (BrowseResult)result;
       }
 
     /*******************************************************************************************************************
      *
+     * Searches an entity.
+     *
+     * @param   params  the search parameters
+     * @return          a {@link BrowseResult} if the requested entity has been found; a
+     *                  {@link ContentDirectoryException} in case of error
+     *
      ******************************************************************************************************************/
-    private Object computeResult (final @Nonnull String objectId,
-                                  final @Nonnull BrowseFlag browseFlag,
-                                  final String filter,
-                                  final long firstResult,
-                                  final long maxResults,
-                                  final SortCriterion[] orderby)
+    @Nonnull
+    private Object findEntity (final @Nonnull BrowseParams params)
       {
         try
           {
-            final Path path = didlIdToPath(objectId);
+            final Path path = didlIdToPath(params.objectId);
             final Entity entity = contentDirectory.findRoot()
                                                   .findChildren()
                                                   .withPath(path)
                                                   .optionalResult()
                                                   .orElseThrow(() ->
                                                           new ContentDirectoryException(NO_SUCH_OBJECT,
-                                                                        String.format("%s -> %s", objectId, path)));
+                                                                    String.format("%s -> %s", params.objectId, path)));
             log.debug(">>>> found {}", entity);
-            final ContentHolder holder = entity.as(DIDLAdapter).toContent(browseFlag,
-                                                                          (int)firstResult,
-                                                                          maxCount(maxResults));
+            final ContentHolder holder = entity.as(DIDLAdapter).toContent(params.browseFlag,
+                                                                          (int)params.firstResult,
+                                                                          maxCount(params.maxResults));
             final DIDLParser parser = new DIDLParser();
             return new BrowseResult(parser.generate(holder.getContent()),
-                                                           holder.getNumberReturned(),
-                                                           holder.getTotalMatches(),
-                                                           1); /// FIXME: updateId
+                                    holder.getNumberReturned(),
+                                    holder.getTotalMatches(),
+                                    updateId.get());
           }
+        // this method returns exceptions as a result, so they can be cached
         catch (ContentDirectoryException e)
           {
             log.error("", e);
@@ -177,10 +184,10 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
     private static void log (final @Nonnull String message, final @Nonnull BrowseResult browseResult)
       {
         log.info("{} BrowseResult(..., {}, {}, {})",
-                message,
-                browseResult.getCountLong(),
-                browseResult.getTotalMatchesLong(),
-                browseResult.getContainerUpdateIDLong());
+                 message,
+                 browseResult.getCountLong(),
+                 browseResult.getTotalMatchesLong(),
+                 browseResult.getContainerUpdateIDLong());
 
         if (log.isDebugEnabled())
           {
