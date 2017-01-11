@@ -26,15 +26,10 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.commons.test;
+package it.tidalwave.bluemarine2.model.spi;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import it.tidalwave.role.ContextManager;
-import lombok.extern.slf4j.Slf4j;
+import java.util.function.Supplier;
 
 /***********************************************************************************************************************
  *
@@ -42,33 +37,18 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class SpringTestSupport
+public interface CacheManager
   {
-    protected ClassPathXmlApplicationContext context;
-
+    /*******************************************************************************************************************
+     *
+     * Retrieves an object from the cache. If it hasn't cached before, a supplier is called.
+     *
+     * @param   <T>         the object type
+     * @param   key         the object key
+     * @param   supplier    a supplier of a fresh instance
+     * @return              the object
+     *
+     ******************************************************************************************************************/
     @Nonnull
-    private final String[] configLocations;
-
-    protected SpringTestSupport (final @Nonnull String ... configLocations)
-      {
-        this.configLocations = configLocations;
-      }
-
-    @BeforeMethod
-    public final void createSpringContext()
-      {
-        log.info("Spring configuration locations: {}", Arrays.toString(configLocations));
-        context = new ClassPathXmlApplicationContext(configLocations);
-        log.info(">>>> bean names: {}", Arrays.toString(context.getBeanDefinitionNames()));
-      }
-
-    @AfterMethod(timeOut = 60000)
-    public final void closeSpringContext()
-      {
-        log.info("Closing Spring context...");
-        context.close();
-        context = null; // don't keep in memory useless stuff
-        ContextManager.Locator.set(null);
-      }
+    public <T> T getCachedObject (@Nonnull Object key, @Nonnull Supplier<T> supplier);
   }

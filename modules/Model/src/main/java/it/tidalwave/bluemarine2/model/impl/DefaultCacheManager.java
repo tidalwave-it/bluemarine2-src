@@ -26,15 +26,19 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.commons.test;
+package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import it.tidalwave.role.ContextManager;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Supplier;
+import java.lang.ref.WeakReference;
+import it.tidalwave.messagebus.annotation.ListensTo;
+import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.model.spi.CacheManager;
+import it.tidalwave.bluemarine2.util.PersistenceInitializedNotification;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.Objects.requireNonNull;
 
 /***********************************************************************************************************************
  *
@@ -42,33 +46,37 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-public class SpringTestSupport
+@Slf4j @SimpleMessageSubscriber
+public class DefaultCacheManager implements CacheManager
   {
-    protected ClassPathXmlApplicationContext context;
+    private final Map<Object, WeakReference<? extends Object>> cache = new ConcurrentHashMap<>();
+
+    @Override @Nonnull
+    public synchronized <T> T getCachedObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
+      {
+        WeakReference<T> ref = (WeakReference<T>)(cache.computeIfAbsent(key, k -> computeObject(k, supplier)));
+        T object = ref.get();
+
+        if (object == null)
+          {
+            ref = computeObject(key, supplier);
+            object = ref.get();
+            cache.put(key, ref);
+          }
+
+        return object;
+      }
 
     @Nonnull
-    private final String[] configLocations;
-
-    protected SpringTestSupport (final @Nonnull String ... configLocations)
+    private static <T> WeakReference<T> computeObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
       {
-        this.configLocations = configLocations;
+        log.debug(">>>> cache miss for {}", key);
+        return new WeakReference<>(requireNonNull(supplier.get(), "Supplier returned null"));
       }
 
-    @BeforeMethod
-    public final void createSpringContext()
+    private void onPersistenceUpdated (final @ListensTo PersistenceInitializedNotification notification)
       {
-        log.info("Spring configuration locations: {}", Arrays.toString(configLocations));
-        context = new ClassPathXmlApplicationContext(configLocations);
-        log.info(">>>> bean names: {}", Arrays.toString(context.getBeanDefinitionNames()));
-      }
-
-    @AfterMethod(timeOut = 60000)
-    public final void closeSpringContext()
-      {
-        log.info("Closing Spring context...");
-        context.close();
-        context = null; // don't keep in memory useless stuff
-        ContextManager.Locator.set(null);
+        log.debug("onPersistenceUpdated({})", notification);
+        cache.clear();
       }
   }

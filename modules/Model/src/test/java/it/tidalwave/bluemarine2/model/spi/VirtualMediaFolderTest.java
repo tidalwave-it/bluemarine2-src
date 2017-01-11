@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.model.spi;
 
+import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -61,7 +62,7 @@ import static it.tidalwave.role.Displayable.Displayable;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class VirtualMediaFolderTest
+public class VirtualMediaFolderTest extends SpringTestSupport
   {
     /*******************************************************************************************************************
      *
@@ -120,6 +121,14 @@ public class VirtualMediaFolderTest
       }
 
     private VirtualMediaFolder underTest;
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    public VirtualMediaFolderTest()
+      {
+        super("/META-INF/MockBeans.xml");
+      }
 
     /*******************************************************************************************************************
      *
