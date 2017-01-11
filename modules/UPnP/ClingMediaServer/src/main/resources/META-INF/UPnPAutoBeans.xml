@@ -46,7 +46,7 @@
 
     <bean id="contentDirectoryPublisher" class="it.tidalwave.bluemarine2.upnp.mediaserver.impl.device.DefaultDevicePublisher">
         <constructor-arg value="it.tidalwave.bluemarine2.upnp.mediaserver.impl.ContentDirectoryClingAdapter" />
-        <property name="friendlyName" value="blueMarine II"/>
+        <property name="friendlyName" value="bm II"/>
     </bean>
 
     <bean id="resourceServer" class="it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver.DefaultResourceServer" />

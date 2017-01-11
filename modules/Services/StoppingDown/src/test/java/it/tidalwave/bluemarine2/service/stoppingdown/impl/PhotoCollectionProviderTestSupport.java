@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
+import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Optional;
@@ -51,15 +52,22 @@ import static org.mockito.Mockito.mock;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public class PhotoCollectionProviderTestSupport
+public class PhotoCollectionProviderTestSupport extends SpringTestSupport
   {
     protected static final String URL_MOCK_RESOURCE = System.getProperty("stoppingdown",
                                                                          "file:src/test/resources/stoppingdown.net");
 //            "http://localhost:8080";
 
-    protected ApplicationContext context;
-
     protected MediaFolder mediaFolder;
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    public PhotoCollectionProviderTestSupport()
+      {
+        super("META-INF/DciAutoBeans.xml", // required for DCI stuff
+              "META-INF/MockBeans.xml");
+      }
 
     /*******************************************************************************************************************
      *
@@ -68,7 +76,6 @@ public class PhotoCollectionProviderTestSupport
     public void setup()
       {
         // required for DCI stuff
-        context = new ClassPathXmlApplicationContext("META-INF/DciAutoBeans.xml");
 
         mediaFolder = mock(MediaFolder.class);
         when(mediaFolder.getPath()).thenReturn(Paths.get("/folder"));
