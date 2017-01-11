@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 import java.nio.file.Path;
 import org.fourthline.cling.support.model.BrowseFlag;
@@ -72,6 +73,8 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
 
     @Inject
     private CacheManager cacheManager;
+
+    private final AtomicInteger updateId = new AtomicInteger(1); // FIXME: increment on database update
 
     @RequiredArgsConstructor @EqualsAndHashCode @ToString
     static class BrowseParams
@@ -160,9 +163,9 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
             return new BrowseResult(parser.generate(holder.getContent()),
                                     holder.getNumberReturned(),
                                     holder.getTotalMatches(),
-                                    1); /// FIXME: updateId
+                                    updateId.get());
           }
-        // this method returns the exception as a result, so it can be cached
+        // this method returns exceptions as a result, so they can be cached
         catch (ContentDirectoryException e)
           {
             log.error("", e);
