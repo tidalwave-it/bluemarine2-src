@@ -32,7 +32,7 @@ import javax.annotation.Nonnull;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Supplier;
-import java.lang.ref.WeakReference;
+import java.lang.ref.SoftReference;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.spi.CacheManager;
@@ -49,12 +49,13 @@ import static java.util.Objects.requireNonNull;
 @Slf4j @SimpleMessageSubscriber
 public class DefaultCacheManager implements CacheManager
   {
-    private final Map<Object, WeakReference<? extends Object>> cache = new ConcurrentHashMap<>();
+    // TODO: use Spring ConcurrentReferenceHashMap?
+    private final Map<Object, SoftReference<? extends Object>> cache = new ConcurrentHashMap<>();
 
     @Override @Nonnull
     public synchronized <T> T getCachedObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
       {
-        WeakReference<T> ref = (WeakReference<T>)(cache.computeIfAbsent(key, k -> computeObject(k, supplier)));
+        SoftReference<T> ref = (SoftReference<T>)(cache.computeIfAbsent(key, k -> computeObject(k, supplier)));
         T object = ref.get();
 
         if (object == null)
@@ -68,10 +69,10 @@ public class DefaultCacheManager implements CacheManager
       }
 
     @Nonnull
-    private static <T> WeakReference<T> computeObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
+    private static <T> SoftReference<T> computeObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
       {
-        log.debug(">>>> cache miss for {}", key);
-        return new WeakReference<>(requireNonNull(supplier.get(), "Supplier returned null"));
+        log.info(">>>> cache miss for {}", key);
+        return new SoftReference<>(requireNonNull(supplier.get(), "Supplier returned null"));
       }
 
     private void onPersistenceUpdated (final @ListensTo PersistenceInitializedNotification notification)
