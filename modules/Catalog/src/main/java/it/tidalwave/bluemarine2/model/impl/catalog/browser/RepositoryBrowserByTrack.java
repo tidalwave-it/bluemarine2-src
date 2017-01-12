@@ -44,6 +44,8 @@ public class RepositoryBrowserByTrack extends RepositoryBrowserSupport
   {
     static class ByTrackName extends DefaultFilterSortCriterion<As>
       {
+        private static final long serialVersionUID = -4197094807679806523L;
+
         public ByTrackName()
           {
             super(new AsDisplayableComparator(), "---");

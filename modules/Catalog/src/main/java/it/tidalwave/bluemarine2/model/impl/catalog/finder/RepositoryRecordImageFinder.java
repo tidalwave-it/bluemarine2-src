@@ -45,6 +45,8 @@ import lombok.ToString;
 public class RepositoryRecordImageFinder extends RepositoryFinderSupport<URL, Finder8<URL>>
 //                                         implements TrackFinder
   {
+    private static final long serialVersionUID = -9049698559834098380L;
+    
     private final static String QUERY_RECORD_IMAGE = readSparql(RepositoryMusicArtistFinder.class, "RecordImage.sparql");
 
     @Nonnull

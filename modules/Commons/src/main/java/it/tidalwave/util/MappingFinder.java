@@ -60,13 +60,13 @@ public class MappingFinder<TYPE> extends SupplierBasedFinder8<TYPE>
     public MappingFinder (final @Nonnull MappingFinder other, final @Nonnull Object override)
       {
         super(other, override);
-        final MappingFinder source = getSource(MappingFinder.class, other, override);
+        final MappingFinder<TYPE> source = getSource(MappingFinder.class, other, override);
         this.mapper = source.mapper;
       }
 
     @Override
     protected List<? extends TYPE> computeResults()
       {
-        return (List)super.computeResults().stream().map(mapper).collect(toList());
+        return super.computeResults().stream().map(mapper).collect(toList());
       }
   }
