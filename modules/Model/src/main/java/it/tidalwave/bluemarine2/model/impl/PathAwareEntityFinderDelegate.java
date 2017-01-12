@@ -172,17 +172,17 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
 
         // Cannot be optimized as a native query: the path concept in PathAwareEntity is totally decoupled from
         // the underlying native store.
-        try
-          {
+//        try
+//          {
             log.debug(">>>> bulk query to {}, filtering in memory", delegate); // See BMT-128
             return childMatchingPathHead(path)
                     .flatMap(entity -> path.equals(entity.getPath()) ? Optional.of(entity)
                                                                      : childMatchingPath(entity, path));
-          }
-        catch (IllegalArgumentException e) // path can't be relativised
-          {
-            return Optional.empty();
-          }
+//          }
+//        catch (IllegalArgumentException e) // path can't be relativised
+//          {
+//            return Optional.empty();
+//          }
       }
 
     /*******************************************************************************************************************
@@ -253,6 +253,6 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
      ******************************************************************************************************************/
     private static boolean sameHead (final @Nullable Path path1, final @Nullable Path path2)
       {
-        return (path1 != null) && (path2 != null) &&  path1.getName(0).equals(path2.getName(0));
+        return (path1 != null) && (path2 != null) && path1.getName(0).equals(path2.getName(0));
       }
   }
