@@ -39,16 +39,26 @@ import java.util.function.Supplier;
  **********************************************************************************************************************/
 public interface CacheManager
   {
+    public static interface Cache
+      {
+        /***************************************************************************************************************
+         *
+         * Retrieves an object from the cache. If it hasn't cached before, a supplier is called.
+         *
+         * @param   <T>         the object type
+         * @param   key         the object key
+         * @param   supplier    a supplier of a fresh instance
+         * @return              the object
+         *
+         **************************************************************************************************************/
+        @Nonnull
+        public <T> T getCachedObject (@Nonnull Object key, @Nonnull Supplier<T> supplier);
+      }
+
     /*******************************************************************************************************************
      *
-     * Retrieves an object from the cache. If it hasn't cached before, a supplier is called.
-     *
-     * @param   <T>         the object type
-     * @param   key         the object key
-     * @param   supplier    a supplier of a fresh instance
-     * @return              the object
      *
      ******************************************************************************************************************/
     @Nonnull
-    public <T> T getCachedObject (@Nonnull Object key, @Nonnull Supplier<T> supplier);
+    public Cache getCache (@Nonnull Object cacheKey);
   }

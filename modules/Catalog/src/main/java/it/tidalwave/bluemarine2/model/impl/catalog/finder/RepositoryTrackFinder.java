@@ -48,6 +48,8 @@ import lombok.ToString;
 public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackFinder>
                                    implements TrackFinder
   {
+    private static final long serialVersionUID = 770942161753738572L;
+    
     private final static String QUERY_TRACKS = readSparql(RepositoryMusicArtistFinder.class, "Tracks.sparql");
 
     @Nonnull
