@@ -49,35 +49,46 @@ import static java.util.Objects.requireNonNull;
 @Slf4j @SimpleMessageSubscriber
 public class DefaultCacheManager implements CacheManager
   {
-    // TODO: use Spring ConcurrentReferenceHashMap?
-    private final Map<Object, SoftReference<? extends Object>> cache = new ConcurrentHashMap<>();
+    private final Map<Object, Cache> cacheMap = new ConcurrentHashMap<>();
 
-    @Override @Nonnull
-    public synchronized <T> T getCachedObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
+    static class DefaultCache implements Cache
       {
-        SoftReference<T> ref = (SoftReference<T>)(cache.computeIfAbsent(key, k -> computeObject(k, supplier)));
-        T object = ref.get();
+        // TODO: use Spring ConcurrentReferenceHashMap?
+        private final Map<Object, SoftReference<? extends Object>> objectMap = new ConcurrentHashMap<>();
 
-        if (object == null)
+        @Override @Nonnull
+        public <T> T getCachedObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
           {
-            ref = computeObject(key, supplier);
-            object = ref.get();
-            cache.put(key, ref);
+            SoftReference<T> ref = (SoftReference<T>)(objectMap.computeIfAbsent(key, k -> computeObject(k, supplier)));
+            T object = ref.get();
+
+            if (object == null)
+              {
+                ref = computeObject(key, supplier);
+                object = ref.get();
+                objectMap.put(key, ref);
+              }
+
+            return object;
           }
 
-        return object;
+        @Nonnull
+        private static <T> SoftReference<T> computeObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
+          {
+            log.info(">>>> cache miss for {}", key);
+            return new SoftReference<>(requireNonNull(supplier.get(), "Supplier returned null"));
+          }
       }
 
-    @Nonnull
-    private static <T> SoftReference<T> computeObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
+    @Override
+    public Cache getCache (final @Nonnull Object cacheKey)
       {
-        log.info(">>>> cache miss for {}", key);
-        return new SoftReference<>(requireNonNull(supplier.get(), "Supplier returned null"));
+        return cacheMap.computeIfAbsent(cacheKey, key -> new DefaultCache());
       }
 
     private void onPersistenceUpdated (final @ListensTo PersistenceInitializedNotification notification)
       {
         log.debug("onPersistenceUpdated({})", notification);
-        cache.clear();
+        cacheMap.clear();
       }
   }

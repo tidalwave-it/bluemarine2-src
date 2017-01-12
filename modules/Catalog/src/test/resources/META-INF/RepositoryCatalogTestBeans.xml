@@ -66,4 +66,6 @@
         <constructor-arg value="it.tidalwave.bluemarine2.model.MediaFileSystem" />
     </bean>
 
+    <bean id="cacheManager" class="it.tidalwave.bluemarine2.model.impl.MockCacheManager" />
+
 </beans>

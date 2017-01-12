@@ -40,9 +40,20 @@ import it.tidalwave.bluemarine2.model.spi.CacheManager;
  **********************************************************************************************************************/
 public class MockCacheManager implements CacheManager
   {
-    @Override @Nonnull
-    public <T> T getCachedObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
+    private final static Cache CACHE = new MockCache();
+
+    static class MockCache implements Cache
       {
-        return supplier.get();
+        @Override @Nonnull
+        public <T> T getCachedObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
+          {
+            return supplier.get();
+          }
+      }
+
+    @Override @Nonnull
+    public Cache getCache (final @Nonnull Object cacheKey)
+      {
+        return CACHE;
       }
   }
