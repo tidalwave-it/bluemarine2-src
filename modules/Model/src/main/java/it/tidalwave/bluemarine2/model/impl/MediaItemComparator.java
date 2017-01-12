@@ -45,6 +45,8 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  **********************************************************************************************************************/
 public class MediaItemComparator extends DefaultFilterSortCriterion<As>
   {
+    private static final long serialVersionUID = 3413093735254009245L;
+    
     private final static Comparator<As> COMPARATOR = (o1, o2) ->
       {
         try
