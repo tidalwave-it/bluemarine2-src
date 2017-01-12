@@ -163,32 +163,20 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
     @Nonnull
     private Optional<PathAwareEntity> filteredByPath (final @Nonnull Path path)
       {
-        log.debug("filteredByPath({})", path);
-
-        if (mediaFolder.getPath().equals(path))
-          {
-            return Optional.of(mediaFolder);
-          }
-
         // Cannot be optimized as a native query: the path concept in PathAwareEntity is totally decoupled from
         // the underlying native store.
-//        try
-//          {
-            log.debug(">>>> bulk query to {}, filtering in memory", delegate); // See BMT-128
-            return childMatchingPathHead(path)
-                    .flatMap(entity -> path.equals(entity.getPath()) ? Optional.of(entity)
-                                                                     : childMatchingPath(entity, path));
-//          }
-//        catch (IllegalArgumentException e) // path can't be relativised
-//          {
-//            return Optional.empty();
-//          }
+        log.debug("filteredByPath({})", path);
+        return mediaFolder.getPath().equals(path)
+                ? Optional.of(mediaFolder)
+                : childMatchingPathHead(path).flatMap(entity -> path.equals(entity.getPath())
+                        ? Optional.of(entity)
+                        : childMatchingPath(entity, path));
       }
 
     /*******************************************************************************************************************
      *
-     * Returns the child entity that matches the given path, if present. The path can be exactly the one of the found
-     * entity, or it can be of one of its children.
+     * Returns the child entity that matches the first element of the path, if present. The path can be exactly the one
+     * of the found entity, or it can be of one of its children.
      *
      * @param   path    the path
      * @return          the entity, if present
@@ -198,6 +186,7 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
     private Optional<PathAwareEntity> childMatchingPathHead (final @Nonnull Path path)
       {
 //                assert filtered.size() == 1 or 0;
+        log.debug(">>>> bulk query to {}, filtering in memory", delegate); // See BMT-128
         return (Optional<PathAwareEntity>)delegate.results().stream()
                                                   .filter(entity -> sameHead(relative(path), relative(entity.getPath())))
                                                   .findFirst();
@@ -230,17 +219,13 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
 
     /*******************************************************************************************************************
      *
-     *
+     * Relativizes a path against the finder path, that is it removes the parent path. If the path can't be
+     * relativized, that is it doesn't start with the finder path, returns null.
      *
      ******************************************************************************************************************/
     @CheckForNull
-    private Path relative (final @Nullable Path path)
+    private Path relative (final @Nonnull Path path)
       {
-        if (path == null)
-          {
-            return null;
-          }
-
         return !mediaFolder.getParent().isPresent() ? path :
                 path.startsWith(mediaFolder.getPath()) ? path.subpath(mediaFolder.getPath().getNameCount(), path.getNameCount())
                                                        : null;
