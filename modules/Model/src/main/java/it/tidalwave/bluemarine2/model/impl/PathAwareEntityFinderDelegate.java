@@ -33,7 +33,6 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -51,8 +50,7 @@ import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import static java.util.Collections.singletonList;
-import static java.util.stream.Collectors.toList;
+import static java.util.Collections.*;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static lombok.AccessLevel.PRIVATE;
 
@@ -140,7 +138,8 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
     @Override @Nonnull
     protected List<? extends PathAwareEntity> computeResults()
       {
-        return new CopyOnWriteArrayList<>(optionalPath.map(this::filteredByPath).orElse(delegate.results()));
+        return new CopyOnWriteArrayList<>(optionalPath.flatMap(path -> filteredByPath(path).map(e -> singletonList(e)))
+                                                      .orElse((List)delegate.results()));
       }
 
     /*******************************************************************************************************************
@@ -152,7 +151,8 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
     public int count()
       {
         optionalPath.ifPresent(path -> log.warn("Path present: {} - count won't be a native query", path));
-        return optionalPath.map(this::filteredByPath).map(Collection::size).orElse(delegate.count());
+        return optionalPath.map(path -> filteredByPath(path).map(entity -> 1).orElse(0))
+                           .orElse(delegate.count());
       }
 
     /*******************************************************************************************************************
@@ -161,13 +161,13 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<? extends PathAwareEntity> filteredByPath (final @Nonnull Path path)
+    private Optional<PathAwareEntity> filteredByPath (final @Nonnull Path path)
       {
         log.debug("filteredByPath({})", path);
 
         if (mediaFolder.getPath().equals(path))
           {
-            return singletonList(mediaFolder);
+            return Optional.of(mediaFolder);
           }
 
         // Cannot be optimized as a native query: the path concept in PathAwareEntity is totally decoupled from
@@ -175,29 +175,46 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
         try
           {
             log.debug(">>>> bulk query to {}, filtering in memory", delegate); // See BMT-128
-            final Path relativePath = relative(path);
-            final List<PathAwareEntity> filtered = delegate.results().stream()
-                    .filter(entity -> sameHead(relativePath, relative(entity.getPath())))
-                    .collect(toList());
-
-            if (filtered.isEmpty())
-              {
-                return filtered;
-              }
-            else
-              {
-                assert filtered.size() == 1;
-                final PathAwareEntity e = filtered.get(0);
-                return path.equals(e.getPath()) ? filtered
-                                                : ((EntityFinder)asSimpleComposite(e).findChildren())
-                                                                                     .withPath(path)
-                                                                                     .results();
-              }
+            return childMatchingPathHead(path)
+                    .flatMap(entity -> path.equals(entity.getPath()) ? Optional.of(entity)
+                                                                     : childMatchingPath(entity, path));
           }
         catch (IllegalArgumentException e) // path can't be relativised
           {
-            return Collections.emptyList();
+            return Optional.empty();
           }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Returns the child entity that matches the given path, if present. The path can be exactly the one of the found
+     * entity, or it can be of one of its children.
+     *
+     * @param   path    the path
+     * @return          the entity, if present
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private Optional<PathAwareEntity> childMatchingPathHead (final @Nonnull Path path)
+      {
+//                assert filtered.size() == 1 or 0;
+        return (Optional<PathAwareEntity>)delegate.results().stream()
+                                                  .filter(entity -> sameHead(relative(path), relative(entity.getPath())))
+                                                  .findFirst();
+      }
+
+    /*******************************************************************************************************************
+     *
+     * @param   entity
+     * @param   path    the path
+     * @return          the entity, if present
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static Optional<PathAwareEntity> childMatchingPath (final @Nonnull PathAwareEntity entity,
+                                                                final @Nonnull Path path)
+      {
+        return ((EntityFinder)asSimpleComposite(entity).findChildren()).withPath(path).optionalResult();
       }
 
     /*******************************************************************************************************************
@@ -206,7 +223,7 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
      *
      ******************************************************************************************************************/
     @Nonnull // FIXME: this should be normally done by as()
-    private SimpleComposite8 asSimpleComposite (final @Nonnull As object)
+    private static SimpleComposite8 asSimpleComposite (final @Nonnull As object)
       {
         return (object instanceof SimpleComposite8) ? (SimpleComposite8)object : object.as(SimpleComposite8);
       }
