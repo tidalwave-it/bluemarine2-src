@@ -30,16 +30,16 @@ package it.tidalwave.bluemarine2.ui.audio.explorer.impl;
 
 import javax.annotation.Nonnull;
 import java.util.List;
-import java.util.stream.Collectors;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.DefaultUserActionProvider;
+import it.tidalwave.role.ui.spi.UserActionSupport8;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.ui.commons.RenderAudioFileRequest;
-import it.tidalwave.role.ui.spi.UserActionSupport8;
 import lombok.RequiredArgsConstructor;
+import static java.util.stream.Collectors.toList;
 
 /***********************************************************************************************************************
  *
@@ -71,8 +71,8 @@ public class AudioFileUserActionProvider extends DefaultUserActionProvider
           {
             final List<AudioFile> audioFiles = control.getMediaItems().stream()
                     .filter(i -> i instanceof AudioFileSupplier)
-                    .map(i -> ((AudioFileSupplier)i).getAudioFile())
-                    .collect(Collectors.toList());
+                    .map(i -> i.getAudioFile())
+                    .collect(toList());
 
             messageBus.publish(new RenderAudioFileRequest(audioFileSupplier.getAudioFile(), audioFiles));
           });

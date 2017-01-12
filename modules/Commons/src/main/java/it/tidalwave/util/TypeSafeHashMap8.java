@@ -28,8 +28,8 @@
  */
 package it.tidalwave.util;
 
-import java.util.Map;
 import javax.annotation.Nonnull;
+import java.util.Map;
 
 /***********************************************************************************************************************
  *
@@ -39,6 +39,8 @@ import javax.annotation.Nonnull;
  **********************************************************************************************************************/
 public class TypeSafeHashMap8 extends TypeSafeHashMap implements TypeSafeMap8
   {
+    private static final long serialVersionUID = 2877980290140651775L;
+
     /*******************************************************************************************************************
      *
      *
