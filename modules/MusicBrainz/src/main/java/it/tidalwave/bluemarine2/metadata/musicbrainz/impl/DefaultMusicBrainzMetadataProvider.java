@@ -28,7 +28,6 @@
  */
 package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 
-import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.escape;
 import javax.annotation.Nonnull;
 import java.io.IOException;
 import org.springframework.http.ResponseEntity;
@@ -41,6 +40,7 @@ import it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.escape;
 
 /***********************************************************************************************************************
  *
