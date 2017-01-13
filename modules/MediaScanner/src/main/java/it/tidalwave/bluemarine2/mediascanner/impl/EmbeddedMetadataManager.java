@@ -158,7 +158,6 @@ public class EmbeddedMetadataManager
 
         SIGNAL_MAPPER.put(Metadata.SAMPLE_RATE,  v -> new Pair(MO.P_SAMPLE_RATE,     literalFor((int)v)));
         SIGNAL_MAPPER.put(Metadata.BIT_RATE,     v -> new Pair(MO.P_BITS_PER_SAMPLE, literalFor((int)v)));
-        SIGNAL_MAPPER.put(Metadata.FILE_SIZE,    v -> new Pair(BM.FILE_SIZE,         literalFor((long)v)));
         SIGNAL_MAPPER.put(Metadata.DURATION,     v -> new Pair(MO.P_DURATION,
                                                             literalFor((float)((Duration)v).toMillis())));
       }
