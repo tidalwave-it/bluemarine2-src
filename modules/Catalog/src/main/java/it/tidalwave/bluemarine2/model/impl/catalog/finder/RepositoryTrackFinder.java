@@ -49,8 +49,8 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
                                    implements TrackFinder
   {
     private static final long serialVersionUID = 770942161753738572L;
-    
-    private final static String QUERY_TRACKS = readSparql(RepositoryMusicArtistFinder.class, "Tracks.sparql");
+
+    private final static String QUERY_TRACKS = readSparql(RepositoryTrackFinder.class, "Tracks.sparql");
 
     @Nonnull
     private final Optional<Id> makerId;
