@@ -212,10 +212,10 @@ public class DefaultMediaScanner
         final Id sha1 = idCreator.createSha1Id(audioFile.getPath());
         final Metadata metadata = audioFile.getMetadata();
 
-        final IRI audioFileUri = BM.audioFileUriFor(sha1);
+        final IRI audioFileUri = BM.audioFileIriFor(sha1);
         // FIXME: DbTune has got Signals. E.g. http://dbtune.org/musicbrainz/page/signal/0900f0cb-230f-4632-bd87-650801e5fdba
         // FIXME: Try to use them. It seems there is no extra information, but use their Uri.
-        final IRI signalUri = BM.signalUriFor(sha1);
+        final IRI signalUri = BM.signalIriFor(sha1);
         final IRI trackUri = createTrackUri(metadata, sha1);
 
         statementManager.requestAddStatements()
@@ -260,8 +260,8 @@ public class DefaultMediaScanner
         final Optional<Id> musicBrainzTrackId = metadata.get(MBZ_TRACK_ID);
         log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
         // FIXME: the same contents in different places will give the same sha1. Disambiguates by hashing the path too?
-        return !musicBrainzTrackId.isPresent() ? BM.localTrackUriFor(sha1)
-                                               : BM.musicBrainzUriFor("track", musicBrainzTrackId.get());
+        return !musicBrainzTrackId.isPresent() ? BM.localTrackIriFor(sha1)
+                                               : BM.musicBrainzIriFor("track", musicBrainzTrackId.get());
       }
 
     /*******************************************************************************************************************

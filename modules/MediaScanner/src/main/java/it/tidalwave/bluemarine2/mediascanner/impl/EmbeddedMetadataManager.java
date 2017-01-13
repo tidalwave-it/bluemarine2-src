@@ -204,7 +204,7 @@ public class EmbeddedMetadataManager
 
         List<IRI> makerUris               = null;
         List<Entry> artists  = metadata.getAll(Metadata.MBZ_ARTIST_ID).stream()
-                .map(id -> new Entry(BM.musicBrainzUriFor("artist", id), makerName.orElse("???")))
+                .map(id -> new Entry(BM.musicBrainzIriFor("artist", id), makerName.orElse("???")))
                 .collect(toList());
         //
         // Even though we're in fallback mode, we could have a MusicBrainz artist id. Actually, fallback mode can be
@@ -281,7 +281,7 @@ public class EmbeddedMetadataManager
     @Nonnull
     private IRI createIRIForLocalRecord (final @Nonnull String recordTitle)
       {
-        return BM.localRecordUriFor(idCreator.createSha1("RECORD:" + recordTitle));
+        return BM.localRecordIriFor(idCreator.createSha1("RECORD:" + recordTitle));
       }
 
     /*******************************************************************************************************************
@@ -291,6 +291,6 @@ public class EmbeddedMetadataManager
     @Nonnull
     private IRI createIRIForLocalArtist (final @Nonnull String name)
       {
-        return BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + name));
+        return BM.localArtistIriFor(idCreator.createSha1("ARTIST:" + name));
       }
   }
