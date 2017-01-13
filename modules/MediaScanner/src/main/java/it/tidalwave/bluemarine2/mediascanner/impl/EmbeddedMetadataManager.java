@@ -238,15 +238,15 @@ public class EmbeddedMetadataManager
         final List<Value> newArtistLiterals = newArtists.stream().map(e -> literalFor(e.getName())).collect(toList());
 
         final Optional<IRI> newGroupUri = (artists.size() <= 1) ? Optional.empty()
-                : shared.seenArtistUris.putIfAbsentAndGetNewKey(makerUris.get(0), Optional.empty()); // FIXME: onlt first one?
+                : shared.seenArtistUris.putIfAbsentAndGetNewKey(makerUris.get(0), Optional.empty()); // FIXME: only first one?
 
-        final PathAwareEntity parent       = mediaItem.getParent().map(p -> p).orElseThrow(() -> new RuntimeException());
-        final String recordTitle          = metadata.get(Metadata.ALBUM)
-                                                    .orElse(parent.getPath().toFile().getName());
-//                                                    .orElse(parent.as(Displayable).getDisplayName());
+        final PathAwareEntity parent = mediaItem.getParent().map(p -> p).orElseThrow(() -> new RuntimeException());
+        final String recordTitle     = metadata.get(Metadata.ALBUM)
+                                               .orElse(parent.getPath().toFile().getName());
+//                                             .orElse(parent.as(Displayable).getDisplayName());
 
-        final IRI recordUri               = createIRIForLocalRecord(recordTitle);
-        final Optional<IRI> newRecordUri  = shared.seenRecordUris.putIfAbsentAndGetNewKey(recordUri, true);
+        final IRI recordUri              = createIRIForLocalRecord(recordTitle);
+        final Optional<IRI> newRecordUri = shared.seenRecordUris.putIfAbsentAndGetNewKey(recordUri, true);
 
         statementManager.requestAddStatements()
             .withOptional(trackUri,      RDFS.LABEL,                literalFor(title))
@@ -260,7 +260,7 @@ public class EmbeddedMetadataManager
             .withOptional(newRecordUri,  RDFS.LABEL,                literalFor(recordTitle))
             .withOptional(newRecordUri,  DC.TITLE,                  literalFor(recordTitle))
             .withOptional(newRecordUri,  MO.P_MEDIA_TYPE,           MO.C_CD)
-            .withOptional(newRecordUri,  BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
+            .withOptional(newRecordUri,  BM.ITUNES_CDDB1,           literalFor(metadata.get(ITUNES_COMMENT)
                                                                                        .map(c -> c.getCddb1())))
 
             .with(        newArtistUris, RDF.TYPE,                  MO.C_MUSIC_ARTIST)
