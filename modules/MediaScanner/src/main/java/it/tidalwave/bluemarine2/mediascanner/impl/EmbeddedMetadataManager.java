@@ -239,10 +239,8 @@ public class EmbeddedMetadataManager
         final Optional<IRI> newGroupIri = (artists.size() <= 1) ? Optional.empty()
                 : shared.seenArtistUris.putIfAbsentAndGetNewKey(makerUris.get(0), Optional.empty()); // FIXME: only first one?
 
-        final PathAwareEntity parent = mediaItem.getParent().map(p -> p).orElseThrow(() -> new RuntimeException());
-        final String recordTitle     = metadata.get(ALBUM).orElse(parent.getPath().toFile().getName());
-//                                             .orElse(parent.as(Displayable).getDisplayName());
-
+        final PathAwareEntity parent     = mediaItem.getParent().get();
+        final String recordTitle         = metadata.get(ALBUM).orElse(parent.getPath().toFile().getName());
         final IRI recordIri              = createIRIForLocalRecord(recordTitle);
         final Optional<IRI> newRecordIri = shared.seenRecordUris.putIfAbsentAndGetNewKey(recordIri, true);
 
@@ -255,9 +253,9 @@ public class EmbeddedMetadataManager
             .with(        recordIri,     FOAF.MAKER,                makerUris.stream())
 
             .withOptional(newRecordIri,  RDF.TYPE,                  MO.C_RECORD)
+            .withOptional(newRecordIri,  MO.P_MEDIA_TYPE,           MO.C_CD)
             .withOptional(newRecordIri,  RDFS.LABEL,                literalFor(recordTitle))
             .withOptional(newRecordIri,  DC.TITLE,                  literalFor(recordTitle))
-            .withOptional(newRecordIri,  MO.P_MEDIA_TYPE,           MO.C_CD)
             .withOptional(newRecordIri,  BM.ITUNES_CDDB1,           literalFor(metadata.get(ITUNES_COMMENT)
                                                                                        .map(c -> c.getCddb1())))
 
