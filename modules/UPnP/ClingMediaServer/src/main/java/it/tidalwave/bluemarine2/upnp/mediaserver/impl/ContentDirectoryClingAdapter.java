@@ -121,10 +121,11 @@ public class ContentDirectoryClingAdapter extends AbstractContentDirectoryServic
         log.trace("browse @@@ {} @@@ {} @@@ {} @@@ {} @@@ {} @@@ {})",
                   objectId, browseFlag, firstResult, maxResults, filter, orderby);
 
-        // this cache is just a palliative. An effective cache should be placed on the Repository finder.
+        final long baseTime = System.nanoTime();
         final BrowseParams params = new BrowseParams(objectId, browseFlag, filter, firstResult, maxResults, orderby);
         final Cache cache = cacheManager.getCache(getClass());
         final Object result = cache.getCachedObject(params, () -> findEntity(params));
+        log.info(">>>> result computed in {} msec", (System.nanoTime() - baseTime) / 1E6);
 
         if (result instanceof ContentDirectoryException)
           {
