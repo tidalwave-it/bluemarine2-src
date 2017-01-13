@@ -29,34 +29,20 @@
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.time.Instant;
-import java.text.Normalizer;
-import java.util.Date;
-import java.util.Optional;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.net.MalformedURLException;
-import java.net.URL;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.Statement;
-import org.eclipse.rdf4j.model.IRI;
-import org.eclipse.rdf4j.model.Value;
-import org.eclipse.rdf4j.model.ValueFactory;
-import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 import org.eclipse.rdf4j.model.impl.LinkedHashModel;
 import org.eclipse.rdf4j.rio.RDFHandlerException;
 import org.eclipse.rdf4j.rio.RDFParseException;
 import org.eclipse.rdf4j.rio.RDFParser;
 import org.eclipse.rdf4j.rio.helpers.RDFHandlerBase;
 import org.eclipse.rdf4j.rio.n3.N3ParserFactory;
-import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static java.text.Normalizer.Form.NFC;
 
 /***********************************************************************************************************************
  *
@@ -67,8 +53,6 @@ import static java.text.Normalizer.Form.NFC;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 final class Utilities
   {
-    private final static ValueFactory FACTORY = SimpleValueFactory.getInstance(); // FIXME
-
     /*******************************************************************************************************************
      *
      *
@@ -98,146 +82,5 @@ final class Utilities
         parser.parse(new ByteArrayInputStream(bytes), uri);
 
         return model;
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static Value literalFor (final Path path)
-      {
-        return FACTORY.createLiteral(Normalizer.normalize(path.toString(), NFC));
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static Value literalFor (final String string)
-      {
-        return FACTORY.createLiteral(string);
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static Optional<Value> literalFor (final Optional<String> optionalString)
-      {
-        return optionalString.map(s -> literalFor(s));
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static Value literalFor (final Id id)
-      {
-        return FACTORY.createLiteral(id.stringValue());
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static Value literalFor (final int value)
-      {
-        return FACTORY.createLiteral(value);
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static Value literalFor (final long value)
-      {
-        return FACTORY.createLiteral(value);
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static Value literalFor (final short value)
-      {
-        return FACTORY.createLiteral(value);
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static Value literalFor (final float value)
-      {
-        return FACTORY.createLiteral(value);
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static Value literalFor (final @Nonnull Instant instant)
-      {
-        return FACTORY.createLiteral(new Date(instant.toEpochMilli()));
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static IRI uriFor (final @Nonnull Id id)
-      {
-        return uriFor(id.stringValue());
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static IRI uriFor (final @Nonnull String id)
-      {
-        return FACTORY.createIRI(id);
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static IRI uriFor (final @Nonnull URL url)
-      {
-        return FACTORY.createIRI(url.toString());
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static URL urlFor (final @Nonnull IRI uri)
-      throws MalformedURLException
-      {
-        return new URL(uri.toString());
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static String emptyWhenNull (final @Nullable String string)
-      {
-        return (string != null) ? string : "";
       }
   }
