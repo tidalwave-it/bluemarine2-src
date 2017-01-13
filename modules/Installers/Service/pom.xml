@@ -49,7 +49,7 @@
     <artifactId>bluemarine2-service</artifactId>
     <version>1.0-ALPHA-16-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine II - Installer - Headless Service</name>
+    <name>blueMarine II - Installers - Headless Service</name>
     <description>This module creates a headless service.</description>
 
     <dependencies>
