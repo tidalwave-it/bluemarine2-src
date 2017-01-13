@@ -212,30 +212,30 @@ public class DefaultMediaScanner
         final Id sha1 = idCreator.createSha1Id(audioFile.getPath());
         final Metadata metadata = audioFile.getMetadata();
 
-        final IRI audioFileUri = BM.audioFileIriFor(sha1);
+        final IRI audioFileIri = BM.audioFileIriFor(sha1);
         // FIXME: DbTune has got Signals. E.g. http://dbtune.org/musicbrainz/page/signal/0900f0cb-230f-4632-bd87-650801e5fdba
         // FIXME: Try to use them. It seems there is no extra information, but use their Uri.
-        final IRI signalUri = BM.signalIriFor(sha1);
-        final IRI trackUri = createTrackUri(metadata, sha1);
+        final IRI signalIri = BM.signalIriFor(sha1);
+        final IRI trackIri = createTrackIri(metadata, sha1);
 
         statementManager.requestAddStatements()
-            .with(audioFileUri,         RDF.TYPE,                MO.C_AUDIO_FILE)
-            .with(audioFileUri,         FOAF.SHA1,               literalFor(sha1))
-            .with(audioFileUri,         MO.P_ENCODES,            signalUri) // FIXME: this is path's SHA1, not contents'
-            .with(audioFileUri,         BM.PATH,                 literalFor(audioFile.getRelativePath()))
-            .with(audioFileUri,         BM.LATEST_INDEXING_TIME, literalFor(getLastModifiedTime(audioFile.getPath())))
+            .with(audioFileIri,         RDF.TYPE,                MO.C_AUDIO_FILE)
+            .with(audioFileIri,         FOAF.SHA1,               literalFor(sha1))
+            .with(audioFileIri,         MO.P_ENCODES,            signalIri) // FIXME: this is path's SHA1, not contents'
+            .with(audioFileIri,         BM.PATH,                 literalFor(audioFile.getRelativePath()))
+            .with(audioFileIri,         BM.LATEST_INDEXING_TIME, literalFor(getLastModifiedTime(audioFile.getPath())))
             // TODO why optional? Isn't file size always available?
-            .withOptional(audioFileUri, BM.FILE_SIZE,            metadata.get(FILE_SIZE).map(s -> literalFor(s)))
+            .withOptional(audioFileIri, BM.FILE_SIZE,            metadata.get(FILE_SIZE).map(s -> literalFor(s)))
 
-            .with(        trackUri,     RDF.TYPE,                MO.C_TRACK)
-            .withOptional(trackUri,     BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
+            .with(        trackIri,     RDF.TYPE,                MO.C_TRACK)
+            .withOptional(trackIri,     BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
                                                                                     .map(c -> c.getTrackId())))
 
-            .with(signalUri,            RDF.TYPE,                MO.C_DIGITAL_SIGNAL)
-            .with(signalUri,            MO.P_PUBLISHED_AS,       trackUri)
+            .with(signalIri,            RDF.TYPE,                MO.C_DIGITAL_SIGNAL)
+            .with(signalIri,            MO.P_PUBLISHED_AS,       trackIri)
             .publish();
 
-        embeddedMetadataManager.importAudioFileMetadata(audioFile, signalUri, trackUri);
+        embeddedMetadataManager.importAudioFileMetadata(audioFile, signalIri, trackIri);
 
         // FIXME: use a Chain of Responsibility
 //        if (musicBrainzTrackId.isPresent())
@@ -245,7 +245,7 @@ public class DefaultMediaScanner
 //          }
 //        else
 //          {
-            embeddedMetadataManager.importFallbackTrackMetadata(audioFile, trackUri);
+            embeddedMetadataManager.importFallbackTrackMetadata(audioFile, trackIri);
 //          }
       }
 
@@ -254,7 +254,7 @@ public class DefaultMediaScanner
      *
      ******************************************************************************************************************/
     @Nonnull
-    private IRI createTrackUri (final @Nonnull Metadata metadata, final @Nonnull Id sha1)
+    private IRI createTrackIri (final @Nonnull Metadata metadata, final @Nonnull Id sha1)
       {
         // FIXME: use a chain of responsibility
         final Optional<Id> musicBrainzTrackId = metadata.get(MBZ_TRACK_ID);
