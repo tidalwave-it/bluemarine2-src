@@ -38,6 +38,7 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.spi.CacheManager;
 import it.tidalwave.bluemarine2.util.PersistenceInitializedNotification;
 import lombok.extern.slf4j.Slf4j;
+import lombok.RequiredArgsConstructor;
 import static java.util.Objects.requireNonNull;
 
 /***********************************************************************************************************************
@@ -51,8 +52,11 @@ public class DefaultCacheManager implements CacheManager
   {
     private final Map<Object, Cache> cacheMap = new ConcurrentHashMap<>();
 
+    @RequiredArgsConstructor
     static class DefaultCache implements Cache
       {
+        @Nonnull
+        private final String name;
         // TODO: use Spring ConcurrentReferenceHashMap?
         private final Map<Object, SoftReference<? extends Object>> objectMap = new ConcurrentHashMap<>();
 
@@ -64,18 +68,17 @@ public class DefaultCacheManager implements CacheManager
 
             if (object == null)
               {
-                ref = computeObject(key, supplier);
+                objectMap.put(key, ref = computeObject(key, supplier));
                 object = ref.get();
-                objectMap.put(key, ref);
               }
 
             return object;
           }
 
         @Nonnull
-        private static <T> SoftReference<T> computeObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
+        private <T> SoftReference<T> computeObject (final @Nonnull Object key, final @Nonnull Supplier<T> supplier)
           {
-            log.info(">>>> cache miss for {}", key);
+            log.info(">>>> cache {} miss for {}", name, key);
             return new SoftReference<>(requireNonNull(supplier.get(), "Supplier returned null"));
           }
       }
@@ -83,7 +86,7 @@ public class DefaultCacheManager implements CacheManager
     @Override
     public Cache getCache (final @Nonnull Object cacheKey)
       {
-        return cacheMap.computeIfAbsent(cacheKey, key -> new DefaultCache());
+        return cacheMap.computeIfAbsent(cacheKey, key -> new DefaultCache(cacheKey.toString()));
       }
 
     private void onPersistenceUpdated (final @ListensTo PersistenceInitializedNotification notification)
