@@ -140,7 +140,7 @@ public class DefaultMusicBrainzProbe
       {
         final Map<String, ReleaseAndMedium> found = new TreeMap<>();
 
-        releaseGroups.stream().filter(releaseGroup -> score(releaseGroup) >= releaseGroupScoreThreshold)
+        releaseGroups.stream().filter(releaseGroup -> scoreOf(releaseGroup) >= releaseGroupScoreThreshold)
                               .forEach(releaseGroup ->
           {
             log.debug(">>>> {} {} {} artist: {}",
@@ -174,7 +174,7 @@ public class DefaultMusicBrainzProbe
                         continue;
                       }
 
-                    log.info(">>>>>>>> FOUND {} - from score {}", medium.getTitle(), score(releaseGroup));
+                    log.info(">>>>>>>> FOUND {} - from score {}", medium.getTitle(), scoreOf(releaseGroup));
                     found.put(release.getId(), new ReleaseAndMedium(release, medium));
                     // FIXME: should break, not only this loop, but also the one on releaseGroup
                   }
@@ -222,7 +222,7 @@ public class DefaultMusicBrainzProbe
      *
      *
      ******************************************************************************************************************/
-    private static int score (final @Nonnull ReleaseGroup releaseGroup)
+    private static int scoreOf (final @Nonnull ReleaseGroup releaseGroup)
       {
         return Integer.parseInt(releaseGroup.getOtherAttributes().get(QNAME_SCORE));
       }
