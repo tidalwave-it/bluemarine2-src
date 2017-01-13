@@ -218,23 +218,22 @@ public class DefaultMediaScanner
         final IRI signalUri = BM.signalUriFor(sha1);
         final IRI trackUri = createTrackUri(metadata, sha1);
 
-        final Instant lastModifiedTime = getLastModifiedTime(audioFile.getPath());
         statementManager.requestAddStatements()
-                .with(audioFileUri,         RDF.TYPE,                MO.C_AUDIO_FILE)
-                .with(audioFileUri,         FOAF.SHA1,               literalFor(sha1))
-                .with(audioFileUri,         MO.P_ENCODES,            signalUri)
-                .with(audioFileUri,         BM.PATH,                 literalFor(audioFile.getRelativePath()))
-                .with(audioFileUri,         BM.LATEST_INDEXING_TIME, literalFor(lastModifiedTime))
-                // TODO why optional? Isn't file size always available?
-                .withOptional(audioFileUri, BM.FILE_SIZE,            metadata.get(FILE_SIZE).map(s -> literalFor(s)))
+            .with(audioFileUri,         RDF.TYPE,                MO.C_AUDIO_FILE)
+            .with(audioFileUri,         FOAF.SHA1,               literalFor(sha1))
+            .with(audioFileUri,         MO.P_ENCODES,            signalUri) // FIXME: this is path's SHA1, not contents'
+            .with(audioFileUri,         BM.PATH,                 literalFor(audioFile.getRelativePath()))
+            .with(audioFileUri,         BM.LATEST_INDEXING_TIME, literalFor(getLastModifiedTime(audioFile.getPath())))
+            // TODO why optional? Isn't file size always available?
+            .withOptional(audioFileUri, BM.FILE_SIZE,            metadata.get(FILE_SIZE).map(s -> literalFor(s)))
 
-                .with(        trackUri,     RDF.TYPE,                MO.C_TRACK)
-                .withOptional(trackUri,     BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
-                                                                                        .map(c -> c.getTrackId())))
+            .with(        trackUri,     RDF.TYPE,                MO.C_TRACK)
+            .withOptional(trackUri,     BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
+                                                                                    .map(c -> c.getTrackId())))
 
-                .with(signalUri,            RDF.TYPE,                MO.C_DIGITAL_SIGNAL)
-                .with(signalUri,            MO.P_PUBLISHED_AS,       trackUri)
-                .publish();
+            .with(signalUri,            RDF.TYPE,                MO.C_DIGITAL_SIGNAL)
+            .with(signalUri,            MO.P_PUBLISHED_AS,       trackUri)
+            .publish();
 
         embeddedMetadataManager.importAudioFileMetadata(audioFile, signalUri, trackUri);
 
@@ -258,7 +257,7 @@ public class DefaultMediaScanner
     private IRI createTrackUri (final @Nonnull Metadata metadata, final @Nonnull Id sha1)
       {
         // FIXME: use a chain of responsibility
-        final Optional<Id> musicBrainzTrackId = metadata.get(Metadata.MBZ_TRACK_ID);
+        final Optional<Id> musicBrainzTrackId = metadata.get(MBZ_TRACK_ID);
         log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
         // FIXME: the same contents in different places will give the same sha1. Disambiguates by hashing the path too?
         return !musicBrainzTrackId.isPresent() ? BM.localTrackUriFor(sha1)
