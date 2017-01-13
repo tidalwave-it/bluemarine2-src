@@ -61,8 +61,8 @@ import lombok.extern.slf4j.Slf4j;
 import static java.util.Arrays.*;
 import static java.util.Collections.*;
 import static java.util.stream.Collectors.*;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.mediascanner.impl.Utilities.*;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.ITUNES_COMMENT;
 
 /***********************************************************************************************************************
  *
@@ -78,11 +78,11 @@ public class EmbeddedMetadataManager
      *
      *
      ******************************************************************************************************************/
-    @RequiredArgsConstructor @Getter @ToString
+    @Immutable @RequiredArgsConstructor @Getter @ToString
     static class Entry
       {
         @Nonnull
-        private final IRI uri;
+        private final IRI iri;
 
         @Nonnull
         private final String name;
@@ -103,9 +103,9 @@ public class EmbeddedMetadataManager
         private final Value object;
 
         @Nonnull
-        public Statement createStatementWithSubject (final @Nonnull IRI subject)
+        public Statement createStatementWithSubject (final @Nonnull IRI subjectIri)
           {
-            return SimpleValueFactory.getInstance().createStatement(subject, predicate, object);
+            return SimpleValueFactory.getInstance().createStatement(subjectIri, predicate, object);
           }
       }
 
@@ -120,11 +120,11 @@ public class EmbeddedMetadataManager
         private static final long serialVersionUID = 9180433348240275721L;
 
         @Nonnull
-        public List<Statement> statementsFor (final @Nonnull Metadata metadata, final @Nonnull IRI subjectUri)
+        public List<Statement> statementsFor (final @Nonnull Metadata metadata, final @Nonnull IRI subjectIri)
           {
             return metadata.getEntries().stream()
                                         .filter(e -> containsKey(e.getKey()))
-                                        .map(e -> forEntry(e).createStatementWithSubject(subjectUri))
+                                        .map(e -> forEntry(e).createStatementWithSubject(subjectIri))
                                         .collect(toList());
           }
 
@@ -158,7 +158,6 @@ public class EmbeddedMetadataManager
 
         SIGNAL_MAPPER.put(Metadata.SAMPLE_RATE,  v -> new Pair(MO.P_SAMPLE_RATE,     literalFor((int)v)));
         SIGNAL_MAPPER.put(Metadata.BIT_RATE,     v -> new Pair(MO.P_BITS_PER_SAMPLE, literalFor((int)v)));
-        SIGNAL_MAPPER.put(Metadata.FILE_SIZE,    v -> new Pair(BM.FILE_SIZE,         literalFor((long)v)));
         SIGNAL_MAPPER.put(Metadata.DURATION,     v -> new Pair(MO.P_DURATION,
                                                             literalFor((float)((Duration)v).toMillis())));
       }
@@ -189,23 +188,23 @@ public class EmbeddedMetadataManager
      * when we failed to match a track to an external catalog.
      *
      * @param   mediaItem               the {@code MediaItem}.
-     * @param   trackUri                the IRI of the track
+     * @param   trackIri                the IRI of the track
      *
      ******************************************************************************************************************/
-    public void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull IRI trackUri)
+    public void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull IRI trackIri)
       {
         // TODO: consider the MBZ COMPOSER.
-        log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackUri);
+        log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackIri);
 
         final Metadata metadata           = mediaItem.getMetadata();
-        log.debug(">>>> metadata of {}: {}", trackUri, metadata);
+        log.debug(">>>> metadata of {}: {}", trackIri, metadata);
 
-        final Optional<String> title      = metadata.get(Metadata.TITLE);
-        final Optional<String> makerName  = metadata.get(Metadata.ARTIST);
+        final Optional<String> title      = metadata.get(TITLE);
+        final Optional<String> makerName  = metadata.get(ARTIST);
 
         List<IRI> makerUris               = null;
-        List<Entry> artists  = metadata.getAll(Metadata.MBZ_ARTIST_ID).stream()
-                .map(id -> new Entry(BM.musicBrainzUriFor("artist", id), makerName.orElse("???")))
+        List<Entry> artists  = metadata.getAll(MBZ_ARTIST_ID).stream()
+                .map(id -> new Entry(BM.musicBrainzIriFor("artist", id), makerName.orElse("???")))
                 .collect(toList());
         //
         // Even though we're in fallback mode, we could have a MusicBrainz artist id. Actually, fallback mode can be
@@ -220,7 +219,7 @@ public class EmbeddedMetadataManager
         //
         if (!artists.isEmpty())
           {
-            makerUris = artists.stream().map(Entry::getUri).collect(toList());
+            makerUris = artists.stream().map(Entry::getIri).collect(toList());
             makerUris.forEach(uri -> dbTuneMetadataManager.requestArtistMetadata(uri, makerName)); // FIXME: all with the same maker name?
           }
         else  // no MusicBrainz artist
@@ -232,46 +231,43 @@ public class EmbeddedMetadataManager
           }
 
         final List<Entry> newArtists   = artists.stream().filter(
-                e -> shared.seenArtistUris.putIfAbsentAndGetNewKey(e.getUri(), Optional.empty()).isPresent())
+                e -> shared.seenArtistUris.putIfAbsentAndGetNewKey(e.getIri(), Optional.empty()).isPresent())
                 .collect(toList());
-        final List<IRI> newArtistUris       = newArtists.stream().map(Entry::getUri).collect(toList());
+        final List<IRI> newArtistIris       = newArtists.stream().map(Entry::getIri).collect(toList());
         final List<Value> newArtistLiterals = newArtists.stream().map(e -> literalFor(e.getName())).collect(toList());
 
-        final Optional<IRI> newGroupUri = (artists.size() <= 1) ? Optional.empty()
-                : shared.seenArtistUris.putIfAbsentAndGetNewKey(makerUris.get(0), Optional.empty()); // FIXME: onlt first one?
+        final Optional<IRI> newGroupIri = (artists.size() <= 1) ? Optional.empty()
+                : shared.seenArtistUris.putIfAbsentAndGetNewKey(makerUris.get(0), Optional.empty()); // FIXME: only first one?
 
-        final PathAwareEntity parent       = mediaItem.getParent().map(p -> p).orElseThrow(() -> new RuntimeException());
-        final String recordTitle          = metadata.get(Metadata.ALBUM)
-                                                    .orElse(parent.getPath().toFile().getName());
-//                                                    .orElse(parent.as(Displayable).getDisplayName());
-
-        final IRI recordUri               = createIRIForLocalRecord(recordTitle);
-        final Optional<IRI> newRecordUri  = shared.seenRecordUris.putIfAbsentAndGetNewKey(recordUri, true);
+        final PathAwareEntity parent     = mediaItem.getParent().get();
+        final String recordTitle         = metadata.get(ALBUM).orElse(parent.getPath().toFile().getName());
+        final IRI recordIri              = createIRIForLocalRecord(recordTitle);
+        final Optional<IRI> newRecordIri = shared.seenRecordUris.putIfAbsentAndGetNewKey(recordIri, true);
 
         statementManager.requestAddStatements()
-            .withOptional(trackUri,      RDFS.LABEL,                literalFor(title))
-            .withOptional(trackUri,      DC.TITLE,                  literalFor(title))
-            .with(        trackUri,      FOAF.MAKER,                makerUris.stream())
+            .withOptional(trackIri,      RDFS.LABEL,                literalFor(title))
+            .withOptional(trackIri,      DC.TITLE,                  literalFor(title))
+            .with(        trackIri,      FOAF.MAKER,                makerUris.stream())
 
-            .with(        recordUri,     MO.P_TRACK,                trackUri)
-            .with(        recordUri,     FOAF.MAKER,                makerUris.stream())
+            .with(        recordIri,     MO.P_TRACK,                trackIri)
+            .with(        recordIri,     FOAF.MAKER,                makerUris.stream())
 
-            .withOptional(newRecordUri,  RDF.TYPE,                  MO.C_RECORD)
-            .withOptional(newRecordUri,  RDFS.LABEL,                literalFor(recordTitle))
-            .withOptional(newRecordUri,  DC.TITLE,                  literalFor(recordTitle))
-            .withOptional(newRecordUri,  MO.P_MEDIA_TYPE,           MO.C_CD)
-            .withOptional(newRecordUri,  BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
+            .withOptional(newRecordIri,  RDF.TYPE,                  MO.C_RECORD)
+            .withOptional(newRecordIri,  MO.P_MEDIA_TYPE,           MO.C_CD)
+            .withOptional(newRecordIri,  RDFS.LABEL,                literalFor(recordTitle))
+            .withOptional(newRecordIri,  DC.TITLE,                  literalFor(recordTitle))
+            .withOptional(newRecordIri,  BM.ITUNES_CDDB1,           literalFor(metadata.get(ITUNES_COMMENT)
                                                                                        .map(c -> c.getCddb1())))
 
-            .with(        newArtistUris, RDF.TYPE,                  MO.C_MUSIC_ARTIST)
-            .with(        newArtistUris, RDFS.LABEL,                newArtistLiterals)
-            .with(        newArtistUris, FOAF.NAME,                 newArtistLiterals)
+            .with(        newArtistIris, RDF.TYPE,                  MO.C_MUSIC_ARTIST)
+            .with(        newArtistIris, RDFS.LABEL,                newArtistLiterals)
+            .with(        newArtistIris, FOAF.NAME,                 newArtistLiterals)
 
-            .withOptional(newGroupUri,   RDF.TYPE,                  MO.C_MUSIC_ARTIST)
-            .withOptional(newGroupUri,   RDFS.LABEL,                literalFor(makerName))
-            .withOptional(newGroupUri,   FOAF.NAME,                 literalFor(makerName))
-            .withOptional(newGroupUri,   DbTune.ARTIST_TYPE,        literalFor((short)2))
-            .withOptional(newGroupUri,   Purl.COLLABORATES_WITH,    artists.stream().map(Entry::getUri))
+            .withOptional(newGroupIri,   RDF.TYPE,                  MO.C_MUSIC_ARTIST)
+            .withOptional(newGroupIri,   RDFS.LABEL,                literalFor(makerName))
+            .withOptional(newGroupIri,   FOAF.NAME,                 literalFor(makerName))
+            .withOptional(newGroupIri,   DbTune.ARTIST_TYPE,        literalFor((short)2))
+            .withOptional(newGroupIri,   Purl.COLLABORATES_WITH,    artists.stream().map(Entry::getIri))
             .publish();
       }
 
@@ -282,7 +278,7 @@ public class EmbeddedMetadataManager
     @Nonnull
     private IRI createIRIForLocalRecord (final @Nonnull String recordTitle)
       {
-        return BM.localRecordUriFor(idCreator.createSha1("RECORD:" + recordTitle));
+        return BM.localRecordIriFor(idCreator.createSha1("RECORD:" + recordTitle));
       }
 
     /*******************************************************************************************************************
@@ -292,6 +288,6 @@ public class EmbeddedMetadataManager
     @Nonnull
     private IRI createIRIForLocalArtist (final @Nonnull String name)
       {
-        return BM.localArtistUriFor(idCreator.createSha1("ARTIST:" + name));
+        return BM.localArtistIriFor(idCreator.createSha1("ARTIST:" + name));
       }
   }

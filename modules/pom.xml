@@ -299,6 +299,7 @@
         <module>Catalog</module>
         <module>CECNavigationAdapter</module>
         <module>CECWrapper</module>
+        <module>ClingMediaServer</module>
         <module>Commons</module>
         <module>Downloader</module>
         <module>HeadlessService</module>
@@ -313,7 +314,6 @@
         <module>Plugins</module>
         <module>Services</module>
         <module>UI</module>
-        <module>UPnP</module>
         <module>MediaServer</module>
         <module>TestCommons</module>
         <module>Vocabulary</module>

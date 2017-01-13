@@ -41,19 +41,19 @@ import lombok.NoArgsConstructor;
  *
  **********************************************************************************************************************/
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class DbTune 
+public final class DbTune
   {
-    private final static ValueFactory factory = SimpleValueFactory.getInstance();
-    
+    private final static ValueFactory FACTORY = SimpleValueFactory.getInstance();
+
     public static final String PREFIX = "http://dbtune.org/musicbrainz/resource/vocab/";
-    
+
     public static final String S_ALBUMMETA_COVERART_URL     = PREFIX + "albummeta_coverarturl";
     public static final String S_ARTIST_TYPE                = PREFIX + "artist_type";
     public static final String S_SORT_NAME                  = PREFIX + "sortname";
-    
-    public static final IRI ARTIST_TYPE                     = factory.createIRI(S_ARTIST_TYPE);
 
-    public static final IRI SORT_NAME                       = factory.createIRI(S_SORT_NAME);
-    
-    public static final IRI ALBUMMETA_COVERART_URL          = factory.createIRI(S_ALBUMMETA_COVERART_URL);
+    public static final IRI ARTIST_TYPE                     = FACTORY.createIRI(S_ARTIST_TYPE);
+
+    public static final IRI SORT_NAME                       = FACTORY.createIRI(S_SORT_NAME);
+
+    public static final IRI ALBUMMETA_COVERART_URL          = FACTORY.createIRI(S_ALBUMMETA_COVERART_URL);
   }

@@ -40,7 +40,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
-import static java.util.stream.Collectors.toList;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 import static lombok.AccessLevel.PRIVATE;
 
