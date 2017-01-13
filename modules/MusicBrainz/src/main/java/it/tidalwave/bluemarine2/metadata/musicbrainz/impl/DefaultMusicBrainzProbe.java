@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -38,11 +37,19 @@ import java.util.TreeMap;
 import javax.xml.namespace.QName;
 import java.io.IOException;
 import org.musicbrainz.ns.mmd_2.Medium;
+import org.musicbrainz.ns.mmd_2.DefTrackData;
+import org.musicbrainz.ns.mmd_2.Recording;
 import org.musicbrainz.ns.mmd_2.Release;
 import org.musicbrainz.ns.mmd_2.ReleaseGroup;
 import org.musicbrainz.ns.mmd_2.ReleaseGroupList;
+import org.eclipse.rdf4j.model.IRI;
+import org.eclipse.rdf4j.model.Model;
+import org.eclipse.rdf4j.model.vocabulary.*;
+import org.eclipse.rdf4j.model.impl.TreeModel;
+import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata.Cddb;
+import it.tidalwave.bluemarine2.model.vocabulary.*;
 import it.tidalwave.bluemarine2.rest.RestResponse;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbMetadataProvider;
@@ -53,9 +60,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.emptyList;
 import static java.util.stream.Collectors.toList;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.cddbsOf;
 import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
+import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static it.tidalwave.bluemarine2.model.vocabulary.BM.musicBrainzIriFor;
+import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.cddbsOf;
 
 /***********************************************************************************************************************
  *
@@ -102,31 +111,85 @@ public class DefaultMusicBrainzProbe
      *
      ******************************************************************************************************************/
     @Nonnull
-    public List<ReleaseAndMedium> probe (final @Nonnull Metadata metadata)
+    public Model probe (final @Nonnull Metadata metadata)
       throws InterruptedException, IOException
       {
+        final Model model = new TreeModel();
         final Optional<String> albumTitle = metadata.get(TITLE);
         final Optional<Cddb> cddb = metadata.get(CDDB);
 
-        if (!albumTitle.isPresent() || albumTitle.get().trim().isEmpty() || !cddb.isPresent())
+        if (albumTitle.isPresent() && !albumTitle.get().trim().isEmpty() && cddb.isPresent())
           {
-            return Collections.emptyList();
+            log.info("============ PROBING METADATA FOR {}", albumTitle);
+            final List<ReleaseGroup> releaseGroups = new ArrayList<>();
+            releaseGroups.addAll(mbMetadataProvider.findReleaseGroup(albumTitle.get())
+                                                   .map(ReleaseGroupList::getReleaseGroup)
+                                                   .orElse(emptyList()));
+
+            final Optional<String> cddbTitle = cddbTitle(metadata);
+            cddbTitle.map(_f(mbMetadataProvider::findReleaseGroup)).ifPresent(response ->
+              {
+                log.info("======== ALSO USING ALTERNATE TITLE: {}", cddbTitle.get());
+                releaseGroups.addAll(response.get().getReleaseGroup());
+              });
+
+            final List<ReleaseAndMedium> rams = probe(releaseGroups, cddb.get());
+            toModel(rams).stream().forEach(statement -> model.add(statement));
+            // TODO: also accumulate to a global repository
+            // TODO: authors etc go to the global repository
           }
 
-        log.info("============ PROBING METADATA FOR {}", albumTitle);
-        final List<ReleaseGroup> releaseGroups = new ArrayList<>();
-        releaseGroups.addAll(mbMetadataProvider.findReleaseGroup(albumTitle.get())
-                                               .map(ReleaseGroupList::getReleaseGroup)
-                                               .orElse(emptyList()));
+        return model;
+      }
 
-        final Optional<String> cddbTitle = cddbTitle(metadata);
-        cddbTitle.map(_f(mbMetadataProvider::findReleaseGroup)).ifPresent(response ->
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private Model toModel (final @Nonnull List<ReleaseAndMedium> rams)
+      {
+        final Model model = new TreeModel();
+
+        // TODO: how to manage multiple rams
+        for (final ReleaseAndMedium ram : rams)
           {
-            log.info("======== ALSO USING ALTERNATE TITLE: {}", cddbTitle.get());
-            releaseGroups.addAll(response.get().getReleaseGroup());
-          });
+            final List<DefTrackData> tracks = ram.getMedium().getTrackList().getDefTrack();
+            final Release release = ram.getRelease();
+            final String recordTitle = release.getTitle();
 
-        return probe(releaseGroups, cddb.get());
+            final IRI recordIri = musicBrainzIriFor("record", new Id(release.getId())); // FIXME: this is a release id, not a record id
+            model.add(recordIri, RDF.TYPE,          MO.C_RECORD);
+            model.add(recordIri, MO.P_MEDIA_TYPE,   MO.C_CD);
+            model.add(recordIri, RDFS.LABEL,        literalFor(recordTitle));
+            model.add(recordIri, DC.TITLE,          literalFor(recordTitle));
+            model.add(recordIri, MO.P_TRACK_COUNT,  literalFor(tracks.size()));
+            // TODO: medium discId
+            int trackNumber = 0;
+            log.info(">>>> TRACKS");
+
+            for (final DefTrackData track : tracks)
+              {
+                final IRI trackIri = musicBrainzIriFor("track", new Id(track.getId()));
+                final int position = track.getPosition().intValue();
+                final Recording recording = track.getRecording();
+                final String trackTitle = recording.getTitle();
+//                    track.getRecording().getTitle();
+//                    track.getRecording().getAliasList().getAlias().get(0).getSortName();
+                log.info(">>>>>>>> {}. {}", position, trackTitle);
+
+                model.add(trackIri,  RDF.TYPE,           MO.C_TRACK);
+                model.add(trackIri,  RDFS.LABEL,         literalFor(trackTitle));
+                model.add(trackIri,  DC.TITLE,           literalFor(trackTitle));
+                model.add(trackIri,  MO.P_TRACK_NUMBER,  literalFor(++trackNumber));
+//        bmmo:diskCount "1"^^xs:int ;
+//        bmmo:diskNumber "1"^^xs:int ;
+                model.add(recordIri, MO.P_TRACK,         trackIri);
+              }
+          }
+
+        return model;
       }
 
     /*******************************************************************************************************************

@@ -29,20 +29,22 @@
 package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 
 import javax.annotation.Nonnull;
-import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import org.musicbrainz.ns.mmd_2.DefTrackData;
-import org.musicbrainz.ns.mmd_2.Recording;
+import java.nio.file.Paths;
+import org.eclipse.rdf4j.model.Model;
+import org.eclipse.rdf4j.repository.RepositoryException;
+import org.eclipse.rdf4j.rio.RDFHandler;
+import org.eclipse.rdf4j.rio.RDFHandlerException;
+import org.eclipse.rdf4j.rio.n3.N3Writer;
+import it.tidalwave.bluemarine2.util.SortingRDFHandler;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.metadata.cddb.impl.DefaultCddbMetadataProvider;
-import it.tidalwave.bluemarine2.metadata.musicbrainz.impl.DefaultMusicBrainzProbe.ReleaseAndMedium;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -51,11 +53,11 @@ import it.tidalwave.bluemarine2.commons.test.TestSetTriple;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.metadata.cddb.impl.TestSupport;
 import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.joining;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
-import static java.util.stream.Collectors.joining;
 
 /***********************************************************************************************************************
  *
@@ -129,7 +131,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
         final String testSetName = triple.getTestSetName();
         cddbMetadataProvider.setCachePath(CDDB_CACHE.resolve(testSetName));
         musicBrainzMetadataProvider.setCachePath(MUSICBRAINZ_CACHE.resolve(testSetName));
-        final Path relativePath = triple.getRelativePath();
+        final Path relativePath = Paths.get(triple.getRelativePath().toString().replaceAll("-dump\\.txt$", ".n3"));
         final Path actualResult = TEST_RESULTS.resolve("musicbrainz").resolve(testSetName).resolve(relativePath);
         final Path expectedResult = EXPECTED_RESULTS.resolve("musicbrainz").resolve(testSetName).resolve(relativePath);
 
@@ -138,48 +140,52 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
         stats.putIfAbsent(testSetName, new Stats());
         stats.get(testSetName).count.incrementAndGet();
         // when
-        final List<ReleaseAndMedium> rams = underTest.probe(metadata);
+        final Model model = underTest.probe(metadata);
         // then
-        if (!rams.isEmpty())
+        if (!model.isEmpty())
           {
             stats.get(testSetName).found.incrementAndGet();
           }
 
-        dump(rams, actualResult);
+        exportToFile(model, actualResult);
         assertSameContents(expectedResult, actualResult);
       }
 
     /*******************************************************************************************************************
      *
+     * Exports the repository to the given file. FIXME: duplicated in DefaultPerstistence
+     *
      ******************************************************************************************************************/
-    private void dump (final @Nonnull List<ReleaseAndMedium> rams, final  @Nonnull Path actualResult)
-      throws IOException
+    private static void exportToFile (final @Nonnull Model model, final @Nonnull Path path)
+      throws RDFHandlerException, IOException, RepositoryException
       {
-        final StringWriter sw = new StringWriter();
+        log.info("exportToFile({})", path);
+        Files.createDirectories(path.getParent());
 
-        try (final PrintWriter pw = new PrintWriter(sw))
+        try (final PrintWriter pw = new PrintWriter(Files.newBufferedWriter(path, UTF_8)))
           {
-            for (final ReleaseAndMedium ram : rams)
-              {
-                log.info("FOUND RELEASE: {}", ram.getRelease().getId());
-                log.info(">>>> TRACKS");
-                pw.println("RELEASE: " + ram.getRelease().getId());
-                pw.println("TRACKS");
+            final RDFHandler writer = new SortingRDFHandler(new N3Writer(pw));
+            writer.startRDF();
+//            FIXME: use Iterations - and sort
+//            for (final Namespace namespace : connection.getNamespaces().asList())
+//              {
+//                writer.handleNamespace(namespace.getPrefix(), namespace.getName());
+//              }
 
-                for (final DefTrackData track : ram.getMedium().getTrackList().getDefTrack())
-                  {
-                    final int position = track.getPosition().intValue();
-                    final Recording recording = track.getRecording();
-                    final String title = recording.getTitle();
-                    log.info(">>>>>>>> {}. {}", position, title);
-                    pw.printf("%d. %s%n", position, title);
-                  }
-              }
+            writer.handleNamespace("bio",   "http://purl.org/vocab/bio/0.1/");
+            writer.handleNamespace("bmmo",  "http://bluemarine.tidalwave.it/2015/04/mo/");
+            writer.handleNamespace("dc",    "http://purl.org/dc/elements/1.1/");
+            writer.handleNamespace("foaf",  "http://xmlns.com/foaf/0.1/");
+            writer.handleNamespace("owl",   "http://www.w3.org/2002/07/owl#");
+            writer.handleNamespace("mo",    "http://purl.org/ontology/mo/");
+            writer.handleNamespace("rdfs",  "http://www.w3.org/2000/01/rdf-schema#");
+            writer.handleNamespace("rel",   "http://purl.org/vocab/relationship/");
+            writer.handleNamespace("vocab", "http://dbtune.org/musicbrainz/resource/vocab/");
+            writer.handleNamespace("xs",    "http://www.w3.org/2001/XMLSchema#");
+
+            model.stream().forEachOrdered(statement -> writer.handleStatement(statement));
+            writer.endRDF();
           }
-
-        log.info(">>>> writing to {}", actualResult);
-        Files.createDirectories(actualResult.getParent());
-        Files.write(actualResult, sw.toString().getBytes(UTF_8));
       }
 
     /*******************************************************************************************************************
@@ -191,6 +197,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
         return streamOfTestSetTriples(TestSetLocator.allTestSets(), name -> METADATA.resolve(name))
                 // FIXME: this testcase fails after a fix; should update the expected results resources
                 .filter(triple -> !triple.getFilePath().toString().contains("Compilations/Rachmaninov_ Piano Concertos #2 & 3"))
+                
 //                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20160504-1"))
 //                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20161210-1"))
 //                .filter(triple -> triple.getFilePath().toString().contains("Trio 99_00"))

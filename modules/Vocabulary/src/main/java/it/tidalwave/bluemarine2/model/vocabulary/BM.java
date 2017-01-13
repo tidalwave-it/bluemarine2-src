@@ -112,7 +112,6 @@ public final class BM
     @Nonnull
     public static IRI musicBrainzIriFor (final @Nonnull String resourceType, final @Nonnull Id id)
       {
-        return factory.createIRI(String.format("http://dbtune.org/musicbrainz/resource/%s/%s",
-                                               resourceType, id.stringValue()));
+        return factory.createIRI(String.format("urn:musicbrainz:%s:%s", resourceType, id.stringValue()));
       }
   }

@@ -24,7 +24,16 @@
         </dependency>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-vocabulary</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-musicbrainz-datamodel</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.rdf4j</groupId>
+            <artifactId>rdf4j-repository-api</artifactId>
         </dependency>
 
         <dependency>
@@ -44,6 +53,12 @@
             <artifactId>it-tidalwave-bluemarine2-commons-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.rdf4j</groupId>
+            <artifactId>rdf4j-rio-n3</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <properties>
@@ -57,8 +72,8 @@
         <musicbrainz-cache-iTunes-fg-20161210-1.version>20170108_1630</musicbrainz-cache-iTunes-fg-20161210-1.version>
         <expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-1.version>20170108_2230</expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-1.version>
         <expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>20170108_2230</expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>
-        <expected-metadata-musicbrainz-iTunes-fg-20160504-1.version>20170108_1630</expected-metadata-musicbrainz-iTunes-fg-20160504-1.version>
-        <expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>20170108_1630</expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>
+        <expected-metadata-musicbrainz-iTunes-fg-20160504-1.version>20170114_0000</expected-metadata-musicbrainz-iTunes-fg-20160504-1.version>
+        <expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>20170114_0000</expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>
     </properties>
 
     <build>
