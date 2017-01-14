@@ -206,6 +206,7 @@ public class DefaultMusicBrainzProbe
 
             // What about this? http://musicbrainz.org//ws/2/discid/-?toc=1+12+267257+150+22767+41887+58317+72102+91375+104652+115380+132165+143932+159870+174597
             model = merged(model, findReleases(releaseGroups, cddb.get()).stream()
+                                                                         .parallel()
                                                                          .map(_f(this::handleRelease))
                                                                          .collect(toList()));
           }
@@ -239,6 +240,7 @@ public class DefaultMusicBrainzProbe
         // TODO: record producer - requires inc=artist-rels
         log.info(">>>> TRACKS");
         return merged(model, tracks.stream()
+                                   .parallel()
                                    .map(_f(track -> handleTrack(recordIri, track)))
                                    .collect(toList()));
       }
@@ -288,6 +290,7 @@ public class DefaultMusicBrainzProbe
           {
             final String targetType = relationList.getTargetType();
             model = merged(model, relationList.getRelation().stream()
+                                      .parallel()
                                       .map(relation ->  handleTrackRelation(targetType, trackIri, recording, relation))
                                       .collect(toList()));
           }
@@ -386,7 +389,9 @@ public class DefaultMusicBrainzProbe
                       releaseGroup.getTitle(),
                       releaseGroup.getArtistCredit().getNameCredit().stream().map(nc -> nc.getArtist().getName()).collect(toList()));
 
-            releaseGroup.getReleaseList().getRelease().forEach(_c(release ->
+            releaseGroup.getReleaseList().getRelease().stream()
+//                                                      .parallel()
+                                                      .forEach(_c(release ->
               {
                 log.info(">>>>>>>> release: {} {}", release.getId(), release.getTitle());
                 final Release release2 = mbMetadataProvider.getResource(RELEASE, release.getId(), RELEASE_INCLUDES).get();
