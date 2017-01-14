@@ -29,10 +29,14 @@
 package it.tidalwave.bluemarine2.metadata.musicbrainz;
 
 import javax.annotation.Nonnull;
+import java.util.function.Function;
 import java.io.IOException;
+import org.musicbrainz.ns.mmd_2.Metadata;
 import org.musicbrainz.ns.mmd_2.Release;
 import org.musicbrainz.ns.mmd_2.ReleaseGroupList;
 import it.tidalwave.bluemarine2.rest.RestResponse;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
@@ -42,13 +46,25 @@ import it.tidalwave.bluemarine2.rest.RestResponse;
  **********************************************************************************************************************/
 public interface MusicBrainzMetadataProvider
   {
+    @RequiredArgsConstructor @Getter
+    public static class ResourceType<TYPE>
+      {
+        @Nonnull
+        private final String name;
+
+        @Nonnull
+        private final Function<Metadata, TYPE> resultProvider;
+      }
+
+    public static final ResourceType<Release> RELEASE = new ResourceType<>("release", Metadata::getRelease);
+
     /*******************************************************************************************************************
      *
      *
      *
      ******************************************************************************************************************/
     @Nonnull
-    public RestResponse<ReleaseGroupList> findReleaseGroup (@Nonnull String title)
+    public RestResponse<ReleaseGroupList> findReleaseGroupByTitle (@Nonnull String title, @Nonnull String ... includes)
       throws IOException, InterruptedException;
 
     /*******************************************************************************************************************
@@ -57,6 +73,8 @@ public interface MusicBrainzMetadataProvider
      *
      ******************************************************************************************************************/
     @Nonnull
-    public RestResponse<Release> findRelease (@Nonnull String releaseId)
+    public <T> RestResponse<T> getResource (@Nonnull ResourceType<T> resourceType,
+                                            @Nonnull String id,
+                                            @Nonnull String ... includes)
       throws IOException, InterruptedException;
   }

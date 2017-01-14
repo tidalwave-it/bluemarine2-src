@@ -63,8 +63,9 @@ import static java.util.stream.Collectors.toList;
 import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import static it.tidalwave.bluemarine2.model.vocabulary.BM.musicBrainzIriFor;
-import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.cddbsOf;
+import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
+import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.*;
+import static it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider.*;
 
 /***********************************************************************************************************************
  *
@@ -77,6 +78,8 @@ import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.c
 public class DefaultMusicBrainzProbe
   {
     private static final QName QNAME_SCORE = new QName("http://musicbrainz.org/ns/ext#-2.0", "score");
+
+    private static final String[] RELEASE_INCLUDES = { "aliases", "artist-credits", "discids", "labels", "recordings" };
 
     @Nonnull
     private final CddbMetadataProvider cddbMetadataProvider;
@@ -122,12 +125,12 @@ public class DefaultMusicBrainzProbe
           {
             log.info("============ PROBING METADATA FOR {}", albumTitle);
             final List<ReleaseGroup> releaseGroups = new ArrayList<>();
-            releaseGroups.addAll(mbMetadataProvider.findReleaseGroup(albumTitle.get())
+            releaseGroups.addAll(mbMetadataProvider.findReleaseGroupByTitle(albumTitle.get())
                                                    .map(ReleaseGroupList::getReleaseGroup)
                                                    .orElse(emptyList()));
 
             final Optional<String> cddbTitle = cddbTitle(metadata);
-            cddbTitle.map(_f(mbMetadataProvider::findReleaseGroup)).ifPresent(response ->
+            cddbTitle.map(_f(mbMetadataProvider::findReleaseGroupByTitle)).ifPresent(response ->
               {
                 log.info("======== ALSO USING ALTERNATE TITLE: {}", cddbTitle.get());
                 releaseGroups.addAll(response.get().getReleaseGroup());
@@ -170,7 +173,7 @@ public class DefaultMusicBrainzProbe
             // TODO: <barcode>093624763222</barcode>
             // TODO: <asin>B000046S1F</asin>
             // TODO: producer - requires inc=artist-rels
-            log.info(">>>> TRACKS");
+            log.info(">>>> TRACKS OF {}", recordTitle);
 
             for (final DefTrackData track : tracks)
               {
@@ -218,7 +221,7 @@ public class DefaultMusicBrainzProbe
             releaseGroup.getReleaseList().getRelease().forEach(_c(release ->
               {
                 log.info(">>>>>>>> release: {} {}", release.getId(), release.getTitle());
-                final Release release2 = mbMetadataProvider.findRelease(release.getId()).get();
+                final Release release2 = mbMetadataProvider.getResource(RELEASE, release.getId(), RELEASE_INCLUDES).get();
 
                 for (final Medium medium : release2.getMediumList().getMedium())
                   {
