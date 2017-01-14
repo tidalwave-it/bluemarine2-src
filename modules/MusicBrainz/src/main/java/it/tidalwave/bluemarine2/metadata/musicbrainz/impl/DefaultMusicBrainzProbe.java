@@ -184,7 +184,7 @@ public class DefaultMusicBrainzProbe
     public Model probe (final @Nonnull Metadata metadata)
       throws InterruptedException, IOException
       {
-        ModelBuilder model = new ModelBuilder();
+        final ModelBuilder model = new ModelBuilder();
         final Optional<String> albumTitle = metadata.get(TITLE);
         final Optional<Cddb> cddb = metadata.get(CDDB);
 
@@ -222,12 +222,11 @@ public class DefaultMusicBrainzProbe
     private ModelBuilder handleRelease (final @Nonnull ReleaseAndMedium ram)
       throws IOException, InterruptedException
       {
-        final ModelBuilder model = new ModelBuilder();
-
         final List<DefTrackData> tracks = ram.getMedium().getTrackList().getDefTrack();
         final Release release = ram.getRelease();
         final String recordTitle = release.getTitle();
         final IRI recordIri = musicBrainzIriFor("record", release.getId());
+        final ModelBuilder model = new ModelBuilder();
         model.add(recordIri, RDF.TYPE,          MO.C_RECORD);
         model.add(recordIri, MO.P_MEDIA_TYPE,   MO.C_CD);
         model.add(recordIri, RDFS.LABEL,        literalFor(recordTitle));
@@ -237,7 +236,6 @@ public class DefaultMusicBrainzProbe
         // TODO: <barcode>093624763222</barcode>
         // TODO: <asin>B000046S1F</asin>
         // TODO: record producer - requires inc=artist-rels
-        log.info(">>>> TRACKS");
         return model.merge(tracks.stream()
                                  .parallel()
                                  .map(_f(track -> handleTrack(recordIri, track)))
@@ -253,7 +251,6 @@ public class DefaultMusicBrainzProbe
     private ModelBuilder handleTrack (final @Nonnull IRI recordIri, final @Nonnull DefTrackData track)
       throws IOException, InterruptedException
       {
-        final ModelBuilder model = new ModelBuilder();
         final IRI trackIri = musicBrainzIriFor("track", track.getId());
         final int position = track.getPosition().intValue();
         final String recordingId = track.getRecording().getId();
@@ -264,7 +261,7 @@ public class DefaultMusicBrainzProbe
         log.info(">>>>>>>> {}. {}", position, trackTitle);
 
 //                http://musicbrainz.org/ws/2/recording/7e5766ea-c4a7-4091-a915-74208710d409?inc=aliases%2Bartist-credits%2Breleases%2bartist-rels
-
+        final ModelBuilder model = new ModelBuilder();
         model.add(recordIri, MO.P_TRACK,         trackIri);
         model.add(trackIri,  RDF.TYPE,           MO.C_TRACK);
         model.add(trackIri,  RDFS.LABEL,         literalFor(trackTitle));
@@ -309,15 +306,13 @@ public class DefaultMusicBrainzProbe
                                               final @Nonnull Recording recording,
                                               final @Nonnull Relation relation)
       {
-        final ModelBuilder model = new ModelBuilder();
         final List<Attribute> attributes = getAttributes(relation);
         final Target target = relation.getTarget();
         final String type   = relation.getType();
         final Artist artist = relation.getArtist();
-
         final IRI performanceIri = musicBrainzIriFor("performance", recording.getId()); // FIXME: MB namespace?
-        final IRI artistIri = musicBrainzIriFor("artist", artist.getId());
-
+        final IRI artistIri      = musicBrainzIriFor("artist", artist.getId());
+        final ModelBuilder model = new ModelBuilder();
         model.add(performanceIri,  RDF.TYPE,         MO.C_PERFORMANCE);
         model.add(performanceIri,  MO.P_RECORDED_AS, trackIri); // FIXME: Signal, not Track
         model.add(artistIri,       RDF.TYPE,         MO.C_MUSIC_ARTIST);
