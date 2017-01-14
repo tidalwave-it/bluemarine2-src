@@ -53,7 +53,6 @@ import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.vocabulary.*;
 import org.eclipse.rdf4j.model.impl.TreeModel;
-import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata.Cddb;
 import it.tidalwave.bluemarine2.model.vocabulary.*;
@@ -186,7 +185,7 @@ public class DefaultMusicBrainzProbe
     public Model probe (final @Nonnull Metadata metadata)
       throws InterruptedException, IOException
       {
-        final Model model = new TreeModel();
+        Model model = new TreeModel();
         final Optional<String> albumTitle = metadata.get(TITLE);
         final Optional<Cddb> cddb = metadata.get(CDDB);
 
@@ -206,8 +205,9 @@ public class DefaultMusicBrainzProbe
               });
 
             // What about this? http://musicbrainz.org//ws/2/discid/-?toc=1+12+267257+150+22767+41887+58317+72102+91375+104652+115380+132165+143932+159870+174597
-            final List<ReleaseAndMedium> rams = probe(releaseGroups, cddb.get());
-            handleRelease(rams).stream().forEach(statement -> model.add(statement));
+            model = merged(model, findReleases(releaseGroups, cddb.get()).stream()
+                                                                         .map(_f(this::handleRelease))
+                                                                         .collect(toList()));
           }
 
         return model;
@@ -219,31 +219,28 @@ public class DefaultMusicBrainzProbe
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Model handleRelease (final @Nonnull List<ReleaseAndMedium> rams)
+    private Model handleRelease (final @Nonnull ReleaseAndMedium ram)
       throws IOException, InterruptedException
       {
         final Model model = new TreeModel();
 
-        // TODO: how to manage multiple rams
-        for (final ReleaseAndMedium ram : rams)
-          {
-            final List<DefTrackData> tracks = ram.getMedium().getTrackList().getDefTrack();
-            final Release release = ram.getRelease();
-            final String recordTitle = release.getTitle();
-            final IRI recordIri = musicBrainzIriFor("record", release.getId());
-            model.add(recordIri, RDF.TYPE,          MO.C_RECORD);
-            model.add(recordIri, MO.P_MEDIA_TYPE,   MO.C_CD);
-            model.add(recordIri, RDFS.LABEL,        literalFor(recordTitle));
-            model.add(recordIri, DC.TITLE,          literalFor(recordTitle));
-            model.add(recordIri, MO.P_TRACK_COUNT,  literalFor(tracks.size()));
-            // TODO: medium discId
-            // TODO: <barcode>093624763222</barcode>
-            // TODO: <asin>B000046S1F</asin>
-            // TODO: record producer - requires inc=artist-rels
-            tracks.stream().forEach(_c(track -> handleTrack(model, recordIri, track)));
-          }
-
-        return model;
+        final List<DefTrackData> tracks = ram.getMedium().getTrackList().getDefTrack();
+        final Release release = ram.getRelease();
+        final String recordTitle = release.getTitle();
+        final IRI recordIri = musicBrainzIriFor("record", release.getId());
+        model.add(recordIri, RDF.TYPE,          MO.C_RECORD);
+        model.add(recordIri, MO.P_MEDIA_TYPE,   MO.C_CD);
+        model.add(recordIri, RDFS.LABEL,        literalFor(recordTitle));
+        model.add(recordIri, DC.TITLE,          literalFor(recordTitle));
+        model.add(recordIri, MO.P_TRACK_COUNT,  literalFor(tracks.size()));
+        // TODO: medium discId
+        // TODO: <barcode>093624763222</barcode>
+        // TODO: <asin>B000046S1F</asin>
+        // TODO: record producer - requires inc=artist-rels
+        log.info(">>>> TRACKS");
+        return merged(model, tracks.stream()
+                                   .map(_f(track -> handleTrack(recordIri, track)))
+                                   .collect(toList()));
       }
 
     /*******************************************************************************************************************
@@ -251,12 +248,11 @@ public class DefaultMusicBrainzProbe
      *
      *
      ******************************************************************************************************************/
-    private void handleTrack (final @Nonnull Model model,
-                              final @Nonnull IRI recordIri,
-                              final @Nonnull DefTrackData track)
+    @Nonnull
+    private Model handleTrack (final @Nonnull IRI recordIri, final @Nonnull DefTrackData track)
       throws IOException, InterruptedException
       {
-        log.info(">>>> TRACKS");
+        final Model model = new TreeModel();
         final IRI trackIri = musicBrainzIriFor("track", track.getId());
         final int position = track.getPosition().intValue();
         final String recordingId = track.getRecording().getId();
@@ -275,7 +271,7 @@ public class DefaultMusicBrainzProbe
         model.add(trackIri,  MO.P_TRACK_NUMBER,  literalFor(track.getPosition().intValue()));
 //        bmmo:diskCount "1"^^xs:int ;
 //        bmmo:diskNumber "1"^^xs:int ;
-        handleTrackRelations(model, recording, trackIri);
+        return merged(model, handleTrackRelations(recording, trackIri));
       }
 
     /*******************************************************************************************************************
@@ -283,46 +279,20 @@ public class DefaultMusicBrainzProbe
      *
      *
      ******************************************************************************************************************/
-    private void handleTrackRelations (final @Nonnull Model model,
-                                       final @Nonnull Recording recording,
-                                       final @Nonnull IRI trackIri)
+    @Nonnull
+    private Model handleTrackRelations (final @Nonnull Recording recording, final @Nonnull IRI trackIri)
       {
+        Model model = new TreeModel();
+
         for (final RelationList relationList : recording.getRelationList())
           {
             final String targetType = relationList.getTargetType();
-
-            for (final Relation relation : relationList.getRelation())
-              {
-                final List<Attribute> attributes = getAttributes(relation);
-                final Target target = relation.getTarget();
-                final String type   = relation.getType();
-                final Artist artist = relation.getArtist();
-
-                final IRI performanceIri = musicBrainzIriFor("performance", recording.getId()); // FIXME: MB namespace?
-                final IRI artistIri = musicBrainzIriFor("artist", artist.getId());
-
-                model.add(performanceIri,  RDF.TYPE,         MO.C_PERFORMANCE);
-                model.add(performanceIri,  MO.P_RECORDED_AS, trackIri); // FIXME: Signal, not Track
-                model.add(artistIri,       RDF.TYPE,         MO.C_MUSIC_ARTIST);
-                model.add(artistIri,       RDFS.LABEL,       literalFor(artist.getName()));
-                model.add(artistIri,       FOAF.NAME,        literalFor(artist.getName()));
-
-                log.info(">>>>>>>>>>>> {} {} {} {} ({})", targetType,
-                                                          type,
-                                                          attributes.stream().map(a -> toString(a)).collect(toList()),
-                                                          artist.getName(),
-                                                          artist.getId());
-                if ("artist".equals(targetType))
-                  {
-                    predicatesForArtists(type, attributes)
-                            .forEach(predicate -> model.add(performanceIri, predicate, artistIri));
-                  }
-
-//                        relation.getBegin();
-//                        relation.getEnd();
-//                        relation.getEnded();
-              }
+            model = merged(model, relationList.getRelation().stream()
+                                      .map(relation ->  handleTrackRelation(targetType, trackIri, recording, relation))
+                                      .collect(toList()));
           }
+
+        return model;
       }
 
     /*******************************************************************************************************************
@@ -330,7 +300,51 @@ public class DefaultMusicBrainzProbe
      *
      *
      ******************************************************************************************************************/
-    private List<IRI> predicatesForArtists (final @Nonnull String type, final @Nonnull List<Attribute> attributes)
+    @Nonnull
+    private Model handleTrackRelation (final @Nonnull String targetType,
+                                       final @Nonnull IRI trackIri,
+                                       final @Nonnull Recording recording,
+                                       final @Nonnull Relation relation)
+      {
+        final Model model = new TreeModel();
+        final List<Attribute> attributes = getAttributes(relation);
+        final Target target = relation.getTarget();
+        final String type   = relation.getType();
+        final Artist artist = relation.getArtist();
+
+        final IRI performanceIri = musicBrainzIriFor("performance", recording.getId()); // FIXME: MB namespace?
+        final IRI artistIri = musicBrainzIriFor("artist", artist.getId());
+
+        model.add(performanceIri,  RDF.TYPE,         MO.C_PERFORMANCE);
+        model.add(performanceIri,  MO.P_RECORDED_AS, trackIri); // FIXME: Signal, not Track
+        model.add(artistIri,       RDF.TYPE,         MO.C_MUSIC_ARTIST);
+        model.add(artistIri,       RDFS.LABEL,       literalFor(artist.getName()));
+        model.add(artistIri,       FOAF.NAME,        literalFor(artist.getName()));
+
+        log.info(">>>>>>>>>>>> {} {} {} {} ({})", targetType,
+                                                  type,
+                                                  attributes.stream().map(a -> toString(a)).collect(toList()),
+                                                  artist.getName(),
+                                                  artist.getId());
+        if ("artist".equals(targetType))
+          {
+            predicatesForArtists(type, attributes)
+                    .forEach(predicate -> model.add(performanceIri, predicate, artistIri));
+          }
+
+        return model;
+//                        relation.getBegin();
+//                        relation.getEnd();
+//                        relation.getEnded();
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static List<IRI> predicatesForArtists (final @Nonnull String type, final @Nonnull List<Attribute> attributes)
       {
         if (attributes.isEmpty())
           {
@@ -358,7 +372,7 @@ public class DefaultMusicBrainzProbe
      *
      ******************************************************************************************************************/
     @Nonnull
-    private List<ReleaseAndMedium> probe (final @Nonnull List<ReleaseGroup> releaseGroups, final @Nonnull Cddb cddb)
+    private List<ReleaseAndMedium> findReleases (final @Nonnull List<ReleaseGroup> releaseGroups, final @Nonnull Cddb cddb)
       throws IOException, InterruptedException
       {
         final Map<String, ReleaseAndMedium> found = new TreeMap<>();
@@ -456,6 +470,32 @@ public class DefaultMusicBrainzProbe
           }
 
         return attributes;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private synchronized static Model merged (final @Nonnull Model model1, final @Nonnull Model model2)
+      {
+        final Model model = new TreeModel();
+        model1.forEach(statement -> model.add(statement));
+        model2.forEach(statement -> model.add(statement));
+        return model;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private synchronized static Model merged (final @Nonnull Model model1, final @Nonnull List<Model> models)
+      {
+        final Model model = new TreeModel();
+        model1.forEach(statement -> model.add(statement));
+        models.stream().forEach(m -> m.forEach(statement -> model.add(statement)));
+        return model;
       }
 
     /*******************************************************************************************************************
