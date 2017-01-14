@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import java.util.function.Function;
 import java.io.IOException;
 import org.musicbrainz.ns.mmd_2.Metadata;
+import org.musicbrainz.ns.mmd_2.Recording;
 import org.musicbrainz.ns.mmd_2.Release;
 import org.musicbrainz.ns.mmd_2.ReleaseGroupList;
 import it.tidalwave.bluemarine2.rest.RestResponse;
@@ -57,6 +58,8 @@ public interface MusicBrainzMetadataProvider
       }
 
     public static final ResourceType<Release> RELEASE = new ResourceType<>("release", Metadata::getRelease);
+
+    public static final ResourceType<Recording> RECORDING = new ResourceType<>("recording", Metadata::getRecording);
 
     /*******************************************************************************************************************
      *

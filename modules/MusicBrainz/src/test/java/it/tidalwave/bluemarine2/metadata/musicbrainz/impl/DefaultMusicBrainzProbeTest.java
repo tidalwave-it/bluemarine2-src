@@ -53,7 +53,7 @@ import it.tidalwave.bluemarine2.commons.test.TestSetTriple;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.metadata.cddb.impl.TestSupport;
 import lombok.extern.slf4j.Slf4j;
-import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
@@ -197,11 +197,12 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
         return streamOfTestSetTriples(TestSetLocator.allTestSets(), name -> METADATA.resolve(name))
                 // FIXME: this testcase fails after a fix; should update the expected results resources
                 .filter(triple -> !triple.getFilePath().toString().contains("Compilations/Rachmaninov_ Piano Concertos #2 & 3"))
-                
-//                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20160504-1"))
+                .filter(triple -> triple.getFilePath().getFileName().toString().startsWith("01"))
+
+                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20160504-1"))
 //                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20161210-1"))
 //                .filter(triple -> triple.getFilePath().toString().contains("Trio 99_00"))
-                .filter(triple -> triple.getFilePath().getFileName().toString().startsWith("01"))
+//                .filter(triple -> triple.getFilePath().toString().contains("La Divina 2"))
                 .collect(toTestNGDataProvider());
       }
   }

@@ -30,18 +30,25 @@ package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.TreeMap;
 import javax.xml.namespace.QName;
 import java.io.IOException;
-import org.musicbrainz.ns.mmd_2.Medium;
+import org.musicbrainz.ns.mmd_2.Artist;
 import org.musicbrainz.ns.mmd_2.DefTrackData;
+import org.musicbrainz.ns.mmd_2.Medium;
 import org.musicbrainz.ns.mmd_2.Recording;
+import org.musicbrainz.ns.mmd_2.Relation;
+import org.musicbrainz.ns.mmd_2.Relation.AttributeList.Attribute;
+import org.musicbrainz.ns.mmd_2.RelationList;
 import org.musicbrainz.ns.mmd_2.Release;
 import org.musicbrainz.ns.mmd_2.ReleaseGroup;
 import org.musicbrainz.ns.mmd_2.ReleaseGroupList;
+import org.musicbrainz.ns.mmd_2.Target;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.vocabulary.*;
@@ -58,14 +65,15 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import static java.util.Collections.emptyList;
-import static java.util.stream.Collectors.toList;
+import static java.util.Collections.*;
+import static java.util.stream.Collectors.*;
 import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
 import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.*;
 import static it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider.*;
+import org.eclipse.rdf4j.model.ValueFactory;
+import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 
 /***********************************************************************************************************************
  *
@@ -79,7 +87,13 @@ public class DefaultMusicBrainzProbe
   {
     private static final QName QNAME_SCORE = new QName("http://musicbrainz.org/ns/ext#-2.0", "score");
 
+    private final static ValueFactory FACTORY = SimpleValueFactory.getInstance();
+
     private static final String[] RELEASE_INCLUDES = { "aliases", "artist-credits", "discids", "labels", "recordings" };
+
+    private static final String[] RECORDING_INCLUDES = { "aliases", "artist-credits", "artist-rels" };
+
+    private static final Map<String, IRI> PERFORMER_MAP = new HashMap<>();
 
     @Nonnull
     private final CddbMetadataProvider cddbMetadataProvider;
@@ -92,6 +106,61 @@ public class DefaultMusicBrainzProbe
 
     @Getter @Setter
     private int releaseGroupScoreThreshold = 50;
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    static
+      {
+//instrument [alto saxophone
+//instrument [bass clarinet
+//instrument [bass
+//instrument [cello
+//instrument [clarinet
+//instrument [double bass
+//instrument [drums
+//instrument [guitar
+//instrument [harp
+//instrument [harpsichord
+//instrument [horn
+//instrument [piano
+//instrument [tenor saxophone
+//instrument [trombone
+//instrument [trumpet
+//instrument [trumpet
+//mo:orchestra
+//mo:symphony_orchestra
+//mo:chamber_orchestra
+        PERFORMER_MAP.put("arranger", MO.P_ARRANGER);
+        PERFORMER_MAP.put("balance", MO.P_BALANCE);
+        PERFORMER_MAP.put("chorus master", MO.P_CONDUCTOR);
+        PERFORMER_MAP.put("conductor", MO.P_CONDUCTOR);
+        PERFORMER_MAP.put("engineer", MO.P_ENGINEER);
+        PERFORMER_MAP.put("instrument", MO.P_PERFORMER); // FIXME: doesn't map the instrument
+        PERFORMER_MAP.put("instrument arranger", MO.P_ARRANGER);
+        PERFORMER_MAP.put("mastering", MO.P_MIX);
+        PERFORMER_MAP.put("mix", MO.P_MIX);
+        PERFORMER_MAP.put("remixer", MO.P_MIX);
+        PERFORMER_MAP.put("orchestrator", MO.P_ORCHESTRATOR);
+        PERFORMER_MAP.put("performer", MO.P_PERFORMER);
+        PERFORMER_MAP.put("performing orchestra", MO.P_PERFORMER);
+        PERFORMER_MAP.put("producer", MO.P_PRODUCER);
+        PERFORMER_MAP.put("programming", MO.P_PROGRAMMING);
+        PERFORMER_MAP.put("recording", MO.P_RECORDING);
+        PERFORMER_MAP.put("sound", MO.P_ENGINEER);
+        PERFORMER_MAP.put("vocal", MO.P_SINGER);
+        PERFORMER_MAP.put("vocal/additional", MO.P_BACKGROUND_SINGER);
+        PERFORMER_MAP.put("vocal/background vocals", MO.P_BACKGROUND_SINGER);
+        PERFORMER_MAP.put("vocal/choir vocals", MO.P_CHOIR);
+        PERFORMER_MAP.put("vocal/guest", MO.P_SINGER);
+        PERFORMER_MAP.put("vocal/lead vocals", MO.P_LEAD_SINGER);
+        PERFORMER_MAP.put("vocal/mezzo-soprano vocals", MO.P_MEZZO_SOPRANO);
+        PERFORMER_MAP.put("vocal/other vocals", MO.P_BACKGROUND_SINGER);
+        PERFORMER_MAP.put("vocal/solo", MO.P_LEAD_SINGER);
+        PERFORMER_MAP.put("vocal/soprano vocals", MO.P_SOPRANO);
+      }
 
     /*******************************************************************************************************************
      *
@@ -138,9 +207,7 @@ public class DefaultMusicBrainzProbe
 
             // What about this? http://musicbrainz.org//ws/2/discid/-?toc=1+12+267257+150+22767+41887+58317+72102+91375+104652+115380+132165+143932+159870+174597
             final List<ReleaseAndMedium> rams = probe(releaseGroups, cddb.get());
-            toModel(rams).stream().forEach(statement -> model.add(statement));
-            // TODO: also accumulate to a global repository
-            // TODO: authors etc go to the global repository
+            handleRelease(rams).stream().forEach(statement -> model.add(statement));
           }
 
         return model;
@@ -152,7 +219,8 @@ public class DefaultMusicBrainzProbe
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Model toModel (final @Nonnull List<ReleaseAndMedium> rams)
+    private Model handleRelease (final @Nonnull List<ReleaseAndMedium> rams)
+      throws IOException, InterruptedException
       {
         final Model model = new TreeModel();
 
@@ -162,8 +230,7 @@ public class DefaultMusicBrainzProbe
             final List<DefTrackData> tracks = ram.getMedium().getTrackList().getDefTrack();
             final Release release = ram.getRelease();
             final String recordTitle = release.getTitle();
-
-            final IRI recordIri = musicBrainzIriFor("record", new Id(release.getId()));
+            final IRI recordIri = musicBrainzIriFor("record", release.getId());
             model.add(recordIri, RDF.TYPE,          MO.C_RECORD);
             model.add(recordIri, MO.P_MEDIA_TYPE,   MO.C_CD);
             model.add(recordIri, RDFS.LABEL,        literalFor(recordTitle));
@@ -172,30 +239,117 @@ public class DefaultMusicBrainzProbe
             // TODO: medium discId
             // TODO: <barcode>093624763222</barcode>
             // TODO: <asin>B000046S1F</asin>
-            // TODO: producer - requires inc=artist-rels
-            log.info(">>>> TRACKS OF {}", recordTitle);
-
-            for (final DefTrackData track : tracks)
-              {
-                final IRI trackIri = musicBrainzIriFor("track", new Id(track.getId()));
-                final int position = track.getPosition().intValue();
-                final Recording recording = track.getRecording();
-                final String trackTitle = recording.getTitle();
-//                    track.getRecording().getTitle();
-//                    track.getRecording().getAliasList().getAlias().get(0).getSortName();
-                log.info(">>>>>>>> {}. {}", position, trackTitle);
-
-                model.add(trackIri,  RDF.TYPE,           MO.C_TRACK);
-                model.add(trackIri,  RDFS.LABEL,         literalFor(trackTitle));
-                model.add(trackIri,  DC.TITLE,           literalFor(trackTitle));
-                model.add(trackIri,  MO.P_TRACK_NUMBER,  literalFor(track.getPosition().intValue()));
-//        bmmo:diskCount "1"^^xs:int ;
-//        bmmo:diskNumber "1"^^xs:int ;
-                model.add(recordIri, MO.P_TRACK,         trackIri);
-              }
+            // TODO: record producer - requires inc=artist-rels
+            tracks.stream().forEach(_c(track -> handleTrack(model, recordIri, track)));
           }
 
         return model;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private void handleTrack (final @Nonnull Model model,
+                              final @Nonnull IRI recordIri,
+                              final @Nonnull DefTrackData track)
+      throws IOException, InterruptedException
+      {
+        log.info(">>>> TRACKS");
+        final IRI trackIri = musicBrainzIriFor("track", track.getId());
+        final int position = track.getPosition().intValue();
+        final String recordingId = track.getRecording().getId();
+//                final Recording recording = track.getRecording();
+        final Recording recording = mbMetadataProvider.getResource(RECORDING, recordingId, RECORDING_INCLUDES).get();
+        final String trackTitle = recording.getTitle();
+//                    track.getRecording().getAliasList().getAlias().get(0).getSortName();
+        log.info(">>>>>>>> {}. {}", position, trackTitle);
+
+//                http://musicbrainz.org/ws/2/recording/7e5766ea-c4a7-4091-a915-74208710d409?inc=aliases%2Bartist-credits%2Breleases%2bartist-rels
+
+        model.add(recordIri, MO.P_TRACK,         trackIri);
+        model.add(trackIri,  RDF.TYPE,           MO.C_TRACK);
+        model.add(trackIri,  RDFS.LABEL,         literalFor(trackTitle));
+        model.add(trackIri,  DC.TITLE,           literalFor(trackTitle));
+        model.add(trackIri,  MO.P_TRACK_NUMBER,  literalFor(track.getPosition().intValue()));
+//        bmmo:diskCount "1"^^xs:int ;
+//        bmmo:diskNumber "1"^^xs:int ;
+        handleTrackRelations(model, recording, trackIri);
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private void handleTrackRelations (final @Nonnull Model model,
+                                       final @Nonnull Recording recording,
+                                       final @Nonnull IRI trackIri)
+      {
+        for (final RelationList relationList : recording.getRelationList())
+          {
+            final String targetType = relationList.getTargetType();
+
+            for (final Relation relation : relationList.getRelation())
+              {
+                final List<Attribute> attributes = getAttributes(relation);
+                final Target target = relation.getTarget();
+                final String type   = relation.getType();
+                final Artist artist = relation.getArtist();
+
+                final IRI performanceIri = musicBrainzIriFor("performance", recording.getId()); // FIXME: MB namespace?
+                final IRI artistIri = musicBrainzIriFor("artist", artist.getId());
+
+                model.add(performanceIri,  RDF.TYPE,         MO.C_PERFORMANCE);
+                model.add(performanceIri,  MO.P_RECORDED_AS, trackIri); // FIXME: Signal, not Track
+                model.add(artistIri,       RDF.TYPE,         MO.C_MUSIC_ARTIST);
+                model.add(artistIri,       RDFS.LABEL,       literalFor(artist.getName()));
+                model.add(artistIri,       FOAF.NAME,        literalFor(artist.getName()));
+
+                log.info(">>>>>>>>>>>> {} {} {} {} ({})", targetType,
+                                                          type,
+                                                          attributes.stream().map(a -> toString(a)).collect(toList()),
+                                                          artist.getName(),
+                                                          artist.getId());
+                if ("artist".equals(targetType))
+                  {
+                    predicatesForArtists(type, attributes)
+                            .forEach(predicate -> model.add(performanceIri, predicate, artistIri));
+                  }
+
+//                        relation.getBegin();
+//                        relation.getEnd();
+//                        relation.getEnded();
+              }
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private List<IRI> predicatesForArtists (final @Nonnull String type, final @Nonnull List<Attribute> attributes)
+      {
+        if (attributes.isEmpty())
+          {
+            return singletonList(predicateFor(type));
+          }
+        else
+          {
+            return attributes.stream().map(attribute ->
+              {
+                String role = type;
+
+                if (type.equals("vocal"))
+                  {
+                    role += "/" + attribute.getContent();
+                  }
+
+                return predicateFor(role);
+              }).collect(toList());
+          }
       }
 
     /*******************************************************************************************************************
@@ -213,10 +367,10 @@ public class DefaultMusicBrainzProbe
                               .forEach(releaseGroup ->
           {
             log.debug(">>>> {} {} {} artist: {}",
-                    releaseGroup.getOtherAttributes().get(QNAME_SCORE),
-                    releaseGroup.getId(),
-                    releaseGroup.getTitle(),
-                    releaseGroup.getArtistCredit().getNameCredit().stream().map(nc -> nc.getArtist().getName()).collect(toList()));
+                      releaseGroup.getOtherAttributes().get(QNAME_SCORE),
+                      releaseGroup.getId(),
+                      releaseGroup.getTitle(),
+                      releaseGroup.getArtistCredit().getNameCredit().stream().map(nc -> nc.getArtist().getName()).collect(toList()));
 
             releaseGroup.getReleaseList().getRelease().forEach(_c(release ->
               {
@@ -291,8 +445,59 @@ public class DefaultMusicBrainzProbe
      *
      *
      ******************************************************************************************************************/
+    @Nonnull
+    private static List<Attribute> getAttributes (final @Nonnull Relation relation)
+      {
+        final List<Attribute> attributes = new ArrayList<>();
+
+        if (relation.getAttributeList() != null)
+          {
+            attributes.addAll(relation.getAttributeList().getAttribute());
+          }
+
+        return attributes;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static IRI predicateFor (final @Nonnull String role)
+      {
+        return Objects.requireNonNull(PERFORMER_MAP.get(role), "Cannot map role: " + role);
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     private static int scoreOf (final @Nonnull ReleaseGroup releaseGroup)
       {
         return Integer.parseInt(releaseGroup.getOtherAttributes().get(QNAME_SCORE));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static IRI musicBrainzIriFor (final @Nonnull String resourceType, final @Nonnull String id)
+      {
+        return FACTORY.createIRI(String.format("urn:musicbrainz:%s:%s", resourceType, id));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static String toString (final @Nonnull Attribute attribute)
+      {
+        return String.format("%s %s (%s)", attribute.getContent(), attribute.getCreditedAs(), attribute.getValue());
       }
   }
