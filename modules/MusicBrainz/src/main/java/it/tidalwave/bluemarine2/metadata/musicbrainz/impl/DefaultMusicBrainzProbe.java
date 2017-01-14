@@ -133,6 +133,7 @@ public class DefaultMusicBrainzProbe
                 releaseGroups.addAll(response.get().getReleaseGroup());
               });
 
+            // What about this? http://musicbrainz.org//ws/2/discid/-?toc=1+12+267257+150+22767+41887+58317+72102+91375+104652+115380+132165+143932+159870+174597
             final List<ReleaseAndMedium> rams = probe(releaseGroups, cddb.get());
             toModel(rams).stream().forEach(statement -> model.add(statement));
             // TODO: also accumulate to a global repository
@@ -159,14 +160,16 @@ public class DefaultMusicBrainzProbe
             final Release release = ram.getRelease();
             final String recordTitle = release.getTitle();
 
-            final IRI recordIri = musicBrainzIriFor("record", new Id(release.getId())); // FIXME: this is a release id, not a record id
+            final IRI recordIri = musicBrainzIriFor("record", new Id(release.getId()));
             model.add(recordIri, RDF.TYPE,          MO.C_RECORD);
             model.add(recordIri, MO.P_MEDIA_TYPE,   MO.C_CD);
             model.add(recordIri, RDFS.LABEL,        literalFor(recordTitle));
             model.add(recordIri, DC.TITLE,          literalFor(recordTitle));
             model.add(recordIri, MO.P_TRACK_COUNT,  literalFor(tracks.size()));
             // TODO: medium discId
-            int trackNumber = 0;
+            // TODO: <barcode>093624763222</barcode>
+            // TODO: <asin>B000046S1F</asin>
+            // TODO: producer - requires inc=artist-rels
             log.info(">>>> TRACKS");
 
             for (final DefTrackData track : tracks)
@@ -182,7 +185,7 @@ public class DefaultMusicBrainzProbe
                 model.add(trackIri,  RDF.TYPE,           MO.C_TRACK);
                 model.add(trackIri,  RDFS.LABEL,         literalFor(trackTitle));
                 model.add(trackIri,  DC.TITLE,           literalFor(trackTitle));
-                model.add(trackIri,  MO.P_TRACK_NUMBER,  literalFor(++trackNumber));
+                model.add(trackIri,  MO.P_TRACK_NUMBER,  literalFor(track.getPosition().intValue()));
 //        bmmo:diskCount "1"^^xs:int ;
 //        bmmo:diskNumber "1"^^xs:int ;
                 model.add(recordIri, MO.P_TRACK,         trackIri);
