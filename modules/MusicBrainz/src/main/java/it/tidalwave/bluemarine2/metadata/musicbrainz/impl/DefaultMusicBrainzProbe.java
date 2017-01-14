@@ -532,7 +532,7 @@ public class DefaultMusicBrainzProbe
     @Nonnull
     public static IRI musicBrainzIriFor (final @Nonnull String resourceType, final @Nonnull String id)
       {
-        return FACTORY.createIRI(String.format("urn:musicbrainz:%s:%s", resourceType, id));
+        return FACTORY.createIRI(String.format("http://musicbrainz.org/%s/%s", resourceType, id));
       }
 
     /*******************************************************************************************************************

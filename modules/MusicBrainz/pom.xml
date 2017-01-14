@@ -72,8 +72,8 @@
         <musicbrainz-cache-iTunes-fg-20161210-1.version>20170114_1620</musicbrainz-cache-iTunes-fg-20161210-1.version>
         <expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-1.version>20170108_2230</expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-1.version>
         <expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>20170108_2230</expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>
-        <expected-metadata-musicbrainz-iTunes-fg-20160504-1.version>20170114_2200</expected-metadata-musicbrainz-iTunes-fg-20160504-1.version>
-        <expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>20170114_2200</expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>
+        <expected-metadata-musicbrainz-iTunes-fg-20160504-1.version>20170115_0000</expected-metadata-musicbrainz-iTunes-fg-20160504-1.version>
+        <expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>20170115_0000</expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>
     </properties>
 
     <build>
