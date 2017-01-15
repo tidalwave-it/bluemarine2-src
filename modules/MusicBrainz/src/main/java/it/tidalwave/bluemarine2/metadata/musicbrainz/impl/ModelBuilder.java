@@ -10,7 +10,7 @@ package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.ThreadSafe;
 import java.util.List;
-import lombok.RequiredArgsConstructor;
+import java.util.Optional;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.Resource;
@@ -66,6 +66,20 @@ public class ModelBuilder
       {
         model.add(subjext, predicate, object, contexts);
         return this;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public synchronized ModelBuilder with (final @Nonnull Resource subjext,
+                                           final @Nonnull IRI predicate,
+                                           final @Nonnull Optional<Value> optionalObject,
+                                           final @Nonnull Resource... contexts)
+      {
+        return optionalObject.map(object -> with(subjext, predicate, object, contexts)).orElse(this);
       }
 
     /*******************************************************************************************************************

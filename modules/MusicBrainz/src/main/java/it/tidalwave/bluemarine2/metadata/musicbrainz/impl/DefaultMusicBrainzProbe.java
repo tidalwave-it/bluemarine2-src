@@ -268,12 +268,14 @@ public class DefaultMusicBrainzProbe
             .with(recordIri, RDFS.LABEL,       literalFor(recordTitle))
             .with(recordIri, DC.TITLE,         literalFor(recordTitle))
             .with(recordIri, MO.P_TRACK_COUNT, literalFor(tracks.size()))
+            .with(recordIri, MO.P_AMAZON_ASIN, literalFor(Optional.ofNullable(release.getAsin())))
+            .with(recordIri, MO.P_GTIN,        literalFor(Optional.ofNullable(release.getBarcode())))
             .merge(tracks.stream().parallel()
                                   .map(_f(track -> handleTrack(recordIri, track)))
                                   .collect(toList()));
+
+        // TODO: release.getLabelInfoList();
         // TODO: medium discId
-        // TODO: <barcode>093624763222</barcode>
-        // TODO: <asin>B000046S1F</asin>
         // TODO: record producer - requires inc=artist-rels
       }
 

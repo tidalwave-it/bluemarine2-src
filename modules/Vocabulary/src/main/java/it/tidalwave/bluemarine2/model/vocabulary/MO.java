@@ -69,9 +69,11 @@ public final class MO
     public static final IRI C_PERFORMANCE           = FACTORY.createIRI(S_C_PERFORMANCE);
 
     // Properties
+    public static final String S_P_AMAZON_ASIN      = PREFIX + "amazon_asin";
     public static final String S_P_BITS_PER_SAMPLE  = PREFIX + "bitsPerSample";
     public static final String S_P_DURATION         = PREFIX + "duration";
     public static final String S_P_ENCODES          = PREFIX + "encodes";
+    public static final String S_P_GTIN             = PREFIX + "gtin";
     public static final String S_P_TRACK            = PREFIX + "track";
     public static final String S_P_MEDIA_TYPE       = PREFIX + "media_type";
     public static final String S_P_MUSICBRAINZ_GUID = PREFIX + "musicbrainz_guid";
@@ -88,9 +90,11 @@ public final class MO
     public static final String S_P_SOPRANO          = PREFIX + "soprano";
     public static final String S_P_RECORDED_AS      = PREFIX + "recorded_as";
 
+    public static final IRI P_AMAZON_ASIN           = FACTORY.createIRI(S_P_AMAZON_ASIN);
     public static final IRI P_BITS_PER_SAMPLE       = FACTORY.createIRI(S_P_BITS_PER_SAMPLE);
     public static final IRI P_DURATION              = FACTORY.createIRI(S_P_DURATION);
     public static final IRI P_ENCODES               = FACTORY.createIRI(S_P_ENCODES);
+    public static final IRI P_GTIN                  = FACTORY.createIRI(S_P_GTIN);
     public static final IRI P_TRACK                 = FACTORY.createIRI(S_P_TRACK);
     public static final IRI P_MEDIA_TYPE            = FACTORY.createIRI(S_P_MEDIA_TYPE);
     public static final IRI P_MUSICBRAINZ_GUID      = FACTORY.createIRI(S_P_MUSICBRAINZ_GUID);
