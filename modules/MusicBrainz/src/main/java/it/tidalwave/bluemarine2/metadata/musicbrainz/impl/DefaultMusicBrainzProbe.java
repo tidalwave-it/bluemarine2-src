@@ -167,11 +167,11 @@ public class DefaultMusicBrainzProbe
 
     /*******************************************************************************************************************
      *
-     *
+     * Aggregate of a {@link Release} and {@link Medium}.
      *
      ******************************************************************************************************************/
     @RequiredArgsConstructor @Getter
-    public static class ReleaseAndMedium
+    static class ReleaseAndMedium
       {
         @Nonnull
         private final Release release;
@@ -182,7 +182,7 @@ public class DefaultMusicBrainzProbe
 
     /*******************************************************************************************************************
      *
-     *
+     * Aggregate of a {@link Relation} and a target type.
      *
      ******************************************************************************************************************/
     @RequiredArgsConstructor(access = PRIVATE) @Getter
@@ -203,11 +203,16 @@ public class DefaultMusicBrainzProbe
 
     /*******************************************************************************************************************
      *
+     * Downloads and imports MusicBrainz data for the given {@link Metadata}.
      *
+     * @param   metadata                the {@code Metadata}
+     * @return                          the RDF triples
+     * @throws  InterruptedException    in case of I/O error
+     * @throws  IOException             in case of I/O error
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Model probe (final @Nonnull Metadata metadata)
+    public Model handleMetadata (final @Nonnull Metadata metadata)
       throws InterruptedException, IOException
       {
         final ModelBuilder model = createModelBuilder();
@@ -241,7 +246,12 @@ public class DefaultMusicBrainzProbe
 
     /*******************************************************************************************************************
      *
+     * Extracts data from the given release.
      *
+     * @param   ram                     the release
+     * @return                          the RDF triples
+     * @throws  InterruptedException    in case of I/O error
+     * @throws  IOException             in case of I/O error
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -269,7 +279,13 @@ public class DefaultMusicBrainzProbe
 
     /*******************************************************************************************************************
      *
+     * Extracts data from the given {@link DefTrackData}.
      *
+     * @param   trackIri                the IRI of the track we're handling
+     * @param   track                   the track
+     * @return                          the RDF triples
+     * @throws  InterruptedException    in case of I/O error
+     * @throws  IOException             in case of I/O error
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -299,8 +315,12 @@ public class DefaultMusicBrainzProbe
 
     /*******************************************************************************************************************
      *
+     * Extracts data from the relations of the given {@link Recording}.
      *
-     *
+     * @param   trackIri    the IRI of the track we're handling
+     * @param   recording   the {@code Recording}
+     * @return              the RDF triples
+    *
      ******************************************************************************************************************/
     @Nonnull
     private ModelBuilder handleTrackRelations (final @Nonnull IRI trackIri, final @Nonnull Recording recording)
@@ -315,7 +335,12 @@ public class DefaultMusicBrainzProbe
 
     /*******************************************************************************************************************
      *
+     * Extracts data from a relation of the given {@link Recording}.
      *
+     * @param   trackIri    the IRI of the track we're handling
+     * @param   recording   the {@code Recording}
+     * @param   ratt        the relation
+     * @return              the RDF triples
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -326,7 +351,7 @@ public class DefaultMusicBrainzProbe
         final Relation relation = ratt.getRelation();
         final String targetType = ratt.getTargetType();
         final List<Attribute> attributes = getAttributes(relation);
-        final Target target = relation.getTarget();
+//        final Target target = relation.getTarget();
         final String type   = relation.getType();
         final Artist artist = relation.getArtist();
 
@@ -355,17 +380,6 @@ public class DefaultMusicBrainzProbe
 //                        relation.getBegin();
 //                        relation.getEnd();
 //                        relation.getEnded();
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private static ModelBuilder createModelBuilder()
-      {
-        return new ModelBuilder(SOURCE_MUSICBRAINZ);
       }
 
     /*******************************************************************************************************************
@@ -430,7 +444,10 @@ public class DefaultMusicBrainzProbe
 
     /*******************************************************************************************************************
      *
+     * Returns {@code true} if the given {@link Medium} is of a meaningful type (that is, a CD).
      *
+     * @param   medium  the {@code Medium}
+     * @return          {@code true} if there is a match
      *
      ******************************************************************************************************************/
     private static boolean matchesFormat (final @Nonnull Medium medium)
@@ -446,7 +463,10 @@ public class DefaultMusicBrainzProbe
 
     /*******************************************************************************************************************
      *
+     * Returns {@code true} i the given {@link Medium} matches the track offsets in the given {@link Cddb}.
      *
+     * @param   medium  the {@code Medium}
+     * @return          {@code true} if there is a match
      *
      ******************************************************************************************************************/
     private boolean matchesTrackOffsets (final @Nonnull Medium medium, final @Nonnull Cddb cddb)
@@ -454,7 +474,6 @@ public class DefaultMusicBrainzProbe
         final List<Cddb> cddbs = cddbsOf(medium);
         final boolean matches = cddbs.stream().anyMatch(c -> cddb.matches(c, trackOffsetsMatchThreshold));
 
-//                    if (!cddbs.isEmpty() && !matches)
         if (!matches)
           {
             synchronized (log) // keep log lines together
@@ -470,7 +489,10 @@ public class DefaultMusicBrainzProbe
 
     /*******************************************************************************************************************
      *
+     * Returns the CDDB title extracted from the given {@link Metadata}.
      *
+     * @param   metadata    the {@code Metadata}
+     * @return              the title
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -491,10 +513,14 @@ public class DefaultMusicBrainzProbe
 
         if (!albumCddb.matches(requestedCddb, trackOffsetsMatchThreshold))
           {
-            log.info(">>>> discarded alternate title because mismatching track offsets: {}", dTitle);
-            log.debug(">>>>>>>> found track offsets:    {}", albumCddb.getTrackFrameOffsets());
-            log.debug(">>>>>>>> searched track offsets: {}", requestedCddb.getTrackFrameOffsets());
-            log.debug(">>>>>>>> ppm                     {}", albumCddb.computeDifference(requestedCddb));
+            synchronized (log) // keep log lines together
+              {
+                log.info(">>>> discarded alternate title because of mismatching track offsets: {}", dTitle);
+                log.debug(">>>>>>>> found track offsets:    {}", albumCddb.getTrackFrameOffsets());
+                log.debug(">>>>>>>> searched track offsets: {}", requestedCddb.getTrackFrameOffsets());
+                log.debug(">>>>>>>> ppm                     {}", albumCddb.computeDifference(requestedCddb));
+              }
+
             return Optional.empty();
           }
 
@@ -525,6 +551,17 @@ public class DefaultMusicBrainzProbe
      *
      ******************************************************************************************************************/
     @Nonnull
+    private static ModelBuilder createModelBuilder()
+      {
+        return new ModelBuilder(SOURCE_MUSICBRAINZ);
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
     private static IRI predicateFor (final @Nonnull String role)
       {
         return Objects.requireNonNull(PERFORMER_MAP.get(role), "Cannot map role: " + role);
@@ -546,7 +583,7 @@ public class DefaultMusicBrainzProbe
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static IRI musicBrainzIriFor (final @Nonnull String resourceType, final @Nonnull String id)
+    private static IRI musicBrainzIriFor (final @Nonnull String resourceType, final @Nonnull String id)
       {
         return FACTORY.createIRI(String.format("http://musicbrainz.org/%s/%s", resourceType, id));
       }

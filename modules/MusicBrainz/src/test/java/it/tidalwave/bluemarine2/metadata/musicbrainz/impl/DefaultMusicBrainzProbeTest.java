@@ -160,7 +160,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
         stats.putIfAbsent(testSetName, new Stats());
         stats.get(testSetName).count.incrementAndGet();
         // when
-        final Model model = underTest.probe(metadata);
+        final Model model = underTest.handleMetadata(metadata);
         // then
         if (!model.isEmpty())
           {
@@ -220,7 +220,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
                 .filter(triple -> !triple.getFilePath().toString().contains("Compilations/Rachmaninov_ Piano Concertos #2 & 3"))
                 .filter(triple -> triple.getFilePath().getFileName().toString().startsWith("01"))
 
-                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20160504-1"))
+//                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20160504-1"))
 //                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20161210-1"))
 //                .filter(triple -> triple.getFilePath().toString().contains("Trio 99_00"))
 //                .filter(triple -> triple.getFilePath().toString().contains("La Divina 2"))
