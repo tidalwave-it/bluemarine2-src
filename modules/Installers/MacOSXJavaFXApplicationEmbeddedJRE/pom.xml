@@ -49,7 +49,7 @@
     <artifactId>bluemarine2-application-javafx-macosx-embedded-jre</artifactId>
     <version>1.0-ALPHA-16-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>blueMarine II - Installer - JavaFX Application, Mac OS X, embedded JRE</name>
+    <name>blueMarine II - Installers - JavaFX Application, Mac OS X, embedded JRE</name>
     <description>This module creates a Mac OS X application bundle with an embedded JRE.</description>
 
     <dependencies>

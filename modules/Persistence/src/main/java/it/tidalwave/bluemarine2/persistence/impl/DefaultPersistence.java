@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.persistence.impl;
 
+import it.tidalwave.bluemarine2.util.SortingRDFHandler;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.Optional;

@@ -49,7 +49,7 @@
     <artifactId>bluemarine2-application-javafx-linux-armv6-embedded-jre</artifactId>
     <version>1.0-ALPHA-16-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>blueMarine II - Installer - JavaFX Application, Linux ARM v6, embedded JRE</name>
+    <name>blueMarine II - Installers - JavaFX Application, Linux ARM v6, embedded JRE</name>
     <description>This module creates a Linux ARM v6 application bundle with an embedded JRE.</description>
 
     <properties>

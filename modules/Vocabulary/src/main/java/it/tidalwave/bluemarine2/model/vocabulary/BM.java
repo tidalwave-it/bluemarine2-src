@@ -80,37 +80,37 @@ public final class BM
 //    public static final IRI FAILED_MB_METADATA          = factory.createIRI(PREFIX + "failedMusicBrainzMetadata");
 
     @Nonnull
-    public static IRI audioFileUriFor (final @Nonnull Id id)
+    public static IRI audioFileIriFor (final @Nonnull Id id)
       {
         return factory.createIRI("urn:bluemarine:audiofile:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI signalUriFor (final @Nonnull Id id)
+    public static IRI signalIriFor (final @Nonnull Id id)
       {
         return factory.createIRI("urn:bluemarine:signal:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI localTrackUriFor (final @Nonnull Id id)
+    public static IRI localTrackIriFor (final @Nonnull Id id)
       {
         return factory.createIRI("urn:bluemarine:track:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI localRecordUriFor (final @Nonnull Id id)
+    public static IRI localRecordIriFor (final @Nonnull Id id)
       {
         return factory.createIRI("urn:bluemarine:record:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI localArtistUriFor (final @Nonnull Id id)
+    public static IRI localArtistIriFor (final @Nonnull Id id)
       {
         return factory.createIRI("urn:bluemarine:artist:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI musicBrainzUriFor (final @Nonnull String resourceType, final @Nonnull Id id)
+    public static IRI musicBrainzIriFor (final @Nonnull String resourceType, final @Nonnull Id id)
       {
         return factory.createIRI(String.format("http://dbtune.org/musicbrainz/resource/%s/%s",
                                                resourceType, id.stringValue()));
