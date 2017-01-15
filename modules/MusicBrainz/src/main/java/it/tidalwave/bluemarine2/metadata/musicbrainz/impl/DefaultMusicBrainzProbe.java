@@ -222,7 +222,7 @@ public class DefaultMusicBrainzProbe
                                                    .map(ReleaseGroupList::getReleaseGroup)
                                                    .orElse(emptyList()));
 
-            final Optional<String> cddbTitle = cddbTitle(metadata);
+            final Optional<String> cddbTitle = cddbTitleOf(metadata);
             cddbTitle.map(_f(mbMetadataProvider::findReleaseGroupByTitle)).ifPresent(response ->
               {
                 log.info("======== ALSO USING ALTERNATE TITLE: {}", cddbTitle.get());
@@ -292,7 +292,7 @@ public class DefaultMusicBrainzProbe
             .with(trackIri,  RDFS.LABEL,         literalFor(trackTitle))
             .with(trackIri,  DC.TITLE,           literalFor(trackTitle))
             .with(trackIri,  MO.P_TRACK_NUMBER,  literalFor(track.getPosition().intValue()))
-            .merge(handleTrackRelations(recording, trackIri));
+            .merge(handleTrackRelations(trackIri, recording));
 //        bmmo:diskCount "1"^^xs:int ;
 //        bmmo:diskNumber "1"^^xs:int ;
       }
@@ -303,13 +303,13 @@ public class DefaultMusicBrainzProbe
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ModelBuilder handleTrackRelations (final @Nonnull Recording recording, final @Nonnull IRI trackIri)
+    private ModelBuilder handleTrackRelations (final @Nonnull IRI trackIri, final @Nonnull Recording recording)
       {
         return createModelBuilder().merge(recording.getRelationList()
                                                    .stream()
                                                    .parallel()
                                                    .flatMap(RelationAndTargetType::toStream)
-                                                   .map(ratt ->  handleTrackRelation(ratt, trackIri, recording))
+                                                   .map(ratt ->  handleTrackRelation(trackIri, recording, ratt))
                                                    .collect(toList()));
       }
 
@@ -319,9 +319,9 @@ public class DefaultMusicBrainzProbe
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ModelBuilder handleTrackRelation (final @Nonnull RelationAndTargetType ratt,
-                                              final @Nonnull IRI trackIri,
-                                              final @Nonnull Recording recording)
+    private ModelBuilder handleTrackRelation (final @Nonnull IRI trackIri,
+                                              final @Nonnull Recording recording,
+                                              final @Nonnull RelationAndTargetType ratt)
       {
         final Relation relation = ratt.getRelation();
         final String targetType = ratt.getTargetType();
@@ -329,6 +329,13 @@ public class DefaultMusicBrainzProbe
         final Target target = relation.getTarget();
         final String type   = relation.getType();
         final Artist artist = relation.getArtist();
+
+        log.info(">>>>>>>>>>>> {} {} {} {} ({})", targetType,
+                                                  type,
+                                                  attributes.stream().map(a -> toString(a)).collect(toList()),
+                                                  artist.getName(),
+                                                  artist.getId());
+
         final IRI performanceIri = musicBrainzIriFor("performance", recording.getId()); // FIXME: MB namespace?
         final IRI artistIri      = musicBrainzIriFor("artist", artist.getId());
         final ModelBuilder model = createModelBuilder()
@@ -338,11 +345,6 @@ public class DefaultMusicBrainzProbe
             .with(artistIri,       RDFS.LABEL,       literalFor(artist.getName()))
             .with(artistIri,       FOAF.NAME,        literalFor(artist.getName()));
 
-        log.info(">>>>>>>>>>>> {} {} {} {} ({})", targetType,
-                                                  type,
-                                                  attributes.stream().map(a -> toString(a)).collect(toList()),
-                                                  artist.getName(),
-                                                  artist.getId());
         if ("artist".equals(targetType))
           {
             predicatesForArtists(type, attributes)
@@ -411,7 +413,7 @@ public class DefaultMusicBrainzProbe
         return releaseGroups.stream()
             .parallel()
             .filter(releaseGroup -> scoreOf(releaseGroup) >= releaseGroupScoreThreshold)
-            .peek(releaseGroup -> logArtists(releaseGroup))
+            .peek(this::logArtists)
             .flatMap(releaseGroup -> releaseGroup.getReleaseList().getRelease().stream())
             .peek(release -> log.info(">>>>>>>> release: {} {}", release.getId(), release.getTitle()))
             .flatMap(_f(release -> mbMetadataProvider.getResource(RELEASE, release.getId(), RELEASE_INCLUDES).get()
@@ -424,20 +426,6 @@ public class DefaultMusicBrainzProbe
             // FIXME: should stop at the first found?
             .collect(toMap(ram -> ram.getRelease().getId(), ram -> ram, (u, v) -> v, TreeMap::new))
             .values();
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    private void logArtists (final @Nonnull ReleaseGroup releaseGroup)
-      {
-        log.debug(">>>> {} {} {} artist: {}",
-                  releaseGroup.getOtherAttributes().get(QNAME_SCORE),
-                  releaseGroup.getId(),
-                  releaseGroup.getTitle(),
-                  releaseGroup.getArtistCredit().getNameCredit().stream().map(nc -> nc.getArtist().getName()).collect(toList()));
       }
 
     /*******************************************************************************************************************
@@ -486,7 +474,7 @@ public class DefaultMusicBrainzProbe
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Optional<String> cddbTitle (final @Nonnull Metadata metadata)
+    private Optional<String> cddbTitleOf (final @Nonnull Metadata metadata)
       throws IOException, InterruptedException
       {
         final RestResponse<CddbAlbum> album2 = cddbMetadataProvider.findCddbAlbum(metadata);
@@ -561,6 +549,20 @@ public class DefaultMusicBrainzProbe
     public static IRI musicBrainzIriFor (final @Nonnull String resourceType, final @Nonnull String id)
       {
         return FACTORY.createIRI(String.format("http://musicbrainz.org/%s/%s", resourceType, id));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private void logArtists (final @Nonnull ReleaseGroup releaseGroup)
+      {
+        log.debug(">>>> {} {} {} artist: {}",
+                  releaseGroup.getOtherAttributes().get(QNAME_SCORE),
+                  releaseGroup.getId(),
+                  releaseGroup.getTitle(),
+                  releaseGroup.getArtistCredit().getNameCredit().stream().map(nc -> nc.getArtist().getName()).collect(toList()));
       }
 
     /*******************************************************************************************************************
