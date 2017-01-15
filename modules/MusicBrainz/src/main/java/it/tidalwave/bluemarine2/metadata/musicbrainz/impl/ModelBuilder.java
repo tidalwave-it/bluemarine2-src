@@ -10,6 +10,7 @@ package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.ThreadSafe;
 import java.util.List;
+import lombok.RequiredArgsConstructor;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.Resource;
@@ -28,6 +29,18 @@ import org.eclipse.rdf4j.model.impl.TreeModel;
 public class ModelBuilder
   {
     private final Model model = new TreeModel();
+
+    private final @Nonnull Resource[] contexts;
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    public ModelBuilder (final @Nonnull Resource ... contexts)
+      {
+        this.contexts = contexts;
+      }
 
     /*******************************************************************************************************************
      *
