@@ -223,7 +223,7 @@ public class CachingRestClientSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ResponseEntity<String> requestFromNetwork (final @Nonnull String url)
+    private synchronized ResponseEntity<String> requestFromNetwork (final @Nonnull String url)
       throws IOException, InterruptedException
       {
         log.debug("requestFromNetwork({})", url);

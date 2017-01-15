@@ -35,6 +35,7 @@ import org.musicbrainz.ns.mmd_2.Metadata;
 import org.musicbrainz.ns.mmd_2.Recording;
 import org.musicbrainz.ns.mmd_2.Release;
 import org.musicbrainz.ns.mmd_2.ReleaseGroupList;
+import org.musicbrainz.ns.mmd_2.ReleaseList;
 import it.tidalwave.bluemarine2.rest.RestResponse;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -61,6 +62,8 @@ public interface MusicBrainzMetadataProvider
 
     public static final ResourceType<Recording> RECORDING = new ResourceType<>("recording", Metadata::getRecording);
 
+    public static final ResourceType<ReleaseList> DISC_ID = new ResourceType<>("discId", Metadata::getReleaseList);
+
     /*******************************************************************************************************************
      *
      *
@@ -68,6 +71,15 @@ public interface MusicBrainzMetadataProvider
      ******************************************************************************************************************/
     @Nonnull
     public RestResponse<ReleaseGroupList> findReleaseGroupByTitle (@Nonnull String title, @Nonnull String ... includes)
+      throws IOException, InterruptedException;
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public RestResponse<ReleaseList> findReleaseListByToc (@Nonnull String toc, @Nonnull String ... includes)
       throws IOException, InterruptedException;
 
     /*******************************************************************************************************************

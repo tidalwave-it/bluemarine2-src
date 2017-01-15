@@ -29,20 +29,21 @@
 package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 
 import javax.annotation.Nonnull;
+import java.util.Arrays;
+import java.util.stream.Stream;
 import java.io.IOException;
 import org.springframework.http.ResponseEntity;
 import org.musicbrainz.ns.mmd_2.Metadata;
-import org.musicbrainz.ns.mmd_2.Release;
 import org.musicbrainz.ns.mmd_2.ReleaseGroupList;
+import org.musicbrainz.ns.mmd_2.ReleaseList;
 import it.tidalwave.bluemarine2.rest.CachingRestClientSupport;
 import it.tidalwave.bluemarine2.rest.RestResponse;
 import it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.escape;
-import java.util.stream.Stream;
 import static java.util.stream.Collectors.*;
+import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.*;
 
 /***********************************************************************************************************************
  *
@@ -55,12 +56,23 @@ public class DefaultMusicBrainzMetadataProvider extends CachingRestClientSupport
   {
     private static final String URL_RELEASE_GROUP = "http://%s/ws/2/release-group/?query=release:%s";
 
-//    private static final String URL_RELEASE = "http://%s/ws/2/release/%s?inc=aliases,artist-credits,discids,labels,recordings";
-//    private static final String URL_RELEASE = "http://%s/ws/2/release/%s?inc=aliases%%2bartist-credits%%2bdiscids%%2blabels%%2brecordings";
+    private static final String URL_DISCID = "http://%s/ws/2/discid/?toc=%s%s";
+
     private static final String URL_RESOURCE = "http://%s/ws/2/%s/%s%s";
 
     @Getter @Setter
     private String host = "musicbrainz.org";
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    public DefaultMusicBrainzMetadataProvider()
+      {
+        // sometimes MusicBrainz returns HTTP 500, but it's usually transitory
+        setRetryStatusCodes(Arrays.asList(500, 503));
+      }
 
     /*******************************************************************************************************************
      *
@@ -83,13 +95,28 @@ public class DefaultMusicBrainzMetadataProvider extends CachingRestClientSupport
      *
      ******************************************************************************************************************/
     @Override @Nonnull
+    public RestResponse<ReleaseList> findReleaseListByToc (final @Nonnull String toc,
+                                                           final @Nonnull String ... includes)
+      throws IOException, InterruptedException
+      {
+        log.info("findReleaseListByToc({}, {})", toc, includes);
+        final ResponseEntity<String> response = request(String.format(URL_DISCID, host, toc, includesToString("&", includes)));
+        return MusicBrainzResponse.of(response, Metadata::getReleaseList);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
     public <T> RestResponse<T> getResource (final @Nonnull ResourceType<T> resourceType,
                                             final @Nonnull String id,
                                             final @Nonnull String ... includes)
       throws IOException, InterruptedException
       {
         log.info("getResource({}. {}, {})", resourceType, id, includes);
-        final String url = String.format(URL_RESOURCE, host, resourceType.getName(), id, includesToString(includes));
+        final String url = String.format(URL_RESOURCE, host, resourceType.getName(), id, includesToString("?", includes));
         return MusicBrainzResponse.of(request(url), resourceType.getResultProvider());
       }
 
@@ -98,8 +125,8 @@ public class DefaultMusicBrainzMetadataProvider extends CachingRestClientSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static String includesToString (final @Nonnull String ... includes)
+    private static String includesToString (final @Nonnull String separator, final @Nonnull String ... includes)
       {
-        return Stream.of(includes).collect(joining("%2b", "?inc=", ""));
+        return Stream.of(includes).collect(joining("%2b", separator + "inc=", ""));
       }
   }

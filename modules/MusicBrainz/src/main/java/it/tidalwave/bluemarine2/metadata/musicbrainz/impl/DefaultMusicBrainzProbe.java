@@ -50,7 +50,7 @@ import org.musicbrainz.ns.mmd_2.RelationList;
 import org.musicbrainz.ns.mmd_2.Release;
 import org.musicbrainz.ns.mmd_2.ReleaseGroup;
 import org.musicbrainz.ns.mmd_2.ReleaseGroupList;
-import org.musicbrainz.ns.mmd_2.Target;
+import org.musicbrainz.ns.mmd_2.ReleaseList;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.ValueFactory;
@@ -89,6 +89,8 @@ public class DefaultMusicBrainzProbe
     private static final QName QNAME_SCORE = new QName("http://musicbrainz.org/ns/ext#-2.0", "score");
 
     private final static ValueFactory FACTORY = SimpleValueFactory.getInstance();
+
+    private static final String[] TOC_INCLUDES = { "aliases", "artist-credits", "labels", "recordings" };
 
     private static final String[] RELEASE_INCLUDES = { "aliases", "artist-credits", "discids", "labels", "recordings" };
 
@@ -221,24 +223,34 @@ public class DefaultMusicBrainzProbe
 
         if (albumTitle.isPresent() && !albumTitle.get().trim().isEmpty() && cddb.isPresent())
           {
-            log.info("============ PROBING METADATA FOR {}", albumTitle);
-            final List<ReleaseGroup> releaseGroups = new ArrayList<>();
-            releaseGroups.addAll(mbMetadataProvider.findReleaseGroupByTitle(albumTitle.get())
-                                                   .map(ReleaseGroupList::getReleaseGroup)
-                                                   .orElse(emptyList()));
+            log.info("============ PROBING TOC FOR {}", albumTitle);
+            final List<ReleaseAndMedium> rams = new ArrayList<>();
+            final RestResponse<ReleaseList> releaseList = mbMetadataProvider.findReleaseListByToc(cddb.get().getToc(), TOC_INCLUDES);
 
-            final Optional<String> cddbTitle = cddbTitleOf(metadata);
-            cddbTitle.map(_f(mbMetadataProvider::findReleaseGroupByTitle)).ifPresent(response ->
+            releaseList.ifPresent(releases -> rams.addAll(findReleases(releases, cddb.get())));
+
+            if (rams.isEmpty())
               {
-                log.info("======== ALSO USING ALTERNATE TITLE: {}", cddbTitle.get());
-                releaseGroups.addAll(response.get().getReleaseGroup());
-              });
+                log.info("============ PROBING METADATA FOR {}", albumTitle);
+                final List<ReleaseGroup> releaseGroups = new ArrayList<>();
+                releaseGroups.addAll(mbMetadataProvider.findReleaseGroupByTitle(albumTitle.get())
+                                                       .map(ReleaseGroupList::getReleaseGroup)
+                                                       .orElse(emptyList()));
 
-            // What about this? http://musicbrainz.org//ws/2/discid/-?toc=1+12+267257+150+22767+41887+58317+72102+91375+104652+115380+132165+143932+159870+174597
-            model.merge(findReleases(releaseGroups, cddb.get()).stream()
-                                                               .parallel()
-                                                               .map(_f(this::handleRelease))
-                                                               .collect(toList()));
+                final Optional<String> cddbTitle = cddbTitleOf(metadata);
+                cddbTitle.map(_f(mbMetadataProvider::findReleaseGroupByTitle)).ifPresent(response ->
+                  {
+                    log.info("======== ALSO USING ALTERNATE TITLE: {}", cddbTitle.get());
+                    releaseGroups.addAll(response.get().getReleaseGroup());
+                  });
+
+                rams.addAll(findReleases(releaseGroups, cddb.get()));
+              }
+
+            model.merge(rams.stream()
+                            .parallel()
+                            .map(_f(this::handleRelease))
+                            .collect(toList()));
           }
 
         return model.toModel();
@@ -426,10 +438,42 @@ public class DefaultMusicBrainzProbe
                                                        final @Nonnull Cddb cddb)
       {
         return releaseGroups.stream()
+                            .parallel()
+                            .filter(releaseGroup -> scoreOf(releaseGroup) >= releaseGroupScoreThreshold)
+                            .peek(this::logArtists)
+                            .map(releaseGroup -> releaseGroup.getReleaseList())
+                            .flatMap(releaseList -> findReleases(releaseList, cddb).stream())
+                            .collect(toList());
+//            .peek(release -> log.info(">>>>>>>> release: {} {}", release.getId(), release.getTitle()))
+//            .flatMap(_f(release -> mbMetadataProvider.getResource(RELEASE, release.getId(), RELEASE_INCLUDES).get()
+//                            .getMediumList().getMedium()
+//                            .stream()
+//                            .map(medium -> new ReleaseAndMedium(release, medium))))
+//            .filter(ram -> matchesFormat(ram.getMedium()))
+//            .filter(ram -> matchesTrackOffsets(ram.getMedium(), cddb))
+//            .peek(ram -> log.info(">>>>>>>> FOUND {} - with score {}", ram.getMedium().getTitle(), 0 /* scoreOf(releaseGroup) FIXME */))
+//            // FIXME: should stop at the first found?
+//            .collect(toMap(ram -> ram.getRelease().getId(), ram -> ram, (u, v) -> v, TreeMap::new))
+//            .values();
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Given a {@link ReleaseList}, navigates into it and extract all CD {@link Medium}s that match the given CDDB track
+     * offsets.
+     *
+     * @param   releaseList     the {@code ReleaseList}
+     * @param   cddb            the track offsets
+     * @return                  a collection of filtered {@code Medium}s
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private Collection<ReleaseAndMedium> findReleases (final @Nonnull ReleaseList releaseList,
+                                                       final @Nonnull Cddb cddb)
+      {
+        return releaseList.getRelease().stream()
             .parallel()
-            .filter(releaseGroup -> scoreOf(releaseGroup) >= releaseGroupScoreThreshold)
-            .peek(this::logArtists)
-            .flatMap(releaseGroup -> releaseGroup.getReleaseList().getRelease().stream())
+//            .peek(this::logArtists)
             .peek(release -> log.info(">>>>>>>> release: {} {}", release.getId(), release.getTitle()))
             .flatMap(_f(release -> mbMetadataProvider.getResource(RELEASE, release.getId(), RELEASE_INCLUDES).get()
                             .getMediumList().getMedium()
