@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -378,59 +379,87 @@ public class DefaultMusicBrainzProbe
 
     /*******************************************************************************************************************
      *
+     * Given a list of {@link ReleaseGroup}s, navigates into it and extract all CD {@link Medium}s that match the
+     * given CDDB track offsets.
      *
+     * @param   releaseGroups   the {@code ReleaseGroup}s
+     * @param   cddb            the track offsets
+     * @return                  a collection of filtered {@code Medium}s
      *
      ******************************************************************************************************************/
     @Nonnull
-    private List<ReleaseAndMedium> findReleases (final @Nonnull List<ReleaseGroup> releaseGroups, final @Nonnull Cddb cddb)
-      throws IOException, InterruptedException
+    private Collection<ReleaseAndMedium> findReleases (final @Nonnull List<ReleaseGroup> releaseGroups,
+                                                       final @Nonnull Cddb cddb)
       {
-        final Map<String, ReleaseAndMedium> found = new TreeMap<>();
+        return releaseGroups.stream()
+            .filter(releaseGroup -> scoreOf(releaseGroup) >= releaseGroupScoreThreshold)
+            .peek(releaseGroup -> logArtists(releaseGroup))
+            .flatMap(releaseGroup -> releaseGroup.getReleaseList().getRelease().stream())
+            .peek(release -> log.info(">>>>>>>> release: {} {}", release.getId(), release.getTitle()))
+            .flatMap(_f(release -> mbMetadataProvider.getResource(RELEASE, release.getId(), RELEASE_INCLUDES).get()
+                            .getMediumList().getMedium()
+                            .stream()
+                            .map(medium -> new ReleaseAndMedium(release, medium))))
+            .filter(ram -> matchesFormat(ram.getMedium()))
+            .filter(ram -> matchesTrackOffsets(ram.getMedium(), cddb))
+            .peek(ram -> log.info(">>>>>>>> FOUND {} - with score {}", ram.getMedium().getTitle(), 0 /* scoreOf(releaseGroup) */))
+            // FIXME: should stop at the first found?
+            .collect(toMap(ram -> ram.getRelease().getId(), ram -> ram, (u, v) -> v, TreeMap::new))
+            .values();
+      }
 
-        releaseGroups.stream().filter(releaseGroup -> scoreOf(releaseGroup) >= releaseGroupScoreThreshold)
-                              .forEach(releaseGroup ->
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private void logArtists (final @Nonnull ReleaseGroup releaseGroup)
+      {
+        log.debug(">>>> {} {} {} artist: {}",
+                  releaseGroup.getOtherAttributes().get(QNAME_SCORE),
+                  releaseGroup.getId(),
+                  releaseGroup.getTitle(),
+                  releaseGroup.getArtistCredit().getNameCredit().stream().map(nc -> nc.getArtist().getName()).collect(toList()));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private static boolean matchesFormat (final @Nonnull Medium medium)
+      {
+        if (!"CD".equals(medium.getFormat()))
           {
-            log.debug(">>>> {} {} {} artist: {}",
-                      releaseGroup.getOtherAttributes().get(QNAME_SCORE),
-                      releaseGroup.getId(),
-                      releaseGroup.getTitle(),
-                      releaseGroup.getArtistCredit().getNameCredit().stream().map(nc -> nc.getArtist().getName()).collect(toList()));
+            log.info(">>>>>>>> discarded {} because not a CD ({})", medium.getTitle(), medium.getFormat());
+            return false;
+          }
 
-            releaseGroup.getReleaseList().getRelease().stream()
-//                                                      .parallel()
-                                                      .forEach(_c(release ->
-              {
-                log.info(">>>>>>>> release: {} {}", release.getId(), release.getTitle());
-                final Release release2 = mbMetadataProvider.getResource(RELEASE, release.getId(), RELEASE_INCLUDES).get();
+        return true;
+      }
 
-                for (final Medium medium : release2.getMediumList().getMedium())
-                  {
-                    if (!"CD".equals(medium.getFormat()))
-                      {
-                        log.info(">>>>>>>> discarded {} because not a CD ({})", medium.getTitle(), medium.getFormat());
-                        continue;
-                      }
-
-                    final List<Cddb> cddbs = cddbsOf(medium);
-                    final boolean matches = cddbs.stream().anyMatch(c -> cddb.matches(c, trackOffsetsMatchThreshold));
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private boolean matchesTrackOffsets (final @Nonnull Medium medium, final @Nonnull Cddb cddb)
+      {
+        final List<Cddb> cddbs = cddbsOf(medium);
+        final boolean matches = cddbs.stream().anyMatch(c -> cddb.matches(c, trackOffsetsMatchThreshold));
 
 //                    if (!cddbs.isEmpty() && !matches)
-                    if (!matches)
-                      {
-                        log.info(">>>>>>>> discarded {} because track offsets don't match", medium.getTitle());
-                        log.debug(">>>>>>>> iTunes offsets: {}", cddb.getTrackFrameOffsets());
-                        cddbs.forEach(c -> log.debug(">>>>>>>> found offsets:  {}", c.getTrackFrameOffsets()));
-                        continue;
-                      }
+        if (!matches)
+          {
+            synchronized (log) // keep log lines together
+              {
+                log.info(">>>>>>>> discarded {} because track offsets don't match", medium.getTitle());
+                log.debug(">>>>>>>> iTunes offsets: {}", cddb.getTrackFrameOffsets());
+                cddbs.forEach(c -> log.debug(">>>>>>>> found offsets:  {}", c.getTrackFrameOffsets()));
+              }
+          }
 
-                    log.info(">>>>>>>> FOUND {} - from score {}", medium.getTitle(), scoreOf(releaseGroup));
-                    found.put(release.getId(), new ReleaseAndMedium(release, medium));
-                    // FIXME: should break, not only this loop, but also the one on releaseGroup
-                  }
-              }));
-          });
-
-        return new ArrayList<>(found.values());
+        return matches;
       }
 
     /*******************************************************************************************************************
