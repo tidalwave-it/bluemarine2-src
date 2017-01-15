@@ -303,13 +303,12 @@ public class DefaultMusicBrainzProbe
 //                    track.getRecording().getAliasList().getAlias().get(0).getSortName();
         log.info(">>>>>>>> {}. {}", position, trackTitle);
 
-//                http://musicbrainz.org/ws/2/recording/7e5766ea-c4a7-4091-a915-74208710d409?inc=aliases%2Bartist-credits%2Breleases%2bartist-rels
         return createModelBuilder()
-            .with(recordIri, MO.P_TRACK,         trackIri)
-            .with(trackIri,  RDF.TYPE,           MO.C_TRACK)
-            .with(trackIri,  RDFS.LABEL,         literalFor(trackTitle))
-            .with(trackIri,  DC.TITLE,           literalFor(trackTitle))
-            .with(trackIri,  MO.P_TRACK_NUMBER,  literalFor(track.getPosition().intValue()))
+            .with(recordIri, MO.P_TRACK,          trackIri)
+            .with(trackIri,  RDF.TYPE,            MO.C_TRACK)
+            .with(trackIri,  RDFS.LABEL,          literalFor(trackTitle))
+            .with(trackIri,  DC.TITLE,            literalFor(trackTitle))
+            .with(trackIri,  MO.P_TRACK_NUMBER,   literalFor(track.getPosition().intValue()))
             .merge(handleTrackRelations(trackIri, recording));
 //        bmmo:diskCount "1"^^xs:int ;
 //        bmmo:diskNumber "1"^^xs:int ;
