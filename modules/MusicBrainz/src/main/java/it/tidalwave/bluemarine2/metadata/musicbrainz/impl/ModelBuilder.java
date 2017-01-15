@@ -45,7 +45,7 @@ public class ModelBuilder
      *
      *
      ******************************************************************************************************************/
-    public synchronized ModelBuilder add (final @Nonnull Resource subjext,
+    public synchronized ModelBuilder with (final @Nonnull Resource subjext,
                                   final @Nonnull IRI predicate,
                                   final @Nonnull Value object,
                                   final @Nonnull Resource... contexts)

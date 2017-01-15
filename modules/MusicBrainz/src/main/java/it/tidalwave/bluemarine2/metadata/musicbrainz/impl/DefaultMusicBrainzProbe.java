@@ -226,20 +226,19 @@ public class DefaultMusicBrainzProbe
         final Release release = ram.getRelease();
         final String recordTitle = release.getTitle();
         final IRI recordIri = musicBrainzIriFor("record", release.getId());
-        final ModelBuilder model = new ModelBuilder();
-        model.add(recordIri, RDF.TYPE,          MO.C_RECORD);
-        model.add(recordIri, MO.P_MEDIA_TYPE,   MO.C_CD);
-        model.add(recordIri, RDFS.LABEL,        literalFor(recordTitle));
-        model.add(recordIri, DC.TITLE,          literalFor(recordTitle));
-        model.add(recordIri, MO.P_TRACK_COUNT,  literalFor(tracks.size()));
+        return new ModelBuilder()
+            .with(recordIri, RDF.TYPE,         MO.C_RECORD)
+            .with(recordIri, MO.P_MEDIA_TYPE,  MO.C_CD)
+            .with(recordIri, RDFS.LABEL,       literalFor(recordTitle))
+            .with(recordIri, DC.TITLE,         literalFor(recordTitle))
+            .with(recordIri, MO.P_TRACK_COUNT, literalFor(tracks.size()))
+            .merge(tracks.stream().parallel()
+                                  .map(_f(track -> handleTrack(recordIri, track)))
+                                  .collect(toList()));
         // TODO: medium discId
         // TODO: <barcode>093624763222</barcode>
         // TODO: <asin>B000046S1F</asin>
         // TODO: record producer - requires inc=artist-rels
-        return model.merge(tracks.stream()
-                                 .parallel()
-                                 .map(_f(track -> handleTrack(recordIri, track)))
-                                 .collect(toList()));
       }
 
     /*******************************************************************************************************************
@@ -261,15 +260,15 @@ public class DefaultMusicBrainzProbe
         log.info(">>>>>>>> {}. {}", position, trackTitle);
 
 //                http://musicbrainz.org/ws/2/recording/7e5766ea-c4a7-4091-a915-74208710d409?inc=aliases%2Bartist-credits%2Breleases%2bartist-rels
-        final ModelBuilder model = new ModelBuilder();
-        model.add(recordIri, MO.P_TRACK,         trackIri);
-        model.add(trackIri,  RDF.TYPE,           MO.C_TRACK);
-        model.add(trackIri,  RDFS.LABEL,         literalFor(trackTitle));
-        model.add(trackIri,  DC.TITLE,           literalFor(trackTitle));
-        model.add(trackIri,  MO.P_TRACK_NUMBER,  literalFor(track.getPosition().intValue()));
+        return new ModelBuilder()
+            .with(recordIri, MO.P_TRACK,         trackIri)
+            .with(trackIri,  RDF.TYPE,           MO.C_TRACK)
+            .with(trackIri,  RDFS.LABEL,         literalFor(trackTitle))
+            .with(trackIri,  DC.TITLE,           literalFor(trackTitle))
+            .with(trackIri,  MO.P_TRACK_NUMBER,  literalFor(track.getPosition().intValue()))
+            .merge(handleTrackRelations(recording, trackIri));
 //        bmmo:diskCount "1"^^xs:int ;
 //        bmmo:diskNumber "1"^^xs:int ;
-        return model.merge(handleTrackRelations(recording, trackIri));
       }
 
     /*******************************************************************************************************************
@@ -312,12 +311,12 @@ public class DefaultMusicBrainzProbe
         final Artist artist = relation.getArtist();
         final IRI performanceIri = musicBrainzIriFor("performance", recording.getId()); // FIXME: MB namespace?
         final IRI artistIri      = musicBrainzIriFor("artist", artist.getId());
-        final ModelBuilder model = new ModelBuilder();
-        model.add(performanceIri,  RDF.TYPE,         MO.C_PERFORMANCE);
-        model.add(performanceIri,  MO.P_RECORDED_AS, trackIri); // FIXME: Signal, not Track
-        model.add(artistIri,       RDF.TYPE,         MO.C_MUSIC_ARTIST);
-        model.add(artistIri,       RDFS.LABEL,       literalFor(artist.getName()));
-        model.add(artistIri,       FOAF.NAME,        literalFor(artist.getName()));
+        final ModelBuilder model = new ModelBuilder()
+            .with(performanceIri,  RDF.TYPE,         MO.C_PERFORMANCE)
+            .with(performanceIri,  MO.P_RECORDED_AS, trackIri) // FIXME: Signal, not Track
+            .with(artistIri,       RDF.TYPE,         MO.C_MUSIC_ARTIST)
+            .with(artistIri,       RDFS.LABEL,       literalFor(artist.getName()))
+            .with(artistIri,       FOAF.NAME,        literalFor(artist.getName()));
 
         log.info(">>>>>>>>>>>> {} {} {} {} ({})", targetType,
                                                   type,
@@ -327,7 +326,7 @@ public class DefaultMusicBrainzProbe
         if ("artist".equals(targetType))
           {
             predicatesForArtists(type, attributes)
-                    .forEach(predicate -> model.add(performanceIri, predicate, artistIri));
+                    .forEach(predicate -> model.with(performanceIri, predicate, artistIri));
           }
 
         return model;
