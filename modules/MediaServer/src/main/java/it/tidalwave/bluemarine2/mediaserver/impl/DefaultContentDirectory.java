@@ -38,21 +38,21 @@ import java.util.Optional;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.springframework.beans.factory.annotation.Autowired;
+import it.tidalwave.role.Displayable;
+import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder.EntityCollectionFactory;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import it.tidalwave.bluemarine2.model.impl.PathAwareMediaFolderDecorator;
 import it.tidalwave.bluemarine2.mediaserver.ContentDirectory;
 import it.tidalwave.bluemarine2.mediaserver.spi.MediaServerService;
-import it.tidalwave.bluemarine2.model.impl.PathAwareMediaFolderDecorator;
-import it.tidalwave.role.Displayable;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.Identifiable.Identifiable;
-import it.tidalwave.role.spi.DefaultDisplayable;
 
 /***********************************************************************************************************************
  *

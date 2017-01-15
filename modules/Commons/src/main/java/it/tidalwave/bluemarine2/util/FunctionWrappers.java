@@ -3,7 +3,7 @@
  * *********************************************************************************************************************
  *
  * blueMarine2 - Semantic Media Center
- * http://bluemarine2.tidalwave.it - git clone https://bitbucket.org/tidalwave/bluemarine2-src.git
+ * http://bluemarine2.tidalwave.it - git clone https://tidalwave@bitbucket.org/tidalwave/bluemarine2-src.git
  * %%
  * Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
  * %%
@@ -26,34 +26,63 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.vocabulary;
+package it.tidalwave.bluemarine2.util;
 
-import org.eclipse.rdf4j.model.IRI;
-import org.eclipse.rdf4j.model.ValueFactory;
-import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
-import lombok.AccessLevel;
+import java.util.function.Consumer;
+import java.util.function.Function;
 import lombok.NoArgsConstructor;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class DbTune
+@NoArgsConstructor(access = PRIVATE)
+public final class FunctionWrappers
   {
-    private final static ValueFactory FACTORY = SimpleValueFactory.getInstance();
+    @FunctionalInterface
+    public static interface FunctionWithException<T, R>
+      {
+        R apply (T t)
+          throws Exception;
+      }
 
-    public static final String PREFIX = "http://dbtune.org/musicbrainz/resource/vocab/";
+    @FunctionalInterface
+    public static interface ConsumerWithException<T>
+      {
+        void accept (T t)
+          throws Exception;
+      }
 
-    public static final String S_ALBUMMETA_COVERART_URL     = PREFIX + "albummeta_coverarturl";
-    public static final String S_ARTIST_TYPE                = PREFIX + "artist_type";
-    public static final String S_SORT_NAME                  = PREFIX + "sortname";
+    public static <T, R> Function<T, R> _f (final FunctionWithException<T, R> function)
+      {
+        return t ->
+          {
+            try
+              {
+                return function.apply(t);
+              }
+            catch (Exception e)
+              {
+                throw new RuntimeException(e);
+              }
+          };
+      }
 
-    public static final IRI ARTIST_TYPE                     = FACTORY.createIRI(S_ARTIST_TYPE);
-
-    public static final IRI SORT_NAME                       = FACTORY.createIRI(S_SORT_NAME);
-
-    public static final IRI ALBUMMETA_COVERART_URL          = FACTORY.createIRI(S_ALBUMMETA_COVERART_URL);
+    public static <T> Consumer<T> _c (final ConsumerWithException<T> consumer)
+      {
+        return t ->
+          {
+            try
+              {
+                consumer.accept(t);
+              }
+            catch (Exception e)
+              {
+                throw new RuntimeException(e);
+              }
+          };
+      }
   }
