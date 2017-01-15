@@ -392,6 +392,7 @@ public class DefaultMusicBrainzProbe
                                                        final @Nonnull Cddb cddb)
       {
         return releaseGroups.stream()
+            .parallel()
             .filter(releaseGroup -> scoreOf(releaseGroup) >= releaseGroupScoreThreshold)
             .peek(releaseGroup -> logArtists(releaseGroup))
             .flatMap(releaseGroup -> releaseGroup.getReleaseList().getRelease().stream())
@@ -402,7 +403,7 @@ public class DefaultMusicBrainzProbe
                             .map(medium -> new ReleaseAndMedium(release, medium))))
             .filter(ram -> matchesFormat(ram.getMedium()))
             .filter(ram -> matchesTrackOffsets(ram.getMedium(), cddb))
-            .peek(ram -> log.info(">>>>>>>> FOUND {} - with score {}", ram.getMedium().getTitle(), 0 /* scoreOf(releaseGroup) */))
+            .peek(ram -> log.info(">>>>>>>> FOUND {} - with score {}", ram.getMedium().getTitle(), 0 /* scoreOf(releaseGroup) FIXME */))
             // FIXME: should stop at the first found?
             .collect(toMap(ram -> ram.getRelease().getId(), ram -> ram, (u, v) -> v, TreeMap::new))
             .values();
