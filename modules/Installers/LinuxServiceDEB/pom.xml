@@ -49,7 +49,7 @@
     <artifactId>bluemarine2-service-linux</artifactId>
     <version>1.0-ALPHA-16-SNAPSHOT</version>
     <packaging>deb</packaging>
-    <name>blueMarine II - Installer - Headless Service, Linux DEB</name>
+    <name>blueMarine II - Installers - Headless Service, Linux DEB</name>
     <description>This module creates a Linux service bundle.</description>
 
     <properties>

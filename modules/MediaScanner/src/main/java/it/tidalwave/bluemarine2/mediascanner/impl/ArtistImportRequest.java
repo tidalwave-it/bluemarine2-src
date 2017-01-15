@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-//import org.musicbrainz.ns.mmd_2.Artist;
 import it.tidalwave.util.Id;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -43,11 +42,8 @@ import lombok.ToString;
  *
  **********************************************************************************************************************/
 @Immutable @RequiredArgsConstructor @Getter @ToString
-public class ArtistImportRequest 
+public class ArtistImportRequest
   {
     @Nonnull
     private final Id artistId;
-    
-//    @Nonnull
-//    private final Artist artist;
   }

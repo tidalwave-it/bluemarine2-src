@@ -31,14 +31,14 @@
                 ?signal       mo:published_as         ?track.
                 ?signal       mo:duration             ?duration.
 
-                OPTIONAL
-                  {
-                    ?signal       bm:fileSize             ?fileSize.
-                  }
-
                 ?audioFile    a                       mo:AudioFile.
                 ?audioFile    mo:encodes              ?signal.
                 ?audioFile    bm:path                 ?path.
+
+                OPTIONAL
+                  {
+                    ?audioFile    bm:fileSize             ?fileSize.
+                  }
               }
             ORDER BY
                 ?record_label
