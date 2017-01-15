@@ -37,6 +37,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.TreeMap;
+import java.util.stream.Stream;
 import javax.xml.namespace.QName;
 import java.io.IOException;
 import org.musicbrainz.ns.mmd_2.Artist;
@@ -73,6 +74,7 @@ import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.*;
 import static it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider.*;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
@@ -183,6 +185,27 @@ public class DefaultMusicBrainzProbe
      *
      *
      ******************************************************************************************************************/
+    @RequiredArgsConstructor(access = PRIVATE) @Getter
+    static class RelationAndTargetType
+      {
+        @Nonnull
+        private final Relation relation;
+
+        @Nonnull
+        private final String targetType;
+
+        @Nonnull
+        public static Stream<RelationAndTargetType> toStream (final @Nonnull RelationList relationList)
+          {
+            return relationList.getRelation().stream().map(relation -> new RelationAndTargetType(relation, relationList.getTargetType()));
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public Model probe (final @Nonnull Metadata metadata)
       throws InterruptedException, IOException
@@ -282,19 +305,12 @@ public class DefaultMusicBrainzProbe
     @Nonnull
     private ModelBuilder handleTrackRelations (final @Nonnull Recording recording, final @Nonnull IRI trackIri)
       {
-        final ModelBuilder model = createModelBuilder();
-
-        for (final RelationList relationList : recording.getRelationList())
-          {
-            final String targetType = relationList.getTargetType();
-            model.merge(relationList.getRelation()
-                                    .stream()
-                                    .parallel()
-                                    .map(relation ->  handleTrackRelation(targetType, trackIri, recording, relation))
-                                    .collect(toList()));
-          }
-
-        return model;
+        return createModelBuilder().merge(recording.getRelationList()
+                                                   .stream()
+                                                   .parallel()
+                                                   .flatMap(RelationAndTargetType::toStream)
+                                                   .map(ratt ->  handleTrackRelation(ratt, trackIri, recording))
+                                                   .collect(toList()));
       }
 
     /*******************************************************************************************************************
@@ -303,11 +319,12 @@ public class DefaultMusicBrainzProbe
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ModelBuilder handleTrackRelation (final @Nonnull String targetType,
+    private ModelBuilder handleTrackRelation (final @Nonnull RelationAndTargetType ratt,
                                               final @Nonnull IRI trackIri,
-                                              final @Nonnull Recording recording,
-                                              final @Nonnull Relation relation)
+                                              final @Nonnull Recording recording)
       {
+        final Relation relation = ratt.getRelation();
+        final String targetType = ratt.getTargetType();
         final List<Attribute> attributes = getAttributes(relation);
         final Target target = relation.getTarget();
         final String type   = relation.getType();
