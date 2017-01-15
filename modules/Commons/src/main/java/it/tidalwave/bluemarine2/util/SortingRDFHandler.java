@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.persistence.impl;
+package it.tidalwave.bluemarine2.util;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
