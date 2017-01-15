@@ -40,6 +40,7 @@ import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 import lombok.Getter;
 import lombok.Setter;
@@ -122,6 +123,27 @@ public class CachingRestClientSupport
      *
      *
      ******************************************************************************************************************/
+    private static final ResponseErrorHandler IGNORE_HTTP_ERRORS = new ResponseErrorHandler()
+      {
+        @Override
+        public boolean hasError (final ClientHttpResponse response)
+          throws IOException
+          {
+            return false;
+          }
+
+        @Override
+        public void handleError (final ClientHttpResponse response)
+          throws IOException
+          {
+          }
+      };
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
     private final ClientHttpRequestInterceptor interceptor = new ClientHttpRequestInterceptor()
       {
         @Override
@@ -145,6 +167,7 @@ public class CachingRestClientSupport
     public CachingRestClientSupport()
       {
         restTemplate.setInterceptors(singletonList(interceptor));
+        restTemplate.setErrorHandler(IGNORE_HTTP_ERRORS);
       }
 
     /*******************************************************************************************************************

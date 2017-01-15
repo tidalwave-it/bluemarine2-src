@@ -30,16 +30,15 @@ package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
-import org.springframework.http.HttpStatus;
+import java.util.function.Function;
+import java.io.StringReader;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import org.musicbrainz.ns.mmd_2.Metadata;
 import org.springframework.http.ResponseEntity;
 import it.tidalwave.bluemarine2.rest.RestException;
 import it.tidalwave.bluemarine2.rest.RestResponse;
-import java.io.StringReader;
-import java.util.function.Function;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
 import lombok.extern.slf4j.Slf4j;
-import org.musicbrainz.ns.mmd_2.Metadata;
 
 /***********************************************************************************************************************
  *
@@ -78,21 +77,28 @@ class MusicBrainzResponse<T> extends RestResponse<T>
                                                  final @Nonnull Function<Metadata, X> function)
       {
         final int httpStatus = response.getStatusCodeValue();
+        final String statusCodeAsString = response.getStatusCode().toString();
 
-        if (httpStatus != HttpStatus.OK.value())
+        switch (httpStatus)
           {
-            throw new RestException("Unexpected HTTP status", response.getStatusCode());
-          }
+            case 200: // OK
+                try
+                  {
+                    final JAXBContext ctx = JAXBContext.newInstance("org.musicbrainz.ns.mmd_2");
+                    final Metadata metadata = (Metadata)ctx.createUnmarshaller().unmarshal(new StringReader(response.getBody()));
+                    return new MusicBrainzResponse<>(Optional.of(function.apply(metadata)), statusCodeAsString);
+                  }
+                catch (JAXBException e)
+                  {
+                    throw new RuntimeException(e);
+                  }
 
-        try
-          {
-            final JAXBContext ctx = JAXBContext.newInstance("org.musicbrainz.ns.mmd_2");
-            final Metadata metadata = (Metadata)ctx.createUnmarshaller().unmarshal(new StringReader(response.getBody()));
-            return new MusicBrainzResponse<>(Optional.of(function.apply(metadata)), "");
-          }
-        catch (JAXBException e)
-          {
-            throw new RuntimeException(e);
+            case 400: // BAD REQUEST
+                log.warn(">>>> returning HTTP status code: {}", response.getStatusCode());
+                return new MusicBrainzResponse<>(Optional.empty(), statusCodeAsString);
+
+            default:
+                throw new RestException("Unexpected HTTP status: " + response.getStatusCode(), response.getStatusCode());
           }
       }
   }
