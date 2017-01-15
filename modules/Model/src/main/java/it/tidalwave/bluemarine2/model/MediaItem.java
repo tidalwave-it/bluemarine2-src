@@ -118,6 +118,13 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
 
             private final int discLength;
 
+            @Nonnull
+            public String getToc()
+              {
+                return String.format("1+%d+%d+%s", trackFrameOffsets.length, discLength,
+                                                   Arrays.toString(trackFrameOffsets).replace(", ", "+").replace("[", "").replace("]", ""));
+              }
+
             public boolean matches (final @Nonnull Cddb other, final @Nonnegative int threshold)
               {
                 if (Arrays.equals(this.trackFrameOffsets, other.trackFrameOffsets))
@@ -181,6 +188,7 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
             public Cddb getCddb()
               {
                 return Cddb.builder().discId(cddb1.split("\\+")[0])
+                                     .discLength(Integer.parseInt(cddb1.split("\\+")[1]))
                                      .trackFrameOffsets(Stream.of(cddb1.split("\\+"))
                                                               .skip(3)
                                                               .mapToInt(Integer::parseInt)

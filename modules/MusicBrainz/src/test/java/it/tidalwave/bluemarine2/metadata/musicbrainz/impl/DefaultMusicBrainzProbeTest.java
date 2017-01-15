@@ -30,7 +30,9 @@ package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -46,6 +48,7 @@ import it.tidalwave.bluemarine2.util.SortingRDFHandler;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.metadata.cddb.impl.DefaultCddbMetadataProvider;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -58,7 +61,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
-import org.testng.annotations.AfterTest;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB;
 
 /***********************************************************************************************************************
  *
@@ -75,24 +78,30 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
 
     private DefaultMusicBrainzProbe underTest;
 
-    private final Map<String, Stats> stats = new TreeMap<>();
+    private final Map<String, TestSetStats> stats = new TreeMap<>();
 
     private ModelBuilder modelBuilder;
 
     private String latestTestSetName;
 
+    private final Set<String> unmatched = new TreeSet<>();
+
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    static class Stats
+    static class TestSetStats
       {
         private final AtomicInteger count = new AtomicInteger(0);
+
         private final AtomicInteger found = new AtomicInteger(0);
+
+        private final AtomicInteger withoutCddb = new AtomicInteger(0);
 
         @Override @Nonnull
         public String toString()
           {
-            return String.format("%s/%s (%d%%)", found, count, (found.intValue() * 100) / count.intValue());
+            return String.format("matched: %s/%s (%d%%) - without CDDB: %s",
+                                 found, count, (found.intValue() * 100) / count.intValue(), withoutCddb);
           }
       }
 
@@ -113,6 +122,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
         underTest = new DefaultMusicBrainzProbe(cddbMetadataProvider, musicBrainzMetadataProvider);
 
         stats.clear();
+        unmatched.clear();
         modelBuilder = new ModelBuilder();
       }
 
@@ -136,6 +146,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
     public void printStats()
       {
         log.info("STATS: {}", stats.entrySet().stream().map(Object::toString).collect(joining(", ")));
+        unmatched.forEach(path -> log.info("STATS: unmatched with CDDB: {}", path));
       }
 
     /*******************************************************************************************************************
@@ -157,15 +168,30 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
 
         final Metadata metadata = mockMetadataFrom(triple.getFilePath());
 
-        stats.putIfAbsent(testSetName, new Stats());
-        stats.get(testSetName).count.incrementAndGet();
+        stats.putIfAbsent(testSetName, new TestSetStats());
+        final TestSetStats testSetStats = stats.get(testSetName);
+        testSetStats.count.incrementAndGet();
         // when
         final Model model = underTest.handleMetadata(metadata);
         // then
-        if (!model.isEmpty())
+        final boolean matched = !model.isEmpty();
+        final boolean hasCddb = metadata.get(CDDB).isPresent();
+
+        if (matched)
           {
-            stats.get(testSetName).found.incrementAndGet();
+            testSetStats.found.incrementAndGet();
             modelBuilder.merge(model);
+          }
+
+        if (!hasCddb)
+          {
+            testSetStats.withoutCddb.incrementAndGet();
+          }
+
+        if (!matched && hasCddb)
+          {
+            final String recordName = triple.getRelativePath().getParent().getFileName().toString();
+            unmatched.add(recordName + " / " + metadata.get(CDDB).get().getToc());
           }
 
         exportToFile(model, actualResult);
@@ -220,7 +246,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
                 .filter(triple -> !triple.getFilePath().toString().contains("Compilations/Rachmaninov_ Piano Concertos #2 & 3"))
                 .filter(triple -> triple.getFilePath().getFileName().toString().startsWith("01"))
 
-//                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20160504-1"))
+                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20160504-1"))
 //                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20161210-1"))
 //                .filter(triple -> triple.getFilePath().toString().contains("Trio 99_00"))
 //                .filter(triple -> triple.getFilePath().toString().contains("La Divina 2"))
