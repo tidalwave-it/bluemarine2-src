@@ -34,6 +34,7 @@ import java.util.Optional;
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Path;
+import java.util.Arrays;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpRequest;
@@ -46,6 +47,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.*;
+import java.util.List;
+import javax.annotation.Nonnegative;
 import static org.springframework.http.HttpHeaders.*;
 
 /***********************************************************************************************************************
@@ -115,6 +118,12 @@ public class CachingRestClientSupport
 
     @Getter @Setter
     private long throttleLimit;
+
+    @Getter @Setter @Nonnegative
+    private int maxRetry = 3;
+
+    @Getter @Setter
+    private List<Integer> retryStatusCodes = Arrays.asList(503);
 
     private long latestNetworkAccessTimestamp = 0;
 
@@ -218,20 +227,33 @@ public class CachingRestClientSupport
       throws IOException, InterruptedException
       {
         log.debug("requestFromNetwork({})", url);
+        ResponseEntity<String> response = null;
 
-        final long now = System.currentTimeMillis();
-        final long delta = now - latestNetworkAccessTimestamp;
-        final long toWait = Math.max(throttleLimit - delta, 0);
-
-        if (toWait > 0)
+        for (int retry = 0; retry < maxRetry; retry++)
           {
-            log.info(">>>> throttle limit: waiting for {} msec...", toWait);
-            Thread.sleep(toWait);
+            final long now = System.currentTimeMillis();
+            final long delta = now - latestNetworkAccessTimestamp;
+            final long toWait = Math.max(throttleLimit - delta, 0);
+
+            if (toWait > 0)
+              {
+                log.info(">>>> throttle limit: waiting for {} msec...", toWait);
+                Thread.sleep(toWait);
+              }
+
+            latestNetworkAccessTimestamp = now;
+            response = restTemplate.getForEntity(URI.create(url), String.class);
+            final int httpStatusCode = response.getStatusCodeValue();
+            log.debug(">>>> HTTP status code: {}", httpStatusCode);
+
+            if (!retryStatusCodes.contains(httpStatusCode))
+              {
+                break;
+              }
+
+            log.warn("HTTP status code: {} - retry #{}", httpStatusCode, retry + 1);
           }
 
-        latestNetworkAccessTimestamp = now;
-        final ResponseEntity<String> response = restTemplate.getForEntity(URI.create(url), String.class);
-//        final ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
 //        log.trace(">>>> response: {}", response);
         return response;
       }
@@ -252,7 +274,13 @@ public class CachingRestClientSupport
             try
               {
                 final ResponseEntity<String> response = requestFromNetwork(url);
-                ResponseEntityIo.store(cachePath.resolve(fixedPath(url)), response, emptyList());
+                final int httpStatusCode = response.getStatusCodeValue();
+
+                if (!retryStatusCodes.contains(httpStatusCode))
+                  {
+                    ResponseEntityIo.store(cachePath.resolve(fixedPath(url)), response, emptyList());
+                  }
+
                 return response;
               }
             catch (IOException | InterruptedException e)
