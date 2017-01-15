@@ -63,25 +63,31 @@ public class ResponseEntityIo
     public static void store (final @Nonnull Path path,
                               final @Nonnull ResponseEntity<String> response,
                               final @Nonnull List<String> ignoredHeaders)
-      throws IOException
       {
-        log.trace("store({}, ..., ...)", path);
-
-        Files.createDirectories(path.getParent());
-        final StringWriter sw = new StringWriter();
-
-        try (final PrintWriter pw = new PrintWriter(sw))
+        try
           {
-            pw.printf("HTTP/1.1 %d %s%n", response.getStatusCode().value(), response.getStatusCode().name());
-            response.getHeaders().entrySet().stream()
-                    .filter(e -> !ignoredHeaders.contains(e.getKey()))
-                    .sorted(comparing(e -> e.getKey()))
-                    .forEach(e -> pw.printf("%s: %s%n", e.getKey(), e.getValue().get(0)));
-            pw.println();
-            pw.print(response.getBody());
-          }
+            log.trace("store({}, ..., ...)", path);
 
-        Files.write(path, Arrays.asList(sw.toString()), UTF_8);
+            Files.createDirectories(path.getParent());
+            final StringWriter sw = new StringWriter();
+
+            try (final PrintWriter pw = new PrintWriter(sw))
+              {
+                pw.printf("HTTP/1.1 %d %s%n", response.getStatusCode().value(), response.getStatusCode().name());
+                response.getHeaders().entrySet().stream()
+                        .filter(e -> !ignoredHeaders.contains(e.getKey()))
+                        .sorted(comparing(e -> e.getKey()))
+                        .forEach(e -> pw.printf("%s: %s%n", e.getKey(), e.getValue().get(0)));
+                pw.println();
+                pw.print(response.getBody());
+              }
+
+            Files.write(path, Arrays.asList(sw.toString()), UTF_8);
+          }
+        catch (IOException e)
+          {
+            log.error("Coundln't store a cache item {}", path);
+          }
       }
 
     /*******************************************************************************************************************
