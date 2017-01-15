@@ -58,6 +58,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
+import org.testng.annotations.AfterTest;
 
 /***********************************************************************************************************************
  *
@@ -76,6 +77,13 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
 
     private final Map<String, Stats> stats = new TreeMap<>();
 
+    private ModelBuilder modelBuilder;
+
+    private String latestTestSetName;
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     static class Stats
       {
         private final AtomicInteger count = new AtomicInteger(0);
@@ -105,6 +113,18 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
         underTest = new DefaultMusicBrainzProbe(cddbMetadataProvider, musicBrainzMetadataProvider);
 
         stats.clear();
+        modelBuilder = new ModelBuilder();
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @AfterTest
+    public void dumpRepository()
+      throws IOException
+      {
+          exportToFile(modelBuilder.toModel(), TEST_RESULTS.resolve("musicbrainz").resolve(latestTestSetName + ".n3"));
+          // TODO assertion
       }
 
     /*******************************************************************************************************************
@@ -128,7 +148,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
       throws Exception
       {
         // given
-        final String testSetName = triple.getTestSetName();
+        final String testSetName = latestTestSetName = triple.getTestSetName();
         cddbMetadataProvider.setCachePath(CDDB_CACHE.resolve(testSetName));
         musicBrainzMetadataProvider.setCachePath(MUSICBRAINZ_CACHE.resolve(testSetName));
         final Path relativePath = Paths.get(triple.getRelativePath().toString().replaceAll("-dump\\.txt$", ".n3"));
@@ -145,6 +165,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
         if (!model.isEmpty())
           {
             stats.get(testSetName).found.incrementAndGet();
+            modelBuilder.merge(model);
           }
 
         exportToFile(model, actualResult);
@@ -199,7 +220,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
                 .filter(triple -> !triple.getFilePath().toString().contains("Compilations/Rachmaninov_ Piano Concertos #2 & 3"))
                 .filter(triple -> triple.getFilePath().getFileName().toString().startsWith("01"))
 
-//                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20160504-1"))
+                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20160504-1"))
 //                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20161210-1"))
 //                .filter(triple -> triple.getFilePath().toString().contains("Trio 99_00"))
 //                .filter(triple -> triple.getFilePath().toString().contains("La Divina 2"))

@@ -45,10 +45,11 @@ public class ModelBuilder
      *
      *
      ******************************************************************************************************************/
+    @Nonnull
     public synchronized ModelBuilder with (final @Nonnull Resource subjext,
-                                  final @Nonnull IRI predicate,
-                                  final @Nonnull Value object,
-                                  final @Nonnull Resource... contexts)
+                                           final @Nonnull IRI predicate,
+                                           final @Nonnull Value object,
+                                           final @Nonnull Resource... contexts)
       {
         model.add(subjext, predicate, object, contexts);
         return this;
@@ -59,9 +60,21 @@ public class ModelBuilder
      *
      *
      ******************************************************************************************************************/
+    @Nonnull
     public synchronized ModelBuilder merge (final @Nonnull ModelBuilder other)
       {
-        other.toModel().forEach(statement -> model.add(statement));
+        return merge(other.toModel());
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public synchronized ModelBuilder merge (final @Nonnull Model other)
+      {
+        other.forEach(statement -> model.add(statement));
         return this;
       }
 
@@ -70,6 +83,7 @@ public class ModelBuilder
      *
      *
      ******************************************************************************************************************/
+    @Nonnull
     public synchronized ModelBuilder merge (final @Nonnull List<ModelBuilder> others)
       {
         others.stream().map(other -> other.toModel()).forEach(m -> m.forEach(statement -> model.add(statement)));
