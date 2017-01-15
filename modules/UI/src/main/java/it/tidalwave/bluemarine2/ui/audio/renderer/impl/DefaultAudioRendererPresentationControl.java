@@ -260,7 +260,7 @@ public class DefaultAudioRendererPresentationControl
     private void changeTrack (final @Nonnull AudioFile audioFile)
       throws MediaPlayer.Exception
       {
-        final boolean wasPlaying = mediaPlayer.statusProperty().get().equals(Status.PLAYING);
+        final boolean wasPlaying = mediaPlayer.statusProperty().get().equals(PLAYING);
 
         if (wasPlaying)
           {

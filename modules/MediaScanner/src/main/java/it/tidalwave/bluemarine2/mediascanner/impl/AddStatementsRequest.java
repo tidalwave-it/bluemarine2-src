@@ -48,15 +48,14 @@ import lombok.ToString;
  *
  **********************************************************************************************************************/
 @Immutable @RequiredArgsConstructor @Getter @ToString
-public class AddStatementsRequest 
+public class AddStatementsRequest
   {
     @Nonnull
     private final List<Statement> statements;
-    
-    
-    public AddStatementsRequest (final @Nonnull Resource subject, 
+
+    public AddStatementsRequest (final @Nonnull Resource subject,
                                  final @Nonnull IRI predicate,
-                                 final @Nonnull Value object) 
+                                 final @Nonnull Value object)
       {
         this(Arrays.asList(SimpleValueFactory.getInstance().createStatement(subject, predicate, object)));
       }
