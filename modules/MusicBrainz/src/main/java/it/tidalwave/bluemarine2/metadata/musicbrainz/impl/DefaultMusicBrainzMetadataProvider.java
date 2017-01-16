@@ -72,6 +72,8 @@ public class DefaultMusicBrainzMetadataProvider extends CachingRestClientSupport
       {
         // sometimes MusicBrainz returns HTTP 500, but it's usually transitory
         setRetryStatusCodes(Arrays.asList(500, 503));
+        setMaxRetry(10);
+        setThrottleLimit(1500);
       }
 
     /*******************************************************************************************************************
