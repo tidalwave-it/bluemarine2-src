@@ -26,8 +26,12 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.mediascanner.impl;
+package it.tidalwave.bluemarine2.metadata.impl.audio.embedded;
 
+import it.tidalwave.bluemarine2.mediascanner.impl.IdCreator;
+import it.tidalwave.bluemarine2.mediascanner.impl.MediaItemImportRequest;
+import it.tidalwave.bluemarine2.mediascanner.impl.ProgressHandler;
+import it.tidalwave.bluemarine2.mediascanner.impl.StatementManager;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import javax.inject.Inject;
@@ -133,7 +137,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  *
  **********************************************************************************************************************/
 @SimpleMessageSubscriber @Slf4j
-public class AudioEmbeddedMetadataManager
+public class EmbeddedAudioMetadataImporter
   {
     /*******************************************************************************************************************
      *

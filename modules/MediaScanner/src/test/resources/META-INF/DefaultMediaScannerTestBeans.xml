@@ -64,7 +64,7 @@
 
     <bean class="it.tidalwave.bluemarine2.mediascanner.impl.ProgressHandler" />
 
-    <bean class="it.tidalwave.bluemarine2.mediascanner.impl.AudioEmbeddedMetadataManager" />
+    <bean class="it.tidalwave.bluemarine2.metadata.impl.audio.embedded.EmbeddedAudioMetadataImporter" />
 
     <bean class="it.tidalwave.bluemarine2.mediascanner.impl.StatementManager" />
 
