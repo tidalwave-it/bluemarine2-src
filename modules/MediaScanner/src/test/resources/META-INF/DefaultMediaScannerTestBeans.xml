@@ -72,12 +72,6 @@
 
     <bean class="it.tidalwave.util.spi.MockInstantProvider" />
 
-    <bean class="it.tidalwave.bluemarine2.downloader.impl.DefaultDownloader" />
-
-    <bean class="it.tidalwave.bluemarine2.downloader.impl.SimpleHttpCacheStorage">
-        <property name="neverExpiring" value="true" />
-    </bean>
-
     <!-- FIXME: this should be mocked -->
     <bean class="it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem" />
 
