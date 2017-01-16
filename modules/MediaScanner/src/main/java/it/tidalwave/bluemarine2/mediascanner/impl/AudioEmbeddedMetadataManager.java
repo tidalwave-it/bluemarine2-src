@@ -32,12 +32,16 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import javax.inject.Inject;
 import java.time.Duration;
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Stream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Statement;
 import org.eclipse.rdf4j.model.Value;
@@ -46,7 +50,12 @@ import org.eclipse.rdf4j.model.vocabulary.DC;
 import org.eclipse.rdf4j.model.vocabulary.FOAF;
 import org.eclipse.rdf4j.model.vocabulary.RDF;
 import org.eclipse.rdf4j.model.vocabulary.RDFS;
+import it.tidalwave.util.ConcurrentHashMapWithOptionals;
+import it.tidalwave.util.Id;
+import it.tidalwave.util.InstantProvider;
 import it.tidalwave.util.Key;
+import it.tidalwave.messagebus.annotation.ListensTo;
+import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.vocabulary.BM;
@@ -66,11 +75,54 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
+ * FIXME: this doc must be updated
+ *
+ * mo:AudioFile
+ *      IRI                                                     computed from the fingerprint
+ *      foaf:sha1           the fingerprint of the file         locally computed
+ *      bm:latestInd.Time   the latest import time              locally computed
+ *      bm:path             the path of the file                locally computed
+ *      dc:title            the title                           locally computed    WRONG: USELESS?
+ *      rdfs:label          the display name                    locally computed    WRONG: should be the file name without path?
+ *      mo:encodes          points to the signal                locally computed
+ *
+ * mo:DigitalSignal
+ *      IRI                                                     computed from the fingerprint
+ *      mo:bitsPerSample    the bits per sample                 locally extracted from the file
+ *      mo:duration         the duration                        locally extracted from the file
+ *      mo:sample_rate      the sample rate                     locally extracted from the file
+ *      mo:published_as     points to the Track                 locally computed
+ *      MISSING mo:channels
+ *      MISSING? mo:time
+ *      MISSING? mo:trmid
+ *
+ * mo:Track
+ *      IRI                                                     the DbTune one if available, else computed from SHA1
+ *      mo:musicbrainz      the MusicBrainz IRI                 locally extracted from the file
+ *      dc:title            the title                           taken from DbTune
+ *      rdfs:label          the display name                    taken from DbTune
+ *      foaf:maker          points to the MusicArtist           taken from DbTune
+ *      mo:track_number     the track number in the record      taken from DbTune
+ *
+ * mo:Record
+ *      IRI                                                     taken from DbTune
+ *      dc:date
+ *      dc:language
+ *      dc:title            the title                           taken from DbTune
+ *      rdfs:label          the display name                    taken from DbTune
+ *      mo:release          TODO points to the Label (EMI, etc...)
+ *      mo:musicbrainz      the MusicBrainz IRI                 locally extracted from the file
+ *      mo:track            points to the Tracks                taken from DbTune
+ *      foaf:maker          points to the MusicArtist           taken from DbTune
+ *      owl:sameAs          point to external resources         taken from DbTune
+ *
+ * mo:Artist
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
+@SimpleMessageSubscriber @Slf4j
 public class AudioEmbeddedMetadataManager
   {
     /*******************************************************************************************************************
@@ -142,10 +194,19 @@ public class AudioEmbeddedMetadataManager
     private IdCreator idCreator;
 
     @Inject
-    private Shared shared;
+    private InstantProvider timestampProvider;
+
+    @Inject
+    private ProgressHandler progress;
 
     private static final Mapper SIGNAL_MAPPER = new Mapper();
     private static final Mapper TRACK_MAPPER = new Mapper();
+
+    // Set would suffice, but there's no ConcurrentSet
+    private final ConcurrentHashMapWithOptionals<IRI, Optional<String>> seenArtistUris =
+            new ConcurrentHashMapWithOptionals<>();
+
+    private final ConcurrentHashMapWithOptionals<IRI, Boolean> seenRecordUris = new ConcurrentHashMapWithOptionals<>();
 
     static
       {
@@ -161,6 +222,74 @@ public class AudioEmbeddedMetadataManager
 
     /*******************************************************************************************************************
      *
+     *
+     *
+     ******************************************************************************************************************/
+    private void reset()
+      {
+        // FIXME: should load existing URIs from the Persistence
+        seenArtistUris.clear();
+        seenRecordUris.clear();
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    /* VisibleForTesting */ void onMediaItemImportRequest (final @ListensTo @Nonnull MediaItemImportRequest request)
+      throws InterruptedException
+      {
+        try
+          {
+            log.info("onMediaItemImportRequest({})", request);
+            importMediaItem(request.getMediaItem());
+          }
+        finally
+          {
+            progress.incrementImportedMediaItems();
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Processes a {@link MediaItem}.
+     *
+     * @param                           audioFile   the item
+     *
+     ******************************************************************************************************************/
+    private void importMediaItem (final @Nonnull MediaItem audioFile)
+      {
+        log.debug("importMediaItem({})", audioFile);
+        final Id sha1 = idCreator.createSha1Id(audioFile.getPath());
+        final Metadata metadata = audioFile.getMetadata();
+
+        final IRI audioFileIri = BM.audioFileIriFor(sha1);
+        final IRI signalIri = BM.signalIriFor(sha1);
+        final IRI trackIri = createIriForEmbeddedTrack(metadata, sha1);
+
+        statementManager.requestAddStatements()
+            .with(audioFileIri,         RDF.TYPE,                MO.C_AUDIO_FILE)
+            .with(audioFileIri,         FOAF.SHA1,               literalFor(sha1))
+            .with(audioFileIri,         MO.P_ENCODES,            signalIri) // FIXME: this is path's SHA1, not contents'
+            .with(audioFileIri,         BM.PATH,                 literalFor(audioFile.getRelativePath()))
+            .with(audioFileIri,         BM.LATEST_INDEXING_TIME, literalFor(getLastModifiedTime(audioFile.getPath())))
+            // TODO why optional? Isn't file size always available?
+            .withOptional(audioFileIri, BM.FILE_SIZE,            metadata.get(FILE_SIZE).map(s -> literalFor(s)))
+
+            .with(        trackIri,     RDF.TYPE,                MO.C_TRACK)
+            .withOptional(trackIri,     BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
+                                                                                    .map(c -> c.getTrackId())))
+
+            .with(signalIri,            RDF.TYPE,                MO.C_DIGITAL_SIGNAL)
+            .with(signalIri,            MO.P_PUBLISHED_AS,       trackIri)
+            .publish();
+
+        importAudioFileMetadata(audioFile, signalIri, trackIri);
+        importFallbackTrackMetadata(audioFile, trackIri);
+      }
+
+    /*******************************************************************************************************************
+     *
      * Imports the metadata embedded in a file for the given {@link MediaItem}. It only processes the portion of
      * metadata which are never superseded by external catalogs (such as sample rate, duration, etc...).
      *
@@ -169,9 +298,9 @@ public class AudioEmbeddedMetadataManager
      * @param   trackUri                the IRI of the track
      *
      ******************************************************************************************************************/
-    public void importAudioFileMetadata (final @Nonnull MediaItem mediaItem,
-                                         final @Nonnull IRI signalUri,
-                                         final @Nonnull IRI trackUri)
+    private void importAudioFileMetadata (final @Nonnull MediaItem mediaItem,
+                                          final @Nonnull IRI signalUri,
+                                          final @Nonnull IRI trackUri)
       {
         log.debug("importAudioFileMetadata({}, {}, {})", mediaItem, signalUri, trackUri);
         final Metadata metadata = mediaItem.getMetadata();
@@ -187,7 +316,7 @@ public class AudioEmbeddedMetadataManager
      * @param   trackIri                the IRI of the track
      *
      ******************************************************************************************************************/
-    public void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull IRI trackIri)
+    private void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull IRI trackIri)
       {
         log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackIri);
 
@@ -197,24 +326,24 @@ public class AudioEmbeddedMetadataManager
         final Optional<String> title      = metadata.get(TITLE);
         final Optional<String> makerName  = metadata.get(ARTIST);
 
-        final List<IRI> makerUris = makerName.map(name -> asList(createIRIForEmbeddedArtist(name))).orElse(emptyList());
+        final List<IRI> makerUris = makerName.map(name -> asList(createIriForEmbeddedArtist(name))).orElse(emptyList());
         final List<Entry> artists = makerName.map(name -> Stream.of(name.split("[;]")).map(String::trim)).orElse(Stream.empty())
-                           .map(name -> new Entry(createIRIForEmbeddedArtist(name), name))
+                           .map(name -> new Entry(createIriForEmbeddedArtist(name), name))
                            .collect(toList());
 
         final List<Entry> newArtists   = artists.stream().filter(
-                e -> shared.seenArtistUris.putIfAbsentAndGetNewKey(e.getIri(), Optional.empty()).isPresent())
+                e -> seenArtistUris.putIfAbsentAndGetNewKey(e.getIri(), Optional.empty()).isPresent())
                 .collect(toList());
         final List<IRI> newArtistIris       = newArtists.stream().map(Entry::getIri).collect(toList());
         final List<Value> newArtistLiterals = newArtists.stream().map(e -> literalFor(e.getName())).collect(toList());
 
         final Optional<IRI> newGroupIri = (artists.size() <= 1) ? Optional.empty()
-                : shared.seenArtistUris.putIfAbsentAndGetNewKey(makerUris.get(0), Optional.empty()); // FIXME: only first one?
+                : seenArtistUris.putIfAbsentAndGetNewKey(makerUris.get(0), Optional.empty()); // FIXME: only first one?
 
         final PathAwareEntity parent     = mediaItem.getParent().get();
         final String recordTitle         = metadata.get(ALBUM).orElse(parent.getPath().toFile().getName());
-        final IRI recordIri              = createIRIForEmbeddedRecord(recordTitle);
-        final Optional<IRI> newRecordIri = shared.seenRecordUris.putIfAbsentAndGetNewKey(recordIri, true);
+        final IRI recordIri              = createIriForEmbeddedRecord(recordTitle);
+        final Optional<IRI> newRecordIri = seenRecordUris.putIfAbsentAndGetNewKey(recordIri, true);
 
         statementManager.requestAddStatements()
             .withOptional(trackIri,      RDFS.LABEL,                literalFor(title))
@@ -248,7 +377,25 @@ public class AudioEmbeddedMetadataManager
      *
      ******************************************************************************************************************/
     @Nonnull
-    private IRI createIRIForEmbeddedRecord (final @Nonnull String recordTitle)
+    private Instant getLastModifiedTime (final @Nonnull Path path)
+      {
+        try
+          {
+            return Files.getLastModifiedTime(path).toInstant();
+          }
+        catch (IOException e) // should never happen
+          {
+            log.warn("Cannot get last modified time for {}: assuming now", path);
+            return timestampProvider.getInstant();
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private IRI createIriForEmbeddedRecord (final @Nonnull String recordTitle)
       {
         return BM.localRecordIriFor(idCreator.createSha1("RECORD:" + recordTitle));
       }
@@ -258,7 +405,18 @@ public class AudioEmbeddedMetadataManager
      *
      ******************************************************************************************************************/
     @Nonnull
-    private IRI createIRIForEmbeddedArtist (final @Nonnull String name)
+    private IRI createIriForEmbeddedTrack (final @Nonnull Metadata metadata, final @Nonnull Id sha1)
+      {
+        // FIXME: the same contents in different places will give the same sha1. Disambiguates by hashing the path too?
+        return BM.localTrackIriFor(sha1);
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private IRI createIriForEmbeddedArtist (final @Nonnull String name)
       {
         return BM.localArtistIriFor(idCreator.createSha1("ARTIST:" + name));
       }
