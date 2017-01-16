@@ -40,6 +40,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import org.eclipse.rdf4j.model.IRI;
+import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.Value;
 import org.eclipse.rdf4j.model.vocabulary.DC;
 import org.eclipse.rdf4j.model.vocabulary.FOAF;
@@ -50,6 +51,7 @@ import it.tidalwave.util.Id;
 import it.tidalwave.util.InstantProvider;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
+import it.tidalwave.bluemarine2.util.ModelBuilder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.vocabulary.BM;
@@ -192,14 +194,13 @@ public class EmbeddedAudioMetadataImporter
      *
      ******************************************************************************************************************/
     /* VisibleForTesting */ void onMediaItemImportRequest (final @ListensTo MediaItemImportRequest request)
-      throws InterruptedException
       {
         request.getSha1().ifPresent(sha1 ->
           {
             try
               {
                 log.info("onMediaItemImportRequest({})", request);
-                importMediaItem(request.getMediaItem(), new Id(sha1));
+                statementManager.requestAdd(importMediaItem(request.getMediaItem(), new Id(sha1)));
               }
             finally
               {
@@ -212,10 +213,12 @@ public class EmbeddedAudioMetadataImporter
      *
      * Processes a {@link MediaItem}.
      *
-     * @param                           mediaItem   the item
+     * @param   mediaItem   the item
+     * @return              the model
      *
      ******************************************************************************************************************/
-    private void importMediaItem (final @Nonnull MediaItem mediaItem, final @Nonnull Id sha1)
+    @Nonnull
+    private Model importMediaItem (final @Nonnull MediaItem mediaItem, final @Nonnull Id sha1)
       {
         log.debug("importMediaItem({})", mediaItem);
 
@@ -245,7 +248,7 @@ public class EmbeddedAudioMetadataImporter
         final Optional<IRI> newGroupIri = (artists.size() <= 1) ? Optional.empty()
                 : seenArtistUris.putIfAbsentAndGetNewKey(makerUris.get(0), Optional.empty()); // FIXME: only first one?
 
-        statementManager.requestAddStatements()
+        return new ModelBuilder()
             .with(        audioFileIri,  RDF.TYPE,                MO.C_AUDIO_FILE)
             .with(        audioFileIri,  BM.P_IMPORTED_FROM,      BM.O_EMBEDDED)
             .with(        audioFileIri,  FOAF.SHA1,               literalFor(sha1))
@@ -294,7 +297,7 @@ public class EmbeddedAudioMetadataImporter
             .withOptional(newGroupIri,   FOAF.NAME,               literalFor(makerName))
             .withOptional(newGroupIri,   DbTune.ARTIST_TYPE,      literalFor((short)2))
             .withOptional(newGroupIri,   Purl.COLLABORATES_WITH,  artists.stream().map(Entry::getIri))
-            .publish();
+            .toModel();
       }
 
     /*******************************************************************************************************************

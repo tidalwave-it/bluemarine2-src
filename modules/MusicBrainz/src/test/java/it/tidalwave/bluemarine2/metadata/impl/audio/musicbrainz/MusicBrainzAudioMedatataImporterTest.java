@@ -173,7 +173,7 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
           {
             testSetStats.found.incrementAndGet();
             modelBuilders.putIfAbsent(testSetName, new ModelBuilder());
-            modelBuilders.get(testSetName).merge(model);
+            modelBuilders.get(testSetName).with(model);
           }
 
         if (!hasCddb)

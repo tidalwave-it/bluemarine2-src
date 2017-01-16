@@ -258,7 +258,7 @@ public class MusicBrainzAudioMedatataImporter
                 rams.addAll(findReleases(releaseGroups, cddb.get(), Validation.TRACK_OFFSETS_MATCH_REQUIRED));
               }
 
-            model.merge(rams.stream()
+            model.with(rams.stream()
                             .parallel()
                             .map(_f(this::handleRelease))
                             .collect(toList()));
@@ -294,9 +294,9 @@ public class MusicBrainzAudioMedatataImporter
             .with(recordIri, MO.P_TRACK_COUNT,   literalFor(tracks.size()))
             .with(recordIri, MO.P_AMAZON_ASIN,   literalFor(Optional.ofNullable(release.getAsin())))
             .with(recordIri, MO.P_GTIN,          literalFor(Optional.ofNullable(release.getBarcode())))
-            .merge(tracks.stream().parallel()
-                                  .map(_f(track -> handleTrack(recordIri, track)))
-                                  .collect(toList()));
+            .with(tracks.stream().parallel()
+                                 .map(_f(track -> handleTrack(recordIri, track)))
+                                 .collect(toList()));
 
         // TODO: release.getLabelInfoList();
         // TODO: medium discId
@@ -334,7 +334,7 @@ public class MusicBrainzAudioMedatataImporter
             .with(trackIri,  RDFS.LABEL,          literalFor(trackTitle))
             .with(trackIri,  DC.TITLE,            literalFor(trackTitle))
             .with(trackIri,  MO.P_TRACK_NUMBER,   literalFor(track.getPosition().intValue()))
-            .merge(handleTrackRelations(trackIri, recording));
+            .with(handleTrackRelations(trackIri, recording));
 //        bmmo:diskCount "1"^^xs:int ;
 //        bmmo:diskNumber "1"^^xs:int ;
       }
@@ -351,7 +351,7 @@ public class MusicBrainzAudioMedatataImporter
     @Nonnull
     private ModelBuilder handleTrackRelations (final @Nonnull IRI trackIri, final @Nonnull Recording recording)
       {
-        return createModelBuilder().merge(recording.getRelationList()
+        return createModelBuilder().with(recording.getRelationList()
                                                    .stream()
                                                    .parallel()
                                                    .flatMap(RelationAndTargetType::toStream)
