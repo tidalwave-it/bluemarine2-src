@@ -59,7 +59,6 @@ import it.tidalwave.bluemarine2.model.vocabulary.MO;
 import it.tidalwave.bluemarine2.model.vocabulary.DbTune;
 import it.tidalwave.bluemarine2.model.vocabulary.Purl;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
-import it.tidalwave.bluemarine2.mediascanner.impl.IdCreator;
 import it.tidalwave.bluemarine2.mediascanner.impl.MediaItemImportRequest;
 import it.tidalwave.bluemarine2.mediascanner.impl.ProgressHandler;
 import it.tidalwave.bluemarine2.mediascanner.impl.StatementManager;
@@ -158,9 +157,6 @@ public class EmbeddedAudioMetadataImporter
 
     @Inject
     private StatementManager statementManager;
-
-    @Inject
-    private IdCreator idCreator;
 
     @Inject
     private InstantProvider timestampProvider;
@@ -323,7 +319,7 @@ public class EmbeddedAudioMetadataImporter
     @Nonnull
     private IRI createIriForEmbeddedRecord (final @Nonnull String recordTitle)
       {
-        return BM.localRecordIriFor(idCreator.createSha1("RECORD:" + recordTitle));
+        return BM.localRecordIriFor(createSha1Id("RECORD:" + recordTitle));
       }
 
     /*******************************************************************************************************************
@@ -344,6 +340,6 @@ public class EmbeddedAudioMetadataImporter
     @Nonnull
     private IRI createIriForEmbeddedArtist (final @Nonnull String name)
       {
-        return BM.localArtistIriFor(idCreator.createSha1("ARTIST:" + name));
+        return BM.localArtistIriFor(createSha1Id("ARTIST:" + name));
       }
   }

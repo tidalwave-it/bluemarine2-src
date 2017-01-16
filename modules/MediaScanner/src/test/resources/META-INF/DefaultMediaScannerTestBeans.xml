@@ -68,8 +68,6 @@
 
     <bean class="it.tidalwave.bluemarine2.mediascanner.impl.StatementManager" />
 
-    <bean class="it.tidalwave.bluemarine2.mediascanner.impl.IdCreator" />
-
     <bean class="it.tidalwave.util.spi.MockInstantProvider" />
 
     <!-- FIXME: this should be mocked -->

@@ -31,12 +31,23 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.Optional;
+import java.util.concurrent.Semaphore;
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.nio.MappedByteBuffer;
+import java.nio.file.Path;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import lombok.extern.slf4j.Slf4j;
+import static java.nio.channels.FileChannel.MapMode.READ_ONLY;
+import static it.tidalwave.bluemarine2.util.Formatters.toHexString;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.toFileBMT46;
 
 /***********************************************************************************************************************
  *
@@ -47,14 +58,17 @@ import lombok.extern.slf4j.Slf4j;
 @SimpleMessageSubscriber @Slf4j
 public class DefaultMediaScanner
   {
+    private static final String ALGORITHM = "SHA1";
+    
     @Inject
     private ProgressHandler progress;
 
     @Inject
     private MessageBus messageBus;
 
-    @Inject
-    private IdCreator idCreator;
+    // With magnetic disks it's better to access files one at a time
+    // TODO: with SSD, this is not true
+    private final Semaphore diskSemaphore = new Semaphore(1);
 
     /*******************************************************************************************************************
      *
@@ -114,13 +128,41 @@ public class DefaultMediaScanner
      *
      ******************************************************************************************************************/
     /* VisibleForTesting */ void onMediaItemImportRequest (final @ListensTo @Nonnull MediaItemImportRequest request)
-      throws InterruptedException
+      throws InterruptedException, NoSuchAlgorithmException, IOException
       {
         if (!request.getSha1().isPresent())
           {
-            final String sha1 = idCreator.createSha1Id(request.getMediaItem().getPath()).stringValue();
+            final String sha1 = sha1Of(request.getMediaItem().getPath());
             messageBus.publish(new MediaItemImportRequest(request.getMediaItem(), Optional.of(sha1)));
             progress.incrementDoneFingerprints();
           }
       }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public String sha1Of (final @Nonnull Path path)
+      throws InterruptedException, NoSuchAlgorithmException, IOException
+      {
+        try
+          {
+            diskSemaphore.acquire();
+            final File file = toFileBMT46(path);
+
+            try (final RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r"))
+              {
+                final MappedByteBuffer byteBuffer = randomAccessFile.getChannel().map(READ_ONLY, 0, file.length());
+                final MessageDigest digestComputer = MessageDigest.getInstance(ALGORITHM);
+                digestComputer.update(byteBuffer);
+                return toHexString(digestComputer.digest());
+              }
+          }
+        finally
+          {
+            diskSemaphore.release();
+          }
+      }
+
   }

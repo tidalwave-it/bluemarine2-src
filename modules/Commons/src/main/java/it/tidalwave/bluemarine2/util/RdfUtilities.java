@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.util;
 
+import static it.tidalwave.bluemarine2.util.Formatters.toHexString;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.time.Instant;
@@ -42,6 +43,9 @@ import org.eclipse.rdf4j.model.Value;
 import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 import it.tidalwave.util.Id;
+import static java.nio.charset.StandardCharsets.UTF_8;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import lombok.NoArgsConstructor;
 import static java.text.Normalizer.Form.NFC;
 import static lombok.AccessLevel.PRIVATE;
@@ -55,6 +59,8 @@ import static lombok.AccessLevel.PRIVATE;
 @NoArgsConstructor(access = PRIVATE)
 public final class RdfUtilities
   {
+    private static final String ALGORITHM = "SHA1";
+
     private final static ValueFactory FACTORY = SimpleValueFactory.getInstance(); // FIXME
 
     /*******************************************************************************************************************
@@ -226,5 +232,24 @@ public final class RdfUtilities
     public static String emptyWhenNull (final @Nullable String string)
       {
         return (string != null) ? string : "";
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static Id createSha1Id (final @Nonnull String string)
+      {
+        try
+          {
+            final MessageDigest digestComputer = MessageDigest.getInstance(ALGORITHM);
+            digestComputer.update(string.getBytes(UTF_8));
+            return new Id(toHexString(digestComputer.digest()));
+          }
+        catch (NoSuchAlgorithmException e)
+          {
+            throw new RuntimeException(e);
+          }
       }
   }
