@@ -168,9 +168,6 @@ public class EmbeddedAudioMetadataImporter
     @Inject
     private ProgressHandler progress;
 
-//    private static final Mapper SIGNAL_MAPPER = new Mapper();
-//    private static final Mapper TRACK_MAPPER = new Mapper();
-
     // Set would suffice, but there's no ConcurrentSet
     private final ConcurrentHashMapWithOptionals<IRI, Optional<String>> seenArtistUris =
             new ConcurrentHashMapWithOptionals<>();
@@ -214,6 +211,7 @@ public class EmbeddedAudioMetadataImporter
      * Processes a {@link MediaItem}.
      *
      * @param   mediaItem   the item
+     * @param   sha2        the fingerprint of the file
      * @return              the model
      *
      ******************************************************************************************************************/
@@ -252,7 +250,7 @@ public class EmbeddedAudioMetadataImporter
             .with(        audioFileIri,  RDF.TYPE,                MO.C_AUDIO_FILE)
             .with(        audioFileIri,  BM.P_IMPORTED_FROM,      BM.O_EMBEDDED)
             .with(        audioFileIri,  FOAF.SHA1,               literalFor(sha1))
-            .with(        audioFileIri,  MO.P_ENCODES,            signalIri) // FIXME: this is path's SHA1, not contents'
+            .with(        audioFileIri,  MO.P_ENCODES,            signalIri)
             .with(        audioFileIri,  BM.PATH,                 literalFor(mediaItem.getRelativePath()))
             .with(        audioFileIri,  BM.LATEST_INDEXING_TIME, literalFor(getLastModifiedTime(mediaItem.getPath())))
             .withOptional(audioFileIri,  BM.FILE_SIZE,            literalForLong(metadata.get(FILE_SIZE)))
