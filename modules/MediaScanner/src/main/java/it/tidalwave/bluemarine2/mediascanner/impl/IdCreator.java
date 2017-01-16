@@ -34,13 +34,12 @@ import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.MappedByteBuffer;
-import java.nio.channels.FileChannel;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import it.tidalwave.util.Id;
-import lombok.Cleanup;
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static java.nio.channels.FileChannel.MapMode.READ_ONLY;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.toFileBMT46;
 
 /***********************************************************************************************************************
@@ -51,6 +50,7 @@ import static it.tidalwave.bluemarine2.util.Miscellaneous.toFileBMT46;
  **********************************************************************************************************************/
 public class IdCreator
   {
+    private static final String ALGORITHM = "SHA1";
     // With magnetic disks it's better to access files one at a time
     // TODO: with SSD, this is not true
     private final Semaphore diskSemaphore = new Semaphore(1);
@@ -66,13 +66,14 @@ public class IdCreator
           {
             diskSemaphore.acquire();
             final File file = toFileBMT46(path);
-            final String algorithm = "SHA1";
-            final @Cleanup RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
-            final MappedByteBuffer byteBuffer = randomAccessFile.getChannel().map(FileChannel.MapMode.READ_ONLY, 0, file.length());
-            final MessageDigest digestComputer = MessageDigest.getInstance(algorithm);
-            digestComputer.update(byteBuffer);
-            randomAccessFile.close();
-            return new Id(toString(digestComputer.digest()));
+
+            try (final RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r"))
+              {
+                final MappedByteBuffer byteBuffer = randomAccessFile.getChannel().map(READ_ONLY, 0, file.length());
+                final MessageDigest digestComputer = MessageDigest.getInstance(ALGORITHM);
+                digestComputer.update(byteBuffer);
+                return new Id(toString(digestComputer.digest()));
+              }
           }
         catch (InterruptedException | NoSuchAlgorithmException | IOException e)
           {
@@ -93,8 +94,7 @@ public class IdCreator
       {
         try
           {
-            final String algorithm = "SHA1";
-            final MessageDigest digestComputer = MessageDigest.getInstance(algorithm);
+            final MessageDigest digestComputer = MessageDigest.getInstance(ALGORITHM);
             digestComputer.update(string.getBytes(UTF_8));
             return new Id(toString(digestComputer.digest()));
           }
