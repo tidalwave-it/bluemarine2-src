@@ -142,6 +142,7 @@ public class DefaultMusicBrainzProbe
         PERFORMER_MAP.put("balance", MO.P_BALANCE);
         PERFORMER_MAP.put("chorus master", MO.P_CONDUCTOR);
         PERFORMER_MAP.put("conductor", MO.P_CONDUCTOR);
+        PERFORMER_MAP.put("editor", MO.P_EDITOR);
         PERFORMER_MAP.put("engineer", MO.P_ENGINEER);
         PERFORMER_MAP.put("instrument", MO.P_PERFORMER); // FIXME: doesn't map the instrument
         PERFORMER_MAP.put("instrument arranger", MO.P_ARRANGER);
@@ -158,6 +159,8 @@ public class DefaultMusicBrainzProbe
         PERFORMER_MAP.put("vocal", MO.P_SINGER);
         PERFORMER_MAP.put("vocal/additional", MO.P_BACKGROUND_SINGER);
         PERFORMER_MAP.put("vocal/background vocals", MO.P_BACKGROUND_SINGER);
+        PERFORMER_MAP.put("vocal/baritone vocals", MO.P_BARITONE);
+        PERFORMER_MAP.put("vocal/bass vocals", MO.P_BASS);
         PERFORMER_MAP.put("vocal/choir vocals", MO.P_CHOIR);
         PERFORMER_MAP.put("vocal/guest", MO.P_SINGER);
         PERFORMER_MAP.put("vocal/lead vocals", MO.P_LEAD_SINGER);
@@ -165,6 +168,7 @@ public class DefaultMusicBrainzProbe
         PERFORMER_MAP.put("vocal/other vocals", MO.P_BACKGROUND_SINGER);
         PERFORMER_MAP.put("vocal/solo", MO.P_LEAD_SINGER);
         PERFORMER_MAP.put("vocal/soprano vocals", MO.P_SOPRANO);
+        PERFORMER_MAP.put("vocal/spoken vocals", MO.P_SINGER);
       }
 
     /*******************************************************************************************************************
