@@ -48,7 +48,6 @@ import it.tidalwave.bluemarine2.util.SortingRDFHandler;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.metadata.cddb.impl.DefaultCddbMetadataProvider;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -59,6 +58,7 @@ import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
+import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
 import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB;
@@ -80,9 +80,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
 
     private final Map<String, TestSetStats> stats = new TreeMap<>();
 
-    private ModelBuilder modelBuilder;
-
-    private String latestTestSetName;
+    private final Map<String, ModelBuilder> modelBuilders = new TreeMap<>();
 
     private final Set<String> unmatched = new TreeSet<>();
 
@@ -122,18 +120,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
 
         stats.clear();
         unmatched.clear();
-        modelBuilder = new ModelBuilder();
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @AfterTest
-    public void dumpRepository()
-      throws IOException
-      {
-          exportToFile(modelBuilder.toModel(), TEST_RESULTS.resolve("musicbrainz").resolve(latestTestSetName + ".n3"));
-          // TODO assertion
+        modelBuilders.clear();
       }
 
     /*******************************************************************************************************************
@@ -145,6 +132,10 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
     public void printStats()
       {
         log.info("STATS: {}", stats.entrySet().stream().map(Object::toString).collect(joining(", ")));
+        modelBuilders.entrySet().forEach(
+          _c(entry -> exportToFile(entry.getValue().toModel(),
+                                   TEST_RESULTS.resolve("musicbrainz").resolve(entry.getKey() + ".n3"))));
+        // TODO assertion
         unmatched.forEach(path -> log.info("STATS: unmatched with CDDB: {}", path));
       }
 
@@ -158,7 +149,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
       throws Exception
       {
         // given
-        final String testSetName = latestTestSetName = triple.getTestSetName();
+        final String testSetName = triple.getTestSetName();
         cddbMetadataProvider.setCachePath(CDDB_CACHE.resolve(testSetName));
         musicBrainzMetadataProvider.setCachePath(MUSICBRAINZ_CACHE.resolve(testSetName));
         final Path relativePath = Paths.get(triple.getRelativePath().toString().replaceAll("-dump\\.txt$", ".n3"));
@@ -179,7 +170,8 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
         if (matched)
           {
             testSetStats.found.incrementAndGet();
-            modelBuilder.merge(model);
+            modelBuilders.putIfAbsent(testSetName, new ModelBuilder());
+            modelBuilders.get(testSetName).merge(model);
           }
 
         if (!hasCddb)
