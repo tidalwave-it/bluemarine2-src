@@ -45,6 +45,8 @@ import lombok.extern.slf4j.Slf4j;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.joining;
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static java.util.Comparator.comparing;
+import static java.util.stream.Collectors.joining;
 
 /***********************************************************************************************************************
  *
@@ -95,10 +97,10 @@ public class ResponseEntityIo
      *
      ******************************************************************************************************************/
     @Nonnull
-    /* package */ static Optional<ResponseEntity<String>> retrieve (final @Nonnull Path path)
+    /* package */ static Optional<ResponseEntity<String>> load (final @Nonnull Path path)
       throws IOException
       {
-        log.trace("retrieve({})", path);
+        log.trace("load({})", path);
 
         if (!Files.exists(path))
           {

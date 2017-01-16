@@ -217,7 +217,7 @@ public class CachingRestClientSupport
       throws IOException
       {
         log.debug("requestFromCache({})", url);
-        return ResponseEntityIo.retrieve(cachePath.resolve(fixedPath(url)));
+        return ResponseEntityIo.load(cachePath.resolve(fixedPath(url)));
       }
 
     /*******************************************************************************************************************
