@@ -136,9 +136,6 @@ public class EmbeddedMetadataManager
       }
 
     @Inject
-    private DbTuneMetadataManager dbTuneMetadataManager;
-
-    @Inject
     private StatementManager statementManager;
 
     @Inject
@@ -184,8 +181,7 @@ public class EmbeddedMetadataManager
 
     /*******************************************************************************************************************
      *
-     * Imports all the remaining metadata embedded in a track for the given {@link MediaItem}. This method is called
-     * when we failed to match a track to an external catalog.
+     * Imports all the  metadata embedded in a track for the given {@link MediaItem}.
      *
      * @param   mediaItem               the {@code MediaItem}.
      * @param   trackIri                the IRI of the track
@@ -193,7 +189,6 @@ public class EmbeddedMetadataManager
      ******************************************************************************************************************/
     public void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull IRI trackIri)
       {
-        // TODO: consider the MBZ COMPOSER.
         log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackIri);
 
         final Metadata metadata           = mediaItem.getMetadata();
@@ -202,33 +197,10 @@ public class EmbeddedMetadataManager
         final Optional<String> title      = metadata.get(TITLE);
         final Optional<String> makerName  = metadata.get(ARTIST);
 
-        List<IRI> makerUris               = null;
-        List<Entry> artists  = metadata.getAll(MBZ_ARTIST_ID).stream()
-                .map(id -> new Entry(BM.musicBrainzIriFor("artist", id), makerName.orElse("???")))
-                .collect(toList());
-        //
-        // Even though we're in fallback mode, we could have a MusicBrainz artist id. Actually, fallback mode can be
-        // triggered by any error while retrieving the track resource; it not implies a problem with the artist
-        // resource. That's why it makes sense to try to retrieve an artist resource here.
-        //
-        // FIXME: Still missing:
-        //      Anonyme Grèce
-        //      Anonymus (País Vasco)
-        //      Berliner Philharmoniker & Rafael Kubelík
-        //      etc...
-        //
-        if (!artists.isEmpty())
-          {
-            makerUris = artists.stream().map(Entry::getIri).collect(toList());
-            makerUris.forEach(uri -> dbTuneMetadataManager.requestArtistMetadata(uri, makerName)); // FIXME: all with the same maker name?
-          }
-        else  // no MusicBrainz artist
-          {
-            makerUris =  makerName.map(name -> asList(createIRIForLocalArtist(name))).orElse(emptyList());
-            artists = makerName.map(name -> Stream.of(name.split("[;]")).map(String::trim)).orElse(Stream.empty())
-                               .map(name -> new Entry(createIRIForLocalArtist(name), name))
-                               .collect(toList());
-          }
+        final List<IRI> makerUris = makerName.map(name -> asList(createIRIForEmbeddedArtist(name))).orElse(emptyList());
+        final List<Entry> artists = makerName.map(name -> Stream.of(name.split("[;]")).map(String::trim)).orElse(Stream.empty())
+                           .map(name -> new Entry(createIRIForEmbeddedArtist(name), name))
+                           .collect(toList());
 
         final List<Entry> newArtists   = artists.stream().filter(
                 e -> shared.seenArtistUris.putIfAbsentAndGetNewKey(e.getIri(), Optional.empty()).isPresent())
@@ -241,7 +213,7 @@ public class EmbeddedMetadataManager
 
         final PathAwareEntity parent     = mediaItem.getParent().get();
         final String recordTitle         = metadata.get(ALBUM).orElse(parent.getPath().toFile().getName());
-        final IRI recordIri              = createIRIForLocalRecord(recordTitle);
+        final IRI recordIri              = createIRIForEmbeddedRecord(recordTitle);
         final Optional<IRI> newRecordIri = shared.seenRecordUris.putIfAbsentAndGetNewKey(recordIri, true);
 
         statementManager.requestAddStatements()
@@ -276,7 +248,7 @@ public class EmbeddedMetadataManager
      *
      ******************************************************************************************************************/
     @Nonnull
-    private IRI createIRIForLocalRecord (final @Nonnull String recordTitle)
+    private IRI createIRIForEmbeddedRecord (final @Nonnull String recordTitle)
       {
         return BM.localRecordIriFor(idCreator.createSha1("RECORD:" + recordTitle));
       }
@@ -286,7 +258,7 @@ public class EmbeddedMetadataManager
      *
      ******************************************************************************************************************/
     @Nonnull
-    private IRI createIRIForLocalArtist (final @Nonnull String name)
+    private IRI createIRIForEmbeddedArtist (final @Nonnull String name)
       {
         return BM.localArtistIriFor(idCreator.createSha1("ARTIST:" + name));
       }

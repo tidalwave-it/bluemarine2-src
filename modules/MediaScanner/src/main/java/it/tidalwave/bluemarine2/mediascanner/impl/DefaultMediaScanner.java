@@ -104,9 +104,6 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 @SimpleMessageSubscriber @Slf4j
 public class DefaultMediaScanner
   {
-//    @Inject // FIXME: refactor Db Tune support in a different class
-//    private DbTuneMetadataManager dbTuneMetadataManager;
-
     @Inject
     private EmbeddedMetadataManager embeddedMetadataManager;
 
@@ -213,8 +210,6 @@ public class DefaultMediaScanner
         final Metadata metadata = audioFile.getMetadata();
 
         final IRI audioFileIri = BM.audioFileIriFor(sha1);
-        // FIXME: DbTune has got Signals. E.g. http://dbtune.org/musicbrainz/page/signal/0900f0cb-230f-4632-bd87-650801e5fdba
-        // FIXME: Try to use them. It seems there is no extra information, but use their Uri.
         final IRI signalIri = BM.signalIriFor(sha1);
         final IRI trackIri = createTrackIri(metadata, sha1);
 
@@ -236,17 +231,7 @@ public class DefaultMediaScanner
             .publish();
 
         embeddedMetadataManager.importAudioFileMetadata(audioFile, signalIri, trackIri);
-
-        // FIXME: use a Chain of Responsibility
-//        if (musicBrainzTrackId.isPresent())
-//          {
-//            dbTuneMetadataManager.importTrackMetadata(audioFile, trackUri, musicBrainzTrackId.get());
-////                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
-//          }
-//        else
-//          {
-            embeddedMetadataManager.importFallbackTrackMetadata(audioFile, trackIri);
-//          }
+        embeddedMetadataManager.importFallbackTrackMetadata(audioFile, trackIri);
       }
 
     /*******************************************************************************************************************
@@ -256,12 +241,8 @@ public class DefaultMediaScanner
     @Nonnull
     private IRI createTrackIri (final @Nonnull Metadata metadata, final @Nonnull Id sha1)
       {
-        // FIXME: use a chain of responsibility
-        final Optional<Id> musicBrainzTrackId = metadata.get(MBZ_TRACK_ID);
-        log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
         // FIXME: the same contents in different places will give the same sha1. Disambiguates by hashing the path too?
-        return !musicBrainzTrackId.isPresent() ? BM.localTrackIriFor(sha1)
-                                               : BM.musicBrainzIriFor("track", musicBrainzTrackId.get());
+        return BM.localTrackIriFor(sha1);
       }
 
     /*******************************************************************************************************************
