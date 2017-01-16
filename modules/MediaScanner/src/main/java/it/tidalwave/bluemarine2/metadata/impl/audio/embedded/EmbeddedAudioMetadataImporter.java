@@ -224,13 +224,13 @@ public class EmbeddedAudioMetadataImporter
         final String recordTitle           = metadata.get(ALBUM).orElse(parent.getPath().toFile().getName());
         final IRI audioFileIri             = BM.audioFileIriFor(sha1);
         final IRI signalIri                = BM.signalIriFor(sha1);
-        final IRI trackIri                 = createIriForEmbeddedTrack(metadata, sha1);
-        final IRI recordIri                = createIriForEmbeddedRecord(recordTitle);
+        final IRI trackIri                 = trackIriOf(metadata, sha1);
+        final IRI recordIri                = recordIriOf(recordTitle);
         final Optional<IRI> newRecordIri   = seenRecordUris.putIfAbsentAndGetNewKey(recordIri, true);
 
-        final List<IRI> makerUris = makerName.map(name -> asList(createIriForEmbeddedArtist(name))).orElse(emptyList());
+        final List<IRI> makerUris = makerName.map(name -> asList(artistIriOf(name))).orElse(emptyList());
         final List<Pair> artists = makerName.map(name -> Stream.of(name.split("[;]")).map(String::trim)).orElse(Stream.empty())
-                           .map(name -> new Pair(createIriForEmbeddedArtist(name), name))
+                           .map(name -> new Pair(artistIriOf(name), name))
                            .collect(toList());
 
         final List<Pair> newArtists   = artists.stream().filter(
@@ -317,7 +317,7 @@ public class EmbeddedAudioMetadataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private IRI createIriForEmbeddedRecord (final @Nonnull String recordTitle)
+    private IRI recordIriOf (final @Nonnull String recordTitle)
       {
         return BM.recordIriFor(createSha1Id("RECORD:" + recordTitle));
       }
@@ -327,7 +327,7 @@ public class EmbeddedAudioMetadataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private IRI createIriForEmbeddedTrack (final @Nonnull Metadata metadata, final @Nonnull Id sha1)
+    private IRI trackIriOf (final @Nonnull Metadata metadata, final @Nonnull Id sha1)
       {
         // FIXME: the same contents in different places will give the same sha1. Disambiguates by hashing the path too?
         return BM.trackIriFor(sha1);
@@ -338,7 +338,7 @@ public class EmbeddedAudioMetadataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private IRI createIriForEmbeddedArtist (final @Nonnull String name)
+    private IRI artistIriOf (final @Nonnull String name)
       {
         return BM.artistIriFor(createSha1Id("ARTIST:" + name));
       }
