@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
+package it.tidalwave.bluemarine2.metadata.impl.audio.musicbrainz;
 
 import javax.annotation.Nonnull;
 import java.util.Map;
@@ -54,6 +54,8 @@ import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.TestSetTriple;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.metadata.cddb.impl.TestSupport;
+import it.tidalwave.bluemarine2.metadata.musicbrainz.impl.DefaultMusicBrainzMetadataProvider;
+import it.tidalwave.bluemarine2.metadata.musicbrainz.impl.ModelBuilder;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -70,13 +72,13 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class DefaultMusicBrainzMedatataManagerTest extends TestSupport
+public class MusicBrainzAudioMedatataImporterTest extends TestSupport
   {
     private DefaultCddbMetadataProvider cddbMetadataProvider;
 
     private DefaultMusicBrainzMetadataProvider musicBrainzMetadataProvider;
 
-    private DefaultMusicBrainzMedatataManager underTest;
+    private MusicBrainzAudioMedatataImporter underTest;
 
     private final Map<String, TestSetStats> stats = new TreeMap<>();
 
@@ -116,7 +118,7 @@ public class DefaultMusicBrainzMedatataManagerTest extends TestSupport
         musicBrainzMetadataProvider.setCacheMode(ONLY_USE_CACHE);
 //        underTest.initialize(); // FIXME
 
-        underTest = new DefaultMusicBrainzMedatataManager(cddbMetadataProvider, musicBrainzMetadataProvider);
+        underTest = new MusicBrainzAudioMedatataImporter(cddbMetadataProvider, musicBrainzMetadataProvider);
 
         stats.clear();
         unmatched.clear();

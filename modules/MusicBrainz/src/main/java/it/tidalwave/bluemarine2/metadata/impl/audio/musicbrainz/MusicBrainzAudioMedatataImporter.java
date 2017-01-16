@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
+package it.tidalwave.bluemarine2.metadata.impl.audio.musicbrainz;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
@@ -63,6 +63,7 @@ import it.tidalwave.bluemarine2.rest.RestResponse;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbMetadataProvider;
 import it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider;
+import it.tidalwave.bluemarine2.metadata.musicbrainz.impl.ModelBuilder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.RequiredArgsConstructor;
@@ -84,7 +85,7 @@ import static lombok.AccessLevel.PRIVATE;
  **********************************************************************************************************************/
 @Slf4j
 @RequiredArgsConstructor
-public class DefaultMusicBrainzMedatataManager
+public class MusicBrainzAudioMedatataImporter
   {
     private static final QName QNAME_SCORE = new QName("http://musicbrainz.org/ns/ext#-2.0", "score");
 
