@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.metadata.musicbrainz.impl;
+package it.tidalwave.bluemarine2.util;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.ThreadSafe;
