@@ -452,17 +452,6 @@ public class DefaultMusicBrainzProbe
                             .map(releaseGroup -> releaseGroup.getReleaseList())
                             .flatMap(releaseList -> findReleases(releaseList, cddb).stream())
                             .collect(toList());
-//            .peek(release -> log.info(">>>>>>>> release: {} {}", release.getId(), release.getTitle()))
-//            .flatMap(_f(release -> mbMetadataProvider.getResource(RELEASE, release.getId(), RELEASE_INCLUDES).get()
-//                            .getMediumList().getMedium()
-//                            .stream()
-//                            .map(medium -> new ReleaseAndMedium(release, medium))))
-//            .filter(ram -> matchesFormat(ram.getMedium()))
-//            .filter(ram -> matchesTrackOffsets(ram.getMedium(), cddb))
-//            .peek(ram -> log.info(">>>>>>>> FOUND {} - with score {}", ram.getMedium().getTitle(), 0 /* scoreOf(releaseGroup) FIXME */))
-//            // FIXME: should stop at the first found?
-//            .collect(toMap(ram -> ram.getRelease().getId(), ram -> ram, (u, v) -> v, TreeMap::new))
-//            .values();
       }
 
     /*******************************************************************************************************************
