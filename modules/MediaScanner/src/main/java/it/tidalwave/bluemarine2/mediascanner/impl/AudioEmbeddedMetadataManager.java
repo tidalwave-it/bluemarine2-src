@@ -69,48 +69,59 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
- * FIXME: this doc must be updated
+ * This class generates RDF triples out of the {@link Metadata} embedded in an audio file.
  *
+ * <pre>
  * mo:AudioFile
- *      IRI                                                     computed from the fingerprint
- *      foaf:sha1           the fingerprint of the file         locally computed
- *      bm:latestInd.Time   the latest import time              locally computed
- *      bm:path             the path of the file                locally computed
- *      dc:title            the title                           locally computed    WRONG: USELESS?
- *      rdfs:label          the display name                    locally computed    WRONG: should be the file name without path?
- *      mo:encodes          points to the signal                locally computed
+ *      IRI                     computed from the fingerprint of the contents
+ *      rdfs:label              the display name
+ *      dc:title                the title
+ *      mo:encodes              points to the signal
+ *      bm:latestIndexingTime   the latest import time
+ *      bm:path                 the path of the file
+ *      bm:fileSize             the file size
+ *      foaf:sha1               the fingerprint of the file
  *
  * mo:DigitalSignal
- *      IRI                                                     computed from the fingerprint
- *      mo:bitsPerSample    the bits per sample                 locally extracted from the file
- *      mo:duration         the duration                        locally extracted from the file
- *      mo:sample_rate      the sample rate                     locally extracted from the file
- *      mo:published_as     points to the Track                 locally computed
+ *      IRI                     computed from the fingerprint of related file
+ *      mo:bitsPerSample        the bits per sample
+ *      mo:duration             the duration
+ *      mo:sample_rate          the sample rate
+ *      mo:published_as         points to the Track
  *      MISSING mo:channels
- *      MISSING? mo:time
- *      MISSING? mo:trmid
+ *      MISSING mo:time
+ *      MISSING mo:trmid
  *
  * mo:Track
- *      IRI                                                     the DbTune one if available, else computed from SHA1
- *      mo:musicbrainz      the MusicBrainz IRI                 locally extracted from the file
- *      dc:title            the title                           taken from DbTune
- *      rdfs:label          the display name                    taken from DbTune
- *      foaf:maker          points to the MusicArtist           taken from DbTune
- *      mo:track_number     the track number in the record      taken from DbTune
+ *      IRI                     computed from the fingerprint of related file
+ *      rdfs:label              the display name
+ *      dc:title                the title
+ *      mo:track_number         the track number in the record
+ *      bm:discCount            the number of disks in a collection
+ *      bm:discNumber           the index of the disk in a collection
+ *      bm:iTunesCddb1          the CDDB1 attribute encoded by iTunes plus the track index
+ *      foaf:maker              points to the MusicArtists
  *
  * mo:Record
- *      IRI                                                     taken from DbTune
- *      dc:date
- *      dc:language
- *      dc:title            the title                           taken from DbTune
- *      rdfs:label          the display name                    taken from DbTune
- *      mo:release          TODO points to the Label (EMI, etc...)
- *      mo:musicbrainz      the MusicBrainz IRI                 locally extracted from the file
- *      mo:track            points to the Tracks                taken from DbTune
- *      foaf:maker          points to the MusicArtist           taken from DbTune
- *      owl:sameAs          point to external resources         taken from DbTune
+ *      IRI                     computed from the fingerprint of the name
+ *      rdfs:label              the display name (ALBUM from audiofile metadata, or the name of the folder)
+ *      dc:title                the title (see above)
+ *      mo:mediaType            CD
+ *      mo:track                points to the Tracks
+ *      bm:iTunesCddb1          the CDDB1 attribute encoded by iTunes
+ *      foaf:maker              points to the MusicArtists (union of the makers of Tracks)
+ *      MISSING dc:date
+ *      MISSING dc:language
+ *      MISSING mo:release      TODO points to the Label (EMI, etc...)
  *
- * mo:Artist
+ * mo:MusicArtist
+ *      IRI                     computed from the fingerprint of the name
+ *      rdfs:label              the display name
+ *      foaf:name               the name
+ *      (in case of a group also the predicates below)
+ *      dbtune:artist_type      2, which means a group
+ *      purl:collaborates_with  the MusicArtists in the group
+ * </pre>
  *
  * @author  Fabrizio Giudici
  * @version $Id$
@@ -196,14 +207,18 @@ public class AudioEmbeddedMetadataManager
       {
         log.debug("importMediaItem({})", mediaItem);
         final Id sha1 = idCreator.createSha1Id(mediaItem.getPath());
+
         final Metadata metadata = mediaItem.getMetadata();
 
-        final IRI audioFileIri = BM.audioFileIriFor(sha1);
-        final IRI signalIri = BM.signalIriFor(sha1);
-        final IRI trackIri = createIriForEmbeddedTrack(metadata, sha1);
-
-        final Optional<String> title      = metadata.get(TITLE);
-        final Optional<String> makerName  = metadata.get(ARTIST);
+        final Optional<String> trackTitle  = metadata.get(TITLE);
+        final Optional<String> makerName   = metadata.get(ARTIST);
+        final PathAwareEntity parent       = mediaItem.getParent().get();
+        final String recordTitle           = metadata.get(ALBUM).orElse(parent.getPath().toFile().getName());
+        final IRI audioFileIri             = BM.audioFileIriFor(sha1);
+        final IRI signalIri                = BM.signalIriFor(sha1);
+        final IRI trackIri                 = createIriForEmbeddedTrack(metadata, sha1);
+        final IRI recordIri                = createIriForEmbeddedRecord(recordTitle);
+        final Optional<IRI> newRecordIri   = seenRecordUris.putIfAbsentAndGetNewKey(recordIri, true);
 
         final List<IRI> makerUris = makerName.map(name -> asList(createIriForEmbeddedArtist(name))).orElse(emptyList());
         final List<Entry> artists = makerName.map(name -> Stream.of(name.split("[;]")).map(String::trim)).orElse(Stream.empty())
@@ -219,60 +234,49 @@ public class AudioEmbeddedMetadataManager
         final Optional<IRI> newGroupIri = (artists.size() <= 1) ? Optional.empty()
                 : seenArtistUris.putIfAbsentAndGetNewKey(makerUris.get(0), Optional.empty()); // FIXME: only first one?
 
-        final PathAwareEntity parent     = mediaItem.getParent().get();
-        final String recordTitle         = metadata.get(ALBUM).orElse(parent.getPath().toFile().getName());
-        final IRI recordIri              = createIriForEmbeddedRecord(recordTitle);
-        final Optional<IRI> newRecordIri = seenRecordUris.putIfAbsentAndGetNewKey(recordIri, true);
-
         statementManager.requestAddStatements()
-            .with(audioFileIri,          RDF.TYPE,                  MO.C_AUDIO_FILE)
-            .with(audioFileIri,          FOAF.SHA1,                 literalFor(sha1))
-            .with(audioFileIri,          MO.P_ENCODES,              signalIri) // FIXME: this is path's SHA1, not contents'
-            .with(audioFileIri,          BM.PATH,                   literalFor(mediaItem.getRelativePath()))
-            .with(audioFileIri,          BM.LATEST_INDEXING_TIME,   literalFor(getLastModifiedTime(mediaItem.getPath())))
-            // TODO why optional? Isn't file size always available?
-            .withOptional(audioFileIri,  BM.FILE_SIZE,              metadata.get(FILE_SIZE).map(s -> literalFor(s)))
+            .with(        audioFileIri,  RDF.TYPE,                MO.C_AUDIO_FILE)
+            .with(        audioFileIri,  FOAF.SHA1,               literalFor(sha1))
+            .with(        audioFileIri,  MO.P_ENCODES,            signalIri) // FIXME: this is path's SHA1, not contents'
+            .with(        audioFileIri,  BM.PATH,                 literalFor(mediaItem.getRelativePath()))
+            .with(        audioFileIri,  BM.LATEST_INDEXING_TIME, literalFor(getLastModifiedTime(mediaItem.getPath())))
+            .withOptional(audioFileIri,  BM.FILE_SIZE,            literalForLong(metadata.get(FILE_SIZE)))
 
-            .with(        trackIri,      RDF.TYPE,                  MO.C_TRACK)
-            .withOptional(trackIri,      BM.ITUNES_CDDB1,           literalFor(metadata.get(ITUNES_COMMENT)
-                                                                                       .map(c -> c.getTrackId())))
+            .with(        signalIri,     RDF.TYPE,                MO.C_DIGITAL_SIGNAL)
+            .with(        signalIri,     MO.P_PUBLISHED_AS,       trackIri)
+            .withOptional(signalIri,     MO.P_SAMPLE_RATE,        literalForInt(metadata.get(SAMPLE_RATE)))
+            .withOptional(signalIri,     MO.P_BITS_PER_SAMPLE,    literalForInt(metadata.get(BIT_RATE)))
+            .withOptional(signalIri,     MO.P_DURATION,           literalForFloat(metadata.get(DURATION)
+                                                                                          .map(Duration::toMillis)
+                                                                                          .map(l -> (float)l)))
+            .with(        trackIri,      RDF.TYPE,                MO.C_TRACK)
+            .withOptional(trackIri,      BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
+                                                                                     .map(c -> c.getTrackId())))
+            .withOptional(trackIri,      MO.P_TRACK_NUMBER,       literalForInt(metadata.get(TRACK_NUMBER)))
+            .withOptional(trackIri,      BM.DISK_NUMBER,          literalForInt(metadata.get(DISK_NUMBER)))
+            .withOptional(trackIri,      BM.DISK_COUNT,           literalForInt(metadata.get(DISK_COUNT)))
+            .withOptional(trackIri,      RDFS.LABEL,              literalFor(trackTitle))
+            .withOptional(trackIri,      DC.TITLE,                literalFor(trackTitle))
+            .with(        trackIri,      FOAF.MAKER,              makerUris.stream())
 
-            .with(signalIri,             RDF.TYPE,                  MO.C_DIGITAL_SIGNAL)
-            .with(signalIri,             MO.P_PUBLISHED_AS,         trackIri)
+            .withOptional(newRecordIri,  RDF.TYPE,                MO.C_RECORD)
+            .withOptional(newRecordIri,  MO.P_MEDIA_TYPE,         MO.C_CD)
+            .withOptional(newRecordIri,  RDFS.LABEL,              literalFor(recordTitle))
+            .withOptional(newRecordIri,  DC.TITLE,                literalFor(recordTitle))
+            .withOptional(newRecordIri,  BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
+                                                                                     .map(c -> c.getCddb1())))
+            .with(        recordIri,     MO.P_TRACK,              trackIri)
+            .with(        recordIri,     FOAF.MAKER,              makerUris.stream())
 
-            .withOptional(signalIri,     MO.P_SAMPLE_RATE,          literalForInt(metadata.get(SAMPLE_RATE)))
-            .withOptional(signalIri,     MO.P_BITS_PER_SAMPLE,      literalForInt(metadata.get(BIT_RATE)))
-            .withOptional(signalIri,     MO.P_DURATION,             literalForFloat(metadata.get(DURATION)
-                                                                                            .map(Duration::toMillis)
-                                                                                            .map(l -> (float)l)))
+            .with(        newArtistIris, RDF.TYPE,                MO.C_MUSIC_ARTIST)
+            .with(        newArtistIris, RDFS.LABEL,              newArtistLiterals)
+            .with(        newArtistIris, FOAF.NAME,               newArtistLiterals)
 
-            .withOptional(trackIri,      MO.P_TRACK_NUMBER,         literalForInt(metadata.get(TRACK_NUMBER)))
-            .withOptional(trackIri,      BM.DISK_NUMBER,            literalForInt(metadata.get(DISK_NUMBER)))
-            .withOptional(trackIri,      BM.DISK_COUNT,             literalForInt(metadata.get(DISK_COUNT)))
-
-            .withOptional(trackIri,      RDFS.LABEL,                literalFor(title))
-            .withOptional(trackIri,      DC.TITLE,                  literalFor(title))
-            .with(        trackIri,      FOAF.MAKER,                makerUris.stream())
-
-            .with(        recordIri,     MO.P_TRACK,                trackIri)
-            .with(        recordIri,     FOAF.MAKER,                makerUris.stream())
-
-            .withOptional(newRecordIri,  RDF.TYPE,                  MO.C_RECORD)
-            .withOptional(newRecordIri,  MO.P_MEDIA_TYPE,           MO.C_CD)
-            .withOptional(newRecordIri,  RDFS.LABEL,                literalFor(recordTitle))
-            .withOptional(newRecordIri,  DC.TITLE,                  literalFor(recordTitle))
-            .withOptional(newRecordIri,  BM.ITUNES_CDDB1,           literalFor(metadata.get(ITUNES_COMMENT)
-                                                                                       .map(c -> c.getCddb1())))
-
-            .with(        newArtistIris, RDF.TYPE,                  MO.C_MUSIC_ARTIST)
-            .with(        newArtistIris, RDFS.LABEL,                newArtistLiterals)
-            .with(        newArtistIris, FOAF.NAME,                 newArtistLiterals)
-
-            .withOptional(newGroupIri,   RDF.TYPE,                  MO.C_MUSIC_ARTIST)
-            .withOptional(newGroupIri,   RDFS.LABEL,                literalFor(makerName))
-            .withOptional(newGroupIri,   FOAF.NAME,                 literalFor(makerName))
-            .withOptional(newGroupIri,   DbTune.ARTIST_TYPE,        literalFor((short)2))
-            .withOptional(newGroupIri,   Purl.COLLABORATES_WITH,    artists.stream().map(Entry::getIri))
+            .withOptional(newGroupIri,   RDF.TYPE,                MO.C_MUSIC_ARTIST)
+            .withOptional(newGroupIri,   RDFS.LABEL,              literalFor(makerName))
+            .withOptional(newGroupIri,   FOAF.NAME,               literalFor(makerName))
+            .withOptional(newGroupIri,   DbTune.ARTIST_TYPE,      literalFor((short)2))
+            .withOptional(newGroupIri,   Purl.COLLABORATES_WITH,  artists.stream().map(Entry::getIri))
             .publish();
       }
 
