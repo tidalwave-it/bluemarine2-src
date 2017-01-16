@@ -39,6 +39,7 @@ import org.musicbrainz.ns.mmd_2.ReleaseList;
 import it.tidalwave.bluemarine2.rest.RestResponse;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *
@@ -48,7 +49,7 @@ import lombok.RequiredArgsConstructor;
  **********************************************************************************************************************/
 public interface MusicBrainzMetadataProvider
   {
-    @RequiredArgsConstructor @Getter
+    @RequiredArgsConstructor @Getter @ToString(of = "name")
     public static class ResourceType<TYPE>
       {
         @Nonnull
