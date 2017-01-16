@@ -134,11 +134,24 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
     public void printStats()
       {
         log.info("STATS: {}", stats.entrySet().stream().map(Object::toString).collect(joining(", ")));
-        modelBuilders.entrySet().forEach(
-          _c(entry -> exportToFile(entry.getValue().toModel(),
-                                   TEST_RESULTS.resolve("musicbrainz-" + entry.getKey() + ".n3"))));
-        // TODO assertion
         unmatched.forEach(path -> log.info("STATS: unmatched with CDDB: {}", path));
+        modelBuilders.entrySet().forEach(_c(entry -> verifyGlobalModel(entry.getValue().toModel(), entry.getKey())));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private void verifyGlobalModel (final @Nonnull Model model, final @Nonnull String testSetName)
+      throws RDFHandlerException, IOException
+      {
+        final String name = "musicbrainz-" + testSetName + ".n3";
+        final Path actualFile = TEST_RESULTS.resolve(name);
+        final Path expectedFile = Paths.get("target/test-classes/expected-results").resolve(name);
+        exportToFile(model, actualFile);
+
+        assertSameContents(expectedFile, actualFile);
       }
 
     /*******************************************************************************************************************
