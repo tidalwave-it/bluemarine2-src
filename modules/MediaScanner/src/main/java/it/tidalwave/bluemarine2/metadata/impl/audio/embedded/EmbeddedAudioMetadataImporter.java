@@ -28,10 +28,6 @@
  */
 package it.tidalwave.bluemarine2.metadata.impl.audio.embedded;
 
-import it.tidalwave.bluemarine2.mediascanner.impl.IdCreator;
-import it.tidalwave.bluemarine2.mediascanner.impl.MediaItemImportRequest;
-import it.tidalwave.bluemarine2.mediascanner.impl.ProgressHandler;
-import it.tidalwave.bluemarine2.mediascanner.impl.StatementManager;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import javax.inject.Inject;
@@ -61,6 +57,10 @@ import it.tidalwave.bluemarine2.model.vocabulary.MO;
 import it.tidalwave.bluemarine2.model.vocabulary.DbTune;
 import it.tidalwave.bluemarine2.model.vocabulary.Purl;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import it.tidalwave.bluemarine2.mediascanner.impl.IdCreator;
+import it.tidalwave.bluemarine2.mediascanner.impl.MediaItemImportRequest;
+import it.tidalwave.bluemarine2.mediascanner.impl.ProgressHandler;
+import it.tidalwave.bluemarine2.mediascanner.impl.StatementManager;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
