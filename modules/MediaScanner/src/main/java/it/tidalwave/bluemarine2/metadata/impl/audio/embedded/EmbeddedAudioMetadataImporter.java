@@ -191,18 +191,21 @@ public class EmbeddedAudioMetadataImporter
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onMediaItemImportRequest (final @ListensTo @Nonnull MediaItemImportRequest request)
+    /* VisibleForTesting */ void onMediaItemImportRequest (final @ListensTo MediaItemImportRequest request)
       throws InterruptedException
       {
-        try
+        request.getSha1().ifPresent(sha1 ->
           {
-            log.info("onMediaItemImportRequest({})", request);
-            importMediaItem(request.getMediaItem());
-          }
-        finally
-          {
-            progress.incrementImportedMediaItems();
-          }
+            try
+              {
+                log.info("onMediaItemImportRequest({})", request);
+                importMediaItem(request.getMediaItem(), new Id(sha1));
+              }
+            finally
+              {
+                progress.incrementImportedMediaItems();
+              }
+          });
       }
 
     /*******************************************************************************************************************
@@ -212,10 +215,9 @@ public class EmbeddedAudioMetadataImporter
      * @param                           mediaItem   the item
      *
      ******************************************************************************************************************/
-    private void importMediaItem (final @Nonnull MediaItem mediaItem)
+    private void importMediaItem (final @Nonnull MediaItem mediaItem, final @Nonnull Id sha1)
       {
         log.debug("importMediaItem({})", mediaItem);
-        final Id sha1 = idCreator.createSha1Id(mediaItem.getPath());
 
         final Metadata metadata = mediaItem.getMetadata();
 

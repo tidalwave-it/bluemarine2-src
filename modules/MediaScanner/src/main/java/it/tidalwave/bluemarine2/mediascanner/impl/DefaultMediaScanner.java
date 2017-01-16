@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import java.util.Optional;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
@@ -51,6 +52,9 @@ public class DefaultMediaScanner
 
     @Inject
     private MessageBus messageBus;
+
+    @Inject
+    private IdCreator idCreator;
 
     /*******************************************************************************************************************
      *
@@ -85,7 +89,7 @@ public class DefaultMediaScanner
                 if (item instanceof MediaItem)
                   {
                     progress.incrementTotalMediaItems();
-                    messageBus.publish(new MediaItemImportRequest((MediaItem)item));
+                    messageBus.publish(new MediaItemImportRequest((MediaItem)item, Optional.empty()));
                   }
 
                 else if (item instanceof MediaFolder)
@@ -102,6 +106,21 @@ public class DefaultMediaScanner
         finally
           {
             progress.incrementScannedFolders();
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    /* VisibleForTesting */ void onMediaItemImportRequest (final @ListensTo @Nonnull MediaItemImportRequest request)
+      throws InterruptedException
+      {
+        if (!request.getSha1().isPresent())
+          {
+            final String sha1 = idCreator.createSha1Id(request.getMediaItem().getPath()).stringValue();
+            messageBus.publish(new MediaItemImportRequest(request.getMediaItem(), Optional.of(sha1)));
+            progress.incrementDoneFingerprints();
           }
       }
   }

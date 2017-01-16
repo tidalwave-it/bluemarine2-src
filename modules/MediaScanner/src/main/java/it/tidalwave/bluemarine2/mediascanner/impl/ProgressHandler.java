@@ -54,52 +54,53 @@ public class ProgressHandler
       {
         @NonNull
         private final String name;
-        
+
         @Nonnegative
         private volatile int total;
-        
+
         @Nonnegative
         private volatile int done;
-        
+
         public void reset()
           {
-            total = done = 0;  
+            total = done = 0;
           }
-        
+
         public synchronized void incrementTotal()
           {
-            total++;  
+            total++;
           }
-        
+
         public synchronized void incrementDone()
           {
-            done++;  
+            done++;
           }
-        
+
         public boolean completed()
           {
-            return done == total;  
+            return done == total;
           }
 
         @Override
-        public String toString() 
+        public String toString()
           {
             return String.format("%s: %d/%d (%d%%)", name, done, total, (total == 0) ? 0 : (100 * done) / total);
           }
       }
-    
+
     @Inject
     private MessageBus messageBus;
-    
+
     private final Progress folders = new Progress("folders");
+    private final Progress fingerprints = new Progress("fingerprints");
     private final Progress mediaItems = new Progress("mediaItems");
     private final Progress artists = new Progress("artists");
     private final Progress records = new Progress("records");
     private final Progress downloads = new Progress("downloads");
     private final Progress insertions = new Progress("insertions");
-    
+
     private final List<Progress> all = Arrays.asList(folders, mediaItems, artists, records, downloads, insertions);
-    
+
     // TODO: should also collect errors
 
     public synchronized void reset()
@@ -122,6 +123,13 @@ public class ProgressHandler
     public void incrementTotalMediaItems()
       {
         mediaItems.incrementTotal();
+        fingerprints.incrementTotal();
+        check();
+      }
+
+    public void incrementDoneFingerprints()
+      {
+        fingerprints.incrementDone();
         check();
       }
 
@@ -131,7 +139,7 @@ public class ProgressHandler
         check();
       }
 
-    public void incrementTotalArtists() 
+    public void incrementTotalArtists()
       {
         artists.incrementTotal();
         check();
@@ -143,13 +151,13 @@ public class ProgressHandler
         check();
       }
 
-    public void incrementTotalDownloads() 
+    public void incrementTotalDownloads()
       {
         downloads.incrementTotal();
         check();
       }
 
-    public void incrementCompletedDownloads() 
+    public void incrementCompletedDownloads()
       {
         downloads.incrementDone();
         check();
@@ -161,27 +169,27 @@ public class ProgressHandler
         check();
       }
 
-    public void incrementImportedRecords() 
+    public void incrementImportedRecords()
       {
         records.incrementDone();
         check();
       }
-    
+
     public void incrementTotalInsertions()
       {
         insertions.incrementTotal();
         check();
       }
 
-    public void incrementCompletedInsertions() 
+    public void incrementCompletedInsertions()
       {
         insertions.incrementDone();
         check();
       }
-    
+
     private void check()
       {
-        log.debug("{}", this); 
+        log.debug("{}", this);
 
         if (isCompleted())
           {
