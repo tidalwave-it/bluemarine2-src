@@ -294,6 +294,7 @@ public class MusicBrainzAudioMedatataImporter
             .with(recordIri, MO.P_TRACK_COUNT,   literalFor(tracks.size()))
             .with(recordIri, MO.P_AMAZON_ASIN,   literalFor(Optional.ofNullable(release.getAsin())))
             .with(recordIri, MO.P_GTIN,          literalFor(Optional.ofNullable(release.getBarcode())))
+
             .with(tracks.stream().parallel()
                                  .map(_f(track -> handleTrack(recordIri, track)))
                                  .collect(toList()));
@@ -329,11 +330,13 @@ public class MusicBrainzAudioMedatataImporter
 
         return createModelBuilder()
             .with(recordIri, MO.P_TRACK,          trackIri)
+
             .with(trackIri,  RDF.TYPE,            MO.C_TRACK)
             .with(trackIri,  BM.P_IMPORTED_FROM,  BM.O_MUSICBRAINZ)
             .with(trackIri,  RDFS.LABEL,          literalFor(trackTitle))
             .with(trackIri,  DC.TITLE,            literalFor(trackTitle))
             .with(trackIri,  MO.P_TRACK_NUMBER,   literalFor(track.getPosition().intValue()))
+
             .with(handleTrackRelations(trackIri, recording));
 //        bmmo:diskCount "1"^^xs:int ;
 //        bmmo:diskNumber "1"^^xs:int ;
@@ -393,6 +396,7 @@ public class MusicBrainzAudioMedatataImporter
             .with(performanceIri,  RDF.TYPE,            MO.C_PERFORMANCE)
             .with(performanceIri,  BM.P_IMPORTED_FROM,  BM.O_MUSICBRAINZ)
             .with(performanceIri,  MO.P_RECORDED_AS,    trackIri) // FIXME: Signal, not Track
+
             .with(artistIri,       RDF.TYPE,            MO.C_MUSIC_ARTIST)
             .with(artistIri,       BM.P_IMPORTED_FROM,  BM.O_MUSICBRAINZ)
             .with(artistIri,       RDFS.LABEL,          literalFor(artist.getName()))
