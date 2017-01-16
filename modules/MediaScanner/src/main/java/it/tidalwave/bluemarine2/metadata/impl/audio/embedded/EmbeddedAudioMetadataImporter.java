@@ -147,7 +147,7 @@ public class EmbeddedAudioMetadataImporter
      *
      ******************************************************************************************************************/
     @Immutable @RequiredArgsConstructor @Getter @ToString
-    static class Entry
+    static class Pair
       {
         @Nonnull
         private final IRI iri;
@@ -233,15 +233,15 @@ public class EmbeddedAudioMetadataImporter
         final Optional<IRI> newRecordIri   = seenRecordUris.putIfAbsentAndGetNewKey(recordIri, true);
 
         final List<IRI> makerUris = makerName.map(name -> asList(createIriForEmbeddedArtist(name))).orElse(emptyList());
-        final List<Entry> artists = makerName.map(name -> Stream.of(name.split("[;]")).map(String::trim)).orElse(Stream.empty())
-                           .map(name -> new Entry(createIriForEmbeddedArtist(name), name))
+        final List<Pair> artists = makerName.map(name -> Stream.of(name.split("[;]")).map(String::trim)).orElse(Stream.empty())
+                           .map(name -> new Pair(createIriForEmbeddedArtist(name), name))
                            .collect(toList());
 
-        final List<Entry> newArtists   = artists.stream().filter(
-                e -> seenArtistUris.putIfAbsentAndGetNewKey(e.getIri(), Optional.empty()).isPresent())
+        final List<Pair> newArtists   = artists.stream().filter(
+                p -> seenArtistUris.putIfAbsentAndGetNewKey(p.getIri(), Optional.empty()).isPresent())
                 .collect(toList());
-        final List<IRI> newArtistIris       = newArtists.stream().map(Entry::getIri).collect(toList());
-        final List<Value> newArtistLiterals = newArtists.stream().map(e -> literalFor(e.getName())).collect(toList());
+        final List<IRI> newArtistIris       = newArtists.stream().map(Pair::getIri).collect(toList());
+        final List<Value> newArtistLiterals = newArtists.stream().map(p -> literalFor(p.getName())).collect(toList());
 
         final Optional<IRI> newGroupIri = (artists.size() <= 1) ? Optional.empty()
                 : seenArtistUris.putIfAbsentAndGetNewKey(makerUris.get(0), Optional.empty()); // FIXME: only first one?
@@ -294,7 +294,7 @@ public class EmbeddedAudioMetadataImporter
             .withOptional(newGroupIri,   RDFS.LABEL,              literalFor(makerName))
             .withOptional(newGroupIri,   FOAF.NAME,               literalFor(makerName))
             .withOptional(newGroupIri,   DbTune.ARTIST_TYPE,      literalFor((short)2))
-            .withOptional(newGroupIri,   Purl.COLLABORATES_WITH,  artists.stream().map(Entry::getIri))
+            .withOptional(newGroupIri,   Purl.COLLABORATES_WITH,  artists.stream().map(Pair::getIri))
             .toModel();
       }
 
