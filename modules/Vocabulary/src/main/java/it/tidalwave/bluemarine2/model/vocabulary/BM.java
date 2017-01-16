@@ -102,19 +102,19 @@ public final class BM
       }
 
     @Nonnull
-    public static IRI localTrackIriFor (final @Nonnull Id id)
+    public static IRI trackIriFor (final @Nonnull Id id)
       {
         return FACTORY.createIRI("urn:bluemarine:track:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI localRecordIriFor (final @Nonnull Id id)
+    public static IRI recordIriFor (final @Nonnull Id id)
       {
         return FACTORY.createIRI("urn:bluemarine:record:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI localArtistIriFor (final @Nonnull Id id)
+    public static IRI artistIriFor (final @Nonnull Id id)
       {
         return FACTORY.createIRI("urn:bluemarine:artist:" + id.stringValue());
       }

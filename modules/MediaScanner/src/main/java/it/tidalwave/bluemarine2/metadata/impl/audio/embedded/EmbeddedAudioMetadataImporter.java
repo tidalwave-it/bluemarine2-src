@@ -319,7 +319,7 @@ public class EmbeddedAudioMetadataImporter
     @Nonnull
     private IRI createIriForEmbeddedRecord (final @Nonnull String recordTitle)
       {
-        return BM.localRecordIriFor(createSha1Id("RECORD:" + recordTitle));
+        return BM.recordIriFor(createSha1Id("RECORD:" + recordTitle));
       }
 
     /*******************************************************************************************************************
@@ -330,7 +330,7 @@ public class EmbeddedAudioMetadataImporter
     private IRI createIriForEmbeddedTrack (final @Nonnull Metadata metadata, final @Nonnull Id sha1)
       {
         // FIXME: the same contents in different places will give the same sha1. Disambiguates by hashing the path too?
-        return BM.localTrackIriFor(sha1);
+        return BM.trackIriFor(sha1);
       }
 
     /*******************************************************************************************************************
@@ -340,6 +340,6 @@ public class EmbeddedAudioMetadataImporter
     @Nonnull
     private IRI createIriForEmbeddedArtist (final @Nonnull String name)
       {
-        return BM.localArtistIriFor(createSha1Id("ARTIST:" + name));
+        return BM.artistIriFor(createSha1Id("ARTIST:" + name));
       }
   }
