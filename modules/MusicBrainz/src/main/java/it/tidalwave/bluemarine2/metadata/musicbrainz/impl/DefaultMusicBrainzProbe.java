@@ -486,7 +486,7 @@ public class DefaultMusicBrainzProbe
 
     /*******************************************************************************************************************
      *
-     * Returns {@code true} if the given {@link Medium} is of a meaningful type (that is, a CD).
+     * Returns {@code true} if the given {@link Medium} is of a meaningful type (that is, a CD) or it's not set.
      *
      * @param   medium  the {@code Medium}
      * @return          {@code true} if there is a match
@@ -494,9 +494,11 @@ public class DefaultMusicBrainzProbe
      ******************************************************************************************************************/
     private static boolean matchesFormat (final @Nonnull Medium medium)
       {
-        if (!"CD".equals(medium.getFormat()))
+        final String format = medium.getFormat();
+
+        if ((format != null) && !"CD".equals(format))
           {
-            log.info(">>>>>>>> discarded {} because not a CD ({})", medium.getTitle(), medium.getFormat());
+            log.info(">>>>>>>> discarded {} because not a CD ({})", medium.getTitle(), format);
             return false;
           }
 
