@@ -40,6 +40,7 @@ import java.security.NoSuchAlgorithmException;
 import it.tidalwave.util.Id;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.nio.channels.FileChannel.MapMode.READ_ONLY;
+import static it.tidalwave.bluemarine2.util.Formatters.*;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.toFileBMT46;
 
 /***********************************************************************************************************************
@@ -72,7 +73,7 @@ public class IdCreator
                 final MappedByteBuffer byteBuffer = randomAccessFile.getChannel().map(READ_ONLY, 0, file.length());
                 final MessageDigest digestComputer = MessageDigest.getInstance(ALGORITHM);
                 digestComputer.update(byteBuffer);
-                return new Id(toString(digestComputer.digest()));
+                return new Id(toHexString(digestComputer.digest()));
               }
           }
         catch (InterruptedException | NoSuchAlgorithmException | IOException e)
@@ -96,30 +97,11 @@ public class IdCreator
           {
             final MessageDigest digestComputer = MessageDigest.getInstance(ALGORITHM);
             digestComputer.update(string.getBytes(UTF_8));
-            return new Id(toString(digestComputer.digest()));
+            return new Id(toHexString(digestComputer.digest()));
           }
         catch (NoSuchAlgorithmException e)
           {
             throw new RuntimeException(e);
           }
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private static String toString (final @Nonnull byte[] bytes)
-      {
-        final StringBuilder builder = new StringBuilder();
-
-        for (final byte b : bytes)
-          {
-            final int value = b & 0xff;
-            builder.append(Integer.toHexString(value >>> 4)).append(Integer.toHexString(value & 0x0f));
-          }
-
-        return builder.toString();
       }
   }
