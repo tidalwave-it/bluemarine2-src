@@ -68,7 +68,7 @@ public final class MO
 
     public static final IRI C_PERFORMANCE           = FACTORY.createIRI(S_C_PERFORMANCE);
 
-    // Properties
+    // Predicates
     public static final String S_P_AMAZON_ASIN      = PREFIX + "amazon_asin";
     public static final String S_P_BITS_PER_SAMPLE  = PREFIX + "bitsPerSample";
     public static final String S_P_DURATION         = PREFIX + "duration";
