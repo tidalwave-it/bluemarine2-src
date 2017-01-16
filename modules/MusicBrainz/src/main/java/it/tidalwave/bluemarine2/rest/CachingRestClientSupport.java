@@ -28,13 +28,17 @@
  */
 package it.tidalwave.bluemarine2.rest;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.io.IOException;
-import java.net.URI;
 import java.nio.file.Path;
-import java.util.Arrays;
+import java.net.URI;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpRequest;
@@ -47,8 +51,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.*;
-import java.util.List;
-import javax.annotation.Nonnegative;
+import static java.nio.charset.StandardCharsets.*;
 import static org.springframework.http.HttpHeaders.*;
 
 /***********************************************************************************************************************
@@ -297,6 +300,45 @@ public class CachingRestClientSupport
     @Nonnull
     /* package */ static String fixedPath (final @Nonnull String url)
       {
-        return url.replace("://", "/");
+        String s = url.replace("://", "/");
+        int i = s.lastIndexOf('/');
+
+        if (i >= 0)
+          {
+            final String lastSegment = s.substring(i + 1);
+
+            if (lastSegment.length() > 255) // FIXME: and Mac OS X
+              {
+                try
+                  {
+                    final MessageDigest digestComputer = MessageDigest.getInstance("SHA1");
+                    s = s.substring(0, i) + "/" + toString(digestComputer.digest(lastSegment.getBytes(UTF_8)));
+                  }
+                catch (NoSuchAlgorithmException e)
+                  {
+                    throw new RuntimeException(e);
+                  }
+              }
+          }
+
+        return s;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static String toString (final @Nonnull byte[] bytes)
+      {
+        final StringBuilder builder = new StringBuilder();
+
+        for (final byte b : bytes)
+          {
+            final int value = b & 0xff;
+            builder.append(Integer.toHexString(value >>> 4)).append(Integer.toHexString(value & 0x0f));
+          }
+
+        return builder.toString();
       }
   }
