@@ -55,6 +55,7 @@ public final class BM
     public static final String S_PATH                   = PREFIX + "path";
     public static final String S_FILE_SIZE              = PREFIX + "fileSize";
     public static final String S_ITUNES_CDDB1           = PREFIX + "iTunesCddb1";
+    public static final String S_P_IMPORTED_FROM        = PREFIX + "importedFrom";
 
 //    public static final String S_FULL_CREDITS           = PREFIX + "fullCredits";
 
@@ -72,6 +73,12 @@ public final class BM
     public static final IRI FILE_SIZE                   = factory.createIRI(S_FILE_SIZE);
 
     public static final IRI ITUNES_CDDB1                = factory.createIRI(S_ITUNES_CDDB1);
+
+    /** Predicate that associates any subject to the data source that created it. */
+    public static final IRI P_IMPORTED_FROM             = factory.createIRI(S_P_IMPORTED_FROM);
+
+    /** Object of the P_SOURCE predicate that says that the subject was imported from MusicBrainz. */
+    public static final IRI O_MUSICBRAINZ               = factory.createIRI("http://musicbrainz.org");
 
 //    /** Means that the file couldn't download metadata. The object is the timestamp of the latest attempt. */
 //    public static final IRI LATEST_MB_METADATA          = factory.createIRI(PREFIX + "latestMusicBrainzMetadata");

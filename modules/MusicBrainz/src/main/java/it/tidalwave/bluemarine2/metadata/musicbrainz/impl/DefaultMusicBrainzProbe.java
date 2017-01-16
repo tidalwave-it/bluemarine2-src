@@ -279,13 +279,14 @@ public class DefaultMusicBrainzProbe
         final String recordTitle = release.getTitle();
         final IRI recordIri = musicBrainzIriFor("record", release.getId());
         return createModelBuilder()
-            .with(recordIri, RDF.TYPE,         MO.C_RECORD)
-            .with(recordIri, MO.P_MEDIA_TYPE,  MO.C_CD)
-            .with(recordIri, RDFS.LABEL,       literalFor(recordTitle))
-            .with(recordIri, DC.TITLE,         literalFor(recordTitle))
-            .with(recordIri, MO.P_TRACK_COUNT, literalFor(tracks.size()))
-            .with(recordIri, MO.P_AMAZON_ASIN, literalFor(Optional.ofNullable(release.getAsin())))
-            .with(recordIri, MO.P_GTIN,        literalFor(Optional.ofNullable(release.getBarcode())))
+            .with(recordIri, RDF.TYPE,           MO.C_RECORD)
+            .with(recordIri, BM.P_IMPORTED_FROM, BM.O_MUSICBRAINZ)
+            .with(recordIri, MO.P_MEDIA_TYPE,    MO.C_CD)
+            .with(recordIri, RDFS.LABEL,         literalFor(recordTitle))
+            .with(recordIri, DC.TITLE,           literalFor(recordTitle))
+            .with(recordIri, MO.P_TRACK_COUNT,   literalFor(tracks.size()))
+            .with(recordIri, MO.P_AMAZON_ASIN,   literalFor(Optional.ofNullable(release.getAsin())))
+            .with(recordIri, MO.P_GTIN,          literalFor(Optional.ofNullable(release.getBarcode())))
             .merge(tracks.stream().parallel()
                                   .map(_f(track -> handleTrack(recordIri, track)))
                                   .collect(toList()));
@@ -322,6 +323,7 @@ public class DefaultMusicBrainzProbe
         return createModelBuilder()
             .with(recordIri, MO.P_TRACK,          trackIri)
             .with(trackIri,  RDF.TYPE,            MO.C_TRACK)
+            .with(trackIri,  BM.P_IMPORTED_FROM,  BM.O_MUSICBRAINZ)
             .with(trackIri,  RDFS.LABEL,          literalFor(trackTitle))
             .with(trackIri,  DC.TITLE,            literalFor(trackTitle))
             .with(trackIri,  MO.P_TRACK_NUMBER,   literalFor(track.getPosition().intValue()))
@@ -381,11 +383,13 @@ public class DefaultMusicBrainzProbe
         final IRI performanceIri = musicBrainzIriFor("performance", recording.getId()); // FIXME: MB namespace?
         final IRI artistIri      = musicBrainzIriFor("artist", artist.getId());
         final ModelBuilder model = createModelBuilder()
-            .with(performanceIri,  RDF.TYPE,         MO.C_PERFORMANCE)
-            .with(performanceIri,  MO.P_RECORDED_AS, trackIri) // FIXME: Signal, not Track
-            .with(artistIri,       RDF.TYPE,         MO.C_MUSIC_ARTIST)
-            .with(artistIri,       RDFS.LABEL,       literalFor(artist.getName()))
-            .with(artistIri,       FOAF.NAME,        literalFor(artist.getName()));
+            .with(performanceIri,  RDF.TYPE,            MO.C_PERFORMANCE)
+            .with(performanceIri,  BM.P_IMPORTED_FROM,  BM.O_MUSICBRAINZ)
+            .with(performanceIri,  MO.P_RECORDED_AS,    trackIri) // FIXME: Signal, not Track
+            .with(artistIri,       RDF.TYPE,            MO.C_MUSIC_ARTIST)
+            .with(artistIri,       BM.P_IMPORTED_FROM,  BM.O_MUSICBRAINZ)
+            .with(artistIri,       RDFS.LABEL,          literalFor(artist.getName()))
+            .with(artistIri,       FOAF.NAME,           literalFor(artist.getName()));
 
         if ("artist".equals(targetType))
           {
