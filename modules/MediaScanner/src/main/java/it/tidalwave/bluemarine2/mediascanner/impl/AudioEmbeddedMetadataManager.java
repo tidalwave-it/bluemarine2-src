@@ -33,19 +33,14 @@ import javax.annotation.concurrent.Immutable;
 import javax.inject.Inject;
 import java.time.Duration;
 import java.time.Instant;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
-import java.util.function.Function;
 import java.util.stream.Stream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import org.eclipse.rdf4j.model.IRI;
-import org.eclipse.rdf4j.model.Statement;
 import org.eclipse.rdf4j.model.Value;
-import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 import org.eclipse.rdf4j.model.vocabulary.DC;
 import org.eclipse.rdf4j.model.vocabulary.FOAF;
 import org.eclipse.rdf4j.model.vocabulary.RDF;
@@ -53,7 +48,6 @@ import org.eclipse.rdf4j.model.vocabulary.RDFS;
 import it.tidalwave.util.ConcurrentHashMapWithOptionals;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.InstantProvider;
-import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.MediaItem;
@@ -140,53 +134,6 @@ public class AudioEmbeddedMetadataManager
         private final String name;
       }
 
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Immutable @RequiredArgsConstructor @ToString
-    static class Pair
-      {
-        @Nonnull
-        private final IRI predicate;
-
-        @Nonnull
-        private final Value object;
-
-        @Nonnull
-        public Statement createStatementWithSubject (final @Nonnull IRI subjectIri)
-          {
-            return SimpleValueFactory.getInstance().createStatement(subjectIri, predicate, object);
-          }
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Facility that creates a request to add statements for the giving {@link Metadata} and {@code subjectURi}. It
-     * maps metadata items to the proper statement predicate and literal.
-     *
-     ******************************************************************************************************************/
-    static class Mapper extends HashMap<Key<?>, Function<Object, Pair>>
-      {
-        private static final long serialVersionUID = 9180433348240275721L;
-
-        @Nonnull
-        public List<Statement> statementsFor (final @Nonnull Metadata metadata, final @Nonnull IRI subjectIri)
-          {
-            return metadata.getEntries().stream()
-                                        .filter(e -> containsKey(e.getKey()))
-                                        .map(e -> forEntry(e).createStatementWithSubject(subjectIri))
-                                        .collect(toList());
-          }
-
-        @Nonnull
-        private Pair forEntry (final @Nonnull Map.Entry<Key<?>, ?> entry)
-          {
-            return get(entry.getKey()).apply(entry.getValue());
-          }
-      }
-
     @Inject
     private StatementManager statementManager;
 
@@ -199,26 +146,14 @@ public class AudioEmbeddedMetadataManager
     @Inject
     private ProgressHandler progress;
 
-    private static final Mapper SIGNAL_MAPPER = new Mapper();
-    private static final Mapper TRACK_MAPPER = new Mapper();
+//    private static final Mapper SIGNAL_MAPPER = new Mapper();
+//    private static final Mapper TRACK_MAPPER = new Mapper();
 
     // Set would suffice, but there's no ConcurrentSet
     private final ConcurrentHashMapWithOptionals<IRI, Optional<String>> seenArtistUris =
             new ConcurrentHashMapWithOptionals<>();
 
     private final ConcurrentHashMapWithOptionals<IRI, Boolean> seenRecordUris = new ConcurrentHashMapWithOptionals<>();
-
-    static
-      {
-        TRACK_MAPPER. put(Metadata.TRACK_NUMBER, v -> new Pair(MO.P_TRACK_NUMBER,    literalFor((int)v)));
-        TRACK_MAPPER. put(Metadata.DISK_NUMBER,  v -> new Pair(BM.DISK_NUMBER,       literalFor((int)v)));
-        TRACK_MAPPER. put(Metadata.DISK_COUNT,   v -> new Pair(BM.DISK_COUNT,        literalFor((int)v)));
-
-        SIGNAL_MAPPER.put(Metadata.SAMPLE_RATE,  v -> new Pair(MO.P_SAMPLE_RATE,     literalFor((int)v)));
-        SIGNAL_MAPPER.put(Metadata.BIT_RATE,     v -> new Pair(MO.P_BITS_PER_SAMPLE, literalFor((int)v)));
-        SIGNAL_MAPPER.put(Metadata.DURATION,     v -> new Pair(MO.P_DURATION,
-                                                            literalFor((float)((Duration)v).toMillis())));
-      }
 
     /*******************************************************************************************************************
      *
@@ -300,16 +235,21 @@ public class AudioEmbeddedMetadataManager
 
             .with(        trackIri,      RDF.TYPE,                  MO.C_TRACK)
             .withOptional(trackIri,      BM.ITUNES_CDDB1,           literalFor(metadata.get(ITUNES_COMMENT)
-                                                                                      .map(c -> c.getTrackId())))
+                                                                                       .map(c -> c.getTrackId())))
 
             .with(signalIri,             RDF.TYPE,                  MO.C_DIGITAL_SIGNAL)
             .with(signalIri,             MO.P_PUBLISHED_AS,         trackIri)
-            .publish();
 
-        statementManager.requestAdd(SIGNAL_MAPPER.statementsFor(metadata, signalIri));
-        statementManager.requestAdd(TRACK_MAPPER.statementsFor(metadata, trackIri));
+            .withOptional(signalIri,     MO.P_SAMPLE_RATE,          literalForInt(metadata.get(SAMPLE_RATE)))
+            .withOptional(signalIri,     MO.P_BITS_PER_SAMPLE,      literalForInt(metadata.get(BIT_RATE)))
+            .withOptional(signalIri,     MO.P_DURATION,             literalForFloat(metadata.get(DURATION)
+                                                                                            .map(Duration::toMillis)
+                                                                                            .map(l -> (float)l)))
 
-        statementManager.requestAddStatements()
+            .withOptional(trackIri,      MO.P_TRACK_NUMBER,         literalForInt(metadata.get(TRACK_NUMBER)))
+            .withOptional(trackIri,      BM.DISK_NUMBER,            literalForInt(metadata.get(DISK_NUMBER)))
+            .withOptional(trackIri,      BM.DISK_COUNT,             literalForInt(metadata.get(DISK_COUNT)))
+
             .withOptional(trackIri,      RDFS.LABEL,                literalFor(title))
             .withOptional(trackIri,      DC.TITLE,                  literalFor(title))
             .with(        trackIri,      FOAF.MAKER,                makerUris.stream())

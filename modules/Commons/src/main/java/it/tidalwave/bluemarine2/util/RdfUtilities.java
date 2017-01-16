@@ -112,9 +112,29 @@ public final class RdfUtilities
      *
      ******************************************************************************************************************/
     @Nonnull
+    public static Optional<Value> literalForInt (final Optional<Integer> optionalInteger)
+      {
+        return optionalInteger.map(i -> literalFor(i));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
     public static Value literalFor (final long value)
       {
         return FACTORY.createLiteral(value);
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static Optional<Value> literalForLong (final Optional<Long> optionalLong)
+      {
+        return optionalLong.map(l -> literalFor(l));
       }
 
     /*******************************************************************************************************************
@@ -135,6 +155,16 @@ public final class RdfUtilities
     public static Value literalFor (final float value)
       {
         return FACTORY.createLiteral(value);
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static Optional<Value> literalForFloat (final Optional<Float> optionalFloat)
+      {
+        return optionalFloat.map(f -> literalFor(f));
       }
 
     /*******************************************************************************************************************
