@@ -112,6 +112,12 @@ public class DefaultMusicBrainzProbe
     @Getter @Setter
     private int releaseGroupScoreThreshold = 50;
 
+    enum Validation
+      {
+        TRACK_OFFSETS_MATCH_REQUIRED,
+        TRACK_OFFSETS_MATCH_NOT_REQUIRED
+      }
+
     /*******************************************************************************************************************
      *
      *
@@ -230,8 +236,8 @@ public class DefaultMusicBrainzProbe
             log.info("============ PROBING TOC FOR {}", albumTitle);
             final List<ReleaseAndMedium> rams = new ArrayList<>();
             final RestResponse<ReleaseList> releaseList = mbMetadataProvider.findReleaseListByToc(cddb.get().getToc(), TOC_INCLUDES);
-
-            releaseList.ifPresent(releases -> rams.addAll(findReleases(releases, cddb.get())));
+            // even though we're querying by TOC, matching offsets is required to kill many false results
+            releaseList.ifPresent(releases -> rams.addAll(findReleases(releases, cddb.get(), Validation.TRACK_OFFSETS_MATCH_REQUIRED)));
 
             if (rams.isEmpty())
               {
@@ -248,7 +254,7 @@ public class DefaultMusicBrainzProbe
                     releaseGroups.addAll(response.get().getReleaseGroup());
                   });
 
-                rams.addAll(findReleases(releaseGroups, cddb.get()));
+                rams.addAll(findReleases(releaseGroups, cddb.get(), Validation.TRACK_OFFSETS_MATCH_REQUIRED));
               }
 
             model.merge(rams.stream()
@@ -438,19 +444,21 @@ public class DefaultMusicBrainzProbe
      *
      * @param   releaseGroups   the {@code ReleaseGroup}s
      * @param   cddb            the track offsets
+     * @param   validation      how the results must be validated
      * @return                  a collection of filtered {@code Medium}s
      *
      ******************************************************************************************************************/
     @Nonnull
     private Collection<ReleaseAndMedium> findReleases (final @Nonnull List<ReleaseGroup> releaseGroups,
-                                                       final @Nonnull Cddb cddb)
+                                                       final @Nonnull Cddb cddb,
+                                                       final @Nonnull Validation validation)
       {
         return releaseGroups.stream()
                             .parallel()
                             .filter(releaseGroup -> scoreOf(releaseGroup) >= releaseGroupScoreThreshold)
                             .peek(this::logArtists)
                             .map(releaseGroup -> releaseGroup.getReleaseList())
-                            .flatMap(releaseList -> findReleases(releaseList, cddb).stream())
+                            .flatMap(releaseList -> findReleases(releaseList, cddb, validation).stream())
                             .collect(toList());
       }
 
@@ -461,12 +469,14 @@ public class DefaultMusicBrainzProbe
      *
      * @param   releaseList     the {@code ReleaseList}
      * @param   cddb            the track offsets
+     * @param   validation      how the results must be validated
      * @return                  a collection of filtered {@code Medium}s
      *
      ******************************************************************************************************************/
     @Nonnull
     private Collection<ReleaseAndMedium> findReleases (final @Nonnull ReleaseList releaseList,
-                                                       final @Nonnull Cddb cddb)
+                                                       final @Nonnull Cddb cddb,
+                                                       final @Nonnull Validation validation)
       {
         return releaseList.getRelease().stream()
             .parallel()
@@ -477,7 +487,7 @@ public class DefaultMusicBrainzProbe
                             .stream()
                             .map(medium -> new ReleaseAndMedium(release, medium))))
             .filter(ram -> matchesFormat(ram.getMedium()))
-            .filter(ram -> matchesTrackOffsets(ram.getMedium(), cddb))
+            .filter(ram -> matchesTrackOffsets(ram.getMedium(), cddb, validation))
             .peek(ram -> log.info(">>>>>>>> FOUND {} - with score {}", ram.getMedium().getTitle(), 0 /* scoreOf(releaseGroup) FIXME */))
             // FIXME: should stop at the first found?
             .collect(toMap(ram -> ram.getRelease().getId(), ram -> ram, (u, v) -> v, TreeMap::new))
@@ -509,13 +519,24 @@ public class DefaultMusicBrainzProbe
      *
      * Returns {@code true} i the given {@link Medium} matches the track offsets in the given {@link Cddb}.
      *
-     * @param   medium  the {@code Medium}
-     * @return          {@code true} if there is a match
+     * @param   medium      the {@code Medium}
+     * @param   cddb        the track offsets
+     * @param   validation  how the results must be validated
+     * @return              {@code true} if there is a match
      *
      ******************************************************************************************************************/
-    private boolean matchesTrackOffsets (final @Nonnull Medium medium, final @Nonnull Cddb cddb)
+    private boolean matchesTrackOffsets (final @Nonnull Medium medium,
+                                         final @Nonnull Cddb cddb,
+                                         final @Nonnull Validation validation)
       {
         final List<Cddb> cddbs = cddbsOf(medium);
+
+        if (cddbs.isEmpty() && (validation == Validation.TRACK_OFFSETS_MATCH_NOT_REQUIRED))
+          {
+            log.info(">>>>>>>> no track offsets, but not required");
+            return true;
+          }
+
         final boolean matches = cddbs.stream().anyMatch(c -> cddb.matches(c, trackOffsetsMatchThreshold));
 
         if (!matches)
