@@ -134,7 +134,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
         log.info("STATS: {}", stats.entrySet().stream().map(Object::toString).collect(joining(", ")));
         modelBuilders.entrySet().forEach(
           _c(entry -> exportToFile(entry.getValue().toModel(),
-                                   TEST_RESULTS.resolve("musicbrainz").resolve(entry.getKey() + ".n3"))));
+                                   TEST_RESULTS.resolve("musicbrainz-" + entry.getKey() + ".n3"))));
         // TODO assertion
         unmatched.forEach(path -> log.info("STATS: unmatched with CDDB: {}", path));
       }
