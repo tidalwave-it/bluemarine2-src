@@ -70,13 +70,13 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class DefaultMusicBrainzProbeTest extends TestSupport
+public class DefaultMusicBrainzMedatataManagerTest extends TestSupport
   {
     private DefaultCddbMetadataProvider cddbMetadataProvider;
 
     private DefaultMusicBrainzMetadataProvider musicBrainzMetadataProvider;
 
-    private DefaultMusicBrainzProbe underTest;
+    private DefaultMusicBrainzMedatataManager underTest;
 
     private final Map<String, TestSetStats> stats = new TreeMap<>();
 
@@ -116,7 +116,7 @@ public class DefaultMusicBrainzProbeTest extends TestSupport
         musicBrainzMetadataProvider.setCacheMode(ONLY_USE_CACHE);
 //        underTest.initialize(); // FIXME
 
-        underTest = new DefaultMusicBrainzProbe(cddbMetadataProvider, musicBrainzMetadataProvider);
+        underTest = new DefaultMusicBrainzMedatataManager(cddbMetadataProvider, musicBrainzMetadataProvider);
 
         stats.clear();
         unmatched.clear();

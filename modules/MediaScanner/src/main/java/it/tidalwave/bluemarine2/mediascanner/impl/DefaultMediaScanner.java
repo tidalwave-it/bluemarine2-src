@@ -105,7 +105,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 public class DefaultMediaScanner
   {
     @Inject
-    private EmbeddedMetadataManager embeddedMetadataManager;
+    private AudioEmbeddedMetadataManager embeddedMetadataManager;
 
     @Inject
     private ProgressHandler progress;

@@ -84,7 +84,7 @@ import static lombok.AccessLevel.PRIVATE;
  **********************************************************************************************************************/
 @Slf4j
 @RequiredArgsConstructor
-public class DefaultMusicBrainzProbe
+public class DefaultMusicBrainzMedatataManager
   {
     private static final QName QNAME_SCORE = new QName("http://musicbrainz.org/ns/ext#-2.0", "score");
 

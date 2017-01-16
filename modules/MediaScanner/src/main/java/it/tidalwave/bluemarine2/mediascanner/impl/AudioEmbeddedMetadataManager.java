@@ -71,7 +71,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class EmbeddedMetadataManager
+public class AudioEmbeddedMetadataManager
   {
     /*******************************************************************************************************************
      *
