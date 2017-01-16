@@ -74,6 +74,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  * <pre>
  * mo:AudioFile
  *      IRI                     computed from the fingerprint of the contents
+ *      bm:importedFrom         http://bluemarine.tidalwave.it/source#embedded
  *      rdfs:label              the display name
  *      dc:title                the title
  *      mo:encodes              points to the signal
@@ -84,6 +85,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  *
  * mo:DigitalSignal
  *      IRI                     computed from the fingerprint of related file
+ *      bm:importedFrom         http://bluemarine.tidalwave.it/source#embedded
  *      mo:bitsPerSample        the bits per sample
  *      mo:duration             the duration
  *      mo:sample_rate          the sample rate
@@ -94,6 +96,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  *
  * mo:Track
  *      IRI                     computed from the fingerprint of related file
+ *      bm:importedFrom         http://bluemarine.tidalwave.it/source#embedded
  *      rdfs:label              the display name
  *      dc:title                the title
  *      mo:track_number         the track number in the record
@@ -104,6 +107,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  *
  * mo:Record
  *      IRI                     computed from the fingerprint of the name
+ *      bm:importedFrom         http://bluemarine.tidalwave.it/source#embedded
  *      rdfs:label              the display name (ALBUM from audiofile metadata, or the name of the folder)
  *      dc:title                the title (see above)
  *      mo:mediaType            CD
@@ -116,6 +120,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  *
  * mo:MusicArtist
  *      IRI                     computed from the fingerprint of the name
+ *      bm:importedFrom         http://bluemarine.tidalwave.it/source#embedded
  *      rdfs:label              the display name
  *      foaf:name               the name
  *      (in case of a group also the predicates below)
@@ -236,6 +241,7 @@ public class AudioEmbeddedMetadataManager
 
         statementManager.requestAddStatements()
             .with(        audioFileIri,  RDF.TYPE,                MO.C_AUDIO_FILE)
+            .with(        audioFileIri,  BM.P_IMPORTED_FROM,      BM.O_EMBEDDED)
             .with(        audioFileIri,  FOAF.SHA1,               literalFor(sha1))
             .with(        audioFileIri,  MO.P_ENCODES,            signalIri) // FIXME: this is path's SHA1, not contents'
             .with(        audioFileIri,  BM.PATH,                 literalFor(mediaItem.getRelativePath()))
@@ -243,6 +249,7 @@ public class AudioEmbeddedMetadataManager
             .withOptional(audioFileIri,  BM.FILE_SIZE,            literalForLong(metadata.get(FILE_SIZE)))
 
             .with(        signalIri,     RDF.TYPE,                MO.C_DIGITAL_SIGNAL)
+            .with(        signalIri,     BM.P_IMPORTED_FROM,      BM.O_EMBEDDED)
             .with(        signalIri,     MO.P_PUBLISHED_AS,       trackIri)
             .withOptional(signalIri,     MO.P_SAMPLE_RATE,        literalForInt(metadata.get(SAMPLE_RATE)))
             .withOptional(signalIri,     MO.P_BITS_PER_SAMPLE,    literalForInt(metadata.get(BIT_RATE)))
@@ -250,6 +257,7 @@ public class AudioEmbeddedMetadataManager
                                                                                           .map(Duration::toMillis)
                                                                                           .map(l -> (float)l)))
             .with(        trackIri,      RDF.TYPE,                MO.C_TRACK)
+            .with(        trackIri,      BM.P_IMPORTED_FROM,      BM.O_EMBEDDED)
             .withOptional(trackIri,      BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
                                                                                      .map(c -> c.getTrackId())))
             .withOptional(trackIri,      MO.P_TRACK_NUMBER,       literalForInt(metadata.get(TRACK_NUMBER)))
@@ -260,6 +268,7 @@ public class AudioEmbeddedMetadataManager
             .with(        trackIri,      FOAF.MAKER,              makerUris.stream())
 
             .withOptional(newRecordIri,  RDF.TYPE,                MO.C_RECORD)
+            .withOptional(newRecordIri,  BM.P_IMPORTED_FROM,      BM.O_EMBEDDED)
             .withOptional(newRecordIri,  MO.P_MEDIA_TYPE,         MO.C_CD)
             .withOptional(newRecordIri,  RDFS.LABEL,              literalFor(recordTitle))
             .withOptional(newRecordIri,  DC.TITLE,                literalFor(recordTitle))
@@ -269,10 +278,12 @@ public class AudioEmbeddedMetadataManager
             .with(        recordIri,     FOAF.MAKER,              makerUris.stream())
 
             .with(        newArtistIris, RDF.TYPE,                MO.C_MUSIC_ARTIST)
+            .with(        newArtistIris, BM.P_IMPORTED_FROM,      BM.O_EMBEDDED)
             .with(        newArtistIris, RDFS.LABEL,              newArtistLiterals)
             .with(        newArtistIris, FOAF.NAME,               newArtistLiterals)
 
             .withOptional(newGroupIri,   RDF.TYPE,                MO.C_MUSIC_ARTIST)
+            .withOptional(newGroupIri,   BM.P_IMPORTED_FROM,      BM.O_EMBEDDED)
             .withOptional(newGroupIri,   RDFS.LABEL,              literalFor(makerName))
             .withOptional(newGroupIri,   FOAF.NAME,               literalFor(makerName))
             .withOptional(newGroupIri,   DbTune.ARTIST_TYPE,      literalFor((short)2))

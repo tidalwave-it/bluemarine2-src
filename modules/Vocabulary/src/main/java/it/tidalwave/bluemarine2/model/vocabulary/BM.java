@@ -78,6 +78,9 @@ public final class BM
     public static final IRI P_IMPORTED_FROM             = FACTORY.createIRI(S_P_IMPORTED_FROM);
 
     /** Object of the P_SOURCE predicate that says that the subject was imported from MusicBrainz. */
+    public static final IRI O_EMBEDDED                  = FACTORY.createIRI("http://bluemarine.tidalwave.it/source#embedded");
+
+    /** Object of the P_SOURCE predicate that says that the subject was imported from MusicBrainz. */
     public static final IRI O_MUSICBRAINZ               = FACTORY.createIRI("http://musicbrainz.org");
 
 //    /** Means that the file couldn't download metadata. The object is the timestamp of the latest attempt. */
