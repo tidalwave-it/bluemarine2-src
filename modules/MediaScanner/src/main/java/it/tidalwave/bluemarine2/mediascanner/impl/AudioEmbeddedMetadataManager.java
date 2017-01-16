@@ -254,74 +254,18 @@ public class AudioEmbeddedMetadataManager
      *
      * Processes a {@link MediaItem}.
      *
-     * @param                           audioFile   the item
+     * @param                           mediaItem   the item
      *
      ******************************************************************************************************************/
-    private void importMediaItem (final @Nonnull MediaItem audioFile)
+    private void importMediaItem (final @Nonnull MediaItem mediaItem)
       {
-        log.debug("importMediaItem({})", audioFile);
-        final Id sha1 = idCreator.createSha1Id(audioFile.getPath());
-        final Metadata metadata = audioFile.getMetadata();
+        log.debug("importMediaItem({})", mediaItem);
+        final Id sha1 = idCreator.createSha1Id(mediaItem.getPath());
+        final Metadata metadata = mediaItem.getMetadata();
 
         final IRI audioFileIri = BM.audioFileIriFor(sha1);
         final IRI signalIri = BM.signalIriFor(sha1);
         final IRI trackIri = createIriForEmbeddedTrack(metadata, sha1);
-
-        statementManager.requestAddStatements()
-            .with(audioFileIri,         RDF.TYPE,                MO.C_AUDIO_FILE)
-            .with(audioFileIri,         FOAF.SHA1,               literalFor(sha1))
-            .with(audioFileIri,         MO.P_ENCODES,            signalIri) // FIXME: this is path's SHA1, not contents'
-            .with(audioFileIri,         BM.PATH,                 literalFor(audioFile.getRelativePath()))
-            .with(audioFileIri,         BM.LATEST_INDEXING_TIME, literalFor(getLastModifiedTime(audioFile.getPath())))
-            // TODO why optional? Isn't file size always available?
-            .withOptional(audioFileIri, BM.FILE_SIZE,            metadata.get(FILE_SIZE).map(s -> literalFor(s)))
-
-            .with(        trackIri,     RDF.TYPE,                MO.C_TRACK)
-            .withOptional(trackIri,     BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
-                                                                                    .map(c -> c.getTrackId())))
-
-            .with(signalIri,            RDF.TYPE,                MO.C_DIGITAL_SIGNAL)
-            .with(signalIri,            MO.P_PUBLISHED_AS,       trackIri)
-            .publish();
-
-        importAudioFileMetadata(audioFile, signalIri, trackIri);
-        importFallbackTrackMetadata(audioFile, trackIri);
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Imports the metadata embedded in a file for the given {@link MediaItem}. It only processes the portion of
-     * metadata which are never superseded by external catalogs (such as sample rate, duration, etc...).
-     *
-     * @param   mediaItem               the {@code MediaItem}.
-     * @param   signalUri               the IRI of the signal
-     * @param   trackUri                the IRI of the track
-     *
-     ******************************************************************************************************************/
-    private void importAudioFileMetadata (final @Nonnull MediaItem mediaItem,
-                                          final @Nonnull IRI signalUri,
-                                          final @Nonnull IRI trackUri)
-      {
-        log.debug("importAudioFileMetadata({}, {}, {})", mediaItem, signalUri, trackUri);
-        final Metadata metadata = mediaItem.getMetadata();
-        statementManager.requestAdd(SIGNAL_MAPPER.statementsFor(metadata, signalUri));
-        statementManager.requestAdd(TRACK_MAPPER.statementsFor(metadata, trackUri));
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Imports all the  metadata embedded in a track for the given {@link MediaItem}.
-     *
-     * @param   mediaItem               the {@code MediaItem}.
-     * @param   trackIri                the IRI of the track
-     *
-     ******************************************************************************************************************/
-    private void importFallbackTrackMetadata (final @Nonnull MediaItem mediaItem, final @Nonnull IRI trackIri)
-      {
-        log.debug("importFallbackTrackMetadata({}, {})", mediaItem, trackIri);
-
-        final Metadata metadata           = mediaItem.getMetadata();
-        log.debug(">>>> metadata of {}: {}", trackIri, metadata);
 
         final Optional<String> title      = metadata.get(TITLE);
         final Optional<String> makerName  = metadata.get(ARTIST);
@@ -344,6 +288,26 @@ public class AudioEmbeddedMetadataManager
         final String recordTitle         = metadata.get(ALBUM).orElse(parent.getPath().toFile().getName());
         final IRI recordIri              = createIriForEmbeddedRecord(recordTitle);
         final Optional<IRI> newRecordIri = seenRecordUris.putIfAbsentAndGetNewKey(recordIri, true);
+
+        statementManager.requestAddStatements()
+            .with(audioFileIri,          RDF.TYPE,                  MO.C_AUDIO_FILE)
+            .with(audioFileIri,          FOAF.SHA1,                 literalFor(sha1))
+            .with(audioFileIri,          MO.P_ENCODES,              signalIri) // FIXME: this is path's SHA1, not contents'
+            .with(audioFileIri,          BM.PATH,                   literalFor(mediaItem.getRelativePath()))
+            .with(audioFileIri,          BM.LATEST_INDEXING_TIME,   literalFor(getLastModifiedTime(mediaItem.getPath())))
+            // TODO why optional? Isn't file size always available?
+            .withOptional(audioFileIri,  BM.FILE_SIZE,              metadata.get(FILE_SIZE).map(s -> literalFor(s)))
+
+            .with(        trackIri,      RDF.TYPE,                  MO.C_TRACK)
+            .withOptional(trackIri,      BM.ITUNES_CDDB1,           literalFor(metadata.get(ITUNES_COMMENT)
+                                                                                      .map(c -> c.getTrackId())))
+
+            .with(signalIri,             RDF.TYPE,                  MO.C_DIGITAL_SIGNAL)
+            .with(signalIri,             MO.P_PUBLISHED_AS,         trackIri)
+            .publish();
+
+        statementManager.requestAdd(SIGNAL_MAPPER.statementsFor(metadata, signalIri));
+        statementManager.requestAdd(TRACK_MAPPER.statementsFor(metadata, trackIri));
 
         statementManager.requestAddStatements()
             .withOptional(trackIri,      RDFS.LABEL,                literalFor(title))
