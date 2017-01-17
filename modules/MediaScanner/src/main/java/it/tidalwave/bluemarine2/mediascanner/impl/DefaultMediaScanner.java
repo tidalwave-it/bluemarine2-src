@@ -46,7 +46,6 @@ import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import lombok.extern.slf4j.Slf4j;
 import static java.nio.channels.FileChannel.MapMode.READ_ONLY;
-import static it.tidalwave.bluemarine2.util.Formatters.toHexString;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.toFileBMT46;
 
 /***********************************************************************************************************************
@@ -59,7 +58,7 @@ import static it.tidalwave.bluemarine2.util.Miscellaneous.toFileBMT46;
 public class DefaultMediaScanner
   {
     private static final String ALGORITHM = "SHA1";
-    
+
     @Inject
     private ProgressHandler progress;
 
@@ -132,7 +131,7 @@ public class DefaultMediaScanner
       {
         if (!request.getSha1().isPresent())
           {
-            final String sha1 = sha1Of(request.getMediaItem().getPath());
+            final byte[] sha1 = sha1Of(request.getMediaItem().getPath());
             messageBus.publish(new MediaItemImportRequest(request.getMediaItem(), Optional.of(sha1)));
             progress.incrementDoneFingerprints();
           }
@@ -143,7 +142,7 @@ public class DefaultMediaScanner
      *
      ******************************************************************************************************************/
     @Nonnull
-    public String sha1Of (final @Nonnull Path path)
+    public byte[] sha1Of (final @Nonnull Path path)
       throws InterruptedException, NoSuchAlgorithmException, IOException
       {
         try
@@ -156,7 +155,7 @@ public class DefaultMediaScanner
                 final MappedByteBuffer byteBuffer = randomAccessFile.getChannel().map(READ_ONLY, 0, file.length());
                 final MessageDigest digestComputer = MessageDigest.getInstance(ALGORITHM);
                 digestComputer.update(byteBuffer);
-                return toHexString(digestComputer.digest());
+                return digestComputer.digest();
               }
           }
         finally
@@ -164,5 +163,4 @@ public class DefaultMediaScanner
             diskSemaphore.release();
           }
       }
-
   }

@@ -683,7 +683,7 @@ public class MusicBrainzAudioMedatataImporter
     @Nonnull // FIXME: temporary
     private IRI dummyAudioFileIriFor (final @Nonnull Cddb cddb, final @Nonnegative int trackNumber)
       {
-        return BM.audioFileIriFor(createSha1IdNew(cddb.getToc() + "/" + trackNumber));
+        return BM.audioFileIriFor(createSha1IdNew(cddb.getToc() + "/" + trackNumber).stringValue());
       }
 
     /*******************************************************************************************************************

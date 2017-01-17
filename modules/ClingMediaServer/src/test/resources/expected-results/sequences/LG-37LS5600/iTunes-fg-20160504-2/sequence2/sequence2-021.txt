@@ -1,0 +1,83 @@
+Browse({ObjectID=/music/a+r+t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=16, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="1" id="/music/a+r+t/a:A-VY50Cy0VfYu_RjacPestz72Yc=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Ensemble In Cortezia</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:EaBkQ0Y9MeYfS3Wt_PEYr8hdp8Y=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Geoges Barboteu, Gilbert Coursier, Daniel Dubar, Michel Berg</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:3xoSdPZt7MSy-OWw9l--NscDGhc=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Geoges Barboteu, Jean-François Paillard Chamber Orchestra</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:fSEHGLlZucXZ-8AnSVAumRsU6dk=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Geoges Barboteu/Horn, Jean-Francois Paillard Chamber Orchest</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:KBv3K-UdK0ZJHoLvSj-qG0ifGbM=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Geoges Barboteu/Horn, Lily Laskine/Harp</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:JW9tEXBQZt3jql86p_Do_b2UeIE=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Georges Barboteu/Horn, Lily Laskine/Harp, Jean-Francois Pail</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:0DyWVrE9Oa-2ElaPI_DkKNJS3aM=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Georges Prêtre/Maria Callas/Nicolai Gedda/Nadine Sautereau/Jane Berbié/Choeurs René Duclos/Choeurs d'Enfants Jean Pesneaud/Choeurs Et Orchestre De l'Opéra National De Paris</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:NjVwdiMKW4X0vsjfDiG5MG2Impw=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Georges Prêtre: French National Radio Orchestra</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:aQuGhq6SCXc3CX_yi0f_x8eB1s4=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Georges Prêtre: Orchestre National De L'ORTF</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:-kzRZASaCSkyIS5VafVbSE85LYQ=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Georges Prêtre: Paris Conservatory Orchestra</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:rXMmmed-__Si_cS8xy-AHZ5UXoA=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Georges Prêtre: Paris Opera Orchestra &amp; Chorus</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:KCMCkVU6EPkyjWpyPLT5ZUd0Vq4=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Griffes/Faure/Debussy/Gaos/Saint-Saens/Ravel</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:8V62CZKcelN87s75YRktI-J_f5o=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Gundula Janowitz, Hans Peter Blochwitz, Etc.</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:NNN7-jnYe735PaI1dnruuw2tkBg=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Gundula Janowitz, Rosemarie Lang, Etc.</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:wCB__TPCpq3NJ7laCQPcttw56ts=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Gustav Holst</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:7EZahtVgEnv8WhsP1YHGYWegPSc=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Heinrich Schiff</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+</DIDL-Lite>

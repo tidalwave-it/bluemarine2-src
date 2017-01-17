@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.util;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
+import java.util.Base64;
 import javax.annotation.Nonnull;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -76,5 +77,16 @@ public final class Formatters
           }
 
         return builder.toString();
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static String toBase64String (final @Nonnull byte[] bytes)
+      {
+        return  Base64.getUrlEncoder().encodeToString(bytes);
       }
   }
