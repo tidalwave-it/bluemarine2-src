@@ -39,6 +39,7 @@ import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.BIT_RATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.SAMPLE_RATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.YEAR;
+import static java.util.stream.Collectors.joining;
 
 /***********************************************************************************************************************
  *
@@ -65,7 +66,7 @@ public class AudioFileDetailRendererSelectable extends DetailRendererSelectable<
         final AudioFile audioFile = this.owner.getAudioFile();
         final MediaItem.Metadata metadata = audioFile.getMetadata();
 
-        final String details = String.format("%s\n%s\n%s\n%s\n%s",
+        final String details = String.format("%s%n%s%n%s%n%s%n%s",
             audioFile.findMakers().stream().map(m -> m.as(Displayable).getDisplayName())
                                   .collect(joining(", ", "Artist: ", "")),
             audioFile.findComposers().stream().map(e -> e.as(Displayable).getDisplayName())

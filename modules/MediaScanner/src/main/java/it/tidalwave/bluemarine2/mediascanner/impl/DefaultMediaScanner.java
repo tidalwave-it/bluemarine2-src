@@ -30,72 +30,26 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.time.Instant;
 import java.util.Optional;
+import java.util.concurrent.Semaphore;
+import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
+import java.io.RandomAccessFile;
+import java.nio.MappedByteBuffer;
 import java.nio.file.Path;
-import org.eclipse.rdf4j.model.IRI;
-import org.eclipse.rdf4j.model.vocabulary.FOAF;
-import org.eclipse.rdf4j.model.vocabulary.RDF;
-import it.tidalwave.util.Id;
-import it.tidalwave.util.InstantProvider;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.MediaItem;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import it.tidalwave.bluemarine2.model.vocabulary.BM;
-import it.tidalwave.bluemarine2.model.vocabulary.MO;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static java.nio.channels.FileChannel.MapMode.READ_ONLY;
+import static it.tidalwave.bluemarine2.util.Formatters.toHexString;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.toFileBMT46;
 
 /***********************************************************************************************************************
- *
- *
- * mo:AudioFile
- *      IRI                                                     computed from the fingerprint
- *      foaf:sha1           the fingerprint of the file         locally computed
- *      bm:latestInd.Time   the latest import time              locally computed
- *      bm:path             the path of the file                locally computed
- *      dc:title            the title                           locally computed    WRONG: USELESS?
- *      rdfs:label          the display name                    locally computed    WRONG: should be the file name without path?
- *      mo:encodes          points to the signal                locally computed
- *
- * mo:DigitalSignal
- *      IRI                                                     computed from the fingerprint
- *      mo:bitsPerSample    the bits per sample                 locally extracted from the file
- *      mo:duration         the duration                        locally extracted from the file
- *      mo:sample_rate      the sample rate                     locally extracted from the file
- *      mo:published_as     points to the Track                 locally computed
- *      MISSING mo:channels
- *      MISSING? mo:time
- *      MISSING? mo:trmid
- *
- * mo:Track
- *      IRI                                                     the DbTune one if available, else computed from SHA1
- *      mo:musicbrainz      the MusicBrainz IRI                 locally extracted from the file
- *      dc:title            the title                           taken from DbTune
- *      rdfs:label          the display name                    taken from DbTune
- *      foaf:maker          points to the MusicArtist           taken from DbTune
- *      mo:track_number     the track number in the record      taken from DbTune
- *
- * mo:Record
- *      IRI                                                     taken from DbTune
- *      dc:date
- *      dc:language
- *      dc:title            the title                           taken from DbTune
- *      rdfs:label          the display name                    taken from DbTune
- *      mo:release          TODO points to the Label (EMI, etc...)
- *      mo:musicbrainz      the MusicBrainz IRI                 locally extracted from the file
- *      mo:track            points to the Tracks                taken from DbTune
- *      foaf:maker          points to the MusicArtist           taken from DbTune
- *      owl:sameAs          point to external resources         taken from DbTune
- *
- * mo:Artist
- *
  *
  * @author  Fabrizio Giudici
  * @version $Id$
@@ -104,29 +58,17 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 @SimpleMessageSubscriber @Slf4j
 public class DefaultMediaScanner
   {
-//    @Inject // FIXME: refactor Db Tune support in a different class
-//    private DbTuneMetadataManager dbTuneMetadataManager;
-
-    @Inject
-    private EmbeddedMetadataManager embeddedMetadataManager;
-
+    private static final String ALGORITHM = "SHA1";
+    
     @Inject
     private ProgressHandler progress;
 
     @Inject
     private MessageBus messageBus;
 
-    @Inject
-    private StatementManager statementManager;
-
-    @Inject
-    private InstantProvider timestampProvider;
-
-    @Inject
-    private IdCreator idCreator;
-
-    @Inject
-    private Shared shared;
+    // With magnetic disks it's better to access files one at a time
+    // TODO: with SSD, this is not true
+    private final Semaphore diskSemaphore = new Semaphore(1);
 
     /*******************************************************************************************************************
      *
@@ -138,7 +80,7 @@ public class DefaultMediaScanner
     public void process (final @Nonnull MediaFolder folder)
       {
         log.info("process({})", folder);
-        shared.reset();
+//        shared.reset();
         progress.reset();
         progress.incrementTotalFolders();
         messageBus.publish(new InternalMediaFolderScanRequest(folder));
@@ -161,7 +103,7 @@ public class DefaultMediaScanner
                 if (item instanceof MediaItem)
                   {
                     progress.incrementTotalMediaItems();
-                    messageBus.publish(new MediaItemImportRequest((MediaItem)item));
+                    messageBus.publish(new MediaItemImportRequest((MediaItem)item, Optional.empty()));
                   }
 
                 else if (item instanceof MediaFolder)
@@ -186,99 +128,41 @@ public class DefaultMediaScanner
      *
      ******************************************************************************************************************/
     /* VisibleForTesting */ void onMediaItemImportRequest (final @ListensTo @Nonnull MediaItemImportRequest request)
-      throws InterruptedException
+      throws InterruptedException, NoSuchAlgorithmException, IOException
+      {
+        if (!request.getSha1().isPresent())
+          {
+            final String sha1 = sha1Of(request.getMediaItem().getPath());
+            messageBus.publish(new MediaItemImportRequest(request.getMediaItem(), Optional.of(sha1)));
+            progress.incrementDoneFingerprints();
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public String sha1Of (final @Nonnull Path path)
+      throws InterruptedException, NoSuchAlgorithmException, IOException
       {
         try
           {
-            log.info("onMediaItemImportRequest({})", request);
-            importMediaItem(request.getMediaItem());
+            diskSemaphore.acquire();
+            final File file = toFileBMT46(path);
+
+            try (final RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r"))
+              {
+                final MappedByteBuffer byteBuffer = randomAccessFile.getChannel().map(READ_ONLY, 0, file.length());
+                final MessageDigest digestComputer = MessageDigest.getInstance(ALGORITHM);
+                digestComputer.update(byteBuffer);
+                return toHexString(digestComputer.digest());
+              }
           }
         finally
           {
-            progress.incrementImportedMediaItems();
+            diskSemaphore.release();
           }
       }
 
-    /*******************************************************************************************************************
-     *
-     * Processes a {@link MediaItem}.
-     *
-     * @param                           audioFile   the item
-     *
-     ******************************************************************************************************************/
-    private void importMediaItem (final @Nonnull MediaItem audioFile)
-      {
-        log.debug("importMediaItem({})", audioFile);
-        final Id sha1 = idCreator.createSha1Id(audioFile.getPath());
-        final Metadata metadata = audioFile.getMetadata();
-
-        final IRI audioFileIri = BM.audioFileIriFor(sha1);
-        // FIXME: DbTune has got Signals. E.g. http://dbtune.org/musicbrainz/page/signal/0900f0cb-230f-4632-bd87-650801e5fdba
-        // FIXME: Try to use them. It seems there is no extra information, but use their Uri.
-        final IRI signalIri = BM.signalIriFor(sha1);
-        final IRI trackIri = createTrackIri(metadata, sha1);
-
-        statementManager.requestAddStatements()
-            .with(audioFileIri,         RDF.TYPE,                MO.C_AUDIO_FILE)
-            .with(audioFileIri,         FOAF.SHA1,               literalFor(sha1))
-            .with(audioFileIri,         MO.P_ENCODES,            signalIri) // FIXME: this is path's SHA1, not contents'
-            .with(audioFileIri,         BM.PATH,                 literalFor(audioFile.getRelativePath()))
-            .with(audioFileIri,         BM.LATEST_INDEXING_TIME, literalFor(getLastModifiedTime(audioFile.getPath())))
-            // TODO why optional? Isn't file size always available?
-            .withOptional(audioFileIri, BM.FILE_SIZE,            metadata.get(FILE_SIZE).map(s -> literalFor(s)))
-
-            .with(        trackIri,     RDF.TYPE,                MO.C_TRACK)
-            .withOptional(trackIri,     BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
-                                                                                    .map(c -> c.getTrackId())))
-
-            .with(signalIri,            RDF.TYPE,                MO.C_DIGITAL_SIGNAL)
-            .with(signalIri,            MO.P_PUBLISHED_AS,       trackIri)
-            .publish();
-
-        embeddedMetadataManager.importAudioFileMetadata(audioFile, signalIri, trackIri);
-
-        // FIXME: use a Chain of Responsibility
-//        if (musicBrainzTrackId.isPresent())
-//          {
-//            dbTuneMetadataManager.importTrackMetadata(audioFile, trackUri, musicBrainzTrackId.get());
-////                importMediaItemMusicBrainzMetadata(mediaItem, mediaItemUri);
-//          }
-//        else
-//          {
-            embeddedMetadataManager.importFallbackTrackMetadata(audioFile, trackIri);
-//          }
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private IRI createTrackIri (final @Nonnull Metadata metadata, final @Nonnull Id sha1)
-      {
-        // FIXME: use a chain of responsibility
-        final Optional<Id> musicBrainzTrackId = metadata.get(MBZ_TRACK_ID);
-        log.debug(">>>> musicBrainzTrackId: {}", musicBrainzTrackId);
-        // FIXME: the same contents in different places will give the same sha1. Disambiguates by hashing the path too?
-        return !musicBrainzTrackId.isPresent() ? BM.localTrackIriFor(sha1)
-                                               : BM.musicBrainzIriFor("track", musicBrainzTrackId.get());
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private Instant getLastModifiedTime (final @Nonnull Path path)
-      {
-        try
-          {
-            return Files.getLastModifiedTime(path).toInstant();
-          }
-        catch (IOException e) // should never happen
-          {
-            log.warn("Cannot get last modified time for {}: assuming now", path);
-            return timestampProvider.getInstant();
-          }
-      }
   }

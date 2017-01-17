@@ -41,7 +41,7 @@ import lombok.NoArgsConstructor;
  *
  **********************************************************************************************************************/
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public final class Formatters 
+public final class Formatters
   {
     /*******************************************************************************************************************
      *
@@ -54,8 +54,27 @@ public final class Formatters
         final long hours = s / 3600;
         final long minutes = (s / 60) % 60;
         final long seconds = s % 60;
-        
+
         return (hours == 0) ? String.format("%02d:%02d", minutes, seconds)
                             : String.format("%02d:%02d:%02d", hours, minutes, seconds);
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static String toHexString (final @Nonnull byte[] bytes)
+      {
+        final StringBuilder builder = new StringBuilder();
+
+        for (final byte b : bytes)
+          {
+            final int value = b & 0xff;
+            builder.append(Integer.toHexString(value >>> 4)).append(Integer.toHexString(value & 0x0f));
+          }
+
+        return builder.toString();
       }
   }
