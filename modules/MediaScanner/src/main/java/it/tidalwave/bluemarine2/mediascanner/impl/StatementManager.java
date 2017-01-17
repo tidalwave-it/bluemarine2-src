@@ -30,23 +30,20 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Stream;
-import org.eclipse.rdf4j.model.Statement;
-import org.eclipse.rdf4j.model.Resource;
 import org.eclipse.rdf4j.model.IRI;
+import org.eclipse.rdf4j.model.Model;
+import org.eclipse.rdf4j.model.Resource;
+import org.eclipse.rdf4j.model.Statement;
 import org.eclipse.rdf4j.model.Value;
-import org.eclipse.rdf4j.model.ValueFactory;
-import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 import org.eclipse.rdf4j.repository.RepositoryException;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.util.FunctionWrappers._c;
+import static java.util.stream.Collectors.toList;
 
 /***********************************************************************************************************************
  *
@@ -55,183 +52,67 @@ import lombok.extern.slf4j.Slf4j;
  *
  **********************************************************************************************************************/
 @SimpleMessageSubscriber @Slf4j
-public class StatementManager 
+public class StatementManager
   {
-    public class Builder
-      {
-        private final List<Statement> statements = new ArrayList<>();
-        
-        private final ValueFactory factory = SimpleValueFactory.getInstance();
-
-        @Nonnull
-        public Builder with (final @Nonnull Resource subject, 
-                             final @Nonnull IRI predicate,
-                             final @Nonnull Value object) 
-          {
-            return with(factory.createStatement(subject, predicate, object));
-          }
-        
-        @Nonnull
-        public Builder withOptional (final @Nonnull Optional<? extends Resource> optionalSubject, 
-                                     final @Nonnull IRI predicate,
-                                     final @Nonnull Value object) 
-          {
-            return optionalSubject.map(subject -> with(subject, predicate, object)).orElse(this);
-          }
-        
-        @Nonnull
-        public Builder withOptional (final @Nonnull Resource subject, 
-                                     final @Nonnull IRI predicate,
-                                     final @Nonnull Optional<? extends Value> optionalObject)
-          { 
-            return optionalObject.map(object -> with(subject, predicate, object)).orElse(this);
-          }
-        
-        @Nonnull
-        public Builder withOptional (final @Nonnull Optional<? extends Resource> optionalSubject, 
-                                     final @Nonnull IRI predicate,
-                                     final @Nonnull Optional<? extends Value> optionalObject) 
-          {
-            return optionalObject.map(object -> withOptional(optionalSubject, predicate, object)).orElse(this);
-          }
-        
-        @Nonnull
-        public Builder with (final @Nonnull List<? extends Resource> subjects, 
-                             final @Nonnull IRI predicate,
-                             final @Nonnull Value object)
-          { 
-            subjects.stream().forEach(subject -> with(subject, predicate, object)); // FIXME ?? this = withOptional(...)
-            return this;
-          }
-        
-        @Nonnull
-        public Builder with (final @Nonnull List<? extends Resource> subjects, 
-                             final @Nonnull IRI predicate,
-                             final @Nonnull List<? extends Value> objects)
-          { 
-            assert subjects.size() == objects.size();
-            
-            for (int i = 0; i < subjects.size(); i++)
-              {
-                with(subjects.get(i), predicate, objects.get(i)); // FIXME ?? this = withOptional(...)
-              }
-            
-            return this;
-          }
-        
-        @Nonnull
-        public Builder with (final @Nonnull Resource subject, 
-                             final @Nonnull IRI predicate,
-                             final @Nonnull Stream<? extends Value> objects)
-          { 
-            objects.forEach(object -> with(subject, predicate, object)); // FIXME ?? this = withOptional(...)
-            return this;
-          }
-        
-        @Nonnull
-        public Builder withOptional (final @Nonnull Optional<? extends Resource> subject, 
-                                     final @Nonnull IRI predicate,
-                                     final @Nonnull Stream<? extends Value> objects)
-          {
-            if (subject.isPresent())
-              {
-                objects.forEach(object -> withOptional(subject, predicate, object)); // FIXME ?? this = withOptional(...)
-              }
-    
-            return this;
-          }
-        
-        @Nonnull
-        public Builder with (final @Nonnull Statement statement) 
-          {
-            statements.add(statement);
-            return this;
-          }
-        
-        @Nonnull
-        public Builder with (final @Nonnull Optional<Builder> optionalBuilder) 
-          {
-            optionalBuilder.ifPresent(builder -> statements.addAll(builder.statements));
-            return this;
-          }
-        
-        @Nonnull
-        public void publish()
-          {
-            progress.incrementTotalInsertions();
-            messageBus.publish(new AddStatementsRequest(Collections.unmodifiableList(statements)));
-          }
-      }
-    
     @Inject
     private MessageBus messageBus;
-    
+
     @Inject
     private Persistence persistence;
-    
+
     @Inject
     private ProgressHandler progress;
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
-    public void requestAdd (final @Nonnull Resource subject, final @Nonnull IRI predicate, final @Nonnull Value literal) 
+    public void requestAdd (final @Nonnull Resource subject, final @Nonnull IRI predicate, final @Nonnull Value literal)
       {
         requestAdd(new AddStatementsRequest(subject, predicate, literal));
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
-    public void requestAdd (final @Nonnull List<Statement> statements) 
+    public void requestAdd (final @Nonnull List<Statement> statements)
       {
         requestAdd(new AddStatementsRequest(statements));
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Builder requestAddStatements() 
+    public void requestAdd (final @Nonnull Model model)
       {
-        return new Builder();
+        requestAdd(new AddStatementsRequest(model.stream().collect(toList())))  ;
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
-    public void requestAdd (final @Nonnull AddStatementsRequest request) 
+    public void requestAdd (final @Nonnull AddStatementsRequest request)
       {
         progress.incrementTotalInsertions();
         messageBus.publish(request);
       }
-    
+
     /*******************************************************************************************************************
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onAddStatementsRequest (final @ListensTo @Nonnull AddStatementsRequest request) 
+    /* VisibleForTesting */ void onAddStatementsRequest (final @ListensTo @Nonnull AddStatementsRequest request)
       throws RepositoryException
       {
         log.info("onAddStatementsRequest({})", request);
         progress.incrementCompletedInsertions();
-        persistence.runInTransaction(connection -> 
+        persistence.runInTransaction(connection ->
           {
-            request.getStatements().stream().forEach(s ->
-              {
-                try
-                  {
-                    connection.add(s);
-                  }
-                catch (RepositoryException e)
-                  {
-                    throw new RuntimeException(e); // FIXME
-                  }
-              });
+            request.getStatements().stream().forEach(_c(s -> connection.add(s)));
           });
       }
   }

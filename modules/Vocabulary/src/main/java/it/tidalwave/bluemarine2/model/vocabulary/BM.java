@@ -45,7 +45,7 @@ import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class BM
   {
-    private final static ValueFactory factory = SimpleValueFactory.getInstance();
+    private final static ValueFactory FACTORY = SimpleValueFactory.getInstance();
 
     public static final String PREFIX                   = "http://bluemarine.tidalwave.it/2015/04/mo/";
 
@@ -55,23 +55,33 @@ public final class BM
     public static final String S_PATH                   = PREFIX + "path";
     public static final String S_FILE_SIZE              = PREFIX + "fileSize";
     public static final String S_ITUNES_CDDB1           = PREFIX + "iTunesCddb1";
+    public static final String S_P_IMPORTED_FROM        = PREFIX + "importedFrom";
 
 //    public static final String S_FULL_CREDITS           = PREFIX + "fullCredits";
 
 //    public static final IRI FULL_CREDITS                = factory.createIRI(S_FULL_CREDITS);
 
     /** The file timestamp the latest time it was indexed. */
-    public static final IRI LATEST_INDEXING_TIME        = factory.createIRI(S_LATEST_INDEXING_TIME);
+    public static final IRI LATEST_INDEXING_TIME        = FACTORY.createIRI(S_LATEST_INDEXING_TIME);
 
-    public static final IRI DISK_NUMBER                 = factory.createIRI(S_DISK_NUMBER);
+    public static final IRI DISK_NUMBER                 = FACTORY.createIRI(S_DISK_NUMBER);
 
-    public static final IRI DISK_COUNT                  = factory.createIRI(S_DISK_COUNT);
+    public static final IRI DISK_COUNT                  = FACTORY.createIRI(S_DISK_COUNT);
 
-    public static final IRI PATH                        = factory.createIRI(S_PATH);
+    public static final IRI PATH                        = FACTORY.createIRI(S_PATH);
 
-    public static final IRI FILE_SIZE                   = factory.createIRI(S_FILE_SIZE);
+    public static final IRI FILE_SIZE                   = FACTORY.createIRI(S_FILE_SIZE);
 
-    public static final IRI ITUNES_CDDB1                = factory.createIRI(S_ITUNES_CDDB1);
+    public static final IRI ITUNES_CDDB1                = FACTORY.createIRI(S_ITUNES_CDDB1);
+
+    /** Predicate that associates any subject to the data source that created it. */
+    public static final IRI P_IMPORTED_FROM             = FACTORY.createIRI(S_P_IMPORTED_FROM);
+
+    /** Object of the P_SOURCE predicate that says that the subject was imported from MusicBrainz. */
+    public static final IRI O_EMBEDDED                  = FACTORY.createIRI("http://bluemarine.tidalwave.it/source#embedded");
+
+    /** Object of the P_SOURCE predicate that says that the subject was imported from MusicBrainz. */
+    public static final IRI O_MUSICBRAINZ               = FACTORY.createIRI("http://musicbrainz.org");
 
 //    /** Means that the file couldn't download metadata. The object is the timestamp of the latest attempt. */
 //    public static final IRI LATEST_MB_METADATA          = factory.createIRI(PREFIX + "latestMusicBrainzMetadata");
@@ -82,37 +92,36 @@ public final class BM
     @Nonnull
     public static IRI audioFileIriFor (final @Nonnull Id id)
       {
-        return factory.createIRI("urn:bluemarine:audiofile:" + id.stringValue());
+        return FACTORY.createIRI("urn:bluemarine:audiofile:" + id.stringValue());
       }
 
     @Nonnull
     public static IRI signalIriFor (final @Nonnull Id id)
       {
-        return factory.createIRI("urn:bluemarine:signal:" + id.stringValue());
+        return FACTORY.createIRI("urn:bluemarine:signal:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI localTrackIriFor (final @Nonnull Id id)
+    public static IRI trackIriFor (final @Nonnull Id id)
       {
-        return factory.createIRI("urn:bluemarine:track:" + id.stringValue());
+        return FACTORY.createIRI("urn:bluemarine:track:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI localRecordIriFor (final @Nonnull Id id)
+    public static IRI recordIriFor (final @Nonnull Id id)
       {
-        return factory.createIRI("urn:bluemarine:record:" + id.stringValue());
+        return FACTORY.createIRI("urn:bluemarine:record:" + id.stringValue());
       }
 
     @Nonnull
-    public static IRI localArtistIriFor (final @Nonnull Id id)
+    public static IRI artistIriFor (final @Nonnull Id id)
       {
-        return factory.createIRI("urn:bluemarine:artist:" + id.stringValue());
+        return FACTORY.createIRI("urn:bluemarine:artist:" + id.stringValue());
       }
 
     @Nonnull
     public static IRI musicBrainzIriFor (final @Nonnull String resourceType, final @Nonnull Id id)
       {
-        return factory.createIRI(String.format("http://dbtune.org/musicbrainz/resource/%s/%s",
-                                               resourceType, id.stringValue()));
+        return FACTORY.createIRI(String.format("urn:musicbrainz:%s:%s", resourceType, id.stringValue()));
       }
   }
