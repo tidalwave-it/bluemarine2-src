@@ -1,0 +1,10 @@
+Browse({ObjectID=/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=1, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:Jw1z0EI-1P73X1tVcTuQp7iZ3bM=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" restricted="0">
+        <dc:title>S'anc fui bèla ni presada</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
+        <res duration="00:06:13" protocolInfo="http-get:*:audio/mpeg:*" size="14928770">http://<server>/Music/Ensemble+In+Cortezia/La+Domna+Savorousa+_+Chants+d_amour+des+troubadours+et+des+trouv%C3%A8res/01+S%27anc+fui+b%C3%A8la+ni+presada.mp3</res>
+    </item>
+</DIDL-Lite>

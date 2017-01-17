@@ -90,9 +90,9 @@ public final class BM
 //    public static final IRI FAILED_MB_METADATA          = factory.createIRI(PREFIX + "failedMusicBrainzMetadata");
 
     @Nonnull
-    public static IRI audioFileIriFor (final @Nonnull Id id)
+    public static IRI audioFileIriFor (final @Nonnull String sha1)
       {
-        return FACTORY.createIRI("urn:bluemarine:audiofile:" + id.stringValue());
+        return FACTORY.createIRI("urn:bluemarine:audiofile:" + sha1);
       }
 
     @Nonnull

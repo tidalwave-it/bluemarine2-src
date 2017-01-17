@@ -1,0 +1,83 @@
+Browse({ObjectID=/music/r+t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="9" id="/music/r+t/r:zNA9Jpx_xIC-a_YMfQ8En9OEloI=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Bach: Concertos For 3 &amp; 4 Harpsichords</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="11" id="/music/r+t/r:-635CqVz4z4PWEI2co8A4_7IS1Y=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Bach: Mass In B Minor, BWV 232 [Disc 1]</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="14" id="/music/r+t/r:nT-nlOg3Dwz09i56erbhREL2DL0=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Bach: Mass In B Minor, BWV 232 [Disc 2]</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="12" id="/music/r+t/r:Yj2VqMnklK0XTAFD_vif3hkcqaQ=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Bach; Vivaldi: Concertos For 2 Violins</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="10" id="/music/r+t/r:BG1DyRYXtPrSxTFALj7CZgnR0QQ=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Beethoven: Piano Sonatas #21, 23 &amp; 26</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="8" id="/music/r+t/r:YKQ4jHPwkwJAgy-bkc4LqTyTRBk=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Borodin, String Quartet 2. Tchaikovsky, string Quartet 3</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="4" id="/music/r+t/r:UNFxjTRge2ywXsyWppK6qFtri5g=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Brahms: Piano Concerto #2</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="4" id="/music/r+t/r:m7rhkonU7nOuTRV5_pj-bB7lbM4=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Brahms: Symphony #4 In E Minor, Op. 98</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="1" id="/music/r+t/r:d-B67tYwHDFv7ibEEJd8nsqMKIE=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Callas - La Divina 2</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="3" id="/music/r+t/r:nhs0L_SwurFvHNLnhkB-lb7PXGw=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Callas - La Mamma Morta</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="14" id="/music/r+t/r:dQjPspHrU7DNVOqQz6gosYfs7Rg=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Canto Gregoriano [Disc 1]</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="12" id="/music/r+t/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Cherubini: 6 Piano Sonatas</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="13" id="/music/r+t/r:ONiNKoLC69EuihrDlMBpTEUyZpo=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Daniel And The Lions - Ludus Danielis</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="8" id="/music/r+t/r:jL-ZGicVKu8j-K5cqo5OXtm1wEs=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Dvořák: Symphonies #8 &amp; 9</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="7" id="/music/r+t/r:0ymKlyL-6jds1e-j-uGhiIu6kLE=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Dvořák; Elgar: Cello Concertos</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="14" id="/music/r+t/r:yTzQJtIOTSUBju9kG4b3JHu_70o=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>El Canto Espiritual Judeoespañol</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+</DIDL-Lite>

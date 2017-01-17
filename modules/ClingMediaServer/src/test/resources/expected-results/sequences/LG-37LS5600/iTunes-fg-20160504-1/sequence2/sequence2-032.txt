@@ -1,8 +1,0 @@
-Browse({ObjectID=/music/a+r+t/a:0f3b283d8ea8a4aace285091ce6de68c6eeb7640, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=16, SortCriteria=})
-<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <container childCount="11" id="/music/a+r+t/a:0f3b283d8ea8a4aace285091ce6de68c6eeb7640/r:2a19e56d563b2ff99a34c1a73b941e8f78818b3c" parentID="/music/a+r+t/a:0f3b283d8ea8a4aace285091ce6de68c6eeb7640" restricted="0" searchable="0">
-        <dc:title>Trio 99&gt;00</dc:title>
-        <dc:creator>blueMarine II</dc:creator>
-        <upnp:class>object.container.album.musicAlbum</upnp:class>
-    </container>
-</DIDL-Lite>
