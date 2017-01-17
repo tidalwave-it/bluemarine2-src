@@ -74,12 +74,18 @@ public class TestSupport
                 Files.lines(file, UTF_8).filter(s -> s.contains("[mp3.album]"))
                                         .findFirst()
                                         .map(s -> s.replaceAll("^.* = ", ""));
+        final Optional<Integer> trackNumber =
+                Files.lines(file, UTF_8).filter(s -> s.contains("[mp3.trackNumber]"))
+                                        .findFirst()
+                                        .map(s -> s.replaceAll("^.* = ", ""))
+                                        .map(Integer::parseInt);
         final Optional<ITunesComment> iTunesComment =
                 Files.lines(file, UTF_8).filter(s -> s.contains("[iTunes.comment]"))
                                         .findFirst()
                                         .map(s -> ITunesComment.fromToString(s.replaceAll("^.* = ", "")));
 
         return new MetadataSupport(file).with(TITLE, albumTitle)
+                                        .with(TRACK_NUMBER, trackNumber)
                                         .with(ITUNES_COMMENT, iTunesComment);
       }
 

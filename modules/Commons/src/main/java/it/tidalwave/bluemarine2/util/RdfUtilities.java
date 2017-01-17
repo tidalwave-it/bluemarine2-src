@@ -48,6 +48,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import lombok.NoArgsConstructor;
 import static java.text.Normalizer.Form.NFC;
+import java.util.Base64;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -246,6 +247,25 @@ public final class RdfUtilities
             final MessageDigest digestComputer = MessageDigest.getInstance(ALGORITHM);
             digestComputer.update(string.getBytes(UTF_8));
             return new Id(toHexString(digestComputer.digest()));
+          }
+        catch (NoSuchAlgorithmException e)
+          {
+            throw new RuntimeException(e);
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static Id createSha1IdNew (final @Nonnull String string)
+      {
+        try
+          {
+            final MessageDigest digestComputer = MessageDigest.getInstance(ALGORITHM);
+            digestComputer.update(string.getBytes(UTF_8));
+            return new Id(Base64.getUrlEncoder().encodeToString(digestComputer.digest()));
           }
         catch (NoSuchAlgorithmException e)
           {

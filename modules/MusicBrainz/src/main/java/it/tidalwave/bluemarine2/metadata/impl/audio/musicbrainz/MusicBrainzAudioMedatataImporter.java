@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.metadata.impl.audio.musicbrainz;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -260,7 +261,7 @@ public class MusicBrainzAudioMedatataImporter
 
             model.with(rams.stream()
                             .parallel()
-                            .map(_f(this::handleRelease))
+                            .map(_f(ram -> handleRelease(metadata, ram)))
                             .collect(toList()));
           }
 
@@ -271,6 +272,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      * Extracts data from the given release.
      *
+     * @param   metadata                the {@code Metadata}
      * @param   ram                     the release
      * @return                          the RDF triples
      * @throws  InterruptedException    in case of I/O error
@@ -278,7 +280,8 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ModelBuilder handleRelease (final @Nonnull ReleaseAndMedium ram)
+    private ModelBuilder handleRelease (final @Nonnull Metadata metadata,
+                                        final @Nonnull ReleaseAndMedium ram)
       throws IOException, InterruptedException
       {
         final List<DefTrackData> tracks = ram.getMedium().getTrackList().getDefTrack();
@@ -296,7 +299,7 @@ public class MusicBrainzAudioMedatataImporter
             .with(recordIri, MO.P_GTIN,          literalFor(Optional.ofNullable(release.getBarcode())))
 
             .with(tracks.stream().parallel()
-                                 .map(_f(track -> handleTrack(recordIri, track)))
+                                 .map(_f(track -> handleTrack(metadata.get(CDDB).get(), recordIri, track)))
                                  .collect(toList()));
 
         // TODO: release.getLabelInfoList();
@@ -308,7 +311,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      * Extracts data from the given {@link DefTrackData}.
      *
-     * @param   trackIri                the IRI of the track we're handling
+     * @param   cddb                    the CDDB of the track we're handling
      * @param   track                   the track
      * @return                          the RDF triples
      * @throws  InterruptedException    in case of I/O error
@@ -316,7 +319,9 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ModelBuilder handleTrack (final @Nonnull IRI recordIri, final @Nonnull DefTrackData track)
+    private ModelBuilder handleTrack (final @Nonnull Cddb cddb,
+                                      final @Nonnull IRI recordIri,
+                                      final @Nonnull DefTrackData track)
       throws IOException, InterruptedException
       {
         final IRI trackIri = musicBrainzIriFor("track", track.getId());
@@ -327,9 +332,26 @@ public class MusicBrainzAudioMedatataImporter
         final String trackTitle = recording.getTitle();
 //                    track.getRecording().getAliasList().getAlias().get(0).getSortName();
         log.info(">>>>>>>> {}. {}", position, trackTitle);
+        final IRI signalIri    = signalIriFor(cddb, track.getPosition().intValue());
+        final IRI audioFileIri = dummyAudioFileIriFor(cddb, track.getPosition().intValue());
 
         return createModelBuilder()
             .with(recordIri, MO.P_TRACK,          trackIri)
+
+             // FIXME: drop it, already from embedded
+             // FIXME: they are temporarily here to test the catalog with the musicbrainz triples alone
+             // FIXME: when the mediascanner will use the new CDDB based id for signals and tracks, the
+             // FIXME: musicbrainz triples will be added to the embedded one.
+            .with(signalIri, RDF.TYPE,            MO.C_DIGITAL_SIGNAL)
+            .with(signalIri, BM.P_IMPORTED_FROM,  BM.O_EMBEDDED)
+            .with(signalIri, MO.P_PUBLISHED_AS,   trackIri)
+            .with(signalIri, MO.P_DURATION,       literalFor((float)0.0))
+
+            .with(audioFileIri, RDF.TYPE,         MO.C_AUDIO_FILE)
+            .with(audioFileIri, BM.P_IMPORTED_FROM, BM.O_EMBEDDED)
+            .with(audioFileIri, MO.P_ENCODES,     signalIri)
+            .with(audioFileIri, BM.PATH,          literalFor("dummy path"))
+             // END FIXME
 
             .with(trackIri,  RDF.TYPE,            MO.C_TRACK)
             .with(trackIri,  BM.P_IMPORTED_FROM,  BM.O_MUSICBRAINZ)
@@ -337,7 +359,7 @@ public class MusicBrainzAudioMedatataImporter
             .with(trackIri,  DC.TITLE,            literalFor(trackTitle))
             .with(trackIri,  MO.P_TRACK_NUMBER,   literalFor(track.getPosition().intValue()))
 
-            .with(handleTrackRelations(trackIri, recording));
+            .with(handleTrackRelations(signalIri, recording));
 //        bmmo:diskCount "1"^^xs:int ;
 //        bmmo:diskNumber "1"^^xs:int ;
       }
@@ -346,19 +368,19 @@ public class MusicBrainzAudioMedatataImporter
      *
      * Extracts data from the relations of the given {@link Recording}.
      *
-     * @param   trackIri    the IRI of the track we're handling
+     * @param   signalIRI   the IRI of the signal associated to the track we're handling
      * @param   recording   the {@code Recording}
      * @return              the RDF triples
     *
      ******************************************************************************************************************/
     @Nonnull
-    private ModelBuilder handleTrackRelations (final @Nonnull IRI trackIri, final @Nonnull Recording recording)
+    private ModelBuilder handleTrackRelations (final @Nonnull IRI signalIri, final @Nonnull Recording recording)
       {
         return createModelBuilder().with(recording.getRelationList()
                                                    .stream()
                                                    .parallel()
                                                    .flatMap(RelationAndTargetType::toStream)
-                                                   .map(ratt ->  handleTrackRelation(trackIri, recording, ratt))
+                                                   .map(ratt ->  handleTrackRelation(signalIri, recording, ratt))
                                                    .collect(toList()));
       }
 
@@ -366,14 +388,14 @@ public class MusicBrainzAudioMedatataImporter
      *
      * Extracts data from a relation of the given {@link Recording}.
      *
-     * @param   trackIri    the IRI of the track we're handling
+     * @param   signalIRI   the IRI of the signal associated to the track we're handling
      * @param   recording   the {@code Recording}
      * @param   ratt        the relation
      * @return              the RDF triples
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ModelBuilder handleTrackRelation (final @Nonnull IRI trackIri,
+    private ModelBuilder handleTrackRelation (final @Nonnull IRI signalIri,
                                               final @Nonnull Recording recording,
                                               final @Nonnull RelationAndTargetType ratt)
       {
@@ -390,12 +412,13 @@ public class MusicBrainzAudioMedatataImporter
                                                   artist.getName(),
                                                   artist.getId());
 
-        final IRI performanceIri = musicBrainzIriFor("performance", recording.getId()); // FIXME: MB namespace?
+        final IRI performanceIri = performanceIriFor(recording.getId());
         final IRI artistIri      = musicBrainzIriFor("artist", artist.getId());
+
         final ModelBuilder model = createModelBuilder()
             .with(performanceIri,  RDF.TYPE,            MO.C_PERFORMANCE)
             .with(performanceIri,  BM.P_IMPORTED_FROM,  BM.O_MUSICBRAINZ)
-            .with(performanceIri,  MO.P_RECORDED_AS,    trackIri) // FIXME: Signal, not Track
+            .with(performanceIri,  MO.P_RECORDED_AS,    signalIri)
 
             .with(artistIri,       RDF.TYPE,            MO.C_MUSIC_ARTIST)
             .with(artistIri,       BM.P_IMPORTED_FROM,  BM.O_MUSICBRAINZ)
@@ -645,6 +668,33 @@ public class MusicBrainzAudioMedatataImporter
     private static int scoreOf (final @Nonnull ReleaseGroup releaseGroup)
       {
         return Integer.parseInt(releaseGroup.getOtherAttributes().get(QNAME_SCORE));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private IRI signalIriFor (final @Nonnull Cddb cddb, final @Nonnegative int trackNumber)
+      {
+        return BM.signalIriFor(createSha1IdNew(cddb.getToc() + "/" + trackNumber));
+      }
+
+    @Nonnull // FIXME: temporary
+    private IRI dummyAudioFileIriFor (final @Nonnull Cddb cddb, final @Nonnegative int trackNumber)
+      {
+        return BM.audioFileIriFor(createSha1IdNew(cddb.getToc() + "/" + trackNumber));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static IRI performanceIriFor (final @Nonnull String id)
+      {
+        return FACTORY.createIRI(String.format("urn:bluemarine:performance:%s", id));
       }
 
     /*******************************************************************************************************************
