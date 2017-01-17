@@ -1,0 +1,10 @@
+Browse({ObjectID=/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=1, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <item id="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=/t:fENsNItDmRv_0WP1eMSL_74e7Rw=" parentID="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=" restricted="0">
+        <dc:title>Cherubini: Sonata #1 In F - 1. Moderato</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
+        <res duration="00:06:27" protocolInfo="http-get:*:audio/mpeg:*" size="15517997">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/01+Cherubini_+Sonata+%231+In+F+-+1.+Moderato.mp3</res>
+    </item>
+</DIDL-Lite>

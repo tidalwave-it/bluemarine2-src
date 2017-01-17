@@ -1,0 +1,83 @@
+Browse({ObjectID=/music/r+t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=16, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="22" id="/music/r+t/r:T_uAVzWHOevBqAQjcyGBT9naRZM=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Gregorian Chant: Hymns and Vespers for the Feast of the Nativity</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="14" id="/music/r+t/r:1k6gcfB56OBfXqNiE-HR02Rdw30=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Handel: Messiah (Highlights)</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="16" id="/music/r+t/r:1n4cUyy4CLNGrzr4a6GWuNSRMIE=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Handel: Music For The Royal Fireworks, Concerto #2 In F</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="19" id="/music/r+t/r:gkOMDR7roqJ20ew_nO4UCqXVcak=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Handel: Water Music</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="13" id="/music/r+t/r:XK4WQ9qcKhwEoFY82b4as0Vkzs0=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Haydn: Symphonies #6-8</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="3" id="/music/r+t/r:273watVY3CmVFx_BX8oc4D9uoXc=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Johannes Brahms, Robert Schumann</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="15" id="/music/r+t/r:1YnSzOtRCbFKmcAnNRKLtDXCE8w=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>La Divina 2</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="14" id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="18" id="/music/r+t/r:7KnxkoIeCTYNs7ZpWs384ukS-xU=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Las Mejores Obras Del Canto Gregoriano [Disc 2]</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="26" id="/music/r+t/r:2CZYWRhya_PAkcooI6kmppeqq1M=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Lorenzo Perosi</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="18" id="/music/r+t/r:EnMA3YnQFdiNszrbyP2pXp5p6T0=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Marais: Pièces À Deux Violes 1686</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="22" id="/music/r+t/r:Ui2mvVOS6QygRw-GBr6uzNifoB8=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Mendelssohn: Paulus [Disc 1]</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="19" id="/music/r+t/r:yxCU8C3ab5P8wga8lX12B6cIoL8=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Mendelssohn: Paulus [Disc 2]</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="8" id="/music/r+t/r:7rmCg7VLnlUoP3iM8Wb5e8LT1Qo=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Mostly French</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="20" id="/music/r+t/r:-Yh_lYTG5GrYQCcFwFQGUNWpFTw=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>O tu chara sciença: La musique dans la pensée médiévale</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+    <container childCount="16" id="/music/r+t/r:axDVyOkWODiJThhLeoM16wCkHMk=" parentID="/music/r+t" restricted="0" searchable="0">
+        <dc:title>Pieces de Clavecin</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.album.musicAlbum</upnp:class>
+    </container>
+</DIDL-Lite>

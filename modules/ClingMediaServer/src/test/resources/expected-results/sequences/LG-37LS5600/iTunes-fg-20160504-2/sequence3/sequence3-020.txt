@@ -1,0 +1,53 @@
+Browse({ObjectID=/music/a+t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=80, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="8" id="/music/a+t/a:oXJ5uQ8965zoj57TsNOSJp56JSQ=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Rafael Kubelik: Berlin Philharmonic Orchestra</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="20" id="/music/a+t/a:knPfY3aKWi84LhiF2InEQnX7Fs8=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Seiji Ozawa: Boston Symphony Orchestra</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="18" id="/music/a+t/a:n0USj0UzoIdXJ--46mMmWLDlLpI=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Smithsonian Chamber Players</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="9" id="/music/a+t/a:vT6zFJFDnAjdLK3zD18IeDW_DG0=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Trevor Pinnock: English Concert</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="19" id="/music/a+t/a:VV1t1wt5su-gcB4cP9bs7yNM6L0=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Trevor Pinnock: The English Concert</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="2" id="/music/a+t/a:Uku5S4QjUiPizLcAhRvPhpUUOF4=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Tullio Serafin: Orchestra &amp; Chorus Of La Scala Milan</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+t/a:aEDBNrsHgXXpSmp4S4y-ieg6pIs=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Tullio Serafin: Philharmonia Orchestra</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+t/a:iURiFKhVwP8pFos1Q1f2Im6VK-M=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Tullio Serafin: Philharmonia Orchestra &amp; Chorus</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="10" id="/music/a+t/a:JRCXZbpWHpKx12pTV-F2GPtWcRU=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Un Autre Noel</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="15" id="/music/a+t/a:_T2PQBCarMroWGGii1p0vCrMKoE=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Viktoria Mullova</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+</DIDL-Lite>
