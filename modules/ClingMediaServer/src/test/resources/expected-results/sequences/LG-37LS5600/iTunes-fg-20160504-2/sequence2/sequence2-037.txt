@@ -1,0 +1,12 @@
+Browse({ObjectID=/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=1, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <item id="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=/t:HV18jxgoJbRu-yyLyZCwsa8W7S8=" parentID="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=" refID="urn:bluemarine:track:HV18jxgoJbRu-yyLyZCwsa8W7S8=" restricted="0">
+        <dc:title>(Go) Get It</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
+        <upnp:album>Trio 99&gt;00</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res duration="0:05:37.000" protocolInfo="http-get:*:audio/mpeg:*" size="13494974">http://<server>/Music/Pat+Metheny/Trio+99_00/01+%28Go%29+Get+It.mp3</res>
+    </item>
+</DIDL-Lite>

@@ -140,8 +140,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
         upnpClient = new UpnpClient("ContentDirectory");
         Executors.newSingleThreadExecutor().submit(upnpClient);
         final Map<Key<?>, Object> properties = new HashMap<>();
-        final Path repositoryPath = Paths.get("target/test-classes/test-sets/model-iTunes-fg-20160504-1.n3");
-        properties.put(ROOT_PATH, TestSetLocator.getMusicTestSetsPath().resolve("iTunes-fg-20160504-1"));
+        final Path repositoryPath = Paths.get("target/test-classes/test-sets/model-iTunes-fg-20160504-2.n3");
+        properties.put(ROOT_PATH, TestSetLocator.getMusicTestSetsPath().resolve("iTunes-fg-20160504-2"));
         properties.put(PersistencePropertyNames.IMPORT_FILE, repositoryPath);
         resourceServer = context.getBean(DefaultResourceServer.class);
         final MessageBus messageBus = context.getBean(MessageBus.class);
@@ -218,7 +218,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                         final String hostAndPort = String.format("http://%s:%d", resourceServer.getIpAddress(), resourceServer.getPort());
                         final String result = xmlPrettyPrinted(parser.generate(didl)).replaceAll(hostAndPort, "http://<server>");
                         Files.write(actualFile, (header + "\n" + result).getBytes(UTF_8));
-//                        assertSameContents(normalizedPath(expectedFile), normalizedPath(actualFile));
+                        assertSameContents(normalizedPath(expectedFile), normalizedPath(actualFile));
                       }
                     catch (Throwable e)
                       {
@@ -260,11 +260,11 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
         return new Object[][]
           {
            // device name    test set name           sequence name
-            { "LG-37LS5600", "iTunes-fg-20160504-1", "sequence1" },
-            { "LG-37LS5600", "iTunes-fg-20160504-1", "sequence2" },
-            { "LG-37LS5600", "iTunes-fg-20160504-1", "sequence3" },
-            { "LG-37LS5600", "iTunes-fg-20160504-1", "sequence4" },
-            { "LG-37LS5600", "iTunes-fg-20160504-1", "sequence5" },
+            { "LG-37LS5600", "iTunes-fg-20160504-2", "sequence1" },
+            { "LG-37LS5600", "iTunes-fg-20160504-2", "sequence2" },
+            { "LG-37LS5600", "iTunes-fg-20160504-2", "sequence3" },
+            { "LG-37LS5600", "iTunes-fg-20160504-2", "sequence4" },
+            { "LG-37LS5600", "iTunes-fg-20160504-2", "sequence5" },
           };
       }
 

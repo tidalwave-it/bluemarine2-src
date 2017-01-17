@@ -49,5 +49,5 @@ public class MediaItemImportRequest
     private final MediaItem mediaItem;
 
     @Nonnull
-    private final Optional<String> sha1;
+    private final Optional<byte[]> sha1;
   }
