@@ -30,13 +30,16 @@ package it.tidalwave.bluemarine2.commons.test;
 
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -45,9 +48,11 @@ import static lombok.AccessLevel.PRIVATE;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@NoArgsConstructor(access = PRIVATE)
+@NoArgsConstructor(access = PRIVATE) @Slf4j
 public final class TestSetLocator
   {
+    private static final String PROPERTY_SKIP_LONG_TESTS = "it.tidalwave-ci.skipLongTests";
+
     public static final Path PATH_TEST_RESULTS = Paths.get("target/test-results");
 
     public static final Path PATH_EXPECTED_TEST_RESULTS = Paths.get("target/test-classes/expected-results");
@@ -60,7 +65,19 @@ public final class TestSetLocator
     @Nonnull
     public static Collection<String> allTestSets()
       {
-        return Collections.unmodifiableCollection(Arrays.asList("iTunes-fg-20160504-1", "iTunes-fg-20161210-1"));
+        final List<String> result = new ArrayList<>(Arrays.asList("iTunes-fg-20160504-1"));
+        final List<String> longTestSets = Arrays.asList("iTunes-fg-20161210-1");
+
+        if (Boolean.getBoolean(PROPERTY_SKIP_LONG_TESTS))
+          {
+            log.warn("{} set to true, skipping testsets: {}", PROPERTY_SKIP_LONG_TESTS, longTestSets);
+          }
+        else
+          {
+            result.addAll(longTestSets);
+          }
+
+        return Collections.unmodifiableCollection(result);
       }
 
     /*******************************************************************************************************************
