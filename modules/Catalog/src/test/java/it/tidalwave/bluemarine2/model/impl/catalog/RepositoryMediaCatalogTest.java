@@ -201,7 +201,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
           {
               { "tiny-model"                    },
               { "small-model"                   },
-              { "model-iTunes-fg-20160504-1"    },
+              { "model-iTunes-fg-20160504-2"    },
               { "model-iTunes-fg-20161210-1"    },
           };
       }

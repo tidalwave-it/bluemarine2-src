@@ -1,0 +1,83 @@
+Browse({ObjectID=/music/a+r+t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="1" id="/music/a+r+t/a:jFlzdlvwMbvfQALJpMV2RF4C3eo=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Alan Cuckston, harpsichord</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:sIN_28qR8mNDe5ULv3Z-bcZdvQs=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Alfred Brendel</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:eSiOTtUtxTCuDo9nEHAtS0yVPH8=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Alison Crum, viola da gamba</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Andrea Bacchetti</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="2" id="/music/a+r+t/a:lbrdvY_Jzgh2fsGEhzP3OCfQFZ4=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Angela Maria Blasi, Robert Holl, Etc.</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:mmryLAth16vhl_l6kSfroM6Aywk=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Antonino Votto: Orchestra Of La Scala Milan</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="2" id="/music/a+r+t/a:NaBA0sMMKOlieukHnxkVtUIkZk4=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Benedictine Monks Of Santo Domingo De Silos</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:w2KLJkn8-N6eQbHF0xU6uXoPSvc=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Brodsky Quartet</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:OSVLDq4lVQseOaQ4A-Jg8VoyUsw=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Carlos Kleiber: Vienna Philharmonic Orchestra</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:GFLHPAhc1mXcCAXj7XXWM1tkiJQ=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Charles Mackerras: English Chamber Orchestra, Ambrosian Singers</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:1zFIki-dJzAah5KVfySIv3NejHw=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Claudio Abbado: Berlin Philharmonic Orchestra</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:680tZL-FIWqau9TczN7Ssft149E=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Claudio Abbado: Chamber Orchestra Of Europe</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:ww5BE4YrVG1MszOt_7CQK6jU0vE=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Elizabeth Parry, flute</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:cRVwE1_8J_QYRQMd6KfR3ma2A28=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Ella Fitzgerald</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="2" id="/music/a+r+t/a:UmoFVklP-uqJ2XrLS88-Ng3E9Ys=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Ella Fitzgerald &amp; Louis Armstrong</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+r+t/a:alNxqCp5i5AeNL9FF-YnFA4yKWM=" parentID="/music/a+r+t" restricted="0" searchable="0">
+        <dc:title>Emil Gilels</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+</DIDL-Lite>
