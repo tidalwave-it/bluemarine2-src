@@ -37,7 +37,7 @@
         <tft.test.vmOptions>-Xss512m -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -Duser.timezone=Europe/Rome</tft.test.vmOptions>
         <tft.test.maxMemory>2048M</tft.test.maxMemory>
 
-        <testSet.iTunes-fg-20160504-1.version>4</testSet.iTunes-fg-20160504-1.version>
+        <testSet.iTunes-fg-20160504-2.version>5</testSet.iTunes-fg-20160504-2.version>
         <testSet.iTunes-fg-20161210-1.version>2</testSet.iTunes-fg-20161210-1.version>
     </properties>
 
