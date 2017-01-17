@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import java.util.Optional;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -42,8 +43,11 @@ import lombok.ToString;
  *
  **********************************************************************************************************************/
 @Immutable @RequiredArgsConstructor @Getter @ToString
-public class MediaItemImportRequest 
+public class MediaItemImportRequest
   {
     @Nonnull
     private final MediaItem mediaItem;
+
+    @Nonnull
+    private final Optional<String> sha1;
   }
