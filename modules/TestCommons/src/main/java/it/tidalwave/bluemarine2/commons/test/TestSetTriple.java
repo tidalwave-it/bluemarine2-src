@@ -97,16 +97,16 @@ public class TestSetTriple
 
     /*******************************************************************************************************************
      *
-     * Returns a {@link Collector)  that converts the stream into an {@code Object[][]) suitable for a
+     * Returns a {@link Collector) that converts the stream into an {@code Object[][]) suitable for a
      * TestNG {@code DataProvider}.
      *
      * @return                  the {@code Collector}
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Collector<TestSetTriple, ?, Object[][]> toTestNGDataProvider()
+    public static Collector<Object, ?, Object[][]> toTestNGDataProvider()
       {
-        return collectingAndThen(mapping(triple -> new Object[] { triple }, toList()),
+        return collectingAndThen(mapping(object -> new Object[] { object }, toList()),
                                  list -> list.toArray(new Object[0][0]));
       }
 

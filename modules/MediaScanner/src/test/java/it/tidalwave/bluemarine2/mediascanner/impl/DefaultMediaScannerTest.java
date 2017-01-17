@@ -57,6 +57,7 @@ import lombok.extern.slf4j.Slf4j;
 import static java.nio.file.FileVisitOption.FOLLOW_LINKS;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
+import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
 import static org.testng.AssertJUnit.*;
 
 /***********************************************************************************************************************
@@ -191,10 +192,6 @@ public class DefaultMediaScannerTest extends SpringTestSupport
     @DataProvider
     private static Object[][] testSetNames()
       {
-        return new Object[][]
-          {
-            { "iTunes-fg-20160504-1" },
-            { "iTunes-fg-20161210-1" }
-          };
+        return TestSetLocator.allTestSets().stream().collect(toTestNGDataProvider());
       }
   }
