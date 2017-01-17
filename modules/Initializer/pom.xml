@@ -5,13 +5,13 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-modules</artifactId>
-        <version>1.0-ALPHA-16-SNAPSHOT</version>
+        <version>1.0-ALPHA-16</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-initializer</artifactId>
-    <version>1.0-ALPHA-16-SNAPSHOT</version>
+    <version>1.0-ALPHA-16</version>
     <packaging>jar</packaging>
     <name>blueMarine II - Initializer</name>
 
