@@ -1,0 +1,10 @@
+Browse({ObjectID=/music/t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=1, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <item id="/music/t/t:6W1TrE_zAZqlCEnFNM0hhCHWYq4=" parentID="/music/t" restricted="0">
+        <dc:title>Bach: Concerto In A Minor For 4 Harpsichords, BWV 1065 - 1. Without Tempo Indication</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+        <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
+        <res duration="00:04:03" protocolInfo="http-get:*:audio/mpeg:*" size="9755516">http://<server>/Music/Compilations/Bach_+Concertos+For+3+%26+4+Harpsichords/01+Bach_+Concerto+In+A+Minor+For+4+Harpsichords%2C+BWV+1065+-+1.+Without+Tempo+Indication.mp3</res>
+    </item>
+</DIDL-Lite>

@@ -246,9 +246,7 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
                                                .map(s -> s.replaceAll(REGEX_BINDING_TAG, ""))
                                                .collect(joining("\n"));
         log(originalSparql, sparql, parameters);
-        final Cache cache = cacheManager.getCache(RepositoryFinderSupport.class);
-        final String key = compacted(sparql) + " # " + entityClass.getName() + " # " + Arrays.toString(parameters);
-        final E result = cache.getCachedObject(key, () ->  query(sparql, finalizer, parameters));
+        final E result = query(sparql, finalizer, parameters);
         final long elapsedTime = System.nanoTime() - baseTime;
         log.info(">>>> query returned {} in {} msec", resultToString.apply(result), elapsedTime / 1E6);
         return result;
@@ -277,10 +275,18 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
               {
                 query.setBinding((String)parameters[i], (Value)parameters[i + 1]);
               }
+            //
+            // Don't cache entities because they are injected with DCI roles in function of the context.
+            // Caching tuples is safe.
+            final Cache cache = cacheManager.getCache(RepositoryFinderSupport.class);
+            final String key = String.format("%s # %s", compacted(sparql), Arrays.toString(parameters));
 
-            try (final TupleQueryResult result = query.evaluate())
+            try (final ImmutableTupleQueryResult result = cache.getCachedObject(key,
+                                                                () -> new ImmutableTupleQueryResult(query.evaluate())))
               {
-                return finalizer.apply(result);
+                // MutableTupleQueryResult is not thread safe, so clone an eventually cached result
+                final ImmutableTupleQueryResult clone = new ImmutableTupleQueryResult(result);
+                return finalizer.apply(clone);
               }
           }
       }

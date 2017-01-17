@@ -65,7 +65,7 @@ public final class TestSetLocator
     @Nonnull
     public static Collection<String> allTestSets()
       {
-        final List<String> result = new ArrayList<>(Arrays.asList("iTunes-fg-20160504-1"));
+        final List<String> result = new ArrayList<>(Arrays.asList("iTunes-fg-20160504-2"));
         final List<String> longTestSets = Arrays.asList("iTunes-fg-20161210-1");
 
         if (Boolean.getBoolean(PROPERTY_SKIP_LONG_TESTS))
