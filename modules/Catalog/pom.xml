@@ -82,6 +82,12 @@
         </dependency>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-metadata-musicbrainz</artifactId>
+            <classifier>tests</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-commons-test</artifactId>
             <scope>test</scope>
         </dependency>
