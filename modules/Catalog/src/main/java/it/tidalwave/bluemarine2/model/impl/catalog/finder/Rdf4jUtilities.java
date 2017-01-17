@@ -31,7 +31,7 @@ package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 import javax.annotation.Nonnull;
 import java.util.Iterator;
 import java.util.stream.Stream;
-import org.eclipse.rdf4j.query.QueryResult;
+import org.eclipse.rdf4j.common.iteration.Iteration;
 import static java.util.Spliterators.spliteratorUnknownSize;
 import static java.util.stream.StreamSupport.stream;
 
@@ -44,13 +44,13 @@ import static java.util.stream.StreamSupport.stream;
 public class Rdf4jUtilities
   {
     @Nonnull
-    public static <T> Stream<T> streamOf (final @Nonnull QueryResult<T> iteration)
+    public static <T, X extends RuntimeException> Stream<T> streamOf (final @Nonnull Iteration<T, X> iteration)
       {
         return stream(spliteratorUnknownSize(iteratorOf(iteration), 0), false);
       }
 
     @Nonnull
-    private static <T> Iterator<T> iteratorOf (final @Nonnull QueryResult<T> iteration)
+    private static <T, X extends RuntimeException> Iterator<T> iteratorOf (final @Nonnull Iteration<T, X> iteration)
       {
         final Iterator<T> iterator = new Iterator<T>()
           {
