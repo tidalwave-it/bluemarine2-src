@@ -37,12 +37,12 @@ import lombok.ToString;
 
 /***********************************************************************************************************************
  *
- * @author  fritz
+ * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @Immutable @RequiredArgsConstructor @Getter @ToString
-public class InternalMediaFolderScanRequest 
+public class InternalMediaFolderScanRequest
   {
     @Nonnull
     private final MediaFolder folder;
