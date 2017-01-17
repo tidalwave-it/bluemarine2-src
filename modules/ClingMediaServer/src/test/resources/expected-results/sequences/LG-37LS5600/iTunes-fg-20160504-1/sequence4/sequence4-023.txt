@@ -1,8 +1,0 @@
-Browse({ObjectID=/music/r+t/r:35e33404fc68537f63653a29f80b19e2b25f3c51, BrowseFlag=BrowseMetadata, Filter=, StartingIndex=0, RequestedCount=0, SortCriteria=})
-<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <container childCount="14" id="/music/r+t/r:35e33404fc68537f63653a29f80b19e2b25f3c51" parentID="/music/r+t" restricted="0" searchable="0">
-        <dc:title>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</dc:title>
-        <dc:creator>blueMarine II</dc:creator>
-        <upnp:class>object.container.album.musicAlbum</upnp:class>
-    </container>
-</DIDL-Lite>

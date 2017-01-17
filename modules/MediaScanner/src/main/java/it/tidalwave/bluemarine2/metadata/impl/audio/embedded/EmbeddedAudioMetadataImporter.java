@@ -71,6 +71,7 @@ import static java.util.Collections.*;
 import static java.util.stream.Collectors.*;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import static it.tidalwave.bluemarine2.util.Formatters.*;
 
 /***********************************************************************************************************************
  *
@@ -193,7 +194,7 @@ public class EmbeddedAudioMetadataImporter
             try
               {
                 log.info("onMediaItemImportRequest({})", request);
-                statementManager.requestAdd(importMediaItem(request.getMediaItem(), new Id(sha1)));
+                statementManager.requestAdd(importMediaItem(request.getMediaItem(), sha1));
               }
             finally
               {
@@ -212,7 +213,7 @@ public class EmbeddedAudioMetadataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Model importMediaItem (final @Nonnull MediaItem mediaItem, final @Nonnull Id sha1)
+    private Model importMediaItem (final @Nonnull MediaItem mediaItem, final @Nonnull byte[] sha1)
       {
         log.debug("importMediaItem({})", mediaItem);
 
@@ -222,10 +223,11 @@ public class EmbeddedAudioMetadataImporter
         final Optional<String> makerName   = metadata.get(ARTIST);
         final PathAwareEntity parent       = mediaItem.getParent().get();
         final String recordTitle           = metadata.get(ALBUM).orElse(parent.getPath().toFile().getName());
-        final IRI audioFileIri             = BM.audioFileIriFor(sha1);
-        final IRI signalIri                = BM.signalIriFor(sha1);
-        final IRI trackIri                 = trackIriOf(metadata, sha1);
-        final IRI recordIri                = recordIriOf(recordTitle);
+        final Id uniqueId                  = uniqueTrackId(metadata, toBase64String(sha1));
+        final IRI audioFileIri             = BM.audioFileIriFor(toBase64String(sha1));
+        final IRI signalIri                = BM.signalIriFor(uniqueId);
+        final IRI trackIri                 = BM.trackIriFor(uniqueId);
+        final IRI recordIri                = recordIriOf(metadata, recordTitle);
         final Optional<IRI> newRecordIri   = seenRecordUris.putIfAbsentAndGetNewKey(recordIri, true);
 
         final List<IRI> makerUris = makerName.map(name -> asList(artistIriOf(name))).orElse(emptyList());
@@ -245,7 +247,7 @@ public class EmbeddedAudioMetadataImporter
         return new ModelBuilder()
             .with(        audioFileIri,  RDF.TYPE,                MO.C_AUDIO_FILE)
             .with(        audioFileIri,  BM.P_IMPORTED_FROM,      BM.O_EMBEDDED)
-            .with(        audioFileIri,  FOAF.SHA1,               literalFor(sha1))
+            .with(        audioFileIri,  FOAF.SHA1,               literalFor(toHexString(sha1)))
             .with(        audioFileIri,  MO.P_ENCODES,            signalIri)
             .with(        audioFileIri,  BM.PATH,                 literalFor(mediaItem.getRelativePath()))
             .with(        audioFileIri,  BM.LATEST_INDEXING_TIME, literalFor(getLastModifiedTime(mediaItem.getPath())))
@@ -317,9 +319,11 @@ public class EmbeddedAudioMetadataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private IRI recordIriOf (final @Nonnull String recordTitle)
+    private IRI recordIriOf (final @Nonnull Metadata metadata, final @Nonnull String recordTitle)
       {
-        return BM.recordIriFor(createSha1Id("RECORD:" + recordTitle));
+        final Optional<Cddb> cddb = metadata.get(CDDB);
+        return BM.recordIriFor((cddb.isPresent()) ? createSha1IdNew(cddb.get().getToc())
+                                                  : createSha1IdNew("RECORD:" + recordTitle));
       }
 
     /*******************************************************************************************************************
@@ -327,10 +331,14 @@ public class EmbeddedAudioMetadataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private IRI trackIriOf (final @Nonnull Metadata metadata, final @Nonnull Id sha1)
+    private Id uniqueTrackId (final @Nonnull Metadata metadata, final @Nonnull String default_)
       {
-        // FIXME: the same contents in different places will give the same sha1. Disambiguates by hashing the path too?
-        return BM.trackIriFor(sha1);
+        final Optional<Cddb> cddb = metadata.get(CDDB);
+        final Optional<Integer> trackNumber = metadata.get(TRACK_NUMBER);
+
+        return (cddb.isPresent() && trackNumber.isPresent())
+                ? createSha1IdNew(cddb.get().getToc() + "/" + trackNumber.get())
+                : new Id(default_);
       }
 
     /*******************************************************************************************************************
@@ -340,6 +348,6 @@ public class EmbeddedAudioMetadataImporter
     @Nonnull
     private IRI artistIriOf (final @Nonnull String name)
       {
-        return BM.artistIriFor(createSha1Id("ARTIST:" + name));
+        return BM.artistIriFor(createSha1IdNew("ARTIST:" + name));
       }
   }

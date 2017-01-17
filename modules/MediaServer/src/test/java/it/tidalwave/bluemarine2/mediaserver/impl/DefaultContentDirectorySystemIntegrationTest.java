@@ -110,7 +110,7 @@ public class DefaultContentDirectorySystemIntegrationTest extends SpringTestSupp
           {
 //              { "tiny-model"                    }, TODO
 //              { "small-model"                   },
-              { "model-iTunes-fg-20160504-1"    },
+              { "model-iTunes-fg-20160504-2"    },
               { "model-iTunes-fg-20161210-1"    },
           };
       }

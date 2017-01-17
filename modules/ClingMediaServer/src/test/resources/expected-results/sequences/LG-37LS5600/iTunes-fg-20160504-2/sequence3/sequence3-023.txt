@@ -1,0 +1,83 @@
+Browse({ObjectID=/music/a+t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=64, RequestedCount=16, SortCriteria=})
+<?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+    <container childCount="11" id="/music/a+t/a:rqmwY95TWwQ8Z_CYjPQHi7W5ad0=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Mstislav Rostropovich, Benjamin Britten</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="13" id="/music/a+t/a:lSC_PlZcK3xPIlZfRgX6OGDuWMw=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Neville Marriner: Academy Of St. Martin In The Fields</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="7" id="/music/a+t/a:TTXX3K3946JY3WQJ6UAyqCuTKmg=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Neville Marriner: Staatskapelle Dresden</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="13" id="/music/a+t/a:0ta0qZefIsefmrD2FUf0LcwMZUo=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>New York's Ensemble for Early Music - Frederick Renz director</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+t/a:1n3Qx7CXp8T9eTQXdibkkutrO5E=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Nicola Rescigno/Maria Callas/Orchestre De La Société Des Concerts Du Conservatoire</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+t/a:EilPUj0DOTgKm20KNXcdfrFEeVE=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Nicola Rescigno/Philharmonia Orchestra/Maria Callas</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+t/a:ZH2lu9RgRj-RmDRQ34v_snRRBR8=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Nicolà Rescigno: Paris Conservatory Orchestra</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+t/a:O9pfv9DDgHaxF7-x5NhrCDxPq9M=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Nicolà Rescigno: Philharmonia Orchestra</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="25" id="/music/a+t/a:xLf3ecacY8vaNG3bL2xjQ9JUmFY=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Nikolaus Harnoncourt: Concentus Musicus Wien, Arnold Schoenberg Choir</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="11" id="/music/a+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Pat Metheny</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="17" id="/music/a+t/a:lzFUNOxVlSoGc-QSaEjoz8ZxXHM=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Patrizia Bovi&amp;Gilberte Casabianca</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="26" id="/music/a+t/a:DDjtW4nJhSKSAOn9KMe0UHZ5Wx8=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Perosi, Lorenzo</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+t/a:GDHoxlvyEvauQCq6zQZo_Wfs8rk=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Pierre Del Vescovo</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+t/a:z4F14cjTeXKPnKDChuJoRJAwCyo=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Pierre Del Vescovo/Horn, Bamberger Symphoniker/Theodor Gusch</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="1" id="/music/a+t/a:Ecj3GCKuYJzSONZN64KPts874z4=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Pierre Del Vescovo/Horn, Jean Hubeau/Piano</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+    <container childCount="12" id="/music/a+t/a:najfIguvtt8amhMuHsAa5vSJcEY=" parentID="/music/a+t" restricted="0" searchable="0">
+        <dc:title>Pinchas Zukerman: St. Paul Chamber Orchestra</dc:title>
+        <dc:creator>blueMarine II</dc:creator>
+        <upnp:class>object.container.person.musicArtist</upnp:class>
+    </container>
+</DIDL-Lite>
