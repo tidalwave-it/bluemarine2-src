@@ -84,7 +84,7 @@ public class ProgressHandler
         @Override
         public synchronized String toString()
           {
-            return String.format("%s: %d/%d (%d%%)", name, done, total, (total == 0) ? 0 : (100 * done) / total);
+            return String.format("%d/%d (%d%%)", done, total, (total == 0) ? 0 : (100 * done) / total);
           }
       }
 
@@ -92,13 +92,14 @@ public class ProgressHandler
     private MessageBus messageBus;
 
     private final Progress folders = new Progress("folders");
+    private final Progress fingerprints = new Progress("fingerprints");
     private final Progress mediaItems = new Progress("mediaItems");
     private final Progress artists = new Progress("artists");
     private final Progress records = new Progress("records");
     private final Progress downloads = new Progress("downloads");
     private final Progress insertions = new Progress("insertions");
 
-    private final List<Progress> all = Arrays.asList(folders, mediaItems, artists, records, downloads, insertions);
+    private final List<Progress> all = Arrays.asList(folders, fingerprints, mediaItems, artists, records, downloads, insertions);
 
     // TODO: should also collect errors
 
@@ -122,6 +123,13 @@ public class ProgressHandler
     public void incrementTotalMediaItems()
       {
         mediaItems.incrementTotal();
+        fingerprints.incrementTotal();
+        check();
+      }
+
+    public void incrementDoneFingerprints()
+      {
+        fingerprints.incrementDone();
         check();
       }
 
@@ -191,6 +199,6 @@ public class ProgressHandler
 
     public synchronized boolean isCompleted()
       {
-        return all.stream().allMatch(progress -> progress.completed());
+        return all.stream().allMatch(Progress::completed);
       }
   }
