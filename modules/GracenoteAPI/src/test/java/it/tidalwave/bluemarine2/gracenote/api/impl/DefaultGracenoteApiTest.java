@@ -73,7 +73,7 @@ public class DefaultGracenoteApiTest
 
     private static final String RESPONSE_TXT = "response.txt";
 
-    private static final Path GRACENOTE_CACHE = PATH_EXPECTED_TEST_RESULTS.resolve("gracenote/iTunes-fg-20160504-1/");
+    private static final Path GRACENOTE_CACHE = PATH_EXPECTED_TEST_RESULTS.resolve("gracenote/iTunes-fg-20160504-2/");
 
     private final static List<String> IGNORED_HEADERS =
             Arrays.asList("Date", "Server", "X-Powered-By", "Connection", "Keep-Alive", "Vary");
@@ -202,7 +202,7 @@ public class DefaultGracenoteApiTest
         final ResponseEntity<String> response = underTest.queryAlbumToc(PURE_ELLA_OFFSETS);
         // then
         final Path actualResult = dump("queryAlbumTocResponse.txt", response);
-        assertSameContents(gracenoteFilesPath("iTunes-fg-20160504-1").resolve("albumToc")
+        assertSameContents(gracenoteFilesPath("iTunes-fg-20160504-2").resolve("albumToc")
                                                                      .resolve(PURE_ELLA_OFFSETS.replace(' ', '/'))
                                                                      .resolve(RESPONSE_TXT),
                            actualResult);
@@ -221,7 +221,7 @@ public class DefaultGracenoteApiTest
         final ResponseEntity<String> response = underTest.queryAlbumFetch(PURE_ELLA_GN_ID);
         // then
         final Path actualResult = dump("queryAlbumFetchResponse.txt", response);
-        assertSameContents(gracenoteFilesPath("iTunes-fg-20160504-1").resolve("albumFetch")
+        assertSameContents(gracenoteFilesPath("iTunes-fg-20160504-2").resolve("albumFetch")
                                                                      .resolve(PURE_ELLA_GN_ID)
                                                                      .resolve(RESPONSE_TXT),
                            actualResult);
@@ -294,7 +294,7 @@ public class DefaultGracenoteApiTest
     private static Object[][] gracenoteResourcesProvider()
       {
 //        final String testSetName = "iTunes-fg-20161210-1"; // FIXME: use both
-        final String testSetName = "iTunes-fg-20160504-1";
+        final String testSetName = "iTunes-fg-20160504-2";
 
         return streamOfTestSetTriples(Arrays.asList(testSetName),
                                       name -> Paths.get("target/metadata").resolve(name))
