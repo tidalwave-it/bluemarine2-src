@@ -5,14 +5,14 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-modules</artifactId>
-        <version>1.0-ALPHA-17-SNAPSHOT</version>
+        <version>1.0-ALPHA-18-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>it-tidalwave-bluemarine2-vocabulary</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-ALPHA-17-SNAPSHOT</version>
+    <version>1.0-ALPHA-18-SNAPSHOT</version>
     <name>blueMarine II - Vocabulary</name>
 
     <dependencies>
