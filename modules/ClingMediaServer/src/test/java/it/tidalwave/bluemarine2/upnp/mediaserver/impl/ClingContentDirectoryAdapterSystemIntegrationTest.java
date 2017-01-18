@@ -48,8 +48,8 @@ import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
 import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.util.PersistenceInitializedNotification;
-import it.tidalwave.bluemarine2.util.PowerOnNotification;
+import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
+import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.persistence.PersistencePropertyNames;
 import it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver.DefaultResourceServer;
 import org.testng.annotations.DataProvider;
@@ -65,7 +65,7 @@ import static java.util.stream.Collectors.toList;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
-import static it.tidalwave.bluemarine2.util.PrettyPrint.xmlPrettyPrinted;
+import static it.tidalwave.bluemarine2.util.Formatters.*;
 import static it.tidalwave.bluemarine2.model.ModelPropertyNames.ROOT_PATH;
 
 /***********************************************************************************************************************

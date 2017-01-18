@@ -40,7 +40,7 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
-import it.tidalwave.bluemarine2.util.PowerOnNotification;
+import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import lombok.Getter;
 import lombok.Setter;

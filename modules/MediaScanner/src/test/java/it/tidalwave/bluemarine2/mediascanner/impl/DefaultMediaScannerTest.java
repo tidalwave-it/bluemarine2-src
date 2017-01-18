@@ -41,7 +41,7 @@ import java.nio.file.Path;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.spi.MockInstantProvider;
 import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.util.PowerOnNotification;
+import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.persistence.Persistence;
