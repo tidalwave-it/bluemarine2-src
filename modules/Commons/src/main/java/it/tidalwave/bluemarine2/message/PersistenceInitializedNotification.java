@@ -26,20 +26,14 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.util;
+package it.tidalwave.bluemarine2.message;
 
-import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import java.util.Map;
-import it.tidalwave.util.Key;
-import it.tidalwave.util.TypeSafeHashMap8;
-import it.tidalwave.util.TypeSafeMap8;
-import lombok.Getter;
 import lombok.ToString;
 
 /***********************************************************************************************************************
  *
- * A message that notifies that the system has been just powered on.
+ * A message that notifies that the persistence system has been initialised, so data is available.
  *
  * @stereotype  Message
  *
@@ -48,13 +42,6 @@ import lombok.ToString;
  *
  **********************************************************************************************************************/
 @Immutable @ToString
-public final class PowerOnNotification
+public final class PersistenceInitializedNotification
   {
-    @Getter @Nonnull
-    private final TypeSafeMap8 properties;
-
-    public PowerOnNotification (final @Nonnull Map<Key<?>, Object> properties)
-      {
-        this.properties = new TypeSafeHashMap8(properties);
-      }
   }

@@ -39,7 +39,7 @@ import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
 import static org.mockito.Mockito.*;
-import static it.tidalwave.bluemarine2.util.PrettyPrint.xmlPrettyPrinted;
+import static it.tidalwave.bluemarine2.util.Formatters.*;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 
 /***********************************************************************************************************************

@@ -37,12 +37,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.util.PowerOnNotification;
+import it.tidalwave.bluemarine2.message.PowerOffNotification;
+import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import it.tidalwave.bluemarine2.persistence.PersistencePropertyNames;
 import it.tidalwave.bluemarine2.downloader.DownloaderPropertyNames;
 import it.tidalwave.bluemarine2.initializer.Initializer;
-import it.tidalwave.bluemarine2.util.PowerOffNotification;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
