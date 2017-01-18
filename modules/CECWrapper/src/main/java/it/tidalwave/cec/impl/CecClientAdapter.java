@@ -42,31 +42,31 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.cec.CecEvent;
 import it.tidalwave.cec.CecEvent.EventType;
-import it.tidalwave.bluemarine2.util.PowerOnNotification;
+import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
  *
  * An adapter that receives notifications from {@code cec-client} and forwards events to the message bus.
- * 
+ *
  * @stereotype  Adapter
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
 @SimpleMessageSubscriber @Slf4j
-public class CecClientAdapter 
+public class CecClientAdapter
   {
     private static final String CEC_REGEX = "^TRAFFIC: *\\[ *([0-9]+)\\][ \\t>]*([0-9A-Fa-f]+):([0-9A-Fa-f]+):([0-9A-Fa-f]+)$";
-    
+
     private static final Pattern CEC_PATTERN = Pattern.compile(CEC_REGEX);
-    
+
     private ProcessExecutor executor;
-    
+
     @Inject
     private MessageBus messageBus;
-    
+
     /*******************************************************************************************************************
      *
      * Parses the output from {@code cec-client} and fires events.
@@ -75,12 +75,12 @@ public class CecClientAdapter
     private final ConsoleOutput.Listener listener = string ->
       {
         final Matcher matcher = CEC_PATTERN.matcher(string);
-        
+
         if (matcher.matches())
           {
             final int eventType = Integer.parseInt(matcher.group(3), 16);
             final int keyCode = Integer.parseInt(matcher.group(4), 16);
-            
+
             try
               {
                 final CecEvent event = EventType.forCode(eventType).createEvent(keyCode);
@@ -96,7 +96,7 @@ public class CecClientAdapter
               }
           }
       };
-    
+
     /*******************************************************************************************************************
      *
      * At power on runs {@code cec-client}.
@@ -104,7 +104,7 @@ public class CecClientAdapter
      ******************************************************************************************************************/
     /* VisibleForTesting */ void onPowerOnReceived (final @Nonnull @ListensTo PowerOnNotification notification)
       {
-        try 
+        try
           {
             log.info("onPowerOnReceived({})", notification);
             executor = DefaultProcessExecutor.forExecutable("/usr/bin/cec-client") // FIXME: path
@@ -112,12 +112,12 @@ public class CecClientAdapter
                                              .start();
             executor.getStdout().setListener(listener);
           }
-        catch (IOException e) 
+        catch (IOException e)
           {
             log.error("Cannot run cec-client: {}", e.toString());
             // TODO: UI notification of the error
           }
       }
-    
+
     // TODO: kill executor on PowerOff?
   }
