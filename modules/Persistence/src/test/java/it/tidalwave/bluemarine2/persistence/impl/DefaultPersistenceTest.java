@@ -47,15 +47,13 @@ import org.eclipse.rdf4j.repository.sail.SailRepository;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.util.PowerOnNotification;
-import it.tidalwave.bluemarine2.util.PersistenceInitializedNotification;
+import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.mockito.Mockito.*;
 import static it.tidalwave.bluemarine2.persistence.PersistencePropertyNames.*;
 import static it.tidalwave.util.test.FileComparisonUtils8.*;
 
