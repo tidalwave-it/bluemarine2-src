@@ -49,7 +49,7 @@ import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import static org.fourthline.cling.support.contentdirectory.ContentDirectoryErrorCode.*;
-import static it.tidalwave.bluemarine2.util.PrettyPrint.xmlPrettyPrinted;
+import static it.tidalwave.bluemarine2.util.Formatters.*;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.DIDLAdapter;
 

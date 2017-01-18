@@ -37,7 +37,7 @@ import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.UserActionSupport;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.util.PowerOnNotification;
+import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.ui.commons.flowcontroller.FlowController;
 import it.tidalwave.bluemarine2.ui.mainscreen.MainScreenPresentation;
 import lombok.extern.slf4j.Slf4j;
