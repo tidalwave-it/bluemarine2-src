@@ -35,7 +35,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.util.PowerOnNotification;
+import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.persistence.PersistencePropertyNames;
 import org.testng.annotations.BeforeMethod;

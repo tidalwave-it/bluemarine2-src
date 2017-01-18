@@ -41,7 +41,7 @@ import org.apache.http.HttpStatus;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.NotFoundException;
 import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.util.PowerOnNotification;
+import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete;
 import it.tidalwave.bluemarine2.downloader.DownloadComplete.Origin;
 import it.tidalwave.bluemarine2.downloader.DownloadRequest;

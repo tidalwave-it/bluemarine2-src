@@ -35,7 +35,7 @@ import it.tidalwave.util.NotFoundException;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
-import it.tidalwave.bluemarine2.util.PowerOnNotification;
+import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.ModelPropertyNames;
