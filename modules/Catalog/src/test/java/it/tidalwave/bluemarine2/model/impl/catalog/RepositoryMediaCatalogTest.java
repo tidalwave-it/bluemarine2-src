@@ -59,6 +59,8 @@ import static java.nio.file.Files.*;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import javax.annotation.CheckForNull;
+import org.testng.annotations.BeforeMethod;
 
 /***********************************************************************************************************************
  *
@@ -90,11 +92,20 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Test(dataProvider = "testSetNamesProvider")
-    public void must_properly_query_the_whole_catalog_in_various_ways (final @Nonnull String testSetName)
+    public void must_properly_query_the_whole_catalog_in_various_ways (final @Nonnull String testSetName,
+                                                                       final @CheckForNull String otherTestSetName)
       throws Exception
       {
         // given
-        final Repository repository = loadInMemoryCatalog(PATH_TEST_SETS.resolve(testSetName + ".n3"));
+        final Repository repository = new SailRepository(new MemoryStore());
+        repository.initialize();
+
+        if (otherTestSetName != null)
+          {
+            loadInMemoryCatalog(repository, PATH_TEST_SETS.resolve(otherTestSetName + ".n3"));
+          }
+
+        loadInMemoryCatalog(repository, PATH_TEST_SETS.resolve(testSetName + ".n3"));
         // when
         final MediaCatalog underTest = new RepositoryMediaCatalog(repository);
         // then
@@ -175,20 +186,16 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static Repository loadInMemoryCatalog (final @Nonnull Path path)
+    private static void loadInMemoryCatalog (final @Nonnull Repository repository, final @Nonnull Path path)
       throws RDFParseException, IOException, RepositoryException
       {
-        log.info("loadInMemoryCatalog({})", path);
-        final Repository repository = new SailRepository(new MemoryStore());
-        repository.initialize();
+        log.info("loadInMemoryCatalog(..., {})", path);
 
         try (final RepositoryConnection connection = repository.getConnection())
           {
             connection.add(path.toFile(), null, RDFFormat.N3);
             connection.commit();
           }
-
-        return repository;
       }
 
     /*******************************************************************************************************************
@@ -199,10 +206,12 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
       {
         return new Object[][]
           {
-              { "tiny-model"                    },
-              { "small-model"                   },
-              { "model-iTunes-fg-20160504-2"    },
-              { "model-iTunes-fg-20161210-1"    },
+              { "tiny-model"                   , null },
+              { "small-model"                  , null },
+              { "model-iTunes-fg-20160504-2"   , null },
+              { "model-iTunes-fg-20161210-1"   , null },
+              { "musicbrainz-iTunes-fg-20160504-2", "model-iTunes-fg-20160504-2" },
+              { "musicbrainz-iTunes-fg-20161210-1", "model-iTunes-fg-20161210-1" },
           };
       }
   }

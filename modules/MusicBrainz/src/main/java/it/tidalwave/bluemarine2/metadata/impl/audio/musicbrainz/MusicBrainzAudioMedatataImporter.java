@@ -333,24 +333,24 @@ public class MusicBrainzAudioMedatataImporter
 //                    track.getRecording().getAliasList().getAlias().get(0).getSortName();
         log.info(">>>>>>>> {}. {}", position, trackTitle);
         final IRI signalIri    = signalIriFor(cddb, track.getPosition().intValue());
-        final IRI audioFileIri = dummyAudioFileIriFor(cddb, track.getPosition().intValue());
+//        final IRI audioFileIri = dummyAudioFileIriFor(cddb, track.getPosition().intValue());
 
         return createModelBuilder()
             .with(recordIri, MO.P_TRACK,          trackIri)
 
+            .with(signalIri, MO.P_PUBLISHED_AS,   trackIri)
              // FIXME: drop it, already from embedded
              // FIXME: they are temporarily here to test the catalog with the musicbrainz triples alone
              // FIXME: when the mediascanner will use the new CDDB based id for signals and tracks, the
              // FIXME: musicbrainz triples will be added to the embedded one.
-            .with(signalIri, RDF.TYPE,            MO.C_DIGITAL_SIGNAL)
-            .with(signalIri, BM.P_IMPORTED_FROM,  BM.O_EMBEDDED)
-            .with(signalIri, MO.P_PUBLISHED_AS,   trackIri)
-            .with(signalIri, MO.P_DURATION,       literalFor((float)0.0))
-
-            .with(audioFileIri, RDF.TYPE,         MO.C_AUDIO_FILE)
-            .with(audioFileIri, BM.P_IMPORTED_FROM, BM.O_EMBEDDED)
-            .with(audioFileIri, MO.P_ENCODES,     signalIri)
-            .with(audioFileIri, BM.PATH,          literalFor("dummy path"))
+//            .with(signalIri, RDF.TYPE,            MO.C_DIGITAL_SIGNAL)
+//            .with(signalIri, BM.P_IMPORTED_FROM,  BM.O_EMBEDDED)
+//            .with(signalIri, MO.P_DURATION,       literalFor((float)0.0))
+//
+//            .with(audioFileIri, RDF.TYPE,         MO.C_AUDIO_FILE)
+//            .with(audioFileIri, BM.P_IMPORTED_FROM, BM.O_EMBEDDED)
+//            .with(audioFileIri, MO.P_ENCODES,     signalIri)
+//            .with(audioFileIri, BM.PATH,          literalFor("dummy path"))
              // END FIXME
 
             .with(trackIri,  RDF.TYPE,            MO.C_TRACK)
