@@ -47,7 +47,7 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
                                          implements MusicArtistFinder
   {
     private static final long serialVersionUID = 2271161001432418095L;
-    
+
     private final static String QUERY_ARTISTS = readSparql(RepositoryMusicArtistFinder.class, "AllMusicArtists.sparql");
 
     private final static String QUERY_ARTISTS_MAKER_OF = readSparql(RepositoryMusicArtistFinder.class, "MakerArtists.sparql");

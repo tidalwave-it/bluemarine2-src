@@ -138,6 +138,12 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
           {
             throw new UnsupportedOperationException("Not supported yet."); // FIXME
           }
+
+        @Override
+        public MusicArtistFinder withSource (final @Nonnull Id source)
+          {
+            throw new UnsupportedOperationException("Not supported yet."); // FIXME
+          }
       }
 
     @Getter @Nonnull

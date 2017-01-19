@@ -1,18 +1,19 @@
 SELECT *
-WHERE  
-  { 
-    ?artist     a                   mo:MusicArtist. 
-    ?artist     rdfs:label          ?label. 
+WHERE
+  {
+    ?artist     a                   mo:MusicArtist.
+    ?artist     bm:importedFrom     ?source.
+    ?artist     rdfs:label          ?label.
 
     OPTIONAL
       {
         ?artist     vocab:artist_type       ?artist_type.
       }
 
-    MINUS 
+    MINUS
       {
         ?artist     vocab:artist_type       "2"^^xs:short.
         ?artist     rel:collaboratesWith    ?any1 .
       }
-  } 
+  }
 ORDER BY ?label
