@@ -211,7 +211,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
       {
         final MusicArtist artist = musicPerformer.getMusicArtist();
         final Optional<Entity> role = musicPerformer.getRole();
-        return String.format("%-20s %s", role.get().as(Displayable).getDisplayName(), displayNameOf(artist));
+        final String performer = role.get().as(Displayable).getDisplayName().replaceAll("^performer_", "").replace('_', ' ');
+        return String.format("%-20s %s", performer, displayNameOf(artist));
       }
 
     /*******************************************************************************************************************
