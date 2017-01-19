@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
+import javax.annotation.CheckForNull;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -45,12 +46,14 @@ import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParseException;
 import org.eclipse.rdf4j.sail.memory.MemoryStore;
 import org.testng.annotations.DataProvider;
+import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.model.vocabulary.BM;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
@@ -59,8 +62,6 @@ import static java.nio.file.Files.*;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
-import javax.annotation.CheckForNull;
-import org.testng.annotations.BeforeMethod;
 
 /***********************************************************************************************************************
  *
@@ -111,23 +112,23 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         // then
         final Path expectedResult = PATH_EXPECTED_TEST_RESULTS.resolve(testSetName + "-dump.txt");
         final Path actualResult = PATH_TEST_RESULTS.resolve(testSetName + "-dump.txt");
-        queryAndDump(underTest, actualResult);
+        queryAndDump(underTest, actualResult, new Id(((otherTestSetName == null) ? BM.O_EMBEDDED : BM.O_MUSICBRAINZ).stringValue()));
         assertSameContents(normalizedPath(expectedResult).toFile(), normalizedPath(actualResult).toFile());
       }
 
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    private void queryAndDump (final @Nonnull MediaCatalog catalog, final @Nonnull Path dumpPath)
+    private void queryAndDump (final @Nonnull MediaCatalog catalog, final @Nonnull Path dumpPath, final @Nonnull Id source)
       throws IOException
       {
         log.info("queryAndDump(.., {})", dumpPath);
         createDirectories(PATH_TEST_RESULTS);
         final PrintWriter pw = new PrintWriter(dumpPath.toFile(), "UTF-8");
 
-        final MusicArtistFinder allArtistsFinder = catalog.findArtists();
-        final RecordFinder allRecordsFinder = catalog.findRecords();
-        final TrackFinder allTracksFinder = catalog.findTracks();
+        final MusicArtistFinder allArtistsFinder = catalog.findArtists().withSource(source);
+        final RecordFinder allRecordsFinder = catalog.findRecords().withSource(source);
+        final TrackFinder allTracksFinder = catalog.findTracks().withSource(source);
 
         final List<? extends MusicArtist> artists = allArtistsFinder.stream().sorted(BY_RDFS_LABEL).collect(toList());
         final List<? extends Record> records = allRecordsFinder.stream().sorted(BY_RDFS_LABEL).collect(toList());
@@ -146,7 +147,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         artists.forEach(artist ->
           {
-            final TrackFinder artistTracksFinder = artist.findTracks();
+            final TrackFinder artistTracksFinder = artist.findTracks().withSource(source);
             pw.printf("\nTRACKS OF %s (%d):\n", artist, artistTracksFinder.count());
             artistTracksFinder.stream().forEach(track ->
               {
@@ -157,7 +158,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         records.forEach(record ->
           {
-            final TrackFinder recordTrackFinder = record.findTracks();
+            final TrackFinder recordTrackFinder = record.findTracks().withSource(source);
             pw.printf("\nTRACKS IN %s (%d):\n", record, recordTrackFinder.count());
             recordTrackFinder.stream().forEach(track ->
               {
@@ -168,7 +169,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         artists.forEach(artist ->
           {
-            final RecordFinder artistRecordFinder = artist.findRecords();
+            final RecordFinder artistRecordFinder = artist.findRecords().withSource(source);
             pw.printf("\nRECORDS OF %s (%d):\n", artist, artistRecordFinder.count());
             artistRecordFinder.stream().forEach(record ->
               {
