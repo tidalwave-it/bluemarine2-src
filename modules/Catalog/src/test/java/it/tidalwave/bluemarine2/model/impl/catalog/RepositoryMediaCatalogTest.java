@@ -62,6 +62,7 @@ import static java.nio.file.Files.*;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import it.tidalwave.bluemarine2.model.Track;
 
 /***********************************************************************************************************************
  *
@@ -134,9 +135,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         final List<? extends Record> records = allRecordsFinder.stream().sorted(BY_RDFS_LABEL).collect(toList());
 
         pw.printf("ALL TRACKS (%d):\n\n", allTracksFinder.count());
-        final Map<String, RepositoryTrack> allTracks = allTracksFinder.results().stream()
-                        .map(t -> (RepositoryTrack)t)
-                        .collect(toMap(RepositoryTrack::toString, Function.identity()));
+        final Map<String, Track> allTracks = allTracksFinder.stream()
+                                                            .collect(toMap(Track::toString, Function.identity()));
         allTracks.values().stream().sorted(BY_RDFS_LABEL).forEach(track -> pw.printf("  %s\n", track));
 
         pw.printf("\n\n\nALL RECORDS (%d):\n\n", allRecordsFinder.count());
