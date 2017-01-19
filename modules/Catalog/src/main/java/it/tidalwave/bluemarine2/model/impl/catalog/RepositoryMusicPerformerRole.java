@@ -26,32 +26,28 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.finder;
+package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Id;
-import it.tidalwave.util.spi.ExtendedFinder8Support;
-import it.tidalwave.bluemarine2.model.MusicArtist;
-import it.tidalwave.bluemarine2.model.Performance;
+import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.role.spi.DefaultDisplayable;
+import it.tidalwave.bluemarine2.model.role.Entity;
+import lombok.experimental.Delegate;
+
 
 /***********************************************************************************************************************
  *
- * @stereotype      Finder
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-public interface MusicArtistFinder extends BaseFinder<MusicArtist, MusicArtistFinder>,
-                                           ExtendedFinder8Support<MusicArtist, MusicArtistFinder>
+public class RepositoryMusicPerformerRole implements Entity
   {
-    /*******************************************************************************************************************
-     *
-     * Constrains the search to artists who are makers of the given entity.
-     *
-     * @return      the {@code Finder}
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public MusicArtistFinder makerOf (@Nonnull Id entityId);
+    @Delegate
+    private final AsSupport asSupport;
+
+    public RepositoryMusicPerformerRole (final @Nonnull String s)
+      {
+        asSupport = new AsSupport(this, new DefaultDisplayable(s));
+      }
   }

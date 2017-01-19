@@ -26,32 +26,32 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.finder;
+package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Id;
-import it.tidalwave.util.spi.ExtendedFinder8Support;
-import it.tidalwave.bluemarine2.model.MusicArtist;
-import it.tidalwave.bluemarine2.model.Performance;
+import java.util.Optional;
+import it.tidalwave.role.Identifiable;
+import it.tidalwave.bluemarine2.model.role.Entity;
 
 /***********************************************************************************************************************
- *
- * @stereotype      Finder
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MusicArtistFinder extends BaseFinder<MusicArtist, MusicArtistFinder>,
-                                           ExtendedFinder8Support<MusicArtist, MusicArtistFinder>
+public interface MusicPerformer extends Entity, Identifiable
   {
+    public static final Class<MusicPerformer> MusicPerformer = MusicPerformer.class;
+
     /*******************************************************************************************************************
-     *
-     * Constrains the search to artists who are makers of the given entity.
-     *
-     * @return      the {@code Finder}
      *
      ******************************************************************************************************************/
     @Nonnull
-    public MusicArtistFinder makerOf (@Nonnull Id entityId);
+    public MusicArtist getMusicArtist();
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public Optional<Entity> getRole();
   }

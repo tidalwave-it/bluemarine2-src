@@ -29,9 +29,8 @@
 package it.tidalwave.bluemarine2.model.finder;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.ExtendedFinder8Support;
-import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.MusicPerformer;
 import it.tidalwave.bluemarine2.model.Performance;
 
 /***********************************************************************************************************************
@@ -42,16 +41,9 @@ import it.tidalwave.bluemarine2.model.Performance;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MusicArtistFinder extends BaseFinder<MusicArtist, MusicArtistFinder>,
-                                           ExtendedFinder8Support<MusicArtist, MusicArtistFinder>
+public interface MusicPerformerFinder extends BaseFinder<MusicPerformer, MusicPerformerFinder>,
+                                              ExtendedFinder8Support<MusicPerformer, MusicPerformerFinder>
   {
-    /*******************************************************************************************************************
-     *
-     * Constrains the search to artists who are makers of the given entity.
-     *
-     * @return      the {@code Finder}
-     *
-     ******************************************************************************************************************/
     @Nonnull
-    public MusicArtistFinder makerOf (@Nonnull Id entityId);
+    public MusicPerformerFinder performerOf (@Nonnull Performance performance);
   }

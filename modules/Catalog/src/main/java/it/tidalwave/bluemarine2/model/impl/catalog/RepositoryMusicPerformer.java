@@ -29,11 +29,18 @@
 package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
+import java.util.Collection;
+import java.util.Optional;
+import it.tidalwave.util.Id;
+import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.MusicPerformer;
+import it.tidalwave.bluemarine2.model.role.Entity;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 import org.eclipse.rdf4j.query.BindingSet;
 import org.eclipse.rdf4j.repository.Repository;
-import it.tidalwave.bluemarine2.model.Performance;
-import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;
-import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicPerformerFinder;
 
 /***********************************************************************************************************************
  *
@@ -41,16 +48,49 @@ import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicPerform
  * @version $Id: $
  *
  **********************************************************************************************************************/
-public class RepositoryPerformance extends RepositoryEntitySupport implements Performance
+@Getter @EqualsAndHashCode @ToString
+@Slf4j
+public class RepositoryMusicPerformer implements MusicPerformer
   {
-    public RepositoryPerformance (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
+    @Nonnull
+    private final MusicArtist musicArtist;
+
+    @Nonnull
+    private final Optional<Entity> role;
+
+//    @Delegate
+//    private final AsSupport asSupport = new AsSupport(this);
+
+    public RepositoryMusicPerformer (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
-        super(repository, bindingSet, "performance");
+        this.musicArtist = new RepositoryMusicArtist(repository, bindingSet);
+        log.info("ZZZZ BINDING NAMES {}", bindingSet.getBindingNames());
+        final Optional<String> r = Optional.of(bindingSet.getBinding("role").getValue().stringValue());
+        this.role = r.map(RepositoryMusicPerformerRole::new);
       }
 
-    @Override @Nonnull
-    public MusicPerformerFinder findPerformers()
+    @Override
+    public Id getId()
       {
-        return new RepositoryMusicPerformerFinder(repository).importedFrom(source).performerOf(this);
+        return musicArtist.getId();
+      }
+
+    // FIXME: should delegate first to its own AsDelegate and only as a fallaback to MusicArtist
+    @Override
+    public <T> T as(Class<T> type)
+      {
+        return musicArtist.as(type);
+      }
+
+    @Override
+    public <T> T as(Class<T> type, NotFoundBehaviour<T> notFoundBehaviour)
+      {
+        return musicArtist.as(type, notFoundBehaviour);
+      }
+
+    @Override
+    public <T> Collection<T> asMany(Class<T> type)
+      {
+        return musicArtist.asMany(type);
       }
   }

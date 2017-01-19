@@ -34,7 +34,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.function.Function;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -51,21 +50,25 @@ import org.testng.annotations.DataProvider;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.MusicArtist;
-import it.tidalwave.bluemarine2.model.Performance;
+import it.tidalwave.bluemarine2.model.MusicPerformer;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.model.vocabulary.BM;
+import it.tidalwave.bluemarine2.model.role.Entity;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import static java.util.stream.Collectors.*;
 import static java.nio.file.Files.*;
+import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import java.util.Optional;
 
 /***********************************************************************************************************************
  *
@@ -78,9 +81,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
   {
     private static final Path PATH_TEST_SETS = Paths.get("target/test-classes/test-sets");
 
-    private static final Comparator<Object> BY_RDFS_LABEL =
-            (e1, e2) -> ((RepositoryEntitySupport)e1).getRdfsLabel().compareTo(
-                        ((RepositoryEntitySupport)e2).getRdfsLabel());
+    private static final Comparator<Entity> BY_DISPLAY_NAME =
+            (e1, e2) -> e1.as(Displayable).getDisplayName().compareTo(e2.as(Displayable).getDisplayName());
 
     /*******************************************************************************************************************
      *
@@ -134,14 +136,14 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         final RecordFinder allRecordsFinder = catalog.findRecords().importedFrom(source);
         final TrackFinder allTracksFinder = catalog.findTracks().importedFrom(source);
 
-        final List<? extends MusicArtist> artists = allArtistsFinder.stream().sorted(BY_RDFS_LABEL).collect(toList());
-        final List<? extends Record> records = allRecordsFinder.stream().sorted(BY_RDFS_LABEL).collect(toList());
+        final List<? extends MusicArtist> artists = allArtistsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
+        final List<? extends Record> records = allRecordsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
 
         pw.printf("ALL TRACKS (%d):\n\n", allTracksFinder.count());
         final Map<String, Track> tracksOrphanOfArtist = allTracksFinder.stream()
                                                             .collect(toMap(Track::toString, Function.identity(), (u,v) -> v));
         final Map<String, Track> tracksOrphanOfRecord = new HashMap<>(tracksOrphanOfArtist);
-        tracksOrphanOfArtist.values().stream().sorted(BY_RDFS_LABEL).forEach(track -> pw.printf("  %s\n", track));
+        tracksOrphanOfArtist.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s\n", track));
 
         pw.printf("\n\n\nALL RECORDS (%d):\n\n", allRecordsFinder.count());
         records.forEach(artist -> pw.printf("%s\n", artist));
@@ -173,8 +175,11 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
               {
                 pw.printf("    %s\n", track);
                 tracksOrphanOfRecord.remove(track.toString());
-                final Optional<Performance> performance = track.getPerformance();
-                performance.ifPresent(p -> pw.printf("    PERFORMANCE: %s%n", performance));
+                track.getPerformance().ifPresent(performance -> pw.printf("%s%n",
+                        performance.findPerformers().stream()
+                                                    .sorted(BY_DISPLAY_NAME)
+                                                    .map(this::displayNameOf)
+                                                    .collect(joining("\n      : ", "      : ", ""))));
 
               });
           });
@@ -190,12 +195,32 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
           });
 
         pw.printf("\n\nTRACKS ORPHAN OF ARTIST (%d):\n\n", tracksOrphanOfArtist.size());
-        tracksOrphanOfArtist.values().stream().sorted(BY_RDFS_LABEL).forEach(track -> pw.printf("  %s\n", track));
+        tracksOrphanOfArtist.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s\n", track));
 
         pw.printf("\n\nTRACKS ORPHAN OF RECORD (%d):\n\n", tracksOrphanOfRecord.size());
-        tracksOrphanOfRecord.values().stream().sorted(BY_RDFS_LABEL).forEach(track -> pw.printf("  %s\n", track));
+        tracksOrphanOfRecord.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s\n", track));
 
         pw.close();
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private String displayNameOf (final @Nonnull MusicPerformer musicPerformer)
+      {
+        final MusicArtist artist = musicPerformer.getMusicArtist();
+        final Optional<Entity> role = musicPerformer.getRole();
+        return String.format("%-20s %s", role.get().as(Displayable).getDisplayName(), displayNameOf(artist));
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private String displayNameOf (final @Nonnull Entity entity)
+      {
+        return String.format("%s (%s)", entity.as(Displayable).getDisplayName(), entity.as(Identifiable).getId());
       }
 
     /*******************************************************************************************************************
