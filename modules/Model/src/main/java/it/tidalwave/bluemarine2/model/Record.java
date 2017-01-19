@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.model;
 import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.net.URL;
+import it.tidalwave.util.Id;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
@@ -54,6 +55,15 @@ public interface Record extends Entity, Identifiable
      ******************************************************************************************************************/
     @Nonnull
     public TrackFinder findTracks();
+
+    @Nonnull
+    public Optional<Id> getSource();
+
+    @Nonnull
+    public Optional<String> getAsin();
+
+    @Nonnull
+    public Optional<String> getGtin();
 
     @Nonnull
     public Optional<URL> getImageUrl();

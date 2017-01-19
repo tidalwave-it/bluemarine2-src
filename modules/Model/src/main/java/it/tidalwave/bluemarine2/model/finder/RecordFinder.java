@@ -37,24 +37,25 @@ import it.tidalwave.bluemarine2.model.Record;
 /***********************************************************************************************************************
  *
  * @stereotype      Finder
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface RecordFinder extends ExtendedFinder8Support<Record, RecordFinder>
+public interface RecordFinder extends BaseFinder<Record, RecordFinder>,
+                                      ExtendedFinder8Support<Record, RecordFinder>
   {
     /*******************************************************************************************************************
      *
      * Constrains the search to records made by the given artist.
-     * 
+     *
      * @param       artist      the artist
      * @return                  the {@code Finder}
      *
      ******************************************************************************************************************/
     @Nonnull
     public RecordFinder madeBy (@Nonnull MusicArtist artist);
-    
+
     /*******************************************************************************************************************
      *
      *

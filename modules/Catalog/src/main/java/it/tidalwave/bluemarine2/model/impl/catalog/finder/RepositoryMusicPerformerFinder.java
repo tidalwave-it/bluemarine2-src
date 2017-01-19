@@ -26,22 +26,15 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.impl.catalog;
+package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.Optional;
-import java.time.Duration;
 import org.eclipse.rdf4j.repository.Repository;
-import org.eclipse.rdf4j.query.Binding;
-import org.eclipse.rdf4j.query.BindingSet;
 import it.tidalwave.util.Id;
-import it.tidalwave.util.spi.AsSupport;
-import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.role.Entity;
-import lombok.experimental.Delegate;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import it.tidalwave.bluemarine2.model.MusicPerformer;
+import it.tidalwave.bluemarine2.model.Performance;
+import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;
 import lombok.ToString;
 
 /***********************************************************************************************************************
@@ -50,91 +43,73 @@ import lombok.ToString;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @ToString(of = { "rdfsLabel", "id"})
-public class RepositoryEntitySupport implements Entity, Identifiable
+@ToString
+public class RepositoryMusicPerformerFinder extends RepositoryFinderSupport<MusicPerformer, MusicPerformerFinder>
+                                            implements MusicPerformerFinder
   {
+    private static final long serialVersionUID = 4571966692541694627L;
+
+    private final static String QUERY_ARTISTS = readSparql(RepositoryMusicPerformerFinder.class, "AllMusicArtists.sparql");
+
     @Nonnull
-    protected final Repository repository;
-
-    @Getter @Nonnull
-    protected final Id id;
-
-    @Getter
-    protected final String rdfsLabel;
-
-    @Getter @Nonnull
-    protected final Optional<Id> source;
-
-    @Delegate
-    private final AsSupport asSupport = new AsSupport(this);
+    private final Optional<Id> performanceId;
 
     /*******************************************************************************************************************
      *
-     *
+     * Default constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryEntitySupport (final @Nonnull Repository repository,
-                                    final @Nonnull BindingSet bindingSet,
-                                    final @Nonnull String idName)
+    public RepositoryMusicPerformerFinder (final @Nonnull Repository repository)
       {
-        this.repository = repository;
-        this.id = new Id(toString(bindingSet.getBinding(idName)).get());
-        this.rdfsLabel = toString(bindingSet.getBinding("label")).orElse("");
-        this.source = toId(bindingSet.getBinding("source"));
+        super(repository);
+        this.performanceId = Optional.empty();
       }
 
     /*******************************************************************************************************************
      *
-     *
+     * Clone constructor.
      *
      ******************************************************************************************************************/
-    @Nonnull
-    protected static Optional<String> toString (final @Nullable Binding binding)
+    public RepositoryMusicPerformerFinder (final @Nonnull RepositoryMusicPerformerFinder other,
+                                           final @Nonnull Object override)
       {
-        return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> v.stringValue());
+        super(other, override);
+        final RepositoryMusicPerformerFinder source = getSource(RepositoryMusicPerformerFinder.class, other, override);
+        this.performanceId = source.performanceId;
       }
 
     /*******************************************************************************************************************
      *
-     *
+     * Override constructor.
      *
      ******************************************************************************************************************/
-    @Nonnull
-    protected static Optional<Id> toId (final @Nullable Binding binding)
+    private RepositoryMusicPerformerFinder (final @Nonnull Repository repository,
+                                            final @Nonnull Optional<Id> performanceId)
       {
-        return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> v.stringValue()).map(s -> new Id(s));
+        super(repository);
+        this.performanceId = performanceId;
       }
 
     /*******************************************************************************************************************
      *
-     *
+     * {@inheritDoc}
      *
      ******************************************************************************************************************/
-    @Nonnull
-    protected static Optional<Integer> toInteger (final @Nullable Binding binding)
+    @Override @Nonnull
+    public MusicPerformerFinder performerOf (final @Nonnull Performance performance)
       {
-        return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> Integer.parseInt(v.stringValue()));
+        return clone(new RepositoryMusicPerformerFinder(repository, Optional.of(performance.getId())));
       }
 
     /*******************************************************************************************************************
      *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    protected static Optional<Long> toLong (final @Nullable Binding binding)
-      {
-        return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> Long.parseLong(v.stringValue()));
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
+     * {@inheritDoc}
      *
      ******************************************************************************************************************/
-    @Nonnull
-    protected static Optional<Duration> toDuration (final @Nullable Binding binding)
+    @Override @Nonnull
+    protected QueryAndParameters prepareQuery()
       {
-        return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> Duration.ofMillis((int)Float.parseFloat(v.stringValue())));
+        return QueryAndParameters.withSparql(QUERY_ARTISTS)
+                                 .withParameter("performance", performanceId.map(this::iriFor));
       }
   }
