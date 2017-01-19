@@ -28,13 +28,13 @@
  */
 package it.tidalwave.bluemarine2.model.impl;
 
-import it.tidalwave.bluemarine2.model.spi.NamedEntity;
 import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.net.URL;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.model.spi.NamedEntity;
 
 /***********************************************************************************************************************
  *
@@ -44,26 +44,44 @@ import it.tidalwave.bluemarine2.model.finder.TrackFinder;
  **********************************************************************************************************************/
 public class NamedRecord extends NamedEntity implements Record
   {
-    public NamedRecord (final @Nonnull String displayName) 
+    public NamedRecord (final @Nonnull String displayName)
       {
         super(displayName);
       }
 
     @Override @Nonnull
-    public TrackFinder findTracks() 
+    public TrackFinder findTracks()
       {
         throw new UnsupportedOperationException("Not supported yet."); // FIXME: return empty finder
       }
 
     @Override @Nonnull
-    public Optional<URL> getImageUrl() 
+    public Optional<URL> getImageUrl()
       {
         return Optional.empty();
       }
 
     @Override @Nonnull
-    public Id getId() 
+    public Id getId()
       {
         throw new UnsupportedOperationException("Not supported yet."); // FIXME
+      }
+
+    @Override
+    public Optional<Id> getSource()
+      {
+        return Optional.empty();
+      }
+
+    @Override
+    public Optional<String> getAsin()
+      {
+        return Optional.empty();
+      }
+
+    @Override
+    public Optional<String> getGtin()
+      {
+        return Optional.empty();
       }
   }

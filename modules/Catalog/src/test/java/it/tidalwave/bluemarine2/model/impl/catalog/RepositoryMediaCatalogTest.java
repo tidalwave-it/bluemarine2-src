@@ -137,7 +137,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         pw.printf("ALL TRACKS (%d):\n\n", allTracksFinder.count());
         final Map<String, Track> tracksOrphanOfArtist = allTracksFinder.stream()
-                                                            .collect(toMap(Track::toString, Function.identity()));
+                                                            .collect(toMap(Track::toString, Function.identity(), (u,v) -> v));
         final Map<String, Track> tracksOrphanOfRecord = new HashMap<>(tracksOrphanOfArtist);
         tracksOrphanOfArtist.values().stream().sorted(BY_RDFS_LABEL).forEach(track -> pw.printf("  %s\n", track));
 
@@ -161,8 +161,12 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         records.forEach(record ->
           {
             pw.printf("\nRECORD %s:\n", record);
+            record.getAsin().ifPresent(asin -> pw.printf("  ASIN:    %s\n", asin));
+            record.getGtin().ifPresent(gtin -> pw.printf("  BARCODE: %s\n", gtin));
+
             final TrackFinder recordTrackFinder = record.findTracks().withSource(source);
-            pw.printf("  TRACKS (%d):\n", recordTrackFinder.count());
+            pw.printf("  TRACKS (%d / %s):\n", recordTrackFinder.count(), ((RepositoryRecord)record).getTrackCount());
+
             recordTrackFinder.stream().forEach(track ->
               {
                 pw.printf("    %s\n", track);

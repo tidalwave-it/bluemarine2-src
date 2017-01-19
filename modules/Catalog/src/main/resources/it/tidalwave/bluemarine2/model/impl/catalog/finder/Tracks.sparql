@@ -1,4 +1,4 @@
-            SELECT *
+            SELECT DISTINCT *
             WHERE
               {
                 ?track        a                       mo:Track.
@@ -27,6 +27,19 @@
                 ?record       a                       mo:Record.
                 ?record       mo:track                ?track.
                 ?record       rdfs:label              ?record_label.
+
+                OPTIONAL
+                  {
+                    ?record       mo:track_count          ?track_count.
+                  }
+                OPTIONAL
+                  {
+                    ?record       mo:amazon_asin          ?asin.
+                  }
+                OPTIONAL
+                  {
+                    ?record       mo:gtin                 ?gtin.
+                  }
 
                 ?signal       a                       mo:DigitalSignal.
                 ?signal       mo:published_as         ?track.

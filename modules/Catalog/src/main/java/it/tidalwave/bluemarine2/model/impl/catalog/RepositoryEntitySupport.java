@@ -62,6 +62,9 @@ public class RepositoryEntitySupport implements Entity, Identifiable
     @Getter
     protected final String rdfsLabel;
 
+    @Getter @Nonnull
+    private final Optional<Id> source;
+
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
 
@@ -77,6 +80,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
         this.repository = repository;
         this.id = new Id(toString(bindingSet.getBinding(idName)).get());
         this.rdfsLabel = toString(bindingSet.getBinding("label")).get();
+        this.source = toId(bindingSet.getBinding("source"));
       }
 
     /*******************************************************************************************************************
@@ -88,6 +92,17 @@ public class RepositoryEntitySupport implements Entity, Identifiable
     protected static Optional<String> toString (final @Nullable Binding binding)
       {
         return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> v.stringValue());
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    protected static Optional<Id> toId (final @Nullable Binding binding)
+      {
+        return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> v.stringValue()).map(s -> new Id(s));
       }
 
     /*******************************************************************************************************************

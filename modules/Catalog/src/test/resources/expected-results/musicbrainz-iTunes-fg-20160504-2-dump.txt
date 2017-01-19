@@ -1,4 +1,4 @@
-ALL TRACKS (445):
+ALL TRACKS (475):
 
   RepositoryTrack(01/01 04, 05:10, rdfs:label='Et ša 'aré raŝón, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/04 Et Sha'Aré Rashon.mp3, http://musicbrainz.org/track/215dee07-24e5-3dae-a4a7-a2706b42d18b)
   RepositoryTrack(01/01 01, 05:37, rdfs:label=(Go) Get It, Pat Metheny/Trio 99_00/01 (Go) Get It.mp3, http://musicbrainz.org/track/c37c0641-6e64-3b37-9735-80e9ef4961cc)
@@ -448,8 +448,9 @@ ALL TRACKS (445):
 
 
 
-ALL RECORDS (42):
+ALL RECORDS (44):
 
+RepositoryRecord(rdfs:label=111 Years of Deutsche Grammophon: The Collectors’ Edition, http://musicbrainz.org/record/3848dbd0-0aea-4ac6-bd72-4d0c19995c37)
 RepositoryRecord(rdfs:label=111 Years of Deutsche Grammophon: The Collectors’ Edition, http://musicbrainz.org/record/3848dbd0-0aea-4ac6-bd72-4d0c19995c37)
 RepositoryRecord(rdfs:label=Ahora Jazz, http://musicbrainz.org/record/e712fde2-6f0e-4fad-87dc-585023d811eb)
 RepositoryRecord(rdfs:label=Antiche danze ed arie, http://musicbrainz.org/record/b146cc1f-59b9-4ad7-88a4-e4a43e711d18)
@@ -485,6 +486,7 @@ RepositoryRecord(rdfs:label=Symphonien nos. 8 & 9 »Aus der Neuen Welt«, http:/
 RepositoryRecord(rdfs:label=Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi" / no. 8 "Le Soir", http://musicbrainz.org/record/1409e227-80b6-4801-9a2d-b20690b57f92)
 RepositoryRecord(rdfs:label=The Incomparable Callas, http://musicbrainz.org/record/9d14232c-6bcc-4314-b713-8beec2e25cf9)
 RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, http://musicbrainz.org/record/ee3e1aa1-da37-4483-8df0-f123dc22a8a8)
+RepositoryRecord(rdfs:label=The Originals - Legendary Recordings, http://musicbrainz.org/record/5cacd9cf-6514-4b75-bfcf-9cb788f7bd14)
 RepositoryRecord(rdfs:label=The Originals - Legendary Recordings, http://musicbrainz.org/record/5cacd9cf-6514-4b75-bfcf-9cb788f7bd14)
 RepositoryRecord(rdfs:label=The Planets, http://musicbrainz.org/record/b55271e4-506f-42de-b5a4-0291f56bd079)
 RepositoryRecord(rdfs:label=The Planets, http://musicbrainz.org/record/e153542f-6fa9-43cf-a92d-d2889b6b4d2b)
@@ -892,28 +894,89 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=התזמורת הפילהרמונית
 TRACKS OF RepositoryMusicArtist(rdfs:label=小澤征爾, uri=http://musicbrainz.org/artist/98c3e4e1-2f01-4ead-911f-8d4b95a6c461) (0):
 
 RECORD RepositoryRecord(rdfs:label=111 Years of Deutsche Grammophon: The Collectors’ Edition, http://musicbrainz.org/record/3848dbd0-0aea-4ac6-bd72-4d0c19995c37):
-  TRACKS (18):
+  ASIN:    B002DZX95I
+  BARCODE: 028947781677
+  TRACKS (36 / Optional[8]):
+    RepositoryTrack(01/01 01, 11:05, rdfs:label=Piano Sonata No. 21 in C major, Op. 53 "Waldstein": I. Allegro con brio, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/01 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 1. Allegro Con Brio.mp3, http://musicbrainz.org/track/09f2e3c8-0bdc-3f26-aa73-50fe942cf8db)
     RepositoryTrack(01/01 01, 11:05, rdfs:label=Piano Sonata No. 21 in C major, Op. 53 "Waldstein": I. Allegro con brio, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/01 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 1. Allegro Con Brio.mp3, http://musicbrainz.org/track/09f2e3c8-0bdc-3f26-aa73-50fe942cf8db)
     RepositoryTrack(01/01 01, 09:57, rdfs:label=Symphony no. 8 in G major, op. 88: I. Allegro con brio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3, http://musicbrainz.org/track/20d0a4be-3d6d-315a-b810-fc5a34d796ef)
+    RepositoryTrack(01/01 01, 09:57, rdfs:label=Symphony no. 8 in G major, op. 88: I. Allegro con brio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3, http://musicbrainz.org/track/20d0a4be-3d6d-315a-b810-fc5a34d796ef)
+    RepositoryTrack(01/01 02, 04:38, rdfs:label=Piano Sonata No. 21 in C major, Op. 53 "Waldstein": II. Introduzione. Adagio molto, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3, http://musicbrainz.org/track/72e8d85a-2855-3b49-93f1-a97fbf94ad3d)
     RepositoryTrack(01/01 02, 04:38, rdfs:label=Piano Sonata No. 21 in C major, Op. 53 "Waldstein": II. Introduzione. Adagio molto, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3, http://musicbrainz.org/track/72e8d85a-2855-3b49-93f1-a97fbf94ad3d)
     RepositoryTrack(01/01 02, 10:18, rdfs:label=Symphony no. 8 in G major, op. 88: II. Adagio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/02 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 2. Adagio.mp3, http://musicbrainz.org/track/620a90b3-97e4-3502-99fb-b6177717c97e)
+    RepositoryTrack(01/01 02, 10:18, rdfs:label=Symphony no. 8 in G major, op. 88: II. Adagio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/02 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 2. Adagio.mp3, http://musicbrainz.org/track/620a90b3-97e4-3502-99fb-b6177717c97e)
+    RepositoryTrack(01/01 03, 07:34, rdfs:label=Klaviersonate Nr. 21 C-Dur, op. 53 »Waldstein-Sonate«: III. Rondo. Allegretto moderato – Prestissimo, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/03 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 3. Rondo_ Allegretto Moderato.mp3, http://musicbrainz.org/track/45d9dc19-8e17-3c8e-8d5d-78e67409c4d7)
     RepositoryTrack(01/01 03, 07:34, rdfs:label=Klaviersonate Nr. 21 C-Dur, op. 53 »Waldstein-Sonate«: III. Rondo. Allegretto moderato – Prestissimo, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/03 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 3. Rondo_ Allegretto Moderato.mp3, http://musicbrainz.org/track/45d9dc19-8e17-3c8e-8d5d-78e67409c4d7)
     RepositoryTrack(01/01 03, 06:39, rdfs:label=Symphony no. 8 in G major, op. 88: III. Allegretto grazioso, Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/03 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 3. Allegretto Grazioso, Molto Vivace.mp3, http://musicbrainz.org/track/c3d130ec-0b70-31eb-a4a2-bd6898e87bda)
+    RepositoryTrack(01/01 03, 06:39, rdfs:label=Symphony no. 8 in G major, op. 88: III. Allegretto grazioso, Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/03 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 3. Allegretto Grazioso, Molto Vivace.mp3, http://musicbrainz.org/track/c3d130ec-0b70-31eb-a4a2-bd6898e87bda)
+    RepositoryTrack(01/01 04, 01:55, rdfs:label=Klaviersonate Nr. 21 C-Dur, op. 53 »Waldstein-Sonate«: IV. Prestissimo, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/04 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 3. Rondo_ Prestissimo.mp3, http://musicbrainz.org/track/1da08889-cfbd-3b14-8c5b-01c551fb3102)
     RepositoryTrack(01/01 04, 01:55, rdfs:label=Klaviersonate Nr. 21 C-Dur, op. 53 »Waldstein-Sonate«: IV. Prestissimo, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/04 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 3. Rondo_ Prestissimo.mp3, http://musicbrainz.org/track/1da08889-cfbd-3b14-8c5b-01c551fb3102)
     RepositoryTrack(01/01 04, 08:55, rdfs:label=Symphony no. 8 in G major, op. 88: IV. Allegro, ma non troppo, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/04 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 4. Allegro Ma Non Troppo.mp3, http://musicbrainz.org/track/59ab792f-b4e1-3c28-abb9-eb10eadf1d59)
+    RepositoryTrack(01/01 04, 08:55, rdfs:label=Symphony no. 8 in G major, op. 88: IV. Allegro, ma non troppo, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/04 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 4. Allegro Ma Non Troppo.mp3, http://musicbrainz.org/track/59ab792f-b4e1-3c28-abb9-eb10eadf1d59)
+    RepositoryTrack(01/01 05, 07:16, rdfs:label=Piano Sonata No. 26 in E-flat major, Op. 81a "Les Adieux": I. Das Lebewohl. Adagio - Allegro, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/05 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 1. Adagio, Allegro.mp3, http://musicbrainz.org/track/e3cca438-0086-3d48-81de-7a365742cf38)
     RepositoryTrack(01/01 05, 07:16, rdfs:label=Piano Sonata No. 26 in E-flat major, Op. 81a "Les Adieux": I. Das Lebewohl. Adagio - Allegro, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/05 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 1. Adagio, Allegro.mp3, http://musicbrainz.org/track/e3cca438-0086-3d48-81de-7a365742cf38)
     RepositoryTrack(01/01 05, 09:31, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: I. Adagio - Allegro molto, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/05 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 1. Adagio, Allegro Molto.mp3, http://musicbrainz.org/track/3ac05586-74cb-3382-a8e2-46c5841b8f5c)
+    RepositoryTrack(01/01 05, 09:31, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: I. Adagio - Allegro molto, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/05 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 1. Adagio, Allegro Molto.mp3, http://musicbrainz.org/track/3ac05586-74cb-3382-a8e2-46c5841b8f5c)
+    RepositoryTrack(01/01 06, 04:01, rdfs:label=Piano Sonata No. 26 in E-flat major, Op. 81a "Les Adieux": II. Die Abwesenheit. Andante espressivo, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/06 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 2. Andante Espressivo.mp3, http://musicbrainz.org/track/cf6409c4-38be-36a4-b3c3-4b43d73cebdb)
     RepositoryTrack(01/01 06, 04:01, rdfs:label=Piano Sonata No. 26 in E-flat major, Op. 81a "Les Adieux": II. Die Abwesenheit. Andante espressivo, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/06 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 2. Andante Espressivo.mp3, http://musicbrainz.org/track/cf6409c4-38be-36a4-b3c3-4b43d73cebdb)
     RepositoryTrack(01/01 06, 13:03, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: II. Largo, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3, http://musicbrainz.org/track/835efcc9-35f8-38d7-b658-436469dbd86d)
+    RepositoryTrack(01/01 06, 13:03, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: II. Largo, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3, http://musicbrainz.org/track/835efcc9-35f8-38d7-b658-436469dbd86d)
+    RepositoryTrack(01/01 07, 06:06, rdfs:label=Piano Sonata No. 26 in E-flat major, Op. 81a "Les Adieux": III. Das Wiedersehn. Vivacissimamente, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/07 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 3. Vivacissimamente.mp3, http://musicbrainz.org/track/a24568c6-f3de-328c-b46f-3d9ca0aaf8b2)
     RepositoryTrack(01/01 07, 06:06, rdfs:label=Piano Sonata No. 26 in E-flat major, Op. 81a "Les Adieux": III. Das Wiedersehn. Vivacissimamente, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/07 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 3. Vivacissimamente.mp3, http://musicbrainz.org/track/a24568c6-f3de-328c-b46f-3d9ca0aaf8b2)
     RepositoryTrack(01/01 07, 08:08, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: III. Scherzo: Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/07 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 3. Molto Vivace.mp3, http://musicbrainz.org/track/71f6b6d8-e0f2-3750-b567-0ca4e0a7cbcc)
+    RepositoryTrack(01/01 07, 08:08, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: III. Scherzo: Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/07 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 3. Molto Vivace.mp3, http://musicbrainz.org/track/71f6b6d8-e0f2-3750-b567-0ca4e0a7cbcc)
+    RepositoryTrack(01/01 08, 11:07, rdfs:label=Piano Sonata no. 23 in F minor, op. 57 "Appassionata": I. Allegro assai, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/08 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 1. Allegro Assai.mp3, http://musicbrainz.org/track/08484aa5-5cd3-34d5-9d40-b50eacb1e319)
     RepositoryTrack(01/01 08, 11:07, rdfs:label=Piano Sonata no. 23 in F minor, op. 57 "Appassionata": I. Allegro assai, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/08 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 1. Allegro Assai.mp3, http://musicbrainz.org/track/08484aa5-5cd3-34d5-9d40-b50eacb1e319)
     RepositoryTrack(01/01 08, 11:50, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: IV. Allegro con fuoco, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/08 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 4. Allegro Con Fuoco.mp3, http://musicbrainz.org/track/d31b9d99-1117-3782-b030-c4a98fb090dd)
+    RepositoryTrack(01/01 08, 11:50, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: IV. Allegro con fuoco, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/08 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 4. Allegro Con Fuoco.mp3, http://musicbrainz.org/track/d31b9d99-1117-3782-b030-c4a98fb090dd)
     RepositoryTrack(01/01 09, 06:29, rdfs:label=Piano Sonata no. 23 in F minor, op. 57 "Appassionata": II. Andante con moto - attacca:, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/09 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 2. Andante Con Moto.mp3, http://musicbrainz.org/track/a5ed320d-0e2c-3057-a19a-94ef97ac2e87)
+    RepositoryTrack(01/01 09, 06:29, rdfs:label=Piano Sonata no. 23 in F minor, op. 57 "Appassionata": II. Andante con moto - attacca:, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/09 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 2. Andante Con Moto.mp3, http://musicbrainz.org/track/a5ed320d-0e2c-3057-a19a-94ef97ac2e87)
+    RepositoryTrack(01/01 10, 07:53, rdfs:label=Piano Sonata no. 23 in F minor, op. 57 "Appassionata": III. Allegro, ma non troppo - Presto, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3, http://musicbrainz.org/track/251acae4-c41b-3523-b8d9-04003bb74dab)
+    RepositoryTrack(01/01 10, 07:53, rdfs:label=Piano Sonata no. 23 in F minor, op. 57 "Appassionata": III. Allegro, ma non troppo - Presto, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3, http://musicbrainz.org/track/251acae4-c41b-3523-b8d9-04003bb74dab)
+
+RECORD RepositoryRecord(rdfs:label=111 Years of Deutsche Grammophon: The Collectors’ Edition, http://musicbrainz.org/record/3848dbd0-0aea-4ac6-bd72-4d0c19995c37):
+  ASIN:    B002DZX95I
+  BARCODE: 028947781677
+  TRACKS (36 / Optional[10]):
+    RepositoryTrack(01/01 01, 11:05, rdfs:label=Piano Sonata No. 21 in C major, Op. 53 "Waldstein": I. Allegro con brio, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/01 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 1. Allegro Con Brio.mp3, http://musicbrainz.org/track/09f2e3c8-0bdc-3f26-aa73-50fe942cf8db)
+    RepositoryTrack(01/01 01, 11:05, rdfs:label=Piano Sonata No. 21 in C major, Op. 53 "Waldstein": I. Allegro con brio, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/01 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 1. Allegro Con Brio.mp3, http://musicbrainz.org/track/09f2e3c8-0bdc-3f26-aa73-50fe942cf8db)
+    RepositoryTrack(01/01 01, 09:57, rdfs:label=Symphony no. 8 in G major, op. 88: I. Allegro con brio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3, http://musicbrainz.org/track/20d0a4be-3d6d-315a-b810-fc5a34d796ef)
+    RepositoryTrack(01/01 01, 09:57, rdfs:label=Symphony no. 8 in G major, op. 88: I. Allegro con brio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3, http://musicbrainz.org/track/20d0a4be-3d6d-315a-b810-fc5a34d796ef)
+    RepositoryTrack(01/01 02, 04:38, rdfs:label=Piano Sonata No. 21 in C major, Op. 53 "Waldstein": II. Introduzione. Adagio molto, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3, http://musicbrainz.org/track/72e8d85a-2855-3b49-93f1-a97fbf94ad3d)
+    RepositoryTrack(01/01 02, 04:38, rdfs:label=Piano Sonata No. 21 in C major, Op. 53 "Waldstein": II. Introduzione. Adagio molto, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3, http://musicbrainz.org/track/72e8d85a-2855-3b49-93f1-a97fbf94ad3d)
+    RepositoryTrack(01/01 02, 10:18, rdfs:label=Symphony no. 8 in G major, op. 88: II. Adagio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/02 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 2. Adagio.mp3, http://musicbrainz.org/track/620a90b3-97e4-3502-99fb-b6177717c97e)
+    RepositoryTrack(01/01 02, 10:18, rdfs:label=Symphony no. 8 in G major, op. 88: II. Adagio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/02 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 2. Adagio.mp3, http://musicbrainz.org/track/620a90b3-97e4-3502-99fb-b6177717c97e)
+    RepositoryTrack(01/01 03, 07:34, rdfs:label=Klaviersonate Nr. 21 C-Dur, op. 53 »Waldstein-Sonate«: III. Rondo. Allegretto moderato – Prestissimo, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/03 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 3. Rondo_ Allegretto Moderato.mp3, http://musicbrainz.org/track/45d9dc19-8e17-3c8e-8d5d-78e67409c4d7)
+    RepositoryTrack(01/01 03, 07:34, rdfs:label=Klaviersonate Nr. 21 C-Dur, op. 53 »Waldstein-Sonate«: III. Rondo. Allegretto moderato – Prestissimo, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/03 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 3. Rondo_ Allegretto Moderato.mp3, http://musicbrainz.org/track/45d9dc19-8e17-3c8e-8d5d-78e67409c4d7)
+    RepositoryTrack(01/01 03, 06:39, rdfs:label=Symphony no. 8 in G major, op. 88: III. Allegretto grazioso, Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/03 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 3. Allegretto Grazioso, Molto Vivace.mp3, http://musicbrainz.org/track/c3d130ec-0b70-31eb-a4a2-bd6898e87bda)
+    RepositoryTrack(01/01 03, 06:39, rdfs:label=Symphony no. 8 in G major, op. 88: III. Allegretto grazioso, Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/03 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 3. Allegretto Grazioso, Molto Vivace.mp3, http://musicbrainz.org/track/c3d130ec-0b70-31eb-a4a2-bd6898e87bda)
+    RepositoryTrack(01/01 04, 01:55, rdfs:label=Klaviersonate Nr. 21 C-Dur, op. 53 »Waldstein-Sonate«: IV. Prestissimo, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/04 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 3. Rondo_ Prestissimo.mp3, http://musicbrainz.org/track/1da08889-cfbd-3b14-8c5b-01c551fb3102)
+    RepositoryTrack(01/01 04, 01:55, rdfs:label=Klaviersonate Nr. 21 C-Dur, op. 53 »Waldstein-Sonate«: IV. Prestissimo, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/04 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 3. Rondo_ Prestissimo.mp3, http://musicbrainz.org/track/1da08889-cfbd-3b14-8c5b-01c551fb3102)
+    RepositoryTrack(01/01 04, 08:55, rdfs:label=Symphony no. 8 in G major, op. 88: IV. Allegro, ma non troppo, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/04 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 4. Allegro Ma Non Troppo.mp3, http://musicbrainz.org/track/59ab792f-b4e1-3c28-abb9-eb10eadf1d59)
+    RepositoryTrack(01/01 04, 08:55, rdfs:label=Symphony no. 8 in G major, op. 88: IV. Allegro, ma non troppo, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/04 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 4. Allegro Ma Non Troppo.mp3, http://musicbrainz.org/track/59ab792f-b4e1-3c28-abb9-eb10eadf1d59)
+    RepositoryTrack(01/01 05, 07:16, rdfs:label=Piano Sonata No. 26 in E-flat major, Op. 81a "Les Adieux": I. Das Lebewohl. Adagio - Allegro, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/05 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 1. Adagio, Allegro.mp3, http://musicbrainz.org/track/e3cca438-0086-3d48-81de-7a365742cf38)
+    RepositoryTrack(01/01 05, 07:16, rdfs:label=Piano Sonata No. 26 in E-flat major, Op. 81a "Les Adieux": I. Das Lebewohl. Adagio - Allegro, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/05 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 1. Adagio, Allegro.mp3, http://musicbrainz.org/track/e3cca438-0086-3d48-81de-7a365742cf38)
+    RepositoryTrack(01/01 05, 09:31, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: I. Adagio - Allegro molto, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/05 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 1. Adagio, Allegro Molto.mp3, http://musicbrainz.org/track/3ac05586-74cb-3382-a8e2-46c5841b8f5c)
+    RepositoryTrack(01/01 05, 09:31, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: I. Adagio - Allegro molto, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/05 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 1. Adagio, Allegro Molto.mp3, http://musicbrainz.org/track/3ac05586-74cb-3382-a8e2-46c5841b8f5c)
+    RepositoryTrack(01/01 06, 04:01, rdfs:label=Piano Sonata No. 26 in E-flat major, Op. 81a "Les Adieux": II. Die Abwesenheit. Andante espressivo, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/06 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 2. Andante Espressivo.mp3, http://musicbrainz.org/track/cf6409c4-38be-36a4-b3c3-4b43d73cebdb)
+    RepositoryTrack(01/01 06, 04:01, rdfs:label=Piano Sonata No. 26 in E-flat major, Op. 81a "Les Adieux": II. Die Abwesenheit. Andante espressivo, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/06 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 2. Andante Espressivo.mp3, http://musicbrainz.org/track/cf6409c4-38be-36a4-b3c3-4b43d73cebdb)
+    RepositoryTrack(01/01 06, 13:03, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: II. Largo, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3, http://musicbrainz.org/track/835efcc9-35f8-38d7-b658-436469dbd86d)
+    RepositoryTrack(01/01 06, 13:03, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: II. Largo, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3, http://musicbrainz.org/track/835efcc9-35f8-38d7-b658-436469dbd86d)
+    RepositoryTrack(01/01 07, 06:06, rdfs:label=Piano Sonata No. 26 in E-flat major, Op. 81a "Les Adieux": III. Das Wiedersehn. Vivacissimamente, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/07 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 3. Vivacissimamente.mp3, http://musicbrainz.org/track/a24568c6-f3de-328c-b46f-3d9ca0aaf8b2)
+    RepositoryTrack(01/01 07, 06:06, rdfs:label=Piano Sonata No. 26 in E-flat major, Op. 81a "Les Adieux": III. Das Wiedersehn. Vivacissimamente, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/07 Beethoven_ Piano Sonata #26 In E Flat, Op. 81A, _Les Adieux_ - 3. Vivacissimamente.mp3, http://musicbrainz.org/track/a24568c6-f3de-328c-b46f-3d9ca0aaf8b2)
+    RepositoryTrack(01/01 07, 08:08, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: III. Scherzo: Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/07 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 3. Molto Vivace.mp3, http://musicbrainz.org/track/71f6b6d8-e0f2-3750-b567-0ca4e0a7cbcc)
+    RepositoryTrack(01/01 07, 08:08, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: III. Scherzo: Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/07 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 3. Molto Vivace.mp3, http://musicbrainz.org/track/71f6b6d8-e0f2-3750-b567-0ca4e0a7cbcc)
+    RepositoryTrack(01/01 08, 11:07, rdfs:label=Piano Sonata no. 23 in F minor, op. 57 "Appassionata": I. Allegro assai, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/08 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 1. Allegro Assai.mp3, http://musicbrainz.org/track/08484aa5-5cd3-34d5-9d40-b50eacb1e319)
+    RepositoryTrack(01/01 08, 11:07, rdfs:label=Piano Sonata no. 23 in F minor, op. 57 "Appassionata": I. Allegro assai, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/08 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 1. Allegro Assai.mp3, http://musicbrainz.org/track/08484aa5-5cd3-34d5-9d40-b50eacb1e319)
+    RepositoryTrack(01/01 08, 11:50, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: IV. Allegro con fuoco, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/08 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 4. Allegro Con Fuoco.mp3, http://musicbrainz.org/track/d31b9d99-1117-3782-b030-c4a98fb090dd)
+    RepositoryTrack(01/01 08, 11:50, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: IV. Allegro con fuoco, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/08 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 4. Allegro Con Fuoco.mp3, http://musicbrainz.org/track/d31b9d99-1117-3782-b030-c4a98fb090dd)
+    RepositoryTrack(01/01 09, 06:29, rdfs:label=Piano Sonata no. 23 in F minor, op. 57 "Appassionata": II. Andante con moto - attacca:, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/09 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 2. Andante Con Moto.mp3, http://musicbrainz.org/track/a5ed320d-0e2c-3057-a19a-94ef97ac2e87)
+    RepositoryTrack(01/01 09, 06:29, rdfs:label=Piano Sonata no. 23 in F minor, op. 57 "Appassionata": II. Andante con moto - attacca:, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/09 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 2. Andante Con Moto.mp3, http://musicbrainz.org/track/a5ed320d-0e2c-3057-a19a-94ef97ac2e87)
+    RepositoryTrack(01/01 10, 07:53, rdfs:label=Piano Sonata no. 23 in F minor, op. 57 "Appassionata": III. Allegro, ma non troppo - Presto, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3, http://musicbrainz.org/track/251acae4-c41b-3523-b8d9-04003bb74dab)
     RepositoryTrack(01/01 10, 07:53, rdfs:label=Piano Sonata no. 23 in F minor, op. 57 "Appassionata": III. Allegro, ma non troppo - Presto, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3, http://musicbrainz.org/track/251acae4-c41b-3523-b8d9-04003bb74dab)
 
 RECORD RepositoryRecord(rdfs:label=Ahora Jazz, http://musicbrainz.org/record/e712fde2-6f0e-4fad-87dc-585023d811eb):
-  TRACKS (18):
+  TRACKS (18 / Optional[18]):
     RepositoryTrack(01/01 01, 04:49, rdfs:label=Fever, Compilations/Pure Ella/01 Mack The Knife.mp3, http://musicbrainz.org/track/80b81669-2c0f-317b-9e10-42e3575af9cc)
     RepositoryTrack(01/01 02, 03:44, rdfs:label=Duke's Place, Compilations/Pure Ella/02 Blue Skies.mp3, http://musicbrainz.org/track/8e513a2a-6a72-39a0-a67c-8c94b79fd504)
     RepositoryTrack(01/01 03, 01:52, rdfs:label=A Night in Tunisia, Compilations/Pure Ella/03 A-Tisket, A-Tasket.mp3, http://musicbrainz.org/track/94167667-a21c-3dca-b2b0-e9fadcee1d66)
@@ -934,7 +997,8 @@ RECORD RepositoryRecord(rdfs:label=Ahora Jazz, http://musicbrainz.org/record/e71
     RepositoryTrack(01/01 18, 04:04, rdfs:label=Born to Be Blue, Compilations/Pure Ella/18 Oh Lady, Be Good.mp3, http://musicbrainz.org/track/7d11acbe-1abd-37ed-b989-81ee126afb47)
 
 RECORD RepositoryRecord(rdfs:label=Antiche danze ed arie, http://musicbrainz.org/record/b146cc1f-59b9-4ad7-88a4-e4a43e711d18):
-  TRACKS (12):
+  BARCODE: 028941986825
+  TRACKS (12 / Optional[12]):
     RepositoryTrack(01/01 01, 03:04, rdfs:label=Antiche danze ed arie, suite I: Simone Molinaro: Balletto "Il Conte Orlando" (1599), Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/01 Respighi_ Ancient Airs & Dances, Set 1, P 109 - 1. Balletto Detto Il Conte Orlando.mp3, http://musicbrainz.org/track/687fd96e-385f-30f1-8e54-cd45f6116563)
     RepositoryTrack(01/01 02, 03:24, rdfs:label=Antiche danze ed arie, suite I: Vincenzo Galilei: Gagliarda (1598), Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/02 Respighi_ Ancient Airs & Dances, Set 1, P 109 - 2. Gagliarda.mp3, http://musicbrainz.org/track/b6e0f2bd-50f5-36d8-8ee7-f26310d4307e)
     RepositoryTrack(01/01 03, 05:22, rdfs:label=Antiche danze ed arie, suite I: Anonymus: Villanella, Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/03 Respighi_ Ancient Airs & Dances, Set 1, P 109 - 3. Villanella.mp3, http://musicbrainz.org/track/e2eac188-afea-3b50-9287-11181687ce00)
@@ -949,7 +1013,9 @@ RECORD RepositoryRecord(rdfs:label=Antiche danze ed arie, http://musicbrainz.org
     RepositoryTrack(01/01 12, 03:23, rdfs:label=Antiche danze ed arie, suite III: Lodovico Roncalli: Passacaglia (1692), Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/12 Respighi_ Ancient Airs & Dances, Set 3, P 172 - 4. Passacaglia.mp3, http://musicbrainz.org/track/08036b69-ab72-39d6-8ffb-373e6bd9a8ca)
 
 RECORD RepositoryRecord(rdfs:label=Berliner Philharmoniker Centenary Edition, http://musicbrainz.org/record/92b01866-1815-4d8e-91b3-700d11719bbb):
-  TRACKS (8):
+  ASIN:    B00DYQLEZM
+  BARCODE: 028947910497
+  TRACKS (8 / Optional[8]):
     RepositoryTrack(01/01 01, 09:57, rdfs:label=Symphony no. 8 in G major, op. 88: I. Allegro con brio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3, http://musicbrainz.org/track/ed43f543-3a5f-486a-8a56-cf8314a30d04)
     RepositoryTrack(01/01 02, 10:18, rdfs:label=Symphony no. 8 in G major, op. 88: II. Adagio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/02 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 2. Adagio.mp3, http://musicbrainz.org/track/b213ec95-fc5d-4b35-a3c8-7503ea36ed55)
     RepositoryTrack(01/01 03, 06:39, rdfs:label=Symphony no. 8 in G major, op. 88: III. Allegretto grazioso, Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/03 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 3. Allegretto Grazioso, Molto Vivace.mp3, http://musicbrainz.org/track/24b85cd8-7e74-41df-bb60-4ae3fac1fc76)
@@ -960,7 +1026,8 @@ RECORD RepositoryRecord(rdfs:label=Berliner Philharmoniker Centenary Edition, ht
     RepositoryTrack(01/01 08, 11:50, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: IV. Allegro con fuoco, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/08 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 4. Allegro Con Fuoco.mp3, http://musicbrainz.org/track/ace2e487-2ff5-41fe-80b6-aa53c8f3dd2f)
 
 RECORD RepositoryRecord(rdfs:label=Cello Concertos, http://musicbrainz.org/record/fc066956-e8b0-4019-a526-c959f6cbdfeb):
-  TRACKS (7):
+  BARCODE: 028941288028
+  TRACKS (7 / Optional[7]):
     RepositoryTrack(01/01 01, 14:44, rdfs:label=Cello Concerto in B minor, op. 124: I. Allegro, Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/01 Dvořák_ Cello Concerto In B Minor, Op. 104, B 191 - 1. Allegro.mp3, http://musicbrainz.org/track/d3ba6682-2484-4da0-a7c5-6252243b0821)
     RepositoryTrack(01/01 02, 11:37, rdfs:label=Cello Concerto in B minor, op. 124: II. Adagio ma non troppo, Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/02 Dvořák_ Cello Concerto In B Minor, Op. 104, B 191 - 2. Adagio, Ma Non Troppo.mp3, http://musicbrainz.org/track/f6531f03-1e71-43d0-ad78-7aaf002a326e)
     RepositoryTrack(01/01 03, 12:13, rdfs:label=Cello Concerto in B minor, op. 124: III. Finale (Allegro moderato), Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/03 Dvořák_ Cello Concerto In B Minor, Op. 104, B 191 - 3. Finale_ Allegro Moderato.mp3, http://musicbrainz.org/track/10d91e7b-4402-40b7-b496-cf148f35aeb2)
@@ -970,7 +1037,8 @@ RECORD RepositoryRecord(rdfs:label=Cello Concertos, http://musicbrainz.org/recor
     RepositoryTrack(01/01 07, 11:10, rdfs:label=Concerto for Cello and Orchestra, op. 85: IV. Allegro, Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/07 Elgar_ Cello Concerto In E Minor, Op. 85 - 4. Allegro Moderato.mp3, http://musicbrainz.org/track/9855a794-cefe-4ad3-a499-0c0782e762c5)
 
 RECORD RepositoryRecord(rdfs:label=Chopin / Beethoven / Schumann / Ravel / Prokofieff, http://musicbrainz.org/record/bc1a2bc2-d1be-4c51-b40a-04b30853dc3d):
-  TRACKS (7):
+  BARCODE: 028942375529
+  TRACKS (7 / Optional[7]):
     RepositoryTrack(01/01 01, 07:24, rdfs:label=Gaspard de la Nuit: I. Ondine: Lent, Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/01 Ravel_ Gaspard De La Nuit - Ondine_ Lent.mp3, http://musicbrainz.org/track/d3f50dea-f19f-3d37-af72-9f94b73c6f42)
     RepositoryTrack(01/01 02, 06:52, rdfs:label=Gaspard de la Nuit: II. Le Gibet: Très lent., Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/02 Ravel_ Gaspard De La Nuit - Le Gibet_ Tres Lent.mp3, http://musicbrainz.org/track/097e0473-87cb-31be-8f73-56457e0a54e4)
     RepositoryTrack(01/01 03, 09:31, rdfs:label=Gaspard de la Nuit: III. Scarbo: Modéré, Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/03 Ravel_ Gaspard De La Nuit - Scarbo_ Modéré.mp3, http://musicbrainz.org/track/0184c6af-044b-36cd-960f-ae83e277629a)
@@ -980,14 +1048,17 @@ RECORD RepositoryRecord(rdfs:label=Chopin / Beethoven / Schumann / Ravel / Proko
     RepositoryTrack(01/01 07, 06:42, rdfs:label=Piano Sonata no. 6 in A major, op. 82: IV. Vivace, Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/07 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 4. Vivace.mp3, http://musicbrainz.org/track/27a1eade-1955-38f2-8fb9-22cc7591eb9f)
 
 RECORD RepositoryRecord(rdfs:label=Complete Philips Recordings, http://musicbrainz.org/record/37c691c8-ffaa-4d9f-9f1d-78f7bf3f8373):
-  TRACKS (4):
+  ASIN:    B014VLVTW6
+  BARCODE: 028947888277
+  TRACKS (4 / Optional[4]):
     RepositoryTrack(01/01 01, 18:02, rdfs:label=Piano Concerto No. 2 in B-flat major, Op. 83: I. Allegro non troppo, Alfred Brendel; Claudio Abbado_ Berlin Philharmonic Orchestra/Brahms_ Piano Concerto #2/01 Brahms_ Piano Concerto #2 In B Flat, Op. 83 - 1. Allegro Non Troppo.mp3, http://musicbrainz.org/track/2fdc0ec7-57bf-42f4-b3c6-aa535b4c819d)
     RepositoryTrack(01/01 02, 09:25, rdfs:label=Piano Concerto No. 2 in B-flat major, Op. 83: II. Allegro appassionato, Alfred Brendel; Claudio Abbado_ Berlin Philharmonic Orchestra/Brahms_ Piano Concerto #2/02 Brahms_ Piano Concerto #2 In B Flat, Op. 83 - 2. Allegro Appassionato.mp3, http://musicbrainz.org/track/8ec895da-f2ed-470b-b25b-a372a3f71cb5)
     RepositoryTrack(01/01 03, 12:18, rdfs:label=Piano Concerto No. 2 in B-flat major, Op. 83: III. Andante – Più adagio, Alfred Brendel; Claudio Abbado_ Berlin Philharmonic Orchestra/Brahms_ Piano Concerto #2/03 Brahms_ Piano Concerto #2 In B Flat, Op. 83 - 3. Andante.mp3, http://musicbrainz.org/track/1ee1b89a-1b83-4440-a0fe-f5b955f7e8fc)
     RepositoryTrack(01/01 04, 09:30, rdfs:label=Piano Concerto No. 2 in B-flat major, Op. 83: IV. Allegretto grazioso – Un poco più presto, Alfred Brendel; Claudio Abbado_ Berlin Philharmonic Orchestra/Brahms_ Piano Concerto #2/04 Brahms_ Piano Concerto #2 In B Flat, Op. 83 - 4. Allegro Grazioso.mp3, http://musicbrainz.org/track/1a9ee5f3-e9a7-4279-babf-cb5574dbe8c4)
 
 RECORD RepositoryRecord(rdfs:label=Complete Recordings on Deutsche Grammophon (box 8: 1979-1981), http://musicbrainz.org/record/2fe766bf-aebb-4f2d-b89b-3924a45063e4):
-  TRACKS (6):
+  BARCODE: 4988005499455
+  TRACKS (6 / Optional[6]):
     RepositoryTrack(01/01 01, 15:30, rdfs:label=Konzert für Klavier und Orchester a-moll, op. 54: 1. Allegro affettuoso, Krystian Zimerman; Herbert Von Karajan_ Berlin Philharmonic Orchestra/Schumann; Grieg_ Piano Concertos/01 Schumann_ Piano Concerto In A Minor, Op. 54 - 1. Allegro Affettuoso.mp3, http://musicbrainz.org/track/84425ecc-33cb-4f19-9a59-db3f3f4b3b6d)
     RepositoryTrack(01/01 02, 05:24, rdfs:label=Konzert für Klavier und Orchester a-moll, op. 54: 2. Intermezzo (Andante grazioso), Krystian Zimerman; Herbert Von Karajan_ Berlin Philharmonic Orchestra/Schumann; Grieg_ Piano Concertos/02 Schumann_ Piano Concerto In A Minor, Op. 54 - 2. Intermezzo_ Andantiono Grazioso.mp3, http://musicbrainz.org/track/7b9ee1e2-9026-4cd0-9f74-f78192a0a36e)
     RepositoryTrack(01/01 03, 10:46, rdfs:label=Konzert für Klavier und Orchester a-moll, op. 54: 3. Allegro vivace, Krystian Zimerman; Herbert Von Karajan_ Berlin Philharmonic Orchestra/Schumann; Grieg_ Piano Concertos/03 Schumann_ Piano Concerto In A Minor, Op. 54 - 3. Allegro Vivace.mp3, http://musicbrainz.org/track/ed46ef64-c110-4291-9058-7eedb084b597)
@@ -996,7 +1067,9 @@ RECORD RepositoryRecord(rdfs:label=Complete Recordings on Deutsche Grammophon (b
     RepositoryTrack(01/01 06, 10:48, rdfs:label=Konzert für Klavier und Orchester a-moll, op. 16: 3. Allegro moderato molto e marcato - Quasi presto - Andante maestoso, Krystian Zimerman; Herbert Von Karajan_ Berlin Philharmonic Orchestra/Schumann; Grieg_ Piano Concertos/06 Grieg_ Piano Concerto In A Minor, Op. 16 - 3. Allegro Moderato Molto E Marcato, Quasi Presto, Andante Maestoso.mp3, http://musicbrainz.org/track/449dd3ac-a6df-4690-96fe-2b42cdd6f284)
 
 RECORD RepositoryRecord(rdfs:label=Die Konzerte für 3 und 4 Cembali, http://musicbrainz.org/record/95ea1d38-3bbb-3dc2-a398-eee2e6c003f4):
-  TRACKS (9):
+  ASIN:    B0000057C9
+  BARCODE: 028940004124
+  TRACKS (9 / Optional[9]):
     RepositoryTrack(01/01 01, 04:03, rdfs:label=Concerto for 4 Harpsichords and Strings in A minor, BWV 1065: I. (No tempo indication), Compilations/Bach_ Concertos For 3 & 4 Harpsichords/01 Bach_ Concerto In A Minor For 4 Harpsichords, BWV 1065 - 1. Without Tempo Indication.mp3, http://musicbrainz.org/track/3aa9fba9-28b6-3932-804b-0494e85e4716)
     RepositoryTrack(01/01 02, 02:08, rdfs:label=Concerto for 4 Harpsichords and Strings in A minor, BWV 1065: II. Largo, Compilations/Bach_ Concertos For 3 & 4 Harpsichords/02 Bach_ Concerto In A Minor For 4 Harpsichords, BWV 1065 - 2. Largo.mp3, http://musicbrainz.org/track/1908dc74-4d56-36b6-a039-672cf7995691)
     RepositoryTrack(01/01 03, 03:28, rdfs:label=Concerto for 4 Harpsichords and Strings in A minor, BWV 1065: III. Allegro, Compilations/Bach_ Concertos For 3 & 4 Harpsichords/03 Bach_ Concerto In A Minor For 4 Harpsichords, BWV 1065 - 3. Allegro.mp3, http://musicbrainz.org/track/0122094d-c139-3156-a1ce-6408c8d9fd9a)
@@ -1008,7 +1081,9 @@ RECORD RepositoryRecord(rdfs:label=Die Konzerte für 3 und 4 Cembali, http://mus
     RepositoryTrack(01/01 09, 04:57, rdfs:label=Concerto for 3 Harpsichords and Strings in D minor, BWV 1063: III. Allegro, Compilations/Bach_ Concertos For 3 & 4 Harpsichords/09 Bach_ Concerto In D Minor For 3 Harpsichords, BWV 1063 - 3. Allegro.mp3, http://musicbrainz.org/track/02980f5a-a191-3c80-b6bb-7b699b3b8fd4)
 
 RECORD RepositoryRecord(rdfs:label=El canto espiritual judeoespañol, http://musicbrainz.org/record/5109aa4f-5ee8-4a58-b0ed-11838203383f):
-  TRACKS (14):
+  ASIN:    B0000269LV
+  BARCODE: 8427592000126
+  TRACKS (14 / Optional[14]):
     RepositoryTrack(01/01 01, 02:18, rdfs:label=Abinu Malkenu, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/01 Abinu Malkenu.mp3, http://musicbrainz.org/track/d2060189-a6fa-3a9b-b215-5a097bde3e4d)
     RepositoryTrack(01/01 02, 09:06, rdfs:label=Yede Rašim, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/02 Yede Rashim.mp3, http://musicbrainz.org/track/9617cb0a-23a9-37c2-a46d-ee36cbe0cc0e)
     RepositoryTrack(01/01 03, 05:57, rdfs:label=Nostalgia y alabanza De Jerusalén, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/03 Nostalgia Y Alabanza De Jerusalén.mp3, http://musicbrainz.org/track/20087ed0-75b7-34cf-9297-30d81412c1b3)
@@ -1025,7 +1100,9 @@ RECORD RepositoryRecord(rdfs:label=El canto espiritual judeoespañol, http://mus
     RepositoryTrack(01/01 14, 02:27, rdfs:label=La ketubá de la ley, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/14 La Ketuba De La Ley.mp3, http://musicbrainz.org/track/4201d963-55b6-3a68-8720-8ae87542c7f8)
 
 RECORD RepositoryRecord(rdfs:label=Fantasie, op. 17 / Sonate, op. 11, http://musicbrainz.org/record/0db52d37-cc2f-41e3-b43d-755483b71c0c):
-  TRACKS (7):
+  ASIN:    B003PSWLHY
+  BARCODE: 028942313422
+  TRACKS (7 / Optional[7]):
     RepositoryTrack(01/01 01, 12:04, rdfs:label=Klaviersonate Nr. 1 fis-moll, op. 11: I. Introduzione. Un poco Adagio - Allegro vivace, Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/01 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 1. Introduzione.mp3, http://musicbrainz.org/track/8f07a8d4-e71d-43d8-9b88-bcf14c4ef95c)
     RepositoryTrack(01/01 02, 03:09, rdfs:label=Klaviersonate Nr. 1 fis-moll, op. 11: II. Aria, Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/02 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 2. Aria.mp3, http://musicbrainz.org/track/ecdea037-eb21-4087-9181-e3c24e58d762)
     RepositoryTrack(01/01 03, 05:12, rdfs:label=Klaviersonate Nr. 1 fis-moll, op. 11: III. Scherzo e Intermezzo. Allegrissimo - Intermezzo - Tempo I, Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/03 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 3. Scherzo Ed Intermezzo.mp3, http://musicbrainz.org/track/8292c8e7-99cc-42d0-b985-76266761706d)
@@ -1035,7 +1112,9 @@ RECORD RepositoryRecord(rdfs:label=Fantasie, op. 17 / Sonate, op. 11, http://mus
     RepositoryTrack(01/01 07, 10:46, rdfs:label=Fantasie C-dur, op. 17: III. Langsam getragen. Durchweg leise zu halten - Etwas bewegter, Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3, http://musicbrainz.org/track/ae89bf04-2dc9-4e75-b23a-cabf115d3f8d)
 
 RECORD RepositoryRecord(rdfs:label=Gregorian Chant, http://musicbrainz.org/record/9f65e748-1167-42e4-a8cd-cad8c85644d3):
-  TRACKS (22):
+  ASIN:    B00000E370
+  BARCODE: 028941680822
+  TRACKS (22 / Optional[22]):
     RepositoryTrack(01/01 01, 02:45, rdfs:label=Hymnus ad Vesperas tempore Nativitatis Domini, Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/01 Christe Redemptor omnium - Hymnus ad Vesperas tempore Nativitatis Domini.mp3, http://musicbrainz.org/track/06d7b41d-f4e9-3400-99ea-e7394d7e518c)
     RepositoryTrack(01/01 02, 02:55, rdfs:label=In Nativitate Domini ad Missam in die: Introitus: Puer natus est nobis, Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/02 Puer qui natus est nobis - Introitus_In Nativitate Domini ad Missam in die.mp3, http://musicbrainz.org/track/a1fc2e77-96f5-3205-9ad8-f15c7a8ae3c8)
     RepositoryTrack(01/01 03, 01:51, rdfs:label=In Nativitate Domini ad Missam in die: Kyrie V, Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/03 Kyrie V - Kyrie magnae Deus potentiae, Vat. V_In Nativitate Domini ad Missam in die.mp3, http://musicbrainz.org/track/3b9276f5-26a5-33da-b3d7-07333e5fd3d3)
@@ -1060,7 +1139,9 @@ RECORD RepositoryRecord(rdfs:label=Gregorian Chant, http://musicbrainz.org/recor
     RepositoryTrack(01/01 22, 01:45, rdfs:label=Antiphona Beatae Mariae Virginis, Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/22 Alma Redemptoris Mater - Antiphona Beatae Mariae Virginis.mp3, http://musicbrainz.org/track/9dc03152-26f5-36b9-b95e-1b7a23e50a5e)
 
 RECORD RepositoryRecord(rdfs:label=Klavierkonzerte, http://musicbrainz.org/record/1453738d-a4fa-4c48-b946-de4022943bb7):
-  TRACKS (6):
+  ASIN:    B00000E2LB
+  BARCODE: 028941002129
+  TRACKS (6 / Optional[6]):
     RepositoryTrack(01/01 01, 15:30, rdfs:label=Konzert für Klavier und Orchester a-moll, op. 54: 1. Allegro affettuoso, Krystian Zimerman; Herbert Von Karajan_ Berlin Philharmonic Orchestra/Schumann; Grieg_ Piano Concertos/01 Schumann_ Piano Concerto In A Minor, Op. 54 - 1. Allegro Affettuoso.mp3, http://musicbrainz.org/track/77e2ca56-d5f8-34d7-8cc3-6b6166829db2)
     RepositoryTrack(01/01 02, 05:24, rdfs:label=Konzert für Klavier und Orchester a-moll, op. 54: 2. Intermezzo (Andante grazioso), Krystian Zimerman; Herbert Von Karajan_ Berlin Philharmonic Orchestra/Schumann; Grieg_ Piano Concertos/02 Schumann_ Piano Concerto In A Minor, Op. 54 - 2. Intermezzo_ Andantiono Grazioso.mp3, http://musicbrainz.org/track/30b495b9-0d7a-3e10-812c-161b38d9349e)
     RepositoryTrack(01/01 03, 10:46, rdfs:label=Konzert für Klavier und Orchester a-moll, op. 54: 3. Allegro vivace, Krystian Zimerman; Herbert Von Karajan_ Berlin Philharmonic Orchestra/Schumann; Grieg_ Piano Concertos/03 Schumann_ Piano Concerto In A Minor, Op. 54 - 3. Allegro Vivace.mp3, http://musicbrainz.org/track/054cd4fa-8964-36fd-8901-2b002f5f833a)
@@ -1069,11 +1150,14 @@ RECORD RepositoryRecord(rdfs:label=Klavierkonzerte, http://musicbrainz.org/recor
     RepositoryTrack(01/01 06, 10:48, rdfs:label=Konzert für Klavier und Orchester a-moll, op. 16: 3. Allegro moderato molto e marcato - Quasi presto - Andante maestoso, Krystian Zimerman; Herbert Von Karajan_ Berlin Philharmonic Orchestra/Schumann; Grieg_ Piano Concertos/06 Grieg_ Piano Concerto In A Minor, Op. 16 - 3. Allegro Moderato Molto E Marcato, Quasi Presto, Andante Maestoso.mp3, http://musicbrainz.org/track/cbb1a9aa-2e51-3f02-82db-adc6b8064706)
 
 RECORD RepositoryRecord(rdfs:label=La Divina 2, http://musicbrainz.org/record/ff404d38-5a2d-43fe-968e-cfca6928609c):
-  TRACKS (1):
+  ASIN:    B000002RTT
+  BARCODE: 724355501622
+  TRACKS (1 / Optional[16]):
     RepositoryTrack(01/01 01, 04:25, rdfs:label=Alceste: Act I. "Divinités du Styx", Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3, http://musicbrainz.org/track/44da336b-cb7f-3622-86fd-bc00afa3f5da)
 
 RECORD RepositoryRecord(rdfs:label=Le Sacre du Printemps, http://musicbrainz.org/record/78020fdb-4e0e-4522-9d13-74017e5a4f65):
-  TRACKS (14):
+  BARCODE: 028941050823
+  TRACKS (14 / Optional[14]):
     RepositoryTrack(01/01 01, 03:27, rdfs:label=Le Sacre du printemps: Partie I. Introduction, Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/01 Stravinsky_ Le Sacre Du Printemps - Part 1_ The Adoration Of The Earth, Introduction.mp3, http://musicbrainz.org/track/ef6a2144-d17b-3c48-b9d7-eb55659a9b75)
     RepositoryTrack(01/01 02, 03:15, rdfs:label=Le Sacre du printemps: Partie I. Les Augures printaniers (Danses des adolescentes), Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/02 Stravinsky_ Le Sacre Du Printemps - Part 1_ The Adoration Of The Earth, Dances Of The Young Girls.mp3, http://musicbrainz.org/track/f90bfad2-91ed-32aa-a916-f0018aeca629)
     RepositoryTrack(01/01 03, 01:21, rdfs:label=Le Sacre du printemps: Partie I. Jeu du rapt, Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/03 Stravinsky_ Le Sacre Du Printemps - Part 1_ The Adoration Of The Earth, Mock Abduction.mp3, http://musicbrainz.org/track/2ab1046f-fcd8-3219-927b-b5dea460589d)
@@ -1090,7 +1174,9 @@ RECORD RepositoryRecord(rdfs:label=Le Sacre du Printemps, http://musicbrainz.org
     RepositoryTrack(01/01 14, 04:46, rdfs:label=Le Sacre du printemps: Partie II. Danse sacrale (L'élue), Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/14 Stravinsky_ Le Sacre Du Printemps - Part 2_ The Sacrifice, Sacrificial Dance.mp3, http://musicbrainz.org/track/da4490c1-c203-3f92-b3d0-d3daaf0efb6e)
 
 RECORD RepositoryRecord(rdfs:label=Le quattro stagioni, http://musicbrainz.org/record/7d553736-89f8-4c88-881a-89bddfbec068):
-  TRACKS (15):
+  ASIN:    B00000E3J8
+  BARCODE: 028942021624
+  TRACKS (15 / Optional[15]):
     RepositoryTrack(01/01 01, 03:23, rdfs:label=Concerto no. 1 in E, RV 269: Allegro, Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/01 Vivaldi_ Violin Concerto In E, Op. 8_1, RV 269, _The Four Seasons (Spring)_ - 1. Allegro.mp3, http://musicbrainz.org/track/7da63b16-d3fd-3352-b50a-2f48c2340e00)
     RepositoryTrack(01/01 02, 03:00, rdfs:label=Concerto no. 1 in E, RV 269: Largo, Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/02 Vivaldi_ Violin Concerto In E, Op. 8_1, RV 269, _The Four Seasons (Spring)_ - 2. Largo.mp3, http://musicbrainz.org/track/54390568-135e-3f61-a68a-612c88faf93c)
     RepositoryTrack(01/01 03, 04:07, rdfs:label=Concerto no. 1 in E, RV 269: Allegro (Danza pastorale), Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/03 Vivaldi_ Violin Concerto In E, Op. 8_1, RV 269, _The Four Seasons (Spring)_ - 3. Danza Pastorale.mp3, http://musicbrainz.org/track/c1e48b05-ce94-3acc-ada7-6942eb70cd5a)
@@ -1108,7 +1194,8 @@ RECORD RepositoryRecord(rdfs:label=Le quattro stagioni, http://musicbrainz.org/r
     RepositoryTrack(01/01 15, 03:38, rdfs:label=Concerto in G minor, RV 577: Allegro, Viktoria Mullova; Claudio Abbado_ Chamber Orchestra Of Europe/Vivaldi_ The Four Seasons/15 Vivaldi_ Concerto In G Minor, RV 577 - 3. Allegro.mp3, http://musicbrainz.org/track/c438fb0b-b38d-3635-aac0-97d2414218e7)
 
 RECORD RepositoryRecord(rdfs:label=Melodie Sacre, http://musicbrainz.org/record/cb186d9f-f2bb-447b-960e-b3cc8c97fc42):
-  TRACKS (26):
+  BARCODE: 
+  TRACKS (26 / Optional[26]):
     RepositoryTrack(01/01 01, 02:12, rdfs:label=Domine, salvum me fac, Perosi, Lorenzo/Lorenzo Perosi/01 Domine, salvum me fac.mp3, http://musicbrainz.org/track/a373190b-5f30-4d1c-bb96-faa97afad2af)
     RepositoryTrack(01/01 02, 02:13, rdfs:label=Ave verum, Perosi, Lorenzo/Lorenzo Perosi/02 Ave verum.mp3, http://musicbrainz.org/track/9e876208-a5d3-4597-9855-63b37e8b6658)
     RepositoryTrack(01/01 03, 04:45, rdfs:label=Laudate pueri, Perosi, Lorenzo/Lorenzo Perosi/03 Laudate pueri.mp3, http://musicbrainz.org/track/9be22d2c-2cae-4c3f-862c-9e3348976ef4)
@@ -1137,7 +1224,7 @@ RECORD RepositoryRecord(rdfs:label=Melodie Sacre, http://musicbrainz.org/record/
     RepositoryTrack(01/01 26, 01:56, rdfs:label=Interludio, su "viderunt omnes", Perosi, Lorenzo/Lorenzo Perosi/26 Interludio, su _Viderunt omnes_, organo.mp3, http://musicbrainz.org/track/caf9d70c-6c6e-475d-b4f6-3ffaf701395d)
 
 RECORD RepositoryRecord(rdfs:label=Music for the Royal Fireworks / 2 Concerti a due cori, http://musicbrainz.org/record/c794e06e-fc09-4e96-b379-d5ffbb002ab7):
-  TRACKS (16):
+  TRACKS (16 / Optional[16]):
     RepositoryTrack(01/01 01, 01:45, rdfs:label=Concerto a due cori No. 2 in F major: Pomposo, John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/01 Handel_ Concerto A Due Cori #2 In F, HWV 333 - 1. Pomposo.mp3, http://musicbrainz.org/track/7280ca29-0fb9-3bde-b31e-1d532173306e)
     RepositoryTrack(01/01 02, 01:53, rdfs:label=Concerto a due cori No. 2 in F major: Allegro, John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/02 Handel_ Concerto A Due Cori #2 In F, HWV 333 - 2. Allegro.mp3, http://musicbrainz.org/track/3bd78d16-927c-310a-b194-c40e2cc0dc8f)
     RepositoryTrack(01/01 03, 02:40, rdfs:label=Concerto a due cori No. 2 in F major: A tempo giusto, John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/03 Handel_ Concerto A Due Cori #2 In F, HWV 333 - 3. A Tempo Giusto.mp3, http://musicbrainz.org/track/37ccf7dc-98d3-3112-b3f6-741686f7bd10)
@@ -1156,7 +1243,8 @@ RECORD RepositoryRecord(rdfs:label=Music for the Royal Fireworks / 2 Concerti a 
     RepositoryTrack(01/01 16, 02:03, rdfs:label=Music for the Royal Fireworks: Suite HWV 351 V. Menuet I-II, John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/16 Handel_ Music For The Royal Fireworks, HWV 351 - Minuets 1 & 2.mp3, http://musicbrainz.org/track/6fc4d442-0a63-3145-8070-1f8ea590d01f)
 
 RECORD RepositoryRecord(rdfs:label=Nutcracker / Swan Lake, http://musicbrainz.org/record/b27fb357-4e47-40a8-9ed2-9675f4b01649):
-  TRACKS (18):
+  BARCODE: 4891030500501
+  TRACKS (18 / Optional[18]):
     RepositoryTrack(01/01 01, 03:22, rdfs:label=The Nutcracker Suite, Op. 71a: I. Miniature Overture, Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/01 Tchaikovsky_ The Nutcracker, Op. 71 - Ouverture.mp3, http://musicbrainz.org/track/c9ba2de7-18c7-368e-b73d-89da11d665d6)
     RepositoryTrack(01/01 02, 02:23, rdfs:label=The Nutcracker Suite, Op. 71a: II. March, Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/02 Tchaikovsky_ The Nutcracker, Op. 71 - Marche.mp3, http://musicbrainz.org/track/46150a4d-ff9c-37ad-b3c1-30cb080dd77d)
     RepositoryTrack(01/01 03, 01:48, rdfs:label=The Nutcracker Suite, Op. 71a: III. Dance of the Sugar Plum Fairies, Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/03 Tchaikovsky_ The Nutcracker, Op. 71 - Danse De La Fee.mp3, http://musicbrainz.org/track/38692824-ac3e-39cd-917d-f9365cb41733)
@@ -1177,7 +1265,8 @@ RECORD RepositoryRecord(rdfs:label=Nutcracker / Swan Lake, http://musicbrainz.or
     RepositoryTrack(01/01 18, 05:14, rdfs:label=Swan Lake, Op. 20: Act IV: Finale (abridged), Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/18 Tchaikovsky_ Swan Lake, Op. 20 - Sc. Finale.mp3, http://musicbrainz.org/track/8a388038-c0fc-3a89-ab31-3ea01f5d6d39)
 
 RECORD RepositoryRecord(rdfs:label=Nutcracker / Swan Lake, http://musicbrainz.org/record/e9b4d4b4-2763-4211-96e6-31dde8c1e114):
-  TRACKS (18):
+  BARCODE: 730099505024
+  TRACKS (18 / Optional[18]):
     RepositoryTrack(01/01 01, 03:22, rdfs:label=The Nutcracker Suite, Op. 71a: I. Miniature Overture, Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/01 Tchaikovsky_ The Nutcracker, Op. 71 - Ouverture.mp3, http://musicbrainz.org/track/3b3ba213-b2db-42fc-a19e-8113d9808635)
     RepositoryTrack(01/01 02, 02:23, rdfs:label=The Nutcracker Suite, Op. 71a: II. March, Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/02 Tchaikovsky_ The Nutcracker, Op. 71 - Marche.mp3, http://musicbrainz.org/track/3f227cae-e19d-478f-94ec-226f9e0b4429)
     RepositoryTrack(01/01 03, 01:48, rdfs:label=The Nutcracker Suite, Op. 71a: III. Dance of the Sugar Plum Fairies, Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/03 Tchaikovsky_ The Nutcracker, Op. 71 - Danse De La Fee.mp3, http://musicbrainz.org/track/4cbba73e-3357-48b6-b4e0-d637bf459092)
@@ -1198,21 +1287,27 @@ RECORD RepositoryRecord(rdfs:label=Nutcracker / Swan Lake, http://musicbrainz.or
     RepositoryTrack(01/01 18, 05:14, rdfs:label=Swan Lake, Op. 20: Act IV: Finale (abridged), Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/18 Tchaikovsky_ Swan Lake, Op. 20 - Sc. Finale.mp3, http://musicbrainz.org/track/ba1b4d47-0249-4936-9f4b-25c24a97cbc0)
 
 RECORD RepositoryRecord(rdfs:label=Piano Concerto no. 2, http://musicbrainz.org/record/162dc63f-669b-44fa-8758-96cb81b3c9e2):
-  TRACKS (4):
+  ASIN:    B00000413W
+  BARCODE: 028943297523
+  TRACKS (4 / Optional[4]):
     RepositoryTrack(01/01 01, 18:02, rdfs:label=Piano Concerto no. 2 in B-flat major, op. 83: I. Allegro non troppo, Alfred Brendel; Claudio Abbado_ Berlin Philharmonic Orchestra/Brahms_ Piano Concerto #2/01 Brahms_ Piano Concerto #2 In B Flat, Op. 83 - 1. Allegro Non Troppo.mp3, http://musicbrainz.org/track/d0f9ef4a-191b-3a4a-b289-af2c3994d8b7)
     RepositoryTrack(01/01 02, 09:25, rdfs:label=Piano Concerto no. 2 in B-flat major, op. 83: II. Allegro appassionato, Alfred Brendel; Claudio Abbado_ Berlin Philharmonic Orchestra/Brahms_ Piano Concerto #2/02 Brahms_ Piano Concerto #2 In B Flat, Op. 83 - 2. Allegro Appassionato.mp3, http://musicbrainz.org/track/267447a4-9e72-3b38-b938-4f70ef1f942d)
     RepositoryTrack(01/01 03, 12:18, rdfs:label=Piano Concerto no. 2 in B-flat major, op. 83: III. Andante, Alfred Brendel; Claudio Abbado_ Berlin Philharmonic Orchestra/Brahms_ Piano Concerto #2/03 Brahms_ Piano Concerto #2 In B Flat, Op. 83 - 3. Andante.mp3, http://musicbrainz.org/track/82f335e2-ac88-3f18-9858-32d8a572773b)
     RepositoryTrack(01/01 04, 09:30, rdfs:label=Piano Concerto no. 2 in B-flat major, op. 83: IV. Allegro grazioso - un poco più presto, Alfred Brendel; Claudio Abbado_ Berlin Philharmonic Orchestra/Brahms_ Piano Concerto #2/04 Brahms_ Piano Concerto #2 In B Flat, Op. 83 - 4. Allegro Grazioso.mp3, http://musicbrainz.org/track/06500999-28b3-317d-ae94-1eb7231fe20a)
 
 RECORD RepositoryRecord(rdfs:label=Piano Concerto no. 2, http://musicbrainz.org/record/d1b45e60-bb04-4ab4-bf7f-2fc6d8f8dad8):
-  TRACKS (4):
+  ASIN:    B000025TNR
+  BARCODE: 028945665924
+  TRACKS (4 / Optional[4]):
     RepositoryTrack(01/01 01, 18:02, rdfs:label=Piano Concerto No. 2 in B-flat major, Op. 83: I. Allegro non troppo, Alfred Brendel; Claudio Abbado_ Berlin Philharmonic Orchestra/Brahms_ Piano Concerto #2/01 Brahms_ Piano Concerto #2 In B Flat, Op. 83 - 1. Allegro Non Troppo.mp3, http://musicbrainz.org/track/212e718e-668b-3e81-aeb7-10e6e9eb64f3)
     RepositoryTrack(01/01 02, 09:25, rdfs:label=Piano Concerto No. 2 in B-flat major, Op. 83: II. Allegro appassionato, Alfred Brendel; Claudio Abbado_ Berlin Philharmonic Orchestra/Brahms_ Piano Concerto #2/02 Brahms_ Piano Concerto #2 In B Flat, Op. 83 - 2. Allegro Appassionato.mp3, http://musicbrainz.org/track/964455b2-d1d2-3580-bbde-7f4077fd8c47)
     RepositoryTrack(01/01 03, 12:18, rdfs:label=Piano Concerto No. 2 in B-flat major, Op. 83: III. Andante – Più adagio, Alfred Brendel; Claudio Abbado_ Berlin Philharmonic Orchestra/Brahms_ Piano Concerto #2/03 Brahms_ Piano Concerto #2 In B Flat, Op. 83 - 3. Andante.mp3, http://musicbrainz.org/track/a83ef8d4-b603-3bd5-a61c-8e368253c5f0)
     RepositoryTrack(01/01 04, 09:30, rdfs:label=Piano Concerto No. 2 in B-flat major, Op. 83: IV. Allegretto grazioso – Un poco più presto, Alfred Brendel; Claudio Abbado_ Berlin Philharmonic Orchestra/Brahms_ Piano Concerto #2/04 Brahms_ Piano Concerto #2 In B Flat, Op. 83 - 4. Allegro Grazioso.mp3, http://musicbrainz.org/track/89d3b77e-cc65-32f1-b4cd-17457e6af02c)
 
 RECORD RepositoryRecord(rdfs:label=Piano Concertos, http://musicbrainz.org/record/43c60e64-193b-354e-8018-4f582cebd18c):
-  TRACKS (6):
+  ASIN:    B000001GK0
+  BARCODE: 028943901529
+  TRACKS (6 / Optional[6]):
     RepositoryTrack(01/01 01, 15:30, rdfs:label=Konzert für Klavier und Orchester a-moll, op. 54: 1. Allegro affettuoso, Krystian Zimerman; Herbert Von Karajan_ Berlin Philharmonic Orchestra/Schumann; Grieg_ Piano Concertos/01 Schumann_ Piano Concerto In A Minor, Op. 54 - 1. Allegro Affettuoso.mp3, http://musicbrainz.org/track/6bfe2bde-f56f-3e1b-8d53-a8abf294d250)
     RepositoryTrack(01/01 02, 05:24, rdfs:label=Konzert für Klavier und Orchester a-moll, op. 54: 2. Intermezzo (Andante grazioso), Krystian Zimerman; Herbert Von Karajan_ Berlin Philharmonic Orchestra/Schumann; Grieg_ Piano Concertos/02 Schumann_ Piano Concerto In A Minor, Op. 54 - 2. Intermezzo_ Andantiono Grazioso.mp3, http://musicbrainz.org/track/1e832ecd-069b-320f-ac5c-7df6c603d4c5)
     RepositoryTrack(01/01 03, 10:46, rdfs:label=Konzert für Klavier und Orchester a-moll, op. 54: 3. Allegro vivace, Krystian Zimerman; Herbert Von Karajan_ Berlin Philharmonic Orchestra/Schumann; Grieg_ Piano Concertos/03 Schumann_ Piano Concerto In A Minor, Op. 54 - 3. Allegro Vivace.mp3, http://musicbrainz.org/track/e583b902-2a45-39f7-8ef8-9ac30404a39c)
@@ -1221,7 +1316,7 @@ RECORD RepositoryRecord(rdfs:label=Piano Concertos, http://musicbrainz.org/recor
     RepositoryTrack(01/01 06, 10:48, rdfs:label=Konzert für Klavier und Orchester a-moll, op. 16: 3. Allegro moderato molto e marcato - Quasi presto - Andante maestoso, Krystian Zimerman; Herbert Von Karajan_ Berlin Philharmonic Orchestra/Schumann; Grieg_ Piano Concertos/06 Grieg_ Piano Concerto In A Minor, Op. 16 - 3. Allegro Moderato Molto E Marcato, Quasi Presto, Andante Maestoso.mp3, http://musicbrainz.org/track/9df93962-17e5-30ca-bcc8-4d326b71f40b)
 
 RECORD RepositoryRecord(rdfs:label=Piano Concertos, http://musicbrainz.org/record/4f99e937-b8ff-38d5-b915-bd744b34d8d8):
-  TRACKS (6):
+  TRACKS (6 / Optional[6]):
     RepositoryTrack(01/01 01, 15:30, rdfs:label=Konzert für Klavier und Orchester a-moll, op. 54: 1. Allegro affettuoso, Krystian Zimerman; Herbert Von Karajan_ Berlin Philharmonic Orchestra/Schumann; Grieg_ Piano Concertos/01 Schumann_ Piano Concerto In A Minor, Op. 54 - 1. Allegro Affettuoso.mp3, http://musicbrainz.org/track/3817d4e9-bc2c-3bc3-89cf-2527cf503166)
     RepositoryTrack(01/01 02, 05:24, rdfs:label=Konzert für Klavier und Orchester a-moll, op. 54: 2. Intermezzo (Andante grazioso), Krystian Zimerman; Herbert Von Karajan_ Berlin Philharmonic Orchestra/Schumann; Grieg_ Piano Concertos/02 Schumann_ Piano Concerto In A Minor, Op. 54 - 2. Intermezzo_ Andantiono Grazioso.mp3, http://musicbrainz.org/track/e266a16c-4dc8-3f09-b8a2-c69c678db92e)
     RepositoryTrack(01/01 03, 10:46, rdfs:label=Konzert für Klavier und Orchester a-moll, op. 54: 3. Allegro vivace, Krystian Zimerman; Herbert Von Karajan_ Berlin Philharmonic Orchestra/Schumann; Grieg_ Piano Concertos/03 Schumann_ Piano Concerto In A Minor, Op. 54 - 3. Allegro Vivace.mp3, http://musicbrainz.org/track/470bf085-a6f0-360f-afbe-a3642722178a)
@@ -1230,7 +1325,9 @@ RECORD RepositoryRecord(rdfs:label=Piano Concertos, http://musicbrainz.org/recor
     RepositoryTrack(01/01 06, 10:48, rdfs:label=Konzert für Klavier und Orchester a-moll, op. 16: 3. Allegro moderato molto e marcato - Quasi presto - Andante maestoso, Krystian Zimerman; Herbert Von Karajan_ Berlin Philharmonic Orchestra/Schumann; Grieg_ Piano Concertos/06 Grieg_ Piano Concerto In A Minor, Op. 16 - 3. Allegro Moderato Molto E Marcato, Quasi Presto, Andante Maestoso.mp3, http://musicbrainz.org/track/f59afbdd-28cc-3b02-8d0f-5a8aa1827522)
 
 RECORD RepositoryRecord(rdfs:label=Pogorelich Complete Recordings, http://musicbrainz.org/record/f90c2ac7-10b2-4788-a41f-20ca1ffd4fea):
-  TRACKS (7):
+  ASIN:    B00QHL0Y8O
+  BARCODE: 028947943501
+  TRACKS (7 / Optional[7]):
     RepositoryTrack(01/01 01, 07:24, rdfs:label=Gaspard de la Nuit: I. Ondine: Lent, Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/01 Ravel_ Gaspard De La Nuit - Ondine_ Lent.mp3, http://musicbrainz.org/track/3ff89a60-27f2-4702-b7d8-1829b8c440d8)
     RepositoryTrack(01/01 02, 06:52, rdfs:label=Gaspard de la Nuit: II. Le Gibet: Très lent., Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/02 Ravel_ Gaspard De La Nuit - Le Gibet_ Tres Lent.mp3, http://musicbrainz.org/track/8771ba55-f6e9-45b8-ba1c-7d60321fe3e7)
     RepositoryTrack(01/01 03, 09:31, rdfs:label=Gaspard de la Nuit: III. Scarbo: Modéré, Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/03 Ravel_ Gaspard De La Nuit - Scarbo_ Modéré.mp3, http://musicbrainz.org/track/6a0e59e1-f586-41e6-8843-70b8404beced)
@@ -1240,7 +1337,9 @@ RECORD RepositoryRecord(rdfs:label=Pogorelich Complete Recordings, http://musicb
     RepositoryTrack(01/01 07, 06:42, rdfs:label=Piano Sonata no. 6 in A major, op. 82: IV. Vivace, Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/07 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 4. Vivace.mp3, http://musicbrainz.org/track/a0d3273a-9b12-4c72-9a78-c6aa1752dca6)
 
 RECORD RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, http://musicbrainz.org/record/b8ccca79-9419-4e07-a30d-d869475043a5):
-  TRACKS (18):
+  ASIN:    B0000069ON
+  BARCODE: 731453920620
+  TRACKS (18 / Optional[18]):
     RepositoryTrack(01/01 01, 04:49, rdfs:label=Mack the Knife, Compilations/Pure Ella/01 Mack The Knife.mp3, http://musicbrainz.org/track/883f21b2-a147-33f9-9ab1-f9b30c7dccf1)
     RepositoryTrack(01/01 02, 03:44, rdfs:label=Blue Skies, Compilations/Pure Ella/02 Blue Skies.mp3, http://musicbrainz.org/track/dadff413-41b4-3496-af8c-88f0a6f46cfa)
     RepositoryTrack(01/01 03, 01:52, rdfs:label=A-Tisket, A-Tasket, Compilations/Pure Ella/03 A-Tisket, A-Tasket.mp3, http://musicbrainz.org/track/6dd2876d-1d65-3bcc-8f3a-465a75c30302)
@@ -1261,7 +1360,9 @@ RECORD RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, 
     RepositoryTrack(01/01 18, 04:04, rdfs:label=Oh, Lady Be Good, Compilations/Pure Ella/18 Oh Lady, Be Good.mp3, http://musicbrainz.org/track/66c0173e-09d9-3a93-9fcc-1a832c29acdf)
 
 RECORD RepositoryRecord(rdfs:label=Ravel: Gaspard de la Nuit / Prokofiev: Piano Sonata no. 6, http://musicbrainz.org/record/9ca5b2e0-491f-4364-adaa-276c383115c3):
-  TRACKS (7):
+  ASIN:    B000001G54
+  BARCODE: 028941336323
+  TRACKS (7 / Optional[7]):
     RepositoryTrack(01/01 01, 07:24, rdfs:label=Gaspard de la Nuit: I. Ondine: Lent, Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/01 Ravel_ Gaspard De La Nuit - Ondine_ Lent.mp3, http://musicbrainz.org/track/fac44cc3-cfee-3e98-87dc-11e31ce44f92)
     RepositoryTrack(01/01 02, 06:52, rdfs:label=Gaspard de la Nuit: II. Le Gibet: Très lent., Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/02 Ravel_ Gaspard De La Nuit - Le Gibet_ Tres Lent.mp3, http://musicbrainz.org/track/4a8e2143-b621-35ef-810f-c7f0fd706e0f)
     RepositoryTrack(01/01 03, 09:31, rdfs:label=Gaspard de la Nuit: III. Scarbo: Modéré, Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/03 Ravel_ Gaspard De La Nuit - Scarbo_ Modéré.mp3, http://musicbrainz.org/track/158da76e-c539-3bea-8d19-7a1fbf6e72f3)
@@ -1271,7 +1372,9 @@ RECORD RepositoryRecord(rdfs:label=Ravel: Gaspard de la Nuit / Prokofiev: Piano 
     RepositoryTrack(01/01 07, 06:42, rdfs:label=Piano Sonata no. 6 in A major, op. 82: IV. Vivace, Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/07 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 4. Vivace.mp3, http://musicbrainz.org/track/13f65586-a1cb-3e1f-b1b6-b95a3689212a)
 
 RECORD RepositoryRecord(rdfs:label=Schubert: Arpeggione Sonata / Schumann: Fünf Stücke im Volkston / Debussy: Cello Sonata, http://musicbrainz.org/record/dcc73832-861b-4fe4-b209-26f95789b9dd):
-  TRACKS (11):
+  ASIN:    B00000JXZ3
+  BARCODE: 028946097427
+  TRACKS (11 / Optional[11]):
     RepositoryTrack(01/01 01, 13:35, rdfs:label=Sonata for Arpeggione and Piano, D. 821: I. Allegro moderato, Mstislav Rostropovich, Benjamin Britten/Schubert_ Arpeggione Sonata; Schumann_ Fünf Stücke Im Volkston; Debussy_ Cello Sonata/01 Schubert_ Arpeggione Sonata In A Minor, D 821 - 1. Allegro Moderato.mp3, http://musicbrainz.org/track/c254e3e1-d8f5-37af-a6ea-9cbfbbd37ec0)
     RepositoryTrack(01/01 02, 04:34, rdfs:label=Sonata for Arpeggione and Piano, D. 821: II. Adagio, Mstislav Rostropovich, Benjamin Britten/Schubert_ Arpeggione Sonata; Schumann_ Fünf Stücke Im Volkston; Debussy_ Cello Sonata/02 Schubert_ Arpeggione Sonata In A Minor, D 821 - 2. Adagio.mp3, http://musicbrainz.org/track/896e5306-8a8b-3116-9124-a95df8b7ad8b)
     RepositoryTrack(01/01 03, 10:36, rdfs:label=Sonata for Arpeggione and Piano, D. 821: III. Allegretto, Mstislav Rostropovich, Benjamin Britten/Schubert_ Arpeggione Sonata; Schumann_ Fünf Stücke Im Volkston; Debussy_ Cello Sonata/03 Schubert_ Arpeggione Sonata In A Minor, D 821 - 3. Allegretto.mp3, http://musicbrainz.org/track/8ba34265-0842-305d-b545-dad8dcf1505f)
@@ -1285,7 +1388,9 @@ RECORD RepositoryRecord(rdfs:label=Schubert: Arpeggione Sonata / Schumann: Fünf
     RepositoryTrack(01/01 11, 03:52, rdfs:label=Sonata for Cello and Piano: III. Finale, Mstislav Rostropovich, Benjamin Britten/Schubert_ Arpeggione Sonata; Schumann_ Fünf Stücke Im Volkston; Debussy_ Cello Sonata/11 Debussy_ Cello Sonata, L 135 - 3. Finale.mp3, http://musicbrainz.org/track/98f13cb7-31af-33b8-aee9-c06ece856030)
 
 RECORD RepositoryRecord(rdfs:label=Schumann: The Masterworks, http://musicbrainz.org/record/d51300db-6010-4012-a7c8-38ebdfaede5d):
-  TRACKS (7):
+  ASIN:    B00386FG0M
+  BARCODE: 028947788164
+  TRACKS (7 / Optional[7]):
     RepositoryTrack(01/01 01, 12:04, rdfs:label=Piano Sonata no. 1 in F-sharp minor, op. 11: I. Introduzione, Un poco adagio, Allegro vivace, Più lento, Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/01 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 1. Introduzione.mp3, http://musicbrainz.org/track/85c2ffd2-acb2-3656-a4e9-b9f556632294)
     RepositoryTrack(01/01 02, 03:09, rdfs:label=Piano Sonata no. 1 in F-sharp minor, op. 11: II. Aria, Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/02 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 2. Aria.mp3, http://musicbrainz.org/track/ddd6c70f-0a41-3b33-baed-797304750c83)
     RepositoryTrack(01/01 03, 05:12, rdfs:label=Piano Sonata no. 1 in F-sharp minor, op. 11: III. Scherzo, Allegrissimo ed Intermezzo, Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/03 Schumann_ Piano Sonata #1 In F Sharp Minor, Op. 11 - 3. Scherzo Ed Intermezzo.mp3, http://musicbrainz.org/track/3e5f6500-4192-3a76-90c3-d814173af07e)
@@ -1295,7 +1400,9 @@ RECORD RepositoryRecord(rdfs:label=Schumann: The Masterworks, http://musicbrainz
     RepositoryTrack(01/01 07, 10:46, rdfs:label=Fantasy in C major, Op. 17: III. Langsam getragen. Durchweg leise zu halten - Etwas bewegter, Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3, http://musicbrainz.org/track/f9db9700-7d7f-3d7b-9385-c1637b30da8e)
 
 RECORD RepositoryRecord(rdfs:label=Sonaten »Waldstein · Les Adieux · Appassionata«, http://musicbrainz.org/record/ba5a6979-28eb-4924-afb4-316ed93a4d4f):
-  TRACKS (10):
+  ASIN:    B000001G79
+  BARCODE: 028941916228
+  TRACKS (10 / Optional[10]):
     RepositoryTrack(01/01 01, 11:05, rdfs:label=Piano Sonata No. 21 in C major, Op. 53 "Waldstein": I. Allegro con brio, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/01 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 1. Allegro Con Brio.mp3, http://musicbrainz.org/track/958a0f3c-46fa-30a8-a4a5-8a01ec073d6e)
     RepositoryTrack(01/01 02, 04:38, rdfs:label=Piano Sonata No. 21 in C major, Op. 53 "Waldstein": II. Introduzione. Adagio molto, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/02 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 2. Introduzione_ Adagio Molto.mp3, http://musicbrainz.org/track/17d18e95-b59e-3e1f-bc0e-dc2a34f2bd9d)
     RepositoryTrack(01/01 03, 07:34, rdfs:label=Klaviersonate Nr. 21 C-Dur, op. 53 »Waldstein-Sonate«: III. Rondo. Allegretto moderato – Prestissimo, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/03 Beethoven_ Piano Sonata #21 In C, Op. 53, _Waldstein_ - 3. Rondo_ Allegretto Moderato.mp3, http://musicbrainz.org/track/da99f9e8-1075-31cc-bbc3-493b300d6473)
@@ -1308,14 +1415,18 @@ RECORD RepositoryRecord(rdfs:label=Sonaten »Waldstein · Les Adieux · Appassio
     RepositoryTrack(01/01 10, 07:53, rdfs:label=Piano Sonata no. 23 in F minor, op. 57 "Appassionata": III. Allegro, ma non troppo - Presto, Emil Gilels/Beethoven_ Piano Sonatas #21, 23 & 26/10 Beethoven_ Piano Sonata #23 In F Minor, Op. 57, _Appassionata_ - 3. Allegro Ma Non Troppo.mp3, http://musicbrainz.org/track/1a9b6338-ee67-358f-91af-0a1c032ae2fd)
 
 RECORD RepositoryRecord(rdfs:label=Symphonie no. 4, http://musicbrainz.org/record/a5721574-29df-45b4-b3a1-1eab28f678e4):
-  TRACKS (4):
+  ASIN:    B000006NXP
+  BARCODE: 028945770628
+  TRACKS (4 / Optional[4]):
     RepositoryTrack(01/01 01, 12:49, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: I. Allegro non troppo, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/01 Brahms_ Symphony #4 In E Minor, Op. 98 - 1. Allegro Non Troppo.mp3, http://musicbrainz.org/track/dcced24d-d614-3468-87e3-33036c1d402c)
     RepositoryTrack(01/01 02, 11:23, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: II. Andante moderato, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/02 Brahms_ Symphony #4 In E Minor, Op. 98 - 2. Andante Moderato.mp3, http://musicbrainz.org/track/f1903665-383f-3876-8877-3a45fa697247)
     RepositoryTrack(01/01 03, 06:06, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: III. Allegro giocoso – Poco meno presto – Tempo I, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3, http://musicbrainz.org/track/8bb8e5f6-c035-35ee-8c51-3088d4406ef9)
     RepositoryTrack(01/01 04, 09:11, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: IV. Allegro energico e passionato – Più allegro, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/04 Brahms_ Symphony #4 In E Minor, Op. 98 - 4. Allegro Energico E Passionato.mp3, http://musicbrainz.org/track/9dabba16-2a0d-3183-86ee-f6dec6d5ffdb)
 
 RECORD RepositoryRecord(rdfs:label=Symphonien nos. 8 & 9 »Aus der Neuen Welt«, http://musicbrainz.org/record/8f7a6f98-71e1-3a93-8297-028617b0168d):
-  TRACKS (8):
+  ASIN:    B000001GQ7
+  BARCODE: 028944741223
+  TRACKS (8 / Optional[8]):
     RepositoryTrack(01/01 01, 09:57, rdfs:label=Symphony no. 8 in G major, op. 88: I. Allegro con brio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3, http://musicbrainz.org/track/d83d7f87-265b-322a-93c1-072d3a301dcf)
     RepositoryTrack(01/01 02, 10:18, rdfs:label=Symphony no. 8 in G major, op. 88: II. Adagio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/02 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 2. Adagio.mp3, http://musicbrainz.org/track/b613f294-0d36-34d0-8e9e-9a2c8d194cc1)
     RepositoryTrack(01/01 03, 06:39, rdfs:label=Symphony no. 8 in G major, op. 88: III. Allegretto grazioso, Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/03 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 3. Allegretto Grazioso, Molto Vivace.mp3, http://musicbrainz.org/track/7a886f95-3935-3625-a483-547a77c20fae)
@@ -1326,7 +1437,9 @@ RECORD RepositoryRecord(rdfs:label=Symphonien nos. 8 & 9 »Aus der Neuen Welt«,
     RepositoryTrack(01/01 08, 11:50, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: IV. Allegro con fuoco, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/08 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 4. Allegro Con Fuoco.mp3, http://musicbrainz.org/track/5abddf1e-eb1f-348b-8836-fd63f83b3c01)
 
 RECORD RepositoryRecord(rdfs:label=Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi" / no. 8 "Le Soir", http://musicbrainz.org/record/1409e227-80b6-4801-9a2d-b20690b57f92):
-  TRACKS (13):
+  ASIN:    B00000E2PR
+  BARCODE: 028941144126
+  TRACKS (13 / Optional[13]):
     RepositoryTrack(01/01 01, 04:07, rdfs:label=Symphony in D major, Hob. I:6 "Le matin": I. Adagio - Allegro, Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/01 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 1. Adagio, Allegro.mp3, http://musicbrainz.org/track/37e50a81-011f-3014-91ce-a8a95348bdb0)
     RepositoryTrack(01/01 02, 06:53, rdfs:label=Symphony in D major, Hob. I:6 "Le matin": II. Adagio - Andante, Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/02 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 2. Adagio, Andante.mp3, http://musicbrainz.org/track/0f9534f7-5826-3e0a-be16-228ed7e53658)
     RepositoryTrack(01/01 03, 04:31, rdfs:label=Symphony in D major, Hob. I:6 "Le matin": III. Menuet, Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/03 Haydn_ Symphony #6 In D, H 1_6, _Le Matin_ - 3. Menuet & Trio.mp3, http://musicbrainz.org/track/8c86f201-8dfa-32b3-b27d-dd0c3955224b)
@@ -1342,7 +1455,8 @@ RECORD RepositoryRecord(rdfs:label=Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi
     RepositoryTrack(01/01 13, 03:39, rdfs:label=Symphony in G major, Hob. I:8 "Le soir": IV. Presto "La tempesta", Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/13 Haydn_ Symphony #8 In G, H 1_8, _Le Soir_ - 4. Presto, La Tempesta.mp3, http://musicbrainz.org/track/b3ee765c-acd1-3270-b321-111f740e5e43)
 
 RECORD RepositoryRecord(rdfs:label=The Incomparable Callas, http://musicbrainz.org/record/9d14232c-6bcc-4314-b713-8beec2e25cf9):
-  TRACKS (13):
+  BARCODE: 0077776318226
+  TRACKS (13 / Optional[13]):
     RepositoryTrack(01/01 01, 05:36, rdfs:label=Norma: "Casta diva", Compilations/The Incomparable Callas - Favourite Arias/01 Bellini_ Norma - Casta Diva.mp3, http://musicbrainz.org/track/20aacc0d-598f-3c16-bc2d-138671af692d)
     RepositoryTrack(01/01 02, 08:06, rdfs:label=Lucia di Lammermoor: Act I. "Regnava nel silenzio", Compilations/The Incomparable Callas - Favourite Arias/02 Donizetti_ Lucia Di Lammermoor - Act 1_ Regnava Nel Silenzio.mp3, http://musicbrainz.org/track/867c5a30-56bf-3e7c-8ddb-c5fb8eefb1ad)
     RepositoryTrack(01/01 03, 06:14, rdfs:label=Ernani: Act I. "Surta è la notte... Ernani! Ernani, involami", Compilations/The Incomparable Callas - Favourite Arias/03 Verdi_ Ernani - Surta E La Notte... Ernani! Ernani, Involami.mp3, http://musicbrainz.org/track/d72c22ec-a683-308e-b503-b9b8c471f9aa)
@@ -1358,7 +1472,9 @@ RECORD RepositoryRecord(rdfs:label=The Incomparable Callas, http://musicbrainz.o
     RepositoryTrack(01/01 13, 06:03, rdfs:label=Le Cid: Act III. "Pleurez, mes yeux", Compilations/The Incomparable Callas - Favourite Arias/13 Massenet_ Le Cid - Pleurez, Mes Yeux.mp3, http://musicbrainz.org/track/b9e900bc-4afe-3b17-a387-ee23bd5c1600)
 
 RECORD RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, http://musicbrainz.org/record/ee3e1aa1-da37-4483-8df0-f123dc22a8a8):
-  TRACKS (12):
+  ASIN:    B000005EC4
+  BARCODE: 745099480127
+  TRACKS (12 / Optional[12]):
     RepositoryTrack(01/01 01, 02:48, rdfs:label=La Choisy (XIV concerto comique) for 4 horns and orchestra: Allegro, Compilations/The Magic of The French Horn - Greatest Concertos/01 Michel CORRETTE La Choisy -Allegro.mp3, http://musicbrainz.org/track/fb297325-1180-4c66-b20a-eebecc363efe)
     RepositoryTrack(01/01 02, 05:14, rdfs:label=Andante sostenuto for horn and harp, Compilations/The Magic of The French Horn - Greatest Concertos/02 Nicholas Charles BOCHSAAndante Sostenuto for horn and harp.mp3, http://musicbrainz.org/track/9faae2be-78ed-45cc-9653-3f7c32303cd3)
     RepositoryTrack(01/01 03, 02:12, rdfs:label=Concerto for horn and orchestra: Allegro, Compilations/The Magic of The French Horn - Greatest Concertos/03 Georg-Philipp TELEMANN Concerto for horn and orchestra - i..mp3, http://musicbrainz.org/track/45fc73ce-7c9a-4e3c-aa15-67b5463f6e2e)
@@ -1373,22 +1489,65 @@ RECORD RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concer
     RepositoryTrack(01/01 12, 10:29, rdfs:label=Konzertstück for 4 horns and orchestra, op. 86: Romanze: Sehr lebhaft, Compilations/The Magic of The French Horn - Greatest Concertos/12 Robert SCHUMANN Conzertstuck for 4 horn and orchestra - Roma.mp3, http://musicbrainz.org/track/ed306922-5723-4cea-a330-fbbda8ca3d95)
 
 RECORD RepositoryRecord(rdfs:label=The Originals - Legendary Recordings, http://musicbrainz.org/record/5cacd9cf-6514-4b75-bfcf-9cb788f7bd14):
-  TRACKS (12):
+  BARCODE: 028947934493
+  TRACKS (24 / Optional[4]):
+    RepositoryTrack(01/01 01, 12:49, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: I. Allegro non troppo, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/01 Brahms_ Symphony #4 In E Minor, Op. 98 - 1. Allegro Non Troppo.mp3, http://musicbrainz.org/track/9d348280-ab2d-4c44-9a3a-92cd41c9fa4a)
     RepositoryTrack(01/01 01, 12:49, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: I. Allegro non troppo, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/01 Brahms_ Symphony #4 In E Minor, Op. 98 - 1. Allegro Non Troppo.mp3, http://musicbrainz.org/track/9d348280-ab2d-4c44-9a3a-92cd41c9fa4a)
     RepositoryTrack(01/01 01, 09:57, rdfs:label=Symphony no. 8 in G major, op. 88: I. Allegro con brio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3, http://musicbrainz.org/track/dc926b5e-fd38-47f9-b6a4-26bab2a84d84)
+    RepositoryTrack(01/01 01, 09:57, rdfs:label=Symphony no. 8 in G major, op. 88: I. Allegro con brio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3, http://musicbrainz.org/track/dc926b5e-fd38-47f9-b6a4-26bab2a84d84)
+    RepositoryTrack(01/01 02, 11:23, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: II. Andante moderato, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/02 Brahms_ Symphony #4 In E Minor, Op. 98 - 2. Andante Moderato.mp3, http://musicbrainz.org/track/8dbaa6a5-454e-48a4-bbbb-4d8530adf0dd)
     RepositoryTrack(01/01 02, 11:23, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: II. Andante moderato, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/02 Brahms_ Symphony #4 In E Minor, Op. 98 - 2. Andante Moderato.mp3, http://musicbrainz.org/track/8dbaa6a5-454e-48a4-bbbb-4d8530adf0dd)
     RepositoryTrack(01/01 02, 10:18, rdfs:label=Symphony no. 8 in G major, op. 88: II. Adagio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/02 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 2. Adagio.mp3, http://musicbrainz.org/track/374efaa1-3f9c-4d8b-b22e-bb9ecbb73cb3)
+    RepositoryTrack(01/01 02, 10:18, rdfs:label=Symphony no. 8 in G major, op. 88: II. Adagio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/02 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 2. Adagio.mp3, http://musicbrainz.org/track/374efaa1-3f9c-4d8b-b22e-bb9ecbb73cb3)
+    RepositoryTrack(01/01 03, 06:06, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: III. Allegro giocoso – Poco meno presto – Tempo I, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3, http://musicbrainz.org/track/9bc16867-5f9c-4f33-8635-9833cd7cc462)
     RepositoryTrack(01/01 03, 06:06, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: III. Allegro giocoso – Poco meno presto – Tempo I, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3, http://musicbrainz.org/track/9bc16867-5f9c-4f33-8635-9833cd7cc462)
     RepositoryTrack(01/01 03, 06:39, rdfs:label=Symphony no. 8 in G major, op. 88: III. Allegretto grazioso, Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/03 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 3. Allegretto Grazioso, Molto Vivace.mp3, http://musicbrainz.org/track/c1508b2a-c32e-4938-a5c3-45d005cd3a52)
+    RepositoryTrack(01/01 03, 06:39, rdfs:label=Symphony no. 8 in G major, op. 88: III. Allegretto grazioso, Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/03 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 3. Allegretto Grazioso, Molto Vivace.mp3, http://musicbrainz.org/track/c1508b2a-c32e-4938-a5c3-45d005cd3a52)
+    RepositoryTrack(01/01 04, 09:11, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: IV. Allegro energico e passionato – Più allegro, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/04 Brahms_ Symphony #4 In E Minor, Op. 98 - 4. Allegro Energico E Passionato.mp3, http://musicbrainz.org/track/7bafc578-cb28-4067-9d2f-e3144240cd14)
     RepositoryTrack(01/01 04, 09:11, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: IV. Allegro energico e passionato – Più allegro, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/04 Brahms_ Symphony #4 In E Minor, Op. 98 - 4. Allegro Energico E Passionato.mp3, http://musicbrainz.org/track/7bafc578-cb28-4067-9d2f-e3144240cd14)
     RepositoryTrack(01/01 04, 08:55, rdfs:label=Symphony no. 8 in G major, op. 88: IV. Allegro, ma non troppo, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/04 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 4. Allegro Ma Non Troppo.mp3, http://musicbrainz.org/track/35e2704e-d1b4-455f-8c72-e316b49a7d64)
+    RepositoryTrack(01/01 04, 08:55, rdfs:label=Symphony no. 8 in G major, op. 88: IV. Allegro, ma non troppo, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/04 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 4. Allegro Ma Non Troppo.mp3, http://musicbrainz.org/track/35e2704e-d1b4-455f-8c72-e316b49a7d64)
+    RepositoryTrack(01/01 05, 09:31, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: I. Adagio - Allegro molto, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/05 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 1. Adagio, Allegro Molto.mp3, http://musicbrainz.org/track/8843abdf-9e82-4e10-94e0-0c46f16f0771)
     RepositoryTrack(01/01 05, 09:31, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: I. Adagio - Allegro molto, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/05 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 1. Adagio, Allegro Molto.mp3, http://musicbrainz.org/track/8843abdf-9e82-4e10-94e0-0c46f16f0771)
     RepositoryTrack(01/01 06, 13:03, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: II. Largo, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3, http://musicbrainz.org/track/f2b80242-98cc-4f12-8083-1419c1b9b22b)
+    RepositoryTrack(01/01 06, 13:03, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: II. Largo, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3, http://musicbrainz.org/track/f2b80242-98cc-4f12-8083-1419c1b9b22b)
     RepositoryTrack(01/01 07, 08:08, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: III. Scherzo: Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/07 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 3. Molto Vivace.mp3, http://musicbrainz.org/track/809910eb-2992-4266-94b8-b242fbffb3b0)
+    RepositoryTrack(01/01 07, 08:08, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: III. Scherzo: Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/07 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 3. Molto Vivace.mp3, http://musicbrainz.org/track/809910eb-2992-4266-94b8-b242fbffb3b0)
+    RepositoryTrack(01/01 08, 11:50, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: IV. Allegro con fuoco, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/08 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 4. Allegro Con Fuoco.mp3, http://musicbrainz.org/track/2fc16cc3-a99f-4353-8f46-ed6c5b3c9cb9)
+    RepositoryTrack(01/01 08, 11:50, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: IV. Allegro con fuoco, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/08 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 4. Allegro Con Fuoco.mp3, http://musicbrainz.org/track/2fc16cc3-a99f-4353-8f46-ed6c5b3c9cb9)
+
+RECORD RepositoryRecord(rdfs:label=The Originals - Legendary Recordings, http://musicbrainz.org/record/5cacd9cf-6514-4b75-bfcf-9cb788f7bd14):
+  BARCODE: 028947934493
+  TRACKS (24 / Optional[8]):
+    RepositoryTrack(01/01 01, 12:49, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: I. Allegro non troppo, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/01 Brahms_ Symphony #4 In E Minor, Op. 98 - 1. Allegro Non Troppo.mp3, http://musicbrainz.org/track/9d348280-ab2d-4c44-9a3a-92cd41c9fa4a)
+    RepositoryTrack(01/01 01, 12:49, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: I. Allegro non troppo, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/01 Brahms_ Symphony #4 In E Minor, Op. 98 - 1. Allegro Non Troppo.mp3, http://musicbrainz.org/track/9d348280-ab2d-4c44-9a3a-92cd41c9fa4a)
+    RepositoryTrack(01/01 01, 09:57, rdfs:label=Symphony no. 8 in G major, op. 88: I. Allegro con brio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3, http://musicbrainz.org/track/dc926b5e-fd38-47f9-b6a4-26bab2a84d84)
+    RepositoryTrack(01/01 01, 09:57, rdfs:label=Symphony no. 8 in G major, op. 88: I. Allegro con brio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/01 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 1. Allegro Con Brio.mp3, http://musicbrainz.org/track/dc926b5e-fd38-47f9-b6a4-26bab2a84d84)
+    RepositoryTrack(01/01 02, 11:23, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: II. Andante moderato, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/02 Brahms_ Symphony #4 In E Minor, Op. 98 - 2. Andante Moderato.mp3, http://musicbrainz.org/track/8dbaa6a5-454e-48a4-bbbb-4d8530adf0dd)
+    RepositoryTrack(01/01 02, 11:23, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: II. Andante moderato, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/02 Brahms_ Symphony #4 In E Minor, Op. 98 - 2. Andante Moderato.mp3, http://musicbrainz.org/track/8dbaa6a5-454e-48a4-bbbb-4d8530adf0dd)
+    RepositoryTrack(01/01 02, 10:18, rdfs:label=Symphony no. 8 in G major, op. 88: II. Adagio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/02 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 2. Adagio.mp3, http://musicbrainz.org/track/374efaa1-3f9c-4d8b-b22e-bb9ecbb73cb3)
+    RepositoryTrack(01/01 02, 10:18, rdfs:label=Symphony no. 8 in G major, op. 88: II. Adagio, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/02 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 2. Adagio.mp3, http://musicbrainz.org/track/374efaa1-3f9c-4d8b-b22e-bb9ecbb73cb3)
+    RepositoryTrack(01/01 03, 06:06, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: III. Allegro giocoso – Poco meno presto – Tempo I, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3, http://musicbrainz.org/track/9bc16867-5f9c-4f33-8635-9833cd7cc462)
+    RepositoryTrack(01/01 03, 06:06, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: III. Allegro giocoso – Poco meno presto – Tempo I, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/03 Brahms_ Symphony #4 In E Minor, Op. 98 - 3. Allegro Giocoso.mp3, http://musicbrainz.org/track/9bc16867-5f9c-4f33-8635-9833cd7cc462)
+    RepositoryTrack(01/01 03, 06:39, rdfs:label=Symphony no. 8 in G major, op. 88: III. Allegretto grazioso, Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/03 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 3. Allegretto Grazioso, Molto Vivace.mp3, http://musicbrainz.org/track/c1508b2a-c32e-4938-a5c3-45d005cd3a52)
+    RepositoryTrack(01/01 03, 06:39, rdfs:label=Symphony no. 8 in G major, op. 88: III. Allegretto grazioso, Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/03 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 3. Allegretto Grazioso, Molto Vivace.mp3, http://musicbrainz.org/track/c1508b2a-c32e-4938-a5c3-45d005cd3a52)
+    RepositoryTrack(01/01 04, 09:11, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: IV. Allegro energico e passionato – Più allegro, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/04 Brahms_ Symphony #4 In E Minor, Op. 98 - 4. Allegro Energico E Passionato.mp3, http://musicbrainz.org/track/7bafc578-cb28-4067-9d2f-e3144240cd14)
+    RepositoryTrack(01/01 04, 09:11, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: IV. Allegro energico e passionato – Più allegro, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/04 Brahms_ Symphony #4 In E Minor, Op. 98 - 4. Allegro Energico E Passionato.mp3, http://musicbrainz.org/track/7bafc578-cb28-4067-9d2f-e3144240cd14)
+    RepositoryTrack(01/01 04, 08:55, rdfs:label=Symphony no. 8 in G major, op. 88: IV. Allegro, ma non troppo, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/04 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 4. Allegro Ma Non Troppo.mp3, http://musicbrainz.org/track/35e2704e-d1b4-455f-8c72-e316b49a7d64)
+    RepositoryTrack(01/01 04, 08:55, rdfs:label=Symphony no. 8 in G major, op. 88: IV. Allegro, ma non troppo, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/04 Dvořák_ Symphony #8 In G, Op. 88, B 163 - 4. Allegro Ma Non Troppo.mp3, http://musicbrainz.org/track/35e2704e-d1b4-455f-8c72-e316b49a7d64)
+    RepositoryTrack(01/01 05, 09:31, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: I. Adagio - Allegro molto, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/05 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 1. Adagio, Allegro Molto.mp3, http://musicbrainz.org/track/8843abdf-9e82-4e10-94e0-0c46f16f0771)
+    RepositoryTrack(01/01 05, 09:31, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: I. Adagio - Allegro molto, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/05 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 1. Adagio, Allegro Molto.mp3, http://musicbrainz.org/track/8843abdf-9e82-4e10-94e0-0c46f16f0771)
+    RepositoryTrack(01/01 06, 13:03, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: II. Largo, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3, http://musicbrainz.org/track/f2b80242-98cc-4f12-8083-1419c1b9b22b)
+    RepositoryTrack(01/01 06, 13:03, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: II. Largo, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/06 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 2. Largo.mp3, http://musicbrainz.org/track/f2b80242-98cc-4f12-8083-1419c1b9b22b)
+    RepositoryTrack(01/01 07, 08:08, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: III. Scherzo: Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/07 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 3. Molto Vivace.mp3, http://musicbrainz.org/track/809910eb-2992-4266-94b8-b242fbffb3b0)
+    RepositoryTrack(01/01 07, 08:08, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: III. Scherzo: Molto vivace, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/07 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 3. Molto Vivace.mp3, http://musicbrainz.org/track/809910eb-2992-4266-94b8-b242fbffb3b0)
+    RepositoryTrack(01/01 08, 11:50, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: IV. Allegro con fuoco, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/08 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 4. Allegro Con Fuoco.mp3, http://musicbrainz.org/track/2fc16cc3-a99f-4353-8f46-ed6c5b3c9cb9)
     RepositoryTrack(01/01 08, 11:50, rdfs:label=Symphony no. 9 in E minor, op. 95 “From the New World”: IV. Allegro con fuoco, Rafael Kubelik_ Berlin Philharmonic Orchestra/Dvořák_ Symphonies #8 & 9/08 Dvořák_ Symphony #9 In E Minor, Op. 95, B 178, _From The New World_ - 4. Allegro Con Fuoco.mp3, http://musicbrainz.org/track/2fc16cc3-a99f-4353-8f46-ed6c5b3c9cb9)
 
 RECORD RepositoryRecord(rdfs:label=The Planets, http://musicbrainz.org/record/b55271e4-506f-42de-b5a4-0291f56bd079):
-  TRACKS (7):
+  ASIN:    B000001GJW
+  BARCODE: 028943901123
+  TRACKS (7 / Optional[7]):
     RepositoryTrack(01/01 01, 07:21, rdfs:label=The Planets, op. 32: I. Mars, the Bringer of War. Allegro, Gustav Holst/The Planets - Herbert Von Karajan - Berliner Philharmoniker/01 Mars, The Bringer Of War.mp3, http://musicbrainz.org/track/aaf78bff-5060-3e5d-ae98-83b0f51d120b)
     RepositoryTrack(01/01 02, 08:37, rdfs:label=The Planets, op. 32: II. Venus, the Bringer of Peace. Adagio - Andante - Animato - Tempo I, Gustav Holst/The Planets - Herbert Von Karajan - Berliner Philharmoniker/02 Venus, The Bringer Of Peace.mp3, http://musicbrainz.org/track/908d7d78-7c2d-3cd8-a122-87ca37fd7248)
     RepositoryTrack(01/01 03, 04:16, rdfs:label=The Planets, op. 32: III. Mercury, the Winged Messenger. Vivace, Gustav Holst/The Planets - Herbert Von Karajan - Berliner Philharmoniker/03 Mercury, The Winged Messenger.mp3, http://musicbrainz.org/track/6c6b7e96-f8d5-3c7a-b0f3-3915a7b9f995)
@@ -1398,7 +1557,8 @@ RECORD RepositoryRecord(rdfs:label=The Planets, http://musicbrainz.org/record/b5
     RepositoryTrack(01/01 07, 08:47, rdfs:label=The Planets, op. 32: VII. Neptune, the Mystic. Andante - Allegretto, Gustav Holst/The Planets - Herbert Von Karajan - Berliner Philharmoniker/07 Neptun, The Mystic.mp3, http://musicbrainz.org/track/47c14be3-6f93-3de8-9b28-3f7aea4a59d9)
 
 RECORD RepositoryRecord(rdfs:label=The Planets, http://musicbrainz.org/record/e153542f-6fa9-43cf-a92d-d2889b6b4d2b):
-  TRACKS (7):
+  BARCODE: 3259140002826
+  TRACKS (7 / Optional[7]):
     RepositoryTrack(01/01 01, 07:21, rdfs:label=The Planets, op. 32: I. Mars, the Bringer of War. Allegro, Gustav Holst/The Planets - Herbert Von Karajan - Berliner Philharmoniker/01 Mars, The Bringer Of War.mp3, http://musicbrainz.org/track/814c2f8a-eeca-33e8-9002-363d8ba70bb0)
     RepositoryTrack(01/01 02, 08:37, rdfs:label=The Planets, op. 32: II. Venus, the Bringer of Peace. Adagio - Andante - Animato - Tempo I, Gustav Holst/The Planets - Herbert Von Karajan - Berliner Philharmoniker/02 Venus, The Bringer Of Peace.mp3, http://musicbrainz.org/track/fc256177-8191-3893-81da-f3a11615a553)
     RepositoryTrack(01/01 03, 04:16, rdfs:label=The Planets, op. 32: III. Mercury, the Winged Messenger. Vivace, Gustav Holst/The Planets - Herbert Von Karajan - Berliner Philharmoniker/03 Mercury, The Winged Messenger.mp3, http://musicbrainz.org/track/e1e570b5-792b-3c03-9ce5-bd15393bbad4)
@@ -1408,11 +1568,15 @@ RECORD RepositoryRecord(rdfs:label=The Planets, http://musicbrainz.org/record/e1
     RepositoryTrack(01/01 07, 08:47, rdfs:label=The Planets, op. 32: VII. Neptune, the Mystic. Andante - Allegretto, Gustav Holst/The Planets - Herbert Von Karajan - Berliner Philharmoniker/07 Neptun, The Mystic.mp3, http://musicbrainz.org/track/965205b9-fd1b-38a8-a3ee-a2fa4a968553)
 
 RECORD RepositoryRecord(rdfs:label=The Platinum Collection, http://musicbrainz.org/record/5130e881-874a-44dc-b5e4-f9a5a218a058):
-  TRACKS (1):
+  ASIN:    B000B6OD0G
+  BARCODE: 6009509317576
+  TRACKS (1 / Optional[16]):
     RepositoryTrack(01/01 01, 04:25, rdfs:label=Alceste - Divinités du Styx, Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3, http://musicbrainz.org/track/f5a11818-b903-36c0-bf86-b0c8f5500c5c)
 
 RECORD RepositoryRecord(rdfs:label=Trio 99 → 00, http://musicbrainz.org/record/5fdfc31c-b532-41cc-a49f-9bad2b014d52):
-  TRACKS (11):
+  ASIN:    B000046S1F
+  BARCODE: 093624763222
+  TRACKS (11 / Optional[11]):
     RepositoryTrack(01/01 01, 05:37, rdfs:label=(Go) Get It, Pat Metheny/Trio 99_00/01 (Go) Get It.mp3, http://musicbrainz.org/track/c37c0641-6e64-3b37-9735-80e9ef4961cc)
     RepositoryTrack(01/01 02, 07:53, rdfs:label=Giant Steps, Pat Metheny/Trio 99_00/02 Giant Steps.mp3, http://musicbrainz.org/track/1e863e6d-eac9-3806-af45-505f0dfabd83)
     RepositoryTrack(01/01 03, 04:43, rdfs:label=Just Like the Day, Pat Metheny/Trio 99_00/03 Just Like The Day.mp3, http://musicbrainz.org/track/3d3c3a71-d811-3980-8e94-1afd8b38a533)
@@ -1426,7 +1590,9 @@ RECORD RepositoryRecord(rdfs:label=Trio 99 → 00, http://musicbrainz.org/record
     RepositoryTrack(01/01 11, 05:48, rdfs:label=Travels, Pat Metheny/Trio 99_00/11 Travels.mp3, http://musicbrainz.org/track/e9b14701-1e05-3b51-88cb-d34870d00a53)
 
 RECORD RepositoryRecord(rdfs:label=Violin Concerti, http://musicbrainz.org/record/937aaba5-1457-4a4c-b7f3-ba57119c8a8e):
-  TRACKS (12):
+  ASIN:    B0000040XX
+  BARCODE: 0028941638922
+  TRACKS (12 / Optional[12]):
     RepositoryTrack(01/01 01, 04:02, rdfs:label=Concerto in D minor for 2 Violins, BWV 1043: I. Vivace, Midori; Pinchas Zukerman_ St. Paul Chamber Orchestra/Bach; Vivaldi_ Concertos For 2 Violins/01 Bach_ Concerto In D Minor For 2 Violins, BWV 1043, _Double_ - 1. Vivace.mp3, http://musicbrainz.org/track/fdf1a516-3c93-31a8-a082-d26d61f361c6)
     RepositoryTrack(01/01 02, 07:09, rdfs:label=Concerto in D minor for 2 Violins, BWV 1043: II. Largo ma non tanto, Midori; Pinchas Zukerman_ St. Paul Chamber Orchestra/Bach; Vivaldi_ Concertos For 2 Violins/02 Bach_ Concerto In D Minor For 2 Violins, BWV 1043, _Double_ - 2. Largo Ma Non Tanto.mp3, http://musicbrainz.org/track/641e6d83-a335-3c68-b12a-80d07eae09b4)
     RepositoryTrack(01/01 03, 05:09, rdfs:label=Concerto in D minor for 2 Violins, BWV 1043: III. Allegro, Midori; Pinchas Zukerman_ St. Paul Chamber Orchestra/Bach; Vivaldi_ Concertos For 2 Violins/03 Bach_ Concerto In D Minor For 2 Violins, BWV 1043, _Double_ - 3. Allegro.mp3, http://musicbrainz.org/track/ba2fc831-a08c-394e-bdfa-afc4525eb3f0)
@@ -1441,7 +1607,9 @@ RECORD RepositoryRecord(rdfs:label=Violin Concerti, http://musicbrainz.org/recor
     RepositoryTrack(01/01 12, 03:27, rdfs:label=Concerto in A minor for 2 Violins, op. 3 no. 8: III. Allegro, Midori; Pinchas Zukerman_ St. Paul Chamber Orchestra/Bach; Vivaldi_ Concertos For 2 Violins/12 Vivaldi_ Concerto In A Minor For 2 Violins, Op. 3_8, RV 522 _L_Estro Armonico #8_ - 1. Allegro.mp3, http://musicbrainz.org/track/bda8a169-5aea-3f76-9f7f-a4da5935874a)
 
 RECORD RepositoryRecord(rdfs:label=Water Music, http://musicbrainz.org/record/740bce03-6fdc-4225-95f2-3ce22cec1e60):
-  TRACKS (19):
+  ASIN:    B000001G4Q
+  BARCODE: 028941052520
+  TRACKS (19 / Optional[19]):
     RepositoryTrack(01/01 01, 03:18, rdfs:label=Water Music. Suite in F major, HWV 348: I. Ouverture (Largo - Allegro), Trevor Pinnock_ The English Concert/Handel_ Water Music/01 Handel_ Water Music Suite #1 In F, HWV 348 - Largo, Allegro.mp3, http://musicbrainz.org/track/888b78fd-dd0f-3e5d-827a-5055f7d349cf)
     RepositoryTrack(01/01 02, 02:13, rdfs:label=Water Music. Suite in F major, HWV 348: II. Adagio e staccato, Trevor Pinnock_ The English Concert/Handel_ Water Music/02 Handel_ Water Music Suite #1 In F, HWV 348 - Adagio E Staccato.mp3, http://musicbrainz.org/track/ce996860-ff26-31cb-9c53-5c3a8c359b4a)
     RepositoryTrack(01/01 03, 07:49, rdfs:label=Water Music. Suite in F major, HWV 348: III. (Allegro) - Andante - (Allegro da capo), Trevor Pinnock_ The English Concert/Handel_ Water Music/03 Handel_ Water Music Suite #1 In F, HWV 348 - Allegro, Andante, Allegro Da Capo.mp3, http://musicbrainz.org/track/6e887fac-cd36-3df0-9ee0-5458da5d3e90)

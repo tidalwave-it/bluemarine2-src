@@ -5,6 +5,19 @@
             ?record     bm:importedFrom     ?source.
             ?record     rdfs:label          ?label.
 
+            OPTIONAL
+              {
+                ?record       mo:track_count          ?track_count.
+              }
+            OPTIONAL
+              {
+                ?record       mo:amazon_asin          ?asin.
+              }
+            OPTIONAL
+              {
+                ?record       mo:gtin                 ?gtin.
+              }
+
 @track@     ?record     mo:track            ?track.
 
 @artist@      {
