@@ -29,20 +29,25 @@
 package it.tidalwave.bluemarine2.model.finder;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
 import it.tidalwave.util.Id;
+import it.tidalwave.util.spi.ExtendedFinder8Support;
+import it.tidalwave.bluemarine2.model.Performance;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
- * @version $Id $
+ * @stereotype      Finder
+ *
+ * @author  Fabrizio Giudici
+ * @version $Id$
  *
  **********************************************************************************************************************/
-public interface BaseFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<ENTITY, BaseFinder<ENTITY, FINDER>>
+public interface PerformanceFinder extends BaseFinder<Performance, PerformanceFinder>,
+                                           ExtendedFinder8Support<Performance, PerformanceFinder>
   {
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
     @Nonnull
-    public FINDER importedFrom (final @Nonnull Id source);
-
-    @Nonnull
-    public FINDER importedFrom (final @Nonnull Optional<Id> optionalSource);
+    public PerformanceFinder ofTrack (@Nonnull Id trackId);
   }

@@ -26,23 +26,18 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.finder;
+package it.tidalwave.bluemarine2.model;
 
-import javax.annotation.Nonnull;
-import java.util.Optional;
-import it.tidalwave.util.Id;
+import it.tidalwave.role.Identifiable;
+import it.tidalwave.bluemarine2.model.role.Entity;
 
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
- * @version $Id $
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-public interface BaseFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<ENTITY, BaseFinder<ENTITY, FINDER>>
+public interface Performance extends Entity, Identifiable
   {
-    @Nonnull
-    public FINDER importedFrom (final @Nonnull Id source);
-
-    @Nonnull
-    public FINDER importedFrom (final @Nonnull Optional<Id> optionalSource);
+    public static final Class<Performance> Performance = Performance.class;
   }

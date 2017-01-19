@@ -139,8 +139,14 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
             throw new UnsupportedOperationException("Not supported yet."); // FIXME
           }
 
-        @Override
-        public MusicArtistFinder withSource (final @Nonnull Id source)
+        @Override @Nonnull
+        public MusicArtistFinder importedFrom (final @Nonnull Optional<Id> optionalSource)
+          {
+            return optionalSource.map(this::importedFrom).orElse(this);
+          }
+
+        @Override @Nonnull
+        public MusicArtistFinder importedFrom (final @Nonnull Id source)
           {
             throw new UnsupportedOperationException("Not supported yet."); // FIXME
           }

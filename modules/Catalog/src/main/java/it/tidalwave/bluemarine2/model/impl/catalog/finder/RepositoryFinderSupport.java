@@ -237,7 +237,18 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public FINDER withSource (final @Nonnull Id source)
+    public FINDER importedFrom (final @Nonnull Optional<Id> optionalSource)
+      {
+        return optionalSource.map(this::importedFrom).orElse((FINDER)this);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public FINDER importedFrom (final @Nonnull Id source)
       {
         return clone(new RepositoryFinderSupport(repository, entityClass, SimpleValueFactory.getInstance().createIRI(source.toString())));
       }

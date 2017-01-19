@@ -31,8 +31,10 @@ package it.tidalwave.bluemarine2.model.impl.catalog;
 import javax.annotation.Nonnull;
 import javax.annotation.CheckForNull;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Function;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -49,7 +51,9 @@ import org.testng.annotations.DataProvider;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.Performance;
 import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
@@ -62,8 +66,6 @@ import static java.nio.file.Files.*;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
-import it.tidalwave.bluemarine2.model.Track;
-import java.util.HashMap;
 
 /***********************************************************************************************************************
  *
@@ -128,9 +130,9 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         createDirectories(PATH_TEST_RESULTS);
         final PrintWriter pw = new PrintWriter(dumpPath.toFile(), "UTF-8");
 
-        final MusicArtistFinder allArtistsFinder = catalog.findArtists().withSource(source);
-        final RecordFinder allRecordsFinder = catalog.findRecords().withSource(source);
-        final TrackFinder allTracksFinder = catalog.findTracks().withSource(source);
+        final MusicArtistFinder allArtistsFinder = catalog.findArtists().importedFrom(source);
+        final RecordFinder allRecordsFinder = catalog.findRecords().importedFrom(source);
+        final TrackFinder allTracksFinder = catalog.findTracks().importedFrom(source);
 
         final List<? extends MusicArtist> artists = allArtistsFinder.stream().sorted(BY_RDFS_LABEL).collect(toList());
         final List<? extends Record> records = allRecordsFinder.stream().sorted(BY_RDFS_LABEL).collect(toList());
@@ -149,7 +151,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         artists.forEach(artist ->
           {
-            final TrackFinder artistTracksFinder = artist.findTracks().withSource(source);
+            final TrackFinder artistTracksFinder = artist.findTracks().importedFrom(source);
             pw.printf("\nTRACKS OF %s (%d):\n", artist, artistTracksFinder.count());
             artistTracksFinder.stream().forEach(track ->
               {
@@ -164,19 +166,22 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
             record.getAsin().ifPresent(asin -> pw.printf("  ASIN:    %s\n", asin));
             record.getGtin().ifPresent(gtin -> pw.printf("  BARCODE: %s\n", gtin));
 
-            final TrackFinder recordTrackFinder = record.findTracks().withSource(source);
+            final TrackFinder recordTrackFinder = record.findTracks().importedFrom(source);
             pw.printf("  TRACKS (%d / %s):\n", recordTrackFinder.count(), ((RepositoryRecord)record).getTrackCount());
 
             recordTrackFinder.stream().forEach(track ->
               {
                 pw.printf("    %s\n", track);
                 tracksOrphanOfRecord.remove(track.toString());
+                final Optional<Performance> performance = track.getPerformance();
+                performance.ifPresent(p -> pw.printf("    PERFORMANCE: %s%n", performance));
+
               });
           });
 
         artists.forEach(artist ->
           {
-            final RecordFinder artistRecordFinder = artist.findRecords().withSource(source);
+            final RecordFinder artistRecordFinder = artist.findRecords().importedFrom(source);
             pw.printf("\nRECORDS OF %s (%d):\n", artist, artistRecordFinder.count());
             artistRecordFinder.stream().forEach(record ->
               {

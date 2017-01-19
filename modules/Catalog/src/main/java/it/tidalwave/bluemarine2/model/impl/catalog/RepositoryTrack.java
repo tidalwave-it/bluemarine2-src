@@ -42,18 +42,20 @@ import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.query.BindingSet;
 import it.tidalwave.bluemarine2.util.Formatters;
 import it.tidalwave.bluemarine2.model.AudioFile;
-import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import it.tidalwave.bluemarine2.model.Performance;
 import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryPerformanceFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import org.eclipse.rdf4j.query.Binding;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedToNativeForm;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
@@ -130,6 +132,17 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     public Optional<Record> getRecord()
       {
         return new RepositoryRecordFinder(repository).recordOf(id).optionalFirstResult();
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public Optional<Performance> getPerformance()
+      {
+        return new RepositoryPerformanceFinder(repository).importedFrom(source).ofTrack(id).optionalFirstResult();
       }
 
     /*******************************************************************************************************************

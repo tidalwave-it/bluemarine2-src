@@ -26,23 +26,24 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.finder;
+package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
-import it.tidalwave.util.Id;
+import org.eclipse.rdf4j.query.BindingSet;
+import org.eclipse.rdf4j.repository.Repository;
+import it.tidalwave.bluemarine2.model.Performance;
 
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
- * @version $Id $
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-public interface BaseFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<ENTITY, BaseFinder<ENTITY, FINDER>>
+public class RepositoryPerformance extends RepositoryEntitySupport implements Performance
   {
-    @Nonnull
-    public FINDER importedFrom (final @Nonnull Id source);
-
-    @Nonnull
-    public FINDER importedFrom (final @Nonnull Optional<Id> optionalSource);
+    public RepositoryPerformance (final @Nonnull Repository repository,
+                                  final @Nonnull BindingSet bindingSet)
+      {
+        super(repository, bindingSet, "performance");
+      }
   }
