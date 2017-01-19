@@ -2,17 +2,17 @@
             WHERE
               {
                 ?track        a                       mo:Track.
-                ?track        bm:importedFrom         ?source.
+                ?track        bmmo:importedFrom       ?source.
                 ?track        rdfs:label              ?label.
                 ?track        mo:track_number         ?track_number.
 
                 OPTIONAL
                   {
-                    ?track        bm:diskNumber           ?disk_number.
+                    ?track        bmmo:diskNumber         ?disk_number.
                   }
                 OPTIONAL
                   {
-                    ?track        bm:diskCount            ?disk_count.
+                    ?track        bmmo:diskCount          ?disk_count.
                   }
 
 @artist@          {
@@ -47,11 +47,11 @@
 
                 ?audioFile    a                       mo:AudioFile.
                 ?audioFile    mo:encodes              ?signal.
-                ?audioFile    bm:path                 ?path.
+                ?audioFile    bmmo:path               ?path.
 
                 OPTIONAL
                   {
-                    ?audioFile    bm:fileSize             ?fileSize.
+                    ?audioFile    bmmo:fileSize           ?fileSize.
                   }
               }
             ORDER BY

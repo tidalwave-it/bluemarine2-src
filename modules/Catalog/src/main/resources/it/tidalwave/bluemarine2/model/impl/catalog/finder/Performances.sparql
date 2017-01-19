@@ -2,7 +2,7 @@
             WHERE
               {
                 ?performance  a                       mo:Performance.
-                ?performance  bm:importedFrom         ?source.
+                ?performance  bmmo:importedFrom       ?source.
 
 @track@           {
 @track@             ?performance  mo:recorded_as          ?signal.

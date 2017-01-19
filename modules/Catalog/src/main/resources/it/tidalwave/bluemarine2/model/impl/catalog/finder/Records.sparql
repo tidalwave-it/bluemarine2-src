@@ -2,7 +2,7 @@
         WHERE
           {
             ?record     a                   mo:Record.
-            ?record     bm:importedFrom     ?source.
+            ?record     bmmo:importedFrom   ?source.
             ?record     rdfs:label          ?label.
 
             OPTIONAL

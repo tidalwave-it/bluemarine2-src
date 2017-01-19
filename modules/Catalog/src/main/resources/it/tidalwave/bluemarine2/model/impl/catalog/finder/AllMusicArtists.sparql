@@ -2,7 +2,7 @@
             WHERE
               {
                 ?artist         a                   mo:MusicArtist.
-                ?artist         bm:importedFrom     ?source.
+                ?artist         bmmo:importedFrom   ?source.
                 ?artist         rdfs:label          ?label.
 
 @performance@   ?performance    a                   mo:Performance
@@ -32,55 +32,55 @@
 
 @performance@   UNION
 @performance@     {
-@performance@       ?performance    mo:arranger             ?artist. BIND ("arranger" AS ?role)
+@performance@       ?performance    bmmo:arranger           ?artist. BIND ("arranger" AS ?role)
 @performance@     }
 @performance@   UNION
 @performance@     {
-@performance@       ?performance    mo:background_singer    ?artist. BIND ("background_singer" AS ?role)
+@performance@       ?performance    bmmo:background_singer  ?artist. BIND ("background_singer" AS ?role)
 @performance@     }
 @performance@   UNION
 @performance@     {
-@performance@       ?performance    mo:balance              ?artist. BIND ("balance" AS ?role)
+@performance@       ?performance    bmmo:balance            ?artist. BIND ("balance" AS ?role)
 @performance@     }
 @performance@   UNION
 @performance@     {
-@performance@       ?performance    mo:baritone             ?artist. BIND ("baritone" AS ?role)
+@performance@       ?performance    bmmo:baritone           ?artist. BIND ("baritone" AS ?role)
 @performance@     }
 @performance@   UNION
 @performance@     {
-@performance@       ?performance    mo:balance              ?artist. BIND ("balance" AS ?role)
+@performance@       ?performance    bmmo:balance            ?artist. BIND ("balance" AS ?role)
 @performance@     }
 @performance@   UNION
 @performance@     {
-@performance@       ?performance    mo:editor               ?artist. BIND ("editor" AS ?role)
+@performance@       ?performance    bmmo:editor             ?artist. BIND ("editor" AS ?role)
 @performance@     }
 @performance@   UNION
 @performance@     {
-@performance@       ?performance    mo:engineer             ?artist. BIND ("engineer" AS ?role)
+@performance@       ?performance    bmmo:engineer           ?artist. BIND ("engineer" AS ?role)
 @performance@     }
 @performance@   UNION
 @performance@     {
-@performance@       ?performance    mo:mezzo_soprano        ?artist. BIND ("mezzo_soprano" AS ?role)
+@performance@       ?performance    bmmo:mezzo_soprano      ?artist. BIND ("mezzo_soprano" AS ?role)
 @performance@     }
 @performance@   UNION
 @performance@     {
-@performance@       ?performance    mo:mix                  ?artist. BIND ("mix" AS ?role)
+@performance@       ?performance    bmmo:mix                ?artist. BIND ("mix" AS ?role)
 @performance@     }
 @performance@   UNION
 @performance@     {
-@performance@       ?performance    mo:orchestrator         ?artist. BIND ("orchestrator" AS ?role)
+@performance@       ?performance    bmmo:orchestrator       ?artist. BIND ("orchestrator" AS ?role)
 @performance@     }
 @performance@   UNION
 @performance@     {
-@performance@       ?performance    mo:producer             ?artist. BIND ("producer" AS ?role)
+@performance@       ?performance    bmmo:producer           ?artist. BIND ("producer" AS ?role)
 @performance@     }
 @performance@   UNION
 @performance@     {
-@performance@       ?performance    mo:programming          ?artist. BIND ("programming" AS ?role)
+@performance@       ?performance    bmmo:programming        ?artist. BIND ("programming" AS ?role)
 @performance@     }
 @performance@   UNION
 @performance@     {
-@performance@       ?performance    mo:recording            ?artist. BIND ("recording" AS ?role)
+@performance@       ?performance    bmmo:recording          ?artist. BIND ("recording" AS ?role)
 @performance@     }
 
                 OPTIONAL

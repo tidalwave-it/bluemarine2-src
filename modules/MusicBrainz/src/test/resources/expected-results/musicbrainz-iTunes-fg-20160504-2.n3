@@ -3935,11 +3935,11 @@
 	mo:recorded_as <urn:bluemarine:signal:1xI488ANUoR_A5YKlAv-f2KjVLE=> .
 
 <urn:bluemarine:performance:04d0fcca-3edb-4317-a581-e13cf2148928> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:conductor <http://musicbrainz.org/artist/d2ced2f1-6b58-47cf-ae87-5943e2ab6d99> ;
 	mo:performer <http://musicbrainz.org/artist/87195fff-2f31-4503-b7c3-76b39c60d89b> , <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:recorded_as <urn:bluemarine:signal:rHzqZW6b5e0ooOoo8uogn_taboI=> .
 
 <urn:bluemarine:performance:090079a2-0d04-493a-a3af-58e717ebedeb> a mo:Performance ;
@@ -3966,9 +3966,9 @@
 
 <urn:bluemarine:performance:0e01ccc7-59c1-46e5-935d-7c97fe91b909> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:htqj1CKCc9mZnGns2U7SdDWFJtw=> .
 
 <urn:bluemarine:performance:0e20e3fd-26b4-4660-9fa4-9cb7d49851e4> a mo:Performance ;
@@ -4001,18 +4001,18 @@
 	mo:recorded_as <urn:bluemarine:signal:AwYFCC5nz3_AgHAQB08QRwbaH44=> .
 
 <urn:bluemarine:performance:12ff000f-49bb-4ab3-a289-72041b3bf7d9> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/88a5c251-3e44-44a9-a7c6-d216869d5eaf> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/88a5c251-3e44-44a9-a7c6-d216869d5eaf> ;
+	bmmo:producer <http://musicbrainz.org/artist/35826b5a-739d-4f85-88c5-b660baad9263> ;
 	mo:conductor <http://musicbrainz.org/artist/66d97594-15fd-49b9-8359-0c014dbe8719> ;
 	mo:performer <http://musicbrainz.org/artist/66d97594-15fd-49b9-8359-0c014dbe8719> , <http://musicbrainz.org/artist/8af55e27-c6ad-44f3-a6d2-53df5462798c> ;
-	mo:producer <http://musicbrainz.org/artist/35826b5a-739d-4f85-88c5-b660baad9263> ;
 	mo:recorded_as <urn:bluemarine:signal:UkwOUy5U12Cc2FaomumZCscgKbk=> .
 
 <urn:bluemarine:performance:13162ea2-a994-44a2-a735-e70afc669a31> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:RIppuNdYsjq_16n8ZbskEpbKnFw=> .
 
 <urn:bluemarine:performance:158dd407-ecd0-4b1b-a416-a755632f7419> a mo:Performance ;
@@ -4078,25 +4078,25 @@
 	mo:recorded_as <urn:bluemarine:signal:R80n7zsttyskPCJY3z_FD8O09Os=> .
 
 <urn:bluemarine:performance:1ee221a1-d642-4db1-be9b-7b0620419dd7> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> ;
 	mo:conductor <http://musicbrainz.org/artist/edba9279-b24b-4e0c-9172-2b016cdcbc1e> ;
 	mo:performer <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> ;
 	mo:recorded_as <urn:bluemarine:signal:0dPMMUxw1knMZFyAoImk8UvT7Ks=> .
 
 <urn:bluemarine:performance:1fdb0c64-44db-4801-ac3c-627a7faa9396> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:JXfpJtk7LYNCJy9dl-laRAsvfUo=> .
 
 <urn:bluemarine:performance:21257928-7b59-4689-ac41-d3534685af86> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:o0Va-RMAGYmDUtZ01Co7WBZWYZ4=> .
 
 <urn:bluemarine:performance:21383e22-4281-46f6-9f79-7f4d5a5bdc7c> a mo:Performance ;
@@ -4118,13 +4118,13 @@
 	mo:recorded_as <urn:bluemarine:signal:V_HqLLeN4aVo_o7T2K6B-m8OZBY=> .
 
 <urn:bluemarine:performance:236dab46-7aca-4bb9-accb-ecc25b5a1f8b> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
+	bmmo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:conductor <http://musicbrainz.org/artist/39e84597-3e0f-4ccc-89d2-6ee1dd6fb050> ;
-	mo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
-	mo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	mo:performer <http://musicbrainz.org/artist/02bd2dff-f337-4788-9e75-0eb6beb932ac> , <http://musicbrainz.org/artist/1a3d13e8-12f6-4705-8303-fe92161383c5> , <http://musicbrainz.org/artist/3f221c60-2568-40f5-b1c3-625fed319258> , <http://musicbrainz.org/artist/8a4ad33e-7498-4d7b-b99c-af880214ead3> , <http://musicbrainz.org/artist/9a95741e-fb45-4013-80b4-59bf910b98cd> , <http://musicbrainz.org/artist/9e1ed6df-3402-41ed-acdb-d93648f7d504> , <http://musicbrainz.org/artist/c097618f-c746-40c0-a700-c5a399c0da41> ;
-	mo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:recorded_as <urn:bluemarine:signal:wl9ZW0VeRjE19nZ-AHcTkUSjSCE=> .
 
 <urn:bluemarine:performance:24278c8f-7046-4f68-885b-242a05b7d4d2> a mo:Performance ;
@@ -4135,21 +4135,21 @@
 	mo:soprano <http://musicbrainz.org/artist/9dee40b2-25ad-404c-9c9a-139feffd4b57> .
 
 <urn:bluemarine:performance:24a4a7d5-6435-48e7-961c-def93e6d1d29> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
+	bmmo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:conductor <http://musicbrainz.org/artist/39e84597-3e0f-4ccc-89d2-6ee1dd6fb050> ;
-	mo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
-	mo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	mo:performer <http://musicbrainz.org/artist/02bd2dff-f337-4788-9e75-0eb6beb932ac> , <http://musicbrainz.org/artist/3f221c60-2568-40f5-b1c3-625fed319258> , <http://musicbrainz.org/artist/8a4ad33e-7498-4d7b-b99c-af880214ead3> , <http://musicbrainz.org/artist/9e1ed6df-3402-41ed-acdb-d93648f7d504> ;
-	mo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:recorded_as <urn:bluemarine:signal:ai7uqkXZeKadjx-Bzx9rY1gcBow=> .
 
 <urn:bluemarine:performance:2673ce37-4430-44c3-8a5d-72b714ce8218> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/b424c64e-7ec7-42cd-bd0d-d70ac18c9409> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/b424c64e-7ec7-42cd-bd0d-d70ac18c9409> ;
+	bmmo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> ;
 	mo:conductor <http://musicbrainz.org/artist/edba9279-b24b-4e0c-9172-2b016cdcbc1e> ;
 	mo:performer <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> ;
 	mo:recorded_as <urn:bluemarine:signal:1nfsR9xSBrjjbOvC806dBTp35jw=> .
 
 <urn:bluemarine:performance:26c2c264-0578-4880-ae12-019ba1951b2a> a mo:Performance ;
@@ -4165,11 +4165,11 @@
 	mo:recorded_as <urn:bluemarine:signal:wUbhGTPqd08ZNW-E38FFd2FpETI=> .
 
 <urn:bluemarine:performance:271c3f8c-57fb-4f1d-8d23-a03ae5b4f86a> a mo:Performance ;
+	bmmo:engineer <http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:engineer <http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00> ;
+	bmmo:producer <http://musicbrainz.org/artist/73e0693d-dbf0-45e8-ba86-e1ab0897db31> ;
 	mo:lead_singer <http://musicbrainz.org/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
 	mo:performer <http://musicbrainz.org/artist/033fae4c-cb99-4e3b-8213-f0d0c1bc677d> , <http://musicbrainz.org/artist/1438d2e8-20ee-4f7c-953c-51a5612fd4e3> , <http://musicbrainz.org/artist/2a760856-7bf1-4f65-a2d0-225e77085fcc> , <http://musicbrainz.org/artist/3af06bc4-68ad-4cae-bb7a-7eeeb45e411f> , <http://musicbrainz.org/artist/48f34bd6-dc5d-41ba-8cd5-0495787f13fa> , <http://musicbrainz.org/artist/7d09015c-71a2-4e9c-bd3d-9ab9fd0c8c6a> , <http://musicbrainz.org/artist/881d33d8-e86f-42e8-b571-dbde156f6907> , <http://musicbrainz.org/artist/90f9db31-0d48-43d2-8112-04850fbe5bbd> , <http://musicbrainz.org/artist/a765d3e6-0a39-4910-b0d8-f80557be846d> , <http://musicbrainz.org/artist/b482412e-4ca7-4adf-95e3-3cd2270862e7> , <http://musicbrainz.org/artist/b5ca0759-a8da-42a6-995a-7364c734baa6> , <http://musicbrainz.org/artist/c01557ad-d41e-4316-a285-605769e2ab3b> , <http://musicbrainz.org/artist/c62ceb28-084f-47e4-b780-f47ab701b7b5> , <http://musicbrainz.org/artist/cc53fdfe-b0ea-434b-a376-4ad546638531> , <http://musicbrainz.org/artist/d25011ec-b308-4603-aa41-7f5e22d17732> , <http://musicbrainz.org/artist/db0021bc-fd55-4ad3-a10a-07b774f89035> , <http://musicbrainz.org/artist/e58d894d-d6a1-49c0-aee2-8350af5c68a8> , <http://musicbrainz.org/artist/e9ba8ccb-505f-4e5c-b909-65998d0d35b5> ;
-	mo:producer <http://musicbrainz.org/artist/73e0693d-dbf0-45e8-ba86-e1ab0897db31> ;
 	mo:recorded_as <urn:bluemarine:signal:bQCO66h2TRrCp2pErSOh4vhQmbM=> .
 
 <urn:bluemarine:performance:292dee45-34d0-449b-9c8e-ec5d3ad30cbb> a mo:Performance ;
@@ -4252,11 +4252,11 @@
 	mo:recorded_as <urn:bluemarine:signal:pxn3JLY2-c71QKQYVbtZwJK90To=> .
 
 <urn:bluemarine:performance:3857c17e-0690-442e-a1da-9facbf56754a> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:conductor <http://musicbrainz.org/artist/d2ced2f1-6b58-47cf-ae87-5943e2ab6d99> ;
 	mo:performer <http://musicbrainz.org/artist/87195fff-2f31-4503-b7c3-76b39c60d89b> , <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:recorded_as <urn:bluemarine:signal:inwuKwDOZXrZP5RNsoMEH10zkqQ=> .
 
 <urn:bluemarine:performance:391a9d47-b73c-4a37-85b1-34049abfa348> a mo:Performance ;
@@ -4278,9 +4278,9 @@
 
 <urn:bluemarine:performance:3a72a2d1-2df2-43c5-b22d-e05558a62719> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:zmsPvpUq3rvD3-TjnaCx3nUpKVo=> .
 
 <urn:bluemarine:performance:3a9ff5f2-684a-472e-8693-6c487d48df64> a mo:Performance ;
@@ -4290,13 +4290,13 @@
 	mo:recorded_as <urn:bluemarine:signal:ujqwG-IV6vMtHEtZUp8pdMxA4jg=> .
 
 <urn:bluemarine:performance:3aae6f8e-1a85-460c-827a-bc32e28016a1> a mo:Performance ;
+	bmmo:arranger <http://musicbrainz.org/artist/4308fdc4-7f8a-42f0-aaea-a8b397da5e3c> ;
+	bmmo:engineer <http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:arranger <http://musicbrainz.org/artist/4308fdc4-7f8a-42f0-aaea-a8b397da5e3c> ;
+	bmmo:producer <http://musicbrainz.org/artist/73e0693d-dbf0-45e8-ba86-e1ab0897db31> ;
 	mo:conductor <http://musicbrainz.org/artist/4308fdc4-7f8a-42f0-aaea-a8b397da5e3c> ;
-	mo:engineer <http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00> ;
 	mo:lead_singer <http://musicbrainz.org/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
 	mo:performer <http://musicbrainz.org/artist/a75df285-0e05-4d81-9939-5f86f15babf9> ;
-	mo:producer <http://musicbrainz.org/artist/73e0693d-dbf0-45e8-ba86-e1ab0897db31> ;
 	mo:recorded_as <urn:bluemarine:signal:bRUbdvEakzxiRx5fKxDaOPzGq4M=> .
 
 <urn:bluemarine:performance:3d7f3032-932c-4cce-8853-caee95b3e8c5> a mo:Performance ;
@@ -4312,9 +4312,9 @@
 
 <urn:bluemarine:performance:4124d078-1c41-417e-9538-b2ebff890105> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:UxbxFDt5ZVuYFR8ZhpqtEk9iOrA=> .
 
 <urn:bluemarine:performance:41e874be-0799-41cc-9abd-188fc0f7a98e> a mo:Performance ;
@@ -4330,11 +4330,11 @@
 	mo:soprano <http://musicbrainz.org/artist/9dee40b2-25ad-404c-9c9a-139feffd4b57> .
 
 <urn:bluemarine:performance:4216970e-2b85-475a-91f8-8f629c87c3d2> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> , <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:conductor <http://musicbrainz.org/artist/d2ced2f1-6b58-47cf-ae87-5943e2ab6d99> ;
 	mo:performer <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> , <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:recorded_as <urn:bluemarine:signal:Bnknkq57DqbgFpHuOAUzwTBtcQo=> .
 
 <urn:bluemarine:performance:422c240c-9149-43bf-8a2b-33cbb75dbdd2> a mo:Performance ;
@@ -4355,20 +4355,20 @@
 
 <urn:bluemarine:performance:4311e780-2841-404f-aab6-6fec3d2d96c1> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:mezzo_soprano <http://musicbrainz.org/artist/cdc09cab-6b9a-44f9-9779-47148ba82779> ;
 	mo:conductor <http://musicbrainz.org/artist/1332d94d-19c5-4895-8e39-f6dc04836eba> ;
-	mo:mezzo_soprano <http://musicbrainz.org/artist/cdc09cab-6b9a-44f9-9779-47148ba82779> ;
 	mo:performer <http://musicbrainz.org/artist/5610302e-bfd9-421c-80e2-03d790a0f5e5> ;
 	mo:recorded_as <urn:bluemarine:signal:wmVjpKdZRV_dqrROnCk37x0J9ec=> ;
 	mo:soprano <http://musicbrainz.org/artist/9dee40b2-25ad-404c-9c9a-139feffd4b57> .
 
 <urn:bluemarine:performance:4352c1c8-8e40-4e75-ae96-76e9e4be6602> a mo:Performance ;
+	bmmo:arranger <http://musicbrainz.org/artist/d56d5118-77f4-4f5d-8997-813e4670806a> ;
+	bmmo:engineer <http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:arranger <http://musicbrainz.org/artist/d56d5118-77f4-4f5d-8997-813e4670806a> ;
+	bmmo:producer <http://musicbrainz.org/artist/73e0693d-dbf0-45e8-ba86-e1ab0897db31> ;
 	mo:conductor <http://musicbrainz.org/artist/d56d5118-77f4-4f5d-8997-813e4670806a> ;
-	mo:engineer <http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00> ;
 	mo:lead_singer <http://musicbrainz.org/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
 	mo:performer <http://musicbrainz.org/artist/5a5629fe-d51d-4356-87e4-c203d784d1fa> ;
-	mo:producer <http://musicbrainz.org/artist/73e0693d-dbf0-45e8-ba86-e1ab0897db31> ;
 	mo:recorded_as <urn:bluemarine:signal:035PQlxsJqhIcks6z7M0mGdEC0Y=> .
 
 <urn:bluemarine:performance:435618d4-04ea-4972-ae59-793cd7718d71> a mo:Performance ;
@@ -4383,21 +4383,21 @@
 	mo:recorded_as <urn:bluemarine:signal:9TVPGj582zdD0Wvh3NZbzmrLSOU=> .
 
 <urn:bluemarine:performance:44d76c02-a86f-4a92-bd9f-c41bea7f3e8c> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/b424c64e-7ec7-42cd-bd0d-d70ac18c9409> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/b424c64e-7ec7-42cd-bd0d-d70ac18c9409> ;
+	bmmo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> ;
 	mo:conductor <http://musicbrainz.org/artist/edba9279-b24b-4e0c-9172-2b016cdcbc1e> ;
 	mo:performer <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> ;
 	mo:recorded_as <urn:bluemarine:signal:LE2VdvZI9irD-EXk70njMoVweLU=> .
 
 <urn:bluemarine:performance:45bb7689-41dd-4bc7-bd88-20f6fe5d1ba0> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/37f36853-de8b-41ea-9e41-4e09b1dca19b> ;
+	bmmo:editor <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:engineer <http://musicbrainz.org/artist/ac1b3506-062f-48e0-9069-332ceaa09af7> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/37f36853-de8b-41ea-9e41-4e09b1dca19b> ;
+	bmmo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> , <http://musicbrainz.org/artist/c361fe8c-dd1d-4fe5-93b2-c6f39de9e3a9> ;
 	mo:conductor <http://musicbrainz.org/artist/9f83001a-fd49-4efb-a835-05ee6922a10d> ;
-	mo:editor <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
-	mo:engineer <http://musicbrainz.org/artist/ac1b3506-062f-48e0-9069-332ceaa09af7> ;
 	mo:performer <http://musicbrainz.org/artist/d770374d-05e9-4ed3-a068-3fbd4e6e4dd6> ;
-	mo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> , <http://musicbrainz.org/artist/c361fe8c-dd1d-4fe5-93b2-c6f39de9e3a9> ;
 	mo:recorded_as <urn:bluemarine:signal:J66GaNCe8q_pGj3ZtV19OEv1Tro=> .
 
 <urn:bluemarine:performance:4689f005-bae1-4033-855e-3d43614e6d19> a mo:Performance ;
@@ -4418,11 +4418,11 @@
 	mo:recorded_as <urn:bluemarine:signal:cfvRGaxkIm7VkzDCPGuMRMh13h0=> .
 
 <urn:bluemarine:performance:46d6c404-37de-4d60-91e6-682a375e2890> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:conductor <http://musicbrainz.org/artist/d2ced2f1-6b58-47cf-ae87-5943e2ab6d99> ;
 	mo:performer <http://musicbrainz.org/artist/87195fff-2f31-4503-b7c3-76b39c60d89b> , <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:recorded_as <urn:bluemarine:signal:MsWuxkbyKCNZZMww3__TElhx_no=> .
 
 <urn:bluemarine:performance:4736a6c2-b187-4457-a165-93f3d303ee8c> a mo:Performance ;
@@ -4450,13 +4450,13 @@
 	mo:soprano <http://musicbrainz.org/artist/9dee40b2-25ad-404c-9c9a-139feffd4b57> .
 
 <urn:bluemarine:performance:4abdd95e-c172-44c6-998d-1710fb1d4841> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
+	bmmo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:conductor <http://musicbrainz.org/artist/39e84597-3e0f-4ccc-89d2-6ee1dd6fb050> ;
-	mo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
-	mo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	mo:performer <http://musicbrainz.org/artist/02bd2dff-f337-4788-9e75-0eb6beb932ac> , <http://musicbrainz.org/artist/1a3d13e8-12f6-4705-8303-fe92161383c5> , <http://musicbrainz.org/artist/3f221c60-2568-40f5-b1c3-625fed319258> , <http://musicbrainz.org/artist/8a4ad33e-7498-4d7b-b99c-af880214ead3> , <http://musicbrainz.org/artist/9a95741e-fb45-4013-80b4-59bf910b98cd> , <http://musicbrainz.org/artist/9e1ed6df-3402-41ed-acdb-d93648f7d504> , <http://musicbrainz.org/artist/c097618f-c746-40c0-a700-c5a399c0da41> ;
-	mo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:recorded_as <urn:bluemarine:signal:46j3XNQP7NPBL42J3Eqj6mc5rr4=> .
 
 <urn:bluemarine:performance:4b33e531-879d-4451-b637-9ad7131aef52> a mo:Performance ;
@@ -4465,13 +4465,13 @@
 	mo:recorded_as <urn:bluemarine:signal:-Kfjllsujd9kOxwydl6eujlBzPg=> .
 
 <urn:bluemarine:performance:4beb211b-12a4-4d49-8cc2-09ff3491a507> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/37f36853-de8b-41ea-9e41-4e09b1dca19b> ;
+	bmmo:editor <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:engineer <http://musicbrainz.org/artist/ac1b3506-062f-48e0-9069-332ceaa09af7> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/37f36853-de8b-41ea-9e41-4e09b1dca19b> ;
+	bmmo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> , <http://musicbrainz.org/artist/c361fe8c-dd1d-4fe5-93b2-c6f39de9e3a9> ;
 	mo:conductor <http://musicbrainz.org/artist/9f83001a-fd49-4efb-a835-05ee6922a10d> ;
-	mo:editor <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
-	mo:engineer <http://musicbrainz.org/artist/ac1b3506-062f-48e0-9069-332ceaa09af7> ;
 	mo:performer <http://musicbrainz.org/artist/d770374d-05e9-4ed3-a068-3fbd4e6e4dd6> ;
-	mo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> , <http://musicbrainz.org/artist/c361fe8c-dd1d-4fe5-93b2-c6f39de9e3a9> ;
 	mo:recorded_as <urn:bluemarine:signal:sGLZCe3-hWi7flgJriBCeDh2JoA=> .
 
 <urn:bluemarine:performance:4c248673-7f9f-4d4f-be31-e485dcf85e0c> a mo:Performance ;
@@ -4487,11 +4487,11 @@
 	mo:recorded_as <urn:bluemarine:signal:eY5mYgRHAXGKSIyv1MOrju4Qm3s=> .
 
 <urn:bluemarine:performance:4d33a2ff-31f9-48ad-aa47-fbe54612f795> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:conductor <http://musicbrainz.org/artist/d2ced2f1-6b58-47cf-ae87-5943e2ab6d99> ;
 	mo:performer <http://musicbrainz.org/artist/87195fff-2f31-4503-b7c3-76b39c60d89b> , <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:recorded_as <urn:bluemarine:signal:4IZ7PAJlnOLxXT0FvNS_eiiKIAM=> .
 
 <urn:bluemarine:performance:4d709421-b873-45b5-9577-2e9144a1f3e4> a mo:Performance ;
@@ -4529,10 +4529,10 @@
 	mo:soprano <http://musicbrainz.org/artist/9dee40b2-25ad-404c-9c9a-139feffd4b57> .
 
 <urn:bluemarine:performance:5133fd1c-10b7-4bc4-8c50-80cb4d256b53> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/37f36853-de8b-41ea-9e41-4e09b1dca19b> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/37f36853-de8b-41ea-9e41-4e09b1dca19b> ;
+	bmmo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> ;
 	mo:performer <http://musicbrainz.org/artist/88b4ad33-63ba-4923-947e-26a720631156> ;
-	mo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> ;
 	mo:recorded_as <urn:bluemarine:signal:Nrv1h0ufzeXLJNag_w0c3vn40XQ=> .
 
 <urn:bluemarine:performance:51cfd4e5-7b9f-45c0-a7f4-782818946fc1> a mo:Performance ;
@@ -4541,13 +4541,13 @@
 	mo:soprano <http://musicbrainz.org/artist/9dee40b2-25ad-404c-9c9a-139feffd4b57> .
 
 <urn:bluemarine:performance:5276237e-62e7-45b1-84da-048d846ecddf> a mo:Performance ;
+	bmmo:arranger <http://musicbrainz.org/artist/4308fdc4-7f8a-42f0-aaea-a8b397da5e3c> ;
+	bmmo:engineer <http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:arranger <http://musicbrainz.org/artist/4308fdc4-7f8a-42f0-aaea-a8b397da5e3c> ;
+	bmmo:producer <http://musicbrainz.org/artist/73e0693d-dbf0-45e8-ba86-e1ab0897db31> ;
 	mo:conductor <http://musicbrainz.org/artist/4308fdc4-7f8a-42f0-aaea-a8b397da5e3c> ;
-	mo:engineer <http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00> ;
 	mo:lead_singer <http://musicbrainz.org/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
 	mo:performer <http://musicbrainz.org/artist/a75df285-0e05-4d81-9939-5f86f15babf9> ;
-	mo:producer <http://musicbrainz.org/artist/73e0693d-dbf0-45e8-ba86-e1ab0897db31> ;
 	mo:recorded_as <urn:bluemarine:signal:pvGtO9KmnrONV17NjuScxiFzc40=> .
 
 <urn:bluemarine:performance:53b3604e-782a-425b-9e4a-043afa6dcb73> a mo:Performance ;
@@ -4582,22 +4582,22 @@
 	mo:soprano <http://musicbrainz.org/artist/9dee40b2-25ad-404c-9c9a-139feffd4b57> .
 
 <urn:bluemarine:performance:5757d62e-d75b-4dea-8793-d62cc20bcd5c> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
+	bmmo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:conductor <http://musicbrainz.org/artist/39e84597-3e0f-4ccc-89d2-6ee1dd6fb050> ;
-	mo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
-	mo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	mo:performer <http://musicbrainz.org/artist/02bd2dff-f337-4788-9e75-0eb6beb932ac> , <http://musicbrainz.org/artist/3f221c60-2568-40f5-b1c3-625fed319258> , <http://musicbrainz.org/artist/8a4ad33e-7498-4d7b-b99c-af880214ead3> , <http://musicbrainz.org/artist/9e1ed6df-3402-41ed-acdb-d93648f7d504> ;
-	mo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:recorded_as <urn:bluemarine:signal:cy-zCTLz5t1BqDijiaxASFqigp0=> .
 
 <urn:bluemarine:performance:57b105a5-0ab1-4df9-bedb-ddd671c4d1d4> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> , <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:choir <http://musicbrainz.org/artist/f461b350-a814-4341-b427-c8fd59430d1f> ;
 	mo:conductor <http://musicbrainz.org/artist/d2ced2f1-6b58-47cf-ae87-5943e2ab6d99> , <http://musicbrainz.org/artist/e1297774-2d31-4bc9-9d76-4ce27e297c9b> ;
 	mo:performer <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> , <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:recorded_as <urn:bluemarine:signal:U0MDxBIY2v5oE_Ot5a5BnMCFD-A=> .
 
 <urn:bluemarine:performance:59c02cb7-6d34-4e93-aaa2-cfbb191074d1> a mo:Performance ;
@@ -4617,13 +4617,13 @@
 	mo:recorded_as <urn:bluemarine:signal:siZ5HJQu8LkFMd_AJQJ9i3Fo8VI=> .
 
 <urn:bluemarine:performance:5c19e152-d5f2-44ec-9f6d-0b3a5b01ebb5> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
+	bmmo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:conductor <http://musicbrainz.org/artist/39e84597-3e0f-4ccc-89d2-6ee1dd6fb050> ;
-	mo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
-	mo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	mo:performer <http://musicbrainz.org/artist/02bd2dff-f337-4788-9e75-0eb6beb932ac> , <http://musicbrainz.org/artist/3f221c60-2568-40f5-b1c3-625fed319258> , <http://musicbrainz.org/artist/8a4ad33e-7498-4d7b-b99c-af880214ead3> , <http://musicbrainz.org/artist/9e1ed6df-3402-41ed-acdb-d93648f7d504> ;
-	mo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:recorded_as <urn:bluemarine:signal:_SUdpL9iV1Kiq1QoSnI1lALAl2Q=> .
 
 <urn:bluemarine:performance:5c38279d-98c2-48b3-b7b9-8d25bb27732f> a mo:Performance ;
@@ -4639,20 +4639,20 @@
 	mo:recorded_as <urn:bluemarine:signal:bUqjMXp75pForV1rQ_mSBCC7804=> .
 
 <urn:bluemarine:performance:5f4c76f4-06d4-49c7-9ff2-a2eb89499948> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/b424c64e-7ec7-42cd-bd0d-d70ac18c9409> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/b424c64e-7ec7-42cd-bd0d-d70ac18c9409> ;
+	bmmo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> ;
 	mo:conductor <http://musicbrainz.org/artist/edba9279-b24b-4e0c-9172-2b016cdcbc1e> ;
 	mo:performer <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> ;
 	mo:recorded_as <urn:bluemarine:signal:u9EZ_CwO0w5CGjl9jpQSST-d3jo=> .
 
 <urn:bluemarine:performance:5fab0d9c-4cb8-478d-a6aa-37a62caf459d> a mo:Performance ;
+	bmmo:engineer <http://musicbrainz.org/artist/38e4e3d4-8d50-493d-ad8f-b7760314204c> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:mezzo_soprano <http://musicbrainz.org/artist/4b37d6a8-bb03-4695-99f5-177f4ff5e891> ;
+	bmmo:producer <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:conductor <http://musicbrainz.org/artist/33ff592d-0cf8-4d40-895d-993aad15d311> ;
-	mo:engineer <http://musicbrainz.org/artist/38e4e3d4-8d50-493d-ad8f-b7760314204c> ;
-	mo:mezzo_soprano <http://musicbrainz.org/artist/4b37d6a8-bb03-4695-99f5-177f4ff5e891> ;
 	mo:performer <http://musicbrainz.org/artist/a57a7265-00f6-4d4b-809d-c0e734569796> ;
-	mo:producer <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:recorded_as <urn:bluemarine:signal:_jkD6X0OWCItzn8Pf1F_pdh_Cho=> , <urn:bluemarine:signal:d3t_hlHB774aGbysoZ8RSmPD2Ys=> ;
 	mo:soprano <http://musicbrainz.org/artist/4e6a3559-e86b-4adb-8f27-fb82ab86d008> , <http://musicbrainz.org/artist/9dee40b2-25ad-404c-9c9a-139feffd4b57> .
 
@@ -4662,11 +4662,11 @@
 	mo:recorded_as <urn:bluemarine:signal:CKQQMu7CVCkZuOueAWnncV-rOEk=> .
 
 <urn:bluemarine:performance:61675df3-359d-4559-b16b-db25665f9cc5> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> ;
 	mo:conductor <http://musicbrainz.org/artist/edba9279-b24b-4e0c-9172-2b016cdcbc1e> ;
 	mo:performer <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> ;
 	mo:recorded_as <urn:bluemarine:signal:SW95wIBfOIfqUgoMoIgWN6H9_XY=> .
 
 <urn:bluemarine:performance:61d1176b-bb5d-4ec0-b69a-baa682903e7c> a mo:Performance ;
@@ -4704,17 +4704,17 @@
 
 <urn:bluemarine:performance:690d3cb6-3815-424e-a217-fc632f0dcf72> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:PaS0Mi5obDUKzIoM6Z4htnDm7ss=> .
 
 <urn:bluemarine:performance:6b095eaa-c161-4c2e-9670-a55a13d613b8> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> ;
 	mo:conductor <http://musicbrainz.org/artist/edba9279-b24b-4e0c-9172-2b016cdcbc1e> ;
 	mo:performer <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> ;
 	mo:recorded_as <urn:bluemarine:signal:0oABcAgcKEW_tdSUMrgVfNO0jfA=> .
 
 <urn:bluemarine:performance:6b63e4c1-237a-4b2a-a9a8-bb8274618e4b> a mo:Performance ;
@@ -4731,13 +4731,13 @@
 	mo:recorded_as <urn:bluemarine:signal:4K5WCZiu4sge4ir139AeKGK5Xo4=> .
 
 <urn:bluemarine:performance:6db87af3-0cf2-4b2b-8c05-ffd835674789> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
+	bmmo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:conductor <http://musicbrainz.org/artist/39e84597-3e0f-4ccc-89d2-6ee1dd6fb050> ;
-	mo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
-	mo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	mo:performer <http://musicbrainz.org/artist/02bd2dff-f337-4788-9e75-0eb6beb932ac> , <http://musicbrainz.org/artist/3f221c60-2568-40f5-b1c3-625fed319258> , <http://musicbrainz.org/artist/8a4ad33e-7498-4d7b-b99c-af880214ead3> , <http://musicbrainz.org/artist/9e1ed6df-3402-41ed-acdb-d93648f7d504> ;
-	mo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:recorded_as <urn:bluemarine:signal:QeE8yyQje79zyyOxTYAhca-zAtk=> .
 
 <urn:bluemarine:performance:6de9cdf3-1ebf-428a-ac4e-9501ef95bdeb> a mo:Performance ;
@@ -4814,13 +4814,13 @@
 	mo:soprano <http://musicbrainz.org/artist/9dee40b2-25ad-404c-9c9a-139feffd4b57> .
 
 <urn:bluemarine:performance:775eab6c-d6a2-45a9-b619-54944253e3eb> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
+	bmmo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:conductor <http://musicbrainz.org/artist/39e84597-3e0f-4ccc-89d2-6ee1dd6fb050> ;
-	mo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
-	mo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	mo:performer <http://musicbrainz.org/artist/02bd2dff-f337-4788-9e75-0eb6beb932ac> , <http://musicbrainz.org/artist/3f221c60-2568-40f5-b1c3-625fed319258> , <http://musicbrainz.org/artist/8a4ad33e-7498-4d7b-b99c-af880214ead3> , <http://musicbrainz.org/artist/9e1ed6df-3402-41ed-acdb-d93648f7d504> ;
-	mo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:recorded_as <urn:bluemarine:signal:mFg9vMMe0leetUvxkX6Tp3YpXqg=> .
 
 <urn:bluemarine:performance:786fd49b-0828-4e0c-ba9d-15a8cb71b504> a mo:Performance ;
@@ -4830,9 +4830,9 @@
 
 <urn:bluemarine:performance:789116a6-6993-46e1-82bc-3740dd9fffc1> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:VOsSQ6TE3WUfp1yrpr8GWmS-TFU=> .
 
 <urn:bluemarine:performance:7c8e1b3b-56a1-4dde-9568-5156d6102c58> a mo:Performance ;
@@ -4855,11 +4855,11 @@
 	mo:recorded_as <urn:bluemarine:signal:A-dNrSsBOsEx3MI0vYbsQxWpaoI=> .
 
 <urn:bluemarine:performance:7e03debf-a2a0-4515-977c-aef7c440b593> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> , <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:conductor <http://musicbrainz.org/artist/d2ced2f1-6b58-47cf-ae87-5943e2ab6d99> ;
 	mo:performer <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> , <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:recorded_as <urn:bluemarine:signal:Dx3lmSHbmTFj64znqdDG_GTzAVE=> .
 
 <urn:bluemarine:performance:7e0e7357-4f37-4286-9382-ef400ba191bd> a mo:Performance ;
@@ -4874,13 +4874,13 @@
 	mo:recorded_as <urn:bluemarine:signal:QpLrd6gnOZgV5AXg12boM7JGPPI=> .
 
 <urn:bluemarine:performance:7e629721-ec14-4d5c-a0e7-d4583a632563> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
+	bmmo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:conductor <http://musicbrainz.org/artist/39e84597-3e0f-4ccc-89d2-6ee1dd6fb050> ;
-	mo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
-	mo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	mo:performer <http://musicbrainz.org/artist/02bd2dff-f337-4788-9e75-0eb6beb932ac> , <http://musicbrainz.org/artist/3f221c60-2568-40f5-b1c3-625fed319258> , <http://musicbrainz.org/artist/8a4ad33e-7498-4d7b-b99c-af880214ead3> , <http://musicbrainz.org/artist/9e1ed6df-3402-41ed-acdb-d93648f7d504> ;
-	mo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:recorded_as <urn:bluemarine:signal:vKEOOj1BUlczcXMYCDlbBnf8_7A=> .
 
 <urn:bluemarine:performance:7eb38c99-fb77-429d-aea6-8fedb0b57535> a mo:Performance ;
@@ -4890,8 +4890,8 @@
 	mo:recorded_as <urn:bluemarine:signal:ZleOmbCh1ZLQiKnvzEYUwksGhLM=> .
 
 <urn:bluemarine:performance:7fc8abf1-7471-4375-a12c-c06aa2976e8d> a mo:Performance ;
+	bmmo:arranger <http://musicbrainz.org/artist/7daac7f9-8fcc-485f-a14f-f8091d98cf25> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:arranger <http://musicbrainz.org/artist/7daac7f9-8fcc-485f-a14f-f8091d98cf25> ;
 	mo:performer <http://musicbrainz.org/artist/0d0cb98f-dcc3-4499-9a1e-79870db75104> , <http://musicbrainz.org/artist/47ca3bd6-1f40-4995-b25a-c02158af5643> , <http://musicbrainz.org/artist/7daac7f9-8fcc-485f-a14f-f8091d98cf25> ;
 	mo:recorded_as <urn:bluemarine:signal:084mcMTA4obPc6C2uK8_k07y1_I=> .
 
@@ -4935,20 +4935,20 @@
 	mo:recorded_as <urn:bluemarine:signal:Jn4tOYZjaklsHH4T4YRVyNYVmdo=> .
 
 <urn:bluemarine:performance:89d43731-7242-4a6c-a63c-b4fd68152d57> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> ;
 	mo:conductor <http://musicbrainz.org/artist/edba9279-b24b-4e0c-9172-2b016cdcbc1e> ;
 	mo:performer <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> ;
 	mo:recorded_as <urn:bluemarine:signal:BcJ7xOV1vk1-IQA7kXEF0W0Kfys=> .
 
 <urn:bluemarine:performance:8ad0a52f-1114-4483-b0f4-4bbc8aceaa83> a mo:Performance ;
+	bmmo:arranger <http://musicbrainz.org/artist/4aa0e893-9c85-4772-837b-89ce36bc5167> ;
+	bmmo:engineer <http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:arranger <http://musicbrainz.org/artist/4aa0e893-9c85-4772-837b-89ce36bc5167> ;
+	bmmo:producer <http://musicbrainz.org/artist/73e0693d-dbf0-45e8-ba86-e1ab0897db31> ;
 	mo:conductor <http://musicbrainz.org/artist/4aa0e893-9c85-4772-837b-89ce36bc5167> ;
-	mo:engineer <http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00> ;
 	mo:lead_singer <http://musicbrainz.org/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
-	mo:producer <http://musicbrainz.org/artist/73e0693d-dbf0-45e8-ba86-e1ab0897db31> ;
 	mo:recorded_as <urn:bluemarine:signal:YzSDTpfTYqTTNAJtho_bKSxY_ro=> .
 
 <urn:bluemarine:performance:8bfea71b-670e-4440-a599-86595dd95c40> a mo:Performance ;
@@ -4968,28 +4968,28 @@
 	mo:recorded_as <urn:bluemarine:signal:PEPgPCiDhaYXW1iAaVTsGqWhBr4=> .
 
 <urn:bluemarine:performance:8d32f71b-061e-4d3e-be1e-506477ac76ea> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:conductor <http://musicbrainz.org/artist/d2ced2f1-6b58-47cf-ae87-5943e2ab6d99> ;
 	mo:performer <http://musicbrainz.org/artist/87195fff-2f31-4503-b7c3-76b39c60d89b> , <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:recorded_as <urn:bluemarine:signal:DzrV4f8_jLeuTj8R9bxPLfrqfxI=> .
 
 <urn:bluemarine:performance:8e2d1b11-53e5-40f0-a5f8-7ea3a31a44d5> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
+	bmmo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:conductor <http://musicbrainz.org/artist/39e84597-3e0f-4ccc-89d2-6ee1dd6fb050> ;
-	mo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
-	mo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	mo:performer <http://musicbrainz.org/artist/02bd2dff-f337-4788-9e75-0eb6beb932ac> , <http://musicbrainz.org/artist/3f221c60-2568-40f5-b1c3-625fed319258> , <http://musicbrainz.org/artist/8a4ad33e-7498-4d7b-b99c-af880214ead3> , <http://musicbrainz.org/artist/9e1ed6df-3402-41ed-acdb-d93648f7d504> ;
-	mo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:recorded_as <urn:bluemarine:signal:eqS5L5iEMqDBtxNQ8tRse6aXl0s=> .
 
 <urn:bluemarine:performance:8f38273e-4528-4906-811b-49850fa233ea> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:FwHxko6YakHnyxq_fiyMGqEqhJQ=> .
 
 <urn:bluemarine:performance:8f5d497a-4a6f-4f1e-b82d-bf2eb57643ef> a mo:Performance ;
@@ -4999,9 +4999,9 @@
 
 <urn:bluemarine:performance:9134895a-7354-4714-8c0c-374e870bf96b> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:Rfhv3-LyUIW8U3duWKKnQP5Q4aE=> .
 
 <urn:bluemarine:performance:935a5045-5859-4ef0-bedc-9a2c00ea2db8> a mo:Performance ;
@@ -5012,9 +5012,9 @@
 
 <urn:bluemarine:performance:94579f59-b177-44a5-9f19-17e8703ecd8f> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:1k3EcoDpgGR38Bu1GSjV_7qY3es=> .
 
 <urn:bluemarine:performance:98301d76-75d8-4d6a-a647-8ba655e800af> a mo:Performance ;
@@ -5046,21 +5046,21 @@
 	mo:recorded_as <urn:bluemarine:signal:tY-i_0Ps9d30tjGcsAvQmRe-nwQ=> .
 
 <urn:bluemarine:performance:a0263ece-91b8-42b7-bb63-c2479f3a54d5> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:conductor <http://musicbrainz.org/artist/d2ced2f1-6b58-47cf-ae87-5943e2ab6d99> ;
 	mo:performer <http://musicbrainz.org/artist/87195fff-2f31-4503-b7c3-76b39c60d89b> , <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:recorded_as <urn:bluemarine:signal:ZyqZwNnAtQguD2h80MhK4pWOCTY=> .
 
 <urn:bluemarine:performance:a0810dbc-0a7e-4242-a5fc-a5a99fe34f68> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
+	bmmo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:conductor <http://musicbrainz.org/artist/39e84597-3e0f-4ccc-89d2-6ee1dd6fb050> ;
-	mo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
-	mo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	mo:performer <http://musicbrainz.org/artist/02bd2dff-f337-4788-9e75-0eb6beb932ac> , <http://musicbrainz.org/artist/3f221c60-2568-40f5-b1c3-625fed319258> , <http://musicbrainz.org/artist/8a4ad33e-7498-4d7b-b99c-af880214ead3> , <http://musicbrainz.org/artist/9e1ed6df-3402-41ed-acdb-d93648f7d504> ;
-	mo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:recorded_as <urn:bluemarine:signal:e8pizSb1lMn9U34-cYfhiO2IwUA=> .
 
 <urn:bluemarine:performance:a1130ed7-22e3-4b9b-8cb9-225edc2cacd1> a mo:Performance ;
@@ -5094,11 +5094,11 @@
 	mo:recorded_as <urn:bluemarine:signal:x2mfSQlsOfsOQW4c4qzRtFsaX90=> .
 
 <urn:bluemarine:performance:a4ceef19-2fb7-45f8-8b44-0de38f385258> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> , <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:conductor <http://musicbrainz.org/artist/d2ced2f1-6b58-47cf-ae87-5943e2ab6d99> ;
 	mo:performer <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> , <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:recorded_as <urn:bluemarine:signal:R9eXuyyAnsgfYxjEEJ-NjhsemhY=> .
 
 <urn:bluemarine:performance:a54cc6b1-0674-4aa0-9a60-874e11f63fc3> a mo:Performance ;
@@ -5108,11 +5108,11 @@
 	mo:recorded_as <urn:bluemarine:signal:akwOrIILPLU3taouBVwQ0a_8vQk=> .
 
 <urn:bluemarine:performance:a610b752-9631-4a61-979f-5aa0bac19deb> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> , <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:conductor <http://musicbrainz.org/artist/d2ced2f1-6b58-47cf-ae87-5943e2ab6d99> ;
 	mo:performer <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> , <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:recorded_as <urn:bluemarine:signal:IHPaKShw47WNKYsBc7quffmHpig=> .
 
 <urn:bluemarine:performance:a6408e68-2bda-4c7d-aea2-68b19161d6bd> a mo:Performance ;
@@ -5137,19 +5137,19 @@
 	mo:recorded_as <urn:bluemarine:signal:hGaad1vJfjgQtBP8w80ixoI51KU=> .
 
 <urn:bluemarine:performance:ab99f01c-d597-48ec-a068-0134290d9ee8> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/37f36853-de8b-41ea-9e41-4e09b1dca19b> ;
+	bmmo:editor <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:engineer <http://musicbrainz.org/artist/ac1b3506-062f-48e0-9069-332ceaa09af7> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/37f36853-de8b-41ea-9e41-4e09b1dca19b> ;
+	bmmo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> , <http://musicbrainz.org/artist/c361fe8c-dd1d-4fe5-93b2-c6f39de9e3a9> ;
 	mo:conductor <http://musicbrainz.org/artist/9f83001a-fd49-4efb-a835-05ee6922a10d> ;
-	mo:editor <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
-	mo:engineer <http://musicbrainz.org/artist/ac1b3506-062f-48e0-9069-332ceaa09af7> ;
 	mo:performer <http://musicbrainz.org/artist/d770374d-05e9-4ed3-a068-3fbd4e6e4dd6> ;
-	mo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> , <http://musicbrainz.org/artist/c361fe8c-dd1d-4fe5-93b2-c6f39de9e3a9> ;
 	mo:recorded_as <urn:bluemarine:signal:C9GwP2WdZs_UeRT_Cgp-HmPkHH0=> .
 
 <urn:bluemarine:performance:ac131cc0-b4f0-4c12-b0dd-b14213803602> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:mezzo_soprano <http://musicbrainz.org/artist/4b37d6a8-bb03-4695-99f5-177f4ff5e891> ;
 	mo:conductor <http://musicbrainz.org/artist/33ff592d-0cf8-4d40-895d-993aad15d311> ;
-	mo:mezzo_soprano <http://musicbrainz.org/artist/4b37d6a8-bb03-4695-99f5-177f4ff5e891> ;
 	mo:performer <http://musicbrainz.org/artist/a57a7265-00f6-4d4b-809d-c0e734569796> ;
 	mo:recorded_as <urn:bluemarine:signal:VVrXxkJUVsdDE5xJ91iXGUKEHRc=> ;
 	mo:soprano <http://musicbrainz.org/artist/4e6a3559-e86b-4adb-8f27-fb82ab86d008> , <http://musicbrainz.org/artist/9dee40b2-25ad-404c-9c9a-139feffd4b57> .
@@ -5166,13 +5166,13 @@
 	mo:recorded_as <urn:bluemarine:signal:nk1pQckGSBs7fEQlt_e6q1d7D1I=> .
 
 <urn:bluemarine:performance:ad59f990-c89e-4de7-a179-47da6dc7bd38> a mo:Performance ;
+	bmmo:arranger <http://musicbrainz.org/artist/4308fdc4-7f8a-42f0-aaea-a8b397da5e3c> ;
+	bmmo:engineer <http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:arranger <http://musicbrainz.org/artist/4308fdc4-7f8a-42f0-aaea-a8b397da5e3c> ;
+	bmmo:producer <http://musicbrainz.org/artist/73e0693d-dbf0-45e8-ba86-e1ab0897db31> ;
 	mo:conductor <http://musicbrainz.org/artist/4308fdc4-7f8a-42f0-aaea-a8b397da5e3c> ;
-	mo:engineer <http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00> ;
 	mo:lead_singer <http://musicbrainz.org/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
 	mo:performer <http://musicbrainz.org/artist/a75df285-0e05-4d81-9939-5f86f15babf9> ;
-	mo:producer <http://musicbrainz.org/artist/73e0693d-dbf0-45e8-ba86-e1ab0897db31> ;
 	mo:recorded_as <urn:bluemarine:signal:ymcpi_xh5XXJbKr2dT8CG2-vuFQ=> .
 
 <urn:bluemarine:performance:ae664f24-1169-44cd-b0e9-f7bc1e6bfe33> a mo:Performance ;
@@ -5199,10 +5199,10 @@
 	mo:recorded_as <urn:bluemarine:signal:g9ZhJ7RqmLsi_fkQcyQkdju-1TY=> .
 
 <urn:bluemarine:performance:b095fcff-d61b-4a5f-94cf-b7fee6dceb7c> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/37f36853-de8b-41ea-9e41-4e09b1dca19b> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/37f36853-de8b-41ea-9e41-4e09b1dca19b> ;
+	bmmo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> ;
 	mo:performer <http://musicbrainz.org/artist/88b4ad33-63ba-4923-947e-26a720631156> ;
-	mo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> ;
 	mo:recorded_as <urn:bluemarine:signal:OrWDmzqNf33nrXDVAQjDNs48JpQ=> .
 
 <urn:bluemarine:performance:b2ba1a31-502c-46e2-afc1-60939dcab909> a mo:Performance ;
@@ -5238,13 +5238,13 @@
 	mo:recorded_as <urn:bluemarine:signal:QwpAvXchAXkoxByYp4x0kYwQ1aY=> .
 
 <urn:bluemarine:performance:b5874be7-fc30-40a1-b596-0223914b41e3> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
+	bmmo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:conductor <http://musicbrainz.org/artist/39e84597-3e0f-4ccc-89d2-6ee1dd6fb050> ;
-	mo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
-	mo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	mo:performer <http://musicbrainz.org/artist/02bd2dff-f337-4788-9e75-0eb6beb932ac> , <http://musicbrainz.org/artist/3f221c60-2568-40f5-b1c3-625fed319258> , <http://musicbrainz.org/artist/8a4ad33e-7498-4d7b-b99c-af880214ead3> , <http://musicbrainz.org/artist/9e1ed6df-3402-41ed-acdb-d93648f7d504> ;
-	mo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:recorded_as <urn:bluemarine:signal:pBjS2UBvw2tVNd6KVaFwNKMvCUY=> .
 
 <urn:bluemarine:performance:b6185fad-e5d4-4b6f-9ead-07f312bf70d0> a mo:Performance ;
@@ -5266,20 +5266,20 @@
 	mo:recorded_as <urn:bluemarine:signal:6W1TrE_zAZqlCEnFNM0hhCHWYq4=> .
 
 <urn:bluemarine:performance:bba07143-4810-40eb-a90b-8bc9d0f21a4d> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/37f36853-de8b-41ea-9e41-4e09b1dca19b> ;
+	bmmo:editor <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:engineer <http://musicbrainz.org/artist/ac1b3506-062f-48e0-9069-332ceaa09af7> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/37f36853-de8b-41ea-9e41-4e09b1dca19b> ;
+	bmmo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> , <http://musicbrainz.org/artist/c361fe8c-dd1d-4fe5-93b2-c6f39de9e3a9> ;
 	mo:conductor <http://musicbrainz.org/artist/9f83001a-fd49-4efb-a835-05ee6922a10d> ;
-	mo:editor <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
-	mo:engineer <http://musicbrainz.org/artist/ac1b3506-062f-48e0-9069-332ceaa09af7> ;
 	mo:performer <http://musicbrainz.org/artist/d770374d-05e9-4ed3-a068-3fbd4e6e4dd6> ;
-	mo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> , <http://musicbrainz.org/artist/c361fe8c-dd1d-4fe5-93b2-c6f39de9e3a9> ;
 	mo:recorded_as <urn:bluemarine:signal:SZCxc3mSK1TNfSHRHyODxWCyqTQ=> .
 
 <urn:bluemarine:performance:bca0bf70-be81-4aa3-97ab-df7910213ccb> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:AERzc66pZJnwJ_uBpgDFke80ou4=> .
 
 <urn:bluemarine:performance:bca3efd4-9eef-4526-ab9e-35a28a8238d4> a mo:Performance ;
@@ -5306,13 +5306,13 @@
 	mo:soprano <http://musicbrainz.org/artist/9dee40b2-25ad-404c-9c9a-139feffd4b57> .
 
 <urn:bluemarine:performance:bef898a9-1a3a-406c-966e-2fb91b992aa4> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
+	bmmo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:conductor <http://musicbrainz.org/artist/39e84597-3e0f-4ccc-89d2-6ee1dd6fb050> ;
-	mo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
-	mo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	mo:performer <http://musicbrainz.org/artist/02bd2dff-f337-4788-9e75-0eb6beb932ac> , <http://musicbrainz.org/artist/3f221c60-2568-40f5-b1c3-625fed319258> , <http://musicbrainz.org/artist/8a4ad33e-7498-4d7b-b99c-af880214ead3> , <http://musicbrainz.org/artist/9e1ed6df-3402-41ed-acdb-d93648f7d504> ;
-	mo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:recorded_as <urn:bluemarine:signal:8dXFk-49-4iPrDMYH14y9tOHf98=> .
 
 <urn:bluemarine:performance:c0767428-d55f-47f4-9ada-5ccd4e05d169> a mo:Performance ;
@@ -5361,12 +5361,12 @@
 	mo:recorded_as <urn:bluemarine:signal:uAzwB7CmnMuaOH2UEIC5UhR-VcU=> .
 
 <urn:bluemarine:performance:cd0ff977-61aa-48a4-828a-4937f18cb018> a mo:Performance ;
+	bmmo:engineer <http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:orchestrator <http://musicbrainz.org/artist/4aa0e893-9c85-4772-837b-89ce36bc5167> ;
+	bmmo:producer <http://musicbrainz.org/artist/73e0693d-dbf0-45e8-ba86-e1ab0897db31> ;
 	mo:conductor <http://musicbrainz.org/artist/4aa0e893-9c85-4772-837b-89ce36bc5167> ;
-	mo:engineer <http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00> ;
 	mo:lead_singer <http://musicbrainz.org/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
-	mo:orchestrator <http://musicbrainz.org/artist/4aa0e893-9c85-4772-837b-89ce36bc5167> ;
-	mo:producer <http://musicbrainz.org/artist/73e0693d-dbf0-45e8-ba86-e1ab0897db31> ;
 	mo:recorded_as <urn:bluemarine:signal:MHOwPmIyiiKbE2PWw35QHfkjIfo=> .
 
 <urn:bluemarine:performance:cd8dcda8-28a3-4992-89f8-849490462052> a mo:Performance ;
@@ -5380,10 +5380,10 @@
 	mo:recorded_as <urn:bluemarine:signal:QnHELsu5mSiOhBEeEVKXvThtUj4=> .
 
 <urn:bluemarine:performance:cf4af11c-b6ea-44cb-8a8e-7fb70eeb24ab> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/37f36853-de8b-41ea-9e41-4e09b1dca19b> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/37f36853-de8b-41ea-9e41-4e09b1dca19b> ;
+	bmmo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> ;
 	mo:performer <http://musicbrainz.org/artist/88b4ad33-63ba-4923-947e-26a720631156> ;
-	mo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> ;
 	mo:recorded_as <urn:bluemarine:signal:ytniPc_hv-OHalBfBmC1O2mp_7E=> .
 
 <urn:bluemarine:performance:cfdff517-a874-4430-8e81-800497ded877> a mo:Performance ;
@@ -5393,27 +5393,27 @@
 
 <urn:bluemarine:performance:d043a2e8-97fd-4f29-a050-5bac6e574bb4> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:gnsgRnEkSsj9jxdhZSOtnijdelc=> .
 
 <urn:bluemarine:performance:d0d9f505-3b3b-4c8f-8c64-c23b6bfa8754> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> , <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:conductor <http://musicbrainz.org/artist/d2ced2f1-6b58-47cf-ae87-5943e2ab6d99> ;
 	mo:performer <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> , <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:recorded_as <urn:bluemarine:signal:xKkeG2D3FuyKbkfuhfuVGUVb_aQ=> .
 
 <urn:bluemarine:performance:d260d097-3d4f-4a25-b86b-8c161b6d775c> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
+	bmmo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:conductor <http://musicbrainz.org/artist/39e84597-3e0f-4ccc-89d2-6ee1dd6fb050> ;
-	mo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
-	mo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	mo:performer <http://musicbrainz.org/artist/02bd2dff-f337-4788-9e75-0eb6beb932ac> , <http://musicbrainz.org/artist/3f221c60-2568-40f5-b1c3-625fed319258> , <http://musicbrainz.org/artist/8a4ad33e-7498-4d7b-b99c-af880214ead3> , <http://musicbrainz.org/artist/9e1ed6df-3402-41ed-acdb-d93648f7d504> ;
-	mo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:recorded_as <urn:bluemarine:signal:RwUgODXQhK8z-f4cz5-mmKUoloc=> .
 
 <urn:bluemarine:performance:d3a73301-58ac-4adc-8893-29454fdc32a2> a mo:Performance ;
@@ -5423,9 +5423,9 @@
 	mo:recorded_as <urn:bluemarine:signal:n1ZLU7Y0ckmKmFXnjyCEnuVba7Y=> .
 
 <urn:bluemarine:performance:dac288ab-8d15-4a13-861d-0cf6d17bc6c3> a mo:Performance ;
+	bmmo:baritone <http://musicbrainz.org/artist/e8762e31-b9c7-46c3-b47b-3c8c1fad59ed> ;
+	bmmo:bass <http://musicbrainz.org/artist/43c25386-cb37-4b6d-8a56-98ff2a1e0a30> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:baritone <http://musicbrainz.org/artist/e8762e31-b9c7-46c3-b47b-3c8c1fad59ed> ;
-	mo:bass <http://musicbrainz.org/artist/43c25386-cb37-4b6d-8a56-98ff2a1e0a30> ;
 	mo:conductor <http://musicbrainz.org/artist/1332d94d-19c5-4895-8e39-f6dc04836eba> ;
 	mo:performer <http://musicbrainz.org/artist/9a563a72-61ae-4b06-a9a9-6328e62d7ab0> ;
 	mo:recorded_as <urn:bluemarine:signal:ZprH63lLO6_yulD3TT3QcnmXBqU=> ;
@@ -5438,21 +5438,21 @@
 	mo:recorded_as <urn:bluemarine:signal:6Tr9cNabeT0wWc5YSRiypN37eN0=> .
 
 <urn:bluemarine:performance:dc3a86c6-b108-49af-8e0a-15f9e741c655> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/b424c64e-7ec7-42cd-bd0d-d70ac18c9409> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/b424c64e-7ec7-42cd-bd0d-d70ac18c9409> ;
+	bmmo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> ;
 	mo:conductor <http://musicbrainz.org/artist/edba9279-b24b-4e0c-9172-2b016cdcbc1e> ;
 	mo:performer <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/96c1ae3f-3de7-4f1b-8008-558de81451c9> ;
 	mo:recorded_as <urn:bluemarine:signal:hqNUBgW2K511qsOlVhM3XjLycZ0=> .
 
 <urn:bluemarine:performance:dc4d8728-d3a0-4fdc-8003-65406430f3bb> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
+	bmmo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:conductor <http://musicbrainz.org/artist/39e84597-3e0f-4ccc-89d2-6ee1dd6fb050> ;
-	mo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
-	mo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	mo:performer <http://musicbrainz.org/artist/02bd2dff-f337-4788-9e75-0eb6beb932ac> , <http://musicbrainz.org/artist/3f221c60-2568-40f5-b1c3-625fed319258> , <http://musicbrainz.org/artist/8a4ad33e-7498-4d7b-b99c-af880214ead3> , <http://musicbrainz.org/artist/9e1ed6df-3402-41ed-acdb-d93648f7d504> ;
-	mo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:recorded_as <urn:bluemarine:signal:gPrRD-D4tGGYR0LrsG2QPVQHsYk=> .
 
 <urn:bluemarine:performance:dc542eed-14f7-4330-aa9e-1d7370619971> a mo:Performance ;
@@ -5475,9 +5475,9 @@
 
 <urn:bluemarine:performance:dfc90b2e-36ca-4776-a163-7bc8c53f18fa> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:4CLwBYrtvgMR5NVO6l7dh_l_DoA=> .
 
 <urn:bluemarine:performance:e1410687-7f92-4503-921b-1ea22e028482> a mo:Performance ;
@@ -5486,11 +5486,11 @@
 	mo:recorded_as <urn:bluemarine:signal:IgY2cgec7rJCc6YdxRZLrxvZ-gI=> .
 
 <urn:bluemarine:performance:e1627465-e8b5-4901-9c6c-f80061d90f01> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/fe66809b-d4d6-4566-892e-1dc86442a274> ;
+	bmmo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> , <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:conductor <http://musicbrainz.org/artist/d2ced2f1-6b58-47cf-ae87-5943e2ab6d99> ;
 	mo:performer <http://musicbrainz.org/artist/dea28aa9-1086-4ffa-8739-0ccc759de1ce> ;
-	mo:producer <http://musicbrainz.org/artist/5c6b2546-8220-40ca-890d-efe5fd615242> , <http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24> ;
 	mo:recorded_as <urn:bluemarine:signal:qdtsq_x07YQxCGkk7-EgH_gxWHc=> .
 
 <urn:bluemarine:performance:e17b92f4-1ec5-4441-865b-527be0548e60> a mo:Performance ;
@@ -5513,9 +5513,9 @@
 
 <urn:bluemarine:performance:e4ce2c6a-4ff4-41ed-8238-e8aa71be8ff4> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:6CEly5ZrmV_v9hg4uIBBIwip6kA=> .
 
 <urn:bluemarine:performance:e55ec759-b6fe-4446-a256-8c6336d1c6e1> a mo:Performance ;
@@ -5525,23 +5525,23 @@
 	mo:recorded_as <urn:bluemarine:signal:Bk_J_RYPE1rw2bW1KZsaHFdALGQ=> .
 
 <urn:bluemarine:performance:e5d2dc67-9c22-4aa0-9340-b7285d5886c6> a mo:Performance ;
+	bmmo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
+	bmmo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:balance <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
+	bmmo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:conductor <http://musicbrainz.org/artist/39e84597-3e0f-4ccc-89d2-6ee1dd6fb050> ;
-	mo:editor <http://musicbrainz.org/artist/1d39cb6c-8454-4539-8de6-f8c2033143fe> ;
-	mo:engineer <http://musicbrainz.org/artist/8ff215bb-e874-4724-a891-2574f5c4cb69> , <http://musicbrainz.org/artist/e2f8047c-2bb7-4374-9d61-6951af471537> ;
 	mo:performer <http://musicbrainz.org/artist/02bd2dff-f337-4788-9e75-0eb6beb932ac> , <http://musicbrainz.org/artist/1a3d13e8-12f6-4705-8303-fe92161383c5> , <http://musicbrainz.org/artist/3f221c60-2568-40f5-b1c3-625fed319258> , <http://musicbrainz.org/artist/8a4ad33e-7498-4d7b-b99c-af880214ead3> , <http://musicbrainz.org/artist/9a95741e-fb45-4013-80b4-59bf910b98cd> , <http://musicbrainz.org/artist/9e1ed6df-3402-41ed-acdb-d93648f7d504> , <http://musicbrainz.org/artist/c097618f-c746-40c0-a700-c5a399c0da41> ;
-	mo:producer <http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680> ;
 	mo:recorded_as <urn:bluemarine:signal:b2ySEVS4uA92uiG37Ic4YHa0eb0=> .
 
 <urn:bluemarine:performance:e636c2c8-d1cb-493d-a576-9091995f5202> a mo:Performance ;
+	bmmo:arranger <http://musicbrainz.org/artist/5146db52-8ac5-44e9-a89a-affdb76bbb0c> ;
+	bmmo:engineer <http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00> ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	mo:arranger <http://musicbrainz.org/artist/5146db52-8ac5-44e9-a89a-affdb76bbb0c> ;
+	bmmo:producer <http://musicbrainz.org/artist/73e0693d-dbf0-45e8-ba86-e1ab0897db31> ;
 	mo:conductor <http://musicbrainz.org/artist/5146db52-8ac5-44e9-a89a-affdb76bbb0c> ;
-	mo:engineer <http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00> ;
 	mo:lead_singer <http://musicbrainz.org/artist/54799c0e-eb45-4eea-996d-c4d71a63c499> ;
 	mo:performer <http://musicbrainz.org/artist/5ccd3ed0-9a0e-412e-93b4-9ad5dd151547> ;
-	mo:producer <http://musicbrainz.org/artist/73e0693d-dbf0-45e8-ba86-e1ab0897db31> ;
 	mo:recorded_as <urn:bluemarine:signal:sXVWI6g43RsgJ5aLBJysSDJ7qMQ=> .
 
 <urn:bluemarine:performance:e641337b-dca0-4c98-9c88-60551e4c5679> a mo:Performance ;
@@ -5598,9 +5598,9 @@
 
 <urn:bluemarine:performance:f02ab5e4-ee8f-46f7-8c83-85627a8d717f> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:3q9hep8-iZvsItVlUNshi1cMRk0=> .
 
 <urn:bluemarine:performance:f0c6d040-0630-4e7a-88e3-38cef9abc484> a mo:Performance ;
@@ -5658,9 +5658,9 @@
 
 <urn:bluemarine:performance:fe4588cf-9051-44bc-9399-b395ca957808> a mo:Performance ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
+	bmmo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:conductor <http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0> ;
 	mo:performer <http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184> ;
-	mo:producer <http://musicbrainz.org/artist/a9101708-5321-4445-a3d0-780d032b51b0> ;
 	mo:recorded_as <urn:bluemarine:signal:g05hCJEL57p-cRbPOkv2ApJnuec=> .
 
 <urn:bluemarine:signal:-Kfjllsujd9kOxwydl6eujlBzPg=> mo:published_as <http://musicbrainz.org/track/ddd6c70f-0a41-3b33-baed-797304750c83> , <http://musicbrainz.org/track/ecdea037-eb21-4087-9181-e3c24e58d762> .
