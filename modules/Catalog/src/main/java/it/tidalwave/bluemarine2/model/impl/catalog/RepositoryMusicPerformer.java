@@ -38,7 +38,6 @@ import it.tidalwave.bluemarine2.model.role.Entity;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
 import org.eclipse.rdf4j.query.BindingSet;
 import org.eclipse.rdf4j.repository.Repository;
 
@@ -49,7 +48,6 @@ import org.eclipse.rdf4j.repository.Repository;
  *
  **********************************************************************************************************************/
 @Getter @EqualsAndHashCode @ToString
-@Slf4j
 public class RepositoryMusicPerformer implements MusicPerformer
   {
     @Nonnull
@@ -64,7 +62,6 @@ public class RepositoryMusicPerformer implements MusicPerformer
     public RepositoryMusicPerformer (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
         this.musicArtist = new RepositoryMusicArtist(repository, bindingSet);
-        log.info("ZZZZ BINDING NAMES {}", bindingSet.getBindingNames());
         final Optional<String> r = Optional.of(bindingSet.getBinding("role").getValue().stringValue());
         this.role = r.map(RepositoryMusicPerformerRole::new);
       }
