@@ -63,6 +63,7 @@ import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 import it.tidalwave.bluemarine2.model.Track;
+import java.util.HashMap;
 
 /***********************************************************************************************************************
  *
@@ -135,9 +136,10 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         final List<? extends Record> records = allRecordsFinder.stream().sorted(BY_RDFS_LABEL).collect(toList());
 
         pw.printf("ALL TRACKS (%d):\n\n", allTracksFinder.count());
-        final Map<String, Track> allTracks = allTracksFinder.stream()
+        final Map<String, Track> tracksOrphanOfArtist = allTracksFinder.stream()
                                                             .collect(toMap(Track::toString, Function.identity()));
-        allTracks.values().stream().sorted(BY_RDFS_LABEL).forEach(track -> pw.printf("  %s\n", track));
+        final Map<String, Track> tracksOrphanOfRecord = new HashMap<>(tracksOrphanOfArtist);
+        tracksOrphanOfArtist.values().stream().sorted(BY_RDFS_LABEL).forEach(track -> pw.printf("  %s\n", track));
 
         pw.printf("\n\n\nALL RECORDS (%d):\n\n", allRecordsFinder.count());
         records.forEach(artist -> pw.printf("%s\n", artist));
@@ -152,18 +154,19 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
             artistTracksFinder.stream().forEach(track ->
               {
                 pw.printf("  %s\n", track);
-                allTracks.remove(track.toString());
+                tracksOrphanOfArtist.remove(track.toString());
               });
           });
 
         records.forEach(record ->
           {
+            pw.printf("\nRECORD %s:\n", record);
             final TrackFinder recordTrackFinder = record.findTracks().withSource(source);
-            pw.printf("\nTRACKS IN %s (%d):\n", record, recordTrackFinder.count());
+            pw.printf("  TRACKS (%d):\n", recordTrackFinder.count());
             recordTrackFinder.stream().forEach(track ->
               {
-                pw.printf("  %s\n", track);
-//                allTracks.remove(track.toString()); FIXME: check orphans of Record too
+                pw.printf("    %s\n", track);
+                tracksOrphanOfRecord.remove(track.toString());
               });
           });
 
@@ -177,8 +180,11 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
               });
           });
 
-        pw.println("\n\nORPHANED TRACKS:\n");
-        allTracks.values().stream().sorted(BY_RDFS_LABEL).forEach(track -> pw.printf("  %s\n", track));
+        pw.printf("\n\nTRACKS ORPHAN OF ARTIST (%d):\n\n", tracksOrphanOfArtist.size());
+        tracksOrphanOfArtist.values().stream().sorted(BY_RDFS_LABEL).forEach(track -> pw.printf("  %s\n", track));
+
+        pw.printf("\n\nTRACKS ORPHAN OF RECORD (%d):\n\n", tracksOrphanOfRecord.size());
+        tracksOrphanOfRecord.values().stream().sorted(BY_RDFS_LABEL).forEach(track -> pw.printf("  %s\n", track));
 
         pw.close();
       }
