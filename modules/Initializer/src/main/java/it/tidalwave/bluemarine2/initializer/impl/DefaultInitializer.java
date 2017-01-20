@@ -118,6 +118,9 @@ public class DefaultInitializer implements Initializer
             case "windows":
                 s += "/.blueMarine2";
                 break;
+
+            default:
+                throw new IllegalStateException("Unknown o.s.: " + osName);
           }
 
         return Paths.get(s);
