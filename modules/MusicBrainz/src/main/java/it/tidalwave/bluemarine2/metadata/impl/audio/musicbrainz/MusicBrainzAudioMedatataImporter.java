@@ -127,37 +127,36 @@ public class MusicBrainzAudioMedatataImporter
      ******************************************************************************************************************/
     static
       {
-        PERFORMER_MAP.put("chorus master",                      MO.P_CONDUCTOR);
-        PERFORMER_MAP.put("conductor",                          MO.P_CONDUCTOR);
-        PERFORMER_MAP.put("performer",                          MO.P_PERFORMER);
-        PERFORMER_MAP.put("performing orchestra",               MO.P_PERFORMER); // FIXME: should be P_ORCHESTRA
-
         PERFORMER_MAP.put("arranger",                           BM.P_ARRANGER);
         PERFORMER_MAP.put("balance",                            BM.P_BALANCE);
+        PERFORMER_MAP.put("chorus master",                      BM.P_CHORUS_MASTER);
+        PERFORMER_MAP.put("conductor",                          MO.P_CONDUCTOR);
         PERFORMER_MAP.put("editor",                             BM.P_EDITOR);
-        PERFORMER_MAP.put("engineer",                           BM.P_ENGINEER);
+        PERFORMER_MAP.put("engineer",                           MO.P_ENGINEER);
         PERFORMER_MAP.put("instrument arranger",                BM.P_ARRANGER);
-        PERFORMER_MAP.put("mastering",                          BM.P_MIX);
+        PERFORMER_MAP.put("mastering",                          BM.P_MASTERING);
         PERFORMER_MAP.put("mix",                                BM.P_MIX);
-        PERFORMER_MAP.put("remixer",                            BM.P_MIX);
         PERFORMER_MAP.put("orchestrator",                       BM.P_ORCHESTRATOR);
-        PERFORMER_MAP.put("producer",                           BM.P_PRODUCER);
+        PERFORMER_MAP.put("performer",                          MO.P_PERFORMER);
+        PERFORMER_MAP.put("performing orchestra",               BM.P_ORCHESTRA);
+        PERFORMER_MAP.put("producer",                           MO.P_PRODUCER);
         PERFORMER_MAP.put("programming",                        BM.P_PROGRAMMING);
         PERFORMER_MAP.put("recording",                          BM.P_RECORDING);
-        PERFORMER_MAP.put("sound",                              BM.P_ENGINEER);
+        PERFORMER_MAP.put("remixer",                            BM.P_MIX);
+        PERFORMER_MAP.put("sound",                              MO.P_ENGINEER);
 
         PERFORMER_MAP.put("vocal",                              MO.P_SINGER);
         PERFORMER_MAP.put("vocal/additional",                   BM.P_BACKGROUND_SINGER);
         PERFORMER_MAP.put("vocal/background vocals",            BM.P_BACKGROUND_SINGER);
         PERFORMER_MAP.put("vocal/baritone vocals",              BM.P_BARITONE);
         PERFORMER_MAP.put("vocal/bass vocals",                  BM.P_BASS);
-        PERFORMER_MAP.put("vocal/choir vocals",                 MO.P_CHOIR);
+        PERFORMER_MAP.put("vocal/choir vocals",                 BM.P_CHOIR);
         PERFORMER_MAP.put("vocal/guest",                        MO.P_SINGER);
-        PERFORMER_MAP.put("vocal/lead vocals",                  MO.P_LEAD_SINGER);
+        PERFORMER_MAP.put("vocal/lead vocals",                  BM.P_LEAD_SINGER);
         PERFORMER_MAP.put("vocal/mezzo-soprano vocals",         BM.P_MEZZO_SOPRANO);
         PERFORMER_MAP.put("vocal/other vocals",                 BM.P_BACKGROUND_SINGER);
-        PERFORMER_MAP.put("vocal/solo",                         MO.P_LEAD_SINGER);
-        PERFORMER_MAP.put("vocal/soprano vocals",               MO.P_SOPRANO);
+        PERFORMER_MAP.put("vocal/solo",                         BM.P_LEAD_SINGER);
+        PERFORMER_MAP.put("vocal/soprano vocals",               BM.P_SOPRANO);
         PERFORMER_MAP.put("vocal/spoken vocals",                MO.P_SINGER);
 
         PERFORMER_MAP.put("instrument",                         MO.P_PERFORMER);

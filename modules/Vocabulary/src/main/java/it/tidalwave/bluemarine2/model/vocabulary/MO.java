@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.model.vocabulary;
 
+import static it.tidalwave.bluemarine2.model.vocabulary.BM.PREFIX;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.eclipse.rdf4j.model.IRI;
@@ -80,13 +81,12 @@ public final class MO
     public static final String S_P_TRACK_COUNT      = PREFIX + "track_count";
     public static final String S_P_TRACK_NUMBER     = PREFIX + "track_number";
 
-    public static final String S_P_CHOIR            = PREFIX + "choir";
     public static final String S_P_CONDUCTOR        = PREFIX + "conductor";
-    public static final String S_P_LEAD_SINGER      = PREFIX + "lead_singer";
+    public static final String S_P_ENGINEER         = PREFIX + "engineer";
     public static final String S_P_PERFORMER        = PREFIX + "performer";
+    public static final String S_P_PRODUCER         = PREFIX + "producer";
     public static final String S_P_RECORDED_AS      = PREFIX + "recorded_as";
     public static final String S_P_SINGER           = PREFIX + "singer";
-    public static final String S_P_SOPRANO          = PREFIX + "soprano";
 
     public static final IRI P_AMAZON_ASIN           = FACTORY.createIRI(S_P_AMAZON_ASIN);
     public static final IRI P_BITS_PER_SAMPLE       = FACTORY.createIRI(S_P_BITS_PER_SAMPLE);
@@ -101,11 +101,10 @@ public final class MO
     public static final IRI P_TRACK_COUNT           = FACTORY.createIRI(S_P_TRACK_COUNT);
     public static final IRI P_TRACK_NUMBER          = FACTORY.createIRI(S_P_TRACK_NUMBER);
 
-    public static final IRI P_CHOIR                 = FACTORY.createIRI(S_P_CHOIR);
     public static final IRI P_CONDUCTOR             = FACTORY.createIRI(S_P_CONDUCTOR);
-    public static final IRI P_LEAD_SINGER           = FACTORY.createIRI(S_P_LEAD_SINGER);
+    public static final IRI P_ENGINEER              = FACTORY.createIRI(S_P_ENGINEER);
     public static final IRI P_PERFORMER             = FACTORY.createIRI(S_P_PERFORMER);
+    public static final IRI P_PRODUCER              = FACTORY.createIRI(S_P_PRODUCER);
     public static final IRI P_RECORDED_AS           = FACTORY.createIRI(S_P_RECORDED_AS);
     public static final IRI P_SINGER                = FACTORY.createIRI(S_P_SINGER);
-    public static final IRI P_SOPRANO               = FACTORY.createIRI(S_P_SOPRANO);
   }
