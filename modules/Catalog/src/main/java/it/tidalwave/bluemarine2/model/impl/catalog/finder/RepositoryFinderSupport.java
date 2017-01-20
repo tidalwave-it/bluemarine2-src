@@ -69,8 +69,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static it.tidalwave.bluemarine2.model.impl.catalog.finder.Rdf4jUtilities.*;
-import static it.tidalwave.bluemarine2.model.vocabulary.BM.O_EMBEDDED;
+import static it.tidalwave.bluemarine2.util.RdfUtilities.streamOf;
+import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
 
 /***********************************************************************************************************************
  *
