@@ -42,11 +42,9 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 import lombok.extern.slf4j.Slf4j;
-import static java.util.Comparator.comparing;
-import static java.util.stream.Collectors.joining;
-import static java.nio.charset.StandardCharsets.UTF_8;
-import static java.util.Comparator.comparing;
-import static java.util.stream.Collectors.joining;
+import static java.nio.charset.StandardCharsets.*;
+import static java.util.Comparator.*;
+import static java.util.stream.Collectors.*;
 
 /***********************************************************************************************************************
  *
