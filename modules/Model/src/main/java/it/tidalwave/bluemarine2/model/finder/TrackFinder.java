@@ -37,28 +37,29 @@ import it.tidalwave.bluemarine2.model.Track;
 /***********************************************************************************************************************
  *
  * @stereotype      Finder
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface TrackFinder extends ExtendedFinder8Support<Track, TrackFinder>
+public interface TrackFinder extends BaseFinder<Track, TrackFinder>,
+                                     ExtendedFinder8Support<Track, TrackFinder>
   {
     /*******************************************************************************************************************
      *
      * Constrains the search to records made by the given artist.
-     * 
+     *
      * @param       artist      the artist
      * @return      the {@code Finder}
      *
      ******************************************************************************************************************/
     @Nonnull
     public TrackFinder madeBy (@Nonnull MusicArtist artist);
-    
+
     /*******************************************************************************************************************
      *
      * Constrains the search to tracks contained in the given record.
-     * 
+     *
      * @param       record      the record
      * @return      the {@code Finder}
      *

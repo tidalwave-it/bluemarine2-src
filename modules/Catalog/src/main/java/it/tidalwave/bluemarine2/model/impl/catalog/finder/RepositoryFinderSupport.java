@@ -58,6 +58,7 @@ import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.Task;
 import it.tidalwave.util.spi.ReflectionUtils;
 import it.tidalwave.role.ContextManager;
+import it.tidalwave.bluemarine2.model.finder.BaseFinder;
 import it.tidalwave.bluemarine2.model.spi.CacheManager;
 import it.tidalwave.bluemarine2.model.spi.CacheManager.Cache;
 import it.tidalwave.bluemarine2.model.impl.catalog.factory.RepositoryEntityFactory;
@@ -69,6 +70,7 @@ import lombok.ToString;
 import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.bluemarine2.model.impl.catalog.finder.Rdf4jUtilities.*;
+import static it.tidalwave.bluemarine2.model.vocabulary.BM.O_EMBEDDED;
 
 /***********************************************************************************************************************
  *
@@ -84,8 +86,9 @@ import static it.tidalwave.bluemarine2.model.impl.catalog.finder.Rdf4jUtilities.
  *
  **********************************************************************************************************************/
 @Configurable @Slf4j
-public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
-              extends Finder8Support<ENTITY, FINDER>
+public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
+        extends Finder8Support<ENTITY, FINDER>
+        implements BaseFinder<ENTITY, FINDER>
   {
     private static final String REGEX_BINDING_TAG = "^@([A-Za-z0-9]*)@";
 
@@ -94,7 +97,7 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
     private static final String PREFIXES = "PREFIX foaf:  <http://xmlns.com/foaf/0.1/>\n"
                                          + "PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                                          + "PREFIX rel:   <http://purl.org/vocab/relationship/>\n"
-                                         + "PREFIX bm:    <http://bluemarine.tidalwave.it/2015/04/mo/>\n"
+                                         + "PREFIX bmmo:  <http://bluemarine.tidalwave.it/2015/04/mo/>\n"
                                          + "PREFIX mo:    <http://purl.org/ontology/mo/>\n"
                                          + "PREFIX vocab: <http://dbtune.org/musicbrainz/resource/vocab/>\n"
                                          + "PREFIX xs:    <http://www.w3.org/2001/XMLSchema#>\n";
@@ -108,6 +111,9 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
 
     @Nonnull
     private final Class<ENTITY> entityClass;
+
+    @Nonnull
+    private final Optional<IRI> source;
 
     @Inject
     private ContextManager contextManager;
@@ -133,7 +139,7 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
         private final List<Object> parameters = new ArrayList<>();
 
         @Nonnull
-        public QueryAndParameters withParameter (final @Nonnull String name, final @Nonnull Optional<Value> value)
+        public QueryAndParameters withParameter (final @Nonnull String name, final @Nonnull Optional<? extends Value> value)
           {
             return value.map(v -> withParameter(name, v)).orElse(this);
           }
@@ -169,6 +175,19 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
       {
         this.repository = repository;
         this.entityClass = (Class<ENTITY>)ReflectionUtils.getTypeArguments(RepositoryFinderSupport.class, getClass()).get(0);
+        this.source = Optional.of(O_EMBEDDED); // FIXME: resets
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    private RepositoryFinderSupport (final @Nonnull Repository repository, final @Nonnull Class<ENTITY> entityClass, final @Nonnull IRI source)
+      {
+        this.repository = repository;
+        this.entityClass = entityClass;
+        this.source = Optional.of(source);
       }
 
     /*******************************************************************************************************************
@@ -176,13 +195,14 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
      * Clone constructor.
      *
      ******************************************************************************************************************/
-    protected RepositoryFinderSupport (final @Nonnull RepositoryFinderSupport<ENTITY, FINDER> other,
-                                       final @Nonnull Object override)
+    public RepositoryFinderSupport (final @Nonnull RepositoryFinderSupport<ENTITY, FINDER> other,
+                                    final @Nonnull Object override)
       {
         super(other, override);
         final RepositoryFinderSupport<ENTITY, FINDER> source = getSource(RepositoryFinderSupport.class, other, override);
         this.repository = source.repository;
         this.entityClass = source.entityClass;
+        this.source = source.source;
      }
 
     /*******************************************************************************************************************
@@ -213,13 +233,38 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
 
     /*******************************************************************************************************************
      *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public FINDER importedFrom (final @Nonnull Optional<Id> optionalSource)
+      {
+        return optionalSource.map(this::importedFrom).orElse((FINDER)this);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public FINDER importedFrom (final @Nonnull Id source)
+      {
+        return clone(new RepositoryFinderSupport(repository, entityClass, SimpleValueFactory.getInstance().createIRI(source.toString())));
+      }
+
+    /*******************************************************************************************************************
+     *
      * Prepares the SPARQL query and its parameters.
      *
      * @return      the SPARQL query and its parameters
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected abstract QueryAndParameters prepareQuery();
+    protected /* abstract */ QueryAndParameters prepareQuery()
+      {
+        throw new UnsupportedOperationException("Must be implemented by subclasses");
+      }
 
     /*******************************************************************************************************************
      *
@@ -238,7 +283,7 @@ public abstract class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENT
       {
         log.info("query() - {}", entityClass);
         final long baseTime = System.nanoTime();
-        final QueryAndParameters queryAndParameters = prepareQuery();
+        final QueryAndParameters queryAndParameters = prepareQuery().withParameter("source", source);
         final Object[] parameters = queryAndParameters.getParameters();
         final String originalSparql = sparqlSelector.apply(queryAndParameters);
         final String sparql = PREFIXES + Stream.of(originalSparql.split("\n"))
