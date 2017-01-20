@@ -53,7 +53,7 @@
                                 <artifactItem>
                                     <groupId>it.tidalwave.bluemarine2.testsets</groupId>
                                     <artifactId>expected-metadata-iTunes-fg-20160504-2</artifactId>
-                                    <version>${testSet.iTunes-fg-20160504-1.version}</version>
+                                    <version>${testSet.iTunes-fg-20160504-2.version}</version>
                                     <type>zip</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.basedir}/target/metadata</outputDirectory>
@@ -68,8 +68,8 @@
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>it.tidalwave.bluemarine2.testsets</groupId>
-                                    <artifactId>gracenote-metadata-iTunes-fg-20160504-1</artifactId>
-                                    <version>20161220-2050</version>
+                                    <artifactId>gracenote-metadata-iTunes-fg-20160504-2</artifactId>
+                                    <version>20161220-1340</version>
                                     <!--<version>${testSet.iTunes-fg-20160504-2.version}</version>-->
                                     <type>zip</type>
                                     <overWrite>true</overWrite>
