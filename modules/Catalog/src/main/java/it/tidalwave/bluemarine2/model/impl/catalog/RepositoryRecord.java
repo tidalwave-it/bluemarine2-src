@@ -46,9 +46,9 @@ import lombok.extern.slf4j.Slf4j;
 /***********************************************************************************************************************
  *
  * An implementation of {@link Record} that is mapped to a {@link Repository}.
- * 
+ *
  * @stereotype  Datum
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -56,29 +56,41 @@ import lombok.extern.slf4j.Slf4j;
 @Immutable @Getter @Slf4j
 public class RepositoryRecord extends RepositoryEntitySupport implements Record
   {
+    @Getter @Nonnull
+    private final Optional<Integer> trackCount; // FIXME: should be used as a shortcut for queries
+
+    @Getter @Nonnull
+    private final Optional<String> asin;
+
+    @Getter @Nonnull
+    private final Optional<String> gtin;
+
     public RepositoryRecord (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
         super(repository, bindingSet, "record");
+        trackCount = toInteger(bindingSet.getBinding("track_count"));
+        asin = toString(bindingSet.getBinding("asin"));
+        gtin = toString(bindingSet.getBinding("gtin"));
       }
-   
+
     @Override @Nonnull
-    public TrackFinder findTracks() 
+    public TrackFinder findTracks()
       {
         return new RepositoryTrackFinder(repository).inRecord(this);
         // FIXME? sorted in the query - .sort(new TrackComparator());
       }
 
     @Override @Nonnull
-    public Optional<URL> getImageUrl() 
+    public Optional<URL> getImageUrl()
       {
         final List<? extends URL> imageUrls = new RepositoryRecordImageFinder(repository, this).results();
         // FIXME: check - images are ordered by size
         Collections.reverse(imageUrls);
         return imageUrls.isEmpty() ? Optional.empty() : Optional.of(imageUrls.get(0));
       }
-    
+
     @Override @Nonnull
-    public String toString() 
+    public String toString()
       {
         return String.format("RepositoryRecord(rdfs:label=%s, %s)", rdfsLabel, id);
       }

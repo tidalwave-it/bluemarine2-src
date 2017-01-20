@@ -26,62 +26,31 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.impl;
+package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
-import java.net.URL;
-import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.model.Record;
-import it.tidalwave.bluemarine2.model.finder.TrackFinder;
-import it.tidalwave.bluemarine2.model.spi.NamedEntity;
+import org.eclipse.rdf4j.query.BindingSet;
+import org.eclipse.rdf4j.repository.Repository;
+import it.tidalwave.bluemarine2.model.Performance;
+import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicPerformerFinder;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-public class NamedRecord extends NamedEntity implements Record
+public class RepositoryPerformance extends RepositoryEntitySupport implements Performance
   {
-    public NamedRecord (final @Nonnull String displayName)
+    public RepositoryPerformance (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
-        super(displayName);
+        super(repository, bindingSet, "performance");
       }
 
     @Override @Nonnull
-    public TrackFinder findTracks()
+    public MusicPerformerFinder findPerformers()
       {
-        throw new UnsupportedOperationException("Not supported yet."); // FIXME: return empty finder
-      }
-
-    @Override @Nonnull
-    public Optional<URL> getImageUrl()
-      {
-        return Optional.empty();
-      }
-
-    @Override @Nonnull
-    public Id getId()
-      {
-        throw new UnsupportedOperationException("Not supported yet."); // FIXME
-      }
-
-    @Override
-    public Optional<Id> getSource()
-      {
-        return Optional.empty();
-      }
-
-    @Override
-    public Optional<String> getAsin()
-      {
-        return Optional.empty();
-      }
-
-    @Override
-    public Optional<String> getGtin()
-      {
-        return Optional.empty();
+        return new RepositoryMusicPerformerFinder(repository).importedFrom(source).performerOf(this);
       }
   }

@@ -31,47 +31,27 @@ package it.tidalwave.bluemarine2.model;
 import javax.annotation.Nonnull;
 import java.util.Optional;
 import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.role.Entity;
 
 /***********************************************************************************************************************
- *
- * NOTE: a Track is an abstract concept - it is associated to MediaItems (as AudioFiles), but it's not a MediaItem.
  *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Track extends Entity, Identifiable
+public interface MusicPerformer extends Entity, Identifiable
   {
-    public static final Class<Track> Track = Track.class;
+    public static final Class<MusicPerformer> MusicPerformer = MusicPerformer.class;
 
     /*******************************************************************************************************************
      *
-     * Returns the {@link Metadata}.
-     *
-     * @return  the metadata
-     *
      ******************************************************************************************************************/
     @Nonnull
-    public Metadata getMetadata();
+    public MusicArtist getMusicArtist();
 
     /*******************************************************************************************************************
      *
-     * Returns the record that contains this track
-     *
-     * @return  the record
-     *
      ******************************************************************************************************************/
     @Nonnull
-    public Optional<Record> getRecord();
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Optional<Performance> getPerformance();
+    public Optional<Entity> getRole();
   }
