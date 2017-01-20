@@ -120,7 +120,7 @@ public class DefaultInitializer implements Initializer
                 break;
 
             default:
-                throw new IllegalArgumentException("Unsupported operating system: " + osName);
+                throw new IllegalStateException("Unknown o.s.: " + osName);
           }
 
         return Paths.get(s);
