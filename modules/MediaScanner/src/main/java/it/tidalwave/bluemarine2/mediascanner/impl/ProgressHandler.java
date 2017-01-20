@@ -61,7 +61,7 @@ public class ProgressHandler
         @Nonnegative
         private volatile int done;
 
-        public void reset()
+        public synchronized void reset()
           {
             total = done = 0;
           }
@@ -76,13 +76,13 @@ public class ProgressHandler
             done++;
           }
 
-        public boolean completed()
+        public synchronized boolean completed()
           {
             return done == total;
           }
 
         @Override
-        public String toString()
+        public synchronized String toString()
           {
             return String.format("%d/%d (%d%%)", done, total, (total == 0) ? 0 : (100 * done) / total);
           }
