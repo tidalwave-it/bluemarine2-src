@@ -48,13 +48,13 @@ import org.eclipse.rdf4j.query.TupleQueryResult;
  *
  **********************************************************************************************************************/
 @NotThreadSafe
-public class ImmutableTupleQueryResult implements TupleQueryResult, Cloneable {
-
+public class ImmutableTupleQueryResult implements TupleQueryResult
+  {
     private final Set<String> bindingNames = new LinkedHashSet<>();
 
     private final List<BindingSet> bindingSets = new ArrayList<>();
 
-    private volatile int currentIndex = 0;
+    private int currentIndex = 0;
 
     public ImmutableTupleQueryResult (final TupleQueryResult tqr)
       throws QueryEvaluationException
