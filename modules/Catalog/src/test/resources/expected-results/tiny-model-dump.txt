@@ -17,5 +17,9 @@ TRACKS OF RepositoryMusicArtist(rdfs:label=Aaron Copland, uri=http://dbtune.org/
 RECORDS OF RepositoryMusicArtist(rdfs:label=Aaron Copland, uri=http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09) (0):
 
 
-ORPHANED TRACKS:
+TRACKS ORPHAN OF ARTIST (0):
+
+
+
+TRACKS ORPHAN OF RECORD (0):
 

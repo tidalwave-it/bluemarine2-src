@@ -26,52 +26,28 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
-import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import it.tidalwave.util.spi.AsSupport;
+import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.bluemarine2.model.role.Entity;
+import lombok.experimental.Delegate;
+
 
 /***********************************************************************************************************************
  *
- * NOTE: a Track is an abstract concept - it is associated to MediaItems (as AudioFiles), but it's not a MediaItem.
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-public interface Track extends Entity, Identifiable
+public class RepositoryMusicPerformerRole implements Entity
   {
-    public static final Class<Track> Track = Track.class;
+    @Delegate
+    private final AsSupport asSupport;
 
-    /*******************************************************************************************************************
-     *
-     * Returns the {@link Metadata}.
-     *
-     * @return  the metadata
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Metadata getMetadata();
-
-    /*******************************************************************************************************************
-     *
-     * Returns the record that contains this track
-     *
-     * @return  the record
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Optional<Record> getRecord();
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Optional<Performance> getPerformance();
+    public RepositoryMusicPerformerRole (final @Nonnull String s)
+      {
+        asSupport = new AsSupport(this, new DefaultDisplayable(s));
+      }
   }

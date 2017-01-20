@@ -26,52 +26,68 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
+import java.util.Collection;
 import java.util.Optional;
-import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
+import it.tidalwave.util.Id;
+import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.MusicPerformer;
 import it.tidalwave.bluemarine2.model.role.Entity;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
+import org.eclipse.rdf4j.query.BindingSet;
+import org.eclipse.rdf4j.repository.Repository;
 
 /***********************************************************************************************************************
  *
- * NOTE: a Track is an abstract concept - it is associated to MediaItems (as AudioFiles), but it's not a MediaItem.
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-public interface Track extends Entity, Identifiable
+@Getter @EqualsAndHashCode @ToString
+public class RepositoryMusicPerformer implements MusicPerformer
   {
-    public static final Class<Track> Track = Track.class;
-
-    /*******************************************************************************************************************
-     *
-     * Returns the {@link Metadata}.
-     *
-     * @return  the metadata
-     *
-     ******************************************************************************************************************/
     @Nonnull
-    public Metadata getMetadata();
+    private final MusicArtist musicArtist;
 
-    /*******************************************************************************************************************
-     *
-     * Returns the record that contains this track
-     *
-     * @return  the record
-     *
-     ******************************************************************************************************************/
     @Nonnull
-    public Optional<Record> getRecord();
+    private final Optional<Entity> role;
 
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public Optional<Performance> getPerformance();
+//    @Delegate
+//    private final AsSupport asSupport = new AsSupport(this);
+
+    public RepositoryMusicPerformer (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
+      {
+        this.musicArtist = new RepositoryMusicArtist(repository, bindingSet);
+        final Optional<String> r = Optional.of(bindingSet.getBinding("role").getValue().stringValue());
+        this.role = r.map(RepositoryMusicPerformerRole::new);
+      }
+
+    @Override
+    public Id getId()
+      {
+        return musicArtist.getId();
+      }
+
+    // FIXME: should delegate first to its own AsDelegate and only as a fallaback to MusicArtist
+    @Override
+    public <T> T as(Class<T> type)
+      {
+        return musicArtist.as(type);
+      }
+
+    @Override
+    public <T> T as(Class<T> type, NotFoundBehaviour<T> notFoundBehaviour)
+      {
+        return musicArtist.as(type, notFoundBehaviour);
+      }
+
+    @Override
+    public <T> Collection<T> asMany(Class<T> type)
+      {
+        return musicArtist.asMany(type);
+      }
   }
