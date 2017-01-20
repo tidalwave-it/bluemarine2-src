@@ -32,21 +32,23 @@ import javax.annotation.Nonnull;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.ExtendedFinder8Support;
 import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.Performance;
 
 /***********************************************************************************************************************
  *
  * @stereotype      Finder
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MusicArtistFinder extends ExtendedFinder8Support<MusicArtist, MusicArtistFinder>
+public interface MusicArtistFinder extends BaseFinder<MusicArtist, MusicArtistFinder>,
+                                           ExtendedFinder8Support<MusicArtist, MusicArtistFinder>
   {
     /*******************************************************************************************************************
      *
      * Constrains the search to artists who are makers of the given entity.
-     * 
+     *
      * @return      the {@code Finder}
      *
      ******************************************************************************************************************/

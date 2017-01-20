@@ -110,33 +110,4 @@ public final class MO
     public static final IRI P_LEAD_SINGER           = FACTORY.createIRI(S_P_LEAD_SINGER);
     public static final IRI P_SOPRANO               = FACTORY.createIRI(S_P_SOPRANO);
     public static final IRI P_RECORDED_AS           = FACTORY.createIRI(S_P_RECORDED_AS);
-
-    // Must be validated
-    private static final String S_P_ARRANGER        = PREFIX + "arranger";
-    private static final String S_P_BACKGROUND_SINGER = PREFIX + "background_singer";
-    private static final String S_P_BALANCE         = PREFIX + "balance";
-    private static final String S_P_BASS            = PREFIX + "bass";
-    private static final String S_P_BARITONE        = PREFIX + "baritone";
-    private static final String S_P_EDITOR          = PREFIX + "editor";
-    private static final String S_P_ENGINEER        = PREFIX + "engineer";
-    private static final String S_P_MEZZO_SOPRANO   = PREFIX + "mezzo_soprano";
-    private static final String S_P_MIX             = PREFIX + "mix";
-    private static final String S_P_ORCHESTRATOR    = PREFIX + "orchestrator";
-    private static final String S_P_PRODUCER        = PREFIX + "producer";
-    private static final String S_P_PROGRAMMING     = PREFIX + "programming";
-    private static final String S_P_RECORDING       = PREFIX + "recording";
-
-    public static final IRI P_ARRANGER              = FACTORY.createIRI(S_P_ARRANGER);
-    public static final IRI P_BACKGROUND_SINGER     = FACTORY.createIRI(S_P_BACKGROUND_SINGER);
-    public static final IRI P_BALANCE               = FACTORY.createIRI(S_P_BALANCE);
-    public static final IRI P_BARITONE              = FACTORY.createIRI(S_P_BARITONE);
-    public static final IRI P_BASS                  = FACTORY.createIRI(S_P_BASS);
-    public static final IRI P_EDITOR                = FACTORY.createIRI(S_P_EDITOR);
-    public static final IRI P_ENGINEER              = FACTORY.createIRI(S_P_ENGINEER);
-    public static final IRI P_MEZZO_SOPRANO         = FACTORY.createIRI(S_P_MEZZO_SOPRANO);
-    public static final IRI P_MIX                   = FACTORY.createIRI(S_P_MIX);
-    public static final IRI P_ORCHESTRATOR          = FACTORY.createIRI(S_P_ORCHESTRATOR);
-    public static final IRI P_PRODUCER              = FACTORY.createIRI(S_P_PRODUCER);
-    public static final IRI P_PROGRAMMING           = FACTORY.createIRI(S_P_PROGRAMMING);
-    public static final IRI P_RECORDING             = FACTORY.createIRI(S_P_RECORDING);
   }
