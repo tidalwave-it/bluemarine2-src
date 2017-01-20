@@ -1,23 +1,37 @@
-        SELECT DISTINCT * 
-        WHERE  
-          { 
-            ?record     a           mo:Record. 
-            ?record     rdfs:label  ?label. 
+        SELECT DISTINCT *
+        WHERE
+          {
+            ?record     a                   mo:Record.
+            ?record     bmmo:importedFrom   ?source.
+            ?record     rdfs:label          ?label.
 
-@track@     ?record     mo:track    ?track.
+            OPTIONAL
+              {
+                ?record       mo:track_count          ?track_count.
+              }
+            OPTIONAL
+              {
+                ?record       mo:amazon_asin          ?asin.
+              }
+            OPTIONAL
+              {
+                ?record       mo:gtin                 ?gtin.
+              }
+
+@track@     ?record     mo:track            ?track.
 
 @artist@      {
 @artist@        ?record     foaf:maker                                  ?artist.
 @artist@      }
-@artist@    UNION 
+@artist@    UNION
 @artist@      {
 @artist@        ?record     mo:track/foaf:maker                         ?artist.
 @artist@      }
-@artist@    UNION 
+@artist@    UNION
 @artist@      {
 @artist@        ?record     foaf:maker/rel:collaboratesWith             ?artist.
 @artist@      }
-@artist@    UNION 
+@artist@    UNION
 @artist@      {
 @artist@        ?record     mo:track/foaf:maker/rel:collaboratesWith    ?artist.
 @artist@      }

@@ -10,18 +10,21 @@
 @prefix xs: <http://www.w3.org/2001/XMLSchema#> .
 
 <af:sha1:401312e43ba18e55fc16480d68366ed0200cb155> a mo:AudioFile ;
+	bmmo:importedFrom <http://bluemarine.tidalwave.it/source#embedded> ;
 	bmmo:latestIndexingTime "2015-04-02T16:56:08.000+02:00"^^xs:dateTime ;
 	bmmo:path "Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/1-10 Quiet City.m4a" ;
 	mo:encodes <sg:sha1:401312e43ba18e55fc16480d68366ed0200cb155> ;
 	foaf:sha1 "sha1:401312e43ba18e55fc16480d68366ed0200cb155" .
 
 <sg:sha1:401312e43ba18e55fc16480d68366ed0200cb155> a mo:DigitalSignal ;
+	bmmo:importedFrom <http://bluemarine.tidalwave.it/source#embedded> ;
 	mo:bitsPerSample "256"^^xs:int ;
 	mo:duration "588000.0"^^xs:float ;
 	mo:published_as <http://dbtune.org/musicbrainz/resource/track/2661ba28-6b89-4d52-926e-cc5946206909> ;
 	mo:sampleRate "44100"^^xs:int .
 
 <http://dbtune.org/musicbrainz/resource/track/2661ba28-6b89-4d52-926e-cc5946206909> a mo:Track ;
+	bmmo:importedFrom <http://bluemarine.tidalwave.it/source#embedded> ;
 	dc:title "Quiet City" ;
 	mo:musicbrainz_guid "2661ba28-6b89-4d52-926e-cc5946206909" ;
 	mo:track_number "10"^^xs:int ;
@@ -29,6 +32,7 @@
 	foaf:maker <http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09> .
 
 <http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09> a mo:MusicArtist ;
+	bmmo:importedFrom <http://bluemarine.tidalwave.it/source#embedded> ;
 	vocab:artist_type "1"^^xs:short ;
 	vocab:sortname "Copland, Aaron" ;
 	bio:event <http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09/birth> , <http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09/death> ;

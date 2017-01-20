@@ -40,6 +40,7 @@ import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import it.tidalwave.bluemarine2.model.vocabulary.BM;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import lombok.EqualsAndHashCode;
@@ -107,7 +108,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
                                 final String rdfsLabel,
                                 final @Nonnull Optional<Long> fileSize)
       {
-        super(repository, id, rdfsLabel);
+        super(repository, id, rdfsLabel, Optional.of(new Id(BM.O_EMBEDDED.stringValue())));
         this.trackId = trackId;
         // See BMT-36
         this.path = path;
