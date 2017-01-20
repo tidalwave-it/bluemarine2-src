@@ -54,19 +54,17 @@ public final class MO
     public static final String S_C_CD               = PREFIX + "CD";
     public static final String S_C_DIGITAL_SIGNAL   = PREFIX + "DigitalSignal";
     public static final String S_C_MUSIC_ARTIST     = PREFIX + "MusicArtist";
+    public static final String S_C_PERFORMANCE      = PREFIX + "Performance";
     public static final String S_C_RECORD           = PREFIX + "Record";
     public static final String S_C_TRACK            = PREFIX + "Track";
-
-    public static final String S_C_PERFORMANCE      = PREFIX + "Performance";
 
     public static final IRI C_AUDIO_FILE            = FACTORY.createIRI(S_C_AUDIO_FILE);
     public static final IRI C_CD                    = FACTORY.createIRI(S_C_CD);
     public static final IRI C_DIGITAL_SIGNAL        = FACTORY.createIRI(S_C_DIGITAL_SIGNAL);
     public static final IRI C_MUSIC_ARTIST          = FACTORY.createIRI(S_C_MUSIC_ARTIST);
+    public static final IRI C_PERFORMANCE           = FACTORY.createIRI(S_C_PERFORMANCE);
     public static final IRI C_RECORD                = FACTORY.createIRI(S_C_RECORD);
     public static final IRI C_TRACK                 = FACTORY.createIRI(S_C_TRACK);
-
-    public static final IRI C_PERFORMANCE           = FACTORY.createIRI(S_C_PERFORMANCE);
 
     // Predicates
     public static final String S_P_AMAZON_ASIN      = PREFIX + "amazon_asin";
@@ -82,13 +80,13 @@ public final class MO
     public static final String S_P_TRACK_COUNT      = PREFIX + "track_count";
     public static final String S_P_TRACK_NUMBER     = PREFIX + "track_number";
 
-    public static final String S_P_PERFORMER        = PREFIX + "performer";
-    public static final String S_P_CONDUCTOR        = PREFIX + "conductor";
     public static final String S_P_CHOIR            = PREFIX + "choir";
-    public static final String S_P_SINGER           = PREFIX + "singer";
+    public static final String S_P_CONDUCTOR        = PREFIX + "conductor";
     public static final String S_P_LEAD_SINGER      = PREFIX + "lead_singer";
-    public static final String S_P_SOPRANO          = PREFIX + "soprano";
+    public static final String S_P_PERFORMER        = PREFIX + "performer";
     public static final String S_P_RECORDED_AS      = PREFIX + "recorded_as";
+    public static final String S_P_SINGER           = PREFIX + "singer";
+    public static final String S_P_SOPRANO          = PREFIX + "soprano";
 
     public static final IRI P_AMAZON_ASIN           = FACTORY.createIRI(S_P_AMAZON_ASIN);
     public static final IRI P_BITS_PER_SAMPLE       = FACTORY.createIRI(S_P_BITS_PER_SAMPLE);
@@ -103,11 +101,11 @@ public final class MO
     public static final IRI P_TRACK_COUNT           = FACTORY.createIRI(S_P_TRACK_COUNT);
     public static final IRI P_TRACK_NUMBER          = FACTORY.createIRI(S_P_TRACK_NUMBER);
 
-    public static final IRI P_PERFORMER             = FACTORY.createIRI(S_P_PERFORMER);
-    public static final IRI P_CONDUCTOR             = FACTORY.createIRI(S_P_CONDUCTOR);
     public static final IRI P_CHOIR                 = FACTORY.createIRI(S_P_CHOIR);
-    public static final IRI P_SINGER                = FACTORY.createIRI(S_P_SINGER);
+    public static final IRI P_CONDUCTOR             = FACTORY.createIRI(S_P_CONDUCTOR);
     public static final IRI P_LEAD_SINGER           = FACTORY.createIRI(S_P_LEAD_SINGER);
-    public static final IRI P_SOPRANO               = FACTORY.createIRI(S_P_SOPRANO);
+    public static final IRI P_PERFORMER             = FACTORY.createIRI(S_P_PERFORMER);
     public static final IRI P_RECORDED_AS           = FACTORY.createIRI(S_P_RECORDED_AS);
+    public static final IRI P_SINGER                = FACTORY.createIRI(S_P_SINGER);
+    public static final IRI P_SOPRANO               = FACTORY.createIRI(S_P_SOPRANO);
   }

@@ -127,39 +127,40 @@ public class MusicBrainzAudioMedatataImporter
      ******************************************************************************************************************/
     static
       {
-        PERFORMER_MAP.put("chorus master", MO.P_CONDUCTOR);
-        PERFORMER_MAP.put("conductor", MO.P_CONDUCTOR);
-        PERFORMER_MAP.put("instrument", MO.P_PERFORMER); // FIXME: doesn't map the instrument
-        PERFORMER_MAP.put("performer", MO.P_PERFORMER);
-        PERFORMER_MAP.put("performing orchestra", MO.P_PERFORMER);
-        PERFORMER_MAP.put("vocal", MO.P_SINGER);
-        PERFORMER_MAP.put("vocal/choir vocals", MO.P_CHOIR);
-        PERFORMER_MAP.put("vocal/guest", MO.P_SINGER);
-        PERFORMER_MAP.put("vocal/lead vocals", MO.P_LEAD_SINGER);
-        PERFORMER_MAP.put("vocal/solo", MO.P_LEAD_SINGER);
-        PERFORMER_MAP.put("vocal/soprano vocals", MO.P_SOPRANO);
-        PERFORMER_MAP.put("vocal/spoken vocals", MO.P_SINGER);
+        PERFORMER_MAP.put("chorus master",                      MO.P_CONDUCTOR);
+        PERFORMER_MAP.put("conductor",                          MO.P_CONDUCTOR);
+        PERFORMER_MAP.put("performer",                          MO.P_PERFORMER);
+        PERFORMER_MAP.put("performing orchestra",               MO.P_PERFORMER); // FIXME: should be P_ORCHESTRA
 
-        PERFORMER_MAP.put("arranger", BM.P_ARRANGER);
-        PERFORMER_MAP.put("balance", BM.P_BALANCE);
-        PERFORMER_MAP.put("editor", BM.P_EDITOR);
-        PERFORMER_MAP.put("engineer", BM.P_ENGINEER);
-        PERFORMER_MAP.put("instrument arranger", BM.P_ARRANGER);
-        PERFORMER_MAP.put("mastering", BM.P_MIX);
-        PERFORMER_MAP.put("mix", BM.P_MIX);
-        PERFORMER_MAP.put("remixer", BM.P_MIX);
-        PERFORMER_MAP.put("orchestrator", BM.P_ORCHESTRATOR);
-        PERFORMER_MAP.put("producer", BM.P_PRODUCER);
-        PERFORMER_MAP.put("programming", BM.P_PROGRAMMING);
-        PERFORMER_MAP.put("recording", BM.P_RECORDING);
-        PERFORMER_MAP.put("sound", BM.P_ENGINEER);
-        PERFORMER_MAP.put("vocal/additional", BM.P_BACKGROUND_SINGER);
-        PERFORMER_MAP.put("vocal/background vocals", BM.P_BACKGROUND_SINGER);
-        PERFORMER_MAP.put("vocal/baritone vocals", BM.P_BARITONE);
-        PERFORMER_MAP.put("vocal/bass vocals", BM.P_BASS);
-        PERFORMER_MAP.put("vocal/mezzo-soprano vocals", BM.P_MEZZO_SOPRANO);
-        PERFORMER_MAP.put("vocal/other vocals", BM.P_BACKGROUND_SINGER);
+        PERFORMER_MAP.put("arranger",                           BM.P_ARRANGER);
+        PERFORMER_MAP.put("balance",                            BM.P_BALANCE);
+        PERFORMER_MAP.put("editor",                             BM.P_EDITOR);
+        PERFORMER_MAP.put("engineer",                           BM.P_ENGINEER);
+        PERFORMER_MAP.put("instrument arranger",                BM.P_ARRANGER);
+        PERFORMER_MAP.put("mastering",                          BM.P_MIX);
+        PERFORMER_MAP.put("mix",                                BM.P_MIX);
+        PERFORMER_MAP.put("remixer",                            BM.P_MIX);
+        PERFORMER_MAP.put("orchestrator",                       BM.P_ORCHESTRATOR);
+        PERFORMER_MAP.put("producer",                           BM.P_PRODUCER);
+        PERFORMER_MAP.put("programming",                        BM.P_PROGRAMMING);
+        PERFORMER_MAP.put("recording",                          BM.P_RECORDING);
+        PERFORMER_MAP.put("sound",                              BM.P_ENGINEER);
 
+        PERFORMER_MAP.put("vocal",                              MO.P_SINGER);
+        PERFORMER_MAP.put("vocal/additional",                   BM.P_BACKGROUND_SINGER);
+        PERFORMER_MAP.put("vocal/background vocals",            BM.P_BACKGROUND_SINGER);
+        PERFORMER_MAP.put("vocal/baritone vocals",              BM.P_BARITONE);
+        PERFORMER_MAP.put("vocal/bass vocals",                  BM.P_BASS);
+        PERFORMER_MAP.put("vocal/choir vocals",                 MO.P_CHOIR);
+        PERFORMER_MAP.put("vocal/guest",                        MO.P_SINGER);
+        PERFORMER_MAP.put("vocal/lead vocals",                  MO.P_LEAD_SINGER);
+        PERFORMER_MAP.put("vocal/mezzo-soprano vocals",         BM.P_MEZZO_SOPRANO);
+        PERFORMER_MAP.put("vocal/other vocals",                 BM.P_BACKGROUND_SINGER);
+        PERFORMER_MAP.put("vocal/solo",                         MO.P_LEAD_SINGER);
+        PERFORMER_MAP.put("vocal/soprano vocals",               MO.P_SOPRANO);
+        PERFORMER_MAP.put("vocal/spoken vocals",                MO.P_SINGER);
+
+        PERFORMER_MAP.put("instrument",                         MO.P_PERFORMER);
         PERFORMER_MAP.put("instrument/accordion",               BM.P_PERFORMER_ACCORDION);
         PERFORMER_MAP.put("instrument/acoustic guitar",         BM.P_PERFORMER_ACOUSTIC_GUITAR);
         PERFORMER_MAP.put("instrument/acoustic bass guitar",    BM.P_PERFORMER_ACOUSTIC_BASS_GUITAR);
@@ -334,9 +335,9 @@ public class MusicBrainzAudioMedatataImporter
               }
 
             model.with(rams.stream()
-                            .parallel()
-                            .map(_f(ram -> handleRelease(metadata, ram)))
-                            .collect(toList()));
+                           .parallel()
+                           .map(_f(ram -> handleRelease(metadata, ram)))
+                           .collect(toList()));
           }
 
         return model.toModel();
@@ -407,25 +408,11 @@ public class MusicBrainzAudioMedatataImporter
 //                    track.getRecording().getAliasList().getAlias().get(0).getSortName();
         log.info(">>>>>>>> {}. {}", position, trackTitle);
         final IRI signalIri    = signalIriFor(cddb, track.getPosition().intValue());
-//        final IRI audioFileIri = dummyAudioFileIriFor(cddb, track.getPosition().intValue());
 
         return createModelBuilder()
             .with(recordIri, MO.P_TRACK,          trackIri)
 
             .with(signalIri, MO.P_PUBLISHED_AS,   trackIri)
-             // FIXME: drop it, already from embedded
-             // FIXME: they are temporarily here to test the catalog with the musicbrainz triples alone
-             // FIXME: when the mediascanner will use the new CDDB based id for signals and tracks, the
-             // FIXME: musicbrainz triples will be added to the embedded one.
-//            .with(signalIri, RDF.TYPE,            MO.C_DIGITAL_SIGNAL)
-//            .with(signalIri, BM.P_IMPORTED_FROM,  BM.O_EMBEDDED)
-//            .with(signalIri, MO.P_DURATION,       literalFor((float)0.0))
-//
-//            .with(audioFileIri, RDF.TYPE,         MO.C_AUDIO_FILE)
-//            .with(audioFileIri, BM.P_IMPORTED_FROM, BM.O_EMBEDDED)
-//            .with(audioFileIri, MO.P_ENCODES,     signalIri)
-//            .with(audioFileIri, BM.PATH,          literalFor("dummy path"))
-             // END FIXME
 
             .with(trackIri,  RDF.TYPE,            MO.C_TRACK)
             .with(trackIri,  BM.P_IMPORTED_FROM,  BM.O_MUSICBRAINZ)
@@ -442,7 +429,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      * Extracts data from the relations of the given {@link Recording}.
      *
-     * @param   signalIRI   the IRI of the signal associated to the track we're handling
+     * @param   signalIri   the IRI of the signal associated to the track we're handling
      * @param   recording   the {@code Recording}
      * @return              the RDF triples
     *
@@ -451,18 +438,18 @@ public class MusicBrainzAudioMedatataImporter
     private ModelBuilder handleTrackRelations (final @Nonnull IRI signalIri, final @Nonnull Recording recording)
       {
         return createModelBuilder().with(recording.getRelationList()
-                                                   .stream()
-                                                   .parallel()
-                                                   .flatMap(RelationAndTargetType::toStream)
-                                                   .map(ratt ->  handleTrackRelation(signalIri, recording, ratt))
-                                                   .collect(toList()));
+                                                  .stream()
+                                                  .parallel()
+                                                  .flatMap(RelationAndTargetType::toStream)
+                                                  .map(ratt ->  handleTrackRelation(signalIri, recording, ratt))
+                                                  .collect(toList()));
       }
 
     /*******************************************************************************************************************
      *
      * Extracts data from a relation of the given {@link Recording}.
      *
-     * @param   signalIRI   the IRI of the signal associated to the track we're handling
+     * @param   signalIri   the IRI of the signal associated to the track we're handling
      * @param   recording   the {@code Recording}
      * @param   ratt        the relation
      * @return              the RDF triples
@@ -752,12 +739,6 @@ public class MusicBrainzAudioMedatataImporter
     private IRI signalIriFor (final @Nonnull Cddb cddb, final @Nonnegative int trackNumber)
       {
         return BM.signalIriFor(createSha1IdNew(cddb.getToc() + "/" + trackNumber));
-      }
-
-    @Nonnull // FIXME: temporary
-    private IRI dummyAudioFileIriFor (final @Nonnull Cddb cddb, final @Nonnegative int trackNumber)
-      {
-        return BM.audioFileIriFor(createSha1IdNew(cddb.getToc() + "/" + trackNumber).stringValue());
       }
 
     /*******************************************************************************************************************
