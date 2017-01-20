@@ -116,13 +116,13 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     private final Optional<IRI> source;
 
     @Inject
-    private ContextManager contextManager;
+    private transient ContextManager contextManager;
 
     @Inject
-    private RepositoryEntityFactory entityFactory;
+    private transient RepositoryEntityFactory entityFactory;
 
     @Inject
-    private CacheManager cacheManager;
+    private transient CacheManager cacheManager;
 
     /*******************************************************************************************************************
      *

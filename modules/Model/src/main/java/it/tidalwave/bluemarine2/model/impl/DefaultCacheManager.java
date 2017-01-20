@@ -39,7 +39,7 @@ import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
 import it.tidalwave.bluemarine2.model.spi.CacheManager;
 import lombok.extern.slf4j.Slf4j;
 import lombok.RequiredArgsConstructor;
-import static java.util.Objects.requireNonNull;
+import static java.util.Objects.*;
 
 /***********************************************************************************************************************
  *
@@ -69,7 +69,7 @@ public class DefaultCacheManager implements CacheManager
             if (object == null)
               {
                 objectMap.put(key, ref = computeObject(key, supplier));
-                object = ref.get();
+                object = requireNonNull(ref.get(), "Cache returned null");
               }
 
             return object;
