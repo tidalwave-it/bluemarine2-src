@@ -329,9 +329,8 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
             try (final ImmutableTupleQueryResult result = cache.getCachedObject(key,
                                                                 () -> new ImmutableTupleQueryResult(query.evaluate())))
               {
-                // ImmutableTupleQueryResult is not thread safe, so clone an eventually cached result
-                final ImmutableTupleQueryResult clone = new ImmutableTupleQueryResult(result);
-                return finalizer.apply(clone);
+                // ImmutableTupleQueryResult is not thread safe, so clone the cached instance
+                return finalizer.apply(new ImmutableTupleQueryResult(result));
               }
           }
       }
