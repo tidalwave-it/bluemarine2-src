@@ -725,13 +725,13 @@
 
 <http://musicbrainz.org/record/3848dbd0-0aea-4ac6-bd72-4d0c19995c37> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "111 Years of Deutsche Grammophon: The Collectors’ Edition" ;
+	dc:title "Gilels - Beethoven - Sonatas" , "Kubelik - Dvořák 8 & 9" ;
 	mo:amazon_asin "B002DZX95I" ;
 	mo:gtin "028947781677" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/08484aa5-5cd3-34d5-9d40-b50eacb1e319> , <http://musicbrainz.org/track/09f2e3c8-0bdc-3f26-aa73-50fe942cf8db> , <http://musicbrainz.org/track/1da08889-cfbd-3b14-8c5b-01c551fb3102> , <http://musicbrainz.org/track/20d0a4be-3d6d-315a-b810-fc5a34d796ef> , <http://musicbrainz.org/track/251acae4-c41b-3523-b8d9-04003bb74dab> , <http://musicbrainz.org/track/3ac05586-74cb-3382-a8e2-46c5841b8f5c> , <http://musicbrainz.org/track/45d9dc19-8e17-3c8e-8d5d-78e67409c4d7> , <http://musicbrainz.org/track/59ab792f-b4e1-3c28-abb9-eb10eadf1d59> , <http://musicbrainz.org/track/620a90b3-97e4-3502-99fb-b6177717c97e> , <http://musicbrainz.org/track/71f6b6d8-e0f2-3750-b567-0ca4e0a7cbcc> , <http://musicbrainz.org/track/72e8d85a-2855-3b49-93f1-a97fbf94ad3d> , <http://musicbrainz.org/track/835efcc9-35f8-38d7-b658-436469dbd86d> , <http://musicbrainz.org/track/a24568c6-f3de-328c-b46f-3d9ca0aaf8b2> , <http://musicbrainz.org/track/a5ed320d-0e2c-3057-a19a-94ef97ac2e87> , <http://musicbrainz.org/track/c3d130ec-0b70-31eb-a4a2-bd6898e87bda> , <http://musicbrainz.org/track/cf6409c4-38be-36a4-b3c3-4b43d73cebdb> , <http://musicbrainz.org/track/d31b9d99-1117-3782-b030-c4a98fb090dd> , <http://musicbrainz.org/track/e3cca438-0086-3d48-81de-7a365742cf38> ;
 	mo:track_count "10"^^xs:int , "8"^^xs:int ;
-	rdfs:label "111 Years of Deutsche Grammophon: The Collectors’ Edition" .
+	rdfs:label "Gilels - Beethoven - Sonatas" , "Kubelik - Dvořák 8 & 9" .
 
 <http://musicbrainz.org/record/43c60e64-193b-354e-8018-4f582cebd18c> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
@@ -773,12 +773,12 @@
 
 <http://musicbrainz.org/record/5cacd9cf-6514-4b75-bfcf-9cb788f7bd14> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "The Originals - Legendary Recordings" ;
+	dc:title "Brahms: Symphony no. 4" , "Dvorák: Symphonies nos. 8 & 9" ;
 	mo:gtin "028947934493" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/2fc16cc3-a99f-4353-8f46-ed6c5b3c9cb9> , <http://musicbrainz.org/track/35e2704e-d1b4-455f-8c72-e316b49a7d64> , <http://musicbrainz.org/track/374efaa1-3f9c-4d8b-b22e-bb9ecbb73cb3> , <http://musicbrainz.org/track/7bafc578-cb28-4067-9d2f-e3144240cd14> , <http://musicbrainz.org/track/809910eb-2992-4266-94b8-b242fbffb3b0> , <http://musicbrainz.org/track/8843abdf-9e82-4e10-94e0-0c46f16f0771> , <http://musicbrainz.org/track/8dbaa6a5-454e-48a4-bbbb-4d8530adf0dd> , <http://musicbrainz.org/track/9bc16867-5f9c-4f33-8635-9833cd7cc462> , <http://musicbrainz.org/track/9d348280-ab2d-4c44-9a3a-92cd41c9fa4a> , <http://musicbrainz.org/track/c1508b2a-c32e-4938-a5c3-45d005cd3a52> , <http://musicbrainz.org/track/dc926b5e-fd38-47f9-b6a4-26bab2a84d84> , <http://musicbrainz.org/track/f2b80242-98cc-4f12-8083-1419c1b9b22b> ;
 	mo:track_count "4"^^xs:int , "8"^^xs:int ;
-	rdfs:label "The Originals - Legendary Recordings" .
+	rdfs:label "Brahms: Symphony no. 4" , "Dvorák: Symphonies nos. 8 & 9" .
 
 <http://musicbrainz.org/record/5fdfc31c-b532-41cc-a49f-9bad2b014d52> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
@@ -831,13 +831,13 @@
 
 <http://musicbrainz.org/record/92b01866-1815-4d8e-91b3-700d11719bbb> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "Berliner Philharmoniker Centenary Edition" ;
+	dc:title "Dvorák: Symphony No. 8 in G, Op. 88; Symphony No. 9 in E minor, Op. 95 \"From The New World\"" ;
 	mo:amazon_asin "B00DYQLEZM" ;
 	mo:gtin "028947910497" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/051f5a13-3b3c-42eb-8e63-4f05f433b68e> , <http://musicbrainz.org/track/24b85cd8-7e74-41df-bb60-4ae3fac1fc76> , <http://musicbrainz.org/track/48a0eab5-f44b-4a40-a14e-27f6a1cfa80d> , <http://musicbrainz.org/track/84b51bcf-49e1-4b92-880e-336f4adff53b> , <http://musicbrainz.org/track/a5d0f44a-59c2-4f4d-a0f9-4e29ec417fbb> , <http://musicbrainz.org/track/ace2e487-2ff5-41fe-80b6-aa53c8f3dd2f> , <http://musicbrainz.org/track/b213ec95-fc5d-4b35-a3c8-7503ea36ed55> , <http://musicbrainz.org/track/ed43f543-3a5f-486a-8a56-cf8314a30d04> ;
 	mo:track_count "8"^^xs:int ;
-	rdfs:label "Berliner Philharmoniker Centenary Edition" .
+	rdfs:label "Dvorák: Symphony No. 8 in G, Op. 88; Symphony No. 9 in E minor, Op. 95 \"From The New World\"" .
 
 <http://musicbrainz.org/record/937aaba5-1457-4a4c-b7f3-ba57119c8a8e> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
@@ -984,13 +984,13 @@
 
 <http://musicbrainz.org/record/d51300db-6010-4012-a7c8-38ebdfaede5d> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "Schumann: The Masterworks" ;
+	dc:title "Piano Music" ;
 	mo:amazon_asin "B00386FG0M" ;
 	mo:gtin "028947788164" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/3e5f6500-4192-3a76-90c3-d814173af07e> , <http://musicbrainz.org/track/4d462bce-1848-324d-b374-4c7ec0773e72> , <http://musicbrainz.org/track/8226f483-bc13-3e56-a44c-159417e6646f> , <http://musicbrainz.org/track/85c2ffd2-acb2-3656-a4e9-b9f556632294> , <http://musicbrainz.org/track/949dac3c-3e73-34db-b80b-5fcbb0a434fb> , <http://musicbrainz.org/track/ddd6c70f-0a41-3b33-baed-797304750c83> , <http://musicbrainz.org/track/f9db9700-7d7f-3d7b-9385-c1637b30da8e> ;
 	mo:track_count "7"^^xs:int ;
-	rdfs:label "Schumann: The Masterworks" .
+	rdfs:label "Piano Music" .
 
 <http://musicbrainz.org/record/dcc73832-861b-4fe4-b209-26f95789b9dd> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
@@ -1040,13 +1040,13 @@
 
 <http://musicbrainz.org/record/f90c2ac7-10b2-4788-a41f-20ca1ffd4fea> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "Pogorelich Complete Recordings" ;
+	dc:title "Ravel: Gaspard de la Nuit / Prokofiev: Klaviersonate No. 6" ;
 	mo:amazon_asin "B00QHL0Y8O" ;
 	mo:gtin "028947943501" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/13e25ba8-43dc-4827-8ea8-8457e9cc3e99> , <http://musicbrainz.org/track/3ff89a60-27f2-4702-b7d8-1829b8c440d8> , <http://musicbrainz.org/track/5d11a5af-bd96-4af2-ba4a-958fde6b82f3> , <http://musicbrainz.org/track/6a0e59e1-f586-41e6-8843-70b8404beced> , <http://musicbrainz.org/track/8771ba55-f6e9-45b8-ba1c-7d60321fe3e7> , <http://musicbrainz.org/track/a0d3273a-9b12-4c72-9a78-c6aa1752dca6> , <http://musicbrainz.org/track/de5db25e-ef06-463d-a415-362676762f3b> ;
 	mo:track_count "7"^^xs:int ;
-	rdfs:label "Pogorelich Complete Recordings" .
+	rdfs:label "Ravel: Gaspard de la Nuit / Prokofiev: Klaviersonate No. 6" .
 
 <http://musicbrainz.org/record/fc066956-e8b0-4019-a526-c959f6cbdfeb> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;

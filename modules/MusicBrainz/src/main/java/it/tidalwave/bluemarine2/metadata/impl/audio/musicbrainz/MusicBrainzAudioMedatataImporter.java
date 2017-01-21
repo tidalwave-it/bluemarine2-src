@@ -333,6 +333,9 @@ public class MusicBrainzAudioMedatataImporter
                 rams.addAll(findReleases(releaseGroups, cddb.get(), Validation.TRACK_OFFSETS_MATCH_REQUIRED));
               }
 
+            rams.stream().forEach(ram -> log.info(String.format(">>> ASIN: %-10s BARCODE: %-13s RELEASE TITLE: %s MEDIUM TITLE: %s",
+                    ram.release.getAsin(), ram.release.getBarcode(), ram.release.getTitle(), ram.medium.getTitle())));
+
             model.with(rams.stream()
                            .parallel()
                            .map(_f(ram -> handleRelease(metadata, ram)))
@@ -354,13 +357,15 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ModelBuilder handleRelease (final @Nonnull Metadata metadata,
-                                        final @Nonnull ReleaseAndMedium ram)
+    private ModelBuilder handleRelease (final @Nonnull Metadata metadata, final @Nonnull ReleaseAndMedium ram)
       throws IOException, InterruptedException
       {
-        final List<DefTrackData> tracks = ram.getMedium().getTrackList().getDefTrack();
+        final Medium medium = ram.getMedium();
         final Release release = ram.getRelease();
-        final String recordTitle = release.getTitle();
+        final List<DefTrackData> tracks = medium.getTrackList().getDefTrack();
+        // Prefer Medium title - typically available in case of disk collections, in which case Release has got
+        // the collection title, which is very generic.
+        final String recordTitle = Optional.ofNullable(medium.getTitle()).orElse(release.getTitle());
         final IRI recordIri = musicBrainzIriFor("record", release.getId());
         return createModelBuilder()
             .with(recordIri, RDF.TYPE,           MO.C_RECORD)

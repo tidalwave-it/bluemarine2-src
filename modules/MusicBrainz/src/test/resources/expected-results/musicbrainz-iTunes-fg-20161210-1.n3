@@ -2411,13 +2411,13 @@
 
 <http://musicbrainz.org/record/0a060f48-8478-40fd-a1f7-6b770c2827e3> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "The Complete Columbia Album Collection" ;
+	dc:title "Miles Ahead" ;
 	mo:amazon_asin "B002EOF7U8" ;
 	mo:gtin "886975249220" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/003c2436-dbd0-33c5-91d5-bebe53c73bb0> , <http://musicbrainz.org/track/0c240d25-197b-304b-ba41-c9db44c674b9> , <http://musicbrainz.org/track/39675bd0-4e12-34f8-8e4b-99e65806e64e> , <http://musicbrainz.org/track/3cd1b5b2-f17a-375f-ac11-79ab9e945a4a> , <http://musicbrainz.org/track/4ad29959-45b2-3bff-b579-963a04ed7e24> , <http://musicbrainz.org/track/5ba6ef98-ba06-387b-8eb8-65ae126923c4> , <http://musicbrainz.org/track/6826750f-162b-3074-ae75-11572f99b72e> , <http://musicbrainz.org/track/873a82eb-4513-37bb-a72a-2dde63b2f87c> , <http://musicbrainz.org/track/910bb8ab-7011-3bbd-8bb7-6f7296e8f989> , <http://musicbrainz.org/track/a6f0879d-9600-3a48-927e-a66eed1de2ac> , <http://musicbrainz.org/track/cf3ee806-4251-313c-962e-31cf77c7a90c> , <http://musicbrainz.org/track/e8232c66-db8f-3586-8ef6-c376e2fbd6c9> , <http://musicbrainz.org/track/e8625c7c-537d-352a-9e5f-ba7ac0e3258f> , <http://musicbrainz.org/track/fcb2f414-1e74-3116-b628-e95664f12626> ;
 	mo:track_count "14"^^xs:int ;
-	rdfs:label "The Complete Columbia Album Collection" .
+	rdfs:label "Miles Ahead" .
 
 <http://musicbrainz.org/record/0b93acfa-676a-4911-9798-4a16939f1a3f> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
@@ -2772,13 +2772,13 @@
 
 <http://musicbrainz.org/record/3848dbd0-0aea-4ac6-bd72-4d0c19995c37> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "111 Years of Deutsche Grammophon: The Collectors’ Edition" ;
+	dc:title "Gilels - Beethoven - Sonatas" , "Kubelik - Dvořák 8 & 9" ;
 	mo:amazon_asin "B002DZX95I" ;
 	mo:gtin "028947781677" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/08484aa5-5cd3-34d5-9d40-b50eacb1e319> , <http://musicbrainz.org/track/09f2e3c8-0bdc-3f26-aa73-50fe942cf8db> , <http://musicbrainz.org/track/1da08889-cfbd-3b14-8c5b-01c551fb3102> , <http://musicbrainz.org/track/20d0a4be-3d6d-315a-b810-fc5a34d796ef> , <http://musicbrainz.org/track/251acae4-c41b-3523-b8d9-04003bb74dab> , <http://musicbrainz.org/track/3ac05586-74cb-3382-a8e2-46c5841b8f5c> , <http://musicbrainz.org/track/45d9dc19-8e17-3c8e-8d5d-78e67409c4d7> , <http://musicbrainz.org/track/59ab792f-b4e1-3c28-abb9-eb10eadf1d59> , <http://musicbrainz.org/track/620a90b3-97e4-3502-99fb-b6177717c97e> , <http://musicbrainz.org/track/71f6b6d8-e0f2-3750-b567-0ca4e0a7cbcc> , <http://musicbrainz.org/track/72e8d85a-2855-3b49-93f1-a97fbf94ad3d> , <http://musicbrainz.org/track/835efcc9-35f8-38d7-b658-436469dbd86d> , <http://musicbrainz.org/track/a24568c6-f3de-328c-b46f-3d9ca0aaf8b2> , <http://musicbrainz.org/track/a5ed320d-0e2c-3057-a19a-94ef97ac2e87> , <http://musicbrainz.org/track/c3d130ec-0b70-31eb-a4a2-bd6898e87bda> , <http://musicbrainz.org/track/cf6409c4-38be-36a4-b3c3-4b43d73cebdb> , <http://musicbrainz.org/track/d31b9d99-1117-3782-b030-c4a98fb090dd> , <http://musicbrainz.org/track/e3cca438-0086-3d48-81de-7a365742cf38> ;
 	mo:track_count "10"^^xs:int , "8"^^xs:int ;
-	rdfs:label "111 Years of Deutsche Grammophon: The Collectors’ Edition" .
+	rdfs:label "Gilels - Beethoven - Sonatas" , "Kubelik - Dvořák 8 & 9" .
 
 <http://musicbrainz.org/record/39d10e2e-6063-4db8-ab49-993f853bfaa2> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
@@ -3078,22 +3078,22 @@
 
 <http://musicbrainz.org/record/5cacd9cf-6514-4b75-bfcf-9cb788f7bd14> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "The Originals - Legendary Recordings" ;
+	dc:title "Brahms: Symphony no. 4" , "Dvorák: Symphonies nos. 8 & 9" ;
 	mo:gtin "028947934493" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/2fc16cc3-a99f-4353-8f46-ed6c5b3c9cb9> , <http://musicbrainz.org/track/35e2704e-d1b4-455f-8c72-e316b49a7d64> , <http://musicbrainz.org/track/374efaa1-3f9c-4d8b-b22e-bb9ecbb73cb3> , <http://musicbrainz.org/track/7bafc578-cb28-4067-9d2f-e3144240cd14> , <http://musicbrainz.org/track/809910eb-2992-4266-94b8-b242fbffb3b0> , <http://musicbrainz.org/track/8843abdf-9e82-4e10-94e0-0c46f16f0771> , <http://musicbrainz.org/track/8dbaa6a5-454e-48a4-bbbb-4d8530adf0dd> , <http://musicbrainz.org/track/9bc16867-5f9c-4f33-8635-9833cd7cc462> , <http://musicbrainz.org/track/9d348280-ab2d-4c44-9a3a-92cd41c9fa4a> , <http://musicbrainz.org/track/c1508b2a-c32e-4938-a5c3-45d005cd3a52> , <http://musicbrainz.org/track/dc926b5e-fd38-47f9-b6a4-26bab2a84d84> , <http://musicbrainz.org/track/f2b80242-98cc-4f12-8083-1419c1b9b22b> ;
 	mo:track_count "4"^^xs:int , "8"^^xs:int ;
-	rdfs:label "The Originals - Legendary Recordings" .
+	rdfs:label "Brahms: Symphony no. 4" , "Dvorák: Symphonies nos. 8 & 9" .
 
 <http://musicbrainz.org/record/5de9f166-3edc-44cc-93cc-c045c2404e52> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "Brandenburg Concertos nos. 1–6 / Orchestral Suites nos. 1–4" ;
+	dc:title "Brandenburg Concertos Nos. 1-4" , "Orchestral Suites Nos. 2-4" ;
 	mo:amazon_asin "B000M4BYPO" ;
 	mo:gtin "077774788182" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/1b88811c-e83d-3566-99a1-31450ac355fb> , <http://musicbrainz.org/track/2396cab3-84a7-3fd4-a070-3d6f30baef1e> , <http://musicbrainz.org/track/2d955828-2aae-32b7-bfac-1ef5529dfb84> , <http://musicbrainz.org/track/34ea88d3-7e8b-3479-a036-42fd3d927b73> , <http://musicbrainz.org/track/36afd924-c282-334f-a609-22070d9e0b55> , <http://musicbrainz.org/track/459bae31-6797-3897-b895-2b9043adfd9e> , <http://musicbrainz.org/track/464c19e0-473d-3baa-a9c0-60c6f74d05de> , <http://musicbrainz.org/track/4d52cea7-fc5b-3cad-a688-7d0b3f91e133> , <http://musicbrainz.org/track/50194f56-667d-34e0-9dfa-ab1804a85d4f> , <http://musicbrainz.org/track/561ba43a-9ac5-323f-918d-e09ba5e907df> , <http://musicbrainz.org/track/5e7d57ca-a151-3ccd-bf17-f5391f863b41> , <http://musicbrainz.org/track/680a9040-0fee-3ed7-9c60-9ec9dc71b157> , <http://musicbrainz.org/track/7da6b5f6-7860-3b3d-b6bb-f3c7d55bb066> , <http://musicbrainz.org/track/84fbc749-b276-3288-a331-db4f864cb91d> , <http://musicbrainz.org/track/9107bf23-44f0-3458-8728-6a2721310ca7> , <http://musicbrainz.org/track/9b1b1823-2ed5-313b-8d66-67188ddc7889> , <http://musicbrainz.org/track/a0edce8d-0a47-3600-b51b-ef7919213902> , <http://musicbrainz.org/track/a248795c-fabd-34de-bf5f-b4142c5b4b33> , <http://musicbrainz.org/track/a4f652d2-1d6b-3025-b285-4f07a2db3e25> , <http://musicbrainz.org/track/b51d6d8e-14bf-3095-9f43-6107e0a65837> , <http://musicbrainz.org/track/c1f913f4-6ea8-3169-a39a-b6d477cda47c> , <http://musicbrainz.org/track/c3614845-0f13-34ee-b008-0f0d1225516b> , <http://musicbrainz.org/track/cd6542b4-da3e-3e08-9e99-0514bb6fc9c9> , <http://musicbrainz.org/track/d5598a6f-74cd-355c-b3af-afd6cb1c38d1> , <http://musicbrainz.org/track/d57de49d-3cd2-3beb-8f8a-b085154b140f> , <http://musicbrainz.org/track/d5f9dea8-40c2-33ff-9b41-9b3b0041cce3> , <http://musicbrainz.org/track/d8b63a75-cda0-369e-89fe-f173991ba779> , <http://musicbrainz.org/track/e3f1f29c-e46f-3a32-ba0e-d921d4a43e18> , <http://musicbrainz.org/track/f2f430e3-b91d-3b4f-937c-4593a9f6a29b> , <http://musicbrainz.org/track/fb76eb8b-aac1-3878-8e12-7133470c0a4b> ;
 	mo:track_count "13"^^xs:int , "17"^^xs:int ;
-	rdfs:label "Brandenburg Concertos nos. 1–6 / Orchestral Suites nos. 1–4" .
+	rdfs:label "Brandenburg Concertos Nos. 1-4" , "Orchestral Suites Nos. 2-4" .
 
 <http://musicbrainz.org/record/5ec7bbc6-ce49-4ce2-b32b-152f8af58b83> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
@@ -3107,13 +3107,13 @@
 
 <http://musicbrainz.org/record/5ed74452-acfd-37be-b234-35fde5d52376> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "España antigua" ;
+	dc:title "Llibre vermell de Montserrat" ;
 	mo:amazon_asin "B00005NY5D" ;
 	mo:gtin "724356196421" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/063d8300-cd44-3317-b8aa-6632b04c313d> , <http://musicbrainz.org/track/0aed4b0a-860e-336c-9c3e-5a785055e80b> , <http://musicbrainz.org/track/0f4da5d7-734d-3482-9bb5-75c5ec7811f0> , <http://musicbrainz.org/track/17508582-3397-3ef1-af04-1dabb168566a> , <http://musicbrainz.org/track/1f30b91e-496d-32ea-a3b7-cdeb1bff1a00> , <http://musicbrainz.org/track/22110a6b-82a4-315b-89c0-8b89240f7cfa> , <http://musicbrainz.org/track/4cf6b32a-4285-314f-92c3-6790e638b08d> , <http://musicbrainz.org/track/8842caea-7b3d-3e6a-a425-82d84d02c225> , <http://musicbrainz.org/track/908b7875-a636-3a9f-99ca-fc01bfd4d129> , <http://musicbrainz.org/track/97b19d89-e947-36f4-9a1f-ef7061bf1e83> , <http://musicbrainz.org/track/c31bf0a5-25cd-354b-8e81-f8d17a76d435> ;
 	mo:track_count "11"^^xs:int ;
-	rdfs:label "España antigua" .
+	rdfs:label "Llibre vermell de Montserrat" .
 
 <http://musicbrainz.org/record/5f67acb9-a93a-4566-8c75-0a1679d93312> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
@@ -3386,13 +3386,13 @@
 
 <http://musicbrainz.org/record/92b01866-1815-4d8e-91b3-700d11719bbb> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "Berliner Philharmoniker Centenary Edition" ;
+	dc:title "Dvorák: Symphony No. 8 in G, Op. 88; Symphony No. 9 in E minor, Op. 95 \"From The New World\"" ;
 	mo:amazon_asin "B00DYQLEZM" ;
 	mo:gtin "028947910497" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/051f5a13-3b3c-42eb-8e63-4f05f433b68e> , <http://musicbrainz.org/track/24b85cd8-7e74-41df-bb60-4ae3fac1fc76> , <http://musicbrainz.org/track/48a0eab5-f44b-4a40-a14e-27f6a1cfa80d> , <http://musicbrainz.org/track/84b51bcf-49e1-4b92-880e-336f4adff53b> , <http://musicbrainz.org/track/a5d0f44a-59c2-4f4d-a0f9-4e29ec417fbb> , <http://musicbrainz.org/track/ace2e487-2ff5-41fe-80b6-aa53c8f3dd2f> , <http://musicbrainz.org/track/b213ec95-fc5d-4b35-a3c8-7503ea36ed55> , <http://musicbrainz.org/track/ed43f543-3a5f-486a-8a56-cf8314a30d04> ;
 	mo:track_count "8"^^xs:int ;
-	rdfs:label "Berliner Philharmoniker Centenary Edition" .
+	rdfs:label "Dvorák: Symphony No. 8 in G, Op. 88; Symphony No. 9 in E minor, Op. 95 \"From The New World\"" .
 
 <http://musicbrainz.org/record/937aaba5-1457-4a4c-b7f3-ba57119c8a8e> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
@@ -3456,23 +3456,23 @@
 
 <http://musicbrainz.org/record/9c5c043e-bc69-4edb-81a4-1aaf9c81e6dc> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "The Complete Original Jacket Collection" ;
+	dc:title "Johann Sebastian Bach: Two and Three Part Inventions and Sinfonias, BWV 772-801" ;
 	mo:amazon_asin "B000TJQ75E" ;
 	mo:gtin "886971309423" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/05d98dd7-f35f-3a83-94e9-0f837f572516> , <http://musicbrainz.org/track/12da2bc0-b2bf-318c-b0a2-122352263f4c> , <http://musicbrainz.org/track/15d709e2-69c4-3b63-b583-1e6bd3b23d08> , <http://musicbrainz.org/track/1f1ca3a3-8435-3b4a-bd87-9670ac385ff6> , <http://musicbrainz.org/track/301fb986-9213-396c-bc93-9dd37919f1f9> , <http://musicbrainz.org/track/3869e306-6402-3bf0-96c9-a09ff8bed31c> , <http://musicbrainz.org/track/3e6a652e-ae17-3e3a-bf93-bfb0cd4ab4c6> , <http://musicbrainz.org/track/3f445f3a-c49d-30e2-9cce-959cea01deca> , <http://musicbrainz.org/track/4035d3e5-8810-3f99-99e2-d3aeeab6c5e5> , <http://musicbrainz.org/track/46e59483-bb62-30ea-ae2b-e581f22a949e> , <http://musicbrainz.org/track/4e3e2289-8483-3b97-b153-ec4a1c1c133e> , <http://musicbrainz.org/track/5e2a62fe-a0b9-3b73-b26a-7af2ccfa32e2> , <http://musicbrainz.org/track/63d0ee1d-3b7b-3d77-a36a-bd45a6e654a3> , <http://musicbrainz.org/track/665cfa2d-96fb-330c-b64a-65c880b30c7b> , <http://musicbrainz.org/track/68fbb134-f0b5-3dbb-806e-80b4735d0c52> , <http://musicbrainz.org/track/6a0c220b-0d92-3b6f-a334-6b49f102c4cb> , <http://musicbrainz.org/track/73aa2981-da89-38cb-a5a2-178a9d8b6baa> , <http://musicbrainz.org/track/84337b37-001e-3fed-bbd1-d8b3037fe9c3> , <http://musicbrainz.org/track/8a4eb264-9d58-3448-ae06-3501d099b8b6> , <http://musicbrainz.org/track/8ee0d933-4c9d-385d-adb4-ee0da8541eea> , <http://musicbrainz.org/track/8fe3a07f-d074-3ac0-b94b-08f088442c63> , <http://musicbrainz.org/track/98505371-9b8b-3534-b1aa-60b7773706fe> , <http://musicbrainz.org/track/9b96ce0c-bb71-3e0c-a7c3-82aed972ca7f> , <http://musicbrainz.org/track/a20ed265-af97-3238-aada-a246870bf74e> , <http://musicbrainz.org/track/a5cd86e2-b257-3d59-8cd5-72d0d30494a9> , <http://musicbrainz.org/track/c3f8db05-f4f0-30b5-b229-97122e9c3955> , <http://musicbrainz.org/track/c741837f-95de-3754-be2d-856d7cf48632> , <http://musicbrainz.org/track/ce22f3d1-4c9d-341b-b69e-1a60f68363e3> , <http://musicbrainz.org/track/d3aa6bf0-28cd-344a-bce2-d123f21fd6a7> , <http://musicbrainz.org/track/f855a348-9df7-331a-8939-582b99c10034> ;
 	mo:track_count "30"^^xs:int ;
-	rdfs:label "The Complete Original Jacket Collection" .
+	rdfs:label "Johann Sebastian Bach: Two and Three Part Inventions and Sinfonias, BWV 772-801" .
 
 <http://musicbrainz.org/record/9c966c4d-3e38-4db9-9b51-3cfb1e49458a> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "Original Album Series" ;
+	dc:title "My Favorite Things" ;
 	mo:amazon_asin "B0050I2OXI" ;
 	mo:gtin "081227977108" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/0d226341-31fd-417b-9827-b9c5c8b84da7> , <http://musicbrainz.org/track/bcab1f81-a2e9-4192-94b7-e5a8676aa585> , <http://musicbrainz.org/track/cee11cdb-cb10-44dd-83ef-e944dd9fdca6> , <http://musicbrainz.org/track/e5867a87-ca96-45f4-a913-d13a24ee0f1f> ;
 	mo:track_count "4"^^xs:int ;
-	rdfs:label "Original Album Series" .
+	rdfs:label "My Favorite Things" .
 
 <http://musicbrainz.org/record/9ca5b2e0-491f-4364-adaa-276c383115c3> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
@@ -3821,13 +3821,13 @@
 
 <http://musicbrainz.org/record/bc482848-2984-371c-b727-1332d6b95523> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "Albedo 0.39 / Heaven and Hell" ;
+	dc:title "Albedo 0.39" ;
 	mo:amazon_asin "B00004SNB2" ;
 	mo:gtin "743212595420" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/0bcdbfa8-df1d-30aa-87c0-d2d420520ae5> , <http://musicbrainz.org/track/145f0fb9-06ea-3f06-aa03-3d5852c2ee47> , <http://musicbrainz.org/track/157d390a-527b-357a-9137-45931337baeb> , <http://musicbrainz.org/track/19610805-09ff-321c-ada2-4365cefa44aa> , <http://musicbrainz.org/track/30f5676b-fe05-3aaf-b4b7-7a837f36eaf6> , <http://musicbrainz.org/track/32889492-a216-3e47-8685-2cd3df6758bd> , <http://musicbrainz.org/track/3be1075f-b055-33be-ada0-a7c5d69696c9> , <http://musicbrainz.org/track/d6b0bc7e-0775-358d-98ac-156dddf8b8ae> , <http://musicbrainz.org/track/da2cce11-fc2c-368b-b711-1c5c19e27879> ;
 	mo:track_count "9"^^xs:int ;
-	rdfs:label "Albedo 0.39 / Heaven and Hell" .
+	rdfs:label "Albedo 0.39" .
 
 <http://musicbrainz.org/record/c0efe3b9-9d3d-49d3-b13f-5aaed4e3dc1d> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
@@ -3933,13 +3933,13 @@
 
 <http://musicbrainz.org/record/d0fe9c7d-81b9-4c38-8c83-9fdd259c9f86> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "Archiv Produktion 1947-2013" ;
+	dc:title "Goldberg-Variationen" ;
 	mo:amazon_asin "B00BCSBU4E" ;
 	mo:gtin "028947910459" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/027cffde-0e35-4170-aad7-1c0c37bc9efc> , <http://musicbrainz.org/track/08de7235-f86c-4aaf-ad4f-73ef918db354> , <http://musicbrainz.org/track/0d565522-e540-4440-972d-c302a03b217c> , <http://musicbrainz.org/track/149158d9-5f0b-4e65-8a04-a53d15e5179c> , <http://musicbrainz.org/track/1f934786-af41-45a3-9dad-f227f9250439> , <http://musicbrainz.org/track/2173f6bc-3125-4e4c-828b-8b532fb6ae5d> , <http://musicbrainz.org/track/591d0d2c-a559-442c-92c0-a54065b4564a> , <http://musicbrainz.org/track/5c6f3c03-2582-4f03-8131-1602052d6074> , <http://musicbrainz.org/track/6dfb6b53-714f-4d6a-9bda-f61467bb4281> , <http://musicbrainz.org/track/7240e5bc-3f95-4fa1-8371-0b46063ab6b0> , <http://musicbrainz.org/track/872cc25b-344e-4f63-be7c-6ff05d959788> , <http://musicbrainz.org/track/88b00ce9-46b4-4454-9ff3-c95c9865e306> , <http://musicbrainz.org/track/8caab00d-3b56-4288-9e16-ad7f97ed8848> , <http://musicbrainz.org/track/8db0d8cf-8a29-41d4-8d5f-2c2abc37b9db> , <http://musicbrainz.org/track/8e3846b1-8d24-4575-96bd-d2671e77bd5c> , <http://musicbrainz.org/track/8e480dd3-5486-447e-b596-ff2cbc95050f> , <http://musicbrainz.org/track/98e65349-3309-4580-8263-33e8bca7728c> , <http://musicbrainz.org/track/aef0f814-985b-484e-8b42-7a2ebedac7f0> , <http://musicbrainz.org/track/af2caca3-2a44-4053-895f-6f6130d42f1e> , <http://musicbrainz.org/track/b36b9859-8b45-4e3b-becc-5880e37e2e27> , <http://musicbrainz.org/track/bc26d340-3c0f-45a8-980f-6cc09e8841e5> , <http://musicbrainz.org/track/c1c06a3a-e9f8-4450-ab81-b5486f2987b1> , <http://musicbrainz.org/track/cb86cc3d-c4b2-4cf7-8269-ef9f111b1653> , <http://musicbrainz.org/track/cd6ca0e6-6377-46f6-8e0d-bbd28c647306> , <http://musicbrainz.org/track/d1ec11d1-4f11-4aa2-9a11-161cfe165781> , <http://musicbrainz.org/track/e4aab7da-3b7b-4b15-87f0-c21d26799d06> , <http://musicbrainz.org/track/e88fb4aa-a0d9-4040-bd71-b8e0710bb898> , <http://musicbrainz.org/track/e93f6f18-69a0-4ed9-a046-4a2b5c355fa1> , <http://musicbrainz.org/track/eb52e677-3fd3-47de-9a24-a0a8fcb2f9c7> , <http://musicbrainz.org/track/f00721a6-9279-4671-b669-313d41df4f56> , <http://musicbrainz.org/track/f18bbb99-d88e-4cf9-8f59-99bab4270020> , <http://musicbrainz.org/track/f65cd28d-2de0-4272-aab8-3f864e31d595> ;
 	mo:track_count "32"^^xs:int ;
-	rdfs:label "Archiv Produktion 1947-2013" .
+	rdfs:label "Goldberg-Variationen" .
 
 <http://musicbrainz.org/record/d1b45e60-bb04-4ab4-bf7f-2fc6d8f8dad8> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
@@ -3972,13 +3972,13 @@
 
 <http://musicbrainz.org/record/d51300db-6010-4012-a7c8-38ebdfaede5d> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "Schumann: The Masterworks" ;
+	dc:title "Piano Music" ;
 	mo:amazon_asin "B00386FG0M" ;
 	mo:gtin "028947788164" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/3e5f6500-4192-3a76-90c3-d814173af07e> , <http://musicbrainz.org/track/4d462bce-1848-324d-b374-4c7ec0773e72> , <http://musicbrainz.org/track/8226f483-bc13-3e56-a44c-159417e6646f> , <http://musicbrainz.org/track/85c2ffd2-acb2-3656-a4e9-b9f556632294> , <http://musicbrainz.org/track/949dac3c-3e73-34db-b80b-5fcbb0a434fb> , <http://musicbrainz.org/track/ddd6c70f-0a41-3b33-baed-797304750c83> , <http://musicbrainz.org/track/f9db9700-7d7f-3d7b-9385-c1637b30da8e> ;
 	mo:track_count "7"^^xs:int ;
-	rdfs:label "Schumann: The Masterworks" .
+	rdfs:label "Piano Music" .
 
 <http://musicbrainz.org/record/d5b80206-c691-400d-95d7-830311451af9> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
@@ -4042,12 +4042,12 @@
 
 <http://musicbrainz.org/record/d9edc3b7-5ace-43ff-8cd3-84b83081fbd2> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "Philips Original Jackets Collection" ;
+	dc:title "Gershwin: Rhapsody in Blue; Piano Concerto In F; An American in Paris" ;
 	mo:gtin "028947846147" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/02803a98-b59c-431d-984b-3b084befa3f2> , <http://musicbrainz.org/track/385f5f14-a45f-42a4-8c14-3e3bc6b03672> , <http://musicbrainz.org/track/5a3143e3-ef80-4c50-91f9-8a7c992fccd7> , <http://musicbrainz.org/track/b2cf16a2-b8c9-461b-a8c3-ae516b39d5be> , <http://musicbrainz.org/track/c0e48657-b344-4d18-a5b7-288019451d49> , <http://musicbrainz.org/track/c5edc67a-b4c5-4433-80e1-bb1c77f13d9b> ;
 	mo:track_count "6"^^xs:int ;
-	rdfs:label "Philips Original Jackets Collection" .
+	rdfs:label "Gershwin: Rhapsody in Blue; Piano Concerto In F; An American in Paris" .
 
 <http://musicbrainz.org/record/dbbe141b-0eeb-4e84-bb65-8e8e06ecdfeb> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
@@ -4292,13 +4292,13 @@
 
 <http://musicbrainz.org/record/f90c2ac7-10b2-4788-a41f-20ca1ffd4fea> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
-	dc:title "Pogorelich Complete Recordings" ;
+	dc:title "Ravel: Gaspard de la Nuit / Prokofiev: Klaviersonate No. 6" ;
 	mo:amazon_asin "B00QHL0Y8O" ;
 	mo:gtin "028947943501" ;
 	mo:media_type mo:CD ;
 	mo:track <http://musicbrainz.org/track/13e25ba8-43dc-4827-8ea8-8457e9cc3e99> , <http://musicbrainz.org/track/3ff89a60-27f2-4702-b7d8-1829b8c440d8> , <http://musicbrainz.org/track/5d11a5af-bd96-4af2-ba4a-958fde6b82f3> , <http://musicbrainz.org/track/6a0e59e1-f586-41e6-8843-70b8404beced> , <http://musicbrainz.org/track/8771ba55-f6e9-45b8-ba1c-7d60321fe3e7> , <http://musicbrainz.org/track/a0d3273a-9b12-4c72-9a78-c6aa1752dca6> , <http://musicbrainz.org/track/de5db25e-ef06-463d-a415-362676762f3b> ;
 	mo:track_count "7"^^xs:int ;
-	rdfs:label "Pogorelich Complete Recordings" .
+	rdfs:label "Ravel: Gaspard de la Nuit / Prokofiev: Klaviersonate No. 6" .
 
 <http://musicbrainz.org/record/fa2f4010-26b5-4b7f-a087-59bde5ad4bdd> a mo:Record ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
