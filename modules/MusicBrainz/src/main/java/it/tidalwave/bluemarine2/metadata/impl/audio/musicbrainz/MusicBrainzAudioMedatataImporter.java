@@ -41,6 +41,7 @@ import java.util.TreeMap;
 import java.util.stream.Stream;
 import javax.xml.namespace.QName;
 import java.io.IOException;
+import org.apache.commons.lang3.StringUtils;
 import org.musicbrainz.ns.mmd_2.Artist;
 import org.musicbrainz.ns.mmd_2.DefTrackData;
 import org.musicbrainz.ns.mmd_2.Medium;
@@ -65,9 +66,11 @@ import it.tidalwave.bluemarine2.rest.RestResponse;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbAlbum;
 import it.tidalwave.bluemarine2.metadata.cddb.CddbMetadataProvider;
 import it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.RequiredArgsConstructor;
+import lombok.experimental.Wither;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.*;
 import static java.util.stream.Collectors.*;
@@ -76,6 +79,7 @@ import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.*;
 import static it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider.*;
+import java.util.Locale;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -258,7 +262,7 @@ public class MusicBrainzAudioMedatataImporter
      * Aggregate of a {@link Release} and {@link Medium}.
      *
      ******************************************************************************************************************/
-    @RequiredArgsConstructor @Getter
+    @RequiredArgsConstructor @AllArgsConstructor @Getter
     static class ReleaseAndMedium
       {
         @Nonnull
@@ -266,6 +270,57 @@ public class MusicBrainzAudioMedatataImporter
 
         @Nonnull
         private final Medium medium;
+
+        @Getter @Wither
+        private int score;
+
+        @Wither
+        private String embeddedTitle;
+
+        @Wither
+        private boolean excluded;
+
+        @Nonnull
+        public Optional<String> getAsin()
+          {
+            return Optional.ofNullable(release.getAsin());
+          }
+
+        @Nonnull
+        public Optional<String> getBarcode()
+          {
+            return Optional.ofNullable(release.getBarcode());
+          }
+
+        public int similarityTo (final @Nonnull String reference)
+          {
+            return StringUtils.getFuzzyDistance(findTitle().toLowerCase(), reference.toLowerCase(), Locale.UK);
+          }
+
+        // Prefer Medium title - typically available in case of disk collections, in which case Release has got
+        // the collection title, which is very generic.
+        @Nonnull
+        public String findTitle()
+          {
+            return Optional.ofNullable(medium.getTitle()).orElse(release.getTitle());
+          }
+
+        @Nonnull
+        public ReleaseAndMedium excludedIf (final boolean condition)
+          {
+            return withExcluded(excluded || condition);
+          }
+
+        @Override @Nonnull
+        public String toString()
+          {
+            return String.format("EXCL: %-5s ASIN: SCORE: %-10s BARCODE: %-13s %4d PICKED: %s EMBEDDED: %s RELEASE: %s MEDIUM: %s",
+                        excluded,
+                        release.getAsin(), release.getBarcode(),
+                        getScore(),
+                        findTitle(), embeddedTitle,
+                        release.getTitle(), medium.getTitle());
+          }
       }
 
     /*******************************************************************************************************************
@@ -333,16 +388,136 @@ public class MusicBrainzAudioMedatataImporter
                 rams.addAll(findReleases(releaseGroups, cddb.get(), Validation.TRACK_OFFSETS_MATCH_REQUIRED));
               }
 
-            rams.stream().forEach(ram -> log.info(String.format(">>> ASIN: %-10s BARCODE: %-13s RELEASE TITLE: %s MEDIUM TITLE: %s EMBEDDED TITLE: %s",
-                    ram.release.getAsin(), ram.release.getBarcode(), ram.release.getTitle(), ram.medium.getTitle(), albumTitle)));
-
-            model.with(rams.stream()
-                           .parallel()
-                           .map(_f(ram -> handleRelease(metadata, ram)))
-                           .collect(toList()));
+            model.with(marked(rams, albumTitle.get()).stream()
+                                                     .parallel()
+                                                     .map(_f(ram -> handleRelease(metadata, ram)))
+                                                     .collect(toList()));
           }
 
         return model.toModel();
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Given a valid list of {@link ReleaseAndMedium}s - that is, that has been already validated and correctly matches
+     * the searched record - if it contains more than one element picks the most suitable one. Unwanted elements are
+     * not filtered out, because it's not always possible to automatically pick the best one: in fact, some entries
+     * might differ for ASIN or barcode; or might be items individually sold or part of a collection. It makes sense to
+     * offer the user the possibility of manually pick them later. So, instread of being filtered out, those elements
+     * are marked as "excluded" (and they will be later marked as such in the triple store).
+     *
+     * These are the performed steps:
+     *
+     * </ol>
+     * <li>A matching score is computed about the affinity of the title found in MusicBrainz metadata with respected
+     *     to the title in the embedded metadata.</li>
+     * <li>Elements that don't reach the maximum score are excluded.</li>
+     * <li>If at least one element has got the ASIN, other elements that don't bear it are excluded.</li>
+     * <li>If at least one element has got the barcode, other elements that don't bear it are excluded.</li>
+     * <li>If the pick is not unique yet, an ASIN is picked as the first in lexicoraphic order and elements not
+     *     bearing it are excluded.</li>
+     * <li>If the pick is not unique yet, a barcode is picked as the first in lexicoraphic order and elements not
+     *     bearing it are excluded.</li>
+     * <li>If the pick is not unique yet, elements other than the first one are excluded.</i>
+     * </ul>
+     *
+     * The last criteria are implemented for giving consistency to automated tests, considering that the order in which
+     * elements are found is not guaranteed because of multi-threading.
+     *
+     * @param   inRams            the incoming {@code ReleaseAndMedium}s
+     * @param   embeddedTitle   the album title found in the file
+     * @return                  the outcoming {@code ReleaseAndMedium}s
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private List<ReleaseAndMedium> marked (final @Nonnull List<ReleaseAndMedium> inRams,
+                                           final @Nonnull String embeddedTitle)
+      {
+        if (inRams.size() <= 1)
+          {
+            return inRams;
+          }
+
+        List<ReleaseAndMedium> rams = inRams.stream().map(ram -> ram.withEmbeddedTitle(embeddedTitle)
+                                                                    .withScore(ram.similarityTo(embeddedTitle)))
+                                                     .collect(toList());
+        rams = markedExcludedByTitleAffinity(rams);
+
+        final boolean asinPresent = rams.stream().filter(ram -> !ram.isExcluded() && ram.getAsin().isPresent()).findAny().isPresent();
+        rams = rams.stream().map(ram -> ram.excludedIf(asinPresent && ram.getRelease().getAsin() == null)).collect(toList());
+
+        final boolean barcodePresent = rams.stream().filter(ram -> !ram.isExcluded() && ram.getBarcode().isPresent()).findAny().isPresent();
+        rams = rams.stream().map(ram -> ram.excludedIf(barcodePresent && ram.getRelease().getBarcode() == null)).collect(toList());
+
+        if ((countNotExcluded(rams) > 1) && asinPresent)
+          {
+            final Optional<String> asin = rams.stream().filter(ram -> !ram.isExcluded())
+                                                       .map(ram -> ram.getAsin().get())
+                                                       .sorted()
+                                                       .findFirst();
+            rams = rams.stream().map(ram -> ram.excludedIf(!ram.getAsin().equals(asin))).collect(toList());
+          }
+
+        if ((countNotExcluded(rams) > 1) && barcodePresent)
+          {
+            final Optional<String> barcode = rams.stream().filter(ram -> !ram.isExcluded())
+                                                          .map(ram -> ram.getBarcode().get())
+                                                          .sorted()
+                                                          .findFirst();
+            rams = rams.stream().map(ram -> ram.excludedIf(!ram.getBarcode().equals(barcode))).collect(toList());
+          }
+
+        rams = excessKeepersMarkedExcluded(rams);
+
+        synchronized (log) // keep log lines together
+          {
+            log.info("MULTIPLE RESULTS");
+            rams.stream().forEach(ram -> log.info(">>> MULTIPLE RESULTS: {}", ram.toString()));
+          }
+
+        final int count = countNotExcluded(rams);
+        assert count == 1 : "Still too many items " + count;
+
+        return rams;
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static List<ReleaseAndMedium> excessKeepersMarkedExcluded (final @Nonnull List<ReleaseAndMedium> rams)
+      {
+        if (countNotExcluded(rams) > 1)
+          {
+            boolean foundGoodOne = false;
+            // FIXME: should be sorted for test consistency
+            for (int i = 0; i < rams.size(); i++)
+              {
+                rams.set(i, rams.get(i).excludedIf(foundGoodOne));
+                foundGoodOne |= !rams.get(i).isExcluded();
+              }
+          }
+
+        return rams;
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static List<ReleaseAndMedium> markedExcludedByTitleAffinity (final @Nonnull List<ReleaseAndMedium> rams)
+      {
+        final int bestScore = rams.stream().mapToInt(ReleaseAndMedium::getScore).max().getAsInt();
+        return rams.stream().map(ram -> ram.excludedIf(ram.getScore() < bestScore)).collect(toList());
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnegative
+    private static int countNotExcluded (final @Nonnull List<ReleaseAndMedium> rams)
+      {
+        return (int)rams.stream().filter(ram -> !ram.isExcluded()).count();
       }
 
     /*******************************************************************************************************************
@@ -363,11 +538,10 @@ public class MusicBrainzAudioMedatataImporter
         final Medium medium = ram.getMedium();
         final Release release = ram.getRelease();
         final List<DefTrackData> tracks = medium.getTrackList().getDefTrack();
-        // Prefer Medium title - typically available in case of disk collections, in which case Release has got
-        // the collection title, which is very generic.
-        final String recordTitle = Optional.ofNullable(medium.getTitle()).orElse(release.getTitle());
+        final String recordTitle = ram.findTitle();
         final IRI recordIri = musicBrainzIriFor("record", release.getId());
-        return createModelBuilder()
+
+        ModelBuilder model = createModelBuilder()
             .with(recordIri, RDF.TYPE,           MO.C_RECORD)
             .with(recordIri, BM.P_IMPORTED_FROM, BM.O_MUSICBRAINZ)
             .with(recordIri, MO.P_MEDIA_TYPE,    MO.C_CD)
@@ -381,6 +555,13 @@ public class MusicBrainzAudioMedatataImporter
                                  .map(_f(track -> handleTrack(metadata.get(CDDB).get(), recordIri, track)))
                                  .collect(toList()));
 
+        if (ram.isExcluded())
+          {
+            model = model.with(BM.S_ALTERNATIVE_ITEMS, RDF.TYPE,      BM.C_PREFERENCE_ITEM)
+                         .with(BM.S_ALTERNATIVE_ITEMS, BM.O_INCLUDES, recordIri);
+          }
+
+        return model;
         // TODO: release.getLabelInfoList();
         // TODO: medium discId
         // TODO: record producer - requires inc=artist-rels
@@ -582,7 +763,6 @@ public class MusicBrainzAudioMedatataImporter
             .filter(ram -> matchesFormat(ram.getMedium()))
             .filter(ram -> matchesTrackOffsets(ram.getMedium(), cddb, validation))
             .peek(ram -> log.info(">>>>>>>> FOUND {} - with score {}", ram.getMedium().getTitle(), 0 /* scoreOf(releaseGroup) FIXME */))
-            // FIXME: should stop at the first found?
             .collect(toMap(ram -> ram.getRelease().getId(), ram -> ram, (u, v) -> v, TreeMap::new))
             .values();
       }

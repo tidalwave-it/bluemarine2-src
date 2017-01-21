@@ -28,6 +28,10 @@
                 ?record       mo:track                ?track.
                 ?record       rdfs:label              ?record_label.
 
+                MINUS
+                  {
+                    bmmo:alternativeItems  bmmo:includes    ?record.
+                  }
                 OPTIONAL
                   {
                     ?record       mo:track_count          ?track_count.

@@ -83,11 +83,13 @@ public final class BM // FIXME: rename to BMMO
     /** Object of the P_SOURCE predicate that says that the subject was imported from MusicBrainz. */
     public static final IRI O_MUSICBRAINZ               = FACTORY.createIRI("http://musicbrainz.org");
 
-//    /** Means that the file couldn't download metadata. The object is the timestamp of the latest attempt. */
-//    public static final IRI LATEST_MB_METADATA          = factory.createIRI(PREFIX + "latestMusicBrainzMetadata");
-//
-//    /** Means that the file couldn't download metadata. The object is the timestamp of the latest attempt. */
-//    public static final IRI FAILED_MB_METADATA          = factory.createIRI(PREFIX + "failedMusicBrainzMetadata");
+    public static final String S_S_ALTERNATIVE_ITEMS    = PREFIX + "alternativeItems";
+    public static final String S_C_PREFERENCE_ITEM      = PREFIX + "PreferenceItem";
+    public static final String S_O_INCLUDES             = PREFIX + "includes";
+
+    public static final IRI S_ALTERNATIVE_ITEMS         = FACTORY.createIRI(S_S_ALTERNATIVE_ITEMS);
+    public static final IRI C_PREFERENCE_ITEM           = FACTORY.createIRI(S_C_PREFERENCE_ITEM);
+    public static final IRI O_INCLUDES                  = FACTORY.createIRI(S_O_INCLUDES);
 
     private static final String S_P_ARRANGER                        = PREFIX + "arranger";
     private static final String S_P_BACKGROUND_SINGER               = PREFIX + "background_singer";

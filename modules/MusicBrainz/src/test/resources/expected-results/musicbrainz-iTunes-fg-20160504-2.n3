@@ -9,6 +9,9 @@
 @prefix vocab: <http://dbtune.org/musicbrainz/resource/vocab/> .
 @prefix xs: <http://www.w3.org/2001/XMLSchema#> .
 
+bmmo:alternativeItems a bmmo:PreferenceItem ;
+	bmmo:includes <http://musicbrainz.org/record/0db52d37-cc2f-41e3-b43d-755483b71c0c> , <http://musicbrainz.org/record/1453738d-a4fa-4c48-b946-de4022943bb7> , <http://musicbrainz.org/record/37c691c8-ffaa-4d9f-9f1d-78f7bf3f8373> , <http://musicbrainz.org/record/43c60e64-193b-354e-8018-4f582cebd18c> , <http://musicbrainz.org/record/4f99e937-b8ff-38d5-b915-bd744b34d8d8> , <http://musicbrainz.org/record/5cacd9cf-6514-4b75-bfcf-9cb788f7bd14> , <http://musicbrainz.org/record/8f7a6f98-71e1-3a93-8297-028617b0168d> , <http://musicbrainz.org/record/92b01866-1815-4d8e-91b3-700d11719bbb> , <http://musicbrainz.org/record/a5721574-29df-45b4-b3a1-1eab28f678e4> , <http://musicbrainz.org/record/ba5a6979-28eb-4924-afb4-316ed93a4d4f> , <http://musicbrainz.org/record/bc1a2bc2-d1be-4c51-b40a-04b30853dc3d> , <http://musicbrainz.org/record/d1b45e60-bb04-4ab4-bf7f-2fc6d8f8dad8> , <http://musicbrainz.org/record/e153542f-6fa9-43cf-a92d-d2889b6b4d2b> , <http://musicbrainz.org/record/e712fde2-6f0e-4fad-87dc-585023d811eb> , <http://musicbrainz.org/record/e9b4d4b4-2763-4211-96e6-31dde8c1e114> , <http://musicbrainz.org/record/f90c2ac7-10b2-4788-a41f-20ca1ffd4fea> , <http://musicbrainz.org/record/ff404d38-5a2d-43fe-968e-cfca6928609c> .
+
 <http://musicbrainz.org/artist/022371c0-e34a-4ce8-aaaf-1cca4f9082e0> a mo:MusicArtist ;
 	bmmo:importedFrom <http://musicbrainz.org> ;
 	rdfs:label "Bamberger Symphoniker" ;
