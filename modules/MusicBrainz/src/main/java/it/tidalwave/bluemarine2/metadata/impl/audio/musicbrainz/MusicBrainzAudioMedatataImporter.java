@@ -304,7 +304,7 @@ public class MusicBrainzAudioMedatataImporter
       throws InterruptedException, IOException
       {
         final ModelBuilder model = createModelBuilder();
-        final Optional<String> albumTitle = metadata.get(TITLE);
+        final Optional<String> albumTitle = metadata.get(ALBUM);
         final Optional<Cddb> cddb = metadata.get(CDDB);
 
         if (albumTitle.isPresent() && !albumTitle.get().trim().isEmpty() && cddb.isPresent())
@@ -333,8 +333,8 @@ public class MusicBrainzAudioMedatataImporter
                 rams.addAll(findReleases(releaseGroups, cddb.get(), Validation.TRACK_OFFSETS_MATCH_REQUIRED));
               }
 
-            rams.stream().forEach(ram -> log.info(String.format(">>> ASIN: %-10s BARCODE: %-13s RELEASE TITLE: %s MEDIUM TITLE: %s",
-                    ram.release.getAsin(), ram.release.getBarcode(), ram.release.getTitle(), ram.medium.getTitle())));
+            rams.stream().forEach(ram -> log.info(String.format(">>> ASIN: %-10s BARCODE: %-13s RELEASE TITLE: %s MEDIUM TITLE: %s EMBEDDED TITLE: %s",
+                    ram.release.getAsin(), ram.release.getBarcode(), ram.release.getTitle(), ram.medium.getTitle(), albumTitle)));
 
             model.with(rams.stream()
                            .parallel()

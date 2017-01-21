@@ -84,7 +84,7 @@ public class TestSupport
                                         .findFirst()
                                         .map(s -> ITunesComment.fromToString(s.replaceAll("^.* = ", "")));
 
-        return new MetadataSupport(file).with(TITLE, albumTitle)
+        return new MetadataSupport(file).with(ALBUM, albumTitle)
                                         .with(TRACK_NUMBER, trackNumber)
                                         .with(ITUNES_COMMENT, iTunesComment);
       }
