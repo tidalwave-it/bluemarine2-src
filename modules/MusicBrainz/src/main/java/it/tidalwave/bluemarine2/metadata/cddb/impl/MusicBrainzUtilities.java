@@ -30,14 +30,8 @@ package it.tidalwave.bluemarine2.metadata.cddb.impl;
 
 import javax.annotation.Nonnull;
 import java.io.UnsupportedEncodingException;
-import java.util.List;
-import org.musicbrainz.ns.mmd_2.Disc;
-import org.musicbrainz.ns.mmd_2.Medium;
-import it.tidalwave.bluemarine2.model.MediaItem;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata.Cddb;
 import java.net.URLEncoder;
 import lombok.NoArgsConstructor;
-import static java.util.stream.Collectors.toList;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -49,35 +43,6 @@ import static lombok.AccessLevel.PRIVATE;
 @NoArgsConstructor(access = PRIVATE)
 public final class MusicBrainzUtilities
   {
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static List<Cddb> cddbsOf (final @Nonnull Medium medium)
-      {
-        return medium.getDiscList().getDisc().stream().map(disc -> cddbOf(disc)).collect(toList());
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static Cddb cddbOf (final @Nonnull Disc disc)
-      {
-        return MediaItem.Metadata.Cddb.builder()
-                .discId("") // FIXME
-                .trackFrameOffsets(disc.getOffsetList().getOffset()
-                        .stream()
-                        .map(offset -> offset.getValue())
-                        .mapToInt(x -> x.intValue())
-                        .toArray())
-                .build();
-      }
-
     /*******************************************************************************************************************
      *
      *

@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -44,6 +45,7 @@ import java.io.IOException;
 import org.apache.commons.lang3.StringUtils;
 import org.musicbrainz.ns.mmd_2.Artist;
 import org.musicbrainz.ns.mmd_2.DefTrackData;
+import org.musicbrainz.ns.mmd_2.Disc;
 import org.musicbrainz.ns.mmd_2.Medium;
 import org.musicbrainz.ns.mmd_2.Recording;
 import org.musicbrainz.ns.mmd_2.Relation;
@@ -59,6 +61,7 @@ import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.model.vocabulary.*;
 import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 import it.tidalwave.bluemarine2.util.ModelBuilder;
+import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata.Cddb;
 import it.tidalwave.bluemarine2.model.vocabulary.*;
@@ -77,9 +80,8 @@ import static java.util.stream.Collectors.*;
 import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import static it.tidalwave.bluemarine2.metadata.cddb.impl.MusicBrainzUtilities.*;
 import static it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider.*;
-import java.util.Locale;
+import static it.tidalwave.bluemarine2.model.vocabulary.BM.recordIriFor;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -263,13 +265,16 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @RequiredArgsConstructor @AllArgsConstructor @Getter
-    static class ReleaseAndMedium
+    static class ReleaseMediumDisk
       {
         @Nonnull
         private final Release release;
 
         @Nonnull
         private final Medium medium;
+
+        @Getter @Wither
+        private Disc disc;
 
         @Getter @Wither
         private int score;
@@ -306,7 +311,7 @@ public class MusicBrainzAudioMedatataImporter
           }
 
         @Nonnull
-        public ReleaseAndMedium excludedIf (final boolean condition)
+        public ReleaseMediumDisk excludedIf (final boolean condition)
           {
             return withExcluded(excluded || condition);
           }
@@ -314,12 +319,10 @@ public class MusicBrainzAudioMedatataImporter
         @Override @Nonnull
         public String toString()
           {
-            return String.format("EXCL: %-5s ASIN: SCORE: %-10s BARCODE: %-13s %4d PICKED: %s EMBEDDED: %s RELEASE: %s MEDIUM: %s",
+            return String.format("EXCL: %-5s ASIN: %-10s BARCODE: %-13s SCORE: %4d PICKED: %s EMBEDDED: %s RELEASE: %s MEDIUM: %s",
                         excluded,
                         release.getAsin(), release.getBarcode(),
-                        getScore(),
-                        findTitle(), embeddedTitle,
-                        release.getTitle(), medium.getTitle());
+                        getScore(), findTitle(), embeddedTitle, release.getTitle(), medium.getTitle());
           }
       }
 
@@ -365,7 +368,7 @@ public class MusicBrainzAudioMedatataImporter
         if (albumTitle.isPresent() && !albumTitle.get().trim().isEmpty() && cddb.isPresent())
           {
             log.info("============ PROBING TOC FOR {}", albumTitle);
-            final List<ReleaseAndMedium> rams = new ArrayList<>();
+            final List<ReleaseMediumDisk> rams = new ArrayList<>();
             final RestResponse<ReleaseList> releaseList = mbMetadataProvider.findReleaseListByToc(cddb.get().getToc(), TOC_INCLUDES);
             // even though we're querying by TOC, matching offsets is required to kill many false results
             releaseList.ifPresent(releases -> rams.addAll(findReleases(releases, cddb.get(), Validation.TRACK_OFFSETS_MATCH_REQUIRED)));
@@ -399,7 +402,7 @@ public class MusicBrainzAudioMedatataImporter
 
     /*******************************************************************************************************************
      *
-     * Given a valid list of {@link ReleaseAndMedium}s - that is, that has been already validated and correctly matches
+     * Given a valid list of {@link ReleaseMediumDisk}s - that is, that has been already validated and correctly matches
      * the searched record - if it contains more than one element picks the most suitable one. Unwanted elements are
      * not filtered out, because it's not always possible to automatically pick the best one: in fact, some entries
      * might differ for ASIN or barcode; or might be items individually sold or part of a collection. It makes sense to
@@ -424,23 +427,23 @@ public class MusicBrainzAudioMedatataImporter
      * The last criteria are implemented for giving consistency to automated tests, considering that the order in which
      * elements are found is not guaranteed because of multi-threading.
      *
-     * @param   inRams            the incoming {@code ReleaseAndMedium}s
+     * @param   inRams          the incoming {@code ReleaseAndMedium}s
      * @param   embeddedTitle   the album title found in the file
      * @return                  the outcoming {@code ReleaseAndMedium}s
      *
      ******************************************************************************************************************/
     @Nonnull
-    private List<ReleaseAndMedium> marked (final @Nonnull List<ReleaseAndMedium> inRams,
-                                           final @Nonnull String embeddedTitle)
+    private List<ReleaseMediumDisk> marked (final @Nonnull List<ReleaseMediumDisk> inRams,
+                                            final @Nonnull String embeddedTitle)
       {
         if (inRams.size() <= 1)
           {
             return inRams;
           }
 
-        List<ReleaseAndMedium> rams = inRams.stream().map(ram -> ram.withEmbeddedTitle(embeddedTitle)
-                                                                    .withScore(ram.similarityTo(embeddedTitle)))
-                                                     .collect(toList());
+        List<ReleaseMediumDisk> rams = inRams.stream().map(ram -> ram.withEmbeddedTitle(embeddedTitle)
+                                                                     .withScore(ram.similarityTo(embeddedTitle)))
+                                                      .collect(toList());
         rams = markedExcludedByTitleAffinity(rams);
 
         final boolean asinPresent = rams.stream().filter(ram -> !ram.isExcluded() && ram.getAsin().isPresent()).findAny().isPresent();
@@ -485,7 +488,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static List<ReleaseAndMedium> excessKeepersMarkedExcluded (final @Nonnull List<ReleaseAndMedium> rams)
+    private static List<ReleaseMediumDisk> excessKeepersMarkedExcluded (final @Nonnull List<ReleaseMediumDisk> rams)
       {
         if (countNotExcluded(rams) > 1)
           {
@@ -505,9 +508,9 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static List<ReleaseAndMedium> markedExcludedByTitleAffinity (final @Nonnull List<ReleaseAndMedium> rams)
+    private static List<ReleaseMediumDisk> markedExcludedByTitleAffinity (final @Nonnull List<ReleaseMediumDisk> rams)
       {
-        final int bestScore = rams.stream().mapToInt(ReleaseAndMedium::getScore).max().getAsInt();
+        final int bestScore = rams.stream().mapToInt(ReleaseMediumDisk::getScore).max().getAsInt();
         return rams.stream().map(ram -> ram.excludedIf(ram.getScore() < bestScore)).collect(toList());
       }
 
@@ -515,7 +518,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnegative
-    private static int countNotExcluded (final @Nonnull List<ReleaseAndMedium> rams)
+    private static int countNotExcluded (final @Nonnull List<ReleaseMediumDisk> rams)
       {
         return (int)rams.stream().filter(ram -> !ram.isExcluded()).count();
       }
@@ -532,14 +535,15 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ModelBuilder handleRelease (final @Nonnull Metadata metadata, final @Nonnull ReleaseAndMedium ram)
+    private ModelBuilder handleRelease (final @Nonnull Metadata metadata, final @Nonnull ReleaseMediumDisk ram)
       throws IOException, InterruptedException
       {
         final Medium medium = ram.getMedium();
         final Release release = ram.getRelease();
         final List<DefTrackData> tracks = medium.getTrackList().getDefTrack();
         final String recordTitle = ram.findTitle();
-        final IRI recordIri = musicBrainzIriFor("record", release.getId());
+        log.info("importing {} {} ...", recordTitle, (ram.isExcluded() ? "(excluded)" : ""));
+        final IRI recordIri = recordIriFor(createSha1IdNew(ram.getRelease().getId() + "+" + ram.getDisc().getId()));
 
         ModelBuilder model = createModelBuilder()
             .with(recordIri, RDF.TYPE,           MO.C_RECORD)
@@ -723,9 +727,9 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<ReleaseAndMedium> findReleases (final @Nonnull List<ReleaseGroup> releaseGroups,
-                                                       final @Nonnull Cddb cddb,
-                                                       final @Nonnull Validation validation)
+    private Collection<ReleaseMediumDisk> findReleases (final @Nonnull List<ReleaseGroup> releaseGroups,
+                                                        final @Nonnull Cddb cddb,
+                                                        final @Nonnull Validation validation)
       {
         return releaseGroups.stream()
                             .parallel()
@@ -748,9 +752,9 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Collection<ReleaseAndMedium> findReleases (final @Nonnull ReleaseList releaseList,
-                                                       final @Nonnull Cddb cddb,
-                                                       final @Nonnull Validation validation)
+    private Collection<ReleaseMediumDisk> findReleases (final @Nonnull ReleaseList releaseList,
+                                                        final @Nonnull Cddb cddb,
+                                                        final @Nonnull Validation validation)
       {
         return releaseList.getRelease().stream()
             .parallel()
@@ -759,9 +763,10 @@ public class MusicBrainzAudioMedatataImporter
             .flatMap(_f(release -> mbMetadataProvider.getResource(RELEASE, release.getId(), RELEASE_INCLUDES).get()
                             .getMediumList().getMedium()
                             .stream()
-                            .map(medium -> new ReleaseAndMedium(release, medium))))
+                            .map(medium -> new ReleaseMediumDisk(release, medium))))
             .filter(ram -> matchesFormat(ram.getMedium()))
-            .filter(ram -> matchesTrackOffsets(ram.getMedium(), cddb, validation))
+            .flatMap(ram -> ram.getMedium().getDiscList().getDisc().stream().map(disc -> ram.withDisc(disc)))
+            .filter(ram -> matchesTrackOffsets(ram, cddb, validation))
             .peek(ram -> log.info(">>>>>>>> FOUND {} - with score {}", ram.getMedium().getTitle(), 0 /* scoreOf(releaseGroup) FIXME */))
             .collect(toMap(ram -> ram.getRelease().getId(), ram -> ram, (u, v) -> v, TreeMap::new))
             .values();
@@ -790,39 +795,58 @@ public class MusicBrainzAudioMedatataImporter
 
     /*******************************************************************************************************************
      *
-     * Returns {@code true} i the given {@link Medium} matches the track offsets in the given {@link Cddb}.
+     * Returns {@code true} if the given {@link ReleaseMediumDisk} matches the track offsets in the given {@link Cddb}.
      *
-     * @param   medium      the {@code Medium}
-     * @param   cddb        the track offsets
+     * @param   ram         the {@code ReleaseMediumDisk}
+     * @param   cddb        the track offsets to match
      * @param   validation  how the results must be validated
      * @return              {@code true} if there is a match
      *
      ******************************************************************************************************************/
-    private boolean matchesTrackOffsets (final @Nonnull Medium medium,
+    private boolean matchesTrackOffsets (final @Nonnull ReleaseMediumDisk ram,
                                          final @Nonnull Cddb cddb,
                                          final @Nonnull Validation validation)
       {
-        final List<Cddb> cddbs = cddbsOf(medium);
+        final Cddb discCddb = cddbOf(ram.getDisc());
 
-        if (cddbs.isEmpty() && (validation == Validation.TRACK_OFFSETS_MATCH_NOT_REQUIRED))
+        if ((discCddb == null) && (validation == Validation.TRACK_OFFSETS_MATCH_NOT_REQUIRED))
           {
             log.info(">>>>>>>> no track offsets, but not required");
             return true;
           }
 
-        final boolean matches = cddbs.stream().anyMatch(c -> cddb.matches(c, trackOffsetsMatchThreshold));
+        final boolean matches = cddb.matches(discCddb, trackOffsetsMatchThreshold);
 
         if (!matches)
           {
             synchronized (log) // keep log lines together
               {
-                log.info(">>>>>>>> discarded {} because track offsets don't match", medium.getTitle());
+                log.info(">>>>>>>> discarded {}/{} because track offsets don't match",
+                         ram.getMedium().getTitle(), ram.getDisc().getId());
                 log.debug(">>>>>>>> iTunes offsets: {}", cddb.getTrackFrameOffsets());
-                cddbs.forEach(c -> log.debug(">>>>>>>> found offsets:  {}", c.getTrackFrameOffsets()));
+                log.debug(">>>>>>>> found offsets:  {}", discCddb.getTrackFrameOffsets());
               }
           }
 
         return matches;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static Cddb cddbOf (final @Nonnull Disc disc)
+      {
+        return MediaItem.Metadata.Cddb.builder()
+                .discId("") // FIXME
+                .trackFrameOffsets(disc.getOffsetList().getOffset()
+                        .stream()
+                        .map(offset -> offset.getValue())
+                        .mapToInt(x -> x.intValue())
+                        .toArray())
+                .build();
       }
 
     /*******************************************************************************************************************
