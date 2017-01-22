@@ -51,7 +51,7 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
   {
     private static final long serialVersionUID = -6899011281060253740L;
 
-    private final static String QUERY_RECORDS = readSparql(RepositoryMusicArtistFinder.class, "Records.sparql");
+    private final static String QUERY_RECORDS = readSparql(RepositoryRecordFinder.class, "Records.sparql");
 
     @Nonnull
     private final Optional<Id> makerId;
