@@ -82,7 +82,10 @@ import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider.*;
 import static it.tidalwave.bluemarine2.model.vocabulary.BM.recordIriFor;
+import it.tidalwave.util.Id;
+import javax.annotation.CheckForNull;
 import static lombok.AccessLevel.PRIVATE;
+import lombok.EqualsAndHashCode;
 
 /***********************************************************************************************************************
  *
@@ -286,6 +289,12 @@ public class MusicBrainzAudioMedatataImporter
         private boolean excluded;
 
         @Nonnull
+        public Id getId()
+          {
+            return createSha1IdNew(getRelease().getId() + "+" + getDisc().getId());
+          }
+
+        @Nonnull
         public Optional<String> getAsin()
           {
             return Optional.ofNullable(release.getAsin());
@@ -314,6 +323,28 @@ public class MusicBrainzAudioMedatataImporter
         public ReleaseMediumDisk excludedIf (final boolean condition)
           {
             return withExcluded(excluded || condition);
+          }
+
+        @Override
+        public boolean equals (final @CheckForNull Object other)
+          {
+            if (this == other)
+              {
+                return true;
+              }
+
+            if ((other == null) || (getClass() != other.getClass()))
+              {
+                return false;
+              }
+
+            return Objects.equals(this.getId(), ((ReleaseMediumDisk)other).getId());
+          }
+
+        @Override
+        public int hashCode()
+          {
+            return getId().hashCode();
           }
 
         @Override @Nonnull
@@ -441,9 +472,9 @@ public class MusicBrainzAudioMedatataImporter
             return inRams;
           }
 
-        List<ReleaseMediumDisk> rams = inRams.stream().map(ram -> ram.withEmbeddedTitle(embeddedTitle)
-                                                                     .withScore(ram.similarityTo(embeddedTitle)))
-                                                      .collect(toList());
+        List<ReleaseMediumDisk> rams = new ArrayList<>(inRams.stream().map(ram -> ram.withEmbeddedTitle(embeddedTitle)
+                                                                      .withScore(ram.similarityTo(embeddedTitle)))
+                                                             .collect(toSet()));
         rams = markedExcludedByTitleAffinity(rams);
 
         final boolean asinPresent = rams.stream().filter(ram -> !ram.isExcluded() && ram.getAsin().isPresent()).findAny().isPresent();
@@ -543,7 +574,7 @@ public class MusicBrainzAudioMedatataImporter
         final List<DefTrackData> tracks = medium.getTrackList().getDefTrack();
         final String recordTitle = ram.findTitle();
         log.info("importing {} {} ...", recordTitle, (ram.isExcluded() ? "(excluded)" : ""));
-        final IRI recordIri = recordIriFor(createSha1IdNew(ram.getRelease().getId() + "+" + ram.getDisc().getId()));
+        final IRI recordIri = recordIriFor(ram.getId());
 
         ModelBuilder model = createModelBuilder()
             .with(recordIri, RDF.TYPE,           MO.C_RECORD)
