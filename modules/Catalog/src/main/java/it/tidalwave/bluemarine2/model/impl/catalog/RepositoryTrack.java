@@ -70,6 +70,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 @Immutable @Configurable @Slf4j
 public class RepositoryTrack extends RepositoryEntitySupport implements Track, AudioFileSupplier
   {
+    @Nonnull
     private final Optional<Integer> trackNumber;
 
     @Nonnull
@@ -84,6 +85,9 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Nonnull
     private final Optional<Integer> diskCount;
 
+    @Nonnull
+    private final Optional<Long> fileSize;
+
     @CheckForNull
     private AudioFile audioFile;
 
@@ -92,8 +96,6 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
     @Getter
     private final Metadata metadata;
-
-    private final Optional<Long> fileSize;
 
     /*******************************************************************************************************************
      *
