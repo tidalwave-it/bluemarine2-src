@@ -58,10 +58,7 @@ public class RepositoryMusicArtist extends RepositoryEntitySupport implements Mu
     public RepositoryMusicArtist (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
         super(repository, bindingSet, "artist");
-
-        type = bindingSet.hasBinding("artist_type")
-                ? Integer.parseInt(bindingSet.getBinding("artist_type").getValue().stringValue())
-                : 1;
+        type = toInteger(bindingSet.getBinding("artist_type")).orElse(1);
       }
 
     @Override @Nonnull
