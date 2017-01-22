@@ -282,11 +282,16 @@ public class MusicBrainzAudioMedatataImporter
         @Getter @Wither
         private int score;
 
-        @Wither
         private String embeddedTitle;
 
         @Wither
         private boolean excluded;
+
+        @Nonnull
+        public ReleaseMediumDisk withEmbeddedTitle (final @Nonnull String embeddedTitle)
+          {
+            return new ReleaseMediumDisk(release, medium, disc, similarity(findTitle(), embeddedTitle), embeddedTitle, excluded);
+          }
 
         @Nonnull
         public Id getId()
@@ -304,11 +309,6 @@ public class MusicBrainzAudioMedatataImporter
         public Optional<String> getBarcode()
           {
             return Optional.ofNullable(release.getBarcode());
-          }
-
-        public int similarityTo (final @Nonnull String reference)
-          {
-            return StringUtils.getFuzzyDistance(findTitle().toLowerCase(), reference.toLowerCase(), Locale.UK);
           }
 
         // Prefer Medium title - typically available in case of disk collections, in which case Release has got
@@ -443,6 +443,7 @@ public class MusicBrainzAudioMedatataImporter
      * These are the performed steps:
      *
      * </ol>
+     * <li>Eventual duplicates are collapsed.</li>
      * <li>A matching score is computed about the affinity of the title found in MusicBrainz metadata with respected
      *     to the title in the embedded metadata.</li>
      * <li>Elements that don't reach the maximum score are excluded.</li>
@@ -472,8 +473,8 @@ public class MusicBrainzAudioMedatataImporter
             return inRmds;
           }
 
-        List<ReleaseMediumDisk> rmds = new ArrayList<>(inRmds.stream().map(rmd -> rmd.withEmbeddedTitle(embeddedTitle)
-                                                                      .withScore(rmd.similarityTo(embeddedTitle)))
+        List<ReleaseMediumDisk> rmds = new ArrayList<>(inRmds.stream()
+                                                             .map(rmd -> rmd.withEmbeddedTitle(embeddedTitle))
                                                              .collect(toSet()));
         rmds = markedExcludedByTitleAffinity(rmds);
 
@@ -801,6 +802,44 @@ public class MusicBrainzAudioMedatataImporter
             .peek(rmd -> log.info(">>>>>>>> FOUND {} - with score {}", rmd.getMedium().getTitle(), 0 /* scoreOf(releaseGroup) FIXME */))
             .collect(toMap(rmd -> rmd.getRelease().getId(), rmd -> rmd, (u, v) -> v, TreeMap::new))
             .values();
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    public static int similarity (final @Nonnull String a, final @Nonnull String b)
+      {
+        int score = StringUtils.getFuzzyDistance(a.toLowerCase(), b.toLowerCase(), Locale.UK);
+        //
+        // While this is a hack, it isn't so ugly as it might appear. The idea is to give a lower score to
+        // collections and records with a generic title, hoping that a better one is picked.
+        // FIXME: put into a map and then into an external resource with the delta score associated.
+        //
+        if (a.matches("^Complete Recordings on Deutsche Grammophon.*")
+         || a.matches("^Gilels - Beethoven - Sonatas.*")
+         || a.matches("^Great Violin Concertos.*")
+         || a.matches("^Piano Music$")
+         || a.matches("^CBS Great Performances.*"))
+          {
+            score -= 50;
+          }
+
+        if (a.matches("^Piano Concertos$")
+         || a.matches("^Klavierkonzerte$"))
+          {
+            score -= 30;
+          }
+
+        // Ok, this is really a hack
+        if (a.matches("^he Platinum Collection$"))
+          {
+            score -= 10;
+          }
+
+        return score;
       }
 
     /*******************************************************************************************************************
