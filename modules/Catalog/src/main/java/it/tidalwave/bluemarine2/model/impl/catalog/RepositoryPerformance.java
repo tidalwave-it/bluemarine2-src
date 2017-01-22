@@ -53,4 +53,16 @@ public class RepositoryPerformance extends RepositoryEntitySupport implements Pe
       {
         return new RepositoryMusicPerformerFinder(repository).importedFrom(source).performerOf(this);
       }
+
+    @Override @Nonnull
+    public String toString()
+      {
+        return String.format("RepositoryPerformance(rdfs:label=%s, uri=%s)", rdfsLabel, id);
+      }
+
+    @Override @Nonnull
+    public String toDumpString()
+      {
+        return String.format("Performance(uri=%s)", id);
+      }
   }

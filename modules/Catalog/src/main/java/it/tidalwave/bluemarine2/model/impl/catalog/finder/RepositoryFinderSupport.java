@@ -69,8 +69,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static it.tidalwave.bluemarine2.model.impl.catalog.finder.Rdf4jUtilities.*;
-import static it.tidalwave.bluemarine2.model.vocabulary.BM.O_EMBEDDED;
+import static it.tidalwave.bluemarine2.util.RdfUtilities.streamOf;
+import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
 
 /***********************************************************************************************************************
  *
@@ -329,9 +329,8 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
             try (final ImmutableTupleQueryResult result = cache.getCachedObject(key,
                                                                 () -> new ImmutableTupleQueryResult(query.evaluate())))
               {
-                // MutableTupleQueryResult is not thread safe, so clone an eventually cached result
-                final ImmutableTupleQueryResult clone = new ImmutableTupleQueryResult(result);
-                return finalizer.apply(clone);
+                // ImmutableTupleQueryResult is not thread safe, so clone the cached instance
+                return finalizer.apply(new ImmutableTupleQueryResult(result));
               }
           }
       }
