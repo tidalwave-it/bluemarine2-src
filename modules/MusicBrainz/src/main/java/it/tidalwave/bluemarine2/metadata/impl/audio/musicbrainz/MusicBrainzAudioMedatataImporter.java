@@ -399,12 +399,12 @@ public class MusicBrainzAudioMedatataImporter
         if (albumTitle.isPresent() && !albumTitle.get().trim().isEmpty() && cddb.isPresent())
           {
             log.info("============ PROBING TOC FOR {}", albumTitle);
-            final List<ReleaseMediumDisk> rams = new ArrayList<>();
+            final List<ReleaseMediumDisk> rmds = new ArrayList<>();
             final RestResponse<ReleaseList> releaseList = mbMetadataProvider.findReleaseListByToc(cddb.get().getToc(), TOC_INCLUDES);
             // even though we're querying by TOC, matching offsets is required to kill many false results
-            releaseList.ifPresent(releases -> rams.addAll(findReleases(releases, cddb.get(), Validation.TRACK_OFFSETS_MATCH_REQUIRED)));
+            releaseList.ifPresent(releases -> rmds.addAll(findReleases(releases, cddb.get(), Validation.TRACK_OFFSETS_MATCH_REQUIRED)));
 
-            if (rams.isEmpty())
+            if (rmds.isEmpty())
               {
                 log.info("============ PROBING METADATA FOR {}", albumTitle);
                 final List<ReleaseGroup> releaseGroups = new ArrayList<>();
@@ -419,12 +419,12 @@ public class MusicBrainzAudioMedatataImporter
                     releaseGroups.addAll(response.get().getReleaseGroup());
                   });
 
-                rams.addAll(findReleases(releaseGroups, cddb.get(), Validation.TRACK_OFFSETS_MATCH_REQUIRED));
+                rmds.addAll(findReleases(releaseGroups, cddb.get(), Validation.TRACK_OFFSETS_MATCH_REQUIRED));
               }
 
-            model.with(marked(rams, albumTitle.get()).stream()
+            model.with(marked(rmds, albumTitle.get()).stream()
                                                      .parallel()
-                                                     .map(_f(ram -> handleRelease(metadata, ram)))
+                                                     .map(_f(rmd -> handleRelease(metadata, rmd)))
                                                      .collect(toList()));
           }
 
@@ -458,100 +458,100 @@ public class MusicBrainzAudioMedatataImporter
      * The last criteria are implemented for giving consistency to automated tests, considering that the order in which
      * elements are found is not guaranteed because of multi-threading.
      *
-     * @param   inRams          the incoming {@code ReleaseAndMedium}s
+     * @param   inRmds          the incoming {@code ReleaseAndMedium}s
      * @param   embeddedTitle   the album title found in the file
      * @return                  the outcoming {@code ReleaseAndMedium}s
      *
      ******************************************************************************************************************/
     @Nonnull
-    private List<ReleaseMediumDisk> marked (final @Nonnull List<ReleaseMediumDisk> inRams,
+    private List<ReleaseMediumDisk> marked (final @Nonnull List<ReleaseMediumDisk> inRmds,
                                             final @Nonnull String embeddedTitle)
       {
-        if (inRams.size() <= 1)
+        if (inRmds.size() <= 1)
           {
-            return inRams;
+            return inRmds;
           }
 
-        List<ReleaseMediumDisk> rams = new ArrayList<>(inRams.stream().map(ram -> ram.withEmbeddedTitle(embeddedTitle)
-                                                                      .withScore(ram.similarityTo(embeddedTitle)))
+        List<ReleaseMediumDisk> rmds = new ArrayList<>(inRmds.stream().map(rmd -> rmd.withEmbeddedTitle(embeddedTitle)
+                                                                      .withScore(rmd.similarityTo(embeddedTitle)))
                                                              .collect(toSet()));
-        rams = markedExcludedByTitleAffinity(rams);
+        rmds = markedExcludedByTitleAffinity(rmds);
 
-        final boolean asinPresent = rams.stream().filter(ram -> !ram.isExcluded() && ram.getAsin().isPresent()).findAny().isPresent();
-        rams = rams.stream().map(ram -> ram.excludedIf(asinPresent && ram.getRelease().getAsin() == null)).collect(toList());
+        final boolean asinPresent = rmds.stream().filter(rmd -> !rmd.isExcluded() && rmd.getAsin().isPresent()).findAny().isPresent();
+        rmds = rmds.stream().map(rmd -> rmd.excludedIf(asinPresent && rmd.getRelease().getAsin() == null)).collect(toList());
 
-        final boolean barcodePresent = rams.stream().filter(ram -> !ram.isExcluded() && ram.getBarcode().isPresent()).findAny().isPresent();
-        rams = rams.stream().map(ram -> ram.excludedIf(barcodePresent && ram.getRelease().getBarcode() == null)).collect(toList());
+        final boolean barcodePresent = rmds.stream().filter(rmd -> !rmd.isExcluded() && rmd.getBarcode().isPresent()).findAny().isPresent();
+        rmds = rmds.stream().map(rmd -> rmd.excludedIf(barcodePresent && rmd.getRelease().getBarcode() == null)).collect(toList());
 
-        if ((countNotExcluded(rams) > 1) && asinPresent)
+        if ((countNotExcluded(rmds) > 1) && asinPresent)
           {
-            final Optional<String> asin = rams.stream().filter(ram -> !ram.isExcluded())
-                                                       .map(ram -> ram.getAsin().get())
+            final Optional<String> asin = rmds.stream().filter(ram -> !ram.isExcluded())
+                                                       .map(rmd -> rmd.getAsin().get())
                                                        .sorted()
                                                        .findFirst();
-            rams = rams.stream().map(ram -> ram.excludedIf(!ram.getAsin().equals(asin))).collect(toList());
+            rmds = rmds.stream().map(rmd -> rmd.excludedIf(!rmd.getAsin().equals(asin))).collect(toList());
           }
 
-        if ((countNotExcluded(rams) > 1) && barcodePresent)
+        if ((countNotExcluded(rmds) > 1) && barcodePresent)
           {
-            final Optional<String> barcode = rams.stream().filter(ram -> !ram.isExcluded())
-                                                          .map(ram -> ram.getBarcode().get())
+            final Optional<String> barcode = rmds.stream().filter(ram -> !ram.isExcluded())
+                                                          .map(rmd -> rmd.getBarcode().get())
                                                           .sorted()
                                                           .findFirst();
-            rams = rams.stream().map(ram -> ram.excludedIf(!ram.getBarcode().equals(barcode))).collect(toList());
+            rmds = rmds.stream().map(rmd -> rmd.excludedIf(!rmd.getBarcode().equals(barcode))).collect(toList());
           }
 
-        rams = excessKeepersMarkedExcluded(rams);
+        rmds = excessKeepersMarkedExcluded(rmds);
 
         synchronized (log) // keep log lines together
           {
             log.info("MULTIPLE RESULTS");
-            rams.stream().forEach(ram -> log.info(">>> MULTIPLE RESULTS: {}", ram.toString()));
+            rmds.stream().forEach(rmd -> log.info(">>> MULTIPLE RESULTS: {}", rmd.toString()));
           }
 
-        final int count = countNotExcluded(rams);
+        final int count = countNotExcluded(rmds);
         assert count == 1 : "Still too many items " + count;
 
-        return rams;
+        return rmds;
       }
 
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static List<ReleaseMediumDisk> excessKeepersMarkedExcluded (final @Nonnull List<ReleaseMediumDisk> rams)
+    private static List<ReleaseMediumDisk> excessKeepersMarkedExcluded (final @Nonnull List<ReleaseMediumDisk> rmds)
       {
-        if (countNotExcluded(rams) > 1)
+        if (countNotExcluded(rmds) > 1)
           {
             boolean foundGoodOne = false;
             // FIXME: should be sorted for test consistency
-            for (int i = 0; i < rams.size(); i++)
+            for (int i = 0; i < rmds.size(); i++)
               {
-                rams.set(i, rams.get(i).excludedIf(foundGoodOne));
-                foundGoodOne |= !rams.get(i).isExcluded();
+                rmds.set(i, rmds.get(i).excludedIf(foundGoodOne));
+                foundGoodOne |= !rmds.get(i).isExcluded();
               }
           }
 
-        return rams;
+        return rmds;
       }
 
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static List<ReleaseMediumDisk> markedExcludedByTitleAffinity (final @Nonnull List<ReleaseMediumDisk> rams)
+    private static List<ReleaseMediumDisk> markedExcludedByTitleAffinity (final @Nonnull List<ReleaseMediumDisk> rmds)
       {
-        final int bestScore = rams.stream().mapToInt(ReleaseMediumDisk::getScore).max().getAsInt();
-        return rams.stream().map(ram -> ram.excludedIf(ram.getScore() < bestScore)).collect(toList());
+        final int bestScore = rmds.stream().mapToInt(ReleaseMediumDisk::getScore).max().getAsInt();
+        return rmds.stream().map(rmd -> rmd.excludedIf(rmd.getScore() < bestScore)).collect(toList());
       }
 
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
     @Nonnegative
-    private static int countNotExcluded (final @Nonnull List<ReleaseMediumDisk> rams)
+    private static int countNotExcluded (final @Nonnull List<ReleaseMediumDisk> rmds)
       {
-        return (int)rams.stream().filter(ram -> !ram.isExcluded()).count();
+        return (int)rmds.stream().filter(ram -> !ram.isExcluded()).count();
       }
 
     /*******************************************************************************************************************
@@ -559,22 +559,22 @@ public class MusicBrainzAudioMedatataImporter
      * Extracts data from the given release.
      *
      * @param   metadata                the {@code Metadata}
-     * @param   ram                     the release
+     * @param   rmd                     the release
      * @return                          the RDF triples
      * @throws  InterruptedException    in case of I/O error
      * @throws  IOException             in case of I/O error
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ModelBuilder handleRelease (final @Nonnull Metadata metadata, final @Nonnull ReleaseMediumDisk ram)
+    private ModelBuilder handleRelease (final @Nonnull Metadata metadata, final @Nonnull ReleaseMediumDisk rmd)
       throws IOException, InterruptedException
       {
-        final Medium medium = ram.getMedium();
-        final Release release = ram.getRelease();
+        final Medium medium = rmd.getMedium();
+        final Release release = rmd.getRelease();
         final List<DefTrackData> tracks = medium.getTrackList().getDefTrack();
-        final String recordTitle = ram.findTitle();
-        log.info("importing {} {} ...", recordTitle, (ram.isExcluded() ? "(excluded)" : ""));
-        final IRI recordIri = recordIriFor(ram.getId());
+        final String recordTitle = rmd.findTitle();
+        log.info("importing {} {} ...", recordTitle, (rmd.isExcluded() ? "(excluded)" : ""));
+        final IRI recordIri = recordIriFor(rmd.getId());
 
         ModelBuilder model = createModelBuilder()
             .with(recordIri, RDF.TYPE,           MO.C_RECORD)
@@ -590,7 +590,7 @@ public class MusicBrainzAudioMedatataImporter
                                  .map(_f(track -> handleTrack(metadata.get(CDDB).get(), recordIri, track)))
                                  .collect(toList()));
 
-        if (ram.isExcluded())
+        if (rmd.isExcluded())
           {
             model = model.with(BM.S_ALTERNATIVE_ITEMS, RDF.TYPE,      BM.C_PREFERENCE_ITEM)
                          .with(BM.S_ALTERNATIVE_ITEMS, BM.O_INCLUDES, recordIri);
@@ -796,10 +796,10 @@ public class MusicBrainzAudioMedatataImporter
                             .stream()
                             .map(medium -> new ReleaseMediumDisk(release, medium))))
             .filter(ram -> matchesFormat(ram.getMedium()))
-            .flatMap(ram -> ram.getMedium().getDiscList().getDisc().stream().map(disc -> ram.withDisc(disc)))
+            .flatMap(rmd -> rmd.getMedium().getDiscList().getDisc().stream().map(disc -> rmd.withDisc(disc)))
             .filter(ram -> matchesTrackOffsets(ram, cddb, validation))
-            .peek(ram -> log.info(">>>>>>>> FOUND {} - with score {}", ram.getMedium().getTitle(), 0 /* scoreOf(releaseGroup) FIXME */))
-            .collect(toMap(ram -> ram.getRelease().getId(), ram -> ram, (u, v) -> v, TreeMap::new))
+            .peek(rmd -> log.info(">>>>>>>> FOUND {} - with score {}", rmd.getMedium().getTitle(), 0 /* scoreOf(releaseGroup) FIXME */))
+            .collect(toMap(rmd -> rmd.getRelease().getId(), rmd -> rmd, (u, v) -> v, TreeMap::new))
             .values();
       }
 
@@ -828,17 +828,17 @@ public class MusicBrainzAudioMedatataImporter
      *
      * Returns {@code true} if the given {@link ReleaseMediumDisk} matches the track offsets in the given {@link Cddb}.
      *
-     * @param   ram         the {@code ReleaseMediumDisk}
+     * @param   rmd         the {@code ReleaseMediumDisk}
      * @param   cddb        the track offsets to match
      * @param   validation  how the results must be validated
      * @return              {@code true} if there is a match
      *
      ******************************************************************************************************************/
-    private boolean matchesTrackOffsets (final @Nonnull ReleaseMediumDisk ram,
+    private boolean matchesTrackOffsets (final @Nonnull ReleaseMediumDisk rmd,
                                          final @Nonnull Cddb cddb,
                                          final @Nonnull Validation validation)
       {
-        final Cddb discCddb = cddbOf(ram.getDisc());
+        final Cddb discCddb = cddbOf(rmd.getDisc());
 
         if ((discCddb == null) && (validation == Validation.TRACK_OFFSETS_MATCH_NOT_REQUIRED))
           {
@@ -853,7 +853,7 @@ public class MusicBrainzAudioMedatataImporter
             synchronized (log) // keep log lines together
               {
                 log.info(">>>>>>>> discarded {}/{} because track offsets don't match",
-                         ram.getMedium().getTitle(), ram.getDisc().getId());
+                         rmd.getMedium().getTitle(), rmd.getDisc().getId());
                 log.debug(">>>>>>>> iTunes offsets: {}", cddb.getTrackFrameOffsets());
                 log.debug(">>>>>>>> found offsets:  {}", discCddb.getTrackFrameOffsets());
               }
