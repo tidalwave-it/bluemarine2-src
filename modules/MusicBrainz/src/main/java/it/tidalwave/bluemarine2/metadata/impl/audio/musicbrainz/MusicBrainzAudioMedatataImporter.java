@@ -641,7 +641,7 @@ public class MusicBrainzAudioMedatataImporter
             .with(trackIri,  DC.TITLE,            literalFor(trackTitle))
             .with(trackIri,  MO.P_TRACK_NUMBER,   literalFor(track.getPosition().intValue()))
 
-            .with(handleTrackRelations(signalIri, recording));
+            .with(handleTrackRelations(signalIri, trackIri, recordIri, recording));
 //        bmmo:diskCount "1"^^xs:int ;
 //        bmmo:diskNumber "1"^^xs:int ;
       }
@@ -656,13 +656,16 @@ public class MusicBrainzAudioMedatataImporter
     *
      ******************************************************************************************************************/
     @Nonnull
-    private ModelBuilder handleTrackRelations (final @Nonnull IRI signalIri, final @Nonnull Recording recording)
+    private ModelBuilder handleTrackRelations (final @Nonnull IRI signalIri,
+                                               final @Nonnull IRI trackIri,
+                                               final @Nonnull IRI recordIri,
+                                               final @Nonnull Recording recording)
       {
         return createModelBuilder().with(recording.getRelationList()
                                                   .stream()
                                                   .parallel()
                                                   .flatMap(RelationAndTargetType::toStream)
-                                                  .map(ratt ->  handleTrackRelation(signalIri, recording, ratt))
+                                                  .map(ratt ->  handleTrackRelation(signalIri, trackIri, recordIri, recording, ratt))
                                                   .collect(toList()));
       }
 
@@ -678,6 +681,8 @@ public class MusicBrainzAudioMedatataImporter
      ******************************************************************************************************************/
     @Nonnull
     private ModelBuilder handleTrackRelation (final @Nonnull IRI signalIri,
+                                              final @Nonnull IRI trackIri,
+                                              final @Nonnull IRI recordIri,
                                               final @Nonnull Recording recording,
                                               final @Nonnull RelationAndTargetType ratt)
       {
@@ -705,7 +710,13 @@ public class MusicBrainzAudioMedatataImporter
             .with(artistIri,       RDF.TYPE,            MO.C_MUSIC_ARTIST)
             .with(artistIri,       BM.P_IMPORTED_FROM,  BM.O_MUSICBRAINZ)
             .with(artistIri,       RDFS.LABEL,          literalFor(artist.getName()))
-            .with(artistIri,       FOAF.NAME,           literalFor(artist.getName()));
+            .with(artistIri,       FOAF.NAME,           literalFor(artist.getName()))
+
+            // TODO these could be inferred - performance shortcuts. Catalog queries rely upon these.
+            .with(recordIri,       FOAF.MAKER,          artistIri)
+            .with(trackIri,        FOAF.MAKER,          artistIri)
+            .with(performanceIri,  FOAF.MAKER,          artistIri);
+//            .with(signalIri,       FOAF.MAKER,          artistIri);
 
         if ("artist".equals(targetType))
           {
