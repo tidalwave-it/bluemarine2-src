@@ -84,10 +84,6 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Nonnull
     private final Optional<Integer> diskCount;
 
-//    private final String recordRdfsLabel;
-//
-//    private final Integer trackCount;
-
     @CheckForNull
     private AudioFile audioFile;
 
@@ -125,7 +121,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
     /*******************************************************************************************************************
      *
-     *
+     * {@inheritDoc}
      *
      ******************************************************************************************************************/
     @Override @Nonnull
@@ -136,7 +132,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
     /*******************************************************************************************************************
      *
-     *
+     * {@inheritDoc}
      *
      ******************************************************************************************************************/
     @Override @Nonnull
@@ -147,7 +143,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
     /*******************************************************************************************************************
      *
-     *
+     * {@inheritDoc}
      *
      ******************************************************************************************************************/
     @Override @Nonnull
@@ -170,7 +166,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
     /*******************************************************************************************************************
      *
-     *
+     * {@inheritDoc}
      *
      ******************************************************************************************************************/
     @Override @Nonnull
