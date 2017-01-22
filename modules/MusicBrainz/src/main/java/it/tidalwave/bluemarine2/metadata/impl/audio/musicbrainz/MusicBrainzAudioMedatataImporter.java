@@ -278,7 +278,7 @@ public class MusicBrainzAudioMedatataImporter
         @Getter @Wither
         private Disc disc;
 
-        @Getter @Wither
+        @Getter
         private int score;
 
         private String embeddedTitle;
@@ -441,7 +441,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      * These are the performed steps:
      *
-     * </ol>
+     * <ol>
      * <li>Eventual duplicates are collapsed.</li>
      * <li>A matching score is computed about the affinity of the title found in MusicBrainz metadata with respected
      *     to the title in the embedded metadata.</li>
@@ -453,7 +453,7 @@ public class MusicBrainzAudioMedatataImporter
      * <li>If the pick is not unique yet, a barcode is picked as the first in lexicoraphic order and elements not
      *     bearing it are excluded.</li>
      * <li>If the pick is not unique yet, elements other than the first one are excluded.</i>
-     * </ul>
+     * </ol>
      *
      * The last criteria are implemented for giving consistency to automated tests, considering that the order in which
      * elements are found is not guaranteed because of multi-threading.
@@ -483,7 +483,7 @@ public class MusicBrainzAudioMedatataImporter
         final boolean barcodePresent = rmds.stream().filter(rmd -> !rmd.isExcluded() && rmd.getBarcode().isPresent()).findAny().isPresent();
         rmds = rmds.stream().map(rmd -> rmd.excludedIf(barcodePresent && rmd.getRelease().getBarcode() == null)).collect(toList());
 
-        if ((countNotExcluded(rmds) > 1) && asinPresent)
+        if (asinPresent && (countNotExcluded(rmds) > 1))
           {
             final Optional<String> asin = rmds.stream().filter(ram -> !ram.isExcluded())
                                                        .map(rmd -> rmd.getAsin().get())
@@ -492,7 +492,7 @@ public class MusicBrainzAudioMedatataImporter
             rmds = rmds.stream().map(rmd -> rmd.excludedIf(!rmd.getAsin().equals(asin))).collect(toList());
           }
 
-        if ((countNotExcluded(rmds) > 1) && barcodePresent)
+        if (barcodePresent && (countNotExcluded(rmds) > 1))
           {
             final Optional<String> barcode = rmds.stream().filter(ram -> !ram.isExcluded())
                                                           .map(rmd -> rmd.getBarcode().get())
