@@ -32,7 +32,6 @@ import javax.annotation.Nonnull;
 import java.util.Optional;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import lombok.ToString;
@@ -66,9 +65,7 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
      ******************************************************************************************************************/
     public RepositoryRecordFinder (final @Nonnull Repository repository)
       {
-        super(repository);
-        this.makerId = Optional.empty();
-        this.trackId = Optional.empty();
+        this(repository, Optional.empty(), Optional.empty());
       }
 
     /*******************************************************************************************************************
@@ -104,9 +101,9 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public RecordFinder madeBy (final @Nonnull MusicArtist artist)
+    public RecordFinder madeBy (final @Nonnull Id artistId)
       {
-        return clone(new RepositoryRecordFinder(repository, Optional.of(artist.getId()), trackId));
+        return clone(new RepositoryRecordFinder(repository, Optional.of(artistId), trackId));
       }
 
     /*******************************************************************************************************************
@@ -130,6 +127,6 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
       {
         return QueryAndParameters.withSparql(QUERY_RECORDS)
                                  .withParameter("artist", makerId.map(this::iriFor))
-                                 .withParameter("track", trackId.map(this::iriFor));
+                                 .withParameter("track",  trackId.map(this::iriFor));
       }
   }

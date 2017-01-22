@@ -129,7 +129,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Override @Nonnull
     public Optional<Record> getRecord()
       {
-        return new RepositoryRecordFinder(repository).recordOf(id).optionalFirstResult();
+        return new RepositoryRecordFinder(repository).recordOf(this).optionalFirstResult();
       }
 
     /*******************************************************************************************************************
@@ -140,7 +140,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Override @Nonnull
     public Optional<Performance> getPerformance()
       {
-        return new RepositoryPerformanceFinder(repository).importedFrom(source).ofTrack(id).optionalFirstResult();
+        return new RepositoryPerformanceFinder(repository).importedFrom(source).ofTrack(this).optionalFirstResult();
       }
 
     /*******************************************************************************************************************
