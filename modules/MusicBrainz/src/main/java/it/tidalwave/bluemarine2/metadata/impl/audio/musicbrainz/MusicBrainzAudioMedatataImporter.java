@@ -572,14 +572,17 @@ public class MusicBrainzAudioMedatataImporter
         final Medium medium = rmd.getMedium();
         final Release release = rmd.getRelease();
         final List<DefTrackData> tracks = medium.getTrackList().getDefTrack();
+        final String embeddedRecordTitle = metadata.get(ALBUM).get(); // .orElse(parent.getPath().toFile().getName());
         final String recordTitle = rmd.findTitle();
         log.info("importing {} {} ...", recordTitle, (rmd.isExcluded() ? "(excluded)" : ""));
-        final IRI recordIri = recordIriFor(rmd.getId());
+        final IRI embeddedRecordIri = recordIriOf(metadata, embeddedRecordTitle);
+        final IRI recordIri         = recordIriFor(rmd.getId());
 
         ModelBuilder model = createModelBuilder()
             .with(recordIri, RDF.TYPE,           MO.C_RECORD)
-            .with(recordIri, BM.P_IMPORTED_FROM, BM.O_MUSICBRAINZ)
+            .with(recordIri, BM.P_IMPORTED_FROM, BM.V_MUSICBRAINZ)
             .with(recordIri, MO.P_MEDIA_TYPE,    MO.C_CD)
+            .with(recordIri, BM.P_ALTERNATE_OF,  embeddedRecordIri)
             .with(recordIri, RDFS.LABEL,         literalFor(recordTitle))
             .with(recordIri, DC.TITLE,           literalFor(recordTitle))
             .with(recordIri, MO.P_TRACK_COUNT,   literalFor(tracks.size()))
@@ -635,7 +638,7 @@ public class MusicBrainzAudioMedatataImporter
             .with(signalIri, MO.P_PUBLISHED_AS,   trackIri)
 
             .with(trackIri,  RDF.TYPE,            MO.C_TRACK)
-            .with(trackIri,  BM.P_IMPORTED_FROM,  BM.O_MUSICBRAINZ)
+            .with(trackIri,  BM.P_IMPORTED_FROM,  BM.V_MUSICBRAINZ)
             .with(trackIri,  RDFS.LABEL,          literalFor(trackTitle))
             .with(trackIri,  DC.TITLE,            literalFor(trackTitle))
             .with(trackIri,  MO.P_TRACK_NUMBER,   literalFor(track.getPosition().intValue()))
@@ -703,11 +706,11 @@ public class MusicBrainzAudioMedatataImporter
 
         final ModelBuilder model = createModelBuilder()
             .with(performanceIri,  RDF.TYPE,            MO.C_PERFORMANCE)
-            .with(performanceIri,  BM.P_IMPORTED_FROM,  BM.O_MUSICBRAINZ)
+            .with(performanceIri,  BM.P_IMPORTED_FROM,  BM.V_MUSICBRAINZ)
             .with(performanceIri,  MO.P_RECORDED_AS,    signalIri)
 
             .with(artistIri,       RDF.TYPE,            MO.C_MUSIC_ARTIST)
-            .with(artistIri,       BM.P_IMPORTED_FROM,  BM.O_MUSICBRAINZ)
+            .with(artistIri,       BM.P_IMPORTED_FROM,  BM.V_MUSICBRAINZ)
             .with(artistIri,       RDFS.LABEL,          literalFor(artist.getName()))
             .with(artistIri,       FOAF.NAME,           literalFor(artist.getName()))
 
@@ -996,6 +999,19 @@ public class MusicBrainzAudioMedatataImporter
     private static ModelBuilder createModelBuilder()
       {
         return new ModelBuilder(SOURCE_MUSICBRAINZ);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * FIXME: DUPLICATED FROM EmbbededAudioMetadataImporter
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static IRI recordIriOf (final @Nonnull Metadata metadata, final @Nonnull String recordTitle)
+      {
+        final Optional<Cddb> cddb = metadata.get(CDDB);
+        return BM.recordIriFor((cddb.isPresent()) ? createSha1IdNew(cddb.get().getToc())
+                                                  : createSha1IdNew("RECORD:" + recordTitle));
       }
 
     /*******************************************************************************************************************

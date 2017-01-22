@@ -1,9 +1,13 @@
         SELECT DISTINCT *
         WHERE
           {
-                       ?record                a                                         mo:Record.
-                       ?record                bmmo:importedFrom                         ?source.
-                       ?record                rdfs:label                                ?label.
+                       ?record                a                                         mo:Record;
+                                              rdfs:label                                ?label.
+
+                     { ?record                bmmo:importedFrom                         ?source.      }
+@fallback@  UNION    { ?record                bmmo:importedFrom                         ?fallback.    }
+@fallback@  MINUS    { ?alt_record            bmmo:alternateOf                          ?record;
+@fallback@                                    bmmo:importedFrom                         ?source.      }
 
             MINUS    { bmmo:alternativeItems  bmmo:includes                             ?record.      }
 

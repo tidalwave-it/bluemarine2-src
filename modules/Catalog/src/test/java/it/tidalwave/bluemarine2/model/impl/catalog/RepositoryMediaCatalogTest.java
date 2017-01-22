@@ -119,7 +119,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         // then
         final Path expectedResult = PATH_EXPECTED_TEST_RESULTS.resolve(testSetName + "-dump.txt");
         final Path actualResult = PATH_TEST_RESULTS.resolve(testSetName + "-dump.txt");
-        queryAndDump(underTest, actualResult, new Id(((otherTestSetName == null) ? BM.O_EMBEDDED : BM.O_MUSICBRAINZ).stringValue()));
+        queryAndDump(underTest, actualResult, new Id(((otherTestSetName == null) ? BM.V_EMBEDDED : BM.V_MUSICBRAINZ).stringValue()));
         assertSameContents(normalizedPath(expectedResult).toFile(), normalizedPath(actualResult).toFile());
       }
 
@@ -134,7 +134,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         final PrintWriter pw = new PrintWriter(dumpPath.toFile(), "UTF-8");
 
         final MusicArtistFinder allArtistsFinder = catalog.findArtists().importedFrom(source);
-        final RecordFinder allRecordsFinder = catalog.findRecords().importedFrom(source);
+        final RecordFinder allRecordsFinder = catalog.findRecords().importedFrom(source).withFallback(new Id(BM.V_EMBEDDED.stringValue()));
         final TrackFinder allTracksFinder = catalog.findTracks().importedFrom(source);
 
         final List<MusicArtist> artists = allArtistsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
@@ -169,7 +169,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
             record.getAsin().ifPresent(asin -> pw.printf("  ASIN:    %s%n", asin));
             record.getGtin().ifPresent(gtin -> pw.printf("  BARCODE: %s%n", gtin));
 
-            final TrackFinder recordTrackFinder = record.findTracks().importedFrom(source);
+            final TrackFinder recordTrackFinder = record.findTracks();
             pw.printf("  TRACKS (%d / %s):%n", recordTrackFinder.count(), ((RepositoryRecord)record).getTrackCount());
 
             recordTrackFinder.stream().forEach(track ->

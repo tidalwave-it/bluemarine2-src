@@ -45,4 +45,10 @@ public interface BaseFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<EN
 
     @Nonnull
     public FINDER importedFrom (final @Nonnull Optional<Id> optionalSource);
+
+    @Nonnull
+    public FINDER withFallback (final @Nonnull Id fallback);
+
+    @Nonnull
+    public FINDER withFallback (final @Nonnull Optional<Id> optionalFallback);
   }

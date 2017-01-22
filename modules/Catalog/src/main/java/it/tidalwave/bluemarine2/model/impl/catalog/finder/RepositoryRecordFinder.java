@@ -126,7 +126,7 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
     protected QueryAndParameters prepareQuery()
       {
         return QueryAndParameters.withSparql(QUERY_RECORDS)
-                                 .withParameter("artist", makerId.map(this::iriFor))
-                                 .withParameter("track",  trackId.map(this::iriFor));
+                                 .withParameter("artist",   makerId.map(this::iriFor))
+                                 .withParameter("track",    trackId.map(this::iriFor));
       }
   }

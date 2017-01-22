@@ -246,7 +246,7 @@ public class EmbeddedAudioMetadataImporter
 
         return new ModelBuilder()
             .with(        audioFileIri,  RDF.TYPE,                MO.C_AUDIO_FILE)
-            .with(        audioFileIri,  BM.P_IMPORTED_FROM,      BM.O_EMBEDDED)
+            .with(        audioFileIri,  BM.P_IMPORTED_FROM,      BM.V_EMBEDDED)
             .with(        audioFileIri,  FOAF.SHA1,               literalFor(toHexString(sha1)))
             .with(        audioFileIri,  MO.P_ENCODES,            signalIri)
             .with(        audioFileIri,  BM.PATH,                 literalFor(mediaItem.getRelativePath()))
@@ -254,7 +254,7 @@ public class EmbeddedAudioMetadataImporter
             .withOptional(audioFileIri,  BM.FILE_SIZE,            literalForLong(metadata.get(FILE_SIZE)))
 
             .with(        signalIri,     RDF.TYPE,                MO.C_DIGITAL_SIGNAL)
-            .with(        signalIri,     BM.P_IMPORTED_FROM,      BM.O_EMBEDDED)
+            .with(        signalIri,     BM.P_IMPORTED_FROM,      BM.V_EMBEDDED)
             .with(        signalIri,     MO.P_PUBLISHED_AS,       trackIri)
             .withOptional(signalIri,     MO.P_SAMPLE_RATE,        literalForInt(metadata.get(SAMPLE_RATE)))
             .withOptional(signalIri,     MO.P_BITS_PER_SAMPLE,    literalForInt(metadata.get(BIT_RATE)))
@@ -262,7 +262,7 @@ public class EmbeddedAudioMetadataImporter
                                                                                           .map(Duration::toMillis)
                                                                                           .map(l -> (float)l)))
             .with(        trackIri,      RDF.TYPE,                MO.C_TRACK)
-            .with(        trackIri,      BM.P_IMPORTED_FROM,      BM.O_EMBEDDED)
+            .with(        trackIri,      BM.P_IMPORTED_FROM,      BM.V_EMBEDDED)
             .withOptional(trackIri,      BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
                                                                                      .map(c -> c.getTrackId())))
             .withOptional(trackIri,      MO.P_TRACK_NUMBER,       literalForInt(metadata.get(TRACK_NUMBER)))
@@ -273,7 +273,7 @@ public class EmbeddedAudioMetadataImporter
             .with(        trackIri,      FOAF.MAKER,              makerUris.stream())
 
             .withOptional(newRecordIri,  RDF.TYPE,                MO.C_RECORD)
-            .withOptional(newRecordIri,  BM.P_IMPORTED_FROM,      BM.O_EMBEDDED)
+            .withOptional(newRecordIri,  BM.P_IMPORTED_FROM,      BM.V_EMBEDDED)
             .withOptional(newRecordIri,  MO.P_MEDIA_TYPE,         MO.C_CD)
             .withOptional(newRecordIri,  RDFS.LABEL,              literalFor(recordTitle))
             .withOptional(newRecordIri,  DC.TITLE,                literalFor(recordTitle))
@@ -283,12 +283,12 @@ public class EmbeddedAudioMetadataImporter
             .with(        recordIri,     FOAF.MAKER,              makerUris.stream())
 
             .with(        newArtistIris, RDF.TYPE,                MO.C_MUSIC_ARTIST)
-            .with(        newArtistIris, BM.P_IMPORTED_FROM,      BM.O_EMBEDDED)
+            .with(        newArtistIris, BM.P_IMPORTED_FROM,      BM.V_EMBEDDED)
             .with(        newArtistIris, RDFS.LABEL,              newArtistLiterals)
             .with(        newArtistIris, FOAF.NAME,               newArtistLiterals)
 
             .withOptional(newGroupIri,   RDF.TYPE,                MO.C_MUSIC_ARTIST)
-            .withOptional(newGroupIri,   BM.P_IMPORTED_FROM,      BM.O_EMBEDDED)
+            .withOptional(newGroupIri,   BM.P_IMPORTED_FROM,      BM.V_EMBEDDED)
             .withOptional(newGroupIri,   RDFS.LABEL,              literalFor(makerName))
             .withOptional(newGroupIri,   FOAF.NAME,               literalFor(makerName))
             .withOptional(newGroupIri,   DbTune.ARTIST_TYPE,      literalFor((short)2))
@@ -319,7 +319,7 @@ public class EmbeddedAudioMetadataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private IRI recordIriOf (final @Nonnull Metadata metadata, final @Nonnull String recordTitle)
+    public static IRI recordIriOf (final @Nonnull Metadata metadata, final @Nonnull String recordTitle)
       {
         final Optional<Cddb> cddb = metadata.get(CDDB);
         return BM.recordIriFor((cddb.isPresent()) ? createSha1IdNew(cddb.get().getToc())

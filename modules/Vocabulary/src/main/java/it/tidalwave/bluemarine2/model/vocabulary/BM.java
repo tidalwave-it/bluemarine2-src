@@ -33,6 +33,7 @@ import it.tidalwave.util.Id;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.eclipse.rdf4j.model.IRI;
+import org.eclipse.rdf4j.model.Value;
 import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 
@@ -57,9 +58,7 @@ public final class BM // FIXME: rename to BMMO
     public static final String S_ITUNES_CDDB1           = PREFIX + "iTunesCddb1";
     public static final String S_P_IMPORTED_FROM        = PREFIX + "importedFrom";
 
-//    public static final String S_FULL_CREDITS           = PREFIX + "fullCredits";
-
-//    public static final IRI FULL_CREDITS                = factory.createIRI(S_FULL_CREDITS);
+    public static final String S_P_ALTERNATE_OF         = PREFIX + "alternateOf";
 
     /** The file timestamp the latest time it was indexed. */
     public static final IRI LATEST_INDEXING_TIME        = FACTORY.createIRI(S_LATEST_INDEXING_TIME);
@@ -77,11 +76,13 @@ public final class BM // FIXME: rename to BMMO
     /** Predicate that associates any subject to the data source that created it. */
     public static final IRI P_IMPORTED_FROM             = FACTORY.createIRI(S_P_IMPORTED_FROM);
 
-    /** Object of the P_SOURCE predicate that says that the subject was imported from MusicBrainz. */
-    public static final IRI O_EMBEDDED                  = FACTORY.createIRI("http://bluemarine.tidalwave.it/source#embedded");
+    public static final IRI P_ALTERNATE_OF              = FACTORY.createIRI(S_P_ALTERNATE_OF);
 
     /** Object of the P_SOURCE predicate that says that the subject was imported from MusicBrainz. */
-    public static final IRI O_MUSICBRAINZ               = FACTORY.createIRI("http://musicbrainz.org");
+    public static final Value V_EMBEDDED                = FACTORY.createLiteral("embedded");
+
+    /** Object of the P_SOURCE predicate that says that the subject was imported from MusicBrainz. */
+    public static final Value V_MUSICBRAINZ             = FACTORY.createLiteral("musicbrainz");
 
     public static final String S_S_ALTERNATIVE_ITEMS    = PREFIX + "alternativeItems";
     public static final String S_C_PREFERENCE_ITEM      = PREFIX + "PreferenceItem";
