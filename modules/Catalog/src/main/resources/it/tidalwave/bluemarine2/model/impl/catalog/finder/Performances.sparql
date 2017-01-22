@@ -8,9 +8,5 @@
 @track@         ?signal       a                       mo:DigitalSignal.
 @track@         ?signal       mo:published_as         ?track.
 
-@artist@              { ?performance    mo:conductor                            ?artist. BIND ("conductor"                          AS ?role) }
-@artist@        UNION { ?performance    mo:engineer                             ?artist. BIND ("engineer"                           AS ?role) }
-@artist@        UNION { ?performance    mo:performer                            ?artist. BIND ("performer"                          AS ?role) }
-@artist@        UNION { ?performance    mo:producer                             ?artist. BIND ("producer"                           AS ?role) }
-@artist@        UNION { ?performance    mo:singer                               ?artist. BIND ("singer"                             AS ?role) }
+@artist@        ?performance  foaf:maker              ?artist.
               }

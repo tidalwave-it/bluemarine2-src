@@ -55,6 +55,7 @@ import it.tidalwave.bluemarine2.model.MusicPerformer;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
+import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.model.vocabulary.BM;
@@ -69,7 +70,6 @@ import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
-import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 
 /***********************************************************************************************************************
  *
@@ -137,8 +137,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         final RecordFinder allRecordsFinder = catalog.findRecords().importedFrom(source);
         final TrackFinder allTracksFinder = catalog.findTracks().importedFrom(source);
 
-        final List<? extends MusicArtist> artists = allArtistsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
-        final List<? extends Record> records = allRecordsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
+        final List<MusicArtist> artists = allArtistsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
+        final List<Record> records = allRecordsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
 
         pw.printf("ALL TRACKS (%d):\n\n", allTracksFinder.count());
         final Map<String, Track> tracksOrphanOfArtist = allTracksFinder.stream()
@@ -147,15 +147,15 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         tracksOrphanOfArtist.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s\n", track));
 
         pw.printf("\n\n\nALL RECORDS (%d):\n\n", allRecordsFinder.count());
-        records.forEach(artist -> pw.printf("%s\n", artist));
+        records.forEach(record -> pw.println(displayNameOf(record)));
 
         pw.printf("\n\n\nALL ARTISTS (%d):\n\n", allArtistsFinder.count());
-        artists.forEach(artist -> pw.printf("%s\n", artist));
+        artists.forEach(artist -> pw.println(displayNameOf(artist)));
 
         artists.forEach(artist ->
           {
             final TrackFinder artistTracksFinder = artist.findTracks().importedFrom(source);
-            pw.printf("\nTRACKS OF %s (%d):\n", artist, artistTracksFinder.count());
+            pw.printf("\nTRACKS OF %s (%d):\n", displayNameOf(artist), artistTracksFinder.count());
             artistTracksFinder.stream().forEach(track ->
               {
                 pw.printf("  %s\n", track);
@@ -187,23 +187,17 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         artists.forEach(artist ->
           {
-            final RecordFinder artistRecordFinder = artist.findRecords().importedFrom(source);
-            pw.printf("\nRECORDS OF %s (%d):\n", artist, artistRecordFinder.count());
-            artistRecordFinder.stream().forEach(record ->
-              {
-                pw.printf("  %s\n", record);
-              });
+            final RecordFinder recordFinder = artist.findRecords().importedFrom(source);
+            pw.printf("\nRECORDS OF %s (%d):\n", displayNameOf(artist), recordFinder.count());
+            recordFinder.stream().forEach(record -> pw.printf("  %s\n", record.toDumpString()));
           });
 
-//        artists.forEach(artist ->
-//          {
-//            final PerformanceFinder performanceFinder = artist.findPerformances().importedFrom(source);
-//            pw.printf("\nPERFORMANCES OF %s (%d):\n", artist, performanceFinder.count());
-//            performanceFinder.stream().forEach(performance ->
-//              {
-//                pw.printf("  %s\n", performance.toDumpString());
-//              });
-//          });
+        artists.forEach(artist ->
+          {
+            final PerformanceFinder performanceFinder = artist.findPerformances().importedFrom(source);
+            pw.printf("\nPERFORMANCES OF %s (%d):\n", displayNameOf(artist), performanceFinder.count());
+            performanceFinder.stream().forEach(performance -> pw.printf("  %s\n", performance.toDumpString()));
+          });
 
         pw.printf("\n\nTRACKS ORPHAN OF ARTIST (%d):\n\n", tracksOrphanOfArtist.size());
         tracksOrphanOfArtist.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s\n", track));
