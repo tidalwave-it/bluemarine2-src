@@ -55,6 +55,9 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
     @Nonnull
     private final Optional<Id> trackId;
 
+    @Nonnull
+    private final Optional<Id> performerId;
+
     /*******************************************************************************************************************
      *
      * Default constructor.
@@ -64,6 +67,7 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
       {
         super(repository);
         this.trackId = Optional.empty();
+        this.performerId = Optional.empty();
       }
 
     /*******************************************************************************************************************
@@ -71,11 +75,13 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
      * Clone constructor.
      *
      ******************************************************************************************************************/
-    public RepositoryPerformanceFinder (final @Nonnull RepositoryPerformanceFinder other, final @Nonnull Object override)
+    public RepositoryPerformanceFinder (final @Nonnull RepositoryPerformanceFinder other,
+                                        final @Nonnull Object override)
       {
         super(other, override);
         final RepositoryPerformanceFinder source = getSource(RepositoryPerformanceFinder.class, other, override);
         this.trackId = source.trackId;
+        this.performerId = source.performerId;
       }
 
     /*******************************************************************************************************************
@@ -84,11 +90,12 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
      *
      ******************************************************************************************************************/
     private RepositoryPerformanceFinder (final @Nonnull Repository repository,
-                                         final @Nonnull Optional<Id> trackId)
+                                         final @Nonnull Optional<Id> trackId,
+                                         final @Nonnull Optional<Id> performerId)
       {
         super(repository);
-//        this.makerId = makerId;
         this.trackId = trackId;
+        this.performerId = performerId;
       }
 
     /*******************************************************************************************************************
@@ -99,7 +106,18 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
     @Override @Nonnull
     public PerformanceFinder ofTrack (final @Nonnull Id trackId)
       {
-        return clone(new RepositoryPerformanceFinder(repository, Optional.of(trackId)));
+        return clone(new RepositoryPerformanceFinder(repository, Optional.of(trackId), performerId));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public PerformanceFinder performedBy (final @Nonnull Id performerId)
+      {
+        return clone(new RepositoryPerformanceFinder(repository, trackId, Optional.of(performerId)));
       }
 
     /*******************************************************************************************************************
@@ -111,6 +129,7 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
     protected QueryAndParameters prepareQuery()
       {
         return QueryAndParameters.withSparql(QUERY_PERFORMANCES)
-                                 .withParameter("track", trackId.map(this::iriFor));
+                                 .withParameter("track", trackId.map(this::iriFor))
+                                 .withParameter("artist", performerId.map(this::iriFor));
       }
   }

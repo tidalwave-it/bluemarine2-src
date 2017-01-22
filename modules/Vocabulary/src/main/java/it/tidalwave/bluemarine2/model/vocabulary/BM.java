@@ -83,25 +83,31 @@ public final class BM // FIXME: rename to BMMO
     /** Object of the P_SOURCE predicate that says that the subject was imported from MusicBrainz. */
     public static final IRI O_MUSICBRAINZ               = FACTORY.createIRI("http://musicbrainz.org");
 
-//    /** Means that the file couldn't download metadata. The object is the timestamp of the latest attempt. */
-//    public static final IRI LATEST_MB_METADATA          = factory.createIRI(PREFIX + "latestMusicBrainzMetadata");
-//
-//    /** Means that the file couldn't download metadata. The object is the timestamp of the latest attempt. */
-//    public static final IRI FAILED_MB_METADATA          = factory.createIRI(PREFIX + "failedMusicBrainzMetadata");
+    public static final String S_S_ALTERNATIVE_ITEMS    = PREFIX + "alternativeItems";
+    public static final String S_C_PREFERENCE_ITEM      = PREFIX + "PreferenceItem";
+    public static final String S_O_INCLUDES             = PREFIX + "includes";
+
+    public static final IRI S_ALTERNATIVE_ITEMS         = FACTORY.createIRI(S_S_ALTERNATIVE_ITEMS);
+    public static final IRI C_PREFERENCE_ITEM           = FACTORY.createIRI(S_C_PREFERENCE_ITEM);
+    public static final IRI O_INCLUDES                  = FACTORY.createIRI(S_O_INCLUDES);
 
     private static final String S_P_ARRANGER                        = PREFIX + "arranger";
     private static final String S_P_BACKGROUND_SINGER               = PREFIX + "background_singer";
     private static final String S_P_BALANCE                         = PREFIX + "balance";
     private static final String S_P_BASS                            = PREFIX + "bass";
     private static final String S_P_BARITONE                        = PREFIX + "baritone";
+    private static final String S_P_CHOIR                           = PREFIX + "choir";
+    private static final String S_P_CHORUS_MASTER                   = PREFIX + "chorus_master";
     private static final String S_P_EDITOR                          = PREFIX + "editor";
-    private static final String S_P_ENGINEER                        = PREFIX + "engineer";
+    private static final String S_P_LEAD_SINGER                     = PREFIX + "lead_singer";
+    private static final String S_P_MASTERING                       = PREFIX + "mastering";
     private static final String S_P_MEZZO_SOPRANO                   = PREFIX + "mezzo_soprano";
     private static final String S_P_MIX                             = PREFIX + "mix";
+    private static final String S_P_ORCHESTRA                       = PREFIX + "orchestra";
     private static final String S_P_ORCHESTRATOR                    = PREFIX + "orchestrator";
-    private static final String S_P_PRODUCER                        = PREFIX + "producer";
     private static final String S_P_PROGRAMMING                     = PREFIX + "programming";
     private static final String S_P_RECORDING                       = PREFIX + "recording";
+    private static final String S_P_SOPRANO                         = PREFIX + "soprano";
 
     private static final String S_P_PERFORMER_ACCORDION             = PREFIX + "performer_accordion";
     private static final String S_P_PERFORMER_ACOUSTIC_BASS_GUITAR  = PREFIX + "performer_acoustic_bass_guitar";
@@ -201,14 +207,18 @@ public final class BM // FIXME: rename to BMMO
     public static final IRI P_BALANCE                           = FACTORY.createIRI(S_P_BALANCE);
     public static final IRI P_BARITONE                          = FACTORY.createIRI(S_P_BARITONE);
     public static final IRI P_BASS                              = FACTORY.createIRI(S_P_BASS);
+    public static final IRI P_CHOIR                             = FACTORY.createIRI(S_P_CHOIR);
+    public static final IRI P_CHORUS_MASTER                     = FACTORY.createIRI(S_P_CHORUS_MASTER);
     public static final IRI P_EDITOR                            = FACTORY.createIRI(S_P_EDITOR);
-    public static final IRI P_ENGINEER                          = FACTORY.createIRI(S_P_ENGINEER);
+    public static final IRI P_LEAD_SINGER                       = FACTORY.createIRI(S_P_LEAD_SINGER);
+    public static final IRI P_MASTERING                         = FACTORY.createIRI(S_P_MASTERING);
     public static final IRI P_MEZZO_SOPRANO                     = FACTORY.createIRI(S_P_MEZZO_SOPRANO);
     public static final IRI P_MIX                               = FACTORY.createIRI(S_P_MIX);
+    public static final IRI P_ORCHESTRA                         = FACTORY.createIRI(S_P_ORCHESTRA);
     public static final IRI P_ORCHESTRATOR                      = FACTORY.createIRI(S_P_ORCHESTRATOR);
-    public static final IRI P_PRODUCER                          = FACTORY.createIRI(S_P_PRODUCER);
     public static final IRI P_PROGRAMMING                       = FACTORY.createIRI(S_P_PROGRAMMING);
     public static final IRI P_RECORDING                         = FACTORY.createIRI(S_P_RECORDING);
+    public static final IRI P_SOPRANO                           = FACTORY.createIRI(S_P_SOPRANO);
 
     public static final IRI P_PERFORMER_ACCORDION               = FACTORY.createIRI(S_P_PERFORMER_ACCORDION);
     public static final IRI P_PERFORMER_ACOUSTIC_BASS_GUITAR    = FACTORY.createIRI(S_P_PERFORMER_ACOUSTIC_BASS_GUITAR);
