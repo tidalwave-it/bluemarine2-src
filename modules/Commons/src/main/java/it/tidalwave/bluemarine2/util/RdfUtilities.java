@@ -49,7 +49,12 @@ import java.security.NoSuchAlgorithmException;
 import lombok.NoArgsConstructor;
 import static java.text.Normalizer.Form.NFC;
 import java.util.Base64;
+import java.util.Iterator;
+import static java.util.Spliterators.spliteratorUnknownSize;
+import java.util.stream.Stream;
+import static java.util.stream.StreamSupport.stream;
 import static lombok.AccessLevel.PRIVATE;
+import org.eclipse.rdf4j.common.iteration.Iteration;
 
 /***********************************************************************************************************************
  *
@@ -63,6 +68,41 @@ public final class RdfUtilities
     private static final String ALGORITHM = "SHA1";
 
     private final static ValueFactory FACTORY = SimpleValueFactory.getInstance(); // FIXME
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static <T, X extends RuntimeException> Stream<T> streamOf (final @Nonnull Iteration<T, X> iteration)
+      {
+        return stream(spliteratorUnknownSize(iteratorOf(iteration), 0), false);
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static <T, X extends RuntimeException> Iterator<T> iteratorOf (final @Nonnull Iteration<T, X> iteration)
+      {
+        final Iterator<T> iterator = new Iterator<T>()
+          {
+            @Override
+            public boolean hasNext()
+              {
+                return iteration.hasNext();
+              }
+
+            @Override
+            public T next()
+              {
+                return iteration.next();
+              }
+          };
+
+        return iterator;
+      }
 
     /*******************************************************************************************************************
      *

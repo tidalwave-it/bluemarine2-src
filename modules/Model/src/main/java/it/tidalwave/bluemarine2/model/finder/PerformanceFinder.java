@@ -50,4 +50,11 @@ public interface PerformanceFinder extends BaseFinder<Performance, PerformanceFi
      ******************************************************************************************************************/
     @Nonnull
     public PerformanceFinder ofTrack (@Nonnull Id trackId);
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public PerformanceFinder performedBy (@Nonnull Id performerId);
   }
