@@ -53,7 +53,7 @@ import lombok.Getter;
 public class RepositoryMusicArtist extends RepositoryEntitySupport implements MusicArtist
   {
     @Getter
-    private int type;
+    private final int type;
 
     public RepositoryMusicArtist (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
