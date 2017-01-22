@@ -40,9 +40,11 @@ import it.tidalwave.util.Key;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.Performance;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
+import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.model.spi.NamedEntity;
@@ -86,6 +88,12 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
 
         @Override @Nonnull
         public RecordFinder findRecords()
+          {
+            throw new UnsupportedOperationException("Not supported yet."); // FIXME
+          }
+
+        @Override @Nonnull
+        public PerformanceFinder findPerformances()
           {
             throw new UnsupportedOperationException("Not supported yet."); // FIXME
           }
