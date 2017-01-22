@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.metadata.impl.audio.musicbrainz;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
@@ -60,6 +61,7 @@ import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.model.vocabulary.*;
 import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
+import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.util.ModelBuilder;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
@@ -82,10 +84,7 @@ import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider.*;
 import static it.tidalwave.bluemarine2.model.vocabulary.BM.recordIriFor;
-import it.tidalwave.util.Id;
-import javax.annotation.CheckForNull;
 import static lombok.AccessLevel.PRIVATE;
-import lombok.EqualsAndHashCode;
 
 /***********************************************************************************************************************
  *
