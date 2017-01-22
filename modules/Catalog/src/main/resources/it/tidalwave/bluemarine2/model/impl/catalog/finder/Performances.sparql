@@ -4,9 +4,7 @@
                 ?performance  a                       mo:Performance.
                 ?performance  bmmo:importedFrom       ?source.
 
-@track@           {
-@track@             ?performance  mo:recorded_as          ?signal.
-@track@             ?signal       a                       mo:DigitalSignal.
-@track@             ?signal       mo:published_as         ?track.
-@track@           }
+@track@         ?performance  mo:recorded_as          ?signal.
+@track@         ?signal       a                       mo:DigitalSignal.
+@track@         ?signal       mo:published_as         ?track.
               }
