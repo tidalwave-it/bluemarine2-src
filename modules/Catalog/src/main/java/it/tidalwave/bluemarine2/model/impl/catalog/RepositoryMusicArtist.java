@@ -33,8 +33,10 @@ import javax.annotation.concurrent.Immutable;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.query.BindingSet;
 import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryPerformanceFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
 import lombok.Getter;
@@ -53,15 +55,12 @@ import lombok.Getter;
 public class RepositoryMusicArtist extends RepositoryEntitySupport implements MusicArtist
   {
     @Getter
-    private int type;
+    private final int type;
 
     public RepositoryMusicArtist (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
         super(repository, bindingSet, "artist");
-
-        type = bindingSet.hasBinding("artist_type")
-                ? Integer.parseInt(bindingSet.getBinding("artist_type").getValue().stringValue())
-                : 1;
+        type = toInteger(bindingSet.getBinding("artist_type")).orElse(1);
       }
 
     @Override @Nonnull
@@ -74,6 +73,12 @@ public class RepositoryMusicArtist extends RepositoryEntitySupport implements Mu
     public RecordFinder findRecords()
       {
         return new RepositoryRecordFinder(repository).madeBy(this);
+      }
+
+    @Override @Nonnull
+    public PerformanceFinder findPerformances()
+      {
+        return new RepositoryPerformanceFinder(repository).performedBy(this.getId());
       }
 
     @Override @Nonnull
