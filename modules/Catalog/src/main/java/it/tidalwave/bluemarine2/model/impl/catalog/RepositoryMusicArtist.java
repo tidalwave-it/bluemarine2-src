@@ -33,8 +33,10 @@ import javax.annotation.concurrent.Immutable;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.query.BindingSet;
 import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryPerformanceFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
 import lombok.Getter;
@@ -71,6 +73,12 @@ public class RepositoryMusicArtist extends RepositoryEntitySupport implements Mu
     public RecordFinder findRecords()
       {
         return new RepositoryRecordFinder(repository).madeBy(this);
+      }
+
+    @Override @Nonnull
+    public PerformanceFinder findPerformances()
+      {
+        return new RepositoryPerformanceFinder(repository).performedBy(this.getId());
       }
 
     @Override @Nonnull

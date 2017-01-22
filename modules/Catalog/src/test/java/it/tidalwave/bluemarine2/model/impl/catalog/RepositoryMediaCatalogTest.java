@@ -69,6 +69,7 @@ import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 
 /***********************************************************************************************************************
  *
@@ -193,6 +194,16 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
                 pw.printf("  %s\n", record);
               });
           });
+
+//        artists.forEach(artist ->
+//          {
+//            final PerformanceFinder performanceFinder = artist.findPerformances().importedFrom(source);
+//            pw.printf("\nPERFORMANCES OF %s (%d):\n", artist, performanceFinder.count());
+//            performanceFinder.stream().forEach(performance ->
+//              {
+//                pw.printf("  %s\n", performance.toDumpString());
+//              });
+//          });
 
         pw.printf("\n\nTRACKS ORPHAN OF ARTIST (%d):\n\n", tracksOrphanOfArtist.size());
         tracksOrphanOfArtist.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s\n", track));
