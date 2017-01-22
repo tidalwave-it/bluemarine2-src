@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.ExtendedFinder8Support;
 import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.model.Performance;
 
 /***********************************************************************************************************************
  *
