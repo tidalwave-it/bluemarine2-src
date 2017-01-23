@@ -60,6 +60,9 @@ public final class BM // FIXME: rename to BMMO
 
     public static final String S_P_ALTERNATE_OF         = PREFIX + "alternateOf";
 
+    public static final String S_V_SOURCE_EMBEDDED      = "embedded";
+    public static final String S_V_SOURCE_MUSICBRAINZ   = "musicbrainz";
+
     /** The file timestamp the latest time it was indexed. */
     public static final IRI LATEST_INDEXING_TIME        = FACTORY.createIRI(S_LATEST_INDEXING_TIME);
 
@@ -79,10 +82,13 @@ public final class BM // FIXME: rename to BMMO
     public static final IRI P_ALTERNATE_OF              = FACTORY.createIRI(S_P_ALTERNATE_OF);
 
     /** Object of the P_SOURCE predicate that says that the subject was imported from MusicBrainz. */
-    public static final Value V_EMBEDDED                = FACTORY.createLiteral("embedded");
+    public static final Value V_SOURCE_EMBEDDED         = FACTORY.createLiteral(S_V_SOURCE_EMBEDDED);
 
     /** Object of the P_SOURCE predicate that says that the subject was imported from MusicBrainz. */
-    public static final Value V_MUSICBRAINZ             = FACTORY.createLiteral("musicbrainz");
+    public static final Value V_SOURCE_MUSICBRAINZ      = FACTORY.createLiteral(S_V_SOURCE_MUSICBRAINZ);
+
+    public static final Id ID_SOURCE_EMBEDDED           = new Id(S_V_SOURCE_EMBEDDED);
+    public static final Id ID_SOURCE_MUSICBRAINZ        = new Id(S_V_SOURCE_MUSICBRAINZ);
 
     public static final String S_S_ALTERNATIVE_ITEMS    = PREFIX + "alternativeItems";
     public static final String S_C_PREFERENCE_ITEM      = PREFIX + "PreferenceItem";

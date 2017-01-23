@@ -70,6 +70,7 @@ import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
 
 /***********************************************************************************************************************
  *
@@ -101,7 +102,9 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
      ******************************************************************************************************************/
     @Test(dataProvider = "testSetNamesProvider")
     public void must_properly_query_the_whole_catalog_in_various_ways (final @Nonnull String testSetName,
-                                                                       final @CheckForNull String otherTestSetName)
+                                                                       final @CheckForNull String otherTestSetName,
+                                                                       final @Nonnull Id source,
+                                                                       final @Nonnull Id fallbackSource)
       throws Exception
       {
         // given
@@ -119,14 +122,17 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         // then
         final Path expectedResult = PATH_EXPECTED_TEST_RESULTS.resolve(testSetName + "-dump.txt");
         final Path actualResult = PATH_TEST_RESULTS.resolve(testSetName + "-dump.txt");
-        queryAndDump(underTest, actualResult, new Id(((otherTestSetName == null) ? BM.V_EMBEDDED : BM.V_MUSICBRAINZ).stringValue()));
+        queryAndDump(underTest, actualResult, source, fallbackSource);
         assertSameContents(normalizedPath(expectedResult).toFile(), normalizedPath(actualResult).toFile());
       }
 
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    private void queryAndDump (final @Nonnull MediaCatalog catalog, final @Nonnull Path dumpPath, final @Nonnull Id source)
+    private void queryAndDump (final @Nonnull MediaCatalog catalog,
+                               final @Nonnull Path dumpPath,
+                               final @Nonnull Id source,
+                               final @Nonnull Id fallbackSource)
       throws IOException
       {
         log.info("queryAndDump(.., {})", dumpPath);
@@ -134,7 +140,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         final PrintWriter pw = new PrintWriter(dumpPath.toFile(), "UTF-8");
 
         final MusicArtistFinder allArtistsFinder = catalog.findArtists().importedFrom(source);
-        final RecordFinder allRecordsFinder = catalog.findRecords().importedFrom(source).withFallback(new Id(BM.V_EMBEDDED.stringValue()));
+        final RecordFinder allRecordsFinder = catalog.findRecords().importedFrom(source).withFallback(fallbackSource);
         final TrackFinder allTracksFinder = catalog.findTracks().importedFrom(source);
 
         final List<MusicArtist> artists = allArtistsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
@@ -254,12 +260,12 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
       {
         return new Object[][]
           {
-              { "tiny-model"                   , null },
-              { "small-model"                  , null },
-              { "model-iTunes-fg-20160504-2"   , null },
-              { "model-iTunes-fg-20161210-1"   , null },
-              { "musicbrainz-iTunes-fg-20160504-2", "model-iTunes-fg-20160504-2" },
-              { "musicbrainz-iTunes-fg-20161210-1", "model-iTunes-fg-20161210-1" },
+            { "tiny-model"                      , null,                         ID_SOURCE_EMBEDDED,    ID_SOURCE_EMBEDDED },
+            { "small-model"                     , null,                         ID_SOURCE_EMBEDDED,    ID_SOURCE_EMBEDDED },
+            { "model-iTunes-fg-20160504-2"      , null,                         ID_SOURCE_EMBEDDED,    ID_SOURCE_EMBEDDED },
+            { "model-iTunes-fg-20161210-1"      , null,                         ID_SOURCE_EMBEDDED,    ID_SOURCE_EMBEDDED },
+            { "musicbrainz-iTunes-fg-20160504-2", "model-iTunes-fg-20160504-2", ID_SOURCE_MUSICBRAINZ, ID_SOURCE_EMBEDDED },
+            { "musicbrainz-iTunes-fg-20161210-1", "model-iTunes-fg-20161210-1", ID_SOURCE_MUSICBRAINZ, ID_SOURCE_EMBEDDED },
           };
       }
   }

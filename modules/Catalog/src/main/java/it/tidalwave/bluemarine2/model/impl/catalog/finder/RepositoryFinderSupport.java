@@ -180,7 +180,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
       {
         this.repository = repository;
         this.entityClass = (Class<ENTITY>)ReflectionUtils.getTypeArguments(RepositoryFinderSupport.class, getClass()).get(0);
-        this.source = Optional.of(V_EMBEDDED); // FIXME: resets
+        this.source = Optional.of(V_SOURCE_EMBEDDED); // FIXME: resets
         this.sourceFallback = Optional.empty(); // FIXME: resets
       }
 

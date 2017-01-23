@@ -580,7 +580,7 @@ public class MusicBrainzAudioMedatataImporter
 
         ModelBuilder model = createModelBuilder()
             .with(recordIri, RDF.TYPE,           MO.C_RECORD)
-            .with(recordIri, BM.P_IMPORTED_FROM, BM.V_MUSICBRAINZ)
+            .with(recordIri, BM.P_IMPORTED_FROM, BM.V_SOURCE_MUSICBRAINZ)
             .with(recordIri, MO.P_MEDIA_TYPE,    MO.C_CD)
             .with(recordIri, BM.P_ALTERNATE_OF,  embeddedRecordIri)
             .with(recordIri, RDFS.LABEL,         literalFor(recordTitle))
@@ -638,7 +638,7 @@ public class MusicBrainzAudioMedatataImporter
             .with(signalIri, MO.P_PUBLISHED_AS,   trackIri)
 
             .with(trackIri,  RDF.TYPE,            MO.C_TRACK)
-            .with(trackIri,  BM.P_IMPORTED_FROM,  BM.V_MUSICBRAINZ)
+            .with(trackIri,  BM.P_IMPORTED_FROM,  BM.V_SOURCE_MUSICBRAINZ)
             .with(trackIri,  RDFS.LABEL,          literalFor(trackTitle))
             .with(trackIri,  DC.TITLE,            literalFor(trackTitle))
             .with(trackIri,  MO.P_TRACK_NUMBER,   literalFor(track.getPosition().intValue()))
@@ -706,11 +706,11 @@ public class MusicBrainzAudioMedatataImporter
 
         final ModelBuilder model = createModelBuilder()
             .with(performanceIri,  RDF.TYPE,            MO.C_PERFORMANCE)
-            .with(performanceIri,  BM.P_IMPORTED_FROM,  BM.V_MUSICBRAINZ)
+            .with(performanceIri,  BM.P_IMPORTED_FROM,  BM.V_SOURCE_MUSICBRAINZ)
             .with(performanceIri,  MO.P_RECORDED_AS,    signalIri)
 
             .with(artistIri,       RDF.TYPE,            MO.C_MUSIC_ARTIST)
-            .with(artistIri,       BM.P_IMPORTED_FROM,  BM.V_MUSICBRAINZ)
+            .with(artistIri,       BM.P_IMPORTED_FROM,  BM.V_SOURCE_MUSICBRAINZ)
             .with(artistIri,       RDFS.LABEL,          literalFor(artist.getName()))
             .with(artistIri,       FOAF.NAME,           literalFor(artist.getName()))
 
