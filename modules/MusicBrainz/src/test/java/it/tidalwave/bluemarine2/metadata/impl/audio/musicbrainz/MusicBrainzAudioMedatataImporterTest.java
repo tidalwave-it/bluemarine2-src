@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.metadata.impl.audio.musicbrainz;
 
 import javax.annotation.Nonnull;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -78,7 +79,9 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
 
     private DefaultMusicBrainzMetadataProvider musicBrainzMetadataProvider;
 
-    private MusicBrainzAudioMedatataImporter underTest;
+//    private MusicBrainzAudioMedatataImporter underTest;
+
+    private final Map<String, MusicBrainzAudioMedatataImporter> underTest = new TreeMap<>();
 
     private final Map<String, TestSetStats> stats = new TreeMap<>();
 
@@ -95,13 +98,13 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
 
         private final AtomicInteger found = new AtomicInteger(0);
 
-        private final AtomicInteger withoutCddb = new AtomicInteger(0);
+        private final Set<String> withoutCddb = new TreeSet<>();
 
         @Override @Nonnull
         public String toString()
           {
             return String.format("matched: %s/%s (%d%%) - without CDDB: %s",
-                                 found, count, (found.intValue() * 100) / count.intValue(), withoutCddb);
+                                 found, count, (found.intValue() * 100) / count.intValue(), withoutCddb.size());
           }
       }
 
@@ -118,7 +121,7 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
         musicBrainzMetadataProvider.setCacheMode(ONLY_USE_CACHE);
 //        underTest.initialize(); // FIXME
 
-        underTest = new MusicBrainzAudioMedatataImporter(cddbMetadataProvider, musicBrainzMetadataProvider);
+//        underTest = new MusicBrainzAudioMedatataImporter(cddbMetadataProvider, musicBrainzMetadataProvider);
 
         stats.clear();
         unmatched.clear();
@@ -135,6 +138,8 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
       {
         log.info("STATS: {}", stats.entrySet().stream().map(Object::toString).collect(joining(", ")));
         unmatched.forEach(path -> log.info("STATS: unmatched with CDDB: {}", path));
+        stats.values().stream().flatMap(s -> s.withoutCddb.stream()).collect(toSet())
+                .stream().forEachOrdered(path -> log.info("STATS: without CDDB:        {}", path));
         modelBuilders.entrySet().forEach(_c(entry -> verifyGlobalModel(entry.getValue().toModel(), entry.getKey())));
       }
 
@@ -159,7 +164,7 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
      *
      *
      ******************************************************************************************************************/
-    @Test(dataProvider = "trackResourcesProvider2") // FIXME: run in parallel?
+    @Test(dataProvider = "trackResourcesProvider2")
     public void must_correctly_retrieve_MusicBrainz_data (final @Nonnull TestSetTriple triple)
       throws Exception
       {
@@ -175,33 +180,41 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
 
         stats.putIfAbsent(testSetName, new TestSetStats());
         final TestSetStats testSetStats = stats.get(testSetName);
-        testSetStats.count.incrementAndGet();
+        underTest.putIfAbsent(testSetName, new MusicBrainzAudioMedatataImporter(cddbMetadataProvider, musicBrainzMetadataProvider));
         // when
-        final Model model = underTest.handleMetadata(metadata);
+        final Optional<Model> optionalModel = underTest.get(testSetName).handleMetadata(metadata);
         // then
-        final boolean matched = !model.isEmpty();
-        final boolean hasCddb = metadata.get(CDDB).isPresent();
-
-        if (matched)
-          {
-            testSetStats.found.incrementAndGet();
-            modelBuilders.putIfAbsent(testSetName, new ModelBuilder());
-            modelBuilders.get(testSetName).with(model);
-          }
-
-        if (!hasCddb)
-          {
-            testSetStats.withoutCddb.incrementAndGet();
-          }
-
-        if (!matched && hasCddb)
+        if (optionalModel.isPresent())
           {
             final String recordName = triple.getRelativePath().getParent().getFileName().toString();
-            unmatched.add(recordName + " / " + metadata.get(CDDB).get().getToc());
-          }
+            final Model model = optionalModel.get();
+            final boolean matched = !model.isEmpty();
+            final boolean hasCddb = metadata.get(CDDB).isPresent();
 
-        exportToFile(model, actualResult);
-        assertSameContents(expectedResult, actualResult);
+            if (!hasCddb)
+              {
+                testSetStats.withoutCddb.add(recordName);
+              }
+            else
+              {
+                testSetStats.count.incrementAndGet();
+              }
+
+            if (matched)
+              {
+                testSetStats.found.incrementAndGet();
+                modelBuilders.putIfAbsent(testSetName, new ModelBuilder());
+                modelBuilders.get(testSetName).with(model);
+              }
+
+            if (!matched && hasCddb)
+              {
+                unmatched.add(recordName + " / " + metadata.get(CDDB).get().getToc());
+              }
+
+            exportToFile(model, actualResult);
+            assertSameContents(expectedResult, actualResult);
+          };
       }
 
     /*******************************************************************************************************************
@@ -248,14 +261,8 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
     protected static Object[][] trackResourcesProvider2()
       {
         return streamOfTestSetTriples(TestSetLocator.allTestSets(), name -> METADATA.resolve(name))
-                // FIXME: this testcase fails after a fix; should update the expected results resources
-                .filter(triple -> !triple.getFilePath().toString().contains("Compilations/Rachmaninov_ Piano Concertos #2 & 3"))
-                .filter(triple -> triple.getFilePath().getFileName().toString().startsWith("01"))
-
-//                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20160504-1"))
+//                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20160504-2"))
 //                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20161210-1"))
-//                .filter(triple -> triple.getFilePath().toString().contains("Trio 99_00"))
-//                .filter(triple -> triple.getFilePath().toString().contains("La Divina 2"))
                 .collect(toTestNGDataProvider());
       }
   }

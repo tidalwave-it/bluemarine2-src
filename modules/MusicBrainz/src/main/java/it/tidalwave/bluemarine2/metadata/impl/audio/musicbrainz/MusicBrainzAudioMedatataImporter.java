@@ -34,11 +34,13 @@ import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Set;
 import java.util.TreeMap;
 import java.util.stream.Stream;
 import javax.xml.namespace.QName;
@@ -122,6 +124,8 @@ public class MusicBrainzAudioMedatataImporter
     @Getter @Setter
     private int releaseGroupScoreThreshold = 50;
 
+    private final Set<String> processedTocs = new HashSet<>();
+
     enum Validation
       {
         TRACK_OFFSETS_MATCH_REQUIRED,
@@ -155,10 +159,13 @@ public class MusicBrainzAudioMedatataImporter
 
         PERFORMER_MAP.put("vocal",                              MO.P_SINGER);
         PERFORMER_MAP.put("vocal/additional",                   BM.P_BACKGROUND_SINGER);
+        PERFORMER_MAP.put("vocal/alto vocals",                  BM.P_ALTO);
         PERFORMER_MAP.put("vocal/background vocals",            BM.P_BACKGROUND_SINGER);
         PERFORMER_MAP.put("vocal/baritone vocals",              BM.P_BARITONE);
+        PERFORMER_MAP.put("vocal/bass-baritone vocals",         BM.P_BASS_BARITONE);
         PERFORMER_MAP.put("vocal/bass vocals",                  BM.P_BASS);
         PERFORMER_MAP.put("vocal/choir vocals",                 BM.P_CHOIR);
+        PERFORMER_MAP.put("vocal/contralto vocals",             BM.P_CONTRALTO);
         PERFORMER_MAP.put("vocal/guest",                        MO.P_SINGER);
         PERFORMER_MAP.put("vocal/lead vocals",                  BM.P_LEAD_SINGER);
         PERFORMER_MAP.put("vocal/mezzo-soprano vocals",         BM.P_MEZZO_SOPRANO);
@@ -166,6 +173,7 @@ public class MusicBrainzAudioMedatataImporter
         PERFORMER_MAP.put("vocal/solo",                         BM.P_LEAD_SINGER);
         PERFORMER_MAP.put("vocal/soprano vocals",               BM.P_SOPRANO);
         PERFORMER_MAP.put("vocal/spoken vocals",                MO.P_SINGER);
+        PERFORMER_MAP.put("vocal/tenor vocals",                 BM.P_TENOR);
 
         PERFORMER_MAP.put("instrument",                         MO.P_PERFORMER);
         PERFORMER_MAP.put("instrument/accordion",               BM.P_PERFORMER_ACCORDION);
@@ -175,6 +183,7 @@ public class MusicBrainzAudioMedatataImporter
         PERFORMER_MAP.put("instrument/alto saxophone",          BM.P_PERFORMER_ALTO_SAX);
         PERFORMER_MAP.put("instrument/banjo",                   BM.P_PERFORMER_BANJO);
         PERFORMER_MAP.put("instrument/baritone guitar",         BM.P_PERFORMER_BARITONE_GUITAR);
+        PERFORMER_MAP.put("instrument/baritone saxophone",      BM.P_PERFORMER_BARITONE_SAX);
         PERFORMER_MAP.put("instrument/bass",                    BM.P_PERFORMER_BASS);
         PERFORMER_MAP.put("instrument/bass clarinet",           BM.P_PERFORMER_BASS_CLARINET);
         PERFORMER_MAP.put("instrument/bass drum",               BM.P_PERFORMER_BASS_DRUM);
@@ -193,6 +202,7 @@ public class MusicBrainzAudioMedatataImporter
         PERFORMER_MAP.put("instrument/cymbals",                 BM.P_PERFORMER_CYMBALS);
         PERFORMER_MAP.put("instrument/double bass",             BM.P_PERFORMER_DOUBLE_BASS);
         PERFORMER_MAP.put("instrument/drums",                   BM.P_PERFORMER_DRUMS);
+        PERFORMER_MAP.put("instrument/drum machine",            BM.P_PERFORMER_DRUM_MACHINE);
         PERFORMER_MAP.put("instrument/electric bass guitar",    BM.P_PERFORMER_ELECTRIC_BASS_GUITAR);
         PERFORMER_MAP.put("instrument/electric guitar",         BM.P_PERFORMER_ELECTRIC_GUITAR);
         PERFORMER_MAP.put("instrument/electric piano",          BM.P_PERFORMER_ELECTRIC_PIANO);
@@ -225,12 +235,14 @@ public class MusicBrainzAudioMedatataImporter
         PERFORMER_MAP.put("instrument/melodica",                BM.P_PERFORMER_MELODICA);
         PERFORMER_MAP.put("instrument/oboe",                    BM.P_PERFORMER_OBOE);
         PERFORMER_MAP.put("instrument/organ",                   BM.P_PERFORMER_ORGAN);
+        PERFORMER_MAP.put("instrument/other instruments",       BM.P_PERFORMER_OTHER_INSTRUMENTS);
         PERFORMER_MAP.put("instrument/percussion",              BM.P_PERFORMER_PERCUSSION);
         PERFORMER_MAP.put("instrument/piano",                   BM.P_PERFORMER_PIANO);
         PERFORMER_MAP.put("instrument/piccolo trumpet",         BM.P_PERFORMER_PICCOLO_TRUMPET);
         PERFORMER_MAP.put("instrument/pipe organ",              BM.P_PERFORMER_PIPE_ORGAN);
         PERFORMER_MAP.put("instrument/psaltery",                BM.P_PERFORMER_PSALTERY);
         PERFORMER_MAP.put("instrument/recorder",                BM.P_PERFORMER_RECORDER);
+        PERFORMER_MAP.put("instrument/reeds",                   BM.P_PERFORMER_REEDS);
         PERFORMER_MAP.put("instrument/rhodes piano",            BM.P_PERFORMER_RHODES_PIANO);
         PERFORMER_MAP.put("instrument/santur",                  BM.P_PERFORMER_SANTUR);
         PERFORMER_MAP.put("instrument/saxophone",               BM.P_PERFORMER_SAXOPHONE);
@@ -241,10 +253,12 @@ public class MusicBrainzAudioMedatataImporter
         PERFORMER_MAP.put("instrument/solo",                    BM.P_PERFORMER_SOLO);
         PERFORMER_MAP.put("instrument/soprano saxophone",       BM.P_PERFORMER_SOPRANO_SAX);
         PERFORMER_MAP.put("instrument/spanish acoustic guitar", BM.P_PERFORMER_SPANISH_ACOUSTIC_GUITAR);
+        PERFORMER_MAP.put("instrument/steel guitar",            BM.P_PERFORMER_STEEL_GUITAR);
         PERFORMER_MAP.put("instrument/synclavier",              BM.P_PERFORMER_SYNCLAVIER);
         PERFORMER_MAP.put("instrument/synthesizer",             BM.P_PERFORMER_SYNTHESIZER);
         PERFORMER_MAP.put("instrument/tambourine",              BM.P_PERFORMER_TAMBOURINE);
         PERFORMER_MAP.put("instrument/tenor saxophone",         BM.P_PERFORMER_TENOR_SAX);
+        PERFORMER_MAP.put("instrument/timbales",                BM.P_PERFORMER_TIMBALES);
         PERFORMER_MAP.put("instrument/timpani",                 BM.P_PERFORMER_TIMPANI);
         PERFORMER_MAP.put("instrument/tiple",                   BM.P_PERFORMER_TIPLE);
         PERFORMER_MAP.put("instrument/trombone",                BM.P_PERFORMER_TROMBONE);
@@ -388,7 +402,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    public Model handleMetadata (final @Nonnull Metadata metadata)
+    public Optional<Model> handleMetadata (final @Nonnull Metadata metadata)
       throws InterruptedException, IOException
       {
         final ModelBuilder model = createModelBuilder();
@@ -397,9 +411,21 @@ public class MusicBrainzAudioMedatataImporter
 
         if (albumTitle.isPresent() && !albumTitle.get().trim().isEmpty() && cddb.isPresent())
           {
+            final String toc = cddb.get().getToc();
+
+            synchronized (processedTocs)
+              {
+                if (processedTocs.contains(toc))
+                  {
+                    return Optional.empty();
+                  }
+
+                processedTocs.add(toc);
+              }
+
             log.info("============ PROBING TOC FOR {}", albumTitle);
             final List<ReleaseMediumDisk> rmds = new ArrayList<>();
-            final RestResponse<ReleaseList> releaseList = mbMetadataProvider.findReleaseListByToc(cddb.get().getToc(), TOC_INCLUDES);
+            final RestResponse<ReleaseList> releaseList = mbMetadataProvider.findReleaseListByToc(toc, TOC_INCLUDES);
             // even though we're querying by TOC, matching offsets is required to kill many false results
             releaseList.ifPresent(releases -> rmds.addAll(findReleases(releases, cddb.get(), Validation.TRACK_OFFSETS_MATCH_REQUIRED)));
 
@@ -427,7 +453,7 @@ public class MusicBrainzAudioMedatataImporter
                                                      .collect(toList()));
           }
 
-        return model.toModel();
+        return Optional.of(model.toModel());
       }
 
     /*******************************************************************************************************************

@@ -71,14 +71,15 @@
         <cache.folder>${project.basedir}/target/cache</cache.folder>
         <expected-results.folder>${project.basedir}/target/expected-results</expected-results.folder>
 
-        <musicbrainz-cddb-cache-iTunes-fg-20160504-2.version>20170118_0000</musicbrainz-cddb-cache-iTunes-fg-20160504-2.version>
-        <musicbrainz-cddb-cache-iTunes-fg-20161210-1.version>20170107_1800</musicbrainz-cddb-cache-iTunes-fg-20161210-1.version>
-        <musicbrainz-cache-iTunes-fg-20160504-2.version>20170118_0000</musicbrainz-cache-iTunes-fg-20160504-2.version>
-        <musicbrainz-cache-iTunes-fg-20161210-1.version>20170116_1230</musicbrainz-cache-iTunes-fg-20161210-1.version>
-        <expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-2.version>20170118_0000</expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-2.version>
-        <expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>20170108_2230</expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>
-        <expected-metadata-musicbrainz-iTunes-fg-20160504-2.version>20170122_2330</expected-metadata-musicbrainz-iTunes-fg-20160504-2.version>
-        <expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>20170122_2330</expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>
+        <musicbrainz-cddb-cache-iTunes-fg-20160504-2.version>20170123_1415</musicbrainz-cddb-cache-iTunes-fg-20160504-2.version>
+        <musicbrainz-cddb-cache-iTunes-fg-20161210-1.version>20170123_1415</musicbrainz-cddb-cache-iTunes-fg-20161210-1.version>
+        <musicbrainz-cache-iTunes-fg-20160504-2.version>20170123_1415</musicbrainz-cache-iTunes-fg-20160504-2.version>
+        <musicbrainz-cache-iTunes-fg-20161210-1.version>20170123_1415</musicbrainz-cache-iTunes-fg-20161210-1.version>
+
+        <expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-2.version>20170123_1415</expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-2.version>
+        <expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>20170123_1415</expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>
+        <expected-metadata-musicbrainz-iTunes-fg-20160504-2.version>20170123_1415</expected-metadata-musicbrainz-iTunes-fg-20160504-2.version>
+        <expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>20170123_1415</expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>
     </properties>
 
     <build>
