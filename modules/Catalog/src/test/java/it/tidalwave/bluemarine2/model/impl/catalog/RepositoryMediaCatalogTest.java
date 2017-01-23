@@ -147,7 +147,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         tracksOrphanOfArtist.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s%n", track));
 
         pw.printf("%n%n%nALL RECORDS (%d):%n%n", allRecordsFinder.count());
-        records.forEach(record -> pw.println(displayNameOf(record)));
+        records.forEach(record -> pw.printf("%s - %s%n", displayNameOf(record), record.getSource().orElse(new Id("unknown"))));
 
         pw.printf("%n%n%nALL ARTISTS (%d):%n%n", allArtistsFinder.count());
         artists.forEach(artist -> pw.println(displayNameOf(artist)));
@@ -165,7 +165,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         records.forEach(record ->
           {
-            pw.printf("%nRECORD %s:%n", record);
+            pw.printf("%nRECORD %s:%n", displayNameOf(record));
+            pw.printf("  SOURCE:  %s%n", record.getSource().orElse(new Id("unknown")));
             record.getAsin().ifPresent(asin -> pw.printf("  ASIN:    %s%n", asin));
             record.getGtin().ifPresent(gtin -> pw.printf("  BARCODE: %s%n", gtin));
 

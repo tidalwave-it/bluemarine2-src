@@ -321,58 +321,58 @@ ALL TRACKS (316):
 
 ALL RECORDS (52):
 
-Antiche danze ed arie (urn:bluemarine:record:1F54e95XN3GzM3dqB7Fo6goKKTw=)
-Bach: Mass In B Minor, BWV 232 [Disc 1] (urn:bluemarine:record:-635CqVz4z4PWEI2co8A4_7IS1Y=)
-Bach: Mass In B Minor, BWV 232 [Disc 2] (urn:bluemarine:record:nT-nlOg3Dwz09i56erbhREL2DL0=)
-Borodin, String Quartet 2. Tchaikovsky, string Quartet 3 (urn:bluemarine:record:YKQ4jHPwkwJAgy-bkc4LqTyTRBk=)
-Brahms: Symphony no. 4 (urn:bluemarine:record:SnUPvsKyTBT3J1brp2Pjq7o7kHc=)
-Callas - La Mamma Morta (urn:bluemarine:record:nhs0L_SwurFvHNLnhkB-lb7PXGw=)
-Canto Gregoriano [Disc 1] (urn:bluemarine:record:dQjPspHrU7DNVOqQz6gosYfs7Rg=)
-Cello Concertos (urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=)
-Cherubini: 6 Piano Sonatas (urn:bluemarine:record:y-9LEwSNAaiGXcBEAhHL47FZzTs=)
-Daniel And The Lions - Ludus Danielis (urn:bluemarine:record:ONiNKoLC69EuihrDlMBpTEUyZpo=)
-Die Konzerte für 3 und 4 Cembali (urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=)
-El canto espiritual judeoespañol (urn:bluemarine:record:4pMF6vUDJ40E2Dz2REpAbcD2Wg0=)
-Fantasie, op. 17 / Sonate, op. 11 (urn:bluemarine:record:mdrEbrVkOfi1tkP60fl8AgxwTb4=)
-Gregorian Chant (urn:bluemarine:record:RS8O3XsTBj8T4PjZd6xdn6JhGo0=)
-Handel: Messiah (Highlights) (urn:bluemarine:record:1k6gcfB56OBfXqNiE-HR02Rdw30=)
-Johannes Brahms, Robert Schumann (urn:bluemarine:record:273watVY3CmVFx_BX8oc4D9uoXc=)
-Kubelik - Dvořák 8 & 9 (urn:bluemarine:record:3G9eU5h6tC0cdm3AEt0N2GrzUbc=)
-La Divina 2 (urn:bluemarine:record:1YnSzOtRCbFKmcAnNRKLtDXCE8w=)
-La Domna Savorousa : Chants d’amour des troubadours et des trouvères (urn:bluemarine:record:0bYRbWOJwZTV0bUoFtX9eAutVDo=)
-Las Mejores Obras Del Canto Gregoriano [Disc 2] (urn:bluemarine:record:7KnxkoIeCTYNs7ZpWs384ukS-xU=)
-Le Sacre du Printemps (urn:bluemarine:record:A9sE-QiqGiQKtpf2awIcPUwIj60=)
-Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
-Marais: Pièces À Deux Violes 1686 (urn:bluemarine:record:EnMA3YnQFdiNszrbyP2pXp5p6T0=)
-Melodie Sacre (urn:bluemarine:record:7lSAGzNHnF2-e3quBGWw-jPvZaU=)
-Mendelssohn: Paulus [Disc 1] (urn:bluemarine:record:Ui2mvVOS6QygRw-GBr6uzNifoB8=)
-Mendelssohn: Paulus [Disc 2] (urn:bluemarine:record:yxCU8C3ab5P8wga8lX12B6cIoL8=)
-Mostly French (urn:bluemarine:record:7rmCg7VLnlUoP3iM8Wb5e8LT1Qo=)
-Music for the Royal Fireworks / 2 Concerti a due cori (urn:bluemarine:record:VBATFSBWyIkSTmS7krwQknkPxKk=)
-Nutcracker / Swan Lake (urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=)
-O tu chara sciença: La musique dans la pensée médiévale (urn:bluemarine:record:-Yh_lYTG5GrYQCcFwFQGUNWpFTw=)
-Piano Concerto no. 2 (urn:bluemarine:record:SYU0KpAuaB2R5tfk3ZGjhYiS2-c=)
-Piano Concertos (urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=)
-Pieces de Clavecin (urn:bluemarine:record:axDVyOkWODiJThhLeoM16wCkHMk=)
-Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
-Ravel: Gaspard de la Nuit / Prokofiev: Piano Sonata no. 6 (urn:bluemarine:record:YiFcrqdWnIFQm1T5VTtEMDwZqLs=)
-Rimsky-Korsakov: Scheherazade (urn:bluemarine:record:lvz3awtgypL8BcvbSyA2iWGTxIU=)
-Rossini Overtures (urn:bluemarine:record:UD4cQn5pukIL0z0dU4vs4l7Ih6I=)
-Satchmo 2 (urn:bluemarine:record:Ew6KqV-akvEbj1Oq-L24kCjKjxA=)
-Schubert: Arpeggione Sonata / Schumann: Fünf Stücke im Volkston / Debussy: Cello Sonata (urn:bluemarine:record:BDC4cW1q5WDo0tsG-G5GwK43iYQ=)
-Sonaten »Waldstein · Les Adieux · Appassionata« (urn:bluemarine:record:TIwQL8Nf1R02SmbLJckDUAvrFw4=)
-String Quartets Vol. 3 Op.18 Nos. 5 & 6 (urn:bluemarine:record:gtATvQUdbPaxAr0TKf8EHf7nX9Y=)
-Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi" / no. 8 "Le Soir" (urn:bluemarine:record:2g-5pZq0VX2fdmS0kOFUT5b4n5c=)
-The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
-The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
-The Planets (urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=)
-The Platinum Collection (urn:bluemarine:record:nkvrC66_PPIpbUwD_bJwk5WUekk=)
-Tracce della tradizione orale (urn:bluemarine:record:XICW1WJ-Am5ML_zXSNSK0ns06a4=)
-Trio 99 → 00 (urn:bluemarine:record:MUOZO8uyx7KnDfsRIPUVrOYUSB8=)
-Violin Concerti (urn:bluemarine:record:w9XAlyRXYhoOirsZyhGObe3NMj8=)
-Vivaldi: Musica da camera e da chiesa (urn:bluemarine:record:Dsw4bQxH03U8JeeEAZ1fMkjOgXQ=)
-Water Music (urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=)
-もうひとつのクリスマス (urn:bluemarine:record:Q2QW4sxqdRwCjoCYMmceTM4yd5o=)
+Antiche danze ed arie (urn:bluemarine:record:1F54e95XN3GzM3dqB7Fo6goKKTw=) - musicbrainz
+Bach: Mass In B Minor, BWV 232 [Disc 1] (urn:bluemarine:record:-635CqVz4z4PWEI2co8A4_7IS1Y=) - unknown
+Bach: Mass In B Minor, BWV 232 [Disc 2] (urn:bluemarine:record:nT-nlOg3Dwz09i56erbhREL2DL0=) - unknown
+Borodin, String Quartet 2. Tchaikovsky, string Quartet 3 (urn:bluemarine:record:YKQ4jHPwkwJAgy-bkc4LqTyTRBk=) - unknown
+Brahms: Symphony no. 4 (urn:bluemarine:record:SnUPvsKyTBT3J1brp2Pjq7o7kHc=) - musicbrainz
+Callas - La Mamma Morta (urn:bluemarine:record:nhs0L_SwurFvHNLnhkB-lb7PXGw=) - unknown
+Canto Gregoriano [Disc 1] (urn:bluemarine:record:dQjPspHrU7DNVOqQz6gosYfs7Rg=) - unknown
+Cello Concertos (urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=) - musicbrainz
+Cherubini: 6 Piano Sonatas (urn:bluemarine:record:y-9LEwSNAaiGXcBEAhHL47FZzTs=) - unknown
+Daniel And The Lions - Ludus Danielis (urn:bluemarine:record:ONiNKoLC69EuihrDlMBpTEUyZpo=) - unknown
+Die Konzerte für 3 und 4 Cembali (urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=) - musicbrainz
+El canto espiritual judeoespañol (urn:bluemarine:record:4pMF6vUDJ40E2Dz2REpAbcD2Wg0=) - musicbrainz
+Fantasie, op. 17 / Sonate, op. 11 (urn:bluemarine:record:mdrEbrVkOfi1tkP60fl8AgxwTb4=) - musicbrainz
+Gregorian Chant (urn:bluemarine:record:RS8O3XsTBj8T4PjZd6xdn6JhGo0=) - musicbrainz
+Handel: Messiah (Highlights) (urn:bluemarine:record:1k6gcfB56OBfXqNiE-HR02Rdw30=) - unknown
+Johannes Brahms, Robert Schumann (urn:bluemarine:record:273watVY3CmVFx_BX8oc4D9uoXc=) - unknown
+Kubelik - Dvořák 8 & 9 (urn:bluemarine:record:3G9eU5h6tC0cdm3AEt0N2GrzUbc=) - musicbrainz
+La Divina 2 (urn:bluemarine:record:1YnSzOtRCbFKmcAnNRKLtDXCE8w=) - unknown
+La Domna Savorousa : Chants d’amour des troubadours et des trouvères (urn:bluemarine:record:0bYRbWOJwZTV0bUoFtX9eAutVDo=) - unknown
+Las Mejores Obras Del Canto Gregoriano [Disc 2] (urn:bluemarine:record:7KnxkoIeCTYNs7ZpWs384ukS-xU=) - unknown
+Le Sacre du Printemps (urn:bluemarine:record:A9sE-QiqGiQKtpf2awIcPUwIj60=) - musicbrainz
+Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=) - musicbrainz
+Marais: Pièces À Deux Violes 1686 (urn:bluemarine:record:EnMA3YnQFdiNszrbyP2pXp5p6T0=) - unknown
+Melodie Sacre (urn:bluemarine:record:7lSAGzNHnF2-e3quBGWw-jPvZaU=) - musicbrainz
+Mendelssohn: Paulus [Disc 1] (urn:bluemarine:record:Ui2mvVOS6QygRw-GBr6uzNifoB8=) - unknown
+Mendelssohn: Paulus [Disc 2] (urn:bluemarine:record:yxCU8C3ab5P8wga8lX12B6cIoL8=) - unknown
+Mostly French (urn:bluemarine:record:7rmCg7VLnlUoP3iM8Wb5e8LT1Qo=) - unknown
+Music for the Royal Fireworks / 2 Concerti a due cori (urn:bluemarine:record:VBATFSBWyIkSTmS7krwQknkPxKk=) - musicbrainz
+Nutcracker / Swan Lake (urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=) - musicbrainz
+O tu chara sciença: La musique dans la pensée médiévale (urn:bluemarine:record:-Yh_lYTG5GrYQCcFwFQGUNWpFTw=) - unknown
+Piano Concerto no. 2 (urn:bluemarine:record:SYU0KpAuaB2R5tfk3ZGjhYiS2-c=) - musicbrainz
+Piano Concertos (urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=) - musicbrainz
+Pieces de Clavecin (urn:bluemarine:record:axDVyOkWODiJThhLeoM16wCkHMk=) - unknown
+Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=) - musicbrainz
+Ravel: Gaspard de la Nuit / Prokofiev: Piano Sonata no. 6 (urn:bluemarine:record:YiFcrqdWnIFQm1T5VTtEMDwZqLs=) - musicbrainz
+Rimsky-Korsakov: Scheherazade (urn:bluemarine:record:lvz3awtgypL8BcvbSyA2iWGTxIU=) - unknown
+Rossini Overtures (urn:bluemarine:record:UD4cQn5pukIL0z0dU4vs4l7Ih6I=) - unknown
+Satchmo 2 (urn:bluemarine:record:Ew6KqV-akvEbj1Oq-L24kCjKjxA=) - unknown
+Schubert: Arpeggione Sonata / Schumann: Fünf Stücke im Volkston / Debussy: Cello Sonata (urn:bluemarine:record:BDC4cW1q5WDo0tsG-G5GwK43iYQ=) - musicbrainz
+Sonaten »Waldstein · Les Adieux · Appassionata« (urn:bluemarine:record:TIwQL8Nf1R02SmbLJckDUAvrFw4=) - musicbrainz
+String Quartets Vol. 3 Op.18 Nos. 5 & 6 (urn:bluemarine:record:gtATvQUdbPaxAr0TKf8EHf7nX9Y=) - unknown
+Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi" / no. 8 "Le Soir" (urn:bluemarine:record:2g-5pZq0VX2fdmS0kOFUT5b4n5c=) - musicbrainz
+The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=) - musicbrainz
+The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=) - musicbrainz
+The Planets (urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=) - musicbrainz
+The Platinum Collection (urn:bluemarine:record:nkvrC66_PPIpbUwD_bJwk5WUekk=) - musicbrainz
+Tracce della tradizione orale (urn:bluemarine:record:XICW1WJ-Am5ML_zXSNSK0ns06a4=) - unknown
+Trio 99 → 00 (urn:bluemarine:record:MUOZO8uyx7KnDfsRIPUVrOYUSB8=) - musicbrainz
+Violin Concerti (urn:bluemarine:record:w9XAlyRXYhoOirsZyhGObe3NMj8=) - musicbrainz
+Vivaldi: Musica da camera e da chiesa (urn:bluemarine:record:Dsw4bQxH03U8JeeEAZ1fMkjOgXQ=) - unknown
+Water Music (urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=) - musicbrainz
+もうひとつのクリスマス (urn:bluemarine:record:Q2QW4sxqdRwCjoCYMmceTM4yd5o=) - unknown
 
 
 
@@ -1562,7 +1562,8 @@ TRACKS OF 小澤征爾 (http://musicbrainz.org/artist/98c3e4e1-2f01-4ead-911f-8d
   RepositoryTrack(01/01 11, 03:03, rdfs:label=Antiche danze ed arie, suite III: Anonymus: Siciliana, Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/11 Respighi_ Ancient Airs & Dances, Set 3, P 172 - 3. Siciliana.mp3, http://musicbrainz.org/track/654eddd7-618d-3db4-9177-dd5fa63ac5f9)
   RepositoryTrack(01/01 12, 03:23, rdfs:label=Antiche danze ed arie, suite III: Lodovico Roncalli: Passacaglia (1692), Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/12 Respighi_ Ancient Airs & Dances, Set 3, P 172 - 4. Passacaglia.mp3, http://musicbrainz.org/track/08036b69-ab72-39d6-8ffb-373e6bd9a8ca)
 
-RECORD RepositoryRecord(rdfs:label=Antiche danze ed arie, urn:bluemarine:record:1F54e95XN3GzM3dqB7Fo6goKKTw=):
+RECORD Antiche danze ed arie (urn:bluemarine:record:1F54e95XN3GzM3dqB7Fo6goKKTw=):
+  SOURCE:  musicbrainz
   BARCODE: 028941986825
   TRACKS (12 / Optional[12]):
     RepositoryTrack(01/01 01, 03:04, rdfs:label=Antiche danze ed arie, suite I: Simone Molinaro: Balletto "Il Conte Orlando" (1599), Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/01 Respighi_ Ancient Airs & Dances, Set 1, P 109 - 1. Balletto Detto Il Conte Orlando.mp3, http://musicbrainz.org/track/687fd96e-385f-30f1-8e54-cd45f6116563)
@@ -1602,7 +1603,8 @@ RECORD RepositoryRecord(rdfs:label=Antiche danze ed arie, urn:bluemarine:record:
       : orchestra            Boston Symphony Orchestra (http://musicbrainz.org/artist/6ed6a493-0300-428d-82da-91c62b4d50aa)
       : conductor            小澤征爾 (http://musicbrainz.org/artist/98c3e4e1-2f01-4ead-911f-8d4b95a6c461)
 
-RECORD RepositoryRecord(rdfs:label=Bach: Mass In B Minor, BWV 232 [Disc 1], urn:bluemarine:record:-635CqVz4z4PWEI2co8A4_7IS1Y=):
+RECORD Bach: Mass In B Minor, BWV 232 [Disc 1] (urn:bluemarine:record:-635CqVz4z4PWEI2co8A4_7IS1Y=):
+  SOURCE:  unknown
   TRACKS (11 / Optional.empty):
     RepositoryTrack(01/02 01, 10:31, rdfs:label=Bach: Mass In B Minor, BWV 232 - Kyrie: Kyrie Eleison 1, Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-01 Bach_ Mass In B Minor, BWV 232 - Kyrie_ Kyrie Eleison 1.mp3, urn:bluemarine:track:QYVNyJCIszGfdhs1FrQuces0RGc=)
     RepositoryTrack(01/02 02, 05:16, rdfs:label=Bach: Mass In B Minor, BWV 232 - Kyrie: Christe Eleison, Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-02 Bach_ Mass In B Minor, BWV 232 - Kyrie_ Christe Eleison.mp3, urn:bluemarine:track:ql2V8rScbKiB5v0bPAR7ZCfx5E4=)
@@ -1616,7 +1618,8 @@ RECORD RepositoryRecord(rdfs:label=Bach: Mass In B Minor, BWV 232 [Disc 1], urn:
     RepositoryTrack(01/02 10, 05:14, rdfs:label=Bach: Mass In B Minor, BWV 232 - Gloria: Quoniam Tu Solus Sanctus, Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-10 Bach_ Mass In B Minor, BWV 232 - Gloria_ Quoniam Tu Solus Sanctus.mp3, urn:bluemarine:track:btCHASU05km7dLi7qxvEzqpoJes=)
     RepositoryTrack(01/02 11, 04:18, rdfs:label=Bach: Mass In B Minor, BWV 232 - Gloria: Cum Sancto Spiritu, Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.mp3, urn:bluemarine:track:P_78P3BO-8CVVEuAz2QCG8o2Row=)
 
-RECORD RepositoryRecord(rdfs:label=Bach: Mass In B Minor, BWV 232 [Disc 2], urn:bluemarine:record:nT-nlOg3Dwz09i56erbhREL2DL0=):
+RECORD Bach: Mass In B Minor, BWV 232 [Disc 2] (urn:bluemarine:record:nT-nlOg3Dwz09i56erbhREL2DL0=):
+  SOURCE:  unknown
   TRACKS (14 / Optional.empty):
     RepositoryTrack(02/02 01, 01:52, rdfs:label=Bach: Mass In B Minor, BWV 232 - Credo: Credo In Unum Deum, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 2]/2-01 Bach_ Mass In B Minor, BWV 232 - Credo_ Credo In Unum Deum.mp3, urn:bluemarine:track:huN3o27gpEkVZm96EB0zLK9_8Uk=)
     RepositoryTrack(02/02 02, 02:06, rdfs:label=Bach: Mass In B Minor, BWV 232 - Credo: Patrem Omnipotentem, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 2]/2-02 Bach_ Mass In B Minor, BWV 232 - Credo_ Patrem Omnipotentem.mp3, urn:bluemarine:track:NkEfbPU06cVEWptwFEXzEi_ZvFU=)
@@ -1633,7 +1636,8 @@ RECORD RepositoryRecord(rdfs:label=Bach: Mass In B Minor, BWV 232 [Disc 2], urn:
     RepositoryTrack(02/02 13, 05:16, rdfs:label=Bach: Mass In B Minor, BWV 232 - Agnus Dei: Agnus Dei, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 2]/2-13 Bach_ Mass In B Minor, BWV 232 - Agnus Dei_ Agnus Dei.mp3, urn:bluemarine:track:7bMZzD4APoMsumMUI6ZK4dSmRu0=)
     RepositoryTrack(02/02 14, 02:50, rdfs:label=Bach: Mass In B Minor, BWV 232 - Agnus Dei: Dona Nobis Pacem, Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 2]/2-14 Bach_ Mass In B Minor, BWV 232 - Agnus Dei_ Dona Nobis Pacem.mp3, urn:bluemarine:track:wF6gS1iF7zPo095GP7gmI4ToBZs=)
 
-RECORD RepositoryRecord(rdfs:label=Borodin, String Quartet 2. Tchaikovsky, string Quartet 3, urn:bluemarine:record:YKQ4jHPwkwJAgy-bkc4LqTyTRBk=):
+RECORD Borodin, String Quartet 2. Tchaikovsky, string Quartet 3 (urn:bluemarine:record:YKQ4jHPwkwJAgy-bkc4LqTyTRBk=):
+  SOURCE:  unknown
   TRACKS (8 / Optional.empty):
     RepositoryTrack(01/01 01, 08:11, rdfs:label=Borodin String Quartet No 2 in D Major. I. Allegro moderato, Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/01 Borodin String Quartet No 2 in D Major. I. Allegro moderato.mp3, urn:bluemarine:track:z_61Q2JomsYP7nAprLTYDZOB4rQ=)
     RepositoryTrack(01/01 02, 04:52, rdfs:label=Borodin String Quartet No 2 in D Major. II. Scherzo, Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/02 Borodin String Quartet No 2 in D Major. II. Scherzo.mp3, urn:bluemarine:track:6t-m0SyG-6v4xaVx1ylrM43jIB4=)
@@ -1644,7 +1648,8 @@ RECORD RepositoryRecord(rdfs:label=Borodin, String Quartet 2. Tchaikovsky, strin
     RepositoryTrack(01/01 07, 12:48, rdfs:label=Tchaikovsky String Quartet No 3 in E flat minor, Op.30. III. Andante funebre e doloroso ma con moto, Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/07 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. III. Andante funebre e doloroso ma con moto.mp3, urn:bluemarine:track:PS82lePnZSNUHZL4xhXGkZPmwPU=)
     RepositoryTrack(01/01 08, 05:51, rdfs:label=Tchaikovsky String Quartet No 3 in E flat minor, Op.30. IV. Finale: Allegro non troppo e resoluto, Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/08 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. IV. Finale_ Allegro non troppo e resoluto.mp3, urn:bluemarine:track:ZJpzFSl0jeIY1mVj61SNz6lC4mo=)
 
-RECORD RepositoryRecord(rdfs:label=Brahms: Symphony no. 4, urn:bluemarine:record:SnUPvsKyTBT3J1brp2Pjq7o7kHc=):
+RECORD Brahms: Symphony no. 4 (urn:bluemarine:record:SnUPvsKyTBT3J1brp2Pjq7o7kHc=):
+  SOURCE:  musicbrainz
   BARCODE: 028947934493
   TRACKS (4 / Optional[4]):
     RepositoryTrack(01/01 01, 12:49, rdfs:label=Symphonie nr. 4 e-Moll, op. 98: I. Allegro non troppo, Carlos Kleiber_ Vienna Philharmonic Orchestra/Brahms_ Symphony #4 In E Minor, Op. 98/01 Brahms_ Symphony #4 In E Minor, Op. 98 - 1. Allegro Non Troppo.mp3, http://musicbrainz.org/track/9d348280-ab2d-4c44-9a3a-92cd41c9fa4a)
@@ -1680,13 +1685,15 @@ RECORD RepositoryRecord(rdfs:label=Brahms: Symphony no. 4, urn:bluemarine:record
       : balance              Klaus Scheibe (http://musicbrainz.org/artist/37f36853-de8b-41ea-9e41-4e09b1dca19b)
       : orchestra            Wiener Philharmoniker (http://musicbrainz.org/artist/d770374d-05e9-4ed3-a068-3fbd4e6e4dd6)
 
-RECORD RepositoryRecord(rdfs:label=Callas - La Mamma Morta, urn:bluemarine:record:nhs0L_SwurFvHNLnhkB-lb7PXGw=):
+RECORD Callas - La Mamma Morta (urn:bluemarine:record:nhs0L_SwurFvHNLnhkB-lb7PXGw=):
+  SOURCE:  unknown
   TRACKS (3 / Optional.empty):
     RepositoryTrack(01/01 01, 04:52, rdfs:label=Giordano: Andrea Chénier - La Mamma Morta, Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mamma Morta.mp3, urn:bluemarine:track:EqtB0K6PRO2l03DF-NeQQBpm5T0=)
     RepositoryTrack(01/01 02, 04:50, rdfs:label=Catalani: La Wally - Ebben? Ne Andro Lontana, Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3, urn:bluemarine:track:EFebggtvvyD6hwmkTlv_b4yAlAY=)
     RepositoryTrack(01/01 03, 02:26, rdfs:label=Spontini: La Vestale - O Nume Tutelar, Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3, urn:bluemarine:track:M1sLSnzqyfdl908LjuTQw4jBneI=)
 
-RECORD RepositoryRecord(rdfs:label=Canto Gregoriano [Disc 1], urn:bluemarine:record:dQjPspHrU7DNVOqQz6gosYfs7Rg=):
+RECORD Canto Gregoriano [Disc 1] (urn:bluemarine:record:dQjPspHrU7DNVOqQz6gosYfs7Rg=):
+  SOURCE:  unknown
   TRACKS (14 / Optional.empty):
     RepositoryTrack(01/02 01, 03:40, rdfs:label=Anon: Puer Natus Est Nobis, Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-01 Anon_ Puer Natus Est Nobis.mp3, urn:bluemarine:track:xFFFHqTNb7_D7mNbEMysUqmAdV0=)
     RepositoryTrack(01/02 02, 03:00, rdfs:label=Anon: Genuit Puerpera Regem, Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-02 Anon_ Genuit Puerpera Regem.mp3, urn:bluemarine:track:ZvN4Gi7pNu0dRhDdxkqMwuLzsYE=)
@@ -1703,7 +1710,8 @@ RECORD RepositoryRecord(rdfs:label=Canto Gregoriano [Disc 1], urn:bluemarine:rec
     RepositoryTrack(01/02 13, 01:44, rdfs:label=Anon: Mandatum Novum Do Vobis, Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-13 Anon_ Mandatum Novum Do Vobis.mp3, urn:bluemarine:track:is3PSRwIK6ORAmrizrWILZcKZpw=)
     RepositoryTrack(01/02 14, 06:12, rdfs:label=Anon: Media Vita In Morte Sumus, Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-14 Anon_ Media Vita In Morte Sumus.mp3, urn:bluemarine:track:2-H8_3BRVoMTZR7GuWpxSy3TBOQ=)
 
-RECORD RepositoryRecord(rdfs:label=Cello Concertos, urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=):
+RECORD Cello Concertos (urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=):
+  SOURCE:  musicbrainz
   BARCODE: 028941288028
   TRACKS (7 / Optional[7]):
     RepositoryTrack(01/01 01, 14:44, rdfs:label=Cello Concerto in B minor, op. 124: I. Allegro, Heinrich Schiff; Neville Marriner_ Staatskapelle Dresden/Dvořák; Elgar_ Cello Concertos/01 Dvořák_ Cello Concerto In B Minor, Op. 104, B 191 - 1. Allegro.mp3, http://musicbrainz.org/track/d3ba6682-2484-4da0-a7c5-6252243b0821)
@@ -1735,7 +1743,8 @@ RECORD RepositoryRecord(rdfs:label=Cello Concertos, urn:bluemarine:record:p2sHUn
       : conductor            Sir Neville Marriner (http://musicbrainz.org/artist/afb8d624-52d7-4a72-8d0b-62fff3e29f79)
       : orchestra            Staatskapelle Dresden (http://musicbrainz.org/artist/62250633-e888-49bb-ab9f-d6f14ef21012)
 
-RECORD RepositoryRecord(rdfs:label=Cherubini: 6 Piano Sonatas, urn:bluemarine:record:y-9LEwSNAaiGXcBEAhHL47FZzTs=):
+RECORD Cherubini: 6 Piano Sonatas (urn:bluemarine:record:y-9LEwSNAaiGXcBEAhHL47FZzTs=):
+  SOURCE:  unknown
   TRACKS (12 / Optional.empty):
     RepositoryTrack(01/01 01, 06:27, rdfs:label=Cherubini: Sonata #1 In F - 1. Moderato, Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/01 Cherubini_ Sonata #1 In F - 1. Moderato.mp3, urn:bluemarine:track:fENsNItDmRv_0WP1eMSL_74e7Rw=)
     RepositoryTrack(01/01 02, 04:56, rdfs:label=Cherubini: Sonata #1 In F - 2. Allegretto Moderato, Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/02 Cherubini_ Sonata #1 In F - 2. Allegretto Moderato.mp3, urn:bluemarine:track:BdguHahXBodYsAJT03Am1rZ0Wg8=)
@@ -1750,7 +1759,8 @@ RECORD RepositoryRecord(rdfs:label=Cherubini: 6 Piano Sonatas, urn:bluemarine:re
     RepositoryTrack(01/01 11, 07:52, rdfs:label=Cherubini: Sonata #6 In E Flat - 1. Allegro Spiritoso, Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/11 Cherubini_ Sonata #6 In E Flat - 1. Allegro Spiritoso.mp3, urn:bluemarine:track:MV17m6OWDCPrx_Ed_8i40-d1h1Q=)
     RepositoryTrack(01/01 12, 06:06, rdfs:label=Cherubini: Sonata #6 In E Flat - 2. Rondò: Andantino Con Moto, Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/12 Cherubini_ Sonata #6 In E Flat - 2. Rondò_ Andantino Con Moto.mp3, urn:bluemarine:track:H85zLyXy-ABZXGZpVDQ5KmFgkww=)
 
-RECORD RepositoryRecord(rdfs:label=Daniel And The Lions - Ludus Danielis, urn:bluemarine:record:ONiNKoLC69EuihrDlMBpTEUyZpo=):
+RECORD Daniel And The Lions - Ludus Danielis (urn:bluemarine:record:ONiNKoLC69EuihrDlMBpTEUyZpo=):
+  SOURCE:  unknown
   TRACKS (13 / Optional.empty):
     RepositoryTrack(01/01 01, 11:15, rdfs:label=(Strumentale), New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/01 (Strumentale).mp3, urn:bluemarine:track:T0AVck2bowGkN-hd1XMytg4BYUQ=)
     RepositoryTrack(01/01 02, 07:10, rdfs:label=Ad Honorem Tui, Christe, New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/02 Ad Honorem Tui, Christe.mp3, urn:bluemarine:track:uVg1rfXHgxCCtQXYI2xN1h84Xfk=)
@@ -1766,7 +1776,8 @@ RECORD RepositoryRecord(rdfs:label=Daniel And The Lions - Ludus Danielis, urn:bl
     RepositoryTrack(01/01 12, 04:43, rdfs:label=Te Ne Putas, Daniel, Salvabit, Ut Eripiaris, New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/12 Te Ne Putas, Daniel, Salvabit, Ut Eripiaris.mp3, urn:bluemarine:track:IoPCsXuA-KgFv-jPXnu0mjYerl4=)
     RepositoryTrack(01/01 13, 06:47, rdfs:label="Te Deum Laudamus", New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/13 _Te Deum Laudamus_.mp3, urn:bluemarine:track:ddM66yOXLLrQYKBsXNy9s6IMCQY=)
 
-RECORD RepositoryRecord(rdfs:label=Die Konzerte für 3 und 4 Cembali, urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=):
+RECORD Die Konzerte für 3 und 4 Cembali (urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=):
+  SOURCE:  musicbrainz
   ASIN:    B0000057C9
   BARCODE: 028940004124
   TRACKS (9 / Optional[9]):
@@ -1828,7 +1839,8 @@ RECORD RepositoryRecord(rdfs:label=Die Konzerte für 3 und 4 Cembali, urn:bluema
       : conductor            Trevor Pinnock (http://musicbrainz.org/artist/66d97594-15fd-49b9-8359-0c014dbe8719)
       : harpsichord          Trevor Pinnock (http://musicbrainz.org/artist/66d97594-15fd-49b9-8359-0c014dbe8719)
 
-RECORD RepositoryRecord(rdfs:label=El canto espiritual judeoespañol, urn:bluemarine:record:4pMF6vUDJ40E2Dz2REpAbcD2Wg0=):
+RECORD El canto espiritual judeoespañol (urn:bluemarine:record:4pMF6vUDJ40E2Dz2REpAbcD2Wg0=):
+  SOURCE:  musicbrainz
   ASIN:    B0000269LV
   BARCODE: 8427592000126
   TRACKS (14 / Optional[14]):
@@ -1847,7 +1859,8 @@ RECORD RepositoryRecord(rdfs:label=El canto espiritual judeoespañol, urn:bluema
     RepositoryTrack(01/01 13, 04:35, rdfs:label=Dodí yarad leganó, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/13 Dodi Yarad Legano.mp3, http://musicbrainz.org/track/a2309ee1-07fe-3c04-9b91-3e8750d541be)
     RepositoryTrack(01/01 14, 02:27, rdfs:label=La ketubá de la ley, Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/14 La Ketuba De La Ley.mp3, http://musicbrainz.org/track/4201d963-55b6-3a68-8720-8ae87542c7f8)
 
-RECORD RepositoryRecord(rdfs:label=Fantasie, op. 17 / Sonate, op. 11, urn:bluemarine:record:mdrEbrVkOfi1tkP60fl8AgxwTb4=):
+RECORD Fantasie, op. 17 / Sonate, op. 11 (urn:bluemarine:record:mdrEbrVkOfi1tkP60fl8AgxwTb4=):
+  SOURCE:  musicbrainz
   ASIN:    B003PSWLHY
   BARCODE: 028942313422
   TRACKS (7 / Optional[7]):
@@ -1866,7 +1879,8 @@ RECORD RepositoryRecord(rdfs:label=Fantasie, op. 17 / Sonate, op. 11, urn:bluema
     RepositoryTrack(01/01 07, 10:46, rdfs:label=Fantasie C-dur, op. 17: III. Langsam getragen. Durchweg leise zu halten - Etwas bewegter, Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3, http://musicbrainz.org/track/ae89bf04-2dc9-4e75-b23a-cabf115d3f8d)
       : piano                Maurizio Pollini (http://musicbrainz.org/artist/afdfd1f3-e3c2-47e7-b861-465678a3dbc2)
 
-RECORD RepositoryRecord(rdfs:label=Gregorian Chant, urn:bluemarine:record:RS8O3XsTBj8T4PjZd6xdn6JhGo0=):
+RECORD Gregorian Chant (urn:bluemarine:record:RS8O3XsTBj8T4PjZd6xdn6JhGo0=):
+  SOURCE:  musicbrainz
   ASIN:    B00000E370
   BARCODE: 028941680822
   TRACKS (22 / Optional[22]):
@@ -1893,7 +1907,8 @@ RECORD RepositoryRecord(rdfs:label=Gregorian Chant, urn:bluemarine:record:RS8O3X
     RepositoryTrack(01/01 21, 01:56, rdfs:label=In Baptismate Domini: Offertorium: Benedictus, Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/21 Benedictus - Offertorium_In Baptismate Domini.mp3, http://musicbrainz.org/track/c240683e-29c4-3ec2-9c13-0ffc8064f888)
     RepositoryTrack(01/01 22, 01:45, rdfs:label=Antiphona Beatae Mariae Virginis, Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/22 Alma Redemptoris Mater - Antiphona Beatae Mariae Virginis.mp3, http://musicbrainz.org/track/9dc03152-26f5-36b9-b95e-1b7a23e50a5e)
 
-RECORD RepositoryRecord(rdfs:label=Handel: Messiah (Highlights), urn:bluemarine:record:1k6gcfB56OBfXqNiE-HR02Rdw30=):
+RECORD Handel: Messiah (Highlights) (urn:bluemarine:record:1k6gcfB56OBfXqNiE-HR02Rdw30=):
+  SOURCE:  unknown
   TRACKS (14 / Optional.empty):
     RepositoryTrack(01/01 01, 03:32, rdfs:label=Handel: Messiah, HWV 56 - Comfort Ye My People, Janet Baker, Paul Esswood, Etc.; Charles Mackerras_ English Chamber Orchestra, Ambrosian Singers/Handel_ Messiah (Highlights)/01 Handel_ Messiah, HWV 56 - Comfort Ye My People.mp3, urn:bluemarine:track:wsOraIva5rnbpZKNj1w1H2FuueY=)
     RepositoryTrack(01/01 02, 03:42, rdfs:label=Handel: Messiah, HWV 56 - Ev'ry Valley Shall Be Exalted, Janet Baker, Paul Esswood, Etc.; Charles Mackerras_ English Chamber Orchestra, Ambrosian Singers/Handel_ Messiah (Highlights)/02 Handel_ Messiah, HWV 56 - Ev'ry Valley Shall Be Exalted.mp3, urn:bluemarine:track:_GtVho8f5k4rfB_HSto-Hb19xkg=)
@@ -1910,13 +1925,15 @@ RECORD RepositoryRecord(rdfs:label=Handel: Messiah (Highlights), urn:bluemarine:
     RepositoryTrack(01/01 13, 03:53, rdfs:label=Handel: Messiah, HWV 56 - Worthy Is The Lamb, Janet Baker, Paul Esswood, Etc.; Charles Mackerras_ English Chamber Orchestra, Ambrosian Singers/Handel_ Messiah (Highlights)/13 Handel_ Messiah, HWV 56 - Worthy Is The Lamb.mp3, urn:bluemarine:track:_9Ap-uiFir2knJshY_oYucp7qP8=)
     RepositoryTrack(01/01 14, 03:20, rdfs:label=Handel: Messiah, HWV 56 - Amen, Janet Baker, Paul Esswood, Etc.; Charles Mackerras_ English Chamber Orchestra, Ambrosian Singers/Handel_ Messiah (Highlights)/14 Handel_ Messiah, HWV 56 - Amen.mp3, urn:bluemarine:track:yFw-Y30APVFqQoKPH3b2QTLC--I=)
 
-RECORD RepositoryRecord(rdfs:label=Johannes Brahms, Robert Schumann, urn:bluemarine:record:273watVY3CmVFx_BX8oc4D9uoXc=):
+RECORD Johannes Brahms, Robert Schumann (urn:bluemarine:record:273watVY3CmVFx_BX8oc4D9uoXc=):
+  SOURCE:  unknown
   TRACKS (3 / Optional.empty):
     RepositoryTrack(01/01 01, 12:07, rdfs:label=Book 1 - Variations On A Theme By Paganini, Op. 35 (Brahms), Lambis Vassiliadis/Johannes Brahms, Robert Schumann/01 Book 1 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3, urn:bluemarine:track:45sSTCwnwPOeoEkn8q5C6yaBga4=)
     RepositoryTrack(01/01 02, 10:37, rdfs:label=Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms), Lambis Vassiliadis/Johannes Brahms, Robert Schumann/02 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3, urn:bluemarine:track:-HgLx23hOuWmrUoB0nhJ9z3G13c=)
     RepositoryTrack(01/01 03, 26:39, rdfs:label=Carnaval Op.9 (Schumann), Lambis Vassiliadis/Johannes Brahms, Robert Schumann/03 Carnaval Op.9 (Schumann).mp3, urn:bluemarine:track:55M6bNA1LBUUJstdUDWTvRQctBU=)
 
-RECORD RepositoryRecord(rdfs:label=Kubelik - Dvořák 8 & 9, urn:bluemarine:record:3G9eU5h6tC0cdm3AEt0N2GrzUbc=):
+RECORD Kubelik - Dvořák 8 & 9 (urn:bluemarine:record:3G9eU5h6tC0cdm3AEt0N2GrzUbc=):
+  SOURCE:  musicbrainz
   ASIN:    B002DZX95I
   BARCODE: 028947781677
   TRACKS (8 / Optional[8]):
@@ -1961,7 +1978,8 @@ RECORD RepositoryRecord(rdfs:label=Kubelik - Dvořák 8 & 9, urn:bluemarine:reco
       : balance              Heinz Wildhagen (http://musicbrainz.org/artist/b424c64e-7ec7-42cd-bd0d-d70ac18c9409)
       : conductor            Rafael Kubelík (http://musicbrainz.org/artist/edba9279-b24b-4e0c-9172-2b016cdcbc1e)
 
-RECORD RepositoryRecord(rdfs:label=La Divina 2, urn:bluemarine:record:1YnSzOtRCbFKmcAnNRKLtDXCE8w=):
+RECORD La Divina 2 (urn:bluemarine:record:1YnSzOtRCbFKmcAnNRKLtDXCE8w=):
+  SOURCE:  unknown
   TRACKS (15 / Optional.empty):
     RepositoryTrack(01/01 02, 04:24, rdfs:label=Carmen (1987 - Remaster), Act II: Chanson bohème: Les tringles des sistres tintaient (Carmen), Compilations/La Divina 2/02 Carmen (1987 - Remaster), Act II_ Chanson bohème_ Les tringles des sistres tintaient (Carmen).mp3, urn:bluemarine:track:MZn7vj57p1rLOZSyEoGjWUIiGlU=)
     RepositoryTrack(01/01 03, 06:15, rdfs:label=Ernani (1987 - Remaster): Surta è la notte .... Ernani! Ernani, involami, Compilations/La Divina 2/03 Ernani (1987 - Remaster)_ Surta è la notte .... Ernani! Ernani, involami.mp3, urn:bluemarine:track:40K7rkCmffHfWua5H9NIdTbXl6I=)
@@ -1979,7 +1997,8 @@ RECORD RepositoryRecord(rdfs:label=La Divina 2, urn:bluemarine:record:1YnSzOtRCb
     RepositoryTrack(01/01 15, 03:47, rdfs:label=Adriana Lecouvreur (1986 - Remaster): Ecco: respiro appena...Io son l'umile ancella, Compilations/La Divina 2/15 Adriana Lecouvreur (1986 - Remaster)_ Ecco_ respiro appena...Io son l'umile ancella.mp3, urn:bluemarine:track:17rk3fCOYtSr3buUwG7l22-_uhQ=)
     RepositoryTrack(01/01 16, 04:07, rdfs:label=Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima: Spargi d'amaro pianto (Lucia/Raimondo/Coro/Enrico), Compilations/La Divina 2/16 Lucia di Lammermoor (1986 - Remaster), Act III, Scena prima_ Spargi d'amaro pianto (Lucia_Raimondo_Coro_Enrico).mp3, urn:bluemarine:track:-B0R2E__Vo3By_xweUqyTRz09Zk=)
 
-RECORD RepositoryRecord(rdfs:label=La Domna Savorousa : Chants d’amour des troubadours et des trouvères, urn:bluemarine:record:0bYRbWOJwZTV0bUoFtX9eAutVDo=):
+RECORD La Domna Savorousa : Chants d’amour des troubadours et des trouvères (urn:bluemarine:record:0bYRbWOJwZTV0bUoFtX9eAutVDo=):
+  SOURCE:  unknown
   TRACKS (14 / Optional.empty):
     RepositoryTrack(01/01 01, 06:13, rdfs:label=S'anc fui bèla ni presada, Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/01 S'anc fui bèla ni presada.mp3, urn:bluemarine:track:Jw1z0EI-1P73X1tVcTuQp7iZ3bM=)
     RepositoryTrack(01/01 02, 02:05, rdfs:label=Por coi me bait mes maris, Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/02 Por coi me bait mes maris.mp3, urn:bluemarine:track:ogHR8W5u5q5mMQjUahWrbe-z0XA=)
@@ -1996,7 +2015,8 @@ RECORD RepositoryRecord(rdfs:label=La Domna Savorousa : Chants d’amour des tro
     RepositoryTrack(01/01 13, 03:42, rdfs:label=La Manfredina, Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/13 La Manfredina.mp3, urn:bluemarine:track:m5OG6Sh6rwfm949vsl9cYmlRsYk=)
     RepositoryTrack(01/01 14, 04:10, rdfs:label=Tuit cil qui sunt enamourat, Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/14 Tuit cil qui sunt enamourat.mp3, urn:bluemarine:track:MnJvGKgMj_aZnQw0TDwBJszzD4w=)
 
-RECORD RepositoryRecord(rdfs:label=Las Mejores Obras Del Canto Gregoriano [Disc 2], urn:bluemarine:record:7KnxkoIeCTYNs7ZpWs384ukS-xU=):
+RECORD Las Mejores Obras Del Canto Gregoriano [Disc 2] (urn:bluemarine:record:7KnxkoIeCTYNs7ZpWs384ukS-xU=):
+  SOURCE:  unknown
   TRACKS (18 / Optional.empty):
     RepositoryTrack(02/04 01, 02:57, rdfs:label=Anon: Nos Autem, Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-01 Anon_ Nos Autem.mp3, urn:bluemarine:track:sw_qUg0NW3I_iBgk4FJVWXieRAg=)
     RepositoryTrack(02/04 02, 02:47, rdfs:label=Anon: Pange Lingua Gloriosi, Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-02 Anon_ Pange Lingua Gloriosi.mp3, urn:bluemarine:track:3tHDud25_PYjb9csfQgYAj2Fwjs=)
@@ -2017,7 +2037,8 @@ RECORD RepositoryRecord(rdfs:label=Las Mejores Obras Del Canto Gregoriano [Disc 
     RepositoryTrack(02/04 17, 02:40, rdfs:label=Anon: Improperium, Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-17 Anon_ Improperium.mp3, urn:bluemarine:track:u0JFzZALEHj5SiFf_oRYzg0fXYI=)
     RepositoryTrack(02/04 18, 04:40, rdfs:label=Anon: Traditor Autem - Benedictus, Benedictine Monks Of Santo Domingo De Silos/Las Mejores Obras Del Canto Gregoriano [Disc 2]/2-18 Anon_ Traditor Autem - Benedictus.mp3, urn:bluemarine:track:1SGtNFrr6Wc0dYjGwVCUnQlS5wc=)
 
-RECORD RepositoryRecord(rdfs:label=Le Sacre du Printemps, urn:bluemarine:record:A9sE-QiqGiQKtpf2awIcPUwIj60=):
+RECORD Le Sacre du Printemps (urn:bluemarine:record:A9sE-QiqGiQKtpf2awIcPUwIj60=):
+  SOURCE:  musicbrainz
   BARCODE: 028941050823
   TRACKS (14 / Optional[14]):
     RepositoryTrack(01/01 01, 03:27, rdfs:label=Le Sacre du printemps: Partie I. Introduction, Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/01 Stravinsky_ Le Sacre Du Printemps - Part 1_ The Adoration Of The Earth, Introduction.mp3, http://musicbrainz.org/track/ef6a2144-d17b-3c48-b9d7-eb55659a9b75)
@@ -2063,7 +2084,8 @@ RECORD RepositoryRecord(rdfs:label=Le Sacre du Printemps, urn:bluemarine:record:
       : conductor            Leonard Bernstein (http://musicbrainz.org/artist/fa39bc82-9b27-4bbb-9425-d719a72e09ac)
       : orchestra            התזמורת הפילהרמונית הישראלית (http://musicbrainz.org/artist/c8a88cc7-c93e-42b5-ba29-68859b5716e3)
 
-RECORD RepositoryRecord(rdfs:label=Le quattro stagioni, urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=):
+RECORD Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=):
+  SOURCE:  musicbrainz
   ASIN:    B00000E3J8
   BARCODE: 028942021624
   TRACKS (15 / Optional[15]):
@@ -2269,7 +2291,8 @@ RECORD RepositoryRecord(rdfs:label=Le quattro stagioni, urn:bluemarine:record:D_
       : producer             Wilhelm Hellweg (http://musicbrainz.org/artist/83fdc907-09d5-4fce-af15-5978d29cc680)
       : violin               Виктория Муллова (http://musicbrainz.org/artist/02bd2dff-f337-4788-9e75-0eb6beb932ac)
 
-RECORD RepositoryRecord(rdfs:label=Marais: Pièces À Deux Violes 1686, urn:bluemarine:record:EnMA3YnQFdiNszrbyP2pXp5p6T0=):
+RECORD Marais: Pièces À Deux Violes 1686 (urn:bluemarine:record:EnMA3YnQFdiNszrbyP2pXp5p6T0=):
+  SOURCE:  unknown
   TRACKS (18 / Optional.empty):
     RepositoryTrack(01/01 01, 03:48, rdfs:label=Marais: Suite In D Minor - Prélude, Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/01 Marais_ Suite In D Minor - Prélude.mp3, urn:bluemarine:track:UuZSATZoO61xB3FmnUz6ZCCFagA=)
     RepositoryTrack(01/01 02, 03:06, rdfs:label=Marais: Suite In D Minor - Allemande, Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/02 Marais_ Suite In D Minor - Allemande.mp3, urn:bluemarine:track:NRaxEsJ-1MIesEa-LBkpydz3v1k=)
@@ -2290,7 +2313,8 @@ RECORD RepositoryRecord(rdfs:label=Marais: Pièces À Deux Violes 1686, urn:blue
     RepositoryTrack(01/01 17, 06:31, rdfs:label=Marais: Suite In G - Chaconne, Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_ Suite In G - Chaconne.mp3, urn:bluemarine:track:21ImZQDE3NBjGz480PHnzvsYE-Q=)
     RepositoryTrack(01/01 18, 08:34, rdfs:label=Marais: Le Tombeau De Mr. Meliton, Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/18 Marais_ Le Tombeau De Mr. Meliton.mp3, urn:bluemarine:track:fRcBDhjlqV9fn6TS_5JYMk1UfTo=)
 
-RECORD RepositoryRecord(rdfs:label=Melodie Sacre, urn:bluemarine:record:7lSAGzNHnF2-e3quBGWw-jPvZaU=):
+RECORD Melodie Sacre (urn:bluemarine:record:7lSAGzNHnF2-e3quBGWw-jPvZaU=):
+  SOURCE:  musicbrainz
   BARCODE: 
   TRACKS (26 / Optional[26]):
     RepositoryTrack(01/01 01, 02:12, rdfs:label=Domine, salvum me fac, Perosi, Lorenzo/Lorenzo Perosi/01 Domine, salvum me fac.mp3, http://musicbrainz.org/track/a373190b-5f30-4d1c-bb96-faa97afad2af)
@@ -2320,7 +2344,8 @@ RECORD RepositoryRecord(rdfs:label=Melodie Sacre, urn:bluemarine:record:7lSAGzNH
     RepositoryTrack(01/01 25, 02:40, rdfs:label=Ecce panis angelorum, Perosi, Lorenzo/Lorenzo Perosi/25 Ecce panis angelorum.mp3, http://musicbrainz.org/track/daa07b92-983f-4013-a490-68671f739f3a)
     RepositoryTrack(01/01 26, 01:56, rdfs:label=Interludio, su "viderunt omnes", Perosi, Lorenzo/Lorenzo Perosi/26 Interludio, su _Viderunt omnes_, organo.mp3, http://musicbrainz.org/track/caf9d70c-6c6e-475d-b4f6-3ffaf701395d)
 
-RECORD RepositoryRecord(rdfs:label=Mendelssohn: Paulus [Disc 1], urn:bluemarine:record:Ui2mvVOS6QygRw-GBr6uzNifoB8=):
+RECORD Mendelssohn: Paulus [Disc 1] (urn:bluemarine:record:Ui2mvVOS6QygRw-GBr6uzNifoB8=):
+  SOURCE:  unknown
   TRACKS (22 / Optional.empty):
     RepositoryTrack(01/02 01, 06:02, rdfs:label=Mendelssohn: Paulus, Op. 36 - Ouvertüre, Compilations/Mendelssohn_ Paulus [Disc 1]/1-01 Mendelssohn_ Paulus, Op. 36 - Ouvertüre.mp3, urn:bluemarine:track:r8XfsOzxjQUHGKfb7cLLL5HkCv4=)
     RepositoryTrack(01/02 02, 04:04, rdfs:label=Mendelssohn: Paulus, Op. 36 - Herr, Der Du Bist Der Gott, Compilations/Mendelssohn_ Paulus [Disc 1]/1-02 Mendelssohn_ Paulus, Op. 36 - Herr, Der Du Bist Der Gott.mp3, urn:bluemarine:track:h0OLWFx4iOvmMNyW3uYWRxHJric=)
@@ -2345,7 +2370,8 @@ RECORD RepositoryRecord(rdfs:label=Mendelssohn: Paulus [Disc 1], urn:bluemarine:
     RepositoryTrack(01/02 21, 01:32, rdfs:label=Mendelssohn: Paulus, Op. 36 - Und Ananias Ging Hin, Compilations/Mendelssohn_ Paulus [Disc 1]/1-21 Mendelssohn_ Paulus, Op. 36 - Und Ananias Ging Hin.mp3, urn:bluemarine:track:IzBnI-9VZpmCPw6HhFgItV4znrQ=)
     RepositoryTrack(01/02 22, 05:01, rdfs:label=Mendelssohn: Paulus, Op. 36 - O Welch Eine Tiefe Des Reichtums, Compilations/Mendelssohn_ Paulus [Disc 1]/1-22 Mendelssohn_ Paulus, Op. 36 - O Welch Eine Tiefe Des Reichtums.mp3, urn:bluemarine:track:XTXyleg-Xryu0D_Nf7KBHacUA_c=)
 
-RECORD RepositoryRecord(rdfs:label=Mendelssohn: Paulus [Disc 2], urn:bluemarine:record:yxCU8C3ab5P8wga8lX12B6cIoL8=):
+RECORD Mendelssohn: Paulus [Disc 2] (urn:bluemarine:record:yxCU8C3ab5P8wga8lX12B6cIoL8=):
+  SOURCE:  unknown
   TRACKS (19 / Optional.empty):
     RepositoryTrack(02/02 01, 04:20, rdfs:label=Mendelssohn: Paulus, Op. 36 - Part 2: Der Erdkreis Ist Nun Des Herrn, Gundula Janowitz, Hans Peter Blochwitz, Etc.; Kurt Masur_ Leipzig Gewandhaus Orchestra, Leipzig Radio Chorus/Mendelssohn_ Paulus [Disc 2]/2-01 Mendelssohn_ Paulus, Op. 36 - Part 2_ Der Erdkreis Ist Nun Des Herrn.mp3, urn:bluemarine:track:5tQvqm1tLc_lSST2K0s178WurAA=)
     RepositoryTrack(02/02 02, 00:45, rdfs:label=Mendelssohn: Paulus, Op. 36 - Part 2: Und Paulus Kam, Gundula Janowitz, Hans Peter Blochwitz, Etc.; Kurt Masur_ Leipzig Gewandhaus Orchestra, Leipzig Radio Chorus/Mendelssohn_ Paulus [Disc 2]/2-02 Mendelssohn_ Paulus, Op. 36 - Part 2_ Und Paulus Kam.mp3, urn:bluemarine:track:SOhJDDOcqdNxBtfTmKUeG0wRI4A=)
@@ -2367,7 +2393,8 @@ RECORD RepositoryRecord(rdfs:label=Mendelssohn: Paulus [Disc 2], urn:bluemarine:
     RepositoryTrack(02/02 18, 00:50, rdfs:label=Mendelssohn: Paulus, Op. 36 - Part 2: Und Wenn Er Gleich Geopfert Wird, Gundula Janowitz, Hans Peter Blochwitz, Etc.; Kurt Masur_ Leipzig Gewandhaus Orchestra, Leipzig Radio Chorus/Mendelssohn_ Paulus [Disc 2]/2-18 Mendelssohn_ Paulus, Op. 36 - Part 2_ Und Wenn Er Gleich Geopfert Wird.mp3, urn:bluemarine:track:tIR9j8-9eZ9aeJjNB6ugdtsH2K0=)
     RepositoryTrack(02/02 19, 03:50, rdfs:label=Mendelssohn: Paulus, Op. 36 - Part 2: Nicht Aber Ihm Allein, Gundula Janowitz, Hans Peter Blochwitz, Etc.; Kurt Masur_ Leipzig Gewandhaus Orchestra, Leipzig Radio Chorus/Mendelssohn_ Paulus [Disc 2]/2-19 Mendelssohn_ Paulus, Op. 36 - Part 2_ Nicht Aber Ihm Allein.mp3, urn:bluemarine:track:mGAq9x7AiXuHDfNFF0L0KNUdiGw=)
 
-RECORD RepositoryRecord(rdfs:label=Mostly French, urn:bluemarine:record:7rmCg7VLnlUoP3iM8Wb5e8LT1Qo=):
+RECORD Mostly French (urn:bluemarine:record:7rmCg7VLnlUoP3iM8Wb5e8LT1Qo=):
+  SOURCE:  unknown
   TRACKS (8 / Optional.empty):
     RepositoryTrack(01/01 01, 10:14, rdfs:label=Poem For Flute And Orchesta, Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/01 Poem For Flute And Orchesta.mp3, urn:bluemarine:track:Rl_5rutXfvHYP3ozH4fhgn0FaxU=)
     RepositoryTrack(01/01 02, 08:28, rdfs:label=Impromptu For Harp Solo, Op. 86, Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/02 Impromptu For Harp Solo, Op. 86.mp3, urn:bluemarine:track:W9eIOUTd02BQSQCsNX6I8r9oPnI=)
@@ -2378,7 +2405,8 @@ RECORD RepositoryRecord(rdfs:label=Mostly French, urn:bluemarine:record:7rmCg7VL
     RepositoryTrack(01/01 07, 13:12, rdfs:label=Fantaisie For Flute And Harp, Op. 124, Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/07 Fantaisie For Flute And Harp, Op. 124.mp3, urn:bluemarine:track:Nl_L128cAnfa536LBxMj6OWD6oI=)
     RepositoryTrack(01/01 08, 11:05, rdfs:label=Introduction And Allegro For Harp, Flute, Clarinet And Strings, Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/08 Introduction And Allegro For Harp, Flute, Clarinet And Strings.mp3, urn:bluemarine:track:RQuqTJUOSsA3MXuJUrsRrYOJ3JA=)
 
-RECORD RepositoryRecord(rdfs:label=Music for the Royal Fireworks / 2 Concerti a due cori, urn:bluemarine:record:VBATFSBWyIkSTmS7krwQknkPxKk=):
+RECORD Music for the Royal Fireworks / 2 Concerti a due cori (urn:bluemarine:record:VBATFSBWyIkSTmS7krwQknkPxKk=):
+  SOURCE:  musicbrainz
   TRACKS (16 / Optional[16]):
     RepositoryTrack(01/01 01, 01:45, rdfs:label=Concerto a due cori No. 2 in F major: Pomposo, John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/01 Handel_ Concerto A Due Cori #2 In F, HWV 333 - 1. Pomposo.mp3, http://musicbrainz.org/track/7280ca29-0fb9-3bde-b31e-1d532173306e)
     RepositoryTrack(01/01 02, 01:53, rdfs:label=Concerto a due cori No. 2 in F major: Allegro, John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/02 Handel_ Concerto A Due Cori #2 In F, HWV 333 - 2. Allegro.mp3, http://musicbrainz.org/track/3bd78d16-927c-310a-b194-c40e2cc0dc8f)
@@ -2407,7 +2435,8 @@ RECORD RepositoryRecord(rdfs:label=Music for the Royal Fireworks / 2 Concerti a 
       : orchestra            English Baroque Soloists (http://musicbrainz.org/artist/bae23557-5de4-4510-9234-caea078c34b4)
       : conductor            Sir John Eliot Gardiner (http://musicbrainz.org/artist/eb4fb6c3-f8e5-4923-aea9-436fcf3cf2c0)
 
-RECORD RepositoryRecord(rdfs:label=Nutcracker / Swan Lake, urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=):
+RECORD Nutcracker / Swan Lake (urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=):
+  SOURCE:  musicbrainz
   BARCODE: 4891030500501
   TRACKS (18 / Optional[18]):
     RepositoryTrack(01/01 01, 03:22, rdfs:label=The Nutcracker Suite, Op. 71a: I. Miniature Overture, Michael Halász_ Slovak Philharmonic Orchestra/Tchaikovsky_ The Nutcracker, Swan Lake/01 Tchaikovsky_ The Nutcracker, Op. 71 - Ouverture.mp3, http://musicbrainz.org/track/c9ba2de7-18c7-368e-b73d-89da11d665d6)
@@ -2482,7 +2511,8 @@ RECORD RepositoryRecord(rdfs:label=Nutcracker / Swan Lake, urn:bluemarine:record
       : conductor            Michael Halász (http://musicbrainz.org/artist/ac43c28e-0ef5-4dde-bd12-82e4a8d625f0)
       : orchestra            Slovenská filharmónia (http://musicbrainz.org/artist/86d8d8d7-cf1e-4561-97f1-8e175b530184)
 
-RECORD RepositoryRecord(rdfs:label=O tu chara sciença: La musique dans la pensée médiévale, urn:bluemarine:record:-Yh_lYTG5GrYQCcFwFQGUNWpFTw=):
+RECORD O tu chara sciença: La musique dans la pensée médiévale (urn:bluemarine:record:-Yh_lYTG5GrYQCcFwFQGUNWpFTw=):
+  SOURCE:  unknown
   TRACKS (20 / Optional.empty):
     RepositoryTrack(01/01 01, 03:29, rdfs:label=A poste messe, La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/01 A poste messe.mp3, urn:bluemarine:track:_qKoEiqosZu6cf5Z1Jm-kYM5sQc=)
     RepositoryTrack(01/01 02, 04:17, rdfs:label=Or sus, vous dormés trop, La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/02 Or sus, vous dormés trop.mp3, urn:bluemarine:track:tN4psM5YSuqOw_R0Y_HCwLOrbJ8=)
@@ -2505,7 +2535,8 @@ RECORD RepositoryRecord(rdfs:label=O tu chara sciença: La musique dans la pens�
     RepositoryTrack(01/01 19, 04:18, rdfs:label=Alma polis religio - Axe poli cum artica, La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/19 Alma polis religio - Axe poli cum artica.mp3, urn:bluemarine:track:wiI9rkeQWqVUb5DzmdOKssodW9I=)
     RepositoryTrack(01/01 20, 06:12, rdfs:label=Lo Signore ringraçando, La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/20 Lo Signore ringraçando.mp3, urn:bluemarine:track:6Hkv9YnOkDx5nFREOLoD36JDreA=)
 
-RECORD RepositoryRecord(rdfs:label=Piano Concerto no. 2, urn:bluemarine:record:SYU0KpAuaB2R5tfk3ZGjhYiS2-c=):
+RECORD Piano Concerto no. 2 (urn:bluemarine:record:SYU0KpAuaB2R5tfk3ZGjhYiS2-c=):
+  SOURCE:  musicbrainz
   ASIN:    B00000413W
   BARCODE: 028943297523
   TRACKS (4 / Optional[4]):
@@ -2526,7 +2557,8 @@ RECORD RepositoryRecord(rdfs:label=Piano Concerto no. 2, urn:bluemarine:record:S
       : conductor            Bernard Haitink (http://musicbrainz.org/artist/8bc0b4b4-cc3f-40cf-8223-4ee980cb768d)
       : orchestra            Koninklijk Concertgebouworkest (http://musicbrainz.org/artist/ad8260b2-2767-4e9b-9ece-7977fbcedadf)
 
-RECORD RepositoryRecord(rdfs:label=Piano Concertos, urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=):
+RECORD Piano Concertos (urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=):
+  SOURCE:  musicbrainz
   ASIN:    B000001GK0
   BARCODE: 028943901529
   TRACKS (6 / Optional[6]):
@@ -2567,7 +2599,8 @@ RECORD RepositoryRecord(rdfs:label=Piano Concertos, urn:bluemarine:record:MaLx3S
       : piano                Krystian Zimerman (http://musicbrainz.org/artist/87195fff-2f31-4503-b7c3-76b39c60d89b)
       : producer             Michel Glotz (http://musicbrainz.org/artist/7a62700f-4cfb-4957-a663-b938d179bd24)
 
-RECORD RepositoryRecord(rdfs:label=Pieces de Clavecin, urn:bluemarine:record:axDVyOkWODiJThhLeoM16wCkHMk=):
+RECORD Pieces de Clavecin (urn:bluemarine:record:axDVyOkWODiJThhLeoM16wCkHMk=):
+  SOURCE:  unknown
   TRACKS (16 / Optional.empty):
     RepositoryTrack(01/01 01, 04:08, rdfs:label=Fourth Concert, La Pantomime, Compilations/Pieces de Clavecin/01 Fourth Concert, La Pantomime.mp3, urn:bluemarine:track:JFmXPrwxaXYoLsOVHS2uVESi7q4=)
     RepositoryTrack(01/01 02, 01:44, rdfs:label=Fourth Concert, L'Indiscrète, Compilations/Pieces de Clavecin/02 Fourth Concert, L'Indiscrète.mp3, urn:bluemarine:track:RjeE4zTgwxSqU12-xEwbAxIdmWo=)
@@ -2586,7 +2619,8 @@ RECORD RepositoryRecord(rdfs:label=Pieces de Clavecin, urn:bluemarine:record:axD
     RepositoryTrack(01/01 15, 05:17, rdfs:label=Third Concert, La Timide, Rondeaux 1 & 2, Compilations/Pieces de Clavecin/15 Third Concert, La Timide, Rondeaux 1 & 2.mp3, urn:bluemarine:track:S9FKxy2UX5nvribntQGNLN6dICk=)
     RepositoryTrack(01/01 16, 02:42, rdfs:label=Third Concert, Tambourins 1 & 2 en Rondeau, Compilations/Pieces de Clavecin/16 Third Concert, Tambourins 1 & 2 en Rondeau.mp3, urn:bluemarine:track:PueMKlhm3392NVABPZVduJgwTx4=)
 
-RECORD RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=):
+RECORD Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=):
+  SOURCE:  musicbrainz
   ASIN:    B0000069ON
   BARCODE: 731453920620
   TRACKS (18 / Optional[18]):
@@ -2671,7 +2705,8 @@ RECORD RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, 
       : engineer             Val Valentin (http://musicbrainz.org/artist/a6433a0e-e959-4c08-805f-32f640e22a00)
     RepositoryTrack(01/01 18, 04:04, rdfs:label=Oh, Lady Be Good, Compilations/Pure Ella/18 Oh Lady, Be Good.mp3, http://musicbrainz.org/track/66c0173e-09d9-3a93-9fcc-1a832c29acdf)
 
-RECORD RepositoryRecord(rdfs:label=Ravel: Gaspard de la Nuit / Prokofiev: Piano Sonata no. 6, urn:bluemarine:record:YiFcrqdWnIFQm1T5VTtEMDwZqLs=):
+RECORD Ravel: Gaspard de la Nuit / Prokofiev: Piano Sonata no. 6 (urn:bluemarine:record:YiFcrqdWnIFQm1T5VTtEMDwZqLs=):
+  SOURCE:  musicbrainz
   ASIN:    B000001G54
   BARCODE: 028941336323
   TRACKS (7 / Optional[7]):
@@ -2690,7 +2725,8 @@ RECORD RepositoryRecord(rdfs:label=Ravel: Gaspard de la Nuit / Prokofiev: Piano 
     RepositoryTrack(01/01 07, 06:42, rdfs:label=Piano Sonata no. 6 in A major, op. 82: IV. Vivace, Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/07 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 4. Vivace.mp3, http://musicbrainz.org/track/13f65586-a1cb-3e1f-b1b6-b95a3689212a)
       : piano                Ivo Pogorelich (http://musicbrainz.org/artist/a6066607-f5dd-480c-81a2-b6241ab8f24a)
 
-RECORD RepositoryRecord(rdfs:label=Rimsky-Korsakov: Scheherazade, urn:bluemarine:record:lvz3awtgypL8BcvbSyA2iWGTxIU=):
+RECORD Rimsky-Korsakov: Scheherazade (urn:bluemarine:record:lvz3awtgypL8BcvbSyA2iWGTxIU=):
+  SOURCE:  unknown
   TRACKS (11 / Optional.empty):
     RepositoryTrack(01/01 02, 11:43, rdfs:label=Rimsky-Korsakov: Scheherazade, Op. 35 - 2. The Kalander Prince, Compilations/Rimsky-Korsakov_ Scheherazade/02 Rimsky-Korsakov_ Scheherazade, Op. 35 - 2. The Kalander Prince.mp3, urn:bluemarine:track:n4UBwzY-2r-QqaqWk8SgsFxqC_k=)
     RepositoryTrack(01/01 03, 10:20, rdfs:label=Rimsky-Korsakov: Scheherazade, Op. 35 - 3. The Young Prince & The Young Princess, Compilations/Rimsky-Korsakov_ Scheherazade/03 Rimsky-Korsakov_ Scheherazade, Op. 35 - 3. The Young Prince & The Young Princess.mp3, urn:bluemarine:track:4z3bqwk4-_Og7Rrmh0yH4Mv8uL8=)
@@ -2704,7 +2740,8 @@ RECORD RepositoryRecord(rdfs:label=Rimsky-Korsakov: Scheherazade, urn:bluemarine
     RepositoryTrack(01/01 11, 05:28, rdfs:label=Prokofiev: Romeo & Juliet, Op. 64 - Juliet's Funeral, Compilations/Rimsky-Korsakov_ Scheherazade/11 Prokofiev_ Romeo & Juliet, Op. 64 - Juliet's Funeral.mp3, urn:bluemarine:track:UdEf6wlsUthB4roawysPwOPdcAY=)
     RepositoryTrack(01/01 12, 04:27, rdfs:label=Prokofiev: Romeo & Juliet, Op. 64 - Death Of Juliet, Compilations/Rimsky-Korsakov_ Scheherazade/12 Prokofiev_ Romeo & Juliet, Op. 64 - Death Of Juliet.mp3, urn:bluemarine:track:kwLNUuQEeI1xHBGrjPZL00tm0g4=)
 
-RECORD RepositoryRecord(rdfs:label=Rossini Overtures, urn:bluemarine:record:UD4cQn5pukIL0z0dU4vs4l7Ih6I=):
+RECORD Rossini Overtures (urn:bluemarine:record:UD4cQn5pukIL0z0dU4vs4l7Ih6I=):
+  SOURCE:  unknown
   TRACKS (8 / Optional.empty):
     RepositoryTrack(01/01 01, 11:46, rdfs:label=William Tell, Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/01 William Tell.mp3, urn:bluemarine:track:atxVIFgHXu9ySU-RWktq3KhMgLQ=)
     RepositoryTrack(01/01 02, 08:00, rdfs:label=The Italian Girl In Algiers, Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers.mp3, urn:bluemarine:track:mcv6TVYlcFQ9PEfNnmC80I9T2Mc=)
@@ -2715,7 +2752,8 @@ RECORD RepositoryRecord(rdfs:label=Rossini Overtures, urn:bluemarine:record:UD4c
     RepositoryTrack(01/01 07, 06:27, rdfs:label=The Silken Ladder, Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/07 The Silken Ladder.mp3, urn:bluemarine:track:CdnI7TW7wWpTdvIyzn495DihYCA=)
     RepositoryTrack(01/01 08, 12:23, rdfs:label=Semiramide, Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/08 Semiramide.mp3, urn:bluemarine:track:zVHqB3QqCaskUq286KXYw381Zos=)
 
-RECORD RepositoryRecord(rdfs:label=Satchmo 2, urn:bluemarine:record:Ew6KqV-akvEbj1Oq-L24kCjKjxA=):
+RECORD Satchmo 2 (urn:bluemarine:record:Ew6KqV-akvEbj1Oq-L24kCjKjxA=):
+  SOURCE:  unknown
   TRACKS (15 / Optional.empty):
     RepositoryTrack(01/01 02, 05:59, rdfs:label=How Long Has This Been Going On, Compilations/Satchmo 2/02 How Long Has This Been Going On.mp3, urn:bluemarine:track:rUF5AZP-wwI1N_VTL5Zhy6vL7Ks=)
     RepositoryTrack(01/01 03, 04:34, rdfs:label=Moon Song (That Wasn't Meant For Me), Compilations/Satchmo 2/03 Moon Song (That Wasn't Meant For Me).mp3, urn:bluemarine:track:E91j018dOmZKnlrLvWdAVpM0sl0=)
@@ -2733,7 +2771,8 @@ RECORD RepositoryRecord(rdfs:label=Satchmo 2, urn:bluemarine:record:Ew6KqV-akvEb
     RepositoryTrack(01/01 15, 04:01, rdfs:label=I Gotta Right To Sing The Blues, Compilations/Satchmo 2/15 I Gotta Right To Sing The Blues.mp3, urn:bluemarine:track:DiUpehvUfBe5pNATsDD-MifZOcc=)
     RepositoryTrack(01/01 16, 05:01, rdfs:label=You're Blasè, Compilations/Satchmo 2/16 You're Blasè.mp3, urn:bluemarine:track:HQGAwgBnjkeo5Ssl81NQu9qg36M=)
 
-RECORD RepositoryRecord(rdfs:label=Schubert: Arpeggione Sonata / Schumann: Fünf Stücke im Volkston / Debussy: Cello Sonata, urn:bluemarine:record:BDC4cW1q5WDo0tsG-G5GwK43iYQ=):
+RECORD Schubert: Arpeggione Sonata / Schumann: Fünf Stücke im Volkston / Debussy: Cello Sonata (urn:bluemarine:record:BDC4cW1q5WDo0tsG-G5GwK43iYQ=):
+  SOURCE:  musicbrainz
   ASIN:    B00000JXZ3
   BARCODE: 028946097427
   TRACKS (11 / Optional[11]):
@@ -2771,7 +2810,8 @@ RECORD RepositoryRecord(rdfs:label=Schubert: Arpeggione Sonata / Schumann: Fünf
       : piano                Benjamin Britten (http://musicbrainz.org/artist/49ae5227-605a-47a8-9b8e-cd89bf01a97c)
       : cello                Мстислав Ростропович (http://musicbrainz.org/artist/e2b294b7-f705-4317-a96b-fd94da3719e5)
 
-RECORD RepositoryRecord(rdfs:label=Sonaten »Waldstein · Les Adieux · Appassionata«, urn:bluemarine:record:TIwQL8Nf1R02SmbLJckDUAvrFw4=):
+RECORD Sonaten »Waldstein · Les Adieux · Appassionata« (urn:bluemarine:record:TIwQL8Nf1R02SmbLJckDUAvrFw4=):
+  SOURCE:  musicbrainz
   ASIN:    B000001G79
   BARCODE: 028941916228
   TRACKS (10 / Optional[10]):
@@ -2802,7 +2842,8 @@ RECORD RepositoryRecord(rdfs:label=Sonaten »Waldstein · Les Adieux · Appassio
       : balance              Klaus Scheibe (http://musicbrainz.org/artist/37f36853-de8b-41ea-9e41-4e09b1dca19b)
       : piano                Эмиль Григорьевич Гилельс (http://musicbrainz.org/artist/88b4ad33-63ba-4923-947e-26a720631156)
 
-RECORD RepositoryRecord(rdfs:label=String Quartets Vol. 3 Op.18 Nos. 5 & 6, urn:bluemarine:record:gtATvQUdbPaxAr0TKf8EHf7nX9Y=):
+RECORD String Quartets Vol. 3 Op.18 Nos. 5 & 6 (urn:bluemarine:record:gtATvQUdbPaxAr0TKf8EHf7nX9Y=):
+  SOURCE:  unknown
   TRACKS (8 / Optional.empty):
     RepositoryTrack(01/01 01, 07:07, rdfs:label=String Quartet No 5 Allegro, Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/01 String Quartet No 5 Allegro.mp3, urn:bluemarine:track:CwxGQ2mTFCXMoLQ4WYJbGOqaQTE=)
     RepositoryTrack(01/01 02, 05:36, rdfs:label=String Quartet No 5 Menuetto, Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/02 String Quartet No 5 Menuetto.mp3, urn:bluemarine:track:0yiUor1LGhId-q-zUBPXeqXHVvc=)
@@ -2813,7 +2854,8 @@ RECORD RepositoryRecord(rdfs:label=String Quartets Vol. 3 Op.18 Nos. 5 & 6, urn:
     RepositoryTrack(01/01 07, 03:27, rdfs:label=String Quartet No 6 Scherzo: Allegro, Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/07 String Quartet No 6 Scherzo_ Allegro.mp3, urn:bluemarine:track:OJA_wUttX31IrvVnDZ9TrWr4SJg=)
     RepositoryTrack(01/01 08, 08:37, rdfs:label=String Quartet No 6 La Malinconia: Adagio - Allegretto Quasi Allegro, Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/08 String Quartet No 6 La Malinconia_ Adagio - Allegretto Quasi Allegro.mp3, urn:bluemarine:track:SMBK4JWFzecH9ZThO58GQu1fa28=)
 
-RECORD RepositoryRecord(rdfs:label=Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi" / no. 8 "Le Soir", urn:bluemarine:record:2g-5pZq0VX2fdmS0kOFUT5b4n5c=):
+RECORD Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi" / no. 8 "Le Soir" (urn:bluemarine:record:2g-5pZq0VX2fdmS0kOFUT5b4n5c=):
+  SOURCE:  musicbrainz
   ASIN:    B00000E2PR
   BARCODE: 028941144126
   TRACKS (13 / Optional[13]):
@@ -2857,7 +2899,8 @@ RECORD RepositoryRecord(rdfs:label=Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi
       : orchestra            Academy of St Martin in the Fields (http://musicbrainz.org/artist/f0ac992d-edd9-4672-ac23-ba0ca93f6539)
       : conductor            Sir Neville Marriner (http://musicbrainz.org/artist/afb8d624-52d7-4a72-8d0b-62fff3e29f79)
 
-RECORD RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=):
+RECORD The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=):
+  SOURCE:  musicbrainz
   BARCODE: 0077776318226
   TRACKS (13 / Optional[13]):
     RepositoryTrack(01/01 01, 05:36, rdfs:label=Norma: "Casta diva", Compilations/The Incomparable Callas - Favourite Arias/01 Bellini_ Norma - Casta Diva.mp3, http://musicbrainz.org/track/20aacc0d-598f-3c16-bc2d-138671af692d)
@@ -2924,7 +2967,8 @@ RECORD RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:recor
       : soprano              Maria Callas (http://musicbrainz.org/artist/9dee40b2-25ad-404c-9c9a-139feffd4b57)
       : orchestra            Orchestre National de la Radiodiffusion Française (http://musicbrainz.org/artist/2691fdf4-8ea8-4925-bc2a-14d5d8c8b472)
 
-RECORD RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=):
+RECORD The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=):
+  SOURCE:  musicbrainz
   ASIN:    B000005EC4
   BARCODE: 745099480127
   TRACKS (12 / Optional[12]):
@@ -2981,7 +3025,8 @@ RECORD RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concer
       : horn                 Jean-Jacques Justafré (http://musicbrainz.org/artist/a00642fe-beed-4ee1-a986-5510829c0b62)
       : horn                 Jean-Paul Gantiez (http://musicbrainz.org/artist/68107be8-0b5d-4d3d-ba21-d8de6c7b5d50)
 
-RECORD RepositoryRecord(rdfs:label=The Planets, urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=):
+RECORD The Planets (urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=):
+  SOURCE:  musicbrainz
   ASIN:    B000001GJW
   BARCODE: 028943901123
   TRACKS (7 / Optional[7]):
@@ -3030,14 +3075,16 @@ RECORD RepositoryRecord(rdfs:label=The Planets, urn:bluemarine:record:q1xQJLFMJZ
       : choir                RIAS Kammerchor (http://musicbrainz.org/artist/f461b350-a814-4341-b427-c8fd59430d1f)
       : chorus master        Uwe Gronostay (http://musicbrainz.org/artist/e1297774-2d31-4bc9-9d76-4ce27e297c9b)
 
-RECORD RepositoryRecord(rdfs:label=The Platinum Collection, urn:bluemarine:record:nkvrC66_PPIpbUwD_bJwk5WUekk=):
+RECORD The Platinum Collection (urn:bluemarine:record:nkvrC66_PPIpbUwD_bJwk5WUekk=):
+  SOURCE:  musicbrainz
   ASIN:    B000B6OD0G
   BARCODE: 6009509317576
   TRACKS (1 / Optional[16]):
     RepositoryTrack(01/01 01, 04:25, rdfs:label=Alceste - Divinités du Styx, Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3, http://musicbrainz.org/track/f5a11818-b903-36c0-bf86-b0c8f5500c5c)
       : soprano              Maria Callas (http://musicbrainz.org/artist/9dee40b2-25ad-404c-9c9a-139feffd4b57)
 
-RECORD RepositoryRecord(rdfs:label=Tracce della tradizione orale, urn:bluemarine:record:XICW1WJ-Am5ML_zXSNSK0ns06a4=):
+RECORD Tracce della tradizione orale (urn:bluemarine:record:XICW1WJ-Am5ML_zXSNSK0ns06a4=):
+  SOURCE:  unknown
   TRACKS (17 / Optional.empty):
     RepositoryTrack(01/01 01, 02:50, rdfs:label=I' senti matutino, Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/01 I' senti matutino.mp3, urn:bluemarine:track:5LJNxP-66u4H8ASXTAXGCG_DBto=)
     RepositoryTrack(01/01 02, 03:09, rdfs:label=Culomba amata, Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/02 Culomba amata.mp3, urn:bluemarine:track:43U8vTHOug24avImHUNPuTUsM-w=)
@@ -3057,7 +3104,8 @@ RECORD RepositoryRecord(rdfs:label=Tracce della tradizione orale, urn:bluemarine
     RepositoryTrack(01/01 16, 03:19, rdfs:label=Cavalcando con un giovine accorto, Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/16 Cavalcando con un giovine accorto.mp3, urn:bluemarine:track:oKx2xdnSLCWti0FLI_uREibivuQ=)
     RepositoryTrack(01/01 17, 04:45, rdfs:label=E vatende segnor mio, Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3, urn:bluemarine:track:CTnY-RilWm2BL0Y0fGAE44Bzf5s=)
 
-RECORD RepositoryRecord(rdfs:label=Trio 99 → 00, urn:bluemarine:record:MUOZO8uyx7KnDfsRIPUVrOYUSB8=):
+RECORD Trio 99 → 00 (urn:bluemarine:record:MUOZO8uyx7KnDfsRIPUVrOYUSB8=):
+  SOURCE:  musicbrainz
   ASIN:    B000046S1F
   BARCODE: 093624763222
   TRACKS (11 / Optional[11]):
@@ -3107,7 +3155,8 @@ RECORD RepositoryRecord(rdfs:label=Trio 99 → 00, urn:bluemarine:record:MUOZO8u
       : bass                 Larry Grenadier (http://musicbrainz.org/artist/0d0cb98f-dcc3-4499-9a1e-79870db75104)
       : guitar               Pat Metheny (http://musicbrainz.org/artist/7daac7f9-8fcc-485f-a14f-f8091d98cf25)
 
-RECORD RepositoryRecord(rdfs:label=Violin Concerti, urn:bluemarine:record:w9XAlyRXYhoOirsZyhGObe3NMj8=):
+RECORD Violin Concerti (urn:bluemarine:record:w9XAlyRXYhoOirsZyhGObe3NMj8=):
+  SOURCE:  musicbrainz
   ASIN:    B0000040XX
   BARCODE: 0028941638922
   TRACKS (12 / Optional[12]):
@@ -3166,7 +3215,8 @@ RECORD RepositoryRecord(rdfs:label=Violin Concerti, urn:bluemarine:record:w9XAly
       : violin               Pinchas Zukerman (http://musicbrainz.org/artist/88b8d585-02c6-4ac7-b1ee-f160f83afa78)
       : orchestra            Saint Paul Chamber Orchestra (http://musicbrainz.org/artist/d6653a8f-90c4-49a1-ae66-0b2e180e3bb5)
 
-RECORD RepositoryRecord(rdfs:label=Vivaldi: Musica da camera e da chiesa, urn:bluemarine:record:Dsw4bQxH03U8JeeEAZ1fMkjOgXQ=):
+RECORD Vivaldi: Musica da camera e da chiesa (urn:bluemarine:record:Dsw4bQxH03U8JeeEAZ1fMkjOgXQ=):
+  SOURCE:  unknown
   TRACKS (40 / Optional.empty):
     RepositoryTrack(01/01 01, 02:07, rdfs:label=Sonata in E flat major, RV 130, London Baroque/Vivaldi_ Musica da camera e da chiesa/01 Sonata in E flat major, RV 130.mp3, urn:bluemarine:track:-SbsBm83tvcQtLsj0mWEkDq0GPo=)
     RepositoryTrack(01/01 02, 01:29, rdfs:label=Sonata in E flat major, RV 130, London Baroque/Vivaldi_ Musica da camera e da chiesa/02 Sonata in E flat major, RV 130.mp3, urn:bluemarine:track:qTsRXT_q1jY7qxWz7ZFWnRcGmdA=)
@@ -3209,7 +3259,8 @@ RECORD RepositoryRecord(rdfs:label=Vivaldi: Musica da camera e da chiesa, urn:bl
     RepositoryTrack(01/01 39, 01:40, rdfs:label=Sinfonia in B minor, "Al Santo Sepolcro," RV 169, London Baroque/Vivaldi_ Musica da camera e da chiesa/39 Sinfonia in B minor, _Al Santo Sepolcro,_ RV 169.mp3, urn:bluemarine:track:iPIf0b32ADKRgLNLM94fDLyt8hA=)
     RepositoryTrack(01/01 40, 01:12, rdfs:label=Sinfonia in B minor, "Al Santo Sepolcro," RV 169, London Baroque/Vivaldi_ Musica da camera e da chiesa/40 Sinfonia in B minor, _Al Santo Sepolcro,_ RV 169.mp3, urn:bluemarine:track:rwkPTTI6aJiIvdx28K0Y5DVyFwU=)
 
-RECORD RepositoryRecord(rdfs:label=Water Music, urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=):
+RECORD Water Music (urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=):
+  SOURCE:  musicbrainz
   ASIN:    B000001G4Q
   BARCODE: 028941052520
   TRACKS (19 / Optional[19]):
@@ -3274,7 +3325,8 @@ RECORD RepositoryRecord(rdfs:label=Water Music, urn:bluemarine:record:RtbdPOoSR9
       : orchestra            The English Concert (http://musicbrainz.org/artist/8af55e27-c6ad-44f3-a6d2-53df5462798c)
       : conductor            Trevor Pinnock (http://musicbrainz.org/artist/66d97594-15fd-49b9-8359-0c014dbe8719)
 
-RECORD RepositoryRecord(rdfs:label=もうひとつのクリスマス, urn:bluemarine:record:Q2QW4sxqdRwCjoCYMmceTM4yd5o=):
+RECORD もうひとつのクリスマス (urn:bluemarine:record:Q2QW4sxqdRwCjoCYMmceTM4yd5o=):
+  SOURCE:  unknown
   TRACKS (10 / Optional.empty):
     RepositoryTrack(01/01 01, 04:54, rdfs:label=D. DOMINE VERSET, Un Autre Noel/もうひとつのクリスマス/01 D. DOMINE VERSET.mp3, urn:bluemarine:track:60jEjrTG08Ul_GuR_0Ck8hKkZjs=)
     RepositoryTrack(01/01 02, 01:56, rdfs:label=オルガン　エスタンピ, Un Autre Noel/もうひとつのクリスマス/02 オルガン　エスタンピ.mp3, urn:bluemarine:track:JKc2z0g65DFo0UeOOSbdFrLj2e0=)
