@@ -249,7 +249,7 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
             writer.handleNamespace("vocab", "http://dbtune.org/musicbrainz/resource/vocab/");
             writer.handleNamespace("xs",    "http://www.w3.org/2001/XMLSchema#");
 
-            model.stream().forEachOrdered(statement -> writer.handleStatement(statement));
+            model.stream().forEachOrdered(writer::handleStatement);
             writer.endRDF();
           }
       }
