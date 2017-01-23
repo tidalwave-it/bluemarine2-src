@@ -42,6 +42,7 @@ import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import java.util.List;
 
 /***********************************************************************************************************************
  *
@@ -70,19 +71,21 @@ public class TestSupport
     protected Metadata mockMetadataFrom (final @Nonnull Path file)
       throws IOException
       {
+        final List<String> lines = Files.readAllLines(file, UTF_8);
+
         final Optional<String> albumTitle =
-                Files.lines(file, UTF_8).filter(s -> s.contains("[mp3.album]"))
-                                        .findFirst()
-                                        .map(s -> s.replaceAll("^.* = ", ""));
+                lines.stream().filter(s -> s.contains("[mp3.album]"))
+                              .findFirst()
+                              .map(s -> s.replaceAll("^.* = ", ""));
         final Optional<Integer> trackNumber =
-                Files.lines(file, UTF_8).filter(s -> s.contains("[mp3.trackNumber]"))
-                                        .findFirst()
-                                        .map(s -> s.replaceAll("^.* = ", ""))
-                                        .map(Integer::parseInt);
+                lines.stream().filter(s -> s.contains("[mp3.trackNumber]"))
+                              .findFirst()
+                              .map(s -> s.replaceAll("^.* = ", ""))
+                              .map(Integer::parseInt);
         final Optional<ITunesComment> iTunesComment =
-                Files.lines(file, UTF_8).filter(s -> s.contains("[iTunes.comment]"))
-                                        .findFirst()
-                                        .map(s -> ITunesComment.fromToString(s.replaceAll("^.* = ", "")));
+                lines.stream().filter(s -> s.contains("[iTunes.comment]"))
+                              .findFirst()
+                              .map(s -> ITunesComment.fromToString(s.replaceAll("^.* = ", "")));
 
         return new MetadataSupport(file).with(ALBUM, albumTitle)
                                         .with(TRACK_NUMBER, trackNumber)
