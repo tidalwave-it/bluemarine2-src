@@ -23,6 +23,11 @@
             <artifactId>rdf4j-repository-api</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.rdf4j</groupId>
+            <artifactId>rdf4j-rio-n3</artifactId>
+            <optional>true</optional>
+        </dependency>
 
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
