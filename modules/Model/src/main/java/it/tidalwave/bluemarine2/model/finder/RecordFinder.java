@@ -33,6 +33,7 @@ import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.ExtendedFinder8Support;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.Track;
 
 /***********************************************************************************************************************
  *
@@ -49,12 +50,26 @@ public interface RecordFinder extends BaseFinder<Record, RecordFinder>,
      *
      * Constrains the search to records made by the given artist.
      *
+     * @param       artistId    the artist id
+     * @return                  the {@code Finder}
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public RecordFinder madeBy (@Nonnull Id artistId);
+
+    /*******************************************************************************************************************
+     *
+     * Constrains the search to records made by the given artist.
+     *
      * @param       artist      the artist
      * @return                  the {@code Finder}
      *
      ******************************************************************************************************************/
     @Nonnull
-    public RecordFinder madeBy (@Nonnull MusicArtist artist);
+    public default RecordFinder madeBy (final @Nonnull MusicArtist artist)
+      {
+        return madeBy(artist.getId());
+      }
 
     /*******************************************************************************************************************
      *
@@ -62,4 +77,14 @@ public interface RecordFinder extends BaseFinder<Record, RecordFinder>,
      ******************************************************************************************************************/
     @Nonnull
     public RecordFinder recordOf (@Nonnull Id trackId);
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public default RecordFinder recordOf (final @Nonnull Track track)
+      {
+        return recordOf(track.getId());
+      }
   }

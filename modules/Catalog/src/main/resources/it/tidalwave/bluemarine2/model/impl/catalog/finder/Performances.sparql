@@ -1,12 +1,12 @@
-            SELECT DISTINCT *
-            WHERE
-              {
-                ?performance  a                       mo:Performance.
-                ?performance  bmmo:importedFrom       ?source.
+        SELECT DISTINCT *
+        WHERE
+          {
+            ?performance  a                     mo:Performance.
+            ?performance  bmmo:importedFrom     ?source.
 
-@track@         ?performance  mo:recorded_as          ?signal.
-@track@         ?signal       a                       mo:DigitalSignal.
-@track@         ?signal       mo:published_as         ?track.
+@artist@    ?performance  foaf:maker            ?artist.
 
-@artist@        ?performance  foaf:maker              ?artist.
-              }
+@track@     ?performance  mo:recorded_as        ?signal.
+@track@     ?signal       a                     mo:DigitalSignal.
+@track@     ?signal       mo:published_as       ?track.
+           }

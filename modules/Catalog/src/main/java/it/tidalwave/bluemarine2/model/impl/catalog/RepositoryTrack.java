@@ -70,6 +70,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 @Immutable @Configurable @Slf4j
 public class RepositoryTrack extends RepositoryEntitySupport implements Track, AudioFileSupplier
   {
+    @Nonnull
     private final Optional<Integer> trackNumber;
 
     @Nonnull
@@ -84,9 +85,8 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Nonnull
     private final Optional<Integer> diskCount;
 
-//    private final String recordRdfsLabel;
-//
-//    private final Integer trackCount;
+    @Nonnull
+    private final Optional<Long> fileSize;
 
     @CheckForNull
     private AudioFile audioFile;
@@ -96,8 +96,6 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
     @Getter
     private final Metadata metadata;
-
-    private final Optional<Long> fileSize;
 
     /*******************************************************************************************************************
      *
@@ -125,29 +123,29 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
     /*******************************************************************************************************************
      *
-     *
+     * {@inheritDoc}
      *
      ******************************************************************************************************************/
     @Override @Nonnull
     public Optional<Record> getRecord()
       {
-        return new RepositoryRecordFinder(repository).recordOf(id).optionalFirstResult();
+        return new RepositoryRecordFinder(repository).recordOf(this).optionalFirstResult();
       }
 
     /*******************************************************************************************************************
      *
-     *
+     * {@inheritDoc}
      *
      ******************************************************************************************************************/
     @Override @Nonnull
     public Optional<Performance> getPerformance()
       {
-        return new RepositoryPerformanceFinder(repository).importedFrom(source).ofTrack(id).optionalFirstResult();
+        return new RepositoryPerformanceFinder(repository).importedFrom(source).ofTrack(this).optionalFirstResult();
       }
 
     /*******************************************************************************************************************
      *
-     *
+     * {@inheritDoc}
      *
      ******************************************************************************************************************/
     @Override @Nonnull
@@ -170,7 +168,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
     /*******************************************************************************************************************
      *
-     *
+     * {@inheritDoc}
      *
      ******************************************************************************************************************/
     @Override @Nonnull

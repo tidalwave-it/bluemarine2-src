@@ -13,13 +13,16 @@
 @performance@   UNION { ?performance    mo:producer                             ?artist. BIND ("producer"                           AS ?role) }
 @performance@   UNION { ?performance    mo:singer                               ?artist. BIND ("singer"                             AS ?role) }
 
+@performance@   UNION { ?performance    bmmo:alto                               ?artist. BIND ("alto"                               AS ?role) }
 @performance@   UNION { ?performance    bmmo:arranger                           ?artist. BIND ("arranger"                           AS ?role) }
 @performance@   UNION { ?performance    bmmo:background_singer                  ?artist. BIND ("background singer"                  AS ?role) }
 @performance@   UNION { ?performance    bmmo:balance                            ?artist. BIND ("balance"                            AS ?role) }
 @performance@   UNION { ?performance    bmmo:bass                               ?artist. BIND ("bass"                               AS ?role) }
+@performance@   UNION { ?performance    bmmo:bass_baritone                      ?artist. BIND ("bass baritone"                      AS ?role) }
 @performance@   UNION { ?performance    bmmo:baritone                           ?artist. BIND ("baritone"                           AS ?role) }
 @performance@   UNION { ?performance    bmmo:choir                              ?artist. BIND ("choir"                              AS ?role) }
 @performance@   UNION { ?performance    bmmo:chorus_master                      ?artist. BIND ("chorus master"                      AS ?role) }
+@performance@   UNION { ?performance    bmmo:contralto                          ?artist. BIND ("contralto"                          AS ?role) }
 @performance@   UNION { ?performance    bmmo:editor                             ?artist. BIND ("editor"                             AS ?role) }
 @performance@   UNION { ?performance    bmmo:lead_singer                        ?artist. BIND ("lead singer"                        AS ?role) }
 @performance@   UNION { ?performance    bmmo:mastering                          ?artist. BIND ("mastering"                          AS ?role) }
@@ -30,6 +33,7 @@
 @performance@   UNION { ?performance    bmmo:programming                        ?artist. BIND ("programming"                        AS ?role) }
 @performance@   UNION { ?performance    bmmo:recording                          ?artist. BIND ("recording"                          AS ?role) }
 @performance@   UNION { ?performance    bmmo:soprano                            ?artist. BIND ("soprano"                            AS ?role) }
+@performance@   UNION { ?performance    bmmo:tenor                              ?artist. BIND ("tenor"                              AS ?role) }
 
 @performance@   UNION { ?performance    bmmo:performer_accordion                ?artist. BIND ("performer_accordion"                AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_acoustic_bass_guitar     ?artist. BIND ("performer_acoustic_bass_guitar"     AS ?role) }
@@ -39,6 +43,7 @@
 @performance@   UNION { ?performance    bmmo:performer_banjo                    ?artist. BIND ("performer_banjo"                    AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_baritone                 ?artist. BIND ("performer_baritone"                 AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_baritone_guitar          ?artist. BIND ("performer_baritone_guitar"          AS ?role) }
+@performance@   UNION { ?performance    bmmo:performer_baritone_sax             ?artist. BIND ("performer_baritone_sax"             AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_bass                     ?artist. BIND ("performer_bass"                     AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_bass_clarinet            ?artist. BIND ("performer_bass_clarinet"            AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_bass_drum                ?artist. BIND ("performer_bass_drum"                AS ?role) }
@@ -56,6 +61,7 @@
 @performance@   UNION { ?performance    bmmo:performer_cymbals                  ?artist. BIND ("performer_cymbals"                  AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_classical_guitar         ?artist. BIND ("performer_classical_guitar"         AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_double_bass              ?artist. BIND ("performer_double_bass"              AS ?role) }
+@performance@   UNION { ?performance    bmmo:performer_drum_machine             ?artist. BIND ("performer_drum_machine"             AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_drums                    ?artist. BIND ("performer_drums"                    AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_electric_guitar          ?artist. BIND ("performer_electric_guitar"          AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_electric_bass_guitar     ?artist. BIND ("performer_electric_bass_guitar"     AS ?role) }
@@ -89,12 +95,14 @@
 @performance@   UNION { ?performance    bmmo:performer_melodica                 ?artist. BIND ("performer_melodica"                 AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_oboe                     ?artist. BIND ("performer_oboe"                     AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_organ                    ?artist. BIND ("performer_organ"                    AS ?role) }
+@performance@   UNION { ?performance    bmmo:performer_other_instruments        ?artist. BIND ("performer_other_instruments"        AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_percussion               ?artist. BIND ("performer_percussion"               AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_piano                    ?artist. BIND ("performer_piano"                    AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_piccolo_trumpet          ?artist. BIND ("performer_piccolo_trumpet"          AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_pipe_organ               ?artist. BIND ("performer_pipe_organ"               AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_psaltery                 ?artist. BIND ("performer_psaltery"                 AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_recorder                 ?artist. BIND ("performer_recorder"                 AS ?role) }
+@performance@   UNION { ?performance    bmmo:performer_reeds                    ?artist. BIND ("performer_reeds"                    AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_rhodes_piano             ?artist. BIND ("performer_rhodes_piano"             AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_santur                   ?artist. BIND ("performer_santur"                   AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_saxophone                ?artist. BIND ("performer_saxophone"                AS ?role) }
@@ -105,10 +113,12 @@
 @performance@   UNION { ?performance    bmmo:performer_solo                     ?artist. BIND ("performer_solo"                     AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_soprano_saxophone        ?artist. BIND ("performer_soprano_saxophone"        AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_spanish_acoustic_guitar  ?artist. BIND ("performer_spanish_acoustic_guitar"  AS ?role) }
+@performance@   UNION { ?performance    bmmo:performer_steel_guitar             ?artist. BIND ("performer_steel_guitar"             AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_synclavier               ?artist. BIND ("performer_synclavier"               AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_synthesizer              ?artist. BIND ("performer_synthesizer"              AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_tambourine               ?artist. BIND ("performer_tambourine"               AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_tenor_sax                ?artist. BIND ("performer_tenor_sax"                AS ?role) }
+@performance@   UNION { ?performance    bmmo:performer_timbales                 ?artist. BIND ("performer_timbales"                 AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_timpani                  ?artist. BIND ("performer_timpani"                  AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_tiple                    ?artist. BIND ("performer_tiple"                    AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_trombone                 ?artist. BIND ("performer_trombone"                 AS ?role) }

@@ -32,8 +32,6 @@ import javax.annotation.Nonnull;
 import java.util.Optional;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.model.MusicArtist;
-import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import lombok.ToString;
@@ -65,9 +63,7 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
      ******************************************************************************************************************/
     public RepositoryTrackFinder (final @Nonnull Repository repository)
       {
-        super(repository);
-        this.makerId = Optional.empty();
-        this.recordId = Optional.empty();
+        this(repository, Optional.empty(), Optional.empty());
       }
 
     /*******************************************************************************************************************
@@ -103,9 +99,9 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public TrackFinder madeBy (final @Nonnull MusicArtist artist)
+    public TrackFinder madeBy (final @Nonnull Id artistId)
       {
-        return clone(new RepositoryTrackFinder(repository, Optional.of(artist.getId()), recordId));
+        return clone(new RepositoryTrackFinder(repository, Optional.of(artistId), recordId));
       }
 
     /*******************************************************************************************************************
@@ -114,9 +110,9 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public TrackFinder inRecord (final @Nonnull Record record)
+    public TrackFinder inRecord (final @Nonnull Id recordId)
       {
-        return clone(new RepositoryTrackFinder(repository, makerId, Optional.of(record.getId())));
+        return clone(new RepositoryTrackFinder(repository, makerId, Optional.of(recordId)));
       }
 
     /*******************************************************************************************************************
