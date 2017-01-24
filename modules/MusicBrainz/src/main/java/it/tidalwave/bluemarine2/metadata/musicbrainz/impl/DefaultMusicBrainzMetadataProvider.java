@@ -86,7 +86,7 @@ public class DefaultMusicBrainzMetadataProvider extends CachingRestClientSupport
                                                                    final @Nonnull String ... includes)
       throws IOException, InterruptedException
       {
-        log.info("findReleaseGroupByTitle({})", title);
+        log.debug("findReleaseGroupByTitle({})", title);
         final ResponseEntity<String> response = request(String.format(URL_RELEASE_GROUP, host, escape(title)));
         return MusicBrainzResponse.of(response, Metadata::getReleaseGroupList);
       }
@@ -101,7 +101,7 @@ public class DefaultMusicBrainzMetadataProvider extends CachingRestClientSupport
                                                            final @Nonnull String ... includes)
       throws IOException, InterruptedException
       {
-        log.info("findReleaseListByToc({}, {})", toc, includes);
+        log.debug("findReleaseListByToc({}, {})", toc, includes);
         final ResponseEntity<String> response = request(String.format(URL_DISCID, host, toc, includesToString("&", includes)));
         return MusicBrainzResponse.of(response, Metadata::getReleaseList);
       }
@@ -117,7 +117,7 @@ public class DefaultMusicBrainzMetadataProvider extends CachingRestClientSupport
                                             final @Nonnull String ... includes)
       throws IOException, InterruptedException
       {
-        log.info("getResource({}. {}, {})", resourceType, id, includes);
+        log.debug("getResource({}. {}, {})", resourceType, id, includes);
         final String url = String.format(URL_RESOURCE, host, resourceType.getName(), id, includesToString("?", includes));
         return MusicBrainzResponse.of(request(url), resourceType.getResultProvider());
       }

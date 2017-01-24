@@ -277,7 +277,8 @@ public class MusicBrainzAudioMedatataImporter
 
     /*******************************************************************************************************************
      *
-     * Aggregate of a {@link Release} and {@link Medium}.
+     * Aggregate of a {@link Release}, a {@link Medium} inside that {@code Release} and a {@link Disc} inside that
+     * {@code Medium}.
      *
      ******************************************************************************************************************/
     @RequiredArgsConstructor @AllArgsConstructor @Getter
@@ -289,25 +290,39 @@ public class MusicBrainzAudioMedatataImporter
         @Nonnull
         private final Medium medium;
 
-        @Getter @Wither
+        @Wither
         private Disc disc;
-
-        @Getter
-        private int score;
-
-        private String embeddedTitle;
 
         @Wither
         private boolean excluded;
 
+        private String embeddedTitle;
+
+        private int score;
+
         @Nonnull
         public ReleaseMediumDisk withEmbeddedTitle (final @Nonnull String embeddedTitle)
           {
-            return new ReleaseMediumDisk(release, medium, disc, similarity(findTitle(), embeddedTitle), embeddedTitle, excluded);
+            return new ReleaseMediumDisk(release, medium, disc, excluded, embeddedTitle,
+                                         similarity(pickTitle(), embeddedTitle));
+          }
+
+        // Prefer Medium title - typically available in case of disk collections, in which case Release has got
+        // the collection title, which is very generic.
+        @Nonnull
+        public String pickTitle()
+          {
+            return Optional.ofNullable(medium.getTitle()).orElse(release.getTitle());
           }
 
         @Nonnull
-        public Id getId()
+        public ReleaseMediumDisk excludedIf (final boolean condition)
+          {
+            return withExcluded(excluded || condition);
+          }
+
+        @Nonnull
+        public Id computeId()
           {
             return createSha1IdNew(getRelease().getId() + "+" + getDisc().getId());
           }
@@ -324,20 +339,6 @@ public class MusicBrainzAudioMedatataImporter
             return Optional.ofNullable(release.getBarcode());
           }
 
-        // Prefer Medium title - typically available in case of disk collections, in which case Release has got
-        // the collection title, which is very generic.
-        @Nonnull
-        public String findTitle()
-          {
-            return Optional.ofNullable(medium.getTitle()).orElse(release.getTitle());
-          }
-
-        @Nonnull
-        public ReleaseMediumDisk excludedIf (final boolean condition)
-          {
-            return withExcluded(excluded || condition);
-          }
-
         @Override
         public boolean equals (final @CheckForNull Object other)
           {
@@ -351,13 +352,19 @@ public class MusicBrainzAudioMedatataImporter
                 return false;
               }
 
-            return Objects.equals(this.getId(), ((ReleaseMediumDisk)other).getId());
+            return Objects.equals(this.computeId(), ((ReleaseMediumDisk)other).computeId());
           }
 
         @Override
         public int hashCode()
           {
-            return getId().hashCode();
+            return computeId().hashCode();
+          }
+
+        @Nonnull
+        public String getMediumAndDiscString()
+          {
+            return String.format("%s/%s", medium.getTitle(), (disc != null) ? disc.getId() : "null");
           }
 
         @Override @Nonnull
@@ -366,7 +373,7 @@ public class MusicBrainzAudioMedatataImporter
             return String.format("EXCL: %-5s ASIN: %-10s BARCODE: %-13s SCORE: %4d PICKED: %s EMBEDDED: %s RELEASE: %s MEDIUM: %s",
                         excluded,
                         release.getAsin(), release.getBarcode(),
-                        getScore(), findTitle(), embeddedTitle, release.getTitle(), medium.getTitle());
+                        getScore(), pickTitle(), embeddedTitle, release.getTitle(), medium.getTitle());
           }
       }
 
@@ -387,7 +394,8 @@ public class MusicBrainzAudioMedatataImporter
         @Nonnull
         public static Stream<RelationAndTargetType> toStream (final @Nonnull RelationList relationList)
           {
-            return relationList.getRelation().stream().map(relation -> new RelationAndTargetType(relation, relationList.getTargetType()));
+            return relationList.getRelation().stream()
+                                             .map(rel -> new RelationAndTargetType(rel, relationList.getTargetType()));
           }
       }
 
@@ -405,13 +413,15 @@ public class MusicBrainzAudioMedatataImporter
     public Optional<Model> handleMetadata (final @Nonnull Metadata metadata)
       throws InterruptedException, IOException
       {
-        final ModelBuilder model = createModelBuilder();
-        final Optional<String> albumTitle = metadata.get(ALBUM);
-        final Optional<Cddb> cddb = metadata.get(CDDB);
+        final ModelBuilder model                  = createModelBuilder();
+        final Optional<String> optionalAlbumTitle = metadata.get(ALBUM);
+        final Optional<Cddb> optionalCddb         = metadata.get(CDDB);
 
-        if (albumTitle.isPresent() && !albumTitle.get().trim().isEmpty() && cddb.isPresent())
+        if (optionalAlbumTitle.isPresent() && !optionalAlbumTitle.get().trim().isEmpty() && optionalCddb.isPresent())
           {
-            final String toc = cddb.get().getToc();
+            final String albumTitle = optionalAlbumTitle.get();
+            final Cddb cddb         = optionalCddb.get();
+            final String toc        = cddb.getToc();
 
             synchronized (processedTocs)
               {
@@ -423,34 +433,32 @@ public class MusicBrainzAudioMedatataImporter
                 processedTocs.add(toc);
               }
 
-            log.info("============ PROBING TOC FOR {}", albumTitle);
+            log.info("==== QUERYING MUSICBRAINZ FOR TOC OF {}", albumTitle);
             final List<ReleaseMediumDisk> rmds = new ArrayList<>();
             final RestResponse<ReleaseList> releaseList = mbMetadataProvider.findReleaseListByToc(toc, TOC_INCLUDES);
             // even though we're querying by TOC, matching offsets is required to kill many false results
-            releaseList.ifPresent(releases -> rmds.addAll(findReleases(releases, cddb.get(), Validation.TRACK_OFFSETS_MATCH_REQUIRED)));
+            releaseList.ifPresent(releases -> rmds.addAll(findReleases(releases, cddb, Validation.TRACK_OFFSETS_MATCH_REQUIRED)));
 
             if (rmds.isEmpty())
               {
-                log.info("============ PROBING METADATA FOR {}", albumTitle);
+                log.info("======== TOC NOT FOUND, QUERYING MUSICBRAINZ FOR {}", albumTitle);
                 final List<ReleaseGroup> releaseGroups = new ArrayList<>();
-                releaseGroups.addAll(mbMetadataProvider.findReleaseGroupByTitle(albumTitle.get())
+                releaseGroups.addAll(mbMetadataProvider.findReleaseGroupByTitle(albumTitle)
                                                        .map(ReleaseGroupList::getReleaseGroup)
                                                        .orElse(emptyList()));
 
-                final Optional<String> cddbTitle = cddbTitleOf(metadata);
-                cddbTitle.map(_f(mbMetadataProvider::findReleaseGroupByTitle)).ifPresent(response ->
-                  {
-                    log.info("======== ALSO USING ALTERNATE TITLE: {}", cddbTitle.get());
-                    releaseGroups.addAll(response.get().getReleaseGroup());
-                  });
-
-                rmds.addAll(findReleases(releaseGroups, cddb.get(), Validation.TRACK_OFFSETS_MATCH_REQUIRED));
+                final Optional<String> alternateTitle = cddbAlternateTitleOf(metadata);
+                alternateTitle.ifPresent(t -> log.info("======== ALSO USING ALTERNATE TITLE: {}", t));
+                releaseGroups.addAll(alternateTitle.map(_f(mbMetadataProvider::findReleaseGroupByTitle))
+                                                   .map(response -> response.get().getReleaseGroup())
+                                                   .orElse(emptyList()));
+                rmds.addAll(findReleases(releaseGroups, cddb, Validation.TRACK_OFFSETS_MATCH_REQUIRED));
               }
 
-            model.with(marked(rmds, albumTitle.get()).stream()
-                                                     .parallel()
-                                                     .map(_f(rmd -> handleRelease(metadata, rmd)))
-                                                     .collect(toList()));
+            model.with(markedExcluded(rmds, albumTitle).stream()
+                                                             .parallel()
+                                                             .map(_f(rmd -> handleRelease(metadata, rmd)))
+                                                             .collect(toList()));
           }
 
         return Optional.of(model.toModel());
@@ -490,8 +498,8 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private List<ReleaseMediumDisk> marked (final @Nonnull List<ReleaseMediumDisk> inRmds,
-                                            final @Nonnull String embeddedTitle)
+    private List<ReleaseMediumDisk> markedExcluded (final @Nonnull List<ReleaseMediumDisk> inRmds,
+                                                    final @Nonnull String embeddedTitle)
       {
         if (inRmds.size() <= 1)
           {
@@ -504,10 +512,10 @@ public class MusicBrainzAudioMedatataImporter
         rmds = markedExcludedByTitleAffinity(rmds);
 
         final boolean asinPresent = rmds.stream().filter(rmd -> !rmd.isExcluded() && rmd.getAsin().isPresent()).findAny().isPresent();
-        rmds = rmds.stream().map(rmd -> rmd.excludedIf(asinPresent && rmd.getRelease().getAsin() == null)).collect(toList());
+        rmds = rmds.stream().map(rmd -> rmd.excludedIf(asinPresent && !rmd.getAsin().isPresent())).collect(toList());
 
         final boolean barcodePresent = rmds.stream().filter(rmd -> !rmd.isExcluded() && rmd.getBarcode().isPresent()).findAny().isPresent();
-        rmds = rmds.stream().map(rmd -> rmd.excludedIf(barcodePresent && rmd.getRelease().getBarcode() == null)).collect(toList());
+        rmds = rmds.stream().map(rmd -> rmd.excludedIf(barcodePresent && !rmd.getBarcode().isPresent())).collect(toList());
 
         if (asinPresent && (countNotExcluded(rmds) > 1))
           {
@@ -543,6 +551,11 @@ public class MusicBrainzAudioMedatataImporter
 
     /*******************************************************************************************************************
      *
+     * Sweeps the given {@link ReleaseMediumDisk}s and marks as excluded all the items after a not excluded item.
+     *
+     * @param   rmds    the incoming {@code ReleaseMediumDisk}
+     * @return          the processed {@code ReleaseMediumDisk}
+     *
      ******************************************************************************************************************/
     @Nonnull
     private static List<ReleaseMediumDisk> excessKeepersMarkedExcluded (final @Nonnull List<ReleaseMediumDisk> rmds)
@@ -562,6 +575,11 @@ public class MusicBrainzAudioMedatataImporter
       }
 
     /*******************************************************************************************************************
+     *
+     * Sweeps the given {@link ReleaseMediumDisk}s and marks as excluded the items without the best score.
+     *
+     * @param   rmds    the incoming {@code ReleaseMediumDisk}
+     * @return          the processed {@code ReleaseMediumDisk}
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -595,14 +613,15 @@ public class MusicBrainzAudioMedatataImporter
     private ModelBuilder handleRelease (final @Nonnull Metadata metadata, final @Nonnull ReleaseMediumDisk rmd)
       throws IOException, InterruptedException
       {
-        final Medium medium = rmd.getMedium();
-        final Release release = rmd.getRelease();
-        final List<DefTrackData> tracks = medium.getTrackList().getDefTrack();
+        final Medium medium              = rmd.getMedium();
+        final Release release            = rmd.getRelease();
+        final List<DefTrackData> tracks  = medium.getTrackList().getDefTrack();
         final String embeddedRecordTitle = metadata.get(ALBUM).get(); // .orElse(parent.getPath().toFile().getName());
-        final String recordTitle = rmd.findTitle();
+        final Cddb cddb                  = metadata.get(CDDB).get();
+        final String recordTitle         = rmd.pickTitle();
+        final IRI embeddedRecordIri      = recordIriOf(metadata, embeddedRecordTitle);
+        final IRI recordIri              = recordIriFor(rmd.computeId());
         log.info("importing {} {} ...", recordTitle, (rmd.isExcluded() ? "(excluded)" : ""));
-        final IRI embeddedRecordIri = recordIriOf(metadata, embeddedRecordTitle);
-        final IRI recordIri         = recordIriFor(rmd.getId());
 
         ModelBuilder model = createModelBuilder()
             .with(recordIri, RDF.TYPE,           MO.C_RECORD)
@@ -612,11 +631,11 @@ public class MusicBrainzAudioMedatataImporter
             .with(recordIri, RDFS.LABEL,         literalFor(recordTitle))
             .with(recordIri, DC.TITLE,           literalFor(recordTitle))
             .with(recordIri, MO.P_TRACK_COUNT,   literalFor(tracks.size()))
-            .with(recordIri, MO.P_AMAZON_ASIN,   literalFor(Optional.ofNullable(release.getAsin())))
-            .with(recordIri, MO.P_GTIN,          literalFor(Optional.ofNullable(release.getBarcode())))
+            .with(recordIri, MO.P_AMAZON_ASIN,   literalFor(rmd.getAsin()))
+            .with(recordIri, MO.P_GTIN,          literalFor(rmd.getBarcode()))
 
             .with(tracks.stream().parallel()
-                                 .map(_f(track -> handleTrack(metadata.get(CDDB).get(), recordIri, track)))
+                                 .map(_f(track -> handleTrack(cddb, recordIri, track)))
                                  .collect(toList()));
 
         if (rmd.isExcluded())
@@ -627,7 +646,6 @@ public class MusicBrainzAudioMedatataImporter
 
         return model;
         // TODO: release.getLabelInfoList();
-        // TODO: medium discId
         // TODO: record producer - requires inc=artist-rels
       }
 
@@ -817,7 +835,7 @@ public class MusicBrainzAudioMedatataImporter
      * offsets.
      *
      * @param   releaseList     the {@code ReleaseList}
-     * @param   cddb            the track offsets
+     * @param   cddb            the track offsets to match
      * @param   validation      how the results must be validated
      * @return                  a collection of filtered {@code Medium}s
      *
@@ -835,10 +853,10 @@ public class MusicBrainzAudioMedatataImporter
                             .getMediumList().getMedium()
                             .stream()
                             .map(medium -> new ReleaseMediumDisk(release, medium))))
-            .filter(ram -> matchesFormat(ram.getMedium()))
+            .filter(rmd -> matchesFormat(rmd))
             .flatMap(rmd -> rmd.getMedium().getDiscList().getDisc().stream().map(disc -> rmd.withDisc(disc)))
-            .filter(ram -> matchesTrackOffsets(ram, cddb, validation))
-            .peek(rmd -> log.info(">>>>>>>> FOUND {} - with score {}", rmd.getMedium().getTitle(), 0 /* scoreOf(releaseGroup) FIXME */))
+            .filter(rmd -> matchesTrackOffsets(rmd, cddb, validation))
+            .peek(rmd -> log.info(">>>>>>>> FOUND {} - with score {}", rmd.getMediumAndDiscString(), 0 /* scoreOf(releaseGroup) FIXME */))
             .collect(toMap(rmd -> rmd.getRelease().getId(), rmd -> rmd, (u, v) -> v, TreeMap::new))
             .values();
       }
@@ -889,13 +907,13 @@ public class MusicBrainzAudioMedatataImporter
      * @return          {@code true} if there is a match
      *
      ******************************************************************************************************************/
-    private static boolean matchesFormat (final @Nonnull Medium medium)
+    private static boolean matchesFormat (final @Nonnull ReleaseMediumDisk rmd)
       {
-        final String format = medium.getFormat();
+        final String format = rmd.getMedium().getFormat();
 
         if ((format != null) && !"CD".equals(format))
           {
-            log.info(">>>>>>>> discarded {} because not a CD ({})", medium.getTitle(), format);
+            log.info(">>>>>>>> discarded {} because not a CD ({})", rmd.getMediumAndDiscString(), format);
             return false;
           }
 
@@ -906,34 +924,33 @@ public class MusicBrainzAudioMedatataImporter
      *
      * Returns {@code true} if the given {@link ReleaseMediumDisk} matches the track offsets in the given {@link Cddb}.
      *
-     * @param   rmd         the {@code ReleaseMediumDisk}
-     * @param   cddb        the track offsets to match
-     * @param   validation  how the results must be validated
-     * @return              {@code true} if there is a match
+     * @param   rmd             the {@code ReleaseMediumDisk}
+     * @param   requestedCddb   the track offsets to match
+     * @param   validation      how the results must be validated
+     * @return                  {@code true} if there is a match
      *
      ******************************************************************************************************************/
     private boolean matchesTrackOffsets (final @Nonnull ReleaseMediumDisk rmd,
-                                         final @Nonnull Cddb cddb,
+                                         final @Nonnull Cddb requestedCddb,
                                          final @Nonnull Validation validation)
       {
-        final Cddb discCddb = cddbOf(rmd.getDisc());
+        final Cddb cddb = cddbOf(rmd.getDisc());
 
-        if ((discCddb == null) && (validation == Validation.TRACK_OFFSETS_MATCH_NOT_REQUIRED))
+        if ((cddb == null) && (validation == Validation.TRACK_OFFSETS_MATCH_NOT_REQUIRED))
           {
             log.info(">>>>>>>> no track offsets, but not required");
             return true;
           }
 
-        final boolean matches = cddb.matches(discCddb, trackOffsetsMatchThreshold);
+        final boolean matches = requestedCddb.matches(cddb, trackOffsetsMatchThreshold);
 
         if (!matches)
           {
             synchronized (log) // keep log lines together
               {
-                log.info(">>>>>>>> discarded {}/{} because track offsets don't match",
-                         rmd.getMedium().getTitle(), rmd.getDisc().getId());
-                log.debug(">>>>>>>> iTunes offsets: {}", cddb.getTrackFrameOffsets());
-                log.debug(">>>>>>>> found offsets:  {}", discCddb.getTrackFrameOffsets());
+                log.info(">>>>>>>> discarded {} because track offsets don't match", rmd.getMediumAndDiscString());
+                log.debug(">>>>>>>> iTunes offsets: {}", requestedCddb.getTrackFrameOffsets());
+                log.debug(">>>>>>>> found offsets:  {}", cddb.getTrackFrameOffsets());
               }
           }
 
@@ -960,24 +977,25 @@ public class MusicBrainzAudioMedatataImporter
 
     /*******************************************************************************************************************
      *
-     * Returns the CDDB title extracted from the given {@link Metadata}.
+     * Searches for an alternate title of a record by querying the embedded title against the CDDB. The CDDB track
+     * offsets are checked to validate the result.
      *
      * @param   metadata    the {@code Metadata}
-     * @return              the title
+     * @return              the title, if found
      *
      ******************************************************************************************************************/
     @Nonnull
-    private Optional<String> cddbTitleOf (final @Nonnull Metadata metadata)
+    private Optional<String> cddbAlternateTitleOf (final @Nonnull Metadata metadata)
       throws IOException, InterruptedException
       {
-        final RestResponse<CddbAlbum> album2 = cddbMetadataProvider.findCddbAlbum(metadata);
+        final RestResponse<CddbAlbum> optionalAlbum = cddbMetadataProvider.findCddbAlbum(metadata);
 
-        if (!album2.isPresent())
+        if (!optionalAlbum.isPresent())
           {
             return Optional.empty();
           }
 
-        final CddbAlbum album = album2.get();
+        final CddbAlbum album = optionalAlbum.get();
         final Cddb albumCddb = album.getCddb();
         final Cddb requestedCddb = metadata.get(ITUNES_COMMENT).get().getCddb();
         final Optional<String> dTitle = album.getProperty("DTITLE");
