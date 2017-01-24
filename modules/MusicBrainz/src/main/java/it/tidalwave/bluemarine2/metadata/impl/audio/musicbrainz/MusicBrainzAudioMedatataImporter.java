@@ -300,6 +300,9 @@ public class MusicBrainzAudioMedatataImporter
 
         private int score;
 
+        /***************************************************************************************************************
+         *
+         **************************************************************************************************************/
         @Nonnull
         public ReleaseMediumDisk withEmbeddedTitle (final @Nonnull String embeddedTitle)
           {
@@ -307,38 +310,82 @@ public class MusicBrainzAudioMedatataImporter
                                          similarity(pickTitle(), embeddedTitle));
           }
 
-        // Prefer Medium title - typically available in case of disk collections, in which case Release has got
-        // the collection title, which is very generic.
+        /***************************************************************************************************************
+         *
+         * Prefer Medium title - typically available in case of disk collections, in which case Release has got
+         * the collection title, which is very generic.
+         *
+         **************************************************************************************************************/
         @Nonnull
         public String pickTitle()
           {
             return Optional.ofNullable(medium.getTitle()).orElse(release.getTitle());
           }
 
+        /***************************************************************************************************************
+         *
+         **************************************************************************************************************/
         @Nonnull
         public ReleaseMediumDisk alternativeIf (final boolean condition)
           {
             return withAlternative(alternative || condition);
           }
 
+        /***************************************************************************************************************
+         *
+         **************************************************************************************************************/
         @Nonnull
         public Id computeId()
           {
             return createSha1IdNew(getRelease().getId() + "+" + getDisc().getId());
           }
 
+        /***************************************************************************************************************
+         *
+         **************************************************************************************************************/
         @Nonnull
         public Optional<String> getAsin()
           {
             return Optional.ofNullable(release.getAsin());
           }
 
+        /***************************************************************************************************************
+         *
+         **************************************************************************************************************/
         @Nonnull
         public Optional<String> getBarcode()
           {
             return Optional.ofNullable(release.getBarcode());
           }
 
+        /***************************************************************************************************************
+         *
+         **************************************************************************************************************/
+        @Nonnull
+        public Cddb getCddb()
+          {
+            return MediaItem.Metadata.Cddb.builder()
+                    .discId("") // FIXME
+                    .trackFrameOffsets(disc.getOffsetList().getOffset()
+                            .stream()
+                            .map(offset -> offset.getValue())
+                            .mapToInt(x -> x.intValue())
+                            .toArray())
+                    .build();
+          }
+
+        /***************************************************************************************************************
+         *
+         **************************************************************************************************************/
+        @Nonnull
+        public String getMediumAndDiscString()
+          {
+            return String.format("%s/%s", medium.getTitle(), (disc != null) ? disc.getId() : "null");
+          }
+
+        /***************************************************************************************************************
+         *
+         **************************************************************************************************************/
         @Override
         public boolean equals (final @CheckForNull Object other)
           {
@@ -355,18 +402,18 @@ public class MusicBrainzAudioMedatataImporter
             return Objects.equals(this.computeId(), ((ReleaseMediumDisk)other).computeId());
           }
 
+        /***************************************************************************************************************
+         *
+         **************************************************************************************************************/
         @Override
         public int hashCode()
           {
             return computeId().hashCode();
           }
 
-        @Nonnull
-        public String getMediumAndDiscString()
-          {
-            return String.format("%s/%s", medium.getTitle(), (disc != null) ? disc.getId() : "null");
-          }
-
+        /***************************************************************************************************************
+         *
+         **************************************************************************************************************/
         @Override @Nonnull
         public String toString()
           {
@@ -935,7 +982,7 @@ public class MusicBrainzAudioMedatataImporter
                                          final @Nonnull Cddb requestedCddb,
                                          final @Nonnull Validation validation)
       {
-        final Cddb cddb = cddbOf(rmd.getDisc());
+        final Cddb cddb = rmd.getCddb();
 
         if ((cddb == null) && (validation == Validation.TRACK_OFFSETS_MATCH_NOT_REQUIRED))
           {
@@ -956,24 +1003,6 @@ public class MusicBrainzAudioMedatataImporter
           }
 
         return matches;
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public static Cddb cddbOf (final @Nonnull Disc disc)
-      {
-        return MediaItem.Metadata.Cddb.builder()
-                .discId("") // FIXME
-                .trackFrameOffsets(disc.getOffsetList().getOffset()
-                        .stream()
-                        .map(offset -> offset.getValue())
-                        .mapToInt(x -> x.intValue())
-                        .toArray())
-                .build();
       }
 
     /*******************************************************************************************************************
