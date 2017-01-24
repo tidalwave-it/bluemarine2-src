@@ -359,6 +359,12 @@ public final class BM // FIXME: rename to BMMO
       }
 
     @Nonnull
+    public static IRI performanceIriFor (final @Nonnull Id id)
+      {
+        return FACTORY.createIRI("urn:bluemarine:performance:" + id.stringValue());
+      }
+
+    @Nonnull
     public static IRI recordIriFor (final @Nonnull Id id)
       {
         return FACTORY.createIRI("urn:bluemarine:record:" + id.stringValue());

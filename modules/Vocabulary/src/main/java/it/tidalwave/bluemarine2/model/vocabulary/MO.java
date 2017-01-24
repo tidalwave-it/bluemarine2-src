@@ -75,6 +75,7 @@ public final class MO
     public static final String S_P_GTIN             = PREFIX + "gtin";
     public static final String S_P_TRACK            = PREFIX + "track";
     public static final String S_P_MEDIA_TYPE       = PREFIX + "media_type";
+    public static final String S_P_MUSICBRAINZ      = PREFIX + "musicbrainz";
     public static final String S_P_MUSICBRAINZ_GUID = PREFIX + "musicbrainz_guid";
     public static final String S_P_PUBLISHED_AS     = PREFIX + "published_as";
     public static final String S_P_SAMPLE_RATE      = PREFIX + "sampleRate";
@@ -95,6 +96,7 @@ public final class MO
     public static final IRI P_GTIN                  = FACTORY.createIRI(S_P_GTIN);
     public static final IRI P_TRACK                 = FACTORY.createIRI(S_P_TRACK);
     public static final IRI P_MEDIA_TYPE            = FACTORY.createIRI(S_P_MEDIA_TYPE);
+    public static final IRI P_MUSICBRAINZ           = FACTORY.createIRI(S_P_MUSICBRAINZ);
     public static final IRI P_MUSICBRAINZ_GUID      = FACTORY.createIRI(S_P_MUSICBRAINZ_GUID);
     public static final IRI P_PUBLISHED_AS          = FACTORY.createIRI(S_P_PUBLISHED_AS);
     public static final IRI P_SAMPLE_RATE           = FACTORY.createIRI(S_P_SAMPLE_RATE);

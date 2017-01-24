@@ -86,7 +86,9 @@ import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider.*;
 import static it.tidalwave.bluemarine2.model.vocabulary.BM.recordIriFor;
+import java.math.BigInteger;
 import static lombok.AccessLevel.PRIVATE;
+import org.musicbrainz.ns.mmd_2.MediumList;
 
 /***********************************************************************************************************************
  *
@@ -344,6 +346,24 @@ public class MusicBrainzAudioMedatataImporter
          *
          **************************************************************************************************************/
         @Nonnull
+        public Optional<Integer> getDiskCount()
+          {
+            return Optional.ofNullable(release.getMediumList()).map(MediumList::getCount).map(BigInteger::intValue);
+          }
+
+        /***************************************************************************************************************
+         *
+         **************************************************************************************************************/
+        @Nonnull
+        public Optional<Integer> getDiskNumber()
+          {
+            return Optional.ofNullable(medium.getPosition()).map(BigInteger::intValue);
+          }
+
+        /***************************************************************************************************************
+         *
+         **************************************************************************************************************/
+        @Nonnull
         public Optional<String> getAsin()
           {
             return Optional.ofNullable(release.getAsin());
@@ -417,10 +437,12 @@ public class MusicBrainzAudioMedatataImporter
         @Override @Nonnull
         public String toString()
           {
-            return String.format("EXCL: %-5s ASIN: %-10s BARCODE: %-13s SCORE: %4d PICKED: %s EMBEDDED: %s RELEASE: %s MEDIUM: %s",
+            return String.format("ALT: %-5s ASIN: %-10s BARCODE: %-13s SCORE: %4d #: %3s/%3s PICKED: %s EMBEDDED: %s RELEASE: %s MEDIUM: %s",
                         alternative,
                         release.getAsin(), release.getBarcode(),
-                        getScore(), pickTitle(), embeddedTitle, release.getTitle(), medium.getTitle());
+                        getScore(),
+                        getDiskNumber().map(n -> "" + n).orElse(""), getDiskCount().map(n -> "" + n).orElse(""),
+                        pickTitle(), embeddedTitle, release.getTitle(), medium.getTitle());
           }
       }
 
@@ -648,7 +670,8 @@ public class MusicBrainzAudioMedatataImporter
 
     /*******************************************************************************************************************
      *
-     * Extracts data from the given release.
+     * Extracts data from the given release. For MusicBrainz, a Release is typically a disk, but it can be made of
+     * multiple disks in case of many tracks.
      *
      * @param   metadata                the {@code Metadata}
      * @param   rmd                     the release
@@ -662,7 +685,7 @@ public class MusicBrainzAudioMedatataImporter
       throws IOException, InterruptedException
       {
         final Medium medium              = rmd.getMedium();
-//        final Release release            = rmd.getRelease();
+        final String releaseId           = rmd.getRelease().getId();
         final List<DefTrackData> tracks  = medium.getTrackList().getDefTrack();
         final String embeddedRecordTitle = metadata.get(ALBUM).get(); // .orElse(parent.getPath().toFile().getName());
         final Cddb cddb                  = metadata.get(CDDB).get();
@@ -672,18 +695,20 @@ public class MusicBrainzAudioMedatataImporter
         log.info("importing {} {} ...", recordTitle, (rmd.isAlternative() ? "(alternative)" : ""));
 
         ModelBuilder model = createModelBuilder()
-            .with(recordIri, RDF.TYPE,           MO.C_RECORD)
-            .with(recordIri, BM.P_IMPORTED_FROM, BM.V_SOURCE_MUSICBRAINZ)
-            .with(recordIri, MO.P_MEDIA_TYPE,    MO.C_CD)
-            .with(recordIri, BM.P_ALTERNATE_OF,  embeddedRecordIri)
-            .with(recordIri, RDFS.LABEL,         literalFor(recordTitle))
-            .with(recordIri, DC.TITLE,           literalFor(recordTitle))
-            .with(recordIri, MO.P_TRACK_COUNT,   literalFor(tracks.size()))
-            .with(recordIri, MO.P_AMAZON_ASIN,   literalFor(rmd.getAsin()))
-            .with(recordIri, MO.P_GTIN,          literalFor(rmd.getBarcode()))
+            .with(recordIri, RDF.TYPE,              MO.C_RECORD)
+            .with(recordIri, RDFS.LABEL,            literalFor(recordTitle))
+            .with(recordIri, DC.TITLE,              literalFor(recordTitle))
+            .with(recordIri, BM.P_IMPORTED_FROM,    BM.V_SOURCE_MUSICBRAINZ)
+            .with(recordIri, BM.P_ALTERNATE_OF,     embeddedRecordIri)
+            .with(recordIri, MO.P_MEDIA_TYPE,       MO.C_CD)
+            .with(recordIri, MO.P_TRACK_COUNT,      literalFor(tracks.size()))
+            .with(recordIri, MO.P_MUSICBRAINZ_GUID, literalFor(releaseId))
+            .with(recordIri, MO.P_MUSICBRAINZ,      musicBrainzIriFor("release", releaseId))
+            .with(recordIri, MO.P_AMAZON_ASIN,      literalFor(rmd.getAsin()))
+            .with(recordIri, MO.P_GTIN,             literalFor(rmd.getBarcode()))
 
             .with(tracks.stream().parallel()
-                                 .map(_f(track -> handleTrack(cddb, recordIri, track)))
+                                 .map(_f(track -> handleTrack(rmd, cddb, recordIri, track)))
                                  .collect(toList()));
 
         if (rmd.isAlternative())
@@ -701,6 +726,7 @@ public class MusicBrainzAudioMedatataImporter
      *
      * Extracts data from the given {@link DefTrackData}.
      *
+     * @param   rmd                     the release
      * @param   cddb                    the CDDB of the track we're handling
      * @param   track                   the track
      * @return                          the RDF triples
@@ -709,35 +735,40 @@ public class MusicBrainzAudioMedatataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ModelBuilder handleTrack (final @Nonnull Cddb cddb,
+    private ModelBuilder handleTrack (final @Nonnull ReleaseMediumDisk rmd,
+                                      final @Nonnull Cddb cddb,
                                       final @Nonnull IRI recordIri,
                                       final @Nonnull DefTrackData track)
       throws IOException, InterruptedException
       {
-        final IRI trackIri = musicBrainzIriFor("track", track.getId());
-        final int position = track.getPosition().intValue();
-        final String recordingId = track.getRecording().getId();
+        final IRI trackIri                 = trackIriOf(track.getId());
+        final int trackNumber              = track.getPosition().intValue();
+        final Optional<Integer> diskCount  = emptyIfOne(rmd.getDiskCount());
+        final Optional<Integer> diskNumber = diskCount.flatMap(dc -> rmd.getDiskNumber());
+        final String recordingId           = track.getRecording().getId();
 //                final Recording recording = track.getRecording();
         final Recording recording = mbMetadataProvider.getResource(RECORDING, recordingId, RECORDING_INCLUDES).get();
-        final String trackTitle = recording.getTitle();
+        final String trackTitle   = recording.getTitle();
 //                    track.getRecording().getAliasList().getAlias().get(0).getSortName();
-        log.info(">>>>>>>> {}. {}", position, trackTitle);
-        final IRI signalIri    = signalIriFor(cddb, track.getPosition().intValue());
+        final IRI signalIri       = signalIriFor(cddb, track.getPosition().intValue());
+        log.info(">>>>>>>> {}. {}", trackNumber, trackTitle);
 
         return createModelBuilder()
-            .with(recordIri, MO.P_TRACK,          trackIri)
+            .with(recordIri, MO.P_TRACK,            trackIri)
 
-            .with(signalIri, MO.P_PUBLISHED_AS,   trackIri)
+            .with(signalIri, MO.P_PUBLISHED_AS,     trackIri)
 
-            .with(trackIri,  RDF.TYPE,            MO.C_TRACK)
-            .with(trackIri,  BM.P_IMPORTED_FROM,  BM.V_SOURCE_MUSICBRAINZ)
-            .with(trackIri,  RDFS.LABEL,          literalFor(trackTitle))
-            .with(trackIri,  DC.TITLE,            literalFor(trackTitle))
-            .with(trackIri,  MO.P_TRACK_NUMBER,   literalFor(track.getPosition().intValue()))
+            .with(trackIri,  RDF.TYPE,              MO.C_TRACK)
+            .with(trackIri,  RDFS.LABEL,            literalFor(trackTitle))
+            .with(trackIri,  DC.TITLE,              literalFor(trackTitle))
+            .with(trackIri,  BM.P_IMPORTED_FROM,    BM.V_SOURCE_MUSICBRAINZ)
+            .with(trackIri,  BM.DISK_COUNT,         literalForInt(diskCount))
+            .with(trackIri,  BM.DISK_NUMBER,        literalForInt(diskNumber))
+            .with(trackIri,  MO.P_TRACK_NUMBER,     literalFor(trackNumber))
+            .with(trackIri,  MO.P_MUSICBRAINZ_GUID, literalFor(track.getId()))
+            .with(trackIri,  MO.P_MUSICBRAINZ,      musicBrainzIriFor("track", track.getId()))
 
             .with(handleTrackRelations(signalIri, trackIri, recordIri, recording));
-//        bmmo:diskCount "1"^^xs:int ;
-//        bmmo:diskNumber "1"^^xs:int ;
       }
 
     /*******************************************************************************************************************
@@ -759,7 +790,7 @@ public class MusicBrainzAudioMedatataImporter
                                                   .stream()
                                                   .parallel()
                                                   .flatMap(RelationAndTargetType::toStream)
-                                                  .map(ratt ->  handleTrackRelation(signalIri, trackIri, recordIri, recording, ratt))
+                                                  .map(ratt -> handleTrackRelation(signalIri, trackIri, recordIri, recording, ratt))
                                                   .collect(toList()));
       }
 
@@ -794,22 +825,25 @@ public class MusicBrainzAudioMedatataImporter
                                                   artist.getId());
 
         final IRI performanceIri = performanceIriFor(recording.getId());
-        final IRI artistIri      = musicBrainzIriFor("artist", artist.getId());
+        final IRI artistIri      = artistIriOf(artist.getId());
 
         final ModelBuilder model = createModelBuilder()
-            .with(performanceIri,  RDF.TYPE,            MO.C_PERFORMANCE)
-            .with(performanceIri,  BM.P_IMPORTED_FROM,  BM.V_SOURCE_MUSICBRAINZ)
-            .with(performanceIri,  MO.P_RECORDED_AS,    signalIri)
+            .with(performanceIri,  RDF.TYPE,              MO.C_PERFORMANCE)
+            .with(performanceIri,  BM.P_IMPORTED_FROM,    BM.V_SOURCE_MUSICBRAINZ)
+            .with(performanceIri,  MO.P_MUSICBRAINZ_GUID, literalFor(recording.getId()))
+            .with(performanceIri,  MO.P_RECORDED_AS,      signalIri)
 
-            .with(artistIri,       RDF.TYPE,            MO.C_MUSIC_ARTIST)
-            .with(artistIri,       BM.P_IMPORTED_FROM,  BM.V_SOURCE_MUSICBRAINZ)
-            .with(artistIri,       RDFS.LABEL,          literalFor(artist.getName()))
-            .with(artistIri,       FOAF.NAME,           literalFor(artist.getName()))
+            .with(artistIri,       RDF.TYPE,              MO.C_MUSIC_ARTIST)
+            .with(artistIri,       RDFS.LABEL,            literalFor(artist.getName()))
+            .with(artistIri,       FOAF.NAME,             literalFor(artist.getName()))
+            .with(artistIri,       BM.P_IMPORTED_FROM,    BM.V_SOURCE_MUSICBRAINZ)
+            .with(artistIri,       MO.P_MUSICBRAINZ_GUID, literalFor(artist.getId()))
+            .with(artistIri,       MO.P_MUSICBRAINZ,      musicBrainzIriFor("artist", artist.getId()))
 
             // TODO these could be inferred - performance shortcuts. Catalog queries rely upon these.
-            .with(recordIri,       FOAF.MAKER,          artistIri)
-            .with(trackIri,        FOAF.MAKER,          artistIri)
-            .with(performanceIri,  FOAF.MAKER,          artistIri);
+            .with(recordIri,       FOAF.MAKER,            artistIri)
+            .with(trackIri,        FOAF.MAKER,            artistIri)
+            .with(performanceIri,  FOAF.MAKER,            artistIri);
 //            .with(signalIri,       FOAF.MAKER,          artistIri);
 
         if ("artist".equals(targetType))
@@ -1077,15 +1111,69 @@ public class MusicBrainzAudioMedatataImporter
 
     /*******************************************************************************************************************
      *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static IRI artistIriOf (final @Nonnull String id)
+      {
+        return BM.artistIriFor(createSha1IdNew(musicBrainzIriFor("artist", id).stringValue()));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static IRI trackIriOf (final @Nonnull String id)
+      {
+        return BM.trackIriFor(createSha1IdNew(musicBrainzIriFor("track", id).stringValue()));
+      }
+
+    /*******************************************************************************************************************
+     *
      * FIXME: DUPLICATED FROM EmbbededAudioMetadataImporter
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static IRI recordIriOf (final @Nonnull Metadata metadata, final @Nonnull String recordTitle)
+    private static IRI recordIriOf (final @Nonnull Metadata metadata, final @Nonnull String recordTitle)
       {
         final Optional<Cddb> cddb = metadata.get(CDDB);
         return BM.recordIriFor((cddb.isPresent()) ? createSha1IdNew(cddb.get().getToc())
                                                   : createSha1IdNew("RECORD:" + recordTitle));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private IRI signalIriFor (final @Nonnull Cddb cddb, final @Nonnegative int trackNumber)
+      {
+        return BM.signalIriFor(createSha1IdNew(cddb.getToc() + "/" + trackNumber));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static IRI performanceIriFor (final @Nonnull String id)
+      {
+        return BM.performanceIriFor(createSha1IdNew(musicBrainzIriFor("performance", id).stringValue()));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static IRI musicBrainzIriFor (final @Nonnull String resourceType, final @Nonnull String id)
+      {
+        return FACTORY.createIRI(String.format("http://musicbrainz.org/%s/%s", resourceType, id));
       }
 
     /*******************************************************************************************************************
@@ -1112,38 +1200,6 @@ public class MusicBrainzAudioMedatataImporter
     /*******************************************************************************************************************
      *
      *
-     ******************************************************************************************************************/
-    @Nonnull
-    private IRI signalIriFor (final @Nonnull Cddb cddb, final @Nonnegative int trackNumber)
-      {
-        return BM.signalIriFor(createSha1IdNew(cddb.getToc() + "/" + trackNumber));
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private static IRI performanceIriFor (final @Nonnull String id)
-      {
-        return FACTORY.createIRI(String.format("urn:bluemarine:performance:%s", id));
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private static IRI musicBrainzIriFor (final @Nonnull String resourceType, final @Nonnull String id)
-      {
-        return FACTORY.createIRI(String.format("http://musicbrainz.org/%s/%s", resourceType, id));
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
      *
      ******************************************************************************************************************/
     private void logArtists (final @Nonnull ReleaseGroup releaseGroup)
@@ -1153,6 +1209,17 @@ public class MusicBrainzAudioMedatataImporter
                   releaseGroup.getId(),
                   releaseGroup.getTitle(),
                   releaseGroup.getArtistCredit().getNameCredit().stream().map(nc -> nc.getArtist().getName()).collect(toList()));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static Optional<Integer> emptyIfOne (final @Nonnull Optional<Integer> number)
+      {
+        return number.flatMap(n -> (n == 1) ? Optional.empty() : Optional.of(n));
       }
 
     /*******************************************************************************************************************
