@@ -106,6 +106,8 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
 
     private static final long serialVersionUID = 1896412264314804227L;
 
+    private static final SimpleValueFactory FACTORY = SimpleValueFactory.getInstance();
+
     @Nonnull
     protected final Repository repository;
 
@@ -113,7 +115,10 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     private final Class<ENTITY> entityClass;
 
     @Nonnull
-    private final Optional<IRI> source;
+    private final Optional<Value> source;
+
+    @Nonnull
+    private final Optional<Value> sourceFallback;
 
     @Inject
     private transient ContextManager contextManager;
@@ -175,7 +180,8 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
       {
         this.repository = repository;
         this.entityClass = (Class<ENTITY>)ReflectionUtils.getTypeArguments(RepositoryFinderSupport.class, getClass()).get(0);
-        this.source = Optional.of(O_EMBEDDED); // FIXME: resets
+        this.source = Optional.of(V_SOURCE_EMBEDDED); // FIXME: resets
+        this.sourceFallback = Optional.empty(); // FIXME: resets
       }
 
     /*******************************************************************************************************************
@@ -183,11 +189,15 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
      *
      *
      ******************************************************************************************************************/
-    private RepositoryFinderSupport (final @Nonnull Repository repository, final @Nonnull Class<ENTITY> entityClass, final @Nonnull IRI source)
+    private RepositoryFinderSupport (final @Nonnull Repository repository,
+                                     final @Nonnull Class<ENTITY> entityClass,
+                                     final @Nonnull Optional<Value> source,
+                                     final @Nonnull Optional<Value> sourceFallback)
       {
         this.repository = repository;
         this.entityClass = entityClass;
-        this.source = Optional.of(source);
+        this.source = source;
+        this.sourceFallback = sourceFallback;
       }
 
     /*******************************************************************************************************************
@@ -203,6 +213,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
         this.repository = source.repository;
         this.entityClass = source.entityClass;
         this.source = source.source;
+        this.sourceFallback = source.sourceFallback;
      }
 
     /*******************************************************************************************************************
@@ -250,7 +261,35 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     @Override @Nonnull
     public FINDER importedFrom (final @Nonnull Id source)
       {
-        return clone(new RepositoryFinderSupport(repository, entityClass, SimpleValueFactory.getInstance().createIRI(source.toString())));
+        return clone(new RepositoryFinderSupport(repository,
+                                                 entityClass,
+                                                 Optional.of(FACTORY.createLiteral(source.toString())),
+                                                 sourceFallback));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public FINDER withFallback (final @Nonnull Optional<Id> sourceFallback)
+      {
+        return sourceFallback.map(this::withFallback).orElse((FINDER)this);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public FINDER withFallback (final @Nonnull Id sourceFallback)
+      {
+        return clone(new RepositoryFinderSupport(repository,
+                                                 entityClass,
+                                                 source,
+                                                 Optional.of(FACTORY.createLiteral(sourceFallback.toString()))));
       }
 
     /*******************************************************************************************************************
@@ -283,7 +322,9 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
       {
         log.info("query() - {}", entityClass);
         final long baseTime = System.nanoTime();
-        final QueryAndParameters queryAndParameters = prepareQuery().withParameter("source", source);
+        final QueryAndParameters queryAndParameters = prepareQuery()
+                .withParameter("source", source)
+                .withParameter("fallback", sourceFallback.equals(source) ? Optional.empty() : sourceFallback);
         final Object[] parameters = queryAndParameters.getParameters();
         final String originalSparql = sparqlSelector.apply(queryAndParameters);
         final String sparql = PREFIXES + Stream.of(originalSparql.split("\n"))
@@ -346,7 +387,17 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     @Nonnull
     protected Value iriFor (final @Nonnull Id id)
       {
-        return SimpleValueFactory.getInstance().createIRI(id.stringValue());
+        return FACTORY.createIRI(id.stringValue());
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    protected Value literalFor (final @Nonnull boolean b)
+      {
+        return FACTORY.createLiteral(b);
       }
 
     /*******************************************************************************************************************

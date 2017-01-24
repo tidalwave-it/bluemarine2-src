@@ -33,6 +33,7 @@ import it.tidalwave.util.Id;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.eclipse.rdf4j.model.IRI;
+import org.eclipse.rdf4j.model.Value;
 import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 
@@ -57,9 +58,10 @@ public final class BM // FIXME: rename to BMMO
     public static final String S_ITUNES_CDDB1           = PREFIX + "iTunesCddb1";
     public static final String S_P_IMPORTED_FROM        = PREFIX + "importedFrom";
 
-//    public static final String S_FULL_CREDITS           = PREFIX + "fullCredits";
+    public static final String S_P_ALTERNATE_OF         = PREFIX + "alternateOf";
 
-//    public static final IRI FULL_CREDITS                = factory.createIRI(S_FULL_CREDITS);
+    public static final String S_V_SOURCE_EMBEDDED      = "embedded";
+    public static final String S_V_SOURCE_MUSICBRAINZ   = "musicbrainz";
 
     /** The file timestamp the latest time it was indexed. */
     public static final IRI LATEST_INDEXING_TIME        = FACTORY.createIRI(S_LATEST_INDEXING_TIME);
@@ -77,11 +79,16 @@ public final class BM // FIXME: rename to BMMO
     /** Predicate that associates any subject to the data source that created it. */
     public static final IRI P_IMPORTED_FROM             = FACTORY.createIRI(S_P_IMPORTED_FROM);
 
-    /** Object of the P_SOURCE predicate that says that the subject was imported from MusicBrainz. */
-    public static final IRI O_EMBEDDED                  = FACTORY.createIRI("http://bluemarine.tidalwave.it/source#embedded");
+    public static final IRI P_ALTERNATE_OF              = FACTORY.createIRI(S_P_ALTERNATE_OF);
 
     /** Object of the P_SOURCE predicate that says that the subject was imported from MusicBrainz. */
-    public static final IRI O_MUSICBRAINZ               = FACTORY.createIRI("http://musicbrainz.org");
+    public static final Value V_SOURCE_EMBEDDED         = FACTORY.createLiteral(S_V_SOURCE_EMBEDDED);
+
+    /** Object of the P_SOURCE predicate that says that the subject was imported from MusicBrainz. */
+    public static final Value V_SOURCE_MUSICBRAINZ      = FACTORY.createLiteral(S_V_SOURCE_MUSICBRAINZ);
+
+    public static final Id ID_SOURCE_EMBEDDED           = new Id(S_V_SOURCE_EMBEDDED);
+    public static final Id ID_SOURCE_MUSICBRAINZ        = new Id(S_V_SOURCE_MUSICBRAINZ);
 
     public static final String S_S_ALTERNATIVE_ITEMS    = PREFIX + "alternativeItems";
     public static final String S_C_PREFERENCE_ITEM      = PREFIX + "PreferenceItem";
@@ -91,13 +98,16 @@ public final class BM // FIXME: rename to BMMO
     public static final IRI C_PREFERENCE_ITEM           = FACTORY.createIRI(S_C_PREFERENCE_ITEM);
     public static final IRI O_INCLUDES                  = FACTORY.createIRI(S_O_INCLUDES);
 
+    private static final String S_P_ALTO                            = PREFIX + "alto";
     private static final String S_P_ARRANGER                        = PREFIX + "arranger";
     private static final String S_P_BACKGROUND_SINGER               = PREFIX + "background_singer";
     private static final String S_P_BALANCE                         = PREFIX + "balance";
-    private static final String S_P_BASS                            = PREFIX + "bass";
     private static final String S_P_BARITONE                        = PREFIX + "baritone";
+    private static final String S_P_BASS                            = PREFIX + "bass";
+    private static final String S_P_BASS_BARITONE                   = PREFIX + "bass_baritone";
     private static final String S_P_CHOIR                           = PREFIX + "choir";
     private static final String S_P_CHORUS_MASTER                   = PREFIX + "chorus_master";
+    private static final String S_P_CONTRALTO                       = PREFIX + "contralto";
     private static final String S_P_EDITOR                          = PREFIX + "editor";
     private static final String S_P_LEAD_SINGER                     = PREFIX + "lead_singer";
     private static final String S_P_MASTERING                       = PREFIX + "mastering";
@@ -108,6 +118,7 @@ public final class BM // FIXME: rename to BMMO
     private static final String S_P_PROGRAMMING                     = PREFIX + "programming";
     private static final String S_P_RECORDING                       = PREFIX + "recording";
     private static final String S_P_SOPRANO                         = PREFIX + "soprano";
+    private static final String S_P_TENOR                           = PREFIX + "tenor";
 
     private static final String S_P_PERFORMER_ACCORDION             = PREFIX + "performer_accordion";
     private static final String S_P_PERFORMER_ACOUSTIC_BASS_GUITAR  = PREFIX + "performer_acoustic_bass_guitar";
@@ -117,6 +128,7 @@ public final class BM // FIXME: rename to BMMO
     private static final String S_P_PERFORMER_BANJO                 = PREFIX + "performer_banjo";
     private static final String S_P_PERFORMER_BARITONE              = PREFIX + "performer_baritone";
     private static final String S_P_PERFORMER_BARITONE_GUITAR       = PREFIX + "performer_baritone_guitar";
+    private static final String S_P_PERFORMER_BARITONE_SAX          = PREFIX + "performer_baritone_sax";
     private static final String S_P_PERFORMER_BASS                  = PREFIX + "performer_bass";
     private static final String S_P_PERFORMER_BASS_CLARINET         = PREFIX + "performer_bass_clarinet";
     private static final String S_P_PERFORMER_BASS_DRUM             = PREFIX + "performer_bass_drum";
@@ -134,6 +146,7 @@ public final class BM // FIXME: rename to BMMO
     private static final String S_P_PERFORMER_CYMBALS               = PREFIX + "performer_cymbals";
     private static final String S_P_PERFORMER_CLASSICAL_GUITAR      = PREFIX + "performer_classical_guitar";
     private static final String S_P_PERFORMER_DOUBLE_BASS           = PREFIX + "performer_double_bass";
+    private static final String S_P_PERFORMER_DRUM_MACHINE          = PREFIX + "performer_drum_machine";
     private static final String S_P_PERFORMER_DRUMS                 = PREFIX + "performer_drums";
     private static final String S_P_PERFORMER_ELECTRIC_GUITAR       = PREFIX + "performer_electric_guitar";
     private static final String S_P_PERFORMER_ELECTRIC_BASS_GUITAR  = PREFIX + "performer_electric_bass_guitar";
@@ -167,12 +180,14 @@ public final class BM // FIXME: rename to BMMO
     private static final String S_P_PERFORMER_MELODICA              = PREFIX + "performer_melodica";
     private static final String S_P_PERFORMER_OBOE                  = PREFIX + "performer_oboe";
     private static final String S_P_PERFORMER_ORGAN                 = PREFIX + "performer_organ";
+    private static final String S_P_PERFORMER_OTHER_INSTRUMENTS     = PREFIX + "performer_other_instruments";
     private static final String S_P_PERFORMER_PERCUSSION            = PREFIX + "performer_percussion";
     private static final String S_P_PERFORMER_PIANO                 = PREFIX + "performer_piano";
     private static final String S_P_PERFORMER_PICCOLO_TRUMPET       = PREFIX + "performer_piccolo_trumpet";
     private static final String S_P_PERFORMER_PIPE_ORGAN            = PREFIX + "performer_pipe_organ";
     private static final String S_P_PERFORMER_PSALTERY              = PREFIX + "performer_psaltery";
     private static final String S_P_PERFORMER_RECORDER              = PREFIX + "performer_recorder";
+    private static final String S_P_PERFORMER_REEDS                 = PREFIX + "performer_reeds";
     private static final String S_P_PERFORMER_RHODES_PIANO          = PREFIX + "performer_rhodes_piano";
     private static final String S_P_PERFORMER_SANTUR                = PREFIX + "performer_santur";
     private static final String S_P_PERFORMER_SAXOPHONE             = PREFIX + "performer_saxophone";
@@ -183,10 +198,12 @@ public final class BM // FIXME: rename to BMMO
     private static final String S_P_PERFORMER_SOLO                  = PREFIX + "performer_solo";
     private static final String S_P_PERFORMER_SOPRANO_SAX           = PREFIX + "performer_soprano_saxophone";
     private static final String S_P_PERFORMER_SPANISH_ACOUSTIC_GUITAR = PREFIX + "performer_spanish_acoustic_guitar";
+    private static final String S_P_PERFORMER_STEEL_GUITAR          = PREFIX + "performer_steel_guitar";
     private static final String S_P_PERFORMER_SYNCLAVIER            = PREFIX + "performer_synclavier";
     private static final String S_P_PERFORMER_SYNTHESIZER           = PREFIX + "performer_synthesizer";
     private static final String S_P_PERFORMER_TAMBOURINE            = PREFIX + "performer_tambourine";
     private static final String S_P_PERFORMER_TENOR_SAX             = PREFIX + "performer_tenor_sax";
+    private static final String S_P_PERFORMER_TIMBALES              = PREFIX + "performer_timbales";
     private static final String S_P_PERFORMER_TIMPANI               = PREFIX + "performer_timpani";
     private static final String S_P_PERFORMER_TIPLE                 = PREFIX + "performer_tiple";
     private static final String S_P_PERFORMER_TROMBONE              = PREFIX + "performer_trombone";
@@ -203,12 +220,15 @@ public final class BM // FIXME: rename to BMMO
     private static final String S_P_PERFORMER_XYLOPHONE             = PREFIX + "performer_xylophone";
 
     public static final IRI P_ARRANGER                          = FACTORY.createIRI(S_P_ARRANGER);
+    public static final IRI P_ALTO                              = FACTORY.createIRI(S_P_ALTO);
     public static final IRI P_BACKGROUND_SINGER                 = FACTORY.createIRI(S_P_BACKGROUND_SINGER);
     public static final IRI P_BALANCE                           = FACTORY.createIRI(S_P_BALANCE);
     public static final IRI P_BARITONE                          = FACTORY.createIRI(S_P_BARITONE);
     public static final IRI P_BASS                              = FACTORY.createIRI(S_P_BASS);
+    public static final IRI P_BASS_BARITONE                     = FACTORY.createIRI(S_P_BASS_BARITONE);
     public static final IRI P_CHOIR                             = FACTORY.createIRI(S_P_CHOIR);
     public static final IRI P_CHORUS_MASTER                     = FACTORY.createIRI(S_P_CHORUS_MASTER);
+    public static final IRI P_CONTRALTO                         = FACTORY.createIRI(S_P_CONTRALTO);
     public static final IRI P_EDITOR                            = FACTORY.createIRI(S_P_EDITOR);
     public static final IRI P_LEAD_SINGER                       = FACTORY.createIRI(S_P_LEAD_SINGER);
     public static final IRI P_MASTERING                         = FACTORY.createIRI(S_P_MASTERING);
@@ -219,6 +239,7 @@ public final class BM // FIXME: rename to BMMO
     public static final IRI P_PROGRAMMING                       = FACTORY.createIRI(S_P_PROGRAMMING);
     public static final IRI P_RECORDING                         = FACTORY.createIRI(S_P_RECORDING);
     public static final IRI P_SOPRANO                           = FACTORY.createIRI(S_P_SOPRANO);
+    public static final IRI P_TENOR                             = FACTORY.createIRI(S_P_TENOR);
 
     public static final IRI P_PERFORMER_ACCORDION               = FACTORY.createIRI(S_P_PERFORMER_ACCORDION);
     public static final IRI P_PERFORMER_ACOUSTIC_BASS_GUITAR    = FACTORY.createIRI(S_P_PERFORMER_ACOUSTIC_BASS_GUITAR);
@@ -228,6 +249,7 @@ public final class BM // FIXME: rename to BMMO
     public static final IRI P_PERFORMER_BANJO                   = FACTORY.createIRI(S_P_PERFORMER_BANJO);
     public static final IRI P_PERFORMER_BARITONE                = FACTORY.createIRI(S_P_PERFORMER_BARITONE);
     public static final IRI P_PERFORMER_BARITONE_GUITAR         = FACTORY.createIRI(S_P_PERFORMER_BARITONE_GUITAR);
+    public static final IRI P_PERFORMER_BARITONE_SAX            = FACTORY.createIRI(S_P_PERFORMER_BARITONE_SAX);
     public static final IRI P_PERFORMER_BASS                    = FACTORY.createIRI(S_P_PERFORMER_BASS);
     public static final IRI P_PERFORMER_BASS_CLARINET           = FACTORY.createIRI(S_P_PERFORMER_BASS_CLARINET);
     public static final IRI P_PERFORMER_BASS_DRUM               = FACTORY.createIRI(S_P_PERFORMER_BASS_DRUM);
@@ -245,6 +267,7 @@ public final class BM // FIXME: rename to BMMO
     public static final IRI P_PERFORMER_CYMBALS                 = FACTORY.createIRI(S_P_PERFORMER_CYMBALS);
     public static final IRI P_PERFORMER_CLASSICAL_GUITAR        = FACTORY.createIRI(S_P_PERFORMER_CLASSICAL_GUITAR);
     public static final IRI P_PERFORMER_DOUBLE_BASS             = FACTORY.createIRI(S_P_PERFORMER_DOUBLE_BASS);
+    public static final IRI P_PERFORMER_DRUM_MACHINE            = FACTORY.createIRI(S_P_PERFORMER_DRUM_MACHINE);
     public static final IRI P_PERFORMER_DRUMS                   = FACTORY.createIRI(S_P_PERFORMER_DRUMS);
     public static final IRI P_PERFORMER_ELECTRIC_BASS_GUITAR    = FACTORY.createIRI(S_P_PERFORMER_ELECTRIC_BASS_GUITAR);
     public static final IRI P_PERFORMER_ELECTRIC_GUITAR         = FACTORY.createIRI(S_P_PERFORMER_ELECTRIC_GUITAR);
@@ -278,6 +301,7 @@ public final class BM // FIXME: rename to BMMO
     public static final IRI P_PERFORMER_MELODICA                = FACTORY.createIRI(S_P_PERFORMER_MELODICA);
     public static final IRI P_PERFORMER_OBOE                    = FACTORY.createIRI(S_P_PERFORMER_OBOE);
     public static final IRI P_PERFORMER_ORGAN                   = FACTORY.createIRI(S_P_PERFORMER_ORGAN);
+    public static final IRI P_PERFORMER_OTHER_INSTRUMENTS       = FACTORY.createIRI(S_P_PERFORMER_OTHER_INSTRUMENTS);
     public static final IRI P_PERFORMER_PERCUSSION              = FACTORY.createIRI(S_P_PERFORMER_PERCUSSION);
     public static final IRI P_PERFORMER_PIANO                   = FACTORY.createIRI(S_P_PERFORMER_PIANO);
     public static final IRI P_PERFORMER_PICCOLO_TRUMPET         = FACTORY.createIRI(S_P_PERFORMER_PICCOLO_TRUMPET);
@@ -285,6 +309,7 @@ public final class BM // FIXME: rename to BMMO
     public static final IRI P_PERFORMER_PSALTERY                = FACTORY.createIRI(S_P_PERFORMER_PSALTERY);
     public static final IRI P_PERFORMER_RECORDER                = FACTORY.createIRI(S_P_PERFORMER_RECORDER);
     public static final IRI P_PERFORMER_RHODES_PIANO            = FACTORY.createIRI(S_P_PERFORMER_RHODES_PIANO);
+    public static final IRI P_PERFORMER_REEDS                   = FACTORY.createIRI(S_P_PERFORMER_REEDS);
     public static final IRI P_PERFORMER_SANTUR                  = FACTORY.createIRI(S_P_PERFORMER_SANTUR);
     public static final IRI P_PERFORMER_SAXOPHONE               = FACTORY.createIRI(S_P_PERFORMER_SAXOPHONE);
     public static final IRI P_PERFORMER_SHAKERS                 = FACTORY.createIRI(S_P_PERFORMER_SHAKERS);
@@ -296,8 +321,10 @@ public final class BM // FIXME: rename to BMMO
     public static final IRI P_PERFORMER_SYNCLAVIER              = FACTORY.createIRI(S_P_PERFORMER_SYNCLAVIER);
     public static final IRI P_PERFORMER_SYNTHESIZER             = FACTORY.createIRI(S_P_PERFORMER_SYNTHESIZER);
     public static final IRI P_PERFORMER_SPANISH_ACOUSTIC_GUITAR = FACTORY.createIRI(S_P_PERFORMER_SPANISH_ACOUSTIC_GUITAR);
+    public static final IRI P_PERFORMER_STEEL_GUITAR            = FACTORY.createIRI(S_P_PERFORMER_STEEL_GUITAR);
     public static final IRI P_PERFORMER_TAMBOURINE              = FACTORY.createIRI(S_P_PERFORMER_TAMBOURINE);
     public static final IRI P_PERFORMER_TENOR_SAX               = FACTORY.createIRI(S_P_PERFORMER_TENOR_SAX);
+    public static final IRI P_PERFORMER_TIMBALES                = FACTORY.createIRI(S_P_PERFORMER_TIMBALES);
     public static final IRI P_PERFORMER_TIMPANI                 = FACTORY.createIRI(S_P_PERFORMER_TIMPANI);
     public static final IRI P_PERFORMER_TIPLE                   = FACTORY.createIRI(S_P_PERFORMER_TIPLE);
     public static final IRI P_PERFORMER_TROMBONE                = FACTORY.createIRI(S_P_PERFORMER_TROMBONE);

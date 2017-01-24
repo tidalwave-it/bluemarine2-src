@@ -78,7 +78,7 @@ public class RepositoryMusicArtist extends RepositoryEntitySupport implements Mu
     @Override @Nonnull
     public PerformanceFinder findPerformances()
       {
-        return new RepositoryPerformanceFinder(repository).performedBy(this.getId());
+        return new RepositoryPerformanceFinder(repository).performedBy(this);
       }
 
     @Override @Nonnull

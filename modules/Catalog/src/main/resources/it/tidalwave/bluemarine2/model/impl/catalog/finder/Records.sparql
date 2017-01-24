@@ -1,19 +1,25 @@
         SELECT DISTINCT *
         WHERE
           {
-            ?record     a                   mo:Record.
-            ?record     bmmo:importedFrom   ?source.
-            ?record     rdfs:label          ?label.
+                       ?record                a                                         mo:Record;
+                                              rdfs:label                                ?label.
 
-            OPTIONAL { ?record                mo:track_count    ?track_count. }
-            OPTIONAL { ?record                mo:amazon_asin    ?asin.        }
-            OPTIONAL { ?record                mo:gtin           ?gtin.        }
+                     { ?record                bmmo:importedFrom                         ?source.      }
+@fallback@  UNION    { ?record                bmmo:importedFrom                         ?fallback.    }
+@fallback@  MINUS    { ?alt_record            bmmo:alternateOf                          ?record;
+@fallback@                                    bmmo:importedFrom                         ?source.      }
 
-@track@     ?record     mo:track            ?track.
+            MINUS    { bmmo:alternativeItems  bmmo:includes                             ?record.      }
 
-@artist@          { ?record     foaf:maker                                  ?artist. }
-@artist@    UNION { ?record     mo:track/foaf:maker                         ?artist. }
-@artist@    UNION { ?record     foaf:maker/rel:collaboratesWith             ?artist. }
-@artist@    UNION { ?record     mo:track/foaf:maker/rel:collaboratesWith    ?artist. }
+            OPTIONAL { ?record                mo:track_count                            ?track_count. }
+            OPTIONAL { ?record                mo:amazon_asin                            ?asin.        }
+            OPTIONAL { ?record                mo:gtin                                   ?gtin.        }
+
+@track@                ?record                mo:track                                  ?track.
+
+@artist@             { ?record                foaf:maker                                ?artist.      }
+@artist@    UNION    { ?record                mo:track/foaf:maker                       ?artist.      }
+@artist@    UNION    { ?record                foaf:maker/rel:collaboratesWith           ?artist.      }
+@artist@    UNION    { ?record                mo:track/foaf:maker/rel:collaboratesWith  ?artist.      }
           }
         ORDER BY ?label
