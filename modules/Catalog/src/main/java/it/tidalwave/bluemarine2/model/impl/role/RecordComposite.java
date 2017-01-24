@@ -29,17 +29,17 @@
 package it.tidalwave.bluemarine2.model.impl.role;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Finder8;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.Track;
+import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import lombok.RequiredArgsConstructor;
 
 /***********************************************************************************************************************
  *
  * @stereotype  Role
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
@@ -49,9 +49,9 @@ public class RecordComposite implements SimpleComposite8<Track>
   {
     @Nonnull
     private final Record record;
-    
+
     @Override @Nonnull
-    public Finder8<Track> findChildren() 
+    public TrackFinder findChildren()
       {
         return record.findTracks();
       }

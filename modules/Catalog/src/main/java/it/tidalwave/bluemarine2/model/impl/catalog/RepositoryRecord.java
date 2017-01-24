@@ -76,7 +76,7 @@ public class RepositoryRecord extends RepositoryEntitySupport implements Record
     @Override @Nonnull
     public TrackFinder findTracks()
       {
-        return new RepositoryTrackFinder(repository).inRecord(this);
+        return new RepositoryTrackFinder(repository).importedFrom(source).inRecord(this);
         // FIXME? sorted in the query - .sort(new TrackComparator());
       }
 
