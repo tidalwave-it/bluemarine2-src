@@ -65,9 +65,7 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
      ******************************************************************************************************************/
     public RepositoryPerformanceFinder (final @Nonnull Repository repository)
       {
-        super(repository);
-        this.trackId = Optional.empty();
-        this.performerId = Optional.empty();
+        this(repository, Optional.empty(), Optional.empty());
       }
 
     /*******************************************************************************************************************
@@ -129,7 +127,7 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
     protected QueryAndParameters prepareQuery()
       {
         return QueryAndParameters.withSparql(QUERY_PERFORMANCES)
-                                 .withParameter("track", trackId.map(this::iriFor))
+                                 .withParameter("track",  trackId.map(this::iriFor))
                                  .withParameter("artist", performerId.map(this::iriFor));
       }
   }

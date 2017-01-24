@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.model.finder;
 
 import javax.annotation.Nonnull;
+import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.ExtendedFinder8Support;
 import it.tidalwave.bluemarine2.model.MusicPerformer;
 import it.tidalwave.bluemarine2.model.Performance;
@@ -45,5 +46,11 @@ public interface MusicPerformerFinder extends BaseFinder<MusicPerformer, MusicPe
                                               ExtendedFinder8Support<MusicPerformer, MusicPerformerFinder>
   {
     @Nonnull
-    public MusicPerformerFinder performerOf (@Nonnull Performance performance);
+    public MusicPerformerFinder performerOf (@Nonnull Id performanceId);
+
+    @Nonnull
+    public default MusicPerformerFinder performerOf (final @Nonnull Performance performance)
+      {
+        return performerOf(performance.getId());
+      }
   }

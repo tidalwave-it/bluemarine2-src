@@ -31,7 +31,9 @@ package it.tidalwave.bluemarine2.model.finder;
 import javax.annotation.Nonnull;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.ExtendedFinder8Support;
+import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Performance;
+import it.tidalwave.bluemarine2.model.Track;
 
 /***********************************************************************************************************************
  *
@@ -56,5 +58,25 @@ public interface PerformanceFinder extends BaseFinder<Performance, PerformanceFi
      *
      ******************************************************************************************************************/
     @Nonnull
+    public default PerformanceFinder ofTrack (final @Nonnull Track track)
+      {
+        return ofTrack(track.getId());
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
     public PerformanceFinder performedBy (@Nonnull Id performerId);
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public default PerformanceFinder performedBy (final @Nonnull MusicArtist performer)
+      {
+        return performedBy(performer.getId());
+      }
   }

@@ -33,7 +33,6 @@ import java.util.Optional;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MusicPerformer;
-import it.tidalwave.bluemarine2.model.Performance;
 import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;
 import lombok.ToString;
 
@@ -61,8 +60,7 @@ public class RepositoryMusicPerformerFinder extends RepositoryFinderSupport<Musi
      ******************************************************************************************************************/
     public RepositoryMusicPerformerFinder (final @Nonnull Repository repository)
       {
-        super(repository);
-        this.performanceId = Optional.empty();
+        this(repository, Optional.empty());
       }
 
     /*******************************************************************************************************************
@@ -96,9 +94,9 @@ public class RepositoryMusicPerformerFinder extends RepositoryFinderSupport<Musi
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public MusicPerformerFinder performerOf (final @Nonnull Performance performance)
+    public MusicPerformerFinder performerOf (final @Nonnull Id performanceId)
       {
-        return clone(new RepositoryMusicPerformerFinder(repository, Optional.of(performance.getId())));
+        return clone(new RepositoryMusicPerformerFinder(repository, Optional.of(performanceId)));
       }
 
     /*******************************************************************************************************************

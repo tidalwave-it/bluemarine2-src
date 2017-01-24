@@ -28,33 +28,42 @@
  */
 package it.tidalwave.bluemarine2.util;
 
-import static it.tidalwave.bluemarine2.util.Formatters.toHexString;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.time.Instant;
 import java.text.Normalizer;
+import java.util.Base64;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.Optional;
+import java.util.stream.Stream;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import org.eclipse.rdf4j.model.IRI;
+import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.Value;
 import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
-import it.tidalwave.util.Id;
-import static java.nio.charset.StandardCharsets.UTF_8;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import lombok.NoArgsConstructor;
-import static java.text.Normalizer.Form.NFC;
-import java.util.Base64;
-import java.util.Iterator;
-import static java.util.Spliterators.spliteratorUnknownSize;
-import java.util.stream.Stream;
-import static java.util.stream.StreamSupport.stream;
-import static lombok.AccessLevel.PRIVATE;
+import org.eclipse.rdf4j.repository.RepositoryException;
+import org.eclipse.rdf4j.rio.n3.N3Writer;
+import org.eclipse.rdf4j.rio.RDFHandler;
+import org.eclipse.rdf4j.rio.RDFHandlerException;
 import org.eclipse.rdf4j.common.iteration.Iteration;
+import it.tidalwave.util.Id;
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import static java.text.Normalizer.Form.NFC;
+import static java.util.Spliterators.spliteratorUnknownSize;
+import static java.util.stream.StreamSupport.stream;
+import static java.nio.charset.StandardCharsets.UTF_8;
+import static lombok.AccessLevel.PRIVATE;
+import static it.tidalwave.bluemarine2.util.Formatters.*;
 
 /***********************************************************************************************************************
  *
@@ -62,12 +71,49 @@ import org.eclipse.rdf4j.common.iteration.Iteration;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@NoArgsConstructor(access = PRIVATE)
+@NoArgsConstructor(access = PRIVATE) @Slf4j
 public final class RdfUtilities
   {
     private static final String ALGORITHM = "SHA1";
 
     private final static ValueFactory FACTORY = SimpleValueFactory.getInstance(); // FIXME
+
+    /*******************************************************************************************************************
+     *
+     * Exports the repository to the given file. FIXME: duplicated in DefaultPerstistence
+     *
+     ******************************************************************************************************************/
+    public static void exportToFile (final @Nonnull Model model, final @Nonnull Path path)
+      throws RDFHandlerException, IOException, RepositoryException
+      {
+        log.info("exportToFile({})", path);
+        Files.createDirectories(path.getParent());
+
+        try (final PrintWriter pw = new PrintWriter(Files.newBufferedWriter(path, UTF_8)))
+          {
+            final RDFHandler writer = new SortingRDFHandler(new N3Writer(pw));
+            writer.startRDF();
+//            FIXME: use Iterations - and sort
+//            for (final Namespace namespace : connection.getNamespaces().asList())
+//              {
+//                writer.handleNamespace(namespace.getPrefix(), namespace.getName());
+//              }
+
+            writer.handleNamespace("bio",   "http://purl.org/vocab/bio/0.1/");
+            writer.handleNamespace("bmmo",  "http://bluemarine.tidalwave.it/2015/04/mo/");
+            writer.handleNamespace("dc",    "http://purl.org/dc/elements/1.1/");
+            writer.handleNamespace("foaf",  "http://xmlns.com/foaf/0.1/");
+            writer.handleNamespace("owl",   "http://www.w3.org/2002/07/owl#");
+            writer.handleNamespace("mo",    "http://purl.org/ontology/mo/");
+            writer.handleNamespace("rdfs",  "http://www.w3.org/2000/01/rdf-schema#");
+            writer.handleNamespace("rel",   "http://purl.org/vocab/relationship/");
+            writer.handleNamespace("vocab", "http://dbtune.org/musicbrainz/resource/vocab/");
+            writer.handleNamespace("xs",    "http://www.w3.org/2001/XMLSchema#");
+
+            model.stream().forEachOrdered(writer::handleStatement);
+            writer.endRDF();
+          }
+      }
 
     /*******************************************************************************************************************
      *
