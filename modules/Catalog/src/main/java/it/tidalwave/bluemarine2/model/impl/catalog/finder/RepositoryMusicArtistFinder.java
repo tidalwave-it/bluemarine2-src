@@ -62,8 +62,7 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
      ******************************************************************************************************************/
     public RepositoryMusicArtistFinder (final @Nonnull Repository repository)
       {
-        super(repository);
-        this.madeEntityId = Optional.empty();
+        this(repository, Optional.empty());
       }
 
     /*******************************************************************************************************************

@@ -80,7 +80,8 @@ public class RepositoryEntitySupport implements Entity, Identifiable
         this.repository = repository;
         this.id = new Id(toString(bindingSet.getBinding(idName)).get());
         this.rdfsLabel = toString(bindingSet.getBinding("label")).orElse("");
-        this.source = toId(bindingSet.getBinding("source"));
+        this.source = toId(Optional.ofNullable(bindingSet.getBinding("source"))
+                                       .orElse(bindingSet.getBinding("fallback")));
       }
 
     /*******************************************************************************************************************

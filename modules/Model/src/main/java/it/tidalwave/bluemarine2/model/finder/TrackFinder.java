@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.model.finder;
 
 import javax.annotation.Nonnull;
+import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.ExtendedFinder8Support;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
@@ -49,21 +50,49 @@ public interface TrackFinder extends BaseFinder<Track, TrackFinder>,
      *
      * Constrains the search to records made by the given artist.
      *
-     * @param       artist      the artist
-     * @return      the {@code Finder}
+     * @param       artistId    the artist id
+     * @return                  the {@code Finder}
      *
      ******************************************************************************************************************/
     @Nonnull
-    public TrackFinder madeBy (@Nonnull MusicArtist artist);
+    public TrackFinder madeBy (@Nonnull Id artistId);
+
+    /*******************************************************************************************************************
+     *
+     * Constrains the search to records made by the given artist.
+     *
+     * @param       artist      the artist
+     * @return                  the {@code Finder}
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public default TrackFinder madeBy (final @Nonnull MusicArtist artist)
+      {
+        return madeBy(artist.getId());
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Constrains the search to tracks contained in the given record.
+     *
+     * @param       recordId    the record id
+     * @return                  the {@code Finder}
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public TrackFinder inRecord (@Nonnull Id recordId);
 
     /*******************************************************************************************************************
      *
      * Constrains the search to tracks contained in the given record.
      *
      * @param       record      the record
-     * @return      the {@code Finder}
+     * @return                  the {@code Finder}
      *
      ******************************************************************************************************************/
     @Nonnull
-    public TrackFinder inRecord (@Nonnull Record record);
+    public default TrackFinder inRecord (final @Nonnull Record record)
+      {
+        return inRecord(record.getId());
+      }
   }
