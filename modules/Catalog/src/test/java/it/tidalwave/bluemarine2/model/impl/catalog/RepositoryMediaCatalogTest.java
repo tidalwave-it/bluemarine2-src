@@ -58,7 +58,6 @@ import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
-import it.tidalwave.bluemarine2.model.vocabulary.BM;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
