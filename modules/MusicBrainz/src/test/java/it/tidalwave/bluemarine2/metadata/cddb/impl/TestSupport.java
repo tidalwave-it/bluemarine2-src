@@ -82,6 +82,16 @@ public class TestSupport
                               .findFirst()
                               .map(s -> s.replaceAll("^.* = ", ""))
                               .map(Integer::parseInt);
+        final Optional<Integer> diskNumber =
+                lines.stream().filter(s -> s.contains("[mp3.diskNumber]"))
+                              .findFirst()
+                              .map(s -> s.replaceAll("^.* = ", ""))
+                              .map(Integer::parseInt);
+        final Optional<Integer> diskCount =
+                lines.stream().filter(s -> s.contains("[mp3.diskCount]"))
+                              .findFirst()
+                              .map(s -> s.replaceAll("^.* = ", ""))
+                              .map(Integer::parseInt);
         final Optional<ITunesComment> iTunesComment =
                 lines.stream().filter(s -> s.contains("[iTunes.comment]"))
                               .findFirst()
@@ -89,6 +99,8 @@ public class TestSupport
 
         return new MetadataSupport(file).with(ALBUM, albumTitle)
                                         .with(TRACK_NUMBER, trackNumber)
+                                        .with(DISK_NUMBER, diskNumber)
+                                        .with(DISK_COUNT, diskCount)
                                         .with(ITUNES_COMMENT, iTunesComment);
       }
 
@@ -99,7 +111,7 @@ public class TestSupport
     protected static Object[][] trackResourcesProvider()
       {
         return streamOfTestSetTriples(TestSetLocator.allTestSets(), name -> METADATA.resolve(name))
-                .filter(triple -> triple.getFilePath().getFileName().toString().startsWith("01"))
+                .filter(triple -> triple.getFilePath().getFileName().toString().startsWith("01")) // FIXME: should test all tracks
                                                     .collect(toTestNGDataProvider());
       }
   }

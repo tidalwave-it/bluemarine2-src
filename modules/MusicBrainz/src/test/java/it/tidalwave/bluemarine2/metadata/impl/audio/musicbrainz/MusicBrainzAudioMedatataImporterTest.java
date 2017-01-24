@@ -58,7 +58,7 @@ import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
 import static it.tidalwave.bluemarine2.rest.CachingRestClientSupport.CacheMode.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
@@ -166,11 +166,13 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
         final String testSetName = triple.getTestSetName();
         cddbMetadataProvider.setCachePath(CDDB_CACHE.resolve(testSetName));
         musicBrainzMetadataProvider.setCachePath(MUSICBRAINZ_CACHE.resolve(testSetName));
-        final Path relativePath = Paths.get(triple.getRelativePath().toString().replaceAll("-dump\\.txt$", ".n3"));
+        final Metadata metadata = mockMetadataFrom(triple.getFilePath());
+
+        final Path relativePath = Paths.get(triple.getRelativePath().getParent().toString()
+                + metadata.get(DISK_COUNT).map(dc -> (dc.intValue() == 1) ? "" : metadata.get(DISK_NUMBER).map(n -> " _#" + n).orElse("")).orElse("")
+                + ".n3");
         final Path actualResult = TEST_RESULTS.resolve("musicbrainz").resolve(testSetName).resolve(relativePath);
         final Path expectedResult = EXPECTED_RESULTS.resolve("musicbrainz").resolve(testSetName).resolve(relativePath);
-
-        final Metadata metadata = mockMetadataFrom(triple.getFilePath());
 
         stats.putIfAbsent(testSetName, new TestSetStats());
         final TestSetStats testSetStats = stats.get(testSetName);
