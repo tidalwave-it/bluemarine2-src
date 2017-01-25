@@ -69,6 +69,7 @@ import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
+import static org.testng.Assert.*;
 
 /***********************************************************************************************************************
  *
@@ -163,6 +164,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
               {
                 pw.printf("  %s%n", track.toDumpString());
                 tracksOrphanOfArtist.remove(track.toDumpString());
+                assertEquals(track.getSource(), artist.getSource());
               });
           });
 
@@ -185,7 +187,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
                                                     .sorted(BY_DISPLAY_NAME)
                                                     .map(this::displayNameOf)
                                                     .collect(joining("\n      : ", "      : ", ""))));
-
+                assertEquals(track.getSource(), record.getSource());
               });
           });
 
@@ -194,6 +196,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
             final RecordFinder recordFinder = artist.findRecords();
             pw.printf("%nRECORDS OF %s (%d):%n", displayNameOf(artist), recordFinder.count());
             recordFinder.stream().forEach(record -> pw.printf("  %s%n", displayNameOf(record)));
+            recordFinder.stream().forEach(record -> assertEquals(record.getSource(), artist.getSource()));
           });
 
         artists.forEach(artist ->
@@ -201,6 +204,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
             final PerformanceFinder performanceFinder = artist.findPerformances();
             pw.printf("%nPERFORMANCES OF %s (%d):%n", displayNameOf(artist), performanceFinder.count());
             performanceFinder.stream().forEach(performance -> pw.printf("  %s%n", performance.toDumpString()));
+            performanceFinder.stream().forEach(performance -> assertEquals(performance.getSource(), artist.getSource()));
           });
 
         pw.printf("%n%nTRACKS ORPHAN OF ARTIST (%d):%n%n", tracksOrphanOfArtist.size());
