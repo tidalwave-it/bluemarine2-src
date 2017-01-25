@@ -29,41 +29,58 @@
 package it.tidalwave.bluemarine2.model.finder;
 
 import javax.annotation.Nonnull;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import it.tidalwave.util.spi.ExtendedFinder8Support;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import java.util.Optional;
+import it.tidalwave.util.Id;
 
 /***********************************************************************************************************************
  *
- * @stereotype      Finder
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id $
  *
  **********************************************************************************************************************/
-public interface EntityFinder extends ExtendedFinder8Support<PathAwareEntity, EntityFinder>
+public interface SourceAwareFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<ENTITY, BaseFinder<ENTITY, FINDER>>
   {
     /*******************************************************************************************************************
      *
-     * Constrains the search to the entity with the given path.
+     * Specifies the data source of this finder.
      *
-     * @return      the {@code Finder}
+     * @param   source  the source
+     * @return          the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public EntityFinder withPath (@Nonnull Path path);
+    public FINDER importedFrom (final @Nonnull Id source);
 
     /*******************************************************************************************************************
      *
-     * Constrains the search to the entity with the given path.
+     * Specifies the data source of this finder.
      *
-     * @return      the {@code Finder}
+     * @param   optionalSource  the source
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default EntityFinder withPath (@Nonnull String path)
-      {
-        return withPath(Paths.get(path));
-      }
+    public FINDER importedFrom (final @Nonnull Optional<Id> optionalSource);
+
+    /*******************************************************************************************************************
+     *
+     * Specifies the fallback data source of this finder.
+     *
+     * @param   fallback        the fallback source
+     * @return                  the {@code Finder}, in fluent fashion
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public FINDER withFallback (final @Nonnull Id fallback);
+
+    /*******************************************************************************************************************
+     *
+     * Specifies the fallback data source of this finder.
+     *
+     * @param   optionalFallback  the fallback source
+     * @return                    the {@code Finder}, in fluent fashion
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public FINDER withFallback (final @Nonnull Optional<Id> optionalFallback);
   }

@@ -43,11 +43,15 @@ import it.tidalwave.bluemarine2.model.Track;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface PerformanceFinder extends BaseFinder<Performance, PerformanceFinder>,
+public interface PerformanceFinder extends SourceAwareFinder<Performance, PerformanceFinder>,
                                            ExtendedFinder8Support<Performance, PerformanceFinder>
   {
     /*******************************************************************************************************************
      *
+     * Constrains the search to performances of the given track.
+     *
+     * @param       trackId     the id of the track
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -55,6 +59,10 @@ public interface PerformanceFinder extends BaseFinder<Performance, PerformanceFi
 
     /*******************************************************************************************************************
      *
+     * Constrains the search to performances of the given track.
+     *
+     * @param       track       the track
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -65,6 +73,10 @@ public interface PerformanceFinder extends BaseFinder<Performance, PerformanceFi
 
     /*******************************************************************************************************************
      *
+     * Constrains the search to performances of the given performer.
+     *
+     * @param       performerId the id of the performer
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -72,6 +84,10 @@ public interface PerformanceFinder extends BaseFinder<Performance, PerformanceFi
 
     /*******************************************************************************************************************
      *
+     * Constrains the search to performances of the given performer.
+     *
+     * @param       performer   the id of the performer
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull

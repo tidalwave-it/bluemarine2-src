@@ -36,8 +36,8 @@ import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import static it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator.*;
+import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 
 /***********************************************************************************************************************
  *
@@ -71,7 +71,7 @@ public class PathAwareMediaFolderDecorator extends PathAwareEntityDecorator impl
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public EntityFinder findChildren()
+    public PathAwareFinder findChildren()
       {
         final SimpleComposite8<Entity> composite = delegate.as(SimpleComposite8.class);
         return wrappedFinder(this, composite.findChildren());
@@ -98,12 +98,12 @@ public class PathAwareMediaFolderDecorator extends PathAwareEntityDecorator impl
      *
      ******************************************************************************************************************/
     @Nonnull
-    private static EntityFinder wrappedFinder (final @Nonnull MediaFolder parent,
+    private static PathAwareFinder wrappedFinder (final @Nonnull MediaFolder parent,
                                                final @Nonnull Finder8<? extends Entity> finder)
       {
         if (finder instanceof PathAwareEntityFinderDelegate)
           {
-            return (EntityFinder)finder;
+            return (PathAwareFinder)finder;
           }
 
         return new PathAwareEntityFinderDelegate(parent,

@@ -30,12 +30,12 @@ package it.tidalwave.bluemarine2.model.vocabulary;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.util.Id;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Value;
 import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 /***********************************************************************************************************************
  *
@@ -59,6 +59,7 @@ public final class BM // FIXME: rename to BMMO
     public static final String S_P_IMPORTED_FROM        = PREFIX + "importedFrom";
 
     public static final String S_P_ALTERNATE_OF         = PREFIX + "alternateOf";
+    public static final String S_P_ALTERNATE_PICK_OF    = PREFIX + "alternatePickOf";
 
     public static final String S_V_SOURCE_EMBEDDED      = "embedded";
     public static final String S_V_SOURCE_MUSICBRAINZ   = "musicbrainz";
@@ -79,7 +80,13 @@ public final class BM // FIXME: rename to BMMO
     /** Predicate that associates any subject to the data source that created it. */
     public static final IRI P_IMPORTED_FROM             = FACTORY.createIRI(S_P_IMPORTED_FROM);
 
+    /** Predicate that marks an entity from a different source - e.g. an entity imported from MusicBrainz that is
+        marked as alternate of an entity imported from embedded metadata. */
     public static final IRI P_ALTERNATE_OF              = FACTORY.createIRI(S_P_ALTERNATE_OF);
+
+    /** Predicate that marks an entity as an alternative pick that has been suppressed. For instance, a record might
+        appear as a single release or part of a multi-record release; one of them is marked as alternate pick. */
+    public static final IRI P_ALTERNATE_PICK_OF         = FACTORY.createIRI(S_P_ALTERNATE_PICK_OF);
 
     /** Object of the P_SOURCE predicate that says that the subject was imported from MusicBrainz. */
     public static final Value V_SOURCE_EMBEDDED         = FACTORY.createLiteral(S_V_SOURCE_EMBEDDED);
@@ -89,14 +96,6 @@ public final class BM // FIXME: rename to BMMO
 
     public static final Id ID_SOURCE_EMBEDDED           = new Id(S_V_SOURCE_EMBEDDED);
     public static final Id ID_SOURCE_MUSICBRAINZ        = new Id(S_V_SOURCE_MUSICBRAINZ);
-
-    public static final String S_S_ALTERNATIVE_ITEMS    = PREFIX + "alternativeItems";
-    public static final String S_C_PREFERENCE_ITEM      = PREFIX + "PreferenceItem";
-    public static final String S_O_INCLUDES             = PREFIX + "includes";
-
-    public static final IRI S_ALTERNATIVE_ITEMS         = FACTORY.createIRI(S_S_ALTERNATIVE_ITEMS);
-    public static final IRI C_PREFERENCE_ITEM           = FACTORY.createIRI(S_C_PREFERENCE_ITEM);
-    public static final IRI O_INCLUDES                  = FACTORY.createIRI(S_O_INCLUDES);
 
     private static final String S_P_ALTO                            = PREFIX + "alto";
     private static final String S_P_ARRANGER                        = PREFIX + "arranger";
@@ -356,6 +355,12 @@ public final class BM // FIXME: rename to BMMO
     public static IRI trackIriFor (final @Nonnull Id id)
       {
         return FACTORY.createIRI("urn:bluemarine:track:" + id.stringValue());
+      }
+
+    @Nonnull
+    public static IRI performanceIriFor (final @Nonnull Id id)
+      {
+        return FACTORY.createIRI("urn:bluemarine:performance:" + id.stringValue());
       }
 
     @Nonnull

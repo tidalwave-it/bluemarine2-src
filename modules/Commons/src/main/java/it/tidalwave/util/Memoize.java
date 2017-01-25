@@ -26,12 +26,11 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.util;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;
-import it.tidalwave.bluemarine2.model.role.Entity;
+import java.util.function.Supplier;
+import static java.util.Objects.requireNonNull;
 
 /***********************************************************************************************************************
  *
@@ -39,17 +38,44 @@ import it.tidalwave.bluemarine2.model.role.Entity;
  * @version $Id: $
  *
  **********************************************************************************************************************/
-public interface Performance extends Entity, SourceAware, Identifiable
+public class Memoize<T>
   {
-    public static final Class<Performance> Performance = Performance.class;
+    private T value;
 
-    /*******************************************************************************************************************
-     *
-     * Returns the performers of this performance.
-     *
-     * @return  a {@link Finder} for the performers
-     *
-     ******************************************************************************************************************/
+    private transient volatile boolean initialized;
+
+    private transient volatile Supplier<T> supplier;
+
+    public Memoize()
+      {
+      }
+
+    public Memoize (final @Nonnull Supplier<T> supplier)
+      {
+        this.supplier = supplier;
+      }
+
     @Nonnull
-    public MusicPerformerFinder findPerformers();
+    public T get()
+      {
+        return get(requireNonNull(supplier, "get() can be used if the Supplier has been provided in the constructor"));
+      }
+
+    @Nonnull
+    public T get (final @Nonnull Supplier<T> supplier)
+      {
+        if (!initialized) // double checked locking
+          {
+            synchronized (this)
+              {
+                if (!initialized)
+                  {
+                    value = supplier.get();
+                    initialized = true;
+                  }
+              }
+          }
+
+        return value;
+      }
   }

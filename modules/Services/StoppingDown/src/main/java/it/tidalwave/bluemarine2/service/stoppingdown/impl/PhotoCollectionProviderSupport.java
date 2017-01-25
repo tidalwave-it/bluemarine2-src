@@ -48,10 +48,10 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import org.springframework.scheduling.annotation.Scheduled;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 
 /***********************************************************************************************************************
  *
@@ -103,7 +103,7 @@ public class PhotoCollectionProviderSupport implements PhotoCollectionProvider
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
+    public PathAwareFinder findPhotos (final @Nonnull MediaFolder parent)
       {
         throw new UnsupportedOperationException("must be implemented in subclasses");
       }
