@@ -38,14 +38,14 @@ import it.tidalwave.util.Id;
  * @version $Id $
  *
  **********************************************************************************************************************/
-public interface BaseFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<ENTITY, BaseFinder<ENTITY, FINDER>>
+public interface SourceAwareFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<ENTITY, BaseFinder<ENTITY, FINDER>>
   {
     /*******************************************************************************************************************
      *
      * Specifies the data source of this finder.
      *
      * @param   source  the source
-     * @return          the finder, in fluent fashion
+     * @return          the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -56,7 +56,7 @@ public interface BaseFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<EN
      * Specifies the data source of this finder.
      *
      * @param   optionalSource  the source
-     * @return          the finder, in fluent fashion
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -67,7 +67,7 @@ public interface BaseFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<EN
      * Specifies the fallback data source of this finder.
      *
      * @param   fallback        the fallback source
-     * @return          the finder, in fluent fashion
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -78,7 +78,7 @@ public interface BaseFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<EN
      * Specifies the fallback data source of this finder.
      *
      * @param   optionalFallback  the fallback source
-     * @return          the finder, in fluent fashion
+     * @return                    the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull

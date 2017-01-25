@@ -35,11 +35,11 @@ import javax.annotation.concurrent.Immutable;
 import java.nio.file.Path;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.AllArgsConstructor;
 import lombok.experimental.Delegate;
 import lombok.Getter;
+import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 
 /***********************************************************************************************************************
  *
@@ -73,7 +73,7 @@ public class FileSystemMediaFolder implements MediaFolder
       }
 
     @Override @Nonnull
-    public EntityFinder findChildren()
+    public PathAwareFinder findChildren()
       {
         return new FileSystemMediaFolderFinder(this, basePath).sort(new MediaItemComparator());
       }

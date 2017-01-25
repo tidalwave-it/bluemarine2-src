@@ -26,46 +26,20 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.finder;
+package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import it.tidalwave.util.spi.ExtendedFinder8Support;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import java.util.Optional;
+import it.tidalwave.util.Id;
 
 /***********************************************************************************************************************
  *
- * @stereotype      Finder
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id $
  *
  **********************************************************************************************************************/
-public interface EntityFinder extends ExtendedFinder8Support<PathAwareEntity, EntityFinder>
+public interface SourceAware
   {
-    /*******************************************************************************************************************
-     *
-     * Constrains the search to the entity with the given path.
-     *
-     * @path        the path
-     * @return      the {@code Finder}
-     *
-     ******************************************************************************************************************/
     @Nonnull
-    public EntityFinder withPath (@Nonnull Path path);
-
-    /*******************************************************************************************************************
-     *
-     * Constrains the search to the entity with the given path.
-     *
-     * @path        the path
-     * @return      the {@code Finder}
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    public default EntityFinder withPath (@Nonnull String path)
-      {
-        return withPath(Paths.get(path));
-      }
+    public Optional<Id> getSource();
   }

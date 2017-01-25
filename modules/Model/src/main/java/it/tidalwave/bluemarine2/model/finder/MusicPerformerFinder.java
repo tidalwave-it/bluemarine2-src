@@ -42,7 +42,7 @@ import it.tidalwave.bluemarine2.model.Performance;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MusicPerformerFinder extends BaseFinder<MusicPerformer, MusicPerformerFinder>,
+public interface MusicPerformerFinder extends SourceAwareFinder<MusicPerformer, MusicPerformerFinder>,
                                               ExtendedFinder8Support<MusicPerformer, MusicPerformerFinder>
   {
     /*******************************************************************************************************************

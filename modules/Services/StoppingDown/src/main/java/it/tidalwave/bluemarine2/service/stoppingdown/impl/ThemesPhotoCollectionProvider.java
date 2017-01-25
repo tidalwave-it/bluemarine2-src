@@ -49,12 +49,13 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
 import static javax.xml.xpath.XPathConstants.*;
+import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
+import static java.util.Comparator.comparing;
 
 /***********************************************************************************************************************
  *
@@ -127,7 +128,7 @@ public class ThemesPhotoCollectionProvider extends PhotoCollectionProviderSuppor
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public EntityFinder findPhotos (final @Nonnull MediaFolder parent)
+    public PathAwareFinder findPhotos (final @Nonnull MediaFolder parent)
       {
         return parent.finderOf(p -> Arrays.asList(
                 new VirtualMediaFolder(p, PATH_PLACES,   "Places",   this::placesFactory),

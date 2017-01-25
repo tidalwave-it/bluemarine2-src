@@ -43,7 +43,7 @@ import it.tidalwave.bluemarine2.model.Track;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface TrackFinder extends BaseFinder<Track, TrackFinder>,
+public interface TrackFinder extends SourceAwareFinder<Track, TrackFinder>,
                                      ExtendedFinder8Support<Track, TrackFinder>
   {
     /*******************************************************************************************************************

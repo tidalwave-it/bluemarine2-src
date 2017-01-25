@@ -58,7 +58,6 @@ import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.Task;
 import it.tidalwave.util.spi.ReflectionUtils;
 import it.tidalwave.role.ContextManager;
-import it.tidalwave.bluemarine2.model.finder.BaseFinder;
 import it.tidalwave.bluemarine2.model.spi.CacheManager;
 import it.tidalwave.bluemarine2.model.spi.CacheManager.Cache;
 import it.tidalwave.bluemarine2.model.impl.catalog.factory.RepositoryEntityFactory;
@@ -71,6 +70,7 @@ import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.streamOf;
 import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
+import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
 
 /***********************************************************************************************************************
  *
@@ -88,7 +88,7 @@ import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
 @Configurable @Slf4j
 public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
         extends Finder8Support<ENTITY, FINDER>
-        implements BaseFinder<ENTITY, FINDER>
+        implements SourceAwareFinder<ENTITY, FINDER>
   {
     private static final String REGEX_BINDING_TAG = "^@([A-Za-z0-9]*)@";
 

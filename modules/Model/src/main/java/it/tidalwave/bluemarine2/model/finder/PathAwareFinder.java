@@ -26,30 +26,46 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model;
+package it.tidalwave.bluemarine2.model.finder;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;
-import it.tidalwave.bluemarine2.model.role.Entity;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import it.tidalwave.util.spi.ExtendedFinder8Support;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
- * @version $Id: $
+ * @stereotype      Finder
+ *
+ * @author  Fabrizio Giudici
+ * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Performance extends Entity, SourceAware, Identifiable
+public interface PathAwareFinder extends ExtendedFinder8Support<PathAwareEntity, PathAwareFinder>
   {
-    public static final Class<Performance> Performance = Performance.class;
-
     /*******************************************************************************************************************
      *
-     * Returns the performers of this performance.
+     * Constrains the search to the entity with the given path.
      *
-     * @return  a {@link Finder} for the performers
+     * @path        the path
+     * @return      the {@code Finder}
      *
      ******************************************************************************************************************/
     @Nonnull
-    public MusicPerformerFinder findPerformers();
+    public PathAwareFinder withPath (@Nonnull Path path);
+
+    /*******************************************************************************************************************
+     *
+     * Constrains the search to the entity with the given path.
+     *
+     * @path        the path
+     * @return      the {@code Finder}
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public default PathAwareFinder withPath (@Nonnull String path)
+      {
+        return withPath(Paths.get(path));
+      }
   }
