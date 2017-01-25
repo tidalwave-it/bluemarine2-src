@@ -742,8 +742,6 @@ public class MusicBrainzAudioMedatataImporter
         if (rmd.isAlternative())
           {
             model = model.with(recordIri, BM.P_ALTERNATE_PICK_OF, embeddedRecordIri);
-//            model = model.with(BM.S_ALTERNATIVE_ITEMS, RDF.TYPE,      BM.C_PREFERENCE_ITEM)
-//                         .with(BM.S_ALTERNATIVE_ITEMS, BM.O_INCLUDES, recordIri);
           }
 
         return model;
