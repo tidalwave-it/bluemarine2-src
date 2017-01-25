@@ -33,7 +33,6 @@ import org.eclipse.rdf4j.query.BindingSet;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.bluemarine2.model.Performance;
 import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;
-import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicPerformerFinder;
 
 /***********************************************************************************************************************
  *
@@ -51,7 +50,7 @@ public class RepositoryPerformance extends RepositoryEntitySupport implements Pe
     @Override @Nonnull
     public MusicPerformerFinder findPerformers()
       {
-        return new RepositoryMusicPerformerFinder(repository).importedFrom(source).performerOf(this);
+        return _findPerformers().performerOf(this);
       }
 
     @Override @Nonnull

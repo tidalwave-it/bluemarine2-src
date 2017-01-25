@@ -28,12 +28,14 @@
  */
 package it.tidalwave.bluemarine2.model;
 
-import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 import javax.annotation.Nonnull;
-import it.tidalwave.bluemarine2.model.role.Entity;
-import it.tidalwave.bluemarine2.model.finder.TrackFinder;
-import it.tidalwave.bluemarine2.model.finder.RecordFinder;
+import java.util.Optional;
+import it.tidalwave.util.Id;
 import it.tidalwave.role.Identifiable;
+import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
+import it.tidalwave.bluemarine2.model.finder.RecordFinder;
+import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 
 /***********************************************************************************************************************
  *
@@ -76,4 +78,7 @@ public interface MusicArtist extends Entity, Identifiable
     public PerformanceFinder findPerformances();
 
     public int getType(); // FIXME: use an enum
+
+    @Nonnull
+    public Optional<Id> getSource();
   }

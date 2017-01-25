@@ -9,7 +9,7 @@
 @fallback@  MINUS    { ?alt_record            bmmo:alternateOf                          ?record;
 @fallback@                                    bmmo:importedFrom                         ?source.      }
 
-            MINUS    { bmmo:alternativeItems  bmmo:includes                             ?record.      }
+            MINUS    { ?record                bmmo:alternatePickOf                      ?anything.    }
 
             OPTIONAL { ?record                mo:track_count                            ?track_count. }
             OPTIONAL { ?record                mo:amazon_asin                            ?asin.        }

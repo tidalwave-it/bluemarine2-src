@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
+import it.tidalwave.util.Id;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.role.Entity;
@@ -74,4 +75,7 @@ public interface Track extends Entity, Identifiable
      ******************************************************************************************************************/
     @Nonnull
     public Optional<Performance> getPerformance();
+
+    @Nonnull
+    public Optional<Id> getSource();
   }

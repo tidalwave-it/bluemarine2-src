@@ -40,6 +40,7 @@ import java.nio.file.Paths;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.query.BindingSet;
+import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.util.Formatters;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
@@ -48,8 +49,6 @@ import it.tidalwave.bluemarine2.model.Performance;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.Track;
 import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
-import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryPerformanceFinder;
-import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -129,7 +128,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Override @Nonnull
     public Optional<Record> getRecord()
       {
-        return new RepositoryRecordFinder(repository).recordOf(this).optionalFirstResult();
+        return _findRecords().recordOf(this).optionalFirstResult(); // TODO: use memoize
       }
 
     /*******************************************************************************************************************
@@ -140,7 +139,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Override @Nonnull
     public Optional<Performance> getPerformance()
       {
-        return new RepositoryPerformanceFinder(repository).importedFrom(source).ofTrack(this).optionalFirstResult();
+        return _findPerformances().ofTrack(this).optionalFirstResult(); // TODO: use memoize
       }
 
     /*******************************************************************************************************************
@@ -151,7 +150,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Override @Nonnull
     public synchronized AudioFile getAudioFile()
       {
-        if (audioFile == null)
+        if (audioFile == null)// TODO: use memoize
           {
             audioFile = new RepositoryAudioFile(repository,
                                                 id, // FIXME: this should really be the AudioFileId
@@ -177,6 +176,20 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
         return String.format("RepositoryTrack(%02d/%02d %02d, %s, rdfs:label=%s, %s, %s)",
                              diskNumber.orElse(1), diskCount.orElse(1), trackNumber.orElse(1),
                              duration.map(Formatters::format).orElse("??:??"), rdfsLabel, audioFilePath, id);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public String toDumpString()
+      {
+        return String.format("%02d/%02d %02d %s %s (%s) %s - %s",
+                             diskNumber.orElse(1), diskCount.orElse(1), trackNumber.orElse(1),
+                             duration.map(Formatters::format).orElse("??:??"), rdfsLabel, id, audioFilePath,
+                             source.orElse(new Id("unknown")));
       }
 
     /*******************************************************************************************************************

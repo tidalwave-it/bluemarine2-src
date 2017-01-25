@@ -38,6 +38,6 @@ public abstract class RepositoryBrowserByArtistSupport extends RepositoryBrowser
   {
     public RepositoryBrowserByArtistSupport()
       {
-        setFinder(() -> getCatalog().findArtists().withContext(this));
+        super(catalog -> catalog.findArtists());
       }
   }
