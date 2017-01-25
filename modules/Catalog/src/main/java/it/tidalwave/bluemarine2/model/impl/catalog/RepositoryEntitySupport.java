@@ -39,6 +39,17 @@ import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.finder.BaseFinder;
+import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
+import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;
+import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
+import it.tidalwave.bluemarine2.model.finder.RecordFinder;
+import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicPerformerFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryPerformanceFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
 import lombok.experimental.Delegate;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -90,7 +101,50 @@ public class RepositoryEntitySupport implements Entity, Identifiable
 
     /*******************************************************************************************************************
      *
+     ******************************************************************************************************************/
+    @Nonnull
+    protected MusicArtistFinder _findArtists()
+      {
+        return configured(new RepositoryMusicArtistFinder(repository));
+      }
+
+    /*******************************************************************************************************************
      *
+     ******************************************************************************************************************/
+    @Nonnull
+    protected MusicPerformerFinder _findPerformers()
+      {
+        return configured(new RepositoryMusicPerformerFinder(repository));
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    protected RecordFinder _findRecords()
+      {
+        return configured(new RepositoryRecordFinder(repository));
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    protected TrackFinder _findTracks()
+      {
+        return configured(new RepositoryTrackFinder(repository));
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    protected PerformanceFinder _findPerformances()
+      {
+        return configured(new RepositoryPerformanceFinder(repository));
+      }
+
+    /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -101,8 +155,6 @@ public class RepositoryEntitySupport implements Entity, Identifiable
 
     /*******************************************************************************************************************
      *
-     *
-     *
      ******************************************************************************************************************/
     @Nonnull
     protected static Optional<Id> toId (final @Nullable Binding binding)
@@ -111,8 +163,6 @@ public class RepositoryEntitySupport implements Entity, Identifiable
       }
 
     /*******************************************************************************************************************
-     *
-     *
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -123,8 +173,6 @@ public class RepositoryEntitySupport implements Entity, Identifiable
 
     /*******************************************************************************************************************
      *
-     *
-     *
      ******************************************************************************************************************/
     @Nonnull
     protected static Optional<Long> toLong (final @Nullable Binding binding)
@@ -134,12 +182,19 @@ public class RepositoryEntitySupport implements Entity, Identifiable
 
     /*******************************************************************************************************************
      *
-     *
-     *
      ******************************************************************************************************************/
     @Nonnull
     protected static Optional<Duration> toDuration (final @Nullable Binding binding)
       {
         return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> Duration.ofMillis((int)Float.parseFloat(v.stringValue())));
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private <ENTITY, FINDER extends BaseFinder<ENTITY, FINDER>> FINDER configured (final @Nonnull FINDER finder)
+      {
+        return finder.importedFrom(source).withFallback(fallback);
       }
   }
