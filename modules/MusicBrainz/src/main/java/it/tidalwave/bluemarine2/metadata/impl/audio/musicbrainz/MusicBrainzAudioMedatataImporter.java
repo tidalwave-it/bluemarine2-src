@@ -985,11 +985,8 @@ public class MusicBrainzAudioMedatataImporter
         // FIXME: put into a map and then into an external resource with the delta score associated.
         // FIXME: with the filtering on collection size, this might be useless?
         //
-        if (a.matches("^Complete Recordings on Deutsche Grammophon.*")
-         || a.matches("^Gilels - Beethoven - Sonatas.*")
-         || a.matches("^Great Violin Concertos.*")// FIXME: try to drop
-         || a.matches("^Piano Music$")
-         || a.matches("^CBS Great Performances.*")) // FIXME: try to drop
+        if (a.matches("^Great Violin Concertos.*")
+         || a.matches("^CBS Great Performances.*"))
           {
             score -= 50;
           }
@@ -998,12 +995,6 @@ public class MusicBrainzAudioMedatataImporter
          || a.matches("^Klavierkonzerte$"))
           {
             score -= 30;
-          }
-
-        // Ok, this is really a hack
-        if (a.matches("^he Platinum Collection$"))// FIXME: try to drop
-          {
-            score -= 10;
           }
 
         return score;
