@@ -48,6 +48,7 @@ public interface EntityFinder extends ExtendedFinder8Support<PathAwareEntity, En
      *
      * Constrains the search to the entity with the given path.
      *
+     * @path        the path
      * @return      the {@code Finder}
      *
      ******************************************************************************************************************/
@@ -58,6 +59,7 @@ public interface EntityFinder extends ExtendedFinder8Support<PathAwareEntity, En
      *
      * Constrains the search to the entity with the given path.
      *
+     * @path        the path
      * @return      the {@code Finder}
      *
      ******************************************************************************************************************/

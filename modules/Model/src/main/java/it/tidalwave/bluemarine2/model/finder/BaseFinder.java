@@ -40,15 +40,47 @@ import it.tidalwave.util.Id;
  **********************************************************************************************************************/
 public interface BaseFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<ENTITY, BaseFinder<ENTITY, FINDER>>
   {
+    /*******************************************************************************************************************
+     *
+     * Specifies the data source of this finder.
+     *
+     * @param   source  the source
+     * @return          the finder, in fluent fashion
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public FINDER importedFrom (final @Nonnull Id source);
 
+    /*******************************************************************************************************************
+     *
+     * Specifies the data source of this finder.
+     *
+     * @param   optionalSource  the source
+     * @return          the finder, in fluent fashion
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public FINDER importedFrom (final @Nonnull Optional<Id> optionalSource);
 
+    /*******************************************************************************************************************
+     *
+     * Specifies the fallback data source of this finder.
+     *
+     * @param   fallback        the fallback source
+     * @return          the finder, in fluent fashion
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public FINDER withFallback (final @Nonnull Id fallback);
 
+    /*******************************************************************************************************************
+     *
+     * Specifies the fallback data source of this finder.
+     *
+     * @param   optionalFallback  the fallback source
+     * @return          the finder, in fluent fashion
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public FINDER withFallback (final @Nonnull Optional<Id> optionalFallback);
   }

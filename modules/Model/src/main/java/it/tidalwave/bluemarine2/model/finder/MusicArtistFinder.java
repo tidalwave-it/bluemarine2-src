@@ -49,7 +49,8 @@ public interface MusicArtistFinder extends BaseFinder<MusicArtist, MusicArtistFi
      *
      * Constrains the search to artists who are makers of the given entity.
      *
-     * @return      the {@code Finder}
+     * @param       entityId    the id of the entity
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -59,7 +60,8 @@ public interface MusicArtistFinder extends BaseFinder<MusicArtist, MusicArtistFi
      *
      * Constrains the search to artists who are makers of the given entity.
      *
-     * @return      the {@code Finder}
+     * @param       entity      the entity
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
