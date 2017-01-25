@@ -40,7 +40,6 @@ import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
 
 /***********************************************************************************************************************
@@ -54,12 +53,6 @@ public class RepositoryMediaCatalog implements MediaCatalog
   {
     @Nonnull
     private final Repository repository;
-
-    @Setter // FIXME: temporary
-    private Id source = ID_SOURCE_MUSICBRAINZ;
-
-    @Setter // FIXME: temporary
-    private Id fallback = ID_SOURCE_EMBEDDED;
 
     @Override @Nonnull
     public MusicArtistFinder findArtists()
@@ -88,12 +81,12 @@ public class RepositoryMediaCatalog implements MediaCatalog
     @Nonnull
     private Id getSource()
       {
-        return source; // FIXME: get from Preferences
+        return new Id(System.getProperty("bluemarine2.source", ID_SOURCE_EMBEDDED.stringValue())); // FIXME: get from Preferences
       }
 
     @Nonnull
     private Id getFallback()
       {
-        return fallback; // FIXME: get from Preferences
+        return new Id(System.getProperty("bluemarine2.fallback", ID_SOURCE_EMBEDDED.stringValue())); // FIXME: get from Preferences
       }
   }

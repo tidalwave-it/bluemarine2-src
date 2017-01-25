@@ -118,8 +118,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         loadInMemoryCatalog(repository, PATH_TEST_SETS.resolve(testSetName + ".n3"));
         // when
         final RepositoryMediaCatalog underTest = new RepositoryMediaCatalog(repository);
-        underTest.setSource(source);
-        underTest.setFallback(fallbackSource);
+        System.setProperty("bluemarine2.source", source.stringValue());
+        System.setProperty("bluemarine2.fallback", fallbackSource.stringValue());
         // then
         final Path expectedResult = PATH_EXPECTED_TEST_RESULTS.resolve(testSetName + "-dump.txt");
         final Path actualResult = PATH_TEST_RESULTS.resolve(testSetName + "-dump.txt");
