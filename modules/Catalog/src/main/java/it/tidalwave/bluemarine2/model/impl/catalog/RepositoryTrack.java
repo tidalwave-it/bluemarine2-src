@@ -181,6 +181,19 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
     /*******************************************************************************************************************
      *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public String toDumpString()
+      {
+        return String.format("%02d/%02d %02d %s %s (%s) %s",
+                             diskNumber.orElse(1), diskCount.orElse(1), trackNumber.orElse(1),
+                             duration.map(Formatters::format).orElse("??:??"), rdfsLabel, id, audioFilePath);
+      }
+
+    /*******************************************************************************************************************
+     *
      * Tries to fix a path for character normalization issues (see BMT-46). The idea is to first normalize the encoding
      * to the native form. If it doesn't work, a broken path is replaced to avoid further errors (of course, the
      * resource won't be available when requested).

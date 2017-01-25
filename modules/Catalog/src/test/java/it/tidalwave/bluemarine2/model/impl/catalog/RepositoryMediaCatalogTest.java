@@ -145,15 +145,15 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         pw.printf("ALL TRACKS (%d):%n%n", allTracksFinder.count());
         final Map<String, Track> tracksOrphanOfArtist = allTracksFinder.stream()
-                                                            .collect(toMap(Track::toString, Function.identity(), (u,v) -> v));
+                                                            .collect(toMap(Track::toDumpString, Function.identity(), (u,v) -> v));
         final Map<String, Track> tracksOrphanOfRecord = new HashMap<>(tracksOrphanOfArtist);
-        tracksOrphanOfArtist.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s%n", track));
+        tracksOrphanOfArtist.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s%n", track.toDumpString()));
 
         pw.printf("%n%n%nALL RECORDS (%d):%n%n", allRecordsFinder.count());
-        records.forEach(record -> pw.printf("%s - %s%n", displayNameOf(record), record.getSource().orElse(new Id("unknown"))));
+        records.forEach(record -> pw.printf("  %s - %s%n", displayNameOf(record), record.getSource().orElse(new Id("unknown"))));
 
         pw.printf("%n%n%nALL ARTISTS (%d):%n%n", allArtistsFinder.count());
-        artists.forEach(artist -> pw.println(displayNameOf(artist)));
+        artists.forEach(artist -> pw.printf("  %s - %s%n", displayNameOf(artist), artist.getSource().orElse(new Id("unknown"))));
 
         artists.forEach(artist ->
           {
@@ -161,8 +161,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
             pw.printf("%nTRACKS OF %s (%d):%n", displayNameOf(artist), artistTracksFinder.count());
             artistTracksFinder.stream().forEach(track ->
               {
-                pw.printf("  %s%n", track);
-                tracksOrphanOfArtist.remove(track.toString());
+                pw.printf("  %s%n", track.toDumpString());
+                tracksOrphanOfArtist.remove(track.toDumpString());
               });
           });
 
@@ -178,8 +178,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
             recordTrackFinder.stream().forEach(track ->
               {
-                pw.printf("    %s%n", track);
-                tracksOrphanOfRecord.remove(track.toString());
+                pw.printf("    %s%n", track.toDumpString());
+                tracksOrphanOfRecord.remove(track.toDumpString());
                 track.getPerformance().ifPresent(performance -> pw.printf("%s%n",
                         performance.findPerformers().stream()
                                                     .sorted(BY_DISPLAY_NAME)
@@ -204,10 +204,10 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
           });
 
         pw.printf("%n%nTRACKS ORPHAN OF ARTIST (%d):%n%n", tracksOrphanOfArtist.size());
-        tracksOrphanOfArtist.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s%n", track));
+        tracksOrphanOfArtist.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s%n", track.toDumpString()));
 
         pw.printf("%n%nTRACKS ORPHAN OF RECORD (%d):%n%n", tracksOrphanOfRecord.size());
-        tracksOrphanOfRecord.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s%n", track));
+        tracksOrphanOfRecord.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s%n", track.toDumpString()));
 
         pw.close();
       }
