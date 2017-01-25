@@ -37,10 +37,10 @@ import it.tidalwave.util.Id;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.role.spi.DefaultDisplayable;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.Getter;
 import lombok.ToString;
+import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 
 /***********************************************************************************************************************
  *
@@ -56,7 +56,7 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
       {
       }
 
-    public static interface EntityFinderFactory extends Function<MediaFolder, EntityFinder>
+    public static interface EntityFinderFactory extends Function<MediaFolder, PathAwareFinder>
       {
       }
 
@@ -121,7 +121,7 @@ public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
       }
 
     @Override @Nonnull
-    public EntityFinder findChildren()
+    public PathAwareFinder findChildren()
       {
         return finderFactory.apply(this);
       }

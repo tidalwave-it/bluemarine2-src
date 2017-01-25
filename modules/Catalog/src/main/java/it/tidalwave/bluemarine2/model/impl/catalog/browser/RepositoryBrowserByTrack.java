@@ -54,6 +54,6 @@ public class RepositoryBrowserByTrack extends RepositoryBrowserSupport
 
     public RepositoryBrowserByTrack()
       {
-        setFinder(() -> getCatalog().findTracks().sort(new ByTrackName()));
+        super(catalog -> catalog.findTracks().sort(new ByTrackName()));
       }
   }

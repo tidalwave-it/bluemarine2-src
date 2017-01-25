@@ -31,7 +31,7 @@ package it.tidalwave.bluemarine2.model.impl.catalog.browser;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.util.function.Supplier;
+import java.util.function.Function;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
@@ -57,7 +57,12 @@ public class RepositoryBrowserSupport extends EntityWithRoles implements EntityB
     private MediaCatalog catalog;
 
     @Nonnull
-    protected SimpleComposite8<? extends Entity> compositeForRootEntity;
+    protected final SimpleComposite8<? extends Entity> compositeForRootEntity;
+
+    protected RepositoryBrowserSupport (final @Nonnull Function<MediaCatalog, Finder8<? extends Entity>> finderFactory)
+      {
+        compositeForRootEntity = () -> finderFactory.apply(getCatalog()).withContext(RepositoryBrowserSupport.this);
+      }
 
     @Override @Nonnull
     public Entity getRoot()
@@ -65,15 +70,10 @@ public class RepositoryBrowserSupport extends EntityWithRoles implements EntityB
         return new EntityWithRoles(compositeForRootEntity, this.as(Displayable)); // FIXME: what about an EntityDecorator?
       }
 
-    protected final void setFinder (final @Nonnull Supplier<Finder8<? extends Entity>> finderSupplier)
-      {
-        compositeForRootEntity = () -> finderSupplier.get();
-      }
-
     @Nonnull
     protected final synchronized MediaCatalog getCatalog()
       {
-        if (catalog == null)
+        if (catalog == null) // FIXME: use memoizer
           {
             catalog = new RepositoryMediaCatalog(persistence.getRepository());
           }

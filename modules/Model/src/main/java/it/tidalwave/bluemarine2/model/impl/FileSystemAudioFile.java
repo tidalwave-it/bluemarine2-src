@@ -108,6 +108,12 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
           {
             throw new UnsupportedOperationException("Not supported yet."); // FIXME
           }
+
+        @Override
+        public Optional<Id> getSource()
+          {
+            return Optional.of(new Id("embedded")); // FIXME
+          }
       }
 
     /*******************************************************************************************************************

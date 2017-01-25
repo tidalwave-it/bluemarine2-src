@@ -30,14 +30,19 @@ package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
 import org.eclipse.rdf4j.repository.Repository;
+import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
+import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryPerformanceFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
 import lombok.RequiredArgsConstructor;
+import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
+import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
 
 /***********************************************************************************************************************
  *
@@ -54,18 +59,42 @@ public class RepositoryMediaCatalog implements MediaCatalog
     @Override @Nonnull
     public MusicArtistFinder findArtists()
       {
-        return new RepositoryMusicArtistFinder(repository);
+        return configured(new RepositoryMusicArtistFinder(repository));
       }
 
     @Override @Nonnull
     public RecordFinder findRecords()
       {
-        return new RepositoryRecordFinder(repository);
+        return configured(new RepositoryRecordFinder(repository));
       }
 
     @Override @Nonnull
     public TrackFinder findTracks()
       {
-        return new RepositoryTrackFinder(repository);
+        return configured(new RepositoryTrackFinder(repository));
+      }
+
+    @Override @Nonnull
+    public PerformanceFinder findPerformances()
+      {
+        return configured(new RepositoryPerformanceFinder(repository));
+      }
+
+    @Nonnull
+    private <ENTITY, FINDER extends SourceAwareFinder<ENTITY, FINDER>> FINDER configured (final @Nonnull FINDER finder)
+      {
+        return finder.importedFrom(getSource()).withFallback(getFallback());
+      }
+
+    @Nonnull
+    private Id getSource()
+      {
+        return new Id(System.getProperty("bluemarine2.source", ID_SOURCE_EMBEDDED.stringValue())); // FIXME: get from Preferences
+      }
+
+    @Nonnull
+    private Id getFallback()
+      {
+        return new Id(System.getProperty("bluemarine2.fallback", ID_SOURCE_EMBEDDED.stringValue())); // FIXME: get from Preferences
       }
   }

@@ -10,7 +10,7 @@ ALL RECORDS (0):
 
 ALL ARTISTS (1):
 
-Aaron Copland (http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09)
+  Aaron Copland (http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09) - embedded
 
 TRACKS OF Aaron Copland (http://dbtune.org/musicbrainz/resource/artist/aad3af83-5b59-4b86-a569-1a8409149b09) (0):
 

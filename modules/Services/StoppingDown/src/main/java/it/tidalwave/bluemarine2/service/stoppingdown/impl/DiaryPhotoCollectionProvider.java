@@ -47,7 +47,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder.EntityCollectionFactory;
@@ -55,6 +54,8 @@ import lombok.extern.slf4j.Slf4j;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 import static javax.xml.xpath.XPathConstants.NODESET;
+import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
+import static java.util.Comparator.comparing;
 
 /***********************************************************************************************************************
  *
@@ -113,7 +114,7 @@ public class DiaryPhotoCollectionProvider extends PhotoCollectionProviderSupport
      ******************************************************************************************************************/
     @Override
     @Nonnull
-    public EntityFinder findPhotos(final @Nonnull MediaFolder parent) {
+    public PathAwareFinder findPhotos(final @Nonnull MediaFolder parent) {
         return parent.finderOf(
                 p1 -> IntStream.range(1999, 2016 + 1) // FIXME: use current year
                         .mapToObj(x -> x)

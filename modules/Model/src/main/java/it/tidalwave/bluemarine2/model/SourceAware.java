@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.finder;
+package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
@@ -38,17 +38,8 @@ import it.tidalwave.util.Id;
  * @version $Id $
  *
  **********************************************************************************************************************/
-public interface BaseFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<ENTITY, BaseFinder<ENTITY, FINDER>>
+public interface SourceAware
   {
     @Nonnull
-    public FINDER importedFrom (final @Nonnull Id source);
-
-    @Nonnull
-    public FINDER importedFrom (final @Nonnull Optional<Id> optionalSource);
-
-    @Nonnull
-    public FINDER withFallback (final @Nonnull Id fallback);
-
-    @Nonnull
-    public FINDER withFallback (final @Nonnull Optional<Id> optionalFallback);
+    public Optional<Id> getSource();
   }
