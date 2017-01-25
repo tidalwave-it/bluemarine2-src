@@ -65,6 +65,9 @@ public class RepositoryEntitySupport implements Entity, Identifiable
     @Getter @Nonnull
     protected final Optional<Id> source;
 
+    @Getter @Nonnull
+    protected final Optional<Id> fallback;
+
     @Delegate
     private final AsSupport asSupport = new AsSupport(this);
 
@@ -80,6 +83,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
         this.repository = repository;
         this.id = new Id(toString(bindingSet.getBinding(idName)).get());
         this.rdfsLabel = toString(bindingSet.getBinding("label")).orElse("");
+        this.fallback = toId(bindingSet.getBinding("fallback"));
         this.source = toId(Optional.ofNullable(bindingSet.getBinding("source"))
                                        .orElse(bindingSet.getBinding("fallback")));
       }

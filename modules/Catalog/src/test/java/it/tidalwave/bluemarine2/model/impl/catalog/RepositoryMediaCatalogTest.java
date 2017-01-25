@@ -49,7 +49,6 @@ import org.eclipse.rdf4j.rio.RDFParseException;
 import org.eclipse.rdf4j.sail.memory.MemoryStore;
 import org.testng.annotations.DataProvider;
 import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.MusicPerformer;
 import it.tidalwave.bluemarine2.model.Record;
@@ -117,30 +116,29 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         loadInMemoryCatalog(repository, PATH_TEST_SETS.resolve(testSetName + ".n3"));
         // when
-        final MediaCatalog underTest = new RepositoryMediaCatalog(repository);
+        final RepositoryMediaCatalog underTest = new RepositoryMediaCatalog(repository);
+        underTest.setSource(source);
+        underTest.setFallback(fallbackSource);
         // then
         final Path expectedResult = PATH_EXPECTED_TEST_RESULTS.resolve(testSetName + "-dump.txt");
         final Path actualResult = PATH_TEST_RESULTS.resolve(testSetName + "-dump.txt");
-        queryAndDump(underTest, actualResult, source, fallbackSource);
+        queryAndDump(underTest, actualResult);
         assertSameContents(normalizedPath(expectedResult).toFile(), normalizedPath(actualResult).toFile());
       }
 
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    private void queryAndDump (final @Nonnull MediaCatalog catalog,
-                               final @Nonnull Path dumpPath,
-                               final @Nonnull Id source,
-                               final @Nonnull Id fallbackSource)
+    private void queryAndDump (final @Nonnull RepositoryMediaCatalog catalog, final @Nonnull Path dumpPath)
       throws IOException
       {
         log.info("queryAndDump(.., {})", dumpPath);
         createDirectories(PATH_TEST_RESULTS);
         final PrintWriter pw = new PrintWriter(dumpPath.toFile(), "UTF-8");
 
-        final MusicArtistFinder allArtistsFinder = catalog.findArtists().importedFrom(source);
-        final RecordFinder allRecordsFinder = catalog.findRecords().importedFrom(source).withFallback(fallbackSource);
-        final TrackFinder allTracksFinder = catalog.findTracks().importedFrom(source);
+        final MusicArtistFinder allArtistsFinder = catalog.findArtists();
+        final RecordFinder allRecordsFinder = catalog.findRecords();
+        final TrackFinder allTracksFinder = catalog.findTracks();
 
         final List<MusicArtist> artists = allArtistsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
         final List<Record> records = allRecordsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
@@ -159,7 +157,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         artists.forEach(artist ->
           {
-            final TrackFinder artistTracksFinder = artist.findTracks().importedFrom(source);
+            final TrackFinder artistTracksFinder = artist.findTracks();
             pw.printf("%nTRACKS OF %s (%d):%n", displayNameOf(artist), artistTracksFinder.count());
             artistTracksFinder.stream().forEach(track ->
               {
@@ -193,14 +191,14 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         artists.forEach(artist ->
           {
-            final RecordFinder recordFinder = artist.findRecords().importedFrom(source);
+            final RecordFinder recordFinder = artist.findRecords();
             pw.printf("%nRECORDS OF %s (%d):%n", displayNameOf(artist), recordFinder.count());
             recordFinder.stream().forEach(record -> pw.printf("  %s%n", displayNameOf(record)));
           });
 
         artists.forEach(artist ->
           {
-            final PerformanceFinder performanceFinder = artist.findPerformances().importedFrom(source);
+            final PerformanceFinder performanceFinder = artist.findPerformances();
             pw.printf("%nPERFORMANCES OF %s (%d):%n", displayNameOf(artist), performanceFinder.count());
             performanceFinder.stream().forEach(performance -> pw.printf("  %s%n", performance.toDumpString()));
           });

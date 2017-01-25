@@ -66,19 +66,19 @@ public class RepositoryMusicArtist extends RepositoryEntitySupport implements Mu
     @Override @Nonnull
     public TrackFinder findTracks()
       {
-        return new RepositoryTrackFinder(repository).madeBy(this);
+        return new RepositoryTrackFinder(repository).importedFrom(source).withFallback(fallback).madeBy(this);
       }
 
     @Override @Nonnull
     public RecordFinder findRecords()
       {
-        return new RepositoryRecordFinder(repository).madeBy(this);
+        return new RepositoryRecordFinder(repository).importedFrom(source).withFallback(fallback).madeBy(this);
       }
 
     @Override @Nonnull
     public PerformanceFinder findPerformances()
       {
-        return new RepositoryPerformanceFinder(repository).performedBy(this);
+        return new RepositoryPerformanceFinder(repository).importedFrom(source).withFallback(fallback).performedBy(this);
       }
 
     @Override @Nonnull
