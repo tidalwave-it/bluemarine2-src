@@ -40,6 +40,7 @@ import java.nio.file.Paths;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.query.BindingSet;
+import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.util.Formatters;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
@@ -185,9 +186,10 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Override @Nonnull
     public String toDumpString()
       {
-        return String.format("%02d/%02d %02d %s %s (%s) %s",
+        return String.format("%02d/%02d %02d %s %s (%s) %s - %s",
                              diskNumber.orElse(1), diskCount.orElse(1), trackNumber.orElse(1),
-                             duration.map(Formatters::format).orElse("??:??"), rdfsLabel, id, audioFilePath);
+                             duration.map(Formatters::format).orElse("??:??"), rdfsLabel, id, audioFilePath,
+                             source.orElse(new Id("unknown")));
       }
 
     /*******************************************************************************************************************
