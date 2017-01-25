@@ -37,10 +37,10 @@ import org.springframework.core.annotation.Order;
  *
  **********************************************************************************************************************/
 @Order(30)
-public class RepositoryBrowserByRecordThenTrack extends RepositoryBrowserSupport 
+public class RepositoryBrowserByRecordThenTrack extends RepositoryBrowserSupport
   {
     public RepositoryBrowserByRecordThenTrack()
       {
-        setFinder(() -> getCatalog().findRecords());
+        super(catalog -> catalog.findRecords());
       }
   }

@@ -33,9 +33,9 @@ import java.util.Collection;
 import java.util.function.Function;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.impl.PathAwareEntityFinderDelegate;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 
 /***********************************************************************************************************************
  *
@@ -57,7 +57,7 @@ public interface MediaFolder extends PathAwareEntity, SimpleComposite8<PathAware
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public EntityFinder findChildren();
+    public PathAwareFinder findChildren();
 
     /*******************************************************************************************************************
      *
@@ -65,7 +65,7 @@ public interface MediaFolder extends PathAwareEntity, SimpleComposite8<PathAware
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default EntityFinder finderOf (final @Nonnull Finder8<PathAwareEntity> delegate)
+    public default PathAwareFinder finderOf (final @Nonnull Finder8<PathAwareEntity> delegate)
       {
         return new PathAwareEntityFinderDelegate(this, delegate);
       }
@@ -76,7 +76,7 @@ public interface MediaFolder extends PathAwareEntity, SimpleComposite8<PathAware
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default EntityFinder finderOf (final @Nonnull Function<MediaFolder, Collection<? extends PathAwareEntity>> function)
+    public default PathAwareFinder finderOf (final @Nonnull Function<MediaFolder, Collection<? extends PathAwareEntity>> function)
       {
         return new PathAwareEntityFinderDelegate(this, function);
       }

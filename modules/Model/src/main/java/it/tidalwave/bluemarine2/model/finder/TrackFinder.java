@@ -43,7 +43,7 @@ import it.tidalwave.bluemarine2.model.Track;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface TrackFinder extends BaseFinder<Track, TrackFinder>,
+public interface TrackFinder extends SourceAwareFinder<Track, TrackFinder>,
                                      ExtendedFinder8Support<Track, TrackFinder>
   {
     /*******************************************************************************************************************
@@ -51,7 +51,7 @@ public interface TrackFinder extends BaseFinder<Track, TrackFinder>,
      * Constrains the search to records made by the given artist.
      *
      * @param       artistId    the artist id
-     * @return                  the {@code Finder}
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -62,7 +62,7 @@ public interface TrackFinder extends BaseFinder<Track, TrackFinder>,
      * Constrains the search to records made by the given artist.
      *
      * @param       artist      the artist
-     * @return                  the {@code Finder}
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -76,7 +76,7 @@ public interface TrackFinder extends BaseFinder<Track, TrackFinder>,
      * Constrains the search to tracks contained in the given record.
      *
      * @param       recordId    the record id
-     * @return                  the {@code Finder}
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -87,7 +87,7 @@ public interface TrackFinder extends BaseFinder<Track, TrackFinder>,
      * Constrains the search to tracks contained in the given record.
      *
      * @param       record      the record
-     * @return                  the {@code Finder}
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull

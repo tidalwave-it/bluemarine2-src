@@ -30,7 +30,7 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
+import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 
 /***********************************************************************************************************************
  *
@@ -41,5 +41,5 @@ import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 public interface PhotoCollectionProvider
   {
     @Nonnull
-    public EntityFinder findPhotos (@Nonnull MediaFolder parent);
+    public PathAwareFinder findPhotos (@Nonnull MediaFolder parent);
   }

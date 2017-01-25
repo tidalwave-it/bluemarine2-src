@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
+import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 
 /***********************************************************************************************************************
  *
@@ -39,16 +40,47 @@ import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaCatalog 
+public interface MediaCatalog
   {
     public static final Class<MediaCatalog> MediaCatalog = MediaCatalog.class;
-    
+
+    /*******************************************************************************************************************
+     *
+     * Finds the {@link MusicArtist}s in this catalog.
+     *
+     * @return  a {@link Finder} for the artists
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public MusicArtistFinder findArtists();
 
+    /*******************************************************************************************************************
+     *
+     * Finds the {@link Record}s in this catalog.
+     *
+     * @return  a {@link Finder} for the records
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public RecordFinder findRecords();
 
+    /*******************************************************************************************************************
+     *
+     * Finds the {@link Track}s in this catalog.
+     *
+     * @return  a {@link Finder} for the tracks
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public TrackFinder findTracks();
+
+    /*******************************************************************************************************************
+     *
+     * Finds the {@link Performance}s in this catalog.
+     *
+     * @return  a {@link Finder} for the performances
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public PerformanceFinder findPerformances();
   }

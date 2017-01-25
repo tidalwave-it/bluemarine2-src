@@ -42,12 +42,28 @@ import it.tidalwave.bluemarine2.model.Performance;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MusicPerformerFinder extends BaseFinder<MusicPerformer, MusicPerformerFinder>,
+public interface MusicPerformerFinder extends SourceAwareFinder<MusicPerformer, MusicPerformerFinder>,
                                               ExtendedFinder8Support<MusicPerformer, MusicPerformerFinder>
   {
+    /*******************************************************************************************************************
+     *
+     * Constrains the search to artists who are performers of the given entity.
+     *
+     * @param       performanceId   the id of the performance
+     * @return                      the {@code Finder}, in fluent fashion
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public MusicPerformerFinder performerOf (@Nonnull Id performanceId);
 
+    /*******************************************************************************************************************
+     *
+     * Constrains the search to artists who are performers of the given entity.
+     *
+     * @param       performance     the  performance
+     * @return                      the {@code Finder}, in fluent fashion
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public default MusicPerformerFinder performerOf (final @Nonnull Performance performance)
       {
