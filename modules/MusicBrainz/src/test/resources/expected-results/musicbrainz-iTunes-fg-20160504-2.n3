@@ -9,9 +9,6 @@
 @prefix vocab: <http://dbtune.org/musicbrainz/resource/vocab/> .
 @prefix xs: <http://www.w3.org/2001/XMLSchema#> .
 
-bmmo:alternativeItems a bmmo:PreferenceItem ;
-	bmmo:includes <urn:bluemarine:record:00uNnxnJgDQuYoYcmiD2idfHgvo=> , <urn:bluemarine:record:083JGePr0Mp5GWFGwz_-cYxQlB8=> , <urn:bluemarine:record:22anXkhFjpDcCbWuiGreH8Xyks4=> , <urn:bluemarine:record:3G9eU5h6tC0cdm3AEt0N2GrzUbc=> , <urn:bluemarine:record:4uxXE9_-OthElnLuj22qSf8OnZI=> , <urn:bluemarine:record:7znsQpAo37Aaug3A8P8UyzpRvmY=> , <urn:bluemarine:record:8nt60pC4jma9qAeXInfxIA2U-TQ=> , <urn:bluemarine:record:8w1tyblmLsYx4njQpsP5d51l7jA=> , <urn:bluemarine:record:FB3t9I4szKnWUDCshT4nmIo8gvc=> , <urn:bluemarine:record:IUcVatqCMZzbckcxbs4N2YIl_k8=> , <urn:bluemarine:record:KGIBUGPnM11sIr4TzuBlAwwb0Ao=> , <urn:bluemarine:record:KwRYyboOukGYDi8ewPw8UnaUYQI=> , <urn:bluemarine:record:RBVERLGQIKd2Idw7lVQJbjA3s8Q=> , <urn:bluemarine:record:RxH06klPg8Xl0lWbT1j9usADwf8=> , <urn:bluemarine:record:SnUPvsKyTBT3J1brp2Pjq7o7kHc=> , <urn:bluemarine:record:TSZglnO1HLTXWaQrwDWp3vxnZ_c=> , <urn:bluemarine:record:WtI-23heaQw0j4liPu1OXIQ-PT8=> , <urn:bluemarine:record:Wwe1ALTYfgVzwiaw63r69MWuXKg=> , <urn:bluemarine:record:dCnvmIRLIjswx6kR3t9J00OM_KE=> , <urn:bluemarine:record:dpVJMMsiJMEUcvBixDMCoaGF4Fg=> , <urn:bluemarine:record:fpq42-BZclw7o6f3UO7BsckifVQ=> , <urn:bluemarine:record:gczGmmdZjr_817pSx5yyOgzSEeI=> , <urn:bluemarine:record:h_K1sWa_nmXnJyZTwEe0Ql3HJV4=> , <urn:bluemarine:record:hsZ6JND3y68qL4qUfqsgSfaPc8o=> , <urn:bluemarine:record:iMPWAHkx_6q659uwUMZax8xWgH4=> , <urn:bluemarine:record:l6gGndfXaNH8L5v7ZM-7K_FXWFY=> , <urn:bluemarine:record:nPFYSOiNFnqtntn-vghtQDbS0Q8=> , <urn:bluemarine:record:nkvrC66_PPIpbUwD_bJwk5WUekk=> , <urn:bluemarine:record:nlkeRM9zfy77AgXpNNEnB73rxVs=> .
-
 <urn:bluemarine:artist:-aF2nY8pPRci9fP0x-mexhDkJm0=> a mo:MusicArtist ;
 	bmmo:importedFrom "musicbrainz" ;
 	mo:musicbrainz <http://musicbrainz.org/artist/7daac7f9-8fcc-485f-a14f-f8091d98cf25> ;
@@ -4412,6 +4409,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:00uNnxnJgDQuYoYcmiD2idfHgvo=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:HYL39Kt0Ty7lVhR20AkdV4H8gRw=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:HYL39Kt0Ty7lVhR20AkdV4H8gRw=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Piano Concertos" ;
 	mo:media_type mo:CD ;
@@ -4437,6 +4435,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:083JGePr0Mp5GWFGwz_-cYxQlB8=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:jL-ZGicVKu8j-K5cqo5OXtm1wEs=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:jL-ZGicVKu8j-K5cqo5OXtm1wEs=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Dvorák: Symphony No. 8 in G, Op. 88; Symphony No. 9 in E minor, Op. 95 \"From The New World\"" ;
 	mo:amazon_asin "B00DYQLEZM" ;
@@ -4464,6 +4463,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:22anXkhFjpDcCbWuiGreH8Xyks4=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:7KnxkoIeCTYNs7ZpWs384ukS-xU=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:7KnxkoIeCTYNs7ZpWs384ukS-xU=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Canto Gregoriano" ;
 	mo:media_type mo:CD ;
@@ -4504,6 +4504,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:3G9eU5h6tC0cdm3AEt0N2GrzUbc=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:jL-ZGicVKu8j-K5cqo5OXtm1wEs=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:jL-ZGicVKu8j-K5cqo5OXtm1wEs=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Kubelik - Dvořák 8 & 9" ;
 	mo:amazon_asin "B002DZX95I" ;
@@ -4545,6 +4546,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:4uxXE9_-OthElnLuj22qSf8OnZI=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:dQjPspHrU7DNVOqQz6gosYfs7Rg=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:dQjPspHrU7DNVOqQz6gosYfs7Rg=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Canto Gregoriano" ;
 	mo:gtin "724356513525" ;
@@ -4570,6 +4572,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:7znsQpAo37Aaug3A8P8UyzpRvmY=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:dQjPspHrU7DNVOqQz6gosYfs7Rg=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:dQjPspHrU7DNVOqQz6gosYfs7Rg=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Canto Gregoriano" ;
 	mo:media_type mo:CD ;
@@ -4582,6 +4585,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:8nt60pC4jma9qAeXInfxIA2U-TQ=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:-635CqVz4z4PWEI2co8A4_7IS1Y=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:-635CqVz4z4PWEI2co8A4_7IS1Y=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Sacred vocal works, Mass in B minor BWV 232 (I)" ;
 	mo:amazon_asin "B006WKDT1E" ;
@@ -4596,6 +4600,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:8w1tyblmLsYx4njQpsP5d51l7jA=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:KbNsTi1jtzC0OOKqaW4mWU30CRY=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:KbNsTi1jtzC0OOKqaW4mWU30CRY=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Nutcracker / Swan Lake" ;
 	mo:gtin "730099505024" ;
@@ -4664,6 +4669,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:FB3t9I4szKnWUDCshT4nmIo8gvc=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:0TTEu_ytL8drpeT-64sUj_n2Y0w=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:0TTEu_ytL8drpeT-64sUj_n2Y0w=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Piano Music" ;
 	mo:amazon_asin "B00386FG0M" ;
@@ -4692,6 +4698,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:IUcVatqCMZzbckcxbs4N2YIl_k8=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:dQjPspHrU7DNVOqQz6gosYfs7Rg=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:dQjPspHrU7DNVOqQz6gosYfs7Rg=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Canto Gregoriano" ;
 	mo:gtin "724356521728" ;
@@ -4705,6 +4712,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:KGIBUGPnM11sIr4TzuBlAwwb0Ao=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:7KnxkoIeCTYNs7ZpWs384ukS-xU=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:7KnxkoIeCTYNs7ZpWs384ukS-xU=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Canto Gregoriano" ;
 	mo:gtin "724356513525" ;
@@ -4718,6 +4726,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:KwRYyboOukGYDi8ewPw8UnaUYQI=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:UNFxjTRge2ywXsyWppK6qFtri5g=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:UNFxjTRge2ywXsyWppK6qFtri5g=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Piano Concerto no. 2" ;
 	mo:amazon_asin "B000025TNR" ;
@@ -4774,6 +4783,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:RBVERLGQIKd2Idw7lVQJbjA3s8Q=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:BG1DyRYXtPrSxTFALj7CZgnR0QQ=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:BG1DyRYXtPrSxTFALj7CZgnR0QQ=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Gilels - Beethoven - Sonatas" ;
 	mo:amazon_asin "B002DZX95I" ;
@@ -4815,6 +4825,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:RxH06klPg8Xl0lWbT1j9usADwf8=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:nT-nlOg3Dwz09i56erbhREL2DL0=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:nT-nlOg3Dwz09i56erbhREL2DL0=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Messe in H-Moll BWV 232" ;
 	mo:amazon_asin "B00000E8OL" ;
@@ -4843,6 +4854,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:SnUPvsKyTBT3J1brp2Pjq7o7kHc=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:m7rhkonU7nOuTRV5_pj-bB7lbM4=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:m7rhkonU7nOuTRV5_pj-bB7lbM4=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Brahms: Symphony no. 4" ;
 	mo:gtin "028947934493" ;
@@ -4881,6 +4893,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:TSZglnO1HLTXWaQrwDWp3vxnZ_c=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:HYL39Kt0Ty7lVhR20AkdV4H8gRw=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:HYL39Kt0Ty7lVhR20AkdV4H8gRw=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Complete Recordings on Deutsche Grammophon (box 8: 1979-1981)" ;
 	mo:gtin "4988005499455" ;
@@ -4933,6 +4946,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:WtI-23heaQw0j4liPu1OXIQ-PT8=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:N80RYE5bqtH3ptC2GNM3yFdfqKE=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:N80RYE5bqtH3ptC2GNM3yFdfqKE=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "The Planets" ;
 	mo:gtin "3259140002826" ;
@@ -4946,6 +4960,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:Wwe1ALTYfgVzwiaw63r69MWuXKg=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:avximlVwvE2Whabfx-fK7hLRPIU=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:avximlVwvE2Whabfx-fK7hLRPIU=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Ravel: Gaspard de la Nuit / Prokofiev: Klaviersonate No. 6" ;
 	mo:amazon_asin "B00QHL0Y8O" ;
@@ -4988,6 +5003,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:dCnvmIRLIjswx6kR3t9J00OM_KE=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:-635CqVz4z4PWEI2co8A4_7IS1Y=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:-635CqVz4z4PWEI2co8A4_7IS1Y=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Bach 2000: The Complete Bach Edition, Volume 6: The Sacred Vocal Works: Masses / Magnificat / Passions / Oratorios" ;
 	mo:amazon_asin "B00001IV8B" ;
@@ -5001,6 +5017,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:dpVJMMsiJMEUcvBixDMCoaGF4Fg=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:HYL39Kt0Ty7lVhR20AkdV4H8gRw=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:HYL39Kt0Ty7lVhR20AkdV4H8gRw=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Klavierkonzerte" ;
 	mo:amazon_asin "B00000E2LB" ;
@@ -5015,6 +5032,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:fpq42-BZclw7o6f3UO7BsckifVQ=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:nT-nlOg3Dwz09i56erbhREL2DL0=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:nT-nlOg3Dwz09i56erbhREL2DL0=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Bach 2000: The Complete Bach Edition, Volume 6: The Sacred Vocal Works: Masses / Magnificat / Passions / Oratorios" ;
 	mo:amazon_asin "B00001IV8B" ;
@@ -5028,6 +5046,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:gczGmmdZjr_817pSx5yyOgzSEeI=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:WWSZFaiEBFR_kBOI0gNnoXeImgE=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:WWSZFaiEBFR_kBOI0gNnoXeImgE=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Ahora Jazz" ;
 	mo:media_type mo:CD ;
@@ -5040,6 +5059,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:h_K1sWa_nmXnJyZTwEe0Ql3HJV4=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:nT-nlOg3Dwz09i56erbhREL2DL0=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:nT-nlOg3Dwz09i56erbhREL2DL0=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Sacred vocal works, Mass in B minor BWV 232 (II)" ;
 	mo:amazon_asin "B006WKDT1E" ;
@@ -5054,6 +5074,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:hsZ6JND3y68qL4qUfqsgSfaPc8o=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:UNFxjTRge2ywXsyWppK6qFtri5g=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:UNFxjTRge2ywXsyWppK6qFtri5g=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Complete Philips Recordings" ;
 	mo:amazon_asin "B014VLVTW6" ;
@@ -5068,6 +5089,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:iMPWAHkx_6q659uwUMZax8xWgH4=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:avximlVwvE2Whabfx-fK7hLRPIU=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:avximlVwvE2Whabfx-fK7hLRPIU=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Chopin / Beethoven / Schumann / Ravel / Prokofieff" ;
 	mo:gtin "028942375529" ;
@@ -5092,6 +5114,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:l6gGndfXaNH8L5v7ZM-7K_FXWFY=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:jL-ZGicVKu8j-K5cqo5OXtm1wEs=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:jL-ZGicVKu8j-K5cqo5OXtm1wEs=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Dvorák: Symphonies nos. 8 & 9" ;
 	mo:gtin "028947934493" ;
@@ -5119,6 +5142,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:nPFYSOiNFnqtntn-vghtQDbS0Q8=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:7KnxkoIeCTYNs7ZpWs384ukS-xU=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:7KnxkoIeCTYNs7ZpWs384ukS-xU=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Canto Gregoriano" ;
 	mo:gtin "724356521728" ;
@@ -5132,6 +5156,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:nkvrC66_PPIpbUwD_bJwk5WUekk=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:d-B67tYwHDFv7ibEEJd8nsqMKIE=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:d-B67tYwHDFv7ibEEJd8nsqMKIE=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "The Platinum Collection" ;
 	mo:amazon_asin "B000B6OD0G" ;
@@ -5146,6 +5171,7 @@ bmmo:alternativeItems a bmmo:PreferenceItem ;
 
 <urn:bluemarine:record:nlkeRM9zfy77AgXpNNEnB73rxVs=> a mo:Record ;
 	bmmo:alternateOf <urn:bluemarine:record:-635CqVz4z4PWEI2co8A4_7IS1Y=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:-635CqVz4z4PWEI2co8A4_7IS1Y=> ;
 	bmmo:importedFrom "musicbrainz" ;
 	dc:title "Messe in H-Moll BWV 232" ;
 	mo:amazon_asin "B00000E8OL" ;
