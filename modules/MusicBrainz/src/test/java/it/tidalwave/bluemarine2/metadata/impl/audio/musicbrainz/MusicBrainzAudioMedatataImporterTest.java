@@ -209,7 +209,7 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
               }
 
             exportToFile(model, actualResult);
-//            assertSameContents(expectedResult, actualResult);
+            assertSameContents(expectedResult, actualResult);
           };
       }
 

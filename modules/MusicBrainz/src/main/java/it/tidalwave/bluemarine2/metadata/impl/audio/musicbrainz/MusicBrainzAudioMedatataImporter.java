@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.metadata.impl.audio.musicbrainz;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -50,6 +51,7 @@ import org.musicbrainz.ns.mmd_2.Artist;
 import org.musicbrainz.ns.mmd_2.DefTrackData;
 import org.musicbrainz.ns.mmd_2.Disc;
 import org.musicbrainz.ns.mmd_2.Medium;
+import org.musicbrainz.ns.mmd_2.MediumList;
 import org.musicbrainz.ns.mmd_2.Recording;
 import org.musicbrainz.ns.mmd_2.Relation;
 import org.musicbrainz.ns.mmd_2.Relation.AttributeList.Attribute;
@@ -86,9 +88,7 @@ import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider.*;
 import static it.tidalwave.bluemarine2.model.vocabulary.BM.recordIriFor;
-import java.math.BigInteger;
 import static lombok.AccessLevel.PRIVATE;
-import org.musicbrainz.ns.mmd_2.MediumList;
 
 /***********************************************************************************************************************
  *
@@ -125,6 +125,11 @@ public class MusicBrainzAudioMedatataImporter
 
     @Getter @Setter
     private int releaseGroupScoreThreshold = 50;
+
+    /** If {@code true}, in case of multiple collections to pick from, those that are not the least one are marked as
+        alternative. */
+    @Getter @Setter
+    private boolean discourageCollections = true;
 
     private final Set<String> processedTocs = new HashSet<>();
 
@@ -546,6 +551,8 @@ public class MusicBrainzAudioMedatataImporter
      *
      * <ol>
      * <li>Eventual duplicates are collapsed.</li>
+     * <li>If required, in case of members of collections, collections that are larger than the least are marked as
+     *     alternative.</li>
      * <li>A matching score is computed about the affinity of the title found in MusicBrainz metadata with respected
      *     to the title in the embedded metadata.</li>
      * <li>Elements that don't reach the maximum score are marked as alternative.</li>
@@ -579,6 +586,7 @@ public class MusicBrainzAudioMedatataImporter
         List<ReleaseMediumDisk> rmds = new ArrayList<>(inRmds.stream()
                                                              .map(rmd -> rmd.withEmbeddedTitle(embeddedTitle))
                                                              .collect(toSet()));
+        rmds = discourageCollections ? markedAlternativeIfNotLeastCollection(rmds) :rmds;
         rmds = markedAlternativeByTitleAffinity(rmds);
 
         final boolean asinPresent = rmds.stream().filter(rmd -> !rmd.isAlternative() && rmd.getAsin().isPresent()).findAny().isPresent();
@@ -646,6 +654,24 @@ public class MusicBrainzAudioMedatataImporter
 
     /*******************************************************************************************************************
      *
+     * Sweeps the given {@link ReleaseMediumDisk}s and marks as alternative all the items which are not part of the
+     * disk collections with the minimum size.
+     *
+     * @param   rmds    the incoming {@code ReleaseMediumDisk}
+     * @return          the processed {@code ReleaseMediumDisk}
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static List<ReleaseMediumDisk> markedAlternativeIfNotLeastCollection (final @Nonnull List<ReleaseMediumDisk> rmds)
+      {
+        final int leastSize = rmds.stream().filter(rmd -> !rmd.isAlternative())
+                                           .mapToInt(rmd -> rmd.getDiskCount().orElse(1))
+                                           .min().getAsInt();
+        return rmds.stream().map(rmd -> rmd.alternativeIf(rmd.getDiskCount().orElse(1) > leastSize)).collect(toList());
+      }
+
+    /*******************************************************************************************************************
+     *
      * Sweeps the given {@link ReleaseMediumDisk}s and marks as alternative the items without the best score.
      *
      * @param   rmds    the incoming {@code ReleaseMediumDisk}
@@ -655,7 +681,9 @@ public class MusicBrainzAudioMedatataImporter
     @Nonnull
     private static List<ReleaseMediumDisk> markedAlternativeByTitleAffinity (final @Nonnull List<ReleaseMediumDisk> rmds)
       {
-        final int bestScore = rmds.stream().mapToInt(ReleaseMediumDisk::getScore).max().getAsInt();
+        final int bestScore = rmds.stream().filter(rmd -> !rmd.isAlternative())
+                                           .mapToInt(ReleaseMediumDisk::getScore)
+                                           .max().getAsInt();
         return rmds.stream().map(rmd -> rmd.alternativeIf(rmd.getScore() < bestScore)).collect(toList());
       }
 
@@ -956,12 +984,13 @@ public class MusicBrainzAudioMedatataImporter
         // While this is a hack, it isn't so ugly as it might appear. The idea is to give a lower score to
         // collections and records with a generic title, hoping that a better one is picked.
         // FIXME: put into a map and then into an external resource with the delta score associated.
+        // FIXME: with the filtering on collection size, this might be useless?
         //
         if (a.matches("^Complete Recordings on Deutsche Grammophon.*")
          || a.matches("^Gilels - Beethoven - Sonatas.*")
-         || a.matches("^Great Violin Concertos.*")
+         || a.matches("^Great Violin Concertos.*")// FIXME: try to drop
          || a.matches("^Piano Music$")
-         || a.matches("^CBS Great Performances.*"))
+         || a.matches("^CBS Great Performances.*")) // FIXME: try to drop
           {
             score -= 50;
           }
@@ -973,7 +1002,7 @@ public class MusicBrainzAudioMedatataImporter
           }
 
         // Ok, this is really a hack
-        if (a.matches("^he Platinum Collection$"))
+        if (a.matches("^he Platinum Collection$"))// FIXME: try to drop
           {
             score -= 10;
           }
