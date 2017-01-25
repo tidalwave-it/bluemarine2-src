@@ -31,17 +31,15 @@ package it.tidalwave.bluemarine2.model;
 import javax.annotation.Nonnull;
 import java.util.Collection;
 import java.util.function.Function;
-import it.tidalwave.util.As;
 import it.tidalwave.util.Finder8;
-import it.tidalwave.role.Composite;
 import it.tidalwave.role.SimpleComposite8;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.impl.PathAwareEntityFinderDelegate;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
+import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 
 /***********************************************************************************************************************
  *
- * Represents a folder on a filesystem that contains media items. It is associated with the {@link Composite<As>} role.
+ * Represents a folder on a filesystem that contains media items. It is associated with the {@link Composite} role.
  * The filesystem can be a physical one (on the disk), or a virtual one (e.g. on a database); the folder concept is
  * flexible and represents any composite collection of items.
  *
@@ -59,7 +57,7 @@ public interface MediaFolder extends PathAwareEntity, SimpleComposite8<PathAware
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public EntityFinder findChildren();
+    public PathAwareFinder findChildren();
 
     /*******************************************************************************************************************
      *
@@ -67,7 +65,7 @@ public interface MediaFolder extends PathAwareEntity, SimpleComposite8<PathAware
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default EntityFinder finderOf (final @Nonnull Finder8<PathAwareEntity> delegate)
+    public default PathAwareFinder finderOf (final @Nonnull Finder8<PathAwareEntity> delegate)
       {
         return new PathAwareEntityFinderDelegate(this, delegate);
       }
@@ -78,7 +76,7 @@ public interface MediaFolder extends PathAwareEntity, SimpleComposite8<PathAware
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default EntityFinder finderOf (final @Nonnull Function<MediaFolder, Collection<? extends PathAwareEntity>> function)
+    public default PathAwareFinder finderOf (final @Nonnull Function<MediaFolder, Collection<? extends PathAwareEntity>> function)
       {
         return new PathAwareEntityFinderDelegate(this, function);
       }

@@ -36,9 +36,6 @@ import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
-import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryPerformanceFinder;
-import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
-import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
 import lombok.Getter;
 
 /***********************************************************************************************************************
@@ -66,19 +63,19 @@ public class RepositoryMusicArtist extends RepositoryEntitySupport implements Mu
     @Override @Nonnull
     public TrackFinder findTracks()
       {
-        return new RepositoryTrackFinder(repository).madeBy(this);
+        return _findTracks().madeBy(this);
       }
 
     @Override @Nonnull
     public RecordFinder findRecords()
       {
-        return new RepositoryRecordFinder(repository).madeBy(this);
+        return _findRecords().madeBy(this);
       }
 
     @Override @Nonnull
     public PerformanceFinder findPerformances()
       {
-        return new RepositoryPerformanceFinder(repository).performedBy(this);
+        return _findPerformances().performedBy(this);
       }
 
     @Override @Nonnull

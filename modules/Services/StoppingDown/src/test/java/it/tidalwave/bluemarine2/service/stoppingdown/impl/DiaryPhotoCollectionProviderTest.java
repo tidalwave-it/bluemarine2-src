@@ -29,9 +29,9 @@
 package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 
 import java.util.List;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import org.testng.annotations.Test;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
+import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 
 /***********************************************************************************************************************
  *
@@ -66,7 +66,7 @@ public class DiaryPhotoCollectionProviderTest extends PhotoCollectionProviderTes
         // given
         final DiaryPhotoCollectionProvider underTest = new DiaryPhotoCollectionProvider(URL_MOCK_RESOURCE);
         // when
-        final EntityFinder finder = underTest.findPhotos(mediaFolder);
+        final PathAwareFinder finder = underTest.findPhotos(mediaFolder);
         // then
         dumpAndAssertResults("diary-hierarchy.txt", dump(finder));
       }
