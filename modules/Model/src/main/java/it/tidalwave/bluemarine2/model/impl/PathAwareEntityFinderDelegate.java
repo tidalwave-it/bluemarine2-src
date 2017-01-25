@@ -45,13 +45,13 @@ import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.SupplierBasedFinder8;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.Collections.*;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static lombok.AccessLevel.PRIVATE;
+import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 
 /***********************************************************************************************************************
  *
@@ -68,7 +68,7 @@ import static lombok.AccessLevel.PRIVATE;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor(access = PRIVATE) @Slf4j
-public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntity, EntityFinder> implements EntityFinder
+public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntity, PathAwareFinder> implements PathAwareFinder
   {
     private static final long serialVersionUID = 4429676480224742813L;
 
@@ -140,7 +140,7 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public EntityFinder withPath (final @Nonnull Path path)
+    public PathAwareFinder withPath (final @Nonnull Path path)
       {
         return clone(new PathAwareEntityFinderDelegate(mediaFolder, delegate, Optional.of(path)));
       }
@@ -223,7 +223,7 @@ public class PathAwareEntityFinderDelegate extends Finder8Support<PathAwareEntit
     private static Optional<PathAwareEntity> childMatchingPath (final @Nonnull PathAwareEntity entity,
                                                                 final @Nonnull Path path)
       {
-        return ((EntityFinder)asSimpleComposite(entity).findChildren()).withPath(path).optionalResult();
+        return ((PathAwareFinder)asSimpleComposite(entity).findChildren()).withPath(path).optionalResult();
       }
 
     /*******************************************************************************************************************

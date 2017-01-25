@@ -43,7 +43,7 @@ import it.tidalwave.bluemarine2.model.Track;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface RecordFinder extends BaseFinder<Record, RecordFinder>,
+public interface RecordFinder extends SourceAwareFinder<Record, RecordFinder>,
                                       ExtendedFinder8Support<Record, RecordFinder>
   {
     /*******************************************************************************************************************
@@ -51,7 +51,7 @@ public interface RecordFinder extends BaseFinder<Record, RecordFinder>,
      * Constrains the search to records made by the given artist.
      *
      * @param       artistId    the artist id
-     * @return                  the {@code Finder}
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -62,7 +62,7 @@ public interface RecordFinder extends BaseFinder<Record, RecordFinder>,
      * Constrains the search to records made by the given artist.
      *
      * @param       artist      the artist
-     * @return                  the {@code Finder}
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -73,6 +73,10 @@ public interface RecordFinder extends BaseFinder<Record, RecordFinder>,
 
     /*******************************************************************************************************************
      *
+     * Constrains the search to records containing the given track.
+     *
+     * @param       trackId     the id of the track
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull
@@ -80,6 +84,10 @@ public interface RecordFinder extends BaseFinder<Record, RecordFinder>,
 
     /*******************************************************************************************************************
      *
+     * Constrains the search to records containing the given track.
+     *
+     * @param       track       the track
+     * @return                  the {@code Finder}, in fluent fashion
      *
      ******************************************************************************************************************/
     @Nonnull

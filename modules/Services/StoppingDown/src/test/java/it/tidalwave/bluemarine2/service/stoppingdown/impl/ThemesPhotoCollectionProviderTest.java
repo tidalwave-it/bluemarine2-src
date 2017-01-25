@@ -31,10 +31,10 @@ package it.tidalwave.bluemarine2.service.stoppingdown.impl;
 import javax.annotation.Nonnull;
 import javax.xml.xpath.XPathExpression;
 import java.util.List;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
+import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 
 /***********************************************************************************************************************
  *
@@ -70,7 +70,7 @@ public class ThemesPhotoCollectionProviderTest extends PhotoCollectionProviderTe
         // given
         final ThemesPhotoCollectionProvider underTest = new ThemesPhotoCollectionProvider(URL_MOCK_RESOURCE);
         // when
-        final EntityFinder finder = underTest.findPhotos(mediaFolder);
+        final PathAwareFinder finder = underTest.findPhotos(mediaFolder);
         // then
         dumpAndAssertResults("themes-hierarchy.txt", dump(finder));
       }

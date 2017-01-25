@@ -108,7 +108,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
                                 final String rdfsLabel,
                                 final @Nonnull Optional<Long> fileSize)
       {
-        super(repository, id, rdfsLabel, Optional.of(BM.ID_SOURCE_EMBEDDED));
+        super(repository, id, rdfsLabel, Optional.of(BM.ID_SOURCE_EMBEDDED), Optional.of(BM.ID_SOURCE_EMBEDDED));
         this.trackId = trackId;
         // See BMT-36
         this.path = path;
