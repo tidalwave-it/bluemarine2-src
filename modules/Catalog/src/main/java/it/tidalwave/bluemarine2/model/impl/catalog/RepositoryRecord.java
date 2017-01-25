@@ -68,8 +68,8 @@ public class RepositoryRecord extends RepositoryEntitySupport implements Record
       {
         super(repository, bindingSet, "record");
         trackCount = toInteger(bindingSet.getBinding("track_count"));
-        asin = toString(bindingSet.getBinding("asin"));
-        gtin = toString(bindingSet.getBinding("gtin"));
+        asin       = toString(bindingSet.getBinding("asin"));
+        gtin       = toString(bindingSet.getBinding("gtin"));
       }
 
     @Override @Nonnull

@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
+import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 
 /***********************************************************************************************************************
  *
@@ -39,10 +40,10 @@ import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MediaCatalog 
+public interface MediaCatalog
   {
     public static final Class<MediaCatalog> MediaCatalog = MediaCatalog.class;
-    
+
     @Nonnull
     public MusicArtistFinder findArtists();
 
@@ -51,4 +52,7 @@ public interface MediaCatalog
 
     @Nonnull
     public TrackFinder findTracks();
+
+    @Nonnull
+    public PerformanceFinder findPerformances();
   }

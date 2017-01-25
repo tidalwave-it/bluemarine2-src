@@ -34,10 +34,12 @@ import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.finder.BaseFinder;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
+import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryPerformanceFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
@@ -70,6 +72,12 @@ public class RepositoryMediaCatalog implements MediaCatalog
     public TrackFinder findTracks()
       {
         return configured(new RepositoryTrackFinder(repository));
+      }
+
+    @Override @Nonnull
+    public PerformanceFinder findPerformances()
+      {
+        return configured(new RepositoryPerformanceFinder(repository));
       }
 
     @Nonnull
