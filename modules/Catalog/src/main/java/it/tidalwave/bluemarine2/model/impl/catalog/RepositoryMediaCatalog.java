@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
+import it.tidalwave.bluemarine2.model.finder.BaseFinder;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
@@ -63,19 +64,25 @@ public class RepositoryMediaCatalog implements MediaCatalog
     @Override @Nonnull
     public MusicArtistFinder findArtists()
       {
-        return new RepositoryMusicArtistFinder(repository).importedFrom(getSource()).withFallback(getFallback());
+        return configured(new RepositoryMusicArtistFinder(repository));
       }
 
     @Override @Nonnull
     public RecordFinder findRecords()
       {
-        return new RepositoryRecordFinder(repository).importedFrom(getSource()).withFallback(getFallback());
+        return configured(new RepositoryRecordFinder(repository));
       }
 
     @Override @Nonnull
     public TrackFinder findTracks()
       {
-        return new RepositoryTrackFinder(repository).importedFrom(getSource()).withFallback(getFallback());
+        return configured(new RepositoryTrackFinder(repository));
+      }
+
+    @Nonnull
+    private <ENTITY, FINDER extends BaseFinder<ENTITY, FINDER>> FINDER configured (final @Nonnull FINDER finder)
+      {
+        return finder.importedFrom(getSource()).withFallback(getFallback());
       }
 
     @Nonnull
