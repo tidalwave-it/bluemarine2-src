@@ -195,7 +195,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
           {
             final RecordFinder recordFinder = artist.findRecords().importedFrom(source);
             pw.printf("%nRECORDS OF %s (%d):%n", displayNameOf(artist), recordFinder.count());
-            recordFinder.stream().forEach(record -> pw.printf("  %s%n", record.toDumpString()));
+            recordFinder.stream().forEach(record -> pw.printf("  %s%n", displayNameOf(record)));
           });
 
         artists.forEach(artist ->

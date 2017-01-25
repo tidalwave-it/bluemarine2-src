@@ -4044,462 +4044,462 @@ RECORD もうひとつのクリスマス (urn:bluemarine:record:Q2QW4sxqdRwCjoCY
     RepositoryTrack(01/01 10, 07:55, rdfs:label=グローリア, Un Autre Noel/もうひとつのクリスマス/10 グローリア.mp3, urn:bluemarine:track:01L_niBPzDNNf_cQhSqYEbkNxhw=)
 
 RECORDS OF Academy of St Martin in the Fields (urn:bluemarine:artist:INUZaWyNbzXgqjXVty7cPNLmRTA=) (1):
-  RepositoryRecord(rdfs:label=Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi" / no. 8 "Le Soir", urn:bluemarine:record:2g-5pZq0VX2fdmS0kOFUT5b4n5c=)
+  Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi" / no. 8 "Le Soir" (urn:bluemarine:record:2g-5pZq0VX2fdmS0kOFUT5b4n5c=)
 
 RECORDS OF Alain Courtois (urn:bluemarine:artist:8BRnbs4xnelu-t_5S-b6Viw3dNo=) (1):
-  RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
+  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
 
 RECORDS OF Albert Kos (urn:bluemarine:artist:davSKUhO-1ENeG130uMykXhR2Ak=) (1):
-  RepositoryRecord(rdfs:label=Le quattro stagioni, urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
+  Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
 
 RECORDS OF Alfred Brendel (urn:bluemarine:artist:N4I8tqUbN3BpVljJk0qNyJs4DZk=) (1):
-  RepositoryRecord(rdfs:label=Piano Concerto no. 2, urn:bluemarine:record:SYU0KpAuaB2R5tfk3ZGjhYiS2-c=)
+  Piano Concerto no. 2 (urn:bluemarine:record:SYU0KpAuaB2R5tfk3ZGjhYiS2-c=)
 
 RECORDS OF André Previn (urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=) (0):
 
 RECORDS OF Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=) (2):
-  RepositoryRecord(rdfs:label=Canto Gregoriano, urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=)
-  RepositoryRecord(rdfs:label=Canto Gregoriano, urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=)
+  Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=)
+  Canto Gregoriano (urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=)
 
 RECORDS OF Angela Maria Blasi (urn:bluemarine:artist:K_ykrLQQSIp_-yJGnAXPOa6W_UA=) (0):
 
 RECORDS OF Antonino Votto (urn:bluemarine:artist:7m75OxcYu8S2Ffuor3t6j-jOsMk=) (1):
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
 
 RECORDS OF Arnold Schönberg Chor (urn:bluemarine:artist:AV9t3Uzw4bi1aJag5kIXFW29Aag=) (0):
 
 RECORDS OF Bamberger Symphoniker (urn:bluemarine:artist:nQ0DfEd60_veB-EKfUDNmSw2uxE=) (1):
-  RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
+  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
 
 RECORDS OF Benjamin Britten (urn:bluemarine:artist:KF-Mhpf73coDDn5fVsURYMTZ9xY=) (1):
-  RepositoryRecord(rdfs:label=Schubert: Arpeggione Sonata / Schumann: Fünf Stücke im Volkston / Debussy: Cello Sonata, urn:bluemarine:record:BDC4cW1q5WDo0tsG-G5GwK43iYQ=)
+  Schubert: Arpeggione Sonata / Schumann: Fünf Stücke im Volkston / Debussy: Cello Sonata (urn:bluemarine:record:BDC4cW1q5WDo0tsG-G5GwK43iYQ=)
 
 RECORDS OF Berliner Philharmoniker (urn:bluemarine:artist:LFyvpvKePfWMBEv4sqBKx1V7p9M=) (4):
-  RepositoryRecord(rdfs:label=Piano Concerto no. 2, urn:bluemarine:record:SYU0KpAuaB2R5tfk3ZGjhYiS2-c=)
-  RepositoryRecord(rdfs:label=Piano Concertos, urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=)
-  RepositoryRecord(rdfs:label=Symphonien nos. 8 & 9 »Aus der Neuen Welt«, urn:bluemarine:record:FVeGdI4WGJpF1ATf2UhCuaQdtok=)
-  RepositoryRecord(rdfs:label=The Planets, urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=)
+  Piano Concerto no. 2 (urn:bluemarine:record:SYU0KpAuaB2R5tfk3ZGjhYiS2-c=)
+  Piano Concertos (urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=)
+  Symphonien nos. 8 & 9 »Aus der Neuen Welt« (urn:bluemarine:record:FVeGdI4WGJpF1ATf2UhCuaQdtok=)
+  The Planets (urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=)
 
 RECORDS OF Bernard Haitink (urn:bluemarine:artist:xmjf9F0hwtCSPDlwtLwLHrT-YWk=) (0):
 
 RECORDS OF Bill Stewart (urn:bluemarine:artist:hHDJP0Ic1ip_7XY1igxxJQEzWP4=) (1):
-  RepositoryRecord(rdfs:label=Trio 99 → 00, urn:bluemarine:record:MUOZO8uyx7KnDfsRIPUVrOYUSB8=)
+  Trio 99 → 00 (urn:bluemarine:record:MUOZO8uyx7KnDfsRIPUVrOYUSB8=)
 
 RECORDS OF Billy May (urn:bluemarine:artist:ybbmEtN0HT2pAq7qL1fXJ61tRRE=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Billy May & His Orchestra (urn:bluemarine:artist:Nlf2bqQvU4qQGcG--OluTalklk4=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Boston Symphony Orchestra (urn:bluemarine:artist:tfXIxDjcnyzWhVhcLhgQoib5leI=) (1):
-  RepositoryRecord(rdfs:label=Antiche danze ed arie, urn:bluemarine:record:1F54e95XN3GzM3dqB7Fo6goKKTw=)
+  Antiche danze ed arie (urn:bluemarine:record:1F54e95XN3GzM3dqB7Fo6goKKTw=)
 
 RECORDS OF Britt Woodman (urn:bluemarine:artist:GiGzVzM6jS22jzR2C2KASZZnrG8=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Buddy Bregman (urn:bluemarine:artist:ac4VciGE8ilO5rBaPAJTqkcjyAI=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Carlos Kleiber (urn:bluemarine:artist:y8KqgkToIPN0V8nLUvY4AjZVWuY=) (1):
-  RepositoryRecord(rdfs:label=Symphonie no. 4, urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=)
+  Symphonie no. 4 (urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=)
 
 RECORDS OF Christoph Marks (urn:bluemarine:artist:KK6Rj3vMNs4NYPi4e_M_W0JlwU0=) (1):
-  RepositoryRecord(rdfs:label=Le quattro stagioni, urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
+  Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
 
 RECORDS OF Clark Terry (urn:bluemarine:artist:Pf8uOpT9manrnYmKuvM_GWo33Q4=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Claudio Abbado (urn:bluemarine:artist:OJSKKYa_rzCtHYCHUDqdXPJrlK4=) (2):
-  RepositoryRecord(rdfs:label=Le quattro stagioni, urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
-  RepositoryRecord(rdfs:label=Piano Concerto no. 2, urn:bluemarine:record:SYU0KpAuaB2R5tfk3ZGjhYiS2-c=)
+  Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
+  Piano Concerto no. 2 (urn:bluemarine:record:SYU0KpAuaB2R5tfk3ZGjhYiS2-c=)
 
 RECORDS OF Concentus Musicus Wien (urn:bluemarine:artist:peVCIIC8UsYGD6-R6MPSRqxmiR8=) (0):
 
 RECORDS OF Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=) (2):
-  RepositoryRecord(rdfs:label=Canto Gregoriano, urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=)
-  RepositoryRecord(rdfs:label=Canto Gregoriano, urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=)
+  Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=)
+  Canto Gregoriano (urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=)
 
 RECORDS OF Coro del Teatro alla Scala di Milano (urn:bluemarine:artist:NnFBP0zqbVNbqiMzjLs5SJ3F-hI=) (1):
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
 
 RECORDS OF Daniel Dubar (urn:bluemarine:artist:WtbmXBGG0DZsuA3mve7vuSCDi-w=) (1):
-  RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
+  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
 
 RECORDS OF Delores Ziegler (urn:bluemarine:artist:Uvit3I_hwdOJJ_c9rs1zQrYK7Xw=) (0):
 
 RECORDS OF Dizzy Gillespie (urn:bluemarine:artist:00oewsaQiWI_lOsWZignrF--_1g=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Douglas Boyd (urn:bluemarine:artist:B3K4_bo23lo2aFJWo3-TzbcJgHA=) (1):
-  RepositoryRecord(rdfs:label=Le quattro stagioni, urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
+  Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
 
 RECORDS OF Dr. Gerd Ploebsch (urn:bluemarine:artist:RyoHLf0t54MhX9QWzlR8Uk4ZNE0=) (1):
-  RepositoryRecord(rdfs:label=Water Music, urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=)
+  Water Music (urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=)
 
 RECORDS OF Dr. Hans Hirsch (urn:bluemarine:artist:UwwamYqZauK6_38Sv3MZtRNMqPc=) (1):
-  RepositoryRecord(rdfs:label=Symphonie no. 4, urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=)
+  Symphonie no. 4 (urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=)
 
 RECORDS OF Duke Ellington (urn:bluemarine:artist:yO7gTIwDwnnnfd3g3lQiwd56ggM=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Duke Ellington & His Orchestra (urn:bluemarine:artist:D45V9unqIglr6B19-RZEIKrLFGE=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Ella Fitzgerald (urn:bluemarine:artist:n6jja87PG1d7H-_7QE1yR8QZM0s=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF English Baroque Soloists (urn:bluemarine:artist:h1UijYouSf9fsS7K4mMih0cwOcw=) (1):
-  RepositoryRecord(rdfs:label=Music for the Royal Fireworks / 2 Concerti a due cori, urn:bluemarine:record:VBATFSBWyIkSTmS7krwQknkPxKk=)
+  Music for the Royal Fireworks / 2 Concerti a due cori (urn:bluemarine:record:VBATFSBWyIkSTmS7krwQknkPxKk=)
 
 RECORDS OF Erdo Groot (urn:bluemarine:artist:Ly3Qal1_w1rKYotx6Aj-saGIyrY=) (1):
-  RepositoryRecord(rdfs:label=Le quattro stagioni, urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
+  Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
 
 RECORDS OF Erwin Ortner (urn:bluemarine:artist:zNCKnA7oc8i88Ghu49xpYnwLzq4=) (0):
 
 RECORDS OF Francisco Lara (urn:bluemarine:artist:NJk21LtSfSmT-cdFAHnFs-248_I=) (1):
-  RepositoryRecord(rdfs:label=Canto Gregoriano, urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=)
+  Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=)
 
 RECORDS OF Franco Ghione (urn:bluemarine:artist:dVeBl97-NaAMk1l4eDe3tzRelvA=) (1):
-  RepositoryRecord(rdfs:label=La Divina 2, urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
+  La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
 
 RECORDS OF Frank Foster (urn:bluemarine:artist:ZvifogE2CwbE9L4ybc2mmzpKC_E=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Georges Barboteu (urn:bluemarine:artist:D2N9qhOdSCpA8BBnNy-qYKNjQW0=) (1):
-  RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
+  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
 
 RECORDS OF Georges Prêtre (urn:bluemarine:artist:eeviEcynehNqjiPNfLcV9PvQHcM=) (2):
-  RepositoryRecord(rdfs:label=La Divina 2, urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
 
 RECORDS OF Gewandhausorchester Leipzig (urn:bluemarine:artist:LVFYa69QJPwIR7c6h-KAd2XS9Ts=) (2):
-  RepositoryRecord(rdfs:label=Paulus, urn:bluemarine:record:NUrVuwe4aaPzaFux_alU_KN-Qlw=)
-  RepositoryRecord(rdfs:label=Paulus, urn:bluemarine:record:w-_C1vyv2c98gVeX9oxSgvdDYKs=)
+  Paulus (urn:bluemarine:record:NUrVuwe4aaPzaFux_alU_KN-Qlw=)
+  Paulus (urn:bluemarine:record:w-_C1vyv2c98gVeX9oxSgvdDYKs=)
 
 RECORDS OF Gilbert Coursier (urn:bluemarine:artist:sBfu-OdLL6zDyjb5rPXc0Nmqv0Y=) (1):
-  RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
+  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
 
 RECORDS OF Günter Appenheimer (urn:bluemarine:artist:KZ_zmrktRXVVNSmchgwb1mUjWiU=) (1):
-  RepositoryRecord(rdfs:label=Nutcracker / Swan Lake, urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=)
+  Nutcracker / Swan Lake (urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=)
 
 RECORDS OF Günter Hermanns (urn:bluemarine:artist:OT4j5ATbDtgwARDAvneLmNh_VyM=) (4):
-  RepositoryRecord(rdfs:label=Piano Concertos, urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=)
-  RepositoryRecord(rdfs:label=Symphonie no. 4, urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=)
-  RepositoryRecord(rdfs:label=Symphonien nos. 8 & 9 »Aus der Neuen Welt«, urn:bluemarine:record:FVeGdI4WGJpF1ATf2UhCuaQdtok=)
-  RepositoryRecord(rdfs:label=The Planets, urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=)
+  Piano Concertos (urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=)
+  Symphonie no. 4 (urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=)
+  Symphonien nos. 8 & 9 »Aus der Neuen Welt« (urn:bluemarine:record:FVeGdI4WGJpF1ATf2UhCuaQdtok=)
+  The Planets (urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=)
 
 RECORDS OF Günther Breest (urn:bluemarine:artist:8crroCzOIWoc3wmYB-JoFDYGnYI=) (2):
-  RepositoryRecord(rdfs:label=Sonaten »Waldstein · Les Adieux · Appassionata«, urn:bluemarine:record:TIwQL8Nf1R02SmbLJckDUAvrFw4=)
-  RepositoryRecord(rdfs:label=The Planets, urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=)
+  Sonaten »Waldstein · Les Adieux · Appassionata« (urn:bluemarine:record:TIwQL8Nf1R02SmbLJckDUAvrFw4=)
+  The Planets (urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=)
 
 RECORDS OF Hans Weber (urn:bluemarine:artist:zihwgERv6mmDLdziAHl7-x253-g=) (2):
-  RepositoryRecord(rdfs:label=Symphonie no. 4, urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=)
-  RepositoryRecord(rdfs:label=Symphonien nos. 8 & 9 »Aus der Neuen Welt«, urn:bluemarine:record:FVeGdI4WGJpF1ATf2UhCuaQdtok=)
+  Symphonie no. 4 (urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=)
+  Symphonien nos. 8 & 9 »Aus der Neuen Welt« (urn:bluemarine:record:FVeGdI4WGJpF1ATf2UhCuaQdtok=)
 
 RECORDS OF Hans-Peter Schweigmann (urn:bluemarine:artist:_ayjWrO5HiXkYPree9L5VG3zBzw=) (1):
-  RepositoryRecord(rdfs:label=Water Music, urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=)
+  Water Music (urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=)
 
 RECORDS OF Hans-Rudolf Müller (urn:bluemarine:artist:VpC_CPzZOQLaU6c_3CgzSLOCiOs=) (1):
-  RepositoryRecord(rdfs:label=Symphonie no. 4, urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=)
+  Symphonie no. 4 (urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=)
 
 RECORDS OF Harry Carney (urn:bluemarine:artist:lN5782vJDlCtTGBfyMboOuC4CpI=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Heinrich Schiff (urn:bluemarine:artist:eBcnOxXdhWfQEzKF4o4l_ZKeJhU=) (1):
-  RepositoryRecord(rdfs:label=Cello Concertos, urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=)
+  Cello Concertos (urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=)
 
 RECORDS OF Heinz Wildhagen (urn:bluemarine:artist:_hrRiIbcJmLlzxeOLyk7drzTa2Q=) (1):
-  RepositoryRecord(rdfs:label=Symphonien nos. 8 & 9 »Aus der Neuen Welt«, urn:bluemarine:record:FVeGdI4WGJpF1ATf2UhCuaQdtok=)
+  Symphonien nos. 8 & 9 »Aus der Neuen Welt« (urn:bluemarine:record:FVeGdI4WGJpF1ATf2UhCuaQdtok=)
 
 RECORDS OF Herbert von Karajan (urn:bluemarine:artist:hBOVlAgiPOe_Fb4szo5daSCkRlA=) (2):
-  RepositoryRecord(rdfs:label=Piano Concertos, urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=)
-  RepositoryRecord(rdfs:label=The Planets, urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=)
+  Piano Concertos (urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=)
+  The Planets (urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=)
 
 RECORDS OF Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=) (1):
-  RepositoryRecord(rdfs:label=Canto Gregoriano, urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=)
+  Canto Gregoriano (urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=)
 
 RECORDS OF Ivo Pogorelich (urn:bluemarine:artist:JIz-EdykpjKMv21vdK7E7Qwhjnw=) (1):
-  RepositoryRecord(rdfs:label=Ravel: Gaspard de la Nuit / Prokofiev: Piano Sonata no. 6, urn:bluemarine:record:YiFcrqdWnIFQm1T5VTtEMDwZqLs=)
+  Ravel: Gaspard de la Nuit / Prokofiev: Piano Sonata no. 6 (urn:bluemarine:record:YiFcrqdWnIFQm1T5VTtEMDwZqLs=)
 
 RECORDS OF Jadwiga Rappé (urn:bluemarine:artist:lcUVkxIWHu-XllmIssrf4aNvRvk=) (0):
 
 RECORDS OF Jane Berbié (urn:bluemarine:artist:971_stbWhd5QttXcMbdk77d7vKs=) (2):
-  RepositoryRecord(rdfs:label=La Divina 2, urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
 
 RECORDS OF Jean Hubeau (urn:bluemarine:artist:pxpprMb0EnHfSc63qORTuNvSK10=) (1):
-  RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
+  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
 
 RECORDS OF Jean-Claude Barro (urn:bluemarine:artist:183S316M2teekIZ3zb1nJd7BNWI=) (1):
-  RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
+  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
 
 RECORDS OF Jean-Jacques Justafré (urn:bluemarine:artist:rdyAYZLvqVrJx6OwxloriERX_-U=) (1):
-  RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
+  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
 
 RECORDS OF Jean-Paul Gantiez (urn:bluemarine:artist:LnvVNn1d0oWXV48vcnUa9xIAYt8=) (1):
-  RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
+  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
 
 RECORDS OF Jean‐François Paillard (urn:bluemarine:artist:h6BkzpzIHIjB1OU_Gzzzph3dNjE=) (1):
-  RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
+  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
 
 RECORDS OF Jimmy Hamilton (urn:bluemarine:artist:JfYq_BMVTMvqCqaJyXSbtBl725M=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Jimmy Woode (urn:bluemarine:artist:4LbWCIMG0HTZubpkWSbINtUPyDc=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF John Sanders (urn:bluemarine:artist:a6d17CoRYkewsH0JzT3h3EGAuDs=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Johnny Hodges (urn:bluemarine:artist:giOxa8zqJPV3MNnJJIZbxmC42Yk=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Kenneth Gilbert (urn:bluemarine:artist:YhiKV_ucVSmt5bwGk0sDmIHBAWY=) (1):
-  RepositoryRecord(rdfs:label=Die Konzerte für 3 und 4 Cembali, urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=)
+  Die Konzerte für 3 und 4 Cembali (urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=)
 
 RECORDS OF Klaus Scheibe (urn:bluemarine:artist:Dxg-Q--d8IvRn7vn4zltRqRTHiw=) (2):
-  RepositoryRecord(rdfs:label=Sonaten »Waldstein · Les Adieux · Appassionata«, urn:bluemarine:record:TIwQL8Nf1R02SmbLJckDUAvrFw4=)
-  RepositoryRecord(rdfs:label=Symphonie no. 4, urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=)
+  Sonaten »Waldstein · Les Adieux · Appassionata« (urn:bluemarine:record:TIwQL8Nf1R02SmbLJckDUAvrFw4=)
+  Symphonie no. 4 (urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=)
 
 RECORDS OF Koninklijk Concertgebouworkest (urn:bluemarine:artist:iSZZiIabw8qhk29_0vXyCzc1NYA=) (1):
-  RepositoryRecord(rdfs:label=Cello Concertos, urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=)
+  Cello Concertos (urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=)
 
 RECORDS OF Krystian Zimerman (urn:bluemarine:artist:k5GCFPFtZ04aUkfJlPn_6iU0Y9Y=) (1):
-  RepositoryRecord(rdfs:label=Piano Concertos, urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=)
+  Piano Concertos (urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=)
 
 RECORDS OF Kurt Equiluz (urn:bluemarine:artist:90SkcID069TUsXpOagCve-EcTuU=) (0):
 
 RECORDS OF Kurt Masur (urn:bluemarine:artist:K6ZCuZ7dnSD2VCz-u0r2kGo6FAY=) (2):
-  RepositoryRecord(rdfs:label=Paulus, urn:bluemarine:record:NUrVuwe4aaPzaFux_alU_KN-Qlw=)
-  RepositoryRecord(rdfs:label=Paulus, urn:bluemarine:record:w-_C1vyv2c98gVeX9oxSgvdDYKs=)
+  Paulus (urn:bluemarine:record:NUrVuwe4aaPzaFux_alU_KN-Qlw=)
+  Paulus (urn:bluemarine:record:w-_C1vyv2c98gVeX9oxSgvdDYKs=)
 
 RECORDS OF Larry Grenadier (urn:bluemarine:artist:G-mSXhmwywDrPnW6BAOAmtIEx6U=) (1):
-  RepositoryRecord(rdfs:label=Trio 99 → 00, urn:bluemarine:record:MUOZO8uyx7KnDfsRIPUVrOYUSB8=)
+  Trio 99 → 00 (urn:bluemarine:record:MUOZO8uyx7KnDfsRIPUVrOYUSB8=)
 
 RECORDS OF Lars Ulrik Mortensen (urn:bluemarine:artist:GCvA19XdGlugQonzMDt3QTiM52o=) (1):
-  RepositoryRecord(rdfs:label=Die Konzerte für 3 und 4 Cembali, urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=)
+  Die Konzerte für 3 und 4 Cembali (urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=)
 
 RECORDS OF Leonard Bernstein (urn:bluemarine:artist:4pnC4uLKNFy2l5pWXlTmvr9jFkQ=) (1):
-  RepositoryRecord(rdfs:label=Le Sacre du Printemps, urn:bluemarine:record:A9sE-QiqGiQKtpf2awIcPUwIj60=)
+  Le Sacre du Printemps (urn:bluemarine:record:A9sE-QiqGiQKtpf2awIcPUwIj60=)
 
 RECORDS OF Lily Laskine (urn:bluemarine:artist:skrbAz7WQHiPGelFb_wEs9Bf95k=) (1):
-  RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
+  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
 
 RECORDS OF Louis Armstrong (urn:bluemarine:artist:r3e_o4Dp8hpVZcfInUCeakLOwAk=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Margreta Elkins (urn:bluemarine:artist:GbFDWtYh0r4zooHn_UNuH2ZEnJA=) (1):
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
 
 RECORDS OF Maria Callas (urn:bluemarine:artist:_4ZbAn_1uK0DZj0INcAD5B8NyIE=) (2):
-  RepositoryRecord(rdfs:label=La Divina 2, urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
 
 RECORDS OF Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=) (2):
-  RepositoryRecord(rdfs:label=Canto Gregoriano, urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=)
-  RepositoryRecord(rdfs:label=Canto Gregoriano, urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=)
+  Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=)
+  Canto Gregoriano (urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=)
 
 RECORDS OF Marieke Blankestijn (urn:bluemarine:artist:tpTW0tGvpX4PH0JTOyjcF6ztsSc=) (1):
-  RepositoryRecord(rdfs:label=Le quattro stagioni, urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
+  Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
 
 RECORDS OF Matthew Wilkie (urn:bluemarine:artist:RZIjgOMfOoeMqFdvvd_JiOc8VSA=) (1):
-  RepositoryRecord(rdfs:label=Le quattro stagioni, urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
+  Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
 
 RECORDS OF Maurizio Pollini (urn:bluemarine:artist:5maRT_t0F0__sYSVjSkYS7zosDE=) (1):
-  RepositoryRecord(rdfs:label=Fantasie, op. 17 / Sonate, op. 11, urn:bluemarine:record:mdrEbrVkOfi1tkP60fl8AgxwTb4=)
+  Fantasie, op. 17 / Sonate, op. 11 (urn:bluemarine:record:mdrEbrVkOfi1tkP60fl8AgxwTb4=)
 
 RECORDS OF Michael Halász (urn:bluemarine:artist:MCz3LRJdMt33aunwYB18Km4Fbqw=) (1):
-  RepositoryRecord(rdfs:label=Nutcracker / Swan Lake, urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=)
+  Nutcracker / Swan Lake (urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=)
 
 RECORDS OF Michel Bergès (urn:bluemarine:artist:McwtHA_AcHERQMOyWAUlAPH1n9M=) (1):
-  RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
+  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
 
 RECORDS OF Michel Glotz (urn:bluemarine:artist:8D_IuNqMyi0xBlMkXbi04xZuYNI=) (4):
-  RepositoryRecord(rdfs:label=La Divina 2, urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
-  RepositoryRecord(rdfs:label=Piano Concertos, urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=)
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
-  RepositoryRecord(rdfs:label=The Planets, urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=)
+  La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
+  Piano Concertos (urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  The Planets (urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=)
 
 RECORDS OF Midori (urn:bluemarine:artist:b_UeBu1R-0NLtU0NIWFzNdiGUMk=) (1):
-  RepositoryRecord(rdfs:label=Violin Concerti, urn:bluemarine:record:w9XAlyRXYhoOirsZyhGObe3NMj8=)
+  Violin Concerti (urn:bluemarine:record:w9XAlyRXYhoOirsZyhGObe3NMj8=)
 
 RECORDS OF Nadine Sautereau (urn:bluemarine:artist:CHxG2AOVHGFUmRrMePwGqCTK9v4=) (2):
-  RepositoryRecord(rdfs:label=La Divina 2, urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
 
 RECORDS OF Nelson Riddle (urn:bluemarine:artist:pArjUiSvgfaR2iix6vcGGni0ArI=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Nelson Riddle and His Orchestra (urn:bluemarine:artist:Or2tIJZOQtkOnalh8wzM1JBt904=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Nicholas Kraemer (urn:bluemarine:artist:_3TQPsrBg296QCgJY6Wxj103WOI=) (1):
-  RepositoryRecord(rdfs:label=Die Konzerte für 3 und 4 Cembali, urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=)
+  Die Konzerte für 3 und 4 Cembali (urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=)
 
 RECORDS OF Nicola Rescigno (urn:bluemarine:artist:lnNggE8dCm4JW1uEZjmk6II16gA=) (2):
-  RepositoryRecord(rdfs:label=La Divina 2, urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
 
 RECORDS OF Nikolaus Harnoncourt (urn:bluemarine:artist:qyKVxcA1pU8LIV3AU-qQzGn8lqk=) (0):
 
 RECORDS OF Norman Granz (urn:bluemarine:artist:PhpqLxEZYBdmAGQ5G4ZBRqVAoXU=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Ondrej Lenárd (urn:bluemarine:artist:v9LEYggrZDStqgTG-HP5EAW3onQ=) (1):
-  RepositoryRecord(rdfs:label=Nutcracker / Swan Lake, urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=)
+  Nutcracker / Swan Lake (urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=)
 
 RECORDS OF Onno Scholtze (urn:bluemarine:artist:OGPSoVTCfyUphNl6sR4PT3WrDEk=) (1):
-  RepositoryRecord(rdfs:label=Le quattro stagioni, urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
+  Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
 
 RECORDS OF Orchestra del Maggio Musicale Fiorentino (urn:bluemarine:artist:p95RgWjYZBBt6gmHg_9Z72aJArk=) (0):
 
 RECORDS OF Orchestra del Teatro alla Scala di Milano (urn:bluemarine:artist:0sLYlHmzL2AWqAPUygbM-C0_ddc=) (1):
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
 
 RECORDS OF Orchestre National de France (urn:bluemarine:artist:U26fUK6HrSRciLNpvZAGtadqURQ=) (1):
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
 
 RECORDS OF Orchestre National de la Radiodiffusion Française (urn:bluemarine:artist:DCzAp6azbL3sMuf1mqyjEc1uWMw=) (2):
-  RepositoryRecord(rdfs:label=La Divina 2, urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
 
 RECORDS OF Orchestre de chambre Jean‐François Paillard (urn:bluemarine:artist:vdhDOicszNLKKG7-oppIikGxT_0=) (1):
-  RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
+  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
 
 RECORDS OF Orchestre de la Société des Concerts du Conservatoire (urn:bluemarine:artist:x39oWVJisDmzNvATBQGopz6qi20=) (2):
-  RepositoryRecord(rdfs:label=La Divina 2, urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
 
 RECORDS OF Orchestre de l’Opéra National de Paris (urn:bluemarine:artist:G7MNkQ4vO3ntS9mn4LaiA5YXti8=) (2):
-  RepositoryRecord(rdfs:label=La Divina 2, urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
 
 RECORDS OF Orquestra Sinfónica do Teatro Nacional de São Carlos (urn:bluemarine:artist:C4aINLI2IYrwLxw-19mj9xzzPy0=) (1):
-  RepositoryRecord(rdfs:label=La Divina 2, urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
+  La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
 
 RECORDS OF Pat Metheny (urn:bluemarine:artist:-aF2nY8pPRci9fP0x-mexhDkJm0=) (1):
-  RepositoryRecord(rdfs:label=Trio 99 → 00, urn:bluemarine:record:MUOZO8uyx7KnDfsRIPUVrOYUSB8=)
+  Trio 99 → 00 (urn:bluemarine:record:MUOZO8uyx7KnDfsRIPUVrOYUSB8=)
 
 RECORDS OF Paul Gonsalves (urn:bluemarine:artist:e9o9Udv5UchWbgQmIALqCPteTFc=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Paul Vavasseur (urn:bluemarine:artist:kkrwU5yssJWaBCrvjO9DJyeF1R0=) (2):
-  RepositoryRecord(rdfs:label=La Divina 2, urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
 
 RECORDS OF Paul Weston (urn:bluemarine:artist:bexbRe77suRsbvR3bV0ndge__Zg=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Paul Weston & His Orchestra (urn:bluemarine:artist:W7f5Uck1sBwH3dAKXlu9Z7iyD_0=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Philharmonia Orchestra (urn:bluemarine:artist:5B7wuBaQfjQq0u_PFFZHktXia3E=) (1):
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
 
 RECORDS OF Pierre del Vescovo (urn:bluemarine:artist:FQquUfCs0b2fb-vXPo8TLdKOSB4=) (1):
-  RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
+  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
 
 RECORDS OF Pinchas Zukerman (urn:bluemarine:artist:4SeLNmFHI39X3USFV71K6K7gQU0=) (1):
-  RepositoryRecord(rdfs:label=Violin Concerti, urn:bluemarine:record:w9XAlyRXYhoOirsZyhGObe3NMj8=)
+  Violin Concerti (urn:bluemarine:record:w9XAlyRXYhoOirsZyhGObe3NMj8=)
 
 RECORDS OF Quentin Jackson (urn:bluemarine:artist:ljpMWNq1HoJqfTPChdXmCHIMWLA=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF RIAS Kammerchor (urn:bluemarine:artist:EUDK41ZctKfmL9kFqBR_yiXFqhM=) (1):
-  RepositoryRecord(rdfs:label=The Planets, urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=)
+  The Planets (urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=)
 
 RECORDS OF Rafael Kubelík (urn:bluemarine:artist:np4zWE6KcC9l17olX1cIWbr-njs=) (1):
-  RepositoryRecord(rdfs:label=Symphonien nos. 8 & 9 »Aus der Neuen Welt«, urn:bluemarine:record:FVeGdI4WGJpF1ATf2UhCuaQdtok=)
+  Symphonien nos. 8 & 9 »Aus der Neuen Welt« (urn:bluemarine:record:FVeGdI4WGJpF1ATf2UhCuaQdtok=)
 
 RECORDS OF Raffaele Arié (urn:bluemarine:artist:agkZdVpS9oTTR_AOtACkLXt-umw=) (0):
 
 RECORDS OF Ray Nance (urn:bluemarine:artist:mRC_IflbIEm_Pny7d-N3hUhjs2E=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Robert Aldwinckle (urn:bluemarine:artist:ChcXBAiAp3nC1Xv8uEn8k0hFzos=) (1):
-  RepositoryRecord(rdfs:label=Le quattro stagioni, urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
+  Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
 
 RECORDS OF Robert Holl (urn:bluemarine:artist:N4mVNG9C3fEC_Huz6OnvX-Pmqyo=) (0):
 
 RECORDS OF Russell Procope (urn:bluemarine:artist:6I4uKzLX0XvanWMP9yK-DSnV6eQ=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Saint Paul Chamber Orchestra (urn:bluemarine:artist:MOAe24FnUHTTo5D2hwUXVGG-4Ac=) (1):
-  RepositoryRecord(rdfs:label=Violin Concerti, urn:bluemarine:record:w9XAlyRXYhoOirsZyhGObe3NMj8=)
+  Violin Concerti (urn:bluemarine:record:w9XAlyRXYhoOirsZyhGObe3NMj8=)
 
 RECORDS OF Sam Woodyard (urn:bluemarine:artist:5HpCGkB7sFs8g7cTUVVHMM2eDfQ=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Sir Colin Davis (urn:bluemarine:artist:zzQ2S_IkImolZM12edkoHwiAnA8=) (1):
-  RepositoryRecord(rdfs:label=Cello Concertos, urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=)
+  Cello Concertos (urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=)
 
 RECORDS OF Sir John Eliot Gardiner (urn:bluemarine:artist:K6xj0IUeahS7eco6hZW9mwIJrG8=) (1):
-  RepositoryRecord(rdfs:label=Music for the Royal Fireworks / 2 Concerti a due cori, urn:bluemarine:record:VBATFSBWyIkSTmS7krwQknkPxKk=)
+  Music for the Royal Fireworks / 2 Concerti a due cori (urn:bluemarine:record:VBATFSBWyIkSTmS7krwQknkPxKk=)
 
 RECORDS OF Sir Neville Marriner (urn:bluemarine:artist:SB35qq9gOmHcGFxP69oPuWJKXyg=) (2):
-  RepositoryRecord(rdfs:label=Cello Concertos, urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=)
-  RepositoryRecord(rdfs:label=Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi" / no. 8 "Le Soir", urn:bluemarine:record:2g-5pZq0VX2fdmS0kOFUT5b4n5c=)
+  Cello Concertos (urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=)
+  Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi" / no. 8 "Le Soir" (urn:bluemarine:record:2g-5pZq0VX2fdmS0kOFUT5b4n5c=)
 
 RECORDS OF Slovenská filharmónia (urn:bluemarine:artist:P_2aw3LIviapD9dRaH5RfszFftM=) (1):
-  RepositoryRecord(rdfs:label=Nutcracker / Swan Lake, urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=)
+  Nutcracker / Swan Lake (urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=)
 
 RECORDS OF Staatskapelle Dresden (urn:bluemarine:artist:2Kirgm9ifaT9ZHFCDB4AGhnU0Ac=) (1):
-  RepositoryRecord(rdfs:label=Cello Concertos, urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=)
+  Cello Concertos (urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=)
 
 RECORDS OF Symfonický orchester Slovenského rozhlasu (urn:bluemarine:artist:IZGP9C39qJACcKyUirlrI8Ph4Ek=) (1):
-  RepositoryRecord(rdfs:label=Nutcracker / Swan Lake, urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=)
+  Nutcracker / Swan Lake (urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=)
 
 RECORDS OF The Chamber Orchestra of Europe (urn:bluemarine:artist:1z_88fyvzU-7yADC0uPTvnOfvQw=) (1):
-  RepositoryRecord(rdfs:label=Le quattro stagioni, urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
+  Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
 
 RECORDS OF The English Concert (urn:bluemarine:artist:aPPL4jAJMvzYRxj6_232FueW9MY=) (2):
-  RepositoryRecord(rdfs:label=Die Konzerte für 3 und 4 Cembali, urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=)
-  RepositoryRecord(rdfs:label=Water Music, urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=)
+  Die Konzerte für 3 und 4 Cembali (urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=)
+  Water Music (urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=)
 
 RECORDS OF Theodor Guschlbauer (urn:bluemarine:artist:kFdkkmJRqK1affJ57nMIsPkt6pI=) (1):
-  RepositoryRecord(rdfs:label=The Magic of The French Horn: Greatest Concertos, urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
+  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=)
 
 RECORDS OF Tito Gobbi (urn:bluemarine:artist:UbPUDJ4WEyiMAiDAo5tFueqD1_I=) (0):
 
 RECORDS OF Trevor Pinnock (urn:bluemarine:artist:Ul-JO_8fIbkHIuQxk5mkTomld0g=) (2):
-  RepositoryRecord(rdfs:label=Die Konzerte für 3 und 4 Cembali, urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=)
-  RepositoryRecord(rdfs:label=Water Music, urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=)
+  Die Konzerte für 3 und 4 Cembali (urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=)
+  Water Music (urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=)
 
 RECORDS OF Tullio Serafin (urn:bluemarine:artist:RePvK3r9gQV3jLmFvcUBtV0jo_k=) (1):
-  RepositoryRecord(rdfs:label=The Incomparable Callas, urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
 
 RECORDS OF Uwe Gronostay (urn:bluemarine:artist:TlvIJD53Oeb_xMl904bQ0Lflzls=) (1):
-  RepositoryRecord(rdfs:label=The Planets, urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=)
+  The Planets (urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=)
 
 RECORDS OF Val Valentin (urn:bluemarine:artist:jdsrLFdQ9YmvAvd9VWpem8_hp8s=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Wiener Philharmoniker (urn:bluemarine:artist:kR8ZfYs7a-9wKR_hi5fWQ25PU6Y=) (1):
-  RepositoryRecord(rdfs:label=Symphonie no. 4, urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=)
+  Symphonie no. 4 (urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=)
 
 RECORDS OF Wilhelm Hellweg (urn:bluemarine:artist:eH0U_-aGq1LMvTneduNTddwr5M0=) (1):
-  RepositoryRecord(rdfs:label=Le quattro stagioni, urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
+  Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
 
 RECORDS OF William "Cat" Anderson (urn:bluemarine:artist:oro0Xbn_M1yIG63uLnyQ8inU8lw=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Willie Cook (urn:bluemarine:artist:7yVW3xBkynTq--vVncjvx75xz-E=) (1):
-  RepositoryRecord(rdfs:label=Pure Ella: The Very Best of Ella Fitzgerald, urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=)
 
 RECORDS OF Виктория Муллова (urn:bluemarine:artist:nvBe-fEDi-csPRkkOPfFG37Zks4=) (1):
-  RepositoryRecord(rdfs:label=Le quattro stagioni, urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
+  Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
 
 RECORDS OF Мстислав Ростропович (urn:bluemarine:artist:0YsHYLyuFn-EyDFHvoB7Xb-UGJI=) (1):
-  RepositoryRecord(rdfs:label=Schubert: Arpeggione Sonata / Schumann: Fünf Stücke im Volkston / Debussy: Cello Sonata, urn:bluemarine:record:BDC4cW1q5WDo0tsG-G5GwK43iYQ=)
+  Schubert: Arpeggione Sonata / Schumann: Fünf Stücke im Volkston / Debussy: Cello Sonata (urn:bluemarine:record:BDC4cW1q5WDo0tsG-G5GwK43iYQ=)
 
 RECORDS OF Эмиль Григорьевич Гилельс (urn:bluemarine:artist:DKAcKUbKA8ZeLgqBNMki4ZiYnHQ=) (1):
-  RepositoryRecord(rdfs:label=Sonaten »Waldstein · Les Adieux · Appassionata«, urn:bluemarine:record:TIwQL8Nf1R02SmbLJckDUAvrFw4=)
+  Sonaten »Waldstein · Les Adieux · Appassionata« (urn:bluemarine:record:TIwQL8Nf1R02SmbLJckDUAvrFw4=)
 
 RECORDS OF התזמורת הפילהרמונית הישראלית (urn:bluemarine:artist:8Owfa4fr4DE04nLo0cbqNz0hW-k=) (1):
-  RepositoryRecord(rdfs:label=Le Sacre du Printemps, urn:bluemarine:record:A9sE-QiqGiQKtpf2awIcPUwIj60=)
+  Le Sacre du Printemps (urn:bluemarine:record:A9sE-QiqGiQKtpf2awIcPUwIj60=)
 
 RECORDS OF 小澤征爾 (urn:bluemarine:artist:DyeShSWD239hKAMGcWy5kVjHjQI=) (1):
-  RepositoryRecord(rdfs:label=Antiche danze ed arie, urn:bluemarine:record:1F54e95XN3GzM3dqB7Fo6goKKTw=)
+  Antiche danze ed arie (urn:bluemarine:record:1F54e95XN3GzM3dqB7Fo6goKKTw=)
 
 PERFORMANCES OF Academy of St Martin in the Fields (urn:bluemarine:artist:INUZaWyNbzXgqjXVty7cPNLmRTA=) (13):
   Performance(uri=urn:bluemarine:performance:-Ghspc-C3I-gWDrGOE78VIIrHN4=)
