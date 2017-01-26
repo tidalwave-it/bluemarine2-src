@@ -13,7 +13,6 @@
                        ?record                a                                  mo:Record;
                                               mo:track                           ?track;
                                               rdfs:label                         ?record_label.
-            MINUS    { ?record                bmmo:alternatePickOf               ?anything.         }
 
                        ?signal                a                                  mo:DigitalSignal;
                                               mo:published_as                    ?track;
