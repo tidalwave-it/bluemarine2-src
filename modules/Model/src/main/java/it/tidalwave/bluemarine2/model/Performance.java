@@ -29,8 +29,6 @@
 package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
-import it.tidalwave.util.Id;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;
 import it.tidalwave.bluemarine2.model.role.Entity;
@@ -52,9 +50,6 @@ public interface Performance extends Entity, SourceAware, Identifiable
      * @return  a {@link Finder} for the performers
      *
      ******************************************************************************************************************/
-    @Nonnull
-    public Optional<Id> getSource();
-
     @Nonnull
     public MusicPerformerFinder findPerformers();
   }
