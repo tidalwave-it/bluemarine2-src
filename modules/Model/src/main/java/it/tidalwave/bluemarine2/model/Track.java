@@ -43,7 +43,7 @@ import it.tidalwave.bluemarine2.model.role.Entity;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Track extends Entity, Identifiable
+public interface Track extends Entity, SourceAware, Identifiable
   {
     public static final Class<Track> Track = Track.class;
 
@@ -59,7 +59,7 @@ public interface Track extends Entity, Identifiable
 
     /*******************************************************************************************************************
      *
-     * Returns the record that contains this track
+     * Returns the {@link Record} that contains this track
      *
      * @return  the record
      *
@@ -69,8 +69,9 @@ public interface Track extends Entity, Identifiable
 
     /*******************************************************************************************************************
      *
+     * Returns the {@link Performance} that this track is a recording of.
      *
-     *
+     * @return  the performance
      *
      ******************************************************************************************************************/
     @Nonnull

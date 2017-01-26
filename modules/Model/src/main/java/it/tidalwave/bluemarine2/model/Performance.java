@@ -41,10 +41,17 @@ import it.tidalwave.bluemarine2.model.role.Entity;
  * @version $Id: $
  *
  **********************************************************************************************************************/
-public interface Performance extends Entity, Identifiable
+public interface Performance extends Entity, SourceAware, Identifiable
   {
     public static final Class<Performance> Performance = Performance.class;
 
+    /*******************************************************************************************************************
+     *
+     * Returns the performers of this performance.
+     *
+     * @return  a {@link Finder} for the performers
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public Optional<Id> getSource();
 

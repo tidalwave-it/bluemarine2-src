@@ -26,61 +26,56 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.impl;
+package it.tidalwave.util;
 
-import java.util.Optional;
-import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
-import java.nio.file.Path;
-import it.tidalwave.util.spi.AsSupport;
-import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
-import lombok.AllArgsConstructor;
-import lombok.experimental.Delegate;
-import lombok.Getter;
-import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
+import java.util.function.Supplier;
+import static java.util.Objects.requireNonNull;
 
 /***********************************************************************************************************************
  *
- * The default implementation of {@link MediaFolder}. It basically does nothing, it just acts as an aggregator of roles.
- *
- * @stereotype  Datum
- *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-@Immutable @AllArgsConstructor
-public class FileSystemMediaFolder implements MediaFolder
+public class Memoize<T>
   {
-    @Getter @Nonnull
-    private final Path path;
+    private T value;
 
-    @CheckForNull
-    private MediaFolder parent;
+    private transient volatile boolean initialized;
 
-    @Getter @Nonnull
-    private final Path basePath;
+    private transient volatile Supplier<T> supplier;
 
-    @Delegate
-    private final AsSupport asSupport = new AsSupport(this);
-
-    @Override @Nonnull
-    public Optional<PathAwareEntity> getParent()
+    public Memoize()
       {
-        return Optional.ofNullable(parent);
       }
 
-    @Override @Nonnull
-    public PathAwareFinder findChildren()
+    public Memoize (final @Nonnull Supplier<T> supplier)
       {
-        return new FileSystemMediaFolderFinder(this, basePath).sort(new MediaItemComparator());
+        this.supplier = supplier;
       }
 
-    @Override @Nonnull
-    public String toString()
+    @Nonnull
+    public T get()
       {
-        return String.format("FileSystemMediaFolder(%s)", basePath.relativize(path));
+        return get(requireNonNull(supplier, "get() can be used if the Supplier has been provided in the constructor"));
+      }
+
+    @Nonnull
+    public T get (final @Nonnull Supplier<T> supplier)
+      {
+        if (!initialized) // double checked locking
+          {
+            synchronized (this)
+              {
+                if (!initialized)
+                  {
+                    value = supplier.get();
+                    initialized = true;
+                  }
+              }
+          }
+
+        return value;
       }
   }

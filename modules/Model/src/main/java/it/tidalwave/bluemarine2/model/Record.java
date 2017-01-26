@@ -31,7 +31,6 @@ package it.tidalwave.bluemarine2.model;
 import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.net.URL;
-import it.tidalwave.util.Id;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
@@ -42,13 +41,13 @@ import it.tidalwave.bluemarine2.model.finder.TrackFinder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Record extends Entity, Identifiable
+public interface Record extends Entity, SourceAware, Identifiable
   {
     public static final Class<Record> Record = Record.class;
 
     /*******************************************************************************************************************
      *
-     * Finds the tracks in this record.
+     * Finds the {@link Track}s in this record.
      *
      * @return  the tracks
      *
@@ -56,15 +55,33 @@ public interface Record extends Entity, Identifiable
     @Nonnull
     public TrackFinder findTracks();
 
-    @Nonnull
-    public Optional<Id> getSource();
-
+    /*******************************************************************************************************************
+     *
+     * Returns the Amazon ASIN of this record.
+     *
+     * @return  the Amazon ASIN
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public Optional<String> getAsin();
 
+    /*******************************************************************************************************************
+     *
+     * Returns the bar code of this record.
+     *
+     * @return  the bar code
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public Optional<String> getGtin();
 
+    /*******************************************************************************************************************
+     *
+     * Returns the cover image URL of this record.
+     *
+     * @return  the cover image URL
+     *
+     ******************************************************************************************************************/
     @Nonnull
     public Optional<URL> getImageUrl();
   }

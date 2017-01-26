@@ -29,10 +29,10 @@
 package it.tidalwave.bluemarine2.model.finder;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.util.Id;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import it.tidalwave.util.spi.ExtendedFinder8Support;
-import it.tidalwave.bluemarine2.model.MusicPerformer;
-import it.tidalwave.bluemarine2.model.Performance;
+import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 
 /***********************************************************************************************************************
  *
@@ -42,31 +42,30 @@ import it.tidalwave.bluemarine2.model.Performance;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface MusicPerformerFinder extends SourceAwareFinder<MusicPerformer, MusicPerformerFinder>,
-                                              ExtendedFinder8Support<MusicPerformer, MusicPerformerFinder>
+public interface PathAwareFinder extends ExtendedFinder8Support<PathAwareEntity, PathAwareFinder>
   {
     /*******************************************************************************************************************
      *
-     * Constrains the search to artists who are performers of the given entity.
+     * Constrains the search to the entity with the given path.
      *
-     * @param       performanceId   the id of the performance
-     * @return                      the {@code Finder}, in fluent fashion
+     * @path        the path
+     * @return      the {@code Finder}
      *
      ******************************************************************************************************************/
     @Nonnull
-    public MusicPerformerFinder performerOf (@Nonnull Id performanceId);
+    public PathAwareFinder withPath (@Nonnull Path path);
 
     /*******************************************************************************************************************
      *
-     * Constrains the search to artists who are performers of the given entity.
+     * Constrains the search to the entity with the given path.
      *
-     * @param       performance     the  performance
-     * @return                      the {@code Finder}, in fluent fashion
+     * @path        the path
+     * @return      the {@code Finder}
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default MusicPerformerFinder performerOf (final @Nonnull Performance performance)
+    public default PathAwareFinder withPath (@Nonnull String path)
       {
-        return performerOf(performance.getId());
+        return withPath(Paths.get(path));
       }
   }

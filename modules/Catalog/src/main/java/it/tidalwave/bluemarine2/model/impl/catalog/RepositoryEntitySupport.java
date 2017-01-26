@@ -39,7 +39,7 @@ import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.role.Entity;
-import it.tidalwave.bluemarine2.model.finder.BaseFinder;
+import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;
 import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
@@ -193,7 +193,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
      *
      ******************************************************************************************************************/
     @Nonnull
-    private <ENTITY, FINDER extends BaseFinder<ENTITY, FINDER>> FINDER configured (final @Nonnull FINDER finder)
+    private <ENTITY, FINDER extends SourceAwareFinder<ENTITY, FINDER>> FINDER configured (final @Nonnull FINDER finder)
       {
         return finder.importedFrom(source).withFallback(fallback);
       }

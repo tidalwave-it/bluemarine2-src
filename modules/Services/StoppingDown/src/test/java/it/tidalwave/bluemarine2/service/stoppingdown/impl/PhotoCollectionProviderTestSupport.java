@@ -38,13 +38,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.model.finder.EntityFinder;
 import it.tidalwave.bluemarine2.model.spi.VirtualMediaFolder;
 import it.tidalwave.bluemarine2.commons.test.TestUtilities;
 import org.testng.annotations.BeforeMethod;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.mock;
+import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
 
 /***********************************************************************************************************************
  *
@@ -89,7 +89,7 @@ public class PhotoCollectionProviderTestSupport extends SpringTestSupport
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected static List<String> dump (final @Nonnull EntityFinder finder)
+    protected static List<String> dump (final @Nonnull PathAwareFinder finder)
       {
         VirtualMediaFolder.EntityFinderFactory fff = t -> finder;
         final VirtualMediaFolder md = new VirtualMediaFolder(Optional.empty(), Paths.get("/"), "xxx", fff);
