@@ -5951,11 +5951,14 @@
 	foaf:sha1 "cdfff282cc28119b2a266a792fedb61946932638" .
 
 <urn:bluemarine:record:-635CqVz4z4PWEI2co8A4_7IS1Y=> a mo:Record ;
+	bmmo:diskCount "2"^^xs:int ;
+	bmmo:diskNumber "1"^^xs:int ;
 	bmmo:iTunesCddb1 "A60D010B+249827+11+150+47495+71245+84690+114582+133140+144937+171662+185302+206875+230457" ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Bach: Mass In B Minor, BWV 232 [Disc 1]" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:4NU__eTYZctezbYBjiy9C5Xzn0c=> , <urn:bluemarine:track:9zATCnd3wJuLADrTfR9dcTbocPk=> , <urn:bluemarine:track:P_78P3BO-8CVVEuAz2QCG8o2Row=> , <urn:bluemarine:track:QYVNyJCIszGfdhs1FrQuces0RGc=> , <urn:bluemarine:track:VOjgPohLklkNDzMgmhIEE1k27Dc=> , <urn:bluemarine:track:XL9_KSyBmjKUKd1O_7Ofz_ct8JI=> , <urn:bluemarine:track:btCHASU05km7dLi7qxvEzqpoJes=> , <urn:bluemarine:track:ktNOdT5N1bu4cu9aUEoCPdLLKS4=> , <urn:bluemarine:track:oM-Lv4IzwEPjz-lhmatGCYdSjJE=> , <urn:bluemarine:track:ql2V8rScbKiB5v0bPAR7ZCfx5E4=> , <urn:bluemarine:track:zkp40hTxxtgRTjAkVgsnHZgFsM8=> ;
+	mo:track_count "11"^^xs:int ;
 	rdfs:label "Bach: Mass In B Minor, BWV 232 [Disc 1]" ;
 	foaf:maker <urn:bluemarine:artist:-uUZ4nk8KRZq6CPD9M_e65oeWZ4=> .
 
@@ -5965,6 +5968,7 @@
 	dc:title "O tu chara sciença: La musique dans la pensée médiévale" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:06mt-0h8_r-6E5GRS_ozsdPmJxI=> , <urn:bluemarine:track:6Hkv9YnOkDx5nFREOLoD36JDreA=> , <urn:bluemarine:track:8rAQMKDwCLJ22YJuHN_6ga6_9KY=> , <urn:bluemarine:track:B2rsIzBLJfLmG0vVmRzZdx16y7w=> , <urn:bluemarine:track:BRZpy8XhMmjcuP4tp5NIu67Gzfc=> , <urn:bluemarine:track:FKQslTawNCCOOUM9QX8gkFcaslM=> , <urn:bluemarine:track:LhYFlJtIXd_HEFIlm3VmZbop7d8=> , <urn:bluemarine:track:MUsE8pM15C1LdS1MkjUUoGA5yco=> , <urn:bluemarine:track:Nadq0hlXfztwfmLlz9cAIa0ivU4=> , <urn:bluemarine:track:USaqBm_znxFPQBDvn90L0lIglQo=> , <urn:bluemarine:track:UYZHGKUCPrTPa-0X-XqdqKRdfNM=> , <urn:bluemarine:track:UtGURYO6KVUI86PM_AL5ZpQDuKo=> , <urn:bluemarine:track:X6bY0F5jd31Y3NYP-NqUjxVhSGo=> , <urn:bluemarine:track:XQiw-jWI754GVy0H-MhmcKs2va0=> , <urn:bluemarine:track:_qKoEiqosZu6cf5Z1Jm-kYM5sQc=> , <urn:bluemarine:track:bR5iiNPhh-c9-i1Mn6-SecOtBW0=> , <urn:bluemarine:track:bYN0bVXiPF_YKsVmu1ariBsTPZY=> , <urn:bluemarine:track:tN4psM5YSuqOw_R0Y_HCwLOrbJ8=> , <urn:bluemarine:track:wiI9rkeQWqVUb5DzmdOKssodW9I=> , <urn:bluemarine:track:wrK-s5u3mA_TAvBQZPJz3t-zl0I=> ;
+	mo:track_count "20"^^xs:int ;
 	rdfs:label "O tu chara sciença: La musique dans la pensée médiévale" ;
 	foaf:maker <urn:bluemarine:artist:qnW_5ToMGI_l4dglpMq6T6_zRpg=> .
 
@@ -5974,6 +5978,7 @@
 	dc:title "Schumann: Piano Sonata #1, Fantasie In C" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:-Kfjllsujd9kOxwydl6eujlBzPg=> , <urn:bluemarine:track:LFKH5vsPMkfIttmxya-rSiSEBQ0=> , <urn:bluemarine:track:PEPgPCiDhaYXW1iAaVTsGqWhBr4=> , <urn:bluemarine:track:QnHELsu5mSiOhBEeEVKXvThtUj4=> , <urn:bluemarine:track:kRDzjgqp9sgTe-9ZWF3nP2-4eJM=> , <urn:bluemarine:track:qu3fN3olgRqRBI4m03j2P8n9mOo=> , <urn:bluemarine:track:tY-i_0Ps9d30tjGcsAvQmRe-nwQ=> ;
+	mo:track_count "7"^^xs:int ;
 	rdfs:label "Schumann: Piano Sonata #1, Fantasie In C" ;
 	foaf:maker <urn:bluemarine:artist:Nh5VeMYW3NfBjih3dg_Eb5KiBng=> .
 
@@ -5983,6 +5988,7 @@
 	dc:title "La Domna Savorousa : Chants d’amour des troubadours et des trouvères" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:-y0-TewJzQ7JwQh6cwKEJWTh6es=> , <urn:bluemarine:track:01LMWAPi_cecx5F2bGBSxt41wTM=> , <urn:bluemarine:track:9bQTUhKY2afDPo4W79fbY_Ud758=> , <urn:bluemarine:track:9p9VIKrhY_VtnLadn-IkeNmdI0M=> , <urn:bluemarine:track:A0FFUW5449M7m397Gkhx_ph4x9s=> , <urn:bluemarine:track:DxHIckA3J-V-ktZyYo7f0jkPhEI=> , <urn:bluemarine:track:EuyRpA2_PCJ0lTZR2zi2stLpZ7w=> , <urn:bluemarine:track:Jw1z0EI-1P73X1tVcTuQp7iZ3bM=> , <urn:bluemarine:track:MnJvGKgMj_aZnQw0TDwBJszzD4w=> , <urn:bluemarine:track:QHXLf_O3eSgpx_RHWwUJA1GGQO4=> , <urn:bluemarine:track:m5OG6Sh6rwfm949vsl9cYmlRsYk=> , <urn:bluemarine:track:ogHR8W5u5q5mMQjUahWrbe-z0XA=> , <urn:bluemarine:track:qppupS9J7gDVLNhbgqeDQsC-s6E=> , <urn:bluemarine:track:xliXN1AxS-bxgxLF3TnbEeSYdL8=> ;
+	mo:track_count "14"^^xs:int ;
 	rdfs:label "La Domna Savorousa : Chants d’amour des troubadours et des trouvères" ;
 	foaf:maker <urn:bluemarine:artist:A-VY50Cy0VfYu_RjacPestz72Yc=> .
 
@@ -5992,6 +5998,7 @@
 	dc:title "Dvořák; Elgar: Cello Concertos" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:74ThJB_RWANZOHObD5T932pSTzc=> , <urn:bluemarine:track:OO7EJMbMc-k7hrXKfqbc7qB-Kqw=> , <urn:bluemarine:track:QwpAvXchAXkoxByYp4x0kYwQ1aY=> , <urn:bluemarine:track:akwOrIILPLU3taouBVwQ0a_8vQk=> , <urn:bluemarine:track:c17FY0PJz-UpMsPF8PfKFBiiIi4=> , <urn:bluemarine:track:pxn3JLY2-c71QKQYVbtZwJK90To=> , <urn:bluemarine:track:uW-PxH8Vx0OwlvKd7NtBARz9_Uc=> ;
+	mo:track_count "7"^^xs:int ;
 	rdfs:label "Dvořák; Elgar: Cello Concertos" ;
 	foaf:maker <urn:bluemarine:artist:VC5zjfeQQFWNxMc46NwYM2GaRkA=> .
 
@@ -6009,6 +6016,7 @@
 	dc:title "Handel: Messiah (Highlights)" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:087g1G-XBZDil4s7OEu5BOIPC6s=> , <urn:bluemarine:track:6skidm-wBnpSG781xvbgz0zrIeI=> , <urn:bluemarine:track:F6_98Lb0WH01OpZcHDkwVEFXOP4=> , <urn:bluemarine:track:FBu7vKYfjAAzsHK63TXQtnHAYY8=> , <urn:bluemarine:track:UAisuEWPecBNntRCbNc_DlO04KE=> , <urn:bluemarine:track:_9Ap-uiFir2knJshY_oYucp7qP8=> , <urn:bluemarine:track:_GtVho8f5k4rfB_HSto-Hb19xkg=> , <urn:bluemarine:track:dKS-o-SCHCSjKUDJvYgmR0CIxAQ=> , <urn:bluemarine:track:gCdfCf-aLRpbkK-CED3dQx-o290=> , <urn:bluemarine:track:i64YoGOkwUrQkLZyAN3wkkDZxbc=> , <urn:bluemarine:track:o-Z-ggevB5nxmdgOrqF_PWS7kNk=> , <urn:bluemarine:track:vUq6rK65fHVNOEszoPlC3Hy4N5M=> , <urn:bluemarine:track:wsOraIva5rnbpZKNj1w1H2FuueY=> , <urn:bluemarine:track:yFw-Y30APVFqQoKPH3b2QTLC--I=> ;
+	mo:track_count "14"^^xs:int ;
 	rdfs:label "Handel: Messiah (Highlights)" ;
 	foaf:maker <urn:bluemarine:artist:NnS-I1pE4AVqXaLu32NEK0jOO0Y=> .
 
@@ -6018,6 +6026,7 @@
 	dc:title "Handel: Music For The Royal Fireworks, Concerto #2 In F" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:4JkwJJCu9gPiIk2oWwViWJWa0eU=> , <urn:bluemarine:track:HaQ6YunDSR6GYM4yRWE8a5t9C_o=> , <urn:bluemarine:track:NvvmFWVq3URkWHUYfjw6cG8qMqc=> , <urn:bluemarine:track:Upzs6pv4KBMZ7ch9CT3A6MncDNU=> , <urn:bluemarine:track:VuKeqWCg9cyRX4UjTrjbN3FWe2w=> , <urn:bluemarine:track:XSZVJa6opLVTYIZcV3yljDSUEhY=> , <urn:bluemarine:track:XrvZBylvDJt6QoqrqgOOlI_yk88=> , <urn:bluemarine:track:YNdBQ1P4IDaNZkDoOi1ufRdZNXw=> , <urn:bluemarine:track:YY9qH04Da6r8hRjj3M30XEJeHXY=> , <urn:bluemarine:track:dfkTIH23HnJDuUNaLtVKd2SxgbI=> , <urn:bluemarine:track:e_WLpwd0F9P7E80VKr8_gefYnNQ=> , <urn:bluemarine:track:hwHb6wmSqxBRUCWBSAu01PXl9Zw=> , <urn:bluemarine:track:jlYVxN1LR-VwBvGbkeXK-2LDE6k=> , <urn:bluemarine:track:vBqFZY2vBx2G6palwGRflf0Fsik=> , <urn:bluemarine:track:xCPyE3plASBjz_Um97TMkvty1k8=> , <urn:bluemarine:track:xsoBAgGn11_igYHL0UTngTCM1ZI=> ;
+	mo:track_count "16"^^xs:int ;
 	rdfs:label "Handel: Music For The Royal Fireworks, Concerto #2 In F" ;
 	foaf:maker <urn:bluemarine:artist:IhIFeI5bMoxSCkCIS46Ss5RAlmY=> .
 
@@ -6027,6 +6036,7 @@
 	dc:title "Johannes Brahms, Robert Schumann" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:-HgLx23hOuWmrUoB0nhJ9z3G13c=> , <urn:bluemarine:track:45sSTCwnwPOeoEkn8q5C6yaBga4=> , <urn:bluemarine:track:55M6bNA1LBUUJstdUDWTvRQctBU=> ;
+	mo:track_count "3"^^xs:int ;
 	rdfs:label "Johannes Brahms, Robert Schumann" ;
 	foaf:maker <urn:bluemarine:artist:k3OalJDXS2vzNdm7tvFq3TNA76Y=> .
 
@@ -6036,15 +6046,19 @@
 	dc:title "Lorenzo Perosi" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:0K0zmmYlI_HOiqe1JUC6pgv5iic=> , <urn:bluemarine:track:1mu2rT31TSO_xe3J4sC4uSeU7Ck=> , <urn:bluemarine:track:27YYk8T5YzwOF8cvwCSkCBpTrbM=> , <urn:bluemarine:track:2B2_H465oYZ6kXdPs8vWO5ZSX1c=> , <urn:bluemarine:track:3CoiK7QyTxHSn_-nX-vCYCWdYOQ=> , <urn:bluemarine:track:4uyDYjQfwaCjG8d6rleUSS69yrU=> , <urn:bluemarine:track:5VnndS9MOwMUUgeJFYWJot3nqi4=> , <urn:bluemarine:track:AriRWKikgMFIw1UomYsikIMT2Jo=> , <urn:bluemarine:track:Cny4XqGrKX1TgV_rl5zpVVEqwyU=> , <urn:bluemarine:track:EKHA1lYmVLGycPzYc3Jc21azTMs=> , <urn:bluemarine:track:FDH8XPZh0zD46OPrjHnnCW8RveA=> , <urn:bluemarine:track:HlRK_k6xVspK07urZ501c3GEsBI=> , <urn:bluemarine:track:ILYsJP537GoN7D4jYydqS6-gUuk=> , <urn:bluemarine:track:M35Xgv0B6oDz7wc2ByOfmmwBKl4=> , <urn:bluemarine:track:MPgdfKhUHBNpe9sg82vjElN1ddY=> , <urn:bluemarine:track:Nej7ca36iQpF88LqFO8Cb3mHtO4=> , <urn:bluemarine:track:TUNk5h8zBJ_UypHr21CHrf9ZtkE=> , <urn:bluemarine:track:Tzer_yKhi99urXJMaghAzgxhVHU=> , <urn:bluemarine:track:WgcRao3hHZJXNLIsPuNSNWsNT8w=> , <urn:bluemarine:track:ZJgLlY23pilz8GxVDL6ln5S9Bk8=> , <urn:bluemarine:track:bPVdANI3y7WjuoLKseYCjAMaJ4Q=> , <urn:bluemarine:track:gCA-3Yun_qIQGYjgwXtUxmXH7PM=> , <urn:bluemarine:track:ga7ntodwUCwBjqPu7M4OM5e3UO8=> , <urn:bluemarine:track:mdaKsUJOZDpFYaTwB2KnYYPebvM=> , <urn:bluemarine:track:o6_ep9Uq0mGwoTNyzJ-naLWPJRU=> , <urn:bluemarine:track:ybDztpwBD91ZBwLAr2bolBQPr7w=> ;
+	mo:track_count "26"^^xs:int ;
 	rdfs:label "Lorenzo Perosi" ;
 	foaf:maker <urn:bluemarine:artist:DDjtW4nJhSKSAOn9KMe0UHZ5Wx8=> .
 
 <urn:bluemarine:record:7KnxkoIeCTYNs7ZpWs384ukS-xU=> a mo:Record ;
+	bmmo:diskCount "4"^^xs:int ;
+	bmmo:diskNumber "2"^^xs:int ;
 	bmmo:iTunesCddb1 "FB0B4C12+217050+18+150+13425+26000+42275+52550+64987+72200+83787+89100+102450+111675+122825+136325+151850+170550+173737+183975+196012" ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Las Mejores Obras Del Canto Gregoriano [Disc 2]" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:-Ygk545J-MqD-QnJDOzWyYXipBs=> , <urn:bluemarine:track:05UbfXGVjJ4WkhqHlUzxxzngukc=> , <urn:bluemarine:track:1SGtNFrr6Wc0dYjGwVCUnQlS5wc=> , <urn:bluemarine:track:3eZ23ZsshzMYQVb39DrORsA9nDo=> , <urn:bluemarine:track:3o-Kr_6-H8kma_ZKyoWCv7orT3o=> , <urn:bluemarine:track:3tHDud25_PYjb9csfQgYAj2Fwjs=> , <urn:bluemarine:track:56XmoAHhHA1DTEaIiGCgvjhAaVw=> , <urn:bluemarine:track:8WybRyfRUa18IcLi3YgkVJoTGA8=> , <urn:bluemarine:track:CaVwmhgRdEUfAqy7Nn9awfgiy_Q=> , <urn:bluemarine:track:CpkS5QLMbK5QAYOxy5PHt8PypOY=> , <urn:bluemarine:track:NJJUVoIVsyZb5U2Egw67vhdUF_Q=> , <urn:bluemarine:track:OMtF8IUEb6OPNlMGesKTcQQ4_1E=> , <urn:bluemarine:track:OTTj9s8oMtGWBhNzWvVVzCFdpmk=> , <urn:bluemarine:track:UllbvlWkE_mbxAJbLsHHvE9eq4E=> , <urn:bluemarine:track:o6D6ibZSgPTEGRLrpOixZSE6Ars=> , <urn:bluemarine:track:sw_qUg0NW3I_iBgk4FJVWXieRAg=> , <urn:bluemarine:track:u0JFzZALEHj5SiFf_oRYzg0fXYI=> , <urn:bluemarine:track:uUPftXx6_uIDc2CGfa4vYm8OMTo=> ;
+	mo:track_count "18"^^xs:int ;
 	rdfs:label "Las Mejores Obras Del Canto Gregoriano [Disc 2]" ;
 	foaf:maker <urn:bluemarine:artist:NaBA0sMMKOlieukHnxkVtUIkZk4=> .
 
@@ -6054,6 +6068,7 @@
 	dc:title "Mostly French" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:72VD6Vs_95v7mDU3ej3CRTOxCEM=> , <urn:bluemarine:track:NCC8fuI1Zvba6TolWB86wQbkJ9U=> , <urn:bluemarine:track:Nl_L128cAnfa536LBxMj6OWD6oI=> , <urn:bluemarine:track:RQuqTJUOSsA3MXuJUrsRrYOJ3JA=> , <urn:bluemarine:track:RZKWNR-dtQbfcyJVKOqxDDdHBKg=> , <urn:bluemarine:track:Rl_5rutXfvHYP3ozH4fhgn0FaxU=> , <urn:bluemarine:track:W9eIOUTd02BQSQCsNX6I8r9oPnI=> , <urn:bluemarine:track:wDjIUsvcnd2w6T1DN_57h9K1aUU=> ;
+	mo:track_count "8"^^xs:int ;
 	rdfs:label "Mostly French" ;
 	foaf:maker <urn:bluemarine:artist:KCMCkVU6EPkyjWpyPLT5ZUd0Vq4=> .
 
@@ -6063,6 +6078,7 @@
 	dc:title "Beethoven: Piano Sonatas #21, 23 & 26" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:-baz9LJkA6Kpaf18DOTjuSwKsgY=> , <urn:bluemarine:track:78fxE-NK3qDzDfVMLjU6m1ZHkuE=> , <urn:bluemarine:track:Nrv1h0ufzeXLJNag_w0c3vn40XQ=> , <urn:bluemarine:track:OrWDmzqNf33nrXDVAQjDNs48JpQ=> , <urn:bluemarine:track:PQPOyiLQKLm12FSEA_eDGA8LwMk=> , <urn:bluemarine:track:RM6GWvoupskGG9PWHq4Trkn2-b0=> , <urn:bluemarine:track:RlAevTsmmpHlrcy-zXWZnt41-zU=> , <urn:bluemarine:track:qMFX5cavMduJ1qI4rCaOQf5Lwxo=> , <urn:bluemarine:track:ytniPc_hv-OHalBfBmC1O2mp_7E=> , <urn:bluemarine:track:zUYJbXUASduXOINsfPzxngcwkhQ=> ;
+	mo:track_count "10"^^xs:int ;
 	rdfs:label "Beethoven: Piano Sonatas #21, 23 & 26" ;
 	foaf:maker <urn:bluemarine:artist:alNxqCp5i5AeNL9FF-YnFA4yKWM=> .
 
@@ -6072,6 +6088,7 @@
 	dc:title "Vivaldi: Musica da camera e da chiesa" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:-SbsBm83tvcQtLsj0mWEkDq0GPo=> , <urn:bluemarine:track:2EPVg6gj6N1ktzniahudyNVj4Z8=> , <urn:bluemarine:track:3KAF5TafzA3HQHiU1-lBUETrVXE=> , <urn:bluemarine:track:52dhFP7y0_qF4ng5NKlQsm-dkyo=> , <urn:bluemarine:track:5_J5TH3jltCpQkz4Z7_PAvkOies=> , <urn:bluemarine:track:6TiqPoI_ytWUg5lUS9pPp-XUgjs=> , <urn:bluemarine:track:9Acwvpwn88U4XNpp1Mfr6eIbOFo=> , <urn:bluemarine:track:CoBEUdVqNCQsEV9P3WmVRslhfs4=> , <urn:bluemarine:track:FLyqfpMafJvgeTrr0YGhsEvkHyY=> , <urn:bluemarine:track:LtUzd70WjXUFZI_-Fk8z7gbFaHc=> , <urn:bluemarine:track:MiBU49iTAzFW7VPZdu3L0Y_ljic=> , <urn:bluemarine:track:OMix1FV51ex9t-kSDdnzmLLKqto=> , <urn:bluemarine:track:S1swEzl2ZyrB1GYPoFl8VT375kc=> , <urn:bluemarine:track:T2UZuS6__Sd__oiZ8P6o3DDGCL0=> , <urn:bluemarine:track:U1FyRA41l97YTZ3zpIWkpx4W2OQ=> , <urn:bluemarine:track:UZK9eCKWnbv2x_ys75RspeWJAlg=> , <urn:bluemarine:track:UoBmSwfRI4Is6oSgTXgetRSfD54=> , <urn:bluemarine:track:Ve6Q8QG5YUo3KwEnFfe7npOIWdE=> , <urn:bluemarine:track:ZV4AcJxxSgt-oZowEDfqzu6o9o8=> , <urn:bluemarine:track:_RCosHoMeJXZnyGHkgdTUGugly0=> , <urn:bluemarine:track:a5Wc7tPFjhhAEQGMqCTf0oBgIGg=> , <urn:bluemarine:track:arco5xnSTrEZjr5i4JAdOzkV3oo=> , <urn:bluemarine:track:avgZjSmDRMT2tkLFqT60hy_2FZE=> , <urn:bluemarine:track:d66AHtm9vJnRzVpZs7Uxi2uGnbc=> , <urn:bluemarine:track:eL61uYV7SbnkKJ__82wNjONDFmE=> , <urn:bluemarine:track:f3gr-brriTca4GrQpbSwxXjmsuA=> , <urn:bluemarine:track:g5HPF45RylOutZlE3gNGlkOptQU=> , <urn:bluemarine:track:iPIf0b32ADKRgLNLM94fDLyt8hA=> , <urn:bluemarine:track:j-Z2ZR0XbqQvi3N4YsJrFXq1e8E=> , <urn:bluemarine:track:jPYzQ8dB33nUsS8CRCXgFaHZsjw=> , <urn:bluemarine:track:k4R1K2sYh_x1laqGGuOCqsdOFno=> , <urn:bluemarine:track:oZABzqS_CiO-yLCZ8HlPlO0LicI=> , <urn:bluemarine:track:qTsRXT_q1jY7qxWz7ZFWnRcGmdA=> , <urn:bluemarine:track:rwkPTTI6aJiIvdx28K0Y5DVyFwU=> , <urn:bluemarine:track:s6CCRofiMAxsaGltnzw6eQzD2E4=> , <urn:bluemarine:track:sea-aC4adzOfyYkOasjNLKM68hA=> , <urn:bluemarine:track:uhqOClogb231EUA9Day39-bOFEY=> , <urn:bluemarine:track:vVBDMvUvJboaDNVaCVrYO-kkcfI=> , <urn:bluemarine:track:wZVcQrgTOuXJ_m63d1LGFPCNRUY=> , <urn:bluemarine:track:x8eHW_3f-zeF4RGnElYYDTEHtX8=> ;
+	mo:track_count "40"^^xs:int ;
 	rdfs:label "Vivaldi: Musica da camera e da chiesa" ;
 	foaf:maker <urn:bluemarine:artist:xh30mv1nEVEjuqU3HJYjk4VRCYY=> .
 
@@ -6081,6 +6098,7 @@
 	dc:title "Marais: Pièces À Deux Violes 1686" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:21ImZQDE3NBjGz480PHnzvsYE-Q=> , <urn:bluemarine:track:2ntb9403tWZcMzmXaT8z6DwE2lw=> , <urn:bluemarine:track:4m8H02W1cesPsh0-ummuGndPhEg=> , <urn:bluemarine:track:71zOvZqUowPPq5i14r8LZnj1isw=> , <urn:bluemarine:track:98hjBTMNAOR1QMY570xQ0HL3dXI=> , <urn:bluemarine:track:B7Z0T2kqzQz43WYiFJh3zsWW1Kg=> , <urn:bluemarine:track:MGbpJKRbbeTdYwlAG0Pb9H-8kRA=> , <urn:bluemarine:track:MSck51x6b1P2IMYe7cCZN4Sf73k=> , <urn:bluemarine:track:NJPsAGRLzoKWkHeC3o5YRJNje0E=> , <urn:bluemarine:track:NRaxEsJ-1MIesEa-LBkpydz3v1k=> , <urn:bluemarine:track:QNMzninlabhrxwMJcTfcv-FZnHI=> , <urn:bluemarine:track:UuZSATZoO61xB3FmnUz6ZCCFagA=> , <urn:bluemarine:track:VXCkqUEHHV4qpMTTZv9Qt4V1RSs=> , <urn:bluemarine:track:XxPJ0oVbj__oZ1Wv3V4KrgwSVvA=> , <urn:bluemarine:track:YC-dVQTRISPPko2_CePuhLzjCfc=> , <urn:bluemarine:track:fRcBDhjlqV9fn6TS_5JYMk1UfTo=> , <urn:bluemarine:track:iF6QQYnCwv6LjQVyVz56tUPdagw=> , <urn:bluemarine:track:nJxnN-EnprVVPJNI5O9sJEeQq0E=> ;
+	mo:track_count "18"^^xs:int ;
 	rdfs:label "Marais: Pièces À Deux Violes 1686" ;
 	foaf:maker <urn:bluemarine:artist:n0USj0UzoIdXJ--46mMmWLDlLpI=> .
 
@@ -6098,6 +6116,7 @@
 	dc:title "Schumann; Grieg: Piano Concertos" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:4IZ7PAJlnOLxXT0FvNS_eiiKIAM=> , <urn:bluemarine:track:DzrV4f8_jLeuTj8R9bxPLfrqfxI=> , <urn:bluemarine:track:MsWuxkbyKCNZZMww3__TElhx_no=> , <urn:bluemarine:track:ZyqZwNnAtQguD2h80MhK4pWOCTY=> , <urn:bluemarine:track:inwuKwDOZXrZP5RNsoMEH10zkqQ=> , <urn:bluemarine:track:rHzqZW6b5e0ooOoo8uogn_taboI=> ;
+	mo:track_count "6"^^xs:int ;
 	rdfs:label "Schumann; Grieg: Piano Concertos" ;
 	foaf:maker <urn:bluemarine:artist:rjzjoVOCJe_MRrlfC5Jg65-vAig=> .
 
@@ -6107,6 +6126,7 @@
 	dc:title "Respighi: Ancient Airs & Dances" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:1p6jxv1O95SBr8yBqueKSgN_Bcg=> , <urn:bluemarine:track:7s_qia4Iu3aibA0ruGvAyLij08E=> , <urn:bluemarine:track:8zweIrBR6oy8VWURKubfIwfzpPk=> , <urn:bluemarine:track:9hHCVKlAlvUSrXVmqlA6kYhuPxs=> , <urn:bluemarine:track:Igd39G1jx7vKUYVL49QqJmf0FkA=> , <urn:bluemarine:track:OGiKKU7PfDoqrBedg2LIA5tyNws=> , <urn:bluemarine:track:bUqjMXp75pForV1rQ_mSBCC7804=> , <urn:bluemarine:track:cNS_vhibpoxC50er33jjTGDTe_o=> , <urn:bluemarine:track:gz-m3KISBvC2FB_yk-OydTrH_UQ=> , <urn:bluemarine:track:j07ltYAVYlA042mbjOt3Z9UTFVo=> , <urn:bluemarine:track:x2mfSQlsOfsOQW4c4qzRtFsaX90=> , <urn:bluemarine:track:zQPHf3o75FQMWGA6FG3G1fSIY_o=> ;
+	mo:track_count "12"^^xs:int ;
 	rdfs:label "Respighi: Ancient Airs & Dances" ;
 	foaf:maker <urn:bluemarine:artist:knPfY3aKWi84LhiF2InEQnX7Fs8=> .
 
@@ -6116,6 +6136,7 @@
 	dc:title "Tchaikovsky: The Nutcracker, Swan Lake" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:1k3EcoDpgGR38Bu1GSjV_7qY3es=> , <urn:bluemarine:track:3q9hep8-iZvsItVlUNshi1cMRk0=> , <urn:bluemarine:track:4CLwBYrtvgMR5NVO6l7dh_l_DoA=> , <urn:bluemarine:track:6CEly5ZrmV_v9hg4uIBBIwip6kA=> , <urn:bluemarine:track:AERzc66pZJnwJ_uBpgDFke80ou4=> , <urn:bluemarine:track:FPHADod0CrJpEBoDDM_nB0JX2Dc=> , <urn:bluemarine:track:FwHxko6YakHnyxq_fiyMGqEqhJQ=> , <urn:bluemarine:track:JXfpJtk7LYNCJy9dl-laRAsvfUo=> , <urn:bluemarine:track:PaS0Mi5obDUKzIoM6Z4htnDm7ss=> , <urn:bluemarine:track:RIppuNdYsjq_16n8ZbskEpbKnFw=> , <urn:bluemarine:track:Rfhv3-LyUIW8U3duWKKnQP5Q4aE=> , <urn:bluemarine:track:UxbxFDt5ZVuYFR8ZhpqtEk9iOrA=> , <urn:bluemarine:track:VOsSQ6TE3WUfp1yrpr8GWmS-TFU=> , <urn:bluemarine:track:g05hCJEL57p-cRbPOkv2ApJnuec=> , <urn:bluemarine:track:gnsgRnEkSsj9jxdhZSOtnijdelc=> , <urn:bluemarine:track:htqj1CKCc9mZnGns2U7SdDWFJtw=> , <urn:bluemarine:track:o0Va-RMAGYmDUtZ01Co7WBZWYZ4=> , <urn:bluemarine:track:zmsPvpUq3rvD3-TjnaCx3nUpKVo=> ;
+	mo:track_count "18"^^xs:int ;
 	rdfs:label "Tchaikovsky: The Nutcracker, Swan Lake" ;
 	foaf:maker <urn:bluemarine:artist:Xr1PzFxY5KgcwOOR6PiS_uaxnt8=> .
 
@@ -6125,6 +6146,7 @@
 	dc:title "The Magic of The French Horn - Greatest Concertos" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:19Z-Eq1JYNUcDFmvmw-_yhxdBIw=> , <urn:bluemarine:track:3gZbO0AcYpEe1xTNDiMOv9cdQEA=> , <urn:bluemarine:track:3iCetR8X5sbJqxKCgX2Gdzb9qyA=> , <urn:bluemarine:track:3mtszHvfwAX2BRbDfe4l-z5loHA=> , <urn:bluemarine:track:4K5WCZiu4sge4ir139AeKGK5Xo4=> , <urn:bluemarine:track:A-dNrSsBOsEx3MI0vYbsQxWpaoI=> , <urn:bluemarine:track:Ktnr1UrH4IejSwVPNu92d3yAcjw=> , <urn:bluemarine:track:Yi-Vd5x0X_Diu0XdjhUPjRBB2qY=> , <urn:bluemarine:track:g9ZhJ7RqmLsi_fkQcyQkdju-1TY=> , <urn:bluemarine:track:n1ZLU7Y0ckmKmFXnjyCEnuVba7Y=> , <urn:bluemarine:track:oRFJVmWxKBAUBSpvIW1d36tTGBM=> , <urn:bluemarine:track:rWjsyGqMiBwNwhgSP7hQR3Z6VIE=> ;
+	mo:track_count "12"^^xs:int ;
 	rdfs:label "The Magic of The French Horn - Greatest Concertos" ;
 	foaf:maker <urn:bluemarine:artist:3xoSdPZt7MSy-OWw9l--NscDGhc=> , <urn:bluemarine:artist:EaBkQ0Y9MeYfS3Wt_PEYr8hdp8Y=> , <urn:bluemarine:artist:Ecj3GCKuYJzSONZN64KPts874z4=> , <urn:bluemarine:artist:HcWs1il-RPIvyzhyyQKk82weqr0=> , <urn:bluemarine:artist:JW9tEXBQZt3jql86p_Do_b2UeIE=> , <urn:bluemarine:artist:KBv3K-UdK0ZJHoLvSj-qG0ifGbM=> , <urn:bluemarine:artist:QD6WKz-7PmW0HkJ3vcwNF-kmhs8=> , <urn:bluemarine:artist:fSEHGLlZucXZ-8AnSVAumRsU6dk=> , <urn:bluemarine:artist:z4F14cjTeXKPnKDChuJoRJAwCyo=> .
 
@@ -6134,6 +6156,7 @@
 	dc:title "Trio 99>00" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:04TgWNbFJduC1blbmNhj_aRe6VQ=> , <urn:bluemarine:track:084mcMTA4obPc6C2uK8_k07y1_I=> , <urn:bluemarine:track:CKQQMu7CVCkZuOueAWnncV-rOEk=> , <urn:bluemarine:track:HV18jxgoJbRu-yyLyZCwsa8W7S8=> , <urn:bluemarine:track:IAYGT9TXtiIqRYxLICDDWFo2YAM=> , <urn:bluemarine:track:QbafbWNNTMevSFeukb4NZaTV1HA=> , <urn:bluemarine:track:QpLrd6gnOZgV5AXg12boM7JGPPI=> , <urn:bluemarine:track:TdN4-eihj4bbSCvkkYV5T6wb3oM=> , <urn:bluemarine:track:jBUWohkBtPwuvNvj3i8xUItj9E4=> , <urn:bluemarine:track:qp1UhejBbF551FN5_NNbcFhFHyc=> , <urn:bluemarine:track:t4fPH7rN3smF5hM_rUOlfcwkc0o=> ;
+	mo:track_count "11"^^xs:int ;
 	rdfs:label "Trio 99>00" ;
 	foaf:maker <urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=> .
 
@@ -6143,6 +6166,7 @@
 	dc:title "The Planets - Herbert Von Karajan - Berliner Philharmoniker" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:Bnknkq57DqbgFpHuOAUzwTBtcQo=> , <urn:bluemarine:track:Dx3lmSHbmTFj64znqdDG_GTzAVE=> , <urn:bluemarine:track:IHPaKShw47WNKYsBc7quffmHpig=> , <urn:bluemarine:track:R9eXuyyAnsgfYxjEEJ-NjhsemhY=> , <urn:bluemarine:track:U0MDxBIY2v5oE_Ot5a5BnMCFD-A=> , <urn:bluemarine:track:qdtsq_x07YQxCGkk7-EgH_gxWHc=> , <urn:bluemarine:track:xKkeG2D3FuyKbkfuhfuVGUVb_aQ=> ;
+	mo:track_count "7"^^xs:int ;
 	rdfs:label "The Planets - Herbert Von Karajan - Berliner Philharmoniker" ;
 	foaf:maker <urn:bluemarine:artist:wCB__TPCpq3NJ7laCQPcttw56ts=> .
 
@@ -6152,6 +6176,7 @@
 	dc:title "Daniel And The Lions - Ludus Danielis" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:17jgGBimRJsXQBAMrcwpjKBUlC0=> , <urn:bluemarine:track:305g210o2142uBQ2h5GdrGDEp78=> , <urn:bluemarine:track:HUMFB1OYKlummMLxROTFDqwijfw=> , <urn:bluemarine:track:IAdWy0l73YtJj87DLWRJzpMLsIU=> , <urn:bluemarine:track:IoPCsXuA-KgFv-jPXnu0mjYerl4=> , <urn:bluemarine:track:MKQz3adgbA5CbkeP4gUoMHPuCUM=> , <urn:bluemarine:track:T0AVck2bowGkN-hd1XMytg4BYUQ=> , <urn:bluemarine:track:a_3JrUsBcMsxNdqNwb3S7c7QDNg=> , <urn:bluemarine:track:ddM66yOXLLrQYKBsXNy9s6IMCQY=> , <urn:bluemarine:track:kE7L-wkfcoSJ4ubA-gE3ClaxpVo=> , <urn:bluemarine:track:q78sYXxrz6c9su1VNgzyQV1n9JQ=> , <urn:bluemarine:track:uVg1rfXHgxCCtQXYI2xN1h84Xfk=> , <urn:bluemarine:track:vWTJV4jgQjMkYW6HP5WplkK-SXw=> ;
+	mo:track_count "13"^^xs:int ;
 	rdfs:label "Daniel And The Lions - Ludus Danielis" ;
 	foaf:maker <urn:bluemarine:artist:0ta0qZefIsefmrD2FUf0LcwMZUo=> .
 
@@ -6161,6 +6186,7 @@
 	dc:title "もうひとつのクリスマス" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:01L_niBPzDNNf_cQhSqYEbkNxhw=> , <urn:bluemarine:track:1f0J4eVMVReLncexRsw057-BzKE=> , <urn:bluemarine:track:60jEjrTG08Ul_GuR_0Ck8hKkZjs=> , <urn:bluemarine:track:6y-8B9m_StBVUYOx5_m6JMzM-2E=> , <urn:bluemarine:track:8Px52KYhbgwWNK75-R6DsbTWkLQ=> , <urn:bluemarine:track:GYu4REslqJ8w_29clFjZwyUmhMk=> , <urn:bluemarine:track:JKc2z0g65DFo0UeOOSbdFrLj2e0=> , <urn:bluemarine:track:f53ZYvDlBrF444vaFPaAgIO2ZmE=> , <urn:bluemarine:track:poa_yr_3q0whsQijpOWszX-GJ8A=> , <urn:bluemarine:track:v8-ie2uYS2644QO3itN58nbkOrI=> ;
+	mo:track_count "10"^^xs:int ;
 	rdfs:label "もうひとつのクリスマス" ;
 	foaf:maker <urn:bluemarine:artist:JRCXZbpWHpKx12pTV-F2GPtWcRU=> .
 
@@ -6170,6 +6196,7 @@
 	dc:title "Gregorian Chant: Hymns and Vespers for the Feast of the Nativity" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:2X1ZFaQSblVRCBxyf_Gm2jKBeZo=> , <urn:bluemarine:track:2uMDdZz7wcNqSxVvtRlx-iOEEmw=> , <urn:bluemarine:track:3eRsI9gH6GZCHQecvmK_E812PCU=> , <urn:bluemarine:track:3y3DyPqgG6WR5PpPKpvNOZV9MsY=> , <urn:bluemarine:track:5_IfKQJGvH4cXmleQLDKa0a-Sho=> , <urn:bluemarine:track:6AJC7u0jKJWWWrGfmCHuTh1ml3k=> , <urn:bluemarine:track:D8BU2V-fCmIIpHWPyd9jaZuxZFg=> , <urn:bluemarine:track:OiaB0O6KVNsoy2CtFOGYueEgAKM=> , <urn:bluemarine:track:P9oWjiUDh6HmV2FEV7CmClM_c8A=> , <urn:bluemarine:track:UjRLVFvc7NfLRZI6KY3m-ds_c2Q=> , <urn:bluemarine:track:_9LGuG9GUiF3K76WF9puBcEJ_Yo=> , <urn:bluemarine:track:aJGXbINRbSOTshmKoD1OcB7MVYE=> , <urn:bluemarine:track:hKRqw74mWTCiH9JvLuhJCzT-lHA=> , <urn:bluemarine:track:jobC4IS3VnlCEaoPYLdXkLbbxww=> , <urn:bluemarine:track:lxD3wG9QFYKvBemWduG5lbcUiD0=> , <urn:bluemarine:track:mtm8_-D18w6s1Qg5rbdsPM-Fcuo=> , <urn:bluemarine:track:rnSJEkrQm8e_OK4GFdLKRIKu2nQ=> , <urn:bluemarine:track:rpG6H01DcraSHR65DD6EH5tyaq0=> , <urn:bluemarine:track:wl20NFE-aRwdJvxmstpLJAdf0xs=> , <urn:bluemarine:track:wtj0Ifs07gPVfoS4Ayta1X3amn8=> , <urn:bluemarine:track:z9S6qYfAdJRvYWbYoeQAYgNjx08=> , <urn:bluemarine:track:zunIxIpju-zbr6HTWrF3hr_N9Wk=> ;
+	mo:track_count "22"^^xs:int ;
 	rdfs:label "Gregorian Chant: Hymns and Vespers for the Feast of the Nativity" ;
 	foaf:maker <urn:bluemarine:artist:bq547bvR-QFmY49yuTZngKS2Vr0=> .
 
@@ -6179,6 +6206,7 @@
 	dc:title "Rossini Overtures" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:CdnI7TW7wWpTdvIyzn495DihYCA=> , <urn:bluemarine:track:aQuhqXsg33u_bcNApxvK7gpJxPM=> , <urn:bluemarine:track:atxVIFgHXu9ySU-RWktq3KhMgLQ=> , <urn:bluemarine:track:dOXtnqjm3bWWNuUzDU-9i2HstzY=> , <urn:bluemarine:track:lZhLUr4zKmPkIsezhvQUUvVYI7s=> , <urn:bluemarine:track:m2bBzkyMWzuMlb_Ir6IYBpJjx2U=> , <urn:bluemarine:track:mcv6TVYlcFQ9PEfNnmC80I9T2Mc=> , <urn:bluemarine:track:zVHqB3QqCaskUq286KXYw381Zos=> ;
+	mo:track_count "8"^^xs:int ;
 	rdfs:label "Rossini Overtures" ;
 	foaf:maker <urn:bluemarine:artist:Zasbu-b5qF_5NcGH1gTzI9QpKVI=> .
 
@@ -6188,15 +6216,19 @@
 	dc:title "Brahms: Piano Concerto #2" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:AYBXKZu8mni8Qd9Xeb-4hpUGXX4=> , <urn:bluemarine:track:NIogLOFv47VbMD5WVRq_cs6gRZM=> , <urn:bluemarine:track:o-SsnA0uFZWV6ARmdSXT3-koOgo=> , <urn:bluemarine:track:pKq9rciJ9m5Lk2x6dkW19zRKTXc=> ;
+	mo:track_count "4"^^xs:int ;
 	rdfs:label "Brahms: Piano Concerto #2" ;
 	foaf:maker <urn:bluemarine:artist:UVpp8bnf4chj9q99xwq1UqqQhoc=> .
 
 <urn:bluemarine:record:Ui2mvVOS6QygRw-GBr6uzNifoB8=> a mo:Record ;
+	bmmo:diskCount "2"^^xs:int ;
+	bmmo:diskNumber "1"^^xs:int ;
 	bmmo:iTunesCddb1 "3A0F0616+288633+22+183+27333+45633+51483+59378+74685+93225+104505+112630+123183+126378+145308+155318+165708+174183+196233+205170+209410+232608+238725+259083+266030" ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Mendelssohn: Paulus [Disc 1]" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:7VnsqE5y_Lg4kWW_00HoSmOw9k4=> , <urn:bluemarine:track:7iDmRUW5ze-ehTWjRFX3FHDCICg=> , <urn:bluemarine:track:8uEX9JohCjo8Px-8WH6gpHXBWd0=> , <urn:bluemarine:track:ExmWyL86p_EUuCroNxYw-n9yz1Y=> , <urn:bluemarine:track:HDcU1bkG-_pFB8NPRc_urKjSyxY=> , <urn:bluemarine:track:IzBnI-9VZpmCPw6HhFgItV4znrQ=> , <urn:bluemarine:track:Jx8wTmQjc_BZjIW3ZWitG25TnHY=> , <urn:bluemarine:track:LPiWFmRuX2-GTft2tLnlj3L52IU=> , <urn:bluemarine:track:PLy1-Oc-VQQPZYCFVNyUr-RELaw=> , <urn:bluemarine:track:W8AtR-Rn2mKdXp15vN97EUp835c=> , <urn:bluemarine:track:XTXyleg-Xryu0D_Nf7KBHacUA_c=> , <urn:bluemarine:track:XUJTgsjBI1AqbooceYRrCLwP5JM=> , <urn:bluemarine:track:ehXmyGu-k-xsi5OysWQstsmqecU=> , <urn:bluemarine:track:h0OLWFx4iOvmMNyW3uYWRxHJric=> , <urn:bluemarine:track:iUpZ133nqcy5IgUXhAJVFOxsj-Y=> , <urn:bluemarine:track:mKtFIvECYz9dD0PDgv5XRUum4Bc=> , <urn:bluemarine:track:o7LL_fJq24CYKktBZZ-l2_3BkOI=> , <urn:bluemarine:track:pACY_EMYI9MA25xZimNH9vB4LLc=> , <urn:bluemarine:track:r8XfsOzxjQUHGKfb7cLLL5HkCv4=> , <urn:bluemarine:track:uHAJK7pTsctnJs1aqhwecVu1QtY=> , <urn:bluemarine:track:xANfw2jaG4tG7kYEv76SglOEfUo=> , <urn:bluemarine:track:za27clvbtPV_Au7BBylCSe_zyfM=> ;
+	mo:track_count "22"^^xs:int ;
 	rdfs:label "Mendelssohn: Paulus [Disc 1]" ;
 	foaf:maker <urn:bluemarine:artist:hItcRafYgTImC8QtHc_7ATZ4_mw=> , <urn:bluemarine:artist:xX1oIoA5yzSnYpVvzMDKuFlTamQ=> .
 
@@ -6206,6 +6238,7 @@
 	dc:title "Pure Ella" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:035PQlxsJqhIcks6z7M0mGdEC0Y=> , <urn:bluemarine:track:Cvs19oWPNl1YLGzoP0_b6DaM2g8=> , <urn:bluemarine:track:L4WkFeL6AIbtKfZ3UIS_MmsJ4vM=> , <urn:bluemarine:track:LspjdxJYmayX93UHPhh_kMBFsn4=> , <urn:bluemarine:track:MHOwPmIyiiKbE2PWw35QHfkjIfo=> , <urn:bluemarine:track:OaNrogme2i8e6kV95r5-0EVt6Fs=> , <urn:bluemarine:track:Q9MDEYTN7B7DP2JHO4h08gsqju4=> , <urn:bluemarine:track:YzSDTpfTYqTTNAJtho_bKSxY_ro=> , <urn:bluemarine:track:bQCO66h2TRrCp2pErSOh4vhQmbM=> , <urn:bluemarine:track:bRUbdvEakzxiRx5fKxDaOPzGq4M=> , <urn:bluemarine:track:lbPyMJ4kW-e6i79AkHSsulWjO8k=> , <urn:bluemarine:track:oQwv_zor7UFOO-ZV6-xVMlzgrVo=> , <urn:bluemarine:track:pQ2Kf4kWgTsTTV2vmTABs2UOuS0=> , <urn:bluemarine:track:pvGtO9KmnrONV17NjuScxiFzc40=> , <urn:bluemarine:track:sXVWI6g43RsgJ5aLBJysSDJ7qMQ=> , <urn:bluemarine:track:vVol_AkecyLa0CO_V2Zm2xqHCN4=> , <urn:bluemarine:track:vekSU-GH9fPtOIazGd9m86JYaDY=> , <urn:bluemarine:track:ymcpi_xh5XXJbKr2dT8CG2-vuFQ=> ;
+	mo:track_count "18"^^xs:int ;
 	rdfs:label "Pure Ella" ;
 	foaf:maker <urn:bluemarine:artist:UmoFVklP-uqJ2XrLS88-Ng3E9Ys=> , <urn:bluemarine:artist:cRVwE1_8J_QYRQMd6KfR3ma2A28=> .
 
@@ -6215,6 +6248,7 @@
 	dc:title "Tracce della tradizione orale" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:-nNjaQ7Y6NZiPvkh0InMNELVYfc=> , <urn:bluemarine:track:35KBJqz-WjGeMIsbnSItxkY_vEE=> , <urn:bluemarine:track:43U8vTHOug24avImHUNPuTUsM-w=> , <urn:bluemarine:track:5LJNxP-66u4H8ASXTAXGCG_DBto=> , <urn:bluemarine:track:Ae_tibCplCKj9yhziI67dhYpCK8=> , <urn:bluemarine:track:CTnY-RilWm2BL0Y0fGAE44Bzf5s=> , <urn:bluemarine:track:EOXUdUhOWkGPlmQWZII9kbEQqK0=> , <urn:bluemarine:track:NpM_rpEvyk-2LI4CKv0cf6Pu-C4=> , <urn:bluemarine:track:R4bSJufeeol1jKFx4HITWU-QbVs=> , <urn:bluemarine:track:SUROp9XQKzWq-CLHypzf_tmRfl4=> , <urn:bluemarine:track:X0kI82LCLRBMdl1vwdNXxcoxPsw=> , <urn:bluemarine:track:jbwnxOhpdOLz4AAQsfSdI0fBjNM=> , <urn:bluemarine:track:m4YWbBk4bt9LFOXNHr6a1nwkNzc=> , <urn:bluemarine:track:oKx2xdnSLCWti0FLI_uREibivuQ=> , <urn:bluemarine:track:qMQfLL3LdL71c95VOO3WPh5Xi54=> , <urn:bluemarine:track:uYzKqLuxkLc-VinAATKa73iZIl0=> , <urn:bluemarine:track:xCfgJdJwgqm684084-5GpqmgjnQ=> ;
+	mo:track_count "17"^^xs:int ;
 	rdfs:label "Tracce della tradizione orale" ;
 	foaf:maker <urn:bluemarine:artist:lzFUNOxVlSoGc-QSaEjoz8ZxXHM=> .
 
@@ -6224,6 +6258,7 @@
 	dc:title "Haydn: Symphonies #6-8" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:1hcfcYDX7JHSXR-7cMf5iNZ6q_w=> , <urn:bluemarine:track:5STI7x9nZf3FwHFFvTO9e6sDYLg=> , <urn:bluemarine:track:DZDqAGQRFKmpfb2Smpt0zvMUmko=> , <urn:bluemarine:track:R80n7zsttyskPCJY3z_FD8O09Os=> , <urn:bluemarine:track:V_HqLLeN4aVo_o7T2K6B-m8OZBY=> , <urn:bluemarine:track:ae11kxQhhsJJ1OrRDSNaTtmklsg=> , <urn:bluemarine:track:cfvRGaxkIm7VkzDCPGuMRMh13h0=> , <urn:bluemarine:track:eR5G5Ssg3PD3wiQBfx497DksanA=> , <urn:bluemarine:track:lTyaAlew-2-uYSzbmsJwusaYLmk=> , <urn:bluemarine:track:nhP5gJ3Q780Q9WplQhK4F_xpG_E=> , <urn:bluemarine:track:nk1pQckGSBs7fEQlt_e6q1d7D1I=> , <urn:bluemarine:track:uAzwB7CmnMuaOH2UEIC5UhR-VcU=> , <urn:bluemarine:track:wii1CWBs9a_ZEw61do2MoZ6kD3M=> ;
+	mo:track_count "13"^^xs:int ;
 	rdfs:label "Haydn: Symphonies #6-8" ;
 	foaf:maker <urn:bluemarine:artist:lSC_PlZcK3xPIlZfRgX6OGDuWMw=> .
 
@@ -6233,6 +6268,7 @@
 	dc:title "Stravinsky: Le Sacre Du Printemps" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:Bk_J_RYPE1rw2bW1KZsaHFdALGQ=> , <urn:bluemarine:track:CFaRZRyd8vPoWXFXXY8rr19Pyok=> , <urn:bluemarine:track:FucU3jJUuMdLHit8y90Q8y1hJDE=> , <urn:bluemarine:track:HcUApBCxLFs8GccOXZUbdWhq0z8=> , <urn:bluemarine:track:LWAsl8p9zU6VF2NbsRrAcyOJX7U=> , <urn:bluemarine:track:_2jxTBa2nxJc9wp2zjoqO0-Sniw=> , <urn:bluemarine:track:_8dir_NM0XUdH4TrdRWxxRKdQ9s=> , <urn:bluemarine:track:eY5mYgRHAXGKSIyv1MOrju4Qm3s=> , <urn:bluemarine:track:jgU0ogZGc4l4XAL0bV_6-9ynM8I=> , <urn:bluemarine:track:pwBi315z9MBtApIYarca17WKtYU=> , <urn:bluemarine:track:rSL6kNI5Ay7NAKBXUK4h_ZkNAGU=> , <urn:bluemarine:track:ujqwG-IV6vMtHEtZUp8pdMxA4jg=> , <urn:bluemarine:track:wUbhGTPqd08ZNW-E38FFd2FpETI=> , <urn:bluemarine:track:xl2bio2ATQDuKPUne2F_xhrd9LI=> ;
+	mo:track_count "14"^^xs:int ;
 	rdfs:label "Stravinsky: Le Sacre Du Printemps" ;
 	foaf:maker <urn:bluemarine:artist:lziE8d78wDemu3R2TUMPpBKmjOM=> .
 
@@ -6242,6 +6278,7 @@
 	dc:title "Borodin, String Quartet 2. Tchaikovsky, string Quartet 3" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:6t-m0SyG-6v4xaVx1ylrM43jIB4=> , <urn:bluemarine:track:Gm70EllNpeDyGaI2drIxrruiuvU=> , <urn:bluemarine:track:PS82lePnZSNUHZL4xhXGkZPmwPU=> , <urn:bluemarine:track:Q3YQMLbv__z-wzmeYjw9w5ydAYo=> , <urn:bluemarine:track:ZJpzFSl0jeIY1mVj61SNz6lC4mo=> , <urn:bluemarine:track:m1ABICoHf1LnRYmNLIP1P4Xv6dU=> , <urn:bluemarine:track:wERYF1WSP6y-Uucm40aRlRA8vJY=> , <urn:bluemarine:track:z_61Q2JomsYP7nAprLTYDZOB4rQ=> ;
+	mo:track_count "8"^^xs:int ;
 	rdfs:label "Borodin, String Quartet 2. Tchaikovsky, string Quartet 3" ;
 	foaf:maker <urn:bluemarine:artist:w2KLJkn8-N6eQbHF0xU6uXoPSvc=> .
 
@@ -6251,6 +6288,7 @@
 	dc:title "Bach; Vivaldi: Concertos For 2 Violins" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:4xmzhsHjP7bBue1OCFkwL6jGkUA=> , <urn:bluemarine:track:6Tr9cNabeT0wWc5YSRiypN37eN0=> , <urn:bluemarine:track:9vxnLbLWxVjrZ3P1Cr15tRHhxUw=> , <urn:bluemarine:track:Htx_Nv8KzuTl6VkADgGRPShLMRQ=> , <urn:bluemarine:track:ZleOmbCh1ZLQiKnvzEYUwksGhLM=> , <urn:bluemarine:track:bibtTItMnKKiuq82zOKF54VAm2Y=> , <urn:bluemarine:track:daMcqarA7dDNLXPq2PrAy5WCCSg=> , <urn:bluemarine:track:e4l5Kg53MWPfWMdTwviWHyLi4hw=> , <urn:bluemarine:track:fE9mBdvb80fkrO0Y9Oo1e3rxzTI=> , <urn:bluemarine:track:o_sfXgsX0pIwkjv6LZpJ40racko=> , <urn:bluemarine:track:tEmlYhQCSHUabTxpF6k1axdpSF8=> , <urn:bluemarine:track:y58wuTDBXLWXzKmQiGP5ZYVAijo=> ;
+	mo:track_count "12"^^xs:int ;
 	rdfs:label "Bach; Vivaldi: Concertos For 2 Violins" ;
 	foaf:maker <urn:bluemarine:artist:R3z5Zj_WPIEvekESCXvSDB8cHBY=> .
 
@@ -6260,6 +6298,7 @@
 	dc:title "Ravel: Gaspard De La Nuit; Prokofiev: Piano Sonata #6" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:6YcDElnmPHAfPA_0BGSXMvIH4N4=> , <urn:bluemarine:track:9tKtSpyV8jKB0-uZzBvgT33JPTA=> , <urn:bluemarine:track:AwYFCC5nz3_AgHAQB08QRwbaH44=> , <urn:bluemarine:track:IgY2cgec7rJCc6YdxRZLrxvZ-gI=> , <urn:bluemarine:track:KbzpuooZap-eY7VyNvTcdmlrXns=> , <urn:bluemarine:track:cRgxxvPhIYGsZdsBGCvZIyoCBqg=> , <urn:bluemarine:track:krAArKM77vAPj_wtmax_F3eTFxY=> ;
+	mo:track_count "7"^^xs:int ;
 	rdfs:label "Ravel: Gaspard De La Nuit; Prokofiev: Piano Sonata #6" ;
 	foaf:maker <urn:bluemarine:artist:xBddLXwI3w8_h9NTboxjusS_3cA=> .
 
@@ -6269,6 +6308,7 @@
 	dc:title "Pieces de Clavecin" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:-VR9zmAy7hQkIzu5_P-289fJH3o=> , <urn:bluemarine:track:0Ip6p-K4H0aCTvpTU_RQAfVj5nU=> , <urn:bluemarine:track:BvMr5PPrEimv3LV15xGG1fN7-KM=> , <urn:bluemarine:track:GJoDmnCFkbaQlqO4UjSVucF7QHA=> , <urn:bluemarine:track:JFmXPrwxaXYoLsOVHS2uVESi7q4=> , <urn:bluemarine:track:LXKY1XHOaYmFIK6kc-V_lv9S0Gs=> , <urn:bluemarine:track:PueMKlhm3392NVABPZVduJgwTx4=> , <urn:bluemarine:track:QA0IJS6BhFh85uwSBKRIJNY3sKc=> , <urn:bluemarine:track:RjeE4zTgwxSqU12-xEwbAxIdmWo=> , <urn:bluemarine:track:S9FKxy2UX5nvribntQGNLN6dICk=> , <urn:bluemarine:track:XpQekOqB1ry2OOT7KF5CUqrP2U0=> , <urn:bluemarine:track:cCI1X--NX_xgDGquRSMksBqahII=> , <urn:bluemarine:track:g9oShktumkPfMsvJDA_NZKTEP0U=> , <urn:bluemarine:track:nxEkTME8K2ieKIOgsielcSF4kCU=> , <urn:bluemarine:track:r1OrPW5XU-jiRZ60GCAKGSKbSX0=> , <urn:bluemarine:track:r8pAYVSIeJgvk_8u-6iaLCa6dTk=> ;
+	mo:track_count "16"^^xs:int ;
 	rdfs:label "Pieces de Clavecin" ;
 	foaf:maker <urn:bluemarine:artist:7Y8cXy73yvnzenYb3ofDMMYqCCQ=> .
 
@@ -6278,15 +6318,19 @@
 	dc:title "Callas - La Divina 2" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:TJi50OK5-WmGcAvL2nO-UWuhAVw=> ;
+	mo:track_count "16"^^xs:int ;
 	rdfs:label "Callas - La Divina 2" ;
 	foaf:maker <urn:bluemarine:artist:1WC5U0MFESBZLTm-8CJlFg_GigI=> .
 
 <urn:bluemarine:record:dQjPspHrU7DNVOqQz6gosYfs7Rg=> a mo:Record ;
+	bmmo:diskCount "2"^^xs:int ;
+	bmmo:diskNumber "1"^^xs:int ;
 	bmmo:iTunesCddb1 "AB0B110E+212665+14+182+16700+30230+49895+65305+77107+91640+104612+121875+140215+150802+164647+176915+184722" ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Canto Gregoriano [Disc 1]" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:13aplz93f5OU0f17pZvy6ERmKyc=> , <urn:bluemarine:track:2-H8_3BRVoMTZR7GuWpxSy3TBOQ=> , <urn:bluemarine:track:5bO1y0j5Ea1BepZitf37e9cT4cw=> , <urn:bluemarine:track:77SOVz3E4nb9_YvnRsWauv3rCBQ=> , <urn:bluemarine:track:DqHgdQy47WxLfPI0ZedtpKl9mM0=> , <urn:bluemarine:track:FecQ9ZHgOX9tQQfoQEinIMNsvoY=> , <urn:bluemarine:track:K1IdYaLqxw9wY1WX6gbMosSatnY=> , <urn:bluemarine:track:UIyFkdNFZ7Xd3ZNhVXlO4xyA7ek=> , <urn:bluemarine:track:W7RIccP1m8JRhOfSxoTWTJ1jOvA=> , <urn:bluemarine:track:ZvN4Gi7pNu0dRhDdxkqMwuLzsYE=> , <urn:bluemarine:track:bpaYAqPi70XwaPL2cE0xNAyBvoQ=> , <urn:bluemarine:track:is3PSRwIK6ORAmrizrWILZcKZpw=> , <urn:bluemarine:track:ulGXIAN26WOrqzL9an3IK2K8U0E=> , <urn:bluemarine:track:xFFFHqTNb7_D7mNbEMysUqmAdV0=> ;
+	mo:track_count "14"^^xs:int ;
 	rdfs:label "Canto Gregoriano [Disc 1]" ;
 	foaf:maker <urn:bluemarine:artist:NaBA0sMMKOlieukHnxkVtUIkZk4=> .
 
@@ -6296,6 +6340,7 @@
 	dc:title "Handel: Water Music" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:0v0qdlMjv95U84JyceI0NwLAT2A=> , <urn:bluemarine:track:1-FPNahoAT60EBJF9mSeq9VUzGs=> , <urn:bluemarine:track:17XgJTqBjlJHmIaFvHOvhTvupcU=> , <urn:bluemarine:track:4p1t1g7YdokkvMuS6OC5CoSF72M=> , <urn:bluemarine:track:9Lb3r60mhLtpBxdlKwlCoi6-TFg=> , <urn:bluemarine:track:EBTYJE3kOwdUk3gBKy4fLLgQO9s=> , <urn:bluemarine:track:H5_KMXBLcMxVWOROrPHN7IoGtKw=> , <urn:bluemarine:track:IyvmkBnnqzMie_9_dq_ts_1FJw4=> , <urn:bluemarine:track:L9kk5NOnPer4Ou3KZTRi8reXBzg=> , <urn:bluemarine:track:NbkcwpsZYGDFm7qumpddw7PZtmg=> , <urn:bluemarine:track:PQId8kA-ZZT9dRwRmdqKNm37xoQ=> , <urn:bluemarine:track:UkwOUy5U12Cc2FaomumZCscgKbk=> , <urn:bluemarine:track:VGAo27diWBz9a_SS_kVJTVcFkf0=> , <urn:bluemarine:track:boNvBCUsj8e4SzpBojnP8zFyBKY=> , <urn:bluemarine:track:d9p3KI0tT5z8HsqEmz024cKjSP4=> , <urn:bluemarine:track:eYKMUsZY13WH86ffdsISY9f4Vg0=> , <urn:bluemarine:track:fAjke5g4-7XN7fxLnEhOXc10KBg=> , <urn:bluemarine:track:jkcUBKPoC7WRDIKOza_fjfjggqg=> , <urn:bluemarine:track:xAe9ZgdqgAJ9XuFZUyI90iwMvHw=> ;
+	mo:track_count "19"^^xs:int ;
 	rdfs:label "Handel: Water Music" ;
 	foaf:maker <urn:bluemarine:artist:VV1t1wt5su-gcB4cP9bs7yNM6L0=> .
 
@@ -6305,6 +6350,7 @@
 	dc:title "String Quartets Vol. 3 Op.18 Nos. 5 & 6" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:0yiUor1LGhId-q-zUBPXeqXHVvc=> , <urn:bluemarine:track:79aMxdMLiWuce9jspcnkOYy5Pms=> , <urn:bluemarine:track:CwxGQ2mTFCXMoLQ4WYJbGOqaQTE=> , <urn:bluemarine:track:OJA_wUttX31IrvVnDZ9TrWr4SJg=> , <urn:bluemarine:track:SMBK4JWFzecH9ZThO58GQu1fa28=> , <urn:bluemarine:track:T45wLvradu7jUBQ1S8bPMRLs_P4=> , <urn:bluemarine:track:wUCuSVBe1dPCzmQkYXg0ih8vjvk=> , <urn:bluemarine:track:zdnp2tj7nBvIpSvyqhARTkPbtQA=> ;
+	mo:track_count "8"^^xs:int ;
 	rdfs:label "String Quartets Vol. 3 Op.18 Nos. 5 & 6" ;
 	foaf:maker <urn:bluemarine:artist:kZ8L18eZqQsywi9q5Qt_veIYhPc=> .
 
@@ -6314,6 +6360,7 @@
 	dc:title "Dvořák: Symphonies #8 & 9" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:0dPMMUxw1knMZFyAoImk8UvT7Ks=> , <urn:bluemarine:track:0oABcAgcKEW_tdSUMrgVfNO0jfA=> , <urn:bluemarine:track:1nfsR9xSBrjjbOvC806dBTp35jw=> , <urn:bluemarine:track:BcJ7xOV1vk1-IQA7kXEF0W0Kfys=> , <urn:bluemarine:track:LE2VdvZI9irD-EXk70njMoVweLU=> , <urn:bluemarine:track:SW95wIBfOIfqUgoMoIgWN6H9_XY=> , <urn:bluemarine:track:hqNUBgW2K511qsOlVhM3XjLycZ0=> , <urn:bluemarine:track:u9EZ_CwO0w5CGjl9jpQSST-d3jo=> ;
+	mo:track_count "8"^^xs:int ;
 	rdfs:label "Dvořák: Symphonies #8 & 9" ;
 	foaf:maker <urn:bluemarine:artist:oXJ5uQ8965zoj57TsNOSJp56JSQ=> .
 
@@ -6331,15 +6378,19 @@
 	dc:title "Brahms: Symphony #4 In E Minor, Op. 98" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:C9GwP2WdZs_UeRT_Cgp-HmPkHH0=> , <urn:bluemarine:track:J66GaNCe8q_pGj3ZtV19OEv1Tro=> , <urn:bluemarine:track:SZCxc3mSK1TNfSHRHyODxWCyqTQ=> , <urn:bluemarine:track:sGLZCe3-hWi7flgJriBCeDh2JoA=> ;
+	mo:track_count "4"^^xs:int ;
 	rdfs:label "Brahms: Symphony #4 In E Minor, Op. 98" ;
 	foaf:maker <urn:bluemarine:artist:OSVLDq4lVQseOaQ4A-Jg8VoyUsw=> .
 
 <urn:bluemarine:record:nT-nlOg3Dwz09i56erbhREL2DL0=> a mo:Record ;
+	bmmo:diskCount "2"^^xs:int ;
+	bmmo:diskNumber "2"^^xs:int ;
 	bmmo:iTunesCddb1 "B70C8B0E+241005+14+150+8602+18050+41035+54445+70425+90437+113882+131455+142465+162170+173990+204502+228235" ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Bach: Mass In B Minor, BWV 232 [Disc 2]" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:5wSm3e6XLFXlh3Y0sbtIvCUeohc=> , <urn:bluemarine:track:7bMZzD4APoMsumMUI6ZK4dSmRu0=> , <urn:bluemarine:track:CJkx5fFT2W4IhBd1cswVf3QmE0s=> , <urn:bluemarine:track:JNbdaeOTaQdlsmrXXg0wEAOXX7I=> , <urn:bluemarine:track:JsLQxCNkJ5bgGoqFKO1B-CfGSW8=> , <urn:bluemarine:track:NkEfbPU06cVEWptwFEXzEi_ZvFU=> , <urn:bluemarine:track:P-JmC0ZWEQgfghnYEhJFlIYUQXI=> , <urn:bluemarine:track:PD9Cc2DHmAQ48UjGvr7lrXVD8ZQ=> , <urn:bluemarine:track:XJtTh4sMClpIcFEU4q7zQ7SyYc4=> , <urn:bluemarine:track:biBP-KJHhNf0qb_EE2FuVJxnr2I=> , <urn:bluemarine:track:huN3o27gpEkVZm96EB0zLK9_8Uk=> , <urn:bluemarine:track:k0_s45nzCAG0jjuczZVnMp9bYtA=> , <urn:bluemarine:track:odvEl0zhTdqtd5SNszFk0AZaaI8=> , <urn:bluemarine:track:wF6gS1iF7zPo095GP7gmI4ToBZs=> ;
+	mo:track_count "14"^^xs:int ;
 	rdfs:label "Bach: Mass In B Minor, BWV 232 [Disc 2]" ;
 	foaf:maker <urn:bluemarine:artist:-uUZ4nk8KRZq6CPD9M_e65oeWZ4=> .
 
@@ -6349,6 +6400,7 @@
 	dc:title "Callas - La Mamma Morta" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:EFebggtvvyD6hwmkTlv_b4yAlAY=> , <urn:bluemarine:track:EqtB0K6PRO2l03DF-NeQQBpm5T0=> , <urn:bluemarine:track:M1sLSnzqyfdl908LjuTQw4jBneI=> ;
+	mo:track_count "3"^^xs:int ;
 	rdfs:label "Callas - La Mamma Morta" ;
 	foaf:maker <urn:bluemarine:artist:1WC5U0MFESBZLTm-8CJlFg_GigI=> , <urn:bluemarine:artist:egyaIQgrkRhmnJIRqSy9lT93Wms=> , <urn:bluemarine:artist:i5jopbFJLu5X7N8PBYZu-FhXlnc=> .
 
@@ -6358,6 +6410,7 @@
 	dc:title "Vivaldi: The Four Seasons" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:46j3XNQP7NPBL42J3Eqj6mc5rr4=> , <urn:bluemarine:track:8dXFk-49-4iPrDMYH14y9tOHf98=> , <urn:bluemarine:track:QeE8yyQje79zyyOxTYAhca-zAtk=> , <urn:bluemarine:track:RwUgODXQhK8z-f4cz5-mmKUoloc=> , <urn:bluemarine:track:_SUdpL9iV1Kiq1QoSnI1lALAl2Q=> , <urn:bluemarine:track:ai7uqkXZeKadjx-Bzx9rY1gcBow=> , <urn:bluemarine:track:b2ySEVS4uA92uiG37Ic4YHa0eb0=> , <urn:bluemarine:track:cy-zCTLz5t1BqDijiaxASFqigp0=> , <urn:bluemarine:track:e8pizSb1lMn9U34-cYfhiO2IwUA=> , <urn:bluemarine:track:eqS5L5iEMqDBtxNQ8tRse6aXl0s=> , <urn:bluemarine:track:gPrRD-D4tGGYR0LrsG2QPVQHsYk=> , <urn:bluemarine:track:mFg9vMMe0leetUvxkX6Tp3YpXqg=> , <urn:bluemarine:track:pBjS2UBvw2tVNd6KVaFwNKMvCUY=> , <urn:bluemarine:track:vKEOOj1BUlczcXMYCDlbBnf8_7A=> , <urn:bluemarine:track:wl9ZW0VeRjE19nZ-AHcTkUSjSCE=> ;
+	mo:track_count "15"^^xs:int ;
 	rdfs:label "Vivaldi: The Four Seasons" ;
 	foaf:maker <urn:bluemarine:artist:z0QJSFaqgZ1AtFWl-7Tc0ul6WTg=> .
 
@@ -6367,6 +6420,7 @@
 	dc:title "The Incomparable Callas - Favourite Arias" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:HZ0LfwqM-dcZ8svtciNsZsu8C-U=> , <urn:bluemarine:track:MGP93gqCXwcAQ6Ydc5AujLIE1ak=> , <urn:bluemarine:track:VVrXxkJUVsdDE5xJ91iXGUKEHRc=> , <urn:bluemarine:track:_l6TP04AKE__cqUgjOugybd20Qg=> , <urn:bluemarine:track:a0_uJW1c0H_PCwBkvQ5RXl0_3xs=> , <urn:bluemarine:track:b0KUH2A-KZYUcmFULG9CCAQbAXY=> , <urn:bluemarine:track:b3padWmiTqdwzLVDjmsEP1GvA7w=> , <urn:bluemarine:track:d3t_hlHB774aGbysoZ8RSmPD2Ys=> , <urn:bluemarine:track:fC9XBPiyQ9A0g8NrQtVBgWCBE4Y=> , <urn:bluemarine:track:pik5IuzUDXauVGxHQu0OLm7n0qw=> , <urn:bluemarine:track:qAVluHnOhrmcpWxcM2XMYEv7Ttg=> , <urn:bluemarine:track:wmVjpKdZRV_dqrROnCk37x0J9ec=> , <urn:bluemarine:track:y_2AvnkDt8hJsOyukgS6tyzhefo=> ;
+	mo:track_count "13"^^xs:int ;
 	rdfs:label "The Incomparable Callas - Favourite Arias" ;
 	foaf:maker <urn:bluemarine:artist:-_PlAAFQGIzqROF60eWeYMPQKHk=> , <urn:bluemarine:artist:3EvM2I5DqxFCfU3ovsc5hNWmJIg=> , <urn:bluemarine:artist:Lr_GCWqSCyz8x2a1N3epRKV9yqA=> , <urn:bluemarine:artist:NZVC6N-NGYcvpfstKpU9lvYSUzQ=> , <urn:bluemarine:artist:Nt61gPU_wM8AZ51RWv096Xa3gdg=> , <urn:bluemarine:artist:XdRdIXGrVtClIX9BRDkWgEH4oV8=> , <urn:bluemarine:artist:baqrUjiaepV2W-4TNy-e-kPRc1I=> , <urn:bluemarine:artist:i5jopbFJLu5X7N8PBYZu-FhXlnc=> .
 
@@ -6376,6 +6430,7 @@
 	dc:title "Schubert: Arpeggione Sonata; Schumann: Fünf Stücke Im Volkston; Debussy: Cello Sonata" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:3OI5dyzYbulxH26HaDb0N3efXFA=> , <urn:bluemarine:track:9TVPGj582zdD0Wvh3NZbzmrLSOU=> , <urn:bluemarine:track:Cs2q8eBIp2WYeTo4Y_QzthDm16E=> , <urn:bluemarine:track:EQtnYwn5XM_dyyRZ7g0R_qKOwkc=> , <urn:bluemarine:track:JVxmRz0Wk658WmmHxRgcI9WLY2A=> , <urn:bluemarine:track:NkRQzxk-XBnAkYMwoPQTt-xU5Jw=> , <urn:bluemarine:track:Ohkbja2C8X9H4HBADAa6MxhpHao=> , <urn:bluemarine:track:PP-nP9IGK0itM_DYuTB_F83bBQw=> , <urn:bluemarine:track:ZvnEwfGTzajAUc5QUt9ZulrQXq8=> , <urn:bluemarine:track:dv8-x2vRfziZdPWwdsjcCUZnXSM=> , <urn:bluemarine:track:gfbpWk45nSWYLANSWmjcqxhO6_k=> ;
+	mo:track_count "11"^^xs:int ;
 	rdfs:label "Schubert: Arpeggione Sonata; Schumann: Fünf Stücke Im Volkston; Debussy: Cello Sonata" ;
 	foaf:maker <urn:bluemarine:artist:rqmwY95TWwQ8Z_CYjPQHi7W5ad0=> .
 
@@ -6385,6 +6440,7 @@
 	dc:title "Cherubini: 6 Piano Sonatas" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:1LXsPreXMNIviUGA8hndLEw1UTY=> , <urn:bluemarine:track:1pFGvDDWXotnFo_IlbpBn987D1c=> , <urn:bluemarine:track:5AZhR8ZLQtuySpQihuHuoJ6YIIY=> , <urn:bluemarine:track:98YJl6GPDsZRRtZMfcbKBQs_cCg=> , <urn:bluemarine:track:BdguHahXBodYsAJT03Am1rZ0Wg8=> , <urn:bluemarine:track:H85zLyXy-ABZXGZpVDQ5KmFgkww=> , <urn:bluemarine:track:KOxRpoKp8OjEnnhto0aXO3al0qA=> , <urn:bluemarine:track:MV17m6OWDCPrx_Ed_8i40-d1h1Q=> , <urn:bluemarine:track:U5HmvvmEiFkOJoPZC53U2Fnxm7w=> , <urn:bluemarine:track:d-Q3x9XY7zVvOYr11me09-52zqk=> , <urn:bluemarine:track:ejU7L2ovcB0rUE8LdX5SfkTaIB4=> , <urn:bluemarine:track:fENsNItDmRv_0WP1eMSL_74e7Rw=> ;
+	mo:track_count "12"^^xs:int ;
 	rdfs:label "Cherubini: 6 Piano Sonatas" ;
 	foaf:maker <urn:bluemarine:artist:01dFRWwGdwcxyDGTw48SzJyzwgI=> .
 
@@ -6394,15 +6450,19 @@
 	dc:title "El Canto Espiritual Judeoespañol" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:CeJlOaG_s9_DmcYNyTuCDKi7fuo=> , <urn:bluemarine:track:FAjz9zz5ScLLpll4Qx8oJfwXoWI=> , <urn:bluemarine:track:Johj9nGyp2LrM6LCBosuI73mH_s=> , <urn:bluemarine:track:Nw6_zqAZklIpdUqYTgG5sRIvyEE=> , <urn:bluemarine:track:Ou8VBRskRkBcmalaovk-8jOtOgg=> , <urn:bluemarine:track:_Td9BjHnpxG57RY5b8ofcsbVm9Q=> , <urn:bluemarine:track:_UPqPCY23U4V3vEk21LYRMzzicI=> , <urn:bluemarine:track:f3Dffk7-eCyyqXXw9dP5wLFAszE=> , <urn:bluemarine:track:jG91KSnXXLYdsfwbVZDlDRugzEQ=> , <urn:bluemarine:track:l1HOWLCNkMGc7zSv9aYSmGJhOWE=> , <urn:bluemarine:track:mbQokCDhgaNirFpWU0WFJhipZNU=> , <urn:bluemarine:track:rtyXUXOxq0r7IF_QH3foZKSLu18=> , <urn:bluemarine:track:vsek9tXkb2W08E4zQ4DN2SjoB6U=> , <urn:bluemarine:track:xJ8oFMh9e7ZxQQ_np2KTdrg4psw=> ;
+	mo:track_count "14"^^xs:int ;
 	rdfs:label "El Canto Espiritual Judeoespañol" ;
 	foaf:maker <urn:bluemarine:artist:S1hr4AYmfyB0hMnTs-N9wYrvzdA=> .
 
 <urn:bluemarine:record:yxCU8C3ab5P8wga8lX12B6cIoL8=> a mo:Record ;
+	bmmo:diskCount "2"^^xs:int ;
+	bmmo:diskNumber "2"^^xs:int ;
 	bmmo:iTunesCddb1 "220C1713+232308+19+183+19743+23170+30783+47808+57515+64338+85338+100533+112440+125433+132723+156088+167925+179973+185215+197433+211233+214990" ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Mendelssohn: Paulus [Disc 2]" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:-uGOBNgkB2WChlUzTyhG7V680Xw=> , <urn:bluemarine:track:0PdJ9fe8g0raQeaxD2Zh6r2PIU8=> , <urn:bluemarine:track:58pAFXxzv2Sj_YDtna5Xi7hM4Mc=> , <urn:bluemarine:track:5tQvqm1tLc_lSST2K0s178WurAA=> , <urn:bluemarine:track:87iN5MViWNqNm5-_4ZfPQ4EmxZg=> , <urn:bluemarine:track:BArTfr71HKFxRpsXz14kWnm4Zt4=> , <urn:bluemarine:track:Cifrv-BBt1i8CAI1oGN-vK3tPFk=> , <urn:bluemarine:track:FDt7d8v15yDVM_qCJ_XX65S8QGY=> , <urn:bluemarine:track:Gs3SlbXCbql6PjgUQnPBPk8tv34=> , <urn:bluemarine:track:MwRNJZO_U97LN6RoPN88T7Gky4c=> , <urn:bluemarine:track:S0waF47gXWWlMnkHh0k-Bb83m_I=> , <urn:bluemarine:track:SOhJDDOcqdNxBtfTmKUeG0wRI4A=> , <urn:bluemarine:track:SosW-Fs3Gu84hEs8v-Vuj-Xfgfk=> , <urn:bluemarine:track:eWnToEMaG-7ghCIvMqw2302oj28=> , <urn:bluemarine:track:gqUgzBLTNMeM0qxKXky-cgzg0tU=> , <urn:bluemarine:track:mGAq9x7AiXuHDfNFF0L0KNUdiGw=> , <urn:bluemarine:track:mRF35lncKIs2BuxOU4zg14F-z8c=> , <urn:bluemarine:track:tIR9j8-9eZ9aeJjNB6ugdtsH2K0=> , <urn:bluemarine:track:vWvFUtbjazWuqdbWr6_UxTtvD3w=> ;
+	mo:track_count "19"^^xs:int ;
 	rdfs:label "Mendelssohn: Paulus [Disc 2]" ;
 	foaf:maker <urn:bluemarine:artist:m857tmWccEVK7H5Kj_jounc_vB4=> .
 
@@ -6412,6 +6472,7 @@
 	dc:title "Bach: Concertos For 3 & 4 Harpsichords" ;
 	mo:media_type mo:CD ;
 	mo:track <urn:bluemarine:track:1xI488ANUoR_A5YKlAv-f2KjVLE=> , <urn:bluemarine:track:6W1TrE_zAZqlCEnFNM0hhCHWYq4=> , <urn:bluemarine:track:9fO-ggfJoZz3DF67BEhSTfl-C6Q=> , <urn:bluemarine:track:FbITGKOzsudNRdwzyWpXzTFHhMk=> , <urn:bluemarine:track:Jn4tOYZjaklsHH4T4YRVyNYVmdo=> , <urn:bluemarine:track:K0uvfDGzwB3cASw5SfIEnXfdDqQ=> , <urn:bluemarine:track:amXHYkKKrD3jjXyQ30xvFB2XO60=> , <urn:bluemarine:track:hGaad1vJfjgQtBP8w80ixoI51KU=> , <urn:bluemarine:track:siZ5HJQu8LkFMd_AJQJ9i3Fo8VI=> ;
+	mo:track_count "9"^^xs:int ;
 	rdfs:label "Bach: Concertos For 3 & 4 Harpsichords" ;
 	foaf:maker <urn:bluemarine:artist:ZJCwSxMc7F97_DoZ4M03tX02Wc8=> .
 
