@@ -176,7 +176,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
             record.getGtin().ifPresent(gtin -> pw.printf("  BARCODE: %s%n", gtin));
 
             final TrackFinder recordTrackFinder = record.findTracks();
-            pw.printf("  TRACKS (%d / %s):%n", recordTrackFinder.count(), ((RepositoryRecord)record).getTrackCount());
+            pw.printf("  TRACKS (%d / %s):%n", recordTrackFinder.count(), ((RepositoryRecord)record).getTrackCount()); // FIXME: add getTrackCount() in Record
+//            ((RepositoryRecord)record).getTrackCount().ifPresent(trackCount -> assertEquals(trackCount.intValue(), recordTrackFinder.count())); FIXME
 
             recordTrackFinder.stream().forEach(track ->
               {
@@ -265,6 +266,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
             { "small-model"                     , null,                         ID_SOURCE_EMBEDDED,    ID_SOURCE_EMBEDDED },
             { "model-iTunes-fg-20160504-2"      , null,                         ID_SOURCE_EMBEDDED,    ID_SOURCE_EMBEDDED },
             { "model-iTunes-fg-20161210-1"      , null,                         ID_SOURCE_EMBEDDED,    ID_SOURCE_EMBEDDED },
+            { "musicbrainz-iTunes-fg-20160504-2", "model-iTunes-fg-20160504-2", ID_SOURCE_MUSICBRAINZ, ID_SOURCE_EMBEDDED },
+            { "musicbrainz-iTunes-fg-20161210-1", "model-iTunes-fg-20161210-1", ID_SOURCE_MUSICBRAINZ, ID_SOURCE_EMBEDDED },
           };
       }
   }

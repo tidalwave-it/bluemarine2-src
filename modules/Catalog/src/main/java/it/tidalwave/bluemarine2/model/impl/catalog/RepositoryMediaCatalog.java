@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
+import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
@@ -42,7 +43,6 @@ import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryPerformanceF
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
-import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
 
 /***********************************************************************************************************************
  *
