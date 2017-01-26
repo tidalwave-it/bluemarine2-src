@@ -5,14 +5,17 @@
                                               bmmo:importedFrom                  ?source;
                                               rdfs:label                         ?label;
                                               mo:track_number                    ?track_number.
-            OPTIONAL { ?track                 bmmo:diskNumber                    ?disk_number.      }
-            OPTIONAL { ?track                 bmmo:diskCount                     ?disk_count.       }
+
 @artist@             { ?track                 foaf:maker                         ?artist.           }
 @artist@    UNION    { ?track                 foaf:maker/rel:collaboratesWith    ?artist.           }
 
                        ?record                a                                  mo:Record;
                                               mo:track                           ?track;
                                               rdfs:label                         ?record_label.
+
+            OPTIONAL { ?record                bmmo:diskNumber                    ?disk_number.      }
+            OPTIONAL { ?record                bmmo:diskCount                     ?disk_count.       }
+
             MINUS    { ?record                bmmo:alternatePickOf               ?anything.         }
 
                        ?signal                a                                  mo:DigitalSignal;

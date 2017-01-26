@@ -268,8 +268,6 @@ public class EmbeddedAudioMetadataImporter
             .withOptional(trackIri,      BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
                                                                                      .map(c -> c.getTrackId())))
             .withOptional(trackIri,      MO.P_TRACK_NUMBER,       literalForInt(metadata.get(TRACK_NUMBER)))
-            .withOptional(trackIri,      BM.DISK_NUMBER,          literalForInt(metadata.get(DISK_NUMBER))) // FIXME: remove
-            .withOptional(trackIri,      BM.DISK_COUNT,           literalForInt(metadata.get(DISK_COUNT)))  // FIXME: remove
             .withOptional(trackIri,      RDFS.LABEL,              literalFor(trackTitle))
             .withOptional(trackIri,      DC.TITLE,                literalFor(trackTitle))
             .with(        trackIri,      FOAF.MAKER,              makerUris.stream())

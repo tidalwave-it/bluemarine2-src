@@ -782,6 +782,8 @@ public class MusicBrainzAudioMedatataImporter
 
         return createModelBuilder()
             .with(recordIri, MO.P_TRACK,            trackIri)
+            .with(recordIri, BM.DISK_COUNT,         literalForInt(diskCount))
+            .with(recordIri, BM.DISK_NUMBER,        literalForInt(diskNumber))
 
             .with(signalIri, MO.P_PUBLISHED_AS,     trackIri)
 
@@ -789,8 +791,6 @@ public class MusicBrainzAudioMedatataImporter
             .with(trackIri,  RDFS.LABEL,            literalFor(trackTitle))
             .with(trackIri,  DC.TITLE,              literalFor(trackTitle))
             .with(trackIri,  BM.P_IMPORTED_FROM,    BM.V_SOURCE_MUSICBRAINZ)
-            .with(trackIri,  BM.DISK_COUNT,         literalForInt(diskCount))
-            .with(trackIri,  BM.DISK_NUMBER,        literalForInt(diskNumber))
             .with(trackIri,  MO.P_TRACK_NUMBER,     literalFor(trackNumber))
             .with(trackIri,  MO.P_MUSICBRAINZ_GUID, literalFor(track.getId()))
             .with(trackIri,  MO.P_MUSICBRAINZ,      musicBrainzIriFor("track", track.getId()))
