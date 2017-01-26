@@ -141,9 +141,12 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         final RecordFinder allRecordsFinder = catalog.findRecords();
         final TrackFinder allTracksFinder = catalog.findTracks();
 
+        log.info("QUERYING ALL ARTISTS...");
         final List<MusicArtist> artists = allArtistsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
+        log.info("QUERYING ALL RECORDS...");
         final List<Record> records = allRecordsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
 
+        log.info("QUERYING ALL TRACKS...");
         pw.printf("ALL TRACKS (%d):%n%n", allTracksFinder.count());
         final Map<String, Track> tracksOrphanOfArtist = allTracksFinder.stream()
                                                             .collect(toMap(Track::toDumpString, Function.identity(), (u,v) -> v));
@@ -158,6 +161,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         artists.forEach(artist ->
           {
+            log.info("QUERYING TRACKS OF {}...", displayNameOf(artist));
             final TrackFinder artistTracksFinder = artist.findTracks();
             pw.printf("%nTRACKS OF %s (%d):%n", displayNameOf(artist), artistTracksFinder.count());
             artistTracksFinder.stream().forEach(track ->
@@ -168,6 +172,24 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
               });
           });
 
+        artists.forEach(artist ->
+          {
+            log.info("QUERYING RECORDS OF {}...", displayNameOf(artist));
+            final RecordFinder recordFinder = artist.findRecords();
+            pw.printf("%nRECORDS OF %s (%d):%n", displayNameOf(artist), recordFinder.count());
+            recordFinder.stream().forEach(record -> pw.printf("  %s%n", displayNameOf(record)));
+            recordFinder.stream().forEach(record -> assertEquals(record.getSource(), artist.getSource()));
+          });
+
+        artists.forEach(artist ->
+          {
+            log.info("QUERYING PERFORMANCES OF {}...", displayNameOf(artist));
+            final PerformanceFinder performanceFinder = artist.findPerformances();
+            pw.printf("%nPERFORMANCES OF %s (%d):%n", displayNameOf(artist), performanceFinder.count());
+            performanceFinder.stream().forEach(performance -> pw.printf("  %s%n", performance.toDumpString()));
+            performanceFinder.stream().forEach(performance -> assertEquals(performance.getSource(), artist.getSource()));
+          });
+
         records.forEach(record ->
           {
             pw.printf("%nRECORD %s:%n", displayNameOf(record));
@@ -175,6 +197,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
             record.getAsin().ifPresent(asin -> pw.printf("  ASIN:    %s%n", asin));
             record.getGtin().ifPresent(gtin -> pw.printf("  BARCODE: %s%n", gtin));
 
+            log.info("QUERYING TRACKS OF {}...", displayNameOf(record));
             final TrackFinder recordTrackFinder = record.findTracks();
             pw.printf("  TRACKS (%d / %s):%n", recordTrackFinder.count(), ((RepositoryRecord)record).getTrackCount()); // FIXME: add getTrackCount() in Record
 //            ((RepositoryRecord)record).getTrackCount().ifPresent(trackCount -> assertEquals(trackCount.intValue(), recordTrackFinder.count())); FIXME
@@ -190,22 +213,6 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
                                                     .collect(joining("\n      : ", "      : ", ""))));
                 assertEquals(track.getSource(), record.getSource());
               });
-          });
-
-        artists.forEach(artist ->
-          {
-            final RecordFinder recordFinder = artist.findRecords();
-            pw.printf("%nRECORDS OF %s (%d):%n", displayNameOf(artist), recordFinder.count());
-            recordFinder.stream().forEach(record -> pw.printf("  %s%n", displayNameOf(record)));
-            recordFinder.stream().forEach(record -> assertEquals(record.getSource(), artist.getSource()));
-          });
-
-        artists.forEach(artist ->
-          {
-            final PerformanceFinder performanceFinder = artist.findPerformances();
-            pw.printf("%nPERFORMANCES OF %s (%d):%n", displayNameOf(artist), performanceFinder.count());
-            performanceFinder.stream().forEach(performance -> pw.printf("  %s%n", performance.toDumpString()));
-            performanceFinder.stream().forEach(performance -> assertEquals(performance.getSource(), artist.getSource()));
           });
 
         pw.printf("%n%nTRACKS ORPHAN OF ARTIST (%d):%n%n", tracksOrphanOfArtist.size());

@@ -36,6 +36,28 @@ TRACKS OF Pittsburgh Symphony Orchestra (urn:bluemarine:artist:GbuyCRRvZpp3rLhOu
   01/01 05 12:13 Piano Concerto in F: II. Adagio (urn:bluemarine:track:Fp1FWEYVodnGHjX7o29Tx87fAMQ=) André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/05 Gershwin_ Piano Concerto In F - 2. Adagio.mp3 - musicbrainz
   01/01 06 06:43 Piano Concerto in F: III. Allegro agitato (urn:bluemarine:track:l5H--6cVcL5ornm2A-KXh6hIGcg=) André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/06 Gershwin_ Piano Concerto In F - 3. Allegro Agitato.mp3 - musicbrainz
 
+RECORDS OF André Previn (urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=) (1):
+  Rhapsody in Blue / An American in Paris / Piano Concerto in F (urn:bluemarine:record:G2sUZ3I4bU9K81ReZahL5Tljzr4=)
+
+RECORDS OF Pittsburgh Symphony Orchestra (urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=) (1):
+  Rhapsody in Blue / An American in Paris / Piano Concerto in F (urn:bluemarine:record:G2sUZ3I4bU9K81ReZahL5Tljzr4=)
+
+PERFORMANCES OF André Previn (urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=) (6):
+  Performance(uri=urn:bluemarine:performance:Dndoz8hK8__oAjC2dmgJBJuynBE=)
+  Performance(uri=urn:bluemarine:performance:X3-sBoyhqyrWUBbSNGu55NvRePc=)
+  Performance(uri=urn:bluemarine:performance:aa4ovBB4OC3CgZXo19B-JonTxBk=)
+  Performance(uri=urn:bluemarine:performance:gOVPoiObl7Kr9NC4MjkghJmh8Mg=)
+  Performance(uri=urn:bluemarine:performance:qKh0s-WJk9_bf86cPEOlbGdXL4U=)
+  Performance(uri=urn:bluemarine:performance:zxHo9x-gkhW-iLQxJLVQHEHXfSA=)
+
+PERFORMANCES OF Pittsburgh Symphony Orchestra (urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=) (6):
+  Performance(uri=urn:bluemarine:performance:Dndoz8hK8__oAjC2dmgJBJuynBE=)
+  Performance(uri=urn:bluemarine:performance:X3-sBoyhqyrWUBbSNGu55NvRePc=)
+  Performance(uri=urn:bluemarine:performance:aa4ovBB4OC3CgZXo19B-JonTxBk=)
+  Performance(uri=urn:bluemarine:performance:gOVPoiObl7Kr9NC4MjkghJmh8Mg=)
+  Performance(uri=urn:bluemarine:performance:qKh0s-WJk9_bf86cPEOlbGdXL4U=)
+  Performance(uri=urn:bluemarine:performance:zxHo9x-gkhW-iLQxJLVQHEHXfSA=)
+
 RECORD Rhapsody in Blue / An American in Paris / Piano Concerto in F (urn:bluemarine:record:G2sUZ3I4bU9K81ReZahL5Tljzr4=):
   SOURCE:  musicbrainz
   ASIN:    B0000040WS
@@ -63,28 +85,6 @@ RECORD Rhapsody in Blue / An American in Paris / Piano Concerto in F (urn:bluema
       : conductor            André Previn (urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=)
       : piano                André Previn (urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=)
       : orchestra            Pittsburgh Symphony Orchestra (urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=)
-
-RECORDS OF André Previn (urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=) (1):
-  Rhapsody in Blue / An American in Paris / Piano Concerto in F (urn:bluemarine:record:G2sUZ3I4bU9K81ReZahL5Tljzr4=)
-
-RECORDS OF Pittsburgh Symphony Orchestra (urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=) (1):
-  Rhapsody in Blue / An American in Paris / Piano Concerto in F (urn:bluemarine:record:G2sUZ3I4bU9K81ReZahL5Tljzr4=)
-
-PERFORMANCES OF André Previn (urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=) (6):
-  Performance(uri=urn:bluemarine:performance:Dndoz8hK8__oAjC2dmgJBJuynBE=)
-  Performance(uri=urn:bluemarine:performance:X3-sBoyhqyrWUBbSNGu55NvRePc=)
-  Performance(uri=urn:bluemarine:performance:aa4ovBB4OC3CgZXo19B-JonTxBk=)
-  Performance(uri=urn:bluemarine:performance:gOVPoiObl7Kr9NC4MjkghJmh8Mg=)
-  Performance(uri=urn:bluemarine:performance:qKh0s-WJk9_bf86cPEOlbGdXL4U=)
-  Performance(uri=urn:bluemarine:performance:zxHo9x-gkhW-iLQxJLVQHEHXfSA=)
-
-PERFORMANCES OF Pittsburgh Symphony Orchestra (urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=) (6):
-  Performance(uri=urn:bluemarine:performance:Dndoz8hK8__oAjC2dmgJBJuynBE=)
-  Performance(uri=urn:bluemarine:performance:X3-sBoyhqyrWUBbSNGu55NvRePc=)
-  Performance(uri=urn:bluemarine:performance:aa4ovBB4OC3CgZXo19B-JonTxBk=)
-  Performance(uri=urn:bluemarine:performance:gOVPoiObl7Kr9NC4MjkghJmh8Mg=)
-  Performance(uri=urn:bluemarine:performance:qKh0s-WJk9_bf86cPEOlbGdXL4U=)
-  Performance(uri=urn:bluemarine:performance:zxHo9x-gkhW-iLQxJLVQHEHXfSA=)
 
 
 TRACKS ORPHAN OF ARTIST (0):
