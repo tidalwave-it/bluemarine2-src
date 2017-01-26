@@ -176,7 +176,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
             record.getGtin().ifPresent(gtin -> pw.printf("  BARCODE: %s%n", gtin));
 
             final TrackFinder recordTrackFinder = record.findTracks();
-            pw.printf("  TRACKS (%d / %s):%n", recordTrackFinder.count(), ((RepositoryRecord)record).getTrackCount());
+            pw.printf("  TRACKS (%d / %s):%n", recordTrackFinder.count(), ((RepositoryRecord)record).getTrackCount()); // FIXME: add getTrackCount() in Record
+//            ((RepositoryRecord)record).getTrackCount().ifPresent(trackCount -> assertEquals(trackCount.intValue(), recordTrackFinder.count())); FIXME
 
             recordTrackFinder.stream().forEach(track ->
               {
