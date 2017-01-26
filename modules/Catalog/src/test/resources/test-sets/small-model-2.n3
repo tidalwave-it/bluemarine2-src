@@ -1,0 +1,385 @@
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix bmmo: <http://bluemarine.tidalwave.it/2015/04/mo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rel: <http://purl.org/vocab/relationship/> .
+@prefix vocab: <http://dbtune.org/musicbrainz/resource/vocab/> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:bluemarine:artist:JgKJIX5dCQK3bknPnQw7OYpeyFQ=> a mo:MusicArtist ;
+	bmmo:importedFrom "embedded" ;
+	rdfs:label "André Previn: Pittsburgh Symphony Orchestra" ;
+	foaf:name "André Previn: Pittsburgh Symphony Orchestra" .
+
+<urn:bluemarine:audiofile:3VZ1mq1QHNwN3Yvzqc2MNcHxX-s=> a mo:AudioFile ;
+	bmmo:fileSize "16151312"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2016-11-27T14:52:12.000+01:00"^^xs:dateTime ;
+	bmmo:path "André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/06 Gershwin_ Piano Concerto In F - 3. Allegro Agitato.mp3" ;
+	mo:encodes <urn:bluemarine:signal:H9tUPpqK8y8AzYLuFv3ONY4Sf7g=> ;
+	foaf:sha1 "dd56759aad501cdc0ddd8bf3a9cd8c35c1f15feb" .
+
+<urn:bluemarine:audiofile:7wT0aJMD04TuqVVT95SZxDOsOyM=> a mo:AudioFile ;
+	bmmo:fileSize "33644970"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2016-11-27T14:43:20.000+01:00"^^xs:dateTime ;
+	bmmo:path "André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/01 Gershwin_ Rhapsody In Blue.mp3" ;
+	mo:encodes <urn:bluemarine:signal:64IWl8D_mtKtbMytLSRN1CaC3nQ=> ;
+	foaf:sha1 "ef04f4689303d384eea95553f79499c433ac3b23" .
+
+<urn:bluemarine:audiofile:RPJSyf1erNZ9RjTZAY6EwA9bItg=> a mo:AudioFile ;
+	bmmo:fileSize "25532419"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2016-11-27T14:46:54.000+01:00"^^xs:dateTime ;
+	bmmo:path "André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/03 Gershwin_ An American In Paris - 2. Andante Ma Con Ritmo Deciso.mp3" ;
+	mo:encodes <urn:bluemarine:signal:9Sc6NNq9q8oPjEX9X6UFZKAdivE=> ;
+	foaf:sha1 "44f252c9fd5eacd67d4634d9018e84c00f5b22d8" .
+
+<urn:bluemarine:audiofile:WBUlMhlazWQcLmEVLkTUSd0ydXU=> a mo:AudioFile ;
+	bmmo:fileSize "31084986"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2016-11-27T14:49:10.000+01:00"^^xs:dateTime ;
+	bmmo:path "André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/04 Gershwin_ Piano Concerto In F - 1. Allegro.mp3" ;
+	mo:encodes <urn:bluemarine:signal:dOtw1BrlOiYto-hDDOIl5v5i1Og=> ;
+	foaf:sha1 "58152532195acd641c2e61152e44d449dd327575" .
+
+<urn:bluemarine:audiofile:f79o0ib_B8BaidfzcYDAWhmiI1E=> a mo:AudioFile ;
+	bmmo:fileSize "18078109"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2016-11-27T14:44:53.000+01:00"^^xs:dateTime ;
+	bmmo:path "André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/02 Gershwin_ An American In Paris - 1. Allegretto Grazioso.mp3" ;
+	mo:encodes <urn:bluemarine:signal:BbchpCsxBciWgrp9IbCDHENMGsE=> ;
+	foaf:sha1 "7fbf68d226ff07c05a89d7f37180c05a19a22351" .
+
+<urn:bluemarine:audiofile:sKFQlZQ-_47rQl4i5GvZMTjwI-4=> a mo:AudioFile ;
+	bmmo:fileSize "29337915"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2016-11-27T14:51:09.000+01:00"^^xs:dateTime ;
+	bmmo:path "André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/05 Gershwin_ Piano Concerto In F - 2. Adagio.mp3" ;
+	mo:encodes <urn:bluemarine:signal:MzmQwnpuH1OO_phCldfW9MrQZaU=> ;
+	foaf:sha1 "b0a15095943eff8eeb425e22e46bd93138f023ee" .
+
+<urn:bluemarine:record:s8eNvBu1k8lY4ltjHcRHUMtekbI=> a mo:Record ;
+	bmmo:iTunesCddb1 "4A0F0506+288558+6+183+63258+97145+145008+203283+258283" ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Gershwin: Rhapsody In Blue, Piano Concerto In F, An American In Paris" ;
+	mo:media_type mo:CD ;
+	mo:track <urn:bluemarine:track:64IWl8D_mtKtbMytLSRN1CaC3nQ=> , <urn:bluemarine:track:9Sc6NNq9q8oPjEX9X6UFZKAdivE=> , <urn:bluemarine:track:BbchpCsxBciWgrp9IbCDHENMGsE=> , <urn:bluemarine:track:H9tUPpqK8y8AzYLuFv3ONY4Sf7g=> , <urn:bluemarine:track:MzmQwnpuH1OO_phCldfW9MrQZaU=> , <urn:bluemarine:track:dOtw1BrlOiYto-hDDOIl5v5i1Og=> ;
+	mo:track_count "6"^^xs:int ;
+	rdfs:label "Gershwin: Rhapsody In Blue, Piano Concerto In F, An American In Paris" ;
+	foaf:maker <urn:bluemarine:artist:JgKJIX5dCQK3bknPnQw7OYpeyFQ=> .
+
+<urn:bluemarine:signal:64IWl8D_mtKtbMytLSRN1CaC3nQ=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "320"^^xs:int ;
+	mo:duration "840000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:64IWl8D_mtKtbMytLSRN1CaC3nQ=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:9Sc6NNq9q8oPjEX9X6UFZKAdivE=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "320"^^xs:int ;
+	mo:duration "638000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:9Sc6NNq9q8oPjEX9X6UFZKAdivE=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:BbchpCsxBciWgrp9IbCDHENMGsE=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "320"^^xs:int ;
+	mo:duration "451000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:BbchpCsxBciWgrp9IbCDHENMGsE=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:H9tUPpqK8y8AzYLuFv3ONY4Sf7g=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "320"^^xs:int ;
+	mo:duration "403000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:H9tUPpqK8y8AzYLuFv3ONY4Sf7g=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:MzmQwnpuH1OO_phCldfW9MrQZaU=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "320"^^xs:int ;
+	mo:duration "733000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:MzmQwnpuH1OO_phCldfW9MrQZaU=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:dOtw1BrlOiYto-hDDOIl5v5i1Og=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "320"^^xs:int ;
+	mo:duration "776000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:dOtw1BrlOiYto-hDDOIl5v5i1Og=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:track:64IWl8D_mtKtbMytLSRN1CaC3nQ=> a mo:Track ;
+	bmmo:iTunesCddb1 "4A0F0506+288558+6+183+63258+97145+145008+203283+258283/1" ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Gershwin: Rhapsody In Blue" ;
+	mo:track_number "1"^^xs:int ;
+	rdfs:label "Gershwin: Rhapsody In Blue" ;
+	foaf:maker <urn:bluemarine:artist:JgKJIX5dCQK3bknPnQw7OYpeyFQ=> .
+
+<urn:bluemarine:track:9Sc6NNq9q8oPjEX9X6UFZKAdivE=> a mo:Track ;
+	bmmo:iTunesCddb1 "4A0F0506+288558+6+183+63258+97145+145008+203283+258283/3" ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Gershwin: An American In Paris - 2. Andante Ma Con Ritmo Deciso" ;
+	mo:track_number "3"^^xs:int ;
+	rdfs:label "Gershwin: An American In Paris - 2. Andante Ma Con Ritmo Deciso" ;
+	foaf:maker <urn:bluemarine:artist:JgKJIX5dCQK3bknPnQw7OYpeyFQ=> .
+
+<urn:bluemarine:track:BbchpCsxBciWgrp9IbCDHENMGsE=> a mo:Track ;
+	bmmo:iTunesCddb1 "4A0F0506+288558+6+183+63258+97145+145008+203283+258283/2" ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Gershwin: An American In Paris - 1. Allegretto Grazioso" ;
+	mo:track_number "2"^^xs:int ;
+	rdfs:label "Gershwin: An American In Paris - 1. Allegretto Grazioso" ;
+	foaf:maker <urn:bluemarine:artist:JgKJIX5dCQK3bknPnQw7OYpeyFQ=> .
+
+<urn:bluemarine:track:H9tUPpqK8y8AzYLuFv3ONY4Sf7g=> a mo:Track ;
+	bmmo:iTunesCddb1 "4A0F0506+288558+6+183+63258+97145+145008+203283+258283/6" ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Gershwin: Piano Concerto In F - 3. Allegro Agitato" ;
+	mo:track_number "6"^^xs:int ;
+	rdfs:label "Gershwin: Piano Concerto In F - 3. Allegro Agitato" ;
+	foaf:maker <urn:bluemarine:artist:JgKJIX5dCQK3bknPnQw7OYpeyFQ=> .
+
+<urn:bluemarine:track:MzmQwnpuH1OO_phCldfW9MrQZaU=> a mo:Track ;
+	bmmo:iTunesCddb1 "4A0F0506+288558+6+183+63258+97145+145008+203283+258283/5" ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Gershwin: Piano Concerto In F - 2. Adagio" ;
+	mo:track_number "5"^^xs:int ;
+	rdfs:label "Gershwin: Piano Concerto In F - 2. Adagio" ;
+	foaf:maker <urn:bluemarine:artist:JgKJIX5dCQK3bknPnQw7OYpeyFQ=> .
+
+<urn:bluemarine:track:dOtw1BrlOiYto-hDDOIl5v5i1Og=> a mo:Track ;
+	bmmo:iTunesCddb1 "4A0F0506+288558+6+183+63258+97145+145008+203283+258283/4" ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Gershwin: Piano Concerto In F - 1. Allegro" ;
+	mo:track_number "4"^^xs:int ;
+	rdfs:label "Gershwin: Piano Concerto In F - 1. Allegro" ;
+	foaf:maker <urn:bluemarine:artist:JgKJIX5dCQK3bknPnQw7OYpeyFQ=> .
+
+
+
+
+
+
+
+<urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> a mo:MusicArtist ;
+	bmmo:importedFrom "musicbrainz" ;
+	mo:musicbrainz <http://musicbrainz.org/artist/8a6d633e-f768-474a-9dea-14c6bf2f3ec4> ;
+	mo:musicbrainz_guid "8a6d633e-f768-474a-9dea-14c6bf2f3ec4" ;
+	rdfs:label "Pittsburgh Symphony Orchestra" ;
+	foaf:name "Pittsburgh Symphony Orchestra" .
+
+<urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> a mo:MusicArtist ;
+	bmmo:importedFrom "musicbrainz" ;
+	mo:musicbrainz <http://musicbrainz.org/artist/06538137-47eb-4dd6-bb78-5c8afa1a1885> ;
+	mo:musicbrainz_guid "06538137-47eb-4dd6-bb78-5c8afa1a1885" ;
+	rdfs:label "André Previn" ;
+	foaf:name "André Previn" .
+
+<urn:bluemarine:performance:Dndoz8hK8__oAjC2dmgJBJuynBE=> a mo:Performance ;
+	bmmo:importedFrom "musicbrainz" ;
+	bmmo:orchestra <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> ;
+	bmmo:performer_piano <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> ;
+	mo:conductor <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> ;
+	mo:musicbrainz_guid "b498a9ae-db7b-45c3-86c7-3cae8531bff5" ;
+	mo:recorded_as <urn:bluemarine:signal:MzmQwnpuH1OO_phCldfW9MrQZaU=> ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:performance:X3-sBoyhqyrWUBbSNGu55NvRePc=> a mo:Performance ;
+	bmmo:importedFrom "musicbrainz" ;
+	bmmo:orchestra <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> ;
+	mo:conductor <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> ;
+	mo:musicbrainz_guid "624223d7-f26d-4efe-93d7-9b53653a7f0c" ;
+	mo:recorded_as <urn:bluemarine:signal:9Sc6NNq9q8oPjEX9X6UFZKAdivE=> ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:performance:aa4ovBB4OC3CgZXo19B-JonTxBk=> a mo:Performance ;
+	bmmo:importedFrom "musicbrainz" ;
+	bmmo:orchestra <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> ;
+	bmmo:performer_piano <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> ;
+	mo:conductor <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> ;
+	mo:musicbrainz_guid "4e1b9661-0360-4b64-9339-06979bc0ab48" ;
+	mo:recorded_as <urn:bluemarine:signal:dOtw1BrlOiYto-hDDOIl5v5i1Og=> ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:performance:gOVPoiObl7Kr9NC4MjkghJmh8Mg=> a mo:Performance ;
+	bmmo:importedFrom "musicbrainz" ;
+	bmmo:orchestra <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> ;
+	mo:conductor <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> ;
+	mo:musicbrainz_guid "7cebde7a-ce61-4fe1-a8f3-81b7965b21b3" ;
+	mo:recorded_as <urn:bluemarine:signal:BbchpCsxBciWgrp9IbCDHENMGsE=> ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:performance:qKh0s-WJk9_bf86cPEOlbGdXL4U=> a mo:Performance ;
+	bmmo:importedFrom "musicbrainz" ;
+	bmmo:orchestra <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> ;
+	bmmo:performer_piano <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> ;
+	mo:conductor <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> ;
+	mo:musicbrainz_guid "bf4a1718-7048-4c70-aa75-59143c98f1d5" ;
+	mo:recorded_as <urn:bluemarine:signal:64IWl8D_mtKtbMytLSRN1CaC3nQ=> ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:performance:zxHo9x-gkhW-iLQxJLVQHEHXfSA=> a mo:Performance ;
+	bmmo:importedFrom "musicbrainz" ;
+	bmmo:orchestra <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> ;
+	bmmo:performer_piano <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> ;
+	mo:conductor <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> ;
+	mo:musicbrainz_guid "ce87dd1a-600e-471c-ab2b-d0b06123898c" ;
+	mo:recorded_as <urn:bluemarine:signal:H9tUPpqK8y8AzYLuFv3ONY4Sf7g=> ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:record:CKcHTTucbr0FZMP405T9tadcBqM=> a mo:Record ;
+	bmmo:alternateOf <urn:bluemarine:record:s8eNvBu1k8lY4ltjHcRHUMtekbI=> ;
+	bmmo:alternatePickOf <urn:bluemarine:record:s8eNvBu1k8lY4ltjHcRHUMtekbI=> ;
+	bmmo:diskCount "55"^^xs:int ;
+	bmmo:diskNumber "41"^^xs:int ;
+	bmmo:importedFrom "musicbrainz" ;
+	dc:title "Gershwin: Rhapsody in Blue; Piano Concerto In F; An American in Paris" ;
+	mo:gtin "028947846147" ;
+	mo:media_type mo:CD ;
+	mo:musicbrainz <http://musicbrainz.org/release/d9edc3b7-5ace-43ff-8cd3-84b83081fbd2> ;
+	mo:musicbrainz_guid "d9edc3b7-5ace-43ff-8cd3-84b83081fbd2" ;
+	mo:track <urn:bluemarine:track:6nOyWtRa1EgNhARcmyHiwMbfBBs=> , <urn:bluemarine:track:CJDpdr3p070sZovoogwkiFdclmw=> , <urn:bluemarine:track:U9zAC_lgYcvfBznjG274w7JuOy4=> , <urn:bluemarine:track:gaQLLLgZquMSbUWXCVVgva6CdFo=> , <urn:bluemarine:track:nlORK--2wuemR9fNV8_enrldcic=> , <urn:bluemarine:track:rb0-5N-LjOFioZzkO4rrMjtg7as=> ;
+	mo:track_count "6"^^xs:int ;
+	rdfs:label "Gershwin: Rhapsody in Blue; Piano Concerto In F; An American in Paris" ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:record:G2sUZ3I4bU9K81ReZahL5Tljzr4=> a mo:Record ;
+	bmmo:alternateOf <urn:bluemarine:record:s8eNvBu1k8lY4ltjHcRHUMtekbI=> ;
+	bmmo:importedFrom "musicbrainz" ;
+	dc:title "Rhapsody in Blue / An American in Paris / Piano Concerto in F" ;
+	mo:amazon_asin "B0000040WS" ;
+	mo:gtin "028941261120" ;
+	mo:media_type mo:CD ;
+	mo:musicbrainz <http://musicbrainz.org/release/ad12f68b-9b06-484c-aa0e-3410f5481aed> ;
+	mo:musicbrainz_guid "ad12f68b-9b06-484c-aa0e-3410f5481aed" ;
+	mo:track <urn:bluemarine:track:FawsvNZeh5NNMuEx69iAYwP4JgY=> , <urn:bluemarine:track:Fp1FWEYVodnGHjX7o29Tx87fAMQ=> , <urn:bluemarine:track:Jf2JRLQNup9iPd1rVzTrAeCvmIQ=> , <urn:bluemarine:track:ayfhPAPfeVWXNYHx6NYuU_EGKXE=> , <urn:bluemarine:track:l5H--6cVcL5ornm2A-KXh6hIGcg=> , <urn:bluemarine:track:ti--DcuRbu-CvkamJ1pc6B_EL7E=> ;
+	mo:track_count "6"^^xs:int ;
+	rdfs:label "Rhapsody in Blue / An American in Paris / Piano Concerto in F" ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:signal:64IWl8D_mtKtbMytLSRN1CaC3nQ=> mo:published_as <urn:bluemarine:track:U9zAC_lgYcvfBznjG274w7JuOy4=> , <urn:bluemarine:track:ti--DcuRbu-CvkamJ1pc6B_EL7E=> .
+
+<urn:bluemarine:signal:9Sc6NNq9q8oPjEX9X6UFZKAdivE=> mo:published_as <urn:bluemarine:track:Jf2JRLQNup9iPd1rVzTrAeCvmIQ=> , <urn:bluemarine:track:nlORK--2wuemR9fNV8_enrldcic=> .
+
+<urn:bluemarine:signal:BbchpCsxBciWgrp9IbCDHENMGsE=> mo:published_as <urn:bluemarine:track:FawsvNZeh5NNMuEx69iAYwP4JgY=> , <urn:bluemarine:track:gaQLLLgZquMSbUWXCVVgva6CdFo=> .
+
+<urn:bluemarine:signal:H9tUPpqK8y8AzYLuFv3ONY4Sf7g=> mo:published_as <urn:bluemarine:track:6nOyWtRa1EgNhARcmyHiwMbfBBs=> , <urn:bluemarine:track:l5H--6cVcL5ornm2A-KXh6hIGcg=> .
+
+<urn:bluemarine:signal:MzmQwnpuH1OO_phCldfW9MrQZaU=> mo:published_as <urn:bluemarine:track:Fp1FWEYVodnGHjX7o29Tx87fAMQ=> , <urn:bluemarine:track:rb0-5N-LjOFioZzkO4rrMjtg7as=> .
+
+<urn:bluemarine:signal:dOtw1BrlOiYto-hDDOIl5v5i1Og=> mo:published_as <urn:bluemarine:track:CJDpdr3p070sZovoogwkiFdclmw=> , <urn:bluemarine:track:ayfhPAPfeVWXNYHx6NYuU_EGKXE=> .
+
+<urn:bluemarine:track:6nOyWtRa1EgNhARcmyHiwMbfBBs=> a mo:Track ;
+	bmmo:importedFrom "musicbrainz" ;
+	dc:title "Piano Concerto in F: III. Allegro agitato" ;
+	mo:musicbrainz <http://musicbrainz.org/track/c0e48657-b344-4d18-a5b7-288019451d49> ;
+	mo:musicbrainz_guid "c0e48657-b344-4d18-a5b7-288019451d49" ;
+	mo:track_number "6"^^xs:int ;
+	rdfs:label "Piano Concerto in F: III. Allegro agitato" ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:track:CJDpdr3p070sZovoogwkiFdclmw=> a mo:Track ;
+	bmmo:importedFrom "musicbrainz" ;
+	dc:title "Piano Concerto in F: I. Allegro" ;
+	mo:musicbrainz <http://musicbrainz.org/track/385f5f14-a45f-42a4-8c14-3e3bc6b03672> ;
+	mo:musicbrainz_guid "385f5f14-a45f-42a4-8c14-3e3bc6b03672" ;
+	mo:track_number "4"^^xs:int ;
+	rdfs:label "Piano Concerto in F: I. Allegro" ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:track:FawsvNZeh5NNMuEx69iAYwP4JgY=> a mo:Track ;
+	bmmo:importedFrom "musicbrainz" ;
+	dc:title "An American in Paris: Allegretto grazioso" ;
+	mo:musicbrainz <http://musicbrainz.org/track/9f710abc-e1db-3382-9844-73724b1ead19> ;
+	mo:musicbrainz_guid "9f710abc-e1db-3382-9844-73724b1ead19" ;
+	mo:track_number "2"^^xs:int ;
+	rdfs:label "An American in Paris: Allegretto grazioso" ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:track:Fp1FWEYVodnGHjX7o29Tx87fAMQ=> a mo:Track ;
+	bmmo:importedFrom "musicbrainz" ;
+	dc:title "Piano Concerto in F: II. Adagio" ;
+	mo:musicbrainz <http://musicbrainz.org/track/7f07a670-ef45-3fe1-891b-3cb18dae61ea> ;
+	mo:musicbrainz_guid "7f07a670-ef45-3fe1-891b-3cb18dae61ea" ;
+	mo:track_number "5"^^xs:int ;
+	rdfs:label "Piano Concerto in F: II. Adagio" ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:track:Jf2JRLQNup9iPd1rVzTrAeCvmIQ=> a mo:Track ;
+	bmmo:importedFrom "musicbrainz" ;
+	dc:title "An American in Paris: Andante ma con ritmo deciso" ;
+	mo:musicbrainz <http://musicbrainz.org/track/70f52eaf-7b13-3bf7-9c10-c79578c73d2f> ;
+	mo:musicbrainz_guid "70f52eaf-7b13-3bf7-9c10-c79578c73d2f" ;
+	mo:track_number "3"^^xs:int ;
+	rdfs:label "An American in Paris: Andante ma con ritmo deciso" ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:track:U9zAC_lgYcvfBznjG274w7JuOy4=> a mo:Track ;
+	bmmo:importedFrom "musicbrainz" ;
+	dc:title "Rhapsody in Blue" ;
+	mo:musicbrainz <http://musicbrainz.org/track/b2cf16a2-b8c9-461b-a8c3-ae516b39d5be> ;
+	mo:musicbrainz_guid "b2cf16a2-b8c9-461b-a8c3-ae516b39d5be" ;
+	mo:track_number "1"^^xs:int ;
+	rdfs:label "Rhapsody in Blue" ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:track:ayfhPAPfeVWXNYHx6NYuU_EGKXE=> a mo:Track ;
+	bmmo:importedFrom "musicbrainz" ;
+	dc:title "Piano Concerto in F: I. Allegro" ;
+	mo:musicbrainz <http://musicbrainz.org/track/507471f8-e692-39a7-9393-7ea0ef0fc3a5> ;
+	mo:musicbrainz_guid "507471f8-e692-39a7-9393-7ea0ef0fc3a5" ;
+	mo:track_number "4"^^xs:int ;
+	rdfs:label "Piano Concerto in F: I. Allegro" ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:track:gaQLLLgZquMSbUWXCVVgva6CdFo=> a mo:Track ;
+	bmmo:importedFrom "musicbrainz" ;
+	dc:title "An American in Paris: Allegretto grazioso" ;
+	mo:musicbrainz <http://musicbrainz.org/track/c5edc67a-b4c5-4433-80e1-bb1c77f13d9b> ;
+	mo:musicbrainz_guid "c5edc67a-b4c5-4433-80e1-bb1c77f13d9b" ;
+	mo:track_number "2"^^xs:int ;
+	rdfs:label "An American in Paris: Allegretto grazioso" ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:track:l5H--6cVcL5ornm2A-KXh6hIGcg=> a mo:Track ;
+	bmmo:importedFrom "musicbrainz" ;
+	dc:title "Piano Concerto in F: III. Allegro agitato" ;
+	mo:musicbrainz <http://musicbrainz.org/track/0809f1e8-d9cf-3b12-86d0-4a6a3140ea72> ;
+	mo:musicbrainz_guid "0809f1e8-d9cf-3b12-86d0-4a6a3140ea72" ;
+	mo:track_number "6"^^xs:int ;
+	rdfs:label "Piano Concerto in F: III. Allegro agitato" ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:track:nlORK--2wuemR9fNV8_enrldcic=> a mo:Track ;
+	bmmo:importedFrom "musicbrainz" ;
+	dc:title "An American in Paris: Andante ma con ritmo deciso" ;
+	mo:musicbrainz <http://musicbrainz.org/track/5a3143e3-ef80-4c50-91f9-8a7c992fccd7> ;
+	mo:musicbrainz_guid "5a3143e3-ef80-4c50-91f9-8a7c992fccd7" ;
+	mo:track_number "3"^^xs:int ;
+	rdfs:label "An American in Paris: Andante ma con ritmo deciso" ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:track:rb0-5N-LjOFioZzkO4rrMjtg7as=> a mo:Track ;
+	bmmo:importedFrom "musicbrainz" ;
+	dc:title "Piano Concerto in F: II. Adagio" ;
+	mo:musicbrainz <http://musicbrainz.org/track/02803a98-b59c-431d-984b-3b084befa3f2> ;
+	mo:musicbrainz_guid "02803a98-b59c-431d-984b-3b084befa3f2" ;
+	mo:track_number "5"^^xs:int ;
+	rdfs:label "Piano Concerto in F: II. Adagio" ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
+
+<urn:bluemarine:track:ti--DcuRbu-CvkamJ1pc6B_EL7E=> a mo:Track ;
+	bmmo:importedFrom "musicbrainz" ;
+	dc:title "Rhapsody in Blue" ;
+	mo:musicbrainz <http://musicbrainz.org/track/de9ed76a-073a-3feb-a268-145fc2238bf2> ;
+	mo:musicbrainz_guid "de9ed76a-073a-3feb-a268-145fc2238bf2" ;
+	mo:track_number "1"^^xs:int ;
+	rdfs:label "Rhapsody in Blue" ;
+	foaf:maker <urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=> , <urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=> .
