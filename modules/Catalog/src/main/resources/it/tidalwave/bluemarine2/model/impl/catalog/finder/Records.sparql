@@ -3,17 +3,15 @@
           {
                        ?record                a                                         mo:Record;
                                               rdfs:label                                ?label.
+            OPTIONAL { ?record                mo:track_count                            ?track_count. }
+            OPTIONAL { ?record                mo:amazon_asin                            ?asin.        }
+            OPTIONAL { ?record                mo:gtin                                   ?gtin.        }
 
                      { ?record                bmmo:importedFrom                         ?source.      }
 @fallback@  UNION    { ?record                bmmo:importedFrom                         ?fallback.    }
 @fallback@  MINUS    { ?alt_record            bmmo:alternateOf                          ?record;
 @fallback@                                    bmmo:importedFrom                         ?source.      }
-
             MINUS    { ?record                bmmo:alternatePickOf                      ?anything.    }
-
-            OPTIONAL { ?record                mo:track_count                            ?track_count. }
-            OPTIONAL { ?record                mo:amazon_asin                            ?asin.        }
-            OPTIONAL { ?record                mo:gtin                                   ?gtin.        }
 
 @track@                ?record                mo:track                                  ?track.
 

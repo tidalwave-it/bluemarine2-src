@@ -1,11 +1,15 @@
-            SELECT *
+            SELECT DISTINCT ?artist ?artist_type ?label ?role ?performance ?source ?fallback
             WHERE
               {
-                ?artist         a                   mo:MusicArtist.
-                ?artist         bmmo:importedFrom   ?source.
-                ?artist         rdfs:label          ?label.
+                        ?artist         a                                       mo:MusicArtist;
+                                        bmmo:importedFrom                       ?source;
+                                        rdfs:label                              ?label.
 
-@performance@   ?performance    a                   mo:Performance.
+             OPTIONAL { ?artist         vocab:artist_type                       ?artist_type.   }
+                MINUS { ?artist         vocab:artist_type                       "2"^^xs:short;
+                                        rel:collaboratesWith                    ?any1 .         }
+
+@performance@           ?performance    a                                       mo:Performance.
 
 @performance@         { ?performance    mo:conductor                            ?artist. BIND ("conductor"                          AS ?role) }
 @performance@   UNION { ?performance    mo:engineer                             ?artist. BIND ("engineer"                           AS ?role) }
@@ -133,16 +137,5 @@
 @performance@   UNION { ?performance    bmmo:performer_violin                   ?artist. BIND ("performer_violin"                   AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_whistle                  ?artist. BIND ("performer_whistle"                  AS ?role) }
 @performance@   UNION { ?performance    bmmo:performer_xylophone                ?artist. BIND ("performer_xylophone"                AS ?role) }
-
-                OPTIONAL
-                  {
-                    ?artist     vocab:artist_type       ?artist_type.
-                  }
-
-                MINUS
-                  {
-                    ?artist     vocab:artist_type       "2"^^xs:short.
-                    ?artist     rel:collaboratesWith    ?any1 .
-                  }
               }
             ORDER BY ?label
