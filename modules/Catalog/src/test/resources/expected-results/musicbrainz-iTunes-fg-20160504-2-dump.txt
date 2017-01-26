@@ -2089,7 +2089,7 @@ RECORD BWV 232 - Mass in B minor (urn:bluemarine:record:ibyd0FYhw5tl_s4HzdciU2ko
 
 RECORD Borodin, String Quartet 2. Tchaikovsky, string Quartet 3 (urn:bluemarine:record:YKQ4jHPwkwJAgy-bkc4LqTyTRBk=):
   SOURCE:  embedded
-  TRACKS (8 / Optional.empty):
+  TRACKS (8 / Optional[8]):
     01/01 01 08:11 Borodin String Quartet No 2 in D Major. I. Allegro moderato (urn:bluemarine:track:z_61Q2JomsYP7nAprLTYDZOB4rQ=) Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/01 Borodin String Quartet No 2 in D Major. I. Allegro moderato.mp3 - embedded
     01/01 02 04:52 Borodin String Quartet No 2 in D Major. II. Scherzo (urn:bluemarine:track:6t-m0SyG-6v4xaVx1ylrM43jIB4=) Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/02 Borodin String Quartet No 2 in D Major. II. Scherzo.mp3 - embedded
     01/01 03 08:43 Shostakovich: String Quartet #2 In A, Op. 68 - Notturno (Excerpt) (urn:bluemarine:track:m1ABICoHf1LnRYmNLIP1P4Xv6dU=) Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/03 Shostakovich_ String Quartet #2 In A, Op. 68 - Notturno (Excerpt).mp3 - embedded
@@ -2101,7 +2101,7 @@ RECORD Borodin, String Quartet 2. Tchaikovsky, string Quartet 3 (urn:bluemarine:
 
 RECORD Callas - La Mamma Morta (urn:bluemarine:record:nhs0L_SwurFvHNLnhkB-lb7PXGw=):
   SOURCE:  embedded
-  TRACKS (3 / Optional.empty):
+  TRACKS (3 / Optional[3]):
     01/01 01 04:52 Giordano: Andrea Chénier - La Mamma Morta (urn:bluemarine:track:EqtB0K6PRO2l03DF-NeQQBpm5T0=) Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mamma Morta.mp3 - embedded
     01/01 02 04:50 Catalani: La Wally - Ebben? Ne Andro Lontana (urn:bluemarine:track:EFebggtvvyD6hwmkTlv_b4yAlAY=) Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3 - embedded
     01/01 03 02:26 Spontini: La Vestale - O Nume Tutelar (urn:bluemarine:track:M1sLSnzqyfdl908LjuTQw4jBneI=) Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3 - embedded
@@ -2345,7 +2345,7 @@ RECORD Cello Concertos (urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=):
 
 RECORD Cherubini: 6 Piano Sonatas (urn:bluemarine:record:y-9LEwSNAaiGXcBEAhHL47FZzTs=):
   SOURCE:  embedded
-  TRACKS (12 / Optional.empty):
+  TRACKS (12 / Optional[12]):
     01/01 01 06:27 Cherubini: Sonata #1 In F - 1. Moderato (urn:bluemarine:track:fENsNItDmRv_0WP1eMSL_74e7Rw=) Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/01 Cherubini_ Sonata #1 In F - 1. Moderato.mp3 - embedded
     01/01 02 04:56 Cherubini: Sonata #1 In F - 2. Allegretto Moderato (urn:bluemarine:track:BdguHahXBodYsAJT03Am1rZ0Wg8=) Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/02 Cherubini_ Sonata #1 In F - 2. Allegretto Moderato.mp3 - embedded
     01/01 03 07:39 Cherubini: Sonata #2 In C - 1. Moderato (urn:bluemarine:track:5AZhR8ZLQtuySpQihuHuoJ6YIIY=) Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/03 Cherubini_ Sonata #2 In C - 1. Moderato.mp3 - embedded
@@ -2361,7 +2361,7 @@ RECORD Cherubini: 6 Piano Sonatas (urn:bluemarine:record:y-9LEwSNAaiGXcBEAhHL47F
 
 RECORD Daniel And The Lions - Ludus Danielis (urn:bluemarine:record:ONiNKoLC69EuihrDlMBpTEUyZpo=):
   SOURCE:  embedded
-  TRACKS (13 / Optional.empty):
+  TRACKS (13 / Optional[13]):
     01/01 01 11:15 (Strumentale) (urn:bluemarine:track:T0AVck2bowGkN-hd1XMytg4BYUQ=) New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/01 (Strumentale).mp3 - embedded
     01/01 02 07:10 Ad Honorem Tui, Christe (urn:bluemarine:track:uVg1rfXHgxCCtQXYI2xN1h84Xfk=) New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/02 Ad Honorem Tui, Christe.mp3 - embedded
     01/01 03 03:19 Rex, In Aeternum Vive! (urn:bluemarine:track:MKQz3adgbA5CbkeP4gUoMHPuCUM=) New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/03 Rex, In Aeternum Vive!.mp3 - embedded
@@ -2509,7 +2509,7 @@ RECORD Gregorian Chant (urn:bluemarine:record:RS8O3XsTBj8T4PjZd6xdn6JhGo0=):
 
 RECORD Handel: Messiah (Highlights) (urn:bluemarine:record:1k6gcfB56OBfXqNiE-HR02Rdw30=):
   SOURCE:  embedded
-  TRACKS (14 / Optional.empty):
+  TRACKS (14 / Optional[14]):
     01/01 01 03:32 Handel: Messiah, HWV 56 - Comfort Ye My People (urn:bluemarine:track:wsOraIva5rnbpZKNj1w1H2FuueY=) Janet Baker, Paul Esswood, Etc.; Charles Mackerras_ English Chamber Orchestra, Ambrosian Singers/Handel_ Messiah (Highlights)/01 Handel_ Messiah, HWV 56 - Comfort Ye My People.mp3 - embedded
     01/01 02 03:42 Handel: Messiah, HWV 56 - Ev'ry Valley Shall Be Exalted (urn:bluemarine:track:_GtVho8f5k4rfB_HSto-Hb19xkg=) Janet Baker, Paul Esswood, Etc.; Charles Mackerras_ English Chamber Orchestra, Ambrosian Singers/Handel_ Messiah (Highlights)/02 Handel_ Messiah, HWV 56 - Ev'ry Valley Shall Be Exalted.mp3 - embedded
     01/01 03 03:03 Handel: Messiah, HWV 56 - And The Glory Of The Lord (urn:bluemarine:track:i64YoGOkwUrQkLZyAN3wkkDZxbc=) Janet Baker, Paul Esswood, Etc.; Charles Mackerras_ English Chamber Orchestra, Ambrosian Singers/Handel_ Messiah (Highlights)/03 Handel_ Messiah, HWV 56 - And The Glory Of The Lord.mp3 - embedded
@@ -2527,7 +2527,7 @@ RECORD Handel: Messiah (Highlights) (urn:bluemarine:record:1k6gcfB56OBfXqNiE-HR0
 
 RECORD Johannes Brahms, Robert Schumann (urn:bluemarine:record:273watVY3CmVFx_BX8oc4D9uoXc=):
   SOURCE:  embedded
-  TRACKS (3 / Optional.empty):
+  TRACKS (3 / Optional[3]):
     01/01 01 12:07 Book 1 - Variations On A Theme By Paganini, Op. 35 (Brahms) (urn:bluemarine:track:45sSTCwnwPOeoEkn8q5C6yaBga4=) Lambis Vassiliadis/Johannes Brahms, Robert Schumann/01 Book 1 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3 - embedded
     01/01 02 10:37 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms) (urn:bluemarine:track:-HgLx23hOuWmrUoB0nhJ9z3G13c=) Lambis Vassiliadis/Johannes Brahms, Robert Schumann/02 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3 - embedded
     01/01 03 26:39 Carnaval Op.9 (Schumann) (urn:bluemarine:track:55M6bNA1LBUUJstdUDWTvRQctBU=) Lambis Vassiliadis/Johannes Brahms, Robert Schumann/03 Carnaval Op.9 (Schumann).mp3 - embedded
@@ -2563,7 +2563,7 @@ RECORD La Divina 2 (urn:bluemarine:record:1YnSzOtRCbFKmcAnNRKLtDXCE8w=):
 
 RECORD La Domna Savorousa : Chants d’amour des troubadours et des trouvères (urn:bluemarine:record:0bYRbWOJwZTV0bUoFtX9eAutVDo=):
   SOURCE:  embedded
-  TRACKS (14 / Optional.empty):
+  TRACKS (14 / Optional[14]):
     01/01 01 06:13 S'anc fui bèla ni presada (urn:bluemarine:track:Jw1z0EI-1P73X1tVcTuQp7iZ3bM=) Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/01 S'anc fui bèla ni presada.mp3 - embedded
     01/01 02 02:05 Por coi me bait mes maris (urn:bluemarine:track:ogHR8W5u5q5mMQjUahWrbe-z0XA=) Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/02 Por coi me bait mes maris.mp3 - embedded
     01/01 03 05:13 Avant hier en un vert pré (urn:bluemarine:track:-y0-TewJzQ7JwQh6cwKEJWTh6es=) Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/03 Avant hier en un vert pré.mp3 - embedded
@@ -2835,7 +2835,7 @@ RECORD Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=):
 
 RECORD Marais: Pièces À Deux Violes 1686 (urn:bluemarine:record:EnMA3YnQFdiNszrbyP2pXp5p6T0=):
   SOURCE:  embedded
-  TRACKS (18 / Optional.empty):
+  TRACKS (18 / Optional[18]):
     01/01 01 03:48 Marais: Suite In D Minor - Prélude (urn:bluemarine:track:UuZSATZoO61xB3FmnUz6ZCCFagA=) Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/01 Marais_ Suite In D Minor - Prélude.mp3 - embedded
     01/01 02 03:06 Marais: Suite In D Minor - Allemande (urn:bluemarine:track:NRaxEsJ-1MIesEa-LBkpydz3v1k=) Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/02 Marais_ Suite In D Minor - Allemande.mp3 - embedded
     01/01 03 01:36 Marais: Suite In D Minor - Courante (urn:bluemarine:track:2ntb9403tWZcMzmXaT8z6DwE2lw=) Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/03 Marais_ Suite In D Minor - Courante.mp3 - embedded
@@ -2888,7 +2888,7 @@ RECORD Melodie Sacre (urn:bluemarine:record:7lSAGzNHnF2-e3quBGWw-jPvZaU=):
 
 RECORD Mostly French (urn:bluemarine:record:7rmCg7VLnlUoP3iM8Wb5e8LT1Qo=):
   SOURCE:  embedded
-  TRACKS (8 / Optional.empty):
+  TRACKS (8 / Optional[8]):
     01/01 01 10:14 Poem For Flute And Orchesta (urn:bluemarine:track:Rl_5rutXfvHYP3ozH4fhgn0FaxU=) Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/01 Poem For Flute And Orchesta.mp3 - embedded
     01/01 02 08:28 Impromptu For Harp Solo, Op. 86 (urn:bluemarine:track:W9eIOUTd02BQSQCsNX6I8r9oPnI=) Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/02 Impromptu For Harp Solo, Op. 86.mp3 - embedded
     01/01 03 05:15 Fantaisie For Flute And Harp, Op. 79 (urn:bluemarine:track:RZKWNR-dtQbfcyJVKOqxDDdHBKg=) Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/03 Fantaisie For Flute And Harp, Op. 79.mp3 - embedded
@@ -3006,7 +3006,7 @@ RECORD Nutcracker / Swan Lake (urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI
 
 RECORD O tu chara sciença: La musique dans la pensée médiévale (urn:bluemarine:record:-Yh_lYTG5GrYQCcFwFQGUNWpFTw=):
   SOURCE:  embedded
-  TRACKS (20 / Optional.empty):
+  TRACKS (20 / Optional[20]):
     01/01 01 03:29 A poste messe (urn:bluemarine:track:_qKoEiqosZu6cf5Z1Jm-kYM5sQc=) La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/01 A poste messe.mp3 - embedded
     01/01 02 04:17 Or sus, vous dormés trop (urn:bluemarine:track:tN4psM5YSuqOw_R0Y_HCwLOrbJ8=) La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/02 Or sus, vous dormés trop.mp3 - embedded
     01/01 03 06:38 De luscinia (urn:bluemarine:track:8rAQMKDwCLJ22YJuHN_6ga6_9KY=) La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/03 De luscinia.mp3 - embedded
@@ -3229,7 +3229,7 @@ RECORD Piano Concertos (urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=):
 
 RECORD Pieces de Clavecin (urn:bluemarine:record:axDVyOkWODiJThhLeoM16wCkHMk=):
   SOURCE:  embedded
-  TRACKS (16 / Optional.empty):
+  TRACKS (16 / Optional[16]):
     01/01 01 04:08 Fourth Concert, La Pantomime (urn:bluemarine:track:JFmXPrwxaXYoLsOVHS2uVESi7q4=) Compilations/Pieces de Clavecin/01 Fourth Concert, La Pantomime.mp3 - embedded
     01/01 02 01:44 Fourth Concert, L'Indiscrète (urn:bluemarine:track:RjeE4zTgwxSqU12-xEwbAxIdmWo=) Compilations/Pieces de Clavecin/02 Fourth Concert, L'Indiscrète.mp3 - embedded
     01/01 03 04:29 Fourth Concert, Le Rameau (urn:bluemarine:track:0Ip6p-K4H0aCTvpTU_RQAfVj5nU=) Compilations/Pieces de Clavecin/03 Fourth Concert, Le Rameau.mp3 - embedded
@@ -3370,7 +3370,7 @@ RECORD Rimsky-Korsakov: Scheherazade (urn:bluemarine:record:lvz3awtgypL8BcvbSyA2
 
 RECORD Rossini Overtures (urn:bluemarine:record:UD4cQn5pukIL0z0dU4vs4l7Ih6I=):
   SOURCE:  embedded
-  TRACKS (8 / Optional.empty):
+  TRACKS (8 / Optional[8]):
     01/01 01 11:46 William Tell (urn:bluemarine:track:atxVIFgHXu9ySU-RWktq3KhMgLQ=) Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/01 William Tell.mp3 - embedded
     01/01 02 08:00 The Italian Girl In Algiers (urn:bluemarine:track:mcv6TVYlcFQ9PEfNnmC80I9T2Mc=) Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/02 The Italian Girl In Algiers.mp3 - embedded
     01/01 03 05:10 Il Signor Bruschino (urn:bluemarine:track:lZhLUr4zKmPkIsezhvQUUvVYI7s=) Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/03 Il Signor Bruschino.mp3 - embedded
@@ -3472,7 +3472,7 @@ RECORD Sonaten »Waldstein · Les Adieux · Appassionata« (urn:bluemarine:recor
 
 RECORD String Quartets Vol. 3 Op.18 Nos. 5 & 6 (urn:bluemarine:record:gtATvQUdbPaxAr0TKf8EHf7nX9Y=):
   SOURCE:  embedded
-  TRACKS (8 / Optional.empty):
+  TRACKS (8 / Optional[8]):
     01/01 01 07:07 String Quartet No 5 Allegro (urn:bluemarine:track:CwxGQ2mTFCXMoLQ4WYJbGOqaQTE=) Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/01 String Quartet No 5 Allegro.mp3 - embedded
     01/01 02 05:36 String Quartet No 5 Menuetto (urn:bluemarine:track:0yiUor1LGhId-q-zUBPXeqXHVvc=) Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/02 String Quartet No 5 Menuetto.mp3 - embedded
     01/01 03 10:20 String Quartet No 5 Andante Cantabile (urn:bluemarine:track:zdnp2tj7nBvIpSvyqhARTkPbtQA=) Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/03 String Quartet No 5 Andante Cantabile.mp3 - embedded
@@ -3789,7 +3789,7 @@ RECORD The Planets (urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=):
 
 RECORD Tracce della tradizione orale (urn:bluemarine:record:XICW1WJ-Am5ML_zXSNSK0ns06a4=):
   SOURCE:  embedded
-  TRACKS (17 / Optional.empty):
+  TRACKS (17 / Optional[17]):
     01/01 01 02:50 I' senti matutino (urn:bluemarine:track:5LJNxP-66u4H8ASXTAXGCG_DBto=) Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/01 I' senti matutino.mp3 - embedded
     01/01 02 03:09 Culomba amata (urn:bluemarine:track:43U8vTHOug24avImHUNPuTUsM-w=) Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/02 Culomba amata.mp3 - embedded
     01/01 03 05:31 Dolce lo mio drudo (urn:bluemarine:track:uYzKqLuxkLc-VinAATKa73iZIl0=) Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/03 Dolce lo mio drudo.mp3 - embedded
@@ -3921,7 +3921,7 @@ RECORD Violin Concerti (urn:bluemarine:record:w9XAlyRXYhoOirsZyhGObe3NMj8=):
 
 RECORD Vivaldi: Musica da camera e da chiesa (urn:bluemarine:record:Dsw4bQxH03U8JeeEAZ1fMkjOgXQ=):
   SOURCE:  embedded
-  TRACKS (40 / Optional.empty):
+  TRACKS (40 / Optional[40]):
     01/01 01 02:07 Sonata in E flat major, RV 130 (urn:bluemarine:track:-SbsBm83tvcQtLsj0mWEkDq0GPo=) London Baroque/Vivaldi_ Musica da camera e da chiesa/01 Sonata in E flat major, RV 130.mp3 - embedded
     01/01 02 01:29 Sonata in E flat major, RV 130 (urn:bluemarine:track:qTsRXT_q1jY7qxWz7ZFWnRcGmdA=) London Baroque/Vivaldi_ Musica da camera e da chiesa/02 Sonata in E flat major, RV 130.mp3 - embedded
     01/01 03 01:50 Sonata in B flat major, RV 78 (urn:bluemarine:track:6TiqPoI_ytWUg5lUS9pPp-XUgjs=) London Baroque/Vivaldi_ Musica da camera e da chiesa/03 Sonata in B flat major, RV 78.mp3 - embedded
@@ -4031,7 +4031,7 @@ RECORD Water Music (urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=):
 
 RECORD もうひとつのクリスマス (urn:bluemarine:record:Q2QW4sxqdRwCjoCYMmceTM4yd5o=):
   SOURCE:  embedded
-  TRACKS (10 / Optional.empty):
+  TRACKS (10 / Optional[10]):
     01/01 01 04:54 D. DOMINE VERSET (urn:bluemarine:track:60jEjrTG08Ul_GuR_0Ck8hKkZjs=) Un Autre Noel/もうひとつのクリスマス/01 D. DOMINE VERSET.mp3 - embedded
     01/01 02 01:56 オルガン　エスタンピ (urn:bluemarine:track:JKc2z0g65DFo0UeOOSbdFrLj2e0=) Un Autre Noel/もうひとつのクリスマス/02 オルガン　エスタンピ.mp3 - embedded
     01/01 03 06:50 高きみ空より　主は来られる (urn:bluemarine:track:v8-ie2uYS2644QO3itN58nbkOrI=) Un Autre Noel/もうひとつのクリスマス/03 高きみ空より　主は来られる.mp3 - embedded
