@@ -1,148 +1,57 @@
-            SELECT *
+            SELECT DISTINCT ?artist ?artist_type ?label ?role ?performance ?source ?fallback
             WHERE
               {
-                ?artist         a                   mo:MusicArtist.
-                ?artist         bmmo:importedFrom   ?source.
-                ?artist         rdfs:label          ?label.
+                        ?record         a                                         mo:Record.
+                      { ?record         bmmo:importedFrom                         ?source.        }
+@fallback@      UNION { ?record         bmmo:importedFrom                         ?fallback.      }
+@fallback@      MINUS { []              bmmo:alternateOf                          ?record;
+@fallback@                              bmmo:importedFrom                         ?source.        }
+                MINUS { ?record         bmmo:alternatePickOf                      [].             }
 
-@performance@   ?performance    a                   mo:Performance.
+                        ?artist         a                                         mo:MusicArtist.
+                      { ?record         foaf:maker                                ?artist.        }
+                UNION { ?record         mo:track/foaf:maker                       ?artist.        }
+                UNION { ?record         foaf:maker/rel:collaboratesWith           ?artist.        }
+                UNION { ?record         mo:track/foaf:maker/rel:collaboratesWith  ?artist.        }
 
-@performance@         { ?performance    mo:conductor                            ?artist. BIND ("conductor"                          AS ?role) }
-@performance@   UNION { ?performance    mo:engineer                             ?artist. BIND ("engineer"                           AS ?role) }
-@performance@   UNION { ?performance    mo:performer                            ?artist. BIND ("performer"                          AS ?role) }
-@performance@   UNION { ?performance    mo:producer                             ?artist. BIND ("producer"                           AS ?role) }
-@performance@   UNION { ?performance    mo:singer                               ?artist. BIND ("singer"                             AS ?role) }
+                        ?artist         rdfs:label                                ?label.
+             OPTIONAL { ?artist         vocab:artist_type                         ?artist_type.   }
+                MINUS { ?artist         vocab:artist_type                         "2"^^xs:short;
+                                        rel:collaboratesWith                      [].             }
 
-@performance@   UNION { ?performance    bmmo:alto                               ?artist. BIND ("alto"                               AS ?role) }
-@performance@   UNION { ?performance    bmmo:arranger                           ?artist. BIND ("arranger"                           AS ?role) }
-@performance@   UNION { ?performance    bmmo:background_singer                  ?artist. BIND ("background singer"                  AS ?role) }
-@performance@   UNION { ?performance    bmmo:balance                            ?artist. BIND ("balance"                            AS ?role) }
-@performance@   UNION { ?performance    bmmo:bass                               ?artist. BIND ("bass"                               AS ?role) }
-@performance@   UNION { ?performance    bmmo:bass_baritone                      ?artist. BIND ("bass baritone"                      AS ?role) }
-@performance@   UNION { ?performance    bmmo:baritone                           ?artist. BIND ("baritone"                           AS ?role) }
-@performance@   UNION { ?performance    bmmo:choir                              ?artist. BIND ("choir"                              AS ?role) }
-@performance@   UNION { ?performance    bmmo:chorus_master                      ?artist. BIND ("chorus master"                      AS ?role) }
-@performance@   UNION { ?performance    bmmo:contralto                          ?artist. BIND ("contralto"                          AS ?role) }
-@performance@   UNION { ?performance    bmmo:editor                             ?artist. BIND ("editor"                             AS ?role) }
-@performance@   UNION { ?performance    bmmo:lead_singer                        ?artist. BIND ("lead singer"                        AS ?role) }
-@performance@   UNION { ?performance    bmmo:mastering                          ?artist. BIND ("mastering"                          AS ?role) }
-@performance@   UNION { ?performance    bmmo:mezzo_soprano                      ?artist. BIND ("mezzo soprano"                      AS ?role) }
-@performance@   UNION { ?performance    bmmo:mix                                ?artist. BIND ("mix"                                AS ?role) }
-@performance@   UNION { ?performance    bmmo:orchestra                          ?artist. BIND ("orchestra"                          AS ?role) }
-@performance@   UNION { ?performance    bmmo:orchestrator                       ?artist. BIND ("orchestrator"                       AS ?role) }
-@performance@   UNION { ?performance    bmmo:programming                        ?artist. BIND ("programming"                        AS ?role) }
-@performance@   UNION { ?performance    bmmo:recording                          ?artist. BIND ("recording"                          AS ?role) }
-@performance@   UNION { ?performance    bmmo:soprano                            ?artist. BIND ("soprano"                            AS ?role) }
-@performance@   UNION { ?performance    bmmo:tenor                              ?artist. BIND ("tenor"                              AS ?role) }
+@performance@           ?performance    a                                       mo:Performance.
 
-@performance@   UNION { ?performance    bmmo:performer_accordion                ?artist. BIND ("performer_accordion"                AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_acoustic_bass_guitar     ?artist. BIND ("performer_acoustic_bass_guitar"     AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_acoustic_guitar          ?artist. BIND ("performer_acoustic_guitar"          AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_agogo                    ?artist. BIND ("performer_agogo"                    AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_alto_saxophone           ?artist. BIND ("performer_alto_saxophone"           AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_banjo                    ?artist. BIND ("performer_banjo"                    AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_baritone                 ?artist. BIND ("performer_baritone"                 AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_baritone_guitar          ?artist. BIND ("performer_baritone_guitar"          AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_baritone_sax             ?artist. BIND ("performer_baritone_sax"             AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_bass                     ?artist. BIND ("performer_bass"                     AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_bass_clarinet            ?artist. BIND ("performer_bass_clarinet"            AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_bass_drum                ?artist. BIND ("performer_bass_drum"                AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_bass_guitar              ?artist. BIND ("performer_bass_guitar"              AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_bass_trombone            ?artist. BIND ("performer_bass_trombone"            AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_bassoon                  ?artist. BIND ("performer_bassoon"                  AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_bells                    ?artist. BIND ("performer_bells"                    AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_berimbau                 ?artist. BIND ("performer_berimbau"                 AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_brass                    ?artist. BIND ("performer_brass"                    AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_brushes                  ?artist. BIND ("performer_brushes"                  AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_cello                    ?artist. BIND ("performer_cello"                    AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_clarinet                 ?artist. BIND ("performer_clarinet"                 AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_congas                   ?artist. BIND ("performer_congas"                   AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_cornet                   ?artist. BIND ("performer_cornet"                   AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_cymbals                  ?artist. BIND ("performer_cymbals"                  AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_classical_guitar         ?artist. BIND ("performer_classical_guitar"         AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_double_bass              ?artist. BIND ("performer_double_bass"              AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_drum_machine             ?artist. BIND ("performer_drum_machine"             AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_drums                    ?artist. BIND ("performer_drums"                    AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_electric_guitar          ?artist. BIND ("performer_electric_guitar"          AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_electric_bass_guitar     ?artist. BIND ("performer_electric_bass_guitar"     AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_electric_piano           ?artist. BIND ("performer_electric_piano"           AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_electric_sitar           ?artist. BIND ("performer_electric_sitar"           AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_electronic_drum_set      ?artist. BIND ("performer_electronic_drum_set"      AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_english_horn             ?artist. BIND ("performer_english_horn"             AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_flugelhorn               ?artist. BIND ("performer_flugelhorn"               AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_flute                    ?artist. BIND ("performer_flute"                    AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_frame_drum               ?artist. BIND ("performer_frame_drum"               AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_french_horn              ?artist. BIND ("performer_french_horn"              AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_glockenspiel             ?artist. BIND ("performer_glockenspiel"             AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_grand_piano              ?artist. BIND ("performer_grand_piano"              AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_guest                    ?artist. BIND ("performer_guest"                    AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_guitar                   ?artist. BIND ("performer_guitar"                   AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_guitar_synthesizer       ?artist. BIND ("performer_guitar_synthesizer"       AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_guitars                  ?artist. BIND ("performer_guitars"                  AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_handclaps                ?artist. BIND ("performer_handclaps"                AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_hammond_organ            ?artist. BIND ("performer_hammond_organ"            AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_harmonica                ?artist. BIND ("performer_harmonica"                AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_harp                     ?artist. BIND ("performer_harp"                     AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_harpsichord              ?artist. BIND ("performer_harpsichord"              AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_hihat                    ?artist. BIND ("performer_hihat"                    AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_horn                     ?artist. BIND ("performer_horn"                     AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_keyboard                 ?artist. BIND ("performer_keyboard"                 AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_koto                     ?artist. BIND ("performer_koto"                     AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_lute                     ?artist. BIND ("performer_lute"                     AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_maracas                  ?artist. BIND ("performer_maracas"                  AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_marimba                  ?artist. BIND ("performer_marimba"                  AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_mellophone               ?artist. BIND ("performer_mellophone"               AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_melodica                 ?artist. BIND ("performer_melodica"                 AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_oboe                     ?artist. BIND ("performer_oboe"                     AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_organ                    ?artist. BIND ("performer_organ"                    AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_other_instruments        ?artist. BIND ("performer_other_instruments"        AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_percussion               ?artist. BIND ("performer_percussion"               AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_piano                    ?artist. BIND ("performer_piano"                    AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_piccolo_trumpet          ?artist. BIND ("performer_piccolo_trumpet"          AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_pipe_organ               ?artist. BIND ("performer_pipe_organ"               AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_psaltery                 ?artist. BIND ("performer_psaltery"                 AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_recorder                 ?artist. BIND ("performer_recorder"                 AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_reeds                    ?artist. BIND ("performer_reeds"                    AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_rhodes_piano             ?artist. BIND ("performer_rhodes_piano"             AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_santur                   ?artist. BIND ("performer_santur"                   AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_saxophone                ?artist. BIND ("performer_saxophone"                AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_shakers                  ?artist. BIND ("performer_shakers"                  AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_sitar                    ?artist. BIND ("performer_sitar"                    AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_slide_guitar             ?artist. BIND ("performer_slide_guitar"             AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_snare_drumr              ?artist. BIND ("performer_snare_drumr"              AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_solo                     ?artist. BIND ("performer_solo"                     AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_soprano_saxophone        ?artist. BIND ("performer_soprano_saxophone"        AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_spanish_acoustic_guitar  ?artist. BIND ("performer_spanish_acoustic_guitar"  AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_steel_guitar             ?artist. BIND ("performer_steel_guitar"             AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_synclavier               ?artist. BIND ("performer_synclavier"               AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_synthesizer              ?artist. BIND ("performer_synthesizer"              AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_tambourine               ?artist. BIND ("performer_tambourine"               AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_tenor_sax                ?artist. BIND ("performer_tenor_sax"                AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_timbales                 ?artist. BIND ("performer_timbales"                 AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_timpani                  ?artist. BIND ("performer_timpani"                  AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_tiple                    ?artist. BIND ("performer_tiple"                    AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_trombone                 ?artist. BIND ("performer_trombone"                 AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_trumpet                  ?artist. BIND ("performer_trumpet"                  AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_tuba                     ?artist. BIND ("performer_tuba"                     AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_tubular_bells            ?artist. BIND ("performer_tubular_bells"            AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_tuned_percussion         ?artist. BIND ("performer_tuned_percussion"         AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_ukulele                  ?artist. BIND ("performer_ukulele"                  AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_vibraphone               ?artist. BIND ("performer_vibraphone"               AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_viola                    ?artist. BIND ("performer_viola"                    AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_viola_da_gamba           ?artist. BIND ("performer_viola_da_gamba"           AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_violin                   ?artist. BIND ("performer_violin"                   AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_whistle                  ?artist. BIND ("performer_whistle"                  AS ?role) }
-@performance@   UNION { ?performance    bmmo:performer_xylophone                ?artist. BIND ("performer_xylophone"                AS ?role) }
+@performance@         { ?performance    mo:conductor                            ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_conductor"         AS ?role) }
+@performance@   UNION { ?performance    mo:engineer                             ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_engineer"          AS ?role) }
+@performance@   UNION { ?performance    mo:performer                            ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_performer"         AS ?role) }
+@performance@   UNION { ?performance    mo:producer                             ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_producer"          AS ?role) }
+@performance@   UNION { ?performance    mo:singer                               ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_singer"            AS ?role) }
 
-                OPTIONAL
-                  {
-                    ?artist     vocab:artist_type       ?artist_type.
-                  }
+@performance@   UNION { ?performance    bmmo:alto                               ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_alto"              AS ?role) }
+@performance@   UNION { ?performance    bmmo:arranger                           ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_arranger"          AS ?role) }
+@performance@   UNION { ?performance    bmmo:background_singer                  ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_background singer" AS ?role) }
+@performance@   UNION { ?performance    bmmo:balance                            ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_balance"           AS ?role) }
+@performance@   UNION { ?performance    bmmo:bass                               ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_bass"              AS ?role) }
+@performance@   UNION { ?performance    bmmo:bass_baritone                      ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_bass baritone"     AS ?role) }
+@performance@   UNION { ?performance    bmmo:baritone                           ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_baritone"          AS ?role) }
+@performance@   UNION { ?performance    bmmo:choir                              ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_choir"             AS ?role) }
+@performance@   UNION { ?performance    bmmo:chorus_master                      ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_chorus master"     AS ?role) }
+@performance@   UNION { ?performance    bmmo:contralto                          ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_contralto"         AS ?role) }
+@performance@   UNION { ?performance    bmmo:editor                             ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_editor"            AS ?role) }
+@performance@   UNION { ?performance    bmmo:lead_singer                        ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_lead singer"       AS ?role) }
+@performance@   UNION { ?performance    bmmo:mastering                          ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_mastering"         AS ?role) }
+@performance@   UNION { ?performance    bmmo:mezzo_soprano                      ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_mezzo soprano"     AS ?role) }
+@performance@   UNION { ?performance    bmmo:mix                                ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_mix"               AS ?role) }
+@performance@   UNION { ?performance    bmmo:orchestra                          ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_orchestra"         AS ?role) }
+@performance@   UNION { ?performance    bmmo:orchestrator                       ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_orchestrator"      AS ?role) }
+@performance@   UNION { ?performance    bmmo:programming                        ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_programming"       AS ?role) }
+@performance@   UNION { ?performance    bmmo:recording                          ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_recording"         AS ?role) }
+@performance@   UNION { ?performance    bmmo:soprano                            ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_soprano"           AS ?role) }
+@performance@   UNION { ?performance    bmmo:tenor                              ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_tenor"             AS ?role) }
 
-                MINUS
-                  {
-                    ?artist     vocab:artist_type       "2"^^xs:short.
-                    ?artist     rel:collaboratesWith    ?any1 .
-                  }
+@performance@   UNION { ?performance    ?role                                   ?artist.
+@performance@           FILTER regex(str(?role), "http://bluemarine.tidalwave.it/2015/04/mo/performer_.*")  }
+
               }
             ORDER BY ?label
+@performance@        ?role
