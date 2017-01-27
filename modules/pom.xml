@@ -320,6 +320,7 @@
         <module>MusicBrainzDataModel</module>
         <module>Persistence</module>
         <module>Plugins</module>
+        <module>REST</module>
         <module>Services</module>
         <module>UI</module>
         <module>MediaServer</module>
