@@ -79,10 +79,10 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     private final Path audioFilePath;
 
     @Nonnull
-    private final Optional<Integer> diskNumber;
+    private final Optional<Integer> diskNumber; // really property of Record, but handy here
 
     @Nonnull
-    private final Optional<Integer> diskCount;
+    private final Optional<Integer> diskCount; // really property of Record, but handy here
 
     @Nonnull
     private final Optional<Long> fileSize;

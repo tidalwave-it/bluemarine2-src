@@ -1,31 +1,35 @@
-        SELECT DISTINCT *
-        WHERE
-          {
-                       ?track                 a                                  mo:Track;
-                                              bmmo:importedFrom                  ?source;
-                                              rdfs:label                         ?label;
-                                              mo:track_number                    ?track_number.
-            OPTIONAL { ?track                 bmmo:diskNumber                    ?disk_number.      }
-            OPTIONAL { ?track                 bmmo:diskCount                     ?disk_count.       }
-@artist@             { ?track                 foaf:maker                         ?artist.           }
-@artist@    UNION    { ?track                 foaf:maker/rel:collaboratesWith    ?artist.           }
+            SELECT DISTINCT *
+            WHERE
+              {
+                        ?record         a                                         mo:Record.
+                      { ?record         bmmo:importedFrom                         ?source.        }
+@fallback@      UNION { ?record         bmmo:importedFrom                         ?fallback.      }
+@fallback@      MINUS { []              bmmo:alternateOf                          ?record;
+@fallback@                              bmmo:importedFrom                         ?source.        }
+                MINUS { ?record         bmmo:alternatePickOf                      [].             }
 
-                       ?record                a                                  mo:Record;
-                                              mo:track                           ?track;
-                                              rdfs:label                         ?record_label.
-            MINUS    { ?record                bmmo:alternatePickOf               ?anything.         }
+                        ?track          a                                         mo:Track;
+                                        rdfs:label                                ?label;
+                                        mo:track_number                           ?track_number.
+@artist@              { ?track          foaf:maker                                ?artist.        }
+@artist@        UNION { ?track          foaf:maker/rel:collaboratesWith           ?artist.        }
 
-                       ?signal                a                                  mo:DigitalSignal;
-                                              mo:published_as                    ?track;
-                                              mo:duration                        ?duration.
+                        ?record         mo:track                                  ?track;
+                                        rdfs:label                                ?record_label.
+             OPTIONAL { ?record         bmmo:diskNumber                           ?disk_number.   }
+             OPTIONAL { ?record         bmmo:diskCount                            ?disk_count.    }
 
-                       ?audioFile             a                                  mo:AudioFile;
-                                              mo:encodes                         ?signal;
-                                              bmmo:path                          ?path.
-            OPTIONAL { ?audioFile             bmmo:fileSize                      ?fileSize.         }
-          }
-        ORDER BY
-            ?record_label
-            ?disk_number
-            ?track_number
-            ?label
+                        ?signal         a                                         mo:DigitalSignal;
+                                        mo:published_as                           ?track;
+                                        mo:duration                               ?duration.
+
+                        ?audioFile      a                                         mo:AudioFile;
+                                        mo:encodes                                ?signal;
+                                        bmmo:path                                 ?path.
+             OPTIONAL { ?audioFile      bmmo:fileSize                             ?fileSize.      }
+              }
+            ORDER BY
+                ?record_label
+                ?disk_number
+                ?track_number
+                ?label
