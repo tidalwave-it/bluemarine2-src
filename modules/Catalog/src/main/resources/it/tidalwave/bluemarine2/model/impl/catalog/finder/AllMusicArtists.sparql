@@ -1,13 +1,23 @@
             SELECT DISTINCT ?artist ?artist_type ?label ?role ?performance ?source ?fallback
             WHERE
               {
-                        ?artist         a                                       mo:MusicArtist;
-                                        bmmo:importedFrom                       ?source;
-                                        rdfs:label                              ?label.
+                        ?record         a                                         mo:Record.
+                      { ?record         bmmo:importedFrom                         ?source.        }
+@fallback@      UNION { ?record         bmmo:importedFrom                         ?fallback.      }
+@fallback@      MINUS { []              bmmo:alternateOf                          ?record;
+@fallback@                              bmmo:importedFrom                         ?source.        }
+                MINUS { ?record         bmmo:alternatePickOf                      [].             }
 
-             OPTIONAL { ?artist         vocab:artist_type                       ?artist_type.   }
-                MINUS { ?artist         vocab:artist_type                       "2"^^xs:short;
-                                        rel:collaboratesWith                    ?any1 .         }
+                        ?artist         a                                         mo:MusicArtist.
+                      { ?record         foaf:maker                                ?artist.        }
+                UNION { ?record         mo:track/foaf:maker                       ?artist.        }
+                UNION { ?record         foaf:maker/rel:collaboratesWith           ?artist.        }
+                UNION { ?record         mo:track/foaf:maker/rel:collaboratesWith  ?artist.        }
+
+                        ?artist         rdfs:label                                ?label.
+             OPTIONAL { ?artist         vocab:artist_type                         ?artist_type.   }
+                MINUS { ?artist         vocab:artist_type                         "2"^^xs:short;
+                                        rel:collaboratesWith                      [].             }
 
 @performance@           ?performance    a                                       mo:Performance.
 
