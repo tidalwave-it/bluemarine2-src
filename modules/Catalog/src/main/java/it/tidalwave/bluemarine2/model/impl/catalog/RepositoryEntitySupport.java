@@ -39,6 +39,7 @@ import it.tidalwave.util.Id;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.finder.MusicPerformerFinder;
 import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
@@ -53,7 +54,6 @@ import lombok.experimental.Delegate;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
-import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
 
 /***********************************************************************************************************************
  *

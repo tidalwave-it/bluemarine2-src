@@ -118,8 +118,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         loadInMemoryCatalog(repository, PATH_TEST_SETS.resolve(testSetName + ".n3"));
         // when
         final RepositoryMediaCatalog underTest = new RepositoryMediaCatalog(repository);
-        System.setProperty("bluemarine2.source", source.stringValue());
-        System.setProperty("bluemarine2.fallback", fallbackSource.stringValue());
+        System.setProperty("blueMarine2.source", source.stringValue());
+        System.setProperty("blueMarine2.fallback", fallbackSource.stringValue());
         // then
         final Path expectedResult = PATH_EXPECTED_TEST_RESULTS.resolve(testSetName + "-dump.txt");
         final Path actualResult = PATH_TEST_RESULTS.resolve(testSetName + "-dump.txt");
@@ -141,9 +141,12 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         final RecordFinder allRecordsFinder = catalog.findRecords();
         final TrackFinder allTracksFinder = catalog.findTracks();
 
+        log.info("QUERYING ALL ARTISTS...");
         final List<MusicArtist> artists = allArtistsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
+        log.info("QUERYING ALL RECORDS...");
         final List<Record> records = allRecordsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
 
+        log.info("QUERYING ALL TRACKS...");
         pw.printf("ALL TRACKS (%d):%n%n", allTracksFinder.count());
         final Map<String, Track> tracksOrphanOfArtist = allTracksFinder.stream()
                                                             .collect(toMap(Track::toDumpString, Function.identity(), (u,v) -> v));
@@ -158,6 +161,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         artists.forEach(artist ->
           {
+            log.info("QUERYING TRACKS OF {}...", displayNameOf(artist));
             final TrackFinder artistTracksFinder = artist.findTracks();
             pw.printf("%nTRACKS OF %s (%d):%n", displayNameOf(artist), artistTracksFinder.count());
             artistTracksFinder.stream().forEach(track ->
@@ -168,6 +172,24 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
               });
           });
 
+        artists.forEach(artist ->
+          {
+            log.info("QUERYING RECORDS OF {}...", displayNameOf(artist));
+            final RecordFinder recordFinder = artist.findRecords();
+            pw.printf("%nRECORDS OF %s (%d):%n", displayNameOf(artist), recordFinder.count());
+            recordFinder.stream().forEach(record -> pw.printf("  %s%n", displayNameOf(record)));
+            recordFinder.stream().forEach(record -> assertEquals(record.getSource(), artist.getSource()));
+          });
+
+        artists.forEach(artist ->
+          {
+            log.info("QUERYING PERFORMANCES OF {}...", displayNameOf(artist));
+            final PerformanceFinder performanceFinder = artist.findPerformances();
+            pw.printf("%nPERFORMANCES OF %s (%d):%n", displayNameOf(artist), performanceFinder.count());
+            performanceFinder.stream().forEach(performance -> pw.printf("  %s%n", performance.toDumpString()));
+            performanceFinder.stream().forEach(performance -> assertEquals(performance.getSource(), artist.getSource()));
+          });
+
         records.forEach(record ->
           {
             pw.printf("%nRECORD %s:%n", displayNameOf(record));
@@ -175,8 +197,10 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
             record.getAsin().ifPresent(asin -> pw.printf("  ASIN:    %s%n", asin));
             record.getGtin().ifPresent(gtin -> pw.printf("  BARCODE: %s%n", gtin));
 
+            log.info("QUERYING TRACKS OF {}...", displayNameOf(record));
             final TrackFinder recordTrackFinder = record.findTracks();
-            pw.printf("  TRACKS (%d / %s):%n", recordTrackFinder.count(), ((RepositoryRecord)record).getTrackCount());
+            pw.printf("  TRACKS (%d / %s):%n", recordTrackFinder.count(), ((RepositoryRecord)record).getTrackCount()); // FIXME: add getTrackCount() in Record
+//            ((RepositoryRecord)record).getTrackCount().ifPresent(trackCount -> assertEquals(trackCount.intValue(), recordTrackFinder.count())); FIXME
 
             recordTrackFinder.stream().forEach(track ->
               {
@@ -189,22 +213,6 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
                                                     .collect(joining("\n      : ", "      : ", ""))));
                 assertEquals(track.getSource(), record.getSource());
               });
-          });
-
-        artists.forEach(artist ->
-          {
-            final RecordFinder recordFinder = artist.findRecords();
-            pw.printf("%nRECORDS OF %s (%d):%n", displayNameOf(artist), recordFinder.count());
-            recordFinder.stream().forEach(record -> pw.printf("  %s%n", displayNameOf(record)));
-            recordFinder.stream().forEach(record -> assertEquals(record.getSource(), artist.getSource()));
-          });
-
-        artists.forEach(artist ->
-          {
-            final PerformanceFinder performanceFinder = artist.findPerformances();
-            pw.printf("%nPERFORMANCES OF %s (%d):%n", displayNameOf(artist), performanceFinder.count());
-            performanceFinder.stream().forEach(performance -> pw.printf("  %s%n", performance.toDumpString()));
-            performanceFinder.stream().forEach(performance -> assertEquals(performance.getSource(), artist.getSource()));
           });
 
         pw.printf("%n%nTRACKS ORPHAN OF ARTIST (%d):%n%n", tracksOrphanOfArtist.size());
@@ -261,10 +269,14 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
       {
         return new Object[][]
           {
-            { "tiny-model"                      , null,                         ID_SOURCE_EMBEDDED,    ID_SOURCE_EMBEDDED },
+            // FIXME: prepare a new tiny-model
+//            { "tiny-model"                      , null,                         ID_SOURCE_EMBEDDED,    ID_SOURCE_EMBEDDED },
             { "small-model"                     , null,                         ID_SOURCE_EMBEDDED,    ID_SOURCE_EMBEDDED },
+            { "small-model-2"                   , null,                         ID_SOURCE_MUSICBRAINZ, ID_SOURCE_MUSICBRAINZ },
             { "model-iTunes-fg-20160504-2"      , null,                         ID_SOURCE_EMBEDDED,    ID_SOURCE_EMBEDDED },
             { "model-iTunes-fg-20161210-1"      , null,                         ID_SOURCE_EMBEDDED,    ID_SOURCE_EMBEDDED },
+            { "musicbrainz-iTunes-fg-20160504-2", "model-iTunes-fg-20160504-2", ID_SOURCE_MUSICBRAINZ, ID_SOURCE_EMBEDDED },
+            { "musicbrainz-iTunes-fg-20161210-1", "model-iTunes-fg-20161210-1", ID_SOURCE_MUSICBRAINZ, ID_SOURCE_EMBEDDED },
           };
       }
   }

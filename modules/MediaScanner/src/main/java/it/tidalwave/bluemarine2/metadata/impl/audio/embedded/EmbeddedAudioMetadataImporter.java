@@ -223,6 +223,8 @@ public class EmbeddedAudioMetadataImporter
         final Optional<String> makerName   = metadata.get(ARTIST);
         final PathAwareEntity parent       = mediaItem.getParent().get();
         final String recordTitle           = metadata.get(ALBUM).orElse(parent.getPath().toFile().getName());
+        final Optional<Integer> diskCount  = emptyIfOne(metadata.get(DISK_COUNT));
+        final Optional<Integer> diskNumber = diskCount.flatMap(dc -> metadata.get(DISK_NUMBER));
         final Id uniqueId                  = uniqueTrackId(metadata, toBase64String(sha1));
         final IRI audioFileIri             = BM.audioFileIriFor(toBase64String(sha1));
         final IRI signalIri                = BM.signalIriFor(uniqueId);
@@ -266,8 +268,6 @@ public class EmbeddedAudioMetadataImporter
             .withOptional(trackIri,      BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
                                                                                      .map(c -> c.getTrackId())))
             .withOptional(trackIri,      MO.P_TRACK_NUMBER,       literalForInt(metadata.get(TRACK_NUMBER)))
-            .withOptional(trackIri,      BM.DISK_NUMBER,          literalForInt(metadata.get(DISK_NUMBER)))
-            .withOptional(trackIri,      BM.DISK_COUNT,           literalForInt(metadata.get(DISK_COUNT)))
             .withOptional(trackIri,      RDFS.LABEL,              literalFor(trackTitle))
             .withOptional(trackIri,      DC.TITLE,                literalFor(trackTitle))
             .with(        trackIri,      FOAF.MAKER,              makerUris.stream())
@@ -277,6 +277,10 @@ public class EmbeddedAudioMetadataImporter
             .withOptional(newRecordIri,  MO.P_MEDIA_TYPE,         MO.C_CD)
             .withOptional(newRecordIri,  RDFS.LABEL,              literalFor(recordTitle))
             .withOptional(newRecordIri,  DC.TITLE,                literalFor(recordTitle))
+            .withOptional(newRecordIri,  MO.P_TRACK_COUNT,        literalForInt(metadata.get(CDDB)
+                                                                                        .map(cddb -> cddb.getTrackCount())))
+            .withOptional(newRecordIri,  BM.DISK_NUMBER,          literalForInt(diskNumber))
+            .withOptional(newRecordIri,  BM.DISK_COUNT,           literalForInt(diskCount))
             .withOptional(newRecordIri,  BM.ITUNES_CDDB1,         literalFor(metadata.get(ITUNES_COMMENT)
                                                                                      .map(c -> c.getCddb1())))
             .with(        recordIri,     MO.P_TRACK,              trackIri)
@@ -349,5 +353,16 @@ public class EmbeddedAudioMetadataImporter
     private IRI artistIriOf (final @Nonnull String name)
       {
         return BM.artistIriFor(createSha1IdNew("ARTIST:" + name));
+      }
+
+ /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static Optional<Integer> emptyIfOne (final @Nonnull Optional<Integer> number)
+      {
+        return number.flatMap(n -> (n == 1) ? Optional.empty() : Optional.of(n));
       }
   }
