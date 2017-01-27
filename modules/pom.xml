@@ -21,6 +21,7 @@
     <properties>
         <aquafx.version>0.2</aquafx.version>
         <cling.version>2.1.1</cling.version>
+        <commons-lang3.version>3.5</commons-lang3.version>
         <httpclient.version>4.4</httpclient.version>
         <jaudiotagger.version>2.2.3</jaudiotagger.version>
         <javax-servlet-api.version>3.1.0</javax-servlet-api.version>
@@ -100,6 +101,12 @@
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpcore</artifactId>
                 <version>${httpclient.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
             </dependency>
 
             <dependency>
@@ -310,6 +317,8 @@
         <module>JavaFXApplication</module>
         <module>MediaScanner</module>
         <module>Model</module>
+        <module>MusicBrainz</module>
+        <module>MusicBrainzDataModel</module>
         <module>Persistence</module>
         <module>Plugins</module>
         <module>Services</module>
