@@ -125,6 +125,11 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
                                                    Arrays.toString(trackFrameOffsets).replace(", ", "+").replace("[", "").replace("]", ""));
               }
 
+            public int getTrackCount()
+              {
+                return trackFrameOffsets.length;
+              }
+
             public boolean matches (final @Nonnull Cddb other, final @Nonnegative int threshold)
               {
                 if (Arrays.equals(this.trackFrameOffsets, other.trackFrameOffsets))

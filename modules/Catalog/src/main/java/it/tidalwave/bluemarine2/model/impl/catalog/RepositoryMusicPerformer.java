@@ -35,6 +35,7 @@ import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.MusicPerformer;
 import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.vocabulary.BM;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -62,7 +63,8 @@ public class RepositoryMusicPerformer implements MusicPerformer
     public RepositoryMusicPerformer (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
         this.musicArtist = new RepositoryMusicArtist(repository, bindingSet);
-        final Optional<String> r = Optional.of(bindingSet.getBinding("role").getValue().stringValue());
+        final Optional<String> r = Optional.of(bindingSet.getBinding("role").getValue().stringValue()
+                                                .replaceAll(BM.PREFIX + "performer_", ""));
         this.role = r.map(RepositoryMusicPerformerRole::new);
       }
 
