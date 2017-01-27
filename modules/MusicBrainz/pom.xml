@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>it.tidalwave.bluemarine2</groupId>
+        <artifactId>bluemarine2-modules</artifactId>
+        <version>1.0-ALPHA-18-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <groupId>it.tidalwave.bluemarine2</groupId>
+    <artifactId>it-tidalwave-bluemarine2-metadata-musicbrainz</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-ALPHA-18-SNAPSHOT</version>
+    <name>blueMarine II - MusicBrainz</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-vocabulary</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-musicbrainz-datamodel</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.rdf4j</groupId>
+            <artifactId>rdf4j-repository-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <!-- TEST dependencies -->
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-commons-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.rdf4j</groupId>
+            <artifactId>rdf4j-rio-n3</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <metadata.folder>${project.basedir}/target/metadata</metadata.folder>
+        <cache.folder>${project.basedir}/target/cache</cache.folder>
+        <expected-results.folder>${project.basedir}/target/expected-results</expected-results.folder>
+
+        <musicbrainz-cddb-cache-iTunes-fg-20160504-2.version>20170123_1415</musicbrainz-cddb-cache-iTunes-fg-20160504-2.version>
+        <musicbrainz-cddb-cache-iTunes-fg-20161210-1.version>20170123_1415</musicbrainz-cddb-cache-iTunes-fg-20161210-1.version>
+        <musicbrainz-cache-iTunes-fg-20160504-2.version>20170123_1415</musicbrainz-cache-iTunes-fg-20160504-2.version>
+        <musicbrainz-cache-iTunes-fg-20161210-1.version>20170123_1415</musicbrainz-cache-iTunes-fg-20161210-1.version>
+
+        <expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-2.version>20170123_1415</expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-2.version>
+        <expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>20170123_1415</expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version>
+        <expected-metadata-musicbrainz-iTunes-fg-20160504-2.version>20170126_1435</expected-metadata-musicbrainz-iTunes-fg-20160504-2.version>
+        <expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>20170126_1435</expected-metadata-musicbrainz-iTunes-fg-20161210-1.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-test-resources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <!-- Metadata to read -->
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>expected-metadata-iTunes-fg-20160504-2</artifactId>
+                                    <version>${testSet.iTunes-fg-20160504-2.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${metadata.folder}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>expected-metadata-iTunes-fg-20161210-1</artifactId>
+                                    <version>${testSet.iTunes-fg-20161210-1.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${metadata.folder}</outputDirectory>
+                                </artifactItem>
+
+                                <!-- REST caches -->
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>musicbrainz-cddb-cache-iTunes-fg-20160504-2</artifactId>
+                                    <version>${musicbrainz-cddb-cache-iTunes-fg-20160504-2.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${cache.folder}/cddb</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>musicbrainz-cddb-cache-iTunes-fg-20161210-1</artifactId>
+                                    <version>${musicbrainz-cddb-cache-iTunes-fg-20161210-1.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${cache.folder}/cddb</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>musicbrainz-cache-iTunes-fg-20160504-2</artifactId>
+                                    <version>${musicbrainz-cache-iTunes-fg-20160504-2.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${cache.folder}/musicbrainz</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>musicbrainz-cache-iTunes-fg-20161210-1</artifactId>
+                                    <version>${musicbrainz-cache-iTunes-fg-20161210-1.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${cache.folder}/musicbrainz</outputDirectory>
+                                </artifactItem>
+
+                                <!-- Expected results -->
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-2</artifactId>
+                                    <version>${expected-metadata-musicbrainz-cddb-iTunes-fg-20160504-2.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${expected-results.folder}/cddb</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1</artifactId>
+                                    <version>${expected-metadata-musicbrainz-cddb-iTunes-fg-20161210-1.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${expected-results.folder}/cddb</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>expected-metadata-musicbrainz-iTunes-fg-20160504-2</artifactId>
+                                    <version>${expected-metadata-musicbrainz-iTunes-fg-20160504-2.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${expected-results.folder}/musicbrainz</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>expected-metadata-musicbrainz-iTunes-fg-20161210-1</artifactId>
+                                    <version>${expected-metadata-musicbrainz-iTunes-fg-20161210-1.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${expected-results.folder}/musicbrainz</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

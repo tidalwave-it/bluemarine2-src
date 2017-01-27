@@ -42,6 +42,7 @@ import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistF
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryPerformanceFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
 
 /***********************************************************************************************************************
@@ -50,9 +51,14 @@ import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor
+@RequiredArgsConstructor @Slf4j
 public class RepositoryMediaCatalog implements MediaCatalog
   {
+    static
+      {
+        log.info("Catalog configuration source: {} fallback: {}", getSource(), getFallback());
+      }
+
     @Nonnull
     private final Repository repository;
 
@@ -87,14 +93,14 @@ public class RepositoryMediaCatalog implements MediaCatalog
       }
 
     @Nonnull
-    private Id getSource()
+    private static Id getSource()
       {
-        return new Id(System.getProperty("bluemarine2.source", ID_SOURCE_EMBEDDED.stringValue())); // FIXME: get from Preferences
+        return new Id(System.getProperty("blueMarine2.source", ID_SOURCE_EMBEDDED.stringValue())); // FIXME: get from Preferences
       }
 
     @Nonnull
-    private Id getFallback()
+    private static Id getFallback()
       {
-        return new Id(System.getProperty("bluemarine2.fallback", ID_SOURCE_EMBEDDED.stringValue())); // FIXME: get from Preferences
+        return new Id(System.getProperty("blueMarine2.fallback", ID_SOURCE_EMBEDDED.stringValue())); // FIXME: get from Preferences
       }
   }
