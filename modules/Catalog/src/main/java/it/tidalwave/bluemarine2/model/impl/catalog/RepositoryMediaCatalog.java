@@ -95,12 +95,12 @@ public class RepositoryMediaCatalog implements MediaCatalog
     @Nonnull
     private static Id getSource()
       {
-        return new Id(System.getProperty("bluemarine2.source", ID_SOURCE_EMBEDDED.stringValue())); // FIXME: get from Preferences
+        return new Id(System.getProperty("blueMarine2.source", ID_SOURCE_EMBEDDED.stringValue())); // FIXME: get from Preferences
       }
 
     @Nonnull
     private static Id getFallback()
       {
-        return new Id(System.getProperty("bluemarine2.fallback", ID_SOURCE_EMBEDDED.stringValue())); // FIXME: get from Preferences
+        return new Id(System.getProperty("blueMarine2.fallback", ID_SOURCE_EMBEDDED.stringValue())); // FIXME: get from Preferences
       }
   }
