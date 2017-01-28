@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.rest.impl;
 
 import javax.annotation.Nonnull;
+import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import it.tidalwave.bluemarine2.model.Record;
 import lombok.Getter;
@@ -48,9 +49,15 @@ public class RecordJson
 
     private final String displayName;
 
+    private final Optional<Integer> diskCount;
+
+    private final Optional<Integer> diskNumber;
+
     public RecordJson (final @Nonnull Record record)
       {
-        this.id = record.getId().stringValue();
+        this.id          = record.getId().stringValue();
         this.displayName = record.as(Displayable).getDisplayName();
+        this.diskCount   = record.getDiskCount();
+        this.diskNumber  = record.getDiskNumber();
       }
   }
