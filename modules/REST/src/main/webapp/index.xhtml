@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/handlebars.min.js"></script>
+        <!--<script src="js/luga.common.min.js"></script>-->
+        <script src="js/luga.min.js"></script>
+        <script>
+            (function () {
+                "use strict";
+                var peopleDs = new luga.data.JsonDataSet({
+                    uuid: "records",
+                    url: "rest/record",
+                    path: "records"
+                });
+                jQuery(document).ready(function () {
+                    // Fetch data only once the DOM is ready
+                    peopleDs.loadData();
+                });
+            }());
+        </script>
+        <script id="recordTable" type="text/x-handlebars-template">
+            <table class="table table-bordered table-striped">
+            <th>
+            Title
+            </th>
+            {{#each entities}}
+            <tr>
+            <td>{{displayName}}</td>
+            </tr>
+            {{/each}}
+            </table>
+        </script>
+    </head>
+    <body>
+        <div data-lugaregion="true"
+             data-lugaregion-datasource-uuid="records"
+             data-lugaregion-template-id="recordTable"></div>
+    </body>
+</html>

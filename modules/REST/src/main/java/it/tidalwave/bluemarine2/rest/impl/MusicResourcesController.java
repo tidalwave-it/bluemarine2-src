@@ -28,10 +28,27 @@
  */
 package it.tidalwave.bluemarine2.rest.impl;
 
+import javax.annotation.Nonnull;
+import javax.annotation.PostConstruct;
+import java.util.List;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import org.eclipse.rdf4j.repository.Repository;
+import org.eclipse.rdf4j.repository.RepositoryConnection;
+import org.eclipse.rdf4j.repository.RepositoryException;
+import org.eclipse.rdf4j.repository.sail.SailRepository;
+import org.eclipse.rdf4j.rio.RDFFormat;
+import org.eclipse.rdf4j.rio.RDFParseException;
+import org.eclipse.rdf4j.sail.memory.MemoryStore;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import it.tidalwave.bluemarine2.model.MediaCatalog;
+import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMediaCatalog;
+import lombok.extern.slf4j.Slf4j;
+import static java.util.stream.Collectors.toList;
 
 /***********************************************************************************************************************
  *
@@ -39,18 +56,45 @@ import org.springframework.web.bind.annotation.RestController;
  * @version $Id: Class.java,v 631568052e17 2013/02/19 15:45:02 fabrizio $
  *
  **********************************************************************************************************************/
-@RestController
+@RestController @Slf4j
 public class MusicResourcesController
   {
-    // mvn jetty:run
-    // curl -v http://localhost:8080/it-tidalwave-bluemarine2-rest/dummy
+    private MediaCatalog catalog;
 
-    // See https://spring.io/blog/2014/12/02/latest-jackson-integration-improvements-in-spring
-    //
-    @RequestMapping(value = "/dummy", produces=MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
-    public Dummy getResource()
+    @PostConstruct
+    private void initialize()
+      throws IOException
       {
-        return new Dummy("foo", 4);
+        log.info("loading triples...");
+        final Repository repository = new SailRepository(new MemoryStore());
+        repository.initialize();
+        loadInMemoryCatalog(repository, Paths.get("target/test-classes/test-sets/model-iTunes-fg-20161210-1.n3"));
+        catalog = new RepositoryMediaCatalog(repository);
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @RequestMapping(value = "/record", produces=MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public RecordsJson getRecords()
+      {
+        return new RecordsJson(catalog.findRecords().stream().map(RecordJson::new).collect(toList()));
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull // FIXME: duplicated code
+    private static void loadInMemoryCatalog (final @Nonnull Repository repository, final @Nonnull Path path)
+      throws RDFParseException, IOException, RepositoryException
+      {
+        log.info("loadInMemoryCatalog(..., {})", path);
+
+        try (final RepositoryConnection connection = repository.getConnection())
+          {
+            connection.add(path.toFile(), null, RDFFormat.N3);
+            connection.commit();
+          }
       }
   }

@@ -28,19 +28,27 @@
  */
 package it.tidalwave.bluemarine2.rest.impl;
 
-import lombok.AllArgsConstructor;
+import javax.annotation.Nonnull;
+import it.tidalwave.bluemarine2.model.Record;
 import lombok.Getter;
+import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
- * @version $Id: Class.java,v 631568052e17 2013/02/19 15:45:02 fabrizio $
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-@AllArgsConstructor @Getter
-public class Dummy
+@Getter
+public class RecordJson
   {
-    private final String name;
+    private final String id;
 
-    private final int count;
+    private final String displayName;
+
+    public RecordJson (final @Nonnull Record record)
+      {
+        this.id = record.getId().stringValue();
+        this.displayName = record.as(Displayable).getDisplayName();
+      }
   }
