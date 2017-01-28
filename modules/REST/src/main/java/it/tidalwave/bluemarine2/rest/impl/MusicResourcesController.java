@@ -40,9 +40,11 @@ import org.eclipse.rdf4j.repository.sail.SailRepository;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParseException;
 import org.eclipse.rdf4j.sail.memory.MemoryStore;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMediaCatalog;
 import lombok.extern.slf4j.Slf4j;
@@ -79,6 +81,27 @@ public class MusicResourcesController
     public RecordsJson getRecords()
       {
         return new RecordsJson(catalog.findRecords().stream().map(RecordJson::new).collect(toList()));
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @RequestMapping(value = "/record/{id}", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
+    @ResponseBody
+    public RecordsJson getRecord (final @PathVariable String id)
+      {
+//        return new RecordsJson(catalog.findRecords().withId(id).stream().map(RecordJson::new).collect(toList())); FIXME
+        return new RecordsJson(catalog.findRecords().stream().filter(record -> record.getId().stringValue().equals(id)).map(RecordJson::new).collect(toList()));
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @RequestMapping(value = "/record/{id}/track", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
+    @ResponseBody
+    public TracksJson getRecordTracks (final @PathVariable String id)
+      {
+        return new TracksJson(catalog.findTracks().inRecord(new Id(id)).stream().map(TrackJson::new).collect(toList()));
       }
 
     /*******************************************************************************************************************

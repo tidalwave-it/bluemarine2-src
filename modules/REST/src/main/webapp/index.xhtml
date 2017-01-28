@@ -16,25 +16,26 @@
               {
                 "use strict";
 
+                var baseUrl = "rest";
+
                 var recordsDs = new luga.data.JsonDataSet(
                   {
-                    uuid: "records",
-                    url:  "rest/record",
-                    path: "records"
+                    uuid:           "records",
+                    url:            baseUrl + "/record",
+                    path:           "records"
                   });
 
-                var tracksDs = new luga.data.JsonDataSet(
+                var tracksDs = new luga.data.ChildJsonDataSet(
                   {
-                    uuid: "tracks",
-                    url:  "rest/track",
-                    path: "tracks"
+                    parentDataSet:  recordsDs,
+                    uuid:           "tracks",
+                    url:            baseUrl + "/record/{id}/track",
+                    path:           "tracks"
                   });
 
                 jQuery(document).ready(function ()
                   {
-                    // Fetch data only once the DOM is ready
                     recordsDs.loadData();
-                    tracksDs.loadData();
                   });
               }());
         </script>
@@ -47,7 +48,7 @@
                 <tbody>
                     {{#each entities}}
                         <tr>
-                            <td>{{displayName}}</td>
+                            <td><a href="#" data-lugaregion-setrowid="{{lugaRowId}}" data-lugaregion-select="luga-docs-selected">{{displayName}}</a></td>
                         </tr>
                     {{/each}}
                 </tbody>
@@ -57,9 +58,9 @@
         <script id="trackTable" type="text/x-handlebars-template">
             <table class="table table-bordered table-striped">
                 <thead>
-                    <th class="diskNumber">...</th>
-                    <th class="trackNumber">...</th>
-                    <th class="duration">...</th>
+                    <th class="diskNumber"></th>
+                    <th class="trackNumber"></th>
+                    <th class="duration"></th>
                     <th class="displayName">Title</th>
                 </thead>
                 <tbody>
@@ -83,8 +84,7 @@
                          data-lugaregion-datasource-uuid="records"
                          data-lugaregion-template-id="recordTable"></div>
                 </td>
-                <td>
-
+                <td style="width: 40%">
                 </td>
             </tr>
             <tr>
