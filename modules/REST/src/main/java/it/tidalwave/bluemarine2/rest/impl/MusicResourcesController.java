@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.rest.impl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
-import java.util.List;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -41,7 +40,6 @@ import org.eclipse.rdf4j.repository.sail.SailRepository;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParseException;
 import org.eclipse.rdf4j.sail.memory.MemoryStore;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,6 +47,7 @@ import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMediaCatalog;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
+import static org.springframework.http.MediaType.*;
 
 /***********************************************************************************************************************
  *
@@ -75,7 +74,7 @@ public class MusicResourcesController
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @RequestMapping(value = "/record", produces=MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/record", produces = { APPLICATION_JSON_VALUE })
     @ResponseBody
     public RecordsJson getRecords()
       {
@@ -85,7 +84,7 @@ public class MusicResourcesController
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @RequestMapping(value = "/track", produces=MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/track", produces  = { APPLICATION_JSON_VALUE })
     @ResponseBody
     public TracksJson getTracks()
       {
