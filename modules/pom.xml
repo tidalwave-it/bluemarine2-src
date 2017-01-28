@@ -222,6 +222,14 @@
                                             <outputDirectory>${project.build.directory}/extra</outputDirectory>
                                             <includes>expected-results/**/*.n3</includes>
                                         </artifactItem>
+                                        <artifactItem>
+                                            <groupId>it.tidalwave.bluemarine2</groupId>
+                                            <artifactId>it-tidalwave-bluemarine2-metadata-musicbrainz</artifactId>
+                                            <classifier>tests</classifier>
+                                            <overWrite>true</overWrite>
+                                            <outputDirectory>${project.build.directory}/extra</outputDirectory>
+                                            <includes>expected-results/**/*.n3</includes>
+                                        </artifactItem>
                                     </artifactItems>
                                 </configuration>
                             </execution>
