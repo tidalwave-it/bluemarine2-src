@@ -33,6 +33,7 @@ import java.time.Duration;
 import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonView;
 import it.tidalwave.bluemarine2.model.Track;
 import lombok.Getter;
 import static it.tidalwave.role.Displayable.Displayable;
@@ -47,11 +48,22 @@ import static it.tidalwave.role.Displayable.Displayable;
 @JsonInclude(Include.NON_ABSENT)
 public class TrackJson
   {
+    @JsonView(Profile.Master.class)
     private final String id;
+
+    @JsonView(Profile.Master.class)
     private final String displayName;
+
+    @JsonView(Profile.Master.class)
     private final Optional<Integer> diskCount;
+
+    @JsonView(Profile.Master.class)
     private final Optional<Integer> diskNumber;
+
+    @JsonView(Profile.Master.class)
     private final Optional<Integer> trackNumber;
+
+    @JsonView(Profile.Master.class)
     private final Optional<String> duration;
 
     public TrackJson (final @Nonnull Track track)

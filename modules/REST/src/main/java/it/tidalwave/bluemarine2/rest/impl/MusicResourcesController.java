@@ -33,6 +33,7 @@ import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import com.fasterxml.jackson.annotation.JsonView;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 import org.eclipse.rdf4j.repository.RepositoryException;
@@ -76,8 +77,9 @@ public class MusicResourcesController
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @RequestMapping(value = "/record", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     @ResponseBody
+    @JsonView(Profile.Master.class)
+    @RequestMapping(value = "/record", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     public RecordsJson getRecords()
       {
         return new RecordsJson(catalog.findRecords().stream().map(RecordJson::new).collect(toList()));
@@ -86,8 +88,9 @@ public class MusicResourcesController
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @RequestMapping(value = "/record/{id}", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     @ResponseBody
+    @JsonView(Profile.Detail.class)
+    @RequestMapping(value = "/record/{id}", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     public RecordsJson getRecord (final @PathVariable String id)
       {
 //        return new RecordsJson(catalog.findRecords().withId(id).stream().map(RecordJson::new).collect(toList())); FIXME
@@ -97,8 +100,9 @@ public class MusicResourcesController
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @RequestMapping(value = "/record/{id}/track", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     @ResponseBody
+    @JsonView(Profile.Detail.class)
+    @RequestMapping(value = "/record/{id}/track", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     public TracksJson getRecordTracks (final @PathVariable String id)
       {
         return new TracksJson(catalog.findTracks().inRecord(new Id(id)).stream().map(TrackJson::new).collect(toList()));
@@ -107,8 +111,9 @@ public class MusicResourcesController
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @RequestMapping(value = "/track", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     @ResponseBody
+    @JsonView(Profile.Master.class)
+    @RequestMapping(value = "/track", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     public TracksJson getTracks()
       {
         return new TracksJson(catalog.findTracks().stream().map(TrackJson::new).collect(toList()));

@@ -28,59 +28,15 @@
  */
 package it.tidalwave.bluemarine2.rest.impl;
 
-import javax.annotation.Nonnull;
-import java.util.Collection;
-import java.util.Optional;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonView;
-import it.tidalwave.bluemarine2.model.Record;
-import lombok.Getter;
-import static java.util.stream.Collectors.*;
-import static it.tidalwave.role.Displayable.Displayable;
-
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id: $
  *
  **********************************************************************************************************************/
-@Getter
-@JsonInclude(JsonInclude.Include.NON_ABSENT)
-public class RecordJson
+public class Profile
   {
-    @JsonIgnore
-    private final Record record;
-
-    @JsonView(Profile.Master.class)
-    private final String id;
-
-    @JsonView(Profile.Master.class)
-    private final String displayName;
-
-    @JsonView(Profile.Master.class)
-    private final Optional<Integer> diskCount;
-
-    @JsonView(Profile.Master.class)
-    private final Optional<Integer> diskNumber;
-
-    @JsonView(Profile.Master.class)
-    private final Optional<Integer> trackNumber;
-
-    public RecordJson (final @Nonnull Record record)
-      {
-        this.record      = record;
-        this.id          = record.getId().stringValue();
-        this.displayName = record.as(Displayable).getDisplayName();
-        this.diskCount   = record.getDiskCount();
-        this.diskNumber  = record.getDiskNumber();
-        this.trackNumber = record.getTrackCount();
-      }
-
-    @Nonnull
-    @JsonView(Profile.Detail.class) // FIXME: doesn't work, tracks always included
-    public Collection<TrackJson> getTracks()
-      {
-        return record.findTracks().stream().map(TrackJson::new).collect(toList());
-      }
+    public interface Master {}
+    
+    public interface Detail extends Master{}
   }
