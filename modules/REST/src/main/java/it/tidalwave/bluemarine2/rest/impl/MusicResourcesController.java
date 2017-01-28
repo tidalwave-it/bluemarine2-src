@@ -74,7 +74,7 @@ public class MusicResourcesController
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @RequestMapping(value = "/record", produces = { APPLICATION_JSON_VALUE })
+    @RequestMapping(value = "/record", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     @ResponseBody
     public RecordsJson getRecords()
       {
@@ -84,7 +84,7 @@ public class MusicResourcesController
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @RequestMapping(value = "/track", produces  = { APPLICATION_JSON_VALUE })
+    @RequestMapping(value = "/track", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     @ResponseBody
     public TracksJson getTracks()
       {
