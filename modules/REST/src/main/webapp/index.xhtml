@@ -9,30 +9,60 @@
         <script src="js/handlebars.min.js"></script>
         <!--<script src="js/luga.common.min.js"></script>-->
         <script src="js/luga.min.js"></script>
+
         <script>
-            (function () {
+            (function ()
+              {
                 "use strict";
-                var peopleDs = new luga.data.JsonDataSet({
+
+                var recordsDs = new luga.data.JsonDataSet(
+                  {
                     uuid: "records",
-                    url: "rest/record",
+                    url:  "rest/record",
                     path: "records"
-                });
-                jQuery(document).ready(function () {
+                  });
+
+                var tracksDs = new luga.data.JsonDataSet(
+                  {
+                    uuid: "tracks",
+                    url:  "rest/track",
+                    path: "tracks"
+                  });
+
+                jQuery(document).ready(function ()
+                  {
                     // Fetch data only once the DOM is ready
-                    peopleDs.loadData();
-                });
-            }());
+                    recordsDs.loadData();
+                    tracksDs.loadData();
+                  });
+              }());
         </script>
+
         <script id="recordTable" type="text/x-handlebars-template">
             <table class="table table-bordered table-striped">
-            <th>
-            Title
-            </th>
-            {{#each entities}}
-            <tr>
-            <td>{{displayName}}</td>
-            </tr>
-            {{/each}}
+                <th>Title</th>
+                {{#each entities}}
+                    <tr>
+                        <td>{{displayName}}</td>
+                    </tr>
+                {{/each}}
+            </table>
+        </script>
+
+        <script id="trackTable" type="text/x-handlebars-template">
+            <table class="table table-bordered table-striped">
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Title</th>
+                {{#each entities}}
+                    <tr>
+                        <td>{{diskNumber}} / {{diskCount}}</td>
+                        <td>{{trackNumber}}</td>
+                        <td>{{duration}}</td>
+                        <td>{{displayName}}</td>
+                    </tr>
+                {{/each}}
             </table>
         </script>
     </head>
@@ -40,5 +70,9 @@
         <div data-lugaregion="true"
              data-lugaregion-datasource-uuid="records"
              data-lugaregion-template-id="recordTable"></div>
+
+        <div data-lugaregion="true"
+             data-lugaregion-datasource-uuid="tracks"
+             data-lugaregion-template-id="trackTable"></div>
     </body>
 </html>

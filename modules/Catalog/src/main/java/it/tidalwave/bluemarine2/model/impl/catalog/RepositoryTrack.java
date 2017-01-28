@@ -69,20 +69,20 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 @Immutable @Configurable @Slf4j
 public class RepositoryTrack extends RepositoryEntitySupport implements Track, AudioFileSupplier
   {
-    @Nonnull
+    @Getter @Nonnull
+    private final Optional<Integer> diskNumber; // really property of Record, but handy here
+
+    @Getter @Nonnull
+    private final Optional<Integer> diskCount; // really property of Record, but handy here
+
+    @Getter @Nonnull
     private final Optional<Integer> trackNumber;
 
-    @Nonnull
+    @Getter @Nonnull
     private final Optional<Duration> duration;
 
     @Nonnull
     private final Path audioFilePath;
-
-    @Nonnull
-    private final Optional<Integer> diskNumber; // really property of Record, but handy here
-
-    @Nonnull
-    private final Optional<Integer> diskCount; // really property of Record, but handy here
 
     @Nonnull
     private final Optional<Long> fileSize;

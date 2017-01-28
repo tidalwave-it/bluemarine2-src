@@ -85,6 +85,16 @@ public class MusicResourcesController
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
+    @RequestMapping(value = "/track", produces=MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public TracksJson getTracks()
+      {
+        return new TracksJson(catalog.findTracks().stream().map(TrackJson::new).collect(toList()));
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Nonnull // FIXME: duplicated code
     private static void loadInMemoryCatalog (final @Nonnull Repository repository, final @Nonnull Path path)
       throws RDFParseException, IOException, RepositoryException
