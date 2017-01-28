@@ -10,6 +10,8 @@
         <script src="js/handlebars.min.js"></script>
         <!--<script src="js/luga.common.min.js"></script>-->
         <script src="js/luga.min.js"></script>
+        <script src="js/moment.min.js"></script>
+        <script src="js/numeral.min.js"></script>
 
         <script>
             (function ()
@@ -17,6 +19,12 @@
                 "use strict";
 
                 var baseUrl = "rest";
+
+                var trackFormatter = function(row, rowIndex, dataSet)
+                  {
+                    row.durationFormatted = numeral(moment.duration(row.duration).asSeconds()).format('00:00');
+                    return row;
+                  };
 
                 var recordsDs = new luga.data.JsonDataSet(
                   {
@@ -30,7 +38,8 @@
                     parentDataSet:  recordsDs,
                     uuid:           "tracks",
                     url:            baseUrl + "/record/{id}/track",
-                    path:           "tracks"
+                    path:           "tracks",
+                    formatter:      trackFormatter
                   });
 
                 jQuery(document).ready(function ()
@@ -68,7 +77,7 @@
                         <tr>
                             <td class="diskNumber">{{diskNumber}} / {{diskCount}}</td>
                             <td class="trackNumber">{{trackNumber}}</td>
-                            <td class="duration">{{duration}}</td>
+                            <td class="duration">{{durationFormatted}}</td>
                             <td class="displayName">{{displayName}}</td>
                         </tr>
                     {{/each}}

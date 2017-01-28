@@ -30,9 +30,9 @@ package it.tidalwave.bluemarine2.rest.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
+import java.time.Duration;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import it.tidalwave.bluemarine2.util.Formatters;
 import it.tidalwave.bluemarine2.model.Track;
 import lombok.Getter;
 import static it.tidalwave.role.Displayable.Displayable;
@@ -52,7 +52,7 @@ public class TrackJson
     private final Optional<Integer> diskCount;
     private final Optional<Integer> diskNumber;
     private final Optional<Integer> trackNumber;
-    private final String duration;
+    private final Optional<String> duration;
 
     public TrackJson (final @Nonnull Track track)
       {
@@ -61,6 +61,6 @@ public class TrackJson
         this.diskCount   = track.getDiskCount();
         this.diskNumber  = track.getDiskNumber();
         this.trackNumber = track.getTrackNumber();
-        this.duration    = track.getDuration().map(Formatters::format).orElse("");
+        this.duration    = track.getDuration().map(Duration::toString);
       }
   }
