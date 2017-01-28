@@ -24,4 +24,4 @@
 @track@                 ?record         mo:track                                  ?track.
 
               }
-            ORDER BY ?label
+            ORDER BY ?label ?disk_number
