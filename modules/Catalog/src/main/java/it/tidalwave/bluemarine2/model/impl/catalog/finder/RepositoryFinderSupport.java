@@ -115,6 +115,12 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     private final Class<ENTITY> entityClass;
 
     @Nonnull
+    private final String idName;
+
+    @Nonnull
+    private final Optional<Id> id;
+
+    @Nonnull
     private final Optional<Value> source;
 
     @Nonnull
@@ -176,10 +182,12 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
      *
      *
      ******************************************************************************************************************/
-    protected RepositoryFinderSupport (final @Nonnull Repository repository)
+    protected RepositoryFinderSupport (final @Nonnull Repository repository, final @Nonnull String idName)
       {
         this.repository = repository;
         this.entityClass = (Class<ENTITY>)ReflectionUtils.getTypeArguments(RepositoryFinderSupport.class, getClass()).get(0);
+        this.idName = idName;
+        this.id = Optional.empty();
         this.source = Optional.of(V_SOURCE_EMBEDDED); // FIXME: resets
         this.sourceFallback = Optional.empty(); // FIXME: resets
       }
@@ -191,11 +199,15 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
      ******************************************************************************************************************/
     private RepositoryFinderSupport (final @Nonnull Repository repository,
                                      final @Nonnull Class<ENTITY> entityClass,
+                                     final @Nonnull String idName,
+                                     final @Nonnull Optional<Id> id,
                                      final @Nonnull Optional<Value> source,
                                      final @Nonnull Optional<Value> sourceFallback)
       {
         this.repository = repository;
         this.entityClass = entityClass;
+        this.idName = idName;
+        this.id = id;
         this.source = source;
         this.sourceFallback = sourceFallback;
       }
@@ -212,6 +224,8 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
         final RepositoryFinderSupport<ENTITY, FINDER> source = getSource(RepositoryFinderSupport.class, other, override);
         this.repository = source.repository;
         this.entityClass = source.entityClass;
+        this.idName = source.idName;
+        this.id = source.id;
         this.source = source.source;
         this.sourceFallback = source.sourceFallback;
      }
@@ -248,6 +262,22 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
      *
      ******************************************************************************************************************/
     @Override @Nonnull
+    public FINDER withId (final @Nonnull Id id)
+      {
+        return clone(new RepositoryFinderSupport(repository,
+                                                 entityClass,
+                                                 idName,
+                                                 Optional.of(id),
+                                                 source,
+                                                 sourceFallback));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
     public FINDER importedFrom (final @Nonnull Optional<Id> optionalSource)
       {
         return optionalSource.map(this::importedFrom).orElse((FINDER)this);
@@ -263,6 +293,8 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
       {
         return clone(new RepositoryFinderSupport(repository,
                                                  entityClass,
+                                                 idName,
+                                                 id,
                                                  Optional.of(FACTORY.createLiteral(source.toString())),
                                                  sourceFallback));
       }
@@ -288,6 +320,8 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
       {
         return clone(new RepositoryFinderSupport(repository,
                                                  entityClass,
+                                                 idName,
+                                                 id,
                                                  source,
                                                  Optional.of(FACTORY.createLiteral(sourceFallback.toString()))));
       }
@@ -323,6 +357,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
         log.info("query() - {}", entityClass);
         final long baseTime = System.nanoTime();
         final QueryAndParameters queryAndParameters = prepareQuery()
+                .withParameter(idName, id.map(this::iriFor))
                 .withParameter("source", source)
                 .withParameter("fallback", sourceFallback.equals(source) ? Optional.empty() : sourceFallback);
         final Object[] parameters = queryAndParameters.getParameters();

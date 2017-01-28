@@ -53,6 +53,7 @@ import lombok.RequiredArgsConstructor;
 import static java.util.Arrays.*;
 import static java.util.Collections.*;
 import static it.tidalwave.role.Displayable.Displayable;
+import java.util.Iterator;
 
 /***********************************************************************************************************************
  *
@@ -144,6 +145,12 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
         protected List<? extends MusicArtist> computeNeededResults()
           {
             return metadata.get(metadataKey).map(artistName -> asList(new ArtistFallback(artistName))).orElse(emptyList());
+          }
+
+        @Override @Nonnull
+        public MusicArtistFinder withId (final @Nonnull Id id)
+          {
+            throw new UnsupportedOperationException("Not supported yet."); // FIXME
           }
 
         @Override @Nonnull

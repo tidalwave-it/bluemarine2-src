@@ -90,7 +90,7 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
                                     final @Nonnull Optional<Id> makerId,
                                     final @Nonnull Optional<Id> trackId)
       {
-        super(repository);
+        super(repository, "record");
         this.makerId = makerId;
         this.trackId = trackId;
       }
