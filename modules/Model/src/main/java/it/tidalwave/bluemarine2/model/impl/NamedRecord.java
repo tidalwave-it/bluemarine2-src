@@ -96,4 +96,10 @@ public class NamedRecord extends NamedEntity implements Record
       {
         return Optional.empty();
       }
+
+    @Override
+    public Optional<Integer> getTrackCount()
+      {
+        return Optional.empty();
+      }
   }

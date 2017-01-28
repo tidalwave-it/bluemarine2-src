@@ -53,11 +53,14 @@ public class RecordJson
 
     private final Optional<Integer> diskNumber;
 
+    private final Optional<Integer> trackNumber;
+
     public RecordJson (final @Nonnull Record record)
       {
         this.id          = record.getId().stringValue();
         this.displayName = record.as(Displayable).getDisplayName();
         this.diskCount   = record.getDiskCount();
         this.diskNumber  = record.getDiskNumber();
+        this.trackNumber = record.getTrackCount();
       }
   }
