@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.rest.impl;
 
 import javax.annotation.Nonnull;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import it.tidalwave.bluemarine2.model.Record;
 import lombok.Getter;
 import static it.tidalwave.role.Displayable.Displayable;
@@ -40,6 +41,7 @@ import static it.tidalwave.role.Displayable.Displayable;
  *
  **********************************************************************************************************************/
 @Getter
+@JsonInclude(JsonInclude.Include.NON_ABSENT)
 public class RecordJson
   {
     private final String id;

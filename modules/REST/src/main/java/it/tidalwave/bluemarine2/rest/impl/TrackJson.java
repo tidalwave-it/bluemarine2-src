@@ -30,6 +30,8 @@ package it.tidalwave.bluemarine2.rest.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import it.tidalwave.bluemarine2.util.Formatters;
 import it.tidalwave.bluemarine2.model.Track;
 import lombok.Getter;
@@ -42,6 +44,7 @@ import static it.tidalwave.role.Displayable.Displayable;
  *
  **********************************************************************************************************************/
 @Getter
+@JsonInclude(Include.NON_ABSENT)
 public class TrackJson
   {
     private final String id;

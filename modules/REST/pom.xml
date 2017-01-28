@@ -57,13 +57,13 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
             <version>${jackson.version}</version>
-            <scope>runtime</scope>
+            <!--<scope>runtime</scope>-->
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
-            <scope>runtime</scope>
+            <!--<scope>runtime</scope>-->
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
@@ -71,6 +71,8 @@
             <version>${jackson.version}</version>
             <scope>runtime</scope>
         </dependency>
+
+        <!-- jackson-datatype-jsr310: Java 8 Date & Time API data types -->
 
         <dependency>
             <groupId>ch.qos.logback</groupId>
