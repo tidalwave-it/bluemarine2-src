@@ -66,7 +66,7 @@ public class RecordJson
     private final Optional<Integer> diskNumber;
 
     @JsonView(Profile.Master.class)
-    private final Optional<Integer> trackNumber;
+    private final Optional<Integer> trackCount;
 
     @JsonView(Profile.Master.class)
     private final Optional<String> source;
@@ -78,7 +78,7 @@ public class RecordJson
         this.displayName = record.as(Displayable).getDisplayName();
         this.diskCount   = record.getDiskCount();
         this.diskNumber  = record.getDiskNumber();
-        this.trackNumber = record.getTrackCount();
+        this.trackCount  = record.getTrackCount();
         this.source      = record.getSource().map(Id::toString);
       }
 
