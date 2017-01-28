@@ -86,7 +86,7 @@ public class RepositoryMusicArtistFinder extends RepositoryFinderSupport<MusicAr
     private RepositoryMusicArtistFinder (final @Nonnull Repository repository,
                                          final @Nonnull Optional<Id> madeEntityId)
       {
-        super(repository);
+        super(repository, "artist");
         this.madeEntityId = madeEntityId;
       }
 

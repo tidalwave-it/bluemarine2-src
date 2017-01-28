@@ -56,6 +56,12 @@ import lombok.extern.slf4j.Slf4j;
 public class RepositoryRecord extends RepositoryEntitySupport implements Record
   {
     @Getter @Nonnull
+    private final Optional<Integer> diskNumber;
+
+    @Getter @Nonnull
+    private final Optional<Integer> diskCount;
+
+    @Getter @Nonnull
     private final Optional<Integer> trackCount; // FIXME: should be used as a shortcut for queries
 
     @Getter @Nonnull
@@ -67,6 +73,8 @@ public class RepositoryRecord extends RepositoryEntitySupport implements Record
     public RepositoryRecord (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
         super(repository, bindingSet, "record");
+        diskNumber = toInteger(bindingSet.getBinding("disk_number"));
+        diskCount  = toInteger(bindingSet.getBinding("disk_count"));
         trackCount = toInteger(bindingSet.getBinding("track_count"));
         asin       = toString(bindingSet.getBinding("asin"));
         gtin       = toString(bindingSet.getBinding("gtin"));

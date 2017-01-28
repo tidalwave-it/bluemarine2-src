@@ -40,6 +40,9 @@ import it.tidalwave.util.Id;
  **********************************************************************************************************************/
 public interface SourceAwareFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<ENTITY, BaseFinder<ENTITY, FINDER>>
   {
+    @Nonnull
+    public FINDER withId (final @Nonnull Id id);
+
     /*******************************************************************************************************************
      *
      * Specifies the data source of this finder.

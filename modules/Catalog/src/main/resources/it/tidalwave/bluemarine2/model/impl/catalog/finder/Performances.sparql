@@ -10,3 +10,5 @@
 @track@     ?signal       a                     mo:DigitalSignal.
 @track@     ?signal       mo:published_as       ?track.
            }
+# For sake of test consistency.
+        ORDER BY ?performance
