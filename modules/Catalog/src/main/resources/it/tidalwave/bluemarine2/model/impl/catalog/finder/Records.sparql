@@ -15,6 +15,8 @@
 @artist@        UNION { ?record         mo:track/foaf:maker/rel:collaboratesWith  ?artist.        }
 
                         ?record         rdfs:label                                ?label.
+             OPTIONAL { ?record         bmmo:diskNumber                           ?disk_number.   }
+             OPTIONAL { ?record         bmmo:diskCount                            ?disk_count.    }
              OPTIONAL { ?record         mo:track_count                            ?track_count.   }
              OPTIONAL { ?record         mo:amazon_asin                            ?asin.          }
              OPTIONAL { ?record         mo:gtin                                   ?gtin.          }
@@ -22,4 +24,5 @@
 @track@                 ?record         mo:track                                  ?track.
 
               }
-            ORDER BY ?label
+# ?disk_number in case of ?label matching, for sake of test consistency.
+            ORDER BY ?label ?disk_number

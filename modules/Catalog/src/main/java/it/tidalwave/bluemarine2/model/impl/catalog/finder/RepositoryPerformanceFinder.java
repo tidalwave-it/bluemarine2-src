@@ -91,7 +91,7 @@ public class RepositoryPerformanceFinder extends RepositoryFinderSupport<Perform
                                          final @Nonnull Optional<Id> trackId,
                                          final @Nonnull Optional<Id> performerId)
       {
-        super(repository);
+        super(repository, "performance");
         this.trackId = trackId;
         this.performerId = performerId;
       }

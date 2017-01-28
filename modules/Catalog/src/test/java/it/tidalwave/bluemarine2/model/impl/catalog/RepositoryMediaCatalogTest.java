@@ -199,8 +199,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
             log.info("QUERYING TRACKS OF {}...", displayNameOf(record));
             final TrackFinder recordTrackFinder = record.findTracks();
-            pw.printf("  TRACKS (%d / %s):%n", recordTrackFinder.count(), ((RepositoryRecord)record).getTrackCount()); // FIXME: add getTrackCount() in Record
-//            ((RepositoryRecord)record).getTrackCount().ifPresent(trackCount -> assertEquals(trackCount.intValue(), recordTrackFinder.count())); FIXME
+            pw.printf("  TRACKS (%d / %s):%n", recordTrackFinder.count(), record.getTrackCount());
+//            record.getTrackCount().ifPresent(trackCount -> assertEquals(trackCount.intValue(), recordTrackFinder.count())); FIXME
 
             recordTrackFinder.stream().forEach(track ->
               {

@@ -35,34 +35,33 @@ import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 import org.eclipse.rdf4j.repository.RepositoryException;
 import org.eclipse.rdf4j.rio.RDFHandlerException;
-import lombok.NonNull;
 
 /***********************************************************************************************************************
  *
  * This interface should not exist. For storing data into Persistence we're firing events to the messageBus. Why instead
  * we retrieve data by directly accessing the repository? Perhaps we could switch to a coherently sync model for
  * Persistence. In this case, AddStatementsRequest should me a private affair of DefaultMediaScanner.
- * 
+ *
  * @author  Fabrizio Giudici
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface Persistence 
+public interface Persistence
   {
     public static final Class<Persistence> Persistence = Persistence.class;
-    
+
     public static interface TransactionalTask<E extends Exception>
       {
         public void run (@Nonnull RepositoryConnection connection)
           throws E, RepositoryException;
       }
-    
-    @NonNull
+
+    @Nonnull
     public Repository getRepository();
-    
+
     public <E extends Exception> void runInTransaction (@Nonnull TransactionalTask<E> task)
       throws E, RepositoryException;
-    
+
     public void exportToFile (final @Nonnull Path path)
       throws RDFHandlerException, IOException, RepositoryException;
   }
