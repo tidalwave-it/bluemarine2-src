@@ -29,7 +29,7 @@
                 var recordsDs = new luga.data.JsonDataSet(
                   {
                     uuid:           "records",
-                    url:            baseUrl + "/record",
+                    url:            baseUrl + "/record?source=musicbrainz",
                     path:           "records"
                   });
 
@@ -37,7 +37,8 @@
                   {
                     parentDataSet:  recordsDs,
                     uuid:           "tracks",
-                    url:            baseUrl + "/record/{id}/track",
+                    url:            baseUrl + "/record/{id}/track?source=musicbrainz",
+//                    url:            baseUrl + "/record/{id}/track?source={source}",
                     path:           "tracks",
                     formatter:      trackFormatter
                   });
@@ -50,14 +51,18 @@
         </script>
 
         <script id="recordTable" type="text/x-handlebars-template">
-            <table class="table table-bordered table-striped">
+            <table class="table table-bordered table-striped records">
                 <thead>
-                    <th>Title</th>
+                    <tr>
+                        <th class="displayName">Title</th>
+                        <th class="source">Source</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {{#each entities}}
                         <tr>
-                            <td><a href="#" data-lugaregion-setrowid="{{lugaRowId}}" data-lugaregion-select="luga-docs-selected">{{displayName}}</a></td>
+                            <td class="displayName"><a href="#" data-lugaregion-setrowid="{{lugaRowId}}" data-lugaregion-select="luga-docs-selected">{{displayName}}</a></td>
+                            <td class="source">{{source}}</td>
                         </tr>
                     {{/each}}
                 </tbody>
@@ -65,12 +70,15 @@
         </script>
 
         <script id="trackTable" type="text/x-handlebars-template">
-            <table class="table table-bordered table-striped">
+            <table class="table table-bordered table-striped tracks">
                 <thead>
-                    <th class="diskNumber"></th>
-                    <th class="trackNumber"></th>
-                    <th class="duration"></th>
-                    <th class="displayName">Title</th>
+                    <tr>
+                        <th class="diskNumber"></th>
+                        <th class="trackNumber"></th>
+                        <th class="duration"></th>
+                        <th class="displayName">Title</th>
+                        <th class="source">Source</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {{#each entities}}
@@ -79,6 +87,7 @@
                             <td class="trackNumber">{{trackNumber}}</td>
                             <td class="duration">{{durationFormatted}}</td>
                             <td class="displayName">{{displayName}}</td>
+                            <td class="source">{{source}}</td>
                         </tr>
                     {{/each}}
                 </tbody>

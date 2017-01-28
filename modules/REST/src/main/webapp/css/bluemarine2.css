@@ -23,23 +23,46 @@ table.tableSection tr
     /*text-align: left;*/
   }
 
-table.tableSection th.diskNumber, table.tableSection td.diskNumber
+
+table.records th.displayName,
+table.records td.displayName
+  {
+    width: 90%;
+  }
+
+table.records th.source,
+table.records td.source
+  {
+    width: 10%;
+  }
+
+  
+table.tracks th.diskNumber,
+table.tracks td.diskNumber
   {
     width: 4%;
   }
 
-table.tableSection th.trackNumber, table.tableSection td.trackNumber
+table.tracks th.trackNumber,
+table.tracks td.trackNumber
   {
     width: 3%;
   }
 
-table.tableSection th.duration, table.tableSection td.duration
+table.tracks th.duration,
+table.tracks td.duration
   {
     width: 5%;
   }
 
-table.tableSection th.displayName, table.tableSection td.displayName
+table.tracks th.displayName,
+table.tracks td.displayName
   {
-    width: 88%;
+    width: 73%;
   }
 
+table.tracks th.source,
+table.tracks td.source
+  {
+    width: 15%;
+  }

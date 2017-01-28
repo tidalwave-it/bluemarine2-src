@@ -37,6 +37,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import it.tidalwave.bluemarine2.model.Track;
 import lombok.Getter;
 import static it.tidalwave.role.Displayable.Displayable;
+import it.tidalwave.util.Id;
 
 /***********************************************************************************************************************
  *
@@ -66,6 +67,9 @@ public class TrackJson
     @JsonView(Profile.Master.class)
     private final Optional<String> duration;
 
+    @JsonView(Profile.Master.class)
+    private final Optional<String> source;
+
     public TrackJson (final @Nonnull Track track)
       {
         this.id          = track.getId().stringValue();
@@ -74,5 +78,6 @@ public class TrackJson
         this.diskNumber  = track.getDiskNumber();
         this.trackNumber = track.getTrackNumber();
         this.duration    = track.getDuration().map(Duration::toString);
+        this.source      = track.getSource().map(Id::toString);
       }
   }

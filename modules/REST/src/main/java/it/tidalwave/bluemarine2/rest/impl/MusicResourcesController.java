@@ -43,19 +43,25 @@ import org.eclipse.rdf4j.rio.RDFParseException;
 import org.eclipse.rdf4j.sail.memory.MemoryStore;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
+import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMediaCatalog;
+import it.tidalwave.util.Finder8;
+import java.util.List;
+import java.util.function.Function;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
+import java.util.stream.Stream;
 import static org.springframework.http.MediaType.*;
 
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
- * @version $Id: Class.java,v 631568052e17 2013/02/19 15:45:02 fabrizio $
+ * @version $Id: $
  *
  **********************************************************************************************************************/
 @RestController @Slf4j
@@ -71,6 +77,9 @@ public class MusicResourcesController
         final Repository repository = new SailRepository(new MemoryStore());
         repository.initialize();
         loadInMemoryCatalog(repository, Paths.get("target/test-classes/test-sets/model-iTunes-fg-20161210-1.n3"));
+        loadInMemoryCatalog(repository, Paths.get("target/test-classes/test-sets/musicbrainz-iTunes-fg-20161210-1.n3"));
+//        System.setProperty("blueMarine2.source", "musicbrainz");
+//        System.setProperty("blueMarine2.fallback", "embedded");
         catalog = new RepositoryMediaCatalog(repository);
       }
 
@@ -80,9 +89,10 @@ public class MusicResourcesController
     @ResponseBody
     @JsonView(Profile.Master.class)
     @RequestMapping(value = "/record", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public RecordsJson getRecords()
+    public RecordsJson getRecords (final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                   final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
-        return new RecordsJson(catalog.findRecords().stream().map(RecordJson::new).collect(toList()));
+        return new RecordsJson(finalized(catalog.findRecords(), source, fallback, RecordJson::new));
       }
 
     /*******************************************************************************************************************
@@ -91,10 +101,11 @@ public class MusicResourcesController
     @ResponseBody
     @JsonView(Profile.Detail.class)
     @RequestMapping(value = "/record/{id}", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public RecordsJson getRecord (final @PathVariable String id)
+    public RecordsJson getRecord (final @PathVariable String id,
+                                  final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                  final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
-//        return new RecordsJson(catalog.findRecords().withId(id).stream().map(RecordJson::new).collect(toList())); FIXME
-        return new RecordsJson(catalog.findRecords().stream().filter(record -> record.getId().stringValue().equals(id)).map(RecordJson::new).collect(toList()));
+        return new RecordsJson(finalized(catalog.findRecords().withId(new Id(id)), source, fallback, RecordJson::new));
       }
 
     /*******************************************************************************************************************
@@ -103,9 +114,11 @@ public class MusicResourcesController
     @ResponseBody
     @JsonView(Profile.Detail.class)
     @RequestMapping(value = "/record/{id}/track", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public TracksJson getRecordTracks (final @PathVariable String id)
+    public TracksJson getRecordTracks (final @PathVariable String id,
+                                       final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                       final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
-        return new TracksJson(catalog.findTracks().inRecord(new Id(id)).stream().map(TrackJson::new).collect(toList()));
+        return new TracksJson(finalized(catalog.findTracks().inRecord(new Id(id)), source, fallback, TrackJson::new));
       }
 
     /*******************************************************************************************************************
@@ -114,9 +127,33 @@ public class MusicResourcesController
     @ResponseBody
     @JsonView(Profile.Master.class)
     @RequestMapping(value = "/track", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public TracksJson getTracks()
+    public TracksJson getTracks (final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                 final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
-        return new TracksJson(catalog.findTracks().stream().map(TrackJson::new).collect(toList()));
+        return new TracksJson(finalized(catalog.findTracks(), source, fallback, TrackJson::new));
+      }
+
+    static interface Streamable<ENTITY, FINDER extends SourceAwareFinder<FINDER, ENTITY>> extends SourceAwareFinder<ENTITY, FINDER>
+      {
+        public Stream<ENTITY> stream();
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private <ENTITY, FINDER extends SourceAwareFinder<ENTITY, FINDER>, JSON>
+        List<JSON> finalized (final @Nonnull FINDER finder,
+                              final @Nonnull String source,
+                              final @Nonnull String fallback,
+                              final @Nonnull Function<ENTITY, JSON> mapper)
+      {
+        final FINDER f = finder.importedFrom(new Id(source))
+                                .withFallback(new Id(fallback));
+        return ((Finder8<ENTITY>)f) // FIXME: hacky, because SourceAwareFinder does not extends Finder8
+                     .stream()
+                     .map(mapper)
+                     .collect(toList());
       }
 
     /*******************************************************************************************************************

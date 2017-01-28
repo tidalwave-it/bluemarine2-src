@@ -34,6 +34,7 @@ import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonView;
+import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.Record;
 import lombok.Getter;
 import static java.util.stream.Collectors.*;
@@ -67,6 +68,9 @@ public class RecordJson
     @JsonView(Profile.Master.class)
     private final Optional<Integer> trackNumber;
 
+    @JsonView(Profile.Master.class)
+    private final Optional<String> source;
+
     public RecordJson (final @Nonnull Record record)
       {
         this.record      = record;
@@ -75,6 +79,7 @@ public class RecordJson
         this.diskCount   = record.getDiskCount();
         this.diskNumber  = record.getDiskNumber();
         this.trackNumber = record.getTrackCount();
+        this.source      = record.getSource().map(Id::toString);
       }
 
     @Nonnull
