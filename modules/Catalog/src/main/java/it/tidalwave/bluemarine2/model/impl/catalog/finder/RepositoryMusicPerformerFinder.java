@@ -84,7 +84,7 @@ public class RepositoryMusicPerformerFinder extends RepositoryFinderSupport<Musi
     private RepositoryMusicPerformerFinder (final @Nonnull Repository repository,
                                             final @Nonnull Optional<Id> performanceId)
       {
-        super(repository);
+        super(repository, "artist");
         this.performanceId = performanceId;
       }
 

@@ -46,7 +46,7 @@ public class RepositoryRecordImageFinder extends RepositoryFinderSupport<URL, Fi
 //                                         implements TrackFinder
   {
     private static final long serialVersionUID = -9049698559834098380L;
-    
+
     private final static String QUERY_RECORD_IMAGE = readSparql(RepositoryMusicArtistFinder.class, "RecordImage.sparql");
 
     @Nonnull
@@ -59,7 +59,7 @@ public class RepositoryRecordImageFinder extends RepositoryFinderSupport<URL, Fi
      ******************************************************************************************************************/
     public RepositoryRecordImageFinder (final @Nonnull Repository repository, final @Nonnull Record record)
       {
-        super(repository);
+        super(repository, "record");
         this.record = record;
       }
 

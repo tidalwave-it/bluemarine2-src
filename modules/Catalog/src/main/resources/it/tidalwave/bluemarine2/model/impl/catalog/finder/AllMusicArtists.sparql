@@ -20,7 +20,7 @@
                                         rel:collaboratesWith                      [].             }
 
 @performance@           ?performance    a                                       mo:Performance.
-
+# The stuff below should be matched by a single clause, if those statements were subproperties of mo:performer
 @performance@         { ?performance    mo:conductor                            ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_conductor"         AS ?role) }
 @performance@   UNION { ?performance    mo:engineer                             ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_engineer"          AS ?role) }
 @performance@   UNION { ?performance    mo:performer                            ?artist. BIND ("http://bluemarine.tidalwave.it/2015/04/mo/performer_performer"         AS ?role) }
@@ -53,5 +53,6 @@
 @performance@           FILTER regex(str(?role), "http://bluemarine.tidalwave.it/2015/04/mo/performer_.*")  }
 
               }
-            ORDER BY ?label
+# ?artist in case of ?label matching, for sake of test consistency.
+            ORDER BY ?label ?artist
 @performance@        ?role
