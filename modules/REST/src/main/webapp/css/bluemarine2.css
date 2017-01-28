@@ -27,42 +27,36 @@ table.tableSection tr
 table.records th.displayName,
 table.records td.displayName
   {
-    width: 90%;
+    /*width: 90%;*/
   }
 
 table.records th.source,
 table.records td.source
   {
-    width: 10%;
+    width: 7em;
   }
 
-  
-table.tracks th.diskNumber,
-table.tracks td.diskNumber
-  {
-    width: 4%;
-  }
 
 table.tracks th.trackNumber,
 table.tracks td.trackNumber
   {
-    width: 3%;
+    width: 3.5em;
   }
 
 table.tracks th.duration,
 table.tracks td.duration
   {
-    width: 5%;
+    width: 7em;
   }
 
 table.tracks th.displayName,
 table.tracks td.displayName
   {
-    width: 73%;
+    /*width: 77%;*/
   }
 
 table.tracks th.source,
 table.tracks td.source
   {
-    width: 15%;
+    width: 7em;
   }
