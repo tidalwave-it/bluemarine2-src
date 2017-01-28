@@ -54,5 +54,5 @@
 
               }
 # ?artist in case of ?label matching, for sake of test consistency.
-            ORDER BY ?label, ?artist
+            ORDER BY ?label ?artist
 @performance@        ?role
