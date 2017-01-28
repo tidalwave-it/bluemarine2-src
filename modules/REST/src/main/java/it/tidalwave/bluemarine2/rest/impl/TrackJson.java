@@ -29,8 +29,8 @@
 package it.tidalwave.bluemarine2.rest.impl;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
 import java.time.Duration;
+import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import it.tidalwave.bluemarine2.model.Track;
