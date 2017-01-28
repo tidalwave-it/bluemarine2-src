@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.model.finder;
 import javax.annotation.Nonnull;
 import java.util.Optional;
 import it.tidalwave.util.Id;
+import java.util.stream.Stream;
 
 /***********************************************************************************************************************
  *
@@ -40,6 +41,9 @@ import it.tidalwave.util.Id;
  **********************************************************************************************************************/
 public interface SourceAwareFinder<ENTITY, FINDER> // extends ExtendedFinder8Support<ENTITY, BaseFinder<ENTITY, FINDER>>
   {
+    @Nonnull
+    public FINDER withId (final @Nonnull Id id);
+
     /*******************************************************************************************************************
      *
      * Specifies the data source of this finder.
