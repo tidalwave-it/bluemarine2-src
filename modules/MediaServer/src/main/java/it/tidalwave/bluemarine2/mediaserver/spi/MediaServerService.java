@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.mediaserver.spi;
 
 import javax.annotation.Nonnull;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import lombok.NonNull;
 
 /***********************************************************************************************************************
  *
@@ -41,6 +40,6 @@ import lombok.NonNull;
 public interface MediaServerService
   {
     // TODO: could it return MediaFileSystem? Or be merged to that?
-    @NonNull
+    @Nonnull
     public MediaFolder createRootFolder(@Nonnull MediaFolder parent);
   }
