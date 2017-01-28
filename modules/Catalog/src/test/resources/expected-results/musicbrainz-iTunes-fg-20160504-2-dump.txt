@@ -677,8 +677,8 @@ ALL RECORDS (52):
   BWV 232 - Mass in B minor (urn:bluemarine:record:ibyd0FYhw5tl_s4HzdciU2koe28=) - musicbrainz
   Borodin, String Quartet 2. Tchaikovsky, string Quartet 3 (urn:bluemarine:record:YKQ4jHPwkwJAgy-bkc4LqTyTRBk=) - embedded
   Callas - La Mamma Morta (urn:bluemarine:record:nhs0L_SwurFvHNLnhkB-lb7PXGw=) - embedded
-  Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=) - musicbrainz
   Canto Gregoriano (urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=) - musicbrainz
+  Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=) - musicbrainz
   Cello Concertos (urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=) - musicbrainz
   Cherubini: 6 Piano Sonatas (urn:bluemarine:record:y-9LEwSNAaiGXcBEAhHL47FZzTs=) - embedded
   Daniel And The Lions - Ludus Danielis (urn:bluemarine:record:ONiNKoLC69EuihrDlMBpTEUyZpo=) - embedded
@@ -2599,8 +2599,8 @@ RECORDS OF Andrea Bacchetti (urn:bluemarine:artist:01dFRWwGdwcxyDGTw48SzJyzwgI=)
   Cherubini: 6 Piano Sonatas (urn:bluemarine:record:y-9LEwSNAaiGXcBEAhHL47FZzTs=)
 
 RECORDS OF Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=) (2):
-  Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=)
   Canto Gregoriano (urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=)
+  Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=)
 
 RECORDS OF Antonino Votto (urn:bluemarine:artist:7m75OxcYu8S2Ffuor3t6j-jOsMk=) (1):
   The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
@@ -2655,8 +2655,8 @@ RECORDS OF Claudio Abbado (urn:bluemarine:artist:OJSKKYa_rzCtHYCHUDqdXPJrlK4=) (
   Piano Concerto no. 2 (urn:bluemarine:record:SYU0KpAuaB2R5tfk3ZGjhYiS2-c=)
 
 RECORDS OF Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=) (2):
-  Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=)
   Canto Gregoriano (urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=)
+  Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=)
 
 RECORDS OF Coro del Teatro alla Scala di Milano (urn:bluemarine:artist:NnFBP0zqbVNbqiMzjLs5SJ3F-hI=) (1):
   The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=)
@@ -2894,8 +2894,8 @@ RECORDS OF Maria Callas/Piero Cappuccilli/Bernard Ladysz/Philharmonia Chorus/Phi
   La Divina 2 (urn:bluemarine:record:1YnSzOtRCbFKmcAnNRKLtDXCE8w=)
 
 RECORDS OF Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=) (2):
-  Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=)
   Canto Gregoriano (urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=)
+  Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=)
 
 RECORDS OF Marieke Blankestijn (urn:bluemarine:artist:tpTW0tGvpX4PH0JTOyjcF6ztsSc=) (1):
   Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=)
@@ -4632,6 +4632,96 @@ RECORD Callas - La Mamma Morta (urn:bluemarine:record:nhs0L_SwurFvHNLnhkB-lb7PXG
     01/01 02 04:50 Catalani: La Wally - Ebben? Ne Andro Lontana (urn:bluemarine:track:EFebggtvvyD6hwmkTlv_b4yAlAY=) Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3 - embedded
     01/01 03 02:26 Spontini: La Vestale - O Nume Tutelar (urn:bluemarine:track:M1sLSnzqyfdl908LjuTQw4jBneI=) Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3 - embedded
 
+RECORD Canto Gregoriano (urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=):
+  SOURCE:  musicbrainz
+  ASIN:    B000025XSS
+  BARCODE: 724356521728
+  TRACKS (14 / Optional[14]):
+    01/02 01 03:40 Puer natus est nobis: Introito (Modo VII) (urn:bluemarine:track:3qEXxhREv5Ae5be4M7SAHC3pOMM=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-01 Anon_ Puer Natus Est Nobis.mp3 - musicbrainz
+      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
+      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
+      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
+    01/02 02 03:00 Genuit puerpera regem: Antífona y Salmo 99 (Modo II) (urn:bluemarine:track:N3Ht4p4egRexjyxVrnJ9mAQlZ48=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-02 Anon_ Genuit Puerpera Regem.mp3 - musicbrainz
+      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
+      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
+      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
+    01/02 03 04:22 Ave mundi spes Maria: Secuencia (Modos VII y VIII) (urn:bluemarine:track:iwwev44fyBt2h6EkplAXdz9g4Po=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-03 Anon_ Ave Mundi Spes Maria.mp3 - musicbrainz
+      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
+      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
+      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
+    01/02 04 03:25 Occuli omnium: Gradual (Modo VII) (urn:bluemarine:track:w2ZLeFssJvVv1bpMKI34qVKg0V4=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-04 Anon_ Occuli Omnium.mp3 - musicbrainz
+      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
+      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
+      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
+    01/02 05 02:37 Veni creator spiritus: Himno (Modo VIII) (urn:bluemarine:track:essgObl3xSqvBGvIiaaXU0NpYt0=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-05 Anon_ Veni Creator Spiritus.mp3 - musicbrainz
+      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
+      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
+      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
+    01/02 06 03:13 Alleluia, beatus vir qui suffert: (Modo I) (urn:bluemarine:track:3QD-VmoA5XaeFG1yD4_XW6nUeQs=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-06 Anon_ Alleluia, Beatus Vir Qui Suffert.mp3 - musicbrainz
+      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
+      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
+      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
+    01/02 07 02:53 Os iusti: Gradual (Modo I) (urn:bluemarine:track:BCSZ-rsdM0we3sdtDZtVNxvnI94=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-07 Anon_ Os Iusti.mp3 - musicbrainz
+      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
+      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
+      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
+    01/02 08 03:50 Spiritus domini: Introito (Modo VIII) (urn:bluemarine:track:1MlNyHrhrNmA6-yMyY5-M_gF2cc=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-08 Anon_ Spiritus Domini.mp3 - musicbrainz
+      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
+      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
+      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
+    01/02 09 04:04 Kyrie fons bonitatis: Tropo (Modo III) (urn:bluemarine:track:D6AsDdMwf4sKzWeL7y_bcqmBdNU=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-09 Anon_ Kyrie Fons Bonitatis.mp3 - musicbrainz
+      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
+      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
+      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
+    01/02 10 02:21 Laetatus sum: Gradual (Modo VII) (urn:bluemarine:track:0BvKKy61hE55cDuIgJQxOc_sgsY=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-10 Anon_ Laetatus Sum.mp3 - musicbrainz
+      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
+      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
+      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
+    01/02 11 03:04 A solis ortus cardine: Himno (Modo III) (urn:bluemarine:track:yceu1VhKwIfLPg0CJXsrIt0GfmA=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-11 Anon_ A Solis Ortus Cardine.mp3 - musicbrainz
+      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
+      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
+      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
+    01/02 12 02:43 Christus factus est pro nobis: Gradual (Modo V) (urn:bluemarine:track:uSD9CRkL-IAS-rferyFg346mtCw=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-12 Anon_ Christus Factus Est Pro Nobis.mp3 - musicbrainz
+      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
+      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
+      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
+    01/02 13 01:44 Mandatum novum do vobis: Antífona y Salmo 132 (Modo III) (urn:bluemarine:track:nZ1tRlEW2MpWHj7KCmAd0iaFyNU=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-13 Anon_ Mandatum Novum Do Vobis.mp3 - musicbrainz
+      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
+      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
+      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
+    01/02 14 06:12 Media vita in morte sumus: Responsorio (Modo IV) (urn:bluemarine:track:mje_gpMGpTvZ3j1r2F9wiSGyo1U=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-14 Anon_ Media Vita In Morte Sumus.mp3 - musicbrainz
+      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
+      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
+      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
+      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
+
 RECORD Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=):
   SOURCE:  musicbrainz
   ASIN:    B000025XSS
@@ -4744,96 +4834,6 @@ RECORD Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=):
       : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
       : chorus master        Francisco Lara (urn:bluemarine:artist:NJk21LtSfSmT-cdFAHnFs-248_I=)
       : performer            Francisco Lara (urn:bluemarine:artist:NJk21LtSfSmT-cdFAHnFs-248_I=)
-      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
-
-RECORD Canto Gregoriano (urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=):
-  SOURCE:  musicbrainz
-  ASIN:    B000025XSS
-  BARCODE: 724356521728
-  TRACKS (14 / Optional[14]):
-    01/02 01 03:40 Puer natus est nobis: Introito (Modo VII) (urn:bluemarine:track:3qEXxhREv5Ae5be4M7SAHC3pOMM=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-01 Anon_ Puer Natus Est Nobis.mp3 - musicbrainz
-      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
-      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
-      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
-    01/02 02 03:00 Genuit puerpera regem: Antífona y Salmo 99 (Modo II) (urn:bluemarine:track:N3Ht4p4egRexjyxVrnJ9mAQlZ48=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-02 Anon_ Genuit Puerpera Regem.mp3 - musicbrainz
-      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
-      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
-      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
-    01/02 03 04:22 Ave mundi spes Maria: Secuencia (Modos VII y VIII) (urn:bluemarine:track:iwwev44fyBt2h6EkplAXdz9g4Po=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-03 Anon_ Ave Mundi Spes Maria.mp3 - musicbrainz
-      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
-      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
-      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
-    01/02 04 03:25 Occuli omnium: Gradual (Modo VII) (urn:bluemarine:track:w2ZLeFssJvVv1bpMKI34qVKg0V4=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-04 Anon_ Occuli Omnium.mp3 - musicbrainz
-      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
-      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
-      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
-    01/02 05 02:37 Veni creator spiritus: Himno (Modo VIII) (urn:bluemarine:track:essgObl3xSqvBGvIiaaXU0NpYt0=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-05 Anon_ Veni Creator Spiritus.mp3 - musicbrainz
-      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
-      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
-      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
-    01/02 06 03:13 Alleluia, beatus vir qui suffert: (Modo I) (urn:bluemarine:track:3QD-VmoA5XaeFG1yD4_XW6nUeQs=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-06 Anon_ Alleluia, Beatus Vir Qui Suffert.mp3 - musicbrainz
-      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
-      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
-      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
-    01/02 07 02:53 Os iusti: Gradual (Modo I) (urn:bluemarine:track:BCSZ-rsdM0we3sdtDZtVNxvnI94=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-07 Anon_ Os Iusti.mp3 - musicbrainz
-      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
-      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
-      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
-    01/02 08 03:50 Spiritus domini: Introito (Modo VIII) (urn:bluemarine:track:1MlNyHrhrNmA6-yMyY5-M_gF2cc=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-08 Anon_ Spiritus Domini.mp3 - musicbrainz
-      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
-      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
-      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
-    01/02 09 04:04 Kyrie fons bonitatis: Tropo (Modo III) (urn:bluemarine:track:D6AsDdMwf4sKzWeL7y_bcqmBdNU=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-09 Anon_ Kyrie Fons Bonitatis.mp3 - musicbrainz
-      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
-      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
-      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
-    01/02 10 02:21 Laetatus sum: Gradual (Modo VII) (urn:bluemarine:track:0BvKKy61hE55cDuIgJQxOc_sgsY=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-10 Anon_ Laetatus Sum.mp3 - musicbrainz
-      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
-      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
-      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
-    01/02 11 03:04 A solis ortus cardine: Himno (Modo III) (urn:bluemarine:track:yceu1VhKwIfLPg0CJXsrIt0GfmA=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-11 Anon_ A Solis Ortus Cardine.mp3 - musicbrainz
-      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
-      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
-      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
-    01/02 12 02:43 Christus factus est pro nobis: Gradual (Modo V) (urn:bluemarine:track:uSD9CRkL-IAS-rferyFg346mtCw=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-12 Anon_ Christus Factus Est Pro Nobis.mp3 - musicbrainz
-      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
-      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
-      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
-    01/02 13 01:44 Mandatum novum do vobis: Antífona y Salmo 132 (Modo III) (urn:bluemarine:track:nZ1tRlEW2MpWHj7KCmAd0iaFyNU=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-13 Anon_ Mandatum Novum Do Vobis.mp3 - musicbrainz
-      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
-      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
-      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
-    01/02 14 06:12 Media vita in morte sumus: Responsorio (Modo IV) (urn:bluemarine:track:mje_gpMGpTvZ3j1r2F9wiSGyo1U=) Benedictine Monks Of Santo Domingo De Silos/Canto Gregoriano [Disc 1]/1-14 Anon_ Media Vita In Morte Sumus.mp3 - musicbrainz
-      : balance              Angel Barco (urn:bluemarine:artist:aX6ZlWVEMfzgfM_WgjtxeGL_cG4=)
-      : choir                Coro de monjes del Monasterio Benedictino de Santo Domingo de Silos (urn:bluemarine:artist:Ay4rltbTbXTyDaUEgVXfwOmoPQ4=)
-      : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
-      : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
       : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
 
 RECORD Cello Concertos (urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=):

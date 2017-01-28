@@ -94,6 +94,8 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
 
     private static final String REGEX_BINDING_TAG_LINE = REGEX_BINDING_TAG + ".*$";
 
+    private static final String REGEX_COMMENT = "^ *#.*";
+    
     private static final String PREFIXES = "PREFIX foaf:  <http://xmlns.com/foaf/0.1/>\n"
                                          + "PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                                          + "PREFIX rel:   <http://purl.org/vocab/relationship/>\n"
@@ -449,7 +451,10 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
       {
         try (final InputStream is = clazz.getResourceAsStream(name))
           {
-            return StreamUtils.copyToString(is, UTF_8);
+            return Stream.of(StreamUtils.copyToString(is, UTF_8)
+                                        .split("\n"))
+                                        .filter(s -> !s.matches(REGEX_COMMENT))
+                                        .collect(joining("\n"));
           }
         catch (IOException e)
           {
