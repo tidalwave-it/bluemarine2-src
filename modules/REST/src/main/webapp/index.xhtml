@@ -5,6 +5,7 @@
         <title>TODO supply a title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/bluemarine2.css"/>
         <script src="js/jquery.min.js"></script>
         <script src="js/handlebars.min.js"></script>
         <!--<script src="js/luga.common.min.js"></script>-->
@@ -40,39 +41,59 @@
 
         <script id="recordTable" type="text/x-handlebars-template">
             <table class="table table-bordered table-striped">
-                <th>Title</th>
-                {{#each entities}}
-                    <tr>
-                        <td>{{displayName}}</td>
-                    </tr>
-                {{/each}}
+                <thead>
+                    <th>Title</th>
+                </thead>
+                <tbody>
+                    {{#each entities}}
+                        <tr>
+                            <td>{{displayName}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
             </table>
         </script>
 
         <script id="trackTable" type="text/x-handlebars-template">
             <table class="table table-bordered table-striped">
-                <th></th>
-                <th></th>
-                <th></th>
-                <th>Title</th>
-                {{#each entities}}
-                    <tr>
-                        <td>{{diskNumber}} / {{diskCount}}</td>
-                        <td>{{trackNumber}}</td>
-                        <td>{{duration}}</td>
-                        <td>{{displayName}}</td>
-                    </tr>
-                {{/each}}
+                <thead>
+                    <th class="diskNumber">...</th>
+                    <th class="trackNumber">...</th>
+                    <th class="duration">...</th>
+                    <th class="displayName">Title</th>
+                </thead>
+                <tbody>
+                    {{#each entities}}
+                        <tr>
+                            <td class="diskNumber">{{diskNumber}} / {{diskCount}}</td>
+                            <td class="trackNumber">{{trackNumber}}</td>
+                            <td class="duration">{{duration}}</td>
+                            <td class="displayName">{{displayName}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
             </table>
         </script>
     </head>
     <body>
-        <div data-lugaregion="true"
-             data-lugaregion-datasource-uuid="records"
-             data-lugaregion-template-id="recordTable"></div>
+        <table class="tableSection">
+            <tr>
+                <td>
+                    <div data-lugaregion="true"
+                         data-lugaregion-datasource-uuid="records"
+                         data-lugaregion-template-id="recordTable"></div>
+                </td>
+                <td>
 
-        <div data-lugaregion="true"
-             data-lugaregion-datasource-uuid="tracks"
-             data-lugaregion-template-id="trackTable"></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div data-lugaregion="true"
+                         data-lugaregion-datasource-uuid="tracks"
+                         data-lugaregion-template-id="trackTable"></div>
+                </td>
+            </tr>
+        </table>
     </body>
 </html>
