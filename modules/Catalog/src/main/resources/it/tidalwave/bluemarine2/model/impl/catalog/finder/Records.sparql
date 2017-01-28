@@ -24,4 +24,5 @@
 @track@                 ?record         mo:track                                  ?track.
 
               }
+# ?disk_number in case of ?label matching, for sake of test consistency.
             ORDER BY ?label ?disk_number
