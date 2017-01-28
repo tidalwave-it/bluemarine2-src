@@ -69,20 +69,20 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 @Immutable @Configurable @Slf4j
 public class RepositoryTrack extends RepositoryEntitySupport implements Track, AudioFileSupplier
   {
-    @Nonnull
+    @Getter @Nonnull
+    private final Optional<Integer> diskNumber; // really property of Record, but handy here
+
+    @Getter @Nonnull
+    private final Optional<Integer> diskCount; // really property of Record, but handy here
+
+    @Getter @Nonnull
     private final Optional<Integer> trackNumber;
 
-    @Nonnull
+    @Getter @Nonnull
     private final Optional<Duration> duration;
 
     @Nonnull
     private final Path audioFilePath;
-
-    @Nonnull
-    private final Optional<Integer> diskNumber; // really property of Record, but handy here
-
-    @Nonnull
-    private final Optional<Integer> diskCount; // really property of Record, but handy here
 
     @Nonnull
     private final Optional<Long> fileSize;
@@ -108,18 +108,18 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
       {
         super(repository, bindingSet, "track");
 
-        this.audioFilePath = fixedPath(bindingSet.getBinding("path"));
-        this.duration      = toDuration(bindingSet.getBinding("duration"));
-        this.trackNumber   = toInteger(bindingSet.getBinding("track_number"));
-        this.diskNumber    = toInteger(bindingSet.getBinding("disk_number"));
-        this.diskCount     = toInteger(bindingSet.getBinding("disk_count"));
-        this.fileSize      = toLong(bindingSet.getBinding("fileSize"));
+        audioFilePath = fixedPath(bindingSet.getBinding("path"));
+        duration      = toDuration(bindingSet.getBinding("duration"));
+        trackNumber   = toInteger(bindingSet.getBinding("track_number"));
+        diskNumber    = toInteger(bindingSet.getBinding("disk_number"));
+        diskCount     = toInteger(bindingSet.getBinding("disk_count"));
+        fileSize      = toLong(bindingSet.getBinding("fileSize"));
 //        this.recordRdfsLabel = toString(bindingSet.getBinding("record_label"));
 
-        this.metadata = new MetadataSupport(audioFilePath).with(DURATION, duration)
-                                                          .with(TRACK_NUMBER, trackNumber)
-                                                          .with(DISK_NUMBER, diskNumber)
-                                                          .with(DISK_COUNT, diskCount);
+        metadata = new MetadataSupport(audioFilePath).with(DURATION, duration)
+                                                     .with(TRACK_NUMBER, trackNumber)
+                                                     .with(DISK_NUMBER, diskNumber)
+                                                     .with(DISK_COUNT, diskCount);
       }
 
     /*******************************************************************************************************************

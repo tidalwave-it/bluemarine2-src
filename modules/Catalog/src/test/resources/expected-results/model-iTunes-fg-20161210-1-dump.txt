@@ -3128,9 +3128,9 @@ ALL RECORDS (228):
   Davidsbündlertänze Op. 6/Kreisleriana Op. 16 (urn:bluemarine:record:nYfaRwRi3B7mSu57MkgqqJGKJHg=) - embedded
   Debussy: La Mer, Nocturnes, Prélude À L'Après-Midi D'Un Faune (urn:bluemarine:record:AhiPMkzKgf94c96VjJWlyY9Smio=) - embedded
   Debussy: Piano Works [Disc 1] (urn:bluemarine:record:bZb4gijakgSyjlqnYT8aWW1HPqM=) - embedded
-  Definitive Collection (urn:bluemarine:record:-CgrLa5pjF9buldpWuPn_tv9iPw=) - embedded
   Definitive Collection (urn:bluemarine:record:53EKoRgRAJX8gtlk8OQIvRhFRkM=) - embedded
   Definitive Collection (urn:bluemarine:record:cNNn3kVYI9hzYl1pK27w1fByBhU=) - embedded
+  Definitive Collection (urn:bluemarine:record:-CgrLa5pjF9buldpWuPn_tv9iPw=) - embedded
   Djangology [Bonus Tracks] (urn:bluemarine:record:9gpO4-wOy7n4MQqKtdPyHUCJ_0Y=) - embedded
   Dvořák: Four-Hand Piano Music, Vol. 2 (urn:bluemarine:record:yDQWHYfiEk2E6IuTWS8EjdAz1gI=) - embedded
   Dvořák: String Quartets Op. 96, "American" & Op. 105 (urn:bluemarine:record:UD0n5KrSVujDB0XfzbbPK6tXzLU=) - embedded
@@ -3173,8 +3173,8 @@ ALL RECORDS (228):
   Laus Trinitati (urn:bluemarine:record:Rlu-m8N6T6mFqNp06vDXGiCv6U4=) - embedded
   Le Canzoni D'amore (urn:bluemarine:record:eZBJzsuZLpX8EPDvEWVdRliIXXA=) - embedded
   Legends (urn:bluemarine:record:9Km3fmRH8VtMG1bm8A01rxbOCTw=) - embedded
-  Legends (urn:bluemarine:record:_IIbeY4QAI0ZaY291I0jXpeT4wk=) - embedded
   Legends (urn:bluemarine:record:s4aUB-fa4787bmxJmtZ-fI1Exnk=) - embedded
+  Legends (urn:bluemarine:record:_IIbeY4QAI0ZaY291I0jXpeT4wk=) - embedded
   Letter From Home (urn:bluemarine:record:zuV3zc5a8Qxp4T1soERhW8-PQuc=) - embedded
   Liszt: Hungarian Rhapsodies [Disc 1] (urn:bluemarine:record:CcbM4d0nzuMw6y83-4N8e2ZP0vk=) - embedded
   Liszt: Hungarian Rhapsodies [Disc 2] (urn:bluemarine:record:26olRdCZpCJE6pm5A6vkjcEtHUM=) - embedded
@@ -7731,9 +7731,9 @@ RECORDS OF Charles Neidich, Lev Polyakin, Frances Renzi (urn:bluemarine:artist:o
   Café Music (urn:bluemarine:record:ECqsqji0sSaxKin_VieXq8DChPE=)
 
 RECORDS OF Charles Trenet (urn:bluemarine:artist:FFk4WsTTTCsv4Dm0yvn6ztgobyw=) (3):
-  Definitive Collection (urn:bluemarine:record:-CgrLa5pjF9buldpWuPn_tv9iPw=)
   Definitive Collection (urn:bluemarine:record:53EKoRgRAJX8gtlk8OQIvRhFRkM=)
   Definitive Collection (urn:bluemarine:record:cNNn3kVYI9hzYl1pK27w1fByBhU=)
+  Definitive Collection (urn:bluemarine:record:-CgrLa5pjF9buldpWuPn_tv9iPw=)
 
 RECORDS OF Charlie Haden & Pat Metheny (urn:bluemarine:artist:OPhRloLv91k4SVv1DLjdLaZPUsE=) (1):
   Beyond The Missouri Sky (Short Stories) (urn:bluemarine:record:tJ9qH_S-vr7aQs9d_moAP9lwlfY=)
@@ -7929,22 +7929,22 @@ RECORDS OF Heinrich Schiff (urn:bluemarine:artist:7EZahtVgEnv8WhsP1YHGYWegPSc=) 
 
 RECORDS OF Henry Mancini (urn:bluemarine:artist:d6gt3epLiCE6QCgX3h6zepfGDZw=) (3):
   Legends (urn:bluemarine:record:9Km3fmRH8VtMG1bm8A01rxbOCTw=)
-  Legends (urn:bluemarine:record:_IIbeY4QAI0ZaY291I0jXpeT4wk=)
   Legends (urn:bluemarine:record:s4aUB-fa4787bmxJmtZ-fI1Exnk=)
+  Legends (urn:bluemarine:record:_IIbeY4QAI0ZaY291I0jXpeT4wk=)
 
 RECORDS OF Henry Mancini & His Orchestra (urn:bluemarine:artist:3svvwBJvY0eZwhKfBr6VSbmscgU=) (3):
   Legends (urn:bluemarine:record:9Km3fmRH8VtMG1bm8A01rxbOCTw=)
-  Legends (urn:bluemarine:record:_IIbeY4QAI0ZaY291I0jXpeT4wk=)
   Legends (urn:bluemarine:record:s4aUB-fa4787bmxJmtZ-fI1Exnk=)
+  Legends (urn:bluemarine:record:_IIbeY4QAI0ZaY291I0jXpeT4wk=)
 
 RECORDS OF Henry Mancini & His Orchestra & Chorus (urn:bluemarine:artist:6L0KKBNuJL9eYQhJim8rpy5C4Go=) (3):
   Legends (urn:bluemarine:record:9Km3fmRH8VtMG1bm8A01rxbOCTw=)
-  Legends (urn:bluemarine:record:_IIbeY4QAI0ZaY291I0jXpeT4wk=)
   Legends (urn:bluemarine:record:s4aUB-fa4787bmxJmtZ-fI1Exnk=)
+  Legends (urn:bluemarine:record:_IIbeY4QAI0ZaY291I0jXpeT4wk=)
 
 RECORDS OF Henry Mancini and His Orchestra and Chorus (urn:bluemarine:artist:KlhRDJ8f73sZ5lUMlcHcIedGUiw=) (2):
-  Legends (urn:bluemarine:record:_IIbeY4QAI0ZaY291I0jXpeT4wk=)
   Legends (urn:bluemarine:record:s4aUB-fa4787bmxJmtZ-fI1Exnk=)
+  Legends (urn:bluemarine:record:_IIbeY4QAI0ZaY291I0jXpeT4wk=)
 
 RECORDS OF Henry Mancini, James Galway (urn:bluemarine:artist:Iwtpzvlp6AeMui9Q_ErLPJeNGmo=) (1):
   Legends (urn:bluemarine:record:_IIbeY4QAI0ZaY291I0jXpeT4wk=)
@@ -9932,35 +9932,6 @@ RECORD Debussy: Piano Works [Disc 1] (urn:bluemarine:record:bZb4gijakgSyjlqnYT8a
     01/02 17 05:44 Debussy: Estampes, L 100 - La Soirée Dans Grenade (urn:bluemarine:track:RBiVMGa7DXe_wh36kAbFlWp7M8s=) Claudio Arrau/Debussy_ Piano Works [Disc 1]/1-17 Debussy_ Estampes, L 100 - La Soirée Dans Grenade.mp3 - embedded
     01/02 18 04:06 Debussy: Estampes, L 100 - Jardins Sous La Pluie (urn:bluemarine:track:u8mRHYvWeJ-BXJ_C4SmfP1W5_MM=) Claudio Arrau/Debussy_ Piano Works [Disc 1]/1-18 Debussy_ Estampes, L 100 - Jardins Sous La Pluie.mp3 - embedded
 
-RECORD Definitive Collection (urn:bluemarine:record:-CgrLa5pjF9buldpWuPn_tv9iPw=):
-  SOURCE:  embedded
-  TRACKS (25 / Optional[25]):
-    03/03 01 02:48 Je Chante (urn:bluemarine:track:yIlPCA9gy7yFsZLCnRY-BHginB0=) Charles Trenet/Definitive Collection/3-01 Je Chante.mp3 - embedded
-    03/03 02 03:21 Bonsoir, Jolie Madame (urn:bluemarine:track:DyZLUR2HUMcu4iVCdQpnSRYDNQw=) Charles Trenet/Definitive Collection/3-02 Bonsoir, Jolie Madame.mp3 - embedded
-    03/03 03 02:05 La Jolie Sardane (urn:bluemarine:track:_ofioAsXh5dyxuIf2aijZjCO_wc=) Charles Trenet/Definitive Collection/3-03 La Jolie Sardane.mp3 - embedded
-    03/03 04 03:43 Le Jardin Extraordinaire (urn:bluemarine:track:jwGP5mc9RECRknybGo1pnyoh-iM=) Charles Trenet/Definitive Collection/3-04 Le Jardin Extraordinaire.mp3 - embedded
-    03/03 05 02:29 Y'a D'la Joie (urn:bluemarine:track:wgdcyH9NE5YcMJkn1nUIfFIMz-c=) Charles Trenet/Definitive Collection/3-05 Y'a D'la Joie.mp3 - embedded
-    03/03 06 03:01 Vous Oubliez Votre Cheval (urn:bluemarine:track:a3-IlYarAjeLPb4etqyBsC11G-0=) Charles Trenet/Definitive Collection/3-06 Vous Oubliez Votre Cheval.mp3 - embedded
-    03/03 07 02:37 Fleur Bleue (urn:bluemarine:track:MgF_pqDF6Jbrto-t5VBfCsV4Ziw=) Charles Trenet/Definitive Collection/3-07 Fleur Bleue.mp3 - embedded
-    03/03 08 02:53 L'ane Et Le Gendarme (urn:bluemarine:track:QPCM2NvRJwUNziw8zDCV4CWfkB8=) Charles Trenet/Definitive Collection/3-08 L'ane Et Le Gendarme.mp3 - embedded
-    03/03 09 02:09 La Route Enchantee (urn:bluemarine:track:wWWSrLX0O38WqeE2GtCyXcXBpmE=) Charles Trenet/Definitive Collection/3-09 La Route Enchantee.mp3 - embedded
-    03/03 10 03:18 Grand Maman C'est New York (urn:bluemarine:track:T9en41zYUxEN7inNc5ytwM2JsC8=) Charles Trenet/Definitive Collection/3-10 Grand Maman C'est New York.mp3 - embedded
-    03/03 11 02:27 Si Le Bon Vent (urn:bluemarine:track:dvkHx9vMYrlaFvMEj_OIyshmSc8=) Charles Trenet/Definitive Collection/3-11 Si Le Bon Vent.mp3 - embedded
-    03/03 12 02:44 Obey Au Bey (urn:bluemarine:track:9CMvqAstlPhil1zihFYwe8lAssI=) Charles Trenet/Definitive Collection/3-12 Obey Au Bey.mp3 - embedded
-    03/03 13 02:15 Paule Sur Mes Epaules (urn:bluemarine:track:wrdIxVJHP9Tk4QpmtdDmJ5nVEds=) Charles Trenet/Definitive Collection/3-13 Paule Sur Mes Epaules.mp3 - embedded
-    03/03 14 02:15 J'ai Mordu Dans Le Fruit (urn:bluemarine:track:s0sS6RXEPk5QaHeki9hoEAV2OUU=) Charles Trenet/Definitive Collection/3-14 J'ai Mordu Dans Le Fruit.mp3 - embedded
-    03/03 15 02:28 Miss Emily (urn:bluemarine:track:6NciWqzO3RFkWFAT4AGCSxIShnU=) Charles Trenet/Definitive Collection/3-15 Miss Emily.mp3 - embedded
-    03/03 16 02:49 Dans Les Rues De Quebec (urn:bluemarine:track:bk7ZbgclH4tRXgz5c_pqAtOYdKI=) Charles Trenet/Definitive Collection/3-16 Dans Les Rues De Quebec.mp3 - embedded
-    03/03 17 03:38 Gangsters Et Documentaires (urn:bluemarine:track:Jvb81S4MLegAQ1sYXC0eqVdmezY=) Charles Trenet/Definitive Collection/3-17 Gangsters Et Documentaires.mp3 - embedded
-    03/03 18 02:46 De La Fenetre D'en-haut (urn:bluemarine:track:J3w0ekk0XKBvSC_0UXJuSnyRKLI=) Charles Trenet/Definitive Collection/3-18 De La Fenetre D'en-haut.mp3 - embedded
-    03/03 19 02:49 Mon Amour Est Parti Pour Longtemps (urn:bluemarine:track:I82egatcMUEukk6H2eEqQ_wKtVo=) Charles Trenet/Definitive Collection/3-19 Mon Amour Est Parti Pour Longtemps.mp3 - embedded
-    03/03 20 02:38 Route Nationale 7 (urn:bluemarine:track:iYw8G-JoekduuIwbf1jeUnJILPU=) Charles Trenet/Definitive Collection/3-20 Route Nationale 7.mp3 - embedded
-    03/03 21 02:27 Pic Pic Pic (urn:bluemarine:track:002nYGAq1GflHM7eQgnUSpgsroM=) Charles Trenet/Definitive Collection/3-21 Pic Pic Pic.mp3 - embedded
-    03/03 22 03:48 Giovanni (urn:bluemarine:track:Tr42zaX0S-332YM_TzSi6Dx0QM4=) Charles Trenet/Definitive Collection/3-22 Giovanni.mp3 - embedded
-    03/03 23 02:07 En Seine-et-Oise (urn:bluemarine:track:H2z0UZzjav2N5RZiEAmsJw_O2ok=) Charles Trenet/Definitive Collection/3-23 En Seine-et-Oise.mp3 - embedded
-    03/03 24 02:29 Le Chanson Du Joli Feu De Bois (urn:bluemarine:track:CuAsjOm63AGlsvE00QwSv4tX-Co=) Charles Trenet/Definitive Collection/3-24 Le Chanson Du Joli Feu De Bois.mp3 - embedded
-    03/03 25 02:18 Boom (Version Anglaise De 'Boum') (urn:bluemarine:track:n1xzKG8zfswEv5Sr6bF7NI8bLKI=) Charles Trenet/Definitive Collection/3-25 Boom (Version Anglaise De 'Boum').mp3 - embedded
-
 RECORD Definitive Collection (urn:bluemarine:record:53EKoRgRAJX8gtlk8OQIvRhFRkM=):
   SOURCE:  embedded
   TRACKS (25 / Optional[25]):
@@ -10018,6 +9989,35 @@ RECORD Definitive Collection (urn:bluemarine:record:cNNn3kVYI9hzYl1pK27w1fByBhU=
     02/03 23 02:28 Debit De L'eau De Bait (urn:bluemarine:track:nYkLrvBMuRLXwKAwG18Z4Tb1nd0=) Charles Trenet/Definitive Collection/2-23 Debit De L'eau De Bait.mp3 - embedded
     02/03 24 02:43 L'ame Des Poetes (urn:bluemarine:track:fHX38cs_m3hnOTAwIPMUrGz7JQQ=) Charles Trenet/Definitive Collection/2-24 L'ame Des Poetes.mp3 - embedded
     02/03 25 01:58 Les Olivettes (urn:bluemarine:track:woni3oJmSmhGEXz0HT2XNvGbexA=) Charles Trenet/Definitive Collection/2-25 Les Olivettes.mp3 - embedded
+
+RECORD Definitive Collection (urn:bluemarine:record:-CgrLa5pjF9buldpWuPn_tv9iPw=):
+  SOURCE:  embedded
+  TRACKS (25 / Optional[25]):
+    03/03 01 02:48 Je Chante (urn:bluemarine:track:yIlPCA9gy7yFsZLCnRY-BHginB0=) Charles Trenet/Definitive Collection/3-01 Je Chante.mp3 - embedded
+    03/03 02 03:21 Bonsoir, Jolie Madame (urn:bluemarine:track:DyZLUR2HUMcu4iVCdQpnSRYDNQw=) Charles Trenet/Definitive Collection/3-02 Bonsoir, Jolie Madame.mp3 - embedded
+    03/03 03 02:05 La Jolie Sardane (urn:bluemarine:track:_ofioAsXh5dyxuIf2aijZjCO_wc=) Charles Trenet/Definitive Collection/3-03 La Jolie Sardane.mp3 - embedded
+    03/03 04 03:43 Le Jardin Extraordinaire (urn:bluemarine:track:jwGP5mc9RECRknybGo1pnyoh-iM=) Charles Trenet/Definitive Collection/3-04 Le Jardin Extraordinaire.mp3 - embedded
+    03/03 05 02:29 Y'a D'la Joie (urn:bluemarine:track:wgdcyH9NE5YcMJkn1nUIfFIMz-c=) Charles Trenet/Definitive Collection/3-05 Y'a D'la Joie.mp3 - embedded
+    03/03 06 03:01 Vous Oubliez Votre Cheval (urn:bluemarine:track:a3-IlYarAjeLPb4etqyBsC11G-0=) Charles Trenet/Definitive Collection/3-06 Vous Oubliez Votre Cheval.mp3 - embedded
+    03/03 07 02:37 Fleur Bleue (urn:bluemarine:track:MgF_pqDF6Jbrto-t5VBfCsV4Ziw=) Charles Trenet/Definitive Collection/3-07 Fleur Bleue.mp3 - embedded
+    03/03 08 02:53 L'ane Et Le Gendarme (urn:bluemarine:track:QPCM2NvRJwUNziw8zDCV4CWfkB8=) Charles Trenet/Definitive Collection/3-08 L'ane Et Le Gendarme.mp3 - embedded
+    03/03 09 02:09 La Route Enchantee (urn:bluemarine:track:wWWSrLX0O38WqeE2GtCyXcXBpmE=) Charles Trenet/Definitive Collection/3-09 La Route Enchantee.mp3 - embedded
+    03/03 10 03:18 Grand Maman C'est New York (urn:bluemarine:track:T9en41zYUxEN7inNc5ytwM2JsC8=) Charles Trenet/Definitive Collection/3-10 Grand Maman C'est New York.mp3 - embedded
+    03/03 11 02:27 Si Le Bon Vent (urn:bluemarine:track:dvkHx9vMYrlaFvMEj_OIyshmSc8=) Charles Trenet/Definitive Collection/3-11 Si Le Bon Vent.mp3 - embedded
+    03/03 12 02:44 Obey Au Bey (urn:bluemarine:track:9CMvqAstlPhil1zihFYwe8lAssI=) Charles Trenet/Definitive Collection/3-12 Obey Au Bey.mp3 - embedded
+    03/03 13 02:15 Paule Sur Mes Epaules (urn:bluemarine:track:wrdIxVJHP9Tk4QpmtdDmJ5nVEds=) Charles Trenet/Definitive Collection/3-13 Paule Sur Mes Epaules.mp3 - embedded
+    03/03 14 02:15 J'ai Mordu Dans Le Fruit (urn:bluemarine:track:s0sS6RXEPk5QaHeki9hoEAV2OUU=) Charles Trenet/Definitive Collection/3-14 J'ai Mordu Dans Le Fruit.mp3 - embedded
+    03/03 15 02:28 Miss Emily (urn:bluemarine:track:6NciWqzO3RFkWFAT4AGCSxIShnU=) Charles Trenet/Definitive Collection/3-15 Miss Emily.mp3 - embedded
+    03/03 16 02:49 Dans Les Rues De Quebec (urn:bluemarine:track:bk7ZbgclH4tRXgz5c_pqAtOYdKI=) Charles Trenet/Definitive Collection/3-16 Dans Les Rues De Quebec.mp3 - embedded
+    03/03 17 03:38 Gangsters Et Documentaires (urn:bluemarine:track:Jvb81S4MLegAQ1sYXC0eqVdmezY=) Charles Trenet/Definitive Collection/3-17 Gangsters Et Documentaires.mp3 - embedded
+    03/03 18 02:46 De La Fenetre D'en-haut (urn:bluemarine:track:J3w0ekk0XKBvSC_0UXJuSnyRKLI=) Charles Trenet/Definitive Collection/3-18 De La Fenetre D'en-haut.mp3 - embedded
+    03/03 19 02:49 Mon Amour Est Parti Pour Longtemps (urn:bluemarine:track:I82egatcMUEukk6H2eEqQ_wKtVo=) Charles Trenet/Definitive Collection/3-19 Mon Amour Est Parti Pour Longtemps.mp3 - embedded
+    03/03 20 02:38 Route Nationale 7 (urn:bluemarine:track:iYw8G-JoekduuIwbf1jeUnJILPU=) Charles Trenet/Definitive Collection/3-20 Route Nationale 7.mp3 - embedded
+    03/03 21 02:27 Pic Pic Pic (urn:bluemarine:track:002nYGAq1GflHM7eQgnUSpgsroM=) Charles Trenet/Definitive Collection/3-21 Pic Pic Pic.mp3 - embedded
+    03/03 22 03:48 Giovanni (urn:bluemarine:track:Tr42zaX0S-332YM_TzSi6Dx0QM4=) Charles Trenet/Definitive Collection/3-22 Giovanni.mp3 - embedded
+    03/03 23 02:07 En Seine-et-Oise (urn:bluemarine:track:H2z0UZzjav2N5RZiEAmsJw_O2ok=) Charles Trenet/Definitive Collection/3-23 En Seine-et-Oise.mp3 - embedded
+    03/03 24 02:29 Le Chanson Du Joli Feu De Bois (urn:bluemarine:track:CuAsjOm63AGlsvE00QwSv4tX-Co=) Charles Trenet/Definitive Collection/3-24 Le Chanson Du Joli Feu De Bois.mp3 - embedded
+    03/03 25 02:18 Boom (Version Anglaise De 'Boum') (urn:bluemarine:track:n1xzKG8zfswEv5Sr6bF7NI8bLKI=) Charles Trenet/Definitive Collection/3-25 Boom (Version Anglaise De 'Boum').mp3 - embedded
 
 RECORD Djangology [Bonus Tracks] (urn:bluemarine:record:9gpO4-wOy7n4MQqKtdPyHUCJ_0Y=):
   SOURCE:  embedded
@@ -10737,6 +10737,25 @@ RECORD Legends (urn:bluemarine:record:9Km3fmRH8VtMG1bm8A01rxbOCTw=):
     01/03 16 02:08 The Magnificent Seven (urn:bluemarine:track:Hura8nEO7K3DzCCrQtRlJGT9GD0=) Compilations/Legends/1-16 The Magnificent Seven.mp3 - embedded
     01/03 17 02:11 Pennywhistle Jig (From "The Molly Maguires") (urn:bluemarine:track:R-x7a9Q5ah5VGRwwseI2yNiItdM=) Compilations/Legends/1-17 Pennywhistle Jig (From _The Molly Maguires_).mp3 - embedded
 
+RECORD Legends (urn:bluemarine:record:s4aUB-fa4787bmxJmtZ-fI1Exnk=):
+  SOURCE:  embedded
+  TRACKS (15 / Optional[15]):
+    02/03 01 02:10 Midnight Cowboy (urn:bluemarine:track:Ol-pRzeouRru-MmVSVAGAKQyPz8=) Compilations/Legends/2-01 Midnight Cowboy.mp3 - embedded
+    02/03 02 04:01 Theme From Shaft (urn:bluemarine:track:xXQhVo9nB9dUoyurT9T3i0OcCjM=) Compilations/Legends/2-02 Theme From Shaft.mp3 - embedded
+    02/03 03 03:00 The Windmills Of Your Mind (urn:bluemarine:track:_Q0SehC7_a9SNySafGJRq_eJW6g=) Compilations/Legends/2-03 The Windmills Of Your Mind.mp3 - embedded
+    02/03 04 03:16 Secret Love (urn:bluemarine:track:UG62XZF2TIJUmi64sC5YLKc4nQM=) Compilations/Legends/2-04 Secret Love.mp3 - embedded
+    02/03 05 02:14 Mr. Lucky (urn:bluemarine:track:B6WdN-jphK3NTeupcl8g0-YKAM4=) Compilations/Legends/2-05 Mr. Lucky.mp3 - embedded
+    02/03 06 02:19 Experiment In Terror (urn:bluemarine:track:zDahvX1a0nebckD1TMclqiaH_NA=) Compilations/Legends/2-06 Experiment In Terror.mp3 - embedded
+    02/03 07 02:27 Raindrops Keep Fallin' On My Head (urn:bluemarine:track:Yjiri1zAKY9oVDVlqkMy55qE8wA=) Compilations/Legends/2-07 Raindrops Keep Fallin' On My Head.mp3 - embedded
+    02/03 08 02:57 Theme from "Hatari!" (urn:bluemarine:track:TYpzfD7RBtGSfEJTEV5gLNlkawo=) Compilations/Legends/2-08 Theme from _Hatari!_.mp3 - embedded
+    02/03 09 02:48 Breakfast At Tiffany's (urn:bluemarine:track:OpEOyooVruHnKcw_6LannLN-W8Q=) Compilations/Legends/2-09 Breakfast At Tiffany's.mp3 - embedded
+    02/03 10 02:32 The Untouchables (Theme) (From "The Untouchables") (urn:bluemarine:track:1cnoZYF4f8EnMTHG4lImk2zw_s4=) Compilations/Legends/2-10 The Untouchables (Theme) (From _The Untouchables_).mp3 - embedded
+    02/03 11 03:01 The Shadow Of Your Smile (urn:bluemarine:track:KdzF8iB7x0O2wG-ljckrghZLDD8=) Compilations/Legends/2-11 The Shadow Of Your Smile.mp3 - embedded
+    02/03 12 03:09 The Good, The Bad And The Ugly (urn:bluemarine:track:-g2d_IYdaZequvgBXmcb7anNXLg=) Compilations/Legends/2-12 The Good, The Bad And The Ugly.mp3 - embedded
+    02/03 13 04:13 Mona Lisa (urn:bluemarine:track:yqkUJJ4fOUPdVsxaRniBT2bJGEE=) Compilations/Legends/2-13 Mona Lisa.mp3 - embedded
+    02/03 14 03:06 All His Children (urn:bluemarine:track:LhFWYmlSwbP_xl2CMWNHwQjNS3s=) Compilations/Legends/2-14 All His Children.mp3 - embedded
+    02/03 15 11:30 Portrait Of The Beatles [1993 Remastered] (urn:bluemarine:track:LF4PF1SQ5CsCaRKe_q-wgckZklE=) Compilations/Legends/2-15 Portrait Of The Beatles [1993 Remastered].mp3 - embedded
+
 RECORD Legends (urn:bluemarine:record:_IIbeY4QAI0ZaY291I0jXpeT4wk=):
   SOURCE:  embedded
   TRACKS (18 / Optional[18]):
@@ -10758,25 +10777,6 @@ RECORD Legends (urn:bluemarine:record:_IIbeY4QAI0ZaY291I0jXpeT4wk=):
     03/03 16 02:58 Gigi (urn:bluemarine:track:szavNqsPmiyDvII-xgeBK7ICVCU=) Compilations/Legends/3-16 Gigi.mp3 - embedded
     03/03 17 03:03 Cherokee (Indian Love Song) (urn:bluemarine:track:O1GFGi8ZkwrLahEkCpuSIIdYErI=) Compilations/Legends/3-17 Cherokee (Indian Love Song).mp3 - embedded
     03/03 18 06:09 Three by Mancini and Mercer (urn:bluemarine:track:-t5fn4JSzd5WFoyGT-WTf3MTNe0=) Compilations/Legends/3-18 Three by Mancini and Mercer.mp3 - embedded
-
-RECORD Legends (urn:bluemarine:record:s4aUB-fa4787bmxJmtZ-fI1Exnk=):
-  SOURCE:  embedded
-  TRACKS (15 / Optional[15]):
-    02/03 01 02:10 Midnight Cowboy (urn:bluemarine:track:Ol-pRzeouRru-MmVSVAGAKQyPz8=) Compilations/Legends/2-01 Midnight Cowboy.mp3 - embedded
-    02/03 02 04:01 Theme From Shaft (urn:bluemarine:track:xXQhVo9nB9dUoyurT9T3i0OcCjM=) Compilations/Legends/2-02 Theme From Shaft.mp3 - embedded
-    02/03 03 03:00 The Windmills Of Your Mind (urn:bluemarine:track:_Q0SehC7_a9SNySafGJRq_eJW6g=) Compilations/Legends/2-03 The Windmills Of Your Mind.mp3 - embedded
-    02/03 04 03:16 Secret Love (urn:bluemarine:track:UG62XZF2TIJUmi64sC5YLKc4nQM=) Compilations/Legends/2-04 Secret Love.mp3 - embedded
-    02/03 05 02:14 Mr. Lucky (urn:bluemarine:track:B6WdN-jphK3NTeupcl8g0-YKAM4=) Compilations/Legends/2-05 Mr. Lucky.mp3 - embedded
-    02/03 06 02:19 Experiment In Terror (urn:bluemarine:track:zDahvX1a0nebckD1TMclqiaH_NA=) Compilations/Legends/2-06 Experiment In Terror.mp3 - embedded
-    02/03 07 02:27 Raindrops Keep Fallin' On My Head (urn:bluemarine:track:Yjiri1zAKY9oVDVlqkMy55qE8wA=) Compilations/Legends/2-07 Raindrops Keep Fallin' On My Head.mp3 - embedded
-    02/03 08 02:57 Theme from "Hatari!" (urn:bluemarine:track:TYpzfD7RBtGSfEJTEV5gLNlkawo=) Compilations/Legends/2-08 Theme from _Hatari!_.mp3 - embedded
-    02/03 09 02:48 Breakfast At Tiffany's (urn:bluemarine:track:OpEOyooVruHnKcw_6LannLN-W8Q=) Compilations/Legends/2-09 Breakfast At Tiffany's.mp3 - embedded
-    02/03 10 02:32 The Untouchables (Theme) (From "The Untouchables") (urn:bluemarine:track:1cnoZYF4f8EnMTHG4lImk2zw_s4=) Compilations/Legends/2-10 The Untouchables (Theme) (From _The Untouchables_).mp3 - embedded
-    02/03 11 03:01 The Shadow Of Your Smile (urn:bluemarine:track:KdzF8iB7x0O2wG-ljckrghZLDD8=) Compilations/Legends/2-11 The Shadow Of Your Smile.mp3 - embedded
-    02/03 12 03:09 The Good, The Bad And The Ugly (urn:bluemarine:track:-g2d_IYdaZequvgBXmcb7anNXLg=) Compilations/Legends/2-12 The Good, The Bad And The Ugly.mp3 - embedded
-    02/03 13 04:13 Mona Lisa (urn:bluemarine:track:yqkUJJ4fOUPdVsxaRniBT2bJGEE=) Compilations/Legends/2-13 Mona Lisa.mp3 - embedded
-    02/03 14 03:06 All His Children (urn:bluemarine:track:LhFWYmlSwbP_xl2CMWNHwQjNS3s=) Compilations/Legends/2-14 All His Children.mp3 - embedded
-    02/03 15 11:30 Portrait Of The Beatles [1993 Remastered] (urn:bluemarine:track:LF4PF1SQ5CsCaRKe_q-wgckZklE=) Compilations/Legends/2-15 Portrait Of The Beatles [1993 Remastered].mp3 - embedded
 
 RECORD Letter From Home (urn:bluemarine:record:zuV3zc5a8Qxp4T1soERhW8-PQuc=):
   SOURCE:  embedded

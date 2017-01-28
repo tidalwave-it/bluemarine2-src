@@ -29,13 +29,13 @@
 package it.tidalwave.bluemarine2.mediascanner.impl;
 
 import javax.annotation.Nonnegative;
+import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.Arrays;
 import java.util.List;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
 import lombok.Getter;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
@@ -52,7 +52,7 @@ public class ProgressHandler
     @RequiredArgsConstructor @Getter
     static class Progress
       {
-        @NonNull
+        @Nonnull
         private final String name;
 
         @Nonnegative
