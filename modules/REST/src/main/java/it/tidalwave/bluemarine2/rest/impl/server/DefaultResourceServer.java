@@ -50,6 +50,8 @@ import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
 
 /***********************************************************************************************************************
  *
@@ -81,7 +83,14 @@ public class DefaultResourceServer implements ResourceServer
         rootPath = notification.getProperties().get(ModelPropertyNames.ROOT_PATH);
         ipAddress = getNonLoopbackIPv4Address().getHostAddress();
         server = new Server(InetSocketAddress.createUnresolved(ipAddress, Integer.getInteger("port", 0)));
-        server.setHandler(new RangeServlet(rootPath).asHandler());
+
+        final ServletHolder servletHolder = new ServletHolder(new RangeServlet(rootPath));
+        servletHolder.setName("music");
+        final ServletContextHandler servletContext = new ServletContextHandler();
+        servletContext.setContextPath("/");
+        servletContext.addServlet(servletHolder, "/Music/*");
+        server.setHandler(servletContext);
+
         server.start();
         port = server.getConnectors()[0].getLocalPort(); // jetty 8
 //        port = ((ServerConnector)server.getConnectors()[0]).getLocalPort(); // jetty 9
