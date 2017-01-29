@@ -31,9 +31,12 @@ package it.tidalwave.bluemarine2.rest.impl.server;
 import javax.annotation.Nonnull;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
+import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 import java.util.Enumeration;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.file.Path;
 import java.net.InetAddress;
@@ -42,10 +45,14 @@ import java.net.InetSocketAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.URLEncoder;
+import org.eclipse.jetty.util.resource.Resource;
+import org.eclipse.jetty.util.resource.ResourceCollection;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import org.springframework.core.io.ClassPathResource;
+import org.eclipse.jetty.servlet.DefaultServlet;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 import it.tidalwave.messagebus.annotation.ListensTo;
@@ -57,7 +64,8 @@ import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import org.eclipse.jetty.servlet.DefaultServlet;
+import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
+import static java.util.stream.Collectors.toList;
 
 /***********************************************************************************************************************
  *
@@ -94,8 +102,10 @@ public class DefaultResourceServer implements ResourceServer
         server = new Server(InetSocketAddress.createUnresolved(ipAddress, Integer.getInteger("port", 0)));
 
         final ServletContextHandler servletContext = new ServletContextHandler();
-        servletContext.setResourceBase(new ClassPathResource("webapp").getURI().toString());
+        servletContext.setBaseResource(new ResourceCollection(findWebResources()));
+        log.info("RESOURCE BASE: {}", servletContext.getResourceBase());
         servletContext.setContextPath("/");
+        servletContext.setWelcomeFiles(new String[] { "index.xhtml" });
         final DelegateWebApplicationContext wac = new DelegateWebApplicationContext(applicationContext, servletContext.getServletContext());
         // FIXME: make this another REST stuff, serving audiofile/urn:....
         servletContext.addServlet(new ServletHolder("music", new RangeServlet(rootPath)), "/Music/*");
@@ -178,6 +188,22 @@ public class DefaultResourceServer implements ResourceServer
                                       .collect(Collectors.joining("/"));
 
         return "http://" + ipAddress + ":" + port + "/" + s;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private Resource[] findWebResources()
+      throws IOException
+      {
+        final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        final ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver(classLoader);
+        final List<Resource> resources = Stream.of(resolver.getResources("classpath*:/webapp"))
+                                               .map(_f(x -> Resource.newResource(x.getURI())))
+                                               .collect(toList());
+        return resources.toArray(new Resource[0]);
       }
 
     /*******************************************************************************************************************
