@@ -1,0 +1,62 @@
+table.tableSection
+  {
+    display:    table;
+    width:      100%;
+  }
+
+table.tableSection thead, table.tableSection tbody
+  {
+    float:      left;
+    width:      100%;
+  }
+
+table.tableSection tbody
+  {
+    overflow:   auto;
+    height:     500px;
+  }
+
+table.tableSection tr
+  {
+    width:      100%;
+    display:    table;
+    /*text-align: left;*/
+  }
+
+
+table.records th.displayName,
+table.records td.displayName
+  {
+    /*width: 90%;*/
+  }
+
+table.records th.source,
+table.records td.source
+  {
+    width: 7em;
+  }
+
+
+table.tracks th.trackNumber,
+table.tracks td.trackNumber
+  {
+    width: 3.5em;
+  }
+
+table.tracks th.duration,
+table.tracks td.duration
+  {
+    width: 7em;
+  }
+
+table.tracks th.displayName,
+table.tracks td.displayName
+  {
+    /*width: 77%;*/
+  }
+
+table.tracks th.source,
+table.tracks td.source
+  {
+    width: 7em;
+  }
