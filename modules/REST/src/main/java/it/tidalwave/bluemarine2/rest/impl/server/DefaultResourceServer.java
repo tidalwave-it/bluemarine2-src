@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.rest.impl.server;
 
 import javax.annotation.Nonnull;
 import javax.annotation.PreDestroy;
+import javax.inject.Inject;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 import java.util.Enumeration;
@@ -42,16 +43,21 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.URLEncoder;
 import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.context.ApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
+import it.tidalwave.bluemarine2.message.PowerOffNotification;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import org.eclipse.jetty.servlet.ServletContextHandler;
-import org.eclipse.jetty.servlet.ServletHolder;
+import org.eclipse.jetty.servlet.DefaultServlet;
 
 /***********************************************************************************************************************
  *
@@ -72,6 +78,9 @@ public class DefaultResourceServer implements ResourceServer
 
     private Path rootPath;
 
+    @Inject
+    private ApplicationContext applicationContext;
+
     /*******************************************************************************************************************
      *
      *
@@ -84,17 +93,32 @@ public class DefaultResourceServer implements ResourceServer
         ipAddress = getNonLoopbackIPv4Address().getHostAddress();
         server = new Server(InetSocketAddress.createUnresolved(ipAddress, Integer.getInteger("port", 0)));
 
-        final ServletHolder servletHolder = new ServletHolder(new RangeServlet(rootPath));
-        servletHolder.setName("music");
         final ServletContextHandler servletContext = new ServletContextHandler();
+        servletContext.setResourceBase(new ClassPathResource("webapp").getURI().toString());
         servletContext.setContextPath("/");
-        servletContext.addServlet(servletHolder, "/Music/*");
+        final DelegateWebApplicationContext wac = new DelegateWebApplicationContext(applicationContext, servletContext.getServletContext());
+        // FIXME: make this another REST stuff, serving audiofile/urn:....
+        servletContext.addServlet(new ServletHolder("music", new RangeServlet(rootPath)), "/Music/*");
+        servletContext.addServlet(new ServletHolder("spring", new DispatcherServlet(wac)), "/rest/*");
+        servletContext.addServlet(new ServletHolder("default", new DefaultServlet()), "/*");
         server.setHandler(servletContext);
 
         server.start();
         port = server.getConnectors()[0].getLocalPort(); // jetty 8
 //        port = ((ServerConnector)server.getConnectors()[0]).getLocalPort(); // jetty 9
         log.info(">>>> resource server jetty started at {}:{} serving resources at {}", ipAddress, port, rootPath);
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    /* VisibleForTesting */ void onPowerOffNotification (final @ListensTo @Nonnull PowerOffNotification notification)
+      throws Exception
+      {
+        log.info("onPowerOffNotification({})", notification);
+        server.stop();
+        server.destroy();
       }
 
     /*******************************************************************************************************************
