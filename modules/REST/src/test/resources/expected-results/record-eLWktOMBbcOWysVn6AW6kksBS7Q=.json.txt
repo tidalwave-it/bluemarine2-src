@@ -1,3 +1,8 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Server: Jetty(8.1.8.v20121106)
+Transfer-Encoding: chunked
+
 {
   "records" : [ {
     "id" : "urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=",

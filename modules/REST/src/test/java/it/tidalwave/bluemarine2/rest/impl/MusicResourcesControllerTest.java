@@ -28,16 +28,16 @@
  */
 package it.tidalwave.bluemarine2.rest.impl;
 
-import it.tidalwave.bluemarine2.commons.test.EventBarrier;
 import javax.annotation.Nonnull;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.Path;
 import java.net.URI;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.http.ResponseEntity;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 import org.eclipse.rdf4j.repository.RepositoryException;
@@ -50,14 +50,15 @@ import it.tidalwave.bluemarine2.message.PowerOffNotification;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import it.tidalwave.bluemarine2.persistence.Persistence;
+import it.tidalwave.bluemarine2.rest.ResponseEntityIo;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import it.tidalwave.bluemarine2.commons.test.EventBarrier;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
-import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 
@@ -138,12 +139,11 @@ public class MusicResourcesControllerTest extends SpringTestSupport
         // given
         final RestTemplate restTemplate = new RestTemplate();
         // when
-        final String resource = restTemplate.getForObject(URI.create(baseUrl + url), String.class);
+        final ResponseEntity<String> response = restTemplate.getForEntity(URI.create(baseUrl + url), String.class);
         // then
-        Files.createDirectories(PATH_TEST_RESULTS);
         final Path actualPath = PATH_TEST_RESULTS.resolve(expected);
         final Path expectedPath = PATH_EXPECTED_TEST_RESULTS.resolve(expected);
-        Files.write(actualPath, resource.getBytes(UTF_8));
+        ResponseEntityIo.store(actualPath, response, Arrays.asList("Last-Modified"));
         assertSameContents(expectedPath, actualPath);
       }
 
@@ -181,11 +181,11 @@ public class MusicResourcesControllerTest extends SpringTestSupport
       {
         return new Object[][]
           {
-            { "/rest/record",                                                          "records.json"  },
-            { "/rest/track",                                                           "tracks.json"   },
-            { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=",       "record-eLWktOMBbcOWysVn6AW6kksBS7Q=.json"          },
-            { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=/track", "record-eLWktOMBbcOWysVn6AW6kksBS7Q=-tracks.json"   },
-            { "/index.xhtml",                                                          "index.xhtml"  }
+            { "/rest/record",                                                          "records.json.txt"  },
+            { "/rest/track",                                                           "tracks.json.txt"   },
+            { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=",       "record-eLWktOMBbcOWysVn6AW6kksBS7Q=.json.txt"          },
+            { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=/track", "record-eLWktOMBbcOWysVn6AW6kksBS7Q=-tracks.json.txt"   },
+            { "/index.xhtml",                                                          "index.xhtml.txt"  }
           };
       }
   }
