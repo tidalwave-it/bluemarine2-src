@@ -26,19 +26,17 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver;
-
-import it.tidalwave.bluemarine2.model.AudioFile;
-import javax.annotation.Nonnull;
+package it.tidalwave.bluemarine2.rest.impl;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici
- * @version $Id$
+ * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-public interface ResourceServer
+public class Profile
   {
-    @Nonnull
-    public String urlForResource (@Nonnull AudioFile resource);
+    public interface Master {}
+    
+    public interface Detail extends Master{}
   }

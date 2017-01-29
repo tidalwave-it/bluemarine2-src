@@ -1,0 +1,132 @@
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Content-Length: 4976
+Content-Type: application/xhtml+xml
+Server: Jetty(8.1.8.v20121106)
+Vary: Accept-Encoding
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/bluemarine2.css"/>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/handlebars.min.js"></script>
+        <!--<script src="js/luga.common.min.js"></script>-->
+        <script src="js/luga.min.js"></script>
+        <script src="js/moment.min.js"></script>
+        <script src="js/numeral.min.js"></script>
+
+        <script>
+            (function ()
+              {
+                "use strict";
+
+                var baseUrl = "rest";
+
+                var recordFormatter = function(row, rowIndex, dataSet)
+                  {
+                    row.displayNameFormatted = row.displayName +
+                            ((typeof row.diskCount === 'undefined') ? "" : (" [" + row.diskNumber + "/" + row.diskCount + "]"));
+                    return row;
+                  };
+
+                var trackFormatter = function(row, rowIndex, dataSet)
+                  {
+                    row.durationFormatted = numeral(moment.duration(row.duration).asSeconds()).format('00:00');
+                    row.trackNumberFormatted = ((typeof row.diskCount === 'undefined') ? "" : (row.diskNumber + ".")) + row.trackNumber;
+                    return row;
+                  };
+
+                var recordsDs = new luga.data.JsonDataSet(
+                  {
+                    uuid:           "records",
+                    url:            baseUrl + "/record?source=musicbrainz",
+                    path:           "records",
+                    formatter:      recordFormatter
+                 });
+
+                var tracksDs = new luga.data.ChildJsonDataSet(
+                  {
+                    parentDataSet:  recordsDs,
+                    uuid:           "tracks",
+                    url:            baseUrl + "/record/{id}/track?source=musicbrainz",
+//                    url:            baseUrl + "/record/{id}/track?source={source}",
+                    path:           "tracks",
+                    formatter:      trackFormatter
+                  });
+
+                jQuery(document).ready(function ()
+                  {
+                    recordsDs.loadData();
+                  });
+              }());
+        </script>
+
+        <script id="recordTable" type="text/x-handlebars-template">
+            <table class="table table-bordered table-striped records">
+                <thead>
+                    <tr>
+                        <th class="displayName">Title</th>
+                        <th class="source">Source</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each entities}}
+                        <tr>
+                            <td class="displayName"><a href="#" data-lugaregion-setrowid="{{lugaRowId}}" data-lugaregion-select="luga-docs-selected">{{displayNameFormatted}}</a></td>
+                            <td class="source">{{source}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </script>
+
+        <script id="trackTable" type="text/x-handlebars-template">
+            <table class="table table-bordered table-striped tracks">
+                <thead>
+                    <tr>
+                        <th class="trackNumber"></th>
+                        <th class="duration"></th>
+                        <th class="displayName">Title</th>
+                        <th class="source">Source</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each entities}}
+                        <tr>
+                            <td class="trackNumber">{{trackNumberFormatted}}</td>
+                            <td class="duration">{{durationFormatted}}</td>
+                            <td class="displayName">{{displayName}}</td>
+                            <td class="source">{{source}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </script>
+    </head>
+    <body>
+        <table class="tableSection">
+            <tr>
+                <td>
+                    <div data-lugaregion="true"
+                         data-lugaregion-datasource-uuid="records"
+                         data-lugaregion-template-id="recordTable"></div>
+                </td>
+                <td style="width: 40%">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div data-lugaregion="true"
+                         data-lugaregion-datasource-uuid="tracks"
+                         data-lugaregion-template-id="trackTable"></div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
+
