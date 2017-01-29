@@ -28,6 +28,10 @@
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-mediaserver</artifactId>
         </dependency>
+        <dependency>
+            <groupId>it.tidalwave.bluemarine2</groupId>
+            <artifactId>it-tidalwave-bluemarine2-rest</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -53,17 +57,6 @@
         <dependency>
             <groupId>org.fourthline.cling</groupId>
             <artifactId>cling-support</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-server</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <scope>provided</scope>
         </dependency>
 
         <!-- TEST DEPENDENCIES -->
@@ -110,6 +103,7 @@
                             <test>ClingContentDirectoryAdapterSystemIntegrationTest#test_service_publishing</test>
                             <systemPropertyVariables>
                                 <delay>9999999</delay>
+                                <port>9999</port>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>

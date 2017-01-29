@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.model.finder;
 import javax.annotation.Nonnull;
 import java.util.Optional;
 import it.tidalwave.util.Id;
+import java.util.stream.Stream;
 
 /***********************************************************************************************************************
  *
