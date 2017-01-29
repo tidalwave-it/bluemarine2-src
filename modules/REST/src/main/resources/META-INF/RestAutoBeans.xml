@@ -40,13 +40,6 @@
     <!-- Turns on @Autowired, @PostConstruct, etc. -->
     <context:annotation-config />
 
-    <bean id="upnpService" class="org.fourthline.cling.UpnpServiceImpl" />
-
-    <bean id="upnpServiceDestroer" class="it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpServiceDestroyer" />
-
-    <bean id="contentDirectoryPublisher" class="it.tidalwave.bluemarine2.upnp.mediaserver.impl.device.DefaultDevicePublisher">
-        <constructor-arg value="it.tidalwave.bluemarine2.upnp.mediaserver.impl.ContentDirectoryClingAdapter" />
-        <property name="friendlyName" value="bm II"/>
-    </bean>
+    <bean id="resourceServer" class="it.tidalwave.bluemarine2.rest.impl.server.DefaultResourceServer" />
 
 </beans>

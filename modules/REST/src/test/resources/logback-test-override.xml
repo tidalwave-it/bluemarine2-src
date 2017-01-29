@@ -1,0 +1,7 @@
+<included>
+    <logger name="org.eclipse.rdf4j" level="DEBUG"/>
+    <logger name="it.tidalwave.util" level="DEBUG"/>
+    <logger name="it.tidalwave.role" level="DEBUG"/>
+    <logger name="it.tidalwave.messagebus.spi" level="DEBUG"/>
+    <logger name="it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryFinderSupport" level="INFO" />
+</included>

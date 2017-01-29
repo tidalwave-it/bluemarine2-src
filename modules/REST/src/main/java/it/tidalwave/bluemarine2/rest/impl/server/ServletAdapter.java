@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver;
+package it.tidalwave.bluemarine2.rest.impl.server;
 
 import java.io.IOException;
 import java.util.Enumeration;
