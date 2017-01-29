@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver;
+package it.tidalwave.bluemarine2.rest.impl.server;
 
 import javax.annotation.Nonnull;
 import javax.annotation.PreDestroy;
@@ -47,6 +47,7 @@ import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.ModelPropertyNames;
+import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 

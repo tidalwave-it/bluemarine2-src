@@ -51,7 +51,7 @@ import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.persistence.PersistencePropertyNames;
-import it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver.DefaultResourceServer;
+import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.annotations.AfterMethod;
@@ -91,7 +91,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
 
     private UpnpClient upnpClient;
 
-    private DefaultResourceServer resourceServer;
+    private ResourceServer resourceServer;
 
     private EventBarrier<PersistenceInitializedNotification> barrier;
 
@@ -127,6 +127,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
               "META-INF/PersistenceAutoBeans.xml",
               "META-INF/CatalogAutoBeans.xml" ,
               "META-INF/MediaServerAutoBeans.xml",
+              "META-INF/RestAutoBeans.xml",
               "META-INF/UPnPAutoBeans.xml");
       }
 
@@ -143,7 +144,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
         final Path repositoryPath = Paths.get("target/test-classes/test-sets/model-iTunes-fg-20160504-2.n3");
         properties.put(ROOT_PATH, TestSetLocator.getMusicTestSetsPath().resolve("iTunes-fg-20160504-2"));
         properties.put(PersistencePropertyNames.IMPORT_FILE, repositoryPath);
-        resourceServer = context.getBean(DefaultResourceServer.class);
+        resourceServer = context.getBean(ResourceServer.class);
         final MessageBus messageBus = context.getBean(MessageBus.class);
         barrier = new EventBarrier<>(PersistenceInitializedNotification.class, messageBus);
         messageBus.publish(new PowerOnNotification(properties));

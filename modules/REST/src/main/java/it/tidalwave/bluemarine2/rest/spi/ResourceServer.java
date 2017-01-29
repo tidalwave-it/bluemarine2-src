@@ -26,33 +26,26 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.upnp.mediaserver.impl.resourceserver;
+package it.tidalwave.bluemarine2.rest.spi;
+
+import javax.annotation.Nonnegative;
+import javax.annotation.Nonnull;
+import it.tidalwave.bluemarine2.model.AudioFile;
 
 /***********************************************************************************************************************
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
- * @version $Id: $
+ * @author  Fabrizio Giudici
+ * @version $Id$
  *
  **********************************************************************************************************************/
-class Range
+public interface ResourceServer
   {
-    public final long start;
-    public final long end;
-    public final long length;
-    public final long total;
+    @Nonnull
+    public String getIpAddress();
 
-    /**
-     * Construct a byte range.
-     * @param start Start of the byte range.
-     * @param end End of the byte range.
-     * @param total Total length of the byte source.
-     */
-    public Range (final long start, final long end, final long total)
-      {
-        this.start  = start;
-        this.end    = end;
-        this.length = end - start + 1;
-        this.total  = total;
-      }
+    @Nonnegative
+    public int getPort();
+
+    @Nonnull
+    public String urlForResource (@Nonnull AudioFile resource);
   }
-
