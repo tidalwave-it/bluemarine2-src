@@ -184,7 +184,8 @@ public class MusicResourcesControllerTest extends SpringTestSupport
             { "/rest/record",                                                          "records.json"  },
             { "/rest/track",                                                           "tracks.json"   },
             { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=",       "record-eLWktOMBbcOWysVn6AW6kksBS7Q=.json"          },
-            { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=/track", "record-eLWktOMBbcOWysVn6AW6kksBS7Q=-tracks.json"   }
+            { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=/track", "record-eLWktOMBbcOWysVn6AW6kksBS7Q=-tracks.json"   },
+            { "/index.xhtml",                                                          "index.xhtml"  }
           };
       }
   }

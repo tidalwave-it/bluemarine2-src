@@ -57,6 +57,7 @@ import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import org.eclipse.jetty.servlet.DefaultServlet;
 
 /***********************************************************************************************************************
  *
@@ -96,9 +97,10 @@ public class DefaultResourceServer implements ResourceServer
         servletContext.setResourceBase(new ClassPathResource("webapp").getURI().toString());
         servletContext.setContextPath("/");
         final DelegateWebApplicationContext wac = new DelegateWebApplicationContext(applicationContext, servletContext.getServletContext());
-        // FIXME: make this another REST stuff, serving audiofile/urn:.... 
+        // FIXME: make this another REST stuff, serving audiofile/urn:....
         servletContext.addServlet(new ServletHolder("music", new RangeServlet(rootPath)), "/Music/*");
         servletContext.addServlet(new ServletHolder("spring", new DispatcherServlet(wac)), "/rest/*");
+        servletContext.addServlet(new ServletHolder("default", new DefaultServlet()), "/*");
         server.setHandler(servletContext);
 
         server.start();

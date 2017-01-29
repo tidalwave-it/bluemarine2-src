@@ -138,6 +138,7 @@
                             <test>MusicResourcesControllerTest#test_service_publishing</test>
                             <systemPropertyVariables>
                                 <delay>9999999</delay>
+                                <port>9999</port>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
