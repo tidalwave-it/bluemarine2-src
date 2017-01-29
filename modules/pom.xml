@@ -276,6 +276,28 @@
                 </plugins>
             </build>
         </profile>
+
+        <profile>
+            <id>it.tidalwave.bluemarine2-webresources-profile</id>
+            <activation>
+                <file>
+                    <exists>src/config/activate-it.tidalwave.bluemarine2-webresources-profile-profile</exists>
+                </file>
+            </activation>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/webapp</directory>
+                        <targetPath>webapp</targetPath>
+                        <filtering>true</filtering>
+                    </resource>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                    </resource>
+                </resources>
+            </build>
+
+        </profile>
     </profiles>
 
     <build>
