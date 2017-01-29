@@ -28,24 +28,35 @@
  */
 package it.tidalwave.bluemarine2.rest.impl;
 
+import it.tidalwave.bluemarine2.commons.test.EventBarrier;
 import javax.annotation.Nonnull;
+import java.util.HashMap;
+import java.util.Map;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.nio.file.Path;
-import java.net.InetSocketAddress;
 import java.net.URI;
-import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.servlet.ServletContextHandler;
-import org.eclipse.jetty.servlet.ServletHolder;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.servlet.DispatcherServlet;
+import org.eclipse.rdf4j.repository.Repository;
+import org.eclipse.rdf4j.repository.RepositoryConnection;
+import org.eclipse.rdf4j.repository.RepositoryException;
+import org.eclipse.rdf4j.rio.RDFFormat;
+import org.eclipse.rdf4j.rio.RDFParseException;
+import it.tidalwave.util.Key;
+import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
+import it.tidalwave.bluemarine2.message.PowerOffNotification;
+import it.tidalwave.bluemarine2.message.PowerOnNotification;
+import it.tidalwave.bluemarine2.model.ModelPropertyNames;
+import it.tidalwave.bluemarine2.persistence.Persistence;
+import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
@@ -59,46 +70,67 @@ import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 @Slf4j
 public class MusicResourcesControllerTest extends SpringTestSupport
   {
-    private Server server;
+    private ResourceServer server;
+
+    private MessageBus messageBus;
 
     private String baseUrl;
 
+    private EventBarrier<PersistenceInitializedNotification> barrier;
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     public MusicResourcesControllerTest()
       {
         super("classpath:META-INF/DciAutoBeans.xml",
               "classpath:META-INF/CommonsAutoBeans.xml",
               "classpath:META-INF/ModelAutoBeans.xml",
               "classpath:META-INF/PersistenceAutoBeans.xml",
+              "classpath:META-INF/RestAutoBeans.xml",
               "classpath:META-INF/CatalogAutoBeans.xml");
       }
 
-    @BeforeClass
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+//    @BeforeClass
+    @BeforeMethod
     public void setup()
       throws Exception
       {
-        final ServletHolder diServletHolder = new ServletHolder(new DispatcherServlet());
-        diServletHolder.setName("spring");
-        final String ipAddress = "127.0.0.1";
-        server = new Server(InetSocketAddress.createUnresolved(ipAddress, Integer.getInteger("port", 0)));
-        final ServletContextHandler servletContext = new ServletContextHandler();
-        servletContext.setContextPath("/");
-        servletContext.addServlet(diServletHolder, "/rest/*");
-        servletContext.setResourceBase(new ClassPathResource("webapp").getURI().toString());
+        server = context.getBean(ResourceServer.class);
+        messageBus = context.getBean(MessageBus.class);
+        final Persistence persistence = context.getBean(Persistence.class);
 
-        server.setHandler(servletContext);
-        server.start();
-        final int port = server.getConnectors()[0].getLocalPort(); // jetty 8
-        baseUrl = String.format("http://%s:%d", ipAddress, port);
+        barrier = new EventBarrier<>(PersistenceInitializedNotification.class, messageBus);
+
+        final Map<Key<?>, Object> properties = new HashMap<>();
+        properties.put(ModelPropertyNames.ROOT_PATH, Paths.get("/tmp")); // FIXME
+        messageBus.publish(new PowerOnNotification(properties));
+        Thread.sleep(2000);
+        barrier.await();
+        final Repository repository = persistence.getRepository();
+        loadInMemoryCatalog(repository, Paths.get("target/test-classes/test-sets/model-iTunes-fg-20161210-1.n3"));
+        loadInMemoryCatalog(repository, Paths.get("target/test-classes/test-sets/musicbrainz-iTunes-fg-20161210-1.n3"));
+
+        baseUrl = String.format("http://%s:%d", server.getIpAddress(), server.getPort());
       }
 
-    @AfterClass
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+//    @AfterClass
+    @AfterMethod
     public void shutdown()
       throws Exception
       {
-        server.stop();
-        server.destroy();
+        messageBus.publish(new PowerOffNotification());
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Test(dataProvider = "resources")
     public void must_serve_REST_resource (final @Nonnull String url, final @Nonnull String expected)
       throws IOException
@@ -115,6 +147,9 @@ public class MusicResourcesControllerTest extends SpringTestSupport
         assertSameContents(expectedPath, actualPath);
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @Test
     public void test_service_publishing()
       throws InterruptedException
@@ -122,6 +157,25 @@ public class MusicResourcesControllerTest extends SpringTestSupport
         Thread.sleep(Integer.getInteger("delay", 0));
       }
 
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull // FIXME: duplicated code
+    private static void loadInMemoryCatalog (final @Nonnull Repository repository, final @Nonnull Path path)
+      throws RDFParseException, IOException, RepositoryException
+      {
+        log.info("loadInMemoryCatalog(..., {})", path);
+
+        try (final RepositoryConnection connection = repository.getConnection())
+          {
+            connection.add(path.toFile(), null, RDFFormat.N3);
+            connection.commit();
+          }
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
     @DataProvider
     private static Object[][] resources()
       {

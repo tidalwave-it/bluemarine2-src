@@ -29,33 +29,28 @@
 package it.tidalwave.bluemarine2.rest.impl;
 
 import javax.annotation.Nonnull;
-import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Stream;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import com.fasterxml.jackson.annotation.JsonView;
-import org.eclipse.rdf4j.repository.Repository;
-import org.eclipse.rdf4j.repository.RepositoryConnection;
-import org.eclipse.rdf4j.repository.RepositoryException;
-import org.eclipse.rdf4j.repository.sail.SailRepository;
-import org.eclipse.rdf4j.rio.RDFFormat;
-import org.eclipse.rdf4j.rio.RDFParseException;
-import org.eclipse.rdf4j.sail.memory.MemoryStore;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Id;
+import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMediaCatalog;
-import it.tidalwave.util.Finder8;
-import java.util.List;
-import java.util.function.Function;
+import it.tidalwave.bluemarine2.persistence.Persistence;
+import it.tidalwave.messagebus.annotation.ListensTo;
+import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
-import java.util.stream.Stream;
 import static org.springframework.http.MediaType.*;
 
 /***********************************************************************************************************************
@@ -64,23 +59,23 @@ import static org.springframework.http.MediaType.*;
  * @version $Id: $
  *
  **********************************************************************************************************************/
-@RestController @Slf4j
+@RestController @SimpleMessageSubscriber @Slf4j
 public class MusicResourcesController
   {
-    private MediaCatalog catalog;
+    private MediaCatalog catalog; // FIXME: directly inject the Catalog
 
-    @PostConstruct
-    private void initialize()
+    @Inject
+    public Persistence persistence;
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    /* VisibleForTesting */ void onPersistenceInitializedNotification (final @ListensTo PersistenceInitializedNotification notification)
       throws IOException
       {
-        log.info("loading triples...");
-        final Repository repository = new SailRepository(new MemoryStore());
-        repository.initialize();
-        loadInMemoryCatalog(repository, Paths.get("target/test-classes/test-sets/model-iTunes-fg-20161210-1.n3"));
-        loadInMemoryCatalog(repository, Paths.get("target/test-classes/test-sets/musicbrainz-iTunes-fg-20161210-1.n3"));
-//        System.setProperty("blueMarine2.source", "musicbrainz");
-//        System.setProperty("blueMarine2.fallback", "embedded");
-        catalog = new RepositoryMediaCatalog(repository);
+        log.info("onPersistenceInitializedNotification({})", notification);
+        catalog = new RepositoryMediaCatalog(persistence.getRepository());
       }
 
     /*******************************************************************************************************************
@@ -154,21 +149,5 @@ public class MusicResourcesController
                      .stream()
                      .map(mapper)
                      .collect(toList());
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @Nonnull // FIXME: duplicated code
-    private static void loadInMemoryCatalog (final @Nonnull Repository repository, final @Nonnull Path path)
-      throws RDFParseException, IOException, RepositoryException
-      {
-        log.info("loadInMemoryCatalog(..., {})", path);
-
-        try (final RepositoryConnection connection = repository.getConnection())
-          {
-            connection.add(path.toFile(), null, RDFFormat.N3);
-            connection.commit();
-          }
       }
   }
