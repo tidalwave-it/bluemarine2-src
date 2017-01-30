@@ -34,7 +34,7 @@
     <parent>
         <groupId>it.tidalwave.bluemarine2</groupId>
         <artifactId>bluemarine2-modules</artifactId>
-        <version>1.0-ALPHA-18-SNAPSHOT</version>
+        <version>1.0-ALPHA-18</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
@@ -47,7 +47,7 @@
 
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-service-linux</artifactId>
-    <version>1.0-ALPHA-18-SNAPSHOT</version>
+    <version>1.0-ALPHA-18</version>
     <packaging>deb</packaging>
     <name>blueMarine II - Installers - Headless Service, Linux DEB</name>
     <description>This module creates a Linux service bundle.</description>
