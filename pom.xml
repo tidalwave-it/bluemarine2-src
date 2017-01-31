@@ -193,7 +193,7 @@ Still at the early stage of development, it can be used with some hack to reprod
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
                 <artifactId>it-tidalwave-bluemarine2-metadata-musicbrainz</artifactId>
-                <version>1.0-ALPHA-17-SNAPSHOT</version>
+                <version>1.0-ALPHA-19-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>it.tidalwave.bluemarine2</groupId>
