@@ -1,0 +1,327 @@
+ALL TRACKS (72):
+
+  01/01 11 04:13 'Round Midnight (urn:bluemarine:track:R7N5_KEy4Tyg-aVGxDfwa31orUk=) Thelonious Sphere Monk/Monk's Blues/11 - 'Round Midnight.mp3 - embedded
+  01/01 11 06:40 'round Midnight (urn:bluemarine:track:gtjB3RRAEE0oK8eFS9eiQuODIHQ=) Pat Metheny/What's It All About/11 - 'Round Midnight.mp3 - embedded
+  01/01 03 07:47 Alfie (urn:bluemarine:track:X5u3e0yKkqS7AYaIaAaIWC_RlWc=) Pat Metheny/What's It All About/03 - Alfie.mp3 - embedded
+  01/02 10 05:05 All Day Sucker (urn:bluemarine:track:-sP2dUCnPkpTPftXB5SEr1WKP-c=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 10 - All Day Sucker.mp3 - embedded
+  01/01 10 04:22 And I Love Her (urn:bluemarine:track:g27KOA6hncFcaM23mUk8XtELvSQ=) Pat Metheny/What's It All About/10 - And I Love Her.mp3 - embedded
+  01/02 07 08:28 Another Star (urn:bluemarine:track:Jg0sJh-0L8RACpi-NKCVyvX1vZU=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 07 - Another Star.mp3 - embedded
+  01/02 06 07:08 As (urn:bluemarine:track:_c335v5dN_F1xqfM0pe3R8H4tH8=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 06 - As.mp3 - embedded
+  01/01 09 05:18 Betcha By Golly, Wow (urn:bluemarine:track:2q8ktGkomI9ZSomqDmgnAzjiLeY=) Pat Metheny/What's It All About/09 - Betcha by Golly, Wow.mp3 - embedded
+  01/02 03 08:29 Black Man (urn:bluemarine:track:rbLVLXei4ld9Bi_Dp7w4lVjZdfc=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 03 - Black Man.mp3 - embedded
+  01/01 10 06:14 Blue Monk (urn:bluemarine:track:ueOVz3lq_EENnMHuMNyQQ2yxkv4=) Thelonious Sphere Monk/Monk's Blues/10 - Blue Monk.mp3 - embedded
+  01/01 09 08:34 Breakdealer (urn:bluemarine:track:WrrMLlI0S_imF5Lym1UToDDpukA=) Pat Metheny/Unity Band/09 - Breakdealer.mp3 - embedded
+  01/01 05 03:51 Brilliant Corners (Album Version) (urn:bluemarine:track:qvL_qVMEU89x1COVCGy80GWDgBk=) Thelonious Sphere Monk/Monk's Blues/05 - Brilliant Corners (Album Version).mp3 - embedded
+  01/01 03 05:34 Cantaloupe Island (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:Ls-NoD4PXko1dMo05g1JP4cEXZE=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/03 - Cantaloupe Island (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3 - embedded
+  01/01 02 05:28 Cherish (urn:bluemarine:track:mdYqXKdFJ9ncgO6xTrMQb9czPfI=) Pat Metheny/What's It All About/02 - Cherish.mp3 - embedded
+  01/01 03 08:28 Come and See (urn:bluemarine:track:XOY8nK-Y6lGUw2f_W-cHa8gFKUA=) Pat Metheny/Unity Band/03 - Come and See.mp3 - embedded
+  01/01 06 02:40 Consecutive Seconds (urn:bluemarine:track:lbjeQKUNhQmyYioUrVYdWFUUfpM=) Thelonious Sphere Monk/Monk's Blues/06 - Consecutive Seconds.mp3 - embedded
+  01/02 04 03:45 Contusion (urn:bluemarine:track:k9kv2nLB9S-k9Hto72TlEARoeL8=) Stevie Wonder/Songs In The Key Of Life/04 - Contusion.mp3 - embedded
+  01/01 05 09:16 Dolphin Dance (urn:bluemarine:track:qoAPiHqsM7ol0XgLJHyZyNJdlMo=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/05 - Dolphin Dance.mp3 - embedded
+  01/01 01 09:15 Don't Take Your Love From Me (Album Version) (urn:bluemarine:track:cuRZtqLe8l57iCTFmaWfh2d6Nrk=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/01 - Don't Take Your Love From Me (Album Version).mp3 - embedded
+  01/02 11 03:56 Easy Goin' Evening (My Mama's Call) (urn:bluemarine:track:A0VauJnrAZITZyYR_lySR-feQHU=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 11 - Easy Goin' Evening (My Mama's Call).mp3 - embedded
+  01/02 09 04:08 Ebony Eyes (urn:bluemarine:track:ldC9XGlQBx6D-DQiQccwOkbxWCE=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 09 - Ebony Eyes.mp3 - embedded
+  01/01 02 10:28 Entry Point (urn:bluemarine:track:vo179vVz9LUSWG-mHuxlmxmzDbI=) Pat Metheny/Orchestrion/02 - Entry Point.mp3 - embedded
+  01/01 03 08:34 Expansion (urn:bluemarine:track:V9sE9b3GOH1G7lRyH-JgAfarj0w=) Pat Metheny/Orchestrion/03 - Expansion.mp3 - embedded
+  01/01 05 05:12 Garota De Ipanema (urn:bluemarine:track:DiZdb1E7c2s1elwkoKzKKNoTBKQ=) Pat Metheny/What's It All About/05 - Garota de Ipanema.mp3 - embedded
+  01/02 02 02:42 Have A Talk With God (urn:bluemarine:track:zPqMBiz66ykPtT2Ef5Tz9t64D7A=) Stevie Wonder/Songs In The Key Of Life/02 - Have A Talk With God.mp3 - embedded
+  01/02 06 04:12 I Wish (urn:bluemarine:track:nTQrV3k1yqnCnWHdEnCCNayCqp8=) Stevie Wonder/Songs In The Key Of Life/06 - I Wish.mp3 - embedded
+  01/01 02 08:09 I'll Get By (As Long As I Have You) (Album Version) (urn:bluemarine:track:Y71NZjYlu3Cv70-MJqUOCPrUe-c=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/02 - I'll Get By (As Long As I Have You) (Album Version).mp3 - embedded
+  01/02 05 03:12 If It's Magic (urn:bluemarine:track:WJ__DHc9-5W9dRkfvFtEuzPga1I=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 05 - If It's Magic.mp3 - embedded
+  01/01 06 06:26 Interval Waltz (urn:bluemarine:track:mLDPbV0snyaYt-PfZHzOriZtSBo=) Pat Metheny/Unity Band/06 - Interval Waltz.mp3 - embedded
+  01/01 04 10:22 Invitation (Album Version) (urn:bluemarine:track:B0onm5oQ5yeN453t1nAEX_UXbRQ=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/04 - Invitation (Album Version).mp3 - embedded
+  01/02 01 06:34 Isn't She Lovely (urn:bluemarine:track:On4MPxQh05wsk6HddHC4Bx3-ges=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 01 - Isn't She Lovely.mp3 - embedded
+  01/02 02 06:22 Joy Inside My Tears (urn:bluemarine:track:2gUeyJ8kfDKB6fmaouvehdbSzug=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 02 - Joy Inside My Tears.mp3 - embedded
+  01/01 04 02:50 Just A Glance At Love (Album Version) (urn:bluemarine:track:EHqU25JfjjP2dIJ9pvPXT38rR1w=) Thelonious Sphere Monk/Monk's Blues/04 - Just A Glance At Love (Album Version).mp3 - embedded
+  01/02 07 03:36 Knocks Me Off My Feet (urn:bluemarine:track:zBX_l9mTWmihYDJoJI5CYw_zjGw=) Stevie Wonder/Songs In The Key Of Life/07 - Knocks Me Off My Feet.mp3 - embedded
+  01/01 05 06:24 Leaving Town (urn:bluemarine:track:oP8pHG8FNRYzkfJkzRTZKPiPlC0=) Pat Metheny/Unity Band/05 - Leaving Town.mp3 - embedded
+  01/01 01 03:45 Let's Cool One (Album Version) (urn:bluemarine:track:y-3vR4bdZO54ie8-9n8m1pOUo94=) Thelonious Sphere Monk/Monk's Blues/01 - Let's Cool One (Album Version).mp3 - embedded
+  01/01 03 08:47 Little One (urn:bluemarine:track:B82_XrW5GO660cBMZBWsLsgCpWs=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/03 - Little One.mp3 - embedded
+  01/02 01 07:05 Love's In Need Of Love Today (urn:bluemarine:track:V_qWu6EjeetzGzKnfpLYjdl9yZA=) Stevie Wonder/Songs In The Key Of Life/01 - Love's In Need Of Love Today.mp3 - embedded
+  01/01 01 07:57 Maiden Voyage (urn:bluemarine:track:UgxQV7mnaqXzsnEe_IJX9JPrJmg=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/01 - Maiden Voyage.mp3 - embedded
+  01/01 07 08:01 Monk's Point (urn:bluemarine:track:LJSZR9H4nyLungmNId1_D_XE6G4=) Thelonious Sphere Monk/Monk's Blues/07 - Monk's Point.mp3 - embedded
+  01/01 01 07:37 New Year (urn:bluemarine:track:yuDuADlVwvjjx0qP-qeFssedFYk=) Pat Metheny/Unity Band/01 - New Year.mp3 - embedded
+  01/02 04 03:48 Ngiculela-Es Una Historia-I Am Singing (urn:bluemarine:track:4ftx6t9mEBMZjRTUn1t81Dzf34A=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 04 - Ngiculela-Es Una Historia-I Am Singing.mp3 - embedded
+  01/01 06 10:47 Oliloqui Valley (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:W5-pGtDsbYF7q8qpUccPubmM0rI=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/06 - Oliloqui Valley (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3 - embedded
+  01/01 02 08:30 Oliloqui Valley (Rudy Van Gelder Edition) (1999 - Remaster) (urn:bluemarine:track:vCBaLw-1p4v6lJFkA2-rqMNScQI=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/02 - Oliloqui Valley (Rudy Van Gelder Edition) (1999 - Remaster).mp3 - embedded
+  01/01 05 07:36 One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:KFguFHQPt4fodQG5oNXKJjRUmzE=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/05 - One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3 - embedded
+  01/01 01 07:21 One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:5uLUEJD1O_X2rgAZ9RIcgpfhnzQ=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/01 - One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3 - embedded
+  01/01 01 15:48 Orchestrion (urn:bluemarine:track:h2pfiqVLLkEzJyoxUxUUJrvjlt4=) Pat Metheny/Orchestrion/01 - Orchestrion.mp3 - embedded
+  01/02 10 06:23 Ordinary Pain (urn:bluemarine:track:OFgF7qO0g5Uu0Ta_IIFqkDGbjtU=) Stevie Wonder/Songs In The Key Of Life/10 - Ordinary Pain.mp3 - embedded
+  01/02 08 03:27 Pastime Paradise (urn:bluemarine:track:fRppsRWN141pP1jBq3Z4vdBF03s=) Stevie Wonder/Songs In The Key Of Life/08 - Pastime Paradise.mp3 - embedded
+  01/01 04 03:28 Pipeline (urn:bluemarine:track:EY9MaQvEinvl7Tik7DJvFHsIy9E=) Pat Metheny/What's It All About/04 - Pipeline.mp3 - embedded
+  01/01 06 07:12 Rainy Days And Mondays (urn:bluemarine:track:j-d6AzW95Ntte5SW-nDHY88rqII=) Pat Metheny/What's It All About/06 - Rainy Days and Mondays.mp3 - embedded
+  01/01 02 04:36 Reflections (Album Version) (urn:bluemarine:track:-BZpxDv4ym3Z_zyRy_zK75P5rr8=) Thelonious Sphere Monk/Monk's Blues/02 - Reflections (Album Version).mp3 - embedded
+  01/01 02 05:33 Roofdogs (urn:bluemarine:track:rV7-xoJx5AbW4Eg9jLmpLK8B2ro=) Pat Metheny/Unity Band/02 - Roofdogs.mp3 - embedded
+  01/01 03 07:31 Rootie Tootie (urn:bluemarine:track:ar7qVD08w9OVrt_XpFNtvxIlWxI=) Thelonious Sphere Monk/Monk's Blues/03 - Rootie Tootie.mp3 - embedded
+  01/02 08 04:53 Saturn (urn:bluemarine:track:wIcOe4CY1EIOocvvvtqE018bFdo=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 08 - Saturn.mp3 - embedded
+  01/01 07 11:26 Signals (Orchestrion Sketch) (urn:bluemarine:track:4C0eNCGTjbNKm59ykD2J5C7EhDI=) Pat Metheny/Unity Band/07 - Signals (Orchestrion Sketch).mp3 - embedded
+  01/02 05 03:52 Sir Duke (urn:bluemarine:track:N9kojfpnl3VphROCWWcY-SpAnXM=) Stevie Wonder/Songs In The Key Of Life/05 - Sir Duke.mp3 - embedded
+  01/01 08 04:28 Slow Hot Wind (urn:bluemarine:track:lm4dZa1Eurm4S0CGh4NC49LIUQk=) Pat Metheny/What's It All About/08 - Slow Hot Wind.mp3 - embedded
+  01/01 04 09:17 Soul Search (urn:bluemarine:track:3XHVnRJSATpsqfl2TyshaCeDJtk=) Pat Metheny/Orchestrion/04 - Soul Search.mp3 - embedded
+  01/01 05 07:44 Spirit Of The Air (urn:bluemarine:track:kx29swV2hDOTnY0sNyCrC9bD2BA=) Pat Metheny/Orchestrion/05 - Spirit Of The Air.mp3 - embedded
+  01/01 03 06:53 Spring Is Here (Album Version) (urn:bluemarine:track:PWKE2DbVVyqCO_6yO8OCn9Ytobk=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/03 - Spring Is Here (Album Version).mp3 - embedded
+  01/01 09 07:17 Straight, No Chaser (urn:bluemarine:track:bE7b8mwrFn0vFWjE3ZEk2V-qcBk=) Thelonious Sphere Monk/Monk's Blues/09 - Straight, No Chaser.mp3 - embedded
+  01/02 09 04:14 Summer Soft (urn:bluemarine:track:CKAN2nBgZNV2mQFExdSXfGe-9x0=) Stevie Wonder/Songs In The Key Of Life/09 - Summer Soft.mp3 - embedded
+  01/01 04 10:02 Survival Of The Fittest (urn:bluemarine:track:5Tn2jagJVuRIpV05B2IGfhOXvs4=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/04 - Survival Of The Fittest.mp3 - embedded
+  01/01 07 06:03 That's The Way I've Always Heard It Should Be (urn:bluemarine:track:TXbShidgAGT5UNBJ9Hb5J_Paw1Y=) Pat Metheny/What's It All About/07 - That's the Way I've Always Heard It Should Be.mp3 - embedded
+  01/01 04 14:01 The Egg (1999 - Remaster) [Rudy Van Gelder Edition] (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:J670YeZavhlxJGUbEFomjuPcJIA=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/04 - The Egg (1999 - Remaster) [Rudy Van Gelder Edition] (1999 Digital Remaster) (Rudy Van.mp3 - embedded
+  01/01 02 06:01 The Eye Of The Hurricane (urn:bluemarine:track:PT1sJlfP0l-TG5wr3heoPmY1XM0=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/02 - The Eye Of The Hurricane.mp3 - embedded
+  01/01 01 06:33 The Sound Of Silence (urn:bluemarine:track:xa-UncfEgrx1SmlcxikoeFdtCO4=) Pat Metheny/What's It All About/01 - The Sound of Silence.mp3 - embedded
+  01/01 08 05:57 Then and Now (urn:bluemarine:track:NlY_EBT-LCJudlAGmGsxkBRCuHI=) Pat Metheny/Unity Band/08 - Then and Now.mp3 - embedded
+  01/01 04 05:20 This Belongs to You (urn:bluemarine:track:_9Ui8aDyAlMA1pQql9t07zYCD50=) Pat Metheny/Unity Band/04 - This Belongs to You.mp3 - embedded
+  01/01 08 04:58 Trinkle, Tinkle (urn:bluemarine:track:tf-mi4I2naramYmykiD0ItVTZn0=) Thelonious Sphere Monk/Monk's Blues/08 - Trinkle, Tinkle.mp3 - embedded
+  01/02 03 03:25 Village Ghetto Land (urn:bluemarine:track:AIHrB_Gx4QLC0Po3p9446FrCFuQ=) Stevie Wonder/Songs In The Key Of Life/03 - Village Ghetto Land.mp3 - embedded
+
+
+
+ALL RECORDS (8):
+
+  Empyrean Isles (The Rudy Van Gelder Edition) (urn:bluemarine:record:dixhfU1CMmUSXDlaE3u8Dtr_XG4=) - embedded
+  Maiden Voyage (The Rudy Van Gelder Edition) (urn:bluemarine:record:eAmukeW4wSFaoFoAVOfGZ9Qts8g=) - embedded
+  Monk's Blues (urn:bluemarine:record:j9O4FGH45wXJi8gVL1iFoHSCNRY=) - embedded
+  Orchestrion (urn:bluemarine:record:btDif3r3mgzt3cOWjXPPAs4gb_g=) - embedded
+  Songs In The Key Of Life (urn:bluemarine:record:kYBL2HWEEjdYC7tL2NY5DRTtG1k=) - embedded
+  Standard Coltrane (Rudy Van Gelder Remaster) (urn:bluemarine:record:UZ9WpMFVyppjYUHgKmJ2_NlJ0AU=) - embedded
+  Unity Band (urn:bluemarine:record:iw2oIy2-BYGLzvaKeJW85PL1EDQ=) - embedded
+  What's It All About (urn:bluemarine:record:flc7yvriASGIWSszgYUkRhdzp9c=) - embedded
+
+
+
+ALL ARTISTS (6):
+
+  Herbie Hancock (urn:bluemarine:artist:TzVyzQz4nFXGbYdGXFsl5oOZm6o=) - embedded
+  John Coltrane (urn:bluemarine:artist:usZLLSZqaqQMqgbp9GGmImCu-Ao=) - embedded
+  Pat Metheny (urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=) - embedded
+  Stevie Wonder (urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=) - embedded
+  Thelonious Monk (urn:bluemarine:artist:NuxVvihrXEo-9eJ-1Kiu_HKh0S8=) - embedded
+  Thelonious Sphere Monk (urn:bluemarine:artist:zFIShJu_MTqAA2_ZNWjEukpdMfQ=) - embedded
+
+TRACKS OF Herbie Hancock (urn:bluemarine:artist:TzVyzQz4nFXGbYdGXFsl5oOZm6o=) (11):
+  01/01 01 07:21 One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:5uLUEJD1O_X2rgAZ9RIcgpfhnzQ=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/01 - One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3 - embedded
+  01/01 02 08:30 Oliloqui Valley (Rudy Van Gelder Edition) (1999 - Remaster) (urn:bluemarine:track:vCBaLw-1p4v6lJFkA2-rqMNScQI=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/02 - Oliloqui Valley (Rudy Van Gelder Edition) (1999 - Remaster).mp3 - embedded
+  01/01 03 05:34 Cantaloupe Island (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:Ls-NoD4PXko1dMo05g1JP4cEXZE=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/03 - Cantaloupe Island (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3 - embedded
+  01/01 04 14:01 The Egg (1999 - Remaster) [Rudy Van Gelder Edition] (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:J670YeZavhlxJGUbEFomjuPcJIA=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/04 - The Egg (1999 - Remaster) [Rudy Van Gelder Edition] (1999 Digital Remaster) (Rudy Van.mp3 - embedded
+  01/01 05 07:36 One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:KFguFHQPt4fodQG5oNXKJjRUmzE=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/05 - One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3 - embedded
+  01/01 06 10:47 Oliloqui Valley (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:W5-pGtDsbYF7q8qpUccPubmM0rI=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/06 - Oliloqui Valley (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3 - embedded
+  01/01 01 07:57 Maiden Voyage (urn:bluemarine:track:UgxQV7mnaqXzsnEe_IJX9JPrJmg=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/01 - Maiden Voyage.mp3 - embedded
+  01/01 02 06:01 The Eye Of The Hurricane (urn:bluemarine:track:PT1sJlfP0l-TG5wr3heoPmY1XM0=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/02 - The Eye Of The Hurricane.mp3 - embedded
+  01/01 03 08:47 Little One (urn:bluemarine:track:B82_XrW5GO660cBMZBWsLsgCpWs=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/03 - Little One.mp3 - embedded
+  01/01 04 10:02 Survival Of The Fittest (urn:bluemarine:track:5Tn2jagJVuRIpV05B2IGfhOXvs4=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/04 - Survival Of The Fittest.mp3 - embedded
+  01/01 05 09:16 Dolphin Dance (urn:bluemarine:track:qoAPiHqsM7ol0XgLJHyZyNJdlMo=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/05 - Dolphin Dance.mp3 - embedded
+
+TRACKS OF John Coltrane (urn:bluemarine:artist:usZLLSZqaqQMqgbp9GGmImCu-Ao=) (4):
+  01/01 01 09:15 Don't Take Your Love From Me (Album Version) (urn:bluemarine:track:cuRZtqLe8l57iCTFmaWfh2d6Nrk=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/01 - Don't Take Your Love From Me (Album Version).mp3 - embedded
+  01/01 02 08:09 I'll Get By (As Long As I Have You) (Album Version) (urn:bluemarine:track:Y71NZjYlu3Cv70-MJqUOCPrUe-c=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/02 - I'll Get By (As Long As I Have You) (Album Version).mp3 - embedded
+  01/01 03 06:53 Spring Is Here (Album Version) (urn:bluemarine:track:PWKE2DbVVyqCO_6yO8OCn9Ytobk=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/03 - Spring Is Here (Album Version).mp3 - embedded
+  01/01 04 10:22 Invitation (Album Version) (urn:bluemarine:track:B0onm5oQ5yeN453t1nAEX_UXbRQ=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/04 - Invitation (Album Version).mp3 - embedded
+
+TRACKS OF Pat Metheny (urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=) (25):
+  01/01 01 15:48 Orchestrion (urn:bluemarine:track:h2pfiqVLLkEzJyoxUxUUJrvjlt4=) Pat Metheny/Orchestrion/01 - Orchestrion.mp3 - embedded
+  01/01 02 10:28 Entry Point (urn:bluemarine:track:vo179vVz9LUSWG-mHuxlmxmzDbI=) Pat Metheny/Orchestrion/02 - Entry Point.mp3 - embedded
+  01/01 03 08:34 Expansion (urn:bluemarine:track:V9sE9b3GOH1G7lRyH-JgAfarj0w=) Pat Metheny/Orchestrion/03 - Expansion.mp3 - embedded
+  01/01 04 09:17 Soul Search (urn:bluemarine:track:3XHVnRJSATpsqfl2TyshaCeDJtk=) Pat Metheny/Orchestrion/04 - Soul Search.mp3 - embedded
+  01/01 05 07:44 Spirit Of The Air (urn:bluemarine:track:kx29swV2hDOTnY0sNyCrC9bD2BA=) Pat Metheny/Orchestrion/05 - Spirit Of The Air.mp3 - embedded
+  01/01 01 07:37 New Year (urn:bluemarine:track:yuDuADlVwvjjx0qP-qeFssedFYk=) Pat Metheny/Unity Band/01 - New Year.mp3 - embedded
+  01/01 02 05:33 Roofdogs (urn:bluemarine:track:rV7-xoJx5AbW4Eg9jLmpLK8B2ro=) Pat Metheny/Unity Band/02 - Roofdogs.mp3 - embedded
+  01/01 03 08:28 Come and See (urn:bluemarine:track:XOY8nK-Y6lGUw2f_W-cHa8gFKUA=) Pat Metheny/Unity Band/03 - Come and See.mp3 - embedded
+  01/01 04 05:20 This Belongs to You (urn:bluemarine:track:_9Ui8aDyAlMA1pQql9t07zYCD50=) Pat Metheny/Unity Band/04 - This Belongs to You.mp3 - embedded
+  01/01 05 06:24 Leaving Town (urn:bluemarine:track:oP8pHG8FNRYzkfJkzRTZKPiPlC0=) Pat Metheny/Unity Band/05 - Leaving Town.mp3 - embedded
+  01/01 06 06:26 Interval Waltz (urn:bluemarine:track:mLDPbV0snyaYt-PfZHzOriZtSBo=) Pat Metheny/Unity Band/06 - Interval Waltz.mp3 - embedded
+  01/01 07 11:26 Signals (Orchestrion Sketch) (urn:bluemarine:track:4C0eNCGTjbNKm59ykD2J5C7EhDI=) Pat Metheny/Unity Band/07 - Signals (Orchestrion Sketch).mp3 - embedded
+  01/01 08 05:57 Then and Now (urn:bluemarine:track:NlY_EBT-LCJudlAGmGsxkBRCuHI=) Pat Metheny/Unity Band/08 - Then and Now.mp3 - embedded
+  01/01 09 08:34 Breakdealer (urn:bluemarine:track:WrrMLlI0S_imF5Lym1UToDDpukA=) Pat Metheny/Unity Band/09 - Breakdealer.mp3 - embedded
+  01/01 01 06:33 The Sound Of Silence (urn:bluemarine:track:xa-UncfEgrx1SmlcxikoeFdtCO4=) Pat Metheny/What's It All About/01 - The Sound of Silence.mp3 - embedded
+  01/01 02 05:28 Cherish (urn:bluemarine:track:mdYqXKdFJ9ncgO6xTrMQb9czPfI=) Pat Metheny/What's It All About/02 - Cherish.mp3 - embedded
+  01/01 03 07:47 Alfie (urn:bluemarine:track:X5u3e0yKkqS7AYaIaAaIWC_RlWc=) Pat Metheny/What's It All About/03 - Alfie.mp3 - embedded
+  01/01 04 03:28 Pipeline (urn:bluemarine:track:EY9MaQvEinvl7Tik7DJvFHsIy9E=) Pat Metheny/What's It All About/04 - Pipeline.mp3 - embedded
+  01/01 05 05:12 Garota De Ipanema (urn:bluemarine:track:DiZdb1E7c2s1elwkoKzKKNoTBKQ=) Pat Metheny/What's It All About/05 - Garota de Ipanema.mp3 - embedded
+  01/01 06 07:12 Rainy Days And Mondays (urn:bluemarine:track:j-d6AzW95Ntte5SW-nDHY88rqII=) Pat Metheny/What's It All About/06 - Rainy Days and Mondays.mp3 - embedded
+  01/01 07 06:03 That's The Way I've Always Heard It Should Be (urn:bluemarine:track:TXbShidgAGT5UNBJ9Hb5J_Paw1Y=) Pat Metheny/What's It All About/07 - That's the Way I've Always Heard It Should Be.mp3 - embedded
+  01/01 08 04:28 Slow Hot Wind (urn:bluemarine:track:lm4dZa1Eurm4S0CGh4NC49LIUQk=) Pat Metheny/What's It All About/08 - Slow Hot Wind.mp3 - embedded
+  01/01 09 05:18 Betcha By Golly, Wow (urn:bluemarine:track:2q8ktGkomI9ZSomqDmgnAzjiLeY=) Pat Metheny/What's It All About/09 - Betcha by Golly, Wow.mp3 - embedded
+  01/01 10 04:22 And I Love Her (urn:bluemarine:track:g27KOA6hncFcaM23mUk8XtELvSQ=) Pat Metheny/What's It All About/10 - And I Love Her.mp3 - embedded
+  01/01 11 06:40 'round Midnight (urn:bluemarine:track:gtjB3RRAEE0oK8eFS9eiQuODIHQ=) Pat Metheny/What's It All About/11 - 'Round Midnight.mp3 - embedded
+
+TRACKS OF Stevie Wonder (urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=) (21):
+  01/02 01 06:34 Isn't She Lovely (urn:bluemarine:track:On4MPxQh05wsk6HddHC4Bx3-ges=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 01 - Isn't She Lovely.mp3 - embedded
+  01/02 01 07:05 Love's In Need Of Love Today (urn:bluemarine:track:V_qWu6EjeetzGzKnfpLYjdl9yZA=) Stevie Wonder/Songs In The Key Of Life/01 - Love's In Need Of Love Today.mp3 - embedded
+  01/02 02 02:42 Have A Talk With God (urn:bluemarine:track:zPqMBiz66ykPtT2Ef5Tz9t64D7A=) Stevie Wonder/Songs In The Key Of Life/02 - Have A Talk With God.mp3 - embedded
+  01/02 02 06:22 Joy Inside My Tears (urn:bluemarine:track:2gUeyJ8kfDKB6fmaouvehdbSzug=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 02 - Joy Inside My Tears.mp3 - embedded
+  01/02 03 08:29 Black Man (urn:bluemarine:track:rbLVLXei4ld9Bi_Dp7w4lVjZdfc=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 03 - Black Man.mp3 - embedded
+  01/02 03 03:25 Village Ghetto Land (urn:bluemarine:track:AIHrB_Gx4QLC0Po3p9446FrCFuQ=) Stevie Wonder/Songs In The Key Of Life/03 - Village Ghetto Land.mp3 - embedded
+  01/02 04 03:45 Contusion (urn:bluemarine:track:k9kv2nLB9S-k9Hto72TlEARoeL8=) Stevie Wonder/Songs In The Key Of Life/04 - Contusion.mp3 - embedded
+  01/02 04 03:48 Ngiculela-Es Una Historia-I Am Singing (urn:bluemarine:track:4ftx6t9mEBMZjRTUn1t81Dzf34A=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 04 - Ngiculela-Es Una Historia-I Am Singing.mp3 - embedded
+  01/02 05 03:12 If It's Magic (urn:bluemarine:track:WJ__DHc9-5W9dRkfvFtEuzPga1I=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 05 - If It's Magic.mp3 - embedded
+  01/02 05 03:52 Sir Duke (urn:bluemarine:track:N9kojfpnl3VphROCWWcY-SpAnXM=) Stevie Wonder/Songs In The Key Of Life/05 - Sir Duke.mp3 - embedded
+  01/02 06 07:08 As (urn:bluemarine:track:_c335v5dN_F1xqfM0pe3R8H4tH8=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 06 - As.mp3 - embedded
+  01/02 06 04:12 I Wish (urn:bluemarine:track:nTQrV3k1yqnCnWHdEnCCNayCqp8=) Stevie Wonder/Songs In The Key Of Life/06 - I Wish.mp3 - embedded
+  01/02 07 08:28 Another Star (urn:bluemarine:track:Jg0sJh-0L8RACpi-NKCVyvX1vZU=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 07 - Another Star.mp3 - embedded
+  01/02 07 03:36 Knocks Me Off My Feet (urn:bluemarine:track:zBX_l9mTWmihYDJoJI5CYw_zjGw=) Stevie Wonder/Songs In The Key Of Life/07 - Knocks Me Off My Feet.mp3 - embedded
+  01/02 08 03:27 Pastime Paradise (urn:bluemarine:track:fRppsRWN141pP1jBq3Z4vdBF03s=) Stevie Wonder/Songs In The Key Of Life/08 - Pastime Paradise.mp3 - embedded
+  01/02 08 04:53 Saturn (urn:bluemarine:track:wIcOe4CY1EIOocvvvtqE018bFdo=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 08 - Saturn.mp3 - embedded
+  01/02 09 04:08 Ebony Eyes (urn:bluemarine:track:ldC9XGlQBx6D-DQiQccwOkbxWCE=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 09 - Ebony Eyes.mp3 - embedded
+  01/02 09 04:14 Summer Soft (urn:bluemarine:track:CKAN2nBgZNV2mQFExdSXfGe-9x0=) Stevie Wonder/Songs In The Key Of Life/09 - Summer Soft.mp3 - embedded
+  01/02 10 05:05 All Day Sucker (urn:bluemarine:track:-sP2dUCnPkpTPftXB5SEr1WKP-c=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 10 - All Day Sucker.mp3 - embedded
+  01/02 10 06:23 Ordinary Pain (urn:bluemarine:track:OFgF7qO0g5Uu0Ta_IIFqkDGbjtU=) Stevie Wonder/Songs In The Key Of Life/10 - Ordinary Pain.mp3 - embedded
+  01/02 11 03:56 Easy Goin' Evening (My Mama's Call) (urn:bluemarine:track:A0VauJnrAZITZyYR_lySR-feQHU=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 11 - Easy Goin' Evening (My Mama's Call).mp3 - embedded
+
+TRACKS OF Thelonious Monk (urn:bluemarine:artist:NuxVvihrXEo-9eJ-1Kiu_HKh0S8=) (1):
+  01/01 05 03:51 Brilliant Corners (Album Version) (urn:bluemarine:track:qvL_qVMEU89x1COVCGy80GWDgBk=) Thelonious Sphere Monk/Monk's Blues/05 - Brilliant Corners (Album Version).mp3 - embedded
+
+TRACKS OF Thelonious Sphere Monk (urn:bluemarine:artist:zFIShJu_MTqAA2_ZNWjEukpdMfQ=) (10):
+  01/01 01 03:45 Let's Cool One (Album Version) (urn:bluemarine:track:y-3vR4bdZO54ie8-9n8m1pOUo94=) Thelonious Sphere Monk/Monk's Blues/01 - Let's Cool One (Album Version).mp3 - embedded
+  01/01 02 04:36 Reflections (Album Version) (urn:bluemarine:track:-BZpxDv4ym3Z_zyRy_zK75P5rr8=) Thelonious Sphere Monk/Monk's Blues/02 - Reflections (Album Version).mp3 - embedded
+  01/01 03 07:31 Rootie Tootie (urn:bluemarine:track:ar7qVD08w9OVrt_XpFNtvxIlWxI=) Thelonious Sphere Monk/Monk's Blues/03 - Rootie Tootie.mp3 - embedded
+  01/01 04 02:50 Just A Glance At Love (Album Version) (urn:bluemarine:track:EHqU25JfjjP2dIJ9pvPXT38rR1w=) Thelonious Sphere Monk/Monk's Blues/04 - Just A Glance At Love (Album Version).mp3 - embedded
+  01/01 06 02:40 Consecutive Seconds (urn:bluemarine:track:lbjeQKUNhQmyYioUrVYdWFUUfpM=) Thelonious Sphere Monk/Monk's Blues/06 - Consecutive Seconds.mp3 - embedded
+  01/01 07 08:01 Monk's Point (urn:bluemarine:track:LJSZR9H4nyLungmNId1_D_XE6G4=) Thelonious Sphere Monk/Monk's Blues/07 - Monk's Point.mp3 - embedded
+  01/01 08 04:58 Trinkle, Tinkle (urn:bluemarine:track:tf-mi4I2naramYmykiD0ItVTZn0=) Thelonious Sphere Monk/Monk's Blues/08 - Trinkle, Tinkle.mp3 - embedded
+  01/01 09 07:17 Straight, No Chaser (urn:bluemarine:track:bE7b8mwrFn0vFWjE3ZEk2V-qcBk=) Thelonious Sphere Monk/Monk's Blues/09 - Straight, No Chaser.mp3 - embedded
+  01/01 10 06:14 Blue Monk (urn:bluemarine:track:ueOVz3lq_EENnMHuMNyQQ2yxkv4=) Thelonious Sphere Monk/Monk's Blues/10 - Blue Monk.mp3 - embedded
+  01/01 11 04:13 'Round Midnight (urn:bluemarine:track:R7N5_KEy4Tyg-aVGxDfwa31orUk=) Thelonious Sphere Monk/Monk's Blues/11 - 'Round Midnight.mp3 - embedded
+
+RECORDS OF Herbie Hancock (urn:bluemarine:artist:TzVyzQz4nFXGbYdGXFsl5oOZm6o=) (2):
+  Empyrean Isles (The Rudy Van Gelder Edition) (urn:bluemarine:record:dixhfU1CMmUSXDlaE3u8Dtr_XG4=)
+  Maiden Voyage (The Rudy Van Gelder Edition) (urn:bluemarine:record:eAmukeW4wSFaoFoAVOfGZ9Qts8g=)
+
+RECORDS OF John Coltrane (urn:bluemarine:artist:usZLLSZqaqQMqgbp9GGmImCu-Ao=) (1):
+  Standard Coltrane (Rudy Van Gelder Remaster) (urn:bluemarine:record:UZ9WpMFVyppjYUHgKmJ2_NlJ0AU=)
+
+RECORDS OF Pat Metheny (urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=) (3):
+  Orchestrion (urn:bluemarine:record:btDif3r3mgzt3cOWjXPPAs4gb_g=)
+  Unity Band (urn:bluemarine:record:iw2oIy2-BYGLzvaKeJW85PL1EDQ=)
+  What's It All About (urn:bluemarine:record:flc7yvriASGIWSszgYUkRhdzp9c=)
+
+RECORDS OF Stevie Wonder (urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=) (1):
+  Songs In The Key Of Life (urn:bluemarine:record:kYBL2HWEEjdYC7tL2NY5DRTtG1k=)
+
+RECORDS OF Thelonious Monk (urn:bluemarine:artist:NuxVvihrXEo-9eJ-1Kiu_HKh0S8=) (1):
+  Monk's Blues (urn:bluemarine:record:j9O4FGH45wXJi8gVL1iFoHSCNRY=)
+
+RECORDS OF Thelonious Sphere Monk (urn:bluemarine:artist:zFIShJu_MTqAA2_ZNWjEukpdMfQ=) (1):
+  Monk's Blues (urn:bluemarine:record:j9O4FGH45wXJi8gVL1iFoHSCNRY=)
+
+PERFORMANCES OF Herbie Hancock (urn:bluemarine:artist:TzVyzQz4nFXGbYdGXFsl5oOZm6o=) (0):
+
+PERFORMANCES OF John Coltrane (urn:bluemarine:artist:usZLLSZqaqQMqgbp9GGmImCu-Ao=) (0):
+
+PERFORMANCES OF Pat Metheny (urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=) (0):
+
+PERFORMANCES OF Stevie Wonder (urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=) (0):
+
+PERFORMANCES OF Thelonious Monk (urn:bluemarine:artist:NuxVvihrXEo-9eJ-1Kiu_HKh0S8=) (0):
+
+PERFORMANCES OF Thelonious Sphere Monk (urn:bluemarine:artist:zFIShJu_MTqAA2_ZNWjEukpdMfQ=) (0):
+
+RECORD Empyrean Isles (The Rudy Van Gelder Edition) (urn:bluemarine:record:dixhfU1CMmUSXDlaE3u8Dtr_XG4=):
+  SOURCE:  embedded
+  TRACKS (6 / Optional.empty):
+    01/01 01 07:21 One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:5uLUEJD1O_X2rgAZ9RIcgpfhnzQ=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/01 - One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3 - embedded
+    01/01 02 08:30 Oliloqui Valley (Rudy Van Gelder Edition) (1999 - Remaster) (urn:bluemarine:track:vCBaLw-1p4v6lJFkA2-rqMNScQI=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/02 - Oliloqui Valley (Rudy Van Gelder Edition) (1999 - Remaster).mp3 - embedded
+    01/01 03 05:34 Cantaloupe Island (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:Ls-NoD4PXko1dMo05g1JP4cEXZE=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/03 - Cantaloupe Island (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3 - embedded
+    01/01 04 14:01 The Egg (1999 - Remaster) [Rudy Van Gelder Edition] (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:J670YeZavhlxJGUbEFomjuPcJIA=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/04 - The Egg (1999 - Remaster) [Rudy Van Gelder Edition] (1999 Digital Remaster) (Rudy Van.mp3 - embedded
+    01/01 05 07:36 One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:KFguFHQPt4fodQG5oNXKJjRUmzE=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/05 - One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3 - embedded
+    01/01 06 10:47 Oliloqui Valley (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:W5-pGtDsbYF7q8qpUccPubmM0rI=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/06 - Oliloqui Valley (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3 - embedded
+
+RECORD Maiden Voyage (The Rudy Van Gelder Edition) (urn:bluemarine:record:eAmukeW4wSFaoFoAVOfGZ9Qts8g=):
+  SOURCE:  embedded
+  TRACKS (5 / Optional.empty):
+    01/01 01 07:57 Maiden Voyage (urn:bluemarine:track:UgxQV7mnaqXzsnEe_IJX9JPrJmg=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/01 - Maiden Voyage.mp3 - embedded
+    01/01 02 06:01 The Eye Of The Hurricane (urn:bluemarine:track:PT1sJlfP0l-TG5wr3heoPmY1XM0=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/02 - The Eye Of The Hurricane.mp3 - embedded
+    01/01 03 08:47 Little One (urn:bluemarine:track:B82_XrW5GO660cBMZBWsLsgCpWs=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/03 - Little One.mp3 - embedded
+    01/01 04 10:02 Survival Of The Fittest (urn:bluemarine:track:5Tn2jagJVuRIpV05B2IGfhOXvs4=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/04 - Survival Of The Fittest.mp3 - embedded
+    01/01 05 09:16 Dolphin Dance (urn:bluemarine:track:qoAPiHqsM7ol0XgLJHyZyNJdlMo=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/05 - Dolphin Dance.mp3 - embedded
+
+RECORD Monk's Blues (urn:bluemarine:record:j9O4FGH45wXJi8gVL1iFoHSCNRY=):
+  SOURCE:  embedded
+  TRACKS (11 / Optional.empty):
+    01/01 01 03:45 Let's Cool One (Album Version) (urn:bluemarine:track:y-3vR4bdZO54ie8-9n8m1pOUo94=) Thelonious Sphere Monk/Monk's Blues/01 - Let's Cool One (Album Version).mp3 - embedded
+    01/01 02 04:36 Reflections (Album Version) (urn:bluemarine:track:-BZpxDv4ym3Z_zyRy_zK75P5rr8=) Thelonious Sphere Monk/Monk's Blues/02 - Reflections (Album Version).mp3 - embedded
+    01/01 03 07:31 Rootie Tootie (urn:bluemarine:track:ar7qVD08w9OVrt_XpFNtvxIlWxI=) Thelonious Sphere Monk/Monk's Blues/03 - Rootie Tootie.mp3 - embedded
+    01/01 04 02:50 Just A Glance At Love (Album Version) (urn:bluemarine:track:EHqU25JfjjP2dIJ9pvPXT38rR1w=) Thelonious Sphere Monk/Monk's Blues/04 - Just A Glance At Love (Album Version).mp3 - embedded
+    01/01 05 03:51 Brilliant Corners (Album Version) (urn:bluemarine:track:qvL_qVMEU89x1COVCGy80GWDgBk=) Thelonious Sphere Monk/Monk's Blues/05 - Brilliant Corners (Album Version).mp3 - embedded
+    01/01 06 02:40 Consecutive Seconds (urn:bluemarine:track:lbjeQKUNhQmyYioUrVYdWFUUfpM=) Thelonious Sphere Monk/Monk's Blues/06 - Consecutive Seconds.mp3 - embedded
+    01/01 07 08:01 Monk's Point (urn:bluemarine:track:LJSZR9H4nyLungmNId1_D_XE6G4=) Thelonious Sphere Monk/Monk's Blues/07 - Monk's Point.mp3 - embedded
+    01/01 08 04:58 Trinkle, Tinkle (urn:bluemarine:track:tf-mi4I2naramYmykiD0ItVTZn0=) Thelonious Sphere Monk/Monk's Blues/08 - Trinkle, Tinkle.mp3 - embedded
+    01/01 09 07:17 Straight, No Chaser (urn:bluemarine:track:bE7b8mwrFn0vFWjE3ZEk2V-qcBk=) Thelonious Sphere Monk/Monk's Blues/09 - Straight, No Chaser.mp3 - embedded
+    01/01 10 06:14 Blue Monk (urn:bluemarine:track:ueOVz3lq_EENnMHuMNyQQ2yxkv4=) Thelonious Sphere Monk/Monk's Blues/10 - Blue Monk.mp3 - embedded
+    01/01 11 04:13 'Round Midnight (urn:bluemarine:track:R7N5_KEy4Tyg-aVGxDfwa31orUk=) Thelonious Sphere Monk/Monk's Blues/11 - 'Round Midnight.mp3 - embedded
+
+RECORD Orchestrion (urn:bluemarine:record:btDif3r3mgzt3cOWjXPPAs4gb_g=):
+  SOURCE:  embedded
+  TRACKS (5 / Optional.empty):
+    01/01 01 15:48 Orchestrion (urn:bluemarine:track:h2pfiqVLLkEzJyoxUxUUJrvjlt4=) Pat Metheny/Orchestrion/01 - Orchestrion.mp3 - embedded
+    01/01 02 10:28 Entry Point (urn:bluemarine:track:vo179vVz9LUSWG-mHuxlmxmzDbI=) Pat Metheny/Orchestrion/02 - Entry Point.mp3 - embedded
+    01/01 03 08:34 Expansion (urn:bluemarine:track:V9sE9b3GOH1G7lRyH-JgAfarj0w=) Pat Metheny/Orchestrion/03 - Expansion.mp3 - embedded
+    01/01 04 09:17 Soul Search (urn:bluemarine:track:3XHVnRJSATpsqfl2TyshaCeDJtk=) Pat Metheny/Orchestrion/04 - Soul Search.mp3 - embedded
+    01/01 05 07:44 Spirit Of The Air (urn:bluemarine:track:kx29swV2hDOTnY0sNyCrC9bD2BA=) Pat Metheny/Orchestrion/05 - Spirit Of The Air.mp3 - embedded
+
+RECORD Songs In The Key Of Life (urn:bluemarine:record:kYBL2HWEEjdYC7tL2NY5DRTtG1k=):
+  SOURCE:  embedded
+  TRACKS (21 / Optional.empty):
+    01/02 01 06:34 Isn't She Lovely (urn:bluemarine:track:On4MPxQh05wsk6HddHC4Bx3-ges=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 01 - Isn't She Lovely.mp3 - embedded
+    01/02 01 07:05 Love's In Need Of Love Today (urn:bluemarine:track:V_qWu6EjeetzGzKnfpLYjdl9yZA=) Stevie Wonder/Songs In The Key Of Life/01 - Love's In Need Of Love Today.mp3 - embedded
+    01/02 02 02:42 Have A Talk With God (urn:bluemarine:track:zPqMBiz66ykPtT2Ef5Tz9t64D7A=) Stevie Wonder/Songs In The Key Of Life/02 - Have A Talk With God.mp3 - embedded
+    01/02 02 06:22 Joy Inside My Tears (urn:bluemarine:track:2gUeyJ8kfDKB6fmaouvehdbSzug=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 02 - Joy Inside My Tears.mp3 - embedded
+    01/02 03 08:29 Black Man (urn:bluemarine:track:rbLVLXei4ld9Bi_Dp7w4lVjZdfc=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 03 - Black Man.mp3 - embedded
+    01/02 03 03:25 Village Ghetto Land (urn:bluemarine:track:AIHrB_Gx4QLC0Po3p9446FrCFuQ=) Stevie Wonder/Songs In The Key Of Life/03 - Village Ghetto Land.mp3 - embedded
+    01/02 04 03:45 Contusion (urn:bluemarine:track:k9kv2nLB9S-k9Hto72TlEARoeL8=) Stevie Wonder/Songs In The Key Of Life/04 - Contusion.mp3 - embedded
+    01/02 04 03:48 Ngiculela-Es Una Historia-I Am Singing (urn:bluemarine:track:4ftx6t9mEBMZjRTUn1t81Dzf34A=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 04 - Ngiculela-Es Una Historia-I Am Singing.mp3 - embedded
+    01/02 05 03:12 If It's Magic (urn:bluemarine:track:WJ__DHc9-5W9dRkfvFtEuzPga1I=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 05 - If It's Magic.mp3 - embedded
+    01/02 05 03:52 Sir Duke (urn:bluemarine:track:N9kojfpnl3VphROCWWcY-SpAnXM=) Stevie Wonder/Songs In The Key Of Life/05 - Sir Duke.mp3 - embedded
+    01/02 06 07:08 As (urn:bluemarine:track:_c335v5dN_F1xqfM0pe3R8H4tH8=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 06 - As.mp3 - embedded
+    01/02 06 04:12 I Wish (urn:bluemarine:track:nTQrV3k1yqnCnWHdEnCCNayCqp8=) Stevie Wonder/Songs In The Key Of Life/06 - I Wish.mp3 - embedded
+    01/02 07 08:28 Another Star (urn:bluemarine:track:Jg0sJh-0L8RACpi-NKCVyvX1vZU=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 07 - Another Star.mp3 - embedded
+    01/02 07 03:36 Knocks Me Off My Feet (urn:bluemarine:track:zBX_l9mTWmihYDJoJI5CYw_zjGw=) Stevie Wonder/Songs In The Key Of Life/07 - Knocks Me Off My Feet.mp3 - embedded
+    01/02 08 03:27 Pastime Paradise (urn:bluemarine:track:fRppsRWN141pP1jBq3Z4vdBF03s=) Stevie Wonder/Songs In The Key Of Life/08 - Pastime Paradise.mp3 - embedded
+    01/02 08 04:53 Saturn (urn:bluemarine:track:wIcOe4CY1EIOocvvvtqE018bFdo=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 08 - Saturn.mp3 - embedded
+    01/02 09 04:08 Ebony Eyes (urn:bluemarine:track:ldC9XGlQBx6D-DQiQccwOkbxWCE=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 09 - Ebony Eyes.mp3 - embedded
+    01/02 09 04:14 Summer Soft (urn:bluemarine:track:CKAN2nBgZNV2mQFExdSXfGe-9x0=) Stevie Wonder/Songs In The Key Of Life/09 - Summer Soft.mp3 - embedded
+    01/02 10 05:05 All Day Sucker (urn:bluemarine:track:-sP2dUCnPkpTPftXB5SEr1WKP-c=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 10 - All Day Sucker.mp3 - embedded
+    01/02 10 06:23 Ordinary Pain (urn:bluemarine:track:OFgF7qO0g5Uu0Ta_IIFqkDGbjtU=) Stevie Wonder/Songs In The Key Of Life/10 - Ordinary Pain.mp3 - embedded
+    01/02 11 03:56 Easy Goin' Evening (My Mama's Call) (urn:bluemarine:track:A0VauJnrAZITZyYR_lySR-feQHU=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 11 - Easy Goin' Evening (My Mama's Call).mp3 - embedded
+
+RECORD Standard Coltrane (Rudy Van Gelder Remaster) (urn:bluemarine:record:UZ9WpMFVyppjYUHgKmJ2_NlJ0AU=):
+  SOURCE:  embedded
+  TRACKS (4 / Optional.empty):
+    01/01 01 09:15 Don't Take Your Love From Me (Album Version) (urn:bluemarine:track:cuRZtqLe8l57iCTFmaWfh2d6Nrk=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/01 - Don't Take Your Love From Me (Album Version).mp3 - embedded
+    01/01 02 08:09 I'll Get By (As Long As I Have You) (Album Version) (urn:bluemarine:track:Y71NZjYlu3Cv70-MJqUOCPrUe-c=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/02 - I'll Get By (As Long As I Have You) (Album Version).mp3 - embedded
+    01/01 03 06:53 Spring Is Here (Album Version) (urn:bluemarine:track:PWKE2DbVVyqCO_6yO8OCn9Ytobk=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/03 - Spring Is Here (Album Version).mp3 - embedded
+    01/01 04 10:22 Invitation (Album Version) (urn:bluemarine:track:B0onm5oQ5yeN453t1nAEX_UXbRQ=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/04 - Invitation (Album Version).mp3 - embedded
+
+RECORD Unity Band (urn:bluemarine:record:iw2oIy2-BYGLzvaKeJW85PL1EDQ=):
+  SOURCE:  embedded
+  TRACKS (9 / Optional.empty):
+    01/01 01 07:37 New Year (urn:bluemarine:track:yuDuADlVwvjjx0qP-qeFssedFYk=) Pat Metheny/Unity Band/01 - New Year.mp3 - embedded
+    01/01 02 05:33 Roofdogs (urn:bluemarine:track:rV7-xoJx5AbW4Eg9jLmpLK8B2ro=) Pat Metheny/Unity Band/02 - Roofdogs.mp3 - embedded
+    01/01 03 08:28 Come and See (urn:bluemarine:track:XOY8nK-Y6lGUw2f_W-cHa8gFKUA=) Pat Metheny/Unity Band/03 - Come and See.mp3 - embedded
+    01/01 04 05:20 This Belongs to You (urn:bluemarine:track:_9Ui8aDyAlMA1pQql9t07zYCD50=) Pat Metheny/Unity Band/04 - This Belongs to You.mp3 - embedded
+    01/01 05 06:24 Leaving Town (urn:bluemarine:track:oP8pHG8FNRYzkfJkzRTZKPiPlC0=) Pat Metheny/Unity Band/05 - Leaving Town.mp3 - embedded
+    01/01 06 06:26 Interval Waltz (urn:bluemarine:track:mLDPbV0snyaYt-PfZHzOriZtSBo=) Pat Metheny/Unity Band/06 - Interval Waltz.mp3 - embedded
+    01/01 07 11:26 Signals (Orchestrion Sketch) (urn:bluemarine:track:4C0eNCGTjbNKm59ykD2J5C7EhDI=) Pat Metheny/Unity Band/07 - Signals (Orchestrion Sketch).mp3 - embedded
+    01/01 08 05:57 Then and Now (urn:bluemarine:track:NlY_EBT-LCJudlAGmGsxkBRCuHI=) Pat Metheny/Unity Band/08 - Then and Now.mp3 - embedded
+    01/01 09 08:34 Breakdealer (urn:bluemarine:track:WrrMLlI0S_imF5Lym1UToDDpukA=) Pat Metheny/Unity Band/09 - Breakdealer.mp3 - embedded
+
+RECORD What's It All About (urn:bluemarine:record:flc7yvriASGIWSszgYUkRhdzp9c=):
+  SOURCE:  embedded
+  TRACKS (11 / Optional.empty):
+    01/01 01 06:33 The Sound Of Silence (urn:bluemarine:track:xa-UncfEgrx1SmlcxikoeFdtCO4=) Pat Metheny/What's It All About/01 - The Sound of Silence.mp3 - embedded
+    01/01 02 05:28 Cherish (urn:bluemarine:track:mdYqXKdFJ9ncgO6xTrMQb9czPfI=) Pat Metheny/What's It All About/02 - Cherish.mp3 - embedded
+    01/01 03 07:47 Alfie (urn:bluemarine:track:X5u3e0yKkqS7AYaIaAaIWC_RlWc=) Pat Metheny/What's It All About/03 - Alfie.mp3 - embedded
+    01/01 04 03:28 Pipeline (urn:bluemarine:track:EY9MaQvEinvl7Tik7DJvFHsIy9E=) Pat Metheny/What's It All About/04 - Pipeline.mp3 - embedded
+    01/01 05 05:12 Garota De Ipanema (urn:bluemarine:track:DiZdb1E7c2s1elwkoKzKKNoTBKQ=) Pat Metheny/What's It All About/05 - Garota de Ipanema.mp3 - embedded
+    01/01 06 07:12 Rainy Days And Mondays (urn:bluemarine:track:j-d6AzW95Ntte5SW-nDHY88rqII=) Pat Metheny/What's It All About/06 - Rainy Days and Mondays.mp3 - embedded
+    01/01 07 06:03 That's The Way I've Always Heard It Should Be (urn:bluemarine:track:TXbShidgAGT5UNBJ9Hb5J_Paw1Y=) Pat Metheny/What's It All About/07 - That's the Way I've Always Heard It Should Be.mp3 - embedded
+    01/01 08 04:28 Slow Hot Wind (urn:bluemarine:track:lm4dZa1Eurm4S0CGh4NC49LIUQk=) Pat Metheny/What's It All About/08 - Slow Hot Wind.mp3 - embedded
+    01/01 09 05:18 Betcha By Golly, Wow (urn:bluemarine:track:2q8ktGkomI9ZSomqDmgnAzjiLeY=) Pat Metheny/What's It All About/09 - Betcha by Golly, Wow.mp3 - embedded
+    01/01 10 04:22 And I Love Her (urn:bluemarine:track:g27KOA6hncFcaM23mUk8XtELvSQ=) Pat Metheny/What's It All About/10 - And I Love Her.mp3 - embedded
+    01/01 11 06:40 'round Midnight (urn:bluemarine:track:gtjB3RRAEE0oK8eFS9eiQuODIHQ=) Pat Metheny/What's It All About/11 - 'Round Midnight.mp3 - embedded
+
+
+TRACKS ORPHAN OF ARTIST (0):
+
+
+
+TRACKS ORPHAN OF RECORD (0):
+
