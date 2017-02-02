@@ -90,7 +90,7 @@ public final class TestSetLocator
      * amazon-autorip-fg-20170131-1
      * ============================
      *
-     * 8 records from Amazon Autorip.
+     * 14 records from Amazon Autorip.
      *
      ******************************************************************************************************************/
     @Nonnull

@@ -10,6 +10,16 @@
 @prefix xs: <http://www.w3.org/2001/XMLSchema#> .
 
 
+<urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=> a mo:MusicArtist ;
+	bmmo:importedFrom "embedded" ;
+	rdfs:label "Sarah Vaughan, Quincy Jones and His Orchestra" ;
+	foaf:name "Sarah Vaughan, Quincy Jones and His Orchestra" .
+
+<urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> a mo:MusicArtist ;
+	bmmo:importedFrom "embedded" ;
+	rdfs:label "Ella Fitzgerald & Joe Pass" ;
+	foaf:name "Ella Fitzgerald & Joe Pass" .
+
 <urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=> a mo:MusicArtist ;
 	bmmo:importedFrom "embedded" ;
 	rdfs:label "Pat Metheny" ;
@@ -20,15 +30,35 @@
 	rdfs:label "Stevie Wonder" ;
 	foaf:name "Stevie Wonder" .
 
+<urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> a mo:MusicArtist ;
+	bmmo:importedFrom "embedded" ;
+	rdfs:label "Miles Davis" ;
+	foaf:name "Miles Davis" .
+
 <urn:bluemarine:artist:NuxVvihrXEo-9eJ-1Kiu_HKh0S8=> a mo:MusicArtist ;
 	bmmo:importedFrom "embedded" ;
 	rdfs:label "Thelonious Monk" ;
 	foaf:name "Thelonious Monk" .
 
+<urn:bluemarine:artist:NvLPHYt0geK2dIc-p-afF-ZVtOE=> a mo:MusicArtist ;
+	bmmo:importedFrom "embedded" ;
+	rdfs:label "Pat Metheny Group" ;
+	foaf:name "Pat Metheny Group" .
+
 <urn:bluemarine:artist:TzVyzQz4nFXGbYdGXFsl5oOZm6o=> a mo:MusicArtist ;
 	bmmo:importedFrom "embedded" ;
 	rdfs:label "Herbie Hancock" ;
 	foaf:name "Herbie Hancock" .
+
+<urn:bluemarine:artist:VR1hJB2jYib2STxF0cbvPcb53bo=> a mo:MusicArtist ;
+	bmmo:importedFrom "embedded" ;
+	rdfs:label "John Scofield With Pat Methany" ;
+	foaf:name "John Scofield With Pat Methany" .
+
+<urn:bluemarine:artist:sRvQ7Bo7zNpFJJ9Hi_Erq_kxQWM=> a mo:MusicArtist ;
+	bmmo:importedFrom "embedded" ;
+	rdfs:label "John Scofield" ;
+	foaf:name "John Scofield" .
 
 <urn:bluemarine:artist:usZLLSZqaqQMqgbp9GGmImCu-Ao=> a mo:MusicArtist ;
 	bmmo:importedFrom "embedded" ;
@@ -48,6 +78,14 @@
 	mo:encodes <urn:bluemarine:signal:-BZpxDv4ym3Z_zyRy_zK75P5rr8=> ;
 	foaf:sha1 "f81669c43bf8ca6dd9ff3c91cbfccaef93f9aebf" .
 
+<urn:bluemarine:audiofile:-pqHkOZdxrWkqQgQp1lxtz0L4oU=> a mo:AudioFile ;
+	bmmo:fileSize "5085763"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:31:54.000+01:00"^^xs:dateTime ;
+	bmmo:path "Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/10 - Moonglow.mp3" ;
+	mo:encodes <urn:bluemarine:signal:-pqHkOZdxrWkqQgQp1lxtz0L4oU=> ;
+	foaf:sha1 "fa9a8790e65dc6b5a4a90810a75971b73d0be285" .
+
 <urn:bluemarine:audiofile:-sP2dUCnPkpTPftXB5SEr1WKP-c=> a mo:AudioFile ;
 	bmmo:fileSize "10580436"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -55,6 +93,30 @@
 	bmmo:path "Stevie Wonder/Songs In The Key Of Life/(Disc 2) 10 - All Day Sucker.mp3" ;
 	mo:encodes <urn:bluemarine:signal:-sP2dUCnPkpTPftXB5SEr1WKP-c=> ;
 	foaf:sha1 "fac3f67540a73e4a533dfb57079484af558a3fe7" .
+
+<urn:bluemarine:audiofile:0_WqQb5TJahUT0kmFbKbiUx09FE=> a mo:AudioFile ;
+	bmmo:fileSize "2357316"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:14:46.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/09 - Julien Dans L'Ascenseur.mp3" ;
+	mo:encodes <urn:bluemarine:signal:0_WqQb5TJahUT0kmFbKbiUx09FE=> ;
+	foaf:sha1 "d3f5aa41be5325a8544f492615b29b894c74f451" .
+
+<urn:bluemarine:audiofile:0hUB6Zu2KEdKZyWHc9FW9-d0gaw=> a mo:AudioFile ;
+	bmmo:fileSize "7281685"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:36:48.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Speak Love/06 - The Thrill Is Gone (Medley).mp3" ;
+	mo:encodes <urn:bluemarine:signal:0hUB6Zu2KEdKZyWHc9FW9-d0gaw=> ;
+	foaf:sha1 "d21501e99bb628474a67258773d156f7e77481ac" .
+
+<urn:bluemarine:audiofile:0qmPv0NIaetc-v7y-ZI187KGhOw=> a mo:AudioFile ;
+	bmmo:fileSize "2225170"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:14:04.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/13 - Au Bar du Petite Bac.mp3" ;
+	mo:encodes <urn:bluemarine:signal:0qmPv0NIaetc-v7y-ZI187KGhOw=> ;
+	foaf:sha1 "d2a98fbf434869eb5cfafef2f99235f3b28684ec" .
 
 <urn:bluemarine:audiofile:2gUeyJ8kfDKB6fmaouvehdbSzug=> a mo:AudioFile ;
 	bmmo:fileSize "12846597"^^xs:long ;
@@ -96,6 +158,22 @@
 	mo:encodes <urn:bluemarine:signal:4ftx6t9mEBMZjRTUn1t81Dzf34A=> ;
 	foaf:sha1 "e1fb71eadf661013198d14d49f5b7cd43cdfdf80" .
 
+<urn:bluemarine:audiofile:5DBwY_0wdAdPkZkFAzmbkZUh-j8=> a mo:AudioFile ;
+	bmmo:fileSize "10466938"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:39:36.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Speak Love/10 - Georgia On My Mind.mp3" ;
+	mo:encodes <urn:bluemarine:signal:5DBwY_0wdAdPkZkFAzmbkZUh-j8=> ;
+	foaf:sha1 "e4307063fd3074074f91990503399b919521fa3f" .
+
+<urn:bluemarine:audiofile:5QMNgQPgAx9wosSnLiqUMBAZ6Us=> a mo:AudioFile ;
+	bmmo:fileSize "5777300"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:32:52.000+01:00"^^xs:dateTime ;
+	bmmo:path "Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/02 - The Best Is Yet to Come.mp3" ;
+	mo:encodes <urn:bluemarine:signal:5QMNgQPgAx9wosSnLiqUMBAZ6Us=> ;
+	foaf:sha1 "e5030d8103e0031f70a2c4a72e2a94301019e94b" .
+
 <urn:bluemarine:audiofile:5Tn2jagJVuRIpV05B2IGfhOXvs4=> a mo:AudioFile ;
 	bmmo:fileSize "17718066"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -103,6 +181,14 @@
 	bmmo:path "Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/04 - Survival Of The Fittest.mp3" ;
 	mo:encodes <urn:bluemarine:signal:5Tn2jagJVuRIpV05B2IGfhOXvs4=> ;
 	foaf:sha1 "e539f68da80956e448a55d390762067e1397bece" .
+
+<urn:bluemarine:audiofile:5ccZYjNUNWg-j--QqNf7DL9GDJo=> a mo:AudioFile ;
+	bmmo:fileSize "13826270"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T18:49:18.000+01:00"^^xs:dateTime ;
+	bmmo:path "John Scofield With Pat Methany/I Can See Your House From Here/06 - No Way Jose.mp3" ;
+	mo:encodes <urn:bluemarine:signal:5ccZYjNUNWg-j--QqNf7DL9GDJo=> ;
+	foaf:sha1 "e5c71962335435683e8fef90a8d7fb0cbf460c9a" .
 
 <urn:bluemarine:audiofile:5uLUEJD1O_X2rgAZ9RIcgpfhnzQ=> a mo:AudioFile ;
 	bmmo:fileSize "13129185"^^xs:long ;
@@ -112,6 +198,38 @@
 	mo:encodes <urn:bluemarine:signal:5uLUEJD1O_X2rgAZ9RIcgpfhnzQ=> ;
 	foaf:sha1 "e6e2d41090f53bf5f6ae0019f5121c8297e19f34" .
 
+<urn:bluemarine:audiofile:7A0MotvLAqicmPwuskK9atHJdes=> a mo:AudioFile ;
+	bmmo:fileSize "5503152"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:35:32.000+01:00"^^xs:dateTime ;
+	bmmo:path "Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/04 - So Long.mp3" ;
+	mo:encodes <urn:bluemarine:signal:7A0MotvLAqicmPwuskK9atHJdes=> ;
+	foaf:sha1 "ec0d0ca2dbcb02a89c98fc2eb242bd6ad1c975eb" .
+
+<urn:bluemarine:audiofile:8V_Gxnc68W2e2IGtx94wGLG7JUY=> a mo:AudioFile ;
+	bmmo:fileSize "9226640"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:17:30.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/03 - Blue In Green.mp3" ;
+	mo:encodes <urn:bluemarine:signal:8V_Gxnc68W2e2IGtx94wGLG7JUY=> ;
+	foaf:sha1 "f15fc6c6773af16d9ed881adc7de3018b1bb2546" .
+
+<urn:bluemarine:audiofile:8hKMtkK1mI9BjeetVZsyuIyO-ko=> a mo:AudioFile ;
+	bmmo:fileSize "7225842"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:05:56.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/08 - I've Got The World On A String.mp3" ;
+	mo:encodes <urn:bluemarine:signal:8hKMtkK1mI9BjeetVZsyuIyO-ko=> ;
+	foaf:sha1 "f2128cb642b5988f418de7ad559b32b88c8efa4a" .
+
+<urn:bluemarine:audiofile:9qWwUgbYtw3Bzt3TNowlPqkuiRw=> a mo:AudioFile ;
+	bmmo:fileSize "12769975"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:22:12.000+01:00"^^xs:dateTime ;
+	bmmo:path "Pat Metheny Group/We Live Here/07 - Something To Remind You (Album Version).mp3" ;
+	mo:encodes <urn:bluemarine:signal:9qWwUgbYtw3Bzt3TNowlPqkuiRw=> ;
+	foaf:sha1 "f6a5b05206d8b70dc1ceddd3368c253ea92e891c" .
+
 <urn:bluemarine:audiofile:A0VauJnrAZITZyYR_lySR-feQHU=> a mo:AudioFile ;
 	bmmo:fileSize "7731284"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -119,6 +237,14 @@
 	bmmo:path "Stevie Wonder/Songs In The Key Of Life/(Disc 2) 11 - Easy Goin' Evening (My Mama's Call).mp3" ;
 	mo:encodes <urn:bluemarine:signal:A0VauJnrAZITZyYR_lySR-feQHU=> ;
 	foaf:sha1 "03455ab899eb019213672611fe5c9247e7de4075" .
+
+<urn:bluemarine:audiofile:AEHtg3wBurTtTPiAeKqgoNIz__s=> a mo:AudioFile ;
+	bmmo:fileSize "6932707"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:04:54.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/10 - The One I Love (Belongs To Somebody Else).mp3" ;
+	mo:encodes <urn:bluemarine:signal:AEHtg3wBurTtTPiAeKqgoNIz__s=> ;
+	foaf:sha1 "0041ed837c01bab4ed4cf88078aaa0a0d233fffb" .
 
 <urn:bluemarine:audiofile:AIHrB_Gx4QLC0Po3p9446FrCFuQ=> a mo:AudioFile ;
 	bmmo:fileSize "6388182"^^xs:long ;
@@ -144,6 +270,14 @@
 	mo:encodes <urn:bluemarine:signal:B82_XrW5GO660cBMZBWsLsgCpWs=> ;
 	foaf:sha1 "07cdbf5eb5b918eebad1c04c6415ac2ec802a56b" .
 
+<urn:bluemarine:audiofile:BD9QKs2D1j4dRxVm9NKhEEaAPmY=> a mo:AudioFile ;
+	bmmo:fileSize "4471910"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:14:20.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/11 - Diner Au Motel.mp3" ;
+	mo:encodes <urn:bluemarine:signal:BD9QKs2D1j4dRxVm9NKhEEaAPmY=> ;
+	foaf:sha1 "043f502acd83d63e1d471566f4d2a11046803e66" .
+
 <urn:bluemarine:audiofile:CKAN2nBgZNV2mQFExdSXfGe-9x0=> a mo:AudioFile ;
 	bmmo:fileSize "8350592"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -158,6 +292,14 @@
 	bmmo:path "Pat Metheny/What's It All About/12 - Digital Booklet_ What's It All About.pdf" ;
 	mo:encodes <urn:bluemarine:signal:CNpjJyb10DG2ch15wo5x7Sf26pE=> ;
 	foaf:sha1 "08da632726f5d031b6721d79c28e71ed27f6ea91" .
+
+<urn:bluemarine:audiofile:CurX2nKcBGkpgBVEzIKMw6sGPgE=> a mo:AudioFile ;
+	bmmo:fileSize "8563133"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:08:30.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/02 - 'Tis Autumn.mp3" ;
+	mo:encodes <urn:bluemarine:signal:CurX2nKcBGkpgBVEzIKMw6sGPgE=> ;
+	foaf:sha1 "0aead7da729c046929801544cc828cc3ab063e01" .
 
 <urn:bluemarine:audiofile:DiZdb1E7c2s1elwkoKzKKNoTBKQ=> a mo:AudioFile ;
 	bmmo:fileSize "9331882"^^xs:long ;
@@ -190,6 +332,54 @@
 	mo:encodes <urn:bluemarine:signal:EY9MaQvEinvl7Tik7DJvFHsIy9E=> ;
 	foaf:sha1 "118f4c690bc48a7be5ed38a4ec326f147b08cbd1" .
 
+<urn:bluemarine:audiofile:FGIzrkmMYkGl-quwcZ82FXJMTNk=> a mo:AudioFile ;
+	bmmo:fileSize "6503880"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:34:14.000+01:00"^^xs:dateTime ;
+	bmmo:path "Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/07 - Maria.mp3" ;
+	mo:encodes <urn:bluemarine:signal:FGIzrkmMYkGl-quwcZ82FXJMTNk=> ;
+	foaf:sha1 "146233ae498c6241a5faabb0719f3615724c4cd9" .
+
+<urn:bluemarine:audiofile:GjqTmCiX43G9t7la3iDVzBr0rXU=> a mo:AudioFile ;
+	bmmo:fileSize "7118697"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:35:04.000+01:00"^^xs:dateTime ;
+	bmmo:path "Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/05 - The Second Time Around.mp3" ;
+	mo:encodes <urn:bluemarine:signal:GjqTmCiX43G9t7la3iDVzBr0rXU=> ;
+	foaf:sha1 "1a3a93982897e371bdb7b95ade20d5cc1af4ad75" .
+
+<urn:bluemarine:audiofile:HFM3WKNXNMqDArEG3n_Qkj89qug=> a mo:AudioFile ;
+	bmmo:fileSize "12857346"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:00:16.000+01:00"^^xs:dateTime ;
+	bmmo:path "John Scofield With Pat Methany/I Can See Your House From Here/03 - No Matter What.mp3" ;
+	mo:encodes <urn:bluemarine:signal:HFM3WKNXNMqDArEG3n_Qkj89qug=> ;
+	foaf:sha1 "1c533758a35734ca8302b106de7fd0923f3daae8" .
+
+<urn:bluemarine:audiofile:HhF_IwmT0Q1UTryOaGx_JJQv-_A=> a mo:AudioFile ;
+	bmmo:fileSize "9588032"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T18:28:32.000+01:00"^^xs:dateTime ;
+	bmmo:path "John Scofield With Pat Methany/I Can See Your House From Here/09 - Quiet Rising.mp3" ;
+	mo:encodes <urn:bluemarine:signal:HhF_IwmT0Q1UTryOaGx_JJQv-_A=> ;
+	foaf:sha1 "1e117f230993d10d544ebc8e686c7f24942ffbf0" .
+
+<urn:bluemarine:audiofile:Hnin_0QYNW7lsGGLJVOJN66X5wE=> a mo:AudioFile ;
+	bmmo:fileSize "8157981"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:09:34.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/14 - One Note Samba.mp3" ;
+	mo:encodes <urn:bluemarine:signal:Hnin_0QYNW7lsGGLJVOJN66X5wE=> ;
+	foaf:sha1 "1e78a7ff4418356ee5b0618b25538937ae97e701" .
+
+<urn:bluemarine:audiofile:IvZtngp57bmIN-psbqUTWY3PQHs=> a mo:AudioFile ;
+	bmmo:fileSize "11087368"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T18:57:38.000+01:00"^^xs:dateTime ;
+	bmmo:path "John Scofield With Pat Methany/I Can See Your House From Here/05 - Message To My Friend.mp3" ;
+	mo:encodes <urn:bluemarine:signal:IvZtngp57bmIN-psbqUTWY3PQHs=> ;
+	foaf:sha1 "22f66d9e0a79edb98837ea6c6ea513598dcf407b" .
+
 <urn:bluemarine:audiofile:J670YeZavhlxJGUbEFomjuPcJIA=> a mo:AudioFile ;
 	bmmo:fileSize "22321125"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -198,6 +388,14 @@
 	mo:encodes <urn:bluemarine:signal:J670YeZavhlxJGUbEFomjuPcJIA=> ;
 	foaf:sha1 "27aef461e65abe197124651b105a268ee3dc2480" .
 
+<urn:bluemarine:audiofile:JW7lPhSy3I1NfOjhObiJ0YgYbhs=> a mo:AudioFile ;
+	bmmo:fileSize "12725940"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T18:28:26.000+01:00"^^xs:dateTime ;
+	bmmo:path "John Scofield With Pat Methany/I Can See Your House From Here/11 - You Speak My Language.mp3" ;
+	mo:encodes <urn:bluemarine:signal:JW7lPhSy3I1NfOjhObiJ0YgYbhs=> ;
+	foaf:sha1 "256ee53e14b2dc8d4d7ce8e139b889d188186e1b" .
+
 <urn:bluemarine:audiofile:Jg0sJh-0L8RACpi-NKCVyvX1vZU=> a mo:AudioFile ;
 	bmmo:fileSize "17760850"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -205,6 +403,14 @@
 	bmmo:path "Stevie Wonder/Songs In The Key Of Life/(Disc 2) 07 - Another Star.mp3" ;
 	mo:encodes <urn:bluemarine:signal:Jg0sJh-0L8RACpi-NKCVyvX1vZU=> ;
 	foaf:sha1 "260d2c261fb42fc4400a98be34a095caf5f5bd95" .
+
+<urn:bluemarine:audiofile:KDgeeTP4-eWu46q76m1WNNDswZs=> a mo:AudioFile ;
+	bmmo:fileSize "16356414"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:23:02.000+01:00"^^xs:dateTime ;
+	bmmo:path "Pat Metheny Group/We Live Here/06 - Episode D'Azur (Album Version).mp3" ;
+	mo:encodes <urn:bluemarine:signal:KDgeeTP4-eWu46q76m1WNNDswZs=> ;
+	foaf:sha1 "28381e7933f8f9e5aee3aabbea6d5634d0ecc19b" .
 
 <urn:bluemarine:audiofile:KFguFHQPt4fodQG5oNXKJjRUmzE=> a mo:AudioFile ;
 	bmmo:fileSize "13983258"^^xs:long ;
@@ -222,6 +428,22 @@
 	mo:encodes <urn:bluemarine:signal:LJSZR9H4nyLungmNId1_D_XE6G4=> ;
 	foaf:sha1 "2c949947d1f89f22ee9e098d21dd7f0ff5c4e86e" .
 
+<urn:bluemarine:audiofile:LK8YoaMbh38oxQog_8SAtzdP0a8=> a mo:AudioFile ;
+	bmmo:fileSize "10968031"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T18:28:28.000+01:00"^^xs:dateTime ;
+	bmmo:path "John Scofield With Pat Methany/I Can See Your House From Here/10 - One Way To Be.mp3" ;
+	mo:encodes <urn:bluemarine:signal:LK8YoaMbh38oxQog_8SAtzdP0a8=> ;
+	foaf:sha1 "2caf18a1a31b877f28c50a20ffc480b7374fd1af" .
+
+<urn:bluemarine:audiofile:LWm93aMLztwIuJ0UNM1vu2xYSTg=> a mo:AudioFile ;
+	bmmo:fileSize "6387117"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:03:46.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/13 - Tennessee Waltz.mp3" ;
+	mo:encodes <urn:bluemarine:signal:LWm93aMLztwIuJ0UNM1vu2xYSTg=> ;
+	foaf:sha1 "2d69bddda30bcedc08b89d1434cd6fbb6c584938" .
+
 <urn:bluemarine:audiofile:Ls-NoD4PXko1dMo05g1JP4cEXZE=> a mo:AudioFile ;
 	bmmo:fileSize "9750368"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -229,6 +451,30 @@
 	bmmo:path "Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/03 - Cantaloupe Island (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3" ;
 	mo:encodes <urn:bluemarine:signal:Ls-NoD4PXko1dMo05g1JP4cEXZE=> ;
 	foaf:sha1 "2ecf8da03e0f5e4a3574ca34e60d493f87045d91" .
+
+<urn:bluemarine:audiofile:MMNYn1agLnAERPqF_2P_gSTbiRM=> a mo:AudioFile ;
+	bmmo:fileSize "15344486"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:15:24.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/05 - Flamenco Sketches.mp3" ;
+	mo:encodes <urn:bluemarine:signal:MMNYn1agLnAERPqF_2P_gSTbiRM=> ;
+	foaf:sha1 "30c3589f56a02e700444fa85ff63ff8124db8913" .
+
+<urn:bluemarine:audiofile:MOSkriTnP62ffjXKk6CWisqSdfw=> a mo:AudioFile ;
+	bmmo:fileSize "23018055"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:24:36.000+01:00"^^xs:dateTime ;
+	bmmo:path "Pat Metheny Group/We Live Here/04 - To The End Of The World (Album Version).mp3" ;
+	mo:encodes <urn:bluemarine:signal:MOSkriTnP62ffjXKk6CWisqSdfw=> ;
+	foaf:sha1 "30e4a4ae24e73fad9f7e35ca93a0968aca9275fc" .
+
+<urn:bluemarine:audiofile:MetFU9lJbaPVphBn8ZdUEMMsQL4=> a mo:AudioFile ;
+	bmmo:fileSize "12092498"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T18:58:16.000+01:00"^^xs:dateTime ;
+	bmmo:path "John Scofield With Pat Methany/I Can See Your House From Here/04 - Everybody's Party.mp3" ;
+	mo:encodes <urn:bluemarine:signal:MetFU9lJbaPVphBn8ZdUEMMsQL4=> ;
+	foaf:sha1 "31eb4553d9496da3d5a61067f1975410c32c40be" .
 
 <urn:bluemarine:audiofile:N9kojfpnl3VphROCWWcY-SpAnXM=> a mo:AudioFile ;
 	bmmo:fileSize "7761676"^^xs:long ;
@@ -238,6 +484,22 @@
 	mo:encodes <urn:bluemarine:signal:N9kojfpnl3VphROCWWcY-SpAnXM=> ;
 	foaf:sha1 "37d9288dfa67977569851382596718f92a409d73" .
 
+<urn:bluemarine:audiofile:NeM43AEvn3Y7D6shZYzQnjmm1kE=> a mo:AudioFile ;
+	bmmo:fileSize "8684982"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:37:50.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Speak Love/04 - I May Be Wrong (But I Think You're Wonderful).mp3" ;
+	mo:encodes <urn:bluemarine:signal:NeM43AEvn3Y7D6shZYzQnjmm1kE=> ;
+	foaf:sha1 "35e338dc012f9f763b0fab21658cd09e39a6d641" .
+
+<urn:bluemarine:audiofile:NfVLCdCNjolFHSneAEN6hpZulEc=> a mo:AudioFile ;
+	bmmo:fileSize "11657850"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:20:38.000+01:00"^^xs:dateTime ;
+	bmmo:path "Pat Metheny Group/We Live Here/09 - Stranger In Town (Album Version).mp3" ;
+	mo:encodes <urn:bluemarine:signal:NfVLCdCNjolFHSneAEN6hpZulEc=> ;
+	foaf:sha1 "35f54b09d08d8e89451d29de00437a86966e9447" .
+
 <urn:bluemarine:audiofile:NlY_EBT-LCJudlAGmGsxkBRCuHI=> a mo:AudioFile ;
 	bmmo:fileSize "12283345"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -245,6 +507,14 @@
 	bmmo:path "Pat Metheny/Unity Band/08 - Then and Now.mp3" ;
 	mo:encodes <urn:bluemarine:signal:NlY_EBT-LCJudlAGmGsxkBRCuHI=> ;
 	foaf:sha1 "36563f1014fe2c226e765006986b31901442b872" .
+
+<urn:bluemarine:audiofile:O7QdPTePttE6WTS_5BwGd2RFuMs=> a mo:AudioFile ;
+	bmmo:fileSize "3218181"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:14:36.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/10 - Florence Sur Les Champs-Elysees.mp3" ;
+	mo:encodes <urn:bluemarine:signal:O7QdPTePttE6WTS_5BwGd2RFuMs=> ;
+	foaf:sha1 "3bb41d3d378fb6d13a5934bfe41c06776445b8cb" .
 
 <urn:bluemarine:audiofile:OFgF7qO0g5Uu0Ta_IIFqkDGbjtU=> a mo:AudioFile ;
 	bmmo:fileSize "12423113"^^xs:long ;
@@ -278,6 +548,22 @@
 	mo:encodes <urn:bluemarine:signal:PWKE2DbVVyqCO_6yO8OCn9Ytobk=> ;
 	foaf:sha1 "3d6284d836d5572a823bfeb23bc3829fd62da1b9" .
 
+<urn:bluemarine:audiofile:Q5MJZd_obudwpP5f-QQwIqr1TXs=> a mo:AudioFile ;
+	bmmo:fileSize "3369262"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:13:52.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/14 - Visite Du Vigile.mp3" ;
+	mo:encodes <urn:bluemarine:signal:Q5MJZd_obudwpP5f-QQwIqr1TXs=> ;
+	foaf:sha1 "43930965dfe86ee770a4fe5ff9043022aaf54d7b" .
+
+<urn:bluemarine:audiofile:Qn35w07ZuXKT6MYN2AxcfLwPlek=> a mo:AudioFile ;
+	bmmo:fileSize "6159930"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:06:22.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/07 - You Took Advantage Of Me.mp3" ;
+	mo:encodes <urn:bluemarine:signal:Qn35w07ZuXKT6MYN2AxcfLwPlek=> ;
+	foaf:sha1 "427df9c34ed9b97293e8c60dd80c5c7cbc0f95e9" .
+
 <urn:bluemarine:audiofile:R7N5_KEy4Tyg-aVGxDfwa31orUk=> a mo:AudioFile ;
 	bmmo:fileSize "7964707"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -286,6 +572,46 @@
 	mo:encodes <urn:bluemarine:signal:R7N5_KEy4Tyg-aVGxDfwa31orUk=> ;
 	foaf:sha1 "47b379fca132e13ca0f9a546c437f06b7d68ad49" .
 
+<urn:bluemarine:audiofile:Rf0VABK9uWcpGrNlnn7GiUCfwEI=> a mo:AudioFile ;
+	bmmo:fileSize "8138714"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:07:58.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/03 - My Old Flame.mp3" ;
+	mo:encodes <urn:bluemarine:signal:Rf0VABK9uWcpGrNlnn7GiUCfwEI=> ;
+	foaf:sha1 "45fd150012bdb967291ab3659e7ec689409fc042" .
+
+<urn:bluemarine:audiofile:S-UNBsEYdKTMYSG2QJIT8juao7w=> a mo:AudioFile ;
+	bmmo:fileSize "7324078"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:37:20.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Speak Love/05 - At Last.mp3" ;
+	mo:encodes <urn:bluemarine:signal:S-UNBsEYdKTMYSG2QJIT8juao7w=> ;
+	foaf:sha1 "4be50d06c11874a4cc6121b6409213f23b9aa3bc" .
+
+<urn:bluemarine:audiofile:S4BCDieDH82_bFpqsiNdu-THm4E=> a mo:AudioFile ;
+	bmmo:fileSize "7891608"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:24:08.000+01:00"^^xs:dateTime ;
+	bmmo:path "Pat Metheny Group/We Live Here/05 - We Live Here (Album Version).mp3" ;
+	mo:encodes <urn:bluemarine:signal:S4BCDieDH82_bFpqsiNdu-THm4E=> ;
+	foaf:sha1 "4b80420e27831fcdbf6c5a6ab2235dbbe4c79b81" .
+
+<urn:bluemarine:audiofile:So1QiRmx-OheLPdjjyHuWJR8vZ8=> a mo:AudioFile ;
+	bmmo:fileSize "7952999"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:38:26.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Speak Love/03 - There's No You.mp3" ;
+	mo:encodes <urn:bluemarine:signal:So1QiRmx-OheLPdjjyHuWJR8vZ8=> ;
+	foaf:sha1 "4a8d508919b1f8e85e2cf7638f21ee58947cbd9f" .
+
+<urn:bluemarine:audiofile:TCHm-4lsHxwL66cxy4W76DlqiB0=> a mo:AudioFile ;
+	bmmo:fileSize "8706096"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T18:29:32.000+01:00"^^xs:dateTime ;
+	bmmo:path "John Scofield With Pat Methany/I Can See Your House From Here/08 - S.C.O..mp3" ;
+	mo:encodes <urn:bluemarine:signal:TCHm-4lsHxwL66cxy4W76DlqiB0=> ;
+	foaf:sha1 "4c21e6fb896c1f1c0beba731cb85bbe8396a881d" .
+
 <urn:bluemarine:audiofile:TXbShidgAGT5UNBJ9Hb5J_Paw1Y=> a mo:AudioFile ;
 	bmmo:fileSize "11220719"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -293,6 +619,22 @@
 	bmmo:path "Pat Metheny/What's It All About/07 - That's the Way I've Always Heard It Should Be.mp3" ;
 	mo:encodes <urn:bluemarine:signal:TXbShidgAGT5UNBJ9Hb5J_Paw1Y=> ;
 	foaf:sha1 "4d76d28627600064f950d049f476f927f3dac356" .
+
+<urn:bluemarine:audiofile:US0G_RU1ClHUMGmiPIb8P5wyrfg=> a mo:AudioFile ;
+	bmmo:fileSize "16178032"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:19:12.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/01 - So What.mp3" ;
+	mo:encodes <urn:bluemarine:signal:US0G_RU1ClHUMGmiPIb8P5wyrfg=> ;
+	foaf:sha1 "512d06fd15350a51d43069a23c86fc3f9c32adf8" .
+
+<urn:bluemarine:audiofile:UZCrhtp50UdV_IzOhqMu1uJKhek=> a mo:AudioFile ;
+	bmmo:fileSize "6419276"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:09:58.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/20 - Dancing In The Dark.mp3" ;
+	mo:encodes <urn:bluemarine:signal:UZCrhtp50UdV_IzOhqMu1uJKhek=> ;
+	foaf:sha1 "5190ab86da79d14755fc8cce86a32ed6e24a85e9" .
 
 <urn:bluemarine:audiofile:UgxQV7mnaqXzsnEe_IJX9JPrJmg=> a mo:AudioFile ;
 	bmmo:fileSize "14249501"^^xs:long ;
@@ -318,6 +660,22 @@
 	mo:encodes <urn:bluemarine:signal:V_qWu6EjeetzGzKnfpLYjdl9yZA=> ;
 	foaf:sha1 "57fa96bba12379eb731b32a77e92d88dd97dc990" .
 
+<urn:bluemarine:audiofile:Vn1HETORg3kNF-Vg5sV2Cq0Ykis=> a mo:AudioFile ;
+	bmmo:fileSize "11445870"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:11:52.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/17 - Love For Sale.mp3" ;
+	mo:encodes <urn:bluemarine:signal:Vn1HETORg3kNF-Vg5sV2Cq0Ykis=> ;
+	foaf:sha1 "567d4711339183790d17e560e6c5760aad18922b" .
+
+<urn:bluemarine:audiofile:Vny4Mv7x6EEHfwHJO1ShBVCSBi4=> a mo:AudioFile ;
+	bmmo:fileSize "8322079"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:01:24.000+01:00"^^xs:dateTime ;
+	bmmo:path "John Scofield With Pat Methany/I Can See Your House From Here/02 - The Red One.mp3" ;
+	mo:encodes <urn:bluemarine:signal:Vny4Mv7x6EEHfwHJO1ShBVCSBi4=> ;
+	foaf:sha1 "567cb832fef1e841077f01c93b54a1055092062e" .
+
 <urn:bluemarine:audiofile:W5-pGtDsbYF7q8qpUccPubmM0rI=> a mo:AudioFile ;
 	bmmo:fileSize "18211706"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -325,6 +683,14 @@
 	bmmo:path "Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/06 - Oliloqui Valley (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3" ;
 	mo:encodes <urn:bluemarine:signal:W5-pGtDsbYF7q8qpUccPubmM0rI=> ;
 	foaf:sha1 "5b9fa91ad0ec6d817babcaa951c70fb9b98cd2b2" .
+
+<urn:bluemarine:audiofile:WHS1yXj27s8f2NIwEpHHwCD1myE=> a mo:AudioFile ;
+	bmmo:fileSize "6926178"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:40:28.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Speak Love/09 - Girl Talk.mp3" ;
+	mo:encodes <urn:bluemarine:signal:WHS1yXj27s8f2NIwEpHHwCD1myE=> ;
+	foaf:sha1 "5874b5c978f6eecf1fd8d2301291c7c020f59b21" .
 
 <urn:bluemarine:audiofile:WJ__DHc9-5W9dRkfvFtEuzPga1I=> a mo:AudioFile ;
 	bmmo:fileSize "5959550"^^xs:long ;
@@ -350,6 +716,14 @@
 	mo:encodes <urn:bluemarine:signal:X5u3e0yKkqS7AYaIaAaIWC_RlWc=> ;
 	foaf:sha1 "5f9bb77b4c8a92a4bb018688680688582fd19567" .
 
+<urn:bluemarine:audiofile:XBbo-fGHwyRExHjuhiQL2luewz8=> a mo:AudioFile ;
+	bmmo:fileSize "7268082"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:09:12.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/01 - I Ain't Got Nothing But The Blues.mp3" ;
+	mo:encodes <urn:bluemarine:signal:XBbo-fGHwyRExHjuhiQL2luewz8=> ;
+	foaf:sha1 "5c16e8f9f187c32444c478ee86240bda5b9ec33f" .
+
 <urn:bluemarine:audiofile:XOY8nK-Y6lGUw2f_W-cHa8gFKUA=> a mo:AudioFile ;
 	bmmo:fileSize "17890597"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -358,6 +732,14 @@
 	mo:encodes <urn:bluemarine:signal:XOY8nK-Y6lGUw2f_W-cHa8gFKUA=> ;
 	foaf:sha1 "5ce63c9caf98ea5194c367ff5be7076bc8052940" .
 
+<urn:bluemarine:audiofile:Xx__4K7TT85E2V30i-XIBSxDpO0=> a mo:AudioFile ;
+	bmmo:fileSize "6550468"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:36:20.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Speak Love/07 - Gone With The Wind.mp3" ;
+	mo:encodes <urn:bluemarine:signal:Xx__4K7TT85E2V30i-XIBSxDpO0=> ;
+	foaf:sha1 "5f1fffe0aed34fce44d95df48be5c8052c43a4ed" .
+
 <urn:bluemarine:audiofile:Y71NZjYlu3Cv70-MJqUOCPrUe-c=> a mo:AudioFile ;
 	bmmo:fileSize "14336705"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -365,6 +747,22 @@
 	bmmo:path "John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/02 - I'll Get By (As Long As I Have You) (Album Version).mp3" ;
 	mo:encodes <urn:bluemarine:signal:Y71NZjYlu3Cv70-MJqUOCPrUe-c=> ;
 	foaf:sha1 "63bd4d663625bb70afef4f8c26a50e08fad47be7" .
+
+<urn:bluemarine:audiofile:YOHdaFyq3VzbLCKqEnwahgi4fgY=> a mo:AudioFile ;
+	bmmo:fileSize "2361809"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:15:04.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/07 - L'Assassinat de Carala.mp3" ;
+	mo:encodes <urn:bluemarine:signal:YOHdaFyq3VzbLCKqEnwahgi4fgY=> ;
+	foaf:sha1 "60e1dd685caadd5cdb2c22aa127c1a8608b87e06" .
+
+<urn:bluemarine:audiofile:ZDAwL7AfR9e-PpY4ELKZI2U8aio=> a mo:AudioFile ;
+	bmmo:fileSize "6249290"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:31:30.000+01:00"^^xs:dateTime ;
+	bmmo:path "Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/13 - One Mint Julep (Bonus Track).mp3" ;
+	mo:encodes <urn:bluemarine:signal:ZDAwL7AfR9e-PpY4ELKZI2U8aio=> ;
+	foaf:sha1 "6430302fb01f47d7be3e963810b29923653c6a2a" .
 
 <urn:bluemarine:audiofile:_9Ui8aDyAlMA1pQql9t07zYCD50=> a mo:AudioFile ;
 	bmmo:fileSize "10820765"^^xs:long ;
@@ -382,6 +780,22 @@
 	mo:encodes <urn:bluemarine:signal:_c335v5dN_F1xqfM0pe3R8H4tH8=> ;
 	foaf:sha1 "fdcdf7e6fe5d37f175c6a7ccd297b747c1f8b47f" .
 
+<urn:bluemarine:audiofile:a1wfTtE5rJMVQHum0frs_a-xA4M=> a mo:AudioFile ;
+	bmmo:fileSize "14411699"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:27:20.000+01:00"^^xs:dateTime ;
+	bmmo:path "Pat Metheny Group/We Live Here/02 - And Then I Knew (Album Version).mp3" ;
+	mo:encodes <urn:bluemarine:signal:a1wfTtE5rJMVQHum0frs_a-xA4M=> ;
+	foaf:sha1 "6b5c1f4ed139ac9315407ba6d1faecfdafb10383" .
+
+<urn:bluemarine:audiofile:aDkCFPjQPrsSORJu2FWtiqrEObc=> a mo:AudioFile ;
+	bmmo:fileSize "7657346"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:33:08.000+01:00"^^xs:dateTime ;
+	bmmo:path "Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/01 - You're Mine, You.mp3" ;
+	mo:encodes <urn:bluemarine:signal:aDkCFPjQPrsSORJu2FWtiqrEObc=> ;
+	foaf:sha1 "68390214f8d03ebb1239126ed855ad8aaac439b7" .
+
 <urn:bluemarine:audiofile:ar7qVD08w9OVrt_XpFNtvxIlWxI=> a mo:AudioFile ;
 	bmmo:fileSize "15231502"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -398,6 +812,46 @@
 	mo:encodes <urn:bluemarine:signal:bE7b8mwrFn0vFWjE3ZEk2V-qcBk=> ;
 	foaf:sha1 "6c4edbf26c2b167d2f1568c4dd9124d95faa7019" .
 
+<urn:bluemarine:audiofile:bmhy2P3eT02fCAZDWRwr8GwWk44=> a mo:AudioFile ;
+	bmmo:fileSize "17671451"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:12:28.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/16 - Autumn Leaves.mp3" ;
+	mo:encodes <urn:bluemarine:signal:bmhy2P3eT02fCAZDWRwr8GwWk44=> ;
+	foaf:sha1 "6e6872d8fdde4f4d9f080643591c2bf06c16938e" .
+
+<urn:bluemarine:audiofile:bqIA93cQn384t6yvaFDwaBiMMn0=> a mo:AudioFile ;
+	bmmo:fileSize "16718856"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:18:08.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/02 - Freddie Freeloader.mp3" ;
+	mo:encodes <urn:bluemarine:signal:bqIA93cQn384t6yvaFDwaBiMMn0=> ;
+	foaf:sha1 "6ea200f777109f7f38b7acaf6850f068188c327d" .
+
+<urn:bluemarine:audiofile:c8DsIJlpWpmzYaKt4T5KCtVE37E=> a mo:AudioFile ;
+	bmmo:fileSize "5135470"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:38:58.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Speak Love/02 - Comes Love.mp3" ;
+	mo:encodes <urn:bluemarine:signal:c8DsIJlpWpmzYaKt4T5KCtVE37E=> ;
+	foaf:sha1 "73c0ec2099695a99b361a2ade13e4a0ad544dfb1" .
+
+<urn:bluemarine:audiofile:cjjGWUUpi3m1PCj-SehWHtw-j3o=> a mo:AudioFile ;
+	bmmo:fileSize "13403420"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:11:02.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/18 - Somethin' Else.mp3" ;
+	mo:encodes <urn:bluemarine:signal:cjjGWUUpi3m1PCj-SehWHtw-j3o=> ;
+	foaf:sha1 "7238c65945298b79b53c28fe49e8561edc3e8f7a" .
+
+<urn:bluemarine:audiofile:ctkfIUJId2_viHdrcPFq0SV2xnc=> a mo:AudioFile ;
+	bmmo:fileSize "2650587"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:14:54.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/08 - Sur L'Autoroute.mp3" ;
+	mo:encodes <urn:bluemarine:signal:ctkfIUJId2_viHdrcPFq0SV2xnc=> ;
+	foaf:sha1 "72d91f214248776fef88776b70f16ad12576c677" .
+
 <urn:bluemarine:audiofile:cuRZtqLe8l57iCTFmaWfh2d6Nrk=> a mo:AudioFile ;
 	bmmo:fileSize "16648544"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -405,6 +859,22 @@
 	bmmo:path "John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/01 - Don't Take Your Love From Me (Album Version).mp3" ;
 	mo:encodes <urn:bluemarine:signal:cuRZtqLe8l57iCTFmaWfh2d6Nrk=> ;
 	foaf:sha1 "72e459b6a2def25e7b8824c599a59f87677a36b9" .
+
+<urn:bluemarine:audiofile:ebAeZKvyKAsc6AQK2xGPWpf6jps=> a mo:AudioFile ;
+	bmmo:fileSize "20222760"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:16:16.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/04 - All Blues.mp3" ;
+	mo:encodes <urn:bluemarine:signal:ebAeZKvyKAsc6AQK2xGPWpf6jps=> ;
+	foaf:sha1 "79b01e64abf2280b1ce8040adb118f5a97fa8e9b" .
+
+<urn:bluemarine:audiofile:ecH-5r8llxgEDwozV6iiXehe2iI=> a mo:AudioFile ;
+	bmmo:fileSize "13218110"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T18:36:14.000+01:00"^^xs:dateTime ;
+	bmmo:path "John Scofield With Pat Methany/I Can See Your House From Here/07 - Say The Brother's Name.mp3" ;
+	mo:encodes <urn:bluemarine:signal:ecH-5r8llxgEDwozV6iiXehe2iI=> ;
+	foaf:sha1 "79c1fee6bf259718040f0a3357a8a25de85eda22" .
 
 <urn:bluemarine:audiofile:fRppsRWN141pP1jBq3Z4vdBF03s=> a mo:AudioFile ;
 	bmmo:fileSize "6629425"^^xs:long ;
@@ -422,6 +892,14 @@
 	mo:encodes <urn:bluemarine:signal:g27KOA6hncFcaM23mUk8XtELvSQ=> ;
 	foaf:sha1 "836eca380ea19dc15c68cdb799493c5ed10bbd24" .
 
+<urn:bluemarine:audiofile:gGN0vGCMy9PE9wLaFUCZhkxCIOQ=> a mo:AudioFile ;
+	bmmo:fileSize "6244119"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:04:32.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/11 - Solitude.mp3" ;
+	mo:encodes <urn:bluemarine:signal:gGN0vGCMy9PE9wLaFUCZhkxCIOQ=> ;
+	foaf:sha1 "806374bc608ccbd3c4f702da154099864c4220e4" .
+
 <urn:bluemarine:audiofile:gtjB3RRAEE0oK8eFS9eiQuODIHQ=> a mo:AudioFile ;
 	bmmo:fileSize "12762561"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -437,6 +915,30 @@
 	bmmo:path "Pat Metheny/Orchestrion/01 - Orchestrion.mp3" ;
 	mo:encodes <urn:bluemarine:signal:h2pfiqVLLkEzJyoxUxUUJrvjlt4=> ;
 	foaf:sha1 "876a5f8aa54b2e4133272a3153151426bbe396de" .
+
+<urn:bluemarine:audiofile:hPXpIFwNbfCNV2juvgLIc3ID4aI=> a mo:AudioFile ;
+	bmmo:fileSize "7116241"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:32:30.000+01:00"^^xs:dateTime ;
+	bmmo:path "Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/08 - Baubles, Bangles and Beads.mp3" ;
+	mo:encodes <urn:bluemarine:signal:hPXpIFwNbfCNV2juvgLIc3ID4aI=> ;
+	foaf:sha1 "84f5e9205c0d6df08d5768eebe02c8737203e1a2" .
+
+<urn:bluemarine:audiofile:hXb570O70eTqn3eykNEjiGg6WtQ=> a mo:AudioFile ;
+	bmmo:fileSize "14463904"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:21:22.000+01:00"^^xs:dateTime ;
+	bmmo:path "Pat Metheny Group/We Live Here/08 - Red Sky (Album Version).mp3" ;
+	mo:encodes <urn:bluemarine:signal:hXb570O70eTqn3eykNEjiGg6WtQ=> ;
+	foaf:sha1 "8576f9ef43bbd1e4ea9f77b290d12388683a5ad4" .
+
+<urn:bluemarine:audiofile:hnSSF4xvkbuzq2y0pukno12yRFY=> a mo:AudioFile ;
+	bmmo:fileSize "7565595"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:05:30.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/09 - All Too Soon.mp3" ;
+	mo:encodes <urn:bluemarine:signal:hnSSF4xvkbuzq2y0pukno12yRFY=> ;
+	foaf:sha1 "867492178c6f91bbb3ab6cb4a6e927a35db24456" .
 
 <urn:bluemarine:audiofile:iehf2Hjhe5FBCEIziQ27y2gC3FM=> a mo:AudioFile ;
 	bmmo:importedFrom "embedded" ;
@@ -460,6 +962,14 @@
 	bmmo:path "Stevie Wonder/Songs In The Key Of Life/04 - Contusion.mp3" ;
 	mo:encodes <urn:bluemarine:signal:k9kv2nLB9S-k9Hto72TlEARoeL8=> ;
 	foaf:sha1 "93d92fda72c1f52fa4f47b68ef64e510046878bf" .
+
+<urn:bluemarine:audiofile:kdsoDIClKoog_cXoaITZSD0M0hQ=> a mo:AudioFile ;
+	bmmo:fileSize "6031051"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:35:52.000+01:00"^^xs:dateTime ;
+	bmmo:path "Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/03 - Witchcraft.mp3" ;
+	mo:encodes <urn:bluemarine:signal:kdsoDIClKoog_cXoaITZSD0M0hQ=> ;
+	foaf:sha1 "91db280c80a52a8a20fdc5e86884d9483d0cd214" .
 
 <urn:bluemarine:audiofile:kx29swV2hDOTnY0sNyCrC9bD2BA=> a mo:AudioFile ;
 	bmmo:fileSize "15085412"^^xs:long ;
@@ -509,6 +1019,30 @@
 	mo:encodes <urn:bluemarine:signal:mdYqXKdFJ9ncgO6xTrMQb9czPfI=> ;
 	foaf:sha1 "99d62a5ca74527d9dc80eeb14eb3106fd7333df2" .
 
+<urn:bluemarine:audiofile:mdn4xke9bgmj1D0dyUPu3E7uWZQ=> a mo:AudioFile ;
+	bmmo:fileSize "4165879"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:13:38.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/15 - Chez Le Photograph Du Motel.mp3" ;
+	mo:encodes <urn:bluemarine:signal:mdn4xke9bgmj1D0dyUPu3E7uWZQ=> ;
+	foaf:sha1 "99d9f8c647bd6e09a3d43d1dc943eedc4eee5994" .
+
+<urn:bluemarine:audiofile:n32meJvUKXy1SAD7MC_fo7rT8k0=> a mo:AudioFile ;
+	bmmo:fileSize "6247631"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:33:38.000+01:00"^^xs:dateTime ;
+	bmmo:path "Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/12 - On Green Dolphin Street.mp3" ;
+	mo:encodes <urn:bluemarine:signal:n32meJvUKXy1SAD7MC_fo7rT8k0=> ;
+	foaf:sha1 "9f7da6789bd4297cb54800fb302fdfa3bad3f24d" .
+
+<urn:bluemarine:audiofile:nT6PtWE7VFsBl5re41AxAGqpFv8=> a mo:AudioFile ;
+	bmmo:fileSize "14578117"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:29:26.000+01:00"^^xs:dateTime ;
+	bmmo:path "Pat Metheny Group/We Live Here/01 - Here To Stay (Album Version).mp3" ;
+	mo:encodes <urn:bluemarine:signal:nT6PtWE7VFsBl5re41AxAGqpFv8=> ;
+	foaf:sha1 "9d3e8fb5613b545b01979adee35031006aa916ff" .
+
 <urn:bluemarine:audiofile:nTQrV3k1yqnCnWHdEnCCNayCqp8=> a mo:AudioFile ;
 	bmmo:fileSize "8320341"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -517,6 +1051,22 @@
 	mo:encodes <urn:bluemarine:signal:nTQrV3k1yqnCnWHdEnCCNayCqp8=> ;
 	foaf:sha1 "9d342b577935caa9c29d61dd12708235ac82aa9f" .
 
+<urn:bluemarine:audiofile:nZLLaL7OPRVNeAlfC-uIqi895qA=> a mo:AudioFile ;
+	bmmo:fileSize "9836826"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:26:46.000+01:00"^^xs:dateTime ;
+	bmmo:path "Pat Metheny Group/We Live Here/03 - The Girls Next Door (Album Version).mp3" ;
+	mo:encodes <urn:bluemarine:signal:nZLLaL7OPRVNeAlfC-uIqi895qA=> ;
+	foaf:sha1 "9d92cb68bece3d154d78095f0beb88aa2f3de6a0" .
+
+<urn:bluemarine:audiofile:nexlt72MhCJd20C0Dcmw7Z4yNQ4=> a mo:AudioFile ;
+	bmmo:fileSize "4770955"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:07:26.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/04 - That Old Feeling.mp3" ;
+	mo:encodes <urn:bluemarine:signal:nexlt72MhCJd20C0Dcmw7Z4yNQ4=> ;
+	foaf:sha1 "9dec65b7bd8c84225ddb40b40dc9b0ed9e32350e" .
+
 <urn:bluemarine:audiofile:oP8pHG8FNRYzkfJkzRTZKPiPlC0=> a mo:AudioFile ;
 	bmmo:fileSize "13590337"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -524,6 +1074,38 @@
 	bmmo:path "Pat Metheny/Unity Band/05 - Leaving Town.mp3" ;
 	mo:encodes <urn:bluemarine:signal:oP8pHG8FNRYzkfJkzRTZKPiPlC0=> ;
 	foaf:sha1 "a0ff291c6f0535163391f264cd14d928f88f942d" .
+
+<urn:bluemarine:audiofile:oahAbPzTCfQUCM2UQf4_-UiduiI=> a mo:AudioFile ;
+	bmmo:fileSize "7117207"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:39:12.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Speak Love/01 - Speak Low.mp3" ;
+	mo:encodes <urn:bluemarine:signal:oahAbPzTCfQUCM2UQf4_-UiduiI=> ;
+	foaf:sha1 "a1a8406cfcd309f41408cd9441fe3ff9489dba22" .
+
+<urn:bluemarine:audiofile:p4F-_cso89rS9vdtaLKpqGp5JnQ=> a mo:AudioFile ;
+	bmmo:fileSize "5045060"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:40:52.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Speak Love/08 - Blue And Sentimental.mp3" ;
+	mo:encodes <urn:bluemarine:signal:p4F-_cso89rS9vdtaLKpqGp5JnQ=> ;
+	foaf:sha1 "a7817efdcb28f3dad2f6f76d68b2a9a86a792674" .
+
+<urn:bluemarine:audiofile:pEIZ1KgwYzclDFZTsqCklyC0p78=> a mo:AudioFile ;
+	bmmo:fileSize "3164976"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:15:12.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/06 - Generique.mp3" ;
+	mo:encodes <urn:bluemarine:signal:pEIZ1KgwYzclDFZTsqCklyC0p78=> ;
+	foaf:sha1 "a44219d4a8306337250c5653b2a0a49720b4a7bf" .
+
+<urn:bluemarine:audiofile:qTd9tdTTmHZcOda66R07EJqgrDs=> a mo:AudioFile ;
+	bmmo:fileSize "7893032"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:06:46.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/06 - I Didn't Know About You.mp3" ;
+	mo:encodes <urn:bluemarine:signal:qTd9tdTTmHZcOda66R07EJqgrDs=> ;
+	foaf:sha1 "a9377db5d4d398765c39d6bae91d3b109aa0ac3b" .
 
 <urn:bluemarine:audiofile:qoAPiHqsM7ol0XgLJHyZyNJdlMo=> a mo:AudioFile ;
 	bmmo:fileSize "16528796"^^xs:long ;
@@ -557,6 +1139,22 @@
 	mo:encodes <urn:bluemarine:signal:rbLVLXei4ld9Bi_Dp7w4lVjZdfc=> ;
 	foaf:sha1 "adb2d52d77a2e2577d062fc3a7bc389558d975f7" .
 
+<urn:bluemarine:audiofile:s6Ug9VaVbLmagI4yeFBsRx9P2Zw=> a mo:AudioFile ;
+	bmmo:fileSize "13776565"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:10:16.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/19 - One For Daddy-O.mp3" ;
+	mo:encodes <urn:bluemarine:signal:s6Ug9VaVbLmagI4yeFBsRx9P2Zw=> ;
+	foaf:sha1 "b3a520f556956cb99a808e3278506c471f4fd99c" .
+
+<urn:bluemarine:audiofile:sSue0fXQ1qsNhsTNwwSgYb-OF5g=> a mo:AudioFile ;
+	bmmo:fileSize "4748634"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:34:40.000+01:00"^^xs:dateTime ;
+	bmmo:path "Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/06 - I Could Write a Book.mp3" ;
+	mo:encodes <urn:bluemarine:signal:sSue0fXQ1qsNhsTNwwSgYb-OF5g=> ;
+	foaf:sha1 "b12b9ed1f5d0d6ab0d86c4cdc304a061bf8e1798" .
+
 <urn:bluemarine:audiofile:tf-mi4I2naramYmykiD0ItVTZn0=> a mo:AudioFile ;
 	bmmo:fileSize "10445534"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -564,6 +1162,30 @@
 	bmmo:path "Thelonious Sphere Monk/Monk's Blues/08 - Trinkle, Tinkle.mp3" ;
 	mo:encodes <urn:bluemarine:signal:tf-mi4I2naramYmykiD0ItVTZn0=> ;
 	foaf:sha1 "b5ffa68b82369daada9989b29220f422d553667d" .
+
+<urn:bluemarine:audiofile:tjVIVmNaJCB6GWDCm0fin__Tt2I=> a mo:AudioFile ;
+	bmmo:fileSize "4073116"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:04:18.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/12 - Nature Boy.mp3" ;
+	mo:encodes <urn:bluemarine:signal:tjVIVmNaJCB6GWDCm0fin__Tt2I=> ;
+	foaf:sha1 "b6354856635a24207a1960c29b47e29fffd3b762" .
+
+<urn:bluemarine:audiofile:uTbzdQUvKBbyGAAedU4i849-ndw=> a mo:AudioFile ;
+	bmmo:fileSize "4011663"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:07:12.000+01:00"^^xs:dateTime ;
+	bmmo:path "Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/05 - Rain.mp3" ;
+	mo:encodes <urn:bluemarine:signal:uTbzdQUvKBbyGAAedU4i849-ndw=> ;
+	foaf:sha1 "b936f375052f2816f218001e754e22f38f7e9ddc" .
+
+<urn:bluemarine:audiofile:u_xZ6J9bVDJWvgEqenlC7z4-qfI=> a mo:AudioFile ;
+	bmmo:fileSize "6040622"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:30:50.000+01:00"^^xs:dateTime ;
+	bmmo:path "Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/14 - (Mama) He Treats Your Daughter Mean [Bonus Track.mp3" ;
+	mo:encodes <urn:bluemarine:signal:u_xZ6J9bVDJWvgEqenlC7z4-qfI=> ;
+	foaf:sha1 "bbfc59e89f5b543256be012a7a7942ef3e3ea9f2" .
 
 <urn:bluemarine:audiofile:ueOVz3lq_EENnMHuMNyQQ2yxkv4=> a mo:AudioFile ;
 	bmmo:fileSize "12798492"^^xs:long ;
@@ -581,6 +1203,14 @@
 	mo:encodes <urn:bluemarine:signal:vCBaLw-1p4v6lJFkA2-rqMNScQI=> ;
 	foaf:sha1 "bc205a2f0fb5a78bfa949164036faba8c3527102" .
 
+<urn:bluemarine:audiofile:v_SkFFxOo7OD23eb7hx-jk8c7G8=> a mo:AudioFile ;
+	bmmo:fileSize "5490571"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:32:08.000+01:00"^^xs:dateTime ;
+	bmmo:path "Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/09 - Fly Me to the Moon.mp3" ;
+	mo:encodes <urn:bluemarine:signal:v_SkFFxOo7OD23eb7hx-jk8c7G8=> ;
+	foaf:sha1 "bff4a4145c4ea3b383db779bee1c7e8e4f1cec6f" .
+
 <urn:bluemarine:audiofile:vo179vVz9LUSWG-mHuxlmxmzDbI=> a mo:AudioFile ;
 	bmmo:fileSize "20165311"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -597,6 +1227,14 @@
 	mo:encodes <urn:bluemarine:signal:wIcOe4CY1EIOocvvvtqE018bFdo=> ;
 	foaf:sha1 "c0870e7b8098d4420ea1cbefbeda84d35f1b15da" .
 
+<urn:bluemarine:audiofile:xS948vxWkpMhKEmKk1TIlJHSSF8=> a mo:AudioFile ;
+	bmmo:fileSize "14333092"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:02:04.000+01:00"^^xs:dateTime ;
+	bmmo:path "John Scofield With Pat Methany/I Can See Your House From Here/01 - I Can See Your House From Here.mp3" ;
+	mo:encodes <urn:bluemarine:signal:xS948vxWkpMhKEmKk1TIlJHSSF8=> ;
+	foaf:sha1 "c52f78f2fc5692932128498a9354c89491d2485f" .
+
 <urn:bluemarine:audiofile:xa-UncfEgrx1SmlcxikoeFdtCO4=> a mo:AudioFile ;
 	bmmo:fileSize "12650557"^^xs:long ;
 	bmmo:importedFrom "embedded" ;
@@ -612,6 +1250,14 @@
 	bmmo:path "Thelonious Sphere Monk/Monk's Blues/01 - Let's Cool One (Album Version).mp3" ;
 	mo:encodes <urn:bluemarine:signal:y-3vR4bdZO54ie8-9n8m1pOUo94=> ;
 	foaf:sha1 "cbedef4786dd64ee7889ef3ef67f26d69394a3de" .
+
+<urn:bluemarine:audiofile:ydvgWKmrstVzCXmqwaPtXvRXJgY=> a mo:AudioFile ;
+	bmmo:fileSize "4495751"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:34:00.000+01:00"^^xs:dateTime ;
+	bmmo:path "Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/11 - Invitation.mp3" ;
+	mo:encodes <urn:bluemarine:signal:ydvgWKmrstVzCXmqwaPtXvRXJgY=> ;
+	foaf:sha1 "c9dbe058a9abb2d5730979aac1a3ed5ef4572606" .
 
 <urn:bluemarine:audiofile:yuDuADlVwvjjx0qP-qeFssedFYk=> a mo:AudioFile ;
 	bmmo:fileSize "15807877"^^xs:long ;
@@ -636,6 +1282,62 @@
 	bmmo:path "Stevie Wonder/Songs In The Key Of Life/02 - Have A Talk With God.mp3" ;
 	mo:encodes <urn:bluemarine:signal:zPqMBiz66ykPtT2Ef5Tz9t64D7A=> ;
 	foaf:sha1 "ccfa8c062cfaeb290fb53d847f94f3f6deb80fb0" .
+
+<urn:bluemarine:audiofile:zTjB5QMxZWuEItGiA8ROVDVzYNI=> a mo:AudioFile ;
+	bmmo:fileSize "1005548"^^xs:long ;
+	bmmo:importedFrom "embedded" ;
+	bmmo:latestIndexingTime "2017-02-02T19:14:18.000+01:00"^^xs:dateTime ;
+	bmmo:path "Miles Davis/Kind Of Blue (Amazon Edition)/12 - Evasion De Julien.mp3" ;
+	mo:encodes <urn:bluemarine:signal:zTjB5QMxZWuEItGiA8ROVDVzYNI=> ;
+	foaf:sha1 "cd38c1e50331656b8422d1a203c44e54357360d2" .
+
+<urn:bluemarine:record:3MZBxRF7vHm9HIon7caMBvRyBe4=> a mo:Record ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Speak Love" ;
+	mo:media_type mo:CD ;
+	mo:track <urn:bluemarine:track:0hUB6Zu2KEdKZyWHc9FW9-d0gaw=> , <urn:bluemarine:track:5DBwY_0wdAdPkZkFAzmbkZUh-j8=> , <urn:bluemarine:track:NeM43AEvn3Y7D6shZYzQnjmm1kE=> , <urn:bluemarine:track:S-UNBsEYdKTMYSG2QJIT8juao7w=> , <urn:bluemarine:track:So1QiRmx-OheLPdjjyHuWJR8vZ8=> , <urn:bluemarine:track:WHS1yXj27s8f2NIwEpHHwCD1myE=> , <urn:bluemarine:track:Xx__4K7TT85E2V30i-XIBSxDpO0=> , <urn:bluemarine:track:c8DsIJlpWpmzYaKt4T5KCtVE37E=> , <urn:bluemarine:track:oahAbPzTCfQUCM2UQf4_-UiduiI=> , <urn:bluemarine:track:p4F-_cso89rS9vdtaLKpqGp5JnQ=> ;
+	rdfs:label "Speak Love" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
+<urn:bluemarine:record:6_dgxK-UQ2fO0dhAJY29xyMthxc=> a mo:Record ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Kind Of Blue (Amazon Edition)" ;
+	mo:media_type mo:CD ;
+	mo:track <urn:bluemarine:track:0_WqQb5TJahUT0kmFbKbiUx09FE=> , <urn:bluemarine:track:0qmPv0NIaetc-v7y-ZI187KGhOw=> , <urn:bluemarine:track:8V_Gxnc68W2e2IGtx94wGLG7JUY=> , <urn:bluemarine:track:BD9QKs2D1j4dRxVm9NKhEEaAPmY=> , <urn:bluemarine:track:MMNYn1agLnAERPqF_2P_gSTbiRM=> , <urn:bluemarine:track:O7QdPTePttE6WTS_5BwGd2RFuMs=> , <urn:bluemarine:track:Q5MJZd_obudwpP5f-QQwIqr1TXs=> , <urn:bluemarine:track:US0G_RU1ClHUMGmiPIb8P5wyrfg=> , <urn:bluemarine:track:UZCrhtp50UdV_IzOhqMu1uJKhek=> , <urn:bluemarine:track:Vn1HETORg3kNF-Vg5sV2Cq0Ykis=> , <urn:bluemarine:track:YOHdaFyq3VzbLCKqEnwahgi4fgY=> , <urn:bluemarine:track:bmhy2P3eT02fCAZDWRwr8GwWk44=> , <urn:bluemarine:track:bqIA93cQn384t6yvaFDwaBiMMn0=> , <urn:bluemarine:track:cjjGWUUpi3m1PCj-SehWHtw-j3o=> , <urn:bluemarine:track:ctkfIUJId2_viHdrcPFq0SV2xnc=> , <urn:bluemarine:track:ebAeZKvyKAsc6AQK2xGPWpf6jps=> , <urn:bluemarine:track:mdn4xke9bgmj1D0dyUPu3E7uWZQ=> , <urn:bluemarine:track:pEIZ1KgwYzclDFZTsqCklyC0p78=> , <urn:bluemarine:track:s6Ug9VaVbLmagI4yeFBsRx9P2Zw=> , <urn:bluemarine:track:zTjB5QMxZWuEItGiA8ROVDVzYNI=> ;
+	rdfs:label "Kind Of Blue (Amazon Edition)" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
+<urn:bluemarine:record:H2kI-cHz7pI-uDq5PvV7fgG_R14=> a mo:Record ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Fitzgerald & Pass...Again" ;
+	mo:media_type mo:CD ;
+	mo:track <urn:bluemarine:track:8hKMtkK1mI9BjeetVZsyuIyO-ko=> , <urn:bluemarine:track:AEHtg3wBurTtTPiAeKqgoNIz__s=> , <urn:bluemarine:track:CurX2nKcBGkpgBVEzIKMw6sGPgE=> , <urn:bluemarine:track:Hnin_0QYNW7lsGGLJVOJN66X5wE=> , <urn:bluemarine:track:LWm93aMLztwIuJ0UNM1vu2xYSTg=> , <urn:bluemarine:track:Qn35w07ZuXKT6MYN2AxcfLwPlek=> , <urn:bluemarine:track:Rf0VABK9uWcpGrNlnn7GiUCfwEI=> , <urn:bluemarine:track:XBbo-fGHwyRExHjuhiQL2luewz8=> , <urn:bluemarine:track:gGN0vGCMy9PE9wLaFUCZhkxCIOQ=> , <urn:bluemarine:track:hnSSF4xvkbuzq2y0pukno12yRFY=> , <urn:bluemarine:track:nexlt72MhCJd20C0Dcmw7Z4yNQ4=> , <urn:bluemarine:track:qTd9tdTTmHZcOda66R07EJqgrDs=> , <urn:bluemarine:track:tjVIVmNaJCB6GWDCm0fin__Tt2I=> , <urn:bluemarine:track:uTbzdQUvKBbyGAAedU4i849-ndw=> ;
+	rdfs:label "Fitzgerald & Pass...Again" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
+<urn:bluemarine:record:NKq41KgvsvRfJJ24Nze0kLCrDTk=> a mo:Record ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "You're Mine, You (Original Album Plus Bonus Tracks 1961)" ;
+	mo:media_type mo:CD ;
+	mo:track <urn:bluemarine:track:-pqHkOZdxrWkqQgQp1lxtz0L4oU=> , <urn:bluemarine:track:5QMNgQPgAx9wosSnLiqUMBAZ6Us=> , <urn:bluemarine:track:7A0MotvLAqicmPwuskK9atHJdes=> , <urn:bluemarine:track:FGIzrkmMYkGl-quwcZ82FXJMTNk=> , <urn:bluemarine:track:GjqTmCiX43G9t7la3iDVzBr0rXU=> , <urn:bluemarine:track:ZDAwL7AfR9e-PpY4ELKZI2U8aio=> , <urn:bluemarine:track:aDkCFPjQPrsSORJu2FWtiqrEObc=> , <urn:bluemarine:track:hPXpIFwNbfCNV2juvgLIc3ID4aI=> , <urn:bluemarine:track:kdsoDIClKoog_cXoaITZSD0M0hQ=> , <urn:bluemarine:track:n32meJvUKXy1SAD7MC_fo7rT8k0=> , <urn:bluemarine:track:sSue0fXQ1qsNhsTNwwSgYb-OF5g=> , <urn:bluemarine:track:u_xZ6J9bVDJWvgEqenlC7z4-qfI=> , <urn:bluemarine:track:v_SkFFxOo7OD23eb7hx-jk8c7G8=> , <urn:bluemarine:track:ydvgWKmrstVzCXmqwaPtXvRXJgY=> ;
+	rdfs:label "You're Mine, You (Original Album Plus Bonus Tracks 1961)" ;
+	foaf:maker <urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=> .
+
+<urn:bluemarine:record:QL-A6syFwPY5XCc52i22u3VvhJA=> a mo:Record ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "I Can See Your House From Here" ;
+	mo:media_type mo:CD ;
+	mo:track <urn:bluemarine:track:5ccZYjNUNWg-j--QqNf7DL9GDJo=> , <urn:bluemarine:track:HFM3WKNXNMqDArEG3n_Qkj89qug=> , <urn:bluemarine:track:HhF_IwmT0Q1UTryOaGx_JJQv-_A=> , <urn:bluemarine:track:IvZtngp57bmIN-psbqUTWY3PQHs=> , <urn:bluemarine:track:JW7lPhSy3I1NfOjhObiJ0YgYbhs=> , <urn:bluemarine:track:LK8YoaMbh38oxQog_8SAtzdP0a8=> , <urn:bluemarine:track:MetFU9lJbaPVphBn8ZdUEMMsQL4=> , <urn:bluemarine:track:TCHm-4lsHxwL66cxy4W76DlqiB0=> , <urn:bluemarine:track:Vny4Mv7x6EEHfwHJO1ShBVCSBi4=> , <urn:bluemarine:track:ecH-5r8llxgEDwozV6iiXehe2iI=> , <urn:bluemarine:track:xS948vxWkpMhKEmKk1TIlJHSSF8=> ;
+	rdfs:label "I Can See Your House From Here" ;
+	foaf:maker <urn:bluemarine:artist:VR1hJB2jYib2STxF0cbvPcb53bo=> , <urn:bluemarine:artist:sRvQ7Bo7zNpFJJ9Hi_Erq_kxQWM=> .
+
+<urn:bluemarine:record:QNCU3HbwLRZmUBxxyXrDJGsciDU=> a mo:Record ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "We Live Here" ;
+	mo:media_type mo:CD ;
+	mo:track <urn:bluemarine:track:9qWwUgbYtw3Bzt3TNowlPqkuiRw=> , <urn:bluemarine:track:KDgeeTP4-eWu46q76m1WNNDswZs=> , <urn:bluemarine:track:MOSkriTnP62ffjXKk6CWisqSdfw=> , <urn:bluemarine:track:NfVLCdCNjolFHSneAEN6hpZulEc=> , <urn:bluemarine:track:S4BCDieDH82_bFpqsiNdu-THm4E=> , <urn:bluemarine:track:a1wfTtE5rJMVQHum0frs_a-xA4M=> , <urn:bluemarine:track:hXb570O70eTqn3eykNEjiGg6WtQ=> , <urn:bluemarine:track:nT6PtWE7VFsBl5re41AxAGqpFv8=> , <urn:bluemarine:track:nZLLaL7OPRVNeAlfC-uIqi895qA=> ;
+	rdfs:label "We Live Here" ;
+	foaf:maker <urn:bluemarine:artist:NvLPHYt0geK2dIc-p-afF-ZVtOE=> .
 
 <urn:bluemarine:record:UZ9WpMFVyppjYUHgKmJ2_NlJ0AU=> a mo:Record ;
 	bmmo:importedFrom "embedded" ;
@@ -710,11 +1412,39 @@
 	mo:published_as <urn:bluemarine:track:-BZpxDv4ym3Z_zyRy_zK75P5rr8=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:-pqHkOZdxrWkqQgQp1lxtz0L4oU=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "256"^^xs:int ;
+	mo:duration "151000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:-pqHkOZdxrWkqQgQp1lxtz0L4oU=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:-sP2dUCnPkpTPftXB5SEr1WKP-c=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "269"^^xs:int ;
 	mo:duration "305000.0"^^xs:float ;
 	mo:published_as <urn:bluemarine:track:-sP2dUCnPkpTPftXB5SEr1WKP-c=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:0_WqQb5TJahUT0kmFbKbiUx09FE=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "140"^^xs:int ;
+	mo:duration "131000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:0_WqQb5TJahUT0kmFbKbiUx09FE=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:0hUB6Zu2KEdKZyWHc9FW9-d0gaw=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "223"^^xs:int ;
+	mo:duration "251000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:0hUB6Zu2KEdKZyWHc9FW9-d0gaw=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:0qmPv0NIaetc-v7y-ZI187KGhOw=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "136"^^xs:int ;
+	mo:duration "126000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:0qmPv0NIaetc-v7y-ZI187KGhOw=> ;
 	mo:sampleRate "44100"^^xs:int .
 
 <urn:bluemarine:signal:2gUeyJ8kfDKB6fmaouvehdbSzug=> a mo:DigitalSignal ;
@@ -752,11 +1482,32 @@
 	mo:published_as <urn:bluemarine:track:4ftx6t9mEBMZjRTUn1t81Dzf34A=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:5DBwY_0wdAdPkZkFAzmbkZUh-j8=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "220"^^xs:int ;
+	mo:duration "369000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:5DBwY_0wdAdPkZkFAzmbkZUh-j8=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:5QMNgQPgAx9wosSnLiqUMBAZ6Us=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "255"^^xs:int ;
+	mo:duration "173000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:5QMNgQPgAx9wosSnLiqUMBAZ6Us=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:5Tn2jagJVuRIpV05B2IGfhOXvs4=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "232"^^xs:int ;
 	mo:duration "602000.0"^^xs:float ;
 	mo:published_as <urn:bluemarine:track:5Tn2jagJVuRIpV05B2IGfhOXvs4=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:5ccZYjNUNWg-j--QqNf7DL9GDJo=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "245"^^xs:int ;
+	mo:duration "441000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:5ccZYjNUNWg-j--QqNf7DL9GDJo=> ;
 	mo:sampleRate "44100"^^xs:int .
 
 <urn:bluemarine:signal:5uLUEJD1O_X2rgAZ9RIcgpfhnzQ=> a mo:DigitalSignal ;
@@ -766,11 +1517,46 @@
 	mo:published_as <urn:bluemarine:track:5uLUEJD1O_X2rgAZ9RIcgpfhnzQ=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:7A0MotvLAqicmPwuskK9atHJdes=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "240"^^xs:int ;
+	mo:duration "175000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:7A0MotvLAqicmPwuskK9atHJdes=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:8V_Gxnc68W2e2IGtx94wGLG7JUY=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "216"^^xs:int ;
+	mo:duration "339000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:8V_Gxnc68W2e2IGtx94wGLG7JUY=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:8hKMtkK1mI9BjeetVZsyuIyO-ko=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "224"^^xs:int ;
+	mo:duration "248000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:8hKMtkK1mI9BjeetVZsyuIyO-ko=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:9qWwUgbYtw3Bzt3TNowlPqkuiRw=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "239"^^xs:int ;
+	mo:duration "423000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:9qWwUgbYtw3Bzt3TNowlPqkuiRw=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:A0VauJnrAZITZyYR_lySR-feQHU=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "251"^^xs:int ;
 	mo:duration "236000.0"^^xs:float ;
 	mo:published_as <urn:bluemarine:track:A0VauJnrAZITZyYR_lySR-feQHU=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:AEHtg3wBurTtTPiAeKqgoNIz__s=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "218"^^xs:int ;
+	mo:duration "243000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:AEHtg3wBurTtTPiAeKqgoNIz__s=> ;
 	mo:sampleRate "44100"^^xs:int .
 
 <urn:bluemarine:signal:AIHrB_Gx4QLC0Po3p9446FrCFuQ=> a mo:DigitalSignal ;
@@ -794,6 +1580,13 @@
 	mo:published_as <urn:bluemarine:track:B82_XrW5GO660cBMZBWsLsgCpWs=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:BD9QKs2D1j4dRxVm9NKhEEaAPmY=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "147"^^xs:int ;
+	mo:duration "239000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:BD9QKs2D1j4dRxVm9NKhEEaAPmY=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:CKAN2nBgZNV2mQFExdSXfGe-9x0=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "254"^^xs:int ;
@@ -804,6 +1597,13 @@
 <urn:bluemarine:signal:CNpjJyb10DG2ch15wo5x7Sf26pE=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:published_as <urn:bluemarine:track:CNpjJyb10DG2ch15wo5x7Sf26pE=> .
+
+<urn:bluemarine:signal:CurX2nKcBGkpgBVEzIKMw6sGPgE=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "217"^^xs:int ;
+	mo:duration "305000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:CurX2nKcBGkpgBVEzIKMw6sGPgE=> ;
+	mo:sampleRate "44100"^^xs:int .
 
 <urn:bluemarine:signal:DiZdb1E7c2s1elwkoKzKKNoTBKQ=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
@@ -830,6 +1630,48 @@
 	mo:published_as <urn:bluemarine:track:EY9MaQvEinvl7Tik7DJvFHsIy9E=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:FGIzrkmMYkGl-quwcZ82FXJMTNk=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "258"^^xs:int ;
+	mo:duration "193000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:FGIzrkmMYkGl-quwcZ82FXJMTNk=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:GjqTmCiX43G9t7la3iDVzBr0rXU=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "246"^^xs:int ;
+	mo:duration "223000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:GjqTmCiX43G9t7la3iDVzBr0rXU=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:HFM3WKNXNMqDArEG3n_Qkj89qug=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "229"^^xs:int ;
+	mo:duration "438000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:HFM3WKNXNMqDArEG3n_Qkj89qug=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:HhF_IwmT0Q1UTryOaGx_JJQv-_A=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "226"^^xs:int ;
+	mo:duration "328000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:HhF_IwmT0Q1UTryOaGx_JJQv-_A=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:Hnin_0QYNW7lsGGLJVOJN66X5wE=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "208"^^xs:int ;
+	mo:duration "303000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:Hnin_0QYNW7lsGGLJVOJN66X5wE=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:IvZtngp57bmIN-psbqUTWY3PQHs=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "231"^^xs:int ;
+	mo:duration "373000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:IvZtngp57bmIN-psbqUTWY3PQHs=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:J670YeZavhlxJGUbEFomjuPcJIA=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "209"^^xs:int ;
@@ -837,11 +1679,25 @@
 	mo:published_as <urn:bluemarine:track:J670YeZavhlxJGUbEFomjuPcJIA=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:JW7lPhSy3I1NfOjhObiJ0YgYbhs=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "237"^^xs:int ;
+	mo:duration "419000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:JW7lPhSy3I1NfOjhObiJ0YgYbhs=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:Jg0sJh-0L8RACpi-NKCVyvX1vZU=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "275"^^xs:int ;
 	mo:duration "508000.0"^^xs:float ;
 	mo:published_as <urn:bluemarine:track:Jg0sJh-0L8RACpi-NKCVyvX1vZU=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:KDgeeTP4-eWu46q76m1WNNDswZs=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "247"^^xs:int ;
+	mo:duration "525000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:KDgeeTP4-eWu46q76m1WNNDswZs=> ;
 	mo:sampleRate "44100"^^xs:int .
 
 <urn:bluemarine:signal:KFguFHQPt4fodQG5oNXKJjRUmzE=> a mo:DigitalSignal ;
@@ -858,11 +1714,46 @@
 	mo:published_as <urn:bluemarine:track:LJSZR9H4nyLungmNId1_D_XE6G4=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:LK8YoaMbh38oxQog_8SAtzdP0a8=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "244"^^xs:int ;
+	mo:duration "349000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:LK8YoaMbh38oxQog_8SAtzdP0a8=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:LWm93aMLztwIuJ0UNM1vu2xYSTg=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "212"^^xs:int ;
+	mo:duration "230000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:LWm93aMLztwIuJ0UNM1vu2xYSTg=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:Ls-NoD4PXko1dMo05g1JP4cEXZE=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "226"^^xs:int ;
 	mo:duration "334000.0"^^xs:float ;
 	mo:published_as <urn:bluemarine:track:Ls-NoD4PXko1dMo05g1JP4cEXZE=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:MMNYn1agLnAERPqF_2P_gSTbiRM=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "215"^^xs:int ;
+	mo:duration "567000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:MMNYn1agLnAERPqF_2P_gSTbiRM=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:MOSkriTnP62ffjXKk6CWisqSdfw=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "249"^^xs:int ;
+	mo:duration "734000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:MOSkriTnP62ffjXKk6CWisqSdfw=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:MetFU9lJbaPVphBn8ZdUEMMsQL4=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "248"^^xs:int ;
+	mo:duration "379000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:MetFU9lJbaPVphBn8ZdUEMMsQL4=> ;
 	mo:sampleRate "44100"^^xs:int .
 
 <urn:bluemarine:signal:N9kojfpnl3VphROCWWcY-SpAnXM=> a mo:DigitalSignal ;
@@ -872,11 +1763,32 @@
 	mo:published_as <urn:bluemarine:track:N9kojfpnl3VphROCWWcY-SpAnXM=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:NeM43AEvn3Y7D6shZYzQnjmm1kE=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "220"^^xs:int ;
+	mo:duration "305000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:NeM43AEvn3Y7D6shZYzQnjmm1kE=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:NfVLCdCNjolFHSneAEN6hpZulEc=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "249"^^xs:int ;
+	mo:duration "371000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:NfVLCdCNjolFHSneAEN6hpZulEc=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:NlY_EBT-LCJudlAGmGsxkBRCuHI=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "272"^^xs:int ;
 	mo:duration "357000.0"^^xs:float ;
 	mo:published_as <urn:bluemarine:track:NlY_EBT-LCJudlAGmGsxkBRCuHI=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:O7QdPTePttE6WTS_5BwGd2RFuMs=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "145"^^xs:int ;
+	mo:duration "173000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:O7QdPTePttE6WTS_5BwGd2RFuMs=> ;
 	mo:sampleRate "44100"^^xs:int .
 
 <urn:bluemarine:signal:OFgF7qO0g5Uu0Ta_IIFqkDGbjtU=> a mo:DigitalSignal ;
@@ -907,6 +1819,20 @@
 	mo:published_as <urn:bluemarine:track:PWKE2DbVVyqCO_6yO8OCn9Ytobk=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:Q5MJZd_obudwpP5f-QQwIqr1TXs=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "151"^^xs:int ;
+	mo:duration "174000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:Q5MJZd_obudwpP5f-QQwIqr1TXs=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:Qn35w07ZuXKT6MYN2AxcfLwPlek=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "217"^^xs:int ;
+	mo:duration "216000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:Qn35w07ZuXKT6MYN2AxcfLwPlek=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:R7N5_KEy4Tyg-aVGxDfwa31orUk=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "250"^^xs:int ;
@@ -914,11 +1840,60 @@
 	mo:published_as <urn:bluemarine:track:R7N5_KEy4Tyg-aVGxDfwa31orUk=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:Rf0VABK9uWcpGrNlnn7GiUCfwEI=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "216"^^xs:int ;
+	mo:duration "291000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:Rf0VABK9uWcpGrNlnn7GiUCfwEI=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:S-UNBsEYdKTMYSG2QJIT8juao7w=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "218"^^xs:int ;
+	mo:duration "258000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:S-UNBsEYdKTMYSG2QJIT8juao7w=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:S4BCDieDH82_bFpqsiNdu-THm4E=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "247"^^xs:int ;
+	mo:duration "253000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:S4BCDieDH82_bFpqsiNdu-THm4E=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:So1QiRmx-OheLPdjjyHuWJR8vZ8=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "221"^^xs:int ;
+	mo:duration "277000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:So1QiRmx-OheLPdjjyHuWJR8vZ8=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:TCHm-4lsHxwL66cxy4W76DlqiB0=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "236"^^xs:int ;
+	mo:duration "285000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:TCHm-4lsHxwL66cxy4W76DlqiB0=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:TXbShidgAGT5UNBJ9Hb5J_Paw1Y=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "245"^^xs:int ;
 	mo:duration "363000.0"^^xs:float ;
 	mo:published_as <urn:bluemarine:track:TXbShidgAGT5UNBJ9Hb5J_Paw1Y=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:US0G_RU1ClHUMGmiPIb8P5wyrfg=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "227"^^xs:int ;
+	mo:duration "566000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:US0G_RU1ClHUMGmiPIb8P5wyrfg=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:UZCrhtp50UdV_IzOhqMu1uJKhek=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "205"^^xs:int ;
+	mo:duration "247000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:UZCrhtp50UdV_IzOhqMu1uJKhek=> ;
 	mo:sampleRate "44100"^^xs:int .
 
 <urn:bluemarine:signal:UgxQV7mnaqXzsnEe_IJX9JPrJmg=> a mo:DigitalSignal ;
@@ -942,11 +1917,32 @@
 	mo:published_as <urn:bluemarine:track:V_qWu6EjeetzGzKnfpLYjdl9yZA=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:Vn1HETORg3kNF-Vg5sV2Cq0Ykis=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "213"^^xs:int ;
+	mo:duration "426000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:Vn1HETORg3kNF-Vg5sV2Cq0Ykis=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:Vny4Mv7x6EEHfwHJO1ShBVCSBi4=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "247"^^xs:int ;
+	mo:duration "259000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:Vny4Mv7x6EEHfwHJO1ShBVCSBi4=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:W5-pGtDsbYF7q8qpUccPubmM0rI=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "221"^^xs:int ;
 	mo:duration "647000.0"^^xs:float ;
 	mo:published_as <urn:bluemarine:track:W5-pGtDsbYF7q8qpUccPubmM0rI=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:WHS1yXj27s8f2NIwEpHHwCD1myE=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "214"^^xs:int ;
+	mo:duration "247000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:WHS1yXj27s8f2NIwEpHHwCD1myE=> ;
 	mo:sampleRate "44100"^^xs:int .
 
 <urn:bluemarine:signal:WJ__DHc9-5W9dRkfvFtEuzPga1I=> a mo:DigitalSignal ;
@@ -970,6 +1966,13 @@
 	mo:published_as <urn:bluemarine:track:X5u3e0yKkqS7AYaIaAaIWC_RlWc=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:XBbo-fGHwyRExHjuhiQL2luewz8=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "227"^^xs:int ;
+	mo:duration "246000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:XBbo-fGHwyRExHjuhiQL2luewz8=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:XOY8nK-Y6lGUw2f_W-cHa8gFKUA=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "279"^^xs:int ;
@@ -977,11 +1980,32 @@
 	mo:published_as <urn:bluemarine:track:XOY8nK-Y6lGUw2f_W-cHa8gFKUA=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:Xx__4K7TT85E2V30i-XIBSxDpO0=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "216"^^xs:int ;
+	mo:duration "231000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:Xx__4K7TT85E2V30i-XIBSxDpO0=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:Y71NZjYlu3Cv70-MJqUOCPrUe-c=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "233"^^xs:int ;
 	mo:duration "489000.0"^^xs:float ;
 	mo:published_as <urn:bluemarine:track:Y71NZjYlu3Cv70-MJqUOCPrUe-c=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:YOHdaFyq3VzbLCKqEnwahgi4fgY=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "139"^^xs:int ;
+	mo:duration "131000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:YOHdaFyq3VzbLCKqEnwahgi4fgY=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:ZDAwL7AfR9e-PpY4ELKZI2U8aio=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "284"^^xs:int ;
+	mo:duration "169000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:ZDAwL7AfR9e-PpY4ELKZI2U8aio=> ;
 	mo:sampleRate "44100"^^xs:int .
 
 <urn:bluemarine:signal:_9Ui8aDyAlMA1pQql9t07zYCD50=> a mo:DigitalSignal ;
@@ -998,6 +2022,20 @@
 	mo:published_as <urn:bluemarine:track:_c335v5dN_F1xqfM0pe3R8H4tH8=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:a1wfTtE5rJMVQHum0frs_a-xA4M=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "242"^^xs:int ;
+	mo:duration "472000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:a1wfTtE5rJMVQHum0frs_a-xA4M=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:aDkCFPjQPrsSORJu2FWtiqrEObc=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "245"^^xs:int ;
+	mo:duration "241000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:aDkCFPjQPrsSORJu2FWtiqrEObc=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:ar7qVD08w9OVrt_XpFNtvxIlWxI=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "268"^^xs:int ;
@@ -1012,11 +2050,60 @@
 	mo:published_as <urn:bluemarine:track:bE7b8mwrFn0vFWjE3ZEk2V-qcBk=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:bmhy2P3eT02fCAZDWRwr8GwWk44=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "213"^^xs:int ;
+	mo:duration "661000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:bmhy2P3eT02fCAZDWRwr8GwWk44=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:bqIA93cQn384t6yvaFDwaBiMMn0=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "226"^^xs:int ;
+	mo:duration "589000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:bqIA93cQn384t6yvaFDwaBiMMn0=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:c8DsIJlpWpmzYaKt4T5KCtVE37E=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "221"^^xs:int ;
+	mo:duration "175000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:c8DsIJlpWpmzYaKt4T5KCtVE37E=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:cjjGWUUpi3m1PCj-SehWHtw-j3o=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "214"^^xs:int ;
+	mo:duration "496000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:cjjGWUUpi3m1PCj-SehWHtw-j3o=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:ctkfIUJId2_viHdrcPFq0SV2xnc=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "147"^^xs:int ;
+	mo:duration "140000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:ctkfIUJId2_viHdrcPFq0SV2xnc=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:cuRZtqLe8l57iCTFmaWfh2d6Nrk=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "239"^^xs:int ;
 	mo:duration "555000.0"^^xs:float ;
 	mo:published_as <urn:bluemarine:track:cuRZtqLe8l57iCTFmaWfh2d6Nrk=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:ebAeZKvyKAsc6AQK2xGPWpf6jps=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "231"^^xs:int ;
+	mo:duration "695000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:ebAeZKvyKAsc6AQK2xGPWpf6jps=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:ecH-5r8llxgEDwozV6iiXehe2iI=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "234"^^xs:int ;
+	mo:duration "441000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:ecH-5r8llxgEDwozV6iiXehe2iI=> ;
 	mo:sampleRate "44100"^^xs:int .
 
 <urn:bluemarine:signal:fRppsRWN141pP1jBq3Z4vdBF03s=> a mo:DigitalSignal ;
@@ -1033,6 +2120,13 @@
 	mo:published_as <urn:bluemarine:track:g27KOA6hncFcaM23mUk8XtELvSQ=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:gGN0vGCMy9PE9wLaFUCZhkxCIOQ=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "212"^^xs:int ;
+	mo:duration "225000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:gGN0vGCMy9PE9wLaFUCZhkxCIOQ=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:gtjB3RRAEE0oK8eFS9eiQuODIHQ=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "253"^^xs:int ;
@@ -1045,6 +2139,27 @@
 	mo:bitsPerSample "256"^^xs:int ;
 	mo:duration "948000.0"^^xs:float ;
 	mo:published_as <urn:bluemarine:track:h2pfiqVLLkEzJyoxUxUUJrvjlt4=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:hPXpIFwNbfCNV2juvgLIc3ID4aI=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "252"^^xs:int ;
+	mo:duration "217000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:hPXpIFwNbfCNV2juvgLIc3ID4aI=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:hXb570O70eTqn3eykNEjiGg6WtQ=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "252"^^xs:int ;
+	mo:duration "455000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:hXb570O70eTqn3eykNEjiGg6WtQ=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:hnSSF4xvkbuzq2y0pukno12yRFY=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "219"^^xs:int ;
+	mo:duration "266000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:hnSSF4xvkbuzq2y0pukno12yRFY=> ;
 	mo:sampleRate "44100"^^xs:int .
 
 <urn:bluemarine:signal:iehf2Hjhe5FBCEIziQ27y2gC3FM=> a mo:DigitalSignal ;
@@ -1063,6 +2178,13 @@
 	mo:bitsPerSample "267"^^xs:int ;
 	mo:duration "225000.0"^^xs:float ;
 	mo:published_as <urn:bluemarine:track:k9kv2nLB9S-k9Hto72TlEARoeL8=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:kdsoDIClKoog_cXoaITZSD0M0hQ=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "259"^^xs:int ;
+	mo:duration "178000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:kdsoDIClKoog_cXoaITZSD0M0hQ=> ;
 	mo:sampleRate "44100"^^xs:int .
 
 <urn:bluemarine:signal:kx29swV2hDOTnY0sNyCrC9bD2BA=> a mo:DigitalSignal ;
@@ -1107,6 +2229,27 @@
 	mo:published_as <urn:bluemarine:track:mdYqXKdFJ9ncgO6xTrMQb9czPfI=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:mdn4xke9bgmj1D0dyUPu3E7uWZQ=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "139"^^xs:int ;
+	mo:duration "235000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:mdn4xke9bgmj1D0dyUPu3E7uWZQ=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:n32meJvUKXy1SAD7MC_fo7rT8k0=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "259"^^xs:int ;
+	mo:duration "185000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:n32meJvUKXy1SAD7MC_fo7rT8k0=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:nT6PtWE7VFsBl5re41AxAGqpFv8=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "252"^^xs:int ;
+	mo:duration "458000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:nT6PtWE7VFsBl5re41AxAGqpFv8=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:nTQrV3k1yqnCnWHdEnCCNayCqp8=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "254"^^xs:int ;
@@ -1114,11 +2257,53 @@
 	mo:published_as <urn:bluemarine:track:nTQrV3k1yqnCnWHdEnCCNayCqp8=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:nZLLaL7OPRVNeAlfC-uIqi895qA=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "236"^^xs:int ;
+	mo:duration "329000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:nZLLaL7OPRVNeAlfC-uIqi895qA=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:nexlt72MhCJd20C0Dcmw7Z4yNQ4=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "217"^^xs:int ;
+	mo:duration "166000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:nexlt72MhCJd20C0Dcmw7Z4yNQ4=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:oP8pHG8FNRYzkfJkzRTZKPiPlC0=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "280"^^xs:int ;
 	mo:duration "384000.0"^^xs:float ;
 	mo:published_as <urn:bluemarine:track:oP8pHG8FNRYzkfJkzRTZKPiPlC0=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:oahAbPzTCfQUCM2UQf4_-UiduiI=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "217"^^xs:int ;
+	mo:duration "251000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:oahAbPzTCfQUCM2UQf4_-UiduiI=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:p4F-_cso89rS9vdtaLKpqGp5JnQ=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "207"^^xs:int ;
+	mo:duration "183000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:p4F-_cso89rS9vdtaLKpqGp5JnQ=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:pEIZ1KgwYzclDFZTsqCklyC0p78=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "145"^^xs:int ;
+	mo:duration "170000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:pEIZ1KgwYzclDFZTsqCklyC0p78=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:qTd9tdTTmHZcOda66R07EJqgrDs=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "216"^^xs:int ;
+	mo:duration "282000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:qTd9tdTTmHZcOda66R07EJqgrDs=> ;
 	mo:sampleRate "44100"^^xs:int .
 
 <urn:bluemarine:signal:qoAPiHqsM7ol0XgLJHyZyNJdlMo=> a mo:DigitalSignal ;
@@ -1149,11 +2334,46 @@
 	mo:published_as <urn:bluemarine:track:rbLVLXei4ld9Bi_Dp7w4lVjZdfc=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:s6Ug9VaVbLmagI4yeFBsRx9P2Zw=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "216"^^xs:int ;
+	mo:duration "507000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:s6Ug9VaVbLmagI4yeFBsRx9P2Zw=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:sSue0fXQ1qsNhsTNwwSgYb-OF5g=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "249"^^xs:int ;
+	mo:duration "144000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:sSue0fXQ1qsNhsTNwwSgYb-OF5g=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:tf-mi4I2naramYmykiD0ItVTZn0=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "278"^^xs:int ;
 	mo:duration "298000.0"^^xs:float ;
 	mo:published_as <urn:bluemarine:track:tf-mi4I2naramYmykiD0ItVTZn0=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:tjVIVmNaJCB6GWDCm0fin__Tt2I=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "209"^^xs:int ;
+	mo:duration "145000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:tjVIVmNaJCB6GWDCm0fin__Tt2I=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:uTbzdQUvKBbyGAAedU4i849-ndw=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "209"^^xs:int ;
+	mo:duration "143000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:uTbzdQUvKBbyGAAedU4i849-ndw=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:u_xZ6J9bVDJWvgEqenlC7z4-qfI=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "285"^^xs:int ;
+	mo:duration "162000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:u_xZ6J9bVDJWvgEqenlC7z4-qfI=> ;
 	mo:sampleRate "44100"^^xs:int .
 
 <urn:bluemarine:signal:ueOVz3lq_EENnMHuMNyQQ2yxkv4=> a mo:DigitalSignal ;
@@ -1170,6 +2390,13 @@
 	mo:published_as <urn:bluemarine:track:vCBaLw-1p4v6lJFkA2-rqMNScQI=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:v_SkFFxOo7OD23eb7hx-jk8c7G8=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "237"^^xs:int ;
+	mo:duration "176000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:v_SkFFxOo7OD23eb7hx-jk8c7G8=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:vo179vVz9LUSWG-mHuxlmxmzDbI=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "252"^^xs:int ;
@@ -1184,6 +2411,13 @@
 	mo:published_as <urn:bluemarine:track:wIcOe4CY1EIOocvvvtqE018bFdo=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:xS948vxWkpMhKEmKk1TIlJHSSF8=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "240"^^xs:int ;
+	mo:duration "467000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:xS948vxWkpMhKEmKk1TIlJHSSF8=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:signal:xa-UncfEgrx1SmlcxikoeFdtCO4=> a mo:DigitalSignal ;
 	bmmo:importedFrom "embedded" ;
 	mo:bitsPerSample "256"^^xs:int ;
@@ -1196,6 +2430,13 @@
 	mo:bitsPerSample "270"^^xs:int ;
 	mo:duration "225000.0"^^xs:float ;
 	mo:published_as <urn:bluemarine:track:y-3vR4bdZO54ie8-9n8m1pOUo94=> ;
+	mo:sampleRate "44100"^^xs:int .
+
+<urn:bluemarine:signal:ydvgWKmrstVzCXmqwaPtXvRXJgY=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "244"^^xs:int ;
+	mo:duration "139000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:ydvgWKmrstVzCXmqwaPtXvRXJgY=> ;
 	mo:sampleRate "44100"^^xs:int .
 
 <urn:bluemarine:signal:yuDuADlVwvjjx0qP-qeFssedFYk=> a mo:DigitalSignal ;
@@ -1219,6 +2460,13 @@
 	mo:published_as <urn:bluemarine:track:zPqMBiz66ykPtT2Ef5Tz9t64D7A=> ;
 	mo:sampleRate "44100"^^xs:int .
 
+<urn:bluemarine:signal:zTjB5QMxZWuEItGiA8ROVDVzYNI=> a mo:DigitalSignal ;
+	bmmo:importedFrom "embedded" ;
+	mo:bitsPerSample "135"^^xs:int ;
+	mo:duration "55000.0"^^xs:float ;
+	mo:published_as <urn:bluemarine:track:zTjB5QMxZWuEItGiA8ROVDVzYNI=> ;
+	mo:sampleRate "44100"^^xs:int .
+
 <urn:bluemarine:track:-BZpxDv4ym3Z_zyRy_zK75P5rr8=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Reflections (Album Version)" ;
@@ -1226,12 +2474,40 @@
 	rdfs:label "Reflections (Album Version)" ;
 	foaf:maker <urn:bluemarine:artist:zFIShJu_MTqAA2_ZNWjEukpdMfQ=> .
 
+<urn:bluemarine:track:-pqHkOZdxrWkqQgQp1lxtz0L4oU=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Moonglow" ;
+	mo:track_number "10"^^xs:int ;
+	rdfs:label "Moonglow" ;
+	foaf:maker <urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=> .
+
 <urn:bluemarine:track:-sP2dUCnPkpTPftXB5SEr1WKP-c=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "All Day Sucker" ;
 	mo:track_number "10"^^xs:int ;
 	rdfs:label "All Day Sucker" ;
 	foaf:maker <urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=> .
+
+<urn:bluemarine:track:0_WqQb5TJahUT0kmFbKbiUx09FE=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Julien Dans L'Ascenseur" ;
+	mo:track_number "9"^^xs:int ;
+	rdfs:label "Julien Dans L'Ascenseur" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
+<urn:bluemarine:track:0hUB6Zu2KEdKZyWHc9FW9-d0gaw=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "The Thrill Is Gone (Medley)" ;
+	mo:track_number "6"^^xs:int ;
+	rdfs:label "The Thrill Is Gone (Medley)" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
+<urn:bluemarine:track:0qmPv0NIaetc-v7y-ZI187KGhOw=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Au Bar du Petite Bac" ;
+	mo:track_number "13"^^xs:int ;
+	rdfs:label "Au Bar du Petite Bac" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
 
 <urn:bluemarine:track:2gUeyJ8kfDKB6fmaouvehdbSzug=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
@@ -1268,12 +2544,33 @@
 	rdfs:label "Ngiculela-Es Una Historia-I Am Singing" ;
 	foaf:maker <urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=> .
 
+<urn:bluemarine:track:5DBwY_0wdAdPkZkFAzmbkZUh-j8=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Georgia On My Mind" ;
+	mo:track_number "10"^^xs:int ;
+	rdfs:label "Georgia On My Mind" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
+<urn:bluemarine:track:5QMNgQPgAx9wosSnLiqUMBAZ6Us=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "The Best Is Yet to Come" ;
+	mo:track_number "2"^^xs:int ;
+	rdfs:label "The Best Is Yet to Come" ;
+	foaf:maker <urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=> .
+
 <urn:bluemarine:track:5Tn2jagJVuRIpV05B2IGfhOXvs4=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Survival Of The Fittest" ;
 	mo:track_number "4"^^xs:int ;
 	rdfs:label "Survival Of The Fittest" ;
 	foaf:maker <urn:bluemarine:artist:TzVyzQz4nFXGbYdGXFsl5oOZm6o=> .
+
+<urn:bluemarine:track:5ccZYjNUNWg-j--QqNf7DL9GDJo=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "No Way Jose" ;
+	mo:track_number "6"^^xs:int ;
+	rdfs:label "No Way Jose" ;
+	foaf:maker <urn:bluemarine:artist:sRvQ7Bo7zNpFJJ9Hi_Erq_kxQWM=> .
 
 <urn:bluemarine:track:5uLUEJD1O_X2rgAZ9RIcgpfhnzQ=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
@@ -1282,12 +2579,47 @@
 	rdfs:label "One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition)" ;
 	foaf:maker <urn:bluemarine:artist:TzVyzQz4nFXGbYdGXFsl5oOZm6o=> .
 
+<urn:bluemarine:track:7A0MotvLAqicmPwuskK9atHJdes=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "So Long" ;
+	mo:track_number "4"^^xs:int ;
+	rdfs:label "So Long" ;
+	foaf:maker <urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=> .
+
+<urn:bluemarine:track:8V_Gxnc68W2e2IGtx94wGLG7JUY=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Blue In Green" ;
+	mo:track_number "3"^^xs:int ;
+	rdfs:label "Blue In Green" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
+<urn:bluemarine:track:8hKMtkK1mI9BjeetVZsyuIyO-ko=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "I've Got The World On A String" ;
+	mo:track_number "8"^^xs:int ;
+	rdfs:label "I've Got The World On A String" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
+<urn:bluemarine:track:9qWwUgbYtw3Bzt3TNowlPqkuiRw=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Something To Remind You (Album Version)" ;
+	mo:track_number "7"^^xs:int ;
+	rdfs:label "Something To Remind You (Album Version)" ;
+	foaf:maker <urn:bluemarine:artist:NvLPHYt0geK2dIc-p-afF-ZVtOE=> .
+
 <urn:bluemarine:track:A0VauJnrAZITZyYR_lySR-feQHU=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Easy Goin' Evening (My Mama's Call)" ;
 	mo:track_number "11"^^xs:int ;
 	rdfs:label "Easy Goin' Evening (My Mama's Call)" ;
 	foaf:maker <urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=> .
+
+<urn:bluemarine:track:AEHtg3wBurTtTPiAeKqgoNIz__s=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "The One I Love (Belongs To Somebody Else)" ;
+	mo:track_number "10"^^xs:int ;
+	rdfs:label "The One I Love (Belongs To Somebody Else)" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
 
 <urn:bluemarine:track:AIHrB_Gx4QLC0Po3p9446FrCFuQ=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
@@ -1310,6 +2642,13 @@
 	rdfs:label "Little One" ;
 	foaf:maker <urn:bluemarine:artist:TzVyzQz4nFXGbYdGXFsl5oOZm6o=> .
 
+<urn:bluemarine:track:BD9QKs2D1j4dRxVm9NKhEEaAPmY=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Diner Au Motel" ;
+	mo:track_number "11"^^xs:int ;
+	rdfs:label "Diner Au Motel" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
 <urn:bluemarine:track:CKAN2nBgZNV2mQFExdSXfGe-9x0=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Summer Soft" ;
@@ -1319,6 +2658,13 @@
 
 <urn:bluemarine:track:CNpjJyb10DG2ch15wo5x7Sf26pE=> a mo:Track ;
 	bmmo:importedFrom "embedded" .
+
+<urn:bluemarine:track:CurX2nKcBGkpgBVEzIKMw6sGPgE=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "'Tis Autumn" ;
+	mo:track_number "2"^^xs:int ;
+	rdfs:label "'Tis Autumn" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
 
 <urn:bluemarine:track:DiZdb1E7c2s1elwkoKzKKNoTBKQ=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
@@ -1344,6 +2690,48 @@
 	rdfs:label "Pipeline" ;
 	foaf:maker <urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=> .
 
+<urn:bluemarine:track:FGIzrkmMYkGl-quwcZ82FXJMTNk=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Maria" ;
+	mo:track_number "7"^^xs:int ;
+	rdfs:label "Maria" ;
+	foaf:maker <urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=> .
+
+<urn:bluemarine:track:GjqTmCiX43G9t7la3iDVzBr0rXU=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "The Second Time Around" ;
+	mo:track_number "5"^^xs:int ;
+	rdfs:label "The Second Time Around" ;
+	foaf:maker <urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=> .
+
+<urn:bluemarine:track:HFM3WKNXNMqDArEG3n_Qkj89qug=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "No Matter What" ;
+	mo:track_number "3"^^xs:int ;
+	rdfs:label "No Matter What" ;
+	foaf:maker <urn:bluemarine:artist:sRvQ7Bo7zNpFJJ9Hi_Erq_kxQWM=> .
+
+<urn:bluemarine:track:HhF_IwmT0Q1UTryOaGx_JJQv-_A=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Quiet Rising" ;
+	mo:track_number "9"^^xs:int ;
+	rdfs:label "Quiet Rising" ;
+	foaf:maker <urn:bluemarine:artist:VR1hJB2jYib2STxF0cbvPcb53bo=> .
+
+<urn:bluemarine:track:Hnin_0QYNW7lsGGLJVOJN66X5wE=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "One Note Samba" ;
+	mo:track_number "14"^^xs:int ;
+	rdfs:label "One Note Samba" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
+<urn:bluemarine:track:IvZtngp57bmIN-psbqUTWY3PQHs=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Message To My Friend" ;
+	mo:track_number "5"^^xs:int ;
+	rdfs:label "Message To My Friend" ;
+	foaf:maker <urn:bluemarine:artist:sRvQ7Bo7zNpFJJ9Hi_Erq_kxQWM=> .
+
 <urn:bluemarine:track:J670YeZavhlxJGUbEFomjuPcJIA=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "The Egg (1999 - Remaster) [Rudy Van Gelder Edition] (1999 Digital Remaster) (Rudy Van Gelder Edition)" ;
@@ -1351,12 +2739,26 @@
 	rdfs:label "The Egg (1999 - Remaster) [Rudy Van Gelder Edition] (1999 Digital Remaster) (Rudy Van Gelder Edition)" ;
 	foaf:maker <urn:bluemarine:artist:TzVyzQz4nFXGbYdGXFsl5oOZm6o=> .
 
+<urn:bluemarine:track:JW7lPhSy3I1NfOjhObiJ0YgYbhs=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "You Speak My Language" ;
+	mo:track_number "11"^^xs:int ;
+	rdfs:label "You Speak My Language" ;
+	foaf:maker <urn:bluemarine:artist:sRvQ7Bo7zNpFJJ9Hi_Erq_kxQWM=> .
+
 <urn:bluemarine:track:Jg0sJh-0L8RACpi-NKCVyvX1vZU=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Another Star" ;
 	mo:track_number "7"^^xs:int ;
 	rdfs:label "Another Star" ;
 	foaf:maker <urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=> .
+
+<urn:bluemarine:track:KDgeeTP4-eWu46q76m1WNNDswZs=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Episode D'Azur (Album Version)" ;
+	mo:track_number "6"^^xs:int ;
+	rdfs:label "Episode D'Azur (Album Version)" ;
+	foaf:maker <urn:bluemarine:artist:NvLPHYt0geK2dIc-p-afF-ZVtOE=> .
 
 <urn:bluemarine:track:KFguFHQPt4fodQG5oNXKJjRUmzE=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
@@ -1372,12 +2774,47 @@
 	rdfs:label "Monk's Point" ;
 	foaf:maker <urn:bluemarine:artist:zFIShJu_MTqAA2_ZNWjEukpdMfQ=> .
 
+<urn:bluemarine:track:LK8YoaMbh38oxQog_8SAtzdP0a8=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "One Way To Be" ;
+	mo:track_number "10"^^xs:int ;
+	rdfs:label "One Way To Be" ;
+	foaf:maker <urn:bluemarine:artist:sRvQ7Bo7zNpFJJ9Hi_Erq_kxQWM=> .
+
+<urn:bluemarine:track:LWm93aMLztwIuJ0UNM1vu2xYSTg=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Tennessee Waltz" ;
+	mo:track_number "13"^^xs:int ;
+	rdfs:label "Tennessee Waltz" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
 <urn:bluemarine:track:Ls-NoD4PXko1dMo05g1JP4cEXZE=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Cantaloupe Island (1999 Digital Remaster) (Rudy Van Gelder Edition)" ;
 	mo:track_number "3"^^xs:int ;
 	rdfs:label "Cantaloupe Island (1999 Digital Remaster) (Rudy Van Gelder Edition)" ;
 	foaf:maker <urn:bluemarine:artist:TzVyzQz4nFXGbYdGXFsl5oOZm6o=> .
+
+<urn:bluemarine:track:MMNYn1agLnAERPqF_2P_gSTbiRM=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Flamenco Sketches" ;
+	mo:track_number "5"^^xs:int ;
+	rdfs:label "Flamenco Sketches" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
+<urn:bluemarine:track:MOSkriTnP62ffjXKk6CWisqSdfw=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "To The End Of The World (Album Version)" ;
+	mo:track_number "4"^^xs:int ;
+	rdfs:label "To The End Of The World (Album Version)" ;
+	foaf:maker <urn:bluemarine:artist:NvLPHYt0geK2dIc-p-afF-ZVtOE=> .
+
+<urn:bluemarine:track:MetFU9lJbaPVphBn8ZdUEMMsQL4=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Everybody's Party" ;
+	mo:track_number "4"^^xs:int ;
+	rdfs:label "Everybody's Party" ;
+	foaf:maker <urn:bluemarine:artist:sRvQ7Bo7zNpFJJ9Hi_Erq_kxQWM=> .
 
 <urn:bluemarine:track:N9kojfpnl3VphROCWWcY-SpAnXM=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
@@ -1386,12 +2823,33 @@
 	rdfs:label "Sir Duke" ;
 	foaf:maker <urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=> .
 
+<urn:bluemarine:track:NeM43AEvn3Y7D6shZYzQnjmm1kE=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "I May Be Wrong (But I Think You're Wonderful)" ;
+	mo:track_number "4"^^xs:int ;
+	rdfs:label "I May Be Wrong (But I Think You're Wonderful)" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
+<urn:bluemarine:track:NfVLCdCNjolFHSneAEN6hpZulEc=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Stranger In Town (Album Version)" ;
+	mo:track_number "9"^^xs:int ;
+	rdfs:label "Stranger In Town (Album Version)" ;
+	foaf:maker <urn:bluemarine:artist:NvLPHYt0geK2dIc-p-afF-ZVtOE=> .
+
 <urn:bluemarine:track:NlY_EBT-LCJudlAGmGsxkBRCuHI=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Then and Now" ;
 	mo:track_number "8"^^xs:int ;
 	rdfs:label "Then and Now" ;
 	foaf:maker <urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=> .
+
+<urn:bluemarine:track:O7QdPTePttE6WTS_5BwGd2RFuMs=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Florence Sur Les Champs-Elysees" ;
+	mo:track_number "10"^^xs:int ;
+	rdfs:label "Florence Sur Les Champs-Elysees" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
 
 <urn:bluemarine:track:OFgF7qO0g5Uu0Ta_IIFqkDGbjtU=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
@@ -1421,6 +2879,20 @@
 	rdfs:label "Spring Is Here (Album Version)" ;
 	foaf:maker <urn:bluemarine:artist:usZLLSZqaqQMqgbp9GGmImCu-Ao=> .
 
+<urn:bluemarine:track:Q5MJZd_obudwpP5f-QQwIqr1TXs=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Visite Du Vigile" ;
+	mo:track_number "14"^^xs:int ;
+	rdfs:label "Visite Du Vigile" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
+<urn:bluemarine:track:Qn35w07ZuXKT6MYN2AxcfLwPlek=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "You Took Advantage Of Me" ;
+	mo:track_number "7"^^xs:int ;
+	rdfs:label "You Took Advantage Of Me" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
 <urn:bluemarine:track:R7N5_KEy4Tyg-aVGxDfwa31orUk=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "'Round Midnight" ;
@@ -1428,12 +2900,61 @@
 	rdfs:label "'Round Midnight" ;
 	foaf:maker <urn:bluemarine:artist:zFIShJu_MTqAA2_ZNWjEukpdMfQ=> .
 
+<urn:bluemarine:track:Rf0VABK9uWcpGrNlnn7GiUCfwEI=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "My Old Flame" ;
+	mo:track_number "3"^^xs:int ;
+	rdfs:label "My Old Flame" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
+<urn:bluemarine:track:S-UNBsEYdKTMYSG2QJIT8juao7w=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "At Last" ;
+	mo:track_number "5"^^xs:int ;
+	rdfs:label "At Last" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
+<urn:bluemarine:track:S4BCDieDH82_bFpqsiNdu-THm4E=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "We Live Here (Album Version)" ;
+	mo:track_number "5"^^xs:int ;
+	rdfs:label "We Live Here (Album Version)" ;
+	foaf:maker <urn:bluemarine:artist:NvLPHYt0geK2dIc-p-afF-ZVtOE=> .
+
+<urn:bluemarine:track:So1QiRmx-OheLPdjjyHuWJR8vZ8=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "There's No You" ;
+	mo:track_number "3"^^xs:int ;
+	rdfs:label "There's No You" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
+<urn:bluemarine:track:TCHm-4lsHxwL66cxy4W76DlqiB0=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "S.C.O." ;
+	mo:track_number "8"^^xs:int ;
+	rdfs:label "S.C.O." ;
+	foaf:maker <urn:bluemarine:artist:sRvQ7Bo7zNpFJJ9Hi_Erq_kxQWM=> .
+
 <urn:bluemarine:track:TXbShidgAGT5UNBJ9Hb5J_Paw1Y=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "That's The Way I've Always Heard It Should Be" ;
 	mo:track_number "7"^^xs:int ;
 	rdfs:label "That's The Way I've Always Heard It Should Be" ;
 	foaf:maker <urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=> .
+
+<urn:bluemarine:track:US0G_RU1ClHUMGmiPIb8P5wyrfg=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "So What" ;
+	mo:track_number "1"^^xs:int ;
+	rdfs:label "So What" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
+<urn:bluemarine:track:UZCrhtp50UdV_IzOhqMu1uJKhek=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Dancing In The Dark" ;
+	mo:track_number "20"^^xs:int ;
+	rdfs:label "Dancing In The Dark" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
 
 <urn:bluemarine:track:UgxQV7mnaqXzsnEe_IJX9JPrJmg=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
@@ -1456,12 +2977,33 @@
 	rdfs:label "Love's In Need Of Love Today" ;
 	foaf:maker <urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=> .
 
+<urn:bluemarine:track:Vn1HETORg3kNF-Vg5sV2Cq0Ykis=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Love For Sale" ;
+	mo:track_number "17"^^xs:int ;
+	rdfs:label "Love For Sale" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
+<urn:bluemarine:track:Vny4Mv7x6EEHfwHJO1ShBVCSBi4=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "The Red One" ;
+	mo:track_number "2"^^xs:int ;
+	rdfs:label "The Red One" ;
+	foaf:maker <urn:bluemarine:artist:VR1hJB2jYib2STxF0cbvPcb53bo=> .
+
 <urn:bluemarine:track:W5-pGtDsbYF7q8qpUccPubmM0rI=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Oliloqui Valley (1999 Digital Remaster) (Rudy Van Gelder Edition)" ;
 	mo:track_number "6"^^xs:int ;
 	rdfs:label "Oliloqui Valley (1999 Digital Remaster) (Rudy Van Gelder Edition)" ;
 	foaf:maker <urn:bluemarine:artist:TzVyzQz4nFXGbYdGXFsl5oOZm6o=> .
+
+<urn:bluemarine:track:WHS1yXj27s8f2NIwEpHHwCD1myE=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Girl Talk" ;
+	mo:track_number "9"^^xs:int ;
+	rdfs:label "Girl Talk" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
 
 <urn:bluemarine:track:WJ__DHc9-5W9dRkfvFtEuzPga1I=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
@@ -1484,6 +3026,13 @@
 	rdfs:label "Alfie" ;
 	foaf:maker <urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=> .
 
+<urn:bluemarine:track:XBbo-fGHwyRExHjuhiQL2luewz8=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "I Ain't Got Nothing But The Blues" ;
+	mo:track_number "1"^^xs:int ;
+	rdfs:label "I Ain't Got Nothing But The Blues" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
 <urn:bluemarine:track:XOY8nK-Y6lGUw2f_W-cHa8gFKUA=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Come and See" ;
@@ -1491,12 +3040,33 @@
 	rdfs:label "Come and See" ;
 	foaf:maker <urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=> .
 
+<urn:bluemarine:track:Xx__4K7TT85E2V30i-XIBSxDpO0=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Gone With The Wind" ;
+	mo:track_number "7"^^xs:int ;
+	rdfs:label "Gone With The Wind" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
 <urn:bluemarine:track:Y71NZjYlu3Cv70-MJqUOCPrUe-c=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "I'll Get By (As Long As I Have You) (Album Version)" ;
 	mo:track_number "2"^^xs:int ;
 	rdfs:label "I'll Get By (As Long As I Have You) (Album Version)" ;
 	foaf:maker <urn:bluemarine:artist:usZLLSZqaqQMqgbp9GGmImCu-Ao=> .
+
+<urn:bluemarine:track:YOHdaFyq3VzbLCKqEnwahgi4fgY=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "L'Assassinat de Carala" ;
+	mo:track_number "7"^^xs:int ;
+	rdfs:label "L'Assassinat de Carala" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
+<urn:bluemarine:track:ZDAwL7AfR9e-PpY4ELKZI2U8aio=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "One Mint Julep (Bonus Track)" ;
+	mo:track_number "13"^^xs:int ;
+	rdfs:label "One Mint Julep (Bonus Track)" ;
+	foaf:maker <urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=> .
 
 <urn:bluemarine:track:_9Ui8aDyAlMA1pQql9t07zYCD50=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
@@ -1512,6 +3082,20 @@
 	rdfs:label "As" ;
 	foaf:maker <urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=> .
 
+<urn:bluemarine:track:a1wfTtE5rJMVQHum0frs_a-xA4M=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "And Then I Knew (Album Version)" ;
+	mo:track_number "2"^^xs:int ;
+	rdfs:label "And Then I Knew (Album Version)" ;
+	foaf:maker <urn:bluemarine:artist:NvLPHYt0geK2dIc-p-afF-ZVtOE=> .
+
+<urn:bluemarine:track:aDkCFPjQPrsSORJu2FWtiqrEObc=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "You're Mine, You" ;
+	mo:track_number "1"^^xs:int ;
+	rdfs:label "You're Mine, You" ;
+	foaf:maker <urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=> .
+
 <urn:bluemarine:track:ar7qVD08w9OVrt_XpFNtvxIlWxI=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Rootie Tootie" ;
@@ -1526,12 +3110,61 @@
 	rdfs:label "Straight, No Chaser" ;
 	foaf:maker <urn:bluemarine:artist:zFIShJu_MTqAA2_ZNWjEukpdMfQ=> .
 
+<urn:bluemarine:track:bmhy2P3eT02fCAZDWRwr8GwWk44=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Autumn Leaves" ;
+	mo:track_number "16"^^xs:int ;
+	rdfs:label "Autumn Leaves" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
+<urn:bluemarine:track:bqIA93cQn384t6yvaFDwaBiMMn0=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Freddie Freeloader" ;
+	mo:track_number "2"^^xs:int ;
+	rdfs:label "Freddie Freeloader" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
+<urn:bluemarine:track:c8DsIJlpWpmzYaKt4T5KCtVE37E=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Comes Love" ;
+	mo:track_number "2"^^xs:int ;
+	rdfs:label "Comes Love" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
+<urn:bluemarine:track:cjjGWUUpi3m1PCj-SehWHtw-j3o=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Somethin' Else" ;
+	mo:track_number "18"^^xs:int ;
+	rdfs:label "Somethin' Else" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
+<urn:bluemarine:track:ctkfIUJId2_viHdrcPFq0SV2xnc=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Sur L'Autoroute" ;
+	mo:track_number "8"^^xs:int ;
+	rdfs:label "Sur L'Autoroute" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
 <urn:bluemarine:track:cuRZtqLe8l57iCTFmaWfh2d6Nrk=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Don't Take Your Love From Me (Album Version)" ;
 	mo:track_number "1"^^xs:int ;
 	rdfs:label "Don't Take Your Love From Me (Album Version)" ;
 	foaf:maker <urn:bluemarine:artist:usZLLSZqaqQMqgbp9GGmImCu-Ao=> .
+
+<urn:bluemarine:track:ebAeZKvyKAsc6AQK2xGPWpf6jps=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "All Blues" ;
+	mo:track_number "4"^^xs:int ;
+	rdfs:label "All Blues" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
+<urn:bluemarine:track:ecH-5r8llxgEDwozV6iiXehe2iI=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Say The Brother's Name" ;
+	mo:track_number "7"^^xs:int ;
+	rdfs:label "Say The Brother's Name" ;
+	foaf:maker <urn:bluemarine:artist:sRvQ7Bo7zNpFJJ9Hi_Erq_kxQWM=> .
 
 <urn:bluemarine:track:fRppsRWN141pP1jBq3Z4vdBF03s=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
@@ -1547,6 +3180,13 @@
 	rdfs:label "And I Love Her" ;
 	foaf:maker <urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=> .
 
+<urn:bluemarine:track:gGN0vGCMy9PE9wLaFUCZhkxCIOQ=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Solitude" ;
+	mo:track_number "11"^^xs:int ;
+	rdfs:label "Solitude" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
 <urn:bluemarine:track:gtjB3RRAEE0oK8eFS9eiQuODIHQ=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "'round Midnight" ;
@@ -1560,6 +3200,27 @@
 	mo:track_number "1"^^xs:int ;
 	rdfs:label "Orchestrion" ;
 	foaf:maker <urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=> .
+
+<urn:bluemarine:track:hPXpIFwNbfCNV2juvgLIc3ID4aI=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Baubles, Bangles and Beads" ;
+	mo:track_number "8"^^xs:int ;
+	rdfs:label "Baubles, Bangles and Beads" ;
+	foaf:maker <urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=> .
+
+<urn:bluemarine:track:hXb570O70eTqn3eykNEjiGg6WtQ=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Red Sky (Album Version)" ;
+	mo:track_number "8"^^xs:int ;
+	rdfs:label "Red Sky (Album Version)" ;
+	foaf:maker <urn:bluemarine:artist:NvLPHYt0geK2dIc-p-afF-ZVtOE=> .
+
+<urn:bluemarine:track:hnSSF4xvkbuzq2y0pukno12yRFY=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "All Too Soon" ;
+	mo:track_number "9"^^xs:int ;
+	rdfs:label "All Too Soon" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
 
 <urn:bluemarine:track:iehf2Hjhe5FBCEIziQ27y2gC3FM=> a mo:Track ;
 	bmmo:importedFrom "embedded" .
@@ -1577,6 +3238,13 @@
 	mo:track_number "4"^^xs:int ;
 	rdfs:label "Contusion" ;
 	foaf:maker <urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=> .
+
+<urn:bluemarine:track:kdsoDIClKoog_cXoaITZSD0M0hQ=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Witchcraft" ;
+	mo:track_number "3"^^xs:int ;
+	rdfs:label "Witchcraft" ;
+	foaf:maker <urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=> .
 
 <urn:bluemarine:track:kx29swV2hDOTnY0sNyCrC9bD2BA=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
@@ -1620,6 +3288,27 @@
 	rdfs:label "Cherish" ;
 	foaf:maker <urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=> .
 
+<urn:bluemarine:track:mdn4xke9bgmj1D0dyUPu3E7uWZQ=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Chez Le Photograph Du Motel" ;
+	mo:track_number "15"^^xs:int ;
+	rdfs:label "Chez Le Photograph Du Motel" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
+<urn:bluemarine:track:n32meJvUKXy1SAD7MC_fo7rT8k0=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "On Green Dolphin Street" ;
+	mo:track_number "12"^^xs:int ;
+	rdfs:label "On Green Dolphin Street" ;
+	foaf:maker <urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=> .
+
+<urn:bluemarine:track:nT6PtWE7VFsBl5re41AxAGqpFv8=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Here To Stay (Album Version)" ;
+	mo:track_number "1"^^xs:int ;
+	rdfs:label "Here To Stay (Album Version)" ;
+	foaf:maker <urn:bluemarine:artist:NvLPHYt0geK2dIc-p-afF-ZVtOE=> .
+
 <urn:bluemarine:track:nTQrV3k1yqnCnWHdEnCCNayCqp8=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "I Wish" ;
@@ -1627,12 +3316,54 @@
 	rdfs:label "I Wish" ;
 	foaf:maker <urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=> .
 
+<urn:bluemarine:track:nZLLaL7OPRVNeAlfC-uIqi895qA=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "The Girls Next Door (Album Version)" ;
+	mo:track_number "3"^^xs:int ;
+	rdfs:label "The Girls Next Door (Album Version)" ;
+	foaf:maker <urn:bluemarine:artist:NvLPHYt0geK2dIc-p-afF-ZVtOE=> .
+
+<urn:bluemarine:track:nexlt72MhCJd20C0Dcmw7Z4yNQ4=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "That Old Feeling" ;
+	mo:track_number "4"^^xs:int ;
+	rdfs:label "That Old Feeling" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
 <urn:bluemarine:track:oP8pHG8FNRYzkfJkzRTZKPiPlC0=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Leaving Town" ;
 	mo:track_number "5"^^xs:int ;
 	rdfs:label "Leaving Town" ;
 	foaf:maker <urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=> .
+
+<urn:bluemarine:track:oahAbPzTCfQUCM2UQf4_-UiduiI=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Speak Low" ;
+	mo:track_number "1"^^xs:int ;
+	rdfs:label "Speak Low" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
+<urn:bluemarine:track:p4F-_cso89rS9vdtaLKpqGp5JnQ=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Blue And Sentimental" ;
+	mo:track_number "8"^^xs:int ;
+	rdfs:label "Blue And Sentimental" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
+<urn:bluemarine:track:pEIZ1KgwYzclDFZTsqCklyC0p78=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Generique" ;
+	mo:track_number "6"^^xs:int ;
+	rdfs:label "Generique" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
+<urn:bluemarine:track:qTd9tdTTmHZcOda66R07EJqgrDs=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "I Didn't Know About You" ;
+	mo:track_number "6"^^xs:int ;
+	rdfs:label "I Didn't Know About You" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
 
 <urn:bluemarine:track:qoAPiHqsM7ol0XgLJHyZyNJdlMo=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
@@ -1662,12 +3393,47 @@
 	rdfs:label "Black Man" ;
 	foaf:maker <urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=> .
 
+<urn:bluemarine:track:s6Ug9VaVbLmagI4yeFBsRx9P2Zw=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "One For Daddy-O" ;
+	mo:track_number "19"^^xs:int ;
+	rdfs:label "One For Daddy-O" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
+
+<urn:bluemarine:track:sSue0fXQ1qsNhsTNwwSgYb-OF5g=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "I Could Write a Book" ;
+	mo:track_number "6"^^xs:int ;
+	rdfs:label "I Could Write a Book" ;
+	foaf:maker <urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=> .
+
 <urn:bluemarine:track:tf-mi4I2naramYmykiD0ItVTZn0=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Trinkle, Tinkle" ;
 	mo:track_number "8"^^xs:int ;
 	rdfs:label "Trinkle, Tinkle" ;
 	foaf:maker <urn:bluemarine:artist:zFIShJu_MTqAA2_ZNWjEukpdMfQ=> .
+
+<urn:bluemarine:track:tjVIVmNaJCB6GWDCm0fin__Tt2I=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Nature Boy" ;
+	mo:track_number "12"^^xs:int ;
+	rdfs:label "Nature Boy" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
+<urn:bluemarine:track:uTbzdQUvKBbyGAAedU4i849-ndw=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Rain" ;
+	mo:track_number "5"^^xs:int ;
+	rdfs:label "Rain" ;
+	foaf:maker <urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=> .
+
+<urn:bluemarine:track:u_xZ6J9bVDJWvgEqenlC7z4-qfI=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "(Mama) He Treats Your Daughter Mean [Bonus Track]" ;
+	mo:track_number "14"^^xs:int ;
+	rdfs:label "(Mama) He Treats Your Daughter Mean [Bonus Track]" ;
+	foaf:maker <urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=> .
 
 <urn:bluemarine:track:ueOVz3lq_EENnMHuMNyQQ2yxkv4=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
@@ -1683,6 +3449,13 @@
 	rdfs:label "Oliloqui Valley (Rudy Van Gelder Edition) (1999 - Remaster)" ;
 	foaf:maker <urn:bluemarine:artist:TzVyzQz4nFXGbYdGXFsl5oOZm6o=> .
 
+<urn:bluemarine:track:v_SkFFxOo7OD23eb7hx-jk8c7G8=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Fly Me to the Moon" ;
+	mo:track_number "9"^^xs:int ;
+	rdfs:label "Fly Me to the Moon" ;
+	foaf:maker <urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=> .
+
 <urn:bluemarine:track:vo179vVz9LUSWG-mHuxlmxmzDbI=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "Entry Point" ;
@@ -1697,6 +3470,13 @@
 	rdfs:label "Saturn" ;
 	foaf:maker <urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=> .
 
+<urn:bluemarine:track:xS948vxWkpMhKEmKk1TIlJHSSF8=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "I Can See Your House From Here" ;
+	mo:track_number "1"^^xs:int ;
+	rdfs:label "I Can See Your House From Here" ;
+	foaf:maker <urn:bluemarine:artist:VR1hJB2jYib2STxF0cbvPcb53bo=> .
+
 <urn:bluemarine:track:xa-UncfEgrx1SmlcxikoeFdtCO4=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
 	dc:title "The Sound Of Silence" ;
@@ -1710,6 +3490,13 @@
 	mo:track_number "1"^^xs:int ;
 	rdfs:label "Let's Cool One (Album Version)" ;
 	foaf:maker <urn:bluemarine:artist:zFIShJu_MTqAA2_ZNWjEukpdMfQ=> .
+
+<urn:bluemarine:track:ydvgWKmrstVzCXmqwaPtXvRXJgY=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Invitation" ;
+	mo:track_number "11"^^xs:int ;
+	rdfs:label "Invitation" ;
+	foaf:maker <urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=> .
 
 <urn:bluemarine:track:yuDuADlVwvjjx0qP-qeFssedFYk=> a mo:Track ;
 	bmmo:importedFrom "embedded" ;
@@ -1731,3 +3518,10 @@
 	mo:track_number "2"^^xs:int ;
 	rdfs:label "Have A Talk With God" ;
 	foaf:maker <urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=> .
+
+<urn:bluemarine:track:zTjB5QMxZWuEItGiA8ROVDVzYNI=> a mo:Track ;
+	bmmo:importedFrom "embedded" ;
+	dc:title "Evasion De Julien" ;
+	mo:track_number "12"^^xs:int ;
+	rdfs:label "Evasion De Julien" ;
+	foaf:maker <urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=> .
