@@ -44,7 +44,7 @@
         <testSet.iTunes-fg-20161210-1.version>2</testSet.iTunes-fg-20161210-1.version>
         <testSet.iTunes-fg-20170202-1.version>1</testSet.iTunes-fg-20170202-1.version>
         <testSet.amazon-autorip-fg-20170131-1.version>2</testSet.amazon-autorip-fg-20170131-1.version>
-        <testSet.iTunes-aac-fg-20170131-1.version>1</testSet.iTunes-aac-fg-20170131-1.version>
+        <testSet.iTunes-aac-fg-20170131-1.version>2</testSet.iTunes-aac-fg-20170131-1.version>
     </properties>
 
     <dependencyManagement>

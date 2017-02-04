@@ -84,7 +84,7 @@ public final class TestSetLocator
      * iTunes-aac-fg-20170131-1
      * ========================
      *
-     * 8 records from the iTunes Market, converted to MP3. They have embedded cover art.
+     * 18 records from the iTunes Market, converted to MP3. They have embedded cover art.
      *
      *
      * amazon-autorip-fg-20170131-1
@@ -103,7 +103,8 @@ public final class TestSetLocator
             return Collections.singletonList(testSet);
           }
 
-        final List<String> result = new ArrayList<>(Arrays.asList("iTunes-fg-20160504-2"));
+        final List<String> result = new ArrayList<>(Arrays.asList(
+                "iTunes-fg-20160504-2"));
         final List<String> longTestSets = Arrays.asList(
                 "iTunes-fg-20161210-1",
                 "amazon-autorip-fg-20170131-1",
