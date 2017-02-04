@@ -84,7 +84,7 @@ public final class TestSetLocator
      * iTunes-aac-fg-20170131-1
      * ========================
      *
-     * 8 records from the iTunes Market, converted to MP3. They have embedded cover art.
+     * 18 records from the iTunes Market, converted to MP3. They have embedded cover art.
      *
      *
      * amazon-autorip-fg-20170131-1
