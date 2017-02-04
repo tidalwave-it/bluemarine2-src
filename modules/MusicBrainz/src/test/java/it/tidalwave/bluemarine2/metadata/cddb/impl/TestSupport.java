@@ -111,6 +111,10 @@ public class TestSupport
     protected static Object[][] trackResourcesProvider()
       {
         return streamOfTestSetTriples(TestSetLocator.allTestSets(), name -> METADATA.resolve(name))
+                // Files there apparendly don't have CDDB offsets
+                .filter(triple -> !triple.getTestSetName().equals("iTunes-aac-fg-20170131-1"))
+                .filter(triple -> !triple.getTestSetName().equals("amazon-autorip-fg-20170131-1"))
+                
                 .filter(triple -> triple.getFilePath().getFileName().toString().startsWith("01")) // FIXME: should test all tracks
                                                     .collect(toTestNGDataProvider());
       }

@@ -112,6 +112,24 @@
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${metadata.folder}</outputDirectory>
                                 </artifactItem>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>expected-metadata-iTunes-aac-fg-20170131-1</artifactId>
+                                    <version>${testSet.iTunes-aac-fg-20170131-1.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${metadata.folder}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2.testsets</groupId>
+                                    <artifactId>expected-metadata-amazon-autorip-fg-20170131-1</artifactId>
+                                    <version>${testSet.amazon-autorip-fg-20170131-1.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${metadata.folder}</outputDirectory>
+                                </artifactItem>
+
+
 
                                 <!-- REST caches -->
                                 <artifactItem>

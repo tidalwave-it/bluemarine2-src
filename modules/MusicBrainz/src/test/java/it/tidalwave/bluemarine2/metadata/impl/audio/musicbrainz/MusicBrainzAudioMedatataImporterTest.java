@@ -111,8 +111,8 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
         cddbMetadataProvider = new DefaultCddbMetadataProvider();
         musicBrainzMetadataProvider = new DefaultMusicBrainzMetadataProvider();
 
-        cddbMetadataProvider.setCacheMode(ONLY_USE_CACHE);
-        musicBrainzMetadataProvider.setCacheMode(ONLY_USE_CACHE);
+        cddbMetadataProvider.setCacheMode(USE_CACHE);
+        musicBrainzMetadataProvider.setCacheMode(USE_CACHE);
 //        underTest.initialize(); // FIXME
 
 //        underTest = new MusicBrainzAudioMedatataImporter(cddbMetadataProvider, musicBrainzMetadataProvider);
@@ -220,8 +220,9 @@ public class MusicBrainzAudioMedatataImporterTest extends TestSupport
     protected static Object[][] trackResourcesProvider2()
       {
         return streamOfTestSetTriples(TestSetLocator.allTestSets(), name -> METADATA.resolve(name))
-//                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20160504-2"))
-//                .filter(triple -> triple.getTestSetName().equals("iTunes-fg-20161210-1"))
+                // Files there apparendly don't have CDDB offsets
+                .filter(triple -> !triple.getTestSetName().equals("iTunes-aac-fg-20170131-1"))
+                .filter(triple -> !triple.getTestSetName().equals("amazon-autorip-fg-20170131-1"))
                 .collect(toTestNGDataProvider());
       }
   }
