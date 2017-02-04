@@ -275,6 +275,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
             { "small-model-2"                   , null,                         ID_SOURCE_MUSICBRAINZ, ID_SOURCE_MUSICBRAINZ },
             { "model-iTunes-fg-20160504-2"      , null,                         ID_SOURCE_EMBEDDED,    ID_SOURCE_EMBEDDED },
             { "model-iTunes-fg-20161210-1"      , null,                         ID_SOURCE_EMBEDDED,    ID_SOURCE_EMBEDDED },
+            { "model-iTunes-aac-fg-20170131-1"      , null,                     ID_SOURCE_EMBEDDED,    ID_SOURCE_EMBEDDED },
+            { "model-amazon-autorip-fg-20170131-1"  , null,                     ID_SOURCE_EMBEDDED,    ID_SOURCE_EMBEDDED },
             { "musicbrainz-iTunes-fg-20160504-2", "model-iTunes-fg-20160504-2", ID_SOURCE_MUSICBRAINZ, ID_SOURCE_EMBEDDED },
             { "musicbrainz-iTunes-fg-20161210-1", "model-iTunes-fg-20161210-1", ID_SOURCE_MUSICBRAINZ, ID_SOURCE_EMBEDDED },
           };

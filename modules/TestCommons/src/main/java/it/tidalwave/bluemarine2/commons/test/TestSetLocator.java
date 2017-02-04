@@ -51,6 +51,8 @@ import static lombok.AccessLevel.PRIVATE;
 @NoArgsConstructor(access = PRIVATE) @Slf4j
 public final class TestSetLocator
   {
+    private static final String PROPERTY_TESTSET = "testSet";
+
     private static final String PROPERTY_SKIP_LONG_TESTS = "it.tidalwave-ci.skipLongTests";
 
     public static final Path PATH_TEST_RESULTS = Paths.get("target/test-results");
@@ -61,12 +63,52 @@ public final class TestSetLocator
 
     /*******************************************************************************************************************
      *
+     * TEST SETS:
+     *
+     * iTunes-fg-20160504-2
+     * ====================
+     *
+     * 52 records imported from CD by iTunes. 3 without CDDB - purportedly, so we can test that case.
+     *
+     * Spurious records "Callas - La Divina 2" (urn:bluemarine:record:d-B67tYwHDFv7ibEEJd8nsqMKIE=) and
+     * "La Divina 2" (urn:bluemarine:record:1YnSzOtRCbFKmcAnNRKLtDXCE8w=), regarding track #1.
+     *
+     *
+     * iTunes-fg-20161210-1
+     * ====================
+     *
+     * 228 records imported from CD by iTunes. 4 without CDDB - this will be fixed in future.
+     * Same spurious records as above.
+     *
+     *
+     * iTunes-aac-fg-20170131-1
+     * ========================
+     *
+     * 18 records from the iTunes Market, converted to MP3. They have embedded cover art.
+     *
+     *
+     * amazon-autorip-fg-20170131-1
+     * ============================
+     *
+     * 14 records from Amazon Autorip.
+     *
      ******************************************************************************************************************/
     @Nonnull
     public static Collection<String> allTestSets()
       {
-        final List<String> result = new ArrayList<>(Arrays.asList("iTunes-fg-20160504-2"));
-        final List<String> longTestSets = Arrays.asList("iTunes-fg-20161210-1");
+        final String testSet = System.getProperty(PROPERTY_TESTSET);
+
+        if (testSet != null)
+          {
+            return Collections.singletonList(testSet);
+          }
+
+        final List<String> result = new ArrayList<>(Arrays.asList(
+                "iTunes-fg-20160504-2"));
+        final List<String> longTestSets = Arrays.asList(
+                "iTunes-fg-20161210-1",
+                "amazon-autorip-fg-20170131-1",
+                "iTunes-aac-fg-20170131-1");
 
         if (Boolean.getBoolean(PROPERTY_SKIP_LONG_TESTS))
           {
