@@ -29,25 +29,27 @@
 package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.Nonnull;
+import java.util.Base64;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.commons.test.TestSetTriple;
+import lombok.extern.slf4j.Slf4j;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 import static java.text.Normalizer.Form.NFC;
 import static java.text.Normalizer.normalize;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents2;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetTriple.*;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.CDDB;
 
 /***********************************************************************************************************************
  *
@@ -77,6 +79,7 @@ public class AudioMetadataFactoryTest
         final Path expectedFile = PATH_EXPECTED_TEST_RESULTS.resolve("metadata").resolve(dumpRelativePath);
         final List<String> metadataDump = metadata.getEntries()
                                                   .stream()
+                                                  .filter(entry -> !entry.getKey().equals(ARTWORK))
                                                   // FIXME: this should be removed, and the expected results updated
                                                   .filter(entry -> !entry.getKey().equals(CDDB))
                                                   .sorted(comparing(e -> e.getKey()))
@@ -84,6 +87,21 @@ public class AudioMetadataFactoryTest
                                                                                         e.getKey(),
                                                                                         e.getValue()))
                                                   .collect(toList());
+
+        metadata.get(ARTWORK).ifPresent(artworks ->
+          {
+            final AtomicInteger n = new AtomicInteger();
+            artworks.forEach(artwork ->
+              {
+                metadataDump.add(String.format("%s.%s[%s] = %s",
+                        normalize(relativePath, NFC),
+                        ARTWORK,
+                        n,
+                        Base64.getEncoder().encodeToString(artwork)));
+                n.incrementAndGet();
+              });
+          });
+
         Files.createDirectories(actualFile.getParent());
         Files.write(actualFile, metadataDump);
         assertSameContents2(expectedFile, actualFile);
