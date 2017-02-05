@@ -32,12 +32,15 @@ import javax.annotation.Nonnull;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.nio.file.Path;
 import java.net.URI;
+import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.ClientHttpResponse;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 import org.eclipse.rdf4j.repository.RepositoryException;
@@ -79,6 +82,24 @@ public class MusicResourcesControllerTest extends SpringTestSupport
 
     private EventBarrier<PersistenceInitializedNotification> barrier;
 
+    private Function<String, String> postProcessor;
+
+    private static final ResponseErrorHandler IGNORE_HTTP_ERRORS = new ResponseErrorHandler()
+      {
+        @Override
+        public boolean hasError (final ClientHttpResponse response)
+          throws IOException
+          {
+            return false;
+          }
+
+        @Override
+        public void handleError (final ClientHttpResponse response)
+          throws IOException
+          {
+          }
+      };
+
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
@@ -90,6 +111,7 @@ public class MusicResourcesControllerTest extends SpringTestSupport
               "classpath:META-INF/PersistenceAutoBeans.xml",
               "classpath:META-INF/RestAutoBeans.xml",
               "classpath:META-INF/CatalogAutoBeans.xml");
+        System.setProperty("port", "9999");
       }
 
     /*******************************************************************************************************************
@@ -101,18 +123,21 @@ public class MusicResourcesControllerTest extends SpringTestSupport
       throws Exception
       {
         server = context.getBean(ResourceServer.class);
+        postProcessor = s -> s.replaceAll(server.absoluteUrl(""), "http://<server>/");
         messageBus = context.getBean(MessageBus.class);
         final Persistence persistence = context.getBean(Persistence.class);
 
         barrier = new EventBarrier<>(PersistenceInitializedNotification.class, messageBus);
 
         final Map<Key<?>, Object> properties = new HashMap<>();
-        properties.put(ModelPropertyNames.ROOT_PATH, Paths.get("/tmp")); // FIXME
+        final Path testSetPath = Paths.get(System.getProperty(PROPERTY_MUSIC_TEST_SETS_PATH));
+        properties.put(ModelPropertyNames.ROOT_PATH, testSetPath.resolve("iTunes-aac-fg-20170131-1"));
         messageBus.publish(new PowerOnNotification(properties));
         Thread.sleep(2000);
         barrier.await();
         final Repository repository = persistence.getRepository();
         loadInMemoryCatalog(repository, Paths.get("target/test-classes/test-sets/model-iTunes-fg-20161210-1.n3"));
+        loadInMemoryCatalog(repository, Paths.get("target/test-classes/test-sets/model-iTunes-aac-fg-20170131-1.n3"));
         loadInMemoryCatalog(repository, Paths.get("target/test-classes/test-sets/musicbrainz-iTunes-fg-20161210-1.n3"));
 
         baseUrl = String.format("http://%s:%d", server.getIpAddress(), server.getPort());
@@ -138,12 +163,13 @@ public class MusicResourcesControllerTest extends SpringTestSupport
       {
         // given
         final RestTemplate restTemplate = new RestTemplate();
+        restTemplate.setErrorHandler(IGNORE_HTTP_ERRORS);
         // when
         final ResponseEntity<String> response = restTemplate.getForEntity(URI.create(baseUrl + url), String.class);
         // then
         final Path actualPath = PATH_TEST_RESULTS.resolve(expected);
         final Path expectedPath = PATH_EXPECTED_TEST_RESULTS.resolve(expected);
-        ResponseEntityIo.store(actualPath, response, Arrays.asList("Last-Modified"));
+        ResponseEntityIo.store(actualPath, response, Arrays.asList("Last-Modified"), postProcessor);
         assertSameContents(expectedPath, actualPath);
       }
 
@@ -181,13 +207,37 @@ public class MusicResourcesControllerTest extends SpringTestSupport
       {
         return new Object[][]
           {
-            { "/rest/record",                                                          "records.json.txt"     },
-            { "/rest/track",                                                           "tracks.json.txt"      },
-            { "/rest/audiofile",                                                       "audiofiles.json.txt"  },
-            { "/rest/audiofile/urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=", "audiofile-urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=.json.txt"  },
-            { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=",       "record-eLWktOMBbcOWysVn6AW6kksBS7Q=.json.txt"          },
-            { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=/track", "record-eLWktOMBbcOWysVn6AW6kksBS7Q=-tracks.json.txt"   },
-            { "/index.xhtml",                                                          "index.xhtml.txt"      }
+            { "/rest/record",
+              "records.json.txt" },
+
+            { "/rest/track",
+              "tracks.json.txt" },
+
+            { "/rest/audiofile",
+              "audiofiles.json.txt" },
+
+            { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=",
+              "record-eLWktOMBbcOWysVn6AW6kksBS7Q=.json.txt" },
+
+            { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=/track",
+              "record-eLWktOMBbcOWysVn6AW6kksBS7Q=-tracks.json.txt" },
+
+            { "/index.xhtml",
+              "index.xhtml.txt" },
+
+            { "/rest/audiofile/urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=",
+              "audiofile-urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=.json.txt" },
+
+            { "/rest/audiofile/urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=/content",
+              "audiofile-urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=-content.mp3.txt" },
+
+            // missing coverart
+            { "/rest/audiofile/urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=/coverart",
+              "audiofile-urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=-coverart.txt" },
+
+            // coverart
+            { "/rest/audiofile/urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=/coverart",
+              "audiofile-urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=-coverart.jpeg.txt" },
           };
       }
   }

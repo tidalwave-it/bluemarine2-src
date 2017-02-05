@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -42,9 +43,9 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 import lombok.extern.slf4j.Slf4j;
-import static java.nio.charset.StandardCharsets.*;
 import static java.util.Comparator.*;
 import static java.util.stream.Collectors.*;
+import static java.nio.charset.StandardCharsets.*;
 
 /***********************************************************************************************************************
  *
@@ -64,6 +65,19 @@ public class ResponseEntityIo
                               final @Nonnull ResponseEntity<String> response,
                               final @Nonnull List<String> ignoredHeaders)
       {
+          store(path, response, ignoredHeaders, Function.identity());
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static void store (final @Nonnull Path path,
+                              final @Nonnull ResponseEntity<String> response,
+                              final @Nonnull List<String> ignoredHeaders,
+                              final @Nonnull Function<String, String> postProcessor)
+      {
         try
           {
             log.trace("store({}, ..., ...)", path);
@@ -82,7 +96,7 @@ public class ResponseEntityIo
                 pw.print(response.getBody());
               }
 
-            Files.write(path, Arrays.asList(sw.toString()), UTF_8);
+            Files.write(path, Arrays.asList(postProcessor.apply(sw.toString())), UTF_8);
           }
         catch (IOException e)
           {
