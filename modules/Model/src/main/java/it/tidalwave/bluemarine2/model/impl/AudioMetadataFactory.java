@@ -58,6 +58,7 @@ import static java.util.stream.Collectors.toList;
 import static lombok.AccessLevel.PRIVATE;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
+import org.jaudiotagger.tag.images.Artwork;
 
 /***********************************************************************************************************************
  *
@@ -89,7 +90,7 @@ public final class AudioMetadataFactory
             audioFile = new MP3FileReader().read(file); // FIXME in some cases AudioFileIO doesn't get the right file extension
             final AudioHeader header = audioFile.getAudioHeader();
             final Tag tag = audioFile.getTag(); // FIXME: getFirst below... should get all?
-            
+
             metadata = metadata.with(FILE_SIZE,       Files.size(path))
                                .with(DURATION,        Duration.ofSeconds(header.getTrackLength()))
                                .with(BIT_RATE,        (int)header.getBitRateAsNumber())
@@ -132,6 +133,8 @@ public final class AudioMetadataFactory
               }
 
             metadata = metadata.with(ITUNES_COMMENT, ITunesComment.from(metadata));
+
+            metadata = metadata.with(ARTWORK, tag.getArtworkList().stream().map(Artwork::getBinaryData).collect(toList()));
 
 //            put(YEAR, Integer.valueOf(tag.getFirst(FieldKey.YEAR)));
 

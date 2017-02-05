@@ -40,6 +40,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
+import org.jaudiotagger.tag.images.Artwork;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
@@ -90,6 +91,8 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
         public static final Key<String> FORMAT = new Key<>("mp3.format");
         public static final Key<String> ENCODING_TYPE = new Key<>("mp3.encodingType");
         public static final Key<Integer> CHANNELS = new Key<>("mp3.channels");
+
+        public static final Key<List<byte[]>> ARTWORK = new Key<>("mp3.artwork");
 
         public static final Key<Id> MBZ_TRACK_ID = new Key<>("mbz.trackId");
         public static final Key<Id> MBZ_WORK_ID = new Key<>("mbz.workId");
