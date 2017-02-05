@@ -62,6 +62,11 @@ import static org.springframework.http.MediaType.*;
 @RestController @SimpleMessageSubscriber @Slf4j
 public class MusicResourcesController
   {
+    static interface Streamable<ENTITY, FINDER extends SourceAwareFinder<FINDER, ENTITY>> extends SourceAwareFinder<ENTITY, FINDER>
+      {
+        public Stream<ENTITY> stream();
+      }
+
     private MediaCatalog catalog; // FIXME: directly inject the Catalog
 
     @Inject
@@ -128,9 +133,29 @@ public class MusicResourcesController
         return new TracksJson(finalized(catalog.findTracks(), source, fallback, TrackJson::new));
       }
 
-    static interface Streamable<ENTITY, FINDER extends SourceAwareFinder<FINDER, ENTITY>> extends SourceAwareFinder<ENTITY, FINDER>
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @ResponseBody
+    @JsonView(Profile.Master.class)
+    @RequestMapping(value = "/audiofile", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
+    public AudioFilesJson getAudioFiles (final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                         final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
-        public Stream<ENTITY> stream();
+        return new AudioFilesJson(finalized(catalog.findAudioFiles(), source, fallback, AudioFileJson::new));
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @ResponseBody
+    @JsonView(Profile.Master.class)
+    @RequestMapping(value = "/audiofile/{id}", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
+    public AudioFilesJson getAudioFile (final @PathVariable String id,
+                                        final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                        final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+      {
+        return new AudioFilesJson(finalized(catalog.findAudioFiles().withId(new Id(id)), source, fallback, AudioFileJson::new));
       }
 
     /*******************************************************************************************************************

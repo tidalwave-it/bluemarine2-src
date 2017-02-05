@@ -87,6 +87,17 @@ RECORD Rhapsody in Blue / An American in Paris / Piano Concerto in F (urn:bluema
       : orchestra            Pittsburgh Symphony Orchestra (urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=)
 
 
+
+ALL AUDIO FILES (6):
+
+  14:00 33644970 urn:bluemarine:audiofile:7wT0aJMD04TuqVVT95SZxDOsOyM= André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/01 Gershwin_ Rhapsody In Blue.mp3
+  07:31 18078109 urn:bluemarine:audiofile:f79o0ib_B8BaidfzcYDAWhmiI1E= André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/02 Gershwin_ An American In Paris - 1. Allegretto Grazioso.mp3
+  10:38 25532419 urn:bluemarine:audiofile:RPJSyf1erNZ9RjTZAY6EwA9bItg= André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/03 Gershwin_ An American In Paris - 2. Andante Ma Con Ritmo Deciso.mp3
+  12:56 31084986 urn:bluemarine:audiofile:WBUlMhlazWQcLmEVLkTUSd0ydXU= André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/04 Gershwin_ Piano Concerto In F - 1. Allegro.mp3
+  12:13 29337915 urn:bluemarine:audiofile:sKFQlZQ-_47rQl4i5GvZMTjwI-4= André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/05 Gershwin_ Piano Concerto In F - 2. Adagio.mp3
+  06:43 16151312 urn:bluemarine:audiofile:3VZ1mq1QHNwN3Yvzqc2MNcHxX-s= André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/06 Gershwin_ Piano Concerto In F - 3. Allegro Agitato.mp3
+
+
 TRACKS ORPHAN OF ARTIST (0):
 
 

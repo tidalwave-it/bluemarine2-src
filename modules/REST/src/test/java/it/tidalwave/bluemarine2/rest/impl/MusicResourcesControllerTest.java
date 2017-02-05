@@ -181,11 +181,13 @@ public class MusicResourcesControllerTest extends SpringTestSupport
       {
         return new Object[][]
           {
-            { "/rest/record",                                                          "records.json.txt"  },
-            { "/rest/track",                                                           "tracks.json.txt"   },
+            { "/rest/record",                                                          "records.json.txt"     },
+            { "/rest/track",                                                           "tracks.json.txt"      },
+            { "/rest/audiofile",                                                       "audiofiles.json.txt"  },
+            { "/rest/audiofile/urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=", "audiofile-urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=.json.txt"  },
             { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=",       "record-eLWktOMBbcOWysVn6AW6kksBS7Q=.json.txt"          },
             { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=/track", "record-eLWktOMBbcOWysVn6AW6kksBS7Q=-tracks.json.txt"   },
-            { "/index.xhtml",                                                          "index.xhtml.txt"  }
+            { "/index.xhtml",                                                          "index.xhtml.txt"      }
           };
       }
   }

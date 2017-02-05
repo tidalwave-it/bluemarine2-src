@@ -209,6 +209,12 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
       }
 
     @Override @Nonnull
+    public Id getId()
+      {
+        return new Id(path.toString());
+      }
+
+    @Override @Nonnull
     public Optional<PathAwareEntity> getParent()
       {
         return Optional.of(parent);

@@ -1,0 +1,13 @@
+            SELECT DISTINCT *
+            WHERE
+              {
+                        ?audioFile      a                                         mo:AudioFile;
+                                        bmmo:path                                 ?path;
+                                        mo:encodes                                ?signal;
+             OPTIONAL { ?audioFile      bmmo:fileSize                             ?fileSize.      }
+
+                        ?signal         a                                         mo:DigitalSignal;
+                                        mo:duration                               ?duration.
+              }
+            ORDER BY
+                ?path

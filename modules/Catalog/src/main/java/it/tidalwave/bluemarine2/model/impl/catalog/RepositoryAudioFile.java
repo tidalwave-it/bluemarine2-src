@@ -46,6 +46,9 @@ import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import it.tidalwave.bluemarine2.util.Formatters;
+import java.nio.file.Paths;
+import org.eclipse.rdf4j.query.BindingSet;
 
 /***********************************************************************************************************************
  *
@@ -60,43 +63,42 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 @Immutable @EqualsAndHashCode(of = { "path", "trackId" }, callSuper = false)
 public class RepositoryAudioFile extends RepositoryEntitySupport implements AudioFile
   {
-//    @RequiredArgsConstructor // FIXME: refactor with a Factory of children
-//    public static class RepositoryAudioFileArtistFinder extends Finder8Support<MusicArtist, MusicArtistFinder> implements MusicArtistFinder
-//      {
-//        private static final long serialVersionUID = -4130836861989484793L;
-//
-//        @Nonnull
-//        private final RepositoryAudioFile file;
-//
-//        /** Clone constructor. */
-//        public RepositoryAudioFileArtistFinder (final @Nonnull RepositoryAudioFileArtistFinder other,
-//                                          final @Nonnull Object override)
-//          {
-//            super(other, override);
-//            this.file = other.file;
-//          }
-//
-//        // FIXME: query the repository
-//        @Override @Nonnull
-//        protected List<MusicArtist> computeNeededResults()
-//          {
-//            return file.getMetadata().get(Metadata.COMPOSER)
-//                                     .map(artistName -> Arrays.asList(new RepositoryMusicArtist(file.repository, artistName)))
-//                                     .orElse(Collections.emptyList());
-//          }
-//      }
-
     @Getter @Nonnull
     private final Path path;
 
     @Getter @Nonnull
     private final Path relativePath;
 
+    @Nonnull
+    private final Id trackId;
+
+    @Nonnull
+    private final Optional<Duration> duration;
+
+    @Nonnull
+    private final Optional<Long> fileSize;
+
     @Getter @Nonnull
     private final Metadata metadata;
 
-    @Nonnull
-    private final Id trackId;
+    public RepositoryAudioFile (final @Nonnull Repository repository,
+                                final @Nonnull BindingSet bindingSet)
+      {
+        super(repository, bindingSet, "audioFile");
+
+        // See BMT-36
+        this.path         = Paths.get(toString(bindingSet.getBinding("path")).get());
+        this.relativePath = path;// FIXME basePath.relativize(path);
+
+        this.duration     = toDuration(bindingSet.getBinding("duration"));
+        this.fileSize     = toLong(bindingSet.getBinding("fileSize"));
+
+        this.trackId = null; // FIXME
+
+        this.metadata = new MetadataSupport(path).with(TITLE, rdfsLabel)
+                                                 .with(DURATION, duration)
+                                                 .with(FILE_SIZE, fileSize);
+      }
 
     // FIXME: too maby arguments, pass a BindingSet
     public RepositoryAudioFile (final @Nonnull Repository repository,
@@ -113,6 +115,10 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
         // See BMT-36
         this.path = path;
         this.relativePath = path;// FIXME basePath.relativize(path);
+
+        this.duration = duration;
+        this.fileSize = fileSize;
+
         this.metadata = new MetadataSupport(path).with(TITLE, rdfsLabel)
                                                  .with(DURATION, duration)
                                                  .with(FILE_SIZE, fileSize);
@@ -153,5 +159,13 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     public Optional<PathAwareEntity> getParent() // FIXME: drop it
       {
         throw new UnsupportedOperationException();
+      }
+
+    @Override @Nonnull
+    public String toDumpString()
+      {
+        return String.format("%s %8s %s %s", duration.map(Formatters::format).orElse("??:??"),
+                                             fileSize.map(l -> l.toString()).orElse(""),
+                                             id, relativePath);
       }
   }

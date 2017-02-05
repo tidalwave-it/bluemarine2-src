@@ -30,6 +30,8 @@ package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
+import java.nio.file.Path;
+import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 
 /***********************************************************************************************************************
@@ -42,8 +44,11 @@ import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-public interface AudioFile extends MediaItem // FIXME: MediaItem should not be statically Parentable
+public interface AudioFile extends MediaItem, Identifiable // FIXME: MediaItem should not be statically Parentable
   {
+    @Nonnull
+    public Path getPath();
+
     /*******************************************************************************************************************
      *
      * Returns the makers of this audio file.

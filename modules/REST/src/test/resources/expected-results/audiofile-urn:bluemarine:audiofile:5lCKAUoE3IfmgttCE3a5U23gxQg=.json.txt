@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Server: Jetty(8.1.8.v20121106)
+Transfer-Encoding: chunked
+
+{
+  "audioFiles" : [ {
+    "id" : "urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=",
+    "displayName" : "",
+    "path" : "Compilations/Satchmo 2/10 Stars Feel On Alabama.mp3",
+    "fileSize" : 8616368,
+    "duration" : "PT3M35S"
+  } ]
+}
