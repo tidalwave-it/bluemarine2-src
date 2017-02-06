@@ -197,37 +197,36 @@ public class MusicResourcesControllerTest extends SpringTestSupport
             { "/rest/record",
               "records.json.txt" },
 
-            { "/rest/track",
-              "tracks.json.txt" },
-
-            { "/rest/track/urn:bluemarine:track:Q9KPhUq1xN6VJRpV5gWsDkRYHUc=",
-              "track-urn:bluemarine:track:Q9KPhUq1xN6VJRpV5gWsDkRYHUc=.json.txt" },
-
-            { "/rest/audiofile",
-              "audiofiles.json.txt" },
-
             { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=",
               "record-eLWktOMBbcOWysVn6AW6kksBS7Q=.json.txt" },
 
             { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=/track",
               "record-eLWktOMBbcOWysVn6AW6kksBS7Q=-tracks.json.txt" },
 
+            { "/rest/record/urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=/coverart",
+              "record-XoqvktWLs6mu64qGOxQ3NyPzXVY=-coverart.jpg.txt" },
+
+            { "/rest/track",
+              "tracks.json.txt" },
+
+            { "/rest/track/urn:bluemarine:track:Q9KPhUq1xN6VJRpV5gWsDkRYHUc=",
+              "track-Q9KPhUq1xN6VJRpV5gWsDkRYHUc=.json.txt" },
+
+            { "/rest/audiofile",
+              "audiofiles.json.txt" },
+
             { "/rest/audiofile/urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=",
-              "audiofile-urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=.json.txt" },
+              "audiofile-5lCKAUoE3IfmgttCE3a5U23gxQg=.json.txt" },
 
             { "/rest/audiofile/urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=/content",
-              "audiofile-urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=-content.mp3.txt" },
+              "audiofile-Nmd7Bm3DQ922WhPkJn5YD_i_eK4=-content.mp3.txt" },
+
+            { "/rest/audiofile/urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=/coverart",
+              "audiofile-Nmd7Bm3DQ922WhPkJn5YD_i_eK4=-coverart.jpg.txt" },
 
             // missing coverart
             { "/rest/audiofile/urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=/coverart",
-              "audiofile-urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=-coverart.txt" },
-
-            // coverart
-            { "/rest/record/urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=/coverart",
-              "record-urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=-coverart.jpeg.txt" },
-
-            { "/rest/audiofile/urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=/coverart",
-              "audiofile-urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=-coverart.jpeg.txt" },
+              "audiofile-5lCKAUoE3IfmgttCE3a5U23gxQg=-coverart.jpg.txt" },
           };
       }
   }
