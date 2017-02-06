@@ -60,6 +60,7 @@ import static org.springframework.http.MediaType.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.ARTWORK;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 import static it.tidalwave.bluemarine2.util.FunctionWrappers._f;
+import static it.tidalwave.role.Displayable.Displayable;
 import static org.springframework.http.HttpHeaders.CONTENT_DISPOSITION;
 
 /***********************************************************************************************************************
@@ -281,10 +282,9 @@ public class MusicResourcesController
       {
         log.info("getAudioFileContent({})", id);
         checkStatus();
-        final Optional<AudioFile> audioFile = catalog.findAudioFiles().withId(new Id(id)).optionalResult();
-        return audioFile.flatMap(_f(AudioFile::getContent))
-                        .map(bytes -> bytesResponse(bytes, "audio", "mpeg", "audiofile.mp3"))
-                        .orElseThrow(NotFoundException::new);
+        return catalog.findAudioFiles().withId(new Id(id)).optionalResult()
+                                                          .map(_f(this::audioFileContentResponse))
+                                                          .orElseThrow(NotFoundException::new);
       }
 
     /*******************************************************************************************************************
@@ -304,7 +304,6 @@ public class MusicResourcesController
                         .orElseThrow(NotFoundException::new);
       }
 
-
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
@@ -321,6 +320,18 @@ public class MusicResourcesController
                      .stream()
                      .map(mapper)
                      .collect(toList());
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private ResponseEntity<byte[]> audioFileContentResponse (final @Nonnull AudioFile file)
+      throws IOException
+      {
+        final String displayName = file.as(Displayable).getDisplayName();
+        return file.getContent().map(bytes -> bytesResponse(bytes, "audio", "mpeg", displayName + ".mp3"))
+                                .orElseThrow(NotFoundException::new);
       }
 
     /*******************************************************************************************************************
