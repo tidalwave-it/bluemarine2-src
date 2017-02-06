@@ -174,6 +174,26 @@ public class MusicResourcesController
 
     /*******************************************************************************************************************
      *
+     * Exports a single track resource.
+     *
+     * @param   id          the track id
+     * @param   source      the data source
+     * @param   fallback    the fallback data source
+     * @return              the JSON representation of the track
+     *
+     ******************************************************************************************************************/
+    @ResponseBody
+    @JsonView(Profile.Master.class)
+    @RequestMapping(value = "/track/{id}", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
+    public TracksJson getTrack (final @PathVariable String id,
+                                final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+      {
+        return new TracksJson(finalized(catalog.findTracks().withId(new Id(id)), source, fallback, TrackJson::new));
+      }
+
+    /*******************************************************************************************************************
+     *
      * Exports audio file resources.
      *
      * @param   source      the data source

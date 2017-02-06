@@ -53,13 +53,16 @@ import static it.tidalwave.role.Displayable.Displayable;
 @Getter
 @JsonInclude(Include.NON_ABSENT)
 @JsonPropertyOrder(alphabetic = true)
-public class TrackJson
+public class TrackJson extends JsonSupport
   {
     @JsonView(Profile.Master.class)
     private final String id;
 
     @JsonView(Profile.Master.class)
     private final String displayName;
+
+    @JsonView(Profile.Master.class)
+    private final Optional<String> record;
 
     @JsonView(Profile.Master.class)
     private final Optional<Integer> diskCount;
@@ -80,6 +83,7 @@ public class TrackJson
       {
         this.id          = track.getId().stringValue();
         this.displayName = track.as(Displayable).getDisplayName();
+        this.record      = track.getRecord().map(r -> resourceUri("record", r));
         this.diskCount   = track.getDiskCount();
         this.diskNumber  = track.getDiskNumber();
         this.trackNumber = track.getTrackNumber();

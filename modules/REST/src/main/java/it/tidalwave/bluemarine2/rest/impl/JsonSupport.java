@@ -29,61 +29,33 @@
 package it.tidalwave.bluemarine2.rest.impl;
 
 import javax.annotation.Nonnull;
-import java.util.Collection;
-import java.util.Optional;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonView;
-import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.model.Record;
-import lombok.Getter;
-import static java.util.stream.Collectors.*;
-import static it.tidalwave.role.Displayable.Displayable;
+import javax.inject.Inject;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.beans.factory.annotation.Configurable;
+import it.tidalwave.role.Identifiable;
+import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 
 /***********************************************************************************************************************
- *
- * An adapter for exporting {@link Record} in JSON.
- *
- * @stereotype  Adapter
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id: $
  *
  **********************************************************************************************************************/
-@Getter
-@JsonInclude(JsonInclude.Include.NON_ABSENT)
-@JsonPropertyOrder(alphabetic = true)
-public class RecordJson extends JsonSupport
+@Configurable(preConstruction = true)
+public abstract class JsonSupport
   {
-    @JsonView(Profile.Master.class)
-    private final String id;
+    @Inject @JsonIgnore
+    private ResourceServer server;
 
-    @JsonView(Profile.Master.class)
-    private final String displayName;
-
-    @JsonView(Profile.Master.class)
-    private final Optional<Integer> diskCount;
-
-    @JsonView(Profile.Master.class)
-    private final Optional<Integer> diskNumber;
-
-    @JsonView(Profile.Master.class)
-    private final Optional<Integer> trackCount;
-
-    @JsonView(Profile.Master.class)
-    private final Optional<String> source;
-
-    @JsonView(Profile.Master.class)
-    private final Collection<String> tracks;
-
-    public RecordJson (final @Nonnull Record record)
+    @Nonnull
+    protected final String resourceUri (final @Nonnull String resourceType, final @Nonnull Identifiable resource)
       {
-        this.id          = record.getId().stringValue();
-        this.displayName = record.as(Displayable).getDisplayName();
-        this.diskCount   = record.getDiskCount();
-        this.diskNumber  = record.getDiskNumber();
-        this.trackCount  = record.getTrackCount();
-        this.source      = record.getSource().map(Id::toString);
-        this.tracks      = record.findTracks().stream().map(track -> resourceUri("track", track)).collect(toList());
+        return resourceUri(resourceType, resource.getId().stringValue());
+      }
+
+    @Nonnull
+    protected final String resourceUri (final @Nonnull String resourceType, final @Nonnull String resourceId)
+      {
+        return server.absoluteUrl(String.format("rest/%s/%s", resourceType, resourceId));
       }
   }

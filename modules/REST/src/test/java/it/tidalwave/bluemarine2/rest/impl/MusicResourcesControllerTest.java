@@ -195,6 +195,9 @@ public class MusicResourcesControllerTest extends SpringTestSupport
             { "/rest/track",
               "tracks.json.txt" },
 
+            { "/rest/track/urn:bluemarine:track:Q9KPhUq1xN6VJRpV5gWsDkRYHUc=",
+              "track-urn:bluemarine:track:Q9KPhUq1xN6VJRpV5gWsDkRYHUc=.json.txt" },
+
             { "/rest/audiofile",
               "audiofiles.json.txt" },
 
