@@ -133,7 +133,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     @Override @Nonnull
     public Optional<Record> getRecord()
       {
-        return new RepositoryRecordFinder(repository).containingTrack(id).optionalFirstResult();
+        return trackId.flatMap(tid -> new RepositoryRecordFinder(repository).containingTrack(tid).optionalFirstResult());
       }
 
     @Override @Nonnull
