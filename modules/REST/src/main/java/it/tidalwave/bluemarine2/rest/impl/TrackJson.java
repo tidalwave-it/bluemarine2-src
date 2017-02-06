@@ -38,6 +38,7 @@ import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.Track;
 import lombok.Getter;
 import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 
 /***********************************************************************************************************************
  *
@@ -70,6 +71,8 @@ public class TrackJson extends JsonSupport
 
     private final Optional<String> source;
 
+    private final Optional<String> audioFile;
+
     public TrackJson (final @Nonnull Track track)
       {
         this.id          = track.getId().stringValue();
@@ -80,5 +83,6 @@ public class TrackJson extends JsonSupport
         this.trackNumber = track.getTrackNumber();
         this.duration    = track.getDuration().map(Duration::toString);
         this.source      = track.getSource().map(Id::toString);
+        this.audioFile   = track.asOptional(AudioFileSupplier).map(afs -> resourceUri("audiofile", afs.getAudioFile()));
       }
   }

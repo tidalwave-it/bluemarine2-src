@@ -5,6 +5,7 @@ Transfer-Encoding: chunked
 
 {
   "tracks" : [ {
+    "audioFile" : "http://<server>/rest/audiofile/urn:bluemarine:audiofile:G4e7kNSkbzbK6MtF7z3kjbssqFo=",
     "displayName" : "On Green Dolphin Street",
     "duration" : "PT9M51S",
     "id" : "urn:bluemarine:track:Q9KPhUq1xN6VJRpV5gWsDkRYHUc=",
