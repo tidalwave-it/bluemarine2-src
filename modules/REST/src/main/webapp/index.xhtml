@@ -30,7 +30,7 @@
                 var trackFormatter = function(row, rowIndex, dataSet)
                   {
                     row.durationFormatted = numeral(moment.duration(row.duration).asSeconds()).format('00:00');
-                    row.trackNumberFormatted = ((typeof row.diskCount === 'undefined') ? "" : (row.diskNumber + ".")) + row.trackNumber;
+                    row.trackNumberFormatted = ((typeof row.diskCount === 'undefined') ? "" : (row.diskNumber + ".")) + row.trackNumber + ".";
                     return row;
                   };
 
@@ -79,10 +79,6 @@
         <script id="recordTable" type="text/x-handlebars-template">
             <table class="table table-bordered table-striped records">
                 <thead>
-                    <tr>
-                        <th class="displayName">Title</th>
-                        <th class="source">Source</th>
-                    </tr>
                 </thead>
                 <tbody>
                     {{#each entities}}
@@ -98,19 +94,13 @@
         <script id="trackTable" type="text/x-handlebars-template">
             <table class="table table-bordered table-striped tracks">
                 <thead>
-                    <tr>
-                        <th class="trackNumber"></th>
-                        <th class="duration"></th>
-                        <th class="displayName">Title</th>
-                        <th class="source">Source</th>
-                    </tr>
                 </thead>
                 <tbody>
                     {{#each entities}}
                         <tr>
                             <td class="trackNumber">{{trackNumberFormatted}}</td>
-                            <td class="duration">{{durationFormatted}}</td>
                             <td class="displayName"><a href="#" data-lugaregion-setrowid="{{lugaRowId}}" data-lugaregion-select="luga-docs-selected">{{displayName}}</a></td>
+                            <td class="duration">{{durationFormatted}}</td>
                             <td class="source">{{source}}</td>
                         </tr>
                     {{/each}}
@@ -147,7 +137,7 @@
                          data-lugaregion-datasource-uuid="records"
                          data-lugaregion-template-id="recordTable"></div>
                 </td>
-                <td style="width: 40%">
+                <td style="width: 40%; vertical-align: bottom">
                     <div data-lugaregion="true"
                          data-lugaregion-datasource-uuid="record"
                          data-lugaregion-template-id="recordPane"></div>
