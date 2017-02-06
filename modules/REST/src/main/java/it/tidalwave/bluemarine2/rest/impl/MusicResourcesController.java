@@ -60,6 +60,7 @@ import static org.springframework.http.MediaType.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.ARTWORK;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 import static it.tidalwave.bluemarine2.util.FunctionWrappers._f;
+import static org.springframework.http.HttpHeaders.CONTENT_DISPOSITION;
 
 /***********************************************************************************************************************
  *
@@ -162,7 +163,7 @@ public class MusicResourcesController
                                    .map(afs -> afs.getAudioFile())
                                    .flatMap(af -> af.getMetadata().getAll(ARTWORK).stream())
                                    .findAny()
-                                   .map(bytes -> bytesResponse(bytes, "image", "jpeg"))
+                                   .map(bytes -> bytesResponse(bytes, "image", "jpeg", "coverart.jpg"))
                                    .orElseThrow(NotFoundException::new);
       }
 
@@ -282,7 +283,7 @@ public class MusicResourcesController
         checkStatus();
         final Optional<AudioFile> audioFile = catalog.findAudioFiles().withId(new Id(id)).optionalResult();
         return audioFile.flatMap(_f(AudioFile::getContent))
-                        .map(bytes -> bytesResponse(bytes, "audio", "mpeg"))
+                        .map(bytes -> bytesResponse(bytes, "audio", "mpeg", "audiofile.mp3"))
                         .orElseThrow(NotFoundException::new);
       }
 
@@ -300,7 +301,7 @@ public class MusicResourcesController
         final Optional<AudioFile> audioFile = catalog.findAudioFiles().withId(new Id(id)).optionalResult();
         return audioFile.flatMap(file -> file.getMetadata().get(ARTWORK))
                         .flatMap(artworks -> artworks.stream().findFirst())
-                        .map(bytes -> bytesResponse(bytes, "image", "jpeg"))
+                        .map(bytes -> bytesResponse(bytes, "image", "jpeg", "coverart.jpg"))
                         .orElseThrow(NotFoundException::new);
       }
 
@@ -329,9 +330,13 @@ public class MusicResourcesController
     @Nonnull
     private ResponseEntity<byte[]> bytesResponse (final @Nonnull byte[] bytes,
                                                   final @Nonnull String type,
-                                                  final @Nonnull String subtype)
+                                                  final @Nonnull String subtype,
+                                                  final @Nonnull String contentDisposition)
       {
-        return ResponseEntity.ok().contentType(new MediaType(type, subtype)).body(bytes);
+        return ResponseEntity.ok()
+                             .contentType(new MediaType(type, subtype))
+                             .header(CONTENT_DISPOSITION, contentDisposition)
+                             .body(bytes);
       }
 
     /*******************************************************************************************************************
