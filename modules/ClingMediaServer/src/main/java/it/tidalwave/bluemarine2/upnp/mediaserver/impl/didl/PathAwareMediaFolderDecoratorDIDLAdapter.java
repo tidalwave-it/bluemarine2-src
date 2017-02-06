@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.impl.PathAwareMediaFolderDecorator;
+import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 
 /***********************************************************************************************************************
  *
@@ -44,8 +45,9 @@ import it.tidalwave.bluemarine2.model.impl.PathAwareMediaFolderDecorator;
 @Immutable @DciRole(datumType = PathAwareMediaFolderDecorator.class)
 public class PathAwareMediaFolderDecoratorDIDLAdapter extends PathAwareDecoratorDIDLAdapter
   {
-    public PathAwareMediaFolderDecoratorDIDLAdapter (final @Nonnull PathAwareMediaFolderDecorator datum)
+    public PathAwareMediaFolderDecoratorDIDLAdapter (final @Nonnull PathAwareMediaFolderDecorator datum,
+                                                     final @Nonnull ResourceServer server)
       {
-        super(datum);
+        super(datum, server);
       }
   }

@@ -37,6 +37,7 @@ import org.fourthline.cling.support.model.DIDLContent;
 import it.tidalwave.util.Finder;
 import it.tidalwave.util.As8;
 import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.DIDLAdapter;
@@ -52,9 +53,9 @@ import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.DI
 @Immutable @Slf4j
 public abstract class CompositeDIDLAdapterSupport<T extends As8> extends DIDLAdapterSupport<T>
   {
-    public CompositeDIDLAdapterSupport (final @Nonnull T datum)
+    public CompositeDIDLAdapterSupport (final @Nonnull T datum, final @Nonnull ResourceServer server)
       {
-        super(datum);
+        super(datum, server);
       }
 
     /*******************************************************************************************************************
@@ -111,7 +112,7 @@ public abstract class CompositeDIDLAdapterSupport<T extends As8> extends DIDLAda
      *
      ******************************************************************************************************************/
     @Nonnull
-    protected static DIDLAdapter asDIDLAdapter (final @Nonnull As8 object)
+    protected DIDLAdapter asDIDLAdapter (final @Nonnull As8 object)
       {
         final Collection<DIDLAdapter> adapters = object.asMany(DIDLAdapter);
 
@@ -125,7 +126,7 @@ public abstract class CompositeDIDLAdapterSupport<T extends As8> extends DIDLAda
                   {
                     if (object instanceof Entity) // FIXME: must be fallback; annotations don't warrant this
                       {
-                        return new EntityDIDLAdapter((Entity)object);
+                        return new EntityDIDLAdapter((Entity)object, server);
                       }
                     else
                       {

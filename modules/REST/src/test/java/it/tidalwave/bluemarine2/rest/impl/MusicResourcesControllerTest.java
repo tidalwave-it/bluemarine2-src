@@ -111,7 +111,6 @@ public class MusicResourcesControllerTest extends SpringTestSupport
               "classpath:META-INF/PersistenceAutoBeans.xml",
               "classpath:META-INF/RestAutoBeans.xml",
               "classpath:META-INF/CatalogAutoBeans.xml");
-        System.setProperty("port", "9999");
       }
 
     /*******************************************************************************************************************
