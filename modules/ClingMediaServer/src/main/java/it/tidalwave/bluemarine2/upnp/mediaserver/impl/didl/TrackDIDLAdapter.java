@@ -30,8 +30,8 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import java.time.Duration;
 import java.util.Collections;
+import java.time.Duration;
 import java.io.IOException;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.Protocol;
@@ -62,13 +62,9 @@ import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSup
 @Immutable @DciRole(datumType = Track.class)
 public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
   {
-    @Nonnull
-    private final ResourceServer resourceServer;
-
-    public TrackDIDLAdapter (final @Nonnull Track track ,final @Nonnull ResourceServer resourceServer)
+    public TrackDIDLAdapter (final @Nonnull Track track ,final @Nonnull ResourceServer server)
       {
-        super(track);
-        this.resourceServer = resourceServer;
+        super(track, server);
       }
 
     @Override @Nonnull
@@ -94,7 +90,7 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
         final Metadata audioFileMetadata = audioFile.getMetadata();
         final Res resource = new Res(protocolInfo,
                                      audioFileMetadata.get(FILE_SIZE).orElse(null),
-                                     resourceServer.urlForResource(audioFile));
+                                     server.urlForResource(audioFile));
         audioFileMetadata.get(DURATION).ifPresent(duration -> resource.setDuration(durationToString(duration)));
 //        resource.setBitrate(size); // TODO
 //        resource.setBitsPerSample(size); // TODO
