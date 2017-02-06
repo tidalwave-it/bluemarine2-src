@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import java.util.Collections;
 import java.time.Duration;
 import java.io.IOException;
 import org.fourthline.cling.support.model.DIDLObject;
@@ -77,14 +76,14 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
         final AudioFile audioFile = datum.as(AudioFileSupplier).getAudioFile();
         final Metadata trackMetadata = datum.getMetadata();
         trackMetadata.get(TRACK_NUMBER).ifPresent(item::setOriginalTrackNumber);
-        item.setResources(Collections.singletonList(getResource(audioFile)));
+        item.addResource(audioResourceOf(audioFile));
 //        datum.getDiskNumber();
 
         return item;
       }
 
     @Nonnull
-    private Res getResource (final @Nonnull AudioFile audioFile)
+    private Res audioResourceOf (final @Nonnull AudioFile audioFile)
       {
         final ProtocolInfo protocolInfo = new DLNAProtocolInfo(Protocol.HTTP_GET, "*", "audio/mpeg", "*"); // FIXME: MIME
         final Metadata audioFileMetadata = audioFile.getMetadata();
