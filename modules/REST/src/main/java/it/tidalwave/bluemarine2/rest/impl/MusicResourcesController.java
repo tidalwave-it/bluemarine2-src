@@ -31,27 +31,35 @@ package it.tidalwave.bluemarine2.rest.impl;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Stream;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonView;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Id;
+import it.tidalwave.messagebus.annotation.ListensTo;
+import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
+import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMediaCatalog;
 import it.tidalwave.bluemarine2.persistence.Persistence;
-import it.tidalwave.messagebus.annotation.ListensTo;
-import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
 import static org.springframework.http.MediaType.*;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.ARTWORK;
+import static it.tidalwave.bluemarine2.util.FunctionWrappers._f;
 
 /***********************************************************************************************************************
  *
@@ -62,6 +70,16 @@ import static org.springframework.http.MediaType.*;
 @RestController @SimpleMessageSubscriber @Slf4j
 public class MusicResourcesController
   {
+    static interface Streamable<ENTITY, FINDER extends SourceAwareFinder<FINDER, ENTITY>> extends SourceAwareFinder<ENTITY, FINDER>
+      {
+        public Stream<ENTITY> stream();
+      }
+
+    @ResponseStatus(value = HttpStatus.NOT_FOUND)
+    static class NotFoundException extends RuntimeException
+      {
+      }
+
     private MediaCatalog catalog; // FIXME: directly inject the Catalog
 
     @Inject
@@ -128,10 +146,58 @@ public class MusicResourcesController
         return new TracksJson(finalized(catalog.findTracks(), source, fallback, TrackJson::new));
       }
 
-    static interface Streamable<ENTITY, FINDER extends SourceAwareFinder<FINDER, ENTITY>> extends SourceAwareFinder<ENTITY, FINDER>
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @ResponseBody
+    @JsonView(Profile.Master.class)
+    @RequestMapping(value = "/audiofile", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
+    public AudioFilesJson getAudioFiles (final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                         final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
-        public Stream<ENTITY> stream();
+        return new AudioFilesJson(finalized(catalog.findAudioFiles(), source, fallback, AudioFileJson::new));
       }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @ResponseBody
+    @JsonView(Profile.Master.class)
+    @RequestMapping(value = "/audiofile/{id}", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
+    public AudioFilesJson getAudioFile (final @PathVariable String id,
+                                        final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                        final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+      {
+        return new AudioFilesJson(finalized(catalog.findAudioFiles().withId(new Id(id)), source, fallback, AudioFileJson::new));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * FIXME: support ranges, use ResourceRegionHttpMessageConverter? Then drop the RangeServlet in favour of it.
+     *
+     ******************************************************************************************************************/
+    @RequestMapping(value = "/audiofile/{id}/content")
+    public ResponseEntity<byte[]> getAudioFileContent (final @PathVariable String id)
+      {
+        final Optional<AudioFile> audioFile = catalog.findAudioFiles().withId(new Id(id)).optionalResult();
+        return audioFile.flatMap(_f(AudioFile::getContent))
+                        .map(bytes -> bytesResponse(bytes, "audio", "mpeg"))
+                        .orElseThrow(NotFoundException::new);
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @RequestMapping(value = "/audiofile/{id}/coverart")
+    public ResponseEntity<byte[]>  getAudioFileCoverArt (final @PathVariable String id)
+      {
+        final Optional<AudioFile> audioFile = catalog.findAudioFiles().withId(new Id(id)).optionalResult();
+        return audioFile.flatMap(file -> file.getMetadata().get(ARTWORK))
+                        .flatMap(artworks -> artworks.stream().findFirst())
+                        .map(bytes -> bytesResponse(bytes, "image", "jpeg"))
+                        .orElseThrow(NotFoundException::new);
+      }
+
 
     /*******************************************************************************************************************
      *
@@ -149,5 +215,14 @@ public class MusicResourcesController
                      .stream()
                      .map(mapper)
                      .collect(toList());
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private ResponseEntity<byte[]> bytesResponse (final @Nonnull byte[] bytes, final @Nonnull String type,  final @Nonnull String subtype)
+      {
+        return ResponseEntity.ok().contentType(new MediaType(type, subtype)).body(bytes);
       }
   }

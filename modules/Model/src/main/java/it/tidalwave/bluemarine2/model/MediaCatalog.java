@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
+import it.tidalwave.bluemarine2.model.finder.AudioFileFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
@@ -83,4 +84,14 @@ public interface MediaCatalog
      ******************************************************************************************************************/
     @Nonnull
     public PerformanceFinder findPerformances();
+
+    /*******************************************************************************************************************
+     *
+     * Finds the {@link AudioFile}s in this catalog.
+     *
+     * @return  a {@link Finder} for the audio files
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public AudioFileFinder findAudioFiles();
   }

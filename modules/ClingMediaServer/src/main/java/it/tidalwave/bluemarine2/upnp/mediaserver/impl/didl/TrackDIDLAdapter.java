@@ -31,7 +31,6 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.time.Duration;
-import java.util.Collections;
 import java.io.IOException;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.Protocol;
@@ -62,13 +61,9 @@ import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSup
 @Immutable @DciRole(datumType = Track.class)
 public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
   {
-    @Nonnull
-    private final ResourceServer resourceServer;
-
-    public TrackDIDLAdapter (final @Nonnull Track track ,final @Nonnull ResourceServer resourceServer)
+    public TrackDIDLAdapter (final @Nonnull Track track ,final @Nonnull ResourceServer server)
       {
-        super(track);
-        this.resourceServer = resourceServer;
+        super(track, server);
       }
 
     @Override @Nonnull
@@ -81,20 +76,20 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
         final AudioFile audioFile = datum.as(AudioFileSupplier).getAudioFile();
         final Metadata trackMetadata = datum.getMetadata();
         trackMetadata.get(TRACK_NUMBER).ifPresent(item::setOriginalTrackNumber);
-        item.setResources(Collections.singletonList(getResource(audioFile)));
+        item.addResource(audioResourceOf(audioFile));
 //        datum.getDiskNumber();
 
         return item;
       }
 
     @Nonnull
-    private Res getResource (final @Nonnull AudioFile audioFile)
+    private Res audioResourceOf (final @Nonnull AudioFile audioFile)
       {
         final ProtocolInfo protocolInfo = new DLNAProtocolInfo(Protocol.HTTP_GET, "*", "audio/mpeg", "*"); // FIXME: MIME
         final Metadata audioFileMetadata = audioFile.getMetadata();
         final Res resource = new Res(protocolInfo,
                                      audioFileMetadata.get(FILE_SIZE).orElse(null),
-                                     resourceServer.urlForResource(audioFile));
+                                     server.urlForResource(audioFile));
         audioFileMetadata.get(DURATION).ifPresent(duration -> resource.setDuration(durationToString(duration)));
 //        resource.setBitrate(size); // TODO
 //        resource.setBitsPerSample(size); // TODO

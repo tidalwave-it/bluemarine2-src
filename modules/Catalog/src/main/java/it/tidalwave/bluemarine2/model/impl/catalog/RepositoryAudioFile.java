@@ -30,21 +30,32 @@ package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
+import javax.inject.Inject;
 import java.time.Duration;
 import java.util.Optional;
+import java.io.IOException;
 import java.nio.file.Path;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import org.eclipse.rdf4j.query.BindingSet;
 import org.eclipse.rdf4j.repository.Repository;
+import org.springframework.beans.factory.annotation.Configurable;
 import it.tidalwave.util.Id;
+import it.tidalwave.util.Memoize;
+import it.tidalwave.bluemarine2.util.Formatters;
 import it.tidalwave.bluemarine2.model.AudioFile;
+import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.vocabulary.BM;
+import it.tidalwave.bluemarine2.model.impl.AudioMetadataFactory;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
@@ -57,46 +68,52 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @EqualsAndHashCode(of = { "path", "trackId" }, callSuper = false)
+@Immutable @Configurable @EqualsAndHashCode(of = { "path", "trackId" }, callSuper = false)
+@Slf4j
 public class RepositoryAudioFile extends RepositoryEntitySupport implements AudioFile
   {
-//    @RequiredArgsConstructor // FIXME: refactor with a Factory of children
-//    public static class RepositoryAudioFileArtistFinder extends Finder8Support<MusicArtist, MusicArtistFinder> implements MusicArtistFinder
-//      {
-//        private static final long serialVersionUID = -4130836861989484793L;
-//
-//        @Nonnull
-//        private final RepositoryAudioFile file;
-//
-//        /** Clone constructor. */
-//        public RepositoryAudioFileArtistFinder (final @Nonnull RepositoryAudioFileArtistFinder other,
-//                                          final @Nonnull Object override)
-//          {
-//            super(other, override);
-//            this.file = other.file;
-//          }
-//
-//        // FIXME: query the repository
-//        @Override @Nonnull
-//        protected List<MusicArtist> computeNeededResults()
-//          {
-//            return file.getMetadata().get(Metadata.COMPOSER)
-//                                     .map(artistName -> Arrays.asList(new RepositoryMusicArtist(file.repository, artistName)))
-//                                     .orElse(Collections.emptyList());
-//          }
-//      }
-
     @Getter @Nonnull
     private final Path path;
 
     @Getter @Nonnull
     private final Path relativePath;
 
+    @Nonnull
+    private final Id trackId;
+
+    @Nonnull
+    private final Optional<Duration> duration;
+
+    @Nonnull
+    private final Optional<Long> fileSize;
+
     @Getter @Nonnull
     private final Metadata metadata;
 
-    @Nonnull
-    private final Id trackId;
+    @Inject
+    private MediaFileSystem fileSystem;
+
+    private final Memoize<Metadata> fallbackMetadata = new Memoize<>();
+
+    public RepositoryAudioFile (final @Nonnull Repository repository,
+                                final @Nonnull BindingSet bindingSet)
+      {
+        super(repository, bindingSet, "audioFile");
+
+        // See BMT-36
+        this.path         = Paths.get(toString(bindingSet.getBinding("path")).get());
+        this.relativePath = path;// FIXME basePath.relativize(path);
+
+        this.duration     = toDuration(bindingSet.getBinding("duration"));
+        this.fileSize     = toLong(bindingSet.getBinding("fileSize"));
+
+        this.trackId = null; // FIXME
+
+        this.metadata = new MetadataSupport(path).with(TITLE, rdfsLabel)
+                                                 .with(DURATION, duration)
+                                                 .with(FILE_SIZE, fileSize)
+                                                 .withFallback(key -> fallbackMetadata.get(this::loadFallbackMetadata));
+      }
 
     // FIXME: too maby arguments, pass a BindingSet
     public RepositoryAudioFile (final @Nonnull Repository repository,
@@ -113,9 +130,14 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
         // See BMT-36
         this.path = path;
         this.relativePath = path;// FIXME basePath.relativize(path);
+
+        this.duration = duration;
+        this.fileSize = fileSize;
+
         this.metadata = new MetadataSupport(path).with(TITLE, rdfsLabel)
                                                  .with(DURATION, duration)
-                                                 .with(FILE_SIZE, fileSize);
+                                                 .with(FILE_SIZE, fileSize)
+                                                 .withFallback(key -> fallbackMetadata.get(this::loadFallbackMetadata));
       }
 
     @Override @Nonnull
@@ -128,6 +150,14 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     public AudioFile getAudioFile()
       {
         return this;
+      }
+
+    @Override @Nonnull
+    public Optional<byte[]> getContent()
+      throws IOException
+      {
+        final Path absolutePath = getAbsolutePath();
+        return Files.exists(absolutePath) ? Optional.of(Files.readAllBytes(absolutePath)) : Optional.empty();
       }
 
     @Override @Nonnull
@@ -153,5 +183,26 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     public Optional<PathAwareEntity> getParent() // FIXME: drop it
       {
         throw new UnsupportedOperationException();
+      }
+
+    @Override @Nonnull
+    public String toDumpString()
+      {
+        return String.format("%s %8s %s %s", duration.map(Formatters::format).orElse("??:??"),
+                                             fileSize.map(l -> l.toString()).orElse(""),
+                                             id, relativePath);
+      }
+
+    @Nonnull
+    private Metadata loadFallbackMetadata()
+      {
+        final Path absolutePath = getAbsolutePath();
+        return Files.exists(absolutePath) ? AudioMetadataFactory.loadFrom(absolutePath) : new MetadataSupport(path);
+      }
+
+    @Nonnull
+    private Path getAbsolutePath()
+      {
+        return fileSystem.getRootPath().resolve(path);
       }
   }

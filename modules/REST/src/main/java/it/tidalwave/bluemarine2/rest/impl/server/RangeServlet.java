@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.rest.impl.server;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 import java.io.EOFException;
 import java.io.IOException;
@@ -40,6 +41,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.net.URLDecoder;
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -54,7 +56,7 @@ import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
  *
  **********************************************************************************************************************/
 @RequiredArgsConstructor @Slf4j
-public class RangeServlet extends ServletAdapter
+public class RangeServlet extends HttpServlet
   {
     private static final long serialVersionUID = -387471254552805904L;
 
@@ -65,6 +67,28 @@ public class RangeServlet extends ServletAdapter
 
     @Override
     protected void doGet (final @Nonnull HttpServletRequest request, final @Nonnull HttpServletResponse response)
+      throws ServletException, IOException
+      {
+        log.trace("doGet(..., ...)");
+        log.debug(">>>> request URI: {}", request.getRequestURI());
+
+        for (final Enumeration<String> names = request.getHeaderNames(); names.hasMoreElements(); )
+          {
+            final String headerName = names.nextElement();
+            log.debug(">>>> request header: {} = {}", headerName, request.getHeader(headerName));
+          }
+
+        _doGet(request, response);
+
+        log.debug(">>>> response {}", response.getStatus());
+
+        for (final String headerName : response.getHeaderNames())
+          {
+            log.debug(">>>> response header: {} = {}", headerName, response.getHeaders(headerName));
+          }
+      }
+
+    private void _doGet (final @Nonnull HttpServletRequest request, final @Nonnull HttpServletResponse response)
       throws ServletException, IOException
       {
         final Path resourcePath =

@@ -35,6 +35,7 @@ import org.fourthline.cling.support.model.container.Container;
 import org.fourthline.cling.support.model.container.StorageFolder;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MediaFolder;
+import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
 
@@ -54,9 +55,9 @@ import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
 @Immutable @DciRole(datumType = MediaFolder.class)
 public class MediaFolderDIDLAdapter extends CompositeDIDLAdapterSupport<MediaFolder>
   {
-    public MediaFolderDIDLAdapter (final @Nonnull MediaFolder datum)
+    public MediaFolderDIDLAdapter (final @Nonnull MediaFolder datum, final @Nonnull ResourceServer server)
       {
-        super(datum);
+        super(datum, server);
       }
 
     @Override @Nonnull

@@ -68,6 +68,7 @@ import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import it.tidalwave.bluemarine2.model.finder.AudioFileFinder;
 import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
 import static org.testng.Assert.*;
 
@@ -214,6 +215,11 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
                 assertEquals(track.getSource(), record.getSource());
               });
           });
+
+        log.info("QUERYING ALL AUDIO TRACKS...");
+        final AudioFileFinder allAudioFileFinder = catalog.findAudioFiles();
+        pw.printf("%n%n%nALL AUDIO FILES (%d):%n%n", allAudioFileFinder.count());
+        allAudioFileFinder.forEach(audioFile -> pw.printf("  %s%n", audioFile.toDumpString()));
 
         pw.printf("%n%nTRACKS ORPHAN OF ARTIST (%d):%n%n", tracksOrphanOfArtist.size());
         tracksOrphanOfArtist.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s%n", track.toDumpString()));
