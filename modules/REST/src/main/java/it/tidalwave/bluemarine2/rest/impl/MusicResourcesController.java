@@ -109,6 +109,7 @@ public class MusicResourcesController
     public RecordsJson getRecords (final @RequestParam(required = false, defaultValue = "embedded") String source,
                                    final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
+        log.info("getRecords({}, {})", source, fallback);
         return new RecordsJson(finalized(catalog.findRecords(), source, fallback, RecordJson::new));
       }
 
@@ -128,6 +129,7 @@ public class MusicResourcesController
                                   final @RequestParam(required = false, defaultValue = "embedded") String source,
                                   final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
+        log.info("getRecord({}, {}, {})", id, source, fallback);
         return new RecordsJson(finalized(catalog.findRecords().withId(new Id(id)), source, fallback, RecordJson::new));
       }
 
@@ -147,6 +149,7 @@ public class MusicResourcesController
                                        final @RequestParam(required = false, defaultValue = "embedded") String source,
                                        final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
+        log.info("getRecordTracks({}, {}, {})", id, source, fallback);
         return new TracksJson(finalized(catalog.findTracks().inRecord(new Id(id)), source, fallback, TrackJson::new));
       }
 
@@ -164,6 +167,7 @@ public class MusicResourcesController
     public TracksJson getTracks (final @RequestParam(required = false, defaultValue = "embedded") String source,
                                  final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
+        log.info("getTracks({}, {})", source, fallback);
         return new TracksJson(finalized(catalog.findTracks(), source, fallback, TrackJson::new));
       }
 
@@ -183,6 +187,7 @@ public class MusicResourcesController
                                 final @RequestParam(required = false, defaultValue = "embedded") String source,
                                 final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
+        log.info("getTrack({}, {}, {})", id, source, fallback);
         return new TracksJson(finalized(catalog.findTracks().withId(new Id(id)), source, fallback, TrackJson::new));
       }
 
@@ -200,6 +205,7 @@ public class MusicResourcesController
     public AudioFilesJson getAudioFiles (final @RequestParam(required = false, defaultValue = "embedded") String source,
                                          final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
+        log.info("getAudioFiles({}, {})", source, fallback);
         return new AudioFilesJson(finalized(catalog.findAudioFiles(), source, fallback, AudioFileJson::new));
       }
 
@@ -219,6 +225,7 @@ public class MusicResourcesController
                                         final @RequestParam(required = false, defaultValue = "embedded") String source,
                                         final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
+        log.info("getAudioFile({}, {}, {})", id, source, fallback);
         return new AudioFilesJson(finalized(catalog.findAudioFiles().withId(new Id(id)), source, fallback, AudioFileJson::new));
       }
 
@@ -233,6 +240,7 @@ public class MusicResourcesController
     @RequestMapping(value = "/audiofile/{id}/content")
     public ResponseEntity<byte[]> getAudioFileContent (final @PathVariable String id)
       {
+        log.info("getAudioFileContent({})", id);
         final Optional<AudioFile> audioFile = catalog.findAudioFiles().withId(new Id(id)).optionalResult();
         return audioFile.flatMap(_f(AudioFile::getContent))
                         .map(bytes -> bytesResponse(bytes, "audio", "mpeg"))
@@ -248,6 +256,7 @@ public class MusicResourcesController
     @RequestMapping(value = "/audiofile/{id}/coverart")
     public ResponseEntity<byte[]>  getAudioFileCoverArt (final @PathVariable String id)
       {
+        log.info("getAudioFileCoverArt({})", id);
         final Optional<AudioFile> audioFile = catalog.findAudioFiles().withId(new Id(id)).optionalResult();
         return audioFile.flatMap(file -> file.getMetadata().get(ARTWORK))
                         .flatMap(artworks -> artworks.stream().findFirst())
