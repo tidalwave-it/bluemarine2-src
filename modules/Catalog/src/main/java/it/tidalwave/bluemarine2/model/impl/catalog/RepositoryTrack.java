@@ -90,7 +90,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Getter
     private final Metadata metadata;
 
-    private final Memoize<AudioFile> audioFile = new Memoize<>();
+    private final Memoize<AudioFile> audioFile;
 
     private final Memoize<Optional<Record>> record = new Memoize<>();
 
@@ -120,6 +120,15 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
                                                      .with(TRACK_NUMBER, trackNumber)
                                                      .with(DISK_NUMBER, diskNumber)
                                                      .with(DISK_COUNT, diskCount);
+
+        audioFile = new Memoize<>(() -> new RepositoryAudioFile(repository,
+                                                           toId(bindingSet.getBinding("audioFile")).get(),
+                                                           id,
+                                                           fileSystem.getRootPath().resolve(audioFilePath),
+                                                           audioFilePath,
+                                                           duration,
+                                                           rdfsLabel,
+                                                           fileSize));
       }
 
     /*******************************************************************************************************************
@@ -152,14 +161,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Override @Nonnull
     public synchronized AudioFile getAudioFile()
       {
-        return audioFile.get(() -> new RepositoryAudioFile(repository,
-                                                           id, // FIXME: this should really be the AudioFileId
-                                                           id,
-                                                           fileSystem.getRootPath().resolve(audioFilePath),
-                                                           audioFilePath,
-                                                           duration,
-                                                           rdfsLabel,
-                                                           fileSize));
+        return audioFile.get();
       }
 
     /*******************************************************************************************************************

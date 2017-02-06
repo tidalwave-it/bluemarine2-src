@@ -32,6 +32,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import org.fourthline.cling.support.model.DIDLObject;
 import it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator;
+import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.externalized;
 import lombok.extern.slf4j.Slf4j;
 
@@ -50,9 +51,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j @Immutable
 public class PathAwareDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<PathAwareEntityDecorator>
   {
-    public PathAwareDecoratorDIDLAdapter (final @Nonnull PathAwareEntityDecorator datum)
+    public PathAwareDecoratorDIDLAdapter (final @Nonnull PathAwareEntityDecorator datum,
+                                          final @Nonnull ResourceServer server)
       {
-        super(datum);
+        super(datum, server);
       }
 
     @Override @Nonnull

@@ -34,6 +34,7 @@ import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.Container;
 import org.fourthline.cling.support.model.container.StorageFolder;
 import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -51,9 +52,9 @@ public class EntityDIDLAdapter extends CompositeDIDLAdapterSupport<Entity>
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    public EntityDIDLAdapter (final @Nonnull Entity datum)
+    public EntityDIDLAdapter (final @Nonnull Entity datum , final @Nonnull ResourceServer server)
       {
-        super(datum);
+        super(datum, server);
       }
 
     /*******************************************************************************************************************

@@ -33,11 +33,12 @@ import java.time.Duration;
 import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonView;
+import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.Track;
 import lombok.Getter;
 import static it.tidalwave.role.Displayable.Displayable;
-import it.tidalwave.util.Id;
 
 /***********************************************************************************************************************
  *
@@ -47,6 +48,7 @@ import it.tidalwave.util.Id;
  **********************************************************************************************************************/
 @Getter
 @JsonInclude(Include.NON_ABSENT)
+@JsonPropertyOrder(alphabetic = true)
 public class TrackJson
   {
     @JsonView(Profile.Master.class)

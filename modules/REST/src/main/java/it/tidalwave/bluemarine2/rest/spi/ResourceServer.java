@@ -48,4 +48,7 @@ public interface ResourceServer
 
     @Nonnull
     public String urlForResource (@Nonnull AudioFile resource);
+
+    @Nonnull
+    public String absoluteUrl (@Nonnull String relativeUrl);
   }

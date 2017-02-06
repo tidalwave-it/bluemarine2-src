@@ -37,6 +37,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
@@ -90,6 +91,8 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
         public static final Key<String> FORMAT = new Key<>("mp3.format");
         public static final Key<String> ENCODING_TYPE = new Key<>("mp3.encodingType");
         public static final Key<Integer> CHANNELS = new Key<>("mp3.channels");
+
+        public static final Key<List<byte[]>> ARTWORK = new Key<>("mp3.artwork");
 
         public static final Key<Id> MBZ_TRACK_ID = new Key<>("mbz.trackId");
         public static final Key<Id> MBZ_WORK_ID = new Key<>("mbz.workId");
@@ -296,6 +299,9 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
          **************************************************************************************************************/
         @Nonnull
         public <T> Metadata with (@Nonnull Key<T> key, Optional<T> value);
+
+        @Nonnull
+        public Metadata withFallback (@Nonnull Function<Key<?>, Metadata> fallback);
     }
 
     /*******************************************************************************************************************

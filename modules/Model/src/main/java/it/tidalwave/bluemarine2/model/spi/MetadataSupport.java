@@ -35,9 +35,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.Supplier;
 import java.nio.file.Path;
 import it.tidalwave.util.Key;
 import it.tidalwave.bluemarine2.model.MediaItem;
+import java.util.function.Function;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -55,7 +57,20 @@ public class MetadataSupport implements MediaItem.Metadata
     @Getter @Nonnull
     protected final Path path;
 
+    @Nonnull
+    protected Optional<Function<Key<?>, MediaItem.Metadata>> fallback;
+
     protected final Map<Key<?>, Object> properties = new HashMap<>();
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    public MetadataSupport (final @Nonnull Path path)
+      {
+        this(path, Optional.empty());
+      }
 
     /*******************************************************************************************************************
      *
@@ -65,7 +80,8 @@ public class MetadataSupport implements MediaItem.Metadata
     @Override @Nonnull
     public <T> Optional<T> get (final @Nonnull Key<T> key)
       {
-        return Optional.ofNullable(((T)properties.get(key)));
+        return properties.containsKey(key) ? Optional.ofNullable((T)properties.get(key))
+                                           : fallback.flatMap(fb -> fb.apply(key).get(key));
       }
 
     /*******************************************************************************************************************
@@ -77,7 +93,8 @@ public class MetadataSupport implements MediaItem.Metadata
     public <T> T getAll (final @Nonnull Key<T> key)
       {
         final T list = (T)properties.get(key);
-        return (list != null) ? list : (T)Collections.emptyList();
+        return (list != null) ? list :
+                fallback.flatMap(fb -> fb.apply(key).get(key)).orElse((T)Collections.emptyList());
       }
 
     /*******************************************************************************************************************
@@ -121,7 +138,7 @@ public class MetadataSupport implements MediaItem.Metadata
     @Override @Nonnull
     public <T> MediaItem.Metadata with (final @Nonnull Key<T> key, final @Nonnull T value)
       {
-        final MetadataSupport clone = new MetadataSupport(path);
+        final MetadataSupport clone = new MetadataSupport(path, fallback);
         clone.properties.putAll(this.properties);
         clone.put(key, value);
 
@@ -130,6 +147,19 @@ public class MetadataSupport implements MediaItem.Metadata
             clone.put(CDDB, ((ITunesComment) value).getCddb());
           }
 
+        return clone;
+      }
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDocs}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public MediaItem.Metadata withFallback (final @Nonnull Function<Key<?>, MediaItem.Metadata> fallback)
+      {
+        final MetadataSupport clone = new MetadataSupport(path, Optional.of(fallback));
+        clone.properties.putAll(this.properties);
         return clone;
       }
 
