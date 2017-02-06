@@ -1,4 +1,4 @@
-/*
+    /*
  * #%L
  * *********************************************************************************************************************
  *
@@ -42,10 +42,6 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.ClientHttpResponse;
 import org.eclipse.rdf4j.repository.Repository;
-import org.eclipse.rdf4j.repository.RepositoryConnection;
-import org.eclipse.rdf4j.repository.RepositoryException;
-import org.eclipse.rdf4j.rio.RDFFormat;
-import org.eclipse.rdf4j.rio.RDFParseException;
 import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
@@ -64,6 +60,7 @@ import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
 
 /***********************************************************************************************************************
  *
@@ -135,9 +132,9 @@ public class MusicResourcesControllerTest extends SpringTestSupport
         Thread.sleep(2000);
         barrier.await();
         final Repository repository = persistence.getRepository();
-        loadInMemoryCatalog(repository, Paths.get("target/test-classes/test-sets/model-iTunes-fg-20161210-1.n3"));
-        loadInMemoryCatalog(repository, Paths.get("target/test-classes/test-sets/model-iTunes-aac-fg-20170131-1.n3"));
-        loadInMemoryCatalog(repository, Paths.get("target/test-classes/test-sets/musicbrainz-iTunes-fg-20161210-1.n3"));
+        loadRepository(repository, Paths.get("target/test-classes/test-sets/model-iTunes-fg-20161210-1.n3"));
+        loadRepository(repository, Paths.get("target/test-classes/test-sets/model-iTunes-aac-fg-20170131-1.n3"));
+        loadRepository(repository, Paths.get("target/test-classes/test-sets/musicbrainz-iTunes-fg-20161210-1.n3"));
 
         baseUrl = String.format("http://%s:%d", server.getIpAddress(), server.getPort());
       }
@@ -180,22 +177,6 @@ public class MusicResourcesControllerTest extends SpringTestSupport
       throws InterruptedException
       {
         Thread.sleep(Integer.getInteger("delay", 0));
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @Nonnull // FIXME: duplicated code
-    private static void loadInMemoryCatalog (final @Nonnull Repository repository, final @Nonnull Path path)
-      throws RDFParseException, IOException, RepositoryException
-      {
-        log.info("loadInMemoryCatalog(..., {})", path);
-
-        try (final RepositoryConnection connection = repository.getConnection())
-          {
-            connection.add(path.toFile(), null, RDFFormat.N3);
-            connection.commit();
-          }
       }
 
     /*******************************************************************************************************************
