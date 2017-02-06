@@ -119,7 +119,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
       }
 
     @Override @Nonnull
-    public synchronized AudioFile getAudioFile()
+    public AudioFile getAudioFile()
       {
         return audioFile.get();
       }
