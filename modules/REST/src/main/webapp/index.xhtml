@@ -42,12 +42,29 @@
                     formatter:      recordFormatter
                  });
 
+                var recordDs = new luga.data.ChildJsonDataSet(
+                  {
+                    parentDataSet:  recordsDs,
+                    uuid:           "record",
+                    url:            baseUrl + "/record/{id}?source=musicbrainz",
+                    path:           "records",
+                    formatter:      recordFormatter
+                  });
+
                 var tracksDs = new luga.data.ChildJsonDataSet(
                   {
                     parentDataSet:  recordsDs,
                     uuid:           "tracks",
                     url:            baseUrl + "/record/{id}/track?source=musicbrainz",
-//                    url:            baseUrl + "/record/{id}/track?source={source}",
+                    path:           "tracks",
+                    formatter:      trackFormatter
+                  });
+
+                var trackDs = new luga.data.ChildJsonDataSet(
+                  {
+                    parentDataSet:  tracksDs,
+                    uuid:           "track",
+                    url:            baseUrl + "/track/{id}?source=musicbrainz",
                     path:           "tracks",
                     formatter:      trackFormatter
                   });
@@ -93,12 +110,28 @@
                         <tr>
                             <td class="trackNumber">{{trackNumberFormatted}}</td>
                             <td class="duration">{{durationFormatted}}</td>
-                            <td class="displayName">{{displayName}}</td>
+                            <td class="displayName"><a href="#" data-lugaregion-setrowid="{{lugaRowId}}" data-lugaregion-select="luga-docs-selected">{{displayName}}</a></td>
                             <td class="source">{{source}}</td>
                         </tr>
                     {{/each}}
                 </tbody>
             </table>
+        </script>
+
+        <script id="recordPane" type="text/x-handlebars-template">
+                    {{#each entities}}
+                            <span>Album:</span> <span class="displayName">{{displayName}}</span>
+                            <span>Source:</span> <span class="source">{{source}}</span>
+                    {{/each}}
+        </script>
+
+        <script id="trackPane" type="text/x-handlebars-template">
+                    {{#each entities}}
+                            <span>Track:</span> <span class="displayName">{{displayName}}</span>
+                            <span>Source:</span> <span class="source">{{source}}</span>
+                            <span>Content:</span> <span class="audioFile">{{audioFile}}/content</span>
+                            <img style="witdh: 400px; height: 400px" src="{{audioFile}}/coverart"></img>
+                    {{/each}}
         </script>
     </head>
     <body>
@@ -110,6 +143,12 @@
                          data-lugaregion-template-id="recordTable"></div>
                 </td>
                 <td style="width: 40%">
+                    <div data-lugaregion="true"
+                         data-lugaregion-datasource-uuid="record"
+                         data-lugaregion-template-id="recordPane"></div>
+                    <div data-lugaregion="true"
+                         data-lugaregion-datasource-uuid="track"
+                         data-lugaregion-template-id="trackPane"></div>
                 </td>
             </tr>
             <tr>
