@@ -1,6 +1,6 @@
 HTTP/1.1 200 OK
 Accept-Ranges: bytes
-Content-Length: 4976
+Content-Length: 6588
 Content-Type: application/xhtml+xml
 Server: Jetty(8.1.8.v20121106)
 Vary: Accept-Encoding
@@ -37,7 +37,7 @@ Vary: Accept-Encoding
                 var trackFormatter = function(row, rowIndex, dataSet)
                   {
                     row.durationFormatted = numeral(moment.duration(row.duration).asSeconds()).format('00:00');
-                    row.trackNumberFormatted = ((typeof row.diskCount === 'undefined') ? "" : (row.diskNumber + ".")) + row.trackNumber;
+                    row.trackNumberFormatted = ((typeof row.diskCount === 'undefined') ? "" : (row.diskNumber + ".")) + row.trackNumber + ".";
                     return row;
                   };
 
@@ -49,12 +49,29 @@ Vary: Accept-Encoding
                     formatter:      recordFormatter
                  });
 
+                var recordDs = new luga.data.ChildJsonDataSet(
+                  {
+                    parentDataSet:  recordsDs,
+                    uuid:           "record",
+                    url:            baseUrl + "/record/{id}?source=musicbrainz",
+                    path:           "records",
+                    formatter:      recordFormatter
+                  });
+
                 var tracksDs = new luga.data.ChildJsonDataSet(
                   {
                     parentDataSet:  recordsDs,
                     uuid:           "tracks",
                     url:            baseUrl + "/record/{id}/track?source=musicbrainz",
-//                    url:            baseUrl + "/record/{id}/track?source={source}",
+                    path:           "tracks",
+                    formatter:      trackFormatter
+                  });
+
+                var trackDs = new luga.data.ChildJsonDataSet(
+                  {
+                    parentDataSet:  tracksDs,
+                    uuid:           "track",
+                    url:            baseUrl + "/track/{id}?source=musicbrainz",
                     path:           "tracks",
                     formatter:      trackFormatter
                   });
@@ -69,10 +86,6 @@ Vary: Accept-Encoding
         <script id="recordTable" type="text/x-handlebars-template">
             <table class="table table-bordered table-striped records">
                 <thead>
-                    <tr>
-                        <th class="displayName">Title</th>
-                        <th class="source">Source</th>
-                    </tr>
                 </thead>
                 <tbody>
                     {{#each entities}}
@@ -88,24 +101,39 @@ Vary: Accept-Encoding
         <script id="trackTable" type="text/x-handlebars-template">
             <table class="table table-bordered table-striped tracks">
                 <thead>
-                    <tr>
-                        <th class="trackNumber"></th>
-                        <th class="duration"></th>
-                        <th class="displayName">Title</th>
-                        <th class="source">Source</th>
-                    </tr>
                 </thead>
                 <tbody>
                     {{#each entities}}
                         <tr>
                             <td class="trackNumber">{{trackNumberFormatted}}</td>
+                            <td class="displayName"><a href="#" data-lugaregion-setrowid="{{lugaRowId}}" data-lugaregion-select="luga-docs-selected">{{displayName}}</a></td>
                             <td class="duration">{{durationFormatted}}</td>
-                            <td class="displayName">{{displayName}}</td>
                             <td class="source">{{source}}</td>
                         </tr>
                     {{/each}}
                 </tbody>
             </table>
+        </script>
+
+        <script id="recordPane" type="text/x-handlebars-template">
+<!--            <div>
+            {{#each entities}}
+                <span>Album:</span> <span class="displayName">{{displayName}}</span>
+                <span>Source:</span> <span class="source">{{source}}</span>
+            {{/each}}
+            </div>
+-->
+        </script>
+
+        <script id="trackPane" type="text/x-handlebars-template">
+            {{#each entities}}
+                <!-- <span>Track:</span> <span class="displayName">{{displayName}}</span> -->
+                <img class="coverArt" src="{{audioFile}}/coverart"></img>
+                <audio controls="" class="audioPlayer">
+                    <source src="{{audioFile}}/content" type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                </audio>
+            {{/each}}
         </script>
     </head>
     <body>
@@ -116,7 +144,13 @@ Vary: Accept-Encoding
                          data-lugaregion-datasource-uuid="records"
                          data-lugaregion-template-id="recordTable"></div>
                 </td>
-                <td style="width: 40%">
+                <td style="width: 40%; vertical-align: bottom">
+                    <div data-lugaregion="true"
+                         data-lugaregion-datasource-uuid="record"
+                         data-lugaregion-template-id="recordPane"></div>
+                    <div data-lugaregion="true"
+                         data-lugaregion-datasource-uuid="track"
+                         data-lugaregion-template-id="trackPane"></div>
                 </td>
             </tr>
             <tr>
