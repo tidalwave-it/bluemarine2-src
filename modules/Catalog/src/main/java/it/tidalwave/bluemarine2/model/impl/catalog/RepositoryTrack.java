@@ -109,7 +109,7 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Override @Nonnull
     public Optional<Record> getRecord()
       {
-        return record.get(() -> _findRecords().recordOf(this).optionalFirstResult());
+        return record.get(() -> _findRecords().containingTrack(this).optionalFirstResult());
       }
 
     @Override @Nonnull
