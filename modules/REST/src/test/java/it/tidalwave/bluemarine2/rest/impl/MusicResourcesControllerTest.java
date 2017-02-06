@@ -71,6 +71,8 @@ import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
 @Slf4j
 public class MusicResourcesControllerTest extends SpringTestSupport
   {
+    private static final Path PATH_TEST_SETS = Paths.get("target/test-classes/test-sets");
+
     private ResourceServer server;
 
     private MessageBus messageBus;
@@ -132,9 +134,9 @@ public class MusicResourcesControllerTest extends SpringTestSupport
         Thread.sleep(2000);
         barrier.await();
         final Repository repository = persistence.getRepository();
-        loadRepository(repository, Paths.get("target/test-classes/test-sets/model-iTunes-fg-20161210-1.n3"));
-        loadRepository(repository, Paths.get("target/test-classes/test-sets/model-iTunes-aac-fg-20170131-1.n3"));
-        loadRepository(repository, Paths.get("target/test-classes/test-sets/musicbrainz-iTunes-fg-20161210-1.n3"));
+        loadRepository(repository, PATH_TEST_SETS.resolve("model-iTunes-fg-20161210-1.n3"));
+        loadRepository(repository, PATH_TEST_SETS.resolve("model-iTunes-aac-fg-20170131-1.n3"));
+        loadRepository(repository, PATH_TEST_SETS.resolve("musicbrainz-iTunes-fg-20161210-1.n3"));
 
         baseUrl = String.format("http://%s:%d", server.getIpAddress(), server.getPort());
       }
