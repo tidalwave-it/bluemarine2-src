@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.model.impl.catalog.factory;
 
+import it.tidalwave.bluemarine2.model.AudioFile;
 import javax.annotation.Nonnull;
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
@@ -40,6 +41,7 @@ import it.tidalwave.bluemarine2.model.MusicPerformer;
 import it.tidalwave.bluemarine2.model.Performance;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.Track;
+import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryAudioFile;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMusicArtist;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMusicPerformer;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryPerformance;
@@ -96,5 +98,6 @@ public class DefaultRepositoryEntityFactory implements RepositoryEntityFactory
         factoryMapByType.put(MusicPerformer.class, RepositoryMusicPerformer::new);
         factoryMapByType.put(Track.class, RepositoryTrack::new);
         factoryMapByType.put(Performance.class, RepositoryPerformance::new);
+        factoryMapByType.put(AudioFile.class, RepositoryAudioFile::new);
       }
   }

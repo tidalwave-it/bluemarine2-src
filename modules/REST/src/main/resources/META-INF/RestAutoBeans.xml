@@ -48,6 +48,15 @@
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
         <property name="messageConverters">
             <util:list>
+                <bean id="binaryMessageConverter"
+                      class="org.springframework.http.converter.ByteArrayHttpMessageConverter">
+                    <property name="supportedMediaTypes">
+                        <util:list>
+                            <value>image/jpg</value>
+                            <value>audio/mpeg</value>
+                        </util:list>
+                    </property>
+                </bean>
                 <bean id="jsonMessageConverter"
                       class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                     <property name="prettyPrint" value="true" />

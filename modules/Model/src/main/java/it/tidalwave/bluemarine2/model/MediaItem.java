@@ -37,10 +37,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
-import org.jaudiotagger.tag.images.Artwork;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
@@ -299,6 +299,9 @@ public interface MediaItem extends PathAwareEntity, AudioFileSupplier
          **************************************************************************************************************/
         @Nonnull
         public <T> Metadata with (@Nonnull Key<T> key, Optional<T> value);
+
+        @Nonnull
+        public Metadata withFallback (@Nonnull Function<Key<?>, Metadata> fallback);
     }
 
     /*******************************************************************************************************************
