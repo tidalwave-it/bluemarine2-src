@@ -54,6 +54,7 @@ import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
@@ -113,7 +114,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     public Optional<byte[]> getContent()
       throws IOException
       {
-        final Path absolutePath = getAbsolutePath();
+        final Path absolutePath = normalizedPath(getAbsolutePath());
         return Files.exists(absolutePath) ? Optional.of(Files.readAllBytes(absolutePath)) : Optional.empty();
       }
 
