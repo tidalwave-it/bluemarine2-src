@@ -78,7 +78,7 @@ public class RangeServlet extends HttpServlet
             log.debug(">>>> request header: {} = {}", headerName, request.getHeader(headerName));
           }
 
-        service(request, response);
+        _doGet(request, response);
 
         log.debug(">>>> response {}", response.getStatus());
 
@@ -86,7 +86,11 @@ public class RangeServlet extends HttpServlet
           {
             log.debug(">>>> response header: {} = {}", headerName, response.getHeaders(headerName));
           }
+      }
 
+    private void _doGet (final @Nonnull HttpServletRequest request, final @Nonnull HttpServletResponse response)
+      throws ServletException, IOException
+      {
         final Path resourcePath =
                   normalizedPath(rootPath.resolve(urlDecoded(request.getRequestURI().replaceAll("^/", ""))));
         log.debug(">>>> resource path: {}", resourcePath);
