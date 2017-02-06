@@ -34,7 +34,6 @@ import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonView;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.Track;
 import lombok.Getter;
@@ -55,28 +54,20 @@ import static it.tidalwave.role.Displayable.Displayable;
 @JsonPropertyOrder(alphabetic = true)
 public class TrackJson extends JsonSupport
   {
-    @JsonView(Profile.Master.class)
     private final String id;
 
-    @JsonView(Profile.Master.class)
     private final String displayName;
 
-    @JsonView(Profile.Master.class)
     private final Optional<String> record;
 
-    @JsonView(Profile.Master.class)
     private final Optional<Integer> diskCount;
 
-    @JsonView(Profile.Master.class)
     private final Optional<Integer> diskNumber;
 
-    @JsonView(Profile.Master.class)
     private final Optional<Integer> trackNumber;
 
-    @JsonView(Profile.Master.class)
     private final Optional<String> duration;
 
-    @JsonView(Profile.Master.class)
     private final Optional<String> source;
 
     public TrackJson (final @Nonnull Track track)

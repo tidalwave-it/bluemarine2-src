@@ -34,7 +34,6 @@ import java.time.Duration;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonView;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import lombok.Getter;
@@ -56,25 +55,18 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 @JsonPropertyOrder(alphabetic = true)
 public class AudioFileJson extends JsonSupport
   {
-    @JsonView(Profile.Master.class)
     private final String id;
 
-    @JsonView(Profile.Master.class)
     private final String displayName;
 
-    @JsonView(Profile.Master.class)
     private final String path;
 
-    @JsonView(Profile.Master.class)
     private final Optional<Long> fileSize;
 
-    @JsonView(Profile.Master.class)
     private final Optional<String> duration;
 
-    @JsonView(Profile.Master.class)
     private final String content;
 
-    @JsonView(Profile.Master.class)
     private final Optional<String> coverArt;
 
     public AudioFileJson (final @Nonnull AudioFile audioFile)

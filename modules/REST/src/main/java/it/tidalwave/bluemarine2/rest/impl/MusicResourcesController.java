@@ -35,7 +35,6 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Stream;
 import java.io.IOException;
-import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -106,7 +105,6 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @ResponseBody
-    @JsonView(Profile.Master.class)
     @RequestMapping(value = "/record", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     public RecordsJson getRecords (final @RequestParam(required = false, defaultValue = "embedded") String source,
                                    final @RequestParam(required = false, defaultValue = "embedded") String fallback)
@@ -125,7 +123,6 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @ResponseBody
-    @JsonView(Profile.Detail.class)
     @RequestMapping(value = "/record/{id}", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     public RecordsJson getRecord (final @PathVariable String id,
                                   final @RequestParam(required = false, defaultValue = "embedded") String source,
@@ -145,7 +142,6 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @ResponseBody
-    @JsonView(Profile.Detail.class)
     @RequestMapping(value = "/record/{id}/track", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     public TracksJson getRecordTracks (final @PathVariable String id,
                                        final @RequestParam(required = false, defaultValue = "embedded") String source,
@@ -164,7 +160,6 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @ResponseBody
-    @JsonView(Profile.Master.class)
     @RequestMapping(value = "/track", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     public TracksJson getTracks (final @RequestParam(required = false, defaultValue = "embedded") String source,
                                  final @RequestParam(required = false, defaultValue = "embedded") String fallback)
@@ -183,7 +178,6 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @ResponseBody
-    @JsonView(Profile.Master.class)
     @RequestMapping(value = "/track/{id}", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     public TracksJson getTrack (final @PathVariable String id,
                                 final @RequestParam(required = false, defaultValue = "embedded") String source,
@@ -202,7 +196,6 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @ResponseBody
-    @JsonView(Profile.Master.class)
     @RequestMapping(value = "/audiofile", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     public AudioFilesJson getAudioFiles (final @RequestParam(required = false, defaultValue = "embedded") String source,
                                          final @RequestParam(required = false, defaultValue = "embedded") String fallback)
@@ -221,7 +214,6 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @ResponseBody
-    @JsonView(Profile.Master.class)
     @RequestMapping(value = "/audiofile/{id}", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
     public AudioFilesJson getAudioFile (final @PathVariable String id,
                                         final @RequestParam(required = false, defaultValue = "embedded") String source,
