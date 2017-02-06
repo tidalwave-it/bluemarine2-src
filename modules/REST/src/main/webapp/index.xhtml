@@ -109,19 +109,14 @@
         </script>
 
         <script id="recordPane" type="text/x-handlebars-template">
-<!--            <div>
             {{#each entities}}
-                <span>Album:</span> <span class="displayName">{{displayName}}</span>
-                <span>Source:</span> <span class="source">{{source}}</span>
+                <img class="coverArt" src="/rest/record/{{id}}/coverart" alt="cover art"></img>
             {{/each}}
-            </div>
--->
         </script>
 
         <script id="trackPane" type="text/x-handlebars-template">
             {{#each entities}}
                 <!-- <span>Track:</span> <span class="displayName">{{displayName}}</span> -->
-                <img class="coverArt" src="{{audioFile}}/coverart"></img>
                 <audio controls="" class="audioPlayer">
                     <source src="{{audioFile}}/content" type="audio/mpeg" />
                     Your browser does not support the audio element.

@@ -58,6 +58,7 @@ import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
 import static org.springframework.http.MediaType.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.ARTWORK;
+import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 import static it.tidalwave.bluemarine2.util.FunctionWrappers._f;
 
 /***********************************************************************************************************************
@@ -140,6 +141,29 @@ public class MusicResourcesController
         log.info("getRecord({}, {}, {})", id, source, fallback);
         checkStatus();
         return new RecordsJson(finalized(catalog.findRecords().withId(new Id(id)), source, fallback, RecordJson::new));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Exports the cover art of a record.
+     *
+     * @param   id          the record id
+     * @return              the cover art image
+     *
+     ******************************************************************************************************************/
+    @RequestMapping(value = "/record/{id}/coverart")
+    public ResponseEntity<byte[]> getRecordCoverArt (final @PathVariable String id)
+      {
+        log.info("getRecordCoverArt({})", id);
+        checkStatus();
+        return catalog.findTracks().inRecord(new Id(id))
+                                   .stream()
+                                   .flatMap(track -> track.asMany(AudioFileSupplier).stream())
+                                   .map(afs -> afs.getAudioFile())
+                                   .flatMap(af -> af.getMetadata().getAll(ARTWORK).stream())
+                                   .findAny()
+                                   .map(bytes -> bytesResponse(bytes, "image", "jpeg"))
+                                   .orElseThrow(NotFoundException::new);
       }
 
     /*******************************************************************************************************************

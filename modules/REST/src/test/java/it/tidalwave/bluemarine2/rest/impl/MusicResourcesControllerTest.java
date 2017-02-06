@@ -221,6 +221,9 @@ public class MusicResourcesControllerTest extends SpringTestSupport
               "audiofile-urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=-coverart.txt" },
 
             // coverart
+            { "/rest/record/urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=/coverart",
+              "record-urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=-coverart.jpeg.txt" },
+
             { "/rest/audiofile/urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=/coverart",
               "audiofile-urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=-coverart.jpeg.txt" },
           };
