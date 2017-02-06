@@ -71,10 +71,11 @@ public class AudioFileJson extends JsonSupport
 
     public AudioFileJson (final @Nonnull AudioFile audioFile)
       {
-        final Metadata metadata = audioFile.getMetadata();
         this.id          = audioFile.getId().stringValue();
         this.displayName = audioFile.as(Displayable).getDisplayName();
         this.path        = audioFile.getPath().toString();
+
+        final Metadata metadata = audioFile.getMetadata();
         this.fileSize    = metadata.get(FILE_SIZE);
         this.duration    = metadata.get(DURATION).map(Duration::toString);
 
