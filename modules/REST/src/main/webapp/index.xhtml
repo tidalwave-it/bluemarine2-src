@@ -119,19 +119,24 @@
         </script>
 
         <script id="recordPane" type="text/x-handlebars-template">
-                    {{#each entities}}
-                            <span>Album:</span> <span class="displayName">{{displayName}}</span>
-                            <span>Source:</span> <span class="source">{{source}}</span>
-                    {{/each}}
+<!--            <div>
+            {{#each entities}}
+                <span>Album:</span> <span class="displayName">{{displayName}}</span>
+                <span>Source:</span> <span class="source">{{source}}</span>
+            {{/each}}
+            </div>
+-->
         </script>
 
         <script id="trackPane" type="text/x-handlebars-template">
-                    {{#each entities}}
-                            <span>Track:</span> <span class="displayName">{{displayName}}</span>
-                            <span>Source:</span> <span class="source">{{source}}</span>
-                            <span>Content:</span> <span class="audioFile">{{audioFile}}/content</span>
-                            <img style="witdh: 400px; height: 400px" src="{{audioFile}}/coverart"></img>
-                    {{/each}}
+            {{#each entities}}
+                <!-- <span>Track:</span> <span class="displayName">{{displayName}}</span> -->
+                <img class="coverArt" src="{{audioFile}}/coverart"></img>
+                <audio controls="" class="audioPlayer">
+                    <source src="{{audioFile}}/content" type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                </audio>
+            {{/each}}
         </script>
     </head>
     <body>

@@ -60,3 +60,15 @@ table.tracks td.source
   {
     width: 7em;
   }
+
+img.coverArt
+  {
+    height:     100%;
+    width:      100%;
+    object-fit: contain
+  }
+
+audio.audioPlayer
+  {
+    width: 100%;
+  }
