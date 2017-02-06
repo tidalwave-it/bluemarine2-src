@@ -98,6 +98,12 @@ public class MusicResourcesController
 
     /*******************************************************************************************************************
      *
+     * Exports record resources.
+     *
+     * @param   source      the data source
+     * @param   fallback    the fallback data source
+     * @return              the JSON representation of the records
+     *
      ******************************************************************************************************************/
     @ResponseBody
     @JsonView(Profile.Master.class)
@@ -109,6 +115,13 @@ public class MusicResourcesController
       }
 
     /*******************************************************************************************************************
+     *
+     * Exports a single record resource.
+     *
+     * @param   id          the record id
+     * @param   source      the data source
+     * @param   fallback    the fallback data source
+     * @return              the JSON representation of the record
      *
      ******************************************************************************************************************/
     @ResponseBody
@@ -123,6 +136,13 @@ public class MusicResourcesController
 
     /*******************************************************************************************************************
      *
+     * Exports track resources in the given record.
+     *
+     * @param   id          the record id
+     * @param   source      the data source
+     * @param   fallback    the fallback data source
+     * @return              the JSON representation of the tracks
+     *
      ******************************************************************************************************************/
     @ResponseBody
     @JsonView(Profile.Detail.class)
@@ -136,6 +156,12 @@ public class MusicResourcesController
 
     /*******************************************************************************************************************
      *
+     * Exports track resources.
+     *
+     * @param   source      the data source
+     * @param   fallback    the fallback data source
+     * @return              the JSON representation of the tracks
+     *
      ******************************************************************************************************************/
     @ResponseBody
     @JsonView(Profile.Master.class)
@@ -148,6 +174,12 @@ public class MusicResourcesController
 
     /*******************************************************************************************************************
      *
+     * Exports audio file resources.
+     *
+     * @param   source      the data source
+     * @param   fallback    the fallback data source
+     * @return              the JSON representation of the audio files
+     *
      ******************************************************************************************************************/
     @ResponseBody
     @JsonView(Profile.Master.class)
@@ -159,6 +191,13 @@ public class MusicResourcesController
       }
 
     /*******************************************************************************************************************
+     *
+     * Exports a single audio file resource.
+     *
+     * @param   id          the audio file id
+     * @param   source      the data source
+     * @param   fallback    the fallback data source
+     * @return              the JSON representation of the audio file
      *
      ******************************************************************************************************************/
     @ResponseBody
@@ -173,6 +212,9 @@ public class MusicResourcesController
 
     /*******************************************************************************************************************
      *
+     * @param   id          the audio file id
+     * @return              the binary contents
+     *
      * FIXME: support ranges, use ResourceRegionHttpMessageConverter? Then drop the RangeServlet in favour of it.
      *
      ******************************************************************************************************************/
@@ -186,6 +228,9 @@ public class MusicResourcesController
       }
 
     /*******************************************************************************************************************
+     *
+     * @param   id          the audio file id
+     * @return              the binary contents
      *
      ******************************************************************************************************************/
     @RequestMapping(value = "/audiofile/{id}/coverart")
@@ -221,7 +266,9 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ResponseEntity<byte[]> bytesResponse (final @Nonnull byte[] bytes, final @Nonnull String type,  final @Nonnull String subtype)
+    private ResponseEntity<byte[]> bytesResponse (final @Nonnull byte[] bytes,
+                                                  final @Nonnull String type,
+                                                  final @Nonnull String subtype)
       {
         return ResponseEntity.ok().contentType(new MediaType(type, subtype)).body(bytes);
       }

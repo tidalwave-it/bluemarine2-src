@@ -47,6 +47,10 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
+ * An adapter for exporting {@link AudioFile} in JSON.
+ *
+ * @stereotype  Adapter
+ *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id: $
  *
