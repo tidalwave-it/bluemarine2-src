@@ -51,8 +51,8 @@ import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import it.tidalwave.bluemarine2.rest.ResponseEntityIo;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.EventBarrier;
@@ -104,7 +104,8 @@ public class MusicResourcesControllerTest extends SpringTestSupport
      ******************************************************************************************************************/
     public MusicResourcesControllerTest()
       {
-        super("classpath:META-INF/DciAutoBeans.xml",
+        super(LifeCycle.AROUND_CLASS,
+              "classpath:META-INF/DciAutoBeans.xml",
               "classpath:META-INF/CommonsAutoBeans.xml",
               "classpath:META-INF/ModelAutoBeans.xml",
               "classpath:META-INF/PersistenceAutoBeans.xml",
@@ -115,8 +116,7 @@ public class MusicResourcesControllerTest extends SpringTestSupport
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-//    @BeforeClass
-    @BeforeMethod
+    @BeforeClass
     public void setup()
       throws Exception
       {
@@ -144,8 +144,7 @@ public class MusicResourcesControllerTest extends SpringTestSupport
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-//    @AfterClass
-    @AfterMethod
+    @AfterClass
     public void shutdown()
       throws Exception
       {
