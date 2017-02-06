@@ -32,11 +32,13 @@ import javax.annotation.Nonnull;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
+import it.tidalwave.bluemarine2.model.finder.AudioFileFinder;
 import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryAudioFileFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryPerformanceFinder;
@@ -84,6 +86,12 @@ public class RepositoryMediaCatalog implements MediaCatalog
     public PerformanceFinder findPerformances()
       {
         return configured(new RepositoryPerformanceFinder(repository));
+      }
+
+    @Override @Nonnull
+    public AudioFileFinder findAudioFiles()
+      {
+        return configured(new RepositoryAudioFileFinder(repository));
       }
 
     @Nonnull
