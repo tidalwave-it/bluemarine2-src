@@ -33,6 +33,7 @@ import javax.annotation.concurrent.Immutable;
 import org.fourthline.cling.support.model.DIDLObject;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MusicArtist;
+import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -48,9 +49,9 @@ import lombok.extern.slf4j.Slf4j;
 @Immutable @DciRole(datumType = MusicArtist.class) @Slf4j
 public class MusicArtistDIDLAdapter extends DIDLAdapterSupport<MusicArtist>
   {
-    public MusicArtistDIDLAdapter (final @Nonnull MusicArtist datum)
+    public MusicArtistDIDLAdapter (final @Nonnull MusicArtist datum, final @Nonnull ResourceServer server)
       {
-        super(datum);
+        super(datum, server);
       }
 
     @Override @Nonnull

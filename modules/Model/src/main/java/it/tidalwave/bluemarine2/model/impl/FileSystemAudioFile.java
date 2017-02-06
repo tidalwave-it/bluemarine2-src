@@ -33,6 +33,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.util.List;
 import java.util.Optional;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.Id;
@@ -53,7 +55,6 @@ import lombok.RequiredArgsConstructor;
 import static java.util.Arrays.*;
 import static java.util.Collections.*;
 import static it.tidalwave.role.Displayable.Displayable;
-import java.util.Iterator;
 
 /***********************************************************************************************************************
  *
@@ -209,9 +210,23 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
       }
 
     @Override @Nonnull
+    public Id getId()
+      {
+        return new Id(path.toString());
+      }
+
+    @Override @Nonnull
     public Optional<PathAwareEntity> getParent()
       {
         return Optional.of(parent);
+      }
+
+
+    @Override
+    public Optional<byte[]> getContent()
+      throws IOException
+      {
+        return Files.exists(path) ? Optional.of(Files.readAllBytes(path)) : Optional.empty();
       }
 
     @Override @Nonnull
