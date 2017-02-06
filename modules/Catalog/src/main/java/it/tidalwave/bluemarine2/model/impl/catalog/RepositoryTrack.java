@@ -87,11 +87,6 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
 
     private final Memoize<Optional<Performance>> performance = new Memoize<>();
 
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
     public RepositoryTrack (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
         super(repository, bindingSet, "track");
@@ -111,44 +106,24 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
         audioFile = new Memoize<>(() -> new RepositoryAudioFile(repository, bindingSet));
       }
 
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
     @Override @Nonnull
     public Optional<Record> getRecord()
       {
         return record.get(() -> _findRecords().recordOf(this).optionalFirstResult());
       }
 
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
     @Override @Nonnull
     public Optional<Performance> getPerformance()
       {
         return performance.get(() -> _findPerformances().ofTrack(this).optionalFirstResult());
       }
 
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
     @Override @Nonnull
     public synchronized AudioFile getAudioFile()
       {
         return audioFile.get();
       }
 
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
     @Override @Nonnull
     public String toString()
       {
@@ -157,11 +132,6 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
                              duration.map(Formatters::format).orElse("??:??"), rdfsLabel, audioFilePath, id);
       }
 
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
     @Override @Nonnull
     public String toDumpString()
       {
