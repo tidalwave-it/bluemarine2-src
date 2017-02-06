@@ -64,13 +64,9 @@ import static java.util.Collections.singletonList;
 @Immutable @DciRole(datumType = Track.class)
 public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
   {
-    @Nonnull
-    private final ResourceServer resourceServer;
-
-    public TrackDIDLAdapter (final @Nonnull Track track ,final @Nonnull ResourceServer resourceServer)
+    public TrackDIDLAdapter (final @Nonnull Track track ,final @Nonnull ResourceServer server)
       {
-        super(track);
-        this.resourceServer = resourceServer;
+        super(track, server);
       }
 
     @Override @Nonnull
@@ -82,7 +78,7 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
         final MusicTrack item = setCommonFields(new MusicTrack());
         final AudioFile audioFile = datum.as(AudioFileSupplier).getAudioFile();
         final Metadata trackMetadata = datum.getMetadata();
-        item.setResources(singletonList(getResource(audioFile)));
+        item.addResource(audioResourceOf(audioFile));
         trackMetadata.get(TRACK_NUMBER).ifPresent(item::setOriginalTrackNumber);
 
         datum.getRecord().flatMap(record -> record.asOptional(Displayable))
@@ -113,13 +109,13 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
       }
 
     @Nonnull
-    private Res getResource (final @Nonnull AudioFile audioFile)
+    private Res audioResourceOf (final @Nonnull AudioFile audioFile)
       {
         final ProtocolInfo protocolInfo = new DLNAProtocolInfo(Protocol.HTTP_GET, "*", "audio/mpeg", "*"); // FIXME: MIME
         final Metadata audioFileMetadata = audioFile.getMetadata();
         final Res resource = new Res(protocolInfo,
                                      audioFileMetadata.get(FILE_SIZE).orElse(null),
-                                     resourceServer.urlForResource(audioFile));
+                                     server.urlForResource(audioFile));
         audioFileMetadata.get(DURATION).ifPresent(duration -> resource.setDuration(durationToString(duration)));
         audioFileMetadata.get(BIT_RATE).ifPresent(bitRate -> resource.setBitrate((long)(int)bitRate));
         audioFileMetadata.get(BITS_PER_SAMPLE).ifPresent(bitPerSample -> resource.setBitsPerSample((long)(int)bitPerSample));

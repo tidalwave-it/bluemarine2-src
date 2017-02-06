@@ -33,6 +33,7 @@ import java.util.Collections;
 import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.container.Container;
 import it.tidalwave.util.As8;
+import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.role.Identifiable.Identifiable;
@@ -50,6 +51,9 @@ public abstract class DIDLAdapterSupport<T extends As8> implements DIDLAdapter
   {
     @Nonnull
     protected final T datum;
+
+    @Nonnull
+    protected final ResourceServer server;
 
     /*******************************************************************************************************************
      *

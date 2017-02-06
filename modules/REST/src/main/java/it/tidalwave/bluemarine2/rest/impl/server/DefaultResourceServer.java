@@ -64,8 +64,8 @@ import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
 import static java.util.stream.Collectors.toList;
+import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
 
 /***********************************************************************************************************************
  *
@@ -188,6 +188,17 @@ public class DefaultResourceServer implements ResourceServer
                                       .collect(Collectors.joining("/"));
 
         return "http://" + ipAddress + ":" + port + "/" + s;
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public String absoluteUrl (final @Nonnull String type)
+      {
+        return String.format("http://%s:%d/%s", ipAddress, port, type);
       }
 
     /*******************************************************************************************************************
