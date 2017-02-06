@@ -189,6 +189,11 @@ public class MusicResourcesControllerTest extends SpringTestSupport
       {
         return new Object[][]
           {
+            // static resources
+            { "/dummy.txt",
+              "dummy.txt.txt" },
+
+            // dynamic resources
             { "/rest/record",
               "records.json.txt" },
 
@@ -206,9 +211,6 @@ public class MusicResourcesControllerTest extends SpringTestSupport
 
             { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=/track",
               "record-eLWktOMBbcOWysVn6AW6kksBS7Q=-tracks.json.txt" },
-
-            { "/index.xhtml",
-              "index.xhtml.txt" },
 
             { "/rest/audiofile/urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=",
               "audiofile-urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=.json.txt" },
