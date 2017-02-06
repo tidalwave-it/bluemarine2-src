@@ -345,6 +345,7 @@ public class MusicResourcesController
       {
         return ResponseEntity.ok()
                              .contentType(new MediaType(type, subtype))
+                             .contentLength(bytes.length)
                              .header(CONTENT_DISPOSITION, contentDisposition)
                              .body(bytes);
       }
