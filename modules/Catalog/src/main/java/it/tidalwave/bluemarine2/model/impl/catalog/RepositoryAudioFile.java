@@ -92,7 +92,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
 
     public RepositoryAudioFile (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
-        super(repository, bindingSet, "audioFile");
+        super(repository, bindingSet, "audioFile", rdfsLabelOf(bindingSet.getBinding("path").getValue().stringValue()));
         this.path      = toPath(bindingSet.getBinding("path"));
         this.duration  = toDuration(bindingSet.getBinding("duration"));
         this.fileSize  = toLong(bindingSet.getBinding("fileSize"));
@@ -152,9 +152,9 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     @Override @Nonnull
     public String toDumpString()
       {
-        return String.format("%s %8s %s %s", duration.map(Formatters::format).orElse("??:??"),
-                                             fileSize.map(l -> l.toString()).orElse(""),
-                                             id, path);
+        return String.format("%s %8s %s %s    -    %s", duration.map(Formatters::format).orElse("??:??"),
+                                                        fileSize.map(l -> l.toString()).orElse(""),
+                                                        id, path, rdfsLabel);
       }
 
     @Nonnull
@@ -168,5 +168,11 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     private Path getAbsolutePath()
       {
         return fileSystem.getRootPath().resolve(path);
+      }
+
+    @Nonnull
+    private static String rdfsLabelOf (final @Nonnull String path)
+      {
+        return path.replaceAll("^.*/", "");
       }
   }

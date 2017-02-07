@@ -329,8 +329,8 @@ public class MusicResourcesController
     private ResponseEntity<byte[]> audioFileContentResponse (final @Nonnull AudioFile file)
       throws IOException
       {
-        final String displayName = file.as(Displayable).getDisplayName();
-        return file.getContent().map(bytes -> bytesResponse(bytes, "audio", "mpeg", displayName + ".mp3"))
+        final String displayName = file.as(Displayable).getDisplayName(); // FIXME: getRdfsLabel()
+        return file.getContent().map(bytes -> bytesResponse(bytes, "audio", "mpeg", displayName))
                                 .orElseThrow(NotFoundException::new);
       }
 

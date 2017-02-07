@@ -96,9 +96,22 @@ public class RepositoryEntitySupport implements Entity, Identifiable
                                     final @Nonnull BindingSet bindingSet,
                                     final @Nonnull String idName)
       {
+        this(repository, bindingSet, idName, toString(bindingSet.getBinding("label")).orElse(""));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    public RepositoryEntitySupport (final @Nonnull Repository repository,
+                                    final @Nonnull BindingSet bindingSet,
+                                    final @Nonnull String idName,
+                                    final @Nonnull String rdfsLabel)
+      {
         this.repository = repository;
         this.id = new Id(toString(bindingSet.getBinding(idName)).get());
-        this.rdfsLabel = toString(bindingSet.getBinding("label")).orElse("");
+        this.rdfsLabel = rdfsLabel;
         this.fallback = toId(bindingSet.getBinding("fallback"));
         this.source = toId(Optional.ofNullable(bindingSet.getBinding("source"))
                                        .orElse(bindingSet.getBinding("fallback")));
@@ -221,7 +234,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
             return Paths.get("broken SEE BMT-46");
           }
       }
-    
+
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
