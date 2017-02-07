@@ -66,6 +66,10 @@ public class RecordJson extends JsonSupport
 
     private final Optional<String> source;
 
+    private final Optional<String> asin;
+
+    private final Optional<String> gtin;
+
     private final Collection<String> tracks;
 
     public RecordJson (final @Nonnull Record record)
@@ -76,6 +80,8 @@ public class RecordJson extends JsonSupport
         this.diskNumber  = record.getDiskNumber();
         this.trackCount  = record.getTrackCount();
         this.source      = record.getSource().map(Id::toString);
+        this.asin        = record.getAsin();
+        this.gtin        = record.getGtin();
         this.tracks      = record.findTracks().stream().map(track -> resourceUri("track", track)).collect(toList());
       }
   }
