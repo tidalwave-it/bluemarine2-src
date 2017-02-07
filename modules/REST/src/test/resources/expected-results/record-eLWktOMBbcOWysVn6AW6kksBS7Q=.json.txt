@@ -4,11 +4,9 @@ Server: Jetty(8.1.8.v20121106)
 Transfer-Encoding: chunked
 
 {
-  "records" : [ {
-    "displayName" : "Bach: Brandenburg Concertos #1-4",
-    "id" : "urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=",
-    "source" : "embedded",
-    "trackCount" : 13,
-    "tracks" : [ "http://<server>/rest/track/urn:bluemarine:track:-l3gdLzffGCPOhuTV-7t_b5NUTI=", "http://<server>/rest/track/urn:bluemarine:track:3c2Ujh0lP7JqL6irWEXrzZ7qyrI=", "http://<server>/rest/track/urn:bluemarine:track:xYSsWiVgRFyzYnU9VmXN7XCGyZ8=", "http://<server>/rest/track/urn:bluemarine:track:SjPA_sfP6ppfg9hPGtYNS88bHts=", "http://<server>/rest/track/urn:bluemarine:track:pbCoKcGe4blmhix43wIl_g0kIRw=", "http://<server>/rest/track/urn:bluemarine:track:U_XVEh-rDTGygRd92hRnKNqLi2M=", "http://<server>/rest/track/urn:bluemarine:track:40f0hITgRLkxok-wK69QvWPYRIo=", "http://<server>/rest/track/urn:bluemarine:track:lY75N4sj_eOL8vqQF76OMcaB2bU=", "http://<server>/rest/track/urn:bluemarine:track:_D4553bPcYlXYeuZCP7TN5pLASg=", "http://<server>/rest/track/urn:bluemarine:track:bpt9s5MYJN02pT9SEzQqBu88iRE=", "http://<server>/rest/track/urn:bluemarine:track:mBaaqoN5SP_i95ekQNe0bMw7izU=", "http://<server>/rest/track/urn:bluemarine:track:D6qT0ud6Tq3lLXBuFhlQvtB_v2s=", "http://<server>/rest/track/urn:bluemarine:track:U3LJ3kWKipi1kieHp98LvD7ng3Y=" ]
-  } ]
+  "displayName" : "Bach: Brandenburg Concertos #1-4",
+  "id" : "urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=",
+  "source" : "embedded",
+  "trackCount" : 13,
+  "tracks" : [ "http://<server>/rest/track/urn:bluemarine:track:-l3gdLzffGCPOhuTV-7t_b5NUTI=", "http://<server>/rest/track/urn:bluemarine:track:3c2Ujh0lP7JqL6irWEXrzZ7qyrI=", "http://<server>/rest/track/urn:bluemarine:track:xYSsWiVgRFyzYnU9VmXN7XCGyZ8=", "http://<server>/rest/track/urn:bluemarine:track:SjPA_sfP6ppfg9hPGtYNS88bHts=", "http://<server>/rest/track/urn:bluemarine:track:pbCoKcGe4blmhix43wIl_g0kIRw=", "http://<server>/rest/track/urn:bluemarine:track:U_XVEh-rDTGygRd92hRnKNqLi2M=", "http://<server>/rest/track/urn:bluemarine:track:40f0hITgRLkxok-wK69QvWPYRIo=", "http://<server>/rest/track/urn:bluemarine:track:lY75N4sj_eOL8vqQF76OMcaB2bU=", "http://<server>/rest/track/urn:bluemarine:track:_D4553bPcYlXYeuZCP7TN5pLASg=", "http://<server>/rest/track/urn:bluemarine:track:bpt9s5MYJN02pT9SEzQqBu88iRE=", "http://<server>/rest/track/urn:bluemarine:track:mBaaqoN5SP_i95ekQNe0bMw7izU=", "http://<server>/rest/track/urn:bluemarine:track:D6qT0ud6Tq3lLXBuFhlQvtB_v2s=", "http://<server>/rest/track/urn:bluemarine:track:U3LJ3kWKipi1kieHp98LvD7ng3Y=" ]
 }

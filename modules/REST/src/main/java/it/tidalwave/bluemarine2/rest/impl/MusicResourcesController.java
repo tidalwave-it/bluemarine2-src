@@ -116,12 +116,12 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @ResponseBody
     @RequestMapping(value = "/record", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public RecordsJson getRecords (final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                   final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+    public List<RecordJson> getRecords (final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                        final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
         log.info("getRecords({}, {})", source, fallback);
         checkStatus();
-        return new RecordsJson(finalized(catalog.findRecords(), source, fallback, RecordJson::new));
+        return finalized(catalog.findRecords(), source, fallback, RecordJson::new);
       }
 
     /*******************************************************************************************************************
@@ -136,13 +136,13 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @ResponseBody
     @RequestMapping(value = "/record/{id}", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public RecordsJson getRecord (final @PathVariable String id,
-                                  final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                  final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+    public RecordJson getRecord (final @PathVariable String id,
+                                 final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                 final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
         log.info("getRecord({}, {}, {})", id, source, fallback);
         checkStatus();
-        return new RecordsJson(finalized(catalog.findRecords().withId(new Id(id)), source, fallback, RecordJson::new));
+        return single(finalized(catalog.findRecords().withId(new Id(id)), source, fallback, RecordJson::new));
       }
 
     /*******************************************************************************************************************
@@ -180,13 +180,13 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @ResponseBody
     @RequestMapping(value = "/record/{id}/track", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public TracksJson getRecordTracks (final @PathVariable String id,
-                                       final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                       final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+    public List<TrackJson> getRecordTracks (final @PathVariable String id,
+                                            final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                            final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
         log.info("getRecordTracks({}, {}, {})", id, source, fallback);
         checkStatus();
-        return new TracksJson(finalized(catalog.findTracks().inRecord(new Id(id)), source, fallback, TrackJson::new));
+        return finalized(catalog.findTracks().inRecord(new Id(id)), source, fallback, TrackJson::new);
       }
 
     /*******************************************************************************************************************
@@ -200,12 +200,12 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @ResponseBody
     @RequestMapping(value = "/track", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public TracksJson getTracks (final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                 final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+    public List<TrackJson> getTracks (final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                      final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
         log.info("getTracks({}, {})", source, fallback);
         checkStatus();
-        return new TracksJson(finalized(catalog.findTracks(), source, fallback, TrackJson::new));
+        return finalized(catalog.findTracks(), source, fallback, TrackJson::new);
       }
 
     /*******************************************************************************************************************
@@ -220,13 +220,13 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @ResponseBody
     @RequestMapping(value = "/track/{id}", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public TracksJson getTrack (final @PathVariable String id,
-                                final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+    public TrackJson getTrack (final @PathVariable String id,
+                               final @RequestParam(required = false, defaultValue = "embedded") String source,
+                               final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
         log.info("getTrack({}, {}, {})", id, source, fallback);
         checkStatus();
-        return new TracksJson(finalized(catalog.findTracks().withId(new Id(id)), source, fallback, TrackJson::new));
+        return single(finalized(catalog.findTracks().withId(new Id(id)), source, fallback, TrackJson::new));
       }
 
     /*******************************************************************************************************************
@@ -240,12 +240,12 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @ResponseBody
     @RequestMapping(value = "/audiofile", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public AudioFilesJson getAudioFiles (final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                         final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+    public List<AudioFileJson> getAudioFiles (final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                              final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
         log.info("getAudioFiles({}, {})", source, fallback);
         checkStatus();
-        return new AudioFilesJson(finalized(catalog.findAudioFiles(), source, fallback, AudioFileJson::new));
+        return finalized(catalog.findAudioFiles(), source, fallback, AudioFileJson::new);
       }
 
     /*******************************************************************************************************************
@@ -260,13 +260,13 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @ResponseBody
     @RequestMapping(value = "/audiofile/{id}", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public AudioFilesJson getAudioFile (final @PathVariable String id,
-                                        final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                        final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+    public AudioFileJson getAudioFile (final @PathVariable String id,
+                                       final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                       final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
         log.info("getAudioFile({}, {}, {})", id, source, fallback);
         checkStatus();
-        return new AudioFilesJson(finalized(catalog.findAudioFiles().withId(new Id(id)), source, fallback, AudioFileJson::new));
+        return single(finalized(catalog.findAudioFiles().withId(new Id(id)), source, fallback, AudioFileJson::new));
       }
 
     /*******************************************************************************************************************
@@ -302,6 +302,20 @@ public class MusicResourcesController
         return audioFile.flatMap(file -> file.getMetadata().getAll(ARTWORK).stream().findFirst())
                         .map(bytes -> bytesResponse(bytes, "image", "jpeg", "coverart.jpg"))
                         .orElseThrow(NotFoundException::new);
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private <T> T single (final @Nonnull List<T> list)
+      {
+        if (list.isEmpty())
+          {
+            throw new NotFoundException();
+          }
+
+        return list.get(0);
       }
 
     /*******************************************************************************************************************

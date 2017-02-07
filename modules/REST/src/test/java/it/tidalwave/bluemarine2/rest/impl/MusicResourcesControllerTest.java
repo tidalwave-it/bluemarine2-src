@@ -201,8 +201,15 @@ public class MusicResourcesControllerTest extends SpringTestSupport
             { "rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=",
               "record-eLWktOMBbcOWysVn6AW6kksBS7Q=.json.txt" },
 
+            { "rest/record/urn:bluemarine:record:not_existing",
+              "record-not_existing.json.txt" },
+
             { "rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=/track",
               "record-eLWktOMBbcOWysVn6AW6kksBS7Q=-tracks.json.txt" },
+
+            // FIXME: this is wrong, returning 200 + empty JSON while it should be 404
+            { "rest/record/urn:bluemarine:record:not_existing/track",
+              "record-not_existing-tracks.json.txt" },
 
             { "rest/record/urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=/coverart",
               "record-XoqvktWLs6mu64qGOxQ3NyPzXVY=-coverart.jpg.txt" },
@@ -213,11 +220,17 @@ public class MusicResourcesControllerTest extends SpringTestSupport
             { "rest/track/urn:bluemarine:track:Q9KPhUq1xN6VJRpV5gWsDkRYHUc=",
               "track-Q9KPhUq1xN6VJRpV5gWsDkRYHUc=.json.txt" },
 
+            { "rest/track/urn:bluemarine:track:not_existing",
+              "track-not_existing.json.txt" },
+
             { "rest/audiofile",
               "audiofiles.json.txt" },
 
             { "rest/audiofile/urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=",
               "audiofile-5lCKAUoE3IfmgttCE3a5U23gxQg=.json.txt" },
+
+            { "rest/audiofile/urn:bluemarine:audiofile:not_existing",
+              "audiofile-not_existing.json.txt" },
 
             { "rest/audiofile/urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=/content",
               "audiofile-Nmd7Bm3DQ922WhPkJn5YD_i_eK4=-content.mp3.txt" },

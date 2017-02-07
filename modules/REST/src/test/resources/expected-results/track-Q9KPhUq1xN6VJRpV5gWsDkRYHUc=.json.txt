@@ -4,13 +4,11 @@ Server: Jetty(8.1.8.v20121106)
 Transfer-Encoding: chunked
 
 {
-  "tracks" : [ {
-    "audioFile" : "http://<server>/rest/audiofile/urn:bluemarine:audiofile:G4e7kNSkbzbK6MtF7z3kjbssqFo=",
-    "displayName" : "On Green Dolphin Street",
-    "duration" : "PT9M51S",
-    "id" : "urn:bluemarine:track:Q9KPhUq1xN6VJRpV5gWsDkRYHUc=",
-    "record" : "http://<server>/rest/record/urn:bluemarine:record:g3Omts08uCXW6VlwQWP4qIzd5cE=",
-    "source" : "embedded",
-    "trackNumber" : 1
-  } ]
+  "audioFile" : "http://<server>/rest/audiofile/urn:bluemarine:audiofile:G4e7kNSkbzbK6MtF7z3kjbssqFo=",
+  "displayName" : "On Green Dolphin Street",
+  "duration" : "PT9M51S",
+  "id" : "urn:bluemarine:track:Q9KPhUq1xN6VJRpV5gWsDkRYHUc=",
+  "record" : "http://<server>/rest/record/urn:bluemarine:record:g3Omts08uCXW6VlwQWP4qIzd5cE=",
+  "source" : "embedded",
+  "trackNumber" : 1
 }

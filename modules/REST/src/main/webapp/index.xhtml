@@ -38,7 +38,6 @@
                   {
                     uuid:           "records",
                     url:            baseUrl + "/record?source=musicbrainz",
-                    path:           "records",
                     formatter:      recordFormatter
                  });
 
@@ -47,7 +46,6 @@
                     parentDataSet:  recordsDs,
                     uuid:           "record",
                     url:            baseUrl + "/record/{id}?source=musicbrainz",
-                    path:           "records",
                     formatter:      recordFormatter
                   });
 
@@ -56,7 +54,6 @@
                     parentDataSet:  recordsDs,
                     uuid:           "tracks",
                     url:            baseUrl + "/record/{id}/track?source=musicbrainz",
-                    path:           "tracks",
                     formatter:      trackFormatter
                   });
 
@@ -65,7 +62,6 @@
                     parentDataSet:  tracksDs,
                     uuid:           "track",
                     url:            baseUrl + "/track/{id}?source=musicbrainz",
-                    path:           "tracks",
                     formatter:      trackFormatter
                   });
 
