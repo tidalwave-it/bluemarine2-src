@@ -161,8 +161,9 @@ public class MusicResourcesControllerTest extends SpringTestSupport
         // given
         final RestTemplate restTemplate = new RestTemplate();
         restTemplate.setErrorHandler(IGNORE_HTTP_ERRORS);
+        final Class<?> responseType = (url.contains("content") || url.contains("coverart")) ? byte[].class : String.class;
         // when
-        final ResponseEntity<String> response = restTemplate.getForEntity(URI.create(baseUrl + url), String.class);
+        final ResponseEntity<?> response = restTemplate.getForEntity(URI.create(baseUrl + url), responseType);
         // then
         final Path actualPath = PATH_TEST_RESULTS.resolve(expected);
         final Path expectedPath = PATH_EXPECTED_TEST_RESULTS.resolve(expected);
