@@ -121,7 +121,6 @@ public class MusicResourcesControllerTest extends SpringTestSupport
       throws Exception
       {
         server = context.getBean(ResourceServer.class);
-        postProcessor = s -> s.replaceAll(server.absoluteUrl(""), "http://<server>/");
         messageBus = context.getBean(MessageBus.class);
         final Persistence persistence = context.getBean(Persistence.class);
 
@@ -138,7 +137,9 @@ public class MusicResourcesControllerTest extends SpringTestSupport
         loadRepository(repository, PATH_TEST_SETS.resolve("model-iTunes-aac-fg-20170131-1.n3"));
         loadRepository(repository, PATH_TEST_SETS.resolve("musicbrainz-iTunes-fg-20161210-1.n3"));
 
-        baseUrl = String.format("http://%s:%d", server.getIpAddress(), server.getPort());
+        baseUrl = server.absoluteUrl("");
+        log.info(">>>> baseUrl: {}", baseUrl);
+        postProcessor = s -> s.replaceAll(baseUrl, "http://<server>/");
       }
 
     /*******************************************************************************************************************
@@ -190,42 +191,42 @@ public class MusicResourcesControllerTest extends SpringTestSupport
         return new Object[][]
           {
             // static resources
-            { "/dummy.txt",
+            { "dummy.txt",
               "dummy.txt.txt" },
 
             // dynamic resources
-            { "/rest/record",
+            { "rest/record",
               "records.json.txt" },
 
-            { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=",
+            { "rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=",
               "record-eLWktOMBbcOWysVn6AW6kksBS7Q=.json.txt" },
 
-            { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=/track",
+            { "rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=/track",
               "record-eLWktOMBbcOWysVn6AW6kksBS7Q=-tracks.json.txt" },
 
-            { "/rest/record/urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=/coverart",
+            { "rest/record/urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=/coverart",
               "record-XoqvktWLs6mu64qGOxQ3NyPzXVY=-coverart.jpg.txt" },
 
-            { "/rest/track",
+            { "rest/track",
               "tracks.json.txt" },
 
-            { "/rest/track/urn:bluemarine:track:Q9KPhUq1xN6VJRpV5gWsDkRYHUc=",
+            { "rest/track/urn:bluemarine:track:Q9KPhUq1xN6VJRpV5gWsDkRYHUc=",
               "track-Q9KPhUq1xN6VJRpV5gWsDkRYHUc=.json.txt" },
 
-            { "/rest/audiofile",
+            { "rest/audiofile",
               "audiofiles.json.txt" },
 
-            { "/rest/audiofile/urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=",
+            { "rest/audiofile/urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=",
               "audiofile-5lCKAUoE3IfmgttCE3a5U23gxQg=.json.txt" },
 
-            { "/rest/audiofile/urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=/content",
+            { "rest/audiofile/urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=/content",
               "audiofile-Nmd7Bm3DQ922WhPkJn5YD_i_eK4=-content.mp3.txt" },
 
-            { "/rest/audiofile/urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=/coverart",
+            { "rest/audiofile/urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=/coverart",
               "audiofile-Nmd7Bm3DQ922WhPkJn5YD_i_eK4=-coverart.jpg.txt" },
 
             // missing coverart
-            { "/rest/audiofile/urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=/coverart",
+            { "rest/audiofile/urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=/coverart",
               "audiofile-5lCKAUoE3IfmgttCE3a5U23gxQg=-coverart.jpg.txt" },
           };
       }
