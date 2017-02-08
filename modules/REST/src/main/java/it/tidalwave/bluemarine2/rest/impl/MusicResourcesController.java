@@ -35,7 +35,6 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Stream;
 import java.io.IOException;
-import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -59,7 +58,10 @@ import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
 import static org.springframework.http.MediaType.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.ARTWORK;
+import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 import static it.tidalwave.bluemarine2.util.FunctionWrappers._f;
+import static it.tidalwave.role.Displayable.Displayable;
+import static org.springframework.http.HttpHeaders.CONTENT_DISPOSITION;
 
 /***********************************************************************************************************************
  *
@@ -78,6 +80,13 @@ public class MusicResourcesController
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
     static class NotFoundException extends RuntimeException
       {
+        private static final long serialVersionUID = 3099300911009857337L;
+      }
+
+    @ResponseStatus(value = HttpStatus.SERVICE_UNAVAILABLE)
+    static class UnavailableException extends RuntimeException
+      {
+        private static final long serialVersionUID = 3644567083880573896L;
       }
 
     private MediaCatalog catalog; // FIXME: directly inject the Catalog
@@ -98,80 +107,172 @@ public class MusicResourcesController
 
     /*******************************************************************************************************************
      *
+     * Exports record resources.
+     *
+     * @param   source      the data source
+     * @param   fallback    the fallback data source
+     * @return              the JSON representation of the records
+     *
      ******************************************************************************************************************/
     @ResponseBody
-    @JsonView(Profile.Master.class)
     @RequestMapping(value = "/record", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public RecordsJson getRecords (final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                   final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+    public List<RecordJson> getRecords (final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                        final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
-        return new RecordsJson(finalized(catalog.findRecords(), source, fallback, RecordJson::new));
+        log.info("getRecords({}, {})", source, fallback);
+        checkStatus();
+        return finalized(catalog.findRecords(), source, fallback, RecordJson::new);
       }
 
     /*******************************************************************************************************************
      *
+     * Exports a single record resource.
+     *
+     * @param   id          the record id
+     * @param   source      the data source
+     * @param   fallback    the fallback data source
+     * @return              the JSON representation of the record
+     *
      ******************************************************************************************************************/
     @ResponseBody
-    @JsonView(Profile.Detail.class)
     @RequestMapping(value = "/record/{id}", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public RecordsJson getRecord (final @PathVariable String id,
-                                  final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                  final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+    public RecordJson getRecord (final @PathVariable String id,
+                                 final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                 final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
-        return new RecordsJson(finalized(catalog.findRecords().withId(new Id(id)), source, fallback, RecordJson::new));
+        log.info("getRecord({}, {}, {})", id, source, fallback);
+        checkStatus();
+        return single(finalized(catalog.findRecords().withId(new Id(id)), source, fallback, RecordJson::new));
       }
 
     /*******************************************************************************************************************
      *
+     * Exports the cover art of a record.
+     *
+     * @param   id          the record id
+     * @return              the cover art image
+     *
+     ******************************************************************************************************************/
+    @RequestMapping(value = "/record/{id}/coverart")
+    public ResponseEntity<byte[]> getRecordCoverArt (final @PathVariable String id)
+      {
+        log.info("getRecordCoverArt({})", id);
+        checkStatus();
+        return catalog.findTracks().inRecord(new Id(id))
+                                   .stream()
+                                   .flatMap(track -> track.asMany(AudioFileSupplier).stream())
+                                   .map(afs -> afs.getAudioFile())
+                                   .flatMap(af -> af.getMetadata().getAll(ARTWORK).stream())
+                                   .findAny()
+                                   .map(bytes -> bytesResponse(bytes, "image", "jpeg", "coverart.jpg"))
+                                   .orElseThrow(NotFoundException::new);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Exports track resources in the given record.
+     *
+     * @param   id          the record id
+     * @param   source      the data source
+     * @param   fallback    the fallback data source
+     * @return              the JSON representation of the tracks
+     *
      ******************************************************************************************************************/
     @ResponseBody
-    @JsonView(Profile.Detail.class)
     @RequestMapping(value = "/record/{id}/track", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public TracksJson getRecordTracks (final @PathVariable String id,
+    public List<TrackJson> getRecordTracks (final @PathVariable String id,
+                                            final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                            final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+      {
+        log.info("getRecordTracks({}, {}, {})", id, source, fallback);
+        checkStatus();
+        return finalized(catalog.findTracks().inRecord(new Id(id)), source, fallback, TrackJson::new);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Exports track resources.
+     *
+     * @param   source      the data source
+     * @param   fallback    the fallback data source
+     * @return              the JSON representation of the tracks
+     *
+     ******************************************************************************************************************/
+    @ResponseBody
+    @RequestMapping(value = "/track", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
+    public List<TrackJson> getTracks (final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                      final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+      {
+        log.info("getTracks({}, {})", source, fallback);
+        checkStatus();
+        return finalized(catalog.findTracks(), source, fallback, TrackJson::new);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Exports a single track resource.
+     *
+     * @param   id          the track id
+     * @param   source      the data source
+     * @param   fallback    the fallback data source
+     * @return              the JSON representation of the track
+     *
+     ******************************************************************************************************************/
+    @ResponseBody
+    @RequestMapping(value = "/track/{id}", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
+    public TrackJson getTrack (final @PathVariable String id,
+                               final @RequestParam(required = false, defaultValue = "embedded") String source,
+                               final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+      {
+        log.info("getTrack({}, {}, {})", id, source, fallback);
+        checkStatus();
+        return single(finalized(catalog.findTracks().withId(new Id(id)), source, fallback, TrackJson::new));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Exports audio file resources.
+     *
+     * @param   source      the data source
+     * @param   fallback    the fallback data source
+     * @return              the JSON representation of the audio files
+     *
+     ******************************************************************************************************************/
+    @ResponseBody
+    @RequestMapping(value = "/audiofile", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
+    public List<AudioFileJson> getAudioFiles (final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                              final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+      {
+        log.info("getAudioFiles({}, {})", source, fallback);
+        checkStatus();
+        return finalized(catalog.findAudioFiles(), source, fallback, AudioFileJson::new);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Exports a single audio file resource.
+     *
+     * @param   id          the audio file id
+     * @param   source      the data source
+     * @param   fallback    the fallback data source
+     * @return              the JSON representation of the audio file
+     *
+     ******************************************************************************************************************/
+    @ResponseBody
+    @RequestMapping(value = "/audiofile/{id}", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
+    public AudioFileJson getAudioFile (final @PathVariable String id,
                                        final @RequestParam(required = false, defaultValue = "embedded") String source,
                                        final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
-        return new TracksJson(finalized(catalog.findTracks().inRecord(new Id(id)), source, fallback, TrackJson::new));
+        log.info("getAudioFile({}, {}, {})", id, source, fallback);
+        checkStatus();
+        return single(finalized(catalog.findAudioFiles().withId(new Id(id)), source, fallback, AudioFileJson::new));
       }
 
     /*******************************************************************************************************************
      *
-     ******************************************************************************************************************/
-    @ResponseBody
-    @JsonView(Profile.Master.class)
-    @RequestMapping(value = "/track", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public TracksJson getTracks (final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                 final @RequestParam(required = false, defaultValue = "embedded") String fallback)
-      {
-        return new TracksJson(finalized(catalog.findTracks(), source, fallback, TrackJson::new));
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @ResponseBody
-    @JsonView(Profile.Master.class)
-    @RequestMapping(value = "/audiofile", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public AudioFilesJson getAudioFiles (final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                         final @RequestParam(required = false, defaultValue = "embedded") String fallback)
-      {
-        return new AudioFilesJson(finalized(catalog.findAudioFiles(), source, fallback, AudioFileJson::new));
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @ResponseBody
-    @JsonView(Profile.Master.class)
-    @RequestMapping(value = "/audiofile/{id}", produces  = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public AudioFilesJson getAudioFile (final @PathVariable String id,
-                                        final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                        final @RequestParam(required = false, defaultValue = "embedded") String fallback)
-      {
-        return new AudioFilesJson(finalized(catalog.findAudioFiles().withId(new Id(id)), source, fallback, AudioFileJson::new));
-      }
-
-    /*******************************************************************************************************************
+     * @param   id          the audio file id
+     * @return              the binary contents
      *
      * FIXME: support ranges, use ResourceRegionHttpMessageConverter? Then drop the RangeServlet in favour of it.
      *
@@ -179,25 +280,44 @@ public class MusicResourcesController
     @RequestMapping(value = "/audiofile/{id}/content")
     public ResponseEntity<byte[]> getAudioFileContent (final @PathVariable String id)
       {
+        log.info("getAudioFileContent({})", id);
+        checkStatus();
+        return catalog.findAudioFiles().withId(new Id(id)).optionalResult()
+                                                          .map(_f(this::audioFileContentResponse))
+                                                          .orElseThrow(NotFoundException::new);
+      }
+
+    /*******************************************************************************************************************
+     *
+     * @param   id          the audio file id
+     * @return              the binary contents
+     *
+     ******************************************************************************************************************/
+    @RequestMapping(value = "/audiofile/{id}/coverart")
+    public ResponseEntity<byte[]>  getAudioFileCoverArt (final @PathVariable String id)
+      {
+        log.info("getAudioFileCoverArt({})", id);
+        checkStatus();
         final Optional<AudioFile> audioFile = catalog.findAudioFiles().withId(new Id(id)).optionalResult();
-        return audioFile.flatMap(_f(AudioFile::getContent))
-                        .map(bytes -> bytesResponse(bytes, "audio", "mpeg"))
+        log.debug(">>>> audioFile: {}", audioFile);
+        return audioFile.flatMap(file -> file.getMetadata().getAll(ARTWORK).stream().findFirst())
+                        .map(bytes -> bytesResponse(bytes, "image", "jpeg", "coverart.jpg"))
                         .orElseThrow(NotFoundException::new);
       }
 
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @RequestMapping(value = "/audiofile/{id}/coverart")
-    public ResponseEntity<byte[]>  getAudioFileCoverArt (final @PathVariable String id)
+    @Nonnull
+    private <T> T single (final @Nonnull List<T> list)
       {
-        final Optional<AudioFile> audioFile = catalog.findAudioFiles().withId(new Id(id)).optionalResult();
-        return audioFile.flatMap(file -> file.getMetadata().get(ARTWORK))
-                        .flatMap(artworks -> artworks.stream().findFirst())
-                        .map(bytes -> bytesResponse(bytes, "image", "jpeg"))
-                        .orElseThrow(NotFoundException::new);
-      }
+        if (list.isEmpty())
+          {
+            throw new NotFoundException();
+          }
 
+        return list.get(0);
+      }
 
     /*******************************************************************************************************************
      *
@@ -221,8 +341,38 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ResponseEntity<byte[]> bytesResponse (final @Nonnull byte[] bytes, final @Nonnull String type,  final @Nonnull String subtype)
+    private ResponseEntity<byte[]> audioFileContentResponse (final @Nonnull AudioFile file)
+      throws IOException
       {
-        return ResponseEntity.ok().contentType(new MediaType(type, subtype)).body(bytes);
+        final String displayName = file.as(Displayable).getDisplayName(); // FIXME: getRdfsLabel()
+        return file.getContent().map(bytes -> bytesResponse(bytes, "audio", "mpeg", displayName))
+                                .orElseThrow(NotFoundException::new);
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private ResponseEntity<byte[]> bytesResponse (final @Nonnull byte[] bytes,
+                                                  final @Nonnull String type,
+                                                  final @Nonnull String subtype,
+                                                  final @Nonnull String contentDisposition)
+      {
+        return ResponseEntity.ok()
+                             .contentType(new MediaType(type, subtype))
+                             .contentLength(bytes.length)
+                             .header(CONTENT_DISPOSITION, contentDisposition)
+                             .body(bytes);
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    private void checkStatus()
+      {
+        if (catalog == null)
+          {
+            throw new UnavailableException();
+          }
       }
   }

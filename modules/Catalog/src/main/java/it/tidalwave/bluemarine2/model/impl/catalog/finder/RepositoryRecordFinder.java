@@ -112,7 +112,7 @@ public class RepositoryRecordFinder extends RepositoryFinderSupport<Record, Reco
      *
      ******************************************************************************************************************/
     @Override @Nonnull
-    public RecordFinder recordOf (final @Nonnull Id trackId)
+    public RecordFinder containingTrack (final @Nonnull Id trackId)
       {
         return clone(new RepositoryRecordFinder(repository, makerId, Optional.of(trackId)));
       }
