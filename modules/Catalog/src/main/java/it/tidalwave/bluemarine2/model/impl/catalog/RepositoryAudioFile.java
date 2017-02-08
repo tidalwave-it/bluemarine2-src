@@ -162,7 +162,7 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
       {
         final Path absolutePath = getAbsolutePath();
         log.debug(">>>> loading fallback metadata from: {}", absolutePath);
-        // Don't check for file existence - see BMT-46. AudioMetadataFactory does all.
+        // Don't check for file existence, it would fail for some files - see BMT-46. AudioMetadataFactory does all.
         return AudioMetadataFactory.loadFrom(absolutePath);
       }
 
