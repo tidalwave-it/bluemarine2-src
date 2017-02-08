@@ -30,21 +30,15 @@ package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import javax.inject.Inject;
 import java.time.Duration;
 import java.util.Optional;
-import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
-import java.nio.file.Paths;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.eclipse.rdf4j.repository.Repository;
-import org.eclipse.rdf4j.query.Binding;
 import org.eclipse.rdf4j.query.BindingSet;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Memoize;
 import it.tidalwave.bluemarine2.util.Formatters;
 import it.tidalwave.bluemarine2.model.AudioFile;
-import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import it.tidalwave.bluemarine2.model.Performance;
 import it.tidalwave.bluemarine2.model.Record;
@@ -53,7 +47,6 @@ import it.tidalwave.bluemarine2.model.role.AudioFileSupplier;
 import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedToNativeForm;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
@@ -66,7 +59,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @Configurable @Slf4j
+@Immutable @Slf4j
 public class RepositoryTrack extends RepositoryEntitySupport implements Track, AudioFileSupplier
   {
     @Getter @Nonnull
@@ -81,39 +74,28 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
     @Getter @Nonnull
     private final Optional<Duration> duration;
 
+    @Getter @Nonnull
+    private final Metadata metadata;
+
     @Nonnull
     private final Path audioFilePath;
 
     @Nonnull
-    private final Optional<Long> fileSize;
-
-    @Getter
-    private final Metadata metadata;
-
     private final Memoize<AudioFile> audioFile;
 
     private final Memoize<Optional<Record>> record = new Memoize<>();
 
     private final Memoize<Optional<Performance>> performance = new Memoize<>();
 
-    @Inject
-    private MediaFileSystem fileSystem;
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
     public RepositoryTrack (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
         super(repository, bindingSet, "track");
 
-        audioFilePath = fixedPath(bindingSet.getBinding("path"));
+        audioFilePath = toPath(bindingSet.getBinding("path"));
         duration      = toDuration(bindingSet.getBinding("duration"));
         trackNumber   = toInteger(bindingSet.getBinding("track_number"));
         diskNumber    = toInteger(bindingSet.getBinding("disk_number"));
         diskCount     = toInteger(bindingSet.getBinding("disk_count"));
-        fileSize      = toLong(bindingSet.getBinding("fileSize"));
 //        this.recordRdfsLabel = toString(bindingSet.getBinding("record_label"));
 
         metadata = new MetadataSupport(audioFilePath).with(DURATION, duration)
@@ -121,54 +103,27 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
                                                      .with(DISK_NUMBER, diskNumber)
                                                      .with(DISK_COUNT, diskCount);
 
-        audioFile = new Memoize<>(() -> new RepositoryAudioFile(repository,
-                                                           toId(bindingSet.getBinding("audioFile")).get(),
-                                                           id,
-                                                           fileSystem.getRootPath().resolve(audioFilePath),
-                                                           audioFilePath,
-                                                           duration,
-                                                           rdfsLabel,
-                                                           fileSize));
+        audioFile = new Memoize<>(() -> new RepositoryAudioFile(repository, bindingSet));
       }
 
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
     @Override @Nonnull
     public Optional<Record> getRecord()
       {
-        return record.get(() -> _findRecords().recordOf(this).optionalFirstResult());
+        return record.get(() -> _findRecords().containingTrack(this).optionalFirstResult());
       }
 
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
     @Override @Nonnull
     public Optional<Performance> getPerformance()
       {
         return performance.get(() -> _findPerformances().ofTrack(this).optionalFirstResult());
       }
 
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
     @Override @Nonnull
-    public synchronized AudioFile getAudioFile()
+    public AudioFile getAudioFile()
       {
         return audioFile.get();
       }
 
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
     @Override @Nonnull
     public String toString()
       {
@@ -177,11 +132,6 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
                              duration.map(Formatters::format).orElse("??:??"), rdfsLabel, audioFilePath, id);
       }
 
-    /*******************************************************************************************************************
-     *
-     * {@inheritDoc}
-     *
-     ******************************************************************************************************************/
     @Override @Nonnull
     public String toDumpString()
       {
@@ -189,33 +139,5 @@ public class RepositoryTrack extends RepositoryEntitySupport implements Track, A
                              diskNumber.orElse(1), diskCount.orElse(1), trackNumber.orElse(1),
                              duration.map(Formatters::format).orElse("??:??"), rdfsLabel, id, audioFilePath,
                              source.orElse(new Id("unknown")));
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Tries to fix a path for character normalization issues (see BMT-46). The idea is to first normalize the encoding
-     * to the native form. If it doesn't work, a broken path is replaced to avoid further errors (of course, the
-     * resource won't be available when requested).
-     * It doesn't try to call normalizedPath() because it's expensive.
-     *
-     * @param   binding     the binding
-     * @return              the path
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private Path fixedPath (final @Nonnull Binding binding)
-      {
-        try // FIXME: see BMT-46 - try all posibile normalizations
-          {
-            return Paths.get(normalizedToNativeForm(toString(binding).get()));
-          }
-        catch (InvalidPathException e)
-          {
-            // FIXME: perhaps we could try a similar trick to normalizedPath() - the problem being the fact that it
-            // currently accepts a Path, but we can't convert to a Path. It should be rewritten to work with a String
-            // in input.
-            log.error("Invalid path {}", e.toString());
-            return Paths.get("broken SEE BMT-46");
-          }
       }
   }

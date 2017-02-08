@@ -31,10 +31,8 @@ package it.tidalwave.bluemarine2.rest.impl;
 import javax.annotation.Nonnull;
 import java.util.Collection;
 import java.util.Optional;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonView;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.Record;
 import lombok.Getter;
@@ -43,6 +41,10 @@ import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
+ * An adapter for exporting {@link Record} in JSON.
+ *
+ * @stereotype  Adapter
+ *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id: $
  *
@@ -50,44 +52,36 @@ import static it.tidalwave.role.Displayable.Displayable;
 @Getter
 @JsonInclude(JsonInclude.Include.NON_ABSENT)
 @JsonPropertyOrder(alphabetic = true)
-public class RecordJson
+public class RecordJson extends JsonSupport
   {
-    @JsonIgnore
-    private final Record record;
-
-    @JsonView(Profile.Master.class)
     private final String id;
 
-    @JsonView(Profile.Master.class)
     private final String displayName;
 
-    @JsonView(Profile.Master.class)
     private final Optional<Integer> diskCount;
 
-    @JsonView(Profile.Master.class)
     private final Optional<Integer> diskNumber;
 
-    @JsonView(Profile.Master.class)
     private final Optional<Integer> trackCount;
 
-    @JsonView(Profile.Master.class)
     private final Optional<String> source;
+
+    private final Optional<String> asin;
+
+    private final Optional<String> gtin;
+
+    private final Collection<String> tracks;
 
     public RecordJson (final @Nonnull Record record)
       {
-        this.record      = record;
         this.id          = record.getId().stringValue();
         this.displayName = record.as(Displayable).getDisplayName();
         this.diskCount   = record.getDiskCount();
         this.diskNumber  = record.getDiskNumber();
         this.trackCount  = record.getTrackCount();
         this.source      = record.getSource().map(Id::toString);
-      }
-
-    @Nonnull
-    @JsonView(Profile.Detail.class) // FIXME: doesn't work, tracks always included
-    public Collection<TrackJson> getTracks()
-      {
-        return record.findTracks().stream().map(TrackJson::new).collect(toList());
+        this.asin        = record.getAsin();
+        this.gtin        = record.getGtin();
+        this.tracks      = record.findTracks().stream().map(track -> resourceUri("track", track)).collect(toList());
       }
   }

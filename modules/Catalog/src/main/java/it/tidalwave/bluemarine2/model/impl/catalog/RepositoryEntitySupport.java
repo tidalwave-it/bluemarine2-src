@@ -32,6 +32,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Optional;
 import java.time.Duration;
+import java.nio.file.InvalidPathException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.query.Binding;
 import org.eclipse.rdf4j.query.BindingSet;
@@ -54,6 +57,8 @@ import lombok.experimental.Delegate;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedToNativeForm;
 
 /***********************************************************************************************************************
  *
@@ -61,7 +66,7 @@ import lombok.ToString;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @ToString(of = { "rdfsLabel", "id"})
+@RequiredArgsConstructor @ToString(of = { "rdfsLabel", "id"}) @Slf4j
 public class RepositoryEntitySupport implements Entity, Identifiable
   {
     @Nonnull
@@ -70,7 +75,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
     @Getter @Nonnull
     protected final Id id;
 
-    @Getter
+    @Getter @Nonnull
     protected final String rdfsLabel;
 
     @Getter @Nonnull
@@ -91,9 +96,22 @@ public class RepositoryEntitySupport implements Entity, Identifiable
                                     final @Nonnull BindingSet bindingSet,
                                     final @Nonnull String idName)
       {
+        this(repository, bindingSet, idName, toString(bindingSet.getBinding("label")).orElse(""));
+      }
+
+    /*******************************************************************************************************************
+     *
+     *
+     *
+     ******************************************************************************************************************/
+    public RepositoryEntitySupport (final @Nonnull Repository repository,
+                                    final @Nonnull BindingSet bindingSet,
+                                    final @Nonnull String idName,
+                                    final @Nonnull String rdfsLabel)
+      {
         this.repository = repository;
         this.id = new Id(toString(bindingSet.getBinding(idName)).get());
-        this.rdfsLabel = toString(bindingSet.getBinding("label")).orElse("");
+        this.rdfsLabel = rdfsLabel;
         this.fallback = toId(bindingSet.getBinding("fallback"));
         this.source = toId(Optional.ofNullable(bindingSet.getBinding("source"))
                                        .orElse(bindingSet.getBinding("fallback")));
@@ -187,6 +205,34 @@ public class RepositoryEntitySupport implements Entity, Identifiable
     protected static Optional<Duration> toDuration (final @Nullable Binding binding)
       {
         return Optional.ofNullable(binding).map(b -> b.getValue()).map(v -> Duration.ofMillis((int)Float.parseFloat(v.stringValue())));
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Tries to fix a path for character normalization issues (see BMT-46). The idea is to first normalize the encoding
+     * to the native form. If it doesn't work, a broken path is replaced to avoid further errors (of course, the
+     * resource won't be available when requested).
+     * It doesn't try to call normalizedPath() because it's expensive.
+     *
+     * @param   binding     the binding
+     * @return              the path
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    protected static Path toPath (final @Nonnull Binding binding)
+      {
+        try // FIXME: see BMT-46 - try all posibile normalizations
+          {
+            return Paths.get(normalizedToNativeForm(toString(binding).get()));
+          }
+        catch (InvalidPathException e)
+          {
+            // FIXME: perhaps we could try a similar trick to normalizedPath() - the problem being the fact that it
+            // currently accepts a Path, but we can't convert to a Path. It should be rewritten to work with a String
+            // in input.
+            log.error("Invalid path {}", e.toString());
+            return Paths.get("broken SEE BMT-46");
+          }
       }
 
     /*******************************************************************************************************************

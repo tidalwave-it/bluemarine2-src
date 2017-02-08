@@ -176,18 +176,17 @@ public class DefaultResourceServer implements ResourceServer
 
     /*******************************************************************************************************************
      *
-     *
+     * FIXME: this should go away when musing will be served by the REST music controller.
      *
      ******************************************************************************************************************/
     @Override
     public String urlForResource (final @Nonnull AudioFile resource)
       {
-        final Path path = rootPath.relativize(resource.getPath());
-        final String s = StreamSupport.stream(path.spliterator(), false)
+        final String s = StreamSupport.stream(resource.getPath().spliterator(), false)
                                       .map(p -> urlEncoded(p.toString()))
                                       .collect(Collectors.joining("/"));
 
-        return "http://" + ipAddress + ":" + port + "/" + s;
+        return "http://" + ipAddress + ":" + port + "/Music/" + s;
       }
 
     /*******************************************************************************************************************

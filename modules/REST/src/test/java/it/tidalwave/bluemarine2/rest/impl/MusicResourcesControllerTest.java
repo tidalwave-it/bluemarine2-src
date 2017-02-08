@@ -1,4 +1,4 @@
-/*
+    /*
  * #%L
  * *********************************************************************************************************************
  *
@@ -42,10 +42,6 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.ClientHttpResponse;
 import org.eclipse.rdf4j.repository.Repository;
-import org.eclipse.rdf4j.repository.RepositoryConnection;
-import org.eclipse.rdf4j.repository.RepositoryException;
-import org.eclipse.rdf4j.rio.RDFFormat;
-import org.eclipse.rdf4j.rio.RDFParseException;
 import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.MessageBus;
 import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
@@ -55,8 +51,8 @@ import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import it.tidalwave.bluemarine2.rest.ResponseEntityIo;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.EventBarrier;
@@ -64,6 +60,7 @@ import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
+import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
 
 /***********************************************************************************************************************
  *
@@ -74,6 +71,8 @@ import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 @Slf4j
 public class MusicResourcesControllerTest extends SpringTestSupport
   {
+    private static final Path PATH_TEST_SETS = Paths.get("target/test-classes/test-sets");
+
     private ResourceServer server;
 
     private MessageBus messageBus;
@@ -105,7 +104,8 @@ public class MusicResourcesControllerTest extends SpringTestSupport
      ******************************************************************************************************************/
     public MusicResourcesControllerTest()
       {
-        super("classpath:META-INF/DciAutoBeans.xml",
+        super(LifeCycle.AROUND_CLASS,
+              "classpath:META-INF/DciAutoBeans.xml",
               "classpath:META-INF/CommonsAutoBeans.xml",
               "classpath:META-INF/ModelAutoBeans.xml",
               "classpath:META-INF/PersistenceAutoBeans.xml",
@@ -116,13 +116,11 @@ public class MusicResourcesControllerTest extends SpringTestSupport
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-//    @BeforeClass
-    @BeforeMethod
+    @BeforeClass
     public void setup()
       throws Exception
       {
         server = context.getBean(ResourceServer.class);
-        postProcessor = s -> s.replaceAll(server.absoluteUrl(""), "http://<server>/");
         messageBus = context.getBean(MessageBus.class);
         final Persistence persistence = context.getBean(Persistence.class);
 
@@ -135,18 +133,19 @@ public class MusicResourcesControllerTest extends SpringTestSupport
         Thread.sleep(2000);
         barrier.await();
         final Repository repository = persistence.getRepository();
-        loadInMemoryCatalog(repository, Paths.get("target/test-classes/test-sets/model-iTunes-fg-20161210-1.n3"));
-        loadInMemoryCatalog(repository, Paths.get("target/test-classes/test-sets/model-iTunes-aac-fg-20170131-1.n3"));
-        loadInMemoryCatalog(repository, Paths.get("target/test-classes/test-sets/musicbrainz-iTunes-fg-20161210-1.n3"));
+        loadRepository(repository, PATH_TEST_SETS.resolve("model-iTunes-fg-20161210-1.n3"));
+        loadRepository(repository, PATH_TEST_SETS.resolve("model-iTunes-aac-fg-20170131-1.n3"));
+        loadRepository(repository, PATH_TEST_SETS.resolve("musicbrainz-iTunes-fg-20161210-1.n3"));
 
-        baseUrl = String.format("http://%s:%d", server.getIpAddress(), server.getPort());
+        baseUrl = server.absoluteUrl("");
+        log.info(">>>> baseUrl: {}", baseUrl);
+        postProcessor = s -> s.replaceAll(baseUrl, "http://<server>/");
       }
 
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-//    @AfterClass
-    @AfterMethod
+    @AfterClass
     public void shutdown()
       throws Exception
       {
@@ -163,8 +162,9 @@ public class MusicResourcesControllerTest extends SpringTestSupport
         // given
         final RestTemplate restTemplate = new RestTemplate();
         restTemplate.setErrorHandler(IGNORE_HTTP_ERRORS);
+        final Class<?> responseType = (url.contains("content") || url.contains("coverart")) ? byte[].class : String.class;
         // when
-        final ResponseEntity<String> response = restTemplate.getForEntity(URI.create(baseUrl + url), String.class);
+        final ResponseEntity<?> response = restTemplate.getForEntity(URI.create(baseUrl + url), responseType);
         // then
         final Path actualPath = PATH_TEST_RESULTS.resolve(expected);
         final Path expectedPath = PATH_EXPECTED_TEST_RESULTS.resolve(expected);
@@ -185,58 +185,62 @@ public class MusicResourcesControllerTest extends SpringTestSupport
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @Nonnull // FIXME: duplicated code
-    private static void loadInMemoryCatalog (final @Nonnull Repository repository, final @Nonnull Path path)
-      throws RDFParseException, IOException, RepositoryException
-      {
-        log.info("loadInMemoryCatalog(..., {})", path);
-
-        try (final RepositoryConnection connection = repository.getConnection())
-          {
-            connection.add(path.toFile(), null, RDFFormat.N3);
-            connection.commit();
-          }
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
     @DataProvider
     private static Object[][] resources()
       {
         return new Object[][]
           {
-            { "/rest/record",
+            // static resources
+            { "dummy.txt",
+              "dummy.txt.txt" },
+
+            // dynamic resources
+            { "rest/record",
               "records.json.txt" },
 
-            { "/rest/track",
-              "tracks.json.txt" },
-
-            { "/rest/audiofile",
-              "audiofiles.json.txt" },
-
-            { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=",
+            { "rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=",
               "record-eLWktOMBbcOWysVn6AW6kksBS7Q=.json.txt" },
 
-            { "/rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=/track",
+            { "rest/record/urn:bluemarine:record:not_existing",
+              "record-not_existing.json.txt" },
+
+            { "rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=/track",
               "record-eLWktOMBbcOWysVn6AW6kksBS7Q=-tracks.json.txt" },
 
-            { "/index.xhtml",
-              "index.xhtml.txt" },
+            // FIXME: this is wrong, returning 200 + empty JSON while it should be 404
+            { "rest/record/urn:bluemarine:record:not_existing/track",
+              "record-not_existing-tracks.json.txt" },
 
-            { "/rest/audiofile/urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=",
-              "audiofile-urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=.json.txt" },
+            { "rest/record/urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=/coverart",
+              "record-XoqvktWLs6mu64qGOxQ3NyPzXVY=-coverart.jpg.txt" },
 
-            { "/rest/audiofile/urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=/content",
-              "audiofile-urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=-content.mp3.txt" },
+            { "rest/track",
+              "tracks.json.txt" },
+
+            { "rest/track/urn:bluemarine:track:Q9KPhUq1xN6VJRpV5gWsDkRYHUc=",
+              "track-Q9KPhUq1xN6VJRpV5gWsDkRYHUc=.json.txt" },
+
+            { "rest/track/urn:bluemarine:track:not_existing",
+              "track-not_existing.json.txt" },
+
+            { "rest/audiofile",
+              "audiofiles.json.txt" },
+
+            { "rest/audiofile/urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=",
+              "audiofile-5lCKAUoE3IfmgttCE3a5U23gxQg=.json.txt" },
+
+            { "rest/audiofile/urn:bluemarine:audiofile:not_existing",
+              "audiofile-not_existing.json.txt" },
+
+            { "rest/audiofile/urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=/content",
+              "audiofile-Nmd7Bm3DQ922WhPkJn5YD_i_eK4=-content.mp3.txt" },
+
+            { "rest/audiofile/urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=/coverart",
+              "audiofile-Nmd7Bm3DQ922WhPkJn5YD_i_eK4=-coverart.jpg.txt" },
 
             // missing coverart
-            { "/rest/audiofile/urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=/coverart",
-              "audiofile-urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=-coverart.txt" },
-
-            // coverart
-            { "/rest/audiofile/urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=/coverart",
-              "audiofile-urn:bluemarine:audiofile:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=-coverart.jpeg.txt" },
+            { "rest/audiofile/urn:bluemarine:audiofile:5lCKAUoE3IfmgttCE3a5U23gxQg=/coverart",
+              "audiofile-5lCKAUoE3IfmgttCE3a5U23gxQg=-coverart.jpg.txt" },
           };
       }
   }
