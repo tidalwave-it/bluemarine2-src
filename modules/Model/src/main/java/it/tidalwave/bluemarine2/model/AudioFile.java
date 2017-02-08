@@ -30,10 +30,10 @@ package it.tidalwave.bluemarine2.model;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
+import java.io.IOException;
 import java.nio.file.Path;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
-import java.io.IOException;
 
 /***********************************************************************************************************************
  *
@@ -48,7 +48,7 @@ import java.io.IOException;
 public interface AudioFile extends MediaItem, Identifiable // FIXME: MediaItem should not be statically Parentable
   {
     @Nonnull
-    public Path getPath();
+    public Path getPath(); // FIXME: rename to getRelativePath
 
     @Nonnull
     public Optional<byte[]> getContent()

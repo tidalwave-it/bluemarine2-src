@@ -33,7 +33,7 @@ RECORD The Copland Collection: Orchestral and Ballet Works, 1936-1948 (disc 1) (
 
 ALL AUDIO FILES (1):
 
-  09:48          urn:bluemarine:audiofile:401312e43ba18e55fc16480d68366ed0200cb155 Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/1-10 Quiet City.m4a
+  09:48          urn:bluemarine:audiofile:401312e43ba18e55fc16480d68366ed0200cb155 Aaron Copland & London Symphony Orchestra/The Copland Collection_ Orchestral & Ballet Works/1-10 Quiet City.m4a    -    1-10 Quiet City.m4a
 
 
 TRACKS ORPHAN OF ARTIST (0):

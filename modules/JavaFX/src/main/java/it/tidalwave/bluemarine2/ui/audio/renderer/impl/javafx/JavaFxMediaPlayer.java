@@ -30,10 +30,12 @@ package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
 import java.time.Duration;
 import java.nio.file.Path;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.media.Media;
+import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.renderer.spi.MediaPlayerSupport;
 import lombok.extern.slf4j.Slf4j;
@@ -54,6 +56,9 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
 
     @CheckForNull
     private javafx.scene.media.MediaPlayer mediaPlayer;
+
+    @Inject
+    private MediaFileSystem fileSystem;
 
     /*******************************************************************************************************************
      *
@@ -80,7 +85,7 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
         log.info("setMediaItem({})", mediaItem);
         checkNotPlaying();
         this.mediaItem = mediaItem;
-        final Path path = mediaItem.getPath().toAbsolutePath();
+        final Path path = fileSystem.getRootPath().resolve(mediaItem.getPath()).toAbsolutePath();
         log.debug("path:     {}", path);
         log.debug("metadata: {}", mediaItem.getMetadata());
         media = new Media(path.toUri().toString());

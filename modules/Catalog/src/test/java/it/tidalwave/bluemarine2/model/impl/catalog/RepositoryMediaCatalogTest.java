@@ -41,11 +41,7 @@ import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.eclipse.rdf4j.repository.Repository;
-import org.eclipse.rdf4j.repository.RepositoryConnection;
-import org.eclipse.rdf4j.repository.RepositoryException;
 import org.eclipse.rdf4j.repository.sail.SailRepository;
-import org.eclipse.rdf4j.rio.RDFFormat;
-import org.eclipse.rdf4j.rio.RDFParseException;
 import org.eclipse.rdf4j.sail.memory.MemoryStore;
 import org.testng.annotations.DataProvider;
 import it.tidalwave.util.Id;
@@ -53,6 +49,7 @@ import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.MusicPerformer;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.Track;
+import it.tidalwave.bluemarine2.model.finder.AudioFileFinder;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
@@ -68,7 +65,7 @@ import static it.tidalwave.role.Identifiable.Identifiable;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.util.test.FileComparisonUtils.*;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
-import it.tidalwave.bluemarine2.model.finder.AudioFileFinder;
+import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
 import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
 import static org.testng.Assert.*;
 
@@ -113,10 +110,10 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         if (otherTestSetName != null)
           {
-            loadInMemoryCatalog(repository, PATH_TEST_SETS.resolve(otherTestSetName + ".n3"));
+            loadRepository(repository, PATH_TEST_SETS.resolve(otherTestSetName + ".n3"));
           }
 
-        loadInMemoryCatalog(repository, PATH_TEST_SETS.resolve(testSetName + ".n3"));
+        loadRepository(repository, PATH_TEST_SETS.resolve(testSetName + ".n3"));
         // when
         final RepositoryMediaCatalog underTest = new RepositoryMediaCatalog(repository);
         System.setProperty("blueMarine2.source", source.stringValue());
@@ -249,22 +246,6 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
     private String displayNameOf (final @Nonnull Entity entity)
       {
         return String.format("%s (%s)", entity.as(Displayable).getDisplayName(), entity.as(Identifiable).getId());
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private static void loadInMemoryCatalog (final @Nonnull Repository repository, final @Nonnull Path path)
-      throws RDFParseException, IOException, RepositoryException
-      {
-        log.info("loadInMemoryCatalog(..., {})", path);
-
-        try (final RepositoryConnection connection = repository.getConnection())
-          {
-            connection.add(path.toFile(), null, RDFFormat.N3);
-            connection.commit();
-          }
       }
 
     /*******************************************************************************************************************
