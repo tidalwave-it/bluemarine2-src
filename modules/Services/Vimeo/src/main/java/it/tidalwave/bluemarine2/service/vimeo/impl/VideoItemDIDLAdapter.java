@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.service.vimeo.impl;
 
+import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.nio.file.Path;
@@ -59,9 +60,9 @@ import it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapterSupport;
 @Immutable @DciRole(datumType = VideoMediaItem.class)
 public class VideoItemDIDLAdapter extends DIDLAdapterSupport<VideoMediaItem>
   {
-    public VideoItemDIDLAdapter (final @Nonnull VideoMediaItem datum)
+    public VideoItemDIDLAdapter (final @Nonnull VideoMediaItem datum, final @Nonnull ResourceServer server)
       {
-        super(datum);
+        super(datum, server);
       }
 
     /*******************************************************************************************************************
