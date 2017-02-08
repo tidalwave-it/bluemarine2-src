@@ -34,13 +34,17 @@ import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonView;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.Track;
 import lombok.Getter;
 import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
 
 /***********************************************************************************************************************
+ *
+ * An adapter for exporting {@link Track} in JSON.
+ *
+ * @stereotype  Adapter
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id: $
@@ -49,37 +53,36 @@ import static it.tidalwave.role.Displayable.Displayable;
 @Getter
 @JsonInclude(Include.NON_ABSENT)
 @JsonPropertyOrder(alphabetic = true)
-public class TrackJson
+public class TrackJson extends JsonSupport
   {
-    @JsonView(Profile.Master.class)
     private final String id;
 
-    @JsonView(Profile.Master.class)
     private final String displayName;
 
-    @JsonView(Profile.Master.class)
+    private final Optional<String> record;
+
     private final Optional<Integer> diskCount;
 
-    @JsonView(Profile.Master.class)
     private final Optional<Integer> diskNumber;
 
-    @JsonView(Profile.Master.class)
     private final Optional<Integer> trackNumber;
 
-    @JsonView(Profile.Master.class)
     private final Optional<String> duration;
 
-    @JsonView(Profile.Master.class)
     private final Optional<String> source;
+
+    private final Optional<String> audioFile;
 
     public TrackJson (final @Nonnull Track track)
       {
         this.id          = track.getId().stringValue();
         this.displayName = track.as(Displayable).getDisplayName();
+        this.record      = track.getRecord().map(r -> resourceUri("record", r));
         this.diskCount   = track.getDiskCount();
         this.diskNumber  = track.getDiskNumber();
         this.trackNumber = track.getTrackNumber();
         this.duration    = track.getDuration().map(Duration::toString);
         this.source      = track.getSource().map(Id::toString);
+        this.audioFile   = track.asOptional(AudioFileSupplier).map(afs -> resourceUri("audiofile", afs.getAudioFile()));
       }
   }

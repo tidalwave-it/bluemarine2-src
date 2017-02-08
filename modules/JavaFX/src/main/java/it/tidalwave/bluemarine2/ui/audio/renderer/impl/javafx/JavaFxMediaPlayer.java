@@ -30,10 +30,12 @@ package it.tidalwave.bluemarine2.ui.audio.renderer.impl.javafx;
 
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
 import java.time.Duration;
 import java.nio.file.Path;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.media.Media;
+import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.model.MediaItem;
 import it.tidalwave.bluemarine2.ui.audio.renderer.spi.MediaPlayerSupport;
 import lombok.extern.slf4j.Slf4j;
@@ -48,12 +50,15 @@ import lombok.extern.slf4j.Slf4j;
 public class JavaFxMediaPlayer extends MediaPlayerSupport
   {
     private static final javafx.util.Duration SKIP_DURATION = javafx.util.Duration.seconds(1);
-    
+
     @CheckForNull
     private Media media;
 
     @CheckForNull
     private javafx.scene.media.MediaPlayer mediaPlayer;
+
+    @Inject
+    private MediaFileSystem fileSystem;
 
     /*******************************************************************************************************************
      *
@@ -80,7 +85,7 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
         log.info("setMediaItem({})", mediaItem);
         checkNotPlaying();
         this.mediaItem = mediaItem;
-        final Path path = mediaItem.getPath().toAbsolutePath();
+        final Path path = fileSystem.getRootPath().resolve(mediaItem.getPath()).toAbsolutePath();
         log.debug("path:     {}", path);
         log.debug("metadata: {}", mediaItem.getMetadata());
         media = new Media(path.toUri().toString());
@@ -139,7 +144,7 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
     public void stop()
       {
         log.info("stop()");
-        
+
         if (mediaPlayer != null)
           {
             mediaPlayer.stop();
@@ -156,7 +161,7 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
     public void pause()
       {
         log.info("pause()");
-        
+
         if (mediaPlayer != null)
           {
             mediaPlayer.pause();
@@ -173,7 +178,7 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
     public void rewind()
       {
         log.info("rewind()");
-        
+
         if (mediaPlayer != null)
           {
             mediaPlayer.seek(mediaPlayer.getCurrentTime().subtract(SKIP_DURATION));
@@ -189,7 +194,7 @@ public class JavaFxMediaPlayer extends MediaPlayerSupport
     public void fastForward()
       {
         log.info("fastForward()");
-        
+
         if (mediaPlayer != null)
           {
             mediaPlayer.seek(mediaPlayer.getCurrentTime().add(SKIP_DURATION));
