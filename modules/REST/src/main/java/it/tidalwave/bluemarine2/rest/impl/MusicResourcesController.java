@@ -299,6 +299,7 @@ public class MusicResourcesController
         log.info("getAudioFileCoverArt({})", id);
         checkStatus();
         final Optional<AudioFile> audioFile = catalog.findAudioFiles().withId(new Id(id)).optionalResult();
+        log.debug(">>>> audioFile: {}", audioFile);
         return audioFile.flatMap(file -> file.getMetadata().getAll(ARTWORK).stream().findFirst())
                         .map(bytes -> bytesResponse(bytes, "image", "jpeg", "coverart.jpg"))
                         .orElseThrow(NotFoundException::new);

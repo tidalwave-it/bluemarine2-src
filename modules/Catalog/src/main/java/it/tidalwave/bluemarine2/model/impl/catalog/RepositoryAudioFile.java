@@ -161,7 +161,9 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     private Metadata loadFallbackMetadata()
       {
         final Path absolutePath = getAbsolutePath();
-        return Files.exists(absolutePath) ? AudioMetadataFactory.loadFrom(absolutePath) : new MetadataSupport(path);
+        log.debug(">>>> loading fallback metadata from: {}", absolutePath);
+        // Don't check for file existence - see BMT-46. AudioMetadataFactory does all.
+        return AudioMetadataFactory.loadFrom(absolutePath);
       }
 
     @Nonnull
