@@ -39,10 +39,14 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import org.eclipse.rdf4j.repository.Repository;
+import org.eclipse.rdf4j.repository.RepositoryConnection;
+import org.eclipse.rdf4j.rio.RDFFormat;
 import it.tidalwave.util.As8;
 import it.tidalwave.role.SimpleComposite8;
 import it.tidalwave.bluemarine2.util.Dumpable;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils.assertSameContents;
 import static it.tidalwave.role.SimpleComposite8.SimpleComposite8;
 import static lombok.AccessLevel.PRIVATE;
@@ -53,7 +57,7 @@ import static lombok.AccessLevel.PRIVATE;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@NoArgsConstructor(access = PRIVATE)
+@NoArgsConstructor(access = PRIVATE) @Slf4j
 public class TestUtilities
   {
     /*******************************************************************************************************************
@@ -82,5 +86,21 @@ public class TestUtilities
         composite.ifPresent(c -> c.findChildren().results().forEach(child -> result.addAll(dump((As8)child))));
 
         return result;
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    public static void loadRepository (final @Nonnull Repository repository, final @Nonnull Path path)
+      throws Exception
+      {
+        log.info("loadRepository(..., {})", path);
+
+        try (final RepositoryConnection connection = repository.getConnection())
+          {
+            connection.add(path.toFile(), null, RDFFormat.N3);
+            connection.commit();
+          }
       }
   }

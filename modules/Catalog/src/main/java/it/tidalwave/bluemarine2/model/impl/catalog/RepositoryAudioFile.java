@@ -36,7 +36,6 @@ import java.util.Optional;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import org.eclipse.rdf4j.query.BindingSet;
 import org.eclipse.rdf4j.repository.Repository;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -49,13 +48,13 @@ import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 import it.tidalwave.bluemarine2.model.spi.MetadataSupport;
 import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
-import it.tidalwave.bluemarine2.model.vocabulary.BM;
 import it.tidalwave.bluemarine2.model.impl.AudioMetadataFactory;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
@@ -68,18 +67,17 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @Configurable @EqualsAndHashCode(of = { "path", "trackId" }, callSuper = false)
-@Slf4j
+@Immutable @Configurable @EqualsAndHashCode(of = { "path", "trackId" }, callSuper = false) @Slf4j
 public class RepositoryAudioFile extends RepositoryEntitySupport implements AudioFile
   {
     @Getter @Nonnull
-    private final Path path;
+    private final Path path; // FIXME: rename to relativePath?
 
     @Getter @Nonnull
-    private final Path relativePath;
+    private final Metadata metadata;
 
     @Nonnull
-    private final Id trackId;
+    private final Optional<Id> trackId;
 
     @Nonnull
     private final Optional<Duration> duration;
@@ -87,63 +85,23 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     @Nonnull
     private final Optional<Long> fileSize;
 
-    @Getter @Nonnull
-    private final Metadata metadata;
+    private final Memoize<Metadata> fallbackMetadata = new Memoize<>();
 
     @Inject
     private MediaFileSystem fileSystem;
 
-    private final Memoize<Metadata> fallbackMetadata = new Memoize<>();
-
-    public RepositoryAudioFile (final @Nonnull Repository repository,
-                                final @Nonnull BindingSet bindingSet)
+    public RepositoryAudioFile (final @Nonnull Repository repository, final @Nonnull BindingSet bindingSet)
       {
-        super(repository, bindingSet, "audioFile");
-
-        // See BMT-36
-        this.path         = Paths.get(toString(bindingSet.getBinding("path")).get());
-        this.relativePath = path;// FIXME basePath.relativize(path);
-
-        this.duration     = toDuration(bindingSet.getBinding("duration"));
-        this.fileSize     = toLong(bindingSet.getBinding("fileSize"));
-
-        this.trackId = null; // FIXME
+        super(repository, bindingSet, "audioFile", rdfsLabelOf(bindingSet.getBinding("path").getValue().stringValue()));
+        this.path      = toPath(bindingSet.getBinding("path"));
+        this.duration  = toDuration(bindingSet.getBinding("duration"));
+        this.fileSize  = toLong(bindingSet.getBinding("fileSize"));
+        this.trackId   = toId(bindingSet.getBinding("track"));
 
         this.metadata = new MetadataSupport(path).with(TITLE, rdfsLabel)
                                                  .with(DURATION, duration)
                                                  .with(FILE_SIZE, fileSize)
                                                  .withFallback(key -> fallbackMetadata.get(this::loadFallbackMetadata));
-      }
-
-    // FIXME: too maby arguments, pass a BindingSet
-    public RepositoryAudioFile (final @Nonnull Repository repository,
-                                final @Nonnull Id id,
-                                final @Nonnull Id trackId,
-                                final @Nonnull Path path,
-                                final @Nonnull Path basePath,
-                                final @Nonnull Optional<Duration> duration,
-                                final String rdfsLabel,
-                                final @Nonnull Optional<Long> fileSize)
-      {
-        super(repository, id, rdfsLabel, Optional.of(BM.ID_SOURCE_EMBEDDED), Optional.of(BM.ID_SOURCE_EMBEDDED));
-        this.trackId = trackId;
-        // See BMT-36
-        this.path = path;
-        this.relativePath = path;// FIXME basePath.relativize(path);
-
-        this.duration = duration;
-        this.fileSize = fileSize;
-
-        this.metadata = new MetadataSupport(path).with(TITLE, rdfsLabel)
-                                                 .with(DURATION, duration)
-                                                 .with(FILE_SIZE, fileSize)
-                                                 .withFallback(key -> fallbackMetadata.get(this::loadFallbackMetadata));
-      }
-
-    @Override @Nonnull
-    public String toString()
-      {
-        return String.format("RepositoryAudioFileEntity(%s, %s)", relativePath, id);
       }
 
     @Override @Nonnull
@@ -156,27 +114,27 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
     public Optional<byte[]> getContent()
       throws IOException
       {
-        final Path absolutePath = getAbsolutePath();
+        final Path absolutePath = normalizedPath(getAbsolutePath());
         return Files.exists(absolutePath) ? Optional.of(Files.readAllBytes(absolutePath)) : Optional.empty();
       }
 
     @Override @Nonnull
     public MusicArtistFinder findMakers()
       {
-        return new RepositoryMusicArtistFinder(repository).makerOf(trackId);
+        return new RepositoryMusicArtistFinder(repository).makerOf(trackId.get());
       }
 
     @Override @Nonnull
     public MusicArtistFinder findComposers()
       {
-        return new RepositoryMusicArtistFinder(repository).makerOf(trackId);
+        return new RepositoryMusicArtistFinder(repository).makerOf(trackId.get());
 //        return new RepositoryAudioFileArtistFinder(this); FIXME
       }
 
     @Override @Nonnull
     public Optional<Record> getRecord()
       {
-        return new RepositoryRecordFinder(repository).recordOf(id).optionalFirstResult();
+        return trackId.flatMap(tid -> new RepositoryRecordFinder(repository).containingTrack(tid).optionalFirstResult());
       }
 
     @Override @Nonnull
@@ -186,23 +144,37 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
       }
 
     @Override @Nonnull
+    public String toString()
+      {
+        return String.format("RepositoryAudioFileEntity(%s, %s)", path, id);
+      }
+
+    @Override @Nonnull
     public String toDumpString()
       {
-        return String.format("%s %8s %s %s", duration.map(Formatters::format).orElse("??:??"),
-                                             fileSize.map(l -> l.toString()).orElse(""),
-                                             id, relativePath);
+        return String.format("%s %8s %s %s    -    %s", duration.map(Formatters::format).orElse("??:??"),
+                                                        fileSize.map(l -> l.toString()).orElse(""),
+                                                        id, path, rdfsLabel);
       }
 
     @Nonnull
     private Metadata loadFallbackMetadata()
       {
         final Path absolutePath = getAbsolutePath();
-        return Files.exists(absolutePath) ? AudioMetadataFactory.loadFrom(absolutePath) : new MetadataSupport(path);
+        log.debug(">>>> loading fallback metadata from: {}", absolutePath);
+        // Don't check for file existence, it would fail for some files - see BMT-46. AudioMetadataFactory does all.
+        return AudioMetadataFactory.loadFrom(absolutePath);
       }
 
     @Nonnull
     private Path getAbsolutePath()
       {
         return fileSystem.getRootPath().resolve(path);
+      }
+
+    @Nonnull
+    private static String rdfsLabelOf (final @Nonnull String path)
+      {
+        return path.replaceAll("^.*/", "");
       }
   }

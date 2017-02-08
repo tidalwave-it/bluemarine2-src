@@ -28,14 +28,14 @@
  */
 package it.tidalwave.bluemarine2.rest;
 
+import java.io.ByteArrayOutputStream;
 import javax.annotation.Nonnull;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import org.springframework.util.LinkedMultiValueMap;
@@ -62,7 +62,7 @@ public class ResponseEntityIo
      ******************************************************************************************************************/
     @Nonnull
     public static void store (final @Nonnull Path path,
-                              final @Nonnull ResponseEntity<String> response,
+                              final @Nonnull ResponseEntity<?> response,
                               final @Nonnull List<String> ignoredHeaders)
       {
           store(path, response, ignoredHeaders, Function.identity());
@@ -74,7 +74,7 @@ public class ResponseEntityIo
      ******************************************************************************************************************/
     @Nonnull
     public static void store (final @Nonnull Path path,
-                              final @Nonnull ResponseEntity<String> response,
+                              final @Nonnull ResponseEntity<?> response,
                               final @Nonnull List<String> ignoredHeaders,
                               final @Nonnull Function<String, String> postProcessor)
       {
@@ -83,9 +83,9 @@ public class ResponseEntityIo
             log.trace("store({}, ..., ...)", path);
 
             Files.createDirectories(path.getParent());
-            final StringWriter sw = new StringWriter();
+            final ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
-            try (final PrintWriter pw = new PrintWriter(sw))
+            try (final PrintWriter pw = new PrintWriter(new OutputStreamWriter(baos, UTF_8)))
               {
                 pw.printf("HTTP/1.1 %d %s%n", response.getStatusCode().value(), response.getStatusCode().name());
                 response.getHeaders().entrySet().stream()
@@ -93,10 +93,21 @@ public class ResponseEntityIo
                         .sorted(comparing(e -> e.getKey()))
                         .forEach(e -> pw.printf("%s: %s%n", e.getKey(), e.getValue().get(0)));
                 pw.println();
-                pw.print(response.getBody());
+                pw.flush();
+                final Object body = response.getBody();
+                log.info(">>>> TYPE {}", body.getClass());
+
+                if (body instanceof String)
+                  {
+                    pw.print(postProcessor.apply((String)body));
+                  }
+                else
+                  {
+                    baos.write((byte[])body);
+                  }
               }
 
-            Files.write(path, Arrays.asList(postProcessor.apply(sw.toString())), UTF_8);
+            Files.write(path, baos.toByteArray());
           }
         catch (IOException e)
           {

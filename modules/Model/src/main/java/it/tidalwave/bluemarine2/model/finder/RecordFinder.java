@@ -80,7 +80,7 @@ public interface RecordFinder extends SourceAwareFinder<Record, RecordFinder>,
      *
      ******************************************************************************************************************/
     @Nonnull
-    public RecordFinder recordOf (@Nonnull Id trackId);
+    public RecordFinder containingTrack (@Nonnull Id trackId);
 
     /*******************************************************************************************************************
      *
@@ -91,8 +91,8 @@ public interface RecordFinder extends SourceAwareFinder<Record, RecordFinder>,
      *
      ******************************************************************************************************************/
     @Nonnull
-    public default RecordFinder recordOf (final @Nonnull Track track)
+    public default RecordFinder containingTrack (final @Nonnull Track track)
       {
-        return recordOf(track.getId());
+        return RecordFinder.this.containingTrack(track.getId());
       }
   }

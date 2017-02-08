@@ -31,9 +31,11 @@ package it.tidalwave.bluemarine2.commons.test;
 import javax.annotation.Nonnull;
 import java.util.Arrays;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import it.tidalwave.role.ContextManager;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -45,26 +47,73 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SpringTestSupport
   {
+    protected enum LifeCycle
+      {
+        AROUND_METHOD, AROUND_CLASS
+      }
+
     protected ClassPathXmlApplicationContext context;
+
+    private final LifeCycle lifeCycle;
 
     @Nonnull
     private final String[] configLocations;
 
-    protected SpringTestSupport (final @Nonnull String ... configLocations)
+    protected SpringTestSupport (final @Nonnull LifeCycle lifeCycle, final @Nonnull String ... configLocations)
       {
+        this.lifeCycle = lifeCycle;
         this.configLocations = configLocations;
       }
 
+    protected SpringTestSupport (final @Nonnull String ... configLocations)
+      {
+        this(LifeCycle.AROUND_METHOD, configLocations);
+      }
+
     @BeforeMethod
-    public final void createSpringContext()
+    public final void beforeMethod()
+      {
+        if (lifeCycle == LifeCycle.AROUND_METHOD)
+          {
+            createSpringContext();
+          }
+      }
+
+    @AfterMethod(timeOut = 60000)
+    public final void afterMethod()
+      {
+        if (lifeCycle == LifeCycle.AROUND_METHOD)
+          {
+            closeSpringContext();
+          }
+      }
+
+    @BeforeClass
+    public final void beforeClass()
+      {
+        if (lifeCycle == LifeCycle.AROUND_CLASS)
+          {
+            createSpringContext();
+          }
+      }
+
+    @AfterClass(timeOut = 60000)
+    public final void afterClass()
+      {
+        if (lifeCycle == LifeCycle.AROUND_CLASS)
+          {
+            closeSpringContext();
+          }
+      }
+
+    private void createSpringContext()
       {
         log.info("Spring configuration locations: {}", Arrays.toString(configLocations));
         context = new ClassPathXmlApplicationContext(configLocations);
         log.info(">>>> bean names: {}", Arrays.toString(context.getBeanDefinitionNames()));
       }
 
-    @AfterMethod(timeOut = 60000)
-    public final void closeSpringContext()
+    private void closeSpringContext()
       {
         log.info("Closing Spring context...");
         context.close();

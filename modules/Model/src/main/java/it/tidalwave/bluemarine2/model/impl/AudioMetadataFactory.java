@@ -80,18 +80,19 @@ public final class AudioMetadataFactory
       {
         Metadata metadata = new MetadataSupport(path);
         AudioFile audioFile = null;
+        File file = null;
 
         try
           {
-            final Path aPath = normalizedPath(path.toAbsolutePath());
-            log.debug("path: {}", aPath);
-            final File file = toFileBMT46(aPath);
+            final Path normalizedPath = normalizedPath(path.toAbsolutePath());
+            log.debug("path: {}", normalizedPath);
+            file = toFileBMT46(normalizedPath);
 //            audioFile = AudioFileIO.read(aPath.toFile());
             audioFile = new MP3FileReader().read(file); // FIXME in some cases AudioFileIO doesn't get the right file extension
             final AudioHeader header = audioFile.getAudioHeader();
             final Tag tag = audioFile.getTag(); // FIXME: getFirst below... should get all?
 
-            metadata = metadata.with(FILE_SIZE,       Files.size(path))
+            metadata = metadata.with(FILE_SIZE,       Files.size(normalizedPath))
                                .with(DURATION,        Duration.ofSeconds(header.getTrackLength()))
                                .with(BIT_RATE,        (int)header.getBitRateAsNumber())
                                .with(SAMPLE_RATE,     header.getSampleRateAsNumber())
@@ -166,6 +167,8 @@ public final class AudioMetadataFactory
 //                    log.debug("Album image mime type: " + id3v2Tag.getAlbumImageMimeType());
 //                  }
 //              }
+
+            log.trace(">>>> loaded keys for {}: {}", path, metadata.getKeys());
           }
         // FIXME: should we be more tolerant in general and expect an exception for every tag?
         // e.g. for wav files
@@ -176,7 +179,7 @@ public final class AudioMetadataFactory
         catch (IOException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
 //        catch (IOException | CannotReadException | TagException | ReadOnlyFileException | InvalidAudioFrameException e)
           {
-            log.error("While reading " + audioFile + " --- " + path, e);
+            log.error("While reading " + audioFile + " --- " + path + " --- " + file, e);
           }
 
         return metadata;
