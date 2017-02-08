@@ -92,7 +92,7 @@ public final class AudioMetadataFactory
             final AudioHeader header = audioFile.getAudioHeader();
             final Tag tag = audioFile.getTag(); // FIXME: getFirst below... should get all?
 
-            metadata = metadata.with(FILE_SIZE,       Files.size(path))
+            metadata = metadata.with(FILE_SIZE,       Files.size(aPath))
                                .with(DURATION,        Duration.ofSeconds(header.getTrackLength()))
                                .with(BIT_RATE,        (int)header.getBitRateAsNumber())
                                .with(SAMPLE_RATE,     header.getSampleRateAsNumber())
