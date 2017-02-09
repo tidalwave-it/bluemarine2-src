@@ -49,12 +49,14 @@ import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.model.spi.NamedEntity;
+import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
 import lombok.experimental.Delegate;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import static java.util.Arrays.*;
 import static java.util.Collections.*;
 import static it.tidalwave.role.Displayable.Displayable;
+import javax.annotation.Nonnegative;
 
 /***********************************************************************************************************************
  *
@@ -227,6 +229,13 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
       throws IOException
       {
         return Files.exists(path) ? Optional.of(Files.readAllBytes(path)) : Optional.empty();
+      }
+
+    @Override @Nonnegative
+    public long getSize()
+      throws IOException
+      {
+        return Files.size(path);
       }
 
     @Override @Nonnull

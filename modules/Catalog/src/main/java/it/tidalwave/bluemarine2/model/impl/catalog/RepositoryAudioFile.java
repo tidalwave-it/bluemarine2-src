@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.model.impl.catalog;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import javax.inject.Inject;
@@ -116,6 +117,13 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
       {
         final Path absolutePath = normalizedPath(getAbsolutePath());
         return Files.exists(absolutePath) ? Optional.of(Files.readAllBytes(absolutePath)) : Optional.empty();
+      }
+
+    @Override @Nonnegative
+    public long getSize()
+      throws IOException
+      {
+        return Files.size(normalizedPath(getAbsolutePath()));
       }
 
     @Override @Nonnull
