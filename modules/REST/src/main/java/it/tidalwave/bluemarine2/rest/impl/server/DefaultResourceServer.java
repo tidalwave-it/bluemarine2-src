@@ -32,9 +32,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 import java.util.Enumeration;
 import java.util.EnumSet;
 import java.io.IOException;
@@ -62,7 +60,6 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.message.PowerOffNotification;
-import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.Getter;
@@ -111,7 +108,6 @@ public class DefaultResourceServer implements ResourceServer
         servletContext.setWelcomeFiles(new String[] { "index.xhtml" });
         final DelegateWebApplicationContext wac = new DelegateWebApplicationContext(applicationContext, servletContext.getServletContext());
         // FIXME: make this another REST stuff, serving audiofile/urn:....
-        servletContext.addServlet(new ServletHolder("music", new RangeServlet(rootPath)), "/Music/*");
         servletContext.addServlet(new ServletHolder("spring", new DispatcherServlet(wac)), "/rest/*");
         servletContext.addServlet(new ServletHolder("default", new DefaultServlet()), "/*");
         servletContext.addFilter(new FilterHolder(new LoggingFilter()), "/*", EnumSet.allOf(DispatcherType.class));
@@ -176,21 +172,6 @@ public class DefaultResourceServer implements ResourceServer
       throws Exception
       {
         server.stop();
-      }
-
-    /*******************************************************************************************************************
-     *
-     * FIXME: this should go away when musing will be served by the REST music controller.
-     *
-     ******************************************************************************************************************/
-    @Override
-    public String urlForResource (final @Nonnull AudioFile resource)
-      {
-        final String s = StreamSupport.stream(resource.getPath().spliterator(), false)
-                                      .map(p -> urlEncoded(p.toString()))
-                                      .collect(Collectors.joining("/"));
-
-        return "http://" + ipAddress + ":" + port + "/Music/" + s;
       }
 
     /*******************************************************************************************************************

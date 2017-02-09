@@ -57,6 +57,8 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
 
 /***********************************************************************************************************************
  *
@@ -112,11 +114,11 @@ public class RepositoryAudioFile extends RepositoryEntitySupport implements Audi
       }
 
     @Override @Nonnull
-    public Optional<byte[]> getContent()
+    public Optional<Resource> getContent()
       throws IOException
       {
         final Path absolutePath = normalizedPath(getAbsolutePath());
-        return Files.exists(absolutePath) ? Optional.of(Files.readAllBytes(absolutePath)) : Optional.empty();
+        return Files.exists(absolutePath) ? Optional.of(new FileSystemResource(absolutePath.toFile())) : Optional.empty();
       }
 
     @Override @Nonnegative

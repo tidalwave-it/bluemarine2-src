@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.CheckForNull;
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.util.List;
@@ -36,6 +37,8 @@ import java.util.Optional;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
 import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
@@ -49,14 +52,12 @@ import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.model.spi.NamedEntity;
-import static it.tidalwave.bluemarine2.util.Miscellaneous.normalizedPath;
 import lombok.experimental.Delegate;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import static java.util.Arrays.*;
 import static java.util.Collections.*;
 import static it.tidalwave.role.Displayable.Displayable;
-import javax.annotation.Nonnegative;
 
 /***********************************************************************************************************************
  *
@@ -224,11 +225,11 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
       }
 
 
-    @Override
-    public Optional<byte[]> getContent()
+    @Override @Nonnull
+    public Optional<Resource> getContent()
       throws IOException
       {
-        return Files.exists(path) ? Optional.of(Files.readAllBytes(path)) : Optional.empty();
+        return Files.exists(path) ? Optional.of(new FileSystemResource(path.toFile())) : Optional.empty();
       }
 
     @Override @Nonnegative
