@@ -36,6 +36,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 import java.util.Enumeration;
+import java.util.EnumSet;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.file.Path;
@@ -45,9 +46,11 @@ import java.net.InetSocketAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.URLEncoder;
+import javax.servlet.DispatcherType;
 import org.eclipse.jetty.util.resource.Resource;
 import org.eclipse.jetty.util.resource.ResourceCollection;
 import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.FilterHolder;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.servlet.DefaultServlet;
@@ -111,6 +114,7 @@ public class DefaultResourceServer implements ResourceServer
         servletContext.addServlet(new ServletHolder("music", new RangeServlet(rootPath)), "/Music/*");
         servletContext.addServlet(new ServletHolder("spring", new DispatcherServlet(wac)), "/rest/*");
         servletContext.addServlet(new ServletHolder("default", new DefaultServlet()), "/*");
+        servletContext.addFilter(new FilterHolder(new LoggingFilter()), "/*", EnumSet.allOf(DispatcherType.class));
         server.setHandler(servletContext);
 
         server.start();

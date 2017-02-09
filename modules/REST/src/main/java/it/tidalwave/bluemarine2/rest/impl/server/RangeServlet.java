@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.rest.impl.server;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
 import java.io.EOFException;
 import java.io.IOException;
@@ -67,28 +66,6 @@ public class RangeServlet extends HttpServlet
 
     @Override
     protected void doGet (final @Nonnull HttpServletRequest request, final @Nonnull HttpServletResponse response)
-      throws ServletException, IOException
-      {
-        log.trace("doGet(..., ...)");
-        log.debug(">>>> request URI: {}", request.getRequestURI());
-
-        for (final Enumeration<String> names = request.getHeaderNames(); names.hasMoreElements(); )
-          {
-            final String headerName = names.nextElement();
-            log.debug(">>>> request header: {} = {}", headerName, request.getHeader(headerName));
-          }
-
-        _doGet(request, response);
-
-        log.debug(">>>> response {}", response.getStatus());
-
-        for (final String headerName : response.getHeaderNames())
-          {
-            log.debug(">>>> response header: {} = {}", headerName, response.getHeaders(headerName));
-          }
-      }
-
-    private void _doGet (final @Nonnull HttpServletRequest request, final @Nonnull HttpServletResponse response)
       throws ServletException, IOException
       {
         final Path resourcePath =
