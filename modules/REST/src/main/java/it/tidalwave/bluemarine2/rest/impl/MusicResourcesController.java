@@ -38,7 +38,11 @@ import java.util.stream.Stream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import org.fourthline.cling.model.types.BytesRange;
+import org.fourthline.cling.support.model.dlna.message.header.AvailableSeekRangeHeader;
+import org.fourthline.cling.support.model.dlna.types.AvailableSeekRangeType;
 import org.springframework.core.io.support.ResourceRegion;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -61,6 +65,7 @@ import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMediaCatalog;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
+import static org.fourthline.cling.support.model.dlna.types.AvailableSeekRangeType.Mode.*;
 import static org.springframework.http.HttpHeaders.*;
 import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.*;
@@ -68,6 +73,7 @@ import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.ARTWORK;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
+import static it.tidalwave.bluemarine2.rest.impl.DlnaHeaders.*;
 
 /***********************************************************************************************************************
  *
@@ -285,12 +291,29 @@ public class MusicResourcesController
     @RequestMapping(value = "/audiofile/{id}/content")
     public ResponseEntity<ResourceRegion> getAudioFileContent (
             final @PathVariable String id,
-            final @RequestHeader(name = "Range", required = false) String rangeHeader)
+            final @RequestHeader(name = "Range", required = false) String rangeHeader,
+            final @RequestHeader(name = GET_AVAILABLE_SEEK_RANGE, required = false, defaultValue = "0") int getAvailableSeekRange,
+            final @RequestHeader(name = TRANSFER_MODE, required = false, defaultValue = "0") String transferMode)
       {
         log.info("getAudioFileContent({})", id);
         checkStatus();
+        final HttpHeaders headers = new HttpHeaders();
+
+        if ("Streaming".equals(transferMode))
+          {
+            headers.add(TRANSFER_MODE, transferMode);
+          }
+
+        if (getAvailableSeekRange == 1)
+          {
+            final AvailableSeekRangeHeader availableSeekRangeHeader = new AvailableSeekRangeHeader();
+            availableSeekRangeHeader.setValue(new AvailableSeekRangeType(MODE_0, new BytesRange(0L, null)));
+            headers.add(AVAILABLE_SEEK_RANGE, availableSeekRangeHeader.getString());
+          }
+
+        // availableSeekRange
         return catalog.findAudioFiles().withId(new Id(id)).optionalResult()
-                                                          .map(_f(af -> audioFileContentResponse(af, rangeHeader)))
+                                                          .map(_f(af -> audioFileContentResponse(af, rangeHeader, headers)))
                                                           .orElseThrow(NotFoundException::new);
       }
 
@@ -349,7 +372,8 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @Nonnull
     private ResponseEntity<ResourceRegion> audioFileContentResponse (final @Nonnull AudioFile file,
-                                                                     final @CheckForNull String rangeHeader)
+                                                                     final @CheckForNull String rangeHeader,
+                                                                     final @Nonnull HttpHeaders headers)
       throws IOException
       {
         final long length = file.getSize();
@@ -366,10 +390,11 @@ public class MusicResourcesController
         final Range range = ranges.stream().findFirst().orElse(fullRange).subrange(maxSize);
 
         final String displayName = file.as(Displayable).getDisplayName(); // FIXME: getRdfsLabel()
+        headers.add(CONTENT_DISPOSITION, contentDisposition(displayName));
         final HttpStatus status = range.equals(fullRange) ? OK : PARTIAL_CONTENT;
         return file.getContent().map(resource -> ResponseEntity.status(status)
                                                             .contentType(new MediaType("audio", "mpeg"))
-                                                            .header(CONTENT_DISPOSITION, contentDisposition(displayName))
+                                                            .headers(headers)
                                                             .body(range.getRegion(resource)))
                                 .orElseThrow(NotFoundException::new);
       }

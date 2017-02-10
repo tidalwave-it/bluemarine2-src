@@ -30,6 +30,7 @@ package it.tidalwave.bluemarine2.rest.impl;
 
 import javax.annotation.Nonnull;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
@@ -40,7 +41,11 @@ import java.net.URI;
 import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.http.client.ClientHttpRequestExecution;
+import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Key;
 import it.tidalwave.messagebus.MessageBus;
@@ -61,6 +66,7 @@ import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
+import static it.tidalwave.bluemarine2.rest.impl.DlnaHeaders.*;
 
 /***********************************************************************************************************************
  *
@@ -162,6 +168,25 @@ public class MusicResourcesControllerTest extends SpringTestSupport
         // given
         final RestTemplate restTemplate = new RestTemplate();
         restTemplate.setErrorHandler(IGNORE_HTTP_ERRORS);
+
+        if (url.matches("rest/audiofile/.*/content"))
+          {
+            final ClientHttpRequestInterceptor interceptor = new ClientHttpRequestInterceptor()
+              {
+                @Override
+                public ClientHttpResponse intercept (HttpRequest request, byte[] body, ClientHttpRequestExecution execution)
+                  throws IOException
+                    {
+                      final HttpHeaders headers = request.getHeaders();
+                      headers.add(GET_AVAILABLE_SEEK_RANGE, "1");
+                      headers.add(TRANSFER_MODE, "Streaming");
+                      return execution.execute(request, body);
+                    }
+              };
+
+            restTemplate.setInterceptors(Collections.singletonList(interceptor));
+          }
+
         final Class<?> responseType = (url.contains("content") || url.contains("coverart")) ? byte[].class : String.class;
         // when
         final ResponseEntity<?> response = restTemplate.getForEntity(URI.create(baseUrl + url), responseType);
