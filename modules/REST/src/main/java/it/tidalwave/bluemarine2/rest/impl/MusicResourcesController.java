@@ -283,8 +283,9 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @RequestMapping(value = "/audiofile/{id}/content")
-    public ResponseEntity<ResourceRegion> getAudioFileContent (final @PathVariable String id,
-                                                               final @RequestHeader(name = "Range", required = false) String rangeHeader)
+    public ResponseEntity<ResourceRegion> getAudioFileContent (
+            final @PathVariable String id,
+            final @RequestHeader(name = "Range", required = false) String rangeHeader)
       {
         log.info("getAudioFileContent({})", id);
         checkStatus();
