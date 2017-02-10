@@ -28,13 +28,14 @@
  */
 package it.tidalwave.bluemarine2.model;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.io.IOException;
 import java.nio.file.Path;
+import org.springframework.core.io.Resource;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
-import javax.annotation.Nonnegative;
 
 /***********************************************************************************************************************
  *
@@ -56,7 +57,7 @@ public interface AudioFile extends MediaItem, Identifiable // FIXME: MediaItem s
       throws IOException;
 
     @Nonnull
-    public Optional<byte[]> getContent()
+    public Optional<Resource> getContent()
       throws IOException;
 
     /*******************************************************************************************************************

@@ -26,16 +26,15 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.rest.impl.server;
+package it.tidalwave.bluemarine2.rest.impl;
 
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.RandomAccessFile;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.ResourceRegion;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -49,8 +48,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j @Getter @EqualsAndHashCode
 public class Range
   {
-    private static final int DEFAULT_BUFFER_SIZE = 64 * 1024;
-
     private final long start;
     private final long end;
     private final long length;
@@ -78,9 +75,9 @@ public class Range
      *
      ******************************************************************************************************************/
     @Nonnull
-    public static Range full (final @Nonnegative long length)
+    public static Range full (final @Nonnegative long total)
       {
-        return new Range(0, length - 1, length);
+        return new Range(0, total - 1, total);
       }
 
     /*******************************************************************************************************************
@@ -98,12 +95,12 @@ public class Range
      * Parses a range from a HTTP header.
      *
      * @param   rangeHeader     the HTTP header
-     * @param   length          the length of the full datum
+     * @param   total           the length of the full datum
      * @return                  the range
      *
      ******************************************************************************************************************/
     @Nonnegative
-    public static List<Range> fromHeader (final @Nullable String rangeHeader, final @Nonnegative long length)
+    public static List<Range> fromHeader (final @Nullable String rangeHeader, final @Nonnegative long total)
       {
         final List<Range> ranges = new ArrayList<>();
 
@@ -125,12 +122,12 @@ public class Range
 
                 if (start == -1)
                   {
-                    start = length - end;
-                    end = length - 1;
+                    start = total - end;
+                    end = total - 1;
                   }
-                else if ((end == -1) || (end > length - 1))
+                else if ((end == -1) || (end > total - 1))
                   {
-                    end = length - 1;
+                    end = total - 1;
                   }
 
                 if (start > end)
@@ -138,7 +135,7 @@ public class Range
                     throw new IllegalArgumentException("Invalid range: " + rangeHeader);
                   }
 
-                ranges.add(new Range(start, end, length));
+                ranges.add(new Range(start, end, total));
               }
           }
 
@@ -147,57 +144,16 @@ public class Range
 
     /*******************************************************************************************************************
      *
-     * Copy the given byte range of the given input to the given output.
+     * Returns a {@link ResourceRegion} mapping the portion of bytes matching this range.
      *
-     * @param   input           the input to copy the given range to the given output for.
-     * @param   output          the output to copy the given range from the given input for.
-     * @throws  IOException     if something fails at I/O level.
-     *
-     ******************************************************************************************************************/
-    public void copy (final @Nonnull RandomAccessFile input, final @Nonnull OutputStream output)
-      throws IOException
-      {
-                // FIXME: use memory mapped i/o
-        final byte[] buffer = new byte[DEFAULT_BUFFER_SIZE];
-        int read;
-
-        if (input.length() == length)
-          {
-            // Write full range.
-            while ((read = input.read(buffer)) > 0)
-              {
-                output.write(buffer, 0, read);
-              }
-          }
-        else
-          {
-            // Write partial range.
-            input.seek(start);
-            long toRead = length;
-
-            while ((read = input.read(buffer)) > 0)
-              {
-                if ((toRead -= read) > 0)
-                  {
-                    output.write(buffer, 0, read);
-                  }
-                else
-                  {
-                    output.write(buffer, 0, (int) toRead + read);
-                    break;
-                  }
-              }
-          }
-      }
-
-    /*******************************************************************************************************************
-     *
+     * @param       resource    the resource
+     * @return                  the region
      *
      ******************************************************************************************************************/
     @Nonnull
-    public String toHeader()
+    public ResourceRegion getRegion (final @Nonnull Resource resource)
       {
-        return "bytes " + start + "-" + end + "/" + total;
+        return new ResourceRegion(resource, start, length);
       }
 
     /*******************************************************************************************************************

@@ -89,7 +89,7 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
         final Metadata audioFileMetadata = audioFile.getMetadata();
         final Res resource = new Res(protocolInfo,
                                      audioFileMetadata.get(FILE_SIZE).orElse(null),
-                                     server.urlForResource(audioFile));
+                                     server.absoluteUrl(String.format("rest/audiofile/%s/content", audioFile.getId().stringValue())));
         audioFileMetadata.get(DURATION).ifPresent(duration -> resource.setDuration(durationToString(duration)));
 //        resource.setBitrate(size); // TODO
 //        resource.setBitsPerSample(size); // TODO

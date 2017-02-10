@@ -68,7 +68,7 @@ public class LoggingFilter implements Filter
 
         try
           {
-            log.debug(">>>> request URI: {}", request.getRequestURI());
+            log.debug(">>>> request: {} {} {}", request.getMethod(), request.getRequestURI(), request.getProtocol());
 
             for (final Enumeration<String> names = request.getHeaderNames(); names.hasMoreElements(); )
               {

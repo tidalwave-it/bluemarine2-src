@@ -48,6 +48,9 @@
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
         <property name="messageConverters">
             <util:list>
+                <bean id="regionMessageConverter"
+                      class="org.springframework.http.converter.ResourceRegionHttpMessageConverter">
+                </bean>
                 <bean id="binaryMessageConverter"
                       class="org.springframework.http.converter.ByteArrayHttpMessageConverter">
                     <property name="supportedMediaTypes">
