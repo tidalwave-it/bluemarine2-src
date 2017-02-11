@@ -84,7 +84,7 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
     private boolean autoPublish = true;
 
     @Getter @Setter
-    private UDN udn = UDN.uniqueSystemIdentifier("1");
+    private UDN udn;
 
     @Getter @Setter
     private String friendlyName = "bm II";
@@ -154,6 +154,7 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
       {
         try
           {
+            udn = UDN.uniqueSystemIdentifier("1");
             service = serviceBinder.read(serviceClass);
             serviceManager = new AutowireServiceManager<>(beanFactory, service, serviceClass);
             service.setManager(serviceManager);
@@ -182,11 +183,17 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
      ******************************************************************************************************************/
     @PostConstruct
     private void initialize()
-      throws ValidationException
       {
         if (autoPublish)
           {
-            publishDevice();
+            try
+              {
+                publishDevice();
+              }
+            catch (RuntimeException | ValidationException e)
+              {
+                log.error("Could not publish device", e);
+              }
           }
       }
 
