@@ -121,8 +121,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
      ******************************************************************************************************************/
     public ClingContentDirectoryAdapterSystemIntegrationTest()
       {
-        super("META-INF/UPnPTestBeans.xml",
-              "META-INF/DciAutoBeans.xml" ,
+        super("META-INF/DciAutoBeans.xml" ,
               "META-INF/CommonsAutoBeans.xml" ,
               "META-INF/ModelAutoBeans.xml" ,
               "META-INF/PersistenceAutoBeans.xml",
