@@ -5,83 +5,83 @@ Browse({ObjectID=/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=, BrowseFlag=BrowseDir
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="00:04:02" protocolInfo="http-get:*:audio/mpeg:*" size="9685435">http://<server>/Music/Midori%3B+Pinchas+Zukerman_+St.+Paul+Chamber+Orchestra/Bach%3B+Vivaldi_+Concertos+For+2+Violins/01+Bach_+Concerto+In+D+Minor+For+2+Violins%2C+BWV+1043%2C+_Double_+-+1.+Vivace.mp3</res>
+        <res duration="00:04:02" protocolInfo="http-get:*:audio/mpeg:*" size="9685435">http://<server>/rest/audiofile/urn:bluemarine:audiofile:EBBBeSSPj_eLBubj3tlhkpkEmdA=/content</res>
     </item>
     <item id="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=/t:ZleOmbCh1ZLQiKnvzEYUwksGhLM=" parentID="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=" restricted="0">
         <dc:title>Bach: Concerto In D Minor For 2 Violins, BWV 1043, "Double" - 2. Largo Ma Non Tanto</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
-        <res duration="00:07:09" protocolInfo="http-get:*:audio/mpeg:*" size="17164826">http://<server>/Music/Midori%3B+Pinchas+Zukerman_+St.+Paul+Chamber+Orchestra/Bach%3B+Vivaldi_+Concertos+For+2+Violins/02+Bach_+Concerto+In+D+Minor+For+2+Violins%2C+BWV+1043%2C+_Double_+-+2.+Largo+Ma+Non+Tanto.mp3</res>
+        <res duration="00:07:09" protocolInfo="http-get:*:audio/mpeg:*" size="17164826">http://<server>/rest/audiofile/urn:bluemarine:audiofile:M3XS37PybGr_YOQkh3EmrXxHPu0=/content</res>
     </item>
     <item id="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=/t:daMcqarA7dDNLXPq2PrAy5WCCSg=" parentID="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=" restricted="0">
         <dc:title>Bach: Concerto In D Minor For 2 Violins, BWV 1043, "Double" - 3. Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
-        <res duration="00:05:09" protocolInfo="http-get:*:audio/mpeg:*" size="12364554">http://<server>/Music/Midori%3B+Pinchas+Zukerman_+St.+Paul+Chamber+Orchestra/Bach%3B+Vivaldi_+Concertos+For+2+Violins/03+Bach_+Concerto+In+D+Minor+For+2+Violins%2C+BWV+1043%2C+_Double_+-+3.+Allegro.mp3</res>
+        <res duration="00:05:09" protocolInfo="http-get:*:audio/mpeg:*" size="12364554">http://<server>/rest/audiofile/urn:bluemarine:audiofile:UalAmccD_ux3InsTaA6Th_sIcM8=/content</res>
     </item>
     <item id="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=/t:4xmzhsHjP7bBue1OCFkwL6jGkUA=" parentID="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=" restricted="0">
         <dc:title>Vivaldi: Violin Concerto In C Minor, RV 199, "Il Sospetto" - 1. Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
-        <res duration="00:03:41" protocolInfo="http-get:*:audio/mpeg:*" size="8845331">http://<server>/Music/Midori%3B+Pinchas+Zukerman_+St.+Paul+Chamber+Orchestra/Bach%3B+Vivaldi_+Concertos+For+2+Violins/04+Vivaldi_+Violin+Concerto+In+C+Minor%2C+RV+199%2C+_Il+Sospetto_+-+1.+Allegro.mp3</res>
+        <res duration="00:03:41" protocolInfo="http-get:*:audio/mpeg:*" size="8845331">http://<server>/rest/audiofile/urn:bluemarine:audiofile:irHmPHbxSLT5dfagK8o0hNE_RkE=/content</res>
     </item>
     <item id="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=/t:fE9mBdvb80fkrO0Y9Oo1e3rxzTI=" parentID="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=" restricted="0">
         <dc:title>Vivaldi: Violin Concerto In C Minor, RV 199, "Il Sospetto" - 2. Andante</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
-        <res duration="00:03:15" protocolInfo="http-get:*:audio/mpeg:*" size="7804612">http://<server>/Music/Midori%3B+Pinchas+Zukerman_+St.+Paul+Chamber+Orchestra/Bach%3B+Vivaldi_+Concertos+For+2+Violins/05+Vivaldi_+Violin+Concerto+In+C+Minor%2C+RV+199%2C+_Il+Sospetto_+-+2.+Andante.mp3</res>
+        <res duration="00:03:15" protocolInfo="http-get:*:audio/mpeg:*" size="7804612">http://<server>/rest/audiofile/urn:bluemarine:audiofile:3MJoto-8xlsSlVgz4u2aqkL3Q2g=/content</res>
     </item>
     <item id="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=/t:bibtTItMnKKiuq82zOKF54VAm2Y=" parentID="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=" restricted="0">
         <dc:title>Vivaldi: Violin Concerto In C Minor, RV 199, "Il Sospetto" - 3. Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
-        <res duration="00:02:34" protocolInfo="http-get:*:audio/mpeg:*" size="6165168">http://<server>/Music/Midori%3B+Pinchas+Zukerman_+St.+Paul+Chamber+Orchestra/Bach%3B+Vivaldi_+Concertos+For+2+Violins/06+Vivaldi_+Violin+Concerto+In+C+Minor%2C+RV+199%2C+_Il+Sospetto_+-+3.+Allegro.mp3</res>
+        <res duration="00:02:34" protocolInfo="http-get:*:audio/mpeg:*" size="6165168">http://<server>/rest/audiofile/urn:bluemarine:audiofile:LDayt7qvRMNDqA9YGxjJGL4jeHo=/content</res>
     </item>
     <item id="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=/t:9vxnLbLWxVjrZ3P1Cr15tRHhxUw=" parentID="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=" restricted="0">
         <dc:title>Bach: Violin Concerto #2 In E, BWV 1042 - 1. Allegro, Adagio, Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
-        <res duration="00:08:20" protocolInfo="http-get:*:audio/mpeg:*" size="20004845">http://<server>/Music/Midori%3B+Pinchas+Zukerman_+St.+Paul+Chamber+Orchestra/Bach%3B+Vivaldi_+Concertos+For+2+Violins/07+Bach_+Violin+Concerto+%232+In+E%2C+BWV+1042+-+1.+Allegro%2C+Adagio%2C+Allegro.mp3</res>
+        <res duration="00:08:20" protocolInfo="http-get:*:audio/mpeg:*" size="20004845">http://<server>/rest/audiofile/urn:bluemarine:audiofile:B5Xj9Og00eU-gaQbIpY4SimH8nM=/content</res>
     </item>
     <item id="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=/t:tEmlYhQCSHUabTxpF6k1axdpSF8=" parentID="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=" restricted="0">
         <dc:title>Bach: Violin Concerto #2 In E, BWV 1042 - 2. Adagio</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
-        <res duration="00:06:36" protocolInfo="http-get:*:audio/mpeg:*" size="15845088">http://<server>/Music/Midori%3B+Pinchas+Zukerman_+St.+Paul+Chamber+Orchestra/Bach%3B+Vivaldi_+Concertos+For+2+Violins/08+Bach_+Violin+Concerto+%232+In+E%2C+BWV+1042+-+2.+Adagio.mp3</res>
+        <res duration="00:06:36" protocolInfo="http-get:*:audio/mpeg:*" size="15845088">http://<server>/rest/audiofile/urn:bluemarine:audiofile:RTGBoi3kT0cRlWK0ea2met39-Jo=/content</res>
     </item>
     <item id="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=/t:Htx_Nv8KzuTl6VkADgGRPShLMRQ=" parentID="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=" restricted="0">
         <dc:title>Bach: Violin Concerto #2 In E, BWV 1042 - 3. Allegro Assai</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
-        <res duration="00:03:08" protocolInfo="http-get:*:audio/mpeg:*" size="7524573">http://<server>/Music/Midori%3B+Pinchas+Zukerman_+St.+Paul+Chamber+Orchestra/Bach%3B+Vivaldi_+Concertos+For+2+Violins/09+Bach_+Violin+Concerto+%232+In+E%2C+BWV+1042+-+3.+Allegro+Assai.mp3</res>
+        <res duration="00:03:08" protocolInfo="http-get:*:audio/mpeg:*" size="7524573">http://<server>/rest/audiofile/urn:bluemarine:audiofile:Rjc_sKrAU2GFCGDwfcm2oS4sTqw=/content</res>
     </item>
     <item id="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=/t:o_sfXgsX0pIwkjv6LZpJ40racko=" parentID="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=" restricted="0">
         <dc:title>Vivaldi: Concerto In A Minor For 2 Violins, Op. 3/8, RV 522 "L’Estro Armonico #8" - 1. Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
-        <res duration="00:03:58" protocolInfo="http-get:*:audio/mpeg:*" size="9524635">http://<server>/Music/Midori%3B+Pinchas+Zukerman_+St.+Paul+Chamber+Orchestra/Bach%3B+Vivaldi_+Concertos+For+2+Violins/10+Vivaldi_+Concerto+In+A+Minor+For+2+Violins%2C+Op.+3_8%2C+RV+522+_L_Estro+Armonico+%238_+-+1.+Allegro.mp3</res>
+        <res duration="00:03:58" protocolInfo="http-get:*:audio/mpeg:*" size="9524635">http://<server>/rest/audiofile/urn:bluemarine:audiofile:3_-_Y3EEyhsLwP7_m04Lc6UnpFk=/content</res>
     </item>
     <item id="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=/t:y58wuTDBXLWXzKmQiGP5ZYVAijo=" parentID="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=" restricted="0">
         <dc:title>Vivaldi: Concerto In A Minor For 2 Violins, Op. 3/8, RV 522 "L’Estro Armonico #8" - 1. Larghetto E Spiritoso</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>11</upnp:originalTrackNumber>
-        <res duration="00:04:31" protocolInfo="http-get:*:audio/mpeg:*" size="10845414">http://<server>/Music/Midori%3B+Pinchas+Zukerman_+St.+Paul+Chamber+Orchestra/Bach%3B+Vivaldi_+Concertos+For+2+Violins/11+Vivaldi_+Concerto+In+A+Minor+For+2+Violins%2C+Op.+3_8%2C+RV+522+_L_Estro+Armonico+%238_+-+1.+Larghetto+E+Spiritoso.mp3</res>
+        <res duration="00:04:31" protocolInfo="http-get:*:audio/mpeg:*" size="10845414">http://<server>/rest/audiofile/urn:bluemarine:audiofile:YC1zHZFv3e-l6geioBSs5doYFJc=/content</res>
     </item>
     <item id="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=/t:6Tr9cNabeT0wWc5YSRiypN37eN0=" parentID="/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=" restricted="0">
         <dc:title>Vivaldi: Concerto In A Minor For 2 Violins, Op. 3/8, RV 522 "L’Estro Armonico #8" - 1. Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>12</upnp:originalTrackNumber>
-        <res duration="00:03:27" protocolInfo="http-get:*:audio/mpeg:*" size="8285386">http://<server>/Music/Midori%3B+Pinchas+Zukerman_+St.+Paul+Chamber+Orchestra/Bach%3B+Vivaldi_+Concertos+For+2+Violins/12+Vivaldi_+Concerto+In+A+Minor+For+2+Violins%2C+Op.+3_8%2C+RV+522+_L_Estro+Armonico+%238_+-+1.+Allegro.mp3</res>
+        <res duration="00:03:27" protocolInfo="http-get:*:audio/mpeg:*" size="8285386">http://<server>/rest/audiofile/urn:bluemarine:audiofile:3rv7St-EqvYm52Z5oNJfNKIpLRI=/content</res>
     </item>
 </DIDL-Lite>

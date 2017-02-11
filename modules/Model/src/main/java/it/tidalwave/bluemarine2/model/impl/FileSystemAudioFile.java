@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.model.impl;
 
 import javax.annotation.CheckForNull;
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.util.List;
@@ -36,6 +37,8 @@ import java.util.Optional;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
 import it.tidalwave.util.Finder8Support;
 import it.tidalwave.util.Id;
 import it.tidalwave.util.Key;
@@ -222,11 +225,18 @@ public class FileSystemAudioFile implements AudioFile, PathAwareEntity
       }
 
 
-    @Override
-    public Optional<byte[]> getContent()
+    @Override @Nonnull
+    public Optional<Resource> getContent()
       throws IOException
       {
-        return Files.exists(path) ? Optional.of(Files.readAllBytes(path)) : Optional.empty();
+        return Files.exists(path) ? Optional.of(new FileSystemResource(path.toFile())) : Optional.empty();
+      }
+
+    @Override @Nonnegative
+    public long getSize()
+      throws IOException
+      {
+        return Files.size(path);
       }
 
     @Override @Nonnull

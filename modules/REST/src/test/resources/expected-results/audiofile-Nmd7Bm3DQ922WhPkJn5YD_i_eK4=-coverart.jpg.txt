@@ -1,5 +1,5 @@
 HTTP/1.1 200 OK
-Content-Disposition: coverart.jpg
+Content-Disposition: filename="coverart.jpg"; filename*=utf-8''coverart.jpg
 Content-Length: 398111
 Content-Type: image/jpeg
 Server: Jetty(8.1.8.v20121106)
