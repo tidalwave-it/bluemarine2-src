@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
+import java.util.Arrays;
 import javax.annotation.Nonnull;
 import java.util.concurrent.atomic.AtomicReference;
 import org.fourthline.cling.UpnpService;
@@ -42,6 +43,9 @@ import org.fourthline.cling.registry.DefaultRegistryListener;
 import org.fourthline.cling.registry.Registry;
 import org.fourthline.cling.registry.RegistryListener;
 import lombok.extern.slf4j.Slf4j;
+import org.fourthline.cling.model.meta.DeviceDetails;
+import org.fourthline.cling.model.meta.ManufacturerDetails;
+import org.fourthline.cling.model.meta.ModelDetails;
 
 /***********************************************************************************************************************
  *
@@ -91,24 +95,41 @@ public class UpnpClient implements Runnable
         @Override
         public void remoteDeviceAdded (final @Nonnull Registry registry, final @Nonnull RemoteDevice device)
           {
-            final Service theService = device.findService(serviceId);
+            final Service remoteService = device.findService(serviceId);
 
-            if (theService != null)
+            if (remoteService != null)
               {
-                log.info("Service discovered: {}", theService);
-                service.set(theService);
+                final DeviceDetails details = remoteService.getDevice().getDetails();
+                final ManufacturerDetails manufacturerDetails = details.getManufacturerDetails();
+                final ModelDetails modelDetails = details.getModelDetails();
+                log.info("New service discovered: {}", remoteService);
+                log.info(">>>>           baseURL: {}", details.getBaseURL());
+                log.info(">>>>         DLNA caps: {}", details.getDlnaCaps());
+                log.info(">>>>         DLNA docs: {}", Arrays.toString(details.getDlnaDocs()));
+                log.info(">>>>     friendly name: {}", details.getFriendlyName());
+                log.info(">>>>      manufacturer: {}", manufacturerDetails.getManufacturer());
+                log.info(">>>>  manufacturer URI: {}", manufacturerDetails.getManufacturerURI());
+                log.info(">>>> model description: {}", modelDetails.getModelDescription());
+                log.info(">>>>        model name: {}", modelDetails.getModelName());
+                log.info(">>>>      model number: {}", modelDetails.getModelNumber());
+                log.info(">>>>         model URI: {}", modelDetails.getModelURI());
+                log.info(">>>>  presentation URI: {}", details.getPresentationURI());
+                log.info(">>>>  sec product caps: {}", details.getSecProductCaps());
+                log.info(">>>>     serial number: {}", details.getSerialNumber());
+                log.info(">>>>               UPC: {}", details.getUpc());
+                service.set(remoteService);
               }
           }
 
         @Override
         public void remoteDeviceRemoved (final @Nonnull Registry registry, final @Nonnull RemoteDevice device)
           {
-            final Service theService = device.findService(serviceId);
+            final Service remoteService = device.findService(serviceId);
 
-            if (theService != null)
+            if (remoteService != null)
               {
-                log.info("Service removed: {}", theService);
-                service.compareAndSet(theService, null);
+                log.info("Service removed: {}", remoteService);
+                service.compareAndSet(remoteService, null);
               }
           }
       };
