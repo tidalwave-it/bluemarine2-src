@@ -121,7 +121,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
      ******************************************************************************************************************/
     public ClingContentDirectoryAdapterSystemIntegrationTest()
       {
-        super("META-INF/DciAutoBeans.xml" ,
+        super("META-INF/UPnPTestBeans.xml",
+              "META-INF/DciAutoBeans.xml" ,
               "META-INF/CommonsAutoBeans.xml" ,
               "META-INF/ModelAutoBeans.xml" ,
               "META-INF/PersistenceAutoBeans.xml",
@@ -138,7 +139,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
     public final void setup()
       throws Exception
       {
-        upnpClient = new UpnpClient("ContentDirectory");
+        upnpClient = new UpnpClient("ContentDirectory", device -> "underTest".equals(device.getDetails().getSerialNumber()));
         Executors.newSingleThreadExecutor().submit(upnpClient);
         final Map<Key<?>, Object> properties = new HashMap<>();
         final Path repositoryPath = Paths.get("target/test-classes/test-sets/model-iTunes-fg-20160504-2.n3");

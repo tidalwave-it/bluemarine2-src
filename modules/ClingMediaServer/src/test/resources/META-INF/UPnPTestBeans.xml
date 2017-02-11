@@ -24,9 +24,9 @@
 
   $Id$
 
-  *********************************************************************************************************************
-  #L%
-  -->
+*********************************************************************************************************************
+#L%
+-->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
@@ -39,13 +39,13 @@
     <!-- Turns on @Autowired, @PostConstruct, etc. -->
     <context:annotation-config />
 
-    <bean id="upnpService" class="org.fourthline.cling.UpnpServiceImpl" />
-
-    <bean id="underTest" class="it.tidalwave.bluemarine2.upnp.mediaserver.impl.device.DefaultDevicePublisher">
-        <constructor-arg value="it.tidalwave.bluemarine2.upnp.mediaserver.mock.UPnPServerMock" />
-        <property name="friendlyName" value="UPnP Server Mock" />
-        <property name="autoPublish" value="false" />
-        <property name="serialNumber" value="${serialNumber}"/>
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:META-INF/upnp-test.properties</value>
+            </list>
+        </property>
     </bean>
 
 </beans>

@@ -31,6 +31,7 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 import java.util.Arrays;
 import javax.annotation.Nonnull;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Function;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.UpnpServiceImpl;
 import org.fourthline.cling.controlpoint.ActionCallback;
@@ -62,12 +63,23 @@ public class UpnpClient implements Runnable
 
     private final ServiceId serviceId;
 
+    private final Function<RemoteDevice, Boolean> filter;
+
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
     public UpnpClient (final @Nonnull String serviceName)
       {
+        this(serviceName, s -> true);
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    public UpnpClient (final @Nonnull String serviceName, final @Nonnull Function<RemoteDevice, Boolean> filter)
+      {
         serviceId = new UDAServiceId(serviceName);
+        this.filter = filter;
       }
 
     /*******************************************************************************************************************
@@ -117,7 +129,16 @@ public class UpnpClient implements Runnable
                 log.info(">>>>  sec product caps: {}", details.getSecProductCaps());
                 log.info(">>>>     serial number: {}", details.getSerialNumber());
                 log.info(">>>>               UPC: {}", details.getUpc());
-                service.set(remoteService);
+
+                if (filter.apply(device))
+                  {
+                    service.set(remoteService);
+                    log.info("Service added: {}", remoteService);
+                  }
+                else
+                  {
+                    log.info("Service rejected because of filter");
+                  }
               }
           }
 
@@ -126,7 +147,7 @@ public class UpnpClient implements Runnable
           {
             final Service remoteService = device.findService(serviceId);
 
-            if (remoteService != null)
+            if ((remoteService != null) && filter.apply(device))
               {
                 log.info("Service removed: {}", remoteService);
                 service.compareAndSet(remoteService, null);
