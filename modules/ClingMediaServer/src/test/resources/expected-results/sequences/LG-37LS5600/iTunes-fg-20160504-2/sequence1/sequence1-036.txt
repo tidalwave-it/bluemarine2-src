@@ -7,7 +7,7 @@ Browse({ObjectID=/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEA
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
         <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:06:27.000" protocolInfo="http-get:*:audio/mpeg:*" size="15517997">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/01+Cherubini_+Sonata+%231+In+F+-+1.+Moderato.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:27.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="15517997">http://<server>/rest/audiofile/urn:bluemarine:audiofile:SBMuukLzN1W7XjmB29LnPhKpFPA=/content</res>
     </item>
     <item id="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=/t:BdguHahXBodYsAJT03Am1rZ0Wg8=" parentID="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=" refID="urn:bluemarine:track:BdguHahXBodYsAJT03Am1rZ0Wg8=" restricted="0">
         <dc:title>Cherubini: Sonata #1 In F - 2. Allegretto Moderato</dc:title>
@@ -16,7 +16,7 @@ Browse({ObjectID=/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEA
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
         <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:04:56.000" protocolInfo="http-get:*:audio/mpeg:*" size="11845192">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/02+Cherubini_+Sonata+%231+In+F+-+2.+Allegretto+Moderato.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:56.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="11845192">http://<server>/rest/audiofile/urn:bluemarine:audiofile:k081Ixl3z5XSavrIV9yoSPythzE=/content</res>
     </item>
     <item id="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=/t:5AZhR8ZLQtuySpQihuHuoJ6YIIY=" parentID="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=" refID="urn:bluemarine:track:5AZhR8ZLQtuySpQihuHuoJ6YIIY=" restricted="0">
         <dc:title>Cherubini: Sonata #2 In C - 1. Moderato</dc:title>
@@ -25,7 +25,7 @@ Browse({ObjectID=/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEA
         <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
         <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:07:39.000" protocolInfo="http-get:*:audio/mpeg:*" size="18365344">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/03+Cherubini_+Sonata+%232+In+C+-+1.+Moderato.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:07:39.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="18365344">http://<server>/rest/audiofile/urn:bluemarine:audiofile:6GsGH6fovBGGYvMLJGsd63SNjLI=/content</res>
     </item>
     <item id="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=/t:1pFGvDDWXotnFo_IlbpBn987D1c=" parentID="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=" refID="urn:bluemarine:track:1pFGvDDWXotnFo_IlbpBn987D1c=" restricted="0">
         <dc:title>Cherubini: Sonata #2 In C - 2. Rondò Allegro</dc:title>
@@ -34,7 +34,7 @@ Browse({ObjectID=/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEA
         <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
         <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:03:56.000" protocolInfo="http-get:*:audio/mpeg:*" size="9445102">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/04+Cherubini_+Sonata+%232+In+C+-+2.+Rond%C3%B2+Allegro.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:03:56.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="9445102">http://<server>/rest/audiofile/urn:bluemarine:audiofile:ocoXX34l1K4kBGN_R5GtRCTlmuo=/content</res>
     </item>
     <item id="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=/t:ejU7L2ovcB0rUE8LdX5SfkTaIB4=" parentID="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=" refID="urn:bluemarine:track:ejU7L2ovcB0rUE8LdX5SfkTaIB4=" restricted="0">
         <dc:title>Cherubini: Sonata #3 In B Flat - 1. Allegro Comodo</dc:title>
@@ -43,7 +43,7 @@ Browse({ObjectID=/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEA
         <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
         <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:08:38.000" protocolInfo="http-get:*:audio/mpeg:*" size="20724735">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/05+Cherubini_+Sonata+%233+In+B+Flat+-+1.+Allegro+Comodo.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:08:38.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="20724735">http://<server>/rest/audiofile/urn:bluemarine:audiofile:Vml6807hpaOkG9yg50nhXvHxr3I=/content</res>
     </item>
     <item id="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=/t:KOxRpoKp8OjEnnhto0aXO3al0qA=" parentID="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=" refID="urn:bluemarine:track:KOxRpoKp8OjEnnhto0aXO3al0qA=" restricted="0">
         <dc:title>Cherubini: Sonata #3 In B Flat - 2. Andantino</dc:title>
@@ -52,7 +52,7 @@ Browse({ObjectID=/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEA
         <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
         <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:04:10.000" protocolInfo="http-get:*:audio/mpeg:*" size="10005121">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/06+Cherubini_+Sonata+%233+In+B+Flat+-+2.+Andantino.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:10.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="10005121">http://<server>/rest/audiofile/urn:bluemarine:audiofile:EGA3W_fKWI9f6BIPfFg-NFjxKv4=/content</res>
     </item>
     <item id="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=/t:U5HmvvmEiFkOJoPZC53U2Fnxm7w=" parentID="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=" refID="urn:bluemarine:track:U5HmvvmEiFkOJoPZC53U2Fnxm7w=" restricted="0">
         <dc:title>Cherubini: Sonata #4 In G - 1. Moderato</dc:title>
@@ -61,7 +61,7 @@ Browse({ObjectID=/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEA
         <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
         <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:06:50.000" protocolInfo="http-get:*:audio/mpeg:*" size="16405115">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/07+Cherubini_+Sonata+%234+In+G+-+1.+Moderato.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:50.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="16405115">http://<server>/rest/audiofile/urn:bluemarine:audiofile:tJPDYUkCcSPb0ch-iTC7IeW4vyU=/content</res>
     </item>
     <item id="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=/t:1LXsPreXMNIviUGA8hndLEw1UTY=" parentID="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=" refID="urn:bluemarine:track:1LXsPreXMNIviUGA8hndLEw1UTY=" restricted="0">
         <dc:title>Cherubini: Sonata #4 In G - 2. Rondò: Andantino</dc:title>
@@ -70,7 +70,7 @@ Browse({ObjectID=/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEA
         <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
         <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:06:59.000" protocolInfo="http-get:*:audio/mpeg:*" size="16764618">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/08+Cherubini_+Sonata+%234+In+G+-+2.+Rond%C3%B2_+Andantino.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:59.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="16764618">http://<server>/rest/audiofile/urn:bluemarine:audiofile:SJV8QgF_rxDIfokQndnYL1Zdu1M=/content</res>
     </item>
     <item id="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=/t:98YJl6GPDsZRRtZMfcbKBQs_cCg=" parentID="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=" refID="urn:bluemarine:track:98YJl6GPDsZRRtZMfcbKBQs_cCg=" restricted="0">
         <dc:title>Cherubini: Sonata #5 In D - 1. Allegro Con Brio</dc:title>
@@ -79,7 +79,7 @@ Browse({ObjectID=/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEA
         <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
         <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:06:53.000" protocolInfo="http-get:*:audio/mpeg:*" size="16525287">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/09+Cherubini_+Sonata+%235+In+D+-+1.+Allegro+Con+Brio.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:53.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="16525287">http://<server>/rest/audiofile/urn:bluemarine:audiofile:odgH4CkN4zFSZw3XjbRaNZDdLJA=/content</res>
     </item>
     <item id="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=/t:d-Q3x9XY7zVvOYr11me09-52zqk=" parentID="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=" refID="urn:bluemarine:track:d-Q3x9XY7zVvOYr11me09-52zqk=" restricted="0">
         <dc:title>Cherubini: Sonata #5 In D - 2. Rondò: Allegretto</dc:title>
@@ -88,7 +88,7 @@ Browse({ObjectID=/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEA
         <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
         <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:05:06.000" protocolInfo="http-get:*:audio/mpeg:*" size="12245438">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/10+Cherubini_+Sonata+%235+In+D+-+2.+Rond%C3%B2_+Allegretto.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:05:06.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="12245438">http://<server>/rest/audiofile/urn:bluemarine:audiofile:pzjyG4SZWvP3XZG7NVs7yTdluZo=/content</res>
     </item>
     <item id="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=/t:MV17m6OWDCPrx_Ed_8i40-d1h1Q=" parentID="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=" refID="urn:bluemarine:track:MV17m6OWDCPrx_Ed_8i40-d1h1Q=" restricted="0">
         <dc:title>Cherubini: Sonata #6 In E Flat - 1. Allegro Spiritoso</dc:title>
@@ -97,7 +97,7 @@ Browse({ObjectID=/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEA
         <upnp:originalTrackNumber>11</upnp:originalTrackNumber>
         <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:07:52.000" protocolInfo="http-get:*:audio/mpeg:*" size="18884673">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/11+Cherubini_+Sonata+%236+In+E+Flat+-+1.+Allegro+Spiritoso.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:07:52.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="18884673">http://<server>/rest/audiofile/urn:bluemarine:audiofile:OjywRyTMzjsTsXpyphCCI1OVPW4=/content</res>
     </item>
     <item id="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=/t:H85zLyXy-ABZXGZpVDQ5KmFgkww=" parentID="/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEAhHL47FZzTs=" refID="urn:bluemarine:track:H85zLyXy-ABZXGZpVDQ5KmFgkww=" restricted="0">
         <dc:title>Cherubini: Sonata #6 In E Flat - 2. Rondò: Andantino Con Moto</dc:title>
@@ -106,6 +106,6 @@ Browse({ObjectID=/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=/r:y-9LEwSNAaiGXcBEA
         <upnp:originalTrackNumber>12</upnp:originalTrackNumber>
         <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:06:06.000" protocolInfo="http-get:*:audio/mpeg:*" size="14660223">http://<server>/Music/Andrea+Bacchetti/Cherubini_+6+Piano+Sonatas/12+Cherubini_+Sonata+%236+In+E+Flat+-+2.+Rond%C3%B2_+Andantino+Con+Moto.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:06.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="14660223">http://<server>/rest/audiofile/urn:bluemarine:audiofile:ygA8AiXimd9N3EYnIcvrpWWfGfQ=/content</res>
     </item>
 </DIDL-Lite>

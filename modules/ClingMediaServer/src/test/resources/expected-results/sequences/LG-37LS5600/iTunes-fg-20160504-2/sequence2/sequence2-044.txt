@@ -7,7 +7,7 @@ Browse({ObjectID=/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASu
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
         <upnp:album>Trio 99&gt;00</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:05:37.000" protocolInfo="http-get:*:audio/mpeg:*" size="13494974">http://<server>/Music/Pat+Metheny/Trio+99_00/01+%28Go%29+Get+It.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:05:37.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="13494974">http://<server>/rest/audiofile/urn:bluemarine:audiofile:oh7MfsPZtSFZeGOotMkJ0UVdVow=/content</res>
     </item>
     <item id="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=/t:QpLrd6gnOZgV5AXg12boM7JGPPI=" parentID="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=" refID="urn:bluemarine:track:QpLrd6gnOZgV5AXg12boM7JGPPI=" restricted="0">
         <dc:title>Giant Steps</dc:title>
@@ -16,7 +16,7 @@ Browse({ObjectID=/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASu
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
         <upnp:album>Trio 99&gt;00</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:07:53.000" protocolInfo="http-get:*:audio/mpeg:*" size="18962925">http://<server>/Music/Pat+Metheny/Trio+99_00/02+Giant+Steps.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:07:53.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="18962925">http://<server>/rest/audiofile/urn:bluemarine:audiofile:s0Q6rb53UcKorvwp9bK0Mhp9bTc=/content</res>
     </item>
     <item id="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=/t:jBUWohkBtPwuvNvj3i8xUItj9E4=" parentID="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=" refID="urn:bluemarine:track:jBUWohkBtPwuvNvj3i8xUItj9E4=" restricted="0">
         <dc:title>Just Like The Day</dc:title>
@@ -25,7 +25,7 @@ Browse({ObjectID=/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASu
         <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
         <upnp:album>Trio 99&gt;00</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:04:43.000" protocolInfo="http-get:*:audio/mpeg:*" size="11339355">http://<server>/Music/Pat+Metheny/Trio+99_00/03+Just+Like+The+Day.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:43.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="11339355">http://<server>/rest/audiofile/urn:bluemarine:audiofile:vfZE_juxDYKoPzv8Lz3TQdh4sGE=/content</res>
     </item>
     <item id="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=/t:TdN4-eihj4bbSCvkkYV5T6wb3oM=" parentID="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=" refID="urn:bluemarine:track:TdN4-eihj4bbSCvkkYV5T6wb3oM=" restricted="0">
         <dc:title>Soul Cowboy</dc:title>
@@ -34,7 +34,7 @@ Browse({ObjectID=/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASu
         <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
         <upnp:album>Trio 99&gt;00</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:08:28.000" protocolInfo="http-get:*:audio/mpeg:*" size="20360998">http://<server>/Music/Pat+Metheny/Trio+99_00/04+Soul+Cowboy.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:08:28.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="20360998">http://<server>/rest/audiofile/urn:bluemarine:audiofile:G5bME_ZE_46ROJkCFeG5lINby5I=/content</res>
     </item>
     <item id="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=/t:qp1UhejBbF551FN5_NNbcFhFHyc=" parentID="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=" refID="urn:bluemarine:track:qp1UhejBbF551FN5_NNbcFhFHyc=" restricted="0">
         <dc:title>The Sun In Montreal</dc:title>
@@ -43,7 +43,7 @@ Browse({ObjectID=/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASu
         <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
         <upnp:album>Trio 99&gt;00</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:04:35.000" protocolInfo="http-get:*:audio/mpeg:*" size="11035292">http://<server>/Music/Pat+Metheny/Trio+99_00/05+The+Sun+In+Montreal.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:35.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="11035292">http://<server>/rest/audiofile/urn:bluemarine:audiofile:wmljbfqdKkfgkb3-hLFlEc1IdWE=/content</res>
     </item>
     <item id="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=/t:CKQQMu7CVCkZuOueAWnncV-rOEk=" parentID="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=" refID="urn:bluemarine:track:CKQQMu7CVCkZuOueAWnncV-rOEk=" restricted="0">
         <dc:title>Capricorn</dc:title>
@@ -52,7 +52,7 @@ Browse({ObjectID=/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASu
         <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
         <upnp:album>Trio 99&gt;00</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:06:19.000" protocolInfo="http-get:*:audio/mpeg:*" size="15193976">http://<server>/Music/Pat+Metheny/Trio+99_00/06+Capricorn.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:19.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="15193976">http://<server>/rest/audiofile/urn:bluemarine:audiofile:wU10TEjSzfhf9P1zLa2Jo6iJPss=/content</res>
     </item>
     <item id="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=/t:QbafbWNNTMevSFeukb4NZaTV1HA=" parentID="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=" refID="urn:bluemarine:track:QbafbWNNTMevSFeukb4NZaTV1HA=" restricted="0">
         <dc:title>We Had A Sister</dc:title>
@@ -61,7 +61,7 @@ Browse({ObjectID=/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASu
         <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
         <upnp:album>Trio 99&gt;00</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:05:30.000" protocolInfo="http-get:*:audio/mpeg:*" size="13227484">http://<server>/Music/Pat+Metheny/Trio+99_00/07+We+Had+A+Sister.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:05:30.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="13227484">http://<server>/rest/audiofile/urn:bluemarine:audiofile:KeeyIOCl21W49oq38PohMCRaWfA=/content</res>
     </item>
     <item id="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=/t:t4fPH7rN3smF5hM_rUOlfcwkc0o=" parentID="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=" refID="urn:bluemarine:track:t4fPH7rN3smF5hM_rUOlfcwkc0o=" restricted="0">
         <dc:title>What Do You Want?</dc:title>
@@ -70,7 +70,7 @@ Browse({ObjectID=/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASu
         <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
         <upnp:album>Trio 99&gt;00</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:05:24.000" protocolInfo="http-get:*:audio/mpeg:*" size="12975665">http://<server>/Music/Pat+Metheny/Trio+99_00/08+What+Do+You+Want_.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:05:24.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="12975665">http://<server>/rest/audiofile/urn:bluemarine:audiofile:AzndDUkghlepxai1nybzBEEplfs=/content</res>
     </item>
     <item id="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=/t:084mcMTA4obPc6C2uK8_k07y1_I=" parentID="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=" refID="urn:bluemarine:track:084mcMTA4obPc6C2uK8_k07y1_I=" restricted="0">
         <dc:title>A Lot Of Livin' To Do</dc:title>
@@ -79,7 +79,7 @@ Browse({ObjectID=/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASu
         <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
         <upnp:album>Trio 99&gt;00</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:05:29.000" protocolInfo="http-get:*:audio/mpeg:*" size="13175245">http://<server>/Music/Pat+Metheny/Trio+99_00/09+A+Lot+Of+Livin%27+To+Do.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:05:29.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="13175245">http://<server>/rest/audiofile/urn:bluemarine:audiofile:u_RxCJvAd2Oj88vELYrpqVfqPzE=/content</res>
     </item>
     <item id="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=/t:IAYGT9TXtiIqRYxLICDDWFo2YAM=" parentID="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=" refID="urn:bluemarine:track:IAYGT9TXtiIqRYxLICDDWFo2YAM=" restricted="0">
         <dc:title>Lone Jack</dc:title>
@@ -88,7 +88,7 @@ Browse({ObjectID=/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASu
         <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
         <upnp:album>Trio 99&gt;00</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:05:30.000" protocolInfo="http-get:*:audio/mpeg:*" size="13230613">http://<server>/Music/Pat+Metheny/Trio+99_00/10+Lone+Jack.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:05:30.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="13230613">http://<server>/rest/audiofile/urn:bluemarine:audiofile:pkJKntBGhtJWXdIb0MLa7K4LEzA=/content</res>
     </item>
     <item id="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=/t:04TgWNbFJduC1blbmNhj_aRe6VQ=" parentID="/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASuZioWdz8Wbk=" refID="urn:bluemarine:track:04TgWNbFJduC1blbmNhj_aRe6VQ=" restricted="0">
         <dc:title>Travels</dc:title>
@@ -97,6 +97,6 @@ Browse({ObjectID=/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASu
         <upnp:originalTrackNumber>11</upnp:originalTrackNumber>
         <upnp:album>Trio 99&gt;00</upnp:album>
         <upnp:storageMedium>HDD</upnp:storageMedium>
-        <res duration="0:05:48.000" protocolInfo="http-get:*:audio/mpeg:*" size="13936962">http://<server>/Music/Pat+Metheny/Trio+99_00/11+Travels.mp3</res>
+        <res bitrate="320" bitsPerSample="16" duration="0:05:48.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="13936962">http://<server>/rest/audiofile/urn:bluemarine:audiofile:2Dgvujaem7h5h4XhSjQ3LClcvO8=/content</res>
     </item>
 </DIDL-Lite>
