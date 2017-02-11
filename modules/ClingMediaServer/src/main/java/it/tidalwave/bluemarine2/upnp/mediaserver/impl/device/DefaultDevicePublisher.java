@@ -93,6 +93,9 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
     private boolean useHostNameInFriendlyName = true;
 
     @Getter @Setter
+    private String serialNumber = "n.a.";
+
+    @Getter @Setter
     private UDADeviceType udaDeviceType = new UDADeviceType("MediaServer", 1);
 
     @Getter @Setter
@@ -159,15 +162,18 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
             serviceManager = new AutowireServiceManager<>(beanFactory, service, serviceClass);
             service.setManager(serviceManager);
             log.info("publishDevice() - {}", service);
+            final DeviceDetails deviceDetails = new DeviceDetails(computeFriendyName(),
+                                                                  manufacturerDetails,
+                                                                  modelDetails,
+                                                                  serialNumber,
+                                                                  null, // UPC
+                                                                  dlnaDocs.toArray(new DLNADoc[0]),
+                                                                  new DLNACaps(dlnaCaps.toArray(new String[0])));
             device = new LocalDevice(new DeviceIdentity(udn, 1800),
                                      udaDeviceType,
-                                     new DeviceDetails(computeFriendyName(),
-                                                       manufacturerDetails,
-                                                       modelDetails,
-                                                       dlnaDocs.toArray(new DLNADoc[0]),
-                                                       new DLNACaps(dlnaCaps.toArray(new String[0]))),
-                                                       icons.toArray(new Icon[0]),
-                                                       service);
+                                     deviceDetails,
+                                     icons.toArray(new Icon[0]),
+                                     service);
             upnpService.getRegistry().addDevice(device);
           }
         catch (ValidationException e)

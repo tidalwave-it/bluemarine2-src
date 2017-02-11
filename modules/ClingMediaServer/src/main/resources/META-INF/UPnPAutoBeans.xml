@@ -47,6 +47,7 @@
     <bean id="contentDirectoryPublisher" class="it.tidalwave.bluemarine2.upnp.mediaserver.impl.device.DefaultDevicePublisher">
         <constructor-arg value="it.tidalwave.bluemarine2.upnp.mediaserver.impl.ContentDirectoryClingAdapter" />
         <property name="friendlyName" value="bm II"/>
+        <property name="serialNumber" value="${device.serialNumber}"/>
     </bean>
 
 </beans>
