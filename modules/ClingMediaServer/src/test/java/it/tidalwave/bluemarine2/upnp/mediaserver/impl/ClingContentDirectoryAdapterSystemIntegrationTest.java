@@ -138,7 +138,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
     public final void setup()
       throws Exception
       {
-        upnpClient = new UpnpClient("ContentDirectory");
+        upnpClient = new UpnpClient("ContentDirectory", device -> "underTest".equals(device.getDetails().getSerialNumber()));
         Executors.newSingleThreadExecutor().submit(upnpClient);
         final Map<Key<?>, Object> properties = new HashMap<>();
         final Path repositoryPath = Paths.get("target/test-classes/test-sets/model-iTunes-fg-20160504-2.n3");
@@ -216,8 +216,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                         Files.createDirectories(actualFile.getParent());
                         final String header = String.format("%s(%s)", actionInvocation.getAction().getName(), actionInvocation.getInputMap());
                         final DIDLParser parser = new DIDLParser();
-                        final String hostAndPort = String.format("http://%s:%d", resourceServer.getIpAddress(), resourceServer.getPort());
-                        final String result = xmlPrettyPrinted(parser.generate(didl)).replaceAll(hostAndPort, "http://<server>");
+                        final String baseUrl = resourceServer.absoluteUrl("");
+                        final String result = xmlPrettyPrinted(parser.generate(didl)).replaceAll(baseUrl, "http://<server>/");
                         Files.write(actualFile, (header + "\n" + result).getBytes(UTF_8));
                         assertSameContents(normalizedPath(expectedFile), normalizedPath(actualFile));
                       }
