@@ -75,7 +75,7 @@
             <groupId>it.tidalwave.thesefoolishthings</groupId>
             <artifactId>it-tidalwave-role-spring</artifactId>
             <scope>test</scope>
-<!--            <exclusions>
+            <!--            <exclusions>
                 <exclusion>
                     <groupId>org.aspectj</groupId>
                     <artifactId>aspectjweaver</artifactId>
@@ -89,6 +89,16 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <!-- FIXME: push to superpom -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
 
     <profiles>
         <profile>

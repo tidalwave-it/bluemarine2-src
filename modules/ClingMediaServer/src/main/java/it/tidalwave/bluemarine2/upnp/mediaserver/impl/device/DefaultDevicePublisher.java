@@ -35,7 +35,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.net.InetAddress;
+import java.net.URI;
 import java.net.UnknownHostException;
+import java.util.Optional;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.binding.annotations.AnnotationLocalServiceBinder;
 import org.fourthline.cling.model.DefaultServiceManager;
@@ -84,7 +86,7 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
     private boolean autoPublish = true;
 
     @Getter @Setter
-    private UDN udn = UDN.uniqueSystemIdentifier("1");
+    private UDN udn;
 
     @Getter @Setter
     private String friendlyName = "bm II";
@@ -93,15 +95,30 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
     private boolean useHostNameInFriendlyName = true;
 
     @Getter @Setter
+    private String serialNumber = "n.a.";
+
+    @Getter @Setter
+    private String version = "n.a.";
+
+    @Getter @Setter
     private UDADeviceType udaDeviceType = new UDADeviceType("MediaServer", 1);
+
+    @Getter @Setter
+    private int maxAge = 1800;
+
+    @Getter @Setter
+    private String modelName = "blueMarine II media server";
+
+    @Getter @Setter
+    private String presentationUri;
 
     @Getter @Setter
     private ManufacturerDetails manufacturerDetails = new ManufacturerDetails("Tidalwave s.a.s.", "http://tidalwave.it");
 
     @Getter @Setter
-    private ModelDetails modelDetails = new ModelDetails("blueMarine II",
-                                                         "blueMarine II media server.",
-                                                         "v?", // FIXME: use build tag
+    private ModelDetails modelDetails = new ModelDetails(modelName,
+                                                         modelName,
+                                                         version,
                                                          "http://bluemarine.tidalwave.it");
 
     @Getter @Setter
@@ -154,19 +171,24 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
       {
         try
           {
+            udn = UDN.uniqueSystemIdentifier("1");
             service = serviceBinder.read(serviceClass);
             serviceManager = new AutowireServiceManager<>(beanFactory, service, serviceClass);
             service.setManager(serviceManager);
             log.info("publishDevice() - {}", service);
-            device = new LocalDevice(new DeviceIdentity(udn, 1800),
+            final DeviceDetails deviceDetails = new DeviceDetails(computeFriendyName(),
+                                                                  manufacturerDetails,
+                                                                  modelDetails,
+                                                                  serialNumber,
+                                                                  null, // UPC
+                                                                  Optional.ofNullable(presentationUri).map(URI::create).orElse(null),
+                                                                  dlnaDocs.toArray(new DLNADoc[0]),
+                                                                  new DLNACaps(dlnaCaps.toArray(new String[0])));
+            device = new LocalDevice(new DeviceIdentity(udn, maxAge),
                                      udaDeviceType,
-                                     new DeviceDetails(computeFriendyName(),
-                                                       manufacturerDetails,
-                                                       modelDetails,
-                                                       dlnaDocs.toArray(new DLNADoc[0]),
-                                                       new DLNACaps(dlnaCaps.toArray(new String[0]))),
-                                                       icons.toArray(new Icon[0]),
-                                                       service);
+                                     deviceDetails,
+                                     icons.toArray(new Icon[0]),
+                                     service);
             upnpService.getRegistry().addDevice(device);
           }
         catch (ValidationException e)
@@ -182,11 +204,17 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
      ******************************************************************************************************************/
     @PostConstruct
     private void initialize()
-      throws ValidationException
       {
         if (autoPublish)
           {
-            publishDevice();
+            try
+              {
+                publishDevice();
+              }
+            catch (RuntimeException | ValidationException e)
+              {
+                log.error("Could not publish device", e);
+              }
           }
       }
 
