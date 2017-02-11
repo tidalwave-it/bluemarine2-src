@@ -35,7 +35,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.net.InetAddress;
+import java.net.URI;
 import java.net.UnknownHostException;
+import java.util.Optional;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.binding.annotations.AnnotationLocalServiceBinder;
 import org.fourthline.cling.model.DefaultServiceManager;
@@ -108,6 +110,9 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
     private String modelName = "blueMarine II media server";
 
     @Getter @Setter
+    private String presentationUri;
+
+    @Getter @Setter
     private ManufacturerDetails manufacturerDetails = new ManufacturerDetails("Tidalwave s.a.s.", "http://tidalwave.it");
 
     @Getter @Setter
@@ -176,6 +181,7 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
                                                                   modelDetails,
                                                                   serialNumber,
                                                                   null, // UPC
+                                                                  Optional.ofNullable(presentationUri).map(URI::create).orElse(null),
                                                                   dlnaDocs.toArray(new DLNADoc[0]),
                                                                   new DLNACaps(dlnaCaps.toArray(new String[0])));
             device = new LocalDevice(new DeviceIdentity(udn, maxAge),
