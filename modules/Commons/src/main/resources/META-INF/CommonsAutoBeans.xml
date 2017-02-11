@@ -66,6 +66,7 @@
         <property name="locations">
             <list>
                 <value>classpath*:META-INF/default.properties</value>
+                <value>classpath*:META-INF/override.properties</value>
                 <value>classpath*:META-INF/test.properties</value>
                 <value>file:${blueMarine2.workspace}/config/configuration.properties</value>
             </list>
