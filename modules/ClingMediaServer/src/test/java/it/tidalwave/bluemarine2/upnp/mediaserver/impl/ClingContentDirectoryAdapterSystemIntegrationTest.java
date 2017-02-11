@@ -52,10 +52,10 @@ import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.persistence.PersistencePropertyNames;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import it.tidalwave.bluemarine2.commons.test.EventBarrier;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import lombok.Getter;
@@ -134,7 +134,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @BeforeMethod
+    @BeforeClass
     public final void setup()
       throws Exception
       {
@@ -154,7 +154,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
-    @AfterMethod
+    @AfterClass
     public final void shutdown()
       {
         upnpClient.shutdown();
