@@ -45,6 +45,7 @@
         <constructor-arg value="it.tidalwave.bluemarine2.upnp.mediaserver.mock.UPnPServerMock" />
         <property name="friendlyName" value="UPnP Server Mock" />
         <property name="autoPublish" value="false" />
+        <property name="serialNumber" value="${serialNumber}"/>
     </bean>
 
 </beans>

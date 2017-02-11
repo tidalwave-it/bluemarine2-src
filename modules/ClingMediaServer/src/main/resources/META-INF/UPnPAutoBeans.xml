@@ -46,7 +46,13 @@
 
     <bean id="contentDirectoryPublisher" class="it.tidalwave.bluemarine2.upnp.mediaserver.impl.device.DefaultDevicePublisher">
         <constructor-arg value="it.tidalwave.bluemarine2.upnp.mediaserver.impl.ContentDirectoryClingAdapter" />
-        <property name="friendlyName" value="bm II"/>
+        <property name="friendlyName" value="${upnp.friendlyName}"/>
+        <property name="useHostNameInFriendlyName" value="${upnp.useHostNameInFriendlyName}" />
+        <property name="serialNumber" value="${upnp.device.serialNumber}" />
+        <property name="autoPublish" value="${upnp.autoPublish}" />
+        <property name="maxAge" value="${upnp.device.maxAge}" />
+        <property name="version" value="${version}" />
+        <property name="modelName" value="${modelName}" />
     </bean>
 
 </beans>
