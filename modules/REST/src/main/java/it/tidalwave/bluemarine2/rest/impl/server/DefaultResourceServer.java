@@ -93,7 +93,7 @@ public class DefaultResourceServer implements ResourceServer
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
+    /* VisibleForTesting */ public void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
       throws Exception
       {
         log.info("onPowerOnNotification({})", notification);
@@ -107,7 +107,6 @@ public class DefaultResourceServer implements ResourceServer
         servletContext.setContextPath("/");
         servletContext.setWelcomeFiles(new String[] { "index.xhtml" });
         final DelegateWebApplicationContext wac = new DelegateWebApplicationContext(applicationContext, servletContext.getServletContext());
-        // FIXME: make this another REST stuff, serving audiofile/urn:....
         servletContext.addServlet(new ServletHolder("spring", new DispatcherServlet(wac)), "/rest/*");
         servletContext.addServlet(new ServletHolder("default", new DefaultServlet()), "/*");
         servletContext.addFilter(new FilterHolder(new LoggingFilter()), "/*", EnumSet.allOf(DispatcherType.class));

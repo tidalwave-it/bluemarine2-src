@@ -40,6 +40,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import org.eclipse.rdf4j.repository.Repository;
 import org.fourthline.cling.model.action.ActionInvocation;
 import org.fourthline.cling.model.message.UpnpResponse;
 import org.fourthline.cling.support.contentdirectory.DIDLParser;
@@ -47,17 +48,14 @@ import org.fourthline.cling.support.contentdirectory.callback.Browse;
 import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
 import it.tidalwave.util.Key;
-import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
+import it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
-import it.tidalwave.bluemarine2.persistence.PersistencePropertyNames;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
+import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import it.tidalwave.bluemarine2.commons.test.EventBarrier;
-import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
@@ -66,6 +64,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.bluemarine2.util.Formatters.*;
+import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
 import static it.tidalwave.bluemarine2.model.ModelPropertyNames.ROOT_PATH;
 
 /***********************************************************************************************************************
@@ -93,7 +92,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
 
     private ResourceServer resourceServer;
 
-    private EventBarrier<PersistenceInitializedNotification> barrier;
+//    private EventBarrier<PersistenceInitializedNotification> barrier;
 
     /*******************************************************************************************************************
      *
@@ -123,12 +122,11 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
       {
         super("META-INF/DciAutoBeans.xml" ,
               "META-INF/CommonsAutoBeans.xml" ,
-              "META-INF/ModelAutoBeans.xml" ,
-              "META-INF/PersistenceAutoBeans.xml",
               "META-INF/CatalogAutoBeans.xml" ,
               "META-INF/MediaServerAutoBeans.xml",
               "META-INF/RestAutoBeans.xml",
-              "META-INF/UPnPAutoBeans.xml");
+              "META-INF/UPnPAutoBeans.xml",
+              "META-INF/UPnPTestBeans.xml");
       }
 
     /*******************************************************************************************************************
@@ -143,12 +141,11 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
         final Map<Key<?>, Object> properties = new HashMap<>();
         final Path repositoryPath = Paths.get("target/test-classes/test-sets/model-iTunes-fg-20160504-2.n3");
         properties.put(ROOT_PATH, TestSetLocator.getMusicTestSetsPath().resolve("iTunes-fg-20160504-2"));
-        properties.put(PersistencePropertyNames.IMPORT_FILE, repositoryPath);
+        final DefaultMediaFileSystem fileSystem = context.getBean(DefaultMediaFileSystem.class);
+        fileSystem.onPowerOnNotification(new PowerOnNotification(properties));
+        final Repository repository = context.getBean(Repository.class);
+        loadRepository(repository, repositoryPath);
         resourceServer = context.getBean(ResourceServer.class);
-        final MessageBus messageBus = context.getBean(MessageBus.class);
-        barrier = new EventBarrier<>(PersistenceInitializedNotification.class, messageBus);
-        messageBus.publish(new PowerOnNotification(properties));
-        barrier.await();
       }
 
     /*******************************************************************************************************************

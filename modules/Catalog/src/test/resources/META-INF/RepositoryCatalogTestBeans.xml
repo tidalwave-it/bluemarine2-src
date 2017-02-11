@@ -60,6 +60,17 @@
 
     <aop:aspectj-autoproxy/>
 
+    <bean id="underTest"
+          class="it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMediaCatalog" />
+
+    <bean id="repository"
+          class="org.eclipse.rdf4j.repository.sail.SailRepository"
+          init-method="initialize">
+        <constructor-arg>
+            <bean class="org.eclipse.rdf4j.sail.memory.MemoryStore" />
+        </constructor-arg>
+    </bean>
+
     <bean class="it.tidalwave.bluemarine2.model.impl.catalog.factory.DefaultRepositoryEntityFactory" />
 
     <bean class="org.mockito.Mockito" factory-method="mock">

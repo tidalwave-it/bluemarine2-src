@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
+import javax.inject.Inject;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
@@ -43,7 +44,6 @@ import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryPerformanceFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
 
@@ -53,7 +53,7 @@ import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j
+@Slf4j
 public class RepositoryMediaCatalog implements MediaCatalog
   {
     static
@@ -61,8 +61,8 @@ public class RepositoryMediaCatalog implements MediaCatalog
         log.info("Catalog configuration source: {} fallback: {}", getSource(), getFallback());
       }
 
-    @Nonnull
-    private final Repository repository;
+    @Inject
+    private Repository repository;
 
     @Override @Nonnull
     public MusicArtistFinder findArtists()

@@ -57,8 +57,6 @@ import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
-import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMediaCatalog;
-import it.tidalwave.bluemarine2.persistence.Persistence;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
 import static org.springframework.http.HttpHeaders.*;
@@ -95,10 +93,10 @@ public class MusicResourcesController
         private static final long serialVersionUID = 3644567083880573896L;
       }
 
-    private MediaCatalog catalog; // FIXME: directly inject the Catalog
-
     @Inject
-    public Persistence persistence;
+    private MediaCatalog catalog;
+
+    private volatile boolean persistenceInitialized;
 
     /*******************************************************************************************************************
      *
@@ -108,7 +106,7 @@ public class MusicResourcesController
       throws IOException
       {
         log.info("onPersistenceInitializedNotification({})", notification);
-        catalog = new RepositoryMediaCatalog(persistence.getRepository());
+        persistenceInitialized = false;
       }
 
     /*******************************************************************************************************************
@@ -393,7 +391,7 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     private void checkStatus()
       {
-        if (catalog == null)
+        if (persistenceInitialized)
           {
             throw new UnavailableException();
           }

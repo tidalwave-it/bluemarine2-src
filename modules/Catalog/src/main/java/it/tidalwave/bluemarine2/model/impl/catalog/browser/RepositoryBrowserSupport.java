@@ -28,7 +28,6 @@
  */
 package it.tidalwave.bluemarine2.model.impl.catalog.browser;
 
-import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.function.Function;
@@ -38,8 +37,6 @@ import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.role.EntityBrowser;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
-import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMediaCatalog;
-import it.tidalwave.bluemarine2.persistence.Persistence;
 import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
@@ -51,9 +48,6 @@ import static it.tidalwave.role.Displayable.Displayable;
 public class RepositoryBrowserSupport extends EntityWithRoles implements EntityBrowser
   {
     @Inject
-    private Persistence persistence;
-
-    @CheckForNull
     private MediaCatalog catalog;
 
     @Nonnull
@@ -61,23 +55,12 @@ public class RepositoryBrowserSupport extends EntityWithRoles implements EntityB
 
     protected RepositoryBrowserSupport (final @Nonnull Function<MediaCatalog, Finder8<? extends Entity>> finderFactory)
       {
-        compositeForRootEntity = () -> finderFactory.apply(getCatalog()).withContext(RepositoryBrowserSupport.this);
+        compositeForRootEntity = () -> finderFactory.apply(catalog).withContext(RepositoryBrowserSupport.this);
       }
 
     @Override @Nonnull
     public Entity getRoot()
       {
         return new EntityWithRoles(compositeForRootEntity, this.as(Displayable)); // FIXME: what about an EntityDecorator?
-      }
-
-    @Nonnull
-    protected final synchronized MediaCatalog getCatalog()
-      {
-        if (catalog == null) // FIXME: use memoizer
-          {
-            catalog = new RepositoryMediaCatalog(persistence.getRepository());
-          }
-
-        return catalog;
       }
   }
