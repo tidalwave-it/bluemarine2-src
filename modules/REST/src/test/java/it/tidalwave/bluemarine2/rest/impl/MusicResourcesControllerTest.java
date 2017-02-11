@@ -204,13 +204,6 @@ public class MusicResourcesControllerTest extends SpringTestSupport
             { "rest/record/urn:bluemarine:record:not_existing",
               "record-not_existing.json.txt" },
 
-            { "rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=/track",
-              "record-eLWktOMBbcOWysVn6AW6kksBS7Q=-tracks.json.txt" },
-
-            // FIXME: this is wrong, returning 200 + empty JSON while it should be 404
-            { "rest/record/urn:bluemarine:record:not_existing/track",
-              "record-not_existing-tracks.json.txt" },
-
             { "rest/record/urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=/coverart",
               "record-XoqvktWLs6mu64qGOxQ3NyPzXVY=-coverart.jpg.txt" },
 

@@ -29,17 +29,16 @@
 package it.tidalwave.bluemarine2.rest.impl;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.Record;
 import lombok.Getter;
-import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
  * An adapter for exporting {@link Record} in JSON.
+ * FIXME: differentiating the serialized fields should be done with JsonView
  *
  * @stereotype  Adapter
  *
@@ -50,36 +49,14 @@ import static it.tidalwave.role.Displayable.Displayable;
 @Getter
 @JsonInclude(JsonInclude.Include.NON_ABSENT)
 @JsonPropertyOrder(alphabetic = true)
-public class RecordJson extends JsonSupport
+public class DetailedRecordJson extends RecordJson
   {
-    private final String id;
+    private final List<TrackJson> tracks;
 
-    private final String displayName;
-
-    private final Optional<Integer> diskCount;
-
-    private final Optional<Integer> diskNumber;
-
-    private final Optional<Integer> trackCount;
-
-    private final Optional<String> source;
-
-    private final Optional<String> asin;
-
-    private final Optional<String> gtin;
-
-    protected String details;
-
-    public RecordJson (final @Nonnull Record record)
+    public DetailedRecordJson (final @Nonnull Record record, final @Nonnull List<TrackJson> tracks)
       {
-        this.id          = record.getId().stringValue();
-        this.displayName = record.as(Displayable).getDisplayName();
-        this.diskCount   = record.getDiskCount();
-        this.diskNumber  = record.getDiskNumber();
-        this.trackCount  = record.getTrackCount();
-        this.source      = record.getSource().map(Id::toString);
-        this.asin        = record.getAsin();
-        this.gtin        = record.getGtin();
-        this.details     = resourceUri("record", record);
+        super(record);
+        this.details = null;
+        this.tracks  = tracks;
       }
   }
