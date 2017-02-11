@@ -96,15 +96,24 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
     private String serialNumber = "n.a.";
 
     @Getter @Setter
+    private String version = "n.a.";
+
+    @Getter @Setter
     private UDADeviceType udaDeviceType = new UDADeviceType("MediaServer", 1);
+
+    @Getter @Setter
+    private int maxAge = 1800;
+
+    @Getter @Setter
+    private String modelName = "blueMarine II media server";
 
     @Getter @Setter
     private ManufacturerDetails manufacturerDetails = new ManufacturerDetails("Tidalwave s.a.s.", "http://tidalwave.it");
 
     @Getter @Setter
-    private ModelDetails modelDetails = new ModelDetails("blueMarine II",
-                                                         "blueMarine II media server.",
-                                                         "v?", // FIXME: use build tag
+    private ModelDetails modelDetails = new ModelDetails(modelName,
+                                                         modelName,
+                                                         version,
                                                          "http://bluemarine.tidalwave.it");
 
     @Getter @Setter
@@ -169,7 +178,7 @@ public class DefaultDevicePublisher<T> implements DevicePublisher<T>
                                                                   null, // UPC
                                                                   dlnaDocs.toArray(new DLNADoc[0]),
                                                                   new DLNACaps(dlnaCaps.toArray(new String[0])));
-            device = new LocalDevice(new DeviceIdentity(udn, 1800),
+            device = new LocalDevice(new DeviceIdentity(udn, maxAge),
                                      udaDeviceType,
                                      deviceDetails,
                                      icons.toArray(new Icon[0]),
