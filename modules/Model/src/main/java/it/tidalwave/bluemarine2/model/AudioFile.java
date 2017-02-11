@@ -28,10 +28,12 @@
  */
 package it.tidalwave.bluemarine2.model;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import java.util.Optional;
 import java.io.IOException;
 import java.nio.file.Path;
+import org.springframework.core.io.Resource;
 import it.tidalwave.role.Identifiable;
 import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 
@@ -48,10 +50,14 @@ import it.tidalwave.bluemarine2.model.finder.MusicArtistFinder;
 public interface AudioFile extends MediaItem, Identifiable // FIXME: MediaItem should not be statically Parentable
   {
     @Nonnull
-    public Path getPath(); // FIXME: rename to getRelativePath
+    public Path getPath(); // FIXME: rename to getRelativePath?
+
+    @Nonnegative
+    public long getSize()
+      throws IOException;
 
     @Nonnull
-    public Optional<byte[]> getContent()
+    public Optional<Resource> getContent()
       throws IOException;
 
     /*******************************************************************************************************************

@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.rest.impl;
 
+import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import java.util.List;
@@ -35,10 +36,14 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Stream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import org.springframework.core.io.support.ResourceRegion;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -56,12 +61,13 @@ import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMediaCatalog;
 import it.tidalwave.bluemarine2.persistence.Persistence;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
+import static org.springframework.http.HttpHeaders.*;
+import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.*;
+import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.ARTWORK;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
-import static it.tidalwave.bluemarine2.util.FunctionWrappers._f;
-import static it.tidalwave.role.Displayable.Displayable;
-import static org.springframework.http.HttpHeaders.CONTENT_DISPOSITION;
 
 /***********************************************************************************************************************
  *
@@ -272,18 +278,19 @@ public class MusicResourcesController
     /*******************************************************************************************************************
      *
      * @param   id          the audio file id
+     * @param   rangeHeader the "Range" HTTP header
      * @return              the binary contents
-     *
-     * FIXME: support ranges, use ResourceRegionHttpMessageConverter? Then drop the RangeServlet in favour of it.
      *
      ******************************************************************************************************************/
     @RequestMapping(value = "/audiofile/{id}/content")
-    public ResponseEntity<byte[]> getAudioFileContent (final @PathVariable String id)
+    public ResponseEntity<ResourceRegion> getAudioFileContent (
+            final @PathVariable String id,
+            final @RequestHeader(name = "Range", required = false) String rangeHeader)
       {
         log.info("getAudioFileContent({})", id);
         checkStatus();
         return catalog.findAudioFiles().withId(new Id(id)).optionalResult()
-                                                          .map(_f(this::audioFileContentResponse))
+                                                          .map(_f(af -> audioFileContentResponse(af, rangeHeader)))
                                                           .orElseThrow(NotFoundException::new);
       }
 
@@ -294,7 +301,7 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @RequestMapping(value = "/audiofile/{id}/coverart")
-    public ResponseEntity<byte[]>  getAudioFileCoverArt (final @PathVariable String id)
+    public ResponseEntity<byte[]> getAudioFileCoverArt (final @PathVariable String id)
       {
         log.info("getAudioFileCoverArt({})", id);
         checkStatus();
@@ -341,11 +348,29 @@ public class MusicResourcesController
      *
      ******************************************************************************************************************/
     @Nonnull
-    private ResponseEntity<byte[]> audioFileContentResponse (final @Nonnull AudioFile file)
+    private ResponseEntity<ResourceRegion> audioFileContentResponse (final @Nonnull AudioFile file,
+                                                                     final @CheckForNull String rangeHeader)
       throws IOException
       {
+        final long length = file.getSize();
+        final List<Range> ranges = Range.fromHeader(rangeHeader, length);
+
+        if (ranges.size() > 1)
+          {
+            throw new RuntimeException("Can't support multi-range" + ranges); // FIXME
+          }
+
+        // E.g. HTML5 <audio> crashes if fed with too many data.
+        final long maxSize = (rangeHeader != null) ? 1024*1024 : length;
+        final Range fullRange = Range.full(length);
+        final Range range = ranges.stream().findFirst().orElse(fullRange).subrange(maxSize);
+
         final String displayName = file.as(Displayable).getDisplayName(); // FIXME: getRdfsLabel()
-        return file.getContent().map(bytes -> bytesResponse(bytes, "audio", "mpeg", displayName))
+        final HttpStatus status = range.equals(fullRange) ? OK : PARTIAL_CONTENT;
+        return file.getContent().map(resource -> ResponseEntity.status(status)
+                                                            .contentType(new MediaType("audio", "mpeg"))
+                                                            .header(CONTENT_DISPOSITION, contentDisposition(displayName))
+                                                            .body(range.getRegion(resource)))
                                 .orElseThrow(NotFoundException::new);
       }
 
@@ -361,8 +386,25 @@ public class MusicResourcesController
         return ResponseEntity.ok()
                              .contentType(new MediaType(type, subtype))
                              .contentLength(bytes.length)
-                             .header(CONTENT_DISPOSITION, contentDisposition)
+                             .header(CONTENT_DISPOSITION, contentDisposition(contentDisposition))
                              .body(bytes);
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    @Nonnull
+    private static String contentDisposition (final @Nonnull String string)
+      {
+        try
+          {
+            // See https://tools.ietf.org/html/rfc6266#section-5
+            return String.format("filename=\"%s\"; filename*=utf-8''%s", string, URLEncoder.encode(string, "UTF-8"));
+          }
+        catch (UnsupportedEncodingException e)
+          {
+            throw new RuntimeException(e);
+          }
       }
 
     /*******************************************************************************************************************

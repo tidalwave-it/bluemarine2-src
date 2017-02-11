@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.rest.spi;
 
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
-import it.tidalwave.bluemarine2.model.AudioFile;
 
 /***********************************************************************************************************************
  *
@@ -45,9 +44,6 @@ public interface ResourceServer
 
     @Nonnegative
     public int getPort();
-
-    @Nonnull
-    public String urlForResource (@Nonnull AudioFile resource);
 
     @Nonnull
     public String absoluteUrl (@Nonnull String relativeUrl);
