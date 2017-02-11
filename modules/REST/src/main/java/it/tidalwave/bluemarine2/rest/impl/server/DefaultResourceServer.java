@@ -29,21 +29,17 @@
 package it.tidalwave.bluemarine2.rest.impl.server;
 
 import javax.annotation.Nonnull;
-import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 import java.util.List;
 import java.util.stream.Stream;
 import java.util.Enumeration;
 import java.util.EnumSet;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.nio.file.Path;
 import java.net.InetAddress;
 import java.net.Inet4Address;
 import java.net.InetSocketAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
-import java.net.URLEncoder;
 import javax.servlet.DispatcherType;
 import org.eclipse.jetty.util.resource.Resource;
 import org.eclipse.jetty.util.resource.ResourceCollection;
@@ -60,9 +56,7 @@ import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.message.PowerOffNotification;
-import it.tidalwave.bluemarine2.model.ModelPropertyNames;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
 import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
@@ -76,18 +70,25 @@ import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
 @SimpleMessageSubscriber @Slf4j
 public class DefaultResourceServer implements ResourceServer
   {
-    @Getter
     private String ipAddress = "";
 
-    @Getter
     private int port;
 
     private Server server;
 
-    private Path rootPath;
-
     @Inject
     private ApplicationContext applicationContext;
+
+    /*******************************************************************************************************************
+     *
+     * {@inheritDoc}
+     *
+     ******************************************************************************************************************/
+    @Override @Nonnull
+    public String absoluteUrl (final @Nonnull String type)
+      {
+        return String.format("http://%s:%d/%s", ipAddress, port, type);
+      }
 
     /*******************************************************************************************************************
      *
@@ -97,7 +98,6 @@ public class DefaultResourceServer implements ResourceServer
       throws Exception
       {
         log.info("onPowerOnNotification({})", notification);
-        rootPath = notification.getProperties().get(ModelPropertyNames.ROOT_PATH);
         ipAddress = getNonLoopbackIPv4Address().getHostAddress();
         server = new Server(InetSocketAddress.createUnresolved(ipAddress, Integer.getInteger("port", 0)));
 
@@ -115,7 +115,7 @@ public class DefaultResourceServer implements ResourceServer
         server.start();
         port = server.getConnectors()[0].getLocalPort(); // jetty 8
 //        port = ((ServerConnector)server.getConnectors()[0]).getLocalPort(); // jetty 9
-        log.info(">>>> resource server jetty started at {}:{} serving resources at {}", ipAddress, port, rootPath);
+        log.info(">>>> resource server jetty started at {}:{} ", ipAddress, port);
       }
 
     /*******************************************************************************************************************
@@ -164,29 +164,6 @@ public class DefaultResourceServer implements ResourceServer
     /*******************************************************************************************************************
      *
      *
-     *
-     ******************************************************************************************************************/
-    @PreDestroy // FIXME: user PowerOffNotification
-    private void shutDown()
-      throws Exception
-      {
-        server.stop();
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Override @Nonnull
-    public String absoluteUrl (final @Nonnull String type)
-      {
-        return String.format("http://%s:%d/%s", ipAddress, port, type);
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
      ******************************************************************************************************************/
     @Nonnull
     private Resource[] findWebResources()
@@ -198,23 +175,5 @@ public class DefaultResourceServer implements ResourceServer
                                                .map(_f(x -> Resource.newResource(x.getURI())))
                                                .collect(toList());
         return resources.toArray(new Resource[0]);
-      }
-
-    /*******************************************************************************************************************
-     *
-     *
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private static String urlEncoded (final @Nonnull String string)
-      {
-        try
-          {
-            return URLEncoder.encode(string, "UTF-8");
-          }
-        catch (UnsupportedEncodingException e)
-          {
-            throw new RuntimeException(e);
-          }
       }
   }
