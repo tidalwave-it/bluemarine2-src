@@ -28,9 +28,8 @@
  */
 package it.tidalwave.bluemarine2.util;
 
-import java.io.File;
-import static lombok.AccessLevel.PRIVATE;
 import lombok.NoArgsConstructor;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
@@ -39,16 +38,32 @@ import lombok.NoArgsConstructor;
  *
  **********************************************************************************************************************/
 @NoArgsConstructor(access = PRIVATE)
-public final class Logging
+public final class SystemConfigurer
   {
-    private static final String PROP_LOG_OLDER = "blueMarine2.logFolder";
-
-    public static void setupLogFolder()
+    public static void setSystemProperties()
       {
-        if (System.getProperty(PROP_LOG_OLDER) == null)
+        final String home = System.getProperty("user.home", "/tmp");
+        final String osName = System.getProperty("os.name").toLowerCase();
+
+        switch (osName)
           {
-            final String logFolder = new File(System.getProperty("user.home"), ".blueMarine2/logs").getAbsolutePath();
-            System.setProperty(PROP_LOG_OLDER, logFolder);
+            case "linux":
+                // on Linux we define paths in the launcher shell
+                break;
+
+            case "mac os x":
+                final String workspace = home + "/Library/Application Support/blueMarine2";
+                System.setProperty("blueMarine2.workspace", workspace);
+                System.setProperty("blueMarine2.logFolder", workspace + "/logs");
+                System.setProperty("blueMarine2.logConfigOverride", workspace + "/config/logback-override.xml");
+                break;
+
+            case "windows":
+                // FIXME todo
+                break;
+
+            default:
+                throw new ExceptionInInitializerError("Unknown o.s.: " + osName);
           }
       }
   }
