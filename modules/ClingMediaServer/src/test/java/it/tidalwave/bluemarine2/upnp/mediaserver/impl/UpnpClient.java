@@ -28,8 +28,10 @@
  */
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
+import java.util.Arrays;
 import javax.annotation.Nonnull;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Function;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.UpnpServiceImpl;
 import org.fourthline.cling.controlpoint.ActionCallback;
@@ -42,6 +44,9 @@ import org.fourthline.cling.registry.DefaultRegistryListener;
 import org.fourthline.cling.registry.Registry;
 import org.fourthline.cling.registry.RegistryListener;
 import lombok.extern.slf4j.Slf4j;
+import org.fourthline.cling.model.meta.DeviceDetails;
+import org.fourthline.cling.model.meta.ManufacturerDetails;
+import org.fourthline.cling.model.meta.ModelDetails;
 
 /***********************************************************************************************************************
  *
@@ -58,12 +63,23 @@ public class UpnpClient implements Runnable
 
     private final ServiceId serviceId;
 
+    private final Function<RemoteDevice, Boolean> filter;
+
     /*******************************************************************************************************************
      *
      ******************************************************************************************************************/
     public UpnpClient (final @Nonnull String serviceName)
       {
+        this(serviceName, s -> true);
+      }
+
+    /*******************************************************************************************************************
+     *
+     ******************************************************************************************************************/
+    public UpnpClient (final @Nonnull String serviceName, final @Nonnull Function<RemoteDevice, Boolean> filter)
+      {
         serviceId = new UDAServiceId(serviceName);
+        this.filter = filter;
       }
 
     /*******************************************************************************************************************
@@ -91,24 +107,50 @@ public class UpnpClient implements Runnable
         @Override
         public void remoteDeviceAdded (final @Nonnull Registry registry, final @Nonnull RemoteDevice device)
           {
-            final Service theService = device.findService(serviceId);
+            final Service remoteService = device.findService(serviceId);
 
-            if (theService != null)
+            if (remoteService != null)
               {
-                log.info("Service discovered: {}", theService);
-                service.set(theService);
+                final DeviceDetails details = remoteService.getDevice().getDetails();
+                final ManufacturerDetails manufacturerDetails = details.getManufacturerDetails();
+                final ModelDetails modelDetails = details.getModelDetails();
+                log.info("New service discovered: {}", remoteService);
+                log.info(">>>>           baseURL: {}", details.getBaseURL());
+                log.info(">>>>         DLNA caps: {}", details.getDlnaCaps());
+                log.info(">>>>         DLNA docs: {}", Arrays.toString(details.getDlnaDocs()));
+                log.info(">>>>     friendly name: {}", details.getFriendlyName());
+                log.info(">>>>      manufacturer: {}", manufacturerDetails.getManufacturer());
+                log.info(">>>>  manufacturer URI: {}", manufacturerDetails.getManufacturerURI());
+                log.info(">>>> model description: {}", modelDetails.getModelDescription());
+                log.info(">>>>        model name: {}", modelDetails.getModelName());
+                log.info(">>>>      model number: {}", modelDetails.getModelNumber());
+                log.info(">>>>         model URI: {}", modelDetails.getModelURI());
+                log.info(">>>>  presentation URI: {}", details.getPresentationURI());
+                log.info(">>>>  sec product caps: {}", details.getSecProductCaps());
+                log.info(">>>>     serial number: {}", details.getSerialNumber());
+                log.info(">>>>               UPC: {}", details.getUpc());
+
+                if (filter.apply(device))
+                  {
+                    service.set(remoteService);
+                    log.info("Service added: {}", remoteService);
+                  }
+                else
+                  {
+                    log.info("Service rejected because of filter");
+                  }
               }
           }
 
         @Override
         public void remoteDeviceRemoved (final @Nonnull Registry registry, final @Nonnull RemoteDevice device)
           {
-            final Service theService = device.findService(serviceId);
+            final Service remoteService = device.findService(serviceId);
 
-            if (theService != null)
+            if ((remoteService != null) && filter.apply(device))
               {
-                log.info("Service removed: {}", theService);
-                service.compareAndSet(theService, null);
+                log.info("Service removed: {}", remoteService);
+                service.compareAndSet(remoteService, null);
               }
           }
       };

@@ -61,8 +61,6 @@ import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
 import it.tidalwave.bluemarine2.model.AudioFile;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
 import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
-import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMediaCatalog;
-import it.tidalwave.bluemarine2.persistence.Persistence;
 import lombok.extern.slf4j.Slf4j;
 import static java.util.stream.Collectors.toList;
 import static org.fourthline.cling.support.model.dlna.types.AvailableSeekRangeType.Mode.*;
@@ -101,10 +99,10 @@ public class MusicResourcesController
         private static final long serialVersionUID = 3644567083880573896L;
       }
 
-    private MediaCatalog catalog; // FIXME: directly inject the Catalog
-
     @Inject
-    public Persistence persistence;
+    private MediaCatalog catalog;
+
+    private volatile boolean persistenceInitialized;
 
     /*******************************************************************************************************************
      *
@@ -114,7 +112,7 @@ public class MusicResourcesController
       throws IOException
       {
         log.info("onPersistenceInitializedNotification({})", notification);
-        catalog = new RepositoryMediaCatalog(persistence.getRepository());
+        persistenceInitialized = false;
       }
 
     /*******************************************************************************************************************
@@ -148,13 +146,15 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     @ResponseBody
     @RequestMapping(value = "/record/{id}", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public RecordJson getRecord (final @PathVariable String id,
-                                 final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                 final @RequestParam(required = false, defaultValue = "embedded") String fallback)
+    public DetailedRecordJson getRecord (final @PathVariable String id,
+                                         final @RequestParam(required = false, defaultValue = "embedded") String source,
+                                         final @RequestParam(required = false, defaultValue = "embedded") String fallback)
       {
         log.info("getRecord({}, {}, {})", id, source, fallback);
         checkStatus();
-        return single(finalized(catalog.findRecords().withId(new Id(id)), source, fallback, RecordJson::new));
+        final List<TrackJson> tracks = finalized(catalog.findTracks().inRecord(new Id(id)), source, fallback, TrackJson::new);
+        return single(finalized(catalog.findRecords().withId(new Id(id)), source, fallback,
+                                record -> new DetailedRecordJson(record, tracks)));
       }
 
     /*******************************************************************************************************************
@@ -178,27 +178,6 @@ public class MusicResourcesController
                                    .findAny()
                                    .map(bytes -> bytesResponse(bytes, "image", "jpeg", "coverart.jpg"))
                                    .orElseThrow(NotFoundException::new);
-      }
-
-    /*******************************************************************************************************************
-     *
-     * Exports track resources in the given record.
-     *
-     * @param   id          the record id
-     * @param   source      the data source
-     * @param   fallback    the fallback data source
-     * @return              the JSON representation of the tracks
-     *
-     ******************************************************************************************************************/
-    @ResponseBody
-    @RequestMapping(value = "/record/{id}/track", produces = { APPLICATION_JSON_VALUE, APPLICATION_XML_VALUE })
-    public List<TrackJson> getRecordTracks (final @PathVariable String id,
-                                            final @RequestParam(required = false, defaultValue = "embedded") String source,
-                                            final @RequestParam(required = false, defaultValue = "embedded") String fallback)
-      {
-        log.info("getRecordTracks({}, {}, {})", id, source, fallback);
-        checkStatus();
-        return finalized(catalog.findTracks().inRecord(new Id(id)), source, fallback, TrackJson::new);
       }
 
     /*******************************************************************************************************************
@@ -437,7 +416,7 @@ public class MusicResourcesController
      ******************************************************************************************************************/
     private void checkStatus()
       {
-        if (catalog == null)
+        if (persistenceInitialized)
           {
             throw new UnavailableException();
           }

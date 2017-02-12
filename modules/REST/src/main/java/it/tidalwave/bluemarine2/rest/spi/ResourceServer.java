@@ -28,7 +28,6 @@
  */
 package it.tidalwave.bluemarine2.rest.spi;
 
-import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
 /***********************************************************************************************************************
@@ -39,12 +38,6 @@ import javax.annotation.Nonnull;
  **********************************************************************************************************************/
 public interface ResourceServer
   {
-    @Nonnull
-    public String getIpAddress();
-
-    @Nonnegative
-    public int getPort();
-
     @Nonnull
     public String absoluteUrl (@Nonnull String relativeUrl);
   }

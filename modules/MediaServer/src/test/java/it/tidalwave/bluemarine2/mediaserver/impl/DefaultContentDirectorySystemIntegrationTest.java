@@ -29,22 +29,16 @@
 package it.tidalwave.bluemarine2.mediaserver.impl;
 
 import javax.annotation.Nonnull;
-import java.util.HashMap;
-import java.util.Map;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import it.tidalwave.util.Key;
-import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.message.PowerOnNotification;
+import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.bluemarine2.model.MediaFolder;
-import it.tidalwave.bluemarine2.persistence.PersistencePropertyNames;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
-import static it.tidalwave.bluemarine2.model.ModelPropertyNames.ROOT_PATH;
 
 /***********************************************************************************************************************
  *
@@ -55,6 +49,8 @@ import static it.tidalwave.bluemarine2.model.ModelPropertyNames.ROOT_PATH;
 @Slf4j
 public class DefaultContentDirectorySystemIntegrationTest extends SpringTestSupport
   {
+    private static final Path PATH_TEST_SETS = Paths.get("target/test-classes/test-sets");
+
     private DefaultContentDirectory underTest;
 
     /*******************************************************************************************************************
@@ -64,9 +60,7 @@ public class DefaultContentDirectorySystemIntegrationTest extends SpringTestSupp
       {
         super("META-INF/DciAutoBeans.xml",
               "META-INF/CommonsAutoBeans.xml",
-              "META-INF/ModelAutoBeans.xml",
               "META-INF/CatalogAutoBeans.xml",
-              "META-INF/PersistenceAutoBeans.xml",
               "META-INF/DefaultContentDirectoryTestBeans.xml");
       }
 
@@ -87,13 +81,11 @@ public class DefaultContentDirectorySystemIntegrationTest extends SpringTestSupp
       throws Exception
       {
         // given
-        final Map<Key<?>, Object> properties = new HashMap<>();
         // The file system browser is not tested here, because we can't share audio files
-        final Path PATH_TEST_SETS = Paths.get("target/test-classes/test-sets");
         final Path repositoryPath = PATH_TEST_SETS.resolve(testSetName + ".n3").toAbsolutePath();
-        properties.put(ROOT_PATH, PATH_TEST_SETS); // FIXME: why is this needed? - mock the file system!
-        properties.put(PersistencePropertyNames.IMPORT_FILE, repositoryPath);
-        context.getBean(MessageBus.class).publish(new PowerOnNotification(properties));
+        final Repository repository = context.getBean(Repository.class);
+        repository.initialize();
+        loadRepository(repository, repositoryPath);
         // when
         final MediaFolder root = underTest.findRoot();
         // then
