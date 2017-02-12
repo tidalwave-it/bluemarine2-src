@@ -40,9 +40,19 @@
     <!-- Turns on @Autowired, @PostConstruct, etc. -->
     <context:annotation-config />
 
-    <bean id="upnpService" class="org.fourthline.cling.UpnpServiceImpl" />
+    <bean id="upnpService" class="org.fourthline.cling.UpnpServiceImpl">
+        <constructor-arg ref="upnpServiceConfiguration"/>
+        <constructor-arg>
+            <array></array>
+        </constructor-arg>
+    </bean>
 
-    <bean id="upnpServiceDestroer" class="it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpServiceDestroyer" />
+    <bean id="upnpServiceConfiguration"
+          class="it.tidalwave.bluemarine2.upnp.mediaserver.impl.device.BlueMarineUpnpServiceConfiguration">
+        <property name="aliveInterval" value="${upnp.aliveInterval}"/>
+    </bean>
+
+    <bean id="upnpServiceDestroyer" class="it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpServiceDestroyer" />
 
     <bean id="contentDirectoryPublisher" class="it.tidalwave.bluemarine2.upnp.mediaserver.impl.device.DefaultDevicePublisher">
         <constructor-arg value="it.tidalwave.bluemarine2.upnp.mediaserver.impl.ContentDirectoryClingAdapter" />

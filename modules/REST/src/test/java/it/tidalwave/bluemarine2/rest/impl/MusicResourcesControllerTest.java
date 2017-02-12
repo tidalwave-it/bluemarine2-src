@@ -43,24 +43,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.ClientHttpResponse;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Key;
-import it.tidalwave.messagebus.MessageBus;
-import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
-import it.tidalwave.bluemarine2.message.PowerOffNotification;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.model.ModelPropertyNames;
-import it.tidalwave.bluemarine2.persistence.Persistence;
+import it.tidalwave.bluemarine2.model.MediaFileSystem;
 import it.tidalwave.bluemarine2.rest.ResponseEntityIo;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
-import org.testng.annotations.AfterClass;
+import it.tidalwave.bluemarine2.rest.impl.server.DefaultResourceServer;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import it.tidalwave.bluemarine2.commons.test.EventBarrier;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.commons.test.TestSetLocator.*;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
+import static org.mockito.Mockito.*;
 
 /***********************************************************************************************************************
  *
@@ -75,11 +72,7 @@ public class MusicResourcesControllerTest extends SpringTestSupport
 
     private ResourceServer server;
 
-    private MessageBus messageBus;
-
     private String baseUrl;
-
-    private EventBarrier<PersistenceInitializedNotification> barrier;
 
     private Function<String, String> postProcessor;
 
@@ -107,10 +100,9 @@ public class MusicResourcesControllerTest extends SpringTestSupport
         super(LifeCycle.AROUND_CLASS,
               "classpath:META-INF/DciAutoBeans.xml",
               "classpath:META-INF/CommonsAutoBeans.xml",
-              "classpath:META-INF/ModelAutoBeans.xml",
-              "classpath:META-INF/PersistenceAutoBeans.xml",
               "classpath:META-INF/RestAutoBeans.xml",
-              "classpath:META-INF/CatalogAutoBeans.xml");
+              "classpath:META-INF/CatalogAutoBeans.xml",
+              "classpath:META-INF/MusicResourceControllerTestBeans.xml");
       }
 
     /*******************************************************************************************************************
@@ -121,18 +113,14 @@ public class MusicResourcesControllerTest extends SpringTestSupport
       throws Exception
       {
         server = context.getBean(ResourceServer.class);
-        messageBus = context.getBean(MessageBus.class);
-        final Persistence persistence = context.getBean(Persistence.class);
-
-        barrier = new EventBarrier<>(PersistenceInitializedNotification.class, messageBus);
-
-        final Map<Key<?>, Object> properties = new HashMap<>();
         final Path testSetPath = Paths.get(System.getProperty(PROPERTY_MUSIC_TEST_SETS_PATH));
-        properties.put(ModelPropertyNames.ROOT_PATH, testSetPath.resolve("iTunes-aac-fg-20170131-1"));
-        messageBus.publish(new PowerOnNotification(properties));
-        Thread.sleep(2000);
-        barrier.await();
-        final Repository repository = persistence.getRepository();
+        final Path root = testSetPath.resolve("iTunes-aac-fg-20170131-1");
+        final MediaFileSystem fileSystem = context.getBean(MediaFileSystem.class);
+        when(fileSystem.getRootPath()).thenReturn(root.resolve("Music"));
+        final Map<Key<?>, Object> properties = new HashMap<>();
+        properties.put(ModelPropertyNames.ROOT_PATH, root);
+        context.getBean(DefaultResourceServer.class).onPowerOnNotification(new PowerOnNotification(properties));
+        final Repository repository = context.getBean(Repository.class);
         loadRepository(repository, PATH_TEST_SETS.resolve("model-iTunes-fg-20161210-1.n3"));
         loadRepository(repository, PATH_TEST_SETS.resolve("model-iTunes-aac-fg-20170131-1.n3"));
         loadRepository(repository, PATH_TEST_SETS.resolve("musicbrainz-iTunes-fg-20161210-1.n3"));
@@ -140,16 +128,6 @@ public class MusicResourcesControllerTest extends SpringTestSupport
         baseUrl = server.absoluteUrl("");
         log.info(">>>> baseUrl: {}", baseUrl);
         postProcessor = s -> s.replaceAll(baseUrl, "http://<server>/");
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @AfterClass
-    public void shutdown()
-      throws Exception
-      {
-        messageBus.publish(new PowerOffNotification());
       }
 
     /*******************************************************************************************************************
@@ -203,13 +181,6 @@ public class MusicResourcesControllerTest extends SpringTestSupport
 
             { "rest/record/urn:bluemarine:record:not_existing",
               "record-not_existing.json.txt" },
-
-            { "rest/record/urn:bluemarine:record:eLWktOMBbcOWysVn6AW6kksBS7Q=/track",
-              "record-eLWktOMBbcOWysVn6AW6kksBS7Q=-tracks.json.txt" },
-
-            // FIXME: this is wrong, returning 200 + empty JSON while it should be 404
-            { "rest/record/urn:bluemarine:record:not_existing/track",
-              "record-not_existing-tracks.json.txt" },
 
             { "rest/record/urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=/coverart",
               "record-XoqvktWLs6mu64qGOxQ3NyPzXVY=-coverart.jpg.txt" },

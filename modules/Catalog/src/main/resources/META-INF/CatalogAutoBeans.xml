@@ -60,10 +60,20 @@
 
     <aop:aspectj-autoproxy/>
 
+    <bean id="catalog"
+          class="it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMediaCatalog">
+          <property name="sourceAsString" value="${catalog.source}" />
+          <property name="fallbackAsString" value="${catalog.fallback}" />
+    </bean>
+
     <bean class="it.tidalwave.bluemarine2.model.impl.catalog.factory.DefaultRepositoryEntityFactory" />
+
     <bean class="it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserByArtistThenTrack" />
+
     <bean class="it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserByArtistThenRecord" />
+
     <bean class="it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserByRecordThenTrack" />
+
     <bean class="it.tidalwave.bluemarine2.model.impl.catalog.browser.RepositoryBrowserByTrack" />
 
 </beans>

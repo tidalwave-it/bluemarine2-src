@@ -29,6 +29,9 @@
 package it.tidalwave.bluemarine2.model.impl.catalog;
 
 import javax.annotation.Nonnull;
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import javax.inject.Provider;
 import org.eclipse.rdf4j.repository.Repository;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MediaCatalog;
@@ -43,8 +46,9 @@ import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordFinder
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryMusicArtistFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryPerformanceFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import lombok.Getter;
+import lombok.Setter;
 import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
 
 /***********************************************************************************************************************
@@ -53,62 +57,67 @@ import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@RequiredArgsConstructor @Slf4j
+@Slf4j
 public class RepositoryMediaCatalog implements MediaCatalog
   {
-    static
+    @Getter @Setter
+    private Id source = ID_SOURCE_EMBEDDED;
+
+    @Getter @Setter
+    private Id fallback = ID_SOURCE_EMBEDDED;
+
+    @Inject
+    private Provider<Repository> repository;
+
+    public void setSourceAsString (final @Nonnull String sourceAsString)
       {
-        log.info("Catalog configuration source: {} fallback: {}", getSource(), getFallback());
+        setSource(new Id(sourceAsString));
       }
 
-    @Nonnull
-    private final Repository repository;
+    public void setFallbackAsString (final @Nonnull String fallbackAsString)
+      {
+        setFallback(new Id(fallbackAsString));
+      }
 
     @Override @Nonnull
     public MusicArtistFinder findArtists()
       {
-        return configured(new RepositoryMusicArtistFinder(repository));
+        return configured(new RepositoryMusicArtistFinder(repository.get()));
       }
 
     @Override @Nonnull
     public RecordFinder findRecords()
       {
-        return configured(new RepositoryRecordFinder(repository));
+        return configured(new RepositoryRecordFinder(repository.get()));
       }
 
     @Override @Nonnull
     public TrackFinder findTracks()
       {
-        return configured(new RepositoryTrackFinder(repository));
+        return configured(new RepositoryTrackFinder(repository.get()));
       }
 
     @Override @Nonnull
     public PerformanceFinder findPerformances()
       {
-        return configured(new RepositoryPerformanceFinder(repository));
+        return configured(new RepositoryPerformanceFinder(repository.get()));
       }
 
     @Override @Nonnull
     public AudioFileFinder findAudioFiles()
       {
-        return configured(new RepositoryAudioFileFinder(repository));
+        return configured(new RepositoryAudioFileFinder(repository.get()));
+      }
+
+    @PostConstruct
+    private void initialize()
+      {
+        log.info("Catalog configuration source: {} fallback: {}", getSource(), getFallback());
       }
 
     @Nonnull
     private <ENTITY, FINDER extends SourceAwareFinder<ENTITY, FINDER>> FINDER configured (final @Nonnull FINDER finder)
       {
         return finder.importedFrom(getSource()).withFallback(getFallback());
-      }
-
-    @Nonnull
-    private static Id getSource()
-      {
-        return new Id(System.getProperty("blueMarine2.source", ID_SOURCE_EMBEDDED.stringValue())); // FIXME: get from Preferences
-      }
-
-    @Nonnull
-    private static Id getFallback()
-      {
-        return new Id(System.getProperty("blueMarine2.fallback", ID_SOURCE_EMBEDDED.stringValue())); // FIXME: get from Preferences
       }
   }

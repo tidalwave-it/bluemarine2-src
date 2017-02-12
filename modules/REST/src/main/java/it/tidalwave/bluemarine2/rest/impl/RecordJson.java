@@ -29,14 +29,12 @@
 package it.tidalwave.bluemarine2.rest.impl;
 
 import javax.annotation.Nonnull;
-import java.util.Collection;
 import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.Record;
 import lombok.Getter;
-import static java.util.stream.Collectors.*;
 import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
@@ -70,7 +68,7 @@ public class RecordJson extends JsonSupport
 
     private final Optional<String> gtin;
 
-    private final Collection<String> tracks;
+    protected String details;
 
     public RecordJson (final @Nonnull Record record)
       {
@@ -82,6 +80,6 @@ public class RecordJson extends JsonSupport
         this.source      = record.getSource().map(Id::toString);
         this.asin        = record.getAsin();
         this.gtin        = record.getGtin();
-        this.tracks      = record.findTracks().stream().map(track -> resourceUri("track", track)).collect(toList());
+        this.details     = resourceUri("record", record);
       }
   }
