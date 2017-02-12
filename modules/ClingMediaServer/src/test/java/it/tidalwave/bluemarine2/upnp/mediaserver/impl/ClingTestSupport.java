@@ -33,7 +33,6 @@ import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.fourthline.cling.UpnpService;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -47,20 +46,19 @@ public class ClingTestSupport extends SpringTestSupport
   {
     protected UpnpService upnpService;
 
-    protected ClingTestSupport (final @Nonnull String ... configLocations)
-      {
-        super(configLocations);
-      }
-
-    @BeforeClass
-    public final void setupJulLoggingBridge()
+    static
       {
         SLF4JBridgeHandler.removeHandlersForRootLogger();
         SLF4JBridgeHandler.install();
       }
 
-    @BeforeMethod
-    public final void setupCling()
+    protected ClingTestSupport (final @Nonnull String ... configLocations)
+      {
+        super(LifeCycle.AROUND_CLASS, configLocations);
+      }
+
+    @BeforeClass
+    public final void setupJulLoggingBridge()
       {
         upnpService = context.getBean(UpnpService.class);
       }
