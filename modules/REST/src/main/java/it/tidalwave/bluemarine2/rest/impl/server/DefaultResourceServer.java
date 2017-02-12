@@ -94,7 +94,7 @@ public class DefaultResourceServer implements ResourceServer
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ public void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
+    /* VisibleForTesting FIXME */ public void onPowerOnNotification (final @ListensTo @Nonnull PowerOnNotification notification)
       throws Exception
       {
         log.info("onPowerOnNotification({})", notification);
@@ -122,7 +122,7 @@ public class DefaultResourceServer implements ResourceServer
      *
      *
      ******************************************************************************************************************/
-    /* VisibleForTesting */ void onPowerOffNotification (final @ListensTo @Nonnull PowerOffNotification notification)
+    /* VisibleForTesting FIXME */ public void onPowerOffNotification (final @ListensTo @Nonnull PowerOffNotification notification)
       throws Exception
       {
         log.info("onPowerOffNotification({})", notification);
