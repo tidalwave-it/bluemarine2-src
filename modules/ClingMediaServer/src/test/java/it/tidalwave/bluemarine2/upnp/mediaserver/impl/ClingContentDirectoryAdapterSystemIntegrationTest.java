@@ -65,7 +65,9 @@ import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.bluemarine2.util.Formatters.*;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
+import it.tidalwave.bluemarine2.message.PowerOffNotification;
 import static it.tidalwave.bluemarine2.model.ModelPropertyNames.ROOT_PATH;
+import it.tidalwave.bluemarine2.rest.impl.server.DefaultResourceServer;
 
 /***********************************************************************************************************************
  *
@@ -90,9 +92,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
 
     private UpnpClient upnpClient;
 
-    private ResourceServer resourceServer;
-
-//    private EventBarrier<PersistenceInitializedNotification> barrier;
+    private DefaultResourceServer resourceServer;
 
     /*******************************************************************************************************************
      *
@@ -141,11 +141,13 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
         final Map<Key<?>, Object> properties = new HashMap<>();
         final Path repositoryPath = Paths.get("target/test-classes/test-sets/model-iTunes-fg-20160504-2.n3");
         properties.put(ROOT_PATH, TestSetLocator.getMusicTestSetsPath().resolve("iTunes-fg-20160504-2"));
+        final PowerOnNotification powerOnNotification = new PowerOnNotification(properties);
         final DefaultMediaFileSystem fileSystem = context.getBean(DefaultMediaFileSystem.class);
-        fileSystem.onPowerOnNotification(new PowerOnNotification(properties));
+        resourceServer = context.getBean(DefaultResourceServer.class);
+        fileSystem.onPowerOnNotification(powerOnNotification);
+        resourceServer.onPowerOnNotification(powerOnNotification);
         final Repository repository = context.getBean(Repository.class);
         loadRepository(repository, repositoryPath);
-        resourceServer = context.getBean(ResourceServer.class);
       }
 
     /*******************************************************************************************************************
@@ -153,8 +155,10 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
      ******************************************************************************************************************/
     @AfterClass
     public final void shutdown()
+      throws Exception
       {
         upnpClient.shutdown();
+        resourceServer.onPowerOffNotification(new PowerOffNotification());
       }
 
     /*******************************************************************************************************************
