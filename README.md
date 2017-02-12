@@ -1,7 +1,7 @@
 ![Maven Central](https://img.shields.io/maven-central/v/it.tidalwave.bluemarine2/bluemarine2.svg)
-[![Build Status](https://img.shields.io/jenkins/s/http/services.tidalwave.it/ci/blueMarine2_Build_from_Scratch.svg)](http://services.tidalwave.it/ci/view/blueMarine2)
-[![Test Status](https://img.shields.io/jenkins/t/http/services.tidalwave.it/ci/blueMarine2.svg)](http://services.tidalwave.it/ci/view/blueMarine2)
-[![Coverage](https://img.shields.io/jenkins/c/http/services.tidalwave.it/ci/blueMarine2.svg)](http://services.tidalwave.it/ci/view/blueMarine2)
+[![Build Status](https://img.shields.io/jenkins/s/http/services.tidalwave.it/ci/job/blueMarine2_Build_from_Scratch.svg)](http://services.tidalwave.it/ci/view/blueMarine2)
+[![Test Status](https://img.shields.io/jenkins/t/http/services.tidalwave.it/ci/job/blueMarine2.svg)](http://services.tidalwave.it/ci/view/blueMarine2)
+[![Coverage](https://img.shields.io/jenkins/c/http/services.tidalwave.it/ci/job/blueMarine2.svg)](http://services.tidalwave.it/ci/view/blueMarine2)
 
 blueMarine II
 ================================
