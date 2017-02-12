@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.rest.impl;
+package it.tidalwave.bluemarine2.rest.impl.resource;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -37,7 +37,7 @@ import lombok.Getter;
 
 /***********************************************************************************************************************
  *
- * An adapter for exporting {@link Record} in JSON.
+ * An adapter for exporting {@link Record} in REST.
  * FIXME: differentiating the serialized fields should be done with JsonView
  *
  * @stereotype  Adapter
@@ -49,11 +49,11 @@ import lombok.Getter;
 @Getter
 @JsonInclude(JsonInclude.Include.NON_ABSENT)
 @JsonPropertyOrder(alphabetic = true)
-public class DetailedRecordJson extends RecordJson
+public class DetailedRecordResource extends RecordResource
   {
-    private final List<TrackJson> tracks;
+    private final List<TrackResource> tracks;
 
-    public DetailedRecordJson (final @Nonnull Record record, final @Nonnull List<TrackJson> tracks)
+    public DetailedRecordResource (final @Nonnull Record record, final @Nonnull List<TrackResource> tracks)
       {
         super(record);
         this.details = null;
