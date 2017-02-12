@@ -59,6 +59,14 @@
             <artifactId>cling-support</artifactId>
         </dependency>
 
+        <!-- Needed for compilation -->
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <version>1.2</version>
+            <scope>provided</scope>
+        </dependency>
+
         <!-- TEST DEPENDENCIES -->
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
