@@ -39,6 +39,12 @@
 
     <bean id="underTest" class="it.tidalwave.bluemarine2.mediaserver.impl.DefaultContentDirectory" />
 
+    <bean id="repository" class="org.eclipse.rdf4j.repository.sail.SailRepository" >
+        <constructor-arg>
+            <bean class="org.eclipse.rdf4j.sail.memory.MemoryStore" />
+        </constructor-arg>
+    </bean>
+
     <bean id="cacheManager" class="it.tidalwave.bluemarine2.model.impl.MockCacheManager" />
 
 </beans>
