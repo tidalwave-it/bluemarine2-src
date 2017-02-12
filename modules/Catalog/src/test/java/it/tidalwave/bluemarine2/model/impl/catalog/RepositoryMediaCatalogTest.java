@@ -112,8 +112,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         loadRepository(repository, PATH_TEST_SETS.resolve(testSetName + ".n3"));
         final RepositoryMediaCatalog underTest = context.getBean(RepositoryMediaCatalog.class);
-        System.setProperty("blueMarine2.source", source.stringValue());
-        System.setProperty("blueMarine2.fallback", fallbackSource.stringValue());
+        underTest.setSource(source);
+        underTest.setFallback(fallbackSource);
         final Path expectedResult = PATH_EXPECTED_TEST_RESULTS.resolve(testSetName + "-dump.txt");
         final Path actualResult = PATH_TEST_RESULTS.resolve(testSetName + "-dump.txt");
         // when
