@@ -41,8 +41,6 @@ import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.eclipse.rdf4j.repository.Repository;
-import org.eclipse.rdf4j.repository.sail.SailRepository;
-import org.eclipse.rdf4j.sail.memory.MemoryStore;
 import org.testng.annotations.DataProvider;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MusicArtist;
@@ -105,8 +103,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
       throws Exception
       {
         // given
-        final Repository repository = new SailRepository(new MemoryStore());
-        repository.initialize();
+        final Repository repository = context.getBean(Repository.class);
 
         if (otherTestSetName != null)
           {
@@ -114,14 +111,14 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
           }
 
         loadRepository(repository, PATH_TEST_SETS.resolve(testSetName + ".n3"));
-        // when
-        final RepositoryMediaCatalog underTest = new RepositoryMediaCatalog(repository);
-        System.setProperty("blueMarine2.source", source.stringValue());
-        System.setProperty("blueMarine2.fallback", fallbackSource.stringValue());
-        // then
+        final RepositoryMediaCatalog underTest = context.getBean(RepositoryMediaCatalog.class);
+        underTest.setSource(source);
+        underTest.setFallback(fallbackSource);
         final Path expectedResult = PATH_EXPECTED_TEST_RESULTS.resolve(testSetName + "-dump.txt");
         final Path actualResult = PATH_TEST_RESULTS.resolve(testSetName + "-dump.txt");
+        // when
         queryAndDump(underTest, actualResult);
+        // then
         assertSameContents(normalizedPath(expectedResult).toFile(), normalizedPath(actualResult).toFile());
       }
 
