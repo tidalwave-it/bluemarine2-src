@@ -46,13 +46,13 @@
     ================================================================================================================ -->
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>bluemarine2-service-linux</artifactId>
+    <artifactId>bluemarine2-application-javafx-linux-armv6-embedded-jre-deb</artifactId>
     <version>1.0-ALPHA-20-SNAPSHOT</version>
     <packaging>deb</packaging>
-    <name>blueMarine II - Installers - Headless Service, Linux DEB</name>
+    <name>blueMarine II - Installers - JavaFX Application, Linux ARM v6, embedded JRE DEB</name>
     <description>
-        This module takes the .tar.gz produced by 'Installers - Headless Service' and produces a .deb artifact
-        contaning also stuff for installing it as a service.
+        This module takes the .tar.gz produced by 'Installers - JavaFX Application, Linux ARM v6, embedded JRE' and
+        produces a .deb artifact contaning also stuff for installing it as a service.
     </description>
 
     <properties>
@@ -76,7 +76,7 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>it.tidalwave.bluemarine2</groupId>
-                                    <artifactId>bluemarine2-service</artifactId>
+                                    <artifactId>bluemarine2-application-javafx-linux-armv6-embedded-jre</artifactId>
                                     <classifier>bin</classifier>
                                     <type>tar.gz</type>
                                     <version>${project.version}</version>
@@ -96,7 +96,7 @@
                     <dataSet>
                         <data>
                             <type>archive</type>
-                            <src>${project.build.directory}/bluemarine2-service-${project.version}-bin.tar.gz</src>
+                            <src>${project.build.directory}/bluemarine2-application-javafx-linux-armv6-embedded-jre-${project.version}-bin.tar.gz</src>
                             <mapper>
                                 <type>perm</type>
                                 <prefix>/opt</prefix>
@@ -107,8 +107,8 @@
                         </data>
                         <data>
                             <type>link</type>
-                            <linkName>/opt/bluemarine2-service</linkName>
-                            <linkTarget>/opt/bluemarine2-service-${project.version}</linkTarget>
+                            <linkName>/opt/bluemarine2</linkName>
+                            <linkTarget>/opt/bluemarine2-${project.version}</linkTarget>
                             <symlink>true</symlink>
                             <mapper>
                                 <type>perm</type>
@@ -118,8 +118,8 @@
                         </data>
                         <data>
                             <type>file</type>
-                            <src>${project.build.directory}/classes/bluemarine2-service.service</src>
-                            <dst>/etc/systemd/system/bluemarine2-service.service</dst>
+                            <src>${project.build.directory}/classes/bluemarine2.service</src>
+                            <dst>/etc/systemd/system/bluemarine2.service</dst>
                             <mapper>
                                 <type>perm</type>
                                 <user>${linux-user}</user>

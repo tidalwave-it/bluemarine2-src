@@ -50,7 +50,10 @@
     <version>1.0-ALPHA-20-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>blueMarine II - Installers - JavaFX Application, Linux ARM v6, embedded JRE</name>
-    <description>This module creates a Linux ARM v6 application bundle with an embedded JRE.</description>
+    <description>
+        This module creates a Linux ARM v6 application bundle with an embedded JRE, because JavaFX is not part of the
+        Oracle JRE distribution for ARM.
+    </description>
 
     <properties>
         <tft.embedded-jdk-name>jre1.8.0_33</tft.embedded-jdk-name>
@@ -122,7 +125,7 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
                     <descriptors>
-                        <descriptor>${basedir}/src/main/assembly/zip.xml</descriptor>
+                        <descriptor>${basedir}/src/main/assembly/tar.gz.xml</descriptor>
                     </descriptors>
                     <runOnlyAtExecutionRoot>false</runOnlyAtExecutionRoot>
                 </configuration>

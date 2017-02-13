@@ -196,6 +196,31 @@
         </dependency>
     </dependencies>
 
+    <modules>
+        <module>Catalog</module>
+        <module>CECNavigationAdapter</module>
+        <module>CECWrapper</module>
+        <module>ClingMediaServer</module>
+        <module>Commons</module>
+        <module>Downloader</module>
+        <module>HeadlessService</module>
+        <module>Initializer</module>
+        <module>JavaFX</module>
+        <module>JavaFXApplication</module>
+        <module>MediaScanner</module>
+        <module>Model</module>
+        <module>MusicBrainz</module>
+        <module>MusicBrainzDataModel</module>
+        <module>Persistence</module>
+        <module>Plugins</module>
+        <module>REST</module>
+        <module>Services</module>
+        <module>UI</module>
+        <module>MediaServer</module>
+        <module>TestCommons</module>
+        <module>Vocabulary</module>
+    </modules>
+
     <profiles>
         <!-- FIXME: the property should be put in the settings.xml of the CI -->
         <profile>
@@ -280,25 +305,16 @@
         </profile>
 
         <profile>
-            <id>it.tidalwave.bluemarine2-webresources-profile</id>
+            <id>installers</id>
             <activation>
-                <file>
-                    <exists>src/config/activate-it.tidalwave.bluemarine2-webresources-profile-profile</exists>
-                </file>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
             </activation>
-            <build>
-                <resources>
-                    <resource>
-                        <directory>src/main/webapp</directory>
-                        <targetPath>webapp</targetPath>
-                        <filtering>true</filtering>
-                    </resource>
-                    <resource>
-                        <directory>src/main/resources</directory>
-                    </resource>
-                </resources>
-            </build>
-
+            <modules>
+                <module>Installers</module>
+            </modules>
         </profile>
     </profiles>
 
@@ -352,31 +368,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <modules>
-        <module>Catalog</module>
-        <module>CECNavigationAdapter</module>
-        <module>CECWrapper</module>
-        <module>ClingMediaServer</module>
-        <module>Commons</module>
-        <module>Downloader</module>
-        <module>HeadlessService</module>
-        <module>Initializer</module>
-        <module>JavaFX</module>
-        <module>JavaFXApplication</module>
-        <module>MediaScanner</module>
-        <module>Model</module>
-        <module>MusicBrainz</module>
-        <module>MusicBrainzDataModel</module>
-        <module>Persistence</module>
-        <module>Plugins</module>
-        <module>REST</module>
-        <module>Services</module>
-        <module>UI</module>
-        <module>MediaServer</module>
-        <module>TestCommons</module>
-        <module>Vocabulary</module>
-        <module>Installers</module> <!-- Keep at last -->
-    </modules>
 
 </project>
