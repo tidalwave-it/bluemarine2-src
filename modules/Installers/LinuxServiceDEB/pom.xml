@@ -50,7 +50,10 @@
     <version>1.0-ALPHA-20-SNAPSHOT</version>
     <packaging>deb</packaging>
     <name>blueMarine II - Installers - Headless Service, Linux DEB</name>
-    <description>This module creates a Linux service bundle.</description>
+    <description>
+        This module takes the .tar.gz produced by 'Installers - Headless Service' and produces a .deb artifact
+        contaning also stuff for installing it as a service.
+    </description>
 
     <properties>
         <linux-user>bluemarine2</linux-user>
