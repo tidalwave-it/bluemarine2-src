@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BASE_DIR=$(dirname "$0")
+BASE_DIR="$(dirname -- "$(readlink -f -- "$0")")"
 JAR_FILE=$BASE_DIR/../lib/it-tidalwave-bluemarine2-headlessservice-${project.version}.jar
 WORKSPACE=/var/lib/bluemarine2
 LOG_FOLDER=/var/log/bluemarine2
