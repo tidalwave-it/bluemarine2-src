@@ -1,0 +1,10 @@
+Package: blueMarine-II-MediaCenter
+Version: [[version]]
+Section: misc
+Priority: optional
+Architecture: arm
+Depends:
+Maintainer: Fabrizio Giudici <fabrizio.giudici@tidalwave.it>
+Description: blueMarine II MediaCenter
+Distribution: development
+Homepage: http://bluemarine.tidalwave.it
