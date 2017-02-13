@@ -32,15 +32,9 @@
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>\${blueMarine2.logFolder}/blueMarine2.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            <fileNamePattern>${blueMarine2.logFolder}/blueMarine2.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
             <maxHistory>5</maxHistory>
         </rollingPolicy>
-        <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%-20.20(%thread)] %-5level %-50logger{50} - %msg%n</pattern>
-        </encoder>
-    </appender>
-
-    <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%-20.20(%thread)] %-5level %-50logger{50} - %msg%n</pattern>
         </encoder>
@@ -55,9 +49,8 @@
 
     <root level="DEBUG">
         <appender-ref ref="FILE" />
-        <appender-ref ref="STDERR" />
     </root>
 
-    <include file="\${blueMarine2.logConfig}" optional="true" />
+    <include file="${blueMarine2.logConfig}" optional="true" />
 
 </configuration>
