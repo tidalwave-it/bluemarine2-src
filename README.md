@@ -30,6 +30,7 @@ More information can be found on the [homepage](http://blueMarine.tidalwave.it) 
 
 Where can I get the latest release?
 -----------------------------------
+
 You can download source and binaries from the [download page](https://bitbucket.org/tidalwave/bluemarine2-src/src).
 
 Alternatively you can pull it from the central Maven repositories:
@@ -37,7 +38,7 @@ Alternatively you can pull it from the central Maven repositories:
 ```xml
 <dependency>
     <groupId>it.tidalwave.bluemarine2<groupId>
-    <artifactId>blueMarine2</artifactId>
+    <artifactId>bluemarine2</artifactId>
     <version>-- version --</version>
 </dependency>
 ```
@@ -63,6 +64,7 @@ If you plan to contribute on a regular basis, please consider filing a contribut
 
 License
 -------
+
 Code is released under the [Apache Licence v2](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
 
