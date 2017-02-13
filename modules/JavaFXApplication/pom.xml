@@ -18,6 +18,8 @@
     <properties>
         <!-- Otherwise can't be released because of missing javadocs -->
         <tft.javadoc.excludePackageNames />
+        <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass>
+        <tft.jar.classpathInManifest>true</tft.jar.classpathInManifest>
     </properties>
 
     <dependencies>
@@ -100,5 +102,22 @@
             <scope>runtime</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin> <!-- FIXME: push to super POM -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>${tft.jar.classpathInManifest}</addClasspath>
+                            <mainClass>${tft.mainClass}</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
