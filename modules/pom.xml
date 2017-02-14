@@ -231,6 +231,70 @@
         </profile>
 
         <profile>
+            <id>it.tidalwave-assembly-tar.gz</id>
+            <activation>
+                <file>
+                    <exists>src/main/assembly/tar.gz.xml</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <configuration>
+                            <descriptors combine.children="append">
+                                <descriptor>src/main/assembly/tar.gz.xml</descriptor>
+                            </descriptors>
+                            <runOnlyAtExecutionRoot>false</runOnlyAtExecutionRoot>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>make-assembly</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>it.tidalwave-assembly-zip</id>
+            <activation>
+                <file>
+                    <exists>src/main/assembly/zip.xml</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <configuration>
+                            <descriptors combine.children="append">
+                                <descriptor>src/main/assembly/zip.xml</descriptor>
+                            </descriptors>
+                            <runOnlyAtExecutionRoot>false</runOnlyAtExecutionRoot>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>make-assembly</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
             <id>it.tidalwave.bluemarine2-retrieve-testsets-profile</id>
             <activation>
                 <file>
