@@ -308,7 +308,7 @@
 
         <!-- ===========================================================================================================
 
-        This profiles prepares the files for an installer, by copying all the jar dependencies to 'dist/lib' and
+        This profile prepares the files for an installer, by copying all the jar dependencies to 'dist/lib' and
         the local resources to 'dist'.
 
         ============================================================================================================ -->
@@ -531,12 +531,13 @@
                                         <group>${tft.deb.group}</group>
                                     </mapper>
                                 </data>
-                                <!-- FIXME: take it from the tarball -->
+                                <!-- FIXME: take it from the tarball? -->
                                 <data>
-                                    <type>file</type>
-                                    <src>${project.build.directory}/classes/logback-override.xml</src>
-                                    <dst>/var/lib/${tft.deb.directory}/config/logback-override.xml</dst>
+                                    <type>directory</type>
+                                    <src>${project.build.directory}/classes/config</src>
+                                    <includes>**/*</includes>
                                     <mapper>
+                                        <prefix>/var/lib/${tft.deb.directory}/config</prefix>
                                         <type>perm</type>
                                         <user>${tft.deb.user}</user>
                                         <group>${tft.deb.group}</group>
