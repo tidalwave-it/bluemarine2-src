@@ -2,8 +2,9 @@ Package: blueMarine-II-MediaCenter
 Version: [[version]]
 Section: misc
 Priority: optional
-Architecture: arm
-Depends:
+Architecture: armhf
+Depends: libgtk2.0-0
+Recommends: cec-utils
 Maintainer: Fabrizio Giudici <fabrizio.giudici@tidalwave.it>
 Description: blueMarine II MediaCenter
 Distribution: development
