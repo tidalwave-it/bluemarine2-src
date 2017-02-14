@@ -38,13 +38,6 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <!-- ===============================================================================================================
-
-
-
-
-    ================================================================================================================ -->
-
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-application-javafx-linux</artifactId>
     <version>1.0-ALPHA-20-SNAPSHOT</version>
@@ -62,49 +55,6 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-resources</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${basedir}/target/classes</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/resources</directory>
-                                    <filtering>true</filtering>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <includeScope>runtime</includeScope>
-                            <overWrite>true</overWrite>
-                            <outputDirectory>${basedir}/target/classes/lib</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+    <!-- Lots of things happen because of activate profiles - see 'src/config' -->
 
 </project>

@@ -89,26 +89,16 @@
                                     <type>tgz</type>
                                     <classifier>${tft.embedded-jdk-classifier}</classifier>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.basedir}/target/jre/${tft.embedded-jdk-name}</outputDirectory>
+                                    <outputDirectory>${project.basedir}/target/dist</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <includeScope>runtime</includeScope>
-                            <overWrite>true</overWrite>
-                            <outputDirectory>${basedir}/target/classes/lib</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
+
+    <!-- Lots of things happen because of activate profiles - see 'src/config' -->
 
 </project>

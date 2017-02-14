@@ -9,12 +9,14 @@
     </formats>
     <fileSets>
         <fileSet>
-            <directory>${project.build.directory}/classes</directory>
+            <directory>${project.build.directory}/dist/</directory>
             <outputDirectory></outputDirectory>
+            <directoryMode>755</directoryMode>
+            <fileMode>644</fileMode>
         </fileSet>
-        <fileSet>
-            <directory>${project.build.directory}/jre/jre1.8.0_33/jre/</directory>
+<!--        <fileSet>
+            <directory>${project.build.directory}/dist/jre/jre1.8.0_33/jre/</directory>
             <outputDirectory>jre</outputDirectory>
-        </fileSet>
+        </fileSet>-->
     </fileSets>
 </assembly>

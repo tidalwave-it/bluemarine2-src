@@ -11,11 +11,17 @@
         <fileSet>
             <directory>${project.build.directory}/dist/</directory>
             <outputDirectory></outputDirectory>
+            <directoryMode>755</directoryMode>
+            <fileMode>644</fileMode>
+            <excludes>
+                <exclude>bin/*</exclude>
+            </excludes>
         </fileSet>
         <fileSet>
-            <directory>${project.build.directory}/bin/</directory>
+            <directory>${project.build.directory}/dist/bin/</directory>
+            <outputDirectory>bin</outputDirectory>
+            <directoryMode>755</directoryMode>
             <fileMode>755</fileMode>
-            <outputDirectory></outputDirectory>
         </fileSet>
     </fileSets>
 </assembly>
