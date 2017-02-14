@@ -2,6 +2,7 @@
 
 BASE_DIR="$(dirname -- "$(readlink -f -- "$0")")"
 JAR_FILE=$BASE_DIR/../lib/it-tidalwave-bluemarine2-application-javafx-${project.version}.jar
+
 WORKSPACE=$HOME/.bluemarine2
 LOG_FOLDER=$WORKSPACE/log
 
