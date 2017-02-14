@@ -232,6 +232,11 @@
             </properties>
         </profile>
 
+        <!-- ===========================================================================================================
+
+        This profile builds a tar.gz assembly if it founds it descriptor at src/main/assembly/tar.gz.xml.
+
+        ============================================================================================================ -->
         <profile>
             <id>it.tidalwave-assembly-tar.gz</id>
             <activation>
@@ -264,6 +269,11 @@
             </build>
         </profile>
 
+        <!-- ===========================================================================================================
+
+        This profile builds a zip assembly if it founds it descriptor at src/main/assembly/zip.xml.
+
+        ============================================================================================================ -->
         <profile>
             <id>it.tidalwave-assembly-zip</id>
             <activation>
@@ -296,11 +306,17 @@
             </build>
         </profile>
 
+        <!-- ===========================================================================================================
+
+        This profiles prepares the files for an installer, by copying all the jar dependencies to 'dist/lib' and
+        the local resources to 'dist'.
+
+        ============================================================================================================ -->
         <profile>
-            <id>it.tidalwave-tarball-v1</id>
+            <id>it.tidalwave-distribution-v1</id>
             <activation>
                 <file>
-                    <exists>src/config/activate-it.tidalwave-tarball-v1-profile</exists>
+                    <exists>src/config/activate-it.tidalwave-distribution-v1-profile</exists>
                 </file>
             </activation>
             <build>
@@ -348,6 +364,32 @@
             </build>
         </profile>
 
+        <!-- ===========================================================================================================
+
+        This profile is the base configuration for creating a deb package It must be activated by creating the
+        file 'src/config/activate-it.tidalwave-deb-v1-profile'.
+
+        The product name must be defined in
+
+        * tdt.deb.name
+
+        and will be installed to /opt/${tdt.deb.name}.
+
+        The files to be placed in the installer are extracted from a tarball defined by:
+
+        * tft.deb.sourceTarball.groupId (defaults to ${project.id})
+        * tft.deb.sourceTarball.artifactId
+        * tft.deb.sourceTarball.version (defaults to ${project.version})
+        * tft.deb.sourceTarball.classifier (defaults to 'bin')
+
+        Files are packaged with uid/gid defined by
+
+        * tft.deb.user (defaults to root)
+        * tft.deb.group (defaults to root)
+
+        This profile must be activated together with it.tidalwave-deb-service-v1 or it.tidalwave-deb-application-v1.
+
+        ============================================================================================================ -->
         <profile>
             <id>it.tidalwave-deb-base-v1</id>
             <activation>
@@ -359,6 +401,8 @@
                 <tft.deb.sourceTarball.groupId>${project.groupId}</tft.deb.sourceTarball.groupId>
                 <tft.deb.sourceTarball.version>${project.version}</tft.deb.sourceTarball.version>
                 <tft.deb.sourceTarball.classifier>bin</tft.deb.sourceTarball.classifier>
+                <tft.deb.user>root</tft.deb.user>
+                <tft.deb.group>root</tft.deb.group>
             </properties>
             <build>
                 <plugins>
@@ -377,9 +421,9 @@
                                         <artifactItem>
                                             <groupId>${tft.deb.sourceTarball.groupId}</groupId>
                                             <artifactId>${tft.deb.sourceTarball.artifactId}</artifactId>
+                                            <version>${tft.deb.sourceTarball.version}</version>
                                             <classifier>${tft.deb.sourceTarball.classifier}</classifier>
                                             <type>tar.gz</type>
-                                            <version>${tft.deb.sourceTarball.version}</version>
                                             <overWrite>true</overWrite>
                                             <outputDirectory>${project.build.directory}</outputDirectory>
                                         </artifactItem>
@@ -388,7 +432,6 @@
                             </execution>
                         </executions>
                     </plugin>
-
                     <plugin>
                         <groupId>org.vafer</groupId>
                         <artifactId>jdeb</artifactId>
@@ -405,12 +448,12 @@
                             <dataSet combine.children="append">
                                 <data>
                                     <type>archive</type>
-                                    <src>${project.build.directory}/${tft.deb.sourceTarball.artifactId}-${project.version}-${tft.deb.sourceTarball.classifier}.tar.gz</src>
+                                    <src>${project.build.directory}/${tft.deb.sourceTarball.artifactId}-${tft.deb.sourceTarball.version}-${tft.deb.sourceTarball.classifier}.tar.gz</src>
                                     <mapper>
                                         <type>perm</type>
                                         <prefix>/opt</prefix>
-                                        <user>${tft.deb.linux-user}</user>
-                                        <group>${tft.deb.linux-group}</group>
+                                        <user>${tft.deb.user}</user>
+                                        <group>${tft.deb.group}</group>
                                         <!-- no permissions, preserved those in the tarball -->
                                     </mapper>
                                 </data>
@@ -421,8 +464,8 @@
                                     <symlink>true</symlink>
                                     <mapper>
                                         <type>perm</type>
-                                        <user>${tft.deb.linux-user}</user>
-                                        <group>${tft.deb.linux-group}</group>
+                                        <user>${tft.deb.user}</user>
+                                        <group>${tft.deb.group}</group>
                                     </mapper>
                                 </data>
                             </dataSet>
@@ -432,6 +475,22 @@
             </build>
         </profile>
 
+        <!-- ===========================================================================================================
+
+        This profile completes the configuration for creating a deb package for a service. It must be activated by
+        creating the file 'src/config/activate-it.tidalwave-deb-service-v1-profile'.
+
+        The deb package will have all the required stuff under /etc/systemd/system to automatically start the service.
+
+        Furthermore the following working directories will be created:
+
+        * /var/lib/${tft.deb.directory}
+        * /var/log/${tft.deb.directory}
+        * /var/cache/${tft.deb.directory}
+
+        The value of tft.deb.directory defaults to ${tdt.deb.name}.
+
+        ============================================================================================================ -->
         <profile>
             <id>it.tidalwave-deb-service-v1</id>
             <activation>
@@ -439,6 +498,9 @@
                     <exists>src/config/activate-it.tidalwave-deb-service-v1-profile</exists>
                 </file>
             </activation>
+            <properties>
+                <tft.deb.directory>${tdt.deb.name}</tft.deb.directory>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
@@ -452,18 +514,8 @@
                                     <dst>/etc/systemd/system/${tdt.deb.name}.service</dst>
                                     <mapper>
                                         <type>perm</type>
-                                        <user>${tft.deb.linux-user}</user>
-                                        <group>${tft.deb.linux-group}</group>
-                                    </mapper>
-                                </data>
-                                <data>
-                                    <type>file</type>
-                                    <src>${project.build.directory}/classes/logback-override.xml</src>
-                                    <dst>/var/lib/${tft.deb.directory}/config/logback-override.xml</dst>
-                                    <mapper>
-                                        <type>perm</type>
-                                        <user>${tft.deb.linux-user}</user>
-                                        <group>${tft.deb.linux-group}</group>
+                                        <user>${tft.deb.user}</user>
+                                        <group>${tft.deb.group}</group>
                                     </mapper>
                                 </data>
                                 <data>
@@ -475,8 +527,19 @@
                                     </paths>
                                     <mapper>
                                         <type>perm</type>
-                                        <user>${tft.deb.linux-user}</user>
-                                        <group>${tft.deb.linux-group}</group>
+                                        <user>${tft.deb.user}</user>
+                                        <group>${tft.deb.group}</group>
+                                    </mapper>
+                                </data>
+                                <!-- FIXME: take it from the tarball -->
+                                <data>
+                                    <type>file</type>
+                                    <src>${project.build.directory}/classes/logback-override.xml</src>
+                                    <dst>/var/lib/${tft.deb.directory}/config/logback-override.xml</dst>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <user>${tft.deb.user}</user>
+                                        <group>${tft.deb.group}</group>
                                     </mapper>
                                 </data>
                             </dataSet>
@@ -486,6 +549,14 @@
             </build>
         </profile>
 
+        <!-- ===========================================================================================================
+
+        This profile completes the configuration for creating a deb package for an application It must be activated by
+        creating the file 'src/config/activate-it.tidalwave-deb-application-v1-profile'.
+
+        The deb package will have an executable alias under /usr/bin.
+
+        ============================================================================================================ -->
         <profile>
             <id>it.tidalwave-deb-application-v1</id>
             <activation>
@@ -507,8 +578,8 @@
                                     <symlink>true</symlink>
                                     <mapper>
                                         <type>perm</type>
-                                        <user>${tft.deb.linux-user}</user>
-                                        <group>${tft.deb.linux-group}</group>
+                                        <user>${tft.deb.user}</user>
+                                        <group>${tft.deb.group}</group>
                                         <dirmode>755</dirmode>
                                         <filemode>644</filemode>
                                     </mapper>
@@ -520,6 +591,10 @@
             </build>
         </profile>
 
+        <!-- ===========================================================================================================
+
+
+        ============================================================================================================ -->
         <profile>
             <id>it.tidalwave.bluemarine2-retrieve-testsets-profile</id>
             <activation>
@@ -594,6 +669,10 @@
             </build>
         </profile>
 
+        <!-- ===========================================================================================================
+
+
+        ============================================================================================================ -->
         <profile>
             <id>installers</id>
             <activation>

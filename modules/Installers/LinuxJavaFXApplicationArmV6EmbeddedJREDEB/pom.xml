@@ -52,15 +52,14 @@
     <name>blueMarine II - Installers - JavaFX Application, Linux ARM v6, embedded JRE DEB</name>
     <description>
         This module takes the .tar.gz produced by 'Installers - JavaFX Application, Linux ARM v6, embedded JRE' and
-        produces a .deb artifact contaning also stuff for installing it as a service.
+        produces a .deb package contaning also stuff for installing it as a service.
     </description>
 
     <properties>
-        <tft.deb.linux-user>bluemarine2</tft.deb.linux-user>
-        <tft.deb.linux-group>nogroup</tft.deb.linux-group>
-        <tdt.deb.name>bluemarine2</tdt.deb.name>
-        <tft.deb.directory>bluemarine2</tft.deb.directory>
+        <tdt.deb.name>bluemarine2-mediacenter</tdt.deb.name>
         <tft.deb.sourceTarball.artifactId>bluemarine2-application-javafx-linux-armv6-embedded-jre</tft.deb.sourceTarball.artifactId>
+        <tft.deb.user>bluemarine2</tft.deb.user>
+        <tft.deb.group>nogroup</tft.deb.group>
     </properties>
 
     <!-- Lots of things happen because of activate profiles - see 'src/config' -->

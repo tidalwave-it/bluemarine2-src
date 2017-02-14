@@ -2,7 +2,7 @@
 Description=blueMarine II media center for Linux ARM
 
 [Service]
-ExecStart=/opt/bluemarine2/bin/bluemarine2.sh
+ExecStart=/opt/bluemarine2-mediacenter/bin/bluemarine2.sh
 User=bluemarine2
 
 [Install]

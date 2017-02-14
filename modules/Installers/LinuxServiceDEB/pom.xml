@@ -51,16 +51,15 @@
     <packaging>deb</packaging>
     <name>blueMarine II - Installers - Headless Service, Linux DEB</name>
     <description>
-        This module takes the .tar.gz produced by 'Installers - Headless Service' and produces a .deb artifact
+        This module takes the .tar.gz produced by 'Installers - Headless Service' and produces a .deb package
         contaning also stuff for installing it as a service.
     </description>
 
     <properties>
-        <tft.deb.linux-user>bluemarine2</tft.deb.linux-user>
-        <tft.deb.linux-group>nogroup</tft.deb.linux-group>
         <tdt.deb.name>bluemarine2-service</tdt.deb.name>
-        <tft.deb.directory>bluemarine2</tft.deb.directory>
         <tft.deb.sourceTarball.artifactId>bluemarine2-service</tft.deb.sourceTarball.artifactId>
+        <tft.deb.user>bluemarine2</tft.deb.user>
+        <tft.deb.group>nogroup</tft.deb.group>
     </properties>
 
     <!-- Lots of things happen because of activate profiles - see 'src/config' -->

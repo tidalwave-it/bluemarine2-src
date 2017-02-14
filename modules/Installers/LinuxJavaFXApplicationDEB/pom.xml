@@ -38,28 +38,17 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <!-- ===============================================================================================================
-
-
-
-
-    ================================================================================================================ -->
-
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-application-javafx-tft.deb.linux-deb</artifactId>
     <version>1.0-ALPHA-20-SNAPSHOT</version>
     <packaging>deb</packaging>
     <name>blueMarine II - Installers - JavaFX Application, Linux DEB</name>
     <description>
-        This module takes the .tar.gz produced by 'Installers - JavaFX Application, Linux' and
-        produces a .deb artifact.
+        This module produces a .deb package out of the contents of the blueMarine JavaFX application tarball.
     </description>
 
     <properties>
-        <tft.deb.linux-user>root</tft.deb.linux-user>
-        <tft.deb.linux-group>root</tft.deb.linux-group>
         <tdt.deb.name>bluemarine2</tdt.deb.name>
-        <tft.deb.directory>bluemarine2</tft.deb.directory>
         <tft.deb.sourceTarball.artifactId>bluemarine2-application-javafx-linux</tft.deb.sourceTarball.artifactId>
     </properties>
 
