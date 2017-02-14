@@ -46,7 +46,7 @@
     ================================================================================================================ -->
 
     <groupId>it.tidalwave.bluemarine2</groupId>
-    <artifactId>bluemarine2-application-javafx-linux-deb</artifactId>
+    <artifactId>bluemarine2-application-javafx-tft.deb.linux-deb</artifactId>
     <version>1.0-ALPHA-20-SNAPSHOT</version>
     <packaging>deb</packaging>
     <name>blueMarine II - Installers - JavaFX Application, Linux DEB</name>
@@ -56,84 +56,13 @@
     </description>
 
     <properties>
-        <linux-user>root</linux-user>
-        <linux-group>root</linux-group>
+        <tft.deb.linux-user>root</tft.deb.linux-user>
+        <tft.deb.linux-group>root</tft.deb.linux-group>
+        <tdt.deb.name>bluemarine2</tdt.deb.name>
+        <tft.deb.directory>bluemarine2</tft.deb.directory>
+        <tft.deb.sourceTarball.artifactId>bluemarine2-application-javafx-linux</tft.deb.sourceTarball.artifactId>
     </properties>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>it.tidalwave.bluemarine2</groupId>
-                                    <artifactId>bluemarine2-application-javafx-linux</artifactId>
-                                    <classifier>bin</classifier>
-                                    <type>tar.gz</type>
-                                    <version>${project.version}</version>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.vafer</groupId>
-                <artifactId>jdeb</artifactId>
-                <configuration>
-                    <!-- TODO: copyright? -->
-                    <dataSet>
-                        <data>
-                            <type>archive</type>
-                            <src>${project.build.directory}/bluemarine2-application-javafx-linux-${project.version}-bin.tar.gz</src>
-                            <mapper>
-                                <type>perm</type>
-                                <prefix>/opt</prefix>
-                                <user>${linux-user}</user>
-                                <group>${linux-group}</group>
-                                <!-- no permissions, preserved those in the tarball -->
-                            </mapper>
-                        </data>
-                        <data>
-                            <type>link</type>
-                            <linkName>/opt/bluemarine2</linkName>
-                            <linkTarget>/opt/bluemarine2-${project.version}</linkTarget>
-                            <symlink>true</symlink>
-                            <mapper>
-                                <type>perm</type>
-                                <user>${linux-user}</user>
-                                <group>${linux-group}</group>
-                                <filemode>644</filemode>
-                            </mapper>
-                        </data>
-                        <data>
-                            <type>link</type>
-                            <linkName>/usr/bin/bluemarine2</linkName>
-                            <linkTarget>/opt/bluemarine2/bin/bluemarine2</linkTarget>
-                            <symlink>true</symlink>
-                            <mapper>
-                                <type>perm</type>
-                                <user>${linux-user}</user>
-                                <group>${linux-group}</group>
-                                <dirmode>755</dirmode>
-                                <filemode>644</filemode>
-                            </mapper>
-                        </data>
-                    </dataSet>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <!-- Lots of things happen because of activate profiles - see 'src/config' -->
 
 </project>
