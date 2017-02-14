@@ -1,3 +1,3 @@
 #!/bin/sh
 
-adduser --system --home /var/lib/bluemarine2 --shell /usr/sbin/nologin [[linux-user]]
+adduser --system --home /var/lib/[[tft.deb.directory]] --shell /usr/sbin/nologin [[tft.deb.user]]
