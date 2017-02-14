@@ -61,13 +61,6 @@
         <tft.embedded-jdk-classifier>linux-armv6</tft.embedded-jdk-classifier>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>
-        </dependency>
-    </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -75,7 +68,7 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>unpack-embedded-jdk</id>
+                        <id>unpack-resources</id>
                         <phase>generate-resources</phase>
                         <goals>
                             <goal>unpack</goal>
@@ -83,19 +76,48 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2</groupId>
+                                    <artifactId>bluemarine2-application-javafx-linux</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>tar.gz</type>
+                                    <classifier>bin</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}/tmpdist</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
                                     <groupId>${tft.embedded-jdk-groupId}</groupId>
                                     <artifactId>${tft.embedded-jdk-artifactId}</artifactId>
                                     <version>${tft.embedded-jdk-version}</version>
                                     <type>tgz</type>
                                     <classifier>${tft.embedded-jdk-classifier}</classifier>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.basedir}/target/dist</outputDirectory>
+                                    <outputDirectory>${project.build.directory}/dist</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/dist</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.build.directory}/tmpdist/bluemarine2-${project.version}</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
