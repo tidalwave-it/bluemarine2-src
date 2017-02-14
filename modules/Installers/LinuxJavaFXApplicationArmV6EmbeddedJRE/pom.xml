@@ -48,7 +48,7 @@
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-application-javafx-linux-armv6-embedded-jre</artifactId>
     <version>1.0-ALPHA-20-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
     <name>blueMarine II - Installers - JavaFX Application, Linux ARM v6, embedded JRE</name>
     <description>
         This module creates a Linux ARM v6 application bundle with an embedded JRE, because JavaFX is not part of the
@@ -65,18 +65,6 @@
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>
-        </dependency>
-
-        <!-- FIXME: why are not brought by transitive dependencies? -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
