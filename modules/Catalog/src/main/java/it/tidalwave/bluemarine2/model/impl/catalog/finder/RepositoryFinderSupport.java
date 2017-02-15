@@ -35,6 +35,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -136,6 +137,9 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
 
     @Inject
     private transient CacheManager cacheManager;
+
+    // FIXME: move to a stats bean
+    private static final AtomicInteger queryCount = new AtomicInteger();
 
     /*******************************************************************************************************************
      *
@@ -330,6 +334,29 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
 
     /*******************************************************************************************************************
      *
+     * Returns the count of queries performed so far.
+     *
+     * @return      the count of queries
+     *
+     ******************************************************************************************************************/
+    @Nonnegative
+    public static int getQueryCount()
+      {
+        return queryCount.intValue();
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Resets the count of queries performed so far.
+     *
+     ******************************************************************************************************************/
+    public static void resetQueryCount()
+      {
+        queryCount.set(0);
+      }
+
+    /*******************************************************************************************************************
+     *
      * Prepares the SPARQL query and its parameters.
      *
      * @return      the SPARQL query and its parameters
@@ -370,6 +397,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
                                                .collect(joining("\n"));
         log(originalSparql, sparql, parameters);
         final E result = query(sparql, finalizer, parameters);
+        queryCount.incrementAndGet();
         final long elapsedTime = System.nanoTime() - baseTime;
         log.info(">>>> query returned {} in {} msec", resultToString.apply(result), elapsedTime / 1E6);
         return result;

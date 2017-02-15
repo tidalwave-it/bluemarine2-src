@@ -214,6 +214,8 @@ ALL TRACKS (214):
   01/01 05 05:29 Walter L (urn:bluemarine:track:hUwJHBC4sGkrlFk49isWXBN_JJI=) Gary Burton, Pat Metheny, Steve Swallow, Antonio Sanchez/Quartet Live!/05 Walter L.mp3 - embedded
   01/01 07 04:18 Wild Is the Wind (urn:bluemarine:track:rFrBJdJ-gfPFp1hFvL4QBMfkl04=) Hermine Deurloo/Soundbite/07 Wild Is the Wind.mp3 - embedded
   01/01 09 03:55 Zupelnie inna ja (Always and Forever) (urn:bluemarine:track:pUPFQV1QAZmPYHjg6DZdTSLyPfk=) Pat Metheny & Anna Maria Jopek/Upojenie/09 Zupelnie inna ja (Always and Forever).mp3 - embedded
+  COUNT OF ALL TRACKS RETRIEVED BY 1 QUERIES
+  ALL TRACKS RETRIEVED BY 1 QUERIES
 
 
 
@@ -237,6 +239,8 @@ ALL RECORDS (18):
   Upojenie (urn:bluemarine:record:5FSHbw3UKirpCA-GFuhcZDEYEp8=) - embedded
   What's It All About (urn:bluemarine:record:flc7yvriASGIWSszgYUkRhdzp9c=) - embedded
   Zoom - Film Themes (urn:bluemarine:record:D4CamNE3LQpwf4FndhvmPtRlSXA=) - embedded
+  COUNT OF ALL RECORDS RETRIEVED BY 1 QUERIES
+  ALL RECORDS RETRIEVED BY 1 QUERIES
 
 
 
@@ -264,6 +268,8 @@ ALL ARTISTS (22):
   Stefan Morent & Ordo Virtutum (urn:bluemarine:artist:7OSNsf5ANKlKOz6zomKVi8-cpzQ=) - embedded
   Stefano Bollani (urn:bluemarine:artist:HiN6GwZ5YeAJS-V9hmwsZTwLoU8=) - embedded
   Vangelis (urn:bluemarine:artist:OqztUAgonmCwCliePiWKuwhyVJM=) - embedded
+  COUNT OF ALL ARTISTS RETRIEVED BY 1 QUERIES
+  ALL ARTISTS RETRIEVED BY 1 QUERIES
 
 TRACKS OF 6 in Jazz (urn:bluemarine:artist:xYukQqaQZrU_gDBv-jvGWTjAAX4=) (8):
   01/01 01 07:14 Con il nastro rosa (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito, Giuseppe La Pusata) (urn:bluemarine:track:Cs7wPeO8C5X71WZKe-ZI17JhVRs=) 6 in Jazz/Tributo a Lucio Battisti (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito & Giuseppe La Pusata)/01 Con il nastro rosa (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito, Giuseppe La Pusata).mp3 - embedded
@@ -274,6 +280,7 @@ TRACKS OF 6 in Jazz (urn:bluemarine:artist:xYukQqaQZrU_gDBv-jvGWTjAAX4=) (8):
   01/01 06 06:00 I giardini di marzo (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito, Giuseppe La Pusata) (urn:bluemarine:track:1snsh9dZiddmbIpP5OyAHdNxdro=) 6 in Jazz/Tributo a Lucio Battisti (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito & Giuseppe La Pusata)/06 I giardini di marzo (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito, Giuseppe La Pusata).mp3 - embedded
   01/01 07 08:02 Amarsi un po' (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito, Giuseppe La Pusata) (urn:bluemarine:track:uK84aWlrvaBYan_y70caZIVtO8k=) 6 in Jazz/Tributo a Lucio Battisti (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito & Giuseppe La Pusata)/07 Amarsi un po' (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito, Giuseppe La Pusata).mp3 - embedded
   01/01 08 05:39 Perché no (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito, Giuseppe La Pusata) (urn:bluemarine:track:9VcflIdY9ynnAZXBZYIoNbpXVj8=) 6 in Jazz/Tributo a Lucio Battisti (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito & Giuseppe La Pusata)/08 Perché no (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito, Giuseppe La Pusata).mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Alasdair Fraser and Paul Machlis (urn:bluemarine:artist:QVaNxEdxc6_OC6k7pFCJYuzJADM=) (21):
   01/01 01 03:19 Miss Dumbreck / Miss Cameron of Balvenie / Clydeside Lassies (urn:bluemarine:track:lO3ZMW1dq6ALNzdOwHW7041Zijw=) Alasdair Fraser and Paul Machlis/Legacy of the Scottish Fiddle/01 Miss Dumbreck _ Miss Cameron of Balvenie _ Clydeside Lassies.mp3 - embedded
@@ -297,9 +304,11 @@ TRACKS OF Alasdair Fraser and Paul Machlis (urn:bluemarine:artist:QVaNxEdxc6_OC6
   01/01 19 01:32 Mrs. Major L. Stewart of the Island of Java (urn:bluemarine:track:QxaFeZ15IZot-C5KU2aEfsE4ebY=) Alasdair Fraser and Paul Machlis/Legacy of the Scottish Fiddle/19 Mrs. Major L. Stewart of the Island of Java.mp3 - embedded
   01/01 20 03:35 The Iron Man / The Smith's a Gallant Fireman / The Forth Bridge Reel / Gillan's Reel / The Auld Wheel (urn:bluemarine:track:JTRR7E3Pvy-PnP_0zG6R4Ql6wak=) Alasdair Fraser and Paul Machlis/Legacy of the Scottish Fiddle/20 The Iron Man _ The Smith's a Gallant Fireman _ The Forth Bridge Reel _ Gillan's Reel _ The Auld Wheel.mp3 - embedded
   01/01 21 04:21 Niel Gow's Lament of the Death of His Second Wife (urn:bluemarine:track:qtqTQReIcP6Z3T-xXR2eOVwy5Lc=) Alasdair Fraser and Paul Machlis/Legacy of the Scottish Fiddle/21 Niel Gow's Lament of the Death of His Second Wife.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Aleksander Borodin (urn:bluemarine:artist:giR4X1087WU75rT0PlYNf_m4BNk=) (1):
   01/01 05 07:55 In the Steppes of Central Asia (urn:bluemarine:track:VYszADwtygx0fu2ctTYNZrAwsf8=) Sheherazade/05 In the Steppes of Central Asia.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Armando Sciascia Orchestra (urn:bluemarine:artist:8jemvQM_tXYjT0Nzgoj6AOo5Cis=) (14):
   01/01 01 03:06 Lost Horizon (Theme from the film Orizzonte perduto) (urn:bluemarine:track:3NoipdvuzEIqy8xKu0dxA0OmAEo=) Armando Sciascia Orchestra/Zoom - Film Themes/01 Lost Horizon (Theme from the film Orizzonte perduto).mp3 - embedded
@@ -316,6 +325,7 @@ TRACKS OF Armando Sciascia Orchestra (urn:bluemarine:artist:8jemvQM_tXYjT0Nzgoj6
   01/01 12 02:25 I'm Gonna Charleston (from the Film The Great Gatsby - Il grande Gatsby) (urn:bluemarine:track:PVGnPBzcXbiihO9CqLoiIeW0EOw=) Armando Sciascia Orchestra/Zoom - Film Themes/12 I'm Gonna Charleston (from the Film The Great Gatsby - Il grande Gatsby).mp3 - embedded
   01/01 13 02:38 Madison Bounce (from the Film Sexy) (urn:bluemarine:track:eXsiwpl-RLOIYfdTTehjn7NgBKA=) Armando Sciascia Orchestra/Zoom - Film Themes/13 Madison Bounce (from the Film Sexy).mp3 - embedded
   01/01 14 02:24 Suspence (Theme from the Film) (urn:bluemarine:track:otWZtRNtG2o35F52i2i_Gzd4-lc=) Armando Sciascia Orchestra/Zoom - Film Themes/14 Suspence (Theme from the Film).mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Bloom (urn:bluemarine:artist:8a89Fk6USBt7RGkAZWDP-0PJHko=) (8):
   01/01 01 07:46 Cygnus (urn:bluemarine:track:BGOIxaxteGKvTGRfKRRi0vrXrhY=) Compilations/Tre sogni/01 Cygnus.mp3 - embedded
@@ -326,6 +336,7 @@ TRACKS OF Bloom (urn:bluemarine:artist:8a89Fk6USBt7RGkAZWDP-0PJHko=) (8):
   01/01 06 06:03 Guarda nel mare (urn:bluemarine:track:JPYq5hXWvgBS8qO4FUbEp-x1yaY=) Compilations/Tre sogni/06 Guarda nel mare.mp3 - embedded
   01/01 07 05:29 Cuore di sabbia (urn:bluemarine:track:wcEDCJ88ryvFGoKUMXTBN4hirY8=) Compilations/Tre sogni/07 Cuore di sabbia.mp3 - embedded
   01/01 08 07:37 Wait for the Faith (urn:bluemarine:track:_deoJb-jzZWWC7UbtJChkigOyEI=) Compilations/Tre sogni/08 Wait for the Faith.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Cannonball Adderley (urn:bluemarine:artist:zgLUQL_qy6SfiNbRHDPMivGjOcI=) (6):
   01/01 01 10:59 Autumn Leaves (urn:bluemarine:track:Ic6T8TBCLdCJTrDZkNP1HUcsBes=) Cannonball Adderley/Somethin' Else/01 Autumn Leaves.mp3 - embedded
@@ -334,6 +345,7 @@ TRACKS OF Cannonball Adderley (urn:bluemarine:artist:zgLUQL_qy6SfiNbRHDPMivGjOcI
   01/01 04 08:25 One for Daddy-O (urn:bluemarine:track:665vtZc1nwt8x5Bq2XUVdL0bRLo=) Cannonball Adderley/Somethin' Else/04 One for Daddy-O.mp3 - embedded
   01/01 05 04:07 Dancing in the Dark (urn:bluemarine:track:PbtzwQ9jxISCtFLi5Ym6iel71Q8=) Cannonball Adderley/Somethin' Else/05 Dancing in the Dark.mp3 - embedded
   01/01 06 05:09 Bangoon (urn:bluemarine:track:boA8kJtglixsJwv0hyONzyATVvM=) Cannonball Adderley/Somethin' Else/06 Bangoon.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Eduardo Paniagua (urn:bluemarine:artist:oV9EsD6tJjakM0yTHIzJwHDrDIg=) (21):
   01/02 01 01:56 Estrella Del Dia (urn:bluemarine:track:Nmd7Bm3DQ922WhPkJn5YD_i_eK4=) Música Antigua & Eduardo Paniagua/La Vida de María - Cantigas de las Fiestas de Santa María/1-01 Estrella Del Dia.mp3 - embedded
@@ -357,6 +369,7 @@ TRACKS OF Eduardo Paniagua (urn:bluemarine:artist:oV9EsD6tJjakM0yTHIzJwHDrDIg=) 
   01/02 10 05:27 Dia Do Juyzio (Nenbre-Sse-Te, Madre De Deus, Maria) (urn:bluemarine:track:CCaWfiQl56ItQWZO_pQtN3YRQcI=) Música Antigua & Eduardo Paniagua/La Vida de María - Cantigas de las Fiestas de Santa María/2-10 Dia Do Juyzio (Nenbre-Sse-Te, Madre De Deus, Maria).mp3 - embedded
   01/02 10 02:29 Humanidad De Santa Maria (urn:bluemarine:track:LTHObYzz8w_0DsKm6g2t3IrvKNU=) Música Antigua & Eduardo Paniagua/La Vida de María - Cantigas de las Fiestas de Santa María/1-10 Humanidad De Santa Maria.mp3 - embedded
   01/02 11 07:36 Juicio-Sibila (Madre De Deus, Ora Por Nos) (urn:bluemarine:track:asPPkYySmprlQ7e2gAmllFqw-iI=) Música Antigua & Eduardo Paniagua/La Vida de María - Cantigas de las Fiestas de Santa María/2-11 Juicio-Sibila (Madre De Deus, Ora Por Nos).mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Gary Burton, Pat Metheny, Steve Swallow, Antonio Sanchez (urn:bluemarine:artist:iA-CE-qtkVmVxvE1jioNn7Bufbs=) (11):
   01/01 01 08:59 Sea Journey (urn:bluemarine:track:nVjsxHLo8ger25ZLyV_JmaI05VI=) Gary Burton, Pat Metheny, Steve Swallow, Antonio Sanchez/Quartet Live!/01 Sea Journey.mp3 - embedded
@@ -370,6 +383,7 @@ TRACKS OF Gary Burton, Pat Metheny, Steve Swallow, Antonio Sanchez (urn:bluemari
   01/01 09 04:47 Hullo, Bolinas (urn:bluemarine:track:yW36ZR4Wh9fjZ8XwnuUbYBqoZU0=) Gary Burton, Pat Metheny, Steve Swallow, Antonio Sanchez/Quartet Live!/09 Hullo, Bolinas.mp3 - embedded
   01/01 10 04:42 Syndrome (urn:bluemarine:track:gv1GJlezmBo6e8yeWkm05hOQ-u0=) Gary Burton, Pat Metheny, Steve Swallow, Antonio Sanchez/Quartet Live!/10 Syndrome.mp3 - embedded
   01/01 11 13:02 Question and Answer (urn:bluemarine:track:8o5NExVVgE9YifaulARImeRV_GY=) Gary Burton, Pat Metheny, Steve Swallow, Antonio Sanchez/Quartet Live!/11 Question and Answer.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Guillaume de Machaut (urn:bluemarine:artist:5QzNAC_H_IfRaJ2ChZMwruG4Bls=) (18):
   01/01 01 04:02 Anonymous / Introïtus: Gaudeamus omnes in Domino (urn:bluemarine:track:rQXfm0YQTdqoAETjb0ZPEWglLSA=) Guillaume de Machaut/Messe de Nostre Dame (Taverner Consort & Choir feat. conductor Andrew Parrott)/01 Anonymous _ Introïtus_ Gaudeamus omnes in Domino.mp3 - embedded
@@ -390,6 +404,7 @@ TRACKS OF Guillaume de Machaut (urn:bluemarine:artist:5QzNAC_H_IfRaJ2ChZMwruG4Bl
   01/01 16 00:47 Anonymous / Communio: Diffusa est gratia (urn:bluemarine:track:INLEj-bymzn1JiFQG5IHFDHfBaA=) Guillaume de Machaut/Messe de Nostre Dame (Taverner Consort & Choir feat. conductor Andrew Parrott)/16 Anonymous _ Communio_ Diffusa est gratia.mp3 - embedded
   01/01 17 01:07 Anonymous / Postcommunio (urn:bluemarine:track:Ypgi0Q3_Rp3792SVl8SIcipwbvc=) Guillaume de Machaut/Messe de Nostre Dame (Taverner Consort & Choir feat. conductor Andrew Parrott)/17 Anonymous _ Postcommunio.mp3 - embedded
   01/01 18 00:50 Ite missa est (urn:bluemarine:track:iywYdVtxZZlCutEWqjuiNR7Xpa4=) Guillaume de Machaut/Messe de Nostre Dame (Taverner Consort & Choir feat. conductor Andrew Parrott)/18 Ite missa est.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Hermine Deurloo (urn:bluemarine:artist:91iXvQuPGLia6UmzI7_WkE1jKvw=) (12):
   01/01 01 04:29 A Time for Spring (urn:bluemarine:track:Mwx5voMVa_D1v7v_1ZPTHukKu4U=) Hermine Deurloo/Soundbite/01 A Time for Spring.mp3 - embedded
@@ -404,6 +419,7 @@ TRACKS OF Hermine Deurloo (urn:bluemarine:artist:91iXvQuPGLia6UmzI7_WkE1jKvw=) (
   01/01 10 03:52 It's Your Thing (urn:bluemarine:track:eoPyPEZeWKnKpgmoqLcPGBURxPY=) Hermine Deurloo/Soundbite/10 It's Your Thing.mp3 - embedded
   01/01 11 04:43 So Near So Far (urn:bluemarine:track:W6uh2pR2izqOxuAJtnu46lhO4mM=) Hermine Deurloo/Soundbite/11 So Near So Far.mp3 - embedded
   01/01 12 06:10 Turks fruit (urn:bluemarine:track:LxesWqRSnNeP5etPiA4RaXM2UbY=) Hermine Deurloo/Soundbite/12 Turks fruit.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Johann Sebastian Bach (urn:bluemarine:artist:FOpzArf38p5GyEMMLfNQBDpVCJQ=) (28):
   01/02 01 04:05 Partita No. 2 in D minor, BWV 1004: I. Allemanda (urn:bluemarine:track:8ZlLZ-8NxoCxWtRAbDENNBZSaEc=) Johann Sebastian Bach; Nathan Milstein/Sonatas and Partitas for Solo Violin/2-01 Partita No. 2 in D minor, BWV 1004_ I. Allemanda.mp3 - embedded
@@ -434,20 +450,24 @@ TRACKS OF Johann Sebastian Bach (urn:bluemarine:artist:FOpzArf38p5GyEMMLfNQBDpVC
   01/02 15 04:35 Sonata No. 2 in A minor, BWV 1003: III. Andante (urn:bluemarine:track:JAqRM5YNbh5_mbm4VQUap7S7ydE=) Johann Sebastian Bach; Nathan Milstein/Sonatas and Partitas for Solo Violin/1-15 Sonata No. 2 in A minor, BWV 1003_ III. Andante.mp3 - embedded
   01/02 16 01:58 Partita No. 3 in E major, BWV 1006: VII. Gigue (urn:bluemarine:track:DdmG-SPFaQ1Apb10q6iW-exNkPA=) Johann Sebastian Bach; Nathan Milstein/Sonatas and Partitas for Solo Violin/2-16 Partita No. 3 in E major, BWV 1006_ VII. Gigue.mp3 - embedded
   01/02 16 06:09 Sonata No. 2 in A minor, BWV 1003: IV. Allegro (urn:bluemarine:track:j6pA_T0lmdkk0VbAU-0YfWgfKDo=) Johann Sebastian Bach; Nathan Milstein/Sonatas and Partitas for Solo Violin/1-16 Sonata No. 2 in A minor, BWV 1003_ IV. Allegro.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Nathan Milstein (urn:bluemarine:artist:HRsvl_yFi3DPjpz0DNx3QO8jKXo=) (4):
   01/02 04 02:33 Sonata for Violin Solo No. 1 in G Minor, BWV 1001: IV. Presto (urn:bluemarine:track:5yYsp36RgcB1eQt5qrmxF1m_-D4=) Johann Sebastian Bach; Nathan Milstein/Sonatas and Partitas for Solo Violin/1-04 Sonata for Violin Solo No. 1 in G Minor, BWV 1001_ IV. Presto.mp3 - embedded
   01/02 05 13:55 Partita for Violin Solo No. 2 in D Minor, BWV 1004: V. Ciaccona (urn:bluemarine:track:gDCz0U-crPaGVWvEL1A4_dZf8Qk=) Johann Sebastian Bach; Nathan Milstein/Sonatas and Partitas for Solo Violin/2-05 Partita for Violin Solo No. 2 in D Minor, BWV 1004_ V. Ciaccona.mp3 - embedded
   01/02 09 03:33 Sonata for Violin Solo No. 3 in C, BWV 1005: IV. Allegro assai (urn:bluemarine:track:ezF1tW2Io2FopVZmghu5-W4hUhk=) Johann Sebastian Bach; Nathan Milstein/Sonatas and Partitas for Solo Violin/2-09 Sonata for Violin Solo No. 3 in C, BWV 1005_ IV. Allegro assai.mp3 - embedded
   01/02 12 01:55 Partita for Violin Solo No. 1 in B Minor, BWV 1002: VIII. Double (urn:bluemarine:track:QyumEd65nHbOx5J9lGAKg0hHFEs=) Johann Sebastian Bach; Nathan Milstein/Sonatas and Partitas for Solo Violin/1-12 Partita for Violin Solo No. 1 in B Minor, BWV 1002_ VIII. Double.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Nikolay Rimsky-Korsakov (urn:bluemarine:artist:MTBvXmFfdQShRpdj7zsWkTSUdK0=) (3):
   01/01 01 10:29 Sheherazade, op. 35: I. The Sea and Sinbad's Ship (urn:bluemarine:track:_eIFvhGtvutBdGXJ-QEmuOHCGS4=) Sheherazade/01 Sheherazade, op. 35_ I. The Sea and Sinbad's Ship.mp3 - embedded
   01/01 02 12:25 Sheherazade, op. 35: II. The Story Of The Kalendar Prince (urn:bluemarine:track:Rp4FJtCehiSw2zx8nKfi6DNU8Yg=) Sheherazade/02 Sheherazade, op. 35_ II. The Story Of The Kalendar Prince.mp3 - embedded
   01/01 03 11:00 Sheherazade, op. 35: III. The Young Prince And Princess (urn:bluemarine:track:8Pn4sXR9Uf6C2JvBoZLqpynKbzU=) Sheherazade/03 Sheherazade, op. 35_ III. The Young Prince And Princess.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Ordo Virtutum (urn:bluemarine:artist:xZS0uxeusrz-fa5suvLDTDf6ORw=) (1):
   01/01 01 01:48 Dies Sanctificatus (urn:bluemarine:track:CZ8veugozFXgGSN9q7yvNbQ6z0Q=) Ordo Virtutum & Stefan Morent/Notker Balbulus_ Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen/01 Dies Sanctificatus.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Ordo Virtutum & Stefan Morent (urn:bluemarine:artist:vZG1Bo0SEo1dV4oI3FREMI17k2U=) (13):
   01/01 02 02:32 Natus Ante Saecula (urn:bluemarine:track:DHxvARr30SnhOZgD6h8tMV82_2E=) Ordo Virtutum & Stefan Morent/Notker Balbulus_ Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen/02 Natus Ante Saecula.mp3 - embedded
@@ -463,10 +483,12 @@ TRACKS OF Ordo Virtutum & Stefan Morent (urn:bluemarine:artist:vZG1Bo0SEo1dV4oI3
   01/01 14 02:50 Congaudent Angelorum Chori (urn:bluemarine:track:cvtSm4SI2KiNjLTAXM9bSVIWEiA=) Ordo Virtutum & Stefan Morent/Notker Balbulus_ Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen/14 Congaudent Angelorum Chori.mp3 - embedded
   01/01 15 03:10 Mater [St. Gall manuscripts] (urn:bluemarine:track:LFVlrRwfanGRtQWcqkEWl80QiBU=) Ordo Virtutum & Stefan Morent/Notker Balbulus_ Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen/15 Mater [St. Gall manuscripts].mp3 - embedded
   01/01 16 02:40 Lustus ut palma [St. Gall manuscripts] (urn:bluemarine:track:ov420x52tUpA01yLw0rTR_7xO84=) Ordo Virtutum & Stefan Morent/Notker Balbulus_ Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen/16 Lustus ut palma [St. Gall manuscripts].mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Pat Metheny (urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=) (2):
   01/01 11 06:40 'Round Midnight (Bonus Track) (urn:bluemarine:track:aeX0X-UyIbRzfa6o_0TiONzilJs=) Pat Metheny/What's It All About Bonus Tracks/11 'Round Midnight (Bonus Track).mp3 - embedded
   01/01 12 04:29 This Nearly Was Mine (Bonus Track) (urn:bluemarine:track:GomFermUUhhrI6-VJInC9SK5s_4=) Pat Metheny/What's It All About Bonus Tracks/12 This Nearly Was Mine (Bonus Track).mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Pat Metheny & Anna Maria Jopek (urn:bluemarine:artist:yu7UNZ42JI70aZOYQ8J89AB-OyU=) (17):
   01/01 01 03:26 Cichy zapada zmrok (Here Comes the Silent Dusk) (urn:bluemarine:track:xXGN4VVy-aiN7IMqSZGskyUtXpI=) Pat Metheny & Anna Maria Jopek/Upojenie/01 Cichy zapada zmrok (Here Comes the Silent Dusk).mp3 - embedded
@@ -486,17 +508,21 @@ TRACKS OF Pat Metheny & Anna Maria Jopek (urn:bluemarine:artist:yu7UNZ42JI70aZOY
   01/01 15 03:49 Tam, gdzie nie sięga wzrok (Follow Me) (urn:bluemarine:track:BQRMDX7Syoi_4Hbj-VLVRHHNGus=) Pat Metheny & Anna Maria Jopek/Upojenie/15 Tam, gdzie nie sięga wzrok (Follow Me).mp3 - embedded
   01/01 16 01:47 Na całej połaci śnieg (The Snow Falls All Over the Place) (urn:bluemarine:track:OCQNsFHMXhyDUf0WzE3p8zdv1cM=) Pat Metheny & Anna Maria Jopek/Upojenie/16 Na całej połaci śnieg (The Snow Falls All Over the Place).mp3 - embedded
   01/01 17 04:47 Szepty i łzy (Whispers and Tears) (urn:bluemarine:track:F7yqy05qFazxgLRT1yZ-8LBc804=) Pat Metheny & Anna Maria Jopek/Upojenie/17 Szepty i łzy (Whispers and Tears).mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Sergei Levitin, St Petersburg Kirov Orchestra & Valery Gergiev (urn:bluemarine:artist:ivfRhdFPCMa44VrLyobtWMF6ZMw=) (1):
   01/01 04 12:04 Scheherazade, Op. 35: Festival at Bagdad - the Sea - the Shipwreck Against a Rock Surmounted By a Bronze Warrior (The Shipwreck) (urn:bluemarine:track:06Y7Ry9z2GRSBWMvPpDVeo7ODt0=) Sheherazade/04 Scheherazade, Op. 35_ Festival at Bagdad - the Sea - the Shipwreck Against a Rock Surmounted By a Bronze Warrior (The Shipwreck).mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF St Petersburg Kirov Orchestra & Valery Gergiev (urn:bluemarine:artist:HdlvHO7kYO1F6S_ylypnVEI_C28=) (1):
   01/01 06 08:35 Islamey (urn:bluemarine:track:yx8enkAmnIiHFBONgl_zBsM1VSk=) Sheherazade/06 Islamey.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Stefan Morent & Ordo Virtutum (urn:bluemarine:artist:7OSNsf5ANKlKOz6zomKVi8-cpzQ=) (3):
   01/01 08 02:48 Consubstantialis patri [St. Gall manuscripts] (urn:bluemarine:track:HBDwF0EKL5XksNwCia4Q0FJAEKc=) Ordo Virtutum & Stefan Morent/Notker Balbulus_ Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen/08 Consubstantialis patri [St. Gall manuscripts].mp3 - embedded
   01/01 12 02:07 Romana [St. Gall manuscripts] (urn:bluemarine:track:zLNijiY6LZDIGEwWTKedzPqOL1g=) Ordo Virtutum & Stefan Morent/Notker Balbulus_ Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen/12 Romana [St. Gall manuscripts].mp3 - embedded
   01/01 17 02:13 Dilecte Deo Galle (urn:bluemarine:track:grvtq2KXsSHgc3LoUaP4DieVfTk=) Ordo Virtutum & Stefan Morent/Notker Balbulus_ Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen/17 Dilecte Deo Galle.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Stefano Bollani (urn:bluemarine:artist:HiN6GwZ5YeAJS-V9hmwsZTwLoU8=) (16):
   01/01 01 05:00 Luz negra (urn:bluemarine:track:_Btu0H2nUk4Tiv1FaVIZzDrOfoA=) Stefano Bollani/Carioca/01 Luz negra.mp3 - embedded
@@ -515,6 +541,7 @@ TRACKS OF Stefano Bollani (urn:bluemarine:artist:HiN6GwZ5YeAJS-V9hmwsZTwLoU8=) (
   01/01 14 08:57 Na báixa do sapateiro (urn:bluemarine:track:UvEFqsnYINhDb9-1WOZGdHRsxeA=) Stefano Bollani/Carioca/14 Na báixa do sapateiro.mp3 - embedded
   01/01 15 05:54 Apanhei-te cavaquinho (urn:bluemarine:track:VI5gX7t7TBx_V0rXE-GXFcKnj0I=) Stefano Bollani/Carioca/15 Apanhei-te cavaquinho.mp3 - embedded
   01/01 16 05:29 Trem das onze / Figlio unico (urn:bluemarine:track:i6DMR3rkelYvapI8wUy4bgJxOXo=) Stefano Bollani/Carioca/16 Trem das onze _ Figlio unico.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Vangelis (urn:bluemarine:artist:OqztUAgonmCwCliePiWKuwhyVJM=) (5):
   01/01 01 18:32 Movement 1 (urn:bluemarine:track:Yhcgwe5OIJTUqGMnLXvhOstimKk=) Vangelis/Soil Festivities/01 Movement 1.mp3 - embedded
@@ -522,116 +549,161 @@ TRACKS OF Vangelis (urn:bluemarine:artist:OqztUAgonmCwCliePiWKuwhyVJM=) (5):
   01/01 03 06:10 Movement 3 (urn:bluemarine:track:48pbKGDwyOMhekT_phxr6SXlvXY=) Vangelis/Soil Festivities/03 Movement 3.mp3 - embedded
   01/01 04 09:57 Movement 4 (urn:bluemarine:track:2-_5bjXDFH0heY8hku1w_MOLJxU=) Vangelis/Soil Festivities/04 Movement 4.mp3 - embedded
   01/01 05 07:20 Movement 5 (urn:bluemarine:track:UtrnMC2zAOF1fPiDZXLKN0DvXm8=) Vangelis/Soil Festivities/05 Movement 5.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 RECORDS OF 6 in Jazz (urn:bluemarine:artist:xYukQqaQZrU_gDBv-jvGWTjAAX4=) (1):
   Tributo a Lucio Battisti (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito & Giuseppe La Pusata) (urn:bluemarine:record:xaTzhov6wDgKmFQ9Tgc6YqXC3gQ=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Alasdair Fraser and Paul Machlis (urn:bluemarine:artist:QVaNxEdxc6_OC6k7pFCJYuzJADM=) (1):
   Legacy of the Scottish Fiddle (urn:bluemarine:record:NEhoQUjTuyiwfNyNLkiQCbZEbLg=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Aleksander Borodin (urn:bluemarine:artist:giR4X1087WU75rT0PlYNf_m4BNk=) (1):
   Sheherazade (urn:bluemarine:record:JwlFGfR8CPd8Ko4_aP5K20qhJ0k=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Armando Sciascia Orchestra (urn:bluemarine:artist:8jemvQM_tXYjT0Nzgoj6AOo5Cis=) (1):
   Zoom - Film Themes (urn:bluemarine:record:D4CamNE3LQpwf4FndhvmPtRlSXA=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Bloom (urn:bluemarine:artist:8a89Fk6USBt7RGkAZWDP-0PJHko=) (1):
   Tre sogni (urn:bluemarine:record:HQ8eE0JuRv3UQDUeXRN4KG1UbY4=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Cannonball Adderley (urn:bluemarine:artist:zgLUQL_qy6SfiNbRHDPMivGjOcI=) (1):
   Somethin' Else (urn:bluemarine:record:5W5viinqxMWqqyAGPvuH7z_0gfI=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Eduardo Paniagua (urn:bluemarine:artist:oV9EsD6tJjakM0yTHIzJwHDrDIg=) (1):
   La Vida de María - Cantigas de las Fiestas de Santa María (urn:bluemarine:record:P28-bc3cgyN1W364oAPEbejdjeU=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Gary Burton, Pat Metheny, Steve Swallow, Antonio Sanchez (urn:bluemarine:artist:iA-CE-qtkVmVxvE1jioNn7Bufbs=) (1):
   Quartet Live! (urn:bluemarine:record:8v-F90LOubN-fEJrz6cvf-_a8MI=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Guillaume de Machaut (urn:bluemarine:artist:5QzNAC_H_IfRaJ2ChZMwruG4Bls=) (1):
   Messe de Nostre Dame (Taverner Consort & Choir feat. conductor Andrew Parrott) (urn:bluemarine:record:SPuWFRuyg7H5RODRkYpkURe1Fpw=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Hermine Deurloo (urn:bluemarine:artist:91iXvQuPGLia6UmzI7_WkE1jKvw=) (1):
   Soundbite (urn:bluemarine:record:yD8dWAE0u9Re4E96M84o04Qpvec=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Johann Sebastian Bach (urn:bluemarine:artist:FOpzArf38p5GyEMMLfNQBDpVCJQ=) (1):
   Sonatas and Partitas for Solo Violin (urn:bluemarine:record:0VhLYnW37d1Oq-OpfZTLxKJohq0=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Nathan Milstein (urn:bluemarine:artist:HRsvl_yFi3DPjpz0DNx3QO8jKXo=) (1):
   Bach: Sonatas and Partitas (urn:bluemarine:record:p5HgGt5h7MMmt2ikUEip19oqT_c=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Nikolay Rimsky-Korsakov (urn:bluemarine:artist:MTBvXmFfdQShRpdj7zsWkTSUdK0=) (1):
   Sheherazade (urn:bluemarine:record:JwlFGfR8CPd8Ko4_aP5K20qhJ0k=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Ordo Virtutum (urn:bluemarine:artist:xZS0uxeusrz-fa5suvLDTDf6ORw=) (1):
   Notker Balbulus: Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen (urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Ordo Virtutum & Stefan Morent (urn:bluemarine:artist:vZG1Bo0SEo1dV4oI3FREMI17k2U=) (1):
   Notker Balbulus: Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen (urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Pat Metheny (urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=) (1):
   What's It All About (urn:bluemarine:record:flc7yvriASGIWSszgYUkRhdzp9c=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Pat Metheny & Anna Maria Jopek (urn:bluemarine:artist:yu7UNZ42JI70aZOYQ8J89AB-OyU=) (1):
   Upojenie (urn:bluemarine:record:5FSHbw3UKirpCA-GFuhcZDEYEp8=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Sergei Levitin, St Petersburg Kirov Orchestra & Valery Gergiev (urn:bluemarine:artist:ivfRhdFPCMa44VrLyobtWMF6ZMw=) (1):
   Rimsky-Korsakov: Scheherazade (urn:bluemarine:record:lvz3awtgypL8BcvbSyA2iWGTxIU=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF St Petersburg Kirov Orchestra & Valery Gergiev (urn:bluemarine:artist:HdlvHO7kYO1F6S_ylypnVEI_C28=) (1):
   Rimsky-Korsakov: Scheherazade (urn:bluemarine:record:lvz3awtgypL8BcvbSyA2iWGTxIU=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Stefan Morent & Ordo Virtutum (urn:bluemarine:artist:7OSNsf5ANKlKOz6zomKVi8-cpzQ=) (1):
   Notker Balbulus: Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen (urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Stefano Bollani (urn:bluemarine:artist:HiN6GwZ5YeAJS-V9hmwsZTwLoU8=) (1):
   Carioca (urn:bluemarine:record:A5hGxftTL07vxkmaHnUN1S3_B-o=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Vangelis (urn:bluemarine:artist:OqztUAgonmCwCliePiWKuwhyVJM=) (1):
   Soil Festivities (urn:bluemarine:record:D2IRPvMCAE25ee9ySY9F9Ml0abo=)
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF 6 in Jazz (urn:bluemarine:artist:xYukQqaQZrU_gDBv-jvGWTjAAX4=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Alasdair Fraser and Paul Machlis (urn:bluemarine:artist:QVaNxEdxc6_OC6k7pFCJYuzJADM=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Aleksander Borodin (urn:bluemarine:artist:giR4X1087WU75rT0PlYNf_m4BNk=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Armando Sciascia Orchestra (urn:bluemarine:artist:8jemvQM_tXYjT0Nzgoj6AOo5Cis=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Bloom (urn:bluemarine:artist:8a89Fk6USBt7RGkAZWDP-0PJHko=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Cannonball Adderley (urn:bluemarine:artist:zgLUQL_qy6SfiNbRHDPMivGjOcI=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Eduardo Paniagua (urn:bluemarine:artist:oV9EsD6tJjakM0yTHIzJwHDrDIg=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Gary Burton, Pat Metheny, Steve Swallow, Antonio Sanchez (urn:bluemarine:artist:iA-CE-qtkVmVxvE1jioNn7Bufbs=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Guillaume de Machaut (urn:bluemarine:artist:5QzNAC_H_IfRaJ2ChZMwruG4Bls=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Hermine Deurloo (urn:bluemarine:artist:91iXvQuPGLia6UmzI7_WkE1jKvw=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Johann Sebastian Bach (urn:bluemarine:artist:FOpzArf38p5GyEMMLfNQBDpVCJQ=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Nathan Milstein (urn:bluemarine:artist:HRsvl_yFi3DPjpz0DNx3QO8jKXo=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Nikolay Rimsky-Korsakov (urn:bluemarine:artist:MTBvXmFfdQShRpdj7zsWkTSUdK0=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Ordo Virtutum (urn:bluemarine:artist:xZS0uxeusrz-fa5suvLDTDf6ORw=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Ordo Virtutum & Stefan Morent (urn:bluemarine:artist:vZG1Bo0SEo1dV4oI3FREMI17k2U=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Pat Metheny (urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Pat Metheny & Anna Maria Jopek (urn:bluemarine:artist:yu7UNZ42JI70aZOYQ8J89AB-OyU=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Sergei Levitin, St Petersburg Kirov Orchestra & Valery Gergiev (urn:bluemarine:artist:ivfRhdFPCMa44VrLyobtWMF6ZMw=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF St Petersburg Kirov Orchestra & Valery Gergiev (urn:bluemarine:artist:HdlvHO7kYO1F6S_ylypnVEI_C28=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Stefan Morent & Ordo Virtutum (urn:bluemarine:artist:7OSNsf5ANKlKOz6zomKVi8-cpzQ=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Stefano Bollani (urn:bluemarine:artist:HiN6GwZ5YeAJS-V9hmwsZTwLoU8=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Vangelis (urn:bluemarine:artist:OqztUAgonmCwCliePiWKuwhyVJM=) (0):
+  RETRIEVED BY 3 QUERIES
 
 RECORD Bach: Sonatas and Partitas (urn:bluemarine:record:p5HgGt5h7MMmt2ikUEip19oqT_c=):
   SOURCE:  embedded
@@ -640,6 +712,7 @@ RECORD Bach: Sonatas and Partitas (urn:bluemarine:record:p5HgGt5h7MMmt2ikUEip19o
     01/02 05 13:55 Partita for Violin Solo No. 2 in D Minor, BWV 1004: V. Ciaccona (urn:bluemarine:track:gDCz0U-crPaGVWvEL1A4_dZf8Qk=) Johann Sebastian Bach; Nathan Milstein/Sonatas and Partitas for Solo Violin/2-05 Partita for Violin Solo No. 2 in D Minor, BWV 1004_ V. Ciaccona.mp3 - embedded
     01/02 09 03:33 Sonata for Violin Solo No. 3 in C, BWV 1005: IV. Allegro assai (urn:bluemarine:track:ezF1tW2Io2FopVZmghu5-W4hUhk=) Johann Sebastian Bach; Nathan Milstein/Sonatas and Partitas for Solo Violin/2-09 Sonata for Violin Solo No. 3 in C, BWV 1005_ IV. Allegro assai.mp3 - embedded
     01/02 12 01:55 Partita for Violin Solo No. 1 in B Minor, BWV 1002: VIII. Double (urn:bluemarine:track:QyumEd65nHbOx5J9lGAKg0hHFEs=) Johann Sebastian Bach; Nathan Milstein/Sonatas and Partitas for Solo Violin/1-12 Partita for Violin Solo No. 1 in B Minor, BWV 1002_ VIII. Double.mp3 - embedded
+  RETRIEVED BY 6 QUERIES
 
 RECORD Carioca (urn:bluemarine:record:A5hGxftTL07vxkmaHnUN1S3_B-o=):
   SOURCE:  embedded
@@ -660,6 +733,7 @@ RECORD Carioca (urn:bluemarine:record:A5hGxftTL07vxkmaHnUN1S3_B-o=):
     01/01 14 08:57 Na báixa do sapateiro (urn:bluemarine:track:UvEFqsnYINhDb9-1WOZGdHRsxeA=) Stefano Bollani/Carioca/14 Na báixa do sapateiro.mp3 - embedded
     01/01 15 05:54 Apanhei-te cavaquinho (urn:bluemarine:track:VI5gX7t7TBx_V0rXE-GXFcKnj0I=) Stefano Bollani/Carioca/15 Apanhei-te cavaquinho.mp3 - embedded
     01/01 16 05:29 Trem das onze / Figlio unico (urn:bluemarine:track:i6DMR3rkelYvapI8wUy4bgJxOXo=) Stefano Bollani/Carioca/16 Trem das onze _ Figlio unico.mp3 - embedded
+  RETRIEVED BY 18 QUERIES
 
 RECORD La Vida de María - Cantigas de las Fiestas de Santa María (urn:bluemarine:record:P28-bc3cgyN1W364oAPEbejdjeU=):
   SOURCE:  embedded
@@ -685,6 +759,7 @@ RECORD La Vida de María - Cantigas de las Fiestas de Santa María (urn:bluemari
     01/02 10 05:27 Dia Do Juyzio (Nenbre-Sse-Te, Madre De Deus, Maria) (urn:bluemarine:track:CCaWfiQl56ItQWZO_pQtN3YRQcI=) Música Antigua & Eduardo Paniagua/La Vida de María - Cantigas de las Fiestas de Santa María/2-10 Dia Do Juyzio (Nenbre-Sse-Te, Madre De Deus, Maria).mp3 - embedded
     01/02 10 02:29 Humanidad De Santa Maria (urn:bluemarine:track:LTHObYzz8w_0DsKm6g2t3IrvKNU=) Música Antigua & Eduardo Paniagua/La Vida de María - Cantigas de las Fiestas de Santa María/1-10 Humanidad De Santa Maria.mp3 - embedded
     01/02 11 07:36 Juicio-Sibila (Madre De Deus, Ora Por Nos) (urn:bluemarine:track:asPPkYySmprlQ7e2gAmllFqw-iI=) Música Antigua & Eduardo Paniagua/La Vida de María - Cantigas de las Fiestas de Santa María/2-11 Juicio-Sibila (Madre De Deus, Ora Por Nos).mp3 - embedded
+  RETRIEVED BY 23 QUERIES
 
 RECORD Legacy of the Scottish Fiddle (urn:bluemarine:record:NEhoQUjTuyiwfNyNLkiQCbZEbLg=):
   SOURCE:  embedded
@@ -710,6 +785,7 @@ RECORD Legacy of the Scottish Fiddle (urn:bluemarine:record:NEhoQUjTuyiwfNyNLkiQ
     01/01 19 01:32 Mrs. Major L. Stewart of the Island of Java (urn:bluemarine:track:QxaFeZ15IZot-C5KU2aEfsE4ebY=) Alasdair Fraser and Paul Machlis/Legacy of the Scottish Fiddle/19 Mrs. Major L. Stewart of the Island of Java.mp3 - embedded
     01/01 20 03:35 The Iron Man / The Smith's a Gallant Fireman / The Forth Bridge Reel / Gillan's Reel / The Auld Wheel (urn:bluemarine:track:JTRR7E3Pvy-PnP_0zG6R4Ql6wak=) Alasdair Fraser and Paul Machlis/Legacy of the Scottish Fiddle/20 The Iron Man _ The Smith's a Gallant Fireman _ The Forth Bridge Reel _ Gillan's Reel _ The Auld Wheel.mp3 - embedded
     01/01 21 04:21 Niel Gow's Lament of the Death of His Second Wife (urn:bluemarine:track:qtqTQReIcP6Z3T-xXR2eOVwy5Lc=) Alasdair Fraser and Paul Machlis/Legacy of the Scottish Fiddle/21 Niel Gow's Lament of the Death of His Second Wife.mp3 - embedded
+  RETRIEVED BY 23 QUERIES
 
 RECORD Messe de Nostre Dame (Taverner Consort & Choir feat. conductor Andrew Parrott) (urn:bluemarine:record:SPuWFRuyg7H5RODRkYpkURe1Fpw=):
   SOURCE:  embedded
@@ -732,6 +808,7 @@ RECORD Messe de Nostre Dame (Taverner Consort & Choir feat. conductor Andrew Par
     01/01 16 00:47 Anonymous / Communio: Diffusa est gratia (urn:bluemarine:track:INLEj-bymzn1JiFQG5IHFDHfBaA=) Guillaume de Machaut/Messe de Nostre Dame (Taverner Consort & Choir feat. conductor Andrew Parrott)/16 Anonymous _ Communio_ Diffusa est gratia.mp3 - embedded
     01/01 17 01:07 Anonymous / Postcommunio (urn:bluemarine:track:Ypgi0Q3_Rp3792SVl8SIcipwbvc=) Guillaume de Machaut/Messe de Nostre Dame (Taverner Consort & Choir feat. conductor Andrew Parrott)/17 Anonymous _ Postcommunio.mp3 - embedded
     01/01 18 00:50 Ite missa est (urn:bluemarine:track:iywYdVtxZZlCutEWqjuiNR7Xpa4=) Guillaume de Machaut/Messe de Nostre Dame (Taverner Consort & Choir feat. conductor Andrew Parrott)/18 Ite missa est.mp3 - embedded
+  RETRIEVED BY 20 QUERIES
 
 RECORD Notker Balbulus: Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen (urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=):
   SOURCE:  embedded
@@ -753,6 +830,7 @@ RECORD Notker Balbulus: Sequnezen, Tropen & Gregorianischer Choral aud dem Klost
     01/01 15 03:10 Mater [St. Gall manuscripts] (urn:bluemarine:track:LFVlrRwfanGRtQWcqkEWl80QiBU=) Ordo Virtutum & Stefan Morent/Notker Balbulus_ Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen/15 Mater [St. Gall manuscripts].mp3 - embedded
     01/01 16 02:40 Lustus ut palma [St. Gall manuscripts] (urn:bluemarine:track:ov420x52tUpA01yLw0rTR_7xO84=) Ordo Virtutum & Stefan Morent/Notker Balbulus_ Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen/16 Lustus ut palma [St. Gall manuscripts].mp3 - embedded
     01/01 17 02:13 Dilecte Deo Galle (urn:bluemarine:track:grvtq2KXsSHgc3LoUaP4DieVfTk=) Ordo Virtutum & Stefan Morent/Notker Balbulus_ Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen/17 Dilecte Deo Galle.mp3 - embedded
+  RETRIEVED BY 19 QUERIES
 
 RECORD Quartet Live! (urn:bluemarine:record:8v-F90LOubN-fEJrz6cvf-_a8MI=):
   SOURCE:  embedded
@@ -768,12 +846,14 @@ RECORD Quartet Live! (urn:bluemarine:record:8v-F90LOubN-fEJrz6cvf-_a8MI=):
     01/01 09 04:47 Hullo, Bolinas (urn:bluemarine:track:yW36ZR4Wh9fjZ8XwnuUbYBqoZU0=) Gary Burton, Pat Metheny, Steve Swallow, Antonio Sanchez/Quartet Live!/09 Hullo, Bolinas.mp3 - embedded
     01/01 10 04:42 Syndrome (urn:bluemarine:track:gv1GJlezmBo6e8yeWkm05hOQ-u0=) Gary Burton, Pat Metheny, Steve Swallow, Antonio Sanchez/Quartet Live!/10 Syndrome.mp3 - embedded
     01/01 11 13:02 Question and Answer (urn:bluemarine:track:8o5NExVVgE9YifaulARImeRV_GY=) Gary Burton, Pat Metheny, Steve Swallow, Antonio Sanchez/Quartet Live!/11 Question and Answer.mp3 - embedded
+  RETRIEVED BY 13 QUERIES
 
 RECORD Rimsky-Korsakov: Scheherazade (urn:bluemarine:record:lvz3awtgypL8BcvbSyA2iWGTxIU=):
   SOURCE:  embedded
   TRACKS (2 / Optional.empty):
     01/01 04 12:04 Scheherazade, Op. 35: Festival at Bagdad - the Sea - the Shipwreck Against a Rock Surmounted By a Bronze Warrior (The Shipwreck) (urn:bluemarine:track:06Y7Ry9z2GRSBWMvPpDVeo7ODt0=) Sheherazade/04 Scheherazade, Op. 35_ Festival at Bagdad - the Sea - the Shipwreck Against a Rock Surmounted By a Bronze Warrior (The Shipwreck).mp3 - embedded
     01/01 06 08:35 Islamey (urn:bluemarine:track:yx8enkAmnIiHFBONgl_zBsM1VSk=) Sheherazade/06 Islamey.mp3 - embedded
+  RETRIEVED BY 4 QUERIES
 
 RECORD Sheherazade (urn:bluemarine:record:JwlFGfR8CPd8Ko4_aP5K20qhJ0k=):
   SOURCE:  embedded
@@ -782,6 +862,7 @@ RECORD Sheherazade (urn:bluemarine:record:JwlFGfR8CPd8Ko4_aP5K20qhJ0k=):
     01/01 02 12:25 Sheherazade, op. 35: II. The Story Of The Kalendar Prince (urn:bluemarine:track:Rp4FJtCehiSw2zx8nKfi6DNU8Yg=) Sheherazade/02 Sheherazade, op. 35_ II. The Story Of The Kalendar Prince.mp3 - embedded
     01/01 03 11:00 Sheherazade, op. 35: III. The Young Prince And Princess (urn:bluemarine:track:8Pn4sXR9Uf6C2JvBoZLqpynKbzU=) Sheherazade/03 Sheherazade, op. 35_ III. The Young Prince And Princess.mp3 - embedded
     01/01 05 07:55 In the Steppes of Central Asia (urn:bluemarine:track:VYszADwtygx0fu2ctTYNZrAwsf8=) Sheherazade/05 In the Steppes of Central Asia.mp3 - embedded
+  RETRIEVED BY 6 QUERIES
 
 RECORD Soil Festivities (urn:bluemarine:record:D2IRPvMCAE25ee9ySY9F9Ml0abo=):
   SOURCE:  embedded
@@ -791,6 +872,7 @@ RECORD Soil Festivities (urn:bluemarine:record:D2IRPvMCAE25ee9ySY9F9Ml0abo=):
     01/01 03 06:10 Movement 3 (urn:bluemarine:track:48pbKGDwyOMhekT_phxr6SXlvXY=) Vangelis/Soil Festivities/03 Movement 3.mp3 - embedded
     01/01 04 09:57 Movement 4 (urn:bluemarine:track:2-_5bjXDFH0heY8hku1w_MOLJxU=) Vangelis/Soil Festivities/04 Movement 4.mp3 - embedded
     01/01 05 07:20 Movement 5 (urn:bluemarine:track:UtrnMC2zAOF1fPiDZXLKN0DvXm8=) Vangelis/Soil Festivities/05 Movement 5.mp3 - embedded
+  RETRIEVED BY 7 QUERIES
 
 RECORD Somethin' Else (urn:bluemarine:record:5W5viinqxMWqqyAGPvuH7z_0gfI=):
   SOURCE:  embedded
@@ -801,6 +883,7 @@ RECORD Somethin' Else (urn:bluemarine:record:5W5viinqxMWqqyAGPvuH7z_0gfI=):
     01/01 04 08:25 One for Daddy-O (urn:bluemarine:track:665vtZc1nwt8x5Bq2XUVdL0bRLo=) Cannonball Adderley/Somethin' Else/04 One for Daddy-O.mp3 - embedded
     01/01 05 04:07 Dancing in the Dark (urn:bluemarine:track:PbtzwQ9jxISCtFLi5Ym6iel71Q8=) Cannonball Adderley/Somethin' Else/05 Dancing in the Dark.mp3 - embedded
     01/01 06 05:09 Bangoon (urn:bluemarine:track:boA8kJtglixsJwv0hyONzyATVvM=) Cannonball Adderley/Somethin' Else/06 Bangoon.mp3 - embedded
+  RETRIEVED BY 8 QUERIES
 
 RECORD Sonatas and Partitas for Solo Violin (urn:bluemarine:record:0VhLYnW37d1Oq-OpfZTLxKJohq0=):
   SOURCE:  embedded
@@ -833,6 +916,7 @@ RECORD Sonatas and Partitas for Solo Violin (urn:bluemarine:record:0VhLYnW37d1Oq
     01/02 15 04:35 Sonata No. 2 in A minor, BWV 1003: III. Andante (urn:bluemarine:track:JAqRM5YNbh5_mbm4VQUap7S7ydE=) Johann Sebastian Bach; Nathan Milstein/Sonatas and Partitas for Solo Violin/1-15 Sonata No. 2 in A minor, BWV 1003_ III. Andante.mp3 - embedded
     01/02 16 01:58 Partita No. 3 in E major, BWV 1006: VII. Gigue (urn:bluemarine:track:DdmG-SPFaQ1Apb10q6iW-exNkPA=) Johann Sebastian Bach; Nathan Milstein/Sonatas and Partitas for Solo Violin/2-16 Partita No. 3 in E major, BWV 1006_ VII. Gigue.mp3 - embedded
     01/02 16 06:09 Sonata No. 2 in A minor, BWV 1003: IV. Allegro (urn:bluemarine:track:j6pA_T0lmdkk0VbAU-0YfWgfKDo=) Johann Sebastian Bach; Nathan Milstein/Sonatas and Partitas for Solo Violin/1-16 Sonata No. 2 in A minor, BWV 1003_ IV. Allegro.mp3 - embedded
+  RETRIEVED BY 30 QUERIES
 
 RECORD Soundbite (urn:bluemarine:record:yD8dWAE0u9Re4E96M84o04Qpvec=):
   SOURCE:  embedded
@@ -849,6 +933,7 @@ RECORD Soundbite (urn:bluemarine:record:yD8dWAE0u9Re4E96M84o04Qpvec=):
     01/01 10 03:52 It's Your Thing (urn:bluemarine:track:eoPyPEZeWKnKpgmoqLcPGBURxPY=) Hermine Deurloo/Soundbite/10 It's Your Thing.mp3 - embedded
     01/01 11 04:43 So Near So Far (urn:bluemarine:track:W6uh2pR2izqOxuAJtnu46lhO4mM=) Hermine Deurloo/Soundbite/11 So Near So Far.mp3 - embedded
     01/01 12 06:10 Turks fruit (urn:bluemarine:track:LxesWqRSnNeP5etPiA4RaXM2UbY=) Hermine Deurloo/Soundbite/12 Turks fruit.mp3 - embedded
+  RETRIEVED BY 14 QUERIES
 
 RECORD Tre sogni (urn:bluemarine:record:HQ8eE0JuRv3UQDUeXRN4KG1UbY4=):
   SOURCE:  embedded
@@ -861,6 +946,7 @@ RECORD Tre sogni (urn:bluemarine:record:HQ8eE0JuRv3UQDUeXRN4KG1UbY4=):
     01/01 06 06:03 Guarda nel mare (urn:bluemarine:track:JPYq5hXWvgBS8qO4FUbEp-x1yaY=) Compilations/Tre sogni/06 Guarda nel mare.mp3 - embedded
     01/01 07 05:29 Cuore di sabbia (urn:bluemarine:track:wcEDCJ88ryvFGoKUMXTBN4hirY8=) Compilations/Tre sogni/07 Cuore di sabbia.mp3 - embedded
     01/01 08 07:37 Wait for the Faith (urn:bluemarine:track:_deoJb-jzZWWC7UbtJChkigOyEI=) Compilations/Tre sogni/08 Wait for the Faith.mp3 - embedded
+  RETRIEVED BY 10 QUERIES
 
 RECORD Tributo a Lucio Battisti (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito & Giuseppe La Pusata) (urn:bluemarine:record:xaTzhov6wDgKmFQ9Tgc6YqXC3gQ=):
   SOURCE:  embedded
@@ -873,6 +959,7 @@ RECORD Tributo a Lucio Battisti (feat. Sandro Deidda, Alessandro Castiglione, Pi
     01/01 06 06:00 I giardini di marzo (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito, Giuseppe La Pusata) (urn:bluemarine:track:1snsh9dZiddmbIpP5OyAHdNxdro=) 6 in Jazz/Tributo a Lucio Battisti (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito & Giuseppe La Pusata)/06 I giardini di marzo (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito, Giuseppe La Pusata).mp3 - embedded
     01/01 07 08:02 Amarsi un po' (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito, Giuseppe La Pusata) (urn:bluemarine:track:uK84aWlrvaBYan_y70caZIVtO8k=) 6 in Jazz/Tributo a Lucio Battisti (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito & Giuseppe La Pusata)/07 Amarsi un po' (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito, Giuseppe La Pusata).mp3 - embedded
     01/01 08 05:39 Perché no (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito, Giuseppe La Pusata) (urn:bluemarine:track:9VcflIdY9ynnAZXBZYIoNbpXVj8=) 6 in Jazz/Tributo a Lucio Battisti (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito & Giuseppe La Pusata)/08 Perché no (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito, Giuseppe La Pusata).mp3 - embedded
+  RETRIEVED BY 10 QUERIES
 
 RECORD Upojenie (urn:bluemarine:record:5FSHbw3UKirpCA-GFuhcZDEYEp8=):
   SOURCE:  embedded
@@ -894,12 +981,14 @@ RECORD Upojenie (urn:bluemarine:record:5FSHbw3UKirpCA-GFuhcZDEYEp8=):
     01/01 15 03:49 Tam, gdzie nie sięga wzrok (Follow Me) (urn:bluemarine:track:BQRMDX7Syoi_4Hbj-VLVRHHNGus=) Pat Metheny & Anna Maria Jopek/Upojenie/15 Tam, gdzie nie sięga wzrok (Follow Me).mp3 - embedded
     01/01 16 01:47 Na całej połaci śnieg (The Snow Falls All Over the Place) (urn:bluemarine:track:OCQNsFHMXhyDUf0WzE3p8zdv1cM=) Pat Metheny & Anna Maria Jopek/Upojenie/16 Na całej połaci śnieg (The Snow Falls All Over the Place).mp3 - embedded
     01/01 17 04:47 Szepty i łzy (Whispers and Tears) (urn:bluemarine:track:F7yqy05qFazxgLRT1yZ-8LBc804=) Pat Metheny & Anna Maria Jopek/Upojenie/17 Szepty i łzy (Whispers and Tears).mp3 - embedded
+  RETRIEVED BY 19 QUERIES
 
 RECORD What's It All About (urn:bluemarine:record:flc7yvriASGIWSszgYUkRhdzp9c=):
   SOURCE:  embedded
   TRACKS (2 / Optional.empty):
     01/01 11 06:40 'Round Midnight (Bonus Track) (urn:bluemarine:track:aeX0X-UyIbRzfa6o_0TiONzilJs=) Pat Metheny/What's It All About Bonus Tracks/11 'Round Midnight (Bonus Track).mp3 - embedded
     01/01 12 04:29 This Nearly Was Mine (Bonus Track) (urn:bluemarine:track:GomFermUUhhrI6-VJInC9SK5s_4=) Pat Metheny/What's It All About Bonus Tracks/12 This Nearly Was Mine (Bonus Track).mp3 - embedded
+  RETRIEVED BY 4 QUERIES
 
 RECORD Zoom - Film Themes (urn:bluemarine:record:D4CamNE3LQpwf4FndhvmPtRlSXA=):
   SOURCE:  embedded
@@ -918,6 +1007,7 @@ RECORD Zoom - Film Themes (urn:bluemarine:record:D4CamNE3LQpwf4FndhvmPtRlSXA=):
     01/01 12 02:25 I'm Gonna Charleston (from the Film The Great Gatsby - Il grande Gatsby) (urn:bluemarine:track:PVGnPBzcXbiihO9CqLoiIeW0EOw=) Armando Sciascia Orchestra/Zoom - Film Themes/12 I'm Gonna Charleston (from the Film The Great Gatsby - Il grande Gatsby).mp3 - embedded
     01/01 13 02:38 Madison Bounce (from the Film Sexy) (urn:bluemarine:track:eXsiwpl-RLOIYfdTTehjn7NgBKA=) Armando Sciascia Orchestra/Zoom - Film Themes/13 Madison Bounce (from the Film Sexy).mp3 - embedded
     01/01 14 02:24 Suspence (Theme from the Film) (urn:bluemarine:track:otWZtRNtG2o35F52i2i_Gzd4-lc=) Armando Sciascia Orchestra/Zoom - Film Themes/14 Suspence (Theme from the Film).mp3 - embedded
+  RETRIEVED BY 16 QUERIES
 
 
 
@@ -1145,3 +1235,4 @@ TRACKS ORPHAN OF ARTIST (0):
 
 TRACKS ORPHAN OF RECORD (0):
 
+TOTAL NUMBER OF QUERIES: 434

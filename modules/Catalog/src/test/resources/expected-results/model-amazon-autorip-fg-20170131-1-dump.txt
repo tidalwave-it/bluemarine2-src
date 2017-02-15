@@ -150,6 +150,8 @@ ALL TRACKS (150):
   01/01 11 06:59 You Speak My Language (urn:bluemarine:track:JW7lPhSy3I1NfOjhObiJ0YgYbhs=) John Scofield With Pat Methany/I Can See Your House From Here/11 - You Speak My Language.mp3 - embedded
   01/01 07 03:36 You Took Advantage Of Me (urn:bluemarine:track:Qn35w07ZuXKT6MYN2AxcfLwPlek=) Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/07 - You Took Advantage Of Me.mp3 - embedded
   01/01 01 04:01 You're Mine, You (urn:bluemarine:track:aDkCFPjQPrsSORJu2FWtiqrEObc=) Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/01 - You're Mine, You.mp3 - embedded
+  COUNT OF ALL TRACKS RETRIEVED BY 1 QUERIES
+  ALL TRACKS RETRIEVED BY 1 QUERIES
 
 
 
@@ -169,6 +171,8 @@ ALL RECORDS (14):
   We Live Here (urn:bluemarine:record:QNCU3HbwLRZmUBxxyXrDJGsciDU=) - embedded
   What's It All About (urn:bluemarine:record:flc7yvriASGIWSszgYUkRhdzp9c=) - embedded
   You're Mine, You (Original Album Plus Bonus Tracks 1961) (urn:bluemarine:record:NKq41KgvsvRfJJ24Nze0kLCrDTk=) - embedded
+  COUNT OF ALL RECORDS RETRIEVED BY 1 QUERIES
+  ALL RECORDS RETRIEVED BY 1 QUERIES
 
 
 
@@ -186,6 +190,8 @@ ALL ARTISTS (12):
   Stevie Wonder (urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=) - embedded
   Thelonious Monk (urn:bluemarine:artist:NuxVvihrXEo-9eJ-1Kiu_HKh0S8=) - embedded
   Thelonious Sphere Monk (urn:bluemarine:artist:zFIShJu_MTqAA2_ZNWjEukpdMfQ=) - embedded
+  COUNT OF ALL ARTISTS RETRIEVED BY 1 QUERIES
+  ALL ARTISTS RETRIEVED BY 1 QUERIES
 
 TRACKS OF Ella Fitzgerald & Joe Pass (urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=) (24):
   01/01 01 04:06 I Ain't Got Nothing But The Blues (urn:bluemarine:track:XBbo-fGHwyRExHjuhiQL2luewz8=) Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/01 - I Ain't Got Nothing But The Blues.mp3 - embedded
@@ -212,6 +218,7 @@ TRACKS OF Ella Fitzgerald & Joe Pass (urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAl
   01/01 08 03:03 Blue And Sentimental (urn:bluemarine:track:p4F-_cso89rS9vdtaLKpqGp5JnQ=) Ella Fitzgerald & Joe Pass/Speak Love/08 - Blue And Sentimental.mp3 - embedded
   01/01 09 04:07 Girl Talk (urn:bluemarine:track:WHS1yXj27s8f2NIwEpHHwCD1myE=) Ella Fitzgerald & Joe Pass/Speak Love/09 - Girl Talk.mp3 - embedded
   01/01 10 06:09 Georgia On My Mind (urn:bluemarine:track:5DBwY_0wdAdPkZkFAzmbkZUh-j8=) Ella Fitzgerald & Joe Pass/Speak Love/10 - Georgia On My Mind.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Herbie Hancock (urn:bluemarine:artist:TzVyzQz4nFXGbYdGXFsl5oOZm6o=) (11):
   01/01 01 07:21 One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:5uLUEJD1O_X2rgAZ9RIcgpfhnzQ=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/01 - One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3 - embedded
@@ -225,12 +232,14 @@ TRACKS OF Herbie Hancock (urn:bluemarine:artist:TzVyzQz4nFXGbYdGXFsl5oOZm6o=) (1
   01/01 03 08:47 Little One (urn:bluemarine:track:B82_XrW5GO660cBMZBWsLsgCpWs=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/03 - Little One.mp3 - embedded
   01/01 04 10:02 Survival Of The Fittest (urn:bluemarine:track:5Tn2jagJVuRIpV05B2IGfhOXvs4=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/04 - Survival Of The Fittest.mp3 - embedded
   01/01 05 09:16 Dolphin Dance (urn:bluemarine:track:qoAPiHqsM7ol0XgLJHyZyNJdlMo=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/05 - Dolphin Dance.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF John Coltrane (urn:bluemarine:artist:usZLLSZqaqQMqgbp9GGmImCu-Ao=) (4):
   01/01 01 09:15 Don't Take Your Love From Me (Album Version) (urn:bluemarine:track:cuRZtqLe8l57iCTFmaWfh2d6Nrk=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/01 - Don't Take Your Love From Me (Album Version).mp3 - embedded
   01/01 02 08:09 I'll Get By (As Long As I Have You) (Album Version) (urn:bluemarine:track:Y71NZjYlu3Cv70-MJqUOCPrUe-c=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/02 - I'll Get By (As Long As I Have You) (Album Version).mp3 - embedded
   01/01 03 06:53 Spring Is Here (Album Version) (urn:bluemarine:track:PWKE2DbVVyqCO_6yO8OCn9Ytobk=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/03 - Spring Is Here (Album Version).mp3 - embedded
   01/01 04 10:22 Invitation (Album Version) (urn:bluemarine:track:B0onm5oQ5yeN453t1nAEX_UXbRQ=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/04 - Invitation (Album Version).mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF John Scofield (urn:bluemarine:artist:sRvQ7Bo7zNpFJJ9Hi_Erq_kxQWM=) (8):
   01/01 03 07:18 No Matter What (urn:bluemarine:track:HFM3WKNXNMqDArEG3n_Qkj89qug=) John Scofield With Pat Methany/I Can See Your House From Here/03 - No Matter What.mp3 - embedded
@@ -241,11 +250,13 @@ TRACKS OF John Scofield (urn:bluemarine:artist:sRvQ7Bo7zNpFJJ9Hi_Erq_kxQWM=) (8)
   01/01 08 04:45 S.C.O. (urn:bluemarine:track:TCHm-4lsHxwL66cxy4W76DlqiB0=) John Scofield With Pat Methany/I Can See Your House From Here/08 - S.C.O..mp3 - embedded
   01/01 10 05:49 One Way To Be (urn:bluemarine:track:LK8YoaMbh38oxQog_8SAtzdP0a8=) John Scofield With Pat Methany/I Can See Your House From Here/10 - One Way To Be.mp3 - embedded
   01/01 11 06:59 You Speak My Language (urn:bluemarine:track:JW7lPhSy3I1NfOjhObiJ0YgYbhs=) John Scofield With Pat Methany/I Can See Your House From Here/11 - You Speak My Language.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF John Scofield With Pat Methany (urn:bluemarine:artist:VR1hJB2jYib2STxF0cbvPcb53bo=) (3):
   01/01 01 07:47 I Can See Your House From Here (urn:bluemarine:track:xS948vxWkpMhKEmKk1TIlJHSSF8=) John Scofield With Pat Methany/I Can See Your House From Here/01 - I Can See Your House From Here.mp3 - embedded
   01/01 02 04:19 The Red One (urn:bluemarine:track:Vny4Mv7x6EEHfwHJO1ShBVCSBi4=) John Scofield With Pat Methany/I Can See Your House From Here/02 - The Red One.mp3 - embedded
   01/01 09 05:28 Quiet Rising (urn:bluemarine:track:HhF_IwmT0Q1UTryOaGx_JJQv-_A=) John Scofield With Pat Methany/I Can See Your House From Here/09 - Quiet Rising.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Miles Davis (urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=) (20):
   01/01 01 09:26 So What (urn:bluemarine:track:US0G_RU1ClHUMGmiPIb8P5wyrfg=) Miles Davis/Kind Of Blue (Amazon Edition)/01 - So What.mp3 - embedded
@@ -268,6 +279,7 @@ TRACKS OF Miles Davis (urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=) (20):
   01/01 18 08:16 Somethin' Else (urn:bluemarine:track:cjjGWUUpi3m1PCj-SehWHtw-j3o=) Miles Davis/Kind Of Blue (Amazon Edition)/18 - Somethin' Else.mp3 - embedded
   01/01 19 08:27 One For Daddy-O (urn:bluemarine:track:s6Ug9VaVbLmagI4yeFBsRx9P2Zw=) Miles Davis/Kind Of Blue (Amazon Edition)/19 - One For Daddy-O.mp3 - embedded
   01/01 20 04:07 Dancing In The Dark (urn:bluemarine:track:UZCrhtp50UdV_IzOhqMu1uJKhek=) Miles Davis/Kind Of Blue (Amazon Edition)/20 - Dancing In The Dark.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Pat Metheny (urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=) (25):
   01/01 01 15:48 Orchestrion (urn:bluemarine:track:h2pfiqVLLkEzJyoxUxUUJrvjlt4=) Pat Metheny/Orchestrion/01 - Orchestrion.mp3 - embedded
@@ -295,6 +307,7 @@ TRACKS OF Pat Metheny (urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=) (25):
   01/01 09 05:18 Betcha By Golly, Wow (urn:bluemarine:track:2q8ktGkomI9ZSomqDmgnAzjiLeY=) Pat Metheny/What's It All About/09 - Betcha by Golly, Wow.mp3 - embedded
   01/01 10 04:22 And I Love Her (urn:bluemarine:track:g27KOA6hncFcaM23mUk8XtELvSQ=) Pat Metheny/What's It All About/10 - And I Love Her.mp3 - embedded
   01/01 11 06:40 'round Midnight (urn:bluemarine:track:gtjB3RRAEE0oK8eFS9eiQuODIHQ=) Pat Metheny/What's It All About/11 - 'Round Midnight.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Pat Metheny Group (urn:bluemarine:artist:NvLPHYt0geK2dIc-p-afF-ZVtOE=) (9):
   01/01 01 07:38 Here To Stay (Album Version) (urn:bluemarine:track:nT6PtWE7VFsBl5re41AxAGqpFv8=) Pat Metheny Group/We Live Here/01 - Here To Stay (Album Version).mp3 - embedded
@@ -306,6 +319,7 @@ TRACKS OF Pat Metheny Group (urn:bluemarine:artist:NvLPHYt0geK2dIc-p-afF-ZVtOE=)
   01/01 07 07:03 Something To Remind You (Album Version) (urn:bluemarine:track:9qWwUgbYtw3Bzt3TNowlPqkuiRw=) Pat Metheny Group/We Live Here/07 - Something To Remind You (Album Version).mp3 - embedded
   01/01 08 07:35 Red Sky (Album Version) (urn:bluemarine:track:hXb570O70eTqn3eykNEjiGg6WtQ=) Pat Metheny Group/We Live Here/08 - Red Sky (Album Version).mp3 - embedded
   01/01 09 06:11 Stranger In Town (Album Version) (urn:bluemarine:track:NfVLCdCNjolFHSneAEN6hpZulEc=) Pat Metheny Group/We Live Here/09 - Stranger In Town (Album Version).mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Sarah Vaughan, Quincy Jones and His Orchestra (urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=) (14):
   01/01 01 04:01 You're Mine, You (urn:bluemarine:track:aDkCFPjQPrsSORJu2FWtiqrEObc=) Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/01 - You're Mine, You.mp3 - embedded
@@ -322,6 +336,7 @@ TRACKS OF Sarah Vaughan, Quincy Jones and His Orchestra (urn:bluemarine:artist:0
   01/01 12 03:05 On Green Dolphin Street (urn:bluemarine:track:n32meJvUKXy1SAD7MC_fo7rT8k0=) Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/12 - On Green Dolphin Street.mp3 - embedded
   01/01 13 02:49 One Mint Julep (Bonus Track) (urn:bluemarine:track:ZDAwL7AfR9e-PpY4ELKZI2U8aio=) Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/13 - One Mint Julep (Bonus Track).mp3 - embedded
   01/01 14 02:42 (Mama) He Treats Your Daughter Mean [Bonus Track] (urn:bluemarine:track:u_xZ6J9bVDJWvgEqenlC7z4-qfI=) Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/14 - (Mama) He Treats Your Daughter Mean [Bonus Track.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Stevie Wonder (urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=) (21):
   01/02 01 06:34 Isn't She Lovely (urn:bluemarine:track:On4MPxQh05wsk6HddHC4Bx3-ges=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 01 - Isn't She Lovely.mp3 - embedded
@@ -345,9 +360,11 @@ TRACKS OF Stevie Wonder (urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=) (21
   01/02 10 05:05 All Day Sucker (urn:bluemarine:track:-sP2dUCnPkpTPftXB5SEr1WKP-c=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 10 - All Day Sucker.mp3 - embedded
   01/02 10 06:23 Ordinary Pain (urn:bluemarine:track:OFgF7qO0g5Uu0Ta_IIFqkDGbjtU=) Stevie Wonder/Songs In The Key Of Life/10 - Ordinary Pain.mp3 - embedded
   01/02 11 03:56 Easy Goin' Evening (My Mama's Call) (urn:bluemarine:track:A0VauJnrAZITZyYR_lySR-feQHU=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 11 - Easy Goin' Evening (My Mama's Call).mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Thelonious Monk (urn:bluemarine:artist:NuxVvihrXEo-9eJ-1Kiu_HKh0S8=) (1):
   01/01 05 03:51 Brilliant Corners (Album Version) (urn:bluemarine:track:qvL_qVMEU89x1COVCGy80GWDgBk=) Thelonious Sphere Monk/Monk's Blues/05 - Brilliant Corners (Album Version).mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Thelonious Sphere Monk (urn:bluemarine:artist:zFIShJu_MTqAA2_ZNWjEukpdMfQ=) (10):
   01/01 01 03:45 Let's Cool One (Album Version) (urn:bluemarine:track:y-3vR4bdZO54ie8-9n8m1pOUo94=) Thelonious Sphere Monk/Monk's Blues/01 - Let's Cool One (Album Version).mp3 - embedded
@@ -360,70 +377,95 @@ TRACKS OF Thelonious Sphere Monk (urn:bluemarine:artist:zFIShJu_MTqAA2_ZNWjEukpd
   01/01 09 07:17 Straight, No Chaser (urn:bluemarine:track:bE7b8mwrFn0vFWjE3ZEk2V-qcBk=) Thelonious Sphere Monk/Monk's Blues/09 - Straight, No Chaser.mp3 - embedded
   01/01 10 06:14 Blue Monk (urn:bluemarine:track:ueOVz3lq_EENnMHuMNyQQ2yxkv4=) Thelonious Sphere Monk/Monk's Blues/10 - Blue Monk.mp3 - embedded
   01/01 11 04:13 'Round Midnight (urn:bluemarine:track:R7N5_KEy4Tyg-aVGxDfwa31orUk=) Thelonious Sphere Monk/Monk's Blues/11 - 'Round Midnight.mp3 - embedded
+  RETRIEVED BY 2 QUERIES
 
 RECORDS OF Ella Fitzgerald & Joe Pass (urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=) (2):
   Fitzgerald & Pass...Again (urn:bluemarine:record:H2kI-cHz7pI-uDq5PvV7fgG_R14=)
   Speak Love (urn:bluemarine:record:3MZBxRF7vHm9HIon7caMBvRyBe4=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Herbie Hancock (urn:bluemarine:artist:TzVyzQz4nFXGbYdGXFsl5oOZm6o=) (2):
   Empyrean Isles (The Rudy Van Gelder Edition) (urn:bluemarine:record:dixhfU1CMmUSXDlaE3u8Dtr_XG4=)
   Maiden Voyage (The Rudy Van Gelder Edition) (urn:bluemarine:record:eAmukeW4wSFaoFoAVOfGZ9Qts8g=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF John Coltrane (urn:bluemarine:artist:usZLLSZqaqQMqgbp9GGmImCu-Ao=) (1):
   Standard Coltrane (Rudy Van Gelder Remaster) (urn:bluemarine:record:UZ9WpMFVyppjYUHgKmJ2_NlJ0AU=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF John Scofield (urn:bluemarine:artist:sRvQ7Bo7zNpFJJ9Hi_Erq_kxQWM=) (1):
   I Can See Your House From Here (urn:bluemarine:record:QL-A6syFwPY5XCc52i22u3VvhJA=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF John Scofield With Pat Methany (urn:bluemarine:artist:VR1hJB2jYib2STxF0cbvPcb53bo=) (1):
   I Can See Your House From Here (urn:bluemarine:record:QL-A6syFwPY5XCc52i22u3VvhJA=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Miles Davis (urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=) (1):
   Kind Of Blue (Amazon Edition) (urn:bluemarine:record:6_dgxK-UQ2fO0dhAJY29xyMthxc=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Pat Metheny (urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=) (3):
   Orchestrion (urn:bluemarine:record:btDif3r3mgzt3cOWjXPPAs4gb_g=)
   Unity Band (urn:bluemarine:record:iw2oIy2-BYGLzvaKeJW85PL1EDQ=)
   What's It All About (urn:bluemarine:record:flc7yvriASGIWSszgYUkRhdzp9c=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Pat Metheny Group (urn:bluemarine:artist:NvLPHYt0geK2dIc-p-afF-ZVtOE=) (1):
   We Live Here (urn:bluemarine:record:QNCU3HbwLRZmUBxxyXrDJGsciDU=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Sarah Vaughan, Quincy Jones and His Orchestra (urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=) (1):
   You're Mine, You (Original Album Plus Bonus Tracks 1961) (urn:bluemarine:record:NKq41KgvsvRfJJ24Nze0kLCrDTk=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Stevie Wonder (urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=) (1):
   Songs In The Key Of Life (urn:bluemarine:record:kYBL2HWEEjdYC7tL2NY5DRTtG1k=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Thelonious Monk (urn:bluemarine:artist:NuxVvihrXEo-9eJ-1Kiu_HKh0S8=) (1):
   Monk's Blues (urn:bluemarine:record:j9O4FGH45wXJi8gVL1iFoHSCNRY=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Thelonious Sphere Monk (urn:bluemarine:artist:zFIShJu_MTqAA2_ZNWjEukpdMfQ=) (1):
   Monk's Blues (urn:bluemarine:record:j9O4FGH45wXJi8gVL1iFoHSCNRY=)
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Ella Fitzgerald & Joe Pass (urn:bluemarine:artist:1CugcNtuSuqdBMJv6cAlvJef3rA=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Herbie Hancock (urn:bluemarine:artist:TzVyzQz4nFXGbYdGXFsl5oOZm6o=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF John Coltrane (urn:bluemarine:artist:usZLLSZqaqQMqgbp9GGmImCu-Ao=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF John Scofield (urn:bluemarine:artist:sRvQ7Bo7zNpFJJ9Hi_Erq_kxQWM=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF John Scofield With Pat Methany (urn:bluemarine:artist:VR1hJB2jYib2STxF0cbvPcb53bo=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Miles Davis (urn:bluemarine:artist:NUuV0E3uUA7aDhK8VMXXhqzKb_o=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Pat Metheny (urn:bluemarine:artist:DzsoPY6opKrOKFCRzm3mjG7rdkA=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Pat Metheny Group (urn:bluemarine:artist:NvLPHYt0geK2dIc-p-afF-ZVtOE=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Sarah Vaughan, Quincy Jones and His Orchestra (urn:bluemarine:artist:0rRj5VqYEiyRVO6zLBNbZq38KVc=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Stevie Wonder (urn:bluemarine:artist:NJP-HUgYesoRu0RJ77ZgqOAwGoA=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Thelonious Monk (urn:bluemarine:artist:NuxVvihrXEo-9eJ-1Kiu_HKh0S8=) (0):
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Thelonious Sphere Monk (urn:bluemarine:artist:zFIShJu_MTqAA2_ZNWjEukpdMfQ=) (0):
+  RETRIEVED BY 3 QUERIES
 
 RECORD Empyrean Isles (The Rudy Van Gelder Edition) (urn:bluemarine:record:dixhfU1CMmUSXDlaE3u8Dtr_XG4=):
   SOURCE:  embedded
@@ -434,6 +476,7 @@ RECORD Empyrean Isles (The Rudy Van Gelder Edition) (urn:bluemarine:record:dixhf
     01/01 04 14:01 The Egg (1999 - Remaster) [Rudy Van Gelder Edition] (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:J670YeZavhlxJGUbEFomjuPcJIA=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/04 - The Egg (1999 - Remaster) [Rudy Van Gelder Edition] (1999 Digital Remaster) (Rudy Van.mp3 - embedded
     01/01 05 07:36 One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:KFguFHQPt4fodQG5oNXKJjRUmzE=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/05 - One Finger Snap (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3 - embedded
     01/01 06 10:47 Oliloqui Valley (1999 Digital Remaster) (Rudy Van Gelder Edition) (urn:bluemarine:track:W5-pGtDsbYF7q8qpUccPubmM0rI=) Herbie Hancock/Empyrean Isles (The Rudy Van Gelder Edition)/06 - Oliloqui Valley (1999 Digital Remaster) (Rudy Van Gelder Edition).mp3 - embedded
+  RETRIEVED BY 8 QUERIES
 
 RECORD Fitzgerald & Pass...Again (urn:bluemarine:record:H2kI-cHz7pI-uDq5PvV7fgG_R14=):
   SOURCE:  embedded
@@ -452,6 +495,7 @@ RECORD Fitzgerald & Pass...Again (urn:bluemarine:record:H2kI-cHz7pI-uDq5PvV7fgG_
     01/01 12 02:25 Nature Boy (urn:bluemarine:track:tjVIVmNaJCB6GWDCm0fin__Tt2I=) Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/12 - Nature Boy.mp3 - embedded
     01/01 13 03:50 Tennessee Waltz (urn:bluemarine:track:LWm93aMLztwIuJ0UNM1vu2xYSTg=) Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/13 - Tennessee Waltz.mp3 - embedded
     01/01 14 05:03 One Note Samba (urn:bluemarine:track:Hnin_0QYNW7lsGGLJVOJN66X5wE=) Ella Fitzgerald & Joe Pass/Fitzgerald & Pass...Again/14 - One Note Samba.mp3 - embedded
+  RETRIEVED BY 16 QUERIES
 
 RECORD I Can See Your House From Here (urn:bluemarine:record:QL-A6syFwPY5XCc52i22u3VvhJA=):
   SOURCE:  embedded
@@ -467,6 +511,7 @@ RECORD I Can See Your House From Here (urn:bluemarine:record:QL-A6syFwPY5XCc52i2
     01/01 09 05:28 Quiet Rising (urn:bluemarine:track:HhF_IwmT0Q1UTryOaGx_JJQv-_A=) John Scofield With Pat Methany/I Can See Your House From Here/09 - Quiet Rising.mp3 - embedded
     01/01 10 05:49 One Way To Be (urn:bluemarine:track:LK8YoaMbh38oxQog_8SAtzdP0a8=) John Scofield With Pat Methany/I Can See Your House From Here/10 - One Way To Be.mp3 - embedded
     01/01 11 06:59 You Speak My Language (urn:bluemarine:track:JW7lPhSy3I1NfOjhObiJ0YgYbhs=) John Scofield With Pat Methany/I Can See Your House From Here/11 - You Speak My Language.mp3 - embedded
+  RETRIEVED BY 13 QUERIES
 
 RECORD Kind Of Blue (Amazon Edition) (urn:bluemarine:record:6_dgxK-UQ2fO0dhAJY29xyMthxc=):
   SOURCE:  embedded
@@ -491,6 +536,7 @@ RECORD Kind Of Blue (Amazon Edition) (urn:bluemarine:record:6_dgxK-UQ2fO0dhAJY29
     01/01 18 08:16 Somethin' Else (urn:bluemarine:track:cjjGWUUpi3m1PCj-SehWHtw-j3o=) Miles Davis/Kind Of Blue (Amazon Edition)/18 - Somethin' Else.mp3 - embedded
     01/01 19 08:27 One For Daddy-O (urn:bluemarine:track:s6Ug9VaVbLmagI4yeFBsRx9P2Zw=) Miles Davis/Kind Of Blue (Amazon Edition)/19 - One For Daddy-O.mp3 - embedded
     01/01 20 04:07 Dancing In The Dark (urn:bluemarine:track:UZCrhtp50UdV_IzOhqMu1uJKhek=) Miles Davis/Kind Of Blue (Amazon Edition)/20 - Dancing In The Dark.mp3 - embedded
+  RETRIEVED BY 22 QUERIES
 
 RECORD Maiden Voyage (The Rudy Van Gelder Edition) (urn:bluemarine:record:eAmukeW4wSFaoFoAVOfGZ9Qts8g=):
   SOURCE:  embedded
@@ -500,6 +546,7 @@ RECORD Maiden Voyage (The Rudy Van Gelder Edition) (urn:bluemarine:record:eAmuke
     01/01 03 08:47 Little One (urn:bluemarine:track:B82_XrW5GO660cBMZBWsLsgCpWs=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/03 - Little One.mp3 - embedded
     01/01 04 10:02 Survival Of The Fittest (urn:bluemarine:track:5Tn2jagJVuRIpV05B2IGfhOXvs4=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/04 - Survival Of The Fittest.mp3 - embedded
     01/01 05 09:16 Dolphin Dance (urn:bluemarine:track:qoAPiHqsM7ol0XgLJHyZyNJdlMo=) Herbie Hancock/Maiden Voyage (The Rudy Van Gelder Edition)/05 - Dolphin Dance.mp3 - embedded
+  RETRIEVED BY 7 QUERIES
 
 RECORD Monk's Blues (urn:bluemarine:record:j9O4FGH45wXJi8gVL1iFoHSCNRY=):
   SOURCE:  embedded
@@ -515,6 +562,7 @@ RECORD Monk's Blues (urn:bluemarine:record:j9O4FGH45wXJi8gVL1iFoHSCNRY=):
     01/01 09 07:17 Straight, No Chaser (urn:bluemarine:track:bE7b8mwrFn0vFWjE3ZEk2V-qcBk=) Thelonious Sphere Monk/Monk's Blues/09 - Straight, No Chaser.mp3 - embedded
     01/01 10 06:14 Blue Monk (urn:bluemarine:track:ueOVz3lq_EENnMHuMNyQQ2yxkv4=) Thelonious Sphere Monk/Monk's Blues/10 - Blue Monk.mp3 - embedded
     01/01 11 04:13 'Round Midnight (urn:bluemarine:track:R7N5_KEy4Tyg-aVGxDfwa31orUk=) Thelonious Sphere Monk/Monk's Blues/11 - 'Round Midnight.mp3 - embedded
+  RETRIEVED BY 13 QUERIES
 
 RECORD Orchestrion (urn:bluemarine:record:btDif3r3mgzt3cOWjXPPAs4gb_g=):
   SOURCE:  embedded
@@ -524,6 +572,7 @@ RECORD Orchestrion (urn:bluemarine:record:btDif3r3mgzt3cOWjXPPAs4gb_g=):
     01/01 03 08:34 Expansion (urn:bluemarine:track:V9sE9b3GOH1G7lRyH-JgAfarj0w=) Pat Metheny/Orchestrion/03 - Expansion.mp3 - embedded
     01/01 04 09:17 Soul Search (urn:bluemarine:track:3XHVnRJSATpsqfl2TyshaCeDJtk=) Pat Metheny/Orchestrion/04 - Soul Search.mp3 - embedded
     01/01 05 07:44 Spirit Of The Air (urn:bluemarine:track:kx29swV2hDOTnY0sNyCrC9bD2BA=) Pat Metheny/Orchestrion/05 - Spirit Of The Air.mp3 - embedded
+  RETRIEVED BY 7 QUERIES
 
 RECORD Songs In The Key Of Life (urn:bluemarine:record:kYBL2HWEEjdYC7tL2NY5DRTtG1k=):
   SOURCE:  embedded
@@ -549,6 +598,7 @@ RECORD Songs In The Key Of Life (urn:bluemarine:record:kYBL2HWEEjdYC7tL2NY5DRTtG
     01/02 10 05:05 All Day Sucker (urn:bluemarine:track:-sP2dUCnPkpTPftXB5SEr1WKP-c=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 10 - All Day Sucker.mp3 - embedded
     01/02 10 06:23 Ordinary Pain (urn:bluemarine:track:OFgF7qO0g5Uu0Ta_IIFqkDGbjtU=) Stevie Wonder/Songs In The Key Of Life/10 - Ordinary Pain.mp3 - embedded
     01/02 11 03:56 Easy Goin' Evening (My Mama's Call) (urn:bluemarine:track:A0VauJnrAZITZyYR_lySR-feQHU=) Stevie Wonder/Songs In The Key Of Life/(Disc 2) 11 - Easy Goin' Evening (My Mama's Call).mp3 - embedded
+  RETRIEVED BY 23 QUERIES
 
 RECORD Speak Love (urn:bluemarine:record:3MZBxRF7vHm9HIon7caMBvRyBe4=):
   SOURCE:  embedded
@@ -563,6 +613,7 @@ RECORD Speak Love (urn:bluemarine:record:3MZBxRF7vHm9HIon7caMBvRyBe4=):
     01/01 08 03:03 Blue And Sentimental (urn:bluemarine:track:p4F-_cso89rS9vdtaLKpqGp5JnQ=) Ella Fitzgerald & Joe Pass/Speak Love/08 - Blue And Sentimental.mp3 - embedded
     01/01 09 04:07 Girl Talk (urn:bluemarine:track:WHS1yXj27s8f2NIwEpHHwCD1myE=) Ella Fitzgerald & Joe Pass/Speak Love/09 - Girl Talk.mp3 - embedded
     01/01 10 06:09 Georgia On My Mind (urn:bluemarine:track:5DBwY_0wdAdPkZkFAzmbkZUh-j8=) Ella Fitzgerald & Joe Pass/Speak Love/10 - Georgia On My Mind.mp3 - embedded
+  RETRIEVED BY 12 QUERIES
 
 RECORD Standard Coltrane (Rudy Van Gelder Remaster) (urn:bluemarine:record:UZ9WpMFVyppjYUHgKmJ2_NlJ0AU=):
   SOURCE:  embedded
@@ -571,6 +622,7 @@ RECORD Standard Coltrane (Rudy Van Gelder Remaster) (urn:bluemarine:record:UZ9Wp
     01/01 02 08:09 I'll Get By (As Long As I Have You) (Album Version) (urn:bluemarine:track:Y71NZjYlu3Cv70-MJqUOCPrUe-c=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/02 - I'll Get By (As Long As I Have You) (Album Version).mp3 - embedded
     01/01 03 06:53 Spring Is Here (Album Version) (urn:bluemarine:track:PWKE2DbVVyqCO_6yO8OCn9Ytobk=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/03 - Spring Is Here (Album Version).mp3 - embedded
     01/01 04 10:22 Invitation (Album Version) (urn:bluemarine:track:B0onm5oQ5yeN453t1nAEX_UXbRQ=) John Coltrane/Standard Coltrane (Rudy Van Gelder Remaster)/04 - Invitation (Album Version).mp3 - embedded
+  RETRIEVED BY 6 QUERIES
 
 RECORD Unity Band (urn:bluemarine:record:iw2oIy2-BYGLzvaKeJW85PL1EDQ=):
   SOURCE:  embedded
@@ -584,6 +636,7 @@ RECORD Unity Band (urn:bluemarine:record:iw2oIy2-BYGLzvaKeJW85PL1EDQ=):
     01/01 07 11:26 Signals (Orchestrion Sketch) (urn:bluemarine:track:4C0eNCGTjbNKm59ykD2J5C7EhDI=) Pat Metheny/Unity Band/07 - Signals (Orchestrion Sketch).mp3 - embedded
     01/01 08 05:57 Then and Now (urn:bluemarine:track:NlY_EBT-LCJudlAGmGsxkBRCuHI=) Pat Metheny/Unity Band/08 - Then and Now.mp3 - embedded
     01/01 09 08:34 Breakdealer (urn:bluemarine:track:WrrMLlI0S_imF5Lym1UToDDpukA=) Pat Metheny/Unity Band/09 - Breakdealer.mp3 - embedded
+  RETRIEVED BY 11 QUERIES
 
 RECORD We Live Here (urn:bluemarine:record:QNCU3HbwLRZmUBxxyXrDJGsciDU=):
   SOURCE:  embedded
@@ -597,6 +650,7 @@ RECORD We Live Here (urn:bluemarine:record:QNCU3HbwLRZmUBxxyXrDJGsciDU=):
     01/01 07 07:03 Something To Remind You (Album Version) (urn:bluemarine:track:9qWwUgbYtw3Bzt3TNowlPqkuiRw=) Pat Metheny Group/We Live Here/07 - Something To Remind You (Album Version).mp3 - embedded
     01/01 08 07:35 Red Sky (Album Version) (urn:bluemarine:track:hXb570O70eTqn3eykNEjiGg6WtQ=) Pat Metheny Group/We Live Here/08 - Red Sky (Album Version).mp3 - embedded
     01/01 09 06:11 Stranger In Town (Album Version) (urn:bluemarine:track:NfVLCdCNjolFHSneAEN6hpZulEc=) Pat Metheny Group/We Live Here/09 - Stranger In Town (Album Version).mp3 - embedded
+  RETRIEVED BY 11 QUERIES
 
 RECORD What's It All About (urn:bluemarine:record:flc7yvriASGIWSszgYUkRhdzp9c=):
   SOURCE:  embedded
@@ -612,6 +666,7 @@ RECORD What's It All About (urn:bluemarine:record:flc7yvriASGIWSszgYUkRhdzp9c=):
     01/01 09 05:18 Betcha By Golly, Wow (urn:bluemarine:track:2q8ktGkomI9ZSomqDmgnAzjiLeY=) Pat Metheny/What's It All About/09 - Betcha by Golly, Wow.mp3 - embedded
     01/01 10 04:22 And I Love Her (urn:bluemarine:track:g27KOA6hncFcaM23mUk8XtELvSQ=) Pat Metheny/What's It All About/10 - And I Love Her.mp3 - embedded
     01/01 11 06:40 'round Midnight (urn:bluemarine:track:gtjB3RRAEE0oK8eFS9eiQuODIHQ=) Pat Metheny/What's It All About/11 - 'Round Midnight.mp3 - embedded
+  RETRIEVED BY 13 QUERIES
 
 RECORD You're Mine, You (Original Album Plus Bonus Tracks 1961) (urn:bluemarine:record:NKq41KgvsvRfJJ24Nze0kLCrDTk=):
   SOURCE:  embedded
@@ -630,6 +685,7 @@ RECORD You're Mine, You (Original Album Plus Bonus Tracks 1961) (urn:bluemarine:
     01/01 12 03:05 On Green Dolphin Street (urn:bluemarine:track:n32meJvUKXy1SAD7MC_fo7rT8k0=) Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/12 - On Green Dolphin Street.mp3 - embedded
     01/01 13 02:49 One Mint Julep (Bonus Track) (urn:bluemarine:track:ZDAwL7AfR9e-PpY4ELKZI2U8aio=) Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/13 - One Mint Julep (Bonus Track).mp3 - embedded
     01/01 14 02:42 (Mama) He Treats Your Daughter Mean [Bonus Track] (urn:bluemarine:track:u_xZ6J9bVDJWvgEqenlC7z4-qfI=) Sarah Vaughan, Quincy Jones and His Orchestra/You're Mine, You (Original Album Plus Bonus Tracks/14 - (Mama) He Treats Your Daughter Mean [Bonus Track.mp3 - embedded
+  RETRIEVED BY 16 QUERIES
 
 
 
@@ -793,3 +849,4 @@ TRACKS ORPHAN OF ARTIST (0):
 
 TRACKS ORPHAN OF RECORD (0):
 
+TOTAL NUMBER OF QUERIES: 282
