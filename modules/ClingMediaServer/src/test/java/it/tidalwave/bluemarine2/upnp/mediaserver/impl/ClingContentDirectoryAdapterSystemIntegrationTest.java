@@ -66,8 +66,10 @@ import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.bluemarine2.util.Formatters.*;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
+import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
 import it.tidalwave.bluemarine2.message.PowerOffNotification;
 import static it.tidalwave.bluemarine2.model.ModelPropertyNames.ROOT_PATH;
+import it.tidalwave.bluemarine2.model.impl.DefaultCacheManager;
 import it.tidalwave.bluemarine2.rest.impl.server.DefaultResourceServer;
 
 /***********************************************************************************************************************
@@ -94,6 +96,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
     private UpnpClient upnpClient;
 
     private DefaultResourceServer resourceServer;
+
+    private DefaultCacheManager cacheManager;
 
     /*******************************************************************************************************************
      *
@@ -149,6 +153,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
         resourceServer.onPowerOnNotification(powerOnNotification);
         final Repository repository = context.getBean(Repository.class);
         loadRepository(repository, repositoryPath);
+        cacheManager = context.getBean(DefaultCacheManager.class);
       }
 
     /*******************************************************************************************************************
@@ -191,6 +196,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
             log.info("============================================================================================");
             log.info(">>>> sending {} ...", params);
             RepositoryTrackFinder.resetQueryCount();
+            cacheManager.onPersistenceUpdated(new PersistenceInitializedNotification());
             final CountDownLatch latch = new CountDownLatch(1);
 
             final Browse browse = new Browse(upnpClient.getService(),
