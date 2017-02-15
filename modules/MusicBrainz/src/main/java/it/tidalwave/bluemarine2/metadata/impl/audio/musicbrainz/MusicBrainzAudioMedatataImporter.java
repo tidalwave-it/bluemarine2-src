@@ -87,7 +87,6 @@ import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.metadata.musicbrainz.MusicBrainzMetadataProvider.*;
-import static it.tidalwave.bluemarine2.model.vocabulary.BM.recordIriFor;
 import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
@@ -719,7 +718,7 @@ public class MusicBrainzAudioMedatataImporter
         final Cddb cddb                  = metadata.get(CDDB).get();
         final String recordTitle         = rmd.pickTitle();
         final IRI embeddedRecordIri      = recordIriOf(metadata, embeddedRecordTitle);
-        final IRI recordIri              = recordIriFor(rmd.computeId());
+        final IRI recordIri              = BM.recordIriFor(rmd.computeId());
         log.info("importing {} {} ...", recordTitle, (rmd.isAlternative() ? "(alternative)" : ""));
 
         ModelBuilder model = createModelBuilder()

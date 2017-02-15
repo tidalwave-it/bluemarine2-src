@@ -10,3 +10,5 @@ Browse({ObjectID=/music/a+r+t/a:DzsoPY6opKrOKFCRzm3mjG7rdkA=/r:LQP6rEdfa7eOteASu
         <res bitrate="320" bitsPerSample="16" duration="0:05:37.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="13494974">http://<server>/rest/audiofile/urn:bluemarine:audiofile:oh7MfsPZtSFZeGOotMkJ0UVdVow=/content</res>
     </item>
 </DIDL-Lite>
+
+QUERY COUNT: 7

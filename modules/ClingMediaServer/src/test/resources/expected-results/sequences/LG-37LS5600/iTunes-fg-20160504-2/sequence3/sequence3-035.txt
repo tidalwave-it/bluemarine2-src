@@ -109,3 +109,5 @@ Browse({ObjectID=/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=, BrowseFlag=BrowseDir
         <res bitrate="320" bitsPerSample="16" duration="0:03:27.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="8285386">http://<server>/rest/audiofile/urn:bluemarine:audiofile:3rv7St-EqvYm52Z5oNJfNKIpLRI=/content</res>
     </item>
 </DIDL-Lite>
+
+QUERY COUNT: 16

@@ -28,45 +28,31 @@
  */
 package it.tidalwave.util;
 
-import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
-import java.util.List;
-import java.util.function.Supplier;
-import java.util.function.Function;
-import static java.util.stream.Collectors.toList;
+import org.slf4j.LoggerFactory;
+import lombok.NoArgsConstructor;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
- *
- * A {@link Finder} which retrieve results from a {@link Supplier}.
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id: $
  *
  **********************************************************************************************************************/
-@Immutable
-public class MappingFinder<TYPE> extends SupplierBasedFinder8<TYPE>
+@NoArgsConstructor(access = PRIVATE)
+public final class LoggingUtilities
   {
-    private static final long serialVersionUID = -6359683808082070089L;
-
-    @Nonnull
-    private final transient Function<TYPE, TYPE> mapper;
-
-    public MappingFinder (final @Nonnull Finder8<TYPE> delegate, final @Nonnull Function<TYPE, TYPE> mapper)
+    public static void dumpStack (final Object owner, final boolean dump)
       {
-        super(delegate::results);
-        this.mapper = mapper;
-      }
-
-    public MappingFinder (final @Nonnull MappingFinder other, final @Nonnull Object override)
-      {
-        super(other, override);
-        final MappingFinder<TYPE> source = getSource(MappingFinder.class, other, override);
-        this.mapper = source.mapper;
-      }
-
-    @Override
-    protected List<? extends TYPE> computeResults()
-      {
-        return super.computeResults().stream().map(mapper).collect(toList());
+        if (dump)
+          {
+            try
+              {
+                throw new RuntimeException("stack trace");
+              }
+            catch (RuntimeException e)
+              {
+                LoggerFactory.getLogger(owner.getClass()).warn("stack-trace", e);
+              }
+          }
       }
   }
