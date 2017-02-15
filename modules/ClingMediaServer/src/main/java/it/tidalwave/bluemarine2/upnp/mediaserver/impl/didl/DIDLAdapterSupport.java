@@ -71,6 +71,19 @@ public abstract class DIDLAdapterSupport<T extends As8> implements DIDLAdapter
           {
             final Container container = (Container)didlObject;
             datum.asOptional(SimpleComposite8).ifPresent(c -> container.setChildCount(c.findChildren().count()));
+//
+//          ALTERNATE FIX, BAD
+//            final Optional<Integer> x = datum.asOptional(Record.class).flatMap(r -> r.getTrackCount());
+//
+//            if (x.isPresent())
+//              {
+//                x.ifPresent(container::setChildCount);
+//              }
+//            else
+//              {
+//                datum.asOptional(SimpleComposite8).ifPresent(c -> container.setChildCount(c.findChildren().count()));
+//              }
+
             container.setItems(Collections.emptyList());
           }
 

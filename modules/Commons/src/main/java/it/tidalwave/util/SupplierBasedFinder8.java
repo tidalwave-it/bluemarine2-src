@@ -28,6 +28,7 @@
  */
 package it.tidalwave.util;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.util.Collection;
@@ -35,6 +36,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Supplier;
 import it.tidalwave.util.spi.SimpleFinder8Support;
+import lombok.AllArgsConstructor;
 
 /***********************************************************************************************************************
  *
@@ -44,29 +46,40 @@ import it.tidalwave.util.spi.SimpleFinder8Support;
  * @version $Id: $
  *
  **********************************************************************************************************************/
-@Immutable
+@Immutable @AllArgsConstructor
 public class SupplierBasedFinder8<T> extends SimpleFinder8Support<T>
   {
     private static final long serialVersionUID = 1344191036948400804L;
 
     @Nonnull
-    private final Supplier<Collection<? extends T>> supplier;
+    private final Supplier<Collection<? extends T>> resultSupplier;
 
-    public SupplierBasedFinder8 (final @Nonnull Supplier<Collection<? extends T>> supplier)
+    @Nonnull
+    private final Supplier<Integer> countSupplier;
+
+    public SupplierBasedFinder8 (final @Nonnull Supplier<Collection<? extends T>> resultSupplier)
       {
-        this.supplier = supplier;
+        this(resultSupplier, () -> resultSupplier.get().size());
       }
 
     public SupplierBasedFinder8 (final @Nonnull SupplierBasedFinder8<T> other, @Nonnull Object override)
       {
         super(other, override);
         final SupplierBasedFinder8<T> source = getSource(SupplierBasedFinder8.class, other, override);
-        this.supplier = source.supplier;
+        this.resultSupplier = source.resultSupplier;
+        this.countSupplier  = source.countSupplier;
       }
 
     @Override @Nonnull
     protected List<? extends T> computeResults() // FIXME: or computeNeededResults()?
       {
-        return new CopyOnWriteArrayList<>(supplier.get());
+        return new CopyOnWriteArrayList<>(resultSupplier.get());
+      }
+
+    // This can get out of sync with results().size() if paging or such - in case of paging, fallback to super.count()
+    @Override @Nonnegative
+    public int count()
+      {
+        return countSupplier.get();
       }
   }

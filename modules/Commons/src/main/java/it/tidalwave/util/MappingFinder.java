@@ -53,7 +53,7 @@ public class MappingFinder<TYPE> extends SupplierBasedFinder8<TYPE>
 
     public MappingFinder (final @Nonnull Finder8<TYPE> delegate, final @Nonnull Function<TYPE, TYPE> mapper)
       {
-        super(delegate::results);
+        super(delegate::results, delegate::count);
         this.mapper = mapper;
       }
 
