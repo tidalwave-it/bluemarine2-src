@@ -7,4 +7,4 @@ Browse({ObjectID=/music, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex
     </container>
 </DIDL-Lite>
 
-QUERY COUNT: 0
+QUERY COUNT: 1

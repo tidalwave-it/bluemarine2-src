@@ -7,4 +7,4 @@ Browse({ObjectID=/music/a+r+t, BrowseFlag=BrowseDirectChildren, Filter=, Startin
     </container>
 </DIDL-Lite>
 
-QUERY COUNT: 0
+QUERY COUNT: 3
