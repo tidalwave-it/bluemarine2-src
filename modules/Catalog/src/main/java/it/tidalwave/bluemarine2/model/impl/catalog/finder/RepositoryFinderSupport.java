@@ -95,7 +95,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     private static final String REGEX_BINDING_TAG_LINE = REGEX_BINDING_TAG + ".*$";
 
     private static final String REGEX_COMMENT = "^ *#.*";
-    
+
     private static final String PREFIXES = "PREFIX foaf:  <http://xmlns.com/foaf/0.1/>\n"
                                          + "PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                                          + "PREFIX rel:   <http://purl.org/vocab/relationship/>\n"
@@ -111,7 +111,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     private static final SimpleValueFactory FACTORY = SimpleValueFactory.getInstance();
 
     @Nonnull
-    protected final Repository repository;
+    protected final transient Repository repository;
 
     @Nonnull
     private final Class<ENTITY> entityClass;
@@ -120,13 +120,13 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     private final String idName;
 
     @Nonnull
-    private final Optional<Id> id;
+    private final transient Optional<Id> id;
 
     @Nonnull
-    private final Optional<Value> source;
+    private final transient Optional<Value> source;
 
     @Nonnull
-    private final Optional<Value> sourceFallback;
+    private final transient Optional<Value> sourceFallback;
 
     @Inject
     private transient ContextManager contextManager;
