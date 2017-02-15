@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.rest.impl;
+package it.tidalwave.bluemarine2.rest.impl.resource;
 
 import javax.annotation.Nonnull;
 import java.time.Duration;
@@ -42,7 +42,7 @@ import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSup
 
 /***********************************************************************************************************************
  *
- * An adapter for exporting {@link Track} in JSON.
+ * An adapter for exporting {@link Track} in REST.
  *
  * @stereotype  Adapter
  *
@@ -53,7 +53,7 @@ import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSup
 @Getter
 @JsonInclude(Include.NON_ABSENT)
 @JsonPropertyOrder(alphabetic = true)
-public class TrackJson extends JsonSupport
+public class TrackResource extends ResourceSupport
   {
     private final String id;
 
@@ -73,7 +73,7 @@ public class TrackJson extends JsonSupport
 
     private final Optional<String> audioFile;
 
-    public TrackJson (final @Nonnull Track track)
+    public TrackResource (final @Nonnull Track track)
       {
         this.id          = track.getId().stringValue();
         this.displayName = track.as(Displayable).getDisplayName();

@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.rest.impl;
+package it.tidalwave.bluemarine2.rest.impl.resource;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
@@ -39,7 +39,7 @@ import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
- * An adapter for exporting {@link Record} in JSON.
+ * An adapter for exporting {@link Record} in REST.
  *
  * @stereotype  Adapter
  *
@@ -50,7 +50,7 @@ import static it.tidalwave.role.Displayable.Displayable;
 @Getter
 @JsonInclude(JsonInclude.Include.NON_ABSENT)
 @JsonPropertyOrder(alphabetic = true)
-public class RecordJson extends JsonSupport
+public class RecordResource extends ResourceSupport
   {
     private final String id;
 
@@ -70,7 +70,7 @@ public class RecordJson extends JsonSupport
 
     protected String details;
 
-    public RecordJson (final @Nonnull Record record)
+    public RecordResource (final @Nonnull Record record)
       {
         this.id          = record.getId().stringValue();
         this.displayName = record.as(Displayable).getDisplayName();

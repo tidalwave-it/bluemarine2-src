@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.rest.impl;
+package it.tidalwave.bluemarine2.rest.impl.resource;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
@@ -42,7 +42,7 @@ import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
  *
  **********************************************************************************************************************/
 @Configurable(preConstruction = true)
-public abstract class JsonSupport
+public abstract class ResourceSupport
   {
     @Inject @JsonIgnore
     private ResourceServer server;

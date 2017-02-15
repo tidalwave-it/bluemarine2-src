@@ -38,13 +38,6 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <!-- ===============================================================================================================
-
-        This is the "Mac OS X Installer with embedded JRE module" of the project. It generates a Mac OS X application
-        bundle in form of a dmg.gz file  an embedded JRE.
-
-    ================================================================================================================ -->
-
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-application-javafx-macosx-embedded-jre</artifactId>
     <version>1.0-ALPHA-20-SNAPSHOT</version>
@@ -57,17 +50,8 @@
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>
         </dependency>
-
-        <!-- FIXME: why are not brought by transitive dependencies? -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <scope>runtime</scope>
-        </dependency>
     </dependencies>
+
+    <!-- Lots of things happen because of activate profiles - see 'src/config' -->
+
 </project>

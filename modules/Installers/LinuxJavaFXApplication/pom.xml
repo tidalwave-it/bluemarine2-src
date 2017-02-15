@@ -38,79 +38,23 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <!-- ===============================================================================================================
-
-
-
-
-    ================================================================================================================ -->
-
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-application-javafx-linux</artifactId>
     <version>1.0-ALPHA-20-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine II - Installers - JavaFX Application, Linux</name>
-    <description>This module creates a Linux application bundle.</description>
+    <description>
+        This module creates a JavaFX application for Linux. The produced artifact is a .tar.gz containing all the
+        required stuff, including a shell script launcher.
+    </description>
 
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>
         </dependency>
-
-        <!-- FIXME: why are not brought by transitive dependencies? -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <scope>runtime</scope>
-        </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <includeScope>runtime</includeScope>
-                            <overWrite>true</overWrite>
-                            <outputDirectory>${basedir}/target/classes/lib</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <descriptors>
-                        <descriptor>${basedir}/src/main/assembly/zip.xml</descriptor>
-                    </descriptors>
-                    <runOnlyAtExecutionRoot>false</runOnlyAtExecutionRoot>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+    <!-- Lots of things happen because of activate profiles - see 'src/config' -->
 
 </project>

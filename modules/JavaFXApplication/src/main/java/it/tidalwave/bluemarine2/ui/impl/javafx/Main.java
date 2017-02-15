@@ -33,7 +33,7 @@ import javafx.application.Platform;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.springframework.context.ApplicationContext;
 import it.tidalwave.ui.javafx.JavaFXSpringApplication;
-import it.tidalwave.bluemarine2.util.Logging;
+import it.tidalwave.bluemarine2.util.SystemConfigurer;
 import it.tidalwave.bluemarine2.initializer.Initializer;
 
 /***********************************************************************************************************************
@@ -63,7 +63,7 @@ public class Main extends JavaFXSpringApplication
       {
         try
           {
-            Logging.setupLogFolder();
+            SystemConfigurer.setSystemProperties();
             Platform.setImplicitExit(true);
             launch(args);
           }
