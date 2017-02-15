@@ -690,7 +690,7 @@ ALL RECORDS (52):
   Gregorian Chant (urn:bluemarine:record:RS8O3XsTBj8T4PjZd6xdn6JhGo0=) - 22 tracks - musicbrainz
   Handel: Messiah (Highlights) (urn:bluemarine:record:1k6gcfB56OBfXqNiE-HR02Rdw30=) - 14 tracks - embedded
   Johannes Brahms, Robert Schumann (urn:bluemarine:record:273watVY3CmVFx_BX8oc4D9uoXc=) - 3 tracks - embedded
-  La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=) - 1 tracks - musicbrainz
+  La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=) - 16 tracks - musicbrainz
   La Divina 2 (urn:bluemarine:record:1YnSzOtRCbFKmcAnNRKLtDXCE8w=) - 15 tracks - embedded
   La Domna Savorousa : Chants d’amour des troubadours et des trouvères (urn:bluemarine:record:0bYRbWOJwZTV0bUoFtX9eAutVDo=) - 14 tracks - embedded
   Le Sacre du Printemps (urn:bluemarine:record:A9sE-QiqGiQKtpf2awIcPUwIj60=) - 14 tracks - musicbrainz
@@ -727,7 +727,7 @@ ALL RECORDS (52):
   Water Music (urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=) - 19 tracks - musicbrainz
   もうひとつのクリスマス (urn:bluemarine:record:Q2QW4sxqdRwCjoCYMmceTM4yd5o=) - 10 tracks - embedded
   COUNT OF ALL RECORDS RETRIEVED BY 1 QUERIES
-  ALL RECORDS RETRIEVED BY 53 QUERIES
+  ALL RECORDS RETRIEVED BY 4 QUERIES
 
 
 
@@ -5064,7 +5064,7 @@ RECORD Antiche danze ed arie (urn:bluemarine:record:1F54e95XN3GzM3dqB7Fo6goKKTw=
     01/01 12 03:23 Antiche danze ed arie, suite III: Lodovico Roncalli: Passacaglia (1692) (urn:bluemarine:track:WiZb6zIdeGbLt9zQrD9L3FF6xQ4=) Seiji Ozawa_ Boston Symphony Orchestra/Respighi_ Ancient Airs & Dances/12 Respighi_ Ancient Airs & Dances, Set 3, P 172 - 4. Passacaglia.mp3 - musicbrainz
       : orchestra            Boston Symphony Orchestra (urn:bluemarine:artist:tfXIxDjcnyzWhVhcLhgQoib5leI=)
       : conductor            小澤征爾 (urn:bluemarine:artist:DyeShSWD239hKAMGcWy5kVjHjQI=)
-  RETRIEVED BY 26 QUERIES
+  RETRIEVED BY 25 QUERIES
 
 RECORD BWV 232 - Mass in B minor (urn:bluemarine:record:T2YeGI3AAkjoh5u2-YexDOCiRVw=):
   SOURCE:  musicbrainz
@@ -5091,7 +5091,7 @@ RECORD BWV 232 - Mass in B minor (urn:bluemarine:record:T2YeGI3AAkjoh5u2-YexDOCi
       : 
     01/02 11 04:18 BWV0232-11 / Cum sancto Spiritu: Vivace (urn:bluemarine:track:HYzGpFH9BlVkk_u-RrZIuG4vTQE=) Compilations/Bach_ Mass In B Minor, BWV 232 [Disc 1]/1-11 Bach_ Mass In B Minor, BWV 232 - Gloria_ Cum Sancto Spiritu.mp3 - musicbrainz
       : 
-  RETRIEVED BY 24 QUERIES
+  RETRIEVED BY 23 QUERIES
 
 RECORD BWV 232 - Mass in B minor (urn:bluemarine:record:ibyd0FYhw5tl_s4HzdciU2koe28=):
   SOURCE:  musicbrainz
@@ -5124,7 +5124,7 @@ RECORD BWV 232 - Mass in B minor (urn:bluemarine:record:ibyd0FYhw5tl_s4HzdciU2ko
       : 
     02/02 14 02:50 BWV0232-25 / Dona nobis pacem: Alla breve (urn:bluemarine:track:yt_t6zo0MRFzwsZFfp3jQY1-vOo=) Angela Maria Blasi, Robert Holl, Etc.; Nikolaus Harnoncourt_ Concentus Musicus Wien, Arnold Schoenberg Choir/Bach_ Mass In B Minor, BWV 232 [Disc 2]/2-14 Bach_ Mass In B Minor, BWV 232 - Agnus Dei_ Dona Nobis Pacem.mp3 - musicbrainz
       : 
-  RETRIEVED BY 30 QUERIES
+  RETRIEVED BY 29 QUERIES
 
 RECORD Borodin, String Quartet 2. Tchaikovsky, string Quartet 3 (urn:bluemarine:record:YKQ4jHPwkwJAgy-bkc4LqTyTRBk=):
   SOURCE:  embedded
@@ -5137,7 +5137,7 @@ RECORD Borodin, String Quartet 2. Tchaikovsky, string Quartet 3 (urn:bluemarine:
     01/01 06 03:19 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. II. Allegretto (urn:bluemarine:track:wERYF1WSP6y-Uucm40aRlRA8vJY=) Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/06 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. II. Allegretto.mp3 - embedded
     01/01 07 12:48 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. III. Andante funebre e doloroso ma con moto (urn:bluemarine:track:PS82lePnZSNUHZL4xhXGkZPmwPU=) Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/07 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. III. Andante funebre e doloroso ma con moto.mp3 - embedded
     01/01 08 05:51 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. IV. Finale: Allegro non troppo e resoluto (urn:bluemarine:track:ZJpzFSl0jeIY1mVj61SNz6lC4mo=) Brodsky Quartet/Borodin, String Quartet 2. Tchaikovsky, string Quartet 3/08 Tchaikovsky String Quartet No 3 in E flat minor, Op.30. IV. Finale_ Allegro non troppo e resoluto.mp3 - embedded
-  RETRIEVED BY 10 QUERIES
+  RETRIEVED BY 9 QUERIES
 
 RECORD Callas - La Mamma Morta (urn:bluemarine:record:nhs0L_SwurFvHNLnhkB-lb7PXGw=):
   SOURCE:  embedded
@@ -5145,7 +5145,7 @@ RECORD Callas - La Mamma Morta (urn:bluemarine:record:nhs0L_SwurFvHNLnhkB-lb7PXG
     01/01 01 04:52 Giordano: Andrea Chénier - La Mamma Morta (urn:bluemarine:track:EqtB0K6PRO2l03DF-NeQQBpm5T0=) Compilations/Callas - La Mamma Morta/01 Giordano_ Andrea Chénier - La Mamma Morta.mp3 - embedded
     01/01 02 04:50 Catalani: La Wally - Ebben? Ne Andro Lontana (urn:bluemarine:track:EFebggtvvyD6hwmkTlv_b4yAlAY=) Compilations/Callas - La Mamma Morta/02 Catalani_ La Wally - Ebben_ Ne Andro Lontana.mp3 - embedded
     01/01 03 02:26 Spontini: La Vestale - O Nume Tutelar (urn:bluemarine:track:M1sLSnzqyfdl908LjuTQw4jBneI=) Compilations/Callas - La Mamma Morta/03 Spontini_ La Vestale - O Nume Tutelar.mp3 - embedded
-  RETRIEVED BY 5 QUERIES
+  RETRIEVED BY 4 QUERIES
 
 RECORD Canto Gregoriano (urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=):
   SOURCE:  musicbrainz
@@ -5236,7 +5236,7 @@ RECORD Canto Gregoriano (urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=):
       : chorus master        Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
       : conductor            Ismael Fernández de la Cuesta (urn:bluemarine:artist:axJFJsCkM5WPPJqAbgbX98FTu8w=)
       : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
-  RETRIEVED BY 30 QUERIES
+  RETRIEVED BY 29 QUERIES
 
 RECORD Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=):
   SOURCE:  musicbrainz
@@ -5351,7 +5351,7 @@ RECORD Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=):
       : chorus master        Francisco Lara (urn:bluemarine:artist:NJk21LtSfSmT-cdFAHnFs-248_I=)
       : performer            Francisco Lara (urn:bluemarine:artist:NJk21LtSfSmT-cdFAHnFs-248_I=)
       : producer             Maria Francisca Bonmati (urn:bluemarine:artist:i8K7RFISViS9kqHu4cMT6A21pPI=)
-  RETRIEVED BY 38 QUERIES
+  RETRIEVED BY 37 QUERIES
 
 RECORD Cello Concertos (urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=):
   SOURCE:  musicbrainz
@@ -5385,7 +5385,7 @@ RECORD Cello Concertos (urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=):
       : cello                Heinrich Schiff (urn:bluemarine:artist:eBcnOxXdhWfQEzKF4o4l_ZKeJhU=)
       : conductor            Sir Neville Marriner (urn:bluemarine:artist:SB35qq9gOmHcGFxP69oPuWJKXyg=)
       : orchestra            Staatskapelle Dresden (urn:bluemarine:artist:2Kirgm9ifaT9ZHFCDB4AGhnU0Ac=)
-  RETRIEVED BY 16 QUERIES
+  RETRIEVED BY 15 QUERIES
 
 RECORD Cherubini: 6 Piano Sonatas (urn:bluemarine:record:y-9LEwSNAaiGXcBEAhHL47FZzTs=):
   SOURCE:  embedded
@@ -5402,7 +5402,7 @@ RECORD Cherubini: 6 Piano Sonatas (urn:bluemarine:record:y-9LEwSNAaiGXcBEAhHL47F
     01/01 10 05:06 Cherubini: Sonata #5 In D - 2. Rondò: Allegretto (urn:bluemarine:track:d-Q3x9XY7zVvOYr11me09-52zqk=) Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/10 Cherubini_ Sonata #5 In D - 2. Rondò_ Allegretto.mp3 - embedded
     01/01 11 07:52 Cherubini: Sonata #6 In E Flat - 1. Allegro Spiritoso (urn:bluemarine:track:MV17m6OWDCPrx_Ed_8i40-d1h1Q=) Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/11 Cherubini_ Sonata #6 In E Flat - 1. Allegro Spiritoso.mp3 - embedded
     01/01 12 06:06 Cherubini: Sonata #6 In E Flat - 2. Rondò: Andantino Con Moto (urn:bluemarine:track:H85zLyXy-ABZXGZpVDQ5KmFgkww=) Andrea Bacchetti/Cherubini_ 6 Piano Sonatas/12 Cherubini_ Sonata #6 In E Flat - 2. Rondò_ Andantino Con Moto.mp3 - embedded
-  RETRIEVED BY 14 QUERIES
+  RETRIEVED BY 13 QUERIES
 
 RECORD Daniel And The Lions - Ludus Danielis (urn:bluemarine:record:ONiNKoLC69EuihrDlMBpTEUyZpo=):
   SOURCE:  embedded
@@ -5420,7 +5420,7 @@ RECORD Daniel And The Lions - Ludus Danielis (urn:bluemarine:record:ONiNKoLC69Eu
     01/01 11 05:47 Huius Rei Non Sum Reus (urn:bluemarine:track:q78sYXxrz6c9su1VNgzyQV1n9JQ=) New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/11 Huius Rei Non Sum Reus.mp3 - embedded
     01/01 12 04:43 Te Ne Putas, Daniel, Salvabit, Ut Eripiaris (urn:bluemarine:track:IoPCsXuA-KgFv-jPXnu0mjYerl4=) New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/12 Te Ne Putas, Daniel, Salvabit, Ut Eripiaris.mp3 - embedded
     01/01 13 06:47 "Te Deum Laudamus" (urn:bluemarine:track:ddM66yOXLLrQYKBsXNy9s6IMCQY=) New York's Ensemble for Early Music - Frederick Renz director/Daniel And The Lions - Ludus Danielis/13 _Te Deum Laudamus_.mp3 - embedded
-  RETRIEVED BY 15 QUERIES
+  RETRIEVED BY 14 QUERIES
 
 RECORD Die Konzerte für 3 und 4 Cembali (urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=):
   SOURCE:  musicbrainz
@@ -5484,7 +5484,7 @@ RECORD Die Konzerte für 3 und 4 Cembali (urn:bluemarine:record:3G3mWzOfMH-IId27
       : orchestra            The English Concert (urn:bluemarine:artist:aPPL4jAJMvzYRxj6_232FueW9MY=)
       : harpsichord          Trevor Pinnock (urn:bluemarine:artist:Ul-JO_8fIbkHIuQxk5mkTomld0g=)
       : conductor            Trevor Pinnock (urn:bluemarine:artist:Ul-JO_8fIbkHIuQxk5mkTomld0g=)
-  RETRIEVED BY 20 QUERIES
+  RETRIEVED BY 19 QUERIES
 
 RECORD El canto espiritual judeoespañol (urn:bluemarine:record:4pMF6vUDJ40E2Dz2REpAbcD2Wg0=):
   SOURCE:  musicbrainz
@@ -5505,7 +5505,7 @@ RECORD El canto espiritual judeoespañol (urn:bluemarine:record:4pMF6vUDJ40E2Dz2
     01/01 12 02:14 La fragua del estudio (urn:bluemarine:track:X1EayHaRsA7gqmzYQez5oz1IMeI=) Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/12 La Fragua Del Estudio.mp3 - musicbrainz
     01/01 13 04:35 Dodí yarad leganó (urn:bluemarine:track:7J-VTmTmqLM1Nf2ddDowZib_rhw=) Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/13 Dodi Yarad Legano.mp3 - musicbrainz
     01/01 14 02:27 La ketubá de la ley (urn:bluemarine:track:XuFs2Y5KbdPQwZrz-bUP8tW-JZ4=) Miguel Sánchez_ Alia Música/El Canto Espiritual Judeoespañol/14 La Ketuba De La Ley.mp3 - musicbrainz
-  RETRIEVED BY 16 QUERIES
+  RETRIEVED BY 15 QUERIES
 
 RECORD Fantasie, op. 17 / Sonate, op. 11 (urn:bluemarine:record:mdrEbrVkOfi1tkP60fl8AgxwTb4=):
   SOURCE:  musicbrainz
@@ -5526,7 +5526,7 @@ RECORD Fantasie, op. 17 / Sonate, op. 11 (urn:bluemarine:record:mdrEbrVkOfi1tkP6
       : piano                Maurizio Pollini (urn:bluemarine:artist:5maRT_t0F0__sYSVjSkYS7zosDE=)
     01/01 07 10:46 Fantasie C-dur, op. 17: III. Langsam getragen. Durchweg leise zu halten - Etwas bewegter (urn:bluemarine:track:UDuLwjAOWigBY1o2ryAaPJHuuoc=) Maurizio Pollini/Schumann_ Piano Sonata #1, Fantasie In C/07 Schumann_ Fantasie In C, Op. 17 - 3. Langsam Getragen.mp3 - musicbrainz
       : piano                Maurizio Pollini (urn:bluemarine:artist:5maRT_t0F0__sYSVjSkYS7zosDE=)
-  RETRIEVED BY 16 QUERIES
+  RETRIEVED BY 15 QUERIES
 
 RECORD Gregorian Chant (urn:bluemarine:record:RS8O3XsTBj8T4PjZd6xdn6JhGo0=):
   SOURCE:  musicbrainz
@@ -5555,7 +5555,7 @@ RECORD Gregorian Chant (urn:bluemarine:record:RS8O3XsTBj8T4PjZd6xdn6JhGo0=):
     01/01 20 02:31 In Epiphania Domini: Graduale: Omnes de Saba (urn:bluemarine:track:qtl89A_r_CL-mL0B67Cwha_JA7g=) Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/20 Omnes de Saba - Graduale_In Epiphania Domini.mp3 - musicbrainz
     01/01 21 01:56 In Baptismate Domini: Offertorium: Benedictus (urn:bluemarine:track:iLIwna9acTzVcXdYXNkjk-EdOdM=) Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/21 Benedictus - Offertorium_In Baptismate Domini.mp3 - musicbrainz
     01/01 22 01:45 Antiphona Beatae Mariae Virginis (urn:bluemarine:track:wtWBN4bi2DxJe1AB29LOwsgJCU8=) Hubert Dopf_ Choralschola Der Wiener Hofburgkapelle/Gregorian Chant_ Hymns and Vespers for the Feast of the Nativity/22 Alma Redemptoris Mater - Antiphona Beatae Mariae Virginis.mp3 - musicbrainz
-  RETRIEVED BY 24 QUERIES
+  RETRIEVED BY 23 QUERIES
 
 RECORD Handel: Messiah (Highlights) (urn:bluemarine:record:1k6gcfB56OBfXqNiE-HR02Rdw30=):
   SOURCE:  embedded
@@ -5574,7 +5574,7 @@ RECORD Handel: Messiah (Highlights) (urn:bluemarine:record:1k6gcfB56OBfXqNiE-HR0
     01/01 12 06:36 Handel: Messiah, HWV 56 - I Know That My Redeemer Liveth (urn:bluemarine:track:gCdfCf-aLRpbkK-CED3dQx-o290=) Janet Baker, Paul Esswood, Etc.; Charles Mackerras_ English Chamber Orchestra, Ambrosian Singers/Handel_ Messiah (Highlights)/12 Handel_ Messiah, HWV 56 - I Know That My Redeemer Liveth.mp3 - embedded
     01/01 13 03:53 Handel: Messiah, HWV 56 - Worthy Is The Lamb (urn:bluemarine:track:_9Ap-uiFir2knJshY_oYucp7qP8=) Janet Baker, Paul Esswood, Etc.; Charles Mackerras_ English Chamber Orchestra, Ambrosian Singers/Handel_ Messiah (Highlights)/13 Handel_ Messiah, HWV 56 - Worthy Is The Lamb.mp3 - embedded
     01/01 14 03:20 Handel: Messiah, HWV 56 - Amen (urn:bluemarine:track:yFw-Y30APVFqQoKPH3b2QTLC--I=) Janet Baker, Paul Esswood, Etc.; Charles Mackerras_ English Chamber Orchestra, Ambrosian Singers/Handel_ Messiah (Highlights)/14 Handel_ Messiah, HWV 56 - Amen.mp3 - embedded
-  RETRIEVED BY 16 QUERIES
+  RETRIEVED BY 15 QUERIES
 
 RECORD Johannes Brahms, Robert Schumann (urn:bluemarine:record:273watVY3CmVFx_BX8oc4D9uoXc=):
   SOURCE:  embedded
@@ -5582,18 +5582,18 @@ RECORD Johannes Brahms, Robert Schumann (urn:bluemarine:record:273watVY3CmVFx_BX
     01/01 01 12:07 Book 1 - Variations On A Theme By Paganini, Op. 35 (Brahms) (urn:bluemarine:track:45sSTCwnwPOeoEkn8q5C6yaBga4=) Lambis Vassiliadis/Johannes Brahms, Robert Schumann/01 Book 1 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3 - embedded
     01/01 02 10:37 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms) (urn:bluemarine:track:-HgLx23hOuWmrUoB0nhJ9z3G13c=) Lambis Vassiliadis/Johannes Brahms, Robert Schumann/02 Book 2 - Variations On A Theme By Paganini, Op. 35 (Brahms).mp3 - embedded
     01/01 03 26:39 Carnaval Op.9 (Schumann) (urn:bluemarine:track:55M6bNA1LBUUJstdUDWTvRQctBU=) Lambis Vassiliadis/Johannes Brahms, Robert Schumann/03 Carnaval Op.9 (Schumann).mp3 - embedded
-  RETRIEVED BY 5 QUERIES
+  RETRIEVED BY 4 QUERIES
 
 RECORD La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=):
   SOURCE:  musicbrainz
   ASIN:    B000002RTT
   BARCODE: 724355501622
-  TRACKS (1 / Optional[16]):
+  TRACKS (16 / Optional[16]):
     01/01 01 04:25 Alceste: Act I. "Divinités du Styx" (urn:bluemarine:track:j583gNtuU3P-SXMnrUy8Q8ctzrE=) Maria Callas/Callas - La Divina 2/01 글루크 알체스테.mp3 - musicbrainz
       : conductor            Georges Prêtre (urn:bluemarine:artist:eeviEcynehNqjiPNfLcV9PvQHcM=)
       : soprano              Maria Callas (urn:bluemarine:artist:_4ZbAn_1uK0DZj0INcAD5B8NyIE=)
       : orchestra            Orchestre National de la Radiodiffusion Française (urn:bluemarine:artist:DCzAp6azbL3sMuf1mqyjEc1uWMw=)
-  RETRIEVED BY 4 QUERIES
+  RETRIEVED BY 3 QUERIES
 
 RECORD La Divina 2 (urn:bluemarine:record:1YnSzOtRCbFKmcAnNRKLtDXCE8w=):
   SOURCE:  embedded
@@ -5632,7 +5632,7 @@ RECORD La Domna Savorousa : Chants d’amour des troubadours et des trouvères (
     01/01 12 02:59 L’autrier a l’ajornée (urn:bluemarine:track:xliXN1AxS-bxgxLF3TnbEeSYdL8=) Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/12 L_autrier a l_ajornée.mp3 - embedded
     01/01 13 03:42 La Manfredina (urn:bluemarine:track:m5OG6Sh6rwfm949vsl9cYmlRsYk=) Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/13 La Manfredina.mp3 - embedded
     01/01 14 04:10 Tuit cil qui sunt enamourat (urn:bluemarine:track:MnJvGKgMj_aZnQw0TDwBJszzD4w=) Ensemble In Cortezia/La Domna Savorousa _ Chants d_amour des troubadours et des trouvères/14 Tuit cil qui sunt enamourat.mp3 - embedded
-  RETRIEVED BY 16 QUERIES
+  RETRIEVED BY 15 QUERIES
 
 RECORD Le Sacre du Printemps (urn:bluemarine:record:A9sE-QiqGiQKtpf2awIcPUwIj60=):
   SOURCE:  musicbrainz
@@ -5680,7 +5680,7 @@ RECORD Le Sacre du Printemps (urn:bluemarine:record:A9sE-QiqGiQKtpf2awIcPUwIj60=
     01/01 14 04:46 Le Sacre du printemps: Partie II. Danse sacrale (L'élue) (urn:bluemarine:track:YTpq_hjrHPIoaQalS6dIjsFMvJ0=) Leonard Bernstein_ Israel Philharmonic Orchestra/Stravinsky_ Le Sacre Du Printemps/14 Stravinsky_ Le Sacre Du Printemps - Part 2_ The Sacrifice, Sacrificial Dance.mp3 - musicbrainz
       : conductor            Leonard Bernstein (urn:bluemarine:artist:4pnC4uLKNFy2l5pWXlTmvr9jFkQ=)
       : orchestra            התזמורת הפילהרמונית הישראלית (urn:bluemarine:artist:8Owfa4fr4DE04nLo0cbqNz0hW-k=)
-  RETRIEVED BY 30 QUERIES
+  RETRIEVED BY 29 QUERIES
 
 RECORD Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=):
   SOURCE:  musicbrainz
@@ -5888,7 +5888,7 @@ RECORD Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=):
       : balance              Wilhelm Hellweg (urn:bluemarine:artist:eH0U_-aGq1LMvTneduNTddwr5M0=)
       : producer             Wilhelm Hellweg (urn:bluemarine:artist:eH0U_-aGq1LMvTneduNTddwr5M0=)
       : violin               Виктория Муллова (urn:bluemarine:artist:nvBe-fEDi-csPRkkOPfFG37Zks4=)
-  RETRIEVED BY 32 QUERIES
+  RETRIEVED BY 31 QUERIES
 
 RECORD Marais: Pièces À Deux Violes 1686 (urn:bluemarine:record:EnMA3YnQFdiNszrbyP2pXp5p6T0=):
   SOURCE:  embedded
@@ -5911,7 +5911,7 @@ RECORD Marais: Pièces À Deux Violes 1686 (urn:bluemarine:record:EnMA3YnQFdiNsz
     01/01 16 01:55 Marais: Suite In G - Fantasie En Echo (urn:bluemarine:track:MSck51x6b1P2IMYe7cCZN4Sf73k=) Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/16 Marais_ Suite In G - Fantasie En Echo.mp3 - embedded
     01/01 17 06:31 Marais: Suite In G - Chaconne (urn:bluemarine:track:21ImZQDE3NBjGz480PHnzvsYE-Q=) Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/17 Marais_ Suite In G - Chaconne.mp3 - embedded
     01/01 18 08:34 Marais: Le Tombeau De Mr. Meliton (urn:bluemarine:track:fRcBDhjlqV9fn6TS_5JYMk1UfTo=) Smithsonian Chamber Players/Marais_ Pièces À Deux Violes 1686/18 Marais_ Le Tombeau De Mr. Meliton.mp3 - embedded
-  RETRIEVED BY 20 QUERIES
+  RETRIEVED BY 19 QUERIES
 
 RECORD Melodie Sacre (urn:bluemarine:record:7lSAGzNHnF2-e3quBGWw-jPvZaU=):
   SOURCE:  musicbrainz
@@ -5943,7 +5943,7 @@ RECORD Melodie Sacre (urn:bluemarine:record:7lSAGzNHnF2-e3quBGWw-jPvZaU=):
     01/01 24 02:15 Benedictus sit (urn:bluemarine:track:pD-HHOLs2OfiaBRR0G0GO6FsJco=) Perosi, Lorenzo/Lorenzo Perosi/24 Benedictus sit.mp3 - musicbrainz
     01/01 25 02:40 Ecce panis angelorum (urn:bluemarine:track:AaJrz3WVLynM4v_ZxUEQGNJCirQ=) Perosi, Lorenzo/Lorenzo Perosi/25 Ecce panis angelorum.mp3 - musicbrainz
     01/01 26 01:56 Interludio, su "viderunt omnes" (urn:bluemarine:track:SLQy5aumn1tFOLQgrsT9bRB-ZPk=) Perosi, Lorenzo/Lorenzo Perosi/26 Interludio, su _Viderunt omnes_, organo.mp3 - musicbrainz
-  RETRIEVED BY 28 QUERIES
+  RETRIEVED BY 27 QUERIES
 
 RECORD Mostly French (urn:bluemarine:record:7rmCg7VLnlUoP3iM8Wb5e8LT1Qo=):
   SOURCE:  embedded
@@ -5956,7 +5956,7 @@ RECORD Mostly French (urn:bluemarine:record:7rmCg7VLnlUoP3iM8Wb5e8LT1Qo=):
     01/01 06 11:40 Impression Nocturna For Strings (urn:bluemarine:track:wDjIUsvcnd2w6T1DN_57h9K1aUU=) Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/06 Impression Nocturna For Strings.mp3 - embedded
     01/01 07 13:12 Fantaisie For Flute And Harp, Op. 124 (urn:bluemarine:track:Nl_L128cAnfa536LBxMj6OWD6oI=) Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/07 Fantaisie For Flute And Harp, Op. 124.mp3 - embedded
     01/01 08 11:05 Introduction And Allegro For Harp, Flute, Clarinet And Strings (urn:bluemarine:track:RQuqTJUOSsA3MXuJUrsRrYOJ3JA=) Griffes_Faure_Debussy_Gaos_Saint-Saens_Ravel/Mostly French/08 Introduction And Allegro For Harp, Flute, Clarinet And Strings.mp3 - embedded
-  RETRIEVED BY 10 QUERIES
+  RETRIEVED BY 9 QUERIES
 
 RECORD Music for the Royal Fireworks / 2 Concerti a due cori (urn:bluemarine:record:VBATFSBWyIkSTmS7krwQknkPxKk=):
   SOURCE:  musicbrainz
@@ -5987,7 +5987,7 @@ RECORD Music for the Royal Fireworks / 2 Concerti a due cori (urn:bluemarine:rec
     01/01 16 02:03 Music for the Royal Fireworks: Suite HWV 351 V. Menuet I-II (urn:bluemarine:track:8E4ho2s6CWgRx-AiJRP_bVaAzNA=) John Eliot Gardiner_ English Baroque Soloists/Handel_ Music For The Royal Fireworks, Concerto #2 In F/16 Handel_ Music For The Royal Fireworks, HWV 351 - Minuets 1 & 2.mp3 - musicbrainz
       : orchestra            English Baroque Soloists (urn:bluemarine:artist:h1UijYouSf9fsS7K4mMih0cwOcw=)
       : conductor            Sir John Eliot Gardiner (urn:bluemarine:artist:K6xj0IUeahS7eco6hZW9mwIJrG8=)
-  RETRIEVED BY 23 QUERIES
+  RETRIEVED BY 22 QUERIES
 
 RECORD Nutcracker / Swan Lake (urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=):
   SOURCE:  musicbrainz
@@ -6064,7 +6064,7 @@ RECORD Nutcracker / Swan Lake (urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI
       : producer             Günter Appenheimer (urn:bluemarine:artist:KZ_zmrktRXVVNSmchgwb1mUjWiU=)
       : conductor            Michael Halász (urn:bluemarine:artist:MCz3LRJdMt33aunwYB18Km4Fbqw=)
       : orchestra            Slovenská filharmónia (urn:bluemarine:artist:P_2aw3LIviapD9dRaH5RfszFftM=)
-  RETRIEVED BY 38 QUERIES
+  RETRIEVED BY 37 QUERIES
 
 RECORD O tu chara sciença: La musique dans la pensée médiévale (urn:bluemarine:record:-Yh_lYTG5GrYQCcFwFQGUNWpFTw=):
   SOURCE:  embedded
@@ -6089,7 +6089,7 @@ RECORD O tu chara sciença: La musique dans la pensée médiévale (urn:bluemari
     01/01 18 02:38 Ysaias cecini - Tytire tu patule (urn:bluemarine:track:Nadq0hlXfztwfmLlz9cAIa0ivU4=) La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/18 Ysaias cecini - Tytire tu patule.mp3 - embedded
     01/01 19 04:18 Alma polis religio - Axe poli cum artica (urn:bluemarine:track:wiI9rkeQWqVUb5DzmdOKssodW9I=) La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/19 Alma polis religio - Axe poli cum artica.mp3 - embedded
     01/01 20 06:12 Lo Signore ringraçando (urn:bluemarine:track:6Hkv9YnOkDx5nFREOLoD36JDreA=) La Reverdie/O tu chara sciença_ La musique dans la pensée médiévale/20 Lo Signore ringraçando.mp3 - embedded
-  RETRIEVED BY 22 QUERIES
+  RETRIEVED BY 21 QUERIES
 
 RECORD Paulus (urn:bluemarine:record:NUrVuwe4aaPzaFux_alU_KN-Qlw=):
   SOURCE:  musicbrainz
@@ -6162,7 +6162,7 @@ RECORD Paulus (urn:bluemarine:record:NUrVuwe4aaPzaFux_alU_KN-Qlw=):
     01/02 22 05:01 Paulus, Op. 36: XXII. Chor "O welch eine Tiefe des Reichtums" (urn:bluemarine:track:sdxmeSE4Fyro4ZAKyQAfCmfkyu8=) Compilations/Mendelssohn_ Paulus [Disc 1]/1-22 Mendelssohn_ Paulus, Op. 36 - O Welch Eine Tiefe Des Reichtums.mp3 - musicbrainz
       : orchestra            Gewandhausorchester Leipzig (urn:bluemarine:artist:LVFYa69QJPwIR7c6h-KAd2XS9Ts=)
       : conductor            Kurt Masur (urn:bluemarine:artist:K6ZCuZ7dnSD2VCz-u0r2kGo6FAY=)
-  RETRIEVED BY 46 QUERIES
+  RETRIEVED BY 45 QUERIES
 
 RECORD Paulus (urn:bluemarine:record:w-_C1vyv2c98gVeX9oxSgvdDYKs=):
   SOURCE:  musicbrainz
@@ -6226,7 +6226,7 @@ RECORD Paulus (urn:bluemarine:record:w-_C1vyv2c98gVeX9oxSgvdDYKs=):
     02/02 19 03:50 Paulus, Op. 36: XLV. Schlusschor "Nicht aber ihm allein" (urn:bluemarine:track:-ESkzQw_Cneog93oCyMQc7dbBMI=) Gundula Janowitz, Hans Peter Blochwitz, Etc.; Kurt Masur_ Leipzig Gewandhaus Orchestra, Leipzig Radio Chorus/Mendelssohn_ Paulus [Disc 2]/2-19 Mendelssohn_ Paulus, Op. 36 - Part 2_ Nicht Aber Ihm Allein.mp3 - musicbrainz
       : orchestra            Gewandhausorchester Leipzig (urn:bluemarine:artist:LVFYa69QJPwIR7c6h-KAd2XS9Ts=)
       : conductor            Kurt Masur (urn:bluemarine:artist:K6ZCuZ7dnSD2VCz-u0r2kGo6FAY=)
-  RETRIEVED BY 40 QUERIES
+  RETRIEVED BY 39 QUERIES
 
 RECORD Piano Concerto no. 2 (urn:bluemarine:record:SYU0KpAuaB2R5tfk3ZGjhYiS2-c=):
   SOURCE:  musicbrainz
@@ -6247,7 +6247,7 @@ RECORD Piano Concerto no. 2 (urn:bluemarine:record:SYU0KpAuaB2R5tfk3ZGjhYiS2-c=)
       : grand piano          Alfred Brendel (urn:bluemarine:artist:N4I8tqUbN3BpVljJk0qNyJs4DZk=)
       : orchestra            Berliner Philharmoniker (urn:bluemarine:artist:LFyvpvKePfWMBEv4sqBKx1V7p9M=)
       : conductor            Claudio Abbado (urn:bluemarine:artist:OJSKKYa_rzCtHYCHUDqdXPJrlK4=)
-  RETRIEVED BY 10 QUERIES
+  RETRIEVED BY 9 QUERIES
 
 RECORD Piano Concertos (urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=):
   SOURCE:  musicbrainz
@@ -6290,7 +6290,7 @@ RECORD Piano Concertos (urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=):
       : conductor            Herbert von Karajan (urn:bluemarine:artist:hBOVlAgiPOe_Fb4szo5daSCkRlA=)
       : piano                Krystian Zimerman (urn:bluemarine:artist:k5GCFPFtZ04aUkfJlPn_6iU0Y9Y=)
       : producer             Michel Glotz (urn:bluemarine:artist:8D_IuNqMyi0xBlMkXbi04xZuYNI=)
-  RETRIEVED BY 14 QUERIES
+  RETRIEVED BY 13 QUERIES
 
 RECORD Pieces de Clavecin (urn:bluemarine:record:axDVyOkWODiJThhLeoM16wCkHMk=):
   SOURCE:  embedded
@@ -6311,7 +6311,7 @@ RECORD Pieces de Clavecin (urn:bluemarine:record:axDVyOkWODiJThhLeoM16wCkHMk=):
     01/01 14 02:57 Third Concert, La Poplinière (urn:bluemarine:track:cCI1X--NX_xgDGquRSMksBqahII=) Compilations/Pieces de Clavecin/14 Third Concert, La Poplinière.mp3 - embedded
     01/01 15 05:17 Third Concert, La Timide, Rondeaux 1 & 2 (urn:bluemarine:track:S9FKxy2UX5nvribntQGNLN6dICk=) Compilations/Pieces de Clavecin/15 Third Concert, La Timide, Rondeaux 1 & 2.mp3 - embedded
     01/01 16 02:42 Third Concert, Tambourins 1 & 2 en Rondeau (urn:bluemarine:track:PueMKlhm3392NVABPZVduJgwTx4=) Compilations/Pieces de Clavecin/16 Third Concert, Tambourins 1 & 2 en Rondeau.mp3 - embedded
-  RETRIEVED BY 18 QUERIES
+  RETRIEVED BY 17 QUERIES
 
 RECORD Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=):
   SOURCE:  musicbrainz
@@ -6398,7 +6398,7 @@ RECORD Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMI
       : producer             Norman Granz (urn:bluemarine:artist:PhpqLxEZYBdmAGQ5G4ZBRqVAoXU=)
       : engineer             Val Valentin (urn:bluemarine:artist:jdsrLFdQ9YmvAvd9VWpem8_hp8s=)
     01/01 18 04:04 Oh, Lady Be Good (urn:bluemarine:track:uovjH8_Np3YSor33GRdbD1kOz2E=) Compilations/Pure Ella/18 Oh Lady, Be Good.mp3 - musicbrainz
-  RETRIEVED BY 29 QUERIES
+  RETRIEVED BY 28 QUERIES
 
 RECORD Ravel: Gaspard de la Nuit / Prokofiev: Piano Sonata no. 6 (urn:bluemarine:record:YiFcrqdWnIFQm1T5VTtEMDwZqLs=):
   SOURCE:  musicbrainz
@@ -6419,7 +6419,7 @@ RECORD Ravel: Gaspard de la Nuit / Prokofiev: Piano Sonata no. 6 (urn:bluemarine
       : piano                Ivo Pogorelich (urn:bluemarine:artist:JIz-EdykpjKMv21vdK7E7Qwhjnw=)
     01/01 07 06:42 Piano Sonata no. 6 in A major, op. 82: IV. Vivace (urn:bluemarine:track:rZYVFww6GwD9ollJIBMIHWMKtCU=) Ivo Pogorelich/Ravel_ Gaspard De La Nuit; Prokofiev_ Piano Sonata #6/07 Prokofiev_ Piano Sonata #6 In A, Op. 82 - 4. Vivace.mp3 - musicbrainz
       : piano                Ivo Pogorelich (urn:bluemarine:artist:JIz-EdykpjKMv21vdK7E7Qwhjnw=)
-  RETRIEVED BY 16 QUERIES
+  RETRIEVED BY 15 QUERIES
 
 RECORD Rimsky-Korsakov: Scheherazade (urn:bluemarine:record:lvz3awtgypL8BcvbSyA2iWGTxIU=):
   SOURCE:  embedded
@@ -6448,7 +6448,7 @@ RECORD Rossini Overtures (urn:bluemarine:record:UD4cQn5pukIL0z0dU4vs4l7Ih6I=):
     01/01 06 07:18 Barber of Seville (urn:bluemarine:track:m2bBzkyMWzuMlb_Ir6IYBpJjx2U=) Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/06 Barber of Seville.mp3 - embedded
     01/01 07 06:27 The Silken Ladder (urn:bluemarine:track:CdnI7TW7wWpTdvIyzn495DihYCA=) Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/07 The Silken Ladder.mp3 - embedded
     01/01 08 12:23 Semiramide (urn:bluemarine:track:zVHqB3QqCaskUq286KXYw381Zos=) Jaime Laredo_ Scottish Chamber Orchestra/Rossini Overtures/08 Semiramide.mp3 - embedded
-  RETRIEVED BY 10 QUERIES
+  RETRIEVED BY 9 QUERIES
 
 RECORD Satchmo 2 (urn:bluemarine:record:Ew6KqV-akvEbj1Oq-L24kCjKjxA=):
   SOURCE:  embedded
@@ -6508,7 +6508,7 @@ RECORD Schubert: Arpeggione Sonata / Schumann: Fünf Stücke im Volkston / Debus
     01/01 11 03:52 Sonata for Cello and Piano: III. Finale (urn:bluemarine:track:_oe8m_6hReYgCEhsi3mckNfq4Yc=) Mstislav Rostropovich, Benjamin Britten/Schubert_ Arpeggione Sonata; Schumann_ Fünf Stücke Im Volkston; Debussy_ Cello Sonata/11 Debussy_ Cello Sonata, L 135 - 3. Finale.mp3 - musicbrainz
       : piano                Benjamin Britten (urn:bluemarine:artist:KF-Mhpf73coDDn5fVsURYMTZ9xY=)
       : cello                Мстислав Ростропович (urn:bluemarine:artist:0YsHYLyuFn-EyDFHvoB7Xb-UGJI=)
-  RETRIEVED BY 24 QUERIES
+  RETRIEVED BY 23 QUERIES
 
 RECORD Sonaten »Waldstein · Les Adieux · Appassionata« (urn:bluemarine:record:TIwQL8Nf1R02SmbLJckDUAvrFw4=):
   SOURCE:  musicbrainz
@@ -6541,7 +6541,7 @@ RECORD Sonaten »Waldstein · Les Adieux · Appassionata« (urn:bluemarine:recor
       : producer             Günther Breest (urn:bluemarine:artist:8crroCzOIWoc3wmYB-JoFDYGnYI=)
       : balance              Klaus Scheibe (urn:bluemarine:artist:Dxg-Q--d8IvRn7vn4zltRqRTHiw=)
       : piano                Эмиль Григорьевич Гилельс (urn:bluemarine:artist:DKAcKUbKA8ZeLgqBNMki4ZiYnHQ=)
-  RETRIEVED BY 22 QUERIES
+  RETRIEVED BY 21 QUERIES
 
 RECORD String Quartets Vol. 3 Op.18 Nos. 5 & 6 (urn:bluemarine:record:gtATvQUdbPaxAr0TKf8EHf7nX9Y=):
   SOURCE:  embedded
@@ -6554,7 +6554,7 @@ RECORD String Quartets Vol. 3 Op.18 Nos. 5 & 6 (urn:bluemarine:record:gtATvQUdbP
     01/01 06 06:46 String Quartet No 6 Adagio Ma Non Tropppo (urn:bluemarine:track:79aMxdMLiWuce9jspcnkOYy5Pms=) Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/06 String Quartet No 6 Adagio Ma Non Tropppo.mp3 - embedded
     01/01 07 03:27 String Quartet No 6 Scherzo: Allegro (urn:bluemarine:track:OJA_wUttX31IrvVnDZ9TrWr4SJg=) Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/07 String Quartet No 6 Scherzo_ Allegro.mp3 - embedded
     01/01 08 08:37 String Quartet No 6 La Malinconia: Adagio - Allegretto Quasi Allegro (urn:bluemarine:track:SMBK4JWFzecH9ZThO58GQu1fa28=) Kodály Quartet/String Quartets Vol. 3 Op.18 Nos. 5 & 6/08 String Quartet No 6 La Malinconia_ Adagio - Allegretto Quasi Allegro.mp3 - embedded
-  RETRIEVED BY 10 QUERIES
+  RETRIEVED BY 9 QUERIES
 
 RECORD Symphonie no. 4 (urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=):
   SOURCE:  musicbrainz
@@ -6593,7 +6593,7 @@ RECORD Symphonie no. 4 (urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=):
       : engineer             Hans-Rudolf Müller (urn:bluemarine:artist:VpC_CPzZOQLaU6c_3CgzSLOCiOs=)
       : balance              Klaus Scheibe (urn:bluemarine:artist:Dxg-Q--d8IvRn7vn4zltRqRTHiw=)
       : orchestra            Wiener Philharmoniker (urn:bluemarine:artist:kR8ZfYs7a-9wKR_hi5fWQ25PU6Y=)
-  RETRIEVED BY 10 QUERIES
+  RETRIEVED BY 9 QUERIES
 
 RECORD Symphonien nos. 8 & 9 »Aus der Neuen Welt« (urn:bluemarine:record:FVeGdI4WGJpF1ATf2UhCuaQdtok=):
   SOURCE:  musicbrainz
@@ -6640,7 +6640,7 @@ RECORD Symphonien nos. 8 & 9 »Aus der Neuen Welt« (urn:bluemarine:record:FVeGd
       : producer             Hans Weber (urn:bluemarine:artist:zihwgERv6mmDLdziAHl7-x253-g=)
       : balance              Heinz Wildhagen (urn:bluemarine:artist:_hrRiIbcJmLlzxeOLyk7drzTa2Q=)
       : conductor            Rafael Kubelík (urn:bluemarine:artist:np4zWE6KcC9l17olX1cIWbr-njs=)
-  RETRIEVED BY 18 QUERIES
+  RETRIEVED BY 17 QUERIES
 
 RECORD Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi" / no. 8 "Le Soir" (urn:bluemarine:record:2g-5pZq0VX2fdmS0kOFUT5b4n5c=):
   SOURCE:  musicbrainz
@@ -6686,7 +6686,7 @@ RECORD Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi" / no. 8 "Le Soir" (urn:blu
     01/01 13 03:39 Symphony in G major, Hob. I:8 "Le soir": IV. Presto "La tempesta" (urn:bluemarine:track:c8Sl3Q7t2Klb4tSc8WilpCuln18=) Neville Marriner_ Academy Of St. Martin In The Fields/Haydn_ Symphonies #6-8/13 Haydn_ Symphony #8 In G, H 1_8, _Le Soir_ - 4. Presto, La Tempesta.mp3 - musicbrainz
       : orchestra            Academy of St Martin in the Fields (urn:bluemarine:artist:INUZaWyNbzXgqjXVty7cPNLmRTA=)
       : conductor            Sir Neville Marriner (urn:bluemarine:artist:SB35qq9gOmHcGFxP69oPuWJKXyg=)
-  RETRIEVED BY 28 QUERIES
+  RETRIEVED BY 27 QUERIES
 
 RECORD The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=):
   SOURCE:  musicbrainz
@@ -6755,7 +6755,7 @@ RECORD The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4
       : conductor            Georges Prêtre (urn:bluemarine:artist:eeviEcynehNqjiPNfLcV9PvQHcM=)
       : soprano              Maria Callas (urn:bluemarine:artist:_4ZbAn_1uK0DZj0INcAD5B8NyIE=)
       : orchestra            Orchestre National de la Radiodiffusion Française (urn:bluemarine:artist:DCzAp6azbL3sMuf1mqyjEc1uWMw=)
-  RETRIEVED BY 28 QUERIES
+  RETRIEVED BY 27 QUERIES
 
 RECORD The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=):
   SOURCE:  musicbrainz
@@ -6814,7 +6814,7 @@ RECORD The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:w
       : horn                 Jean-Claude Barro (urn:bluemarine:artist:183S316M2teekIZ3zb1nJd7BNWI=)
       : horn                 Jean-Jacques Justafré (urn:bluemarine:artist:rdyAYZLvqVrJx6OwxloriERX_-U=)
       : horn                 Jean-Paul Gantiez (urn:bluemarine:artist:LnvVNn1d0oWXV48vcnUa9xIAYt8=)
-  RETRIEVED BY 26 QUERIES
+  RETRIEVED BY 25 QUERIES
 
 RECORD The Planets (urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=):
   SOURCE:  musicbrainz
@@ -6865,7 +6865,7 @@ RECORD The Planets (urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=):
       : producer             Michel Glotz (urn:bluemarine:artist:8D_IuNqMyi0xBlMkXbi04xZuYNI=)
       : choir                RIAS Kammerchor (urn:bluemarine:artist:EUDK41ZctKfmL9kFqBR_yiXFqhM=)
       : chorus master        Uwe Gronostay (urn:bluemarine:artist:TlvIJD53Oeb_xMl904bQ0Lflzls=)
-  RETRIEVED BY 16 QUERIES
+  RETRIEVED BY 15 QUERIES
 
 RECORD Tracce della tradizione orale (urn:bluemarine:record:XICW1WJ-Am5ML_zXSNSK0ns06a4=):
   SOURCE:  embedded
@@ -6887,7 +6887,7 @@ RECORD Tracce della tradizione orale (urn:bluemarine:record:XICW1WJ-Am5ML_zXSNSK
     01/01 15 03:07 Su la rivera (urn:bluemarine:track:xCfgJdJwgqm684084-5GpqmgjnQ=) Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/15 Su la rivera.mp3 - embedded
     01/01 16 03:19 Cavalcando con un giovine accorto (urn:bluemarine:track:oKx2xdnSLCWti0FLI_uREibivuQ=) Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/16 Cavalcando con un giovine accorto.mp3 - embedded
     01/01 17 04:45 E vatende segnor mio (urn:bluemarine:track:CTnY-RilWm2BL0Y0fGAE44Bzf5s=) Patrizia Bovi&Gilberte Casabianca/Tracce della tradizione orale/17 E vatende segnor mio.mp3 - embedded
-  RETRIEVED BY 19 QUERIES
+  RETRIEVED BY 18 QUERIES
 
 RECORD Trio 99 → 00 (urn:bluemarine:record:MUOZO8uyx7KnDfsRIPUVrOYUSB8=):
   SOURCE:  musicbrainz
@@ -6939,7 +6939,7 @@ RECORD Trio 99 → 00 (urn:bluemarine:record:MUOZO8uyx7KnDfsRIPUVrOYUSB8=):
       : drums                Bill Stewart (urn:bluemarine:artist:hHDJP0Ic1ip_7XY1igxxJQEzWP4=)
       : bass                 Larry Grenadier (urn:bluemarine:artist:G-mSXhmwywDrPnW6BAOAmtIEx6U=)
       : guitar               Pat Metheny (urn:bluemarine:artist:-aF2nY8pPRci9fP0x-mexhDkJm0=)
-  RETRIEVED BY 24 QUERIES
+  RETRIEVED BY 23 QUERIES
 
 RECORD Violin Concerti (urn:bluemarine:record:w9XAlyRXYhoOirsZyhGObe3NMj8=):
   SOURCE:  musicbrainz
@@ -7000,7 +7000,7 @@ RECORD Violin Concerti (urn:bluemarine:record:w9XAlyRXYhoOirsZyhGObe3NMj8=):
       : violin               Pinchas Zukerman (urn:bluemarine:artist:4SeLNmFHI39X3USFV71K6K7gQU0=)
       : conductor            Pinchas Zukerman (urn:bluemarine:artist:4SeLNmFHI39X3USFV71K6K7gQU0=)
       : orchestra            Saint Paul Chamber Orchestra (urn:bluemarine:artist:MOAe24FnUHTTo5D2hwUXVGG-4Ac=)
-  RETRIEVED BY 26 QUERIES
+  RETRIEVED BY 25 QUERIES
 
 RECORD Vivaldi: Musica da camera e da chiesa (urn:bluemarine:record:Dsw4bQxH03U8JeeEAZ1fMkjOgXQ=):
   SOURCE:  embedded
@@ -7045,7 +7045,7 @@ RECORD Vivaldi: Musica da camera e da chiesa (urn:bluemarine:record:Dsw4bQxH03U8
     01/01 38 00:32 Sonata in D minor, "La Follia," RV 63 (urn:bluemarine:track:T2UZuS6__Sd__oiZ8P6o3DDGCL0=) London Baroque/Vivaldi_ Musica da camera e da chiesa/38 Sonata in D minor, _La Follia,_ RV 63.mp3 - embedded
     01/01 39 01:40 Sinfonia in B minor, "Al Santo Sepolcro," RV 169 (urn:bluemarine:track:iPIf0b32ADKRgLNLM94fDLyt8hA=) London Baroque/Vivaldi_ Musica da camera e da chiesa/39 Sinfonia in B minor, _Al Santo Sepolcro,_ RV 169.mp3 - embedded
     01/01 40 01:12 Sinfonia in B minor, "Al Santo Sepolcro," RV 169 (urn:bluemarine:track:rwkPTTI6aJiIvdx28K0Y5DVyFwU=) London Baroque/Vivaldi_ Musica da camera e da chiesa/40 Sinfonia in B minor, _Al Santo Sepolcro,_ RV 169.mp3 - embedded
-  RETRIEVED BY 42 QUERIES
+  RETRIEVED BY 41 QUERIES
 
 RECORD Water Music (urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=):
   SOURCE:  musicbrainz
@@ -7112,7 +7112,7 @@ RECORD Water Music (urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=):
     01/01 19 03:28 Water Music. Suite in D / G major, HWV 349 / 350: XIX. Menuet (urn:bluemarine:track:l62ZVuSIwNla-Tb16rwISuNzr9E=) Trevor Pinnock_ The English Concert/Handel_ Water Music/19 Handel_ Water Music Suite #1 In F, HWV 348 - Menuet 2.mp3 - musicbrainz
       : orchestra            The English Concert (urn:bluemarine:artist:aPPL4jAJMvzYRxj6_232FueW9MY=)
       : conductor            Trevor Pinnock (urn:bluemarine:artist:Ul-JO_8fIbkHIuQxk5mkTomld0g=)
-  RETRIEVED BY 40 QUERIES
+  RETRIEVED BY 39 QUERIES
 
 RECORD もうひとつのクリスマス (urn:bluemarine:record:Q2QW4sxqdRwCjoCYMmceTM4yd5o=):
   SOURCE:  embedded
@@ -7127,7 +7127,7 @@ RECORD もうひとつのクリスマス (urn:bluemarine:record:Q2QW4sxqdRwCjoCY
     01/01 08 05:22 天使ミサ曲より　キリエ (urn:bluemarine:track:poa_yr_3q0whsQijpOWszX-GJ8A=) Un Autre Noel/もうひとつのクリスマス/08 天使ミサ曲より　キリエ.mp3 - embedded
     01/01 09 06:02 オ・サンティッシマ (urn:bluemarine:track:8Px52KYhbgwWNK75-R6DsbTWkLQ=) Un Autre Noel/もうひとつのクリスマス/09 オ・サンティッシマ.mp3 - embedded
     01/01 10 07:55 グローリア (urn:bluemarine:track:01L_niBPzDNNf_cQhSqYEbkNxhw=) Un Autre Noel/もうひとつのクリスマス/10 グローリア.mp3 - embedded
-  RETRIEVED BY 12 QUERIES
+  RETRIEVED BY 11 QUERIES
 
 
 
@@ -7915,4 +7915,4 @@ TRACKS ORPHAN OF ARTIST (107):
 
 TRACKS ORPHAN OF RECORD (0):
 
-TOTAL NUMBER OF QUERIES: 2507
+TOTAL NUMBER OF QUERIES: 2409

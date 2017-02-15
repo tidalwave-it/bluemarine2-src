@@ -239,7 +239,7 @@ public class RepositoryEntitySupport implements Entity, Identifiable
      *
      ******************************************************************************************************************/
     @Nonnull
-    private <ENTITY, FINDER extends SourceAwareFinder<ENTITY, FINDER>> FINDER configured (final @Nonnull FINDER finder)
+    protected <ENTITY, FINDER extends SourceAwareFinder<ENTITY, FINDER>> FINDER configured (final @Nonnull FINDER finder)
       {
         return finder.importedFrom(source).withFallback(fallback);
       }

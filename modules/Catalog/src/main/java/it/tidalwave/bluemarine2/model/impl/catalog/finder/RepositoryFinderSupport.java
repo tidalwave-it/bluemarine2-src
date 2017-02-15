@@ -255,7 +255,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
      *
      ******************************************************************************************************************/
     @Override @Nonnegative
-    public final int count()
+    public int count()
       {
         return query(QueryAndParameters::getCountSparql,
                      result -> Integer.parseInt(result.next().getValue(QUERY_COUNT_HOLDER).stringValue()),
