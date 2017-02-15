@@ -162,6 +162,18 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- RUNTIME DEPENDENCIES -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
         <!-- TEST DEPENDENCIES -->
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>
@@ -182,16 +194,6 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -230,6 +232,370 @@
             </properties>
         </profile>
 
+        <!-- ===========================================================================================================
+
+        This profile builds a tar.gz assembly if it founds it descriptor at src/main/assembly/tar.gz.xml.
+
+        ============================================================================================================ -->
+        <profile>
+            <id>it.tidalwave-assembly-tar.gz</id>
+            <activation>
+                <file>
+                    <exists>src/main/assembly/tar.gz.xml</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <configuration>
+                            <descriptors combine.children="append">
+                                <descriptor>src/main/assembly/tar.gz.xml</descriptor>
+                            </descriptors>
+                            <runOnlyAtExecutionRoot>false</runOnlyAtExecutionRoot>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>make-assembly</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- ===========================================================================================================
+
+        This profile builds a zip assembly if it founds it descriptor at src/main/assembly/zip.xml.
+
+        ============================================================================================================ -->
+        <profile>
+            <id>it.tidalwave-assembly-zip</id>
+            <activation>
+                <file>
+                    <exists>src/main/assembly/zip.xml</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <configuration>
+                            <descriptors combine.children="append">
+                                <descriptor>src/main/assembly/zip.xml</descriptor>
+                            </descriptors>
+                            <runOnlyAtExecutionRoot>false</runOnlyAtExecutionRoot>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>make-assembly</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- ===========================================================================================================
+
+        This profile prepares the files for an installer, by copying all the jar dependencies to 'dist/lib' and
+        the local resources to 'dist'.
+
+        ============================================================================================================ -->
+        <profile>
+            <id>it.tidalwave-distribution-v1</id>
+            <activation>
+                <file>
+                    <exists>src/config/activate-it.tidalwave-distribution-v1-profile</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-resources</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>${project.build.directory}/dist</outputDirectory>
+                                    <resources>
+                                        <resource>
+                                            <directory>src/main/resources</directory>
+                                            <filtering>true</filtering>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-dependencies</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>copy-dependencies</goal>
+                                </goals>
+                                <configuration>
+                                    <includeScope>runtime</includeScope>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}/dist/lib</outputDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- ===========================================================================================================
+
+        This profile is the base configuration for creating a deb package It must be activated by creating the
+        file 'src/config/activate-it.tidalwave-deb-v1-profile'.
+
+        The product name must be defined in
+
+        * tdt.deb.name
+
+        and will be installed to /opt/${tdt.deb.name}.
+
+        The files to be placed in the installer are extracted from a tarball defined by:
+
+        * tft.deb.sourceTarball.groupId (defaults to ${project.id})
+        * tft.deb.sourceTarball.artifactId
+        * tft.deb.sourceTarball.version (defaults to ${project.version})
+        * tft.deb.sourceTarball.classifier (defaults to 'bin')
+
+        Files are packaged with uid/gid defined by
+
+        * tft.deb.user (defaults to root)
+        * tft.deb.group (defaults to root)
+
+        This profile must be activated together with it.tidalwave-deb-service-v1 or it.tidalwave-deb-application-v1.
+
+        ============================================================================================================ -->
+        <profile>
+            <id>it.tidalwave-deb-base-v1</id>
+            <activation>
+                <file>
+                    <exists>src/config/activate-it.tidalwave-deb-v1-profile</exists>
+                </file>
+            </activation>
+            <properties>
+                <tft.deb.sourceTarball.groupId>${project.groupId}</tft.deb.sourceTarball.groupId>
+                <tft.deb.sourceTarball.version>${project.version}</tft.deb.sourceTarball.version>
+                <tft.deb.sourceTarball.classifier>bin</tft.deb.sourceTarball.classifier>
+                <tft.deb.user>root</tft.deb.user>
+                <tft.deb.group>root</tft.deb.group>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-dependencies</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>copy</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>${tft.deb.sourceTarball.groupId}</groupId>
+                                            <artifactId>${tft.deb.sourceTarball.artifactId}</artifactId>
+                                            <version>${tft.deb.sourceTarball.version}</version>
+                                            <classifier>${tft.deb.sourceTarball.classifier}</classifier>
+                                            <type>tar.gz</type>
+                                            <overWrite>true</overWrite>
+                                            <outputDirectory>${project.build.directory}</outputDirectory>
+                                        </artifactItem>
+                                    </artifactItems>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.vafer</groupId>
+                        <artifactId>jdeb</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jdeb</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <!-- TODO: copyright? -->
+                            <dataSet combine.children="append">
+                                <data>
+                                    <type>archive</type>
+                                    <src>${project.build.directory}/${tft.deb.sourceTarball.artifactId}-${tft.deb.sourceTarball.version}-${tft.deb.sourceTarball.classifier}.tar.gz</src>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <prefix>/opt</prefix>
+                                        <user>${tft.deb.user}</user>
+                                        <group>${tft.deb.group}</group>
+                                        <!-- no permissions, preserved those in the tarball -->
+                                    </mapper>
+                                </data>
+                                <data>
+                                    <type>link</type>
+                                    <linkName>/opt/${tdt.deb.name}</linkName>
+                                    <linkTarget>/opt/${tdt.deb.name}-${project.version}</linkTarget>
+                                    <symlink>true</symlink>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <user>${tft.deb.user}</user>
+                                        <group>${tft.deb.group}</group>
+                                    </mapper>
+                                </data>
+                            </dataSet>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- ===========================================================================================================
+
+        This profile completes the configuration for creating a deb package for a service. It must be activated by
+        creating the file 'src/config/activate-it.tidalwave-deb-service-v1-profile'.
+
+        The deb package will have all the required stuff under /etc/systemd/system to automatically start the service.
+
+        Furthermore the following working directories will be created:
+
+        * /var/lib/${tft.deb.directory}
+        * /var/log/${tft.deb.directory}
+        * /var/cache/${tft.deb.directory}
+
+        The value of tft.deb.directory defaults to ${tdt.deb.name}.
+
+        ============================================================================================================ -->
+        <profile>
+            <id>it.tidalwave-deb-service-v1</id>
+            <activation>
+                <file>
+                    <exists>src/config/activate-it.tidalwave-deb-service-v1-profile</exists>
+                </file>
+            </activation>
+            <properties>
+                <tft.deb.directory>${tdt.deb.name}</tft.deb.directory>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.vafer</groupId>
+                        <artifactId>jdeb</artifactId>
+                        <configuration>
+                            <dataSet combine.children="append">
+                                <data>
+                                    <type>file</type>
+                                    <src>${project.build.directory}/classes/${tdt.deb.name}.service</src>
+                                    <dst>/etc/systemd/system/${tdt.deb.name}.service</dst>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <user>${tft.deb.user}</user>
+                                        <group>${tft.deb.group}</group>
+                                    </mapper>
+                                </data>
+                                <data>
+                                    <type>template</type>
+                                    <paths>
+                                        <path>/var/lib/${tft.deb.directory}</path>
+                                        <path>/var/log/${tft.deb.directory}</path>
+                                        <path>/var/cache/${tft.deb.directory}</path>
+                                    </paths>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <user>${tft.deb.user}</user>
+                                        <group>${tft.deb.group}</group>
+                                    </mapper>
+                                </data>
+                                <!-- FIXME: take it from the tarball? -->
+                                <data>
+                                    <type>directory</type>
+                                    <src>${project.build.directory}/classes/config</src>
+                                    <includes>**/*</includes>
+                                    <mapper>
+                                        <prefix>/var/lib/${tft.deb.directory}/config</prefix>
+                                        <type>perm</type>
+                                        <user>${tft.deb.user}</user>
+                                        <group>${tft.deb.group}</group>
+                                    </mapper>
+                                </data>
+                            </dataSet>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- ===========================================================================================================
+
+        This profile completes the configuration for creating a deb package for an application It must be activated by
+        creating the file 'src/config/activate-it.tidalwave-deb-application-v1-profile'.
+
+        The deb package will have an executable alias under /usr/bin.
+
+        ============================================================================================================ -->
+        <profile>
+            <id>it.tidalwave-deb-application-v1</id>
+            <activation>
+                <file>
+                    <exists>src/config/activate-it.tidalwave-deb-application-v1-profile</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.vafer</groupId>
+                        <artifactId>jdeb</artifactId>
+                        <configuration>
+                            <dataSet combine.children="append">
+                                <data>
+                                    <type>link</type>
+                                    <linkName>/usr/bin/${tdt.deb.name}</linkName>
+                                    <linkTarget>/opt/${tdt.deb.name}/bin/${tdt.deb.name}</linkTarget>
+                                    <symlink>true</symlink>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <user>${tft.deb.user}</user>
+                                        <group>${tft.deb.group}</group>
+                                        <dirmode>755</dirmode>
+                                        <filemode>644</filemode>
+                                    </mapper>
+                                </data>
+                            </dataSet>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- ===========================================================================================================
+
+
+        ============================================================================================================ -->
         <profile>
             <id>it.tidalwave.bluemarine2-retrieve-testsets-profile</id>
             <activation>
@@ -304,6 +670,10 @@
             </build>
         </profile>
 
+        <!-- ===========================================================================================================
+
+
+        ============================================================================================================ -->
         <profile>
             <id>installers</id>
             <activation>

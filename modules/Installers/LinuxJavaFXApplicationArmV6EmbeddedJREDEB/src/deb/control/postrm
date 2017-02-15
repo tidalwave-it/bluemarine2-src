@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if [ ! -d /opt/bluemarine2 ]; then # fix for supporting upgrade from an older version
-    deluser [[linux-user]]
-    echo "Files under /var/lib/bluemarine2/ not deleted."
-    echo "Files under /var/log/bluemarine2/ not deleted."
-    echo "Files under /var/cache/bluemarine2/ not deleted."
+if [ ! -d /opt/[[tft.deb.name]] ]; then # fix for supporting upgrade from an older version
+    deluser [[tft.deb.user]]
+    echo "Files under /var/lib/[[tft.deb.directory]]/ not deleted."
+    echo "Files under /var/log/[[tft.deb.directory]]/ not deleted."
+    echo "Files under /var/cache/[[tft.deb.directory]]/ not deleted."
     fi

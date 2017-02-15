@@ -48,7 +48,7 @@
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-application-javafx-linux-armv6-embedded-jre</artifactId>
     <version>1.0-ALPHA-20-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
     <name>blueMarine II - Installers - JavaFX Application, Linux ARM v6, embedded JRE</name>
     <description>
         This module creates a Linux ARM v6 application bundle with an embedded JRE, because JavaFX is not part of the
@@ -61,25 +61,6 @@
         <tft.embedded-jdk-classifier>linux-armv6</tft.embedded-jdk-classifier>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-application-javafx</artifactId>
-        </dependency>
-
-        <!-- FIXME: why are not brought by transitive dependencies? -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-    </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -87,7 +68,7 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>unpack-embedded-jdk</id>
+                        <id>unpack-resources</id>
                         <phase>generate-resources</phase>
                         <goals>
                             <goal>unpack</goal>
@@ -95,51 +76,51 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
+                                    <groupId>it.tidalwave.bluemarine2</groupId>
+                                    <artifactId>bluemarine2-application-javafx-linux</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>tar.gz</type>
+                                    <classifier>bin</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}/tmpdist</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
                                     <groupId>${tft.embedded-jdk-groupId}</groupId>
                                     <artifactId>${tft.embedded-jdk-artifactId}</artifactId>
                                     <version>${tft.embedded-jdk-version}</version>
                                     <type>tgz</type>
                                     <classifier>${tft.embedded-jdk-classifier}</classifier>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${project.basedir}/target/jre/${tft.embedded-jdk-name}</outputDirectory>
+                                    <outputDirectory>${project.build.directory}/dist</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <includeScope>runtime</includeScope>
-                            <overWrite>true</overWrite>
-                            <outputDirectory>${basedir}/target/classes/lib</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <descriptors>
-                        <descriptor>${basedir}/src/main/assembly/tar.gz.xml</descriptor>
-                    </descriptors>
-                    <runOnlyAtExecutionRoot>false</runOnlyAtExecutionRoot>
-                </configuration>
+                <artifactId>maven-resources-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
+                        <phase>process-test-resources</phase>
                         <goals>
-                            <goal>single</goal>
+                            <goal>copy-resources</goal>
                         </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/dist</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.build.directory}/tmpdist/bluemarine2-${project.version}</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
+
+    <!-- Lots of things happen because of activate profiles - see 'src/config' -->
 
 </project>
