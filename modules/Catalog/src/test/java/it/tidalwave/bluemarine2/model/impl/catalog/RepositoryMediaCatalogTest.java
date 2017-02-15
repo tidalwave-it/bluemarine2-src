@@ -145,9 +145,6 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         log.info("QUERYING ALL ARTISTS...");
         final List<MusicArtist> artists = allArtistsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
         final int artistsQueryCount = getLatestQueryCount();
-        log.info("QUERYING ALL RECORDS...");
-        final List<Record> records = allRecordsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
-        final int recordsQueryCount = getLatestQueryCount();
 
         getLatestQueryCount();
         log.info("QUERYING ALL TRACKS...");
@@ -162,9 +159,14 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         pw.printf("%n%n%nALL RECORDS (%d):%n%n", allRecordsFinder.count());
         final int recordCountQueryCount = getLatestQueryCount();
-        records.forEach(record -> pw.printf("  %s - %s%n", displayNameOf(record), record.getSource().orElse(new Id("unknown"))));
+        log.info("QUERYING ALL RECORDS...");
+        final List<Record> records = allRecordsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
+        records.forEach(record -> pw.printf("  %s - %d tracks - %s%n",
+                displayNameOf(record),
+                record.findTracks().count(),
+                record.getSource().orElse(new Id("unknown"))));
         pw.printf("  COUNT OF ALL RECORDS RETRIEVED BY %d QUERIES%n", recordCountQueryCount);
-        pw.printf("  ALL RECORDS RETRIEVED BY %d QUERIES%n", recordsQueryCount);
+        pw.printf("  ALL RECORDS RETRIEVED BY %d QUERIES%n", getLatestQueryCount());
 
         pw.printf("%n%n%nALL ARTISTS (%d):%n%n", allArtistsFinder.count());
         final int artistCountQueryCount = getLatestQueryCount();

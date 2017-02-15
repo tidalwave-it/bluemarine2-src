@@ -674,60 +674,60 @@ ALL TRACKS (667):
 
 ALL RECORDS (52):
 
-  Antiche danze ed arie (urn:bluemarine:record:1F54e95XN3GzM3dqB7Fo6goKKTw=) - musicbrainz
-  BWV 232 - Mass in B minor (urn:bluemarine:record:T2YeGI3AAkjoh5u2-YexDOCiRVw=) - musicbrainz
-  BWV 232 - Mass in B minor (urn:bluemarine:record:ibyd0FYhw5tl_s4HzdciU2koe28=) - musicbrainz
-  Borodin, String Quartet 2. Tchaikovsky, string Quartet 3 (urn:bluemarine:record:YKQ4jHPwkwJAgy-bkc4LqTyTRBk=) - embedded
-  Callas - La Mamma Morta (urn:bluemarine:record:nhs0L_SwurFvHNLnhkB-lb7PXGw=) - embedded
-  Canto Gregoriano (urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=) - musicbrainz
-  Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=) - musicbrainz
-  Cello Concertos (urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=) - musicbrainz
-  Cherubini: 6 Piano Sonatas (urn:bluemarine:record:y-9LEwSNAaiGXcBEAhHL47FZzTs=) - embedded
-  Daniel And The Lions - Ludus Danielis (urn:bluemarine:record:ONiNKoLC69EuihrDlMBpTEUyZpo=) - embedded
-  Die Konzerte für 3 und 4 Cembali (urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=) - musicbrainz
-  El canto espiritual judeoespañol (urn:bluemarine:record:4pMF6vUDJ40E2Dz2REpAbcD2Wg0=) - musicbrainz
-  Fantasie, op. 17 / Sonate, op. 11 (urn:bluemarine:record:mdrEbrVkOfi1tkP60fl8AgxwTb4=) - musicbrainz
-  Gregorian Chant (urn:bluemarine:record:RS8O3XsTBj8T4PjZd6xdn6JhGo0=) - musicbrainz
-  Handel: Messiah (Highlights) (urn:bluemarine:record:1k6gcfB56OBfXqNiE-HR02Rdw30=) - embedded
-  Johannes Brahms, Robert Schumann (urn:bluemarine:record:273watVY3CmVFx_BX8oc4D9uoXc=) - embedded
-  La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=) - musicbrainz
-  La Divina 2 (urn:bluemarine:record:1YnSzOtRCbFKmcAnNRKLtDXCE8w=) - embedded
-  La Domna Savorousa : Chants d’amour des troubadours et des trouvères (urn:bluemarine:record:0bYRbWOJwZTV0bUoFtX9eAutVDo=) - embedded
-  Le Sacre du Printemps (urn:bluemarine:record:A9sE-QiqGiQKtpf2awIcPUwIj60=) - musicbrainz
-  Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=) - musicbrainz
-  Marais: Pièces À Deux Violes 1686 (urn:bluemarine:record:EnMA3YnQFdiNszrbyP2pXp5p6T0=) - embedded
-  Melodie Sacre (urn:bluemarine:record:7lSAGzNHnF2-e3quBGWw-jPvZaU=) - musicbrainz
-  Mostly French (urn:bluemarine:record:7rmCg7VLnlUoP3iM8Wb5e8LT1Qo=) - embedded
-  Music for the Royal Fireworks / 2 Concerti a due cori (urn:bluemarine:record:VBATFSBWyIkSTmS7krwQknkPxKk=) - musicbrainz
-  Nutcracker / Swan Lake (urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=) - musicbrainz
-  O tu chara sciença: La musique dans la pensée médiévale (urn:bluemarine:record:-Yh_lYTG5GrYQCcFwFQGUNWpFTw=) - embedded
-  Paulus (urn:bluemarine:record:NUrVuwe4aaPzaFux_alU_KN-Qlw=) - musicbrainz
-  Paulus (urn:bluemarine:record:w-_C1vyv2c98gVeX9oxSgvdDYKs=) - musicbrainz
-  Piano Concerto no. 2 (urn:bluemarine:record:SYU0KpAuaB2R5tfk3ZGjhYiS2-c=) - musicbrainz
-  Piano Concertos (urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=) - musicbrainz
-  Pieces de Clavecin (urn:bluemarine:record:axDVyOkWODiJThhLeoM16wCkHMk=) - embedded
-  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=) - musicbrainz
-  Ravel: Gaspard de la Nuit / Prokofiev: Piano Sonata no. 6 (urn:bluemarine:record:YiFcrqdWnIFQm1T5VTtEMDwZqLs=) - musicbrainz
-  Rimsky-Korsakov: Scheherazade (urn:bluemarine:record:lvz3awtgypL8BcvbSyA2iWGTxIU=) - embedded
-  Rossini Overtures (urn:bluemarine:record:UD4cQn5pukIL0z0dU4vs4l7Ih6I=) - embedded
-  Satchmo 2 (urn:bluemarine:record:Ew6KqV-akvEbj1Oq-L24kCjKjxA=) - embedded
-  Schubert: Arpeggione Sonata / Schumann: Fünf Stücke im Volkston / Debussy: Cello Sonata (urn:bluemarine:record:BDC4cW1q5WDo0tsG-G5GwK43iYQ=) - musicbrainz
-  Sonaten »Waldstein · Les Adieux · Appassionata« (urn:bluemarine:record:TIwQL8Nf1R02SmbLJckDUAvrFw4=) - musicbrainz
-  String Quartets Vol. 3 Op.18 Nos. 5 & 6 (urn:bluemarine:record:gtATvQUdbPaxAr0TKf8EHf7nX9Y=) - embedded
-  Symphonie no. 4 (urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=) - musicbrainz
-  Symphonien nos. 8 & 9 »Aus der Neuen Welt« (urn:bluemarine:record:FVeGdI4WGJpF1ATf2UhCuaQdtok=) - musicbrainz
-  Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi" / no. 8 "Le Soir" (urn:bluemarine:record:2g-5pZq0VX2fdmS0kOFUT5b4n5c=) - musicbrainz
-  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=) - musicbrainz
-  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=) - musicbrainz
-  The Planets (urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=) - musicbrainz
-  Tracce della tradizione orale (urn:bluemarine:record:XICW1WJ-Am5ML_zXSNSK0ns06a4=) - embedded
-  Trio 99 → 00 (urn:bluemarine:record:MUOZO8uyx7KnDfsRIPUVrOYUSB8=) - musicbrainz
-  Violin Concerti (urn:bluemarine:record:w9XAlyRXYhoOirsZyhGObe3NMj8=) - musicbrainz
-  Vivaldi: Musica da camera e da chiesa (urn:bluemarine:record:Dsw4bQxH03U8JeeEAZ1fMkjOgXQ=) - embedded
-  Water Music (urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=) - musicbrainz
-  もうひとつのクリスマス (urn:bluemarine:record:Q2QW4sxqdRwCjoCYMmceTM4yd5o=) - embedded
+  Antiche danze ed arie (urn:bluemarine:record:1F54e95XN3GzM3dqB7Fo6goKKTw=) - 12 tracks - musicbrainz
+  BWV 232 - Mass in B minor (urn:bluemarine:record:T2YeGI3AAkjoh5u2-YexDOCiRVw=) - 11 tracks - musicbrainz
+  BWV 232 - Mass in B minor (urn:bluemarine:record:ibyd0FYhw5tl_s4HzdciU2koe28=) - 14 tracks - musicbrainz
+  Borodin, String Quartet 2. Tchaikovsky, string Quartet 3 (urn:bluemarine:record:YKQ4jHPwkwJAgy-bkc4LqTyTRBk=) - 8 tracks - embedded
+  Callas - La Mamma Morta (urn:bluemarine:record:nhs0L_SwurFvHNLnhkB-lb7PXGw=) - 3 tracks - embedded
+  Canto Gregoriano (urn:bluemarine:record:ynfbVh0FTcIsvzPvP3tPAFCzdWc=) - 14 tracks - musicbrainz
+  Canto Gregoriano (urn:bluemarine:record:WittR1wvpte0nbrcOBRVyX4km6E=) - 18 tracks - musicbrainz
+  Cello Concertos (urn:bluemarine:record:p2sHUnd8Ny9Qt_H8tfqPMsMI2n0=) - 7 tracks - musicbrainz
+  Cherubini: 6 Piano Sonatas (urn:bluemarine:record:y-9LEwSNAaiGXcBEAhHL47FZzTs=) - 12 tracks - embedded
+  Daniel And The Lions - Ludus Danielis (urn:bluemarine:record:ONiNKoLC69EuihrDlMBpTEUyZpo=) - 13 tracks - embedded
+  Die Konzerte für 3 und 4 Cembali (urn:bluemarine:record:3G3mWzOfMH-IId27vbyug5Fx3OI=) - 9 tracks - musicbrainz
+  El canto espiritual judeoespañol (urn:bluemarine:record:4pMF6vUDJ40E2Dz2REpAbcD2Wg0=) - 14 tracks - musicbrainz
+  Fantasie, op. 17 / Sonate, op. 11 (urn:bluemarine:record:mdrEbrVkOfi1tkP60fl8AgxwTb4=) - 7 tracks - musicbrainz
+  Gregorian Chant (urn:bluemarine:record:RS8O3XsTBj8T4PjZd6xdn6JhGo0=) - 22 tracks - musicbrainz
+  Handel: Messiah (Highlights) (urn:bluemarine:record:1k6gcfB56OBfXqNiE-HR02Rdw30=) - 14 tracks - embedded
+  Johannes Brahms, Robert Schumann (urn:bluemarine:record:273watVY3CmVFx_BX8oc4D9uoXc=) - 3 tracks - embedded
+  La Divina 2 (urn:bluemarine:record:Zm9aaWLx9ouJ-ziNtjwc3BTGMJU=) - 1 tracks - musicbrainz
+  La Divina 2 (urn:bluemarine:record:1YnSzOtRCbFKmcAnNRKLtDXCE8w=) - 15 tracks - embedded
+  La Domna Savorousa : Chants d’amour des troubadours et des trouvères (urn:bluemarine:record:0bYRbWOJwZTV0bUoFtX9eAutVDo=) - 14 tracks - embedded
+  Le Sacre du Printemps (urn:bluemarine:record:A9sE-QiqGiQKtpf2awIcPUwIj60=) - 14 tracks - musicbrainz
+  Le quattro stagioni (urn:bluemarine:record:D_mnkuuxKrxFL7Cj1nt5auEKUGc=) - 15 tracks - musicbrainz
+  Marais: Pièces À Deux Violes 1686 (urn:bluemarine:record:EnMA3YnQFdiNszrbyP2pXp5p6T0=) - 18 tracks - embedded
+  Melodie Sacre (urn:bluemarine:record:7lSAGzNHnF2-e3quBGWw-jPvZaU=) - 26 tracks - musicbrainz
+  Mostly French (urn:bluemarine:record:7rmCg7VLnlUoP3iM8Wb5e8LT1Qo=) - 8 tracks - embedded
+  Music for the Royal Fireworks / 2 Concerti a due cori (urn:bluemarine:record:VBATFSBWyIkSTmS7krwQknkPxKk=) - 16 tracks - musicbrainz
+  Nutcracker / Swan Lake (urn:bluemarine:record:072fR_mhzLy7EBA6wohpV7S2XzI=) - 18 tracks - musicbrainz
+  O tu chara sciença: La musique dans la pensée médiévale (urn:bluemarine:record:-Yh_lYTG5GrYQCcFwFQGUNWpFTw=) - 20 tracks - embedded
+  Paulus (urn:bluemarine:record:NUrVuwe4aaPzaFux_alU_KN-Qlw=) - 22 tracks - musicbrainz
+  Paulus (urn:bluemarine:record:w-_C1vyv2c98gVeX9oxSgvdDYKs=) - 19 tracks - musicbrainz
+  Piano Concerto no. 2 (urn:bluemarine:record:SYU0KpAuaB2R5tfk3ZGjhYiS2-c=) - 4 tracks - musicbrainz
+  Piano Concertos (urn:bluemarine:record:MaLx3SknlUE-Ri3uNueZZZ8sgt8=) - 6 tracks - musicbrainz
+  Pieces de Clavecin (urn:bluemarine:record:axDVyOkWODiJThhLeoM16wCkHMk=) - 16 tracks - embedded
+  Pure Ella: The Very Best of Ella Fitzgerald (urn:bluemarine:record:4jBJMIdZWWmD0_4sdhq4f6jRJmo=) - 18 tracks - musicbrainz
+  Ravel: Gaspard de la Nuit / Prokofiev: Piano Sonata no. 6 (urn:bluemarine:record:YiFcrqdWnIFQm1T5VTtEMDwZqLs=) - 7 tracks - musicbrainz
+  Rimsky-Korsakov: Scheherazade (urn:bluemarine:record:lvz3awtgypL8BcvbSyA2iWGTxIU=) - 11 tracks - embedded
+  Rossini Overtures (urn:bluemarine:record:UD4cQn5pukIL0z0dU4vs4l7Ih6I=) - 8 tracks - embedded
+  Satchmo 2 (urn:bluemarine:record:Ew6KqV-akvEbj1Oq-L24kCjKjxA=) - 15 tracks - embedded
+  Schubert: Arpeggione Sonata / Schumann: Fünf Stücke im Volkston / Debussy: Cello Sonata (urn:bluemarine:record:BDC4cW1q5WDo0tsG-G5GwK43iYQ=) - 11 tracks - musicbrainz
+  Sonaten »Waldstein · Les Adieux · Appassionata« (urn:bluemarine:record:TIwQL8Nf1R02SmbLJckDUAvrFw4=) - 10 tracks - musicbrainz
+  String Quartets Vol. 3 Op.18 Nos. 5 & 6 (urn:bluemarine:record:gtATvQUdbPaxAr0TKf8EHf7nX9Y=) - 8 tracks - embedded
+  Symphonie no. 4 (urn:bluemarine:record:DY8Iy0AeKKcBkwAFrChyXvcGCaw=) - 4 tracks - musicbrainz
+  Symphonien nos. 8 & 9 »Aus der Neuen Welt« (urn:bluemarine:record:FVeGdI4WGJpF1ATf2UhCuaQdtok=) - 8 tracks - musicbrainz
+  Symphonies: no. 6 "Le Matin" / no. 7 "Le Midi" / no. 8 "Le Soir" (urn:bluemarine:record:2g-5pZq0VX2fdmS0kOFUT5b4n5c=) - 13 tracks - musicbrainz
+  The Incomparable Callas (urn:bluemarine:record:UlUreZvjoDsL1XhhSM3FIt_Oi4A=) - 13 tracks - musicbrainz
+  The Magic of The French Horn: Greatest Concertos (urn:bluemarine:record:wZlPTY2VyTHxKtOfkWxbKIl95lQ=) - 12 tracks - musicbrainz
+  The Planets (urn:bluemarine:record:q1xQJLFMJZp_ozP-bT8iJUKw70I=) - 7 tracks - musicbrainz
+  Tracce della tradizione orale (urn:bluemarine:record:XICW1WJ-Am5ML_zXSNSK0ns06a4=) - 17 tracks - embedded
+  Trio 99 → 00 (urn:bluemarine:record:MUOZO8uyx7KnDfsRIPUVrOYUSB8=) - 11 tracks - musicbrainz
+  Violin Concerti (urn:bluemarine:record:w9XAlyRXYhoOirsZyhGObe3NMj8=) - 12 tracks - musicbrainz
+  Vivaldi: Musica da camera e da chiesa (urn:bluemarine:record:Dsw4bQxH03U8JeeEAZ1fMkjOgXQ=) - 40 tracks - embedded
+  Water Music (urn:bluemarine:record:RtbdPOoSR9kHIbquk5Tj40tMBrA=) - 19 tracks - musicbrainz
+  もうひとつのクリスマス (urn:bluemarine:record:Q2QW4sxqdRwCjoCYMmceTM4yd5o=) - 10 tracks - embedded
   COUNT OF ALL RECORDS RETRIEVED BY 1 QUERIES
-  ALL RECORDS RETRIEVED BY 1 QUERIES
+  ALL RECORDS RETRIEVED BY 53 QUERIES
 
 
 
@@ -7915,4 +7915,4 @@ TRACKS ORPHAN OF ARTIST (107):
 
 TRACKS ORPHAN OF RECORD (0):
 
-TOTAL NUMBER OF QUERIES: 2455
+TOTAL NUMBER OF QUERIES: 2507

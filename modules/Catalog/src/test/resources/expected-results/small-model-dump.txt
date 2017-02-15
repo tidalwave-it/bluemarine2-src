@@ -8,9 +8,9 @@ ALL TRACKS (1):
 
 ALL RECORDS (1):
 
-  The Copland Collection: Orchestral and Ballet Works, 1936-1948 (disc 1) (http://dbtune.org/musicbrainz/resource/record/86af8470-fe29-45c2-8831-4322a7e2f4fe) - embedded
+  The Copland Collection: Orchestral and Ballet Works, 1936-1948 (disc 1) (http://dbtune.org/musicbrainz/resource/record/86af8470-fe29-45c2-8831-4322a7e2f4fe) - 1 tracks - embedded
   COUNT OF ALL RECORDS RETRIEVED BY 1 QUERIES
-  ALL RECORDS RETRIEVED BY 1 QUERIES
+  ALL RECORDS RETRIEVED BY 2 QUERIES
 
 
 
@@ -52,4 +52,4 @@ TRACKS ORPHAN OF ARTIST (0):
 
 TRACKS ORPHAN OF RECORD (0):
 
-TOTAL NUMBER OF QUERIES: 19
+TOTAL NUMBER OF QUERIES: 20

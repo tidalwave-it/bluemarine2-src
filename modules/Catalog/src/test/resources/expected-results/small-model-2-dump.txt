@@ -13,9 +13,9 @@ ALL TRACKS (6):
 
 ALL RECORDS (1):
 
-  Rhapsody in Blue / An American in Paris / Piano Concerto in F (urn:bluemarine:record:G2sUZ3I4bU9K81ReZahL5Tljzr4=) - musicbrainz
+  Rhapsody in Blue / An American in Paris / Piano Concerto in F (urn:bluemarine:record:G2sUZ3I4bU9K81ReZahL5Tljzr4=) - 6 tracks - musicbrainz
   COUNT OF ALL RECORDS RETRIEVED BY 1 QUERIES
-  ALL RECORDS RETRIEVED BY 1 QUERIES
+  ALL RECORDS RETRIEVED BY 2 QUERIES
 
 
 
@@ -117,4 +117,4 @@ TRACKS ORPHAN OF ARTIST (0):
 
 TRACKS ORPHAN OF RECORD (0):
 
-TOTAL NUMBER OF QUERIES: 38
+TOTAL NUMBER OF QUERIES: 39

@@ -221,26 +221,26 @@ ALL TRACKS (214):
 
 ALL RECORDS (18):
 
-  Bach: Sonatas and Partitas (urn:bluemarine:record:p5HgGt5h7MMmt2ikUEip19oqT_c=) - embedded
-  Carioca (urn:bluemarine:record:A5hGxftTL07vxkmaHnUN1S3_B-o=) - embedded
-  La Vida de María - Cantigas de las Fiestas de Santa María (urn:bluemarine:record:P28-bc3cgyN1W364oAPEbejdjeU=) - embedded
-  Legacy of the Scottish Fiddle (urn:bluemarine:record:NEhoQUjTuyiwfNyNLkiQCbZEbLg=) - embedded
-  Messe de Nostre Dame (Taverner Consort & Choir feat. conductor Andrew Parrott) (urn:bluemarine:record:SPuWFRuyg7H5RODRkYpkURe1Fpw=) - embedded
-  Notker Balbulus: Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen (urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=) - embedded
-  Quartet Live! (urn:bluemarine:record:8v-F90LOubN-fEJrz6cvf-_a8MI=) - embedded
-  Rimsky-Korsakov: Scheherazade (urn:bluemarine:record:lvz3awtgypL8BcvbSyA2iWGTxIU=) - embedded
-  Sheherazade (urn:bluemarine:record:JwlFGfR8CPd8Ko4_aP5K20qhJ0k=) - embedded
-  Soil Festivities (urn:bluemarine:record:D2IRPvMCAE25ee9ySY9F9Ml0abo=) - embedded
-  Somethin' Else (urn:bluemarine:record:5W5viinqxMWqqyAGPvuH7z_0gfI=) - embedded
-  Sonatas and Partitas for Solo Violin (urn:bluemarine:record:0VhLYnW37d1Oq-OpfZTLxKJohq0=) - embedded
-  Soundbite (urn:bluemarine:record:yD8dWAE0u9Re4E96M84o04Qpvec=) - embedded
-  Tre sogni (urn:bluemarine:record:HQ8eE0JuRv3UQDUeXRN4KG1UbY4=) - embedded
-  Tributo a Lucio Battisti (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito & Giuseppe La Pusata) (urn:bluemarine:record:xaTzhov6wDgKmFQ9Tgc6YqXC3gQ=) - embedded
-  Upojenie (urn:bluemarine:record:5FSHbw3UKirpCA-GFuhcZDEYEp8=) - embedded
-  What's It All About (urn:bluemarine:record:flc7yvriASGIWSszgYUkRhdzp9c=) - embedded
-  Zoom - Film Themes (urn:bluemarine:record:D4CamNE3LQpwf4FndhvmPtRlSXA=) - embedded
+  Bach: Sonatas and Partitas (urn:bluemarine:record:p5HgGt5h7MMmt2ikUEip19oqT_c=) - 4 tracks - embedded
+  Carioca (urn:bluemarine:record:A5hGxftTL07vxkmaHnUN1S3_B-o=) - 16 tracks - embedded
+  La Vida de María - Cantigas de las Fiestas de Santa María (urn:bluemarine:record:P28-bc3cgyN1W364oAPEbejdjeU=) - 21 tracks - embedded
+  Legacy of the Scottish Fiddle (urn:bluemarine:record:NEhoQUjTuyiwfNyNLkiQCbZEbLg=) - 21 tracks - embedded
+  Messe de Nostre Dame (Taverner Consort & Choir feat. conductor Andrew Parrott) (urn:bluemarine:record:SPuWFRuyg7H5RODRkYpkURe1Fpw=) - 18 tracks - embedded
+  Notker Balbulus: Sequnezen, Tropen & Gregorianischer Choral aud dem Kloster St. Gallen (urn:bluemarine:record:XoqvktWLs6mu64qGOxQ3NyPzXVY=) - 17 tracks - embedded
+  Quartet Live! (urn:bluemarine:record:8v-F90LOubN-fEJrz6cvf-_a8MI=) - 11 tracks - embedded
+  Rimsky-Korsakov: Scheherazade (urn:bluemarine:record:lvz3awtgypL8BcvbSyA2iWGTxIU=) - 2 tracks - embedded
+  Sheherazade (urn:bluemarine:record:JwlFGfR8CPd8Ko4_aP5K20qhJ0k=) - 4 tracks - embedded
+  Soil Festivities (urn:bluemarine:record:D2IRPvMCAE25ee9ySY9F9Ml0abo=) - 5 tracks - embedded
+  Somethin' Else (urn:bluemarine:record:5W5viinqxMWqqyAGPvuH7z_0gfI=) - 6 tracks - embedded
+  Sonatas and Partitas for Solo Violin (urn:bluemarine:record:0VhLYnW37d1Oq-OpfZTLxKJohq0=) - 28 tracks - embedded
+  Soundbite (urn:bluemarine:record:yD8dWAE0u9Re4E96M84o04Qpvec=) - 12 tracks - embedded
+  Tre sogni (urn:bluemarine:record:HQ8eE0JuRv3UQDUeXRN4KG1UbY4=) - 8 tracks - embedded
+  Tributo a Lucio Battisti (feat. Sandro Deidda, Alessandro Castiglione, Pierpaolo Bisogno, Guglielmo Guglielmi, Aldo Vigorito & Giuseppe La Pusata) (urn:bluemarine:record:xaTzhov6wDgKmFQ9Tgc6YqXC3gQ=) - 8 tracks - embedded
+  Upojenie (urn:bluemarine:record:5FSHbw3UKirpCA-GFuhcZDEYEp8=) - 17 tracks - embedded
+  What's It All About (urn:bluemarine:record:flc7yvriASGIWSszgYUkRhdzp9c=) - 2 tracks - embedded
+  Zoom - Film Themes (urn:bluemarine:record:D4CamNE3LQpwf4FndhvmPtRlSXA=) - 14 tracks - embedded
   COUNT OF ALL RECORDS RETRIEVED BY 1 QUERIES
-  ALL RECORDS RETRIEVED BY 1 QUERIES
+  ALL RECORDS RETRIEVED BY 19 QUERIES
 
 
 
@@ -1235,4 +1235,4 @@ TRACKS ORPHAN OF ARTIST (0):
 
 TRACKS ORPHAN OF RECORD (0):
 
-TOTAL NUMBER OF QUERIES: 434
+TOTAL NUMBER OF QUERIES: 452

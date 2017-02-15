@@ -157,22 +157,22 @@ ALL TRACKS (150):
 
 ALL RECORDS (14):
 
-  Empyrean Isles (The Rudy Van Gelder Edition) (urn:bluemarine:record:dixhfU1CMmUSXDlaE3u8Dtr_XG4=) - embedded
-  Fitzgerald & Pass...Again (urn:bluemarine:record:H2kI-cHz7pI-uDq5PvV7fgG_R14=) - embedded
-  I Can See Your House From Here (urn:bluemarine:record:QL-A6syFwPY5XCc52i22u3VvhJA=) - embedded
-  Kind Of Blue (Amazon Edition) (urn:bluemarine:record:6_dgxK-UQ2fO0dhAJY29xyMthxc=) - embedded
-  Maiden Voyage (The Rudy Van Gelder Edition) (urn:bluemarine:record:eAmukeW4wSFaoFoAVOfGZ9Qts8g=) - embedded
-  Monk's Blues (urn:bluemarine:record:j9O4FGH45wXJi8gVL1iFoHSCNRY=) - embedded
-  Orchestrion (urn:bluemarine:record:btDif3r3mgzt3cOWjXPPAs4gb_g=) - embedded
-  Songs In The Key Of Life (urn:bluemarine:record:kYBL2HWEEjdYC7tL2NY5DRTtG1k=) - embedded
-  Speak Love (urn:bluemarine:record:3MZBxRF7vHm9HIon7caMBvRyBe4=) - embedded
-  Standard Coltrane (Rudy Van Gelder Remaster) (urn:bluemarine:record:UZ9WpMFVyppjYUHgKmJ2_NlJ0AU=) - embedded
-  Unity Band (urn:bluemarine:record:iw2oIy2-BYGLzvaKeJW85PL1EDQ=) - embedded
-  We Live Here (urn:bluemarine:record:QNCU3HbwLRZmUBxxyXrDJGsciDU=) - embedded
-  What's It All About (urn:bluemarine:record:flc7yvriASGIWSszgYUkRhdzp9c=) - embedded
-  You're Mine, You (Original Album Plus Bonus Tracks 1961) (urn:bluemarine:record:NKq41KgvsvRfJJ24Nze0kLCrDTk=) - embedded
+  Empyrean Isles (The Rudy Van Gelder Edition) (urn:bluemarine:record:dixhfU1CMmUSXDlaE3u8Dtr_XG4=) - 6 tracks - embedded
+  Fitzgerald & Pass...Again (urn:bluemarine:record:H2kI-cHz7pI-uDq5PvV7fgG_R14=) - 14 tracks - embedded
+  I Can See Your House From Here (urn:bluemarine:record:QL-A6syFwPY5XCc52i22u3VvhJA=) - 11 tracks - embedded
+  Kind Of Blue (Amazon Edition) (urn:bluemarine:record:6_dgxK-UQ2fO0dhAJY29xyMthxc=) - 20 tracks - embedded
+  Maiden Voyage (The Rudy Van Gelder Edition) (urn:bluemarine:record:eAmukeW4wSFaoFoAVOfGZ9Qts8g=) - 5 tracks - embedded
+  Monk's Blues (urn:bluemarine:record:j9O4FGH45wXJi8gVL1iFoHSCNRY=) - 11 tracks - embedded
+  Orchestrion (urn:bluemarine:record:btDif3r3mgzt3cOWjXPPAs4gb_g=) - 5 tracks - embedded
+  Songs In The Key Of Life (urn:bluemarine:record:kYBL2HWEEjdYC7tL2NY5DRTtG1k=) - 21 tracks - embedded
+  Speak Love (urn:bluemarine:record:3MZBxRF7vHm9HIon7caMBvRyBe4=) - 10 tracks - embedded
+  Standard Coltrane (Rudy Van Gelder Remaster) (urn:bluemarine:record:UZ9WpMFVyppjYUHgKmJ2_NlJ0AU=) - 4 tracks - embedded
+  Unity Band (urn:bluemarine:record:iw2oIy2-BYGLzvaKeJW85PL1EDQ=) - 9 tracks - embedded
+  We Live Here (urn:bluemarine:record:QNCU3HbwLRZmUBxxyXrDJGsciDU=) - 9 tracks - embedded
+  What's It All About (urn:bluemarine:record:flc7yvriASGIWSszgYUkRhdzp9c=) - 11 tracks - embedded
+  You're Mine, You (Original Album Plus Bonus Tracks 1961) (urn:bluemarine:record:NKq41KgvsvRfJJ24Nze0kLCrDTk=) - 14 tracks - embedded
   COUNT OF ALL RECORDS RETRIEVED BY 1 QUERIES
-  ALL RECORDS RETRIEVED BY 1 QUERIES
+  ALL RECORDS RETRIEVED BY 15 QUERIES
 
 
 
@@ -849,4 +849,4 @@ TRACKS ORPHAN OF ARTIST (0):
 
 TRACKS ORPHAN OF RECORD (0):
 
-TOTAL NUMBER OF QUERIES: 282
+TOTAL NUMBER OF QUERIES: 296
