@@ -26,29 +26,37 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.util;
+package it.tidalwave.bluemarine2.rest.impl.resource;
 
-import java.io.File;
-import static lombok.AccessLevel.PRIVATE;
-import lombok.NoArgsConstructor;
+import javax.annotation.Nonnull;
+import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import it.tidalwave.bluemarine2.model.Record;
+import lombok.Getter;
 
 /***********************************************************************************************************************
  *
+ * An adapter for exporting {@link Record} in REST.
+ * FIXME: differentiating the serialized fields should be done with JsonView
+ *
+ * @stereotype  Adapter
+ *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
- * @version $Id$
+ * @version $Id: $
  *
  **********************************************************************************************************************/
-@NoArgsConstructor(access = PRIVATE)
-public final class Logging
+@Getter
+@JsonInclude(JsonInclude.Include.NON_ABSENT)
+@JsonPropertyOrder(alphabetic = true)
+public class DetailedRecordResource extends RecordResource
   {
-    private static final String PROP_LOG_OLDER = "blueMarine2.logFolder";
+    private final List<TrackResource> tracks;
 
-    public static void setupLogFolder()
+    public DetailedRecordResource (final @Nonnull Record record, final @Nonnull List<TrackResource> tracks)
       {
-        if (System.getProperty(PROP_LOG_OLDER) == null)
-          {
-            final String logFolder = new File(System.getProperty("user.home"), ".blueMarine2/logs").getAbsolutePath();
-            System.setProperty(PROP_LOG_OLDER, logFolder);
-          }
+        super(record);
+        this.details = null;
+        this.tracks  = tracks;
       }
   }

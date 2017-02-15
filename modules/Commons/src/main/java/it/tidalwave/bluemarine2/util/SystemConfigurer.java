@@ -26,37 +26,44 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.rest.impl;
+package it.tidalwave.bluemarine2.util;
 
-import javax.annotation.Nonnull;
-import java.util.List;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import it.tidalwave.bluemarine2.model.Record;
-import lombok.Getter;
+import lombok.NoArgsConstructor;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
- * An adapter for exporting {@link Record} in JSON.
- * FIXME: differentiating the serialized fields should be done with JsonView
- *
- * @stereotype  Adapter
- *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
- * @version $Id: $
+ * @version $Id$
  *
  **********************************************************************************************************************/
-@Getter
-@JsonInclude(JsonInclude.Include.NON_ABSENT)
-@JsonPropertyOrder(alphabetic = true)
-public class DetailedRecordJson extends RecordJson
+@NoArgsConstructor(access = PRIVATE)
+public final class SystemConfigurer
   {
-    private final List<TrackJson> tracks;
-
-    public DetailedRecordJson (final @Nonnull Record record, final @Nonnull List<TrackJson> tracks)
+    public static void setSystemProperties()
       {
-        super(record);
-        this.details = null;
-        this.tracks  = tracks;
+        final String home = System.getProperty("user.home", "/tmp");
+        final String osName = System.getProperty("os.name").toLowerCase();
+
+        switch (osName)
+          {
+            case "linux":
+                // on Linux we define paths in the launcher shell
+                break;
+
+            case "mac os x":
+                final String workspace = home + "/Library/Application Support/blueMarine2";
+                System.setProperty("blueMarine2.workspace", workspace);
+                System.setProperty("blueMarine2.logFolder", workspace + "/logs");
+                System.setProperty("blueMarine2.logConfigOverride", workspace + "/config/logback-override.xml");
+                break;
+
+            case "windows":
+                // FIXME todo
+                break;
+
+            default:
+                throw new ExceptionInInitializerError("Unknown o.s.: " + osName);
+          }
       }
   }
