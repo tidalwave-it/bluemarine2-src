@@ -6,12 +6,16 @@ ALL TRACKS (6):
   01/01 05 12:13 Piano Concerto in F: II. Adagio (urn:bluemarine:track:Fp1FWEYVodnGHjX7o29Tx87fAMQ=) André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/05 Gershwin_ Piano Concerto In F - 2. Adagio.mp3 - musicbrainz
   01/01 06 06:43 Piano Concerto in F: III. Allegro agitato (urn:bluemarine:track:l5H--6cVcL5ornm2A-KXh6hIGcg=) André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/06 Gershwin_ Piano Concerto In F - 3. Allegro Agitato.mp3 - musicbrainz
   01/01 01 14:00 Rhapsody in Blue (urn:bluemarine:track:ti--DcuRbu-CvkamJ1pc6B_EL7E=) André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/01 Gershwin_ Rhapsody In Blue.mp3 - musicbrainz
+  COUNT OF ALL TRACKS RETRIEVED BY 1 QUERIES
+  ALL TRACKS RETRIEVED BY 1 QUERIES
 
 
 
 ALL RECORDS (1):
 
-  Rhapsody in Blue / An American in Paris / Piano Concerto in F (urn:bluemarine:record:G2sUZ3I4bU9K81ReZahL5Tljzr4=) - musicbrainz
+  Rhapsody in Blue / An American in Paris / Piano Concerto in F (urn:bluemarine:record:G2sUZ3I4bU9K81ReZahL5Tljzr4=) - 6 tracks - musicbrainz
+  COUNT OF ALL RECORDS RETRIEVED BY 1 QUERIES
+  ALL RECORDS RETRIEVED BY 1 QUERIES
 
 
 
@@ -19,6 +23,8 @@ ALL ARTISTS (2):
 
   André Previn (urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=) - musicbrainz
   Pittsburgh Symphony Orchestra (urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=) - musicbrainz
+  COUNT OF ALL ARTISTS RETRIEVED BY 1 QUERIES
+  ALL ARTISTS RETRIEVED BY 1 QUERIES
 
 TRACKS OF André Previn (urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=) (6):
   01/01 01 14:00 Rhapsody in Blue (urn:bluemarine:track:ti--DcuRbu-CvkamJ1pc6B_EL7E=) André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/01 Gershwin_ Rhapsody In Blue.mp3 - musicbrainz
@@ -27,6 +33,7 @@ TRACKS OF André Previn (urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=) (6)
   01/01 04 12:56 Piano Concerto in F: I. Allegro (urn:bluemarine:track:ayfhPAPfeVWXNYHx6NYuU_EGKXE=) André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/04 Gershwin_ Piano Concerto In F - 1. Allegro.mp3 - musicbrainz
   01/01 05 12:13 Piano Concerto in F: II. Adagio (urn:bluemarine:track:Fp1FWEYVodnGHjX7o29Tx87fAMQ=) André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/05 Gershwin_ Piano Concerto In F - 2. Adagio.mp3 - musicbrainz
   01/01 06 06:43 Piano Concerto in F: III. Allegro agitato (urn:bluemarine:track:l5H--6cVcL5ornm2A-KXh6hIGcg=) André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/06 Gershwin_ Piano Concerto In F - 3. Allegro Agitato.mp3 - musicbrainz
+  RETRIEVED BY 2 QUERIES
 
 TRACKS OF Pittsburgh Symphony Orchestra (urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=) (6):
   01/01 01 14:00 Rhapsody in Blue (urn:bluemarine:track:ti--DcuRbu-CvkamJ1pc6B_EL7E=) André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/01 Gershwin_ Rhapsody In Blue.mp3 - musicbrainz
@@ -35,12 +42,15 @@ TRACKS OF Pittsburgh Symphony Orchestra (urn:bluemarine:artist:GbuyCRRvZpp3rLhOu
   01/01 04 12:56 Piano Concerto in F: I. Allegro (urn:bluemarine:track:ayfhPAPfeVWXNYHx6NYuU_EGKXE=) André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/04 Gershwin_ Piano Concerto In F - 1. Allegro.mp3 - musicbrainz
   01/01 05 12:13 Piano Concerto in F: II. Adagio (urn:bluemarine:track:Fp1FWEYVodnGHjX7o29Tx87fAMQ=) André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/05 Gershwin_ Piano Concerto In F - 2. Adagio.mp3 - musicbrainz
   01/01 06 06:43 Piano Concerto in F: III. Allegro agitato (urn:bluemarine:track:l5H--6cVcL5ornm2A-KXh6hIGcg=) André Previn_ Pittsburgh Symphony Orchestra/Gershwin_ Rhapsody In Blue, Piano Concerto In F, An American In Paris/06 Gershwin_ Piano Concerto In F - 3. Allegro Agitato.mp3 - musicbrainz
+  RETRIEVED BY 2 QUERIES
 
 RECORDS OF André Previn (urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=) (1):
   Rhapsody in Blue / An American in Paris / Piano Concerto in F (urn:bluemarine:record:G2sUZ3I4bU9K81ReZahL5Tljzr4=)
+  RETRIEVED BY 3 QUERIES
 
 RECORDS OF Pittsburgh Symphony Orchestra (urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=) (1):
   Rhapsody in Blue / An American in Paris / Piano Concerto in F (urn:bluemarine:record:G2sUZ3I4bU9K81ReZahL5Tljzr4=)
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF André Previn (urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=) (6):
   Performance(uri=urn:bluemarine:performance:Dndoz8hK8__oAjC2dmgJBJuynBE=)
@@ -49,6 +59,7 @@ PERFORMANCES OF André Previn (urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw
   Performance(uri=urn:bluemarine:performance:gOVPoiObl7Kr9NC4MjkghJmh8Mg=)
   Performance(uri=urn:bluemarine:performance:qKh0s-WJk9_bf86cPEOlbGdXL4U=)
   Performance(uri=urn:bluemarine:performance:zxHo9x-gkhW-iLQxJLVQHEHXfSA=)
+  RETRIEVED BY 3 QUERIES
 
 PERFORMANCES OF Pittsburgh Symphony Orchestra (urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=) (6):
   Performance(uri=urn:bluemarine:performance:Dndoz8hK8__oAjC2dmgJBJuynBE=)
@@ -57,6 +68,7 @@ PERFORMANCES OF Pittsburgh Symphony Orchestra (urn:bluemarine:artist:GbuyCRRvZpp
   Performance(uri=urn:bluemarine:performance:gOVPoiObl7Kr9NC4MjkghJmh8Mg=)
   Performance(uri=urn:bluemarine:performance:qKh0s-WJk9_bf86cPEOlbGdXL4U=)
   Performance(uri=urn:bluemarine:performance:zxHo9x-gkhW-iLQxJLVQHEHXfSA=)
+  RETRIEVED BY 3 QUERIES
 
 RECORD Rhapsody in Blue / An American in Paris / Piano Concerto in F (urn:bluemarine:record:G2sUZ3I4bU9K81ReZahL5Tljzr4=):
   SOURCE:  musicbrainz
@@ -85,6 +97,7 @@ RECORD Rhapsody in Blue / An American in Paris / Piano Concerto in F (urn:bluema
       : piano                André Previn (urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=)
       : conductor            André Previn (urn:bluemarine:artist:gkxtTIIxvUG3XX8cY-OetQ6woNw=)
       : orchestra            Pittsburgh Symphony Orchestra (urn:bluemarine:artist:GbuyCRRvZpp3rLhOupCyBnFZ8Io=)
+  RETRIEVED BY 13 QUERIES
 
 
 
@@ -104,3 +117,4 @@ TRACKS ORPHAN OF ARTIST (0):
 
 TRACKS ORPHAN OF RECORD (0):
 
+TOTAL NUMBER OF QUERIES: 37

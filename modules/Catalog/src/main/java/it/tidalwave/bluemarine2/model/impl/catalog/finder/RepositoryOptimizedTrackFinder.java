@@ -26,47 +26,52 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.util;
+package it.tidalwave.bluemarine2.model.impl.catalog.finder;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
-import java.util.List;
-import java.util.function.Supplier;
-import java.util.function.Function;
-import static java.util.stream.Collectors.toList;
+import java.util.Optional;
+import org.eclipse.rdf4j.repository.Repository;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *
- * A {@link Finder} which retrieve results from a {@link Supplier}.
+ * An optimised specialisation of {@link RepositoryTrackFinder} that eventually uses an optional pre-computed value for
+ * the track count.
  *
- * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
- * @version $Id: $
+ * @stereotype  Finder
+ *
+ * @author  Fabrizio Giudici
+ * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable
-public class MappingFinder<TYPE> extends SupplierBasedFinder8<TYPE>
+@ToString
+public class RepositoryOptimizedTrackFinder extends RepositoryTrackFinder
   {
-    private static final long serialVersionUID = -6359683808082070089L;
+    private static final long serialVersionUID = -4361362680267527615L;
 
     @Nonnull
-    private final transient Function<TYPE, TYPE> mapper;
+    private final Optional<Integer> trackCount;
 
-    public MappingFinder (final @Nonnull Finder8<TYPE> delegate, final @Nonnull Function<TYPE, TYPE> mapper)
+    public RepositoryOptimizedTrackFinder (final @Nonnull Repository repository,
+                                           final @Nonnull Optional<Integer> trackCount)
       {
-        super(delegate::results);
-        this.mapper = mapper;
+        super(repository);
+        this.trackCount = trackCount;
       }
 
-    public MappingFinder (final @Nonnull MappingFinder other, final @Nonnull Object override)
+    public RepositoryOptimizedTrackFinder (final @Nonnull RepositoryOptimizedTrackFinder other,
+                                           final @Nonnull Object override)
       {
         super(other, override);
-        final MappingFinder<TYPE> source = getSource(MappingFinder.class, other, override);
-        this.mapper = source.mapper;
+        final RepositoryOptimizedTrackFinder source = getSource(RepositoryOptimizedTrackFinder.class, other, override);
+        this.trackCount = source.trackCount;
       }
 
-    @Override
-    protected List<? extends TYPE> computeResults()
+    @Override @Nonnegative
+    public int count()
       {
-        return super.computeResults().stream().map(mapper).collect(toList());
+        // in case other parameters are added, remember to check for them
+        return (recordId.isPresent() && !makerId.isPresent()) ? trackCount.orElseGet(super::count) : super.count();
       }
   }

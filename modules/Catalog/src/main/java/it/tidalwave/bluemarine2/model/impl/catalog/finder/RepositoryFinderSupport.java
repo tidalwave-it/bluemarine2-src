@@ -35,6 +35,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -55,9 +56,11 @@ import it.tidalwave.util.Id;
 import it.tidalwave.util.Finder;
 import it.tidalwave.util.Finder8;
 import it.tidalwave.util.Finder8Support;
+import it.tidalwave.util.LoggingUtilities;
 import it.tidalwave.util.Task;
 import it.tidalwave.util.spi.ReflectionUtils;
 import it.tidalwave.role.ContextManager;
+import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
 import it.tidalwave.bluemarine2.model.spi.CacheManager;
 import it.tidalwave.bluemarine2.model.spi.CacheManager.Cache;
 import it.tidalwave.bluemarine2.model.impl.catalog.factory.RepositoryEntityFactory;
@@ -65,12 +68,12 @@ import lombok.extern.slf4j.Slf4j;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 import static java.util.stream.Collectors.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.streamOf;
 import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
-import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
 
 /***********************************************************************************************************************
  *
@@ -95,7 +98,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     private static final String REGEX_BINDING_TAG_LINE = REGEX_BINDING_TAG + ".*$";
 
     private static final String REGEX_COMMENT = "^ *#.*";
-    
+
     private static final String PREFIXES = "PREFIX foaf:  <http://xmlns.com/foaf/0.1/>\n"
                                          + "PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                                          + "PREFIX rel:   <http://purl.org/vocab/relationship/>\n"
@@ -111,7 +114,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     private static final SimpleValueFactory FACTORY = SimpleValueFactory.getInstance();
 
     @Nonnull
-    protected final Repository repository;
+    protected final transient Repository repository;
 
     @Nonnull
     private final Class<ENTITY> entityClass;
@@ -120,13 +123,13 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
     private final String idName;
 
     @Nonnull
-    private final Optional<Id> id;
+    private final transient Optional<Id> id;
 
     @Nonnull
-    private final Optional<Value> source;
+    private final transient Optional<Value> source;
 
     @Nonnull
-    private final Optional<Value> sourceFallback;
+    private final transient Optional<Value> sourceFallback;
 
     @Inject
     private transient ContextManager contextManager;
@@ -136,6 +139,12 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
 
     @Inject
     private transient CacheManager cacheManager;
+
+    // FIXME: move to a stats bean
+    private static final AtomicInteger queryCount = new AtomicInteger();
+
+    @Getter @Setter
+    private static boolean dumpThreadOnQuery = false;
 
     /*******************************************************************************************************************
      *
@@ -251,7 +260,7 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
      *
      ******************************************************************************************************************/
     @Override @Nonnegative
-    public final int count()
+    public int count()
       {
         return query(QueryAndParameters::getCountSparql,
                      result -> Integer.parseInt(result.next().getValue(QUERY_COUNT_HOLDER).stringValue()),
@@ -330,6 +339,29 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
 
     /*******************************************************************************************************************
      *
+     * Returns the count of queries performed so far.
+     *
+     * @return      the count of queries
+     *
+     ******************************************************************************************************************/
+    @Nonnegative
+    public static int getQueryCount()
+      {
+        return queryCount.intValue();
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Resets the count of queries performed so far.
+     *
+     ******************************************************************************************************************/
+    public static void resetQueryCount()
+      {
+        queryCount.set(0);
+      }
+
+    /*******************************************************************************************************************
+     *
      * Prepares the SPARQL query and its parameters.
      *
      * @return      the SPARQL query and its parameters
@@ -370,8 +402,11 @@ public class RepositoryFinderSupport<ENTITY, FINDER extends Finder8<ENTITY>>
                                                .collect(joining("\n"));
         log(originalSparql, sparql, parameters);
         final E result = query(sparql, finalizer, parameters);
+        queryCount.incrementAndGet();
         final long elapsedTime = System.nanoTime() - baseTime;
         log.info(">>>> query returned {} in {} msec", resultToString.apply(result), elapsedTime / 1E6);
+        LoggingUtilities.dumpStack(this, dumpThreadOnQuery);
+
         return result;
       }
 

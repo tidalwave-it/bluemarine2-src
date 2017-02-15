@@ -99,7 +99,7 @@ public class Range
      * @return                  the range
      *
      ******************************************************************************************************************/
-    @Nonnegative
+    @Nonnull
     public static List<Range> fromHeader (final @Nullable String rangeHeader, final @Nonnegative long total)
       {
         final List<Range> ranges = new ArrayList<>();

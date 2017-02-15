@@ -99,3 +99,5 @@ Browse({ObjectID=/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=, BrowseFlag=BrowseDir
         <res duration="00:04:10" protocolInfo="http-get:*:audio/mpeg:*" size="10004144">http://<server>/rest/audiofile/urn:bluemarine:audiofile:2u8e2mexRwUEEhDlIA7Tuhh2Wz0=/content</res>
     </item>
 </DIDL-Lite>
+
+QUERY COUNT: 4
