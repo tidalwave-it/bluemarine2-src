@@ -1,0 +1,27 @@
+#!/bin/sh
+
+BASE_DIR="$(dirname -- "$(readlink -f -- "$0")")"
+JAR_FILE=$BASE_DIR/../lib/it-tidalwave-bluemarine2-application-javafx-${project.version}.jar
+
+if [ $# -eq 1 ] && [ "$1" = "--mediacenter" ]; then
+    WORKSPACE=/var/lib/bluemarine2-mediacenter
+    LOG_FOLDER=/var/log/bluemarine2-mediacenter
+else
+    WORKSPACE=$HOME/.bluemarine2
+    LOG_FOLDER=$WORKSPACE/log
+fi
+
+EMBEDDED_JRE="$BASE_DIR/../jre"
+
+if [ -d "$EMBEDDED_JRE" ]; then
+    JAVA="$EMBEDDED_JRE/bin/java"
+else
+    JAVA=java
+fi
+
+mkdir -p "$LOG_FOLDER"
+
+exec $JAVA -DblueMarine2.workspace=$WORKSPACE \
+           -DblueMarine2.logFolder=$LOG_FOLDER \
+           -DblueMarine2.logConfigOverride=$WORKSPACE/config/logback-override.xml \
+           -jar $JAR_FILE

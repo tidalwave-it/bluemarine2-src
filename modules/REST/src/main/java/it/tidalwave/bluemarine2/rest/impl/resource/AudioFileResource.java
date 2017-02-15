@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.rest.impl;
+package it.tidalwave.bluemarine2.rest.impl.resource;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
@@ -42,7 +42,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
- * An adapter for exporting {@link AudioFile} in JSON.
+ * An adapter for exporting {@link AudioFile} in REST.
  *
  * @stereotype  Adapter
  *
@@ -53,7 +53,7 @@ import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 @Getter
 @JsonInclude(Include.NON_ABSENT)
 @JsonPropertyOrder(alphabetic = true)
-public class AudioFileJson extends JsonSupport
+public class AudioFileResource extends ResourceSupport
   {
     private final String id;
 
@@ -69,7 +69,7 @@ public class AudioFileJson extends JsonSupport
 
     private final Optional<String> coverArt;
 
-    public AudioFileJson (final @Nonnull AudioFile audioFile)
+    public AudioFileResource (final @Nonnull AudioFile audioFile)
       {
         this.id          = audioFile.getId().stringValue();
         this.displayName = audioFile.as(Displayable).getDisplayName();

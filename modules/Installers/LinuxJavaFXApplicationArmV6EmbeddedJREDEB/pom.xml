@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  #%L
+  *********************************************************************************************************************
+
+  blueMarine - lightweight MediaCenter
+  %%
+  Copyright (C) 2015 - 2017 Tidalwave s.a.s. (http://tidalwave.it)
+  %%
+
+  *********************************************************************************************************************
+
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+  the License. You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+  an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations under the License.
+
+  *********************************************************************************************************************
+
+  $Id$
+
+*********************************************************************************************************************
+#L%
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>it.tidalwave.bluemarine2</groupId>
+        <artifactId>bluemarine2-modules</artifactId>
+        <version>1.0-ALPHA-20-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+
+    <!-- ===============================================================================================================
+
+
+
+
+    ================================================================================================================ -->
+
+    <groupId>it.tidalwave.bluemarine2</groupId>
+    <artifactId>bluemarine2-application-javafx-linux-armv6-embedded-jre-deb</artifactId>
+    <version>1.0-ALPHA-20-SNAPSHOT</version>
+    <packaging>deb</packaging>
+    <name>blueMarine II - Installers - JavaFX Application, Linux ARM v6, embedded JRE DEB</name>
+    <description>
+        This module takes the .tar.gz produced by 'Installers - JavaFX Application, Linux ARM v6, embedded JRE' and
+        produces a .deb package contaning also stuff for installing it as a service.
+    </description>
+
+    <properties>
+        <tdt.deb.name>bluemarine2</tdt.deb.name>
+        <tft.deb.directory>bluemarine2-mediacenter</tft.deb.directory>
+        <tft.deb.sourceTarball.artifactId>bluemarine2-application-javafx-linux-armv6-embedded-jre</tft.deb.sourceTarball.artifactId>
+        <tft.deb.user>bluemarine2</tft.deb.user>
+        <tft.deb.group>nogroup</tft.deb.group>
+    </properties>
+
+    <!-- Lots of things happen because of activate profiles - see 'src/config' -->
+
+</project>
