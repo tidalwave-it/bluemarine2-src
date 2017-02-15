@@ -49,6 +49,7 @@ import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
 import it.tidalwave.util.Key;
 import it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
@@ -189,6 +190,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
           {
             log.info("============================================================================================");
             log.info(">>>> sending {} ...", params);
+            RepositoryTrackFinder.resetQueryCount();
             final CountDownLatch latch = new CountDownLatch(1);
 
             final Browse browse = new Browse(upnpClient.getService(),
@@ -219,7 +221,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                         final DIDLParser parser = new DIDLParser();
                         final String baseUrl = resourceServer.absoluteUrl("");
                         final String result = xmlPrettyPrinted(parser.generate(didl)).replaceAll(baseUrl, "http://<server>/");
-                        Files.write(actualFile, (header + "\n" + result).getBytes(UTF_8));
+                        final String queries = String.format("QUERY COUNT: %d", RepositoryTrackFinder.getQueryCount());
+                        Files.write(actualFile, (header + "\n" + result + "\n" + queries).getBytes(UTF_8));
                         assertSameContents(normalizedPath(expectedFile), normalizedPath(actualFile));
                       }
                     catch (Throwable e)

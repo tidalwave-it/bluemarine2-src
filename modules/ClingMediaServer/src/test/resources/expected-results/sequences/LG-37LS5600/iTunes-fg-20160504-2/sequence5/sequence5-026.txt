@@ -113,3 +113,5 @@ Browse({ObjectID=/music/t, BrowseFlag=BrowseDirectChildren, Filter=, StartingInd
         <res duration="00:01:18" protocolInfo="http-get:*:audio/mpeg:*" size="3145329">http://<server>/rest/audiofile/urn:bluemarine:audiofile:fzPJsLrl6ToNGUleGxhHwsk15wQ=/content</res>
     </item>
 </DIDL-Lite>
+
+QUERY COUNT: 2

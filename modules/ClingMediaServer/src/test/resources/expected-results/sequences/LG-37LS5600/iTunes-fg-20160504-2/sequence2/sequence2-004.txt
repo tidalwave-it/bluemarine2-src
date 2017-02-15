@@ -6,3 +6,5 @@ Browse({ObjectID=0, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, R
         <upnp:class>object.container.storageFolder</upnp:class>
     </container>
 </DIDL-Lite>
+
+QUERY COUNT: 0
