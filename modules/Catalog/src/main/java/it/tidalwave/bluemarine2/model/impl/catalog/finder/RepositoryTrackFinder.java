@@ -51,10 +51,10 @@ public class RepositoryTrackFinder extends RepositoryFinderSupport<Track, TrackF
     private final static String QUERY_TRACKS = readSparql(RepositoryTrackFinder.class, "Tracks.sparql");
 
     @Nonnull
-    private final Optional<Id> makerId;
+    protected final Optional<Id> makerId;
 
     @Nonnull
-    private final Optional<Id> recordId;
+    protected final Optional<Id> recordId;
 
     /*******************************************************************************************************************
      *
