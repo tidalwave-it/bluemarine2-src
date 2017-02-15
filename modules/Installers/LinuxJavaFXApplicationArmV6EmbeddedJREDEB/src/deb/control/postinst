@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo "Starting bluemarine2 ... "
+systemctl enable bluemarine2
+systemctl start bluemarine2
+
+echo "The service will be automatically started at boot."
+echo "To disable it, run:"
+echo " "
+echo "    systemctl disable bluemarine2"
+echo " "
+echo "To re-enable it, run:"
+echo " "
+echo "    systemctl enable bluemarine2"
+echo " "

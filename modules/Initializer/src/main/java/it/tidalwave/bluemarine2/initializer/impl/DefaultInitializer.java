@@ -28,7 +28,6 @@
  */
 package it.tidalwave.bluemarine2.initializer.impl;
 
-import javax.annotation.Nonnull;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 import java.util.HashMap;
@@ -66,7 +65,7 @@ public class DefaultInitializer implements Initializer
     public void boot()
       {
         final Map<Key<?>, Object> properties = new HashMap<>();
-        final Path configPath = getConfigurationPath();
+        final Path configPath = Paths.get(System.getProperty("blueMarine2.workspace"));
         log.info("configPath is {}", configPath);
         properties.put(ModelPropertyNames.ROOT_PATH, configPath);
         properties.put(PersistencePropertyNames.STORAGE_FOLDER, configPath.resolve("storage"));
@@ -85,44 +84,5 @@ public class DefaultInitializer implements Initializer
     private void shutdown()
       {
         messageBus.publish(new PowerOffNotification());
-      }
-
-    /*******************************************************************************************************************
-     *
-     * FIXME: this is duplicated in JavaFXSpringApplication
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    private Path getConfigurationPath()
-      {
-        String s = System.getProperty("blueMarine2.workspace");
-
-        if (s != null)
-          {
-            return Paths.get(s);
-          }
-
-        s = System.getProperty("user.home", "/");
-        final String osName = System.getProperty("os.name").toLowerCase();
-
-        switch (osName)
-          {
-            case "linux":
-                s += "/.blueMarine2";
-                break;
-
-            case "mac os x":
-                s += "/Library/Application Support/blueMarine2";
-                break;
-
-            case "windows":
-                s += "/.blueMarine2";
-                break;
-
-            default:
-                throw new IllegalStateException("Unknown o.s.: " + osName);
-          }
-
-        return Paths.get(s);
       }
   }
