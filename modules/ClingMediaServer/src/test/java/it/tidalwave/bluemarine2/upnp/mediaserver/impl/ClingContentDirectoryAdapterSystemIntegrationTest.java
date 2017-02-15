@@ -193,7 +193,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
 
         for (final Params params : toParams(sequencePath))
           {
-            log.info("============================================================================================");
+            log.info("==== {} ========================================================================================",
+                     String.format("%s-%03d", sequenceName, n.get()));
             log.info(">>>> sending {} ...", params);
             RepositoryTrackFinder.resetQueryCount();
             cacheManager.onPersistenceUpdated(new PersistenceInitializedNotification());
@@ -253,6 +254,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
 
             upnpClient.execute(browse);
             latch.await();
+            RepositoryTrackFinder.setDumpThreadOnQuery(false);
 
             if (error.get() != null)
               {
