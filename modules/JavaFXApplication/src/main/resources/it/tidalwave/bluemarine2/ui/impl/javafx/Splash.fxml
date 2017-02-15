@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<children><BorderPane fx:id="application" layoutY="-116.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="280.0" prefWidth="599.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-  <center>
-<HBox alignment="CENTER">
-<children>
-    <Label alignment="CENTER" contentDisplay="TEXT_ONLY" prefHeight="181.0" style="-fx-text-fill: grey;" text="blueMarine" textAlignment="CENTER">
-      <font>
-        <Font name="System Bold Italic" size="150.0" />
-      </font>
-    </Label>
-</children>
-</HBox>
-  </center>
-</BorderPane>
-</children>
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <BorderPane fx:id="application" layoutY="-116.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="280.0" prefWidth="599.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <HBox alignment="CENTER">
+                    <children>
+                        <Label alignment="CENTER" contentDisplay="TEXT_ONLY" prefHeight="181.0" style="-fx-text-fill: grey; -fx-font-size: 150; -fx-font-weight: bold;" text="blueMarine" textAlignment="CENTER">
+                        </Label>
+                    </children>
+                </HBox>
+            </center>
+        </BorderPane>
+    </children>
 </AnchorPane>
