@@ -8,3 +8,5 @@ Browse({ObjectID=/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=, BrowseFlag=BrowseDir
         <res duration="00:04:02" protocolInfo="http-get:*:audio/mpeg:*" size="9685435">http://<server>/rest/audiofile/urn:bluemarine:audiofile:EBBBeSSPj_eLBubj3tlhkpkEmdA=/content</res>
     </item>
 </DIDL-Lite>
+
+QUERY COUNT: 4

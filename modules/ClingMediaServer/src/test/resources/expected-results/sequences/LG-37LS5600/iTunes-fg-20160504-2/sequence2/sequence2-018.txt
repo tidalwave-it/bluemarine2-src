@@ -6,3 +6,5 @@ Browse({ObjectID=/music/a+r+t, BrowseFlag=BrowseDirectChildren, Filter=, Startin
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
 </DIDL-Lite>
+
+QUERY COUNT: 0
