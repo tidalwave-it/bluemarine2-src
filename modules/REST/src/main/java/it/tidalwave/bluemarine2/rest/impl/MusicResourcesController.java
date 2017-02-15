@@ -85,13 +85,13 @@ public class MusicResourcesController
         public Stream<ENTITY> stream();
       }
 
-    @ResponseStatus(value = HttpStatus.NOT_FOUND)
+    @ResponseStatus(value = NOT_FOUND)
     static class NotFoundException extends RuntimeException
       {
         private static final long serialVersionUID = 3099300911009857337L;
       }
 
-    @ResponseStatus(value = HttpStatus.SERVICE_UNAVAILABLE)
+    @ResponseStatus(value = SERVICE_UNAVAILABLE)
     static class UnavailableException extends RuntimeException
       {
         private static final long serialVersionUID = 3644567083880573896L;
