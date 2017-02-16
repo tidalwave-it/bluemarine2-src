@@ -106,6 +106,7 @@ public abstract class CompositeDIDLAdapterSupport<T extends As8> extends DIDLAda
     protected DIDLAdapter asDIDLAdapter (final @Nonnull As8 object)
       {
         final Collection<DIDLAdapter> adapters = object.asMany(DIDLAdapter);
+        log.trace(">>>> adapters for {}: {}", object, adapters);
 
         if (adapters.size() > 1)
           {
