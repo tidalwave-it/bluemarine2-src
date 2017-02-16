@@ -36,6 +36,7 @@ import org.fourthline.cling.support.model.container.StorageFolder;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.MediaFolder;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
 
@@ -71,7 +72,7 @@ public class MediaFolderDIDLAdapter extends CompositeDIDLAdapterSupport<MediaFol
 
         if (!container.getId().equals("/music")) // FIXME workaround for DefaultMediaFileSystem
           {
-            container.setTitle(container.getTitle().replace("Music", "By file"));
+            container.setTitle(container.getTitle().replace("Music", "By file")); // FIXME: this corrupts some title
           }
 
         return container;
