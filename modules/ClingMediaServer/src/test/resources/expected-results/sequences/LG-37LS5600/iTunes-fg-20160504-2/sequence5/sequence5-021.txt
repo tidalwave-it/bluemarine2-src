@@ -1,115 +1,149 @@
 Browse({ObjectID=/music/t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=16, RequestedCount=16, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <item id="/music/t/t:zkp40hTxxtgRTjAkVgsnHZgFsM8=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:zkp40hTxxtgRTjAkVgsnHZgFsM8=" parentID="/music/t" refID="urn:bluemarine:track:zkp40hTxxtgRTjAkVgsnHZgFsM8=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Gloria: Qui Tollis</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
-        <res duration="00:03:01" protocolInfo="http-get:*:audio/mpeg:*" size="7280161">http://<server>/rest/audiofile/urn:bluemarine:audiofile:o-FOjiLrlhX7D8t6KvEK5bfXrqg=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 1]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:03:01.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="7280161">http://<server>/rest/audiofile/urn:bluemarine:audiofile:o-FOjiLrlhX7D8t6KvEK5bfXrqg=/content</res>
     </item>
-    <item id="/music/t/t:XL9_KSyBmjKUKd1O_7Ofz_ct8JI=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:XL9_KSyBmjKUKd1O_7Ofz_ct8JI=" parentID="/music/t" refID="urn:bluemarine:track:XL9_KSyBmjKUKd1O_7Ofz_ct8JI=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Gloria: Qui Sedes Ad Dexteram Patris</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
-        <res duration="00:04:47" protocolInfo="http-get:*:audio/mpeg:*" size="11510970">http://<server>/rest/audiofile/urn:bluemarine:audiofile:dfjZyCdO85RSyA2KL5iNzYYk7G4=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 1]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:47.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="11510970">http://<server>/rest/audiofile/urn:bluemarine:audiofile:dfjZyCdO85RSyA2KL5iNzYYk7G4=/content</res>
     </item>
-    <item id="/music/t/t:btCHASU05km7dLi7qxvEzqpoJes=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:btCHASU05km7dLi7qxvEzqpoJes=" parentID="/music/t" refID="urn:bluemarine:track:btCHASU05km7dLi7qxvEzqpoJes=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Gloria: Quoniam Tu Solus Sanctus</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
-        <res duration="00:05:14" protocolInfo="http-get:*:audio/mpeg:*" size="12581988">http://<server>/rest/audiofile/urn:bluemarine:audiofile:qj9NGSFL9C1kMCiNp7q_xv1p2TE=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 1]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:05:14.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="12581988">http://<server>/rest/audiofile/urn:bluemarine:audiofile:qj9NGSFL9C1kMCiNp7q_xv1p2TE=/content</res>
     </item>
-    <item id="/music/t/t:P_78P3BO-8CVVEuAz2QCG8o2Row=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:P_78P3BO-8CVVEuAz2QCG8o2Row=" parentID="/music/t" refID="urn:bluemarine:track:P_78P3BO-8CVVEuAz2QCG8o2Row=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Gloria: Cum Sancto Spiritu</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>11</upnp:originalTrackNumber>
-        <res duration="00:04:18" protocolInfo="http-get:*:audio/mpeg:*" size="10335451">http://<server>/rest/audiofile/urn:bluemarine:audiofile:5X7kN21_INsIONnKqGcUgL-RByU=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 1]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:18.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="10335451">http://<server>/rest/audiofile/urn:bluemarine:audiofile:5X7kN21_INsIONnKqGcUgL-RByU=/content</res>
     </item>
-    <item id="/music/t/t:huN3o27gpEkVZm96EB0zLK9_8Uk=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:huN3o27gpEkVZm96EB0zLK9_8Uk=" parentID="/music/t" refID="urn:bluemarine:track:huN3o27gpEkVZm96EB0zLK9_8Uk=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Credo: Credo In Unum Deum</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="00:01:52" protocolInfo="http-get:*:audio/mpeg:*" size="4513266">http://<server>/rest/audiofile/urn:bluemarine:audiofile:qLEzU4E1UDUj2U1-mk-ShrDJC3I=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 2]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:01:52.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="4513266">http://<server>/rest/audiofile/urn:bluemarine:audiofile:qLEzU4E1UDUj2U1-mk-ShrDJC3I=/content</res>
     </item>
-    <item id="/music/t/t:NkEfbPU06cVEWptwFEXzEi_ZvFU=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:NkEfbPU06cVEWptwFEXzEi_ZvFU=" parentID="/music/t" refID="urn:bluemarine:track:NkEfbPU06cVEWptwFEXzEi_ZvFU=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Credo: Patrem Omnipotentem</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
-        <res duration="00:02:06" protocolInfo="http-get:*:audio/mpeg:*" size="5044075">http://<server>/rest/audiofile/urn:bluemarine:audiofile:mqdyAzvj_cLylyGPnQ0SHX191gU=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 2]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:02:06.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="5044075">http://<server>/rest/audiofile/urn:bluemarine:audiofile:mqdyAzvj_cLylyGPnQ0SHX191gU=/content</res>
     </item>
-    <item id="/music/t/t:XJtTh4sMClpIcFEU4q7zQ7SyYc4=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:XJtTh4sMClpIcFEU4q7zQ7SyYc4=" parentID="/music/t" refID="urn:bluemarine:track:XJtTh4sMClpIcFEU4q7zQ7SyYc4=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Credo: Et In Unum Dominum</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
-        <res duration="00:05:06" protocolInfo="http-get:*:audio/mpeg:*" size="12263274">http://<server>/rest/audiofile/urn:bluemarine:audiofile:9IMUx82KD8qE-1LxrZlQ3UizST4=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 2]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:05:06.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="12263274">http://<server>/rest/audiofile/urn:bluemarine:audiofile:9IMUx82KD8qE-1LxrZlQ3UizST4=/content</res>
     </item>
-    <item id="/music/t/t:CJkx5fFT2W4IhBd1cswVf3QmE0s=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:CJkx5fFT2W4IhBd1cswVf3QmE0s=" parentID="/music/t" refID="urn:bluemarine:track:CJkx5fFT2W4IhBd1cswVf3QmE0s=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Credo: Et Incarnatus Est</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
-        <res duration="00:02:58" protocolInfo="http-get:*:audio/mpeg:*" size="7156857">http://<server>/rest/audiofile/urn:bluemarine:audiofile:Yj8mJSHEDoXFr4BRbQrJPYZDIc4=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 2]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:02:58.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="7156857">http://<server>/rest/audiofile/urn:bluemarine:audiofile:Yj8mJSHEDoXFr4BRbQrJPYZDIc4=/content</res>
     </item>
-    <item id="/music/t/t:P-JmC0ZWEQgfghnYEhJFlIYUQXI=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:P-JmC0ZWEQgfghnYEhJFlIYUQXI=" parentID="/music/t" refID="urn:bluemarine:track:P-JmC0ZWEQgfghnYEhJFlIYUQXI=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Credo: Crucifixus</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
-        <res duration="00:03:33" protocolInfo="http-get:*:audio/mpeg:*" size="8527756">http://<server>/rest/audiofile/urn:bluemarine:audiofile:XzGC0GLH1GmK8dMcR8xJ7E97lcw=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 2]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:03:33.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="8527756">http://<server>/rest/audiofile/urn:bluemarine:audiofile:XzGC0GLH1GmK8dMcR8xJ7E97lcw=/content</res>
     </item>
-    <item id="/music/t/t:PD9Cc2DHmAQ48UjGvr7lrXVD8ZQ=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:PD9Cc2DHmAQ48UjGvr7lrXVD8ZQ=" parentID="/music/t" refID="urn:bluemarine:track:PD9Cc2DHmAQ48UjGvr7lrXVD8ZQ=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Credo: Et Resurrexit</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
-        <res duration="00:04:26" protocolInfo="http-get:*:audio/mpeg:*" size="10678159">http://<server>/rest/audiofile/urn:bluemarine:audiofile:vcQwjk8g0Pm88rmwHMfpwwE12Yc=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 2]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:26.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="10678159">http://<server>/rest/audiofile/urn:bluemarine:audiofile:vcQwjk8g0Pm88rmwHMfpwwE12Yc=/content</res>
     </item>
-    <item id="/music/t/t:5wSm3e6XLFXlh3Y0sbtIvCUeohc=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:5wSm3e6XLFXlh3Y0sbtIvCUeohc=" parentID="/music/t" refID="urn:bluemarine:track:5wSm3e6XLFXlh3Y0sbtIvCUeohc=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Credo: Et In Spiritum Sanctum</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
-        <res duration="00:05:12" protocolInfo="http-get:*:audio/mpeg:*" size="12508829">http://<server>/rest/audiofile/urn:bluemarine:audiofile:5bGR6Fi9Cs0TMva5eitEyqwhlPQ=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 2]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:05:12.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="12508829">http://<server>/rest/audiofile/urn:bluemarine:audiofile:5bGR6Fi9Cs0TMva5eitEyqwhlPQ=/content</res>
     </item>
-    <item id="/music/t/t:odvEl0zhTdqtd5SNszFk0AZaaI8=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:odvEl0zhTdqtd5SNszFk0AZaaI8=" parentID="/music/t" refID="urn:bluemarine:track:odvEl0zhTdqtd5SNszFk0AZaaI8=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Credo: Confiteor Unum Baptisma</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
-        <res duration="00:03:54" protocolInfo="http-get:*:audio/mpeg:*" size="9377271">http://<server>/rest/audiofile/urn:bluemarine:audiofile:PPJYnLU5wZ8TVmHRsIZlTRz9oUs=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 2]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:03:54.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="9377271">http://<server>/rest/audiofile/urn:bluemarine:audiofile:PPJYnLU5wZ8TVmHRsIZlTRz9oUs=/content</res>
     </item>
-    <item id="/music/t/t:JsLQxCNkJ5bgGoqFKO1B-CfGSW8=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:JsLQxCNkJ5bgGoqFKO1B-CfGSW8=" parentID="/music/t" refID="urn:bluemarine:track:JsLQxCNkJ5bgGoqFKO1B-CfGSW8=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Credo: Et Expecto</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
-        <res duration="00:02:26" protocolInfo="http-get:*:audio/mpeg:*" size="5876850">http://<server>/rest/audiofile/urn:bluemarine:audiofile:5wfyRbY5jQrJRA2sPfIYo-KW7C0=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 2]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:02:26.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="5876850">http://<server>/rest/audiofile/urn:bluemarine:audiofile:5wfyRbY5jQrJRA2sPfIYo-KW7C0=/content</res>
     </item>
-    <item id="/music/t/t:k0_s45nzCAG0jjuczZVnMp9bYtA=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:k0_s45nzCAG0jjuczZVnMp9bYtA=" parentID="/music/t" refID="urn:bluemarine:track:k0_s45nzCAG0jjuczZVnMp9bYtA=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Sanctus</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
-        <res duration="00:04:22" protocolInfo="http-get:*:audio/mpeg:*" size="10514098">http://<server>/rest/audiofile/urn:bluemarine:audiofile:YRJNEfD-PsHMRPX__LCdoa3Drx8=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 2]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:22.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="10514098">http://<server>/rest/audiofile/urn:bluemarine:audiofile:YRJNEfD-PsHMRPX__LCdoa3Drx8=/content</res>
     </item>
-    <item id="/music/t/t:biBP-KJHhNf0qb_EE2FuVJxnr2I=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:biBP-KJHhNf0qb_EE2FuVJxnr2I=" parentID="/music/t" refID="urn:bluemarine:track:biBP-KJHhNf0qb_EE2FuVJxnr2I=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Osanna</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>11</upnp:originalTrackNumber>
-        <res duration="00:02:37" protocolInfo="http-get:*:audio/mpeg:*" size="6309427">http://<server>/rest/audiofile/urn:bluemarine:audiofile:r7ICyCw-mcwksmGb6Htjbck8rP8=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 2]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:02:37.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="6309427">http://<server>/rest/audiofile/urn:bluemarine:audiofile:r7ICyCw-mcwksmGb6Htjbck8rP8=/content</res>
     </item>
-    <item id="/music/t/t:JNbdaeOTaQdlsmrXXg0wEAOXX7I=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:JNbdaeOTaQdlsmrXXg0wEAOXX7I=" parentID="/music/t" refID="urn:bluemarine:track:JNbdaeOTaQdlsmrXXg0wEAOXX7I=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Benedictus; Osanna #2</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>12</upnp:originalTrackNumber>
-        <res duration="00:06:46" protocolInfo="http-get:*:audio/mpeg:*" size="16277769">http://<server>/rest/audiofile/urn:bluemarine:audiofile:UoFl8HHjUcCEybe8Zcts41K61WI=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 2]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:46.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="16277769">http://<server>/rest/audiofile/urn:bluemarine:audiofile:UoFl8HHjUcCEybe8Zcts41K61WI=/content</res>
     </item>
 </DIDL-Lite>
+
+QUERY COUNT: 18

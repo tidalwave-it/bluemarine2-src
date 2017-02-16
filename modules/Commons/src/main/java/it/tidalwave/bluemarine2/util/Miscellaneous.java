@@ -33,6 +33,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.text.Normalizer;
 //import java.util.regex.Pattern;
+import java.util.Objects;
 import java.util.stream.Stream;
 import java.io.File;
 import java.io.IOException;
@@ -142,8 +143,8 @@ public final class Miscellaneous
                     for (final Path child : stream.collect(toList()))
                       {
                         final Path childName = child.getFileName();
-                        found = normalizedToNativeForm(element.toString())
-                                .equals(normalizedToNativeForm(childName.toString()));
+                        found = Objects.equals(normalizedToNativeForm(element.toString()),
+                                               normalizedToNativeForm(childName.toString()));
 //                        log.trace(">>>> original: {} found: {} same: {}", element, childName, found);
 
                         if (found)

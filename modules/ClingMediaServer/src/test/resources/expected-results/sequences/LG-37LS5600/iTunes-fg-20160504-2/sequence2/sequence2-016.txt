@@ -6,3 +6,5 @@ Browse({ObjectID=/music/a+r+t, BrowseFlag=BrowseMetadata, Filter=, StartingIndex
         <upnp:class>object.container.storageFolder</upnp:class>
     </container>
 </DIDL-Lite>
+
+QUERY COUNT: 1

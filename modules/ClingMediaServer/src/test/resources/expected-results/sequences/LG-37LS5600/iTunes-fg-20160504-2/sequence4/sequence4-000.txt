@@ -6,3 +6,5 @@ Browse({ObjectID=0, BrowseFlag=BrowseMetadata, Filter=, StartingIndex=0, Request
         <upnp:class>object.container.storageFolder</upnp:class>
     </container>
 </DIDL-Lite>
+
+QUERY COUNT: 0

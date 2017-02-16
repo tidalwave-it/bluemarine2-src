@@ -69,7 +69,7 @@ public class RepositoryAudioFileFinder extends RepositoryFinderSupport<AudioFile
                                       final @Nonnull Object override)
       {
         super(other, override);
-        final RepositoryAudioFileFinder source = getSource(RepositoryAudioFileFinder.class, other, override);
+//        final RepositoryAudioFileFinder source = getSource(RepositoryAudioFileFinder.class, other, override);
       }
 
     /*******************************************************************************************************************

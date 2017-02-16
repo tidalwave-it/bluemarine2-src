@@ -30,7 +30,6 @@ package it.tidalwave.bluemarine2.ui.impl.javafx;
 
 import javax.annotation.Nonnull;
 import javafx.application.Platform;
-import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.springframework.context.ApplicationContext;
 import it.tidalwave.ui.javafx.JavaFXSpringApplication;
 import it.tidalwave.bluemarine2.util.SystemConfigurer;
@@ -48,8 +47,6 @@ public class Main extends JavaFXSpringApplication
   {
     public Main()
       {
-        SLF4JBridgeHandler.removeHandlersForRootLogger();
-        SLF4JBridgeHandler.install();
 //        setMaximized(true);
 
         if ("arm".equals(System.getProperty("os.arch")))
@@ -63,6 +60,7 @@ public class Main extends JavaFXSpringApplication
       {
         try
           {
+            SystemConfigurer.setupSlf4jBridgeHandler();
             SystemConfigurer.setSystemProperties();
             Platform.setImplicitExit(true);
             launch(args);

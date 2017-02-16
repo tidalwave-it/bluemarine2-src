@@ -40,7 +40,7 @@ Browse({ObjectID=/music/r+t, BrowseFlag=BrowseDirectChildren, Filter=, StartingI
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
-    <container childCount="1" id="/music/r+t/r:d-B67tYwHDFv7ibEEJd8nsqMKIE=" parentID="/music/r+t" restricted="0" searchable="0">
+    <container childCount="16" id="/music/r+t/r:d-B67tYwHDFv7ibEEJd8nsqMKIE=" parentID="/music/r+t" restricted="0" searchable="0">
         <dc:title>Callas - La Divina 2</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.container.album.musicAlbum</upnp:class>
@@ -81,3 +81,5 @@ Browse({ObjectID=/music/r+t, BrowseFlag=BrowseDirectChildren, Filter=, StartingI
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
 </DIDL-Lite>
+
+QUERY COUNT: 2
