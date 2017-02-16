@@ -39,6 +39,7 @@ import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *
@@ -52,8 +53,7 @@ import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-@Immutable @DciRole(datumType = MediaFolder.class)
+@Immutable @DciRole(datumType = MediaFolder.class) @Slf4j @ToString
 public class MediaFolderDIDLAdapter extends CompositeDIDLAdapterSupport<MediaFolder>
   {
     public MediaFolderDIDLAdapter (final @Nonnull MediaFolder datum, final @Nonnull ResourceServer server)
