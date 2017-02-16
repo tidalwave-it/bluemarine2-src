@@ -38,6 +38,7 @@ import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.query.BindingSet;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryOptimizedTrackFinder;
 import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryRecordImageFinder;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -83,7 +84,7 @@ public class RepositoryRecord extends RepositoryEntitySupport implements Record
     @Override @Nonnull
     public TrackFinder findTracks()
       {
-        return _findTracks().inRecord(this);
+        return configured(new RepositoryOptimizedTrackFinder(repository, trackCount)).inRecord(this);
       }
 
     @Override @Nonnull

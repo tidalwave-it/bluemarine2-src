@@ -36,6 +36,7 @@ import org.fourthline.cling.support.model.DIDLObject;
 import org.fourthline.cling.support.model.Protocol;
 import org.fourthline.cling.support.model.ProtocolInfo;
 import org.fourthline.cling.support.model.Res;
+import org.fourthline.cling.support.model.StorageMedium;
 import org.fourthline.cling.support.model.dlna.DLNAProtocolInfo;
 import org.fourthline.cling.support.model.item.MusicTrack;
 import it.tidalwave.dci.annotation.DciRole;
@@ -46,6 +47,7 @@ import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import lombok.extern.slf4j.Slf4j;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 import static it.tidalwave.bluemarine2.model.role.AudioFileSupplier.AudioFileSupplier;
+import static it.tidalwave.role.Displayable.Displayable;
 
 /***********************************************************************************************************************
  *
@@ -75,8 +77,31 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
         final MusicTrack item = setCommonFields(new MusicTrack());
         final AudioFile audioFile = datum.as(AudioFileSupplier).getAudioFile();
         final Metadata trackMetadata = datum.getMetadata();
-        trackMetadata.get(TRACK_NUMBER).ifPresent(item::setOriginalTrackNumber);
         item.addResource(audioResourceOf(audioFile));
+        trackMetadata.get(TRACK_NUMBER).ifPresent(item::setOriginalTrackNumber);
+
+        datum.getRecord().flatMap(record -> record.asOptional(Displayable))
+                         .map(d -> d.getDisplayName())
+                         .ifPresent(item::setAlbum);
+
+//        trackMetadata.get(DISK_COUNT);
+//        trackMetadata.get(DISK_NUMBER);
+//        trackMetadata.get(COMPOSER);
+//        trackMetadata.get(ARTIST);
+//        item.setContributors(contributors);
+//        item.setCreator(creator);
+//        item.setDate(date);
+//        item.setDescMetadata(descMetadata);
+//        item.setDescription(description);
+//        item.setLanguage(language);
+//        item.setLongDescription(description);
+        item.setStorageMedium(StorageMedium.HDD);
+
+//        item.setArtists(new PersonWithRole[] { new PersonWithRole("xyz", "AlbumArtist") });
+//        item.setGenres(new String[] { "Classical" });
+//        final Person publisher = new Person("Unknown");
+//        item.setPublishers(new Person[] { publisher });
+
 //        datum.getDiskNumber();
 
         return item;
@@ -91,10 +116,10 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
                                      audioFileMetadata.get(FILE_SIZE).orElse(null),
                                      server.absoluteUrl(String.format("rest/audiofile/%s/content", audioFile.getId().stringValue())));
         audioFileMetadata.get(DURATION).ifPresent(duration -> resource.setDuration(durationToString(duration)));
-//        resource.setBitrate(size); // TODO
-//        resource.setBitsPerSample(size); // TODO
-//        resource.setNrAudioChannels(size); // TODO
-//        resource.setSampleFrequency(size); // TODO
+        audioFileMetadata.get(BIT_RATE).ifPresent(bitRate -> resource.setBitrate((long)(int)bitRate));
+        audioFileMetadata.get(BITS_PER_SAMPLE).ifPresent(bitPerSample -> resource.setBitsPerSample((long)(int)bitPerSample));
+        audioFileMetadata.get(CHANNELS).ifPresent(channels -> resource.setNrAudioChannels((long)(int)channels));
+        audioFileMetadata.get(SAMPLE_RATE).ifPresent(sampleRate -> resource.setSampleFrequency((long)(int)sampleRate));
 
         return resource;
       }
@@ -106,30 +131,24 @@ public class TrackDIDLAdapter extends DIDLAdapterSupport<Track>
         final int seconds = d % 60;
         final int minutes = (d / 60) % 60;
         final int hours = d / 3600;
-        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
-//        return String.format("%d:%02d:%02d.000", hours, minutes, seconds);
+        return String.format("%d:%02d:%02d.000", hours, minutes, seconds);
       }
 
     /*
         // TODO     <desc id="cdudn" nameSpace="urn:schemas-rinconnetworks-com:metadata-1-0/">SA_RINCON5127_42????35</desc>
 
-          <item id="T:\public_html\Jukebox\mp3\_Presets\10.dpl/0" parentID="T:\public_html\Jukebox\mp3\_Presets\10.dpl" restricted="False">
-        <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">Mr. Rock &amp; Roll</dc:title>
-            <upnp:class xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">object.item.audioItem.musicTrack</upnp:class>
-            <res duration="00:03:38" protocolInfo="http-get:*:taglib/mp3:*">http://eng.linn.co.uk/~joshh/Jukebox/mp3/Amy%20Macdonald/This%20Is%20The%20Life/Mr.%20Rock%20&amp;%20Roll.mp3</res>
-        <upnp:albumArtURI xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">http://eng.linn.co.uk/~joshh/Jukebox/mp3/Amy%20Macdonald/This%20Is%20The%20Life/Folder.jpg</upnp:albumArtURI>
-        <upnp:artworkURI xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">http://eng.linn.co.uk/~joshh/Jukebox/mp3/Amy%20Macdonald/This%20Is%20The%20Life/Folder.jpg</upnp:artworkURI>
-        <upnp:genre xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">Pop</upnp:genre>
-        <upnp:artist role="Performer" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">Amy Macdonald</upnp:artist>
-        <upnp:artist role="Composer" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">Unknown</upnp:artist>
-        <upnp:artist role="AlbumArtist" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">Unknown</upnp:artist>
-        <upnp:artist role="Conductor" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">Unknown</upnp:artist>
-        <upnp:album xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">This Is The Life</upnp:album>
-            <upnp:originalTrackNumber xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">1</upnp:originalTrackNumber>
-        <dc:date xmlns:dc="http://purl.org/dc/elements/1.1/">Unknown</dc:date>
-        <upnp:originalDiscNumber xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">0</upnp:originalDiscNumber>
-        <upnp:originalDiscCount xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">0</upnp:originalDiscCount>
-      </item>
+    <item id="T:\public_html\Jukebox\mp3\_Presets\10.dpl/0" parentID="T:\public_html\Jukebox\mp3\_Presets\10.dpl" restricted="False">
+        <upnp:albumArtURI">http://eng.linn.co.uk/~joshh/Jukebox/mp3/Amy%20Macdonald/This%20Is%20The%20Life/Folder.jpg</upnp:albumArtURI>
+        <upnp:artworkURI">http://eng.linn.co.uk/~joshh/Jukebox/mp3/Amy%20Macdonald/This%20Is%20The%20Life/Folder.jpg</upnp:artworkURI>
+        <upnp:genre">Pop</upnp:genre>
+        <upnp:artist role="Performer"">Amy Macdonald</upnp:artist>
+        <upnp:artist role="Composer"">Unknown</upnp:artist>
+        <upnp:artist role="AlbumArtist"">Unknown</upnp:artist>
+        <upnp:artist role="Conductor"">Unknown</upnp:artist>
+        <dc:date >Unknown</dc:date>
+        <upnp:originalDiscNumber">0</upnp:originalDiscNumber>
+        <upnp:originalDiscCount">0</upnp:originalDiscCount>
+    </item>
 
     */
   }

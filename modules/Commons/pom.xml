@@ -28,6 +28,12 @@
             <artifactId>rdf4j-rio-n3</artifactId>
             <optional>true</optional>
         </dependency>
+        
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <optional>true</optional>
+        </dependency>
 
         <dependency>
             <groupId>it.tidalwave.thesefoolishthings</groupId>

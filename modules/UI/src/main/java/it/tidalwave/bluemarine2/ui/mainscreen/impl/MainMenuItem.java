@@ -30,39 +30,17 @@ package it.tidalwave.bluemarine2.ui.mainscreen.impl;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
-import java.util.function.Supplier;
 import it.tidalwave.role.ui.UserAction;
 import it.tidalwave.role.ui.spi.UserActionSupport8;
 import it.tidalwave.messagebus.MessageBus;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import lombok.RequiredArgsConstructor;
 import static it.tidalwave.role.Displayable8.displayableFromBundle;
-
-// TODO: if approved, move to TheseFoolishThings
-@RequiredArgsConstructor
-class SupplierFromClass<T> implements Supplier<T>
-  {
-    @Nonnull
-    private final Class<T> factoryClass;
-
-    @Override
-    public T get()
-      {
-        try
-          {
-            return factoryClass.newInstance();
-          }
-        catch (InstantiationException | IllegalAccessException e)
-          {
-            throw new RuntimeException(e);
-          }
-      }
-  }
+import static it.tidalwave.bluemarine2.util.FunctionWrappers.*;
 
 /***********************************************************************************************************************
  *
- * A proritized container of {@link UserAction}s to be placed on a menu.
+ * A prioritized container of {@link UserAction}s to be placed on a menu.
  *
  * @author  Fabrizio Giudici
  * @version $Id$
@@ -71,7 +49,7 @@ class SupplierFromClass<T> implements Supplier<T>
 @Slf4j
 public class MainMenuItem
   {
-    @Getter @Nonnull
+    @Getter
     private final int priority;
 
     @Inject
@@ -87,9 +65,8 @@ public class MainMenuItem
       {
         this.priority = priority;
         final Class<?> requestClass = Thread.currentThread().getContextClassLoader().loadClass(requestClassName);
-        final SupplierFromClass<?> supplier = new SupplierFromClass<>(requestClass);
         // FIXME: use MessageSendingUserAction?
-        this.action  = new UserActionSupport8(() -> messageBus.publish(supplier.get()),
-                                              displayableFromBundle(getClass(), displayNameKey));
+        this.action  = new UserActionSupport8(() -> messageBus.publish(_s(requestClass::newInstance).get()),
+                                               displayableFromBundle(getClass(), displayNameKey));
       }
   }

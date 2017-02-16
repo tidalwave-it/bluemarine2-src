@@ -6,3 +6,5 @@ Browse({ObjectID=/music/a+t/a:HYP-d147DFt7yGXMJPoh6z6kheA=, BrowseFlag=BrowseMet
         <upnp:class>object.container.person.musicArtist</upnp:class>
     </container>
 </DIDL-Lite>
+
+QUERY COUNT: 3

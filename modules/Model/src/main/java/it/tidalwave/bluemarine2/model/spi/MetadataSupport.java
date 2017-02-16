@@ -35,7 +35,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
-import java.util.function.Supplier;
 import java.nio.file.Path;
 import it.tidalwave.util.Key;
 import it.tidalwave.bluemarine2.model.MediaItem;

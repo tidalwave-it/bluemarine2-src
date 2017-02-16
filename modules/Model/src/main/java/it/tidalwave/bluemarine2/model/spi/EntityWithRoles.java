@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.model.spi;
 
 import javax.annotation.Nonnull;
+import java.util.Arrays;
 import it.tidalwave.util.spi.AsSupport;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import lombok.experimental.Delegate;
@@ -44,15 +45,18 @@ public class EntityWithRoles implements Entity
     @Delegate @Nonnull
     private final AsSupport asSupport;
 
+    @Nonnull
+    private final Object[] roles;
+
     public EntityWithRoles (final @Nonnull Object ... roles)
       {
         this.asSupport = new AsSupport(this, roles);
+        this.roles = roles;
       }
 
     @Override @Nonnull
     public String toString()
       {
-        return String.format("%s()", getClass().getSimpleName());
-//        return String.format("%s()@%s", getClass().getSimpleName(), Integer.toHexString(System.identityHashCode(this)));
+        return String.format("%s(%s)", getClass().getSimpleName(), Arrays.toString(roles));
       }
   }

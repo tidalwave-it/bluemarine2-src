@@ -6,3 +6,5 @@ Browse({ObjectID=/music/a+r+t/a:01dFRWwGdwcxyDGTw48SzJyzwgI=, BrowseFlag=BrowseD
         <upnp:class>object.container.album.musicAlbum</upnp:class>
     </container>
 </DIDL-Lite>
+
+QUERY COUNT: 4
