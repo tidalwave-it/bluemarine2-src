@@ -71,7 +71,7 @@ public class MediaFolderDIDLAdapter extends CompositeDIDLAdapterSupport<MediaFol
 
         if (!container.getId().equals("/music")) // FIXME workaround for DefaultMediaFileSystem
           {
-            container.setTitle(container.getTitle().replace("Music", "By file")); // FIXME: this corrupts some title
+            container.setTitle(container.getTitle().replaceAll("^Music$", "By file")); // FIXME: this corrupts some title
           }
 
         return container;
