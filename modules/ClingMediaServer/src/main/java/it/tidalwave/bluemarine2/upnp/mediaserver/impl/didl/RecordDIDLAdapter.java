@@ -35,6 +35,7 @@ import org.fourthline.cling.support.model.container.MusicAlbum;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.Record;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -47,7 +48,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @DciRole(datumType = Record.class) @Slf4j
+@Immutable @DciRole(datumType = Record.class) @ToString @Slf4j
 public class RecordDIDLAdapter extends DIDLAdapterSupport<Record>
   {
     public RecordDIDLAdapter (final @Nonnull Record datum, final @Nonnull ResourceServer server)

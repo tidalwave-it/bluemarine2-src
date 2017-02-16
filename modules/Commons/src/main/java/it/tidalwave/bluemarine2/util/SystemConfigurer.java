@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.util;
 
+import org.slf4j.bridge.SLF4JBridgeHandler;
 import lombok.NoArgsConstructor;
 import static lombok.AccessLevel.PRIVATE;
 
@@ -40,6 +41,12 @@ import static lombok.AccessLevel.PRIVATE;
 @NoArgsConstructor(access = PRIVATE)
 public final class SystemConfigurer
   {
+    public static void setupSlf4jBridgeHandler()
+      {
+        SLF4JBridgeHandler.removeHandlersForRootLogger();
+        SLF4JBridgeHandler.install();
+      }
+
     public static void setSystemProperties()
       {
         final String home = System.getProperty("user.home", "/tmp");

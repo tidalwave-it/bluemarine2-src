@@ -71,4 +71,10 @@ public class EntityBrowserDisplayable implements Displayable
         final String className = owner.getClass().getSimpleName();
         return BUNDLE.getOrDefault(className, className);
       }
+
+    @Override @Nonnull
+    public String toString()
+      {
+        return String.format("%s(%s)", getClass().getSimpleName(), getDisplayName());
+      }
   }
