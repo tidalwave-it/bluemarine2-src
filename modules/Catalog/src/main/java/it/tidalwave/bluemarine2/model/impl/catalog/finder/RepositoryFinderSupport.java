@@ -60,6 +60,7 @@ import it.tidalwave.util.LoggingUtilities;
 import it.tidalwave.util.Task;
 import it.tidalwave.util.spi.ReflectionUtils;
 import it.tidalwave.role.ContextManager;
+import it.tidalwave.bluemarine2.util.ImmutableTupleQueryResult;
 import it.tidalwave.bluemarine2.model.finder.SourceAwareFinder;
 import it.tidalwave.bluemarine2.model.spi.CacheManager;
 import it.tidalwave.bluemarine2.model.spi.CacheManager.Cache;
