@@ -33,6 +33,7 @@ import javax.annotation.concurrent.Immutable;
 import it.tidalwave.dci.annotation.DciRole;
 import it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
+import lombok.ToString;
 
 /***********************************************************************************************************************
  *
@@ -42,7 +43,7 @@ import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Immutable @DciRole(datumType = PathAwareEntityDecorator.class)
+@Immutable @DciRole(datumType = PathAwareEntityDecorator.class) @ToString
 public class PathAwareEntityDecoratorDIDLAdapter extends PathAwareDecoratorDIDLAdapter
   {
     public PathAwareEntityDecoratorDIDLAdapter (final @Nonnull PathAwareEntityDecorator datum,

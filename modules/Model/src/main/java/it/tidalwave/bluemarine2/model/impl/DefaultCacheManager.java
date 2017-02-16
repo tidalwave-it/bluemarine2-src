@@ -89,7 +89,7 @@ public class DefaultCacheManager implements CacheManager
         return cacheMap.computeIfAbsent(cacheKey, key -> new DefaultCache(cacheKey.toString()));
       }
 
-    private void onPersistenceUpdated (final @ListensTo PersistenceInitializedNotification notification)
+    /* visible for testing FIXME */ public void onPersistenceUpdated (final @ListensTo PersistenceInitializedNotification notification)
       {
         log.debug("onPersistenceUpdated({})", notification);
         cacheMap.clear();

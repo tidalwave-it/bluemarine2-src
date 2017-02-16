@@ -28,6 +28,7 @@
  */
 package it.tidalwave.bluemarine2.model.impl.catalog;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.CheckForNull;
 import java.util.Comparator;
@@ -53,6 +54,7 @@ import it.tidalwave.bluemarine2.model.finder.PerformanceFinder;
 import it.tidalwave.bluemarine2.model.finder.RecordFinder;
 import it.tidalwave.bluemarine2.model.finder.TrackFinder;
 import it.tidalwave.bluemarine2.model.role.Entity;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryFinderSupport;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
@@ -80,6 +82,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
     private static final Comparator<Entity> BY_DISPLAY_NAME =
             (e1, e2) -> e1.as(Displayable).getDisplayName().compareTo(e2.as(Displayable).getDisplayName());
+
+    private static int latestQueryCount;
 
     /*******************************************************************************************************************
      *
@@ -130,6 +134,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
       {
         log.info("queryAndDump(.., {})", dumpPath);
         createDirectories(PATH_TEST_RESULTS);
+        RepositoryFinderSupport.resetQueryCount();
+        latestQueryCount = 0;
         final PrintWriter pw = new PrintWriter(dumpPath.toFile(), "UTF-8");
 
         final MusicArtistFinder allArtistsFinder = catalog.findArtists();
@@ -138,21 +144,35 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
 
         log.info("QUERYING ALL ARTISTS...");
         final List<MusicArtist> artists = allArtistsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
-        log.info("QUERYING ALL RECORDS...");
-        final List<Record> records = allRecordsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
+        final int artistsQueryCount = getLatestQueryCount();
 
+        getLatestQueryCount();
         log.info("QUERYING ALL TRACKS...");
         pw.printf("ALL TRACKS (%d):%n%n", allTracksFinder.count());
+        final int trackCountQueryCount = getLatestQueryCount();
         final Map<String, Track> tracksOrphanOfArtist = allTracksFinder.stream()
                                                             .collect(toMap(Track::toDumpString, Function.identity(), (u,v) -> v));
         final Map<String, Track> tracksOrphanOfRecord = new HashMap<>(tracksOrphanOfArtist);
         tracksOrphanOfArtist.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s%n", track.toDumpString()));
+        pw.printf("  COUNT OF ALL TRACKS RETRIEVED BY %d QUERIES%n", trackCountQueryCount);
+        pw.printf("  ALL TRACKS RETRIEVED BY %d QUERIES%n", getLatestQueryCount());
 
         pw.printf("%n%n%nALL RECORDS (%d):%n%n", allRecordsFinder.count());
-        records.forEach(record -> pw.printf("  %s - %s%n", displayNameOf(record), record.getSource().orElse(new Id("unknown"))));
+        final int recordCountQueryCount = getLatestQueryCount();
+        log.info("QUERYING ALL RECORDS...");
+        final List<Record> records = allRecordsFinder.stream().sorted(BY_DISPLAY_NAME).collect(toList());
+        records.forEach(record -> pw.printf("  %s - %d tracks - %s%n",
+                displayNameOf(record),
+                record.findTracks().count(),
+                record.getSource().orElse(new Id("unknown"))));
+        pw.printf("  COUNT OF ALL RECORDS RETRIEVED BY %d QUERIES%n", recordCountQueryCount);
+        pw.printf("  ALL RECORDS RETRIEVED BY %d QUERIES%n", getLatestQueryCount());
 
         pw.printf("%n%n%nALL ARTISTS (%d):%n%n", allArtistsFinder.count());
+        final int artistCountQueryCount = getLatestQueryCount();
         artists.forEach(artist -> pw.printf("  %s - %s%n", displayNameOf(artist), artist.getSource().orElse(new Id("unknown"))));
+        pw.printf("  COUNT OF ALL ARTISTS RETRIEVED BY %d QUERIES%n", artistCountQueryCount);
+        pw.printf("  ALL ARTISTS RETRIEVED BY %d QUERIES%n", artistsQueryCount);
 
         artists.forEach(artist ->
           {
@@ -165,6 +185,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
                 tracksOrphanOfArtist.remove(track.toDumpString());
                 assertEquals(track.getSource(), artist.getSource());
               });
+
+            pw.printf("  RETRIEVED BY %d QUERIES%n", getLatestQueryCount());
           });
 
         artists.forEach(artist ->
@@ -174,6 +196,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
             pw.printf("%nRECORDS OF %s (%d):%n", displayNameOf(artist), recordFinder.count());
             recordFinder.stream().forEach(record -> pw.printf("  %s%n", displayNameOf(record)));
             recordFinder.stream().forEach(record -> assertEquals(record.getSource(), artist.getSource()));
+            pw.printf("  RETRIEVED BY %d QUERIES%n", getLatestQueryCount());
           });
 
         artists.forEach(artist ->
@@ -183,6 +206,7 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
             pw.printf("%nPERFORMANCES OF %s (%d):%n", displayNameOf(artist), performanceFinder.count());
             performanceFinder.stream().forEach(performance -> pw.printf("  %s%n", performance.toDumpString()));
             performanceFinder.stream().forEach(performance -> assertEquals(performance.getSource(), artist.getSource()));
+            pw.printf("  RETRIEVED BY %d QUERIES%n", getLatestQueryCount());
           });
 
         records.forEach(record ->
@@ -208,6 +232,8 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
                                                     .collect(joining("\n      : ", "      : ", ""))));
                 assertEquals(track.getSource(), record.getSource());
               });
+
+            pw.printf("  RETRIEVED BY %d QUERIES%n", getLatestQueryCount());
           });
 
         log.info("QUERYING ALL AUDIO TRACKS...");
@@ -221,7 +247,21 @@ public class RepositoryMediaCatalogTest extends SpringTestSupport
         pw.printf("%n%nTRACKS ORPHAN OF RECORD (%d):%n%n", tracksOrphanOfRecord.size());
         tracksOrphanOfRecord.values().stream().sorted(BY_DISPLAY_NAME).forEach(track -> pw.printf("  %s%n", track.toDumpString()));
 
+        pw.printf("TOTAL NUMBER OF QUERIES: %d%n", RepositoryFinderSupport.getQueryCount());
         pw.close();
+      }
+
+    /*******************************************************************************************************************
+     *
+     * Assumes strictly sequential testing.
+     *
+     ******************************************************************************************************************/
+    @Nonnegative
+    private int getLatestQueryCount()
+      {
+        final int previousCount = latestQueryCount;
+        latestQueryCount = RepositoryFinderSupport.getQueryCount();
+        return latestQueryCount - previousCount;
       }
 
     /*******************************************************************************************************************

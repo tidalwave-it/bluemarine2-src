@@ -41,6 +41,7 @@ import java.nio.file.Path;
 import it.tidalwave.util.Key;
 import it.tidalwave.util.spi.MockInstantProvider;
 import it.tidalwave.messagebus.MessageBus;
+import it.tidalwave.bluemarine2.util.SystemConfigurer;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.mediascanner.ScanCompleted;
 import it.tidalwave.bluemarine2.model.MediaFileSystem;
@@ -49,7 +50,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
-import org.slf4j.bridge.SLF4JBridgeHandler;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import it.tidalwave.bluemarine2.model.ModelPropertyNames;
@@ -89,8 +89,7 @@ public class DefaultMediaScannerTest extends SpringTestSupport
     static
       {
         // Some libraries use JUL
-        SLF4JBridgeHandler.removeHandlersForRootLogger();
-        SLF4JBridgeHandler.install();
+        SystemConfigurer.setupSlf4jBridgeHandler();
       }
 
     public DefaultMediaScannerTest()

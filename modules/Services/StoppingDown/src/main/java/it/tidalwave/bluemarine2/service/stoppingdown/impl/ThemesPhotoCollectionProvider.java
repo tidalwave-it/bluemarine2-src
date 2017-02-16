@@ -55,7 +55,6 @@ import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.*;
 import static javax.xml.xpath.XPathConstants.*;
 import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
-import static java.util.Comparator.comparing;
 
 /***********************************************************************************************************************
  *

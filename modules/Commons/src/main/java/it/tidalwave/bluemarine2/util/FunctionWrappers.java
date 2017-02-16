@@ -28,8 +28,10 @@
  */
 package it.tidalwave.bluemarine2.util;
 
+import javax.annotation.Nonnull;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
 import lombok.NoArgsConstructor;
 import static lombok.AccessLevel.PRIVATE;
 
@@ -45,18 +47,26 @@ public final class FunctionWrappers
     @FunctionalInterface
     public static interface FunctionWithException<T, R>
       {
-        R apply (T t)
+        public R apply (T t)
           throws Exception;
       }
 
     @FunctionalInterface
     public static interface ConsumerWithException<T>
       {
-        void accept (T t)
+        public void accept (T t)
           throws Exception;
       }
 
-    public static <T, R> Function<T, R> _f (final FunctionWithException<T, R> function)
+    @FunctionalInterface
+    public static interface SupplierWithException<T>
+      {
+        public T get()
+          throws Exception;
+      }
+
+    @Nonnull
+    public static <T, R> Function<T, R> _f (final @Nonnull FunctionWithException<T, R> function)
       {
         return t ->
           {
@@ -71,13 +81,30 @@ public final class FunctionWrappers
           };
       }
 
-    public static <T> Consumer<T> _c (final ConsumerWithException<T> consumer)
+    @Nonnull
+    public static <T> Consumer<T> _c (final @Nonnull ConsumerWithException<T> consumer)
       {
         return t ->
           {
             try
               {
                 consumer.accept(t);
+              }
+            catch (Exception e)
+              {
+                throw new RuntimeException(e);
+              }
+          };
+      }
+
+    @Nonnull
+    public static <T> Supplier<T> _s (final @Nonnull SupplierWithException<T> supplier)
+      {
+        return () ->
+          {
+            try
+              {
+                return supplier.get();
               }
             catch (Exception e)
               {
