@@ -29,6 +29,7 @@
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 
 import javax.annotation.Nonnull;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.query.impl.MapBindingSet;
@@ -43,11 +44,13 @@ import it.tidalwave.bluemarine2.model.impl.PathAwareMediaFolderDecorator;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMusicArtist;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryRecord;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
 import lombok.extern.slf4j.Slf4j;
 import static org.mockito.Mockito.*;
-import static org.testng.Assert.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.instanceOf;
 import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
 import static it.tidalwave.role.Identifiable.Identifiable;
 
@@ -74,10 +77,18 @@ public class CompositeDIDLAdapterSupportTest extends SpringTestSupport
           }
       }
 
+    private UnderTest underTest;
+
     public CompositeDIDLAdapterSupportTest()
       {
         super("META-INF/DciAutoBeans.xml",
               "META-INF/CompositeDIDLAdapterSupportTestBeans.xml");
+      }
+
+    @BeforeMethod
+    public void setup()
+      {
+        underTest = new UnderTest(mock(As8.class), mock(ResourceServer.class));
       }
 
     @Test
@@ -104,36 +115,27 @@ public class CompositeDIDLAdapterSupportTest extends SpringTestSupport
         must_find_the_correct_adapter_for_decorated_entities(createMockRecord(), PathAwareDecoratorDIDLAdapter.class);
       }
 
-    private void must_find_the_correct_adapter_for_decorated_entities (
-        final @Nonnull Entity instance, final @Nonnull Class<?> expectedRoleClass)
+    private void must_find_the_correct_adapter_for_decorated_entities (final @Nonnull Entity datum,
+                                                                       final @Nonnull Class<?> expectedAdapterClass)
       {
         // given
         final PathAwareEntity parent = mock(PathAwareEntity.class);
         when(parent.getPath()).thenReturn(Paths.get("/"));
-        final PathAwareMediaFolderDecorator decorator = new PathAwareMediaFolderDecorator(
-                instance, parent, Paths.get(instance.as(Identifiable).getId().stringValue()));
-
-        final ResourceServer server = mock(ResourceServer.class);
-        final As8 datum = mock(As8.class);
-        final UnderTest underTest = new UnderTest(datum, server);
+        final Path pathSegment = Paths.get(datum.as(Identifiable).getId().stringValue());
+        final PathAwareMediaFolderDecorator decorator = new PathAwareMediaFolderDecorator(datum, parent, pathSegment);
         // when
         final DIDLAdapter adapter = underTest.asDIDLAdapter(decorator);
         // then
-        assertTrue(expectedRoleClass.isAssignableFrom(adapter.getClass()), "" + adapter);
+        assertThat(adapter, instanceOf(expectedAdapterClass));
       }
 
-    private void must_find_the_correct_adapter (
-        final @Nonnull Entity instance, final @Nonnull Class<?> expectedRoleClass)
+    private void must_find_the_correct_adapter (final @Nonnull Entity datum,
+                                                final @Nonnull Class<?> expectedAdapterClass)
       {
-        // given
-        final ResourceServer server = mock(ResourceServer.class);
-        final As8 datum = mock(As8.class);
-
-        final UnderTest underTest = new UnderTest(datum, server);
         // when
-        final DIDLAdapter adapter = underTest.asDIDLAdapter(instance);
+        final DIDLAdapter adapter = underTest.asDIDLAdapter(datum);
         // then
-        assertTrue(expectedRoleClass.isAssignableFrom(adapter.getClass()), "" + adapter);
+        assertThat(adapter, instanceOf(expectedAdapterClass));
       }
 
     @Nonnull
