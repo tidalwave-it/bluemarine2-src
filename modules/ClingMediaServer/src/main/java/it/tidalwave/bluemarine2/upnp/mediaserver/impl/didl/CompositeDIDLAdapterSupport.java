@@ -31,7 +31,6 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
-import java.util.Collection;
 import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
 import it.tidalwave.util.As8;
@@ -88,7 +87,7 @@ public abstract class CompositeDIDLAdapterSupport<T extends As8> extends DIDLAda
                       .max(maxResults)
                       .results()
                       .stream()
-                      .forEach(_c(child -> content.addObject(asDIDLAdapter(child).toObject())));
+                      .forEach(_c(child -> content.addObject(child.as(DIDLAdapter).toObject())));
                 numberReturned = (int)content.getCount();
                 break;
 
@@ -97,34 +96,5 @@ public abstract class CompositeDIDLAdapterSupport<T extends As8> extends DIDLAda
           }
 
         return new ContentHolder(content, numberReturned, totalMatches);
-      }
-
-    /*******************************************************************************************************************
-     *
-     ******************************************************************************************************************/
-    @Nonnull
-    protected DIDLAdapter asDIDLAdapter (final @Nonnull As8 object)
-      {
-        final Collection<DIDLAdapter> adapters = object.asMany(DIDLAdapter);
-        log.trace(">>>> adapters for {}: {}", object, adapters);
-
-        if (adapters.size() > 1)
-          {
-            adapters.removeIf(adapter -> adapter instanceof MediaFolderDIDLAdapter);
-          }
-
-        return adapters.stream().findFirst()
-                .orElseGet(() ->
-                  {
-                    if (object instanceof Entity) // FIXME: must be fallback; annotations don't warrant this
-                      {
-                        return new EntityDIDLAdapter((Entity)object, server);
-                      }
-                    else
-                      {
-                        throw new RuntimeException("No DIDL adapter for " + object);
-                      }
-                  });
-//                .orElseThrow(() -> new RuntimeException("No DIDL adapter for " + object));
       }
   }
