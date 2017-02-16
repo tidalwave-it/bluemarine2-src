@@ -29,9 +29,8 @@
 package it.tidalwave.bluemarine2.headlessservice.impl;
 
 import javax.annotation.Nonnull;
-import it.tidalwave.bluemarine2.util.Logging;
+import it.tidalwave.bluemarine2.util.SystemConfigurer;
 import it.tidalwave.bluemarine2.initializer.Initializer;
-import org.slf4j.bridge.SLF4JBridgeHandler;
 
 /***********************************************************************************************************************
  *
@@ -49,9 +48,8 @@ public class Main
       {
         try
           {
-            Logging.setupLogFolder();
-            SLF4JBridgeHandler.removeHandlersForRootLogger();
-            SLF4JBridgeHandler.install();
+            SystemConfigurer.setSystemProperties();
+            SystemConfigurer.setupSlf4jBridgeHandler();
             INSTANCE.initialize();
             INSTANCE.getApplicationContext().getBean(Initializer.class).boot();
           }

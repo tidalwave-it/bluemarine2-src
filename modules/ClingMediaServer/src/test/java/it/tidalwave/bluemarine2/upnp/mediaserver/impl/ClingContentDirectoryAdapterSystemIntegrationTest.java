@@ -49,6 +49,7 @@ import org.fourthline.cling.support.model.BrowseFlag;
 import org.fourthline.cling.support.model.DIDLContent;
 import it.tidalwave.util.Key;
 import it.tidalwave.bluemarine2.model.impl.DefaultMediaFileSystem;
+import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
 import it.tidalwave.bluemarine2.message.PowerOnNotification;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 import it.tidalwave.bluemarine2.commons.test.TestSetLocator;
@@ -65,8 +66,10 @@ import static it.tidalwave.util.test.FileComparisonUtils8.assertSameContents;
 import static it.tidalwave.bluemarine2.util.Miscellaneous.*;
 import static it.tidalwave.bluemarine2.util.Formatters.*;
 import static it.tidalwave.bluemarine2.commons.test.TestUtilities.*;
+import it.tidalwave.bluemarine2.message.PersistenceInitializedNotification;
 import it.tidalwave.bluemarine2.message.PowerOffNotification;
 import static it.tidalwave.bluemarine2.model.ModelPropertyNames.ROOT_PATH;
+import it.tidalwave.bluemarine2.model.impl.DefaultCacheManager;
 import it.tidalwave.bluemarine2.rest.impl.server.DefaultResourceServer;
 
 /***********************************************************************************************************************
@@ -93,6 +96,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
     private UpnpClient upnpClient;
 
     private DefaultResourceServer resourceServer;
+
+    private DefaultCacheManager cacheManager;
 
     /*******************************************************************************************************************
      *
@@ -148,6 +153,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
         resourceServer.onPowerOnNotification(powerOnNotification);
         final Repository repository = context.getBean(Repository.class);
         loadRepository(repository, repositoryPath);
+        cacheManager = context.getBean(DefaultCacheManager.class);
       }
 
     /*******************************************************************************************************************
@@ -187,8 +193,11 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
 
         for (final Params params : toParams(sequencePath))
           {
-            log.info("============================================================================================");
+            log.info("==== {} ========================================================================================",
+                     String.format("%s-%03d", sequenceName, n.get()));
             log.info(">>>> sending {} ...", params);
+            RepositoryTrackFinder.resetQueryCount();
+            cacheManager.onPersistenceUpdated(new PersistenceInitializedNotification());
             final CountDownLatch latch = new CountDownLatch(1);
 
             final Browse browse = new Browse(upnpClient.getService(),
@@ -219,7 +228,8 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
                         final DIDLParser parser = new DIDLParser();
                         final String baseUrl = resourceServer.absoluteUrl("");
                         final String result = xmlPrettyPrinted(parser.generate(didl)).replaceAll(baseUrl, "http://<server>/");
-                        Files.write(actualFile, (header + "\n" + result).getBytes(UTF_8));
+                        final String queries = String.format("QUERY COUNT: %d", RepositoryTrackFinder.getQueryCount());
+                        Files.write(actualFile, (header + "\n" + result + "\n" + queries).getBytes(UTF_8));
                         assertSameContents(normalizedPath(expectedFile), normalizedPath(actualFile));
                       }
                     catch (Throwable e)
@@ -244,6 +254,7 @@ public class ClingContentDirectoryAdapterSystemIntegrationTest extends ClingTest
 
             upnpClient.execute(browse);
             latch.await();
+            RepositoryTrackFinder.setDumpThreadOnQuery(false);
 
             if (error.get() != null)
               {

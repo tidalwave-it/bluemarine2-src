@@ -26,7 +26,7 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.model.impl.catalog.finder;
+package it.tidalwave.bluemarine2.util;
 
 import javax.annotation.concurrent.NotThreadSafe;
 import java.util.ArrayList;

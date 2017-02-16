@@ -31,10 +31,11 @@ package it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import org.fourthline.cling.support.model.DIDLObject;
+import org.fourthline.cling.support.model.item.Item;
 import it.tidalwave.bluemarine2.model.impl.PathAwareEntityDecorator;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
-import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.externalized;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.UpnpUtilities.*;
 
 /***********************************************************************************************************************
  *
@@ -63,8 +64,15 @@ public class PathAwareDecoratorDIDLAdapter extends CompositeDIDLAdapterSupport<P
       {
         log.debug("toObject() - {}", datum);
         final DIDLObject item = asDIDLAdapter(datum.getDelegate()).toObject();
-        datum.getParent().ifPresent(parent -> item.setParentID(externalized(parent.getPath().toString())));
+
+        if (item instanceof Item)
+          {
+            ((Item)item).setRefID(item.getId()); // don't externalize this
+          }
+
         item.setId(externalized(datum.getPath().toString()));
+        datum.getParent().ifPresent(parent -> item.setParentID(externalized(parent.getPath().toString())));
+        log.trace(">>>> delegate created {}", item);
         return item;
       }
   }

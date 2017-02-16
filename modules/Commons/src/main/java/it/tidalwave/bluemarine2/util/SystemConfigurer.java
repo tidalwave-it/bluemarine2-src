@@ -26,36 +26,51 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.rest.impl;
+package it.tidalwave.bluemarine2.util;
 
-import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.beans.factory.annotation.Configurable;
-import it.tidalwave.role.Identifiable;
-import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
+import org.slf4j.bridge.SLF4JBridgeHandler;
+import lombok.NoArgsConstructor;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
- * @version $Id: $
+ * @version $Id$
  *
  **********************************************************************************************************************/
-@Configurable(preConstruction = true)
-public abstract class JsonSupport
+@NoArgsConstructor(access = PRIVATE)
+public final class SystemConfigurer
   {
-    @Inject @JsonIgnore
-    private ResourceServer server;
-
-    @Nonnull
-    protected final String resourceUri (final @Nonnull String resourceType, final @Nonnull Identifiable resource)
+    public static void setupSlf4jBridgeHandler()
       {
-        return resourceUri(resourceType, resource.getId().stringValue());
+        SLF4JBridgeHandler.removeHandlersForRootLogger();
+        SLF4JBridgeHandler.install();
       }
 
-    @Nonnull
-    protected final String resourceUri (final @Nonnull String resourceType, final @Nonnull String resourceId)
+    public static void setSystemProperties()
       {
-        return server.absoluteUrl(String.format("rest/%s/%s", resourceType, resourceId));
+        final String home = System.getProperty("user.home", "/tmp");
+        final String osName = System.getProperty("os.name").toLowerCase();
+
+        switch (osName)
+          {
+            case "linux":
+                // on Linux we define paths in the launcher shell
+                break;
+
+            case "mac os x":
+                final String workspace = home + "/Library/Application Support/blueMarine2";
+                System.setProperty("blueMarine2.workspace", workspace);
+                System.setProperty("blueMarine2.logFolder", workspace + "/logs");
+                System.setProperty("blueMarine2.logConfigOverride", workspace + "/config/logback-override.xml");
+                break;
+
+            case "windows":
+                // FIXME todo
+                break;
+
+            default:
+                throw new ExceptionInInitializerError("Unknown o.s.: " + osName);
+          }
       }
   }

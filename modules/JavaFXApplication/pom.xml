@@ -18,6 +18,8 @@
     <properties>
         <!-- Otherwise can't be released because of missing javadocs -->
         <tft.javadoc.excludePackageNames />
+        <tft.mainClass>it.tidalwave.bluemarine2.ui.impl.javafx.Main</tft.mainClass>
+        <tft.jar.classpathInManifest>true</tft.jar.classpathInManifest>
     </properties>
 
     <dependencies>
@@ -30,7 +32,7 @@
             <artifactId>it-tidalwave-bluemarine2-initializer</artifactId>
         </dependency>
 
-        <dependency>
+<!--        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <exclusions>
@@ -39,24 +41,9 @@
                     <artifactId>commons-logging</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jul-to-slf4j</artifactId>
-        </dependency>
+        </dependency>-->
 
         <!-- Runtime dependencies -->
-        <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-persistence</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>it.tidalwave.bluemarine2</groupId>
-            <artifactId>it-tidalwave-bluemarine2-catalog</artifactId>
-            <scope>runtime</scope>
-        </dependency>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-upnp-mediaserver</artifactId>
@@ -77,28 +64,23 @@
             <artifactId>it-tidalwave-cec</artifactId>
             <scope>runtime</scope>
         </dependency>
-
-        <dependency>
-            <groupId>it.tidalwave.thesefoolishthings</groupId>
-            <artifactId>it-tidalwave-messagebus-spring</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <scope>runtime</scope>
-        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin> <!-- FIXME: push to super POM -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>${tft.jar.classpathInManifest}</addClasspath>
+                            <mainClass>${tft.mainClass}</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

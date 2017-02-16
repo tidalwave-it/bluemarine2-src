@@ -26,19 +26,23 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.rest.impl;
+package it.tidalwave.bluemarine2.rest.impl.resource;
 
 import javax.annotation.Nonnull;
-import java.util.List;
+import java.util.Optional;
+import java.time.Duration;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import it.tidalwave.bluemarine2.model.Record;
+import it.tidalwave.bluemarine2.model.AudioFile;
+import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
 import lombok.Getter;
+import static it.tidalwave.role.Displayable.Displayable;
+import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
 
 /***********************************************************************************************************************
  *
- * An adapter for exporting {@link Record} in JSON.
- * FIXME: differentiating the serialized fields should be done with JsonView
+ * An adapter for exporting {@link AudioFile} in REST.
  *
  * @stereotype  Adapter
  *
@@ -47,16 +51,36 @@ import lombok.Getter;
  *
  **********************************************************************************************************************/
 @Getter
-@JsonInclude(JsonInclude.Include.NON_ABSENT)
+@JsonInclude(Include.NON_ABSENT)
 @JsonPropertyOrder(alphabetic = true)
-public class DetailedRecordJson extends RecordJson
+public class AudioFileResource extends ResourceSupport
   {
-    private final List<TrackJson> tracks;
+    private final String id;
 
-    public DetailedRecordJson (final @Nonnull Record record, final @Nonnull List<TrackJson> tracks)
+    private final String displayName;
+
+    private final String path;
+
+    private final Optional<Long> fileSize;
+
+    private final Optional<String> duration;
+
+    private final String content;
+
+    private final Optional<String> coverArt;
+
+    public AudioFileResource (final @Nonnull AudioFile audioFile)
       {
-        super(record);
-        this.details = null;
-        this.tracks  = tracks;
+        this.id          = audioFile.getId().stringValue();
+        this.displayName = audioFile.as(Displayable).getDisplayName();
+        this.path        = audioFile.getPath().toString();
+
+        final Metadata metadata = audioFile.getMetadata();
+        this.fileSize    = metadata.get(FILE_SIZE);
+        this.duration    = metadata.get(DURATION).map(Duration::toString);
+
+        final String myUri = resourceUri("audiofile", id);
+        this.content     = myUri + "/content";
+        this.coverArt    = metadata.get(ARTWORK).map(x -> myUri + "/coverart");
       }
   }

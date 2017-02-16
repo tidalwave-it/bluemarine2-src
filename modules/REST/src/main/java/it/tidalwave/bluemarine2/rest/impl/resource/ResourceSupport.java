@@ -26,61 +26,36 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.rest.impl;
+package it.tidalwave.bluemarine2.rest.impl.resource;
 
 import javax.annotation.Nonnull;
-import java.util.Optional;
-import java.time.Duration;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import it.tidalwave.bluemarine2.model.AudioFile;
-import it.tidalwave.bluemarine2.model.MediaItem.Metadata;
-import lombok.Getter;
-import static it.tidalwave.role.Displayable.Displayable;
-import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
+import javax.inject.Inject;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.beans.factory.annotation.Configurable;
+import it.tidalwave.role.Identifiable;
+import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
 
 /***********************************************************************************************************************
- *
- * An adapter for exporting {@link AudioFile} in JSON.
- *
- * @stereotype  Adapter
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id: $
  *
  **********************************************************************************************************************/
-@Getter
-@JsonInclude(Include.NON_ABSENT)
-@JsonPropertyOrder(alphabetic = true)
-public class AudioFileJson extends JsonSupport
+@Configurable(preConstruction = true)
+public abstract class ResourceSupport
   {
-    private final String id;
+    @Inject @JsonIgnore
+    private ResourceServer server;
 
-    private final String displayName;
-
-    private final String path;
-
-    private final Optional<Long> fileSize;
-
-    private final Optional<String> duration;
-
-    private final String content;
-
-    private final Optional<String> coverArt;
-
-    public AudioFileJson (final @Nonnull AudioFile audioFile)
+    @Nonnull
+    protected final String resourceUri (final @Nonnull String resourceType, final @Nonnull Identifiable resource)
       {
-        this.id          = audioFile.getId().stringValue();
-        this.displayName = audioFile.as(Displayable).getDisplayName();
-        this.path        = audioFile.getPath().toString();
+        return resourceUri(resourceType, resource.getId().stringValue());
+      }
 
-        final Metadata metadata = audioFile.getMetadata();
-        this.fileSize    = metadata.get(FILE_SIZE);
-        this.duration    = metadata.get(DURATION).map(Duration::toString);
-
-        final String myUri = resourceUri("audiofile", id);
-        this.content     = myUri + "/content";
-        this.coverArt    = metadata.get(ARTWORK).map(x -> myUri + "/coverart");
+    @Nonnull
+    protected final String resourceUri (final @Nonnull String resourceType, final @Nonnull String resourceId)
+      {
+        return server.absoluteUrl(String.format("rest/%s/%s", resourceType, resourceId));
       }
   }

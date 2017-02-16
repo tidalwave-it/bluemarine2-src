@@ -1,0 +1,9 @@
+[Unit]
+Description=blueMarine II media center for Linux ARM
+
+[Service]
+ExecStart=/opt/bluemarine2/bin/bluemarine2 --mediacenter
+User=bluemarine2
+
+[Install]
+WantedBy=multi-user.target

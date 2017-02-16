@@ -38,101 +38,23 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <!-- ===============================================================================================================
-
-
-
-
-    ================================================================================================================ -->
-
     <groupId>it.tidalwave.bluemarine2</groupId>
     <artifactId>bluemarine2-service</artifactId>
     <version>1.0-ALPHA-20-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>blueMarine II - Installers - Headless Service</name>
-    <description>This module creates a headless service.</description>
+    <description>
+        This module creates a headless service. The produced artifacts are a .tar.gz and a .zip containing all the
+        required stuff, including a shell script launcher.
+    </description>
 
     <dependencies>
         <dependency>
             <groupId>it.tidalwave.bluemarine2</groupId>
             <artifactId>it-tidalwave-bluemarine2-headlessservice</artifactId>
         </dependency>
-
-        <!-- FIXME: why are not brought by transitive dependencies? -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <scope>runtime</scope>
-        </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-resources</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${basedir}/target/bin</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/resources</directory>
-                                    <filtering>true</filtering>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <includeScope>runtime</includeScope>
-                            <overWrite>true</overWrite>
-                            <outputDirectory>${basedir}/target/dist/lib</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <descriptors>
-                        <descriptor>src/main/assembly/tar.gz.xml</descriptor>
-                        <descriptor>src/main/assembly/zip.xml</descriptor>
-                    </descriptors>
-                    <runOnlyAtExecutionRoot>false</runOnlyAtExecutionRoot>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+    <!-- Lots of things happen because of activate profiles - see 'src/config' -->
 
 </project>

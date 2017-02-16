@@ -1,0 +1,11 @@
+Package: blueMarine-II
+Version: [[version]]
+Section: misc
+Priority: optional
+Architecture: all
+Depends: java8-runtime
+Recommended: oracle-java8-installer
+Maintainer: Fabrizio Giudici <fabrizio.giudici@tidalwave.it>
+Description: blueMarine II
+Distribution: development
+Homepage: http://bluemarine.tidalwave.it

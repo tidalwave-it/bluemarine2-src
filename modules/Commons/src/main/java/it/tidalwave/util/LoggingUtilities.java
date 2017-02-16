@@ -26,60 +26,33 @@
  * *********************************************************************************************************************
  * #L%
  */
-package it.tidalwave.bluemarine2.rest.impl;
+package it.tidalwave.util;
 
-import javax.annotation.Nonnull;
-import java.util.Optional;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import it.tidalwave.util.Id;
-import it.tidalwave.bluemarine2.model.Record;
-import lombok.Getter;
-import static it.tidalwave.role.Displayable.Displayable;
+import org.slf4j.LoggerFactory;
+import lombok.NoArgsConstructor;
+import static lombok.AccessLevel.PRIVATE;
 
 /***********************************************************************************************************************
- *
- * An adapter for exporting {@link Record} in JSON.
- *
- * @stereotype  Adapter
  *
  * @author  Fabrizio Giudici (Fabrizio.Giudici@tidalwave.it)
  * @version $Id: $
  *
  **********************************************************************************************************************/
-@Getter
-@JsonInclude(JsonInclude.Include.NON_ABSENT)
-@JsonPropertyOrder(alphabetic = true)
-public class RecordJson extends JsonSupport
+@NoArgsConstructor(access = PRIVATE)
+public final class LoggingUtilities
   {
-    private final String id;
-
-    private final String displayName;
-
-    private final Optional<Integer> diskCount;
-
-    private final Optional<Integer> diskNumber;
-
-    private final Optional<Integer> trackCount;
-
-    private final Optional<String> source;
-
-    private final Optional<String> asin;
-
-    private final Optional<String> gtin;
-
-    protected String details;
-
-    public RecordJson (final @Nonnull Record record)
+    public static void dumpStack (final Object owner, final boolean dump)
       {
-        this.id          = record.getId().stringValue();
-        this.displayName = record.as(Displayable).getDisplayName();
-        this.diskCount   = record.getDiskCount();
-        this.diskNumber  = record.getDiskNumber();
-        this.trackCount  = record.getTrackCount();
-        this.source      = record.getSource().map(Id::toString);
-        this.asin        = record.getAsin();
-        this.gtin        = record.getGtin();
-        this.details     = resourceUri("record", record);
+        if (dump)
+          {
+            try
+              {
+                throw new RuntimeException("stack trace");
+              }
+            catch (RuntimeException e)
+              {
+                LoggerFactory.getLogger(owner.getClass()).warn("stack-trace", e);
+              }
+          }
       }
   }

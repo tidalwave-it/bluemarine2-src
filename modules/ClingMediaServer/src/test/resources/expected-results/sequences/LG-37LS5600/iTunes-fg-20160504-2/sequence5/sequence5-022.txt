@@ -1,115 +1,149 @@
 Browse({ObjectID=/music/t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=32, RequestedCount=16, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <item id="/music/t/t:7bMZzD4APoMsumMUI6ZK4dSmRu0=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:7bMZzD4APoMsumMUI6ZK4dSmRu0=" parentID="/music/t" refID="urn:bluemarine:track:7bMZzD4APoMsumMUI6ZK4dSmRu0=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Agnus Dei: Agnus Dei</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>13</upnp:originalTrackNumber>
-        <res duration="00:05:16" protocolInfo="http-get:*:audio/mpeg:*" size="12662421">http://<server>/rest/audiofile/urn:bluemarine:audiofile:xBn2oOAd7UYrmEWthG459adZTvc=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 2]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:05:16.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="12662421">http://<server>/rest/audiofile/urn:bluemarine:audiofile:xBn2oOAd7UYrmEWthG459adZTvc=/content</res>
     </item>
-    <item id="/music/t/t:wF6gS1iF7zPo095GP7gmI4ToBZs=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:wF6gS1iF7zPo095GP7gmI4ToBZs=" parentID="/music/t" refID="urn:bluemarine:track:wF6gS1iF7zPo095GP7gmI4ToBZs=" restricted="0">
         <dc:title>Bach: Mass In B Minor, BWV 232 - Agnus Dei: Dona Nobis Pacem</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>14</upnp:originalTrackNumber>
-        <res duration="00:02:50" protocolInfo="http-get:*:audio/mpeg:*" size="6816224">http://<server>/rest/audiofile/urn:bluemarine:audiofile:80WbDklIlJie6WHL2KIq94-IoM8=/content</res>
+        <upnp:album>Bach: Mass In B Minor, BWV 232 [Disc 2]</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:02:50.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="6816224">http://<server>/rest/audiofile/urn:bluemarine:audiofile:80WbDklIlJie6WHL2KIq94-IoM8=/content</res>
     </item>
-    <item id="/music/t/t:e4l5Kg53MWPfWMdTwviWHyLi4hw=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:e4l5Kg53MWPfWMdTwviWHyLi4hw=" parentID="/music/t" refID="urn:bluemarine:track:e4l5Kg53MWPfWMdTwviWHyLi4hw=" restricted="0">
         <dc:title>Bach: Concerto In D Minor For 2 Violins, BWV 1043, "Double" - 1. Vivace</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="00:04:02" protocolInfo="http-get:*:audio/mpeg:*" size="9685435">http://<server>/rest/audiofile/urn:bluemarine:audiofile:EBBBeSSPj_eLBubj3tlhkpkEmdA=/content</res>
+        <upnp:album>Bach; Vivaldi: Concertos For 2 Violins</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:02.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="9685435">http://<server>/rest/audiofile/urn:bluemarine:audiofile:EBBBeSSPj_eLBubj3tlhkpkEmdA=/content</res>
     </item>
-    <item id="/music/t/t:ZleOmbCh1ZLQiKnvzEYUwksGhLM=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:ZleOmbCh1ZLQiKnvzEYUwksGhLM=" parentID="/music/t" refID="urn:bluemarine:track:ZleOmbCh1ZLQiKnvzEYUwksGhLM=" restricted="0">
         <dc:title>Bach: Concerto In D Minor For 2 Violins, BWV 1043, "Double" - 2. Largo Ma Non Tanto</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
-        <res duration="00:07:09" protocolInfo="http-get:*:audio/mpeg:*" size="17164826">http://<server>/rest/audiofile/urn:bluemarine:audiofile:M3XS37PybGr_YOQkh3EmrXxHPu0=/content</res>
+        <upnp:album>Bach; Vivaldi: Concertos For 2 Violins</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:07:09.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="17164826">http://<server>/rest/audiofile/urn:bluemarine:audiofile:M3XS37PybGr_YOQkh3EmrXxHPu0=/content</res>
     </item>
-    <item id="/music/t/t:daMcqarA7dDNLXPq2PrAy5WCCSg=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:daMcqarA7dDNLXPq2PrAy5WCCSg=" parentID="/music/t" refID="urn:bluemarine:track:daMcqarA7dDNLXPq2PrAy5WCCSg=" restricted="0">
         <dc:title>Bach: Concerto In D Minor For 2 Violins, BWV 1043, "Double" - 3. Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
-        <res duration="00:05:09" protocolInfo="http-get:*:audio/mpeg:*" size="12364554">http://<server>/rest/audiofile/urn:bluemarine:audiofile:UalAmccD_ux3InsTaA6Th_sIcM8=/content</res>
+        <upnp:album>Bach; Vivaldi: Concertos For 2 Violins</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:05:09.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="12364554">http://<server>/rest/audiofile/urn:bluemarine:audiofile:UalAmccD_ux3InsTaA6Th_sIcM8=/content</res>
     </item>
-    <item id="/music/t/t:4xmzhsHjP7bBue1OCFkwL6jGkUA=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:4xmzhsHjP7bBue1OCFkwL6jGkUA=" parentID="/music/t" refID="urn:bluemarine:track:4xmzhsHjP7bBue1OCFkwL6jGkUA=" restricted="0">
         <dc:title>Vivaldi: Violin Concerto In C Minor, RV 199, "Il Sospetto" - 1. Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
-        <res duration="00:03:41" protocolInfo="http-get:*:audio/mpeg:*" size="8845331">http://<server>/rest/audiofile/urn:bluemarine:audiofile:irHmPHbxSLT5dfagK8o0hNE_RkE=/content</res>
+        <upnp:album>Bach; Vivaldi: Concertos For 2 Violins</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:03:41.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="8845331">http://<server>/rest/audiofile/urn:bluemarine:audiofile:irHmPHbxSLT5dfagK8o0hNE_RkE=/content</res>
     </item>
-    <item id="/music/t/t:fE9mBdvb80fkrO0Y9Oo1e3rxzTI=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:fE9mBdvb80fkrO0Y9Oo1e3rxzTI=" parentID="/music/t" refID="urn:bluemarine:track:fE9mBdvb80fkrO0Y9Oo1e3rxzTI=" restricted="0">
         <dc:title>Vivaldi: Violin Concerto In C Minor, RV 199, "Il Sospetto" - 2. Andante</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
-        <res duration="00:03:15" protocolInfo="http-get:*:audio/mpeg:*" size="7804612">http://<server>/rest/audiofile/urn:bluemarine:audiofile:3MJoto-8xlsSlVgz4u2aqkL3Q2g=/content</res>
+        <upnp:album>Bach; Vivaldi: Concertos For 2 Violins</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:03:15.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="7804612">http://<server>/rest/audiofile/urn:bluemarine:audiofile:3MJoto-8xlsSlVgz4u2aqkL3Q2g=/content</res>
     </item>
-    <item id="/music/t/t:bibtTItMnKKiuq82zOKF54VAm2Y=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:bibtTItMnKKiuq82zOKF54VAm2Y=" parentID="/music/t" refID="urn:bluemarine:track:bibtTItMnKKiuq82zOKF54VAm2Y=" restricted="0">
         <dc:title>Vivaldi: Violin Concerto In C Minor, RV 199, "Il Sospetto" - 3. Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
-        <res duration="00:02:34" protocolInfo="http-get:*:audio/mpeg:*" size="6165168">http://<server>/rest/audiofile/urn:bluemarine:audiofile:LDayt7qvRMNDqA9YGxjJGL4jeHo=/content</res>
+        <upnp:album>Bach; Vivaldi: Concertos For 2 Violins</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:02:34.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="6165168">http://<server>/rest/audiofile/urn:bluemarine:audiofile:LDayt7qvRMNDqA9YGxjJGL4jeHo=/content</res>
     </item>
-    <item id="/music/t/t:9vxnLbLWxVjrZ3P1Cr15tRHhxUw=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:9vxnLbLWxVjrZ3P1Cr15tRHhxUw=" parentID="/music/t" refID="urn:bluemarine:track:9vxnLbLWxVjrZ3P1Cr15tRHhxUw=" restricted="0">
         <dc:title>Bach: Violin Concerto #2 In E, BWV 1042 - 1. Allegro, Adagio, Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
-        <res duration="00:08:20" protocolInfo="http-get:*:audio/mpeg:*" size="20004845">http://<server>/rest/audiofile/urn:bluemarine:audiofile:B5Xj9Og00eU-gaQbIpY4SimH8nM=/content</res>
+        <upnp:album>Bach; Vivaldi: Concertos For 2 Violins</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:08:20.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="20004845">http://<server>/rest/audiofile/urn:bluemarine:audiofile:B5Xj9Og00eU-gaQbIpY4SimH8nM=/content</res>
     </item>
-    <item id="/music/t/t:tEmlYhQCSHUabTxpF6k1axdpSF8=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:tEmlYhQCSHUabTxpF6k1axdpSF8=" parentID="/music/t" refID="urn:bluemarine:track:tEmlYhQCSHUabTxpF6k1axdpSF8=" restricted="0">
         <dc:title>Bach: Violin Concerto #2 In E, BWV 1042 - 2. Adagio</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
-        <res duration="00:06:36" protocolInfo="http-get:*:audio/mpeg:*" size="15845088">http://<server>/rest/audiofile/urn:bluemarine:audiofile:RTGBoi3kT0cRlWK0ea2met39-Jo=/content</res>
+        <upnp:album>Bach; Vivaldi: Concertos For 2 Violins</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:36.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="15845088">http://<server>/rest/audiofile/urn:bluemarine:audiofile:RTGBoi3kT0cRlWK0ea2met39-Jo=/content</res>
     </item>
-    <item id="/music/t/t:Htx_Nv8KzuTl6VkADgGRPShLMRQ=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:Htx_Nv8KzuTl6VkADgGRPShLMRQ=" parentID="/music/t" refID="urn:bluemarine:track:Htx_Nv8KzuTl6VkADgGRPShLMRQ=" restricted="0">
         <dc:title>Bach: Violin Concerto #2 In E, BWV 1042 - 3. Allegro Assai</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
-        <res duration="00:03:08" protocolInfo="http-get:*:audio/mpeg:*" size="7524573">http://<server>/rest/audiofile/urn:bluemarine:audiofile:Rjc_sKrAU2GFCGDwfcm2oS4sTqw=/content</res>
+        <upnp:album>Bach; Vivaldi: Concertos For 2 Violins</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:03:08.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="7524573">http://<server>/rest/audiofile/urn:bluemarine:audiofile:Rjc_sKrAU2GFCGDwfcm2oS4sTqw=/content</res>
     </item>
-    <item id="/music/t/t:o_sfXgsX0pIwkjv6LZpJ40racko=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:o_sfXgsX0pIwkjv6LZpJ40racko=" parentID="/music/t" refID="urn:bluemarine:track:o_sfXgsX0pIwkjv6LZpJ40racko=" restricted="0">
         <dc:title>Vivaldi: Concerto In A Minor For 2 Violins, Op. 3/8, RV 522 "L’Estro Armonico #8" - 1. Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
-        <res duration="00:03:58" protocolInfo="http-get:*:audio/mpeg:*" size="9524635">http://<server>/rest/audiofile/urn:bluemarine:audiofile:3_-_Y3EEyhsLwP7_m04Lc6UnpFk=/content</res>
+        <upnp:album>Bach; Vivaldi: Concertos For 2 Violins</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:03:58.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="9524635">http://<server>/rest/audiofile/urn:bluemarine:audiofile:3_-_Y3EEyhsLwP7_m04Lc6UnpFk=/content</res>
     </item>
-    <item id="/music/t/t:y58wuTDBXLWXzKmQiGP5ZYVAijo=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:y58wuTDBXLWXzKmQiGP5ZYVAijo=" parentID="/music/t" refID="urn:bluemarine:track:y58wuTDBXLWXzKmQiGP5ZYVAijo=" restricted="0">
         <dc:title>Vivaldi: Concerto In A Minor For 2 Violins, Op. 3/8, RV 522 "L’Estro Armonico #8" - 1. Larghetto E Spiritoso</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>11</upnp:originalTrackNumber>
-        <res duration="00:04:31" protocolInfo="http-get:*:audio/mpeg:*" size="10845414">http://<server>/rest/audiofile/urn:bluemarine:audiofile:YC1zHZFv3e-l6geioBSs5doYFJc=/content</res>
+        <upnp:album>Bach; Vivaldi: Concertos For 2 Violins</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:31.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="10845414">http://<server>/rest/audiofile/urn:bluemarine:audiofile:YC1zHZFv3e-l6geioBSs5doYFJc=/content</res>
     </item>
-    <item id="/music/t/t:6Tr9cNabeT0wWc5YSRiypN37eN0=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:6Tr9cNabeT0wWc5YSRiypN37eN0=" parentID="/music/t" refID="urn:bluemarine:track:6Tr9cNabeT0wWc5YSRiypN37eN0=" restricted="0">
         <dc:title>Vivaldi: Concerto In A Minor For 2 Violins, Op. 3/8, RV 522 "L’Estro Armonico #8" - 1. Allegro</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>12</upnp:originalTrackNumber>
-        <res duration="00:03:27" protocolInfo="http-get:*:audio/mpeg:*" size="8285386">http://<server>/rest/audiofile/urn:bluemarine:audiofile:3rv7St-EqvYm52Z5oNJfNKIpLRI=/content</res>
+        <upnp:album>Bach; Vivaldi: Concertos For 2 Violins</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:03:27.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="8285386">http://<server>/rest/audiofile/urn:bluemarine:audiofile:3rv7St-EqvYm52Z5oNJfNKIpLRI=/content</res>
     </item>
-    <item id="/music/t/t:zUYJbXUASduXOINsfPzxngcwkhQ=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:zUYJbXUASduXOINsfPzxngcwkhQ=" parentID="/music/t" refID="urn:bluemarine:track:zUYJbXUASduXOINsfPzxngcwkhQ=" restricted="0">
         <dc:title>Beethoven: Piano Sonata #21 In C, Op. 53, "Waldstein" - 1. Allegro Con Brio</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="00:11:05" protocolInfo="http-get:*:audio/mpeg:*" size="26640976">http://<server>/rest/audiofile/urn:bluemarine:audiofile:44flzsKCTo_Tu3mhftKsQInFbx0=/content</res>
+        <upnp:album>Beethoven: Piano Sonatas #21, 23 &amp; 26</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:11:05.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="26640976">http://<server>/rest/audiofile/urn:bluemarine:audiofile:44flzsKCTo_Tu3mhftKsQInFbx0=/content</res>
     </item>
-    <item id="/music/t/t:qMFX5cavMduJ1qI4rCaOQf5Lwxo=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:qMFX5cavMduJ1qI4rCaOQf5Lwxo=" parentID="/music/t" refID="urn:bluemarine:track:qMFX5cavMduJ1qI4rCaOQf5Lwxo=" restricted="0">
         <dc:title>Beethoven: Piano Sonata #21 In C, Op. 53, "Waldstein" - 2. Introduzione: Adagio Molto</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
-        <res duration="00:04:38" protocolInfo="http-get:*:audio/mpeg:*" size="11149329">http://<server>/rest/audiofile/urn:bluemarine:audiofile:hUWtPP2dbQbh3W-W34L42Z8DsNU=/content</res>
+        <upnp:album>Beethoven: Piano Sonatas #21, 23 &amp; 26</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:38.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="11149329">http://<server>/rest/audiofile/urn:bluemarine:audiofile:hUWtPP2dbQbh3W-W34L42Z8DsNU=/content</res>
     </item>
 </DIDL-Lite>
+
+QUERY COUNT: 18

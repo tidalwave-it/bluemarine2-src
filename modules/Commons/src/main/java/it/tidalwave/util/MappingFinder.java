@@ -49,7 +49,7 @@ public class MappingFinder<TYPE> extends SupplierBasedFinder8<TYPE>
     private static final long serialVersionUID = -6359683808082070089L;
 
     @Nonnull
-    private final Function<TYPE, TYPE> mapper;
+    private final transient Function<TYPE, TYPE> mapper;
 
     public MappingFinder (final @Nonnull Finder8<TYPE> delegate, final @Nonnull Function<TYPE, TYPE> mapper)
       {
