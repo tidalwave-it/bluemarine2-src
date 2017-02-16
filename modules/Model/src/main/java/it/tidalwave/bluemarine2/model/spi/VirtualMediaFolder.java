@@ -48,7 +48,7 @@ import it.tidalwave.bluemarine2.model.finder.PathAwareFinder;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@ToString(callSuper = false)
+@ToString(exclude = "finderFactory")
 public class VirtualMediaFolder extends EntityWithRoles implements MediaFolder
   {
     // These two interfaces are needed to avoid clashes with constructor overloading

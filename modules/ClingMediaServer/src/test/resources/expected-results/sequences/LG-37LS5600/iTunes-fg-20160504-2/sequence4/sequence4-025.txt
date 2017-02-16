@@ -1,12 +1,14 @@
 Browse({ObjectID=/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=1, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:Jw1z0EI-1P73X1tVcTuQp7iZ3bM=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" restricted="0">
+    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:Jw1z0EI-1P73X1tVcTuQp7iZ3bM=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" refID="urn:bluemarine:track:Jw1z0EI-1P73X1tVcTuQp7iZ3bM=" restricted="0">
         <dc:title>S'anc fui bèla ni presada</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="00:06:13" protocolInfo="http-get:*:audio/mpeg:*" size="14928770">http://<server>/rest/audiofile/urn:bluemarine:audiofile:vqLgs3PSAwtoI4iqZsTKmCYPVJQ=/content</res>
+        <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:13.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="14928770">http://<server>/rest/audiofile/urn:bluemarine:audiofile:vqLgs3PSAwtoI4iqZsTKmCYPVJQ=/content</res>
     </item>
 </DIDL-Lite>
 
-QUERY COUNT: 3
+QUERY COUNT: 4

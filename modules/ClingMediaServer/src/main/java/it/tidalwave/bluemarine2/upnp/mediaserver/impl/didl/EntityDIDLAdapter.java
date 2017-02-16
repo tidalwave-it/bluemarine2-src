@@ -35,6 +35,7 @@ import org.fourthline.cling.support.model.container.Container;
 import org.fourthline.cling.support.model.container.StorageFolder;
 import it.tidalwave.bluemarine2.model.role.Entity;
 import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 /***********************************************************************************************************************
@@ -45,8 +46,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version $Id$
  *
  **********************************************************************************************************************/
-@Slf4j
-@Immutable //@DciRole(datumType = Entity.class)
+@Immutable @Slf4j @ToString //@DciRole(datumType = Entity.class)
 public class EntityDIDLAdapter extends CompositeDIDLAdapterSupport<Entity>
   {
     /*******************************************************************************************************************

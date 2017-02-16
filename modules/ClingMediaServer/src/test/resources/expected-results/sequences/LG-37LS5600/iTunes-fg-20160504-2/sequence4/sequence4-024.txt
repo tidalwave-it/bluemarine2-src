@@ -1,103 +1,131 @@
 Browse({ObjectID=/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=0, RequestedCount=16, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:Jw1z0EI-1P73X1tVcTuQp7iZ3bM=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" restricted="0">
+    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:Jw1z0EI-1P73X1tVcTuQp7iZ3bM=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" refID="urn:bluemarine:track:Jw1z0EI-1P73X1tVcTuQp7iZ3bM=" restricted="0">
         <dc:title>S'anc fui bèla ni presada</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="00:06:13" protocolInfo="http-get:*:audio/mpeg:*" size="14928770">http://<server>/rest/audiofile/urn:bluemarine:audiofile:vqLgs3PSAwtoI4iqZsTKmCYPVJQ=/content</res>
+        <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:13.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="14928770">http://<server>/rest/audiofile/urn:bluemarine:audiofile:vqLgs3PSAwtoI4iqZsTKmCYPVJQ=/content</res>
     </item>
-    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:ogHR8W5u5q5mMQjUahWrbe-z0XA=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" restricted="0">
+    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:ogHR8W5u5q5mMQjUahWrbe-z0XA=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" refID="urn:bluemarine:track:ogHR8W5u5q5mMQjUahWrbe-z0XA=" restricted="0">
         <dc:title>Por coi me bait mes maris</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
-        <res duration="00:02:05" protocolInfo="http-get:*:audio/mpeg:*" size="5008498">http://<server>/rest/audiofile/urn:bluemarine:audiofile:R-FUoxE-4RKLSfl2j7AlrXxP-Ls=/content</res>
+        <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:02:05.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="5008498">http://<server>/rest/audiofile/urn:bluemarine:audiofile:R-FUoxE-4RKLSfl2j7AlrXxP-Ls=/content</res>
     </item>
-    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:-y0-TewJzQ7JwQh6cwKEJWTh6es=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" restricted="0">
+    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:-y0-TewJzQ7JwQh6cwKEJWTh6es=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" refID="urn:bluemarine:track:-y0-TewJzQ7JwQh6cwKEJWTh6es=" restricted="0">
         <dc:title>Avant hier en un vert pré</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
-        <res duration="00:05:13" protocolInfo="http-get:*:audio/mpeg:*" size="12540148">http://<server>/rest/audiofile/urn:bluemarine:audiofile:uUjgAnHzVUfb5Zd65Z6HTbpeUF0=/content</res>
+        <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:05:13.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="12540148">http://<server>/rest/audiofile/urn:bluemarine:audiofile:uUjgAnHzVUfb5Zd65Z6HTbpeUF0=/content</res>
     </item>
-    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:DxHIckA3J-V-ktZyYo7f0jkPhEI=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" restricted="0">
+    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:DxHIckA3J-V-ktZyYo7f0jkPhEI=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" refID="urn:bluemarine:track:DxHIckA3J-V-ktZyYo7f0jkPhEI=" restricted="0">
         <dc:title>Lasse pour quoi refusai</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
-        <res duration="00:05:56" protocolInfo="http-get:*:audio/mpeg:*" size="14263137">http://<server>/rest/audiofile/urn:bluemarine:audiofile:LsEQsaF2aDqbXfr4dgIpw55wXSY=/content</res>
+        <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:05:56.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="14263137">http://<server>/rest/audiofile/urn:bluemarine:audiofile:LsEQsaF2aDqbXfr4dgIpw55wXSY=/content</res>
     </item>
-    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:qppupS9J7gDVLNhbgqeDQsC-s6E=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" restricted="0">
+    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:qppupS9J7gDVLNhbgqeDQsC-s6E=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" refID="urn:bluemarine:track:qppupS9J7gDVLNhbgqeDQsC-s6E=" restricted="0">
         <dc:title>L'autrier jost' una sebissa</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
-        <res duration="00:04:39" protocolInfo="http-get:*:audio/mpeg:*" size="11179651">http://<server>/rest/audiofile/urn:bluemarine:audiofile:4UAx1N2-KY9p1g_I2CS7vw0isYc=/content</res>
+        <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:39.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="11179651">http://<server>/rest/audiofile/urn:bluemarine:audiofile:4UAx1N2-KY9p1g_I2CS7vw0isYc=/content</res>
     </item>
-    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:EuyRpA2_PCJ0lTZR2zi2stLpZ7w=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" restricted="0">
+    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:EuyRpA2_PCJ0lTZR2zi2stLpZ7w=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" refID="urn:bluemarine:track:EuyRpA2_PCJ0lTZR2zi2stLpZ7w=" restricted="0">
         <dc:title>Pensamen ai e consir - Deduc Syon</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
-        <res duration="00:06:50" protocolInfo="http-get:*:audio/mpeg:*" size="16410507">http://<server>/rest/audiofile/urn:bluemarine:audiofile:zf_ygswoEZsqJmp5L-22GUaTJjg=/content</res>
+        <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:50.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="16410507">http://<server>/rest/audiofile/urn:bluemarine:audiofile:zf_ygswoEZsqJmp5L-22GUaTJjg=/content</res>
     </item>
-    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:01LMWAPi_cecx5F2bGBSxt41wTM=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" restricted="0">
+    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:01LMWAPi_cecx5F2bGBSxt41wTM=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" refID="urn:bluemarine:track:01LMWAPi_cecx5F2bGBSxt41wTM=" restricted="0">
         <dc:title>E dame jolie</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
-        <res duration="00:03:24" protocolInfo="http-get:*:audio/mpeg:*" size="8200634">http://<server>/rest/audiofile/urn:bluemarine:audiofile:RWk4Os0ASl3rkjmztm9F5VZVtwc=/content</res>
+        <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:03:24.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="8200634">http://<server>/rest/audiofile/urn:bluemarine:audiofile:RWk4Os0ASl3rkjmztm9F5VZVtwc=/content</res>
     </item>
-    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:9bQTUhKY2afDPo4W79fbY_Ud758=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" restricted="0">
+    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:9bQTUhKY2afDPo4W79fbY_Ud758=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" refID="urn:bluemarine:track:9bQTUhKY2afDPo4W79fbY_Ud758=" restricted="0">
         <dc:title>Tierche estampie reale</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
-        <res duration="00:04:04" protocolInfo="http-get:*:audio/mpeg:*" size="9769036">http://<server>/rest/audiofile/urn:bluemarine:audiofile:AuoKtlIMyWeYt0SexhWgjM0CcOU=/content</res>
+        <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:04.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="9769036">http://<server>/rest/audiofile/urn:bluemarine:audiofile:AuoKtlIMyWeYt0SexhWgjM0CcOU=/content</res>
     </item>
-    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:9p9VIKrhY_VtnLadn-IkeNmdI0M=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" restricted="0">
+    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:9p9VIKrhY_VtnLadn-IkeNmdI0M=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" refID="urn:bluemarine:track:9p9VIKrhY_VtnLadn-IkeNmdI0M=" restricted="0">
         <dc:title>Au renouvel du tens</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
-        <res duration="00:06:33" protocolInfo="http-get:*:audio/mpeg:*" size="15754208">http://<server>/rest/audiofile/urn:bluemarine:audiofile:dSdcheqDCyrOB1UAzU1Chotwm6g=/content</res>
+        <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:33.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="15754208">http://<server>/rest/audiofile/urn:bluemarine:audiofile:dSdcheqDCyrOB1UAzU1Chotwm6g=/content</res>
     </item>
-    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:QHXLf_O3eSgpx_RHWwUJA1GGQO4=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" restricted="0">
+    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:QHXLf_O3eSgpx_RHWwUJA1GGQO4=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" refID="urn:bluemarine:track:QHXLf_O3eSgpx_RHWwUJA1GGQO4=" restricted="0">
         <dc:title>Veris ad imperia - A l'entrada del tens clar</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
-        <res duration="00:04:18" protocolInfo="http-get:*:audio/mpeg:*" size="10350033">http://<server>/rest/audiofile/urn:bluemarine:audiofile:T6i4a6qi0q6SG87nCU9RLKBt6g0=/content</res>
+        <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:18.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="10350033">http://<server>/rest/audiofile/urn:bluemarine:audiofile:T6i4a6qi0q6SG87nCU9RLKBt6g0=/content</res>
     </item>
-    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:A0FFUW5449M7m397Gkhx_ph4x9s=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" restricted="0">
+    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:A0FFUW5449M7m397Gkhx_ph4x9s=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" refID="urn:bluemarine:track:A0FFUW5449M7m397Gkhx_ph4x9s=" restricted="0">
         <dc:title>A chantar m'er</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>11</upnp:originalTrackNumber>
-        <res duration="00:06:28" protocolInfo="http-get:*:audio/mpeg:*" size="15538960">http://<server>/rest/audiofile/urn:bluemarine:audiofile:-h_IyTBmti_lUXKxOWHTmV9Mv84=/content</res>
+        <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:28.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="15538960">http://<server>/rest/audiofile/urn:bluemarine:audiofile:-h_IyTBmti_lUXKxOWHTmV9Mv84=/content</res>
     </item>
-    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:xliXN1AxS-bxgxLF3TnbEeSYdL8=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" restricted="0">
+    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:xliXN1AxS-bxgxLF3TnbEeSYdL8=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" refID="urn:bluemarine:track:xliXN1AxS-bxgxLF3TnbEeSYdL8=" restricted="0">
         <dc:title>L’autrier a l’ajornée</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>12</upnp:originalTrackNumber>
-        <res duration="00:02:59" protocolInfo="http-get:*:audio/mpeg:*" size="7194431">http://<server>/rest/audiofile/urn:bluemarine:audiofile:-JE4Kwu3WbU0PpMM-mRuNJ2PEQI=/content</res>
+        <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:02:59.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="7194431">http://<server>/rest/audiofile/urn:bluemarine:audiofile:-JE4Kwu3WbU0PpMM-mRuNJ2PEQI=/content</res>
     </item>
-    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:m5OG6Sh6rwfm949vsl9cYmlRsYk=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" restricted="0">
+    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:m5OG6Sh6rwfm949vsl9cYmlRsYk=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" refID="urn:bluemarine:track:m5OG6Sh6rwfm949vsl9cYmlRsYk=" restricted="0">
         <dc:title>La Manfredina</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>13</upnp:originalTrackNumber>
-        <res duration="00:03:42" protocolInfo="http-get:*:audio/mpeg:*" size="8912211">http://<server>/rest/audiofile/urn:bluemarine:audiofile:TiBMd_rgwsJXiQhbIMH0hnKy6t8=/content</res>
+        <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:03:42.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="8912211">http://<server>/rest/audiofile/urn:bluemarine:audiofile:TiBMd_rgwsJXiQhbIMH0hnKy6t8=/content</res>
     </item>
-    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:MnJvGKgMj_aZnQw0TDwBJszzD4w=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" restricted="0">
+    <item id="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=/t:MnJvGKgMj_aZnQw0TDwBJszzD4w=" parentID="/music/r+t/r:0bYRbWOJwZTV0bUoFtX9eAutVDo=" refID="urn:bluemarine:track:MnJvGKgMj_aZnQw0TDwBJszzD4w=" restricted="0">
         <dc:title>Tuit cil qui sunt enamourat</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>14</upnp:originalTrackNumber>
-        <res duration="00:04:10" protocolInfo="http-get:*:audio/mpeg:*" size="10004144">http://<server>/rest/audiofile/urn:bluemarine:audiofile:2u8e2mexRwUEEhDlIA7Tuhh2Wz0=/content</res>
+        <upnp:album>La Domna Savorousa : Chants d’amour des troubadours et des trouvères</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:10.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="10004144">http://<server>/rest/audiofile/urn:bluemarine:audiofile:2u8e2mexRwUEEhDlIA7Tuhh2Wz0=/content</res>
     </item>
 </DIDL-Lite>
 
-QUERY COUNT: 3
+QUERY COUNT: 17

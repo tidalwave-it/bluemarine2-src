@@ -1,117 +1,149 @@
 Browse({ObjectID=/music/t, BrowseFlag=BrowseDirectChildren, Filter=, StartingIndex=96, RequestedCount=16, SortCriteria=})
 <?xml version="1.0" encoding="UTF-8"?><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sec="http://www.sec.co.kr/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
-    <item id="/music/t/t:U5HmvvmEiFkOJoPZC53U2Fnxm7w=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:U5HmvvmEiFkOJoPZC53U2Fnxm7w=" parentID="/music/t" refID="urn:bluemarine:track:U5HmvvmEiFkOJoPZC53U2Fnxm7w=" restricted="0">
         <dc:title>Cherubini: Sonata #4 In G - 1. Moderato</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
-        <res duration="00:06:50" protocolInfo="http-get:*:audio/mpeg:*" size="16405115">http://<server>/rest/audiofile/urn:bluemarine:audiofile:tJPDYUkCcSPb0ch-iTC7IeW4vyU=/content</res>
+        <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:50.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="16405115">http://<server>/rest/audiofile/urn:bluemarine:audiofile:tJPDYUkCcSPb0ch-iTC7IeW4vyU=/content</res>
     </item>
-    <item id="/music/t/t:1LXsPreXMNIviUGA8hndLEw1UTY=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:1LXsPreXMNIviUGA8hndLEw1UTY=" parentID="/music/t" refID="urn:bluemarine:track:1LXsPreXMNIviUGA8hndLEw1UTY=" restricted="0">
         <dc:title>Cherubini: Sonata #4 In G - 2. Rondò: Andantino</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
-        <res duration="00:06:59" protocolInfo="http-get:*:audio/mpeg:*" size="16764618">http://<server>/rest/audiofile/urn:bluemarine:audiofile:SJV8QgF_rxDIfokQndnYL1Zdu1M=/content</res>
+        <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:59.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="16764618">http://<server>/rest/audiofile/urn:bluemarine:audiofile:SJV8QgF_rxDIfokQndnYL1Zdu1M=/content</res>
     </item>
-    <item id="/music/t/t:98YJl6GPDsZRRtZMfcbKBQs_cCg=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:98YJl6GPDsZRRtZMfcbKBQs_cCg=" parentID="/music/t" refID="urn:bluemarine:track:98YJl6GPDsZRRtZMfcbKBQs_cCg=" restricted="0">
         <dc:title>Cherubini: Sonata #5 In D - 1. Allegro Con Brio</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
-        <res duration="00:06:53" protocolInfo="http-get:*:audio/mpeg:*" size="16525287">http://<server>/rest/audiofile/urn:bluemarine:audiofile:odgH4CkN4zFSZw3XjbRaNZDdLJA=/content</res>
+        <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:53.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="16525287">http://<server>/rest/audiofile/urn:bluemarine:audiofile:odgH4CkN4zFSZw3XjbRaNZDdLJA=/content</res>
     </item>
-    <item id="/music/t/t:d-Q3x9XY7zVvOYr11me09-52zqk=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:d-Q3x9XY7zVvOYr11me09-52zqk=" parentID="/music/t" refID="urn:bluemarine:track:d-Q3x9XY7zVvOYr11me09-52zqk=" restricted="0">
         <dc:title>Cherubini: Sonata #5 In D - 2. Rondò: Allegretto</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
-        <res duration="00:05:06" protocolInfo="http-get:*:audio/mpeg:*" size="12245438">http://<server>/rest/audiofile/urn:bluemarine:audiofile:pzjyG4SZWvP3XZG7NVs7yTdluZo=/content</res>
+        <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:05:06.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="12245438">http://<server>/rest/audiofile/urn:bluemarine:audiofile:pzjyG4SZWvP3XZG7NVs7yTdluZo=/content</res>
     </item>
-    <item id="/music/t/t:MV17m6OWDCPrx_Ed_8i40-d1h1Q=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:MV17m6OWDCPrx_Ed_8i40-d1h1Q=" parentID="/music/t" refID="urn:bluemarine:track:MV17m6OWDCPrx_Ed_8i40-d1h1Q=" restricted="0">
         <dc:title>Cherubini: Sonata #6 In E Flat - 1. Allegro Spiritoso</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>11</upnp:originalTrackNumber>
-        <res duration="00:07:52" protocolInfo="http-get:*:audio/mpeg:*" size="18884673">http://<server>/rest/audiofile/urn:bluemarine:audiofile:OjywRyTMzjsTsXpyphCCI1OVPW4=/content</res>
+        <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:07:52.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="18884673">http://<server>/rest/audiofile/urn:bluemarine:audiofile:OjywRyTMzjsTsXpyphCCI1OVPW4=/content</res>
     </item>
-    <item id="/music/t/t:H85zLyXy-ABZXGZpVDQ5KmFgkww=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:H85zLyXy-ABZXGZpVDQ5KmFgkww=" parentID="/music/t" refID="urn:bluemarine:track:H85zLyXy-ABZXGZpVDQ5KmFgkww=" restricted="0">
         <dc:title>Cherubini: Sonata #6 In E Flat - 2. Rondò: Andantino Con Moto</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>12</upnp:originalTrackNumber>
-        <res duration="00:06:06" protocolInfo="http-get:*:audio/mpeg:*" size="14660223">http://<server>/rest/audiofile/urn:bluemarine:audiofile:ygA8AiXimd9N3EYnIcvrpWWfGfQ=/content</res>
+        <upnp:album>Cherubini: 6 Piano Sonatas</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:06:06.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="14660223">http://<server>/rest/audiofile/urn:bluemarine:audiofile:ygA8AiXimd9N3EYnIcvrpWWfGfQ=/content</res>
     </item>
-    <item id="/music/t/t:T0AVck2bowGkN-hd1XMytg4BYUQ=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:T0AVck2bowGkN-hd1XMytg4BYUQ=" parentID="/music/t" refID="urn:bluemarine:track:T0AVck2bowGkN-hd1XMytg4BYUQ=" restricted="0">
         <dc:title>(Strumentale)</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>1</upnp:originalTrackNumber>
-        <res duration="00:11:15" protocolInfo="http-get:*:audio/mpeg:*" size="27024381">http://<server>/rest/audiofile/urn:bluemarine:audiofile:R5kWpHsjk8onU-BxNIEu_e8yqqE=/content</res>
+        <upnp:album>Daniel And The Lions - Ludus Danielis</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:11:15.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="27024381">http://<server>/rest/audiofile/urn:bluemarine:audiofile:R5kWpHsjk8onU-BxNIEu_e8yqqE=/content</res>
     </item>
-    <item id="/music/t/t:uVg1rfXHgxCCtQXYI2xN1h84Xfk=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:uVg1rfXHgxCCtQXYI2xN1h84Xfk=" parentID="/music/t" refID="urn:bluemarine:track:uVg1rfXHgxCCtQXYI2xN1h84Xfk=" restricted="0">
         <dc:title>Ad Honorem Tui, Christe</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>2</upnp:originalTrackNumber>
-        <res duration="00:07:10" protocolInfo="http-get:*:audio/mpeg:*" size="17234742">http://<server>/rest/audiofile/urn:bluemarine:audiofile:66v_jTEksaPtyAOk65JC2HLMgbI=/content</res>
+        <upnp:album>Daniel And The Lions - Ludus Danielis</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:07:10.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="17234742">http://<server>/rest/audiofile/urn:bluemarine:audiofile:66v_jTEksaPtyAOk65JC2HLMgbI=/content</res>
     </item>
-    <item id="/music/t/t:MKQz3adgbA5CbkeP4gUoMHPuCUM=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:MKQz3adgbA5CbkeP4gUoMHPuCUM=" parentID="/music/t" refID="urn:bluemarine:track:MKQz3adgbA5CbkeP4gUoMHPuCUM=" restricted="0">
         <dc:title>Rex, In Aeternum Vive!</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>3</upnp:originalTrackNumber>
-        <res duration="00:03:19" protocolInfo="http-get:*:audio/mpeg:*" size="7974856">http://<server>/rest/audiofile/urn:bluemarine:audiofile:kODycA7DyKfbDGPtcV4-5Zc4iNY=/content</res>
+        <upnp:album>Daniel And The Lions - Ludus Danielis</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:03:19.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="7974856">http://<server>/rest/audiofile/urn:bluemarine:audiofile:kODycA7DyKfbDGPtcV4-5Zc4iNY=/content</res>
     </item>
-    <item id="/music/t/t:a_3JrUsBcMsxNdqNwb3S7c7QDNg=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:a_3JrUsBcMsxNdqNwb3S7c7QDNg=" parentID="/music/t" refID="urn:bluemarine:track:a_3JrUsBcMsxNdqNwb3S7c7QDNg=" restricted="0">
         <dc:title>Multum Miror Cuius Consilio</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>4</upnp:originalTrackNumber>
-        <res duration="00:11:25" protocolInfo="http-get:*:audio/mpeg:*" size="27415187">http://<server>/rest/audiofile/urn:bluemarine:audiofile:DPEG4Xwp0GwuzyO3qp9Acw_5BzM=/content</res>
+        <upnp:album>Daniel And The Lions - Ludus Danielis</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:11:25.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="27415187">http://<server>/rest/audiofile/urn:bluemarine:audiofile:DPEG4Xwp0GwuzyO3qp9Acw_5BzM=/content</res>
     </item>
-    <item id="/music/t/t:HUMFB1OYKlummMLxROTFDqwijfw=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:HUMFB1OYKlummMLxROTFDqwijfw=" parentID="/music/t" refID="urn:bluemarine:track:HUMFB1OYKlummMLxROTFDqwijfw=" restricted="0">
         <dc:title>Solvitur In Libro Salomonis</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>5</upnp:originalTrackNumber>
-        <res duration="00:02:21" protocolInfo="http-get:*:audio/mpeg:*" size="5671906">http://<server>/rest/audiofile/urn:bluemarine:audiofile:M6WRn9gRF4LUCR2MynDFsv-mEcw=/content</res>
+        <upnp:album>Daniel And The Lions - Ludus Danielis</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:02:21.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="5671906">http://<server>/rest/audiofile/urn:bluemarine:audiofile:M6WRn9gRF4LUCR2MynDFsv-mEcw=/content</res>
     </item>
-    <item id="/music/t/t:17jgGBimRJsXQBAMrcwpjKBUlC0=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:17jgGBimRJsXQBAMrcwpjKBUlC0=" parentID="/music/t" refID="urn:bluemarine:track:17jgGBimRJsXQBAMrcwpjKBUlC0=" restricted="0">
         <dc:title>Et Caetera</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>6</upnp:originalTrackNumber>
-        <res duration="00:04:09" protocolInfo="http-get:*:audio/mpeg:*" size="9991497">http://<server>/rest/audiofile/urn:bluemarine:audiofile:Y8Rt7nnEoxhbhfJv4KXPrD1L31A=/content</res>
+        <upnp:album>Daniel And The Lions - Ludus Danielis</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:09.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="9991497">http://<server>/rest/audiofile/urn:bluemarine:audiofile:Y8Rt7nnEoxhbhfJv4KXPrD1L31A=/content</res>
     </item>
-    <item id="/music/t/t:kE7L-wkfcoSJ4ubA-gE3ClaxpVo=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:kE7L-wkfcoSJ4ubA-gE3ClaxpVo=" parentID="/music/t" refID="urn:bluemarine:track:kE7L-wkfcoSJ4ubA-gE3ClaxpVo=" restricted="0">
         <dc:title>Ecce Rex Darius</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>7</upnp:originalTrackNumber>
-        <res duration="00:04:28" protocolInfo="http-get:*:audio/mpeg:*" size="10740694">http://<server>/rest/audiofile/urn:bluemarine:audiofile:_G-BBX6oh9QwbWuB8CMF7uBX_rc=/content</res>
+        <upnp:album>Daniel And The Lions - Ludus Danielis</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:28.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="10740694">http://<server>/rest/audiofile/urn:bluemarine:audiofile:_G-BBX6oh9QwbWuB8CMF7uBX_rc=/content</res>
     </item>
-    <item id="/music/t/t:IAdWy0l73YtJj87DLWRJzpMLsIU=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:IAdWy0l73YtJj87DLWRJzpMLsIU=" parentID="/music/t" refID="urn:bluemarine:track:IAdWy0l73YtJj87DLWRJzpMLsIU=" restricted="0">
         <dc:title>Ex Regali Venit Imperio</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>8</upnp:originalTrackNumber>
-        <res duration="00:03:21" protocolInfo="http-get:*:audio/mpeg:*" size="8072032">http://<server>/rest/audiofile/urn:bluemarine:audiofile:jHz8nc6HSffXXCekPQzhbr7hKtM=/content</res>
+        <upnp:album>Daniel And The Lions - Ludus Danielis</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:03:21.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="8072032">http://<server>/rest/audiofile/urn:bluemarine:audiofile:jHz8nc6HSffXXCekPQzhbr7hKtM=/content</res>
     </item>
-    <item id="/music/t/t:305g210o2142uBQ2h5GdrGDEp78=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:305g210o2142uBQ2h5GdrGDEp78=" parentID="/music/t" refID="urn:bluemarine:track:305g210o2142uBQ2h5GdrGDEp78=" restricted="0">
         <dc:title>Rex, In Aeternum Vive!</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>9</upnp:originalTrackNumber>
-        <res duration="00:04:31" protocolInfo="http-get:*:audio/mpeg:*" size="10848325">http://<server>/rest/audiofile/urn:bluemarine:audiofile:ySO0gdsP9oKMZ71T8KbEcbqYatI=/content</res>
+        <upnp:album>Daniel And The Lions - Ludus Danielis</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:04:31.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="10848325">http://<server>/rest/audiofile/urn:bluemarine:audiofile:ySO0gdsP9oKMZ71T8KbEcbqYatI=/content</res>
     </item>
-    <item id="/music/t/t:vWTJV4jgQjMkYW6HP5WplkK-SXw=" parentID="/music/t" restricted="0">
+    <item id="/music/t/t:vWTJV4jgQjMkYW6HP5WplkK-SXw=" parentID="/music/t" refID="urn:bluemarine:track:vWTJV4jgQjMkYW6HP5WplkK-SXw=" restricted="0">
         <dc:title>(Strumentale)</dc:title>
         <dc:creator>blueMarine II</dc:creator>
         <upnp:class>object.item.audioItem.musicTrack</upnp:class>
         <upnp:originalTrackNumber>10</upnp:originalTrackNumber>
-        <res duration="00:01:18" protocolInfo="http-get:*:audio/mpeg:*" size="3145329">http://<server>/rest/audiofile/urn:bluemarine:audiofile:fzPJsLrl6ToNGUleGxhHwsk15wQ=/content</res>
+        <upnp:album>Daniel And The Lions - Ludus Danielis</upnp:album>
+        <upnp:storageMedium>HDD</upnp:storageMedium>
+        <res bitrate="320" bitsPerSample="16" duration="0:01:18.000" protocolInfo="http-get:*:audio/mpeg:*" sampleFrequency="44100" size="3145329">http://<server>/rest/audiofile/urn:bluemarine:audiofile:fzPJsLrl6ToNGUleGxhHwsk15wQ=/content</res>
     </item>
 </DIDL-Lite>
 
-QUERY COUNT: 2
+QUERY COUNT: 18

@@ -29,9 +29,9 @@
 package it.tidalwave.bluemarine2.upnp.mediaserver.impl;
 
 import javax.annotation.Nonnull;
-import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.fourthline.cling.UpnpService;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
+import it.tidalwave.bluemarine2.util.SystemConfigurer;
 import org.testng.annotations.BeforeClass;
 import lombok.extern.slf4j.Slf4j;
 
@@ -48,8 +48,7 @@ public class ClingTestSupport extends SpringTestSupport
 
     static
       {
-        SLF4JBridgeHandler.removeHandlersForRootLogger();
-        SLF4JBridgeHandler.install();
+        SystemConfigurer.setupSlf4jBridgeHandler();
       }
 
     protected ClingTestSupport (final @Nonnull String ... configLocations)

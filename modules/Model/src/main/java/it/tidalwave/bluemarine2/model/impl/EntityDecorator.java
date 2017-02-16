@@ -48,7 +48,7 @@ import lombok.ToString;
  * @version $Id: $
  *
  **********************************************************************************************************************/
-@ToString(callSuper = false)
+@ToString
 public class EntityDecorator extends EntityWithRoles
   {
     @Getter @Nonnull
