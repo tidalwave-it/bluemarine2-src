@@ -33,8 +33,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.query.impl.MapBindingSet;
-import org.fourthline.cling.support.model.DIDLObject;
-import it.tidalwave.util.As8;
 import it.tidalwave.util.Id;
 import it.tidalwave.bluemarine2.model.MusicArtist;
 import it.tidalwave.bluemarine2.model.Record;
@@ -43,16 +41,17 @@ import it.tidalwave.bluemarine2.model.role.PathAwareEntity;
 import it.tidalwave.bluemarine2.model.impl.PathAwareMediaFolderDecorator;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryMusicArtist;
 import it.tidalwave.bluemarine2.model.impl.catalog.RepositoryRecord;
-import it.tidalwave.bluemarine2.rest.spi.ResourceServer;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import it.tidalwave.bluemarine2.commons.test.SpringTestSupport;
+import it.tidalwave.bluemarine2.model.spi.EntityWithRoles;
 import lombok.extern.slf4j.Slf4j;
+import static it.tidalwave.role.Identifiable.Identifiable;
+import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
+import static it.tidalwave.bluemarine2.upnp.mediaserver.impl.didl.DIDLAdapter.DIDLAdapter;
+import it.tidalwave.role.Identifiable;
 import static org.mockito.Mockito.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
-import static it.tidalwave.bluemarine2.util.RdfUtilities.*;
-import static it.tidalwave.role.Identifiable.Identifiable;
 
 /***********************************************************************************************************************
  *
@@ -61,34 +60,12 @@ import static it.tidalwave.role.Identifiable.Identifiable;
  *
  **********************************************************************************************************************/
 @Slf4j
-public class CompositeDIDLAdapterSupportTest extends SpringTestSupport
+public class DIDLAdapterBindingTest extends SpringTestSupport
   {
-    static class UnderTest extends CompositeDIDLAdapterSupport
-      {
-        public UnderTest (final @Nonnull As8 datum, final @Nonnull ResourceServer server)
-          {
-            super(datum, server);
-          }
-
-        @Override @Nonnull
-        public DIDLObject toObject()
-          {
-            throw new UnsupportedOperationException("Not supported yet.");
-          }
-      }
-
-    private UnderTest underTest;
-
-    public CompositeDIDLAdapterSupportTest()
+    public DIDLAdapterBindingTest()
       {
         super("META-INF/DciAutoBeans.xml",
               "META-INF/CompositeDIDLAdapterSupportTestBeans.xml");
-      }
-
-    @BeforeMethod
-    public void setup()
-      {
-        underTest = new UnderTest(mock(As8.class), mock(ResourceServer.class));
       }
 
     @Test
@@ -115,6 +92,20 @@ public class CompositeDIDLAdapterSupportTest extends SpringTestSupport
         must_find_the_correct_adapter_for_decorated_entities(createMockRecord(), PathAwareDecoratorDIDLAdapter.class);
       }
 
+    // TODO: test for Track
+
+    @Test
+    public void must_find_the_correct_adapter_for_Entity()
+      {
+        must_find_the_correct_adapter(createMockEntity(), EntityDIDLAdapter.class);
+      }
+
+    @Test
+    public void must_find_the_correct_adapter_for_decorated_Entity()
+      {
+        must_find_the_correct_adapter_for_decorated_entities(createMockEntity(), PathAwareDecoratorDIDLAdapter.class);
+      }
+
     private void must_find_the_correct_adapter_for_decorated_entities (final @Nonnull Entity datum,
                                                                        final @Nonnull Class<?> expectedAdapterClass)
       {
@@ -124,7 +115,7 @@ public class CompositeDIDLAdapterSupportTest extends SpringTestSupport
         final Path pathSegment = Paths.get(datum.as(Identifiable).getId().stringValue());
         final PathAwareMediaFolderDecorator decorator = new PathAwareMediaFolderDecorator(datum, parent, pathSegment);
         // when
-        final DIDLAdapter adapter = underTest.asDIDLAdapter(decorator);
+        final DIDLAdapter adapter = decorator.as(DIDLAdapter);
         // then
         assertThat(adapter, instanceOf(expectedAdapterClass));
       }
@@ -133,7 +124,7 @@ public class CompositeDIDLAdapterSupportTest extends SpringTestSupport
                                                 final @Nonnull Class<?> expectedAdapterClass)
       {
         // when
-        final DIDLAdapter adapter = underTest.asDIDLAdapter(datum);
+        final DIDLAdapter adapter = datum.as(DIDLAdapter);
         // then
         assertThat(adapter, instanceOf(expectedAdapterClass));
       }
@@ -159,5 +150,11 @@ public class CompositeDIDLAdapterSupportTest extends SpringTestSupport
         bindingSet.addBinding("record", literalFor(recordId));
         bindingSet.addBinding("label", literalFor("The record"));
         return new RepositoryRecord(repository, bindingSet);
+      }
+
+    @Nonnull
+    private Entity createMockEntity()
+      {
+        return new EntityWithRoles((Identifiable) () -> new Id("urn:bluemarine:something:foo_bar"));
       }
   }
