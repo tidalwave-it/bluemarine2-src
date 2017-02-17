@@ -45,10 +45,10 @@ public final class Purl
   {
     private final static ValueFactory FACTORY = SimpleValueFactory.getInstance();
 
-    private static final String PREFIX_BIO          = "http://purl.org/vocab/bio/0.1/";
-    private static final String PREFIX_RELATIONSHIP = "http://purl.org/vocab/relationship/";
+    private static final String NS_BIO          = "http://purl.org/vocab/bio/0.1/";
+    private static final String NS_RELATIONSHIP = "http://purl.org/vocab/relationship/";
 
-    public static final IRI EVENT              = FACTORY.createIRI(PREFIX_BIO + "event");
+    public static final IRI P_EVENT = FACTORY.createIRI(NS_BIO + "event");
 
-    public static final IRI COLLABORATES_WITH  = FACTORY.createIRI(PREFIX_RELATIONSHIP + "collaboratesWith");
+    public static final IRI P_COLLABORATES_WITH = FACTORY.createIRI(NS_RELATIONSHIP + "collaboratesWith");
 }
