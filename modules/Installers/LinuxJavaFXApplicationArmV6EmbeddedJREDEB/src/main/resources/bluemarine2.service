@@ -2,8 +2,8 @@
 Description=blueMarine II media center for Linux ARM
 
 [Service]
-ExecStart=/opt/bluemarine2/bin/bluemarine2 --mediacenter
-User=bluemarine2
+ExecStart=${tft.deb.binaryDirectory}/${tft.deb.name}/bin/${tft.deb.name} --mediacenter
+User=${tft.deb.user}
 
 [Install]
 WantedBy=multi-user.target
