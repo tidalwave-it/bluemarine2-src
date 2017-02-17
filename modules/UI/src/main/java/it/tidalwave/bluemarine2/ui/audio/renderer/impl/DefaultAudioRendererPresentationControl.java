@@ -38,6 +38,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.application.Platform;
 import it.tidalwave.role.ui.UserAction8;
+import it.tidalwave.role.ui.spi.UserActionSupport8;
 import it.tidalwave.messagebus.annotation.ListensTo;
 import it.tidalwave.messagebus.annotation.SimpleMessageSubscriber;
 import it.tidalwave.bluemarine2.model.AudioFile;
@@ -53,7 +54,6 @@ import static it.tidalwave.role.Displayable.Displayable;
 import static it.tidalwave.bluemarine2.util.Formatters.format;
 import static it.tidalwave.bluemarine2.ui.audio.renderer.MediaPlayer.Status.*;
 import static it.tidalwave.bluemarine2.model.MediaItem.Metadata.*;
-import it.tidalwave.role.ui.spi.UserActionSupport8;
 
 /***********************************************************************************************************************
  *
@@ -78,24 +78,24 @@ public class DefaultAudioRendererPresentationControl
 
     private Duration duration = Duration.ZERO;
 
-    private PlayList playList = PlayList.EMPTY;
+    private PlayList<AudioFile> playList = PlayList.empty();
 
     // Discriminates a forced stop from media player just terminating
     private boolean stopped;
 
     private final UserAction8 prevAction = new UserActionSupport8(() -> changeTrack(playList.previous().get()));
 
+    private final UserAction8 nextAction = new UserActionSupport8(() -> changeTrack(playList.next().get()));
+
     private final UserAction8 rewindAction = new UserActionSupport8(() -> mediaPlayer.rewind());
-
-    private final UserAction8 stopAction = new UserActionSupport8(() -> stop());
-
-    private final UserAction8 pauseAction = new UserActionSupport8(() -> mediaPlayer.pause());
-
-    private final UserAction8 playAction = new UserActionSupport8(() -> play());
 
     private final UserAction8 fastForwardAction = new UserActionSupport8(() -> mediaPlayer.fastForward());
 
-    private final UserAction8 nextAction = new UserActionSupport8(() -> changeTrack(playList.next().get()));
+    private final UserAction8 pauseAction = new UserActionSupport8(() -> mediaPlayer.pause());
+
+    private final UserAction8 playAction = new UserActionSupport8(this::play);
+
+    private final UserAction8 stopAction = new UserActionSupport8(this::stop);
 
     // FIXME: use expression binding
     // e.g.  properties.progressProperty().bind(mediaPlayer.playTimeProperty().asDuration().dividedBy/duration));
@@ -134,7 +134,7 @@ public class DefaultAudioRendererPresentationControl
         log.info("onRenderAudioFileRequest({})", request);
 
         playList = request.getPlayList();
-        setAudioFile(playList.getCurrentFile().get());
+        setAudioFile(playList.getCurrentItem().get());
         bindMediaPlayer();
         presentation.showUp(this);
         presentation.focusOnPlayButton();
@@ -150,7 +150,7 @@ public class DefaultAudioRendererPresentationControl
       {
         stop();
         unbindMediaPlayer();
-        playList = PlayList.EMPTY;
+        playList = PlayList.empty();
         return OnDeactivate.Result.PROCEED;
       }
 

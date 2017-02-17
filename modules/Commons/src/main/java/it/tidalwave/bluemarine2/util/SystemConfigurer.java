@@ -59,7 +59,7 @@ public final class SystemConfigurer
                 break;
 
             case "mac os x":
-                final String workspace = home + "/Library/Application Support/blueMarine2";
+                final String workspace = System.getProperty("blueMarine2.workspace", home + "/Library/Application Support/blueMarine2");
                 System.setProperty("blueMarine2.workspace", workspace);
                 System.setProperty("blueMarine2.logFolder", workspace + "/logs");
                 System.setProperty("blueMarine2.logConfigOverride", workspace + "/config/logback-override.xml");

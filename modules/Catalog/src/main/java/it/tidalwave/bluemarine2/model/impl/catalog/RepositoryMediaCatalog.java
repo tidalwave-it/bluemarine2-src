@@ -49,7 +49,7 @@ import it.tidalwave.bluemarine2.model.impl.catalog.finder.RepositoryTrackFinder;
 import lombok.extern.slf4j.Slf4j;
 import lombok.Getter;
 import lombok.Setter;
-import static it.tidalwave.bluemarine2.model.vocabulary.BM.*;
+import static it.tidalwave.bluemarine2.model.vocabulary.BMMO.*;
 
 /***********************************************************************************************************************
  *
